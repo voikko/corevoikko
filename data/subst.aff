@@ -1,0 +1,39 @@
+# Kotus 27 käsi (Q8, Q9)
+class: subst-si1
+match-word: Vsi$
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	v	ps=f
+nominatiivi	si	te	v	ps=r
+genetiivi		si	den	v	ps=f
+partitiivi	si	tta	v
+translatiivi	si	deksi	v	ps=f
+translatiivi	si	dekse	v	ps=r
+essiivi		si	tena	v
+inessiivi		si	dessa	v
+elatiivi		si	desta	v
+illatiivi		si	teen	v
+adessiivi		si	della	v
+ablatiivi		si	delta	v
+allatiivi		si	delle	v
+abessiivi		si	detta	v
+nominatiivi_mon	si	det	v	ps=f
+genetiivi_mon	0	en	v
+genetiivi_mon	si	tten	v	prio=2
+partitiivi_mon	0	a	v
+translatiivi_mon	0	ksi	v	ps=f
+translatiivi_mon	0	kse	v	ps=r
+essiivi_mon	0	na	v
+inessiivi_mon	0	ssa	v
+elatiivi_mon	0	sta	v
+illatiivi_mon	0	in	v
+adessiivi_mon	0	lla	v
+ablatiivi_mon	0	lta	v
+allatiivi_mon	0	lle	v
+abessiivi_mon	0	tta	v	ps=f
+komitatiivi_mon	0	ne	v	ps=r
+instruktiivi_mon	0	n	v	ps=f
+end: rules
+end: class

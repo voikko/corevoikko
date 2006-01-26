@@ -1,0 +1,45 @@
+SET ISO-8859-15
+FLAG long
+WORDCHARS '
+
+# Kieltää affiksittomat muodot
+NEEDAFFIX F0
+
+# Yhdyssanojen käsittely
+COMPOUNDMIN 2
+COMPOUND 2
+COMPOUND C0C0 #yks. nominatiivi ja yks. nominatiivi
+COMPOUND C0C1 #yks. nominatiivit ja mikä tahansa nomini
+
+
+# Posessiivisuffiksit ryhmille S0, S1
+SFX A0 Y 12
+SFX A0 0 ni  [^n]  +PS1
+SFX A0 0 i   n     +PS1
+SFX A0 0 si  [^n]  +PS2
+SFX A0 n si  n     +PS2
+SFX A0 0 an  [^a]a +PS3 #koira->S0-NOMINATIIVI->A0-PS3=>koiraan!
+SFX A0 0 nsa [^n]  +PS3
+SFX A0 0 sa  n     +PS3
+SFX A0 0 en  e     +PS3 #nalle->S0-NOMINATIIVI->A0-PS3=>nalleen!
+SFX A0 0 mme [^n]  +PS4
+SFX A0 n mme n     +PS4
+SFX A0 0 nne [^n]  +PS5
+SFX A0 0 ne  n     +PS5
+
+# Posessiivisuffikseja esim. päällä|ni, ...
+SFX A1 Y 12
+SFX A1 0 ni  [^n]  +PS1
+SFX A1 0 i   n     +PS1
+SFX A1 0 si  [^n]  +PS2
+SFX A1 n si  n     +PS2
+SFX A1 0 än  [^ä]ä +PS3
+SFX A1 0 nsä [^n]  +PS3
+SFX A1 0 sä  n     +PS3
+SFX A1 0 en  e     +PS3
+SFX A1 0 mme [^n]  +PS4
+SFX A1 n mme n     +PS4
+SFX A1 0 nne [^n]  +PS5
+SFX A1 0 ne  n     +PS5
+
+
