@@ -23,6 +23,7 @@
 import hfutils
 import codecs
 import sys
+import re
 
 # Input files
 BASE_AFFIX_FILE = 'orig_data/pohja.aff'
@@ -143,24 +144,36 @@ def read_inflection_class(file):
 			         'group':group, 'tgroup':tgroup, 'rules':rules }
 
 
-#test=codecs.open('/home/harri/hunspell-fi/db/fi_FI.aff.in', 'r', 'utf-8')
-#print read_inflection_class(test)
-#sys.exit(0)
-
 # Convert a Hunspell-fi -style pair of regular expression and replacement string to a list
 # of tuples containing corresponding Hunspell affix rule elements (strip_str, affix, condition).
 def regex_to_hunspell(exp, repl):
-	# TODO: actually implement the regular expressions
+	# TODO: implement more regular expressions
 	rulelist = []
 	if exp == "0":
 		strip_str = "0"
 		condition = "."
-	else:
+		affix = repl
+		rulelist.append((strip_str, affix, condition))
+		return rulelist
+	if re.compile("^(?:[a-z])+$").match(exp) != None: # string of letters
 		strip_str = exp
 		condition = exp
-	affix = repl
-	rulelist.append((strip_str, affix, condition))
-	return rulelist
+		affix = repl
+		rulelist.append((strip_str, affix, condition))
+		return rulelist
+	m = re.compile("^((?:[a-z])*)\\(\\[((?:[a-z])*)\\]\\)$").match(exp)
+	if m != None: # exp is of form 'abc([def])'
+		start_letters = m.group(1)
+		alt_letters = m.group(2)
+		for alt_char in alt_letters:
+			strip_str = start_letters + alt_char
+			condition = start_letters + alt_char
+			affix = repl.replace('(1)', alt_char)
+			rulelist.append((strip_str, affix, condition))
+		return rulelist
+	print 'Unsupported regular expression: exp=\'' + exp + ', repl=\'' + repl
+	sys.exit(1)
+
 
 
 # Read an option "name" from string "option". If it does not exist, then default will be returned.
@@ -208,6 +221,27 @@ def write_inflection_class(classinfo, first_affixflag, affixfile):
 			if classinfo['tgroup'] == 'e':
 				write_affix_class(rulelist, 'e', affixflag, affixfile)
 				affixflag = next_affix_flag(affixflag)
+		if classinfo['gradation'] == 1: # strong -> weak
+			rulelist = []
+			for rule in classinfo['rules']:
+				if rule[3] == 's' and (len(rule) == 4 or \
+				   int(read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
+					rulelist.append(rule)
+			write_affix_class(rulelist, '-', affixflag, affixfile)
+			affixflag = next_affix_flag(affixflag)
+			if classinfo['tgroup'] == 'e':
+				write_affix_class(rulelist, 'e', affixflag, affixfile)
+				affixflag = next_affix_flag(affixflag)
+			rulelist = []
+			for rule in classinfo['rules']:
+				if rule[3] == 'w' and (len(rule) == 4 or \
+				   int(read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
+					rulelist.append(rule)
+			write_affix_class(rulelist, '-', affixflag, affixfile)
+			affixflag = next_affix_flag(affixflag)
+			if classinfo['tgroup'] == 'e':
+				write_affix_class(rulelist, 'e', affixflag, affixfile)
+				affixflag = next_affix_flag(affixflag)
 	return affixflag
 
 
@@ -216,14 +250,12 @@ outputfile=codecs.open(HUNSPELL_AFFIX_FILE, 'w', 'iso-8859-15')
 #substfile=codecs.open(NOUN_CLASS_FILE, 'w', 'utf-8')
 
 print u'Copying base affix file ...'
-tiedJatkuu = True
-nykAffiksi = ''
-affRivit = []
-while tiedJatkuu:
-	rivi = inputfile.readline()
-	tiedJatkuu = rivi.endswith('\n')
-	rivi = hfutils.poistakommentit(rivi).strip()
-	if len(rivi) > 0: outputfile.write(rivi+'\n')
+fileCont = True
+while fileCont:
+	line = inputfile.readline()
+	fileCont = line.endswith('\n')
+	line = hfutils.poistakommentit(line).strip()
+	if len(line) > 0: outputfile.write(line+'\n')
 print u'... base affix file written.'
 inputfile.close()
 
