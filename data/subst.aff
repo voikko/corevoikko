@@ -1,39 +1,78 @@
-# Kotus 27 käsi (Q8, Q9)
+# Kotus 5 patti
+class: subst-p
+match-word: VA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	en	s
+partitiivi_mon	i	eja	s
+translatiivi_mon	i	eiksi	w	ps=f
+translatiivi_mon	i	eikse	w	ps=r
+essiivi_mon	i	eja	s
+inessiivi_mon	i	eissa	w
+elatiivi_mon	i	eista	w
+illatiivi_mon	i	eihin	s
+adessiivi_mon	i	eilla	w
+ablatiivi_mon	i	eilta	w
+allatiivi_mon	i	eille	w
+abessiivi_mon	i	eitta	w	ps=f
+komitatiivi_mon	i	eine	s	ps=r
+instruktiivi_mon	i	ein	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 27 käsi
 class: subst-si1
 match-word: Vsi$
 consonant-gradation: -
 group: t
 transform-group: e
 rules:
-nominatiivi	0	0	v	ps=f
-nominatiivi	si	te	v	ps=r
-genetiivi		si	den	v	ps=f
-partitiivi	si	tta	v
-translatiivi	si	deksi	v	ps=f
-translatiivi	si	dekse	v	ps=r
-essiivi		si	tena	v
-inessiivi		si	dessa	v
-elatiivi		si	desta	v
-illatiivi		si	teen	v
-adessiivi		si	della	v
-ablatiivi		si	delta	v
-allatiivi		si	delle	v
-abessiivi		si	detta	v
-nominatiivi_mon	si	det	v	ps=f
-genetiivi_mon	0	en	v
-genetiivi_mon	si	tten	v	prio=2
-partitiivi_mon	0	a	v
-translatiivi_mon	0	ksi	v	ps=f
-translatiivi_mon	0	kse	v	ps=r
-essiivi_mon	0	na	v
-inessiivi_mon	0	ssa	v
-elatiivi_mon	0	sta	v
-illatiivi_mon	0	in	v
-adessiivi_mon	0	lla	v
-ablatiivi_mon	0	lta	v
-allatiivi_mon	0	lle	v
-abessiivi_mon	0	tta	v	ps=f
-komitatiivi_mon	0	ne	v	ps=r
-instruktiivi_mon	0	n	v	ps=f
+nominatiivi	0	0	s	ps=f
+nominatiivi	si	te	s	ps=r
+genetiivi		si	den	s	ps=f
+partitiivi	si	tta	s
+translatiivi	si	deksi	s	ps=f
+translatiivi	si	dekse	s	ps=r
+essiivi		si	tena	s
+inessiivi		si	dessa	s
+elatiivi		si	desta	s
+illatiivi		si	teen	s
+adessiivi		si	della	s
+ablatiivi		si	delta	s
+allatiivi		si	delle	s
+abessiivi		si	detta	s
+nominatiivi_mon	si	det	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	si	tten	s	prio=2
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
 end: rules
 end: class
