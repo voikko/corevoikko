@@ -37,6 +37,88 @@ end: rules
 end: class
 
 
+# Kotus 2 pallero
+class: subst-o2
+match-word: C[OU]
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([ou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	jen	s
+genetiivi_mon	0	iden	s
+genetiivi_mon	0	itten	s	prio=2
+partitiivi_mon	0	ja	s
+partitiivi_mon	0	ita	s
+translatiivi_mon	0	iksi	w	ps=f
+translatiivi_mon	0	ikse	w	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	w
+elatiivi_mon	0	ista	w
+illatiivi_mon	0	ihin	s
+adessiivi_mon	0	illa	w
+ablatiivi_mon	0	ilta	w
+allatiivi_mon	0	ille	w
+abessiivi_mon	0	itta	w	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 3 kallio
+class: subst-p
+match-word: VO
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	s
+partitiivi	0	ta	s
+translatiivi	0	ksi	s	ps=f
+translatiivi	0	kse	s	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	s
+elatiivi		0	sta	s
+illatiivi		0	on	s
+adessiivi		0	lla	s
+ablatiivi		0	lta	s
+allatiivi		0	lle	s
+abessiivi		0	tta	s	ps=f
+nominatiivi_mon	0	t	s	ps=f
+genetiivi_mon	0	iden	s
+genetiivi_mon	0	itten	s	prio=2
+partitiivi_mon	0	ita	s
+translatiivi_mon	0	iksi	s	ps=f
+translatiivi_mon	0	ikse	s	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	s
+elatiivi_mon	0	ista	s
+illatiivi_mon	0	ihin	s
+adessiivi_mon	0	illa	s
+ablatiivi_mon	0	ilta	s
+allatiivi_mon	0	ille	s
+abessiivi_mon	0	itta	s	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 4 akateemikko
 class: subst-o3
 match-word: kkO
@@ -56,7 +138,7 @@ illatiivi		([aeiou])	(1)(1)n	s
 adessiivi		0	lla	w
 ablatiivi		0	lta	w
 allatiivi		0	lle	w
-abessiivi		0	tta	w
+abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	0	jen	s
 genetiivi_mon	0	iden	w
@@ -99,7 +181,7 @@ illatiivi		([aeiou])	(1)(1)n	s
 adessiivi		0	lla	w
 ablatiivi		0	lta	w
 allatiivi		0	lle	w
-abessiivi		0	tta	w
+abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	0	en	s
 partitiivi_mon	i	eja	s
@@ -138,7 +220,7 @@ illatiivi		([aeiou])	(1)(1)n	s
 adessiivi		0	lla	w
 ablatiivi		0	lta	w
 allatiivi		0	lle	w
-abessiivi		0	tta	w
+abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	0	jen	s
 genetiivi_mon	0	in	s	ps=f,prio=2
@@ -178,7 +260,7 @@ illatiivi		([aeiou])	(1)(1)n	s
 adessiivi		0	lla	w
 ablatiivi		0	lta	w
 allatiivi		0	lle	w
-abessiivi		0	tta	w
+abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	a	ien	s
 genetiivi_mon	0	ai	s	ps=f,prio=2
@@ -201,7 +283,7 @@ end: class
 
 # Kotus 27 käsi
 class: subst-si1
-match-word: Vsi$
+match-word: Vsi
 consonant-gradation: -
 group: t
 transform-group: e
@@ -219,7 +301,7 @@ illatiivi		si	teen	s
 adessiivi		si	della	s
 ablatiivi		si	delta	s
 allatiivi		si	delle	s
-abessiivi		si	detta	s
+abessiivi		si	detta	s	ps=f
 nominatiivi_mon	si	det	s	ps=f
 genetiivi_mon	0	en	s
 genetiivi_mon	si	tten	s	prio=2
