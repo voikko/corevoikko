@@ -1,6 +1,88 @@
+# Kotus 1 talo
+class: subst-p
+match-word: C[eOU]
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	jen	s
+partitiivi_mon	0	ja	s
+translatiivi_mon	0	iksi	w	ps=f
+translatiivi_mon	0	ikse	w	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	w
+elatiivi_mon	0	ista	w
+illatiivi_mon	0	ihin	s
+adessiivi_mon	0	illa	w
+ablatiivi_mon	0	ilta	w
+allatiivi_mon	0	ille	w
+abessiivi_mon	0	itta	w	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 4 akateemikko
+class: subst-o3
+match-word: kkO
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	jen	s
+genetiivi_mon	0	iden	w
+genetiivi_mon	0	itten	w	prio=2
+partitiivi_mon	0	ja	s
+partitiivi_mon	0	ita	w
+translatiivi_mon	0	iksi	w	ps=f
+translatiivi_mon	0	ikse	w	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	w
+elatiivi_mon	0	ista	w
+illatiivi_mon	0	ihin	s
+illatiivi_mon	0	ihin	w
+adessiivi_mon	0	illa	w
+ablatiivi_mon	0	ilta	w
+allatiivi_mon	0	ille	w
+abessiivi_mon	0	itta	w	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 5 patti
 class: subst-p
-match-word: VA
+match-word: Vi
 consonant-gradation: sw
 group: t
 transform-group: e
@@ -33,6 +115,86 @@ allatiivi_mon	i	eille	w
 abessiivi_mon	i	eitta	w	ps=f
 komitatiivi_mon	i	eine	s	ps=r
 instruktiivi_mon	i	ein	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 8 polle
+class: subst-e3
+match-word: CCe
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	jen	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	0	ja	s
+translatiivi_mon	0	iksi	w	ps=f
+translatiivi_mon	0	ikse	w	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	w
+elatiivi_mon	0	ista	w
+illatiivi_mon	0	ihin	s
+adessiivi_mon	0	illa	w
+ablatiivi_mon	0	ilta	w
+allatiivi_mon	0	ille	w
+abessiivi_mon	0	itta	w	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 10 luokka
+class: subst-p
+match-word: VA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	a	ien	s
+genetiivi_mon	0	ai	s	ps=f,prio=2
+partitiivi_mon	a	ia	s
+translatiivi_mon	a	iksi	w	ps=f
+translatiivi_mon	a	ikse	w	ps=r
+essiivi_mon	a	ina	s
+inessiivi_mon	a	issa	w
+elatiivi_mon	a	ista	w
+illatiivi_mon	a	iin	s
+adessiivi_mon	a	illa	w
+ablatiivi_mon	a	ilta	w
+allatiivi_mon	a	ille	w
+abessiivi_mon	a	itta	w	ps=f
+komitatiivi_mon	a	ine	s	ps=r
+instruktiivi_mon	a	in	w	ps=f
 end: rules
 end: class
 
