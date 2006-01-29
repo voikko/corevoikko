@@ -201,6 +201,46 @@ end: rules
 end: class
 
 
+# Kotus 7 lampi
+class: subst-i2
+match-word: i
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	w
+partitiivi	i	ea	s
+translatiivi	i	eksi	w	ps=f
+translatiivi	i	ekse	w	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	w
+elatiivi		i	esta	w
+illatiivi		i	een	s
+adessiivi		i	ella	w
+ablatiivi		i	elta	w
+allatiivi		i	elle	w
+abessiivi		i	etta	w	ps=f
+nominatiivi_mon	i	et	w	ps=f
+genetiivi_mon	0	en	s
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	w	ps=f
+translatiivi_mon	0	kse	w	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	w
+elatiivi_mon	0	sta	w
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	w
+ablatiivi_mon	0	lta	w
+allatiivi_mon	0	lle	w
+abessiivi_mon	0	tta	w	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	in	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 8 polle
 class: subst-e3
 match-word: CCe
@@ -241,6 +281,46 @@ end: rules
 end: class
 
 
+# Kotus 9 kissa
+class: subst-a2
+match-word: a
+consonant-gradation: sw
+group: t
+transform-group: -
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		0	an	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	a	ojen	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	oja	s
+translatiivi_mon	a	oiksi	w	ps=f
+translatiivi_mon	a	oikse	w	ps=r
+essiivi_mon	a	oina	s
+inessiivi_mon	a	oissa	w
+elatiivi_mon	a	oista	w
+illatiivi_mon	a	oihin	s
+adessiivi_mon	a	oilla	w
+ablatiivi_mon	a	oilta	w
+allatiivi_mon	a	oille	w
+abessiivi_mon	a	oitta	w	ps=f
+komitatiivi_mon	a	oine	s	ps=r
+instruktiivi_mon	a	oin	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 10 luokka
 class: subst-p
 match-word: VA
@@ -277,6 +357,47 @@ allatiivi_mon	a	ille	w
 abessiivi_mon	a	itta	w	ps=f
 komitatiivi_mon	a	ine	s	ps=r
 instruktiivi_mon	a	in	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 12 lattia
+class: subst-lattia
+match-word: A
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	s
+partitiivi	0	a	s
+translatiivi	0	ksi	s	ps=f
+translatiivi	0	kse	s	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	s
+elatiivi		0	sta	s
+illatiivi		0	an	s
+adessiivi		0	lla	s
+ablatiivi		0	lta	s
+allatiivi		0	lle	s
+abessiivi		0	tta	s	ps=f
+nominatiivi_mon	0	t	s	ps=f
+genetiivi_mon	a	oiden	s
+genetiivi_mon	a	oitten	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	oita	s
+translatiivi_mon	a	oiksi	s	ps=f
+translatiivi_mon	a	oikse	s	ps=r
+essiivi_mon	a	oina	s
+inessiivi_mon	a	oissa	s
+elatiivi_mon	a	oista	s
+illatiivi_mon	a	oihin	s
+adessiivi_mon	a	oilla	s
+ablatiivi_mon	a	oilta	s
+allatiivi_mon	a	oille	s
+abessiivi_mon	a	oitta	s	ps=f
+komitatiivi_mon	a	oine	s	ps=r
+instruktiivi_mon	a	oin	s	ps=f
 end: rules
 end: class
 
