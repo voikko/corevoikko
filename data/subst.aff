@@ -402,6 +402,93 @@ end: rules
 end: class
 
 
+# Kotus 14 puolukka
+class: subst-a3
+match-word: (?:kk|pp|tt)A
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		0	an	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	a	oiden	w
+genetiivi_mon	a	oitten	w	prio=2
+genetiivi_mon	a	ojen	s	prio=2
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	oita	w
+partitiivi_mon	a	oja	s	prio=2
+translatiivi_mon	a	oiksi	w	ps=f
+translatiivi_mon	a	oikse	w	ps=r
+essiivi_mon	a	oina	w
+inessiivi_mon	a	oissa	w
+elatiivi_mon	a	oista	w
+illatiivi_mon	a	oihin	w
+illatiivi_mon	a	oihin	s	prio=2
+adessiivi_mon	a	oilla	w
+ablatiivi_mon	a	oilta	w
+allatiivi_mon	a	oille	w
+abessiivi_mon	a	oitta	w	ps=f
+komitatiivi_mon	a	oine	w	ps=r
+instruktiivi_mon	a	oin	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 15 hopea
+class: subst-ea
+match-word: eA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	s
+partitiivi	0	a	s
+partitiivi	0	ta	s	prio=2
+translatiivi	0	ksi	s	ps=f
+translatiivi	0	kse	s	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	s
+elatiivi		0	sta	s
+illatiivi		0	an	s
+adessiivi		0	lla	s
+ablatiivi		0	lta	s
+allatiivi		0	lle	s
+abessiivi		0	tta	s	ps=f
+nominatiivi_mon	0	t	s	ps=f
+genetiivi_mon	a	iden	s
+genetiivi_mon	a	itten	s	prio=2
+genetiivi_mon	0	in	s	prio=3
+partitiivi_mon	a	ita	s
+translatiivi_mon	a	iksi	s	ps=f
+translatiivi_mon	a	ikse	s	ps=r
+essiivi_mon	a	ina	s
+inessiivi_mon	a	issa	s
+elatiivi_mon	a	ista	s
+illatiivi_mon	a	isiin	s
+illatiivi_mon	a	ihin	s	prio=2
+adessiivi_mon	a	illa	s
+ablatiivi_mon	a	ilta	s
+allatiivi_mon	a	ille	s
+abessiivi_mon	a	itta	s	ps=f
+komitatiivi_mon	a	ine	s	ps=r
+instruktiivi_mon	a	in	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 27 käsi
 class: subst-si1
 match-word: Vsi
@@ -439,5 +526,46 @@ allatiivi_mon	0	lle	s
 abessiivi_mon	0	tta	s	ps=f
 komitatiivi_mon	0	ne	s	ps=r
 instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 39 ajatus
+class: subst-p
+match-word: Vs
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	s	kse	s	ps=r
+genetiivi		s	ksen	s
+partitiivi	0	ta	s
+translatiivi	s	kseksi	s	ps=f
+translatiivi	s	ksekse	s	ps=r
+essiivi		s	ksena	s
+inessiivi		s	ksessa	s
+elatiivi		s	ksesta	s
+illatiivi		s	kseen	s
+adessiivi		s	ksella	s
+ablatiivi		s	kselta	s
+allatiivi		s	kselle	s
+abessiivi		s	ksetta	s	ps=f
+nominatiivi_mon	s	kset	s	ps=f
+genetiivi_mon	0	ten	s
+genetiivi_mon	s	ksien	s	prio=2
+partitiivi_mon	s	ksia	s
+translatiivi_mon	s	ksiksi	s	ps=f
+translatiivi_mon	s	ksikse	s	ps=r
+essiivi_mon	s	ksina	s
+inessiivi_mon	s	ksissa	s
+elatiivi_mon	s	ksista	s
+illatiivi_mon	s	ksiin	s
+adessiivi_mon	s	ksilla	s
+ablatiivi_mon	s	ksilta	s
+allatiivi_mon	s	ksille	s
+abessiivi_mon	s	ksitta	s	ps=f
+komitatiivi_mon	s	ksine	s	ps=r
+instruktiivi_mon	s	ksin	s	ps=f
 end: rules
 end: class
