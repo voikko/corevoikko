@@ -161,17 +161,29 @@ def regex_to_hunspell(exp, repl):
 		affix = repl
 		rulelist.append((strip_str, affix, condition))
 		return rulelist
-	m = re.compile("^((?:[a-z])*)\\(\\[((?:[a-z])*)\\]\\)$").match(exp)
-	if m != None: # exp is of form 'abc([def])'
+	m = re.compile("^((?:[a-z])*)\\(\\[((?:[a-z])*)\\]\\)((?:[a-z])*)$").match(exp)
+	if m != None: # exp is of form 'ab([cd])ef'
 		start_letters = m.group(1)
 		alt_letters = m.group(2)
+		end_letters = m.group(3)
 		for alt_char in alt_letters:
-			strip_str = start_letters + alt_char
-			condition = start_letters + alt_char
+			strip_str = start_letters + alt_char + end_letters
+			condition = start_letters + alt_char + end_letters
 			affix = repl.replace('(1)', alt_char)
 			rulelist.append((strip_str, affix, condition))
 		return rulelist
-	print 'Unsupported regular expression: exp=\'' + exp + ', repl=\'' + repl
+	m = re.compile("^((?:[a-z])*)\\[((?:[a-z])*)\\]((?:[a-z])*)$").match(exp)
+	if m != None: # exp is of form 'ab[cd]ef'
+		start_letters = m.group(1)
+		alt_letters = m.group(2)
+		end_letters = m.group(3)
+		for alt_char in alt_letters:
+			strip_str = start_letters + alt_char + end_letters
+			condition = start_letters + alt_char + end_letters
+			affix = repl
+			rulelist.append((strip_str, affix, condition))
+		return rulelist
+	print 'Unsupported regular expression: exp=\'' + exp + '\', repl=\'' + repl + '\''
 	sys.exit(1)
 
 
