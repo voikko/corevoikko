@@ -489,6 +489,129 @@ end: rules
 end: class
 
 
+# Kotus 23 tuohi
+class: subst-i3
+match-word: Ci
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	s	ps=f
+partitiivi	i	ta	s
+translatiivi	i	eksi	s	ps=f
+translatiivi	i	ekse	s	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	s
+elatiivi		i	esta	s
+illatiivi		i	een	s
+adessiivi		i	ella	s
+ablatiivi		i	elta	s
+allatiivi		i	elle	s
+abessiivi		i	etta	s	ps=f
+nominatiivi_mon	i	et	s	ps=f
+genetiivi_mon	0	en	s
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 24, 26 huuli
+class: subst-i3b
+match-word: Ci
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	s	ps=f
+partitiivi	i	ta	s
+translatiivi	i	eksi	s	ps=f
+translatiivi	i	ekse	s	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	s
+elatiivi		i	esta	s
+illatiivi		i	een	s
+adessiivi		i	ella	s
+ablatiivi		i	elta	s
+allatiivi		i	elle	s
+abessiivi		i	etta	s	ps=f
+nominatiivi_mon	i	et	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	i	ten	s
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 25 loimi
+class: subst-i4
+match-word: mi
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	s	ps=f
+partitiivi	i	ea	s
+partitiivi	mi	nta	s
+translatiivi	i	eksi	s	ps=f
+translatiivi	i	ekse	s	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	s
+elatiivi		i	esta	s
+illatiivi		i	een	s
+adessiivi		i	ella	s
+ablatiivi		i	elta	s
+allatiivi		i	elle	s
+abessiivi		i	etta	s	ps=f
+nominatiivi_mon	i	et	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	mi	nten	s
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 27 käsi
 class: subst-si1
 match-word: Vsi
@@ -513,6 +636,88 @@ abessiivi		si	detta	s	ps=f
 nominatiivi_mon	si	det	s	ps=f
 genetiivi_mon	0	en	s
 genetiivi_mon	si	tten	s	prio=2
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 28 kansi
+class: subst-si2
+match-word: [nlr]si
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	si	te	s	ps=r
+genetiivi		([nlr])si	(1)(1)en	s	ps=f
+partitiivi	si	tta	s
+translatiivi	([nlr])si	(1)(1)eksi	s	ps=f
+translatiivi	([nlr])si	(1)(1)ekse	s	ps=r
+essiivi		si	tena	s
+inessiivi		([nlr])si	(1)(1)essa	s
+elatiivi		([nlr])si	(1)(1)esta	s
+illatiivi		si	teen	s
+adessiivi		([nlr])si	(1)(1)ella	s
+ablatiivi		([nlr])si	(1)(1)elta	s
+allatiivi		([nlr])si	(1)(1)elle	s
+abessiivi		([nlr])si	(1)(1)etta	s	ps=f
+nominatiivi_mon	([nlr])si	(1)(1)et	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	si	tten	s	prio=2
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 29, 30 lapsi
+class: subst-si3
+match-word: [pt]si
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	s	ps=f
+partitiivi	[pt]si	sta	s
+translatiivi	i	eksi	s	ps=f
+translatiivi	i	ekse	s	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	s
+elatiivi		i	esta	s
+illatiivi		i	een	s
+adessiivi		i	ella	s
+ablatiivi		i	elta	s
+allatiivi		i	elle	s
+abessiivi		i	etta	s	ps=f
+nominatiivi_mon	i	et	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	[pt]si	sten	s
 partitiivi_mon	0	a	s
 translatiivi_mon	0	ksi	s	ps=f
 translatiivi_mon	0	kse	s	ps=r
