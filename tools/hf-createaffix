@@ -199,7 +199,7 @@ def read_option(options, name, default):
 
 # Write an affix class to a file "file". Affix data is given in list of lines "lines". If
 # transformation=='e', back to front vowel transfromation is performed on the data.
-# affixflag is the affix flag to be used for this class.
+# Affixflag is the affix flag to be used for this class.
 # TODO: lines are still assumed to be in back vowel format.
 def write_affix_class(lines, transformation, affixflag, file):
 	linestrings = []
@@ -222,7 +222,7 @@ def write_affix_class(lines, transformation, affixflag, file):
 def write_inflection_class(classinfo, first_affixflag, affixfile):
 	affixflag = first_affixflag
 	if classinfo['group'] == 't': # FIXME: other possibilities
-		if classinfo['gradation'] == 0: # FIXME: other possiblities
+		if classinfo['gradation'] == 0: # no gradation
 			rulelist = []
 			for rule in classinfo['rules']:
 				if len(rule) == 4 or \
@@ -233,10 +233,16 @@ def write_inflection_class(classinfo, first_affixflag, affixfile):
 			if classinfo['tgroup'] == 'e':
 				write_affix_class(rulelist, 'e', affixflag, affixfile)
 				affixflag = next_affix_flag(affixflag)
-		if classinfo['gradation'] == 1: # strong -> weak
+		if classinfo['gradation'] in [1, 2]: # strong <-> weak
+			if classinfo['gradation'] == 1: # strong -> weak
+				orig_grad = 's'
+				trans_grad = 'w'
+			else: # weak -> strong
+				orig_grad = 'w'
+				trans_grad = 's'
 			rulelist = []
 			for rule in classinfo['rules']:
-				if rule[3] == 's' and (len(rule) == 4 or \
+				if rule[3] == orig_grad and (len(rule) == 4 or \
 				   int(read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			write_affix_class(rulelist, '-', affixflag, affixfile)
@@ -246,7 +252,7 @@ def write_inflection_class(classinfo, first_affixflag, affixfile):
 				affixflag = next_affix_flag(affixflag)
 			rulelist = []
 			for rule in classinfo['rules']:
-				if rule[3] == 'w' and (len(rule) == 4 or \
+				if rule[3] == trans_grad and (len(rule) == 4 or \
 				   int(read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			write_affix_class(rulelist, '-', affixflag, affixfile)
