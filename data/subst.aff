@@ -735,6 +735,46 @@ end: rules
 end: class
 
 
+# Kotus 32 ien
+class: subst-nivel
+match-word: e
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	0	e	s	ps=r
+genetiivi		0	en	s
+partitiivi	0	ta	w
+translatiivi	0	eksi	s	ps=f
+translatiivi	0	ekse	s	ps=r
+essiivi		0	ena	s
+inessiivi		0	essa	s
+elatiivi		0	esta	s
+illatiivi		0	een	s
+adessiivi		0	ella	s
+ablatiivi		0	elta	s
+allatiivi		0	elle	s
+abessiivi		0	etta	s	ps=f
+nominatiivi_mon	0	et	s	ps=f
+genetiivi_mon	0	ien	s
+partitiivi_mon	0	ia	s
+translatiivi_mon	0	iksi	s	ps=f
+translatiivi_mon	0	ikse	s	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	s
+elatiivi_mon	0	ista	s
+illatiivi_mon	0	iin	s
+adessiivi_mon	0	illa	s
+ablatiivi_mon	0	ilta	s
+allatiivi_mon	0	ille	s
+abessiivi_mon	0	itta	s	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 39 ajatus
 class: subst-p
 match-word: Vs
@@ -772,5 +812,129 @@ allatiivi_mon	s	ksille	s
 abessiivi_mon	s	ksitta	s	ps=f
 komitatiivi_mon	s	ksine	s	ps=r
 instruktiivi_mon	s	ksin	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 40 kansallisuus
+class: subst-us2
+match-word: Us
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	s	te	s	ps=r
+genetiivi		s	den	s	ps=f
+partitiivi	s	tta	s
+translatiivi	s	deksi	s	ps=f
+translatiivi	s	dekse	s	ps=r
+essiivi		s	tena	s
+inessiivi		s	dessa	s
+elatiivi		s	desta	s
+illatiivi		s	teen	s
+adessiivi		s	della	s
+ablatiivi		s	delta	s
+allatiivi		s	delle	s
+abessiivi		s	detta	s	ps=f
+nominatiivi_mon	s	det	s	ps=f
+genetiivi_mon	s	ksien	s
+partitiivi_mon	s	ksia	s
+translatiivi_mon	s	ksiksi	s	ps=f
+translatiivi_mon	s	ksikse	s	ps=r
+essiivi_mon	s	ksina	s
+inessiivi_mon	s	ksissa	s
+elatiivi_mon	s	ksista	s
+illatiivi_mon	s	ksiin	s
+adessiivi_mon	s	ksilla	s
+ablatiivi_mon	s	ksilta	s
+allatiivi_mon	s	ksille	s
+abessiivi_mon	s	ksitta	s	ps=f
+komitatiivi_mon	s	ksine	s	ps=r
+instruktiivi_mon	s	ksin	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 41 rengas
+class: subst-as2
+match-word: [aei]s
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	([aei])s	(1)(1)	s	ps=r
+genetiivi		([aei])s	(1)(1)n	s
+partitiivi	0	ta	w
+translatiivi	([aei])s	(1)(1)ksi	s	ps=f
+translatiivi	([aei])s	(1)(1)kse	s	ps=r
+essiivi		([aei])s	(1)(1)na	s
+inessiivi		([aei])s	(1)(1)ssa	s
+elatiivi		([aei])s	(1)(1)sta	s
+illatiivi		([aei])s	(1)(1)seen	s
+adessiivi		([aei])s	(1)(1)lla	s
+ablatiivi		([aei])s	(1)(1)lta	s
+allatiivi		([aei])s	(1)(1)lle	s
+abessiivi		([aei])s	(1)(1)tta	s	ps=f
+nominatiivi_mon	([aei])s	(1)(1)t	s	ps=f
+genetiivi_mon	s	iden	s
+genetiivi_mon	s	itten	s	prio=2
+partitiivi_mon	s	ita	s
+translatiivi_mon	s	iksi	s	ps=f
+translatiivi_mon	s	ikse	s	ps=r
+essiivi_mon	s	ina	s
+inessiivi_mon	s	issa	s
+elatiivi_mon	s	ista	s
+illatiivi_mon	s	isiin	s
+illatiivi_mon	s	ihin	s	prio=3
+adessiivi_mon	s	illa	s
+ablatiivi_mon	s	ilta	s
+allatiivi_mon	s	ille	s
+abessiivi_mon	s	itta	s	ps=f
+komitatiivi_mon	s	ine	s	ps=r
+instruktiivi_mon	s	in	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 48 aate
+class: subst-e2
+match-word: e
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	0	e	s	ps=r
+genetiivi		0	en	s
+partitiivi	0	tta	w
+translatiivi	0	eksi	s	ps=f
+translatiivi	0	ekse	s	ps=r
+essiivi		0	ena	s
+inessiivi		0	essa	s
+elatiivi		0	esta	s
+illatiivi		0	eseen	s
+adessiivi		0	ella	s
+ablatiivi		0	elta	s
+allatiivi		0	elle	s
+abessiivi		0	etta	s	ps=f
+nominatiivi_mon	0	et	s	ps=f
+genetiivi_mon	0	iden	s
+genetiivi_mon	0	itten	s	prio=2
+partitiivi_mon	0	ita	s
+translatiivi_mon	0	iksi	s	ps=f
+translatiivi_mon	0	ikse	s	ps=r
+essiivi_mon	0	ina	s
+inessiivi_mon	0	issa	s
+elatiivi_mon	0	ista	s
+illatiivi_mon	0	isiin	s
+illatiivi_mon	0	ihin	s	prio=3
+adessiivi_mon	0	illa	s
+ablatiivi_mon	0	ilta	s
+allatiivi_mon	0	ille	s
+abessiivi_mon	0	itta	s	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+instruktiivi_mon	0	in	s	ps=f
 end: rules
 end: class
