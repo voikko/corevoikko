@@ -1,6 +1,6 @@
 # Kotus 1 talo
 class: subst-p
-match-word: C[eOU]
+match-word: C(?:e|O|U)
 consonant-gradation: sw
 group: t
 transform-group: e
@@ -39,7 +39,7 @@ end: class
 
 # Kotus 2 pallero
 class: subst-o2
-match-word: C[OU]
+match-word: C(?:O|U)
 consonant-gradation: -
 group: t
 transform-group: e
@@ -655,7 +655,7 @@ end: class
 
 # Kotus 28 kansi
 class: subst-si2
-match-word: [nlr]si
+match-word: (?:n|l|r)si
 consonant-gradation: -
 group: t
 transform-group: e
@@ -696,7 +696,7 @@ end: class
 
 # Kotus 29, 30 lapsi
 class: subst-si3
-match-word: [pt]si
+match-word: (?:p|t)si
 consonant-gradation: -
 group: t
 transform-group: e
@@ -858,7 +858,7 @@ end: class
 
 # Kotus 41 rengas
 class: subst-as2
-match-word: [aei]s
+match-word: (?:a|e|i)s
 consonant-gradation: ws
 group: t
 transform-group: e
