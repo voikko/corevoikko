@@ -92,7 +92,7 @@ def __read_list_line(file):
 # Read an inflection class from a file. Returns the following dictionary of items:
 # cname: class name
 # match: regular expression that all words in this class must match
-# gradation: consonant gradation type. 0 = none, 1 = strong->weak, 2 = weak->strong
+# gradation: consonant gradation type.
 # group: FIXME: should be t
 # tgroup: FIXME: should be e
 # rules: list of lists containing the inflection rules for this class
@@ -105,7 +105,7 @@ def __read_inflection_class(file):
 		sys.exit(1)
 	cname = header_tuple[1]
 	match = '.*'
-	gradation = 0
+	gradation = hfutils.GRAD_NONE
 	group = 't'
 	tgroup = '-'
 	rules = []
@@ -116,9 +116,9 @@ def __read_inflection_class(file):
 			sys.exit(1)
 		if header_tuple[0] == 'match-word': match = header_tuple[1]
 		if header_tuple[0] == 'consonant-gradation':
-			if header_tuple[1] == '-': gradation = 0
-			if header_tuple[1] == 'sw': gradation = 1
-			if header_tuple[1] == 'ws': gradation = 2
+			if header_tuple[1] == '-': gradation = hfutils.GRAD_NONE
+			if header_tuple[1] == 'sw': gradation = hfutils.GRAD_SW
+			if header_tuple[1] == 'ws': gradation = hfutils.GRAD_WS
 		if header_tuple[0] == 'group':
 			if header_tuple[1] == 't': group = 't'
 			if header_tuple[1] == 'e': group = 'e'
@@ -214,7 +214,7 @@ def __write_affix_class(lines, transformation, affixflag, file):
 def __write_inflection_class(classinfo, first_affixflag, affixfile):
 	affixflag = first_affixflag
 	if classinfo['group'] == 't': # FIXME: other possibilities
-		if classinfo['gradation'] == 0: # no gradation
+		if classinfo['gradation'] == hfutils.GRAD_NONE:
 			rulelist = []
 			for rule in classinfo['rules']:
 				if len(rule) == 4 or \
@@ -225,11 +225,11 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 			if classinfo['tgroup'] == 'e':
 				__write_affix_class(rulelist, 'e', affixflag, affixfile)
 				affixflag = __next_affix_flag(affixflag)
-		if classinfo['gradation'] in [1, 2]: # strong <-> weak
-			if classinfo['gradation'] == 1: # strong -> weak
+		if classinfo['gradation'] in [hfutils.GRAD_SW, hfutils.GRAD_WS]:
+			if classinfo['gradation'] == hfutils.GRAD_SW:
 				orig_grad = 's'
 				trans_grad = 'w'
-			else: # weak -> strong
+			else:
 				orig_grad = 'w'
 				trans_grad = 's'
 			rulelist = []
@@ -253,6 +253,16 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 				__write_affix_class(rulelist, 'e', affixflag, affixfile)
 				affixflag = __next_affix_flag(affixflag)
 	return affixflag
+
+
+# Translates word match pattern to a Perl-compatible regular expression
+def __word_pattern_to_pcre(pattern):
+	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö)')
+	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š)')
+	pattern = pattern.replace('A', u'(?:a|ä)')
+	pattern = pattern.replace('O', u'(?:o|ö)')
+	pattern = pattern.replace('U', u'(?:u|y)')
+	return '.*' + pattern + '$'
 
 
 # Public functions
@@ -289,5 +299,41 @@ def write_noun_classes(noun_classes, file):
 		affixflag = __write_inflection_class(noun_class, affixflag, file)
 
 
-
+# Returns a list of inflected forms for a given word or None, if word cannot be
+# inflected in the given class.
+def inflect_noun(word, grad_exact_type, noun_class):
+	word_grad = hfutils.apply_gradation(word, grad_exact_type)
+	if word_grad == None: return None
+	if grad_exact_type == '-': grad_type = hfutils.GRAD_NONE
+	elif grad_exact_type in ['av1', 'av3', 'av5']: grad_type = hfutils.GRAD_SW
+	elif grad_exact_type in ['av2', 'av4', 'av6']: grad_type = hfutils.GRAD_WS
+	if grad_type != hfutils.GRAD_NONE and grad_type != noun_class['gradation']: return None
+	if not re.compile(__word_pattern_to_pcre(noun_class['match'])).match(word): return None
+	inflection_list = []
+	if hfutils.vowel_type(word) in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
+	   noun_class['group'] != 't': return None # FIXME
+	if hfutils.vowel_type(word) in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
+	   noun_class['tgroup'] != 'e': return None # FIXME
+	for rule in noun_class['rules']:
+		if len(rule) == 5:
+			if __read_option(rule[4], 'ps', 'b') == 'r': continue
+			if int(__read_option(rule[4], 'prio', '1')) > MAX_AFFIX_PRIORITY: continue
+		if rule[3] == 's': word_base = word_grad[0]
+		else: word_base = word_grad[1]
+		hunspell_rules = __regex_to_hunspell(rule[1], rule[2])
+		for hunspell_rule in hunspell_rules:
+			if hunspell_rule[0] != '0': word_base = word_base[:-len(hunspell_rule[0])]
+			if hunspell_rule[1] == '0': affix = ''
+			else: affix = hunspell_rule[1]
+			if hunspell_rule[2] == '.': pattern = ''
+			else: pattern = hunspell_rule[2]
+			if hfutils.vowel_type(word) in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
+			   word_base.endswith(pattern):
+				word_infl = word_base + affix
+				inflection_list.append((rule[0], word_infl))
+			if hfutils.vowel_type(word) in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
+			   word_base.endswith(__convert_tv_ev(pattern)):
+				word_infl = word_base + __convert_tv_ev(affix)
+				inflection_list.append((rule[0], word_infl))
+	return inflection_list
 

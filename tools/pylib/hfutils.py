@@ -20,6 +20,11 @@
 import codecs
 
 
+# Gradation types
+GRAD_NONE = 0
+GRAD_SW = 1
+GRAD_WS = 2
+
 
 # Returns a connection to a vocabulary database (or None, if the database is not available).
 # Connection parameters are read from file .pg_connect_string in the current working directory.
@@ -75,3 +80,84 @@ def remove_comments(line):
 	if comment_start == 0:
 		return ''
 	return line[:comment_start]
+
+
+# Applies given gradation type to given word. Returns a tuple in the form
+# (strong, weak) or None if this is not possible.
+def apply_gradation(word, grad_type):
+	if grad_type == '-': return (word, word)
+	if consonant(word[-1]) and not consonant(word[-2]):
+		if word[-4:-2] == 'ng':
+			return (word[:-4]+'nk'+word[-2:], word)
+		# uvu/yvy->uku/yky not possible?
+		if word[-4:-2] == 'mm':
+			return (word[:-4]+'mp'+word[-2:], word)
+		if word[-4:-2] == 'nn':
+			return (word[:-4]+'nt'+word[-2:], word)
+		if word[-4:-2] == 'll':
+			return (word[:-4]+'lt'+word[-2:], word)
+		if word[-4:-2] == 'rr':
+			return (word[:-4]+'rt'+word[-2:], word)
+		if word[-3] == 'd':
+			return (word[:-3]+'t'+word[-2:], word)
+		if word[-3] in ('t','k','p'):
+			return (word[:-2]+word[-3:], word)
+		if word[-3] == 'v':
+			return (word[:-3]+'p'+word[-2:], word)
+	if grad_type == 'av1':
+		if word[-3:-1] in ('tt','kk','pp'):
+			return (word, word[:-2]+word[-1])
+		if word[-3:-1] == 'mp':
+			return (word, word[:-3]+'mm'+word[-1])
+		if word[-2] == 'p' and not consonant(word[-1]):
+			return (word, word[:-2]+'v'+word[-1])
+		if word[-3:-1] == 'nt':
+			return (word, word[:-3]+'nn'+word[-1])
+		if word[-3:-1] == 'lt':
+			return (word, word[:-3]+'ll'+word[-1])
+		if word[-3:-1] == 'rt':
+			return (word, word[:-3]+'rr'+word[-1])
+		if word[-2] == 't':
+			return (word, word[:-2]+'d'+word[-1])
+		if word[-3:-1] == 'nk':
+			return (word, word[:-3]+'ng'+word[-1])
+		if word[-3:] == 'uku':
+			return (word, word[:-3]+'uvu')
+		if word[-3:] == 'yky':
+			return (word, word[:-3]+'yvy')
+	if grad_type == 'av2':
+		if word[-3:-1] == 'ng':
+			return (word[:-3]+'nk'+word[-1], word)
+		# uvu/yvy->uku/yky not possible?
+		if word[-3:-1] == 'mm':
+			return (word[:-3]+'mp'+word[-1], word)
+		if word[-3:-1] == 'nn':
+			return (word[:-3]+'nt'+word[-1], word)
+		if word[-3:-1] == 'll':
+			return (word[:-3]+'lt'+word[-1], word)
+		if word[-3:-1] == 'rr':
+			return (word[:-3]+'rt'+word[-1], word)
+		if word[-2] == 'd':
+			return (word[:-2]+'t'+word[-1], word)
+		if word[-2] in ('t','k','p'):
+			return (word[:-1]+word[-2:], word)
+		if word[-2] == 'v':
+			return (word[:-2]+'p'+word[-1], word)
+	if grad_type == 'av3': # k -> j
+		if word[-2] == 'k':
+			return (word, word[:-2]+'j'+word[-1])
+	if grad_type == 'av4': # j -> k
+		if word[-2] == 'j':
+			return (word[:-2]+'k'+word[-1], word)
+	if grad_type == 'av5': # k -> -
+		if word[-2] == 'k':
+			if word[-3] == word[-1]: # ruoko, vaaka
+				return (word, word[:-2]+'\''+word[-1])
+			else:
+				return (word, word[:-2]+word[-1])
+	if grad_type == 'av6': # - -> k
+		if consonant(word[-1]): # FIXME: hack
+			return (word[:-2]+'k'+word[-2:], word)
+		else:
+			return (word[:-1]+'k'+word[-1], word)
+	return None
