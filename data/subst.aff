@@ -119,7 +119,7 @@ end: rules
 end: class
 
 
-# Kotus 4 akateemikko
+# Kotus 4 akateemikko (av1 pakollinen)
 class: subst-o3
 match-word: kkO
 consonant-gradation: sw
@@ -164,7 +164,7 @@ end: class
 
 # Kotus 5 patti
 class: subst-p
-match-word: Vi
+match-word: Ci
 consonant-gradation: sw
 group: t
 transform-group: e
@@ -187,7 +187,7 @@ genetiivi_mon	0	en	s
 partitiivi_mon	i	eja	s
 translatiivi_mon	i	eiksi	w	ps=f
 translatiivi_mon	i	eikse	w	ps=r
-essiivi_mon	i	eja	s
+essiivi_mon	i	eina	s
 inessiivi_mon	i	eissa	w
 elatiivi_mon	i	eista	w
 illatiivi_mon	i	eihin	s
@@ -236,7 +236,7 @@ ablatiivi_mon	0	lta	w
 allatiivi_mon	0	lle	w
 abessiivi_mon	0	tta	w	ps=f
 komitatiivi_mon	0	ne	s	ps=r
-instruktiivi_mon	0	in	w	ps=f
+instruktiivi_mon	0	n	w	ps=f
 end: rules
 end: class
 
@@ -323,7 +323,7 @@ end: class
 
 # Kotus 10 luokka
 class: subst-p
-match-word: VA
+match-word: CA
 consonant-gradation: sw
 group: t
 transform-group: e
@@ -343,7 +343,7 @@ allatiivi		0	lle	w
 abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	a	ien	s
-genetiivi_mon	0	ai	s	ps=f,prio=2
+genetiivi_mon	0	in	s	ps=f,prio=2
 partitiivi_mon	a	ia	s
 translatiivi_mon	a	iksi	w	ps=f
 translatiivi_mon	a	ikse	w	ps=r
@@ -737,7 +737,7 @@ end: class
 
 # Kotus 32 ien
 class: subst-nivel
-match-word: e
+match-word: VC
 consonant-gradation: ws
 group: t
 transform-group: e
