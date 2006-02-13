@@ -20,6 +20,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import hfaffix
+import hfutils
 import sys
 
 # Data files
@@ -46,8 +47,8 @@ else:
 noun_classes = hfaffix.read_noun_classes(NOUN_AFFIX_FILE)
 for noun_class in noun_classes:
 	if noun_class['cname'] != infclass_main: continue
-	#print noun_class
 	inflected_words = hfaffix.inflect_noun(word, grad_type, noun_class)
 	if inflected_words == None: continue
 	for inflected_word in inflected_words:
-		print inflected_word[0].ljust(20)+inflected_word[1]
+		if hfutils.read_option(inflected_word[2], 'ps', '-') != 'r':
+			print inflected_word[0].ljust(20)+inflected_word[1]

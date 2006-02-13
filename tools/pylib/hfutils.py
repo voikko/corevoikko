@@ -161,3 +161,12 @@ def apply_gradation(word, grad_type):
 		else:
 			return (word[:-1]+'k'+word[-1], word)
 	return None
+
+
+# Read an option "name" from string "options". If it does not exist, then default will be returned.
+def read_option(options, name, default):
+	parts = options.split(',');
+	for part in parts:
+		nameval = part.split('=')
+		if len(nameval) == 2 and nameval[0] == name: return nameval[1]
+	return default

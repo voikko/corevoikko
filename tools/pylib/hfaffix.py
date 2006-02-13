@@ -180,15 +180,6 @@ def __regex_to_hunspell(exp, repl):
 
 
 
-# Read an option "name" from string "option". If it does not exist, then default will be returned.
-def __read_option(options, name, default):
-	parts = options.split(',');
-	for part in parts:
-		nameval = part.split('=')
-		if len(nameval) == 2 and nameval[0] == name: return nameval[1]
-	return default
-
-
 # Write an affix class to a file "file". Affix data is given in list of lines "lines". If
 # transformation=='e', back to front vowel transfromation is performed on the data.
 # Affixflag is the affix flag to be used for this class.
@@ -198,7 +189,7 @@ def __write_affix_class(lines, transformation, affixflag, file):
 	pos_suffixes = { '-':'/A0', 'f':'', 'r':'/A0F0' }
 	for line in lines:
 		possufx = '-'
-		if len(line) == 5: possufx = __read_option(line[4], 'ps', '-')
+		if len(line) == 5: possufx = hfutils.read_option(line[4], 'ps', '-')
 		for rule in __regex_to_hunspell(line[1], line[2]):
 			linestring = 'SFX ' + affixflag + ' ' + rule[0] + ' ' + rule[1] + \
 			             pos_suffixes[possufx] + ' ' + rule[2] + ' +' + line[0].upper()
@@ -218,7 +209,7 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 			rulelist = []
 			for rule in classinfo['rules']:
 				if len(rule) == 4 or \
-				   int(__read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY:
+				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY:
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
 			affixflag = __next_affix_flag(affixflag)
@@ -235,7 +226,7 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 			rulelist = []
 			for rule in classinfo['rules']:
 				if rule[3] == orig_grad and (len(rule) == 4 or \
-				   int(__read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
+				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
 			affixflag = __next_affix_flag(affixflag)
@@ -245,7 +236,7 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 			rulelist = []
 			for rule in classinfo['rules']:
 				if rule[3] == trans_grad and (len(rule) == 4 or \
-				   int(__read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
+				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
 			affixflag = __next_affix_flag(affixflag)
@@ -283,7 +274,7 @@ def write_affix_base(inputfile_name, outputfile):
 # Reads and returns a list of noun classes from a file named file_name.
 def read_noun_classes(file_name):
 	noun_classes = []
-	inputfile=codecs.open(file_name, 'r', 'utf-8')
+	inputfile = codecs.open(file_name, 'r', 'utf-8')
 	infclass = __read_inflection_class(inputfile)
 	while infclass != None:
 		noun_classes.append(infclass)
@@ -300,7 +291,8 @@ def write_noun_classes(noun_classes, file):
 
 
 # Returns a list of inflected forms for a given word or None, if word cannot be
-# inflected in the given class.
+# inflected in the given class. The list will contain tuples in the form
+# (form_name, word, flags).
 def inflect_noun(word, grad_exact_type, noun_class):
 	word_grad = hfutils.apply_gradation(word, grad_exact_type)
 	if word_grad == None: return None
@@ -316,24 +308,26 @@ def inflect_noun(word, grad_exact_type, noun_class):
 	   noun_class['tgroup'] != 'e': return None # FIXME
 	for rule in noun_class['rules']:
 		if len(rule) == 5:
-			if __read_option(rule[4], 'ps', 'b') == 'r': continue
-			if int(__read_option(rule[4], 'prio', '1')) > MAX_AFFIX_PRIORITY: continue
+			optflags = rule[4]
+			if int(hfutils.read_option(optflags, 'prio', '1')) > MAX_AFFIX_PRIORITY: continue
+		else: optflags = ""
 		if rule[3] == 's': word_base = word_grad[0]
 		else: word_base = word_grad[1]
 		hunspell_rules = __regex_to_hunspell(rule[1], rule[2])
 		for hunspell_rule in hunspell_rules:
-			if hunspell_rule[0] != '0': word_base = word_base[:-len(hunspell_rule[0])]
+			if hunspell_rule[0] == '0': word_stripped_base = word_base
+			else: word_stripped_base = word_base[:-len(hunspell_rule[0])]
 			if hunspell_rule[1] == '0': affix = ''
 			else: affix = hunspell_rule[1]
 			if hunspell_rule[2] == '.': pattern = ''
 			else: pattern = hunspell_rule[2]
 			if hfutils.vowel_type(word) in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
 			   word_base.endswith(pattern):
-				word_infl = word_base + affix
-				inflection_list.append((rule[0], word_infl))
+				word_infl = word_stripped_base + affix
+				inflection_list.append((rule[0], word_infl, optflags))
 			if hfutils.vowel_type(word) in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
 			   word_base.endswith(__convert_tv_ev(pattern)):
-				word_infl = word_base + __convert_tv_ev(affix)
-				inflection_list.append((rule[0], word_infl))
+				word_infl = word_stripped_base + __convert_tv_ev(affix)
+				inflection_list.append((rule[0], word_infl, optflags))
 	return inflection_list
 
