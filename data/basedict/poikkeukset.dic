@@ -1,0 +1,13 @@
+vaaka	subst-poik	base=subst-a2-av5
+begin exceptions
+del	translatiivi_mon
+add	translatiivi_mon	vaaoiksi	ps=f
+add	translatiivi_mon	vaaoikse	ps=r
+repl	inessiivi_mon	vaaoissa
+repl	elatiivi_mon	vaaoista
+repl	adessiivi_mon	vaaoilla
+repl	ablatiivi_mon	vaaoilta
+repl	allatiivi_mon	vaaoille
+repl	abessiivi_mon	vaaoitta	ps=f
+repl	instruktiivi_mon	vaaoin	ps=f
+end exceptions
