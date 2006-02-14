@@ -21,27 +21,33 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import hfaffix
+import hfdict
+import hfutils
 import codecs
 import sys
 
 # Input files
 BASE_AFFIX_FILE = 'orig_data/pohja.aff'
 NOUN_AFFIX_FILE = 'orig_data/subst.aff'
+DICTIONARY_FILES = ['orig_data/basedict/partikkelit.dic']
 
 # Output files
 HUNSPELL_AFFIX_FILE = 'gen_data/fi_FI.aff'
+HUNSPELL_DICTIONARY_FILE = 'gen_data/fi_FI.dic'
 
 
 print u'Reading noun classes ...'
 noun_classes = hfaffix.read_noun_classes(NOUN_AFFIX_FILE)
 
 print u'Copying base affix file ...'
-outputfile=codecs.open(HUNSPELL_AFFIX_FILE, 'w', 'iso-8859-15')
+outputfile=codecs.open(HUNSPELL_AFFIX_FILE, 'w', hfutils.OUTPUT_ENCODING)
 hfaffix.write_affix_base(BASE_AFFIX_FILE, outputfile)
 
 print u'Writing noun affix classes ...'
 hfaffix.write_noun_classes(noun_classes, outputfile)
 outputfile.close()
 
+print u'Writing dictionary file ...'
+hfdict.write_dictionary(DICTIONARY_FILES, HUNSPELL_DICTIONARY_FILE, noun_classes)
 
 

@@ -19,6 +19,9 @@
 
 import codecs
 
+# Text encodings
+INPUT_ENCODING = 'UTF-8'
+OUTPUT_ENCODING = 'ISO-8859-15'
 
 # Gradation types
 GRAD_NONE = 0

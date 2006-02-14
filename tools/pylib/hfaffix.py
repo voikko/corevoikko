@@ -1,9 +1,8 @@
-#!/usr/bin/env python2.4
 # -*- coding: utf-8 -*-
 
 # Copyright 2005-2006 Harri Pitkänen (hatapitk@cc.jyu.fi)
 # Library for reading and writing affix data for Hunspell-fi -project.
-# This program requires Python version 2.4 or newer.
+# This library requires Python version 2.4 or newer.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,14 +49,6 @@ def __next_affix_flag(previous_flag):
 def __convert_tv_ev(text):
 	return text.replace('a', u'ä').replace('o', u'ö').replace('u', u'y').replace('A0', 'A1')
 
-# Write an affix class to a file.
-#def __write_affix_class(lines, file):
-#	lines[0] = lines[0].replace('$$', `len(lines)-1`)
-#	for r in lines:
-#		pRow = ''
-#		for s in r.split():
-#			pRow = pRow + s + ' '
-#		file.write(pRow.strip()+'\n')
 
 # Read header line from a file. Return value will be a tuple in the form (name, value) or
 # None if the end of file was reached.
@@ -212,9 +203,13 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY:
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
+			classinfo['affixflag_b_s'] = affixflag
+			classinfo['affixflag_b_w'] = affixflag
 			affixflag = __next_affix_flag(affixflag)
 			if classinfo['tgroup'] == 'e':
 				__write_affix_class(rulelist, 'e', affixflag, affixfile)
+				classinfo['affixflag_f_s'] = affixflag
+				classinfo['affixflag_f_w'] = affixflag
 				affixflag = __next_affix_flag(affixflag)
 		if classinfo['gradation'] in [hfutils.GRAD_SW, hfutils.GRAD_WS]:
 			if classinfo['gradation'] == hfutils.GRAD_SW:
@@ -229,9 +224,11 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
+			classinfo['affixflag_b_'+orig_grad] = affixflag
 			affixflag = __next_affix_flag(affixflag)
 			if classinfo['tgroup'] == 'e':
 				__write_affix_class(rulelist, 'e', affixflag, affixfile)
+				classinfo['affixflag_f_'+orig_grad] = affixflag
 				affixflag = __next_affix_flag(affixflag)
 			rulelist = []
 			for rule in classinfo['rules']:
@@ -239,9 +236,11 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
+			classinfo['affixflag_f_'+trans_grad] = affixflag
 			affixflag = __next_affix_flag(affixflag)
 			if classinfo['tgroup'] == 'e':
 				__write_affix_class(rulelist, 'e', affixflag, affixfile)
+				classinfo['affixflag_b_'+trans_grad] = affixflag
 				affixflag = __next_affix_flag(affixflag)
 	return affixflag
 
@@ -261,7 +260,7 @@ def __word_pattern_to_pcre(pattern):
 # Writes the contents of file named inputfile_name to a file descriptor outputfile.
 # Comments are removed.
 def write_affix_base(inputfile_name, outputfile):
-	inputfile=codecs.open(inputfile_name, 'r', 'utf-8')
+	inputfile=codecs.open(inputfile_name, 'r', hfutils.INPUT_ENCODING)
 	fileCont = True
 	while fileCont:
 		line = inputfile.readline()
@@ -274,7 +273,7 @@ def write_affix_base(inputfile_name, outputfile):
 # Reads and returns a list of noun classes from a file named file_name.
 def read_noun_classes(file_name):
 	noun_classes = []
-	inputfile = codecs.open(file_name, 'r', 'utf-8')
+	inputfile = codecs.open(file_name, 'r', hfutils.INPUT_ENCODING)
 	infclass = __read_inflection_class(inputfile)
 	while infclass != None:
 		noun_classes.append(infclass)

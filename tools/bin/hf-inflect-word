@@ -22,12 +22,14 @@
 import hfaffix
 import hfutils
 import sys
+import locale
 
-# Data files
+
 NOUN_AFFIX_FILE = 'orig_data/subst.aff'
+PARAM_ENCODING = locale.getpreferredencoding()
 
 if len(sys.argv) == 3:
-	word = sys.argv[1]
+	word = unicode(sys.argv[1], PARAM_ENCODING)
 	infclass = sys.argv[2]
 else:
 	print 'Usage: hf-inflect-word word inflactio_class'
