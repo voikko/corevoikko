@@ -27,30 +27,6 @@ import gzip
 DICTLEVEL=8
 
 
-# PÄÄOHJELMAAN
-# Sanaston vieminen tietokantaan tapahtuu psql-komennolla
-# \copy sana(sana, luokka) from 'tiedosto-jossa-uusia-sanoja'
-
-#connection = hfutils.get_db()
-#if connection != None:
-#	print 'Haetaan sanoja tietokannasta...'
-#	tulokset = connection.query('select sana, luokka, parametri, kommentti from sana order by sana, luokka').getresult()
-#	#outputfile = codecs.open('src/fi_FI-perus.dic', 'w', 'utf-8')
-#	outputfile = gzip.GzipFile('src/fi_FI-perus.dic.gz', 'wb');
-#	rivi = u'#HF_DICTLEVEL='+`HF_DICTLEVEL`+'\n'
-#	outputfile.write(rivi.encode('utf-8'))
-#	for tulos in tulokset:
-#		r_sana = tulos[0].strip().decode('utf-8')
-#		r_luokka = tulos[1].strip().decode('utf-8')
-#		if tulos[2] == None: r_parametri = ''
-#		else: r_parametri = tulos[2].strip().decode('utf-8')
-#		if tulos[3] == None: r_kommentti = ''
-#		else: r_kommentti = '#'+tulos[3].strip().decode('utf-8')
-#		rivi = r_sana+'\t'+r_luokka+'\t'+r_parametri+'\t'+r_kommentti+'\n'
-#		outputfile.write(rivi.encode('utf-8'))
-#	outputfile.close()
-#	connection.close()
-
 
 # Returns a tuple (word_class, inflection_class, gradation_class) from a given
 # specification, or None if specification is malformed.
@@ -66,7 +42,7 @@ def __get_word_classification(class_spec):
 		gclass = '-'
 	else: return None
 	if not gclass in ['-', 'av1', 'av2', 'av3', 'av4', 'av5', 'av6']: return None
-	if not wclass in ['part', 'subst', 'adj', 'pron', 'numer', 'verbi']: return None
+	if not wclass in ['part', 'subst', 'adj', 'pron', 'numer', 'verbi', 'nimi']: return None
 	return (wclass, iclass, gclass)
 
 
@@ -258,33 +234,6 @@ class Verbiluokka:
 				return True
 		return False
 
-def lue_substluokat():
-	inputfile = codecs.open(SUBST_LUOKAT, 'r', 'utf-8')
-	tiedJatkuu = True
-	substluokat = []
-	while tiedJatkuu:
-		rivi = inputfile.readline()
-		tiedJatkuu = rivi.endswith('\n')
-		rivi = hfutils.poistakommentit(rivi).strip().replace('\t\t\t', '\t').replace('\t\t', '\t')
-		osat=rivi.split('\t')
-		if len(rivi) == 0:
-			continue
-		if len(osat) != 6:
-			print 'Virhe: lue_subst_luokat: virheellinen tiedosto.'
-			sys.exit(1)
-		sluokka = Substluokka()
-		sluokka.nimi = osat[0]
-		for avl in osat[1].split(','):
-			if avl == '-': sluokka.avluokat.append('')
-			else: sluokka.avluokat.append(avl)
-		for lop in osat[2].split(','): sluokka.loput.append(lop)
-		sluokka.voktyyppi = osat[3]
-		sluokka.vahva_v = osat[4]
-		if osat[5] == '-': sluokka.heikko_v = ''
-		else: sluokka.heikko_v = osat[5]
-		substluokat.append(sluokka)
-	inputfile.close()
-	return substluokat
 
 def lue_adjluokat():
 	inputfile = codecs.open(ADJ_LUOKAT, 'r', 'utf-8')
@@ -417,16 +366,6 @@ def dictoutput(osat, lista, substluokat, adjluokat, verbiluokat):
 					break
 	if lisattylistaan:
 		return
-	if typ=='part-prep':
-		if len(osat)==3:
-			lista.append((sana+osat[2], "[PREP]"))
-			return
-		else:
-			lista.append((sana, "[PREP]"))
-			return
-	if typ=='part-erill':
-		lista.append((sana, "[PART_ERILLINEN]"))
-		return
 	if typ=='numer':
 		if len(osat)==3:
 			lista.append((sana+osat[2], "[NUMER]"))
@@ -441,11 +380,6 @@ def dictoutput(osat, lista, substluokat, adjluokat, verbiluokat):
 		else:
 			lista.append((sana, "[PRON]"))
 			return
-	if typ=='merkkisana':
-		return
-	if typ in ('subst-luokitt', 'adj-luokitt', 'subst-apua', 'nimi-luokitt', 'nimi-apua', 'adj-apua', 'part-luokitt'):
-		lista.append((sana, '[LUOKITTELEMATON]'))
-		return
 	print u'Virhe: Ei löydy affiksisääntöä sanalle '+sana+', tyyppi '+typ
 	sys.exit(1)
 
@@ -457,18 +391,45 @@ def __append_to_wordlist(parts, word_list, input_file, noun_classes):
 	class_fields = __get_word_classification(parts[1])
 	if class_fields == None:
 		print 'Malformed word class: ' + parts[1]
-		sys.exit(1)
+		return
 	word = parts[0]
 	if class_fields[0] == 'subst':
+		# TODO
+		return
+	if class_fields[0] == 'nimi':
+		# TODO
+		return
+	if class_fields[0] == 'adj':
+		# TODO
+		return
+	if class_fields[0] == 'verbi':
+		# TODO
+		return
+	if class_fields[0] == 'pron':
+		# TODO
+		return
+	if class_fields[0] == 'numer':
 		# TODO
 		return
 	if class_fields[0] == 'part':
 		if class_fields[1] == 'erill':
 			word_list.append((word, '[PART_ERILLINEN]'))
 			return
+		if class_fields[1] == 'prep':
+			if hfutils.read_option(parts[2], 'ps', '0') == '1':
+				vtype = hfutils.vowel_type(word)
+				if vtype in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH]:
+					word_list.append((word + '/A0', '[PREP]'))
+				if vtype in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH]:
+					word_list.append((word + '/A1', '[PREP]'))
+			else: word_list.append((word, '[PREP]'))
+			return
 	if class_fields[0] == 'merkkisana':
 		return
-	# TODO: other word classes and error message if an incorrect class was given.
+	if class_fields[1] in ['luokitt', 'apua']:
+		word_list.append((word, '[LUOKITTELEMATON]'))
+		return
+	print 'Incorrect word classification: ' + parts[0] + parts[1]
 
 
 # Appends a list of words from input dictionary input_file_name to list
@@ -493,10 +454,11 @@ def __list_words(input_file_name, word_list, noun_classes):
 		line = hfutils.remove_comments(line).strip()
 		if len(line) == 0: continue
 		parts = line.split('\t')
-		if len(parts) == 1:
+		if len(parts) < 2 or len(parts) > 3 :
 			print 'Error in input dictionary ' + input_file_name + \
 			      ' on line ' + `line_no`
 			sys.exit(1)
+		if len(parts) == 2: parts = [parts[0], parts[1], '']
 		__append_to_wordlist(parts, word_list, input_file, noun_classes)
 	input_file.close()
 

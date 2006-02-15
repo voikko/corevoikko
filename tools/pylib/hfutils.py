@@ -172,4 +172,5 @@ def read_option(options, name, default):
 	for part in parts:
 		nameval = part.split('=')
 		if len(nameval) == 2 and nameval[0] == name: return nameval[1]
+		if len(nameval) == 1 and nameval[0] == name: return '1'
 	return default

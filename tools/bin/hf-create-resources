@@ -25,15 +25,17 @@ import hfdict
 import hfutils
 import codecs
 import sys
+import gzip
 
 # Input files
 BASE_AFFIX_FILE = 'orig_data/pohja.aff'
 NOUN_AFFIX_FILE = 'orig_data/subst.aff'
-DICTIONARY_FILES = ['orig_data/basedict/partikkelit.dic']
+DICTIONARY_FILES = ['orig_data/basedict/partikkelit.dic', 'db.dic.gz']
 
 # Output files
 HUNSPELL_AFFIX_FILE = 'gen_data/fi_FI.aff'
 HUNSPELL_DICTIONARY_FILE = 'gen_data/fi_FI.dic'
+DB_DICTIONARY = 'db.dic.gz'
 
 
 print u'Reading noun classes ...'
@@ -47,7 +49,26 @@ print u'Writing noun affix classes ...'
 hfaffix.write_noun_classes(noun_classes, outputfile)
 outputfile.close()
 
+# Database processing
+connection = hfutils.get_db()
+if connection != None: # We have an usable database
+	print 'Reading dictionary from database ...'
+	results = connection.query('select sana, luokka, parametri, kommentti from sana ' + \
+	                           'order by sana, luokka').getresult()
+	outputfile = gzip.GzipFile(DB_DICTIONARY, 'wb');
+	line = u'#HF_DICTLEVEL='+`hfdict.DICTLEVEL`+'\n'
+	outputfile.write(line.encode(hfutils.INPUT_ENCODING))
+	for result in results:
+		r_word = result[0].strip().decode(hfutils.INPUT_ENCODING)
+		r_class = result[1].strip().decode(hfutils.INPUT_ENCODING)
+		if result[2] == None: r_param = ''
+		else: r_par = result[2].strip().decode(hfutils.INPUT_ENCODING)
+		if result[3] == None: r_comment = ''
+		else: r_comment = '#'+result[3].strip().decode(hfutils.INPUT_ENCODING)
+		line = r_word+'\t'+r_class+'\t'+r_param+'\t'+r_comment+'\n'
+		outputfile.write(line.encode(hfutils.INPUT_ENCODING))
+	outputfile.close()
+	connection.close()
+
 print u'Writing dictionary file ...'
 hfdict.write_dictionary(DICTIONARY_FILES, HUNSPELL_DICTIONARY_FILE, noun_classes)
-
-
