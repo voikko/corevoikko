@@ -19,6 +19,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import hfutils
+import hfaffix
 import codecs
 import sys
 import gzip
@@ -175,24 +176,6 @@ def sananloppu_sopii(sana, loppu):
 	return True
 
 
-class Substluokka:
-	def __init__(self):
-		self.nimi = ''
-		self.avluokat = []
-		self.loput = []
-		self.voktyyppi = ''
-		self.vahva_v = ''
-		self.heikko_v = ''
-	
-	def luokka_sopii(self, sana, taivluokka, avluokka, vtyyppi):
-		if taivluokka != self.nimi: return False
-		if not avluokka in self.avluokat: return False
-		if vtyyppi != self.voktyyppi: return False
-		for l in self.loput:
-			if sananloppu_sopii(sana, l):
-				return True
-		return False
-
 class Adjluokka:
 	def __init__(self):
 		self.nimi = ''
@@ -305,35 +288,6 @@ def dictoutput(osat, lista, substluokat, adjluokat, verbiluokat):
 	taivluokka = taivutusluokka(typ)
 	avtyyp = astevaihtelutyyppi(typ)
 	lisattylistaan = False
-	if sluokka in ('subst', 'nimi'):
-		if vtyyp in (hfutils.TAKAVOKAALI, hfutils.MOLEMMAT_VOKAALIT):
-			for s in substluokat:
-				if s.luokka_sopii(sana, taivluokka, avtyyp, 'T'):
-					dictlist_append(lista, sana, typ, s.vahva_v, s.heikko_v)
-					lisattylistaan = True
-					break
-		if vtyyp in (hfutils.ETUVOKAALI, hfutils.MOLEMMAT_VOKAALIT):
-			for s in substluokat:
-				if s.luokka_sopii(sana, taivluokka, avtyyp, 'E'):
-					dictlist_append(lista, sana, typ, s.vahva_v, s.heikko_v)
-					lisattylistaan = True
-					break
-	if lisattylistaan:
-		return
-	if sanaluokka(typ)=='subst' and taivutusluokka(typ)=='poik':
-		if len(osat)==3:
-			lista.append((sana+osat[2], "[SUBST]"))
-			return
-		else:
-			lista.append((sana, "[SUBST]"))
-			return
-	if sanaluokka(typ)=='nimi' and taivutusluokka(typ)=='poik':
-		if len(osat)==3:
-			lista.append((sana+osat[2], "[NIMI]"))
-			return
-		else:
-			lista.append((sana, "[NIMI]"))
-			return
 	if sluokka == 'adj':
 		if vtyyp in (hfutils.TAKAVOKAALI, hfutils.MOLEMMAT_VOKAALIT):
 			for s in adjluokat:
@@ -384,6 +338,27 @@ def dictoutput(osat, lista, substluokat, adjluokat, verbiluokat):
 	sys.exit(1)
 
 
+# Appends a noun to wordlist
+def __append_noun_to_wordlist(word, subclass, gradation, options, word_list, input_file, noun_classes, morphinfo):
+	nclass = hfaffix.get_matching_noun_class(word, subclass, gradation, noun_classes)
+	if nclass == None:
+		print 'Incorrect noun class for word \'' + word + '\'.'
+		return
+	if hfutils.read_option(options, 'base', '') == '': # regular noun
+		word_grad = hfutils.apply_gradation(word, gradation)
+		naffix = ['', '']
+		for i in [0, 1]: # set the NEEDAFFIX flag where needed
+			if word_grad[i] != word: naffix[i] = 'F0'
+		vtype = hfutils.vowel_type(word)
+		if vtype in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH]:
+			word_list.append((word_grad[0], naffix[0] + nclass['affixflag_b_s'], morphinfo))
+			word_list.append((word_grad[1], naffix[1] + nclass['affixflag_b_w'], morphinfo))
+		if vtype in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH]:
+			word_list.append((word_grad[0], naffix[0] + nclass['affixflag_f_s'], morphinfo))
+			word_list.append((word_grad[1], naffix[1] + nclass['affixflag_f_w'], morphinfo))
+	else: # irregular noun
+		return # TODO
+
 
 # Appends a word represented by parts to list word_list. input_file and
 # class lists may be used to read additional information about the word.
@@ -392,12 +367,17 @@ def __append_to_wordlist(parts, word_list, input_file, noun_classes):
 	if class_fields == None:
 		print 'Malformed word class: ' + parts[1]
 		return
-	word = parts[0]
+	word = parts[0].replace(u'|', '') # remove compound word markers
+	if class_fields[1] in ['luokitt', 'apua']:
+		word_list.append((word, '', '[LUOKITTELEMATON]'))
+		return
 	if class_fields[0] == 'subst':
-		# TODO
+		__append_noun_to_wordlist(word, class_fields[1], class_fields[2], parts[2], word_list, \
+		                          input_file, noun_classes, '[SUBST]')
 		return
 	if class_fields[0] == 'nimi':
-		# TODO
+		__append_noun_to_wordlist(word, class_fields[1], class_fields[2], parts[2], word_list, \
+		                          input_file, noun_classes, '[NIMI]')
 		return
 	if class_fields[0] == 'adj':
 		# TODO
@@ -413,21 +393,18 @@ def __append_to_wordlist(parts, word_list, input_file, noun_classes):
 		return
 	if class_fields[0] == 'part':
 		if class_fields[1] == 'erill':
-			word_list.append((word, '[PART_ERILLINEN]'))
+			word_list.append((word, '', '[PART_ERILLINEN]'))
 			return
 		if class_fields[1] == 'prep':
 			if hfutils.read_option(parts[2], 'ps', '0') == '1':
 				vtype = hfutils.vowel_type(word)
 				if vtype in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH]:
-					word_list.append((word + '/A0', '[PREP]'))
+					word_list.append((word, 'A0', '[PREP]'))
 				if vtype in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH]:
-					word_list.append((word + '/A1', '[PREP]'))
-			else: word_list.append((word, '[PREP]'))
+					word_list.append((word, 'A1', '[PREP]'))
+			else: word_list.append((word, '', '[PREP]'))
 			return
 	if class_fields[0] == 'merkkisana':
-		return
-	if class_fields[1] in ['luokitt', 'apua']:
-		word_list.append((word, '[LUOKITTELEMATON]'))
 		return
 	print 'Incorrect word classification: ' + parts[0] + parts[1]
 
@@ -462,6 +439,42 @@ def __list_words(input_file_name, word_list, noun_classes):
 		__append_to_wordlist(parts, word_list, input_file, noun_classes)
 	input_file.close()
 
+# Returns a string that represents the combination of affix flags in the given list.
+def __compress_affix_list(affix_list):
+	needaffix = True
+	flag_list = []
+	for affix in affix_list:
+		for i in range(len(affix)/2):
+			flag = affix[2*i:2*i+2]
+			if flag != 'F0' and not flag in flag_list:
+				flag_list.append(flag)
+		if affix.find('F0') == -1: needaffix = False
+	if needaffix: final_affix = 'F0'
+	else: final_affix = ''
+	for flag in flag_list: final_affix = final_affix + flag
+	return final_affix
+
+
+# Returns a "compressed" and sorted version of given wordlist, where duplicate words have been
+# removed and affix flags combined
+def __compress_word_list(orig_list):
+	if len(orig_list) == 0: return []
+	orig_list.sort()
+	compressed_list = []
+	affix_list = []
+	current_word = orig_list[0]
+	for word in orig_list:
+		if word[0] == current_word[0] and word[2] == current_word[2]:
+			affix_list.append(word[1])
+		else:
+			comp_affix = __compress_affix_list(affix_list)
+			compressed_list.append((current_word[0], comp_affix, current_word[2]))
+			affix_list = [word[1]]
+			current_word = word
+	compressed_list.append((current_word[0], __compress_affix_list(affix_list), current_word[2]))
+	return compressed_list
+
+
 # Public functions
 
 # Creates a Hunspell dictionary based on given list of input files and
@@ -470,10 +483,12 @@ def write_dictionary(input_file_names, output_file_name, noun_classes):
 	word_list = []
 	for input_file_name in input_file_names:
 		__list_words(input_file_name, word_list, noun_classes)
-	word_list.sort()
-	# TODO: dictionary compression should be done here
+	print 'Compressing dictionary file...'
+	word_list = __compress_word_list(word_list)
 	output_file = codecs.open(output_file_name, 'w', hfutils.OUTPUT_ENCODING)
 	output_file.write(`len(word_list)` + '\n')
 	for word in word_list:
-		output_file.write(word[0] + '\t' + word[1] + '\n')
+		if word[1] == '': affix = ''
+		else: affix = '/' + word[1]
+		output_file.write(word[0] + affix + '\t' + word[2] + '\n')
 	output_file.close()

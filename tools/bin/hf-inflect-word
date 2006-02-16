@@ -32,7 +32,7 @@ if len(sys.argv) == 3:
 	word = unicode(sys.argv[1], PARAM_ENCODING)
 	infclass = sys.argv[2]
 else:
-	print 'Usage: hf-inflect-word word inflactio_class'
+	print 'Usage: hf-inflect-word word inflection_class'
 	sys.exit(1)
 
 infclass_parts = infclass.split('-')

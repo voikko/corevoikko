@@ -289,6 +289,20 @@ def write_noun_classes(noun_classes, file):
 		affixflag = __write_inflection_class(noun_class, affixflag, file)
 
 
+# Returns a noun class that matches the given word or None, if such class is not found.
+def get_matching_noun_class(word, cname, grad_exact_type, noun_classes):
+	word_grad = hfutils.apply_gradation(word, grad_exact_type)
+	if grad_exact_type == '-': grad_type = hfutils.GRAD_NONE
+	elif grad_exact_type in ['av1', 'av3', 'av5']: grad_type = hfutils.GRAD_SW
+	elif grad_exact_type in ['av2', 'av4', 'av6']: grad_type = hfutils.GRAD_WS
+	for noun_class in noun_classes:
+		if 'subst-' + cname != noun_class['cname']: continue
+		if grad_type != hfutils.GRAD_NONE and grad_type != noun_class['gradation']: continue
+		if not re.compile(__word_pattern_to_pcre(noun_class['match'])).match(word): continue
+		return noun_class
+	return None
+
+
 # Returns a list of inflected forms for a given word or None, if word cannot be
 # inflected in the given class. The list will contain tuples in the form
 # (form_name, word, flags).
