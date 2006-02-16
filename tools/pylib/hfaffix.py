@@ -236,11 +236,11 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 				   int(hfutils.read_option(rule[4], 'prio', '1')) <= MAX_AFFIX_PRIORITY):
 					rulelist.append(rule)
 			__write_affix_class(rulelist, '-', affixflag, affixfile)
-			classinfo['affixflag_f_'+trans_grad] = affixflag
+			classinfo['affixflag_b_'+trans_grad] = affixflag
 			affixflag = __next_affix_flag(affixflag)
 			if classinfo['tgroup'] == 'e':
 				__write_affix_class(rulelist, 'e', affixflag, affixfile)
-				classinfo['affixflag_b_'+trans_grad] = affixflag
+				classinfo['affixflag_f_'+trans_grad] = affixflag
 				affixflag = __next_affix_flag(affixflag)
 	return affixflag
 
