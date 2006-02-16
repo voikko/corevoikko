@@ -286,7 +286,7 @@ class: subst-a2
 match-word: a
 consonant-gradation: sw
 group: t
-transform-group: -
+transform-group: e # Onko näitä?
 rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w	ps=f
@@ -775,6 +775,47 @@ end: rules
 end: class
 
 
+# Kotus 38 hevonen
+class: subst-p
+match-word: nen
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	nen	se	s	ps=r
+genetiivi		nen	sen	s
+partitiivi	nen	sta	s
+translatiivi	nen	seksi	s	ps=f
+translatiivi	nen	sekse	s	ps=r
+essiivi		nen	sena	s
+inessiivi		nen	sessa	s
+elatiivi		nen	sesta	s
+illatiivi		nen	seen	s
+adessiivi		nen	sella	s
+ablatiivi		nen	selta	s
+allatiivi		nen	selle	s
+abessiivi		nen	setta	s	ps=f
+nominatiivi_mon	nen	set	s	ps=f
+genetiivi_mon	nen	sten	s
+genetiivi_mon	nen	sien	s	prio=2
+partitiivi_mon	nen	sia	s
+translatiivi_mon	nen	siksi	s	ps=f
+translatiivi_mon	nen	sikse	s	ps=r
+essiivi_mon	nen	sina	s
+inessiivi_mon	nen	sissa	s
+elatiivi_mon	nen	sista	s
+illatiivi_mon	nen	siin	s
+adessiivi_mon	nen	silla	s
+ablatiivi_mon	nen	silta	s
+allatiivi_mon	nen	sille	s
+abessiivi_mon	nen	sitta	s	ps=f
+komitatiivi_mon	nen	sine	s	ps=r
+instruktiivi_mon	nen	sin	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 39 ajatus
 class: subst-p
 match-word: Vs
@@ -858,7 +899,7 @@ end: class
 
 # Kotus 41 rengas
 class: subst-as2
-match-word: (?:a|e|i)s
+match-word: (?:A|e|i)s
 consonant-gradation: ws
 group: t
 transform-group: e
