@@ -24,37 +24,62 @@
 #include <stdlib.h>
 #include <wctype.h>
 
-char * voikko_simple_hyphenation(const wchar_t * word) {
+const wchar_t * SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"oa", L"oe",
+                                   L"ua", L"ue", L"ye", L"eä", L"eö", L"iä", L"iö", L"yä",
+                                   L"äe", L"öe" };
+
+void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points) {
 	int nchars = wcslen(word);
 	wchar_t * word_copy;
 	int i;
-	char * hyphenation_points;
+	int j;
 	
-	if (nchars == 0) return 0;
+	if (nchars == 0) return;
 	
 	word_copy = malloc((nchars + 1) * sizeof(wchar_t));
-	hyphenation_points = malloc(nchars + 1);
 	for (i = 0; i < nchars; i++) {
 		word_copy[i] = towlower(word[i]);
-		hyphenation_points[i] = L' ';
+		hyphenation_points[i] = ' ';
 	}
 	word_copy[nchars] = '\0';
-	hyphenation_points[nchars] = L'\0';
+	hyphenation_points[nchars] = '\0';
 	
 	if (nchars == 1) {
 		free(word_copy);
-		return hyphenation_points;
+		return;
 	}
-	for (i = 1; i <= nchars - 2; i++) {
+	
+	/* no hyphenation allowed at ^C-CV */
+	if (wcschr(VOIKKO_CONSONANTS, word_copy[0]) && wcschr(VOIKKO_CONSONANTS, word_copy[1])) i = 2;
+	else i = 1;
+	
+	/* -CV */
+	for (; i <= nchars - 2; i++) {
 		if (wcschr(VOIKKO_CONSONANTS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1]))
 			hyphenation_points[i] = '-';
 	}
+	
+	/* V-V */
+	for (i = 0; i < nchars - 1; i++) {
+		if (hyphenation_points[i+1] != ' ') continue;
+		if (!wcschr(VOIKKO_VOWELS, word_copy[i])) continue;
+		if (!wcschr(VOIKKO_VOWELS, word_copy[i+1])) continue;
+		for (j = 0; j < 18; j++) {
+			if (wcsncmp(&word_copy[i], SPLIT_VOWELS[j], 2) == 0) {
+				hyphenation_points[i+1] = '-';
+				break;
+			}
+		}
+	}
 	free(word_copy);
-	return hyphenation_points;
 }
 
 char * voikko_hyphenate_ucs4(const wchar_t * word) {
-	return voikko_simple_hyphenation(word);
+	char * hyphenation;
+	hyphenation = malloc(wcslen(word) + 1);
+	hyphenation[wcslen(word)] = '\0';
+	voikko_simple_hyphenation(word, hyphenation);
+	return hyphenation;
 }
 
 char * voikko_hyphenate_cstr(const char * word) {

@@ -21,7 +21,7 @@
 
 #include <stddef.h>
 
-char * voikko_simple_hyphenation(const wchar_t * word);
+void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points);
 
 
 #endif

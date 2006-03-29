@@ -23,6 +23,7 @@ typedef struct {
 	int ignore_dot;
 	int ignore_numbers;
 	int ignore_uppercase;
+	int no_ugly_hyphenation;
 	const char * encoding;
 	} voikko_options_t;
 

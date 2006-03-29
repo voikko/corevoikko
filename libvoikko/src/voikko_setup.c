@@ -35,6 +35,10 @@ int voikko_set_bool_option(int option, int value) {
 			if (value) voikko_options.ignore_uppercase = 1;
 			else voikko_options.ignore_uppercase = 0;
 			return 1;
+		case VOIKKO_OPT_NO_UGLY_HYPHENATION:
+			if (value) voikko_options.no_ugly_hyphenation = 1;
+			else voikko_options.no_ugly_hyphenation = 0;
+			return 1;
 	}
 	return 0;
 }
@@ -54,6 +58,7 @@ char * voikko_init() {
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
 	voikko_options.ignore_uppercase = 0;
+	voikko_options.no_ugly_hyphenation = 0;
 	voikko_options.encoding = "UTF-8";
 	project = DICTIONARY_PATH "/suomi.pro";
 	init_libmalaga(project);
