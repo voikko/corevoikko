@@ -20,8 +20,16 @@
 #define VOIKKO_HYPHENATE_H
 
 #include <stddef.h>
+#include <malaga.h>
 
-void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points);
+void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, int nchars);
 
+void voikko_interpret_analysis(value_t analysis, char * buffer, int len);
+
+char * voikko_intersect_hyphenations(char ** hyphenations);
+
+void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation);
+
+char ** voikko_split_compounds(const wchar_t * word);
 
 #endif
