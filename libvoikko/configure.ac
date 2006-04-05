@@ -62,6 +62,28 @@ AC_TYPE_SIZE_T
 dnl Compiler features
 AC_C_CONST
 
+dnl GCC visibility support
+AH_TEMPLATE(GCC_VISIBILITY, [GCC visibility support])
+tmp_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror"
+AC_MSG_CHECKING([whether $CC supports the visibility attribute])
+AC_COMPILE_IFELSE(AC_LANG_SOURCE(
+[
+  void __attribute__ ((visibility("default"))) test_default (void) {}
+  void __attribute__ ((visibility("hidden"))) test_hidden (void) {}
+ int main (int argc, char **argv) { test_default (); test_hidden (); return 0; }
+]),
+[
+  AC_DEFINE(GCC_VISIBILITY, 1)
+  CFLAGS="$tmp_CFLAGS -fvisibility=hidden"
+  AC_MSG_RESULT([yes])
+],
+[
+  CFLAGS="$tmp_CFLAGS"
+  AC_MSG_RESULT([no])
+])
+
+
 dnl Functions
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
@@ -70,4 +92,3 @@ AC_CHECK_FUNCS([setlocale])
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT
-

@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "voikko.h"
+#include "voikko_defs.h"
 #include "voikko_utils.h"
 #include "voikko_setup.h"
 #include <stdlib.h>

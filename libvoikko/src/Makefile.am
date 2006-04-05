@@ -16,4 +16,4 @@ voikkohyphenate_LDADD = libvoikko.la
 
 pkginclude_HEADERS = voikko.h
 noinst_HEADERS = voikko_utils.h voikko_setup.h voikko_spell.h \
-                 voikko_hyphenate.h
+                 voikko_hyphenate.h voikko_defs.h
