@@ -28,18 +28,19 @@
 const wchar_t * SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"oa", L"oe",
                                    L"ua", L"ue", L"ye", L"e\u00e4", L"e\u00f6", L"i\u00e4",
                                    L"i\u00f6", L"y\u00e4", L"\u00e4e", L"\u00f6e" };
+const wchar_t * LONG_CONSONANTS[] = { L"shtsh", L"\u0161t\u0161", L"tsh", L"t\u0161", L"zh" };
 
 void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, int nchars) {
 	wchar_t * word_copy;
 	int i;
 	int j;
+	int k;
 	
 	if (nchars == 0) return;
 	
 	word_copy = malloc((nchars + 1) * sizeof(wchar_t));
 	for (i = 0; i < nchars; i++) {
 		word_copy[i] = towlower(word[i]);
-		hyphenation_points[i] = ' ';
 	}
 	word_copy[nchars] = '\0';
 	
@@ -48,14 +49,20 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 		return;
 	}
 	
-	/* no hyphenation allowed at ^C-CV */
-	if (wcschr(VOIKKO_CONSONANTS, word_copy[0]) && wcschr(VOIKKO_CONSONANTS, word_copy[1])) i = 2;
-	else i = 1;
+	/* at least one vowel is required before the first hyphen */
+	i = 0;
+	while (wcschr(VOIKKO_CONSONANTS, word_copy[i])) i++;
 	
 	/* -CV */
 	for (; i <= nchars - 2; i++) {
 		if (wcschr(VOIKKO_CONSONANTS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1]))
 			hyphenation_points[i] = '-';
+	}
+	
+	/* 'V */
+	for (i = 1; i < nchars - 1; i++) {
+		if (word_copy[i] == L'\'' && wcschr(VOIKKO_VOWELS, word_copy[i+1]))
+			hyphenation_points[i] = '=';
 	}
 	
 	/* V-V */
@@ -70,6 +77,22 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 			}
 		}
 	}
+	
+	/* long consonants */
+	for (i = 1; i < nchars - 1; i++) {
+		for (j = 0; j < 5; j++) {
+			if (i + wcslen(LONG_CONSONANTS[j]) < nchars &&
+			    wcsncmp(&word_copy[i], LONG_CONSONANTS[j], wcslen(LONG_CONSONANTS[j])) == 0) {
+				for (k = i + 1; k <= i + wcslen(LONG_CONSONANTS[j]); k++) {
+					if (hyphenation_points[k] == '-') {
+						hyphenation_points[k] = ' ';
+						hyphenation_points[i] = '-';
+					}
+				}
+			}
+		}
+	}
+	
 	free(word_copy);
 }
 
@@ -177,32 +200,19 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation) {
 	int end;
 	len = wcslen(word);
 	start = 0;
-	while (start < len) {
-		for (end = start; end < len; end++) {
-			if (hyphenation[end] == '-') {
-				if (start == end) {
-					start++;
-					break;
-				}
-				voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
-				start = end;
-				break;
-			}
-			if (hyphenation[end] == '=') {
-				if (start == end) {
-					start++;
-					break;
-				}
-				voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
-				start = end + 1;
-				break;
-			}
-		}
-		if (start < len && end == len) {
+	while (start < len && hyphenation[start] == '=') start++;
+	end = start + 1;
+	while (end < len) {
+		if (hyphenation[end] != ' ') {
 			voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
-			break;
+			if (hyphenation[end] == '=') start = end + 1;
+			else start = end;
+			end = start + 1;
 		}
+		else end++;
 	}
+	if (end == len && start < end)
+		voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
 }
 
 char * voikko_hyphenate_ucs4(const wchar_t * word) {
@@ -213,6 +223,7 @@ char * voikko_hyphenate_ucs4(const wchar_t * word) {
 	/*i=0; while (hyphenations[i] != 0) printf("hyph='%s'\n", hyphenations[i++]);*/
 	i = 0;
 	while (hyphenations[i] != 0) voikko_compound_hyphenation(word, hyphenations[i++]);
+	/*i=0; while (hyphenations[i] != 0) printf("hyph='%s'\n", hyphenations[i++]);*/
 	hyphenation = voikko_intersect_hyphenations(hyphenations);
 	i = 0;
 	while (hyphenations[i] != 0) free(hyphenations[i++]);

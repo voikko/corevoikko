@@ -27,8 +27,8 @@
 #define LOG(X)
 #endif
 
-#define VOIKKO_CONSONANTS L"bcdfghjklmnpqrstvwxz"
-#define VOIKKO_VOWELS L"aeiouy\xe4\xf6"
+#define VOIKKO_CONSONANTS L"bcdfghjklmnpqrstvwxz\u0161\u017e"
+#define VOIKKO_VOWELS L"aeiouy\u00e4\u00f6"
 
 wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding);
 
