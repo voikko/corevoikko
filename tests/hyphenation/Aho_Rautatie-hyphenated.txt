@@ -4081,7 +4081,7 @@ pou-dan-pa-han
 pou-ta
 po-ves-taan
 pra-meu-den
-pt-ruu
+ptruu
 ptuu
 pu-don-ne
 pu-don-nut
