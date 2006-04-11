@@ -20,6 +20,7 @@
 
 #ifndef VOIKKO_DEFS_H
 #define VOIKKO_DEFS_H
+#include "voikko.h"
 #include <config.h>
 #include <stddef.h>
 
@@ -35,38 +36,27 @@
 #endif
 
 
-#define LIBVOIKKO_MAX_WORD_CHARS 255
-#define LIBVOIKKO_MAX_ANALYSIS_COUNT 31
+VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode);
 
-#define VOIKKO_SPELL_FAILED 0
-#define VOIKKO_SPELL_OK 1
-#define VOIKKO_INTERNAL_ERROR 2
-#define VOIKKO_CHARSET_CONVERSION_FAILED 3
+VOIKKOEXPORT int voikko_terminate(int handle);
 
-#define VOIKKO_OPT_IGNORE_DOT 0
-#define VOIKKO_OPT_IGNORE_NUMBERS 1
-#define VOIKKO_OPT_ENCODING 2
-#define VOIKKO_OPT_IGNORE_UPPERCASE 3
-#define VOIKKO_OPT_NO_UGLY_HYPHENATION 4
+VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value);
 
+VOIKKOEXPORT int voikko_set_int_option(int handle, int option, int value);
 
-VOIKKOEXPORT char * voikko_init();
+VOIKKOEXPORT int voikko_set_string_option(int handle, int option, const char * value);
 
-VOIKKOEXPORT int voikko_set_bool_option(int option, int value);
+VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word);
 
-VOIKKOEXPORT int voikko_set_string_option(int option, const char * value);
+VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word);
 
-VOIKKOEXPORT int voikko_spell_cstr(const char * word);
+VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word);
 
-VOIKKOEXPORT int voikko_spell_ucs4(const wchar_t * word);
+VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);
 
-VOIKKOEXPORT char ** voikko_suggest_cstr(const char * word);
+VOIKKOEXPORT char * voikko_hyphenate_cstr(int handle, const char * word);
 
-VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(const wchar_t * word);
-
-VOIKKOEXPORT char * voikko_hyphenate_cstr(const char * word);
-
-VOIKKOEXPORT char * voikko_hyphenate_ucs4(const wchar_t * word);
+VOIKKOEXPORT char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
 
 
 #endif

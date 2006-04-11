@@ -23,7 +23,7 @@
 #include <wchar.h>
 
 
-wchar_t ** voikko_suggest_ucs4(const wchar_t * word) {
+wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wchar_t ** suggestions;
 	wchar_t * suggestion;
 	if (word == 0) return 0;
@@ -49,7 +49,7 @@ wchar_t ** voikko_suggest_ucs4(const wchar_t * word) {
 	return 0;
 }
 
-char ** voikko_suggest_cstr(const char * word) {
+char ** voikko_suggest_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	wchar_t ** suggestions_ucs4;
 	char ** suggestions;
@@ -59,7 +59,7 @@ char ** voikko_suggest_cstr(const char * word) {
 	if (word == 0 || word[0] == '\0') return 0;
 	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding);
 	if (word_ucs4 == 0) return 0;
-	suggestions_ucs4 = voikko_suggest_ucs4(word_ucs4);
+	suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
 	free(word_ucs4);
 	if (suggestions_ucs4 == 0) return 0;
 	scount = 0;

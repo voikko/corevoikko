@@ -40,18 +40,18 @@ int voikko_do_spell(const char * word) {
 }
 
 
-int voikko_spell_cstr(const char * word) {
+int voikko_spell_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	int result;
 	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
 	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding);
 	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
-	result = voikko_spell_ucs4(word_ucs4);
+	result = voikko_spell_ucs4(handle, word_ucs4);
 	free(word_ucs4);
 	return result;
 }
 
-int voikko_spell_ucs4(const wchar_t * word) {
+int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	int nchars = wcslen(word);
 	int i;
 	char * word_utf8;

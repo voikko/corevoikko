@@ -19,8 +19,9 @@
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include <malaga.h>
+#include <string.h>
 
-int voikko_set_bool_option(int option, int value) {
+int voikko_set_bool_option(int handle, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
 			if (value) voikko_options.ignore_dot = 1;
@@ -42,7 +43,16 @@ int voikko_set_bool_option(int option, int value) {
 	return 0;
 }
 
-int voikko_set_string_option(int option, const char * value) {
+int voikko_set_int_option(int handle, int option, int value) {
+	switch (option) {
+		case VOIKKO_INTERSECT_COMPOUND_LEVEL:
+			voikko_options.intersect_compound_level = value;
+			return 1;
+	}
+	return 0;
+}
+
+int voikko_set_string_option(int handle, int option, const char * value) {
 	switch (option) {
 		case VOIKKO_OPT_ENCODING:
 			if (!value) return 0;
@@ -52,14 +62,31 @@ int voikko_set_string_option(int option, const char * value) {
 	return 0;
 }
 
-char * voikko_init() {
+const char * voikko_init(int * handle, const char * langcode) {
 	char * project;
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
 	voikko_options.ignore_uppercase = 0;
 	voikko_options.no_ugly_hyphenation = 0;
+	voikko_options.intersect_compound_level = 1;
 	voikko_options.encoding = "UTF-8";
-	project = DICTIONARY_PATH "/suomi.pro";
+	if (strcmp(langcode, "fi_FI") == 0) project = DICTIONARY_PATH "/suomi.pro";
+	else return "Unsupported language";
+	/* FIXME: Temporary hack needed for MT unsafe malaga library */
+	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
 	init_libmalaga(project);
-	return malaga_error;
+	if (malaga_error) {
+		voikko_handle_count--;
+		return malaga_error;
+	}
+	*handle = voikko_handle_count;
+	return 0;
+}
+
+int voikko_terminate(int handle) {
+	if (handle == 1 && voikko_handle_count > 0) {
+		voikko_handle_count--;
+		return 1;
+	}
+	else return 0;
 }

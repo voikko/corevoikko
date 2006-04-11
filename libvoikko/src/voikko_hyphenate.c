@@ -215,7 +215,7 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation) {
 		voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
 }
 
-char * voikko_hyphenate_ucs4(const wchar_t * word) {
+char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 	char ** hyphenations;
 	char * hyphenation;
 	int i;
@@ -232,13 +232,13 @@ char * voikko_hyphenate_ucs4(const wchar_t * word) {
 	return hyphenation;
 }
 
-char * voikko_hyphenate_cstr(const char * word) {
+char * voikko_hyphenate_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	char * result;
 	if (word == 0) return 0;
 	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding);
 	if (word_ucs4 == 0) return 0;
-	result = voikko_hyphenate_ucs4(word_ucs4);
+	result = voikko_hyphenate_ucs4(handle, word_ucs4);
 	free(word_ucs4);
 	return result;
 }

@@ -29,7 +29,7 @@
 #include <string.h>
 
 
-void hyphenate_word(char * word) {
+void hyphenate_word(int handle, char * word) {
 	size_t len;
 	char * result;
 	char * hyphenated_word;
@@ -38,7 +38,7 @@ void hyphenate_word(char * word) {
 	char * resultptr;
 	size_t charlen;
 	mbstate_t mbstate;
-	result = voikko_hyphenate_cstr(word);
+	result = voikko_hyphenate_cstr(handle, word);
 	if (result == 0) {
 		printf("E: hyphenation failed\n");
 		return;
@@ -79,7 +79,8 @@ int main() {
 	char * line = malloc(size); /* FIXME */
 	ssize_t chars_read;
 	char * encoding;
-	char * voikko_error = voikko_init();
+	int handle;
+	const char * voikko_error = voikko_init(&handle, "fi_FI");
 
 	if (voikko_error) {
 		printf("Initialisation of Voikko failed: %s\n", voikko_error);
@@ -89,8 +90,8 @@ int main() {
 	setlocale(LC_ALL, "");
 	encoding = nl_langinfo(CODESET);
 	
-	voikko_set_bool_option(VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
-	voikko_set_string_option(VOIKKO_OPT_ENCODING, encoding);
+	voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
+	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
 	
 	while (1) {
@@ -99,8 +100,9 @@ int main() {
 		if (chars_read > 0 && line[chars_read - 1] == '\n') {
 			line[chars_read - 1] = '\0';
 		}
-		hyphenate_word(line);
+		hyphenate_word(handle, line);
 	}
+	voikko_terminate(handle);
 	return 0;
 }
 

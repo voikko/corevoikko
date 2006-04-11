@@ -24,14 +24,14 @@ typedef struct {
 	int ignore_numbers;
 	int ignore_uppercase;
 	int no_ugly_hyphenation;
+	int intersect_compound_level;
 	const char * encoding;
 	} voikko_options_t;
 
 voikko_options_t voikko_options;
 
-int voikko_set_bool_option(int option, int value);
+int voikko_handle_count;
 
-int voikko_set_string_option(int option, const char * value);
 
 
 #endif

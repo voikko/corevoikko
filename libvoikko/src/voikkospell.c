@@ -28,8 +28,8 @@
 
 int print_correct = 1;
 
-void check_word(char * word) {
-	int result = voikko_spell_cstr(word);
+void check_word(int handle, char * word) {
+	int result = voikko_spell_cstr(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		printf("E: charset conversion failed\n");
 		return;
@@ -50,7 +50,8 @@ int main() {
 	char * line = malloc(size); /* FIXME */
 	ssize_t chars_read;
 	char * encoding;
-	char * voikko_error = voikko_init();
+	int handle;
+	const char * voikko_error = voikko_init(&handle, "fi_FI");
 	/*char * hyphens;*/
 	if (voikko_error) {
 		printf("Initialisation of Voikko failed: %s\n", voikko_error);
@@ -60,10 +61,10 @@ int main() {
 	setlocale(LC_ALL, "");
 	encoding = nl_langinfo(CODESET);
 	
-	voikko_set_bool_option(VOIKKO_OPT_IGNORE_DOT, 0);
-	voikko_set_bool_option(VOIKKO_OPT_IGNORE_NUMBERS, 1);
-	voikko_set_bool_option(VOIKKO_OPT_IGNORE_UPPERCASE, 0);
-	voikko_set_string_option(VOIKKO_OPT_ENCODING, encoding);
+	voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+	voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
+	voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_UPPERCASE, 0);
+	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
 	/*hyphens = voikko_hyphenate_cstr("kissa");
 	printf("'%s'\n", hyphens);
@@ -75,8 +76,9 @@ int main() {
 		if (chars_read > 0 && line[chars_read - 1] == '\n') {
 			line[chars_read - 1] = '\0';
 		}
-		check_word(line);
+		check_word(handle, line);
 	}
+	voikko_terminate(handle);
 	return 0;
 }
 
