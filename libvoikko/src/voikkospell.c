@@ -25,8 +25,9 @@
 #include <locale.h>
 #include <langinfo.h>
 #include <stdio.h>
+#include <string.h>
 
-int print_correct = 1;
+int autotest;
 
 void check_word(int handle, char * word) {
 	int result = voikko_spell_cstr(handle, word);
@@ -38,19 +39,26 @@ void check_word(int handle, char * word) {
 		printf("E: internal error\n");
 		return;
 	}
-	if (result && print_correct) printf("C: %s\n", word);
-	if (!result && print_correct) printf("W: %s\n", word);
-	if (!result && !print_correct) printf("%s\n", word);
+	if (autotest) {
+		if (result) printf("C\n");
+		else printf("W\n");
+		fflush(0);
+	}
+	else {
+		if (result) printf("C: %s\n", word);
+		else printf("W: %s\n", word);
+	}
 }
 
 
 
-int main() {
+int main(int argc, char ** argv) {
 	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
 	char * line = malloc(size); /* FIXME */
 	ssize_t chars_read;
 	char * encoding;
 	int handle;
+	if (argc == 2 && strcmp(argv[1], "-t") == 0) autotest = 1;
 	const char * voikko_error = voikko_init(&handle, "fi_FI");
 	/*char * hyphens;*/
 	if (voikko_error) {
@@ -78,6 +86,7 @@ int main() {
 		}
 		check_word(handle, line);
 	}
+	free(line);
 	voikko_terminate(handle);
 	return 0;
 }

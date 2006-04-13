@@ -102,6 +102,7 @@ int main() {
 		}
 		hyphenate_word(handle, line);
 	}
+	free(line);
 	voikko_terminate(handle);
 	return 0;
 }

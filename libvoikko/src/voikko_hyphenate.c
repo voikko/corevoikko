@@ -51,7 +51,7 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	
 	/* at least one vowel is required before the first hyphen */
 	i = 0;
-	while (wcschr(VOIKKO_CONSONANTS, word_copy[i])) i++;
+	while (word_copy[i] != L'\0' && wcschr(VOIKKO_CONSONANTS, word_copy[i])) i++;
 	
 	/* -CV */
 	for (; i <= nchars - 2; i++) {

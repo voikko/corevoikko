@@ -86,6 +86,7 @@ const char * voikko_init(int * handle, const char * langcode) {
 int voikko_terminate(int handle) {
 	if (handle == 1 && voikko_handle_count > 0) {
 		voikko_handle_count--;
+		terminate_libmalaga();
 		return 1;
 	}
 	else return 0;
