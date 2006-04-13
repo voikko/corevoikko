@@ -62,15 +62,34 @@
 #define VOIKKO_CHARSET_CONVERSION_FAILED 3
 
 /* Boolean options */
+/* Ignore dot at the end of the word (needed for use in some word processors)
+ * Default: false */
 #define VOIKKO_OPT_IGNORE_DOT 0
+/* Ignore words containing numbers
+ * Default: false */
 #define VOIKKO_OPT_IGNORE_NUMBERS 1
+/* Ignore words that are written completely in uppercase letters
+ * Default: false */
 #define VOIKKO_OPT_IGNORE_UPPERCASE 3
+/* Do not insert hyphenation positions that are considered to be ugly but correct
+ * Default: false
+ * FIXME: This option is currently unimplemented */
 #define VOIKKO_OPT_NO_UGLY_HYPHENATION 4
 
 /* Integer options */
+/* There are two possible rules that can be applied when hyphenating compound words
+ * that can be split in more than one different way. We either take the intersection
+ * of (1) all possible hyphenations or (2) all hyphenations where the compound word
+ * has the minimal amount of parts (:= m) in it. The rule (1) is applied if and only
+ * if m > voikko_intersect_compound_level.
+ * Default: 1
+ * FIXME: This option is currently unimplemented */
 #define VOIKKO_INTERSECT_COMPOUND_LEVEL 5
 
 /* String options */
+/* The encoding in which multibyte character strings are interpreteted and returned
+ * as results.
+ * Default: UTF-8 */
 #define VOIKKO_OPT_ENCODING 2
 
 

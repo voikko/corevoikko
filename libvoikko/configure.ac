@@ -18,7 +18,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, U
 
 dnl General options for autoconf
 AC_PREREQ(2.59)
-AC_INIT([libvoikko],[0.1],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[0.2],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.9 foreign])
 
@@ -65,7 +65,7 @@ AC_C_CONST
 dnl GCC visibility support
 AH_TEMPLATE(GCC_VISIBILITY, [GCC visibility support])
 tmp_CFLAGS="$CFLAGS"
-CFLAGS="$CFLAGS -Wall -Werror"
+CFLAGS="$CFLAGS -Wall -Werror -fvisibility=hidden"
 AC_MSG_CHECKING([whether $CC supports the visibility attribute])
 AC_COMPILE_IFELSE(AC_LANG_SOURCE(
 [

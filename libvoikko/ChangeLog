@@ -1,5 +1,11 @@
 2006-04-13  Harri Pitkänen  <hatapitk@iki.fi>
 
+	* Add more API documentation
+	* Fix configure check for gcc visibility support
+	* Increase version number to 0.2
+
+2006-04-13  Harri Pitkänen  <hatapitk@iki.fi>
+
 	* voikkospell.c: Additional mode for automated tests
 	* Fixes for bugs found by Valgrind
 
