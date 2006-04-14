@@ -1,5 +1,5 @@
 
-INCLUDES = -I$(MALAGA_PATH)/include
+INCLUDES = -I$(MALAGA_INC)
 AM_CFLAGS = -Wall -pedantic -std=c99
 
 lib_LTLIBRARIES = libvoikko.la

@@ -35,15 +35,15 @@ AC_ARG_WITH(malaga-path,
             [MALAGA_PATH="$withval"])
 AC_DEFINE_UNQUOTED(MALAGA_PATH, "$MALAGA_PATH", [Malaga installation prefix])
 AC_SUBST(MALAGA_PATH)
-				       
+
 DICTIONARY_PATH=${libdir}/voikko
 AC_ARG_WITH(dictionary-path,
             AC_HELP_STRING([--with-dictionary-path=PATH],
 	                   [Dictionary path]),
 	    [DICTIONARY_PATH="$withval"])
 AC_DEFINE_UNQUOTED(DICTIONARY_PATH, "$DICTIONARY_PATH", [Dictionary path])
-AC_SUBST(MALAGA_PATH)
-						   
+AC_SUBST(DICTIONARY_PATH)
+
 
 dnl Checks for libraries
 #AC_CHECK_LIB(malaga, init_libmalaga, ,[AC_MSG_ERROR([libmalaga not found])])
@@ -54,7 +54,14 @@ AC_CHECK_HEADERS([langinfo.h])
 AC_CHECK_HEADERS([locale.h])
 AC_CHECK_HEADERS([wctype.h])
 AC_CHECK_HEADERS([wchar.h])
-AC_CHECK_HEADER($MALAGA_PATH/include/malaga.h, , [AC_MSG_ERROR([malaga.h not found])])
+
+AC_CHECK_HEADER($MALAGA_PATH/include/malaga/malaga.h,
+	[MALAGA_INC=$MALAGA_PATH/include/malaga],
+	[AC_CHECK_HEADER($MALAGA_PATH/include/malaga.h,
+		[MALAGA_INC=$MALAGA_PATH/include],
+		[AC_MSG_ERROR([malaga.h not found])])
+	])
+AC_SUBST(MALAGA_INC)
 
 dnl Types
 AC_TYPE_SIZE_T
