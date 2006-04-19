@@ -1,6 +1,5 @@
 
 INCLUDES = -I$(MALAGA_INC)
-AM_CFLAGS = -Wall -pedantic -std=c99
 
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = voikko_suggest.c voikko_utils.c voikko_setup.c voikko_spell.c \

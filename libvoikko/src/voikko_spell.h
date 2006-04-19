@@ -23,7 +23,4 @@
 
 int voikko_do_spell(const char * word);
 
-
-
-
 #endif

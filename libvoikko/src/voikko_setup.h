@@ -32,6 +32,14 @@ voikko_options_t voikko_options;
 
 int voikko_handle_count;
 
-
+/**
+ * Finds the malaga project file for given language
+ * @param buffer Buffer where path to the project file will be written
+ * @param buflen Length of buffer
+ * @param langcode Language code
+ * @return true if finding project file succeeded, otherwise false. It is not guaranteed that
+ *         the file actually exists.
+ */
+int voikko_find_malaga_project(char * buffer, int buflen, const char * langcode);
 
 #endif

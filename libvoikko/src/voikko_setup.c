@@ -18,8 +18,13 @@
 
 #include "voikko_defs.h"
 #include "voikko_setup.h"
+#include <pwd.h>
 #include <malaga.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdlib.h>
+
 
 int voikko_set_bool_option(int handle, int option, int value) {
 	switch (option) {
@@ -63,18 +68,23 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 }
 
 const char * voikko_init(int * handle, const char * langcode) {
-	char * project;
+	char * project = malloc(1024);
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
 	voikko_options.ignore_uppercase = 0;
 	voikko_options.no_ugly_hyphenation = 0;
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.encoding = "UTF-8";
-	if (strcmp(langcode, "fi_FI") == 0) project = DICTIONARY_PATH "/suomi.pro";
-	else return "Unsupported language";
+	
 	/* FIXME: Temporary hack needed for MT unsafe malaga library */
 	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
+	
+	if (!voikko_find_malaga_project(project, 1024, langcode)) {
+		free(project);
+		return "Unsupported language";
+	}
 	init_libmalaga(project);
+	free(project);
 	if (malaga_error) {
 		voikko_handle_count--;
 		return malaga_error;
@@ -90,4 +100,35 @@ int voikko_terminate(int handle) {
 		return 1;
 	}
 	else return 0;
+}
+
+int voikko_find_malaga_project(char * buffer, int buflen, const char * langcode) {
+	struct passwd pwd;
+	struct stat sbuf;
+	struct passwd * pwd_result;
+	char * tmp_buf = malloc(buflen + 2048);
+	if (strcmp(langcode, "fi_FI") == 0) {
+#ifdef WIN32
+		/* TODO: Check the Windows registry */
+#endif
+#ifdef HAVE_GETPWUID_R
+		/* Check for project file in $HOME/.voikko/suomi.pro */
+		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);
+		if (pwd_result && pwd.pw_dir && strlen(pwd.pw_dir) < buflen - 19 ) {
+			strcpy(buffer, pwd.pw_dir);
+			strcpy(buffer + strlen(pwd.pw_dir), "/.voikko/suomi.pro");
+			if (stat(buffer, &sbuf) == 0) {
+				free(tmp_buf);
+				return 1;
+			}
+		}
+#endif
+		/* Use the compile time default project file */
+		strcpy(buffer, DICTIONARY_PATH "/suomi.pro");
+		free(tmp_buf);
+		return 1;
+	}
+	/* Language is not supported */
+	free(tmp_buf);
+	return 0;
 }

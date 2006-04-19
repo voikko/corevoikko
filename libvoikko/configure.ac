@@ -28,6 +28,9 @@ AC_PROG_INSTALL
 AC_PROG_LIBTOOL
 #AC_PROG_RANLIB
 
+dnl Default compiler settings
+CFLAGS="$CFLAGS -Wall -pedantic -std=gnu99"
+
 MALAGA_PATH=${prefix}
 AC_ARG_WITH(malaga-path,
             AC_HELP_STRING([--with-malaga-path=PATH],
@@ -94,8 +97,13 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
 dnl Functions
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
+AC_FUNC_STAT
 AC_CHECK_FUNCS([nl_langinfo])
 AC_CHECK_FUNCS([setlocale])
+AC_CHECK_FUNCS([mbrlen])
+AC_CHECK_FUNCS([memset])
+AC_CHECK_FUNCS([strchr])
+AC_CHECK_FUNCS([getpwuid_r])
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT

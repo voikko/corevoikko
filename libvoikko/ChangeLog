@@ -1,3 +1,8 @@
+2006-04-19  Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Add support for personal Malaga project file in $HOME/.voikko/suomi.pro
+	* Add README
+
 2006-04-14  Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Search malaga.h from include/malaga and include
