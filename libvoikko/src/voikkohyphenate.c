@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <wchar.h>
 #include <string.h>
+#include "porting.h"
 
 
 void hyphenate_word(int handle, char * word) {

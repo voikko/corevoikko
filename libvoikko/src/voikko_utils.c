@@ -29,7 +29,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	wchar_t * ucs4_buffer = malloc((LIBVOIKKO_MAX_WORD_CHARS + 1) * sizeof(wchar_t));
 	size_t res_size;
 	char * outptr = (char *) ucs4_buffer;
-	char * inptr = (char *) word;
+	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
 	size_t inbytesleft = strlen(word);
 	size_t outbytesleft = LIBVOIKKO_MAX_WORD_CHARS * sizeof(wchar_t);
 	ucs4_buffer[LIBVOIKKO_MAX_WORD_CHARS] = L'\0';
@@ -62,7 +62,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	char * utf8_buffer = malloc(LIBVOIKKO_MAX_WORD_CHARS * 6 + 1);
 	size_t res_size;
 	char * outptr = utf8_buffer;
-	char * inptr = (char *) word;
+	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
 	size_t inbytesleft = wcslen(word) * sizeof(wchar_t);
 	size_t outbytesleft = LIBVOIKKO_MAX_WORD_CHARS;
 	utf8_buffer[LIBVOIKKO_MAX_WORD_CHARS] = '\0';

@@ -1,3 +1,8 @@
+2006-04-20  Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Add AM_MAINTAINER_MODE to configure.ac
+	* Some porting work for FreeBSD
+
 2006-04-19  Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Add support for personal Malaga project file in $HOME/.voikko/suomi.pro

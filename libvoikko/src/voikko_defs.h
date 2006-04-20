@@ -23,6 +23,7 @@
 #include "voikko.h"
 #include <config.h>
 #include <stddef.h>
+#include "porting.h"
 
 /* Shared library support */
 #ifdef WIN32

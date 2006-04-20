@@ -26,6 +26,7 @@
 #include <langinfo.h>
 #include <stdio.h>
 #include <string.h>
+#include "porting.h"
 
 int autotest;
 

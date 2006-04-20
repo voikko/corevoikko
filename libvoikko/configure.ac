@@ -28,6 +28,8 @@ AC_PROG_INSTALL
 AC_PROG_LIBTOOL
 #AC_PROG_RANLIB
 
+AM_MAINTAINER_MODE
+
 dnl Default compiler settings
 CFLAGS="$CFLAGS -Wall -pedantic -std=gnu99"
 
@@ -104,6 +106,8 @@ AC_CHECK_FUNCS([mbrlen])
 AC_CHECK_FUNCS([memset])
 AC_CHECK_FUNCS([strchr])
 AC_CHECK_FUNCS([getpwuid_r])
+AC_CHECK_FUNCS([getline])
+AM_ICONV
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT

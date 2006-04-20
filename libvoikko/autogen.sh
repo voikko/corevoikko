@@ -17,5 +17,6 @@ autoheader
 aclocal 
 automake-1.9 --add-missing --copy --force-missing --foreign
 autoconf
+autoheader
 #autoreconf
 
