@@ -1,5 +1,9 @@
 2006-04-23  Harri Pitkänen  <hatapitk@iki.fi>
 
+	* Fix use-after-free in voikko_do_spell
+
+2006-04-23  Harri Pitkänen  <hatapitk@iki.fi>
+
 	* Fix pointer usage in porting.c:getline
 	* configure fixes
 

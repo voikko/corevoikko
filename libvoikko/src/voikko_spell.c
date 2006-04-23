@@ -30,13 +30,19 @@ int voikko_do_spell(const char * word) {
 	char * buffer = malloc(strlen(word) + 1);
 	strcpy(buffer, word);
 	analyse_item(buffer, MORPHOLOGY);
-	free(buffer);
-	if (first_analysis_result()) return VOIKKO_SPELL_OK;
+	if (first_analysis_result()) {
+		free(buffer);
+		return VOIKKO_SPELL_OK;
+	}
 	if (voikko_options.ignore_dot && strlen(word) > 1 && word[strlen(word) - 1] == '.') {
 		buffer[strlen(word) - 1] = '\0';
 		analyse_item(buffer, MORPHOLOGY);
-		if (first_analysis_result()) return VOIKKO_SPELL_OK;
+		if (first_analysis_result()) {
+			free(buffer);
+			return VOIKKO_SPELL_OK;
+		}
 	}
+	free(buffer);
 	return VOIKKO_SPELL_FAILED;
 }
 
