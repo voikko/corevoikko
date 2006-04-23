@@ -33,7 +33,12 @@ AM_MAINTAINER_MODE
 dnl Default compiler settings
 CFLAGS="$CFLAGS -Wall -pedantic -std=gnu99"
 
-MALAGA_PATH=${prefix}
+if test ${prefix} = "NONE"
+then
+	MALAGA_PATH=${ac_default_prefix}
+else
+	MALAGA_PATH=${prefix}
+fi
 AC_ARG_WITH(malaga-path,
             AC_HELP_STRING([--with-malaga-path=PATH],
 	                   [Malaga installation prefix]),
@@ -41,7 +46,13 @@ AC_ARG_WITH(malaga-path,
 AC_DEFINE_UNQUOTED(MALAGA_PATH, "$MALAGA_PATH", [Malaga installation prefix])
 AC_SUBST(MALAGA_PATH)
 
-DICTIONARY_PATH=${libdir}/voikko
+# FIXME: the following is wrong (it should be possible to change this when running make)
+if test ${prefix} = "NONE"
+then
+	DICTIONARY_PATH=${ac_default_prefix}/lib/voikko
+else
+	DICTIONARY_PATH=${prefix}/lib/voikko
+fi
 AC_ARG_WITH(dictionary-path,
             AC_HELP_STRING([--with-dictionary-path=PATH],
 	                   [Dictionary path]),

@@ -10,7 +10,7 @@ find -type f \( -name missing -o -name install-sh -o -name mkinstalldirs \
 rm -f config.sub config.guess
 cp /usr/share/misc/config.sub .
 cp /usr/share/misc/config.guess .
-	
+cp /usr/share/gettext/config.rpath .
 
 libtoolize --force --copy
 autoheader
