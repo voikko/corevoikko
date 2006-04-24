@@ -82,8 +82,7 @@
  * of (1) all possible hyphenations or (2) all hyphenations where the compound word
  * has the minimal amount of parts (:= m) in it. The rule (1) is applied if and only
  * if m > voikko_intersect_compound_level.
- * Default: 1
- * FIXME: This option is currently unimplemented */
+ * Default: 1 */
 #define VOIKKO_INTERSECT_COMPOUND_LEVEL 5
 
 /* String options */

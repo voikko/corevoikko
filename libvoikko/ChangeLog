@@ -1,3 +1,7 @@
+2006-04-24  Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Implement VOIKKO_OPT_COMPOUND_INTERSECT_LEVEL
+
 2006-04-23  Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Fix use-after-free in voikko_do_spell

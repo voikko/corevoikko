@@ -28,7 +28,7 @@
  * or correct. */
 size_t getline(char ** lineptr, size_t * n, FILE * stream) {
 	char * charptr = *lineptr;
-	int i;
+	size_t i;
 	if (*n <= 0) return 0;
 	for (i = 0; i < *n - 1; i++) {
 		if (fgets(charptr, 2, stream) == 0) {

@@ -102,7 +102,7 @@ int voikko_terminate(int handle) {
 	else return 0;
 }
 
-int voikko_find_malaga_project(char * buffer, int buflen, const char * langcode) {
+int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode) {
 	struct passwd pwd;
 	struct stat sbuf;
 	struct passwd * pwd_result;

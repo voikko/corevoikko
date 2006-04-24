@@ -25,7 +25,7 @@
 
 wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	iconv_t cd;
-	int conv_bytes;
+	size_t conv_bytes;
 	wchar_t * ucs4_buffer = malloc((LIBVOIKKO_MAX_WORD_CHARS + 1) * sizeof(wchar_t));
 	size_t res_size;
 	char * outptr = (char *) ucs4_buffer;
@@ -39,8 +39,8 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	LOG(("outbytesleft = %d\n", (int) outbytesleft));
 	LOG(("inptr = '%s'\n", inptr));
 	iconv(cd, 0, &inbytesleft, &outptr, &outbytesleft);
-	conv_bytes = (int) iconv(cd, &inptr, &inbytesleft, &outptr, &outbytesleft);
-	LOG(("conv_bytes = %d\n", conv_bytes));
+	conv_bytes = iconv(cd, &inptr, &inbytesleft, &outptr, &outbytesleft);
+	LOG(("conv_bytes = %d\n", (int) conv_bytes));
 	LOG(("inbytesleft = %d\n", (int) inbytesleft));
 	LOG(("outbytesleft = %d\n", (int) outbytesleft));
 	LOG(("inptr = '%s'\n", inptr));
@@ -58,7 +58,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 
 char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	iconv_t cd;
-	int conv_bytes;
+	size_t conv_bytes;
 	char * utf8_buffer = malloc(LIBVOIKKO_MAX_WORD_CHARS * 6 + 1);
 	size_t res_size;
 	char * outptr = utf8_buffer;
@@ -72,8 +72,8 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	LOG(("outbytesleft = %d\n", (int) outbytesleft));
 	LOG(("inptr = '%s'\n", inptr));
 	iconv(cd, 0, &inbytesleft, &outptr, &outbytesleft);
-	conv_bytes = (int) iconv(cd, &inptr, &inbytesleft, &outptr, &outbytesleft);
-	LOG(("conv_bytes = %d\n", conv_bytes));
+	conv_bytes = iconv(cd, &inptr, &inbytesleft, &outptr, &outbytesleft);
+	LOG(("conv_bytes = %d\n", (int) conv_bytes));
 	LOG(("inbytesleft = %d\n", (int) inbytesleft));
 	LOG(("outbytesleft = %d\n", (int) outbytesleft));
 	LOG(("inptr = '%s'\n", inptr));

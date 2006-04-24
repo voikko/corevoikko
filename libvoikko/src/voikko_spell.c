@@ -59,8 +59,8 @@ int voikko_spell_cstr(int handle, const char * word) {
 }
 
 int voikko_spell_ucs4(int handle, const wchar_t * word) {
-	int nchars = wcslen(word);
-	int i;
+	size_t nchars = wcslen(word);
+	size_t i;
 	char * word_utf8;
 	int result;
 	if (voikko_options.ignore_numbers) {

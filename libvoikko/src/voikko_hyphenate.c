@@ -30,11 +30,11 @@ const wchar_t * SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"o
                                    L"i\u00f6", L"y\u00e4", L"\u00e4e", L"\u00f6e" };
 const wchar_t * LONG_CONSONANTS[] = { L"shtsh", L"\u0161t\u0161", L"tsh", L"t\u0161", L"zh" };
 
-void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, int nchars) {
+void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars) {
 	wchar_t * word_copy;
-	int i;
-	int j;
-	int k;
+	size_t i;
+	size_t j;
+	size_t k;
 	
 	if (nchars == 0) return;
 	
@@ -96,11 +96,11 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	free(word_copy);
 }
 
-void voikko_interpret_analysis(value_t analysis, char * buffer, int len) {
+void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len) {
 	char * analysis_string;
 	wchar_t * analysis_w;
 	wchar_t * analysis_ptr;
-	int i;
+	size_t i;
 	analysis_string = get_value_string(analysis);
 	analysis_w = voikko_cstrtoucs4(analysis_string, "UTF-8");
 	memset(buffer, ' ', len);
@@ -130,9 +130,8 @@ char ** voikko_split_compounds(const wchar_t * word) {
 	int analysis_count;
 	char ** all_results;
 	char * result;
-	int word_len;
-	int i;
-	int j;
+	size_t word_len;
+	size_t i;
 	all_results = malloc((LIBVOIKKO_MAX_ANALYSIS_COUNT + 1) * sizeof(char *));
 	word_len = wcslen(word);
 	all_results[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
@@ -161,24 +160,14 @@ char ** voikko_split_compounds(const wchar_t * word) {
 	all_results[analysis_count] = 0;
 	free(word_utf8);
 
-	/* Check if there is a non-compound alternative
-	 * => that will override all other combinations */
-	for (i = 0; all_results[i] != 0; i++) {
-		if (!strchr(all_results[i], '-') && !strchr(all_results[i], '=')) {
-			for (j = 0; all_results[j] != 0; j++)
-				if (j != i) free(all_results[j]);
-			all_results[0] = all_results[i];
-			all_results[1] = 0;
-			break;
-		}
-	}
+	voikko_remove_extra_hyphenations(all_results, word_len, voikko_options.intersect_compound_level);
 
 	return all_results;
 }
 
 char * voikko_intersect_hyphenations(char ** hyphenations) {
-	int len;
-	int i;
+	size_t len;
+	size_t i;
 	char * intersection;
 	char ** current_ptr;
 	len = strlen(hyphenations[0]);
@@ -195,9 +184,9 @@ char * voikko_intersect_hyphenations(char ** hyphenations) {
 }
 
 void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation) {
-	int len;
-	int start;
-	int end;
+	size_t len;
+	size_t start;
+	size_t end;
 	len = wcslen(word);
 	start = 0;
 	while (start < len && hyphenation[start] == '=') start++;
@@ -213,6 +202,36 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation) {
 	}
 	if (end == len && start < end)
 		voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
+}
+
+void voikko_remove_extra_hyphenations(char ** hyphenations, size_t len, int intersect_compound_level) {
+	int min_parts = 0;
+	int current_parts;
+	size_t i;
+	int hyphenation_count = 0;
+	int j = 0;
+	char ** current_buffer = hyphenations;
+	while (*current_buffer != 0) {
+		hyphenation_count++;
+		current_parts = 1;
+		for (i = 0; i < len; i++) if ((*current_buffer)[i] != ' ') current_parts++;
+		if (min_parts == 0 || min_parts > current_parts) min_parts = current_parts;
+		current_buffer++;
+	}
+	if (min_parts > intersect_compound_level) return; /* nothing to do */
+	/* delete items from array where current_parts > intersect_compound_level */
+	while (j < hyphenation_count) {
+		current_buffer = hyphenations + j;
+		current_parts = 1;
+		for (i = 0; i < len; i++) if ((*current_buffer)[i] != ' ') current_parts++;
+		if (current_parts > intersect_compound_level) {
+			free(hyphenations[j]);
+			hyphenations[j] = hyphenations[--hyphenation_count];
+			hyphenations[hyphenation_count] = 0;
+		}
+		else j++;
+	}
+	/* TODO: remove indentically split words */
 }
 
 char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {

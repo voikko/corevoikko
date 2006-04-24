@@ -40,6 +40,6 @@ int voikko_handle_count;
  * @return true if finding project file succeeded, otherwise false. It is not guaranteed that
  *         the file actually exists.
  */
-int voikko_find_malaga_project(char * buffer, int buflen, const char * langcode);
+int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode);
 
 #endif

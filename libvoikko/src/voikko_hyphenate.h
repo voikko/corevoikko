@@ -22,14 +22,52 @@
 #include <stddef.h>
 #include <malaga.h>
 
-void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, int nchars);
+/**
+ * Performs rule-based hyphenation.
+ * @param word word to hyphenate
+ * @param hyphenation_points hyphenation buffer where the results will be stored
+ * @param nchars number of characters in the word
+ */
+void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars);
 
-void voikko_interpret_analysis(value_t analysis, char * buffer, int len);
+/**
+ * Sets the known hyphenation points (compound word borders) according to given Malaga analysis.
+ * @param analysis Malaga analysis of the word
+ * @param buffer hyphenation buffer to store the results to
+ * @param len length of the buffer
+ */
+void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len);
 
+/**
+ * Calculates the intersection of hyphenation points.
+ * @param hyphenations array of hyphenation buffers
+ * @return hyphenation buffer that contains the intersection of given hyphenations
+ */
 char * voikko_intersect_hyphenations(char ** hyphenations);
 
+/**
+ * Hyphenates a compound word.
+ * @param word word to hyphenate
+ * @param hyphenation buffer to write the results to. It is assumed that compound word borders
+ *        have already been marked on the buffer.
+ */
 void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation);
 
+/**
+ * Creates an array of hyphenation buffers for given word.
+ * @param word word to analyse
+ * @return array of hyphenation buffers that correspond to different ways how word could
+ *         be split
+ */
 char ** voikko_split_compounds(const wchar_t * word);
+
+/**
+ * Removes hyphenation buffers that are considered unnecessary to analyse.
+ * @param hyphenations list of hyphenation buffers. It is assumed that compound word borders
+ *        have already been marked on the buffer.
+ * @param len length of the word
+ * @param intersect_compound_level value of option intersect_compound_level
+ */
+void voikko_remove_extra_hyphenations(char ** hyphenations, size_t len, int intersect_compound_level);
 
 #endif
