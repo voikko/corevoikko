@@ -62,21 +62,37 @@
 #define VOIKKO_CHARSET_CONVERSION_FAILED 3
 
 /* Boolean options */
+
 /* Ignore dot at the end of the word (needed for use in some word processors)
  * Default: false */
 #define VOIKKO_OPT_IGNORE_DOT 0
+
 /* Ignore words containing numbers
  * Default: false */
 #define VOIKKO_OPT_IGNORE_NUMBERS 1
-/* Ignore words that are written completely in uppercase letters
+
+/* Accept words that are written completely in uppercase letters without checking
+ * them at all.
  * Default: false */
 #define VOIKKO_OPT_IGNORE_UPPERCASE 3
+
+/* Accept words even when the first letter is in uppercase (start of sentence etc.)
+ * Default: true */
+#define VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE 6
+
+/* Accept words even when all of the letters are in uppercase. Note that this is
+ * not the same as VOIKKO_OPT_IGNORE_UPPERCASE: with this option the word is still
+ * checked, only case differences are ignored.
+ * Default: true */
+#define VOIKKO_OPT_ACCEPT_ALL_UPPERCASE 7
+
 /* Do not insert hyphenation positions that are considered to be ugly but correct
  * Default: false
  * FIXME: This option is currently unimplemented */
 #define VOIKKO_OPT_NO_UGLY_HYPHENATION 4
 
 /* Integer options */
+
 /* There are two possible rules that can be applied when hyphenating compound words
  * that can be split in more than one different way. We either take the intersection
  * of (1) all possible hyphenations or (2) all hyphenations where the compound word

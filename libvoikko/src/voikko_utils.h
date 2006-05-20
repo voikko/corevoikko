@@ -22,7 +22,7 @@
 #include <stddef.h>
 
 #ifdef DEBUG
-#define LOG(x) printf(x)
+#define LOG(x) printf x
 #else
 #define LOG(X)
 #endif
@@ -30,8 +30,25 @@
 #define VOIKKO_CONSONANTS L"bcdfghjklmnpqrstvwxz\u0161\u017e"
 #define VOIKKO_VOWELS L"aeiouy\u00e4\u00f6"
 
+enum casetype {CT_NO_LETTERS, CT_ALL_LOWER, CT_FIRST_UPPER, CT_COMPLEX, CT_ALL_UPPER};
+
 wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding);
 
 char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding);
+
+/** Simple string hashing algorithm
+ * @param word string to hash
+ * @param len length of the word
+ * @param order order of the resulting hash value
+ * @return integer from range [0, 2^order - 1]
+ */
+int voikko_hash(const wchar_t * word, size_t len, int order);
+
+/** Returns the type of given string wrt the use of character cases.
+ * @param word string to check
+ * @param nchars length of the string
+ * @return character case type of the string
+ */
+enum casetype voikko_casetype(const wchar_t * word, size_t nchars);
 
 #endif

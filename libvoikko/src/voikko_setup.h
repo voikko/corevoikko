@@ -19,14 +19,25 @@
 #ifndef VOIKKO_SETUP_H
 #define VOIKKO_SETUP_H
 
+#include <iconv.h>
+#include <wchar.h>
+
 typedef struct {
 	int ignore_dot;
 	int ignore_numbers;
 	int ignore_uppercase;
+	int accept_first_uppercase;
+	int accept_all_uppercase;
 	int no_ugly_hyphenation;
 	int intersect_compound_level;
 	const char * encoding;
-	} voikko_options_t;
+	iconv_t iconv_ucs4_utf8;
+	iconv_t iconv_utf8_ucs4;
+	iconv_t iconv_ucs4_ext;
+	iconv_t iconv_ext_ucs4;
+	wchar_t * cache;
+	char * cache_meta;
+} voikko_options_t;
 
 voikko_options_t voikko_options;
 

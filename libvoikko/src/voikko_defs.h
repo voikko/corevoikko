@@ -23,6 +23,7 @@
 #include "voikko.h"
 #include <config.h>
 #include <stddef.h>
+#include <assert.h>
 #include "porting.h"
 
 /* Shared library support */

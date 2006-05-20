@@ -21,6 +21,27 @@
 
 #include <stddef.h>
 
-int voikko_do_spell(const char * word);
+/* SPELL_FAILED:    Word does not exist in the language even if the character cases
+ *                  were changed.
+ * SPELL_OK:        Word is correct.
+ * SPELL_CAP_FIRST: Word would be correct if the first letter was changed to upper case.
+ * SPELL_CAP_ERROR: Word would be correct if some of its characters were in different case.
+*/
+enum spellresult {SPELL_FAILED, SPELL_OK, SPELL_CAP_FIRST, SPELL_CAP_ERROR};
+
+/** Checks the spelling of given word
+ * @param word word to check (does not need to be null terminated)
+ * @param len length of the word to check
+ * @return spelling result
+ */
+enum spellresult voikko_do_spell(const wchar_t * word, size_t len);
+
+/** Checks the spelling of given word and uses cache if possible
+ * @param word word to check. Word does not need to be null terminated and it must
+ *             not contain upper case letters
+ * @param len length of the word to check
+ * @return spelling result
+ */
+enum spellresult voikko_cached_spell(const wchar_t * word, size_t len);
 
 #endif

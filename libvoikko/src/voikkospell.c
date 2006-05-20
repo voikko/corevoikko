@@ -59,6 +59,7 @@ int main(int argc, char ** argv) {
 	ssize_t chars_read;
 	char * encoding;
 	int handle;
+	int i;
 	if (argc == 2 && strcmp(argv[1], "-t") == 0) autotest = 1;
 	const char * voikko_error = voikko_init(&handle, "fi_FI");
 	/*char * hyphens;*/
@@ -75,9 +76,11 @@ int main(int argc, char ** argv) {
 	voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_UPPERCASE, 0);
 	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
-	/*hyphens = voikko_hyphenate_cstr("kissa");
-	printf("'%s'\n", hyphens);
-	free(hyphens);*/
+	for (i = 1; i < argc; i++) {
+		if (strcmp(argv[i], "-t") == 0) autotest = 1;
+		else if (strcmp(argv[i], "ignore_dot=1") == 0) voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
+		else if (strcmp(argv[i], "ignore_dot=0") == 0) voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+	}
 	
 	while (1) {
 		chars_read = getline(&line, &size, stdin);

@@ -31,7 +31,7 @@ AC_PROG_LIBTOOL
 AM_MAINTAINER_MODE
 
 dnl Default compiler settings
-CFLAGS="$CFLAGS -Wall -pedantic -std=gnu99"
+CFLAGS="$CFLAGS -Wall -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 
 if test ${prefix} = "NONE"
 then

@@ -36,18 +36,13 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	size_t j;
 	size_t k;
 	
-	if (nchars == 0) return;
+	if (nchars <= 1) return;
 	
 	word_copy = malloc((nchars + 1) * sizeof(wchar_t));
 	for (i = 0; i < nchars; i++) {
 		word_copy[i] = towlower(word[i]);
 	}
 	word_copy[nchars] = '\0';
-	
-	if (nchars == 1) {
-		free(word_copy);
-		return;
-	}
 	
 	/* at least one vowel is required before the first hyphen */
 	i = 0;
@@ -97,7 +92,7 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 }
 
 void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len) {
-	char * analysis_string;
+	const char * analysis_string;
 	wchar_t * analysis_w;
 	wchar_t * analysis_ptr;
 	size_t i;
@@ -121,7 +116,7 @@ void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len) {
 		analysis_ptr++;
 	}
 	free(analysis_w);
-	free(analysis_string);
+	free((char *) analysis_string);
 }
 
 char ** voikko_split_compounds(const wchar_t * word) {
