@@ -61,7 +61,7 @@ int main(int argc, char ** argv) {
 	int handle;
 	int i;
 	if (argc == 2 && strcmp(argv[1], "-t") == 0) autotest = 1;
-	const char * voikko_error = voikko_init(&handle, "fi_FI");
+	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
 	/*char * hyphens;*/
 	if (voikko_error) {
 		printf("Initialisation of Voikko failed: %s\n", voikko_error);

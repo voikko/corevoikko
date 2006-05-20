@@ -38,7 +38,7 @@
 #endif
 
 
-VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode);
+VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size);
 
 VOIKKOEXPORT int voikko_terminate(int handle);
 

@@ -88,7 +88,7 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 	return 0;
 }
 
-const char * voikko_init(int * handle, const char * langcode) {
+const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 	char * project = malloc(1024);
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;

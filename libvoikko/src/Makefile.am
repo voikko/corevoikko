@@ -4,7 +4,7 @@ INCLUDES = -I$(MALAGA_INC)
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = voikko_suggest.c voikko_utils.c voikko_setup.c voikko_spell.c \
                        voikko_hyphenate.c porting.c
-libvoikko_la_LDFLAGS = -lmalaga -L$(MALAGA_PATH)/lib
+libvoikko_la_LDFLAGS = -lmalaga -L$(MALAGA_PATH)/lib -version-info 1:0:0
 LDADD = libmalaga.la
 
 bin_PROGRAMS = voikkospell voikkohyphenate

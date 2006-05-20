@@ -81,7 +81,7 @@ int main() {
 	ssize_t chars_read;
 	char * encoding;
 	int handle;
-	const char * voikko_error = voikko_init(&handle, "fi_FI");
+	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
 
 	if (voikko_error) {
 		printf("Initialisation of Voikko failed: %s\n", voikko_error);

@@ -1,5 +1,10 @@
 2006-05-20  Harri Pitkänen  <hatapitk@iki.fi>
 
+	* Add cache size parameter to voikko_init
+	* Version 0.3
+
+2006-05-20  Harri Pitkänen  <hatapitk@iki.fi>
+
 	* Case-sensitive checking
 	* Iconv handle caching
 	* Spellchecker result cache

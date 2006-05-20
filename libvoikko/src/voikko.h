@@ -19,7 +19,7 @@
 /* This library should be used in the following manner:
  * 
  * int handle;
- * char * voikko_error = voikko_init(&handle, "fi_FI");
+ * char * voikko_error = voikko_init(&handle, "fi_FI", 0);
  * // check for errors
  * // set options
  * // use spell/suggest/hyphenate
@@ -116,10 +116,13 @@ BEGIN_C_DECLS
  * @param handle after succesful initialisation handle will contain a handle that
  *        refers to this particular instance of voikko
  * @param langcode the language code, for example "fi_FI"
+ * @param cache_size size of the spellchecker cache. This can be -1 (no cache) or
+ *        >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
+ *        TODO: This parameter is currently ignored (cache_size = 0 is assumed)
  * @return null, if initialisation completed without error, otherwise a pointer
  *         to a string describing the error
  */
-const char * voikko_init(int * handle, const char * langcode);
+const char * voikko_init(int * handle, const char * langcode, int cache_size);
 
 /**
  * Terminates an instance of voikko.
