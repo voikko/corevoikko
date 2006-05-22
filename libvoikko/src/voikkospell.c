@@ -29,8 +29,11 @@
 #include "porting.h"
 
 int autotest;
+int suggest;
 
 void check_word(int handle, char * word) {
+	char ** suggestions;
+	int i;
 	int result = voikko_spell_cstr(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		printf("E: charset conversion failed\n");
@@ -48,6 +51,16 @@ void check_word(int handle, char * word) {
 	else {
 		if (result) printf("C: %s\n", word);
 		else printf("W: %s\n", word);
+	}
+	if (suggest && !result) {
+		suggestions = voikko_suggest_cstr(handle, word);
+		if (suggestions) {
+			for (i = 0; suggestions[i] != 0; i++) {
+				printf("S: %s\n", suggestions[i]);
+				free(suggestions[i]);
+			}
+			free(suggestions);
+		}
 	}
 }
 
@@ -78,8 +91,15 @@ int main(int argc, char ** argv) {
 	
 	for (i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-t") == 0) autotest = 1;
-		else if (strcmp(argv[i], "ignore_dot=1") == 0) voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
-		else if (strcmp(argv[i], "ignore_dot=0") == 0) voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+		else if (strcmp(argv[i], "ignore_dot=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
+		else if (strcmp(argv[i], "ignore_dot=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+		else if (strcmp(argv[i], "accept_first_uppercase=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
+		else if (strcmp(argv[i], "accept_first_uppercase=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 0);
+		else if (strcmp(argv[i], "-s") == 0) suggest = 1;
 	}
 	
 	while (1) {
