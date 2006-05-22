@@ -1,5 +1,9 @@
 2006-05-22  Harri Pitkänen  <hatapitk@iki.fi>
 
+	* Add manual pages for voikkospell and voikkohyphenate
+
+2006-05-22  Harri Pitkänen  <hatapitk@iki.fi>
+
 	* Character case correcting suggestions
 	* New options in voikkospell: -s, accept_first_uppercase=0|1
 

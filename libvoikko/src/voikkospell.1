@@ -1,0 +1,47 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH VOIKKOSPELL 1 "2006-05-22"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+voikkospell, voikkohyphenate \- voikko test programs
+.SH SYNOPSIS
+.B voikkospell
+options
+.br
+.B voikkohyphenate
+.SH DESCRIPTION
+.B voikkospell
+and
+.B voikkohyphenate
+are test programs for libvoikko, Finnish spellchecker and hyphenator library.
+They read words from stdin (one word on a line) and print the results to stdout. voikkospell adds
+"C: " in front of correct words and "W: " in front of incorrect words. voikkohyphenate prints
+words in fully hyphenated form.
+.SH OPTIONS
+.TP
+.B \-t
+Prints only "C" or "W" instead of typical full output.
+.TP
+.B \-s
+Prints suggestions (S:) for incorrectly spelled words.
+.TP
+.B ignore_dot=n
+.TP
+.B accept_first_uppercase=n
+Sets the value of the specified boolean option. n can be either 0 (false) or 1 (true).
+.SH AUTHOR
+voikkospell and this manual page were written by Harri Pitkanen (hatapitk@iki.fi).
+
