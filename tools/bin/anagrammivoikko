@@ -1,0 +1,75 @@
+#!/usr/bin/env python2.4
+# -*- coding: utf-8 -*-
+
+# Copyright 2006 Harri Pitkänen (hatapitk@iki.fi)
+# Program to create Finnish anagrams
+# This program requires Python version 2.4 or newer.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import locale
+import subprocess
+
+SPELLING_PROGRAM = ['voikkospell', '-t']
+PARAM_ENCODING = locale.getpreferredencoding()
+
+# Computes lexicographically next permutation of elements in list clist.
+# Returns the permutation or None, if clist already has its elements in
+# lexicographically decreasing order. This algorithm is explained in
+# Edsger W. Djikstra: A Discipline of Programming.
+def next_permutation(clist):
+	n = len(clist)
+	if n < 2: return None
+	i = n - 1
+	while i > 0:
+		if clist[i - 1] < clist[i]:
+			j = i - 1
+			k = n - 1
+			while clist[k] <= clist[j]: k = k - 1
+			# swap items j and k
+			tmp = clist[j]
+			clist[j] = clist[k]
+			clist[k] = tmp
+			# reverse list from i to end
+			ltmp = clist[i:]
+			ltmp.reverse()
+			clist[i:] = ltmp
+			return clist
+		i = i - 1
+	return None
+
+
+# Start of main program
+
+if len(sys.argv) != 2:
+	print 'Usage: anagrammivoikko word'
+	sys.exit(1)
+word = unicode(sys.argv[1], PARAM_ENCODING)
+clist = list(word)
+clist.sort()
+
+speller = subprocess.Popen(SPELLING_PROGRAM, bufsize=1,
+                         stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
+
+while (clist != None):
+	wrd = u''.join(clist)
+	eword = wrd.encode(PARAM_ENCODING)
+	speller.stdin.write(eword + '\n')
+	speller.stdin.flush()
+	result = speller.stdout.readline()
+	if result == 'C\n': print wrd
+	clist = next_permutation(clist)
+
