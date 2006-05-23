@@ -41,7 +41,13 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 	(*cost)++;
 	switch (sres) {
 		case SPELL_FAILED:
+			return;
 		case SPELL_OK:
+			newsugg = malloc((wlen + 1) * sizeof(wchar_t));
+			wcscpy(newsugg, word);
+			**suggestions = newsugg;
+			(*suggestions)++;
+			(*max_suggestions)--;
 			return;
 		case SPELL_CAP_FIRST:
 			newsugg = malloc((wlen + 1) * sizeof(wchar_t));
@@ -80,6 +86,60 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 	}
 }
 
+const wchar_t * BACK_VOWELS =  L"aouAOU";
+const wchar_t * FRONT_VOWELS = L"\u00e4\u00f6y\u00c4\u00d6Y";
+
+void voikko_suggest_vowel_change(int handle, wchar_t *** suggestions, int * max_suggestions,
+                                 const wchar_t * word, size_t wlen, int * cost) {
+	size_t i;
+	int j;
+	int k;
+	int mask = 0;
+	int vcount = 0;
+	int pat = 1;
+	wchar_t * buffer;
+	for (i = 0; i < wlen; i++)
+		for (j = 0; j < 6; j++)
+			if (word[i] == BACK_VOWELS[j] ||
+			    word[i] == FRONT_VOWELS[j]) {
+				vcount++;
+				mask <<= 1;
+				mask++;
+				break;
+			}
+	if (vcount == 0 || vcount > 7) return;
+	buffer = malloc((wlen + 1) * sizeof(wchar_t));
+	while ((pat & mask) != 0) {
+		i = 0;
+		wcscpy(buffer, word);
+		for (j = 0; j < vcount; j++) {
+			while (!wcschr(BACK_VOWELS,  buffer[i]) &&
+			       !wcschr(FRONT_VOWELS, buffer[i])) i++;
+			if (pat & (1 << j)) {
+				for (k = 0; k < 6; k++) {
+					if (buffer[i] == BACK_VOWELS[k]) {
+						buffer[i] = FRONT_VOWELS[k];
+						break;
+					}
+					if (buffer[i] == FRONT_VOWELS[k]) {
+						buffer[i] = BACK_VOWELS[k];
+						break;
+					}
+				}
+			}
+			i++;
+		}
+		if (*max_suggestions == 0) {
+			free(buffer);
+			return;
+		}
+		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
+		                            buffer, wlen, cost);
+		pat++;
+	}
+	free(buffer);
+}
+
 wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wchar_t ** suggestions;
 	wchar_t ** free_sugg;
@@ -96,7 +156,8 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	cost = 0;
 	
 	voikko_suggest_correct_case(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
-	
+	if (suggestions_left != MAX_SUGGESTIONS) return suggestions;
+	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
 	if (suggestions_left == MAX_SUGGESTIONS) {
 		free(suggestions);
 		return 0;

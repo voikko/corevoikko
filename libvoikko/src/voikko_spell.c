@@ -64,8 +64,8 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			j++;
 		}
 		free((char *) analysis_str);
-		if (best_result < result) best_result = result;
-		if (best_result == SPELL_CAP_ERROR) break;
+		if (best_result == SPELL_FAILED || best_result > result) best_result = result;
+		if (best_result == SPELL_OK) break;
 		analysis = next_analysis_result();
 	} while (analysis);
 	free(cappat);
