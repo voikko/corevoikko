@@ -1,0 +1,93 @@
+#!/usr/bin/env python2.4
+# -*- coding: utf-8 -*-
+
+# Copyright 2006 Harri Pitkänen (hatapitk@iki.fi)
+# Prototype program for libvoikko suggestion code
+# This program requires Python version 2.4 or newer.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import locale
+import subprocess
+
+SPELLING_PROGRAM = ['voikkospell', '-t']
+PARAM_ENCODING = locale.getpreferredencoding()
+
+# Characters sorted by frequency obtained using
+# cat ispell.txt | recode utf8..latin9 | fold -w 1 | recode latin9..utf8 | sort | uniq -c -i
+chars = u"aitesnulkoämrvpyhjdögfb-cw:xzqå"
+
+# Replacement map
+repfr = u"aaiitesnuulkkooäämrrvppyyhjjdddöögggffbbcwwxzqååååaitesnulkoämrvpyhjdögfbcwxzqå"
+repto = u"äsuorramyiklgöiaönetbboutjhktsfoäfhkgdpnvevcxaopäöekysdhjöjppkdglhuieltvvkasaka"
+
+def listed_replacements(word, replist, startchar, nchars):
+    for repind in range(startchar, startchar+nchars):
+        wordind = word.find(repfr[repind], 0)
+        while wordind != -1:
+            head = word[:wordind]
+            tail = word[wordind+1:]
+            replist.append(head+repto[repind]+tail)
+            wordind = word.find(repfr[repind], wordind+1, len(word)-1)
+
+def deletions(word, replist):
+    for i in range(len(word)):
+        replist.append(word[:i]+word[i+1:])
+
+def insertions(word, replist, startchar, nchars):
+    for inschar in list(chars[startchar:startchar+nchars]):
+        for i in range(len(word)):
+            if word[i] != inschar: # avoid duplicate suggestions
+                replist.append(word[:i]+inschar+word[i:])
+        replist.append(word+inschar)
+
+def swaps(word, replist):
+    for i in range(len(word)):
+        for j in range(i+1, len(word)):
+            if word[i] != word[j]:
+                replist.append(word[:i]+word[j]+word[i+1:j]+word[i]+word[j+1:])
+
+# Start of main program
+
+if len(sys.argv) != 2:
+	print 'Usage: voikkosuggest word'
+	sys.exit(1)
+word = unicode(sys.argv[1], PARAM_ENCODING)
+
+replist = []
+listed_replacements(word, replist, 0, 50)
+deletions(word, replist)
+insertions(word, replist, 0, 5)
+swaps(word, replist)
+if (len(replist) < 300): listed_replacements(word, replist, 50, 29)
+if (len(replist) < 300): insertions(word, replist, 5, 5)
+if (len(replist) < 300): insertions(word, replist, 10, 5)
+if (len(replist) < 300): insertions(word, replist, 15, 5)
+if (len(replist) < 300): insertions(word, replist, 20, 5)
+if (len(replist) < 300): insertions(word, replist, 25, 6)
+
+speller = subprocess.Popen(SPELLING_PROGRAM, bufsize=1,
+                         stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
+
+print "Number of candidates: " + `len(replist)`
+for repword in replist:
+    eword = repword.encode(PARAM_ENCODING)
+    speller.stdin.write(eword + '\n')
+    speller.stdin.flush()
+    result = speller.stdout.readline()
+    if result == 'C\n': print repword
+
+
