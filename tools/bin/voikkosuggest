@@ -45,7 +45,7 @@ def listed_replacements(word, replist, startchar, nchars):
 
 def deletions(word, replist):
     for i in range(len(word)):
-        replist.append(word[:i]+word[i+1:])
+        if i == 0 or word[i] != word[i-1]: replist.append(word[:i]+word[i+1:])
 
 def insertions(word, replist, startchar, nchars):
     for inschar in list(chars[startchar:startchar+nchars]):
@@ -72,12 +72,12 @@ listed_replacements(word, replist, 0, 50)
 deletions(word, replist)
 insertions(word, replist, 0, 5)
 swaps(word, replist)
-if (len(replist) < 300): listed_replacements(word, replist, 50, 29)
-if (len(replist) < 300): insertions(word, replist, 5, 5)
-if (len(replist) < 300): insertions(word, replist, 10, 5)
-if (len(replist) < 300): insertions(word, replist, 15, 5)
-if (len(replist) < 300): insertions(word, replist, 20, 5)
-if (len(replist) < 300): insertions(word, replist, 25, 6)
+if (len(replist) < 250): listed_replacements(word, replist, 50, 29)
+if (len(replist) < 250): insertions(word, replist, 5, 5)
+if (len(replist) < 250): insertions(word, replist, 10, 5)
+if (len(replist) < 250): insertions(word, replist, 15, 5)
+if (len(replist) < 250): insertions(word, replist, 20, 5)
+if (len(replist) < 250): insertions(word, replist, 25, 6)
 
 speller = subprocess.Popen(SPELLING_PROGRAM, bufsize=1,
                          stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
