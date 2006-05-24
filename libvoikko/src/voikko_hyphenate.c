@@ -38,6 +38,10 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	
 	if (nchars <= 1) return;
 	
+	/* TODO: the following is not enough if we later want to prevent hyphenation at single
+	 * points, not only in whole word segments. */
+	if (hyphenation_points[0] == 'X') return;
+	
 	word_copy = malloc((nchars + 1) * sizeof(wchar_t));
 	for (i = 0; i < nchars; i++) {
 		word_copy[i] = towlower(word[i]);
@@ -89,33 +93,36 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	}
 	
 	free(word_copy);
+	
+	if (voikko_options.no_ugly_hyphenation) {
+		hyphenation_points[1] = ' ';
+		hyphenation_points[nchars-1] = ' ';
+	}
 }
 
 void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len) {
 	const char * analysis_string;
-	wchar_t * analysis_w;
-	wchar_t * analysis_ptr;
+	const char * analysis_ptr;
 	size_t i;
 	analysis_string = get_value_string(analysis);
-	analysis_w = voikko_cstrtoucs4(analysis_string, "UTF-8");
 	memset(buffer, ' ', len);
-	analysis_ptr = analysis_w;
+	analysis_ptr = analysis_string;
 	if (*analysis_ptr == '=') analysis_ptr++;
 	for (i = 0; i < len; i++) {
-		if (analysis_ptr[0] == L'\0') break;
-		if (analysis_ptr[0] == L'-' && analysis_ptr[1] == L'=') {
+		if (analysis_ptr[0] == '\0') break;
+		if (analysis_ptr[0] == '-' && analysis_ptr[1] == '=') {
 			buffer[i] = '=';
 			analysis_ptr += 2;
 			continue;
 		}
-		if (analysis_ptr[0] == L'=') {
+		if (analysis_ptr[0] == '=') {
 			buffer[i] = '-';
 			analysis_ptr += 2;
 			continue;
 		}
+		if (analysis_ptr[0] == 'j' || analysis_ptr[0] == 'q') buffer[i] = 'X';
 		analysis_ptr++;
 	}
-	free(analysis_w);
 	free((char *) analysis_string);
 }
 
@@ -168,10 +175,12 @@ char * voikko_intersect_hyphenations(char ** hyphenations) {
 	len = strlen(hyphenations[0]);
 	intersection = malloc(len + 1);
 	strcpy(intersection, hyphenations[0]);
+	for (i = 0; i < len; i++) if (intersection[i] == 'X') intersection[i] = ' ';
 	current_ptr = &hyphenations[1];
 	while (*current_ptr != 0) {
 		for (i = 0; i < len; i++) {
-			if ((*current_ptr)[i] == ' ') intersection[i] = ' ';
+			if ((*current_ptr)[i] == ' ' || (*current_ptr)[i] == 'X')
+				intersection[i] = ' ';
 		}
 		current_ptr++;
 	}
@@ -187,7 +196,7 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation) {
 	while (start < len && hyphenation[start] == '=') start++;
 	end = start + 1;
 	while (end < len) {
-		if (hyphenation[end] != ' ') {
+		if (hyphenation[end] != ' ' && hyphenation[end] != 'X') {
 			voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
 			if (hyphenation[end] == '=') start = end + 1;
 			else start = end;
@@ -209,7 +218,8 @@ void voikko_remove_extra_hyphenations(char ** hyphenations, size_t len, int inte
 	while (*current_buffer != 0) {
 		hyphenation_count++;
 		current_parts = 1;
-		for (i = 0; i < len; i++) if ((*current_buffer)[i] != ' ') current_parts++;
+		for (i = 0; i < len; i++)
+			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') current_parts++;
 		if (min_parts == 0 || min_parts > current_parts) min_parts = current_parts;
 		current_buffer++;
 	}
@@ -218,7 +228,8 @@ void voikko_remove_extra_hyphenations(char ** hyphenations, size_t len, int inte
 	while (j < hyphenation_count) {
 		current_buffer = hyphenations + j;
 		current_parts = 1;
-		for (i = 0; i < len; i++) if ((*current_buffer)[i] != ' ') current_parts++;
+		for (i = 0; i < len; i++)
+			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') current_parts++;
 		if (current_parts > intersect_compound_level) {
 			free(hyphenations[j]);
 			hyphenations[j] = hyphenations[--hyphenation_count];

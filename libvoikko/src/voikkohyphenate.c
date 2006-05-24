@@ -75,12 +75,13 @@ void hyphenate_word(int handle, char * word) {
 
 
 
-int main() {
+int main(int argc, char ** argv) {
 	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
 	char * line = malloc(size); /* FIXME */
 	ssize_t chars_read;
 	char * encoding;
 	int handle;
+	int i;
 	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
 
 	if (voikko_error) {
@@ -94,6 +95,12 @@ int main() {
 	voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
 	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
+	for (i = 1; i < argc; i++) {
+		if (strcmp(argv[i], "no_ugly_hyphenation=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 1);
+		else if (strcmp(argv[i], "no_ugly_hyphenation=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
+	}
 	
 	while (1) {
 		chars_read = getline(&line, &size, stdin);

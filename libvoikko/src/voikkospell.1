@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2006-05-22"
+.TH VOIKKOSPELL 1 "2006-05-24"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -22,6 +22,7 @@ voikkospell, voikkohyphenate \- voikko test programs
 options
 .br
 .B voikkohyphenate
+options
 .SH DESCRIPTION
 .B voikkospell
 and
@@ -33,14 +34,20 @@ words in fully hyphenated form.
 .SH OPTIONS
 .TP
 .B \-t
-Prints only "C" or "W" instead of typical full output.
+(voikkospell) Prints only "C" or "W" instead of typical full output.
 .TP
 .B \-s
-Prints suggestions (S:) for incorrectly spelled words.
+(voikkospell) Prints suggestions (S:) for incorrectly spelled words.
 .TP
+(voikkospell)
 .B ignore_dot=n
 .TP
+(voikkospell)
 .B accept_first_uppercase=n
+.TP
+(voikkohyphenate)
+.B no_ugly_hyphenation=n
+.TP
 Sets the value of the specified boolean option. n can be either 0 (false) or 1 (true).
 .SH AUTHOR
 voikkospell and this manual page were written by Harri Pitkanen (hatapitk@iki.fi).

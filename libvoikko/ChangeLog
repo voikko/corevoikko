@@ -1,5 +1,11 @@
 2006-05-24  Harri Pitkänen  <hatapitk@iki.fi>
 
+	* Do not add hyphenation points if hyphenation is forbidden in Malaga
+	* Implement VOIKKO_OPT_NO_UGLY_HYPHENATION
+	* New options in voikkohyphenate: no_ugly_hyphenation=0|1
+
+2006-05-24  Harri Pitkänen  <hatapitk@iki.fi>
+
 	* Word splitting suggestions
 
 2006-05-23  Harri Pitkänen  <hatapitk@iki.fi>
