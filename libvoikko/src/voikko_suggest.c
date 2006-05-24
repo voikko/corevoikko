@@ -27,6 +27,7 @@
 #include <malaga.h>
 
 #define MAX_SUGGESTIONS 10
+#define COST_LIMIT 250
 
 void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_suggestions,
                                  const wchar_t * word, size_t wlen, int * cost) {
@@ -140,6 +141,42 @@ void voikko_suggest_vowel_change(int handle, wchar_t *** suggestions, int * max_
 	free(buffer);
 }
 
+void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_suggestions,
+                               const wchar_t * word, size_t wlen, int * cost) {
+	size_t splitind;
+	wchar_t * part1;
+	wchar_t * suggestion;
+	enum spellresult part1_res, part2_res;
+	part1 = malloc((wlen + 1) * sizeof(wchar_t));
+	wcscpy(part1, word);
+
+	for (splitind = wlen - 1; splitind > 0; splitind--) {
+		part1[splitind] = L'\0';
+		part1_res = voikko_do_spell(part1, splitind);
+		(*cost)++;
+		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
+			part2_res = voikko_do_spell(word + splitind, wlen - splitind);
+			(*cost)++;
+			if (part2_res == SPELL_OK || part2_res == SPELL_CAP_FIRST) {
+				suggestion = malloc((wlen + 2) * sizeof(wchar_t));
+				wcsncpy(suggestion, word, splitind);
+				if (part1_res == SPELL_CAP_FIRST)
+					suggestion[0] = towupper(suggestion[0]);
+				suggestion[splitind] = L' ';
+				wcsncpy(suggestion + (splitind + 1), word + splitind,
+				        wlen - splitind + 1);
+				if (part2_res == SPELL_CAP_FIRST)
+					suggestion[splitind+1] = towupper(suggestion[splitind+1]);
+				**suggestions = suggestion;
+				(*suggestions)++;
+				(*max_suggestions)--;
+			}
+		}
+	}
+
+	free(part1);
+}
+
 wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wchar_t ** suggestions;
 	wchar_t ** free_sugg;
@@ -158,6 +195,8 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	voikko_suggest_correct_case(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
 	if (suggestions_left != MAX_SUGGESTIONS) return suggestions;
 	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
+	if (cost < COST_LIMIT && suggestions_left > 0)
+		voikko_suggest_word_split(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
 	if (suggestions_left == MAX_SUGGESTIONS) {
 		free(suggestions);
 		return 0;
