@@ -177,6 +177,44 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 	free(part1);
 }
 
+/* ä=\u00e4, ö=\u00f6, å=\u00e5 */
+
+const wchar_t * REPLACE_ORIG =
+	L"aiitesnulkko\u00e4mrrvppyhjjddd\u00f6gggffbbcwwxzq\u00e5\u00e5\u00e5\u00e5aitesnul"  L"ko\u00e4"
+	L"mrvpyhjd\u00f6gfbcwxzq\u00e5";
+const wchar_t * REPLACE_REPLACEMENT = 
+	L"suorramiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvevcxao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6jpp"
+	L"kdglhuiel"  L"tvvkasaka";
+const int REPL_COUNT = 73;
+
+void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_suggestions,
+                                const wchar_t * word, size_t wlen, int * cost) {
+	int i;
+	wchar_t * pos;
+	wchar_t * buffer = malloc((wlen + 1) * sizeof(wchar_t));
+	wcsncpy(buffer, word, wlen + 1);
+	for (i = 0; i < REPL_COUNT; i++) {
+		for (pos = wcschr(buffer, REPLACE_ORIG[i]); pos != 0; pos = wcschr(pos+1, REPLACE_ORIG[i])) {
+			*pos = REPLACE_REPLACEMENT[i];
+			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
+			                            buffer, wlen, cost);
+			if (*max_suggestions == 0) break;
+			*pos = REPLACE_ORIG[i];
+		}
+		if (*max_suggestions == 0) break;
+		for (pos = wcschr(buffer, towupper(REPLACE_ORIG[i])); pos != 0;
+		     pos = wcschr(pos + 1, towupper(REPLACE_ORIG[i]))) {
+			*pos = towupper(REPLACE_REPLACEMENT[i]);
+			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
+			                            buffer, wlen, cost);
+			if (*max_suggestions == 0) break;
+			*pos = towupper(REPLACE_ORIG[i]);
+		}
+		if (*max_suggestions == 0) break;
+	}
+	free(buffer);
+}
+
 wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wchar_t ** suggestions;
 	wchar_t ** free_sugg;
@@ -197,6 +235,8 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_word_split(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
+	if (cost < COST_LIMIT && suggestions_left > 0)
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
 	if (suggestions_left == MAX_SUGGESTIONS) {
 		free(suggestions);
 		return 0;
