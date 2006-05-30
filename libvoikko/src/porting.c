@@ -43,5 +43,26 @@ size_t getline(char ** lineptr, size_t * n, FILE * stream) {
 }
 #endif
 
+#ifndef HAVE_NL_LANGINFO
+#ifdef WIN32
+#include <windows.h>
+#endif // WIN32
+#include "porting.h"
+
+char	*nl_langinfo(nl_item codeset) {
+    char *retval = NULL;
+#ifdef WIN32
+    CPINFOEX codePageInfo;
+    memset(&codePageInfo, 0x00, sizeof(codePageInfo));
+    if (GetCPInfoEx (CP_OEMCP, 0, &codePageInfo)) {
+        static char buf[2 + 10 + 1]; // "CPXXXXX\0"
+        sprintf(buf, "CP%u", codePageInfo.CodePage);
+        retval = buf;
+    }
+#endif // WIN32
+    return retval;
+}
+#endif
+
 /* Empty source file is forbidden, so put something here */
 int voikko_unused;

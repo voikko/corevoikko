@@ -23,10 +23,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
+#include "porting.h"
+#ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
+#endif // HAVE_NL_LANGINFO
 #include <stdio.h>
 #include <string.h>
-#include "porting.h"
 
 int autotest;
 int suggest;

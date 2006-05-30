@@ -23,11 +23,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
+#include "porting.h"
+#ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
+#endif // HAVE_NL_LANGINFO
 #include <stdio.h>
 #include <wchar.h>
 #include <string.h>
-#include "porting.h"
 
 
 void hyphenate_word(int handle, char * word) {

@@ -18,13 +18,18 @@
 
 #include "voikko_defs.h"
 #include "voikko_setup.h"
+#ifdef HAVE_GETPWUID_R
 #include <pwd.h>
+#endif // HAVE_GETPWUID_R
 #include <malaga.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include <stdlib.h>
 
+#ifdef WIN32
+#include <windows.h>
+#endif
 
 int voikko_set_bool_option(int handle, int option, int value) {
 	switch (option) {
@@ -174,14 +179,55 @@ int voikko_terminate(int handle) {
 	else return 0;
 }
 
+#define VOIKKO_DICTIONARY_FILE "suomi.pro"
+#ifdef WIN32
+#define VOIKKO_KEY                   "SOFTWARE\\Voikko"
+#define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
+#endif // WIN32
+
 int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode) {
+#ifdef HAVE_GETPWUID_R
 	struct passwd pwd;
 	struct stat sbuf;
 	struct passwd * pwd_result;
+#endif // HAVE_GETPWUID_R
 	char * tmp_buf = malloc(buflen + 2048);
+
+	// Clear the buffer.
+	memset(buffer, 0x00, buflen);
+
 	if (strcmp(langcode, "fi_FI") == 0) {
 #ifdef WIN32
-		/* TODO: Check the Windows registry */
+		/* Check the Windows registry */
+		HKEY hKey;
+		DWORD dwBufLen=buflen;
+		LONG lRet;
+
+		lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
+		                    0, KEY_QUERY_VALUE, &hKey);
+
+		if (ERROR_SUCCESS != lRet) {
+			// Check from local machine
+			lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
+			                    0, KEY_QUERY_VALUE, &hKey);
+		}
+
+		if (ERROR_SUCCESS == lRet) {
+			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
+			                       (LPBYTE)buffer, &dwBufLen);
+
+			RegCloseKey(hKey);
+
+			if ((ERROR_SUCCESS == lRet) && (dwBufLen <= buflen)) {
+				if (strlen(buffer) > 0) {
+					free(tmp_buf);
+					return 1;
+				}
+			}
+		}
+
+		free(tmp_buf);
+		return 0;
 #endif
 #ifdef HAVE_GETPWUID_R
 		/* Check for project file in $HOME/.voikko/suomi.pro */
@@ -196,7 +242,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 		}
 #endif
 		/* Use the compile time default project file */
-		strcpy(buffer, DICTIONARY_PATH "/suomi.pro");
+		strcpy(buffer, DICTIONARY_PATH "/" VOIKKO_DICTIONARY_FILE);
 		free(tmp_buf);
 		return 1;
 	}
@@ -204,3 +250,4 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	free(tmp_buf);
 	return 0;
 }
+

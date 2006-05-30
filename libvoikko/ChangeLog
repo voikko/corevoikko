@@ -1,3 +1,11 @@
+2006-05-30  Kai Solehmainen  <kai.solehmainen@oikeatoliot.fi>
+
+	* nl_langinfo() ported for Windows version.
+	* Dictionary path is searched from Windows registry:
+		- first from HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath
+		- and then if not found from HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath 
+	* Minor changes for Windows version. 
+
 2006-05-30  Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Suggestions are sorted by estimated correctness:

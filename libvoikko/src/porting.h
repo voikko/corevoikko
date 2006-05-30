@@ -29,4 +29,13 @@
 size_t getline(char ** lineptr, size_t * n, FILE * stream);
 #endif
 
+#ifndef HAVE_NL_LANGINFO
+#include <stdio.h>
+typedef int nl_item;
+
+#define	CODESET		0	/* codeset name */
+
+char	*nl_langinfo(nl_item);
+#endif
+
 #endif
