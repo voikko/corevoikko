@@ -1,3 +1,9 @@
+2006-05-30  Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Suggestions are sorted by estimated correctness:
+	  compound suggestions and suggestions that contain both letter
+	  and case changes are given lower priority.
+
 2006-05-29  Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Character deletion suggestions

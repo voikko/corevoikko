@@ -26,19 +26,20 @@
 #include <wctype.h>
 #include <malaga.h>
 
-#define MAX_SUGGESTIONS 10
+#define MAX_SUGGESTIONS 5
 #define COST_LIMIT 250
 
 void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_suggestions,
-                                 const wchar_t * word, size_t wlen, int * cost) {
+                                 const wchar_t * word, size_t wlen, int * cost, int ** prios) {
 	enum spellresult sres;
 	wchar_t * newsugg;
 	value_t analysis;
 	const char * analysis_str;
 	char * malaga_buffer;
 	size_t i, j;
+	int prio;
 	if (*max_suggestions == 0) return;
-	sres = voikko_do_spell(word, wlen);
+	sres = voikko_spell_with_priority(word, wlen, &prio);
 	(*cost)++;
 	switch (sres) {
 		case SPELL_FAILED:
@@ -47,7 +48,9 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			newsugg = malloc((wlen + 1) * sizeof(wchar_t));
 			wcscpy(newsugg, word);
 			**suggestions = newsugg;
+			**prios = prio;
 			(*suggestions)++;
+			(*prios)++;
 			(*max_suggestions)--;
 			return;
 		case SPELL_CAP_FIRST:
@@ -56,7 +59,9 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			wcsncpy(newsugg + 1, word + 1, wlen - 1);
 			newsugg[wlen] = L'\0';
 			**suggestions = newsugg;
+			**prios = prio;
 			(*suggestions)++;
+			(*prios)++;
 			(*max_suggestions)--;
 			return;
 		case SPELL_CAP_ERROR:
@@ -81,7 +86,9 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			}
 			free((char *) analysis_str);
 			**suggestions = newsugg;
+			**prios = prio;
 			(*suggestions)++;
+			(*prios)++;
 			(*max_suggestions)--;
 			return;
 	}
@@ -91,7 +98,7 @@ const wchar_t * BACK_VOWELS =  L"aouAOU";
 const wchar_t * FRONT_VOWELS = L"\u00e4\u00f6y\u00c4\u00d6Y";
 
 void voikko_suggest_vowel_change(int handle, wchar_t *** suggestions, int * max_suggestions,
-                                 const wchar_t * word, size_t wlen, int * cost) {
+                                 const wchar_t * word, size_t wlen, int * cost, int ** prios) {
 	size_t i;
 	int j;
 	int k;
@@ -135,27 +142,30 @@ void voikko_suggest_vowel_change(int handle, wchar_t *** suggestions, int * max_
 			return;
 		}
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-		                            buffer, wlen, cost);
+		                            buffer, wlen, cost, prios);
 		pat++;
 	}
 	free(buffer);
 }
 
 void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_suggestions,
-                               const wchar_t * word, size_t wlen, int * cost) {
+                               const wchar_t * word, size_t wlen, int * cost, int ** prios) {
 	size_t splitind;
 	wchar_t * part1;
 	wchar_t * suggestion;
+	int prio_part;
+	int prio_total;
 	enum spellresult part1_res, part2_res;
 	part1 = malloc((wlen + 1) * sizeof(wchar_t));
 	wcscpy(part1, word);
 
 	for (splitind = wlen - 2; splitind >= 2; splitind--) {
 		part1[splitind] = L'\0';
-		part1_res = voikko_do_spell(part1, splitind);
+		part1_res = voikko_spell_with_priority(part1, splitind, &prio_total);
 		(*cost)++;
 		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
-			part2_res = voikko_do_spell(word + splitind, wlen - splitind);
+			part2_res = voikko_spell_with_priority(word + splitind, wlen - splitind, &prio_part);
+			prio_total += prio_part;
 			(*cost)++;
 			if (part2_res == SPELL_OK || part2_res == SPELL_CAP_FIRST) {
 				suggestion = malloc((wlen + 2) * sizeof(wchar_t));
@@ -168,7 +178,9 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 				if (part2_res == SPELL_CAP_FIRST)
 					suggestion[splitind+1] = towupper(suggestion[splitind+1]);
 				**suggestions = suggestion;
+				**prios = prio_total;
 				(*suggestions)++;
+				(*prios)++;
 				(*max_suggestions)--;
 			}
 		}
@@ -187,7 +199,7 @@ const wchar_t * REPLACE_REPLACEMENT =
 	L"kdglhuiel"  L"tvvkasaka";
 
 void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_suggestions,
-                                const wchar_t * word, size_t wlen, int * cost, int start, int end) {
+                                const wchar_t * word, size_t wlen, int * cost, int ** prios, int start, int end) {
 	int i;
 	wchar_t * pos;
 	wchar_t * buffer = malloc((wlen + 1) * sizeof(wchar_t));
@@ -196,7 +208,7 @@ void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_s
 		for (pos = wcschr(buffer, REPLACE_ORIG[i]); pos != 0; pos = wcschr(pos+1, REPLACE_ORIG[i])) {
 			*pos = REPLACE_REPLACEMENT[i];
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-			                            buffer, wlen, cost);
+			                            buffer, wlen, cost, prios);
 			if (*max_suggestions == 0) break;
 			*pos = REPLACE_ORIG[i];
 		}
@@ -205,7 +217,7 @@ void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_s
 		     pos = wcschr(pos + 1, towupper(REPLACE_ORIG[i]))) {
 			*pos = towupper(REPLACE_REPLACEMENT[i]);
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-			                            buffer, wlen, cost);
+			                            buffer, wlen, cost, prios);
 			if (*max_suggestions == 0) break;
 			*pos = towupper(REPLACE_ORIG[i]);
 		}
@@ -215,7 +227,7 @@ void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_s
 }
 
 void voikko_suggest_deletion(int handle, wchar_t *** suggestions, int * max_suggestions,
-                             const wchar_t * word, size_t wlen, int * cost) {
+                             const wchar_t * word, size_t wlen, int * cost, int ** prios) {
 	size_t i;
 	wchar_t * buffer = malloc(wlen * sizeof(wchar_t));
 	for (i = 0; i < wlen && *max_suggestions > 0; i++) {
@@ -223,7 +235,7 @@ void voikko_suggest_deletion(int handle, wchar_t *** suggestions, int * max_sugg
 			wcsncpy(buffer, word, i);
 			wcsncpy(buffer + i, word + (i + 1), wlen - i);
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-			                            buffer, wlen - 1, cost);
+			                            buffer, wlen - 1, cost, prios);
 		}
 	}
 	free(buffer);
@@ -232,7 +244,7 @@ void voikko_suggest_deletion(int handle, wchar_t *** suggestions, int * max_sugg
 const wchar_t * INS_CHARS = L"aitesnulko\u00e4mrvpyhjd\u00f6gfb-cw:xzq\u00e5";
 
 void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_suggestions,
-                              const wchar_t * word, size_t wlen, int * cost, int start, int end) {
+                              const wchar_t * word, size_t wlen, int * cost, int ** prios, int start, int end) {
 	int i;
 	size_t j;
 	wchar_t * buffer = malloc((wlen + 2) * sizeof(wchar_t));
@@ -243,19 +255,19 @@ void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_sug
 			if (j != 0) buffer[j-1] = word[j-1];
 			buffer[j] = INS_CHARS[i];
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-			                            buffer, wlen + 1, cost);
+			                            buffer, wlen + 1, cost, prios);
 		}
 		if (*max_suggestions == 0) break;
 		buffer[wlen-1] = word[wlen-1];
 		buffer[wlen] = INS_CHARS[i];
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-		                            buffer, wlen + 1, cost);
+		                            buffer, wlen + 1, cost, prios);
 	}
 	free(buffer);
 }
 
 void voikko_suggest_swap(int handle, wchar_t *** suggestions, int * max_suggestions,
-                         const wchar_t * word, size_t wlen, int * cost) {
+                         const wchar_t * word, size_t wlen, int * cost, int ** prios) {
 	size_t max_distance;
 	size_t i;
 	size_t j;
@@ -283,7 +295,7 @@ void voikko_suggest_swap(int handle, wchar_t *** suggestions, int * max_suggesti
 			buffer[i] = word[j];
 			buffer[j] = word[i];
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
-			                            buffer, wlen, cost);
+			                            buffer, wlen, cost, prios);
 			buffer[i] = word[i];
 			buffer[j] = word[j];
 		}
@@ -293,6 +305,8 @@ void voikko_suggest_swap(int handle, wchar_t *** suggestions, int * max_suggesti
 
 wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wchar_t ** suggestions;
+	int * prios;
+	int * free_prio;
 	wchar_t ** free_sugg;
 	size_t wlen;
 	int cost;
@@ -301,41 +315,70 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wlen = wcslen(word);
 	if (wlen <= 1) return 0;
 	
-	suggestions = calloc(MAX_SUGGESTIONS + 1, sizeof(wchar_t *));
+	suggestions = calloc(MAX_SUGGESTIONS * 3 + 1, sizeof(wchar_t *));
+	prios = malloc(MAX_SUGGESTIONS * 3 * sizeof(int));
 	free_sugg = suggestions;
-	suggestions_left = MAX_SUGGESTIONS;
+	free_prio = prios;
+	suggestions_left = MAX_SUGGESTIONS * 3;
 	cost = 0;
 	
-	voikko_suggest_correct_case(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
-	if (suggestions_left != MAX_SUGGESTIONS) return suggestions;
-	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
+	voikko_suggest_correct_case(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+	if (suggestions_left != MAX_SUGGESTIONS * 3) {
+		free(prios);
+		return suggestions;
+	}
+	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_word_split(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
+		voikko_suggest_word_split(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 0, 50);
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 0, 50);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_deletion(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
+		voikko_suggest_deletion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 0, 5);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 0, 5);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, word, wlen, &cost);
+		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 51, 72);
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 51, 72);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 6, 10);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 6, 10);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 11, 15);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 11, 15);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 16, 20);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 16, 20);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 21, 25);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 21, 25);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, 26, 30);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 26, 30);
 
-	if (suggestions_left == MAX_SUGGESTIONS) {
+	if (suggestions_left == MAX_SUGGESTIONS * 3) {
 		free(suggestions);
+		free(prios);
 		return 0;
 	}
+	
+	/* Sort the suggestions by priority using insertion sort */
+	int i, j;
+	wchar_t * current_sugg;
+	int current_prio;
+	for (i = 0; suggestions + i < free_sugg; i++) {
+		current_sugg = suggestions[i];
+		current_prio = prios[i];
+		for (j = i - 1; j >= 0 && prios[j] > current_prio; j--) {
+			suggestions[j + 1] = suggestions[j];
+			prios[j + 1] = prios[j];
+		}
+		suggestions[j + 1] = current_sugg;
+		prios[j + 1] = current_prio;
+	}
+	free(prios);
+
+	/* Remove extra suggestions */
+	for (i = MAX_SUGGESTIONS; suggestions[i] != 0; i++) {
+		free(suggestions[i]);
+		suggestions[i] = 0;
+	}
+
 	return suggestions;
 }
 

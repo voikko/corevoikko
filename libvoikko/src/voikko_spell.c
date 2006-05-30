@@ -26,7 +26,7 @@
 #include <wchar.h>
 #include <wctype.h>
 
-enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
+enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio) {
 	enum spellresult result;
 	enum spellresult best_result;
 	size_t i, j;
@@ -36,6 +36,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8");
 	analyse_item(malaga_buffer, MORPHOLOGY);
 	free(malaga_buffer);
+	if (prio != 0) *prio = 0;
 	
 	analysis = first_analysis_result();
 	if (!analysis) return SPELL_FAILED;
@@ -63,16 +64,30 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			if (result == SPELL_CAP_ERROR) break;
 			j++;
 		}
+		if (best_result == SPELL_FAILED || best_result > result) {
+			best_result = result;
+			if (prio != 0) {
+				*prio = 0;
+				for (j = 0; analysis_str[j] != '\0'; j++)
+					if (analysis_str[j] == '=') (*prio)++;
+			}
+		}
 		free((char *) analysis_str);
-		if (best_result == SPELL_FAILED || best_result > result) best_result = result;
 		if (best_result == SPELL_OK) break;
 		analysis = next_analysis_result();
 	} while (analysis);
 	free(cappat);
 	
-	return result;
+	if (prio != 0) {
+		if (best_result == SPELL_CAP_FIRST) (*prio) += 1;
+		else if (best_result == SPELL_CAP_ERROR) (*prio) += 2;
+	}
+	return best_result;
 }
 
+enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
+	return voikko_spell_with_priority(word, len, 0);
+}
 
 int voikko_spell_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;

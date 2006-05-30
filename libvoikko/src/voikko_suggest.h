@@ -30,8 +30,9 @@
  * @param word string to find suggestions for
  * @param wlen length of word
  * @param cost total computational cost of the suggestion algorithm. This will be incremented as needed.
+ * @param prios suggestion priorities
  */
 void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_suggestions,
-                                 const wchar_t * word, size_t wlen, int * cost);
+                                 const wchar_t * word, size_t wlen, int * cost, int ** prios);
 
 #endif
