@@ -50,6 +50,10 @@ void hyphenate_word(int handle, char * word) {
 	/* We assume that character '-' always has the shortest possible
 	   multibyte representation in a given encoding. */
 	hyphenated_word = malloc(strlen(word) * 2 + 1);
+	if (hyphenated_word == 0) {
+		printf("E: out of memory\n");
+		return;
+	}
 	memset(&mbstate, '\0', sizeof(mbstate));
 	wordptr = word;
 	hyphenatedptr = hyphenated_word;
@@ -79,15 +83,20 @@ void hyphenate_word(int handle, char * word) {
 
 int main(int argc, char ** argv) {
 	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
-	char * line = malloc(size); /* FIXME */
+	char * line;
 	ssize_t chars_read;
 	char * encoding;
 	int handle;
 	int i;
+	line = malloc(size); /* FIXME */
+	if (line == 0) {
+		printf("E: Out of memory\n");
+		return 1;
+	}
 	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
 
 	if (voikko_error) {
-		printf("Initialisation of Voikko failed: %s\n", voikko_error);
+		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
 		return 1;
 	}
 	

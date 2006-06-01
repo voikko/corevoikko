@@ -43,6 +43,8 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	if (hyphenation_points[0] == 'X') return;
 	
 	word_copy = malloc((nchars + 1) * sizeof(wchar_t));
+	if (word_copy == 0) return;
+	
 	for (i = 0; i < nchars; i++) {
 		word_copy[i] = towlower(word[i]);
 	}
@@ -135,15 +137,21 @@ char ** voikko_split_compounds(const wchar_t * word) {
 	size_t word_len;
 	size_t i;
 	all_results = malloc((LIBVOIKKO_MAX_ANALYSIS_COUNT + 1) * sizeof(char *));
+	if (all_results == 0) return 0;
 	word_len = wcslen(word);
 	all_results[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
 	word_utf8 = voikko_ucs4tocstr(word, "UTF-8");
+	if (word_utf8 == 0) {
+		free(all_results);
+		return 0;
+	}
 	
 	analyse_item(word_utf8, MORPHOLOGY);
 	analysis_count = 0;
 	analysis_result = first_analysis_result();
 	while (analysis_result) {
 		result = malloc(word_len + 1);
+		if (result == 0) break;
 		result[word_len] = '\0';
 		voikko_interpret_analysis(analysis_result, result, word_len);
 		all_results[analysis_count] = result;
@@ -152,6 +160,10 @@ char ** voikko_split_compounds(const wchar_t * word) {
 	}
 	if (analysis_count == 0) {
 		result = malloc(word_len + 1);
+		if (result == 0) {
+			free(all_results);
+			return 0;
+		}
 		memset(result, ' ', word_len);
 		for (i = 0; i < word_len; i++)
 			if (word[i] == L'-') result[i] = '=';
@@ -174,6 +186,8 @@ char * voikko_intersect_hyphenations(char ** hyphenations) {
 	char ** current_ptr;
 	len = strlen(hyphenations[0]);
 	intersection = malloc(len + 1);
+	if (intersection == 0) return 0;
+
 	strcpy(intersection, hyphenations[0]);
 	for (i = 0; i < len; i++) if (intersection[i] == 'X') intersection[i] = ' ';
 	current_ptr = &hyphenations[1];
@@ -245,11 +259,18 @@ char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 	char * hyphenation;
 	int i;
 	hyphenations = voikko_split_compounds(word);
+	if (hyphenations == 0) return 0;
+	
 	/*i=0; while (hyphenations[i] != 0) printf("hyph='%s'\n", hyphenations[i++]);*/
 	i = 0;
 	while (hyphenations[i] != 0) voikko_compound_hyphenation(word, hyphenations[i++]);
 	/*i=0; while (hyphenations[i] != 0) printf("hyph='%s'\n", hyphenations[i++]);*/
 	hyphenation = voikko_intersect_hyphenations(hyphenations);
+	if (hyphenation == 0) {
+		free(hyphenations);
+		return 0;
+	}
+
 	i = 0;
 	while (hyphenations[i] != 0) free(hyphenations[i++]);
 	free(hyphenations);

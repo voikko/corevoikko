@@ -34,6 +34,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	const char * analysis_str;
 	char * cappat;
 	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8");
+	if (malaga_buffer == 0) return SPELL_FAILED;
 	analyse_item(malaga_buffer, MORPHOLOGY);
 	free(malaga_buffer);
 	if (prio != 0) *prio = 0;
@@ -41,6 +42,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	analysis = first_analysis_result();
 	if (!analysis) return SPELL_FAILED;
 	cappat = malloc(len);
+	if (cappat == 0) return SPELL_FAILED;
 	for (i = 0; i < len; i++) {
 		if (iswupper(word[i])) cappat[i] = 'i';
 		else cappat[i] = 'p';
@@ -164,6 +166,8 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	if (voikko_options.ignore_uppercase && caps == CT_ALL_UPPER) return VOIKKO_SPELL_OK;
 	
 	buffer = malloc((nchars + 1) * sizeof(wchar_t));
+	if (buffer == 0) return VOIKKO_INTERNAL_ERROR;
+
 	for (i = 0; i < nchars; i++) buffer[i] = towlower(word[i]);
 	buffer[nchars] = L'\0';
 	if (voikko_options.ignore_dot && buffer[nchars - 1] == L'.') {

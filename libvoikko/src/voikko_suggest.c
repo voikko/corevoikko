@@ -46,6 +46,7 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			return;
 		case SPELL_OK:
 			newsugg = malloc((wlen + 1) * sizeof(wchar_t));
+			if (newsugg == 0) return;
 			wcscpy(newsugg, word);
 			**suggestions = newsugg;
 			**prios = prio;
@@ -55,6 +56,7 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			return;
 		case SPELL_CAP_FIRST:
 			newsugg = malloc((wlen + 1) * sizeof(wchar_t));
+			if (newsugg == 0) return;
 			newsugg[0] = towupper(word[0]);
 			wcsncpy(newsugg + 1, word + 1, wlen - 1);
 			newsugg[wlen] = L'\0';
@@ -66,6 +68,7 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			return;
 		case SPELL_CAP_ERROR:
 			malaga_buffer = voikko_ucs4tocstr(word, "UTF-8");
+			if (malaga_buffer == 0) return;
 			analyse_item(malaga_buffer, MORPHOLOGY);
 			free(malaga_buffer);
 			(*cost)++;
@@ -73,6 +76,7 @@ void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_
 			if (!analysis) return;
 			analysis_str = get_value_string(analysis);
 			newsugg = malloc((wlen + 1) * sizeof(wchar_t));
+			if (newsugg == 0) return;
 			wcscpy(newsugg, word);
 			j = 0;
 			for (i = 0; i < wlen; i++) {
@@ -117,6 +121,7 @@ void voikko_suggest_vowel_change(int handle, wchar_t *** suggestions, int * max_
 			}
 	if (vcount == 0 || vcount > 7) return;
 	buffer = malloc((wlen + 1) * sizeof(wchar_t));
+	if (buffer == 0) return;
 	while ((pat & mask) != 0) {
 		i = 0;
 		wcscpy(buffer, word);
@@ -157,6 +162,7 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 	int prio_total;
 	enum spellresult part1_res, part2_res;
 	part1 = malloc((wlen + 1) * sizeof(wchar_t));
+	if (part1 == 0) return;
 	wcscpy(part1, word);
 
 	for (splitind = wlen - 2; splitind >= 2; splitind--) {
@@ -169,6 +175,7 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 			(*cost)++;
 			if (part2_res == SPELL_OK || part2_res == SPELL_CAP_FIRST) {
 				suggestion = malloc((wlen + 2) * sizeof(wchar_t));
+				if (suggestion == 0) break;
 				wcsncpy(suggestion, word, splitind);
 				if (part1_res == SPELL_CAP_FIRST)
 					suggestion[0] = towupper(suggestion[0]);
@@ -203,6 +210,7 @@ void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_s
 	int i;
 	wchar_t * pos;
 	wchar_t * buffer = malloc((wlen + 1) * sizeof(wchar_t));
+	if (buffer == 0) return;
 	wcsncpy(buffer, word, wlen + 1);
 	for (i = start; i <= end; i++) {
 		for (pos = wcschr(buffer, REPLACE_ORIG[i]); pos != 0; pos = wcschr(pos+1, REPLACE_ORIG[i])) {
@@ -230,6 +238,7 @@ void voikko_suggest_deletion(int handle, wchar_t *** suggestions, int * max_sugg
                              const wchar_t * word, size_t wlen, int * cost, int ** prios) {
 	size_t i;
 	wchar_t * buffer = malloc(wlen * sizeof(wchar_t));
+	if (buffer == 0) return;
 	for (i = 0; i < wlen && *max_suggestions > 0; i++) {
 		if (i == 0 || towlower(word[i]) != towlower(word[i-1])) {
 			wcsncpy(buffer, word, i);
@@ -248,6 +257,7 @@ void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_sug
 	int i;
 	size_t j;
 	wchar_t * buffer = malloc((wlen + 2) * sizeof(wchar_t));
+	if (buffer == 0) return;
 	for (i = start; i <= end; i++) {
 		wcsncpy(buffer + 1, word, wlen + 1);
 		for (j = 0; j < wlen && *max_suggestions > 0; j++) {
@@ -277,6 +287,7 @@ void voikko_suggest_swap(int handle, wchar_t *** suggestions, int * max_suggesti
 	else max_distance = 50 / wlen;
 	if (max_distance == 0) return;
 	buffer = malloc((wlen + 1) * sizeof(wchar_t));
+	if (buffer == 0) return;
 	wcscpy(buffer, word);
 	for (i = 0; i < wlen && *max_suggestions > 0; i++) {
 		for (j = i + 1; j < wlen && *max_suggestions > 0; j++) {
@@ -316,7 +327,12 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (wlen <= 1) return 0;
 	
 	suggestions = calloc(MAX_SUGGESTIONS * 3 + 1, sizeof(wchar_t *));
+	if (suggestions == 0) return 0;
 	prios = malloc(MAX_SUGGESTIONS * 3 * sizeof(int));
+	if (prios == 0) {
+		free(suggestions);
+		return 0;
+	}
 	free_sugg = suggestions;
 	free_prio = prios;
 	suggestions_left = MAX_SUGGESTIONS * 3;
@@ -398,6 +414,10 @@ char ** voikko_suggest_cstr(int handle, const char * word) {
 	scount = 0;
 	while (suggestions_ucs4[scount] != 0) scount++;
 	suggestions = malloc((scount + 1) * sizeof(char *));
+	if (suggestions == 0) {
+		free(suggestions_ucs4);
+		return 0;
+	}
 	for (i = 0; i < scount; i++) {
 		suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding);
 		if (suggestion == 0) return 0; /* suggestion cannot be encoded */

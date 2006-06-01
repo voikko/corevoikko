@@ -70,16 +70,21 @@ void check_word(int handle, char * word) {
 
 int main(int argc, char ** argv) {
 	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
-	char * line = malloc(size); /* FIXME */
+	char * line;
 	ssize_t chars_read;
 	char * encoding;
 	int handle;
 	int i;
+
+	line = malloc(size); /* FIXME */
+	if (line == 0) {
+		printf("E: Out of memory\n");
+		return 1;
+	}
 	if (argc == 2 && strcmp(argv[1], "-t") == 0) autotest = 1;
 	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
-	/*char * hyphens;*/
 	if (voikko_error) {
-		printf("Initialisation of Voikko failed: %s\n", voikko_error);
+		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
 		return 1;
 	}
 	

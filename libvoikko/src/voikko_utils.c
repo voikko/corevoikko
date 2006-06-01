@@ -28,6 +28,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	int using_temporary_converter = 0;
 	size_t conv_bytes;
 	wchar_t * ucs4_buffer = malloc((LIBVOIKKO_MAX_WORD_CHARS + 1) * sizeof(wchar_t));
+	if (ucs4_buffer == 0) return 0;
 	size_t res_size;
 	char * outptr = (char *) ucs4_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
@@ -39,7 +40,10 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	else if (strcmp(encoding, voikko_options.encoding) == 0) cd = voikko_options.iconv_ext_ucs4;
 	else {
 		cd = iconv_open("WCHAR_T", encoding);
-		if (cd == (iconv_t) -1) return 0;
+		if (cd == (iconv_t) -1) {
+			free(ucs4_buffer);
+			return 0;
+		}
 		using_temporary_converter = 1;
 	}
 	
@@ -55,6 +59,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	LOG(("inptr = '%s'\n", inptr));
 	if (conv_bytes == -1) {
 		if (using_temporary_converter) iconv_close(cd);
+		free(ucs4_buffer);
 		return 0;
 	}
 	
@@ -71,6 +76,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	int using_temporary_converter = 0;
 	size_t conv_bytes;
 	char * utf8_buffer = malloc(LIBVOIKKO_MAX_WORD_CHARS * 6 + 1);
+	if (utf8_buffer == 0) return 0;
 	size_t res_size;
 	char * outptr = utf8_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
@@ -82,7 +88,10 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	else if (strcmp(encoding, voikko_options.encoding) == 0) cd = voikko_options.iconv_ucs4_ext;
 	else {
 		cd = iconv_open(encoding, "WCHAR_T");
-		if (cd == (iconv_t) -1) return 0;
+		if (cd == (iconv_t) -1) {
+			free(utf8_buffer);
+			return 0;
+		}
 		using_temporary_converter = 1;
 	}
 	
@@ -98,6 +107,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	LOG(("inptr = '%s'\n", inptr));
 	if (conv_bytes == -1) {
 		if (using_temporary_converter) iconv_close(cd);
+		free(utf8_buffer);
 		return 0;
 	}
 	if (using_temporary_converter) iconv_close(cd);

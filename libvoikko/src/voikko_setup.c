@@ -94,7 +94,7 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 }
 
 const char * voikko_init(int * handle, const char * langcode, int cache_size) {
-	char * project = malloc(1024);
+	char * project;
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
 	voikko_options.ignore_uppercase = 0;
@@ -103,6 +103,9 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 	voikko_options.no_ugly_hyphenation = 0;
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.encoding = "UTF-8";
+	
+	project = malloc(1024);
+	if (project == 0) return "Out of memory";
 	
 	/* FIXME: Temporary hack needed for MT unsafe malaga library */
 	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
@@ -192,6 +195,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	struct passwd * pwd_result;
 #endif // HAVE_GETPWUID_R
 	char * tmp_buf = malloc(buflen + 2048);
+	if (tmp_buf == 0) return 0;
 
 	// Clear the buffer.
 	memset(buffer, 0x00, buflen);

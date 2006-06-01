@@ -201,7 +201,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);
  * @return null-terminated character string containing the hyphenation using the following notation:
  *         ' ' = no hyphenation at this character, '-' = hyphenation point (character at this position
  *         is preserved in the hyphenated form), '=' = hyphentation point (character at this position
- *         is replaced by the hyphen.)
+ *         is replaced by the hyphen.) Returns 0 on error.
  */
 char * voikko_hyphenate_cstr(int handle, const char * word);
 
@@ -212,7 +212,7 @@ char * voikko_hyphenate_cstr(int handle, const char * word);
  * @return null-terminated character string containing the hyphenation using the following notation:
  *         ' ' = no hyphenation at this character, '-' = hyphenation point (character at this position
  *         is preserved in the hyphenated form), '=' = hyphentation point (character at this position
- *         is replaced by the hyphen.)
+ *         is replaced by the hyphen.) Returns 0 on error.
  */
 char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
 
