@@ -6332,7 +6332,6 @@ yhtyneet
 yhtynyt
 yhtyä
 yhtä
-yhtäkkiä
 yhtätasainen
 yhtään
 yhyttäisi
