@@ -250,7 +250,31 @@ void voikko_suggest_deletion(int handle, wchar_t *** suggestions, int * max_sugg
 	free(buffer);
 }
 
-const wchar_t * INS_CHARS = L"aitesnulko\u00e4mrvpyhjd\u00f6gfb-cw:xzq\u00e5";
+void voikko_suggest_insert_special(int handle, wchar_t *** suggestions, int * max_suggestions,
+                                   const wchar_t * word, size_t wlen, int * cost, int ** prios) {
+	size_t j;
+	wchar_t * buffer = malloc((wlen + 2) * sizeof(wchar_t));
+	if (buffer == 0) return;
+	wcsncpy(buffer + 1, word, wlen + 1);
+	/* suggest adding '-' */
+	for (j = 2; j <= wlen - 2 && *max_suggestions > 0; j++) {
+		wcsncpy(buffer, word, j);
+		buffer[j] = L'-';
+		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
+		                            buffer, wlen + 1, cost, prios);
+	}
+	/* suggest character duplication */
+	wcsncpy(buffer + 1, word, wlen + 1);
+	for (j = 1; j <= wlen && *max_suggestions > 0; j++) {
+		buffer[j-1] = word[j-1];
+		buffer[j] = towlower(word[j]);
+		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
+		                            buffer, wlen + 1, cost, prios);
+	}
+	free(buffer);
+}
+
+const wchar_t * INS_CHARS = L"aitesnulko\u00e4mrvpyhjd\u00f6gfbcw:xzq\u00e5";
 
 void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_suggestions,
                               const wchar_t * word, size_t wlen, int * cost, int ** prios, int start, int end) {
@@ -263,6 +287,7 @@ void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_sug
 		for (j = 0; j < wlen && *max_suggestions > 0; j++) {
 			if (INS_CHARS[i] == towlower(word[j])) continue; /* avoid duplicates */
 			if (j != 0) buffer[j-1] = word[j-1];
+			if (j > 0 && INS_CHARS[i] == towlower(word[j-1])) continue; /* avoid duplicates */
 			buffer[j] = INS_CHARS[i];
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
 			                            buffer, wlen + 1, cost, prios);
@@ -351,6 +376,8 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_deletion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
+		voikko_suggest_insert_special(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 0, 5);
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
@@ -365,7 +392,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 21, 25);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 26, 30);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 26, 29);
 
 	if (suggestions_left == MAX_SUGGESTIONS * 3) {
 		free(suggestions);
