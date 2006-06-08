@@ -46,7 +46,7 @@ def get_db():
 
 # Returns True, if given character is a consonant, otherwise retuns False.
 def consonant(letter):
-	if letter.lower() in ('q','w','r','t','p','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'):
+	if letter.lower() in u'qwrtpsdfghjklzxcvbnm':
 		return True
 	else:
 		return False
@@ -59,9 +59,9 @@ VOWEL_BACK=2
 VOWEL_BOTH=3
 def vowel_type(word):
 	word = word.lower()
-	last_back = max(word.rfind('a'), word.rfind('o'), word.rfind('u'))
+	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'u'))
 	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
-	last_y = word.rfind('y')
+	last_y = word.rfind(u'y')
 	if last_back > -1 and max(last_ord_front, last_y) == -1:
 		return VOWEL_BACK
 	if last_back == -1 and max(last_ord_front, last_y) > -1:
@@ -77,100 +77,100 @@ def vowel_type(word):
 
 # Remove comments from a given line of text.
 def remove_comments(line):
-	comment_start = line.find('#')
+	comment_start = line.find(u'#')
 	if comment_start == -1:
 		return line
 	if comment_start == 0:
-		return ''
+		return u''
 	return line[:comment_start]
 
 
 # Applies given gradation type to given word. Returns a tuple in the form
 # (strong, weak) or None if this is not possible.
 def apply_gradation(word, grad_type):
-	if grad_type == '-': return (word, word)
+	if grad_type == u'-': return (word, word)
 	if consonant(word[-1]) and not consonant(word[-2]):
-		if word[-4:-2] == 'ng':
-			return (word[:-4]+'nk'+word[-2:], word)
+		if word[-4:-2] == u'ng':
+			return (word[:-4]+u'nk'+word[-2:], word)
 		# uvu/yvy->uku/yky not possible?
-		if word[-4:-2] == 'mm':
-			return (word[:-4]+'mp'+word[-2:], word)
-		if word[-4:-2] == 'nn':
-			return (word[:-4]+'nt'+word[-2:], word)
-		if word[-4:-2] == 'll':
-			return (word[:-4]+'lt'+word[-2:], word)
-		if word[-4:-2] == 'rr':
-			return (word[:-4]+'rt'+word[-2:], word)
-		if word[-3] == 'd':
-			return (word[:-3]+'t'+word[-2:], word)
-		if word[-3] in ('t','k','p'):
+		if word[-4:-2] == u'mm':
+			return (word[:-4]+u'mp'+word[-2:], word)
+		if word[-4:-2] == u'nn':
+			return (word[:-4]+u'nt'+word[-2:], word)
+		if word[-4:-2] == u'll':
+			return (word[:-4]+u'lt'+word[-2:], word)
+		if word[-4:-2] == u'rr':
+			return (word[:-4]+u'rt'+word[-2:], word)
+		if word[-3] == u'd':
+			return (word[:-3]+u't'+word[-2:], word)
+		if word[-3] in u'tkp':
 			return (word[:-2]+word[-3:], word)
-		if word[-3] == 'v':
-			return (word[:-3]+'p'+word[-2:], word)
-	if grad_type == 'av1':
-		if word[-3:-1] in ('tt','kk','pp'):
+		if word[-3] == u'v':
+			return (word[:-3]+u'p'+word[-2:], word)
+	if grad_type == u'av1':
+		if word[-3:-1] in (u'tt',u'kk',u'pp'):
 			return (word, word[:-2]+word[-1])
-		if word[-3:-1] == 'mp':
-			return (word, word[:-3]+'mm'+word[-1])
-		if word[-2] == 'p' and not consonant(word[-1]):
-			return (word, word[:-2]+'v'+word[-1])
-		if word[-3:-1] == 'nt':
-			return (word, word[:-3]+'nn'+word[-1])
-		if word[-3:-1] == 'lt':
-			return (word, word[:-3]+'ll'+word[-1])
-		if word[-3:-1] == 'rt':
-			return (word, word[:-3]+'rr'+word[-1])
-		if word[-2] == 't':
-			return (word, word[:-2]+'d'+word[-1])
-		if word[-3:-1] == 'nk':
-			return (word, word[:-3]+'ng'+word[-1])
-		if word[-3:] == 'uku':
-			return (word, word[:-3]+'uvu')
-		if word[-3:] == 'yky':
-			return (word, word[:-3]+'yvy')
-	if grad_type == 'av2':
-		if word[-3:-1] == 'ng':
-			return (word[:-3]+'nk'+word[-1], word)
+		if word[-3:-1] == u'mp':
+			return (word, word[:-3]+u'mm'+word[-1])
+		if word[-2] == u'p' and not consonant(word[-1]):
+			return (word, word[:-2]+u'v'+word[-1])
+		if word[-3:-1] == u'nt':
+			return (word, word[:-3]+u'nn'+word[-1])
+		if word[-3:-1] == u'lt':
+			return (word, word[:-3]+u'll'+word[-1])
+		if word[-3:-1] == u'rt':
+			return (word, word[:-3]+u'rr'+word[-1])
+		if word[-2] == u't':
+			return (word, word[:-2]+u'd'+word[-1])
+		if word[-3:-1] == u'nk':
+			return (word, word[:-3]+u'ng'+word[-1])
+		if word[-3:] == u'uku':
+			return (word, word[:-3]+u'uvu')
+		if word[-3:] == u'yky':
+			return (word, word[:-3]+u'yvy')
+	if grad_type == u'av2':
+		if word[-3:-1] == u'ng':
+			return (word[:-3]+u'nk'+word[-1], word)
 		# uvu/yvy->uku/yky not possible?
-		if word[-3:-1] == 'mm':
-			return (word[:-3]+'mp'+word[-1], word)
-		if word[-3:-1] == 'nn':
-			return (word[:-3]+'nt'+word[-1], word)
-		if word[-3:-1] == 'll':
-			return (word[:-3]+'lt'+word[-1], word)
-		if word[-3:-1] == 'rr':
-			return (word[:-3]+'rt'+word[-1], word)
-		if word[-2] == 'd':
-			return (word[:-2]+'t'+word[-1], word)
-		if word[-2] in ('t','k','p'):
+		if word[-3:-1] == u'mm':
+			return (word[:-3]+u'mp'+word[-1], word)
+		if word[-3:-1] == u'nn':
+			return (word[:-3]+u'nt'+word[-1], word)
+		if word[-3:-1] == u'll':
+			return (word[:-3]+u'lt'+word[-1], word)
+		if word[-3:-1] == u'rr':
+			return (word[:-3]+u'rt'+word[-1], word)
+		if word[-2] == u'd':
+			return (word[:-2]+u't'+word[-1], word)
+		if word[-2] in u'tkp':
 			return (word[:-1]+word[-2:], word)
-		if word[-2] == 'v':
-			return (word[:-2]+'p'+word[-1], word)
-	if grad_type == 'av3': # k -> j
-		if word[-2] == 'k':
-			return (word, word[:-2]+'j'+word[-1])
-	if grad_type == 'av4': # j -> k
-		if word[-2] == 'j':
-			return (word[:-2]+'k'+word[-1], word)
-	if grad_type == 'av5': # k -> -
-		if word[-2] == 'k':
+		if word[-2] == u'v':
+			return (word[:-2]+u'p'+word[-1], word)
+	if grad_type == u'av3': # k -> j
+		if word[-2] == u'k':
+			return (word, word[:-2]+u'j'+word[-1])
+	if grad_type == u'av4': # j -> k
+		if word[-2] == u'j':
+			return (word[:-2]+u'k'+word[-1], word)
+	if grad_type == u'av5': # k -> -
+		if word[-2] == u'k':
 			if word[-3] == word[-1]: # ruoko, vaaka
-				return (word, word[:-2]+'\''+word[-1])
+				return (word, word[:-2]+u'\''+word[-1])
 			else:
 				return (word, word[:-2]+word[-1])
-	if grad_type == 'av6': # - -> k
+	if grad_type == u'av6': # - -> k
 		if consonant(word[-1]): # FIXME: hack
-			return (word[:-2]+'k'+word[-2:], word)
+			return (word[:-2]+u'k'+word[-2:], word)
 		else:
-			return (word[:-1]+'k'+word[-1], word)
+			return (word[:-1]+u'k'+word[-1], word)
 	return None
 
 
 # Read an option "name" from string "options". If it does not exist, then default will be returned.
 def read_option(options, name, default):
-	parts = options.split(',');
+	parts = options.split(u',');
 	for part in parts:
-		nameval = part.split('=')
+		nameval = part.split(u'=')
 		if len(nameval) == 2 and nameval[0] == name: return nameval[1]
-		if len(nameval) == 1 and nameval[0] == name: return '1'
+		if len(nameval) == 1 and nameval[0] == name: return u'1'
 	return default

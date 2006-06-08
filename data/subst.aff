@@ -1,5 +1,6 @@
 # Kotus 1 talo
 class: subst-p
+sm-class: valo
 match-word: C(?:e|O|U)
 consonant-gradation: sw
 group: t
@@ -39,6 +40,7 @@ end: class
 
 # Kotus 2 pallero
 class: subst-o2
+sm-class: arvelu
 match-word: C(?:O|U)
 consonant-gradation: -
 group: t
@@ -81,6 +83,7 @@ end: class
 
 # Kotus 3 kallio
 class: subst-p
+sm-class: autio
 match-word: VO
 consonant-gradation: -
 group: t
@@ -164,6 +167,7 @@ end: class
 
 # Kotus 5 patti
 class: subst-p
+sm-class: risti kalsium
 match-word: Ci
 consonant-gradation: sw
 group: t
@@ -203,6 +207,7 @@ end: class
 
 # Kotus 7 lampi
 class: subst-i2
+sm-class: lovi lahti hapsi suksi uksi
 match-word: i
 consonant-gradation: sw
 group: t
@@ -243,6 +248,7 @@ end: class
 
 # Kotus 8 polle
 class: subst-e3
+sm-class: nalle
 match-word: CCe
 consonant-gradation: -
 group: t
@@ -283,6 +289,7 @@ end: class
 
 # Kotus 9 kissa
 class: subst-a2
+sm-class: kala
 match-word: a
 consonant-gradation: sw
 group: t
@@ -323,6 +330,7 @@ end: class
 
 # Kotus 10 luokka
 class: subst-p
+sm-class: koira asema kantaja jumala seitsemän
 match-word: CA
 consonant-gradation: sw
 group: t
@@ -363,6 +371,7 @@ end: class
 
 # Kotus 12 lattia
 class: subst-lattia
+sm-class: kulkija peruna herttua
 match-word: A
 consonant-gradation: -
 group: t
@@ -448,6 +457,7 @@ end: class
 
 # Kotus 15 hopea
 class: subst-ea
+sm-class: ainoa korkea
 match-word: eA
 consonant-gradation: -
 group: t
@@ -491,6 +501,7 @@ end: class
 
 # Kotus 23 tuohi
 class: subst-i3
+sm-class: pieni lohi nuori
 match-word: Ci
 consonant-gradation: -
 group: t
@@ -531,6 +542,7 @@ end: class
 
 # Kotus 24, 26 huuli
 class: subst-i3b
+sm-class: tuohi
 match-word: Ci
 consonant-gradation: -
 group: t
@@ -572,6 +584,7 @@ end: class
 
 # Kotus 25 loimi
 class: subst-i4
+sm-class: lumi tuomi niemi
 match-word: mi
 consonant-gradation: -
 group: t
@@ -614,6 +627,7 @@ end: class
 
 # Kotus 27 käsi
 class: subst-si1
+sm-class: susi tosi
 match-word: Vsi
 consonant-gradation: -
 group: t
@@ -655,6 +669,7 @@ end: class
 
 # Kotus 28 kansi
 class: subst-si2
+sm-class: hirsi jälsi kansi
 match-word: (?:n|l|r)si
 consonant-gradation: -
 group: t
@@ -696,6 +711,7 @@ end: class
 
 # Kotus 29, 30 lapsi
 class: subst-si3
+sm-class: lapsi veitsi peitsi uksi
 match-word: (?:p|t)si
 consonant-gradation: -
 group: t
@@ -737,6 +753,7 @@ end: class
 
 # Kotus 32 ien
 class: subst-nivel
+sm-class: sisar ahven
 match-word: VC
 consonant-gradation: ws
 group: t
@@ -777,6 +794,7 @@ end: class
 
 # Kotus 38 hevonen
 class: subst-p
+sm-class: nainen
 match-word: nen
 consonant-gradation: -
 group: t
@@ -818,6 +836,7 @@ end: class
 
 # Kotus 39 ajatus
 class: subst-p
+sm-class: vastaus
 match-word: Vs
 consonant-gradation: -
 group: t
@@ -859,6 +878,7 @@ end: class
 
 # Kotus 40 kansallisuus
 class: subst-us2
+sm-class: kalleus
 match-word: Us
 consonant-gradation: -
 group: t
@@ -899,6 +919,7 @@ end: class
 
 # Kotus 41 rengas
 class: subst-as2
+sm-class: vieras kirves kauris kaunis koiras
 match-word: (?:A|e|i)s
 consonant-gradation: ws
 group: t
@@ -941,6 +962,7 @@ end: class
 
 # Kotus 48 aate
 class: subst-e2
+sm-class: hame terve kiiru
 match-word: e
 consonant-gradation: ws
 group: t

@@ -1,0 +1,86 @@
+#!/usr/bin/env python2.4
+# -*- coding: utf-8 -*-
+
+# Copyright 2006 Harri Pitkänen (hatapitk@iki.fi)
+# Converts files from Suomi-Malaga lexicon format to the database format
+# of Joukahainen.
+# This program requires Python version 2.4 or newer.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import locale
+import codecs
+import re
+import _pg
+
+inputfile = codecs.open("/home/harri/tmp/nimisanat.malaga", "r", "UTF-8")
+errorfile = codecs.open("/tmp/virheet.malaga", "w", "UTF-8")
+#outputfile = codecs.open("/tmp/nimisanat.joukahainen", "w", "UTF-8")
+
+db = _pg.connect(host='localhost',
+                 dbname='joukahainen',
+                 port=5432,
+                 user='joukahainen',
+                 passwd='joukahainen')
+
+
+classmap = [(u'valo', u'valo'),
+              (u'aalto', u'valo-av1'),
+	    (u'alku',  u'valo-av5')]
+
+
+
+
+
+nsre = re.compile(u"\\[perusmuoto: \"(?P<perusmuoto>.(?:[^\"])*)\", alku: \"(?P<alku>.(?:[^\"])*)\", " +
+                  u"luokka: (?P<luokka>.(?:[^,])*), jatko: <(?P<jatko>.(?:[^>])*)>, äs: (?P<as>a|ä|aä)" +
+                  u"(?:|, tiedot: <(?P<tiedot>.(?:[^>])*)>)\\];")
+
+lista = []
+
+db.query('DELETE FROM flag_attribute_value')
+db.query('DELETE FROM string_attribute_value')
+db.query('DELETE FROM word')
+
+rivi = inputfile.readline()
+while rivi != u"":
+	match = nsre.match(rivi)
+	if match == None:
+		errorfile.write(rivi)
+	else:
+		gd = match.groupdict()
+		for classname in classmap:
+			if classname[0] == gd['jatko']:
+				print gd['perusmuoto']
+				db.query((u"INSERT INTO word(word, class) VALUES('%s', 1)" %
+				         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
+				res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
+				         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
+				wid = int(res.getresult()[0][0])
+				db.query((u"INSERT INTO string_attribute_value(wid, aid, value) " +
+				          u"VALUES(%i, 1, '%s')") % (wid, classname[1]))
+				break
+		#outputfile.write(u"[perusmuoto: \""+gd["perusmuoto"]+u"\", alku: \""+gd["alku"]+u"\", luokka: "+
+		#                 gd["luokka"]+u", jatko: <"+gd["jatko"]+u">, äs: "+gd["as"])
+		#if gd["tiedot"] != None: outputfile.write(u", tiedot: <"+gd["tiedot"]+">")
+		#outputfile.write(u"];\n")
+	rivi = inputfile.readline()
+
+
+
+#outputfile.close()
+errorfile.close()
+inputfile.close()

@@ -82,6 +82,7 @@ def __read_list_line(file):
 
 # Read an inflection class from a file. Returns the following dictionary of items:
 # cname: class name
+# smcnames: Suomi-Malaga class names
 # match: regular expression that all words in this class must match
 # gradation: consonant gradation type.
 # group: FIXME: should be t
@@ -95,6 +96,7 @@ def __read_inflection_class(file):
 		print 'Class definition expected.'
 		sys.exit(1)
 	cname = header_tuple[1]
+	smcnames = []
 	match = '.*'
 	gradation = hfutils.GRAD_NONE
 	group = 't'
@@ -105,6 +107,7 @@ def __read_inflection_class(file):
 		if header_tuple == None:
 			print 'Unexpected end of file.'
 			sys.exit(1)
+		if header_tuple[0] == 'sm-class': smcnames = header_tuple[1].split(' ')
 		if header_tuple[0] == 'match-word': match = header_tuple[1]
 		if header_tuple[0] == 'consonant-gradation':
 			if header_tuple[1] == '-': gradation = hfutils.GRAD_NONE
@@ -123,7 +126,7 @@ def __read_inflection_class(file):
 				rules.append(rule)
 				rule = __read_list_line(file)
 		if header_tuple[0] == 'end' and header_tuple[1] == 'class':
-			return { 'cname':cname, 'match':match, 'gradation':gradation, \
+			return { 'cname':cname, 'smcnames':smcnames, 'match':match, 'gradation':gradation, \
 			         'group':group, 'tgroup':tgroup, 'rules':rules }
 
 
