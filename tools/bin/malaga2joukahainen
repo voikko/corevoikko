@@ -24,6 +24,7 @@ import sys
 import locale
 import codecs
 import re
+import hfconv
 import _pg
 
 inputfile = codecs.open("/home/harri/tmp/nimisanat.malaga", "r", "UTF-8")
@@ -36,14 +37,16 @@ db = _pg.connect(host='localhost',
                  user='joukahainen',
                  passwd='joukahainen')
 
-
-classmap = [(u'valo', u'valo'),
-              (u'aalto', u'valo-av1'),
-	    (u'alku',  u'valo-av5')]
-
-
-
-
+def find_hf_class(word, sm_class):
+	for infclass in hfconv.classmap:
+		for gradclass in infclass[2]:
+			if gradclass[2] == sm_class:
+				if hfconv.match_re(word, gradclass[1]) == None: continue
+				if gradclass[0] == None: return infclass[0]
+				for grad in hfconv.grads:
+					if grad[0] == infclass[1] and grad[1] == gradclass[0]:
+						return infclass[0] + u'-' + grad[2]
+	return None
 
 nsre = re.compile(u"\\[perusmuoto: \"(?P<perusmuoto>.(?:[^\"])*)\", alku: \"(?P<alku>.(?:[^\"])*)\", " +
                   u"luokka: (?P<luokka>.(?:[^,])*), jatko: <(?P<jatko>.(?:[^>])*)>, äs: (?P<as>a|ä|aä)" +
@@ -55,29 +58,25 @@ db.query('DELETE FROM flag_attribute_value')
 db.query('DELETE FROM string_attribute_value')
 db.query('DELETE FROM word')
 
-rivi = inputfile.readline()
-while rivi != u"":
+
+while True:
+	rivi = inputfile.readline()
+	if rivi == u'': break
 	match = nsre.match(rivi)
 	if match == None:
 		errorfile.write(rivi)
 	else:
 		gd = match.groupdict()
-		for classname in classmap:
-			if classname[0] == gd['jatko']:
-				print gd['perusmuoto']
-				db.query((u"INSERT INTO word(word, class) VALUES('%s', 1)" %
-				         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
-				res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
-				         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
-				wid = int(res.getresult()[0][0])
-				db.query((u"INSERT INTO string_attribute_value(wid, aid, value) " +
-				          u"VALUES(%i, 1, '%s')") % (wid, classname[1]))
-				break
-		#outputfile.write(u"[perusmuoto: \""+gd["perusmuoto"]+u"\", alku: \""+gd["alku"]+u"\", luokka: "+
-		#                 gd["luokka"]+u", jatko: <"+gd["jatko"]+u">, äs: "+gd["as"])
-		#if gd["tiedot"] != None: outputfile.write(u", tiedot: <"+gd["tiedot"]+">")
-		#outputfile.write(u"];\n")
-	rivi = inputfile.readline()
+		print gd['perusmuoto']
+		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
+		if hf_class == None: continue
+		db.query((u"INSERT INTO word(word, class) VALUES('%s', 1)" %
+		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
+		res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
+		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
+		wid = int(res.getresult()[0][0])
+		db.query((u"INSERT INTO string_attribute_value(wid, aid, value) " +
+		          u"VALUES(%i, 1, '%s')") % (wid, hf_class))
 
 
 
