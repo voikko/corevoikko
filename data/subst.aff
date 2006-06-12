@@ -39,10 +39,11 @@ end: class
 
 
 # Kotus 2 pallero
+# astevaihtelu: ahdinko
 class: subst-o2
 sm-class: arvelu
 match-word: C(?:O|U)
-consonant-gradation: -
+consonant-gradation: sw
 group: t
 transform-group: e
 rules:
@@ -61,10 +62,10 @@ allatiivi		0	lle	w
 abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	0	jen	s
-genetiivi_mon	0	iden	s
-genetiivi_mon	0	itten	s	prio=2
+genetiivi_mon	0	iden	w
+genetiivi_mon	0	itten	w	prio=2
 partitiivi_mon	0	ja	s
-partitiivi_mon	0	ita	s
+partitiivi_mon	0	ita	w
 translatiivi_mon	0	iksi	w	ps=f
 translatiivi_mon	0	ikse	w	ps=r
 essiivi_mon	0	ina	s
@@ -167,7 +168,7 @@ end: class
 
 # Kotus 5 patti
 class: subst-p
-sm-class: risti kalsium
+sm-class: risti kiiski kalsium
 match-word: Ci
 consonant-gradation: sw
 group: t
