@@ -206,6 +206,49 @@ end: rules
 end: class
 
 
+# Kotus 6 paperi
+class: subst-paperi
+sm-class: paperi
+match-word: Ci
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	i	eiden	w
+genetiivi_mon	i	eitten	w
+partitiivi_mon	i	eita	w
+partitiivi_mon	i	eja	s
+translatiivi_mon	i	eiksi	w	ps=f
+translatiivi_mon	i	eikse	w	ps=r
+essiivi_mon	i	eina	s
+inessiivi_mon	i	eissa	w
+elatiivi_mon	i	eista	w
+illatiivi_mon	i	eihin	s
+adessiivi_mon	i	eilla	w
+ablatiivi_mon	i	eilta	w
+allatiivi_mon	i	eille	w
+abessiivi_mon	i	eitta	w	ps=f
+komitatiivi_mon	i	eine	s	ps=r
+instruktiivi_mon	i	ein	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 7 lampi
 class: subst-i2
 sm-class: lovi lahti hapsi suksi uksi

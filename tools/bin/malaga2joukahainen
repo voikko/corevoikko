@@ -29,7 +29,7 @@ import _pg
 
 inputfile = codecs.open("/home/harri/tmp/nimisanat.malaga", "r", "UTF-8")
 errorfile = codecs.open("/tmp/virheet.malaga", "w", "UTF-8")
-#outputfile = codecs.open("/tmp/nimisanat.joukahainen", "w", "UTF-8")
+outputfile = codecs.open("/tmp/siirretyt.malaga", "w", "UTF-8")
 
 db = _pg.connect(host='localhost',
                  dbname='joukahainen',
@@ -67,9 +67,9 @@ while True:
 		errorfile.write(rivi)
 	else:
 		gd = match.groupdict()
-		print gd['perusmuoto']
 		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
 		if hf_class == None: continue
+		outputfile.write(rivi)
 		db.query((u"INSERT INTO word(word, class) VALUES('%s', 1)" %
 		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
 		res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
@@ -80,6 +80,6 @@ while True:
 
 
 
-#outputfile.close()
+outputfile.close()
 errorfile.close()
 inputfile.close()
