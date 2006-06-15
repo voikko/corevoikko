@@ -110,10 +110,37 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'k>j',u'(.*)ki',u'kylki'),
 			(u'p',u'(.*n)pi',u'siipi'),
 			(u't',u'(.*n)pi',u'lehti'),
-			(u'k',u'(.*)ki',u'kaikki') ])
+			(u'k',u'(.*)ki',u'kaikki')]),
+	(u'nalle', u'-', [(None,u'(.*)',u'nalle')]),
+	(u'kala', u'sw',   [(None,u'(.*)A',u'kala'),
+			(u'tt',u'(.*t)tA',u'aitta'),
+			(u'nk',u'(.*n)kA',u'hanka'),
+			(u'mp',u'(.*m)pA',u'kampa'),
+			(u'nt',u'(.*n)tA',u'kanta'),
+			(u'pp',u'(.*p)pA',u'kappa'),
+			(u'rt',u'(.*r)tA',u'parta'),
+			(u'lt',u'(.*l)tA',u'valta'),
+			(u'kk',u'(.*k)kA',u'haka'),
+			(u'p',u'(.*)pA',u'napa'),
+			(u't',u'(.*)tA',u'pata'),
+			(u'k>',u'(.*AA)kA',u'raaka'),
+			(u'k>',u'(.*)kA',u'haka')]),
+	(u'koira', u'sw',   [(None,u'(.*)A',u'koira'),
+			(u'tt',u'(.*t)tA',u'kenttä'),
+			(u'nk',u'(.*n)kA',u'honka'),
+			(u'mp',u'(.*m)pA',u'kompa'),
+			(u'nt',u'(.*n)tA',u'suunta'),
+			(u'pp',u'(.*p)pA',u'tolppa'),
+			(u'rt',u'(.*r)tA',u'turta'),
+			(u'lt',u'(.*l)tA',u'kulta'),
+			(u'kk',u'(.*k)kA',u'hoikka'),
+			(u'p',u'(.*)pA',u'huopa'),
+			(u't',u'(.*)tA',u'juhta'),
+			(u'k>',u'(.*)kA',u'hoikka')])
 	 ]
 
-
+flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), (u'ei_ys', 7),
+	 (u'ei_ysa', 8), (u'ei_ysj', 9)]
 
 def match_re(string, pattern):
 	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö)')

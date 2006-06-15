@@ -49,6 +49,15 @@ def find_malaga_noun_class(word, hf_class):
 	
 	return (None, None)
 
+def get_flags(db, wid):
+	flags = db.query('SELECT aid FROM flag_attribute_value WHERE wid = %i' % wid)
+	flag_s = u''
+	for flag in flags.getresult():
+		for f in hfconv.flagmap:
+			if flag[0] == f[1]: flag_s = flag_s + f[0] + u', '
+	if flag_s == u'': return None
+	else: return flag_s[:-2]
+
 
 db = _pg.connect(host='localhost',
                  dbname='joukahainen',
@@ -81,8 +90,11 @@ for result in results.getresult():
 			if vtype == hfutils.VOWEL_FRONT: malaga_vtype = u'ä'
 			elif vtype == hfutils.VOWEL_BACK: malaga_vtype = u'a'
 			elif vtype == hfutils.VOWEL_BOTH: malaga_vtype = u'aä'
-			outputfile.write(u'[perusmuoto: "%s", alku: "%s", luokka: nimisana, jatko: <%s>, äs: %s];\n' \
-			                 % (word, alku, jatko, malaga_vtype))
+			flags = get_flags(db, result[3])
+			if flags == None: flags = u''
+			else: flags = u', tiedot: <%s>' % flags
+			outputfile.write(u'[perusmuoto: "%s", alku: "%s", luokka: nimisana, jatko: <%s>, äs: %s%s];\n' \
+			                 % (word, alku, jatko, malaga_vtype, flags))
 
 
 outputfile.close()

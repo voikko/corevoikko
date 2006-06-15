@@ -24,10 +24,11 @@ import sys
 import locale
 import codecs
 import re
+import hfutils
 import hfconv
 import _pg
 
-inputfile = codecs.open("/home/harri/tmp/nimisanat.malaga", "r", "UTF-8")
+inputfile = codecs.open("/tmp/orig.malaga", "r", "UTF-8")
 errorfile = codecs.open("/tmp/virheet.malaga", "w", "UTF-8")
 outputfile = codecs.open("/tmp/siirretyt.malaga", "w", "UTF-8")
 
@@ -48,12 +49,23 @@ def find_hf_class(word, sm_class):
 						return infclass[0] + u'-' + grad[2]
 	return None
 
+def insert_flags(db, wid, tiedot_s):
+	if tiedot_s == None: return
+	tiedot = tiedot_s.split(u',')
+	for i in range(len(tiedot)): tiedot[i] = tiedot[i].strip()
+	for tieto in tiedot:
+		for flag in hfconv.flagmap:
+			if tieto == flag[0]:
+				db.query(u"INSERT INTO flag_attribute_value(wid, aid) VALUES(%i, %i)" \
+				         % (wid, flag[1]))
+
 nsre = re.compile(u"\\[perusmuoto: \"(?P<perusmuoto>.(?:[^\"])*)\", alku: \"(?P<alku>.(?:[^\"])*)\", " +
                   u"luokka: (?P<luokka>.(?:[^,])*), jatko: <(?P<jatko>.(?:[^>])*)>, äs: (?P<as>a|ä|aä)" +
                   u"(?:|, tiedot: <(?P<tiedot>.(?:[^>])*)>)\\];")
 
 lista = []
 
+db.query('DELETE FROM related_word')
 db.query('DELETE FROM flag_attribute_value')
 db.query('DELETE FROM string_attribute_value')
 db.query('DELETE FROM word')
@@ -67,9 +79,10 @@ while True:
 		errorfile.write(rivi)
 	else:
 		gd = match.groupdict()
+		if gd['luokka'] != u'nimisana': continue
 		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
 		if hf_class == None: continue
-		outputfile.write(rivi)
+		outputfile.write(hfutils.remove_comments(rivi).strip() + u'\n')
 		db.query((u"INSERT INTO word(word, class) VALUES('%s', 1)" %
 		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
 		res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
@@ -77,6 +90,7 @@ while True:
 		wid = int(res.getresult()[0][0])
 		db.query((u"INSERT INTO string_attribute_value(wid, aid, value) " +
 		          u"VALUES(%i, 1, '%s')") % (wid, hf_class))
+		insert_flags(db, wid, gd['tiedot'])
 
 
 
