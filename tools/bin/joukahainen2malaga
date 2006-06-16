@@ -49,14 +49,23 @@ def find_malaga_noun_class(word, hf_class):
 	
 	return (None, None)
 
-def get_flags(db, wid):
+def get_class_and_flags(db, hf_wclass, wid):
 	flags = db.query('SELECT aid FROM flag_attribute_value WHERE wid = %i' % wid)
 	flag_s = u''
+	if hf_wclass == 1: class_s = u'nimisana'
+	elif hf_wclass == 2: class_s = u'laatusana'
 	for flag in flags.getresult():
-		for f in hfconv.flagmap:
-			if flag[0] == f[1]: flag_s = flag_s + f[0] + u', '
-	if flag_s == u'': return None
-	else: return flag_s[:-2]
+		if hf_wclass == 2 and flag[0] == 10: class_s = u'nimi_laatusana'
+		elif hf_wclass == 1 and flag[0] == 11: class_s = u'etunimi'
+		elif hf_wclass == 1 and flag[0] == 12: class_s = u'sukunimi'
+		elif hf_wclass == 1 and flag[0] == 13: class_s = u'paikannimi'
+		elif hf_wclass == 1 and flag[0] == 14: class_s = u'nimi'
+		else:
+			for f in hfconv.flagmap:
+				if flag[0] == f[1]: flag_s = flag_s + f[0] + u', '
+	if flag_s == u'': flag_s = None
+	else: flag_s = flag_s[:-2]
+	return (class_s, flag_s)
 
 
 db = _pg.connect(host='localhost',
@@ -80,7 +89,7 @@ for result in results.getresult():
 		sepind = altform.rfind(u'|')
 		if sepind == -1: word_end = word
 		else: word_end = altform[sepind+1:]
-		if result[1] == 1:
+		if result[1] in [1, 2]:
 			hf_class = unicode(result[2], 'UTF-8')
 			(alku, jatko) = find_malaga_noun_class(word, hf_class)
 			if alku == None:
@@ -90,11 +99,11 @@ for result in results.getresult():
 			if vtype == hfutils.VOWEL_FRONT: malaga_vtype = u'ä'
 			elif vtype == hfutils.VOWEL_BACK: malaga_vtype = u'a'
 			elif vtype == hfutils.VOWEL_BOTH: malaga_vtype = u'aä'
-			flags = get_flags(db, result[3])
+			(wclass_s, flags) = get_class_and_flags(db, result[1], result[3])
 			if flags == None: flags = u''
 			else: flags = u', tiedot: <%s>' % flags
-			outputfile.write(u'[perusmuoto: "%s", alku: "%s", luokka: nimisana, jatko: <%s>, äs: %s%s];\n' \
-			                 % (word, alku, jatko, malaga_vtype, flags))
+			outputfile.write(u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s];\n' \
+			                 % (word, alku, wclass_s, jatko, malaga_vtype, flags))
 
 
 outputfile.close()

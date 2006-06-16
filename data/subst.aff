@@ -168,7 +168,7 @@ end: class
 
 # Kotus 5 patti
 class: subst-p
-sm-class: risti kiiski kalsium
+sm-class: risti kiiski
 match-word: Ci
 consonant-gradation: sw
 group: t
@@ -202,6 +202,45 @@ allatiivi_mon	i	eille	w
 abessiivi_mon	i	eitta	w	ps=f
 komitatiivi_mon	i	eine	s	ps=r
 instruktiivi_mon	i	ein	w	ps=f
+end: rules
+end: class
+
+
+class: kalsium-p
+sm-class: kalsium
+match-word: C
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	in	w	ps=f
+partitiivi	0	ia	s
+translatiivi	0	iksi	w	ps=f
+translatiivi	0	ikse	w	ps=r
+essiivi		0	ina	s
+inessiivi		0	issa	w
+elatiivi		0	ista	w
+illatiivi		0	iin	s
+adessiivi		0	illa	w
+ablatiivi		0	ilta	w
+allatiivi		0	ille	w
+abessiivi		0	itta	w	ps=f
+nominatiivi_mon	0	it	w	ps=f
+genetiivi_mon	0	ien	s
+partitiivi_mon	0	eja	s
+translatiivi_mon	0	eiksi	w	ps=f
+translatiivi_mon	0	eikse	w	ps=r
+essiivi_mon	0	eina	s
+inessiivi_mon	0	eissa	w
+elatiivi_mon	0	eista	w
+illatiivi_mon	0	eihin	s
+adessiivi_mon	0	eilla	w
+ablatiivi_mon	0	eilta	w
+allatiivi_mon	0	eille	w
+abessiivi_mon	0	eitta	w	ps=f
+komitatiivi_mon	0	eine	s	ps=r
+instruktiivi_mon	0	ein	w	ps=f
 end: rules
 end: class
 
@@ -415,7 +454,7 @@ end: class
 
 # Kotus 12 lattia
 class: subst-lattia
-sm-class: kulkija peruna herttua
+sm-class: kulkija apila peruna herttua
 match-word: A
 consonant-gradation: -
 group: t

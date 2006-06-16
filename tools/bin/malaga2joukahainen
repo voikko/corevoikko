@@ -79,17 +79,28 @@ while True:
 		errorfile.write(rivi)
 	else:
 		gd = match.groupdict()
-		if gd['luokka'] != u'nimisana': continue
+		if gd['luokka'] in [u'nimisana', u'etunimi', u'sukunimi', u'paikannimi', u'nimi']: joclass = 1
+		elif gd['luokka'] in [u'laatusana', u'nimi_laatusana']: joclass = 2
+		else: continue
 		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
 		if hf_class == None: continue
 		outputfile.write(hfutils.remove_comments(rivi).strip() + u'\n')
-		db.query((u"INSERT INTO word(word, class) VALUES('%s', 1)" %
-		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
+		db.query("INSERT INTO word(word, class) VALUES('%s', %i)" %
+		         ((gd['perusmuoto'].replace("'", "''")).encode('UTF-8'), joclass))
 		res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
 		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
 		wid = int(res.getresult()[0][0])
-		db.query((u"INSERT INTO string_attribute_value(wid, aid, value) " +
-		          u"VALUES(%i, 1, '%s')") % (wid, hf_class))
+		db.query(("INSERT INTO string_attribute_value(wid, aid, value) " +
+		          "VALUES(%i, 1, '%s')") % (wid, hf_class))
+		if gd['luokka'] == u'nimi_laatusana': nflag = 10
+		elif gd['luokka'] == u'etunimi': nflag = 11
+		elif gd['luokka'] == u'sukunimi': nflag = 12
+		elif gd['luokka'] == u'paikannimi': nflag = 13
+		elif gd['luokka'] == u'nimi': nflag = 14
+		else: nflag = 0
+		if nflag != 0:
+			db.query(u"INSERT INTO flag_attribute_value(wid, aid) VALUES(%i, %i)" \
+			         % (wid, nflag))
 		insert_flags(db, wid, gd['tiedot'])
 
 
