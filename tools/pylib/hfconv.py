@@ -148,15 +148,35 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'tt',u'(.*t)tA',u'savotta'),
 			(u'pp',u'(.*p)pA',u'ulappa'),
 			(u'kk',u'(.*k)kA',u'solakka'),
-			(u'nt',u'(.*n)tA',u'veranta')])
-	 ]
+			(u'nt',u'(.*n)tA',u'veranta')]),
+	(u'kantaja', u'-', [(None,u'(.*C)A',u'kantaja')]),
+	(u'apaja', u'-', [(None,u'(.*C)A',u'apaja')]),
+	(u'peruna', u'-', [(None,u'(.*C)A',u'peruna')]),
+	(u'pasuuna', u'sw',[(None,u'(.*C)A',u'pasuuna'),
+			(u'tt',u'(.*t)tA',u'opotta')]),
+	(u'ainoa', u'-', [(None,u'(.*O)A',u'ainoa')]),
+	(u'herttua', u'-', [(None,u'(.*U)A',u'herttua')]),
+	(u'korkea', u'-', [(None,u'(.*C)eA',u'korkea')]),
+	(u'suurempi', u'-', [(None,u'(.*V)mpi',u'suurempi')]),
+	(u'vapaa', u'-', [(None,u'(.*CA)A',u'vapaa')]),
+	(u'tienoo', u'-', [(None,u'(.*CO)O',u'tienoo')]),
+	(u'leikkuu', u'-', [(None,u'(.*CU)U',u'leikkuu')]),
+	(u'kamee', u'-',   [(None,u'(.*Ce)e',u'kamee'),
+			(None,u'(.*CO)O',u'trikoo'),
+			(None,u'(.*CU)U',u'revyy')]),
+	(u'pii', u'-', [(None,u'(.*V)i',u'pii')]),
+	(u'maa', u'-', [(None,u'(.*CA)A',u'maa')]),
+	(u'puu', u'-', [(None,u'(.*)U',u'puu')]),
+	(u'suo', u'-', [(None,u'(.*CU)O',u'suo')]),
+	(u'bébé', u'-', [(None,u'(.*V)',u'bébé')])
+	]
 
 flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), (u'ei_ys', 7),
 	 (u'ei_ysa', 8), (u'ei_ysj', 9), (u'atk', 15)]
 
 def match_re(string, pattern):
-	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö)')
-	pattern = pattern.replace(u'C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š)')
+	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')
+	pattern = pattern.replace(u'C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š|ž)')
 	pattern = pattern.replace(u'A', u'(?:a|ä)')
 	pattern = pattern.replace(u'O', u'(?:o|ö)')
 	pattern = pattern.replace(u'U', u'(?:u|y)')

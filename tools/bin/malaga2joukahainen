@@ -91,7 +91,7 @@ while True:
 		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
 		wid = int(res.getresult()[0][0])
 		db.query(("INSERT INTO string_attribute_value(wid, aid, value) " +
-		          "VALUES(%i, 1, '%s')") % (wid, hf_class))
+		          "VALUES(%i, 1, '%s')") % (wid, hf_class.encode('UTF-8')))
 		if gd['luokka'] == u'nimi_laatusana': nflag = 10
 		elif gd['luokka'] == u'etunimi': nflag = 11
 		elif gd['luokka'] == u'sukunimi': nflag = 12

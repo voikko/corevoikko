@@ -413,7 +413,7 @@ end: class
 
 # Kotus 10 luokka
 class: subst-p
-sm-class: koira asema kantaja jumala seitsemän
+sm-class: koira asema kantaja apaja jumala seitsemän
 match-word: CA
 consonant-gradation: sw
 group: t
