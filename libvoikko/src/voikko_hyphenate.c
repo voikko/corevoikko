@@ -94,12 +94,16 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 		}
 	}
 	
-	free(word_copy);
-	
 	if (voikko_options.no_ugly_hyphenation) {
 		hyphenation_points[1] = ' ';
 		hyphenation_points[nchars-1] = ' ';
+		for (i = 0; i <= nchars - 2; i++) {
+			if (wcschr(VOIKKO_VOWELS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1]))
+				hyphenation_points[i+1] = ' ';
+		}
 	}
+	
+	free(word_copy);
 }
 
 void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len) {

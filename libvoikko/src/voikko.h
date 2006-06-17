@@ -87,8 +87,7 @@
 #define VOIKKO_OPT_ACCEPT_ALL_UPPERCASE 7
 
 /* Do not insert hyphenation positions that are considered to be ugly but correct
- * Default: false
- * FIXME: This option is currently unimplemented */
+ * Default: false */
 #define VOIKKO_OPT_NO_UGLY_HYPHENATION 4
 
 /* Integer options */

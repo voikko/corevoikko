@@ -1,3 +1,13 @@
+2006-06-17 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Do not hyphenate between vowels in voikko_simple_hyphenation if
+	  VOIKKO_OPT_NO_UGLY_HYPHENATION is set
+	* Remove warning about unimplemented VOIKKO_OPT_NO_UGLY_HYPHENATION
+	  in voikko.h (it was first implemented on 2006-05-24)
+	* Suggest replacing s with š and z with ž rather than sh and zh.
+	* If a suggestion cannot be represented in the external encoding, drop only
+	  that suggestion instead of returning null immediately.
+
 2006-06-06 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Improve character insertion suggestions

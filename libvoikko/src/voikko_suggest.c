@@ -196,14 +196,14 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 	free(part1);
 }
 
-/* ä=\u00e4, ö=\u00f6, å=\u00e5 */
+/* ä=\u00e4, ö=\u00f6, å=\u00e5, š=\u0161, ž=\u017e*/
 
 const wchar_t * REPLACE_ORIG =
-	L"aiitesnulkko\u00e4mrrvppyhjjddd\u00f6gggffbbcwwxzq\u00e5\u00e5\u00e5\u00e5aitesnul"  L"ko\u00e4"
-	L"mrvpyhjd\u00f6gfbcwxzq\u00e5";
+	L"aiites"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbcwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
+	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5";
 const wchar_t * REPLACE_REPLACEMENT = 
-	L"suorramiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvevcxao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6jpp"
-	L"kdglhuiel"  L"tvvkasaka";
+	L"suorr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
+	L"jpp"  L"kdglhuiel"  L"tvvkasaka";
 
 void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_suggestions,
                                 const wchar_t * word, size_t wlen, int * cost, int ** prios, int start, int end) {
@@ -382,7 +382,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 51, 72);
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 51, 74);
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 6, 10);
 	if (cost < COST_LIMIT && suggestions_left > 0)
@@ -430,6 +430,7 @@ char ** voikko_suggest_cstr(int handle, const char * word) {
 	wchar_t ** suggestions_ucs4;
 	char ** suggestions;
 	int i;
+	int j;
 	int scount;
 	char * suggestion;
 	if (word == 0 || word[0] == '\0') return 0;
@@ -440,18 +441,23 @@ char ** voikko_suggest_cstr(int handle, const char * word) {
 	if (suggestions_ucs4 == 0) return 0;
 	scount = 0;
 	while (suggestions_ucs4[scount] != 0) scount++;
-	suggestions = malloc((scount + 1) * sizeof(char *));
+	suggestions = calloc(scount + 1, sizeof(char *));
 	if (suggestions == 0) {
 		free(suggestions_ucs4);
 		return 0;
 	}
+	j = 0;
 	for (i = 0; i < scount; i++) {
 		suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding);
-		if (suggestion == 0) return 0; /* suggestion cannot be encoded */
-		suggestions[i] = suggestion;
 		free(suggestions_ucs4[i]);
+		if (suggestion == 0) continue; /* suggestion cannot be encoded */
+		suggestions[j++] = suggestion;
 	}
 	suggestions[scount] = 0;
 	free(suggestions_ucs4);
-	return suggestions;
+	if (j == 0) {
+		free(suggestions);
+		return 0;
+	}
+	else return suggestions;
 }
