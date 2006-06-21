@@ -1,0 +1,131 @@
+2006-06-20 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Versio 0.7.
+
+2006-06-13 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Lisätty tiedosto suomi-voikko.pro Harri Pitkäsen ohjeen mukaan.
+	* Päivitetty tiedostot LUE.MINUT ja Makefile.
+	* Versio 0.7-beta10.
+
+2006-06-07 Harri Pitkänen
+	* Parannettu isojen kirjainten käsittelyä ja korjattu
+	  tavutusongelmia Voikkoa varten.
+
+2006-06-06 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Muutettu š ja ž sanoihin, joihin ne kuuluvat.
+	  Nämä sanat tunnistetaan myös, jos š:n ja ž:n asemesta
+	  käytetään s:ää, sh:ta, z:aa tai zh:ta. Siis tunnistetaan
+	  esim. šaali, saali ja shaali.
+	* Versio 0.7-beta9.
+
+2006-06-01 Hannu Väisänen
+	* combi_rule yhdyssana_oikein: hyväksytään erisnimi
+	  viivan kanssa yhdyssanoissa ("Anna-niminen").
+	* Versio 0.7-beta8.
+	
+2006-05-29 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* combi_rule sijapääte: korjattu sti-loppuisten laatusanojen
+	  (esim. kaunii+sti) ja johdosten (puhuva+sti) tunnistusta.
+	* combi_rule sijapääte: hyväksytään omistusliite sijapäätteen
+	  jälkeen myös lyhenteissä (esim. USA:ssa+ni).
+	* Versio 0.7-beta7.
+
+2006-05-24 Hannu Väisänen
+	* Sanoja lisätty.
+	* Korjattu minun ja Harri Pitkäsen huomaamia virheitä.
+	* -inen-loppuiset johdokset (valo+inen) hyväksytään vain
+	  yhdyssanojen jälkiosana paitsi jos ne on merkitty sanastoon
+	  erillisiksi sanoiksi. (Toivottavasti tämä toimii nyt :-).
+	* Versio 0.7-beta6.
+
+2006-05-23 Harri Pitkänen <hatapitk@iki.fi>
+	* subrule yhdyssana_oikein: voikko-versiossa hyväksytään viiva
+	  yhdyssanoissa vain oikeinkirjoitussääntöjen mukaan. Siis
+	  hyväksytään esim. linja-auto, mutta ei paketti-autoa.
+
+2006-05-22 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Sanastoon merkitty sanat, joita ei käännetä voikko-versiossa
+	  (tiedot: <ei_voikko>) tai sukija-versiossa (tiedot: <ei_sukija>)
+	  Harri Pitkäsen korjauksen mukaan.
+	* Korjattu Harri Pitkäsen huomaamat kirjoitusvirheet.
+	* Tavuviiva voi olla myös sanan alussa tai lopussa.
+	* Hyväksytään liitesana sijapäätteen jälkeen myös
+	  lyhenteissä (esim. USA:ssa+kin).
+	* Versio 0.7-beta5.
+
+2006-05-16 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Johdetaan -inen-loppuiset laatusanat nimisanosta (esim. valo+inen).
+	  Ne hyväksytään vain yhdyssanojen jälkiosana paitsi jos ne on
+	  merkitty sanastoon erillisiksi sanoiksi.
+	* Tarpeettomia lyhenteitä poistettu (eli siirretty tiedostoon omat.lex :-).
+	* Pisteitä lisätty niihin lyhenteisiin, joihin ne kuuluvat.
+	* Versio 0.7-beta4.
+
+2006-05-12 Harri Pitkänen <hatapitk@iki.fi>
+	* Isojen kirjainten tuki oikolukua varten.
+	* Lyhenteiden erottaminen tavutusta varten.
+	
+2006-05-12 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Antautua-tyyppiset sanat taivutetaan sukija-versiossa Nykysuomen
+	  sanakirjan ja voikko-versiossa Suomen kielen perussanakirjan mukaan.
+	* Tunnistetaan entistä vähemmän sanoja virheellisesti yhdyssanoiksi.
+	* Versio 0.7-beta3.
+
+2006-05-10 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Erisnimet muutettu alkaamaan isolla kirjaimella.
+	* Tiedoston atk.lex sanat merkitty atk-alan erikoissanoiksi.
+	* Monikon omanto voi olla yhdyssanan alkuosana (esim äitienpäivä).
+	* Yhdyssanojen tunnistusta parannettu.
+	* Versio 0.7-beta2.
+
+2006-05-05 Harri Pitkänen <hatapitk@iki.fi>
+	* Ääntiösoinnun tarkistus lyhenteiden taivutuksessa.
+	* combi_rule teonsana: poistettu ylimääräisiä sääntöjä result-lauseesta.
+
+2006-05-05 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Sanastoon voidaan merkitä sanoja, joita ei käännetä voikko-versioon.
+	* Versio 0.7-beta1.
+
+2006-04-29 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Ei enää hyväksytä talonas-tyyppisiä sanoja (talona+s).
+	* Sanastoon voi merkitä sanat, jotka voivat olla vain
+	  yhdyssanojen jälkiosana, esim. (kaunis)silmäinen.
+	* Versio 0.6.
+
+2006-04-24 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Siirrytty käyttämään UTF-8 -merkistöä.
+	* Versio 0.5.
+
+2006-03-24 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Tietojenkäsittelysanasto siirretty tiedostoon sanat/atk.lex.
+	* Versio 0.4.
+
+2006-03-02 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Ei enää hyväksytä automaagisesti ohjelmalistata-tyyppisiä teonsanoja.
+	* Versio 0.3.
+
+2006-03-06 Hannu Väisänen
+	* Sanoja lisätty ja sanaston virheitä korjattu.
+	* Lisätty liput malli ja tulostus. Katso tiedosto suomi.pro.
+	* Versio 0.4.
+
+2006-02-27 Hannu Väisänen
+	* Sanoja lisätty ja virheellisiä taivutuksia korjattu.
+	* Versio 0.2.
+
+2006-02-20 Hannu Väisänen
+	* Versio 0.1.
+
+

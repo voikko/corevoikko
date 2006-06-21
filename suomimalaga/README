@@ -1,0 +1,20 @@
+Suomi-malaga is a description of Finnish morphology written in Malaga
+(http://home.arcor.de/bjoern-beutel/malaga/). You need malaga version
+6.16 that does not use UTF-8 character set.
+
+
+All other documentation is in Finnish in file LUE.MINUT and in
+subdirectory ohjeet. This is because if you do not know Finnish
+you probably are not interested in this program.
+
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version. See file COPYING for details.
+
+
+Copyright (©) 2006 Hannu Väisänen.
+
+Email: Firstname.Lastname@joensuu.fi
+but replace ä's with a's.

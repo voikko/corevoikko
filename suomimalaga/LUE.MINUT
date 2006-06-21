@@ -1,0 +1,77 @@
+Suomi-malaga on malagalla (http://home.arcor.de/bjoern-beutel/malaga/)
+tehty suomen kielen muoto-opin kuvaus.
+
+Ohjelman merkistökoodaus on UTF-8 eli myös lokaalin pitää tukea
+UTF-8:aa. Fedora Coressa käy fi_FI.utf8
+
+
+KÄÄNTÄMINEN
+
+Sukija-versio tiedostojen indeksointiin
+
+make
+
+Voikko-versio oikolukuun
+
+make voikko
+
+
+Molemmissa tapauksissa saat virheilmoituksia
+
+Warning: No allomorphs generated.
+
+Niistä ei kannata välittää
+
+
+ANALYYSI
+
+make run
+
+Kirjoita sen jälkeen esim.
+
+ma alusta
+
+
+ja tuloksen pitäisi olla tällainen:
+
+
+Analyses of "alusta":
+1: "alustaa"
+2: "alusta"
+3: "alku"
+4: "alunen"
+5: "alus"
+
+
+Lisää ohjeita on alihakemistossa ohjeet.
+
+
+Ohjelman toimintaa voi säätää kahden lipun, "malli" ja "tulostus" avulla.
+Lisätietoja on tiedostojen suomi.pro ja suomi-voikko.pro lopussa.
+
+
+Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää edelleen ja
+muuttaa GNU yleisen lisenssin (GPL lisenssin) ehtojen mukaan
+sellaisina kuin Free Software Foundation on ne julkaissut; joko
+Lisenssin version 2, tai (valinnan mukaan) minkä tahansa myöhemmän
+version mukaisesti.
+
+Tätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen,
+mutta ilman mitään takuuta; ilman edes hiljaista takuuta kaupallisesti
+hyväksyttävästä laadusta tai soveltuvuudesta tiettyyn tarkoitukseen.
+Katso GPL lisenssistä lisää yksityiskohtia.
+
+Tämän ohjelman mukana pitäisi tulla kopio GPL lisenssistä; jos näin ei
+ole, kirjoita osoitteeseen Free Software Foundation Inc., 59 Temple
+Place Suite 330, Boston, MA 02111-1307, USA.
+
+Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+muihin moduuleihin on ohjelmaan perustuvan teoksen
+tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+
+
+Tekijänoikeus © 2006 Hannu Väisänen
+
+Sähköposti: Etunimi.Sukunimi@joensuu.fi
+
+Vaihda ä:t a-kirjaimiin sukunimessä.

@@ -1,0 +1,12 @@
+Erot Nykysuomen sanakirjaan verrattuna
+
+        NS:n taivutus     Ohjelman taivutus
+Juudas  vieras, vastaus   koiras (Taivutus kuten vieras ja vastaus)
+Messias vieras, vastaus   koiras
+Tuomas  vieras            koiras  (Tuomaksen tai Tuomaan)
+uros    koiras, uros      koiras  (samat taivutusmuodot
+                                  kuin uros ja muutama lisää)
+
+28 arvailla  ohjelmassa ei muotoja arvaella
+42 rakentaa  ohjelmassa ei muotoja raketa
+44 antautua
