@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 
 initial <>, rules nimisana, laatusana, asemosana, apusana, lyhennesääntö,
@@ -139,7 +142,7 @@ combi_rule nimisana ($vasen, $oikea, $sana):
   # Jos tähän panee nimi_laatusanan, ne tulevat jäsennetyksi kahdesti:
   # tässä ja laatusana-säännössä.
   #
-  ? $oikea.luokka in @erisnimi + <nimisana, seikkasana, lukusana, suhdesana>;
+  ? $oikea.luokka in @erisnimi + <nimisana, nimi_laatusana, seikkasana, lukusana, suhdesana>;
 
   define $i := length ($vasen);
 
@@ -158,6 +161,12 @@ combi_rule nimisana ($vasen, $oikea, $sana):
                                  "ismi", "isto", "itu", "jani", "tuko", "uksi">);
 
     ? yhdyssana_oikein ($vasen, $oikea, $i);
+
+    if $vasen.$i.luokka in <laatusana, nimi_laatusana> then
+      result $vasen + <[alku: $sana] + $oikea>,
+             rules nimisanan_johdos;
+      if $vasen.$i.luokka = laatusana then stop; end;
+    end;
   end;
 
 
@@ -170,12 +179,30 @@ combi_rule nimisana ($vasen, $oikea, $sana):
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
                liitesana, liitesana2,
-               nimisana, laatusana,
-               teonsana,
+               nimisana,
                nimisanan_johdos,
+               nimisana_laatusanasta, nimisana_teonsanasta,
                tavuviiva,
                etuliite,
                loppu;
+end;
+
+# Teonsanasta johdettu nimisana, esim. sanoma <- sanoa.
+combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana):
+  ? $oikea.luokka = teonsana;
+  define $i := length($vasen);
+  ? $vasen.$i.perusmuoto matches ".*nen" or $vasen.$i.perusmuoto = $vasen.$i.alku;
+  result $vasen + <[alku: $sana] + $oikea>,
+         rules teonsanan_johdos; # FIXME: johdetun muodon on oltava nimisana
+end;
+
+# Laatusanasta johdettu nimisana, esim. vapaus <- vapaa.
+combi_rule nimisana_laatusanasta ($vasen, $oikea, $sana):
+  ? $oikea.luokka in @laatusana;
+  define $i := length($vasen);
+  ? $vasen.$i.perusmuoto matches ".*nen" or $vasen.$i.perusmuoto = $vasen.$i.alku;
+  result $vasen + <[alku: $sana] + $oikea>,
+         rules laatusanan_johdos; # FIXME: johdetun muodon on oltava nimisana
 end;
 
 
@@ -202,7 +229,7 @@ combi_rule laatusana ($vasen, $oikea, $sana):
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
                liitesana, liitesana2,
-               nimisana, laatusana, teonsana,
+               nimisana, laatusana,
                laatusanan_johdos,
                voitto_yliaste,
                tavuviiva,
@@ -581,10 +608,12 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana):
 #define $c2 := transmit (<"c2"> + <$sana>);
 #end;
 
+  if $oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen> + @johdin_jA then
+    result $vasen + <[alku: $sana] + $oikea>, rules nimisana;
+  end;
 
   result $vasen + <[alku: $sana] + $oikea>,
           rules sijapääte, omistusliite, liitesana,
-                nimisana, laatusana, teonsana,
                 teonsanan_johdos,
                 voitto_yliaste,
                 etuliite,
