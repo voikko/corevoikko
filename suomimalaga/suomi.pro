@@ -44,6 +44,8 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
+# Tiedosto suomi.pro Voikkoa varten.
+
 
 sym: suomi.sym
 
@@ -99,11 +101,8 @@ malaga: set use-display yes
 #
 # Tulostuksissa ei ole lainausmerkkejä.
 
-malaga: set switch tulostus tavallinen
-malaga: set switch malli sukija
-mallex: set switch malli sukija
 
-#malaga: set switch tulostus merkitse_yhdyssanat
-#malaga: set switch malli voikko
-#mallex: set switch malli voikko
+malaga: set switch tulostus merkitse_yhdyssanat
+malaga: set switch malli voikko
+mallex: set switch malli voikko
 
