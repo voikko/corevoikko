@@ -1,11 +1,35 @@
+Suomi-malaga - Voikko edition
+
 Suomi-malaga is a description of Finnish morphology written in Malaga
 (http://home.arcor.de/bjoern-beutel/malaga/). You need malaga version
-6.16 that does not use UTF-8 character set.
+7.4.
 
+Currently Suomi-malaga is used in two different applications: text
+indexer Sukija and spellchecker/hyphenator Voikko. Unfortunately it
+is not yet possible to use unmodified Suomi-malaga with Voikko. In
+order to differentiate between the original Suomi-malaga from Hannu
+Väisänen and the "Voikko edition" from Hunspell-fi project
+"Voikko edition" will have an additional component in its version number
+and this notice in README file. So for example stable releases of
+"Voikko edition" that have version numbers 0.7.0, 0.7.1, 0.7.2 etc.
+are derived from version 0.7 of the "original edition". Development
+versions may have different version numbers to avoid breaking package
+managers. New versions of the original Suomi-Malaga are available from
+http://joyds1.joensuu.fi/sukija/sukija.html and new versions of
+"Voikko edition" from http://www.hunspell-fi.org/tiedostot.php
 
-All other documentation is in Finnish in file LUE.MINUT and in
-subdirectory ohjeet. This is because if you do not know Finnish
-you probably are not interested in this program.
+All of the documentation about Finnish morphology is in Finnish (see
+LUE.MINUT and subdirectory ohjeet). This README contains only build
+and usage instructions for distribution packagers.
+
+Building Suomi-malaga for Voikko from this package does not require
+anything else than malaga and make. No configuration is required:
+you only need to run
+  make
+in this directory and ship all files ending with _l or _b and suomi.pro
+with your application. With Voikko this typically means placing the files
+in /usr/lib/voikko or ~/.voikko if you do not want to touch the shared
+version.
 
 
 This program is free software; you can redistribute it and/or modify
@@ -14,7 +38,7 @@ the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
 
-Copyright (©) 2006 Hannu Väisänen.
+Copyright (©) 2006 Hannu Väisänen and Hunspell-fi contributors.
 
 Email: Firstname.Lastname@joensuu.fi
 but replace ä's with a's.

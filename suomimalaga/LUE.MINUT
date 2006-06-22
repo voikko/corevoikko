@@ -4,6 +4,15 @@ tehty suomen kielen muoto-opin kuvaus.
 Ohjelman merkistökoodaus on UTF-8 eli myös lokaalin pitää tukea
 UTF-8:aa. Fedora Coressa käy fi_FI.utf8
 
+Tämä on Voikko-oikoluvun tarpeita varten mukautettu versio, joka pohjautuu
+Hannu Väisäsen julkaisemaan versioon 0.7. Voikon ja Sukijan on jatkossa
+tarkoitus käyttää samaa versiota Suomi-malagasta, mutta toistaiseksi niiden
+käyttämien versioiden välillä on pieniä mutta oleellisia eroja. Jos haluat
+käyttää Sukijaa, hae alkuperäinen (tai uudempi) versio osoitteesta
+http://joyds1.joensuu.fi/sukija/sukija.html
+Jos taas haluat käyttää Voikkoa, uusin versio tästä paketista
+löytyy osoitteesta http://www.hunspell-fi.org/tiedostot.php
+
 
 KÄÄNTÄMINEN
 
