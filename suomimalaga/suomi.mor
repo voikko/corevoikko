@@ -300,7 +300,7 @@ combi_rule tavuviiva ($vasen, $oikea, $sana):
   ? (($i = 0) or (($i greater 0) and ($oikea.luokka in $vasen.$i.jatko)));
 
   result $vasen + <[alku: $sana] + $oikea>,
-         rules nimisana, laatusana, asemosana, apusana, lyhennesääntö,
+         rules nimisana, laatusana, asemosana, lyhennesääntö,
                etuliite, teonsana, kieltosana, loppu;
 end;
 
