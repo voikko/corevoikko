@@ -838,16 +838,35 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
   if (switch (malli) = voikko) then
     $nimet := <etunimi, sukunimi, paikannimi, nimi>;
     #
-    # Hyväksytään esim. linja-auto, mutta ei paketti-autoa.
+    # Yhdysviivan käsittely
     #
     if ($i greater_equal 2) and ($vasen.$i.luokka = tavuviiva) then
-      if ($vasen.($i - 1).luokka in $nimet) then
+
+      # Yhdysviiva aina sallittu erisnimien ja lyhenteiden jälkeen
+      if ($vasen.($i - 1).luokka in $nimet + <lyhenne, huudahdussana>) then
         return yes;
-      elseif ($vasen.($i - 1).luokka in <nimisana, nimi_laatusana>) and
-             ((not ($vasen.($i - 1).alku) matches ".*" + @ääntiö) or
-              (last($vasen.($i - 1).alku) /= first($oikea.perusmuoto))) then
-        return no;
+
+      # Yhdysviiva sallittu, kun alkuosa loppuu samaan vokaaliin jolla loppuosa alkaa
+      #elseif ($vasen.($i - 1).luokka in <nimisana, nimi_laatusana>) and
+      elseif
+             ((($vasen.($i - 1).alku) matches ".*" + @ääntiö) and
+              (last($vasen.($i - 1).alku) = first($oikea.perusmuoto))) then
+        return yes;
+
+      # "Ruotsin-laiva"
+      elseif ($i greater_equal 3) and ($vasen.($i - 1).luokka = sijapääte) and
+             ($vasen.($i - 1).sija = omanto_n) and ($vasen.($i - 2).luokka in $nimet) then
+        return yes;
+
+      # is- ("teknillis-tieteellinen", "Kaakkois-Suomi")
+      # FIXME: tämä ei ole tarkalleen ottaen oikein, mutta toistaiseksi riittävän hyvä
+      elseif (($vasen.($i - 1).alku) matches ".*is") then
+        return yes;
+
       end;
+      # Yhdysviiva muutoin kielletty
+      return no;
+
     end;
   elseif (($i greater_equal 2) and
           ($vasen.$i.luokka = tavuviiva) and
