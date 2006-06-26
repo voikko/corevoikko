@@ -283,16 +283,17 @@ void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_sug
 	wchar_t * buffer = malloc((wlen + 2) * sizeof(wchar_t));
 	if (buffer == 0) return;
 	for (i = start; i <= end; i++) {
+		buffer[0] = word[0];
 		wcsncpy(buffer + 1, word, wlen + 1);
 		for (j = 0; j < wlen && *max_suggestions > 0; j++) {
-			if (INS_CHARS[i] == towlower(word[j])) continue; /* avoid duplicates */
 			if (j != 0) buffer[j-1] = word[j-1];
+			if (INS_CHARS[i] == towlower(word[j])) continue; /* avoid duplicates */
 			if (j > 0 && INS_CHARS[i] == towlower(word[j-1])) continue; /* avoid duplicates */
 			buffer[j] = INS_CHARS[i];
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
 			                            buffer, wlen + 1, cost, prios);
 		}
-		if (*max_suggestions == 0) break;
+		if (*max_suggestions == 0 || INS_CHARS[i] == word[wlen-1]) break;
 		buffer[wlen-1] = word[wlen-1];
 		buffer[wlen] = INS_CHARS[i];
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
