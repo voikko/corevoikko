@@ -137,6 +137,8 @@
 [perusmuoto: "Anna", alku: "Ann", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Anneli", alku: "Annel", luokka: etunimi, jatko: <banaali>, äs: a];
 [perusmuoto: "Anni", alku: "Ann", luokka: etunimi, jatko: <risti>, äs: a];
+[perusmuoto: "Anniina", alku: "Anniin", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Annika", alku: "Annik", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Annikki", alku: "Annik", luokka: etunimi, jatko: <takki>, äs: a];
 [perusmuoto: "Annukka", alku: "Annuk", luokka: etunimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Anselm", alku: "Anselm", luokka: etunimi, jatko: <edam>, äs: a];

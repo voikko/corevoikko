@@ -473,6 +473,7 @@
 [perusmuoto: "ambulanssi", alku: "ambulanss", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ameba", alku: "ameb", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "ameeba", alku: "ameeb", luokka: nimisana, jatko: <karahka>, äs: a];
+[perusmuoto: "amfetamiini", alku: "amfetamiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "amfibi", alku: "amfib", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "amfibio", alku: "amfibio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -614,6 +615,7 @@
 [perusmuoto: "antroposentrinen", alku: "antroposentri", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "antura", alku: "antur", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "anturi", alku: "antur", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "anus", alku: "anu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "aortta", alku: "aort", luokka: nimisana, jatko: <aitta>, äs: a];
 [perusmuoto: "apaattinen", alku: "apaatti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "apaja", alku: "apaj", luokka: nimisana, jatko: <apaja>, äs: a];
@@ -1696,7 +1698,7 @@
 [perusmuoto: "entinen", alku: "enti", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "entiselleen", alku: "entiselleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entistää", alku: "entist", luokka: teonsana, jatko: <aavistaa>, äs: ä];
-[perusmuoto: "entisöidä", alku: "entisö", luokka: teonsana, jatko: <kanavoida>, äs: ä];
+[perusmuoto: "entisöidä", alku: "entisö", luokka: teonsana, jatko: <kanavoida>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "entrata", alku: "entr", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "entree", alku: "entre", luokka: nimisana, jatko: <kamee>, äs: ä];
 [perusmuoto: "entropia", alku: "entropi", luokka: nimisana, jatko: <karahka>, äs: a];
@@ -2204,6 +2206,7 @@
 [perusmuoto: "geometria", alku: "geometri", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "geometrinen", alku: "geometri", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "gepardi", alku: "gepard", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "gerbiili", alku: "gerbiil", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "germaani", alku: "germaan", luokka: nimisana, jatko: <banaali>, äs: a, tiedot: <inen>];
 [perusmuoto: "germanisti", alku: "germanist", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ges", alku: "ges", luokka: nimisana, jatko: <kalsium>, äs: ä, tiedot: <ei_ys>];
@@ -16889,6 +16892,7 @@
 [perusmuoto: "toissa", alku: "toissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toissapäiväinen", alku: "toissapäiväi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "toistaa", alku: "toist", luokka: teonsana, jatko: <muistaa>, äs: a];
+[perusmuoto: "toistaiseksi", alku: "toistaiseksi", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "toiste", alku: "toiste", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "toiste", alku: "toiste", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toitottaa", alku: "toito", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
