@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
@@ -73,7 +76,7 @@
 [perusmuoto: "Ade", alku: "Ade", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Adolf", alku: "Adolf", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Adonis", alku: "Adoni", luokka: etunimi, jatko: <vastaus>, äs: a];
-[perusmuoto: "Agnes", alku: "Agne", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Agnes", alku: "Agnes", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ahab", alku: "Ahab", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ahti", alku: "Aht", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Ahto", alku: "Ahto", luokka: etunimi, jatko: <valo>, äs: a];
@@ -1023,7 +1026,7 @@
 [perusmuoto: "Tycho", alku: "Tycho", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Tyyne", alku: "Tyyne", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Tyyni", alku: "Tyyn", luokka: etunimi, jatko: <risti>, äs: ä];
-[perusmuoto: "Uki", alku: "Uki", luokka: etunimi, jatko: <risti>, äs: a];
+[perusmuoto: "Uki", alku: "Uk", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Ulla", alku: "Ull", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Ulpu", alku: "Ulpu", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Umberto", alku: "Umberto", luokka: etunimi, jatko: <valo>, äs: a];

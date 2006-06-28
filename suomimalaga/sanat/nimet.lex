@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 
 # Erisnimet, jotka eivät ole etu-, suku, eikä paikannimiä.
@@ -202,9 +205,9 @@
 [perusmuoto: "Roche", alku: "Roche", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Saab", alku: "Saab", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Saturnus", alku: "Saturnu", luokka: nimi, jatko: <vastaus>, äs: a];
-[perusmuoto: "Saubert", alku: "Sauber", luokka: nimi, jatko: <edam>, äs: a];
+[perusmuoto: "Sauber", alku: "Sauber", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Schumi", alku: "Schum", luokka: nimi, jatko: <risti>, äs: a];
-[perusmuoto: "Selecta", alku: "Selecta", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "Selecta", alku: "Select", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Shell", alku: "Shell", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Silmarillion", alku: "Silmarillion", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Simppa", alku: "Simp", luokka: nimi, jatko: <kappa>, äs: a];

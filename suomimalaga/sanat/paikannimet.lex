@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 # Vain ne paikannimet, jotka eivät ole myös tavallisia sanoja tai yhdyssanoja.
 
@@ -135,7 +138,7 @@
 [perusmuoto: "Bulgaria", alku: "Bulgari", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Burma", alku: "Burm", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Bysantti", alku: "Bysant", luokka: paikannimi, jatko: <salaatti>, äs: a];
-[perusmuoto: "California", alku: "California", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "California", alku: "Californi", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Calla", alku: "Call", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Cannes", alku: "Cannes", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Canterbury", alku: "Canterbury", luokka: paikannimi, jatko: <valo>, äs: aä];
@@ -263,7 +266,7 @@
 [perusmuoto: "Häyskynvaara", alku: "Häyskynvaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Hölmölä", alku: "Hölmöl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Höytiäinen", alku: "Höytiäi", luokka: paikannimi, jatko: <nainen>, äs: ä];
-[perusmuoto: "Ibiza", alku: "Ibiza", luokka: paikannimi, jatko: <karahka>, äs: a];
+[perusmuoto: "Ibiza", alku: "Ibiz", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Idaho", alku: "Idaho", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Iemimäki", alku: "Iemimä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Ihantala", alku: "Ihantal", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -335,7 +338,7 @@
 [perusmuoto: "Jämsä", alku: "Jäms", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Jänkiälä", alku: "Jänkiäl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Järventaus", alku: "Järventaus", luokka: paikannimi, jatko: <vastaus>, äs: a];
-[perusmuoto: "Jääski", alku: "Jääski", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Jääski", alku: "Jääsk", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Kaalamo", alku: "Kaalamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Kaanan", alku: "Kaanan", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Kaarosta", alku: "Kaarost", luokka: paikannimi, jatko: <matala>, äs: a];
@@ -348,7 +351,7 @@
 [perusmuoto: "Kalanti", alku: "Kalan", luokka: paikannimi, jatko: <hollanti>, äs: a];
 [perusmuoto: "Kalastajasaarento", alku: "Kalastajasaaren", luokka: paikannimi, jatko: <avanto>, äs: a];
 [perusmuoto: "Kalevainen", alku: "Kalevai", luokka: paikannimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Kalifornia", alku: "Kalifornia", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Kalifornia", alku: "Kaliforni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kalkkinen", alku: "Kalkki", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kallavesi", alku: "Kallave", luokka: paikannimi, jatko: <susi>, äs: a];
 [perusmuoto: "Kalliola", alku: "Kalliol", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -501,7 +504,7 @@
 [perusmuoto: "Laodikea", alku: "Laodike", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Laos", alku: "Laos", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Lappee", alku: "Lappe", luokka: paikannimi, jatko: <kamee>, äs: a];
-[perusmuoto: "Lappi", alku: "Lappi", luokka: paikannimi, jatko: <keppi>, äs: a];
+[perusmuoto: "Lappi", alku: "Lap", luokka: paikannimi, jatko: <keppi>, äs: a];
 [perusmuoto: "Lappträsk", alku: "Lappträsk", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Lapua", alku: "Lapu", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Latvia", alku: "Latvi", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -649,7 +652,7 @@
 [perusmuoto: "Nevada", alku: "Nevad", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Newark", alku: "Newark", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Nicaragua", alku: "Nicaragu", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "Niemi-Jormakka", alku: "Niemi-Jormakka", luokka: paikannimi, jatko: <solakka>, äs: a];
+[perusmuoto: "Niemi-Jormakka", alku: "Niemi-Jormak", luokka: paikannimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Nieminen", alku: "Niemi", luokka: paikannimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Nigeria", alku: "Nigeri", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Niili", alku: "Niil", luokka: paikannimi, jatko: <risti>, äs: ä];

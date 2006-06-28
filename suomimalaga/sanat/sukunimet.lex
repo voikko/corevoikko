@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 
 [perusmuoto: "Aapala", alku: "Aapal", luokka: sukunimi, jatko: <apila>, äs: a];
@@ -73,7 +76,7 @@
 [perusmuoto: "Akiander", alku: "Akiander", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aksentjeff", alku: "Aksentjeff", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Alanen", alku: "Ala", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Alanko", alku: "Alanko", luokka: sukunimi, jatko: <alanko>, äs: a];
+[perusmuoto: "Alanko", alku: "Alan", luokka: sukunimi, jatko: <alanko>, äs: a];
 [perusmuoto: "Alatriste", alku: "Alatriste", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Alkio", alku: "Alkio", luokka: sukunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Alonso", alku: "Alonso", luokka: sukunimi, jatko: <valo>, äs: a];
@@ -107,7 +110,7 @@
 [perusmuoto: "Asikainen", alku: "Asikai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Asimov", alku: "Asimov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Astikainen", alku: "Astikai", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Atnila", alku: "Antil", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Antila", alku: "Antil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Attila", alku: "Attil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Atwood", alku: "Atwood", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Aukeenpää", alku: "Aukeenpä", luokka: sukunimi, jatko: <maa>, äs: ä];
@@ -395,7 +398,7 @@
 [perusmuoto: "Heinonen", alku: "Heino", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Heisenberg", alku: "Heisenberg", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Heiskanen", alku: "Heiska", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Heitto", alku: "Heitto", luokka: sukunimi, jatko: <liitto>, äs: a];
+[perusmuoto: "Heitto", alku: "Heit", luokka: sukunimi, jatko: <liitto>, äs: a];
 [perusmuoto: "Helenius", alku: "Heleniu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Helismaa", alku: "Helisma", luokka: sukunimi, jatko: <maa>, äs: a];
 [perusmuoto: "Heliö", alku: "Heliö", luokka: sukunimi, jatko: <autio>, äs: ä];
@@ -538,7 +541,7 @@
 [perusmuoto: "Juuti", alku: "Juut", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Juutilainen", alku: "Juutilai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Juvonen", alku: "Juvo", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Jylhä", alku: "Jylhä", luokka: sukunimi, jatko: <koira>, äs: ä];
+[perusmuoto: "Jylhä", alku: "Jylh", luokka: sukunimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Jyrkilä", alku: "Jyrkil", luokka: sukunimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Jyrkinen", alku: "Jyrki", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Jyränki", alku: "Jyrän", luokka: sukunimi, jatko: <killinki>, äs: ä];
@@ -618,7 +621,7 @@
 [perusmuoto: "Kauppinen", alku: "Kauppi", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kauppunen", alku: "Kauppu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kautanen", alku: "Kauta", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Kautto", alku: "Kautto", luokka: sukunimi, jatko: <liitto>, äs: a];
+[perusmuoto: "Kautto", alku: "Kaut", luokka: sukunimi, jatko: <liitto>, äs: a];
 [perusmuoto: "Keckman", alku: "Keckman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Keihänen", alku: "Keihä", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Keinonen", alku: "Keino", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -728,7 +731,7 @@
 [perusmuoto: "Kulmala", alku: "Kulmal", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kulonen", alku: "Kulo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kumpulainen", alku: "Kumpulai", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Kunnasluoto", alku: "Kunnasluoto", luokka: sukunimi, jatko: <leuto>, äs: a];
+[perusmuoto: "Kunnasluoto", alku: "Kunnasluo", luokka: sukunimi, jatko: <leuto>, äs: a];
 [perusmuoto: "Kuokka", alku: "Kuok", luokka: sukunimi, jatko: <hoikka>, äs: a];
 [perusmuoto: "Kuokkanen", alku: "Kuokka", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kuortti", alku: "Kuort", luokka: sukunimi, jatko: <tatti>, äs: a];
@@ -747,7 +750,7 @@
 [perusmuoto: "Kuvaja", alku: "Kuvaj", luokka: sukunimi, jatko: <kantaja>, äs: a];
 [perusmuoto: "Kvick", alku: "Kvick", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Kyllälä", alku: "Kylläl", luokka: sukunimi, jatko: <apila>, äs: ä];
-[perusmuoto: "Kytö", alku: "Kytö", luokka: sukunimi, jatko: <leuto>, äs: ä];
+[perusmuoto: "Kytö", alku: "Ky", luokka: sukunimi, jatko: <leuto>, äs: ä];
 [perusmuoto: "Kytömaa", alku: "Kytöma", luokka: sukunimi, jatko: <maa>, äs: a];
 [perusmuoto: "Kyöttinen", alku: "Kyötti", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Kähkönen", alku: "Kähkö", luokka: sukunimi, jatko: <nainen>, äs: ä];
@@ -766,7 +769,7 @@
 [perusmuoto: "Köhler", alku: "Köhler", luokka: sukunimi, jatko: <edam>, äs: ä];
 [perusmuoto: "Köhlin", alku: "Köhlin", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Könönen", alku: "Könö", luokka: sukunimi, jatko: <nainen>, äs: ä];
-[perusmuoto: "Köttö", alku: "Köttö", luokka: sukunimi, jatko: <liitto>, äs: ä];
+[perusmuoto: "Köttö", alku: "Köt", luokka: sukunimi, jatko: <liitto>, äs: ä];
 [perusmuoto: "Laakkonen", alku: "Laakko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Laakso", alku: "Laakso", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Laaksonen", alku: "Laakso", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -994,7 +997,7 @@
 [perusmuoto: "Mulder", alku: "Mulder", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Multanen", alku: "Multa", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Murphy", alku: "Murphy", luokka: sukunimi, jatko: <valo>, äs: a];
-[perusmuoto: "Murto", alku: "Murto", luokka: sukunimi, jatko: <kaarto>, äs: a];
+[perusmuoto: "Murto", alku: "Mur", luokka: sukunimi, jatko: <kaarto>, äs: a];
 [perusmuoto: "Mussolini", alku: "Mussolin", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Mustonen", alku: "Musto", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Mutanen", alku: "Muta", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -1154,7 +1157,7 @@
 [perusmuoto: "Pessi", alku: "Pess", luokka: sukunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Peters", alku: "Peters", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Pettersson", alku: "Pettersson", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Petäikkö", alku: "Petäikkö", luokka: sukunimi, jatko: <verkko>, äs: ä];
+[perusmuoto: "Petäikkö", alku: "Petäik", luokka: sukunimi, jatko: <verkko>, äs: ä];
 [perusmuoto: "Pfaler", alku: "Pfaler", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Pfeifer", alku: "Pfeifer", luokka: sukunimi, jatko: <edam>, äs: ä];
 [perusmuoto: "Piehl", alku: "Piehl", luokka: sukunimi, jatko: <kalsium>, äs: ä];
@@ -1346,10 +1349,10 @@
 [perusmuoto: "Räihä", alku: "Räih", luokka: sukunimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Räikkönen", alku: "Räikkö", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Räisänen", alku: "Räisä", luokka: sukunimi, jatko: <nainen>, äs: ä];
-[perusmuoto: "Rämäkkö", alku: "Rämäkkö", luokka: sukunimi, jatko: <verkko>, äs: ä];
+[perusmuoto: "Rämäkkö", alku: "Rämäk", luokka: sukunimi, jatko: <verkko>, äs: ä];
 [perusmuoto: "Räsänen", alku: "Räsä", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Räty", alku: "Rä", luokka: sukunimi, jatko: <laatu>, äs: ä];
-[perusmuoto: "Rönkkö", alku: "Rönkkö", luokka: sukunimi, jatko: <verkko>, äs: ä];
+[perusmuoto: "Rönkkö", alku: "Rönk", luokka: sukunimi, jatko: <verkko>, äs: ä];
 [perusmuoto: "Rötkö", alku: "Rötkö", luokka: sukunimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Saarela", alku: "Saarel", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Saarelainen", alku: "Saarelai", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -1400,7 +1403,7 @@
 [perusmuoto: "Schönholtz", alku: "Schönholtz", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Scopes", alku: "Scopes", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Scott", alku: "Scott", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Sculler", alku: "Schuller", luokka: sukunimi, jatko: <edam>, äs: a];
+[perusmuoto: "Schuller", alku: "Schuller", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Scully", alku: "Scully", luokka: sukunimi, jatko: <valo>, äs: aä];
 [perusmuoto: "Seignalt", alku: "Seignalt", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Selenius", alku: "Seleniu", luokka: sukunimi, jatko: <vastaus>, äs: a];
