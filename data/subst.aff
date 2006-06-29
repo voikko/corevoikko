@@ -247,7 +247,7 @@ end: class
 
 # Kotus 6 paperi
 class: subst-paperi
-sm-class: paperi
+sm-class: paperi banaali
 match-word: Ci
 consonant-gradation: sw
 group: t
