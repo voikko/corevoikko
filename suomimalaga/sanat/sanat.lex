@@ -115,7 +115,7 @@
 [perusmuoto: "adagio", alku: "adagio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "adaptaatio", alku: "adaptaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "adekvaatti", alku: "adekvaat", luokka: laatusana, jatko: <tatti>, äs: a];
-[perusmuoto: "adekvaattinen", alku: "adekvaati", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "adekvaattinen", alku: "adekvaatti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adessiivi", alku: "adessiiv", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "adheesio", alku: "adheesio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "adjektiivi", alku: "adjektiiv", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
@@ -943,7 +943,7 @@
 [perusmuoto: "avio", alku: "avio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "avioitua", alku: "avioi", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "avittaa", alku: "avit", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "avo", alku: "avo", luokka: laatusana, jatko: <valo>, äs: aä];
+[perusmuoto: "avo", alku: "avo", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "avoin", alku: "avoi", luokka: laatusana, jatko: <uistin>, äs: a];
 [perusmuoto: "avoinna", alku: "avoinna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "avokado", alku: "avokado", luokka: nimisana, jatko: <valo>, äs: a];
@@ -1166,7 +1166,7 @@
 [perusmuoto: "cocktail", alku: "cocktail", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "codex", alku: "codex", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "college", alku: "college", luokka: nimisana, jatko: <nalle>, äs: a];
-[perusmuoto: "copyright", alku: "copyright", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "copyright", alku: "copyright", luokka: nimisana, jatko: <kalsium>, äs: aä];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <rosé>, äs: ä];
 [perusmuoto: "cumulus", alku: "cumulu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "cup", alku: "cup", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -1179,7 +1179,7 @@
 [perusmuoto: "dadaisti", alku: "dadaist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "damaski", alku: "damask", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "damaskolainen", alku: "damaskolai", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "dandy", alku: "dandy", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "dandy", alku: "dandy", luokka: nimisana, jatko: <valo>, äs: aä];
 [perusmuoto: "data", alku: "dat", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "datanomi", alku: "datanom", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "dateerata", alku: "dateer", luokka: teonsana, jatko: <saneerata>, äs: a];
@@ -4122,7 +4122,7 @@
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @sana2, äs: ä];
 [perusmuoto: "irti", alku: "irti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "irtonainen", alku: "irtonainen", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "irtonainen", alku: "irtonai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "irvata", alku: "irv", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "irve", alku: "irve", luokka: nimisana, jatko: <hame>, äs: ä];
 [perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @sana2, äs: aä];
@@ -6560,7 +6560,7 @@
 [perusmuoto: "konstanssi", alku: "konstanss", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "konstantti", alku: "konstant", luokka: nimi_laatusana, jatko: <salaatti>, äs: a];
 [perusmuoto: "konsti", alku: "konst", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "konstitutiiviinen", alku: "konstitutiivi", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "konstitutiivinen", alku: "konstitutiivi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "konstituutio", alku: "konstituutio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "konstruktiivinen", alku: "konstruktiivi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "konstruktio", alku: "konstruktio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -8088,7 +8088,7 @@
 [perusmuoto: "leksiko", alku: "leksiko", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "leksikografinen", alku: "leksikografi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "lelli", alku: "lell", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "lellikki", alku: "lellik", luokka: nimisana, jatko: <kajakki>, äs: a];
+[perusmuoto: "lellikki", alku: "lellik", luokka: nimisana, jatko: <kajakki>, äs: ä];
 [perusmuoto: "lellitellä", alku: "lellit", luokka: teonsana, jatko: <aatella>, äs: ä];
 [perusmuoto: "lelliä", alku: "lell", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "lelu", alku: "lelu", luokka: nimisana, jatko: <valo>, äs: a];
@@ -13524,7 +13524,7 @@
 [perusmuoto: "regatta", alku: "regat", luokka: nimisana, jatko: <savotta>, äs: a];
 [perusmuoto: "reggae", alku: "reggae", luokka: nimisana, jatko: <bébé>, äs: a];
 [perusmuoto: "registeri", alku: "register", luokka: nimisana, jatko: <paperi>, äs: ä];
-[perusmuoto: "reglementti", alku: "reglement", luokka: nimisana, jatko: <tatti>, äs: a];
+[perusmuoto: "reglementti", alku: "reglement", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "regressiivinen", alku: "regressiivi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "regressio", alku: "regressio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "rehabilitaatio", alku: "rehabilitaatio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -16534,8 +16534,8 @@
 [perusmuoto: "teini", alku: "tein", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "teipata", alku: "teip", luokka: teonsana, jatko: <pompata>, äs: a];
 [perusmuoto: "teippi", alku: "teip", luokka: nimisana, jatko: <keppi>, äs: ä];
-[perusmuoto: "teismi", alku: "teism", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "teisti", alku: "teist", luokka: nimisana, jatko: <risti>, äs: a]; #NS: 2 sanaa.
+[perusmuoto: "teismi", alku: "teism", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "teisti", alku: "teist", luokka: nimisana, jatko: <risti>, äs: ä]; #NS: 2 sanaa.
 [perusmuoto: "teititellä", alku: "teitit", luokka: teonsana, jatko: <aatella>, äs: ä];
 [perusmuoto: "tekaista", alku: "teka", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "tekeillä", alku: "teke", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: ä];
@@ -16650,7 +16650,7 @@
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "termos", alku: "termo", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "termostaatti", alku: "termostaat", luokka: nimisana, jatko: <tatti>, äs: a];
-[perusmuoto: "terni", alku: "tern", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "terni", alku: "tern", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "teroitin", alku: "teroit", luokka: nimisana, jatko: <suodatin>, äs: a];
 [perusmuoto: "teroittaa", alku: "tero", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "teroittua", alku: "teroit", luokka: teonsana, jatko: <asettua>, äs: a];
@@ -18004,7 +18004,7 @@
 [perusmuoto: "vaivuttaa", alku: "vaivut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "vajaa", alku: "vaja", luokka: laatusana, jatko: <vapaa>, äs: a];
 [perusmuoto: "vaja", alku: "vaj", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "vajaamielinen", alku: "vajaamielii", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "vajaamielinen", alku: "vajaamieli", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "vajaus", alku: "vajau", luokka: nimisana, jatko: <kalleus>, äs: a];
 [perusmuoto: "vajaus", alku: "vajau", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "vajava", alku: "vajav", luokka: laatusana, jatko: <asema>, äs: a];
@@ -18817,7 +18817,7 @@
 [perusmuoto: "vireä", alku: "vir", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "virginaali", alku: "virginaal", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "virhe", alku: "virhe", luokka: nimisana, jatko: <hame>, äs: ä];
-[perusmuoto: "virhi", alku: "virh", luokka: nimisana, jatko: <kiiski>, äs: a];
+[perusmuoto: "virhi", alku: "virh", luokka: nimisana, jatko: <kiiski>, äs: ä];
 [perusmuoto: "viri", alku: "vir", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "viriili", alku: "viriil", luokka: laatusana, jatko: <banaali>, äs: ä];
 [perusmuoto: "virike", alku: "virik", luokka: nimisana, jatko: <tarvike>, äs: ä, tiedot: <inen>];
@@ -18898,7 +18898,7 @@
 [perusmuoto: "vispilöidä", alku: "vispilö", luokka: teonsana, jatko: <haravoida>, äs: ä];
 [perusmuoto: "vissi", alku: "viss", luokka: nimi_laatusana, jatko: <risti>, äs: ä];
 [perusmuoto: "vissy", alku: "vissy", luokka: nimisana, jatko: <valo>, äs: ä];
-[perusmuoto: "visti", alku: "vist", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "visti", alku: "vist", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "visuaalinen", alku: "visuaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "visualisoida", alku: "visualiso", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "visu", alku: "visu", luokka: laatusana, jatko: <valo>, äs: a];
@@ -18910,7 +18910,7 @@
 [perusmuoto: "vitaliteetti", alku: "vitaliteet", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "vitamiini", alku: "vitamiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "vitaminoida", alku: "vitamino", luokka: teonsana, jatko: <kanavoida>, äs: a];
-[perusmuoto: "viti", alku: "vi", luokka: nimisana, jatko: <vati>, äs: a];
+[perusmuoto: "viti", alku: "vi", luokka: nimisana, jatko: <vati>, äs: ä];
 [perusmuoto: "vitja", alku: "vitj", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "vitkaan", alku: "vitkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vitkastella", alku: "vitkastel", luokka: teonsana, jatko: <katsella>, äs: a];

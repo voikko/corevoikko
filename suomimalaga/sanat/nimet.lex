@@ -77,7 +77,7 @@
 [perusmuoto: "Barabbas", alku: "Barabba", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Basic", alku: "Basic", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Benecol", alku: "Benecol", luokka: nimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Bernese", alku: "Bernese", luokka: nimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Bernese", alku: "Bernese", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Blarnia", alku: "Blarni", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä];  # Osama bin Laden.
 [perusmuoto: "Borealis", alku: "Boreali", luokka: nimi, jatko: <vastaus>, äs: a];

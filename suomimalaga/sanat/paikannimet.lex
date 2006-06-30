@@ -115,7 +115,7 @@
 [perusmuoto: "Belgia", alku: "Belgi", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Belgrad", alku: "Belgrad", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Bengtskär", alku: "Bengtskär", luokka: paikannimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "Berkeley", alku: "Berkeley", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Berkeley", alku: "Berkeley", luokka: paikannimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Berliini", alku: "Berliin", luokka: paikannimi, jatko: <banaali>, äs: ä];
 [perusmuoto: "Bermuda", alku: "Bermud", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Betlehem", alku: "Betlehem", luokka: paikannimi, jatko: <kalsium>, äs: ä];
@@ -131,7 +131,7 @@
 [perusmuoto: "Boston", alku: "Boston", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Brasilia", alku: "Brasili", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Breda", alku: "Bred", luokka: paikannimi, jatko: <kala>, äs: a];
-[perusmuoto: "Bremen", alku: "Bremen", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Bremen", alku: "Bremen", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Britannia", alku: "Britanni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Bryssel", alku: "Bryssel", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Budapest", alku: "Budapest", luokka: paikannimi, jatko: <kalsium>, äs: aä];
@@ -178,7 +178,7 @@
 [perusmuoto: "Fagervik", alku: "Fagervik", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Filippiinit", alku: "Filippiin", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Finnmark", alku: "Finnmark", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Firenze", alku: "Firenze", luokka: paikannimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Firenze", alku: "Firenze", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Foinikia", alku: "Foiniki", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Forssa", alku: "Forss", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Fransisco", alku: "Fransisco", luokka: paikannimi, jatko: <valo>, äs: a];
@@ -596,7 +596,7 @@
 [perusmuoto: "Milano", alku: "Milano", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Miletos", alku: "Mileto", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Minsk", alku: "Minsk", luokka: paikannimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "Mississippi", alku: "Mississip", luokka: paikannimi, jatko: <keppi>, äs: a];
+[perusmuoto: "Mississippi", alku: "Mississip", luokka: paikannimi, jatko: <keppi>, äs: ä];
 [perusmuoto: "Moinsalmi", alku: "Moinsalm", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Moissee", alku: "Moisse", luokka: paikannimi, jatko: <kamee>, äs: a];
 [perusmuoto: "Moldavia", alku: "Moldavi", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -958,7 +958,7 @@
 [perusmuoto: "Teyrivaara", alku: "Teyrivaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Tiernaissaari", alku: "Tiernaissaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
-[perusmuoto: "Tiibet", alku: "Tiibet", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Tiibet", alku: "Tiibet", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Tikkala", alku: "Tikkal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Tikkurila", alku: "Tikkuril", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Timola", alku: "Timol", luokka: paikannimi, jatko: <apila>, äs: a];

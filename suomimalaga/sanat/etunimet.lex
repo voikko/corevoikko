@@ -208,7 +208,7 @@
 [perusmuoto: "Benjamin", alku: "Benjamin", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Benni", alku: "Benn", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Bernhard", alku: "Bernhard", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Bertel", alku: "Bertel", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Bertil", alku: "Bertil", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Bertta", alku: "Bert", luokka: etunimi, jatko: <aitta>, äs: a];
@@ -811,7 +811,7 @@
 [perusmuoto: "Petter", alku: "Petter", luokka: etunimi, jatko: <edam>, äs: ä];
 [perusmuoto: "Petteri", alku: "Petter", luokka: etunimi, jatko: <paperi>, äs: ä];
 [perusmuoto: "Philip", alku: "Philip", luokka: etunimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "Philippe", alku: "Philippe", luokka: etunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Philippe", alku: "Philippe", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Pia", alku: "Pi", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Pierre", alku: "Pierre", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Pietari", alku: "Pietar", luokka: etunimi, jatko: <paperi>, äs: a];
@@ -950,7 +950,7 @@
 [perusmuoto: "Stanislaw", alku: "Stanislaw", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Stefanos", alku: "Stefano", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Stephen", alku: "Stephen", luokka: etunimi, jatko: <edam>, äs: ä];
-[perusmuoto: "Steve", alku: "Steve", luokka: etunimi, jatko: <nalle>, äs: aä];
+[perusmuoto: "Steve", alku: "Steve", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Stig", alku: "Stig", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Sue", alku: "Sue", luokka: etunimi, jatko: <bébé>, äs: a];
 [perusmuoto: "Sulevi", alku: "Sulev", luokka: etunimi, jatko: <banaali>, äs: a];
