@@ -20,6 +20,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+# orig.malaga should be created by running
+# cat nimet.lex sanat.lex sukunimet.lex atk.lex etunimet.lex paikannimet.lex > /tmp/orig.malaga
+
 import sys
 import locale
 import codecs
@@ -49,15 +52,15 @@ def find_hf_class(word, sm_class):
 						return infclass[0] + u'-' + grad[2]
 	return None
 
-def insert_flags(db, wid, tiedot_s):
+def insert_flags(db, wid, tiedot_s, eid):
 	if tiedot_s == None: return
 	tiedot = tiedot_s.split(u',')
 	for i in range(len(tiedot)): tiedot[i] = tiedot[i].strip()
 	for tieto in tiedot:
 		for flag in hfconv.flagmap:
 			if tieto == flag[0]:
-				db.query(u"INSERT INTO flag_attribute_value(wid, aid) VALUES(%i, %i)" \
-				         % (wid, flag[1]))
+				db.query((u"INSERT INTO flag_attribute_value(wid, aid, eevent) " +
+				          u"VALUES(%i, %i, %i)") % (wid, flag[1], eid))
 
 nsre = re.compile(u"\\[perusmuoto: \"(?P<perusmuoto>.(?:[^\"])*)\", alku: \"(?P<alku>.(?:[^\"])*)\", " +
                   u"luokka: (?P<luokka>.(?:[^,])*), jatko: <(?P<jatko>.(?:[^>])*)>, äs: (?P<as>a|ä|aä)" +
@@ -69,7 +72,9 @@ db.query('DELETE FROM related_word')
 db.query('DELETE FROM flag_attribute_value')
 db.query('DELETE FROM string_attribute_value')
 db.query('DELETE FROM word')
-
+db.query("INSERT INTO event(euser, message) VALUES(1, " +
+         "'Automatic conversion from Suomi-malaga by malaga2joukahainen')")
+eid = db.query("SELECT eid FROM event WHERE euser = 1 ORDER BY etime DESC").getresult()[0][0]
 
 while True:
 	rivi = inputfile.readline()
@@ -85,13 +90,13 @@ while True:
 		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
 		if hf_class == None: continue
 		outputfile.write(hfutils.remove_comments(rivi).strip() + u'\n')
-		db.query("INSERT INTO word(word, class) VALUES('%s', %i)" %
-		         ((gd['perusmuoto'].replace("'", "''")).encode('UTF-8'), joclass))
+		db.query("INSERT INTO word(word, class, cuser) VALUES('%s', %i, %i)" %
+		         ((gd['perusmuoto'].replace("'", "''")).encode('UTF-8'), joclass, 1))
 		res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
 		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
 		wid = int(res.getresult()[0][0])
-		db.query(("INSERT INTO string_attribute_value(wid, aid, value) " +
-		          "VALUES(%i, 1, '%s')") % (wid, hf_class.encode('UTF-8')))
+		db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
+		          "VALUES(%i, 1, '%s', %i)") % (wid, hf_class.encode('UTF-8'), eid))
 		if gd['luokka'] == u'nimi_laatusana': nflag = 10
 		elif gd['luokka'] == u'etunimi': nflag = 11
 		elif gd['luokka'] == u'sukunimi': nflag = 12
@@ -99,9 +104,9 @@ while True:
 		elif gd['luokka'] == u'nimi': nflag = 14
 		else: nflag = 0
 		if nflag != 0:
-			db.query(u"INSERT INTO flag_attribute_value(wid, aid) VALUES(%i, %i)" \
-			         % (wid, nflag))
-		insert_flags(db, wid, gd['tiedot'])
+			db.query(u"INSERT INTO flag_attribute_value(wid, aid, eevent) VALUES(%i, %i, %i)" \
+			         % (wid, nflag, eid))
+		insert_flags(db, wid, gd['tiedot'], eid)
 
 
 
