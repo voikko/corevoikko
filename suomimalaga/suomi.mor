@@ -385,6 +385,8 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana):
   if (($oikea.luokka = kestämän_tekijäpääte_y3)
       and ($vasen.$i.alku matches ".*" + @ääntiö)) then
     require (viimeinen_kirjain ($vasen.$i.alku) = $sana);
+    # Väliaikainen bugikorjaus: "salaa|a" ei ole sallittu
+    require (not $vasen.$i.alku matches ".*[aä][aä]");
   end;
 
 
