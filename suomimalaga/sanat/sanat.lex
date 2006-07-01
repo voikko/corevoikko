@@ -1654,6 +1654,7 @@
 [perusmuoto: "energia", alku: "energi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "energinen", alku: "energi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "enetä", alku: "ene", luokka: teonsana, jatko: <aleta>, äs: ä];
+[perusmuoto: "englanti", alku: "englan", luokka: nimisana, jatko: <tunti>, äs: a];
 [perusmuoto: "enimmistö", alku: "enimmistö", luokka: nimisana, jatko: <valo>, äs: ä];
 [perusmuoto: "enimmäinen", alku: "enimmäi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "enimmäkseen", alku: "enimmäkseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -1828,6 +1829,7 @@
 [perusmuoto: "eskapisti", alku: "eskapist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "eskimo", alku: "eskimo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "esoteerinen", alku: "esoteeri", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "espanja", alku: "espanj", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "esperantisti", alku: "esperantist", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "esperanto", alku: "esperanto", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "esplanadi", alku: "esplanad", luokka: nimisana, jatko: <risti>, äs: a];
@@ -4175,6 +4177,7 @@
 [perusmuoto: "isännyys", alku: "isännyy", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "isännöidä", alku: "isännö", luokka: teonsana, jatko: <haravoida>, äs: ä];
 [perusmuoto: "isäntä", alku: "isän", luokka: nimisana, jatko: <suunta>, äs: ä];
+[perusmuoto: "italia", alku: "itali", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "italiatar", alku: "italiat", luokka: nimisana, jatko: <tytär>, äs: a];
 [perusmuoto: "itara", alku: "itar", luokka: laatusana, jatko: <matala>, äs: a];
 [perusmuoto: "iteraatio", alku: "iteraatio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -6842,6 +6845,7 @@
 [perusmuoto: "kreationistinen", alku: "kreationisti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "krediitti", alku: "krediit", luokka: nimisana, jatko: <salaatti>, äs: ä];
 [perusmuoto: "kredit", alku: "kredit", luokka: nimisana, jatko: <kalsium>, äs: ä];
+[perusmuoto: "kreikka", alku: "kreik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "kreivi", alku: "kreiv", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "kreivitär", alku: "kreivit", luokka: nimisana, jatko: <tytär>, äs: ä];
 [perusmuoto: "krematorio", alku: "krematorio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -14085,6 +14089,7 @@
 [perusmuoto: "ruoto", alku: "ruo", luokka: nimisana, jatko: <leuto>, äs: a, tiedot: <inen>];
 [perusmuoto: "ruotsalainen", alku: "ruotsalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ruotsalaistaa", alku: "ruotsalaist", luokka: teonsana, jatko: <hidastaa>, äs: a];
+[perusmuoto: "ruotsi", alku: "ruots", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ruotsinnos", alku: "ruotsinno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "ruotsintaa", alku: "ruotsin", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "ruotu", alku: "ruo", luokka: nimisana, jatko: <laatu>, äs: a];
@@ -15706,6 +15711,7 @@
 [perusmuoto: "suometar", alku: "suomet", luokka: nimisana, jatko: <tytär>, äs: a];
 [perusmuoto: "suomettarelainen", alku: "suomettarelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "suomettua", alku: "suomet", luokka: teonsana, jatko: <asettua>, äs: a];
+[perusmuoto: "suomi", alku: "suom", luokka: nimisana, jatko: <lovi>, äs: a];
 [perusmuoto: "suomia", alku: "suom", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "suomu", alku: "suomu", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
 [perusmuoto: "suomus", alku: "suomu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -16375,6 +16381,7 @@
 [perusmuoto: "tankki", alku: "tank", luokka: nimisana, jatko: <takki>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "tanko", alku: "tan", luokka: nimisana, jatko: <hanko>, äs: a];
 [perusmuoto: "tanner", alku: "tan", luokka: nimisana, jatko: <kinner>, äs: a];
+[perusmuoto: "tanska", alku: "tansk", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "tanssata", alku: "tanss", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "tanssia", alku: "tanss", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "tanssiainen", alku: "tanssiai", luokka: nimisana, jatko: <nainen>, äs: a];
@@ -18446,6 +18453,7 @@
 [perusmuoto: "venyä", alku: "veny", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "venähdyttää", alku: "venähdyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "venähtää", alku: "venä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
+[perusmuoto: "venäjä", alku: "venäj", luokka: nimisana, jatko: <asema>, äs: ä];
 [perusmuoto: "venäläinen", alku: "venäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "venäläistää", alku: "venäläist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
 [perusmuoto: "venäyttää", alku: "venäyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
