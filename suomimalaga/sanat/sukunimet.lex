@@ -815,6 +815,7 @@
 [perusmuoto: "Lampinen", alku: "Lampi", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lander", alku: "Lander", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Landgren", alku: "Landgren", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Lankia", alku: "Lanki", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Lankinen", alku: "Lanki", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lantiainen", alku: "Lantiai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Laplace", alku: "Laplace", luokka: sukunimi, jatko: <nalle>, äs: a];

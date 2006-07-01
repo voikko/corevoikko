@@ -920,6 +920,7 @@
 [perusmuoto: "automaatti", alku: "automaat", luokka: nimisana, jatko: <tatti>, äs: a, tiedot: <inen>];
 [perusmuoto: "automatiikka", alku: "automatiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "automatisoida", alku: "automatiso", luokka: teonsana, jatko: <kanavoida>, äs: a];
+[perusmuoto: "autonominen", alku: "autonomi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "autoritaarinen", alku: "autoritaari", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "autoritäärinen", alku: "autoritääri", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "auttaa", alku: "aut", luokka: teonsana, jatko: <laittaa>, äs: a];
@@ -8961,7 +8962,7 @@
 [perusmuoto: "lööperi", alku: "lööper", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "lööppi", alku: "lööp", luokka: nimisana, jatko: <keppi>, äs: ä];
 [perusmuoto: "maa", alku: "maitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "maa", alku: "ma", luokka: nimisana, jatko: <maa>, äs: a, tiedot: <ei_inen>]; # Mainen on sanastossa.
+[perusmuoto: "maa", alku: "ma", luokka: nimisana, jatko: <maa>, äs: a, tiedot: <inen>];
 [perusmuoto: "maadoittaa", alku: "maado", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "maadoitus", alku: "maadoitu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "maagi", alku: "maag", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
@@ -8969,6 +8970,7 @@
 [perusmuoto: "maahinen", alku: "maahi", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "maajussi", alku: "maajuss", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "maalainen", alku: "maalai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "maalais", alku: "maalais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "maalari", alku: "maalar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "maalata", alku: "maal", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "maalauttaa", alku: "maalaut", luokka: teonsana, jatko: <alittaa>, äs: a];
@@ -9038,7 +9040,6 @@
 [perusmuoto: "maili", alku: "mail", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "maine", alku: "maine", luokka: nimisana, jatko: <hame>, äs: a, tiedot: <inen>];
 [perusmuoto: "maineikas", alku: "maineik", luokka: laatusana, jatko: <iäkäs>, äs: a];
-[perusmuoto: "mainen", alku: "mai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_ysa>];
 [perusmuoto: "maininki", alku: "mainin", luokka: nimisana, jatko: <killinki>, äs: a];
 [perusmuoto: "mainio", alku: "mainio", luokka: nimi_laatusana, jatko: <autio>, äs: a];
 [perusmuoto: "mainita", alku: "maini", luokka: teonsana, jatko: <valita>, äs: a];
@@ -9592,7 +9593,7 @@
 [perusmuoto: "mitätön", alku: "mitä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "mitätöntää", alku: "mitätön", luokka: teonsana, jatko: <pahentaa>, äs: ä];
 [perusmuoto: "moa", alku: "mo", luokka: nimisana, jatko: <koira>, äs: a];
-[perusmuoto: "mobiili", alku: "mobiil", luokka: laatusana, jatko: <banaali>, äs: a];
+[perusmuoto: "mobiili", alku: "mobiil", luokka: nimi_laatusana, jatko: <banaali>, äs: a];
 [perusmuoto: "mobile", alku: "mobile", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "mobilisaatio", alku: "mobilisaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "mobilisatio", alku: "mobilisatio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -9760,6 +9761,7 @@
 [perusmuoto: "muiluttaa", alku: "muilut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "muilutus", alku: "muilutu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "muinainen", alku: "muinai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "muinais", alku: "muinais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "muinoin", alku: "muinoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "muinoinen", alku: "muinoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "muiskauttaa", alku: "muiskaut", luokka: teonsana, jatko: <alittaa>, äs: a];
@@ -10973,6 +10975,7 @@
 [perusmuoto: "ometta", alku: "omet", luokka: nimisana, jatko: <savotta>, äs: a];
 [perusmuoto: "omia", alku: "om", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "ominainen", alku: "ominai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "ominais", alku: "ominais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ominvalloin", alku: "ominvalloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "omistaa", alku: "omist", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "omistautua", alku: "omistau", luokka: teonsana, jatko: <antautua>, äs: a];
@@ -11111,6 +11114,7 @@
 [perusmuoto: "osio", alku: "osio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "osittaa", alku: "osit", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "osittainen", alku: "osittai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "osittais", alku: "osittais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "osittua", alku: "osit", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "oskillaatio", alku: "oskillaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "osmani", alku: "osman", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -15138,6 +15142,7 @@
 [perusmuoto: "sisäkkäinen", alku: "sisäkkäi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "sisäkkö", alku: "sisäk", luokka: nimisana, jatko: <laatikko>, äs: ä];
 [perusmuoto: "sisällinen", alku: "sisälli", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "sisällyttää", alku: "sisällyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "sisällökäs", alku: "sisällök", luokka: laatusana, jatko: <iäkäs>, äs: ä];
 [perusmuoto: "sisälmys", alku: "sisälmy", luokka: nimisana, jatko: <vastaus>, äs: ä];
@@ -18951,7 +18956,7 @@
 [perusmuoto: "voikko", alku: "voik", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "voimailla", alku: "voimail", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "voimakas", alku: "voimak", luokka: laatusana, jatko: <iäkäs>, äs: a];
-[perusmuoto: "voimala", alku: "voimal", luokka: laatusana, jatko: <apila>, äs: a];
+[perusmuoto: "voimala", alku: "voimal", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "voimassaoleva", alku: "voimassaolev", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "voimistaa", alku: "voimist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "voimistuttaa", alku: "voimistut", luokka: teonsana, jatko: <autioittaa>, äs: a];
@@ -19267,6 +19272,7 @@
 [perusmuoto: "ylitse", alku: "ylitse", luokka: seikkasana, jatko: @sana2 + <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "ylittyä", alku: "ylit", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "ylittää", alku: "ylit", luokka: teonsana, jatko: <alittaa>, äs: ä];
+[perusmuoto: "ylivoimainen", alku: "ylivoimai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "yliö", alku: "yliö", luokka: nimisana, jatko: <autio>, äs: ä];
 [perusmuoto: "ylkä", alku: "yl", luokka: nimisana, jatko: <ylkä>, äs: ä];
 [perusmuoto: "ylle", alku: "ylle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
