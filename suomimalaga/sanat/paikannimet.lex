@@ -1045,6 +1045,7 @@
 [perusmuoto: "Varpanen", alku: "Varpa", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Vasojärvi", alku: "Vasojärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Vatala", alku: "Vatal", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Vehmalainen", alku: "Vehmalai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Veihtviilo", alku: "Veihtviilo", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Velkua", alku: "Velku", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Venetsia", alku: "Venetsi", luokka: paikannimi, jatko: <apila>, äs: a];

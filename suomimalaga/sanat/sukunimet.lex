@@ -575,6 +575,7 @@
 [perusmuoto: "Kaasinen", alku: "Kaasi", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kadar", alku: "Kadar", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Kafka", alku: "Kafk", luokka: sukunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Kahilainen", alku: "Kahilai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kahola", alku: "Kahol", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kaijalainen", alku: "Kaijalai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kaikko", alku: "Kaik", luokka: sukunimi, jatko: <verkko>, äs: a];
@@ -1484,6 +1485,7 @@
 [perusmuoto: "Sinkkonen", alku: "Sinkko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Sinojev", alku: "Sinojev", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Sipilä", alku: "Sipil", luokka: sukunimi, jatko: <apila>, äs: ä];
+[perusmuoto: "Sipiläinen", alku: "Sipiläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Sipinen", alku: "Sipi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Siponen", alku: "Sipo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Sippu", alku: "Sip", luokka: sukunimi, jatko: <hoppu>, äs: a];
@@ -1689,6 +1691,7 @@
 [perusmuoto: "Uoti", alku: "Uot", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Uotila", alku: "Uotil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Uotinen", alku: "Uoti", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Urpilainen", alku: "Urpilai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Ursin", alku: "Ursin", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Utriainen", alku: "Utriai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Utrio", alku: "Utrio", luokka: sukunimi, jatko: <autio>, äs: a];
@@ -1739,10 +1742,12 @@
 [perusmuoto: "Vermeer", alku: "Vermeer", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Vessonen", alku: "Vesso", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Vesterinen", alku: "Vesteri", luokka: sukunimi, jatko: <nainen>, äs: ä];
+[perusmuoto: "Veteläinen", alku: "Veteläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Vienola", alku: "Vienol", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Vierimaa", alku: "Vierima", luokka: sukunimi, jatko: <maa>, äs: a];
 [perusmuoto: "Viertiö", alku: "Viertiö", luokka: sukunimi, jatko: <autio>, äs: ä];
 [perusmuoto: "Vihavainen", alku: "Vihavai", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Viialainen", alku: "Viialai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Viinikka", alku: "Viinik", luokka: sukunimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Viita", alku: "Vii", luokka: sukunimi, jatko: <pata>, äs: a];
 [perusmuoto: "Viitala", alku: "Viital", luokka: sukunimi, jatko: <apila>, äs: a];

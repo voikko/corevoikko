@@ -226,6 +226,7 @@
 [perusmuoto: "aikaisemmin", alku: "aikaisemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aikaisin", alku: "aikaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "aikalainen", alku: "aikalai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "aikamoinen", alku: "aikamoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "aikoa", alku: "ai", luokka: teonsana, jatko: <aikoa>, äs: a];
 [perusmuoto: "aikomus", alku: "aikomu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -480,6 +481,7 @@
 [perusmuoto: "aminohappo", alku: "aminohap", luokka: nimisana, jatko: <kippo>, äs: a];
 [perusmuoto: "amiraali", alku: "amiraal", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ammatti", alku: "ammat", luokka: nimisana, jatko: <salaatti>, äs: a];
+[perusmuoto: "ammattilainen", alku: "ammattilai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "amme", alku: "amme", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "ammentaa", alku: "ammen", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "ammoin", alku: "ammoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -1686,6 +1688,7 @@
 [perusmuoto: "eno", alku: "eno", luokka: nimisana, jatko: <valo>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "ensi", alku: "ensi", luokka: laatusana, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "ensikertalainen", alku: "ensikertalai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ensiksi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensiksimainittu", alku: "ensiksimainit", luokka: nimisana, jatko: <raamattu>, äs: a];
 [perusmuoto: "ensiksituleva", alku: "ensiksitulev", luokka: laatusana, jatko: <asema>, äs: a];
@@ -5860,6 +5863,7 @@
 [perusmuoto: "kierros", alku: "kierro", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kierrättää", alku: "kierrät", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "kierrätys", alku: "kierräty", luokka: nimisana, jatko: <vastaus>, äs: ä];
+[perusmuoto: "kiertolainen", alku: "kiertolai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kiertue", alku: "kiertue", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "kiertyä", alku: "kier", luokka: teonsana, jatko: <kumartua>, äs: ä];
 [perusmuoto: "kiertää", alku: "kier", luokka: teonsana, jatko: <murtaa>, äs: ä];
@@ -6797,6 +6801,7 @@
 [perusmuoto: "kouliutua", alku: "kouliu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "koulu", alku: "koulu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "koulukas", alku: "kouluk", luokka: nimisana, jatko: <iäkäs>, äs: a];
+[perusmuoto: "koululainen", alku: "koululai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kouluttaa", alku: "koulut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "kouluttautua", alku: "kouluttau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "koulutus", alku: "koulutu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -8303,6 +8308,7 @@
 [perusmuoto: "liitin", alku: "liit", luokka: nimisana, jatko: <suodatin>, äs: ä];
 [perusmuoto: "liito", alku: "lii", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "liitos", alku: "liito", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "liittolainen", alku: "liittolai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "liittouma", alku: "liittoum", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "liittoutua", alku: "liittou", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "liittyä", alku: "liit", luokka: teonsana, jatko: <asettua>, äs: ä];
@@ -8639,6 +8645,7 @@
 [perusmuoto: "lukeutua", alku: "lukeu", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "lukihäiriö", alku: "lukihäiriö", luokka: nimisana, jatko: <autio>, äs: ä, tiedot: <inen>];
 [perusmuoto: "lukio", alku: "lukio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "lukiolainen", alku: "lukiolai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "lukita", alku: "luki", luokka: teonsana, jatko: <valita>, äs: a];
 [perusmuoto: "lukitus", alku: "lukitu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "lukkari", alku: "lukkar", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -8693,6 +8700,7 @@
 [perusmuoto: "luonne", alku: "luon", luokka: nimisana, jatko: <enne>, äs: a, tiedot: <inen>];
 [perusmuoto: "luonnehtia", alku: "luonneh", luokka: teonsana, jatko: <laatia>, äs: a];
 [perusmuoto: "luonnistaa", alku: "luonnist", luokka: teonsana, jatko: <hidastaa>, äs: a, yt: yt];
+[perusmuoto: "luonnontilainen", alku: "luonnontilai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "luonnos", alku: "luonno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "luonnostaa", alku: "luonnost", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "luonnotar", alku: "luonnot", luokka: nimisana, jatko: <tytär>, äs: a];
@@ -10104,6 +10112,7 @@
 [perusmuoto: "möhlätä", alku: "möhl", luokka: teonsana, jatko: <salata>, äs: ä];
 [perusmuoto: "möhömaha", alku: "möhömah", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "mökki", alku: "mök", luokka: nimisana, jatko: <takki>, äs: ä];
+[perusmuoto: "mökkiläinen", alku: "mökkiläi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "mökä", alku: "mök", luokka: nimisana, jatko: <koira>, äs: ä];
 [perusmuoto: "mökä", alku: "mö", luokka: nimisana, jatko: <hoikka>, äs: ä];
 [perusmuoto: "mököttää", alku: "mökö", luokka: teonsana, jatko: <kirjoittaa>, äs: ä];
@@ -10895,6 +10904,7 @@
 [perusmuoto: "oikein", alku: "oikein", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 #[perusmuoto: "oikeinkirjoitus", alku: "oikeinkirjoitu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "oikeisto", alku: "oikeisto", luokka: nimisana, jatko: <arvelu>, äs: a];
+[perusmuoto: "oikeistolainen", alku: "oikeistolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oikeuttaa", alku: "oikeut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "oikeutus", alku: "oikeutu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "oikku", alku: "oik", luokka: nimisana, jatko: <alku>, äs: a];
@@ -10967,7 +10977,8 @@
 [perusmuoto: "olvi", alku: "olv", luokka: nimisana, jatko: <kiiski>, äs: a];
 [perusmuoto: "olympia", alku: "olympi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "olympiadi", alku: "olympiad", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "olympolainen", alku: "olympolai", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "olympialainen", alku: "olympialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "olympolainen", alku: "olympolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oma", alku: "om", luokka: nimi_laatusana, jatko: <koira>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "omainen", alku: "omai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "omaisuus", alku: "omaisuu", luokka: nimisana, jatko: <kalleus>, äs: a];
@@ -11544,6 +11555,7 @@
 [perusmuoto: "partikkeli", alku: "partikkel", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "partio", alku: "partio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "partioida", alku: "partio", luokka: teonsana, jatko: <haravoida>, äs: a];
+[perusmuoto: "partiolainen", alku: "partiolai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "partisaani", alku: "partisaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "partisiippi", alku: "partisiip", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "partita", alku: "partit", luokka: laatusana, jatko: <kala>, äs: a];
@@ -13480,6 +13492,7 @@
 [perusmuoto: "raunioitua", alku: "raunioi", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "rausku", alku: "rausku", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "rauta", alku: "rau", luokka: nimisana, jatko: <pata>, äs: a, tiedot: <inen>];
+[perusmuoto: "rautatieläinen", alku: "rautatieläi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "rautiainen", alku: "rautiai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "rautio", alku: "rautio", luokka: nimi_laatusana, jatko: <autio>, äs: a];
 [perusmuoto: "rautu", alku: "rau", luokka: nimisana, jatko: <laatu>, äs: a];
@@ -13642,6 +13655,7 @@
 [perusmuoto: "reseptori", alku: "reseptor", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "reservaatti", alku: "reservaat", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "reservi", alku: "reserv", luokka: nimisana, jatko: <banaali>, äs: ä];
+[perusmuoto: "reserviläinen", alku: "reserviläi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "reservoida", alku: "reservo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "residenssi", alku: "residenss", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "residentti", alku: "resident", luokka: nimisana, jatko: <tatti>, äs: ä];
@@ -14942,6 +14956,7 @@
 [perusmuoto: "siirros", alku: "siirro", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "siirrättää", alku: "siirrät", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "siirtola", alku: "siirtol", luokka: nimisana, jatko: <apila>, äs: a, tiedot: <ei_inen>];
+[perusmuoto: "siirtolainen", alku: "siirtolai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "siirtyillä", alku: "siirtyil", luokka: teonsana, jatko: <arvailla>, äs: ä];
 [perusmuoto: "siirtyä", alku: "siir", luokka: teonsana, jatko: <kumartua>, äs: ä];
 [perusmuoto: "siirtää", alku: "siir", luokka: teonsana, jatko: <murtaa>, äs: ä];
@@ -15626,6 +15641,7 @@
 [perusmuoto: "suksia", alku: "suks", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
 [perusmuoto: "suku", alku: "su", luokka: nimisana, jatko: <luku>, äs: a, tiedot: <inen>];
+[perusmuoto: "sukulainen", alku: "sukulai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "sukuloida", alku: "sukulo", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "sulaa", alku: "sul", luokka: teonsana, jatko: <sulaa>, äs: a];
 [perusmuoto: "sula", alku: "sul", luokka: nimi_laatusana, jatko: <koira>, äs: a];
@@ -15699,7 +15715,7 @@
 [perusmuoto: "suojella", alku: "suojel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "suojelus", alku: "suojelu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "suojus", alku: "suoju", luokka: nimisana, jatko: <vastaus>, äs: a];
-[perusmuoto: "suola", alku: "suol", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "suola", alku: "suol", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "suolata", alku: "suol", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "suoli", alku: "suol", luokka: nimisana, jatko: <tuohi>, äs: a];
 [perusmuoto: "suolisto", alku: "suolisto", luokka: nimisana, jatko: <arvelu>, äs: a];
@@ -16238,6 +16254,7 @@
 [perusmuoto: "taipumus", alku: "taipumu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "taistella", alku: "taistel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "taisto", alku: "taisto", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "taistolainen", alku: "taistolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];
 [perusmuoto: "taite", alku: "tait", luokka: nimisana, jatko: <vaate>, äs: a, tiedot: <inen>];
 [perusmuoto: "taiteilla", alku: "taiteil", luokka: teonsana, jatko: <katsella>, äs: a];
@@ -16475,6 +16492,7 @@
 [perusmuoto: "tasapainoilla", alku: "tasapainoil", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "tasapainottaa", alku: "tasapaino", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "tasata", alku: "tas", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "tasavaltalainen", alku: "tasavaltalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tase", alku: "tase", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "taser", alku: "taser", luokka: nimisana, jatko: <edam>, äs: a];
 [perusmuoto: "tasinko", alku: "tasin", luokka: nimisana, jatko: <alanko>, äs: a];
@@ -17111,6 +17129,7 @@
 [perusmuoto: "tuhmeta", alku: "tuhme", luokka: teonsana, jatko: <aleta>, äs: a];
 [perusmuoto: "tuho", alku: "tuho", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
 [perusmuoto: "tuhoisa", alku: "tuhois", luokka: laatusana, jatko: <asema>, äs: a];
+[perusmuoto: "tuholainen", alku: "tuholai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "tuhooja", alku: "tuhooj", luokka: nimisana, jatko: <kantaja>, äs: a];
 [perusmuoto: "tuhota", alku: "tuho", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "tuhoutua", alku: "tuhou", luokka: teonsana, jatko: <antautua>, äs: a];
@@ -17515,6 +17534,7 @@
 [perusmuoto: "tyytätä", alku: "tyyt", luokka: teonsana, jatko: <kuitata>, äs: ä];
 [perusmuoto: "työ", alku: "t", luokka: nimisana, jatko: <suo>, äs: ä, tiedot: <inen>];
 [perusmuoto: "työllistää", alku: "työllist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
+[perusmuoto: "työläinen", alku: "työläi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "työläs", alku: "työlä", luokka: laatusana, jatko: <vieras>, äs: ä];
 [perusmuoto: "työlästyä", alku: "työlästy", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "työläys", alku: "työläy", luokka: nimisana, jatko: <vastaus>, äs: ä];
@@ -18298,6 +18318,7 @@
 [perusmuoto: "vasaroida", alku: "vasaro", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "vaseliini", alku: "vaseliin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "vasemmisto", alku: "vasemmisto", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "vasemmistolainen", alku: "vasemmistolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vasen", alku: "vase", luokka: nimi_laatusana, jatko: <vasen>, äs: a];
 [perusmuoto: "vasikka", alku: "vasik", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "vasikoida", alku: "vasiko", luokka: teonsana, jatko: <haravoida>, äs: a];
@@ -19014,6 +19035,7 @@
 [perusmuoto: "vuokko", alku: "vuok", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "vuokra", alku: "vuokr", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "vuokraamo", alku: "vuokraamo", luokka: nimisana, jatko: <arvelu>, äs: a];
+[perusmuoto: "vuokralainen", alku: "vuokralai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "vuokrata", alku: "vuokr", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "vuoksi", alku: "vuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vuoksi", alku: "vuoks", luokka: nimisana, jatko: <lovi>, äs: a];
@@ -19309,6 +19331,7 @@
 [perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "ylänkö", alku: "ylän", luokka: nimisana, jatko: <alanko>, äs: ä];
 [perusmuoto: "ylänne", alku: "ylän", luokka: nimisana, jatko: <enne>, äs: ä];
+[perusmuoto: "ylösalainen", alku: "ylösalai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ylösalaisin", alku: "ylösalaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ylös", alku: "ylös", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ylösnouseminen", alku: "ylösnousemi", luokka: nimisana, jatko: <nainen>, äs: a];
