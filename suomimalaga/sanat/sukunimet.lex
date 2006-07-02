@@ -895,6 +895,7 @@
 [perusmuoto: "Lipponen", alku: "Lippo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Litmanen", alku: "Litma", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Litvinov", alku: "Litvinov", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Likonen", alku: "Liko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liukkonen", alku: "Liukko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liuksiala", alku: "Liuksial", luokka: sukunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Liuttula", alku: "Liuttul", luokka: sukunimi, jatko: <apila>, äs: a];
