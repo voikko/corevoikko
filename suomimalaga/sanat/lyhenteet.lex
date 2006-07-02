@@ -43,7 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
-
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 # Lyhenteitä.
 
