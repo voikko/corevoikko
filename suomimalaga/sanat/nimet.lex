@@ -51,7 +51,7 @@
 # Erisnimet, jotka eivät ole etu-, suku, eikä paikannimiä.
 
 [perusmuoto: "Aaretti", alku: "Aaret", luokka: nimi, jatko: <tatti>, äs: a];
-[perusmuoto: "af", alku: "af", luokka: nimi, jatko: <loppu>, äs: a];
+[perusmuoto: "af", alku: "af", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=pp"];
 [perusmuoto: "Agonist", alku: "Agonist", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Airam", alku: "Airam", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Akademi", alku: "Akadem", luokka: nimi, jatko: <risti>, äs: a];
@@ -79,7 +79,7 @@
 [perusmuoto: "Benecol", alku: "Benecol", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Bernese", alku: "Bernese", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Blarnia", alku: "Blarni", luokka: nimi, jatko: <apila>, äs: a];
-[perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä];  # Osama bin Laden.
+[perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä, rakenne: "=ppp"];  # Osama bin Laden.
 [perusmuoto: "Borealis", alku: "Boreali", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Botnia", alku: "Botni", luokka: nimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Burana", alku: "Buran", luokka: nimi, jatko: <pasuuna>, äs: a];
@@ -181,6 +181,7 @@
 [perusmuoto: "Nato", alku: "Nato", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nebula", alku: "Nebul", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Nessu", alku: "Nessu", luokka: nimi, jatko: <valo>, äs: a];
+[perusmuoto: "Nintendo", alku: "Nintendo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nordea", alku: "Norde", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Ossian", alku: "Ossian", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Panadol", alku: "Panadol", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -204,6 +205,7 @@
 [perusmuoto: "Reuters", alku: "Reuters", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Roche", alku: "Roche", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Saab", alku: "Saab", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Saint", alku: "Saint", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "Saturnus", alku: "Saturnu", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Sauber", alku: "Sauber", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Schumi", alku: "Schum", luokka: nimi, jatko: <risti>, äs: a];
@@ -242,7 +244,7 @@
 [perusmuoto: "Valmet", alku: "Valmet", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Valpo", alku: "Valpo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Vampire", alku: "Vampire", luokka: nimi, jatko: <nalle>, äs: a];
-[perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a];
+[perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
 [perusmuoto: "Veda", alku: "Ved", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Vellamo", alku: "Vellamo", luokka: nimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Venus", alku: "Venu", luokka: nimi, jatko: <vastaus>, äs: a];
@@ -250,8 +252,9 @@
 [perusmuoto: "Visual", alku: "Visual", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Volkswagen", alku: "Volkswagen", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Volvo", alku: "Volvo", luokka: nimi, jatko: <valo>, äs: a];
+[perusmuoto: "Wikipedia", alku: "Wikipedi", luokka: nimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Worldcon", alku: "Worldcon", luokka: nimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a];
+[perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
 [perusmuoto: "Väinämö", alku: "Väinämö", luokka: nimi, jatko: <arvelu>, äs: ä];
 [perusmuoto: "Väinämöinen", alku: "Väinämöi", luokka: nimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Xena", alku: "Xen", luokka: etunimi, jatko: <kala>, äs: a];

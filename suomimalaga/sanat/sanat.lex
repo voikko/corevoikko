@@ -1687,7 +1687,8 @@
 [perusmuoto: "ennätys", alku: "ennäty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "eno", alku: "eno", luokka: nimisana, jatko: <valo>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "ensi", alku: "ensi", luokka: laatusana, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @sana2, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "ensikertalainen", alku: "ensikertalai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ensiksi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensiksimainittu", alku: "ensiksimainit", luokka: nimisana, jatko: <raamattu>, äs: a];
@@ -5721,6 +5722,7 @@
 [perusmuoto: "kernas", alku: "kerna", luokka: laatusana, jatko: <vieras>, äs: a];
 [perusmuoto: "kerni", alku: "kern", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "kero", alku: "kero", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "kerosiini", alku: "kerosiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "kerppu", alku: "kerp", luokka: nimisana, jatko: <hoppu>, äs: a];
 [perusmuoto: "kerrasto", alku: "kerrasto", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "kerrata", alku: "ker", luokka: teonsana, jatko: <kerrata>, äs: a];
@@ -5827,6 +5829,7 @@
 [perusmuoto: "kiehuttaa", alku: "kiehut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "kiekaista", alku: "kieka", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "kiekko", alku: "kiek", luokka: nimisana, jatko: <verkko>, äs: a];
+[perusmuoto: "kiekkoilla", alku: "kiekkoil", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "kiekua", alku: "kie", luokka: teonsana, jatko: <kiekua>, äs: a];
 [perusmuoto: "kiekura", alku: "kiekur", luokka: nimisana, jatko: <apila>, äs: a, tiedot: <inen>];
 [perusmuoto: "kieleke", alku: "kielek", luokka: nimisana, jatko: <tarvike>, äs: ä, tiedot: <inen>];
@@ -11676,7 +11679,7 @@
 [perusmuoto: "pehmike", alku: "pehmik", luokka: nimisana, jatko: <tarvike>, äs: ä];
 [perusmuoto: "pehmittää", alku: "pehmit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "pehmitä", alku: "pehm", luokka: teonsana, jatko: <selvitä>, äs: ä];
-[perusmuoto: "pehmo", alku: "pehmo", luokka: laatusana, jatko: <valo>, äs: a];
+[perusmuoto: "pehmo", alku: "pehmo", luokka: nimi_laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "pehmoinen", alku: "pehmoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pehmustaa", alku: "pehmust", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "pehmuste", alku: "pehmuste", luokka: nimisana, jatko: <hame>, äs: a];
@@ -12047,6 +12050,7 @@
 [perusmuoto: "pikkarainen", alku: "pikkarai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pikkolo", alku: "pikkolo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "pikku", alku: "pikku", luokka: laatusana, jatko: @sana2 + <loppu>, äs: a];
+[perusmuoto: "pikku", alku: "pikku", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "pikkuhiljaa", alku: "pikkuhiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pikkuinen", alku: "pikkui", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pikkunen", alku: "pikku", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -14483,6 +14487,7 @@
 [perusmuoto: "sallia", alku: "sall", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "sallimus", alku: "sallimu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "salmi", alku: "salm", luokka: nimisana, jatko: <lovi>, äs: a];
+[perusmuoto: "salmiakki", alku: "salmiak", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "salmisto", alku: "salmisto", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "salmonella", alku: "salmonell", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "salo", alku: "salo", luokka: nimisana, jatko: <valo>, äs: a]; #NS: 2 sanaa.
@@ -16313,6 +16318,7 @@
 [perusmuoto: "taksi", alku: "taks", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "taksoittaa", alku: "takso", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "taksoitus", alku: "taksoitu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "taksonomia", alku: "taksonomi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "taksvärkki", alku: "taksvärk", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "taktiikka", alku: "taktiik", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "taktikko", alku: "taktik", luokka: nimisana, jatko: <laatikko>, äs: a];

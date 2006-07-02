@@ -557,6 +557,7 @@
 [perusmuoto: "Lätäseno", alku: "Lätäseno", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Läävi", alku: "Lääv", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Maaninka", alku: "Maanin", luokka: paikannimi, jatko: <hanka>, äs: a];
+[perusmuoto: "Maarianhamina", alku: "Maarianhamin", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Madgagajärvi", alku: "Madgagajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Madrid", alku: "Madrid", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Maine", alku: "Maine", luokka: paikannimi, jatko: <nalle>, äs: a];
