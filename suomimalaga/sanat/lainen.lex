@@ -303,6 +303,7 @@
 [perusmuoto: "ohiolainen", alku: "ohiolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "okinawalainen", alku: "okinawalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oslolainen", alku: "oslolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "oulaistelainen", alku: "oulaistelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oululainen", alku: "oululai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pakistanilainen", alku: "pakistanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "palestiinalainen", alku: "palestiinalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
