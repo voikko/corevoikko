@@ -68,6 +68,7 @@ include "sanat/jokinen.lex";
 include "sanat/atk.lex";
 include "sanat/shzh.lex";
 include "sanat/omat.lex";
+include "sanat/lainen.lex";
 
 
 # Karlsson 1983:

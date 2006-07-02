@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date: 2006-06-21 16:48:52 +0300 (ke, 21 kesä   2006) $ by $Author: hatp $.
 
 # Tiedosto suomi.pro Voikkoa varten.
 
@@ -66,9 +69,9 @@ lex: sanat/sanat.lex
 lex: sanat/sukunimet.lex
 lex: sanat/11-19.lex
 lex: sanat/omat.lex
-lex: sanat/omat2.lex
 lex: sanat/yhdyssanat.lex
 lex: sanat/shzh.lex
+lex: sanat/lainen.lex
 
 mor: suomi.mor suomi.inc
 

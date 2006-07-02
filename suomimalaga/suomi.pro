@@ -71,6 +71,7 @@ lex: sanat/11-19.lex
 lex: sanat/omat.lex
 lex: sanat/yhdyssanat.lex
 lex: sanat/shzh.lex
+lex: sanat/lainen.lex
 
 mor: suomi.mor suomi.inc
 
