@@ -16166,7 +16166,7 @@
 [perusmuoto: "sörsseli", alku: "sörssel", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "sössöttää", alku: "sössö", luokka: teonsana, jatko: <kirjoittaa>, äs: ä];
 [perusmuoto: "söötti", alku: "sööt", luokka: laatusana, jatko: <tatti>, äs: ä];
-[perusmuoto: "taa", alku: "taa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "taa", alku: "taa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "taaja", alku: "taaj", luokka: laatusana, jatko: <kala>, äs: a];
 [perusmuoto: "taajama", alku: "taajam", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "taajeta", alku: "taaje", luokka: teonsana, jatko: <aleta>, äs: a];
@@ -18295,6 +18295,7 @@
 [perusmuoto: "varsoa", alku: "varso", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "varsta", alku: "varst", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "vartalo", alku: "vartalo", luokka: nimisana, jatko: <arvelu>, äs: a, tiedot: <inen>];
+[perusmuoto: "varteenotettava", alku: "varteenotettav", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "varten", alku: "varten", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "varteva", alku: "vartev", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "vartija", alku: "varti", luokka: nimisana, jatko: <kulkija>, äs: a];

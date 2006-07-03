@@ -527,6 +527,7 @@
 [perusmuoto: "Josefiina", alku: "Josefiin", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Joseph", alku: "Joseph", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Josif", alku: "Josif", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Joukahainen", alku: "Joukahai", luokka: etunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Jouko", alku: "Jouko", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Jouni", alku: "Joun", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Juha", alku: "Juh", luokka: etunimi, jatko: <koira>, äs: a];

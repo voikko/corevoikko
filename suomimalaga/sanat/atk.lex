@@ -106,7 +106,7 @@
 [perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "nvidia", alku: "nvidi", luokka: nimi, jatko: <karahka>, äs: a, tiedot: <atk>];
 [perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ippp=pppppp"];
-[perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk, ei_voikko>, rakenne: "=ippp=ippppp"];
+[perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ippp=ippppp"];
 [perusmuoto: "perl", alku: "perl", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "postscript", alku: "postscript", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>];
