@@ -1,5 +1,4 @@
 all: suomi.pro
-	./shzh.sh
 	malmake suomi.pro
 
 run: suomi.pro
@@ -10,7 +9,6 @@ kehitys: transmit suomi.pro
 	malmake suomi.pro
 
 voikko:
-	./shzh.sh
 	malmake suomi-voikko.pro
 
 clean:

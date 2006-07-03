@@ -43,39 +43,33 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
+#
+# This file is should not be automatically generated for Voikko.
 
-# Ohjelma shzh.sh on tehnyt tämän tiedoston.
-# Älä muuta tätä.
-
-[perusmuoto: "Azerbaidžan", alku: "Azerbaidzan", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Kambodža", alku: "Kambodz", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "Tšekki", alku: "Tsek", luokka: paikannimi, jatko: <takki>, äs: ä];
-[perusmuoto: "Tšekkoslovakia", alku: "Tsekkoslovaki", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "Tšeljabinsk", alku: "Tseljabinsk", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "bolševikki", alku: "bolsevik", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "bolševismi", alku: "bolsevism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "bolševistinen", alku: "bolsevisti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "šaahi", alku: "saah", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "šaali", alku: "saal", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "šakaali", alku: "sakaal", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "šakki", alku: "sak", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "šamaani", alku: "samaan", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "šamanistinen", alku: "samanisti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "šamponoida", alku: "sampono", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "šampoo", alku: "sampo", luokka: nimisana, jatko: <trikoo>, äs: a];
-[perusmuoto: "šeikki", alku: "seik", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "šekki", alku: "sek", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "šeriffi", alku: "seriff", luokka: nimisana, jatko: <banaali>, äs: ä];
-[perusmuoto: "šiia", alku: "sii", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "šikaani", alku: "sikaan", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "šillinki", alku: "sillin", luokka: nimisana, jatko: <killinki>, äs: ä];
 [perusmuoto: "šokeerata", alku: "sokeer", luokka: teonsana, jatko: <saneerata>, äs: a];
 [perusmuoto: "šokki", alku: "sok", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "šortsi", alku: "sorts", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "tšekki", alku: "tsek", luokka: nimisana, jatko: <takki>, äs: ä];
-[perusmuoto: "Gorbatšov", alku: "Gorbatsov", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Menšikov", alku: "Mensikov", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Ždanov", alku: "Zdanov", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "fidžiläinen", alku: "fidzhiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "kambodžalainen", alku: "kambodzhalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "tšadilainen", alku: "tshadilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "tšekkoslovakialainen", alku: "tshekkoslovakialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "tšetšenialainen", alku: "tshetshenialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "tšekkiläinen", alku: "tshekkiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "Azerbaidžan", alku: "Azerbaidzhan", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Kambodža", alku: "Kambodzh", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Tšekki", alku: "Tshek", luokka: paikannimi, jatko: <takki>, äs: ä];
@@ -102,6 +96,7 @@
 [perusmuoto: "šokki", alku: "shok", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "šortsi", alku: "shorts", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "tšekki", alku: "tshek", luokka: nimisana, jatko: <takki>, äs: ä];
+[perusmuoto: "tšetšenialainen", alku: "tshetshenialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Gorbatšov", alku: "Gorbatshov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Menšikov", alku: "Menshikov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ždanov", alku: "Zhdanov", luokka: sukunimi, jatko: <kalsium>, äs: a];
