@@ -1,3 +1,8 @@
+2006-07-03 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Fix the previous fix for character insertion suggestions
+	* Fix a bug and optimise character duplication suggestions
+
 2006-06-26 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Fix a bug in character insertion suggestions

@@ -265,9 +265,12 @@ void voikko_suggest_insert_special(int handle, wchar_t *** suggestions, int * ma
 	}
 	/* suggest character duplication */
 	wcsncpy(buffer + 1, word, wlen + 1);
-	for (j = 1; j <= wlen && *max_suggestions > 0; j++) {
-		buffer[j-1] = word[j-1];
-		buffer[j] = towlower(word[j]);
+	for (j = 0; j < wlen && *max_suggestions > 0; j++) {
+		buffer[j] = word[j];
+		if (j < wlen - 1 && word[j] == word[j+1]) { /* Do not duplicate if there already are two same letters */
+			j++;
+			continue;
+		}
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
 		                            buffer, wlen + 1, cost, prios);
 	}
@@ -293,7 +296,8 @@ void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_sug
 			voikko_suggest_correct_case(handle, suggestions, max_suggestions,
 			                            buffer, wlen + 1, cost, prios);
 		}
-		if (*max_suggestions == 0 || INS_CHARS[i] == word[wlen-1]) break;
+		if (*max_suggestions == 0) break;
+		if (INS_CHARS[i] == word[wlen-1]) continue;
 		buffer[wlen-1] = word[wlen-1];
 		buffer[wlen] = INS_CHARS[i];
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
