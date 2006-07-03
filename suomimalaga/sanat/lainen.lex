@@ -303,6 +303,7 @@
 [perusmuoto: "ohiolainen", alku: "ohiolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "okinawalainen", alku: "okinawalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oslolainen", alku: "oslolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "oulaislainen", alku: "oulaislai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oulaistelainen", alku: "oulaistelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "oululainen", alku: "oululai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pakistanilainen", alku: "pakistanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -363,6 +364,7 @@
 [perusmuoto: "shiialainen", alku: "shiialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "siamilainen", alku: "siamilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sierraleonelainen", alku: "sierraleonelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "siilinjärveläinen", alku: "siilinjärveläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "singaporelainen", alku: "singaporelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "siperialainen", alku: "siperialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sipoolainen", alku: "sipoolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
