@@ -233,6 +233,7 @@
 [perusmuoto: "Chris", alku: "Chris", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Christian", alku: "Christian", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Chuck", alku: "Chuck", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Chydenius", alku: "Chydeniu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Clayton", alku: "Clayton", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Clarice", alku: "Clarice", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Claudius", alku: "Claudiu", luokka: etunimi, jatko: <vastaus>, äs: a];

@@ -2006,6 +2006,8 @@
 [perusmuoto: "fenno", alku: "fenno", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "fenoli", alku: "fenol", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "fenomenaalinen", alku: "fenomenaali", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "fenomenografia", alku: "fenomenografi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv>];
+[perusmuoto: "fenomenologia", alku: "fenomenologi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "feodaalinen", alku: "feodaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "feodalismi", alku: "feodalism", luokka: nimisana, jatko: <risti>, äs: a];
@@ -4015,6 +4017,7 @@
 [perusmuoto: "inkarnoitua", alku: "inkarnoi", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "inkivääri", alku: "inkiväär", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "inkkari", alku: "inkkar", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "inkluusio", alku: "inkluusio", luokka: nimisana, jatko: <autio>, äs: a, tiedot: <siv>];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimisana, jatko: <arvelu>, äs: a]; #NS: myös seikkasana.
 [perusmuoto: "inkongruenssi", alku: "inkongruenss", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "inkorrekti", alku: "inkorrekt", luokka: laatusana, jatko: <banaali>, äs: a];
@@ -4118,6 +4121,7 @@
 [perusmuoto: "irrallinen", alku: "irralli", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "irrationaalinen", alku: "irrationaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "irrationalisti", alku: "irrationalist", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "irrelevantti", alku: "irrelevant", luokka: laatusana, jatko: <tatti>, äs: a];
 [perusmuoto: "irrota", alku: "ir", luokka: teonsana, jatko: <irrota>, äs: a];
 [perusmuoto: "irrottaa", alku: "irro", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "irstailla", alku: "irstail", luokka: teonsana, jatko: <arvailla>, äs: a];
@@ -13782,6 +13786,7 @@
 [perusmuoto: "riistäytyä", alku: "riistäy", luokka: teonsana, jatko: <antautua>, äs: ä];
 [perusmuoto: "riistää", alku: "riist", luokka: teonsana, jatko: <loistaa>, äs: ä];
 [perusmuoto: "riisua", alku: "riisu", luokka: teonsana, jatko: <punoa>, äs: a];
+[perusmuoto: "riisuuntua", alku: "riisuun", luokka: teonsana, jatko: <jakaantua>, äs: a];
 [perusmuoto: "riisuutua", alku: "riisuu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "riita", alku: "rii", luokka: nimisana, jatko: <pata>, äs: a, tiedot: <inen>];
 [perusmuoto: "riitaantua", alku: "riitaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
@@ -14634,6 +14639,7 @@
 [perusmuoto: "satula", alku: "satul", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "satuloida", alku: "satulo", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "satunnainen", alku: "satunnai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "satunnais", alku: "satunnais", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "saturoida", alku: "saturo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "satuttaa", alku: "satut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "saudi", alku: "saud", luokka: nimisana, jatko: <risti>, äs: a];
@@ -15187,6 +15193,7 @@
 [perusmuoto: "sitoa", alku: "si", luokka: teonsana, jatko: <tahtoa>, äs: a];
 [perusmuoto: "sitostanoli", alku: "sitostanol", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "sitoumus", alku: "sitoumu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "sitouttaa", alku: "sitout", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "sitoutua", alku: "sitou", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "sitra", alku: "sitr", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "sitrus", alku: "sitru", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -15421,7 +15428,7 @@
 [perusmuoto: "sorvi", alku: "sorv", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "sose", alku: "sose", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "soseuttaa", alku: "soseut", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "sosiaali", alku: "sosiaal", luokka: laatusana, jatko: <risti>, äs: a];
+[perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "sosiaalinen", alku: "sosiaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sosiaalistaa", alku: "sosiaalist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "sosiali", alku: "sosial", luokka: laatusana, jatko: <risti>, äs: a];
