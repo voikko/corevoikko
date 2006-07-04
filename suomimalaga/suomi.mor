@@ -610,8 +610,9 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana):
 #define $c2 := transmit (<"c2"> + <$sana>);
 #end;
 
-  if $oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
-                       johdin_mA> + @johdin_jA then
+  if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
+                        johdin_mA> + @johdin_jA) or
+     ($oikea.luokka = johdin_vA and $oikea.perusmuoto in <"vuus", "vyys">) then
     result $vasen + <[alku: $sana] + $oikea>, rules nimisana;
   end;
 
