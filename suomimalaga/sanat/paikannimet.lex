@@ -990,7 +990,6 @@
 [perusmuoto: "Tšekki", alku: "Tšek", luokka: paikannimi, jatko: <takki>, äs: ä];
 [perusmuoto: "Tšekkoslovakia", alku: "Tšekkoslovaki", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Tšeljabinsk", alku: "Tšeljabinsk", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Tšetšenia", alku: "Tšetšeni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Tsilinjärvi", alku: "Tsilinjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Tsopina", alku: "Tsopin", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Tuhanlahti", alku: "Tuhanlah", luokka: paikannimi, jatko: <lahti>, äs: a];
