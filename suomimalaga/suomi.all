@@ -2716,9 +2716,11 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (haravoida in $tietue.jatko) then
-    choose $i in taivutuskaava ($tietue,
-                                tositapa ($tietue,  "i", "i", "", "",
-                                          tositapa_4_d ("i")) +
+    choose $i in tositavan_kestämä_y3 ($tietue, "i")
+                 + taivutuskaava ($tietue,
+                                tositapa_ei_kestämä_y3
+                                 ($tietue,  "i", "i", "", "",
+                                  tositapa_4_d ("i")) +
                                 ehtotapa_tA     ($tietue, "",  "i") +
                                 mahtotapa_ne_tA ($tietue, "i", "i") +
                                 käskytapa_tA    ($tietue, "i", "i") +
@@ -3680,6 +3682,26 @@ subrule tositapa ($tietue,
   return tositapa0 ($tietue,
                     $kestämän_vahva_aste, $kestämän_heikko_aste,
                     $kertoman_vahva_aste, $kertoman_heikko_aste)
+         + $tekijä_4;
+end;
+
+
+subrule tositapa_ei_kestämä_y3 ($tietue,
+                                $kestämän_vahva_aste, $kestämän_heikko_aste,
+                                $kertoman_vahva_aste, $kertoman_heikko_aste,
+                                $tekijä_4):
+  return [kestämän_tekijäpääte_y1: $kestämän_heikko_aste,
+          kestämän_tekijäpääte_y2: $kestämän_heikko_aste,
+          kestämän_tekijäpääte_m1: $kestämän_heikko_aste,
+          kestämän_tekijäpääte_m2: $kestämän_heikko_aste,
+          kestämän_tekijäpääte_m3: $kestämän_vahva_aste,
+
+          kertoman_tekijäpääte_y1: $kertoman_heikko_aste,
+          kertoman_tekijäpääte_y2: $kertoman_heikko_aste,
+          kertoman_tekijäpääte_y3: $kertoman_vahva_aste,
+          kertoman_tekijäpääte_m1: $kertoman_heikko_aste,
+          kertoman_tekijäpääte_m2: $kertoman_heikko_aste,
+          kertoman_tekijäpääte_m3: $kertoman_vahva_aste]
          + $tekijä_4;
 end;
 
@@ -5681,9 +5703,13 @@ end;
 subrule salata ($tietue, $vahva_aste, $heikko_aste):
   return tositavan_kestämä_y3 ($tietue, $vahva_aste + A($tietue))
          + taivutuskaava ($tietue,
-                          tositapa ($tietue, $vahva_aste + A($tietue), $vahva_aste + A($tietue),
-                                    $vahva_aste + "s", $vahva_aste + "s",
-                                    tositapa_4_tt ($heikko_aste)) +
+                          tositapa_ei_kestämä_y3
+                            ($tietue,
+                             $vahva_aste + A($tietue),
+                             $vahva_aste + A($tietue),
+                             $vahva_aste + "s",
+                             $vahva_aste + "s",
+                             tositapa_4_tt ($heikko_aste)) +
                           ehtotapa_ttA     ($tietue, $vahva_aste,  $heikko_aste) +
                           mahtotapa_ne_ttA ($tietue, $heikko_aste + "n", $heikko_aste) +
                           käskytapa_ttA    ($tietue, $heikko_aste + "t", $heikko_aste) +
@@ -5749,8 +5775,9 @@ subrule voida ($tietue, $lisä1, $lisä2):
   return tositavan_kestämä_y3 ($tietue, $lisä1)
          + käskytapa ($tietue, $lisä1)
          + taivutuskaava ($tietue,
-                          tositapa ($tietue, $lisä1, $lisä1, $lisä2, $lisä2,
-                                    tositapa_4_d ($lisä1)) +
+                          tositapa_ei_kestämä_y3
+                            ($tietue, $lisä1, $lisä1, $lisä2, $lisä2,
+                             tositapa_4_d ($lisä1)) +
                           ehtotapa_tA      ($tietue, $lisä2, $lisä1) +
                           mahtotapa_ne_tA  ($tietue, $lisä1, $lisä1) +
                           käskytapa_tA     ($tietue, $lisä1, $lisä1) +
@@ -5773,8 +5800,9 @@ subrule kanavoida ($tietue, $lisä1, $lisä2):
   return tositavan_kestämä_y3 ($tietue, $lisä1)
          + käskytapa ($tietue, $lisä1)
          + taivutuskaava ($tietue,
-                          tositapa ($tietue, $lisä1, $lisä1, $lisä2, $lisä2,
-                                    tositapa_4_d ($lisä1)) +
+                          tositapa_ei_kestämä_y3
+                            ($tietue, $lisä1, $lisä1, $lisä2, $lisä2,
+                             tositapa_4_d ($lisä1)) +
                           ehtotapa_tA      ($tietue, $lisä2, $lisä1) +
                           mahtotapa_ne_tA  ($tietue, $lisä1, $lisä1) +
                           käskytapa_tA     ($tietue, $lisä1, $lisä1) +

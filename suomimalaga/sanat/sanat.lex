@@ -5110,7 +5110,6 @@
 [perusmuoto: "kanarialintu", alku: "kanarialin", luokka: nimisana, jatko: <lintu>, äs: a];
 [perusmuoto: "kanava", alku: "kanav", luokka: nimisana, jatko: <apaja>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "kanavisto", alku: "kanavisto", luokka: nimisana, jatko: <valo>, äs: a];
-[perusmuoto: "kanavoida", alku: "kanavo", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "kanavoida", alku: "kanavo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "kandi", alku: "kand", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "kandidaatti", alku: "kandidaat", luokka: nimisana, jatko: <tatti>, äs: a];
