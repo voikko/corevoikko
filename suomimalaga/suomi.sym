@@ -326,6 +326,7 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   ei_inen;   # Sanasta ei voi johtaa inen-loppista laatusanaa. Esimerkiksi
              # aateli -> aatelinen, koska aatelinen voi olla myös nimisana, ja
              # se on erikseen sanastossa.
+  ei_lAinen; # Sanalla ei ole -lAinen-johdosta. Ei suomi+lainen.
   ei_sukija; # Sanaa ei ole sukija-versiossa.
   ei_voikko; # Sanaa ei ole voikko-versiossa.
   ei_ys;     # Sana ei voi olla yhdyssanan osana.

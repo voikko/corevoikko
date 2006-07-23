@@ -125,8 +125,10 @@
 [perusmuoto: "Hari", alku: "Har", luokka: nimi, jatko: <risti>, äs: a]; # Mata Hari.
 [perusmuoto: "Helios", alku: "Helio", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Hesari", alku: "Hesar", luokka: nimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Homeros", alku: "Homero", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Hyundai", alku: "Hyunda", luokka: nimi, jatko: <pii>, äs: a];
 [perusmuoto: "Icosameron", alku: "Icosameron", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Ilias", alku: "Ilia", luokka: nimi, jatko: <koiras>, äs: a];
 [perusmuoto: "Intersport", alku: "Intersport", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Interzone", alku: "Interzone", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Jaguar", alku: "Jaguar", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -178,11 +180,13 @@
 [perusmuoto: "Mosse", alku: "Mosse", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Musti", alku: "Must", luokka: nimi, jatko: <risti>, äs: a];
 [perusmuoto: "Myyrmanni", alku: "Myyrmann", luokka: nimi, jatko: <risti>, äs: a];
+[perusmuoto: "Narnia", alku: "Narni", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Nato", alku: "Nato", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nebula", alku: "Nebul", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Nessu", alku: "Nessu", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nintendo", alku: "Nintendo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nordea", alku: "Norde", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "Off", alku: "Off", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ossian", alku: "Ossian", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Panadol", alku: "Panadol", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Partek", alku: "Partek", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -216,6 +220,7 @@
 [perusmuoto: "Sipri", alku: "Sipr", luokka: nimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Sirtex", alku: "Sirtex", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Siska", alku: "Sisk", luokka: nimi, jatko: <kala>, äs: a];
+[perusmuoto: "Siwa", alku: "Siw", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Sokos", alku: "Soko", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Sonera", alku: "Soner", luokka: nimi, jatko: <peruna>, äs: a];
 [perusmuoto: "Sonit", alku: "Sonit", luokka: nimi, jatko: <kalsium>, äs: a];
