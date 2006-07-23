@@ -43,6 +43,9 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+# This file has been modified by the contributors of Hunspell-fi project.
+# Last change was on $Date$ by $Author$.
 
 
 sija;
@@ -345,6 +348,9 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
 malli;
   voikko;
   sukija;
+taivutus;
+  vanha;
+  uusi;
 tulostus;
   tavallinen;
   merkitse_yhdyssanat;

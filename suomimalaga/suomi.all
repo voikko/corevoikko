@@ -5444,10 +5444,14 @@ end;
 
 
 subrule selvitä ($tietue, $vahva_aste, $heikko_aste):
-  return haluta ($tietue, $vahva_aste, $heikko_aste)
-         + tositavan_kestämä ($tietue, $vahva_aste + "i",
-                              $vahva_aste + "i")               # Selvi+in, jne.
-         + tositavan_kestämä_y3 ($tietue, $vahva_aste + "i");  # Selvi+i.
+  if (switch (taivutus) = vanha) then
+    return haluta ($tietue, $vahva_aste, $heikko_aste)
+           + tositavan_kestämä ($tietue, $vahva_aste + "i",
+                                $vahva_aste + "i")               # Selvi+in, jne.
+           + tositavan_kestämä_y3 ($tietue, $vahva_aste + "i");  # Selvi+i.
+  else
+    return haluta ($tietue, $vahva_aste, $heikko_aste);
+  end;
 #         + selvittää ($tietue, $vahva_aste, $heikko_aste);
 end;
 
