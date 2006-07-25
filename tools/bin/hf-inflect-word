@@ -26,6 +26,7 @@ import locale
 
 
 NOUN_AFFIX_FILE = 'orig_data/subst.aff'
+VERB_AFFIX_FILE = 'orig_data/verb.aff'
 PARAM_ENCODING = locale.getpreferredencoding()
 
 if len(sys.argv) == 3:
@@ -37,19 +38,26 @@ else:
 
 infclass_parts = infclass.split('-')
 if len(infclass_parts) == 2:
+	wordclass = infclass_parts[0]
 	infclass_main = infclass
 	grad_type = '-'
 elif len(infclass_parts) == 3:
+	wordclass = infclass_parts[0]
 	infclass_main = infclass_parts[0]+'-'+infclass_parts[1]
 	grad_type = infclass_parts[2]
 else:
 	print 'Incorrect inflection class'
 
+if wordclass == u'subst': affixfile = NOUN_AFFIX_FILE
+elif wordclass == u'verbi': affixfile = VERB_AFFIX_FILE
+else:
+	print 'Incorrect word class'
+	sys.exit(1)
 
-noun_classes = hfaffix.read_noun_classes(NOUN_AFFIX_FILE)
-for noun_class in noun_classes:
-	if noun_class['cname'] != infclass_main: continue
-	inflected_words = hfaffix.inflect_noun(word, grad_type, noun_class)
+word_classes = hfaffix.read_word_classes(affixfile)
+for word_class in word_classes:
+	if word_class['cname'] != infclass_main: continue
+	inflected_words = hfaffix.inflect_word(word, grad_type, word_class)
 	if inflected_words == None: continue
 	for inflected_word in inflected_words:
 		if hfutils.read_option(inflected_word[2], 'ps', '-') != 'r':

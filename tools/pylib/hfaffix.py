@@ -273,16 +273,16 @@ def write_affix_base(inputfile_name, outputfile):
 	inputfile.close()
 
 
-# Reads and returns a list of noun classes from a file named file_name.
-def read_noun_classes(file_name):
-	noun_classes = []
+# Reads and returns a list of word classes from a file named file_name.
+def read_word_classes(file_name):
+	word_classes = []
 	inputfile = codecs.open(file_name, 'r', hfutils.INPUT_ENCODING)
 	infclass = __read_inflection_class(inputfile)
 	while infclass != None:
-		noun_classes.append(infclass)
+		word_classes.append(infclass)
 		infclass = __read_inflection_class(inputfile)
 	inputfile.close()
-	return noun_classes
+	return word_classes
 
 
 # Writes the given list of noun classes to the file descriptor.
@@ -309,7 +309,7 @@ def get_matching_noun_class(word, cname, grad_exact_type, noun_classes):
 # Returns a list of inflected forms for a given word or None, if word cannot be
 # inflected in the given class. The list will contain tuples in the form
 # (form_name, word, flags).
-def inflect_noun(word, grad_exact_type, noun_class):
+def inflect_word(word, grad_exact_type, noun_class):
 	word_grad = hfutils.apply_gradation(word, grad_exact_type)
 	if word_grad == None: return None
 	if grad_exact_type == '-': grad_type = hfutils.GRAD_NONE

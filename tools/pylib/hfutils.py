@@ -107,62 +107,71 @@ def apply_gradation(word, grad_type):
 			return (word[:-2]+word[-3:], word)
 		if word[-3] == u'v':
 			return (word[:-3]+u'p'+word[-2:], word)
+	
+	# If word has two vowels at the end (many verbs do) then the last
+	# must be ignored but carried forward
+	if not consonant(word[-1]) and not consonant(word[-2]):
+		last_letter = word[-1]
+		word = word[:-1]
+	else:
+		last_letter = u''
+	
 	if grad_type == u'av1':
 		if word[-3:-1] in (u'tt',u'kk',u'pp'):
-			return (word, word[:-2]+word[-1])
+			return (word+last_letter, word[:-2]+word[-1]+last_letter)
 		if word[-3:-1] == u'mp':
-			return (word, word[:-3]+u'mm'+word[-1])
+			return (word+last_letter, word[:-3]+u'mm'+word[-1]+last_letter)
 		if word[-2] == u'p' and not consonant(word[-1]):
-			return (word, word[:-2]+u'v'+word[-1])
+			return (word+last_letter, word[:-2]+u'v'+word[-1]+last_letter)
 		if word[-3:-1] == u'nt':
-			return (word, word[:-3]+u'nn'+word[-1])
+			return (word+last_letter, word[:-3]+u'nn'+word[-1]+last_letter)
 		if word[-3:-1] == u'lt':
-			return (word, word[:-3]+u'll'+word[-1])
+			return (word+last_letter, word[:-3]+u'll'+word[-1]+last_letter)
 		if word[-3:-1] == u'rt':
-			return (word, word[:-3]+u'rr'+word[-1])
+			return (word+last_letter, word[:-3]+u'rr'+word[-1]+last_letter)
 		if word[-2] == u't':
-			return (word, word[:-2]+u'd'+word[-1])
+			return (word+last_letter, word[:-2]+u'd'+word[-1]+last_letter)
 		if word[-3:-1] == u'nk':
-			return (word, word[:-3]+u'ng'+word[-1])
+			return (word+last_letter, word[:-3]+u'ng'+word[-1]+last_letter)
 		if word[-3:] == u'uku':
-			return (word, word[:-3]+u'uvu')
+			return (word+last_letter, word[:-3]+u'uvu'+last_letter)
 		if word[-3:] == u'yky':
-			return (word, word[:-3]+u'yvy')
+			return (word+last_letter, word[:-3]+u'yvy'+last_letter)
 	if grad_type == u'av2':
 		if word[-3:-1] == u'ng':
-			return (word[:-3]+u'nk'+word[-1], word)
+			return (word[:-3]+u'nk'+word[-1]+last_letter, word+last_letter)
 		# uvu/yvy->uku/yky not possible?
 		if word[-3:-1] == u'mm':
-			return (word[:-3]+u'mp'+word[-1], word)
+			return (word[:-3]+u'mp'+word[-1]+last_letter, word+last_letter)
 		if word[-3:-1] == u'nn':
-			return (word[:-3]+u'nt'+word[-1], word)
+			return (word[:-3]+u'nt'+word[-1]+last_letter, word+last_letter)
 		if word[-3:-1] == u'll':
-			return (word[:-3]+u'lt'+word[-1], word)
+			return (word[:-3]+u'lt'+word[-1]+last_letter, word+last_letter)
 		if word[-3:-1] == u'rr':
-			return (word[:-3]+u'rt'+word[-1], word)
+			return (word[:-3]+u'rt'+word[-1]+last_letter, word+last_letter)
 		if word[-2] == u'd':
-			return (word[:-2]+u't'+word[-1], word)
+			return (word[:-2]+u't'+word[-1]+last_letter, word+last_letter)
 		if word[-2] in u'tkp':
-			return (word[:-1]+word[-2:], word)
+			return (word[:-1]+word[-2:]+last_letter, word+last_letter)
 		if word[-2] == u'v':
-			return (word[:-2]+u'p'+word[-1], word)
+			return (word[:-2]+u'p'+word[-1]+last_letter, word+last_letter)
 	if grad_type == u'av3': # k -> j
 		if word[-2] == u'k':
-			return (word, word[:-2]+u'j'+word[-1])
+			return (word+last_letter, word[:-2]+u'j'+word[-1]+last_letter)
 	if grad_type == u'av4': # j -> k
 		if word[-2] == u'j':
-			return (word[:-2]+u'k'+word[-1], word)
+			return (word[:-2]+u'k'+word[-1]+last_letter, word+last_letter)
 	if grad_type == u'av5': # k -> -
 		if word[-2] == u'k':
 			if word[-3] == word[-1]: # ruoko, vaaka
-				return (word, word[:-2]+u'\''+word[-1])
+				return (word+last_letter, word[:-2]+u'\''+word[-1]+last_letter)
 			else:
-				return (word, word[:-2]+word[-1])
+				return (word+last_letter, word[:-2]+word[-1]+last_letter)
 	if grad_type == u'av6': # - -> k
 		if consonant(word[-1]): # FIXME: hack
-			return (word[:-2]+u'k'+word[-2:], word)
+			return (word[:-2]+u'k'+word[-2:]+last_letter, word+last_letter)
 		else:
-			return (word[:-1]+u'k'+word[-1], word)
+			return (word[:-1]+u'k'+word[-1]+last_letter, word+last_letter)
 	return None
 
 

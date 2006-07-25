@@ -1,0 +1,17 @@
+# Kotus 52 ampua
+class: verbi-punoa
+sm-class: punoa
+match-word: VA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	a	ttiin	w
+end: rules
+end: class
