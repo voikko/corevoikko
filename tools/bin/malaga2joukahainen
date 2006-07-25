@@ -86,6 +86,7 @@ while True:
 		gd = match.groupdict()
 		if gd['luokka'] in [u'nimisana', u'etunimi', u'sukunimi', u'paikannimi', u'nimi']: joclass = 1
 		elif gd['luokka'] in [u'laatusana', u'nimi_laatusana']: joclass = 2
+		elif gd['luokka'] == u'teonsana': joclass = 3
 		else: continue
 		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
 		if hf_class == None: continue

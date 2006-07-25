@@ -170,11 +170,32 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'puu', u'-', [(None,u'(.*)U',u'puu')]),
 	(u'suo', u'-', [(None,u'(.*C)UO',u'suo')]),
 	(u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
-	(u'nainen', u'-', [(None,u'(.*)nen',u'nainen')])
+	(u'nainen', u'-', [(None,u'(.*)nen',u'nainen')]),
+	# Verbs
+	(u'punoa', u'sw', [(None,u'(.*)A',u'punoa'),
+	                   (u'mp',u'(.*m)pUA',u'ampua'),
+	                   (u'mp',u'(.*m)pOA',u'tempoa'),
+		         (u'tt',u'(.*t)tUA',u'asettua'),
+		         (u'tt',u'(.*t)tOA',u'viittoa'),
+		         (u'pp',u'(.*p)pOA',u'harppoa'),
+		         (u'pp',u'(.*p)pUA',u'kieppua'),
+		         (u'nt',u'(.*n)yUA',u'jakaantua'),
+		         (u'rt',u'(.*r)tOA',u'kertoa'),
+		         (u'rt',u'(.*r)tUA',u'kumartua'),
+		         (u'nk',u'(.*n)kUA',u'mankua'),
+		         (u'nk',u'(.*n)kOA',u'penkoa'),
+		         (u'lt',u'(.*l)tUA',u'paleltua'),
+		         (u't',u'(.*)tUA',u'kaatua'),
+		         (u't',u'(.*)tOA',u'tahtoa'),
+		         (u'p',u'(.*)pOA',u'leipoa'),
+		         (u'p',u'(.*)pUA',u'saapua'),
+		         (u'k>',u'(.*U)kUA',u'liukua'),
+		         (u'k>',u'(.*)kOA',u'aikoa'),
+		         (u'k>',u'(.*)kUA',u'kiekua')])
 	]
 
 flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), (u'ei_ys', 7),
-	 (u'ei_ysa', 8), (u'ei_ysj', 9), (u'atk', 15), (u'siv', 17)]
+	 (u'ei_ysa', 8), (u'ei_ysj', 9), (u'atk', 15), (u'siv', 17), (u'ei_lAinen', 27)]
 
 def match_re(string, pattern):
 	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')
