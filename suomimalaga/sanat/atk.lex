@@ -52,6 +52,7 @@
 [perusmuoto: "Apple", alku: "Apple", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "aspell", alku: "aspell", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Audacity", alku: "Audacity", luokka: nimi, jatko: <valo>, äs: aä, tiedot: <atk>];
+[perusmuoto: "bash", alku: "bash", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "boost", alku: "boost", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Canon", alku: "Canon", luokka: nimi, jatko: <edam>, äs: a, tiedot: <atk>];
 [perusmuoto: "cdrecord", alku: "cdrecord", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
@@ -147,6 +148,7 @@
 [alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <atk>];
 [alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
+[alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 
 
 #öö[perusmuoto: "", alku: "", luokka: nimi, jatko: <>, äs: a, tiedot: <atk>];

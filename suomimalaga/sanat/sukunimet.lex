@@ -53,6 +53,7 @@
 [perusmuoto: "Aaronson", alku: "Aaronson", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Aatamila", alku: "Aatamil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Abbey", alku: "Abbey", luokka: sukunimi, jatko: <valo>, äs: aä];
+[perusmuoto: "Aberth", alku: "Aberth", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Adams", alku: "Adams", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Agricola", alku: "Agricol", luokka: sukunimi, jatko: <koira>, äs: a];
 [perusmuoto: "Ahi", alku: "Ah", luokka: sukunimi, jatko: <risti>, äs: a];
@@ -826,6 +827,7 @@
 [perusmuoto: "Lamberg", alku: "Lamberg", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Lampen", alku: "Lampen", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Lampinen", alku: "Lampi", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Landau", alku: "Landau", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Lander", alku: "Lander", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Landgren", alku: "Landgren", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Lankia", alku: "Lanki", luokka: sukunimi, jatko: <apila>, äs: a];
@@ -1169,6 +1171,7 @@
 [perusmuoto: "Parikka", alku: "Parik", luokka: sukunimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Parkkinen", alku: "Parkki", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Parkkonen", alku: "Parkko", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Parramón", alku: "Parramón", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Partanen", alku: "Parta", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Parvainen", alku: "Parvai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Parviainen", alku: "Parviai", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -1372,7 +1375,7 @@
 [perusmuoto: "Roth", alku: "Roth", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Rothovius", alku: "Rothoviu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Rouhiainen", alku: "Rouhiai", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Rousseau", alku: "Rousseau", luokka: sukunimi, jatko: <rosé>, äs: a];
+[perusmuoto: "Rousseau", alku: "Rousseau", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Rouvala", alku: "Rouval", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rouvinen", alku: "Rouvi", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Rowling", alku: "Rowling", luokka: sukunimi, jatko: <kalsium>, äs: a];

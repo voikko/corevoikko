@@ -920,8 +920,9 @@
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "Stalingrad", alku: "Stalingrad", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Stratford", alku: "Stratford", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Stuttgart", alku: "Stuttgart", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Strömfors", alku: "Strömfors", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Strömsholm", alku: "Strömsholm", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Stuttgart", alku: "Stuttgart", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Sudan", alku: "Sudan", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Suistamo", alku: "Suistamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Sulkama", alku: "Sulkam", luokka: paikannimi, jatko: <koira>, äs: a];
@@ -1004,6 +1005,7 @@
 [perusmuoto: "Tukholma", alku: "Tukholm", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Tula", alku: "Tul", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Tulemajärvi", alku: "Tulemajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Tunguska", alku: "Tungusk", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Tuprava", alku: "Tuprav", luokka: paikannimi, jatko: <asema>, äs: a];
 [perusmuoto: "Turusjärvi", alku: "Turusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Tutju", alku: "Tutju", luokka: paikannimi, jatko: <valo>, äs: a];

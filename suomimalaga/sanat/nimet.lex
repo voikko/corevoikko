@@ -231,6 +231,7 @@
 [perusmuoto: "Suinuu", alku: "Suinu", luokka: nimi, jatko: <leikkuu>, äs: a];
 [perusmuoto: "Supo", alku: "Supo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Tamiflu", alku: "Tamiflu", luokka: nimi, jatko: <autio>, äs: a];
+[perusmuoto: "Tapiola", alku: "Tapiol", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Teboil", alku: "Teboil", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Tehy", alku: "Tehy", luokka: nimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Telering", alku: "Telering", luokka: nimi, jatko: <kalsium>, äs: ä];

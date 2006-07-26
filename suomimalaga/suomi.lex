@@ -476,6 +476,8 @@ define @jatko_mm := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
 [alku: "käänhän",   luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "ko",        luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "kö",        luokka: liitesana, äs: ä, jatko: <loppu>];
+[alku: "kokaan",    luokka: liitesana, äs: a, jatko: <loppu>];
+[alku: "kökään",    luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "pa",        luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "pä",        luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "han",       luokka: liitesana, äs: a, jatko: <loppu>];

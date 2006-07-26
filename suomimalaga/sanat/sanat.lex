@@ -4731,6 +4731,7 @@
 [perusmuoto: "järähtää", alku: "järäh", luokka: teonsana, jatko: <astahtaa>, äs: ä];
 [perusmuoto: "jäsen", alku: "jäsen", luokka: nimisana, jatko: <ahven>, äs: ä];
 [perusmuoto: "jäsenistö", alku: "jäsenistö", luokka: nimisana, jatko: <valo>, äs: ä];
+[perusmuoto: "jäsennin", alku: "jäsen", luokka: nimisana, jatko: <vaimennin>, äs: ä];
 [perusmuoto: "jäsentää", alku: "jäsen", luokka: teonsana, jatko: <pahentaa>, äs: ä];
 [perusmuoto: "jäsenyys", alku: "jäsenyy", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "jästi", alku: "jäst", luokka: nimisana, jatko: <risti>, äs: ä];
@@ -5306,6 +5307,7 @@
 [perusmuoto: "karkelo", alku: "karkelo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "karkeloida", alku: "karkelo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "karkki", alku: "kark", luokka: nimisana, jatko: <takki>, äs: a];
+[perusmuoto: "karkotin", alku: "karkot", luokka: nimisana, jatko: <suodatin>, äs: a];
 [perusmuoto: "karkottaa", alku: "karko", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "karku", alku: "kar", luokka: nimisana, jatko: <alku>, äs: a];
 [perusmuoto: "karkuri", alku: "karkur", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -6256,6 +6258,7 @@
 [perusmuoto: "kloorata", alku: "kloor", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "kloori", alku: "kloor", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "kloppi", alku: "klop", luokka: nimisana, jatko: <keppi>, äs: a];
+[perusmuoto: "kloriitti", alku: "kloriit", luokka: nimi, jatko: <salaatti>, äs: a];
 [perusmuoto: "kloroformi", alku: "kloroform", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "klorofylli", alku: "klorofyll", luokka: nimisana, jatko: <risti>, äs: aä];
 [perusmuoto: "klosetti", alku: "kloset", luokka: nimisana, jatko: <salaatti>, äs: a];
@@ -8861,7 +8864,6 @@
 [perusmuoto: "läiske", alku: "läiske", luokka: nimisana, jatko: <hame>, äs: ä];
 [perusmuoto: "läiskiä", alku: "läisk", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "läiskyttää", alku: "läiskyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "läiskytys", alku: "läiskyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "läiskyä", alku: "läisky", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "läiskä", alku: "läisk", luokka: nimisana, jatko: <koira>, äs: ä]; #NS: 2 sanaa.
 [perusmuoto: "läiskähtää", alku: "läiskä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
@@ -9052,6 +9054,7 @@
 [perusmuoto: "maili", alku: "mail", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "maine", alku: "maine", luokka: nimisana, jatko: <hame>, äs: a, tiedot: <inen>];
 [perusmuoto: "maineikas", alku: "maineik", luokka: laatusana, jatko: <iäkäs>, äs: a];
+[perusmuoto: "mainen", alku: "mai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "maininki", alku: "mainin", luokka: nimisana, jatko: <killinki>, äs: a];
 [perusmuoto: "mainio", alku: "mainio", luokka: nimi_laatusana, jatko: <autio>, äs: a];
 [perusmuoto: "mainita", alku: "maini", luokka: teonsana, jatko: <valita>, äs: a];
@@ -10052,7 +10055,6 @@
 [perusmuoto: "mädättää", alku: "mädät", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "mädätys", alku: "mädäty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "mädätä", alku: "mä", luokka: teonsana, jatko: <mädätä>, äs: ä];
-[perusmuoto: "mäinen", alku: "mäi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "mäiske", alku: "mäiske", luokka: nimisana, jatko: <hame>, äs: ä];
 [perusmuoto: "mäiskiä", alku: "mäisk", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "mäiskähdellä", alku: "mäiskäh", luokka: teonsana, jatko: <kohdella>, äs: ä];
@@ -10140,6 +10142,7 @@
 [perusmuoto: "möyheä", alku: "möyh", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "möyhiä", alku: "möyh", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "möykky", alku: "möyk", luokka: nimisana, jatko: <alku>, äs: ä, tiedot: <inen>];
+[perusmuoto: "möykkä", alku: "möyk", luokka: nimisana, jatko: <haka>, äs: ä];
 [perusmuoto: "möykätä", alku: "möyk", luokka: teonsana, jatko: <pakata>, äs: ä];
 [perusmuoto: "möyriä", alku: "möyr", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "möyry", alku: "möyry", luokka: nimisana, jatko: <valo>, äs: ä];
@@ -17351,6 +17354,7 @@
 [perusmuoto: "turruksissa", alku: "turruksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "turruttaa", alku: "turrut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "turska", alku: "tursk", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "turskahtaa", alku: "turska", luokka: teonsana, jatko: <hujahtaa>, äs: a];
 [perusmuoto: "turta", alku: "tur", luokka: laatusana, jatko: <turta>, äs: a];
 [perusmuoto: "turtua", alku: "tur", luokka: teonsana, jatko: <kumartua>, äs: a];
 [perusmuoto: "turtumus", alku: "turtumu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -19462,7 +19466,6 @@
 [perusmuoto: "ärrä", alku: "ärr", luokka: nimisana, jatko: <koira>, äs: ä];
 [perusmuoto: "ärsyke", alku: "ärsyk", luokka: nimisana, jatko: <tarvike>, äs: ä];
 [perusmuoto: "ärsyttää", alku: "ärsyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "ärsytys", alku: "ärsyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "ärsyyntyä", alku: "ärsyyn", luokka: teonsana, jatko: <jakaantua>, äs: ä];
 [perusmuoto: "ärtty", alku: "ärt", luokka: laatusana, jatko: <hattu>, äs: ä];
 [perusmuoto: "ärtyinen", alku: "ärtyi", luokka: laatusana, jatko: <nainen>, äs: ä];

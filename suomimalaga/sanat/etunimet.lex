@@ -130,6 +130,7 @@
 [perusmuoto: "Andreas", alku: "Andrea", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Andrei", alku: "Andre", luokka: etunimi, jatko: <pii>, äs: a];
 [perusmuoto: "Andronikos", alku: "Androniko", luokka: etunimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Andy", alku: "Andy", luokka: etunimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Anelma", alku: "Anelm", luokka: nimi, jatko: <apaja>, äs: a];
 [perusmuoto: "Anessa", alku: "Aness", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Anita", alku: "Anit", luokka: etunimi, jatko: <kala>, äs: a];
