@@ -1,3 +1,8 @@
+2006-07-26 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Add -no-undefined to libvoikko_la_LDFLAGS, which is supposed to
+	  enable building shared libraries on Windows.
+
 2006-07-25 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Increase version to 1.0
