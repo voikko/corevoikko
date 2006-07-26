@@ -1830,7 +1830,7 @@
 [perusmuoto: "esityttää", alku: "esityt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "eskaaderi", alku: "eskaader", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "eskadroona", alku: "eskadroon", luokka: nimisana, jatko: <koira>, äs: a];
-[perusmuoto: "eskaloida", alku: "eskalo", luokka: teonsana, jatko: <voida>, äs: a];
+[perusmuoto: "eskaloida", alku: "eskalo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "eskapismi", alku: "eskapism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "eskapisti", alku: "eskapist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "eskimo", alku: "eskimo", luokka: nimisana, jatko: <arvelu>, äs: a];
@@ -2404,7 +2404,6 @@
 [perusmuoto: "hajauttaa", alku: "hajaut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "hajautua", alku: "hajau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "hajautus", alku: "hajautu", luokka: nimisana, jatko: <vastaus>, äs: a];
-[perusmuoto: "hajoittaa", alku: "hajoi", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "hajota", alku: "hajo", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "hajottaa", alku: "hajo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "hajottua", alku: "hajot", luokka: teonsana, jatko: <asettua>, äs: a];
@@ -8483,7 +8482,6 @@
 [perusmuoto: "lohkaista", alku: "lohka", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "lohkare", alku: "lohkare", luokka: nimisana, jatko: <hame>, äs: a, tiedot: <inen>];
 [perusmuoto: "lohkeilla", alku: "lohkeil", luokka: teonsana, jatko: <katsella>, äs: a];
-[perusmuoto: "lohkoa", alku: "lohko", luokka: teonsana, jatko: <aikoa>, äs: a];
 [perusmuoto: "lohkoa", alku: "lohko", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "lohko", alku: "loh", luokka: nimisana, jatko: <vihko>, äs: a, tiedot: <inen>];
 [perusmuoto: "lohtu", alku: "loh", luokka: nimisana, jatko: <laatu>, äs: a];
@@ -10440,7 +10438,7 @@
 [perusmuoto: "nimittäin", alku: "nimittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nimittää", alku: "nimit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "nimiö", alku: "nimiö", luokka: nimisana, jatko: <autio>, äs: ä];
-[perusmuoto: "nimiöidä", alku: "nimiöi", luokka: teonsana, jatko: <kanavoida>, äs: ä];
+[perusmuoto: "nimiöidä", alku: "nimiö", luokka: teonsana, jatko: <kanavoida>, äs: ä];
 [perusmuoto: "ninja", alku: "ninj", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "nipin", alku: "nipin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nipistin", alku: "nipisti", luokka: nimisana, jatko: <uistin>, äs: ä];
@@ -14276,7 +14274,7 @@
 [perusmuoto: "rälssi", alku: "rälss", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "räme", alku: "räme", luokka: nimisana, jatko: <hame>, äs: ä, tiedot: <inen>];
 [perusmuoto: "rämeikkö", alku: "rämeik", luokka: nimisana, jatko: <laatikko>, äs: ä];
-[perusmuoto: "rämettyä", alku: "rämet", luokka: teonsana, jatko: <kaatua>, äs: ä];
+[perusmuoto: "rämettyä", alku: "rämet", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "rämistä", alku: "räm", luokka: teonsana, jatko: <kihistä>, äs: ä];
 [perusmuoto: "rämpiä", alku: "räm", luokka: teonsana, jatko: <empiä>, äs: ä];
 [perusmuoto: "rämä", alku: "räm", luokka: nimi_laatusana, jatko: <koira>, äs: ä];
