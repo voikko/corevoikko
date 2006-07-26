@@ -42,14 +42,24 @@ db = _pg.connect(host='localhost',
                  passwd='joukahainen')
 
 def find_hf_class(word, sm_class):
+	# On import we must switch from historical to modern classification and store
+	# the historical class separately.
+	sm_hclass = None
+	for histclass in hfconv.histmap:
+		if sm_class == histclass[0]:
+			sm_hclass = sm_class
+			sm_class = histclass[1]
+			break
+	
+	# Find the corresponding class for Joukahainen
 	for infclass in hfconv.classmap:
 		for gradclass in infclass[2]:
 			if gradclass[2] == sm_class:
 				if hfconv.match_re(word, gradclass[1]) == None: continue
-				if gradclass[0] == None: return infclass[0]
+				if gradclass[0] == None: return (infclass[0], sm_hclass)
 				for grad in hfconv.grads:
 					if grad[0] == infclass[1] and grad[1] == gradclass[0]:
-						return infclass[0] + u'-' + grad[2]
+						return (infclass[0] + u'-' + grad[2], sm_hclass)
 	return None
 
 def insert_flags(db, wid, tiedot_s, eid):
@@ -71,6 +81,7 @@ lista = []
 db.query('DELETE FROM related_word')
 db.query('DELETE FROM flag_attribute_value')
 db.query('DELETE FROM string_attribute_value')
+db.query('DELETE FROM event')
 db.query('DELETE FROM word')
 db.query("INSERT INTO event(euser, message) VALUES(1, " +
          "'Automatic conversion from Suomi-malaga by malaga2joukahainen')")
@@ -88,8 +99,8 @@ while True:
 		elif gd['luokka'] in [u'laatusana', u'nimi_laatusana']: joclass = 2
 		elif gd['luokka'] == u'teonsana': joclass = 3
 		else: continue
-		hf_class = find_hf_class(gd['perusmuoto'], gd['jatko'])
-		if hf_class == None: continue
+		hf_classes = find_hf_class(gd['perusmuoto'], gd['jatko'])
+		if hf_classes == None: continue
 		outputfile.write(hfutils.remove_comments(rivi).strip() + u'\n')
 		db.query("INSERT INTO word(word, class, cuser) VALUES('%s', %i, %i)" %
 		         ((gd['perusmuoto'].replace("'", "''")).encode('UTF-8'), joclass, 1))
@@ -97,7 +108,10 @@ while True:
 		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
 		wid = int(res.getresult()[0][0])
 		db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
-		          "VALUES(%i, 1, '%s', %i)") % (wid, hf_class.encode('UTF-8'), eid))
+		          "VALUES(%i, 1, '%s', %i)") % (wid, hf_classes[0].encode('UTF-8'), eid))
+		if hf_classes[1] != None: # We have also a historical class
+			db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
+			          "VALUES(%i, 16, '%s', %i)") % (wid, hf_classes[1].encode('UTF-8'), eid))
 		if gd['luokka'] == u'nimi_laatusana': nflag = 10
 		elif gd['luokka'] == u'etunimi': nflag = 11
 		elif gd['luokka'] == u'sukunimi': nflag = 12

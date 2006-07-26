@@ -30,7 +30,17 @@ import _pg
 
 outputfile = codecs.open("/tmp/sanat.malaga", "w", "UTF-8")
 
-def find_malaga_noun_class(word, hf_class):
+def find_malaga_word_class(word, hf_class, hf_histclass):
+	# If historical class was set, see first if it can be used in Malaga
+	for histclass in hfconv.histmap:
+		if hf_histclass == histclass[0]:
+			for infclass in hfconv.classmap:
+				for subclass in infclass[2]:
+					if subclass[2] == histclass[1]:
+						alku = hfconv.match_re(word, subclass[1])
+						if alku != None: return (alku, hf_histclass)
+	
+	# No (usable) historical class, use the modern class
 	classparts = hf_class.split(u'-')
 	if len(classparts) == 1:
 		classparts.append(None)
@@ -75,7 +85,8 @@ db = _pg.connect(host='localhost',
                  user='joukahainen',
                  passwd='joukahainen')
 
-results = db.query('SELECT w.word, w.class, sa.value, w.wid FROM word w, string_attribute_value sa ' +
+results = db.query('SELECT w.word, w.class, sa.value, w.wid, hc.value FROM string_attribute_value sa, word w ' +
+	'LEFT JOIN string_attribute_value hc ON (w.wid = hc.wid AND hc.aid = 16) ' +
 	'WHERE w.wid = sa.wid AND sa.aid = 1 ORDER BY w.word, w.class, w.wid')
 
 for result in results.getresult():
@@ -92,7 +103,9 @@ for result in results.getresult():
 		else: word_end = altform[sepind+1:]
 		if result[1] in [1, 2, 3]:
 			hf_class = unicode(result[2], 'UTF-8')
-			(alku, jatko) = find_malaga_noun_class(word, hf_class)
+			if result[4] == None: hf_histclass = None
+			else: hf_histclass = unicode(result[4], 'UTF-8')
+			(alku, jatko) = find_malaga_word_class(word, hf_class, hf_histclass)
 			if alku == None:
 				print u"Malaga class not found for (%s, %i, %s)" % (result[0], result[1], result[2])
 				continue
