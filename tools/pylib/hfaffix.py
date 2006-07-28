@@ -83,6 +83,7 @@ def __read_list_line(file):
 # Read an inflection class from a file. Returns the following dictionary of items:
 # cname: class name
 # smcnames: Suomi-Malaga class names
+# rmsfx: suffix to be removed from every word before applying inflections
 # match: regular expression that all words in this class must match
 # gradation: consonant gradation type.
 # group: FIXME: should be t
@@ -97,6 +98,7 @@ def __read_inflection_class(file):
 		sys.exit(1)
 	cname = header_tuple[1]
 	smcnames = []
+	rmsfx = u''
 	match = '.*'
 	gradation = hfutils.GRAD_NONE
 	group = 't'
@@ -108,6 +110,7 @@ def __read_inflection_class(file):
 			print 'Unexpected end of file.'
 			sys.exit(1)
 		if header_tuple[0] == 'sm-class': smcnames = header_tuple[1].split(' ')
+		if header_tuple[0] == u'rmsfx': rmsfx = header_tuple[1]
 		if header_tuple[0] == 'match-word': match = header_tuple[1]
 		if header_tuple[0] == 'consonant-gradation':
 			if header_tuple[1] == '-': gradation = hfutils.GRAD_NONE
@@ -127,7 +130,7 @@ def __read_inflection_class(file):
 				rule = __read_list_line(file)
 		if header_tuple[0] == 'end' and header_tuple[1] == 'class':
 			return { 'cname':cname, 'smcnames':smcnames, 'match':match, 'gradation':gradation, \
-			         'group':group, 'tgroup':tgroup, 'rules':rules }
+			         'group':group, 'tgroup':tgroup, 'rules':rules, 'rmsfx':rmsfx }
 
 
 # Convert a Hunspell-fi -style pair of regular expression and replacement string to a list
@@ -310,7 +313,10 @@ def get_matching_noun_class(word, cname, grad_exact_type, noun_classes):
 # inflected in the given class. The list will contain tuples in the form
 # (form_name, word, flags).
 def inflect_word(word, grad_exact_type, noun_class):
-	word_grad = hfutils.apply_gradation(word, grad_exact_type)
+	l = len(noun_class['rmsfx'])
+	if l == 0: word_no_sfx = word
+	else: word_no_sfx = word[:-l]
+	word_grad = hfutils.apply_gradation(word_no_sfx, grad_exact_type)
 	if word_grad == None: return None
 	if grad_exact_type == '-': grad_type = hfutils.GRAD_NONE
 	elif grad_exact_type in ['av1', 'av3', 'av5']: grad_type = hfutils.GRAD_SW

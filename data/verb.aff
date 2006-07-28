@@ -1,18 +1,19 @@
 # Kotus 52 ampua
 class: verbi-punoa
 sm-class: punoa
+rmsfx: a
 match-word: VA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	a	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	a	ttiin	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	0	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	0	ttiin	w
 end: rules
 end: class
 
@@ -20,20 +21,21 @@ end: class
 
 class: verbi-aavistaa
 sm-class: aavistaa
+rmsfx: a
 match-word: tAA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
-!verbi_ellA	aa	ella	w
-!subst_Us	aa	us	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!subst_Us	a	us	w
 end: rules
 end: class
 
@@ -59,21 +61,22 @@ end: class
 
 class: verbi-heittää
 sm-class: heittää
+rmsfx: a
 match-word: ttAA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
-!verbi_ellA	aa	ella	w
-!subst_tO	aa	o	s # FIXME: vokaalisointu
-!subst_ntA	a	nta	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!subst_tO	a	o	s # FIXME: vokaalisointu
+!subst_ntA	0	nta	w
 end: rules
 end: class
 
@@ -99,96 +102,101 @@ end: class
 
 class: verbi-inttää
 sm-class: inttää
+rmsfx: a
 match-word: ttAA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
-!verbi_ellA	aa	ella	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
 end: rules
 end: class
 
 class: verbi-sulaa
 sm-class: sulaa
+rmsfx: a
 match-word: CAA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
 class: verbi-hohtaa
 sm-class: hohtaa
+rmsfx: a
 match-word: AA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
-!verbi_ellA	aa	ella	w
-!verbi_ttAA	a	ttaa	w
-!subst_tO	aa	o	s # FIXME: vokaalisointu
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!verbi_ttAA	0	ttaa	w
+!subst_tO	a	o	s # FIXME: vokaalisointu
 end: rules
 end: class
 
 class: verbi-hujahtaa
 sm-class: hujahtaa
+rmsfx: a
 match-word: VhtAA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
-!verbi_ellA	aa	ella	w
-!verbi_UttA	htaa	uttaa	s
-!subst_Us	aa	us	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!verbi_UttA	hta	uttaa	s
+!subst_Us	a	us	w
 end: rules
 end: class
 
 class: verbi-kirjoittaa
 sm-class: kirjoittaa
+rmsfx: a
 match-word: VttAA
 consonant-gradation: sw
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	0	s
-preesens_yks_1	a	n	w
-imperfekti_yks_3	aa	i	s
-kondit_yks_3	a	isi	s
-imperatiivi_yks_3	a	koon	s
-partisiippi_2	a	nut	s
-imperfekti_pass	aa	ettiin	w
-!verbi_ellA	aa	ella	w
-!verbi_ttAUtUA	a	utua	s
-!subst_Us	aa	us	w
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!verbi_ttAUtUA	0	utua	s
+!subst_Us	a	us	w
 end: rules
 end: class
 
@@ -269,5 +277,43 @@ imperatiivi_yks_3	a	sekoon	s
 partisiippi_2	da	nut	w
 imperfekti_pass	a	iin	s
 verbi_tUA	a	ua	s
+end: rules
+end: class
+
+# Kotus 73 salata (1/2)
+class: verbi-saneerata
+sm-class: saneerata
+match-word: CAtA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	w
+preesens_yks_1	ta	an	s
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	ta	isi	s
+imperatiivi_yks_3	ta	tkoon	w
+partisiippi_2	ta	nnut	w
+imperfekti_pass	ta	ttiin	w
+end: rules
+end: class
+
+# Kotus 73 salata (2/2)
+class: verbi-salata
+sm-class: salata
+rmsfx: ta
+match-word: AtA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	an	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
+!verbi_illA	0	illa	s
 end: rules
 end: class

@@ -108,13 +108,8 @@ def apply_gradation(word, grad_type):
 		if word[-3] == u'v':
 			return (word[:-3]+u'p'+word[-2:], word)
 	
-	# If word has two vowels at the end (many verbs do) then the last
-	# must be ignored but carried forward
-	if not consonant(word[-1]) and not consonant(word[-2]):
-		last_letter = word[-1]
-		word = word[:-1]
-	else:
-		last_letter = u''
+	# This can be used to carry suffixes. Not currently needed.
+	last_letter = u''
 	
 	if grad_type == u'av1':
 		if word[-3:-1] in (u'tt',u'kk',u'pp'):
