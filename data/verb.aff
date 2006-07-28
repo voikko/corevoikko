@@ -16,6 +16,202 @@ imperfekti_pass	a	ttiin	w
 end: rules
 end: class
 
+# Kotus 53 muistaa ======================
+
+class: verbi-aavistaa
+sm-class: aavistaa
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!subst_Us	aa	us	w
+end: rules
+end: class
+
+class: verbi-hidastaa
+sm-class: hidastaa
+match-word: tAA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!verbi_tUA	aa	ua	w
+!subst_Us	aa	us	w
+end: rules
+end: class
+
+class: verbi-heittää
+sm-class: heittää
+match-word: ttAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!subst_tO	aa	o	s # FIXME: vokaalisointu
+!subst_ntA	a	nta	w
+end: rules
+end: class
+
+class: verbi-muistaa
+sm-class: muistaa
+match-word: CAA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!verbi_UA	aa	ua	w
+!subst_tO	aa	o	s # FIXME: vokaalisointu
+end: rules
+end: class
+
+class: verbi-inttää
+sm-class: inttää
+match-word: ttAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+end: rules
+end: class
+
+class: verbi-sulaa
+sm-class: sulaa
+match-word: CAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+end: rules
+end: class
+
+class: verbi-hohtaa
+sm-class: hohtaa
+match-word: AA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!verbi_ttAA	a	ttaa	w
+!subst_tO	aa	o	s # FIXME: vokaalisointu
+end: rules
+end: class
+
+class: verbi-hujahtaa
+sm-class: hujahtaa
+match-word: VhtAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!verbi_UttA	htaa	uttaa	s
+!subst_Us	aa	us	w
+end: rules
+end: class
+
+class: verbi-kirjoittaa
+sm-class: kirjoittaa
+match-word: VttAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!verbi_ellA	aa	ella	w
+!verbi_ttAUtUA	a	utua	s
+!subst_Us	aa	us	w
+end: rules
+end: class
+
+class: verbi-loistaa
+sm-class: loistaa
+match-word: CAA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	s
+preesens_yks_1	a	n	w
+imperfekti_yks_3	aa	i	s
+kondit_yks_3	a	isi	s
+imperatiivi_yks_3	a	koon	s
+partisiippi_2	a	nut	s
+imperfekti_pass	aa	ettiin	w
+!subst_tO	aa	o	s
+end: rules
+end: class
+
+# End Kotus 53 muistaa ==================
+
 # Kotus 68 tupakoida (1/3)
 class: verbi-voida
 sm-class: voida
@@ -49,7 +245,7 @@ kondit_yks_3	da	si	w
 imperatiivi_yks_3	da	koon	w
 partisiippi_2	da	nut	w
 imperfekti_pass	a	iin	s
-!johdos_dUit	a	uit	w
+!verbi_tuA	a	ua	s
 end: rules
 end: class
 
@@ -72,6 +268,6 @@ imperatiivi_yks_3	da	koon	w
 imperatiivi_yks_3	a	sekoon	s
 partisiippi_2	da	nut	w
 imperfekti_pass	a	iin	s
-johdos_dUit	a	uit	w
+verbi_tUA	a	ua	s
 end: rules
 end: class
