@@ -402,6 +402,7 @@ arvelu;
   raamattu;
 autio;
 risti;
+  siisti; # => Siisteys (ei *siistiys).
   hupi;
   keppi;
   kiiski; # Taipuu kuten risti tai lovi (kiiskin, kiisken).
@@ -409,6 +410,7 @@ risti;
   renki;
   takki;
   tatti;
+  kiltti; # => Kiltteys (ei *kilttiys).
   tunti;
   vati;
 paperi; banaali;

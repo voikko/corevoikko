@@ -14959,7 +14959,7 @@
 [perusmuoto: "siirtyä", alku: "siir", luokka: teonsana, jatko: <kumartua>, äs: ä];
 [perusmuoto: "siirtää", alku: "siir", luokka: teonsana, jatko: <murtaa>, äs: ä];
 [perusmuoto: "siis", alku: "siis", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "siisti", alku: "siist", luokka: laatusana, jatko: <risti>, äs: ä];
+[perusmuoto: "siisti", alku: "siist", luokka: laatusana, jatko: <siisti>, äs: ä];
 [perusmuoto: "siistiytyä", alku: "siistiy", luokka: teonsana, jatko: <kaatua>, äs: ä];
 [perusmuoto: "siistiä", alku: "siist", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "siitepöly", alku: "siitepöly", luokka: nimisana, jatko: <valo>, äs: ä];

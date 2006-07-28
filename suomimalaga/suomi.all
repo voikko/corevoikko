@@ -237,6 +237,11 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
 
+  elseif (siisti in $tietue.jatko) then
+    choose $i in siisti ($tietue, "", "");
+    result $i.alku, $i - alku;
+
+
   elseif (takki in $tietue.jatko) then
     choose $i in risti ($tietue, "k", "");
     result $i.alku, $i - alku;
@@ -273,6 +278,11 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (tatti in $tietue.jatko) then
+    choose $i in risti ($tietue, "t", "");
+    result $i.alku, $i - alku;
+
+
+  elseif (kiltti in $tietue.jatko) then
     choose $i in risti ($tietue, "t", "");
     result $i.alku, $i - alku;
 
@@ -4135,6 +4145,39 @@ subrule risti ($tietue, $vahva_aste, $heikko_aste):
                          voittoaste:      $heikko_aste + "i",
                          johdin_tOn:      $heikko_aste + "i", 
                          johdin_Us:       $vahva_aste  + "i",
+                         johdin_llinen:   $heikko_aste + "i",
+                         johdin_inen:     $vahva_aste]
+                        + yhdyssana ($vahva_aste + "i")
+                        + monikko7 ($heikko_aste + "i",
+                                    $vahva_aste + "e", $heikko_aste + "e",
+                                    [omanto_en: $vahva_aste + "i",
+                                     omanto_in: $vahva_aste + "e"],
+                                    [osanto_jA: $vahva_aste + "e"],
+                                    [sisätulento_ihin: $vahva_aste  + "e"],
+                                    $heikko_aste + "e"));
+end;
+
+
+subrule siisti ($tietue, $vahva_aste, $heikko_aste):
+  return taivutuskaava ($tietue,
+                        [tavuviiva:       $vahva_aste  + "i",
+                         omistusliite:    $vahva_aste  + "i",
+                         nimentö:         $vahva_aste  + "i",
+                         omanto_n:        $heikko_aste + "i",
+                         osanto_A:        $vahva_aste  + "i",
+                         olento_nA:       $vahva_aste  + "i",
+                         tulento_ksi:     $heikko_aste + "i",
+                         sisäolento_ssA:  $heikko_aste + "i",
+                         sisäeronto_stA:  $heikko_aste + "i",
+                         sisätulento_Vn:  $vahva_aste  + "i",
+                         ulko_olento_llA: $heikko_aste + "i",
+                         ulkoeronto_ltA:  $heikko_aste + "i",
+                         ulkotulento_lle: $heikko_aste + "i",
+                         vajanto_ttA:     $heikko_aste + "i",
+                         kerronto_sti:    $heikko_aste + "i",
+                         voittoaste:      $heikko_aste + "i",
+                         johdin_tOn:      $heikko_aste + "i",
+                         johdin_Us:       $vahva_aste  + "e",
                          johdin_llinen:   $heikko_aste + "i",
                          johdin_inen:     $vahva_aste]
                         + yhdyssana ($vahva_aste + "i")
