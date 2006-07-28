@@ -12015,7 +12015,6 @@
 [perusmuoto: "piirustaa", alku: "piirust", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "piisami", alku: "piisam", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "piisata", alku: "piis", luokka: teonsana, jatko: <salata>, äs: a];
-[perusmuoto: "piisata", alku: "pi", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "piisi", alku: "piis", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "piiska", alku: "piisk", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "piiskata", alku: "piisk", luokka: teonsana, jatko: <salata>, äs: a];

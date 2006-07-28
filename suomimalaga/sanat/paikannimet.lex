@@ -871,6 +871,7 @@
 [perusmuoto: "Savikko", alku: "Savik", luokka: paikannimi, jatko: <laatikko>, äs: a];
 [perusmuoto: "Savo", alku: "Savo", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Savolanvaara", alku: "Savolanvaar", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "Savonlinna", alku: "Savonlinn", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Seattle", alku: "Seattle", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Seelanti", alku: "Seelan", luokka: paikannimi, jatko: <tunti>, äs: a];
 [perusmuoto: "Segesa", alku: "Seges", luokka: paikannimi, jatko: <kala>, äs: a];

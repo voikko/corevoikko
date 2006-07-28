@@ -742,6 +742,7 @@
 [perusmuoto: "Kotonen", alku: "Koto", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Koukari", alku: "Koukar", luokka: sukunimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Kouki", alku: "Kouk", luokka: sukunimi, jatko: <risti>, äs: a];
+[perusmuoto: "Koukkunen", alku: "Koukku", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kovala", alku: "Koval", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kovalainen", alku: "Kovalai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kraatz", alku: "Kraatz", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -786,6 +787,7 @@
 [perusmuoto: "Kyllälä", alku: "Kylläl", luokka: sukunimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Kyllönen", alku: "Kyllö", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Kymäläinen", alku: "Kymäläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
+[perusmuoto: "Kyröläinen", alku: "Kyröläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Kytö", alku: "Ky", luokka: sukunimi, jatko: <leuto>, äs: ä];
 [perusmuoto: "Kytömaa", alku: "Kytöma", luokka: sukunimi, jatko: <maa>, äs: a];
 [perusmuoto: "Kyöttinen", alku: "Kyötti", luokka: sukunimi, jatko: <nainen>, äs: ä];
@@ -882,6 +884,7 @@
 [perusmuoto: "Lihtonen", alku: "Lihto", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Likonen", alku: "Liko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liikanen", alku: "Liika", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Liimatainen", alku: "Liimatai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liimatta", alku: "Liimat", luokka: sukunimi, jatko: <aitta>, äs: a];
 [perusmuoto: "Lilius", alku: "Liliu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Lillunen", alku: "Lillu", luokka: sukunimi, jatko: <nainen>, äs: a];
