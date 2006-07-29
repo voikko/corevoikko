@@ -6031,7 +6031,7 @@
 [perusmuoto: "kilsa", alku: "kils", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "kilta", alku: "kil", luokka: nimisana, jatko: <valta>, äs: a];
 [perusmuoto: "kiltteys", alku: "kilttey", luokka: nimisana, jatko: <kalleus>, äs: ä];
-[perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <tatti>, äs: ä]; #NS: 3 sanaa.
+[perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <kiltti>, äs: ä]; #NS: 3 sanaa.
 [perusmuoto: "kilvoitella", alku: "kilvo", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "kilvoitus", alku: "kilvoitu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kimakka", alku: "kimak", luokka: laatusana, jatko: <solakka>, äs: a];
@@ -13445,7 +13445,8 @@
 [perusmuoto: "ratatouille", alku: "ratatouille", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "ratifioida", alku: "ratifio", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "ratikka", alku: "ratik", luokka: nimisana, jatko: <solakka>, äs: a];
-[perusmuoto: "rationaali", alku: "rationaal", luokka: nimi_laatusana, jatko: <risti>, äs: a, tiedot: <inen>];
+[perusmuoto: "rationaali", alku: "rationaal", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "rationaalinen", alku: "rationaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "rationaalistaa", alku: "rationaalist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "rationalismi", alku: "rationalism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "rationalisoida", alku: "rationaliso", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -13528,7 +13529,8 @@
 [perusmuoto: "referenssi", alku: "referenss", luokka: nimisana, jatko: <risti>, äs: ä]; # Ei oo.
 [perusmuoto: "referoida", alku: "refero", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "refleksi", alku: "refleks", luokka: nimisana, jatko: <banaali>, äs: ä];
-[perusmuoto: "refleksiivi", alku: "refleksiiv", luokka: nimi_laatusana, jatko: <risti>, äs: ä, tiedot: <inen>];
+[perusmuoto: "refleksiivi", alku: "refleksiiv", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "refleksiivinen", alku: "refleksiivi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "reflektoida", alku: "reflekto", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "reflektori", alku: "reflektor", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "reformaatio", alku: "reformaatio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -15418,7 +15420,7 @@
 [perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "sosiaalinen", alku: "sosiaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sosiaalistaa", alku: "sosiaalist", luokka: teonsana, jatko: <hidastaa>, äs: a];
-[perusmuoto: "sosiali", alku: "sosial", luokka: laatusana, jatko: <risti>, äs: a];
+[perusmuoto: "sosiali", alku: "sosial", luokka: laatusana, jatko: <risti>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sosialisaatio", alku: "sosialisaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "sosialismi", alku: "sosialism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "sosialisoida", alku: "sosialiso", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -18780,7 +18782,7 @@
 [perusmuoto: "vilkuttaa", alku: "vilkut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "villa", alku: "vill", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "villava", alku: "villav", luokka: laatusana, jatko: <asema>, äs: a];
-[perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <risti>, äs: ä];
+[perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];
 [perusmuoto: "villiinnyttää", alku: "villiinnyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "villiintyä", alku: "villiin", luokka: teonsana, jatko: <jakaantua>, äs: ä];
 [perusmuoto: "villitys", alku: "villity", luokka: nimisana, jatko: <vastaus>, äs: ä];
