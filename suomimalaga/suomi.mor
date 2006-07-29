@@ -129,6 +129,11 @@ combi_rule etuliite ($vasen, $oikea, $sana):
     ? yhdyssana_oikein ($vasen, $oikea, $i);
   end;
 
+  if (nimisana in $oikea.jatko) then
+    result $vasen + <[alku: $sana] + $oikea>,
+           rules nimisana_teonsanasta;
+  end;
+
   if (kieltosana in $oikea.jatko) then
     result $vasen + <[alku: $sana] + $oikea>, rules kieltosana;
   else
