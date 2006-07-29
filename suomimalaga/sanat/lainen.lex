@@ -464,3 +464,10 @@
 [perusmuoto: "härmäläinen", alku: "härmäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "geneveläinen", alku: "geneveläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 
+# These do not logically belong here, but there is no reason to add a new file for these either.
+[perusmuoto: "allekirjoittaa", alku: "allekirjoi", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
+[perusmuoto: "audiovisuaalinen", alku: "audiovisuaali", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "edeleenjakaa", alku: "edelleenja", luokka: teonsana, jatko: <jakaa>, äs: a];
+[perusmuoto: "elintärkeä", alku: "elintärk", luokka: laatusana, jatko: <korkea>, äs: ä];
+[perusmuoto: "laajakaista", alku: "laajakaist", luokka: nimisana, jatko: <kala>, äs: a];
+

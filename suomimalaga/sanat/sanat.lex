@@ -1309,6 +1309,7 @@
 [perusmuoto: "digitaalinen", alku: "digitaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "digitalis", alku: "digitali", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "digitalisoida", alku: "digitaliso", luokka: teonsana, jatko: <kanavoida>, äs: a];
+[perusmuoto: "digitoida", alku: "digito", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "diileri", alku: "diiler", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "diiva", alku: "diiv", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "diivata", alku: "diiv", luokka: teonsana, jatko: <salata>, äs: a];
@@ -6363,6 +6364,7 @@
 [perusmuoto: "koko", alku: "ko", luokka: nimisana, jatko: <koko>, äs: a, tiedot: <inen>];
 [perusmuoto: "kokoelma", alku: "kokoelm", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "kokonainen", alku: "kokonai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "kokonais", alku: "kokonais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kokooja", alku: "kokooj", luokka: nimisana, jatko: <kantaja>, äs: a];
 [perusmuoto: "kokooma", alku: "kokoom", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "kokoomukselainen", alku: "kokoomukselai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -12134,6 +12136,7 @@
 [perusmuoto: "pippuroida", alku: "pippuro", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "piraatti", alku: "piraat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "pirahtaa", alku: "pirah", luokka: teonsana, jatko: <astahtaa>, äs: a];
+[perusmuoto: "piratismi", alku: "piratism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "pirhana", alku: "pirhan", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "piri", alku: "pir", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "piristä", alku: "pir", luokka: teonsana, jatko: <kihistä>, äs: ä];
@@ -19251,6 +19254,7 @@
 [perusmuoto: "yksitellen", alku: "yksitellen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yksitoikkoinen", alku: "yksitoikkoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "yksittäinen", alku: "yksittäi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "yksittäis", alku: "yksittäis", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "yksityinen", alku: "yksityi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "yksityis", alku: "yksityis", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "yksityistää", alku: "yksityist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
