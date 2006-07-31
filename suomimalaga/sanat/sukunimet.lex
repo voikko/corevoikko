@@ -1728,7 +1728,7 @@
 [perusmuoto: "Valkonen", alku: "Valko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Vallendahl", alku: "Vallendahl", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Vallin", alku: "Vallin", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Vallius", alku: "Alliu", luokka: sukunimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Vallius", alku: "Valliu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Valokainen", alku: "Valokai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Valonen", alku: "Valo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Valste", alku: "Valste", luokka: sukunimi, jatko: <hame>, äs: a];

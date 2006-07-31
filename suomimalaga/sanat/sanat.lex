@@ -1957,7 +1957,7 @@
 [perusmuoto: "faktuura", alku: "faktuur", luokka: nimisana, jatko: <pasuuna>, äs: a];
 [perusmuoto: "fakulteetti", alku: "fakulteet", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "falangi", alku: "falang", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "fallos", alku: "fallos", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "fallos", alku: "fallo", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "falsetti", alku: "falset", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "falski", alku: "falsk", luokka: laatusana, jatko: <risti>, äs: a];
 [perusmuoto: "fanaatikko", alku: "fanaatik", luokka: nimisana, jatko: <laatikko>, äs: a];
@@ -2253,7 +2253,7 @@
 [perusmuoto: "goljatti", alku: "goljat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "gondoli", alku: "gondol", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "gondolieeri", alku: "gondolieer", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "gongi", alku: "gong", luokka: nimisana, jatko: <risti >, äs: a];
+[perusmuoto: "gongi", alku: "gong", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "gonorrea", alku: "gonorre", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "goodwill", alku: "goodwill", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "gootti", alku: "goot", luokka: nimisana, jatko: <tatti>, äs: a];
@@ -7643,7 +7643,7 @@
 [perusmuoto: "köntys", alku: "könty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "könytä", alku: "köny", luokka: teonsana, jatko: <haluta>, äs: ä];
 [perusmuoto: "könöttää", alku: "könöt", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "köpelö", alku: "köpelö", luokka: nimi_laatusana, jatko: <arvelu>, äs: ä];
+[perusmuoto: "köpelö", alku: "köpel", luokka: nimi_laatusana, jatko: <hontelo>, äs: ä];
 [perusmuoto: "köpittää", alku: "köpit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "körtti", alku: "kört", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "köröttää", alku: "körö", luokka: teonsana, jatko: <kirjoittaa>, äs: ä];
@@ -8403,7 +8403,7 @@
 [perusmuoto: "liplatus", alku: "liplatu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "lipoa", alku: "li", luokka: teonsana, jatko: <leipoa>, äs: a];
 [perusmuoto: "lippa", alku: "lip", luokka: nimisana, jatko: <kappa>, äs: a];
-[perusmuoto: "lippis", alku: "lippi", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "lippis", alku: "lippi", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "lippu", alku: "lip", luokka: nimisana, jatko: <hoppu>, äs: a];
 [perusmuoto: "lippunen", alku: "lippu", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "lipsahtaa", alku: "lipsa", luokka: teonsana, jatko: <hujahtaa>, äs: a];

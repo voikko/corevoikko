@@ -344,7 +344,7 @@
 [perusmuoto: "Jyväskylä", alku: "Jyväskyl", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Jämsä", alku: "Jäms", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Jänkiälä", alku: "Jänkiäl", luokka: paikannimi, jatko: <apila>, äs: ä];
-[perusmuoto: "Järventaus", alku: "Järventaus", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Järventaus", alku: "Järventau", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Jääski", alku: "Jääsk", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Kaalamo", alku: "Kaalamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Kaanan", alku: "Kaanan", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -377,7 +377,7 @@
 [perusmuoto: "Kardioru", alku: "Kardioru", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Karelia", alku: "Kareli", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Karibia", alku: "Karibi", luokka: paikannimi, jatko: <karahka>, äs: a];
-[perusmuoto: "Karintaus", alku: "Karintaus", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Karintaus", alku: "Karintau", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Karjala", alku: "Karjal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Karkkila", alku: "Karkkil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Karkosaari", alku: "Karkosaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
@@ -448,7 +448,7 @@
 [perusmuoto: "Kontkala", alku: "Kontkal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Konttilansalmi", alku: "Konttilansalm", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Koppelo", alku: "Koppelo", luokka: paikannimi, jatko: <arvelu>, äs: a];
-[perusmuoto: "Kopras", alku: "Kopras", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Kopras", alku: "Kopra", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Korea", alku: "Kore", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Korsika", alku: "Korsik", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Kose", alku: "Kose", luokka: paikannimi, jatko: <nalle>, äs: a];
@@ -589,7 +589,7 @@
 [perusmuoto: "Martinique", alku: "Martinique", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Martonvaara", alku: "Martonvaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Maryland", alku: "Maryland", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Maspalomas", alku: "Maspalomas", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Maspalomas", alku: "Maspaloma", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Massachusetts", alku: "Massachusetts", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Mattila", alku: "Mattil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Mattisenlahti", alku: "Mattisenlah", luokka: paikannimi, jatko: <lahti>, äs: a];
@@ -930,7 +930,7 @@
 [perusmuoto: "Sulkava", alku: "Sulkav", luokka: paikannimi, jatko: <asema>, äs: a];
 [perusmuoto: "Sumatra", alku: "Sumatr", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Suomi", alku: "Suom", luokka: paikannimi, jatko: <lovi>, äs: a, tiedot: <ei_lAinen>];
-[perusmuoto: "Suontaus", alku: "Suontaus", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Suontaus", alku: "Suontau", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Suorlahti", alku: "Suorlah", luokka: paikannimi, jatko: <lahti>, äs: a];
 [perusmuoto: "Surinam", alku: "Surinam", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Suvela", alku: "Suvel", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -945,7 +945,6 @@
 [perusmuoto: "Syyria", alku: "Syyri", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Säkylä", alku: "Säkyl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Sätös", alku: "Sätö", luokka: paikannimi, jatko: <vastaus>, äs: ä];
-[perusmuoto: "Sätös", alku: "Sätös", luokka: paikannimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Säyneenkylä", alku: "Säyneenkyl", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Säyneinen", alku: "Säynei", luokka: paikannimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Sääminki", alku: "Säämin", luokka: paikannimi, jatko: <killinki>, äs: ä];
