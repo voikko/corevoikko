@@ -1,8 +1,8 @@
 Suomi-malaga - Voikko edition
 
 Suomi-malaga is a description of Finnish morphology written in Malaga
-(http://home.arcor.de/bjoern-beutel/malaga/). You need malaga version
-7.4.
+(http://home.arcor.de/bjoern-beutel/malaga/). You should use malaga
+version 7.4 or later.
 
 Currently Suomi-malaga is used in two different applications: text
 indexer Sukija and spellchecker/hyphenator Voikko. Unfortunately it
@@ -23,9 +23,11 @@ LUE.MINUT and subdirectory ohjeet). This README contains only build
 and usage instructions for distribution packagers.
 
 Building Suomi-malaga for Voikko from this package does not require
-anything else than malaga and make. No configuration is required:
-you only need to run
-  make
+anything else than malaga and optionally make.
+No configuration is required: you only need to run
+  make (if you have make installed)
+or
+  malmake suomi.pro (if you do not have make installed)
 in this directory and ship all files ending with _l or _b and suomi.pro
 with your application. With Voikko this typically means placing the files
 in /usr/lib/voikko or ~/.voikko if you do not want to touch the shared

@@ -23,7 +23,7 @@ transmit: transmit.cc
 	g++ -g transmit.cc -o transmit
 
 
-SM=suomi-malaga-0.7
+SM=suomi-malaga-0.7.1
 
 tar:
 	rm -f ${SM}.tar ${SM}.tar.bz2

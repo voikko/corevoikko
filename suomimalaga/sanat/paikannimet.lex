@@ -975,7 +975,8 @@
 [perusmuoto: "Tessalonika", alku: "Tessalonik", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Texas", alku: "Texas", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Teyrivaara", alku: "Teyrivaar", luokka: paikannimi, jatko: <kala>, äs: a];
-[perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "Thaimaa", alku: "Thaima", luokka: paikannimi, jatko: <maa>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Tiernaissaari", alku: "Tiernaissaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
 [perusmuoto: "Tiibet", alku: "Tiibet", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Tikkala", alku: "Tikkal", luokka: paikannimi, jatko: <apila>, äs: a];
