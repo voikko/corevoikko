@@ -46,6 +46,11 @@ grads = [ (u'sw', u'tt', u'av1'),
 	(u'sw', u'k>', u'av5'),
 	(u'ws', u'>k', u'av6')   ]
 
+# Joukahainen word classes
+SUBST = 1
+ADJ = 2
+VERB = 3
+
 classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'k>',u'(ko)ko',u'koko'),
 			(u'k>',u'(ruo)ko',u'ruoko'),
@@ -71,9 +76,8 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'kk',u'(.*k)kO',u'verkko'),
 			(u'k>',u'(.*h)kO',u'vihko'),
 			(u'k>',u'(.*)kO',u'verkko')   ]),
-	(u'arvelu', u'sw', [
-			#(None,u'(.*e[lr])O',u'hontelo'),
-			#(None,u'(.*)',u'arvelu'),
+	(u'arvelu', u'sw', [(None,u'(.*Ce[lr])O',u'hontelo',[ADJ]),
+			(None,u'(.*)',u'arvelu'),
 			(u'nk',u'(.*n)kO',u'alanko'),
 			(u'nt',u'(.*n)tO',u'avanto'),
 			(u'kk',u'(.*k)kO',u'laatikko'),
@@ -170,6 +174,7 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'suo', u'-', [(None,u'(.*C)UO',u'suo')]),
 	(u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
 	(u'nainen', u'-', [(None,u'(.*)nen',u'nainen')]),
+	(u'vastaus', u'-', [(None,u'(.*V)s',u'vastaus')]),
 	# Verbs
 	(u'punoa', u'sw', [(None,u'(.*)A',u'punoa'),
 	                   (u'mp',u'(.*m)pUA',u'ampua'),

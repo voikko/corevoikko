@@ -30,7 +30,7 @@ import _pg
 
 outputfile = codecs.open("/tmp/sanat.malaga", "w", "UTF-8")
 
-def find_malaga_word_class(word, hf_class, hf_histclass):
+def find_malaga_word_class(word, hf_class, hf_histclass, hf_wordclass):
 	# If historical class was set, see first if it can be used in Malaga
 	for histclass in hfconv.histmap:
 		if hf_histclass == histclass[0]:
@@ -53,6 +53,7 @@ def find_malaga_word_class(word, hf_class, hf_histclass):
 	for infclass in hfconv.classmap:
 		if infclass[0] != classparts[0]: continue
 		for subclass in infclass[2]:
+			if len(subclass) > 3 and not hf_wordclass in subclass[3]: continue
 			if not subclass[0] in gradtypes: continue
 			alku = hfconv.match_re(word, subclass[1])
 			if alku != None: return (alku, subclass[2])
@@ -105,7 +106,7 @@ for result in results.getresult():
 			hf_class = unicode(result[2], 'UTF-8')
 			if result[4] == None: hf_histclass = None
 			else: hf_histclass = unicode(result[4], 'UTF-8')
-			(alku, jatko) = find_malaga_word_class(word, hf_class, hf_histclass)
+			(alku, jatko) = find_malaga_word_class(word, hf_class, hf_histclass, result[1])
 			if alku == None:
 				print u"Malaga class not found for (%s, %i, %s)" % (result[0], result[1], result[2])
 				continue
