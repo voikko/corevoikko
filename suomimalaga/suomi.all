@@ -4045,8 +4045,7 @@ subrule koko ($tietue,
   return taivutuskaava ($tietue,
                         yksikkö_valo ($yksikön_vahva_aste, $yksikön_heikko_aste) +
                         monikko7 ($yksikön_heikko_aste, $monikon_vahva_aste, $monikon_heikko_aste,
-                                  [omanto_jen: $monikon_vahva_aste,
-                                   omanto_in: $monikon_vahva_aste],
+                                  [omanto_jen: $monikon_vahva_aste],
                                   [osanto_jA: $monikon_vahva_aste],
                                   [sisätulento_ihin: $monikon_vahva_aste],
                                   $monikon_heikko_aste));
