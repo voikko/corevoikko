@@ -166,6 +166,9 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 	wcscpy(part1, word);
 
 	for (splitind = wlen - 2; splitind >= 2; splitind--) {
+		/* Do not split a word if there is a hyphen before the last character of part1
+		   or after the first character of part2 */
+		if (word[splitind-2] == L'-' || word[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
 		part1_res = voikko_spell_with_priority(part1, splitind, &prio_total);
 		(*cost)++;
@@ -256,8 +259,12 @@ void voikko_suggest_insert_special(int handle, wchar_t *** suggestions, int * ma
 	wchar_t * buffer = malloc((wlen + 2) * sizeof(wchar_t));
 	if (buffer == 0) return;
 	wcsncpy(buffer + 1, word, wlen + 1);
+	
 	/* suggest adding '-' */
 	for (j = 2; j <= wlen - 2 && *max_suggestions > 0; j++) {
+		/* Do not add hyphen if there already is another nearby */
+		if (word[j-2] == L'-' || word[j-1] == L'-' || word[j] == L'-' || word[j+1] == L'-')
+			continue;
 		wcsncpy(buffer, word, j);
 		buffer[j] = L'-';
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
@@ -271,6 +278,7 @@ void voikko_suggest_insert_special(int handle, wchar_t *** suggestions, int * ma
 			j++;
 			continue;
 		}
+		if (word[j] == L'-' || word[j] == L'\'') continue; /* These should not be duplicated */
 		voikko_suggest_correct_case(handle, suggestions, max_suggestions,
 		                            buffer, wlen + 1, cost, prios);
 	}
