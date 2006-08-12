@@ -257,6 +257,8 @@ tapaluokka;
   johdin_tAr;       # Pappi >= papitar.
   johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).
   johdin_llinen;    # Juhla+llinen.
+  johdin_lAinen;    # Kaupunki+lainen.
+  johdin_mAinen;    # Kaupunki+mainen.
   johdin_mmUUs;     # Valkoise+mmuus.
   johdin_immUUs;    # Valkois+immuus.
 
@@ -327,6 +329,7 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
              # aateli -> aatelinen, koska aatelinen voi olla myös nimisana, ja
              # se on erikseen sanastossa.
   ei_lAinen; # Sanalla ei ole -lAinen-johdosta. Ei suomi+lainen.
+  ei_mAinen; # Sanalla ei ole -mAinen-johdosta.
   ei_sukija; # Sanaa ei ole sukija-versiossa.
   ei_voikko; # Sanaa ei ole voikko-versiossa.
   ei_ys;     # Sana ei voi olla yhdyssanan osana.
@@ -337,6 +340,8 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
              # Muuten tällaiset sanat hyväksytään vain yhdyssanan jälkiosana.
   latex;     # LaTeX-komento.
   murre;     # Murteissa tai puhekielessä esiintyvä sana.
+  risti2;    # Sana, joka taipuu vanhan taivutuksen mukaan kuten banaali tai paperi
+             # ja uuden taivutuksen mukaan kuten risti.
   siv;       # Sivistyssanan alku- tai loppuosa.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
 
@@ -345,7 +350,7 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.
 
 
-# Lippuja
+# Lippuja. Merkitys on selitetty suomi-*.pro -tiedostoissa.
 malli;
   voikko;
   sukija;
@@ -358,16 +363,24 @@ tulostus;
   koe;
 
 
+# Nykysuomen sanakirja
+# Ensimmäinen osa A-K
+# WSOY
+# Helsinki 1966
+# s. XII-XVIII
+#
 # Suomen kielen perussanakirja
 # Ensimmäinen osa A-K
 # Valtion painatuskeskus
 # Helsinki 1990
-#
 # s. XIV-XVII, XIX
-
-# Sanat, jotka taipuvat kuin valo, arvelu, jne.
-
+#
 # Tuomo Tuomi: Suomen kielen käänteissanakirja, s. 529-544.
+#
+# Sanojen taivutus voi olla erilainen eri kirjoissa.
+# Suomi-malaga noudattaa yleensä Nykysuomen sanakirjan taivutusta.
+#
+# Sanat, jotka taipuvat kuin valo, jne.
 
 valo;
   aalto;
@@ -666,7 +679,8 @@ muistaa;      # => muistella, muisto, muistua
   voitaa;     # => voidella
   hujahtaa;   # => hujahdella, hujauttaa, hujahdus
   itää;
-  kirjoittaa; # Ja kirjottaa. => kirjo(i)tella, kirjo(i)tus
+  kirjoittaa; # Sukija-versiossa myös kirjottaa => kirjo(i)tella, kirjo(i)tus
+  ammottaa;   # Sukija-versiossa myös ammoittaa => ammo(i)tella ammo(i)tus
   kyntää;
   loistaa;    # => loistella, loisto
   purkaa;
