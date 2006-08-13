@@ -16451,11 +16451,11 @@
 [perusmuoto: "tarkastaa", alku: "tarkast", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "tarkastamo", alku: "tarkastamo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "tarkata", alku: "tark", luokka: teonsana, jatko: <pakata>, äs: a];
+[perusmuoto: "tarke", alku: "tark", luokka: nimisana, jatko: <tarvike>, äs: a];
 [perusmuoto: "tarkenne", alku: "tarken", luokka: nimisana, jatko: <enne>, äs: a];
 [perusmuoto: "tarkennin", alku: "tarken", luokka: nimisana, jatko: <vaimennin>, äs: a];
 [perusmuoto: "tarkennus", alku: "tarkennu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "tarkentaa", alku: "tarken", luokka: teonsana, jatko: <pahentaa>, äs: a];
-[perusmuoto: "tarke", alku: "tark", luokka: nimisana, jatko: <tarvike>, äs: a];
 [perusmuoto: "tarketa", alku: "tark", luokka: teonsana, jatko: <vaieta>, äs: a];
 [perusmuoto: "tarkimmin", alku: "tarkimmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarkistaa", alku: "tarkist", luokka: teonsana, jatko: <aavistaa>, äs: a];
