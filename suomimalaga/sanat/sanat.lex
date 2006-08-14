@@ -8254,6 +8254,7 @@
 [perusmuoto: "lievähkö", alku: "lievähkö", luokka: laatusana, jatko: <arvelu>, äs: ä];
 [perusmuoto: "liftari", alku: "liftar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "liftata", alku: "lift", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "ligatuuri", alku: "ligatuur", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "liha", alku: "lih", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "lihaksikas", alku: "lihaksik", luokka: laatusana, jatko: <iäkäs>, äs: a];
 [perusmuoto: "lihaksisto", alku: "lihaksisto", luokka: nimisana, jatko: <valo>, äs: a];
