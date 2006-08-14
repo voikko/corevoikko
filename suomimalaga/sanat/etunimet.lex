@@ -246,6 +246,7 @@
 [perusmuoto: "Daniel", alku: "Daniel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Dario", alku: "Dario", luokka: etunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Daryl", alku: "Daryl", luokka: etunimi, jatko: <edam>, äs: aä];
+[perusmuoto: "Dashiel", alku: "Dashiel", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "David", alku: "David", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dimitri", alku: "Dimitr", luokka: etunimi, jatko: <paperi>, äs: ä];
 [perusmuoto: "Douglas", alku: "Douglas", luokka: etunimi, jatko: <kalsium>, äs: a];

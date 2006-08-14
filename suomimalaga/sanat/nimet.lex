@@ -183,6 +183,7 @@
 [perusmuoto: "Narnia", alku: "Narni", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Nato", alku: "Nato", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nebula", alku: "Nebul", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "Nemesis", alku: "Nemesi", luokka: nimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Nessu", alku: "Nessu", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nintendo", alku: "Nintendo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Nordea", alku: "Norde", luokka: nimi, jatko: <apila>, äs: a];
