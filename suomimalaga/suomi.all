@@ -47,6 +47,7 @@
 # This file has been modified by the contributors of Hunspell-fi project.
 # Last change was on $Date$ by $Author$.
 
+
 include "suomi.inc";
 include "subrule.inc";
 
@@ -59,7 +60,8 @@ include "subrule.inc";
 
 
 allo_rule generate_allos ($tietue):
-  define $malli := switch (malli);  # Katso tiedosto suomi.pro.
+  define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
+  define $taivutus := switch (taivutus);
 
 ##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
 #define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
@@ -478,7 +480,8 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:      "e",
                                  johdin_Us:       "e",
                                  johdin_llinen:   "e"] +
-# Ei tarvita johdosta johdin_inen. HV 13.5.2006.
+# Ei tarvita johdosta johdin_inen. HV 13.5.2006. Eikä johdin_lAinen. HV 13.7.2006.
+# Eikä johdin_mAinen. HV 24.7.2006.
                                 monikko7 ("e", "", "",
                                           [omanto_en: "i",
                                            omanto_in: "e"],
@@ -783,6 +786,7 @@ allo_rule generate_allos ($tietue):
                                 ulkoeronto_ltA:   A($tietue),
                                 ulkotulento_lle:  A($tietue),
                                 vajanto_ttA:      A($tietue),
+
                                 johdin_tOn:       A($tietue),
                                 johdin_llinen:    A($tietue),
                                 johdin_inen:      A($tietue),
@@ -883,6 +887,7 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:     "e",
                                  johdin_llinen:  "e",
                                  johdin_inen:    ""] +
+# Ei tarvita johdosta lAinen. HV 13.7.2006.
                                 monikko7 ("e", "", "",
                                           [omanto_iT:  ""],
                                           [osanto_itA: ""],
@@ -3630,10 +3635,18 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_inen;
   end;
 
-  # Ei inen-johdosta kaikista nimisanoista (esim. aateli -> aatelinen).
+  # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
   #
-  if (($tietue.tiedot /= nil) and (ei_inen in $tietue.tiedot)) then
-    $taivutus :=- johdin_inen;
+  if ($tietue.tiedot /= nil) then
+    if (ei_inen in $tietue.tiedot) then
+      $taivutus :=- johdin_inen;
+    end;
+    if (ei_lAinen in $tietue.tiedot) then
+      $taivutus :=- johdin_lAinen;
+    end;
+    if (ei_mAinen in $tietue.tiedot) then
+      $taivutus :=- johdin_mAinen;
+    end;
   end;
 
 
@@ -3908,7 +3921,8 @@ subrule ruoka ($tietue):
                          vajanto_ttA:      "ua",
                          johdin_tOn:       "ua",
                          johdin_llinen:    "ua",
-# Ei tarvita johdosta johdin_inen. HV 13.5.2006.
+# Ei tarvita johdosta johdin_inen. HV 13.5.2006. Eikä johdin_lAinen. HV 13.7.2006.
+# Eikä johdinta johdin_mAinen. HV 24.7.2006.
                          nimentö_t:        "ua"]);
 end;
 
@@ -4462,7 +4476,9 @@ subrule jälki ($tietue, $vahva_aste, $heikko_aste):
                          vajanto_ttA:     "e",
                          johdin_tOn:      "e",
                          johdin_llinen:   "e",
-# Ei tarvita johdosta johdin_inen. HV 13.5.2006. "Jäleinen".
+# Ei tarvita johdosta johdin_inen ("jäleinen"). HV 13.5.2006.
+# Eikä johdin_lAinen ("jälelainen"). HV 13.7.2006.
+# Eikä johdin_mAinen ("jälemainen"). HV 24.7.2006.
                          nimentö_t:        "e",
                          tulento_iksi:     "",
                          sisäolento_issA:  "",
@@ -4650,6 +4666,8 @@ subrule alkeet ($tietue):
                         [johdin_tOn:    "e",
                          johdin_llinen: "e",
                          johdin_inen:   ""] +
+# Ei tarvita johdinta johdin_lAinen ("alkeetlainen"). HV 13.7.2006.
+# Eikä johdinta johdin_mAinen ("alkeetmainen"). HV 24.7.2006.
                         monikko7 ("e", "",  "",
                                   [omanto_iT:         ""],
                                   [osanto_itA:        ""],
