@@ -21,6 +21,7 @@
 #include "voikko_setup.h"
 #include "voikko_suggest.h"
 #include "voikko_spell.h"
+#include "voikko_charset.h"
 #include <stdlib.h>
 #include <wchar.h>
 #include <wctype.h>
@@ -357,6 +358,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	int * prios;
 	int * free_prio;
 	wchar_t ** free_sugg;
+	wchar_t * nword;
 	size_t wlen;
 	int cost;
 	int suggestions_left;
@@ -364,11 +366,19 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wlen = wcslen(word);
 	if (wlen <= 1) return 0;
 	
+	nword = voikko_normalise(word, wlen);
+	if (nword == 0) return 0;
+	wlen = wcslen(nword);
+	
 	suggestions = calloc(MAX_SUGGESTIONS * 3 + 1, sizeof(wchar_t *));
-	if (suggestions == 0) return 0;
+	if (suggestions == 0) {
+		free(nword);
+		return 0;
+	}
 	prios = malloc(MAX_SUGGESTIONS * 3 * sizeof(int));
 	if (prios == 0) {
 		free(suggestions);
+		free(nword);
 		return 0;
 	}
 	free_sugg = suggestions;
@@ -376,40 +386,42 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	suggestions_left = MAX_SUGGESTIONS * 3;
 	cost = 0;
 	
-	voikko_suggest_correct_case(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+	voikko_suggest_correct_case(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (suggestions_left != MAX_SUGGESTIONS * 3) {
 		free(prios);
+		free(nword);
 		return suggestions;
 	}
-	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_word_split(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+		voikko_suggest_word_split(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 0, 50);
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 0, 50);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_deletion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+		voikko_suggest_deletion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insert_special(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+		voikko_suggest_insert_special(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 0, 5);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 0, 5);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio);
+		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 51, 74);
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 51, 74);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 6, 10);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 6, 10);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 11, 15);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 11, 15);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 16, 20);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 16, 20);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 21, 25);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 21, 25);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, word, wlen, &cost, &free_prio, 26, 29);
+		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 26, 29);
 
 	if (suggestions_left == MAX_SUGGESTIONS * 3) {
 		free(suggestions);
 		free(prios);
+		free(nword);
 		return 0;
 	}
 	
@@ -436,7 +448,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	}
 
 	/* Change the character case to match the original word */
-	enum casetype origcase = voikko_casetype(word, wlen);
+	enum casetype origcase = voikko_casetype(nword, wlen);
 	size_t suglen;
 	if (origcase == CT_FIRST_UPPER) {
 		i = 0;
@@ -455,7 +467,8 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 			i++;
 		}
 	}
-
+	
+	free(nword);
 	return suggestions;
 }
 

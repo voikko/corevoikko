@@ -20,6 +20,7 @@
 #include "voikko_spell.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
+#include "voikko_charset.h"
 #include <stdlib.h>
 #include <string.h>
 #include <malaga.h>
@@ -149,26 +150,41 @@ enum spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 
 
 int voikko_spell_ucs4(int handle, const wchar_t * word) {
-	int nchars = wcslen(word);
+	size_t nchars = wcslen(word);
 	int i;
 	int result;
+	wchar_t * nword;
 	wchar_t * buffer;
 	int dot_index;
 	enum casetype caps;
 	enum spellresult sres;
 	if (nchars == 0) return VOIKKO_SPELL_OK;
+	
+	nword = voikko_normalise(word, nchars);
+	if (nword == 0) return VOIKKO_INTERNAL_ERROR;
+	nchars = wcslen(nword);
+	
 	if (voikko_options.ignore_numbers) {
 		for (i = 0; i < nchars; i++) {
-			if (iswdigit(word[i])) return VOIKKO_SPELL_OK;
+			if (iswdigit(nword[i])) {
+				free(nword);
+				return VOIKKO_SPELL_OK;
+			}
 		}
 	}
-	caps = voikko_casetype(word, nchars);
-	if (voikko_options.ignore_uppercase && caps == CT_ALL_UPPER) return VOIKKO_SPELL_OK;
+	caps = voikko_casetype(nword, nchars);
+	if (voikko_options.ignore_uppercase && caps == CT_ALL_UPPER){
+		free(nword);
+		return VOIKKO_SPELL_OK;
+	}
 	
 	buffer = malloc((nchars + 1) * sizeof(wchar_t));
-	if (buffer == 0) return VOIKKO_INTERNAL_ERROR;
+	if (buffer == 0) {
+		free(nword);
+		return VOIKKO_INTERNAL_ERROR;
+	}
 
-	for (i = 0; i < nchars; i++) buffer[i] = towlower(word[i]);
+	for (i = 0; i < nchars; i++) buffer[i] = towlower(nword[i]);
 	buffer[nchars] = L'\0';
 	if (voikko_options.ignore_dot && buffer[nchars - 1] == L'.') {
 		dot_index = nchars - 1;
@@ -179,20 +195,21 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	/* Check words that require exact captialisation */
 	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS ||
 	    (caps == CT_ALL_UPPER && !voikko_options.accept_all_uppercase)) {
-		wcsncpy(buffer, word, nchars);
+		wcsncpy(buffer, nword, nchars);
 		buffer[0] = towlower(buffer[0]);
 		sres = voikko_do_spell(buffer, nchars);
 		if (sres == SPELL_OK ||
-		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(word[0])))
+		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
 			result = VOIKKO_SPELL_OK;
 		else result = VOIKKO_SPELL_FAILED;
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
 			sres = voikko_do_spell(buffer, nchars);
 			if (sres == SPELL_OK ||
-			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(word[0])))
+			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
 				result = VOIKKO_SPELL_OK;
 		}
+		free(nword);
 		free(buffer);
 		return result;
 	}
@@ -219,6 +236,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 			result = VOIKKO_INTERNAL_ERROR;
 	}
 	if (result == VOIKKO_SPELL_OK) {
+		free(nword);
 		free(buffer);
 		return VOIKKO_SPELL_OK;
 	}
@@ -245,6 +263,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 				result = VOIKKO_INTERNAL_ERROR;
 		}
 	}
+	free(nword);
 	free(buffer);
 	return result;
 }

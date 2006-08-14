@@ -1,5 +1,12 @@
 2006-08-14 Harri Pitkänen  <hatapitk@iki.fi>
 
+	* Accept some alternative Unicode sequences for certain characters.
+	  This is enabled only for spellchecking: it is still recommended that
+	  applications convert string to a normalised form (see src/voikko_charset.c)
+	  before using hyphenator functions.
+
+2006-08-14 Harri Pitkänen  <hatapitk@iki.fi>
+
 	* Modify suggestions to match the character case of the original word
 	  if this is possible without invalidating the suggestion.
 
