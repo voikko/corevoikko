@@ -1,3 +1,8 @@
+2006-08-14 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Modify suggestions to match the character case of the original word
+	  if this is possible without invalidating the suggestion.
+
 2006-08-12 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Do not suggest splitting a word or adding a hyphen in certain

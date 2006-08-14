@@ -51,4 +51,11 @@ int voikko_hash(const wchar_t * word, size_t len, int order);
  */
 enum casetype voikko_casetype(const wchar_t * word, size_t nchars);
 
+/** Changes a string to use defined character case
+ * @param charcase character case
+ * @param word string to change
+ * @param nchars length of the string
+ */
+void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars);
+
 #endif

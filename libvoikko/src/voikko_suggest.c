@@ -435,6 +435,27 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		suggestions[i] = 0;
 	}
 
+	/* Change the character case to match the original word */
+	enum casetype origcase = voikko_casetype(word, wlen);
+	size_t suglen;
+	if (origcase == CT_FIRST_UPPER) {
+		i = 0;
+		while (suggestions[i] != 0) {
+			suglen = wcslen(suggestions[i]);
+			if (voikko_casetype(suggestions[i], suglen) == CT_ALL_LOWER)
+				voikko_set_case(CT_FIRST_UPPER, suggestions[i], suglen);
+			i++;
+		}
+	}
+	if (origcase == CT_ALL_UPPER) {
+		i = 0;
+		while (suggestions[i] != 0) {
+			suglen = wcslen(suggestions[i]);
+			voikko_set_case(CT_ALL_UPPER, suggestions[i], suglen);
+			i++;
+		}
+	}
+
 	return suggestions;
 }
 

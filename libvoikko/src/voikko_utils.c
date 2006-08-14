@@ -158,3 +158,23 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 	if (first_uc) return CT_FIRST_UPPER;
 	else return CT_ALL_LOWER;
 }
+
+void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
+	size_t i;
+	if (nchars == 0) return;
+	switch (charcase) {
+		case CT_NO_LETTERS:
+		case CT_COMPLEX:
+			return; /* Do nothing */
+		case CT_ALL_LOWER:
+			for (i = 0; i < nchars; i++) word[i] = towlower(word[i]);
+			return;
+		case CT_ALL_UPPER:
+			for (i = 0; i < nchars; i++) word[i] = towupper(word[i]);
+			return;
+		case CT_FIRST_UPPER:
+			word[0] = towupper(word[0]);
+			for (i = 1; i < nchars; i++) word[i] = towlower(word[i]);
+			return;
+	}
+}
