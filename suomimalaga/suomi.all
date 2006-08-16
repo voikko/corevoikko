@@ -2196,11 +2196,42 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (kirjoittaa in $tietue.jatko) then
-    choose $i in muistaa ($tietue, "t"  + tA($tietue), tA($tietue),       "tt",  "t") +
-                 taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +
-                 kirjoittautua ($tietue, "tt") +
-                 kirjoitella ($tietue, "t");
-    result $i.alku, $i - alku;
+    if ($malli = voikko) then
+      choose $i in muistaa ($tietue, "it" + tA($tietue), "i" + tA($tietue), "itt", "it") +
+                   taivutuskaava ($tietue, [johdin_Us_ksen: "it"]) +  # Kirjoitus.
+                   kirjoittautua ($tietue, "itt") +      # Kirjoittautua.
+                   kirjoitella ($tietue, "it");          # Kirjoitella.
+      result $i.alku, $i - alku;
+    else
+      choose $i in muistaa ($tietue, "it" + tA($tietue), "i" + tA($tietue), "itt", "it") +
+                   muistaa ($tietue, "t"  + tA($tietue), tA($tietue),       "tt",  "t") +
+                   taivutuskaava ($tietue, [johdin_Us_ksen: "it"]) +  # Kirjoitus.
+                   taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +   # Kirjotus.
+                   kirjoittautua ($tietue, "itt") +          # Kirjoittautua.
+                   kirjoittautua ($tietue, "tt") +           # Kirjottautua.
+                   kirjoitella ($tietue, "it") +  # Kirjoitella.
+                   kirjoitella ($tietue, "t");    # Kirjotella.
+      result $i.alku, $i - alku;
+    end;
+
+  elseif (ammottaa in $tietue.jatko) then
+    if ($malli = voikko) then
+      choose $i in muistaa ($tietue, "t"  + tA($tietue), tA($tietue), "tt",  "t") +
+                   taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +   # Ammotus.
+                   kirjoittautua ($tietue, "tt") +   # Ammottautua.
+                   kirjoitella ($tietue, "t");       # Ammotella.
+      result $i.alku, $i - alku;
+    else
+      choose $i in muistaa ($tietue, "it" + tA($tietue), "i" + tA($tietue), "itt", "it") +
+                   muistaa ($tietue, "t"  + tA($tietue), tA($tietue),       "tt",  "t") +
+                   taivutuskaava ($tietue, [johdin_Us_ksen: "it"]) +  # Kirjoitus.
+                   taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +   # Kirjotus.
+                   kirjoittautua ($tietue, "itt") +          # Kirjoittautua.
+                   kirjoittautua ($tietue, "tt") +           # Kirjottautua.
+                   kirjoitella ($tietue, "it") +  # Kirjoitella.
+                   kirjoitella ($tietue, "t");    # Kirjotella.
+      result $i.alku, $i - alku;
+    end;
 
   elseif (kyntää in $tietue.jatko) then
     choose $i in muistaa ($tietue, tA($tietue), nA($tietue), "t", "n");
