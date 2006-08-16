@@ -75,6 +75,7 @@
 [perusmuoto: "Tšekki", alku: "Tshek", luokka: paikannimi, jatko: <takki>, äs: ä];
 [perusmuoto: "Tšekkoslovakia", alku: "Tshekkoslovaki", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Tšeljabinsk", alku: "Tsheljabinsk", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Tšetšenia", alku: "Tshetsheni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "bolševikki", alku: "bolshevik", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "bolševismi", alku: "bolshevism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "bolševistinen", alku: "bolshevisti", luokka: laatusana, jatko: <nainen>, äs: a];
