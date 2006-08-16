@@ -1778,6 +1778,7 @@
 [perusmuoto: "Vikman", alku: "Vikman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Vikström", alku: "Vikström", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Vilen", alku: "Vilen", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Vilén", alku: "Vilén", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Vilenius", alku: "Vileniu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Vilhula", alku: "Vilhul", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Vilkamaa", alku: "Vilkama", luokka: sukunimi, jatko: <maa>, äs: a];
