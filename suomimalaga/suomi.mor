@@ -68,7 +68,6 @@ include "subrule.inc";
 #               omistusliite, liitesana, loppu;
 #end;
 
-define @teonsana := <teonsana, kieltosana>;
 
 define @ehtotapa := <ehtotapa, ehtotapa_ttA, ehtotapa_tA>;
 
@@ -91,9 +90,6 @@ define @laatutapa_2 := <laatutapa_2_lUt, laatutapa_2_nUt, laatutapa_2_rUt,
                         laatutapa_2_sUt, laatutapa_2_ttU,
                         laatutapa_2_dU, laatutapa_2_lU, laatutapa_2_nU,
                         laatutapa_2_rU, laatutapa_2_stU, laatutapa_2_tU>;
-
-define @voittoaste := <voittoaste>;
-define @yliaste    := <yliaste>;
 
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
 
@@ -207,20 +203,10 @@ combi_rule laatusana ($vasen, $oikea, $sana):
 
   define $i := length ($vasen);
 
-#define $nimi := transmit (<"laatusana"> + <$vasen.$i.alku> + <$oikea> + <$sana>);
-#define $n := transmit (<"luokka"> + <$vasen.$i.luokka>);
-
   if ($i greater 0) then
-    ? ($oikea.luokka in $vasen.$i.jatko);
-    # Ei tulevaisuuden => tulevais+uusi eikä kuntoisuuden => kuntois+uusi
-    ? not (($oikea.perusmuoto = "uusi")
-           and (($vasen.$i.luokka in <johdin_llinen, johdin_vA, johdin_vE, johdin_vAinen>)
-                or (($vasen.$i.luokka in @laatusana)
-                    and ($vasen.$i.perusmuoto matches ".*inen"))));
+    ? (laatusana in $vasen.$i.jatko);
     ? yhdyssana_oikein ($vasen, $oikea, $i);
   end;
-
-##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
@@ -236,9 +222,6 @@ end;
 
 combi_rule asemosana ($vasen, $oikea, $sana):
   ? $oikea.luokka = asemosana;
-##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-#define $nimi := transmit (<"asemosana"> + <$oikea> + <$sana>);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, liitesana, tavuviiva, loppu;
@@ -246,9 +229,7 @@ end;
 
 
 combi_rule lyhennesääntö ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <lyhenne>;
-
-#define $nimi := transmit (<"lyhennesääntö"> + <$vasen> + <$oikea> + <$sana>);
+  ? $oikea.luokka = lyhenne;
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules kaksoispiste, tavuviiva, loppu;
@@ -257,9 +238,6 @@ end;
 
 combi_rule apusana ($vasen, $oikea, $sana):
   ? $oikea.luokka in <huudahdussana, sidesana>;
-##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-#define $nimi := transmit (<"apusana"> + <$oikea> + <$sana>);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules liitesana, tavuviiva, loppu;
@@ -267,16 +245,7 @@ end;
 
 
 combi_rule kaksoispiste ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <kaksoispiste>;
-
-#HP/4.5.06: Voiko mitenkään olla length($vasen) = 0?
-#  define $i := length ($vasen);
-#  if ($i greater 0) then
-#    ? ($oikea.luokka in $vasen.$i.jatko);
-#  end;
-
-
-#define $nimi := transmit (<":"> + <$vasen> + <$oikea> + <$sana> + <length($vasen)>);
+  ? $oikea.luokka = kaksoispiste;
 
   result $vasen + <[alku: $sana] + $oikea + [äs: $vasen.length($vasen).äs]>,
          rules sijapääte;
@@ -284,16 +253,11 @@ end;
 
 
 combi_rule tavuviiva ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <tavuviiva>;
+  ? $oikea.luokka = tavuviiva;
 
   define $i := length ($vasen);
 
-#define $nimi1 := transmit (<"tavuviiva1"> + <$vasen>);
-#define $nimi2 := transmit (<"tavuviiva2"> + <$oikea>);
-#define $nimi3 := transmit (<"tavuviiva3"> + <$sana>);
-#define $n := transmit (<"i"> + <$i>);
-
-  ? (($i = 0) or (($i greater 0) and ($oikea.luokka in $vasen.$i.jatko)));
+  ? (($i = 0) or (tavuviiva in $vasen.$i.jatko));
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules nimisana, laatusana, asemosana, lyhennesääntö,
@@ -309,8 +273,6 @@ define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
 
 combi_rule sijapääte ($vasen, $oikea, $sana):
   ? $oikea.luokka = sijapääte;
-
-#define $nimi := transmit (<$vasen> + <$oikea> + <$sana>);
 
   define $edellinen := $vasen.length ($vasen);
 
@@ -328,7 +290,6 @@ combi_rule sijapääte ($vasen, $oikea, $sana):
     end;
 
     if ($oikea.sija = kerronto_sti) then
-#define $a:= transmit (<"sti"> + <$edellinen.perusmuoto> + <$edellinen.luokka>);
       ? $edellinen.luokka in @sti_edeltäjä;
       result $vasen + <[alku: $sana] + $oikea>,
              rules liitesana, loppu;
@@ -350,14 +311,6 @@ combi_rule teonsana ($vasen, $oikea, $sana):
     ? $oikea.luokka in $vasen.$i.jatko;
     ? yhdyssana_oikein ($vasen, $oikea, $i);
   end;
-
-##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-#define $n1 := transmit (<"teonsana1"> + <$vasen>);
-#define $n2 := transmit (<"teonsana2"> + <$oikea>);
-#define $n3 := transmit (<"teonsana3"> + <$sana>);
-#define $n4 := transmit (<"teonsana4"> + <$i>);
-#define $n5 := transmit (<"">);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules tekijämuodot, nimitavat, laatutavat,
@@ -417,7 +370,6 @@ combi_rule nimitapa_1_pitkä ($vasen, $oikea, $sana):
   ? nimitapa_1_pitkä in $vasen.$i.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-#define $nimi := transmit ("nimitapa_1_pitkä " + $vasen.$i.alku + " " + $sana);
   result $vasen + <[alku: $sana] + $oikea>, rules omistusliite;
 end;
 
@@ -431,15 +383,6 @@ combi_rule laatutavat ($vasen, $oikea, $sana):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
   ? yhdysteonsana_oikein ($vasen, $i);
 
-#define $n1 := transmit (<"laatutapa1"> + <$vasen>);
-#define $n2 := transmit (<"laatutapa2"> + <$oikea>);
-#define $n3 := transmit (<"laatutapa3"> + <$sana>);
-#define $n4 := transmit (<"laatutapa4"> + <$i>);
-#define $n5 := transmit (<"">);
-
-
-#define $nimi := transmit ("laatutavat " + $vasen.$i.alku + " " + $sana);
-
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite, liitesana,
                voitto_yliaste, loppu;
@@ -448,9 +391,7 @@ end;
 
 combi_rule kieltosana ($vasen, $oikea, $sana):
   ? $oikea.luokka = kieltosana;
-#  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-#define $nimi := transmit (<"kieltosana"> + <$sana>);
   result $vasen + <[alku: $sana] + $oikea>,
          rules liitesana, liitesana_kä, tavuviiva, loppu;
 end;
@@ -463,18 +404,12 @@ combi_rule liitesana ($vasen, $oikea, $sana):
   ? $oikea.luokka in $vasen.$i.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-#define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
-#                    <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
-
   if (($vasen.$i.luokka = teonsana) and
       ($vasen.$i.tapaluokka = käskytapa) and
       ($vasen.$i.tekijä = 2) and
       ($vasen.$i.luku = yksikkö)) then
     ? not ($sana in <"ko", "kö">);
   end;
-
-#define $nimi := transmit (<"liitesana"> + <$vasen.$i> + <$sana>);
-#define $nimi := transmit ("liitesana " + $vasen.$i.alku + " " + $sana);
 
   result $vasen + <[alku: $sana] + $oikea>, rules loppu;
 end;
@@ -484,10 +419,9 @@ combi_rule liitesana_kä ($vasen, $oikea, $sana):
   ? $oikea.luokka = liitesana_kä;
 
   define $i := length ($vasen);
-  ? $oikea.luokka in $vasen.$i.jatko;
+  ? liitesana_kä in $vasen.$i.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-#define $nimi := transmit ("liitesana_kä " + $vasen.$i.alku + " " + $sana);
   result $vasen + <[alku: $sana] + $oikea>, rules liitesana, loppu;
 end;
 
@@ -496,16 +430,13 @@ combi_rule omistusliite ($vasen, $oikea, $sana):
   ? $oikea.luokka = omistusliite;
 
   define $i := length ($vasen);
-  ? $oikea.luokka in $vasen.$i.jatko;
+  ? omistusliite in $vasen.$i.jatko;
 
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   define $result := $vasen + <[alku: $sana] + $oikea>;
 
-#define $nimi := transmit ("omistusliite " + $vasen.$i.alku + " " + $sana);
-
   if ($i greater 1) then
-##  ? (not ($vasen.<1,perusmuoto> in <"mikä", "moni">));
     ? (not ($vasen.<1,luokka> = asemosana));
   end;
 
@@ -530,7 +461,7 @@ end;
 
 
 combi_rule voitto_yliaste ($vasen, $oikea, $sana):
-  ? $oikea.luokka in @voittoaste + @yliaste;
+  ? $oikea.luokka in <voittoaste, yliaste>;
 
   define $i := length ($vasen);
 
@@ -540,9 +471,6 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana):
   ? (voittoaste in $vasen.$i.jatko) or (yliaste in $vasen.$i.jatko);
   ? $oikea.luokka in $vasen.$i.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-#define $nimi := transmit ("voitto_yliaste " + $vasen.$i.alku + " " + $sana);
-#define $nimi := transmit (<"voitto_yliaste"> + <$vasen> + <$oikea> + <$sana>);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, liitesana, omistusliite,

@@ -17905,7 +17905,7 @@
 [perusmuoto: "uurtaa", alku: "uur", luokka: teonsana, jatko: <murtaa>, äs: a];
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "uusia", alku: "uus", luokka: teonsana, jatko: <sallia>, äs: a];
-[perusmuoto: "uusi", alku: "uu", luokka: laatusana, jatko: <susi>, äs: a];
+[perusmuoto: "uusi", alku: "uu", luokka: laatusana, jatko: <susi>, äs: a, tiedot: <ei_ysj>];
 [perusmuoto: "uusinto", alku: "uusin", luokka: nimisana, jatko: <avanto>, äs: a];
 [perusmuoto: "uusio", alku: "uusio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "uusiutua", alku: "uusiu", luokka: teonsana, jatko: <kaatua>, äs: a];
