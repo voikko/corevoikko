@@ -183,7 +183,7 @@ combi_rule nimisana ($vasen, $oikea, $sana):
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
-               liitesana, liitesana2,
+               liitesana,
                nimisana,
                nimisanan_johdos,
                nimisana_laatusanasta, nimisana_teonsanasta,
@@ -233,7 +233,7 @@ combi_rule laatusana ($vasen, $oikea, $sana):
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
-               liitesana, liitesana2,
+               liitesana,
                nimisana, laatusana,
                laatusanan_johdos,
                voitto_yliaste,
@@ -370,7 +370,7 @@ combi_rule teonsana ($vasen, $oikea, $sana):
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules tekijämuodot, nimitavat, laatutavat,
-               liitesana, liitesana2,
+               liitesana,
                teonsanan_johdos,
                tavuviiva, loppu;
 end;
@@ -394,7 +394,7 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana):
 
 
   result $vasen + <[alku: $sana] + $oikea>,
-         rules liitesana, liitesana2, loppu;
+         rules liitesana, loppu;
 end;
 
 
@@ -412,7 +412,7 @@ combi_rule nimitavat ($vasen, $oikea, $sana):
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules nimitapa_1_pitkä, sijapääte, omistusliite,
-               liitesana, liitesana2,
+               liitesana,
                nimisana, laatusana, teonsana,
                loppu;
 end;
@@ -484,28 +484,6 @@ combi_rule liitesana ($vasen, $oikea, $sana):
 
 #define $nimi := transmit (<"liitesana"> + <$vasen.$i> + <$sana>);
 #define $nimi := transmit ("liitesana " + $vasen.$i.alku + " " + $sana);
-
-  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
-end;
-
-
-combi_rule liitesana2 ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <liitesana2>;
-
-  define $i := length ($vasen);
-  ? $oikea.luokka in $vasen.$i.jatko;
-  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-#  if ($i greater 1) then
-#    if ($i = 2) then
-#      ? (($vasen.$i.luokka = käskytapa) and ($vasen.$i.tekijä = 2)
-#         and ($oikea.luokka = liitesana_s));
-#    else
-#      ? ($oikea.luokka in <liitesana2, liitesana_s>);
-#    end;
-#  end;
-
-#define $nimi := transmit ("liitesana2 " + $vasen.$i.alku + " " + $sana);
 
   result $vasen + <[alku: $sana] + $oikea>, rules loppu;
 end;
@@ -1310,7 +1288,7 @@ subrule perusmuoto ($tietue):
       $t :=+ <$tietue.$k.alku>;
     elseif ($edellinen_luokka in @johdin + <nimitapa_4>) then
       $t :=+ <$tietue.$k.alku>;
-    elseif (not ($luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
+    elseif (not ($luokka in <sijapääte, liitesana, liitesana_s,
                              omistusliite, kaksoispiste,
                              voittoaste, yliaste,
                              liitesana_kä, liitesana_pi, nimitapa_5>
@@ -1414,7 +1392,7 @@ subrule perusmuoto_yhdyssanan_rajoineen ($tietue):
     elseif ($edellinen_luokka in @johdin + <nimitapa_4>) then
       $t :=+ <$tietue.$k.alku>;
       $t :=+ sanan_alkumerkki ($tietue.$k);
-    elseif (not ($luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
+    elseif (not ($luokka in <sijapääte, liitesana, liitesana_s,
                              omistusliite, kaksoispiste,
                              voittoaste, yliaste,
                              liitesana_kä, liitesana_pi, nimitapa_5>
@@ -1502,7 +1480,7 @@ define $aa := transmit ($tietue);
       $t :=+ <$tietue.$k.alku>;
       $t :=+ sanan_alkumerkki ($tietue.$k);
       $t :=+ <"[B">;
-    elseif (not ($luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
+    elseif (not ($luokka in <sijapääte, liitesana, liitesana_s,
                              omistusliite, kaksoispiste,
                              voittoaste, yliaste,
                              liitesana_kä, liitesana_pi, nimitapa_5>
