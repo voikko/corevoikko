@@ -156,15 +156,6 @@ combi_rule nimisana ($vasen, $oikea, $sana):
        ((nimisana in $vasen.$i.jatko) and
         ($oikea.luokka in @nimisana + @lukusana)));
 
-    if ($oikea.perusmuoto /= nil) then
-      if ($oikea.perusmuoto in <"lainen", "läinen">) then
-        ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-      end;
-    end;
-
-    ? not ($oikea.perusmuoto in <"aini", "aki", "asta", "eini", "ella", "ida", "ii",
-                                 "ismi", "isto", "itu", "jani", "tuko", "uksi">);
-
     ? yhdyssana_oikein ($vasen, $oikea, $i);
 
     if $vasen.$i.luokka in <laatusana, nimi_laatusana> then

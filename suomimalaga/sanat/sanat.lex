@@ -4161,7 +4161,7 @@
 [perusmuoto: "iskuri", alku: "iskur", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "iskä", alku: "isk", luokka: nimisana, jatko: <koira>, äs: ä];
 [perusmuoto: "islam", alku: "islam", luokka: nimisana, jatko: <kalsium>, äs: a];
-[perusmuoto: "ismi", alku: "ism", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "ismi", alku: "ism", luokka: nimisana, jatko: <risti>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "iso", alku: "iso", luokka: nimi_laatusana, jatko: <valo>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "iso", alku: "iso", luokka: laatusana, jatko: <valo>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "isohko", alku: "isohko", luokka: laatusana, jatko: <arvelu>, äs: a];
@@ -4216,7 +4216,7 @@
 [perusmuoto: "itsestään", alku: "itsestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsetykönä", alku: "itsetykönä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "itseys", alku: "itsey", luokka: nimisana, jatko: <kalleus>, äs: ä];
-[perusmuoto: "itu", alku: "i", luokka: nimisana, jatko: <laatu>, äs: a];
+[perusmuoto: "itu", alku: "i", luokka: nimisana, jatko: <laatu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "itä", alku: "i", luokka: nimisana, jatko: <juhta>, äs: ä, tiedot: <inen>];
 [perusmuoto: "itää", alku: "i", luokka: teonsana, jatko: <itää>, äs: ä];
 [perusmuoto: "iva", alku: "iv", luokka: nimisana, jatko: <kala>, äs: a];
@@ -7764,7 +7764,7 @@
 [perusmuoto: "lainautua", alku: "lainau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "laine", alku: "laine", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "lainehtia", alku: "laineh", luokka: teonsana, jatko: <laatia>, äs: a];
-[perusmuoto: "lainen", alku: "lai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "lainen", alku: "lai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "lainkaan", alku: "lainkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "lainoittaa", alku: "laino", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "laipasto", alku: "laipasto", luokka: nimisana, jatko: <arvelu>, äs: a];
@@ -17733,7 +17733,7 @@
 [perusmuoto: "ukkonen", alku: "ukko", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ukkostaa", alku: "ukkost", luokka: teonsana, jatko: <aavistaa>, äs: a, yt: yt];
 [perusmuoto: "ukraina", alku: "ukrain", luokka: paikannimi, jatko: <karahka>, äs: a];
-[perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a];
+[perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "ukulele", alku: "ukulele", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "ula", alku: "ul", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "ulappa", alku: "ulap", luokka: nimisana, jatko: <ulappa>, äs: a];
