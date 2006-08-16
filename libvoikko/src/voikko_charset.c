@@ -79,12 +79,12 @@ const wchar_t * CONV_2TO1 =
 	L"u\u0302" L"\u00FB"  /* LATIN SMALL LETTER U WITH CIRCUMFLEX */
 	L"u\u0308" L"\u00FC"  /* LATIN SMALL LETTER U WITH DIAERESIS */
 	L"y\u0301" L"\u00FD"  /* LATIN SMALL LETTER Y WITH ACUTE */
-	L"y\u0308" L"\u00FF"; /* LATIN SMALL LETTER Y WITH DIAERESIS */
+	L"y\u0308" L"\u00FF"  /* LATIN SMALL LETTER Y WITH DIAERESIS */
 	/* Basic Latin + Combining Diacritical Marks --> Latin Extended-A */
 	L"S\u030C" L"\u0160"  /* LATIN CAPITAL LETTER S WITH CARON */
 	L"s\u030C" L"\u0161"  /* LATIN SMALL LETTER S WITH CARON */
 	L"Z\u030C" L"\u017D"  /* LATIN CAPITAL LETTER Z WITH CARON */
-	L"z\u030C" L"\u017E"  /* LATIN SMALL LETTER Z WITH CARON */
+	L"z\u030C" L"\u017E"; /* LATIN SMALL LETTER Z WITH CARON */
 
 const int N_1TO1 = 2; /* Number of entries in this table */
 const wchar_t * CONV_1TO1 =

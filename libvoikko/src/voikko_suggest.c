@@ -200,14 +200,14 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 	free(part1);
 }
 
-/* ä=\u00e4, ö=\u00f6, å=\u00e5, š=\u0161, ž=\u017e*/
+/* ä=\u00e4, ö=\u00f6, å=\u00e5, š=\u0161, ž=\u017e, é=\u00e9, â=\u00e2 */
 
 const wchar_t * REPLACE_ORIG =
 	L"aiites"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbcwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
-	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5";
+	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5a"  L"e"  L"a";
 const wchar_t * REPLACE_REPLACEMENT = 
 	L"suorr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
-	L"jpp"  L"kdglhuiel"  L"tvvkasaka";
+	L"jpp"  L"kdglhuiel"  L"tvvkasaka"  L"\u00e5\u00e9\u00e2";
 
 void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_suggestions,
                                 const wchar_t * word, size_t wlen, int * cost, int ** prios, int start, int end) {
@@ -406,7 +406,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_swap(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
 	if (cost < COST_LIMIT && suggestions_left > 0)
-		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 51, 74);
+		voikko_suggest_replacement(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 51, 77);
 	if (cost < COST_LIMIT && suggestions_left > 0)
 		voikko_suggest_insertion(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio, 6, 10);
 	if (cost < COST_LIMIT && suggestions_left > 0)
