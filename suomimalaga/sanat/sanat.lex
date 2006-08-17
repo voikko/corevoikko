@@ -833,7 +833,7 @@
 [perusmuoto: "astutus", alku: "astutu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "asua", alku: "asu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "asu", alku: "asu", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
-[perusmuoto: "asuinpaikka", alku: "asuinpaik", luokka: nimisana, jatko: <haka>, äs: a];
+[perusmuoto: "asuin", alku: "asuin", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "asujaimisto", alku: "asujaimisto", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "asujamisto", alku: "asujamisto", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "asukas", alku: "asuk", luokka: nimisana, jatko: <asiakas>, äs: a];

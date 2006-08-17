@@ -91,6 +91,8 @@ define @laatutapa_2 := <laatutapa_2_lUt, laatutapa_2_nUt, laatutapa_2_rUt,
                         laatutapa_2_dU, laatutapa_2_lU, laatutapa_2_nU,
                         laatutapa_2_rU, laatutapa_2_stU, laatutapa_2_tU>;
 
+# Johtimet teonsanoista
+
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
 
 define @johdin_tU := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU>;
@@ -98,21 +100,42 @@ define @johdin_tU := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU>;
 define @johdin_laatutapa := @johdin_nUt + @johdin_tU + <johdin_stU, johdin_ttU>;
 define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
 
-define @johdin_teonsanasta :=
-       <johdin_mA, johdin_tOn, johdin_UUs, johdin_Us, johdin_ntA, johdin_nti,
-        johdin_Us_ksen, johdin_vA, johdin_vE, johdin_vAinen, johdin_tAvA,
-        johdin_ttAvA, johdin_llinen, johdin_ittAin>
-       + @johdin_jA
-       + @johdin_laatutapa;
+define @johtimet_nimisana_teonsanasta :=
+       <johdin_mA, johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>
+       + @johdin_jA;
 
-define @johdin_nimisanasta := <johdin_ittAin, johdin_llinen, johdin_inen,
-                               johdin_tOn, johdin_tAr>
-                              + @johdin_jA;
+define @johtimet_laatusana_teonsanasta :=
+       <johdin_tOn, johdin_vA, johdin_vE, johdin_vAinen, johdin_tAvA, johdin_ttAvA,
+        johdin_llinen> + @johdin_laatutapa;
 
-define @johdin_laatusanasta := <johdin_Us, johdin_UUs>;
+define @johtimet_seikkasana_teonsanasta := <johdin_ittAin>; #FIXME: onko tämä oikein?
+
+define @johdin_teonsanasta := @johtimet_nimisana_teonsanasta
+                            + @johtimet_laatusana_teonsanasta
+                            + @johtimet_seikkasana_teonsanasta;
 
 
-define @johdin := @johdin_teonsanasta + @johdin_nimisanasta + @johdin_laatusanasta;
+# Johtimet nimisanoista
+
+define @johtimet_nimisana_nimisanasta := <johdin_tAr, johdin_lAinen>;
+
+define @johtimet_laatusana_nimisanasta := <johdin_llinen, johdin_inen, johdin_tOn,
+                                           johdin_mAinen>;
+
+define @johtimet_seikkasana_nimisanasta := <johdin_ittAin>;
+
+define @johdin_nimisanasta := @johtimet_nimisana_nimisanasta
+                            + @johtimet_laatusana_nimisanasta
+                            + @johtimet_seikkasana_nimisanasta
+                            + @johdin_jA; #FIXME: onko tämä oikein?
+
+
+# Johtimet laatusanoista
+define @johtimet_nimisana_laatusanasta := <johdin_Us, johdin_UUs>;
+define @johtimet_laatusanasta := @johtimet_nimisana_laatusanasta;
+
+
+define @johdin := @johdin_teonsanasta + @johdin_nimisanasta + @johtimet_laatusanasta;
 
 
 combi_rule etuliite ($vasen, $oikea, $sana):
@@ -557,7 +580,7 @@ end;
 
 combi_rule laatusanan_johdos ($vasen, $oikea, $sana):
 # Laatusana voi olla myös nimi_laatusana, siksi @johdin_nimisanasta.
-  ? $oikea.luokka in @johdin_laatusanasta + @johdin_nimisanasta;
+  ? $oikea.luokka in @johtimet_nimisana_laatusanasta + @johdin_nimisanasta;
 
   define $i := length ($vasen);
 #define $a := transmit (<$vasen.$i> + <$oikea> + <$sana>);
@@ -997,7 +1020,7 @@ end_rule loppu ($tietue):
   # inen-johtimella tehty sana voi olla vain yhdyssanan lopussa,
   # paitsi jos se on merkitty omaksi sanakseen.
   #
-  repeat while ($tietue.$j.luokka in @johdin_laatusanasta + @johdin_nimisanasta - <johdin_inen>);
+  repeat while ($tietue.$j.luokka in @johtimet_nimisana_laatusanasta + @johdin_nimisanasta - <johdin_inen>);
     $j :=- 1;
   end;
   define $k := $j;
