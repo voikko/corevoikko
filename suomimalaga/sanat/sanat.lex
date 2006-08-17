@@ -1691,7 +1691,7 @@
 [perusmuoto: "eno", alku: "eno", luokka: nimisana, jatko: <valo>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "ensi", alku: "ensi", luokka: laatusana, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija>];
-[perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @sana2, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ensikertalainen", alku: "ensikertalai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ensiksi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensiksimainittu", alku: "ensiksimainit", luokka: nimisana, jatko: <raamattu>, äs: a];
@@ -1706,6 +1706,7 @@
 [perusmuoto: "enteillä", alku: "enteil", luokka: teonsana, jatko: <katsella>, äs: ä];
 [perusmuoto: "entinen", alku: "enti", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "entiselleen", alku: "entiselleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "entisenlainen", alku: "entisenlai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "entistää", alku: "entist", luokka: teonsana, jatko: <aavistaa>, äs: ä];
 [perusmuoto: "entisöidä", alku: "entisö", luokka: teonsana, jatko: <kanavoida>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "entrata", alku: "entr", luokka: teonsana, jatko: <salata>, äs: a];
@@ -2481,6 +2482,7 @@
 [perusmuoto: "halukas", alku: "haluk", luokka: laatusana, jatko: <iäkäs>, äs: a];
 [perusmuoto: "haluta", alku: "halu", luokka: teonsana, jatko: <haluta>, äs: a];
 [perusmuoto: "haluttaa", alku: "halut", luokka: teonsana, jatko: <alittaa>, äs: a];
+[perusmuoto: "halutunlainen", alku: "halutunlai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "halva", alku: "halv", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "halvaannuttaa", alku: "halvaannut", luokka: teonsana, jatko: <autioittaa>, äs: a];
 [perusmuoto: "halvaantua", alku: "halvaan", luokka: teonsana, jatko: <jakaantua>, äs: a];

@@ -120,7 +120,7 @@ define @johdin_teonsanasta := @johtimet_nimisana_teonsanasta
 define @johtimet_nimisana_nimisanasta := <johdin_tAr, johdin_lAinen>;
 
 define @johtimet_laatusana_nimisanasta := <johdin_llinen, johdin_inen, johdin_tOn,
-                                           johdin_mAinen>;
+                                           johdin_mAinen, johdin_lAinen>;
 
 define @johtimet_seikkasana_nimisanasta := <johdin_ittAin>;
 
@@ -289,9 +289,10 @@ end;
 
 
 define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
-                         johdin_inen, johdin_llinen, johdin_nUt,
-                         johdin_tAvA, johdin_tOn, johdin_ttAvA, johdin_ttU,
+                         johdin_nUt,
+                         johdin_tAvA, johdin_ttAvA, johdin_ttU,
                          johdin_vA, johdin_vAinen, johdin_vE>
+                        + @johtimet_laatusana_nimisanasta
                         + @lukusana + @laatutapa_1 + @laatutapa_2;
 
 combi_rule sijapääte ($vasen, $oikea, $sana):
@@ -488,7 +489,8 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana):
 
   define $i := length ($vasen);
 
-  ? $vasen.$i.luokka in @laatusana + <johdin_llinen, johdin_inen, johdin_tOn, johdin_vAinen>
+  ? $vasen.$i.luokka in @laatusana + <johdin_vAinen> +
+                        @johtimet_laatusana_nimisanasta
                         + @laatutapa_1 + @laatutapa_2 + @johdin_laatutapa;
 
   ? (voittoaste in $vasen.$i.jatko) or (yliaste in $vasen.$i.jatko);
@@ -553,9 +555,13 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana):
   ? $oikea.luokka in @johdin_nimisanasta;
 
   define $i := length ($vasen);
-  if ($i greater 0) then
-    ? $oikea.luokka in $vasen.$i.jatko;
-    ? not ($vasen.$i.luokka in @erisnimi);
+  ? $oikea.luokka in $vasen.$i.jatko;
+  ? not ($vasen.$i.luokka in @erisnimi);
+  if $oikea.luokka = johdin_lAinen then
+    ? $vasen.$i.luokka = paikannimi;
+  else
+    ? $vasen.$i.luokka in <nimisana, nimi_laatusana> + @johtimet_nimisana_nimisanasta
+      + @johtimet_nimisana_laatusanasta + @johtimet_nimisana_teonsanasta;
   end;
 
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
