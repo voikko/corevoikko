@@ -388,6 +388,8 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:       "je",
                                  johdin_Us:        "je",
                                  johdin_llinen:    "je",
+                                 johdin_lAinen:    "i",   # Ei veli+lainen.
+                                 johdin_mAinen:    "i",
                                  johdin_inen:      "j"] +
                                 monikko7 ("je", "j", "j",
                                           [omanto_ien: "j", omanto_en: "i"],
@@ -439,6 +441,8 @@ allo_rule generate_allos ($tietue):
                                  voittoaste:      "mi",
                                  johdin_tOn:      "mi",
                                  johdin_llinen:   "mi",
+                                 johdin_lAinen:   "pe",
+                                 johdin_mAinen:   "pi",
                                  johdin_inen:     "mi",
 
                                  nimentö_t:        "mi",
@@ -959,6 +963,8 @@ allo_rule generate_allos ($tietue):
                                           "i", "i") +
                                 [johdin_tOn:       "i",
                                  johdin_llinen:    "i",
+                                 johdin_lAinen:    "i",
+                                 johdin_mAinen:    "i",
                                  johdin_inen:      ""] +
                                 monikko7 ("i", "", "",
                                           [omanto_iT: ""],

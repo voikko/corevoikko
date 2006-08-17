@@ -8985,7 +8985,7 @@
 [perusmuoto: "lööperi", alku: "lööper", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "lööppi", alku: "lööp", luokka: nimisana, jatko: <keppi>, äs: ä];
 [perusmuoto: "maa", alku: "maitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "maa", alku: "ma", luokka: nimisana, jatko: <maa>, äs: a, tiedot: <inen>];
+[perusmuoto: "maa", alku: "ma", luokka: nimisana, jatko: <maa>, äs: a];
 [perusmuoto: "maadoittaa", alku: "maado", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "maagi", alku: "maag", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "maagikko", alku: "maagik", luokka: nimisana, jatko: <laatikko>, äs: a];

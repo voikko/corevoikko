@@ -1380,6 +1380,21 @@ define @jatko_vastauks  := @jatko_ks;
 [alku: "ittain", luokka: johdin_ittAin, äs: a, perusmuoto: "ittain", jatko: <liitesana, loppu>];
 [alku: "ittäin", luokka: johdin_ittAin, äs: ä, perusmuoto: "ittäin", jatko: <liitesana, loppu>];
 
+# Juhla => juhla+lainen. Parempi esimerikki: kaupunki+lainen.
+[alku: "lainen", luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: @jatko_nen];
+[alku: "laise",  luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: @jatko_se];
+[alku: "lais",   luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: @jatko_s];
+[alku: "läinen", luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: @jatko_nen];
+[alku: "läise",  luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: @jatko_se];
+[alku: "läis",   luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: @jatko_s];
+
+# Juhla => juhla+mainen.
+[alku: "mainen", luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: @jatko_nen];
+[alku: "maise",  luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: @jatko_se];
+[alku: "mais",   luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: @jatko_s];
+[alku: "mäinen", luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_nen];
+[alku: "mäise",  luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_se];
+[alku: "mäis",   luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_s];
 
 
 define @jatko_tar := <liitesana, loppu, osanto_tA, omanto_ten> + @yhdyssana;

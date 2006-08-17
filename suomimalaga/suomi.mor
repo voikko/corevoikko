@@ -556,7 +556,6 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana):
 
   define $i := length ($vasen);
   ? $oikea.luokka in $vasen.$i.jatko;
-  ? not ($vasen.$i.luokka in @erisnimi);
   if $oikea.luokka = johdin_lAinen then
     ? $vasen.$i.luokka = paikannimi;
   else
@@ -566,12 +565,14 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana):
 
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-#if (johdin_inen in @johdin_nimisanasta) then
-#define $nimi := transmit ("nimisanan_johdos " + $vasen.$i.alku + " " + $sana);
-#define $a := transmit (<"a"> + <$vasen>);
-#define $b := transmit (<"b"> + <$oikea>);
-#define $c := transmit (<"c"> + <$sana>);
-#end;
+  if ($oikea.luokka = johdin_inen) then
+    ? not ($i greater 1 and $vasen.$i.perusmuoto /= nil and $vasen.$i.perusmuoto = "maa");
+    result $vasen + <[alku: $sana] + $oikea>,
+           rules sijapääte, omistusliite, liitesana,
+                 voitto_yliaste, laatusanan_johdos,
+                 tavuviiva, loppu;
+    stop;
+  end;
 
   result $vasen + <[alku: $sana] + $oikea>,
           rules sijapääte, omistusliite, liitesana,
@@ -1040,7 +1041,7 @@ end_rule loppu ($tietue):
       end;
     end;
     $k :=- 1;
-  while ($k greater 0);
+  while ($k greater 1);
   end;
 
 
