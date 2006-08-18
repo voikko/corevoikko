@@ -56,6 +56,7 @@
 [perusmuoto: "Aberth", alku: "Aberth", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Adams", alku: "Adams", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Agricola", alku: "Agricol", luokka: sukunimi, jatko: <koira>, äs: a];
+[perusmuoto: "Aherto", alku: "Aher", luokka: sukunimi, jatko: <kaarto>, äs: a];
 [perusmuoto: "Ahi", alku: "Ah", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Ahlberg", alku: "Ahlberg", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ahlbäck", alku: "Ahlbäck", luokka: sukunimi, jatko: <kalsium>, äs: ä];
@@ -489,6 +490,7 @@
 [perusmuoto: "Hytönen", alku: "Hytö", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Hyvärinen", alku: "Hyväri", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Hyvönen", alku: "Hyvö", luokka: sukunimi, jatko: <nainen>, äs: ä];
+[perusmuoto: "Hyysalo", alku: "Hyysalo", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Hyytinen", alku: "Hyyti", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Hägglund", alku: "Hägglund", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Häikiö", alku: "Häikiö", luokka: sukunimi, jatko: <autio>, äs: ä];
@@ -1655,6 +1657,7 @@
 [perusmuoto: "Tillman", alku: "Tillman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Timonen", alku: "Timo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Timpuri", alku: "Timpur", luokka: sukunimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Tirilä", alku: "Tiril", luokka: sukunimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Tirranen", alku: "Tirra", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Tirri", alku: "Tirr", luokka: sukunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Tirronen", alku: "Tirro", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -1763,6 +1766,7 @@
 [perusmuoto: "Venäläinen", alku: "Venäläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Vepsäläinen", alku: "Vepsäläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Vermeer", alku: "Vermeer", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Vesisenaho", alku: "Vesisenaho", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Vessonen", alku: "Vesso", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Vesterinen", alku: "Vesteri", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Veteläinen", alku: "Veteläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
