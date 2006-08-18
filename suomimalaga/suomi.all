@@ -1015,6 +1015,7 @@ allo_rule generate_allos ($tietue):
                                           "", "") +
                                 [johdin_tOn:       "",
                                  johdin_llinen:    "",
+                                 johdin_mAinen:    "",
                                  johdin_inen:      ""] +
                                 monikko7 ("", "", "",
                                           [omanto_iT: ""],
@@ -1035,6 +1036,7 @@ allo_rule generate_allos ($tietue):
                                           "", "") +
                                 [johdin_tOn:      "",
                                  johdin_llinen:   "",
+                                 johdin_mAinen:   "",
                                  johdin_inen:     ""] +
                                 monikko7 ("", "", "",
                                           [omanto_iT: ""],
@@ -1086,6 +1088,8 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_Vn, "de", "di") +
                                 [johdin_tOn:    "de",
                                  johdin_llinen: "de",
+                                 johdin_lAinen: "te",
+                                 johdin_mAinen: "ti",
                                  johdin_inen:   "t"] +
                                 monikko7 ("de", "t", "d",
                                           [omanto_ien: "t", omanto_in: "te"],
@@ -1101,6 +1105,7 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_Vn, "me", "mi") +
                                 [johdin_tOn:    "me",
                                  johdin_llinen: "me",
+                                 johdin_mAinen: "mi",
                                  johdin_inen:   "m"] +
                                 monikko7 ("me", "m", "m",
                                           [omanto_ien: "m", omanto_ten: "n"],
@@ -1117,6 +1122,7 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_Vn, "me", "mi") +
                                 [johdin_tOn:    "me",
                                  johdin_llinen: "me",
+                                 johdin_mAinen: "mi",
                                  johdin_inen:   "m"] +
                                 monikko7 ("me", "m", "m",
                                           [omanto_ien: "m", omanto_ten: "n"],
@@ -1134,6 +1140,7 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:      "e",
                                  johdin_Us:       "e",
                                  johdin_llinen:   "e",
+                                 johdin_mAinen:   "i",
                                  johdin_inen:     ""] +
                                 monikko7 ("e", "", "",
                                           [omanto_ten: "", omanto_ien: ""],
@@ -1152,6 +1159,7 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:       "e",
                                  johdin_UUs:       "",
                                  johdin_llinen:    "e",
+                                 johdin_mAinen:    "i",
                                  johdin_inen:      ""] +
                                 monikko7 ("e", "", "",
                                           [omanto_ien: "", omanto_ten: ""],
@@ -1242,7 +1250,8 @@ allo_rule generate_allos ($tietue):
                                           "kse", "ksi") +
                                 [johdin_tOn:      "kse",
                                  johdin_llinen:   "kse",
-                                 johdin_inen:     "ksi"] +
+                                 johdin_mAinen:   "ksi",
+                                 johdin_inen:     "ks"] +
                                 monikko7 ("kse", "ks", "ks",
                                           [omanto_en: "ksi", omanto_ten: "s"],
                                           [osanto_iA: "ks"],
@@ -1257,7 +1266,8 @@ allo_rule generate_allos ($tietue):
                                           "hde", "ksi") +
                                 [johdin_tOn:      "hde",
                                  johdin_llinen:   "hde",
-                                 johdin_inen:     "ksi"] +
+                                 johdin_mAinen:   "ksi",
+                                 johdin_inen:     "ks"] +
                                 monikko7 ("hde", "ks", "ks",
                                           [omanto_ien: "ks"],
                                           [osanto_iA: "ks"],
@@ -1626,7 +1636,8 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:      "he",
                                  johdin_UUs:      "h",    # Miehyys. Miehuus on pantava sanakirjaan.
                                  johdin_Us:       "he",   # Mieheys.
-                                 johdin_llinen:   "he"] + # Miehellinen
+                                 johdin_llinen:   "he",   # Miehellinen
+                                 johdin_mAinen:   "s"] +
 ####################                                 johdin_inen:     "hi"] + # Miehinen on jo sanastossa.
                                 monikko7 ("he", "h", "h",
                                           [omanto_ten: "s", omanto_ien: "h"],
@@ -1643,6 +1654,7 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:      "e",
                                  johdin_Us:       "",
                                  johdin_llinen:   "e",
+                                 johdin_mAinen:   "t",
                                  johdin_inen:     "e"] +
                                 monikko7 ("e", "", "",
                                           [omanto_iT: ""],
@@ -1661,6 +1673,7 @@ allo_rule generate_allos ($tietue):
                                           A($tietue), "t") +
                                 [johdin_tOn:       A($tietue),
                                  johdin_llinen:    A($tietue),
+                                 johdin_mAinen:    "t",
                                  johdin_inen:      ""] +
                                 monikko7 (A($tietue), "", "",
                                           [omanto_iT: ""],
@@ -1826,6 +1839,7 @@ allo_rule generate_allos ($tietue):
                                           "i", "") +
                                 [johdin_tOn:       "i",
                                  johdin_llinen:    "i",
+                                 johdin_mAinen:    "",
                                  johdin_inen:      "i"] +
                                 monikko7 ("", "", "",
                                           [omanto_iT:  "", omanto_ten: "t"],

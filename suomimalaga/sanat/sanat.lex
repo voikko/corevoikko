@@ -1017,7 +1017,7 @@
 [perusmuoto: "baski", alku: "bask", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "basso", alku: "basso", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "bataatti", alku: "bataat", luokka: nimisana, jatko: <salaatti>, äs: a];
-[perusmuoto: "bébé", alku: "bébé", luokka: nimisana, jatko: <bébé>, äs: a];
+[perusmuoto: "bébé", alku: "bébé", luokka: nimisana, jatko: <bébé>, äs: ä];
 [perusmuoto: "beduiini", alku: "beduiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "beeta", alku: "beet", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "behaviorismi", alku: "behaviorism", luokka: nimisana, jatko: <risti>, äs: a];
@@ -10646,7 +10646,7 @@
 [perusmuoto: "nuorehko", alku: "nuorehko", luokka: laatusana, jatko: <arvelu>, äs: a];
 [perusmuoto: "nuorekas", alku: "nuorek", luokka: laatusana, jatko: <iäkäs>, äs: a];
 [perusmuoto: "nuoreta", alku: "nuore", luokka: teonsana, jatko: <aleta>, äs: a];
-[perusmuoto: "nuori", alku: "nuor", luokka: nimi_laatusana, jatko: <nuori>, äs: a];
+[perusmuoto: "nuori", alku: "nuor", luokka: laatusana, jatko: <nuori>, äs: a];
 [perusmuoto: "nuorikko", alku: "nuorik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "nuorimmainen", alku: "nuorimmai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "nuoriso", alku: "nuoriso", luokka: nimisana, jatko: <arvelu>, äs: a];
@@ -11944,7 +11944,7 @@
 [perusmuoto: "pienehkö", alku: "pienehkö", luokka: laatusana, jatko: <arvelu>, äs: ä];
 [perusmuoto: "pienennös", alku: "pienennö", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "pienetä", alku: "piene", luokka: teonsana, jatko: <aleta>, äs: ä];
-[perusmuoto: "pieni", alku: "pien", luokka: nimi_laatusana, jatko: <pieni>, äs: ä];
+[perusmuoto: "pieni", alku: "pien", luokka: laatusana, jatko: <pieni>, äs: ä];
 [perusmuoto: "pieniä", alku: "pien", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "piennar", alku: "pien", luokka: nimisana, jatko: <piennar>, äs: a];
 [perusmuoto: "pienoinen", alku: "pienoi", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -13549,7 +13549,7 @@
 [perusmuoto: "reformisti", alku: "reformist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "reformoida", alku: "reformo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "regatta", alku: "regat", luokka: nimisana, jatko: <savotta>, äs: a];
-[perusmuoto: "reggae", alku: "reggae", luokka: nimisana, jatko: <bébé>, äs: a];
+[perusmuoto: "reggae", alku: "reggae", luokka: nimisana, jatko: <bébé>, äs: ä];
 [perusmuoto: "registeri", alku: "register", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "reglementti", alku: "reglement", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "regressiivinen", alku: "regressiivi", luokka: laatusana, jatko: <nainen>, äs: ä];
