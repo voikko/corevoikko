@@ -102,7 +102,7 @@
 [perusmuoto: "Apo", alku: "Apo", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Apunen", alku: "Apu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Arafat", alku: "Arafat", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Arajuuri", alku: "Arajuur", luokka: sukunimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Arajuuri", alku: "Arajuur", luokka: sukunimi, jatko: <nuori>, äs: a];
 [perusmuoto: "Arak", alku: "Arak", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Arffman", alku: "Arffman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Argento", alku: "Argento", luokka: sukunimi, jatko: <valo>, äs: a];
@@ -451,6 +451,7 @@
 [perusmuoto: "Homén", alku: "Homén", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Honda", alku: "Hond", luokka: sukunimi, jatko: <koira>, äs: a];
 [perusmuoto: "Honkainen", alku: "Honkai", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Honkajuuri", alku: "Honkajuur", luokka: sukunimi, jatko: <nuori>, äs: a];
 [perusmuoto: "Honkala", alku: "Honkal", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Honkanen", alku: "Honka", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Hopo", alku: "Hopo", luokka: sukunimi, jatko: <valo>, äs: a];
