@@ -2765,8 +2765,7 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (kirjoitella in $tietue.jatko) then
-    choose $i in katsella ($tietue, "ittel", "itel") +
-                 katsella ($tietue, "ttel", "tel");
+    choose $i in katsella ($tietue, "tel", "el");
     result $i.alku, $i - alku;
 
 

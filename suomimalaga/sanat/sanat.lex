@@ -2512,7 +2512,7 @@
 [perusmuoto: "hana", alku: "han", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "hanakka", alku: "hanak", luokka: laatusana, jatko: <solakka>, äs: a];
 [perusmuoto: "hangata", alku: "han", luokka: teonsana, jatko: <hangata>, äs: a];
-[perusmuoto: "hangoitella", alku: "hango", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "hangoitella", alku: "hangoit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "hanhi", alku: "hanh", luokka: nimisana, jatko: <lovi>, äs: a];
 [perusmuoto: "hanhikki", alku: "hanhik", luokka: nimisana, jatko: <kajakki>, äs: a];
 [perusmuoto: "hanikka", alku: "hanik", luokka: nimisana, jatko: <solakka>, äs: a];
@@ -2819,7 +2819,7 @@
 [perusmuoto: "helähtää", alku: "helä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
 [perusmuoto: "hemaista", alku: "hema", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "hemmetti", alku: "hemmet", luokka: nimisana, jatko: <salaatti>, äs: ä];
-[perusmuoto: "hemmotella", alku: "hemmo", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "hemmotella", alku: "hemmot", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "hempeillä", alku: "hempeil", luokka: teonsana, jatko: <katsella>, äs: ä];
 [perusmuoto: "hempeä", alku: "hemp", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "hempukka", alku: "hempuk", luokka: nimisana, jatko: <solakka>, äs: a];
@@ -2885,7 +2885,7 @@
 [perusmuoto: "hermeettinen", alku: "hermeetti", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "hermeneutiikka", alku: "hermeneutiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "hermo", alku: "hermo", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
-[perusmuoto: "hermoilla", alku: "hermoil", luokka: teonsana, jatko: <katsella>, äs: a];
+[perusmuoto: "hermoilla", alku: "hermoil", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "hermosto", alku: "hermosto", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "hermostua", alku: "hermostu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "hermostus", alku: "hermostu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -2905,7 +2905,7 @@
 [perusmuoto: "herraskainen", alku: "herraskai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "herrastella", alku: "herrastel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "herraus", alku: "herrau", luokka: nimisana, jatko: <kalleus>, äs: a];
-[perusmuoto: "herroitella", alku: "herro", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "herroitella", alku: "herroit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "herruus", alku: "herruu", luokka: nimisana, jatko: <kalleus>, äs: a];
 [perusmuoto: "hersyä", alku: "hersy", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "hertsi", alku: "herts", luokka: nimisana, jatko: <risti>, äs: ä];
@@ -3900,7 +3900,7 @@
 [perusmuoto: "iloita", alku: "iloi", luokka: teonsana, jatko: <valita>, äs: a];
 [perusmuoto: "ilostua", alku: "ilostu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "ilostuttaa", alku: "ilostut", luokka: teonsana, jatko: <autioittaa>, äs: a];
-[perusmuoto: "ilotella", alku: "ilo", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "ilotella", alku: "ilot", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "ilta", alku: "il", luokka: nimisana, jatko: <valta>, äs: a, tiedot: <inen>];
 [perusmuoto: "iltama", alku: "iltam", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "iltanen", alku: "ilta", luokka: nimisana, jatko: <nainen>, äs: a];
@@ -4173,7 +4173,7 @@
 [perusmuoto: "isoloida", alku: "isolo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "isota", alku: "iso", luokka: teonsana, jatko: <aleta>, äs: a];
 [perusmuoto: "isota", alku: "iso", luokka: teonsana, jatko: <kohota>, äs: a];
-[perusmuoto: "isotella", alku: "iso", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "isotella", alku: "isot", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "isotermi", alku: "isoterm", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "isotooppi", alku: "isotoop", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "istahtaa", alku: "istah", luokka: teonsana, jatko: <astahtaa>, äs: a];
@@ -5008,7 +5008,7 @@
 [perusmuoto: "kaljaasi", alku: "kaljaas", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "kaljaassi", alku: "kaljaass", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "kaljama", alku: "kaljam", luokka: nimisana, jatko: <matala>, äs: a];
-[perusmuoto: "kaljoitella", alku: "kaljo", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "kaljoitella", alku: "kaljoit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "kalju", alku: "kalju", luokka: nimi_laatusana, jatko: <valo>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "kaljuuna", alku: "kaljuun", luokka: nimisana, jatko: <pasuuna>, äs: a];
 [perusmuoto: "kaljuuntua", alku: "kaljuun", luokka: teonsana, jatko: <jakaantua>, äs: a];
@@ -6038,7 +6038,7 @@
 [perusmuoto: "kilta", alku: "kil", luokka: nimisana, jatko: <valta>, äs: a];
 [perusmuoto: "kiltteys", alku: "kilttey", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <kiltti>, äs: ä]; #NS: 3 sanaa.
-[perusmuoto: "kilvoitella", alku: "kilvo", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "kilvoitella", alku: "kilvoit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "kilvoitus", alku: "kilvoitu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kimakka", alku: "kimak", luokka: laatusana, jatko: <solakka>, äs: a];
 [perusmuoto: "kimalainen", alku: "kimalai", luokka: nimisana, jatko: <nainen>, äs: a];
@@ -6215,7 +6215,7 @@
 [perusmuoto: "kiusaantua", alku: "kiusaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
 [perusmuoto: "kiusata", alku: "kius", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "kiusaus", alku: "kiusau", luokka: nimisana, jatko: <vastaus>, äs: a];
-[perusmuoto: "kiusoitella", alku: "kiuso", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "kiusoitella", alku: "kiusoit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "kiva", alku: "kiv", luokka: laatusana, jatko: <kala>, äs: a];
 [perusmuoto: "kivekäs", alku: "kivek", luokka: laatusana, jatko: <iäkäs>, äs: ä];
 [perusmuoto: "kiveliö", alku: "kiveliö", luokka: nimisana, jatko: <autio>, äs: ä];
@@ -6606,7 +6606,7 @@
 [perusmuoto: "kontalla", alku: "konta", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "kontata", alku: "kont", luokka: teonsana, jatko: <kuitata>, äs: a];
 [perusmuoto: "konteksti", alku: "kontekst", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "kontia", alku: "lon", luokka: teonsana, jatko: <kontia>, äs: a];
+[perusmuoto: "kontia", alku: "kon", luokka: teonsana, jatko: <kontia>, äs: a];
 [perusmuoto: "kontinentti", alku: "kontinent", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "kontingentti", alku: "kontingent", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a];
@@ -7656,7 +7656,7 @@
 [perusmuoto: "köyhetä", alku: "köyhe", luokka: teonsana, jatko: <aleta>, äs: ä];
 [perusmuoto: "köyhtyä", alku: "köyh", luokka: teonsana, jatko: <kaatua>, äs: ä];
 [perusmuoto: "köyhä", alku: "köyh", luokka: nimi_laatusana, jatko: <koira>, äs: ä];
-[perusmuoto: "köyhäillä", alku: "köyhäil", luokka: teonsana, jatko: <katsella>, äs: ä];
+[perusmuoto: "köyhäillä", alku: "köyhäil", luokka: teonsana, jatko: <arvailla>, äs: ä];
 [perusmuoto: "köyhälistö", alku: "köyhälistö", luokka: nimisana, jatko: <valo>, äs: ä];
 [perusmuoto: "köyhälä", alku: "köyhäl", luokka: nimisana, jatko: <matala>, äs: ä];
 [perusmuoto: "köykky", alku: "köyk", luokka: laatusana, jatko: <alku>, äs: ä];
@@ -8305,7 +8305,7 @@
 [perusmuoto: "liinakko", alku: "liinak", luokka: nimi_laatusana, jatko: <laatikko>, äs: a];
 [perusmuoto: "liinanen", alku: "liina", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "liioin", alku: "liioin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "liioitella", alku: "liio", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "liioitella", alku: "liioit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "liipaisin", alku: "liipaisi", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "liipaista", alku: "liipa", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "liipata", alku: "liip", luokka: teonsana, jatko: <pompata>, äs: a];
@@ -8561,7 +8561,7 @@
 [perusmuoto: "longitudi", alku: "longitud", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "lonkero", alku: "lonkero", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "lonkka", alku: "lonk", luokka: nimisana, jatko: <hoikka>, äs: a];
-[perusmuoto: "lontia", alku: "kon", luokka: teonsana, jatko: <kontia>, äs: a];
+[perusmuoto: "lontia", alku: "lon", luokka: teonsana, jatko: <kontia>, äs: a];
 [perusmuoto: "looginen", alku: "loogi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "look", alku: "look", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "loordi", alku: "loord", luokka: nimisana, jatko: <risti>, äs: a];
@@ -8588,7 +8588,6 @@
 [perusmuoto: "loru", alku: "loru", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "loruta", alku: "loru", luokka: teonsana, jatko: <juoruta>, äs: a];
 [perusmuoto: "lorvailla", alku: "lorvail", luokka: teonsana, jatko: <arvailla>, äs: a];
-[perusmuoto: "lorvia", alku: "lorvia", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "lorvia", alku: "lorv", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "lorvi", alku: "lorv", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "loska", alku: "losk", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <inen>];
@@ -10469,7 +10468,7 @@
 [perusmuoto: "nirsoilla", alku: "nirsoil", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "nirvana", alku: "nirvan", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "niska", alku: "nisk", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "niskoitella", alku: "nisko", luokka: teonsana, jatko: <kirjoitella>, äs: a];
+[perusmuoto: "niskoitella", alku: "niskoit", luokka: teonsana, jatko: <kirjoitella>, äs: a];
 [perusmuoto: "niskuri", alku: "niskur", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "niskuroida", alku: "niskuro", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "nisu", alku: "nisu", luokka: nimisana, jatko: <valo>, äs: a];

@@ -220,6 +220,64 @@ end: class
 
 # End Kotus 53 muistaa ==================
 
+# Kotus 61 sallia (1/2)
+class: verbi-sallia
+sm-class: sallia
+rmsfx: a
+match-word: CiA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	0	0	s
+kondit_yks_3	0	si	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	0	ttiin	w
+end: rules
+end: class
+
+# Kotus 61 sallia (1/2)
+class: verbi-moittia
+sm-class: moittia
+rmsfx: a
+match-word: CiA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	0	0	s
+kondit_yks_3	0	si	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	0	ttiin	w
+!verbi_ellA	0	skella	w
+end: rules
+end: class
+
+# Kotus 67 tulla
+class: verbi-katsella
+sm-class: katsella
+rmsfx: lla
+match-word: Vlla
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	lla	w
+preesens_yks_1	0	len	s
+imperfekti_yks_3	0	li	s
+kondit_yks_3	0	lisi	s
+imperatiivi_yks_3	0	lkoon	w
+partisiippi_2	0	llut	w
+imperfekti_pass	0	ltiin	w
+end: rules
+end: class
+
 # Kotus 68 tupakoida (1/3)
 class: verbi-voida
 sm-class: voida
