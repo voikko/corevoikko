@@ -51,6 +51,7 @@
 [perusmuoto: "Aapala", alku: "Aapal", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Aarnio", alku: "Aarnio", luokka: sukunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Aaronson", alku: "Aaronson", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Härkin", alku: "Härkin", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Aatamila", alku: "Aatamil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Abbey", alku: "Abbey", luokka: sukunimi, jatko: <valo>, äs: aä];
 [perusmuoto: "Aberth", alku: "Aberth", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -516,6 +517,7 @@
 [perusmuoto: "Ilaskivi", alku: "Ilaskiv", luokka: sukunimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Ilkka", alku: "Ilk", luokka: sukunimi, jatko: <haka>, äs: a];
 [perusmuoto: "Ilkkala", alku: "Ilkkal", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Ilmola", alku: "Ilmol", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Ilvonen", alku: "Ilvo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Immonen", alku: "Immo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Inberg", alku: "Inberg", luokka: sukunimi, jatko: <kalsium>, äs: ä];
