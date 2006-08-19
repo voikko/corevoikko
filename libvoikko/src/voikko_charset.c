@@ -86,11 +86,12 @@ const wchar_t * CONV_2TO1 =
 	L"Z\u030C" L"\u017D"  /* LATIN CAPITAL LETTER Z WITH CARON */
 	L"z\u030C" L"\u017E"; /* LATIN SMALL LETTER Z WITH CARON */
 
-const int N_1TO1 = 2; /* Number of entries in this table */
+const int N_1TO1 = 3; /* Number of entries in this table */
 const wchar_t * CONV_1TO1 =
 	/* General Punctuation --> Basic Latin */
 	L"\u2019" L"'"  /* RIGHT SINGLE QUOTATION MARK <--> APOSTROPHE */
-	L"\u2010" L"-"; /* HYPHEN <--> HYPHEN-MINUS */
+	L"\u2010" L"-"  /* HYPHEN <--> HYPHEN-MINUS */
+	L"\u2011" L"-"; /* NON-BREAKING HYPHEN <--> HYPHEN-MINUS */
 
 const int N_1TO2 = 3; /* Number of entries in this table */
 const wchar_t * CONV_1TO2 =
