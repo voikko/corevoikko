@@ -1499,6 +1499,7 @@
 [perusmuoto: "Siljander", alku: "Siljander", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Sillitoe", alku: "Sillitoe", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Sillman", alku: "Sillman", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Siltala", alku: "Siltal", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Siltanen", alku: "Silta", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Silvasti", alku: "Silvast", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Silvennoinen", alku: "Silvennoi", luokka: sukunimi, jatko: <nainen>, äs: a];

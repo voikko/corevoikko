@@ -17256,6 +17256,7 @@
 [perusmuoto: "tunnistaa", alku: "tunnist", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "tunniste", alku: "tunniste", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "tunnistin", alku: "tunnisti", luokka: nimisana, jatko: <uistin>, äs: a];
+[perusmuoto: "tunnistua", alku: "tunnistu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "tunnus", alku: "tunnu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "tunnustaa", alku: "tunnust", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "tunnustautua", alku: "tunnustau", luokka: teonsana, jatko: <antautua>, äs: a];
