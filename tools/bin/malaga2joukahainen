@@ -84,9 +84,9 @@ db.query('DELETE FROM string_attribute_value')
 db.query('DELETE FROM event')
 db.query('DELETE FROM task_word')
 db.query('DELETE FROM word')
-db.query("INSERT INTO event(euser, message) VALUES(1, " +
-         "'Automatic conversion from Suomi-malaga by malaga2joukahainen')")
-eid = db.query("SELECT eid FROM event WHERE euser = 1 ORDER BY etime DESC").getresult()[0][0]
+eid = db.query("SELECT nextval('event_eid_seq')").getresult()[0][0]
+db.query(("INSERT INTO event(eid, euser, message) VALUES(%i, 1, " +
+         "'Automatic conversion from Suomi-malaga by malaga2joukahainen')") % eid)
 
 while True:
 	rivi = inputfile.readline()
@@ -101,13 +101,14 @@ while True:
 		elif gd['luokka'] == u'teonsana': joclass = 3
 		else: continue
 		hf_classes = find_hf_class(gd['perusmuoto'], gd['jatko'])
-		if hf_classes == None: continue
+		wid = db.query("SELECT nextval('word_wid_seq')").getresult()[0][0]
+		db.query("INSERT INTO word(wid, word, class, cuser) VALUES(%i, '%s', %i, %i)" %
+		         (wid, (gd['perusmuoto'].replace("'", "''")).encode('UTF-8'), joclass, 1))
+		if hf_classes == None: # Word has irregular inflections
+			db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
+			          "VALUES(%i, 1, 'poikkeava', %i)") % (wid, eid))
+			continue
 		outputfile.write(hfutils.remove_comments(rivi).strip() + u'\n')
-		db.query("INSERT INTO word(word, class, cuser) VALUES('%s', %i, %i)" %
-		         ((gd['perusmuoto'].replace("'", "''")).encode('UTF-8'), joclass, 1))
-		res = db.query((u"SELECT wid FROM word WHERE word = '%s' ORDER BY wid DESC" %
-		         gd['perusmuoto'].replace("'", "''")).encode('UTF-8'))
-		wid = int(res.getresult()[0][0])
 		db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
 		          "VALUES(%i, 1, '%s', %i)") % (wid, hf_classes[0].encode('UTF-8'), eid))
 		if hf_classes[1] != None: # We have also a historical class

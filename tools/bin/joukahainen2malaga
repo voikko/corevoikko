@@ -86,9 +86,10 @@ db = _pg.connect(host='localhost',
                  user='joukahainen',
                  passwd='joukahainen')
 
-results = db.query('SELECT w.word, w.class, sa.value, w.wid, hc.value FROM string_attribute_value sa, word w ' +
-	'LEFT JOIN string_attribute_value hc ON (w.wid = hc.wid AND hc.aid = 16) ' +
-	'WHERE w.wid = sa.wid AND sa.aid = 1 ORDER BY w.word, w.class, w.wid')
+results = db.query("SELECT w.word, w.class, sa.value, w.wid, hc.value FROM string_attribute_value sa, " +
+	"word w LEFT JOIN string_attribute_value hc ON (w.wid = hc.wid AND hc.aid = 16) " +
+	"WHERE w.wid = sa.wid AND sa.aid = 1 AND sa.value != 'poikkeava' " +
+	"ORDER BY w.word, w.class, w.wid")
 
 for result in results.getresult():
 	altforms_res = db.query('SELECT related_word FROM related_word WHERE wid = %i' % result[3])
