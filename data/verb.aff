@@ -263,7 +263,7 @@ end: class
 class: verbi-katsella
 sm-class: katsella
 rmsfx: lla
-match-word: Vlla
+match-word: VllA
 consonant-gradation: ws
 group: t
 transform-group: e
