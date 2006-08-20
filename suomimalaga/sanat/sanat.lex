@@ -5256,7 +5256,6 @@
 [perusmuoto: "karanteeni", alku: "karanteen", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "karastua", alku: "karastu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "karata", alku: "kar", luokka: teonsana, jatko: <pakata>, äs: a];
-[perusmuoto: "karata", alku: "kar", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "karate", alku: "karate", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "karateka", alku: "karatek", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "karauttaa", alku: "karaut", luokka: teonsana, jatko: <alittaa>, äs: a];
