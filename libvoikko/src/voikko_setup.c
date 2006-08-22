@@ -31,6 +31,10 @@
 #include <windows.h>
 #endif
 
+voikko_options_t voikko_options;
+
+int voikko_handle_count;
+
 int voikko_set_bool_option(int handle, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:

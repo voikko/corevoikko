@@ -33,17 +33,27 @@ AM_MAINTAINER_MODE
 dnl Default compiler settings
 CFLAGS="$CFLAGS -Wall -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 
-if test ${prefix} = "NONE"
-then
-	MALAGA_PATH=${ac_default_prefix}
-else
-	MALAGA_PATH=${prefix}
-fi
+dnl if test "x$prefix" = "xNONE"
+dnl then
+dnl 	MALAGA_PATH=${ac_default_prefix}
+dnl else
+dnl 	MALAGA_PATH=${prefix}
+dnl fi
 AC_ARG_WITH(malaga-path,
             AC_HELP_STRING([--with-malaga-path=PATH],
 	                   [Malaga installation prefix]),
-            [MALAGA_PATH="$withval"])
-AC_DEFINE_UNQUOTED(MALAGA_PATH, "$MALAGA_PATH", [Malaga installation prefix])
+            [user_malaga_path="$withval"])
+if test "x${user_malaga_path}" != "x"; then
+	MALAGA_PATH=${user_malaga_path}
+else
+	if test "x${prefix}" = "xNONE"; then
+		MALAGA_PATH=${ac_default_prefix}
+	else
+		MALAGA_PATH=${prefix}
+	fi
+fi
+
+dnl AC_DEFINE_UNQUOTED(MALAGA_PATH, "$MALAGA_PATH", [Malaga installation prefix])
 AC_SUBST(MALAGA_PATH)
 
 # FIXME: the following is wrong (it should be possible to change this when running make)
@@ -71,7 +81,7 @@ AC_CHECK_HEADERS([locale.h])
 AC_CHECK_HEADERS([wctype.h])
 AC_CHECK_HEADERS([wchar.h])
 
-AC_CHECK_HEADER($MALAGA_PATH/include/malaga/malaga.h,
+AC_CHECK_HEADER([${MALAGA_PATH}/include/malaga/malaga.h],
 	[MALAGA_INC=$MALAGA_PATH/include/malaga],
 	[AC_CHECK_HEADER($MALAGA_PATH/include/malaga.h,
 		[MALAGA_INC=$MALAGA_PATH/include],

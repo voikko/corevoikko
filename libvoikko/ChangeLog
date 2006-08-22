@@ -1,3 +1,11 @@
+2006-08-22 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* If --with-malaga-path is not set, default to installation prefix.
+	* Fix compilation with -fno-common (needed on OS X).
+	* Respect VOIKKO_OPT_IGNORE_DOT in suggestion code. This breaks suggestions
+	  with words that actually have a dot in them, but they are rare enough to
+	  not matter much.
+
 2006-08-16 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Three new character replacement suggestions.

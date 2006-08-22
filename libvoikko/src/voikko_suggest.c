@@ -353,6 +353,21 @@ void voikko_suggest_swap(int handle, wchar_t *** suggestions, int * max_suggesti
 	free(buffer);
 }
 
+int voikko_suggest_add_dots(wchar_t ** suggestions) {
+	int i;
+	size_t sugglen;
+	wchar_t * buffer;
+	for (i = 0; suggestions[i] != 0; i++) {
+		sugglen = wcslen(suggestions[i]);
+		buffer = realloc(suggestions[i], (sugglen + 2) * sizeof(wchar_t));
+		if (!buffer) return 0; /* Stop if allocation fails */
+		buffer[sugglen] = L'.';
+		buffer[sugglen+1] = L'\0';
+		suggestions[i] = buffer;
+	}
+	return 1;
+}
+
 wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wchar_t ** suggestions;
 	int * prios;
@@ -362,6 +377,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	size_t wlen;
 	int cost;
 	int suggestions_left;
+	int add_dots = 0;
 	if (word == 0) return 0;
 	wlen = wcslen(word);
 	if (wlen <= 1) return 0;
@@ -369,6 +385,13 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	nword = voikko_normalise(word, wlen);
 	if (nword == 0) return 0;
 	wlen = wcslen(nword);
+	
+	if (voikko_options.ignore_dot) {
+		if (nword[wlen-1] == L'.') {
+			nword[--wlen] = L'\0';
+			add_dots = 1;
+		}
+	}
 	
 	suggestions = calloc(MAX_SUGGESTIONS * 3 + 1, sizeof(wchar_t *));
 	if (suggestions == 0) {
@@ -390,6 +413,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (suggestions_left != MAX_SUGGESTIONS * 3) {
 		free(prios);
 		free(nword);
+		if (add_dots) voikko_suggest_add_dots(suggestions);
 		return suggestions;
 	}
 	voikko_suggest_vowel_change(handle, &free_sugg, &suggestions_left, nword, wlen, &cost, &free_prio);
@@ -469,6 +493,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	}
 	
 	free(nword);
+	if (add_dots) voikko_suggest_add_dots(suggestions);
 	return suggestions;
 }
 

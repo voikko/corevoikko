@@ -39,9 +39,9 @@ typedef struct {
 	char * cache_meta;
 } voikko_options_t;
 
-voikko_options_t voikko_options;
+extern voikko_options_t voikko_options;
 
-int voikko_handle_count;
+extern int voikko_handle_count;
 
 /**
  * Finds the malaga project file for given language
