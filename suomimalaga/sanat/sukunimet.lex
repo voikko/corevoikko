@@ -905,7 +905,7 @@
 [perusmuoto: "Linkola", alku: "Linkol", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Linkomies", alku: "Linkomie", luokka: sukunimi, jatko: <mies>, äs: a];
 [perusmuoto: "Linnamo", alku: "Linnamo", luokka: sukunimi, jatko: <arvelu>, äs: a];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nalle>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nalle>, äs: ä]; # Taivutus epävarma
 [perusmuoto: "Lintula", alku: "Lintul", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Lintunen", alku: "Lintu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lipitsäinen", alku: "Lipitsäi", luokka: sukunimi, jatko: <nainen>, äs: ä];
