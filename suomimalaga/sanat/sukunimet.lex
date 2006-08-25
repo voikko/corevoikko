@@ -219,7 +219,7 @@
 [perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Daavitsainen", alku: "Daavitsai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Dahl", alku: "Dahl", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Dali", alku: "Dal", luokka: sukunimi, jatko: <risti>, äs: a];  # Pitäisi olla Dalí.
+#[perusmuoto: "Dalí", alku: "Dal", luokka: sukunimi, jatko: <risti>, äs: a];  # Taipuu i:n kautta, vaikka pitäisi olla í.
 [perusmuoto: "Davis", alku: "Davis", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dekman", alku: "Dekman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dell", alku: "Dell", luokka: sukunimi, jatko: <kalsium>, äs: ä];
