@@ -17857,7 +17857,6 @@
 [perusmuoto: "uroteko", alku: "urote", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "urotyö", alku: "urot", luokka: nimisana, jatko: <suo>, äs: ä];
 [perusmuoto: "urputtaa", alku: "urput", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "urputtaa", alku: "urput", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "usalainen", alku: "usalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "usea", alku: "us", luokka: laatusana, jatko: <korkea>, äs: a]; #NS: asemosana.
 [perusmuoto: "useimmiten", alku: "useimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
