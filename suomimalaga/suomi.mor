@@ -1283,7 +1283,10 @@ end;
 
 subrule tulostus_voikko ($tietue):
   define $tuloste := "";
+  define $tlen := length($tietue);
+  define $tind := -1;
   foreach $t in $tietue:
+    $tind :=+ 1;
     if $t.rakenne /= nil then
       $tuloste :=+ $t.rakenne;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
@@ -1293,7 +1296,9 @@ subrule tulostus_voikko ($tietue):
       foreach $i in length($t.alku):
         $tuloste :=+ "p";
       end;
-    elseif $t.luokka in <etunimi, sukunimi, paikannimi, nimi> then
+    elseif $t.luokka in <etunimi, sukunimi, nimi> or
+           ($t.luokka = paikannimi and
+            ($tind greater $tlen - 2 or $tietue.($tind+1).luokka = johdin_lAinen)) then
       $tuloste :=+ "=";
       $tuloste :=+ "i";
       foreach $i in length($t.alku) - 1:

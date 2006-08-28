@@ -3947,6 +3947,8 @@ subrule koira ($tietue,
                         [johdin_tOn:       $heikko_aste + A($tietue),
                          johdin_UUs:       $vahva_aste,
                          johdin_llinen:    $heikko_aste + A($tietue),
+                         johdin_lAinen:    $vahva_aste + A($tietue),
+                         johdin_mAinen:    $heikko_aste + A($tietue),
                          johdin_inen:      $vahva_aste + A($tietue)] +
                         monikko7 ($heikko_aste + A($tietue),
                                   $vahva_aste, $monikon_heikko_aste,
@@ -4020,6 +4022,8 @@ subrule apila ($tietue, $yksikkö, $monikko):
                                   $yksikkö, $yksikkö) +
                         [johdin_tOn:    $yksikkö,    # Apilaton.
                          johdin_llinen: $yksikkö,    # Apilallinen.
+                         johdin_lAinen: $yksikkö,    # Apilalainen.
+                         johdin_mAinen: $yksikkö,    # Apilamainen.
                          johdin_inen:   $yksikkö] +  # Apilainen.
                         monikko7 ($yksikkö, $monikko, $monikko,
                                   [omanto_in: $yksikkö, omanto_iT: $monikko],
@@ -4044,6 +4048,8 @@ subrule laatikko ($tietue,
                         [johdin_tOn:      $yksikön_heikko_aste,
                          johdin_UUs:      eka_kirjain ($yksikön_vahva_aste),
                          johdin_llinen:   $yksikön_heikko_aste,
+                         johdin_lAinen:   $yksikön_vahva_aste,
+                         johdin_mAinen:   $yksikön_vahva_aste,
                          johdin_inen:     $yksikön_vahva_aste] +
                         monikko7 ($yksikön_heikko_aste,
                                   $monikon_vahva_aste, $monikon_heikko_aste,
@@ -4093,6 +4099,8 @@ subrule apaja ($tietue):
                                   A($tietue), A($tietue)) +
                         [johdin_tOn:       A($tietue),
                          johdin_llinen:    A($tietue),
+                         johdin_lAinen:    A($tietue),
+                         johdin_mAinen:    A($tietue),
                          johdin_inen:      A($tietue)] +
                         monikko7 (A($tietue), "", "",
                                   [omanto_ien: "",
@@ -4177,6 +4185,7 @@ subrule hontelo ($tietue):
                         [johdin_tOn:    O($tietue), 
                          johdin_Us:     U($tietue),
                          johdin_llinen: O($tietue),
+                         johdin_mAinen: O($tietue),
                          johdin_inen:   O($tietue)] +
                         monikko7 (O($tietue), O($tietue), O($tietue),
                                   [omanto_jen: O($tietue),
@@ -4206,9 +4215,11 @@ subrule risti ($tietue, $vahva_aste, $heikko_aste):
                          vajanto_ttA:     $heikko_aste + "i",
                          kerronto_sti:    $heikko_aste + "i",
                          voittoaste:      $heikko_aste + "i",
-                         johdin_tOn:      $heikko_aste + "i", 
+                         johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
                          johdin_llinen:   $heikko_aste + "i",
+                         johdin_lAinen:   $vahva_aste  + "i",
+                         johdin_mAinen:   $vahva_aste  + "i",
                          johdin_inen:     $vahva_aste]
                         + yhdyssana ($vahva_aste + "i")
                         + monikko7 ($heikko_aste + "i",
@@ -4264,6 +4275,8 @@ subrule paperi_banaali ($tietue, $vahva_aste, $heikko_aste):
                         [johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
                          johdin_llinen:   $heikko_aste + "i",
+                         johdin_lAinen:   $vahva_aste  + "i",
+                         johdin_mAinen:   $vahva_aste  + "i",
                          johdin_inen:     $vahva_aste] +
                          monikko7 ($heikko_aste + "i",
                                    $vahva_aste + "e", $heikko_aste + "e",
@@ -4287,6 +4300,8 @@ subrule edam ($tietue, $vahva_aste, $heikko_aste):
                         [johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
                          johdin_llinen:   $heikko_aste + "i",
+                         johdin_lAinen:   $vahva_aste + "i",
+                         johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste + "i"] +
                          monikko7 ($heikko_aste + "i",
                                    $heikko_aste + "e", $heikko_aste + "e",
@@ -4309,6 +4324,7 @@ subrule sisar ($tietue, $vahva_aste, $heikko_aste):
                                   $heikko_aste, $heikko_aste) +
                         [johdin_tOn:      $vahva_aste + "e",
                          johdin_llinen:   $vahva_aste + "e",
+                         johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($vahva_aste + "e", $vahva_aste, $vahva_aste,
                                   [omanto_ien: $vahva_aste,
@@ -4346,6 +4362,7 @@ subrule hapan_uistin ($tietue, $vahva_aste, $heikko_aste, $ääntiö):
                         [johdin_tOn:      $vahva_aste + $ääntiö,
                          johdin_UUs:      $vahva_aste,
                          johdin_llinen:   $vahva_aste + $ääntiö,
+                         johdin_mAinen:   $heikko_aste,
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($vahva_aste + $ääntiö,
                                   $vahva_aste, $vahva_aste,
@@ -4393,7 +4410,9 @@ subrule kalsium ($tietue, $vahva_aste, $heikko_aste):
                                   $vahva_aste + "i", $vahva_aste + "i") +
                         [johdin_tOn:      $heikko_aste + "e",
                          johdin_llinen:   $heikko_aste + "e",
-                         johdin_inen:     $vahva_aste + "e"] +
+                         johdin_lAinen:   $vahva_aste + "i",
+                         johdin_mAinen:   $vahva_aste,
+                         johdin_inen:     $vahva_aste] +
                         monikko7 ($heikko_aste + "i",
                                   $vahva_aste  + "e",
                                   $heikko_aste + "e",
