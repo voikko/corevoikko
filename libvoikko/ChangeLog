@@ -4,6 +4,10 @@
 	* Implement the cache size parameter in voikko_init.
 	* Add -c option to voikkospell to control the cache size parameter.
 	* Update README.
+	* Reject overly long input strings in voikko_spell_ucs4 and voikko_suggest_ucs4
+	  just to be sure that any bugs later will not cause buffer overflows. The
+	  cstr variants have been doing this check in charset conversion.
+	* Adjust library version info for release of version 1.1.
 
 2006-08-22 Harri Pitkänen  <hatapitk@iki.fi>
 

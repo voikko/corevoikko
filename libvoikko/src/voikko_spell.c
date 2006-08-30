@@ -160,6 +160,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	enum casetype caps;
 	enum spellresult sres;
 	if (nchars == 0) return VOIKKO_SPELL_OK;
+	if (nchars > LIBVOIKKO_MAX_WORD_CHARS) return VOIKKO_INTERNAL_ERROR;
 	
 	nword = voikko_normalise(word, nchars);
 	if (nword == 0) return VOIKKO_INTERNAL_ERROR;

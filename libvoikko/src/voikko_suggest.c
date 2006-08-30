@@ -380,7 +380,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	int add_dots = 0;
 	if (word == 0) return 0;
 	wlen = wcslen(word);
-	if (wlen <= 1) return 0;
+	if (wlen <= 1 || wlen > LIBVOIKKO_MAX_WORD_CHARS) return 0;
 	
 	nword = voikko_normalise(word, wlen);
 	if (nword == 0) return 0;
