@@ -47,9 +47,9 @@
 
 sym: suomi.sym
 
-all: suomi.all suomi.inc subrule.inc suomi.pro
+all: suomi.all suomi.inc subrule.inc suomi-sukija.pro
 
-lex: suomi.lex suomi.inc subrule.inc suomi.pro
+lex: suomi.lex suomi.inc subrule.inc suomi-sukija.pro
 
 lex: sanat/atk.lex
 lex: sanat/erikoissanat.lex
@@ -64,7 +64,7 @@ lex: sanat/sanat.lex
 lex: sanat/sukunimet.lex
 lex: sanat/11-19.lex
 lex: sanat/omat.lex
-lex: sanat/omat2.lex
+#lex: sanat/omat2.lex
 lex: sanat/yhdyssanat.lex
 lex: sanat/shzh.lex
 
@@ -97,13 +97,14 @@ malaga: set use-display yes
 #    merkitse_yhdyssanat  Merkitään yhdyssanoihin eri sanat: "=kansan=eläke=laitos".
 #    koe                  Tämä tulostus on ohjelman testausta varten.
 #
+# Taivutus-lipun arvot:
+#    vanha   Nykysuomen sanakirjan mukainen taivutus.
+#    uusi    Suomen kielen perussanakirjan mukainen taivutus.
+#
 # Tulostuksissa ei ole lainausmerkkejä.
 
 malaga: set switch tulostus tavallinen
 malaga: set switch malli sukija
 mallex: set switch malli sukija
-
-malaga: set switch tulostus merkitse_yhdyssanat
-#malaga: set switch malli voikko
-#mallex: set switch malli voikko
-
+malaga: set switch taivutus vanha
+mallex: set switch taivutus vanha

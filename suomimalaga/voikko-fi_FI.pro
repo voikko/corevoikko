@@ -45,16 +45,16 @@
 # combination.
 #
 # This file has been modified by the contributors of Hunspell-fi project.
-# Last change was on $Date: 2006-06-21 16:48:52 +0300 (ke, 21 kesä   2006) $ by $Author: hatp $.
+# Last change was on $Date$ by $Author$.
 
 # Tiedosto suomi.pro Voikkoa varten.
 
 
-sym: suomi.sym
+sym: voikko-fi_FI.sym
 
-all: suomi.all suomi.inc subrule.inc suomi.pro
+all: voikko-fi_FI.all suomi.inc subrule.inc voikko-fi_FI.pro
 
-lex: suomi.lex suomi.inc subrule.inc suomi.pro
+lex: voikko-fi_FI.lex suomi.inc subrule.inc voikko-fi_FI.pro
 
 lex: sanat/atk.lex
 lex: sanat/erikoissanat.lex
@@ -70,10 +70,10 @@ lex: sanat/sukunimet.lex
 lex: sanat/11-19.lex
 lex: sanat/omat.lex
 lex: sanat/yhdyssanat.lex
-lex: sanat/shzh.lex
+lex: sanat/joukahainen.lex
 lex: sanat/lainen.lex
 
-mor: suomi.mor suomi.inc
+mor: voikko-fi_FI.mor suomi.inc
 
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"

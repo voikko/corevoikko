@@ -1,15 +1,19 @@
-all: suomi.pro
-	malmake suomi.pro
+SM=suomi-malaga-0.7.2
 
-run: suomi.pro
-	malaga suomi.pro
+.PHONY: all voikko sukija kehitys run clean dist tar
 
-kehitys: transmit suomi.pro
-	./shzh.sh
-	malmake suomi.pro
+all: voikko sukija
+
+kehitys: all transmit
 
 voikko:
-	malmake suomi-voikko.pro
+	malmake voikko-fi_FI.pro
+
+sukija:
+	malmake suomi-sukija.pro
+
+run: sukija
+	malaga suomi.pro
 
 clean:
 	/bin/rm -f *_l core.* transmit
@@ -21,9 +25,6 @@ dist:
 
 transmit: transmit.cc
 	g++ -g transmit.cc -o transmit
-
-
-SM=suomi-malaga-0.7.1
 
 tar:
 	rm -f ${SM}.tar ${SM}.tar.bz2
