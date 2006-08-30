@@ -1,3 +1,10 @@
+2006-08-30 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Look for Malaga project file voikko-fi_FI.pro instead of suomi.pro.
+	* Implement the cache size parameter in voikko_init.
+	* Add -c option to voikkospell to control the cache size parameter.
+	* Update README.
+
 2006-08-22 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* If --with-malaga-path is not set, default to installation prefix.

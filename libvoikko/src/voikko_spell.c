@@ -127,10 +127,11 @@ enum spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 	int cache_offset;
 	int meta_offset;
 	enum spellresult result;
+	int sparam = voikko_options.cache_size;
 	if (voikko_options.cache && len <= 10) { /* check cache */
-		hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len]);
-		cache_offset = VOIKKO_CACHE_OFFSETS[len] + hashcode * len;
-		meta_offset = VOIKKO_META_OFFSETS[len] + hashcode;
+		hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len] + sparam);
+		cache_offset = (VOIKKO_CACHE_OFFSETS[len] << sparam) + hashcode * len;
+		meta_offset = (VOIKKO_META_OFFSETS[len] << sparam) + hashcode;
 		if (wcsncmp(voikko_options.cache + cache_offset, buffer, len) == 0) {
 			/* DEBUG: printf("Cache hit: '%ls'\n", buffer);*/
 			if (voikko_options.cache_meta[meta_offset] == 'i') return SPELL_CAP_FIRST;

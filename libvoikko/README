@@ -1,11 +1,15 @@
 This is libvoikko, library for spellcheckers and hyphenators using Malaga
 natural language grammar development tool. The library is written in C.
 
-Currently only Finnish is supported, but adding support for other languages
-should not be too hard.
+Currently only Finnish is supported, but the API of the library has been designed
+to allow adding support for other languages later. Note however that Malaga is
+rather low level tool that requires implementing the whole morphology of a
+language as a left associative grammar. Therefore languages that have simple or
+even moderately complex morphologies and do not require morphological analysis
+in their hyphenators should be implemented using other tools such as Hunspell.
 
 Documentation for using the library can be found from voikko.h. The library
 needs libmalaga and suitable Malaga project file. The latter should be placed
-in /usr/lib/voikko/suomi.pro (this directory can be chosen during compile
-time). If user has a personal Malaga project file in $HOME/.voikko/suomi.pro
+in /usr/lib/voikko/voikko-fi_FI.pro (this directory can be chosen during compile
+time). If user has a personal Malaga project file in $HOME/.voikko/voikko-fi_FI.pro
 that will be used instead.

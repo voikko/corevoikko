@@ -107,6 +107,7 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 	voikko_options.no_ugly_hyphenation = 0;
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.encoding = "UTF-8";
+	voikko_options.cache_size = cache_size;
 	
 	project = malloc(1024);
 	if (project == 0) return "Out of memory";
@@ -152,16 +153,20 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 		voikko_handle_count--;
 		return malaga_error;
 	}
-	voikko_options.cache = malloc(1*6544 * sizeof(wchar_t));
-	if (voikko_options.cache) {
-		voikko_options.cache_meta = malloc(1*1008);
-		if (voikko_options.cache_meta) memset(voikko_options.cache_meta, 0, 1*1008);
-		else {
-			free(voikko_options.cache);
-			voikko_options.cache = 0;
+	if (cache_size >= 0) {
+		voikko_options.cache = malloc(6544 * sizeof(wchar_t) << cache_size);
+		if (voikko_options.cache) {
+			voikko_options.cache_meta = malloc(1008 << cache_size);
+			if (voikko_options.cache_meta)
+				memset(voikko_options.cache_meta, 0, 1008 << cache_size);
+			else {
+				free(voikko_options.cache);
+				voikko_options.cache = 0;
+			}
+			memset(voikko_options.cache, 0, 6544 * sizeof(wchar_t) << cache_size);
 		}
-		memset(voikko_options.cache, 0, 1*6544 * sizeof(wchar_t));
 	}
+	else voikko_options.cache = 0;
 	*handle = voikko_handle_count;
 	return 0;
 }
@@ -186,7 +191,7 @@ int voikko_terminate(int handle) {
 	else return 0;
 }
 
-#define VOIKKO_DICTIONARY_FILE "suomi.pro"
+#define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
 #ifdef WIN32
 #define VOIKKO_KEY                   "SOFTWARE\\Voikko"
 #define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
@@ -238,11 +243,11 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 		return 0;
 #endif
 #ifdef HAVE_GETPWUID_R
-		/* Check for project file in $HOME/.voikko/suomi.pro */
+		/* Check for project file in $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
 		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);
-		if (pwd_result && pwd.pw_dir && strlen(pwd.pw_dir) < buflen - 19 ) {
+		if (pwd_result && pwd.pw_dir && strlen(pwd.pw_dir) < buflen - 26 ) {
 			strcpy(buffer, pwd.pw_dir);
-			strcpy(buffer + strlen(pwd.pw_dir), "/.voikko/suomi.pro");
+			strcpy(buffer + strlen(pwd.pw_dir), "/.voikko/" VOIKKO_DICTIONARY_FILE);
 			if (stat(buffer, &sbuf) == 0) {
 				free(tmp_buf);
 				return 1;

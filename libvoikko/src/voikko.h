@@ -117,7 +117,6 @@ BEGIN_C_DECLS
  * @param langcode the language code, for example "fi_FI"
  * @param cache_size size of the spellchecker cache. This can be -1 (no cache) or
  *        >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
- *        TODO: This parameter is currently ignored (cache_size = 0 is assumed)
  * @return null, if initialisation completed without error, otherwise a pointer
  *         to a string describing the error
  */

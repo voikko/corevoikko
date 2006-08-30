@@ -75,14 +75,21 @@ int main(int argc, char ** argv) {
 	char * encoding;
 	int handle;
 	int i;
+	int cache_size;
 
 	line = malloc(size); /* FIXME */
 	if (line == 0) {
 		printf("E: Out of memory\n");
 		return 1;
 	}
-	if (argc == 2 && strcmp(argv[1], "-t") == 0) autotest = 1;
-	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
+	
+	cache_size = 0;
+	for (i = 1; i < argc; i++) {
+		if (strncmp(argv[i], "-c", 2) == 0) {
+			cache_size = atoi(argv[i] + 2);
+		}
+	}
+	const char * voikko_error = voikko_init(&handle, "fi_FI", cache_size);
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
 		return 1;

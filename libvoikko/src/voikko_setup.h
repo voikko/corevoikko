@@ -37,6 +37,7 @@ typedef struct {
 	iconv_t iconv_ext_ucs4;
 	wchar_t * cache;
 	char * cache_meta;
+	int cache_size;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;
