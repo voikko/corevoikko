@@ -50,11 +50,11 @@
 # Tiedosto suomi.pro Voikkoa varten.
 
 
-sym: voikko-fi_FI.sym
+sym: voikko-fi_FI.sym suomi.sym
 
-all: voikko-fi_FI.all suomi.inc subrule.inc voikko-fi_FI.pro
+all: voikko-fi_FI.all suomi.all suomi.inc subrule.inc voikko-fi_FI.pro
 
-lex: voikko-fi_FI.lex suomi.inc subrule.inc voikko-fi_FI.pro
+lex: voikko-fi_FI.lex suomi.lex suomi.inc subrule.inc voikko-fi_FI.pro
 
 lex: sanat/atk.lex
 lex: sanat/erikoissanat.lex
@@ -73,7 +73,7 @@ lex: sanat/yhdyssanat.lex
 lex: sanat/joukahainen.lex
 lex: sanat/lainen.lex
 
-mor: voikko-fi_FI.mor suomi.inc
+mor: voikko-fi_FI.mor suomi.mor suomi.inc
 
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"
