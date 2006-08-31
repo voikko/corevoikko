@@ -4498,6 +4498,7 @@ subrule raaka ($tietue,
                         [johdin_tOn:       $yksikön_heikko_aste + A($tietue),
                          johdin_UUs:       $yksikön_vahva_aste,
                          johdin_llinen:    $yksikön_heikko_aste + A($tietue),
+                         johdin_lAinen:    $yksikön_vahva_aste + A($tietue),
                          johdin_mAinen:    $yksikön_vahva_aste + A($tietue),
                          johdin_inen:      $yksikön_vahva_aste + A($tietue)] +
                         monikko7 ($yksikön_heikko_aste + A($tietue),

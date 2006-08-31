@@ -1106,6 +1106,7 @@
 [perusmuoto: "briljantti", alku: "briljant", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "briljeerata", alku: "briljeer", luokka: teonsana, jatko: <saneerata>, äs: a];
 [perusmuoto: "britti", alku: "brit", luokka: nimisana, jatko: <tatti>, äs: ä];
+[perusmuoto: "brittiläinen", alku: "brittiläi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "brodeerata", alku: "brodeer", luokka: teonsana, jatko: <saneerata>, äs: a];
 [perusmuoto: "brodyyri", alku: "brodyyr", luokka: nimisana, jatko: <banaali>, äs: aä];
 [perusmuoto: "broileri", alku: "broiler", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -1116,6 +1117,7 @@
 [perusmuoto: "brutaali", alku: "brutaal", luokka: laatusana, jatko: <banaali>, äs: a];
 [perusmuoto: "brutto", alku: "brut", luokka: nimisana, jatko: <liitto>, äs: a];
 [perusmuoto: "buddha", alku: "buddh", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "buddhalainen", alku: "buddhalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "buddhismi", alku: "buddhism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "budjetoida", alku: "budjeto", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "budjetti", alku: "budjet", luokka: nimisana, jatko: <salaatti>, äs: a];
@@ -2824,6 +2826,7 @@
 [perusmuoto: "hempeä", alku: "hemp", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "hempukka", alku: "hempuk", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "hengari", alku: "hengar", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "hengenheimolainen", alku: "hengenheimolai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "hengetär", alku: "henget", luokka: nimisana, jatko: <tytär>, äs: ä];
 [perusmuoto: "hengittää", alku: "hengit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hengähtää", alku: "hengä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
@@ -3053,6 +3056,7 @@
 [perusmuoto: "hinauttaa", alku: "hinaut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "hinautua", alku: "hinau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "hindu", alku: "hindu", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "hindulainen", alku: "hindulai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "hinkalo", alku: "hinkalo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "hinkata", alku: "hink", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "hinkki", alku: "hink", luokka: nimisana, jatko: <takki>, äs: ä];
@@ -4163,6 +4167,7 @@
 [perusmuoto: "iskuri", alku: "iskur", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "iskä", alku: "isk", luokka: nimisana, jatko: <koira>, äs: ä];
 [perusmuoto: "islam", alku: "islam", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "islamilainen", alku: "islamilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ismi", alku: "ism", luokka: nimisana, jatko: <risti>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "iso", alku: "iso", luokka: nimi_laatusana, jatko: <valo>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "iso", alku: "iso", luokka: laatusana, jatko: <valo>, äs: a, tiedot: <ei_sukija>];
@@ -4827,6 +4832,7 @@
 [perusmuoto: "kaarros", alku: "kaarro", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kaartaa", alku: "kaar", luokka: teonsana, jatko: <saartaa>, äs: a];
 [perusmuoto: "kaarti", alku: "kaart", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kaartilainen", alku: "kaartilai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kaarto", alku: "kaar", luokka: nimisana, jatko: <kaarto>, äs: a];
 [perusmuoto: "kaartua", alku: "kaar", luokka: teonsana, jatko: <kumartua>, äs: a];
 [perusmuoto: "kaasu", alku: "kaasu", luokka: nimisana, jatko: <valo>, äs: a];
@@ -5533,6 +5539,7 @@
 [perusmuoto: "kauppias", alku: "kauppia", luokka: nimisana, jatko: <vieras>, äs: a];
 [perusmuoto: "kaupungistaa", alku: "kaupungist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "kaupunki", alku: "kaupun", luokka: nimisana, jatko: <killinki>, äs: a];
+[perusmuoto: "kaupunkilainen", alku: "kaupunkilai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kaupustella", alku: "kaupustel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "kaura", alku: "kaur", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "kauris", alku: "kaur", luokka: nimisana, jatko: <kauris>, äs: a];
@@ -6373,6 +6380,7 @@
 [perusmuoto: "kokooma", alku: "kokoom", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "kokoomukselainen", alku: "kokoomukselai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kokoomus", alku: "kokoomu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "kokoomuslainen", alku: "kokoomuslai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kokoonpano", alku: "kokoonpano", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "kokoonpantu", alku: "kokoonpan", luokka: nimisana, jatko: <lintu>, äs: a];
 [perusmuoto: "kokoontua", alku: "kokoon", luokka: teonsana, jatko: <jakaantua>, äs: a];

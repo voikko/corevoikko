@@ -813,6 +813,7 @@
 [perusmuoto: "Raisio", alku: "Raisio", luokka: paikannimi, jatko: <autio>, äs: a];
 [perusmuoto: "Raivola", alku: "Raivol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Ramallah", alku: "Ramallah", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Ranska", alku: "Ransk", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Rantala", alku: "Rantal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Ranua", alku: "Ranu", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rapola", alku: "Rapol", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -858,6 +859,7 @@
 [perusmuoto: "Saimaa", alku: "Saima", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "Sakkola", alku: "Sakkol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Saku", alku: "Saku", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Saksa", alku: "Saks", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Salla", alku: "Sall", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Salmela", alku: "Salmel", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Salmi", alku: "Salm", luokka: paikannimi, jatko: <risti>, äs: a];
