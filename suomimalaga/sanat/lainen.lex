@@ -46,8 +46,7 @@
 # This file has been modified by the contributors of Hunspell-fi project.
 # Last change was on $Date$ by $Author$.
 #
-# This file should be removed after it becomes possible to automatically
-# derive these words from other nouns.
+# This file contains some special words and workarounds for known bugs.
 
 [perusmuoto: "abessinialainen", alku: "abessinialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "afroamerikkalainen", alku: "afroamerikkalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -286,10 +285,22 @@
 [perusmuoto: "räisäläinen", alku: "räisäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "härmäläinen", alku: "härmäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 
-# These do not logically belong here, but there is no reason to add a new file for these either.
+# Special compound words
 [perusmuoto: "allekirjoittaa", alku: "allekirjoi", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "audiovisuaalinen", alku: "audiovisuaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "edelleenjakaa", alku: "edelleenja", luokka: teonsana, jatko: <jakaa>, äs: a];
 [perusmuoto: "elintärkeä", alku: "elintärk", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "laajakaista", alku: "laajakaist", luokka: nimisana, jatko: <kala>, äs: a];
+
+# Special abbreviations. There are some more of these, but they should preferably be
+# included only in special scientific word lists.
+[alku: "m:eissä", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "s:eissa", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "h:eissa", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "m:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "s:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "h:eineen", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "m:einä", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "s:eina", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "h:eina", luokka: lyhenne, jatko: <loppu>, äs: aä];
 

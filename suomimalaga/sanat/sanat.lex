@@ -3013,7 +3013,7 @@
 [perusmuoto: "hiivittää", alku: "hiivit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hik", alku: "hik", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hikeentyä", alku: "hikeen", luokka: teonsana, jatko: <jakaantua>, äs: ä];
-[perusmuoto: "hiki", alku: "hi", luokka: nimisana, jatko: <kaikki>, äs: ä, tiedot: <inen>];
+[perusmuoto: "hiki", alku: "hi", luokka: nimisana, jatko: <piki>, äs: ä, tiedot: <inen>];
 [perusmuoto: "hikka", alku: "hik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "hikkori", alku: "hikkor", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "hikoiluttaa", alku: "hikoilut", luokka: teonsana, jatko: <autioittaa>, äs: a];
@@ -12050,7 +12050,7 @@
 [perusmuoto: "pikari", alku: "pikar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "pikee", alku: "pike", luokka: nimisana, jatko: <kamee>, äs: ä];
 [perusmuoto: "pikemmin", alku: "pikemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "piki", alku: "pi", luokka: nimisana, jatko: <kaikki>, äs: ä, tiedot: <inen>];
+[perusmuoto: "piki", alku: "pi", luokka: nimisana, jatko: <piki>, äs: ä, tiedot: <inen>];
 [perusmuoto: "pikimmin", alku: "pikimmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pikimmiten", alku: "pikimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pikkainen", alku: "pikkai", luokka: laatusana, jatko: <nainen>, äs: a];

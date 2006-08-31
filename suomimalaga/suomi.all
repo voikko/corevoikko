@@ -364,6 +364,9 @@ allo_rule generate_allos ($tietue):
     choose $i in lovi ($tietue, "k", "");
     result $i.alku, $i - alku;
 
+  elseif (piki in $tietue.jatko) then
+    choose $i in piki ($tietue, "k", "", "k", "'");
+    result $i.alku, $i - alku;
 
   elseif (kylki in $tietue.jatko) then
     choose $i in lovi ($tietue, "k", "j");
@@ -3729,6 +3732,52 @@ subrule taivutuskaava ($tietue, $taivutus):
 end;
 
 
+# $tietue    Sanatietue
+# $taivutus  Sanan taivutus eri taivutusmuodoissa.
+# $ei_uusi   Taivutusmuodot, joita ei ole uudessa taivutuksessa.
+#
+subrule taivutuskaava2 ($tietue, $taivutus, $ei_uusi):
+  if (($tietue.luokka in @nimisana + <laatusana>) and
+       ($taivutus.nimentö /= nil)) then
+    $taivutus :=+ [tavuviiva: $taivutus.nimentö];
+  end;
+
+  if (not ($tietue.luokka in <nimisana, nimi_laatusana>) or
+     (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
+    $taivutus :=- johdin_inen;
+  end;
+
+  if ((switch(malli) = voikko) and ($ei_uusi /= <>)) then
+    $taivutus :=- $ei_uusi;
+  end;
+
+  # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
+  #
+  if ($tietue.tiedot /= nil) then
+    if (ei_inen in $tietue.tiedot) then
+      $taivutus :=- johdin_inen;
+    end;
+    if (ei_lAinen in $tietue.tiedot) then
+      $taivutus :=- johdin_lAinen;
+    end;
+    if (ei_mAinen in $tietue.tiedot) then
+      $taivutus :=- johdin_mAinen;
+    end;
+  end;
+
+
+  define $lista := lajittele ($taivutus);
+
+  define $t := <>;
+
+  foreach $i in $lista:
+    $t :=+ <taivutus ($tietue, $i.1, $i.2, [])>;
+  end;
+
+  return $t;
+end;
+
+
 subrule tositapa0 ($tietue,
                    $kestämän_vahva_aste, $kestämän_heikko_aste,
                    $kertoman_vahva_aste, $kertoman_heikko_aste):
@@ -4514,6 +4563,59 @@ end;
 
 subrule lovi ($tietue, $vahva_aste, $heikko_aste):
   return kumpi ($tietue, $vahva_aste, $heikko_aste, "e");
+end;
+
+subrule piki ($tietue,
+              $yksikön_vahva_aste,
+              $yksikön_heikko_aste,
+              $monikon_vahva_aste,
+              $monikon_heikko_aste):
+  return taivutuskaava2 ($tietue,
+                         [nimentö:          $yksikön_vahva_aste  + "i",
+                          omistusliite:     $yksikön_vahva_aste  + "e",
+                          omanto_n:         $yksikön_heikko_aste + "e",
+                          osanto_A:         $yksikön_vahva_aste  + "e",
+                          olento_nA:        $yksikön_vahva_aste  + "e",
+                          tulento_ksi:      $yksikön_heikko_aste + "e",
+                          sisäolento_ssA:   $yksikön_heikko_aste + "e",
+                          sisäeronto_stA:   $yksikön_heikko_aste + "e",
+                          sisätulento_Vn:   $yksikön_vahva_aste  + "e",
+                          ulko_olento_llA:  $yksikön_heikko_aste + "e",
+                          ulkoeronto_ltA:   $yksikön_heikko_aste + "e",
+                          ulkotulento_lle:  $yksikön_heikko_aste + "e",
+                          vajanto_ttA:      $yksikön_heikko_aste + "e",
+
+                          nimentö_t:        $yksikön_heikko_aste + "e",
+                          omanto_en:        $monikon_vahva_aste  + "i",
+                          omanto_in:        $yksikön_vahva_aste  + "e",
+                          osanto_iA:        $monikon_vahva_aste,
+                          olento_inA:       $monikon_vahva_aste,
+                          tulento_iksi:     $monikon_heikko_aste,
+                          sisäolento_issA:  $monikon_heikko_aste,
+                          sisäeronto_istA:  $monikon_heikko_aste,
+                          sisätulento_iin:  $monikon_vahva_aste,
+                          ulko_olento_illA: $monikon_heikko_aste,
+                          ulkoeronto_iltA:  $monikon_heikko_aste,
+                          ulkotulento_ille: $monikon_heikko_aste,
+                          vajanto_ittA:     $monikon_heikko_aste,
+                          seuranto_ine:     $monikon_vahva_aste,
+                          keinonto_in:      $monikon_heikko_aste,
+## Näitä kolmea ei oikeastaan tarvita, koska tällä
+## tavalla taipuvia laatusanoja ei ole, mutta
+## niitä voi tulla...
+                          kerronto_sti:    $yksikön_heikko_aste + "e",
+                          voittoaste:      $yksikön_heikko_aste + "e",
+                          yliaste:         $monikon_heikko_aste,
+
+                          johdin_inen:      $yksikön_vahva_aste,
+                          johdin_ittain:    $monikon_heikko_aste,
+                          johdin_lAinen:    $yksikön_vahva_aste  + "e",
+                          johdin_llinen:    $yksikön_heikko_aste + "e",
+                          johdin_mAinen:    $yksikön_vahva_aste  + "i",
+                          johdin_tOn:       $yksikön_heikko_aste + "e",
+                          johdin_Us:        $yksikön_vahva_aste  + "i"]
+                         + yhdyssana ($yksikön_vahva_aste  + "i"),
+                         <omanto_in>);
 end;
 
 
