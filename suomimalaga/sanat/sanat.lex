@@ -883,7 +883,7 @@
 [perusmuoto: "auer", alku: "au", luokka: nimisana, jatko: <auer>, äs: a];
 [perusmuoto: "aueta", alku: "au", luokka: teonsana, jatko: <poiketa>, äs: a];
 [perusmuoto: "aueta", alku: "au", luokka: teonsana, jatko: <vaieta>, äs: a];
-[perusmuoto: "aukaisin", alku: "aukaisi", luokka: nimisana, jatko: <uistin>, äs: ä];
+[perusmuoto: "aukaisin", alku: "aukaisi", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "aukaista", alku: "auka", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "aukea", alku: "auk", luokka: nimi_laatusana, jatko: <korkea>, äs: a];
 [perusmuoto: "auki", alku: "auki", luokka: seikkasana, jatko: <liitesana, loppu> + @sana2, äs: a];
@@ -2424,7 +2424,7 @@
 [perusmuoto: "hake", alku: "hak", luokka: nimisana, jatko: <tarvike>, äs: a];
 [perusmuoto: "hakemisto", alku: "hakemisto", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "hakemus", alku: "hakemu", luokka: nimisana, jatko: <vastaus>, äs: a];
-[perusmuoto: "haketin", alku: "haketin", luokka: nimisana, jatko: <suodatin>, äs: a];
+[perusmuoto: "haketin", alku: "haket", luokka: nimisana, jatko: <suodatin>, äs: a];
 [perusmuoto: "hakettaa", alku: "haket", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "haketus", alku: "haketu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "hakeutua", alku: "hakeu", luokka: teonsana, jatko: <antautua>, äs: a];
@@ -5948,7 +5948,7 @@
 [perusmuoto: "kiiliäinen", alku: "kiiliäi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kiille", alku: "kiil", luokka: nimisana, jatko: <helle>, äs: ä];
 [perusmuoto: "kiilloke", alku: "kiillok", luokka: nimisana, jatko: <tarvike>, äs: a];
-[perusmuoto: "kiillotin", alku: "kiillot", luokka: nimisana, jatko: <suodatin>, äs: ä];
+[perusmuoto: "kiillotin", alku: "kiillot", luokka: nimisana, jatko: <suodatin>, äs: a];
 [perusmuoto: "kiillottaa", alku: "kiillo", luokka: teonsana, jatko: <ammottaa>, äs: a];
 [perusmuoto: "kiillottua", alku: "kiillot", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "kiilto", alku: "kiil", luokka: nimisana, jatko: <aalto>, äs: a];
@@ -11383,7 +11383,7 @@
 [perusmuoto: "paljakka", alku: "paljak", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "paljas", alku: "palja", luokka: laatusana, jatko: <vieras>, äs: a];
 [perusmuoto: "paljastaa", alku: "paljast", luokka: teonsana, jatko: <hidastaa>, äs: a];
-[perusmuoto: "paljastin", alku: "paljasti", luokka: nimisana, jatko: <uistin>, äs: ä];
+[perusmuoto: "paljastin", alku: "paljasti", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "palje", alku: "pal", luokka: nimisana, jatko: <lahje>, äs: a];
 [perusmuoto: "paljetti", alku: "paljet", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "paljo", alku: "paljo", luokka: nimi_laatusana, jatko: <valo>, äs: a];
@@ -12913,7 +12913,7 @@
 [perusmuoto: "puru", alku: "puru", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "pusakka", alku: "pusak", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "pusero", alku: "pusero", luokka: nimisana, jatko: <arvelu>, äs: a];
-[perusmuoto: "puserrin", alku: "puser", luokka: nimisana, jatko: <kiharrin>, äs: ä];
+[perusmuoto: "puserrin", alku: "puser", luokka: nimisana, jatko: <kiharrin>, äs: a];
 [perusmuoto: "pusertaa", alku: "puser", luokka: teonsana, jatko: <musertaa>, äs: a];
 [perusmuoto: "pusertautua", alku: "pusertau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "pusertua", alku: "puser", luokka: teonsana, jatko: <kumartua>, äs: a];
@@ -18283,7 +18283,7 @@
 [perusmuoto: "varmentaa", alku: "varmen", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "varmistaa", alku: "varmist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "varmistautua", alku: "varmistau", luokka: teonsana, jatko: <antautua>, äs: a];
-[perusmuoto: "varmistin", alku: "varmisit", luokka: nimisana, jatko: <uistin>, äs: a];
+[perusmuoto: "varmistin", alku: "varmisti", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "varoa", alku: "varo", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "varo", alku: "varo", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "varoittaa", alku: "varo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];

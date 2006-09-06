@@ -156,6 +156,8 @@ def apply_gradation(word, grad_type):
 	if grad_type == u'av4': # j -> k
 		if word[-2] == u'j':
 			return (word[:-2]+u'k'+word[-1]+last_letter, word+last_letter)
+		if word[-3] == u'j':
+			return (word[:-3]+u'k'+word[-2]+word[-1]+last_letter, word+last_letter)
 	if grad_type == u'av5': # k -> -
 		if word[-2] == u'k':
 			if word[-3] == word[-1]: # ruoko, vaaka
