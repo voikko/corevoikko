@@ -196,6 +196,7 @@
 [perusmuoto: "Pepsi", alku: "Peps", luokka: nimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Peugeot", alku: "Peugeot", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Pisari", alku: "Pisar", luokka: nimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Pluto", alku: "Pluto", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Porsche", alku: "Porsche", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Pravda", alku: "Pravd", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Psycho", alku: "Psycho", luokka: nimi, jatko: <valo>, äs: a];
