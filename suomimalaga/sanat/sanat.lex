@@ -4918,6 +4918,7 @@
 [perusmuoto: "kaihtaa", alku: "kaih", luokka: teonsana, jatko: <kaihtaa>, äs: a];
 [perusmuoto: "kaikaa", alku: "kaikaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "kaikenlainen", alku: "kaikenlai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kaiketi", alku: "kaiketi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaikinpuolin", alku: "kaikinpuolin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kaikinpuolinen", alku: "kaikinpuoli", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -14521,6 +14522,7 @@
 [perusmuoto: "samaistaa", alku: "samaist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "šamanistinen", alku: "šamanisti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "samankaltaistaa", alku: "samankaltaist", luokka: teonsana, jatko: <hidastaa>, äs: a];
+[perusmuoto: "samanlainen", alku: "samanlai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "samastaa", alku: "samast", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "samaten", alku: "samaten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "samba", alku: "samb", luokka: nimisana, jatko: <kala>, äs: a];
@@ -14731,6 +14733,7 @@
 [perusmuoto: "seka", alku: "se", luokka: nimisana, jatko: <haka>, äs: a, tiedot: <inen>];
 [perusmuoto: "sekaannus", alku: "sekaannu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "sekaantua", alku: "sekaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
+[perusmuoto: "sekalainen", alku: "sekalai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sekamelska", alku: "sekamelsk", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "sekantti", alku: "sekant", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "sekava", alku: "sekav", luokka: nimi_laatusana, jatko: <asema>, äs: a];
@@ -14900,6 +14903,7 @@
 [perusmuoto: "seuloutua", alku: "seulou", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "seura", alku: "seur", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "seuraamus", alku: "seuraamu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "seuralainen", alku: "seuralai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "seuranta", alku: "seuran", luokka: nimisana, jatko: <veranta>, äs: a];
 [perusmuoto: "seuranto", alku: "seuran", luokka: nimisana, jatko: <avanto>, äs: a];
 [perusmuoto: "seurata", alku: "seur", luokka: teonsana, jatko: <salata>, äs: a];
