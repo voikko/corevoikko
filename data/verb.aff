@@ -259,6 +259,47 @@ imperfekti_pass	0	ttiin	w
 end: rules
 end: class
 
+# Kotus 66 rohkaista ====================
+
+class: verbi-nuolaista
+sm-class: nuolaista
+rmsfx: ista
+match-word: AistA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ista	w
+preesens_yks_1	0	isen	s
+imperfekti_yks_3	0	isi	s
+kondit_yks_3	0	isisi	s
+imperatiivi_yks_3	0	iskoon	s
+partisiippi_2	0	issut	s
+imperfekti_pass	0	istiin	s
+end: rules
+end: class
+
+class: verbi-kihistä
+sm-class: kihistä
+rmsfx: sta
+match-word: istA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	sta	w
+preesens_yks_1	0	sen	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	sisi	s
+imperatiivi_yks_3	0	skoon	s
+partisiippi_2	0	ssut	s
+imperfekti_pass	0	stiin	s
+!verbi_AjAA	i	ajaa	s #FIXME: a<->ä
+end: rules
+end: class
+
+# End Kotus 66 rohkaista ================
+
 # Kotus 67 tulla
 class: verbi-katsella
 sm-class: katsella
@@ -335,6 +376,25 @@ imperatiivi_yks_3	a	sekoon	s
 partisiippi_2	da	nut	w
 imperfekti_pass	a	iin	s
 verbi_tUA	a	ua	s
+end: rules
+end: class
+
+# Kotus 73 vanheta
+class: verbi-aleta
+sm-class: aleta
+rmsfx: tA
+match-word: VtA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	nen	s
+imperfekti_yks_3	0	ni	s
+kondit_yks_3	0	nisi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
 end: rules
 end: class
 
