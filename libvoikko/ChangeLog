@@ -1,3 +1,8 @@
+2006-09-14 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Decrease LIBVOIKKO_MAX_WORD_CHARS to prevent freezing malaga with too complicated
+	  compound words.
+
 2006-08-30 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Look for Malaga project file voikko-fi_FI.pro instead of suomi.pro.
