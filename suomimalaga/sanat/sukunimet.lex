@@ -1386,6 +1386,7 @@
 [perusmuoto: "Rouvala", alku: "Rouval", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rouvinen", alku: "Rouvi", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Rowling", alku: "Rowling", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Ruhanen", alku: "Ruha", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Rummukainen", alku: "Rummukai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Rundman", alku: "Rundman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Runeberg", alku: "Runeberg", luokka: sukunimi, jatko: <kalsium>, äs: a];
