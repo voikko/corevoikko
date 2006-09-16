@@ -454,7 +454,7 @@ end: class
 
 # Kotus 12 lattia
 class: subst-lattia
-sm-class: kulkija apila peruna herttua
+sm-class: kulkija peruna herttua
 match-word: A
 consonant-gradation: -
 group: t
@@ -490,6 +490,50 @@ allatiivi_mon	a	oille	s
 abessiivi_mon	a	oitta	s	ps=f
 komitatiivi_mon	a	oine	s	ps=r
 instruktiivi_mon	a	oin	s	ps=f
+end: rules
+end: class
+
+
+# Kotus 13 katiska
+class: subst-karahka
+sm-class: karahka
+match-word: A
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w
+partitiivi	0	a	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		0	an	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	a	oiden	w
+genetiivi_mon	a	oitten	w
+genetiivi_mon	a	ojen	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	oita	w
+partitiivi_mon	a	oja	s
+translatiivi_mon	a	oiksi	w	ps=f
+translatiivi_mon	a	oikse	w	ps=r
+essiivi_mon	a	oina	w
+inessiivi_mon	a	oissa	w
+elatiivi_mon	a	oista	w
+illatiivi_mon	a	oihin	w
+adessiivi_mon	a	oilla	w
+ablatiivi_mon	a	oilta	w
+allatiivi_mon	a	oille	w
+abessiivi_mon	a	oitta	w	ps=f
+komitatiivi_mon	a	oine	s	ps=r
+instruktiivi_mon	a	oin	w	ps=f
 end: rules
 end: class
 
