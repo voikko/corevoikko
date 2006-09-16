@@ -28,6 +28,11 @@ GRAD_NONE = 0
 GRAD_SW = 1
 GRAD_WS = 2
 
+# Vowel types
+VOWEL_DEFAULT=0
+VOWEL_FRONT=1
+VOWEL_BACK=2
+VOWEL_BOTH=3
 
 # Returns a connection to a vocabulary database (or None, if the database is not available).
 # Connection parameters are read from file .pg_connect_string in the current working directory.
@@ -54,9 +59,6 @@ def consonant(letter):
 
 # Function that returns the type of vowels that are allowed in the affixes for given word.
 # The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
-VOWEL_FRONT=1
-VOWEL_BACK=2
-VOWEL_BOTH=3
 def vowel_type(word):
 	word = word.lower()
 	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'u'))

@@ -312,7 +312,7 @@ def get_matching_noun_class(word, cname, grad_exact_type, noun_classes):
 # Returns a list of inflected forms for a given word or None, if word cannot be
 # inflected in the given class. The list will contain tuples in the form
 # (form_name, word, flags).
-def inflect_word(word, grad_exact_type, noun_class):
+def inflect_word(word, grad_exact_type, noun_class, vowel_type = hfutils.VOWEL_DEFAULT):
 	l = len(noun_class['rmsfx'])
 	if l == 0: word_no_sfx = word
 	else: word_no_sfx = word[:-l]
@@ -324,9 +324,10 @@ def inflect_word(word, grad_exact_type, noun_class):
 	if grad_type != hfutils.GRAD_NONE and grad_type != noun_class['gradation']: return None
 	if not re.compile(__word_pattern_to_pcre(noun_class['match'])).match(word): return None
 	inflection_list = []
-	if hfutils.vowel_type(word) in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
+	if vowel_type == hfutils.VOWEL_DEFAULT: vowel_type = hfutils.vowel_type(word)
+	if vowel_type in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
 	   noun_class['group'] != 't': return None # FIXME
-	if hfutils.vowel_type(word) in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
+	if vowel_type in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
 	   noun_class['tgroup'] != 'e': return None # FIXME
 	for rule in noun_class['rules']:
 		if len(rule) == 5:
@@ -343,11 +344,11 @@ def inflect_word(word, grad_exact_type, noun_class):
 			else: affix = hunspell_rule[1]
 			if hunspell_rule[2] == '.': pattern = ''
 			else: pattern = hunspell_rule[2]
-			if hfutils.vowel_type(word) in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
+			if vowel_type in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
 			   word_base.endswith(pattern):
 				word_infl = word_stripped_base + affix
 				inflection_list.append((rule[0], word_infl, optflags))
-			if hfutils.vowel_type(word) in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
+			if vowel_type in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
 			   word_base.endswith(__convert_tv_ev(pattern)):
 				word_infl = word_stripped_base + __convert_tv_ev(affix)
 				inflection_list.append((rule[0], word_infl, optflags))
