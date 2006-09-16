@@ -3144,7 +3144,7 @@
 [perusmuoto: "hohde", alku: "hoh", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <inen>];
 [perusmuoto: "hohdin", alku: "hoh", luokka: nimisana, jatko: <kaadin>, äs: a];
 [perusmuoto: "hohdokas", alku: "hohdok", luokka: laatusana, jatko: <iäkäs>, äs: a];
-[perusmuoto: "hohkaa", alku: "hohk", luokka: teonsana, jatko: <muistaa>, äs: a];
+[perusmuoto: "hohkaa", alku: "hohka", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "hohka", alku: "hohk", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <inen>];
 [perusmuoto: "hohkata", alku: "hohk", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "hohottaa", alku: "hoho", luokka: teonsana, jatko: <ammottaa>, äs: a];
@@ -3636,7 +3636,6 @@
 [perusmuoto: "hälyttää", alku: "hälyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hälytys", alku: "hälyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "hälytä", alku: "häly", luokka: teonsana, jatko: <haluta>, äs: ä];
-[perusmuoto: "hälyyttää", alku: "hälyyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hämi", alku: "häm", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hämillinen", alku: "hämilli", luokka: laatusana, jatko: <nainen>, äs: ä];
@@ -5094,6 +5093,7 @@
 [perusmuoto: "kamiina", alku: "kamiin", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "kammata", alku: "kam", luokka: teonsana, jatko: <kammata>, äs: a];
 [perusmuoto: "kammeta", alku: "kam", luokka: teonsana, jatko: <kammeta>, äs: a];
+[perusmuoto: "kammi", alku: "kamm", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "kammio", alku: "kammio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "kammitsoida", alku: "kammitso", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "kammo", alku: "kammo", luokka: nimisana, jatko: <valo>, äs: a];
@@ -11006,6 +11006,7 @@
 [perusmuoto: "omata", alku: "om", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "omeletti", alku: "omelet", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "omena", alku: "omen", luokka: nimisana, jatko: <matala>, äs: a];
+[perusmuoto: "omenakääriäinen", alku: "omenakääriäi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ometta", alku: "omet", luokka: nimisana, jatko: <savotta>, äs: a];
 [perusmuoto: "omia", alku: "om", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "ominainen", alku: "ominai", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -12221,7 +12222,7 @@
 [perusmuoto: "pituus", alku: "pituu", luokka: nimisana, jatko: <kalleus>, äs: a];
 [perusmuoto: "pitäjä", alku: "pitäj", luokka: nimisana, jatko: <apaja>, äs: ä];
 [perusmuoto: "pitäytyä", alku: "pitäy", luokka: teonsana, jatko: <antautua>, äs: ä];
-[perusmuoto: "pitää", alku: "pi", luokka: teonsana, jatko: <hohtaa>, äs: ä, tiedot: <inen>];
+[perusmuoto: "pitää", alku: "pi", luokka: teonsana, jatko: <hohtaa>, äs: ä];
 [perusmuoto: "piuha", alku: "piuh", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "piukka", alku: "piuk", luokka: laatusana, jatko: <haka>, äs: a];
 [perusmuoto: "piuvi", alku: "piuv", luokka: nimisana, jatko: <risti>, äs: a];
@@ -12530,6 +12531,7 @@
 [perusmuoto: "preferenssi", alku: "preferenss", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "prefiksi", alku: "prefiks", luokka: nimisana, jatko: <banaali>, äs: ä];
 [perusmuoto: "prejudikaatti", alku: "prejudikaat", luokka: nimisana, jatko: <tatti>, äs: a];
+[perusmuoto: "prekariaatti", alku: "prekariaat", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "prelaatti", alku: "prelaat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "preliminääri", alku: "preliminäär", luokka: laatusana, jatko: <risti>, äs: ä];
 [perusmuoto: "preludi", alku: "prelud", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -15495,6 +15497,7 @@
 [perusmuoto: "spartakisti", alku: "spartakist", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "spastikko", alku: "spastik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "spefi", alku: "spef", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "spektaakkeli", alku: "spektaakkel", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "spektri", alku: "spektr", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "spektrometri", alku: "spektrometr", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "spekulaatio", alku: "spekulaatio", luokka: nimisana, jatko: <autio>, äs: a];
@@ -16112,7 +16115,7 @@
 [perusmuoto: "särki", alku: "sär", luokka: nimisana, jatko: <kylki>, äs: ä];
 [perusmuoto: "särkkä", alku: "särk", luokka: nimisana, jatko: <hoikka>, äs: ä];
 [perusmuoto: "särky", alku: "sär", luokka: nimisana, jatko: <alku>, äs: ä];
-[perusmuoto: "särkyä", alku: "särky", luokka: teonsana, jatko: <punoa>, äs: ä];
+[perusmuoto: "särkyä", alku: "sär", luokka: teonsana, jatko: <kiekua>, äs: ä];
 [perusmuoto: "särmikäs", alku: "särmik", luokka: laatusana, jatko: <iäkäs>, äs: ä];
 [perusmuoto: "särmiö", alku: "särmiö", luokka: nimisana, jatko: <autio>, äs: ä];
 [perusmuoto: "särmä", alku: "särm", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <inen>];
@@ -18113,7 +18116,7 @@
 [perusmuoto: "valhetella", alku: "valhet", luokka: teonsana, jatko: <aatella>, äs: a];
 [perusmuoto: "validi", alku: "valid", luokka: laatusana, jatko: <risti>, äs: a];
 [perusmuoto: "validiteetti", alku: "validiteet", luokka: nimisana, jatko: <tatti>, äs: a];
-[perusmuoto: "validoida", alku: "valido", luokka: teonsana, jatko: <haravoida>, äs: a];
+[perusmuoto: "validoida", alku: "valido", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "valikko", alku: "valik", luokka: nimisana, jatko: <laatikko>, äs: a, tiedot: <inen>];
 [perusmuoto: "valikoida", alku: "valiko", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "valikoitua", alku: "valikoi", luokka: teonsana, jatko: <kaatua>, äs: a];
