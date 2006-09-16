@@ -5966,7 +5966,7 @@
 [perusmuoto: "kiinnitin", alku: "kiinnit", luokka: nimisana, jatko: <suodatin>, äs: ä];
 [perusmuoto: "kiinnittyä", alku: "kiinnit", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "kiinnittää", alku: "kiinnit", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "kiinnitäytyä", alku: "kiinnitäy", luokka: teonsana, jatko: <kaatua>, äs: ä];
+[perusmuoto: "kiinnittäytyä", alku: "kiinnittäy", luokka: teonsana, jatko: <kaatua>, äs: ä];
 [perusmuoto: "kiinnostaa", alku: "kiinnost", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "kiinteimistö", alku: "kiinteimistö", luokka: nimisana, jatko: <valo>, äs: ä];
 [perusmuoto: "kiinteistö", alku: "kiinteistö", luokka: nimisana, jatko: <valo>, äs: ä];
