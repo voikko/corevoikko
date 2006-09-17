@@ -1128,6 +1128,50 @@ end: rules
 end: class
 
 
+# Kotus 41 rengas
+class: subst-iäkäs
+sm-class: iäkäs
+match-word: (?:A|e|i)s
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	([aei])s	(1)(1)	s	ps=r
+genetiivi		([aei])s	(1)(1)n	s
+partitiivi	0	ta	w
+translatiivi	([aei])s	(1)(1)ksi	s	ps=f
+translatiivi	([aei])s	(1)(1)kse	s	ps=r
+essiivi		([aei])s	(1)(1)na	s
+inessiivi		([aei])s	(1)(1)ssa	s
+elatiivi		([aei])s	(1)(1)sta	s
+illatiivi		([aei])s	(1)(1)seen	s
+adessiivi		([aei])s	(1)(1)lla	s
+ablatiivi		([aei])s	(1)(1)lta	s
+allatiivi		([aei])s	(1)(1)lle	s
+abessiivi		([aei])s	(1)(1)tta	s	ps=f
+nominatiivi_mon	([aei])s	(1)(1)t	s	ps=f
+genetiivi_mon	s	iden	s
+genetiivi_mon	s	itten	s	prio=2
+partitiivi_mon	s	ita	s
+translatiivi_mon	s	iksi	s	ps=f
+translatiivi_mon	s	ikse	s	ps=r
+essiivi_mon	s	ina	s
+inessiivi_mon	s	issa	s
+elatiivi_mon	s	ista	s
+illatiivi_mon	s	isiin	s
+illatiivi_mon	s	ihin	s	prio=3
+adessiivi_mon	s	illa	s
+ablatiivi_mon	s	ilta	s
+allatiivi_mon	s	ille	s
+abessiivi_mon	s	itta	s	ps=f
+komitatiivi_mon	s	ine	s	ps=r
+instruktiivi_mon	s	in	s	ps=f
+!subst_UUs	as	uus	s
+end: rules
+end: class
+
+
 # Kotus 48 aate
 class: subst-e2
 sm-class: hame terve kiiru

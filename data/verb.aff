@@ -260,22 +260,22 @@ end: rules
 end: class
 
 # Kotus 66 rohkaista ====================
-
+# FIXME: rangaista (nuolaista-av2)
 class: verbi-nuolaista
 sm-class: nuolaista
-rmsfx: ista
-match-word: AistA
+rmsfx: sta
+match-word: stA
 consonant-gradation: ws
 group: t
 transform-group: e
 rules:
-infinitiivi_1	0	ista	w
-preesens_yks_1	0	isen	s
-imperfekti_yks_3	0	isi	s
-kondit_yks_3	0	isisi	s
-imperatiivi_yks_3	0	iskoon	s
-partisiippi_2	0	issut	s
-imperfekti_pass	0	istiin	s
+infinitiivi_1	0	sta	w
+preesens_yks_1	0	sen	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	sisi	s
+imperatiivi_yks_3	0	skoon	s
+partisiippi_2	0	ssut	s
+imperfekti_pass	0	stiin	s
 end: rules
 end: class
 
