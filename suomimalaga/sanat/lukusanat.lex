@@ -79,15 +79,15 @@
 [perusmuoto: "sata", alku: "sa", luokka: lukusana, jatko: <pata>, äs: a];
 [perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, jatko: <tuhat>, äs: a];
 [perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, jatko: <apaja>, äs: a];
-[perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, jatko: <paperi>, äs: a];
+[perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, jatko: <paperi>, äs: a, tiedot: <murre>];
 [perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, jatko: <paperi>, äs: a];
-[perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, jatko: <paperi>, äs: a];
+[perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, jatko: <paperi>, äs: a, tiedot: <murre>];
 [perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, jatko: <asema>, äs: a];
 [perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, jatko: <asema>, äs: a];
 
 
 [perusmuoto: "ensimmäinen", alku: "ensimmäi", luokka: lukusana, jatko: <nainen>, äs: ä];
-[perusmuoto: "ensimäinen", alku: "ensimäi", luokka: lukusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "ensimäinen", alku: "ensimäi", luokka: lukusana, jatko: <nainen>, äs: ä, tiedot: <murre>];
 [perusmuoto: "yhdes", alku: "yhde", luokka: lukusana, jatko: <kahdeksas>, äs: ä];
 [perusmuoto: "toinen", alku: "toi", luokka: lukusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kahdes", alku: "kahde", luokka: lukusana, jatko: <kahdeksas>, äs: a];
