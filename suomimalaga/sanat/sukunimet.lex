@@ -886,10 +886,10 @@
 [perusmuoto: "Lievonen", alku: "Lievo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lihavainen", alku: "Lihavai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lihtonen", alku: "Lihto", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Likonen", alku: "Liko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liikanen", alku: "Liika", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liimatainen", alku: "Liimatai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liimatta", alku: "Liimat", luokka: sukunimi, jatko: <aitta>, äs: a];
+[perusmuoto: "Likonen", alku: "Liko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lilius", alku: "Liliu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Lillunen", alku: "Lillu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lindahl", alku: "Lindahl", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -912,7 +912,6 @@
 [perusmuoto: "Lipponen", alku: "Lippo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Litmanen", alku: "Litma", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Litvinov", alku: "Litvinov", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Likonen", alku: "Liko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liukkonen", alku: "Liukko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Liuksiala", alku: "Liuksial", luokka: sukunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Liuttula", alku: "Liuttul", luokka: sukunimi, jatko: <apila>, äs: a];
