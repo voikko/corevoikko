@@ -229,6 +229,7 @@
 [perusmuoto: "Hatsina", alku: "Hatsin", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Haukivuori", alku: "Haukivuor", luokka: paikannimi, jatko: <tuohi>, äs: a];
 [perusmuoto: "Hausjärvi", alku: "Hausjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Havaiji", alku: "Havaij", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Heikkilä", alku: "Heikkil", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Heimola", alku: "Heimol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Heinjoki", alku: "Heinjo", luokka: paikannimi, jatko: <kaikki>, äs: a];

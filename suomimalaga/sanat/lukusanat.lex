@@ -78,7 +78,7 @@
 
 [perusmuoto: "sata", alku: "sa", luokka: lukusana, jatko: <pata>, äs: a];
 [perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, jatko: <tuhat>, äs: a];
-[perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, jatko: <kantaja>, äs: a];
+[perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, jatko: <apaja>, äs: a];
 [perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, jatko: <paperi>, äs: a];
 [perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, jatko: <paperi>, äs: a];
 [perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, jatko: <paperi>, äs: a];
