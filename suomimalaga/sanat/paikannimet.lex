@@ -773,7 +773,7 @@
 [perusmuoto: "Porlom", alku: "Porlom", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Porkkala", alku: "Porkkal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Pornainen", alku: "Pornai", luokka: paikannimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Portoroz-Lucija", alku: "Portoroz-Lucij", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Portoroz-Lucija", alku: "Portoroz-Luci", luokka: paikannimi, jatko: <kulkija>, äs: a];
 [perusmuoto: "Porvoo", alku: "Porvo", luokka: paikannimi, jatko: <tienoo>, äs: a];
 [perusmuoto: "Posio", alku: "Posio", luokka: paikannimi, jatko: <autio>, äs: a];
 [perusmuoto: "Potoska", alku: "Potosk", luokka: paikannimi, jatko: <apila>, äs: a];

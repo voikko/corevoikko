@@ -3358,7 +3358,7 @@
 [perusmuoto: "huokonen", alku: "huoko", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "huokua", alku: "huo", luokka: teonsana, jatko: <kiekua>, äs: a];
 [perusmuoto: "huolehtia", alku: "huoleh", luokka: teonsana, jatko: <laatia>, äs: a];
-[perusmuoto: "huolekas", alku: "huolek", luokka: nimisana, jatko: <iäkäs>, äs: a];
+[perusmuoto: "huolekas", alku: "huolek", luokka: laatusana, jatko: <iäkäs>, äs: a];
 [perusmuoto: "huolestua", alku: "huolestu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "huolestuttaa", alku: "huolestut", luokka: teonsana, jatko: <autioittaa>, äs: a];
 [perusmuoto: "huoleti", alku: "huoleti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -4212,7 +4212,7 @@
 [perusmuoto: "itkeä", alku: "itk", luokka: teonsana, jatko: <laskea>, äs: ä];
 [perusmuoto: "itku", alku: "itku", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
 [perusmuoto: "itsari", alku: "itsar", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "itse", alku: "itse", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <ei_ysj, inen>];
+[perusmuoto: "itse", alku: "itse", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <inen, ei_ysj>];
 [perusmuoto: "itsekseen", alku: "itsekseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsekäs", alku: "itsek", luokka: laatusana, jatko: <iäkäs>, äs: ä];
 [perusmuoto: "itsellinen", alku: "itselli", luokka: laatusana, jatko: <nainen>, äs: ä];
@@ -6213,7 +6213,7 @@
 [perusmuoto: "kitukasvuinen", alku: "kitukasvui", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kitupiikki", alku: "kitupiik", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "kituuttaa", alku: "kituut", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "kiuas", alku: "kiu", luokka: nimisana, jatko: <avokas>, äs: a];
+[perusmuoto: "kiuas", alku: "kiu", luokka: nimisana, jatko: <varas>, äs: a];
 [perusmuoto: "kiukku", alku: "kiuk", luokka: nimisana, jatko: <alku>, äs: a, tiedot: <inen>];
 [perusmuoto: "kiukkuilla", alku: "kiukkuil", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "kiukustua", alku: "kiukustu", luokka: teonsana, jatko: <punoa>, äs: a];
@@ -6829,7 +6829,7 @@
 [perusmuoto: "koulita", alku: "kouli", luokka: teonsana, jatko: <valita>, äs: a];
 [perusmuoto: "kouliutua", alku: "kouliu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "koulu", alku: "koulu", luokka: nimisana, jatko: <valo>, äs: a];
-[perusmuoto: "koulukas", alku: "kouluk", luokka: nimisana, jatko: <iäkäs>, äs: a];
+[perusmuoto: "koulukas", alku: "kouluk", luokka: nimisana, jatko: <avokas>, äs: a];
 [perusmuoto: "koululainen", alku: "koululai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kouluttaa", alku: "koulut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "kouluttautua", alku: "kouluttau", luokka: teonsana, jatko: <antautua>, äs: a];
@@ -18408,7 +18408,7 @@
 [perusmuoto: "vauva", alku: "vauv", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "vavahduttaa", alku: "vavahdut", luokka: teonsana, jatko: <autioittaa>, äs: a];
 [perusmuoto: "vavahtaa", alku: "vavah", luokka: teonsana, jatko: <astahtaa>, äs: a];
-[perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <nousta>, äs: a];
+[perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
 [perusmuoto: "vavistus", alku: "vavistu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "vedin", alku: "ve", luokka: nimisana, jatko: <kaadin>, äs: ä];
 [perusmuoto: "vedos", alku: "vedo", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -18971,7 +18971,7 @@
 [perusmuoto: "vitsas", alku: "vitsa", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "vitsaus", alku: "vitsau", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "vitsi", alku: "vits", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "vitsikäs", alku: "vitsik", luokka: nimisana, jatko: <iäkäs>, äs: ä];
+[perusmuoto: "vitsikäs", alku: "vitsik", luokka: laatusana, jatko: <iäkäs>, äs: ä];
 [perusmuoto: "vitsoa", alku: "vitso", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "vittu", alku: "vit", luokka: nimisana, jatko: <hattu>, äs: a];
 [perusmuoto: "vittu", alku: "vitusti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];

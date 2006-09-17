@@ -145,7 +145,7 @@
 [perusmuoto: "Bengtsson", alku: "Bengtsson", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Berg", alku: "Berg", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Bergström", alku: "Bergström", luokka: sukunimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "Berija", alku: "Berij", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Berija", alku: "Beri", luokka: sukunimi, jatko: <kulkija>, äs: a];
 [perusmuoto: "Bering", alku: "Bering", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Berner", alku: "Berner", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Beutel", alku: "Beutel", luokka: sukunimi, jatko: <kalsium>, äs: a];
