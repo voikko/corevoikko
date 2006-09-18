@@ -3688,6 +3688,12 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_inen;
   end;
 
+  if ($tietue.luokka = nimisana) then
+    $taivutus :=- voittoaste;
+    $taivutus :=- yliaste;
+    $taivutus :=- kerronto_sti;
+  end;
+
   # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
   #
   if ($tietue.tiedot /= nil) then
@@ -5012,9 +5018,7 @@ subrule vieras ($tietue, $vahva_aste, $heikko_aste, $monikko, $johdin_Us):
                          yliaste:           $monikko]) +
          s_hV_loppuinen ($tietue,
                          $monikko + hA($tietue),
-                         $monikko + "h") +
-         taivutuskaava ($tietue,
-                        [olento_nA: $heikko_aste]);  # Vieras+na.
+                         $monikko + "h");
 end;
 
 
@@ -5304,6 +5308,9 @@ end;
 # Uros   -> urohon.
 
 subrule s_hV_loppuinen ($tietue, $yksikkö, $monikko):
+  if (switch (malli) = voikko) then
+    return <>;
+  else
   return taivutuskaava ($tietue,
                         [omistusliite:     $yksikkö,
                          omanto_n:         $yksikkö,
@@ -5334,6 +5341,7 @@ subrule s_hV_loppuinen ($tietue, $yksikkö, $monikko):
                          seuranto_ine:      $monikko,
                          keinonto_in:       $monikko,
                          yliaste:           $monikko]);
+  end;
 end;
 
 
