@@ -93,6 +93,12 @@ malaga: set use-display yes
 #
 # Malli-lipun arvot:
 #   voikko    Noudatetaan tarkasti suomen kielen oikeinkirjoitussääntöjä
+#             Lisäoptioita:
+#             vanhahkot_muodot: Hyväksytään sellaisia vanhempia taivutusmuotoja
+#                               ja johdoksia, joita vielä jonkin verran käytetään
+#                               vaikkapa runokielessä, ja joita ei ole tapana tulkita
+#                               virheellisiksi muodoiksi vaikka eivät enää olekaan
+#                               arkikielessä käytössä.
 #   sukija    Hyväksytään myös yleisimmät kirjoitusvirheet, esim. "julkasta".
 #
 # Malli-lipun muuttamisen jälkeen suomi-malaga pitää kääntää uudelleen.
@@ -108,5 +114,7 @@ malaga: set use-display yes
 malaga: set switch tulostus merkitse_yhdyssanat
 malaga: set switch malli voikko
 mallex: set switch malli voikko
+malaga: set switch vanhahkot_muodot yes
+mallex: set switch vanhahkot_muodot yes
 malaga: set switch taivutus uusi
 mallex: set switch taivutus uusi

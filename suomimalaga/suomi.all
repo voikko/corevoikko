@@ -5018,7 +5018,11 @@ subrule vieras ($tietue, $vahva_aste, $heikko_aste, $monikko, $johdin_Us):
                          yliaste:           $monikko]) +
          s_hV_loppuinen ($tietue,
                          $monikko + hA($tietue),
-                         $monikko + "h");
+                         $monikko + "h")+
+	 voikko_lista_vain_lipulla(vanhahkot_muodot, 
+	                 taivutuskaava ($tietue,
+	                                [olento_nA: $heikko_aste])  # Vieras+na.
+	                 );
 end;
 
 
@@ -5057,8 +5061,10 @@ subrule kauris ($tietue, $kerake):
          s_hV_loppuinen ($tietue,
                          $monikko + "hi",
                          $monikko + "h") +
-         taivutuskaava ($tietue,
-                        [olento_nA: "is"]);  # Kauris+na.
+         voikko_lista_vain_lipulla(vanhahkot_muodot,
+	                 taivutuskaava ($tietue,
+                                        [olento_nA: "is"])  # Kauris+na.
+			 );
 end;
 
 
@@ -5308,10 +5314,7 @@ end;
 # Uros   -> urohon.
 
 subrule s_hV_loppuinen ($tietue, $yksikkö, $monikko):
-  if (switch (malli) = voikko) then
-    return <>;
-  else
-  return taivutuskaava ($tietue,
+  return voikko_lista_vain_lipulla(vanhahkot_muodot, taivutuskaava ($tietue,
                         [omistusliite:     $yksikkö,
                          omanto_n:         $yksikkö,
                          olento_nA:        $yksikkö,
@@ -5340,8 +5343,7 @@ subrule s_hV_loppuinen ($tietue, $yksikkö, $monikko):
                          vajanto_ittA:      $monikko,
                          seuranto_ine:      $monikko,
                          keinonto_in:       $monikko,
-                         yliaste:           $monikko]);
-  end;
+                         yliaste:           $monikko]));
 end;
 
 
@@ -6847,3 +6849,10 @@ subrule keväämmällä ($tietue, $vahva_aste, $heikko_aste):
                          ulkoeronto_ltA:  $heikko_aste,
                          ulkotulento_lle: $heikko_aste]);
 end;
+
+subrule voikko_lista_vain_lipulla($lippu, $lista):
+  if (switch (malli) = voikko and switch ($lippu) = no) then return <>;
+  else return $lista;
+  end;
+end;
+

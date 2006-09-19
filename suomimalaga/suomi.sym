@@ -353,6 +353,7 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
 # Lippuja. Merkitys on selitetty suomi-*.pro -tiedostoissa.
 malli;
   voikko;
+    vanhahkot_muodot;
   sukija;
 taivutus;
   vanha;
