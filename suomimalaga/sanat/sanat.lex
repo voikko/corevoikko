@@ -1123,6 +1123,7 @@
 [perusmuoto: "budjetti", alku: "budjet", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "budo", alku: "budo", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "buffetti", alku: "buffet", luokka: nimisana, jatko: <tatti>, äs: a];
+[perusmuoto: "bugi", alku: "bug", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "bulevardi", alku: "bulevard", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "bulgaari", alku: "bulgaar", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "bulimia", alku: "bulimi", luokka: nimisana, jatko: <karahka>, äs: a];
