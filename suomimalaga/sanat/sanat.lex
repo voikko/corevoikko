@@ -3159,7 +3159,7 @@
 [perusmuoto: "hoilata", alku: "hoil", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "hoipertaa", alku: "hoiper", luokka: teonsana, jatko: <musertaa>, äs: a];
 [perusmuoto: "hoippua", alku: "hoip", luokka: teonsana, jatko: <kieppua>, äs: a];
-[perusmuoto: "hoitaa", alku: "hoi", luokka: teonsana, jatko: <soutaa>, äs: a];
+[perusmuoto: "hoitaa", alku: "hoi", luokka: teonsana, jatko: <hohtaa>, äs: a];
 [perusmuoto: "hoito", alku: "hoi", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "hoitola", alku: "hoitol", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "hoitua", alku: "hoi", luokka: teonsana, jatko: <kaatua>, äs: a];
@@ -8723,7 +8723,7 @@
 [perusmuoto: "luona", alku: "luona", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "luonne", alku: "luon", luokka: nimisana, jatko: <enne>, äs: a, tiedot: <inen>];
 [perusmuoto: "luonnehtia", alku: "luonneh", luokka: teonsana, jatko: <laatia>, äs: a];
-[perusmuoto: "luonnistaa", alku: "luonnist", luokka: teonsana, jatko: <hidastaa>, äs: a, yt: yt];
+[perusmuoto: "luonnistaa", alku: "luonnist", luokka: teonsana, jatko: <hidastaa>, äs: a, tiedot: <yt>];
 [perusmuoto: "luonnontilainen", alku: "luonnontilai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "luonnos", alku: "luonno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "luonnostaa", alku: "luonnost", luokka: teonsana, jatko: <aavistaa>, äs: a];
@@ -10023,7 +10023,7 @@
 [perusmuoto: "myrkytys", alku: "myrkyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "myrsky", alku: "myrsky", luokka: nimisana, jatko: <valo>, äs: ä, tiedot: <inen>];
 [perusmuoto: "myrskyisä", alku: "myrskyis", luokka: laatusana, jatko: <asema>, äs: ä];
-[perusmuoto: "myrskytä", alku: "myrsky", luokka: teonsana, jatko: <juoruta>, äs: ä, yt: yt];
+[perusmuoto: "myrskytä", alku: "myrsky", luokka: teonsana, jatko: <juoruta>, äs: ä, tiedot: <yt>];
 [perusmuoto: "myrtti", alku: "myrt", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "myrtyä", alku: "myr", luokka: teonsana, jatko: <kumartua>, äs: ä];
 [perusmuoto: "myräkkä", alku: "myräk", luokka: nimisana, jatko: <solakka>, äs: ä];
@@ -11034,7 +11034,7 @@
 [perusmuoto: "onnetar", alku: "onnet", luokka: nimisana, jatko: <tytär>, äs: a];
 [perusmuoto: "onni", alku: "onn", luokka: nimisana, jatko: <lovi>, äs: a, tiedot: <inen>];
 [perusmuoto: "onnikka", alku: "onnik", luokka: nimisana, jatko: <solakka>, äs: a];
-[perusmuoto: "onnistaa", alku: "onnist", luokka: teonsana, jatko: <hidastaa>, äs: a, yt: yt];
+[perusmuoto: "onnistaa", alku: "onnist", luokka: teonsana, jatko: <hidastaa>, äs: a, tiedot: <yt>];
 [perusmuoto: "onnitella", alku: "onnit", luokka: teonsana, jatko: <aatella>, äs: a];
 [perusmuoto: "onomatopoeettinen", alku: "onomatopoeetti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ontelo", alku: "ontelo", luokka: nimisana, jatko: <arvelu>, äs: a, tiedot: <inen>];
@@ -11378,7 +11378,7 @@
 [perusmuoto: "palaveri", alku: "palaver", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "palella", alku: "palel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "palelluttaa", alku: "palellut", luokka: teonsana, jatko: <autioittaa>, äs: a];
-[perusmuoto: "paleltaa", alku: "palel", luokka: teonsana, jatko: <paleltaa>, äs: a, yt: yt];
+[perusmuoto: "paleltaa", alku: "palel", luokka: teonsana, jatko: <paleltaa>, äs: a, tiedot: <yt>];
 [perusmuoto: "paleltua", alku: "palel", luokka: teonsana, jatko: <paleltua>, äs: a];
 [perusmuoto: "paleonto", alku: "paleonto", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <siv>];
 [perusmuoto: "paletti", alku: "palet", luokka: nimisana, jatko: <salaatti>, äs: a];
@@ -16175,7 +16175,7 @@
 [perusmuoto: "säätiö", alku: "säätiö", luokka: nimisana, jatko: <autio>, äs: ä];
 [perusmuoto: "säätiöidä", alku: "säätiö", luokka: teonsana, jatko: <kanavoida>, äs: ä];
 [perusmuoto: "sääty", alku: "sää", luokka: nimisana, jatko: <laatu>, äs: ä];
-[perusmuoto: "säätää", alku: "sää", luokka: teonsana, jatko: <soutaa>, äs: ä];
+[perusmuoto: "säätää", alku: "sää", luokka: teonsana, jatko: <hohtaa>, äs: ä];
 [perusmuoto: "säätö", alku: "sää", luokka: nimisana, jatko: <leuto>, äs: ä];
 [perusmuoto: "söhliä", alku: "söhl", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "söhlätä", alku: "söhl", luokka: teonsana, jatko: <salata>, äs: ä];
@@ -17443,7 +17443,7 @@
 [perusmuoto: "tuulettua", alku: "tuulet", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "tuuletus", alku: "tuuletu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "tuuli", alku: "tuul", luokka: nimisana, jatko: <tuohi>, äs: a, tiedot: <inen>];
-[perusmuoto: "tuulla", alku: "tuul", luokka: teonsana, jatko: <nuolla>, äs: a, yt: yt];
+[perusmuoto: "tuulla", alku: "tuul", luokka: teonsana, jatko: <nuolla>, äs: a, tiedot: <yt>];
 [perusmuoto: "tuulonen", alku: "tuulo", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "tuultua", alku: "tuul", luokka: teonsana, jatko: <paleltua>, äs: a];
 [perusmuoto: "tuuma", alku: "tuum", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <inen>];
@@ -17750,7 +17750,7 @@
 [perusmuoto: "ukki", alku: "uk", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "ukko", alku: "uk", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "ukkonen", alku: "ukko", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "ukkostaa", alku: "ukkost", luokka: teonsana, jatko: <aavistaa>, äs: a, yt: yt];
+[perusmuoto: "ukkostaa", alku: "ukkost", luokka: teonsana, jatko: <aavistaa>, äs: a, tiedot: <yt>];
 [perusmuoto: "ukraina", alku: "ukrain", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "ukulele", alku: "ukulele", luokka: nimisana, jatko: <nalle>, äs: a];
