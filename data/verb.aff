@@ -220,6 +220,171 @@ end: class
 
 # End Kotus 53 muistaa ==================
 
+# Kotus 54 huutaa =======================
+
+class: verbi-vuotaa
+sm-class: vuotaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+end: rules
+end: class
+
+class: verbi-huutaa
+sm-class: huutaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+end: rules
+end: class
+
+class: verbi-sukeltaa
+sm-class: sukeltaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!subst_Us	a	us	w
+end: rules
+end: class
+
+class: verbi-paleltaa
+sm-class: paleltaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!subst_Us	a	us	w
+end: rules
+end: class
+
+class: verbi-murtaa
+sm-class: murtaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!subst_Os	a	os	w
+!subst_tO	a	o	s # FIXME: vokaalisointu
+end: rules
+end: class
+
+class: verbi-juontaa
+sm-class: juontaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!subst_tO	a	o	s # FIXME: vokaalisointu
+end: rules
+end: class
+
+class: verbi-pahentaa
+sm-class: pahentaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+!verbi_UA	a	ua	s
+!subst_Us	a	us	w
+end: rules
+end: class
+
+# End Kotus 54 huutaa ===================
+
+
+# Kotus 55 soutaa
+class: verbi-soutaa
+sm-class: soutaa
+rmsfx: a
+match-word: tAA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	a	i	s
+imperfekti_yks_3	ta	si	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	a	ettiin	w
+!verbi_ellA	a	ella	w
+end: rules
+end: class
+
+
 # Kotus 61 sallia (1/2)
 class: verbi-sallia
 sm-class: sallia
