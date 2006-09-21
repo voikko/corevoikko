@@ -3255,6 +3255,7 @@
 [perusmuoto: "huhu", alku: "huhu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "huhuta", alku: "huhu", luokka: teonsana, jatko: <juoruta>, äs: a];
 [perusmuoto: "hui", alku: "hui", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "huidella", alku: "hui", luokka: teonsana, jatko: <kohdella>, äs: a];
 [perusmuoto: "huijari", alku: "huijar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "huijata", alku: "huij", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "huikaista", alku: "huika", luokka: teonsana, jatko: <nuolaista>, äs: a];
@@ -3677,6 +3678,7 @@
 [perusmuoto: "härski", alku: "härsk", luokka: laatusana, jatko: <risti>, äs: ä];
 [perusmuoto: "härskiintyä", alku: "härskiin", luokka: teonsana, jatko: <jakaantua>, äs: ä];
 [perusmuoto: "härveli", alku: "härvel", luokka: nimisana, jatko: <paperi>, äs: ä];
+[perusmuoto: "häslätä", alku: "häsl", luokka: teonsana, jatko: <salata>, äs: ä];
 [perusmuoto: "häthätää", alku: "häthätää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hätiköidä", alku: "hätikö", luokka: teonsana, jatko: <haravoida>, äs: ä];
 [perusmuoto: "hätistää", alku: "hätist", luokka: teonsana, jatko: <aavistaa>, äs: ä];
