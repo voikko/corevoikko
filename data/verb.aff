@@ -544,7 +544,28 @@ verbi_tUA	a	ua	s
 end: rules
 end: class
 
-# Kotus 73 vanheta
+
+# Kotus 69 valita
+class: verbi-valita
+sm-class: valita
+rmsfx: tA
+match-word: itA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	tsen	s
+imperfekti_yks_3	0	tsi	s
+kondit_yks_3	0	tsisi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
+end: rules
+end: class
+
+
+# Kotus 72 vanheta
 class: verbi-aleta
 sm-class: aleta
 rmsfx: tA
@@ -594,6 +615,46 @@ infinitiivi_1	0	ta	w
 preesens_yks_1	0	an	s
 imperfekti_yks_3	0	si	s
 kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
+!verbi_illA	0	illa	s
+end: rules
+end: class
+
+
+# Kotus 75 selvitä (1/2)
+class: verbi-haluta
+sm-class: haluta
+rmsfx: tA
+match-word: VtA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	an	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	aisi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
+end: rules
+end: class
+
+# Kotus 75 selvitä (2/2)
+class: verbi-juoruta
+sm-class: juoruta
+rmsfx: tA
+match-word: UtA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	an	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	aisi	s
 imperatiivi_yks_3	0	tkoon	w
 partisiippi_2	0	nnut	w
 imperfekti_pass	0	ttiin	w
