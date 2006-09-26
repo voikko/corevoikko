@@ -1,3 +1,14 @@
+2006-09-26 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Increase LIBVOIKKO_MAX_WORD_CHARS back to 255, the issue with
+	  complicated compound words is now properly fixed in Malaga and
+	  Suomi-malaga.
+	* Fix suggestions when VOIKKO_OPT_IGNORE_DOT is set and word has only
+	  one character before the dot.
+	* Prepare some suggestion functions to accept strings that are not
+	  null terminated.
+	* Increase version to 1.1.1.
+
 2006-09-14 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Decrease LIBVOIKKO_MAX_WORD_CHARS to prevent freezing malaga with too complicated

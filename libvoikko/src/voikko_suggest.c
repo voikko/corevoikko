@@ -164,7 +164,8 @@ void voikko_suggest_word_split(int handle, wchar_t *** suggestions, int * max_su
 	enum spellresult part1_res, part2_res;
 	part1 = malloc((wlen + 1) * sizeof(wchar_t));
 	if (part1 == 0) return;
-	wcscpy(part1, word);
+	wcsncpy(part1, word, wlen);
+	part1[wlen] = L'\0';
 
 	for (splitind = wlen - 2; splitind >= 2; splitind--) {
 		/* Do not split a word if there is a hyphen before the last character of part1
@@ -215,7 +216,8 @@ void voikko_suggest_replacement(int handle, wchar_t *** suggestions, int * max_s
 	wchar_t * pos;
 	wchar_t * buffer = malloc((wlen + 1) * sizeof(wchar_t));
 	if (buffer == 0) return;
-	wcsncpy(buffer, word, wlen + 1);
+	wcsncpy(buffer, word, wlen);
+	buffer[wlen] = L'\0';
 	for (i = start; i <= end; i++) {
 		for (pos = wcschr(buffer, REPLACE_ORIG[i]); pos != 0; pos = wcschr(pos+1, REPLACE_ORIG[i])) {
 			*pos = REPLACE_REPLACEMENT[i];
@@ -259,7 +261,8 @@ void voikko_suggest_insert_special(int handle, wchar_t *** suggestions, int * ma
 	size_t j;
 	wchar_t * buffer = malloc((wlen + 2) * sizeof(wchar_t));
 	if (buffer == 0) return;
-	wcsncpy(buffer + 1, word, wlen + 1);
+	wcsncpy(buffer + 1, word, wlen);
+	buffer[wlen+1] = L'\0';
 	
 	/* suggest adding '-' */
 	for (j = 2; j <= wlen - 2 && *max_suggestions > 0; j++) {
@@ -296,7 +299,8 @@ void voikko_suggest_insertion(int handle, wchar_t *** suggestions, int * max_sug
 	if (buffer == 0) return;
 	for (i = start; i <= end; i++) {
 		buffer[0] = word[0];
-		wcsncpy(buffer + 1, word, wlen + 1);
+		wcsncpy(buffer + 1, word, wlen);
+		buffer[wlen+1] = L'\0';
 		for (j = 0; j < wlen && *max_suggestions > 0; j++) {
 			if (j != 0) buffer[j-1] = word[j-1];
 			if (INS_CHARS[i] == towlower(word[j])) continue; /* avoid duplicates */
@@ -327,7 +331,8 @@ void voikko_suggest_swap(int handle, wchar_t *** suggestions, int * max_suggesti
 	if (max_distance == 0) return;
 	buffer = malloc((wlen + 1) * sizeof(wchar_t));
 	if (buffer == 0) return;
-	wcscpy(buffer, word);
+	wcsncpy(buffer, word, wlen);
+	buffer[wlen] = L'\0';
 	for (i = 0; i < wlen && *max_suggestions > 0; i++) {
 		for (j = i + 1; j < wlen && *max_suggestions > 0; j++) {
 			if (j - i > max_distance) break;
@@ -387,6 +392,10 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wlen = wcslen(nword);
 	
 	if (voikko_options.ignore_dot) {
+		if (wlen == 2) {
+			free(nword);
+			return 0;
+		}
 		if (nword[wlen-1] == L'.') {
 			nword[--wlen] = L'\0';
 			add_dots = 1;

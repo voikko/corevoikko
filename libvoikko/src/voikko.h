@@ -52,7 +52,7 @@
 
 
 /* Fixed limits */
-#define LIBVOIKKO_MAX_WORD_CHARS 59
+#define LIBVOIKKO_MAX_WORD_CHARS 255
 #define LIBVOIKKO_MAX_ANALYSIS_COUNT 31
 
 /* Spellchecker return codes */
