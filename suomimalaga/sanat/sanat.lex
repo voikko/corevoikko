@@ -16957,7 +16957,7 @@
 [perusmuoto: "tomo", alku: "tomo", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "tomppeli", alku: "tomppel", luokka: nimi_laatusana, jatko: <paperi>, äs: a];
 [perusmuoto: "tomu", alku: "tomu", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
-[perusmuoto: "tomuta", alku: "tomuta", luokka: teonsana, jatko: <haluta>, äs: a];
+[perusmuoto: "tomuta", alku: "tomu", luokka: teonsana, jatko: <haluta>, äs: a];
 [perusmuoto: "tomuttaa", alku: "tomut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "tomuttua", alku: "tomut", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "tomutus", alku: "tomutu", luokka: nimisana, jatko: <vastaus>, äs: a];
