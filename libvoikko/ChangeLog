@@ -7,6 +7,7 @@
 	  one character before the dot.
 	* Prepare some suggestion functions to accept strings that are not
 	  null terminated.
+	* Markup fix for voikkospell.1, thanks to Timo Jyrinki
 	* Increase version to 1.1.1.
 
 2006-09-14 Harri Pitkänen  <hatapitk@iki.fi>
