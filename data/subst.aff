@@ -166,9 +166,9 @@ end: rules
 end: class
 
 
-# Kotus 5 patti
+# Kotus 5 patti (1/2)
 class: subst-p
-sm-class: risti kiiski
+sm-class: risti
 match-word: Ci
 consonant-gradation: sw
 group: t
@@ -188,6 +188,58 @@ ablatiivi		0	lta	w
 allatiivi		0	lle	w
 abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	0	en	s
+partitiivi_mon	i	eja	s
+translatiivi_mon	i	eiksi	w	ps=f
+translatiivi_mon	i	eikse	w	ps=r
+essiivi_mon	i	eina	s
+inessiivi_mon	i	eissa	w
+elatiivi_mon	i	eista	w
+illatiivi_mon	i	eihin	s
+adessiivi_mon	i	eilla	w
+ablatiivi_mon	i	eilta	w
+allatiivi_mon	i	eille	w
+abessiivi_mon	i	eitta	w	ps=f
+komitatiivi_mon	i	eine	s	ps=r
+instruktiivi_mon	i	ein	w	ps=f
+end: rules
+end: class
+
+# Kotus 5 patti (2/2)
+class: subst-kiiski
+sm-class: kiiski
+match-word: Ci
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+genetiivi		i	en	w	ps=f
+partitiivi	0	a	s
+partitiivi	i	ea	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+translatiivi	i	eksi	w	ps=f
+translatiivi	i	ekse	w	ps=r
+essiivi		0	na	s
+essiivi		i	ena	s
+inessiivi		0	ssa	w
+inessiivi		i	essa	w
+elatiivi		0	sta	w
+elatiivi		i	esta	w
+illatiivi		0	in	s
+illatiivi		i	een	s
+adessiivi		0	lla	w
+adessiivi		i	ella	w
+ablatiivi		0	lta	w
+ablatiivi		i	elta	w
+allatiivi		0	lle	w
+allatiivi		i	elle	w
+abessiivi		0	tta	w	ps=f
+abessiivi		i	etta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+nominatiivi_mon	i	et	w	ps=f
 genetiivi_mon	0	en	s
 partitiivi_mon	i	eja	s
 translatiivi_mon	i	eiksi	w	ps=f
@@ -290,7 +342,7 @@ end: class
 
 # Kotus 7 lampi
 class: subst-i2
-sm-class: lovi lahti hapsi suksi uksi
+sm-class: lovi
 match-word: i
 consonant-gradation: sw
 group: t
