@@ -463,9 +463,9 @@ end: rules
 end: class
 
 
-# Kotus 10 luokka
+# Kotus 10 luokka (1/3)
 class: subst-p
-sm-class: koira asema kantaja apaja jumala seitsemän
+sm-class: koira
 match-word: CA
 consonant-gradation: sw
 group: t
@@ -487,6 +487,90 @@ abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
 genetiivi_mon	a	ien	s
 genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	ia	s
+translatiivi_mon	a	iksi	w	ps=f
+translatiivi_mon	a	ikse	w	ps=r
+essiivi_mon	a	ina	s
+inessiivi_mon	a	issa	w
+elatiivi_mon	a	ista	w
+illatiivi_mon	a	iin	s
+adessiivi_mon	a	illa	w
+ablatiivi_mon	a	ilta	w
+allatiivi_mon	a	ille	w
+abessiivi_mon	a	itta	w	ps=f
+komitatiivi_mon	a	ine	s	ps=r
+instruktiivi_mon	a	in	w	ps=f
+end: rules
+end: class
+
+# Kotus 10 luokka (2/3)
+class: subst-p
+sm-class: asema
+match-word: CA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+partitiivi	0	ta	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	a	ien	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	ia	s
+translatiivi_mon	a	iksi	w	ps=f
+translatiivi_mon	a	ikse	w	ps=r
+essiivi_mon	a	ina	s
+inessiivi_mon	a	issa	w
+elatiivi_mon	a	ista	w
+illatiivi_mon	a	iin	s
+adessiivi_mon	a	illa	w
+ablatiivi_mon	a	ilta	w
+allatiivi_mon	a	ille	w
+abessiivi_mon	a	itta	w	ps=f
+komitatiivi_mon	a	ine	s	ps=r
+instruktiivi_mon	a	in	w	ps=f
+end: rules
+end: class
+
+# Kotus 10 luokka (3/3)
+class: subst-p
+sm-class: apaja
+match-word: CA
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w	ps=f
+partitiivi	0	a	s
+partitiivi	0	ta	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	a	ien	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+genetiivi_mon	a	oiden	s	ps=f,prio=2
+genetiivi_mon	a	oitten	s	ps=f,prio=2
 partitiivi_mon	a	ia	s
 translatiivi_mon	a	iksi	w	ps=f
 translatiivi_mon	a	ikse	w	ps=r
