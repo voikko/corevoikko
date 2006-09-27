@@ -2,7 +2,7 @@ Suomi-malaga - Voikko edition
 
 Suomi-malaga is a description of Finnish morphology written in Malaga
 (http://home.arcor.de/bjoern-beutel/malaga/). You should use malaga
-version 7.4 or later.
+version 7.8 or later.
 
 Currently Suomi-malaga is used in two different applications: text
 indexer Sukija and spellchecker/hyphenator Voikko. Unfortunately it

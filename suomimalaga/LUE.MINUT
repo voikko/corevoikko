@@ -1,5 +1,6 @@
 Suomi-malaga on malagalla (http://home.arcor.de/bjoern-beutel/malaga/)
-tehty suomen kielen muoto-opin kuvaus.
+tehty suomen kielen muoto-opin kuvaus. Tarvitset malagasta vähintään
+version 7.8.
 
 Ohjelman merkistökoodaus on UTF-8 eli myös lokaalin pitää tukea
 UTF-8:aa. Fedora Coressa käy fi_FI.utf8

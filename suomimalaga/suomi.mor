@@ -1491,3 +1491,12 @@ subrule first ($string):
   ! $string matches ".": $first, ".*";
   return $first;
 end;
+
+pruning_rule prune ($list):
+  define $filter := <>;
+  foreach $i in length($list):
+    $filter :=+ <($i less_equal 20)>;
+  end;
+  return $filter;
+end;
+

@@ -87,6 +87,7 @@ mallex: set display-line "malshow"
 mallex: set use-display yes
 malaga: set use-display yes
 
+malaga: set mor-pruning 20
 
 
 # Lipuilla malli ja tulostus voidaan säätää suomi-malagan toimintaa.
