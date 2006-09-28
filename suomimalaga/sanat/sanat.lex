@@ -2198,6 +2198,7 @@
 [perusmuoto: "geisir", alku: "geisir", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "gekko", alku: "gek", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "gelatiini", alku: "gelatiin", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "gemena", alku: "gemen", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "geminaatio", alku: "geminaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "geminaatta", alku: "geminaat", luokka: nimisana, jatko: <aitta>, äs: a];
 [perusmuoto: "geminoida", alku: "gemino", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -18493,6 +18494,7 @@
 [perusmuoto: "verrattain", alku: "verrattain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "verrokki", alku: "verrok", luokka: nimisana, jatko: <kajakki>, äs: a];
 [perusmuoto: "verrytellä", alku: "verryt", luokka: teonsana, jatko: <aatella>, äs: ä];
+[perusmuoto: "versaali", alku: "versaal", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "versio", alku: "versio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "verso", alku: "verso", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "versoa", alku: "verso", luokka: teonsana, jatko: <punoa>, äs: a];
