@@ -752,7 +752,7 @@
 [perusmuoto: "ase", alku: "ase", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "aseistaa", alku: "aseist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "aseistakieltäytyjä", alku: "aseistakieltäytyj", luokka: nimisana, jatko: <kantaja>, äs: ä];
-[perusmuoto: "aseistariisunta", alku: "aseistariisun", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "aseistariisunta", alku: "aseistariisun", luokka: nimisana, jatko: <kanta>, äs: a];
 [perusmuoto: "aseistautua", alku: "aseistau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "asema", alku: "asem", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
@@ -8090,7 +8090,7 @@
 [perusmuoto: "leipä", alku: "lei", luokka: nimisana, jatko: <huopa>, äs: ä];
 [perusmuoto: "leipääntyä", alku: "leipään", luokka: teonsana, jatko: <jakaantua>, äs: ä];
 [perusmuoto: "leiri", alku: "leir", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "leirintä", alku: "leirin", luokka: nimisana, jatko: <veranta>, äs: ä];
+[perusmuoto: "leirintä", alku: "leirin", luokka: nimisana, jatko: <kanta>, äs: ä];
 [perusmuoto: "leirittää", alku: "leiri", luokka: teonsana, jatko: <ammottaa>, äs: ä];
 [perusmuoto: "leiriytyä", alku: "leiriy", luokka: teonsana, jatko: <kaatua>, äs: ä];
 [perusmuoto: "leiskauttaa", alku: "leiskaut", luokka: teonsana, jatko: <alittaa>, äs: a];
@@ -9046,7 +9046,7 @@
 [perusmuoto: "mahla", alku: "mahl", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "maho", alku: "maho", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "mahonki", alku: "mahon", luokka: nimisana, jatko: <killinki>, äs: a, tiedot: <inen>];
-[perusmuoto: "mahorkka", alku: "mahork", luokka: nimisana, jatko: <mahorkka>, äs: a];
+[perusmuoto: "mahorkka", alku: "mahork", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "mahtaa", alku: "mah", luokka: teonsana, jatko: <raataa>, äs: a];
 [perusmuoto: "mahtailla", alku: "mahtail", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "mahti", alku: "mah", luokka: nimisana, jatko: <vati>, äs: a];
@@ -9065,7 +9065,7 @@
 [perusmuoto: "maininki", alku: "mainin", luokka: nimisana, jatko: <killinki>, äs: a];
 [perusmuoto: "mainio", alku: "mainio", luokka: nimi_laatusana, jatko: <autio>, äs: a];
 [perusmuoto: "mainita", alku: "maini", luokka: teonsana, jatko: <valita>, äs: a];
-[perusmuoto: "mainonta", alku: "mainon", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "mainonta", alku: "mainon", luokka: nimisana, jatko: <kanta>, äs: a];
 [perusmuoto: "mainos", alku: "maino", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "mainostaa", alku: "mainost", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "mairea", alku: "mair", luokka: laatusana, jatko: <korkea>, äs: a];
@@ -13356,7 +13356,7 @@
 [perusmuoto: "rakuuna", alku: "rakuun", luokka: nimisana, jatko: <pasuuna>, äs: a];
 [perusmuoto: "ralli", alku: "rall", luokka: nimisana, jatko: <risti>, äs: a]; #NS: 2 sanaa.
 [perusmuoto: "ramaista", alku: "rama", luokka: teonsana, jatko: <nuolaista>, äs: a];
-[perusmuoto: "rampa", alku: "ram", luokka: nimi_laatusana, jatko: <kampa>, äs: a];
+[perusmuoto: "rampa", alku: "ram", luokka: nimisana, jatko: <kampa>, äs: a];
 [perusmuoto: "rampauttaa", alku: "rampaut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "rampautua", alku: "rampau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "ramppi", alku: "ramp", luokka: nimisana, jatko: <keppi>, äs: a]; #NS: 2 sanaa.
@@ -14877,7 +14877,7 @@
 [perusmuoto: "seura", alku: "seur", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "seuraamus", alku: "seuraamu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "seuralainen", alku: "seuralai", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "seuranta", alku: "seuran", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "seuranta", alku: "seuran", luokka: nimisana, jatko: <kanta>, äs: a];
 [perusmuoto: "seuranto", alku: "seuran", luokka: nimisana, jatko: <avanto>, äs: a];
 [perusmuoto: "seurata", alku: "seur", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "seurojentalo", alku: "seurojentalo", luokka: nimisana, jatko: <valo>, äs: a];
@@ -16266,7 +16266,7 @@
 [perusmuoto: "taivuttaa", alku: "taivu", luokka: teonsana, jatko: <ammottaa>, äs: a];
 [perusmuoto: "taivutus", alku: "taivutu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "taju", alku: "taju", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
-[perusmuoto: "tajunta", alku: "tajun", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "tajunta", alku: "tajun", luokka: nimisana, jatko: <kanta>, äs: a];
 [perusmuoto: "tajuta", alku: "taju", luokka: teonsana, jatko: <haluta>, äs: a];
 [perusmuoto: "taka", alku: "taka", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "takaa-ajaja", alku: "takaa-ajaj", luokka: nimisana, jatko: <kantaja>, äs: a];
@@ -18457,7 +18457,7 @@
 [perusmuoto: "venäläinen", alku: "venäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "venäläistää", alku: "venäläist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
 [perusmuoto: "venäyttää", alku: "venäyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "veranta", alku: "veran", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "veranta", alku: "veran", luokka: nimisana, jatko: <kanta>, äs: a];
 [perusmuoto: "verbaali", alku: "verbaal", luokka: laatusana, jatko: <banaali>, äs: a];
 [perusmuoto: "verbaalinen", alku: "verbaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "verbalisoida", alku: "verbaliso", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -18603,7 +18603,7 @@
 [perusmuoto: "viha", alku: "vih", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "vihannes", alku: "vihanne", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "vihannoida", alku: "vihanno", luokka: teonsana, jatko: <haravoida>, äs: a];
-[perusmuoto: "vihanta", alku: "vihan", luokka: nimi_laatusana, jatko: <vihanta>, äs: a];
+[perusmuoto: "vihanta", alku: "vihan", luokka: nimi_laatusana, jatko: <kanta>, äs: a];
 [perusmuoto: "vihastua", alku: "vihastu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "vihastus", alku: "vihastu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "vihastuttaa", alku: "vihastut", luokka: teonsana, jatko: <autioittaa>, äs: a];

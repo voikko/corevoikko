@@ -526,7 +526,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (kanta in $tietue.jatko) then
-    choose $i in kala ($tietue, "t", "n", "ne", "");
+    choose $i in kala ($tietue, "t", "n", "na", "n");
     result $i.alku, $i - alku;
 
   elseif (kappa in $tietue.jatko) then
