@@ -153,12 +153,10 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'kk',u'(.*k)kA',u'solakka')]),
 	(u'apaja', u'-', [(None,u'(.*C)A',u'apaja')]),
 	(u'peruna', u'-', [(None,u'(.*C)A',u'peruna')]),
-	(u'pasuuna', u'sw',[(None,u'(.*C)A',u'pasuuna'),
-			(u'tt',u'(.*t)tA',u'opotta')]),
 	(u'herttua', u'-', [(None,u'(.*tU)A',u'herttua')]),
 	(u'korkea', u'-', [(None,u'(.*C)eA',u'korkea'),
 		         (None,u'(.*O)A',u'ainoa')]),
-	(u'suurempi', u'-', [(None,u'(.*V)mpi',u'suurempi')]),
+	(u'suurempi', u'sw', [(u'mp',u'(.*V)mpi',u'suurempi')]),
 	(u'vapaa', u'-', [(None,u'(.*CA)A',u'vapaa')]),
 	(u'tienoo', u'-', [(None,u'(.*CO)O',u'tienoo')]),
 	(u'leikkuu', u'-', [(None,u'(.*CU)U',u'leikkuu')]),
@@ -336,7 +334,7 @@ flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), 
 	 (u'ysj', 29), (u'ei_mAinen', 30), (u'murre', 2), (u'yt', 31)]
 
 histmap = [(u'antautua', u'kaatua'), (u'banaali', u'paperi'), (u'kirjoitella', 'aatella'),
-	 (u'kantaja', u'apaja')]
+	 (u'kantaja', u'apaja'), (u'pasuuna', u'peruna')]
 
 def match_re(string, pattern):
 	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')

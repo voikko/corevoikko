@@ -910,6 +910,47 @@ end: rules
 end: class
 
 
+# Kotus 16 vanhempi
+class: subst-suurempi
+sm-class: suurempi
+match-word: Vmpi
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		i	an	w
+partitiivi	i	aa	s
+translatiivi	i	aksi	w	ps=f
+translatiivi	i	akse	w	ps=r
+essiivi		i	ana	s
+inessiivi		i	assa	w
+elatiivi		i	asta	w
+illatiivi		i	aan	s
+adessiivi		i	alla	w
+ablatiivi		i	alta	w
+allatiivi		i	alle	w
+abessiivi		i	atta	w	ps=f
+nominatiivi_mon	i	at	w	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	i	ain	s	prio=2
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	w	ps=f
+translatiivi_mon	0	kse	w	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	w
+elatiivi_mon	0	sta	w
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	w
+ablatiivi_mon	0	lta	w
+allatiivi_mon	0	lle	w
+abessiivi_mon	0	tta	w	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 23 tuohi
 class: subst-i3
 match-word: Ci
