@@ -937,7 +937,7 @@
 [perusmuoto: "Sotkamo", alku: "Sotkamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Sotkuma", alku: "Sotkum", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Spalernaja", alku: "Spalernaj", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "Spandau", alku: "Spanda", luokka: paikannimi, jatko: <puu>, äs: a];
+#[perusmuoto: "Spandau", alku: "Spanda", luokka: paikannimi, jatko: <puu>, äs: a]; Väärä taivutus
 [perusmuoto: "Spratley", alku: "Spratley", luokka: paikannimi, jatko: <valo>, äs: aä];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "Stalingrad", alku: "Stalingrad", luokka: paikannimi, jatko: <kalsium>, äs: a];

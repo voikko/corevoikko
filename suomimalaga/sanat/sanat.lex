@@ -2249,7 +2249,7 @@
 [perusmuoto: "glykoli", alku: "glykol", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "glyseriini", alku: "glyseriin", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "glögi", alku: "glög", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "gnu", alku: "gn", luokka: nimisana, jatko: <puu>, äs: a];
+[perusmuoto: "gnuu", alku: "gnu", luokka: nimisana, jatko: <puu>, äs: a];
 [perusmuoto: "gobeliini", alku: "gobeliin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "golem", alku: "golem", luokka: nimisana, jatko: <edam>, äs: a];
 [perusmuoto: "golf", alku: "golf", luokka: nimisana, jatko: <kalsium>, äs: a];

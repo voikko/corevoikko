@@ -284,7 +284,7 @@
 [perusmuoto: "Falck", alku: "Falck", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Falk", alku: "Falk", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fallqvist", alku: "Fallqvist", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Faraday", alku: "Farada", luokka: sukunimi, jatko: <puu>, äs: aä];
+#[perusmuoto: "Faraday", alku: "Farada", luokka: sukunimi, jatko: <puu>, äs: aä]; Väärä taivutus
 [perusmuoto: "Farlamoff", alku: "Farlamoff", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Farquhar", alku: "Farquhar", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fennander", alku: "Fennander", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -1315,7 +1315,7 @@
 [perusmuoto: "Raitio", alku: "Raitio", luokka: sukunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Raittila", alku: "Raittil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rajala", alku: "Rajal", luokka: sukunimi, jatko: <apila>, äs: a];
-[perusmuoto: "Ramsay", alku: "Ramsa", luokka: sukunimi, jatko: <puu>, äs: aä];
+#[perusmuoto: "Ramsay", alku: "Ramsa", luokka: sukunimi, jatko: <puu>, äs: aä]; Väärä taivutus
 [perusmuoto: "Rangell", alku: "Rangell", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Raninen", alku: "Rani", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Rankine", alku: "Rankine", luokka: sukunimi, jatko: <nalle>, äs: a];
