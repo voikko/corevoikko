@@ -951,6 +951,132 @@ end: rules
 end: class
 
 
+# Kotus 17 vapaa
+class: subst-vapaa
+sm-class: vapaa
+match-word: CVV
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w
+partitiivi	0	ta	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		0	seen	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	[aou]	iden	s
+genetiivi_mon	[aou]	itten	s
+partitiivi_mon	[aou]	ita	s
+translatiivi_mon	[aou]	iksi	w	ps=f
+translatiivi_mon	[aou]	ikse	w	ps=r
+essiivi_mon	[aou]	ina	s
+inessiivi_mon	[aou]	issa	w
+elatiivi_mon	[aou]	ista	w
+illatiivi_mon	[aou]	isiin	s
+illatiivi_mon	[aou]	ihin	s	prio=2
+adessiivi_mon	[aou]	illa	w
+ablatiivi_mon	[aou]	ilta	w
+allatiivi_mon	[aou]	ille	w
+abessiivi_mon	[aou]	itta	w	ps=f
+komitatiivi_mon	[aou]	ine	s	ps=r
+instruktiivi_mon	[aou]	in	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 18 maa
+class: subst-pii
+sm-class: pii
+match-word: V[aiu]
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w
+partitiivi	0	ta	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		([aiu])	(1)h(1)n	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	[aiu]	iden	s
+genetiivi_mon	[aiu]	itten	s
+partitiivi_mon	[aiu]	ita	s
+translatiivi_mon	[aiu]	iksi	w	ps=f
+translatiivi_mon	[aiu]	ikse	w	ps=r
+essiivi_mon	[aiu]	ina	s
+inessiivi_mon	[aiu]	issa	w
+elatiivi_mon	[aiu]	ista	w
+illatiivi_mon	[aiu]	ihin	s
+adessiivi_mon	[aiu]	illa	w
+ablatiivi_mon	[aiu]	ilta	w
+allatiivi_mon	[aiu]	ille	w
+abessiivi_mon	[aiu]	itta	w	ps=f
+komitatiivi_mon	[aiu]	ine	s	ps=r
+instruktiivi_mon	[aiu]	in	w	ps=f
+end: rules
+end: class
+
+
+# Kotus 20 filee
+class: subst-kamee
+sm-class: kamee
+match-word: CVV
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	n	w
+partitiivi	0	ta	s
+translatiivi	0	ksi	w	ps=f
+translatiivi	0	kse	w	ps=r
+essiivi		0	na	s
+inessiivi		0	ssa	w
+elatiivi		0	sta	w
+illatiivi		0	seen	s
+illatiivi		0	hen	s
+adessiivi		0	lla	w
+ablatiivi		0	lta	w
+allatiivi		0	lle	w
+abessiivi		0	tta	w	ps=f
+nominatiivi_mon	0	t	w	ps=f
+genetiivi_mon	[eou]	iden	s
+genetiivi_mon	[eou]	itten	s
+partitiivi_mon	[eou]	ita	s
+translatiivi_mon	[eou]	iksi	w	ps=f
+translatiivi_mon	[eou]	ikse	w	ps=r
+essiivi_mon	[eou]	ina	s
+inessiivi_mon	[eou]	issa	w
+elatiivi_mon	[eou]	ista	w
+illatiivi_mon	[eou]	isiin	s
+illatiivi_mon	[eou]	ihin	s
+adessiivi_mon	[eou]	illa	w
+ablatiivi_mon	[eou]	ilta	w
+allatiivi_mon	[eou]	ille	w
+abessiivi_mon	[eou]	itta	w	ps=f
+komitatiivi_mon	[eou]	ine	s	ps=r
+instruktiivi_mon	[eou]	in	w	ps=f
+end: rules
+end: class
+
+
 # Kotus 23 tuohi
 class: subst-i3
 match-word: Ci
