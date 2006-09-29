@@ -253,8 +253,8 @@ def __write_inflection_class(classinfo, first_affixflag, affixfile):
 
 # Translates word match pattern to a Perl-compatible regular expression
 def __word_pattern_to_pcre(pattern):
-	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö)')
-	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š)')
+	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö|é)')
+	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š|ž)')
 	pattern = pattern.replace('A', u'(?:a|ä)')
 	pattern = pattern.replace('O', u'(?:o|ö)')
 	pattern = pattern.replace('U', u'(?:u|y)')
