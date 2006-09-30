@@ -88,6 +88,7 @@ def __read_list_line(file):
 # gradation: consonant gradation type.
 # group: FIXME: should be t
 # tgroup: FIXME: should be e
+# note: free form description of the class
 # rules: list of lists containing the inflection rules for this class
 # If the end of file is reached, this function returns None.
 def __read_inflection_class(file):
@@ -103,6 +104,7 @@ def __read_inflection_class(file):
 	gradation = hfutils.GRAD_NONE
 	group = 't'
 	tgroup = '-'
+	note = u''
 	rules = []
 	while True:
 		header_tuple = __read_header(file)
@@ -123,13 +125,16 @@ def __read_inflection_class(file):
 			if header_tuple[1] == '-': tgroup = '-'
 			if header_tuple[1] == 't': tgroup = 't'
 			if header_tuple[1] == 'e': tgroup = 'e'
+		if header_tuple[0] == 'note':
+			note = header_tuple[1]
 		if header_tuple[0] == 'rules':
 			rule = __read_list_line(file)
 			while rule != None:
 				rules.append(rule)
 				rule = __read_list_line(file)
 		if header_tuple[0] == 'end' and header_tuple[1] == 'class':
-			return { 'cname':cname, 'smcnames':smcnames, 'match':match, 'gradation':gradation, \
+			return { 'cname':cname, 'smcnames':smcnames, 'match':match, \
+			         'gradation':gradation, 'note':note, \
 			         'group':group, 'tgroup':tgroup, 'rules':rules, 'rmsfx':rmsfx }
 
 

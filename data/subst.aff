@@ -470,6 +470,7 @@ match-word: CA
 consonant-gradation: sw
 group: t
 transform-group: e
+note: kaksitavuinen sana
 rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w	ps=f
@@ -510,6 +511,7 @@ match-word: CA
 consonant-gradation: sw
 group: t
 transform-group: e
+note: kolme- tai useampitavuinen sana
 rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w	ps=f
