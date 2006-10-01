@@ -3694,6 +3694,12 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- kerronto_sti;
   end;
 
+  if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.tiedot /= nil
+      and ei_vertm in $tietue.tiedot) then
+    $taivutus :=- voittoaste;
+    $taivutus :=- yliaste;
+  end;
+
   # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
   #
   if ($tietue.tiedot /= nil) then

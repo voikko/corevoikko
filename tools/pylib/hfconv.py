@@ -331,7 +331,7 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 
 flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), (u'ei_ys', 7),
 	 (u'ei_ysa', 8), (u'ei_ysj', 9), (u'atk', 15), (u'siv', 17), (u'ei_lAinen', 27),
-	 (u'ysj', 29), (u'ei_mAinen', 30), (u'murre', 2), (u'yt', 31)]
+	 (u'ysj', 29), (u'ei_mAinen', 30), (u'murre', 2), (u'yt', 31), (u'ei_vertm', 32)]
 
 histmap = [(u'antautua', u'kaatua'), (u'banaali', u'paperi'), (u'kirjoitella', 'aatella'),
 	 (u'kantaja', u'apaja'), (u'pasuuna', u'peruna')]

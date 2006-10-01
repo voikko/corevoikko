@@ -1533,7 +1533,7 @@
 [perusmuoto: "ekspressionisti", alku: "ekspressionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "ekstaasi", alku: "ekstaas", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ekstaattinen", alku: "ekstaatti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "ekstra", alku: "ekstr", luokka: nimi_laatusana, jatko: <kala>, äs: a]; #Vaillinainen taivutus.
+[perusmuoto: "ekstra", alku: "ekstr", luokka: nimi_laatusana, jatko: <kala>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "ekstrakti", alku: "ekstrakt", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "ekstrovertti", alku: "ekstrovert", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "eksyksissä", alku: "eksyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
@@ -14806,7 +14806,7 @@
 [perusmuoto: "semmonen", alku: "semmo", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "senaatti", alku: "senaat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "senaattori", alku: "senaattor", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "senhetkinen", alku: "senhetki", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "senhetkinen", alku: "senhetki", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "seniili", alku: "seniil", luokka: nimi_laatusana, jatko: <banaali>, äs: ä];
 [perusmuoto: "senior", alku: "senior", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "seniori", alku: "senior", luokka: nimisana, jatko: <paperi>, äs: a];
