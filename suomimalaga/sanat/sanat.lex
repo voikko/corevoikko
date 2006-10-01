@@ -1289,7 +1289,7 @@
 [perusmuoto: "diakoni", alku: "diakon", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "diakonia", alku: "diakoni", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "diakonissa", alku: "diakoniss", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "diakriittinen", alku: "diakriitti", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "diakriittinen", alku: "diakriitti", luokka: laatusana, jatko: <nainen>, äs: ä]; # Tavuttuu väärin
 [perusmuoto: "diakronia", alku: "diakroni", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "diakroninen", alku: "diakroni", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "dialekti", alku: "dialekt", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
@@ -2290,6 +2290,7 @@
 [perusmuoto: "graviditeetti", alku: "graviditeet", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "gravimetri", alku: "gravimetr", luokka: nimisana, jatko: <risti>, äs: aä, tiedot: <inen>];
 [perusmuoto: "gravimetria", alku: "gravimetri", luokka: nimisana, jatko: <karahka>, äs: a];
+[perusmuoto: "gravis", alku: "gravi", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "gravitaatio", alku: "gravitaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "gregoriaaninen", alku: "gregoriaani", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "greippi", alku: "greip", luokka: nimisana, jatko: <keppi>, äs: ä];
@@ -4386,7 +4387,7 @@
 [perusmuoto: "jokainen", alku: "jokai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokamies", alku: "jokamie", luokka: nimisana, jatko: <mies>, äs: ä];
 [perusmuoto: "jokapäiväinen", alku: "jokapäiväi", luokka: laatusana, jatko: <nainen>, äs: ä];
-[perusmuoto: "jokatapauksessa", alku: "jokatapauksessa", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "jokatapauksessa", alku: "jokatapauksessa", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jokavuotinen", alku: "jokavuoti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokelainen", alku: "jokelai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokeltaa", alku: "jokel", luokka: teonsana, jatko: <sukeltaa>, äs: a];
@@ -4404,11 +4405,11 @@
 [perusmuoto: "joltinen", alku: "jolti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jommoinen", alku: "jommoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jomottaa", alku: "jomot", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "jompi", alku: "jom", luokka: asemosana, jatko: <kumpi>, äs: a]; # Jompi kumpi.
+[perusmuoto: "jompi", alku: "jom", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_voikko>]; # Jompi kumpi.
 [perusmuoto: "jonglööri", alku: "jonglöör", luokka: nimisana, jatko: <banaali>, äs: ä];
-[perusmuoto: "jonkajälkeen", alku: "jonkajälkeen", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "jonkatähden", alku: "jonkatähden", luokka: seikkasana, jatko: <loppu>, äs: ä];
-[perusmuoto: "jonkavuoksi", alku: "jonkavuoksi", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "jonkajälkeen", alku: "jonkajälkeen", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jonkatähden", alku: "jonkatähden", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "jonkavuoksi", alku: "jonkavuoksi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jonkinlainen", alku: "jonkinlai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "jonkinmoinen", alku: "jonkinmoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jonkinnäköinen", alku: "jonkinnäköi", luokka: nimisana, jatko: <nainen>, äs: ä];
@@ -14659,6 +14660,7 @@
 [perusmuoto: "savuttaa", alku: "savut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "savutus", alku: "savutu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "scifi", alku: "scif", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "sedilji", alku: "sedilj", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "sedimentti", alku: "sediment", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "seebu", alku: "seebu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "seemiläinen", alku: "seemiläi", luokka: laatusana, jatko: <nainen>, äs: ä];
@@ -14804,6 +14806,7 @@
 [perusmuoto: "semmonen", alku: "semmo", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "senaatti", alku: "senaat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "senaattori", alku: "senaattor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "senhetkinen", alku: "senhetki", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "seniili", alku: "seniil", luokka: nimi_laatusana, jatko: <banaali>, äs: ä];
 [perusmuoto: "senior", alku: "senior", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "seniori", alku: "senior", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -15122,6 +15125,7 @@
 [perusmuoto: "sirkka", alku: "sirk", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "sirkkeli", alku: "sirkkel", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "sirkku", alku: "sirk", luokka: nimisana, jatko: <alku>, äs: a];
+[perusmuoto: "sirkumfleksi", alku: "sirkumfleks", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "sirkus", alku: "sirku", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "sirkuttaa", alku: "sirkut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "sirkutus", alku: "sirkutu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -16792,6 +16796,7 @@
 [perusmuoto: "tilastoida", alku: "tilasto", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "tilata", alku: "til", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "tilava", alku: "tilav", luokka: laatusana, jatko: <asema>, äs: a];
+[perusmuoto: "tilde", alku: "tilde", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "tilhi", alku: "tilh", luokka: nimisana, jatko: <kiiski>, äs: ä];
 [perusmuoto: "tili", alku: "til", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "tilittää", alku: "tilit", luokka: teonsana, jatko: <alittaa>, äs: ä];
@@ -17050,6 +17055,7 @@
 [perusmuoto: "tratta", alku: "trat", luokka: nimisana, jatko: <aitta>, äs: a];
 [perusmuoto: "trauma", alku: "traum", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "traumaattinen", alku: "traumaatti", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "treema", alku: "treem", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "treenata", alku: "treen", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "treeni", alku: "treen", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "treffi", alku: "treff", luokka: nimisana, jatko: <risti>, äs: ä];
