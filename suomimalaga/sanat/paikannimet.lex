@@ -55,11 +55,13 @@
 [perusmuoto: "Ahvenanmaa", alku: "Ahvenanma", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "Ahvionjärvi", alku: "Ahvionjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Ahvionsaari", alku: "Ahvionsaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
+[perusmuoto: "Ailakkavaara", alku: "Ailakkavaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Ainola", alku: "Ainol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Aittovaara", alku: "Aittovaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Akhaia", alku: "Akhai", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Akkala", alku: "Akkal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Akkola", alku: "Akkol", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Aksujärvi", alku: "Aksujärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Alabama", alku: "Alabam", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Alankomaat", alku: "Alankoma", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "Alaska", alku: "Alask", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -78,7 +80,7 @@
 [perusmuoto: "Ancylusjärvi", alku: "Ancylusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Andit", alku: "And", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Angeles", alku: "Angeles", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Angeli", alku: "Angel", luokka: paikannimi, jatko: <banaali>, äs: a];
+[perusmuoto: "Angeli", alku: "Angel", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Angola", alku: "Angol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Anjala", alku: "Anjal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Anoniemi", alku: "Anonie", luokka: paikannimi, jatko: <niemi>, äs: ä];
@@ -213,7 +215,10 @@
 [perusmuoto: "Halden", alku: "Halden", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Halikko", alku: "Halik", luokka: paikannimi, jatko: <laatikko>, äs: a];
 [perusmuoto: "Halivaara", alku: "Halivaar", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "Halti", alku: "Halt", luokka: paikannimi, jatko: <risti>, äs: a];
+[perusmuoto: "Haltitunturi", alku: "Haltituntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Hamina", alku: "Hamin", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Hammastunturi", alku: "Hammastuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Hampshire", alku: "Hampshire", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Hangaspuro", alku: "Hangaspuro", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Hanko", alku: "Han", luokka: paikannimi, jatko: <hanko>, äs: a];
@@ -279,6 +284,7 @@
 [perusmuoto: "Iemimäki", alku: "Iemimä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Ihantala", alku: "Ihantal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Ii", alku: "I", luokka: paikannimi, jatko: <pii>, äs: ä];
+[perusmuoto: "Iijärvi", alku: "Iijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Iinalampi", alku: "Iinalam", luokka: paikannimi, jatko: <lampi>, äs: a];
 [perusmuoto: "Iisalmi", alku: "Iisalm", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Ikaalinen", alku: "Ikaali", luokka: paikannimi, jatko: <nainen>, äs: a];
@@ -291,6 +297,8 @@
 [perusmuoto: "Imatra", alku: "Imatr", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Immola", alku: "Immol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Inari", alku: "Inar", luokka: paikannimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Inarijoki", alku: "Inarijo", luokka: paikannimi, jatko: <kaikki>, äs: a];
+[perusmuoto: "Inarijärvi", alku: "Inarijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Indianapolis", alku: "Indianapoli", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Indokiina", alku: "Indokiin", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Indonesia", alku: "Indonesi", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -305,6 +313,7 @@
 [perusmuoto: "Italia", alku: "Itali", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Ithaka", alku: "Ithak", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Ivalo", alku: "Ivalo", luokka: paikannimi, jatko: <arvelu>, äs: a];
+[perusmuoto: "Ivalojoki", alku: "Ivalojo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Jaakkima", alku: "Jaakkim", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Jaama", alku: "Jaam", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Jaamalaitila", alku: "Jaamalaitil", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -342,6 +351,7 @@
 [perusmuoto: "Juudea", alku: "Juude", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Juuka", alku: "Juu", luokka: paikannimi, jatko: <hoikka>, äs: a];
 [perusmuoto: "Juurikka", alku: "Juurik", luokka: paikannimi, jatko: <solakka>, äs: a];
+[perusmuoto: "Juutuanjoki", alku: "Juutuanjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Juva", alku: "Juv", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Jynkkä", alku: "Jynk", luokka: paikannimi, jatko: <hoikka>, äs: ä];
 [perusmuoto: "Jyväskylä", alku: "Jyväskyl", luokka: paikannimi, jatko: <koira>, äs: ä];
@@ -351,6 +361,7 @@
 [perusmuoto: "Jääski", alku: "Jääsk", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Kaalamo", alku: "Kaalamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Kaamanen", alku: "Kaama", luokka: paikannimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Kaamasjoki", alku: "Kaamasjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Kaanan", alku: "Kaanan", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Kaarosta", alku: "Kaarost", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Kaatamo", alku: "Kaatamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
@@ -361,6 +372,7 @@
 [perusmuoto: "Kajaani", alku: "Kajaan", luokka: paikannimi, jatko: <banaali>, äs: a];
 [perusmuoto: "Kalanti", alku: "Kalan", luokka: paikannimi, jatko: <hollanti>, äs: a];
 [perusmuoto: "Kalastajasaarento", alku: "Kalastajasaaren", luokka: paikannimi, jatko: <avanto>, äs: a];
+[perusmuoto: "Kaldoaivi", alku: "Kaldoaiv", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Kalevainen", alku: "Kalevai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Kalifornia", alku: "Kaliforni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kalkkinen", alku: "Kalkki", luokka: paikannimi, jatko: <nainen>, äs: a];
@@ -380,6 +392,7 @@
 [perusmuoto: "Kappadokia", alku: "Kappadoki", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kardioru", alku: "Kardioru", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Karelia", alku: "Kareli", luokka: paikannimi, jatko: <karahka>, äs: a];
+[perusmuoto: "Karesuvanto", alku: "Karesuvan", luokka: paikannimi, jatko: <anto>, äs: a];
 [perusmuoto: "Karibia", alku: "Karibi", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Karigasniemi", alku: "Karigasnie", luokka: paikannimi, jatko: <niemi>, äs: ä];
 [perusmuoto: "Karintaus", alku: "Karintau", luokka: paikannimi, jatko: <vastaus>, äs: a];
@@ -395,6 +408,7 @@
 [perusmuoto: "Karttula", alku: "Karttul", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Karvia", alku: "Karvi", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Karvio", alku: "Karvio", luokka: paikannimi, jatko: <autio>, äs: a];
+[perusmuoto: "Kasariselkä", alku: "Kasarisel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
 [perusmuoto: "Kashmir", alku: "Kashmir", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Katalonia", alku: "Kataloni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Katrinedal", alku: "Katrinedal", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -402,6 +416,7 @@
 [perusmuoto: "Kaukasia", alku: "Kaukasi", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kaukola", alku: "Kaukol", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Kauniainen", alku: "Kauniai", luokka: paikannimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Kaunispää", alku: "Kaunispä", luokka: paikannimi, jatko: <maa>, äs: ä];
 [perusmuoto: "Kaurila", alku: "Kauril", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kaustajärvi", alku: "Kaustajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Kaustinen", alku: "Kausti", luokka: paikannimi, jatko: <nainen>, äs: a];
@@ -413,6 +428,7 @@
 [perusmuoto: "Kehtno", alku: "Kehtno", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Kemi", alku: "Kem", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Kemie", alku: "Kemie", luokka: paikannimi, jatko: <nalle>, äs: ä];
+[perusmuoto: "Kemijoki", alku: "Kemijo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Kemijärvi", alku: "Kemijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Kenia", alku: "Keni", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kenttinen", alku: "Kentti", luokka: paikannimi, jatko: <nainen>, äs: ä];
@@ -420,12 +436,16 @@
 [perusmuoto: "Kerimäki", alku: "Kerimä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Kesamo", alku: "Kesamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Kesamonsaari", alku: "Kesamonsaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
+[perusmuoto: "Kessi", alku: "Kess", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Keuruu", alku: "Keuru", luokka: paikannimi, jatko: <leikkuu>, äs: a];
+[perusmuoto: "Kevo", alku: "Kevo", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Kevojoki", alku: "Kevojo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Khios", alku: "Khio", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Kiestinki", alku: "Kiestin", luokka: paikannimi, jatko: <killinki>, äs: ä];
 [perusmuoto: "Kihniö", alku: "Kihniö", luokka: paikannimi, jatko: <autio>, äs: ä];
 [perusmuoto: "Kiiessalo", alku: "Kiiessalo", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Kiikoinen", alku: "Kiikoi", luokka: paikannimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Kiilopää", alku: "Kiilopä", luokka: paikannimi, jatko: <maa>, äs: ä];
 [perusmuoto: "Kiina", alku: "Kiin", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Kilikia", alku: "Kiliki", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kilpisjärvi", alku: "Kilpisjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
@@ -505,6 +525,7 @@
 [perusmuoto: "Kyrene", alku: "Kyrene", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Kyrenius", alku: "Kyreniu", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Kytämäki", alku: "Kytämä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
+[perusmuoto: "Kyynelvuono", alku: "Kyynelvuono", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "Kyyrönlampi", alku: "Kyyrönlam", luokka: paikannimi, jatko: <lampi>, äs: a];
 [perusmuoto: "Kähkölänpelto", alku: "Kähkölänpel", luokka: paikannimi, jatko: <aalto>, äs: a];
 [perusmuoto: "Kämärä", alku: "Kämär", luokka: paikannimi, jatko: <koira>, äs: ä];
@@ -512,6 +533,7 @@
 [perusmuoto: "Käsnäsenjärvi", alku: "Käsnäsenjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Käsämä", alku: "Käsäm", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Köln", alku: "Köln", luokka: paikannimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Könkämäeneno", alku: "Könkämäeneno", luokka: paikannimi, jatko: <valo>, äs: a]; # Tavuttuu väärin
 [perusmuoto: "Kööpenhamina", alku: "Kööpenhamin", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Laatokka", alku: "Laatok", luokka: paikannimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Laihia", alku: "Laihi", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -535,9 +557,12 @@
 [perusmuoto: "Leinola", alku: "Leinol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Lemetti", alku: "Lemet", luokka: paikannimi, jatko: <tatti>, äs: ä];
 [perusmuoto: "Lemi", alku: "Lem", luokka: paikannimi, jatko: <risti>, äs: ä];
+[perusmuoto: "Lemmenjoki", alku: "Lemmenjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Lempäälä", alku: "Lempääl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Leningrad", alku: "Leningrad", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Leppilampi", alku: "Leppilam", luokka: paikannimi, jatko: <lampi>, äs: a];
+[perusmuoto: "Levi", alku: "Lev", luokka: paikannimi, jatko: <risti>, äs: ä];
+[perusmuoto: "Levitunturi", alku: "Levituntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Libanon", alku: "Libanon", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Liberia", alku: "Liberi", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Libya", alku: "Liby", luokka: paikannimi, jatko: <karahka>, äs: a];
@@ -559,6 +584,7 @@
 [perusmuoto: "Louisiana", alku: "Louisian", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Luanda", alku: "Luand", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Luhkala", alku: "Luhkal", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Luomusjärvi", alku: "Luomusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Luopioinen", alku: "Luopioi", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lutila", alku: "Lutil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Luxemburg", alku: "Luxemburg", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -566,7 +592,7 @@
 [perusmuoto: "Lyypekki", alku: "Lyypek", luokka: paikannimi, jatko: <kajakki>, äs: ä];
 [perusmuoto: "Längelmäki", alku: "Längelmä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Läskelä", alku: "Läskel", luokka: paikannimi, jatko: <apila>, äs: ä];
-[perusmuoto: "Lätäseno", alku: "Lätäseno", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Lätäseno", alku: "Lätäseno", luokka: paikannimi, jatko: <valo>, äs: a]; # Tavuttuu väärin
 [perusmuoto: "Läävi", alku: "Lääv", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Maaninka", alku: "Maanin", luokka: paikannimi, jatko: <hanka>, äs: a];
 [perusmuoto: "Maarianhamina", alku: "Maarianhamin", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -583,6 +609,7 @@
 [perusmuoto: "Malmi", alku: "Malm", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Malta", alku: "Malt", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Manhattan", alku: "Manhattan", luokka: paikannimi, jatko: <edam>, äs: a];
+[perusmuoto: "Mantojärvi", alku: "Mantojärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Mantsuria", alku: "Mantsuri", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Manzikert", alku: "Manzikert", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Marburg", alku: "Marburg", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -600,6 +627,7 @@
 [perusmuoto: "Massachusetts", alku: "Massachusetts", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Mattila", alku: "Mattil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Mattisenlahti", alku: "Mattisenlah", luokka: paikannimi, jatko: <lahti>, äs: a];
+[perusmuoto: "Meekonjärvi", alku: "Meekonjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Mekrijärvi", alku: "Mekrijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Meksiko", alku: "Meksiko", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Melbourne", alku: "Melbourne", luokka: paikannimi, jatko: <nalle>, äs: a];
@@ -607,9 +635,11 @@
 [perusmuoto: "Meltovaara", alku: "Meltovaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Meltunvaara", alku: "Meltunvaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Memel", alku: "Memel", luokka: paikannimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Menesjärvi", alku: "Menesjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Mesopotamia", alku: "Mesopotami", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Miami", alku: "Miam", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Mieluskoski", alku: "Mieluskosk", luokka: paikannimi, jatko: <lovi>, äs: a];
+[perusmuoto: "Mierasjärvi", alku: "Mierasjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Mietoinen", alku: "Mietoi", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Miikkula", alku: "Miikkul", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Mikkeli", alku: "Mikkel", luokka: paikannimi, jatko: <banaali>, äs: ä];
@@ -639,9 +669,13 @@
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <tienoo>, äs: a];
 [perusmuoto: "Muolaanjärvi", alku: "Muolaanjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Muonio", alku: "Muonio", luokka: paikannimi, jatko: <autio>, äs: a];
+[perusmuoto: "Muonionjoki", alku: "Muonionjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
+[perusmuoto: "Muotka", alku: "Muotk", luokka: paikannimi, jatko: <koira>, äs: a];
+[perusmuoto: "Muotkatunturi", alku: "Muotkatuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Murmansk", alku: "Murmansk", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Murtoi", alku: "Murto", luokka: paikannimi, jatko: <pii>, äs: a];
 [perusmuoto: "Mutala", alku: "Mutal", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Mutusjärvi", alku: "Mutusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Muurmansk", alku: "Muurmansk", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Myanmar", alku: "Myanmar", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Myhkylä", alku: "Myhkyl", luokka: paikannimi, jatko: <apila>, äs: ä];
@@ -687,6 +721,7 @@
 [perusmuoto: "Ninive", alku: "Ninive", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Nipasenmäki", alku: "Nipasenmä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Niskala", alku: "Niskal", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Nitsijärvi", alku: "Nitsijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Niva", alku: "Niv", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Nokia", alku: "Noki", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Noljakka", alku: "Noljak", luokka: paikannimi, jatko: <solakka>, äs: a];
@@ -700,6 +735,7 @@
 [perusmuoto: "Nuorgam", alku: "Nuorgam", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Nuosjärvi", alku: "Nuosjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Nurmes", alku: "Nurme", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Nuvvus", alku: "Nuvvu", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Närsäkkälä", alku: "Närsäkkäl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Näsijärvi", alku: "Näsijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Näätämö", alku: "Näätämö", luokka: paikannimi, jatko: <arvelu>, äs: ä];
@@ -709,6 +745,8 @@
 [perusmuoto: "Ojama", alku: "Ojam", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Ojamäki", alku: "Ojamä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Olari", alku: "Olar", luokka: paikannimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Olos", alku: "Olo", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Olostunturi", alku: "Olostuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Onkamo", alku: "Onkamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Onsala", alku: "Onsal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Onttola", alku: "Onttol", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -727,13 +765,21 @@
 [perusmuoto: "Otravaara", alku: "Otravaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Oulainen", alku: "Oulai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Oulu", alku: "Oulu", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Ounasjoki", alku: "Ounasjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
+[perusmuoto: "Ounastunturi", alku: "Ounastuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Outakoski", alku: "Outakosk", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Paalasmaa", alku: "Paalasma", luokka: paikannimi, jatko: <maa>, äs: a];
+[perusmuoto: "Paatari", alku: "Paatar", luokka: paikannimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Paatsjoki", alku: "Paatsjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Paavoila", alku: "Paavoil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Padasjoki", alku: "Padasjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Paihola", alku: "Paihol", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Paistunturi", alku: "Paistuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Pakistan", alku: "Pakistan", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Paldiski", alku: "Paldisk", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Palestiina", alku: "Palestiin", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "Pallas", alku: "Palla", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Pallastunturi", alku: "Pallastuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Pamilo", alku: "Pamilo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Pankakoski", alku: "Pankakosk", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Pannila", alku: "Pannil", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -748,10 +794,12 @@
 [perusmuoto: "Patsola", alku: "Patsol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Paukkaja", alku: "Paukkaj", luokka: paikannimi, jatko: <apaja>, äs: a];
 [perusmuoto: "Paussunvuori", alku: "Paussunvuor", luokka: paikannimi, jatko: <tuohi>, äs: a];
+[perusmuoto: "Pautujärvi", alku: "Pautujärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Peking", alku: "Peking", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Pello", alku: "Pello", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Pellotsalo", alku: "Pellotsalo", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Peloponnesos", alku: "Peloponneso", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Peltojärvi", alku: "Peltojärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Peltola", alku: "Peltol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Penttilä", alku: "Penttil", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Pergamon", alku: "Pergamon", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -769,6 +817,7 @@
 [perusmuoto: "Pietari", alku: "Pietar", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Pietarsaari", alku: "Pietarsaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
 [perusmuoto: "Pihtipudas", alku: "Pihtipu", luokka: paikannimi, jatko: <ahdas>, äs: a];
+[perusmuoto: "Pihtsusjärvi", alku: "Pihtsusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Piikkiö", alku: "Piikkiö", luokka: paikannimi, jatko: <autio>, äs: ä];
 [perusmuoto: "Piitoinselkä", alku: "Piitoinsel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
 [perusmuoto: "Pirita", alku: "Pirit", luokka: paikannimi, jatko: <kala>, äs: a];
@@ -784,6 +833,7 @@
 [perusmuoto: "Porkkala", alku: "Porkkal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Porlom", alku: "Porlom", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Pornainen", alku: "Pornai", luokka: paikannimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Porojärvi", alku: "Porojärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Portoroz-Lucija", alku: "Portoroz-Luci", luokka: paikannimi, jatko: <kulkija>, äs: a];
 [perusmuoto: "Porvoo", alku: "Porvo", luokka: paikannimi, jatko: <tienoo>, äs: a];
 [perusmuoto: "Posio", alku: "Posio", luokka: paikannimi, jatko: <autio>, äs: a];
@@ -798,6 +848,8 @@
 [perusmuoto: "Puikkola", alku: "Puikkol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Pukarila", alku: "Pukaril", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Pulkonkoski", alku: "Pulkonkosk", luokka: paikannimi, jatko: <lovi>, äs: a];
+[perusmuoto: "Pulmanki", alku: "Pulman", luokka: paikannimi, jatko: <renki>, äs: a];
+[perusmuoto: "Pulmankijärvi", alku: "Pulmankijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Punkaharju", alku: "Punkaharju", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Punkasalmi", alku: "Punkasalm", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Puola", alku: "Puol", luokka: paikannimi, jatko: <koira>, äs: a];
@@ -805,6 +857,8 @@
 [perusmuoto: "Pusula", alku: "Pusul", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Puumala", alku: "Puumal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Pyhtää", alku: "Pyhtä", luokka: paikannimi, jatko: <vapaa>, äs: ä];
+[perusmuoto: "Pyhäjärvi", alku: "Pyhäjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Pyhätunturi", alku: "Pyhätuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Pyänkäjä", alku: "Pyänkäj", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Päijät-Häme", alku: "Päijät-Häme", luokka: paikannimi, jatko: <hame>, äs: ä];
 [perusmuoto: "Päivölä", alku: "Päivöl", luokka: paikannimi, jatko: <apila>, äs: ä];
@@ -822,6 +876,7 @@
 [perusmuoto: "Raahe", alku: "Raahe", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Raasepori", alku: "Raasepor", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Ragusa", alku: "Ragus", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "Rahajärvi", alku: "Rahajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Raisio", alku: "Raisio", luokka: paikannimi, jatko: <autio>, äs: a];
 [perusmuoto: "Raivola", alku: "Raivol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Raja-Jooseppi", alku: "Raja-Joosep", luokka: paikannimi, jatko: <keppi>, äs: a];
@@ -847,6 +902,7 @@
 [perusmuoto: "Romania", alku: "Romani", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Romppala", alku: "Romppal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rooma", alku: "Room", luokka: paikannimi, jatko: <koira>, äs: a];
+[perusmuoto: "Ropi", alku: "Rop", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Rosala", alku: "Rosal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rotila", alku: "Rotil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Roukalahti", alku: "Roukalah", luokka: paikannimi, jatko: <lahti>, äs: a];
@@ -855,6 +911,7 @@
 [perusmuoto: "Ruhka", alku: "Ruhk", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Ruhr", alku: "Ruhr", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ruka", alku: "Ruk", luokka: paikannimi, jatko: <koira>, äs: a];
+[perusmuoto: "Rukatunturi", alku: "Rukatuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Ruotsi", alku: "Ruots", luokka: paikannimi, jatko: <risti>, äs: a, tiedot: <ei_lAinen>];
 [perusmuoto: "Ruppovaara", alku: "Ruppovaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Ruskeala", alku: "Ruskeal", luokka: paikannimi, jatko: <karahka>, äs: a];
@@ -867,6 +924,8 @@
 [perusmuoto: "Röyttä", alku: "Röyt", luokka: paikannimi, jatko: <kenttä>, äs: ä];
 [perusmuoto: "Rügen", alku: "Rügen", luokka: paikannimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Saana", alku: "Saan", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "Saanajärvi", alku: "Saanajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Saanatunturi", alku: "Saanatuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Saarijärvi", alku: "Saarijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Saario", alku: "Saario", luokka: paikannimi, jatko: <autio>, äs: a];
 [perusmuoto: "Saariselkä", alku: "Saarisel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
@@ -880,10 +939,12 @@
 [perusmuoto: "Salmi", alku: "Salm", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Salvador", alku: "Salvador", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Samaria", alku: "Samari", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Sammakkoselkä", alku: "Sammakkosel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
 [perusmuoto: "Sammatus", alku: "Sammatu", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Sappu", alku: "Sap", luokka: paikannimi, jatko: <hoppu>, äs: a];
 [perusmuoto: "Sarasvati", alku: "Sarasvat", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Sardinia", alku: "Sardini", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Sarmitunturi", alku: "Sarmituntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Savikka", alku: "Savik", luokka: paikannimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Savikko", alku: "Savik", luokka: paikannimi, jatko: <laatikko>, äs: a];
 [perusmuoto: "Savo", alku: "Savo", luokka: paikannimi, jatko: <valo>, äs: a];
@@ -928,7 +989,9 @@
 [perusmuoto: "Sodankylä", alku: "Sodankyl", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Sodoma", alku: "Sodom", luokka: paikannimi, jatko: <asema>, äs: a];
 [perusmuoto: "Soinlahti", alku: "Soinlah", luokka: paikannimi, jatko: <lahti>, äs: a];
+[perusmuoto: "Sokosti", alku: "Sokost", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Somalia", alku: "Somali", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Somasjärvi", alku: "Somasjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Sonkaja", alku: "Sonkaj", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Sormula", alku: "Sormul", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Sortavala", alku: "Sortaval", luokka: paikannimi, jatko: <kala>, äs: a];
@@ -950,10 +1013,13 @@
 [perusmuoto: "Sulkama", alku: "Sulkam", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Sulkava", alku: "Sulkav", luokka: paikannimi, jatko: <asema>, äs: a];
 [perusmuoto: "Sumatra", alku: "Sumatr", luokka: paikannimi, jatko: <karahka>, äs: a];
+[perusmuoto: "Suolisjärvi", alku: "Suolisjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Suomi", alku: "Suom", luokka: paikannimi, jatko: <lovi>, äs: a, tiedot: <ei_lAinen>];
 [perusmuoto: "Suontaus", alku: "Suontau", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Suorlahti", alku: "Suorlah", luokka: paikannimi, jatko: <lahti>, äs: a];
 [perusmuoto: "Surinam", alku: "Surinam", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Surnujärvi", alku: "Surnujärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Surnuvuono", alku: "Surnuvuono", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "Suvela", alku: "Suvel", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Svartholma", alku: "Svartholm", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Sveitsi", alku: "Sveits", luokka: paikannimi, jatko: <risti>, äs: ä];
@@ -964,6 +1030,7 @@
 [perusmuoto: "Sysmä", alku: "Sysm", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Syväri", alku: "Syvär", luokka: paikannimi, jatko: <paperi>, äs: ä];
 [perusmuoto: "Syyria", alku: "Syyri", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Syysjärvi", alku: "Syysjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Säkylä", alku: "Säkyl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Sätös", alku: "Sätö", luokka: paikannimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Säyneenkylä", alku: "Säyneenkyl", luokka: paikannimi, jatko: <koira>, äs: ä];
@@ -990,7 +1057,10 @@
 [perusmuoto: "Tenerife", alku: "Tenerife", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Tenka", alku: "Ten", luokka: paikannimi, jatko: <hanka>, äs: a];
 [perusmuoto: "Tennessee", alku: "Tennesse", luokka: paikannimi, jatko: <kamee>, äs: ä];
+[perusmuoto: "Teno", alku: "Teno", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Tenojoki", alku: "Tenojo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Terijoki", alku: "Terijo", luokka: paikannimi, jatko: <kaikki>, äs: a];
+[perusmuoto: "Termisjärvi", alku: "Termisjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Terola", alku: "Terol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Tessalonika", alku: "Tessalonik", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Texas", alku: "Texas", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -1015,6 +1085,7 @@
 [perusmuoto: "Tonava", alku: "Tonav", luokka: paikannimi, jatko: <asema>, äs: a];
 [perusmuoto: "Torby", alku: "Torby", luokka: paikannimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Tornio", alku: "Tornio", luokka: paikannimi, jatko: <autio>, äs: a];
+[perusmuoto: "Tornionjoki", alku: "Tornionjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Toronto", alku: "Toronto", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Tottijärvi", alku: "Tottijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Troija", alku: "Troij", luokka: paikannimi, jatko: <kala>, äs: a];
@@ -1050,6 +1121,7 @@
 [perusmuoto: "Uige", alku: "Uige", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Uilo", alku: "Uilo", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Ukkola", alku: "Ukkol", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Ukonselkä", alku: "Ukonsel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
 [perusmuoto: "Ulismainen", alku: "Ulismai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Unkari", alku: "Unkar", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Ural", alku: "Ural", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -1079,7 +1151,10 @@
 [perusmuoto: "Varloi", alku: "Varlo", luokka: paikannimi, jatko: <pii>, äs: a];
 [perusmuoto: "Varola", alku: "Varol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Varpanen", alku: "Varpa", luokka: paikannimi, jatko: <nainen>, äs: a];
+[perusmuoto: "Vasikkaselkä", alku: "Vasikkasel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
+[perusmuoto: "Vaskojoki", alku: "Vaskojo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Vasojärvi", alku: "Vasojärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Vastusjärvi", alku: "Vastusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Vatala", alku: "Vatal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Vehmalainen", alku: "Vehmalai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Veihtviilo", alku: "Veihtviilo", luokka: paikannimi, jatko: <valo>, äs: a];
@@ -1092,6 +1167,8 @@
 [perusmuoto: "Vesikko", alku: "Vesik", luokka: paikannimi, jatko: <laatikko>, äs: a];
 [perusmuoto: "Vesuvius", alku: "Vesuviu", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Veteli", alku: "Vetel", luokka: paikannimi, jatko: <banaali>, äs: ä];
+[perusmuoto: "Vetsijärvi", alku: "Vetsijärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Vetsikko", alku: "Vetsik", luokka: paikannimi, jatko: <laatikko>, äs: a];
 [perusmuoto: "Viapori", alku: "Viapor", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Viekki", alku: "Viek", luokka: paikannimi, jatko: <takki>, äs: ä];
 [perusmuoto: "Vieljärvi", alku: "Vieljärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
@@ -1103,6 +1180,7 @@
 [perusmuoto: "Viianranta", alku: "Viianran", luokka: paikannimi, jatko: <kanta>, äs: a];
 [perusmuoto: "Viippero", alku: "Viippero", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Viipuri", alku: "Viipur", luokka: paikannimi, jatko: <paperi>, äs: a];
+[perusmuoto: "Viipustunturi", alku: "Viipustuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Viisola", alku: "Viisol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Villala", alku: "Villal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Vilppula", alku: "Vilppul", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -1116,11 +1194,14 @@
 [perusmuoto: "Vuonislahti", alku: "Vuonislah", luokka: paikannimi, jatko: <lahti>, äs: a];
 [perusmuoto: "Vuonnos", alku: "Vuonno", luokka: paikannimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Vuonos", alku: "Vuono", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Vuontisjärvi", alku: "Vuontisjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Vuortanajärvi", alku: "Vuortanajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
+[perusmuoto: "Vuotso", alku: "Vuotso", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Väinäjoki", alku: "Väinäjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Väinölä", alku: "Väinöl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Väisälä", alku: "Väisäl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Värtsilä", alku: "Värtsil", luokka: paikannimi, jatko: <apila>, äs: ä];
+[perusmuoto: "Vätsäri", alku: "Vätsär", luokka: paikannimi, jatko: <paperi>, äs: ä];
 [perusmuoto: "Vääksy", alku: "Vääksy", luokka: paikannimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Vöyri", alku: "Vöyr", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Waals", alku: "Waals", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -1131,6 +1212,7 @@
 [perusmuoto: "Yhdysvallat", alku: "Yhdysval", luokka: paikannimi, jatko: <valta>, äs: a];
 [perusmuoto: "Ylivieska", alku: "Yliviesk", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Ylläs", alku: "Yllä", luokka: paikannimi, jatko: <vastaus>, äs: ä];
+[perusmuoto: "Yllästunturi", alku: "Yllästuntur", luokka: paikannimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Ylänne", alku: "Ylän", luokka: paikannimi, jatko: <enne>, äs: ä];
 [perusmuoto: "Ylöjärvi", alku: "Ylöjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "York", alku: "York", luokka: paikannimi, jatko: <kalsium>, äs: a];
