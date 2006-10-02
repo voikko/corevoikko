@@ -776,6 +776,7 @@
 [perusmuoto: "asfaltti", alku: "asfalt", luokka: nimisana, jatko: <salaatti>, äs: a, tiedot: <inen>];
 [perusmuoto: "asia", alku: "asi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "asiaankuulumaton", alku: "asiaankuuluma", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
+[perusmuoto: "asiaankuuluva", alku: "asiaankuuluv", luokka: laatusana, jatko: <asema>, äs: a]; # Vakiintunut ilmaisu
 [perusmuoto: "asiakas", alku: "asiak", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "asiallistua", alku: "asiallistu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "asidofilus", alku: "asidofilu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -1433,7 +1434,7 @@
 [perusmuoto: "edelläkävijä", alku: "edelläkävi", luokka: nimisana, jatko: <kulkija>, äs: ä];
 [perusmuoto: "edelläkäypä", alku: "edelläkäy", luokka: nimisana, jatko: <huopa>, äs: ä];
 [perusmuoto: "edelläkäyvä", alku: "edelläkäyv", luokka: nimisana, jatko: <koira>, äs: ä];
-[perusmuoto: "edellämainittu", alku: "edellämainit", luokka: nimisana, jatko: <raamattu>, äs: a];
+[perusmuoto: "edellämainittu", alku: "edellämainit", luokka: nimisana, jatko: <raamattu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "edeltää", alku: "edel", luokka: teonsana, jatko: <sukeltaa>, äs: ä];
 [perusmuoto: "edemmäs", alku: "edemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edempi", alku: "ede", luokka: laatusana, jatko: <suurempi>, äs: ä];
@@ -1682,7 +1683,7 @@
 [perusmuoto: "ennemmin", alku: "ennemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ennen", alku: "ennen", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ennenkun", alku: "ennenkun", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "ennenkun", alku: "ennenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ennennäkemätön", alku: "ennennäkemä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "ennestään", alku: "ennestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ennus", alku: "ennu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -1696,13 +1697,13 @@
 [perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "ensikertalainen", alku: "ensikertalai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ensiksi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ensiksimainittu", alku: "ensiksimainit", luokka: nimisana, jatko: <raamattu>, äs: a];
-[perusmuoto: "ensiksituleva", alku: "ensiksitulev", luokka: laatusana, jatko: <asema>, äs: a];
+[perusmuoto: "ensiksimainittu", alku: "ensiksimainit", luokka: nimisana, jatko: <raamattu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "ensiksituleva", alku: "ensiksitulev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ensin", alku: "ensin", luokka: seikkasana, jatko: <olento_nA, liitesana, loppu>, äs: ä];
 [perusmuoto: "ensinkään", alku: "ensinkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ensinmainittu", alku: "ensinmainit", luokka: nimisana, jatko: <raamattu>, äs: a];
-[perusmuoto: "ensipidettävä", alku: "ensipidettäv", luokka: laatusana, jatko: <asema>, äs: ä];
-[perusmuoto: "ensituleva", alku: "ensitulev", luokka: laatusana, jatko: <asema>, äs: a];
+[perusmuoto: "ensinmainittu", alku: "ensinmainit", luokka: nimisana, jatko: <raamattu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "ensipidettävä", alku: "ensipidettäv", luokka: laatusana, jatko: <asema>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ensituleva", alku: "ensitulev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "ensyklopedia", alku: "ensyklopedi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "enteillä", alku: "enteil", luokka: teonsana, jatko: <katsella>, äs: ä];
@@ -3849,7 +3850,7 @@
 [perusmuoto: "ikävystyä", alku: "ikävysty", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "ikävä", alku: "ikäv", luokka: nimi_laatusana, jatko: <asema>, äs: ä];
 [perusmuoto: "ikävöidä", alku: "ikävö", luokka: teonsana, jatko: <haravoida>, äs: ä];
-[perusmuoto: "ikäänkuin", alku: "ikäänkuin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "ikäänkuin", alku: "ikäänkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ikääntyä", alku: "ikään", luokka: teonsana, jatko: <jakaantua>, äs: ä];
 [perusmuoto: "ilahduttaa", alku: "ilahdut", luokka: teonsana, jatko: <autioittaa>, äs: a];
 [perusmuoto: "ilahtua", alku: "ilah", luokka: teonsana, jatko: <kaatua>, äs: a];
@@ -4381,14 +4382,26 @@
 [perusmuoto: "joiku", alku: "joi", luokka: nimisana, jatko: <alku>, äs: a];
 [perusmuoto: "joikua", alku: "joi", luokka: teonsana, jatko: <kiekua>, äs: a];
 [perusmuoto: "jojo", alku: "jojo", luokka: nimisana, jatko: <valo>, äs: a];
-[perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a];
+[perusmuoto: "jok'ainoa", alku: "jok'aino", luokka: laatusana, jatko: <ainoa>, äs: a];
+[perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
+[perusmuoto: "joka-aamuinen", alku: "joka-aamui", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokahinen", alku: "jokahi", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "jokaikinen", alku: "jokaiki", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "jokaikinen", alku: "jokaiki", luokka: laatusana, jatko: <nainen>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "jokailtainen", alku: "jokailtai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokainen", alku: "jokai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "jokakesäinen", alku: "jokakesäi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "jokakeväinen", alku: "jokakeväi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "jokakuukautinen", alku: "jokakuukauti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokamies", alku: "jokamie", luokka: nimisana, jatko: <mies>, äs: ä];
+[perusmuoto: "jokanainen", alku: "jokanai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "jokapaikanhöylä", alku: "jokapaikanhöyl", luokka: nimisana, jatko: <koira>, äs: ä];
 [perusmuoto: "jokapäiväinen", alku: "jokapäiväi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "jokasyksyinen", alku: "jokasyksyi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "jokatalvinen", alku: "jokatalvi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokatapauksessa", alku: "jokatapauksessa", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokaviikkoinen", alku: "jokaviikkoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokavuotinen", alku: "jokavuoti", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "jokaöinen", alku: "jokaöi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "jokelainen", alku: "jokelai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "jokeltaa", alku: "jokel", luokka: teonsana, jatko: <sukeltaa>, äs: a];
 [perusmuoto: "jokeri", alku: "joker", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -6894,7 +6907,7 @@
 [perusmuoto: "kristillinen", alku: "kristilli", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kristinoppi", alku: "kristinop", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "kristinusko", alku: "kristinusko", luokka: nimisana, jatko: <valo>, äs: a];
-[perusmuoto: "kristitty", alku: "kristit", luokka: laatusana, jatko: <raamattu>, äs: ä];
+[perusmuoto: "kristitty", alku: "kristit", luokka: nimi_laatusana, jatko: <raamattu>, äs: ä];
 [perusmuoto: "kristus", alku: "kristu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kriteeri", alku: "kriteer", luokka: nimisana, jatko: <banaali>, äs: ä];
 [perusmuoto: "kritiikki", alku: "kritiik", luokka: nimisana, jatko: <kajakki>, äs: ä];
@@ -9801,6 +9814,7 @@
 [perusmuoto: "muka", alku: "mukaa", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "mukaan", alku: "mukaa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "mukaan", alku: "mukaan", luokka: seikkasana, jatko: @sana2 + <liitesana, loppu>, äs: a];
+[perusmuoto: "mukaansatempaava", alku: "mukaansatempaav", luokka: laatusana, jatko: <asema>, äs: a]; # Vakiintunut ilmaisu
 [perusmuoto: "mukaelma", alku: "mukaelm", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "mukailla", alku: "mukail", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "mukainen", alku: "mukai", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -10751,8 +10765,8 @@
 [perusmuoto: "nähdä", alku: "nä", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "näin", alku: "nä", luokka: nimisana, jatko: <puin>, äs: ä];
 [perusmuoto: "näin", alku: "näin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "näinkuuluva", alku: "näinkuuluv", luokka: laatusana, jatko: <asema>, äs: a];
-[perusmuoto: "näinollen", alku: "näinollen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "näinkuuluva", alku: "näinkuuluv", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "näinollen", alku: "näinollen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "näivertää", alku: "näiver", luokka: teonsana, jatko: <musertaa>, äs: ä];
 [perusmuoto: "näivettyä", alku: "näivet", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "näivettää", alku: "näivet", luokka: teonsana, jatko: <alittaa>, äs: ä];
@@ -14523,7 +14537,7 @@
 [perusmuoto: "sammutus", alku: "sammutu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "samoilla", alku: "samoil", luokka: teonsana, jatko: <arvailla>, äs: a];
 [perusmuoto: "samoin", alku: "samoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "samoinkuin", alku: "samoinkuin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "samoinkuin", alku: "samoinkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "samota", alku: "samo", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "samovaari", alku: "samovaar", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "samperi", alku: "samper", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -15187,10 +15201,10 @@
 [perusmuoto: "sitruuna", alku: "sitruun", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "sittemmin", alku: "sittemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sitten", alku: "sitten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "sittenkuin", alku: "sittenkuin", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "sittenkun", alku: "sittenkun", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "sittenkuin", alku: "sittenkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sittenkun", alku: "sittenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sittiäinen", alku: "sittiäi", luokka: nimisana, jatko: <nainen>, äs: ä];
-[perusmuoto: "sitäpaitsi", alku: "sitäpaitsi", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "sitäpaitsi", alku: "sitäpaitsi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sitävastoin", alku: "sitävastoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "siunata", alku: "siun", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "siunautua", alku: "siunau", luokka: teonsana, jatko: <antautua>, äs: a];

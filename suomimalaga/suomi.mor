@@ -838,6 +838,11 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       (($oikea.tiedot    /= nil) and ((ei_ys in $oikea.tiedot)    or (latex in $oikea.tiedot)))) then
     return no;
   end;
+  # Ei hyväksytä tälläisia sanoja silloinkaan, kun sijamuoto on joku muu kuin nimentö (isi+n+maa ei käy).
+  #
+  if (($vasen.$i.luokka = sijapääte) and ($vasen.($i-1).tiedot /= nil) and (ei_ys in $vasen.($i-1).tiedot)) then
+    return no;
+  end;
 
   if ($oikea.perusmuoto = "isyys") then
     # Ei ymmärtä+vä+isyys.
