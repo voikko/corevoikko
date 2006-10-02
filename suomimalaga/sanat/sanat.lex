@@ -6906,7 +6906,7 @@
 [perusmuoto: "kristillinen", alku: "kristilli", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kristinoppi", alku: "kristinop", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "kristinusko", alku: "kristinusko", luokka: nimisana, jatko: <valo>, äs: a];
-[perusmuoto: "kristitty", alku: "kristit", luokka: nimi_laatusana, jatko: <raamattu>, äs: ä];
+[perusmuoto: "kristitty", alku: "kristit", luokka: nimi_laatusana, jatko: <raamattu>, äs: ä, tiedot: <ei_ysa>];
 [perusmuoto: "kristus", alku: "kristu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kriteeri", alku: "kriteer", luokka: nimisana, jatko: <banaali>, äs: ä];
 [perusmuoto: "kritiikki", alku: "kritiik", luokka: nimisana, jatko: <kajakki>, äs: ä];
