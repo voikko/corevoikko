@@ -456,7 +456,7 @@
 [perusmuoto: "alumni", alku: "alumn", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "aluna", alku: "alun", luokka: nimisana, jatko: <peruna>, äs: a];
 [perusmuoto: "alunen", alku: "alu", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "alunperin", alku: "alunperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "alunperin", alku: "alunperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "alus", alku: "alu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "alusta", alku: "alust", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "alustaa", alku: "alust", luokka: teonsana, jatko: <aavistaa>, äs: a];
