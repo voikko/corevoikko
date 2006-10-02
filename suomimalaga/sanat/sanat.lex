@@ -1046,12 +1046,10 @@
 [perusmuoto: "bilateraali", alku: "bilateraal", luokka: nimi_laatusana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "bileet", alku: "bile", luokka: nimisana, jatko: <kamee>, äs: ä];
 [perusmuoto: "biljardi", alku: "biljard", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "binaari", alku: "binaar", luokka: nimi_laatusana, jatko: <paperi>, äs: a];
-[perusmuoto: "binaarinen", alku: "binaari", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "binaari", alku: "binaar", luokka: nimi_laatusana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "bingo", alku: "bingo", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "binomi", alku: "binom", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "binääri", alku: "binäär", luokka: nimi_laatusana, jatko: <paperi>, äs: ä];
-[perusmuoto: "binäärinen", alku: "binääri", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "binääri", alku: "binäär", luokka: nimi_laatusana, jatko: <paperi>, äs: ä, tiedot: <inen>];
 [perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @sana1, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "bio", alku: "bio", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "bios", alku: "bios", luokka: nimisana, jatko: <kalsium>, äs: a];
