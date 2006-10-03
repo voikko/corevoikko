@@ -4888,8 +4888,10 @@
 [perusmuoto: "kahakka", alku: "kahak", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "kahakoida", alku: "kahako", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "kahdeksainen", alku: "kahdeksai", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "kahdeksanlainen", alku: "kahdeksanlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "kahdeksannes", alku: "kahdeksanne", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kahdeksikko", alku: "kahdeksik", luokka: nimisana, jatko: <laatikko>, äs: a];
+[perusmuoto: "kahdenlainen", alku: "kahdenlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "kahdentaa", alku: "kahden", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "kaheli", alku: "kahel", luokka: nimi_laatusana, jatko: <paperi>, äs: a];
 [perusmuoto: "kahinoida", alku: "kahino", luokka: teonsana, jatko: <haravoida>, äs: a];
@@ -6440,6 +6442,7 @@
 [perusmuoto: "kollottaa", alku: "kollot", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "kolmannes", alku: "kolmanne", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kolmasti", alku: "kolmasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kolmenlainen", alku: "kolmenlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "kolmikko", alku: "kolmik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "kolmin", alku: "kolmin", luokka: seikkasana, jatko: <liitesana, loppu> + @sana2, äs: a];
@@ -7311,6 +7314,7 @@
 [perusmuoto: "kutu", alku: "ku", luokka: nimisana, jatko: <laatu>, äs: a];
 [perusmuoto: "kutyymi", alku: "kutyym", luokka: nimisana, jatko: <banaali>, äs: aä];
 [perusmuoto: "kuu", alku: "ku", luokka: nimisana, jatko: <puu>, äs: a]; #NS: 2 sanaa.
+[perusmuoto: "kuudenlainen", alku: "kuudenlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "kuudennes", alku: "kuudenne", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kuukahtaa", alku: "kuukah", luokka: teonsana, jatko: <astahtaa>, äs: a];
 [perusmuoto: "kuukausittainen", alku: "kuukausittai", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -7445,6 +7449,7 @@
 [perusmuoto: "kyläillä", alku: "kyläil", luokka: teonsana, jatko: <arvailla>, äs: ä];
 [perusmuoto: "kymi", alku: "kym", luokka: nimisana, jatko: <kiiski>, äs: ä];
 [perusmuoto: "kymmen", alku: "kymmen", luokka: nimisana, jatko: <ahven>, äs: ä];
+[perusmuoto: "kymmenenlainen", alku: "kymmenenlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "kymmenennes", alku: "kymmenenne", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "kymmenes", alku: "kymmene", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "kymmenikkö", alku: "kymmenik", luokka: nimisana, jatko: <laatikko>, äs: ä];
@@ -10359,6 +10364,7 @@
 [perusmuoto: "neliö", alku: "neliö", luokka: nimisana, jatko: <autio>, äs: ä];
 [perusmuoto: "neliöidä", alku: "neliö", luokka: teonsana, jatko: <kanavoida>, äs: ä];
 [perusmuoto: "neljäkäs", alku: "neljäk", luokka: nimisana, jatko: <avokas>, äs: ä];
+[perusmuoto: "neljänlainen", alku: "neljänlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "neljännes", alku: "neljänne", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "nelonen", alku: "nelo", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "nenä", alku: "nen", luokka: nimisana, jatko: <koira>, äs: ä];
@@ -14715,6 +14721,7 @@
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
 [perusmuoto: "seita", alku: "sei", luokka: nimisana, jatko: <pata>, äs: a];
 [perusmuoto: "seiti", alku: "sei", luokka: nimisana, jatko: <vati>, äs: ä];
+[perusmuoto: "seitsemänlainen", alku: "seitsemänlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "seitsemännes", alku: "seitsemänne", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "seitsen", alku: "seitsen", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "seitsikko", alku: "seitsik", luokka: nimisana, jatko: <laatikko>, äs: a];
@@ -18667,6 +18674,7 @@
 [perusmuoto: "vihulainen", alku: "vihulai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vihuri", alku: "vihur", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "viidakko", alku: "viidak", luokka: nimisana, jatko: <laatikko>, äs: a];
+[perusmuoto: "viidenlainen", alku: "viidenlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "viidennes", alku: "viidenne", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "viihde", alku: "viih", luokka: nimisana, jatko: <sade>, äs: ä];
 [perusmuoto: "viihdyke", alku: "viihdyk", luokka: nimisana, jatko: <tarvike>, äs: ä];
@@ -19202,7 +19210,9 @@
 [perusmuoto: "wokki", alku: "wok", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "ydin", alku: "y", luokka: nimisana, jatko: <kaadin>, äs: ä];
 [perusmuoto: "yhdeksikkö", alku: "yhdeksik", luokka: nimisana, jatko: <laatikko>, äs: ä];
+[perusmuoto: "yhdeksänlainen", alku: "yhdeksänlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "yhdeksännes", alku: "yhdeksänne", luokka: nimisana, jatko: <vastaus>, äs: ä];
+[perusmuoto: "yhdenlainen", alku: "yhdenlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
 [perusmuoto: "yhdenmukaistaa", alku: "yhdenmukaist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "yhdentää", alku: "yhden", luokka: teonsana, jatko: <pahentaa>, äs: ä];
 [perusmuoto: "yhdessä", alku: "yhdessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
