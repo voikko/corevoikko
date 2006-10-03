@@ -403,7 +403,7 @@
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @sana2, äs: aä]; # Alkuunpanija jne.
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "allakka", alku: "allak", luokka: nimisana, jatko: <solakka>, äs: a];
-[perusmuoto: "allaoleva", alku: "allaolev", luokka: nimisana, jatko: <asema>, äs: a];
+[perusmuoto: "allaoleva", alku: "allaolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "allas", alku: "al", luokka: nimisana, jatko: <allas>, äs: a];
 [perusmuoto: "allatiivi", alku: "allatiiv", luokka: nimisana, jatko: <risti>, äs: a];
@@ -9819,7 +9819,7 @@
 [perusmuoto: "mukainen", alku: "mukai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "mukamas", alku: "mukamas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "mukana", alku: "mukana", luokka: seikkasana, jatko: @sana2 + <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "mukanaoleva", alku: "mukanaolev", luokka: nimisana, jatko: <asema>, äs: a];
+[perusmuoto: "mukanaoleva", alku: "mukanaolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "mukauttaa", alku: "mukaut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "mukautua", alku: "mukau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "mukava", alku: "mukav", luokka: nimi_laatusana, jatko: <asema>, äs: a];
@@ -17572,6 +17572,7 @@
 [perusmuoto: "tämmöinen", alku: "tämmöi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "tämän", alku: "tämän", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "tännempänä", alku: "tännem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
+[perusmuoto: "tännepäin", alku: "tännepäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tänäinen", alku: "tänäi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "tänäpäivänä", alku: "tänäpäivänä", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "tänään", alku: "tänään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -18703,8 +18704,8 @@
 [perusmuoto: "viimeinen", alku: "viimei", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "viimeistellä", alku: "viimeistel", luokka: teonsana, jatko: <katsella>, äs: ä];
 [perusmuoto: "viimeksi", alku: "viimeksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "viimeksimainittu", alku: "viimeksimainit", luokka: nimisana, jatko: <raamattu>, äs: a];
-[perusmuoto: "viimemainittu", alku: "viimemainit", luokka: nimisana, jatko: <raamattu>, äs: a];
+[perusmuoto: "viimeksimainittu", alku: "viimeksimainit", luokka: nimisana, jatko: <raamattu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "viimemainittu", alku: "viimemainit", luokka: nimisana, jatko: <raamattu>, äs: a]; # Mieluummin "viimeksi mainittu"
 [perusmuoto: "viimevuotinen", alku: "viimevuoti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "viina", alku: "viin", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "viineri", alku: "viiner", luokka: nimisana, jatko: <paperi>, äs: ä];
@@ -19308,7 +19309,8 @@
 [perusmuoto: "yllä", alku: "y", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "ylläkkö", alku: "ylläk", luokka: nimisana, jatko: <laatikko>, äs: ä];
-[perusmuoto: "ylläoleva", alku: "ylläolev", luokka: laatusana, jatko: <asema>, äs: a];
+[perusmuoto: "ylläoleva", alku: "ylläolev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
+#[perusmuoto: "ylläpitää", alku: "ylläpi", luokka: teonsana, jatko: <hohtaa>, äs: ä]; # Muodostaa johdoksen "*ylläpitö"
 [perusmuoto: "yllättyä", alku: "yllät", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "yllättää", alku: "yllät", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "ylpeillä", alku: "ylpeil", luokka: teonsana, jatko: <katsella>, äs: ä];
