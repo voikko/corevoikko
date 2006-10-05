@@ -1,3 +1,7 @@
+2006-10-05 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Add missing 'const' to usage example in voikko.h.
+
 2006-09-26 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Increase LIBVOIKKO_MAX_WORD_CHARS back to 255, the issue with

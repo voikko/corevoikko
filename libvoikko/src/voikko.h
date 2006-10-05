@@ -19,7 +19,7 @@
 /* This library should be used in the following manner:
  * 
  * int handle;
- * char * voikko_error = voikko_init(&handle, "fi_FI", 0);
+ * const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
  * // check for errors
  * // set options
  * // use spell/suggest/hyphenate
