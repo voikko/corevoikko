@@ -49,9 +49,12 @@ extern int voikko_handle_count;
  * @param buffer Buffer where path to the project file will be written
  * @param buflen Length of buffer
  * @param langcode Language code
+ * @param path If path is not null, it is searched for dictionary files before checking the
+ *             standard dictionary locations.
  * @return true if finding project file succeeded, otherwise false. It is not guaranteed that
  *         the file actually exists.
  */
-int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode);
+int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode,
+                               const char * path);
 
 #endif

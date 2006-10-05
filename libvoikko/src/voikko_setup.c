@@ -98,6 +98,11 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 }
 
 const char * voikko_init(int * handle, const char * langcode, int cache_size) {
+	return voikko_init_with_path(handle, langcode, cache_size, 0);
+}
+
+const char * voikko_init_with_path(int * handle, const char * langcode,
+                                   int cache_size, const char * path) {
 	char * project;
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
@@ -115,7 +120,7 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 	/* FIXME: Temporary hack needed for MT unsafe malaga library */
 	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
 	
-	if (!voikko_find_malaga_project(project, 1024, langcode)) {
+	if (!voikko_find_malaga_project(project, 1024, langcode, path)) {
 		free(project);
 		return "Unsupported language";
 	}
@@ -197,7 +202,8 @@ int voikko_terminate(int handle) {
 #define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
 #endif // WIN32
 
-int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode) {
+int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode,
+                               const char * path) {
 #ifdef HAVE_GETPWUID_R
 	struct passwd pwd;
 	struct stat sbuf;
@@ -206,11 +212,22 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	char * tmp_buf = malloc(buflen + 2048);
 	if (tmp_buf == 0) return 0;
 
-	// Clear the buffer.
-	memset(buffer, 0x00, buflen);
-
 	if (strcmp(langcode, "fi_FI") == 0) {
+#ifdef HAVE_GETPWUID_R
+		/* Check the user specified dictionary path */
+		if (path && strlen(path) < buflen - 26 ) {
+			strcpy(buffer, path);
+			strcpy(buffer + strlen(path), "/.voikko/" VOIKKO_DICTIONARY_FILE);
+			if (stat(buffer, &sbuf) == 0) {
+				free(tmp_buf);
+				return 1;
+			}
+		}
+#endif // HAVE_GETPWUID_R
+		// Clear the buffer.
+		memset(buffer, 0x00, buflen);
 #ifdef WIN32
+		/* FIXME: user specified path check missing on Windows */
 		/* Check the Windows registry */
 		HKEY hKey;
 		DWORD dwBufLen=buflen;
@@ -241,7 +258,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 
 		free(tmp_buf);
 		return 0;
-#endif
+#endif // WIN32
 #ifdef HAVE_GETPWUID_R
 		/* Check for project file in $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
 		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);
@@ -253,7 +270,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 				return 1;
 			}
 		}
-#endif
+#endif // HAVE_GETPWUID_R
 		/* Use the compile time default project file */
 		strcpy(buffer, DICTIONARY_PATH "/" VOIKKO_DICTIONARY_FILE);
 		free(tmp_buf);

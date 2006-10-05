@@ -1,6 +1,8 @@
 2006-10-05 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Add missing 'const' to usage example in voikko.h.
+	* Add new exported function init_libvoikko_with_path.
+	* Increase version to 1.2 and libtool version info to 3:0:2.
 
 2006-09-26 Harri Pitkänen  <hatapitk@iki.fi>
 

@@ -123,6 +123,22 @@ BEGIN_C_DECLS
 const char * voikko_init(int * handle, const char * langcode, int cache_size);
 
 /**
+ * Initialises the library for use in the specified language, adding an extra directory
+ * to the standard dictionary search path.
+ * @param handle after succesful initialisation handle will contain a handle that
+ *        refers to this particular instance of voikko
+ * @param langcode the language code, for example "fi_FI"
+ * @param cache_size size of the spellchecker cache. This can be -1 (no cache) or
+ *        >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
+ * @param path path to a directory from which dictionary files should be searched
+ *        first before looking into the standard dictionary locatiosn
+ * @return null, if initialisation completed without error, otherwise a pointer
+ *         to a string describing the error
+ */
+const char * voikko_init_with_path(int * handle, const char * langcode,
+                                   int cache_size, const char * path);
+
+/**
  * Terminates an instance of voikko.
  * @param handle voikko instance
  * @return true, if termination succeeded, otherwise false

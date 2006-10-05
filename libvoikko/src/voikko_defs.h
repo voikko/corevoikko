@@ -40,6 +40,9 @@
 
 VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size);
 
+VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
+                                                int cache_size, const char * path);
+
 VOIKKOEXPORT int voikko_terminate(int handle);
 
 VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value);
