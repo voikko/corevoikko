@@ -2,6 +2,9 @@
 
 	* Add missing 'const' to usage example in voikko.h.
 	* Add new exported function init_libvoikko_with_path.
+	* Adjust voikkospell and voikkohyhenate to accept new -p option that
+	  can be used to set the dictionary path.
+	* Improve manual page formatting.
 	* Increase version to 1.2 and libtool version info to 3:0:2.
 
 2006-09-26 Harri Pitkänen  <hatapitk@iki.fi>

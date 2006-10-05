@@ -86,14 +86,20 @@ int main(int argc, char ** argv) {
 	char * line;
 	ssize_t chars_read;
 	char * encoding;
+	char * path = 0;
 	int handle;
 	int i;
+	
 	line = malloc(size); /* FIXME */
 	if (line == 0) {
 		printf("E: Out of memory\n");
 		return 1;
 	}
-	const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
+	
+	for (i = 1; i < argc; i++) {
+		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
+	}
+	const char * voikko_error = voikko_init_with_path(&handle, "fi_FI", 0, path);
 
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);

@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2006-05-24"
+.TH VOIKKOSPELL 1 "2006-10-05"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -19,10 +19,10 @@
 voikkospell, voikkohyphenate \- voikko test programs
 .SH SYNOPSIS
 .B voikkospell
-options
+.RI [ options ]
 .br
 .B voikkohyphenate
-options
+.RI [ options ]
 .SH DESCRIPTION
 .B voikkospell
 and
@@ -33,27 +33,37 @@ They read words from stdin (one word on a line) and print the results to stdout.
 words in fully hyphenated form.
 .SH OPTIONS
 .TP
+.BI \-p " directory"
+Look from
+.I directory
+before the standard locations when searching for dictionary files.
+.TP
 .B \-t
 (voikkospell) Prints only "C" or "W" instead of typical full output.
 .TP
 .B \-s
 (voikkospell) Prints suggestions (S:) for incorrectly spelled words.
 .TP
-.B \-cn
-(voikkospell) Set cache size parameter to n. \-1 disables the cache and 0 is the default.
-For checking large amounts of unsorted text you may want to set n to 5 to get better
-performance.
+.BI \-c n
+(voikkospell) Set cache size parameter to
+.IR n .
+\-1 disables the cache and 0 is the default.
+For checking large amounts of unsorted text you may want to set
+.I n
+to 5 to get better performance.
 .TP
+.BI ignore_dot= n
 (voikkospell)
-.B ignore_dot=n
 .TP
+.BI accept_first_uppercase= n
 (voikkospell)
-.B accept_first_uppercase=n
 .TP
+.BI no_ugly_hyphenation= n
 (voikkohyphenate)
-.B no_ugly_hyphenation=n
-.TP
-Sets the value of the specified boolean option. n can be either 0 (false) or 1 (true).
+.br
+Set the value of the specified boolean option.
+.I n
+can be either 0 (false) or 1 (true).
 .SH AUTHOR
-voikkospell and this manual page were written by Harri Pitkanen (hatapitk@iki.fi).
+voikkospell and this manual page were written by Harri Pitk\[:a]nen (hatapitk@iki.fi).
 

@@ -215,9 +215,9 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	if (strcmp(langcode, "fi_FI") == 0) {
 #ifdef HAVE_GETPWUID_R
 		/* Check the user specified dictionary path */
-		if (path && strlen(path) < buflen - 26 ) {
+		if (path && strlen(path) < buflen - 18 ) {
 			strcpy(buffer, path);
-			strcpy(buffer + strlen(path), "/.voikko/" VOIKKO_DICTIONARY_FILE);
+			strcpy(buffer + strlen(path), "/" VOIKKO_DICTIONARY_FILE);
 			if (stat(buffer, &sbuf) == 0) {
 				free(tmp_buf);
 				return 1;

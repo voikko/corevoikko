@@ -73,6 +73,7 @@ int main(int argc, char ** argv) {
 	char * line;
 	ssize_t chars_read;
 	char * encoding;
+	char * path = 0;
 	int handle;
 	int i;
 	int cache_size;
@@ -88,8 +89,9 @@ int main(int argc, char ** argv) {
 		if (strncmp(argv[i], "-c", 2) == 0) {
 			cache_size = atoi(argv[i] + 2);
 		}
+		else if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
 	}
-	const char * voikko_error = voikko_init(&handle, "fi_FI", cache_size);
+	const char * voikko_error = voikko_init_with_path(&handle, "fi_FI", cache_size, path);
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
 		return 1;
