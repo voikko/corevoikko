@@ -154,8 +154,8 @@
 [perusmuoto: "Antti", alku: "Ant", luokka: etunimi, jatko: <tatti>, äs: a];
 [perusmuoto: "Anttoni", alku: "Antton", luokka: etunimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Anu", alku: "Anu", luokka: etunimi, jatko: <valo>, äs: a];
-[perusmuoto: "Ariadne", alku: "Ariadne", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Ari", alku: "Ar", luokka: etunimi, jatko: <risti>, äs: a];
+[perusmuoto: "Ariadne", alku: "Ariadne", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Ariel", alku: "Ariel", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Aristides", alku: "Aristide", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Aristos", alku: "Aristos", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -184,8 +184,8 @@
 [perusmuoto: "Athanasius", alku: "Athanasiu", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Atso", alku: "Atso", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Atte", alku: "At", luokka: etunimi, jatko: <atte>, äs: a];
-[perusmuoto: "Augusta", alku: "August", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "August", alku: "August", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Augusta", alku: "August", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Augusti", alku: "August", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Augustus", alku: "Augustu", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Aukusti", alku: "Aukust", luokka: etunimi, jatko: <risti>, äs: a];
@@ -201,7 +201,6 @@
 [perusmuoto: "Barbara", alku: "Barbar", luokka: etunimi, jatko: <matala>, äs: a];
 [perusmuoto: "Basilius", alku: "Basiliu", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Baudolino", alku: "Baudolino", luokka: etunimi, jatko: <valo>, äs: a];
-[perusmuoto: "Béliard", alku: "Béliard", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ben", alku: "Ben", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Bengt", alku: "Bengt", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Benito", alku: "Benito", luokka: etunimi, jatko: <valo>, äs: a];
@@ -223,6 +222,7 @@
 [perusmuoto: "Bruno", alku: "Bruno", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Brutus", alku: "Brutu", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Burt", alku: "Burt", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Béliard", alku: "Béliard", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Camille", alku: "Camille", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Carl", alku: "Carl", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Carola", alku: "Carol", luokka: etunimi, jatko: <apila>, äs: a];
@@ -236,9 +236,9 @@
 [perusmuoto: "Chuck", alku: "Chuck", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Chydenius", alku: "Chydeniu", luokka: sukunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Claes", alku: "Claes", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Clayton", alku: "Clayton", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Clarice", alku: "Clarice", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Claudius", alku: "Claudiu", luokka: etunimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Clayton", alku: "Clayton", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Colin", alku: "Colin", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Daavid", alku: "Daavid", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dagmar", alku: "Dagmar", luokka: etunimi, jatko: <edam>, äs: a];
@@ -292,10 +292,10 @@
 [perusmuoto: "Eliel", alku: "Eliel", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Eliisa", alku: "Eliis", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Elina", alku: "Elin", luokka: etunimi, jatko: <karahka>, äs: a];
+[perusmuoto: "Elis", alku: "Eli", luokka: etunimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Elisa", alku: "Elis", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Elisabet", alku: "Elisabet", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Elisabeth", alku: "Elisabeth", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Elis", alku: "Eli", luokka: etunimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Eljas", alku: "Elja", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Eljas", alku: "Elja", luokka: etunimi, jatko: <vieras>, äs: a];
 [perusmuoto: "Elke", alku: "Elke", luokka: etunimi, jatko: <nalle>, äs: ä];
@@ -407,8 +407,8 @@
 [perusmuoto: "Henri", alku: "Henr", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Henriika", alku: "Henriik", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Henriikka", alku: "Henriik", luokka: etunimi, jatko: <solakka>, äs: a];
-[perusmuoto: "Henrika", alku: "Henrik", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Henrik", alku: "Henrik", luokka: etunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Henrika", alku: "Henrik", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Henrikki", alku: "Henrik", luokka: etunimi, jatko: <kajakki>, äs: ä];
 [perusmuoto: "Henry", alku: "Henry", luokka: etunimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Herbert", alku: "Herbert", luokka: etunimi, jatko: <kalsium>, äs: ä];
@@ -490,7 +490,6 @@
 [perusmuoto: "Jani", alku: "Jan", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Janne", alku: "Janne", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Janos", alku: "Janos", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "János", alku: "János", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Jared", alku: "Jared", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Jari", alku: "Jar", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Jarkko", alku: "Jark", luokka: etunimi, jatko: <verkko>, äs: a];
@@ -511,8 +510,8 @@
 [perusmuoto: "Jodie", alku: "Jodie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Joel", alku: "Joel", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Johan", alku: "Johan", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Johanna", alku: "Johann", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Johann", alku: "Johann", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Johanna", alku: "Johann", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Johanne", alku: "Johanne", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Johannes", alku: "Johanne", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "John", alku: "John", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -550,6 +549,7 @@
 [perusmuoto: "Juuso", alku: "Juuso", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Jyri", alku: "Jyr", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Jyrki", alku: "Jyrk", luokka: etunimi, jatko: <risti>, äs: ä];
+[perusmuoto: "János", alku: "János", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Jörn", alku: "Jörn", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Kaapo", alku: "Kaapo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Kaari", alku: "Kaar", luokka: etunimi, jatko: <risti>, äs: a];
@@ -557,8 +557,8 @@
 [perusmuoto: "Kaarle", alku: "Kaarle", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Kaarlo", alku: "Kaarlo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Kai", alku: "Ka", luokka: etunimi, jatko: <pii>, äs: a];
-[perusmuoto: "Kaija", alku: "Kaij", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Kaij", alku: "Kaij", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Kaija", alku: "Kaij", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Kain", alku: "Kain", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Kaino", alku: "Kaino", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Kaisa", alku: "Kais", luokka: etunimi, jatko: <kala>, äs: a];
@@ -664,8 +664,8 @@
 [perusmuoto: "Mailis", alku: "Maili", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Maini", alku: "Main", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Maire", alku: "Maire", luokka: etunimi, jatko: <nalle>, äs: a];
-[perusmuoto: "Maksima", alku: "Maksim", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Maksim", alku: "Maksim", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Maksima", alku: "Maksim", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Malicia", alku: "Malici", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Malla", alku: "Mall", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Manta", alku: "Mant", luokka: etunimi, jatko: <kala>, äs: a];
@@ -677,8 +677,8 @@
 [perusmuoto: "Margaretha", alku: "Margareth", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Margaretta", alku: "Margaret", luokka: etunimi, jatko: <aitta>, äs: a];
 [perusmuoto: "Margit", alku: "Margit", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Maria", alku: "Mari", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Mari", alku: "Mar", luokka: etunimi, jatko: <risti>, äs: a];
+[perusmuoto: "Maria", alku: "Mari", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Marika", alku: "Marik", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Marita", alku: "Marit", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Marja", alku: "Marj", luokka: etunimi, jatko: <kala>, äs: a];
@@ -795,12 +795,11 @@
 [perusmuoto: "Paavo", alku: "Paavo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Pablo", alku: "Pablo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Pal", alku: "Pal", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Pál", alku: "Pál", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Panu", alku: "Panu", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Pasi", alku: "Pas", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Patricia", alku: "Patrici", luokka: etunimi, jatko: <apila>, äs: a];
-[perusmuoto: "Paula", alku: "Paul", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Paul", alku: "Paul", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Paula", alku: "Paul", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Pauli", alku: "Paul", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Pauliina", alku: "Pauliin", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Pehr", alku: "Pehr", luokka: etunimi, jatko: <kalsium>, äs: ä];
@@ -830,6 +829,7 @@
 [perusmuoto: "Pirkko", alku: "Pirk", luokka: etunimi, jatko: <verkko>, äs: a];
 [perusmuoto: "Pontus", alku: "Pontu", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Prospero", alku: "Prospero", luokka: etunimi, jatko: <valo>, äs: a];
+[perusmuoto: "Pál", alku: "Pál", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Päivi", alku: "Päiv", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Päivikki", alku: "Päivik", luokka: etunimi, jatko: <kajakki>, äs: ä];
 [perusmuoto: "Päiviö", alku: "Päiviö", luokka: etunimi, jatko: <autio>, äs: ä];
@@ -921,8 +921,8 @@
 [perusmuoto: "Senja", alku: "Senj", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Senni", alku: "Senn", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Seppo", alku: "Sep", luokka: etunimi, jatko: <kippo>, äs: a];
-[perusmuoto: "Sergej", alku: "Sergej", luokka: etunimi, jatko: <>, äs: ä];
 [perusmuoto: "Sergej", alku: "Serge", luokka: etunimi, jatko: <pii>, äs: ä];
+[perusmuoto: "Sergej", alku: "Sergej", luokka: etunimi, jatko: <>, äs: ä];
 [perusmuoto: "Severi", alku: "Sever", luokka: etunimi, jatko: <paperi>, äs: ä];
 [perusmuoto: "Severus", alku: "Severu", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Sherlock", alku: "Sherlock", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -944,6 +944,7 @@
 [perusmuoto: "Sippo", alku: "Sip", luokka: etunimi, jatko: <kippo>, äs: a];
 [perusmuoto: "Sipro", alku: "Sipro", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Sirja", alku: "Sirj", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Sirkka", alku: "Sirk", luokka: etunimi, jatko: <haka>, äs: a];
 [perusmuoto: "Sirpa", alku: "Sirp", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Siviä", alku: "Siviä", luokka: etunimi, jatko: <autio>, äs: ä];
 [perusmuoto: "Sofia", alku: "Sofi", luokka: etunimi, jatko: <apila>, äs: a];
@@ -969,9 +970,9 @@
 [perusmuoto: "Susanne", alku: "Susanne", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Sven", alku: "Sven", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Sylvester", alku: "Sylvester", luokka: etunimi, jatko: <edam>, äs: ä];
-[perusmuoto: "Sylvia", alku: "Sylvi", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Sylvi", alku: "Sylv", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Sylvi-Kyllikki", alku: "Sylvi-Kyllik", luokka: etunimi, jatko: <takki>, äs: ä];
+[perusmuoto: "Sylvia", alku: "Sylvi", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Taavetti", alku: "Taavet", luokka: etunimi, jatko: <salaatti>, äs: a];
 [perusmuoto: "Taavi", alku: "Taav", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Tage", alku: "Tage", luokka: etunimi, jatko: <nalle>, äs: a];
