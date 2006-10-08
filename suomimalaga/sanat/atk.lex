@@ -147,6 +147,7 @@
 
 [alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <atk>];
+[alki: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 

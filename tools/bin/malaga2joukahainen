@@ -33,6 +33,8 @@ import _pg
 
 inputfile = codecs.open("/tmp/orig.malaga", "r", "UTF-8")
 errorfile = codecs.open("/tmp/virheet.malaga", "w", "UTF-8")
+exceptionfile = codecs.open("/tmp/poikkeavat.malaga", "w", "UTF-8")
+specialfile = codecs.open("/tmp/erikoiset.malaga", "w", "UTF-8")
 outputfile = codecs.open("/tmp/siirretyt.malaga", "w", "UTF-8")
 
 db = _pg.connect(host='localhost',
@@ -72,6 +74,7 @@ def insert_flags(db, wid, tiedot_s, eid):
 				db.query((u"INSERT INTO flag_attribute_value(wid, aid, eevent) " +
 				          u"VALUES(%i, %i, %i)") % (wid, flag[1], eid))
 
+# Regular expression matching normal vocabulary entries
 nsre = re.compile(u"\\[perusmuoto: \"(?P<perusmuoto>.(?:[^\"])*)\", alku: \"(?P<alku>.(?:[^\"])*)\", " +
                   u"luokka: (?P<luokka>.(?:[^,])*), jatko: <(?P<jatko>.(?:[^>])*)>, äs: (?P<as>a|ä|aä)" +
                   u"(?:|, tiedot: <(?P<tiedot>.(?:[^>])*)>)\\];")
@@ -92,14 +95,17 @@ while True:
 	rivi = inputfile.readline()
 	if rivi == u'': break
 	match = nsre.match(rivi)
-	if match == None:
-		errorfile.write(rivi)
+	if match == None: # Not an ordinary vocabulary entry
+		if rivi[0] == u'[': specialfile.write(rivi)
+		else: errorfile.write(rivi)
 	else:
 		gd = match.groupdict()
 		if gd['luokka'] in [u'nimisana', u'etunimi', u'sukunimi', u'paikannimi', u'nimi']: joclass = 1
 		elif gd['luokka'] in [u'laatusana', u'nimi_laatusana']: joclass = 2
 		elif gd['luokka'] == u'teonsana': joclass = 3
-		else: continue
+		else:
+			specialfile.write(rivi)
+			continue
 		hf_classes = find_hf_class(gd['perusmuoto'], gd['jatko'])
 		wid = db.query("SELECT nextval('word_wid_seq')").getresult()[0][0]
 		db.query("INSERT INTO word(wid, word, class, cuser) VALUES(%i, '%s', %i, %i)" %
@@ -107,6 +113,7 @@ while True:
 		if hf_classes == None: # Word has irregular inflections
 			db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
 			          "VALUES(%i, 1, 'poikkeava', %i)") % (wid, eid))
+			exceptionfile.write(rivi)
 			continue
 		outputfile.write(hfutils.remove_comments(rivi).strip() + u'\n')
 		db.query(("INSERT INTO string_attribute_value(wid, aid, value, eevent) " +
@@ -129,4 +136,6 @@ while True:
 
 outputfile.close()
 errorfile.close()
+exceptionfile.close()
+specialfile.close()
 inputfile.close()
