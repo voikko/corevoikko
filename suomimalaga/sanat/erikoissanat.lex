@@ -605,3 +605,32 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "poikessa", alku: "poikessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "poikessa", alku: "poikkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+
+######################################################
+
+# Sivistyssanojen loppuosat.
+
+[perusmuoto: "gamia", alku: "gami", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "gami", alku: "gam", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
+[perusmuoto: "gaminen", alku: "gami", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "grafia", alku: "grafi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "grafi", alku: "graf", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
+[perusmuoto: "grafinen", alku: "grafi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "logia", alku: "logi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "logi", alku: "log", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
+[perusmuoto: "loginen", alku: "logi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "nomia", alku: "nomi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "nomi", alku: "nom", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
+[perusmuoto: "nominen", alku: "nomi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "pedia", alku: "pedi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "pedi", alku: "ped", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
+[perusmuoto: "pedinen", alku: "pedi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "sofia", alku: "sofi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "sofi", alku: "sof", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
+[perusmuoto: "sofinen", alku: "sofi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
