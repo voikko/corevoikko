@@ -297,7 +297,7 @@ end: rules
 end: class
 
 
-# Kotus 6 paperi
+# Kotus 6 paperi (1/2)
 class: subst-paperi
 sm-class: paperi
 match-word: Ci
@@ -336,6 +336,48 @@ allatiivi_mon	i	eille	w
 abessiivi_mon	i	eitta	w	ps=f
 komitatiivi_mon	i	eine	s	ps=r
 instruktiivi_mon	i	ein	w	ps=f
+end: rules
+end: class
+
+# Kotus 6 paperi (1/2)
+class: subst-edam
+sm-class: edam
+match-word: C
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		0	in	w	ps=f
+partitiivi	0	ia	s
+translatiivi	0	iksi	w	ps=f
+translatiivi	0	ikse	w	ps=r
+essiivi		0	ina	s
+inessiivi		0	issa	w
+elatiivi		0	ista	w
+illatiivi		0	iin	s
+adessiivi		0	illa	w
+ablatiivi		0	ilta	w
+allatiivi		0	ille	w
+abessiivi		0	itta	w	ps=f
+nominatiivi_mon	0	it	w	ps=f
+genetiivi_mon	0	ien	s
+genetiivi_mon	0	eiden	w
+genetiivi_mon	0	eitten	w
+partitiivi_mon	0	eita	w
+partitiivi_mon	0	eja	s
+translatiivi_mon	0	eiksi	w	ps=f
+translatiivi_mon	0	eikse	w	ps=r
+essiivi_mon	0	eina	s
+inessiivi_mon	0	eissa	w
+elatiivi_mon	0	eista	w
+illatiivi_mon	0	eihin	s
+adessiivi_mon	0	eilla	w
+ablatiivi_mon	0	eilta	w
+allatiivi_mon	0	eille	w
+abessiivi_mon	0	eitta	w	ps=f
+komitatiivi_mon	0	eine	s	ps=r
+instruktiivi_mon	0	ein	w	ps=f
 end: rules
 end: class
 
