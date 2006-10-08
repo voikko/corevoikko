@@ -1771,7 +1771,7 @@
 [perusmuoto: "Venäläinen", alku: "Venäläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Vepsäläinen", alku: "Vepsäläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Vermeer", alku: "Vermeer", luokka: sukunimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "Vesisenaho", alku: "Vesisenaho", luokka: sukunimi, jatko: <valo>, äs: a]; # Tavuttuu väärin
+[perusmuoto: "Vesisenaho", alku: "Vesisenaho", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Vessonen", alku: "Vesso", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Vesterinen", alku: "Vesteri", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Veteläinen", alku: "Veteläi", luokka: sukunimi, jatko: <nainen>, äs: ä];

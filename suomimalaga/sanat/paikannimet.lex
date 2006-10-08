@@ -557,7 +557,7 @@
 [perusmuoto: "Käsnäsenjärvi", alku: "Käsnäsenjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Käsämä", alku: "Käsäm", luokka: paikannimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Köln", alku: "Köln", luokka: paikannimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "Könkämäeneno", alku: "Könkämäeneno", luokka: paikannimi, jatko: <valo>, äs: a]; # Tavuttuu väärin
+[perusmuoto: "Könkämäeneno", alku: "Könkämäeneno", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Kööpenhamina", alku: "Kööpenhamin", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Laatokka", alku: "Laatok", luokka: paikannimi, jatko: <solakka>, äs: a];
 [perusmuoto: "Laihia", alku: "Laihi", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -618,7 +618,7 @@
 [perusmuoto: "Lyypekki", alku: "Lyypek", luokka: paikannimi, jatko: <kajakki>, äs: ä];
 [perusmuoto: "Längelmäki", alku: "Längelmä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "Läskelä", alku: "Läskel", luokka: paikannimi, jatko: <apila>, äs: ä];
-[perusmuoto: "Lätäseno", alku: "Lätäseno", luokka: paikannimi, jatko: <valo>, äs: a]; # Tavuttuu väärin
+[perusmuoto: "Lätäseno", alku: "Lätäseno", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Läävi", alku: "Lääv", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Maaninka", alku: "Maanin", luokka: paikannimi, jatko: <hanka>, äs: a];
 [perusmuoto: "Maaninkavaara", alku: "Maaninkavaar", luokka: paikannimi, jatko: <kala>, äs: a];
