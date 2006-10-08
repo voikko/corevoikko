@@ -838,7 +838,7 @@
 [perusmuoto: "Raafael", alku: "Raafael", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Raakel", alku: "Raakel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Rafael", alku: "Rafael", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Rafu", alku: "Rafu", luokka: etunimi, jatko: <valo>, äs: a]; #Rafael.
+[perusmuoto: "Rafu", alku: "Rafu", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Raija", alku: "Raij", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Raila", alku: "Rail", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Raili", alku: "Rail", luokka: etunimi, jatko: <risti>, äs: a];
@@ -1107,5 +1107,3 @@
 [perusmuoto: "Yrjö", alku: "Yrjö", luokka: etunimi, jatko: <valo>, äs: ä];
 [perusmuoto: "Åke", alku: "Åke", luokka: etunimi, jatko: <nalle>, äs: ä];
 
-#öö[perusmuoto: "", alku: "", luokka: etunimi, jatko: <>, äs: a];
-#öö[perusmuoto: "", alku: "", luokka: etunimi, jatko: <>, äs: ä];

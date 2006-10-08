@@ -151,6 +151,3 @@
 [alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 
-
-#öö[perusmuoto: "", alku: "", luokka: nimi, jatko: <>, äs: a, tiedot: <atk>];
-#öö[perusmuoto: "", alku: "", luokka: nimi, jatko: <>, äs: ä, tiedot: <atk>];

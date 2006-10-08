@@ -262,7 +262,7 @@
 [perusmuoto: "Hobittila", alku: "Hobittil", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Hollanti", alku: "Hollan", luokka: paikannimi, jatko: <hollanti>, äs: a];
 [perusmuoto: "Hollywood", alku: "Hollywood", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Hong", alku: "Hong", luokka: paikannimi, jatko: <kalsium>, äs: a]; # Hong Kong.
+[perusmuoto: "Hong", alku: "Hong", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Houston", alku: "Houston", luokka: paikannimi, jatko: <edam>, äs: a];
 [perusmuoto: "Hudson", alku: "Hudson", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Huhmarisvaara", alku: "Huhmarisvaar", luokka: paikannimi, jatko: <kala>, äs: a];
@@ -564,7 +564,7 @@
 [perusmuoto: "Lammu", alku: "Lammu", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Lampero", alku: "Lampero", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Lamposaari", alku: "Lamposaar", luokka: paikannimi, jatko: <tuohi>, äs: a];
-[perusmuoto: "Lanka", alku: "Lank", luokka: paikannimi, jatko: <kala>, äs: a]; # Sri Lanka.
+[perusmuoto: "Lanka", alku: "Lank", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Laodikea", alku: "Laodike", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Laos", alku: "Laos", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Lappee", alku: "Lappe", luokka: paikannimi, jatko: <kamee>, äs: a];
@@ -1048,7 +1048,6 @@
 [perusmuoto: "Sotkamo", alku: "Sotkamo", luokka: paikannimi, jatko: <arvelu>, äs: a];
 [perusmuoto: "Sotkuma", alku: "Sotkum", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Spalernaja", alku: "Spalernaj", luokka: paikannimi, jatko: <apila>, äs: a];
-#[perusmuoto: "Spandau", alku: "Spanda", luokka: paikannimi, jatko: <puu>, äs: a]; Väärä taivutus
 [perusmuoto: "Spratley", alku: "Spratley", luokka: paikannimi, jatko: <valo>, äs: aä];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "Stalingrad", alku: "Stalingrad", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -1290,6 +1289,3 @@
 [perusmuoto: "Äänisjärvi", alku: "Äänisjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Öllölä", alku: "Öllöl", luokka: paikannimi, jatko: <apila>, äs: ä];
 
-
-#öö[perusmuoto: "", alku: "", luokka: paikannimi, jatko: <>, äs: a];
-#öö[perusmuoto: "", alku: "", luokka: paikannimi, jatko: <>, äs: ä];

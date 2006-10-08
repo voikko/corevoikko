@@ -89,7 +89,7 @@
 [perusmuoto: "Coca-Cola", alku: "Coca-Col", luokka: nimi, jatko: <koira>, äs: a];
 [perusmuoto: "Colt", alku: "Colt", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Core", alku: "Core", luokka: nimi, jatko: <nalle>, äs: a];
-[perusmuoto: "Crash", alku: "Crash", luokka: nimi, jatko: <kalsium>, äs: a];  # Elokuva.
+[perusmuoto: "Crash", alku: "Crash", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Crichton-Vulcan", alku: "Crichton-Vulcan", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Cujo", alku: "Cujo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Cygni", alku: "Cygn", luokka: nimi, jatko: <risti>, äs: ä];
@@ -122,7 +122,7 @@
 [perusmuoto: "Granini", alku: "Granin", luokka: nimi, jatko: <banaali>, äs: a];
 [perusmuoto: "Halloween", alku: "Halloween", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Hamlet", alku: "Hamlet", luokka: nimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Hari", alku: "Har", luokka: nimi, jatko: <risti>, äs: a]; # Mata Hari.
+[perusmuoto: "Hari", alku: "Har", luokka: nimi, jatko: <risti>, äs: a];
 [perusmuoto: "Helios", alku: "Helio", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Hesari", alku: "Hesar", luokka: nimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Homeros", alku: "Homero", luokka: nimi, jatko: <vastaus>, äs: a];
@@ -147,7 +147,7 @@
 [perusmuoto: "Kassiopeia", alku: "Kassiopei", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Kaunikki", alku: "Kaunik", luokka: nimi, jatko: <kajakki>, äs: a];
 [perusmuoto: "Kemira", alku: "Kemir", luokka: nimi, jatko: <pasuuna>, äs: a];
-[perusmuoto: "Kimmel", alku: "Kimmel", luokka: nimisana, jatko: <edam>, äs: ä]; # Hotelli.
+[perusmuoto: "Kimmel", alku: "Kimmel", luokka: nimisana, jatko: <edam>, äs: ä];
 [perusmuoto: "Knigi", alku: "Knig", luokka: nimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Konfutse", alku: "Konfutse", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Krapi", alku: "Krap", luokka: nimi, jatko: <risti>, äs: a];
@@ -200,7 +200,7 @@
 [perusmuoto: "Porsche", alku: "Porsche", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Pravda", alku: "Pravd", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Psycho", alku: "Psycho", luokka: nimi, jatko: <valo>, äs: a];
-[perusmuoto: "Puh", alku: "Puh", luokka: nimi, jatko: <kalsium>, äs: a];  # Nalle Puh.
+[perusmuoto: "Puh", alku: "Puh", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Pyrex", alku: "Pyrex", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Pythagoras", alku: "Pythagora", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Qaida", alku: "Qaid", luokka: nimi, jatko: <kala>, äs: a];
@@ -272,5 +272,3 @@
 [perusmuoto: "Yle", alku: "Yle", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Zeus", alku: "Zeu", luokka: nimi, jatko: <vastaus>, äs: a];
 
-#öö[perusmuoto: "", alku: "", luokka: nimi, jatko: <>, äs: a];
-#öö[perusmuoto: "", alku: "", luokka: nimi, jatko: <>, äs: ä];

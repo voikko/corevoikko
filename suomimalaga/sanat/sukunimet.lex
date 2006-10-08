@@ -218,7 +218,6 @@
 [perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Daavitsainen", alku: "Daavitsai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Dahl", alku: "Dahl", luokka: sukunimi, jatko: <kalsium>, äs: a];
-#[perusmuoto: "Dalí", alku: "Dal", luokka: sukunimi, jatko: <risti>, äs: a];  # Taipuu i:n kautta, vaikka pitäisi olla í.
 [perusmuoto: "Davis", alku: "Davis", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dekman", alku: "Dekman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dell", alku: "Dell", luokka: sukunimi, jatko: <kalsium>, äs: ä];
@@ -283,7 +282,6 @@
 [perusmuoto: "Falck", alku: "Falck", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Falk", alku: "Falk", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fallqvist", alku: "Fallqvist", luokka: sukunimi, jatko: <kalsium>, äs: a];
-#[perusmuoto: "Faraday", alku: "Farada", luokka: sukunimi, jatko: <puu>, äs: aä]; Väärä taivutus
 [perusmuoto: "Farlamoff", alku: "Farlamoff", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Farquhar", alku: "Farquhar", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fennander", alku: "Fennander", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -906,7 +904,6 @@
 [perusmuoto: "Linkola", alku: "Linkol", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Linkomies", alku: "Linkomie", luokka: sukunimi, jatko: <mies>, äs: a];
 [perusmuoto: "Linnamo", alku: "Linnamo", luokka: sukunimi, jatko: <arvelu>, äs: a];
-#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nalle>, äs: ä]; # Taivutus epävarma
 [perusmuoto: "Lintula", alku: "Lintul", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Lintunen", alku: "Lintu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lipitsäinen", alku: "Lipitsäi", luokka: sukunimi, jatko: <nainen>, äs: ä];
@@ -1317,7 +1314,6 @@
 [perusmuoto: "Raitio", alku: "Raitio", luokka: sukunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Raittila", alku: "Raittil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Rajala", alku: "Rajal", luokka: sukunimi, jatko: <apila>, äs: a];
-#[perusmuoto: "Ramsay", alku: "Ramsa", luokka: sukunimi, jatko: <puu>, äs: aä]; Väärä taivutus
 [perusmuoto: "Rangell", alku: "Rangell", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Raninen", alku: "Rani", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Rankine", alku: "Rankine", luokka: sukunimi, jatko: <nalle>, äs: a];
@@ -1864,10 +1860,3 @@
 [perusmuoto: "Åkerlund", alku: "Åkerlund", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ždanov", alku: "Ždanov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 
-
-#öö[perusmuoto: "", alku: "", luokka: sukunimi, jatko: <kalsium>, äs: a];
-#öö[perusmuoto: "", alku: "", luokka: sukunimi, jatko: <kalsium>, äs: ä];
-#öö[perusmuoto: "nen", alku: "", luokka: sukunimi, jatko: <nainen>, äs: a];
-#öö[perusmuoto: "nen", alku: "", luokka: sukunimi, jatko: <nainen>, äs: ä];
-#öö[perusmuoto: "", alku: "", luokka: sukunimi, jatko: <>, äs: a];
-#öö[perusmuoto: "", alku: "", luokka: sukunimi, jatko: <>, äs: ä];
