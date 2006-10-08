@@ -610,6 +610,7 @@
 [perusmuoto: "Louisiana", alku: "Louisian", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Luanda", alku: "Luand", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Luhkala", alku: "Luhkal", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Luiro", alku: "Luiro", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "Luomusjärvi", alku: "Luomusjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Luopioinen", alku: "Luopioi", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Lutila", alku: "Lutil", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -913,7 +914,6 @@
 [perusmuoto: "Pätkäpytinki", alku: "Pätkäpytin", luokka: paikannimi, jatko: <killinki>, äs: ä];
 [perusmuoto: "Pätsinselkä", alku: "Pätsinsel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
 [perusmuoto: "Päätye", alku: "Päätye", luokka: paikannimi, jatko: <hame>, äs: ä];
-[perusmuoto: "Pöllänniemi", alku: "Pöllännie", luokka: paikannimi, jatko: <niemi>, äs: ä];
 [perusmuoto: "Pöllänniemi", alku: "Pöllännie", luokka: paikannimi, jatko: <niemi>, äs: ä];
 [perusmuoto: "Pörkkölä", alku: "Pörkköl", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Pötsönlahti", alku: "Pötsönlah", luokka: paikannimi, jatko: <lahti>, äs: a];
