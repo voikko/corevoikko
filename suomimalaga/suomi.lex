@@ -52,20 +52,18 @@ define @sana2 := @sana1 + <teonsana>;
 
 #include "sanat/testisanat.lex";
 
-include "sanat/sanat.lex";
-include "sanat/etunimet.lex";
-include "sanat/sukunimet.lex";
-include "sanat/paikannimet.lex";
-include "sanat/nimet.lex";
+include "sanat/lyhenteet.lex";
+include "sanat/erikoisalat/atk.lex";
+include "sanat/joukahainen.lex";
+include "sanat/erikoiset.lex";
+include "sanat/poikkeavat.lex";
 include "sanat/olla-ei.lex";
 include "sanat/erikoissanat.lex";
-include "sanat/lyhenteet.lex";
 include "sanat/latex.lex";
 include "sanat/lukusanat.lex";
 include "sanat/11-19.lex";
 include "sanat/yhdyssanat.lex";
 include "sanat/jokinen.lex";
-include "sanat/atk.lex";
 include "sanat/shzh.lex";
 include "sanat/omat.lex";
 include "sanat/lainen.lex";

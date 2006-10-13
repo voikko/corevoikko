@@ -56,21 +56,18 @@ all: voikko-fi_FI.all suomi.all suomi.inc subrule.inc voikko-fi_FI.pro
 
 lex: voikko-fi_FI.lex suomi.lex suomi.inc subrule.inc voikko-fi_FI.pro
 
-lex: sanat/atk.lex
+lex: sanat/erikoisalat/atk.lex
 lex: sanat/erikoissanat.lex
-lex: sanat/etunimet.lex
 lex: sanat/latex.lex
 lex: sanat/lukusanat.lex
 lex: sanat/lyhenteet.lex
-lex: sanat/nimet.lex
 lex: sanat/olla-ei.lex
-lex: sanat/paikannimet.lex
-lex: sanat/sanat.lex
-lex: sanat/sukunimet.lex
 lex: sanat/11-19.lex
 lex: sanat/omat.lex
 lex: sanat/yhdyssanat.lex
 lex: sanat/joukahainen.lex
+lex: sanat/erikoiset.lex
+lex: sanat/poikkeavat.lex
 lex: sanat/lainen.lex
 
 mor: voikko-fi_FI.mor suomi.mor suomi.inc
