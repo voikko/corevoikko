@@ -61,7 +61,7 @@ def consonant(letter):
 # The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
 def vowel_type(word):
 	word = word.lower()
-	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å') word.rfind(u'u'))
+	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å'), word.rfind(u'u'))
 	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
 	last_y = word.rfind(u'y')
 	if last_back > -1 and max(last_ord_front, last_y) == -1:
