@@ -339,7 +339,7 @@ instruktiivi_mon	i	ein	w	ps=f
 end: rules
 end: class
 
-# Kotus 6 paperi (1/2)
+# Kotus 6 paperi (2/2)
 class: subst-edam
 sm-class: edam
 match-word: C
