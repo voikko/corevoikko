@@ -1105,5 +1105,5 @@
 [perusmuoto: "Ylermi", alku: "Ylerm", luokka: etunimi, jatko: <paperi>, äs: ä];
 [perusmuoto: "Yrjänä", alku: "Yrjän", luokka: etunimi, jatko: <pasuuna>, äs: ä];
 [perusmuoto: "Yrjö", alku: "Yrjö", luokka: etunimi, jatko: <valo>, äs: ä];
-[perusmuoto: "Åke", alku: "Åke", luokka: etunimi, jatko: <nalle>, äs: ä];
+[perusmuoto: "Åke", alku: "Åke", luokka: etunimi, jatko: <nalle>, äs: a];
 
