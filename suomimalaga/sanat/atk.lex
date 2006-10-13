@@ -98,7 +98,7 @@
 [perusmuoto: "makeinfo", alku: "makeinfo", luokka: nimi, jatko: <valo>, äs: a, tiedot: <atk>];
 [perusmuoto: "Matrox", alku: "Matrox", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Microsoft", alku: "Microsoft", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "mime", alku: "mime", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
+[perusmuoto: "mime", alku: "mime", luokka: nimi, jatko: <nalle>, äs: ä, tiedot: <atk>];
 [perusmuoto: "modprobe", alku: "modprobe", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "mozilla", alku: "mozill", luokka: nimi, jatko: <apila>, äs: a, tiedot: <atk>];
 [perusmuoto: "mplayer", alku: "mplayer", luokka: nimi, jatko: <edam>, äs: aä, tiedot: <atk>];
@@ -109,16 +109,16 @@
 [perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ippp=pppppp"];
 [perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ippp=ippppp"];
 [perusmuoto: "perl", alku: "perl", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
-[perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
-[perusmuoto: "postscript", alku: "postscript", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>];
+[perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: aä, tiedot: <atk>];
+[perusmuoto: "postscript", alku: "postscript", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "procmail", alku: "procmail", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "PSTricks", alku: "PSTricks", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "recode", alku: "recode", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
-[perusmuoto: "sendmail", alku: "sendmail", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
+[perusmuoto: "sendmail", alku: "sendmail", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>];
 [perusmuoto: "sfnet", alku: "sfnet", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "simvoleon", alku: "simvoleon", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "slashdot", alku: "slashdot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a, tiedot: <atk, ei_voikko>];
+[perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a, tiedot: <ei_voikko, atk>];
 [perusmuoto: "Solaris", alku: "Solari", luokka: nimi, jatko: <vastaus>, äs: a, tiedot: <atk>];
 [perusmuoto: "spamassassin", alku: "spamassassin", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "telnet", alku: "telnet", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
@@ -141,7 +141,7 @@
 [perusmuoto: "xerces", alku: "xerces", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "xgammon", alku: "xgammon", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "xmodmap", alku: "xmodmap", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "Yahoo", alku: "yaho", luokka: nimi, jatko: <tienoo>, äs: a, tiedot: <atk>];
+[perusmuoto: "Yahoo", alku: "Yaho", luokka: nimi, jatko: <tienoo>, äs: a, tiedot: <atk>];
 [perusmuoto: "yum", alku: "yum", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 
 

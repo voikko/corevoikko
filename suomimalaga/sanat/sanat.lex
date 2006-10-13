@@ -6875,7 +6875,7 @@
 [perusmuoto: "krakata", alku: "krak", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "kramppi", alku: "kramp", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "kranaatti", alku: "kranaat", luokka: nimisana, jatko: <salaatti>, äs: a];
-[perusmuoto: "kranssi", alku: "kranss", luokka: nimisana, jatko: <risti>, äs: a]; 
+[perusmuoto: "kranssi", alku: "kranss", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "kranttu", alku: "krant", luokka: laatusana, jatko: <hattu>, äs: a];
 [perusmuoto: "krapu", alku: "kra", luokka: nimisana, jatko: <apu>, äs: a];
 [perusmuoto: "krapula", alku: "krapul", luokka: nimisana, jatko: <matala>, äs: a];
@@ -7347,7 +7347,7 @@
 [perusmuoto: "kuura", alku: "kuur", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <inen>];
 [perusmuoto: "kuurata", alku: "kuur", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "kuuri", alku: "kuur", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "kuurna", alku: "kuurn", luokka: nimisana, jatko: <koira>, äs: a]; 
+[perusmuoto: "kuurna", alku: "kuurn", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "kuuro", alku: "kuuro", luokka: nimi_laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "kuuroutua", alku: "kuurou", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "kuuru", alku: "kuuru", luokka: laatusana, jatko: <valo>, äs: a];
@@ -10548,7 +10548,7 @@
 [perusmuoto: "nominatiivi", alku: "nominatiiv", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "nomini", alku: "nomin", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "nonstop", alku: "nonstop", luokka: seikkasana, jatko: <kalsium>, äs: a];
-[perusmuoto: "noobelisti", alku: "noobelist", luokka: nimisana, jatko: <risti>, äs: a]; 
+[perusmuoto: "noobelisti", alku: "noobelist", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "nootti", alku: "noot", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "nopea", alku: "nop", luokka: laatusana, jatko: <korkea>, äs: a];
 [perusmuoto: "nopeuttaa", alku: "nopeut", luokka: teonsana, jatko: <alittaa>, äs: a];
@@ -14671,8 +14671,8 @@
 [perusmuoto: "savuta", alku: "savu", luokka: teonsana, jatko: <haluta>, äs: a];
 [perusmuoto: "savuttaa", alku: "savut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "savutus", alku: "savutu", luokka: nimisana, jatko: <vastaus>, äs: a];
-[perusmuoto: "scifi", alku: "scif", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "sedilji", alku: "sedilj", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "scifi", alku: "scif", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "sedilji", alku: "sedilj", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "sedimentti", alku: "sediment", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "seebu", alku: "seebu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "seemiläinen", alku: "seemiläi", luokka: laatusana, jatko: <nainen>, äs: ä];
@@ -14819,7 +14819,7 @@
 [perusmuoto: "semmonen", alku: "semmo", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "senaatti", alku: "senaat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "senaattori", alku: "senaattor", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "senhetkinen", alku: "senhetki", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>];
+[perusmuoto: "senhetkinen", alku: "senhetki", luokka: laatusana, jatko: <nainen>, äs: ä, tiedot: <ei_vertm>];
 [perusmuoto: "seniili", alku: "seniil", luokka: nimi_laatusana, jatko: <banaali>, äs: ä];
 [perusmuoto: "senior", alku: "senior", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "seniori", alku: "senior", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -16809,7 +16809,7 @@
 [perusmuoto: "tilastoida", alku: "tilasto", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "tilata", alku: "til", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "tilava", alku: "tilav", luokka: laatusana, jatko: <asema>, äs: a];
-[perusmuoto: "tilde", alku: "tilde", luokka: nimisana, jatko: <nalle>, äs: a];
+[perusmuoto: "tilde", alku: "tilde", luokka: nimisana, jatko: <nalle>, äs: ä];
 [perusmuoto: "tilhi", alku: "tilh", luokka: nimisana, jatko: <kiiski>, äs: ä];
 [perusmuoto: "tili", alku: "til", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "tilittää", alku: "tilit", luokka: teonsana, jatko: <alittaa>, äs: ä];
