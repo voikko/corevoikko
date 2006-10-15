@@ -49,55 +49,11 @@
 #
 # This file is should not be automatically generated for Voikko.
 
-[perusmuoto: "bolševikki", alku: "bolsevik", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "bolševismi", alku: "bolsevism", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "bolševistinen", alku: "bolsevisti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "šaali", alku: "saal", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "šakaali", alku: "sakaal", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "šamaani", alku: "samaan", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "šamanistinen", alku: "samanisti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "šamponoida", alku: "sampono", luokka: teonsana, jatko: <kanavoida>, äs: a];
-[perusmuoto: "šampoo", alku: "sampo", luokka: nimisana, jatko: <trikoo>, äs: a];
-[perusmuoto: "šekki", alku: "sek", luokka: nimisana, jatko: <takki>, äs: ä];
-[perusmuoto: "šeriffi", alku: "seriff", luokka: nimisana, jatko: <banaali>, äs: ä];
-[perusmuoto: "šokeerata", alku: "sokeer", luokka: teonsana, jatko: <saneerata>, äs: a];
-[perusmuoto: "šokki", alku: "sok", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "šortsi", alku: "sorts", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "tšekki", alku: "tsek", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "fidžiläinen", alku: "fidzhiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kambodžalainen", alku: "kambodzhalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tšadilainen", alku: "tshadilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tšekkoslovakialainen", alku: "tshekkoslovakialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tšetšenialainen", alku: "tshetshenialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tšekkiläinen", alku: "tshekkiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
-[perusmuoto: "Azerbaidžan", alku: "Azerbaidzhan", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Kambodža", alku: "Kambodzh", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "Tšekki", alku: "Tshek", luokka: paikannimi, jatko: <takki>, äs: ä];
-[perusmuoto: "Tšekkoslovakia", alku: "Tshekkoslovaki", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "Tšeljabinsk", alku: "Tsheljabinsk", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Tšetšenia", alku: "Tshetsheni", luokka: paikannimi, jatko: <apila>, äs: a];
-[perusmuoto: "bolševikki", alku: "bolshevik", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "bolševismi", alku: "bolshevism", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "bolševistinen", alku: "bolshevisti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "šaahi", alku: "shaah", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "šaali", alku: "shaal", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "šakaali", alku: "shakaal", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "šakki", alku: "shak", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "šamaani", alku: "shamaan", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "šamanistinen", alku: "shamanisti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "šamponoida", alku: "shampono", luokka: teonsana, jatko: <kanavoida>, äs: a];
-[perusmuoto: "šampoo", alku: "shampo", luokka: nimisana, jatko: <trikoo>, äs: a];
-[perusmuoto: "šeikki", alku: "sheik", luokka: nimisana, jatko: <takki>, äs: ä];
-[perusmuoto: "šekki", alku: "shek", luokka: nimisana, jatko: <takki>, äs: ä];
-[perusmuoto: "šeriffi", alku: "sheriff", luokka: nimisana, jatko: <banaali>, äs: ä];
-[perusmuoto: "šiia", alku: "shii", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "šikaani", alku: "shikaan", luokka: nimisana, jatko: <banaali>, äs: a];
-[perusmuoto: "šillinki", alku: "shillin", luokka: nimisana, jatko: <killinki>, äs: ä];
-[perusmuoto: "šokeerata", alku: "shokeer", luokka: teonsana, jatko: <saneerata>, äs: a];
-[perusmuoto: "šokki", alku: "shok", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "šortsi", alku: "shorts", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "tšekki", alku: "tshek", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "tšetšenialainen", alku: "tshetshenialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "Gorbatšov", alku: "Gorbatshov", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Menšikov", alku: "Menshikov", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Ždanov", alku: "Zhdanov", luokka: sukunimi, jatko: <kalsium>, äs: a];
+
