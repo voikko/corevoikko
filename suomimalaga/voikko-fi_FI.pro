@@ -1,5 +1,6 @@
-## Begin-Malaga-Configuration
 info: Voikko-Dictionary-Format: 1
+
+## Begin-Malaga-Configuration
 info: Language-Code: fi_FI
 info: Language-Variant: standard
 info: Description: Default morphology for Voikko
@@ -8,7 +9,7 @@ info: License: GPL version 2 or later
 ## End-Malaga-Configuration
 
 ## Begin-User-Configuration
-lex: voikko-fi_FI.lex
+lex: voikko-fi_FI.lex suomi.lex
 lex: sanat/joukahainen.lex
 lex: sanat/erikoisalat/atk.lex
 mallex: set switch vanhahkot_muodot yes
@@ -17,7 +18,7 @@ mallex: set switch vanhahkot_muodot yes
 ## Begin-Internal-Configuration
 sym: voikko-fi_FI.sym suomi.sym
 all: voikko-fi_FI.all suomi.all suomi.inc subrule.inc voikko-fi_FI.pro
-lex: voikko-fi_FI.lex suomi.lex suomi.inc subrule.inc voikko-fi_FI.pro
+lex: suomi.inc subrule.inc voikko-fi_FI.pro
 lex: sanat/erikoissanat.lex
 lex: sanat/lukusanat.lex
 lex: sanat/lyhenteet.lex

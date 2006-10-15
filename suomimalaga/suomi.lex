@@ -59,7 +59,6 @@ include "sanat/lukusanat.lex";
 include "sanat/11-19.lex";
 include "sanat/yhdyssanat.lex";
 include "sanat/jokinen.lex";
-include "sanat/shzh.lex";
 include "sanat/omat.lex";
 include "sanat/lainen.lex";
 
