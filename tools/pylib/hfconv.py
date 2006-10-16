@@ -342,6 +342,6 @@ def match_re(string, pattern):
 	pattern = pattern.replace(u'A', u'(?:a|ä)')
 	pattern = pattern.replace(u'O', u'(?:o|ö)')
 	pattern = pattern.replace(u'U', u'(?:u|y)')
-	match = re.compile(u'^' + pattern + u'$').match(string)
+	match = re.compile(u'^' + pattern + u'$', re.IGNORECASE).match(string)
 	if match == None: return None
 	else: return match.group(1)

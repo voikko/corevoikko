@@ -309,7 +309,8 @@ def get_matching_noun_class(word, cname, grad_exact_type, noun_classes):
 	for noun_class in noun_classes:
 		if 'subst-' + cname != noun_class['cname']: continue
 		if grad_type != hfutils.GRAD_NONE and grad_type != noun_class['gradation']: continue
-		if not re.compile(__word_pattern_to_pcre(noun_class['match'])).match(word): continue
+		if not re.compile(__word_pattern_to_pcre(noun_class['match']),
+		                  re.IGNORECASE).match(word): continue
 		return noun_class
 	return None
 
@@ -327,7 +328,8 @@ def inflect_word(word, grad_exact_type, noun_class, vowel_type = hfutils.VOWEL_D
 	elif grad_exact_type in ['av1', 'av3', 'av5']: grad_type = hfutils.GRAD_SW
 	elif grad_exact_type in ['av2', 'av4', 'av6']: grad_type = hfutils.GRAD_WS
 	if grad_type != hfutils.GRAD_NONE and grad_type != noun_class['gradation']: return None
-	if not re.compile(__word_pattern_to_pcre(noun_class['match'])).match(word): return None
+	if not re.compile(__word_pattern_to_pcre(noun_class['match']),
+	                  re.IGNORECASE).match(word): return None
 	inflection_list = []
 	if vowel_type == hfutils.VOWEL_DEFAULT: vowel_type = hfutils.vowel_type(word)
 	if vowel_type in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
