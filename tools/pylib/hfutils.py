@@ -182,3 +182,13 @@ def read_option(options, name, default):
 		if len(nameval) == 2 and nameval[0] == name: return nameval[1]
 		if len(nameval) == 1 and nameval[0] == name: return u'1'
 	return default
+
+
+# Expands capital letters to useful character classes for regular expressions
+def hf_regexp(pattern):
+	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö|é|è|á|ó|â)')
+	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z|š|ž)')
+	pattern = pattern.replace('A', u'(?:a|ä)')
+	pattern = pattern.replace('O', u'(?:o|ö)')
+	pattern = pattern.replace('U', u'(?:u|y)')
+	return pattern
