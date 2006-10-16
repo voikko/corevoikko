@@ -1040,7 +1040,7 @@ end: class
 # Kotus 18 maa
 class: subst-pii
 sm-class: pii
-match-word: V[aiu]
+match-word: V[aäiuy]
 consonant-gradation: -
 group: t
 transform-group: e
