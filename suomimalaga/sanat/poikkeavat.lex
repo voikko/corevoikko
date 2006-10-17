@@ -775,7 +775,6 @@
 [perusmuoto: "Glasgow", alku: "Glasgow", luokka: paikannimi, jatko: <parfait>, äs: a];
 [perusmuoto: "Haukivuori", alku: "Haukivuor", luokka: paikannimi, jatko: <tuohi>, äs: a];
 [perusmuoto: "Häyrynlahti", alku: "Häyrynlah", luokka: paikannimi, jatko: <lahti>, äs: a];
-[perusmuoto: "Ii", alku: "I", luokka: paikannimi, jatko: <pii>, äs: ä];
 [perusmuoto: "Iinalampi", alku: "Iinalam", luokka: paikannimi, jatko: <lampi>, äs: a];
 [perusmuoto: "Jaamanlampi", alku: "Jaamanlam", luokka: paikannimi, jatko: <lampi>, äs: a];
 [perusmuoto: "Juokslahti", alku: "Juokslah", luokka: paikannimi, jatko: <lahti>, äs: a];
