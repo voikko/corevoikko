@@ -1289,7 +1289,7 @@ end;
 subrule tulostus_voikko ($tietue):
   define $tuloste := "";
   define $tlen := length($tietue);
-  define $tind := -1;
+  define $tind := 0;
   foreach $t in $tietue:
     $tind :=+ 1;
     if $t.rakenne /= nil then
@@ -1301,13 +1301,17 @@ subrule tulostus_voikko ($tietue):
       foreach $i in length($t.alku):
         $tuloste :=+ "p";
       end;
-    elseif $t.luokka in <etunimi, sukunimi, nimi> or
-           ($t.luokka = paikannimi and
-            ($tind greater $tlen - 2 or $tietue.($tind+1).luokka = johdin_lAinen)) then
+    elseif $t.luokka in <etunimi, sukunimi, nimi, paikannimi> then
       $tuloste :=+ "=";
-      $tuloste :=+ "i";
-      foreach $i in length($t.alku) - 1:
-        $tuloste :=+ "p";
+      if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) then
+        foreach $i in length($t.alku):
+	  $tuloste :=+ "p";
+	end;
+      else
+        $tuloste :=+ "i";
+        foreach $i in length($t.alku) - 1:
+          $tuloste :=+ "p";
+        end;
       end;
     elseif $t.luokka = lyhenne then
       $tuloste :=+ "=";
