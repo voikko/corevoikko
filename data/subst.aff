@@ -1328,6 +1328,7 @@ end: class
 
 # Kotus 27 käsi
 class: subst-si1
+sm-class: susi
 match-word: Vsi
 consonant-gradation: -
 group: t
