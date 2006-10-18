@@ -558,7 +558,7 @@ rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w	ps=f
 partitiivi	0	a	s
-partitiivi	0	ta	s
+partitiivi	0	ta	s	prio=3
 translatiivi	0	ksi	w	ps=f
 translatiivi	0	kse	w	ps=r
 essiivi		0	na	s

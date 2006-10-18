@@ -351,10 +351,11 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.
 
 
-# Lippuja. Merkitys on selitetty suomi-*.pro -tiedostoissa.
+# Lippuja. Merkitys on selitetty tiedostossa ohjeet/liput.txt.
 malli;
   voikko;
     vanhahkot_muodot;
+    vanhat_muodot;
   sukija;
 taivutus;
   vanha;

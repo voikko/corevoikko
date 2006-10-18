@@ -10,6 +10,8 @@ Arvo: voikko, sukija
                          vaikkapa runokielessä, ja joita ei ole tapana tulkita
                          virheellisiksi muodoiksi vaikka eivät enää olekaan
                          arkikielessä käytössä.
+        vanhat_muodot    (mallex) Hyväksytään vanhoja tai murteellisia taivutusmuotoja,
+                         joiden käyttö ei ole suositeltavaa yleiskielessä.
   sukija    Hyväksytään myös yleisimmät kirjoitusvirheet, esim. "julkasta".
 
 

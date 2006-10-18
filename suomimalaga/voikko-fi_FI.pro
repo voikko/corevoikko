@@ -13,6 +13,7 @@ lex: voikko-fi_FI.lex suomi.lex
 lex: sanat/joukahainen.lex
 lex: sanat/erikoisalat/atk.lex
 mallex: set switch vanhahkot_muodot yes
+mallex: set switch vanhat_muodot no
 ## End-User-Configuration
 
 ## Begin-Internal-Configuration

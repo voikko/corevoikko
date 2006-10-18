@@ -4064,7 +4064,7 @@ end;
 
 subrule asema ($tietue, $vahva_aste, $heikko_aste):
   return koira ($tietue, $vahva_aste, $heikko_aste, A($tietue))
-         + taivutuskaava ($tietue, [osanto_tA: $vahva_aste + A($tietue)]);
+         + voikko_lista_vain_lipulla(vanhat_muodot, taivutuskaava ($tietue, [osanto_tA: $vahva_aste + A($tietue)]));
 end;
 
 
