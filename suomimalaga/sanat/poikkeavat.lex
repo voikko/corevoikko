@@ -752,7 +752,7 @@
 [perusmuoto: "Anonniemi", alku: "Anonnie", luokka: paikannimi, jatko: <niemi>, äs: ä];
 [perusmuoto: "Atsinlampi", alku: "Atsinlam", luokka: paikannimi, jatko: <lampi>, äs: a];
 [perusmuoto: "Bordeaux", alku: "Bordeaux", luokka: paikannimi, jatko: <parfait>, äs: a];
-[perusmuoto: "Châlons-sur-Marne", alku: "Châlons-sur-Marne", luokka: paikannimi, jatko: <parfait>, äs: a];
+[perusmuoto: "Châlons-sur-Marne", alku: "Châlons-sur-Marne", luokka: paikannimi, jatko: <parfait>, äs: a, rakenne: "=ipppppp-=ppp-=ipppp"];
 [perusmuoto: "Filippiinit", alku: "Filippiin", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Glasgow", alku: "Glasgow", luokka: paikannimi, jatko: <parfait>, äs: a];
 [perusmuoto: "Haukivuori", alku: "Haukivuor", luokka: paikannimi, jatko: <tuohi>, äs: a];
