@@ -421,6 +421,7 @@
 [perusmuoto: "perkele", alku: "perkeleesti", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "perä", alku: "peräitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "petkel", alku: "petkel", luokka: nimisana, jatko: <askel>, äs: ä];
+[perusmuoto: "Piaget", alku: "Piaget", luokka: sukunimi, jatko: <parfait>, äs: a];
 [perusmuoto: "pieli", alku: "piel", luokka: nimisana, jatko: <tuohi>, äs: ä];
 [perusmuoto: "pieni", alku: "pien", luokka: laatusana, jatko: <pieni>, äs: ä];
 [perusmuoto: "piennar", alku: "pien", luokka: nimisana, jatko: <piennar>, äs: a];
