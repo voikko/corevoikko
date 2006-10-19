@@ -24,8 +24,6 @@
 [perusmuoto: "aah", alku: "aah", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aamuvarhain", alku: "aamuvarhain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "ah", alku: "ah", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "aha", alku: "aha", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "ahaa", alku: "ahaa", luokka: huudahdussana, jatko: <tavuviiva, loppu>, äs: a];

@@ -51,6 +51,7 @@ define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
 define @sana2 := @sana1 + <teonsana>;
 
 include "sanat/lyhenteet.lex";
+include "sanat/etuliitteet.lex";
 include "sanat/erikoiset.lex";
 include "sanat/poikkeavat.lex";
 include "sanat/olla-ei.lex";
