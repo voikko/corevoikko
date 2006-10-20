@@ -7725,7 +7725,7 @@
 [perusmuoto: "konkari", alku: "konkar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "konkka", alku: "konk", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "konkordanssi", alku: "konkordanss", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "konkreetti", alku: "konkreet", luokka: laatusana, jatko: <tatti>, äs: a, tiedot: <inen>];
+[perusmuoto: "konkreetti", alku: "konkreet", luokka: nimi_laatusana, jatko: <tatti>, äs: a, tiedot: <inen>];
 [perusmuoto: "konkretisoida", alku: "konkretiso", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "konkurssi", alku: "konkurss", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "konna", alku: "konn", luokka: nimisana, jatko: <koira>, äs: a];
