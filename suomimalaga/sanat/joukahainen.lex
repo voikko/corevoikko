@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-10-20 03:26:01 EEST
+# Time of generation: 2006-10-21 03:26:02 EEST
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -6639,7 +6639,7 @@
 [perusmuoto: "Kaurila", alku: "Kauril", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "kausaalinen", alku: "kausaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kausaliteetti", alku: "kausaliteet", luokka: nimisana, jatko: <tatti>, äs: a];
-[perusmuoto: "kausatiivi", alku: "kausatiiv", luokka: nimi_laatusana, jatko: <risti>, äs: a, tiedot: <inen>];
+[perusmuoto: "kausatiivi", alku: "kausatiiv", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "kausi", alku: "kau", luokka: nimisana, jatko: <susi>, äs: a, tiedot: <inen>];
 [perusmuoto: "kausittainen", alku: "kausittai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Kaustajärvi", alku: "Kaustajärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
@@ -7079,7 +7079,7 @@
 [perusmuoto: "Kiina", alku: "Kiin", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "kiinne", alku: "kiin", luokka: nimisana, jatko: <enne>, äs: ä];
 [perusmuoto: "kiinnike", alku: "kiinnik", luokka: nimisana, jatko: <tarvike>, äs: ä];
-[perusmuoto: "kiinnipitää", alku: "kiinnipi", luokka: teonsana, jatko: <hohtaa>, äs: ä];
+[perusmuoto: "kiinnipitää", alku: "kiinnipi", luokka: teonsana, jatko: <hohtaa>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kiinnite", alku: "kiinnit", luokka: nimisana, jatko: <vaate>, äs: ä, tiedot: <inen>];
 [perusmuoto: "kiinnitin", alku: "kiinnit", luokka: nimisana, jatko: <suodatin>, äs: ä];
 [perusmuoto: "kiinnittyä", alku: "kiinnit", luokka: teonsana, jatko: <asettua>, äs: ä];
@@ -8068,6 +8068,7 @@
 [perusmuoto: "krapu", alku: "kra", luokka: nimisana, jatko: <apu>, äs: a];
 [perusmuoto: "krapula", alku: "krapul", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "krassi", alku: "krass", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kratia", alku: "krati", luokka: nimisana, jatko: <apila>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kravatti", alku: "kravat", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "kreatiivinen", alku: "kreatiivi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kreationismi", alku: "kreationism", luokka: nimisana, jatko: <risti>, äs: a];
@@ -14325,6 +14326,7 @@
 [perusmuoto: "Pornainen", alku: "Pornai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "porno", alku: "porno", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "pornoilla", alku: "pornoil", luokka: teonsana, jatko: <arvailla>, äs: a];
+[perusmuoto: "pornokraatti", alku: "pornokraat", luokka: nimisana, jatko: <tatti>, äs: a, tiedot: <inen>, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "pornokratia", alku: "pornokrati", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "poro", alku: "poro", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
 [perusmuoto: "Porojärvi", alku: "Porojärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
@@ -20255,7 +20257,7 @@
 [perusmuoto: "ukkonen", alku: "ukko", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ukkostaa", alku: "ukkost", luokka: teonsana, jatko: <aavistaa>, äs: a, tiedot: <yt>];
 [perusmuoto: "Ukonselkä", alku: "Ukonsel", luokka: paikannimi, jatko: <hoikka>, äs: ä];
-[perusmuoto: "ukraina", alku: "ukrain", luokka: paikannimi, jatko: <karahka>, äs: a];
+[perusmuoto: "Ukraina", alku: "Ukrain", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "ukulele", alku: "ukulele", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "ula", alku: "ul", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "ulappa", alku: "ulap", luokka: nimisana, jatko: <ulappa>, äs: a];
@@ -20442,6 +20444,7 @@
 [perusmuoto: "Uusikaarlepyy", alku: "Uusikaarlepy", luokka: paikannimi, jatko: <puu>, äs: ä, rakenne: "=ippp=ppppppppp"];
 [perusmuoto: "Uusikylä", alku: "Uusikyl", luokka: sukunimi, jatko: <asema>, äs: ä];
 #Malaga class not found for (uusintaa, 3, murtaa-av1)
+[perusmuoto: "uusinto", alku: "uusin", luokka: nimisana, jatko: <avanto>, äs: a];
 [perusmuoto: "uusio", alku: "uusio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "uusiutua", alku: "uusiu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "uusmuotinen", alku: "uusmuoti", luokka: laatusana, jatko: <nainen>, äs: a];

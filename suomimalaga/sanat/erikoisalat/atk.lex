@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-10-20 03:27:02 EEST
+# Time of generation: 2006-10-21 03:27:06 EEST
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=ippppippp"];
 [perusmuoto: "AnotherLevel", alku: "AnotherLevel", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>, rakenne: "=ipppppp=ipppp"];
