@@ -22,6 +22,8 @@
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "jumal", alku: "jumal", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "mestaris", alku: "mestaris", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @sana1, äs: aä];
 
 # Substantiivi tai verbi
 
@@ -31,6 +33,7 @@
 
 # Verbi
 [perusmuoto: "de", alku: "de", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @sana2, äs: a, tiedot: <siv>];
 
 
 # Substantiivi, adjektiivi tai verbi
@@ -64,6 +67,75 @@
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @sana2, äs: ä];
 [perusmuoto: "julki", alku: "julki", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "kaksois", alku: "kaksois", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kauko", alku: "kauko", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kautta", alku: "kautta", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "kesken", alku: "kesken", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kokonais", alku: "kokonais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "kolmois", alku: "kolmois", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kosio", alku: "kosio", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kuolin", alku: "kuolin", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kvasi", alku: "kvasi", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "kyynär", alku: "kyynär", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "lehmi", alku: "lehmi", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "maalais", alku: "maalais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "maalis", alku: "maalis", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "mentaali", alku: "mentaali", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "meta", alku: "meta", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "muinais", alku: "muinais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "multi", alku: "multi", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "myöhäis", alku: "myöhäis", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "nano", alku: "nano", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "nyky", alku: "nyky", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "nelis", alku: "nelis", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "ohi", alku: "ohi", luokka: etuliite, jatko: @sana2, äs: a];
+[perusmuoto: "oikein", alku: "oikein", luokka: etuliite, jatko: @sana2, äs: a];
+[perusmuoto: "oiko", alku: "oiko", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "ominais", alku: "ominais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "meteoro", alku: "meteoro", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "osittais", alku: "osittais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "pappis", alku: "pappis", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "perille", alku: "perille", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "pienois", alku: "pienois", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "pika", alku: "pika", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "pikku", alku: "pikku", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "piko", alku: "piko", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "poly", alku: "poly", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "porvaris", alku: "porvaris", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "post", alku: "post", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "pre", alku: "pre", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "rationaali", alku: "rationaal", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "rinnakkais", alku: "rinnakkais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "satunnais", alku: "satunnais", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "refleksiivi", alku: "refleksiiv", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "seitsen", alku: "seitsen", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "seksuaali", alku: "seksuaali", luokka: etuliite, jatko: @sana2, äs: a];
+[perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "suur", alku: "suur", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "syys", alku: "syys", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "taka", alku: "taka", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "täsmä", alku: "täsmä", luokka: etuliite, jatko: @sana2, äs: aä]; 
+[perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "vapaa", alku: "vapaa", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "vastaan", alku: "vastaan", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "viher", alku: "viher", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "viitois", alku: "viitois", luokka: etuliite, jatko: @sana2, äs: aä];
 
 # Ei Voikko-versioon (mieti, kuinka nämä korvataan)
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @sana2, äs: aä]; # Alkuunpanija jne.
@@ -82,109 +154,38 @@
 [perusmuoto: "iono", alku: "iono", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "itsestään", alku: "itsestään", luokka: etuliite, jatko: @sana2, äs: aä];
-
-
-# Luokittelemattomat
-[perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "kardio", alku: "kardio", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "karjo", alku: "karjo", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "karto", alku: "karto", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kauko", alku: "kauko", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kautta", alku: "kautta", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "kesken", alku: "kesken", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kokonais", alku: "kokonais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "kolmois", alku: "kolmois", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kosio", alku: "kosio", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kotiin", alku: "kotiin", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "krono", alku: "krono", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <siv>];
-[perusmuoto: "kuolin", alku: "kuolin", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "kvasi", alku: "kvasi", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "kyynär", alku: "kyynär", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "lehmi", alku: "lehmi", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "leivin", alku: "leivin", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "leksiko", alku: "leksiko", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "maalais", alku: "maalais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "maalis", alku: "maalis", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "mareo", alku: "mareo", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "mentaali", alku: "mentaali", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "mestaris", alku: "mestaris", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "meta", alku: "meta", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "kotiin", alku: "kotiin", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "meteo", alku: "meteo", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "meteoro", alku: "meteoro", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "morfo", alku: "morfo", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "muinais", alku: "muinais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "multi", alku: "multi", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "myöhäis", alku: "myöhäis", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "nano", alku: "nano", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "nelis", alku: "nelis", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "nyky", alku: "nyky", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "ohi", alku: "ohi", luokka: etuliite, jatko: @sana2, äs: a];
-[perusmuoto: "oikein", alku: "oikein", luokka: etuliite, jatko: @sana2, äs: a];
-[perusmuoto: "oiko", alku: "oiko", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "ominais", alku: "ominais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "orto", alku: "orto", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "oseano", alku: "oseano", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "osittais", alku: "osittais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "paleonto", alku: "paleonto", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <siv>];
-[perusmuoto: "pappis", alku: "pappis", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "perille", alku: "perille", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "petro", alku: "petro", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "pienois", alku: "pienois", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "pika", alku: "pika", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "pikku", alku: "pikku", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "piko", alku: "piko", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "polito", alku: "polito", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "poly", alku: "poly", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "porvaris", alku: "porvaris", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "post", alku: "post", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "pyro", alku: "pyro", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "rationaali", alku: "rationaal", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @sana2, äs: a, tiedot: <siv>];
-[perusmuoto: "refleksiivi", alku: "refleksiiv", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "rinnakkais", alku: "rinnakkais", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "satunnais", alku: "satunnais", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "seismo", alku: "seismo", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "seitsen", alku: "seitsen", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "sekso", alku: "sekso", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "seksuaali", alku: "seksuaali", luokka: etuliite, jatko: @sana2, äs: a];
 [perusmuoto: "sino", alku: "sino", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <siv>];
-[perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "sosio", alku: "sosio", luokka: etuliite, jatko: @sana2 + <tavuviiva>, äs: aä];
-[perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "suur", alku: "suur", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "syys", alku: "syys", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "taka", alku: "taka", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "tanato", alku: "tanato", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "tomo", alku: "tomo", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "topo", alku: "topo", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "toska", alku: "toska", luokka: etuliite, jatko: @sana1, äs: aä];  # Toskakakku, -leivos.
 [perusmuoto: "tropo", alku: "tropo", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "tämän", alku: "tämän", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "täsmä", alku: "täsmä", luokka: etuliite, jatko: @sana2, äs: aä]; 
-[perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "uro", alku: "uro", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "vapaa", alku: "vapaa", luokka: etuliite, jatko: @sana2, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "vastaan", alku: "vastaan", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "viher", alku: "viher", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "viitois", alku: "viitois", luokka: etuliite, jatko: @sana2, äs: aä];
+
+
+# Luokittelemattomat
+[perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "vuos", alku: "vuos", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "yhdys", alku: "yhdys", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "yhteen", alku: "yhteen", luokka: etuliite, jatko: @sana2, äs: aä];
