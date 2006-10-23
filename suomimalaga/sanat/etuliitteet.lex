@@ -153,6 +153,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "seksuaali", alku: "seksuaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a];
 [perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "sivuttais", alku: "sivuttais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sosio", alku: "sosio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
