@@ -7,6 +7,7 @@
 
 
 # Substantiivi tai adjektiivi
+[perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln+@ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "ainois", alku: "ainois", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "astro", alku: "astro", luokka: etuliite, jatko: @sana1, äs: aä];
@@ -48,10 +49,12 @@
 
 
 # Substantiivi, adjektiivi tai verbi
+[perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln+@ell, äs: aä];
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @sana2, äs: aä]; # Alkuunpanija jne.
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "anti", alku: "anti", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @sana1, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @sana2, äs: aä];
@@ -110,6 +113,8 @@
 [perusmuoto: "pienois", alku: "pienois", luokka: etuliite, jatko: @sana1, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "pika", alku: "pika", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "piko", alku: "piko", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "pitkittäis", alku: "pitkittäis", luokka: etuliite, jatko: @sana1, äs: aä];
+[perusmuoto: "poikittais", alku: "poikittais", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "poly", alku: "poly", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "porvaris", alku: "porvaris", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "post", alku: "post", luokka: etuliite, jatko: @sana2, äs: aä];
