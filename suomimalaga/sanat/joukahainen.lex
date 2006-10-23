@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-10-22 03:26:02 EEST
+# Time of generation: 2006-10-23 03:26:01 EEST
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -950,7 +950,6 @@
 [perusmuoto: "Aslak", alku: "Aslak", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Asmo", alku: "Asmo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "aso", alku: "aso", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <ei_voikko, ei_ys>];
-[perusmuoto: "asosiaalinen", alku: "asosiaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "aspekti", alku: "aspekt", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "aspiriini", alku: "aspiriin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Aspirin", alku: "Aspirin", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -17770,6 +17769,7 @@
 [perusmuoto: "sorvi", alku: "sorv", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "sose", alku: "sose", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "soseuttaa", alku: "soseut", luokka: teonsana, jatko: <alittaa>, äs: a];
+[perusmuoto: "asosiaalinen", alku: "asosiaali", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=p=ppppppppppp"];
 [perusmuoto: "sosiaalinen", alku: "sosiaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sosiaalistaa", alku: "sosiaalist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "asosiaalistaa", alku: "asosiaalist", luokka: teonsana, jatko: <hidastaa>, äs: a, rakenne: "=p=pppppppppppp"];
