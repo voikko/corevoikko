@@ -373,7 +373,8 @@
 [perusmuoto: "kutti", alku: "kutti", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuulemiin", alku: "kuulemiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuulemma", alku: "kuulemma", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "kyl", alku: "kyl", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "kyl", alku: "kyl", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kylliksi", alku: "kylli", luokka: seikkasana, jatko: <tulento_ksi>, äs: ä];
 [perusmuoto: "kyllin", alku: "kyllin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllä", alku: "kyllä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllälti", alku: "kyllälti", luokka: seikkasana, jatko: <loppu>, äs: ä];
@@ -620,7 +621,7 @@
 [perusmuoto: "risiini", alku: "risiin", luokka: seikkasana, jatko: <banaali>, äs: ä];
 [perusmuoto: "ristikkäin", alku: "ristikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "roppakaupalla", alku: "roppakaupalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "ruti", alku: "ruti", luokka: liitesana, jatko: <loppu>, äs: a];
+[perusmuoto: "ruti", alku: "ruti", luokka: liitesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ruti", alku: "ruti", luokka: seikkasana, jatko: @sana1 + <liitesana, loppu>, äs: a];
 [perusmuoto: "saakka", alku: "saakka", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "saati", alku: "saati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -670,7 +671,7 @@
 [perusmuoto: "sittenkuin", alku: "sittenkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sittenkun", alku: "sittenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sitäpaitsi", alku: "sitäpaitsi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sitävastoin", alku: "sitävastoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "sitävastoin", alku: "sitävastoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sivumennen", alku: "sivumen", luokka: seikkasana, jatko: <nainen>, äs: a];
 [perusmuoto: "sivumpana", alku: "sivum", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "sivuttain", alku: "sivuttain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
