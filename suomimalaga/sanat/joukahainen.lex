@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-10-23 03:26:01 EEST
+# Time of generation: 2006-10-24 03:26:02 EEST
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -18626,6 +18626,7 @@
 [perusmuoto: "tabulaattori", alku: "tabulaattor", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "taco", alku: "taco", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "tae", alku: "ta", luokka: nimisana, jatko: <tarvike>, äs: a, tiedot: <ei_ysa>];
+[perusmuoto: "taaempi", alku: "taae", luokka: laatusana, jatko: <suurempi>, äs: a];
 [perusmuoto: "taempi", alku: "tae", luokka: laatusana, jatko: <suurempi>, äs: a];
 [perusmuoto: "taeta", alku: "ta", luokka: teonsana, jatko: <vaieta>, äs: a];
 [perusmuoto: "tagaali", alku: "tagaal", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -18671,6 +18672,7 @@
 [perusmuoto: "Taimi", alku: "Taim", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "taimikko", alku: "taimik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "taimisto", alku: "taimisto", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "taaimmainen", alku: "taaimmai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "taimmainen", alku: "taimmai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Taina", alku: "Tain", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Tainio", alku: "Tainio", luokka: sukunimi, jatko: <autio>, äs: a];
@@ -20849,6 +20851,7 @@
 [perusmuoto: "Varloi", alku: "Varlo", luokka: paikannimi, jatko: <pii>, äs: a];
 [perusmuoto: "varma", alku: "varm", luokka: nimi_laatusana, jatko: <kala>, äs: a];
 [perusmuoto: "Varma", alku: "Varm", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "varmenne", alku: "varmen", luokka: nimisana, jatko: <enne>, äs: a];
 [perusmuoto: "varmentaa", alku: "varmen", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "varmistaa", alku: "varmist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "varmistautua", alku: "varmistau", luokka: teonsana, jatko: <antautua>, äs: a];
