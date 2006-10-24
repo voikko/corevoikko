@@ -86,7 +86,8 @@
 [perusmuoto: "ennalleen", alku: "ennalle", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ennalta", alku: "ennalta", luokka: seikkasana, jatko: <tavuviiva, liitesana, loppu>, äs: a];
 [perusmuoto: "ennemmin", alku: "ennemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija, ei_ys>];
 [perusmuoto: "ennenkun", alku: "ennenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ennestään", alku: "ennestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensi", alku: "ensi", luokka: laatusana, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_voikko>];
@@ -102,7 +103,7 @@
 [perusmuoto: "entä", alku: "entäpäs", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "entä", alku: "entäs", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "enää", alku: "enää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "enään", alku: "enään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "enään", alku: "enään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä];
 [perusmuoto: "erikseen", alku: "erikseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "erilleen", alku: "erilleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
