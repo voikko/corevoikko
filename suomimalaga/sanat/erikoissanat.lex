@@ -194,18 +194,22 @@ define @loppu := <liitesana, loppu>;
 
 ######################################################
 
-[perusmuoto: "itsekukin", alku: "itsekukin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekunkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekutakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekunakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekuksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekussakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekustakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekuhunkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekullakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekultakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekullekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "itsekukin", alku: "itsekuttakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a];
+# Osa näistä tunnistuu, vaikka olisi lippu "ei_voikko".
+# itsekukin	= itse + kukka(instruktiivi)
+# itsekustakin	= itse + kusi(yks. partitiivi) + kin
+# itsekultakin	= itse + kulta(yks. nominatiivi) + kin
+[perusmuoto: "itsekukin", alku: "itsekukin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekunkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekutakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekunakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekuksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekussakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekustakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekuhunkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekullakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekultakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekullekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekuttakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
 
@@ -447,9 +451,9 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "tämä", alku: "tälle",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
 
 # Murteissa.
-[perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tän",    luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tään",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tän",    luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tään",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 
 ######################################################
@@ -481,7 +485,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "nämä", alku: "näin",    luokka: asemosana, sija: keinonto_in,      luku: monikko, jatko: @loppu, äs: ä];
 
 # Murteissa.
-[perusmuoto: "nämä", alku: "nää",     luokka: asemosana, sija: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "nää",     luokka: asemosana, sija: nimentö,          luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 ######################################################
 
@@ -584,8 +588,8 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "edessä", alku: "eteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edessä", alku: "ede", luokka: seikkasana, jatko: @heikkoasteiset_paikallissijat, äs: ä];
 
-[perusmuoto: "edelläoleva", alku: "edelläolev", luokka: laatusana, jatko: <asema>, äs: a];
-[perusmuoto: "edessäoleva", alku: "edessäolev", luokka: nimisana, jatko: <asema>, äs: a];
+[perusmuoto: "edelläoleva", alku: "edelläolev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "edessäoleva", alku: "edessäolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "eteenpäin", alku: "edeltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -603,8 +607,8 @@ define @loppu := <liitesana, loppu>;
 
 ######################################################
 
-[perusmuoto: "poikessa", alku: "poikessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "poikessa", alku: "poikkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "poikessa", alku: "poikessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "poikessa", alku: "poikkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
 
