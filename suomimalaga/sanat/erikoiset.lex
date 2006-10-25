@@ -152,6 +152,7 @@
 [perusmuoto: "hienokseltaan", alku: "hienokseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hik", alku: "hik", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hiljaa", alku: "hiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hiljan", alku: "hiljan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljakkoin", alku: "hiljakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljalleen", alku: "hiljalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljattain", alku: "hiljattain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

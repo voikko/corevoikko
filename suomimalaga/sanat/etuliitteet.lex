@@ -48,7 +48,6 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "digitaali", alku: "digitaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "elektro", alku: "elektro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "enkel", alku: "enkel", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "ennen", alku: "ennen", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -78,6 +77,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä]; # Alkuunpanija jne.
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "anti", alku: "anti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a, tiedot: <ei_sukija>];
@@ -171,6 +171,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "vapaa", alku: "vapaa", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "vastaan", alku: "vastaan", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "vierekkäis", alku: "vierekkäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "viher", alku: "viher", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "viitois", alku: "viitois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "yhdys", alku: "yhdys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
@@ -191,13 +192,13 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 
 # Etuliite + nimisana/laatusana/teonsana (Ei Voikko-versioon)
 
-[perusmuoto: "allo", alku: "allo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "andro", alku: "andro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "allo", alku: "allo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "andro", alku: "andro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "anestesio", alku: "anestesio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
 [perusmuoto: "antropo", alku: "antropo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
 [perusmuoto: "bakterio", alku: "bakterio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
 [perusmuoto: "biblio", alku: "biblio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "ennen", alku: "ennen", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etymo", alku: "etymo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "grafo", alku: "grafo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a];
