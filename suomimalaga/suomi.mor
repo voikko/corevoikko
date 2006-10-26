@@ -1137,8 +1137,11 @@ subrule teonsana_ok ($tietue, $i):
       ok6 ($tietue.$i, kertoman_tekijäpääte_y3, tositapa,  kertoma, yksikkö, 3) or
       ok4 ($tietue.$i, käskytapa_kielto,        käskytapa, kestämä)) then
    foreach $k in $tietue:
-      if ($k.luokka in @nimisana + <laatusana, etuliite, seikkasana>
+      if ($k.luokka in @nimisana + <laatusana, seikkasana>
                        + @johdin_teonsanasta) then
+        return no;
+      end;
+      if ($k.luokka = etuliite and not teonsana in $k.jatko) then
         return no;
       end;
     end;
