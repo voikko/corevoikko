@@ -208,7 +208,8 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana):
   define $i := length($vasen);
   ? $vasen.$i.perusmuoto matches ".*nen" or $vasen.$i.perusmuoto = $vasen.$i.alku;
   result $vasen + <[alku: $sana] + $oikea>,
-         rules teonsanan_johdos; # FIXME: johdetun muodon on oltava nimisana
+         rules teonsanan_johdos, # FIXME: johdetun muodon on oltava nimisana
+	       nimitavat;
 end;
 
 # Laatusanasta johdettu nimisana, esim. vapaus <- vapaa.
