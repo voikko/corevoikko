@@ -191,10 +191,14 @@ combi_rule nimisana ($vasen, $oikea, $sana):
 #define $n2 := transmit (<"nimisana"> + <$oikea>);
 #define $n3 := transmit (<"nimisana"> + <$sana>);
 
+  if ($oikea.luokka in <nimisana, nimi_laatusana, seikkasana, lukusana, suhdesana>) then
+    result $vasen + <[alku: $sana] + $oikea>,
+           rules nimisana;
+  end;
+
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
                liitesana,
-               nimisana,
                nimisanan_johdos,
                nimisana_laatusanasta, nimisana_teonsanasta,
                tavuviiva,
@@ -817,12 +821,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 
   if ($oikea.luokka in $nimet) then
     return no;
-  else
-    foreach $k in $vasen:
-      if ($k.luokka in $nimet) then
-        return no;
-      end;
-    end;
   end;
 
 #define $a2 := transmit (<"a2"> + <$vasen>);
