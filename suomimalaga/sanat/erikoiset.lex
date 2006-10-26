@@ -86,8 +86,7 @@
 [perusmuoto: "ennalleen", alku: "ennalle", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ennalta", alku: "ennalta", luokka: seikkasana, jatko: <tavuviiva, liitesana, loppu>, äs: a];
 [perusmuoto: "ennemmin", alku: "ennemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija, ei_ys>];
+[perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ennenkun", alku: "ennenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ennestään", alku: "ennestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensi", alku: "ensi", luokka: laatusana, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_voikko>];
