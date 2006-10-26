@@ -1,7 +1,7 @@
 # Kotus 1 talo
 class: subst-p
 sm-class: valo
-match-word: C(?:e|O|U)
+match-word: C(?:O|U)
 consonant-gradation: sw
 group: t
 transform-group: e
@@ -427,7 +427,7 @@ end: class
 class: subst-e3
 sm-class: nalle
 match-word: Ce
-consonant-gradation: -
+consonant-gradation: sw
 group: t
 transform-group: e
 rules:
@@ -439,7 +439,7 @@ translatiivi	0	kse	w	ps=r
 essiivi		0	na	s
 inessiivi		0	ssa	w
 elatiivi		0	sta	w
-illatiivi		([aeiou])	(1)(1)n	s
+illatiivi		0	en	s
 adessiivi		0	lla	w
 ablatiivi		0	lta	w
 allatiivi		0	lle	w
