@@ -1,3 +1,10 @@
+2006-10-26 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Clean up library checks in configure.ac, remove special check
+	  for malaga shared library.
+	* Add AC_LIBTOOL_WIN32_DLL to configure.ac to help building
+	  shared libraries on Windows.
+
 2006-10-05 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Add missing 'const' to usage example in voikko.h.
