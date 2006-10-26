@@ -193,7 +193,7 @@ combi_rule nimisana ($vasen, $oikea, $sana):
 
   if ($oikea.luokka in <nimisana, nimi_laatusana, seikkasana, lukusana, suhdesana>) then
     result $vasen + <[alku: $sana] + $oikea>,
-           rules nimisana;
+           rules nimisana, etuliite;
   end;
 
   result $vasen + <[alku: $sana] + $oikea>,
@@ -202,7 +202,6 @@ combi_rule nimisana ($vasen, $oikea, $sana):
                nimisanan_johdos,
                nimisana_laatusanasta, nimisana_teonsanasta,
                tavuviiva,
-               etuliite,
                loppu;
 end;
 

@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-10-26 22:42:39 EEST
+# Time of generation: 2006-10-26 22:49:54 EEST
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -1046,6 +1046,7 @@
 [perusmuoto: "Atso", alku: "Atso", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "atsteekki", alku: "atsteek", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "attasea", alku: "attase", luokka: nimisana, jatko: <karahka>, äs: a];
+[perusmuoto: "Atte", alku: "At", luokka: etunimi, jatko: <atte>, äs: a];
 [perusmuoto: "attentaatti", alku: "attentaat", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "Attila", alku: "Attil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "attraktio", alku: "attraktio", luokka: nimisana, jatko: <autio>, äs: a, rakenne: "=pp=ppppppp"];
@@ -5208,7 +5209,7 @@
 [perusmuoto: "Janakkala", alku: "Janakkal", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Janatuinen", alku: "Janatui", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Jandeba", alku: "Jandeb", luokka: paikannimi, jatko: <kala>, äs: a];
-#Malaga class not found for (Janette, 1, valo-av1)
+[perusmuoto: "Janette", alku: "Janet", luokka: etunimi, jatko: <atte>, äs: a];
 [perusmuoto: "Jangesjärvi", alku: "Jangesjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
 [perusmuoto: "Janhonen", alku: "Janho", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Janhunen", alku: "Janhu", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -12391,6 +12392,7 @@
 [perusmuoto: "nukahtaa", alku: "nukah", luokka: teonsana, jatko: <astahtaa>, äs: a];
 [perusmuoto: "nukka", alku: "nuk", luokka: nimisana, jatko: <hoikka>, äs: a, tiedot: <inen>];
 [perusmuoto: "nukkaantua", alku: "nukkaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
+[perusmuoto: "nukke", alku: "nuk", luokka: nimisana, jatko: <nukke>, äs: a];
 [perusmuoto: "nukkua", alku: "nuk", luokka: teonsana, jatko: <kiekua>, äs: a];
 [perusmuoto: "nukkumatti", alku: "nukkumat", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "nukleoni", alku: "nukleon", luokka: nimisana, jatko: <risti>, äs: a];

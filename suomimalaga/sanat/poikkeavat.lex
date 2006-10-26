@@ -375,7 +375,6 @@
 [perusmuoto: "nitistä", alku: "nit", luokka: teonsana, jatko: <kitistä>, äs: ä];
 [perusmuoto: "nivel", alku: "nivel", luokka: nimisana, jatko: <sisar>, äs: ä];
 [perusmuoto: "noeta", alku: "no", luokka: teonsana, jatko: <poiketa>, äs: a];
-[perusmuoto: "nukke", alku: "nuk", luokka: nimisana, jatko: <nukke>, äs: a];
 [perusmuoto: "nuohota", alku: "nuoho", luokka: teonsana, jatko: <siivota>, äs: a];
 [perusmuoto: "nuoli", alku: "nuol", luokka: nimisana, jatko: <tuohi>, äs: a];
 [perusmuoto: "nuolla", alku: "nuol", luokka: teonsana, jatko: <nuolla>, äs: a];
@@ -737,7 +736,6 @@
 [perusmuoto: "Vatté", alku: "Vatté", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Virranniemi", alku: "Virrannie", luokka: sukunimi, jatko: <niemi>, äs: a];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
-[perusmuoto: "Atte", alku: "At", luokka: etunimi, jatko: <atte>, äs: a];
 [perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Eddie", alku: "Eddie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Jodie", alku: "Jodie", luokka: etunimi, jatko: <nalle>, äs: a];
