@@ -538,7 +538,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana):
 
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
                         johdin_mA> + @johdin_jA) or
-     ($oikea.luokka = johdin_vA and $oikea.perusmuoto in <"vuus", "vyys">) then
+     ($oikea.luokka in <johdin_vA, johdin_vE> and $oikea.perusmuoto in <"vuus", "vyys">) then
     result $vasen + <[alku: $sana] + $oikea>, rules nimisana, nimisana_teonsanasta,
                                                     nimisana_laatusanasta;
   end;
