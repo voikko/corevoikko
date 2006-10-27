@@ -1,3 +1,7 @@
+2006-10-27 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Implement version checking for malaga project files.
+
 2006-10-26 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Clean up library checks in configure.ac, remove special check

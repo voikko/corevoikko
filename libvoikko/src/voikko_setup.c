@@ -152,11 +152,11 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 		return "iconv_open(\"WCHAR_T\", voikko_options.encoding) failed";
 	}
 	
-	init_libmalaga(project);
+	const char * malaga_init_error = voikko_init_malaga(project);
 	free(project);
-	if (malaga_error) {
+	if (malaga_init_error) {
 		voikko_handle_count--;
-		return malaga_error;
+		return malaga_init_error;
 	}
 	if (cache_size >= 0) {
 		voikko_options.cache = malloc(6544 * sizeof(wchar_t) << cache_size);
@@ -281,3 +281,13 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	return 0;
 }
 
+const char * voikko_init_malaga(const char * project) {
+	init_libmalaga(project);
+	if (malaga_error) return malaga_error;
+	
+	if (strncmp(get_info(), "Voikko-Dictionary-Format: 1\n", 28) == 0) return 0;
+	else {
+		terminate_libmalaga();
+		return "Dictionary file has incompatible version";
+	}
+}

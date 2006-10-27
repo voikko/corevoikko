@@ -57,4 +57,12 @@ extern int voikko_handle_count;
 int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode,
                                const char * path);
 
+/**
+ * Tries to initialise the given project file, and verifies that it matches current
+ * dictionary format version
+ * @param project Name of the project file
+ * @return true if the project file was succesfully loaded and had correct version, otherwise false.
+ */
+const char * voikko_init_malaga(const char * project);
+
 #endif
