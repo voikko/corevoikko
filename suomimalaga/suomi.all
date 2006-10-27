@@ -5630,11 +5630,15 @@ end;
 
 
 subrule katketa ($tietue, $vahva_aste, $heikko_aste):
-  return katketa_kohota ($tietue, $vahva_aste, $heikko_aste)
-         + tositavan_kestämä ($tietue, $vahva_aste + "e",
-                               $vahva_aste + "e")             # Katke+en, jne.
-         + tositavan_kestämä_y3 ($tietue, $vahva_aste + "e")  # Katkee.
-         + käskytapa ($tietue, $vahva_aste + "e");            # Katkee.
+  if (switch(malli) = voikko) then
+    return katketa_kohota ($tietue, $vahva_aste, $heikko_aste);
+  else
+    return katketa_kohota ($tietue, $vahva_aste, $heikko_aste)
+           + tositavan_kestämä ($tietue, $vahva_aste + "e",
+                                 $vahva_aste + "e")             # Katke+en, jne.
+           + tositavan_kestämä_y3 ($tietue, $vahva_aste + "e")  # Katkee.
+           + käskytapa ($tietue, $vahva_aste + "e");            # Katkee.
+  end;
 end;
 
 
