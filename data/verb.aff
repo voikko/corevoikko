@@ -305,6 +305,7 @@ match-word: tAA
 consonant-gradation: sw
 group: t
 transform-group: e
+note: kaksitavuinen sana
 rules:
 infinitiivi_1	0	a	s
 preesens_yks_1	0	n	w
