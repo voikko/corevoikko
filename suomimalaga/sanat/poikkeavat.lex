@@ -68,7 +68,7 @@
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <rosé>, äs: ä];
 [perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "digata", alku: "dig", luokka: teonsana, jatko: <digata>, äs: a];
-[perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a];
+[perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "edusmies", alku: "edusmie", luokka: nimisana, jatko: <mies>, äs: a];
 [perusmuoto: "ehdokas", alku: "ehdok", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
@@ -79,7 +79,7 @@
 [perusmuoto: "ennennäkemätön", alku: "ennennäkemä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "erata", alku: "er", luokka: teonsana, jatko: <erata>, äs: a];
 [perusmuoto: "erota", alku: "ero", luokka: teonsana, jatko: <kohota>, äs: a];
-[perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a];
+[perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "facto", alku: "facto", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
 [perusmuoto: "haastaa", alku: "haast", luokka: teonsana, jatko: <haastaa>, äs: a];

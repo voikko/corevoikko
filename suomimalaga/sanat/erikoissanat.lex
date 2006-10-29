@@ -590,6 +590,7 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "edelläoleva", alku: "edelläolev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "edessäoleva", alku: "edessäolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
+# Seuraava on sanaliitto Kotuksen nettisivujen mukaan mutta yhdyssana kielitoimiston MOT-sanakirjassa
 [perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "eteenpäin", alku: "edeltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

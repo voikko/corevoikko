@@ -51,7 +51,7 @@
 [perusmuoto: "alinomaa", alku: "alinomaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alinomaan", alku: "alinomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "allekkain", alku: "allekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alunperin", alku: "alunperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ammoin", alku: "ammoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -159,7 +159,7 @@
 [perusmuoto: "hissukseen", alku: "hissukseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hissuksiin", alku: "hissuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hissun", alku: "hissun", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "hissunkissun", alku: "hissunkissun", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "hissunkissun", alku: "hissunkissun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hitto", alku: "hitosti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hmm", alku: "hmm", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hoi", alku: "hoi", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -280,7 +280,7 @@
 [perusmuoto: "kahtia", alku: "kahtia", luokka: seikkasana, jatko: @sana2 + <liitesana, loppu>, äs: a];
 [perusmuoto: "kai", alku: "kai", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaiketi", alku: "kaiketi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kaikinpuolin", alku: "kaikinpuolin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kaikinpuolin", alku: "kaikinpuolin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kaikkialla", alku: "kaikkia", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "kaksin", alku: "kaksin", luokka: seikkasana, jatko: @sana2 + <liitesana, loppu>, äs: a];
 [perusmuoto: "kallellaan", alku: "kallellaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -399,7 +399,7 @@
 [perusmuoto: "loitolla", alku: "loito", luokka: seikkasana, jatko: <loitolla>, äs: a];
 [perusmuoto: "lomitse", alku: "lomitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "luimussa", alku: "luimussa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "lukuunottamatta", alku: "lukuunottamatta", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=pppppp=ppppppppp"];
+[perusmuoto: "lukuunottamatta", alku: "lukuunottamatta", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "luo", alku: "luo", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "luokse", alku: "luokse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "luona", alku: "luona", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
@@ -443,8 +443,8 @@
 [perusmuoto: "millänsäkään", alku: "millänsäkään", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "milt'ei", alku: "milt'ei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "miltei", alku: "miltei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "minkätähden", alku: "minkätähden", luokka: seikkasana, jatko: <loppu>, äs: ä];
-[perusmuoto: "minkävuoksi", alku: "minkävuoksi", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "minkätähden", alku: "minkätähden", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "minkävuoksi", alku: "minkävuoksi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä];
 [perusmuoto: "moderato", alku: "moderato", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

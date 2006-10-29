@@ -194,10 +194,10 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 
 [perusmuoto: "allo", alku: "allo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "andro", alku: "andro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
-[perusmuoto: "anestesio", alku: "anestesio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
-[perusmuoto: "antropo", alku: "antropo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
-[perusmuoto: "bakterio", alku: "bakterio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
-[perusmuoto: "biblio", alku: "biblio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "anestesio", alku: "anestesio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
+[perusmuoto: "antropo", alku: "antropo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
+[perusmuoto: "bakterio", alku: "bakterio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
+[perusmuoto: "biblio", alku: "biblio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "ennen", alku: "ennen", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etymo", alku: "etymo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
