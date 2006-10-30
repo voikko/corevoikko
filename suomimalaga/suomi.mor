@@ -472,7 +472,12 @@ combi_rule omistusliite ($vasen, $oikea, $sana):
     result $result,
            rules liitesana, loppu;
   else
-    if ($vasen.$i.luokka in <sijapääte, seikkasana, suhdesana>) then
+    if ($vasen.$i.luokka in <seikkasana, suhdesana> and omistusliite3_oikein ($vasen.$i.alku, $sana)) then
+      if (not (strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)")) then
+          result $result,
+                 rules liitesana, loppu;
+      end;
+    elseif ($vasen.$i.luokka = sijapääte) then
       if (($vasen.$i.sija in <osanto_A, osanto_iA,
                               osanto_tA, osanto_ttA, osanto_itA,
                               osanto_jA,

@@ -402,6 +402,9 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "s",   luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "nsa", luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
+[alku: "mme", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+[alku: "nne", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+
 [alku: "an",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "en",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
 [alku: "in",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
@@ -410,8 +413,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
 [alku: "än",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
 [alku: "ön",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "mme", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "nne", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+
 
 
 # Laatusanojen sekä teonsanojen laatutapojen voittoaste.

@@ -746,7 +746,7 @@
 [perusmuoto: "tismalleen", alku: "tismalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohjona", alku: "tohjoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohjona", alku: "tohjona", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
+[perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "toisaalla", alku: "toisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "toisaanne", alku: "toisaanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toisin", alku: "toisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
