@@ -21,6 +21,7 @@
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <kirves>, äs: a];
 [perusmuoto: "Damokles", alku: "Damokle", luokka: nimi, jatko: <kirves>, äs: a];
+[perusmuoto: "El", alku: "El", luokka: nimi, jatko: <loppu>, äs: a]; # El Salvador
 [perusmuoto: "Ilias", alku: "Ilia", luokka: nimi, jatko: <koiras>, äs: a];
 [perusmuoto: "Ka", alku: "Ka", luokka: nimi, jatko: <loppu, omanto_n, sisätulento_hVn>, äs: a];
 [perusmuoto: "Kanteletar", alku: "Kantelet", luokka: nimisana, jatko: <tytär>, äs: a];
@@ -518,7 +519,7 @@
 [perusmuoto: "sammal", alku: "sammal", luokka: nimisana, jatko: <askel>, äs: a];
 [perusmuoto: "samota", alku: "samo", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "samperi", alku: "samperisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "san", alku: "san", luokka: nimisana, jatko: <loppu>, äs: a];
+[perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <sankari>, äs: a];
 [perusmuoto: "sankaritar", alku: "sankarit", luokka: nimisana, jatko: <tytär>, äs: a];
 [perusmuoto: "sanoinkuvaamaton", alku: "sanoinkuvaama", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
