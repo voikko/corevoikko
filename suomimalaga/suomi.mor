@@ -469,20 +469,32 @@ combi_rule omistusliite ($vasen, $oikea, $sana):
   end;
 
   if ($sana in <"ni", "si", "s", "nsa", "nsä", "mme", "nne">) then
-    result $result, rules liitesana, loppu;
+    result $result,
+           rules liitesana, loppu;
   else
-    define $alku := $vasen.$i.alku;
-
     if ($vasen.$i.luokka in <sijapääte, seikkasana, suhdesana>) then
-      if ((not ($vasen.$i.sija in <omanto_en, omanto_ten>)) and
-          omistusliite3_oikein ($alku, $sana)) then
+      if (($vasen.$i.sija in <osanto_A, osanto_iA,
+                              osanto_tA, osanto_ttA, osanto_itA,
+                              osanto_jA,
+                              olento_nA, olento_inA,
+                              tulento_ksi, tulento_iksi,
+                              sisäolento_ssA, sisäolento_issA,
+                              sisäeronto_stA, sisäeronto_istA,
+                              ulko_olento_llA, ulko_olento_illA,
+                              ulkoeronto_ltA, ulkoeronto_iltA,
+                              ulkotulento_lle, ulkotulento_ille,
+                              vajanto_ttA, vajanto_ittA,
+                              seuranto_ine>) and
+          omistusliite3_oikein ($vasen.$i.alku, $sana)) then
         if (not (strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)")) then
-          result $result, rules liitesana, loppu;
+          result $result,
+                 rules liitesana, loppu;
         end;
       end;
     elseif (($vasen.$i.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_5>) and
-            omistusliite3_oikein ($alku, $sana)) then
-      result $result, rules liitesana, loppu;
+            omistusliite3_oikein ($vasen.$i.alku, $sana)) then
+      result $result,
+             rules liitesana, loppu;
     end;
   end;
 end;
