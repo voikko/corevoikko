@@ -70,6 +70,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 
 [perusmuoto: "de", alku: "de", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä];
 
 
 # Etuliite + nimisana/laatusana/teonsana
@@ -222,20 +223,19 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "morfo", alku: "morfo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "orto", alku: "orto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "oseano", alku: "oseano", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "paleonto", alku: "paleonto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
-[perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "petro", alku: "petro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "polito", alku: "polito", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "pyro", alku: "pyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "seismo", alku: "seismo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "sekso", alku: "sekso", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "sino", alku: "sino", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
-[perusmuoto: "tanato", alku: "tanato", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "tomo", alku: "tomo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "topo", alku: "topo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "toska", alku: "toska", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];  # Toskakakku, -leivos.
-[perusmuoto: "tropo", alku: "tropo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "tämän", alku: "tämän", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "uro", alku: "uro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "paleonto", alku: "paleonto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
+[perusmuoto: "petro", alku: "petro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "polito", alku: "polito", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "pyro", alku: "pyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "seismo", alku: "seismo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "sekso", alku: "sekso", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "sino", alku: "sino", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
+[perusmuoto: "tanato", alku: "tanato", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "tomo", alku: "tomo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "topo", alku: "topo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "toska", alku: "toska", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];  # Toskakakku, -leivos.
+[perusmuoto: "tropo", alku: "tropo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "tämän", alku: "tämän", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "uro", alku: "uro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "vuos", alku: "vuos", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "yltä", alku: "yltä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "yltä", alku: "yltä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];

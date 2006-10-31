@@ -764,7 +764,9 @@
 [perusmuoto: "tuiki", alku: "tuiki", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuohduksissa", alku: "tuohduks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
 [perusmuoto: "tuolloin", alku: "tuolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuonnemma", alku: "tuonnemma", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuonnemmas", alku: "tuonnemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuonnepäin", alku: "tuonnepäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tuonnoin", alku: "tuonnoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "turruksiin", alku: "turruksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "turruksissa", alku: "turruksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
