@@ -3,7 +3,7 @@
 
 # Copyright 2006 Harri Pitkänen (hatapitk@iki.fi)
 # Program to create Finnish anagrams
-# This program requires Python version 2.4 or newer.
+# This program requires Python version 2.4 or newer and python-enchant.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,9 +21,8 @@
 
 import sys
 import locale
-import subprocess
+import enchant
 
-SPELLING_PROGRAM = ['voikkospell', '-t']
 PARAM_ENCODING = locale.getpreferredencoding()
 
 # Computes lexicographically next permutation of elements in list clist.
@@ -61,15 +60,10 @@ word = unicode(sys.argv[1], PARAM_ENCODING)
 clist = list(word)
 clist.sort()
 
-speller = subprocess.Popen(SPELLING_PROGRAM, bufsize=1,
-                         stdin=subprocess.PIPE, stdout=subprocess.PIPE, shell=False)
+dict = enchant.Dict("fi_FI")
 
 while (clist != None):
 	wrd = u''.join(clist)
-	eword = wrd.encode(PARAM_ENCODING)
-	speller.stdin.write(eword + '\n')
-	speller.stdin.flush()
-	result = speller.stdout.readline()
-	if result == 'C\n': print wrd
+	if dict.check(wrd): print wrd
 	clist = next_permutation(clist)
 
