@@ -19,22 +19,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-10-22 03:27:16 EEST
+# Time of generation: 2006-11-01 03:27:09 EET
 
-[perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=ippppippp"];
+[perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ipppp=ippp"];
 [perusmuoto: "AnotherLevel", alku: "AnotherLevel", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>, rakenne: "=ipppppp=ipppp"];
 [perusmuoto: "apache", alku: "apache", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "Apple", alku: "Apple", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
-[perusmuoto: "aspell", alku: "aspell", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "aspell", alku: "aspell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=p=ppppp"];
 [perusmuoto: "Audacity", alku: "Audacity", luokka: nimi, jatko: <valo>, äs: aä, tiedot: <atk>];
 [perusmuoto: "bash", alku: "bash", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "boost", alku: "boost", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Canon", alku: "Canon", luokka: nimi, jatko: <edam>, äs: a, tiedot: <atk>];
-[perusmuoto: "cdrecord", alku: "cdrecord", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "cdrecord", alku: "cdrecord", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=pp=pppppp"];
 [perusmuoto: "Coin", alku: "Coin", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Corell", alku: "Corell", luokka: nimi, jatko: <edam>, äs: a, tiedot: <atk>];
 [perusmuoto: "cygnus", alku: "cygnu", luokka: nimi, jatko: <vastaus>, äs: a, tiedot: <atk>];
-[perusmuoto: "dataplot", alku: "dataplot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "dataplot", alku: "dataplot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=pppp=pppp"];
 [perusmuoto: "debian", alku: "debian", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "enlightenment", alku: "enlightenment", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "enter", alku: "enter", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>];
@@ -49,15 +49,15 @@
 [perusmuoto: "ghostscript", alku: "ghostscript", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "gnome", alku: "gnome", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "GnuCash", alku: "GnuCash", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=ippippp"];
-[perusmuoto: "gnuplot", alku: "gnuplot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "gnuplot", alku: "gnuplot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=ppp=pppp"];
 [perusmuoto: "Google", alku: "Google", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "gthumb", alku: "gthumb", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "hae-painike", alku: "hae-painik", luokka: nimisana, jatko: <tarvike>, äs: a, tiedot: <atk>, rakenne: "=ppp-=ppppppp"];
 [perusmuoto: "helixplayer", alku: "helixplayer", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "hevea", alku: "heve", luokka: nimi, jatko: <karahka>, äs: a, tiedot: <atk>];
 [perusmuoto: "hotmail", alku: "hotmail", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "hunspell", alku: "hunspell", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "ispell", alku: "ispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
+[perusmuoto: "hunspell", alku: "hunspell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
+[perusmuoto: "ispell", alku: "ispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=p=ppppp"];
 [perusmuoto: "Java", alku: "Jav", luokka: nimi, jatko: <kala>, äs: a, tiedot: <atk>];
 [perusmuoto: "kcal", alku: "kcal", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "KOMA-Script", alku: "KOMA-Script", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=iiii-=ippppp"];
@@ -68,17 +68,17 @@
 [perusmuoto: "lisp", alku: "lisp", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "lyx", alku: "lyx", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "Mac", alku: "Mac", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "MacOS", alku: "MacOS", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=ippii"];
-[perusmuoto: "makeinfo", alku: "makeinfo", luokka: nimi, jatko: <valo>, äs: a, tiedot: <atk>];
+[perusmuoto: "MacOS", alku: "MacOS", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=ipp=ii"];
+[perusmuoto: "makeinfo", alku: "makeinfo", luokka: nimi, jatko: <valo>, äs: a, tiedot: <atk>, rakenne: "=pppp=pppp"];
 [perusmuoto: "Matrox", alku: "Matrox", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Microsoft", alku: "Microsoft", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "mime", alku: "mime", luokka: nimi, jatko: <nalle>, äs: ä, tiedot: <atk>];
-[perusmuoto: "modprobe", alku: "modprobe", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
+[perusmuoto: "modprobe", alku: "modprobe", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ppp=ppppp"];
 [perusmuoto: "mozilla", alku: "mozill", luokka: nimi, jatko: <apila>, äs: a, tiedot: <atk>];
 [perusmuoto: "mplayer", alku: "mplayer", luokka: nimi, jatko: <edam>, äs: aä, tiedot: <atk>];
 [perusmuoto: "ms-dos", alku: "ms-dos", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=pp-=ppp"];
 [perusmuoto: "mutt", alku: "mutt", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
+[perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ipp=ppppp"];
 [perusmuoto: "nvidia", alku: "nvidi", luokka: nimi, jatko: <karahka>, äs: a, tiedot: <atk>];
 [perusmuoto: "perl", alku: "perl", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: aä, tiedot: <atk>];
@@ -92,15 +92,15 @@
 [perusmuoto: "slashdot", alku: "slashdot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a, tiedot: <ei_voikko, atk>];
 [perusmuoto: "Solaris", alku: "Solari", luokka: nimi, jatko: <vastaus>, äs: a, tiedot: <atk>];
-[perusmuoto: "spamassassin", alku: "spamassassin", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "spamassassin", alku: "spamassassin", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "telnet", alku: "telnet", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "tetex", alku: "tetex", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "tex", alku: "tex", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
-[perusmuoto: "tmispell", alku: "tmispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
+[perusmuoto: "tmispell", alku: "tmispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
 [perusmuoto: "uagent", alku: "uagent", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "umount", alku: "umount", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "unicode", alku: "unicode", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
-[perusmuoto: "valgrind", alku: "valgrind", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>];
+[perusmuoto: "valgrind", alku: "valgrind", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
 [perusmuoto: "vokseli", alku: "voksel", luokka: nimisana, jatko: <banaali>, äs: a, tiedot: <atk>];
 [perusmuoto: "Windows", alku: "Windows", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Word", alku: "Word", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>];
