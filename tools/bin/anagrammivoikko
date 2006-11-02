@@ -114,12 +114,14 @@ for word in words:
 	while (clist != None):
 		perms = perms + 1
 		wrd = u''.join(clist)
-		if dict.check(wrd): print wrd
+		if dict.check(wrd):
+			print wrd.encode(ENCODING)
 		clist = next_permutation(clist)
 time_used = time.clock() - starttime
 
 # Show statistics
 sys.stderr.write("Number of permutations tested: " + `perms` + "\n")
 sys.stderr.write("Time used (seconds): " + `time_used`[:7] + "\n")
-sys.stderr.write("Permutations per second: " + `perms/time_used`[:7] + "\n")
+if time_used > 0:
+	sys.stderr.write("Permutations per second: " + `perms/time_used`[:7] + "\n")
 
