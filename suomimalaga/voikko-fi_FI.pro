@@ -31,7 +31,7 @@ lex: sanat/yhdyssanat.lex
 lex: sanat/erikoiset.lex
 lex: sanat/poikkeavat.lex
 lex: sanat/lainen.lex
-mor: voikko-fi_FI.mor suomi.mor suomi.inc
+mor: voikko-fi_FI.mor suomi.inc
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"
 malaga: set display-line "malshow"
