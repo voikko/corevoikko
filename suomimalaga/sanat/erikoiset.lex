@@ -51,7 +51,7 @@
 [perusmuoto: "alinomaa", alku: "alinomaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alinomaan", alku: "alinomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # OK kielitoimiston sanakirjan mukaan
 [perusmuoto: "allekkain", alku: "allekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alunperin", alku: "alunperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ammoin", alku: "ammoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -747,6 +747,7 @@
 [perusmuoto: "tohjona", alku: "tohjoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohjona", alku: "tohjona", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "toisaalla", alku: "toisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "toisaanne", alku: "toisaanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toisin", alku: "toisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

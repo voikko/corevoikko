@@ -45,7 +45,7 @@
 # combination.
 #
 # This file has been modified by the contributors of Hunspell-fi project.
-# Last change was on $Date$ by $Author$.
+# Last change was on $Date: 2006-11-01 14:42:21 +0200 (ke, 01 marras 2006) $ by $Author: hatp $.
 
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
@@ -198,6 +198,7 @@ combi_rule nimisana ($vasen, $oikea, $sana):
 	       nimisana, etuliite,
                liitesana,
                nimisanan_johdos,
+	       laatusana_nimisanan_perässä,
                nimisana_laatusanasta, nimisana_teonsanasta,
                tavuviiva,
                loppu;
@@ -245,6 +246,21 @@ combi_rule laatusana ($vasen, $oikea, $sana):
                loppu;
 end;
 
+
+combi_rule laatusana_nimisanan_perässä ($vasen, $oikea, $sana):
+  # FIXME: sääntö, joka sallii sanat "kielipoliittinen" yms. Tätä pitäisi tarkentaa.
+  ? $oikea.luokka in @laatusana;
+  ? $oikea.perusmuoto matches ".*inen";
+  ? yhdyssana_oikein ($vasen, $oikea, length($vasen));
+  # nimisana, laatusana ja etuliite jätetty pois, koska todennäköinen käyttö vähäistä
+  # (teoriassa voi olla OK)
+  result $vasen + <[alku: $sana] + $oikea>,
+         rules sijapääte, omistusliite,
+	       liitesana,
+	       laatusanan_johdos,
+	       tavuviiva,
+	       loppu;
+end;
 
 combi_rule asemosana ($vasen, $oikea, $sana):
   ? $oikea.luokka = asemosana;
