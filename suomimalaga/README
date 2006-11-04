@@ -25,10 +25,10 @@ and usage instructions for distribution packagers.
 Building Suomi-malaga for Voikko from this package does not require
 anything else than malaga and optionally make.
 No configuration is required: you only need to run
-  make (if you have make installed)
+  make voikko (if you have make installed)
 or
-  malmake suomi.pro (if you do not have make installed)
-in this directory and ship all files ending with _l or _b and suomi.pro
+  malmake voikko-fi_FI.pro (if you do not have make installed)
+in this directory and ship all files ending with _l or _b and voikko-fi_FI.pro
 with your application. With Voikko this typically means placing the files
 in /usr/lib/voikko or ~/.voikko if you do not want to touch the shared
 version.
@@ -40,7 +40,5 @@ the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
 
-Copyright (©) 2006 Hannu Väisänen and Hunspell-fi contributors.
-
-Email: Firstname.Lastname@joensuu.fi
-but replace ä's with a's.
+Copyright (©) 2006 Hannu Väisänen (Email: Firstname.Lastname@joensuu.fi
+but replace ä's with a's) and contributors listed in file CONTRIBUTORS.

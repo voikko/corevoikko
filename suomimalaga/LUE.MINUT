@@ -19,7 +19,7 @@ KÄÄNTÄMINEN
 
 Sukija-versio tiedostojen indeksointiin
 
-make
+make sukija
 
 Voikko-versio oikolukuun
 
@@ -35,7 +35,7 @@ Niistä ei kannata välittää
 
 ANALYYSI
 
-make run
+malaga voikko-fi_FI.pro
 
 Kirjoita sen jälkeen esim.
 
@@ -56,8 +56,8 @@ Analyses of "alusta":
 Lisää ohjeita on alihakemistossa ohjeet.
 
 
-Ohjelman toimintaa voi säätää kahden lipun, "malli" ja "tulostus" avulla.
-Lisätietoja on tiedostojen suomi.pro ja suomi-voikko.pro lopussa.
+Ohjelman toimintaa voi säätää erilaisten lippujen avulla.
+Lisätietoja on tiedostossa ohjeet/liput.txt.
 
 
 Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää edelleen ja
@@ -80,8 +80,6 @@ muihin moduuleihin on ohjelmaan perustuvan teoksen
 tekemistä, joka on siis GPL lisenssin ehtojen alainen.
 
 
-Tekijänoikeus © 2006 Hannu Väisänen
+Tekijänoikeus © 2006 Hannu Väisänen (sähköposti: Etunimi.Sukunimi@joensuu.fi,
+vaihda ä:t a-kirjaimiin sukunimessä) ja tiedostossa CONTRIBUTORS mainitut henkilöt.
 
-Sähköposti: Etunimi.Sukunimi@joensuu.fi
-
-Vaihda ä:t a-kirjaimiin sukunimessä.
