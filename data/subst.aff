@@ -1284,9 +1284,10 @@ end: rules
 end: class
 
 
-# Kotus 25 loimi
+# Kotus 25 loimi (1/2)
 class: subst-i4
-match-word: mi
+sm-class: niemi
+match-word: Vmi
 consonant-gradation: -
 group: t
 transform-group: e
@@ -1295,6 +1296,47 @@ nominatiivi	0	0	s	ps=f
 nominatiivi	i	e	s	ps=r
 genetiivi		i	en	s	ps=f
 partitiivi	i	ea	s
+partitiivi	mi	nta	s
+translatiivi	i	eksi	s	ps=f
+translatiivi	i	ekse	s	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	s
+elatiivi		i	esta	s
+illatiivi		i	een	s
+adessiivi		i	ella	s
+ablatiivi		i	elta	s
+allatiivi		i	elle	s
+abessiivi		i	etta	s	ps=f
+nominatiivi_mon	i	et	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	mi	nten	s
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
+
+# Kotus 25 loimi (2/2)
+class: subst-lumi
+sm-class: lumi
+match-word: Vmi
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	s	ps=f
 partitiivi	mi	nta	s
 translatiivi	i	eksi	s	ps=f
 translatiivi	i	ekse	s	ps=r
