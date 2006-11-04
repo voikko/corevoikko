@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-01 03:27:09 EET
+# Time of generation: 2006-11-04 03:27:12 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ipppp=ippp"];
 [perusmuoto: "AnotherLevel", alku: "AnotherLevel", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>, rakenne: "=ipppppp=ipppp"];
@@ -36,6 +36,8 @@
 [perusmuoto: "cygnus", alku: "cygnu", luokka: nimi, jatko: <vastaus>, äs: a, tiedot: <atk>];
 [perusmuoto: "dataplot", alku: "dataplot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=pppp=pppp"];
 [perusmuoto: "debian", alku: "debian", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "demoscene", alku: "demoscene", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <murre, atk>, rakenne: "=pppp=ppppp"];
+[perusmuoto: "demoskene", alku: "demoskene", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <murre, atk>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "enlightenment", alku: "enlightenment", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "enter", alku: "enter", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>];
 [perusmuoto: "esound", alku: "esound", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
@@ -98,8 +100,9 @@
 [perusmuoto: "tex", alku: "tex", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "tmispell", alku: "tmispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
 [perusmuoto: "uagent", alku: "uagent", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "Ubuntu", alku: "Ubuntu", luokka: nimi, jatko: <valo>, äs: a, tiedot: <atk>];
 [perusmuoto: "umount", alku: "umount", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "unicode", alku: "unicode", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
+[perusmuoto: "Unicode", alku: "Unicode", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "valgrind", alku: "valgrind", luokka: nimi, jatko: <kalsium>, äs: aä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
 [perusmuoto: "vokseli", alku: "voksel", luokka: nimisana, jatko: <banaali>, äs: a, tiedot: <atk>];
 [perusmuoto: "Windows", alku: "Windows", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
