@@ -579,6 +579,7 @@
 [perusmuoto: "pitkälti", alku: "pitkälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pizzicato", alku: "pizzicato", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: a];
+[perusmuoto: "pohjimmiltaan", alku: "pohjimmiltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "poikin", alku: "poikin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "poikittain", alku: "poikittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "poikki", alku: "poikki", luokka: seikkasana, jatko: @sana1 + <liitesana, loppu>, äs: a];
