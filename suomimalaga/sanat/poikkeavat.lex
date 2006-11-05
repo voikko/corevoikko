@@ -287,10 +287,12 @@
 [perusmuoto: "kääntää", alku: "kään", luokka: teonsana, jatko: <rakentaa>, äs: ä];
 [perusmuoto: "lahota", alku: "laho", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "laidun", alku: "lai", luokka: nimisana, jatko: <laidun>, äs: a];
+[perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a];
 [perusmuoto: "laiminlyödä", alku: "laiminl", luokka: teonsana, jatko: <juoda>, äs: ä];
 [perusmuoto: "laistaa", alku: "laist", luokka: teonsana, jatko: <haastaa>, äs: a];
 [perusmuoto: "laittaa", alku: "lait", luokka: teonsana, jatko: <laittaa>, äs: a];
 [perusmuoto: "lampi", alku: "lam", luokka: nimisana, jatko: <lampi>, äs: a];
+[perusmuoto: "Rautalampi", alku: "Rautalam", luokka: paikannimi, jatko: <lampi>, äs: a];
 [perusmuoto: "langeta", alku: "lan", luokka: teonsana, jatko: <langeta>, äs: a];
 [perusmuoto: "laota", alku: "la", luokka: teonsana, jatko: <laota>, äs: a];
 [perusmuoto: "lappaa", alku: "lap", luokka: teonsana, jatko: <lappaa>, äs: a];

@@ -6407,7 +6407,7 @@ subrule yksikkö_meri ($e, $i):
           voittoaste:      $e,
           johdin_tOn:      $e,
           johdin_llinen:   $e,
-          johdin_inen:     $i]
+          johdin_inen:     ""]
          + yhdyssana ($i);
 end;
 
