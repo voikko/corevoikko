@@ -1244,7 +1244,7 @@ end: class
 
 # Kotus 24, 26 huuli
 class: subst-i3b
-sm-class: tuohi
+sm-class: huuli
 match-word: Ci
 consonant-gradation: -
 group: t
