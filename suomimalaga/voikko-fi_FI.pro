@@ -6,12 +6,14 @@ info: Language-Variant: standard
 info: Description: Default morphology for Voikko
 info: Copyright: 2006 Hannu Väisänen, Harri Pitkänen, Teemu Likonen
 info: License: GPL version 2 or later
+info: Update-URI: http://joukahainen.lokalisointi.org/update/index-1
 ## End-Malaga-Configuration
 
 ## Begin-User-Configuration
 lex: voikko-fi_FI.lex suomi.lex
 lex: sanat/joukahainen.lex
 lex: sanat/erikoisalat/atk.lex
+lex: #sanat/erikoisalat/laaketiede.lex
 mallex: set switch vanhahkot_muodot yes
 mallex: set switch vanhat_muodot no
 ## End-User-Configuration
