@@ -7,6 +7,7 @@ info: Description: Default morphology for Voikko
 info: Copyright: 2006 Hannu Väisänen, Harri Pitkänen, Teemu Likonen
 info: License: GPL version 2 or later
 info: Update-URI: http://joukahainen.lokalisointi.org/update/index-1
+info: Lex-Version: 1
 ## End-Malaga-Configuration
 
 ## Begin-User-Configuration

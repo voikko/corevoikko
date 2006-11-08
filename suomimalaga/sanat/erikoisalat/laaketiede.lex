@@ -1,9 +1,10 @@
 # This file is generated for use in Suomi-malaga by
 # vocabulary management application Joukahainen.
 # This data is based on Suomi-malaga 0.7 by Hannu Väisänen, and includes
-# modifications from Harri Pitkänen, Teemu Likonen and others. For information
-# about authors of the program and the data see the application introduction
-# page at http://joukahainen.lokalisointi.org
+# modifications from people listed in file CONTRIBUTORS of current Suomi-malaga
+# Voikko edition Subversion repository (or, if you have received this file as a
+# part of Suomi-malaga, the file is located at the root directory of the source
+# package). For more information, see http://joukahainen.lokalisointi.org
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-04 03:27:12 EET
+# Time of generation: 2006-11-08 03:27:59 EET
 
 [perusmuoto: "adrenokortikotrooppinen", alku: "adrenokortikotrooppi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adrenokortikotropiini", alku: "adrenokortikotropiin", luokka: nimisana, jatko: <risti>, äs: a];
