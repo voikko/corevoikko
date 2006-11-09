@@ -1,4 +1,4 @@
-SM=suomi-malaga-0.7.2
+SM=suomi-malaga-0.7.3
 
 .PHONY: all voikko sukija kehitys run clean dist tar
 
