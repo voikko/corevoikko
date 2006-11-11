@@ -45,7 +45,7 @@
 # combination.
 #
 # This file has been modified by the contributors of Hunspell-fi project.
-# Last change was on $Date: 2006-11-01 14:42:21 +0200 (ke, 01 marras 2006) $ by $Author: hatp $.
+# Last change was on $Date$ by $Author$.
 
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
@@ -273,8 +273,10 @@ end;
 combi_rule lyhennesääntö ($vasen, $oikea, $sana):
   ? $oikea.luokka = lyhenne;
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules kaksoispiste, tavuviiva, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if (kaksoispiste in $oikea.jatko) then result $res, rules kaksoispiste; end;
+  if (tavuviiva in $oikea.jatko) then result $res, rules tavuviiva; end;
+  if (loppu in $oikea.jatko) then result $res, rules loppu; end;
 end;
 
 
