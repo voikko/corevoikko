@@ -50,10 +50,12 @@ AC_SUBST(DICTIONARY_PATH)
 
 
 dnl Checks for libraries
-#AC_CHECK_LIB(malaga, init_libmalaga, ,[AC_MSG_ERROR([libmalaga not found])])
+AC_CHECK_LIB(malaga, init_libmalaga, ,[AC_MSG_ERROR([libmalaga not found])])
+AC_CHECK_LIB(msvcp60, mbrlen)
 
 dnl Checks for headers
 AC_CHECK_HEADERS([stddef.h])
+AC_CHECK_HEADERS([stdlib.h])
 AC_CHECK_HEADERS([langinfo.h])
 AC_CHECK_HEADERS([locale.h])
 AC_CHECK_HEADERS([wctype.h])

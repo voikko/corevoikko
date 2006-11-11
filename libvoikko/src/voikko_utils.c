@@ -39,7 +39,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	if (strcmp(encoding, "UTF-8") == 0) cd = voikko_options.iconv_utf8_ucs4;
 	else if (strcmp(encoding, voikko_options.encoding) == 0) cd = voikko_options.iconv_ext_ucs4;
 	else {
-		cd = iconv_open("WCHAR_T", encoding);
+		cd = iconv_open(INTERNAL_CHARSET, encoding);
 		if (cd == (iconv_t) -1) {
 			free(ucs4_buffer);
 			return 0;
@@ -87,7 +87,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	if (strcmp(encoding, "UTF-8") == 0) cd = voikko_options.iconv_ucs4_utf8;
 	else if (strcmp(encoding, voikko_options.encoding) == 0) cd = voikko_options.iconv_ucs4_ext;
 	else {
-		cd = iconv_open(encoding, "WCHAR_T");
+		cd = iconv_open(encoding, INTERNAL_CHARSET);
 		if (cd == (iconv_t) -1) {
 			free(utf8_buffer);
 			return 0;

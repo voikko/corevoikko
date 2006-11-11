@@ -1,3 +1,10 @@
+2006-11-11 Harri Pitkänen  <hatapitk@iki.fi>
+
+	* Use iconv charset "UCS-2-INTERNAL" instead of "WCHAR_T" on Windows,
+	  because not every version of libiconv supports WCHAR_T.
+	* Fixes to configure.ac and src/Makefile.am to better support linking
+	  against shared libraries on Windows.
+
 2006-10-27 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Implement version checking for malaga project files.

@@ -78,11 +78,11 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 	switch (option) {
 		case VOIKKO_OPT_ENCODING:
 			if (!value) return 0;
-			iconv_t toext = iconv_open(value, "WCHAR_T");
+			iconv_t toext = iconv_open(value, INTERNAL_CHARSET);
 			if (toext == (iconv_t) -1) {
 				return 0;
 			}
-			iconv_t fromext = iconv_open("WCHAR_T", value);
+			iconv_t fromext = iconv_open(INTERNAL_CHARSET, value);
 			if (fromext == (iconv_t) -1) {
 				iconv_close(toext);
 				return 0;
@@ -125,31 +125,31 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 		return "Unsupported language";
 	}
 	/* Initialise converters */
-	voikko_options.iconv_ucs4_utf8 = iconv_open("UTF-8", "WCHAR_T");
+	voikko_options.iconv_ucs4_utf8 = iconv_open("UTF-8", INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_utf8 == (iconv_t) -1) {
 		free(project);
-		return "iconv_open(\"UTF-8\", \"WCHAR_T\") failed";
+		return "iconv_open(\"UTF-8\", \"" INTERNAL_CHARSET "\") failed";
 	}
-	voikko_options.iconv_utf8_ucs4 = iconv_open("WCHAR_T", "UTF-8");
+	voikko_options.iconv_utf8_ucs4 = iconv_open(INTERNAL_CHARSET, "UTF-8");
 	if (voikko_options.iconv_utf8_ucs4 == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		free(project);
-		return "iconv_open(\"WCHAR_T\", \"UTF-8\") failed";
+		return "iconv_open(\"" INTERNAL_CHARSET "\", \"UTF-8\") failed";
 	}
-	voikko_options.iconv_ucs4_ext = iconv_open(voikko_options.encoding, "WCHAR_T");
+	voikko_options.iconv_ucs4_ext = iconv_open(voikko_options.encoding, INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_ext == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		free(project);
-		return "iconv_open(voikko_options.encoding, \"WCHAR_T\") failed";
+		return "iconv_open(voikko_options.encoding, \"" INTERNAL_CHARSET "\") failed";
 	}
-	voikko_options.iconv_ext_ucs4 = iconv_open("WCHAR_T", voikko_options.encoding);
+	voikko_options.iconv_ext_ucs4 = iconv_open(INTERNAL_CHARSET, voikko_options.encoding);
 	if (voikko_options.iconv_ext_ucs4 == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_ucs4_ext);
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		free(project);
-		return "iconv_open(\"WCHAR_T\", voikko_options.encoding) failed";
+		return "iconv_open(\"" INTERNAL_CHARSET "\", voikko_options.encoding) failed";
 	}
 	
 	const char * malaga_init_error = voikko_init_malaga(project);
