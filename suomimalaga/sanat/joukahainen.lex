@@ -16288,7 +16288,7 @@
 [perusmuoto: "remseä", alku: "rems", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "remu", alku: "remu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "remuta", alku: "remu", luokka: teonsana, jatko: <haluta>, äs: a];
-[perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <kalsium>, äs: a];
+#[perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "renessanssi", alku: "renessanss", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "rengas", alku: "ren", luokka: nimisana, jatko: <kangas>, äs: a];
 [perusmuoto: "rengastaa", alku: "rengast", luokka: teonsana, jatko: <aavistaa>, äs: a];

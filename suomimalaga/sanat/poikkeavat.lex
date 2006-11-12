@@ -452,6 +452,7 @@
 [perusmuoto: "raueta", alku: "rau", luokka: teonsana, jatko: <poiketa>, äs: a];
 [perusmuoto: "reilassa", alku: "reilaan", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "reilassa", alku: "reilassa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a];
 [perusmuoto: "revetä", alku: "re", luokka: teonsana, jatko: <ruveta>, äs: ä];
 [perusmuoto: "riiata", alku: "rii", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "rikkumaton", alku: "rikkuma", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
