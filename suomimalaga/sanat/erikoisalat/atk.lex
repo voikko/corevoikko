@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-08 03:27:58 EET
+# Time of generation: 2006-11-12 03:27:03 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ipppp=ippp"];
 [perusmuoto: "AnotherLevel", alku: "AnotherLevel", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>, rakenne: "=ipppppp=ipppp"];
@@ -42,6 +42,7 @@
 [perusmuoto: "enlightenment", alku: "enlightenment", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "enter", alku: "enter", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>];
 [perusmuoto: "esound", alku: "esound", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "Fedora", alku: "Fedor", luokka: nimi, jatko: <apila>, äs: a, tiedot: <atk>];
 [perusmuoto: "fennic", alku: "fennic", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "firefox", alku: "firefox", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "flex", alku: "flex", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
@@ -92,14 +93,14 @@
 [perusmuoto: "sfnet", alku: "sfnet", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "simvoleon", alku: "simvoleon", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "slashdot", alku: "slashdot", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
-[perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a, tiedot: <ei_voikko, atk>];
+[perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a, tiedot: <atk>];
 [perusmuoto: "Solaris", alku: "Solari", luokka: nimi, jatko: <vastaus>, äs: a, tiedot: <atk>];
 [perusmuoto: "spamassassin", alku: "spamassassin", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "telnet", alku: "telnet", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "tetex", alku: "tetex", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "tex", alku: "tex", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "tmispell", alku: "tmispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
-[perusmuoto: "uagent", alku: "uagent", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "uagent", alku: "uagent", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>, rakenne: "=p=ppppp"];
 [perusmuoto: "Ubuntu", alku: "Ubuntu", luokka: nimi, jatko: <valo>, äs: a, tiedot: <atk>];
 [perusmuoto: "umount", alku: "umount", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Unicode", alku: "Unicode", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>];
