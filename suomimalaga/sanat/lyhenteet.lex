@@ -103,6 +103,8 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "e", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "ed.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # edellinen; edellä; edustaja
 #[alku: "EEC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
+[alku: "EEST", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Eastern European Summer Time
+[alku: "EET", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Eastern European Time
 [alku: "EK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # eduskunta
 #[alku: "EKG", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "eKr.", luokka: lyhenne, jatko: <loppu>, äs: aä, rakenne: "=qjqq"]; # ennen Kristuksen syntymää
@@ -352,6 +354,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "umts", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # Universal Mobile Telecommunication System
 [alku: "USA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # United States of America
 [alku: "USB", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
+[alku: "UTC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Universal Coordinated Time
 [alku: "UTF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <atk>, rakenne: "=jjj"];
 [alku: "v", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 #[alku: "v3", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
