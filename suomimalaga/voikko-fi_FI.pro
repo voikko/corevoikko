@@ -13,7 +13,10 @@ info: Lex-Version: 1
 ## Begin-User-Configuration
 lex: voikko-fi_FI.lex suomi.lex
 lex: sanat/joukahainen.lex
-lex: sanat/erikoisalat/atk.lex
+lex: #sanat/erikoisalat/atk.lex
+lex: #sanat/erikoisalat/atk-lyhenteet.lex
+lex: #sanat/erikoisalat/kasvatustiede.lex
+lex: #sanat/erikoisalat/kasvatustiede-lyhenteet.lex
 lex: #sanat/erikoisalat/laaketiede.lex
 mallex: set switch vanhahkot_muodot yes
 mallex: set switch vanhat_muodot no
