@@ -1,7 +1,7 @@
 # Kotus 1 talo
 class: subst-p
 sm-class: valo
-match-word: C(?:O|U)
+match-word: (?:O|U)
 consonant-gradation: sw
 group: t
 transform-group: e
