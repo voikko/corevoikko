@@ -20,10 +20,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-08 03:27:59 EET
+# Time of generation: 2006-11-14 03:27:06 EET
 
 [perusmuoto: "adrenokortikotrooppinen", alku: "adrenokortikotrooppi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adrenokortikotropiini", alku: "adrenokortikotropiin", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "deleetio", alku: "deleetio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "Down", alku: "Down", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "eksoni", alku: "ekson", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "erytropoietiini", alku: "erytropoietiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "katekolamiini", alku: "katekolamiin", luokka: nimisana, jatko: <risti>, äs: a];
@@ -31,10 +33,14 @@
 [perusmuoto: "lasko", alku: "lasko", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "noradrenaliini", alku: "noradrenaliin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "nukleotidi", alku: "nukleotid", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "perinataali", alku: "perinataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
+[perusmuoto: "postnataali", alku: "postnataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
+[perusmuoto: "prenataali", alku: "prenataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "prolaktiini", alku: "prolaktiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "psykosomatiikka", alku: "psykosomatiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "ribonukleiinihappo", alku: "ribonukleiinihap", luokka: nimisana, jatko: <kippo>, äs: a, rakenne: "=ppppppppppppp=ppppp"];
 [perusmuoto: "somatisaatio", alku: "somatisaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "sytokiini", alku: "sytokiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "trisomia", alku: "trisomi", luokka: nimisana, jatko: <apila>, äs: a];
+[perusmuoto: "Wolf-Hirschhorn", alku: "Wolf-Hirschhorn", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ippp-=ippppppppp"];
 
