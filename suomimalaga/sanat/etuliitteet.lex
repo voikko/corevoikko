@@ -36,6 +36,9 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 # define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
 # define @sana2 := @sana1 + <teonsana>;
 
+# Etuliite + nimisana
+
+[perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
 
 # Etuliite + nimisana/laatusana
 
