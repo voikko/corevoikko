@@ -342,12 +342,13 @@ end;
 combi_rule sijapääte ($vasen, $oikea, $sana):
   ? $oikea.luokka = sijapääte;
 
-  define $edellinen := $vasen.length ($vasen);
+  define $edellinen := $vasen.length($vasen);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($edellinen.luokka = kaksoispiste) then
     ? $oikea.sija /= keinonto_n;
     ? ($edellinen.äs = aä) or ($oikea.äs = aä) or ($edellinen.äs = $oikea.äs);
-    result $vasen + <[alku: $sana] + $oikea>,
+    result $res,
            rules omistusliite, liitesana, loppu;
   else
     ? $oikea.sija in $edellinen.jatko;
@@ -359,12 +360,15 @@ combi_rule sijapääte ($vasen, $oikea, $sana):
 
     if ($oikea.sija = kerronto_sti) then
       ? $edellinen.luokka in @sti_edeltäjä;
-      result $vasen + <[alku: $sana] + $oikea>,
+      result $res,
              rules liitesana, loppu;
     else
-      result $vasen + <[alku: $sana] + $oikea>,
-             rules nimisana, laatusana, teonsana,
-                   tavuviiva, omistusliite, liitesana, loppu;
+      result $res,
+             rules omistusliite, liitesana, loppu;
+      if ($edellinen.tiedot = nil or not (ei_ysa in $edellinen.tiedot)) then
+        result $res,
+               rules nimisana, laatusana, teonsana, tavuviiva;
+      end;
     end;
   end;
 end;
