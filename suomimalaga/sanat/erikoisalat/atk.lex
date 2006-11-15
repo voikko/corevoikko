@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-14 03:27:05 EET
+# Time of generation: 2006-11-15 03:27:09 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ipppp=ippp"];
 [perusmuoto: "AnotherLevel", alku: "AnotherLevel", luokka: nimi, jatko: <edam>, äs: ä, tiedot: <atk>, rakenne: "=ipppppp=ipppp"];
@@ -61,6 +61,7 @@
 [perusmuoto: "hevea", alku: "heve", luokka: nimi, jatko: <karahka>, äs: a, tiedot: <atk>];
 [perusmuoto: "hotmail", alku: "hotmail", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "hunspell", alku: "hunspell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=ppp=ppppp"];
+[perusmuoto: "input", alku: "input", luokka: nimisana, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "ispell", alku: "ispell", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=p=ppppp"];
 [perusmuoto: "Java", alku: "Jav", luokka: nimi, jatko: <kala>, äs: a, tiedot: <atk>];
 [perusmuoto: "kcal", alku: "kcal", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
@@ -80,7 +81,6 @@
 [perusmuoto: "mplayer", alku: "mplayer", luokka: nimi, jatko: <edam>, äs: aä, tiedot: <atk>];
 [perusmuoto: "mutt", alku: "mutt", luokka: nimi, jatko: <kalsium>, äs: a, tiedot: <atk>];
 [perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ipp=ppppp"];
-[perusmuoto: "nvidia", alku: "nvidi", luokka: nimi, jatko: <karahka>, äs: a, tiedot: <atk>];
 [perusmuoto: "perl", alku: "perl", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>];
 [perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: aä, tiedot: <atk>];
 [perusmuoto: "postscript", alku: "postscript", luokka: nimi, jatko: <kalsium>, äs: ä, tiedot: <atk>, rakenne: "=pppp=pppppp"];

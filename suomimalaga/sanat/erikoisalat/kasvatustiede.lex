@@ -20,12 +20,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-14 03:27:05 EET
+# Time of generation: 2006-11-15 03:27:09 EET
 
 [perusmuoto: "andragogiikka", alku: "andragogiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "Asperger", alku: "Asperger", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "attribuoida", alku: "attribuo", luokka: teonsana, jatko: <voida>, äs: a, rakenne: "=pp=ppppppppp"];
 [perusmuoto: "attribuutio", alku: "attribuutio", luokka: nimisana, jatko: <autio>, äs: a, rakenne: "=pp=ppppppppp"];
+[perusmuoto: "coping", alku: "coping", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "defenssi", alku: "defenss", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "deleetio", alku: "deleetio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "Down", alku: "Down", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -34,6 +35,7 @@
 [perusmuoto: "dyspraksia", alku: "dyspraksi", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=ppp=ppppppp"];
 [perusmuoto: "edutainment", alku: "edutainment", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "emansipatorinen", alku: "emansipatori", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "fallinen", alku: "falli", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "HOJKS", alku: "HOJKS", luokka: nimisana, jatko: <kalsium>, äs: a, tiedot: <ei_ys>, rakenne: "=iiiii"];
 [perusmuoto: "konstruktionismi", alku: "konstruktionism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "konstruktionisti", alku: "konstruktionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
