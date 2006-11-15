@@ -508,7 +508,7 @@ define @jatko_mm := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
 [alku: "ppas",      luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <murre>];
 [alku: "ppäs",      luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <murre>];
 
-[alku: "s",         luokka: liitesana_s, äs: aä, jatko: <loppu>];
+[alku: "s",         luokka: liitesana_s, äs: aä, jatko: <loppu>, tiedot: <murre>];
 
 
 
