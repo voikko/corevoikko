@@ -413,7 +413,7 @@
 [perusmuoto: "pinota", alku: "pino", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "piparjuuri", alku: "piparjuur", luokka: nimisana, jatko: <nuori>, äs: a];
 [perusmuoto: "pisin", alku: "pis", luokka: laatusana, jatko: <pahin>, äs: ä];
-[perusmuoto: "pitkä", alku: "pi", luokka: laatusana, jatko: <pitkä>, äs: ä];
+[perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä];
 [perusmuoto: "poika", alku: "po", luokka: nimisana, jatko: <poika>, äs: a];
 [perusmuoto: "poiketa", alku: "poik", luokka: teonsana, jatko: <poiketa>, äs: a];

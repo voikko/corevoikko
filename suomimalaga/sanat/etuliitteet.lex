@@ -177,6 +177,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "vapaa", alku: "vapaa", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "vapaaehtois", alku: "vapaaehtois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "vastaan", alku: "vastaan", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "vierekkäis", alku: "vierekkäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "viher", alku: "viher", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
