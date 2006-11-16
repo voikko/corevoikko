@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-15 03:26:02 EET
+# Time of generation: 2006-11-16 03:26:02 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -3573,7 +3573,7 @@
 [perusmuoto: "hede", alku: "he", luokka: nimisana, jatko: <sade>, äs: ä];
 [perusmuoto: "hedelmä", alku: "hedelm", luokka: nimisana, jatko: <asema>, äs: ä, tiedot: <inen>];
 [perusmuoto: "hedelmöidä", alku: "hedelmö", luokka: teonsana, jatko: <haravoida>, äs: ä];
-[perusmuoto: "hedelmöittyminen", alku: "hedelmöittymi", luokka: nimisana, jatko: <nainen>, äs: ä];
+[perusmuoto: "hedelmöittyä", alku: "hedelmöit", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "hedelmöittää", alku: "hedelmöit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hedelmöitys", alku: "hedelmöity", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "hedelmöityä", alku: "hedelmöi", luokka: teonsana, jatko: <kaatua>, äs: ä];
@@ -7396,6 +7396,7 @@
 [perusmuoto: "kiilua", alku: "kiilu", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "kiima", alku: "kiim", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "Kiiminki", alku: "Kiimin", luokka: paikannimi, jatko: <killinki>, äs: ä];
+[perusmuoto: "kiina", alku: "kiin", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Kiina", alku: "Kiin", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "kiinne", alku: "kiin", luokka: nimisana, jatko: <enne>, äs: ä];
 [perusmuoto: "kiinnike", alku: "kiinnik", luokka: nimisana, jatko: <tarvike>, äs: ä];
@@ -8703,7 +8704,6 @@
 [perusmuoto: "kumulatiivinen", alku: "kumulatiivi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kumuloida", alku: "kumulo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "kundi", alku: "kund", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "kung-fu", alku: "kung-fu", luokka: nimisana, jatko: <valo>, äs: a, rakenne: "=pppp-=pp"];
 [perusmuoto: "kuningas", alku: "kunin", luokka: nimisana, jatko: <kangas>, äs: a];
 [perusmuoto: "kuninkuus", alku: "kuninkuu", luokka: nimisana, jatko: <kalleus>, äs: a];
 [perusmuoto: "kunnari", alku: "kunnar", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -18632,7 +18632,7 @@
 [perusmuoto: "Sprengtporten", alku: "Sprengtporten", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "sprii", alku: "spri", luokka: nimisana, jatko: <pii>, äs: ä];
 [perusmuoto: "Springer", alku: "Springer", luokka: sukunimi, jatko: <edam>, äs: ä];
-[perusmuoto: "sprinkleri", alku: "sprinkler", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "sprinkleri", alku: "sprinkler", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "sprintteri", alku: "sprintter", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "Sprite", alku: "Sprite", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "spurtata", alku: "spurt", luokka: teonsana, jatko: <kuitata>, äs: a];
@@ -22010,9 +22010,8 @@
 [perusmuoto: "Vepsäläinen", alku: "Vepsäläi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Vera", alku: "Ver", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "veranta", alku: "veran", luokka: nimisana, jatko: <kanta>, äs: a];
-[perusmuoto: "verbaali", alku: "verbaal", luokka: laatusana, jatko: <banaali>, äs: a];
-[perusmuoto: "nonverbaalinen", alku: "nonverbaali", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppp"];
-[perusmuoto: "verbaalinen", alku: "verbaali", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "nonverbaali", alku: "nonverbaal", luokka: laatusana, jatko: <banaali>, äs: a, tiedot: <inen>, rakenne: "=ppp=pppppppp"];
+[perusmuoto: "verbaali", alku: "verbaal", luokka: laatusana, jatko: <banaali>, äs: a, tiedot: <inen>];
 [perusmuoto: "verbalisoida", alku: "verbaliso", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "verbi", alku: "verb", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "Verdun", alku: "Verdun", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -22049,6 +22048,7 @@
 [perusmuoto: "verrytellä", alku: "verryt", luokka: teonsana, jatko: <aatella>, äs: ä];
 [perusmuoto: "versaali", alku: "versaal", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "versio", alku: "versio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "versioida", alku: "versio", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "verso", alku: "verso", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "versoa", alku: "verso", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "verstas", alku: "versta", luokka: nimisana, jatko: <vieras>, äs: a];
@@ -23047,7 +23047,8 @@
 [perusmuoto: "zeppeliini", alku: "zeppeliin", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "Zeus", alku: "Zeu", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Zimbabwe", alku: "Zimbabwe", luokka: paikannimi, jatko: <nalle>, äs: a];
-[perusmuoto: "zirkoni", alku: "zirkon", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "sirkoni", alku: "sirkon", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "zirkoni", alku: "zirkon", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "Zitting", alku: "Zitting", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "zloty", alku: "zloty", luokka: nimisana, jatko: <valo>, äs: aä];
 [perusmuoto: "zombi", alku: "zomb", luokka: nimisana, jatko: <risti>, äs: a];
