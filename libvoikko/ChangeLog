@@ -1,3 +1,9 @@
+2006-11-16 Harri Pitkänen <hatapitk@iki.fi>
+
+        * Support parallel installations of Automake versions
+          1.9 and 1.10. Both seem to work, but default will still
+          be 1.9.
+
 2006-11-11 Harri Pitkänen  <hatapitk@iki.fi>
 
 	* Use iconv charset "UCS-2-INTERNAL" instead of "WCHAR_T" on Windows,
