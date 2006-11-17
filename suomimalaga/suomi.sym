@@ -125,7 +125,7 @@ luku;
   monikko;
 
 
-luokka;
+luokka; alaluokka;
   laatusana;
   seikkasana;
   huudahdussana;
@@ -140,6 +140,20 @@ luokka;
   teonsana;
     kieltosana;
   lukusana;
+    # Alaluokat
+    perusluku;
+    järjestysluku;
+    sisäkerroin;
+    toista;
+    nolla;
+    yksiyhdeksän;
+    kymmenen;
+    sata;
+    tuhat;
+    miljoona;
+    miljardi;
+    biljoona;
+    triljoona;
   asemosana;
   sijapääte;
   omistusliite;

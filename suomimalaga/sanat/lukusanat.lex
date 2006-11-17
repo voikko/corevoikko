@@ -106,7 +106,7 @@
 [perusmuoto: "sadas", alku: "sada", luokka: lukusana, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "miljoonas", alku: "miljoona", luokka: lukusana, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "milardis", alku: "miljardi", luokka: lukusana, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, jatko: <kahdeksas>, äs: a];
 
 
 [perusmuoto: "parisen", alku: "parisen", luokka: lukusana, jatko: <loppu>, äs: a];
