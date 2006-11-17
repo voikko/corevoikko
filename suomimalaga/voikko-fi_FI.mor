@@ -55,20 +55,6 @@ include "suomi.inc";
 include "subrule.inc";
 
 
-#combi_rule lukusana ($vasen, $oikea, $sana):
-#  ? $oikea.luokka in @lukusana;
-#
-#  define $i := length ($vasen);
-#  if ($i greater 0) then
-#    ? ($oikea.luokka in $vasen.$i.jatko);
-#  end;
-#
-#  result $vasen + <[alku: $sana] + $oikea>,
-#         rules lukusana, nimisana, laatusana, teonsana,
-#               omistusliite, liitesana, loppu;
-#end;
-
-
 define @ehtotapa := <ehtotapa, ehtotapa_ttA, ehtotapa_tA>;
 
 define @mahtotapa := <mahtotapa_le, mahtotapa_ne, mahtotapa_re, mahtotapa_se,
@@ -182,7 +168,7 @@ combi_rule nimisana ($vasen, $oikea, $sana):
   if ($i greater 0) then
     ? (($oikea.luokka in $vasen.$i.jatko) or
        ((nimisana in $vasen.$i.jatko) and
-        ($oikea.luokka in @nimisana + @lukusana)));
+        ($oikea.luokka in @nimisana + <lukusana>)));
 
     ? yhdyssana_oikein ($vasen, $oikea, $i);
 
@@ -310,11 +296,12 @@ end;
 
 
 define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
+                         lukusana,
                          johdin_nUt,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
                          johdin_vA, johdin_vAinen, johdin_vE>
                         + @johtimet_laatusana_nimisanasta
-                        + @lukusana + @laatutapa_1 + @laatutapa_2;
+                        + @laatutapa_1 + @laatutapa_2;
 
 combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana):
   ? $oikea.luokka = sijapääte;
@@ -1286,13 +1273,7 @@ subrule perusmuoto ($tietue):
     $luokka := $tietue.$k.luokka;
 
     if ($on_yhdyssana) then
-#      if ($tietue.$k.luokka in @lukusana) then
-#        $t :=+ <"F]">;
-#        $t :=+ <$tietue.$k.perusmuoto>;
-#        $t :=+ <"[F">;
-#      else
         $t :=+ <$tietue.$k.alku>;
-#      end;
     elseif ($tietue.$k.luokka = etuliite) then
       $t :=+ <$tietue.$k.alku>;
     elseif ($edellinen_luokka in @johdin + <nimitapa_4>) then
@@ -1315,7 +1296,7 @@ subrule perusmuoto ($tietue):
     $edellinen_luokka := $luokka;
     if ($tietue.$k.luokka in @nimisana
                              + <seikkasana, laatusana,
-                                teonsana> + @lukusana) then
+                                teonsana, lukusana>) then
       $on_yhdyssana := yes;
     end;
     if ($tietue.$k.luokka in <johdin_Us, johdin_UUs>) then
@@ -1350,7 +1331,7 @@ subrule tulostus_voikko ($tietue):
     if $t.rakenne /= nil then
       $tuloste :=+ $t.rakenne;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
-                         nimi_laatusana, lukusana, lukusana1, lukusana2, lukusana3, asemosana,
+                         nimi_laatusana, lukusana, asemosana,
                          etuliite> then
       $tuloste :=+ "=";
       foreach $i in length($t.alku):
@@ -1429,7 +1410,7 @@ subrule perusmuoto_yhdyssanan_rajoineen ($tietue):
     $edellinen_luokka := $luokka;
     if ($tietue.$k.luokka in @nimisana
                              + <seikkasana, laatusana,
-                                teonsana> + @lukusana) then
+                                teonsana, lukusana>) then
       $on_yhdyssana := yes;
     end;
     if ($tietue.$k.luokka in <johdin_Us, johdin_UUs>) then
@@ -1521,7 +1502,7 @@ define $aa := transmit ($tietue);
     $edellinen_luokka := $luokka;
     if ($tietue.$k.luokka in @nimisana
                              + <seikkasana, laatusana,
-                                teonsana> + @lukusana) then
+                                teonsana, lukusana>) then
       $on_yhdyssana := yes;
     end;
     if ($tietue.$k.luokka in <johdin_Us, johdin_UUs>) then
