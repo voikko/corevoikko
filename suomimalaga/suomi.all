@@ -1125,6 +1125,7 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_Vn, "me", "mi") +
                                 [johdin_tOn:    "me",
                                  johdin_llinen: "me",
+				 johdin_lAinen: "me",
                                  johdin_mAinen: "mi",
                                  johdin_inen:   "m"] +
                                 monikko7 ("me", "m", "m",
@@ -4640,6 +4641,7 @@ subrule kumpi ($tietue, $vahva_aste, $heikko_aste, $ääntiö):
                                   $heikko_aste + $ääntiö, $vahva_aste  + "i") +
                         [johdin_tOn:      $heikko_aste + $ääntiö,
                          johdin_llinen:   $heikko_aste + $ääntiö,
+			 johdin_lAinen:   $vahva_aste + "e",
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($heikko_aste + $ääntiö,
                                   $vahva_aste, $heikko_aste,

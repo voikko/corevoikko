@@ -237,7 +237,11 @@ combi_rule laatusana_nimisanan_perässä ($vasen, $oikea, $sana):
   # FIXME: sääntö, joka sallii sanat "kielipoliittinen" yms. Tätä pitäisi tarkentaa.
   ? $oikea.luokka in @laatusana;
   ? $oikea.perusmuoto matches ".*inen";
-  ? yhdyssana_oikein ($vasen, $oikea, length($vasen));
+
+  define $len := length($vasen);
+  ? nimisana in $vasen.$len.jatko; # FIXME: tällä tarkoitetaan, että $vasen on kompositiivimuoto
+  ? yhdyssana_oikein ($vasen, $oikea, $len);
+
   # nimisana, laatusana ja etuliite jätetty pois, koska todennäköinen käyttö vähäistä
   # (teoriassa voi olla OK)
   result $vasen + <[alku: $sana] + $oikea>,
@@ -360,6 +364,31 @@ combi_rule sijapääte ($vasen, $oikea, $sana):
   end;
 end;
 
+
+###### LUKUSANASÄÄNNÖT ALKAVAT
+
+combi_rule lukusana_perusluku ($vasen, $oikea, $sana):
+  ? $oikea.luokka = lukusana;
+  ? perusluku in $oikea.alaluokka;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (yksiyhdeksän in $oikea.alaluokka) then
+    if (nimentö in $oikea.jatko) then
+      result $res, rules lukusana_sisäkerroin, loppu;
+    end;
+  end;
+
+end;
+
+combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana):
+  ? $oikea.luokka = lukusana;
+  ? sisäkerroin in $oikea.alaluokka;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+end;
+
+
+###### LUKUSANASÄÄNNÖT PÄÄTTYVÄT
 
 combi_rule teonsana ($vasen, $oikea, $sana):
   ? $oikea.luokka = teonsana;
