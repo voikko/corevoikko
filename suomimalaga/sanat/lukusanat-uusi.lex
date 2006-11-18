@@ -50,14 +50,14 @@
 [perusmuoto: "kolme", alku: "kolm", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <kolme>, äs: a];
 [perusmuoto: "neljä", alku: "nelj", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <koira>, äs: ä];
 [perusmuoto: "viisi", alku: "vii", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <susi>, äs: ä];
-[perusmuoto: "kuusi", alku: "kuu", luokka: lukusana, jatko: alaluokka: <perusluku, yksiyhdeksän>, <susi>, äs: a];
+[perusmuoto: "kuusi", alku: "kuu", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <susi>, äs: a];
 [perusmuoto: "seitsemän", alku: "seitsem", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <seitsemän>, äs: ä];
 [perusmuoto: "kahdeksan", alku: "kahdeks", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <seitsemän>, äs: a];
 [perusmuoto: "yhdeksän", alku: "yhdeks", luokka: lukusana, alaluokka: <perusluku, yksiyhdeksän>, jatko: <seitsemän>, äs: ä];
-[perusmuoto: "kymmenen", alku: "kymmen", luokka: lukusana, alaluokka: <perusluku, kymmenen>, jatko: <kymmenen>, äs: ä];
+[perusmuoto: "kymmenen", alku: "kymmen", luokka: lukusana, alaluokka: <perusluku, sisäkerroin, kymmenen>, jatko: <kymmenen>, äs: ä];
 
 # Yksitoista, ..., yhdeksäntoista.
-#[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: <sisäkerroin, toista>, äs: a];
+[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: <toista>, jatko: <loppu>, äs: a];
 
 #[perusmuoto: "puolitoista", alku: "puolitoista", luokka: lukusana, jatko: <liitesana, loppu>, äs: a];
 #[perusmuoto: "puolitoista", alku: "puolentoista", luokka: lukusana, jatko: <liitesana, loppu>, äs: a];

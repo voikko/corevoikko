@@ -31,7 +31,6 @@ lex: sanat/etuliitteet.lex
 lex: sanat/lukusanat.lex
 lex: sanat/lyhenteet.lex
 lex: sanat/olla-ei.lex
-lex: sanat/11-19.lex
 lex: sanat/omat.lex
 lex: sanat/yhdyssanat.lex
 lex: sanat/erikoiset.lex

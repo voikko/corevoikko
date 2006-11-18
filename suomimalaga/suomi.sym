@@ -47,9 +47,27 @@
 # This file has been modified by the contributors of Hunspell-fi project.
 # Last change was on $Date$ by $Author$.
 
+# Sijamuodot
+sijamuoto;
+  nimentö;     # nominatiivi  "kissa"
+  omanto;      # genetiivi    "kissan"
+  kohdanto;    # akkusatiivi  "kissan"
+  osanto;      # partitiivi   "kissaa"
+  olento;      # essiivi      "kissana"
+  tulento;     # translatiivi "kissaksi"
+  sisäolento;  # inessiivi    "kissassa"
+  sisäeronto;  # elatiivi     "kissasta"
+  sisätulento; # illatiivi    "kissaan"
+  ulko_olento; # adessiivi    "kissalla"
+  ulkoeronto;  # ablatiivi    "kissalta"
+  ulkotulento; # allatiivi    "kissalle"
+  vajanto;     # abessiivi    "kissatta"
+  seuranto;    # komitatiivi  "kissoine(ni)"
+  keinonto;    # instruktiivi "kissoin"
 
+# Sijapäätteiden allomorfit
 sija;
-  nimentö;     # Yksikön nimentö.
+  #nimentö;    # Yksikön nimentö (myös sijamuoto)
   nimentö_t;   # Monikon nimentö.
   nimentö_tkA; # Jo+tka, mi+tkä, ke+tkä.
 

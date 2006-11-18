@@ -49,7 +49,7 @@
 
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
-                  etuliite, teonsana, kieltosana, tavuviiva;
+                  lukusana_perusluku, etuliite, teonsana, kieltosana, tavuviiva;
 
 include "suomi.inc";
 include "subrule.inc";
@@ -161,14 +161,14 @@ end;
 
 
 combi_rule nimisana ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <nimisana, nimi_laatusana, seikkasana, lukusana, suhdesana>;
+  ? $oikea.luokka in <nimisana, nimi_laatusana, seikkasana, suhdesana>;
 
   define $i := length ($vasen);
 
   if ($i greater 0) then
     ? (($oikea.luokka in $vasen.$i.jatko) or
        ((nimisana in $vasen.$i.jatko) and
-        ($oikea.luokka in @nimisana + <lukusana>)));
+        ($oikea.luokka in @nimisana)));
 
     ? yhdyssana_oikein ($vasen, $oikea, $i);
 
@@ -300,7 +300,6 @@ end;
 
 
 define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
-                         lukusana,
                          johdin_nUt,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
                          johdin_vA, johdin_vAinen, johdin_vE>
@@ -374,7 +373,7 @@ combi_rule lukusana_perusluku ($vasen, $oikea, $sana):
 
   if (yksiyhdeksän in $oikea.alaluokka) then
     if (nimentö in $oikea.jatko) then
-      result $res, rules lukusana_sisäkerroin, loppu;
+      result $res, rules lukusana_toista, lukusana_sisäkerroin, loppu;
     end;
   end;
 
@@ -385,8 +384,26 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana):
   ? sisäkerroin in $oikea.alaluokka;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
+  result $res, rules lukusana_sisäkerroin_osanto;
 end;
 
+combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana):
+  ? $oikea.luokka = sijapääte;
+  define $len := length($vasen);
+  ? $oikea.sija in $vasen.$len.jatko;
+  ? sijamuoto_sijasta($oikea.sija) = osanto;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  result $res, rules lukusana_perusluku, loppu;
+end;
+
+combi_rule lukusana_toista ($vasen, $oikea, $sana):
+  ? $oikea.luokka = lukusana;
+  ? toista in $oikea.alaluokka;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  result $res, rules lukusana_sisäkerroin, loppu;
+end;
 
 ###### LUKUSANASÄÄNNÖT PÄÄTTYVÄT
 
@@ -1555,6 +1572,19 @@ define $aa := transmit ($tietue);
   end;
 
   return $s;
+end;
+
+define @sijamuoto_sijasta_muunnostaulu :=
+[nimentö:     nimentö,
+ nimentö_tkA: nimentö,
+ omanto_n:    omanto,
+ omanto_nkA:  omanto,
+ omanto_ien:  omanto,
+ osanto_tA:   osanto
+];
+
+subrule sijamuoto_sijasta($sija):
+  return @sijamuoto_sijasta_muunnostaulu.$sija;
 end;
 
 
