@@ -370,10 +370,27 @@ combi_rule lukusana_perusluku ($vasen, $oikea, $sana):
   ? $oikea.luokka = lukusana;
   ? perusluku in $oikea.alaluokka;
   define $res := $vasen + <[alku: $sana] + $oikea>;
+  define $len := length($vasen);
+
+  # Estetään peräkkäiset "satasata", "tuhattuhat" jne.
+  if ($len greater 0 and $vasen.$len.luokka = lukusana) then
+    foreach $al in <yksiyhdeksän, kymmenen, sata, tuhat, miljoona, miljardi, biljoona, triljoona>:
+      ? not ($al in $oikea.alaluokka and $al in $vasen.$len.alaluokka);
+    end;
+  end;
 
   if (yksiyhdeksän in $oikea.alaluokka) then
     if (nimentö in $oikea.jatko) then
       result $res, rules lukusana_toista, lukusana_sisäkerroin, loppu;
+    end;
+  elseif (kymmenen in $oikea.alaluokka or sata in $oikea.alaluokka) then
+    if (nimentö in $oikea.jatko) then
+      result $res, rules lukusana_sisäkerroin, loppu;
+    end;
+  end;
+  if (sata in $oikea.alaluokka or tuhat in $oikea.alaluokka) then
+    if (nimentö in $oikea.jatko) then
+      result $res, rules lukusana_perusluku;
     end;
   end;
 
@@ -1377,7 +1394,7 @@ subrule tulostus_voikko ($tietue):
     if $t.rakenne /= nil then
       $tuloste :=+ $t.rakenne;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
-                         nimi_laatusana, lukusana, asemosana,
+                         nimi_laatusana, asemosana, suhdesana,
                          etuliite> then
       $tuloste :=+ "=";
       foreach $i in length($t.alku):
@@ -1580,6 +1597,12 @@ define @sijamuoto_sijasta_muunnostaulu :=
  omanto_n:    omanto,
  omanto_nkA:  omanto,
  omanto_ien:  omanto,
+ osanto_A:    osanto,
+ osanto_AA:   osanto,
+ osanto_iA:   osanto,
+ osanto_jA:   osanto,
+ osanto_ttA:  osanto,
+ osanto_itA:  osanto,
  osanto_tA:   osanto
 ];
 
