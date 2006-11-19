@@ -393,15 +393,55 @@ combi_rule lukusana_perusluku ($vasen, $oikea, $sana):
       result $res, rules lukusana_perusluku;
     end;
   end;
+  result $res, rules lukusana_perusluvun_sijapääte;
 
+end;
+
+combi_rule lukusana_perusluvun_sijapääte ($vasen, $oikea, $sana):
+  ? $oikea.luokka = sijapääte;
+  define $edellinen := $vasen.length($vasen);
+  ? $oikea.sija in $edellinen.jatko;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+
+  define $sijamuoto := sijamuoto_sijasta($oikea.sija);
+  ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $sijamuoto;
+
+  define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto] + $oikea>;
+  if (yksiyhdeksän in $edellinen.alaluokka) then
+    result $res, rules lukusana_toista, lukusana_sisäkerroin, loppu;
+  elseif (kymmenen in $edellinen.alaluokka or sata in $edellinen.alaluokka) then
+    result $res, rules lukusana_sisäkerroin, loppu;
+  end;
+  if (sata in $edellinen.alaluokka or tuhat in $edellinen.alaluokka) then
+    result $res, rules lukusana_perusluku;
+  end;
 end;
 
 combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana):
   ? $oikea.luokka = lukusana;
   ? sisäkerroin in $oikea.alaluokka;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  result $res, rules lukusana_sisäkerroin_osanto;
+  define $edellinen := $vasen.length($vasen);
+  define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto] + $oikea>;
+
+  if ($edellinen.sijamuoto in <nil, nimentö>) then
+    result $res, rules lukusana_sisäkerroin_osanto;
+  else
+    result $res, rules lukusana_sisäkerroin_sijapääte;
+  end;
+end;
+
+combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana):
+  ? $oikea.luokka = sijapääte;
+  define $edellinen := $vasen.length($vasen);
+  ? $oikea.sija in $edellinen.jatko;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+
+  define $sijamuoto := sijamuoto_sijasta($oikea.sija);
+  ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $sijamuoto;
+
+  define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto] + $oikea>;
+  result $res, rules lukusana_perusluku, loppu;
 end;
 
 combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana):
@@ -409,6 +449,7 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana):
   define $len := length($vasen);
   ? $oikea.sija in $vasen.$len.jatko;
   ? sijamuoto_sijasta($oikea.sija) = osanto;
+  ? ääntiösointu_oikein($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   result $res, rules lukusana_perusluku, loppu;
@@ -1597,13 +1638,26 @@ define @sijamuoto_sijasta_muunnostaulu :=
  omanto_n:    omanto,
  omanto_nkA:  omanto,
  omanto_ien:  omanto,
+ omanto_jen:  omanto,
+ omanto_en:   omanto,
+ omanto_in:   omanto,
+ omanto_ten:  omanto,
+ omanto_iT:   omanto,
+ omanto_idän: omanto,
+ kohdanto_idät: kohdanto,
+ kohdanto_t: kohdanto,
  osanto_A:    osanto,
  osanto_AA:   osanto,
  osanto_iA:   osanto,
  osanto_jA:   osanto,
  osanto_ttA:  osanto,
  osanto_itA:  osanto,
- osanto_tA:   osanto
+ osanto_tA:   osanto,
+ sisäolento_ssA: sisäolento,
+ sisäolento_issA: sisäolento,
+ sisäolento_nA: sisäolento,
+ ulkotulento_lle: ulkotulento,
+ ulkotulento_ille: ulkotulento
 ];
 
 subrule sijamuoto_sijasta($sija):

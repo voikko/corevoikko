@@ -1,11 +1,18 @@
-The following people have contributed material to the vocabulary:
+The following people have directly contributed material to the vocabulary:
 
-Harri Järvi
-Jarno Kiuttu
-Tero Kuparinen
-Kalle Lampila
-Teemu Likonen
-Harri Pitkänen
-Reijo Tomperi
-Hannu Väisänen
+- Harri Järvi
+- Tero Kuparinen
+- Kalle Lampila
+- Teemu Likonen
+- Harri Pitkänen
+- Reijo Tomperi
+- Hannu Väisänen
+
+
+Additionally, the following sources have been used during the development
+to identify words missing from the vocabulary:
+
+- Hunspell-fi vocabulary by Jarno Kiuttu, Reijo Tomperi and Harri Pitkänen
+- Finnish ispell vocabulary by Martin Vermeer and Pauli Virtanen
+- Finnish myspell vocabulary by Jukka Nikulainen
 
