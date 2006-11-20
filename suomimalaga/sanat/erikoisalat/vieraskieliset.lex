@@ -20,8 +20,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-16 03:27:04 EET
+# Time of generation: 2006-11-20 03:27:06 EET
 
+[perusmuoto: "Barrichello", alku: "Barrichello", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Benz", alku: "Benz", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "feedback", alku: "feedback", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Galata", alku: "Galat", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -34,6 +35,7 @@
 [perusmuoto: "Lasdun", alku: "Lasdun", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Like", alku: "Like", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Loosalu", alku: "Loosalu", luokka: sukunimi, jatko: <valo>, äs: a];
+[perusmuoto: "Maine", alku: "Maine", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "melodica", alku: "melodic", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Mercedes", alku: "Mercede", luokka: etunimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Poschehonov", alku: "Poschehonov", luokka: sukunimi, jatko: <kalsium>, äs: a];

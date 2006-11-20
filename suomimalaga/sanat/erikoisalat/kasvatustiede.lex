@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-16 03:27:04 EET
+# Time of generation: 2006-11-20 03:27:06 EET
 
 [perusmuoto: "andragogiikka", alku: "andragogiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "Asperger", alku: "Asperger", luokka: sukunimi, jatko: <edam>, äs: a];
@@ -37,9 +37,13 @@
 [perusmuoto: "emansipatorinen", alku: "emansipatori", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "fallinen", alku: "falli", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "HOJKS", alku: "HOJKS", luokka: nimisana, jatko: <kalsium>, äs: a, tiedot: <ei_ys>, rakenne: "=iiiii"];
+[perusmuoto: "intrapersoonallinen", alku: "intrapersoonalli", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "konstruktionismi", alku: "konstruktionism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "konstruktionisti", alku: "konstruktionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
+[perusmuoto: "kulturalistinen", alku: "kulturalisti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Lev", alku: "Lev", luokka: etunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "mentori", alku: "mentor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "mentoroida", alku: "mentoro", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "motivationaalinen", alku: "motivationaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "perinataali", alku: "perinataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "postnataali", alku: "postnataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
