@@ -369,15 +369,21 @@ end;
 combi_rule lukusana_perusluku ($vasen, $oikea, $sana):
   ? $oikea.luokka = lukusana;
   ? perusluku in $oikea.alaluokka;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
   define $len := length($vasen);
+  define $sijamuoto := nil;
+  define $luku := nil;
 
-  # Estetään peräkkäiset "satasata", "tuhattuhat" jne.
-  if ($len greater 0 and $vasen.$len.luokka = lukusana) then
-    foreach $al in <yksiyhdeksän, kymmenen, sata, tuhat, miljoona, miljardi, biljoona, triljoona>:
-      ? not ($al in $oikea.alaluokka and $al in $vasen.$len.alaluokka);
+  if ($len greater 0) then
+    $sijamuoto := $vasen.$len.sijamuoto;
+    $luku := $vasen.$len.luku;
+    # Estetään peräkkäiset "satasata", "tuhattuhat" jne.
+    if ($vasen.$len.luokka = lukusana) then
+      foreach $al in <yksiyhdeksän, kymmenen, sata, tuhat, miljoona, miljardi, biljoona, triljoona>:
+        ? not ($al in $oikea.alaluokka and $al in $vasen.$len.alaluokka);
+      end;
     end;
   end;
+  define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, luku: $luku] + $oikea>;
 
   if (yksiyhdeksän in $oikea.alaluokka) then
     if (nimentö in $oikea.jatko) then
@@ -405,6 +411,7 @@ combi_rule lukusana_perusluvun_sijapääte ($vasen, $oikea, $sana):
 
   define $sijamuoto := sijamuoto_sijasta($oikea.sija);
   ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $sijamuoto;
+  ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
 
   define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto] + $oikea>;
   if (yksiyhdeksän in $edellinen.alaluokka) then
@@ -422,7 +429,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana):
   ? sisäkerroin in $oikea.alaluokka;
 
   define $edellinen := $vasen.length($vasen);
-  define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto] + $oikea>;
+  define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto, luku: $edellinen.luku] + $oikea>;
 
   if ($edellinen.sijamuoto in <nil, nimentö>) then
     result $res, rules lukusana_sisäkerroin_osanto;
@@ -439,6 +446,7 @@ combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana):
 
   define $sijamuoto := sijamuoto_sijasta($oikea.sija);
   ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $sijamuoto;
+  ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
 
   define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto] + $oikea>;
   result $res, rules lukusana_perusluku, loppu;
