@@ -53,6 +53,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 
 [alku: "ASCII", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjjj"];
 [alku: "ctrl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "ftp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
 [alku: "FTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
 [alku: "fvwm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
@@ -72,6 +73,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "NNTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "NTFS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "NTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
+[alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <atk>];
 [alku: "opengl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 [alku: "PCI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "PDF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
@@ -80,12 +82,16 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "SCSI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "SGML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
 [alku: "SPSS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # SPSS-ohjelma
+[alku: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "SSH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "ssh", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
+[alku: "URL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>, rakenne: "=jjj"];
 [alku: "UTF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "vis5d", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "VRML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
 [alku: "vrml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "wxgtk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "wxx11", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "XML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];

@@ -601,6 +601,8 @@
 [perusmuoto: "päiten", alku: "päiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päivemmällä", alku: "päivem", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
 [perusmuoto: "päivisin", alku: "päivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "iltapäivisin", alku: "iltapäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päiväselti", alku: "päiväselti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päiväseltään", alku: "päiväseltään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päkä", alku: "päkä", luokka: huudahdussana, jatko: <loppu>, äs: ä];
@@ -934,10 +936,4 @@
 [perusmuoto: "ööh", alku: "ööh", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ippp=pppppp"];
 [perusmuoto: "OpenOffice", alku: "OpenOffice", luokka: nimi, jatko: <nalle>, äs: a, tiedot: <atk>, rakenne: "=ippp=ippppp"];
-[perusmuoto: "url", alku: "url", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <atk>];
-[alku: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [perusmuoto: "Sergej", alku: "Sergej", luokka: etunimi, jatko: <>, äs: ä];
