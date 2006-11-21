@@ -190,6 +190,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 #[alku: "kts", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "l", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 #[alku: "ldl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "LED", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "lis.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # lisensiaatti
 [alku: "lkm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # lukumäärä
 #[alku: "lkp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
