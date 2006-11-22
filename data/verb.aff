@@ -628,7 +628,7 @@ end: class
 class: verbi-haluta
 sm-class: haluta
 rmsfx: tA
-match-word: VtA
+match-word: (?:i|U)tA
 consonant-gradation: ws
 group: t
 transform-group: e

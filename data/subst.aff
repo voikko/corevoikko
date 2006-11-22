@@ -1702,7 +1702,7 @@ end: class
 # Kotus 41 rengas (1/2)
 class: subst-as2
 sm-class: vieras
-match-word: (?:A|e|i)s
+match-word: As
 consonant-gradation: ws
 group: t
 transform-group: e
@@ -1744,7 +1744,7 @@ end: class
 # Kotus 41 rengas (2/2)
 class: subst-iäkäs
 sm-class: iäkäs
-match-word: (?:A|e|i)s
+match-word: As
 consonant-gradation: ws
 group: t
 transform-group: e
