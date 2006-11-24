@@ -162,7 +162,6 @@ luokka; alaluokka;
       perusluku;
       järjestysluku;
     # Alaluokat
-    sisäkerroin;
     toista;
     nolla;
     yksiyhdeksän;

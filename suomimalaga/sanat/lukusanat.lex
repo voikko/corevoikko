@@ -45,19 +45,19 @@
 # combination.
 
 
-[perusmuoto: "yksi", alku: "y", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <kaksi>, äs: ä];
-[perusmuoto: "kaksi", alku: "ka", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <kaksi>, äs: a];
-[perusmuoto: "kolme", alku: "kolm", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <kolme>, äs: a];
-[perusmuoto: "neljä", alku: "nelj", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <koira>, äs: ä];
-[perusmuoto: "viisi", alku: "vii", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <susi>, äs: ä];
-[perusmuoto: "kuusi", alku: "kuu", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <susi>, äs: a];
-[perusmuoto: "seitsemän", alku: "seitsem", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <seitsemän>, äs: ä];
-[perusmuoto: "kahdeksan", alku: "kahdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <seitsemän>, äs: a];
-[perusmuoto: "yhdeksän", alku: "yhdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <yksiyhdeksän>, jatko: <seitsemän>, äs: ä];
-[perusmuoto: "kymmenen", alku: "kymmen", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, kymmenen>, jatko: <kymmenen>, äs: ä];
+[perusmuoto: "yksi", alku: "y", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <kaksi>, äs: ä];
+[perusmuoto: "kaksi", alku: "ka", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <kaksi>, äs: a];
+[perusmuoto: "kolme", alku: "kolm", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <kolme>, äs: a];
+[perusmuoto: "neljä", alku: "nelj", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <koira>, äs: ä];
+[perusmuoto: "viisi", alku: "vii", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <susi>, äs: ä];
+[perusmuoto: "kuusi", alku: "kuu", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <susi>, äs: a];
+[perusmuoto: "seitsemän", alku: "seitsem", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä];
+[perusmuoto: "kahdeksan", alku: "kahdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: a];
+[perusmuoto: "yhdeksän", alku: "yhdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä];
+[perusmuoto: "kymmenen", alku: "kymmen", luokka: lukusana, lukutyyppi: perusluku, alaluokka: kymmenen, jatko: <kymmenen>, äs: ä];
 
 # Yksitoista, ..., yhdeksäntoista.
-[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: <toista>, jatko: <loppu>, äs: a];
+[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: toista, jatko: <loppu>, äs: a];
 
 #[perusmuoto: "puolitoista", alku: "puolitoista", luokka: lukusana, jatko: <liitesana, loppu>, äs: a];
 #[perusmuoto: "puolitoista", alku: "puolentoista", luokka: lukusana, jatko: <liitesana, loppu>, äs: a];
@@ -76,37 +76,37 @@
 
 #[perusmuoto: "nelitoista", alku: "nelitoista", luokka: lukusana, jatko: @yhdyssana, äs: a];
 
-[perusmuoto: "sata", alku: "sa", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, sata>, jatko: <pata>, äs: a];
-[perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, tuhat>, jatko: <tuhat>, äs: a];
-[perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, miljoona>, jatko: <apaja>, äs: a];
-[perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, miljardi>, jatko: <paperi>, äs: a, tiedot: <murre>];
-[perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, miljardi>, jatko: <paperi>, äs: a];
-[perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, miljardi>, jatko: <paperi>, äs: a, tiedot: <murre>];
-[perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, biljoona>, jatko: <asema>, äs: a];
-[perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: <sisäkerroin, triljoona>, jatko: <asema>, äs: a];
+[perusmuoto: "sata", alku: "sa", luokka: lukusana, lukutyyppi: perusluku, alaluokka: sata, jatko: <pata>, äs: a];
+[perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, lukutyyppi: perusluku, alaluokka: tuhat, jatko: <tuhat>, äs: a];
+[perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <apaja>, äs: a];
+[perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, lukutyyppi: perusluku, alaluokka:  miljardi, jatko: <paperi>, äs: a, tiedot: <murre>];
+[perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljardi, jatko: <paperi>, äs: a];
+[perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljardi, jatko: <paperi>, äs: a, tiedot: <murre>];
+[perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: biljoona, jatko: <asema>, äs: a];
+[perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: triljoona, jatko: <asema>, äs: a];
 
 
-[perusmuoto: "ensimmäinen", alku: "ensimmäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <nainen>, äs: ä];
-[perusmuoto: "ensimäinen", alku: "ensimäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <nainen>, äs: ä, tiedot: <murre>];
-[perusmuoto: "yhdes", alku: "yhde", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: ä];
-[perusmuoto: "toinen", alku: "toi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <nainen>, äs: a];
-[perusmuoto: "kahdes", alku: "kahde", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "kolmas", alku: "kolma", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "neljäs", alku: "neljä", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: ä];
-[perusmuoto: "viides", alku: "viide", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: ä];
-[perusmuoto: "kuudes", alku: "kuude", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "seitsemäs", alku: "seitsemä", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: ä];
-[perusmuoto: "kahdeksas", alku: "kahdeksa", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "yhdeksäs", alku: "yhdeksä", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <yksiyhdeksän>, jatko: <kahdeksas>, äs: ä];
-[perusmuoto: "kymmenes", alku: "kymmene", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <sisäkerroin, kymmenen>, jatko: <kahdeksas>, äs: ä];
+[perusmuoto: "ensimmäinen", alku: "ensimmäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä];
+[perusmuoto: "ensimäinen", alku: "ensimäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä, tiedot: <murre>];
+[perusmuoto: "yhdes", alku: "yhde", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: ä];
+[perusmuoto: "toinen", alku: "toi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: a];
+[perusmuoto: "kahdes", alku: "kahde", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "kolmas", alku: "kolma", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "neljäs", alku: "neljä", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: ä];
+[perusmuoto: "viides", alku: "viide", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: ä];
+[perusmuoto: "kuudes", alku: "kuude", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "seitsemäs", alku: "seitsemä", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: ä];
+[perusmuoto: "kahdeksas", alku: "kahdeksa", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "yhdeksäs", alku: "yhdeksä", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <kahdeksas>, äs: ä];
+[perusmuoto: "kymmenes", alku: "kymmene", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: kymmenen, jatko: <kahdeksas>, äs: ä];
 
 #[perusmuoto: "eka", alku: "ek", luokka: lukusana, jatko: <kala>, äs: a];
 #[perusmuoto: "toka", alku: "tok", luokka: lukusana, jatko: <koira>, äs: a];
 
-[perusmuoto: "sadas", alku: "sada", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <sisäkerroin, sata>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <sisäkerroin, tuhat>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "miljoonas", alku: "miljoona", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <sisäkerroin, miljoona>, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: <sisäkerroin, miljardi>, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "sadas", alku: "sada", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: sata, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: tuhat, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "miljoonas", alku: "miljoona", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljardi, jatko: <kahdeksas>, äs: a];
 
 
 #[perusmuoto: "parisen", alku: "parisen", luokka: lukusana, jatko: <loppu>, äs: a];
