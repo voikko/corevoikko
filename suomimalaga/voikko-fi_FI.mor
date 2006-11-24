@@ -418,6 +418,8 @@ combi_rule lukusana_perusluvun_sijapääte ($vasen, $oikea, $sana):
     result $res, rules lukusana_toista, lukusana_sisäkerroin, loppu;
   elseif (kymmenen in $edellinen.alaluokka or sata in $edellinen.alaluokka) then
     result $res, rules lukusana_sisäkerroin, loppu;
+  else
+    result $res, rules loppu;
   end;
   if (sata in $edellinen.alaluokka or tuhat in $edellinen.alaluokka) then
     result $res, rules lukusana_perusluku;
@@ -467,7 +469,9 @@ end;
 combi_rule lukusana_toista ($vasen, $oikea, $sana):
   ? $oikea.luokka = lukusana;
   ? toista in $oikea.alaluokka;
-  define $res := $vasen + <[alku: $sana, lukutyyppi: $vasen.length($vasen).lukutyyppi] + $oikea>;
+  define $edellinen := $vasen.length($vasen);
+  define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto,
+                            luku: $edellinen.luku, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
 
   result $res, rules lukusana_sisäkerroin, loppu;
 end;
