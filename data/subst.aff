@@ -1494,7 +1494,8 @@ end: class
 
 # Kotus 32 ien
 class: subst-nivel
-match-word: VC
+sm-class: sisar
+match-word: (?:A|e)(?:l|r)
 consonant-gradation: ws
 group: t
 transform-group: e
