@@ -46,6 +46,7 @@
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "ali", alku: "ali", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "alias", alku: "alias", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "alinomaa", alku: "alinomaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alinomaan", alku: "alinomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
