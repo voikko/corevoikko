@@ -18,6 +18,7 @@ lex: #sanat/erikoisalat/atk-lyhenteet.lex
 lex: #sanat/erikoisalat/kasvatustiede.lex
 lex: #sanat/erikoisalat/kasvatustiede-lyhenteet.lex
 lex: #sanat/erikoisalat/laaketiede.lex
+lex: #sanat/erikoisalat/matluonnontiede.lex
 mallex: set switch vanhahkot_muodot yes
 mallex: set switch vanhat_muodot no
 ## End-User-Configuration

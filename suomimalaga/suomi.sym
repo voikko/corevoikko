@@ -365,6 +365,7 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   ei_ysa;    # Sana ei voi olla yhdyssanan alkuosana. (ei =mais=tiainen eli mainen + tiainen).
   ei_ysj;    # Sana ei voi olla yhdyssanan jälkiosana (ei =räme=isyys).
   ei_vertm;  # Laatusana ei taivu vertailumuodoissa
+  ei_yks;    # Sana ei taivu yksikkömuodoissa.
   inen;      # Nimisanasta johdettu inen-loppuinen laatusana
              # hyväksytään myös erillisenä sanana (aamu+inen).
              # Muuten tällaiset sanat hyväksytään vain yhdyssanan jälkiosana.
