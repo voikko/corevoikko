@@ -1818,7 +1818,7 @@ essiivi_mon	0	ina	s
 inessiivi_mon	0	issa	s
 elatiivi_mon	0	ista	s
 illatiivi_mon	0	isiin	s
-illatiivi_mon	0	ihin	s	prio=3
+illatiivi_mon	0	ihin	s	prio=2
 adessiivi_mon	0	illa	s
 ablatiivi_mon	0	ilta	s
 allatiivi_mon	0	ille	s
