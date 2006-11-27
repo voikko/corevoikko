@@ -290,6 +290,7 @@ tapaluokka;
   johdin_mAinen;    # Kaupunki+mainen.
   johdin_mmUUs;     # Valkoise+mmuus.
   johdin_immUUs;    # Valkois+immuus.
+  johdin_nlainen;   # Hyvänlainen, pahanlainen.
 
   johdin_tOn;       # Maa+ton, pää+tön.
   johdin_Us;        # Kallis => kalle+us (kalleuden).

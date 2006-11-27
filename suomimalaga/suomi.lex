@@ -1391,6 +1391,10 @@ define @jatko_vastauks  := @jatko_ks;
 [alku: "mäis",   luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_s];
 
 
+# Hyvän+lainen, paha+nlainen. Kentän äs täytyy olla aä, koska ä:llistä muotoa ei ole.
+[perusmuoto: "nlainen", alku: "nlai", luokka: johdin_nlainen, jatko: <nainen>, äs: a];
+
+
 define @jatko_tar := <liitesana, loppu, osanto_tA, omanto_ten> + @yhdyssana;
 
 define @jatko_ttar := <omanto_en, omanto_ien, osanto_iA, olento_inA, tulento_iksi,

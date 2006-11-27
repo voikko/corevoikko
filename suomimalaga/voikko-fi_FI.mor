@@ -49,7 +49,8 @@
 
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
-                  lukusana, etuliite, teonsana, kieltosana, tavuviiva;
+                  lukusana, etuliite, teonsana, kieltosana, tavuviiva,
+		  laatusana_laatusanasta;
 
 include "suomi.inc";
 include "subrule.inc";
@@ -118,7 +119,9 @@ define @johdin_nimisanasta := @johtimet_nimisana_nimisanasta
 
 # Johtimet laatusanoista
 define @johtimet_nimisana_laatusanasta := <johdin_Us, johdin_UUs>;
-define @johtimet_laatusanasta := @johtimet_nimisana_laatusanasta;
+define @johtimet_laatusana_laatusanasta := <johdin_nlainen>;
+define @johtimet_laatusanasta := @johtimet_nimisana_laatusanasta
+                               + @johtimet_laatusana_laatusanasta;
 
 
 define @johdin := @johdin_teonsanasta + @johdin_nimisanasta + @johtimet_laatusanasta;
@@ -190,6 +193,7 @@ combi_rule nimisana ($vasen, $oikea, $sana):
                loppu;
 end;
 
+###### JOHDETTUJEN SANOJEN ALOITUSSÄÄNNÖT ALKAVAT
 
 # Teonsanasta johdettu nimisana, esim. sanoma <- sanoa.
 combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana):
@@ -209,6 +213,33 @@ combi_rule nimisana_laatusanasta ($vasen, $oikea, $sana):
   result $vasen + <[alku: $sana] + $oikea>,
          rules laatusanan_johdos; # FIXME: johdetun muodon on oltava nimisana
 end;
+
+# Laatusanasta johdettu laatusana, esim. paha+nlai+nen <- paha.
+combi_rule laatusana_laatusanasta ($vasen, $oikea, $sana):
+  ? $oikea.luokka in @laatusana;
+  if (omanto_n in $oikea.jatko) then
+    result $vasen + <[alku: $sana] + $oikea>, rules johdin_nlainen;
+  end;
+end;
+
+###### JOHDETTUJEN SANOJEN ALOITUSSÄÄNNÖT PÄÄTTYVÄT
+
+###### JOHDINSÄÄNNÖT ALKAVAT
+
+combi_rule johdin_nlainen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = johdin_nlainen;
+  result $vasen + <[alku: $sana] + $oikea>,
+         rules sijapääte, omistusliite,
+	       liitesana,
+	       nimisana, laatusana,
+	       laatusanan_johdos,
+	       voitto_yliaste,
+	       tavuviiva,
+	       etuliite,
+	       loppu;
+end;
+
+###### JOHDINSÄÄNNÖT PÄÄTTYVÄT
 
 
 combi_rule laatusana ($vasen, $oikea, $sana):
@@ -304,6 +335,7 @@ define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
                          johdin_vA, johdin_vAinen, johdin_vE>
                         + @johtimet_laatusana_nimisanasta
+			+ @johtimet_laatusana_laatusanasta
                         + @laatutapa_1 + @laatutapa_2;
 
 combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana):
