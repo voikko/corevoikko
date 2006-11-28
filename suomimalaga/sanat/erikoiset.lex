@@ -163,6 +163,8 @@
 [perusmuoto: "hitto", alku: "hitosti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hmm", alku: "hmm", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hoi", alku: "hoi", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "hollille", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hollilla", alku: "hollilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hoo", alku: "hoo", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hop", alku: "hop", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "huh", alku: "huh", luokka: huudahdussana, jatko: <loppu>, äs: a];
