@@ -20,16 +20,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-20 03:27:06 EET
+# Time of generation: 2006-11-29 03:27:20 EET
 
+[perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "Annessa", alku: "Anness", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Barrichello", alku: "Barrichello", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Benz", alku: "Benz", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Blarnia", alku: "Blarni", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "clitoris", alku: "clitori", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "feedback", alku: "feedback", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Galata", alku: "Galat", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "genesis", alku: "genesi", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Icosameron", alku: "Icosameron", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ikonion", alku: "Ikonion", luokka: paikannimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "input", alku: "input", luokka: nimisana, jatko: <kalsium>, äs: a, tiedot: <atk>];
+[perusmuoto: "input", alku: "input", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "international", alku: "international", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "Kehtna", alku: "Kehtn", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Kuusiku", alku: "Kuusiku", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "labour", alku: "labour", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Lasdun", alku: "Lasdun", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -45,5 +52,6 @@
 [perusmuoto: "Ragusa", alku: "Ragus", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Rittersdorf", alku: "Rittersdorf", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Roden", alku: "Roden", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a, tiedot: <atk>];
+[perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a];
+[perusmuoto: "tagaali", alku: "tagaal", luokka: nimisana, jatko: <banaali>, äs: a];
 
