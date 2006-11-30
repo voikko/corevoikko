@@ -206,72 +206,73 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
                                const char * path) {
 #ifdef HAVE_GETPWUID_R
 	struct passwd pwd;
-	struct stat sbuf;
 	struct passwd * pwd_result;
 #endif // HAVE_GETPWUID_R
+#ifdef WIN32
+	HKEY hKey;
+	DWORD dwBufLen=buflen;
+	LONG lRet;
+#endif // WIN32
 	char * tmp_buf = malloc(buflen + 2048);
 	if (tmp_buf == 0) return 0;
+	
+	// Clear the buffer.
+	memset(buffer, 0x00, buflen);
 
 	if (strcmp(langcode, "fi_FI") == 0) {
-#ifdef HAVE_GETPWUID_R
+		#ifdef HAVE_GETPWUID_R
 		/* Check the user specified dictionary path */
 		if (path && strlen(path) < buflen - 18 ) {
 			strcpy(buffer, path);
 			strcpy(buffer + strlen(path), "/" VOIKKO_DICTIONARY_FILE);
-			if (stat(buffer, &sbuf) == 0) {
+			if (voikko_check_file(buffer)) {
 				free(tmp_buf);
 				return 1;
 			}
 		}
-#endif // HAVE_GETPWUID_R
-		// Clear the buffer.
-		memset(buffer, 0x00, buflen);
-#ifdef WIN32
-		/* FIXME: user specified path check missing on Windows */
-		/* Check the Windows registry */
-		HKEY hKey;
-		DWORD dwBufLen=buflen;
-		LONG lRet;
-
-		lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
-		                    0, KEY_QUERY_VALUE, &hKey);
-
-		if (ERROR_SUCCESS != lRet) {
-			// Check from local machine
-			lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
-			                    0, KEY_QUERY_VALUE, &hKey);
-		}
-
-		if (ERROR_SUCCESS == lRet) {
-			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
-			                       (LPBYTE)buffer, &dwBufLen);
-
-			RegCloseKey(hKey);
-
-			if ((ERROR_SUCCESS == lRet) && (dwBufLen <= buflen)) {
-				if (strlen(buffer) > 0) {
-					free(tmp_buf);
-					return 1;
-				}
-			}
-		}
-
-		free(tmp_buf);
-		return 0;
-#endif // WIN32
-#ifdef HAVE_GETPWUID_R
 		/* Check for project file in $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
 		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);
 		if (pwd_result && pwd.pw_dir && strlen(pwd.pw_dir) < buflen - 26 ) {
 			strcpy(buffer, pwd.pw_dir);
 			strcpy(buffer + strlen(pwd.pw_dir), "/.voikko/" VOIKKO_DICTIONARY_FILE);
-			if (stat(buffer, &sbuf) == 0) {
+			if (voikko_check_file(buffer)) {
 				free(tmp_buf);
 				return 1;
 			}
 		}
-#endif // HAVE_GETPWUID_R
-		/* Use the compile time default project file */
+		#endif // HAVE_GETPWUID_R
+		#ifdef WIN32
+		/* FIXME: user specified path check missing on Windows */
+		/* Check the Windows registry */
+		lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
+		                    0, KEY_QUERY_VALUE, &hKey);
+
+		if (ERROR_SUCCESS == lRet) {
+			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
+			                       (LPBYTE)buffer, &dwBufLen);
+			RegCloseKey(hKey);
+			if ((ERROR_SUCCESS == lRet) && (dwBufLen <= buflen)) {
+				if (strlen(buffer) > 0 && voikko_check_file(buffer)) {
+					free(tmp_buf);
+					return 1;
+				}
+		}
+
+		lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
+			                    0, KEY_QUERY_VALUE, &hKey);
+		if (ERROR_SUCCESS == lRet) {
+			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
+			                       (LPBYTE)buffer, &dwBufLen);
+			RegCloseKey(hKey);
+			if ((ERROR_SUCCESS == lRet) && (dwBufLen <= buflen)) {
+				if (strlen(buffer) > 0 && voikko_check_file(buffer)) {
+					free(tmp_buf);
+					return 1;
+				}
+			}
+		}
+		#endif // WIN32
+		/* Fall back to using the compile time default project file */
 		strcpy(buffer, DICTIONARY_PATH "/" VOIKKO_DICTIONARY_FILE);
 		free(tmp_buf);
 		return 1;
@@ -290,4 +291,22 @@ const char * voikko_init_malaga(const char * project) {
 		terminate_libmalaga();
 		return "Dictionary file has incompatible version";
 	}
+}
+
+int voikko_check_file(const char * name) {
+#ifdef HAVE_GETPWUID_R
+	struct stat sbuf;
+	if (stat(name, &sbuf) == 0) return 1;
+	else return 0;
+#else
+ #ifdef WIN32
+	HANDLE h;
+	h = CreateFileA(name, 0, 0, NULL, OPEN_EXISTING, 0, NULL);
+	if (h == INVALID_HANDLE_VALUE) return 0;
+	else {
+		CloseHandle(h);
+		return 1;
+	}
+ #endif // WIN32
+#endif // HAVE_GETPWUID_R
 }

@@ -1,3 +1,8 @@
+2006-11-30 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Refactoring in voikko_setup.c to prepare for better Windows
+	  support.
+
 2006-11-16 Harri Pitkänen <hatapitk@iki.fi>
 
         * Support parallel installations of Automake versions

@@ -39,6 +39,7 @@ char	*nl_langinfo(nl_item);
 #endif
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
+#define WIN32
 #define INTERNAL_CHARSET "UCS-2-INTERNAL"
 #else
 #define INTERNAL_CHARSET "WCHAR_T"

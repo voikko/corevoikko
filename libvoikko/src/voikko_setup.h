@@ -65,4 +65,11 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
  */
 const char * voikko_init_malaga(const char * project);
 
+/**
+ * Checks if the specified file exists
+ * @param name name and path of the file to check
+ * @return 1 if the specified file exists, otherwise 0
+ */
+int voikko_check_file(const char * name);
+
 #endif
