@@ -210,9 +210,11 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 #endif // HAVE_GETPWUID_R
 #ifdef WIN32
 	HKEY hKey;
-	DWORD dwBufLen=buflen;
+	DWORD dwBufLen;
 	LONG lRet;
 #endif // WIN32
+	// Minimum sensible size for the buffer
+	if (buflen < 18) return 0;
 	char * tmp_buf = malloc(buflen + 2048);
 	if (tmp_buf == 0) return 0;
 	
@@ -220,7 +222,6 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	memset(buffer, 0x00, buflen);
 
 	if (strcmp(langcode, "fi_FI") == 0) {
-		#ifdef HAVE_GETPWUID_R
 		/* Check the user specified dictionary path */
 		if (path && strlen(path) < buflen - 18 ) {
 			strcpy(buffer, path);
@@ -230,6 +231,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 				return 1;
 			}
 		}
+		#ifdef HAVE_GETPWUID_R
 		/* Check for project file in $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
 		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);
 		if (pwd_result && pwd.pw_dir && strlen(pwd.pw_dir) < buflen - 26 ) {
@@ -242,30 +244,34 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 		}
 		#endif // HAVE_GETPWUID_R
 		#ifdef WIN32
-		/* FIXME: user specified path check missing on Windows */
-		/* Check the Windows registry */
+		/* Check the user default dictionary from Windows registry */
 		lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
 		                    0, KEY_QUERY_VALUE, &hKey);
-
+		dwBufLen = buflen - 18;
 		if (ERROR_SUCCESS == lRet) {
 			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
 			                       (LPBYTE)buffer, &dwBufLen);
 			RegCloseKey(hKey);
-			if ((ERROR_SUCCESS == lRet) && (dwBufLen <= buflen)) {
-				if (strlen(buffer) > 0 && voikko_check_file(buffer)) {
+			if ((ERROR_SUCCESS == lRet)) {
+				strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
+				if (voikko_check_file(buffer)) {
 					free(tmp_buf);
 					return 1;
 				}
+			}
 		}
 
+		/* Check the system default dictionary from Windows registry */
 		lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
 			                    0, KEY_QUERY_VALUE, &hKey);
+		dwBufLen = buflen - 18;
 		if (ERROR_SUCCESS == lRet) {
 			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
 			                       (LPBYTE)buffer, &dwBufLen);
 			RegCloseKey(hKey);
-			if ((ERROR_SUCCESS == lRet) && (dwBufLen <= buflen)) {
-				if (strlen(buffer) > 0 && voikko_check_file(buffer)) {
+			if ((ERROR_SUCCESS == lRet)) {
+				strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
+				if (voikko_check_file(buffer)) {
 					free(tmp_buf);
 					return 1;
 				}

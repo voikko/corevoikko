@@ -1,3 +1,7 @@
+2006-12-01 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Support all modes of dictionary selection in Windows.
+
 2006-11-30 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Refactoring in voikko_setup.c to prepare for better Windows
