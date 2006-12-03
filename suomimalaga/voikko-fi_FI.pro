@@ -25,8 +25,8 @@ mallex: set switch vanhat_muodot no
 
 ## Begin-Internal-Configuration
 sym: voikko-fi_FI.sym suomi.sym
-all: voikko-fi_FI.all suomi.all suomi.inc subrule.inc voikko-fi_FI.pro
-lex: suomi.inc subrule.inc voikko-fi_FI.pro
+all: voikko-fi_FI.all suomi.all suomi.inc inc/subrule.inc voikko-fi_FI.pro
+lex: suomi.inc inc/subrule.inc voikko-fi_FI.pro
 lex: sanat/erikoissanat.lex
 lex: sanat/etuliitteet.lex
 lex: sanat/lukusanat.lex

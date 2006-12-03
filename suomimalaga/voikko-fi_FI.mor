@@ -53,7 +53,7 @@ initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesä�
 		  laatusana_laatusanasta;
 
 include "suomi.inc";
-include "subrule.inc";
+include "inc/subrule.inc";
 
 
 define @ehtotapa := <ehtotapa, ehtotapa_ttA, ehtotapa_tA>;
@@ -199,7 +199,10 @@ end;
 combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana):
   ? $oikea.luokka = teonsana;
   define $i := length($vasen);
-  ? $vasen.$i.perusmuoto matches ".*nen" or $vasen.$i.perusmuoto = $vasen.$i.alku;
+  if ($i greater 0) then
+    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+    ? $vasen.$i.perusmuoto matches ".*nen" or $vasen.$i.perusmuoto = $vasen.$i.alku; # FIXME: esiehto
+  end;
   result $vasen + <[alku: $sana] + $oikea>,
          rules teonsanan_johdos, # FIXME: johdetun muodon on oltava nimisana
 	       nimitavat;
@@ -1733,15 +1736,6 @@ define @sijamuoto_sijasta_muunnostaulu :=
 
 subrule sijamuoto_sijasta($sija):
   return @sijamuoto_sijasta_muunnostaulu.$sija;
-end;
-
-
-# Sanan ensimmäinen kirjain.
-# Tekijä: Björn Beutel.
-#
-subrule first ($string):
-  ! $string matches ".": $first, ".*";
-  return $first;
 end;
 
 pruning_rule prune ($list):

@@ -397,6 +397,7 @@
 [perusmuoto: "liioin", alku: "liioin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "likellä", alku: "like", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu> + @sana2, äs: ä];
+[perusmuoto: "likipitäen", alku: "likipitäen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "limittäin", alku: "limittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "liossa", alku: "liossa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "loitolla", alku: "loito", luokka: seikkasana, jatko: <loitolla>, äs: a];

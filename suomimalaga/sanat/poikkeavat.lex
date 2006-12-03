@@ -481,7 +481,7 @@
 [perusmuoto: "siemen", alku: "siemen", luokka: nimisana, jatko: <ahven>, äs: ä];
 [perusmuoto: "siimes", alku: "siime", luokka: nimisana, jatko: <kirves>, äs: ä];
 [perusmuoto: "siisti", alku: "siist", luokka: laatusana, jatko: <siisti>, äs: ä];
-[perusmuoto: "siitä", alku: "si", luokka: teonsana, jatko: <keritä>, äs: ä];
+[perusmuoto: "siitä", alku: "si", luokka: teonsana, jatko: <keritä>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "siivota", alku: "siivo", luokka: teonsana, jatko: <siivota>, äs: a];
 [perusmuoto: "sikopaimen", alku: "sikopaimen", luokka: nimisana, jatko: <ahven>, äs: a];
 [perusmuoto: "silmitön", alku: "silmi", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
