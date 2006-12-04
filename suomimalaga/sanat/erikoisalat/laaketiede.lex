@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-29 03:27:20 EET
+# Time of generation: 2006-12-04 03:27:32 EET
 
 [perusmuoto: "adrenokortikotrooppinen", alku: "adrenokortikotrooppi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adrenokortikotropiini", alku: "adrenokortikotropiin", luokka: nimisana, jatko: <risti>, äs: a];
@@ -29,6 +29,7 @@
 [perusmuoto: "eksoni", alku: "ekson", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "erytropoietiini", alku: "erytropoietiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "katekolamiini", alku: "katekolamiin", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kolostomia", alku: "kolostomi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "kortikosteroidi", alku: "kortikosteroid", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "lasko", alku: "lasko", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "noradrenaliini", alku: "noradrenaliin", luokka: nimisana, jatko: <risti>, äs: a];

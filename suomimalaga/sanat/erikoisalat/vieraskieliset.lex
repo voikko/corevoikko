@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-11-29 03:27:20 EET
+# Time of generation: 2006-12-04 03:27:32 EET
 
 [perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
@@ -47,6 +47,7 @@
 [perusmuoto: "Mercedes", alku: "Mercede", luokka: etunimi, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Poschehonov", alku: "Poschehonov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Povoläjeff", alku: "Povoläjeff", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "primula", alku: "primul", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "puzzle", alku: "puzzle", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "Pyrex", alku: "Pyrex", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Ragusa", alku: "Ragus", luokka: paikannimi, jatko: <kala>, äs: a];
@@ -54,4 +55,6 @@
 [perusmuoto: "Roden", alku: "Roden", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "tagaali", alku: "tagaal", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "ultima", alku: "ultim", luokka: nimisana, jatko: <karahka>, äs: a];
+[perusmuoto: "Viagra", alku: "Viagr", luokka: nimi, jatko: <karahka>, äs: a];
 
