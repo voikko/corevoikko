@@ -78,6 +78,7 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 	switch (option) {
 		case VOIKKO_OPT_ENCODING:
 			if (!value) return 0;
+			#ifdef HAVE_ICONV
 			iconv_t toext = iconv_open(value, INTERNAL_CHARSET);
 			if (toext == (iconv_t) -1) {
 				return 0;
@@ -91,6 +92,7 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 			voikko_options.iconv_ucs4_ext = toext;
 			iconv_close(voikko_options.iconv_ext_ucs4);
 			voikko_options.iconv_ext_ucs4 = fromext;
+			#endif
 			voikko_options.encoding = value;
 			return 1;
 	}
@@ -124,6 +126,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 		free(project);
 		return "Unsupported language";
 	}
+	#ifdef HAVE_ICONV
 	/* Initialise converters */
 	voikko_options.iconv_ucs4_utf8 = iconv_open("UTF-8", INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_utf8 == (iconv_t) -1) {
@@ -151,6 +154,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 		free(project);
 		return "iconv_open(\"" INTERNAL_CHARSET "\", voikko_options.encoding) failed";
 	}
+	#endif
 	
 	const char * malaga_init_error = voikko_init_malaga(project);
 	free(project);
@@ -179,10 +183,12 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 int voikko_terminate(int handle) {
 	if (handle == 1 && voikko_handle_count > 0) {
 		voikko_handle_count--;
+		#ifdef HAVE_ICONV
 		iconv_close(voikko_options.iconv_ext_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_ext);
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
+		#endif
 		terminate_libmalaga();
 		/*int c = 0;
 		for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;

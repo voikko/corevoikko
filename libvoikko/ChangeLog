@@ -1,3 +1,8 @@
+2006-12-05 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Make libiconv optional on Windows. If it is not available,
+	  only conversion to/from UTF-8 and CP850 is possible.
+
 2006-12-01 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Support all modes of dictionary selection in Windows.

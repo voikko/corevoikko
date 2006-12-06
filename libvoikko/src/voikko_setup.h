@@ -19,7 +19,9 @@
 #ifndef VOIKKO_SETUP_H
 #define VOIKKO_SETUP_H
 
-#include <iconv.h>
+#ifdef HAVE_ICONV
+  #include <iconv.h>
+#endif
 #include <wchar.h>
 
 typedef struct {
@@ -31,10 +33,12 @@ typedef struct {
 	int no_ugly_hyphenation;
 	int intersect_compound_level;
 	const char * encoding;
+	#ifdef HAVE_ICONV
 	iconv_t iconv_ucs4_utf8;
 	iconv_t iconv_utf8_ucs4;
 	iconv_t iconv_ucs4_ext;
 	iconv_t iconv_ext_ucs4;
+	#endif
 	wchar_t * cache;
 	char * cache_meta;
 	int cache_size;
