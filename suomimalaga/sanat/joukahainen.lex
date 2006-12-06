@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-04 03:26:01 EET
+# Time of generation: 2006-12-06 03:26:02 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -768,7 +768,7 @@
 [perusmuoto: "Antti", alku: "Ant", luokka: etunimi, jatko: <tatti>, äs: a];
 [perusmuoto: "Anttila", alku: "Anttil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Anttinen", alku: "Antti", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "Antto", alku: "Antto", luokka: etunimi, jatko: <valo>, äs: a];
+[perusmuoto: "Antto", alku: "Ant", luokka: etunimi, jatko: <liitto>, äs: a];
 [perusmuoto: "Anttola", alku: "Anttol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Anttonen", alku: "Antto", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Anttoni", alku: "Antton", luokka: etunimi, jatko: <paperi>, äs: a];
@@ -2873,7 +2873,7 @@
 [perusmuoto: "fuuga", alku: "fuug", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "fuusio", alku: "fuusio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "fuusioida", alku: "fuusio", luokka: teonsana, jatko: <kanavoida>, äs: a];
-[perusmuoto: "fyrkka", alku: "fyrk", luokka: nimisana, jatko: <hoikka>, äs: a];
+[perusmuoto: "fyrkka", alku: "fyrk", luokka: nimisana, jatko: <hoikka>, äs: a, tiedot: <murre>];
 [perusmuoto: "fysiikka", alku: "fysiik", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "fysikaalinen", alku: "fysikaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "fyysikko", alku: "fyysik", luokka: nimisana, jatko: <laatikko>, äs: a];
@@ -4198,7 +4198,7 @@
 [perusmuoto: "hopeinen", alku: "hopei", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "hopeoida", alku: "hopeo", luokka: teonsana, jatko: <haravoida>, äs: a];
 [perusmuoto: "Hopo", alku: "Hopo", luokka: sukunimi, jatko: <valo>, äs: a];
-[perusmuoto: "hoppa", alku: "hop", luokka: nimisana, jatko: <tolppa>, äs: a];
+[perusmuoto: "hoppa", alku: "hop", luokka: nimisana, jatko: <tolppa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Hopponen", alku: "Hoppo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "hoppu", alku: "hop", luokka: nimisana, jatko: <hoppu>, äs: a, tiedot: <inen>];
 [perusmuoto: "hoppuilla", alku: "hoppuil", luokka: teonsana, jatko: <arvailla>, äs: a];
@@ -6788,7 +6788,7 @@
 [perusmuoto: "kasetti", alku: "kaset", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "kaseva", alku: "kasev", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "Kashmir", alku: "Kashmir", luokka: paikannimi, jatko: <edam>, äs: a];
-[perusmuoto: "kasi", alku: "kas", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kasi", alku: "kas", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <murre>];
 [perusmuoto: "kasino", alku: "kasino", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "kaskelotti", alku: "kaskelot", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "kaski", alku: "kask", luokka: nimisana, jatko: <kiiski>, äs: a];
@@ -9950,7 +9950,7 @@
 [perusmuoto: "Lemmenjoki", alku: "Lemmenjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "Lemmetyinen", alku: "Lemmetyi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "lemmikki", alku: "lemmik", luokka: nimisana, jatko: <kajakki>, äs: ä];
-[perusmuoto: "Lemmikki", alku: "Lemmik", luokka: etunimi, jatko: <kajakki>, äs: ä];
+[perusmuoto: "Lemmikki", alku: "Lemmik", luokka: etunimi, jatko: <takki>, äs: ä];
 [perusmuoto: "Lemminkäinen", alku: "Lemminkäi", luokka: etunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "lempeä", alku: "lemp", luokka: laatusana, jatko: <korkea>, äs: ä];
 [perusmuoto: "lempi", alku: "lem", luokka: nimisana, jatko: <sampi>, äs: ä];
@@ -10514,7 +10514,7 @@
 [perusmuoto: "lotrata", alku: "lotr", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "lotta", alku: "lot", luokka: nimisana, jatko: <kenttä>, äs: a];
 [perusmuoto: "Lotta", alku: "Lot", luokka: etunimi, jatko: <kenttä>, äs: a];
-[perusmuoto: "Lotte", alku: "Lotte", luokka: etunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Lotte", alku: "Lot", luokka: etunimi, jatko: <atte>, äs: a];
 [perusmuoto: "lotto", alku: "lot", luokka: nimisana, jatko: <liitto>, äs: a];
 [perusmuoto: "louhe", alku: "louhe", luokka: nimisana, jatko: <hame>, äs: a];
 [perusmuoto: "Louhela", alku: "Louhel", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -10733,8 +10733,8 @@
 [perusmuoto: "lyhykäinen", alku: "lyhykäi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "lyhä", alku: "lyh", luokka: laatusana, jatko: <koira>, äs: ä];
 [perusmuoto: "lyijy", alku: "lyijy", luokka: nimisana, jatko: <valo>, äs: ä];
-[perusmuoto: "lykantrooppi", alku: "lykantroop", luokka: nimisana, jatko: <keppi>, äs: a, rakenne: "=ppppp=ppppppp"];
-[perusmuoto: "lykantropia", alku: "lykantropi", luokka: nimisana, jatko: <apila>, äs: a];
+[perusmuoto: "lykantrooppi", alku: "lykantroop", luokka: nimisana, jatko: <keppi>, äs: a, rakenne: "=ppp=ppppppppp"];
+[perusmuoto: "lykantropia", alku: "lykantropi", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=ppp=pppppppp"];
 [perusmuoto: "lykkiä", alku: "lyk", luokka: teonsana, jatko: <loikkia>, äs: ä];
 [perusmuoto: "lykky", alku: "lyk", luokka: nimisana, jatko: <alku>, äs: ä];
 [perusmuoto: "lykkäys", alku: "lykkäy", luokka: nimisana, jatko: <vastaus>, äs: ä];
@@ -11223,7 +11223,7 @@
 [perusmuoto: "Marjaana", alku: "Marjaan", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Marjala", alku: "Marjal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "marjastaa", alku: "marjast", luokka: teonsana, jatko: <aavistaa>, äs: a];
-[perusmuoto: "Marjatta", alku: "Marjat", luokka: etunimi, jatko: <savotta>, äs: a];
+[perusmuoto: "Marjatta", alku: "Marjat", luokka: etunimi, jatko: <aitta>, äs: a];
 [perusmuoto: "Marjo", alku: "Marjo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "marjoa", alku: "marjo", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "Marjosärkkä", alku: "Marjosärk", luokka: paikannimi, jatko: <hoikka>, äs: ä];
@@ -11241,7 +11241,7 @@
 [perusmuoto: "markkina", alku: "markkin", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "Markkinen", alku: "Markki", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "markkinoida", alku: "markkino", luokka: teonsana, jatko: <kanavoida>, äs: a];
-[perusmuoto: "Markku", alku: "Mark", luokka: etunimi, jatko: <alku>, äs: a];
+#Malaga class not found for (Markku, 1, valo-av1)
 [perusmuoto: "Markkula", alku: "Markkul", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Marklund", alku: "Marklund", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Marko", alku: "Marko", luokka: etunimi, jatko: <valo>, äs: a];
@@ -11747,7 +11747,8 @@
 [perusmuoto: "Mironoff", alku: "Mironoff", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "mirri", alku: "mirr", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "Mirva", alku: "Mirv", luokka: etunimi, jatko: <kala>, äs: a];
-[perusmuoto: "misantrooppi", alku: "misantroop", luokka: nimisana, jatko: <keppi>, äs: a];
+[perusmuoto: "misantrooppi", alku: "misantroop", luokka: nimisana, jatko: <keppi>, äs: a, rakenne: "=ppp=ppppppppp"];
+[perusmuoto: "misantropia", alku: "misantropi", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=ppp=pppppppp"];
 [perusmuoto: "Miska", alku: "Misk", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "misogynia", alku: "misogyni", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "misogyyni", alku: "misogyyn", luokka: nimisana, jatko: <risti>, äs: aä, tiedot: <inen>, rakenne: "=pppp=ppppp"];
@@ -12630,7 +12631,7 @@
 [perusmuoto: "nesteytys", alku: "nesteyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "nestor", alku: "nestor", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Nestori", alku: "Nestor", luokka: etunimi, jatko: <paperi>, äs: a];
-[perusmuoto: "Netta", alku: "Nett", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Netta", alku: "Net", luokka: etunimi, jatko: <aitta>, äs: a];
 [perusmuoto: "netti", alku: "net", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "netto", alku: "net", luokka: nimisana, jatko: <liitto>, äs: a];
 [perusmuoto: "neula", alku: "neul", luokka: nimisana, jatko: <kala>, äs: a];
@@ -13431,7 +13432,7 @@
 [perusmuoto: "optiikka", alku: "optiik", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "optikko", alku: "optik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "optimaalinen", alku: "optimaali", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "optimi", alku: "optim", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "optimi", alku: "optim", luokka: nimi_laatusana, jatko: <risti>, äs: a];
 [perusmuoto: "optimismi", alku: "optimism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "optimisti", alku: "optimist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "optimoida", alku: "optimo", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -13454,7 +13455,6 @@
 [perusmuoto: "Oravainen", alku: "Oravai", luokka: paikannimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Oravi", alku: "Orav", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "Orbinsky", alku: "Orbinsky", luokka: sukunimi, jatko: <valo>, äs: aä];
-[perusmuoto: "orderi", alku: "order", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ordinaali", alku: "ordinaal", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ordinaatta", alku: "ordinaat", luokka: nimisana, jatko: <aitta>, äs: a];
 [perusmuoto: "Oregon", alku: "Oregon", luokka: paikannimi, jatko: <kalsium>, äs: a];
@@ -13549,7 +13549,7 @@
 [perusmuoto: "Ossian", alku: "Ossian", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Osta", alku: "Ost", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "ostaa", alku: "ost", luokka: teonsana, jatko: <loistaa>, äs: a];
-[perusmuoto: "ostari", alku: "ostar", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "ostari", alku: "ostar", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <murre>];
 [perusmuoto: "Osterberg", alku: "Osterberg", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "osteri", alku: "oster", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ostjakki", alku: "ostjak", luokka: nimisana, jatko: <kajakki>, äs: a];
@@ -14034,7 +14034,6 @@
 [perusmuoto: "partisiippi", alku: "partisiip", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "partita", alku: "partit", luokka: laatusana, jatko: <kala>, äs: a];
 [perusmuoto: "partitiivi", alku: "partitiiv", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "partitio", alku: "partitio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "partitioida", alku: "partitio", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "partituuri", alku: "partituur", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "partneri", alku: "partner", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -15767,7 +15766,7 @@
 [perusmuoto: "päivettyä", alku: "päivet", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "päivetys", alku: "päivety", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Päivi", alku: "Päiv", luokka: etunimi, jatko: <risti>, äs: ä];
-[perusmuoto: "Päivikki", alku: "Päivik", luokka: etunimi, jatko: <kajakki>, äs: ä];
+[perusmuoto: "Päivikki", alku: "Päivik", luokka: etunimi, jatko: <takki>, äs: ä];
 [perusmuoto: "Päivinen", alku: "Päivi", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "päivittyä", alku: "päivit", luokka: teonsana, jatko: <asettua>, äs: ä];
 [perusmuoto: "päivittäinen", alku: "päivittäi", luokka: laatusana, jatko: <nainen>, äs: ä];
@@ -16036,7 +16035,7 @@
 [perusmuoto: "raiskio", alku: "raiskio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "raisu", alku: "raisu", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "raita", alku: "rai", luokka: nimisana, jatko: <pata>, äs: a, tiedot: <inen>];
-[perusmuoto: "raitio", alku: "raitio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "raitio", alku: "raitio", luokka: nimisana, jatko: <autio>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Raitio", alku: "Raitio", luokka: sukunimi, jatko: <autio>, äs: a];
 [perusmuoto: "raitistaa", alku: "raitist", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "raito", alku: "rai", luokka: nimisana, jatko: <leuto>, äs: a];
@@ -16710,7 +16709,7 @@
 [perusmuoto: "Risto", alku: "Risto", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Ristola", alku: "Ristol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Ristolainen", alku: "Ristolai", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "risu", alku: "risu", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "risu", alku: "risu", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
 [perusmuoto: "risukko", alku: "risuk", luokka: nimisana, jatko: <laatikko>, äs: a, tiedot: <inen>];
 [perusmuoto: "ritari", alku: "ritar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ritaristo", alku: "ritaristo", luokka: nimisana, jatko: <valo>, äs: a];
@@ -16806,7 +16805,7 @@
 [perusmuoto: "Romppala", alku: "Romppal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Romppanen", alku: "Romppa", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "romppu", alku: "romp", luokka: nimisana, jatko: <hoppu>, äs: a];
-[perusmuoto: "rompsu", alku: "rompsu", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "rompsu", alku: "rompsu", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <murre>];
 [perusmuoto: "romu", alku: "romu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "romuttaa", alku: "romu", luokka: teonsana, jatko: <ammottaa>, äs: a];
 [perusmuoto: "romuttua", alku: "romut", luokka: teonsana, jatko: <asettua>, äs: a];
@@ -23198,7 +23197,7 @@
 [perusmuoto: "ällistys", alku: "ällisty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "ällistyttää", alku: "ällistyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "ällistyä", alku: "ällisty", luokka: teonsana, jatko: <punoa>, äs: ä];
-[perusmuoto: "ällä", alku: "äll", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "ällä", alku: "äll", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <murre>];
 [perusmuoto: "ällö", alku: "ällö", luokka: laatusana, jatko: <valo>, äs: ä];
 [perusmuoto: "ällöttää", alku: "ällöt", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "älppäri", alku: "älppär", luokka: nimisana, jatko: <paperi>, äs: ä];
@@ -23226,7 +23225,7 @@
 [perusmuoto: "äristä", alku: "är", luokka: teonsana, jatko: <kihistä>, äs: ä];
 [perusmuoto: "ärjyä", alku: "ärjy", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "ärjäistä", alku: "ärjä", luokka: teonsana, jatko: <nuolaista>, äs: ä];
-[perusmuoto: "ärrä", alku: "ärr", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "ärrä", alku: "ärr", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <murre>];
 [perusmuoto: "ärsyke", alku: "ärsyk", luokka: nimisana, jatko: <tarvike>, äs: ä];
 [perusmuoto: "ärsyttää", alku: "ärsyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "ärsyyntyä", alku: "ärsyyn", luokka: teonsana, jatko: <jakaantua>, äs: ä];

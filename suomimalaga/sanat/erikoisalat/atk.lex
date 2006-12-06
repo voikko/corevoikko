@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-04 03:27:31 EET
+# Time of generation: 2006-12-06 03:27:21 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -83,6 +83,7 @@
 [perusmuoto: "mplayer", alku: "mplayer", luokka: nimi, jatko: <edam>, äs: aä];
 [perusmuoto: "mutt", alku: "mutt", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, rakenne: "=ipp=ppppp"];
+[perusmuoto: "partitio", alku: "partitio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "perl", alku: "perl", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "postscript", alku: "postscript", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=pppp=pppppp"];
