@@ -423,6 +423,7 @@
 [perusmuoto: "raitis", alku: "rait", luokka: laatusana, jatko: <altis>, äs: a];
 [perusmuoto: "raivota", alku: "raivo", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "rakentaa", alku: "raken", luokka: teonsana, jatko: <rakentaa>, äs: a];
+[perusmuoto: "jälleenrakentaa", alku: "jälleenraken", luokka: teonsana, jatko: <rakentaa>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "rapsaa", alku: "raps", luokka: teonsana, jatko: <palaa>, äs: a];
 [perusmuoto: "ratista", alku: "rat", luokka: teonsana, jatko: <kitistä>, äs: a];
 [perusmuoto: "ratketa", alku: "ratke", luokka: teonsana, jatko: <katketa>, äs: a];
