@@ -31,7 +31,7 @@
 #include <wchar.h>
 #include <string.h>
 
-
+#ifdef HAVE_MBRLEN
 void hyphenate_word(int handle, char * word) {
 	size_t len;
 	char * result;
@@ -132,3 +132,9 @@ int main(int argc, char ** argv) {
 	return 0;
 }
 
+#else
+int main(int argc, char ** argv) {
+	printf("E: This tool is not supported on your operating system.\n");
+	return 1;
+}
+#endif
