@@ -51,6 +51,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "bi-", alku: "bi-", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "digitaali", alku: "digitaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "elektro", alku: "elektro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "enimmäis", alku: "enimmäis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "enkel", alku: "enkel", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
