@@ -175,11 +175,11 @@
 [perusmuoto: "kaihtaa", alku: "kaih", luokka: teonsana, jatko: <kaihtaa>, äs: a];
 [perusmuoto: "kaikaa", alku: "kaikaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a, tiedot: <yt>];
 [perusmuoto: "kaikota", alku: "kaik", luokka: teonsana, jatko: <laota>, äs: a];
-[perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a];
+[perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
 [perusmuoto: "kaitsea", alku: "kaits", luokka: teonsana, jatko: <laskea>, äs: a];
 [perusmuoto: "kaivaa", alku: "kaiv", luokka: teonsana, jatko: <kaivaa>, äs: a];
 [perusmuoto: "kajota", alku: "kajo", luokka: teonsana, jatko: <kohota>, äs: a];
-[perusmuoto: "kallas", alku: "kalla", luokka: nimisana, jatko: <koiras>, äs: a];
+[perusmuoto: "kallas", alku: "kalla", luokka: nimisana, jatko: <koiras>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kallis", alku: "kall", luokka: laatusana, jatko: <kaunis>, äs: a];
 [perusmuoto: "kalvaa", alku: "kalv", luokka: teonsana, jatko: <palaa>, äs: a];
 [perusmuoto: "kalveta", alku: "kal", luokka: teonsana, jatko: <kevetä>, äs: a];
@@ -194,7 +194,7 @@
 [perusmuoto: "kapsaa", alku: "kaps", luokka: teonsana, jatko: <kapsaa>, äs: a];
 [perusmuoto: "karata", alku: "kar", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "karsi", alku: "kar", luokka: nimisana, jatko: <hirsi>, äs: a];
-[perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a];
+[perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
 [perusmuoto: "karttaa", alku: "kart", luokka: teonsana, jatko: <laittaa>, äs: a];
 [perusmuoto: "kasketa", alku: "kaske", luokka: teonsana, jatko: <katketa>, äs: a];
 [perusmuoto: "kastaa", alku: "kast", luokka: teonsana, jatko: <haastaa>, äs: a];
