@@ -1,3 +1,7 @@
+2006-12-09 Harri Pitkänen <hatapitk@iki.fi>
+
+        * Fix character case check for words with punctuation.
+
 2006-12-07 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Disable voikkohyphenate on Windows by making it print out an error

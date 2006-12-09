@@ -33,7 +33,10 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	size_t i, j;
 	value_t analysis;
 	const char * analysis_str;
+
+	/* Capitalisation pattern: 'i' = uppercase letter, 'p' = lowercase letter, 'v' is punctuation */
 	char * cappat;
+
 	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8");
 	if (malaga_buffer == 0) return SPELL_FAILED;
 	analyse_item(malaga_buffer, MORPHOLOGY);
@@ -46,7 +49,8 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	if (cappat == 0) return SPELL_FAILED;
 	for (i = 0; i < len; i++) {
 		if (iswupper(word[i])) cappat[i] = 'i';
-		else cappat[i] = 'p';
+		else if (iswlower(word[i])) cappat[i] = 'p';
+		else cappat[i] = 'v';
 	}
 	
 	best_result = SPELL_FAILED;
