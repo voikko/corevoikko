@@ -54,6 +54,7 @@ VERB = 3
 classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'k>',u'(ko)ko',u'koko'),
 			(u'k>',u'(ruo)ko',u'ruoko'),
+			(u'kk',u'(.*k)kU',u'alku'),
 			(u'k>',u'(.*)kU',u'alku'),
 			(u'uku',u'(.U)kU',u'luku'),
 			(u'uku',u'(..U)kU',u'tiuku'),
