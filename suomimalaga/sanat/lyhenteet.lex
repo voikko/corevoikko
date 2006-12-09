@@ -392,6 +392,9 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "š", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "ž", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "€", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
+[alku: "°C", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
+[alku: "°F", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
+[alku: "°K", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"];
 
 
 #[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
