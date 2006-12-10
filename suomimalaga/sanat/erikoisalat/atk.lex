@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-06 03:27:21 EET
+# Time of generation: 2006-12-10 03:27:21 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -79,7 +79,7 @@
 [perusmuoto: "Matrox", alku: "Matrox", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "mime", alku: "mime", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "modprobe", alku: "modprobe", luokka: nimi, jatko: <nalle>, äs: a, rakenne: "=ppp=ppppp"];
-[perusmuoto: "mozilla", alku: "mozill", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "Mozilla", alku: "Mozill", luokka: nimi, jatko: <karahka>, äs: a];
 [perusmuoto: "mplayer", alku: "mplayer", luokka: nimi, jatko: <edam>, äs: aä];
 [perusmuoto: "mutt", alku: "mutt", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, rakenne: "=ipp=ppppp"];
