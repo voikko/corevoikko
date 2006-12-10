@@ -1040,19 +1040,13 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 #define $a := transmit ("Huuhaa.");
     define $taulukko := <
 #      <<"">,    <"">>,
-      <<"agra">,            <"ari", "arka">>,
-      <<"alanen">,          <"pää", "suka", "sukia", "suu", "tulo">>,
       <<"alas">,            <"suka", "sukia">>,
       <<"alko">,            <"iva", "ivata">>,
-      <<"alli", "pasi">,    <"anssi">>,
       <<"anti">,            <"lainata">>,
-      <<"arja">,            <"lainen">>,
-      <<"askar">,           <"re">>,
       <<"auto">,            <"nova">>,  # Auto+novien.
       <<"de">,              <"lego", "mono", "sika">>,  # Ei de+lego+iva, de+mono+logi, geo+de+siassa.
       <<"eri", "esi">,      <"koi">>,   # Eri+koi+sala, esi+kois- (esi + koi + inen).
       <<"esikoinen">,       <"uusi">>,  # Esikois+uutensa (esikois + uusi).
-      <<"fakki", "suhta">,  <"utu">>,   # Fakki+utu+a, suhta+utu+a.
       <<"funktio">,   <"naali">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"hara">,      <"voi", "voida", "vuo">>,
@@ -1060,7 +1054,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"heinä">,     <"tupo">>,
       <<"helve">,     <"tilli">>,
       <<"hyppy">,     <"selli">>,
-      <<"hypo">,      <"tee", "teesi">>,
       <<"hätä">,      <"katka">>,
       <<"isä">,       <"nisä">>,
       <<"itse">,      <"matto", "tie">>,
@@ -1069,50 +1062,27 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"kalla">,     <"vesi">>,
       <<"kapi">,      <"nalli">>,  # Kapi+nallinen.
       <<"kare">,      <"lika">>,
-      <<"karja">,     <"lainen">>,
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
-      <<"kemi">,      <"alli">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"koti", "kotiin">, <"pää">>,    # Kotiinpäin.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luksus", "luminen">>,
-      <<"lainen">,    <"kala", "kasti", "kistu", "kuri", "kuu">>,
       <<"loinen">,    <"tee", "tehdä">>,
-      <<"lukunen">,   <"alin">>,
-      <<"läinen">,    <"käki">>,
-      <<"maa">,       <"gis", "nisä">>,
+      <<"maa">,       <"nisä">>,
       <<"maagi">,     <"seksi", "silta">>,
-      <<"mainen">,    <"emä">>,
-      <<"maini">,     <"ostaa", "ottaa", "tukea", "tuki">>,
-      <<"mari">,      <"nasta">>,
       <<"mansi">,     <"kastaa", "koi", "koittaa">>,
-      <<"metaani">,   <"rikastaa">>,
       <<"moni">,      <"naida", "nainen", "tora", "tori">>,
-      <<"musti">,     <"koi", "koettaa">>,
-      <<"nomi">,      <"suu">>,
-      <<"onninen">,   <"tuttu">>,
-      <<"ope">,       <"reti">>,
-      <<"oppinen">,   <"ääntö">>,
-      <<"orto">,      <"peti">>,
-      <<"peli">,      <"manni">>,
+      <<"onninen">,   <"tuttu">>, # onnistuttu
+      <<"oppinen">,   <"ääntö">>, # oppisääntö
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
       <<"punk">,      <"arka", "kari">>,
-      <<"polvinen">,  <"tuki">>,
+      <<"polvinen">,  <"tuki">>, # polvistuin
       <<"priori">,    <"soida">>,
       <<"pyro">,      <"maa">>,
       <<"pyy", "tie">, <"täi">>,  # Pyy+täisin (pyy + täi + inen), tie+täisin.
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
-      <<"rad">,       <"kaali">>,
-      <<"rauni">,     <"ottaa">>,      # Rauni+ota
-      <<"re">,        <"aktio", "väkä">>,
-      <<"rondo">,     <"letto">>,
-      <<"rusi">,      <"koi", "noita">>,
-      <<"salme">,     <"kivi", "oja", "perä", "suu">>,
       <<"samainen">,  <"tuta">>,
-      <<"samu">,      <"raita">>,
-      <<"sivula">,    <"usea">>,
-      <<"snellman">,  <"laki">>,
       <<"soinen">,    <"aari">>,
       <<"sota", "säihky">, <"väkä">>,
       <<"suo">,       <"musti", "nina">>,
@@ -1121,15 +1091,12 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"taulu">,     <"koi", "koittaa">>,
       <<"taus">,      <"takki">>,
       <<"tie">,       <"tee", "tie", "toinen", "tokko">>,
-      <<"toivo">,     <"malla">>,
-      <<"tove">,      <"re", "reisi">>,
       <<"traditio">,  <"naali">>,
       <<"ulko">,      <"naida", "nainen">>,
       <<"uus">,       <"arpoa">>,
       <<"vasta">,     <"pää">>,
       <<"viher">,     <"vuotaa">>,
       <<"viive">,     <"itä">>,
-      <<"vik">,       <"koko", "oja", "uros">>,
       <<"voinen">,    <"iva", "ivata">>,    # Voisivatko => vois+iva(ta).
       <<"vyö">,       <"täi">>,             # Vyö+täinen.
       <<"yhtä", "yksi">, <"toinen", "toistaa">>
