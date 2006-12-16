@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-10 03:27:21 EET
+# Time of generation: 2006-12-16 03:27:21 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -105,7 +105,7 @@
 [perusmuoto: "Ubuntu", alku: "Ubuntu", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "umount", alku: "umount", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "valgrind", alku: "valgrind", luokka: nimi, jatko: <kalsium>, äs: aä, rakenne: "=ppp=ppppp"];
-[perusmuoto: "vokseli", alku: "voksel", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "vokseli", alku: "voksel", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "Word", alku: "Word", luokka: nimi, jatko: <kalsium>, äs: aä];
 [perusmuoto: "wstring", alku: "wstring", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "wxWindows", alku: "wxWindows", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ppipppppp"];

@@ -20,11 +20,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-10 03:27:22 EET
+# Time of generation: 2006-12-16 03:27:22 EET
 
 [perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Annessa", alku: "Anness", luokka: nimi, jatko: <kala>, äs: a];
+[perusmuoto: "aurora", alku: "auror", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "Barrichello", alku: "Barrichello", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Benz", alku: "Benz", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Blarnia", alku: "Blarni", luokka: nimi, jatko: <apila>, äs: a];
@@ -37,6 +38,7 @@
 [perusmuoto: "inferno", alku: "inferno", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "input", alku: "input", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "international", alku: "international", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "Kaarosta", alku: "Kaarost", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Kehtna", alku: "Kehtn", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Kuusiku", alku: "Kuusiku", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "labour", alku: "labour", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -46,8 +48,11 @@
 [perusmuoto: "Maine", alku: "Maine", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "melodica", alku: "melodic", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Mercedes", alku: "Mercede", luokka: etunimi, jatko: <vastaus>, äs: ä];
+[perusmuoto: "Niman", alku: "Niman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "orderi", alku: "order", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "outside", alku: "outside", luokka: nimisana, jatko: <nalle>, äs: a];
+[perusmuoto: "pogosta", alku: "pogost", luokka: nimisana, jatko: <matala>, äs: a];
+[perusmuoto: "pokosta", alku: "pokost", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "Poschehonov", alku: "Poschehonov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Povoläjeff", alku: "Povoläjeff", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "primula", alku: "primul", luokka: nimisana, jatko: <karahka>, äs: a];
@@ -61,7 +66,7 @@
 [perusmuoto: "Schönholtz", alku: "Schönholtz", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Scopes", alku: "Scopes", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a];
-[perusmuoto: "tagaali", alku: "tagaal", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "tagaali", alku: "tagaal", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ultima", alku: "ultim", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "Viagra", alku: "Viagr", luokka: nimi, jatko: <karahka>, äs: a];
 
