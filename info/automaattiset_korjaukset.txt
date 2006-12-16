@@ -1,0 +1,168 @@
+YHDYSSANA (väärin)	SANALIITTO (oikein)
+-------------------------------------------
+
+aika=lailla		aika lailla
+aina=kun		aina kun
+aivan=kuin		aivan kuin
+ajan=mittaan		ajan mittaan
+ajan=tasalla		ajan tasalla
+alla=mainittu		alla mainittu
+alun=alkaen		alun alkaen
+alun=perin		alun perin
+alun=perin		alun perin
+alun=pitäen		alun pitäen
+ani=harvoin		ani harvoin
+arvossa=pidetty		arvossa pidetty
+edellä=mainittu		edellä mainittu
+edellä=oleva		edellä oleva
+edeltä=käsin		edeltä käsin
+ehdoin=tahdoin		ehdoin tahdoin
+ennen=aikaan		ennen aikaan
+ennen=kaikkea		ennen kaikkea
+ennen=kuin		ennen kuin
+ennen=muinoin		ennen muinoin
+ennen=pitkää		ennen pitkää
+ennen=vanhaan		ennen vanhaan
+ensi=alkuun		ensi alkuun
+ensi=kädessä		ensi kädessä
+ensi=sijassa		ensi sijassa
+ensi=vuonna		ensi vuonna
+eri=lailla		eri lailla
+eri=tavalla		eri tavalla
+esiin=tullut		esiin tullut
+heikun=keikun		heikun keikun
+heti=kun		heti kun
+hissun=kissun		hissun kissun
+huiskin=haiskin		huiskin haiskin
+hujan=hajan		hujan hajan
+huomioon=ottaen		huomioon ottaen
+hädin=tuskin		hädin tuskin
+hällä=väliä		hällä väliä
+ikään=kuin		ikään kuin
+itse=kukin		itse kukin
+itsestään=selvä		itsestään selvä
+iän=kaiken		iän kaiken
+jonkin=verran		jonkin verran
+juurta=jaksaen		juurta jaksaen
+juurta=jaksain		juurta jaksain
+kahden=kesken		kahden kesken
+kaiken=kaikkiaan	kaiken kaikkiaan
+kaikin=puolin		kaikin puolin
+kautta=rantain		kautta rantain
+kerta=kaikkiaan		kerta kaikkiaan
+kiikun=kaakun		kiikun kaakun
+kipin=kapin		kipin kapin
+koko=lailla		koko lailla
+käden=käänteessä	käden käänteessä
+loppujen=lopuksi	loppujen lopuksi
+lukuun=ottamatta	lukuun ottamatta
+läsnä=ollessa		läsnä ollessa
+melko=lailla		melko lailla
+mielin=kielin		mielin kielin
+mielin=määrin		mielin määrin
+minkä=takia		minkä takia
+minkä=tähden		minkä tähden
+minkä=vuoksi		minkä vuoksi
+minuun=päin		minuun päin
+miten=päin		miten päin
+mukaan=luettuna		mukaan luettuna
+mukaan=lukien		mukaan lukien
+mukkelis=makkelis	mukkelis makkelis
+mullin=mallin		mullin mallin
+muun=muassa		muun muassa
+niin=ikään		niin ikään
+niin=kuin		niin kuin
+niin=päin		niin päin
+niin=sanotusti		niin sanotusti
+nipin=napin		nipin napin
+nippa=nappa		nippa nappa
+niukin=naukin		niukin naukin
+noin=päin		noin päin
+nurin=päin		nurin päin
+oikein=päin		oikein päin
+paikka=paikoin		paikka paikoin
+perin=juurin		perin juurin
+perin=pohjin		perin pohjin
+päällisin=puolin	päällisin puolin
+päätä=pahkaa		päätä pahkaa
+ristiin=rastiin		ristiin rastiin
+saman=tien		saman tien
+saman=verran		saman verran
+sen=sijaan		sen sijaan
+sen=takia		sen takia
+sen=tähden		sen tähden
+sen=verran		sen verran
+sen=vuoksi		sen vuoksi
+sikin=sokin		sikin sokin
+sillä=lailla		sillä lailla
+sillä=tapaa		sillä tapaa
+sillä=tavoin		sillä tavoin
+sillä=välin		sillä välin
+silmällä=pitäen		silmällä pitäen
+sitä=mukaa		sitä mukaa
+sitä=paitsi		sitä paitsi
+sitä=vastoin		sitä vastoin
+suin=päin		suin päin
+suoraa=päätä		suoraa päätä
+suuna=päänä		suuna päänä
+suurin=piirtein		suurin piirtein
+tavan=takaa		tavan takaa
+totta=kai		totta kai
+tuiki=tavallinen	tuiki tavallinen
+tämän=sijaan		tämän sijaan
+täältä=käsin		täältä käsin
+töin=tuskin		töin tuskin
+varta=vasten		varta vasten
+viime=kädessä		viime kädessä
+vinksin=vonksin		vinksin vonksin
+vuoron=perään		vuoron perään
+vähän=väliä		vähän väliä
+väärin=päin		väärin päin
+yhtä=aikaa		yhtä aikaa
+yhtä=kaikki		yhtä kaikki
+yhtä=kuin		yhtä kuin
+yhtä=lailla		yhtä lailla
+yhtä=mittaa		yhtä mittaa
+yhtä=päätä		yhtä päätä
+yksin=tein		yksin tein
+ylen=määrin		ylen määrin
+yllin=kyllin		yllin kyllin
+yltä=päältä		yltä päältä
+
+
+SANALIITTO (väärin)	YHDYSSANA (oikein)
+------------------------------------------
+
+alas päin		alaspäin
+edeltä päin		edeltä=päin
+edessä päin		edessä=päin
+edestä päin		edestä=päin
+eteen päin		eteen=päin
+jompi kumpi		jompikumpi
+jompaa kumpaa		jompaakumpaa	(kaikki sijat)
+joten kuten		jotenkuten
+nimen omaan		nimen=omaan
+pois päin		pois=päin
+päin vastoin		päin=vastoin
+tänne päin		tänne=päin
+täällä päin		täällä=päin
+täältä päin		täältä=päin
+yksin omaan		yksin=omaan
+ylös alaisin		ylös=alaisin
+ylös päin		ylös=päin
+
+
+MUITA KORJAUKSIA
+----------------
+(väärin)		(oikein)
+
+aiemin			aiemmin
+alin=omaan		alin=omaa
+molempissa		molemmissa
+monasti			monesti
+päälekkäin		päällekkäin
+sydämmellinen		sydämellinen
+sydämmellisesti		sydämellisesti
+sydämmelliset		sydämelliset
+tälläinen		tällainen
+edenpänä		edempänä
