@@ -1,5 +1,5 @@
 # Kotus 1 talo
-class: subst-p
+class: 1
 sm-class: valo
 match-word: (?:O|U)
 consonant-gradation: sw
@@ -40,7 +40,7 @@ end: class
 
 # Kotus 2 pallero
 # astevaihtelu: ahdinko
-class: subst-o2
+class: 2
 sm-class: arvelu
 match-word: C(?:O|U)
 consonant-gradation: sw
@@ -83,7 +83,7 @@ end: class
 
 
 # Kotus 3 kallio
-class: subst-p
+class: 3
 sm-class: autio
 match-word: VO
 consonant-gradation: -
@@ -124,7 +124,7 @@ end: class
 
 
 # Kotus 4 akateemikko (av1 pakollinen)
-class: subst-o3
+class: 4
 match-word: kkO
 consonant-gradation: sw
 group: t
@@ -167,7 +167,7 @@ end: class
 
 
 # Kotus 5 patti (1/2)
-class: subst-p
+class: 5
 sm-class: risti
 match-word: Ci
 consonant-gradation: sw
@@ -206,7 +206,7 @@ end: rules
 end: class
 
 # Kotus 5 patti (2/2)
-class: subst-kiiski
+class: 5
 sm-class: kiiski
 match-word: Ci
 consonant-gradation: sw
@@ -258,7 +258,7 @@ end: rules
 end: class
 
 
-class: kalsium-p
+class: 5
 sm-class: kalsium
 match-word: C
 consonant-gradation: sw
@@ -298,7 +298,7 @@ end: class
 
 
 # Kotus 6 paperi (1/2)
-class: subst-paperi
+class: 6
 sm-class: paperi
 match-word: Ci
 consonant-gradation: sw
@@ -340,7 +340,7 @@ end: rules
 end: class
 
 # Kotus 6 paperi (2/2)
-class: subst-edam
+class: 6
 sm-class: edam
 match-word: C
 consonant-gradation: -
@@ -383,7 +383,7 @@ end: class
 
 
 # Kotus 7 lampi
-class: subst-i2
+class: 7
 sm-class: lovi
 match-word: i
 consonant-gradation: sw
@@ -424,7 +424,7 @@ end: class
 
 
 # Kotus 8 polle
-class: subst-e3
+class: 8
 sm-class: nalle
 match-word: Ce
 consonant-gradation: sw
@@ -465,7 +465,7 @@ end: class
 
 
 # Kotus 9 kissa
-class: subst-a2
+class: 9
 sm-class: kala
 match-word: a
 consonant-gradation: sw
@@ -506,7 +506,7 @@ end: class
 
 
 # Kotus 10 luokka (1/3)
-class: subst-p
+class: 10
 sm-class: koira
 match-word: CA
 consonant-gradation: sw
@@ -547,7 +547,7 @@ end: rules
 end: class
 
 # Kotus 10 luokka (2/3)
-class: subst-p
+class: 10
 sm-class: asema
 match-word: CA
 consonant-gradation: sw
@@ -589,7 +589,7 @@ end: rules
 end: class
 
 # Kotus 10 luokka (3/3)
-class: subst-p
+class: 10
 sm-class: apaja
 match-word: CA
 consonant-gradation: sw
@@ -633,7 +633,7 @@ end: class
 
 
 # Kotus 11 omena
-class: subst-matala
+class: 11
 sm-class: matala
 match-word: CA
 consonant-gradation: -
@@ -680,7 +680,7 @@ end: class
 
 
 # Kotus 12 lattia (1/3)
-class: subst-lattia
+class: 12
 sm-class: kulkija
 match-word: A
 consonant-gradation: -
@@ -721,7 +721,7 @@ end: rules
 end: class
 
 # Kotus 12 lattia (2/3)
-class: subst-peruna
+class: 12
 sm-class: peruna
 match-word: A
 consonant-gradation: -
@@ -765,7 +765,7 @@ end: rules
 end: class
 
 # Kotus 12 lattia (3/3)
-class: subst-herttua
+class: 12
 sm-class: herttua
 match-word: tuA
 consonant-gradation: -
@@ -822,7 +822,8 @@ end: class
 
 
 # Kotus 13 katiska, kotus 14 solakka
-class: subst-karahka
+# FIXME: 13,14
+class: 13,14
 sm-class: karahka
 match-word: A
 consonant-gradation: sw
@@ -867,7 +868,7 @@ end: class
 
 
 # Kotus 14 puolukka
-class: subst-a3
+class: 14
 match-word: (?:kk|pp|tt)A
 consonant-gradation: sw
 group: t
@@ -911,7 +912,7 @@ end: class
 
 
 # Kotus 15 hopea
-class: subst-ea
+class: 15
 sm-class: korkea
 match-word: [oe]A
 consonant-gradation: -
@@ -955,7 +956,7 @@ end: class
 
 
 # Kotus 16 vanhempi
-class: subst-suurempi
+class: 16
 sm-class: suurempi
 match-word: Vmpi
 consonant-gradation: sw
@@ -996,7 +997,7 @@ end: class
 
 
 # Kotus 17 vapaa
-class: subst-vapaa
+class: 17
 sm-class: vapaa
 match-word: CVV
 consonant-gradation: -
@@ -1038,7 +1039,7 @@ end: class
 
 
 # Kotus 18 maa
-class: subst-pii
+class: 18
 sm-class: pii
 match-word: V[aäiuy]
 consonant-gradation: -
@@ -1079,7 +1080,7 @@ end: class
 
 
 # Kotus 19 suo
-class: subst-suo
+class: 19
 sm-class: suo
 match-word: CUO
 consonant-gradation: -
@@ -1120,7 +1121,7 @@ end: class
 
 
 # Kotus 20 filee
-class: subst-kamee
+class: 20
 sm-class: kamee
 match-word: CVV
 consonant-gradation: -
@@ -1163,7 +1164,7 @@ end: class
 
 
 # Kotus 21 rosé
-class: subst-bébé
+class: 21
 sm-class: bébé
 match-word: V
 consonant-gradation: -
@@ -1203,7 +1204,7 @@ end: class
 
 
 # Kotus 23 tuohi
-class: subst-i3
+class: 23
 match-word: Ci
 consonant-gradation: -
 group: t
@@ -1243,7 +1244,8 @@ end: class
 
 
 # Kotus 24, 26 huuli
-class: subst-i3b
+# FIXME: 24,26
+class: 24,26
 sm-class: huuli
 match-word: Ci
 consonant-gradation: -
@@ -1285,7 +1287,7 @@ end: class
 
 
 # Kotus 25 loimi (1/2)
-class: subst-i4
+class: 25
 sm-class: niemi
 match-word: Vmi
 consonant-gradation: -
@@ -1327,7 +1329,7 @@ end: rules
 end: class
 
 # Kotus 25 loimi (2/2)
-class: subst-lumi
+class: 25
 sm-class: lumi
 match-word: Vmi
 consonant-gradation: -
@@ -1369,7 +1371,7 @@ end: class
 
 
 # Kotus 27 käsi
-class: subst-si1
+class: 27
 sm-class: susi
 match-word: Vsi
 consonant-gradation: -
@@ -1411,7 +1413,7 @@ end: class
 
 
 # Kotus 28 kansi
-class: subst-si2
+class: 28
 match-word: (?:n|l|r)si
 consonant-gradation: -
 group: t
@@ -1452,7 +1454,8 @@ end: class
 
 
 # Kotus 29, 30 lapsi
-class: subst-si3
+# FIXME: 29,30
+class: 29,30
 match-word: (?:p|t)si
 consonant-gradation: -
 group: t
@@ -1493,7 +1496,7 @@ end: class
 
 
 # Kotus 32 ien
-class: subst-nivel
+class: 32
 sm-class: sisar
 match-word: (?:A|e)(?:l|r)
 consonant-gradation: ws
@@ -1534,7 +1537,7 @@ end: class
 
 
 # Kotus 33 kytkin
-class: subst-uistin
+class: 33
 sm-class: uistin
 match-word: in
 consonant-gradation: ws
@@ -1576,7 +1579,7 @@ end: class
 
 
 # Kotus 38 hevonen
-class: subst-p
+class: 38
 sm-class: nainen
 match-word: nen
 consonant-gradation: -
@@ -1618,7 +1621,7 @@ end: class
 
 
 # Kotus 39 ajatus
-class: subst-p
+class: 39
 sm-class: vastaus
 match-word: Vs
 consonant-gradation: -
@@ -1660,7 +1663,7 @@ end: class
 
 
 # Kotus 40 kansallisuus
-class: subst-us2
+class: 40
 sm-class: kalleus
 match-word: Us
 consonant-gradation: -
@@ -1701,7 +1704,7 @@ end: class
 
 
 # Kotus 41 rengas (1/2)
-class: subst-as2
+class: 41
 sm-class: vieras
 match-word: As
 consonant-gradation: ws
@@ -1743,7 +1746,7 @@ end: rules
 end: class
 
 # Kotus 41 rengas (2/2)
-class: subst-iäkäs
+class: 41
 sm-class: iäkäs
 match-word: As
 consonant-gradation: ws
@@ -1787,7 +1790,7 @@ end: class
 
 
 # Kotus 48 aate
-class: subst-e2
+class: 48
 sm-class: hame
 match-word: e
 consonant-gradation: ws

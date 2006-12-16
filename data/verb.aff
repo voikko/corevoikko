@@ -1,5 +1,5 @@
 # Kotus 52 ampua
-class: verbi-punoa
+class: 52
 sm-class: punoa
 rmsfx: a
 match-word: VA
@@ -19,7 +19,7 @@ end: class
 
 # Kotus 53 muistaa ======================
 
-class: verbi-aavistaa
+class: 53
 sm-class: aavistaa
 rmsfx: a
 match-word: tAA
@@ -39,7 +39,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-hidastaa
+class: 53
 sm-class: hidastaa
 match-word: tAA
 consonant-gradation: -
@@ -59,7 +59,7 @@ imperfekti_pass	aa	ettiin	w
 end: rules
 end: class
 
-class: verbi-heittää
+class: 53
 sm-class: heittää
 rmsfx: a
 match-word: ttAA
@@ -80,7 +80,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-muistaa
+class: 53
 sm-class: muistaa
 match-word: CAA
 consonant-gradation: -
@@ -100,7 +100,7 @@ imperfekti_pass	aa	ettiin	w
 end: rules
 end: class
 
-class: verbi-inttää
+class: 53
 sm-class: inttää
 rmsfx: a
 match-word: ttAA
@@ -119,7 +119,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-sulaa
+class: 53
 sm-class: sulaa
 rmsfx: a
 match-word: CAA
@@ -137,7 +137,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-hohtaa
+class: 53
 sm-class: hohtaa
 rmsfx: a
 match-word: AA
@@ -158,7 +158,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-hujahtaa
+class: 53
 sm-class: hujahtaa
 rmsfx: a
 match-word: VhtAA
@@ -179,7 +179,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-kirjoittaa
+class: 53
 sm-class: kirjoittaa
 rmsfx: a
 match-word: VttAA
@@ -200,7 +200,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-loistaa
+class: 53
 sm-class: loistaa
 match-word: CAA
 consonant-gradation: -
@@ -222,7 +222,7 @@ end: class
 
 # Kotus 54 huutaa =======================
 
-class: verbi-vuotaa
+class: 54
 sm-class: vuotaa
 rmsfx: a
 match-word: tAA
@@ -240,7 +240,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-huutaa
+class: 54
 sm-class: huutaa
 rmsfx: a
 match-word: tAA
@@ -259,7 +259,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-sukeltaa
+class: 54
 sm-class: sukeltaa
 rmsfx: a
 match-word: tAA
@@ -279,7 +279,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-paleltaa
+class: 54
 sm-class: paleltaa
 rmsfx: a
 match-word: tAA
@@ -298,7 +298,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-murtaa
+class: 54
 sm-class: murtaa
 rmsfx: a
 match-word: tAA
@@ -320,7 +320,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-juontaa
+class: 54
 sm-class: juontaa
 rmsfx: a
 match-word: tAA
@@ -340,7 +340,7 @@ imperfekti_pass	a	ettiin	w
 end: rules
 end: class
 
-class: verbi-pahentaa
+class: 54
 sm-class: pahentaa
 rmsfx: a
 match-word: tAA
@@ -365,7 +365,7 @@ end: class
 
 
 # Kotus 55 soutaa
-class: verbi-soutaa
+class: 55
 sm-class: soutaa
 rmsfx: a
 match-word: tAA
@@ -387,7 +387,7 @@ end: class
 
 
 # Kotus 61 sallia (1/2)
-class: verbi-sallia
+class: 61
 sm-class: sallia
 rmsfx: a
 match-word: CiA
@@ -406,7 +406,7 @@ end: rules
 end: class
 
 # Kotus 61 sallia (1/2)
-class: verbi-moittia
+class: 61
 sm-class: moittia
 rmsfx: a
 match-word: CiA
@@ -427,7 +427,7 @@ end: class
 
 # Kotus 66 rohkaista ====================
 # FIXME: rangaista (nuolaista-av2)
-class: verbi-nuolaista
+class: 66
 sm-class: nuolaista
 rmsfx: sta
 match-word: stA
@@ -445,7 +445,7 @@ imperfekti_pass	0	stiin	s
 end: rules
 end: class
 
-class: verbi-kihistä
+class: 66
 sm-class: kihistä
 rmsfx: sta
 match-word: istA
@@ -467,7 +467,7 @@ end: class
 # End Kotus 66 rohkaista ================
 
 # Kotus 67 tulla
-class: verbi-katsella
+class: 67
 sm-class: katsella
 rmsfx: lla
 match-word: VllA
@@ -486,7 +486,7 @@ end: rules
 end: class
 
 # Kotus 68 tupakoida (1/3)
-class: verbi-voida
+class: 68
 sm-class: voida
 match-word: idA
 consonant-gradation: ws
@@ -504,7 +504,7 @@ end: rules
 end: class
 
 # Kotus 68 tupakoida (2/3)
-class: verbi-kanavoida
+class: 68
 sm-class: kanavoida
 match-word: idA
 consonant-gradation: ws
@@ -523,7 +523,7 @@ end: rules
 end: class
 
 # Kotus 68 tupakoida (3/3)
-class: verbi-haravoida
+class: 68
 sm-class: haravoida
 match-word: idA
 consonant-gradation: ws
@@ -547,7 +547,7 @@ end: class
 
 
 # Kotus 69 valita
-class: verbi-valita
+class: 69
 sm-class: valita
 rmsfx: tA
 match-word: itA
@@ -567,7 +567,7 @@ end: class
 
 
 # Kotus 72 vanheta
-class: verbi-aleta
+class: 72
 sm-class: aleta
 rmsfx: tA
 match-word: VtA
@@ -586,7 +586,7 @@ end: rules
 end: class
 
 # Kotus 73 salata (1/2)
-class: verbi-saneerata
+class: 73
 sm-class: saneerata
 match-word: CAtA
 consonant-gradation: -
@@ -604,7 +604,7 @@ end: rules
 end: class
 
 # Kotus 73 salata (2/2)
-class: verbi-salata
+class: 73
 sm-class: salata
 rmsfx: ta
 match-word: AtA
@@ -625,7 +625,7 @@ end: class
 
 
 # Kotus 75 selvitä (1/2)
-class: verbi-haluta
+class: 75
 sm-class: haluta
 rmsfx: tA
 match-word: (?:i|U)tA
@@ -644,7 +644,7 @@ end: rules
 end: class
 
 # Kotus 75 selvitä (2/2)
-class: verbi-juoruta
+class: 75
 sm-class: juoruta
 rmsfx: tA
 match-word: UtA
