@@ -133,7 +133,7 @@ yltä=päältä		yltä päältä
 SANALIITTO (väärin)	YHDYSSANA (oikein)
 ------------------------------------------
 
-alas päin		alaspäin
+alas päin		alas=päin
 edeltä päin		edeltä=päin
 edessä päin		edessä=päin
 edestä päin		edestä=päin
@@ -158,11 +158,14 @@ MUITA KORJAUKSIA
 
 aiemin			aiemmin
 alin=omaan		alin=omaa
+edenpänä		edempänä
 molempissa		molemmissa
 monasti			monesti
+ompa			onpa
 päälekkäin		päällekkäin
+rakkainpamme		rakkaimpamme
+saimpa			sainpa
 sydämmellinen		sydämellinen
 sydämmellisesti		sydämellisesti
 sydämmelliset		sydämelliset
 tälläinen		tällainen
-edenpänä		edempänä
