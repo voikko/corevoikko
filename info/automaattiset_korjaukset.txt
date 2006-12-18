@@ -161,10 +161,8 @@ alin=omaan		alin=omaa
 edenpänä		edempänä
 molempissa		molemmissa
 monasti			monesti
-ompa			onpa
 päälekkäin		päällekkäin
 rakkainpamme		rakkaimpamme
-saimpa			sainpa
 sydämmellinen		sydämellinen
 sydämmellisesti		sydämellisesti
 sydämmelliset		sydämelliset
