@@ -8,11 +8,28 @@ The following people have directly contributed material to the vocabulary:
 - Reijo Tomperi
 - Hannu Väisänen
 
+Additionally, the following sources have been used during the development:
 
-Additionally, the following sources have been used during the development
-to identify words missing from the vocabulary:
+- Hunspell-fi vocabulary
+  Authors: Jarno Kiuttu, Reijo Tomperi, Harri Pitkänen
+  License: GPL
+  Year of publication: 2005
 
-- Hunspell-fi vocabulary by Jarno Kiuttu, Reijo Tomperi and Harri Pitkänen
-- Finnish ispell vocabulary by Martin Vermeer and Pauli Virtanen
-- Finnish myspell vocabulary by Jukka Nikulainen
+- Finnish ispell vocabulary
+  Authors: Martin Vermeer, Pauli Virtanen
+  License: GPL
+  Year of publication: 2000
+  URL: http://ispell-fi.sourceforge.net/index.html
+
+- Finnish myspell vocabulary
+  Authors: Jukka Nikulainen
+  License: GPL
+  Year of publication: 2005
+  URL: http://www.mv.helsinki.fi/home/jnikulai/projects/index.html
+
+- The list of words in modern Finnish, version 1
+  Authors: Research Institute for the Languages of Finland
+  License: LGPL
+  Year of publication: 2006
+  URL: http://kaino.kotus.fi/sanat/nykysuomi/
 

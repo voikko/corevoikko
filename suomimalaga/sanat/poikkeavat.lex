@@ -41,6 +41,7 @@
 [perusmuoto: "altis", alku: "alt", luokka: laatusana, jatko: <altis>, äs: a];
 [perusmuoto: "Andit", alku: "And", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "antaa", alku: "an", luokka: teonsana, jatko: <antaa>, äs: a];
+[perusmuoto: "anteeksiantaa", alku: "anteeksian", luokka: teonsana, jatko: <antaa>, äs: a]; # Antaa-sanan kirjoitusasuksi
 [perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Arajuuri", alku: "Arajuur", luokka: sukunimi, jatko: <nuori>, äs: a];
 [perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <kirves>, äs: a];
@@ -54,6 +55,7 @@
 [perusmuoto: "aueta", alku: "au", luokka: teonsana, jatko: <poiketa>, äs: a];
 [perusmuoto: "aulis", alku: "aul", luokka: laatusana, jatko: <valmis>, äs: a];
 [perusmuoto: "auttaa", alku: "aut", luokka: teonsana, jatko: <laittaa>, äs: a];
+[perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a]; # Auttaa-sanan kirjoitusasuksi
 [perusmuoto: "autuas", alku: "autu", luokka: nimi_laatusana, jatko: <autuas>, äs: a];
 [perusmuoto: "avata", alku: "av", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];

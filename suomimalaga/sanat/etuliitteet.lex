@@ -40,6 +40,10 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 
 [perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
 
+# Etuliite + laatusana
+
+[perusmuoto: "alati", alku: "alati", luokka: etuliite, jatko: @ell, äs: aä];
+
 # Etuliite + nimisana/laatusana
 
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -69,22 +73,41 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "ominais", alku: "ominais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "online", alku: "online", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "pikku", alku: "pikku", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "poikki", alku: "poikki", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "raitio", alku: "raitio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "rationaali", alku: "rationaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "refleksiivi", alku: "refleksiivi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "yhtä", alku: "yhtä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
 
 # Etuliite + teonsana
 
+[perusmuoto: "auki", alku: "auki", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "de", alku: "de", luokka: etuliite, jatko: @elt, äs: aä];
-[perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "kahtia", alku: "kahtia", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "kolmin", alku: "kolmin", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "mukaan", alku: "mukaan", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "mukana", alku: "mukana", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "väärin", alku: "väärin", luokka: etuliite, jatko: @elt, äs: aä];
 
 
 # Etuliite + nimisana/laatusana/teonsana
 
 [perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "alas", alku: "alas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä]; # Alkuunpanija jne.
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
@@ -138,6 +161,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "muinais", alku: "muinais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "multi", alku: "multi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "myöhäis", alku: "myöhäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "myötä", alku: "myötä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "nano", alku: "nano", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "nelis", alku: "nelis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "nyky", alku: "nyky", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
@@ -190,12 +214,14 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "yhdys", alku: "yhdys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "yhteen", alku: "yhteen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "yhteis", alku: "yhteis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "yksin", alku: "yksin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "yksittäis", alku: "yksittäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "yksityis", alku: "yksityis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "yksöis", alku: "yksöis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "yleis", alku: "yleis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ylen", alku: "ylen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
 [perusmuoto: "yli", alku: "yli", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "ylitse", alku: "ylitse", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "ympäri", alku: "ympäri", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
