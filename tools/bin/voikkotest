@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright 2006 Harri Pitkänen (hatapitk@iki.fi)
+# Test program for Voikko spellchecker.
+# This program requires Python and python-enchant.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import locale
+import enchant
+import codecs
+
+
+# Set defaults
+ENCODING = locale.getpreferredencoding()
+langcode = "fi_FI"
+testfile = u"/home/harri/hunspell-fi/svn/trunk/data/voikkotest.txt"
+
+
+# Initialise the spellchecker
+try:
+	dict = enchant.Dict(langcode)
+except enchant.DictNotFoundError:
+	print u"No dictionary was found for language " + langcode
+	sys.exit(1)
+sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
+
+
+try:
+	inputfile = codecs.open(testfile, "r", ENCODING)
+	testcount = 0
+	failcount = 0
+	linecount = 0
+	section = u"(none)"
+	negative_test = False
+	while True:
+		line_orig = inputfile.readline()
+		linecount = linecount + 1
+		if line_orig == u'': break
+		line = line_orig.strip()
+		commentstart = line.find(u"#")
+		if commentstart != -1: line = line[:commentstart].strip()
+		if line.startswith(u'[') and line.endswith(u']'):
+			section = line[1:-1]
+			continue
+		if line.startswith(u'!'):
+			negative_test = True
+			word = line[1:]
+		else:
+			negative_test = False
+			word = line
+		testcount = testcount + 1
+		if not (dict.check(word) ^ negative_test):
+			print u'Test failed at line %i, section "%s":\n  %s' \
+			      % (linecount, section, line_orig)
+			failcount = failcount + 1
+	inputfile.close()
+	if failcount == 0:
+		print u"All %i tests were succesful." % testcount
+	else:
+		print u"%i tests out of %i failed." % (failcount, testcount)
+except IOError:
+	sys.stderr.write("Could not read from file " + filename + "\n")
+	sys.exit(1)
