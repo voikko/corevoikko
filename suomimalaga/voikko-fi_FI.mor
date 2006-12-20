@@ -1158,9 +1158,11 @@ end_rule loppu ($tietue):
 
   # Jotkut sanat eivät voi olla yhdyssanan jälkiosana.
   #
-  if (($j greater 1) and
-      ($tietue.$j.tiedot /= nil) and (ei_ysj in $tietue.$j.tiedot)) then
-    stop;
+  foreach $u in length($tietue):
+    if (($u greater 1) and ($u less_equal $j) and
+        ($tietue.$u.tiedot /= nil) and (ei_ysj in $tietue.$u.tiedot)) then
+      stop;
+    end;
   end;
 
 
