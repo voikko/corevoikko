@@ -29,7 +29,7 @@
 [perusmuoto: "airut", alku: "airu", luokka: nimisana, jatko: <airut>, äs: a];
 [perusmuoto: "ajaa", alku: "aj", luokka: teonsana, jatko: <kaivaa>, äs: a];
 [perusmuoto: "ajast'aika", alku: "ajast'a", luokka: nimisana, jatko: <aika>, äs: a];
-[perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a];
+[perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "alaitse", alku: "alaitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Alankomaat", alku: "Alankoma", luokka: paikannimi, jatko: <maa>, äs: a];
@@ -39,7 +39,6 @@
 [perusmuoto: "alkeet", alku: "alke", luokka: nimisana, jatko: <alkeet>, äs: a, tiedot: <inen>];
 [perusmuoto: "alokas", alku: "alok", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "altis", alku: "alt", luokka: laatusana, jatko: <altis>, äs: a];
-[perusmuoto: "Andit", alku: "And", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "antaa", alku: "an", luokka: teonsana, jatko: <antaa>, äs: a];
 [perusmuoto: "anteeksiantaa", alku: "anteeksian", luokka: teonsana, jatko: <antaa>, äs: a]; # Antaa-sanan kirjoitusasuksi
 [perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a];
@@ -59,7 +58,6 @@
 [perusmuoto: "autuas", alku: "autu", luokka: nimi_laatusana, jatko: <autuas>, äs: a];
 [perusmuoto: "avata", alku: "av", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];
-[perusmuoto: "bileet", alku: "bile", luokka: nimisana, jatko: <kamee>, äs: ä];
 [perusmuoto: "Bordeaux", alku: "Bordeaux", luokka: paikannimi, jatko: <parfait>, äs: a];
 [perusmuoto: "business", alku: "business", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Camus", alku: "Camus", luokka: sukunimi, jatko: <parfait>, äs: aä];
@@ -70,7 +68,7 @@
 [perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Damokles", alku: "Damokle", luokka: nimi, jatko: <kirves>, äs: a];
 [perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "digata", alku: "dig", luokka: teonsana, jatko: <digata>, äs: a];
+[perusmuoto: "digata", alku: "dig", luokka: teonsana, jatko: <digata>, äs: a, tiedot: <murre>];
 [perusmuoto: "Eddie", alku: "Eddie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "edusmies", alku: "edusmie", luokka: nimisana, jatko: <mies>, äs: a];
@@ -86,7 +84,6 @@
 [perusmuoto: "erota", alku: "ero", luokka: teonsana, jatko: <kohota>, äs: a];
 [perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "facto", alku: "facto", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "Filippiinit", alku: "Filippiin", luokka: paikannimi, jatko: <risti>, äs: ä];
 [perusmuoto: "Foucault", alku: "Foucault", luokka: nimi, jatko: <parfait>, äs: a];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
 [perusmuoto: "Glasgow", alku: "Glasgow", luokka: paikannimi, jatko: <parfait>, äs: a];
@@ -146,7 +143,6 @@
 [perusmuoto: "iljetä", alku: "il", luokka: teonsana, jatko: <tarjeta>, äs: ä];
 [perusmuoto: "imeä", alku: "im", luokka: teonsana, jatko: <laskea>, äs: ä];
 [perusmuoto: "inhota", alku: "inho", luokka: teonsana, jatko: <kohota>, äs: a];
-[perusmuoto: "inttäjäiset", alku: "inttäjäi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "irrota", alku: "ir", luokka: teonsana, jatko: <irrota>, äs: a];
 [perusmuoto: "irvissä", alku: "irviin", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irvissä", alku: "irvissä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
@@ -213,7 +209,6 @@
 [perusmuoto: "kapsaa", alku: "kaps", luokka: teonsana, jatko: <kapsaa>, äs: a];
 [perusmuoto: "karata", alku: "kar", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "Kares", alku: "Kare", luokka: sukunimi, jatko: <kirves>, äs: a];
-[perusmuoto: "Karpaatit", alku: "Karpaat", luokka: paikannimi, jatko: <salaatti>, äs: a];
 [perusmuoto: "karsi", alku: "kar", luokka: nimisana, jatko: <hirsi>, äs: a];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
 [perusmuoto: "karttaa", alku: "kart", luokka: teonsana, jatko: <laittaa>, äs: a];
@@ -333,7 +328,6 @@
 [perusmuoto: "maistaa", alku: "maist", luokka: teonsana, jatko: <haastaa>, äs: a];
 [perusmuoto: "maittaa", alku: "mait", luokka: teonsana, jatko: <laittaa>, äs: a];
 [perusmuoto: "maksaa", alku: "maks", luokka: teonsana, jatko: <kaivaa>, äs: a];
-[perusmuoto: "Malediivit", alku: "Malediiv", luokka: paikannimi, jatko: <risti>, äs: a];
 [perusmuoto: "malttaa", alku: "malt", luokka: teonsana, jatko: <laittaa>, äs: a];
 [perusmuoto: "manner", alku: "man", luokka: nimisana, jatko: <kinner>, äs: a];
 [perusmuoto: "Markit", alku: "Mark", luokka: paikannimi, jatko: <takki>, äs: a];
@@ -431,7 +425,6 @@
 [perusmuoto: "poiketa", alku: "poik", luokka: teonsana, jatko: <poiketa>, äs: a];
 [perusmuoto: "polkea", alku: "pol", luokka: teonsana, jatko: <polkea>, äs: a];
 [perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
-[perusmuoto: "polttarit", alku: "polttar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ponsi", alku: "pon", luokka: nimisana, jatko: <kansi>, äs: a];
 [perusmuoto: "posti", alku: "postitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a]; #NS: seikkasana.
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
@@ -448,7 +441,6 @@
 [perusmuoto: "päivyt", alku: "päivy", luokka: nimisana, jatko: <airut>, äs: ä];
 [perusmuoto: "päre", alku: "päre", luokka: nimisana, jatko: <terve>, äs: ä];
 [perusmuoto: "päteä", alku: "pä", luokka: teonsana, jatko: <kutea>, äs: ä];
-[perusmuoto: "päättäjäiset", alku: "päättäjäi", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "pääty", alku: "päädyitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pöpperössä", alku: "pöpperössä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "raastaa", alku: "raast", luokka: teonsana, jatko: <haastaa>, äs: a];
@@ -537,7 +529,6 @@
 [perusmuoto: "sotkea", alku: "sotk", luokka: teonsana, jatko: <laskea>, äs: a];
 [perusmuoto: "spray", alku: "spray", luokka: nimisana, jatko: <rosé>, äs: aä];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
-[perusmuoto: "Stallman", alku: "Stallman", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "stop", alku: "stop", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "sujut", alku: "sujut", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
@@ -600,7 +591,6 @@
 [perusmuoto: "tuoda", alku: "t", luokka: teonsana, jatko: <juoda>, äs: a];
 [perusmuoto: "Tuomas", alku: "Tuoma", luokka: etunimi, jatko: <koiras>, äs: a];
 [perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
-[perusmuoto: "tupaantuliaiset", alku: "tupaantuliai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "turkanen", alku: "turkasesti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "turvota", alku: "tur", luokka: teonsana, jatko: <turvota>, äs: a];
 [perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a];
@@ -631,7 +621,6 @@
 [perusmuoto: "valaa", alku: "val", luokka: teonsana, jatko: <kaivaa>, äs: a];
 [perusmuoto: "valjeta", alku: "val", luokka: teonsana, jatko: <tarjeta>, äs: a];
 [perusmuoto: "valmis", alku: "valm", luokka: nimi_laatusana, jatko: <valmis>, äs: a];
-[perusmuoto: "valvojaiset", alku: "valvojai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "vapista", alku: "vap", luokka: teonsana, jatko: <kitistä>, äs: a];
 [perusmuoto: "varata", alku: "var", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "varrota", alku: "var", luokka: teonsana, jatko: <irrota>, äs: a];
@@ -667,7 +656,6 @@
 [perusmuoto: "vääjäämätön", alku: "vääjäämä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "vääntää", alku: "vään", luokka: teonsana, jatko: <rakentaa>, äs: ä];
 [perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];
-[perusmuoto: "Yhdysvallat", alku: "Yhdysval", luokka: paikannimi, jatko: <valta>, äs: a];
 [perusmuoto: "yletön", alku: "yle", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "ylin", alku: "yl", luokka: laatusana, jatko: <pahin>, äs: ä];
 [perusmuoto: "ylkä", alku: "yl", luokka: nimisana, jatko: <ylkä>, äs: ä];
