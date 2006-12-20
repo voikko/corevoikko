@@ -82,7 +82,8 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                luku: monikko, äs: ä, jatko: @sijan_jatko];
 
 [alku: "n",    luokka: sijapääte, sija: omanto_n,
-               luku: yksikkö, äs: aä, jatko: @sijan_jatko + @yhdyssana];
+               luku: yksikkö, äs: aä,
+               jatko: @sijan_jatko + @yhdyssana];
 
 [alku: "nka",  luokka: sijapääte, sija: omanto_nkA,
                luku: yksikkö, äs: a, jatko: @sijan_jatko];
@@ -110,8 +111,8 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: monikko, äs: aä, jatko: @sijan_jatko + @yhdyssana];
 
 # Pitäisikö tämä hyväksyä vai ei?
-[alku: "i",     luokka: sijapääte, sija: omanto_in,
-                luku: monikko, äs: aä, jatko: <omistusliite>, tiedot: <murre>]; # Pöytä+i+ni?
+#[alku: "i",     luokka: sijapääte, sija: omanto_in,
+#                luku: monikko, äs: aä, jatko: <omistusliite>, tiedot: <murre>]; # Pöytä+i+ni?
 
 [alku: "ten",   luokka: sijapääte, sija: omanto_ten,
                 luku: monikko, äs: aä, jatko: @sijan_jatko + @yhdyssana];
@@ -178,6 +179,12 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: yksikkö, äs: a, jatko: @sijan_jatko_ol];
 [alku: "nä",    luokka: sijapääte, sija: olento_nA,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
+
+[alku: "ra",    luokka: sijapääte, sija: olento_rA,
+                luku: yksikkö, äs: a, jatko: @sijan_jatko_ol, tiedot: <ei_voikko>];
+[alku: "rä",    luokka: sijapääte, sija: olento_rA,
+                luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol, tiedot: <ei_voikko>];
+
 
 [alku: "ina",   luokka: sijapääte, sija: olento_inA,
                 luku: monikko, äs: a, jatko: @sijan_jatko_ol];
@@ -270,35 +277,35 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 
 
 [alku: "han",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: a, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: a, jatko: @sijan_jatko + @yhdyssana];
 [alku: "ha",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: a, jatko: <omistusliite>];
 [alku: "hen",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: aä, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: aä, jatko: @sijan_jatko + @yhdyssana];
 [alku: "he",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: aä, jatko: <omistusliite>];
 [alku: "hin",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: aä, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: aä, jatko: @sijan_jatko + @yhdyssana];
 [alku: "hi",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: aä, jatko: <omistusliite>];
 [alku: "hon",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: a, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: a, jatko: @sijan_jatko + @yhdyssana];
 [alku: "ho",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: a, jatko: <omistusliite>];
 [alku: "hun",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: a, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: a, jatko: @sijan_jatko + @yhdyssana];
 [alku: "hu",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: a, jatko: <omistusliite>];
 [alku: "hyn",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: ä, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: ä, jatko: @sijan_jatko + @yhdyssana];
 [alku: "hy",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: ä, jatko: <omistusliite>];
 [alku: "hän",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: ä, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: ä, jatko: @sijan_jatko + @yhdyssana];
 [alku: "hä",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: ä, jatko: <omistusliite>];
 [alku: "hön",   luokka: sijapääte, sija: sisätulento_hVn,
-                luku: yksikkö, äs: ä, jatko: @sijan_jatko + @sana2];
+                luku: yksikkö, äs: ä, jatko: @sijan_jatko + @yhdyssana];
 [alku: "hö",    luokka: sijapääte, sija: sisätulento_hVn,
                 luku: yksikkö, äs: ä, jatko: <omistusliite>];
 
@@ -402,9 +409,6 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "s",   luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "nsa", luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "mme", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "nne", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-
 [alku: "an",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "en",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
 [alku: "in",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
@@ -413,7 +417,8 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
 [alku: "än",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
 [alku: "ön",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-
+[alku: "mme", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+[alku: "nne", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
 
 
 # Laatusanojen sekä teonsanojen laatutapojen voittoaste.
@@ -1055,14 +1060,14 @@ define @jatko_v :=
 #
 define @jatko_nUt := <liitesana, osanto_tA, loppu>;
 
-[alku: "lut", luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_nUt];
-[alku: "lyt", luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_nUt];
-[alku: "nut", luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_nUt];
-[alku: "nyt", luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_nUt];
-[alku: "rut", luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_nUt];
-[alku: "ryt", luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_nUt];
-[alku: "sut", luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_nUt];
-[alku: "syt", luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_nUt];
+[perusmuoto: "lut", alku: "", luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "lyt", alku: "", luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, jatko: <kuollut>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "nut", alku: "", luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, jatko: <punonut>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "nyt", alku: "", luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, jatko: <punonut>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "rut", alku: "", luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, jatko: <purrut>,  äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "ryt", alku: "", luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, jatko: <purrut>,  äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "sut", alku: "", luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, jatko: <juossut>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "syt", alku: "", luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, jatko: <juossut>, äs: ä, tiedot: <ei_voikko>];
 
 [alku: "lut", luokka: johdin_lUt, äs: a, jatko: @jatko_nUt];
 [alku: "lyt", luokka: johdin_lUt, äs: ä, jatko: @jatko_nUt];
@@ -1480,6 +1485,3 @@ define @jatko_j_kantaja :=
 [alku: "jä", luokka: johdin_jA_kantaja, äs: ä, perusmuoto: "jä", jatko: @jatko_jA_kulkija_kantaja];
 [alku: "jö", luokka: johdin_jA_kantaja, äs: ä, perusmuoto: "jä", jatko: @jatko_jO_kulkija_kantaja];
 
-
-#[alku: "", luokka: , äs: a, perusmuoto: "", jatko: ];
-#[alku: "", luokka: , äs: ä, perusmuoto: "", jatko: ];

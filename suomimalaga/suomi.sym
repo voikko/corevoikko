@@ -94,6 +94,7 @@ sija;
   osanto_itA;    # Pu+ita.
 
   olento_nA;
+  olento_rA;     # Nuori => nuorra.
   olento_inA;
 
   tulento_ksi;
@@ -640,6 +641,9 @@ kevät;
 kahdeksas;
 tuhat;
 kuollut;
+  punonut;
+  purrut;
+  juossut;
 hame;
   alkeet;
   enne;
