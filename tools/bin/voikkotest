@@ -70,9 +70,9 @@ try:
 			failcount = failcount + 1
 	inputfile.close()
 	if failcount == 0:
-		print u"All %i tests were succesful." % testcount
+		print u"All %i tests were successful." % testcount
 	else:
 		print u"%i tests out of %i failed." % (failcount, testcount)
 except IOError:
-	sys.stderr.write("Could not read from file " + filename + "\n")
+	sys.stderr.write("Could not read from file " + testfile + "\n")
 	sys.exit(1)
