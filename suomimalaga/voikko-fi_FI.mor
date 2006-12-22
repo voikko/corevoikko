@@ -171,14 +171,15 @@ combi_rule nimisana ($vasen, $oikea, $sana):
   if ($i greater 0) then
     ? (($oikea.luokka in $vasen.$i.jatko) or
        ((nimisana in $vasen.$i.jatko) and
-        ($oikea.luokka in @nimisana)));
+        ($oikea.luokka in @nimisana))     or
+       ($vasen.$i.luokka = lukusana));
 
     ? yhdyssana_oikein ($vasen, $oikea, $i);
 
-    if $vasen.$i.luokka in <laatusana, nimi_laatusana> then
+    if $vasen.$i.luokka in <laatusana, nimi_laatusana, lukusana> then
       result $vasen + <[alku: $sana] + $oikea>,
              rules nimisanan_johdos;
-      if $vasen.$i.luokka = laatusana then stop; end;
+      if $vasen.$i.luokka in <laatusana, lukusana> then stop; end;
     end;
   end;
 
@@ -420,11 +421,11 @@ combi_rule lukusana ($vasen, $oikea, $sana):
 
   if ($oikea.alaluokka = yksiyhdeksän) then
     if (nimentö in $oikea.jatko) then
-      result $res, rules lukusana_toista, lukusana_sisäkerroin, loppu;
+      result $res, rules lukusana_toista, lukusana_sisäkerroin, nimisana, loppu;
     end;
   elseif ($oikea.alaluokka in <kymmenen, sata>) then
     if (nimentö in $oikea.jatko) then
-      result $res, rules lukusana_sisäkerroin, loppu;
+      result $res, rules lukusana_sisäkerroin, nimisana, loppu;
     end;
   end;
   if ($oikea.alaluokka in <sata, tuhat>) then
@@ -452,7 +453,7 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana):
   elseif ($edellinen.alaluokka in <kymmenen, sata>) then
     result $res, rules lukusana_sisäkerroin, loppu;
   else
-    result $res, rules loppu;
+    result $res, rules nimisana, loppu;
   end;
   if ($edellinen.alaluokka in <sata, tuhat>) then
     result $res, rules lukusana;
@@ -485,7 +486,7 @@ combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana):
   ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
 
   define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
-  result $res, rules lukusana, loppu;
+  result $res, rules lukusana, nimisana, loppu;
 end;
 
 combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana):
@@ -496,7 +497,7 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana):
   ? ääntiösointu_oikein($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana, lukutyyppi: $vasen.$len.lukutyyppi] + $oikea>;
 
-  result $res, rules lukusana, loppu;
+  result $res, rules lukusana, nimisana, loppu;
 end;
 
 combi_rule lukusana_toista ($vasen, $oikea, $sana):
@@ -506,7 +507,7 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana):
   define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto,
                             luku: $edellinen.luku, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
 
-  result $res, rules lukusana_sisäkerroin, loppu;
+  result $res, rules lukusana_sisäkerroin, nimisana, loppu;
 end;
 
 ###### LUKUSANASÄÄNNÖT PÄÄTTYVÄT

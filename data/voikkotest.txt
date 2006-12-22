@@ -25,6 +25,7 @@ suvialainen
 !taloabikissa # "abi" ei sallittu yhdyssanan loppuosana
 !taloabi # "abi" ei sallittu yhdyssanan loppuosana
 !puuuineet
+!kahdeksankissa
 
 [erisnimet]
 Erkki-eno
@@ -48,7 +49,7 @@ tulisessa
 
 [inen-johdokset]
 isoponttoninen
-#kahdeksanjärvinen
+kahdeksanjärvinen
 kielipoliittinen
 !ponttoninen
 !kissainen
