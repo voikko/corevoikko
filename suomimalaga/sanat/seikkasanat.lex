@@ -16,6 +16,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 # Seikkasanat
+# Jatko-kentässä sallittuja ovat ainoastaan loppu, liitesana, omistusliite ja sijapäätteet.
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

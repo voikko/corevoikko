@@ -30,6 +30,7 @@ lex: suomi.inc inc/subrule.inc voikko-fi_FI.pro
 lex: sanat/erikoissanat.lex
 lex: sanat/etuliitteet.lex
 lex: sanat/seikkasanat.lex
+lex: sanat/suhdesanat.lex
 lex: sanat/lukusanat.lex
 lex: sanat/lyhenteet.lex
 lex: sanat/olla-ei.lex

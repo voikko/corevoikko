@@ -25,14 +25,8 @@
 [perusmuoto: "ahah", alku: "ahah", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "ai", alku: "ai", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "aijai", alku: "aijai", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alias", alku: "alias", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "ammolla", alku: "ammo", luokka: suhdesana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: a];
-[perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "asti", alku: "asti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä, rakenne: "=ppp"];  # Osama bin Laden.
-[perusmuoto: "de", alku: "de", luokka: suhdesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ehei", alku: "ehei", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "eli", alku: "eli", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "elikkä", alku: "elikkä", luokka: sidesana, jatko: <loppu>, äs: ä];
@@ -70,7 +64,6 @@
 [perusmuoto: "höh", alku: "höh", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "höö", alku: "höö", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ilki", alku: "ilki", luokka: nimisana, jatko: @sana1, äs: ä];
-[perusmuoto: "ilman", alku: "ilman", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ilmi", alku: "ilmi", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
 [perusmuoto: "ja", alku: "ja", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jaa", alku: "jaa", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -96,18 +89,9 @@
 [perusmuoto: "juovuksissa", alku: "juovuksi", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "juu", alku: "juu", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kah", alku: "kah", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "kanssa", alku: "kanssa", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "kappas", alku: "kappas", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kas", alku: "kas", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "kautta", alku: "kautta", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "kera", alku: "kera", luokka: suhdesana, jatko: <loppu>, äs: a];
-[perusmuoto: "keralla", alku: "keralla", luokka: suhdesana, jatko: <omistusliite, loppu>, äs: a];
-[perusmuoto: "keralle", alku: "keralle", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "keskuudessa", alku: "keskuude", luokka: suhdesana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
-[perusmuoto: "keskuudessa", alku: "keskuute", luokka: suhdesana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "kippis", alku: "kippis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
-[perusmuoto: "kohden", alku: "kohden", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kohti", alku: "kohti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "koska", alku: "koska", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuin", alku: "kuin", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinka", luokka: sidesana, jatko: <liitesana, liitesana_s, loppu>, äs: a];
@@ -122,7 +106,6 @@
 [perusmuoto: "kunpa", alku: "kunpa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kutti", alku: "kutti", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu> + @sana2, äs: ä];
-[perusmuoto: "luota", alku: "luota", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
 [perusmuoto: "maksi", alku: "maks", luokka: nimisana, jatko: @sana1 + <risti>, äs: a];
 [perusmuoto: "mars", alku: "mars", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -150,8 +133,6 @@
 [perusmuoto: "mä", alku: "m", luokka: asemosana, jatko: <mä>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "mää", alku: "mää", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "nau", alku: "nau", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "ohi", alku: "ohe", luokka: suhdesana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: a];
-[perusmuoto: "ohi", alku: "ohi", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "oho", alku: "oho", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "ohoi", alku: "ohoi", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "ohoo", alku: "ohoo", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -201,11 +182,9 @@
 [perusmuoto: "vaikka", alku: "vaikka", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vaiko", alku: "vaiko", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
-[perusmuoto: "varten", alku: "varten", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vetoinen", alku: "vetoi", luokka: laatusana, jatko: <nainen>, äs: a ];
 [perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
 [perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
-[perusmuoto: "yli", alku: "yli", luokka: suhdesana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yäk", alku: "yäk", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ähä", alku: "ähä", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ääh", alku: "ääh", luokka: huudahdussana, jatko: <loppu>, äs: ä];

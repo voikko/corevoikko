@@ -50,7 +50,7 @@
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
                   lukusana, etuliite, teonsana, kieltosana, tavuviiva,
-		  laatusana_laatusanasta, seikkasana;
+		  laatusana_laatusanasta, seikka_tai_suhdesana;
 
 include "suomi.inc";
 include "inc/subrule.inc";
@@ -164,7 +164,7 @@ end;
 
 
 combi_rule nimisana ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <nimisana, nimi_laatusana, suhdesana>;
+  ? $oikea.luokka in <nimisana, nimi_laatusana>;
 
   define $i := length ($vasen);
 
@@ -511,10 +511,10 @@ end;
 
 ###### LUKUSANASÄÄNNÖT PÄÄTTYVÄT
 
-###### SEIKKASANASÄÄNNÖT ALKAVAT
+###### SEIKKA- JA SUHDESANASÄÄNNÖT ALKAVAT
 
-combi_rule seikkasana ($vasen, $oikea, $sana):
-  ? $oikea.luokka = seikkasana;
+combi_rule seikka_tai_suhdesana ($vasen, $oikea, $sana):
+  ? $oikea.luokka in <seikkasana, suhdesana>;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   
   if (loppu in $oikea.jatko) then
@@ -526,7 +526,7 @@ combi_rule seikkasana ($vasen, $oikea, $sana):
   result $res, rules sijapääte, omistusliite; # FIXME: esiehto testaamatta
 end;
 
-###### SEIKKASANASÄÄNNÖT PÄÄTTYVÄT
+###### SEIKKA- JA SUHDESANASÄÄNNÖT PÄÄTTYVÄT
 
 ###### YHDYSVIIVASÄÄNNÖT ALKAVAT
 

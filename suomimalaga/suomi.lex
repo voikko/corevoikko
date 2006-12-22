@@ -53,6 +53,7 @@ define @sana2 := @sana1 + <teonsana>;
 include "sanat/lyhenteet.lex";
 include "sanat/etuliitteet.lex";
 include "sanat/seikkasanat.lex";
+include "sanat/suhdesanat.lex";
 include "sanat/erikoiset.lex";
 include "sanat/poikkeavat.lex";
 include "sanat/olla-ei.lex";
