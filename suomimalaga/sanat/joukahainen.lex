@@ -10920,7 +10920,7 @@
 [perusmuoto: "löytö", alku: "löy", luokka: nimisana, jatko: <leuto>, äs: ä];
 [perusmuoto: "lööperi", alku: "lööper", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "lööppi", alku: "lööp", luokka: nimisana, jatko: <keppi>, äs: ä];
-[perusmuoto: "maa", alku: "ma", luokka: nimisana, jatko: <maa>, äs: a];
+[perusmuoto: "maa", alku: "ma", luokka: nimisana, jatko: <maa>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "Maa", alku: "Ma", luokka: nimi, jatko: <maa>, äs: a];
 [perusmuoto: "maadoittaa", alku: "maado", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "maagi", alku: "maag", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];

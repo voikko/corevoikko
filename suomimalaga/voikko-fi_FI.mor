@@ -550,7 +550,7 @@ combi_rule teonsana ($vasen, $oikea, $sana):
   end;
 
   result $vasen + <[alku: $sana] + $oikea>,
-         rules tekijämuodot, nimitavat, laatutavat,
+         rules tekijämuodot, nimitavat,
                liitesana,
                teonsanan_johdos,
                tavuviiva, loppu;
@@ -608,21 +608,6 @@ combi_rule nimitapa_1_pitkä ($vasen, $oikea, $sana):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>, rules omistusliite;
-end;
-
-
-combi_rule laatutavat ($vasen, $oikea, $sana):
-  ? $oikea.luokka in @laatutapa_1 + @laatutapa_2;
-
-  define $i := length ($vasen);
-  ? $oikea.luokka in $vasen.$i.jatko;
-  ? $vasen.$i.luokka = teonsana;
-  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-  ? yhdysteonsana_oikein ($vasen, $i);
-
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, omistusliite, liitesana,
-               voitto_yliaste, loppu;
 end;
 
 
@@ -796,7 +781,6 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   if ($oikea.luokka = johdin_inen) then
-    ? not ($i greater 1 and $vasen.$i.perusmuoto /= nil and $vasen.$i.perusmuoto = "maa");
     result $vasen + <[alku: $sana] + $oikea>,
            rules sijapääte, omistusliite, liitesana,
                  voitto_yliaste, laatusanan_johdos,

@@ -128,6 +128,8 @@ kahdellekymmenelletuhannelle
 [johtimet]
 märänlaiselleko
 !suvealainen
+talomainen # Oikea mainen-johdos
+!siistimainen # Väärä mainen-johdos
 
 [muita virheitä]
 !kolaaa
