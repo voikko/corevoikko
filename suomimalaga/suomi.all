@@ -49,7 +49,7 @@
 
 
 include "suomi.inc";
-include "inc/subrule.inc";
+include "inc/all.inc";
 
 # Kaikista nimisanoista johdetaan laatusana tOn-johtimella, esim: valo+ton.
 
@@ -3699,6 +3699,15 @@ subrule taivutuskaava ($tietue, $taivutus):
       and ei_vertm in $tietue.tiedot) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
+  end;
+
+  if ($tietue.tiedot /= nil and ei_yks in $tietue.tiedot) then
+    define $taivutus_kopio := $taivutus;
+    foreach $jatko in $taivutus_kopio:
+      if (luku_sijasta($jatko) = yksikkö) then
+        $taivutus :=- $jatko;
+      end;
+    end;
   end;
 
   # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).

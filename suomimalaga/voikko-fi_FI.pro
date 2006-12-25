@@ -25,7 +25,7 @@ mallex: set switch vanhat_muodot no
 
 ## Begin-Internal-Configuration
 sym: voikko-fi_FI.sym suomi.sym
-all: voikko-fi_FI.all suomi.all suomi.inc inc/subrule.inc voikko-fi_FI.pro
+all: voikko-fi_FI.all suomi.all suomi.inc inc/all.inc inc/subrule.inc voikko-fi_FI.pro
 lex: suomi.inc inc/subrule.inc voikko-fi_FI.pro
 lex: sanat/erikoissanat.lex
 lex: sanat/etuliitteet.lex
@@ -39,7 +39,7 @@ lex: sanat/yhdyssanat.lex
 lex: sanat/erikoiset.lex
 lex: sanat/poikkeavat.lex
 lex: sanat/lainen.lex
-mor: voikko-fi_FI.mor suomi.inc
+mor: voikko-fi_FI.mor suomi.inc inc/mor.inc inc/subrule.inc
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"
 malaga: set display-line "malshow"

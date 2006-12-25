@@ -47,6 +47,8 @@ USA:ssakin
 [sijamuodot]
 tulisessa
 !talojeen
+antimia # Vain monikkomuodot
+!anninta # Vain monikkomuodot
 
 [inen-johdokset]
 isoponttoninen
