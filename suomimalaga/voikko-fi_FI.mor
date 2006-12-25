@@ -408,6 +408,17 @@ combi_rule lukusana ($vasen, $oikea, $sana):
   define $sijamuoto := nil;
   define $luku := nil;
 
+  if ($oikea.alaluokka = erikoisluku) then
+    define $erikoisres := $vasen + <[alku: $sana] + $oikea>;
+    if (loppu in $oikea.jatko) then
+      result $erikoisres, rules loppu;
+    end;
+    if (liitesana in $oikea.jatko) then
+      result $erikoisres, rules liitesana;
+    end;
+    stop;
+  end;
+
   if ($len greater 0) then
     ? $vasen.$len.lukutyyppi = nil or $vasen.$len.lukutyyppi = $oikea.lukutyyppi;
     $sijamuoto := $vasen.$len.sijamuoto;
@@ -958,14 +969,6 @@ end;
 
 
 subrule yhdyssana_oikein ($vasen, $oikea, $i):
-#define $a := transmit (<$oikea.luokka> + <$oikea.perusmuoto> + <$vasen.$i.luokka>);
-#define $b := transmit (<$vasen.$i.perusmuoto> + <$oikea.perusmuoto>);
-
-#define $a := transmit (<"a"> + <($vasen.1).alku> + <($vasen.1).perusmuoto> + <($vasen.1).luokka>);
-#define $b := transmit (<"b"> + <($vasen.$i).alku> + <($vasen.$i).perusmuoto> + <($vasen.$i).luokka>);
-#define $c := transmit (<"c"> + <$oikea.alku> + <$oikea.perusmuoto> + <$oikea.luokka>);
-#define $d := transmit (<"d"> + <$i>);
-
   # Erisnimet eivät voi olla yhdyssanojen osana.
   #
   define $nimet := <etunimi, sukunimi, nimi>;
@@ -982,7 +985,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
         return yes;
 
       # Yhdysviiva sallittu, kun alkuosa loppuu samaan vokaaliin jolla loppuosa alkaa
-      #elseif ($vasen.($i - 1).luokka in <nimisana, nimi_laatusana>) and
       elseif
              ((($vasen.($i - 1).alku) matches ".*" + @ääntiö) and
               (last($vasen.($i - 1).alku) = first($oikea.perusmuoto))) then
@@ -1031,14 +1033,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return no;
   end;
 
-  if ($oikea.perusmuoto = "isyys") then
-    # Ei ymmärtä+vä+isyys.
-    return (not ($vasen.$i.luokka in <johdin_vA, johdin_ttAvA, johdin_vE>));
-  elseif (($oikea.perusmuoto = "ula") and ($oikea.luokka = nimisana)) then
-    return (not ($vasen.$i.luokka = johdin_inen));  # Ei vo+is+ula (voi + inen + ula tai vuo + inen + ula).
-  elseif (($oikea.perusmuoto = "toinen") and ($vasen.$i.luokka = johdin_inen)) then
-    return no;            # Ei vuor+is+toinen (vuori + -inen + toinen).
-  elseif (($oikea.luokka = etuliite) and
+  if (($oikea.luokka = etuliite) and
           ($oikea.perusmuoto = "uus") and
           ($vasen.$i.perusmuoto /= nil)) then
     if ($vasen.$i.perusmuoto = "jumal") then
@@ -1050,9 +1045,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
           ($oikea.luokka in @nimisana + <nimi_laatusana>)) then
     return no;
   else
-#define $a := transmit ("Huuhaa.");
     define $taulukko := <
-#      <<"">,    <"">>,
       <<"alas">,            <"suka", "sukia">>,
       <<"alko">,            <"iva", "ivata">>,
       <<"anti">,            <"lainata">>,
@@ -1119,13 +1112,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
                            $oikea.perusmuoto,
                            $taulukko)) then
       return no;
-    elseif ($oikea.perusmuoto = "ilta") then
-      #
-      # Ei muotoja punais+ilta (punainen + ilta).
-      #
-      if (($vasen.$i.luokka = laatusana) and ($vasen.$i.perusmuoto matches ".*inen")) then
-        return no;
-      end;
     elseif ($vasen.$i.perusmuoto /= nil) then
       if ((last($vasen.$i.perusmuoto) matches @ääntiö) and
           (first($oikea.perusmuoto) matches @ääntiö)) then

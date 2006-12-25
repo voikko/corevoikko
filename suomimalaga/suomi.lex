@@ -989,9 +989,9 @@ define @jatko_v :=
         vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
 
-[alku: "va", luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vA];
-[alku: "vä", luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA];
-[alku: "v",  luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_v];
+[alku: "va", luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vA, tiedot: <ei_voikko>];
+[alku: "vä", luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA, tiedot: <ei_voikko>];
+[alku: "v",  luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_v, tiedot: <ei_voikko>];
 
 [alku: "va", luokka: johdin_vA, äs: a, jatko: @jatko_vA];
 [alku: "vä", luokka: johdin_vA, äs: ä, jatko: @jatko_vA];
@@ -1002,10 +1002,10 @@ define @jatko_v :=
 [alku: "vyy", luokka: johdin_vA, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
 
 
-[alku: "va", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vE1];
-[alku: "vä", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vE1];
-[alku: "ve", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_vE2];
-[alku: "v",  luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_v];
+[alku: "va", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vE1, tiedot: <ei_voikko>];
+[alku: "vä", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vE1, tiedot: <ei_voikko>];
+[alku: "ve", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_vE2, tiedot: <ei_voikko>];
+[alku: "v",  luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_v, tiedot: <ei_voikko>];
 
 [alku: "va", luokka: johdin_vE, äs: a, jatko: @jatko_vE1];
 [alku: "vä", luokka: johdin_vE, äs: ä, jatko: @jatko_vE1];
@@ -1021,14 +1021,14 @@ define @jatko_v :=
 [alku: "väi", luokka: johdin_vAinen, äs: ä, jatko: <nainen>, perusmuoto: "väinen"];
 
 
-[alku: "ttava", luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vA];
-[alku: "ttävä", luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA];
-[alku: "ttav",  luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_v];
-[alku: "ttäv",  luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_v];
-[alku: "tava",  luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vA];
-[alku: "tävä",  luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA];
-[alku: "tav",   luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: a, jatko: @jatko_v];
-[alku: "täv",   luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_v];
+[alku: "ttava", luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vA, tiedot: <ei_voikko>];
+[alku: "ttävä", luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA, tiedot: <ei_voikko>];
+[alku: "ttav",  luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_v, tiedot: <ei_voikko>];
+[alku: "ttäv",  luokka: laatutapa_1_ttA, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_v, tiedot: <ei_voikko>];
+[alku: "tava",  luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vA, tiedot: <ei_voikko>];
+[alku: "tävä",  luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA, tiedot: <ei_voikko>];
+[alku: "tav",   luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: a, jatko: @jatko_v, tiedot: <ei_voikko>];
+[alku: "täv",   luokka: laatutapa_1_tA,  tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_v, tiedot: <ei_voikko>];
 
 [alku: "ttava", luokka: johdin_ttAvA, äs: a, jatko: @jatko_vA, perusmuoto: "ttava"];
 [alku: "ttävä", luokka: johdin_ttAvA, äs: ä, jatko: @jatko_vA, perusmuoto: "ttävä"];
@@ -1092,15 +1092,15 @@ define @jatko_e := <omanto_iT,
                     ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
                     vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
-[alku: "lee", luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee];
-[alku: "nee", luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee];
-[alku: "ree", luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee];
-[alku: "see", luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee];
+[alku: "lee", luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee, tiedot: <ei_voikko>];
+[alku: "nee", luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee, tiedot: <ei_voikko>];
+[alku: "ree", luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee, tiedot: <ei_voikko>];
+[alku: "see", luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, äs: aä, luku: yksikkö, jatko: @jatko_ee, tiedot: <ei_voikko>];
 
-[alku: "le",  luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e];
-[alku: "ne",  luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e];
-[alku: "re",  luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e];
-[alku: "se",  luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e];
+[alku: "le",  luokka: laatutapa_2_lUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e, tiedot: <ei_voikko>];
+[alku: "ne",  luokka: laatutapa_2_nUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e, tiedot: <ei_voikko>];
+[alku: "re",  luokka: laatutapa_2_rUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e, tiedot: <ei_voikko>];
+[alku: "se",  luokka: laatutapa_2_sUt, tapaluokka: laatutapa_2, äs: aä, luku: monikko, jatko: @jatko_e, tiedot: <ei_voikko>];
 
 
 [alku: "lee", luokka: johdin_lUt, äs: a, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "lut"];
@@ -1149,24 +1149,24 @@ define @jatko_heikko_aste :=
 
 define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 
-[alku: "ttu", luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_vahva_aste];
-[alku: "tty", luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_vahva_aste];
-[alku: "tu",  luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste];
-[alku: "ty",  luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste];
+[alku: "ttu", luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_vahva_aste, tiedot: <ei_voikko>];
+[alku: "tty", luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_vahva_aste, tiedot: <ei_voikko>];
+[alku: "tu",  luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "ty",  luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
 
-[alku: "du", luokka: laatutapa_2_dU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste];
-[alku: "dy", luokka: laatutapa_2_dU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste];
-[alku: "lu", luokka: laatutapa_2_lU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste];
-[alku: "ly", luokka: laatutapa_2_lU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste];
-[alku: "nu", luokka: laatutapa_2_nU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste];
-[alku: "ny", luokka: laatutapa_2_nU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste];
-[alku: "ru", luokka: laatutapa_2_rU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste];
-[alku: "ry", luokka: laatutapa_2_rU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste];
-[alku: "tu", luokka: laatutapa_2_tU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_vahva_aste];
-[alku: "ty", luokka: laatutapa_2_tU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_vahva_aste];
+[alku: "du", luokka: laatutapa_2_dU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "dy", luokka: laatutapa_2_dU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "lu", luokka: laatutapa_2_lU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "ly", luokka: laatutapa_2_lU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "nu", luokka: laatutapa_2_nU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "ny", luokka: laatutapa_2_nU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "ru", luokka: laatutapa_2_rU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "ry", luokka: laatutapa_2_rU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
+[alku: "tu", luokka: laatutapa_2_tU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_vahva_aste, tiedot: <ei_voikko>];
+[alku: "ty", luokka: laatutapa_2_tU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_vahva_aste, tiedot: <ei_voikko>];
 
-[alku: "tu", luokka: laatutapa_2_stU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko];
-[alku: "ty", luokka: laatutapa_2_stU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko];
+[alku: "tu", luokka: laatutapa_2_stU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko, tiedot: <ei_voikko>];
+[alku: "ty", luokka: laatutapa_2_stU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko, tiedot: <ei_voikko>];
 
 
 [alku: "ttu", luokka: johdin_ttU, äs: a, jatko: @jatko_vahva_aste,  perusmuoto: "ttu"];

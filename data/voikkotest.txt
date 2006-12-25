@@ -26,6 +26,7 @@ suvialainen
 !taloabi # "abi" ei sallittu yhdyssanan loppuosana
 !puuuineet
 !kahdeksankissa
+!hevosula
 
 [erisnimet]
 Erkki-eno
