@@ -57,6 +57,14 @@ kielipoliittinen
 !lahkoainen
 !tuliinen
 
+[voitto- ja yliasteet]
+kauniimmanvärinen
+!kauniimmanväri
+kauneimmanvärinen
+!kauneimmanväri
+!kauniimpivärinen
+!kauniimmastavärinen
+
 [yhdysviivat]
 puna-
 -Suomi

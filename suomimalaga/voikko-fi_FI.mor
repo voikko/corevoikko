@@ -226,6 +226,17 @@ combi_rule laatusana_laatusanasta ($vasen, $oikea, $sana):
   end;
 end;
 
+# inen-johdinta edeltävä nimisana
+combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana):
+  ? $oikea.luokka in <nimisana, nimi_laatusana>;
+  ? johdin_inen in $oikea.jatko;
+
+  define $i := length ($vasen);
+  ? yhdyssana_oikein ($vasen, $oikea, $i);
+
+  result $vasen + <[alku: $sana] + $oikea>, rules johdin_inen;
+end;
+
 ###### JOHDETTUJEN SANOJEN ALOITUSSÄÄNNÖT PÄÄTTYVÄT
 
 ###### JOHDINSÄÄNNÖT ALKAVAT
@@ -233,6 +244,19 @@ end;
 combi_rule johdin_nlainen ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_nlainen;
   result $vasen + <[alku: $sana] + $oikea>,
+         rules sijapääte, omistusliite,
+	       liitesana,
+	       nimisana, laatusana,
+	       laatusanan_johdos,
+	       voitto_yliaste,
+	       tavuviiva,
+	       etuliite,
+	       loppu;
+end;
+
+combi_rule johdin_inen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = johdin_inen;
+    result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
 	       liitesana,
 	       nimisana, laatusana,
@@ -342,6 +366,8 @@ define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
 			+ @johtimet_laatusana_laatusanasta
                         + @laatutapa_1 + @laatutapa_2;
 
+###### SIJAPÄÄTESÄÄNNÖT ALKAVAT
+
 combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana):
   ? $oikea.luokka = sijapääte;
 
@@ -364,6 +390,36 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana):
   end;
 end;
 
+combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana):
+  ? $oikea.luokka = sijapääte;
+
+  define $edellinen := $vasen.length($vasen);
+
+  ? $oikea.sija in $edellinen.jatko;
+  ? $oikea.sija /= kerronto_sti or $edellinen.luokka in @sti_edeltäjä;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+
+  if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
+    require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
+  end;
+
+  define $kantasana := $vasen.(length($vasen)-1);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if ($oikea.sija = kerronto_sti) then
+    ? $edellinen.luokka in @sti_edeltäjä;
+    result $res, rules liitesana, loppu;
+  else
+    result $res, rules omistusliite, liitesana, loppu;
+    if (sijamuoto_sijasta($oikea.sija) = omanto and
+        ($kantasana.tiedot = nil or
+         not (ei_ysa in $kantasana.tiedot and ei_ys in $kantasana.tiedot))) then
+      result $res, rules inen_johdos_nimisanasta;
+    end;
+  end;
+end;
+
+###### SIJAPÄÄTESÄÄNNÖT PÄÄTTYVÄT
 
 combi_rule sijapääte ($vasen, $oikea, $sana):
   ? $oikea.luokka = sijapääte;
@@ -725,9 +781,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, liitesana, omistusliite,
-               laatusanan_johdos,
-               nimisana, laatusana, teonsana,
+         rules voitto_yliasteen_sijapääte, liitesana, omistusliite,
                loppu;
 end;
 
