@@ -80,3 +80,12 @@ define @luku_sijasta_muunnostaulu :=
 subrule luku_sijasta($sija):
   return @luku_sijasta_muunnostaulu.$sija;
 end;
+
+# Palauttaa annetusta tietueesta johdoksissa tarvittavat lähtötiedot
+subrule johdoksen_lähtötiedot($tietue):
+  if (switch (malli) = voikko) then
+    return [lähtöluokka: $tietue.luokka];
+  else
+    return [lähtösana: $tietue.perusmuoto];
+  end;
+end;

@@ -261,6 +261,7 @@
 [perusmuoto: "kulloin", alku: "kulloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kumminkin", alku: "kumminkaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumminkin", alku: "kumminkin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kumossa", alku: "kumo", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA, sisätulento_Vn>, äs: a];
 [perusmuoto: "kunne", alku: "kunne", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunneka", alku: "kunneka", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuohuksiin", alku: "kuohuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

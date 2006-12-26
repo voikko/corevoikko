@@ -95,6 +95,9 @@ luovuusnäkökulma
 yleisopetus
 asuinrakentaminen
 etnosukellan
+ulosottaa
+ulosotto # teonsanan etuliitteen on käytävä myös teonsanasta johdetun nimisanan eteen
+!uloskissa # teonsanan etuliite ei saa olla tavallisen nimisanan edessä
 
 [seikkasanat]
 keskenään
@@ -139,6 +142,9 @@ kahdellekymmenelletuhannelle
 !kahdelletoistatuhansille
 !viisikissa
 !viisikaunis
+yksipuoluejärjestelmä
+yksipuolueyhteiskunta
+yhdenveroinen
 
 [johtimet]
 märänlaiselleko

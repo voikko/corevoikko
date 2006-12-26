@@ -880,7 +880,7 @@ allo_rule generate_allos ($tietue):
                                           [sisätulento_isiin: "e",
                                            sisätulento_ihin: "e"], "e"));
 
-    $tietue :=+ [lähtösana: $tietue.perusmuoto];
+    $tietue :=+ johdoksen_lähtötiedot($tietue);
     $tietue.perusmuoto := $tietue.alku + iA($tietue);   # Korkia.
 
     define $b := apila ($tietue, iA($tietue), iO($tietue));
@@ -3913,7 +3913,7 @@ end;
 
 
 subrule tekijä ($tietue, $lisä, $taivutus):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $lisä;
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + "j" + A($tietue);
@@ -5086,7 +5086,7 @@ end;
 
 
 subrule salaus ($tietue, $vahva_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := nimisana;
   $tietue.alku :=+ $vahva_aste;
   $tietue.perusmuoto := $tietue.alku + U($tietue) + "s";
@@ -5535,7 +5535,7 @@ end;
 
 
 subrule muistella ($tietue, $vahva_aste, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.perusmuoto := $tietue.alku + $heikko_aste + "el" + lA($tietue);
   return katsella ($tietue, $vahva_aste + "el", $heikko_aste + "el");
@@ -5553,7 +5553,7 @@ end;
 
 
 subrule muistua ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.alku :=+ U($tietue);
   $tietue.perusmuoto := $tietue.alku + A($tietue);
@@ -5713,7 +5713,7 @@ end;
 
 
 subrule sana_O ($tietue, $lisä, $vahva_aste, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $lisä;
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + $vahva_aste;
@@ -5723,7 +5723,7 @@ end;
 
 
 subrule sana_U ($tietue, $lisä):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $lisä + U($tietue);
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku;
@@ -5733,7 +5733,7 @@ end;
 
 
 subrule aavistus ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ U($tietue);
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + "s";
@@ -5743,7 +5743,7 @@ end;
 
 
 subrule sana_Us ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ "k" + U($tietue) + U($tietue);
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + "s";
@@ -5753,7 +5753,7 @@ end;
 
 
 subrule sana_Vs ($tietue, $lisä):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $lisä;
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku +"s";
@@ -5765,7 +5765,7 @@ end;
 # Kirjoittaa, kirjottaa => kirjoittautua, kirjottautua.
 #
 subrule kirjoittautua ($tietue, $lisä):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $lisä + A($tietue) + U($tietue);
   $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
   return antautua ($tietue, tU($tietue), dU($tietue));
@@ -5775,7 +5775,7 @@ end;
 # Kirjoittaa, kirjottaa => kirjoitella, kirjotella.
 #
 subrule kirjoitella ($tietue, $lisä):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $lisä;
   $tietue.perusmuoto := $tietue.alku + "el" + lA($tietue);
   return katsella ($tietue, "tel", "el");
@@ -5793,14 +5793,6 @@ subrule selvitä ($tietue, $vahva_aste, $heikko_aste):
   end;
 #         + selvittää ($tietue, $vahva_aste, $heikko_aste);
 end;
-
-
-#subrule selvittää ($tietue, $vahva_aste, $heikko_aste):
-#  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-#  $tietue.alku :=+ $heikko_aste + "t";
-#  return muistaa_muistella ($tietue, tA($tietue), tA($tietue), "", "")
-#         + taivutuskaava ($tietue, [johdin_Us_ksen: ""]);  # Selvitys.
-#end;
 
 
 subrule kohota ($tietue, $vahva_aste, $heikko_aste):
@@ -5864,7 +5856,7 @@ end;
 
 
 subrule kihinä ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ "in";
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + A($tietue);
@@ -5874,7 +5866,7 @@ end;
 
 
 subrule kihahtaa ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ A($tietue) + "h";
   $tietue.perusmuoto := $tietue.alku + "t" + AA($tietue);
@@ -5884,7 +5876,7 @@ end;
 
 
 subrule kihauttaa_kihautella ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ A($tietue) + U($tietue) + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + AA($tietue);
@@ -6017,7 +6009,7 @@ end;
 
 
 subrule alentaa ($tietue, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $heikko_aste + "n";
   $tietue.perusmuoto := $tietue.alku + tAA($tietue);
   return huutaa ($tietue, "t", "n")
@@ -6026,7 +6018,7 @@ end;
 
 
 subrule alentua ($tietue, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $heikko_aste + "n";
   $tietue.perusmuoto := $tietue.alku + "t" + UA($tietue);
   return punoa ($tietue, tU($tietue), nU($tietue));
@@ -6034,7 +6026,7 @@ end;
 
 
 subrule alennella ($tietue, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $heikko_aste + "n";
   $tietue.luokka := teonsana;
   $tietue.perusmuoto := $tietue.alku + "nel" + lA($tietue);
@@ -6664,7 +6656,7 @@ end;
 
 
 subrule juonto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := nimisana;
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.perusmuoto := $tietue.alku + tO($tietue);
@@ -6673,7 +6665,7 @@ end;
 
 
 subrule rakennus ($tietue, $lisä):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   if ($tietue.perusmuoto matches ".*ääntää") then
     $lisä :=+ "ö";
   else
@@ -6723,7 +6715,7 @@ end;
 
 
 subrule muisto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := nimisana;
 
   define $loppu := "o";
@@ -6740,7 +6732,7 @@ end;
 
 
 subrule hohto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := nimisana;
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.perusmuoto := $tietue.alku + tO($tietue);
@@ -6749,7 +6741,7 @@ end;
 
 
 subrule hohdattaa ($tietue, $vahva_aste, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.alku :=+ $heikko_aste + A($tietue) + "t";
   $tietue.luokka := teonsana;
   $tietue.äs := ääntiösointu ($tietue);
@@ -6761,7 +6753,7 @@ end;
 
 
 subrule heitto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := nimisana;
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.perusmuoto := $tietue.alku + tO($tietue);
@@ -6770,7 +6762,7 @@ end;
 
 
 subrule haravoitua ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ "i";
@@ -6789,7 +6781,7 @@ end;
 
 
 subrule salailla ($tietue, $vahva_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $vahva_aste + "il";
   $tietue.perusmuoto := $tietue.alku + lA($tietue);
@@ -6797,7 +6789,7 @@ subrule salailla ($tietue, $vahva_aste):
 end;
 
 subrule huiskaista ($tietue, $ääntiö, $malli):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $ääntiö;
   $tietue.perusmuoto := $tietue.alku + "ist" + $ääntiö;
@@ -6806,7 +6798,7 @@ end;
 
 
 subrule punottaa ($tietue, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $heikko_aste + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + AA($tietue);
@@ -6816,7 +6808,7 @@ end;
 
 
 subrule pahentua ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.perusmuoto := $tietue.alku + "t" + UA($tietue);
 
@@ -6839,7 +6831,7 @@ end;
 
 
 subrule murto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := nimisana;
   $tietue.äs := a;
   $tietue.perusmuoto := $tietue.alku + tO($tietue);

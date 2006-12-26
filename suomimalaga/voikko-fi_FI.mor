@@ -131,11 +131,11 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = etuliite;
 
   if ($index greater 1) then
-    ? $oikea.luokka in $vasen.($index - 1).jatko;
+    ? etuliite in $vasen.($index - 1).jatko;
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   end;
 
-  if (nimisana in $oikea.jatko) then
+  if (nimisana in $oikea.jatko or teonsana in $oikea.jatko) then
     result $vasen + <[alku: $sana] + $oikea>,
            rules nimisana_teonsanasta;
   end;
@@ -170,14 +170,19 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
     define $edellinen := $vasen.($index - 1);
     ? (($oikea.luokka in $edellinen.jatko) or
        ((nimisana in $edellinen.jatko) and
-        ($oikea.luokka in @nimisana))     or
-       ($edellinen.luokka = lukusana));
+        ($oikea.luokka in @nimisana))      or
+       ($edellinen.luokka = lukusana)      or
+       ($oikea.lähtöluokka = teonsana and teonsana in $edellinen.jatko));
 
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
 
-    if $edellinen.luokka in <laatusana, nimi_laatusana, lukusana> then
+    if $edellinen.luokka in <laatusana, nimi_laatusana> then
       result $res, rules nimisanan_johdos;
-      if $edellinen.luokka in <laatusana, lukusana> then stop; end;
+      if $edellinen.luokka = laatusana then stop; end;
+    elseif $edellinen.lukutyyppi /= nil then
+      result $res,
+             rules nimisanan_johdos, nimisana, etuliite, nimisana_laatusanasta, nimisana_teonsanasta, tavuviiva;
+      stop;
     end;
   end;
 
@@ -507,7 +512,7 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
 
   define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
   if ($edellinen.alaluokka = yksiyhdeksän) then
-    result $res, rules lukusana_toista, lukusana_sisäkerroin, loppu;
+    result $res, rules lukusana_toista, lukusana_sisäkerroin, nimisana, inen_päätteinen_laatusana, loppu;
   elseif ($edellinen.alaluokka in <kymmenen, sata>) then
     result $res, rules lukusana_sisäkerroin, loppu;
   else
