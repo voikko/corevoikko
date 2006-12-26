@@ -58,6 +58,7 @@ kielipoliittinen
 !kissainen
 !lahkoainen
 !tuliinen
+viisiulotteinen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
@@ -136,6 +137,8 @@ kahdellekymmenelletuhannelle
 !viidennestäkymmenennestäkaksi
 !viidennestäkymmenennestäkolmannelle
 !kahdelletoistatuhansille
+!viisikissa
+!viisikaunis
 
 [johtimet]
 märänlaiselleko
