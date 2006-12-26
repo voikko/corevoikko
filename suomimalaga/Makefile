@@ -7,7 +7,7 @@ all: voikko sukija
 kehitys: all transmit
 
 voikko:
-	malmake voikko-fi_FI.pro
+	@malmake voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 sukija:
 	malmake suomi-sukija.pro
