@@ -247,6 +247,7 @@ tapaluokka;
   mahtotapa_ttA;
   mahtotapa_tA;
   käskytapa;
+  käskytapa_y2;      # Puhu.
   käskytapa_kielto;  # Älkää puhu+ko.
   käskytapa_ttA;
   käskytapa_tA;
@@ -261,12 +262,14 @@ tapaluokka;
   nimitapa_2;
   nimitapa_2_tA;
   nimitapa_2_ttA;
-  nimitapa_3;
+  nimitapa_3;        # Taipuu kuten asema.
+  nimitapa_3_saama;  # Taipuu kuten koira.
   nimitapa_3_tA;
   nimitapa_3_ttA;
   nimitapa_4;
   nimitapa_5;
-  laatutapa_1;      # punoa => punova => punovampi
+  laatutapa_1;
+  laatutapa_1_vA;   # punoa => punova => punovampi
   laatutapa_1_vE;   # myydä => myyvä  => myyvempi
   laatutapa_1_tA;
   laatutapa_1_ttA;
@@ -277,13 +280,16 @@ tapaluokka;
   laatutapa_2_rUt; # Pur+rut.
   laatutapa_2_sUt; # Juos+sut.
 
-  laatutapa_2_dU;  # Voi+du+n.
-  laatutapa_2_lU;  # Tul+lu+n.
-  laatutapa_2_nU;  # Men+ny+n.
-  laatutapa_2_rU;  # Pur+ru+n.
-  laatutapa_2_tU;  # Voi+tu, tul+tu, men+ty, pur+tu,;
+  laatutapa_2_tU;
+  laatutapa_2_tU_dU;          # Voitu, voidun.
+  laatutapa_2_tU_lU_katseltu; # Katseltu, katsellun, katseltujen, katselluiden/katselluitten.
+  laatutapa_2_tU_lU_oltu;     # Oltu, ollun, oltujen.
+  laatutapa_2_tU_nU;          # Menty, mennyn.
+  laatutapa_2_tU_rU;          # Purtu, purrun.
+
   laatutapa_2_ttU; # Puno+ttu, puno+tu+n.
-  laatutapa_2_stU; # Juos+tu, nuolais+tu. Siis astevaihteluton tU-loppuinen.
+  laatutapa_2_stU_juostu;    # Juos+tu, juostujen.  Siis astevaihteluton tU-loppuinen.
+  laatutapa_2_stU_nuolaistu; # Nuolais+tu, nuolaistujen/nuolaistuiden.  Siis astevaihteluton tU-loppuinen.
 
   johdin_tAr;       # Pappi >= papitar.
   johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).

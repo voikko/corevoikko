@@ -3298,7 +3298,6 @@ allo_rule generate_allos ($tietue):
                              käskytapa, käskytapa_tA,
                              nimitapa_2_tA, nimitapa_3_tA, laatutapa_1_tA,
                              laatutapa_2_lUt>
-                            + @laatutapa_2_l
                             + @kertoman_tekijäpääte, []),
                   taivutus ($tietue, "l", <nimitapa_2>, []),
                   taivutus ($tietue, "e",
@@ -5706,7 +5705,6 @@ subrule seistä ($tietue):
                          laatutapa_1_tA: "",
                          johdin_tAvA: "",
                          laatutapa_2_sUt: "",
-                         laatutapa_2_stU: "",
                          johdin_sUt: "",
                          johdin_stU: ""]);
 end;
@@ -6282,7 +6280,6 @@ end;
 subrule laatutapa_2_lUt ($tietue, $lisä):
   return [laatutapa_2_lUt: $lisä,
           laatutapa_2_tU:  $lisä,
-          laatutapa_2_lU:  $lisä,
           johdin_lUt:      $lisä,
           johdin_tU:       $lisä,
           johdin_lU:       $lisä];
@@ -6292,7 +6289,6 @@ end;
 subrule laatutapa_2_nUt ($tietue, $vahva_aste, $heikko_aste):
   return [laatutapa_2_nUt: $vahva_aste,
           laatutapa_2_tU:  $heikko_aste,
-          laatutapa_2_nU:  $heikko_aste,
           johdin_nUt:      $vahva_aste,
           johdin_tU:       $heikko_aste,
           johdin_nU:       $heikko_aste];
@@ -6302,7 +6298,6 @@ end;
 subrule laatutapa_2_nUt_dU ($tietue, $vahva_aste, $heikko_aste):
   return [laatutapa_2_nUt: $vahva_aste,
           laatutapa_2_tU:  $heikko_aste,
-          laatutapa_2_dU:  $heikko_aste,
           johdin_nUt:      $vahva_aste,
           johdin_tU:       $heikko_aste,
           johdin_dU:       $heikko_aste];
@@ -6320,7 +6315,6 @@ end;
 subrule laatutapa_2_rUt ($tietue, $vahva_aste, $heikko_aste):
   return [laatutapa_2_rUt: $vahva_aste,
           laatutapa_2_tU:  $heikko_aste,
-          laatutapa_2_rU:  $heikko_aste,
           johdin_rUt:      $vahva_aste,
           johdin_tU:       $heikko_aste,
           johdin_rU:       $heikko_aste];
@@ -6329,7 +6323,6 @@ end;
 
 subrule laatutapa_2_sUt ($tietue, $lisä):
   return [laatutapa_2_sUt: $lisä,
-          laatutapa_2_stU: $lisä,
           johdin_sUt:      $lisä,
           johdin_stU:      $lisä];
 end;

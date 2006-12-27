@@ -71,13 +71,6 @@ define @nimitapa_1 := <nimitapa_1_A,  nimitapa_1_dA, nimitapa_1_lA,
 define @nimitapa_2 := <nimitapa_2, nimitapa_2_ttA, nimitapa_2_tA>;
 define @nimitapa_3 := <nimitapa_3, nimitapa_3_ttA, nimitapa_3_tA>;
 
-define @laatutapa_1 := <laatutapa_1, laatutapa_1_vE, laatutapa_1_ttA, laatutapa_1_tA>;
-
-define @laatutapa_2 := <laatutapa_2_lUt, laatutapa_2_nUt, laatutapa_2_rUt,
-                        laatutapa_2_sUt, laatutapa_2_ttU,
-                        laatutapa_2_dU, laatutapa_2_lU, laatutapa_2_nU,
-                        laatutapa_2_rU, laatutapa_2_stU, laatutapa_2_tU>;
-
 # Johtimet teonsanoista
 
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
@@ -359,8 +352,7 @@ define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
                          johdin_vA, johdin_vAinen, johdin_vE>
                         + @johtimet_laatusana_nimisanasta
-			+ @johtimet_laatusana_laatusanasta
-                        + @laatutapa_1 + @laatutapa_2;
+			+ @johtimet_laatusana_laatusanasta;
 
 ###### SIJAPÄÄTESÄÄNNÖT ALKAVAT
 
@@ -772,9 +764,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
 
-  ? $edellinen.luokka in @laatusana + <johdin_vAinen> +
-                        @johtimet_laatusana_nimisanasta
-                        + @laatutapa_1 + @laatutapa_2 + @johdin_laatutapa;
+  ? $edellinen.luokka in @laatusana + <johdin_vAinen>;
 
   ? (voittoaste in $edellinen.jatko) or (yliaste in $edellinen.jatko);
   ? $oikea.luokka in $edellinen.jatko;

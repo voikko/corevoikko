@@ -1154,19 +1154,8 @@ define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 [alku: "tu",  luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
 [alku: "ty",  luokka: laatutapa_2_ttU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
 
-[alku: "du", luokka: laatutapa_2_dU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "dy", luokka: laatutapa_2_dU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "lu", luokka: laatutapa_2_lU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "ly", luokka: laatutapa_2_lU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "nu", luokka: laatutapa_2_nU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "ny", luokka: laatutapa_2_nU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "ru", luokka: laatutapa_2_rU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
-[alku: "ry", luokka: laatutapa_2_rU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_heikko_aste, tiedot: <ei_voikko>];
 [alku: "tu", luokka: laatutapa_2_tU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko_vahva_aste, tiedot: <ei_voikko>];
 [alku: "ty", luokka: laatutapa_2_tU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko_vahva_aste, tiedot: <ei_voikko>];
-
-[alku: "tu", luokka: laatutapa_2_stU, tapaluokka: laatutapa_2, äs: a, jatko: @jatko, tiedot: <ei_voikko>];
-[alku: "ty", luokka: laatutapa_2_stU, tapaluokka: laatutapa_2, äs: ä, jatko: @jatko, tiedot: <ei_voikko>];
 
 
 [alku: "ttu", luokka: johdin_ttU, äs: a, jatko: @jatko_vahva_aste,  perusmuoto: "ttu"];

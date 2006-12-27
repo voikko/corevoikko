@@ -113,13 +113,13 @@ define @kertoman_tekijäpääte_heikko_aste := <kertoman_tekijäpääte_y1,
 define @kertoman_tekijäpääte_vahva_aste := <kertoman_tekijäpääte_y3,
                                             kertoman_tekijäpääte_m3>;
 
-define @laatutapa_2_d  := <laatutapa_2_tU, laatutapa_2_dU>;
-define @laatutapa_2_l  := <laatutapa_2_tU, laatutapa_2_lU>;
-define @laatutapa_2_n  := <laatutapa_2_tU, laatutapa_2_nU>;
-define @laatutapa_2_r  := <laatutapa_2_tU, laatutapa_2_rU>;
+define @laatutapa_2_stU := <laatutapa_2_stU_juostu, laatutapa_2_stU_nuolaistu>;
 
-define @laatutapa := <laatutapa_2_tU, laatutapa_2_dU, laatutapa_2_lU,
-                      laatutapa_2_nU, laatutapa_2_rU>;
+define @laatutapa_2_tU := <laatutapa_2_tU_dU,
+                           laatutapa_2_tU_lU_katseltu,
+                           laatutapa_2_tU_lU_oltu,
+                           laatutapa_2_tU_nU,
+                           laatutapa_2_tU_rU>;
 
 define @tositapa_4_d  := <tositavan_kestämä_dAAn,
                           tositavan_kestämä_dAAn_kielto,
