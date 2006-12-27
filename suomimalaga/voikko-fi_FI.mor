@@ -491,6 +491,9 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
       result $res, rules lukusana_sisäkerroin, nimisana, inen_päätteinen_laatusana, loppu;
     end;
   end;
+  if ($oikea.alaluokka = tuhat and nimentö in $oikea.jatko) then
+    result $res, rules nimisana, inen_päätteinen_laatusana, loppu;
+  end;
   if ($oikea.alaluokka in <sata, tuhat>) then
     if (nimentö in $oikea.jatko) then
       result $res, rules lukusana;

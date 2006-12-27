@@ -146,6 +146,7 @@ yksipuoluejärjestelmä
 yksipuolueyhteiskunta
 yhdenveroinen
 viideskymmenes
+tuhatlukuinen
 
 [johtimet]
 märänlaiselleko
