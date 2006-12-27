@@ -78,6 +78,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "rationaali", alku: "rationaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "refleksiivi", alku: "refleksiivi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "yhtä", alku: "yhtä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
@@ -99,8 +100,10 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "väkisin", alku: "väkisin", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "väärin", alku: "väärin", luokka: etuliite, jatko: @elt, äs: aä];
 
 
@@ -188,7 +191,6 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "seitsen", alku: "seitsen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "seksuaali", alku: "seksuaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a];
 [perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sivuttais", alku: "sivuttais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sosio", alku: "sosio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];

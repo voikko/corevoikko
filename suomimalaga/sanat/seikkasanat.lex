@@ -490,7 +490,6 @@
 [perusmuoto: "samoin", alku: "samoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "samoinkuin", alku: "samoinkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sangen", alku: "sangen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "sarveinen", alku: "sarvei", luokka: seikkasana, jatko: <nainen>, äs: a];
 [perusmuoto: "seisaalla", alku: "seisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "selin", alku: "selin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "selville", alku: "selville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

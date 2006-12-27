@@ -536,6 +536,10 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
   else
     result $res, rules lukusana_sisäkerroin_sijapääte;
   end;
+  
+  if ($oikea.lukutyyppi = järjestysluku and loppu in $oikea.jatko) then
+    result $res, rules loppu;
+  end;
 end;
 
 combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
