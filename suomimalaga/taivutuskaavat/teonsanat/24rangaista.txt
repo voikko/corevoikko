@@ -1,0 +1,198 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimitapa_1_tA
+          ran+gais+ta
+          ran+gas+ta  ei_voikko
+
+nimitapa_2
+          ran+gaist+essa
+          ran+gast+essa  ei_voikko
+
+nimitapa_2_tA
+          ran+gais+taessa
+          ran+gas+taessa  ei_voikko
+
+nimitapa_2_ttA
+
+nimitapa_3
+          ran+kaise+ma
+          ran+kase+ma  ei_voikko
+
+nimitapa_3_tA
+          ran+kais+taman
+          ran+kas+taman  ei_voikko
+
+nimitapa_3_ttA
+
+nimitapa_4
+          ran+kaise+minen
+          ran+kase+minen  ei_voikko
+
+nimitapa_5
+          ran+kaise+maisillani
+          ran+kase+maisillani  ei_voikko
+
+laatutapa_1_vA
+          ran+kaise+va
+          ran+kase+va  ei_voikko
+
+laatutapa_1_tA
+          ran+gais+tava
+          ran+gas+tava  ei_voikko
+
+laatutapa_1_ttA
+
+laatutapa_2_sUt
+          ran+gais+sut
+          ran+gas+sut  ei_voikko
+
+laatutapa_2_tU
+
+laatutapa_2_stU_nuolaistu
+          ran+gais+tu
+          ran+gas+tu  ei_voikko
+
+kestämän_tekijäpääte_y1
+          ran+kaise+n
+          ran+kase+n  ei_voikko
+
+kestämän_tekijäpääte_y2
+          ran+kaise+t
+          ran+kase+t  ei_voikko
+
+kestämän_tekijäpääte_y3
+          ran+kaise+e
+          ran+kase+e  ei_voikko
+
+kestämän_tekijäpääte_m1
+          ran+kaise+mme
+          ran+kase+mme  ei_voikko
+
+kestämän_tekijäpääte_m2
+          ran+kaise+tte
+          ran+kase+tte  ei_voikko
+
+kestämän_tekijäpääte_m3
+          ran+kaise+vat
+          ran+kase+vat  ei_voikko
+
+tositavan_kestämä_tAAn
+          ran+gais+taan
+          ran+gas+taan  ei_voikko
+
+kertoman_tekijäpääte_y1
+          ran+kais+in
+          ran+kas+in  ei_voikko
+
+kertoman_tekijäpääte_y2
+          ran+kais+it
+          ran+kas+it  ei_voikko
+
+kertoman_tekijäpääte_y3
+          ran+kais+i
+          ran+kas+i  ei_voikko
+
+kertoman_tekijäpääte_m1
+          ran+kais+imme
+          ran+kas+imme  ei_voikko
+
+kertoman_tekijäpääte_m2
+          ran+kais+itte
+          ran+kas+itte  ei_voikko
+
+kertoman_tekijäpääte_m3
+          ran+kais+ivat
+          ran+kas+ivat  ei_voikko
+
+tositavan_kertoma_tiin
+          ran+gais+tiin
+          ran+gas+tiin  ei_voikko
+
+tositavan_kertoma_ttiin
+
+ehtotapa
+          ran+kais+isin
+          ran+kas+isin  ei_voikko
+
+ehtotapa_tA
+          ran+gais+taisiin
+          ran+gas+taisiin  ei_voikko
+
+ehtotapa_ttA
+
+mahtotapa_se
+          ran+kais+sen
+          ran+kas+sen  ei_voikko
+
+mahtotapa_tA
+          ran+gais+taneen
+          ran+gas+taneen  ei_voikko
+
+mahtotapa_ttA
+
+käskytapa_y2
+          ran+kaise+
+          ran+kase+  ei_voikko
+
+käskytapa_kielto
+          ran+gais+ko
+          ran+gas+ko  ei_voikko
+
+käskytapa_tA
+          ran+gais+takoon
+          ran+gas+takoon  ei_voikko
+
+käskytapa_ttA
+
+johdin_jA_kulkija
+          ran+kaisi+ja
+          ran+kasi+ja  ei_voikko
+
+johdin_U_arvelu
+          ranka+is+u
+          ran+kas+u  ei_voikko

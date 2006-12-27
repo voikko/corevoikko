@@ -1,0 +1,198 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimitapa_1_tA
+          nuola+is+ta
+          nuola+s+ta  ei_voikko
+
+nimitapa_2
+          nuola+ist+essa
+          nuola+st+essa  ei_voikko
+
+nimitapa_2_tA
+          nuola+is+taessa
+          nuola+s+taessa  ei_voikko
+
+nimitapa_2_ttA
+
+nimitapa_3
+          nuola+ise+ma
+          nuola+se+ma  ei_voikko
+
+nimitapa_3_tA
+          nuola+is+taman
+          nuola+s+taman  ei_voikko
+
+nimitapa_3_ttA
+
+nimitapa_4
+          nuola+ise+minen
+          nuola+se+minen  ei_voikko
+
+nimitapa_5
+          nuola+ise+maisillani
+          nuola+se+maisillani  ei_voikko
+
+laatutapa_1_vA
+          nuola+ise+va
+          nuola+se+va  ei_voikko
+
+laatutapa_1_tA
+          nuola+is+tava
+          nuola+s+tava  ei_voikko
+
+laatutapa_1_ttA
+
+laatutapa_2_sUt
+          nuola+is+sut
+          nuola+s+sut  ei_voikko
+
+laatutapa_2_tU
+
+laatutapa_2_stU_nuolaistu
+          nuola+is+tu
+          nuola+s+tu  ei_voikko
+
+kestämän_tekijäpääte_y1
+          nuola+ise+n
+          nuola+se+n  ei_voikko
+
+kestämän_tekijäpääte_y2
+          nuola+ise+t
+          nuola+se+t  ei_voikko
+
+kestämän_tekijäpääte_y3
+          nuola+ise+e
+          nuola+se+e  ei_voikko
+
+kestämän_tekijäpääte_m1
+          nuola+ise+mme
+          nuola+se+mme  ei_voikko
+
+kestämän_tekijäpääte_m2
+          nuola+ise+tte
+          nuola+se+tte  ei_voikko
+
+kestämän_tekijäpääte_m3
+          nuola+ise+vat
+          nuola+se+vat  ei_voikko
+
+tositavan_kestämä_tAAn
+          nuola+is+taan
+          nuola+s+taan  ei_voikko
+
+kertoman_tekijäpääte_y1
+          nuola+is+in
+          nuola+s+in  ei_voikko
+
+kertoman_tekijäpääte_y2
+          nuola+is+it
+          nuola+s+it  ei_voikko
+
+kertoman_tekijäpääte_y3
+          nuola+is+i
+          nuola+s+i  ei_voikko
+
+kertoman_tekijäpääte_m1
+          nuola+is+imme
+          nuola+s+imme  ei_voikko
+
+kertoman_tekijäpääte_m2
+          nuola+is+itte
+          nuola+s+itte  ei_voikko
+
+kertoman_tekijäpääte_m3
+          nuola+is+ivat
+          nuola+s+ivat  ei_voikko
+
+tositavan_kertoma_tiin
+          nuola+is+tiin
+          nuola+s+tiin  ei_voikko
+
+tositavan_kertoma_ttiin
+
+ehtotapa
+          nuola+is+isin
+          nuola+s+isin  ei_voikko
+
+ehtotapa_tA
+          nuola+is+taisiin
+          nuola+s+taisiin  ei_voikko
+
+ehtotapa_ttA
+
+mahtotapa_se
+          nuola+is+sen
+          nuola+s+sen  ei_voikko
+
+mahtotapa_tA
+          nuola+is+taneen
+          nuola+s+taneen  ei_voikko
+
+mahtotapa_ttA
+
+käskytapa_y2
+          nuola+ise+
+          nuola+se+  ei_voikko
+
+käskytapa_kielto
+          nuola+is+ko
+          nuola+s+ko  ei_voikko
+
+käskytapa_tA
+          nuola+is+takoon
+          nuola+s+takoon  ei_voikko
+
+käskytapa_ttA
+
+johdin_jA_kulkija
+          nuola+isi+ja
+          nuola+si+ja  ei_voikko
+
+johdin_U_arvelu
+          nuola+is+u
+          nuola+s+u  ei_voikko

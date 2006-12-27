@@ -1,0 +1,167 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          puhu+ttu+
+
+omistusliite
+          puhu+ttu+ni
+
+omanto_n
+          puhu+tu+n
+
+osanto_A
+          puhu+ttu+a
+
+olento_nA
+          puhu+ttu+na
+
+tulento_ksi
+          puhu+tu+ksi
+
+sisäolento_ssA
+          puhu+tu+ssa
+
+sisäeronto_stA
+          puhu+tu+sta
+
+sisätulento_Vn
+          puhu+ttu+un
+
+ulko_olento_llA
+          puhu+tu+lla
+
+ulkoeronto_ltA
+          puhu+tu+lta
+
+ulkotulento_lle
+          puhu+tu+lle
+
+vajanto_ttA
+          puhu+tu+tta
+
+
+
+nimentö_t
+          puhu+tu+t
+
+omanto_jen
+          puhu+ttu+jen
+
+omanto_iT
+          puhu+tu+iden  vanhat_muodot
+          puhu+tu+itten vanhat_muodot
+
+omanto_in
+          puhu+ttu+in  ei_voikko
+
+osanto_jA
+          puhu+ttu+ja
+
+osanto_itA
+          puhu+tu+ita
+
+olento_inA
+          puhu+ttu+ina
+
+tulento_iksi
+          puhu+tu+iksi
+
+sisäolento_issA
+          puhu+tu+issa
+
+sisäeronto_istA
+          puhu+tu+ista
+
+sisätulento_ihin
+          puhu+ttu+ihin
+
+ulko_olento_illA
+          puhu+tu+illa
+
+ulkoeronto_iltA
+          puhu+tu+ilta
+
+ulkotulento_ille
+          puhu+tu+ille
+
+vajanto_ittA
+          puhu+tu+itta
+
+seuranto_ine
+          puhu+ttu+ine
+
+keinonto_in
+          puhu+tu+in
+
+
+
+kerronto_sti
+          puhu+tu+sti
+
+voittoaste
+          puhu+tu+mpi
+
+yliaste
+          puhu+tu+in
+
+
+
+johdin_inen
+
+johdin_ittain
+
+johdin_lAinen
+
+johdin_llinen
+
+johdin_mAinen
+
+johdin_tOn
+
+johdin_Us
+          puhu+ttu+us

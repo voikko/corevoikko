@@ -1,0 +1,190 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          kuol+lut+
+
+omistusliite
+          kuol+lee+ni
+          kuol+lehe+ni  ei_voikko
+
+omanto_n
+          kuol+lee+n
+          kuol+lehe+n  ei_voikko
+
+osanto_tA
+          kuol+lut+ta
+
+olento_nA
+          kuol+lee+na
+          kuol+lehe+na  ei_voikko
+
+tulento_ksi
+          kuol+lee+ksi
+          kuol+lehe+ksi  ei_voikko
+
+sisäolento_ssA
+          kuol+lee+ssa
+          kuol+lehe+ssa  ei_voikko
+
+sisäeronto_stA
+          kuol+lee+sta
+          kuol+lehe+sta  ei_voikko
+
+sisätulento_seen
+          kuol+lee+seen
+
+sisätulento_sen
+          kuol+lehe+sen  ei_voikko
+
+ulko_olento_llA
+          kuol+lee+lla
+          kuol+lehe+lla  ei_voikko
+
+ulkoeronto_ltA
+          kuol+lee+lta
+          kuol+lehe+lta  ei_voikko
+
+ulkotulento_lle
+          kuol+lee+lle
+          kuol+lehe+lle  ei_voikko
+
+vajanto_ttA
+          kuol+lee+tta
+          kuol+lehe+tta  ei_voikko
+
+nimentö_t
+          kuol+lee+n
+
+omanto_iT
+          kuol+le+iden
+          kuol+le+itten
+
+omanto_ten
+          kuol+lut+ten  ei_voikko
+          kuol+lehit+ten  ei_voikko
+
+omanto_ien
+          kuol+leh+ien  ei_voikko
+
+osanto_itA
+          kuol+le+ita
+
+osanto_iA
+          kuol+leh+ia  ei_voikko
+
+olento_inA
+          kuol+le+ina
+          kuol+leh+ina  ei_voikko
+
+tulento_iksi
+          kuol+le+iksi
+          kuol+leh+iksi  ei_voikko
+
+sisäolento_issA
+          kuol+le+issa
+          kuol+leh+issa  ei_voikko
+
+sisäeronto_istA
+          kuol+le+ista
+          kuol+leh+ista  ei_voikko
+
+sisätulento_isiin
+          kuol+le+isiin
+
+sisätulento_isin
+          kuol+leh+isin  ei_voikko
+
+ulko_olento_illA
+          kuol+le+illa
+          kuol+leh+illa  ei_voikko
+
+ulkoeronto_iltA
+          kuol+le+ilta
+          kuol+leh+ilta  ei_voikko
+
+ulkotulento_ille
+          kuol+le+ille
+          kuol+leh+ille  ei_voikko
+
+vajanto_ittA
+          kuol+le+itta
+          kuol+leh+itta  ei_voikko
+
+seuranto_ine
+          kuol+le+ine
+          kuol+leh+ine  ei_voikko
+
+keinonto_in
+          kuol+le+in
+          kuol+leh+in  ei_voikko
+
+kerronto_sti
+          kuol+lee+sti
+          kuol+lehe+sti  ei_voikko
+
+voittoaste
+          kuol+lee+mpi
+          kuol+lehe+mpi  ei_voikko
+
+yliaste
+          kuol+le+in
+          kuol+leh+in  ei_voikko
+
+johdin_inen
+
+johdin_ittain
+
+johdin_lAinen
+
+johdin_llinen
+
+johdin_mAinen
+
+johdin_tOn
+
+johdin_Us

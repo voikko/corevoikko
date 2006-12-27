@@ -1,0 +1,182 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimitapa_1_tA
+          ke+ve+tä
+
+nimitapa_2
+          ke+vet+essä
+
+nimitapa_2_tA
+
+nimitapa_2_ttA
+          ke+ve+ttäessä
+
+nimitapa_3
+          ke+pene+mä
+          ke+vene+mä
+
+nimitapa_3_tA
+
+nimitapa_3_ttA
+          ke+ve+ttämän
+
+nimitapa_4
+          ke+pene+minen
+          ke+pene+minen
+
+nimitapa_5
+          ke+pene+mäisilläni
+          ke+pene+mäisilläni
+
+laatutapa_1_vA
+          ke+pene+vä
+          ke+vene+vä
+
+laatutapa_1_tA
+
+laatutapa_1_ttA
+          ke+ve+ttävä
+
+laatutapa_2_nUt
+          ke+ven+nyt
+
+laatutapa_2_tU
+
+laatutapa_2_ttU
+          ke+ve+tty
+
+kestämän_tekijäpääte_y1
+          ke+pene+n
+          ke+vene+n
+
+kestämän_tekijäpääte_y2
+          ke+pene+t
+          ke+vene+t
+
+kestämän_tekijäpääte_y3
+          ke+pene+e
+          ke+vene+e
+
+kestämän_tekijäpääte_m1
+          ke+pene+mme
+          ke+vene+mme
+
+kestämän_tekijäpääte_m2
+          ke+pene+tte
+          ke+vene+tte
+
+kestämän_tekijäpääte_m3
+          ke+pene+vät
+          ke+vene+vät
+
+tositavan_kestämä_tAAn
+          ke+ve+tään
+
+kertoman_tekijäpääte_y1
+          ke+pen+in
+          ke+ven+in
+
+kertoman_tekijäpääte_y2
+          ke+pen+it
+          ke+ven+it
+
+kertoman_tekijäpääte_y3
+          ke+pen+i
+          ke+ven+i
+
+kertoman_tekijäpääte_m1
+          ke+pen+imme
+          ke+ven+imme
+
+kertoman_tekijäpääte_m2
+          ke+pen+itte
+          ke+ven+itte
+
+kertoman_tekijäpääte_m3
+          ke+pen+ivät
+          ke+ven+ivät
+
+tositavan_kertoma_tiin
+
+tositavan_kertoma_ttiin
+          ke+ve+ttiin
+
+ehtotapa
+          ke+pen+isin
+          ke+pene+isin  ei_voikko
+          ke+ven+isin
+          ke+vene+isin  ei_voikko
+
+ehtotapa_tA
+
+ehtotapa_ttA
+          ke+ve+ttäisiin
+
+mahtotapa_ne
+          ke+ven+nen
+
+mahtotapa_tA
+
+mahtotapa_ttA
+          ke+ve+ttäneen
+
+käskytapa_y2
+          ke+pene+
+          ke+vene+
+
+käskytapa_kielto
+          ke+vet+kö
+
+käskytapa_tA
+
+käskytapa_ttA
+          ke+ve+ttäköön
+
+johdin_jA_kulkija
+          ke+peni+jä
+          ke+veni+jä

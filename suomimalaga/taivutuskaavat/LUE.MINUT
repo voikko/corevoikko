@@ -1,0 +1,96 @@
+Suomi-malagassa käytetyt taivutuskaavat.
+
+
+Alihakemistossa nimisanat ovat nimi- ja laatusanojen taivutuskaavat ja
+alihakemistossa teonsanat teonsanojen taivutuskaavat.
+
+Tiedostoissa *.txt ovat esimerkkisanat ja tiedostoissa *.ast
+astevaihtelut ja muut sanan vartalon muutokset.
+
+
+Tiedostojen numerot ja nimet ovat Nykysuomen sanakirjan (lyhennetty
+NS:ksi) taivutuskaavoista ja esimerkkisanoista. Numerolla 99 ovat omat
+lisäykseni taivutuskaavoihin. Tiedostoissa olevat sanat ovat yleensä
+erilaiset kuin sanakirjassa. Olen käyttänyt mahdollisuuksien mukaan
+sanoja, joissa on astevaihtelu.
+
+Tiedostojen numerot vastaavat toisiaan. Siis esim. tiedostojen 01*.txt
+astevaihtelut ovat tiedostossa 01*.ast.
+
+
+
+Voikko-versio noudattaa Suomen kielen perussanakirjan (lyhennetty
+PS:ksi) taivutusta, kun taas Sukija-versio hyväksyy molemmat
+taivutukset. Esimerkiksi NS hyväksyy ori-sanalle taivutuksen oriin,
+oriina jne, PS hyväksyy sen lisäksi myös orin, orina (eli sana taipuu
+samoin kuin risti). Sukija-versio hyväksyy molemmat, ja lisäksi
+Sukija-versio hyväksyy myös NS:n h:llisen taivutuksen orihin, orihina
+jne.
+
+Suomi-malagan eri versioissa sanojen taivutuksen erot ovat
+taivutustyypeittäisiä eikä sanoittaisia. En siis ole tarkistanut, että
+kaikki ne sanat, jotka esimerkiksi taipuvat NS:ssa kuten matala
+taipuvat myös PS:ssa saman kaavan mukaan, olen vain tarkistanut, mikä
+on matala"-tyyppisen taivutuksen ero eri sanakirjoissa (PS ei hyväksy
+taivutusmuotoa omanto_tA (matalata).
+
+
+Kahdesta taivutustyypistä ei ole esimerkkisanoja, koska
+
+
+06 banaali taipuu samoin kuin 05 paperi paitsi että joittenkin
+           sijamuotojen taivutuspäätteet ovat NS:ssa
+           eri järjestyksessä.
+37 niemi   taipuu samoin kuin 36 tuomi paitsi että omanto_ten
+           (nienten) ei ole NS:ssa sulkeissa.
+
+Lisäksi teonsanojen taivutuksessa 42 rakentaa ei ole kerakevartaloisia
+muotoja raketa, raketkoon jne.
+
+
+Tiedostojen *.txt ensimmäinen sarake on taivutusmuoto ja muut
+sarakkeet esimerkkisanoja (tässä on vain osa tiedostosta):
+
+nimentö           ham+mas+
+omanto_n          ham+paa+n    ham+paha+n*
+sisätulento_seen  ham+paa+seen
+sisätulento_sen*               ham+paha+sen
+
+
+Sanan vartalon muuttuvat osat ovat plus-merkkien välissä.
+
+Tähdellä on merkitty ne taivutusmuodot, joita ei ole PS:ssa. Tähti on
+sijamuodon nimessä, jos taivutusmuotoa ei ole PS:ssa, tai
+esimerkkisanassa, jos tällaista sanamuotoa ei ole PS:ssa.
+
+
+Tiedostojen *.ast ensimmäinen sarake on taivutuskaava tiedostosta
+suomi.sym, toinen sarake on Malaga-sääntö, jonka mukaan sana taipuu,
+ja loput sarakkeet ovat säännön parametreja. Parametreissa on joko
+etu- tai takaääntiöt, mutta generoitu Malaga-koodi hyväksyy molemmat.
+Esimerkiksi parametri 'ha' tarkoittaa sekä 'ha':ta että 'hä':tä.
+
+
+vieras   vieras s   a   ha   ""  h   ""
+ahdas    vieras das taa taha ta  tah ta
+allas    vieras las taa taha ta  tah ta
+autuas   iäkäs  as  aa  ""   "
+
+
+Tietostoissa *.ast voi olla myös %-merkillä alkavia sarakkeita.
+
+salata    salata  a  at  aa  an  as  a   %salailla("a")
+
+Ne ovat Malagan sääntöjä, joilla sanoista johdetaan uusia sanoja,
+esimerkissä salata-sanasta johdetaan sana salailla
+
+
+Jos alihakemistoissa a ja b olevia tiedostoja muutetaan, tiedosto
+suomi.all pitää generoida uudelleen komennolla
+
+./generoi.sh
+
+tai päähakemistossa komennolla
+
+make generoi
+

@@ -1,0 +1,53 @@
+
+#####################################################################
+##=================================================================##
+#####################################################################
+
+
+  elseif (yö_monikko in $tietue.jatko) then
+    choose $i in taivutuskaava ($tietue,
+                                [omanto_iT:        <<"", <>>>,
+                                 osanto_itA:       <<"", <>>>,
+                                 olento_inA:       <<"", <>>>,
+                                 tulento_iksi:     <<"", <>>>,
+                                 sisäolento_issA:  <<"", <>>>,
+                                 sisäeronto_istA:  <<"", <>>>,
+                                 sisätulento_ihin: <<"", <>>>,
+                                 ulko_olento_illA: <<"", <>>>,
+                                 ulkoeronto_iltA:  <<"", <>>>,
+                                 ulkotulento_ille: <<"", <>>>,
+                                 vajanto_ittA:     <<"", <>>>,
+                                 seuranto_ine:     <<"", <>>>,
+                                 keinonto_in:      <<"", <>>>,
+                                 johdin_ittain:    <<"", <>>>]);
+    result $i.alku, $i - alku;
+
+    
+######################################
+
+# Vaillinnainen taivutus.
+#
+#  elseif (kumajaa in $tietue.jatko) then
+#  elseif (kaikaa in $tietue.jatko) then
+
+
+######################################
+
+
+  elseif (lienee in $tietue.jatko) then
+    choose $i in taivutus ($tietue, "", @kestämän_tekijäpääte,
+                           [tapaluokka: ehtotapa, aikamuoto: kestämä]);
+    result $i.alku, $i - alku;
+
+
+#========================================
+
+  elseif ($tietue.alku /= nil) then
+#define $a := transmit (<"a"> + <$tietue.alku> + <$tietue - alku>);
+    result $tietue.alku, $tietue - alku;
+  else
+#define $b := transmit (<"b"> + <$tietue.perusmuoto> + <$tietue - alku>);
+    result $tietue.perusmuoto, $tietue - alku;
+  end;
+##define $b := transmit (<$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
+end;

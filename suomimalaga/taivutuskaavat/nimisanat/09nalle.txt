@@ -1,0 +1,160 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          nuk+ke+
+
+omistusliite
+          nuk+ke+ni
+
+omanto_n
+          nuk+e+n
+
+osanto_A
+          nuk+ke+a
+
+olento_nA
+          nuk+ke+na
+
+tulento_ksi
+          nuk+e+ksi
+
+sisäolento_ssA
+          nuk+e+ssa
+
+sisäeronto_stA
+          nuk+e+sta
+
+sisätulento_Vn
+          nuk+ke+en
+
+ulko_olento_llA
+          nuk+e+lla
+
+ulkoeronto_ltA
+          nuk+e+lta
+
+ulkotulento_lle
+          nuk+e+lle
+
+vajanto_ttA
+          nuk+e+tta
+
+nimentö_t
+          nuk+e+t
+
+omanto_jen
+          nuk+ke+jen
+
+omanto_in
+          nuk+ke+in
+
+osanto_jA
+          nuk+ke+ja
+
+olento_inA
+          nuk+ke+ina
+
+tulento_iksi
+          nuk+e+iksi
+
+sisäolento_issA
+          nuk+e+issa
+
+sisäeronto_istA
+          nuk+e+ista
+
+sisätulento_ihin
+          nuk+ke+ihin
+
+ulko_olento_illA
+          nuk+e+illa
+
+ulkoeronto_iltA
+          nuk+e+ilta
+
+ulkotulento_ille
+          nuk+e+ille
+
+vajanto_ittA
+          nuk+e+itta
+
+seuranto_ine
+          nuk+ke+ine
+
+keinonto_in
+          nuk+e+in
+
+kerronto_sti
+          toop+e+sti
+
+voittoaste
+          toop+e+mpi
+
+yliaste
+          toop+e+in
+
+johdin_inen
+          nuk+ke+inen
+
+johdin_ittain
+          nuk+e+ittain
+
+johdin_lAinen
+          nuk+ke+lainen
+
+johdin_llinen
+          nuk+e+llinen
+
+johdin_mAinen
+          nuk+ke+mainen
+
+johdin_tOn
+          nuk+e+ton
+
+johdin_Us
+          toope++us

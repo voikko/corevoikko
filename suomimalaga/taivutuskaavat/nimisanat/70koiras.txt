@@ -1,0 +1,228 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          naara+s+
+
+omistusliite
+          naara+a+ni
+          naara+kse+ni
+          naara+ha+ni  ei_voikko
+
+omanto_n
+          naara+a+n
+          naara+kse+n
+          naara+ha+n  ei_voikko
+
+osanto_tA
+          naara+s+ta
+
+olento_nA
+          naara+a+na
+          naara+kse+na
+          naara+ha+na  ei_voikko
+          naara+s+na  ei_voikko
+
+tulento_ksi
+          naara+a+ksi
+          naara+kse+ksi
+          naara+ha+ksi  ei_voikko
+
+sisäolento_ssA
+          naara+a+ssa
+          naara+kse+ssa
+          naara+ha+ssa  ei_voikko
+
+sisäeronto_stA
+          naara+a+sta
+          naara+kse+sta
+          naara+ha+sta  ei_voikko
+
+sisätulento_seen
+          naara+a+seen
+
+sisätulento_sen
+          naara+ha+sen  ei_voikko
+
+sisätulento_Vn
+          naara+kse+en
+
+ulko_olento_llA
+          naara+a+lla
+          naara+kse+lla
+          naara+ha+lla  ei_voikko
+
+ulkoeronto_ltA
+          naara+a+lta
+          naara+kse+lta
+          naara+ha+lta  ei_voikko
+
+ulkotulento_lle
+          naara+a+lle
+          naara+kse+lle
+          naara+ha+lle  ei_voikko
+
+vajanto_ttA
+          naara+a+tta
+          naara+kse+tta
+          naara+ha+tta  ei_voikko
+
+nimentö_t
+          naara+a+t
+
+omanto_ien
+          naara+ks+ien
+
+omanto_iT
+          naara++iden
+          naara++itten
+
+omanto_ten
+          naara+s+ten
+          naara+hit+ten  ei_voikko
+
+osanto_iA
+          naara+ks+ia
+          naara+h+ia  ei_voikko
+
+osanto_itA
+          naara++ita
+
+olento_inA
+          naara++ina
+          naara+ks+ina
+          naara+h+ina  ei_voikko
+
+tulento_iksi
+          naara++iksi
+          naara+ks+iksi
+          naara+h+iksi  ei_voikko
+
+sisäolento_issA
+          naara++issa
+          naara+ks+issa
+          naara+h+issa  ei_voikko
+
+sisäeronto_istA
+          naara++ista
+          naara+ks+ista
+          naara+h+ista  ei_voikko
+
+sisätulento_ihin
+          naara++ihin
+
+sisätulento_isiin
+          naara++isiin
+
+sisätulento_isin
+          naara++isiin  ei_voikko
+          naara+h+isin  ei_voikko  ei_voikko
+
+sisätulento_iin
+          naara+ks+iin
+
+ulko_olento_illA
+          naara++illa
+          naara+ks+illa
+          naara+h+illa  ei_voikko
+
+ulkoeronto_iltA
+          naara++ilta
+          naara+ks+ilta
+          naara+h+ilta  ei_voikko
+
+ulkotulento_ille
+          naara++ille
+          naara+ks+ille
+          naara+h+ille  ei_voikko
+
+vajanto_ittA
+          naara++itta
+          naara+ks+itta
+          naara+h+itta  ei_voikko
+
+seuranto_ine
+          naara++ine
+          naara+ks+ine
+          naara+h+ine  ei_voikko
+
+keinonto_in
+          naara++in
+          naara+ks+in
+          naara+h+in  ei_voikko
+
+kerronto_sti
+
+voittoaste
+
+yliaste
+
+johdin_inen
+          naara+ks+inen
+          naara+h+inen  ei_voikko
+
+johdin_ittain
+          naara++ittain
+          naara+ks+ittain
+          naara+h+ittain  ei_voikko
+
+johdin_lAinen
+          naara+s+lainen
+          naara+kse+lainen
+
+johdin_llinen
+          naara+kse+llinen
+
+johdin_mAinen
+          naara+s+mainen
+
+johdin_tOn
+          naara+a+ton
+          naara+kse+ton
+          naara+ha+ton  ei_voikko
+
+johdin_Us

@@ -1,0 +1,191 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          vii+ve+
+
+omistusliite
+          vii+pee+ni
+          vii+vee+ni
+
+omanto_n
+          vii+pee+n
+          vii+vee+n
+
+osanto_ttA
+          vii+ve+ttä
+
+olento_nA
+          vii+pee+nä
+          vii+vee+nä
+
+tulento_ksi
+          vii+pee+ksi
+          vii+vee+ksi
+
+sisäolento_ssA
+          vii+pee+ssä
+          vii+vee+ssä
+
+sisäeronto_stA
+          vii+pee+stä
+          vii+vee+stä
+
+sisätulento_seen
+          vii+pee+seen
+          vii+vee+seen
+
+ulko_olento_llA
+          vii+pee+llä
+          vii+vee+llä
+
+ulkoeronto_ltA
+          vii+pee+ltä
+          vii+vee+ltä
+
+ulkotulento_lle
+          vii+pee+lle
+          vii+vee+lle
+
+vajanto_ttA
+          vii+pee+ttä
+          vii+vee+ttä
+
+nimentö_t
+          vii+pee+t
+          vii+vee+t
+
+omanto_iT
+          vii+pe+iden
+          vii+pe+itten
+          vii+ve+iden
+          vii+ve+itten
+
+osanto_itA
+          vii+pe+itä
+          vii+ve+itä
+
+olento_inA
+          vii+pe+inä
+          vii+ve+inä
+
+tulento_iksi
+          vii+pe+iksi
+          vii+ve+iksi
+
+sisäolento_issA
+          vii+pe+issä
+          vii+ve+issä
+
+sisäeronto_istA
+          vii+pe+istä
+          vii+ve+istä
+
+sisätulento_isiin
+          vii+pe+isiin
+
+ulko_olento_illA
+          vii+pe+illä
+          vii+ve+illä
+
+ulkoeronto_iltA
+          vii+pe+iltä
+          vii+ve+iltä
+
+ulkotulento_ille
+          vii+pe+ille
+          vii+ve+ille
+
+vajanto_ittA
+          vii+pe+ittä
+          vii+ve+ittä
+
+seuranto_ine
+          vii+pe+ine
+          vii+ve+ine
+
+keinonto_in
+          vii+pe+in
+          vii+ve+in
+
+kerronto_sti
+          +pee+sti
+          +vee+sti
+
+voittoaste
+          +pee+mpi
+          +vee+mpi
+
+yliaste
+          +pe+in
+          +ve+in
+
+johdin_inen
+          vii+pe+inen
+          vii+ve+inen
+
+johdin_ittain
+          vii+pe+ittäin
+          vii+ve+ittäin
+
+johdin_lAinen
+          vii+ve+läinen
+
+johdin_llinen
+          vii+pee+llinen
+          vii+vee+llinen
+
+johdin_mAinen
+          vii+ve+mäinen
+
+johdin_tOn
+          vii+pee+tön
+          vii+vee+tön
+
+johdin_Us
+          +pe+ys
+          +ve+ys

@@ -1,0 +1,164 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimitapa_1_A
+          on+ki+a
+
+nimitapa_2
+          on+ki+essa
+
+nimitapa_2_tA
+
+nimitapa_2_ttA
+          on+gi+ttaessa
+
+nimitapa_3
+          on+ki+ma
+
+nimitapa_3_tA
+
+nimitapa_3_ttA
+          on+gi+ttaman
+
+nimitapa_4
+          on+ki+minen
+
+nimitapa_5
+          on+ki+maisillani
+
+laatutapa_1_vA
+          on+ki+va
+
+laatutapa_1_tA
+
+laatutapa_1_ttA
+          on+gi+ttava
+
+laatutapa_2_nUt
+          on+ki+nut
+
+laatutapa_2_tU
+
+laatutapa_2_ttU
+          on+gi+ttu
+
+kestämän_tekijäpääte_y1
+          on+gi+n
+
+kestämän_tekijäpääte_y2
+          on+gi+t
+
+kestämän_tekijäpääte_y3
+          on+ki+i
+
+kestämän_tekijäpääte_m1
+          on+gi+mme
+
+kestämän_tekijäpääte_m2
+          on+gi+tte
+
+kestämän_tekijäpääte_m3
+          on+ki+vat
+
+tositavan_kestämä_tAAn
+          on+gi+taan
+
+kertoman_tekijäpääte_y1
+          on+g+in
+
+kertoman_tekijäpääte_y2
+          on+g+it
+
+kertoman_tekijäpääte_y3
+          on+k+i
+
+kertoman_tekijäpääte_m1
+          on+g+imme
+
+kertoman_tekijäpääte_m2
+          on+g+itte
+
+kertoman_tekijäpääte_m3
+          on+k+ivat
+
+tositavan_kertoma_tiin
+
+tositavan_kertoma_ttiin
+          on+gi+ttiin
+
+ehtotapa
+          on+k+isin
+
+ehtotapa_tA
+
+ehtotapa_ttA
+          on+gi+ttaisiin
+
+mahtotapa_ne
+          on+ki+nen
+
+mahtotapa_tA
+
+mahtotapa_ttA
+          on+gi+ttaneen
+
+käskytapa_y2
+          on+gi+
+
+käskytapa_kielto
+          on+ki+ko
+
+käskytapa_tA
+
+käskytapa_ttA
+          on+gi+ttakoon
+
+johdin_jA_kulkija
+          on+ki+ja
+
+johdin_ntA
+          on+gi+nta

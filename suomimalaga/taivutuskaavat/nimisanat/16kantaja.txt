@@ -1,0 +1,184 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          kanta+ja+
+
+omistusliite
+          kanta+ja+ni
+
+omanto_n
+          kanta+ja+n
+
+osanto_A
+          kanta+ja+a
+
+osanto_tA
+          kanta+ja+ta  ei_voikko
+
+olento_nA
+          kanta+ja+na
+
+tulento_ksi
+          kanta+ja+ksi
+
+sisäolento_ssA
+          kanta+ja+ssa
+
+sisäeronto_stA
+          kanta+ja+sta
+
+sisätulento_Vn
+          kanta+ja+an
+
+ulko_olento_llA
+          kanta+ja+lla
+
+ulkoeronto_ltA
+          kanta+ja+lta
+
+ulkotulento_lle
+          kanta+ja+lle
+
+vajanto_ttA
+          kanta+ja+tta
+
+nimentö_t
+          kanta+ja+t
+
+omanto_iT
+          kanta+jo+iden  ei_voikko
+          kanta+jo+itten  ei_voikko
+
+omanto_ien
+          kanta+j+ien
+
+omanto_in
+          kanta+ja+in
+
+osanto_iA
+          kanta+j+ia
+
+osanto_itA
+          kanta+jo+ita  ei_voikko
+
+olento_inA
+          kanta+j+ina
+          kanta+jo+ina  ei_voikko
+
+tulento_iksi
+          kanta+j+iksi
+          kanta+jo+iksi  ei_voikko
+
+sisäolento_issA
+          kanta+j+issa
+          kanta+jo+issa  ei_voikko
+
+sisäeronto_istA
+          kanta+j+ista
+          kanta+jo+ista  ei_voikko
+
+sisätulento_iin
+          kanta+j+iin
+
+sisätulento_ihin
+          kanta+jo+ihin  ei_voikko
+
+ulko_olento_illA
+          kanta+j+illa
+          kanta+jo+illa  ei_voikko
+
+ulkoeronto_iltA
+          kanta+j+ilta
+          kanta+jo+ilta  ei_voikko
+
+ulkotulento_ille
+          kanta+j+ille
+          kanta+jo+ille  ei_voikko
+
+vajanto_ittA
+          kanta+j+itta
+          kanta+jo+itta  ei_voikko
+
+seuranto_ine
+          kanta+j+ine
+          kanta+jo+ine  ei_voikko
+
+keinonto_in
+          kanta+j+in
+          kanta+jo+in  ei_voikko
+
+kerronto_sti
+          +ja+sti
+
+voittoaste
+          +ja+mpi
+
+yliaste
+          +j+in
+
+johdin_inen
+          kanta+ja+inen
+
+johdin_ittain
+          kanta+j+ittain
+          kanta+jo+ittain  ei_voikko
+
+johdin_lAinen
+          kanta+ja+lainen
+
+johdin_llinen
+          kanta+ja+llinen
+
+johdin_mAinen
+          kanta+ja+mainen
+
+johdin_tOn
+          kanta+ja+ton
+
+johdin_UUs
+          +j+uus

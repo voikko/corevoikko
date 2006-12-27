@@ -1,0 +1,204 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          ru+is+
+
+omistusliite
+          ru+kii+ni
+          ru+kihi+ni  ei_voikko
+
+omanto_n
+          ru+kii+n
+          ru+kihi+n  ei_voikko
+
+osanto_tA
+          ru+is+ta
+
+olento_nA
+          ru+kii+na
+          ru+is+na  ei_voikko
+          ru+kihi+na  ei_voikko
+
+tulento_ksi
+          ru+kii+ksi
+          ru+kihi+ksi  ei_voikko
+
+sisäolento_ssA
+          ru+kii+ssa
+          ru+kihi+ssa  ei_voikko
+
+sisäeronto_stA
+          ru+kii+sta
+          ru+kihi+sta  ei_voikko
+
+sisätulento_Vn
+          ru+kii+in
+
+sisätulento_seen
+          ru+kii+seen
+
+sisätulento_sen
+          ru+kihi+sen  ei_voikko
+
+ulko_olento_llA
+          ru+kii+lla
+          ru+kihi+lla  ei_voikko
+
+ulkoeronto_ltA
+          ru+kii+lta
+          ru+kihi+lta  ei_voikko
+
+ulkotulento_lle
+          ru+kii+lle
+          ru+kihi+lle  ei_voikko
+
+vajanto_ttA
+          ru+kii+tta
+          ru+kihi+tta  ei_voikko
+
+nimentö_t
+          ru+kii+t
+
+omanto_iT
+          ru+ki+iden
+          ru+ki+itten
+
+omanto_ten
+          ru+is+ten  ei_voikko
+
+omanto_ien
+          ru+kih+ien  ei_voikko
+
+osanto_itA
+          ru+ki+ita
+
+osanto_iA
+          ru+kih+ia  ei_voikko
+
+olento_inA
+          ru+ki+ina
+          ru+kih+ina  ei_voikko
+
+tulento_iksi
+          ru+ki+iksi
+          ru+kih+iksi  ei_voikko
+
+sisäolento_issA
+          ru+ki+issa
+          ru+kih+issa  ei_voikko
+
+sisäeronto_istA
+          ru+ki+ista
+          ru+kih+ista  ei_voikko
+
+sisätulento_isiin
+          ru+ki+isiin
+
+sisätulento_isin
+          ru+kih+isin  ei_voikko
+
+sisätulento_ihin
+          ru+ki+ihin
+          ru+kih+ihin  ei_voikko
+
+ulko_olento_illA
+          ru+ki+illa
+          ru+kih+illa  ei_voikko
+
+ulkoeronto_iltA
+          ru+ki+ilta
+          ru+kih+ilta  ei_voikko
+
+ulkotulento_ille
+          ru+ki+ille
+          ru+kih+ille  ei_voikko
+
+vajanto_ittA
+          ru+ki+itta
+          ru+kih+itta  ei_voikko
+
+seuranto_ine
+          ru+ki+ine
+          ru+kih+ine  ei_voikko
+
+keinonto_in
+          ru+ki+in
+          ru+kih+in  ei_voikko
+
+kerronto_sti
+          +kii+sti
+          +kihi+sti  ei_voikko
+
+voittoaste
+          +kii+mpi
+          +kihi+mpi  ei_voikko
+
+yliaste
+          +ki+in
+          +kih+in  ei_voikko
+
+johdin_inen
+          ru+ki+inen
+
+johdin_ittain
+          ru+ki+ittain
+
+johdin_lAinen
+          ru+is+lainen
+
+johdin_llinen
+          ru+kii+llinen
+
+johdin_mAinen
+          ru+is+mainen
+
+johdin_tOn
+          ru+kii+ton
+
+johdin_Us
+          +ki+us

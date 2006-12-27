@@ -1,0 +1,167 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          laser++
+
+omistusliite
+          laser+i+ni
+
+omanto_n
+          laser+i+n
+
+osanto_A
+          laser+i+a
+
+olento_nA
+          laser+i+na
+
+tulento_ksi
+          laser+i+ksi
+
+sisäolento_ssA
+          laser+i+ssa
+
+sisäeronto_stA
+          laser+i+sta
+
+sisätulento_Vn
+          laser+i+in
+
+ulko_olento_llA
+          laser+i+lla
+
+ulkoeronto_ltA
+          laser+i+lta
+
+ulkotulento_lle
+          laser+i+lle
+
+vajanto_ttA
+          laser+i+tta
+
+nimentö_t
+          laser+i+t
+
+omanto_en
+          laser+i+en
+
+omanto_iT
+          laser+e+iden
+          laser+e+itten
+
+omanto_in
+          laser+e+in  ei_voikko
+
+osanto_jA
+          laser+e+ja
+
+osanto_itA
+          laser+e+ita
+
+olento_inA
+          laser+e+ina
+
+tulento_iksi
+          laser+e+iksi
+
+sisäolento_issA
+          laser+e+issa
+
+sisäeronto_istA
+          laser+e+ista
+
+sisätulento_ihin
+          laser+e+ihin
+
+ulko_olento_illA
+          laser+e+illa
+
+ulkoeronto_iltA
+          laser+e+ilta
+
+ulkotulento_ille
+          laser+e+ille
+
+vajanto_ittA
+          laser+e+itta
+
+seuranto_ine
+          laser+e+ine
+
+keinonto_in
+          laser+e+in
+
+kerronto_sti
+          +i+sti
+
+voittoaste
+          +i+mpi
+
+yliaste
+          +e+in
+
+johdin_inen
+          laser++inen
+
+johdin_ittain
+          laser+e+ittain
+
+johdin_lAinen
+          laser+i+lainen
+
+johdin_llinen
+          laser+i+llinen
+
+johdin_mAinen
+          laser++mainen
+
+johdin_tOn
+          laser+i+ton
+
+johdin_Us
+          +i+us

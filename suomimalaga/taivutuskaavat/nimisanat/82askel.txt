@@ -1,0 +1,203 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          kan+nel+
+          kan+tele+
+
+omistusliite
+          kan+tele+ni
+          kan+telee+ni
+
+omanto_n
+          kan+tele+n
+          kan+telee+n
+
+osanto_tA
+          kan+nel+ta
+
+osanto_ttA
+          kan+tele+tta
+
+olento_nA
+          kan+tele+na
+          kan+telee+na
+
+tulento_ksi
+          kan+tele+ksi
+          kan+telee+ksi
+
+sisäolento_ssA
+          kan+tele+ssa
+          kan+telee+ssa
+
+sisäeronto_stA
+          kan+tele+sta
+          kan+telee+sta
+
+sisätulento_Vn
+          kan+tele+en
+
+sisätulento_seen
+          kan+telee+seen
+
+ulko_olento_llA
+          kan+tele+lla
+          kan+telee+lla
+
+ulkoeronto_ltA
+          kan+tele+lta
+          kan+telee+lta
+
+ulkotulento_lle
+          kan+tele+lle
+          kan+telee+lle
+
+vajanto_ttA
+          kan+tele+tta
+          kan+telee+tta
+
+nimentö_t
+          kan+tele+t
+          kan+telee+t
+
+omanto_ten
+          kan+nel+ten
+
+omanto_ien
+          kan+tel+ien
+
+omanto_iT
+          kan+tele+iden
+          kan+tele+itten
+
+osanto_iA
+          kan+tel+ia
+
+osanto_itA
+          kan+tele+ita
+
+olento_inA
+          kan+tel+ina
+          kan+tele+ina
+
+tulento_iksi
+          kan+tel+iksi
+          kan+tele+iksi
+
+sisäolento_issA
+          kan+tel+issa
+          kan+tele+issa
+
+sisäeronto_istA
+          kan+tel+ista
+          kan+tele+ista
+
+sisätulento_iin
+          kan+tel+iin
+
+sisätulento_ihin
+          kan+tele+ihin
+
+sisätulento_isiin
+          kan+tele+isiin
+
+ulko_olento_illA
+          kan+tel+illa
+          kan+tele+illa
+
+ulkoeronto_iltA
+          kan+tel+ilta
+          kan+tele+ilta
+
+ulkotulento_ille
+          kan+tel+ille
+          kan+tele+ille
+
+vajanto_ittA
+          kan+tel+itta
+          kan+tele+itta
+
+seuranto_ine
+          kan+tel+ine
+          kan+tele+ine
+
+keinonto_in
+          kan+tel+in
+          kan+tele+in
+
+kerronto_sti
+
+voittoaste
+
+yliaste
+
+johdin_inen
+          kan+tele+inen
+          kan+tele+inen
+
+johdin_ittain
+          kan+tel+ittain
+          kan+tele+ittain
+
+johdin_lAinen
+          kan+nel+lainen
+          kan+tele+lainen
+
+johdin_llinen
+          kan+tele+llinen
+          kan+telee+llinen
+
+johdin_mAinen
+          kan+nel+mainen
+          kan+tele+mainen
+
+johdin_tOn
+          kan+tele+ton
+          kan+telee+ton
+
+johdin_Us

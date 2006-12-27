@@ -1,0 +1,167 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimitapa_1_A
+          kaih+ta+a
+
+nimitapa_2
+          kaih+ta+essa
+
+nimitapa_2_tA
+
+nimitapa_2_ttA
+          kaih+de+ttaessa
+
+nimitapa_3
+          kaih+ta+ma
+
+nimitapa_3_tA
+
+nimitapa_3_ttA
+          kaih+de+ttaman
+
+nimitapa_4
+          kaih+ta+minen
+
+nimitapa_5
+          kaih+ta+maisillani
+
+laatutapa_1_vA
+          kaih+ta+va
+
+laatutapa_1_tA
+
+laatutapa_1_ttA
+          kaih+de+ttava
+
+laatutapa_2_nUt
+          kaih+ta+nut
+
+laatutapa_2_tU
+
+laatutapa_2_ttU
+          kaih+de+ttu
+
+kestämän_tekijäpääte_y1
+          kaih+da+n
+
+kestämän_tekijäpääte_y2
+          kaih+da+t
+
+kestämän_tekijäpääte_y3
+          kaih+ta+a
+
+kestämän_tekijäpääte_m1
+          kaih+da+mme
+
+kestämän_tekijäpääte_m2
+          kaih+da+tte
+
+kestämän_tekijäpääte_m3
+          kaih+ta+vat
+
+tositavan_kestämä_tAAn
+          kaih+de+taan
+
+kertoman_tekijäpääte_y1
+          kaih+do+in
+          kaih+d+in  ei_voikko
+
+kertoman_tekijäpääte_y2
+          kaih+do+it
+          kaih+d+it  ei_voikko
+
+kertoman_tekijäpääte_y3
+          kaih+to+i
+          kaih+t+i  ei_voikko
+
+kertoman_tekijäpääte_m1
+          kaih+do+imme
+          kaih+d+imme  ei_voikko
+
+kertoman_tekijäpääte_m2
+          kaih+do+itte
+          kaih+d+itte  ei_voikko
+
+kertoman_tekijäpääte_m3
+          kaih+to+ivat
+          kaih+t+ivat  ei_voikko
+
+tositavan_kertoma_tiin
+
+tositavan_kertoma_ttiin
+          kaih+de+ttiin
+
+ehtotapa
+          kaih+ta+isin
+
+ehtotapa_tA
+
+ehtotapa_ttA
+          kaih+de+ttaisiin
+
+mahtotapa_ne
+          kaih+ta+nen
+
+mahtotapa_tA
+
+mahtotapa_ttA
+          kaih+de+ttaneen
+
+käskytapa_y2
+          kaih+da+
+
+käskytapa_kielto
+          kaih+ta+ko
+
+käskytapa_tA
+
+käskytapa_ttA
+          kaih+de+ttakoon
+
+johdin_jA_kantaja
+          kaih+ta+ja

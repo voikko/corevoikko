@@ -1,0 +1,200 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          sukla+a+
+
+omistusliite
+          sukla+a+ni
+          sukla+ha+ni  ei_voikko
+
+omanto_n
+          sukla+a+n
+          sukla+ha+n  ei_voikko
+
+osanto_tA
+          sukla+a+ta
+
+olento_nA
+          sukla+a+na
+          sukla+ha+na  ei_voikko
+
+tulento_ksi
+          sukla+a+ksi
+          sukla+ha+ksi  ei_voikko
+
+sisäolento_ssA
+          sukla+a+ssa
+          sukla+ha+ssa  ei_voikko
+
+sisäeronto_stA
+          sukla+a+sta
+          sukla+ha+sta  ei_voikko
+
+sisätulento_seen
+          sukla+a+seen
+
+sisätulento_sen
+          sukla+ha+sen  ei_voikko
+
+ulko_olento_llA
+          sukla+a+lla
+          sukla+ha+lla  ei_voikko
+
+ulkoeronto_ltA
+          sukla+a+lta
+          sukla+ha+lta  ei_voikko
+
+ulkotulento_lle
+          sukla+a+lle
+          sukla+ha+lle  ei_voikko
+
+vajanto_ttA
+          sukla+a+tta
+          sukla+ha+tta  ei_voikko
+
+nimentö_t
+          sukla+a+t
+          sukla+ha+t  ei_voikko
+
+omanto_iT
+          sukla++iden
+          sukla++itten
+
+omanto_ten
+          sukla+hit+ten  ei_voikko
+
+osanto_itA
+          sukla++ita
+
+osanto_iA
+          sukla+h+ia  ei_voikko
+
+olento_inA
+          sukla++ina
+          sukla+h+ina  ei_voikko
+
+tulento_iksi
+          sukla++iksi
+          sukla+h+iksi  ei_voikko
+
+sisäolento_issA
+          sukla++issa
+          sukla+h+issa  ei_voikko
+
+sisäeronto_istA
+          sukla++ista
+          sukla+h+ista  ei_voikko
+
+sisätulento_ihin
+          sukla++ihin
+
+sisätulento_isiin
+          sukla++isiin
+
+sisätulento_isin
+          sukla+h+isin  ei_voikko
+
+ulko_olento_illA
+          sukla++illa
+          sukla+h+illa  ei_voikko
+
+ulkoeronto_iltA
+          sukla++ilta
+          sukla+h+ilta  ei_voikko
+
+ulkotulento_ille
+          sukla++ille
+          sukla+h+ille  ei_voikko
+
+vajanto_ittA
+          sukla++itta
+          sukla+h+itta  ei_voikko
+
+seuranto_ine
+          sukla++ine
+          sukla+h+ine  ei_voikko
+
+keinonto_in
+          sukla++in
+          sukla+h+in  ei_voikko
+
+kerronto_sti
+          vaja+a+sti
+          vaja+ha+sti  ei_voikko
+
+voittoaste
+          vaja+a+mpi
+          vaja+ha+mpi  ei_voikko
+
+yliaste
+          vaja++in
+          vaja+h+in  ei_voikko
+
+johdin_inen
+          sukla++inen
+          sukla+h+inen  ei_voikko
+
+johdin_ittain
+          sukla++ittain
+          sukla+h+ittain  ei_voikko
+
+johdin_lAinen
+          sukla+a+lainen
+
+johdin_llinen
+          sukla+a+llinen
+
+johdin_mAinen
+          sukla+a+mainen
+
+johdin_tOn
+          sukla+a+ton
+          sukla+ha+ton  ei_voikko
+
+johdin_Us
+          vaja++us

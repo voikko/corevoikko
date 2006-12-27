@@ -1,0 +1,228 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          uro+s+
+
+omistusliite
+          uro+o+ni
+          uro+kse+ni
+          uro+ho+ni  ei_voikko
+
+omanto_n
+          uro+o+n
+          uro+kse+n
+          uro+ho+n  ei_voikko
+
+osanto_tA
+          uro+s+ta
+
+olento_nA
+          uro+o+na
+          uro+kse+na
+          uro+ho+na  ei_voikko
+          uro+s+na  ei_voikko
+
+tulento_ksi
+          uro+o+ksi
+          uro+kse+ksi
+          uro+ho+ksi  ei_voikko
+
+sisäolento_ssA
+          uro+o+ssa
+          uro+kse+ssa
+          uro+ho+ssa  ei_voikko
+
+sisäeronto_stA
+          uro+o+sta
+          uro+kse+sta
+          uro+ho+sta  ei_voikko
+
+sisätulento_seen
+          uro+o+seen
+
+sisätulento_sen
+          uro+ho+sen  ei_voikko
+
+sisätulento_Vn
+          uro+kse+en
+
+ulko_olento_llA
+          uro+o+lla
+          uro+kse+lla
+          uro+ho+lla  ei_voikko
+
+ulkoeronto_ltA
+          uro+o+lta
+          uro+kse+lta
+          uro+ho+lta  ei_voikko
+
+ulkotulento_lle
+          uro+o+lle
+          uro+kse+lle
+          uro+ho+lle  ei_voikko
+
+vajanto_ttA
+          uro+o+tta
+          uro+kse+tta
+          uro+ho+tta  ei_voikko
+
+nimentö_t
+          uro+o+t
+
+omanto_ien
+          uro+ks+ien
+          uro+h+ien  ei_voikko
+
+omanto_iT
+          uro++iden
+          uro++itten
+
+omanto_ten
+          uro+s+ten
+          uro+hit+ten  ei_voikko
+
+osanto_iA
+          uro+ks+ia
+          uro+h+ia  ei_voikko
+
+osanto_itA
+          uro++ita
+
+olento_inA
+          uro++ina
+          uro+ks+ina
+          uro+h+ina  ei_voikko
+
+tulento_iksi
+          uro++iksi
+          uro+ks+iksi
+          uro+h+iksi  ei_voikko
+
+sisäolento_issA
+          uro++issa
+          uro+ks+issa
+          uro+h+issa  ei_voikko
+
+sisäeronto_istA
+          uro++ista
+          uro+ks+ista
+          uro+h+ista  ei_voikko
+
+sisätulento_ihin
+          uro++ihin
+
+sisätulento_isiin
+          uro++isiin
+
+sisätulento_isin
+          uro+h+isin  ei_voikko
+
+sisätulento_iin
+          uro+ks+iin
+
+ulko_olento_illA
+          uro++illa
+          uro+ks+illa
+          uro+h+illa  ei_voikko
+
+ulkoeronto_iltA
+          uro++ilta
+          uro+ks+ilta
+          uro+h+ilta  ei_voikko
+
+ulkotulento_ille
+          uro++ille
+          uro+ks+ille
+          uro+h+ille  ei_voikko
+
+vajanto_ittA
+          uro++itta
+          uro+ks+itta
+          uro+h+itta  ei_voikko
+
+seuranto_ine
+          uro++ine
+          uro+ks+ine
+          uro+h+ine  ei_voikko
+
+keinonto_in
+          uro++in
+          uro+ks+in
+          uro+h+in  ei_voikko
+
+kerronto_sti
+
+voittoaste
+
+yliaste
+
+johdin_inen
+          uro+ks+inen
+          uro+h+inen  ei_voikko
+
+johdin_ittain
+          uro++ittain
+          uro+ks+ittain
+          uro+h+ittain  ei_voikko
+
+johdin_lAinen
+          uro+s+lainen
+          uro+kse+lainen
+
+johdin_llinen
+          uro+kse+llinen
+
+johdin_mAinen
+          uro+s+mainen
+
+johdin_tOn
+          uro+o+ton
+          uro+kse+ton
+          uro+ho+ton  ei_voikko
+
+johdin_Us

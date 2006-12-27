@@ -1,0 +1,207 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          alt+is+
+
+omistusliite
+          alt+tii+ni
+          alt+tihi+ni  ei_voikko
+
+omanto_n
+          alt+tii+n
+          alt+tihi+n  ei_voikko
+
+osanto_tA
+          alt+tis+ta
+
+olento_nA
+          alt+tii+na
+          alt+is+na  ei_voikko
+          alt+tihi+na  ei_voikko
+
+tulento_ksi
+          alt+tii+ksi
+          alt+tihi+ksi  ei_voikko
+
+sisäolento_ssA
+          alt+tii+ssa
+          alt+tihi+ssa  ei_voikko
+
+sisäeronto_stA
+          alt+tii+sta
+          alt+tihi+sta  ei_voikko
+
+sisätulento_seen
+          alt+tii+seen
+
+sisätulento_sen
+          alt+tihi+sen  ei_voikko  ei_voikko
+
+ulko_olento_llA
+          alt+tii+lla
+          alt+tihi+lla  ei_voikko
+
+ulkoeronto_ltA
+          alt+tii+lta
+          alt+tihi+lta  ei_voikko
+
+ulkotulento_lle
+          alt+tii+lle
+          alt+tihi+lle  ei_voikko
+
+vajanto_ttA
+          alt+tii+tta
+          alt+tihi+tta  ei_voikko
+
+nimentö_t
+          alt+tii+t
+
+omanto_iT
+          alt+ti+iden
+          alt+ti+itten
+
+omanto_ten
+          alt+is+ten  ei_voikko
+
+osanto_itA
+          alt+ti+ita
+          alt+tei+ita  ei_voikko
+
+osanto_iA
+          alt+tih+ia  ei_voikko
+          alt+teh+ia  ei_voikko
+
+olento_inA
+          alt+ti+ina
+          alt+tih+ina  ei_voikko
+          alt+teh+ina  ei_voikko
+
+tulento_iksi
+          alt+ti+iksi
+          alt+tih+iksi  ei_voikko
+          alt+teh+iksi  ei_voikko
+
+sisäolento_issA
+          alt+ti+issa
+          alt+tih+issa  ei_voikko
+          alt+teh+issa  ei_voikko
+
+sisäeronto_istA
+          alt+ti+ista
+          alt+tih+ista  ei_voikko
+          alt+teh+ista  ei_voikko
+
+sisätulento_ihin
+          alt+ti+ihin
+          alt+te+ihin  ei_voikko
+
+sisätulento_isiin
+          alt+ti+isiin
+
+sisätulento_isin
+          alt+tih+isin  ei_voikko
+          alt+teh+isin  ei_voikko
+
+ulko_olento_illA
+          alt+ti+illa
+          alt+tih+illa  ei_voikko
+          alt+teh+illa  ei_voikko
+
+ulkoeronto_iltA
+          alt+ti+ilta
+          alt+tih+ilta  ei_voikko
+          alt+teh+ilta  ei_voikko
+
+ulkotulento_ille
+          alt+ti+ille
+          alt+tih+ille  ei_voikko
+          alt+teh+ille  ei_voikko
+
+vajanto_ittA
+          alt+ti+itta
+          alt+tih+itta  ei_voikko
+          alt+teh+itta  ei_voikko
+
+seuranto_ine
+          alt+ti+ine
+          alt+tih+ine  ei_voikko
+          alt+teh+ine  ei_voikko
+
+keinonto_in
+          alt+ti+in
+          alt+tih+in  ei_voikko
+          alt+teh+in  ei_voikko
+
+kerronto_sti
+          alt+tii+sti
+          alt+tihi+sti  ei_voikko
+          alt+tehi+sti  ei_voikko
+
+voittoaste
+          alt+tii+mpi
+          alt+tihi+mpi  ei_voikko
+          alt+tehi+mpi  ei_voikko
+
+yliaste
+          alt+te+in
+          alt+teh+in  ei_voikko
+
+johdin_inen
+
+johdin_ittain
+
+johdin_lAinen
+
+johdin_llinen
+
+johdin_mAinen
+
+johdin_tOn
+
+johdin_Us
+          $1

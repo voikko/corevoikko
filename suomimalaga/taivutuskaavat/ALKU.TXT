@@ -1,0 +1,100 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+# Tämä tiedosto on tehty ohjelmalla generoi.sh --- älä muuta!
+
+
+include "suomi.inc";
+
+
+allo_rule generate_allos ($tietue):
+  define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
+
+
+##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
+#define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
+#                       ", alku: §"      + $tietue.alku + "§" +
+#                       ", luokka: "     + value_string ($tietue.luokka) +
+#                       ", jatko: "      + value_string ($tietue.jatko) +
+#                       ", äs: "         + value_string ($tietue.äs) +
+#                       "];");
+
+#define $a := transmit ($tietue);
+
+  if ($malli = sukija) then
+    if ($tietue.jatko_sukija /= nil) then
+      $tietue :=+ [jatko: $tietue.jatko_sukija];
+    end;
+    if ($tietue.alku_sukija /= nil) then
+      $tietue :=+ [alku: $tietue.alku_sukija];
+    end;
+  end;
+
+  if ($malli = voikko) then
+    if ($tietue.jatko_voikko /= nil) then
+      $tietue :=+ [jatko: $tietue.jatko_voikko];
+    end;
+    if ($tietue.alku_voikko /= nil) then
+      $tietue :=+ [alku: $tietue.alku_voikko];
+    end;
+  end;
+
+
+  if (($malli = voikko) and ($tietue.tiedot /= nil) and
+      ((latex in $tietue.tiedot) or
+       (murre in $tietue.tiedot) or
+       (ei_voikko in $tietue.tiedot))) then
+    stop;
+
+  elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
+          (ei_sukija in $tietue.tiedot)) then
+    stop;
+
+#####################################################################
+##=================================================================##
+#####################################################################
+

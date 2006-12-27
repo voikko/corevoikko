@@ -1,0 +1,225 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          kork+ea+
+          kork+ia+  ei_voikko
+          kork+ee+  ei_voikko
+
+omistusliite
+          kork+ea+ni
+          kork+ia+ni  ei_voikko
+          kork+ee+ni  ei_voikko
+
+omanto_n
+          kork+ea+n
+          kork+ia+n  ei_voikko
+          kork+ee+n  ei_voikko
+
+osanto_A
+          kork+ea+a
+          kork+ia+a  ei_voikko
+
+osanto_tA
+          kork+ea+ta  ei_voikko
+          kork+ia+ta  ei_voikko
+          kork+ee+ta  ei_voikko
+
+olento_nA
+          kork+ea+na
+          kork+ia+na  ei_voikko
+          kork+ee+na  ei_voikko
+
+tulento_ksi
+          kork+ea+ksi
+          kork+ia+ksi  ei_voikko
+          kork+ee+ksi  ei_voikko
+
+sisäolento_ssA
+          kork+ea+ssa
+          kork+ia+ssa  ei_voikko
+          kork+ee+ssa  ei_voikko
+
+sisäeronto_stA
+          kork+ea+sta
+          kork+ia+sta  ei_voikko
+          kork+ee+sta  ei_voikko
+
+sisätulento_Vn
+          kork+ea+an
+          kork+ia+an  ei_voikko
+
+sisätulento_seen
+          kork+ee+seen  ei_voikko
+
+ulko_olento_llA
+          kork+ea+lla
+          kork+ia+lla  ei_voikko
+          kork+ee+lla  ei_voikko
+
+ulkoeronto_ltA
+          kork+ea+lta
+          kork+ia+lta  ei_voikko
+          kork+ee+lta  ei_voikko
+
+ulkotulento_lle
+          kork+ea+lle
+          kork+ia+lle  ei_voikko
+          kork+ee+lle  ei_voikko
+
+vajanto_ttA
+          kork+ea+tta
+          kork+ia+tta  ei_voikko
+          kork+ee+tta  ei_voikko
+
+nimentö_t
+          kork+ea+t
+          kork+ia+t  ei_voikko
+          kork+ee+t  ei_voikko
+
+omanto_iT
+          kork+e+iden
+          kork+e+itten
+          kork+io+iden  ei_voikko
+          kork+io+itten  ei_voikko
+
+omanto_in
+          kork+ea+in
+          kork+ia+in  ei_voikko
+
+osanto_itA
+          kork+e+ita
+          kork+io+ita  ei_voikko
+
+olento_inA
+          kork+e+ina
+          kork+io+ina  ei_voikko
+
+tulento_iksi
+          kork+e+iksi
+          kork+io+iksi  ei_voikko
+
+sisäolento_issA
+          kork+e+issa
+          kork+io+issa  ei_voikko
+
+sisäeronto_istA
+          kork+e+ista
+          kork+io+ista  ei_voikko
+
+sisätulento_ihin
+          kork+e+ihin
+          kork+io+ihin  ei_voikko
+
+sisätulento_isiin
+          kork+e+isiin
+          kork+io+isiin  ei_voikko
+
+ulko_olento_illA
+          kork+e+illa
+          kork+io+illa  ei_voikko
+
+ulkoeronto_iltA
+          kork+e+ilta
+          kork+io+ilta  ei_voikko
+
+ulkotulento_ille
+          kork+e+ille
+          kork+io+ille  ei_voikko
+
+vajanto_ittA
+          kork+e+itta
+          kork+io+itta  ei_voikko
+
+seuranto_ine
+          kork+e+ine
+          kork+io+ine  ei_voikko
+
+keinonto_in
+          kork+e+in
+          kork+io+in  ei_voikko
+
+kerronto_sti
+          kork+ea+sti
+          kork+ia+sti  ei_voikko
+          kork+ee+sti  ei_voikko
+
+voittoaste
+          kork+ea+mpi
+          kork+ia+mpi  ei_voikko
+          kork+ee+mpi  ei_voikko
+
+yliaste
+          kork+e+in
+          kork+io+in  ei_voikko
+
+johdin_inen
+          hop+ea+inen
+          hop+ia+inen  ei_voikko
+
+johdin_ittain
+          hop+e+ittain
+          hop+io+ittain  ei_voikko
+
+johdin_lAinen
+          hop+ea+lainen
+          hop+ia+lainen  ei_voikko
+
+johdin_llinen
+          hop+ea+llinen
+          hop+ia+llinen  ei_voikko
+
+johdin_mAinen
+          hop+ea+mainen
+          hop+ia+mainen  ei_voikko
+
+johdin_tOn
+          hop+ea+ton
+          hop+ia+ton  ei_voikko
+
+johdin_Us
+          kork+e+us

@@ -1,0 +1,132 @@
+nimisana
+laatusana
+asemosana
+apusana
+lyhennesääntö
+etuliite
+teonsana
+kieltosana
+tavuviiva
+
+
+nimisana sijapääte
+         omistusliite
+         liitesana
+         liitesana2
+         nimisanan_johdos
+         tavuviiva
+         yhdyssana
+         loppu
+
+
+laatusana sijapääte
+          omistusliite
+          liitesana
+          liitesana2
+          laatusanan_johdos
+          tavuviiva
+          yhdyssana
+          voitto_yliaste
+          loppu
+
+
+asemosana sijapääte
+          liitesana
+          tavuviiva
+          voitto_yliaste
+          loppu
+
+lyhennesääntö kaksoispiste
+              tavuviiva
+              loppu
+
+apusana       liitesana
+              tavuviiva
+              loppu
+
+tavuviiva     yhdyssana
+              lyhennesääntö
+              loppu
+
+
+teonsana      tekijämuodot
+              nimitavat
+              laatutavat
+              liitesana
+              liitesana2
+              teonsanan_johdos
+              tavuviiva
+              loppu
+
+tekijämuodot  liitesana
+              liitesana2
+              loppu
+
+
+
+nimitavat      nimitapa_1_pitkä
+               sijapääte
+               omistusliite
+               liitesana
+               liitesana2
+               nimisana
+               laatusana
+               teonsana
+               loppu
+
+
+nimitapa_1_pitkä omistusliite
+
+
+laatutavat
+         rules sijapääte, omistusliite, liitesana,
+               voitto_yliaste, loppu;
+kieltosana
+         rules liitesana, liitesana_kä, tavuviiva, loppu;
+liitesana
+         rules loppu;
+liitesana2
+         rules loppu;
+liitesana_kä
+         rules liitesana, loppu;
+omistusliite
+           rules liitesana, loppu;
+                 rules liitesana, loppu;
+             rules liitesana, loppu;
+voitto_yliaste
+
+         rules sijapääte, liitesana, omistusliite,
+               laatusanan_johdos,
+               nimisana, laatusana, teonsana,
+               loppu;
+teonsanan_johdos
+          rules sijapääte, omistusliite, liitesana,
+                nimisana, laatusana, teonsana,
+                teonsanan_johdos,
+                voitto_yliaste,
+                etuliite,
+                tavuviiva, loppu;
+nimisanan_johdos
+          rules sijapääte, omistusliite, liitesana,
+                nimisana, laatusana, teonsana,
+                voitto_yliaste,
+                laatusanan_johdos, nimisanan_johdos,
+                etuliite,
+                tavuviiva,
+                loppu;
+laatusanan_johdos
+          rules sijapääte, omistusliite, liitesana,
+                nimisana, laatusana, teonsana,
+                laatusanan_johdos, nimisanan_johdos,
+                voitto_yliaste,
+                etuliite,
+                tavuviiva, loppu;
+
+
+sijapääte
+           rules omistusliite, liitesana, loppu;
+             rules liitesana, loppu;
+             rules nimisana, laatusana, teonsana,
+                   tavuviiva, omistusliite, liitesana, loppu;
+
+kaksoispiste  sijapääte
