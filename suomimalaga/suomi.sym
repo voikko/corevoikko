@@ -304,7 +304,8 @@ tapaluokka;
   johdin_Us;        # Kallis => kalle+us (kalleuden).
   johdin_UUs;       # Valkoinen => valkois+uus (valkoisuuden).
 
-  johdin_mA;        # Puno+ma, teke+mä.
+  johdin_mA;        # Puno+ma, teke+mä.  Taipuu kuten asema.
+  johdin_mA_saama;  #                    Taipuu kuten koira.
   johdin_ntA;       # Valita => vali+nta.
   johdin_nti;       # Voida => voi+nti.
   johdin_Us_ksen;   # Salata => salaus (salauksen)
@@ -312,11 +313,13 @@ tapaluokka;
 
 
   # Teonsanojen laatutavat ovat myös laatusanoja.
-  johdin_vA;        # Tule+va, tule+vuus.
-  johdin_vE;
+  johdin_vA;        # Tule+va, tule+va+mpi, tule+vuus.
+  johdin_vE;        # Myy+vä, myy+ve+mpi, myy+vyys
   johdin_vAinen;    # Tule+vainen.
   johdin_tAvA;      # Tul+tava.
   johdin_ttAvA;     # Luote+ttava.
+  johdin_tAvAinen;  # Tul+tavainen.
+  johdin_ttAvAinen; # Luote+ttavainen.
   johdin_lUt;       # Tul+lut, tul+tu, tul+leisuus.
   johdin_nUt;
   johdin_rUt;
@@ -327,10 +330,25 @@ tapaluokka;
   johdin_rU;
   johdin_tU;
   johdin_stU;       # Juosta => juostu.
+
+  johdin_tU_dU;
+  johdin_tU_lU_katseltu;
+  johdin_tU_lU_oltu;
+  johdin_tU_nU;
+  johdin_tU_rU;
+
+  johdin_stU_juostu;
+  johdin_stU_nuolaistu;
   johdin_ttU;
-  johdin_jA_myyjä;   # Taivutus ovat erilaisia.
+  johdin_jA_myyjä;   # Taivutukset ovat erilaisia.
   johdin_jA_kulkija;
   johdin_jA_kantaja;
+
+  johdin_nA;         # Kalista  => kalina.
+  johdin_O;          # Muistaa  => muisto, muiston.
+  johdin_Os;         # Murtaa   => murros.
+  johdin_U_arvelu;   # Arvailla => arvelu, arveluiden.
+  johdin_U_nousu;    # Nousta   => nousu, nousujen.
 
 aikamuoto;
   kestämä;
@@ -342,9 +360,13 @@ nimitapa;
 laatutapa;
 
 
-perusmuoto; # Sanan perusmuoto (hevonen, puhua, keltainen, jne).
-alku;       # Sanan jäsennetty alkuosa.
-jatko;      # Sääntö, jolla sanan jäsennystä jatketaan.
+perusmuoto;     # Sanan perusmuoto (hevonen, puhua, keltainen, jne).
+alku;           # Sanan taipumaton alkuosa (hevo(sta), puhu(essa), keltai(seen)).
+  alku_sukija;  # Sanan taipumaton alkuosa Sukija-versiossa.
+  alku_voikko;  # Sanan taipumaton alkuosa Voikko-versiossa.
+jatko;          # Sääntö, jolla sanan jäsennystä jatketaan.
+  jatko_sukija; # Sääntö, jolla sanan jäsennystä jatketaan Sukija-versiossa.
+  jatko_voikko; # Sääntö, jolla sanan jäsennystä jatketaan Voikko-versiossa.
 
 
 loppu; # Sana loppuu tähän.
@@ -360,29 +382,34 @@ lähtöluokka; # Sanaluokka, josta toisen sanaluokan sana on johdettu.
   ä;
   aä;  # Analyysia, analyysiä.
 
+alkuperäinen_äs;  # Joskus ääntiösointu pitää vaihtaa johdoksissa: pitää -> pito.
+
 
 tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestyksessä.
   atk;       # Tietojenkäsittelyn sana.
   ei_inen;   # Sanasta ei voi johtaa inen-loppista laatusanaa. Esimerkiksi
-             # aateli -> aatelinen, koska aatelinen voi olla myös nimisana, ja
+             # aateli => aatelinen, koska aatelinen voi olla myös nimisana, ja
              # se on erikseen sanastossa.
   ei_lAinen; # Sanalla ei ole -lAinen-johdosta. Ei suomi+lainen.
+  ei_ns;     # Taivutusmuotoa ei ole Nykysuomen sanakirjan (NS) taivutuskaavoissa, esim.
+             # ainoa => ainoisiin (sisätulento_isiin). Lippua ei käytetä missään,
+             # vaan se on ainoastaan merkkinä poikkeamisesta NS:n taivutuksesta.
   ei_mAinen; # Sanalla ei ole -mAinen-johdosta.
   ei_sukija; # Sanaa ei ole sukija-versiossa.
+  ei_vertm;  # Laatusana ei taivu vertailumuodoissa.
   ei_voikko; # Sanaa ei ole voikko-versiossa.
   ei_ys;     # Sana ei voi olla yhdyssanan osana.
   ei_ysa;    # Sana ei voi olla yhdyssanan alkuosana. (ei =mais=tiainen eli mainen + tiainen).
   ei_ysj;    # Sana ei voi olla yhdyssanan jälkiosana (ei =räme=isyys).
-  ei_vertm;  # Laatusana ei taivu vertailumuodoissa
   ei_yks;    # Sana ei taivu yksikkömuodoissa.
   inen;      # Nimisanasta johdettu inen-loppuinen laatusana
              # hyväksytään myös erillisenä sanana (aamu+inen).
              # Muuten tällaiset sanat hyväksytään vain yhdyssanan jälkiosana.
   latex;     # LaTeX-komento.
   murre;     # Murteissa tai puhekielessä esiintyvä sana.
-  risti2;    # Sana, joka taipuu vanhan taivutuksen mukaan kuten banaali tai paperi
-             # ja uuden taivutuksen mukaan kuten risti.
   siv;       # Sivistyssanan alku- tai loppuosa.
+  Us;        # Nimisana, josta voidaan johtaa ominaisuuden nimi us-johtimella (asiak+as+ => asiak+ku+us).
+  UUs;       # Nimisana, josta voidaan johtaa ominaisuuden nimi uus-johtimella.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
 
 
@@ -394,11 +421,9 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
 malli;
   voikko;
     vanhahkot_muodot;
-    vanhat_muodot;
   sukija;
 taivutus;
-  vanha;
-  uusi;
+  vanhat_muodot;
 tulostus;
   tavallinen;
   merkitse_yhdyssanat;
@@ -443,6 +468,8 @@ valo;
   liitto;
   lintu;
   luku;
+  oltu;   # Ollun.
+  purtu;  # Purrun.
   ruoko;
   sampo;
   tiuku;
@@ -451,25 +478,29 @@ valo;
 arvelu;
   alanko;
   avanto;
-  hontelo;  # => Honteluus (ei hontelous).
+  hontelo;    # => Honteluus (ei hontelous).
+  katseltu;   # Teonsanojen laatutavoissa.
   laatikko;
+  nuolaistu;  # Teonsanojen laatutavoissa.
   pihatto;
+  puhuttu;    # Teonsanojen laatutavoissa.
   raamattu;
 autio;
 risti;
-  siisti; # => Siisteys (ei *siistiys).
   hupi;
   keppi;
-  kiiski; # Taipuu kuten risti tai lovi (kiiskin, kiisken).
+  kaihi; # Taipuu kuten risti tai lovi (kaihin, kaihen).
   pelti;
   renki;
+  siisti; # => Siisteys (ei *siistiys).
   takki;
   tatti;
   kiltti; # => Kiltteys (ei *kilttiys).
   tunti;
   vati;
-paperi; banaali;
-  edam;   # Taipuu kuten paperi tai banaali, mutta sana ei lopu i:hin.
+paperi;
+  banaali;
+  edam;      # Taipuu kuten paperi tai banaali, mutta sana ei lopu i:hin.
   hollanti;
   kajakki;
   killinki;
@@ -484,8 +515,9 @@ lovi;
   hanki;
   happi;
   jälki;
-  kaikki;
   kumpi;  # Kumman.
+  kaikki; # Kaikesta, kaikista.
+  kiiski; # Sukijan taivutus on kiiskin tai kiisken, Voikon taivutus vain kiisken.
   kylki;
   lampi;  # Taipuu kuten lovi tai risti.
   lehti;
@@ -537,37 +569,40 @@ kulkija; # => Kulkijuus.
   apila;
   video;
 karahka;
-  savotta;
-  solakka;
-  ulappa;
+  solakka;    # Solakkoihin ja solakoihin.
+    savotta;
+    ulappa;
   veranta;
 kantaja; # => kantajuus
   apaja;
+  kahdeksan;
 peruna;
-pasuuna;
-  opotta;
+  pasuuna;
+    opotta;
 ainoa;
 herttua;
-korkea;
+korkea;  # Myös korkia ja korkee.
   harteet;
 suurempi;
 vapaa;
 tienoo;
 leikkuu;
 kamee;
-  tee;
   trikoo;
   revyy;
 pii;
 maa;
 puu;
+  gnu;
+  tee;
   tiu;
 suo;
   tie;
+  yö;   # Vain yksikkö, monikko on erikseen sanastossa.
 bébé;
 
 tuohi;
-  meri; # merta, meressä
+  meri;  # Merta, meressä.
 lohi;
 lahti;
 lumi;
@@ -575,8 +610,11 @@ tuomi;
 niemi;
 pieni;
 nuori;
-susi;
-tosi;
+susi;    # => Susinen.
+  käsi;  # => Kätinen.
+  vesi;  # => Vesinen, vetinen.
+tosi;    # => Totuus.  Totena.
+  täysi; # => Täyteys. Täytenä, täynnä.
 hirsi;
 jälsi;
 kansi;
@@ -621,10 +659,9 @@ vieras;     # => vieraus
   autuas;   # => autuus
   avokas;     # Nimisana. Ei ominaisuuden nimeä us-johtimella.
     asiakas;  # => asiakkuus  Nimisana, joka taipuu samoin kuin avokas.
-    iäkäs;    # => iäkkyys    Laatusana, joka taipuu samoin kuin avokas.
-    vilkas;   # => vilkkaus   Laatusana, joka taipuu samoin kuin avokas.
   harras;
   hammas;
+  iäkäs;    # => iäkkyys
   kangas;
   kinnas;
   laupias;  # => laupeus
@@ -632,7 +669,9 @@ vieras;     # => vieraus
   ratas;
   saapas;
   varas;
+  utelias;  # => uteliaisuus
   varvas;
+  vilkas;   # => vilkkaus
 kirves;
   ies;
 kauris;
@@ -641,9 +680,10 @@ kaunis;    # => kauneus
   valmis;  # => valmius
   altis;   # => alttius
 koiras;
-#uros;   # Taipuu kuten koiras.
+uros;
 mies;
 airut;
+  neitsyt;
 kevät;
 kahdeksas;
 tuhat;
@@ -654,6 +694,7 @@ kuollut;
 hame;
   alkeet;
   enne;
+  hake;
   helle;
   kierre;
   lahje;
@@ -684,6 +725,7 @@ isoäiti;
 nuoripari;
 
 
+yö; # Yö, yön, jne.
 yö_yksikkö; # Yö, yön, jne.
 yö_monikko; # Öiden, öinä, jne.
 
@@ -716,23 +758,28 @@ punoa;      # => punottaa
 muistaa;      # => muistella, muisto, muistua
   aavistaa;   # => aavistella, aavistus
   alittaa;    # => alitella, alitus
+  ammottaa;   # Sukija-versiossa myös ammoittaa => ammo(i)tella ammo(i)tus.
   astahtaa;   # => astahdella, astahdus
   autioittaa;
   heittää;    # => heitellä, heitto
-  hidastaa;   # => hidastella, hidastus, hidastua
+  hidastaa;   # => hidastella, hidastus, hidastua, hidastuttaa
   hohtaa;     # => hohdella, hohto
-  inttää;     # => intellä
-  voitaa;     # => voidella
   hujahtaa;   # => hujahdella, hujauttaa, hujahdus
+  inttää;     # => intellä
   itää;
-  kirjoittaa; # Sukija-versiossa myös kirjottaa => kirjo(i)tella, kirjo(i)tus
-  ammottaa;   # Sukija-versiossa myös ammoittaa => ammo(i)tella ammo(i)tus
+  kirjoittaa; # Sukija-versiossa myös kirjottaa => kirjo(i)tella, kirjo(i)tus.
+  kuluttaa;
   kyntää;
-  loistaa;    # => loistella, loisto
+  loistaa;    # => Loistella, loisto.
+  lypsää;     # => Lypsellä, lypsy.
+  ottaa;
   purkaa;
   sulaa;
-huutaa;
-soutaa;     # => Soudella.
+  verkottaa;  # => Verkotus, verkottua.
+  voitaa;     # => Voidella.
+huutaa;       # => Huuto.
+  alentaa;    # => Alennus.
+soutaa;       # => Soudella.
   vuotaa;
 puoltaa;
   sukeltaa; # => Sukellella, sukellus.
@@ -742,7 +789,8 @@ murtaa;     # => Murrella, murros, murto. Kaksitavuiset.
 sortaa;     # => Sorrella, sorros, sorto.
 pahentaa;   # => Pahennella, pahennus.
   juontaa;  # => Juonnella, juonto.
-kaivaa;     # => Kaivella.
+kaivaa;     # => Kaivella, kaivattaa.
+  ajaa;     # => Ajella.
   antaa;    # => Annella.
   jakaa;
   kapsaa;   # Ei => kapsella.
@@ -801,6 +849,8 @@ katsella;
   aatella;
   askarrella;
   kirjoitella;  # Ja kirjotella.
+  ilotella;     # Sukija-versiossa myös iloitella.
+  kilvoitella;  # Sukija-versiossa myös kilvotella.
   kohdella;
   nakella;
   ommella;
@@ -828,9 +878,10 @@ aleta;
   ulota;
   vaieta;
 salata;    # => salailla
+  lobata;
   digata;
   hangata;
-  huiskata; # => huiskaista, huiskasta
+  huiskata;
   kammata;
   kelvata;
   kerrata;
@@ -860,7 +911,7 @@ kohota;    # => kohoilla
   laota;   # => lakoilla  Vilja lakoaa ja lakoilee.
     saota; #              Puuro sakoaa mutta ei sakoile.
   kadota;  # => katoilla  NS: "Miehet katoilivat illan hämärään omille teilleen."
-  puota;   # pudota
+  puota;   # Pudota.
   kimmota; # => kimpoilla
   lingota; # => linkoilla
   netota;  # => nettoilla
@@ -875,13 +926,15 @@ haluta;
   silputa; # ei => silppuilla
   ryöpytä; # => ryöppyillä
   vivuta;  # ei => vipuilla
-palata;    # => palailla
+palata;    # => Palailla, palaus.
   hyljätä;
-  hylätä;
-  levätä;  # => lepäillä
-kihistä;   # => kihinä, kihahtaa, kihauttaa, kihautella
-  kitistä; # => kitinä, mutta ei => kitahtaa
-rakentaa;
+  hylätä;  # => Hylkäillä, hylkäys.
+  levätä;  # => Lepäillä, lepäys.
+  varata;  # => Varailla, varaus.
+kihistä;   # => Kihinä, kihahtaa, kihauttaa, kihautella.
+  kitistä; # => Kitinä.
+rakentaa;  # => Rakennus.
+  kääntää; # => Käännös.
 taitaa;
 antautua;
 kaata;
@@ -892,10 +945,7 @@ kaikaa;
 
 # Omat lisäykset.
 
-
 minä;
-  mä;
-  mie;
 hän;
 me;
 joka;
@@ -904,3 +954,12 @@ kymmenen;
 
 olla;
 lienee;
+
+
+
+# Tositavan kestämän yksikön kolmas tekijä, jossa pääte (vartalon
+# viimeisen ääntiön pidentymä) on sulautunut vartaloon.
+# Esim. saada -> saa, voida -> voi; vertaa puhua -> puhuu.
+# Tätä lippua tarvitaan koodin automaattisessa generoinnissa.
+#
+_y3;

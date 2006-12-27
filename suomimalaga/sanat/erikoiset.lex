@@ -114,7 +114,6 @@
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: @sana1 + <loppu>, äs: a];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <omanto_n, loppu>, äs: a, tiedot: <ei_voikko>]; # Mikä.
-[perusmuoto: "mie", alku: "mi", luokka: asemosana, jatko: <mie>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä];
 [perusmuoto: "moi", alku: "moi", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -130,7 +129,6 @@
 [perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a];
 [perusmuoto: "muudan", alku: "muuda", luokka: asemosana, jatko: <osanto_ttA>, äs: a];
 [perusmuoto: "muudan", alku: "muudan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a];
-[perusmuoto: "mä", alku: "m", luokka: asemosana, jatko: <mä>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "mää", alku: "mää", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "nau", alku: "nau", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "oho", alku: "oho", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -152,14 +150,11 @@
 [perusmuoto: "ruti", alku: "ruti", luokka: liitesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "seis", alku: "seis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "sekä", alku: "sekä", luokka: sidesana, jatko: <loppu>, äs: ä];
-[perusmuoto: "Sergej", alku: "Sergej", luokka: etunimi, jatko: <>, äs: ä];
-[perusmuoto: "sie", alku: "si", luokka: asemosana, jatko: <mie>, äs: a];
 [perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat + @sana2, äs: ä];
 [perusmuoto: "skool", alku: "skool", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "sus", alku: "sus", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "sä", alku: "s", luokka: asemosana, jatko: <mä>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tahi", alku: "tahi", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "tahikka", alku: "tahikka", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "tai", alku: "tai", luokka: sidesana, jatko: <loppu>, äs: a];

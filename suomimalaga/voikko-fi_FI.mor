@@ -77,7 +77,6 @@ define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
 
 define @johdin_tU := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU>;
 
-define @johdin_laatutapa := @johdin_nUt + @johdin_tU + <johdin_stU, johdin_ttU>;
 define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
 
 define @johtimet_nimisana_teonsanasta :=
@@ -86,7 +85,7 @@ define @johtimet_nimisana_teonsanasta :=
 
 define @johtimet_laatusana_teonsanasta :=
        <johdin_tOn, johdin_vA, johdin_vE, johdin_vAinen, johdin_tAvA, johdin_ttAvA,
-        johdin_llinen> + @johdin_laatutapa;
+        johdin_llinen>;
 
 define @johtimet_seikkasana_teonsanasta := <johdin_ittAin>; #FIXME: onko tämä oikein?
 

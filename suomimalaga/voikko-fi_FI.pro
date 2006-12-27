@@ -50,7 +50,5 @@ malaga: set mor-pruning 20
 malaga: set switch tulostus merkitse_yhdyssanat
 malaga: set switch malli voikko
 mallex: set switch malli voikko
-malaga: set switch taivutus uusi
-mallex: set switch taivutus uusi
 ## End-Internal-Configuration
 

@@ -61,7 +61,6 @@ include "inc/all.inc";
 
 allo_rule generate_allos ($tietue):
   define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
-  define $taivutus := switch (taivutus);
 
 ##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
 #define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
@@ -1925,32 +1924,6 @@ allo_rule generate_allos ($tietue):
                                  ulkotulento_lle:  "u",
                                  vajanto_ttA:      "u"])
                  + <taivutus ($tietue, "ä", <liitesana, loppu>, [äs: ä])>;
-    result $i.alku, $i - alku;
-
-
-  elseif (mä in $tietue.jatko) then
-    choose $i in taivutuskaava ($tietue,
-                                [omanto_n:         "u",
-                                 osanto_A:         "u",
-                                 sisäolento_ssA:   "u",
-                                 sisäeronto_stA:   "u",
-                                 sisätulento_hVn:  "u",
-                                 ulko_olento_llA:  "u",
-                                 ulkoeronto_ltA:   "u",
-                                 ulkotulento_lle:  "u"])
-                 + <taivutus ($tietue, "ä", <liitesana, loppu>, [äs: ä])>;
-    result $i.alku, $i - alku;
-
-
-  elseif (mie in $tietue.jatko) then
-    choose $i in taivutuskaava ($tietue,
-                                [omanto_n:         "u",
-                                 sisäolento_ssA:   "u",
-                                 sisäeronto_stA:   "u",
-                                 ulko_olento_llA:  "u",
-                                 ulkoeronto_ltA:   "u",
-                                 ulkotulento_lle:  "u"])
-                 + <taivutus ($tietue, "e", <liitesana, loppu>, [äs: ä])>;
     result $i.alku, $i - alku;
 
 
@@ -5781,15 +5754,7 @@ end;
 
 
 subrule selvitä ($tietue, $vahva_aste, $heikko_aste):
-  if (switch (taivutus) = vanha) then
-    return haluta ($tietue, $vahva_aste, $heikko_aste)
-           + tositavan_kestämä ($tietue, $vahva_aste + "i",
-                                $vahva_aste + "i")               # Selvi+in, jne.
-           + tositavan_kestämä_y3 ($tietue, $vahva_aste + "i");  # Selvi+i.
-  else
-    return haluta ($tietue, $vahva_aste, $heikko_aste);
-  end;
-#         + selvittää ($tietue, $vahva_aste, $heikko_aste);
+   return haluta ($tietue, $vahva_aste, $heikko_aste);
 end;
 
 
