@@ -159,3 +159,9 @@ define @heikkoasteiset_paikallissijat := <sisäolento_ssA,  sisäeronto_stA> + @
 define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
                                   etuliite, tavuviiva>;
 
+define @johdin_stU := <johdin_stU_juostu, johdin_stU_nuolaistu>;
+
+define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
+define @johdin_mA := <johdin_mA, johdin_mA_saama>;
+define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
+
