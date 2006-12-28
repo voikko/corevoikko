@@ -153,6 +153,8 @@ märänlaiselleko
 !suvealainen
 talomainen # Oikea mainen-johdos
 !siistimainen # Väärä mainen-johdos
+otetut
+nuolaistusti
 
 [muita virheitä]
 !kolaaa
