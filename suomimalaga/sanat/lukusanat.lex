@@ -57,7 +57,7 @@
 [perusmuoto: "kymmenen", alku: "kymmen", luokka: lukusana, lukutyyppi: perusluku, alaluokka: kymmenen, jatko: <kymmenen>, äs: ä];
 
 # Yksitoista, ..., yhdeksäntoista.
-[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: toista, jatko: <loppu>, äs: a];
+[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a];
 
 [perusmuoto: "puolitoista", alku: "puolitoista", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puolitoista", alku: "puolentoista", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a];

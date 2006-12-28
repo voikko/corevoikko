@@ -472,15 +472,20 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
 
   if ($oikea.alaluokka = yksiyhdeksän) then
     if (nimentö in $oikea.jatko) then
-      result $res, rules lukusana_toista, lukusana_sisäkerroin, nimisana, inen_päätteinen_laatusana, loppu;
+      result $res, rules lukusana_toista, lukusana_sisäkerroin,
+                   omistusliite, liitesana,
+                   nimisana, inen_päätteinen_laatusana, loppu;
     end;
   elseif ($oikea.alaluokka in <kymmenen, sata>) then
     if (nimentö in $oikea.jatko) then
-      result $res, rules lukusana_sisäkerroin, nimisana, inen_päätteinen_laatusana, loppu;
+      result $res, rules lukusana_sisäkerroin,
+                   omistusliite, liitesana,
+                   nimisana, inen_päätteinen_laatusana, loppu;
     end;
   end;
   if ($oikea.alaluokka = tuhat and nimentö in $oikea.jatko) then
-    result $res, rules nimisana, inen_päätteinen_laatusana, loppu;
+    result $res, rules omistusliite, liitesana,
+                 nimisana, inen_päätteinen_laatusana, loppu;
   end;
   if ($oikea.alaluokka in <sata, tuhat>) then
     if (nimentö in $oikea.jatko) then
@@ -503,9 +508,12 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
 
   define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
   if ($edellinen.alaluokka = yksiyhdeksän) then
-    result $res, rules lukusana_toista, lukusana_sisäkerroin, nimisana, inen_päätteinen_laatusana, loppu;
+    result $res, rules lukusana_toista, lukusana_sisäkerroin,
+                 omistusliite, liitesana,
+                 nimisana, inen_päätteinen_laatusana, loppu;
   elseif ($edellinen.alaluokka in <kymmenen, sata>) then
-    result $res, rules lukusana_sisäkerroin, loppu;
+    result $res, rules lukusana_sisäkerroin,
+                 omistusliite, liitesana, loppu;
   else
     result $res, rules nimisana, inen_päätteinen_laatusana, loppu;
   end;
@@ -529,7 +537,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
   end;
   
   if ($oikea.lukutyyppi = järjestysluku and loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, rules omistusliite, liitesana, loppu;
   end;
 end;
 
@@ -544,7 +552,9 @@ combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
   ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
 
   define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
-  result $res, rules lukusana, nimisana, inen_päätteinen_laatusana, loppu;
+  result $res, rules lukusana,
+               omistusliite, liitesana,
+               nimisana, inen_päätteinen_laatusana, loppu;
 end;
 
 combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
@@ -555,7 +565,9 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
   ? ääntiösointu_oikein($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
 
-  result $res, rules lukusana, nimisana, inen_päätteinen_laatusana, loppu;
+  result $res, rules lukusana,
+               omistusliite, liitesana,
+               nimisana, inen_päätteinen_laatusana, loppu;
 end;
 
 combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
@@ -565,7 +577,9 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto,
                             luku: $edellinen.luku, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
 
-  result $res, rules lukusana_sisäkerroin, nimisana, inen_päätteinen_laatusana, loppu;
+  result $res, rules lukusana_sisäkerroin,
+                     liitesana,
+                     nimisana, inen_päätteinen_laatusana, loppu;
 end;
 
 ###### LUKUSANASÄÄNNÖT PÄÄTTYVÄT
@@ -760,7 +774,8 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
 
-  ? $edellinen.luokka in @laatusana + <johdin_vAinen>;
+  ? $edellinen.luokka in @laatusana + <johdin_vAinen, johdin_ttAvA, johdin_inen,
+                         johdin_tOn, johdin_llinen, johdin_mAinen>;
 
   ? (voittoaste in $edellinen.jatko) or (yliaste in $edellinen.jatko);
   ? $oikea.luokka in $edellinen.jatko;

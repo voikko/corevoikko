@@ -67,6 +67,11 @@ kauneimmanvärinen
 !kauneimmanväri
 !kauniimpivärinen
 !kauniimmastavärinen
+luettavampina
+suoraviivaisempaa
+talottomampi
+talollisempi
+pyökkimäisempi
 
 [yhdysviivat]
 puna-
@@ -147,6 +152,8 @@ yksipuolueyhteiskunta
 yhdenveroinen
 viideskymmenes
 tuhatlukuinen
+toisiinsa
+kolmeentoistakin
 
 [johtimet]
 märänlaiselleko
