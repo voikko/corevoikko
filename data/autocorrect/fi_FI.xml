@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autocorrect xml:lang="fi">
+<replacement type="optional">
+  <incorrect>aika=lailla</incorrect>
+  <correct>aika lailla</correct>
+  <reason>Parempi erilleen kirjoitettuna</reason>
+</replacement>
+<replacement>
+  <incorrect>aina=kun</incorrect>
+  <correct>aina kun</correct>
+</replacement>
+</autocorrect>
+
