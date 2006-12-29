@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <autocorrect xml:lang="fi">
+<replacement>
+  <incorrect>aiemin</incorrect>
+  <correct>aiemmin</correct>
+</replacement>
 <replacement type="optional">
   <incorrect>aika=lailla</incorrect>
   <correct>aika lailla</correct>
@@ -9,5 +13,614 @@
   <incorrect>aina=kun</incorrect>
   <correct>aina kun</correct>
 </replacement>
+<replacement>
+  <incorrect>aivan=kuin</incorrect>
+  <correct>aivan kuin</correct>
+</replacement>
+<replacement>
+  <incorrect>ajan=mittaan</incorrect>
+  <correct>ajan mittaan</correct>
+</replacement>
+<replacement>
+  <incorrect>ajan=tasalla</incorrect>
+  <correct>ajan tasalla</correct>
+</replacement>
+<replacement>
+  <incorrect>alas päin</incorrect>
+  <correct>alas=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>alin=omaan</incorrect>
+  <correct>alin=omaa</correct>
+</replacement>
+<replacement>
+  <incorrect>alla=mainittu</incorrect>
+  <correct>alla mainittu</correct>
+</replacement>
+<replacement>
+  <incorrect>alun=alkaen</incorrect>
+  <correct>alun alkaen</correct>
+</replacement>
+<replacement>
+  <incorrect>alun=perin</incorrect>
+  <correct>alun perin</correct>
+</replacement>
+<replacement>
+  <incorrect>alun=perin</incorrect>
+  <correct>alun perin</correct>
+</replacement>
+<replacement>
+  <incorrect>alun=pitäen</incorrect>
+  <correct>alun pitäen</correct>
+</replacement>
+<replacement>
+  <incorrect>ani=harvoin</incorrect>
+  <correct>ani harvoin</correct>
+</replacement>
+<replacement>
+  <incorrect>arvossa=pidetty</incorrect>
+  <correct>arvossa pidetty</correct>
+</replacement>
+<replacement>
+  <incorrect>edellä=mainittu</incorrect>
+  <correct>edellä mainittu</correct>
+</replacement>
+<replacement>
+  <incorrect>edellä=oleva</incorrect>
+  <correct>edellä oleva</correct>
+</replacement>
+<replacement>
+  <incorrect>edeltä=käsin</incorrect>
+  <correct>edeltä käsin</correct>
+</replacement>
+<replacement>
+  <incorrect>edeltä päin</incorrect>
+  <correct>edeltä=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>edenpänä</incorrect>
+  <correct>edempänä</correct>
+</replacement>
+<replacement>
+  <incorrect>edessä päin</incorrect>
+  <correct>edessä=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>edestä päin</incorrect>
+  <correct>edestä=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>ehdoin=tahdoin</incorrect>
+  <correct>ehdoin tahdoin</correct>
+</replacement>
+<replacement>
+  <incorrect>ennen=aikaan</incorrect>
+  <correct>ennen aikaan</correct>
+</replacement>
+<replacement>
+  <incorrect>ennen=kaikkea</incorrect>
+  <correct>ennen kaikkea</correct>
+</replacement>
+<replacement>
+  <incorrect>ennen=kuin</incorrect>
+  <correct>ennen kuin</correct>
+</replacement>
+<replacement>
+  <incorrect>ennen=muinoin</incorrect>
+  <correct>ennen muinoin</correct>
+</replacement>
+<replacement>
+  <incorrect>ennen=pitkää</incorrect>
+  <correct>ennen pitkää</correct>
+</replacement>
+<replacement>
+  <incorrect>ennen=vanhaan</incorrect>
+  <correct>ennen vanhaan</correct>
+</replacement>
+<replacement>
+  <incorrect>ensi=alkuun</incorrect>
+  <correct>ensi alkuun</correct>
+</replacement>
+<replacement>
+  <incorrect>ensi=kädessä</incorrect>
+  <correct>ensi kädessä</correct>
+</replacement>
+<replacement>
+  <incorrect>ensi=sijassa</incorrect>
+  <correct>ensi sijassa</correct>
+</replacement>
+<replacement>
+  <incorrect>ensi=vuonna</incorrect>
+  <correct>ensi vuonna</correct>
+</replacement>
+<replacement>
+  <incorrect>eri=lailla</incorrect>
+  <correct>eri lailla</correct>
+</replacement>
+<replacement>
+  <incorrect>eri=tavalla</incorrect>
+  <correct>eri tavalla</correct>
+</replacement>
+<replacement>
+  <incorrect>esiin=tullut</incorrect>
+  <correct>esiin tullut</correct>
+</replacement>
+<replacement>
+  <incorrect>eteen päin</incorrect>
+  <correct>eteen=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>heikun=keikun</incorrect>
+  <correct>heikun keikun</correct>
+</replacement>
+<replacement>
+  <incorrect>heti=kun</incorrect>
+  <correct>heti kun</correct>
+</replacement>
+<replacement>
+  <incorrect>hissun=kissun</incorrect>
+  <correct>hissun kissun</correct>
+</replacement>
+<replacement>
+  <incorrect>huiskin=haiskin</incorrect>
+  <correct>huiskin haiskin</correct>
+</replacement>
+<replacement>
+  <incorrect>hujan=hajan</incorrect>
+  <correct>hujan hajan</correct>
+</replacement>
+<replacement>
+  <incorrect>huomioon=ottaen</incorrect>
+  <correct>huomioon ottaen</correct>
+</replacement>
+<replacement>
+  <incorrect>hädin=tuskin</incorrect>
+  <correct>hädin tuskin</correct>
+</replacement>
+<replacement>
+  <incorrect>hällä=väliä</incorrect>
+  <correct>hällä väliä</correct>
+</replacement>
+<replacement>
+  <incorrect>ikään=kuin</incorrect>
+  <correct>ikään kuin</correct>
+</replacement>
+<replacement>
+  <incorrect>itse=kukin</incorrect>
+  <correct>itse kukin</correct>
+</replacement>
+<replacement>
+  <incorrect>itsestään=selvä</incorrect>
+  <correct>itsestään selvä</correct>
+</replacement>
+<replacement>
+  <incorrect>iän=kaiken</incorrect>
+  <correct>iän kaiken</correct>
+</replacement>
+<replacement>
+  <incorrect>jompi kumpi</incorrect>
+  <correct>jompikumpi</correct>
+</replacement>
+<replacement>
+  <incorrect>jompaa kumpaa</incorrect>
+  <correct>jompaakumpaa</correct>
+  <!-- Korjauksen pitäisi koskea kaikkia sijamuotoja -->
+</replacement>
+<replacement>
+  <incorrect>jonkin=verran</incorrect>
+  <correct>jonkin verran</correct>
+</replacement>
+<replacement>
+  <incorrect>joten kuten</incorrect>
+  <correct>jotenkuten</correct>
+</replacement>
+<replacement>
+  <incorrect>juurta=jaksaen</incorrect>
+  <correct>juurta jaksaen</correct>
+</replacement>
+<replacement>
+  <incorrect>juurta=jaksain</incorrect>
+  <correct>juurta jaksain</correct>
+</replacement>
+<replacement>
+  <incorrect>kahden=kesken</incorrect>
+  <correct>kahden kesken</correct>
+</replacement>
+<replacement>
+  <incorrect>kaiken=kaikkiaan</incorrect>
+  <correct>kaiken kaikkiaan</correct>
+</replacement>
+<replacement>
+  <incorrect>kaikin=puolin</incorrect>
+  <correct>kaikin puolin</correct>
+</replacement>
+<replacement>
+  <incorrect>kautta=rantain</incorrect>
+  <correct>kautta rantain</correct>
+</replacement>
+<replacement>
+  <incorrect>kerta=kaikkiaan</incorrect>
+  <correct>kerta kaikkiaan</correct>
+</replacement>
+<replacement>
+  <incorrect>kiikun=kaakun</incorrect>
+  <correct>kiikun kaakun</correct>
+</replacement>
+<replacement>
+  <incorrect>kipin=kapin</incorrect>
+  <correct>kipin kapin</correct>
+</replacement>
+<replacement>
+  <incorrect>koko=lailla</incorrect>
+  <correct>koko lailla</correct>
+</replacement>
+<replacement>
+  <incorrect>käden=käänteessä</incorrect>
+  <correct>käden käänteessä</correct>
+</replacement>
+<replacement>
+  <incorrect>loppujen=lopuksi</incorrect>
+  <correct>loppujen lopuksi</correct>
+</replacement>
+<replacement>
+  <incorrect>lukuun=ottamatta</incorrect>
+  <correct>lukuun ottamatta</correct>
+</replacement>
+<replacement>
+  <incorrect>läsnä=ollessa</incorrect>
+  <correct>läsnä ollessa</correct>
+</replacement>
+<replacement>
+  <incorrect>melko=lailla</incorrect>
+  <correct>melko lailla</correct>
+</replacement>
+<replacement>
+  <incorrect>mielin=kielin</incorrect>
+  <correct>mielin kielin</correct>
+</replacement>
+<replacement>
+  <incorrect>mielin=määrin</incorrect>
+  <correct>mielin määrin</correct>
+</replacement>
+<replacement>
+  <incorrect>minkä=takia</incorrect>
+  <correct>minkä takia</correct>
+</replacement>
+<replacement>
+  <incorrect>minkä=tähden</incorrect>
+  <correct>minkä tähden</correct>
+</replacement>
+<replacement>
+  <incorrect>minkä=vuoksi</incorrect>
+  <correct>minkä vuoksi</correct>
+</replacement>
+<replacement>
+  <incorrect>minuun=päin</incorrect>
+  <correct>minuun päin</correct>
+</replacement>
+<replacement>
+  <incorrect>miten=päin</incorrect>
+  <correct>miten päin</correct>
+</replacement>
+<replacement>
+  <incorrect>molempissa</incorrect>
+  <correct>molemmissa</correct>
+</replacement>
+<replacement>
+  <incorrect>monasti</incorrect>
+  <correct>monesti</correct>
+</replacement>
+<replacement>
+  <incorrect>mukaan=luettuna</incorrect>
+  <correct>mukaan luettuna</correct>
+</replacement>
+<replacement>
+  <incorrect>mukaan=lukien</incorrect>
+  <correct>mukaan lukien</correct>
+</replacement>
+<replacement>
+  <incorrect>mukkelis=makkelis</incorrect>
+  <correct>mukkelis makkelis</correct>
+</replacement>
+<replacement>
+  <incorrect>mullin=mallin</incorrect>
+  <correct>mullin mallin</correct>
+</replacement>
+<replacement>
+  <incorrect>muun=muassa</incorrect>
+  <correct>muun muassa</correct>
+</replacement>
+<replacement>
+  <incorrect>niin=ikään</incorrect>
+  <correct>niin ikään</correct>
+</replacement>
+<replacement>
+  <incorrect>niin=kuin</incorrect>
+  <correct>niin kuin</correct>
+</replacement>
+<replacement>
+  <incorrect>niin=päin</incorrect>
+  <correct>niin päin</correct>
+</replacement>
+<replacement>
+  <incorrect>niin=sanotusti</incorrect>
+  <correct>niin sanotusti</correct>
+</replacement>
+<replacement>
+  <incorrect>nimen omaan</incorrect>
+  <correct>nimen=omaan</correct>
+</replacement>
+<replacement>
+  <incorrect>nipin=napin</incorrect>
+  <correct>nipin napin</correct>
+</replacement>
+<replacement>
+  <incorrect>nippa=nappa</incorrect>
+  <correct>nippa nappa</correct>
+</replacement>
+<replacement>
+  <incorrect>niukin=naukin</incorrect>
+  <correct>niukin naukin</correct>
+</replacement>
+<replacement>
+  <incorrect>noin=päin</incorrect>
+  <correct>noin päin</correct>
+</replacement>
+<replacement>
+  <incorrect>nurin=päin</incorrect>
+  <correct>nurin päin</correct>
+</replacement>
+<replacement>
+  <incorrect>oikein=päin</incorrect>
+  <correct>oikein päin</correct>
+</replacement>
+<replacement>
+  <incorrect>paikka=paikoin</incorrect>
+  <correct>paikka paikoin</correct>
+</replacement>
+<replacement>
+  <incorrect>perin=juurin</incorrect>
+  <correct>perin juurin</correct>
+</replacement>
+<replacement>
+  <incorrect>perin=pohjin</incorrect>
+  <correct>perin pohjin</correct>
+</replacement>
+<replacement>
+  <incorrect>pois päin</incorrect>
+  <correct>pois=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>päin vastoin</incorrect>
+  <correct>päin=vastoin</correct>
+</replacement>
+<replacement>
+  <incorrect>päälekkäin</incorrect>
+  <correct>päällekkäin</correct>
+</replacement>
+<replacement>
+  <incorrect>päällisin=puolin</incorrect>
+  <correct>päällisin puolin</correct>
+</replacement>
+<replacement>
+  <incorrect>päätä=pahkaa</incorrect>
+  <correct>päätä pahkaa</correct>
+</replacement>
+<replacement>
+  <incorrect>rakkainpamme</incorrect>
+  <correct>rakkaimpamme</correct>
+</replacement>
+<replacement>
+  <incorrect>ristiin=rastiin</incorrect>
+  <correct>ristiin rastiin</correct>
+</replacement>
+<replacement>
+  <incorrect>saman=tien</incorrect>
+  <correct>saman tien</correct>
+</replacement>
+<replacement>
+  <incorrect>saman=verran</incorrect>
+  <correct>saman verran</correct>
+</replacement>
+<replacement>
+  <incorrect>sen=sijaan</incorrect>
+  <correct>sen sijaan</correct>
+</replacement>
+<replacement>
+  <incorrect>sen=takia</incorrect>
+  <correct>sen takia</correct>
+</replacement>
+<replacement>
+  <incorrect>sen=tähden</incorrect>
+  <correct>sen tähden</correct>
+</replacement>
+<replacement>
+  <incorrect>sen=verran</incorrect>
+  <correct>sen verran</correct>
+</replacement>
+<replacement>
+  <incorrect>sen=vuoksi</incorrect>
+  <correct>sen vuoksi</correct>
+</replacement>
+<replacement>
+  <incorrect>sikin=sokin</incorrect>
+  <correct>sikin sokin</correct>
+</replacement>
+<replacement>
+  <incorrect>sillä=lailla</incorrect>
+  <correct>sillä lailla</correct>
+</replacement>
+<replacement>
+  <incorrect>sillä=tapaa</incorrect>
+  <correct>sillä tapaa</correct>
+</replacement>
+<replacement>
+  <incorrect>sillä=tavoin</incorrect>
+  <correct>sillä tavoin</correct>
+</replacement>
+<replacement>
+  <incorrect>sillä=välin</incorrect>
+  <correct>sillä välin</correct>
+</replacement>
+<replacement>
+  <incorrect>silmällä=pitäen</incorrect>
+  <correct>silmällä pitäen</correct>
+</replacement>
+<replacement>
+  <incorrect>sitä=mukaa</incorrect>
+  <correct>sitä mukaa</correct>
+</replacement>
+<replacement>
+  <incorrect>sitä=paitsi</incorrect>
+  <correct>sitä paitsi</correct>
+</replacement>
+<replacement>
+  <incorrect>sitä=vastoin</incorrect>
+  <correct>sitä vastoin</correct>
+</replacement>
+<replacement>
+  <incorrect>suin=päin</incorrect>
+  <correct>suin päin</correct>
+</replacement>
+<replacement>
+  <incorrect>suoraa=päätä</incorrect>
+  <correct>suoraa päätä</correct>
+</replacement>
+<replacement>
+  <incorrect>suuna=päänä</incorrect>
+  <correct>suuna päänä</correct>
+</replacement>
+<replacement>
+  <incorrect>suurin=piirtein</incorrect>
+  <correct>suurin piirtein</correct>
+</replacement>
+<replacement>
+  <incorrect>sydämmellinen</incorrect>
+  <correct>sydämellinen</correct>
+</replacement>
+<replacement>
+  <incorrect>sydämmellisesti</incorrect>
+  <correct>sydämellisesti</correct>
+</replacement>
+<replacement>
+  <incorrect>sydämmelliset</incorrect>
+  <correct>sydämelliset</correct>
+</replacement>
+<replacement>
+  <incorrect>tavan=takaa</incorrect>
+  <correct>tavan takaa</correct>
+</replacement>
+<replacement>
+  <incorrect>totta=kai</incorrect>
+  <correct>totta kai</correct>
+</replacement>
+<replacement>
+  <incorrect>tuiki=tavallinen</incorrect>
+  <correct>tuiki tavallinen</correct>
+</replacement>
+<replacement>
+  <incorrect>tälläinen</incorrect>
+  <correct>tällainen</correct>
+</replacement>
+<replacement>
+  <incorrect>tämän=sijaan</incorrect>
+  <correct>tämän sijaan</correct>
+</replacement>
+<replacement>
+  <incorrect>tänne päin</incorrect>
+  <correct>tänne=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>täällä päin</incorrect>
+  <correct>täällä=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>täältä=käsin</incorrect>
+  <correct>täältä käsin</correct>
+</replacement>
+<replacement>
+  <incorrect>täältä päin</incorrect>
+  <correct>täältä=päin</correct>
+</replacement>
+<replacement>
+  <incorrect>töin=tuskin</incorrect>
+  <correct>töin tuskin</correct>
+</replacement>
+<replacement>
+  <incorrect>varta=vasten</incorrect>
+  <correct>varta vasten</correct>
+</replacement>
+<replacement>
+  <incorrect>viime=kädessä</incorrect>
+  <correct>viime kädessä</correct>
+</replacement>
+<replacement>
+  <incorrect>vinksin=vonksin</incorrect>
+  <correct>vinksin vonksin</correct>
+</replacement>
+<replacement>
+  <incorrect>vuoron=perään</incorrect>
+  <correct>vuoron perään</correct>
+</replacement>
+<replacement>
+  <incorrect>vähän=väliä</incorrect>
+  <correct>vähän väliä</correct>
+</replacement>
+<replacement>
+  <incorrect>väärin=päin</incorrect>
+  <correct>väärin päin</correct>
+</replacement>
+<replacement>
+  <incorrect>yhtä=aikaa</incorrect>
+  <correct>yhtä aikaa</correct>
+</replacement>
+<replacement>
+  <incorrect>yhtä=kaikki</incorrect>
+  <correct>yhtä kaikki</correct>
+</replacement>
+<replacement>
+  <incorrect>yhtä=kuin</incorrect>
+  <correct>yhtä kuin</correct>
+</replacement>
+<replacement>
+  <incorrect>yhtä=lailla</incorrect>
+  <correct>yhtä lailla</correct>
+</replacement>
+<replacement>
+  <incorrect>yhtä=mittaa</incorrect>
+  <correct>yhtä mittaa</correct>
+</replacement>
+<replacement>
+  <incorrect>yhtä=päätä</incorrect>
+  <correct>yhtä päätä</correct>
+</replacement>
+<replacement>
+  <incorrect>yksin omaan</incorrect>
+  <correct>yksin=omaan</correct>
+</replacement>
+<replacement>
+  <incorrect>yksin=tein</incorrect>
+  <correct>yksin tein</correct>
+</replacement>
+<replacement>
+  <incorrect>ylen=määrin</incorrect>
+  <correct>ylen määrin</correct>
+</replacement>
+<replacement>
+  <incorrect>yllin=kyllin</incorrect>
+  <correct>yllin kyllin</correct>
+</replacement>
+<replacement>
+  <incorrect>yltä=päältä</incorrect>
+  <correct>yltä päältä</correct>
+</replacement>
+<replacement>
+  <incorrect>ylös alaisin</incorrect>
+  <correct>ylös=alaisin</correct>
+</replacement>
+<replacement type="optional">
+  <incorrect>ylös päin</incorrect>
+  <correct>ylös=päin</correct>
+  <!-- "Lennän ylös päin pilviä ..." -->
+</replacement>
 </autocorrect>
-
