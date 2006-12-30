@@ -1,3 +1,10 @@
+2006-12-30 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Do not suggest splitting word immediately before or after a
+	  hyphen. Move word splitting suggestions to lower priority.
+	* Check the cost parameter within individual suggestion functions,
+	  not just between the functions.
+
 2006-12-09 Harri Pitkänen <hatapitk@iki.fi>
 
         * Fix character case check for words with punctuation.
