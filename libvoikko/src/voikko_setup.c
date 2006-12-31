@@ -61,6 +61,10 @@ int voikko_set_bool_option(int handle, int option, int value) {
 			if (value) voikko_options.no_ugly_hyphenation = 1;
 			else voikko_options.no_ugly_hyphenation = 0;
 			return 1;
+		case VOIKKO_OPT_OCR_SUGGESTIONS:
+			if (value) voikko_options.suggestion_type = ST_OCR;
+			else voikko_options.suggestion_type = ST_STD;
+			return 1;
 	}
 	return 0;
 }
@@ -115,6 +119,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
+	voikko_options.suggestion_type = ST_STD;
 	
 	project = malloc(1024);
 	if (project == 0) return "Out of memory";

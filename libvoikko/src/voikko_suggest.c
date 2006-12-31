@@ -220,34 +220,40 @@ void voikko_suggest_word_split(voikko_sugg_status_t * s) {
 
 /* ä=\u00e4, ö=\u00f6, å=\u00e5, š=\u0161, ž=\u017e, é=\u00e9, â=\u00e2 */
 
-const wchar_t * REPLACE_ORIG =
+
+const wchar_t * STD_REPL_ORIG =
 	L"aiites"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbcwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
 	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5a"  L"e"  L"a";
-const wchar_t * REPLACE_REPLACEMENT = 
+const wchar_t * STD_REPL_REPL = 
 	L"suorr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
 	L"jpp"  L"kdglhuiel"  L"tvvkasaka"  L"\u00e5\u00e9\u00e2";
 
-void voikko_suggest_replacement(voikko_sugg_status_t * s, int start, int end) {
+const wchar_t * OCR_REPL_ORIG =
+	L"liuoa"  L"\u00e4o"  L"\u00f6s"  L"\u0161z"  L"\u017ee"  L"\u00e9a"  L"\u00e2pbefqonmuvoc";
+const wchar_t * OCR_REPL_REPL =
+	L"ilou\u00e4a"  L"\u00f6o"  L"\u0161s"  L"\u017ez"  L"\u00e9e"  L"\u00e2a"  L"bpfeoqmnvuco";
+
+void voikko_suggest_replacement(voikko_sugg_status_t * s, const wchar_t * from, const wchar_t * to, int count) {
 	int i;
 	wchar_t * pos;
 	wchar_t * buffer = malloc(((*s).wlen + 1) * sizeof(wchar_t));
 	if (buffer == 0) return;
 	wcsncpy(buffer, (*s).word, (*s).wlen);
 	buffer[(*s).wlen] = L'\0';
-	for (i = start; i <= end; i++) {
-		for (pos = wcschr(buffer, REPLACE_ORIG[i]); pos != 0; pos = wcschr(pos+1, REPLACE_ORIG[i])) {
-			*pos = REPLACE_REPLACEMENT[i];
+	for (i = 0; i < count; i++) {
+		for (pos = wcschr(buffer, from[i]); pos != 0; pos = wcschr(pos+1, from[i])) {
+			*pos = to[i];
 			voikko_suggest_correct_case(s, buffer, (*s).wlen);
 			if (abort_search(s)) break;
-			*pos = REPLACE_ORIG[i];
+			*pos = from[i];
 		}
 		if (abort_search(s)) break;
-		for (pos = wcschr(buffer, towupper(REPLACE_ORIG[i])); pos != 0;
-		     pos = wcschr(pos + 1, towupper(REPLACE_ORIG[i]))) {
-			*pos = towupper(REPLACE_REPLACEMENT[i]);
+		for (pos = wcschr(buffer, towupper(from[i])); pos != 0;
+		     pos = wcschr(pos + 1, towupper(from[i]))) {
+			*pos = towupper(to[i]);
 			voikko_suggest_correct_case(s, buffer, (*s).wlen);
 			if (abort_search(s)) break;
-			*pos = towupper(REPLACE_ORIG[i]);
+			*pos = towupper(from[i]);
 		}
 		if (abort_search(s)) break;
 	}
@@ -424,6 +430,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	status.prios = prios;
 	status.max_suggestions = MAX_SUGGESTIONS * 3;
 	status.max_cost = COST_LIMIT;
+	if (voikko_options.suggestion_type == ST_OCR) status.max_cost = status.max_cost * 3;
 	status.handle = handle;
 	status.word = nword;
 	status.wlen = wlen;
@@ -435,15 +442,20 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		if (add_dots) voikko_suggest_add_dots(suggestions);
 		return suggestions;
 	}
-	voikko_suggest_vowel_change(&status);
-	if (!abort_search(&status)) voikko_suggest_replacement(&status, 0, 50);
-	if (!abort_search(&status)) voikko_suggest_deletion(&status);
-	if (!abort_search(&status)) voikko_suggest_insert_special(&status);
-	if (!abort_search(&status)) voikko_suggest_word_split(&status);
-	if (!abort_search(&status)) voikko_suggest_insertion(&status, 0, 5);
-	if (!abort_search(&status)) voikko_suggest_swap(&status);
-	if (!abort_search(&status)) voikko_suggest_replacement(&status, 51, 77);
-	if (!abort_search(&status)) voikko_suggest_insertion(&status, 6, 29);
+	if (voikko_options.suggestion_type == ST_OCR) {
+		voikko_suggest_replacement(&status, OCR_REPL_ORIG, OCR_REPL_REPL, 28);
+	}
+	else {
+		voikko_suggest_vowel_change(&status);
+		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG, STD_REPL_REPL, 51);
+		if (!abort_search(&status)) voikko_suggest_deletion(&status);
+		if (!abort_search(&status)) voikko_suggest_insert_special(&status);
+		if (!abort_search(&status)) voikko_suggest_word_split(&status);
+		if (!abort_search(&status)) voikko_suggest_insertion(&status, 0, 5);
+		if (!abort_search(&status)) voikko_suggest_swap(&status);
+		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG + 51, STD_REPL_REPL + 51, 26);
+		if (!abort_search(&status)) voikko_suggest_insertion(&status, 6, 29);
+	}
 
 	if (status.max_suggestions == MAX_SUGGESTIONS * 3) {
 		free(suggestions);

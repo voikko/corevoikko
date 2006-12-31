@@ -24,6 +24,9 @@
 #endif
 #include <wchar.h>
 
+/** Suggestion types */
+enum suggtype {ST_STD, ST_OCR};
+
 typedef struct {
 	int ignore_dot;
 	int ignore_numbers;
@@ -42,6 +45,7 @@ typedef struct {
 	wchar_t * cache;
 	char * cache_meta;
 	int cache_size;
+	enum suggtype suggestion_type;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;

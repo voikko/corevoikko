@@ -90,6 +90,12 @@
  * Default: false */
 #define VOIKKO_OPT_NO_UGLY_HYPHENATION 4
 
+/* Use suggestions optimised for optical character recognition software.
+ * By default suggestions are optimised for typing errors.
+ * Default: false */
+#define VOIKKO_OPT_OCR_SUGGESTIONS 8
+
+
 /* Integer options */
 
 /* There are two possible rules that can be applied when hyphenating compound words

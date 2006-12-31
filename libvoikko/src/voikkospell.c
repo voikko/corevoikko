@@ -115,6 +115,10 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
 		else if (strcmp(argv[i], "accept_first_uppercase=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 0);
+		else if (strcmp(argv[i], "ocr_suggestions=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 1);
+		else if (strcmp(argv[i], "ocr_suggestions=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
 		else if (strcmp(argv[i], "-s") == 0) suggest = 1;
 	}
 	

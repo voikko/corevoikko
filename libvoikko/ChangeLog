@@ -1,6 +1,9 @@
 2006-12-31 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Clean up suggestion code.
+	* Add new option VOIKKO_OPT_OCR_SUGGESTIONS for OCR optimised spelling
+	  suggestions.
+	* Increase version numbers.
 
 2006-12-30 Harri Pitkänen <hatapitk@iki.fi>
 
