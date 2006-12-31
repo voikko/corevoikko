@@ -1,3 +1,7 @@
+2006-12-31 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Clean up suggestion code.
+
 2006-12-30 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Do not suggest splitting word immediately before or after a

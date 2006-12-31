@@ -21,18 +21,28 @@
 
 #include <stddef.h>
 
+typedef struct {
+	/** handle */
+	int handle;
+	/** pointer to the first free slot in a suggestion array */
+	wchar_t ** suggestions;
+	/** pointer to the first free slot in a priority array */
+	int * prios;
+	/** number of empty suggestion/priority slots left */
+	int max_suggestions;
+	/** string to find suggestions for */
+	const wchar_t * word;
+	/** length of word */
+	size_t wlen;
+	/** number of allowed malaga calls */
+	int max_cost;
+} voikko_sugg_status_t;
+
 /** Suggests corrections to character case
- * @param handle handle
- * @param suggestions pointer to a pointer to the first free slot in a suggestion array.
- *        The pointer to the first free slot will be incremented if suggestions are added.
- * @param max_suggestions number of empty suggestion slots left. This will be changed to match
- *        the correct value after suggestions are added.
- * @param word string to find suggestions for
- * @param wlen length of word
- * @param cost total computational cost of the suggestion algorithm. This will be incremented as needed.
- * @param prios suggestion priorities
+ * @param status the suggestion status structure
+ * @param buffer word to check, or null if the word in status structure should be used
+ * @param buflen length of buffer, ignored if buffer is null
  */
-void voikko_suggest_correct_case(int handle, wchar_t *** suggestions, int * max_suggestions,
-                                 const wchar_t * word, size_t wlen, int * cost, int ** prios);
+void voikko_suggest_correct_case(voikko_sugg_status_t * status, const wchar_t * buffer, size_t buflen);
 
 #endif
