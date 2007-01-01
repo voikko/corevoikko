@@ -1,3 +1,7 @@
+2007-01-01 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Accept optional hyphens as in "syys-ilta" and "syy-silta".
+
 2006-12-31 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Clean up suggestion code.

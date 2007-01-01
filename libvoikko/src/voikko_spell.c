@@ -27,6 +27,32 @@
 #include <wchar.h>
 #include <wctype.h>
 
+enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str) {
+	size_t i, j;
+	char captype;
+	enum spellresult result = SPELL_OK;
+	j = 0;
+	for (i = 0; i < len; i++) {
+		while (analysis_str[j] == '=') j++;
+		if (analysis_str[j] == '\0') break;
+		
+		if (iswupper(word[i])) captype = 'i';
+		else if (iswlower(word[i])) captype = 'p';
+		else captype = 'v';
+		
+		if (captype == 'p' && (analysis_str[j] == 'i' || analysis_str[j] == 'j')) {
+			if (i == 0) result = SPELL_CAP_FIRST;
+			else result = SPELL_CAP_ERROR;
+		}
+		if (captype == 'i' && (analysis_str[j] == 'p' || analysis_str[j] == 'q')) {
+			result = SPELL_CAP_ERROR;
+		}
+		if (result == SPELL_CAP_ERROR) break;
+		j++;
+	}
+	return result;
+}
+
 enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio) {
 	enum spellresult result;
 	enum spellresult best_result;
@@ -93,7 +119,67 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 }
 
 enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
-	return voikko_spell_with_priority(word, len, 0);
+	wchar_t * buffer;
+	wchar_t * hyphen_pos;
+	size_t leading_len;
+	char * malaga_buffer;
+	value_t current_analysis;
+	char * analysis_str;
+	enum spellresult result_with_border = SPELL_FAILED;
+	enum spellresult result_without_border = SPELL_FAILED;
+	enum spellresult spres;
+	size_t i, j;
+	
+	enum spellresult result = voikko_spell_with_priority(word, len, 0);
+	if (result != SPELL_OK && len > 3) hyphen_pos = wmemchr(word + 1, L'-', len - 2);
+	else hyphen_pos = 0;
+	
+	if (hyphen_pos) { /* Check optional hyphens */
+		leading_len = hyphen_pos - word;
+		buffer = malloc(len * sizeof(wchar_t));
+		if (!buffer) return result;
+		wcsncpy(buffer, word, leading_len);
+		wcsncpy(buffer + leading_len, hyphen_pos + 1, len - leading_len - 1);
+		buffer[len - 1] = L'\0';
+		
+		malaga_buffer = voikko_ucs4tocstr(buffer, "UTF-8");
+		if (!malaga_buffer) {
+			free(buffer);
+			return result;
+		}
+		analyse_item(malaga_buffer, MORPHOLOGY);
+		free(malaga_buffer);
+		
+		current_analysis = first_analysis_result();
+		if (!current_analysis) {
+			free(buffer);
+			return result;
+		}
+		
+		do {
+			analysis_str = get_value_string(current_analysis);
+			j = 0;
+			for (i = 0; i < leading_len; i++) {
+				while (analysis_str[j] == '=') j++;
+				if (analysis_str[j] == '\0') break;
+				j++;
+			}
+			if (i == leading_len) {
+				spres = voikko_match_word_and_analysis(buffer, len - 1, analysis_str);
+				if (analysis_str[j] == '=' && (result_with_border == SPELL_FAILED ||
+				    result_with_border > spres)) result_with_border = spres;
+				if (analysis_str[j] != '=' && (result_without_border == SPELL_FAILED ||
+				    result_without_border > spres)) result_without_border = spres;
+			}
+			free(analysis_str);
+			current_analysis = next_analysis_result();
+		} while (current_analysis);
+		
+		free(buffer);
+		if (result_with_border != SPELL_FAILED && result_without_border != SPELL_FAILED) return result_with_border;
+	}
+	
+	return result;
 }
 
 int voikko_spell_cstr(int handle, const char * word) {

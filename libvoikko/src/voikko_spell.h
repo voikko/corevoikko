@@ -36,7 +36,7 @@ enum spellresult {SPELL_FAILED, SPELL_OK, SPELL_CAP_FIRST, SPELL_CAP_ERROR};
  */
 enum spellresult voikko_do_spell(const wchar_t * word, size_t len);
 
-/** Checks the spelling of given word
+/** Checks the spelling of given word. This function does not accept optional hyphens.
  * @param word word to check (does not need to be null terminated)
  * @param len length of the word to check
  * @param prio pointer to an integer that will be set to contain the priority of the result
