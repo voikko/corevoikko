@@ -29,7 +29,7 @@
 
 enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str) {
 	size_t i, j;
-	char captype;
+	char captype; /* 'i' = uppercase letter, 'p' = lowercase letter, 'v' = punctuation */
 	enum spellresult result = SPELL_OK;
 	j = 0;
 	for (i = 0; i < len; i++) {
@@ -56,12 +56,9 @@ enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len
 enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio) {
 	enum spellresult result;
 	enum spellresult best_result;
-	size_t i, j;
+	size_t j;
 	value_t analysis;
-	const char * analysis_str;
-
-	/* Capitalisation pattern: 'i' = uppercase letter, 'p' = lowercase letter, 'v' is punctuation */
-	char * cappat;
+	char * analysis_str;
 
 	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8");
 	if (malaga_buffer == 0) return SPELL_FAILED;
@@ -71,32 +68,11 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	
 	analysis = first_analysis_result();
 	if (!analysis) return SPELL_FAILED;
-	cappat = malloc(len);
-	if (cappat == 0) return SPELL_FAILED;
-	for (i = 0; i < len; i++) {
-		if (iswupper(word[i])) cappat[i] = 'i';
-		else if (iswlower(word[i])) cappat[i] = 'p';
-		else cappat[i] = 'v';
-	}
 	
 	best_result = SPELL_FAILED;
 	do {
-		result = SPELL_OK;
-		j = 0;
 		analysis_str = get_value_string(analysis);
-		for (i = 0; i < len; i++) {
-			while (analysis_str[j] == '=') j++;
-			if (analysis_str[j] == '\0') break;
-			if (cappat[i] == 'p' && (analysis_str[j] == 'i' || analysis_str[j] == 'j')) {
-				if (i == 0) result = SPELL_CAP_FIRST;
-				else result = SPELL_CAP_ERROR;
-			}
-			if (cappat[i] == 'i' && (analysis_str[j] == 'p' || analysis_str[j] == 'q')) {
-				result = SPELL_CAP_ERROR;
-			}
-			if (result == SPELL_CAP_ERROR) break;
-			j++;
-		}
+		result = voikko_match_word_and_analysis(word, len, analysis_str);
 		if (best_result == SPELL_FAILED || best_result > result) {
 			best_result = result;
 			if (prio != 0) {
@@ -105,11 +81,10 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 					if (analysis_str[j] == '=') (*prio)++;
 			}
 		}
-		free((char *) analysis_str);
+		free(analysis_str);
 		if (best_result == SPELL_OK) break;
 		analysis = next_analysis_result();
 	} while (analysis);
-	free(cappat);
 	
 	if (prio != 0) {
 		if (best_result == SPELL_CAP_FIRST) (*prio) += 1;
@@ -128,6 +103,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	enum spellresult result_with_border = SPELL_FAILED;
 	enum spellresult result_without_border = SPELL_FAILED;
 	enum spellresult spres;
+	char vctest1, vctest2;
 	size_t i, j;
 	
 	enum spellresult result = voikko_spell_with_priority(word, len, 0);
@@ -142,6 +118,23 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		wcsncpy(buffer + leading_len, hyphen_pos + 1, len - leading_len - 1);
 		buffer[len - 1] = L'\0';
 		
+		/* Leading part ends with the same VC pair as the trailing part starts ('pop-opisto') */
+		if (leading_len >= 2 && len - leading_len >= 3) {
+			vctest1 = towlower(word[leading_len - 2]);
+			vctest2 = towlower(word[leading_len - 1]);
+			if (wcschr(VOIKKO_VOWELS, vctest1) &&
+			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
+			    towlower(word[leading_len + 1]) == vctest1 &&
+			    towlower(word[leading_len + 2]) == vctest2) {
+				spres = voikko_spell_with_priority(buffer, len - 1, 0);
+				if (result == SPELL_FAILED || result > spres) {
+					free(buffer);
+					return spres;
+				}
+			}
+		}
+		
+		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
 		malaga_buffer = voikko_ucs4tocstr(buffer, "UTF-8");
 		if (!malaga_buffer) {
 			free(buffer);
@@ -176,7 +169,8 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		} while (current_analysis);
 		
 		free(buffer);
-		if (result_with_border != SPELL_FAILED && result_without_border != SPELL_FAILED) return result_with_border;
+		if (result_with_border != SPELL_FAILED && result_without_border != SPELL_FAILED &&
+		    (result == SPELL_FAILED || result > result_with_border)) return result_with_border;
 	}
 	
 	return result;

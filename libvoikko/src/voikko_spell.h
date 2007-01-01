@@ -29,6 +29,14 @@
 */
 enum spellresult {SPELL_FAILED, SPELL_OK, SPELL_CAP_FIRST, SPELL_CAP_ERROR};
 
+/** Returns the spelling result of a word when matched against given analysis string
+ *  @param word word  (does not need to be null terminated)
+ *  @param len length of the word
+ *  @param analysis_str malaga analysis string
+ *  @return spelling result
+ */
+enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str);
+
 /** Checks the spelling of given word
  * @param word word to check (does not need to be null terminated)
  * @param len length of the word to check
