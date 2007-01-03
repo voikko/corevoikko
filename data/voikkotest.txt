@@ -162,6 +162,9 @@ talomainen # Oikea mainen-johdos
 !siistimainen # Väärä mainen-johdos
 otetut
 nuolaistusti
+oltu
+ollut
+oltava
 
 [muita virheitä]
 !kolaaa

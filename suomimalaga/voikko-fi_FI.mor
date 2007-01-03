@@ -73,7 +73,7 @@ define @nimitapa_3 := <nimitapa_3, nimitapa_3_ttA, nimitapa_3_tA>;
 
 # Johtimet teonsanoista
 
-define @johdin_tU := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU>;
+define @johdin_tU := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU, johdin_tU_lU_oltu>;
 
 define @johtimet_nimisana_teonsanasta :=
        <johdin_mA, johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>

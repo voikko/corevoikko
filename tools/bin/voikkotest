@@ -23,12 +23,13 @@ import sys
 import locale
 import enchant
 import codecs
+import os
 
 
 # Set defaults
 ENCODING = locale.getpreferredencoding()
 langcode = "fi_FI"
-testfile = u"/home/harri/hunspell-fi/svn/trunk/data/voikkotest.txt"
+testfile = os.environ["HOME"] + u"/svn/voikko/trunk/data/voikkotest.txt"
 
 
 # Initialise the spellchecker
