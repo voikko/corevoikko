@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Search for differences between the XML word list from the
+# Research Institute for the Languages of Finland and vocabulary
+# database of Joukahainen.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import locale
+import codecs
+import xml.parsers.expat
+
+wordlist = {}
+current_element = None
+current_word = None
+
+def start_element(name, attrs):
+	global current_element
+	current_element = name
+def end_element(name):
+	global current_element
+	global current_word
+	if name == 'st':
+		current_element = None
+		current_word = None
+def char_data(data):
+	global current_element
+	global current_word
+	global wordlist
+	if current_element == 's': current_word = data
+	elif current_element == 'tn':
+		if not wordlist.has_key(current_word): wordlist[current_word] = []
+		wordlist[current_word].append(data)
+
+# Start of main program
+
+# Set defaults
+ENCODING = locale.getpreferredencoding()
+KOTUS_FILE = u'kotus-sanalista_v1.xml'
+
+kotusfile = codecs.open(KOTUS_FILE, 'r', ENCODING)
+kotusdata = kotusfile.read()
+kotusfile.close()
+
+parser = xml.parsers.expat.ParserCreate()
+parser.StartElementHandler = start_element
+parser.EndElementHandler = end_element
+parser.CharacterDataHandler = char_data
+
+parser.Parse(kotusdata.encode('UTF-8'))
+
+for (word, infl) in wordlist.iteritems():
+	print word, '  ', infl
