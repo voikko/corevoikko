@@ -224,6 +224,7 @@
 [perusmuoto: "keretä", alku: "ker", luokka: teonsana, jatko: <poiketa>, äs: ä];
 [perusmuoto: "keritä", alku: "ker", luokka: teonsana, jatko: <keritä>, äs: ä];
 [perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
+[perusmuoto: "kimmokerroin", alku: "kimmoker", luokka: nimisana, jatko: <kerroin>, äs: a];
 [perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "kevetä", alku: "ke", luokka: teonsana, jatko: <kevetä>, äs: ä];
 [perusmuoto: "kevyt", alku: "kevy", luokka: laatusana, jatko: <airut>, äs: ä];
@@ -236,6 +237,7 @@
 [perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <kiltti>, äs: ä];
 [perusmuoto: "kimmota", alku: "kim", luokka: teonsana, jatko: <kimmota>, äs: a];
 [perusmuoto: "kimmota", alku: "kimmo", luokka: teonsana, jatko: <kohota>, äs: a];
+[perusmuoto: "kimmoton", alku: "kimmo", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
 [perusmuoto: "kinner", alku: "kin", luokka: nimisana, jatko: <kinner>, äs: ä];
 [perusmuoto: "kirje", alku: "kirjeitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä]; #NS: seikkasana.
 [perusmuoto: "kirota", alku: "kiro", luokka: teonsana, jatko: <siivota>, äs: a];
