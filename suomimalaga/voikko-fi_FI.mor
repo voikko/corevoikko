@@ -364,13 +364,12 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
 
+  define $res := $vasen + <[alku: $sana] + $oikea>;
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
-    result $vasen + <[alku: $sana] + $oikea>,
-           rules liitesana, loppu;
+    result $res, rules liitesana, loppu;
   else
-    result $vasen + <[alku: $sana] + $oikea>,
-           rules tavuviiva, omistusliite, liitesana, loppu;
+    result $res, rules tavuviiva, omistusliite, liitesana, loppu;
   end;
 end;
 
@@ -534,6 +533,10 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
     result $res, rules lukusana_sisäkerroin_osanto;
   else
     result $res, rules lukusana_sisäkerroin_sijapääte;
+  end;
+  
+  if ($oikea.lukutyyppi = järjestysluku and $oikea.alaluokka = kymmenen) then
+    result $res, rules lukusana;
   end;
   
   if ($oikea.lukutyyppi = järjestysluku and loppu in $oikea.jatko) then
@@ -781,9 +784,13 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in $edellinen.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-  result $vasen + <[alku: $sana] + $oikea>,
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  result $res,
          rules voitto_yliasteen_sijapääte, liitesana, omistusliite,
                loppu;
+  if ($oikea.luokka = voittoaste) then
+    result $res, rules inen_johdos_nimisanasta;
+  end;
 end;
 
 

@@ -65,8 +65,10 @@ kauniimmanvärinen
 !kauniimmanväri
 kauneimmanvärinen
 !kauneimmanväri
-!kauniimpivärinen
+kauniimpivärinen
+!kauneinvärinen
 !kauniimmastavärinen
+!kauneimmastavärinen
 luettavampina
 suoraviivaisempaa
 talottomampi
@@ -154,6 +156,7 @@ viideskymmenes
 tuhatlukuinen
 toisiinsa
 kolmeentoistakin
+sadaskuudeskymmenesviides
 
 [johtimet]
 märänlaiselleko
