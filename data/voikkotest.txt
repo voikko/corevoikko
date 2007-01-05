@@ -157,6 +157,8 @@ tuhatlukuinen
 toisiinsa
 kolmeentoistakin
 sadaskuudeskymmenesviides
+viidessadaskolmaskymmenestuhannesneljäs
+viidestuhanneskolmaskymmenes
 
 [johtimet]
 märänlaiselleko

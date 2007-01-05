@@ -535,7 +535,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
     result $res, rules lukusana_sisäkerroin_sijapääte;
   end;
   
-  if ($oikea.lukutyyppi = järjestysluku and $oikea.alaluokka = kymmenen) then
+  if ($oikea.lukutyyppi = järjestysluku and $oikea.alaluokka in <kymmenen, sata, tuhat>) then
     result $res, rules lukusana;
   end;
   
