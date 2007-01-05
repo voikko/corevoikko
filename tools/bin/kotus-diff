@@ -24,8 +24,9 @@ import sys
 import locale
 import codecs
 import xml.parsers.expat
+import _pg
 
-wordlist = {}
+kwordlist = {}
 current_element = None
 current_word = None
 
@@ -41,28 +42,46 @@ def end_element(name):
 def char_data(data):
 	global current_element
 	global current_word
-	global wordlist
-	if current_element == 's': current_word = data
+	global kwordlist
+	if current_element == 's':
+		current_word = data
+		if not kwordlist.has_key(current_word): kwordlist[current_word] = []
 	elif current_element == 'tn':
-		if not wordlist.has_key(current_word): wordlist[current_word] = []
-		wordlist[current_word].append(data)
+		kwordlist[current_word].append(data)
 
 # Start of main program
 
 # Set defaults
-ENCODING = locale.getpreferredencoding()
 KOTUS_FILE = u'kotus-sanalista_v1.xml'
 
-kotusfile = codecs.open(KOTUS_FILE, 'r', ENCODING)
+# Read Kotus word list
+kotusfile = codecs.open(KOTUS_FILE, 'r', 'UTF-8')
 kotusdata = kotusfile.read()
 kotusfile.close()
 
+# Initialise the XML parser
 parser = xml.parsers.expat.ParserCreate()
 parser.StartElementHandler = start_element
 parser.EndElementHandler = end_element
 parser.CharacterDataHandler = char_data
 
+# Parse the Kotus word list
 parser.Parse(kotusdata.encode('UTF-8'))
 
-for (word, infl) in wordlist.iteritems():
-	print word, '  ', infl
+# Connect to the database
+db = _pg.connect(dbname='joukahainen')
+
+# Get the list of relevant words from Joukahainen
+jwordlist = db.query("""
+SELECT w.word, s.value FROM word w, string_attribute_value s
+WHERE w.wid = s.wid AND s.aid = 1
+AND w.wid NOT IN (SELECT f.wid FROM flag_attribute_value f
+  WHERE f.aid in (5, 11, 12, 13, 14, 24, 26, 29, 37, 40))
+ORDER BY w.word""").getresult()
+
+for (word, infl) in jwordlist:
+	if unicode(word, 'UTF-8') not in kwordlist:
+		print word
+
+#for (word, infl) in kwordlist.iteritems():
+#	print word.encode('UTF-8'), '  ', infl
