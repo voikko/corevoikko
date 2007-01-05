@@ -159,6 +159,10 @@ kolmeentoistakin
 sadaskuudeskymmenesviides
 viidessadaskolmaskymmenestuhannesneljäs
 viidestuhanneskolmaskymmenes
+miljoonas
+miljardis
+miljoonaa
+miljardia
 
 [johtimet]
 märänlaiselleko

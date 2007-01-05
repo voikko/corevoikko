@@ -482,7 +482,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
                    nimisana, inen_päätteinen_laatusana, loppu;
     end;
   end;
-  if ($oikea.alaluokka = tuhat and nimentö in $oikea.jatko) then
+  if ($oikea.alaluokka in <tuhat, miljoona, miljardi> and nimentö in $oikea.jatko) then
     result $res, rules omistusliite, liitesana,
                  nimisana, inen_päätteinen_laatusana, loppu;
   end;
@@ -535,7 +535,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
     result $res, rules lukusana_sisäkerroin_sijapääte;
   end;
   
-  if ($oikea.lukutyyppi = järjestysluku and $oikea.alaluokka in <kymmenen, sata, tuhat>) then
+  if ($oikea.lukutyyppi = järjestysluku) then
     result $res, rules lukusana;
   end;
   
