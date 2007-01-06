@@ -134,6 +134,10 @@
   <correct>ensi vuonna</correct>
 </replacement>
 <replacement>
+  <incorrect>enään</incorrect>
+  <correct>enää</correct>
+</replacement>
+<replacement>
   <incorrect>eri=lailla</incorrect>
   <correct>eri lailla</correct>
 </replacement>
