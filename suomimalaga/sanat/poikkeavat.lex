@@ -31,7 +31,6 @@
 [perusmuoto: "ajast'aika", alku: "ajast'a", luokka: nimisana, jatko: <aika>, äs: a];
 [perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
-[perusmuoto: "alaitse", alku: "alaitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Alankomaat", alku: "Alankoma", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "alaston", alku: "alast", luokka: laatusana, jatko: <alaston>, äs: a];
 [perusmuoto: "alin", alku: "al", luokka: laatusana, jatko: <pahin>, äs: a];

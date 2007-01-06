@@ -38,6 +38,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 
 # Etuliite + nimisana
 
+[perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "bile", alku: "bile", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
 
