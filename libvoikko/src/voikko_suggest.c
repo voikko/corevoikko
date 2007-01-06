@@ -222,11 +222,11 @@ void voikko_suggest_word_split(voikko_sugg_status_t * s) {
 
 
 const wchar_t * STD_REPL_ORIG =
-	L"aiites"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbcwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
-	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5a"  L"e"  L"a";
+	L"aiittes"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbccwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
+	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5a"  L"e"  L"a"  L"ks";
 const wchar_t * STD_REPL_REPL = 
-	L"suorr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
-	L"jpp"  L"kdglhuiel"  L"tvvkasaka"  L"\u00e5\u00e9\u00e2";
+	L"suordr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvsevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
+	L"jpp"  L"kdglhuiel"  L"tvvkasaka"  L"\u00e5\u00e9\u00e2cc";
 
 const wchar_t * OCR_REPL_ORIG =
 	L"liuoa"  L"\u00e4o"  L"\u00f6s"  L"\u0161z"  L"\u017ee"  L"\u00e9a"  L"\u00e2pbefqonmuvoc";
@@ -453,7 +453,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		if (!abort_search(&status)) voikko_suggest_word_split(&status);
 		if (!abort_search(&status)) voikko_suggest_insertion(&status, 0, 5);
 		if (!abort_search(&status)) voikko_suggest_swap(&status);
-		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG + 51, STD_REPL_REPL + 51, 26);
+		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG + 51, STD_REPL_REPL + 51, 30);
 		if (!abort_search(&status)) voikko_suggest_insertion(&status, 6, 29);
 	}
 
