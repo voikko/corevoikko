@@ -1,0 +1,6 @@
+# Sanoja, joiden tiedot poikkeavat Kotuksen listan ja Joukahaisen välillä,
+# ja joita ei ole tarkoitus muuttaa Joukahaisessa.
+
+affiksi
+animaattori
+
