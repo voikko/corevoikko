@@ -203,20 +203,211 @@
 </replacement>
 <replacement>
   <incorrect>jompi kumpi</incorrect>
-  <correct>jompikumpi</correct>
+  <correct>jompi=kumpi</correct>
+</replacement>
+<replacement>
+  <incorrect>jomman kumman</incorrect>
+  <correct>jomman=kumman</correct>
 </replacement>
 <replacement>
   <incorrect>jompaa kumpaa</incorrect>
-  <correct>jompaakumpaa</correct>
-  <!-- Korjauksen pitäisi koskea kaikkia sijamuotoja -->
+  <correct>jompaa=kumpaa</correct>
+</replacement>
+<replacement>
+  <incorrect>jompana kumpana</incorrect>
+  <correct>jompana=kumpana</correct>
+</replacement>
+<replacement>
+  <incorrect>jommaksi kummaksi</incorrect>
+  <correct>jommaksi=kummaksi</correct>
+</replacement>
+<replacement>
+  <incorrect>jommassa kummassa</incorrect>
+  <correct>jommassa=kummassa</correct>
+</replacement>
+<replacement>
+  <incorrect>jommasta kummasta</incorrect>
+  <correct>jommasta=kummasta</correct>
+</replacement>
+<replacement>
+  <incorrect>jompaan kumpaan</incorrect>
+  <correct>jompaan=kumpaan</correct>
+</replacement>
+<replacement>
+  <incorrect>jommalla kummalla</incorrect>
+  <correct>jommalla=kummalla</correct>
+</replacement>
+<replacement>
+  <incorrect>jommalta kummalta</incorrect>
+  <correct>jommalta=kummalta</correct>
+</replacement>
+<replacement>
+  <incorrect>jommalle kummalle</incorrect>
+  <correct>jommalle=kummalle</correct>
+</replacement>
+<replacement>
+  <incorrect>jommatta kummatta</incorrect>
+  <correct>jommatta=kummatta</correct>
+</replacement>
+<replacement>
+  <incorrect>jommat kummat</incorrect>
+  <correct>jommat=kummat</correct>
+</replacement>
+<replacement>
+  <incorrect>jompien kumpien</incorrect>
+  <correct>jompien=kumpien</correct>
+</replacement>
+<replacement>
+  <incorrect>jompain kumpain</incorrect>
+  <correct>jompain=kumpain</correct>
+</replacement>
+<replacement>
+  <incorrect>jompia kumpia</incorrect>
+  <correct>jompia=kumpia</correct>
+</replacement>
+<replacement>
+  <incorrect>jompina kumpina</incorrect>
+  <correct>jompina=kumpina</correct>
+</replacement>
+<replacement>
+  <incorrect>jommiksi kummiksi</incorrect>
+  <correct>jommiksi=kummiksi</correct>
+</replacement>
+<replacement>
+  <incorrect>jommissa kummissa</incorrect>
+  <correct>jommissa=kummissa</correct>
+</replacement>
+<replacement>
+  <incorrect>jommista kummista</incorrect>
+  <correct>jommista=kummista</correct>
+</replacement>
+<replacement>
+  <incorrect>jompiin kumpiin</incorrect>
+  <correct>jompiin=kumpiin</correct>
+</replacement>
+<replacement>
+  <incorrect>jommilla kummilla</incorrect>
+  <correct>jommilla=kummilla</correct>
+</replacement>
+<replacement>
+  <incorrect>jommilta kummilta</incorrect>
+  <correct>jommilta=kummilta</correct>
+</replacement>
+<replacement>
+  <incorrect>jommille kummille</incorrect>
+  <correct>jommille=kummille</correct>
+</replacement>
+<replacement>
+  <incorrect>jommitta kummitta</incorrect>
+  <correct>jommitta=kummitta</correct>
+</replacement>
+<replacement>
+  <incorrect>jompine kumpine</incorrect>
+  <correct>jompine=kumpine</correct>
+</replacement>
+<replacement>
+  <incorrect>jommin kummin</incorrect>
+  <correct>jommin=kummin</correct>
 </replacement>
 <replacement>
   <incorrect>jonkin=verran</incorrect>
   <correct>jonkin verran</correct>
 </replacement>
 <replacement>
+  <incorrect>jota kuta</incorrect>
+  <correct>jota=kuta</correct>
+</replacement>
+<replacement>
+  <incorrect>jona kuna</incorrect>
+  <correct>jona=kuna</correct>
+</replacement>
+<replacement>
+  <incorrect>joksi kuksi</incorrect>
+  <correct>joksi=kuksi</correct>
+</replacement>
+<replacement>
+  <incorrect>jossa kussa</incorrect>
+  <correct>jossa=kussa</correct>
+</replacement>
+<replacement>
+  <incorrect>josta kusta</incorrect>
+  <correct>josta=kusta</correct>
+</replacement>
+<replacement>
+  <incorrect>johon kuhun</incorrect>
+  <correct>johon=kuhun</correct>
+</replacement>
+<replacement>
+  <incorrect>jolla kulla</incorrect>
+  <correct>jolla=kulla</correct>
+</replacement>
+<replacement>
+  <incorrect>jolta kulta</incorrect>
+  <correct>jolta=kulta</correct>
+</replacement>
+<replacement>
+  <incorrect>jolle kulle</incorrect>
+  <correct>jolle=kulle</correct>
+</replacement>
+<replacement>
+  <incorrect>jotta kutta</incorrect>
+  <correct>jotta=kutta</correct>
+</replacement>
+<replacement>
+  <incorrect>joitten kuitten</incorrect>
+  <correct>joitten=kuitten</correct>
+</replacement>
+<replacement>
+  <incorrect>joiden kuiden</incorrect>
+  <correct>joiden=kuiden</correct>
+</replacement>
+<replacement>
+  <incorrect>joita kuita</incorrect>
+  <correct>joita=kuita</correct>
+</replacement>
+<replacement>
+  <incorrect>joina kuina</incorrect>
+  <correct>joina=kuina</correct>
+</replacement>
+<replacement>
+  <incorrect>joiksi kuiksi</incorrect>
+  <correct>joiksi=kuiksi</correct>
+</replacement>
+<replacement>
+  <incorrect>joissa kuissa</incorrect>
+  <correct>joissa=kuissa</correct>
+</replacement>
+<replacement>
+  <incorrect>joista kuista</incorrect>
+  <correct>joista=kuista</correct>
+</replacement>
+<replacement>
+  <incorrect>joihin kuihin</incorrect>
+  <correct>joihin=kuihin</correct>
+</replacement>
+<replacement>
+  <incorrect>joilla kuilla</incorrect>
+  <correct>joilla=kuilla</correct>
+</replacement>
+<replacement>
+  <incorrect>joilta kuilta</incorrect>
+  <correct>joilta=kuilta</correct>
+</replacement>
+<replacement>
+  <incorrect>joille kuille</incorrect>
+  <correct>joille=kuille</correct>
+</replacement>
+<replacement>
+  <incorrect>joitta kuitta</incorrect>
+  <correct>joitta=kuitta</correct>
+</replacement>
+<replacement>
+  <incorrect>joine kuine</incorrect>
+  <correct>joine=kuine</correct>
+</replacement>
+<replacement>
   <incorrect>joten kuten</incorrect>
-  <correct>jotenkuten</correct>
+  <correct>joten=kuten</correct>
 </replacement>
 <replacement>
   <incorrect>juurta=jaksaen</incorrect>
@@ -626,5 +817,6 @@
   <incorrect>ylös päin</incorrect>
   <correct>ylös=päin</correct>
   <!-- "Lennän ylös päin pilviä ..." -->
+  <!-- Oikeammin: "Lennän ylös, päin pilviä ..." -->
 </replacement>
 </autocorrect>
