@@ -40,7 +40,7 @@
 [perusmuoto: "altis", alku: "alt", luokka: laatusana, jatko: <altis>, äs: a];
 [perusmuoto: "antaa", alku: "an", luokka: teonsana, jatko: <antaa>, äs: a];
 [perusmuoto: "anteeksiantaa", alku: "anteeksian", luokka: teonsana, jatko: <antaa>, äs: a]; # Antaa-sanan kirjoitusasuksi
-[perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a];
+[perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Arajuuri", alku: "Arajuur", luokka: sukunimi, jatko: <nuori>, äs: a];
 [perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <kirves>, äs: a];
 [perusmuoto: "asiaankuulumaton", alku: "asiaankuuluma", luokka: laatusana, jatko: <johdin_tOn>, äs: a];

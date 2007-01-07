@@ -118,6 +118,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "anti", alku: "anti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "astraali", alku: "astraali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
