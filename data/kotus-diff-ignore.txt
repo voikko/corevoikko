@@ -3,10 +3,8 @@
 
 abduktio
 adaptiivinen
-adekvaattinen
 adpositio
 advokaatti
-affiksi
 affiksi
 affrikaatta
 aforisti
@@ -28,7 +26,6 @@ alaniini
 alasampuminen
 albigenssi
 alemanni
-alkajainen
 allofoni
 altimetri
 amoraalinen
@@ -55,7 +52,6 @@ apellatiivi
 apelli
 apetit
 apoteoosi
-apponen
 approksimaatio
 approksimoida
 arabinen
@@ -63,3 +59,9 @@ arkadi
 arkontti
 armoittaa
 artikulatorinen
+asiallistua
+asidofilus
+aspiriini
+astenosfääri
+astuin
+
