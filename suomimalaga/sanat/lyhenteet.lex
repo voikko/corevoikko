@@ -48,6 +48,10 @@
 # Last change was on $Date$ by $Author$.
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)
+#
+# Muista, että lyhenteen voi joskus lukea sekä lyhentämättömässä muodossaan
+# (esim. "aktiebolag") että kirjain kerrallaan ("aa-bee"). Tämä saattaa
+# tarkoittaa, että etu- ja takavokaalitaivutukset täytyy molemmat hyväksyä.
 
 define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 
@@ -81,6 +85,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "atk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # automaattinen tietojen käsittely
 [alku: "ay", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # avoin yhtiö; ammattiyhdistys
 [alku: "b", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "bar", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "BBC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # British Broadcasting Corporation
 [alku: "c", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 #[alku: "c.s.i.", luokka: lyhenne, jatko: <loppu>, äs: aä];
