@@ -39,6 +39,7 @@ angsti
 angstata
 animaattori
 animismi
+animisti
 ankarahko
 annaali
 anorektinen
@@ -64,4 +65,22 @@ asidofilus
 aspiriini
 astenosfääri
 astuin
+asyyli
+aterooma
+atsimuutti
+audio
+aumata
+autisti
+autarkia
+autuaaksijulistus
+auvokas
+aventuriini
+avenue
+baccalaureus
+bakeliitti
+bakteriologi
+ballista
+barbaria
+basileus
+basiliski
 
