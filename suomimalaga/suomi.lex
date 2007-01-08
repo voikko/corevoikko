@@ -993,8 +993,8 @@ define @jatko_v :=
 [alku: "vä", luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: ä, jatko: @jatko_vA, tiedot: <ei_voikko>];
 [alku: "v",  luokka: laatutapa_1, tapaluokka: laatutapa_1, äs: aä, jatko: @jatko_v, tiedot: <ei_voikko>];
 
-[alku: "va", luokka: johdin_vA, äs: a, jatko: @jatko_vA];
-[alku: "vä", luokka: johdin_vA, äs: ä, jatko: @jatko_vA];
+[perusmuoto: "va", alku: "v", luokka: johdin_vA, jatko: <asema>, äs: a];
+[perusmuoto: "vä", alku: "v", luokka: johdin_vA, jatko: <asema>, äs: ä];
 [alku: "v",  luokka: johdin_vA, äs: a, jatko: @jatko_v, perusmuoto: "va"];
 [alku: "v",  luokka: johdin_vA, äs: ä, jatko: @jatko_v, perusmuoto: "vä"];
 

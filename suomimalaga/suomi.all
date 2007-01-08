@@ -6504,7 +6504,7 @@ subrule yksikkö9 ($tietue,
                   $sisätulento,
                   $voittoaste,
                   $yhdyssana):
-  if ($tietue.luokka in <laatusana, nimi_laatusana>) then
+  if ($tietue.luokka in <laatusana, nimi_laatusana, johdin_vA>) then
     return yksikkö8 ($omistusliite,
                      $nimentö,
                      $vahva_aste,
