@@ -20,8 +20,20 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-16 03:27:22 EET
+# Time of generation: 2007-01-09 03:27:23 EET
 
+[perusmuoto: "aktinium", alku: "aktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "aldehydi", alku: "aldehyd", luokka: nimisana, jatko: <risti>, äs: aä];
+[perusmuoto: "amerikium", alku: "amerikium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "bohrium", alku: "bohrium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "souto", alku: "sou", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "spin", alku: "spin", luokka: nimisana, jatko: <kalsium>, äs: ä];
+[perusmuoto: "ununbium", alku: "ununbium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununennium", alku: "ununennium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununheksium", alku: "ununheksium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununkvadium", alku: "ununkvadium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununoktium", alku: "ununoktium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununpentium", alku: "ununpentium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununseptium", alku: "ununseptium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ununtrium", alku: "ununtrium", luokka: nimisana, jatko: <kalsium>, äs: a];
 

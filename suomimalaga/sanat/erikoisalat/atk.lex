@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-16 03:27:21 EET
+# Time of generation: 2007-01-09 03:27:22 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -30,8 +30,12 @@
 [perusmuoto: "Apple", alku: "Apple", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "aspell", alku: "aspell", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=p=ppppp"];
 [perusmuoto: "Audacity", alku: "Audacity", luokka: nimi, jatko: <valo>, äs: aä];
+[perusmuoto: "autentikoida", alku: "autentiko", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "bash", alku: "bash", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "bibtex", alku: "bibtex", luokka: nimisana, jatko: <kalsium>, äs: ä];
+[perusmuoto: "bios", alku: "bios", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "boost", alku: "boost", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "bootata", alku: "boot", luokka: teonsana, jatko: <kuitata>, äs: a, tiedot: <murre>];
 [perusmuoto: "Canon", alku: "Canon", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "cdrecord", alku: "cdrecord", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=pp=pppppp"];
 [perusmuoto: "Coin", alku: "Coin", luokka: nimi, jatko: <kalsium>, äs: a];

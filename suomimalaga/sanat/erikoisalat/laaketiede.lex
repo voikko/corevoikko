@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-16 03:27:22 EET
+# Time of generation: 2007-01-09 03:27:23 EET
 
 [perusmuoto: "adrenokortikotrooppinen", alku: "adrenokortikotrooppi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adrenokortikotropiini", alku: "adrenokortikotropiin", luokka: nimisana, jatko: <risti>, äs: a];

@@ -20,15 +20,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2006-12-16 03:27:22 EET
+# Time of generation: 2007-01-09 03:27:23 EET
 
 [perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "alumni", alku: "alumn", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "angst", alku: "angst", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Annessa", alku: "Anness", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "aurora", alku: "auror", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "Barrichello", alku: "Barrichello", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Benz", alku: "Benz", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "blanko", alku: "blanko", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "Blarnia", alku: "Blarni", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "body", alku: "body", luokka: nimisana, jatko: <valo>, äs: aä];
 [perusmuoto: "clitoris", alku: "clitori", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "feedback", alku: "feedback", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Galata", alku: "Galat", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -48,6 +52,7 @@
 [perusmuoto: "Maine", alku: "Maine", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "melodica", alku: "melodic", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Mercedes", alku: "Mercede", luokka: etunimi, jatko: <vastaus>, äs: ä];
+[perusmuoto: "Nebula", alku: "Nebul", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Niman", alku: "Niman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "orderi", alku: "order", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "outside", alku: "outside", luokka: nimisana, jatko: <nalle>, äs: a];
