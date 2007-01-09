@@ -143,19 +143,21 @@ def __read_inflection_class(file):
 def __regex_to_hunspell(exp, repl):
 	# TODO: implement more regular expressions
 	rulelist = []
+	wchars = u"[a-zäöé]"
 	if exp == "0":
 		strip_str = "0"
 		condition = "."
 		affix = repl
 		rulelist.append((strip_str, affix, condition))
 		return rulelist
-	if re.compile("^(?:[a-z])+$").match(exp) != None: # string of letters
+	if re.compile(u"^(?:%s)+$" % wchars).match(exp) != None: # string of letters
 		strip_str = exp
 		condition = exp
 		affix = repl
 		rulelist.append((strip_str, affix, condition))
 		return rulelist
-	m = re.compile("^((?:[a-z])*)\\(\\[((?:[a-z])*)\\]\\)((?:[a-z])*)$").match(exp)
+	m = re.compile(u"^((?:%s)*)\\(\\[((?:%s)*)\\]\\)((?:%s)*)$" % (wchars, wchars, wchars) \
+	              ).match(exp)
 	if m != None: # exp is of form 'ab([cd])ef'
 		start_letters = m.group(1)
 		alt_letters = m.group(2)
@@ -166,7 +168,7 @@ def __regex_to_hunspell(exp, repl):
 			affix = repl.replace('(1)', alt_char)
 			rulelist.append((strip_str, affix, condition))
 		return rulelist
-	m = re.compile("^((?:[a-z])*)\\[((?:[a-z])*)\\]((?:[a-z])*)$").match(exp)
+	m = re.compile("^((?:%s)*)\\[((?:%s)*)\\]((?:%s)*)$" % (wchars, wchars, wchars)).match(exp)
 	if m != None: # exp is of form 'ab[cd]ef'
 		start_letters = m.group(1)
 		alt_letters = m.group(2)
@@ -178,7 +180,7 @@ def __regex_to_hunspell(exp, repl):
 			rulelist.append((strip_str, affix, condition))
 		return rulelist
 	print 'Unsupported regular expression: exp=\'' + exp + '\', repl=\'' + repl + '\''
-	sys.exit(1)
+	return None
 
 
 
