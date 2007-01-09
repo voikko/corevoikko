@@ -84,6 +84,7 @@
 [perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "facto", alku: "facto", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Foucault", alku: "Foucault", luokka: nimi, jatko: <parfait>, äs: a];
+[perusmuoto: "Fourier", alku: "Fourier", luokka: nimi, jatko: <parfait>, äs: a];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
 [perusmuoto: "Glasgow", alku: "Glasgow", luokka: paikannimi, jatko: <parfait>, äs: a];
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
