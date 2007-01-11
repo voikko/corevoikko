@@ -627,6 +627,48 @@ end: rules
 end: class
 
 
+# Kotus 74 katketa (1/2)
+class: 74
+sm-class: katketa
+rmsfx: tA
+match-word: (?:e|O)tA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	an	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	aisi	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
+end: rules
+end: class
+
+# Kotus 74 katketa (2/2)
+class: 74
+sm-class: kohota
+rmsfx: tA
+match-word: OtA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	ta	w
+preesens_yks_1	0	an	s
+imperfekti_yks_3	0	si	s
+kondit_yks_3	0	aisi	s
+kondit_yks_3	0	isi	s
+imperatiivi_yks_3	0	tkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ttiin	w
+!verbi_illA	0	illa	s
+end: rules
+end: class
+
+
 # Kotus 75 selvitä (1/2)
 class: 75
 sm-class: haluta
