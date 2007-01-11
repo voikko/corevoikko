@@ -45,6 +45,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 # Etuliite + laatusana
 
 [perusmuoto: "alati", alku: "alati", luokka: etuliite, jatko: @ell, äs: aä];
+[perusmuoto: "öky", alku: "öky", luokka: etuliite, jatko: @ell, äs: aä];
 
 # Etuliite + nimisana/laatusana
 

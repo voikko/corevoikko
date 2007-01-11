@@ -178,7 +178,6 @@
 [perusmuoto: "vaikka", alku: "vaikka", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vaiko", alku: "vaiko", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
-[perusmuoto: "vetoinen", alku: "vetoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
 [perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
 [perusmuoto: "yäk", alku: "yäk", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
@@ -186,6 +185,6 @@
 [perusmuoto: "ähäkutti", alku: "ähäkutti", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ääh", alku: "ääh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "öh", alku: "öh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "öky", alku: "öky", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä];
-[perusmuoto: "ökö", alku: "ökö", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä];
+[perusmuoto: "öky", alku: "öky", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ökö", alku: "ökö", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ööh", alku: "ööh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
