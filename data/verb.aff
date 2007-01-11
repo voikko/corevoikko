@@ -425,6 +425,45 @@ imperfekti_pass	0	ttiin	w
 end: rules
 end: class
 
+
+# Kotus 62 voida (1/2)
+class: 62
+sm-class: voida
+match-word: idA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	w
+preesens_yks_1	da	n	w
+imperfekti_yks_3	da	0	w
+kondit_yks_3	da	si	w
+imperatiivi_yks_3	da	koon	w
+partisiippi_2	da	nut	w
+imperfekti_pass	a	iin	s
+end: rules
+end: class
+
+# Kotus 62 voida (2/2)
+class: 62
+sm-class: kanavoida
+match-word: idA
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	w
+preesens_yks_1	da	n	w
+imperfekti_yks_3	da	0	w
+kondit_yks_3	da	si	w
+imperatiivi_yks_3	da	koon	w
+partisiippi_2	da	nut	w
+imperfekti_pass	a	iin	s
+!verbi_tuA	a	ua	s
+end: rules
+end: class
+
+
 # Kotus 66 rohkaista ====================
 # FIXME: rangaista (nuolaista-av2)
 class: 66
@@ -485,44 +524,8 @@ imperfekti_pass	0	ltiin	w
 end: rules
 end: class
 
-# Kotus 68 tupakoida (1/3)
-class: 68
-sm-class: voida
-match-word: idA
-consonant-gradation: ws
-group: t
-transform-group: e
-rules:
-infinitiivi_1	0	0	w
-preesens_yks_1	da	n	w
-imperfekti_yks_3	da	0	w
-kondit_yks_3	da	si	w
-imperatiivi_yks_3	da	koon	w
-partisiippi_2	da	nut	w
-imperfekti_pass	a	iin	s
-end: rules
-end: class
 
-# Kotus 68 tupakoida (2/3)
-class: 68
-sm-class: kanavoida
-match-word: idA
-consonant-gradation: ws
-group: t
-transform-group: e
-rules:
-infinitiivi_1	0	0	w
-preesens_yks_1	da	n	w
-imperfekti_yks_3	da	0	w
-kondit_yks_3	da	si	w
-imperatiivi_yks_3	da	koon	w
-partisiippi_2	da	nut	w
-imperfekti_pass	a	iin	s
-!verbi_tuA	a	ua	s
-end: rules
-end: class
-
-# Kotus 68 tupakoida (3/3)
+# Kotus 68 tupakoida
 class: 68
 sm-class: haravoida
 match-word: idA
