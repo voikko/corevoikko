@@ -63,6 +63,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "enkel", alku: "enkel", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "fenno", alku: "fenno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
