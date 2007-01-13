@@ -136,7 +136,7 @@ erata
 esikoisuus
 esityttää
 esteetti
-estetistmi
+estetismi
 etelämpi
 eurooppalaistaa
 federalisti
@@ -150,3 +150,14 @@ generatiivinen
 geoidi
 geomatiikka
 giga
+graafi
+gradientti
+graham
+grammi
+gravimetri
+gravimetria
+halutunlainen
+harhaanjohtaa
+hassahtaa
+hebefreeninen
+hebefrenia
