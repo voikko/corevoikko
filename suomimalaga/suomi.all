@@ -879,13 +879,18 @@ allo_rule generate_allos ($tietue):
                                           [sisätulento_isiin: "e",
                                            sisätulento_ihin: "e"], "e"));
 
-    $tietue :=+ johdoksen_lähtötiedot($tietue);
-    $tietue.perusmuoto := $tietue.alku + iA($tietue);   # Korkia.
+    if ($malli = sukija) then
+      $tietue :=+ johdoksen_lähtötiedot($tietue);
+      $tietue.perusmuoto := $tietue.alku + iA($tietue);   # Korkia.
 
-    define $b := apila ($tietue, iA($tietue), iO($tietue));
+      define $b := apila ($tietue, iA($tietue), iO($tietue));
 
-    choose $i in $a + $b;
-    result $i.alku, $i - alku;
+      choose $i in $a + $b;
+      result $i.alku, $i - alku;
+    else
+      choose $i in $a;
+      result $i.alku, $i - alku;
+    end;
 
 
   elseif (harteet in $tietue.jatko) then
