@@ -49,6 +49,8 @@ tulisessa
 !talojeen
 antimia # Vain monikkomuodot
 !anninta # Vain monikkomuodot
+korkeassa
+!korkiassa
 
 [inen-johdokset]
 isoponttoninen
@@ -76,6 +78,8 @@ talollisempi
 pyökkimäisempi
 kattavampi
 kattavin
+luultavampi
+!luultavempi
 
 [yhdysviivat]
 puna-
