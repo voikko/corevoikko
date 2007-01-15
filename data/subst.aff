@@ -958,7 +958,7 @@ end: class
 # Kotus 17 vapaa
 class: 17
 sm-class: vapaa
-match-word: CVV
+match-word: C[aäoöuy][aäoöuy]
 consonant-gradation: -
 group: t
 transform-group: e
