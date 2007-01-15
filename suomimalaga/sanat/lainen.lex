@@ -260,7 +260,6 @@
 [perusmuoto: "härmäläinen", alku: "härmäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 
 # Special compound words
-[perusmuoto: "allekirjoittaa", alku: "allekirjoi", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "audiovisuaalinen", alku: "audiovisuaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "edelleenjakaa", alku: "edelleenja", luokka: teonsana, jatko: <jakaa>, äs: a];
 [perusmuoto: "elintärkeä", alku: "elintärk", luokka: laatusana, jatko: <korkea>, äs: ä];

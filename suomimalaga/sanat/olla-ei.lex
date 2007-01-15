@@ -58,6 +58,10 @@
 [alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a];
 
 
+[alku: "ol",  luokka: teonsana, jatko: <loppu>, perusmuoto: "olla",  # Oli.
+              äs: a, tapaluokka: tositapa, aikamuoto: kertoma,
+              luku: yksikkö, tekijä: 3, tiedot: <murre>];
+
 # Olla-sanan ehtotavan kestämä on myös tällainen.
 #
 [alku: "oisin", luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",

@@ -114,7 +114,7 @@
 [perusmuoto: "me", alku: "me", luokka: asemosana, jatko: <me>, äs: ä];
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: @sana1 + <loppu>, äs: a];
-[perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <omanto_n, loppu>, äs: a, tiedot: <ei_voikko>]; # Mikä.
+[perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <omanto_n, loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # Mikä.
 [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä];
 [perusmuoto: "moi", alku: "moi", luokka: huudahdussana, jatko: <loppu>, äs: a];

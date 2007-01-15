@@ -1,4 +1,4 @@
-SM=suomi-malaga-0.7.3
+SM=suomi-malaga-svn
 
 .PHONY: all voikko sukija kehitys run clean dist tar
 
@@ -33,3 +33,6 @@ tar:
 
 mcopy:
 	mdel a:${SM}.tar.bz2; mcopy ${SM}.tar.bz2 a:; mdir
+
+bcopy:
+	cp *_l *.pro ~/.voikko

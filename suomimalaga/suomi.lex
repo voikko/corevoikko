@@ -841,6 +841,8 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 
 [alku: "ko", luokka: käskytapa_kielto, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 [alku: "kö", luokka: käskytapa_kielto, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+# TT? [alku: "kokaan", luokka: käskytapa_kielto, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+# TT? [alku: "kökään", luokka: käskytapa_kielto, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
 
 [alku: "kä", luokka: liitesana_kä, äs: ä, jatko: <liitesana, loppu>]; # Ei+kä, älä+kä.
