@@ -5140,7 +5140,7 @@ subrule kaunis ($tietue, $kerake, $johdin_Us):
                            $monikko + "h")
          + taivutuskaava ($tietue,
                           [olento_nA: "is"])  # Kaunis+na.
-         + taivutuskaava ($tietue,
+         + voikko_lista_vain_lipulla(vanhat_muodot, taivutuskaava ($tietue,
                           [omanto_iT:         $kerake + "e",
                            osanto_itA:        $kerake + "e",
                            olento_inA:        $kerake + "e",
@@ -5154,7 +5154,7 @@ subrule kaunis ($tietue, $kerake, $johdin_Us):
                            ulkotulento_ille:  $kerake + "e",
                            vajanto_ittA:      $kerake + "e",
                            seuranto_ine:          $kerake + "e",
-                           keinonto_in:          $kerake + "e"]);
+                           keinonto_in:          $kerake + "e"]));
 end;
 
 

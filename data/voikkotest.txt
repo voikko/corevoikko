@@ -51,6 +51,12 @@ antimia # Vain monikkomuodot
 !anninta # Vain monikkomuodot
 korkeassa
 !korkiassa
+valmiina
+!valmeina
+!kauneina
+kauniina
+kauneimpina
+kaunein
 
 [inen-johdokset]
 isoponttoninen
