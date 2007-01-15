@@ -22,7 +22,7 @@
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aamuvarhain", alku: "aamuvarhain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aiemmin", alku: "aiemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "aika-ajoin", alku: "aika-ajoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "aika-ajoin", alku: "aika-ajoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "aikaisemmin", alku: "aikaisemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aikaisin", alku: "aikaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aina", alku: "aina", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -52,8 +52,8 @@
 [perusmuoto: "edemmäs", alku: "edemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edes", alku: "edes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "editse", alku: "editse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "eespäin", alku: "eespäin", luokka: seikkasana, jatko: <loppu>, äs: ä];
-[perusmuoto: "eestaas", alku: "eestaas", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "eespäin", alku: "eespäin", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "eestaas", alku: "eestaas", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ehken", alku: "ehken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ehkä", alku: "ehkä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "eilen", alku: "eilen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -108,7 +108,7 @@
 [perusmuoto: "harvoin", alku: "harvoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helpoiten", alku: "helpoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
-[perusmuoto: "hereillä", alku: "hereille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hereille", alku: "hereille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hereillä", alku: "hereillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "heti", alku: "heti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hetimmiten", alku: "hetimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -195,7 +195,7 @@
 [perusmuoto: "jälkeen", alku: "jälkeen", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "jälkeenpäin", alku: "jälkeenpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "jären", alku: "jären", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "jären", alku: "jären", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "järin", alku: "järin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kadoksiin", alku: "kadoksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kadoksissa", alku: "kadoksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -235,7 +235,7 @@
 [perusmuoto: "kiihdyksissä", alku: "kiihdyks", luokka: seikkasana, jatko: <sisäolento_issA,sisätulento_iin>, äs: ä];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiireimmiten", alku: "kiireimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kiiruusti", alku: "kiiruusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kiiruusti", alku: "kiiruusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kissun", alku: "kissun", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kohdakkain", alku: "kohdakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kohdakkoin", alku: "kohdakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -278,7 +278,7 @@
 [perusmuoto: "kylliksi", alku: "kylli", luokka: seikkasana, jatko: <tulento_ksi>, äs: ä];
 [perusmuoto: "kyllin", alku: "kyllin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllä", alku: "kyllä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kyllälti", alku: "kyllälti", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "kyllälti", alku: "kyllälti", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "käsikkäin", alku: "käsikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "laajalti", alku: "laajalti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "laajemmalti", alku: "laajemmalti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -338,7 +338,7 @@
 [perusmuoto: "minkävuoksi", alku: "minkävuoksi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moderato", alku: "moderato", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "moksis", alku: "moksiskaan", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "monasti", alku: "monasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "monasti", alku: "monasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moni", alku: "monesti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "moniaalla", alku: "moniaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "muassa", alku: "muassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -375,7 +375,7 @@
 [perusmuoto: "noin", alku: "noin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nokatusten", alku: "nokatusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nokikkain", alku: "nokikkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "nonstop", alku: "nonstop", luokka: seikkasana, jatko: <kalsium>, äs: a];
+[perusmuoto: "nonstop", alku: "nonstop", luokka: seikkasana, jatko: <kalsium>, äs: a, rakenne: "=ppp=pppp"];
 [perusmuoto: "nukuksiin", alku: "nukuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nukuksissa", alku: "nukuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nurin", alku: "nurin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -384,7 +384,7 @@
 [perusmuoto: "nyt", alku: "nyt", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nyttemmin", alku: "nyttemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näemmä", alku: "näemmä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "näes", alku: "näes", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "näes", alku: "näes", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "nähden", alku: "nähden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näin", alku: "näin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näinollen", alku: "näinollen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
@@ -395,7 +395,7 @@
 [perusmuoto: "näytillä", alku: "näytillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näännyksiin", alku: "näännyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näännyksissä", alku: "näännyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
-[perusmuoto: "nääs", alku: "nääs", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "nääs", alku: "nääs", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ohimennen", alku: "ohimennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ohitse", alku: "ohitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ohuelti", alku: "ohuelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -474,7 +474,7 @@
 [perusmuoto: "retuperälle", alku: "retuperälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "retuperällä", alku: "retuperällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "rikki", alku: "rik", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "rillumarei", alku: "rillumarei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "rillumarei", alku: "rillumarei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Voinee taivuttaa täydellisesti
 [perusmuoto: "rinnakkain", alku: "rinnakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "risiini", alku: "risiin", luokka: seikkasana, jatko: <banaali>, äs: ä];
 [perusmuoto: "ristikkäin", alku: "ristikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -532,7 +532,7 @@
 [perusmuoto: "summanmutikassa", alku: "summanmutikassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sunnuntaisin", alku: "sunnuntaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suotta", alku: "suotta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "surelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "suurelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksiin", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuspäissä", alku: "suutuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
@@ -624,7 +624,7 @@
 [perusmuoto: "täpö", alku: "täpö", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "täpösen", alku: "täpösen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "täsmälleen", alku: "täsmälleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "tästedes", alku: "tästedes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tästedes", alku: "tästedes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "tästälähin", alku: "tästälähin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "täten", alku: "täten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "täysi", alku: "täynnä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
@@ -663,7 +663,7 @@
 [perusmuoto: "vastakkain", alku: "vastakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vastapäätä", alku: "vastapäätä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vastatusten", alku: "vastatusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "vastedes", alku: "vastedes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vastedes", alku: "vastedes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "vasten", alku: "vasten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vastikään", alku: "vastikään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=ppppp"];
 [perusmuoto: "vastoin", alku: "vastoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -705,7 +705,7 @@
 [perusmuoto: "yhtenään", alku: "yhtenään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtikäs", alku: "yhtikäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtä", alku: "yhtä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "yhtäkkiä", alku: "yht'äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "yht'äkkiä", alku: "yht'äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtäkkiä", alku: "yhtäkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
 [perusmuoto: "yhtäällä", alku: "yhtää", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "yhtään", alku: "yhtään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -737,9 +737,9 @@
 [perusmuoto: "ympärillä", alku: "ympäri", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "ynnä", alku: "ynnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ypö", alku: "ypö", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ypöyksin", alku: "ypöyksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "ypöyksin", alku: "ypöyksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
 [perusmuoto: "äkisti", alku: "äkisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "äkkiarvaamatta", alku: "äkkiarvaamatta", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "äkkiarvaamatta", alku: "äkkiarvaamatta", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "äkkiseltä", alku: "äkkiseltä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äkkiä", alku: "äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äsken", alku: "äsken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

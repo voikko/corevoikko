@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-13 20:33:06 EET
+# Time of generation: 2007-01-15 03:26:01 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -251,6 +251,7 @@
 [perusmuoto: "aikaansaannos", alku: "aikaansaanno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "aikaavievä", alku: "aikaaviev", luokka: laatusana, jatko: <asema>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "aikailla", alku: "aikail", luokka: teonsana, jatko: <arvailla>, äs: a];
+[perusmuoto: "aikaistaa", alku: "aikaist", luokka: teonsana, jatko: <sulaa>, äs: a];
 [perusmuoto: "aikalainen", alku: "aikalai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "aikamoinen", alku: "aikamoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Aikio", alku: "Aikio", luokka: sukunimi, jatko: <autio>, äs: a];
@@ -3594,7 +3595,7 @@
 [perusmuoto: "hehtaari", alku: "hehtaar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "hehto", alku: "heh", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "Heidi", alku: "Heid", luokka: etunimi, jatko: <risti>, äs: ä];
-[perusmuoto: "heija", alku: "heij", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "heija", alku: "heij", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <murre>];
 [perusmuoto: "heijastaa", alku: "heijast", luokka: teonsana, jatko: <hidastaa>, äs: a];
 [perusmuoto: "heijaste", alku: "heijaste", luokka: nimisana, jatko: <hame>, äs: a, tiedot: <inen>];
 [perusmuoto: "heijastin", alku: "heijasti", luokka: nimisana, jatko: <uistin>, äs: a];
@@ -3610,7 +3611,7 @@
 [perusmuoto: "Heikkilä", alku: "Heikkil", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Heikkinen", alku: "Heikki", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "heikko", alku: "heik", luokka: laatusana, jatko: <verkko>, äs: a];
-[perusmuoto: "heikohko", alku: "heikohko", luokka: laatusana, jatko: <arvelu>, äs: a];
+[perusmuoto: "heikohko", alku: "heikohko", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "heikontaa", alku: "heikon", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "heikottaa", alku: "heiko", luokka: teonsana, jatko: <ammottaa>, äs: a];
 [perusmuoto: "Heikura", alku: "Heikur", luokka: sukunimi, jatko: <karahka>, äs: a];
@@ -3683,11 +3684,12 @@
 [perusmuoto: "helium", alku: "helium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Heliö", alku: "Heliö", luokka: sukunimi, jatko: <autio>, äs: ä];
 [perusmuoto: "Helje", alku: "Helje", luokka: etunimi, jatko: <nalle>, äs: ä];
-[perusmuoto: "heljä", alku: "helj", luokka: laatusana, jatko: <koira>, äs: ä];
+[perusmuoto: "heljä", alku: "helj", luokka: laatusana, jatko: <koira>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Heljä", alku: "Helj", luokka: etunimi, jatko: <koira>, äs: ä];
 [perusmuoto: "Helka", alku: "Helk", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "helkkari", alku: "helkkar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "helkkyä", alku: "helk", luokka: teonsana, jatko: <kiekua>, äs: ä];
-[perusmuoto: "helkkää", alku: "helk", luokka: teonsana, jatko: <purkaa>, äs: ä];
+[perusmuoto: "helkkää", alku: "helk", luokka: teonsana, jatko: <purkaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "helkyttää", alku: "helkyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "helkytys", alku: "helkyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "helkähtää", alku: "helkä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
@@ -3724,7 +3726,7 @@
 [perusmuoto: "heloitus", alku: "heloitu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "helokki", alku: "helok", luokka: nimisana, jatko: <kajakki>, äs: a];
 [perusmuoto: "helottaa", alku: "helot", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "helpohko", alku: "helpohko", luokka: laatusana, jatko: <arvelu>, äs: a];
+[perusmuoto: "helpohko", alku: "helpohko", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "helpontaa", alku: "helpon", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "helpottaa", alku: "helpot", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "helpottua", alku: "helpot", luokka: teonsana, jatko: <asettua>, äs: a];
@@ -3778,10 +3780,10 @@
 [perusmuoto: "henkilökohtainen", alku: "henkilökohtai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "henkilöstö", alku: "henkilöstö", luokka: nimisana, jatko: <valo>, äs: ä];
 [perusmuoto: "henkilöys", alku: "henkilöy", luokka: nimisana, jatko: <kalleus>, äs: ä];
-[perusmuoto: "henkitore", alku: "henkitore", luokka: nimisana, jatko: <hame>, äs: a];
+[perusmuoto: "henkitore", alku: "henkitore", luokka: nimisana, jatko: <hame>, äs: a, tiedot: <ei_yks>];
 [perusmuoto: "henkiä", alku: "hen", luokka: teonsana, jatko: <onkia>, äs: ä];
 [perusmuoto: "henkonen", alku: "henko", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "henkseli", alku: "henksel", luokka: nimisana, jatko: <paperi>, äs: ä];
+[perusmuoto: "henkseli", alku: "henksel", luokka: nimisana, jatko: <paperi>, äs: ä, tiedot: <ei_yks>];
 [perusmuoto: "henkäillä", alku: "henkäil", luokka: teonsana, jatko: <arvailla>, äs: ä];
 [perusmuoto: "henkäistä", alku: "henkä", luokka: teonsana, jatko: <nuolaista>, äs: ä];
 [perusmuoto: "henkäys", alku: "henkäy", luokka: nimisana, jatko: <vastaus>, äs: ä];
@@ -3799,7 +3801,7 @@
 [perusmuoto: "Henriksson", alku: "Henriksson", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Henry", alku: "Henry", luokka: etunimi, jatko: <valo>, äs: ä];
 [perusmuoto: "hento", alku: "hen", luokka: nimi_laatusana, jatko: <anto>, äs: a, tiedot: <inen>];
-[perusmuoto: "henttu", alku: "hent", luokka: nimisana, jatko: <hattu>, äs: a];
+[perusmuoto: "henttu", alku: "hent", luokka: nimisana, jatko: <hattu>, äs: a, tiedot: <murre>];
 [perusmuoto: "Hentunen", alku: "Hentu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "hepatiitti", alku: "hepatiit", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "hepo", alku: "he", luokka: nimisana, jatko: <lepo>, äs: a];
@@ -3850,12 +3852,10 @@
 [perusmuoto: "herpaannus", alku: "herpaannu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "herpaannuttaa", alku: "herpaannut", luokka: teonsana, jatko: <autioittaa>, äs: a];
 [perusmuoto: "herpaantua", alku: "herpaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
-[perusmuoto: "herpaista", alku: "herpa", luokka: teonsana, jatko: <nuolaista>, äs: a];
 [perusmuoto: "herpauttaa", alku: "herpaut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "herpautua", alku: "herpau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "herpes", alku: "herpe", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "herra", alku: "herr", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "herraantua", alku: "herraan", luokka: teonsana, jatko: <jakaantua>, äs: a];
 [perusmuoto: "Herranen", alku: "Herra", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "herraskainen", alku: "herraskai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "herrastella", alku: "herrastel", luokka: teonsana, jatko: <katsella>, äs: a];
@@ -3969,7 +3969,7 @@
 [perusmuoto: "hiiskahtaa", alku: "hiiska", luokka: teonsana, jatko: <hujahtaa>, äs: a];
 [perusmuoto: "hiiskaus", alku: "hiiskau", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "hiiskua", alku: "hiisku", luokka: teonsana, jatko: <punoa>, äs: a];
-[perusmuoto: "hiissata", alku: "hiiss", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "hiissata", alku: "hiiss", luokka: teonsana, jatko: <salata>, äs: a, tiedot: <murre>];
 [perusmuoto: "Hiitola", alku: "Hiitol", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "hiiva", alku: "hiiv", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "hiivata", alku: "hiiv", luokka: teonsana, jatko: <salata>, äs: a];
@@ -22954,6 +22954,7 @@
 [perusmuoto: "vuohi", alku: "vuoh", luokka: nimisana, jatko: <tuohi>, äs: a];
 [perusmuoto: "vuohinen", alku: "vuohi", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "Vuojolainen", alku: "Vuojolai", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "vuoka", alku: "vuo", luokka: nimisana, jatko: <hoikka>, äs: a];
 [perusmuoto: "vuokko", alku: "vuok", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "Vuokko", alku: "Vuok", luokka: etunimi, jatko: <verkko>, äs: a];
 [perusmuoto: "vuokra", alku: "vuokr", luokka: nimisana, jatko: <koira>, äs: a];

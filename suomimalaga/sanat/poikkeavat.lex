@@ -37,7 +37,7 @@
 [perusmuoto: "alokas", alku: "alok", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "altis", alku: "alt", luokka: laatusana, jatko: <altis>, äs: a];
 [perusmuoto: "antaa", alku: "an", luokka: teonsana, jatko: <antaa>, äs: a];
-[perusmuoto: "anteeksiantaa", alku: "anteeksian", luokka: teonsana, jatko: <antaa>, äs: a]; # Antaa-sanan kirjoitusasuksi
+[perusmuoto: "anteeksiantaa", alku: "anteeksian", luokka: teonsana, jatko: <antaa>, äs: a, rakenne: "=pppppppp=ppppp"]; # Esim. antaa-sanan kirjoitusasuksi
 [perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Arajuuri", alku: "Arajuur", luokka: sukunimi, jatko: <nuori>, äs: a];
 [perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <kirves>, äs: a];
@@ -50,7 +50,7 @@
 [perusmuoto: "auer", alku: "au", luokka: nimisana, jatko: <auer>, äs: a];
 [perusmuoto: "aulis", alku: "aul", luokka: laatusana, jatko: <valmis>, äs: a];
 [perusmuoto: "auttaa", alku: "aut", luokka: teonsana, jatko: <laittaa>, äs: a];
-[perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a]; # Auttaa-sanan kirjoitusasuksi
+[perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a, rakenne: "=pppp=pppppp"]; # Esim. auttaa-sanan kirjoitusasuksi
 [perusmuoto: "autuas", alku: "autu", luokka: nimi_laatusana, jatko: <autuas>, äs: a];
 [perusmuoto: "avata", alku: "av", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];
@@ -76,7 +76,7 @@
 [perusmuoto: "enin", alku: "en", luokka: nimi_laatusana, jatko: <pahin>, äs: ä];
 [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
 [perusmuoto: "ennennäkemätön", alku: "ennennäkemä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
-[perusmuoto: "erata", alku: "er", luokka: teonsana, jatko: <erata>, äs: a];
+[perusmuoto: "erata", alku: "er", luokka: teonsana, jatko: <erata>, äs: a]; # Mitä tämä tarkoittaa
 [perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "facto", alku: "facto", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Foucault", alku: "Foucault", luokka: nimi, jatko: <parfait>, äs: a];
@@ -207,7 +207,7 @@
 [perusmuoto: "kivetä", alku: "kive", luokka: teonsana, jatko: <kivetä>, äs: ä];
 [perusmuoto: "koiras", alku: "koira", luokka: nimisana, jatko: <koiras>, äs: a];
 [perusmuoto: "kokea", alku: "ko", luokka: teonsana, jatko: <hakea>, äs: a];
-[perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a];
+[perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
 [perusmuoto: "korsi", alku: "kor", luokka: nimisana, jatko: <hirsi>, äs: a];
 [perusmuoto: "korte", alku: "kort", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "koskea", alku: "kosk", luokka: teonsana, jatko: <laskea>, äs: a];
@@ -432,7 +432,7 @@
 [perusmuoto: "sisin", alku: "sis", luokka: nimi_laatusana, jatko: <pahin>, äs: ä];
 [perusmuoto: "siveetön", alku: "sivee", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "sivu", alku: "sivuitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "sori", alku: "sori", luokka: nimisana, jatko: <loppu>, äs: a];
+[perusmuoto: "sori", alku: "sori", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sortaa", alku: "sor", luokka: teonsana, jatko: <sortaa>, äs: a];
 [perusmuoto: "sotkea", alku: "sotk", luokka: teonsana, jatko: <laskea>, äs: a];
 [perusmuoto: "spray", alku: "spray", luokka: nimisana, jatko: <rosé>, äs: aä];
@@ -532,7 +532,7 @@
 [perusmuoto: "virkkaa", alku: "virk", luokka: teonsana, jatko: <virkkaa>, äs: a];
 [perusmuoto: "virsi", alku: "vir", luokka: nimisana, jatko: <hirsi>, äs: ä];
 [perusmuoto: "vittu", alku: "vitusti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a];
+[perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vonkamies", alku: "vonkamie", luokka: nimisana, jatko: <mies>, äs: a];
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta
 [perusmuoto: "vuolla", alku: "vuol", luokka: teonsana, jatko: <nuolla>, äs: a];
