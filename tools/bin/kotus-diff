@@ -59,7 +59,7 @@ def char_data(data):
 def print_line(word, problem, in_joukahainen = True):
 	if in_joukahainen: print '<tr><td><a href="/query/wlist?word=%s">Jouk.</a></td><td>' % word.encode('UTF-8')
 	else: print '<tr><td>-</td><td>'
-	print word.encode('UTF-8'), '</td><td>', problem
+	print word.encode('UTF-8'), '</td><td>', problem.encode('UTF-8')
 	print '</td></tr>'
 
 # Returns the inflection class and gradation class for a word in Joukahainen
@@ -175,7 +175,12 @@ for (word, wid, classid, infl) in jwordlist:
 			prev_word = word
 			continue
 		if prev_word not in kwordlist:
-			print_line(prev_word, 'Vain Joukahaisessa')
+			if u'-' + prev_word in kwordlist:
+				if db.query("SELECT count(*) FROM flag_attribute_value WHERE " +
+					  "wid=%i AND aid = 29" % wid).getresult()[0][0] == 0:
+					print_line(prev_word, u'Kotus: vain yhdyssanan jälkiosana')
+			else:
+				print_line(prev_word, 'Vain Joukahaisessa')
 			prev_word = word
 			inf_classes = []
 		else:
