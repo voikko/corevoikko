@@ -170,3 +170,4 @@ heureka
 heuristiikka
 heuristinen
 hiilestää
+homeopaatti
