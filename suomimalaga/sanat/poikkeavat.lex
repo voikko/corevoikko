@@ -108,7 +108,7 @@
 [perusmuoto: "hoteissa", alku: "hoteissa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hoteissa", alku: "hoteista", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huhmar", alku: "huhmar", luokka: nimisana, jatko: <askel>, äs: a];
-[perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a];
+[perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hulvaton", alku: "hulva", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
 [perusmuoto: "huoata", alku: "huo", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "hurraa", alku: "hurraa", luokka: nimisana, jatko: <liitesana, osanto_tA, loppu>, äs: a];
