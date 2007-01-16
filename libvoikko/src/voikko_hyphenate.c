@@ -132,53 +132,71 @@ void voikko_interpret_analysis(value_t analysis, char * buffer, size_t len) {
 	free((char *) analysis_string);
 }
 
-char ** voikko_split_compounds(const wchar_t * word) {
+char ** voikko_split_compounds(const wchar_t * word, size_t len) {
 	char * word_utf8;
 	value_t analysis_result;
 	int analysis_count;
 	char ** all_results;
 	char * result;
-	size_t word_len;
+	size_t utf8_len;
 	size_t i;
+	int dot_removed;
+	
 	all_results = malloc((LIBVOIKKO_MAX_ANALYSIS_COUNT + 1) * sizeof(char *));
 	if (all_results == 0) return 0;
-	word_len = wcslen(word);
 	all_results[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
-	word_utf8 = voikko_ucs4tocstr(word, "UTF-8");
+	word_utf8 = voikko_ucs4tocstr(word, "UTF-8", len);
 	if (word_utf8 == 0) {
 		free(all_results);
 		return 0;
 	}
+	utf8_len = strlen(word_utf8);
 	
 	analyse_item(word_utf8, MORPHOLOGY);
 	analysis_count = 0;
 	analysis_result = first_analysis_result();
+	
+	/** We may have to remove the trailing dot before hyphenation */
+	if (!analysis_result && voikko_options.ignore_dot && word_utf8[utf8_len - 1] == '.') {
+		word_utf8[utf8_len - 1] = '\0';
+		utf8_len--;
+		dot_removed = 1;
+		analyse_item(word_utf8, MORPHOLOGY);
+		analysis_result = first_analysis_result();
+	}
+	else dot_removed = 0;
+	
+	/** Iterate over all analyses and add results to all_results */
 	while (analysis_result) {
-		result = malloc(word_len + 1);
+		result = malloc(len + 1);
 		if (result == 0) break;
-		result[word_len] = '\0';
-		voikko_interpret_analysis(analysis_result, result, word_len);
+		result[len] = '\0';
+		voikko_interpret_analysis(analysis_result, result, len);
+		if (dot_removed) result[len - 1] = ' ';
 		all_results[analysis_count] = result;
 		if (++analysis_count == LIBVOIKKO_MAX_ANALYSIS_COUNT) break;
 		analysis_result = next_analysis_result();
 	}
+	
+	/** If the word could not be parsed, assume that it does not contain any
+	    morpheme borders that we should know about */
 	if (analysis_count == 0) {
-		result = malloc(word_len + 1);
+		result = malloc(len + 1);
 		if (result == 0) {
 			free(all_results);
 			return 0;
 		}
-		memset(result, ' ', word_len);
-		for (i = 0; i < word_len; i++)
+		memset(result, ' ', len);
+		for (i = 0; i < len; i++)
 			if (word[i] == L'-') result[i] = '=';
-		result[word_len] = '\0';
+		result[len] = '\0';
 		all_results[0] = result;
 		analysis_count++;
 	}
 	all_results[analysis_count] = 0;
 	free(word_utf8);
 
-	voikko_remove_extra_hyphenations(all_results, word_len, voikko_options.intersect_compound_level);
+	voikko_remove_extra_hyphenations(all_results, len, voikko_options.intersect_compound_level);
 
 	return all_results;
 }
@@ -262,7 +280,12 @@ char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 	char ** hyphenations;
 	char * hyphenation;
 	int i;
-	hyphenations = voikko_split_compounds(word);
+	size_t wlen;
+	
+	if (word == 0) return 0;
+	wlen = wcslen(word);
+	
+	hyphenations = voikko_split_compounds(word, wlen);
 	if (hyphenations == 0) return 0;
 	
 	/*i=0; while (hyphenations[i] != 0) printf("hyph='%s'\n", hyphenations[i++]);*/
@@ -286,7 +309,7 @@ char * voikko_hyphenate_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	char * result;
 	if (word == 0) return 0;
-	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding);
+	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, 0);
 	if (word_ucs4 == 0) return 0;
 	result = voikko_hyphenate_ucs4(handle, word_ucs4);
 	free(word_ucs4);

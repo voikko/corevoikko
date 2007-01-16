@@ -117,6 +117,10 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 1);
 		else if (strcmp(argv[i], "no_ugly_hyphenation=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
+		else if (strcmp(argv[i], "ignore_dot=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
+		else if (strcmp(argv[i], "ignore_dot=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
 	}
 	
 	while (1) {

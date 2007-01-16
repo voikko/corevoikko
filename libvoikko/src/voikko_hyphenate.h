@@ -56,10 +56,11 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation);
 /**
  * Creates an array of hyphenation buffers for given word.
  * @param word word to analyse
+ * @param len length of the word
  * @return array of hyphenation buffers that correspond to different ways how word could
  *         be split
  */
-char ** voikko_split_compounds(const wchar_t * word);
+char ** voikko_split_compounds(const wchar_t * word, size_t len);
 
 /**
  * Removes hyphenation buffers that are considered unnecessary to analyse.

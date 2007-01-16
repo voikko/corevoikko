@@ -60,7 +60,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	value_t analysis;
 	char * analysis_str;
 
-	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8");
+	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", 0);
 	if (malaga_buffer == 0) return SPELL_FAILED;
 	analyse_item(malaga_buffer, MORPHOLOGY);
 	free(malaga_buffer);
@@ -135,7 +135,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		}
 		
 		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
-		malaga_buffer = voikko_ucs4tocstr(buffer, "UTF-8");
+		malaga_buffer = voikko_ucs4tocstr(buffer, "UTF-8", 0);
 		if (!malaga_buffer) {
 			free(buffer);
 			return result;
@@ -180,7 +180,7 @@ int voikko_spell_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	int result;
 	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
-	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding);
+	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, 0);
 	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
 	result = voikko_spell_ucs4(handle, word_ucs4);
 	free(word_ucs4);

@@ -85,7 +85,7 @@ void voikko_suggest_correct_case(voikko_sugg_status_t * s, const wchar_t * buffe
 			((*s).max_suggestions)--;
 			return;
 		case SPELL_CAP_ERROR:
-			malaga_buffer = voikko_ucs4tocstr((*s).word, "UTF-8");
+			malaga_buffer = voikko_ucs4tocstr((*s).word, "UTF-8", 0);
 			if (malaga_buffer == 0) return;
 			analyse_item(malaga_buffer, MORPHOLOGY);
 			free(malaga_buffer);
@@ -521,7 +521,7 @@ char ** voikko_suggest_cstr(int handle, const char * word) {
 	int scount;
 	char * suggestion;
 	if (word == 0 || word[0] == '\0') return 0;
-	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding);
+	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, 0);
 	if (word_ucs4 == 0) return 0;
 	suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
 	free(word_ucs4);
@@ -535,7 +535,7 @@ char ** voikko_suggest_cstr(int handle, const char * word) {
 	}
 	j = 0;
 	for (i = 0; i < scount; i++) {
-		suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding);
+		suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding, 0);
 		free(suggestions_ucs4[i]);
 		if (suggestion == 0) continue; /* suggestion cannot be encoded */
 		suggestions[j++] = suggestion;

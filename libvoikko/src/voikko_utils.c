@@ -29,7 +29,7 @@
   #endif
 #endif
 
-wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
+wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len) {
 #ifdef HAVE_ICONV
 	iconv_t cd;
 	int using_temporary_converter = 0;
@@ -39,9 +39,12 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 	size_t res_size;
 	char * outptr = (char *) ucs4_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
-	size_t inbytesleft = strlen(word);
+	size_t inbytesleft;
 	size_t outbytesleft = LIBVOIKKO_MAX_WORD_CHARS * sizeof(wchar_t);
 	ucs4_buffer[LIBVOIKKO_MAX_WORD_CHARS] = L'\0';
+	
+	if (len == 0) len = strlen(word);
+	inbytesleft = len;
 	
 	if (strcmp(encoding, "UTF-8") == 0) cd = voikko_options.iconv_utf8_ucs4;
 	else if (strcmp(encoding, voikko_options.encoding) == 0) cd = voikko_options.iconv_ext_ucs4;
@@ -79,27 +82,30 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding) {
 #else
   #ifdef WIN32
 	int cp;
-  	if (strcmp(encoding, "UTF-8") == 0) cp = CP_UTF8;
+	if (strcmp(encoding, "UTF-8") == 0) cp = CP_UTF8;
 	else if (strcmp(encoding, "CP850") == 0) cp = 850;
 	else return 0;
-  	// On Windows we actually use UTF-16 data internally, so two units may be needed to
-  	// represent a single character.
+	// On Windows we actually use UTF-16 data internally, so two units may be needed to
+	// represent a single character.
 	size_t buflen = (LIBVOIKKO_MAX_WORD_CHARS * 2 + 1);
 	wchar_t * ucs4_buffer = malloc(buflen * sizeof(wchar_t));
 	if (ucs4_buffer == 0) return 0;
 	// Illegal characters are ignored, because MB_ERR_INVALID_CHARS is not supported
 	// before WIN2K_SP4.
-	int result = MultiByteToWideChar(cp, 0, word, -1, ucs4_buffer, buflen);
+	int result = MultiByteToWideChar(cp, 0, word, len, ucs4_buffer, buflen - 1);
 	if (result == 0) {
 		free(ucs4_buffer);
 		return 0;
 	}
-	else return ucs4_buffer;
+	else {
+		ucs4_buffer[result] = L'\0';
+		return ucs4_buffer;
+	}
   #endif //WIN32
 #endif //HAVE_ICONV
 }
 
-char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
+char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len) {
 #ifdef HAVE_ICONV
 	iconv_t cd;
 	int using_temporary_converter = 0;
@@ -109,9 +115,12 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
 	size_t res_size;
 	char * outptr = utf8_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
-	size_t inbytesleft = wcslen(word) * sizeof(wchar_t);
+	size_t inbytesleft;
 	size_t outbytesleft = LIBVOIKKO_MAX_WORD_CHARS;
 	utf8_buffer[LIBVOIKKO_MAX_WORD_CHARS] = '\0';
+	
+	if (len == 0) len = wcslen(word);
+	inbytesleft = len * sizeof(wchar_t);
 	
 	if (strcmp(encoding, "UTF-8") == 0) cd = voikko_options.iconv_ucs4_utf8;
 	else if (strcmp(encoding, voikko_options.encoding) == 0) cd = voikko_options.iconv_ucs4_ext;
@@ -154,12 +163,15 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding) {
   	size_t buflen = LIBVOIKKO_MAX_WORD_CHARS * 6 + 1;
   	char * utf8_buffer = malloc(buflen);
   	if (utf8_buffer == 0) return 0;
-  	int result = WideCharToMultiByte(cp, 0, word, -1, utf8_buffer, buflen, 0, 0);
+  	int result = WideCharToMultiByte(cp, 0, word, -1, utf8_buffer, buflen - 1, 0, 0);
   	if (result == 0) {
 		free(utf8_buffer);
 		return 0;
 	}
-	else return utf8_buffer;
+	else {
+		utf8_buffer[result] = '\0';
+		return utf8_buffer;
+	}
   #endif //WIN32
 #endif //HAVE_ICONV
 }
