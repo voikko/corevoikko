@@ -186,6 +186,10 @@ nuolaistusti
 oltu
 ollut
 oltava
+vakiintuneempi
+kuolleempi
+purreempi
+lakaisseempi
 
 [muita virheitä]
 !kolaaa

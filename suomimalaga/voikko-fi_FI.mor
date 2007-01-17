@@ -777,7 +777,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
 
-  ? $edellinen.luokka in @laatusana + <johdin_vAinen, johdin_ttAvA, johdin_inen,
+  ? $edellinen.luokka in @laatusana + @johdin_nUt + <johdin_vAinen, johdin_ttAvA, johdin_inen,
                          johdin_tOn, johdin_llinen, johdin_mAinen, johdin_vA,
                          johdin_tAvA>;
 
