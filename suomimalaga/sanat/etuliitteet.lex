@@ -50,10 +50,10 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 # Etuliite + nimisana/laatusana
 
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "anglo", alku: "anglo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ainois", alku: "ainois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "alkuperäis", alku: "alkuperäis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "anglo", alku: "anglo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "astro", alku: "astro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "asuin", alku: "asuin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "bi-", alku: "bi-", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -66,6 +66,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; #Ei oo
 [perusmuoto: "irrationaali", alku: "irrationaal", luokka: etuliite, jatko: @eln + @ell, äs: aä];
