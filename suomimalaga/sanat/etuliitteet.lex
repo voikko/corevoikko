@@ -145,6 +145,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
+[perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "inter", alku: "inter", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
