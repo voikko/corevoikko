@@ -177,3 +177,8 @@ infiniitti
 interferoida
 interferometri
 interrail
+interpolaatio
+interpoloida
+intransitiivi
+irrationalisti
+iteraatio
