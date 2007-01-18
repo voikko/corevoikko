@@ -20,12 +20,24 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-09 03:27:23 EET
+# Time of generation: 2007-01-18 03:27:24 EET
 
 [perusmuoto: "aktinium", alku: "aktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "aldehydi", alku: "aldehyd", luokka: nimisana, jatko: <risti>, äs: aä];
 [perusmuoto: "amerikium", alku: "amerikium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "bohrium", alku: "bohrium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "cerium", alku: "cerium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "curium", alku: "curium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "darmstadtium", alku: "darmstadtium", luokka: nimisana, jatko: <kalsium>, äs: a, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "deformoida", alku: "deformo", luokka: teonsana, jatko: <kanavoida>, äs: a];
+[perusmuoto: "dubnium", alku: "dubnium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "dysprosium", alku: "dysprosium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "erbium", alku: "erbium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "europium", alku: "europium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "frankium", alku: "frankium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "gluoni", alku: "gluon", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "hassium", alku: "hassium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "holmium", alku: "holmium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "souto", alku: "sou", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "spin", alku: "spin", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "ununbium", alku: "ununbium", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -36,4 +48,6 @@
 [perusmuoto: "ununpentium", alku: "ununpentium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununseptium", alku: "ununseptium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununtrium", alku: "ununtrium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "ytterbium", alku: "ytterbium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "yttrium", alku: "yttrium", luokka: nimisana, jatko: <kalsium>, äs: a];
 
