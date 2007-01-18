@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -78,6 +78,9 @@ sisäeronto_stA
 sisätulento_seen
           kuol+lee+seen
 
+sisätulento_hVn
+          kuol+le+hen    vanha_h
+
 sisätulento_sen
           kuol+lehe+sen  ei_voikko
 
@@ -135,6 +138,9 @@ sisäeronto_istA
 
 sisätulento_isiin
           kuol+le+isiin
+
+sisätulento_ihin
+          kuol+le+ihin
 
 sisätulento_isin
           kuol+leh+isin  ei_voikko

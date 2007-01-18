@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -58,7 +58,7 @@ osanto_A
           su+kse+a
 
 osanto_tA
-          su+s+ta
+          su+s+ta  ei_voikko
 
 olento_nA
           su+kse+na
@@ -74,6 +74,9 @@ sisäeronto_stA
 
 sisätulento_Vn
           su+kse+en
+
+sisätulento_hVn
+          su+kse+hen  vanha_h
 
 ulko_olento_llA
           su+kse+lla

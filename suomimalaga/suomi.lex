@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -184,6 +184,11 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "ra",    luokka: sijapääte, sija: olento_rA,
                 luku: yksikkö, äs: a, jatko: @sijan_jatko_ol, tiedot: <ei_voikko>];
 [alku: "rä",    luokka: sijapääte, sija: olento_rA,
+                luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol, tiedot: <ei_voikko>];
+
+[alku: "sa",    luokka: sijapääte, sija: olento_sA,
+                luku: yksikkö, äs: a, jatko: @sijan_jatko_ol, tiedot: <ei_voikko>];
+[alku: "sä",    luokka: sijapääte, sija: olento_sA,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol, tiedot: <ei_voikko>];
 
 

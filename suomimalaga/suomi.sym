@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -95,6 +95,7 @@ sija;
 
   olento_nA;
   olento_rA;     # Nuori => nuorra.
+  olento_sA;     # Mies => miessä.
   olento_inA;
 
   tulento_ksi;
@@ -413,6 +414,11 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   UUs;       # Nimisana, josta voidaan johtaa ominaisuuden nimi uus-johtimella.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
 
+vanha_h;     # Valohon-tyyppiset taivutusmuodot, joista Nykysuomen sankirja sanoo:
+             # "Niissä taivutusmuodoissa, joiden päätteessä esiintyy pitkä vokaali,
+             # tavataan Kalevalan kielessä ja muussakin, varsinkin vanhemmassa
+             # runokielessä h:llisia rinnakkaismuotoja (valoon---valohon,
+             # punokoon---punokohon, punottiin---punottihin)."
 
 rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sekä
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.

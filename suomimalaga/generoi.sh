@@ -2,7 +2,7 @@
 
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen <Etunimi.Sukunimi@joensuu.fi>
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -49,10 +49,12 @@
 
 # Generoi taivutuskaavoista Malaga-koodia.
 
-cat taivutuskaavat/ALKU.TXT >suomi-all.gen
+cat taivutuskaavat/ALKU.TXT >suomi.all
 
-taivutuskaavat/ast.pl taivutuskaavat/nimisanat/*.ast taivutuskaavat/teonsanat/*.ast >>suomi-all.gen
+taivutuskaavat/ast.pl taivutuskaavat/nimisanat/*.ast taivutuskaavat/teonsanat/*.ast >>suomi.all
 
-cat taivutuskaavat/LOPPU.TXT >>suomi-all.gen
+tail --lines=+47 taivutuskaavat/KESKIOSA.TXT >>suomi.all
 
-taivutuskaavat/txt.pl taivutuskaavat/nimisanat/*.txt taivutuskaavat/teonsanat/*.txt >>suomi-all.gen
+taivutuskaavat/txt.pl taivutuskaavat/nimisanat/*.txt taivutuskaavat/teonsanat/*.txt >>suomi.all
+
+tail --lines=+47 taivutuskaavat/LOPPU.TXT >>suomi.all

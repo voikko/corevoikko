@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -79,7 +79,7 @@ sisätulento_seen
           kiiru+u+seen
 
 sisätulento_sen
-          kiiru+hu+sen  ei_voikko  ei_voikko
+          kiiru+hu+sen  ei_voikko
 
 ulko_olento_llA
           kiiru+u+lla
@@ -110,7 +110,7 @@ omanto_ten
           kiiru+hit+ten  ei_voikko
 
 omanto_ien
-          kiiru++h+ien  ei_voikko
+          kiiru+h+ien  ei_voikko
 
 osanto_iA
           kiiru+h+ia  ei_voikko
@@ -136,6 +136,9 @@ sisäeronto_istA
 
 sisätulento_isiin
           kiiru++isiin
+
+sisätulento_ihin
+          kiiru++ihin
 
 sisätulento_isin
           kiiru+h+isin  ei_voikko

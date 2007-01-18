@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
@@ -47,12 +45,117 @@
 # combination.
 
 
-# Generoi taivutuskaavoista Malaga-koodia.
+nimitapa_1_tA
+          kus++ta
 
-cat ALKU.TXT >../suomi-all.gen
+nimitapa_2
+          kus+t+essa
 
-./ast.pl a/*.ast b/*.ast >>../suomi-all.gen
+nimitapa_2_tA
+          kus++taessa
 
-cat LOPPU.TXT >>../suomi-all.gen
+nimitapa_2_ttA
 
-./txt.pl -d a/*.txt b/*.txt >>../suomi-all.gen
+nimitapa_3
+          kus+e+ma
+
+nimitapa_3_tA
+          kus++taman
+
+nimitapa_3_ttA
+
+nimitapa_4
+          kus+e+minen
+
+nimitapa_5
+          kus+e+maisillani
+
+laatutapa_1_vA
+          kus+e+va
+
+laatutapa_1_tA
+          kus++tava
+
+laatutapa_1_ttA
+
+laatutapa_2_sUt
+          kus++sut
+
+laatutapa_2_tU
+
+laatutapa_2_stU_juostu
+          kus++tu
+
+kestämän_tekijäpääte_y1
+          kus+e+n
+
+kestämän_tekijäpääte_y2
+          kus+e+t
+
+kestämän_tekijäpääte_y3
+          kus+e+e
+
+kestämän_tekijäpääte_m1
+          kus+e+mme
+
+kestämän_tekijäpääte_m2
+          kus+e+tte
+
+kestämän_tekijäpääte_m3
+          kus+e+vat
+
+tositavan_kestämä_tAAn
+          kus++taan
+
+kertoman_tekijäpääte_y1
+          kus++in
+
+kertoman_tekijäpääte_y2
+          kus++it
+
+kertoman_tekijäpääte_y3
+          kus++i
+
+kertoman_tekijäpääte_m1
+          kus++imme
+
+kertoman_tekijäpääte_m2
+          kus++itte
+
+kertoman_tekijäpääte_m3
+          kus++ivat
+
+tositavan_kertoma_tiin
+          kus++tiin
+
+tositavan_kertoma_ttiin
+
+ehtotapa
+          kus++isin
+
+ehtotapa_tA
+          kus++taisiin
+
+ehtotapa_ttA
+
+mahtotapa_se
+          kus++sen
+
+mahtotapa_tA
+          kus++taneen
+
+mahtotapa_ttA
+
+käskytapa_y2
+          kus+e+
+
+käskytapa_kielto
+          kus++ko
+
+käskytapa_tA
+          kus++takoon
+
+käskytapa_ttA
+
+johdin_jA_kulkija
+          kus+i+ja

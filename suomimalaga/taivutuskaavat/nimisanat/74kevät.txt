@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -106,7 +106,7 @@ omanto_iT
           kevä++itten
 
 omanto_ten
-          kevä+it+ten
+          kevä+t+ten    ei_voikko
           kevä+hit+ten  ei_voikko
 
 omanto_ien
@@ -136,6 +136,9 @@ sisäeronto_istA
 
 sisätulento_isiin
           kevä++isiin
+
+sisätulento_ihin
+          kevä++ihin
 
 sisätulento_isin
           kevä+h+isin  ei_voikko  ei_voikko

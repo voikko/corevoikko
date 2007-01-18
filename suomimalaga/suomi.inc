@@ -166,3 +166,10 @@ define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
 define @johdin_mA := <johdin_mA, johdin_mA_saama>;
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
 
+define @johdin_tU := <johdin_tU_dU,
+                      johdin_tU_lU_katseltu,
+                      johdin_tU_lU_oltu,
+                      johdin_tU_nU,
+                      johdin_tU_rU>;
+
+define @johdin_laatutapa := @johdin_nUt + @johdin_tU + @johdin_stU + <johdin_ttU, johdin_vA, johdin_vE>;

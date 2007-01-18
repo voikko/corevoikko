@@ -45,56 +45,55 @@
 # combination.
 
 
-# Tämä tiedosto on tehty ohjelmalla generoi.sh --- älä muuta!
-
-
-include "suomi.inc";
-
-
-allo_rule generate_allos ($tietue):
-  define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
-
-
-##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
-#define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
-#                       ", alku: §"      + $tietue.alku + "§" +
-#                       ", luokka: "     + value_string ($tietue.luokka) +
-#                       ", jatko: "      + value_string ($tietue.jatko) +
-#                       ", äs: "         + value_string ($tietue.äs) +
-#                       "];");
-
-#define $a := transmit ($tietue);
-
-  if ($malli = sukija) then
-    if ($tietue.jatko_sukija /= nil) then
-      $tietue :=+ [jatko: $tietue.jatko_sukija];
-    end;
-    if ($tietue.alku_sukija /= nil) then
-      $tietue :=+ [alku: $tietue.alku_sukija];
-    end;
-  end;
-
-  if ($malli = voikko) then
-    if ($tietue.jatko_voikko /= nil) then
-      $tietue :=+ [jatko: $tietue.jatko_voikko];
-    end;
-    if ($tietue.alku_voikko /= nil) then
-      $tietue :=+ [alku: $tietue.alku_voikko];
-    end;
-  end;
-
-
-  if (($malli = voikko) and ($tietue.tiedot /= nil) and
-      ((latex in $tietue.tiedot) or
-       (murre in $tietue.tiedot) or
-       (ei_voikko in $tietue.tiedot))) then
-    stop;
-
-  elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
-          (ei_sukija in $tietue.tiedot)) then
-    stop;
-
 #####################################################################
 ##=================================================================##
 #####################################################################
 
+
+  elseif (yö_monikko in $tietue.jatko) then
+    choose $i in taivutuskaava ($tietue,
+                                [omanto_iT:        <<"", <>>>,
+                                 osanto_itA:       <<"", <>>>,
+                                 olento_inA:       <<"", <>>>,
+                                 tulento_iksi:     <<"", <>>>,
+                                 sisäolento_issA:  <<"", <>>>,
+                                 sisäeronto_istA:  <<"", <>>>,
+                                 sisätulento_ihin: <<"", <>>>,
+                                 ulko_olento_illA: <<"", <>>>,
+                                 ulkoeronto_iltA:  <<"", <>>>,
+                                 ulkotulento_ille: <<"", <>>>,
+                                 vajanto_ittA:     <<"", <>>>,
+                                 seuranto_ine:     <<"", <>>>,
+                                 keinonto_in:      <<"", <>>>,
+                                 johdin_ittain:    <<"", <>>>]);
+    result $i.alku, $i - alku;
+
+    
+######################################
+
+# Vaillinnainen taivutus.
+#
+#  elseif (kumajaa in $tietue.jatko) then
+#  elseif (kaikaa in $tietue.jatko) then
+
+
+######################################
+
+
+  elseif (lienee in $tietue.jatko) then
+    choose $i in taivutus ($tietue, "", @kestämän_tekijäpääte,
+                           [tapaluokka: ehtotapa, aikamuoto: kestämä]);
+    result $i.alku, $i - alku;
+
+
+#========================================
+
+  elseif ($tietue.alku /= nil) then
+#define $a := transmit (<"a"> + <$tietue.alku> + <$tietue - alku>);
+    result $tietue.alku, $tietue - alku;
+  else
+#define $b := transmit (<"b"> + <$tietue.perusmuoto> + <$tietue - alku>);
+    result $tietue.perusmuoto, $tietue - alku;
+  end;
+##define $b := transmit (<$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
+end;

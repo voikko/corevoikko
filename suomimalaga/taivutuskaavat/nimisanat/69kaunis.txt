@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -104,13 +104,19 @@ nimentö_t
 omanto_iT
           alt+ti+iden
           alt+ti+itten
+          alt+te+iden  ei_voikko
+          alt+te+itten ei_voikko
+
+omanto_ien
+          alt+tih+ien  ei_voikko
+          alt+teh+ien  ei_voikko
 
 omanto_ten
-          alt+is+ten  ei_voikko
+          alt+is+ten   ei_voikko
 
 osanto_itA
           alt+ti+ita
-          alt+tei+ita  ei_voikko
+          alt+te+ita  ei_voikko
 
 osanto_iA
           alt+tih+ia  ei_voikko
@@ -118,21 +124,25 @@ osanto_iA
 
 olento_inA
           alt+ti+ina
+          alt+te+ina   ei_voikko
           alt+tih+ina  ei_voikko
           alt+teh+ina  ei_voikko
 
 tulento_iksi
           alt+ti+iksi
+          alt+te+iksi   ei_voikko
           alt+tih+iksi  ei_voikko
           alt+teh+iksi  ei_voikko
 
 sisäolento_issA
           alt+ti+issa
+          alt+te+issa   ei_voikko
           alt+tih+issa  ei_voikko
           alt+teh+issa  ei_voikko
 
 sisäeronto_istA
           alt+ti+ista
+          alt+te+ista   ei_voikko
           alt+tih+ista  ei_voikko
           alt+teh+ista  ei_voikko
 
@@ -142,6 +152,7 @@ sisätulento_ihin
 
 sisätulento_isiin
           alt+ti+isiin
+          alt+te+isiin  ei_voikko
 
 sisätulento_isin
           alt+tih+isin  ei_voikko
@@ -149,31 +160,37 @@ sisätulento_isin
 
 ulko_olento_illA
           alt+ti+illa
+          alt+te+illa   ei_voikko
           alt+tih+illa  ei_voikko
           alt+teh+illa  ei_voikko
 
 ulkoeronto_iltA
           alt+ti+ilta
+          alt+te+ilta   ei_voikko
           alt+tih+ilta  ei_voikko
           alt+teh+ilta  ei_voikko
 
 ulkotulento_ille
           alt+ti+ille
+          alt+te+ille   ei_voikko
           alt+tih+ille  ei_voikko
           alt+teh+ille  ei_voikko
 
 vajanto_ittA
           alt+ti+itta
+          alt+te+itta   ei_voikko
           alt+tih+itta  ei_voikko
           alt+teh+itta  ei_voikko
 
 seuranto_ine
           alt+ti+ine
+          alt+te+ine   ei_voikko
           alt+tih+ine  ei_voikko
           alt+teh+ine  ei_voikko
 
 keinonto_in
           alt+ti+in
+          alt+te+in   ei_voikko
           alt+tih+in  ei_voikko
           alt+teh+in  ei_voikko
 

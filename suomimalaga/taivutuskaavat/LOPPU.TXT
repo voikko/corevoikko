@@ -1,53 +1,746 @@
-
-#####################################################################
-##=================================================================##
-#####################################################################
-
-
-  elseif (yö_monikko in $tietue.jatko) then
-    choose $i in taivutuskaava ($tietue,
-                                [omanto_iT:        <<"", <>>>,
-                                 osanto_itA:       <<"", <>>>,
-                                 olento_inA:       <<"", <>>>,
-                                 tulento_iksi:     <<"", <>>>,
-                                 sisäolento_issA:  <<"", <>>>,
-                                 sisäeronto_istA:  <<"", <>>>,
-                                 sisätulento_ihin: <<"", <>>>,
-                                 ulko_olento_illA: <<"", <>>>,
-                                 ulkoeronto_iltA:  <<"", <>>>,
-                                 ulkotulento_ille: <<"", <>>>,
-                                 vajanto_ittA:     <<"", <>>>,
-                                 seuranto_ine:     <<"", <>>>,
-                                 keinonto_in:      <<"", <>>>,
-                                 johdin_ittain:    <<"", <>>>]);
-    result $i.alku, $i - alku;
-
-    
-######################################
-
-# Vaillinnainen taivutus.
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-#  elseif (kumajaa in $tietue.jatko) then
-#  elseif (kaikaa in $tietue.jatko) then
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
 
 
-######################################
+# $sanatietue Sanastosta (tiedostosta *.lex) luettu tietue.
+# $lisä       Merkkijono, joka lisätään sanan alkuosaan ennen sijapäätteitä.
+#             Esimerkiksi sanan valkoinen alkuosa on valkoi.
+#             Tähän lisätään merkkijonot
+#             nen    valkoi+nen
+#             s      valkoi+s(ta), valkoi+s(ten), valkoi+s(ien), valkoi+s(ina).
+#             se     valkoi+se(n), valkoi+se(na), jne, valkoi+se(t).
+# $jatko      Sääntö, jolla sanan jäsennystä jatketaan.
+# $tietue     Tietue, joka lisätään parametriin sanatietue.
+#
+subrule taivutus ($sanatietue, $lisä, $jatko, $tietue):
+  assert (value_type ($jatko) = list);
 
-
-  elseif (lienee in $tietue.jatko) then
-    choose $i in taivutus ($tietue, "", @kestämän_tekijäpääte,
-                           [tapaluokka: ehtotapa, aikamuoto: kestämä]);
-    result $i.alku, $i - alku;
-
-
-#========================================
-
-  elseif ($tietue.alku /= nil) then
-#define $a := transmit (<"a"> + <$tietue.alku> + <$tietue - alku>);
-    result $tietue.alku, $tietue - alku;
-  else
-#define $b := transmit (<"b"> + <$tietue.perusmuoto> + <$tietue - alku>);
-    result $tietue.perusmuoto, $tietue - alku;
+  if (switch (malli) = sukija) then
+    #
+    # Useimmat kolmitavuiset inen-loppuiset sanat hyväksytään myös i:ttöminä.
+    # Esim. keltainen => keltanen.
+    #
+    if ((nainen in $sanatietue.jatko) and
+        ($sanatietue.luokka in <nimisana, laatusana, nimi_laatusana>) and
+        ($sanatietue.perusmuoto matches ".*" + @kerake + "[aouyäö]inen") and
+        (not ($sanatietue.perusmuoto matches ".*m[aä]inen"))) then  # Ei "omainen".
+      define $n := tavujen_määrä ($sanatietue.perusmuoto);
+      if ($n = 3) then
+        #
+        # Esim. takasääri ei ole taka(i)s+ääri (takainen => takanen + ääri).
+        #
+        define $tietue2 := $tietue;
+        if (($tietue = []) or ($tietue2.tiedot = nil)) then
+          $tietue2 :=+ [tiedot: <ei_ysa>];
+        else
+          $tietue2.tiedot :=+ <ei_ysa>;
+        end;
+        return taivutus2 ($sanatietue, $lisä, $jatko, $tietue, $sanatietue.alku) +
+               taivutus2 ($sanatietue, $lisä, $jatko, $tietue2, substring($sanatietue.alku,1,2R));
+      end;
+    end;
   end;
-##define $b := transmit (<$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
+
+  return taivutus2 ($sanatietue, $lisä, $jatko, $tietue, $sanatietue.alku);
+end;
+
+
+subrule taivutus2 ($sanatietue, $lisä, $jatko, $tietue, $alku):
+  if ($tietue.luokka in @nimisana + <laatusana> and $tietue.sija = nil) then
+    return ([alku: $alku + $lisä]
+            + ($sanatietue - alku - jatko)
+            + [jatko: $jatko]
+            + $tietue + [sija: nimentö]);
+  else
+    if (value_type($lisä) = list) then
+      define $result := <>;
+      foreach $i in $lisä:
+        $result :=+ <[alku: $alku + $i]
+                     + ($sanatietue - alku - jatko)
+                     + [jatko: $jatko]
+                     + $tietue>;
+      end;
+      return $result;
+    else
+      return <[alku: $alku + $lisä]
+              + ($sanatietue - alku - jatko)
+              + [jatko: $jatko]
+              + $tietue>;
+    end;
+  end;
+end;
+
+
+subrule A ($tietue):
+  if ($tietue.äs = a) then
+    return "a";
+  else
+    return "ä";
+  end;
+end;
+
+
+subrule O ($tietue):
+  if ($tietue.äs = a) then
+    return "o";
+  else
+    return "ö";
+  end;
+end;
+
+
+subrule U ($tietue):
+  if ($tietue.äs = a) then
+    return "u";
+  else
+    return "y";
+  end;
+end;
+
+
+
+# Johtimia, joilla teonsanoista muodostetaan nimisanoja.
+#
+define @johtimia := <johdin_ntA, johdin_nti, johdin_O,
+                     johdin_U_arvelu, johdin_U_nousu,
+                     johdin_Us, johdin_Us_ksen>
+                    + @johdin_jA + @johdin_mA;
+
+
+# $tietue    Sanatietue
+# $taivutus  Sanan taivutus eri taivutusmuodoissa.
+#
+subrule taivutuskaava ($tietue, $taivutus):
+  define $malli := switch (malli);
+
+
+  # Poistetaan liput.
+  #
+  define $uusi_taivutus := [];
+  define $käskytapa_y2 := <>;
+  define $kestämän_tekijäpääte_y3 := <>;
+
+  foreach $i in $taivutus:
+#    define $e := transmit (<"I"> + <$i>);
+    define $lista := <>;
+
+    foreach $j in $taivutus.$i:
+      define $lisä := $j.1;
+      define $liput := $j.2;
+
+#      if (($malli = sukija) or (($malli = voikko and not (ei_voikko in $liput)))) then
+#define $f := transmit (<$i> + <"§"> + <$j> + <"§§"> + <$lisä> + <"L="> + <$liput>);
+        if ($i = käskytapa_y2) then
+          $käskytapa_y2 :=+ <$j>;
+        elseif (($i = kestämän_tekijäpääte_y3) and (_y3 in $liput)) then
+          $kestämän_tekijäpääte_y3 :=+ <$j>;
+        else
+          $lista :=+ <$lisä>;
+        end;
+      end;
+      $uusi_taivutus :=+ [$i: $lista];
+#    end;
+  end;
+
+#define $ä := transmit ($uusi_taivutus);
+#define $ö := transmit ("LOPPU");
+
+  $taivutus := $uusi_taivutus;
+
+
+  if (($tietue.luokka in @nimisana + @johtimia + <laatusana>) and ($taivutus.nimentö /= nil)) then
+    if ($taivutus.tavuviiva = nil) then
+      $taivutus :=+ [tavuviiva: $taivutus.nimentö];
+    elseif ($taivutus.tavuviiva /= $taivutus.nimentö) then
+      $taivutus :=+ [tavuviiva: $taivutus.tavuviiva + $taivutus.nimentö];
+    end;
+  end;
+
+
+  if (not ($tietue.luokka in <nimisana, nimi_laatusana> + @johtimia) or
+     (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
+    $taivutus :=- johdin_inen;
+  end;
+
+  if ($tietue.luokka in @johdin_jA + @johdin_mA) then
+    $taivutus :=- johdin_inen;
+  end;
+
+  # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
+  #
+  if ($tietue.tiedot /= nil) then
+    if (ei_inen in $tietue.tiedot) then
+      $taivutus :=- johdin_inen;
+    end;
+    if (ei_lAinen in $tietue.tiedot) then
+      $taivutus :=- johdin_lAinen;
+    end;
+    if (ei_mAinen in $tietue.tiedot) then
+      $taivutus :=- johdin_mAinen;
+    end;
+  end;
+
+
+  if ($tietue.luokka in <nimi_laatusana, laatusana> + @johdin_laatutapa) then
+    $taivutus :=+ [johdin_nlainen: $taivutus.omanto_n];
+  end;
+
+
+  if ($tietue.luokka in <johdin_ntA, nimisana> + @erisnimi + @johdin_jA) then
+    $taivutus :=- <voittoaste, yliaste, kerronto_sti>;
+  end;
+
+
+  define $lista := lajittele ($taivutus);
+
+
+  define $t := <>;
+
+  foreach $i in $lista:
+    $t :=+ taivutus ($tietue, $i.1, $i.2, []);
+  end;
+
+
+  if ($käskytapa_y2 /= <>) then
+    foreach $i in $käskytapa_y2:
+      $t :=+ käskytapa_y2 ($tietue, $i.1);
+    end;
+  end;
+
+  if ($kestämän_tekijäpääte_y3 /= <>) then
+    foreach $i in $kestämän_tekijäpääte_y3:
+      $t :=+ tositavan_kestämä_y3 ($tietue, $i.1);
+    end;
+  end;
+
+  return $t;
+end;
+
+
+# Yksikön kolmannen pääte on sulautunut sanan vartaloon:
+#
+# Minä saa+n  voi+n
+# Sinä saa+t  voi+t
+# Hän  saa+   voi+
+#
+# Vertaa puhu+n, puhu+t, puhu+u.
+# 
+subrule tositavan_kestämä_y3 ($tietue, $vahva_aste):
+#define $a := transmit ($tietue);
+#define $b := transmit ($vahva_aste);
+  return taivutus ($tietue, $vahva_aste,
+                   <liitesana, liitesana_pi, loppu>,
+                   [tapaluokka: tositapa,
+                    aikamuoto: kestämä,
+                    tekijä: 3,
+                    luku: yksikkö]);
+end;
+
+
+
+# Yksikön toisen käskytapa, jolla ei ole päätettä:
+#
+# puhua => puhu, sanoa => sano, tehdä => tee.
+#
+subrule käskytapa_y2 ($tietue, $heikko_aste):
+    return taivutus ($tietue, $heikko_aste,
+                     <liitesana, liitesana2, liitesana_s, loppu>,
+                     [tapaluokka: käskytapa,
+                      aikamuoto: kestämä,
+                      tekijä: 2,
+                      luku: yksikkö]);
+end;
+
+
+
+############################################################
+#
+# Muuta tietue parien listaksi. Parin eka alkiona on
+# merkkijono ja toisena alkiona lista niistä tietueen
+# kenttien nimistä, joiden arvona on sama merkkijono.
+#
+# Esimerkiksi:
+#
+# [a: "a",
+#  b: <"a", "c">,
+#  c: "b",
+#  d: "a",
+#  e: "b",
+#  f: "b"]
+#
+#   ===>
+#
+# <<"a", <a, b, d>>,
+#  <"b", <c, e, f>>,
+#  <"c", <b>>
+
+subrule lajittele ($tietue):
+  #
+  # [sijan_nimi: merkkijono] tai
+  # [sijan_nimi: <merkkijono1, merkkijono2>]
+  # Otetaan kaikki merkkijonot joukkoon $joukko.
+  # Se on joukko, koska kukin alkio on siinä vain kerran.
+  #
+  define $joukko := <>;
+
+#define $a := transmit ($tietue);
+
+  foreach $i in $tietue:
+    if (value_type($tietue.$i) = list) then
+      $joukko :=+ $tietue.$i / $joukko;
+    else
+      if (not ($tietue.$i in $joukko)) then
+        $joukko :=+ <$tietue.$i>;
+      end;
+    end;
+  end;
+
+#define $ö := transmit (<"ööö"> + <$joukko>);
+
+  define $r := <>;
+
+  foreach $i in $joukko:
+    $r :=+ <<$i, etsi ($tietue, $i)>>;
+  end;
+
+  define $t := <>;
+
+  foreach $i in $r:
+    if (nimentö in $i.2) then
+      $i.2 :=+ <liitesana, loppu>;
+    end;
+    $t :=+ <<$i.1, $i.2>>;
+  end;
+  return $t;
+end;
+
+
+
+# Etsi arvo joukosta.
+# Jos ei löydy, palauta <>.
+#
+subrule etsi ($tietue, $arvo):
+  define $t := <>;
+
+#define $a := transmit (<"tietue"> + <$tietue>);
+#define $b := transmit (<"arvo  "> + <$arvo>);
+
+  foreach $i in $tietue:
+    if (((value_type($tietue.$i) = list)  and ($arvo in $tietue.$i)) or
+        ((value_type($tietue.$i) /= list) and ($tietue.$i = $arvo))) then
+      $t :=+ <$i>;
+    end;
+  end;
+
+  return $t;
+end;
+
+
+
+###########################################################################
+
+
+# Teonsanat.
+
+
+subrule muistella ($tietue, $vahva_aste, $heikko_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := teonsana;
+  $tietue.perusmuoto := $tietue.alku + $heikko_aste + "ell" + A($tietue);
+  return katsella ($tietue,
+                   $heikko_aste + "el",
+                   $heikko_aste + "ell",
+                   $vahva_aste + "ele",
+                   $vahva_aste + "el",
+                   $vahva_aste + "eli");
+end;
+
+
+subrule muistua ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := teonsana;
+  $tietue.alku :=+ $alun_lisä;
+  $tietue.perusmuoto := $tietue.alku + $vahva_aste + U($tietue) + A($tietue);
+  return punoa ($tietue, $vahva_aste + U($tietue), $heikko_aste + U($tietue));
+end;
+
+
+subrule kirjoitella_1 ($tietue, $lisä):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ $lisä;
+  $tietue.perusmuoto := $tietue.alku + "ell" + A($tietue);
+  return katsella ($tietue, "el", "ell", "tele", "tel", "teli");
+end;
+
+
+subrule kirjoitella ($tietue, $lisä1, $lisä2):
+  if (switch(malli) = voikko) then
+    return kirjoitella_1 ($tietue, $lisä1);
+  else
+    return kirjoitella_1 ($tietue, $lisä1) +
+           kirjoitella_1 ($tietue, $lisä2);
+  end;
+end;
+
+
+
+subrule kirjoittua_1 ($tietue, $lisä):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ $lisä;
+  $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
+  return punoa ($tietue, "t" + U($tietue), U($tietue));
+end;
+
+
+subrule kirjoittua ($tietue, $lisä1, $lisä2):
+  if (switch(malli) = voikko) then
+    return kirjoittua_1 ($tietue, $lisä1);
+  else
+    return kirjoittua_1 ($tietue, $lisä1) +
+           kirjoittua_1 ($tietue, $lisä2);
+  end;
+end;
+
+
+
+subrule kirjoittautua_1 ($tietue, $lisä):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ $lisä + A($tietue) + U($tietue);
+  $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
+  return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
+end;
+
+
+subrule kirjoittautua ($tietue, $lisä1, $lisä2):
+  if (switch(malli) = voikko) then
+    return kirjoittautua_1 ($tietue, $lisä1);
+  else
+    return kirjoittautua_1 ($tietue, $lisä1) +
+           kirjoittautua_1 ($tietue, $lisä2);
+  end;
+end;
+
+
+
+
+subrule kihinä ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ "in";
+  $tietue.luokka := nimisana;
+  $tietue.perusmuoto := $tietue.alku + A($tietue);
+
+  return kulkija ($tietue, A($tietue), O($tietue), "");
+end;
+
+
+subrule kihahtaa ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.alku :=+ A($tietue) + "h";
+  $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
+  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t")
+         + muistella ($tietue, "t", "d");
+end;
+
+
+subrule kihauttaa ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.alku :=+ A($tietue) + U($tietue) + "t";
+  $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t")
+         + muistella ($tietue, "t", "");
+end;
+
+
+subrule loitontaa ($tietue, $heikko_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ $heikko_aste;
+  $tietue.perusmuoto := $tietue.alku + "t"+A($tietue)+A($tietue);
+  return pahentaa ($tietue, "t"+A($tietue), "ne", "n"+A($tietue), "s", "n", "t");
+end;
+
+
+subrule loitontua ($tietue, $heikko_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ $heikko_aste;
+  $tietue.perusmuoto := $tietue.alku + "t" + U($tietue)+A($tietue);
+  return punoa ($tietue, "t"+U($tietue), "n"+U($tietue));
+end;
+
+
+subrule juonto ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := nimisana;
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
+  return valo ($tietue, "t"+O($tietue), "n"+O($tietue));
+end;
+
+
+subrule hohto ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := nimisana;
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
+  return valo ($tietue, "t"+O($tietue), "d"+O($tietue));
+end;
+
+
+subrule heitto ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := nimisana;
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
+  return valo ($tietue, "t"+O($tietue), O($tietue));
+end;
+
+
+subrule ääntiösointu ($tietue):
+  if ($tietue.alku matches ".*" + @yäö + ".*") then
+    return ä;
+  else
+    return a;
+  end;
+end;
+
+
+subrule salailla ($tietue, $vahva_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := teonsana;
+  $tietue.alku :=+ $vahva_aste;
+  $tietue.perusmuoto := $tietue.alku + "ill" + A($tietue);
+  return arvailla ($tietue, "il", "el", "ill", "ell", "ile", "ele", "ili", "eli");
+end;
+
+
+subrule punottaa ($tietue, $heikko_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := teonsana;
+  $tietue.alku :=+ $heikko_aste;
+  $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t")
+         + muistella ($tietue, "t", "")
+         + muistua ($tietue, "", "t", "");
+end;
+
+
+
+subrule pahentua ($tietue, $vahva_aste, $heikko_aste):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := teonsana;
+  $tietue.perusmuoto := $tietue.alku + $vahva_aste + U($tietue) + A($tietue);
+
+  return punoa ($tietue, $vahva_aste+U($tietue), $heikko_aste+U($tietue));
+end;
+
+
+subrule murto ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := nimisana;
+  $tietue.äs := a;
+  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
+  return valo ($tietue, "t"+O($tietue), "r"+O($tietue));
+end;
+
+
+
+# Jaetaan sana tavuihin. Esim.
+# tavutus("valkoinen") => "val-koi-nen".
+#
+# Algoritmi: Facta-tietosanakirja (1970), osa 9, palsta 50.
+#
+# "(1) kaksi peräkkäistä vokaalikirjainta kuuluvat samaan tavuun
+# jos ja vain jos ne ääntyvät pitkänä vokaalina tai diftongina.
+#
+# (2) jos konsonanttia seuraa vokaali, ne kuuluvat samaan tavuun,
+# muutoin konsonantti kuuluu edellisen kirjaimen tavuun (kuitenkin
+# vierasperäisen sanan kaikki alkukonsonantit kuuluvat samaan tavuun)."
+
+# Kahden ääntiön yhdistelmät, jotka voivat olla tavussa.
+#
+define @ä2 := <"aa", "ee", "ii", "oo", "uu", "yy", "ää", "öö">;
+
+define @ääntiö2 :=
+       @ä2 +
+       <"ei", "ai", "äi", "ui", "yi", "oi", "öi", "au", "äy", "ou", "öy",
+        "iu", "iy", "eu", "ey", "uo", "yö", "ie">;
+
+
+subrule tavutus ($sana):
+  define $n := length ($sana);
+  define $i := 1;
+  define $s := "";
+
+#define $ab := transmit ("X " + $sana);
+
+  if ($n less_equal 2) then
+    return $sana;
+  end;
+
+
+  # Jos sanassa on joku merkeistä -':.
+  # tavutetaan sanan molemmat puoliskot erikseen.
+  #
+  if ($sana matches ("[^\\-':\\.]+" : $alku, "[\\-':\\.]", ".*" : $loppu)) then
+#define $a := transmit ("[" + $alku + "] [" + $loppu + "]");
+    return (tavutus ($alku) + "-" + tavutus ($loppu));
+  end;
+
+
+  # Kerakkeet sanan alussa.
+  #
+  repeat
+    while (($i less $n) and
+           (substring($sana,$i) matches @kerake) and
+           (substring($sana,$i+1) matches @kerake));
+    $s :=+ substring($sana,$i);
+#    define $a2 := transmit (<"V " + $s> + <$i> + <$n>);
+    $i:=+ 1;
+  end;
+
+#define $aw := transmit (<"W " + $s> + <$i> + <$n>);
+
+  if ($i = $n) then
+    return $sana;  # Lyhenne, jossa on vain kerakkeita.
+  end;
+
+  repeat
+    if (substring ($sana, $i, $i+1) matches (@ääntiö, @ääntiö)) then
+      #define $a0 := transmit (<"A " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+      if (($i + 2 less_equal $n) and (substring ($sana, $i+1, $i+2) in @ä2)) then
+        # Re-aa-li.
+        #define $a2 := transmit (<"B " + $s> + <$i> + <$n>);
+        $s :=+ substring ($sana, $i) + "-" + substring ($sana, $i+1, $i+2);
+        #define $a3 := transmit (<"C " + $s> + <$i> + <$n>);
+        $i :=+ 3;
+      elseif (substring ($sana, $i, $i+1) in @ääntiö2) then
+        $s :=+ substring ($sana, $i, $i+1);
+        #define $a1 := transmit (<"a " + $s> + <$i> + <$n>);
+        $i :=+ 2;
+      else
+        $s :=+ substring ($sana, $i) + "-" + substring ($sana, $i+1);
+        #define $a1 := transmit (<"b " + $s> + <$i> + <$n>);
+        $i :=+ 2;
+      end;
+    elseif (substring ($sana, $i, $i+1) matches (@kerake, @ääntiö)) then
+      if ((length ($s) greater 0) and
+          (substring ($s, 1R) /= "-") and
+          (not vain_kerakkeita ($s))) then  # Stres-si.
+        $s :=+ "-";
+      end;
+      $s :=+ substring ($sana, $i);
+      #define $a1 := transmit (<"c " + $s> + <$i> + <$n> + <substring ($sana, $i)>);
+      $i :=+ 1;
+    elseif (substring ($sana, $i, $i+1) matches (@kerake, @kerake)) then
+      #define $aa := transmit (<"D " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+      if ($i+1 = $n) then # Sanan lopussa on kaksi keraketta.
+        $s :=+ substring ($sana, $i, $i+1);
+        #define $a1 := transmit (<"1 " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+        $i :=+ 2;
+      elseif (substring ($sana, $i+2) matches @ääntiö) then
+        $s :=+ substring ($sana, $i) + "-";
+        #define $a1 := transmit (<"f " + $s> + <$i> + <$n> + <substring ($sana, $i+2)>);
+        $i :=+ 1;
+      else
+        $s :=+ substring ($sana, $i);
+        #define $a1 := transmit (<"g " + $s> + <$i> + <$n>);
+        $i :=+ 1;
+      end;
+    elseif (substring ($sana, $i) matches @ääntiö) then
+      #define $a1 := transmit (<"H " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+      $s :=+ substring ($sana, $i);
+      #define $a2 := transmit (<"h " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+      $i :=+ 1;
+    end;
+    if ($i = $n) then
+      if ((substring ($s, 1R) matches @ääntiö) and
+          (substring ($sana, $i) matches @ääntiö)) then
+        if (substring ($s, 1R) + substring ($sana, $i) in @ääntiö2) then
+          $s :=+ substring ($sana, $i);
+        else
+          $s :=+ "-" + substring ($sana, $i);
+        end;
+      else
+        $s :=+ substring ($sana, $i);
+      end;
+      #define $a1 := transmit (<"i " + $s> + <$i> + <$n>);
+      $i :=+ 1;
+    end;
+    #define $a1 := transmit (<"ö " + $s> + <$i> + <$n>);
+    if ($i greater_equal $n) then
+      return $s;
+    end;
+  while (yes);
+  end;
+end;
+
+
+# Palautetaan yes, jos sanassa on vain kerakkeita.
+#
+subrule vain_kerakkeita ($sana):
+  foreach $i in length ($sana):
+    if (substring ($sana, $i) matches @ääntiö) then
+      return no;
+    end;
+  end;
+  return yes;
+end;
+
+
+# Lasketaan tavujen määrä sanassa.
+#
+subrule tavujen_määrä ($sana):
+  define $n := 1;
+  define $s := tavutus ($sana);
+
+  foreach $i in length ($s):
+    if (substring ($s, $i) = "-") then
+      $n :=+ 1;
+    end;
+  end;
+  return $n;
 end;
