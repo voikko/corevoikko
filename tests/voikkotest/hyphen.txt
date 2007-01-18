@@ -1,0 +1,12 @@
+[no_ugly_hyphenation=1 ignore_dot=0]
+kissa           kis-sa
+kerrostalo      ker-ros-ta-lo
+elävä           elä-vä
+
+[no_ugly_hyphenation=0 ignore_dot=0]
+elävä           e-lä-vä
+kansaneläke.    kan-sa-ne-lä-ke.
+
+[no_ugly_hyphenation=0 ignore_dot=1]
+kansaneläke.    kan-san-e-lä-ke.
+

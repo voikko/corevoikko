@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright 2006 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for Voikko spellchecker.
 # This program requires Python and python-enchant.
 
@@ -24,13 +24,42 @@ import locale
 import enchant
 import codecs
 import os
+import subprocess
 
 
 # Set defaults
 ENCODING = locale.getpreferredencoding()
+TESTDIR = os.environ["HOME"] + "/svn/voikko/trunk/tests/voikkotest"
+HYPHENCMD = "voikkohyphenate"
 langcode = "fi_FI"
-testfile = os.environ["HOME"] + u"/voikko/svn/trunk/data/voikkotest.txt"
 
+
+spelltest = TESTDIR + "/spell.txt"
+hyphentest = TESTDIR + "/hyphen.txt"
+
+# Returns a list of hyphenated words. Wordlist is a list of words to hyphenate and
+# params is a string containing the parameters for HYPHENCMD
+def _hyphenate_wordlist(wordlist, params):
+	hyphenator = subprocess.Popen(HYPHENCMD + " " + params, shell = True, stdin = subprocess.PIPE,
+	                              stdout = subprocess.PIPE, close_fds = True)
+	for word in wordlist:
+		hyphenator.stdin.write(word.encode('UTF-8') + '\n')
+	(out, err) = hyphenator.communicate()
+	rawlist = out.split('\n')
+	hyphenatedlist = []
+	for hword in rawlist:
+		hyphenatedlist.append(unicode(hword, 'UTF-8'))
+	return hyphenatedlist #FIXME: last item is an extra empty string
+
+
+def _check_hyphens(section, expected_results, results):
+	failcount = 0
+	for i in range(0, len(expected_results)):
+		if expected_results[i] != results[i]:
+			print u'Hyphenation test failed in section "%s":' % section
+			print u'  Expected "%s", got "%s"' % (expected_results[i], results[i])
+			failcount = failcount + 1
+	return failcount
 
 # Initialise the spellchecker
 try:
@@ -41,8 +70,9 @@ except enchant.DictNotFoundError:
 sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
 
 
+# Run the spelling tests
 try:
-	inputfile = codecs.open(testfile, "r", ENCODING)
+	inputfile = codecs.open(spelltest, "r", ENCODING)
 	testcount = 0
 	failcount = 0
 	linecount = 0
@@ -66,14 +96,53 @@ try:
 			word = line
 		testcount = testcount + 1
 		if not (dict.check(word) ^ negative_test):
-			print u'Test failed at line %i, section "%s":\n  %s' \
+			print u'Spelling test failed at line %i, section "%s":\n  %s' \
 			      % (linecount, section, line_orig)
 			failcount = failcount + 1
 	inputfile.close()
 	if failcount == 0:
-		print u"All %i tests were successful." % testcount
+		print u"All %i spelling tests were successful." % testcount
 	else:
-		print u"%i tests out of %i failed." % (failcount, testcount)
+		print u"%i out of %i spelling tests failed." % (failcount, testcount)
 except IOError:
-	sys.stderr.write("Could not read from file " + testfile + "\n")
+	sys.stderr.write("Could not read from file " + spelltest + "\n")
+	sys.exit(1)
+
+# Run the hyphenator tests
+try:
+	inputfile = codecs.open(hyphentest, "r", ENCODING)
+	testcount = 0
+	failcount = 0
+	section = u"(none)"
+	inputwords = []
+	expresults = []
+	while True:
+		line_orig = inputfile.readline()
+		if line_orig == u'': break
+		line = line_orig.strip()
+		commentstart = line.find(u"#")
+		if commentstart != -1: line = line[:commentstart].strip()
+		if line.startswith(u'[') and line.endswith(u']'):
+			if len(inputwords) > 0:
+				results = _hyphenate_wordlist(inputwords, section)
+				failcount = failcount + _check_hyphens(section, expresults, results)
+				inputwords = []
+				expresults = []
+			section = line[1:-1]
+			continue
+		parts = line.split()
+		if len(parts) == 0: continue
+		inputwords.append(parts[0].strip())
+		expresults.append(parts[1].strip())
+		testcount = testcount + 1
+	inputfile.close()
+	if len(inputwords) > 0:
+		results = _hyphenate_wordlist(inputwords, section)
+		failcount = failcount + _check_hyphens(section, expresults, results)
+	if failcount == 0:
+		print u"All %i hyphenation tests were successful." % testcount
+	else:
+		print u"%i out of %i hyphenation tests failed." % (failcount, testcount)
+except IOError:
+	sys.stderr.write("Could not read from file " + hyphentest + "\n")
 	sys.exit(1)
