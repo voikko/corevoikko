@@ -23024,7 +23024,7 @@
 [perusmuoto: "vuosittainen", alku: "vuosittai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vuota", alku: "vuo", luokka: nimisana, jatko: <juhta>, äs: a];
 [perusmuoto: "vuotaa", alku: "vuo", luokka: teonsana, jatko: <vuotaa>, äs: a];
-[perusmuoto: "vuotias", alku: "vuotia", luokka: nimi_laatusana, jatko: <vieras>, äs: a];
+[perusmuoto: "vuotias", alku: "vuotia", luokka: nimi_laatusana, jatko: <vieras>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vuoto", alku: "vuo", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "Vuotso", alku: "Vuotso", luokka: paikannimi, jatko: <valo>, äs: a];
 [perusmuoto: "vuotuinen", alku: "vuotui", luokka: laatusana, jatko: <nainen>, äs: a];

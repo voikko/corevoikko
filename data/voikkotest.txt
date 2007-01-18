@@ -175,6 +175,12 @@ miljoonas
 miljardis
 miljoonaa
 miljardia
+kaksitoistavuotias
+viisivuotiaallekin
+-vuotias
+!setävuotias
+neljäsosassa
+!neljäspöytä
 
 [johtimet]
 märänlaiselleko
