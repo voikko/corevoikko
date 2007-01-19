@@ -40,6 +40,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 
 [perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "bile", alku: "bile", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
 
 # Etuliite + laatusana
