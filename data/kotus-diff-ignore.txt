@@ -182,3 +182,9 @@ interpoloida
 intransitiivi
 irrationalisti
 iteraatio
+jokakeväinen
+jokakuukautinen
+jokasyksyinen
+jokatalvinen
+julkilukea
+jäljempi
