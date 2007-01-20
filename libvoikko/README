@@ -8,8 +8,20 @@ language as a left associative grammar. Therefore languages that have simple or
 even moderately complex morphologies and do not require morphological analysis
 in their hyphenators should be implemented using other tools such as Hunspell.
 
-Documentation for using the library can be found from voikko.h. The library
-needs libmalaga and suitable Malaga project file. The latter should be placed
-in /usr/lib/voikko/voikko-fi_FI.pro (this directory can be chosen during compile
-time). If user has a personal Malaga project file in $HOME/.voikko/voikko-fi_FI.pro
-that will be used instead.
+Documentation for using the library can be found from header file voikko.h.
+
+The library needs libmalaga and a version of Suomi-malaga containing a file named
+voikko-fi_FI.pro. The file should start with the following line:
+
+info: Voikko-Dictionary-Format: 1
+
+The file voikko-fi_FI.pro and other required files of Suomi-malaga should be placed
+under the directory /usr/lib/voikko (this directory can be chosen during compile
+time using option --with-dictionary-path).
+
+Under Linux and Mac OS X user may have a personal version of Suomi-malaga under
+directory $HOME/.voikko which, if found, will be used instead of the system default.
+Under Windows the location of user personal dictionary may be specified using the
+Windows registry. The key SOFTWARE\\Voikko\DictionaryPath may be placed under either
+HKEY_CURRENT_USER or HKEY_LOCAL_MACHINE and it should contain the full path of the
+dictionary directory to use.

@@ -1,3 +1,8 @@
+2007-01-20 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add a word length check to voikko_split_compounds.
+	* Fixes to documentation.
+
 2007-01-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Support explicitly specified string lengths as opposed to only

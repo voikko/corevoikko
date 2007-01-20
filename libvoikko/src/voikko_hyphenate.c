@@ -157,7 +157,8 @@ char ** voikko_split_compounds(const wchar_t * word, size_t len) {
 	analysis_result = first_analysis_result();
 	
 	/** We may have to remove the trailing dot before hyphenation */
-	if (!analysis_result && voikko_options.ignore_dot && word_utf8[utf8_len - 1] == '.') {
+	if (!analysis_result && voikko_options.ignore_dot && len > 1 &&
+	    word_utf8[utf8_len - 1] == '.') {
 		word_utf8[utf8_len - 1] = '\0';
 		utf8_len--;
 		dot_removed = 1;

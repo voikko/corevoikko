@@ -63,7 +63,10 @@
 
 /* Boolean options */
 
-/* Ignore dot at the end of the word (needed for use in some word processors)
+/* Ignore dot at the end of the word (needed for use in some word processors).
+ * If this option is set and input word ends with a dot, spell checking and
+ * hyphenation functions try to analyse the word without the dot if no results
+ * can be obtained for the original form.
  * Default: false */
 #define VOIKKO_OPT_IGNORE_DOT 0
 
