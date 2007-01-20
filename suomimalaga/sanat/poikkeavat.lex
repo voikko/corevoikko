@@ -230,7 +230,6 @@
 [perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a];
 [perusmuoto: "liikkeellepanna", alku: "liikkeellepan", luokka: teonsana, jatko: <mennä>, äs: a];
 [perusmuoto: "Linkomies", alku: "Linkomie", luokka: sukunimi, jatko: <mies>, äs: a];
-[perusmuoto: "lohi", alku: "loh", luokka: nimisana, jatko: <lohi>, äs: a];
 [perusmuoto: "Lovejoy", alku: "Lovejoy", luokka: nimi, jatko: <rosé>, äs: aä];
 [perusmuoto: "lumota", alku: "lumo", luokka: teonsana, jatko: <siivota>, äs: a];
 [perusmuoto: "luoda", alku: "l", luokka: teonsana, jatko: <juoda>, äs: a];
@@ -470,7 +469,6 @@
 [perusmuoto: "ulko", alku: "ulolta", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "uloin", alku: "ulo", luokka: laatusana, jatko: <pahin>, äs: a];
 [perusmuoto: "uros", alku: "uro", luokka: nimisana, jatko: <koiras>, äs: a];
-[perusmuoto: "uuhi", alku: "uuh", luokka: nimisana, jatko: <lohi>, äs: a];
 [perusmuoto: "vaihdokas", alku: "vaihdok", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "vaihtaa", alku: "vaih", luokka: teonsana, jatko: <raataa>, äs: a];
 [perusmuoto: "vaka", alku: "vaka", luokka: laatusana, jatko: <loppu>, äs: a];
