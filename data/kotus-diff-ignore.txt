@@ -177,6 +177,7 @@ infiniitti
 interferoida
 interferometri
 interrail
+interrogatiivi
 interpolaatio
 interpoloida
 intransitiivi
@@ -188,3 +189,5 @@ jokasyksyinen
 jokatalvinen
 julkilukea
 jäljempi
+jäsennin
+kahdeksanlainen
