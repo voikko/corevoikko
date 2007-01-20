@@ -1167,7 +1167,8 @@ end: class
 
 # Kotus 23 tuohi
 class: 23
-match-word: Ci
+sm-class: tuohi
+match-word: [lh]i
 consonant-gradation: -
 group: t
 transform-group: e

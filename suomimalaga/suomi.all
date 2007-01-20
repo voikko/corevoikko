@@ -1068,14 +1068,22 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
 
-  elseif (tuohi in $tietue.jatko or
-          lohi  in $tietue.jatko) then
+  elseif (tuohi in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
                                 yksikkö_tuohi ("e", "i") +
                                 monikko7 ("e", "", "",
                                           [omanto_ien: "", omanto_ten: ""],
                                           [osanto_iA: ""],
                                           [sisätulento_iin: ""], ""));
+    result $i.alku, $i - alku;
+
+  elseif (lohi in $tietue.jatko) then
+    choose $i in taivutuskaava ($tietue,
+                                yksikkö_tuohi ("e", "i") +
+				monikko7 ("e", "", "",
+				          [omanto_ien: ""],
+					  [osanto_iA: ""],
+					  [sisätulento_iin: ""], ""));
     result $i.alku, $i - alku;
 
   elseif (meri in $tietue.jatko) then

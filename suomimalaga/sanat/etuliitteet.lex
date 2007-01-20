@@ -46,6 +46,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 # Etuliite + laatusana
 
 [perusmuoto: "alati", alku: "alati", luokka: etuliite, jatko: @ell, äs: aä];
+[perusmuoto: "yltiö", alku: "yltiö", luokka: etuliite, jatko: @ell, äs: aä];
 [perusmuoto: "öky", alku: "öky", luokka: etuliite, jatko: @ell, äs: aä];
 
 # Etuliite + nimisana/laatusana
@@ -89,6 +90,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "virtuaali", alku: "virtuaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "vähimmäis", alku: "vähimmäis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "yhtä", alku: "yhtä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
