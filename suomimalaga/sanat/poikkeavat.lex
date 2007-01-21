@@ -176,7 +176,7 @@
 [perusmuoto: "keritä", alku: "ker", luokka: teonsana, jatko: <keritä>, äs: ä];
 [perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
 [perusmuoto: "kimmokerroin", alku: "kimmoker", luokka: nimisana, jatko: <kerroin>, äs: a];
-[perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä];
+[perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kevetä", alku: "ke", luokka: teonsana, jatko: <kevetä>, äs: ä];
 [perusmuoto: "kevyt", alku: "kevy", luokka: laatusana, jatko: <airut>, äs: ä];
 [perusmuoto: "kevät", alku: "kevä", luokka: nimisana, jatko: <kevät>, äs: ä, tiedot: <inen>];
