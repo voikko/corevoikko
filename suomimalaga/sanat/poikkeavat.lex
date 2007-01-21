@@ -60,7 +60,6 @@
 [perusmuoto: "censeo", alku: "censeo", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "ceterum", alku: "ceterum", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Châlons-sur-Marne", alku: "Châlons-sur-Marne", luokka: paikannimi, jatko: <parfait>, äs: a, rakenne: "=ipppppp-=ppp-=ipppp"];
-[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <rosé>, äs: ä];
 [perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Damokles", alku: "Damokle", luokka: nimi, jatko: <kirves>, äs: a];
 [perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
@@ -230,7 +229,6 @@
 [perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a];
 [perusmuoto: "liikkeellepanna", alku: "liikkeellepan", luokka: teonsana, jatko: <mennä>, äs: a];
 [perusmuoto: "Linkomies", alku: "Linkomie", luokka: sukunimi, jatko: <mies>, äs: a];
-[perusmuoto: "Lovejoy", alku: "Lovejoy", luokka: nimi, jatko: <rosé>, äs: aä];
 [perusmuoto: "lumota", alku: "lumo", luokka: teonsana, jatko: <siivota>, äs: a];
 [perusmuoto: "luoda", alku: "l", luokka: teonsana, jatko: <juoda>, äs: a];
 [perusmuoto: "luoksepääsemätön", alku: "luoksepääsemä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
@@ -362,7 +360,6 @@
 [perusmuoto: "ritistä", alku: "rit", luokka: teonsana, jatko: <kitistä>, äs: ä];
 [perusmuoto: "rohjeta", alku: "roh", luokka: teonsana, jatko: <tarjeta>, äs: a];
 [perusmuoto: "rosvota", alku: "rosvo", luokka: teonsana, jatko: <siivota>, äs: a];
-[perusmuoto: "rosé", alku: "rosé", luokka: nimisana, jatko: <rosé>, äs: a];
 [perusmuoto: "ruis", alku: "ru", luokka: nimisana, jatko: <ruis>, äs: a];
 [perusmuoto: "ruoka", alku: "ru", luokka: nimisana, jatko: <ruoka>, äs: a];
 [perusmuoto: "ruokoton", alku: "ruoko", luokka: nimi_laatusana, jatko: <johdin_tOn>, äs: a];
@@ -408,7 +405,6 @@
 [perusmuoto: "sivu", alku: "sivuitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sori", alku: "sori", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sortaa", alku: "sor", luokka: teonsana, jatko: <sortaa>, äs: a];
-[perusmuoto: "spray", alku: "spray", luokka: nimisana, jatko: <rosé>, äs: aä];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "stop", alku: "stop", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "sujut", alku: "sujut", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
