@@ -157,8 +157,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   if ($index greater 1) then
     define $edellinen := $vasen.($index - 1);
     ? (($oikea.luokka in $edellinen.jatko) or
-       ((nimisana in $edellinen.jatko) and
-        ($oikea.luokka in @nimisana))      or
+       ((nimisana in $edellinen.jatko))    or
        ($edellinen.luokka = lukusana)      or
        ($oikea.lähtöluokka = teonsana and teonsana in $edellinen.jatko));
 
@@ -174,15 +173,18 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
     end;
   end;
 
+  if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
+    result $res, rules voittoaste;
+  end;
   if (nimisana in $oikea.jatko) then
-    result $res, rules inen_päätteinen_laatusana; # Kieli=poliittinen
+    result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta,
+                       etuliite,
+                       inen_päätteinen_laatusana; # Kieli=poliittinen
   end;
   result $res,
          rules sijapääte, omistusliite,
-	       nimisana, etuliite,
                liitesana,
                nimisanan_johdos,
-               nimisana_laatusanasta, nimisana_teonsanasta,
                tavuviiva,
                loppu;
 end;
@@ -195,7 +197,6 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
   if ($index greater 1) then
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
-    ? $edellinen.perusmuoto matches ".*nen" or $edellinen.perusmuoto = $edellinen.alku; # FIXME: esiehto
   end;
   result $vasen + <[alku: $sana] + $oikea>,
          rules teonsanan_johdos, # FIXME: johdetun muodon on oltava nimisana
@@ -411,6 +412,10 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
          not (ei_ysa in $kantasana.tiedot and ei_ys in $kantasana.tiedot))) then
       result $res, rules inen_johdos_nimisanasta;
     end;
+  end;
+
+  if $vasen.($index - 2).luokka in <nimisana, nimi_laatusana> then
+    result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
   end;
 end;
 
@@ -799,6 +804,13 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
   end;
 end;
 
+combi_rule voittoaste ($vasen, $oikea, $sana):
+  ? $oikea.luokka = voittoaste;
+  ? ääntiösointu_oikein($vasen, $oikea, $sana);
+
+  result $vasen + <[alku: $sana] + $oikea>, rules
+         voitto_yliasteen_sijapääte, liitesana, omistusliite, inen_johdos_nimisanasta, loppu;
+end;
 
 combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <voittoaste, yliaste>;

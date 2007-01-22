@@ -27,6 +27,8 @@ suvialainen
 !puuuineet
 !kahdeksankissa
 !hevosula
+vanhempainyhdistys
+!sisempäinyhdistys
 
 [erisnimet]
 Erkki-eno
