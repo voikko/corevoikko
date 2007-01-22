@@ -192,3 +192,5 @@ jäljempi
 jäsennin
 kahdeksanlainen
 karteesinen
+kolmenlainen
+komissariaatti
