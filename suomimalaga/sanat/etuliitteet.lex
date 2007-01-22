@@ -163,6 +163,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "kautta", alku: "kautta", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kesken", alku: "kesken", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kokonais", alku: "kokonais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kolmois", alku: "kolmois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
