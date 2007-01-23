@@ -57,12 +57,23 @@ def _hyphenate_wordlist(wordlist):
 def _split_words(text):
 	words = []
 	separators = []
+	prev_separator = u''
 	for line in text.splitlines():
 		for word in line.split():
+			while len(word) > 1:
+				if word[0].isalpha() or word[0] == u'-': break
+				prev_separator = prev_separator + word[0]
+				word = word[1:]
+			separators.append(prev_separator)
+			prev_separator = u' '
+			while len(word) > 1:
+				if word[-1].isalpha() or word[-1] == u'-' or \
+				   (word[-1] == '.' and word[-2].isalpha()): break
+				prev_separator = word[-1] + prev_separator
+				word = word[:-1]
 			words.append(word)
-			separators.append(u' ')
-		words.append(u'')
-		separators.append(u'<br />')
+		prev_separator = prev_separator + u'\n'
+	separators.append(prev_separator)
 	return (words, separators)
 
 def hyphenate(req, hyphstring = None):
@@ -70,16 +81,38 @@ def hyphenate(req, hyphstring = None):
 	req.send_http_header()
 	_write(req, u'<html><head><title>Voikko-tavuttaja</title></head>\n')
 	_write(req, u'<body><h1>Voikko-tavuttaja</h1>\n')
+	_write(req, u'''
+ <p>Tämä on <a href="http://voikko.sourceforge.net">Voikko-projektin</a> tarjoama tavutusohjelma,
+ jonka on ensisijainen tarkoitus on
+ toimia helppokäyttöisenä testialustana Voikon tavutustoiminnon kehittämistä varten.
+ Ohjelmaa saa kuitenkin käyttää vapaasti muuhunkin tarpeen mukaan. Seuraavat rajoitteet
+ kannattaa huomioida:</p>
+ <ul>
+  <li>Tavutettavien sanojen pituus on rajattu sataan merkkiin.</li>
+  <li>Jos tekstissä on muutakin kuin tavallisia sanoja (esim. url-osoitteita),
+   myös ne saatetaan tavuttaa. Välimerkkien käsittelyn pitäisi kuitenkin
+   toimia suunnilleen oikein.</li>
+  <li>Monikäsitteisten yhdyssanojen kohdalla ohjelma ei yleensä ryhdy arvailemaan
+   oikean tavurajan paikkaa, vaan antaa ainoastaan selvät jakokohdat. Siispä
+   esimerkiksi "syysilta" tavuttuu "syysil-ta".</li>
+  <li>Vierasperäisten tai vieraskielisten sanojen tavutus tehdään
+   suomen kielen tavutussääntöjen mukaan, ellei Voikko satu tuntemaan kyseiselle sanalle
+   parempaa tavujakoa.</li>
+ </ul>
+ <p>Tavutuksen oikeellisuutta ei yleisesti ottaen taata, mutta havaituista virheistä voi
+   ilmoittaa osoitteeseen <a href="mailto:palaute@hunspell-fi.org">palaute@hunspell-fi.org</a>.</p>
+ ''');
 	
 	if hyphstring != None and len(hyphstring) > 0:
 		(words, separators) = _split_words(_decode_form_value(hyphstring))
 		hwords = _hyphenate_wordlist(words)
 		_write(req, u'<p>Alla antamasi teksti tavutettuna:</p>\n')
-		_write(req, u'<p style="border: 1px solid black">\n')
-		for i in range(0, len(separators)):
+		_write(req, u'<pre style="border: 1px solid black">')
+		_write(req, _escape_html(separators[0]))
+		for i in range(0, len(separators) - 1):
 			_write(req, _escape_html(hwords[i]))
-			_write(req, separators[i])
-		_write(req, u'</p>\n')
+			_write(req, _escape_html(separators[i + 1]))
+		_write(req, u'</pre>\n')
 	
 	_write(req, u'<form method="post" action="hyphenate">\n')
 	_write(req, u'<p>Kirjoita alla olevaan kenttään teksti, jonka haluat tavuttaa, ja\n')
