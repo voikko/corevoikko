@@ -167,6 +167,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "kokonais", alku: "kokonais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kolmois", alku: "kolmois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "kontra", alku: "kontra", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kosio", alku: "kosio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kuolin", alku: "kuolin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kvasi", alku: "kvasi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
