@@ -471,7 +471,7 @@
 [perusmuoto: "vesi", alku: "vesitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "video", alku: "video", luokka: nimisana, jatko: <video>, äs: a];
 [perusmuoto: "viedä", alku: "v", luokka: teonsana, jatko: <viedä>, äs: ä];
-[perusmuoto: "vierin", alku: "vier", luokka: laatusana, jatko: <pahin>, äs: ä];
+[perusmuoto: "vierin", alku: "vier", luokka: laatusana, jatko: <pahin>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "viis", alku: "viis", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];

@@ -42,6 +42,8 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "bile", alku: "bile", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "varo", alku: "varo", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @eln, äs: aä];
 
 # Etuliite + laatusana
 
