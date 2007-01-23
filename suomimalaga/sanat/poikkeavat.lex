@@ -197,7 +197,7 @@
 [perusmuoto: "korte", alku: "kort", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kumota", alku: "kumo", luokka: teonsana, jatko: <siivota>, äs: a];
-[perusmuoto: "kuntoonpanna", alku: "kuntoonpan", luokka: teonsana, jatko: <mennä>, äs: a];
+[perusmuoto: "kuntoonpanna", alku: "kuntoonpan", luokka: teonsana, jatko: <mennä>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kuolla", alku: "kuol", luokka: teonsana, jatko: <tulla>, äs: a];
 [perusmuoto: "kuulla", alku: "kuul", luokka: teonsana, jatko: <tulla>, äs: a];
 [perusmuoto: "Kymi", alku: "Kym", luokka: paikannimi, jatko: <risti, lovi>, äs: ä];
