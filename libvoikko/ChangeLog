@@ -1,3 +1,8 @@
+2007-01-25 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add some more hyphenation points when VOIKKO_OPT_NO_UGLY_HYPHENATION
+	  is not set.
+
 2007-01-20 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add a word length check to voikko_split_compounds.

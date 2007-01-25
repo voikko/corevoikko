@@ -25,10 +25,36 @@
 #include <wctype.h>
 #include <string.h>
 
+
+int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
+                                      size_t new_hyphen_pos, size_t nchars) {
+	int has_vowel;
+	size_t i;
+	
+	if (new_hyphen_pos == 0 && new_hyphen_pos >= nchars - 1) return 0;
+	
+	has_vowel = 0;
+	for (i = new_hyphen_pos - 1; hyphenation_points[i] != '-' && hyphenation_points[i] != '='; i--) {
+		if (i == 0) break;
+		if (wcschr(VOIKKO_VOWELS, word[i])) has_vowel = 1;
+	}
+	if (has_vowel == 0) return 0;
+	
+	has_vowel = 0;
+	for (i = new_hyphen_pos; i < nchars &&
+	     hyphenation_points[i] != '-' && hyphenation_points[i] != '='; i++) {
+		if (wcschr(VOIKKO_VOWELS, word[i])) has_vowel = 1;
+	}
+	if (has_vowel == 0) return 0;
+	
+	return 1;
+}
+
 const wchar_t * SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"oa", L"oe",
                                    L"ua", L"ue", L"ye", L"e\u00e4", L"e\u00f6", L"i\u00e4",
                                    L"i\u00f6", L"y\u00e4", L"\u00e4e", L"\u00f6e" };
 const wchar_t * LONG_CONSONANTS[] = { L"shtsh", L"\u0161t\u0161", L"tsh", L"t\u0161", L"zh" };
+const wchar_t * SPLIT_AFTER[] = { L"ie", L"ai" };
 
 void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars) {
 	wchar_t * word_copy;
@@ -66,6 +92,16 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 			hyphenation_points[i] = '=';
 	}
 	
+	/* Split before and after long vowels */
+	for (i = 0; i < nchars - 1; i++) {
+		if (wcschr(VOIKKO_VOWELS, word_copy[i]) && word_copy[i] == word_copy[i+1]) {
+			if (voikko_is_good_hyphen_position(word_copy, hyphenation_points, i, nchars))
+				hyphenation_points[i] = '-';
+			if (voikko_is_good_hyphen_position(word_copy, hyphenation_points, i+2, nchars))
+				hyphenation_points[i+2] = '-';
+		}
+	}
+	
 	/* V-V */
 	for (i = 0; i < nchars - 1; i++) {
 		if (hyphenation_points[i+1] != ' ') continue;
@@ -100,6 +136,19 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 		for (i = 0; i <= nchars - 2; i++) {
 			if (wcschr(VOIKKO_VOWELS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1]))
 				hyphenation_points[i+1] = ' ';
+		}
+	}
+	else {
+		/* VV-V */
+		for (i = 0; i < nchars - 3; i++) {
+			for (j = 0; j < 2; j++) {
+				if (hyphenation_points[i+1] != '-' &&
+				    wcsncmp(word_copy + i,  SPLIT_AFTER[j], 2) == 0 &&
+				    wcschr(VOIKKO_VOWELS, word_copy[i+2]) &&
+				    voikko_is_good_hyphen_position(word_copy, hyphenation_points, i+2, nchars)) {
+					hyphenation_points[i+2] = '-';
+				}
+			}
 		}
 	}
 	

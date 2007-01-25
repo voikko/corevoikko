@@ -2,10 +2,45 @@
 kissa           kis-sa
 kerrostalo      ker-ros-ta-lo
 elävä           elä-vä
+määyntä         määyn-tä
+maito           mai-to
+peili           pei-li
+noita           noi-ta
+kuiva           kui-va
+lyijy           lyi-jy
+Joensuu         Joen-suu
+kuoria          kuo-ria
+Äetsä           Äet-sä
+kieuttiin       kieut-tiin
+aiottu          aiot-tu
+sprintteri      sprint-te-ri
+traktori        trak-to-ri
+vaieta          vaie-ta
+proteiini       pro-teii-ni
+intiaani        in-tiaa-ni
+jesuiitta       je-suiit-ta
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
 kansaneläke.    kan-sa-ne-lä-ke.
+määyntä         mää-yn-tä
+maito           mai-to
+peili           pei-li
+noita           noi-ta
+kuiva           kui-va
+lyijy           lyi-jy
+Joensuu         Jo-en-suu
+kuoria          kuo-ri-a
+Äetsä           Ä-et-sä
+kieuttiin       kie-ut-tiin
+#pietty          pi-et-ty tai piet-ty
+aiottu          ai-ot-tu
+sprintteri      sprint-te-ri
+traktori        trak-to-ri
+vaieta          vai-e-ta
+proteiini       pro-te-ii-ni
+intiaani        in-ti-aa-ni
+jesuiitta       je-su-iit-ta
 
 [no_ugly_hyphenation=0 ignore_dot=1]
 kansaneläke.    kan-san-e-lä-ke.
