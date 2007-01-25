@@ -179,6 +179,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "maalis", alku: "maalis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "mentaali", alku: "mentaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "meta", alku: "meta", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "militaari", alku: "militaari", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "muinais", alku: "muinais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "multi", alku: "multi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "myöhäis", alku: "myöhäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
