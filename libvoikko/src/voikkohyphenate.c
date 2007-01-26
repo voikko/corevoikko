@@ -88,6 +88,7 @@ int main(int argc, char ** argv) {
 	char * encoding;
 	char * path = 0;
 	int handle;
+	int minhwlen;
 	int i;
 	
 	line = malloc(size); /* FIXME */
@@ -121,6 +122,11 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
 		else if (strcmp(argv[i], "ignore_dot=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+		else if (strncmp(argv[i], "min_hyphenated_word_length=", 27) == 0) {
+			minhwlen = atoi(argv[i] + 27);
+			if (minhwlen < 2) minhwlen = 2;
+			voikko_set_int_option(handle, VOIKKO_MIN_HYPHENATED_WORD_LENGTH, minhwlen);
+		}
 	}
 	
 	while (1) {

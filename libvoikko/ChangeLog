@@ -1,3 +1,7 @@
+2007-01-26 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add new option VOIKKO_MIN_HYPHENATED_WORD_LENGTH.
+
 2007-01-25 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add some more hyphenation points when VOIKKO_OPT_NO_UGLY_HYPHENATION

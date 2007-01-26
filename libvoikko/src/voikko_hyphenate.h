@@ -50,17 +50,20 @@ char * voikko_intersect_hyphenations(char ** hyphenations);
  * @param word word to hyphenate
  * @param hyphenation buffer to write the results to. It is assumed that compound word borders
  *        have already been marked on the buffer.
+ * @param len length of the word to hyphenate
  */
-void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation);
+void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation, size_t len);
 
 /**
  * Creates an array of hyphenation buffers for given word.
  * @param word word to analyse
  * @param len length of the word
+ * @param dot_removed pointer to an integer that will be set to 1 if trailing dot is
+ *        ignored. Otherwise it will be set to 0.
  * @return array of hyphenation buffers that correspond to different ways how word could
  *         be split
  */
-char ** voikko_split_compounds(const wchar_t * word, size_t len);
+char ** voikko_split_compounds(const wchar_t * word, size_t len, int * dot_removed);
 
 /**
  * Removes hyphenation buffers that are considered unnecessary to analyse.

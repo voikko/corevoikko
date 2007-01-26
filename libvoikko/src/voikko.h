@@ -109,6 +109,11 @@
  * Default: 1 */
 #define VOIKKO_INTERSECT_COMPOUND_LEVEL 5
 
+/* The minumum length for words that may be hyphenated. This limit is also enforced on
+ * individual parts of compound words.
+ * Default: 2 */
+#define VOIKKO_MIN_HYPHENATED_WORD_LENGTH 9
+
 /* String options */
 /* The encoding in which multibyte character strings are interpreteted and returned
  * as results.

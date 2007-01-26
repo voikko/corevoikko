@@ -41,7 +41,12 @@ vaieta          vai-e-ta
 proteiini       pro-te-ii-ni
 intiaani        in-ti-aa-ni
 jesuiitta       je-su-iit-ta
+yö              yö
 
 [no_ugly_hyphenation=0 ignore_dot=1]
 kansaneläke.    kan-san-e-lä-ke.
+kuorma-allas.   kuor-ma-al-las.
+
+[no_ugly_hyphenatio=0 ignore_dot=1 min_hyphenated_word_length=6]
+kuorma-allas.   kuor-ma-allas.
 

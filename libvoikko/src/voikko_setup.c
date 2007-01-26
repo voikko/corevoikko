@@ -74,6 +74,9 @@ int voikko_set_int_option(int handle, int option, int value) {
 		case VOIKKO_INTERSECT_COMPOUND_LEVEL:
 			voikko_options.intersect_compound_level = value;
 			return 1;
+		case VOIKKO_MIN_HYPHENATED_WORD_LENGTH:
+			voikko_options.min_hyphenated_word_length = value;
+			return 1;
 	}
 	return 0;
 }
@@ -117,6 +120,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	voikko_options.accept_all_uppercase = 1;
 	voikko_options.no_ugly_hyphenation = 0;
 	voikko_options.intersect_compound_level = 1;
+	voikko_options.min_hyphenated_word_length = 2;
 	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
 	voikko_options.suggestion_type = ST_STD;

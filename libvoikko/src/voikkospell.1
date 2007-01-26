@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2006-12-31"
+.TH VOIKKOSPELL 1 "2007-01-26"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -51,6 +51,11 @@ before the standard locations when searching for dictionary files.
 For checking large amounts of unsorted text you may want to set
 .I n
 to 5 to get better performance.
+.TP
+.BI min_hyphenated_word_length= n
+(voikkohyphenate) Set
+.I n
+as the minimun length for words to hyphenate.
 .TP
 .BI ignore_dot= n
 .TP

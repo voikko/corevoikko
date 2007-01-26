@@ -35,6 +35,7 @@ typedef struct {
 	int accept_all_uppercase;
 	int no_ugly_hyphenation;
 	int intersect_compound_level;
+	int min_hyphenated_word_length;
 	const char * encoding;
 	#ifdef HAVE_ICONV
 	iconv_t iconv_ucs4_utf8;
