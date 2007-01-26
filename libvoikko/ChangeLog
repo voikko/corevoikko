@@ -1,6 +1,7 @@
 2007-01-26 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add new option VOIKKO_MIN_HYPHENATED_WORD_LENGTH.
+	* Remove empty TODO.
 
 2007-01-25 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -23,6 +23,18 @@
 #include <malaga.h>
 
 /**
+ * Checks if the proposed hyphenation point is valid.
+ * @param word word to hyphenate
+ * @param hyphenation_points hyphenation buffer containing the existing hyphenation points
+ * @param new_hyphen_pos position of the proposed new hyphenation point
+ * @param nchars number of characters in the word
+ * @return 1 if the proposed hyphenation point is valid (will not result in syllables without
+ *         any vowels), 0 if it is invalid.
+ */
+int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
+                                   size_t new_hyphen_pos, size_t nchars) {
+
+/**
  * Performs rule-based hyphenation.
  * @param word word to hyphenate
  * @param hyphenation_points hyphenation buffer where the results will be stored

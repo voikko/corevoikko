@@ -19,6 +19,7 @@ vaieta          vaie-ta
 proteiini       pro-teii-ni
 intiaani        in-tiaa-ni
 jesuiitta       je-suiit-ta
+AA              AA
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
@@ -49,4 +50,5 @@ kuorma-allas.   kuor-ma-al-las.
 
 [no_ugly_hyphenatio=0 ignore_dot=1 min_hyphenated_word_length=6]
 kuorma-allas.   kuor-ma-allas.
+talon.          talon.
 

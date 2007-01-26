@@ -27,7 +27,7 @@ import urllib
 import xml.sax.saxutils
 
 # Hyphenator and spell checker commands
-HYPHCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkohyphenate no_ugly_hyphenation=0 ignore_dot=1'
+HYPHCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkohyphenate ignore_dot=1 '
 SPELLCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkospell -s -t ignore_dot=1'
 
 def _write(req, text):
@@ -41,8 +41,8 @@ def _decode_form_value(string):
 def _escape_html(string):
 	return xml.sax.saxutils.escape(string)
 
-def _hyphenate_wordlist(wordlist):
-	hyphenator = subprocess.Popen(HYPHCOMMAND, shell = True, stdin = subprocess.PIPE,
+def _hyphenate_wordlist(wordlist, options):
+	hyphenator = subprocess.Popen(HYPHCOMMAND + options, shell = True, stdin = subprocess.PIPE,
 	                              stdout = subprocess.PIPE, close_fds = True)
 	for word in wordlist:
 		if len(word) > 100: hyphenator.stdin.write(u'YLIPITKÄSANA\n'.encode('UTF-8'))
@@ -110,7 +110,7 @@ def _split_words(text):
 	separators.append(prev_separator)
 	return (words, separators)
 
-def hyphenate(req, hyphstring = None):
+def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
 	_write(req, u'''
@@ -123,7 +123,6 @@ def hyphenate(req, hyphstring = None):
  <h1>Voikko-tavuttaja</h1>
  <p>Tavutuksessa huomioitavaa:</p>
  <ul>
- <li>Käytetty tavutussäännöstö ei ole sama, jota openoffice.org-voikko käyttää.</li>
  <li>Monikäsitteisten yhdyssanojen kohdalla ohjelma ei yleensä ryhdy arvailemaan
   oikean tavurajan paikkaa, vaan antaa ainoastaan selvät jakokohdat. Siispä
   esimerkiksi "syysilta" tavuttuu "syysil-ta".</li>
@@ -135,7 +134,11 @@ def hyphenate(req, hyphstring = None):
 	
 	if hyphstring != None and len(hyphstring) > 0:
 		(words, separators) = _split_words(_decode_form_value(hyphstring))
-		hwords = _hyphenate_wordlist(words)
+		if htype == 'nougly': options = 'no_ugly_hyphenation=1'
+		else: options = 'no_ugly_hyphenation=0'
+		if hmin in ["2", "3", "4", "5", "6", "7", "8"]:
+			options = options + " min_hyphenated_word_length=" + hmin
+		hwords = _hyphenate_wordlist(words, options)
 		_write(req, u'<p>Alla antamasi teksti tavutettuna:</p>\n')
 		_write(req, u'<pre style="border: 1px solid black">')
 		_write(req, _escape_html(separators[0]))
@@ -144,13 +147,30 @@ def hyphenate(req, hyphstring = None):
 			_write(req, _escape_html(separators[i + 1]))
 		_write(req, u'</pre>\n')
 	
-	_write(req, u'<form method="post" action="hyphenate">\n')
-	_write(req, u'<p>Kirjoita alla olevaan kenttään teksti, jonka haluat tavuttaa, ja\n')
-	_write(req, u'paina "Tavuta".</p>\n')
-	_write(req, u'<textarea name="hyphstring" rows="30" cols="90"></textarea>\n')
-	_write(req, u'<p><input type="submit" value="Tavuta" /></p>\n')
-	_write(req, u'</form>\n')
-	_write(req, u'</body></html>\n')
+	_write(req, u'''<form method="post" action="hyphenate">
+	<p>Tavutustyyppi: <select name="htype">
+	 <option selected="selected" value="normal">Normaali tavutus</option>
+	 <option value="nougly">Huomioi yleisimmät typografiset käytänteet</option>
+	 </select>
+	</p>
+	<p>Älä tavuta sanoja tai yhdyssanan osia, jotka ovat lyhyempiä kuin
+	 <select name="hmin">
+	 <option selected="selected" value="2">2</option>
+	 <option value="3">3</option>
+	 <option value="4">4</option>
+	 <option value="5">5</option>
+	 <option value="6">6</option>
+	 <option value="7">7</option>
+	 <option value="8">8</option>
+	 </select>
+	 merkkiä pitkiä.
+	</p>
+	<p>Kirjoita alla olevaan kenttään teksti, jonka haluat tavuttaa, ja paina "Tavuta".</p>
+	<textarea name="hyphstring" rows="30" cols="90"></textarea>
+	<p><input type="submit" value="Tavuta" /></p>
+	</form>
+	</body></html>
+	''')
 
 def spell(req, spellstring = None):
 	req.content_type = "text/html; charset=UTF-8"
@@ -178,7 +198,7 @@ def spell(req, spellstring = None):
 		_write(req, u'<pre style="border: 1px solid black">')
 		_write(req, _escape_html(separators[0]))
 		for i in range(0, len(separators) - 1):
-			if spellresults[i] == None:
+			if spellresults[i] == None or len(words[i]) == 1:
 				_write(req, _escape_html(words[i]))
 			elif len(spellresults[i]) == 0:
 				_write(req, u'<span class="virhe">' \

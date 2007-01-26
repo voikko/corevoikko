@@ -31,7 +31,7 @@ int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenatio
 	int has_vowel;
 	size_t i;
 	
-	if (new_hyphen_pos == 0 && new_hyphen_pos >= nchars - 1) return 0;
+	if (new_hyphen_pos == 0 || new_hyphen_pos + 1 >= nchars) return 0;
 	
 	has_vowel = 0;
 	for (i = new_hyphen_pos - 1; hyphenation_points[i] != '-' && hyphenation_points[i] != '='; i--) {

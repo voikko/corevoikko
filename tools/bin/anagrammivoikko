@@ -54,6 +54,8 @@ def next_permutation(clist):
 def usage():
 	print u'Usage: ' + sys.argv[0] + u' [-l language] word1 [word2 ...]'
 	print u'       ' + sys.argv[0] + u' [-l language] -f file'
+	print u'Options:'
+	print u'     --nocheck   List all permutations'
 
 def words_from_file(filename):
 	try:
@@ -76,10 +78,11 @@ def words_from_file(filename):
 ENCODING = locale.getpreferredencoding()
 langcode = "fi_FI"
 words = []
+nocheck = False
 
 # Get options
 try:
-	(opts, args) = getopt.getopt(sys.argv[1:], "l:f:", ["help"])
+	(opts, args) = getopt.getopt(sys.argv[1:], "l:f:", ["help", "nocheck"])
 except getopt.GetoptError:
 	usage()
 	sys.exit(2)
@@ -89,6 +92,8 @@ for (opt, value) in opts:
 	elif opt == "--help":
 		usage()
 		sys.exit(0)
+	elif opt == "--nocheck":
+		nocheck = True
 for word in args:
 	words.append(unicode(word, ENCODING))
 
@@ -114,7 +119,7 @@ for word in words:
 	while (clist != None):
 		perms = perms + 1
 		wrd = u''.join(clist)
-		if dict.check(wrd):
+		if nocheck or dict.check(wrd):
 			print wrd.encode(ENCODING)
 		clist = next_permutation(clist)
 time_used = time.clock() - starttime
