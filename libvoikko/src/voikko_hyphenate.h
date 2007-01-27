@@ -32,7 +32,7 @@
  *         any vowels), 0 if it is invalid.
  */
 int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
-                                   size_t new_hyphen_pos, size_t nchars) {
+                                   size_t new_hyphen_pos, size_t nchars);
 
 /**
  * Performs rule-based hyphenation.
