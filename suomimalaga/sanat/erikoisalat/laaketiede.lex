@@ -20,11 +20,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-09 03:27:23 EET
+# Time of generation: 2007-01-27 03:27:26 EET
 
 [perusmuoto: "adrenokortikotrooppinen", alku: "adrenokortikotrooppi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adrenokortikotropiini", alku: "adrenokortikotropiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "deleetio", alku: "deleetio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "delirium", alku: "delirium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "dendriitti", alku: "dendriit", luokka: nimisana, jatko: <tatti>, äs: ä];
 [perusmuoto: "Down", alku: "Down", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "eksoni", alku: "ekson", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "erytropoietiini", alku: "erytropoietiin", luokka: nimisana, jatko: <risti>, äs: a];
@@ -32,6 +34,7 @@
 [perusmuoto: "kolostomia", alku: "kolostomi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "kortikosteroidi", alku: "kortikosteroid", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "lasko", alku: "lasko", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "lupus", alku: "lupu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "noradrenaliini", alku: "noradrenaliin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "nukleotidi", alku: "nukleotid", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "perinataali", alku: "perinataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];

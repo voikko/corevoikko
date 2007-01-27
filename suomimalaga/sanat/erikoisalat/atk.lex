@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-09 03:27:22 EET
+# Time of generation: 2007-01-27 03:27:25 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -43,11 +43,17 @@
 [perusmuoto: "cygnus", alku: "cygnu", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "dataplot", alku: "dataplot", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "debian", alku: "debian", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "debuggeri", alku: "debugger", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "demoscene", alku: "demoscene", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <murre>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "demoskene", alku: "demoskene", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <murre>, rakenne: "=pppp=ppppp"];
+[perusmuoto: "dumppi", alku: "dump", luokka: nimisana, jatko: <keppi>, äs: a];
+[perusmuoto: "duplex", alku: "duplex", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "emacs", alku: "emacs", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "enlightenment", alku: "enlightenment", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "enter", alku: "enter", luokka: nimi, jatko: <edam>, äs: ä];
 [perusmuoto: "esound", alku: "esound", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "ethernet", alku: "ethernet", luokka: nimisana, jatko: <kalsium>, äs: ä];
+[perusmuoto: "explorer", alku: "explorer", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fedora", alku: "Fedor", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "fennic", alku: "fennic", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "firefox", alku: "firefox", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -69,6 +75,7 @@
 [perusmuoto: "hunspell", alku: "hunspell", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ppp=ppppp"];
 [perusmuoto: "input", alku: "input", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ispell", alku: "ispell", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=p=ppppp"];
+[perusmuoto: "iteraattori", alku: "iteraattor", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "Java", alku: "Jav", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "kcal", alku: "kcal", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "KOMA-Script", alku: "KOMA-Script", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=iiii-=ippppp"];
@@ -76,6 +83,7 @@
 [perusmuoto: "LaTex", alku: "LaTex", luokka: nimi, jatko: <edam>, äs: a, rakenne: "=ipipp"];
 [perusmuoto: "LifeLines", alku: "LifeLines", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppipppp"];
 [perusmuoto: "lisp", alku: "lisp", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "lynx", alku: "lynx", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "lyx", alku: "lyx", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Mac", alku: "Mac", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "MacOS", alku: "MacOS", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ipp=ii"];
@@ -121,4 +129,5 @@
 [perusmuoto: "xmodmap", alku: "xmodmap", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Yahoo", alku: "Yaho", luokka: nimi, jatko: <tienoo>, äs: a];
 [perusmuoto: "yum", alku: "yum", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "ääkkönen", alku: "ääkkö", luokka: nimisana, jatko: <nainen>, äs: ä];
 

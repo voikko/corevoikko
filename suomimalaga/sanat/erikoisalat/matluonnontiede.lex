@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-18 03:27:24 EET
+# Time of generation: 2007-01-27 03:27:27 EET
 
 [perusmuoto: "aktinium", alku: "aktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "aldehydi", alku: "aldehyd", luokka: nimisana, jatko: <risti>, äs: aä];
@@ -38,6 +38,13 @@
 [perusmuoto: "gluoni", alku: "gluon", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hassium", alku: "hassium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "holmium", alku: "holmium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "kalifornium", alku: "kalifornium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "konvoluutio", alku: "konvoluutio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "lawrencium", alku: "lawrencium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "lutetium", alku: "lutetium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "meitnerium", alku: "meitnerium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "mendelevium", alku: "mendelevium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "nobelium", alku: "nobelium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "souto", alku: "sou", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "spin", alku: "spin", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "ununbium", alku: "ununbium", luokka: nimisana, jatko: <kalsium>, äs: a];

@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-09 03:27:23 EET
+# Time of generation: 2007-01-27 03:27:27 EET
 
 [perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
@@ -33,15 +33,24 @@
 [perusmuoto: "blanko", alku: "blanko", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "Blarnia", alku: "Blarni", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "body", alku: "body", luokka: nimisana, jatko: <valo>, äs: aä];
+[perusmuoto: "capital", alku: "capital", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "center", alku: "center", luokka: nimisana, jatko: <kalsium>, äs: ä];
+[perusmuoto: "classic", alku: "classic", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "clitoris", alku: "clitori", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "codex", alku: "codex", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "divisio", alku: "divisio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "exodus", alku: "exodu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "explorer", alku: "explorer", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "feedback", alku: "feedback", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Galata", alku: "Galat", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "genesis", alku: "genesi", luokka: nimisana, jatko: <vastaus>, äs: ä];
+[perusmuoto: "graduale", alku: "graduale", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "Icosameron", alku: "Icosameron", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ikonion", alku: "Ikonion", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "inferno", alku: "inferno", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "input", alku: "input", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "international", alku: "international", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "juice", alku: "juice", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "Kaarosta", alku: "Kaarost", luokka: paikannimi, jatko: <matala>, äs: a];
 [perusmuoto: "Kehtna", alku: "Kehtn", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Kuusiku", alku: "Kuusiku", luokka: paikannimi, jatko: <valo>, äs: a];
@@ -49,6 +58,8 @@
 [perusmuoto: "Lasdun", alku: "Lasdun", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Like", alku: "Like", luokka: nimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Loosalu", alku: "Loosalu", luokka: sukunimi, jatko: <valo>, äs: a];
+[perusmuoto: "lupus", alku: "lupu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "lynx", alku: "lynx", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Maine", alku: "Maine", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "melodica", alku: "melodic", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Mercedes", alku: "Mercede", luokka: etunimi, jatko: <vastaus>, äs: ä];
@@ -64,6 +75,7 @@
 [perusmuoto: "Pringle", alku: "Pringle", luokka: sukunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "puzzle", alku: "puzzle", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "Pyrex", alku: "Pyrex", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "python", alku: "python", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ragusa", alku: "Ragus", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Rittersdorf", alku: "Rittersdorf", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Roden", alku: "Roden", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -73,5 +85,6 @@
 [perusmuoto: "software", alku: "software", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "tagaali", alku: "tagaal", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "ultima", alku: "ultim", luokka: nimisana, jatko: <karahka>, äs: a];
+[perusmuoto: "vendetta", alku: "vendett", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Viagra", alku: "Viagr", luokka: nimi, jatko: <karahka>, äs: a];
 
