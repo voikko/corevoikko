@@ -386,7 +386,7 @@
 [perusmuoto: "siivota", alku: "siivo", luokka: teonsana, jatko: <siivota>, äs: a];
 [perusmuoto: "Sillitoe", alku: "Sillitoe", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "silmitön", alku: "silmi", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
-[perusmuoto: "sir", alku: "sir", luokka: nimisana, jatko: <loppu>, äs: ä];
+[perusmuoto: "sir", alku: "sir", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "sisin", alku: "sis", luokka: nimi_laatusana, jatko: <pahin>, äs: ä];
 [perusmuoto: "siveetön", alku: "sivee", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "sivu", alku: "sivuitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
