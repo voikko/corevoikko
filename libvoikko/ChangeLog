@@ -1,3 +1,7 @@
+2007-01-28 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix character set conversion on Windows
+
 2007-01-27 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix typo in voikko_hyphenate.h

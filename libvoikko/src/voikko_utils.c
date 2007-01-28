@@ -92,7 +92,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	if (ucs4_buffer == 0) return 0;
 	// Illegal characters are ignored, because MB_ERR_INVALID_CHARS is not supported
 	// before WIN2K_SP4.
-	int result = MultiByteToWideChar(cp, 0, word, len, ucs4_buffer, buflen - 1);
+	int result = MultiByteToWideChar(cp, 0, word, len ? len : -1, ucs4_buffer, buflen - 1);
 	if (result == 0) {
 		free(ucs4_buffer);
 		return 0;
@@ -163,7 +163,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
   	size_t buflen = LIBVOIKKO_MAX_WORD_CHARS * 6 + 1;
   	char * utf8_buffer = malloc(buflen);
   	if (utf8_buffer == 0) return 0;
-  	int result = WideCharToMultiByte(cp, 0, word, -1, utf8_buffer, buflen - 1, 0, 0);
+  	int result = WideCharToMultiByte(cp, 0, word, len ? len : -1, utf8_buffer, buflen - 1, 0, 0);
   	if (result == 0) {
 		free(utf8_buffer);
 		return 0;
