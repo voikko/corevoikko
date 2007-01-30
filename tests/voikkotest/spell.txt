@@ -29,6 +29,8 @@ suvialainen
 !hevosula
 vanhempainyhdistys
 !sisempäinyhdistys
+!vanhempaatalo
+vanhempaintalo
 
 [erisnimet]
 Erkki-eno
@@ -113,6 +115,10 @@ luovuusnäkökulma
 !sohivakita
 !haksitova
 !hevonensitoja
+!vanhempaakasvatus
+!nopeimpainkasvatus
+vanhempainkasvatus
+vanhempainselvyys
 
 [etuliitteet]
 yleisopetus

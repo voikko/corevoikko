@@ -207,7 +207,9 @@ end;
 combi_rule nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
   define $edellinen := $vasen.($index - 1);
-  ? $edellinen.perusmuoto matches ".*nen" or $edellinen.perusmuoto = $edellinen.alku;
+  # FIXME: esiehto
+  ? $edellinen.perusmuoto = nil or
+    $edellinen.perusmuoto matches ".*nen" or $edellinen.perusmuoto = $edellinen.alku;
   result $vasen + <[alku: $sana] + $oikea>,
          rules laatusanan_johdos; # FIXME: johdetun muodon on oltava nimisana
 end;
@@ -414,8 +416,9 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
     end;
   end;
 
-  if $vasen.($index - 2).luokka in <nimisana, nimi_laatusana> then
-    result $res, rules nimisana;
+  if $vasen.($index - 2).luokka in <nimisana, nimi_laatusana> and
+     sijamuoto_sijasta($oikea.sija) = omanto then
+    result $res, rules nimisana, nimisana_teonsanasta, nimisana_laatusanasta;
   end;
 end;
 
