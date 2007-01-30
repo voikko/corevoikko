@@ -230,6 +230,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "vapaa", alku: "vapaa", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "vapaaehtois", alku: "vapaaehtois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "vastaan", alku: "vastaan", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "vastakkais", alku: "vastakkais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "vierekkäis", alku: "vierekkäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "viher", alku: "viher", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "viitois", alku: "viitois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];

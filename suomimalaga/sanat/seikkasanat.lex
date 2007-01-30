@@ -127,8 +127,8 @@
 [perusmuoto: "hissun", alku: "hissun", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "hissunkissun", alku: "hissunkissun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hitto", alku: "hitosti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "hollille", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hollilla", alku: "hollilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hollille", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huiskin", alku: "huiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujan", alku: "hujan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -314,6 +314,7 @@
 [perusmuoto: "lähes", alku: "lähes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lähettyvillä", alku: "lähettyvi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "lähi", alku: "lähi", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "lähtöisin", alku: "lähtöisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läpikotaisin", alku: "läpikotaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lävitse", alku: "lävitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
@@ -699,13 +700,13 @@
 [perusmuoto: "väsyksissä", alku: "väsyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "väärin", alku: "väärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhdessä", alku: "yhdessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "yht'äkkiä", alku: "yht'äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtaikaa", alku: "yhtaikaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "yhteensä", alku: "yhteensä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtenä", alku: "yhtenä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtenään", alku: "yhtenään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtikäs", alku: "yhtikäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtä", alku: "yhtä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "yht'äkkiä", alku: "yht'äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhtäkkiä", alku: "yhtäkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
 [perusmuoto: "yhtäällä", alku: "yhtää", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "yhtään", alku: "yhtään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
