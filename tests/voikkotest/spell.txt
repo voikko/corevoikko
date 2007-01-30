@@ -88,6 +88,8 @@ kattavampi
 kattavin
 luultavampi
 !luultavempi
+paremmuus
+kauneimmuudessa
 
 [yhdysviivat]
 puna-

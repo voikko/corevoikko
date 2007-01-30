@@ -832,6 +832,10 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
   if ($oikea.luokka = voittoaste) then
     result $res, rules inen_johdos_nimisanasta;
   end;
+
+  if johdin_UUs in $oikea.jatko then
+    result $res, rules laatusanan_johdos;
+  end;
 end;
 
 
