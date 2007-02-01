@@ -171,6 +171,8 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
              rules nimisanan_johdos, nimisana, etuliite, nimisana_laatusanasta, nimisana_teonsanasta, tavuviiva;
       stop;
     end;
+  else
+    ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
   end;
 
   if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
@@ -270,6 +272,8 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   if ($index greater 1) then
     ? (laatusana in $vasen.($index - 1).jatko);
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+  else
+    ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
   end;
 
   result $vasen + <[alku: $sana] + $oikea>,
@@ -1276,12 +1280,6 @@ end_rule loppu ($tietue):
   while ($k greater 1);
   end;
 
-
-  # Jotkut sanat voivat olla vain yhdyssanojen jälkiosana.
-  #
-  if ((($tietue.1).tiedot /= nil) and (ysj in ($tietue.1).tiedot)) then
-    stop;
-  end;
 
 
   # Isä-sanan monikon muodot, paitsi nimentö, eivät voi olla yhdyssanan

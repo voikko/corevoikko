@@ -51,6 +51,20 @@ def next_permutation(clist):
 		i = i - 1
 	return None
 
+# Calculates the number of distinct permutations for given character list
+def count_permutations(clist):
+	# Calculate the number of all permutations
+	n = 1
+	for i in range(1, len(clist) + 1): n = i * n
+	
+	# Remove the duplicates
+	chars = list(set(clist))
+	for c in chars:
+		count = len(filter(lambda x: x == c, clist))
+		for i in range(1, count + 1): n = n / i
+	
+	return n
+
 def usage():
 	print u'Usage: ' + sys.argv[0] + u' [-l language] word1 [word2 ...]'
 	print u'       ' + sys.argv[0] + u' [-l language] -f file'
@@ -109,6 +123,11 @@ except enchant.DictNotFoundError:
 	print u"No dictionary was found for language " + langcode
 	sys.exit(1)
 sys.stderr.write("Using language " + dict.tag + " with Enchant " + dict.provider.desc + "\n")
+
+# Calculate the number of permutations to check
+nperms = 0
+for word in words: nperms = nperms + count_permutations(list(word))
+sys.stderr.write("Number of permutations to check: %i\n" % nperms)
 
 # List all anagrams
 starttime = time.clock()

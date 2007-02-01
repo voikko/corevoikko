@@ -32,6 +32,16 @@ vanhempainyhdistys
 !vanhempaatalo
 vanhempaintalo
 
+[vain yhdyssanan jälkiosana]
+yltiökutrinen
+peruskulmio
+-kutrinen
+-kulmio
+suorakutrinen
+koirakulmio
+!kulmio
+!kutrinen
+
 [erisnimet]
 Erkki-eno
 Ruotsin-matka
