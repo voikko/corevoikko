@@ -130,6 +130,7 @@
 
 
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
+[perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];
 [perusmuoto: "luokkalainen", alku: "luokkalai", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <nainen>, äs: a];
 [perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
 [perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <vieras>, äs: a];

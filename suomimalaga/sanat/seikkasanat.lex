@@ -142,6 +142,7 @@
 [perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hämillä", alku: "hämillä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "häthätää", alku: "häthätää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "höplästä", alku: "höplästä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "iankaiken", alku: "iankaiken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "idempi", alku: "idemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ihan", alku: "ihan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -167,6 +168,8 @@
 [perusmuoto: "jaksain", alku: "jaksain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jalkaisin", alku: "jalkaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jalkeilla", alku: "jalke", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: a];
+[perusmuoto: "jamaan", alku: "jamaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Huonoon jamaan
+[perusmuoto: "jamassa", alku: "jamassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Huonossa jamassa
 [perusmuoto: "jo", alku: "jo", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jokatapauksessa", alku: "jokatapauksessa", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jokseenkin", alku: "jokseenkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

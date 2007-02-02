@@ -106,7 +106,6 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kahtia", alku: "kahtia", luokka: etuliite, jatko: @elt, äs: aä];
-[perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kolmin", alku: "kolmin", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @elt, äs: aä];
@@ -121,6 +120,10 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "väkisin", alku: "väkisin", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "väärin", alku: "väärin", luokka: etuliite, jatko: @elt, äs: aä];
 
+
+# Etuliite + teonsana/nimisana
+
+[perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt + @eln, äs: aä]; # -kamppailla, -kamppailu, -peli
 
 # Etuliite + nimisana/laatusana/teonsana
 
