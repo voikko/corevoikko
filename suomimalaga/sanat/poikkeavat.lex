@@ -72,6 +72,7 @@
 [perusmuoto: "eloonjäänyt", alku: "eloonjään", luokka: nimisana, jatko: <kuollut>, äs: ä];
 [perusmuoto: "enin", alku: "en", luokka: nimi_laatusana, jatko: <pahin>, äs: ä];
 [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
+[perusmuoto: "ennenkuulumaton", alku: "ennenkuuluma", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
 [perusmuoto: "ennennäkemätön", alku: "ennennäkemä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "erata", alku: "er", luokka: teonsana, jatko: <erata>, äs: a]; # Mitä tämä tarkoittaa
 [perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];

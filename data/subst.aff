@@ -1792,6 +1792,49 @@ end: rules
 end: class
 
 
+# Kotus 47 kuollut
+class: 47
+sm-class: kuollut
+match-word: CUt
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	ut	ee	s	ps=r
+genetiivi		ut	een	s
+partitiivi	0	ta	w
+translatiivi	ut	eeksi	s	ps=f
+translatiivi	ut	eekse	s	ps=r
+essiivi		ut	eena	s
+inessiivi		ut	eessa	s
+elatiivi		ut	eesta	s
+illatiivi		ut	eeseen	s
+adessiivi		ut	eella	s
+ablatiivi		ut	eelta	s
+allatiivi		ut	eelle	s
+abessiivi		ut	eetta	s	ps=f
+nominatiivi_mon	ut	eet	s	ps=f
+genetiivi_mon	ut	eiden	s
+genetiivi_mon	ut	eitten	s
+partitiivi_mon	ut	eita	s
+translatiivi_mon	ut	eiksi	s	ps=f
+translatiivi_mon	ut	eikse	s	ps=r
+essiivi_mon	ut	eina	s
+inessiivi_mon	ut	eissa	s
+elatiivi_mon	ut	eista	s
+illatiivi_mon	ut	eisiin	s
+illatiivi_mon	ut	eihin	s	prio=2
+adessiivi_mon	ut	eilla	s
+ablatiivi_mon	ut	eilta	s
+allatiivi_mon	ut	eille	s
+abessiivi_mon	ut	eitta	s	ps=f
+komitatiivi_mon	ut	eine	s	ps=r
+instruktiivi_mon	ut	ein	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 48 aate
 class: 48
 sm-class: hame

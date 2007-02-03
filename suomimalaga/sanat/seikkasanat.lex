@@ -51,6 +51,7 @@
 [perusmuoto: "avoinna", alku: "avoinna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "edemmäs", alku: "edemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edes", alku: "edes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "edespäin", alku: "edespäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "editse", alku: "editse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "eespäin", alku: "eespäin", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "eestaas", alku: "eestaas", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
