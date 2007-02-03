@@ -277,7 +277,7 @@
 [perusmuoto: "ojentaa", alku: "ojen", luokka: teonsana, jatko: <rakentaa>, äs: a];
 [perusmuoto: "olut", alku: "olu", luokka: nimisana, jatko: <airut>, äs: a];
 [perusmuoto: "ommel", alku: "om", luokka: nimisana, jatko: <ommel>, äs: a];
-[perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a];
+[perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
 [perusmuoto: "ori", alku: "ori", luokka: nimisana, jatko: <ori>, äs: a];
 [perusmuoto: "orja", alku: "orja", luokka: nimisana, jatko: <johdin_tAr>, äs: a];
 [perusmuoto: "orsi", alku: "or", luokka: nimisana, jatko: <hirsi>, äs: a];

@@ -678,6 +678,13 @@
   <correct>suin päin</correct>
 </replacement>
 <replacement>
+  <incorrect>suomen=kieli</incorrect>
+  <correct>suomen kieli</correct>
+  <!-- Muitakin sijamuotoja ja kieliä tarvitaan. Täytyy vain olla tarkkana,
+  että ne eivät haittaa adjektiivien oikeinkirjoitusta ("suomenkielinen : suomenkielistä").
+  "Toinen virallisista Suomen kielistä on ruotsi." "Suomenkielistä tekstiä lukiessa - -" -->
+</replacement>
+<replacement>
   <incorrect>suoraa=päätä</incorrect>
   <correct>suoraa päätä</correct>
 </replacement>
