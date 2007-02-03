@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-03 03:26:01 EET
+# Time of generation: 2007-02-03 18:45:14 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -1966,6 +1966,7 @@
 [perusmuoto: "edeltää", alku: "edel", luokka: teonsana, jatko: <sukeltaa>, äs: ä];
 [perusmuoto: "edempi", alku: "ede", luokka: laatusana, jatko: <suurempi>, äs: ä];
 [perusmuoto: "Eden", alku: "Eden", luokka: sukunimi, jatko: <edam>, äs: ä];
+[perusmuoto: "edesmennyt", alku: "edesmenn", luokka: laatusana, jatko: <kuollut>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "edesottamus", alku: "edesottamu", luokka: nimisana, jatko: <vastaus>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "edetä", alku: "e", luokka: teonsana, jatko: <edetä>, äs: ä];
 [perusmuoto: "Edgar", alku: "Edgar", luokka: etunimi, jatko: <edam>, äs: a];
@@ -2183,6 +2184,7 @@
 [perusmuoto: "eloisa", alku: "elois", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "Elonen", alku: "Elo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "eloonjääminen", alku: "eloonjäämi", luokka: nimisana, jatko: <nainen>, äs: ä];
+[perusmuoto: "eloonjäänyt", alku: "eloonjään", luokka: nimisana, jatko: <kuollut>, äs: ä, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "Eloranta", alku: "Eloran", luokka: sukunimi, jatko: <kanta>, äs: a];
 [perusmuoto: "elostella", alku: "elostel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "Elpiö", alku: "Elpiö", luokka: etunimi, jatko: <autio>, äs: ä];
@@ -2228,6 +2230,7 @@
 [perusmuoto: "emi", alku: "em", luokka: nimisana, jatko: <risti>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "emigrantti", alku: "emigrant", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "emigroida", alku: "emigro", luokka: teonsana, jatko: <kanavoida>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "emigroitua", alku: "emigroi", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "emiiri", alku: "emiir", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "Emil", alku: "Emil", luokka: etunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Emilia", alku: "Emili", luokka: etunimi, jatko: <apila>, äs: a];
@@ -2424,6 +2427,7 @@
 [perusmuoto: "esikoinen", alku: "esikoi", luokka: nimisana, jatko: <nainen>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "esikoisuus", alku: "esikoisuu", luokka: nimisana, jatko: <kalleus>, äs: a];
 [perusmuoto: "esillekutsua", alku: "esillekutsu", luokka: teonsana, jatko: <punoa>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "esilläollut", alku: "esilläoll", luokka: laatusana, jatko: <kuollut>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "esimerkki", alku: "esimerk", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "esine", alku: "esine", luokka: nimisana, jatko: <hame>, äs: ä];
 [perusmuoto: "esineellistää", alku: "esineellist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
@@ -2868,7 +2872,7 @@
 [perusmuoto: "fundamentalisti", alku: "fundamentalist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "fundeerata", alku: "fundeer", luokka: teonsana, jatko: <saneerata>, äs: a, tiedot: <murre>];
 [perusmuoto: "funkki", alku: "funk", luokka: nimisana, jatko: <takki>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "funkkis", alku: "funkki", luokka: nimisana, jatko: <vastaus>, äs: a, tiedot: <murre>];
+[perusmuoto: "funkkis", alku: "funkki", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "funktio", alku: "funktio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "funktionaali", alku: "funktionaal", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "funktionalismi", alku: "funktionalism", luokka: nimisana, jatko: <risti>, äs: a];
@@ -3789,6 +3793,7 @@
 [perusmuoto: "hengetär", alku: "henget", luokka: nimisana, jatko: <tytär>, äs: ä];
 [perusmuoto: "hengittää", alku: "hengit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hengähtää", alku: "hengä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
+[perusmuoto: "hengästys", alku: "hengästy", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "hengästyttää", alku: "hengästyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "hengästyä", alku: "hengästy", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "henkari", alku: "henkar", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -4172,6 +4177,7 @@
 [perusmuoto: "hoksotin", alku: "hoksot", luokka: nimisana, jatko: <suodatin>, äs: a, tiedot: <ei_yks>];
 [perusmuoto: "Holger", alku: "Holger", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "holhokki", alku: "holhok", luokka: nimisana, jatko: <kajakki>, äs: a];
+[perusmuoto: "holhooja", alku: "holhooj", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "holhotti", alku: "holhot", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "holismi", alku: "holism", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "holistinen", alku: "holisti", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv>];
@@ -4736,6 +4742,7 @@
 [perusmuoto: "hämärtää", alku: "hämär", luokka: teonsana, jatko: <musertaa>, äs: ä];
 [perusmuoto: "hämärä", alku: "hämär", luokka: nimi_laatusana, jatko: <asema>, äs: ä];
 [perusmuoto: "hämätä", alku: "häm", luokka: teonsana, jatko: <salata>, äs: ä];
+[perusmuoto: "hämäännys", alku: "hämäänny", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "hämääntyä", alku: "hämään", luokka: teonsana, jatko: <jakaantua>, äs: ä];
 [perusmuoto: "hänenkaltainen", alku: "hänenkaltai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Hänninen", alku: "Hänni", luokka: sukunimi, jatko: <nainen>, äs: ä];
@@ -5389,6 +5396,7 @@
 [perusmuoto: "Ithaka", alku: "Ithak", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "itikka", alku: "itik", luokka: nimisana, jatko: <solakka>, äs: a];
 [perusmuoto: "itiö", alku: "itiö", luokka: nimisana, jatko: <autio>, äs: ä];
+[perusmuoto: "itkettynyt", alku: "itkettyn", luokka: laatusana, jatko: <kuollut>, äs: ä];
 [perusmuoto: "itkettyä", alku: "itket", luokka: teonsana, jatko: <asettua>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "itkettää", alku: "itket", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "itkeä", alku: "itk", luokka: teonsana, jatko: <laskea>, äs: ä];
@@ -6022,6 +6030,7 @@
 [perusmuoto: "jäljitin", alku: "jäljit", luokka: nimisana, jatko: <suodatin>, äs: ä];
 [perusmuoto: "jäljittää", alku: "jäljit", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "jäljitys", alku: "jäljity", luokka: nimisana, jatko: <vastaus>, äs: ä];
+[perusmuoto: "jälkeenjäänyt", alku: "jälkeenjään", luokka: laatusana, jatko: <kuollut>, äs: ä, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "jälkeinen", alku: "jälkei", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "jälkeläinen", alku: "jälkeläi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "jälkimmäinen", alku: "jälkimmäi", luokka: laatusana, jatko: <nainen>, äs: ä];
@@ -12767,6 +12776,7 @@
 [perusmuoto: "neito", alku: "nei", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "neitonen", alku: "neito", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "neitseellinen", alku: "neitseelli", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "neitsyt", alku: "neits", luokka: nimisana, jatko: <kuollut>, äs: ä];
 [perusmuoto: "neitsyys", alku: "neitsyy", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "nekku", alku: "nek", luokka: nimisana, jatko: <alku>, äs: a];
 [perusmuoto: "nekrologi", alku: "nekrolog", luokka: nimisana, jatko: <risti>, äs: a];
@@ -16861,6 +16871,7 @@
 [perusmuoto: "rikkonainen", alku: "rikkonai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Rikkonen", alku: "Rikko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "rikkoontua", alku: "rikkoon", luokka: teonsana, jatko: <jakaantua>, äs: a];
+[perusmuoto: "haaksirikkoutua", alku: "haaksirikkou", luokka: teonsana, jatko: <kaatua>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "rikkoutua", alku: "rikkou", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "rikku", alku: "rik", luokka: nimisana, jatko: <alku>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "rikkuri", alku: "rikkur", luokka: nimisana, jatko: <paperi>, äs: a];
@@ -20130,6 +20141,7 @@
 [perusmuoto: "tauhka", alku: "tauhk", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "tauko", alku: "tau", luokka: nimisana, jatko: <verkko>, äs: a];
 [perusmuoto: "taula", alku: "taul", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "fläppitaulu", alku: "fläppitaulu", luokka: nimisana, jatko: <valo>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "taulu", alku: "taulu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "taulukko", alku: "tauluk", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "taulukoida", alku: "tauluko", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -23438,6 +23450,7 @@
 [perusmuoto: "ylösalainen", alku: "ylösalai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "ylösnouseminen", alku: "ylösnousemi", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "ylösnousemus", alku: "ylösnousemu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "ylösnoussut", alku: "ylösnouss", luokka: nimisana, jatko: <kuollut>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "ymmyrkäinen", alku: "ymmyrkäi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ymmärrys", alku: "ymmärry", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "ymmärteinen", alku: "ymmärtei", luokka: laatusana, jatko: <nainen>, äs: ä, tiedot: <ysj>];
