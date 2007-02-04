@@ -482,6 +482,7 @@
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta
 [perusmuoto: "vuolla", alku: "vuol", luokka: teonsana, jatko: <nuolla>, äs: a];
 [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
+[perusmuoto: "vuosituhat", alku: "vuosituha", luokka: nimisana, jatko: <tuhat>, äs: a];
 [perusmuoto: "vääjäämätön", alku: "vääjäämä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "vääntää", alku: "vään", luokka: teonsana, jatko: <rakentaa>, äs: ä];
 [perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];

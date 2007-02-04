@@ -55,7 +55,7 @@ define @luku_sijasta_muunnostaulu :=
  sisätulento_Vn: yksikkö,
  sisätulento_VVn: yksikkö,
  sisätulento_hVn: yksikkö,
- sisätulento_iin: yksikkö,
+ sisätulento_iin: monikko,
  sisätulento_ihin: monikko,
  sisätulento_seen: yksikkö,
  sisätulento_isiin: monikko,

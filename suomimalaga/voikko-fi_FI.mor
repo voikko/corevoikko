@@ -496,8 +496,11 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
   if ($oikea.alaluokka = yksiyhdeksän) then
     if (nimentö in $oikea.jatko) then
       result $res, rules lukusana_toista, lukusana_sisäkerroin,
-                   omistusliite, liitesana, lukusanan_jälkiliite,
+                   liitesana, lukusanan_jälkiliite,
                    nimisana, inen_päätteinen_laatusana, loppu;
+    end;
+    if (omistusliite in $oikea.jatko) then
+      result $res, rules omistusliite;
     end;
   elseif ($oikea.alaluokka in <kymmenen, sata>) then
     if (nimentö in $oikea.jatko) then
@@ -826,7 +829,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
 
   ? $edellinen.luokka in @laatusana + @johdin_nUt + <johdin_vAinen, johdin_ttAvA, johdin_inen,
                          johdin_tOn, johdin_llinen, johdin_mAinen, johdin_vA,
-                         johdin_tAvA>;
+                         johdin_tAvA, johdin_ttU, johdin_dU>;
 
   ? (voittoaste in $edellinen.jatko) or (yliaste in $edellinen.jatko);
   ? $oikea.luokka in $edellinen.jatko;

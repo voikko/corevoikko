@@ -71,6 +71,7 @@ valmiina
 kauniina
 kauneimpina
 kaunein
+hautajaisiin
 
 [inen-johdokset]
 isoponttoninen
@@ -102,6 +103,8 @@ luultavampi
 !luultavempi
 paremmuus
 kauneimmuudessa
+tunnetumpi
+myydyimmissä
 
 [yhdysviivat]
 puna-
@@ -201,6 +204,7 @@ viisivuotiaallekin
 !setävuotias
 neljäsosassa
 !neljäspöytä
+toisensa
 
 [johtimet]
 märänlaiselleko

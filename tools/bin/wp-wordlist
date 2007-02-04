@@ -1,0 +1,100 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# List words from a Wikipedia dump
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# Usage:
+# bzcat fiwiki-20070128-pages-articles.xml.bz2 | wp-wordlist | gzip > full-wordlist.txt.gz
+# zcat full-wordlist.txt.gz | LC_ALL=C sort | gzip > full-wordlist-sorted.txt.gz
+# zcat full-wordlist-sorted.txt.gz | uniq -c | gzip > full-wordlist-uniq.txt.gz
+# zcat full-wordlist-uniq.txt.gz | sort -n | gzip > full-wordlist-uniq-sorted.txt.gz
+# zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 > 1000) print $2}' | gzip > words-over1000.txt.gz
+# zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 <= 1000 && $1 > 500) print $2}' | gzip > words-501-1000.txt.gz
+# zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 <= 500 && $1 > 100) print $2}' | gzip > words-101-500.txt.gz
+# zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 <= 100) print $2}' | gzip > words-under101.txt.gz
+
+import sys
+import locale
+import codecs
+import xml.parsers.expat
+import os
+
+current_element = None
+
+def _split_words(text):
+	words = []
+	separators = []
+	prev_separator = u''
+	linelength = 0
+	for line in text.splitlines():
+		for word in line.split():
+			while len(word) > 1:
+				if word[0].isalpha() or word[0] == u'-': break
+				prev_separator = prev_separator + word[0]
+				word = word[1:]
+			separators.append(prev_separator)
+			linelength = linelength + len(prev_separator)
+			prev_separator = u' '
+			while len(word) > 1:
+				if word[-1].isalpha() or word[-1] == u'-' or \
+				   (word[-1] == '.' and word[-2].isalpha()): break
+				prev_separator = word[-1] + prev_separator
+				word = word[:-1]
+			words.append(word)
+			linelength = linelength + len(word)
+			if linelength > 100:
+				linelength = 0
+				prev_separator = prev_separator + u'\n'
+		prev_separator = prev_separator + u'\n'
+		linelength = 0
+	separators.append(prev_separator)
+	return (words, separators)
+
+def start_element(name, attrs):
+	global current_element
+	current_element = name
+
+def end_element(name):
+	global current_element
+	current_element = None
+
+def char_data(data):
+	global current_element
+	if current_element == 'text':
+		(words, separators) = _split_words(data)
+		for word in words:
+			hasalpha = False
+			hasforbidden = False
+			for c in word:
+				if c.isalpha(): hasalpha = True
+				elif c in ['|','[',']','/','{','}']: hasforbidden = True
+			if hasalpha and not hasforbidden: print word.encode('UTF-8')
+
+
+
+# Start of main program
+
+# Initialise the XML parser
+parser = xml.parsers.expat.ParserCreate()
+parser.StartElementHandler = start_element
+parser.EndElementHandler = end_element
+parser.CharacterDataHandler = char_data
+
+# Parse the Kotus word list
+parser.ParseFile(sys.stdin)
+
