@@ -370,7 +370,8 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "mikä", alku: "mikä",    luokka: asemosana, sija: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "minkä",   luokka: asemosana, sija: omanto_nkA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitä",    luokka: asemosana, sija: osanto_tA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mitä",    luokka: asemosana, sija: osanto_tA, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mitäs",   luokka: asemosana, sija: osanto_tA, jatko: <loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "minä",    luokka: asemosana, sija: olento_nA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "miksi",   luokka: asemosana, sija: tulento_ksi, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "miksikä", luokka: asemosana, sija: tulento_ksi, jatko: <liitesana, liitesana_s, loppu>, äs: ä];

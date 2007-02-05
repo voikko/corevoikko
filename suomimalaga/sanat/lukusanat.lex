@@ -128,6 +128,10 @@
 [perusmuoto: "kahdeksisenkymmentä", alku: "kahdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhdeksisenkymmentä", alku: "yhdeksisenkymmentä", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: ä];
 
+[perusmuoto: "kolmi", alku: "kolmi", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "neli", alku: "neli", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "seitsen", alku: "seitsen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "kymmen", alku: "kymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
 
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
 [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];

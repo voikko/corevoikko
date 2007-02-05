@@ -601,6 +601,7 @@
 [perusmuoto: "toki", alku: "toki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tokko", alku: "tokko", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "torstaisin", alku: "torstaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuhatkunta", alku: "tuhatkunta", luokka: seikkasana, jatko: <loppu>, äs: a]; # Oikeastaan lukusana, mutta taipumaton
 [perusmuoto: "tuiki", alku: "tuiki", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuohduksissa", alku: "tuohduks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
 [perusmuoto: "tuolloin", alku: "tuolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

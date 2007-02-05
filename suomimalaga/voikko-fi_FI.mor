@@ -478,6 +478,9 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
     if (liitesana in $oikea.jatko) then
       result $erikoisres, rules liitesana;
     end;
+    if (lukusanan_jälkiliite in $oikea.jatko) then
+      result $erikoisres, rules lukusanan_jälkiliite;
+    end;
     stop;
   end;
 
