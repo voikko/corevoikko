@@ -35,8 +35,8 @@ anateema
 andropaussi
 angli
 anglikaani
-angsti
 angstata
+angsti
 animaattori
 animismi
 animisti
@@ -69,8 +69,8 @@ aterooma
 atsimuutti
 audio
 aumata
-autisti
 autarkia
+autisti
 autuaaksijulistus
 auvokas
 aventuriini
@@ -175,10 +175,10 @@ industrialisti
 infiniitti
 interferoida
 interferometri
-interrail
-interrogatiivi
 interpolaatio
 interpoloida
+interrail
+interrogatiivi
 intransitiivi
 irrationalisti
 iteraatio
@@ -201,6 +201,7 @@ kutiava
 kutistamo
 kuudenlainen
 kuulustuttaa
+kvanttori
 kyberavaruus
 kymmenenlainen
 kömpelys
@@ -270,6 +271,7 @@ mure
 mutru
 myeliini
 myografia
+myönnyttää
 mätiä
 määrittyä
 napsaista
@@ -294,9 +296,9 @@ ohuehko
 okapi
 oksidantti
 oligarkki
-kvanttori
 olympialainen
 ontologia
+ontologinen
 oraali
 ordinaali
 origami
@@ -305,3 +307,14 @@ ortografinen
 oseanologi
 osittua
 osmani
+oudohko
+paisumus
+pajari
+paksuhko
+palataali
+palautin
+paleontologi
+paloittaa
+parenteettinen
+paskattaa
+pataluha
