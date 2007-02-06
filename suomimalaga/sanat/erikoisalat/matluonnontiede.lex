@@ -20,11 +20,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-27 03:27:27 EET
+# Time of generation: 2007-02-06 03:28:29 EET
 
 [perusmuoto: "aktinium", alku: "aktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "aldehydi", alku: "aldehyd", luokka: nimisana, jatko: <risti>, äs: aä];
 [perusmuoto: "amerikium", alku: "amerikium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "amiini", alku: "amiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "bohrium", alku: "bohrium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "cerium", alku: "cerium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "curium", alku: "curium", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -34,12 +35,16 @@
 [perusmuoto: "dysprosium", alku: "dysprosium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "erbium", alku: "erbium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "europium", alku: "europium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "formaldehydi", alku: "formaldehyd", luokka: nimisana, jatko: <risti>, äs: aä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "frankium", alku: "frankium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "gluoni", alku: "gluon", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hassium", alku: "hassium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "holmium", alku: "holmium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "isomeeri", alku: "isomeer", luokka: nimisana, jatko: <risti>, äs: ä, rakenne: "=ppp=ppppp"];
 [perusmuoto: "kalifornium", alku: "kalifornium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "kolonni", alku: "kolonn", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "konvoluutio", alku: "konvoluutio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "kromatografia", alku: "kromatografi", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "lawrencium", alku: "lawrencium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "lutetium", alku: "lutetium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "meitnerium", alku: "meitnerium", luokka: nimisana, jatko: <kalsium>, äs: a];

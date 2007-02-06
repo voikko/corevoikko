@@ -266,6 +266,8 @@
 [perusmuoto: "kumminkin", alku: "kumminkaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumminkin", alku: "kumminkin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumossa", alku: "kumo", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA, sisätulento_Vn>, äs: a];
+[perusmuoto: "kumossa", alku: "kumollaan", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kumossa", alku: "kumolleen", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunne", alku: "kunne", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunneka", alku: "kunneka", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuohuksiin", alku: "kuohuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -290,6 +292,7 @@
 [perusmuoto: "lainkaan", alku: "lainkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "laisinkaan", alku: "laisinkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "lauantaisin", alku: "lauantaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "leikiten", alku: "leikiten", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "leveälti", alku: "leveälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "liialti", alku: "liialti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "liian", alku: "liian", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -415,6 +418,7 @@
 [perusmuoto: "pahoin", alku: "pahoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "paikoin", alku: "paikoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "painuksissa", alku: "painuksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a];
+[perusmuoto: "paitasilla", alku: "paitasi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: a];
 [perusmuoto: "paitsi", alku: "paitsi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pakosalla", alku: "pakosa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "pakosalle", alku: "pakosalle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -481,7 +485,6 @@
 [perusmuoto: "rikki", alku: "rik", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "rillumarei", alku: "rillumarei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Voinee taivuttaa täydellisesti
 [perusmuoto: "rinnakkain", alku: "rinnakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "risiini", alku: "risiin", luokka: seikkasana, jatko: <banaali>, äs: ä];
 [perusmuoto: "ristikkäin", alku: "ristikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "roppakaupalla", alku: "roppakaupalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ruti", alku: "ruti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -726,6 +729,7 @@
 [perusmuoto: "ylemmäs", alku: "ylemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ylen", alku: "ylen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ylhäällä", alku: "ylhää", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
+[perusmuoto: "ylihuomenna", alku: "ylihuomenna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ylimalkaan", alku: "ylimalkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ylitse", alku: "ylitse", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "ylle", alku: "ylle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

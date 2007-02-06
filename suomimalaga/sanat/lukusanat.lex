@@ -132,6 +132,16 @@
 [perusmuoto: "neli", alku: "neli", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
 [perusmuoto: "seitsen", alku: "seitsen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
 [perusmuoto: "kymmen", alku: "kymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "kaksikymmen", alku: "kaksikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "kolmikymmen", alku: "kolmikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "nelikymmen", alku: "nelikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "viisikymmen", alku: "viisikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "kuusikymmen", alku: "kuusikymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "seitsenkymmen", alku: "seitsenkymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "kahdeksankymmen", alku: "kahdeksankymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "yhdeksänkymmen", alku: "yhdeksänkymmen", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: ä];
+[perusmuoto: "monisata", alku: "monisata", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a];
+[perusmuoto: "monituhat", alku: "monituhat", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a];
 
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
 [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];

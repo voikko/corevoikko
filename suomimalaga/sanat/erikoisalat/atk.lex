@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-01-27 03:27:25 EET
+# Time of generation: 2007-02-06 03:28:27 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -44,6 +44,7 @@
 [perusmuoto: "dataplot", alku: "dataplot", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "debian", alku: "debian", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "debuggeri", alku: "debugger", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "defragmentoida", alku: "defragmento", luokka: teonsana, jatko: <voida>, äs: a, rakenne: "=pp=pppppppppppp"];
 [perusmuoto: "demoscene", alku: "demoscene", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <murre>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "demoskene", alku: "demoskene", luokka: nimisana, jatko: <nalle>, äs: ä, tiedot: <murre>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "dumppi", alku: "dump", luokka: nimisana, jatko: <keppi>, äs: a];
@@ -56,8 +57,8 @@
 [perusmuoto: "explorer", alku: "explorer", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fedora", alku: "Fedor", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "fennic", alku: "fennic", luokka: nimi, jatko: <kalsium>, äs: ä];
-[perusmuoto: "firefox", alku: "firefox", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "flex", alku: "flex", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "formatoida", alku: "formato", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "fortran", alku: "fortran", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "funet", alku: "funet", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "gawk", alku: "gawk", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -66,7 +67,6 @@
 [perusmuoto: "gnome", alku: "gnome", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "GnuCash", alku: "GnuCash", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ippippp"];
 [perusmuoto: "gnuplot", alku: "gnuplot", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ppp=pppp"];
-[perusmuoto: "Google", alku: "Google", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "gthumb", alku: "gthumb", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "hae-painike", alku: "hae-painik", luokka: nimisana, jatko: <tarvike>, äs: a, rakenne: "=ppp-=ppppppp"];
 [perusmuoto: "helixplayer", alku: "helixplayer", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ppppp=pppppp"];
@@ -95,7 +95,9 @@
 [perusmuoto: "mplayer", alku: "mplayer", luokka: nimi, jatko: <edam>, äs: aä];
 [perusmuoto: "mutt", alku: "mutt", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Netscape", alku: "Netscape", luokka: nimi, jatko: <nalle>, äs: a, rakenne: "=ipp=ppppp"];
+[perusmuoto: "osioida", alku: "osio", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "partitio", alku: "partitio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "partitioida", alku: "partitio", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "perl", alku: "perl", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "pine", alku: "pine", luokka: nimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "postscript", alku: "postscript", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=pppp=pppppp"];
