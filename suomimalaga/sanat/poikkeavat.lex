@@ -29,7 +29,6 @@
 [perusmuoto: "ajast'aika", alku: "ajast'a", luokka: nimisana, jatko: <aika>, äs: a];
 [perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
-[perusmuoto: "Alankomaat", alku: "Alankoma", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "alaston", alku: "alast", luokka: laatusana, jatko: <alaston>, äs: a];
 [perusmuoto: "alin", alku: "al", luokka: laatusana, jatko: <pahin>, äs: a];
 [perusmuoto: "alkaa", alku: "al", luokka: teonsana, jatko: <jakaa>, äs: a];
@@ -42,6 +41,7 @@
 [perusmuoto: "Arajuuri", alku: "Arajuur", luokka: sukunimi, jatko: <nuori>, äs: a];
 [perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <kirves>, äs: a];
 [perusmuoto: "asiaankuulumaton", alku: "asiaankuuluma", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
+[perusmuoto: "mitäänsanomaton", alku: "mitäänsanoma", luokka: laatusana, jatko: <johdin_tOn>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "asiakas", alku: "asiak", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "askar", alku: "askar", luokka: nimisana, jatko: <askel>, äs: a];
 [perusmuoto: "askel", alku: "askel", luokka: nimisana, jatko: <askel>, äs: a];
