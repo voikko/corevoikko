@@ -35,7 +35,7 @@
 [perusmuoto: "alkaa", alku: "al", luokka: teonsana, jatko: <jakaa>, äs: a];
 [perusmuoto: "alkeet", alku: "alke", luokka: nimisana, jatko: <alkeet>, äs: a, tiedot: <inen>];
 [perusmuoto: "alokas", alku: "alok", luokka: nimisana, jatko: <asiakas>, äs: a];
-[perusmuoto: "altis", alku: "alt", luokka: laatusana, jatko: <altis>, äs: a];
+[perusmuoto: "altis", alku: "alt", luokka: nimi_laatusana, jatko: <altis>, äs: a]; # Tarvitaan monissa substantiivi + "altis" -sanoissa
 [perusmuoto: "antaa", alku: "an", luokka: teonsana, jatko: <antaa>, äs: a];
 [perusmuoto: "anteeksiantaa", alku: "anteeksian", luokka: teonsana, jatko: <antaa>, äs: a, rakenne: "=pppppppp=ppppp"]; # Esim. antaa-sanan kirjoitusasuksi
 [perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
