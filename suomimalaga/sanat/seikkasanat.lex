@@ -131,6 +131,9 @@
 [perusmuoto: "hollilla", alku: "hollilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hollille", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huiskin", alku: "huiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hujakassa", alku: "hujaka", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a];
+[perusmuoto: "hujakoilla", alku: "hujako", luokka: seikkasana, jatko: <ulko_olento_illA>, äs: a];
+[perusmuoto: "hujakoille", alku: "hujako", luokka: seikkasana, jatko: <ulkotulento_ille>, äs: a];
 [perusmuoto: "hujan", alku: "hujan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukkaan", alku: "hukkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
