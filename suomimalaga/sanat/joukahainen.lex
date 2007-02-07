@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-07 03:26:01 EET
+# Time of generation: 2007-02-07 19:43:45 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -4685,6 +4685,7 @@
 [perusmuoto: "hyörinä", alku: "hyörin", luokka: nimisana, jatko: <apila>, äs: ä];
 [perusmuoto: "hyöriä", alku: "hyör", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "hyöty", alku: "hyö", luokka: nimisana, jatko: <laatu>, äs: ä];
+[perusmuoto: "hyötyisä", alku: "hyötyis", luokka: laatusana, jatko: <asema>, äs: ä];
 [perusmuoto: "hyötyä", alku: "hyö", luokka: teonsana, jatko: <kaatua>, äs: ä];
 [perusmuoto: "hyötää", alku: "hyö", luokka: teonsana, jatko: <vuotaa>, äs: ä];
 [perusmuoto: "Håkan", alku: "Håkan", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -5389,8 +5390,25 @@
 [perusmuoto: "istuutua", alku: "istuu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "isukki", alku: "isuk", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "isyys", alku: "isyy", luokka: nimisana, jatko: <kalleus>, äs: ä, tiedot: <ei_ysj>];
-[perusmuoto: "isoisä", alku: "isois", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppp=ppp"];
-[perusmuoto: "isä", alku: "is", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "isoisä", alku: "isois", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppp=ppp"];
+[perusmuoto: "isä", alku: "is", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>];
+[perusmuoto: "esi-isä", alku: "esi-is", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppp-=ppp"];
+[perusmuoto: "isänisä", alku: "isänis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppp=ppp"];
+[perusmuoto: "kantaisä", alku: "kantais", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppp=ppp"];
+[perusmuoto: "kasvatusisä", alku: "kasvatusis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "kaupunginisä", alku: "kaupunginis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppppppp=ppp"];
+[perusmuoto: "kirkkoisä", alku: "kirkkois", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppppp=ppp"];
+[perusmuoto: "koti-isä", alku: "koti-is", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppp-=ppp"];
+[perusmuoto: "kunnanisä", alku: "kunnanis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppppp=ppp"];
+[perusmuoto: "maanisä", alku: "maanis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppp=ppp"];
+[perusmuoto: "oppi-isä", alku: "oppi-is", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppp-=ppp"];
+[perusmuoto: "pehmoisä", alku: "pehmois", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppp=ppp"];
+[perusmuoto: "perheenisä", alku: "perheenis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "rippi-isä", alku: "rippi-is", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppp-=ppp"];
+[perusmuoto: "viikonloppuisä", alku: "viikonloppuis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=pppppp=ppppp=ppp"];
+[perusmuoto: "yksinhuoltajaisä", alku: "yksinhuoltajais", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppp=pppppppp=ppp"];
+[perusmuoto: "äidinisä", alku: "äidinis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_ysj>, rakenne: "=ppppp=ppp"];
+[perusmuoto: "isänmaallinen", alku: "isänmaalli", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "isännyys", alku: "isännyy", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "isännöidä", alku: "isännö", luokka: teonsana, jatko: <haravoida>, äs: ä];
 [perusmuoto: "isäntä", alku: "isän", luokka: nimisana, jatko: <suunta>, äs: ä];

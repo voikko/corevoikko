@@ -1287,40 +1287,6 @@ end_rule loppu ($tietue):
   end;
 
 
-
-  # Isä-sanan monikon muodot, paitsi nimentö, eivät voi olla yhdyssanan
-  # jälkiosana. Esim. valaisin ei ole vala+isin, lukuisiin ei ole luku+isiin,
-  # viimeisillään ei ole viime+isillään, mutta kanta+isät on oikein.
-  #
-  if (($n greater 2) and
-      ($tietue.($n-1).perusmuoto = "isä") and
-      ($tietue.$n.luokka = sijapääte) and
-      ($tietue.$n.luku = monikko) and
-      ($tietue.$n.sija /= nimentö_t)) then
-    stop;
-  end;
-
-
-  # Ei heitto+is+tu+in eli =heittois=tuki (heitto+inen + tuki).
-  #
-  if (($n greater 3) and
-      ($tietue.($n-1).perusmuoto = "tuki") and
-      ($tietue.($n-2).luokka = johdin_inen) and
-      ($tietue.$n.luokka = sijapääte) and
-      ($tietue.$n.sija = keinonto_in)) then
-    stop;
-  end;
-
-
-  # Ei palo+muur+is+ääntö eli =palo=muuris=ääntö (palo + muur+inen + ääntö).
-  #
-  if (($n greater 2) and
-      ($tietue.$n.perusmuoto = "ääntö") and
-      ($tietue.($n-1).luokka = johdin_inen)) then
-    stop;
-  end;
-
-
   result $tietue, accept;
 end;
 

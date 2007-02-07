@@ -31,6 +31,7 @@ vanhempainyhdistys
 !sisempäinyhdistys
 !vanhempaatalo
 vanhempaintalo
+kirkkoisillä
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen

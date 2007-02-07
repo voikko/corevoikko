@@ -461,6 +461,7 @@
 [perusmuoto: "poispäin", alku: "poispäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "poissa", alku: "poissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puhki", alku: "puhki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "puseroisilla", alku: "puseroisi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: a];
 [perusmuoto: "puuduksiin", alku: "puuduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puuduksissa", alku: "puuduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "päin", alku: "päin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
