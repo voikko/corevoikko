@@ -91,7 +91,7 @@ int main(int argc, char ** argv) {
 	int minhwlen;
 	int i;
 	
-	line = malloc(size); /* FIXME */
+	line = malloc(size);
 	if (line == 0) {
 		printf("E: Out of memory\n");
 		return 1;
@@ -104,6 +104,7 @@ int main(int argc, char ** argv) {
 
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
+		free(line);
 		return 1;
 	}
 	

@@ -78,7 +78,7 @@ int main(int argc, char ** argv) {
 	int i;
 	int cache_size;
 
-	line = malloc(size); /* FIXME */
+	line = malloc(size);
 	if (line == 0) {
 		printf("E: Out of memory\n");
 		return 1;
@@ -94,6 +94,7 @@ int main(int argc, char ** argv) {
 	const char * voikko_error = voikko_init_with_path(&handle, "fi_FI", cache_size, path);
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
+		free(line);
 		return 1;
 	}
 	

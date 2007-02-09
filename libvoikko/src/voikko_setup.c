@@ -169,6 +169,12 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	free(project);
 	if (malaga_init_error) {
 		voikko_handle_count--;
+		#ifdef HAVE_ICONV
+		iconv_close(voikko_options.iconv_ext_ucs4);
+		iconv_close(voikko_options.iconv_ucs4_ext);
+		iconv_close(voikko_options.iconv_utf8_ucs4);
+		iconv_close(voikko_options.iconv_ucs4_utf8);
+		#endif
 		return malaga_init_error;
 	}
 	if (cache_size >= 0) {

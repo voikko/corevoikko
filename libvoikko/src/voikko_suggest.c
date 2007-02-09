@@ -85,7 +85,7 @@ void voikko_suggest_correct_case(voikko_sugg_status_t * s, const wchar_t * buffe
 			((*s).max_suggestions)--;
 			return;
 		case SPELL_CAP_ERROR:
-			malaga_buffer = voikko_ucs4tocstr((*s).word, "UTF-8", 0);
+			malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", wlen);
 			if (malaga_buffer == 0) return;
 			analyse_item(malaga_buffer, MORPHOLOGY);
 			free(malaga_buffer);
