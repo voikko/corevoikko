@@ -214,7 +214,9 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "milj.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "mk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # markka(a)
 [alku: "ml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # millilitra(a)
-[alku: "MM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # maailmanmestaruus
+[alku: "MM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # maailmanmestaruus
+[alku: "SM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # suomenmestaruus, Suomen-mestaruus, Suomen mestaruus
+[alku: "EM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # euroopanmestaruus, Euroopan-mestaruus...
 [alku: "mm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # millimetri(ä)
 [alku: "mm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # muun muassa
 #[alku: "mma", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
