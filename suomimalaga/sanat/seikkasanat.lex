@@ -304,6 +304,7 @@
 [perusmuoto: "liijoin", alku: "liijoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "liioin", alku: "liioin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "likellä", alku: "like", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
+[perusmuoto: "likimain", alku: "likimain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "likipitäen", alku: "likipitäen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "limittäin", alku: "limittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "liossa", alku: "liossa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

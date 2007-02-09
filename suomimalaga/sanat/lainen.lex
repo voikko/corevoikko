@@ -260,10 +260,7 @@
 [perusmuoto: "härmäläinen", alku: "härmäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 
 # Special compound words
-[perusmuoto: "audiovisuaalinen", alku: "audiovisuaali", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "edelleenjakaa", alku: "edelleenja", luokka: teonsana, jatko: <jakaa>, äs: a];
-[perusmuoto: "elintärkeä", alku: "elintärk", luokka: laatusana, jatko: <korkea>, äs: ä];
-[perusmuoto: "laajakaista", alku: "laajakaist", luokka: nimisana, jatko: <kala>, äs: a];
 
 # Special abbreviations. There are some more of these, but they should preferably be
 # included only in special scientific word lists.
