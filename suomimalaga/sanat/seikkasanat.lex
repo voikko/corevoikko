@@ -107,6 +107,7 @@
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "harvakseltaan", alku: "harvakseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "harvoin", alku: "harvoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hellävaroen", alku: "hellävaroen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helpoiten", alku: "helpoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "hereille", alku: "hereille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

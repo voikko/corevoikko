@@ -1581,6 +1581,48 @@ end: rules
 end: class
 
 
+# Kotus 34 onneton
+class: 34
+sm-class: onneton
+match-word: ton
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	n	ma	s	ps=r
+genetiivi		n	man	s
+partitiivi	0	ta	w
+translatiivi	n	maksi	s	ps=f
+translatiivi	n	makse	s	ps=r
+essiivi		n	mana	s
+inessiivi		n	massa	s
+elatiivi		n	masta	s
+illatiivi		n	maan	s
+adessiivi		n	malla	s
+ablatiivi		n	malta	s
+allatiivi		n	malle	s
+abessiivi		n	matta	s	ps=f
+nominatiivi_mon	n	mat	s	ps=f
+genetiivi_mon	n	mien	s
+genetiivi_mon	0	ten	w	prio=3
+partitiivi_mon	n	mia	s
+translatiivi_mon	n	miksi	s	ps=f
+translatiivi_mon	n	mikse	s	ps=r
+essiivi_mon	n	mina	s
+inessiivi_mon	n	missa	s
+elatiivi_mon	n	mista	s
+illatiivi_mon	n	miin	s
+adessiivi_mon	n	milla	s
+ablatiivi_mon	n	milta	s
+allatiivi_mon	n	mille	s
+abessiivi_mon	n	mitta	s	ps=f
+komitatiivi_mon	n	mine	s	ps=r
+instruktiivi_mon	n	min	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 38 hevonen
 class: 38
 sm-class: nainen

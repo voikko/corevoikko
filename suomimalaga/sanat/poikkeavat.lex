@@ -29,7 +29,6 @@
 [perusmuoto: "ajast'aika", alku: "ajast'a", luokka: nimisana, jatko: <aika>, äs: a];
 [perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
-[perusmuoto: "alaston", alku: "alast", luokka: laatusana, jatko: <alaston>, äs: a];
 [perusmuoto: "alin", alku: "al", luokka: laatusana, jatko: <pahin>, äs: a];
 [perusmuoto: "alkaa", alku: "al", luokka: teonsana, jatko: <jakaa>, äs: a];
 [perusmuoto: "alkeet", alku: "alke", luokka: nimisana, jatko: <alkeet>, äs: a, tiedot: <inen>];
