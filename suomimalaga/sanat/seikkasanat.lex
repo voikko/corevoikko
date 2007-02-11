@@ -308,6 +308,7 @@
 [perusmuoto: "likimain", alku: "likimain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "likipitäen", alku: "likipitäen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "limittäin", alku: "limittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "likoon", alku: "likoon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "liossa", alku: "liossa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "loitolla", alku: "loito", luokka: seikkasana, jatko: <loitolla>, äs: a];
 [perusmuoto: "lomitse", alku: "lomitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -504,6 +505,8 @@
 [perusmuoto: "samoin", alku: "samoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "samoinkuin", alku: "samoinkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sangen", alku: "sangen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "satamäärin", alku: "satamäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "sattumoisin", alku: "sattumoisin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "seisaalla", alku: "seisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "selin", alku: "selin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "selville", alku: "selville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -710,6 +713,7 @@
 [perusmuoto: "väijyksissä", alku: "väijyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "väkisin", alku: "väkisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "väli", alku: "välitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vängällä", alku: "vängällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # Väen vängällä
 [perusmuoto: "väsyksiin", alku: "väsyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "väsyksissä", alku: "väsyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "väärin", alku: "väärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

@@ -207,6 +207,9 @@ neljäsosassa
 !neljäspöytä
 toisensa
 nelivuotias
+biljoonia
+biljoona
+triljoonin
 
 [johtimet]
 märänlaiselleko

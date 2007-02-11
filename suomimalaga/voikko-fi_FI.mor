@@ -512,7 +512,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
                    nimisana, inen_päätteinen_laatusana, loppu;
     end;
   end;
-  if ($oikea.alaluokka in <tuhat, miljoona, miljardi> and nimentö in $oikea.jatko) then
+  if ($oikea.alaluokka in <tuhat, miljoona, miljardi, biljoona, triljoona> and nimentö in $oikea.jatko) then
     result $res, rules omistusliite, liitesana, lukusanan_jälkiliite,
                  nimisana, inen_päätteinen_laatusana, loppu;
   end;
