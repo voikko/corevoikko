@@ -282,6 +282,7 @@ neandertali
 neljänlainen
 netti
 ninja
+nirppanenäinen
 niukahko
 nokturni
 nominaali
@@ -292,7 +293,9 @@ nytkäyttää
 näivertää
 näpyttää
 observaattori
+oheispalvelu
 ohuehko
+ohuke
 okapi
 oksidantti
 oligarkki
@@ -308,6 +311,7 @@ oseanologi
 osittua
 osmani
 oudohko
+ounastaa
 paisumus
 pajari
 paksuhko
@@ -316,5 +320,16 @@ palautin
 paleontologi
 paloittaa
 parenteettinen
+partita
 paskattaa
 pataluha
+patikka
+pauhuta
+pehmeähkö
+peitin
+pelauttaa
+peljästys
+peljästyttää
+peljästyä
+permittiivisyys
+peräytys
