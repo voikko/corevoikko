@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-06 03:28:27 EET
+# Time of generation: 2007-02-12 03:30:39 EET
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];

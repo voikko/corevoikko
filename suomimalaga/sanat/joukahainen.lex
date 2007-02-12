@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-11 15:30:50 EET
+# Time of generation: 2007-02-12 03:26:01 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -1430,6 +1430,7 @@
 [perusmuoto: "Blinnikka", alku: "Blinnik", luokka: sukunimi, jatko: <solakka>, äs: a];
 [perusmuoto: "blogi", alku: "blog", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "blokki", alku: "blok", luokka: nimisana, jatko: <takki>, äs: a];
+[perusmuoto: "blokkiutua", alku: "blokkiu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "Blomberg", alku: "Blomberg", luokka: sukunimi, jatko: <kalsium>, äs: aä];
 [perusmuoto: "Blombqvist", alku: "Blombqvist", luokka: sukunimi, jatko: <kalsium>, äs: a, rakenne: "=ipppp=ppppp"];
 [perusmuoto: "blondi", alku: "blond", luokka: nimisana, jatko: <risti>, äs: a];
@@ -6577,6 +6578,7 @@
 [perusmuoto: "kampe", alku: "kamp", luokka: nimisana, jatko: <lape>, äs: a];
 [perusmuoto: "kampela", alku: "kampel", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "kampela", alku: "kampel", luokka: laatusana, jatko: <matala>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kampeutua", alku: "kampeu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "kampi", alku: "kam", luokka: nimisana, jatko: <sampi>, äs: a];
 [perusmuoto: "kampi", alku: "kamp", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "kampittaa", alku: "kampi", luokka: teonsana, jatko: <ammottaa>, äs: a];
@@ -6711,6 +6713,7 @@
 [perusmuoto: "kapeikko", alku: "kapeik", luokka: nimisana, jatko: <laatikko>, äs: a, tiedot: <inen>];
 [perusmuoto: "kapelli", alku: "kapell", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Kapernaum", alku: "Kapernaum", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "kapeutua", alku: "kapeu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "kapi", alku: "kap", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "kapillaari", alku: "kapillaar", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "kapina", alku: "kapin", luokka: nimisana, jatko: <apila>, äs: a];
@@ -6885,6 +6888,7 @@
 [perusmuoto: "karski", alku: "karsk", luokka: laatusana, jatko: <risti>, äs: a];
 [perusmuoto: "karsta", alku: "karst", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "karstata", alku: "karst", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "karstautua", alku: "karstau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "Karstula", alku: "Karstul", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Karstunen", alku: "Karstu", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "kartano", alku: "kartano", luokka: nimisana, jatko: <arvelu>, äs: a];
@@ -14547,6 +14551,7 @@
 [perusmuoto: "pelauttaa", alku: "pelaut", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "pelehtiä", alku: "peleh", luokka: teonsana, jatko: <laatia>, äs: ä];
 [perusmuoto: "Pelevin", alku: "Pelevin", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "moninpeli", alku: "moninpel", luokka: nimisana, jatko: <risti>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "peli", alku: "pel", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "pelikaani", alku: "pelikaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "pelimanni", alku: "pelimann", luokka: nimisana, jatko: <risti>, äs: a];
@@ -17403,6 +17408,7 @@
 [perusmuoto: "ruovikko", alku: "ruovik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "rupattaa", alku: "rupat", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "rupatus", alku: "rupatu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "rupeutua", alku: "rupeu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "rupi", alku: "ru", luokka: nimisana, jatko: <siipi>, äs: a, tiedot: <inen>];
 [perusmuoto: "rupia", alku: "rupi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "rupla", alku: "rupl", luokka: nimisana, jatko: <koira>, äs: a];
@@ -18807,6 +18813,7 @@
 [perusmuoto: "Sjöstedt", alku: "Sjöstedt", luokka: sukunimi, jatko: <kalsium>, äs: ä, rakenne: "=ipp=ppppp"];
 [perusmuoto: "skaala", alku: "skaal", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "skaalata", alku: "skaal", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "skaalautua", alku: "skaalau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "skalaari", alku: "skalaar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "skandaali", alku: "skandaal", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "skandalisoida", alku: "skandaliso", luokka: teonsana, jatko: <kanavoida>, äs: a];
@@ -18881,6 +18888,7 @@
 [perusmuoto: "sohia", alku: "soh", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "sohjo", alku: "sohjo", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <inen>];
 [perusmuoto: "sohjoontua", alku: "sohjoon", luokka: teonsana, jatko: <jakaantua>, äs: a];
+[perusmuoto: "sohjoutua", alku: "sohjou", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "sohva", alku: "sohv", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "Sohvi", alku: "Sohv", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "soida", alku: "so", luokka: teonsana, jatko: <voida>, äs: a];
@@ -19306,6 +19314,7 @@
 [perusmuoto: "suhta", alku: "suh", luokka: nimisana, jatko: <juhta>, äs: a, tiedot: <inen>];
 [perusmuoto: "suhtautua", alku: "suhtau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "suhteuttaa", alku: "suhteut", luokka: teonsana, jatko: <alittaa>, äs: a];
+[perusmuoto: "suhteutua", alku: "suhteu", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "suhu", alku: "suhu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "suihkaus", alku: "suihkau", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "suihke", alku: "suihke", luokka: nimisana, jatko: <hame>, äs: a];
@@ -22697,6 +22706,7 @@
 [perusmuoto: "versoa", alku: "verso", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "verstas", alku: "versta", luokka: nimisana, jatko: <vieras>, äs: a];
 [perusmuoto: "verta", alku: "ver", luokka: nimi_laatusana, jatko: <parta>, äs: a, tiedot: <inen>];
+[perusmuoto: "vertautua", alku: "vertau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "vertikaali", alku: "vertikaal", luokka: nimi_laatusana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "verto", alku: "ver", luokka: nimisana, jatko: <kaarto>, äs: a];
 [perusmuoto: "vertyä", alku: "ver", luokka: teonsana, jatko: <kumartua>, äs: ä];

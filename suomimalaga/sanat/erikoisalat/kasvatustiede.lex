@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-06 03:28:28 EET
+# Time of generation: 2007-02-12 03:30:40 EET
 
 [perusmuoto: "andragogiikka", alku: "andragogiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "Asperger", alku: "Asperger", luokka: sukunimi, jatko: <edam>, äs: a];

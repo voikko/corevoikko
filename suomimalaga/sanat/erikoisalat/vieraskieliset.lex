@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-06 03:28:30 EET
+# Time of generation: 2007-02-12 03:30:43 EET
 
 [perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
