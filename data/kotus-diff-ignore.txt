@@ -333,3 +333,6 @@ peljästyttää
 peljästyä
 permittiivisyys
 peräytys
+pienehkö
+pimeähkö
+pigmentoida
