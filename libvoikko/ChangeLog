@@ -1,3 +1,9 @@
+2007-02-14 Harri Pitkänen <hatapitk@iki.fi>
+
+	* New command line option -x for voikkospell, from a slightly
+	  modified patch by Hannu Väisänen
+	* Try replacing 0 with o when generating OCR suggestions
+
 2007-02-09 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix broken suggestions for words with non-default capitalisation

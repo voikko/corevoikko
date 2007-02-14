@@ -30,8 +30,11 @@
 #include <stdio.h>
 #include <string.h>
 
-int autotest;
-int suggest;
+int autotest = 0;
+int suggest = 0;
+int one_line_output = 0;
+char word_separator = ' ';
+int space = 0;  /* Set to nonzero if you want to output suggestions that has spaces in them. */
 
 void check_word(int handle, char * word) {
 	char ** suggestions;
@@ -50,11 +53,26 @@ void check_word(int handle, char * word) {
 		else printf("W\n");
 		fflush(0);
 	}
+	else if (one_line_output) {
+		printf ("%s", word);
+		if (!result) {
+			suggestions = voikko_suggest_cstr(handle, word);
+			if (suggestions) {
+				for (i = 0; suggestions[i] != 0; i++) {
+					if (space || (!space && strchr (suggestions[i], ' ') == 0))
+						printf ("%c%s", word_separator, suggestions[i]);
+					free(suggestions[i]);
+				}
+				free(suggestions);
+			}
+		}
+		printf ("\n");
+	}
 	else {
 		if (result) printf("C: %s\n", word);
 		else printf("W: %s\n", word);
 	}
-	if (suggest && !result) {
+	if (!one_line_output && suggest && !result) {
 		suggestions = voikko_suggest_cstr(handle, word);
 		if (suggestions) {
 			for (i = 0; suggestions[i] != 0; i++) {
@@ -120,6 +138,11 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 1);
 		else if (strcmp(argv[i], "ocr_suggestions=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
+		else if (strncmp(argv[i], "-x", 2) == 0) {
+			one_line_output = 1;
+			if (strlen(argv[i]) == 3) word_separator = argv[i][2];
+			space = (word_separator != ' ');
+		}
 		else if (strcmp(argv[i], "-s") == 0) suggest = 1;
 	}
 	
