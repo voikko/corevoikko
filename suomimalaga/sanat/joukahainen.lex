@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-15 03:26:02 EET
+# Time of generation: 2007-02-15 17:05:22 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -1219,6 +1219,7 @@
 [perusmuoto: "avara", alku: "avar", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "avartaa", alku: "avar", luokka: teonsana, jatko: <musertaa>, äs: a];
 [perusmuoto: "avartua", alku: "avar", luokka: teonsana, jatko: <kumartua>, äs: a];
+[perusmuoto: "avata", alku: "av", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "avautua", alku: "avau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "avec", alku: "avec", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "aventuriini", alku: "aventuriin", luokka: nimisana, jatko: <risti>, äs: a];
@@ -3938,6 +3939,7 @@
 [perusmuoto: "heräte", alku: "herät", luokka: nimisana, jatko: <vaate>, äs: ä];
 [perusmuoto: "herättää", alku: "herä", luokka: teonsana, jatko: <ammottaa>, äs: ä];
 [perusmuoto: "herätys", alku: "heräty", luokka: nimisana, jatko: <vastaus>, äs: ä];
+[perusmuoto: "herätä", alku: "her", luokka: teonsana, jatko: <salata>, äs: ä];
 [perusmuoto: "Hesari", alku: "Hesar", luokka: nimi, jatko: <paperi>, äs: a];
 [perusmuoto: "Hesburger", alku: "Hesburger", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Hessen", alku: "Hessen", luokka: paikannimi, jatko: <kalsium>, äs: ä];
@@ -4995,6 +4997,7 @@
 [perusmuoto: "iktyonomi", alku: "iktyonom", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ikuinen", alku: "ikui", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ikuistaa", alku: "ikuist", luokka: teonsana, jatko: <hidastaa>, äs: a];
+[perusmuoto: "ikä", alku: "i", luokka: nimisana, jatko: <ikä>, äs: ä, tiedot: <inen>];
 [perusmuoto: "Ikäheimonen", alku: "Ikäheimo", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "ikävystyttää", alku: "ikävystyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "ikävystyä", alku: "ikävysty", luokka: teonsana, jatko: <punoa>, äs: ä];
@@ -14133,6 +14136,7 @@
 [perusmuoto: "pala", alku: "pal", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "Palaiologos", alku: "Palaiologos", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "palanen", alku: "pala", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "palata", alku: "pal", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "palataali", alku: "palataal", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "palatsi", alku: "palats", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "palaute", alku: "palaut", luokka: nimisana, jatko: <vaate>, äs: a];
@@ -16737,7 +16741,7 @@
 [perusmuoto: "Reija", alku: "Reij", luokka: etunimi, jatko: <kala>, äs: a];
 [perusmuoto: "Reijo", alku: "Reijo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Reijonen", alku: "Reijo", luokka: sukunimi, jatko: <nainen>, äs: a];
-[perusmuoto: "reikä", alku: "rei", luokka: nimisana, jatko: <hoikka>, äs: ä, tiedot: <inen>];
+[perusmuoto: "reikä", alku: "rei", luokka: nimisana, jatko: <ikä>, äs: ä, tiedot: <inen>];
 [perusmuoto: "reilinki", alku: "reilin", luokka: nimisana, jatko: <killinki>, äs: ä];
 [perusmuoto: "reilu", alku: "reilu", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "reima", alku: "reim", luokka: laatusana, jatko: <kala>, äs: a];
@@ -22368,6 +22372,7 @@
 [perusmuoto: "varastaa", alku: "varast", luokka: teonsana, jatko: <aavistaa>, äs: a];
 [perusmuoto: "varasto", alku: "varasto", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "varastoida", alku: "varasto", luokka: teonsana, jatko: <kanavoida>, äs: a];
+[perusmuoto: "varata", alku: "var", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "varauma", alku: "varaum", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "varautua", alku: "varau", luokka: teonsana, jatko: <kaatua>, äs: a];
 [perusmuoto: "Varejoki", alku: "Varejo", luokka: paikannimi, jatko: <kaikki>, äs: a];

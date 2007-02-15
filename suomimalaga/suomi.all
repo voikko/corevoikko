@@ -4003,7 +4003,7 @@ subrule koira ($tietue,
                $heikko_aste,
                $voittoaste):
   define $monikon_heikko_aste := $heikko_aste;
-  if ($tietue.perusmuoto = "ikä") then         # Ikä => i'iksi.
+  if (ikä in $tietue.jatko) then         # Ikä => i'iksi.
     $monikon_heikko_aste := "'";
   end;
   return taivutuskaava ($tietue,

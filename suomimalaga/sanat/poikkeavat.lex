@@ -51,7 +51,6 @@
 [perusmuoto: "auttaa", alku: "aut", luokka: teonsana, jatko: <laittaa>, äs: a];
 [perusmuoto: "edesauttaa", alku: "edesaut", luokka: teonsana, jatko: <laittaa>, äs: a, rakenne: "=pppp=pppppp"]; # Esim. auttaa-sanan kirjoitusasuksi
 [perusmuoto: "autuas", alku: "autu", luokka: nimi_laatusana, jatko: <autuas>, äs: a];
-[perusmuoto: "avata", alku: "av", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "business", alku: "business", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "censeo", alku: "censeo", luokka: nimisana, jatko: <loppu>, äs: a];
@@ -79,7 +78,6 @@
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
 [perusmuoto: "haastaa", alku: "haast", luokka: teonsana, jatko: <haastaa>, äs: a];
 [perusmuoto: "haistaa", alku: "haist", luokka: teonsana, jatko: <haastaa>, äs: a];
-[perusmuoto: "halata", alku: "hal", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "hapan", alku: "hap", luokka: laatusana, jatko: <hapan>, äs: a];
 [perusmuoto: "happamaton", alku: "happama", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
 [perusmuoto: "hapsi", alku: "ha", luokka: nimisana, jatko: <hapsi>, äs: a];
@@ -90,7 +88,6 @@
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä];
 [perusmuoto: "herjetä", alku: "her", luokka: teonsana, jatko: <tarjeta>, äs: ä];
 [perusmuoto: "hervoton", alku: "hervo", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
-[perusmuoto: "herätä", alku: "her", luokka: teonsana, jatko: <palata>, äs: ä];
 [perusmuoto: "heureka", alku: "heureka", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "hiki", alku: "hi", luokka: nimisana, jatko: <piki>, äs: ä, tiedot: <inen>];
 [perusmuoto: "hillitön", alku: "hilli", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
@@ -111,7 +108,6 @@
 [perusmuoto: "ien", alku: "i", luokka: nimisana, jatko: <ien>, äs: ä];
 [perusmuoto: "ies", alku: "i", luokka: nimisana, jatko: <ies>, äs: ä];
 [perusmuoto: "Iinalampi", alku: "Iinalam", luokka: paikannimi, jatko: <lampi>, äs: a];
-[perusmuoto: "ikä", alku: "i", luokka: nimisana, jatko: <ikä>, äs: ä, tiedot: <inen>];
 [perusmuoto: "Ilias", alku: "Ilia", luokka: nimi, jatko: <koiras>, äs: a];
 [perusmuoto: "iljetä", alku: "il", luokka: teonsana, jatko: <tarjeta>, äs: ä];
 [perusmuoto: "irvissä", alku: "irviin", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
@@ -286,7 +282,6 @@
 [perusmuoto: "paistaa", alku: "paist", luokka: teonsana, jatko: <paistaa>, äs: a];
 [perusmuoto: "pakista", alku: "pak", luokka: teonsana, jatko: <kitistä>, äs: a];
 [perusmuoto: "palaa", alku: "pal", luokka: teonsana, jatko: <palaa>, äs: a];
-[perusmuoto: "palata", alku: "pal", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "pamista", alku: "pam", luokka: teonsana, jatko: <kitistä>, äs: a];
 [perusmuoto: "panna", alku: "pan", luokka: teonsana, jatko: <mennä>, äs: a];
 [perusmuoto: "parahin", alku: "parah", luokka: laatusana, jatko: <pahin>, äs: a];
@@ -294,7 +289,6 @@
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "parsi", alku: "par", luokka: nimisana, jatko: <hirsi>, äs: a];
 [perusmuoto: "paska", alku: "paskasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "pauhata", alku: "pauh", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
 [perusmuoto: "pelätä", alku: "pel", luokka: teonsana, jatko: <pakata>, äs: ä];
 [perusmuoto: "penger", alku: "pen", luokka: nimisana, jatko: <penger>, äs: ä, tiedot: <inen>];
@@ -455,7 +449,6 @@
 [perusmuoto: "valjeta", alku: "val", luokka: teonsana, jatko: <tarjeta>, äs: a];
 [perusmuoto: "valmis", alku: "valm", luokka: nimi_laatusana, jatko: <valmis>, äs: a];
 [perusmuoto: "vapista", alku: "vap", luokka: teonsana, jatko: <kitistä>, äs: a];
-[perusmuoto: "varata", alku: "var", luokka: teonsana, jatko: <palata>, äs: a];
 [perusmuoto: "varsi", alku: "var", luokka: nimisana, jatko: <hirsi>, äs: a];
 [perusmuoto: "varttaa", alku: "vart", luokka: teonsana, jatko: <taittaa>, äs: a];
 [perusmuoto: "vasen", alku: "vase", luokka: nimi_laatusana, jatko: <vasen>, äs: a];

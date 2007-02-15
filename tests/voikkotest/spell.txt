@@ -231,6 +231,8 @@ lakaisseempi
 enimmäkseen
 
 [taivutusluokat]
+rei'illä # Kotus 10
+!reiillä # Kotus 10
 lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24
