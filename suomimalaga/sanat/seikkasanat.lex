@@ -352,6 +352,7 @@
 [perusmuoto: "minkävuoksi", alku: "minkävuoksi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moderato", alku: "moderato", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "moksis", alku: "moksiskaan", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "molempi", alku: "molempi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_ys>]; # "molempi parempi"
 [perusmuoto: "monasti", alku: "monasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moni", alku: "monesti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "moniaalla", alku: "moniaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];

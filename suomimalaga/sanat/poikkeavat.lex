@@ -327,7 +327,7 @@
 [perusmuoto: "pöpperössä", alku: "pöpperössä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "raastaa", alku: "raast", luokka: teonsana, jatko: <haastaa>, äs: a];
 [perusmuoto: "raataa", alku: "raa", luokka: teonsana, jatko: <raataa>, äs: a];
-[perusmuoto: "rabbismies", alku: "rabbismie", luokka: nimisana, jatko: <mies>, äs: a];
+[perusmuoto: "rabbismies", alku: "rabbismie", luokka: nimisana, jatko: <mies>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "radio", alku: "radioitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "raitis", alku: "rait", luokka: laatusana, jatko: <altis>, äs: a];
 [perusmuoto: "rakentaa", alku: "raken", luokka: teonsana, jatko: <rakentaa>, äs: a];
