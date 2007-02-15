@@ -5036,7 +5036,7 @@ subrule vieras ($tietue, $vahva_aste, $heikko_aste, $monikko, $johdin_Us):
          s_hV_loppuinen ($tietue,
                          $monikko + hA($tietue),
                          $monikko + "h")+
-	 voikko_lista_vain_lipulla(vanhahkot_muodot, 
+	 voikko_lista_vain_lipulla(vanhat_muodot, 
 	                 taivutuskaava ($tietue,
 	                                [olento_nA: $heikko_aste])  # Vieras+na.
 	                 );
@@ -5078,7 +5078,7 @@ subrule kauris ($tietue, $kerake):
          s_hV_loppuinen ($tietue,
                          $monikko + "hi",
                          $monikko + "h") +
-         voikko_lista_vain_lipulla(vanhahkot_muodot,
+         voikko_lista_vain_lipulla(vanhat_muodot,
 	                 taivutuskaava ($tietue,
                                         [olento_nA: "is"])  # Kauris+na.
 			 );
@@ -5657,7 +5657,7 @@ subrule nuolaista ($tietue, $vahva_aste, $heikko_aste):
                                     $vahva_aste, $vahva_aste,
                                     tositapa_4_t ($heikko_aste)) +
                           ehtotapa_tA     ($tietue, $vahva_aste,  $heikko_aste) +
-                          mahtotapa_se_tA ($tietue, $vahva_aste,  $heikko_aste) +
+                          mahtotapa_se_tA ($tietue, $heikko_aste,  $heikko_aste) +
                           käskytapa_tA    ($tietue, $heikko_aste, $heikko_aste) +
                           [nimitapa_1_tA:   $heikko_aste,
                            nimitapa_2:      $heikko_aste + "t",

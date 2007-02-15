@@ -133,6 +133,9 @@ luovuusnäkökulma
 !nopeimpainkasvatus
 vanhempainkasvatus
 vanhempainselvyys
+siirrettävyysperiaate
+siirtyvyysperiaate
+!siirrettäväperiaate
 
 [etuliitteet]
 yleisopetus
@@ -234,6 +237,11 @@ unien # Kotus 24
 unten # Kotus 24
 kauriiden # Kotus 41
 !kauriiiden # Kotus 41
+vilkkaana # Kotus 41
+!vilkasna # Kotus 41 (vanhat_muodot)
+rangaissee # Kotus 66
+!rankaissen # Kotus 66
+rangaistane # Kotus 66
 
 [muita virheitä]
 !kolaaa
