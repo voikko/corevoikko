@@ -229,9 +229,9 @@ const wchar_t * STD_REPL_REPL =
 	L"jpp"  L"kdglhuiel"  L"tvvkasaka"  L"\u00e5\u00e9\u00e2cc";
 
 const wchar_t * OCR_REPL_ORIG =
-	L"0liuoa"  L"\u00e4o"  L"\u00f6s"  L"\u0161z"  L"\u017ee"  L"\u00e9a"  L"\u00e2pbefqonmuvoc";
+	L"0liuoa"  L"\u00e4o"  L"\u00f6s"  L"\u0161z"  L"\u017ee"  L"\u00e9a"  L"\u00e2pbefqonmuvocbh";
 const wchar_t * OCR_REPL_REPL =
-	L"oilou\u00e4a"  L"\u00f6o"  L"\u0161s"  L"\u017ez"  L"\u00e9e"  L"\u00e2a"  L"bpfeoqmnvuco";
+	L"oilou\u00e4a"  L"\u00f6o"  L"\u0161s"  L"\u017ez"  L"\u00e9e"  L"\u00e2a"  L"bpfeoqmnvucohb";
 
 void voikko_suggest_replacement(voikko_sugg_status_t * s, const wchar_t * from, const wchar_t * to, int count) {
 	int i;
@@ -443,7 +443,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		return suggestions;
 	}
 	if (voikko_options.suggestion_type == ST_OCR) {
-		voikko_suggest_replacement(&status, OCR_REPL_ORIG, OCR_REPL_REPL, 29);
+		voikko_suggest_replacement(&status, OCR_REPL_ORIG, OCR_REPL_REPL, 31);
 	}
 	else {
 		voikko_suggest_vowel_change(&status);

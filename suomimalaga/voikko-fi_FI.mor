@@ -141,11 +141,11 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules erisnimen_sijapääte,
-	       omistusliite,
-	       liitesana,
-	       nimisanan_johdos, # -lainen
-	       yhdysviiva_erisnimen_jälkeen,
-	       loppu;
+               omistusliite,
+               liitesana,
+               nimisanan_johdos, # -lainen
+               yhdysmerkki_erisnimen_jälkeen,
+               loppu;
 end;
 
 
@@ -263,6 +263,17 @@ combi_rule johdin_inen ($vasen, $oikea, $sana):
 	       loppu;
 end;
 
+combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
+  ? $oikea.perusmuoto in <"katu", "kuja", "tie", "saari", "lahti", "niemi",
+                          "vuori", "vaara", "joki">;
+    result $vasen + <[alku: $sana] + $oikea>,
+           rules erisnimen_sijapääte,
+                 omistusliite,
+                 liitesana,
+                 yhdysmerkki_erisnimen_jälkeen,
+                 loppu;
+end;
+
 ###### JOHDINSÄÄNNÖT PÄÄTTYVÄT
 
 
@@ -317,7 +328,7 @@ combi_rule lyhennesääntö ($vasen, $oikea, $sana):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (kaksoispiste in $oikea.jatko) then result $res, rules kaksoispiste; end;
-  if (tavuviiva in $oikea.jatko) then result $res, rules tavuviiva; end;
+  if (tavuviiva in $oikea.jatko) then result $res, rules yhdysmerkki_lyhenteen_jälkeen; end;
   if (loppu in $oikea.jatko) then result $res, rules loppu; end;
 end;
 
@@ -343,7 +354,7 @@ combi_rule tavuviiva ($vasen, $oikea, $sana, $index):
 
   ? tavuviiva in $vasen.($index - 1).jatko;
 
-  result $vasen + <[alku: $sana] + $oikea>,
+  result $vasen + <[vokaaliehto: yes] + $oikea>,
          rules nimisana, erisnimi, laatusana, asemosana, lyhennesääntö,
                etuliite, teonsana, kieltosana, loppu;
 end;
@@ -353,9 +364,23 @@ end;
 
 combi_rule yhdysmerkki_sanan_alussa ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
-  result $vasen + <[alku: $sana] + $oikea>,
+  result <[vokaaliehto: no] + $oikea>,
          rules nimisana, erisnimi, laatusana, lyhennesääntö,
                etuliite, teonsana, lukusanan_jälkiliite;
+end;
+
+combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+  result $vasen + <[vokaaliehto: no] + $oikea>, rules
+         nimisana, erisnimi, laatusana,
+         etuliite, teonsana, loppu;
+end;
+
+combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+  result $vasen + <[vokaaliehto: no] + $oikea>, rules
+         nimisana, erisnimi, laatusana,
+         etuliite, teonsana, loppu;
 end;
 
 ###### YHDYSMERKKISÄÄNNÖT PÄÄTTYVÄT
@@ -386,10 +411,13 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
-    result $res, rules liitesana, loppu;
+  elseif (sijamuoto_sijasta($oikea.sija) = omanto and
+          luku_sijasta($oikea.sija) = yksikkö) then
+    result $res, rules yhdysmerkki_erisnimen_jälkeen, omistusliite, johdettu_paikannimi;
   else
-    result $res, rules tavuviiva, omistusliite, liitesana, loppu;
+    result $res, rules yhdysmerkki_erisnimen_jälkeen, omistusliite;
   end;
+  result $res, rules liitesana, loppu;
 end;
 
 combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
@@ -649,17 +677,6 @@ combi_rule seikka_tai_suhdesana ($vasen, $oikea, $sana):
 end;
 
 ###### SEIKKA- JA SUHDESANASÄÄNNÖT PÄÄTTYVÄT
-
-###### YHDYSVIIVASÄÄNNÖT ALKAVAT
-
-combi_rule yhdysviiva_erisnimen_jälkeen ($vasen, $oikea, $sana):
-  ? $oikea.luokka = tavuviiva;
-  result $vasen + <$oikea>, rules
-	 nimisana, erisnimi, laatusana,
-         etuliite, teonsana, loppu;
-end;
-
-###### YHDYSVIIVASÄÄNNÖT PÄÄTTYVÄT
 
 combi_rule teonsana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = teonsana;
@@ -1071,52 +1088,32 @@ end;
 
 
 subrule yhdyssana_oikein ($vasen, $oikea, $i):
-  # Erisnimet eivät voi olla yhdyssanojen osana.
+  define $nimet := <etunimi, sukunimi, paikannimi, nimi>;
   #
-  define $nimet := <etunimi, sukunimi, nimi>;
+  # Yhdysviivan käsittely
+  #
+  if ($i greater_equal 2) and ($vasen.$i.luokka = tavuviiva) then
 
-  if (switch (malli) = voikko) then
-    $nimet := <etunimi, sukunimi, paikannimi, nimi>;
-    #
-    # Yhdysviivan käsittely
-    #
-    if ($i greater_equal 2) and ($vasen.$i.luokka = tavuviiva) then
+    # Yhdysviivan käyttö on jo todettu sallituksi
+    if ($vasen.$i.vokaaliehto = no) then
+      return yes;
 
-      # Yhdysviiva aina sallittu erisnimien ja lyhenteiden jälkeen
-      if ($vasen.($i - 1).luokka in $nimet + <lyhenne, huudahdussana>) then
-        return yes;
+    # Yhdysviiva sallittu, kun alkuosa loppuu samaan vokaaliin jolla loppuosa alkaa
+    elseif ((($vasen.($i - 1).alku) matches ".*" + @ääntiö) and
+            (last($vasen.($i - 1).alku) = first($oikea.perusmuoto))) then
+      return yes;
 
-      # Yhdysviiva sallittu, kun alkuosa loppuu samaan vokaaliin jolla loppuosa alkaa
-      elseif
-             ((($vasen.($i - 1).alku) matches ".*" + @ääntiö) and
-              (last($vasen.($i - 1).alku) = first($oikea.perusmuoto))) then
-        return yes;
-
-      # "Ruotsin-laiva"
-      elseif ($i greater_equal 3) and ($vasen.($i - 1).luokka = sijapääte) and
-             ($vasen.($i - 1).sija = omanto_n) and ($vasen.($i - 2).luokka in $nimet) then
-        return yes;
-
-      # is- ("teknillis-tieteellinen", "Kaakkois-Suomi")
-      # FIXME: tämä ei ole tarkalleen ottaen oikein, mutta toistaiseksi riittävän hyvä
-      elseif (($vasen.($i - 1).alku) matches ".*is") then
-        return yes;
-
-      end;
-      # Yhdysviiva muutoin kielletty
-      return no;
+    # is- ("teknillis-tieteellinen", "Kaakkois-Suomi")
+    # FIXME: tämä ei ole tarkalleen ottaen oikein, mutta toistaiseksi riittävän hyvä
+    elseif (($vasen.($i - 1).alku) matches ".*is") then
+      return yes;
 
     end;
-  elseif (($i greater_equal 2) and
-          ($vasen.$i.luokka = tavuviiva) and
-          (($vasen.($i - 1).luokka in $nimet) or ($oikea.luokka in $nimet))) then
-    #
-    # Hyväksytään kaksiosainen erisnimi ("Anna-Mari") tai erisnimi viivan
-    # kanssa yhdyssanassa ("Anna-niminen").
-    #
-    return yes;
-  end;
 
+    # Yhdysviiva muutoin kielletty
+    return no;
+
+  end;
 
   if ($oikea.luokka in $nimet) then
     return no;
@@ -1125,8 +1122,8 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 
   # Jotkut sanat eivät voi olla yhdyssanojen osina.
   #
-  if ((($vasen.$i.tiedot /= nil) and ((ei_ys in $vasen.$i.tiedot) or (latex in $vasen.$i.tiedot))) or
-      (($oikea.tiedot    /= nil) and ((ei_ys in $oikea.tiedot)    or (latex in $oikea.tiedot)))) then
+  if ((($vasen.$i.tiedot /= nil) and ((ei_ys in $vasen.$i.tiedot))) or
+      (($oikea.tiedot    /= nil) and ((ei_ys in $oikea.tiedot)   ))) then
     return no;
   end;
   # Ei hyväksytä tälläisia sanoja silloinkaan, kun sijamuoto on joku muu kuin nimentö (isi+n+maa ei käy).

@@ -52,6 +52,14 @@ Pohjois-Sveitsi
 !enoerkki
 !janetten
 !Teemunsilta
+Esankujalta
+!Heikkienkujalta
+!Esaakujalta
+!Esakujalta
+!esankujalta
+Mikonvuori-lava
+!Mikonvuorilava
+!mikonvuori-lava
 
 [lyhenteet]
 USA:ssa

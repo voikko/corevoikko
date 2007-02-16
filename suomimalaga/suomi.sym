@@ -188,6 +188,7 @@ luokka; alaluokka;
   lyhenne;
   kaksoispiste;
   tavuviiva;
+    vokaaliehto;
 
   tositavan_kestämä_dAAn;  # Voi+daan.
   tositavan_kestämä_lAAn;  # Tul+laan.
