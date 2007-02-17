@@ -104,62 +104,62 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "joku", alku: "joku", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
 [perusmuoto: "joku", alku: "jonkun", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jotakuta", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jonakuna", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joksikuksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jossakussa", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jostakusta", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "johonkuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jollakulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joltakulta", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jollekulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jottakutta", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joku", alku: "jotakuta", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "joku", alku: "jonakuna", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "joku", alku: "joksikuksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jossakussa", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jostakusta", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "johonkuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jollakulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "joltakulta", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jollekulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jottakutta", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
 
 [perusmuoto: "joku", alku: "jotkut", luokka: asemosana, sija: nimentö_t, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joittenkuitten", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joidenkuiden", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joitakuita", luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joinakuina", luokka: asemosana, sija: olento_inA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joiksikuiksi", luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joissakuissa", luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joistakuista", luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joihinkuihin", luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joillakuilla", luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joiltakuilta", luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joillekuille", luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joittakuitta", luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joinekuine", luokka: asemosana, sija: seuranto_ine, luku: monikko, jatko: <omistusliite, loppu>, äs: a];
+[perusmuoto: "joku", alku: "joittenkuitten", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "joku", alku: "joidenkuiden", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joitakuita", luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "joinakuina", luokka: asemosana, sija: olento_inA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "joiksikuiksi", luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joissakuissa", luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joistakuista", luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joihinkuihin", luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joillakuilla", luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joiltakuilta", luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joillekuille", luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joittakuitta", luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joinekuine", luokka: asemosana, sija: seuranto_ine, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 
 ######################################################
 
-[perusmuoto: "jompikumpi", alku: "jompikumpi", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommankumman", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompaakumpaa", luokka: asemosana, sija: osanto_A, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompanakumpana", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommaksikummaksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommassakummassa", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommastakummasta", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompaankumpaan", luokka: asemosana, sija: sisätulento_Vn, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommallakummalla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommaltakummalta", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommallekummalle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommattakummatta", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jompikumpi", alku: "jompikumpi", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "jompikumpi", alku: "jommankumman", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompaakumpaa", luokka: asemosana, sija: osanto_A, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompanakumpana", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommaksikummaksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommassakummassa", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommastakummasta", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompaankumpaan", luokka: asemosana, sija: sisätulento_Vn, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommallakummalla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommaltakummalta", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommallekummalle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommattakummatta", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "jompikumpi", alku: "jommatkummat", luokka: asemosana, sija: nimentö_t, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompienkumpien", luokka: asemosana, sija: omanto_ien, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompainkumpain", luokka: asemosana, sija: omanto_in, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompiakumpia", luokka: asemosana, sija: osanto_iA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompinakumpina", luokka: asemosana, sija: olento_inA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommiksikummiksi", luokka: asemosana, sija: tulento_iksi, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommissakummissa", luokka: asemosana, sija: sisäolento_issA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommistakummista", luokka: asemosana, sija: sisäeronto_istA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompiinkumpiin", luokka: asemosana, sija: sisätulento_iin, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommillakummilla", luokka: asemosana, sija: ulko_olento_illA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommiltakummilta", luokka: asemosana, sija: ulkoeronto_iltA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommillekummille", luokka: asemosana, sija: ulkotulento_ille, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jommittakummitta", luokka: asemosana, sija: vajanto_ittA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jompikumpi", alku: "jompinekumpine", luokka: asemosana, sija: seuranto_ine, luku: monikko, jatko: <omistusliite, loppu>, äs: a];
-[perusmuoto: "jompikumpi", alku: "jomminkummin", luokka: asemosana, sija: keinonto_in, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jompikumpi", alku: "jommatkummat", luokka: asemosana, sija: nimentö_t, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompienkumpien", luokka: asemosana, sija: omanto_ien, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompainkumpain", luokka: asemosana, sija: omanto_in, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompiakumpia", luokka: asemosana, sija: osanto_iA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompinakumpina", luokka: asemosana, sija: olento_inA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommiksikummiksi", luokka: asemosana, sija: tulento_iksi, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommissakummissa", luokka: asemosana, sija: sisäolento_issA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommistakummista", luokka: asemosana, sija: sisäeronto_istA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompiinkumpiin", luokka: asemosana, sija: sisätulento_iin, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommillakummilla", luokka: asemosana, sija: ulko_olento_illA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommiltakummilta", luokka: asemosana, sija: ulkoeronto_iltA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommillekummille", luokka: asemosana, sija: ulkotulento_ille, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommittakummitta", luokka: asemosana, sija: vajanto_ittA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompinekumpine", luokka: asemosana, sija: seuranto_ine, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jomminkummin", luokka: asemosana, sija: keinonto_in, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
 
 ######################################################
 
@@ -198,18 +198,18 @@ define @loppu := <liitesana, loppu>;
 # itsekukin	= itse + kukka(instruktiivi)
 # itsekustakin	= itse + kusi(yks. partitiivi) + kin
 # itsekultakin	= itse + kulta(yks. nominatiivi) + kin
-[perusmuoto: "itsekukin", alku: "itsekukin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekunkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekutakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekunakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekuksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekussakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekustakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekuhunkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekullakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekultakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekullekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "itsekukin", alku: "itsekuttakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "itsekukin", alku: "itsekukin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
+[perusmuoto: "itsekukin", alku: "itsekunkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
+[perusmuoto: "itsekukin", alku: "itsekutakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekunakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekuksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekussakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekustakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekuhunkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekullakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekultakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekullekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekuttakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
 
 ######################################################
 
@@ -594,10 +594,10 @@ define @loppu := <liitesana, loppu>;
 # Seuraava on sanaliitto Kotuksen nettisivujen mukaan mutta yhdyssana kielitoimiston MOT-sanakirjassa
 [perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 
-[perusmuoto: "eteenpäin", alku: "edeltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "eteenpäin", alku: "edessäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "eteenpäin", alku: "edestäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "eteenpäin", alku: "eteenpäin",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "eteenpäin", alku: "edeltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "eteenpäin", alku: "edessäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "eteenpäin", alku: "edestäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "eteenpäin", alku: "eteenpäin",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
 
 ######################################################
 
