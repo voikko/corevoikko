@@ -462,7 +462,7 @@
 [perusmuoto: "viis", alku: "viis", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];
-[perusmuoto: "vireillepanna", alku: "vireillepan", luokka: teonsana, jatko: <mennä>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vireillepanna", alku: "vireillepan", luokka: teonsana, jatko: <mennä>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "virkkaa", alku: "virk", luokka: teonsana, jatko: <virkkaa>, äs: a];
 [perusmuoto: "virsi", alku: "vir", luokka: nimisana, jatko: <hirsi>, äs: ä];
 [perusmuoto: "vittu", alku: "vitusti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
