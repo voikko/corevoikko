@@ -133,8 +133,7 @@
 [perusmuoto: "hollille", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huiskin", alku: "huiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujakassa", alku: "hujaka", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a];
-[perusmuoto: "hujakoilla", alku: "hujako", luokka: seikkasana, jatko: <ulko_olento_illA>, äs: a];
-[perusmuoto: "hujakoille", alku: "hujako", luokka: seikkasana, jatko: <ulkotulento_ille>, äs: a];
+[perusmuoto: "hujakoilla", alku: "hujako", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: a];
 [perusmuoto: "hujan", alku: "hujan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukkaan", alku: "hukkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -508,6 +507,8 @@
 [perusmuoto: "sangen", alku: "sangen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "satamäärin", alku: "satamäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sattumoisin", alku: "sattumoisin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "seassa", alku: "sea", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
+[perusmuoto: "sekaan", alku: "seka", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "seisaalla", alku: "seisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "selin", alku: "selin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "selville", alku: "selville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
