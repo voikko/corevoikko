@@ -362,7 +362,7 @@
 [perusmuoto: "samperi", alku: "samperisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <sankari>, äs: a];
-[perusmuoto: "sanoinkuvaamaton", alku: "sanoinkuvaama", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
+[perusmuoto: "sanoinkuvaamaton", alku: "sanoinkuvaama", luokka: laatusana, jatko: <johdin_tOn>, äs: a, rakenne: "=pppppp=pppppppppp"];
 [perusmuoto: "sataa", alku: "sa", luokka: teonsana, jatko: <raataa>, äs: a];
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
 [perusmuoto: "selitä", alku: "sel", luokka: teonsana, jatko: <keritä>, äs: ä];

@@ -213,6 +213,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "satunnais", alku: "satunnais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "seitsen", alku: "seitsen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "seka", alku: "seka", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "seksuaali", alku: "seksuaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a];
 [perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "sivuttais", alku: "sivuttais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
