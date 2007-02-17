@@ -349,6 +349,10 @@
 [perusmuoto: "miltei", alku: "miltei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "minkätähden", alku: "minkätähden", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "minkävuoksi", alku: "minkävuoksi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "mihinpäin", alku: "mihinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "minnepäin", alku: "minnepäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "missäpäin", alku: "missäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "mistäpäin", alku: "mistäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "moderato", alku: "moderato", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "moksis", alku: "moksiskaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "molempi", alku: "molempi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_ys>]; # "molempi parempi"

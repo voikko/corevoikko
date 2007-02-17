@@ -166,7 +166,7 @@
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: @sana1 + <osanto_tA>, äs: a];
 [perusmuoto: "tattis", alku: "tattis", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "te", alku: "te", luokka: asemosana, jatko: <me>, äs: ä];
-[perusmuoto: "tervetuloa", alku: "tervetuloa", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "tervetuloa", alku: "tervetuloa", luokka: huudahdussana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "tex", alku: "tex", luokka: lyhenne, jatko: <kalsium>, äs: ä];
 [perusmuoto: "toteen", alku: "toteen", luokka: nimisana, jatko: @sana2, äs: aä];
 [perusmuoto: "tse", alku: "tse", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
