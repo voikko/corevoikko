@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-12 03:30:42 EET
+# Time of generation: 2007-02-18 03:28:32 EET
 
 [perusmuoto: "aktinium", alku: "aktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "aldehydi", alku: "aldehyd", luokka: nimisana, jatko: <risti>, äs: aä];
@@ -50,6 +50,14 @@
 [perusmuoto: "meitnerium", alku: "meitnerium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "mendelevium", alku: "mendelevium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "nobelium", alku: "nobelium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "praseodyymi", alku: "praseodyym", luokka: nimisana, jatko: <risti>, äs: aä];
+[perusmuoto: "prometium", alku: "prometium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "protaktinium", alku: "protaktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "renium", alku: "renium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "rutherfordium", alku: "rutherfordium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "röntgenium", alku: "röntgenium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "samarium", alku: "samarium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "seaborgium", alku: "seaborgium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "souto", alku: "sou", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "spin", alku: "spin", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "ununbium", alku: "ununbium", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -60,6 +68,7 @@
 [perusmuoto: "ununpentium", alku: "ununpentium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununseptium", alku: "ununseptium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununtrium", alku: "ununtrium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "valentti", alku: "valent", luokka: laatusana, jatko: <tatti>, äs: a];
 [perusmuoto: "ytterbium", alku: "ytterbium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "yttrium", alku: "yttrium", luokka: nimisana, jatko: <kalsium>, äs: a];
 
