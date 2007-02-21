@@ -1,6 +1,10 @@
+
+# Set some variables
+VOIKKO_BINDIST=voikko-fi_FI.pro voikko-fi_FI.lex_? voikko-fi_FI.mor_? voikko-fi_FI.sym_?
+
 SM=suomi-malaga-svn
 
-.PHONY: all voikko sukija kehitys run clean dist tar
+.PHONY: all voikko sukija kehitys run clean dist tar voikko-install
 
 all: voikko sukija
 
@@ -36,3 +40,11 @@ mcopy:
 
 bcopy:
 	cp *_l *.pro ~/.voikko
+
+voikko-install: voikko
+ifndef DESTDIR
+	$(error DESTDIR must be specified)
+endif
+	install --mode=755 -d $(DESTDIR)
+	install --mode=644 -t $(DESTDIR) $(VOIKKO_BINDIST)
+
