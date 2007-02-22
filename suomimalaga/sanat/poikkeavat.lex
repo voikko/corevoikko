@@ -393,7 +393,6 @@
 [perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "syödä", alku: "s", luokka: teonsana, jatko: <juoda>, äs: ä];
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];
-[perusmuoto: "sätki", alku: "sätk", luokka: teonsana, jatko: <sallia>, äs: ä];
 [perusmuoto: "tahaton", alku: "taha", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];
 [perusmuoto: "taittaa", alku: "tait", luokka: teonsana, jatko: <taittaa>, äs: a];
