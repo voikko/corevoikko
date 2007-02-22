@@ -42,6 +42,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "bile", alku: "bile", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "suhu", alku: "suhu", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "varo", alku: "varo", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @eln, äs: aä];
 
@@ -219,6 +220,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "sivuttais", alku: "sivuttais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "sosio", alku: "sosio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "super", alku: "super", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "suur", alku: "suur", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "syys", alku: "syys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
