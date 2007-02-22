@@ -225,6 +225,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "suur", alku: "suur", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "syys", alku: "syys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "taka", alku: "taka", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "tasa", alku: "tasa", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];

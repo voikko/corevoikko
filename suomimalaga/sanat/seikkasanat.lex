@@ -597,6 +597,8 @@
 [perusmuoto: "tarkalleen", alku: "tarkalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarkimmin", alku: "tarkimmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarkoin", alku: "tarkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tasa", alku: "tasa", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: a];
+[perusmuoto: "tasa", alku: "taso", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_ihin>, äs: a]; # Tunnistuvat myös sanasta "taso" mutta se on eri sana
 [perusmuoto: "tasan", alku: "tasan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tekeillä", alku: "teke", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: ä];
 [perusmuoto: "ties", alku: "ties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
