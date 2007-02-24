@@ -603,7 +603,10 @@
 [perusmuoto: "tekeillä", alku: "teke", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: ä];
 [perusmuoto: "ties", alku: "ties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tieten", alku: "tieten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tiettäväksi", alku: "tiettäväksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tiettävästi", alku: "tiettävästi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tiistaisin", alku: "tiistaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tipotiehen", alku: "tipotie", luokka: seikkasana, jatko: <sisätulento_hVn>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "tipotiessään", alku: "tipotiessään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "tismalleen", alku: "tismalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohjona", alku: "tohjoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
