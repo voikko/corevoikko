@@ -1,0 +1,64 @@
+<!-- The root element of a word list -->
+<!ELEMENT wordlist (word*)>
+<!ATTLIST wordlist
+          xml:lang CDATA #IMPLIED>
+
+<!-- A word, or a record containing many related words -->
+<!ELEMENT word (forms, classes, inflection, use?, compounding?,
+                derivation?, style?, application?, description?,
+                link?, frequency?)>
+<!ATTLIST word
+          id ID #REQUIRED>
+
+<!-- The word classes for this word -->
+<!ELEMENT classes (wclass+)>
+
+<!-- Word class -->
+<!ELEMENT wclass (#PCDATA)>
+
+<!-- Information about word inflection -->
+<!ELEMENT inflection (infclass*, vtype?, flag*)>
+
+<!-- Inflection class of the word -->
+<!ELEMENT infclass (#PCDATA)>
+<!ATTLIST infclass
+          type (current|historical) "current">
+
+<!-- The vowel type of the word in inflections -->
+<!ELEMENT vtype (#PCDATA)>
+
+<!-- Information about the spelling of the words in this record -->
+<!ELEMENT forms (form+)>
+
+<!-- Possible spelling -->
+<!ELEMENT form (#PCDATA)>
+
+<!-- Usage field flags assiciated with this record -->
+<!ELEMENT use (flag*)>
+
+<!-- Compounding flags assiciated with this record -->
+<!ELEMENT compounding (flag*)>
+
+<!-- Derivation flags assiciated with this record -->
+<!ELEMENT derivation (flag*)>
+
+<!-- Style flags assiciated with this record -->
+<!ELEMENT style (flag*)>
+
+<!-- Application specific flags assiciated with this record -->
+<!ELEMENT application (flag*)>
+
+<!-- A binary flag -->
+<!ELEMENT flag (#PCDATA)>
+
+<!-- Description of this word -->
+<!ELEMENT description (#PCDATA)>
+
+<!-- Link to an external resource explaining this word -->
+<!ELEMENT link (#PCDATA)>
+
+<!-- Information about the usage frequency of this word -->
+<!ELEMENT frequency (fclass?, flag*)>
+
+<!-- Frequency class -->
+<!ELEMENT fclass (#PCDATA)>

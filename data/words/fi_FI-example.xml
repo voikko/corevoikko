@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE wordlist SYSTEM "wordlist.dtd">
+<wordlist xml:lang="fi">
+<word id="w518168">
+	<forms>
+		<form>šamaani</form>
+		<form>samaani</form>
+		<form>shamaani</form>
+	</forms>
+	<classes>
+		<wclass>substantiivi</wclass>
+		<wclass>etunimi</wclass>
+		<wclass>sukunimi</wclass>
+		<wclass>paikannimi</wclass>
+		<wclass>nimi</wclass>
+		<wclass>adjektiivi</wclass>
+		<wclass>verbi</wclass>
+	</classes>
+	<inflection>
+		<infclass>paperi</infclass>
+		<infclass type="historical">banaali</infclass>
+		<vtype>a</vtype>
+		<flag>ei_vertm</flag>
+		<flag>ei_yks</flag>
+		<flag>yt</flag>
+		<flag>paikannimi_sisäpaikallissijat</flag>
+		<flag>paikannimi_ulkopaikallissijat</flag>
+	</inflection>
+	<use>
+		<flag>atk</flag>
+		<flag>lääketiede</flag>
+		<flag>luonnontiede</flag>
+		<flag>kasvatustiede</flag>
+	</use>
+	<compounding>
+		<flag>ei_ys</flag>
+		<flag>ei_ysj</flag>
+		<flag>ei_ysa</flag>
+		<flag>ysj</flag>
+	</compounding>
+	<derivation>
+		<flag>ei_lainen</flag>
+		<flag>ei_mainen</flag>
+		<flag>inen</flag>
+		<flag>ei_inen</flag>
+	</derivation>
+	<style>
+		<flag>murre</flag>
+		<flag>vanhaa_kieltä</flag>
+		<flag>sivistyssana</flag>
+		<flag>vieraskielinen</flag>
+		<flag>kielivirhe</flag>
+	</style>
+	<application>
+		<flag>ei_voikko</flag>
+		<flag>ei_sukija</flag>
+	</application>
+	<description>tietäjä</description>
+	<frequency>
+		<fclass>7</fclass>
+		<flag>sekoittuu_yleisempään</flag>
+	</frequency>
+</word>
+</wordlist>
