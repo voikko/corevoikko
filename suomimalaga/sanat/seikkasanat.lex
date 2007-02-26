@@ -657,6 +657,7 @@
 [perusmuoto: "tästälähin", alku: "tästälähin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "täten", alku: "täten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "täysi", alku: "täynnä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "täytäntöön", alku: "täytäntö", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "ulkoa", alku: "ulkoa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ulkoapäin", alku: "ulkoapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "ulkona", alku: "ulkona", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
