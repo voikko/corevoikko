@@ -20,6 +20,8 @@ proteiini       pro-teii-ni
 intiaani        in-tiaa-ni
 jesuiitta       je-suiit-ta
 AA              AA
+hienosto	hie-nos-to
+pöytähienosto	pöy-tä-hienos-to
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
@@ -51,4 +53,12 @@ kuorma-allas.   kuor-ma-al-las.
 [no_ugly_hyphenatio=0 ignore_dot=1 min_hyphenated_word_length=6]
 kuorma-allas.   kuor-ma-allas.
 talon.          talon.
+
+[no_ugly_hyphenation=1 intersect_compound_level=2]
+hienosto	hie-nos-to
+pöytähienosto	pöy-tä-hie-nos-to
+
+[no_ugly_hyphenation=1 intersect_compound_level=0]
+hienosto        hienos-to
+pöytähienosto   pöy-tä-hienos-to
 

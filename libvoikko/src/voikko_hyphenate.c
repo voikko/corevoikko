@@ -308,13 +308,13 @@ void voikko_remove_extra_hyphenations(char ** hyphenations, size_t len, int inte
 		current_buffer++;
 	}
 	if (min_parts > intersect_compound_level) return; /* nothing to do */
-	/* delete items from array where current_parts > intersect_compound_level */
+	/* delete items from array where current_parts > min_parts */
 	while (j < hyphenation_count) {
 		current_buffer = hyphenations + j;
 		current_parts = 1;
 		for (i = 0; i < len; i++)
 			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') current_parts++;
-		if (current_parts > intersect_compound_level) {
+		if (current_parts > min_parts) {
 			free(hyphenations[j]);
 			hyphenations[j] = hyphenations[--hyphenation_count];
 			hyphenations[hyphenation_count] = 0;

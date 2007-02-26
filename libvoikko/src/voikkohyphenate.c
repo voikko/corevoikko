@@ -89,6 +89,7 @@ int main(int argc, char ** argv) {
 	char * path = 0;
 	int handle;
 	int minhwlen;
+	int iclevel;
 	int i;
 	
 	line = malloc(size);
@@ -127,6 +128,10 @@ int main(int argc, char ** argv) {
 			minhwlen = atoi(argv[i] + 27);
 			if (minhwlen < 2) minhwlen = 2;
 			voikko_set_int_option(handle, VOIKKO_MIN_HYPHENATED_WORD_LENGTH, minhwlen);
+		}
+		else if (strncmp(argv[i], "intersect_compound_level=", 25) == 0) {
+			iclevel = atoi(argv[i] + 25);
+			voikko_set_int_option(handle, VOIKKO_INTERSECT_COMPOUND_LEVEL, iclevel);
 		}
 	}
 	
