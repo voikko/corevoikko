@@ -5,8 +5,8 @@
 
 <!-- A word, or a record containing many related words -->
 <!ELEMENT word (forms, classes, inflection, use?, compounding?,
-                derivation?, style?, application?, description?,
-                link?, frequency?)>
+                derivation?, style?, application?,
+                frequency?, info?)>
 <!ATTLIST word
           id ID #REQUIRED>
 
@@ -51,11 +51,17 @@
 <!-- A binary flag -->
 <!ELEMENT flag (#PCDATA)>
 
+<!-- Information about the word -->
+<!ELEMENT info (description?, link?, comment?)>
+
 <!-- Description of this word -->
 <!ELEMENT description (#PCDATA)>
 
 <!-- Link to an external resource explaining this word -->
 <!ELEMENT link (#PCDATA)>
+
+<!-- Comments about this record -->
+<!ELEMENT comment (#PCDATA)>
 
 <!-- Information about the usage frequency of this word -->
 <!ELEMENT frequency (fclass?, flag*)>

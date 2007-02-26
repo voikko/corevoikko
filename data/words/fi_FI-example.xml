@@ -8,13 +8,13 @@
 		<form>shamaani</form>
 	</forms>
 	<classes>
-		<wclass>substantiivi</wclass>
-		<wclass>etunimi</wclass>
-		<wclass>sukunimi</wclass>
-		<wclass>paikannimi</wclass>
-		<wclass>nimi</wclass>
-		<wclass>adjektiivi</wclass>
-		<wclass>verbi</wclass>
+		<wclass>noun</wclass>
+		<wclass>pnoun_firstname</wclass>
+		<wclass>pnoun_lastname</wclass>
+		<wclass>pnoun_place</wclass>
+		<wclass>pnoun_misc</wclass>
+		<wclass>adjective</wclass>
+		<wclass>verb</wclass>
 	</classes>
 	<inflection>
 		<infclass>paperi</infclass>
@@ -27,10 +27,10 @@
 		<flag>paikannimi_ulkopaikallissijat</flag>
 	</inflection>
 	<use>
-		<flag>atk</flag>
-		<flag>lääketiede</flag>
-		<flag>luonnontiede</flag>
-		<flag>kasvatustiede</flag>
+		<flag>it</flag>
+		<flag>medicine</flag>
+		<flag>science</flag>
+		<flag>education</flag>
 	</use>
 	<compounding>
 		<flag>ei_ys</flag>
@@ -45,20 +45,24 @@
 		<flag>ei_inen</flag>
 	</derivation>
 	<style>
-		<flag>murre</flag>
-		<flag>vanhaa_kieltä</flag>
-		<flag>sivistyssana</flag>
-		<flag>vieraskielinen</flag>
-		<flag>kielivirhe</flag>
+		<flag>dialect</flag>
+		<flag>old</flag>
+		<flag>international</flag>
+		<flag>foreign</flag>
+		<flag>incorrect</flag>
 	</style>
 	<application>
-		<flag>ei_voikko</flag>
-		<flag>ei_sukija</flag>
+		<flag>not_voikko</flag>
+		<flag>not_sukija</flag>
 	</application>
-	<description>tietäjä</description>
 	<frequency>
 		<fclass>7</fclass>
-		<flag>sekoittuu_yleisempään</flag>
+		<flag>confusing</flag>
 	</frequency>
+	<info>
+		<description>tietäjä</description>
+		<link>http://en.wiktionary.org/wiki/shaman</link>
+		<comment>Sanaan liittyvä kommentti</comment>
+	</info>
 </word>
 </wordlist>
