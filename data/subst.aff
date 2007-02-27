@@ -1417,6 +1417,7 @@ end: class
 
 # Kotus 28 kansi
 class: 28
+sm-class: kansi
 match-word: (?:n|l|r)si
 consonant-gradation: -
 group: t
