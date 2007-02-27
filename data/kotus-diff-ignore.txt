@@ -188,6 +188,7 @@ jokasyksyinen
 jokatalvinen
 julkilukea
 jäljempi
+jälsi
 jäsennin
 kahdeksanlainen
 karteesinen
