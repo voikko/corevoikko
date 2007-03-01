@@ -62,6 +62,7 @@
 [perusmuoto: "edusmies", alku: "edusmie", luokka: nimisana, jatko: <mies>, äs: a];
 [perusmuoto: "ehdokas", alku: "ehdok", luokka: nimisana, jatko: <asiakas>, äs: a];
 [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "eittämätön", alku: "eittämä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "El", alku: "El", luokka: nimi, jatko: <loppu>, äs: a]; # El Salvador
 [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
 [perusmuoto: "ennenkuulumaton", alku: "ennenkuuluma", luokka: laatusana, jatko: <johdin_tOn>, äs: a, rakenne: "=ppppp=pppppppppp"];
