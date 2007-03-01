@@ -232,6 +232,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "täsmä", alku: "täsmä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä]; 
 [perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
