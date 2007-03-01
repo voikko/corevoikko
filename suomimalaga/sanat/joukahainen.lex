@@ -22259,7 +22259,7 @@
 [perusmuoto: "Valkeakoski", alku: "Valkeakosk", luokka: paikannimi, jatko: <lovi>, äs: a];
 [perusmuoto: "Valkeala", alku: "Valkeal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Valkjärvi", alku: "Valkjärv", luokka: paikannimi, jatko: <lovi>, äs: ä];
-[perusmuoto: "valko", alku: "valko", luokka: nimisana, jatko: <valo>, äs: a];
+#[perusmuoto: "valko", alku: "valko", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "valkoinen", alku: "valkoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Valkonen", alku: "Valko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "valkuainen", alku: "valkuai", luokka: nimisana, jatko: <nainen>, äs: a];
@@ -23535,7 +23535,7 @@
 [perusmuoto: "väylästö", alku: "väylästö", luokka: nimisana, jatko: <arvelu>, äs: ä];
 [perusmuoto: "Väyrinen", alku: "Väyri", luokka: sukunimi, jatko: <nainen>, äs: ä];
 [perusmuoto: "Väyrynen", alku: "Väyry", luokka: sukunimi, jatko: <nainen>, äs: ä];
-[perusmuoto: "vääjätä", alku: "vääj", luokka: teonsana, jatko: <salata>, äs: ä];
+#[perusmuoto: "vääjätä", alku: "vääj", luokka: teonsana, jatko: <salata>, äs: ä];
 [perusmuoto: "Vääksy", alku: "Vääksy", luokka: paikannimi, jatko: <valo>, äs: ä];
 [perusmuoto: "väänne", alku: "vään", luokka: nimisana, jatko: <enne>, äs: ä];
 [perusmuoto: "väännin", alku: "vään", luokka: nimisana, jatko: <vaimennin>, äs: ä];

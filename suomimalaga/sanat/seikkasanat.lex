@@ -728,6 +728,7 @@
 [perusmuoto: "vängällä", alku: "vängällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # Väen vängällä
 [perusmuoto: "väsyksiin", alku: "väsyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "väsyksissä", alku: "väsyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "vääjäämättä", alku: "vääjäämä", luokka: seikkasana, jatko: <vajanto_ttA>, äs: ä];
 [perusmuoto: "väärin", alku: "väärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yhdessä", alku: "yhdessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yht'äkkiä", alku: "yht'äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
