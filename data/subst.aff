@@ -1624,6 +1624,49 @@ end: rules
 end: class
 
 
+# Kotus 36 sisin
+class: 36
+sm-class: sisin
+match-word: in
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	n	mpa	s	ps=r
+genetiivi		n	mman	s
+partitiivi	0	ta	w
+translatiivi	n	mmaksi	s	ps=f
+translatiivi	n	mmakse	s	ps=r
+essiivi		n	mpana	s
+inessiivi		n	mmassa	s
+elatiivi		n	mmasta	s
+illatiivi		n	mpaan	s
+adessiivi		n	mmalla	s
+ablatiivi		n	mmalta	s
+allatiivi		n	mmalle	s
+abessiivi		n	mmatta	s	ps=f
+nominatiivi_mon	n	mmat	s	ps=f
+genetiivi_mon	n	mpien	s
+genetiivi_mon	0	ten	w	prio=2
+genetiivi_mon	n	mpain	s	prio=2
+partitiivi_mon	n	mpia	s
+translatiivi_mon	n	mmiksi	s	ps=f
+translatiivi_mon	n	mmikse	s	ps=r
+essiivi_mon	n	mpina	s
+inessiivi_mon	n	mmissa	s
+elatiivi_mon	n	mmista	s
+illatiivi_mon	n	mpiin	s
+adessiivi_mon	n	mmilla	s
+ablatiivi_mon	n	mmilta	s
+allatiivi_mon	n	mmille	s
+abessiivi_mon	n	mmitta	s	ps=f
+komitatiivi_mon	n	mpine	s	ps=r
+instruktiivi_mon	n	mmin	s	ps=f
+end: rules
+end: class
+
+
 # Kotus 38 hevonen
 class: 38
 sm-class: nainen
@@ -1831,6 +1874,49 @@ abessiivi_mon	s	itta	s	ps=f
 komitatiivi_mon	s	ine	s	ps=r
 instruktiivi_mon	s	in	s	ps=f
 !subst_UUs	as	uus	s
+end: rules
+end: class
+
+
+# Kotus 43 ohut
+class: 43
+sm-class: ohut
+match-word: CUt
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	t	e	s	ps=r
+genetiivi		t	en	s
+partitiivi	0	ta	w
+translatiivi	t	eksi	s	ps=f
+translatiivi	t	ekse	s	ps=r
+essiivi		t	ena	s
+inessiivi		t	essa	s
+elatiivi		t	esta	s
+illatiivi		t	een	s
+adessiivi		t	ella	s
+ablatiivi		t	elta	s
+allatiivi		t	elle	s
+abessiivi		t	etta	s	ps=f
+nominatiivi_mon	t	et	s	ps=f
+genetiivi_mon	t	iden	s
+genetiivi_mon	t	itten	s
+partitiivi_mon	t	ita	s
+translatiivi_mon	t	iksi	s	ps=f
+translatiivi_mon	t	ikse	s	ps=r
+essiivi_mon	t	ina	s
+inessiivi_mon	t	issa	s
+elatiivi_mon	t	ista	s
+illatiivi_mon	t	isiin	s
+illatiivi_mon	t	ihin	s
+adessiivi_mon	t	illa	s
+ablatiivi_mon	t	ilta	s
+allatiivi_mon	t	ille	s
+abessiivi_mon	t	itta	s	ps=f
+komitatiivi_mon	t	ine	s	ps=r
+instruktiivi_mon	t	in	s	ps=f
 end: rules
 end: class
 

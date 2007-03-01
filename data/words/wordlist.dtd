@@ -4,7 +4,7 @@
           xml:lang CDATA #IMPLIED>
 
 <!-- A word, or a record containing many related words -->
-<!ELEMENT word (forms, classes, inflection, use?, compounding?,
+<!ELEMENT word (forms, classes, inflection, usage?, compounding?,
                 derivation?, style?, application?,
                 frequency?, info?)>
 <!ATTLIST word
@@ -34,7 +34,7 @@
 <!ELEMENT form (#PCDATA)>
 
 <!-- Usage field flags assiciated with this record -->
-<!ELEMENT use (flag*)>
+<!ELEMENT usage (flag*)>
 
 <!-- Compounding flags assiciated with this record -->
 <!ELEMENT compounding (flag*)>

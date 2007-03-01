@@ -26,12 +26,12 @@
 		<flag>paikannimi_sisäpaikallissijat</flag>
 		<flag>paikannimi_ulkopaikallissijat</flag>
 	</inflection>
-	<use>
+	<usage>
 		<flag>it</flag>
 		<flag>medicine</flag>
 		<flag>science</flag>
 		<flag>education</flag>
-	</use>
+	</usage>
 	<compounding>
 		<flag>ei_ys</flag>
 		<flag>ei_ysj</flag>
