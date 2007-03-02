@@ -25,10 +25,12 @@
 [perusmuoto: "aika-ajoin", alku: "aika-ajoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "aikaisemmin", alku: "aikaisemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aikaisin", alku: "aikaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "aimo", alku: "aimo", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "aina", alku: "aina", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainiaaksi", alku: "ainiaaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainiaan", alku: "ainiaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainoastaan", alku: "ainoastaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ainut", alku: "ainut", luokka: seikkasana, jatko: <liitesana, loppu, osanto_tA>, äs: a];
 [perusmuoto: "aivan", alku: "aivan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ajoittain", alku: "ajoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alakkain", alku: "alakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
