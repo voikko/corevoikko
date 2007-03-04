@@ -4,7 +4,7 @@
           xml:lang CDATA #IMPLIED>
 
 <!-- A word, or a record containing many related words -->
-<!ELEMENT word (forms, classes, inflection, usage?, compounding?,
+<!ELEMENT word (forms, classes, inflection?, usage?, compounding?,
                 derivation?, style?, application?,
                 frequency?, info?)>
 <!ATTLIST word
