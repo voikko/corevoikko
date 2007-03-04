@@ -17,7 +17,6 @@
 
 # Sanatietueita, joita on tarkoitus jatkossa käsitellä Joukahaisen kautta.
 
-
 [perusmuoto: "Adrianmeri", alku: "Adrianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
 [perusmuoto: "ahtaa", alku: "ah", luokka: teonsana, jatko: <raataa>, äs: a];
