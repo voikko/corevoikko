@@ -149,7 +149,7 @@
 [perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];
 [perusmuoto: "luokkalainen", alku: "luokkalai", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <nainen>, äs: a];
 [perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
-[perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
+[perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: ä];
 [perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <vieras>, äs: a];
 
 # Roomalaiset numerot 2-4, 6-9, 11-40. I, V ja X jäsennetään kirjaimina.
