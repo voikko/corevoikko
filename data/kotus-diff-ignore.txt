@@ -1,5 +1,5 @@
-# Sanoja, joiden tiedot poikkeavat Kotuksen listan ja Joukahaisen välillä,
-# ja joita ei ole tarkoitus muuttaa Joukahaisessa.
+# Sanoja, joiden tiedot poikkeavat Kotuksen listan ja Joukahaisen
+# välillä ja joita ei ole tarkoitus muuttaa Joukahaisessa.
 
 abduktio
 adaptiivinen
@@ -514,3 +514,8 @@ virtuaalinen
 vääränlainen
 yhdeksänlainen
 ylösnoussut
+haava
+havas
+hela
+helleeni
+hinnasto
