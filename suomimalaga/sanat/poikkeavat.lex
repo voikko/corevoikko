@@ -77,9 +77,7 @@
 [perusmuoto: "happamaton", alku: "happama", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
 [perusmuoto: "hapsi", alku: "ha", luokka: nimisana, jatko: <hapsi>, äs: a];
 [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a];
-[perusmuoto: "helkkari", alku: "helkkaristi", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Helotie", alku: "Helot", luokka: sukunimi, jatko: <tie>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "helvetti", alku: "helvetisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä];
 [perusmuoto: "herjetä", alku: "her", luokka: teonsana, jatko: <tarjeta>, äs: ä];
 [perusmuoto: "hervoton", alku: "hervo", luokka: laatusana, jatko: <johdin_tOn>, äs: a];
@@ -197,7 +195,6 @@
 [perusmuoto: "laulaa", alku: "laul", luokka: teonsana, jatko: <kaivaa>, äs: a];
 [perusmuoto: "laupias", alku: "laup", luokka: laatusana, jatko: <laupias>, äs: a];
 [perusmuoto: "leikkaantua", alku: "leikkaan", luokka: teonsana, jatko: <asettua>, äs: a];
-[perusmuoto: "leikki", alku: "leikisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "Leppilampi", alku: "Leppilam", luokka: paikannimi, jatko: <lampi>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "levätä", alku: "le", luokka: teonsana, jatko: <levätä>, äs: ä];
 [perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a, rakenne: "=pppppp=ppppp"];
@@ -263,12 +260,10 @@
 [perusmuoto: "panna", alku: "pan", luokka: teonsana, jatko: <mennä>, äs: a];
 [perusmuoto: "paras", alku: "par", luokka: laatusana, jatko: <paras>, äs: a];
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a];
-[perusmuoto: "paska", alku: "paskasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
 [perusmuoto: "pelätä", alku: "pel", luokka: teonsana, jatko: <pakata>, äs: ä];
 [perusmuoto: "penger", alku: "pen", luokka: nimisana, jatko: <penger>, äs: ä, tiedot: <inen>];
 [perusmuoto: "perata", alku: "per", luokka: teonsana, jatko: <pakata>, äs: a];
-[perusmuoto: "perkele", alku: "perkeleesti", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "perä", alku: "peräitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "petkel", alku: "petkel", luokka: nimisana, jatko: <askel>, äs: ä];
 [perusmuoto: "pieni", alku: "pien", luokka: laatusana, jatko: <pieni>, äs: ä];
@@ -314,22 +309,15 @@
 [perusmuoto: "rosvota", alku: "rosvo", luokka: teonsana, jatko: <siivota>, äs: a];
 [perusmuoto: "ruoka", alku: "ru", luokka: nimisana, jatko: <ruoka>, äs: a];
 [perusmuoto: "ruokoton", alku: "ruoko", luokka: nimi_laatusana, jatko: <johdin_tOn>, äs: a];
-[perusmuoto: "rutiini", alku: "rutiinisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "rutto", alku: "rutosti", luokka: nimi_laatusana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "räävitön", alku: "räävi", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "saada", alku: "sa", luokka: teonsana, jatko: <saada>, äs: a];
 [perusmuoto: "saada", alku: "saas", luokka: teonsana, jatko: <loppu>, äs: a];
-[perusmuoto: "saakeli", alku: "saakelisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "saakuri", alku: "saakuristi", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "saamari", alku: "saamaristi", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "saartaa", alku: "saar", luokka: teonsana, jatko: <saartaa>, äs: a];
-[perusmuoto: "saatana", alku: "saatanasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "saattaa", alku: "saat", luokka: teonsana, jatko: <saattaa>, äs: a];
 [perusmuoto: "Saint", alku: "Saint", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "saivar", alku: "saivar", luokka: nimisana, jatko: <askel>, äs: a];
 [perusmuoto: "Sakar", alku: "Sakar", luokka: etunimi, jatko: <loppu>, äs: a];
 [perusmuoto: "sammal", alku: "sammal", luokka: nimisana, jatko: <askel>, äs: a];
-[perusmuoto: "samperi", alku: "samperisti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <sankari>, äs: a];
 [perusmuoto: "sanoinkuvaamaton", alku: "sanoinkuvaama", luokka: laatusana, jatko: <johdin_tOn>, äs: a, rakenne: "=pppppp=pppppppppp"];
@@ -395,7 +383,6 @@
 [perusmuoto: "tuoda", alku: "t", luokka: teonsana, jatko: <juoda>, äs: a];
 [perusmuoto: "Tuomas", alku: "Tuoma", luokka: etunimi, jatko: <koiras>, äs: a];
 [perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
-[perusmuoto: "turkanen", alku: "turkasesti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuta", alku: "tutaan", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuulla", alku: "tuul", luokka: teonsana, jatko: <nuolla>, äs: a, tiedot: <yt>];
@@ -430,7 +417,6 @@
 [perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];
 [perusmuoto: "vireillepanna", alku: "vireillepan", luokka: teonsana, jatko: <mennä>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "virkkaa", alku: "virk", luokka: teonsana, jatko: <virkkaa>, äs: a];
-[perusmuoto: "vittu", alku: "vitusti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vonkamies", alku: "vonkamie", luokka: nimisana, jatko: <mies>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta
