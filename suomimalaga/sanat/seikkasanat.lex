@@ -151,7 +151,9 @@
 [perusmuoto: "huonoiten", alku: "huonoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huorin", alku: "huorin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "huosta", alku: "huosta", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + <loppu>, äs: a];
+[perusmuoto: "huutia", alku: "huutia", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hyvin", alku: "hyvin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hyvänen", alku: "hyvänen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hämillä", alku: "hämillä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "häthätää", alku: "häthätää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
