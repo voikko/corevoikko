@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-03-05 03:26:01 EET
+# Time of generation: 2007-03-06 03:26:02 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -4225,12 +4225,12 @@
 [perusmuoto: "Holger", alku: "Holger", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "holhokki", alku: "holhok", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "holhooja", alku: "holhooj", luokka: nimisana, jatko: <asema>, äs: a];
-[perusmuoto: "holhotti", alku: "holhot", luokka: nimisana, jatko: <salaatti>, äs: a];
-[perusmuoto: "holismi", alku: "holism", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "holhotti", alku: "holhot", luokka: nimisana, jatko: <tatti>, äs: a];
+[perusmuoto: "holismi", alku: "holism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "holistinen", alku: "holisti", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv>];
 [perusmuoto: "Holkeri", alku: "Holker", luokka: sukunimi, jatko: <paperi>, äs: a];
 [perusmuoto: "holkki", alku: "holk", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "hollanti", alku: "hollan", luokka: nimisana, jatko: <hollanti>, äs: a];
+[perusmuoto: "hollanti", alku: "hollan", luokka: nimisana, jatko: <tunti>, äs: a];
 [perusmuoto: "Hollanti", alku: "Hollan", luokka: paikannimi, jatko: <hollanti>, äs: a];
 [perusmuoto: "holli", alku: "holl", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Hollola", alku: "Hollol", luokka: paikannimi, jatko: <kala>, äs: a];
@@ -4282,7 +4282,7 @@
 [perusmuoto: "hoosianna", alku: "hoosiann", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "hopea", alku: "hop", luokka: nimisana, jatko: <korkea>, äs: a, tiedot: <inen>];
 [perusmuoto: "hopeinen", alku: "hopei", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "hopeoida", alku: "hopeo", luokka: teonsana, jatko: <haravoida>, äs: a];
+[perusmuoto: "hopeoida", alku: "hopeo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "Hopo", alku: "Hopo", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "hoppa", alku: "hop", luokka: nimisana, jatko: <tolppa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Hopponen", alku: "Hoppo", luokka: sukunimi, jatko: <nainen>, äs: a];
@@ -4380,7 +4380,7 @@
 [perusmuoto: "hujahtaa", alku: "huja", luokka: teonsana, jatko: <hujahtaa>, äs: a];
 [perusmuoto: "hujakka", alku: "hujak", luokka: nimisana, jatko: <solakka>, äs: a, tiedot: <murre>];
 [perusmuoto: "hujaus", alku: "hujau", luokka: nimisana, jatko: <vastaus>, äs: a];
-[perusmuoto: "hujoppi", alku: "hujop", luokka: nimisana, jatko: <sinappi>, äs: a];
+[perusmuoto: "hujoppi", alku: "hujop", luokka: nimisana, jatko: <keppi>, äs: a];
 [perusmuoto: "Hukari", alku: "Hukar", luokka: sukunimi, jatko: <paperi>, äs: a];
 [perusmuoto: "hukata", alku: "huk", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "hukka", alku: "huk", luokka: nimisana, jatko: <hoikka>, äs: a];
@@ -4395,7 +4395,7 @@
 [perusmuoto: "huligaani", alku: "huligaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "huliganismi", alku: "huliganism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hulina", alku: "hulin", luokka: nimisana, jatko: <apila>, äs: a];
-[perusmuoto: "hulinoida", alku: "hulino", luokka: teonsana, jatko: <haravoida>, äs: a];
+[perusmuoto: "hulinoida", alku: "hulino", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "hulivili", alku: "hulivil", luokka: nimi_laatusana, jatko: <risti>, äs: a];
 [perusmuoto: "Hulkkonen", alku: "Hulkko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "hullaannuttaa", alku: "hullaannut", luokka: teonsana, jatko: <autioittaa>, äs: a];
@@ -4439,20 +4439,20 @@
 [perusmuoto: "humpsahtaa", alku: "humpsa", luokka: teonsana, jatko: <hujahtaa>, äs: a];
 [perusmuoto: "humputella", alku: "humput", luokka: teonsana, jatko: <aatella>, äs: a];
 [perusmuoto: "humputtaa", alku: "humput", luokka: teonsana, jatko: <alittaa>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "humpuuki", alku: "humpuuk", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "humpuuki", alku: "humpuuk", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "humu", alku: "humu", luokka: nimi_laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "humus", alku: "humu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "hunaja", alku: "hunaj", luokka: nimisana, jatko: <apaja>, äs: a, tiedot: <inen>];
 [perusmuoto: "hunni", alku: "hunn", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hunnuttaa", alku: "hunnu", luokka: teonsana, jatko: <ammottaa>, äs: a];
-[perusmuoto: "hunsvotti", alku: "hunsvot", luokka: nimisana, jatko: <salaatti>, äs: a];
+[perusmuoto: "hunsvotti", alku: "hunsvot", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "huntti", alku: "hunt", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "huntu", alku: "hun", luokka: nimisana, jatko: <lintu>, äs: a];
 [perusmuoto: "huoahtaa", alku: "huoah", luokka: teonsana, jatko: <astahtaa>, äs: a];
 [perusmuoto: "huohottaa", alku: "huohot", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "Huohvanainen", alku: "Huohvanai", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "huojentaa", alku: "huojen", luokka: teonsana, jatko: <pahentaa>, äs: a];
-[perusmuoto: "huojeta", alku: "huo", luokka: teonsana, jatko: <lohjeta>, äs: a];
+[perusmuoto: "huojeta", alku: "huoje", luokka: teonsana, jatko: <aleta>, äs: a];
 [perusmuoto: "huojua", alku: "huoju", luokka: teonsana, jatko: <punoa>, äs: a];
 [perusmuoto: "huojuttaa", alku: "huoju", luokka: teonsana, jatko: <ammottaa>, äs: a];
 [perusmuoto: "huokaista", alku: "huoka", luokka: teonsana, jatko: <nuolaista>, äs: a];
@@ -4483,7 +4483,7 @@
 [perusmuoto: "huomia", alku: "huom", luokka: teonsana, jatko: <sallia>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "huominen", alku: "huomi", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "huomio", alku: "huomio", luokka: nimisana, jatko: <autio>, äs: a];
-[perusmuoto: "huomioida", alku: "huomio", luokka: teonsana, jatko: <haravoida>, äs: a];
+[perusmuoto: "huomioida", alku: "huomio", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "huomioonottaa", alku: "huomioonot", luokka: teonsana, jatko: <heittää>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "huomioonotto", alku: "huomioonot", luokka: nimisana, jatko: <liitto>, äs: a, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "huone", alku: "huone", luokka: nimisana, jatko: <hame>, äs: a];
@@ -4552,10 +4552,10 @@
 [perusmuoto: "husaari", alku: "husaar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "huseerata", alku: "huseer", luokka: teonsana, jatko: <saneerata>, äs: a];
 [perusmuoto: "hutaista", alku: "huta", luokka: teonsana, jatko: <nuolaista>, äs: a];
-[perusmuoto: "hutera", alku: "huter", luokka: laatusana, jatko: <asema>, äs: a];
+[perusmuoto: "hutera", alku: "huter", luokka: laatusana, jatko: <matala>, äs: a];
 [perusmuoto: "hutero", alku: "huter", luokka: laatusana, jatko: <hontelo>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "huti", alku: "hu", luokka: nimisana, jatko: <vati>, äs: a];
-[perusmuoto: "hutiloida", alku: "hutilo", luokka: teonsana, jatko: <haravoida>, äs: a];
+[perusmuoto: "hutiloida", alku: "hutilo", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "hutilus", alku: "hutilu", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "hutkia", alku: "hutk", luokka: teonsana, jatko: <sallia>, äs: a];
 [perusmuoto: "hutsu", alku: "hutsu", luokka: nimisana, jatko: <valo>, äs: a];
@@ -4590,7 +4590,7 @@
 [perusmuoto: "huusholli", alku: "huusholl", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Huuskonen", alku: "Huusko", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "huutaa", alku: "huu", luokka: teonsana, jatko: <huutaa>, äs: a];
-[perusmuoto: "huuti", alku: "huut", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "huuti", alku: "huut", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "huuto", alku: "huu", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "huventaa", alku: "huven", luokka: teonsana, jatko: <pahentaa>, äs: a];
 [perusmuoto: "huveta", alku: "hu", luokka: teonsana, jatko: <kaveta>, äs: a];
@@ -4605,7 +4605,7 @@
 [perusmuoto: "hydraatti", alku: "hydraat", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "hydrauliikka", alku: "hydrauliik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "hydraulinen", alku: "hydrauli", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "hydroksidi", alku: "hydroksid", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "hydroksidi", alku: "hydroksid", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hydrologi", alku: "hydrolog", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "hydrologia", alku: "hydrologi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "hyeena", alku: "hyeen", luokka: nimisana, jatko: <karahka>, äs: a];
@@ -4642,7 +4642,7 @@
 [perusmuoto: "hyperonyymi", alku: "hyperonyym", luokka: nimisana, jatko: <risti>, äs: aä];
 [perusmuoto: "hypistellä", alku: "hypistel", luokka: teonsana, jatko: <katsella>, äs: ä];
 [perusmuoto: "hypittää", alku: "hypit", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "hypnoosi", alku: "hypnoos", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "hypnoosi", alku: "hypnoos", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hypnoottinen", alku: "hypnootti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "hyponymia", alku: "hyponymi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "hyponyymi", alku: "hyponyym", luokka: nimisana, jatko: <risti>, äs: aä];
@@ -4697,7 +4697,7 @@
 [perusmuoto: "hyväksyttää", alku: "hyväksyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "hyväksyä", alku: "hyväksy", luokka: teonsana, jatko: <punoa>, äs: ä];
 [perusmuoto: "hyväkäs", alku: "hyväk", luokka: nimisana, jatko: <avokas>, äs: ä];
-[perusmuoto: "hyvänen", alku: "hyvä", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "hyvänen", alku: "hyvä", luokka: laatusana, jatko: <nainen>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "hyvänsuopuus", alku: "hyvänsuopuu", luokka: nimisana, jatko: <kalleus>, äs: a];
 [perusmuoto: "Hyvärilä", alku: "Hyväril", luokka: paikannimi, jatko: <apila>, äs: ä];
 [perusmuoto: "Hyvärinen", alku: "Hyväri", luokka: sukunimi, jatko: <nainen>, äs: ä];
@@ -4732,7 +4732,7 @@
 [perusmuoto: "hyöty", alku: "hyö", luokka: nimisana, jatko: <laatu>, äs: ä];
 [perusmuoto: "hyötyisä", alku: "hyötyis", luokka: laatusana, jatko: <asema>, äs: ä];
 [perusmuoto: "hyötyä", alku: "hyö", luokka: teonsana, jatko: <kaatua>, äs: ä];
-[perusmuoto: "hyötää", alku: "hyö", luokka: teonsana, jatko: <vuotaa>, äs: ä];
+#Malaga class not found for (hyötää, 3, sulaa-av1)
 [perusmuoto: "Håkan", alku: "Håkan", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Hägglund", alku: "Hägglund", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "häijy", alku: "häijy", luokka: laatusana, jatko: <valo>, äs: ä];
@@ -4823,7 +4823,7 @@
 [perusmuoto: "härveli", alku: "härvel", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "häslätä", alku: "häsl", luokka: teonsana, jatko: <salata>, äs: ä];
 [perusmuoto: "Hästbacka", alku: "Hästback", luokka: sukunimi, jatko: <kala>, äs: a];
-[perusmuoto: "hätiköidä", alku: "hätikö", luokka: teonsana, jatko: <haravoida>, äs: ä];
+[perusmuoto: "hätiköidä", alku: "hätikö", luokka: teonsana, jatko: <kanavoida>, äs: ä];
 [perusmuoto: "hätistää", alku: "hätist", luokka: teonsana, jatko: <aavistaa>, äs: ä];
 [perusmuoto: "hätkähdyttää", alku: "hätkähdyt", luokka: teonsana, jatko: <autioittaa>, äs: ä];
 [perusmuoto: "hätkähtää", alku: "hätkä", luokka: teonsana, jatko: <hujahtaa>, äs: ä];
@@ -4836,7 +4836,7 @@
 [perusmuoto: "häveliäs", alku: "häveliä", luokka: laatusana, jatko: <vieras>, äs: ä];
 [perusmuoto: "hävettää", alku: "hävet", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "hävetä", alku: "hä", luokka: teonsana, jatko: <ruveta>, äs: ä];
-[perusmuoto: "hävikki", alku: "hävik", luokka: nimisana, jatko: <kajakki>, äs: ä];
+[perusmuoto: "hävikki", alku: "hävik", luokka: nimisana, jatko: <takki>, äs: ä];
 [perusmuoto: "hävittää", alku: "hävi", luokka: teonsana, jatko: <ammottaa>, äs: ä];
 [perusmuoto: "hävitys", alku: "hävity", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "hävitä", alku: "häv", luokka: teonsana, jatko: <selvitä>, äs: ä];
@@ -4952,7 +4952,7 @@
 [perusmuoto: "idiotismi", alku: "idiotism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "idoli", alku: "idol", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "idus", alku: "idu", luokka: nimisana, jatko: <vastaus>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "idylli", alku: "idyll", luokka: nimisana, jatko: <paperi>, äs: ä, tiedot: <inen>];
+[perusmuoto: "idylli", alku: "idyll", luokka: nimisana, jatko: <risti>, äs: ä, tiedot: <inen>];
 [perusmuoto: "idättää", alku: "idät", luokka: teonsana, jatko: <alittaa>, äs: ä];
 [perusmuoto: "Iemimäki", alku: "Iemimä", luokka: paikannimi, jatko: <kaikki>, äs: ä];
 [perusmuoto: "iestää", alku: "iest", luokka: teonsana, jatko: <hidastaa>, äs: ä];
