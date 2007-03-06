@@ -39,7 +39,6 @@
 [perusmuoto: "alati", alku: "alati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alemmas", alku: "alemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "ali", alku: "ali", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alinomaa", alku: "alinomaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alinomaan", alku: "alinomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"]; # OK kielitoimiston sanakirjan mukaan
@@ -790,7 +789,6 @@
 [perusmuoto: "ylhäällä", alku: "ylhää", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "ylihuomenna", alku: "ylihuomenna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=pppppppp"];
 [perusmuoto: "ylimalkaan", alku: "ylimalkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppppp"];
-[perusmuoto: "ylitse", alku: "ylitse", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "ylle", alku: "ylle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yllin", alku: "yllin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; #Yllin kyllin.
 [perusmuoto: "yllä", alku: "y", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];

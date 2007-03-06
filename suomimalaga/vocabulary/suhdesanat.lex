@@ -18,6 +18,7 @@
 # Seikkasanat
 # Jatko-kentässä sallittuja ovat ainoastaan loppu, liitesana, omistusliite ja sijapäätteet.
 
+[perusmuoto: "ali", alku: "ali", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alaitse", alku: "alaitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
@@ -40,3 +41,4 @@
 [perusmuoto: "ohi", alku: "ohi", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "varten", alku: "varten", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "yli", alku: "yli", luokka: suhdesana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "yli", alku: "ylitse", luokka: suhdesana, jatko: <liitesana, omistusliite, loppu>, äs: ä];
