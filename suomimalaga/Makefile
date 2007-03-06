@@ -1,45 +1,27 @@
 
 # Set some variables
-VOIKKO_BINDIST=voikko-fi_FI.pro voikko-fi_FI.lex_? voikko-fi_FI.mor_? voikko-fi_FI.sym_?
+VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
+	voikko/voikko-fi_FI.sym_?
+VOIKKO_COPY_FROM_VOCABULARY=suomi.lex joukahainen.lex
+
 
 SM=suomi-malaga-svn
 
-.PHONY: all voikko sukija kehitys run clean dist tar voikko-install
+.PHONY: all clean voikko voikko-install
 
-all: voikko sukija
+all: voikko
 
-kehitys: all transmit
+voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
+	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
-voikko:
-	@malmake voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
-
-sukija:
-	malmake suomi-sukija.pro
-
-run: sukija
-	malaga suomi.pro
+$(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
+	cp $^ $@
 
 clean:
-	/bin/rm -f *_l core.* transmit
-
-dist:
-	cp sanat/omat.lex-jakeluversio sanat/omat.lex
-	rm sanat/omat2.lex
-	touch sanat/omat2.lex
+	 $(RM) voikko/*_l transmit
 
 transmit: transmit.cc
 	g++ -g transmit.cc -o transmit
-
-tar:
-	rm -f ${SM}.tar ${SM}.tar.bz2
-	gtar cf ${SM}.tar ${SM}
-	bzip2 ${SM}.tar
-
-mcopy:
-	mdel a:${SM}.tar.bz2; mcopy ${SM}.tar.bz2 a:; mdir
-
-bcopy:
-	cp *_l *.pro ~/.voikko
 
 voikko-install: voikko
 ifndef DESTDIR

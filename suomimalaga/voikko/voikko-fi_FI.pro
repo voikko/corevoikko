@@ -6,40 +6,39 @@ info: Language-Variant: standard
 info: Description: Default morphology for Voikko
 info: Copyright: 2006 Hannu Väisänen, Harri Pitkänen, Teemu Likonen
 info: License: GPL version 2 or later
-info: Update-URI: http://joukahainen.lokalisointi.org/update/index-1
-info: Lex-Version: 1
+info: Update-URI: http://joukahainen.lokalisointi.org/update/index-2
+info: Lex-Version: 2
 ## End-Malaga-Configuration
 
 ## Begin-User-Configuration
 lex: voikko-fi_FI.lex suomi.lex
-lex: sanat/joukahainen.lex
-lex: #sanat/erikoisalat/atk.lex
-lex: #sanat/erikoisalat/atk-lyhenteet.lex
-lex: #sanat/erikoisalat/kasvatustiede.lex
-lex: #sanat/erikoisalat/kasvatustiede-lyhenteet.lex
-lex: #sanat/erikoisalat/laaketiede.lex
-lex: #sanat/erikoisalat/matluonnontiede.lex
+lex: joukahainen.lex
+lex: #atk.lex
+lex: #atk-lyhenteet.lex
+lex: #kasvatustiede.lex
+lex: #kasvatustiede-lyhenteet.lex
+lex: #laaketiede.lex
+lex: #matluonnontiede.lex
 mallex: set switch vanhahkot_muodot yes
 mallex: set switch vanhat_muodot no
 ## End-User-Configuration
 
 ## Begin-Internal-Configuration
 sym: voikko-fi_FI.sym suomi.sym
-all: voikko-fi_FI.all suomi.all suomi.inc inc/all.inc inc/subrule.inc voikko-fi_FI.pro
-lex: suomi.inc inc/subrule.inc voikko-fi_FI.pro
-lex: sanat/erikoissanat.lex
-lex: sanat/etuliitteet.lex
-lex: sanat/seikkasanat.lex
-lex: sanat/suhdesanat.lex
-lex: sanat/lukusanat.lex
-lex: sanat/lyhenteet.lex
-lex: sanat/olla-ei.lex
-lex: sanat/omat.lex
-lex: sanat/yhdyssanat.lex
-lex: sanat/erikoiset.lex
-lex: sanat/poikkeavat.lex
-lex: sanat/lainen.lex
-mor: voikko-fi_FI.mor suomi.inc inc/mor.inc inc/subrule.inc
+all: voikko-fi_FI.all suomi.all ../suomi.inc ../inc/all.inc ../inc/subrule.inc voikko-fi_FI.pro
+lex: ../suomi.inc ../inc/subrule.inc voikko-fi_FI.pro
+lex: ../vocabulary/erikoissanat.lex
+lex: ../vocabulary/etuliitteet.lex
+lex: ../vocabulary/seikkasanat.lex
+lex: ../vocabulary/suhdesanat.lex
+lex: ../vocabulary/lukusanat.lex
+lex: ../vocabulary/lyhenteet.lex
+lex: ../vocabulary/olla-ei.lex
+lex: ../vocabulary/yhdyssanat.lex
+lex: ../vocabulary/erikoiset.lex
+lex: ../vocabulary/poikkeavat.lex
+lex: ../vocabulary/lainen.lex
+mor: voikko-fi_FI.mor ../suomi.inc ../inc/mor.inc ../inc/subrule.inc
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"
 malaga: set display-line "malshow"
