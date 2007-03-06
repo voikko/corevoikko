@@ -53,7 +53,7 @@ initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesÃ¤Ã
 		  laatusana_laatusanasta, seikka_tai_suhdesana;
 
 include "suomi.inc";
-include "inc/mor.inc";
+include "mor.inc";
 
 
 define @ehtotapa := <ehtotapa, ehtotapa_ttA, ehtotapa_tA>;

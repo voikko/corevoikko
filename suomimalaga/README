@@ -22,16 +22,15 @@ All of the documentation about Finnish morphology is in Finnish (see
 LUE.MINUT and subdirectory ohjeet). This README contains only build
 and usage instructions for distribution packagers.
 
-Building Suomi-malaga for Voikko from this package does not require
-anything else than malaga and optionally make.
-No configuration is required: you only need to run
-  make voikko (if you have make installed)
-or
-  malmake voikko-fi_FI.pro (if you do not have make installed)
-in this directory and ship all files ending with _l or _b and voikko-fi_FI.pro
-with your application. With Voikko this typically means placing the files
-in /usr/lib/voikko or ~/.voikko if you do not want to touch the shared
-version.
+Building Suomi-malaga for Voikko from this package requires
+malaga and make.
+No configuration is required: to build the code, you only need to run
+    make voikko
+Installation can be done by running
+    make voikko-install DESTDIR=/usr/lib/voikko
+(Replace /usr/lib/voikko with the directory you want to install the
+files to. Installing to ~/.voikko will cause libvoikko to use this
+version of Suomi-malaga only for the user who does the installation.)
 
 
 This program is free software; you can redistribute it and/or modify
@@ -40,5 +39,8 @@ the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
 
-Copyright (©) 2006 Hannu Väisänen (Email: Firstname.Lastname@joensuu.fi
-but replace ä's with a's) and contributors listed in file CONTRIBUTORS.
+Copyright (©) 2006 - 2007 Hannu Väisänen (Email: Firstname.Lastname@joensuu.fi
+but replace ä's with a's) and Harri Pitkänen (hatapitk@iki.fi).
+Contributors listed in file CONTRIBUTORS also hold copyrights to the
+vocabulary data.
+

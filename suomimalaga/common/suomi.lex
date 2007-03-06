@@ -45,26 +45,6 @@
 # combination.
 
 
-include "suomi.inc";
-
-define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
-define @sana2 := @sana1 + <teonsana>;
-
-include "sanat/lyhenteet.lex";
-include "sanat/etuliitteet.lex";
-include "sanat/seikkasanat.lex";
-include "sanat/suhdesanat.lex";
-include "sanat/erikoiset.lex";
-include "sanat/poikkeavat.lex";
-include "sanat/olla-ei.lex";
-include "sanat/erikoissanat.lex";
-include "sanat/lukusanat.lex";
-include "sanat/yhdyssanat.lex";
-include "sanat/jokinen.lex";
-include "sanat/omat.lex";
-include "sanat/lainen.lex";
-
-
 # Karlsson 1983:
 # Fred Karlsson: Suomen kielen äänne- ja muotorakenne.
 # WSOY, Juva 1983

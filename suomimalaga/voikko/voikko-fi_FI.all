@@ -49,7 +49,7 @@
 
 
 include "suomi.inc";
-include "inc/all.inc";
+include "all.inc";
 
 # Kaikista nimisanoista johdetaan laatusana tOn-johtimella, esim: valo+ton.
 

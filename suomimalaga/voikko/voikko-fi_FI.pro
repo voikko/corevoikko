@@ -24,21 +24,21 @@ mallex: set switch vanhat_muodot no
 ## End-User-Configuration
 
 ## Begin-Internal-Configuration
-sym: voikko-fi_FI.sym suomi.sym
-all: voikko-fi_FI.all suomi.all ../suomi.inc ../inc/all.inc ../inc/subrule.inc voikko-fi_FI.pro
-lex: ../suomi.inc ../inc/subrule.inc voikko-fi_FI.pro
-lex: ../vocabulary/erikoissanat.lex
-lex: ../vocabulary/etuliitteet.lex
-lex: ../vocabulary/seikkasanat.lex
-lex: ../vocabulary/suhdesanat.lex
-lex: ../vocabulary/lukusanat.lex
-lex: ../vocabulary/lyhenteet.lex
-lex: ../vocabulary/olla-ei.lex
-lex: ../vocabulary/yhdyssanat.lex
-lex: ../vocabulary/erikoiset.lex
-lex: ../vocabulary/poikkeavat.lex
-lex: ../vocabulary/lainen.lex
-mor: voikko-fi_FI.mor ../suomi.inc ../inc/mor.inc ../inc/subrule.inc
+sym: voikko-fi_FI.sym
+all: voikko-fi_FI.all suomi.inc all.inc subrule.inc voikko-fi_FI.pro
+lex: suomi.inc subrule.inc voikko-fi_FI.pro
+lex: erikoissanat.lex
+lex: etuliitteet.lex
+lex: seikkasanat.lex
+lex: suhdesanat.lex
+lex: lukusanat.lex
+lex: lyhenteet.lex
+lex: olla-ei.lex
+lex: yhdyssanat.lex
+lex: erikoiset.lex
+lex: poikkeavat.lex
+lex: lainen.lex
+mor: voikko-fi_FI.mor suomi.inc mor.inc subrule.inc
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"
 malaga: set display-line "malshow"
