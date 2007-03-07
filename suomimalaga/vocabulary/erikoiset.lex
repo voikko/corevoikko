@@ -66,7 +66,7 @@
 [perusmuoto: "höpsis", alku: "höpsis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "höö", alku: "höö", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ilki", alku: "ilki", luokka: nimisana, jatko: @sana1, äs: ä];
-[perusmuoto: "ilmi", alku: "ilmi", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
+[perusmuoto: "ilmi", alku: "ilmi", luokka: nimi_laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
 [perusmuoto: "ja", alku: "ja", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jaa", alku: "jaa", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "jaa", alku: "jaata", luokka: huudahdussana, jatko: <loppu>, äs: a];
