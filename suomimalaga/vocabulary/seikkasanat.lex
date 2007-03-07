@@ -231,6 +231,8 @@
 [perusmuoto: "kalpaten", alku: "kalpaten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaltoin", alku: "kaltoin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kapealti", alku: "kapealti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "karku", alku: "karku", luokka: seikkasana, jatko: <osanto_A, sisätulento_Vn>, äs: a];
+[perusmuoto: "karku", alku: "karu", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "kasvokkain", alku: "kasvokkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kasvotusten", alku: "kasvotusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "katki", alku: "katki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

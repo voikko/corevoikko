@@ -371,6 +371,7 @@
 [perusmuoto: "terve", alku: "terve", luokka: nimi_laatusana, jatko: <terve>, äs: ä, tiedot: <inen>];
 [perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tie", alku: "t", luokka: nimisana, jatko: <tie>, äs: ä];
+[perusmuoto: "karkutie", alku: "karkut", luokka: nimisana, jatko: <tie>, äs: ä, rakenne: "=ppppp=ppp"]; # Esim. tie-sanan kirjoitusasuksi
 [perusmuoto: "tie", alku: "teitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tietymätön", alku: "tietymä", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "tietää", alku: "tie", luokka: teonsana, jatko: <taitaa>, äs: ä];
