@@ -511,6 +511,7 @@ uusintaa
 valkyyria
 viidenlainen
 virtuaalinen
+vuotaa # Kotuksen luokituksessa 53 + 54 = 55
 vääränlainen
 yhdeksänlainen
 ylösnoussut

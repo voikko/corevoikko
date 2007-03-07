@@ -2271,6 +2271,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (soutaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "d")
+                 + tositavan_kertoma($tietue, "t", "l") # Souti
                  + muistella ($tietue, "t", "d");  # Soudella.
     result $i.alku, $i - alku;
 
@@ -5948,8 +5949,7 @@ end;
 
 
 subrule huutaa ($tietue, $vahva_aste, $heikko_aste):
-  return tositavan_kertoma ($tietue, $vahva_aste, $heikko_aste)
-         + käskytapa ($tietue, $heikko_aste + A($tietue))
+  return käskytapa ($tietue, $heikko_aste + A($tietue))
          + taivutuskaava ($tietue,
                           tositapa ($tietue, $vahva_aste + A($tietue), $heikko_aste + A($tietue), 
                                     "s", "s", tositapa_4_tt ($heikko_aste + "e")) +

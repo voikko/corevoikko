@@ -249,6 +249,22 @@ kauriiden # Kotus 41
 !kauriiiden # Kotus 41
 vilkkaana # Kotus 41
 !vilkasna # Kotus 41 (vanhat_muodot)
+kielsi # Kotus 54
+!kielti # Kotus 54
+löysi # Kotus 54
+!löyti # Kotus 54
+sukelsi # Kotus 54
+!sukelti # Kotus 54
+palelsi # Kotus 54
+!palelti # Kotus 54
+mursi # Kotus 54
+!murti # Kotus 54
+muunsi # Kotus 54
+!muunti # Kotus 54
+heikensi # Kotus 54
+!heikenti # Kotus 54
+sousi # Kotus 55
+souti # Kotus 55
 rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66
