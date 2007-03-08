@@ -551,3 +551,8 @@ kohta
 koluta
 koordinaatisto
 koralli
+korpraali
+kovaksikeitetty
+kristitty
+krypton
+kummuta

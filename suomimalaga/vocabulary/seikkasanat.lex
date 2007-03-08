@@ -268,7 +268,7 @@
 [perusmuoto: "kolmissa", alku: "kolmissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "kolmista", alku: "kolmista", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "konsa", alku: "konsaan", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "konsa", alku: "konsa", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "konsa", alku: "konsa", luokka: seikkasana, jatko: <loppu>, äs: a]; # Ala: vanhaa kieltä
 [perusmuoto: "konsa", alku: "konsana", luokka: seikkasana, jatko: <omistusliite, loppu>, äs: a];
 [perusmuoto: "kontalla", alku: "konta", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "koommin", alku: "koommin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -280,6 +280,7 @@
 [perusmuoto: "kuitenkaan", alku: "kuitenkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuitenkin", alku: "kuitenkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kukaties", alku: "kukaties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "kukkua", alku: "kukku", luokka: seikkasana, jatko: <osanto_A>, äs: a];
 [perusmuoto: "kulloin", alku: "kulloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kumminkin", alku: "kumminkaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumminkin", alku: "kumminkin", luokka: seikkasana, jatko: <loppu>, äs: a];
