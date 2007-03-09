@@ -2355,8 +2355,10 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (kapsaa in $tietue.jatko) then
-    choose $i in kaivaa ($tietue, "", "", kantaja)
-                 + taivutuskaava ($tietue, [johdin_ntA: A($tietue)]);
+    choose $i in taivutuskaava($tietue, [kestämän_tekijäpääte_y3: A($tietue),
+                                         nimitapa_1_A: A($tietue),
+                                         ehtotapa: A($tietue),
+                                         johdin_ntA: A($tietue)]);
     result $i.alku, $i - alku;
 
   elseif (lappaa in $tietue.jatko) then

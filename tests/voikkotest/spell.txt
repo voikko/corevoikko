@@ -268,6 +268,10 @@ souti # Kotus 55
 rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66
+kapsaa # Kotus 78
+!kapsan # Kotus 78
+!kapsat # Kotus 78
+kapsaisi # Kotus 78
 
 [muita virheitä]
 !kolaaa
