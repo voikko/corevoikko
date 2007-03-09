@@ -304,6 +304,9 @@
 [perusmuoto: "kyllin", alku: "kyllin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllä", alku: "kyllä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllälti", alku: "kyllälti", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kyse", alku: "kyse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kyse", alku: "kysee", luokka: seikkasana, jatko: <omanto_n, olento_nA, sisäolento_ssA>, äs: ä];
+[perusmuoto: "kyse", alku: "kyseeseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "käsikkäin", alku: "käsikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köpelösti", alku: "köpelösti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köykky", alku: "köykky", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: ä];
