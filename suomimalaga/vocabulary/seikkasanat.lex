@@ -596,6 +596,7 @@
 [perusmuoto: "suotta", alku: "suotta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suppu", alku: "suppu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "suppu", alku: "supu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA, ulko_olento_llA, ulkotulento_lle>, äs: a];
+[perusmuoto: "surku", alku: "surku", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suurelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksiin", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
