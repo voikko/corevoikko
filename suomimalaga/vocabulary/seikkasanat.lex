@@ -174,6 +174,8 @@
 [perusmuoto: "irrallaan", alku: "irrallaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "irralleen", alku: "irralleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "irti", alku: "irti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "irve", alku: "irve", luokka: seikkasana, jatko: <sisäolento_ssA, sisätulento_Vn>, äs: ä];
+[perusmuoto: "irvi", alku: "irvi", luokka: seikkasana, jatko: <sisäolento_ssA, sisätulento_Vn>, äs: ä];
 [perusmuoto: "istualla", alku: "istua", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "itsekseen", alku: "itsekseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsestään", alku: "itsestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
