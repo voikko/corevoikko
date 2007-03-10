@@ -255,6 +255,8 @@
 [perusmuoto: "kieppeille", alku: "kieppeille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kieppeillä", alku: "kieppeillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiihdyksissä", alku: "kiihdyks", luokka: seikkasana, jatko: <sisäolento_issA,sisätulento_iin>, äs: ä];
+[perusmuoto: "kiikki", alku: "kiiki", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: ä];
+[perusmuoto: "kiikki", alku: "kiikki", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiireimmiten", alku: "kiireimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiiruusti", alku: "kiiruusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
@@ -697,7 +699,7 @@
 [perusmuoto: "täpösen", alku: "täpösen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "täsmälleen", alku: "täsmälleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tästedes", alku: "tästedes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
-[perusmuoto: "tästälähin", alku: "tästälähin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "tästälähin", alku: "tästälähin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "täten", alku: "täten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "täysi", alku: "täynnä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "täytäntöön", alku: "täytäntö", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: ä];
