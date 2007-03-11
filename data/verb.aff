@@ -388,8 +388,7 @@ end: class
 
 # Kotus 56 kaivaa
 class: 56
-#sm-class: kaivaa
-# Suomi-malagassa kaivaa, haastaa, paistaa ja astevaihtelut
+sm-class: kaivaa
 rmsfx: a
 match-word: CAA
 consonant-gradation: sw
@@ -403,7 +402,6 @@ kondit_yks_3	0	isi	s
 imperatiivi_yks_3	0	koon	s
 partisiippi_2	0	nut	s
 imperfekti_pass	a	ettiin	w
-!verbi_ellA	a	ella	w
 end: rules
 end: class
 

@@ -146,7 +146,6 @@
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a];
 [perusmuoto: "kannel", alku: "kan", luokka: nimisana, jatko: <kannel>, äs: a];
 [perusmuoto: "kantaa", alku: "kan", luokka: teonsana, jatko: <antaa>, äs: a];
-[perusmuoto: "kapsaa", alku: "kaps", luokka: teonsana, jatko: <kapsaa>, äs: a];
 [perusmuoto: "karata", alku: "kar", luokka: teonsana, jatko: <pakata>, äs: a];
 [perusmuoto: "Kares", alku: "Kare", luokka: sukunimi, jatko: <kirves>, äs: a];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
@@ -297,7 +296,6 @@
 [perusmuoto: "radio", alku: "radioitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "raitis", alku: "rait", luokka: laatusana, jatko: <altis>, äs: a];
 [perusmuoto: "rakentaa", alku: "raken", luokka: teonsana, jatko: <rakentaa>, äs: a];
-[perusmuoto: "rapsaa", alku: "raps", luokka: teonsana, jatko: <palaa>, äs: a];
 [perusmuoto: "ratista", alku: "rat", luokka: teonsana, jatko: <kitistä>, äs: a];
 [perusmuoto: "Rautalampi", alku: "Rautalam", luokka: paikannimi, jatko: <lampi>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "reilassa", alku: "reilaan", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
