@@ -2005,3 +2005,63 @@ komitatiivi_mon	0	ine	s	ps=r
 instruktiivi_mon	0	in	s	ps=f
 end: rules
 end: class
+
+
+# Kotus 49 askel
+class: 49
+sm-class: askel
+match-word: [ae][lr]
+consonant-gradation: ws
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	0	e	s
+genetiivi		0	en	s
+genetiivi		0	een	s
+partitiivi	0	ta	w
+partitiivi	0	etta	s
+translatiivi	0	eeksi	s	ps=f
+translatiivi	0	eekse	s	ps=r
+essiivi		0	eena	s
+inessiivi		0	eessa	s
+elatiivi		0	eesta	s
+illatiivi		0	eeseen	s
+adessiivi		0	eella	s
+ablatiivi		0	eelta	s
+allatiivi		0	eelle	s
+abessiivi		0	eetta	s	ps=f
+nominatiivi_mon	0	et	s	ps=f
+nominatiivi_mon	0	eet	s	ps=f
+genetiivi_mon	0	ten	w
+genetiivi_mon	0	eiden	s
+genetiivi_mon	0	eitten	s	prio=2
+partitiivi_mon	0	ia	s
+partitiivi_mon	0	eita	s
+translatiivi_mon	0	iksi	s	ps=f
+translatiivi_mon	0	ikse	s	ps=r
+translatiivi_mon	0	eiksi	s	ps=f
+translatiivi_mon	0	eikse	s	ps=r
+essiivi_mon	0	ina	s
+essiivi_mon	0	eina	s
+inessiivi_mon	0	issa	s
+inessiivi_mon	0	eissa	s
+elatiivi_mon	0	ista	s
+elatiivi_mon	0	eista	s
+illatiivi_mon	0	iin	s
+illatiivi_mon	0	eisiin	s
+illatiivi_mon	0	eihin	s	prio=2
+adessiivi_mon	0	illa	s
+adessiivi_mon	0	eilla	s
+ablatiivi_mon	0	ilta	s
+ablatiivi_mon	0	eilta	s
+allatiivi_mon	0	ille	s
+allatiivi_mon	0	eille	s
+abessiivi_mon	0	itta	s	ps=f
+abessiivi_mon	0	eitta	s	ps=f
+komitatiivi_mon	0	ine	s	ps=r
+komitatiivi_mon	0	eine	s	ps=r
+instruktiivi_mon	0	in	s	ps=f
+instruktiivi_mon	0	ein	s	ps=f
+end: rules
+end: class
