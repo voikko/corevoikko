@@ -2010,7 +2010,7 @@ end: class
 # Kotus 49 askel
 class: 49
 sm-class: askel
-match-word: [ae][lr]
+match-word: [ae][lrn]
 consonant-gradation: ws
 group: t
 transform-group: e
