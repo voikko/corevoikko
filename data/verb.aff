@@ -504,6 +504,27 @@ end: rules
 end: class
 
 
+# Kotus 64 juoda
+class: 64
+sm-class: juoda
+match-word: [eO]dA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	w
+preesens_yks_1	da	n	w
+imperfekti_yks_3	uoda	oi	w
+imperfekti_yks_3	ieda	ei	w
+kondit_yks_3	uoda	oisi	w
+kondit_yks_3	ieda	eisi	w
+imperatiivi_yks_3	da	koon	w
+partisiippi_2	da	nut	w
+imperfekti_pass	da	tiin	s
+end: rules
+end: class
+
+
 # Kotus 66 rohkaista ====================
 # FIXME: rangaista (nuolaista-av2)
 class: 66
