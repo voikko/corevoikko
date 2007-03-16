@@ -173,7 +173,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (vihko in $tietue.jatko) then
-    choose $i in vihko ($tietue, kO($tietue), O($tietue));
+    choose $i in valo ($tietue, kO($tietue), O($tietue));
     result $i.alku, $i - alku;
 
 
@@ -4200,29 +4200,6 @@ end;
 
 subrule valo ($tietue, $vahva_aste, $heikko_aste):
   return koko ($tietue, $vahva_aste, $heikko_aste, $vahva_aste, $heikko_aste);
-end;
-
-
-subrule vihko ($tietue, $vahva_aste, $heikko_aste):
-  return valo ($tietue, $vahva_aste, $vahva_aste)
-         + taivutuskaava ($tietue,
-                          [omanto_n:         $heikko_aste,
-                           tulento_ksi:      $heikko_aste,
-                           sisäolento_ssA:   $heikko_aste,
-                           sisäeronto_stA:   $heikko_aste,
-                           ulko_olento_llA:  $heikko_aste,
-                           ulkoeronto_ltA:   $heikko_aste,
-                           ulkotulento_lle:  $heikko_aste,
-                           vajanto_ttA:      $heikko_aste,
-                           nimentö_t:        $heikko_aste,
-                           tulento_iksi:     $heikko_aste,
-                           sisäolento_issA:  $heikko_aste,
-                           sisäeronto_istA:  $heikko_aste,
-                           ulko_olento_illA: $heikko_aste,
-                           ulkoeronto_iltA:  $heikko_aste,
-                           ulkotulento_ille: $heikko_aste,
-                           vajanto_ittA:     $heikko_aste,
-                           johdin_ittAin:    $heikko_aste]);
 end;
 
 

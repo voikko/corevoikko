@@ -239,6 +239,10 @@ lakaisseempi
 enimmäkseen
 
 [taivutusluokat]
+vihkon # Kotus 1
+vihon # Kotus 1
+pehkon # Kotus 1
+!pehon # Kotus 1
 rei'illä # Kotus 10
 !reiillä # Kotus 10
 lohien # Kotus 23
