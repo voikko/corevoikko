@@ -220,7 +220,7 @@ end: class
 class: 5
 sm-class: kalsium
 match-word: C
-consonant-gradation: sw
+consonant-gradation: -
 group: t
 transform-group: e
 rules:
