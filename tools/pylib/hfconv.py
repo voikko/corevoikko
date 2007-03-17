@@ -87,7 +87,7 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'autio', u'-', [(None,u'(.*)',u'autio')]),
 	(u'kiiski', u'-', [(None,u'(.*)i',u'kiiski')]),
 	(u'risti', u'sw', [(None,u'(.*)i',u'risti'),
-			(u'pp',u'(pop)pi',u'pop')
+			(u'pp',u'(pop)pi',u'pop'),
 			(u'pp',u'(.*p)pi',u'keppi'),
 			(u'lt',u'(.*l)ti',u'pelti'),
 			(u'nk',u'(.*n)ki',u'renki'),

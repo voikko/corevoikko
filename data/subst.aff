@@ -1837,7 +1837,7 @@ end: class
 # Kotus 41 rengas (2/2)
 class: 41
 sm-class: iäkäs
-match-word: As
+match-word: kAs
 consonant-gradation: ws
 group: t
 transform-group: e
