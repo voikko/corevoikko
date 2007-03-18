@@ -647,7 +647,6 @@ propelli
 protoni
 pulputa
 pumputa
-punikki
 pursuta
 päästä
 remuta
@@ -661,3 +660,11 @@ roihuta
 rosvous
 ruiskuta
 rutiini
+palataalistua
+distinktio
+distinktiivinen
+taksonominen
+sauhuta
+savuta
+seireeni
+silputa
