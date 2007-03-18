@@ -1,6 +1,8 @@
 
 # Files to ship only in the full source package
-SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING
+SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
+         voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
+	 voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro
 
 VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
 	voikko/voikko-fi_FI.sym_?
@@ -31,7 +33,9 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
 clean:
-	$(RM) voikko/*_l voikko/transmit
+	rm -f voikko/*_l voikko/transmit
+	rm -f "suomi-malaga-$(SM_VERSION).tar.gz"
+	rm -rf "suomi-malaga-$(SM_VERSION)"
 
 
 # Rules for creating the source distribution

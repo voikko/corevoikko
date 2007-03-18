@@ -12,7 +12,7 @@ käyttämien versioiden välillä on pieniä mutta oleellisia eroja. Jos haluat
 käyttää Sukijaa, hae alkuperäinen (tai uudempi) versio osoitteesta
 http://joyds1.joensuu.fi/sukija/sukija.html
 Jos taas haluat käyttää Voikkoa, uusin versio tästä paketista
-löytyy osoitteesta http://www.hunspell-fi.org/tiedostot.php
+löytyy osoitteesta http://voikko.sourceforge.net
 
 
 KÄÄNTÄMINEN
@@ -26,16 +26,9 @@ Voikko-versio oikolukuun
 make voikko
 
 
-Molemmissa tapauksissa saat virheilmoituksia
-
-Warning: No allomorphs generated.
-
-Niistä ei kannata välittää
-
-
 ANALYYSI
 
-malaga voikko-fi_FI.pro
+malaga voikko/voikko-fi_FI.pro
 
 Kirjoita sen jälkeen esim.
 
@@ -53,18 +46,19 @@ Analyses of "alusta":
 5: "alus"
 
 
-Lisää ohjeita on alihakemistossa ohjeet.
+Lisää ohjeita on alihakemistossa doc.
 
 
 Ohjelman toimintaa voi säätää erilaisten lippujen avulla.
-Lisätietoja on tiedostossa ohjeet/liput.txt.
+Lisätietoja on tiedostossa doc/liput.txt.
 
 
 Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää edelleen ja
 muuttaa GNU yleisen lisenssin (GPL lisenssin) ehtojen mukaan
 sellaisina kuin Free Software Foundation on ne julkaissut; joko
 Lisenssin version 2, tai (valinnan mukaan) minkä tahansa myöhemmän
-version mukaisesti.
+version mukaisesti. Tarkat lisenssiehdot löytyvät tiedostosta
+COPYING.
 
 Tätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen,
 mutta ilman mitään takuuta; ilman edes hiljaista takuuta kaupallisesti
@@ -79,7 +73,12 @@ Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
 muihin moduuleihin on ohjelmaan perustuvan teoksen
 tekemistä, joka on siis GPL lisenssin ehtojen alainen.
 
+GPL-lisenssin epävirallinen suomennos löytyy osoitteesta
+http://www.turre.com/licenses/gpl_fi.php, mutta vain alkuperäinen
+englanninkielinen versio on oikeudellisesti sitova.
 
 Tekijänoikeus © 2006 Hannu Väisänen (sähköposti: Etunimi.Sukunimi@joensuu.fi,
-vaihda ä:t a-kirjaimiin sukunimessä) ja tiedostossa CONTRIBUTORS mainitut henkilöt.
+vaihda ä:t a-kirjaimiin sukunimessä) ja 2006 - 2007 Harri Pitkänen
+(hatapitk@iki.fi). Sanastoon tekijänoikeuksia on tiedostossa
+CONTRIBUTORS mainituilla henkilöillä.
 
