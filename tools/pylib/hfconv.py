@@ -351,6 +351,7 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'd',u'(.*)dOtA',u'leudota'),
 			(u'd',u'(.*)dAtA',u'mädätä'),
 			(u'v',u'(.*)vetA',u'kaveta'),
+			(u'j>k',u'(.*)jetA',u'tarjeta'),
 			(u'>k',u'(.*)OtA',u'ulota'),
 			(u'>k',u'(.*)etA',u'vaieta')]),
 	(u'haluta', u'ws', [(None,u'(.*C)itA',u'selvitä'),
@@ -396,7 +397,8 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'k',u'(.*Vk)OtA',u'laota'),
 			(u'd',u'(.*)dOtA',u'kadota'),
 			(u'>k',u'(.*)OtA',u'laota')]),
-	(u'kihistä', u'-', [(None,u'(.*C)istA',u'kihistä')])
+	(u'kihistä', u'-', [(None,u'(.*C)istA',u'kihistä')]),
+	(u'kitistä', u'-', [(None,u'(.*C)istA',u'kitistä')])
 	]
 
 flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), (u'ei_ys', 7),
