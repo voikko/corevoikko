@@ -231,6 +231,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "totaali", alku: "totaali", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "täsmä", alku: "täsmä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä]; 
 [perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
