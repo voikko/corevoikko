@@ -13,13 +13,17 @@ VOIKKO_COPY_FROM_VOCABULARY=joukahainen.lex erikoissanat.lex etuliitteet.lex sei
 	suhdesanat.lex lukusanat.lex lyhenteet.lex olla-ei.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex
 
+# Files to ship in the preprocessed source package
+VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voikko-fi_FI.mor_l \
+                  voikko-fi_FI.sym_l voikko-fi_FI.all_l voikko-fi_FI.lex suomi.inc subrule.inc 
+
 # Files to ship in the source package (duplicates are allowed)
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 
 SM_VERSION=svn
 
-.PHONY: all clean voikko voikko-install dist-gzip
+.PHONY: all clean voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
 
 all: voikko
 
@@ -34,8 +38,22 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 
 clean:
 	rm -f voikko/*_l voikko/transmit
-	rm -f "suomi-malaga-$(SM_VERSION).tar.gz"
-	rm -rf "suomi-malaga-$(SM_VERSION)"
+	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
+	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
+	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
+	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
+
+
+# Rules for creating the preprocessed source package
+
+voikko-preprocessed-l-gzip: voikko-fi-lsrc-$(SM_VERSION).tar.gz
+
+voikko-fi-lsrc-$(SM_VERSION).tar.gz: voikko $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST)))
+	tar czf $@ --group 0 --owner 0 voikko-fi-$(SM_VERSION)
+
+$(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST))): voikko-fi-$(SM_VERSION)/%: voikko/%
+	install --mode=755 -d voikko-fi-$(SM_VERSION)
+	install --mode=644 -t voikko-fi-$(SM_VERSION) $^
 
 
 # Rules for creating the source distribution
@@ -47,6 +65,7 @@ suomi-malaga-$(SM_VERSION).tar.gz: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(
 
 $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
 	install --mode=644 -D $^ $@
+
 
 voikko/transmit: common/transmit.cc
 	g++ -g common/transmit.cc -o voikko/transmit
