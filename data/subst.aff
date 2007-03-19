@@ -1247,7 +1247,6 @@ end: class
 
 
 # Kotus 24, 26 huuli
-# FIXME: 24,26
 class: 24,26
 sm-class: huuli
 match-word: Ci
@@ -1874,6 +1873,48 @@ abessiivi_mon	s	itta	s	ps=f
 komitatiivi_mon	s	ine	s	ps=r
 instruktiivi_mon	s	in	s	ps=f
 !subst_UUs	as	uus	s
+end: rules
+end: class
+
+
+# Kotus 42 mies
+class: 42
+sm-class: mies
+match-word: mies
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	w	ps=f
+nominatiivi	s	he	s	ps=r
+genetiivi		s	hen	s
+partitiivi	0	ta	w
+translatiivi	s	heksi	s	ps=f
+translatiivi	s	hekse	s	ps=r
+essiivi		s	hena	s
+inessiivi		s	hessa	s
+elatiivi		s	hesta	s
+illatiivi		s	heen	s
+adessiivi		s	hella	s
+ablatiivi		s	helta	s
+allatiivi		s	helle	s
+abessiivi		s	hetta	s	ps=f
+nominatiivi_mon	s	het	s	ps=f
+genetiivi_mon	0	ten	s
+genetiivi_mon	s	hien	s
+partitiivi_mon	s	hia	s
+translatiivi_mon	s	hiksi	s	ps=f
+translatiivi_mon	s	hikse	s	ps=r
+essiivi_mon	s	hina	s
+inessiivi_mon	s	hissa	s
+elatiivi_mon	s	hista	s
+illatiivi_mon	s	hiin	s
+adessiivi_mon	s	hilla	s
+ablatiivi_mon	s	hilta	s
+allatiivi_mon	s	hille	s
+abessiivi_mon	s	hitta	s	ps=f
+komitatiivi_mon	s	hine	s	ps=r
+instruktiivi_mon	s	hin	s	ps=f
 end: rules
 end: class
 

@@ -588,7 +588,7 @@ end: class
 
 # End Kotus 66 rohkaista ================
 
-# Kotus 67 tulla
+# Kotus 67 tulla (1/2)
 class: 67
 sm-class: katsella
 rmsfx: lla
@@ -604,6 +604,25 @@ kondit_yks_3	0	lisi	s
 imperatiivi_yks_3	0	lkoon	w
 partisiippi_2	0	llut	w
 imperfekti_pass	0	ltiin	w
+end: rules
+end: class
+
+# Kotus 67 tulla (2/2)
+class: 67
+sm-class: mennä
+rmsfx: nna
+match-word: VnnA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	nna	w
+preesens_yks_1	0	nen	s
+imperfekti_yks_3	0	ni	s
+kondit_yks_3	0	nisi	s
+imperatiivi_yks_3	0	nkoon	w
+partisiippi_2	0	nnut	w
+imperfekti_pass	0	ntiin	w
 end: rules
 end: class
 
