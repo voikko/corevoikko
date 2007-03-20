@@ -590,6 +590,7 @@
 [perusmuoto: "sivumpana", alku: "sivum", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "sivuttain", alku: "sivuttain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sokin", alku: "sokin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "soopa", alku: "soopa", luokka: seikkasana, jatko: <liitesana, loppu, osanto_A>, äs: a];
 [perusmuoto: "suinkin", alku: "suinkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suinkin", alku: "suinkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "summamutikassa", alku: "summamutikassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppp"];
