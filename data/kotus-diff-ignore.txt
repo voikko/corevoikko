@@ -693,3 +693,5 @@ tienesti
 tiili
 tilhi
 toiste
+leksikaalistua
+putkimainen
