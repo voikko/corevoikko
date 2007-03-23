@@ -209,6 +209,7 @@ jälsi
 jäsennin
 kahdeksanlainen
 karteesinen
+koiras # Taivutus Kotuksen luokan 39 mukaan jätetty tarkoituksella pois
 kolmenlainen
 komissariaatti
 kommutatiivinen
