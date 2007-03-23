@@ -1794,7 +1794,7 @@ end: class
 # Kotus 41 rengas (1/2)
 class: 41
 sm-class: vieras
-match-word: [Ai]s
+match-word: [Aie]s
 consonant-gradation: ws
 group: t
 transform-group: e
@@ -2075,6 +2075,7 @@ abessiivi		0	eetta	s	ps=f
 nominatiivi_mon	0	et	s	ps=f
 nominatiivi_mon	0	eet	s	ps=f
 genetiivi_mon	0	ten	w
+genetiivi_mon	0	ien	s
 genetiivi_mon	0	eiden	s
 genetiivi_mon	0	eitten	s	prio=2
 partitiivi_mon	0	ia	s
