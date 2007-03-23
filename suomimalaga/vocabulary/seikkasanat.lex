@@ -818,6 +818,7 @@
 [perusmuoto: "ynnä", alku: "ynnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ypö", alku: "ypö", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ypöyksin", alku: "ypöyksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
+[perusmuoto: "ällikällä", alku: "ällikällä", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "äkisti", alku: "äkisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äkkiarvaamatta", alku: "äkkiarvaamatta", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "äkkiseltä", alku: "äkkiseltä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

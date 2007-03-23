@@ -200,6 +200,8 @@
 [perusmuoto: "sir", alku: "sir", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "siveetön", alku: "sivee", luokka: laatusana, jatko: <johdin_tOn>, äs: ä];
 [perusmuoto: "sivu", alku: "sivuitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "Sokrates", alku: "Sokrateehen", luokka: etunimi, sija: sisätulento_hVn, jatko: <liitesana, loppu>, äs: a];
+#[perusmuoto: "Sokrates", alku: "Sokrateihin", luokka: etunimi, sija: sisätulento_ihin, jatko: <liitesana, loppu>, äs: a]; # Tunnistuu jotain muuta kautta
 [perusmuoto: "sori", alku: "sori", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sortaa", alku: "sor", luokka: teonsana, jatko: <sortaa>, äs: a];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
@@ -263,4 +265,3 @@
 [perusmuoto: "ylkä", alku: "yl", luokka: nimisana, jatko: <ylkä>, äs: ä];
 [perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö_yksikkö>, äs: ä, tiedot: <ei_inen>];
 [perusmuoto: "yö", alku: "ö", luokka: nimisana, jatko: <yö_monikko>, äs: ä, tiedot: <ei_inen>];
-[perusmuoto: "ällikällä", alku: "ällikällä", luokka: nimisana, jatko: <loppu>, äs: ä];
