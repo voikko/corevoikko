@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-03-23 18:38:59 EET
+# Time of generation: 2007-03-24 03:26:01 EET
 
 [perusmuoto: "Aabel", alku: "Aabel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Aabraham", alku: "Aabraham", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -893,8 +893,8 @@
 [perusmuoto: "aristokraatti", alku: "aristokraat", luokka: nimisana, jatko: <tatti>, äs: a, tiedot: <inen>, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "aristokratia", alku: "aristokrati", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "Aristos", alku: "Aristos", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <kirves>, äs: a];
-[perusmuoto: "Aristoteles", alku: "Aristotele", luokka: nimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Aristoteles", alku: "Aristotele", luokka: etunimi, jatko: <kirves>, äs: a];
+[perusmuoto: "Aristoteles", alku: "Aristotele", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "aritmeettinen", alku: "aritmeetti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "aritmetiikka", alku: "aritmetiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "Arizona", alku: "Arizon", luokka: paikannimi, jatko: <asema>, äs: a];
@@ -1724,7 +1724,7 @@
 [perusmuoto: "damaski", alku: "damask", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "damaskolainen", alku: "damaskolai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Damaskos", alku: "Damasko", luokka: paikannimi, jatko: <vastaus>, äs: a];
-[perusmuoto: "Damokles", alku: "Damokle", luokka: nimi, jatko: <kirves>, äs: a];
+[perusmuoto: "Damokles", alku: "Damokle", luokka: etunimi, jatko: <kirves>, äs: a];
 [perusmuoto: "dandy", alku: "dandy", luokka: nimisana, jatko: <valo>, äs: aä];
 [perusmuoto: "Daniel", alku: "Daniel", luokka: etunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Dario", alku: "Dario", luokka: etunimi, jatko: <autio>, äs: a];
@@ -19189,8 +19189,8 @@
 [perusmuoto: "sokko", alku: "sok", luokka: laatusana, jatko: <verkko>, äs: a];
 [perusmuoto: "Sokos", alku: "Soko", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Sokosti", alku: "Sokost", luokka: paikannimi, jatko: <risti>, äs: a];
-[perusmuoto: "Sokrates", alku: "Sokrate", luokka: nimi, jatko: <kirves>, äs: a];
-[perusmuoto: "Sokrates", alku: "Sokrate", luokka: nimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Sokrates", alku: "Sokrate", luokka: etunimi, jatko: <kirves>, äs: a];
+[perusmuoto: "Sokrates", alku: "Sokrate", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "sola", alku: "sol", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "solaario", alku: "solaario", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "solahtaa", alku: "solah", luokka: teonsana, jatko: <astahtaa>, äs: a];

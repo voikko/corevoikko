@@ -720,3 +720,4 @@ votjakki
 vuohi
 vuoksi
 öljytä
+tunnistautua
