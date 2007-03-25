@@ -34,12 +34,20 @@ import hfutils
 import hfaffix
 
 kwordlist = {}
+gradclasses = {}
 current_element = None
 current_word = None
+current_word_allow_no_gradation = False
+current_gradation_is_optional = False
 
 def start_element(name, attrs):
 	global current_element
+	global current_gradation_is_optional
 	current_element = name
+	if name == 'av' and attrs.has_key('astevaihtelu') and attrs['astevaihtelu'] == 'valinnainen':
+		current_gradation_is_optional = True
+	else:
+		current_gradation_is_optional = False
 def end_element(name):
 	global current_element
 	global current_word
@@ -50,11 +58,26 @@ def char_data(data):
 	global current_element
 	global current_word
 	global kwordlist
+	global gradclasses
+	global current_word_allow_no_gradation
+	global current_gradation_is_optional
 	if current_element == 's':
 		current_word = data
 		if not kwordlist.has_key(current_word): kwordlist[current_word] = []
+		if not gradclasses.has_key(current_word):
+			gradclasses[current_word] = set('-')
+			current_word_allow_no_gradation = False
+		else:
+			if '-' in gradclasses[current_word]:
+				current_word_allow_no_gradation = True
+			else:
+				gradclasses[current_word].add('-')
 	elif current_element == 'tn':
 		kwordlist[current_word].append(data)
+	elif current_element == 'av':
+		if current_gradation_is_optional: gradclasses[current_word].add('-')
+		elif current_word_allow_no_gradation == False: gradclasses[current_word].discard('-')
+		gradclasses[current_word].add(data)
 
 def print_line(word, problem, in_joukahainen = True):
 	if in_joukahainen: print '<tr><td><a href="/query/wlist?word=%s">Jouk.</a></td><td>' % word.encode('UTF-8')
@@ -65,19 +88,19 @@ def print_line(word, problem, in_joukahainen = True):
 # Returns the inflection class and gradation class for a word in Joukahainen
 # Returns tuple (inflclass_main, grad_type) or None, if no inflection was available
 def _get_inflection_gradation(db, wid):
-        results = db.query(("SELECT value FROM string_attribute_value " +
-                            "WHERE wid = %i AND aid = 1") % wid)
-        if results.ntuples() != 1: return None
-        result = results.getresult()[0]
-        infclass_parts = unicode(result[0], 'UTF-8').split('-')
-        if len(infclass_parts) == 1:
-                infclass_main = unicode(result[0], 'UTF-8')
-                grad_type = '-'
-        elif len(infclass_parts) == 2:
-                infclass_main = infclass_parts[0]
-                grad_type = infclass_parts[1]
-        else: return None
-        return (infclass_main, grad_type)
+	results = db.query(("SELECT value FROM string_attribute_value " +
+	                  "WHERE wid = %i AND aid = 1") % wid)
+	if results.ntuples() != 1: return None
+	result = results.getresult()[0]
+	infclass_parts = unicode(result[0], 'UTF-8').split('-')
+	if len(infclass_parts) == 1:
+		infclass_main = unicode(result[0], 'UTF-8')
+		grad_type = '-'
+	elif len(infclass_parts) == 2:
+		infclass_main = infclass_parts[0]
+		grad_type = infclass_parts[1]
+	else: return None
+	return (infclass_main, grad_type)
 
 noun_classes = hfaffix.read_word_classes(HF_DATA + "/subst.aff")
 verb_classes = hfaffix.read_word_classes(HF_DATA + "/verb.aff")
@@ -87,28 +110,60 @@ verb_classes = hfaffix.read_word_classes(HF_DATA + "/verb.aff")
 def _get_hfutils_class(wid, classid, infclass_main):
 	global noun_classes
 	global verb_classes
-        if classid in [1, 2]: word_classes = noun_classes
-        elif classid == 3: word_classes = verb_classes
-        else: return None
+	if classid in [1, 2]: word_classes = noun_classes
+	elif classid == 3: word_classes = verb_classes
+	else: return None
+	
+	for word_class in word_classes:
+		if not infclass_main in word_class['smcnames']: continue
+		else: return word_class
+	return None
 
-        for word_class in word_classes:
-                if not infclass_main in word_class['smcnames']: continue
-                else: return word_class
-        return None
-
+# Returns a list of Kotus inflection classes for the given word
 def kotus_classes(db, word, classid):
-        infclass_parts = _get_inflection_gradation(db, wid)
-        if infclass_parts == None: return []
-        (infclass_main, grad_type) = infclass_parts
-
-        word_class = _get_hfutils_class(wid, classid, infclass_main)
-        if word_class == None: return []
+	infclass_parts = _get_inflection_gradation(db, wid)
+	if infclass_parts == None: return []
+	(infclass_main, grad_type) = infclass_parts
+	
+	word_class = _get_hfutils_class(wid, classid, infclass_main)
+	if word_class == None: return []
 	
 	return word_class['cname'].split(',')
+
+# Returns a list of possible Kotus gradation classes for the given word
+def kotus_gradclasses(db, word):
+	infclass_parts = _get_inflection_gradation(db, wid)
+	if infclass_parts == None: return []
+	(infclass_main, grad_type) = infclass_parts
+	
+	if infclass_main == u'poikkeava': return ['P']
+	
+	# d->t in some classes is not seen as gradation in Kotus classification
+	if infclass_main in [u'voida', u'kanavoida', u'haravoida'] and grad_type == u'av2': return ['-']
+	
+	if grad_type == u'-': return ['-']
+	elif grad_type == u'av1': return ['A', 'B', 'C', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'M']
+	elif grad_type == u'av2': return ['A', 'B', 'C', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
+	elif grad_type == u'av3': return ['L']
+	elif grad_type == u'av4': return ['L']
+	elif grad_type == u'av5': return ['D']
+	elif grad_type == u'av6': return ['D']
+	else: return []
+
 
 def compare_classes(kotus, joukahainen):
 	for k in kotus:
 		if not k in joukahainen: return False
+	return True
+
+def compare_gradclasses(kotus, joukahainen):
+	if len(kotus) == 0 or len(joukahainen) == 0: return True
+	if 'P' in joukahainen: return True
+	for k in kotus:
+		if not k in joukahainen: return False
+	if '-' in joukahainen and not '-' in kotus: return False
+	if (len(kotus - set(['-'])) == 0 and len(joukahainen - set(['-'])) != 0) or \
+	   (len(kotus - set(['-'])) != 0 and len(joukahainen - set(['-'])) == 0): return False
 	return True
 
 # Start of main program
@@ -151,6 +206,8 @@ SELECT w.word, w.wid, w.class, s.value FROM word w, string_attribute_value s
 WHERE w.wid = s.wid AND s.aid = 1
 AND w.wid NOT IN (SELECT f.wid FROM flag_attribute_value f
   WHERE f.aid in (2, 5, 11, 12, 13, 14, 15, 17, 19, 24, 26, 29, 33, 34, 35, 36, 37, 40))
+AND w.wid NOT IN (SELECT f2.wid FROM int_attribute_value f2 WHERE f2.aid = 38)
+AND w.wid NOT IN (SELECT f3.wid FROM string_attribute_value f3 WHERE f3.aid = 18)
 ORDER BY w.word""").getresult()
 
 # Page header
@@ -167,6 +224,7 @@ print '<tr><th>Linkit</th><th>Sana</th><th>Eroavuudet</th></tr>'
 
 prev_word = None
 inf_classes = []
+grad_classes = []
 for (word, wid, classid, infl) in jwordlist:
 	word = unicode(word, 'UTF-8')
 	if word in ignlist: continue
@@ -183,14 +241,22 @@ for (word, wid, classid, infl) in jwordlist:
 				print_line(prev_word, 'Vain Joukahaisessa')
 			prev_word = word
 			inf_classes = []
+			grad_classes = []
 		else:
 			if len(kwordlist[prev_word]) > 0 and len(inf_classes) > 0 and \
 			   not compare_classes(kwordlist[prev_word], inf_classes):
 				print_line(prev_word, 'Kotuksen taivutus %s, Joukahaisen taivutus %s' \
 				  % (reduce(lambda x, y: x+','+y, kwordlist[prev_word]), reduce(lambda x, y: x+','+y, inf_classes)))
+			
+			if len(kwordlist[prev_word]) > 0 and \
+			   not compare_gradclasses(gradclasses[prev_word], set(grad_classes)):
+				print_line(prev_word, 'Kotuksen astevaihtelu %s, Joukahaisen astevaihtelu %s' \
+				  % (reduce(lambda x, y: x+','+y, list(gradclasses[prev_word])), reduce(lambda x, y: x+','+y, grad_classes)))
 			inf_classes = []
+			grad_classes = []
 			prev_word = word
 	inf_classes = inf_classes + kotus_classes(db, wid, classid)
+	grad_classes = grad_classes + kotus_gradclasses(db, wid)
 
 #for (word, infl) in kwordlist.iteritems():
 #	print word.encode('UTF-8'), '  ', infl
