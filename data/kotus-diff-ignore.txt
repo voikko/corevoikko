@@ -721,3 +721,13 @@ vuohi
 vuoksi
 öljytä
 tunnistautua
+denotaatio
+eksosentrinen
+endosentrinen
+predikaatio
+predikoida
+konstituentti
+koto
+pallas
+pokata
+raita
