@@ -49,7 +49,7 @@ clean:
 voikko-preprocessed-l-gzip: voikko-fi-lsrc-$(SM_VERSION).tar.gz
 
 voikko-fi-lsrc-$(SM_VERSION).tar.gz: voikko $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST)))
-	tar czf $@ --group 0 --owner 0 voikko-fi-$(SM_VERSION)
+	tar c --group 0 --owner 0 voikko-fi-$(SM_VERSION) | gzip -9 > $@
 
 $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST))): voikko-fi-$(SM_VERSION)/%: voikko/%
 	install --mode=755 -d voikko-fi-$(SM_VERSION)
@@ -61,7 +61,7 @@ $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST))): voikko-fi
 dist-gzip: suomi-malaga-$(SM_VERSION).tar.gz
 
 suomi-malaga-$(SM_VERSION).tar.gz: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST)))
-	tar czf $@ --group 0 --owner 0 suomi-malaga-$(SM_VERSION)
+	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | gzip -9 > $@
 
 $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
 	install --mode=644 -D $^ $@
