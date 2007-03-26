@@ -32,6 +32,7 @@ vanhempainyhdistys
 !vanhempaatalo
 vanhempaintalo
 kirkkoisillä
+johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -144,6 +145,9 @@ vanhempainselvyys
 siirrettävyysperiaate
 siirtyvyysperiaate
 !siirrettäväperiaate
+!johtamis
+!johtamis-tavassa
+johtamis-
 
 [etuliitteet]
 yleisopetus

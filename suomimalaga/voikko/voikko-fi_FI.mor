@@ -383,6 +383,11 @@ combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
          etuliite, teonsana, loppu;
 end;
 
+combi_rule yhdysmerkki_sanan_lopussa ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+  result $vasen + <[vokaaliehto: no] + $oikea>, rules loppu;
+end;
+
 ###### YHDYSMERKKISÄÄNNÖT PÄÄTTYVÄT
 
 
@@ -732,6 +737,7 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
          rules nimitapa_1_pitkä, sijapääte, omistusliite,
                liitesana,
                nimisana, laatusana, teonsana,
+	       yhdysmerkki_sanan_lopussa,
                loppu;
 end;
 
