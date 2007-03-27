@@ -161,6 +161,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
        ($edellinen.luokka = lukusana)      or
        ($oikea.lähtöluokka = teonsana and teonsana in $edellinen.jatko));
 
+    ? $edellinen.luokka = etuliite or $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
 
     if $edellinen.luokka in <laatusana, nimi_laatusana> then
@@ -489,7 +490,7 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $index):
              rules omistusliite, liitesana, loppu;
       if ($edellinen.tiedot = nil or not (ei_ysa in $edellinen.tiedot)) then
         result $res,
-               rules nimisana, laatusana, teonsana, tavuviiva;
+               rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
       end;
     end;
   end;
@@ -705,7 +706,6 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $index):
                      + @ehtotapa + @mahtotapa + @käskytapa;
 
   define $edellinen := $vasen.($index - 1);
-  ? $edellinen.luokka = teonsana;
   ? $oikea.luokka in $edellinen.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
   ? yhdysteonsana_oikein ($vasen, $index - 1);
@@ -725,7 +725,6 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @nimitapa_1 + @nimitapa_2 + @nimitapa_3 + <nimitapa_4, nimitapa_5>;
 
   define $edellinen := $vasen.($index - 1);
-  ? $edellinen.luokka = teonsana;
   ? $oikea.luokka in $edellinen.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
@@ -733,23 +732,23 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
     ? yhdysteonsana_oikein ($vasen, $index - 1);
   end;
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules nimitapa_1_pitkä, sijapääte, omistusliite,
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if (tavuviiva in $oikea.jatko) then
+    result $res, rules yhdysmerkki_sanan_lopussa;
+  end;
+  if (nimitapa_1_pitkä in $oikea.jatko) then
+    result $res, rules nimitapa_1_pitkä;
+  end;
+  result $res,
+         rules sijapääte, omistusliite,
                liitesana,
                nimisana, laatusana, teonsana,
-	       yhdysmerkki_sanan_lopussa,
                loppu;
 end;
 
 
 combi_rule nimitapa_1_pitkä ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = nimitapa_1_pitkä;
-
-  define $edellinen := $vasen.($index - 1);
-  ? $edellinen.luokka in @nimitapa_1;
-  ? nimitapa_1_pitkä in $edellinen.jatko;
-  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
   result $vasen + <[alku: $sana] + $oikea>, rules omistusliite;
 end;
 
@@ -763,7 +762,7 @@ end;
 
 
 combi_rule liitesana ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka in <liitesana, liitesana_pi, liitesana_s>;
+  ? $oikea.luokka in <liitesana, liitesana_pi>;
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
@@ -1156,8 +1155,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"anti">,            <"lainata">>,
       <<"auto">,            <"nova">>,  # Auto+novien.
       <<"de">,              <"lego", "mono", "sika">>,  # Ei de+lego+iva, de+mono+logi, geo+de+siassa.
-      <<"eri", "esi">,      <"koi">>,   # Eri+koi+sala, esi+kois- (esi + koi + inen).
-      <<"esikoinen">,       <"uusi">>,  # Esikois+uutensa (esikois + uusi).
       <<"funktio">,   <"naali">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"hara">,      <"voi", "voida", "vuo">>,
@@ -1191,7 +1188,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"polvinen">,  <"tuki">>, # polvistuin
       <<"priori">,    <"soida">>,
       <<"pyro">,      <"maa">>,
-      <<"pyy", "tie">, <"täi">>,  # Pyy+täisin (pyy + täi + inen), tie+täisin.
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
       <<"samainen">,  <"tuta">>,
       <<"soinen">,    <"aari">>,
@@ -1199,7 +1195,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"suo">,       <"musti", "nina">>,
       <<"suu">,       <"tee", "tehdä", "teloa">>,
       <<"sävel">,     <"eittää">>,
-      <<"taulu">,     <"koi", "koittaa">>,
+      <<"taulu">,     <"koittaa">>,
       <<"taus">,      <"takki">>,
       <<"tie">,       <"tee", "tie", "toinen", "tokko">>,
       <<"traditio">,  <"naali">>,
@@ -1209,7 +1205,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"viher">,     <"vuotaa">>,
       <<"viive">,     <"itä">>,
       <<"voinen">,    <"iva", "ivata">>,    # Voisivatko => vois+iva(ta).
-      <<"vyö">,       <"täi">>,             # Vyö+täinen.
       <<"yhtä", "yksi">, <"toinen", "toistaa">>
     >;
 
@@ -1245,35 +1240,13 @@ end_rule loppu ($tietue):
   define $i := length ($tietue);
   ? loppu in $tietue.$i.jatko;
 
-  define $n := $i;
-  if ($tietue.$i.luokka in <liitesana, liitesana_s, omistusliite>) then
-    $n := $i - 1;
-  end;
-  if (not (teonsana_ok ($tietue, $n))) then
-    stop;
-  end;
-
-
-  define $j := $n;
-  repeat while ($tietue.$j.luokka in <sijapääte, omistusliite>);
-    $j :=- 1;
-  end;
-
-
-  # Jotkut sanat eivät voi olla yhdyssanan jälkiosana.
-  #
-  foreach $u in length($tietue):
-    if (($u greater 1) and ($u less_equal $j) and
-        ($tietue.$u.tiedot /= nil) and (ei_ysj in $tietue.$u.tiedot)) then
-      stop;
-    end;
-  end;
-
 
   # inen-johtimella tehty sana voi olla vain yhdyssanan lopussa,
   # paitsi jos se on merkitty omaksi sanakseen.
-  #
-  repeat while ($tietue.$j.luokka in @johtimet_nimisana_laatusanasta + @johdin_nimisanasta - <johdin_inen>);
+  
+  define $j := $i;
+  repeat while ($tietue.$j.luokka in <sijapääte, omistusliite, liitesana> +
+                                     @johtimet_nimisana_laatusanasta + @johdin_nimisanasta - <johdin_inen>);
     $j :=- 1;
   end;
   define $k := $j;
@@ -1293,63 +1266,6 @@ end_rule loppu ($tietue):
 
   result $tietue, accept;
 end;
-
-
-# Tarkistetaan, että teonsana on oikein.
-#
-# Jos yhdyssana loppuu käskytavan yksikön toisen tai kolmannen tekijän
-# kestämään [1] ja sanan alkuosa on nimisana, laatusana, etuliite tai
-# seikkasana, sana ei ole oikea teonsana, eikä myöskään sana, joka loppuu
-# tositavan kestämän tai kertoman yksikon ensimmäiseen tai kolmanteet tekijään,
-# tai käskytavan kestämän monikon toiseen kieltomuotoon (esim. älkää äidinkielikö).
-#
-# [1] Toisen tekijän kestämällä ei ole päätettä, jolla se voitaisiin
-#     tunnistaa, vaan se on sama kuin teonsanan vartalo.
-#
-# Esim. nämä eivät ole oikein:
-#    alkuperäisestä -> alku=peräis=estä (alku+peräinen+estää)
-#    hairahtaa      -> hai=rahtaa
-#    tappion        -> tappi=on (tappi+olla)
-#    ensiökäämi, ensiökäämin -> ensiö=käämiä
-#    myötätuuli   -> myötä=tuulla
-#    äidinkieli   -> äidin=kieliä
-#    äidinkielikö -> (älkää) äidin=kielikö
-#
-subrule teonsana_ok ($tietue, $i):
-  if (ok6 ($tietue.$i, teonsana,                käskytapa, kestämä, yksikkö, 2) or
-      ok6 ($tietue.$i, teonsana,                tositapa,  kestämä, yksikkö, 3) or
-      ok6 ($tietue.$i, kestämän_tekijäpääte_y1, tositapa,  kestämä, yksikkö, 1) or
-      ok6 ($tietue.$i, kertoman_tekijäpääte_y1, tositapa,  kertoma, yksikkö, 1) or
-      ok6 ($tietue.$i, kertoman_tekijäpääte_y3, tositapa,  kertoma, yksikkö, 3) or
-      ok4 ($tietue.$i, käskytapa_kielto,        käskytapa, kestämä)) then
-   foreach $k in $tietue:
-      if ($k.luokka in @nimisana + <laatusana, seikkasana>
-                       + @johdin_teonsanasta) then
-        return no;
-      end;
-      if ($k.luokka = etuliite and not teonsana in $k.jatko) then
-        return no;
-      end;
-    end;
-  end;
-  return yes;
-end;
-
-
-subrule ok4 ($tietue, $luokka, $tapaluokka, $aikamuoto):
-  return (($tietue.luokka = $luokka) and
-          ($tietue.tapaluokka = $tapaluokka) and
-          ($tietue.aikamuoto = $aikamuoto));
-end;
-
-
-subrule ok6 ($tietue, $luokka, $tapaluokka, $aikamuoto, $luku, $tekijä):
-  return (ok4 ($tietue, $luokka, $tapaluokka, $aikamuoto) and
-          ($tietue.luku = $luku) and
-          ($tietue.tekijä = $tekijä));
-end;
-
-
 
 output_filter tulosta ($tulos):
   foreach $j in length ($tulos):

@@ -33,6 +33,7 @@ vanhempainyhdistys
 vanhempaintalo
 kirkkoisillä
 johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
+!äidinsalli
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -125,6 +126,7 @@ sosiaali-
 !-ja
 !Kaakkois
 !sosiaali
+!juoksemise-
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri
