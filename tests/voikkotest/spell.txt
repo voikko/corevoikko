@@ -116,6 +116,7 @@ paremmuus
 kauneimmuudessa
 tunnetumpi
 myydyimmissä
+nopeanlaisinta
 
 [yhdysviivat]
 puna-
