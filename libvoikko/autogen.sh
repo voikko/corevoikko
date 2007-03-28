@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Automake version. Versions 1.9 and 1.10 are known to work.
-AM_VERSION_SUFFIX=-1.9
+# Automake version.
+AM_VERSION_SUFFIX=-1.10
 
 echo Cleaning autotools files...
 find -type d -name autom4te.cache -print0 | xargs -0 rm -rf \;

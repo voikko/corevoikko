@@ -1,3 +1,10 @@
+2007-03-28 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Update to Automake 1.10
+	* Update version information for version 1.4
+	* Avoid using rule based hyphenator with certain strings containing
+	  numbers and special characters
+
 2007-02-26 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix the option VOIKKO_INTERSECT_COMPOUND_LEVEL, which only worked

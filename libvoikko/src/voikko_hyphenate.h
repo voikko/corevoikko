@@ -35,12 +35,20 @@ int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenatio
                                    size_t new_hyphen_pos, size_t nchars);
 
 /**
+ * Checks if given word can be safely hyphenated using standard hyphenation rules
+ * @param word word to check
+ * @param nchars number of characters in the word
+ * @return 1 if the word should be hyphenated with rule based hyphenator, otherwise 0
+ */
+int voikko_allow_rule_hyphenation(const wchar_t * word, size_t nchars);
+
+/**
  * Performs rule-based hyphenation.
  * @param word word to hyphenate
  * @param hyphenation_points hyphenation buffer where the results will be stored
  * @param nchars number of characters in the word
  */
-void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars);
+void voikko_rule_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars);
 
 /**
  * Sets the known hyphenation points (compound word borders) according to given Malaga analysis.

@@ -22,6 +22,10 @@ jesuiitta       je-suiit-ta
 AA              AA
 hienosto	hie-nos-to
 pöytähienosto	pöy-tä-hienos-to
+90-vuotias      90-vuo-tias
+hiili-12        hiili-12
+hiili12         hiili12
+http://www.lappeenranta.fi     http://www.lappeenranta.fi
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
@@ -45,6 +49,8 @@ proteiini       pro-te-ii-ni
 intiaani        in-ti-aa-ni
 jesuiitta       je-su-iit-ta
 yö              yö
+Ruokala.com     Ruo-ka-la.com
+KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
 
 [no_ugly_hyphenation=0 ignore_dot=1]
 kansaneläke.    kan-san-e-lä-ke.

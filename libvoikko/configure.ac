@@ -17,10 +17,10 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, U
 
 
 dnl General options for autoconf
-AC_PREREQ(2.59)
-AC_INIT([libvoikko],[1.3.1],[hatapitk@iki.fi])
+AC_PREREQ(2.60)
+AC_INIT([libvoikko],[1.4],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
-AM_INIT_AUTOMAKE([1.9 foreign])
+AM_INIT_AUTOMAKE([1.10 foreign])
 
 dnl Checks for programs
 AC_PROG_CC

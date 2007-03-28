@@ -50,19 +50,32 @@ int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenatio
 	return 1;
 }
 
+int voikko_allow_rule_hyphenation(const wchar_t * word, size_t nchars) {
+	// Word is too short
+	if (nchars <= 1) return 0;
+	
+	// URL detection
+	if (wmemchr(word, L'/', nchars)) return 0;
+	
+	// Word ends with number (not safe to be hyphenated)
+	if (word[nchars - 1] >= L'0' && word[nchars - 1] <= L'9') return 0;
+	
+	return 1;
+}
+
 const wchar_t * SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"oa", L"oe",
                                    L"ua", L"ue", L"ye", L"e\u00e4", L"e\u00f6", L"i\u00e4",
                                    L"i\u00f6", L"y\u00e4", L"\u00e4e", L"\u00f6e" };
 const wchar_t * LONG_CONSONANTS[] = { L"shtsh", L"\u0161t\u0161", L"tsh", L"t\u0161", L"zh" };
 const wchar_t * SPLIT_AFTER[] = { L"ie", L"ai" };
 
-void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars) {
+void voikko_rule_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars) {
 	wchar_t * word_copy;
 	size_t i;
 	size_t j;
 	size_t k;
 	
-	if (nchars <= 1) return;
+	if (!voikko_allow_rule_hyphenation(word, nchars)) return;
 	
 	/* TODO: the following is not enough if we later want to prevent hyphenation at single
 	 * points, not only in whole word segments. */
@@ -80,9 +93,10 @@ void voikko_simple_hyphenation(const wchar_t * word, char * hyphenation_points, 
 	i = 0;
 	while (word_copy[i] != L'\0' && wcschr(VOIKKO_CONSONANTS, word_copy[i])) i++;
 	
-	/* -CV */
+	/* -CV (not after special characters) */
 	for (; i <= nchars - 2; i++) {
-		if (wcschr(VOIKKO_CONSONANTS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1]))
+		if (wcschr(VOIKKO_CONSONANTS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1])
+		    && !wcschr(L"/.:&%", word_copy[i-1]))
 			hyphenation_points[i] = '-';
 	}
 	
@@ -228,7 +242,9 @@ char ** voikko_split_compounds(const wchar_t * word, size_t len, int * dot_remov
 	}
 	
 	/** If the word could not be parsed, assume that it does not contain any
-	    morpheme borders that we should know about */
+	    morpheme borders that we should know about (unless there is a hyphen,
+	    which tells us where the border is). If the entire word seems impossible
+	    to hyphenate, do not split it. */
 	if (analysis_count == 0) {
 		result = malloc(len + 1);
 		if (result == 0) {
@@ -236,8 +252,10 @@ char ** voikko_split_compounds(const wchar_t * word, size_t len, int * dot_remov
 			return 0;
 		}
 		memset(result, ' ', len);
-		for (i = 0; i < len; i++)
-			if (word[i] == L'-') result[i] = '=';
+		if (voikko_allow_rule_hyphenation(word, len)) {
+			for (i = 0; i < len; i++)
+				if (word[i] == L'-') result[i] = '=';
+		}
 		result[len] = '\0';
 		all_results[0] = result;
 		analysis_count++;
@@ -281,7 +299,7 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation, size_
 	while (end < len) {
 		if (hyphenation[end] != ' ' && hyphenation[end] != 'X') {
 			if (end - start >= voikko_options.min_hyphenated_word_length)
-				voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
+				voikko_rule_hyphenation(&word[start], &hyphenation[start], end-start);
 			if (hyphenation[end] == '=') start = end + 1;
 			else start = end;
 			end = start + 1;
@@ -289,7 +307,7 @@ void voikko_compound_hyphenation(const wchar_t * word, char * hyphenation, size_
 		else end++;
 	}
 	if (end == len && start < end && end - start >= voikko_options.min_hyphenated_word_length)
-		voikko_simple_hyphenation(&word[start], &hyphenation[start], end-start);
+		voikko_rule_hyphenation(&word[start], &hyphenation[start], end-start);
 }
 
 void voikko_remove_extra_hyphenations(char ** hyphenations, size_t len, int intersect_compound_level) {
