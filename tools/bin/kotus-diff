@@ -24,12 +24,14 @@ import sys
 import locale
 import codecs
 import xml.parsers.expat
+import subprocess
 import _pg
 import os
 import datetime
 
 sys.path.append(os.environ["HOME"] + u"/svn/voikko/trunk/tools/pylib")
 HF_DATA = os.environ["HOME"] + u"/svn/voikko/trunk/data"
+SPELLCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkospell | grep "W: " | sort | sponge'
 import hfutils
 import hfaffix
 
@@ -82,7 +84,7 @@ def char_data(data):
 def print_line(word, problem, in_joukahainen = True):
 	if in_joukahainen: print '<tr><td><a href="/query/wlist?word=%s">Jouk.</a></td><td>' % word.encode('UTF-8')
 	else: print '<tr><td>-</td><td>'
-	print word.encode('UTF-8'), '</td><td>', problem.encode('UTF-8')
+	print '%s</td><td>%s' % (word.encode('UTF-8'), problem.encode('UTF-8'))
 	print '</td></tr>'
 
 # Returns the inflection class and gradation class for a word in Joukahainen
@@ -257,11 +259,38 @@ for (word, wid, classid, infl) in jwordlist:
 			prev_word = word
 	inf_classes = inf_classes + kotus_classes(db, wid, classid)
 	grad_classes = grad_classes + kotus_gradclasses(db, wid)
+print '</table>'
 
-#for (word, infl) in kwordlist.iteritems():
-#	print word.encode('UTF-8'), '  ', infl
+# Words that should be added
+gradclasses = None
+jwordlist = db.query("SELECT w.word FROM word w ORDER BY w.word").getresult()
+knownwords = []
+for jword in jwordlist:
+	knownwords.append(unicode(jword[0], 'UTF-8'))
+jwordlist = None
+
+speller = subprocess.Popen(SPELLCOMMAND, shell = True, stdin = subprocess.PIPE,
+                           stdout = subprocess.PIPE, close_fds = True)
+for (word, classes) in kwordlist.iteritems():
+	if word.find(u' ') != -1: continue
+	speller.stdin.write(word.encode('UTF-8') + '\n')
+(out, err) = speller.communicate()
+unknownlist = out.split('\n')
+
+print '<h2>Ei Joukahaisessa</h2>'
+print '<p>'
+count = 0
+for unknown in unknownlist:
+	word = unicode(unknown, 'UTF-8')[3:]
+	if word in knownwords: continue
+	if word in ignlist: continue
+	if len(word) < 2: continue
+	if word[0] == u'-' and word[1:] in knownwords: continue
+	print '%s<br>' % word.encode('UTF-8')
+	count = count + 1
+print (u'(Yhteensä %i sanaa)' % count).encode('UTF-8')
+print '</p>'
 
 # Page footer
-print '</table>'
 print '</body>'
 print '</html>'
