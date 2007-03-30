@@ -985,8 +985,8 @@ define @jatko_v :=
 [alku: "v",  luokka: johdin_vA, äs: a, jatko: @jatko_v, perusmuoto: "va"];
 [alku: "v",  luokka: johdin_vA, äs: ä, jatko: @jatko_v, perusmuoto: "vä"];
 
-[alku: "vuu", luokka: johdin_vA, äs: a, jatko: <kalleus>, perusmuoto: "vuus"];
-[alku: "vyy", luokka: johdin_vA, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
+[alku: "vuu", luokka: johdin_vA, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "vuus"];
+[alku: "vyy", luokka: johdin_vA, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
 
 
 [alku: "va", luokka: laatutapa_1_vE, tapaluokka: laatutapa_1, äs: a, jatko: @jatko_vE1, tiedot: <ei_voikko>];
@@ -1000,8 +1000,8 @@ define @jatko_v :=
 [alku: "v",  luokka: johdin_vE, äs: a, jatko: @jatko_v, perusmuoto: "va"];
 [alku: "v",  luokka: johdin_vE, äs: ä, jatko: @jatko_v, perusmuoto: "vä"];
 
-[alku: "vuu", luokka: johdin_vE, äs: a, jatko: <kalleus>, perusmuoto: "vuus"];
-[alku: "vyy", luokka: johdin_vE, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
+[alku: "vuu", luokka: johdin_vE, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "vuus"];
+[alku: "vyy", luokka: johdin_vE, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "vyys"];
 
 
 [alku: "vai", luokka: johdin_vAinen, äs: a, jatko: <nainen>, perusmuoto: "vainen"];
@@ -1027,15 +1027,15 @@ define @jatko_v :=
 [alku: "täv",   luokka: johdin_tAvA, äs: ä, jatko: @jatko_v,  perusmuoto: "tävä"];
 
 
-[alku: "ttavuu", luokka: johdin_ttAvA, äs: a, jatko: <kalleus>, perusmuoto: "ttavuus"];
-[alku: "ttävyy", luokka: johdin_ttAvA, äs: ä, jatko: <kalleus>, perusmuoto: "ttävyys"];
-[alku: "tavuu",  luokka: johdin_tAvA, äs: a, jatko: <kalleus>, perusmuoto: "tavuus"];
-[alku: "tävyy",  luokka: johdin_tAvA, äs: ä, jatko: <kalleus>, perusmuoto: "tävyys"];
+[alku: "ttavuu", luokka: johdin_ttAvA, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "ttavuus"];
+[alku: "ttävyy", luokka: johdin_ttAvA, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "ttävyys"];
+[alku: "tavuu",  luokka: johdin_tAvA, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "tavuus"];
+[alku: "tävyy",  luokka: johdin_tAvA, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "tävyys"];
 
-[alku: "ttavaisuu", luokka: johdin_ttAvA, äs: a, jatko: <kalleus>, perusmuoto: "ttavaisuus"];
-[alku: "ttäväisyy", luokka: johdin_ttAvA, äs: ä, jatko: <kalleus>, perusmuoto: "ttäväisyys"];
-[alku: "tavaisuu",  luokka: johdin_tAvA, äs: a, jatko: <kalleus>, perusmuoto: "tavaisuus"];
-[alku: "täväisyy",  luokka: johdin_tAvA, äs: ä, jatko: <kalleus>, perusmuoto: "täväisyys"];
+[alku: "ttavaisuu", luokka: johdin_ttAvA, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "ttavaisuus"];
+[alku: "ttäväisyy", luokka: johdin_ttAvA, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "ttäväisyys"];
+[alku: "tavaisuu",  luokka: johdin_tAvA, jluokka: nimisana, äs: a, jatko: <kalleus>, perusmuoto: "tavaisuus"];
+[alku: "täväisyy",  luokka: johdin_tAvA, jluokka: nimisana, äs: ä, jatko: <kalleus>, perusmuoto: "täväisyys"];
 
 [alku: "ttavai", luokka: johdin_ttAvA, äs: a, jatko: <nainen>, perusmuoto: "ttavainen"];
 [alku: "ttäväi", luokka: johdin_ttAvA, äs: ä, jatko: <nainen>, perusmuoto: "ttäväinen"];
@@ -1109,14 +1109,14 @@ define @jatko_e := <omanto_iT,
 [alku: "se",  luokka: johdin_sUt, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "syt"];
 
 
-[alku: "leisuu", luokka: johdin_lUt, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "leisuus"];
-[alku: "leisyy", luokka: johdin_lUt, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "leisyys"];
-[alku: "neisuu", luokka: johdin_nUt, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "neisuus"];
-[alku: "neisyy", luokka: johdin_nUt, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "neisyys"];
-[alku: "reisuu", luokka: johdin_rUt, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "reisuus"];
-[alku: "reisyy", luokka: johdin_rUt, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "reisyys"];
-[alku: "seisuu", luokka: johdin_sUt, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "seisuus"];
-[alku: "seisyy", luokka: johdin_sUt, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "seisyys"];
+[alku: "leisuu", luokka: johdin_lUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "leisuus"];
+[alku: "leisyy", luokka: johdin_lUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "leisyys"];
+[alku: "neisuu", luokka: johdin_nUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "neisuus"];
+[alku: "neisyy", luokka: johdin_nUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "neisyys"];
+[alku: "reisuu", luokka: johdin_rUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "reisuus"];
+[alku: "reisyy", luokka: johdin_rUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "reisyys"];
+[alku: "seisuu", luokka: johdin_sUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "seisuus"];
+[alku: "seisyy", luokka: johdin_sUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "seisyys"];
 
 
 define @jatko_vahva_aste :=

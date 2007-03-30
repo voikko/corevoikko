@@ -147,10 +147,14 @@ vanhempainkasvatus
 vanhempainselvyys
 siirrettävyysperiaate
 siirtyvyysperiaate
+mentävyysperiaate
 !siirrettäväperiaate
 !johtamis
 !johtamis-tavassa
 johtamis-
+ahdistuneisuushäiriö
+!ahdistuneisuuskaunis
+!ahdistunuthäiriö
 
 [etuliitteet]
 yleisopetus
