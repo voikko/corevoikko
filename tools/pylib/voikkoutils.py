@@ -21,6 +21,12 @@
 
 import codecs
 
+# Vowel types
+VOWEL_DEFAULT=0
+VOWEL_FRONT=1
+VOWEL_BACK=2
+VOWEL_BOTH=3
+
 class FlagAttribute:
 	"Vocabulary flag attribute"
 	joukahainen = 0
