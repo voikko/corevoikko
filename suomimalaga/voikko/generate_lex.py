@@ -33,6 +33,8 @@ import voikkoutils
 import xml.dom.minidom
 import codecs
 
+flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/words/flags.txt")
+
 def print_header():
 	print "This is automatically generated intermediate lexicon file for"
 	print "Suomi-malaga Voikko edition. The original source data is"
@@ -73,6 +75,59 @@ def has_flag(word, flag):
 	if word in tValues(word, "flag"): return True
 	return False
 
+# Returns tuple (alku, jatko) for given word in Joukahainen
+def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses):
+	classparts = j_infclass.split(u'-')
+	if len(classparts) == 1:
+		classparts.append(None)
+		gradtypes = [None]
+	else:
+		gradtypes = []
+		for grad in hfconv.grads:
+			if grad[2] == classparts[1]: gradtypes.append(grad[1])
+	
+	# Determine the word class for the given word
+	if "adjective" in j_wordclasses: wclass = hfconv.ADJ
+	elif "noun" in j_wordclasses or "pnoun_firstname" in j_wordclasses or \
+	     "pnoun_lastname" in j_wordclasses or "pnoun_place" in j_wordclasses or \
+	     "pnoun_misc" in j_wordclasses: wclass = hfconv.SUBST
+	elif "verb" in j_wordclasses: wclass = hfconv.VERB 
+	else: return (None, None)
+	
+	for infclass in hfconv.classmap:
+		if infclass[0] != classparts[0]: continue
+		for subclass in infclass[2]:
+			if len(subclass) > 3 and not wclass in subclass[3]: continue
+			if not subclass[0] in gradtypes: continue
+			alku = hfconv.match_re(wordform, subclass[1])
+			if alku != None: return (alku, subclass[2])
+	
+	return (None, None)
+
+# Returns malaga word class for given word in Joukahainen
+def get_malaga_word_class(j_wordclasses):
+	if "pnoun_place" in j_wordclasses: return u"paikannimi"
+	if "pnoun_firstname" in j_wordclasses: return u"etunimi"
+	if "pnoun_lastname" in j_wordclasses: return u"sukunimi"
+	if "pnoun_misc" in j_wordclasses: return u"nimi"
+	if "verb" in j_wordclasses: return u"teonsana"
+	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return u"nimi_laatusana"
+	if "adjective" in j_wordclasses: return u"laatusana"
+	if "noun" in j_wordclasses: return u"nimisana"
+	return None
+
+# Returns malaga flags for given word in Joukahainen
+def get_malaga_flags(word):
+	global flag_attributes
+	malaga_flags = []
+	for flag_attribute in flag_attributes:
+		group = word.getElementsByTagName(flag_attribute.xmlGroup)
+		if len(group) == 0: continue
+		if flag_attribute.xmlFlag in tValues(group[0], "flag") and \
+		   flag_attribute.malagaFlag != None:
+			malaga_flags.append(flag_attribute.malagaFlag)
+	return malaga_flags
+
 def handle_word(word):
 	# Drop words that are not needed in the Voikko lexicon
 	if has_flag(word, "not_voikko"): return
@@ -82,7 +137,7 @@ def handle_word(word):
 	if frequency(word) >= 10: return
 	if frequency(word) == 9 and has_flag(word, "confusing"): return
 	
-	# Exactly one inflection class is allowed
+	# Get the inflection class. Exactly one inflection class is needed
 	infclasses = word.getElementsByTagName("infclass")
 	voikko_infclass = None
 	for infclass in word.getElementsByTagName("infclass"):
@@ -90,12 +145,29 @@ def handle_word(word):
 			voikko_infclass = tValue(infclass)
 			break
 	if voikko_infclass == None: return
+	if voikko_infclass == u"poikkeava": return
+	
+	# Get the word classes
+	wordclasses = tValues(word.getElementsByTagName("classes")[0], "wclass")
+	malaga_word_class = get_malaga_word_class(wordclasses)
+	if malaga_word_class == None: return
+	
+	# Get malaga flags
+	malaga_flags = get_malaga_flags(word)
 	
 	# Get forced vowel type
 	forced_inflection_vtype = vowel_type(word.getElementsByTagName("inflection")[0])
 	
+	# Process all alternative forms
 	for altform in tValues(word.getElementsByTagName("forms")[0], "form"):
-		print altform.encode("UTF-8")
+		wordform = altform.replace(u'|', u'').replace(u'=', u'')
+		(alku, jatko) = get_malaga_inflection_class(wordform, voikko_infclass, wordclasses)
+		if alku == None:
+			print (u"#Malaga class not found for (%s, %s)\n" \
+			       % (wordform, voikko_infclass)).encode('UTF-8')
+			continue
+		print altform.encode("UTF-8"), alku.encode("UTF-8"), jatko.encode("UTF-8")
+
 
 listfile = open(VOIKKO_DATA + u'/words/fi_FI.xml', 'r')
 
