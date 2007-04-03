@@ -72,3 +72,41 @@ def readFlagAttributes(filename):
 	inputfile.close()
 	return flags
 
+# Function that returns the type of vowels that are allowed in the suffixes for
+# given simple word.
+# The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
+def _simple_vowel_type(word):
+	word = word.lower()
+	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å'), word.rfind(u'u'))
+	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
+	last_y = word.rfind(u'y')
+	if last_back > -1 and max(last_ord_front, last_y) == -1:
+		return VOWEL_BACK
+	if last_back == -1 and max(last_ord_front, last_y) > -1:
+		return VOWEL_FRONT
+	if max(last_back, last_ord_front, last_y) == -1:
+		return VOWEL_FRONT
+	if last_y < max(last_back, last_ord_front):
+		if last_back > last_ord_front: return VOWEL_BACK
+		else: return VOWEL_FRONT
+	else:
+		return VOWEL_BOTH
+
+# Returns autodetected vowel type of infection suffixes for a word.
+# If word contains character '=', automatic detection is only performed on the
+# trailing part. If word contains character '|', automatic detection is performed
+# on the trailing part and the whole word, and the union of accepted vowel types is returned.
+def get_wordform_infl_vowel_type(wordform):
+	# Search for last '=' or '-', check the trailing part using recursion
+	startind = max(wordform.rfind(u'='), wordform.rfind(u'-'))
+	if startind == len(wordform) - 1: return VOWEL_BOTH # Not allowed
+	if startind != -1: return get_wordform_infl_vowel_type(wordform[startind+1:])
+	
+	# Search for first '|', check the trailing part using recursion
+	startind = wordform.find(u'|')
+	if startind == len(wordform) - 1: return VOWEL_BOTH # Not allowed
+	vtype_whole = _simple_vowel_type(wordform)
+	if startind == -1: return vtype_whole
+	vtype_part = get_wordform_infl_vowel_type(wordform[startind+1:])
+	if vtype_whole == vtype_part: return vtype_whole
+	else: return VOWEL_BOTH

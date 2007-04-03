@@ -26,6 +26,16 @@ MODULE_PATH_HFTOOLS = os.environ["HOME"] + u"/svn/voikko/trunk/tools/pylib"
 # Path to data directory
 VOIKKO_DATA = os.environ["HOME"] + u"/svn/voikko/trunk/data"
 
+# Vocabulary entries that should be saved to different files
+# (group, name, file)
+SPECIAL_VOCABULARY = [
+	('usage', 'it', 'atk.lex'),
+	('usage', 'medicine', 'laaketiede.lex'),
+	('usage', 'science', 'matluonnontiede.lex'),
+	('usage', 'education', 'kasvatustiede.lex'),
+	('style', 'foreign', 'vieraskieliset.lex')]
+
+
 import sys
 sys.path.append(MODULE_PATH_HFTOOLS)
 import hfconv
@@ -35,14 +45,21 @@ import codecs
 
 flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/words/flags.txt")
 
-def print_header():
-	print "This is automatically generated intermediate lexicon file for"
-	print "Suomi-malaga Voikko edition. The original source data is"
-	print "distributed under the GNU General Public License, version 2 or"
-	print "later, as published by the Free Software Foundation. You should"
-	print "have received the original data, tools and instructions to"
-	print "generate this file (or instructions to obtain them) wherever"
-	print "you got this file from."
+def open_lex(filename):
+	file = codecs.open(filename, 'w', 'UTF-8')
+	file.write(u"# This is automatically generated intermediate lexicon file for\n")
+	file.write(u"# Suomi-malaga Voikko edition. The original source data is\n")
+	file.write(u"# distributed under the GNU General Public License, version 2 or\n")
+	file.write(u"# later, as published by the Free Software Foundation. You should\n")
+	file.write(u"# have received the original data, tools and instructions to\n")
+	file.write(u"# generate this file (or instructions to obtain them) wherever\n")
+	file.write(u"# you got this file from.\n\n")
+	return file
+
+main_vocabulary = open_lex("joukahainen.lex")
+vocabulary_files = {}
+for voc in SPECIAL_VOCABULARY:
+	vocabulary_files[voc[2]] = open_lex(voc[2])
 
 def tValue(element):
 	rc = ""
@@ -72,7 +89,7 @@ def vowel_type(group):
 		else: return voikkoutils.VOWEL_BOTH
 
 def has_flag(word, flag):
-	if word in tValues(word, "flag"): return True
+	if flag in tValues(word, "flag"): return True
 	return False
 
 # Returns tuple (alku, jatko) for given word in Joukahainen
@@ -126,7 +143,52 @@ def get_malaga_flags(word):
 		if flag_attribute.xmlFlag in tValues(group[0], "flag") and \
 		   flag_attribute.malagaFlag != None:
 			malaga_flags.append(flag_attribute.malagaFlag)
-	return malaga_flags
+	if len(malaga_flags) == 0: return u""
+	flag_string = u", tiedot: <"
+	for flag in malaga_flags:
+		flag_string = flag_string + flag + u","
+	flag_string = flag_string[:-1] + u">"
+	return flag_string
+
+# Returns a string describing the structure of a word, if necessary for the spellchecker
+# or hyphenator
+def get_structure(wordform, malaga_word_class):
+	needstructure = False
+	if malaga_word_class in [u'nimi', u'etunimi', u'sukunimi', 'paikannimi']: ispropernoun = True
+	else: ispropernoun = False
+	structstr = u', rakenne: "='
+	for i in range(len(wordform)):
+		c = wordform[i]
+		if c == u'-':
+			structstr = structstr + u"-="
+			needstructure = True
+		elif c == u'|': structstr = structstr
+		elif c == u'=':
+			structstr = structstr + u"="
+			needstructure = True
+		elif c == u':':
+			structstr = structstr + u":"
+			needstructure = True
+		elif c.isupper():
+			structstr = structstr + u"i"
+			if not (ispropernoun and i == 0): needstructure = True
+		else: structstr = structstr + u"p"
+	if needstructure: return structstr + u'"'
+	else: return u""
+
+# Writes the vocabulary entry to a suitable file
+def write_entry(word, entry):
+	global vocabulary_files
+	global main_vocabulary
+	special = False
+	for voc in SPECIAL_VOCABULARY:
+		group = word.getElementsByTagName(voc[0])
+		if len(group) == 0: continue
+		if has_flag(group[0], voc[1]):
+			vocabulary_files[voc[2]].write(entry + u"\n")
+			special = True
+	if not special:
+		main_vocabulary.write(entry + u"\n")
 
 def handle_word(word):
 	# Drop words that are not needed in the Voikko lexicon
@@ -162,11 +224,21 @@ def handle_word(word):
 	for altform in tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
 		(alku, jatko) = get_malaga_inflection_class(wordform, voikko_infclass, wordclasses)
+		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
+			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
+		else: vtype = forced_inflection_vtype
+		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = u'ä'
+		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
+		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
+		rakenne = get_structure(altform, malaga_word_class)
 		if alku == None:
-			print (u"#Malaga class not found for (%s, %s)\n" \
-			       % (wordform, voikko_infclass)).encode('UTF-8')
+			write_entry(word, u"#Malaga class not found for (%s, %s)\n" \
+			            % (wordform, voikko_infclass))
 			continue
-		print altform.encode("UTF-8"), alku.encode("UTF-8"), jatko.encode("UTF-8")
+		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
+		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
+				   get_structure(altform, malaga_word_class))
+		write_entry(word, entry)
 
 
 listfile = open(VOIKKO_DATA + u'/words/fi_FI.xml', 'r')
@@ -185,3 +257,7 @@ while True:
 	handle_word(word)
 
 listfile.close()
+main_vocabulary.close()
+for (name, file) in vocabulary_files.iteritems():
+	file.close()
+
