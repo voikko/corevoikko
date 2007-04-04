@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-12 03:30:43 EET
+# Time of generation: 2007-04-04 04:28:34 EEST
 
 [perusmuoto: "Achilles", alku: "Achille", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "alpha", alku: "alph", luokka: nimisana, jatko: <kala>, äs: a];
@@ -68,7 +68,7 @@
 [perusmuoto: "Niman", alku: "Niman", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "orderi", alku: "order", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "outside", alku: "outside", luokka: nimisana, jatko: <nalle>, äs: a];
-[perusmuoto: "pogosta", alku: "pogost", luokka: nimisana, jatko: <matala>, äs: a];
+[perusmuoto: "pater", alku: "pater", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "pokosta", alku: "pokost", luokka: nimisana, jatko: <matala>, äs: a];
 [perusmuoto: "Poschehonov", alku: "Poschehonov", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Povoläjeff", alku: "Povoläjeff", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -77,6 +77,7 @@
 [perusmuoto: "puzzle", alku: "puzzle", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "Pyrex", alku: "Pyrex", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "python", alku: "python", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "radar", alku: "radar", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ragusa", alku: "Ragus", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Rittersdorf", alku: "Rittersdorf", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Roden", alku: "Roden", luokka: sukunimi, jatko: <kalsium>, äs: a];

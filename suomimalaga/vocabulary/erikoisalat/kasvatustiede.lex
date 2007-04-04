@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-12 03:30:40 EET
+# Time of generation: 2007-04-04 04:28:33 EEST
 
 [perusmuoto: "andragogiikka", alku: "andragogiik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "Asperger", alku: "Asperger", luokka: sukunimi, jatko: <edam>, äs: a];
@@ -53,6 +53,5 @@
 [perusmuoto: "Semjonovitš", alku: "Semjonovitš", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "sosiometriikka", alku: "sosiometriik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "taktiilinen", alku: "taktiili", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "Vygotski", alku: "Vygotsk", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Wolf-Hirschhorn", alku: "Wolf-Hirschhorn", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ippp-=ippppppppp"];
 

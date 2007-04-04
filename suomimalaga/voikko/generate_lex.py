@@ -194,7 +194,6 @@ def handle_word(word):
 	# Drop words that are not needed in the Voikko lexicon
 	if has_flag(word, "not_voikko"): return
 	if has_flag(word, "incorrect"): return
-	if has_flag(word, "foreign"): return
 	if has_flag(word, "dialect"): return
 	if frequency(word) >= 10: return
 	if frequency(word) == 9 and has_flag(word, "confusing"): return

@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-12 03:30:39 EET
+# Time of generation: 2007-04-04 04:28:32 EEST
 
 [perusmuoto: "AfterStep", alku: "AfterStep", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppp=ippp"];
 [perusmuoto: "alias", alku: "alia", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -79,8 +79,10 @@
 [perusmuoto: "Java", alku: "Jav", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "kcal", alku: "kcal", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "KOMA-Script", alku: "KOMA-Script", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=iiii-=ippppp"];
+[perusmuoto: "konvertoida", alku: "konverto", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "Labtec", alku: "Labtec", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "LaTex", alku: "LaTex", luokka: nimi, jatko: <edam>, äs: a, rakenne: "=ipipp"];
+[perusmuoto: "libvoikko", alku: "libvoik", luokka: nimi, jatko: <verkko>, äs: a, rakenne: "=ppp=pppppp"];
 [perusmuoto: "LifeLines", alku: "LifeLines", luokka: nimi, jatko: <kalsium>, äs: ä, rakenne: "=ipppipppp"];
 [perusmuoto: "lisp", alku: "lisp", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "lynx", alku: "lynx", luokka: nimisana, jatko: <kalsium>, äs: ä];

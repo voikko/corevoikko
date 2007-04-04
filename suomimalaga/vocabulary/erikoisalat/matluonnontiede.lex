@@ -20,8 +20,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-18 03:28:32 EET
+# Time of generation: 2007-04-04 04:28:34 EEST
 
+[perusmuoto: "abskissa", alku: "abskiss", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "aktinium", alku: "aktinium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "aldehydi", alku: "aldehyd", luokka: nimisana, jatko: <risti>, äs: aä];
 [perusmuoto: "amerikium", alku: "amerikium", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -45,6 +46,7 @@
 [perusmuoto: "kolonni", alku: "kolonn", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "konvoluutio", alku: "konvoluutio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "kromatografia", alku: "kromatografi", luokka: nimisana, jatko: <apila>, äs: a, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "laimennos", alku: "laimenno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "lawrencium", alku: "lawrencium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "lutetium", alku: "lutetium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "meitnerium", alku: "meitnerium", luokka: nimisana, jatko: <kalsium>, äs: a];
@@ -58,8 +60,16 @@
 [perusmuoto: "röntgenium", alku: "röntgenium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "samarium", alku: "samarium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "seaborgium", alku: "seaborgium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "skandium", alku: "skandium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "souto", alku: "sou", luokka: nimisana, jatko: <leuto>, äs: a];
 [perusmuoto: "spin", alku: "spin", luokka: nimisana, jatko: <kalsium>, äs: ä];
+[perusmuoto: "surjektio", alku: "surjektio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "tensori", alku: "tensor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "terbium", alku: "terbium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "tulium", alku: "tulium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "unaarinen", alku: "unaari", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "unbilinium", alku: "unbilinium", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "unbiunium", alku: "unbiunium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununbium", alku: "ununbium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununennium", alku: "ununennium", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "ununheksium", alku: "ununheksium", luokka: nimisana, jatko: <kalsium>, äs: a];

@@ -20,7 +20,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
-# Time of generation: 2007-02-12 03:30:41 EET
+# Time of generation: 2007-04-04 04:28:33 EEST
 
 [perusmuoto: "adrenokortikotrooppinen", alku: "adrenokortikotrooppi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "adrenokortikotropiini", alku: "adrenokortikotropiin", luokka: nimisana, jatko: <risti>, äs: a];
@@ -42,6 +42,7 @@
 [perusmuoto: "prenataali", alku: "prenataal", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
 [perusmuoto: "prolaktiini", alku: "prolaktiin", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "psykosomatiikka", alku: "psykosomatiik", luokka: nimisana, jatko: <haka>, äs: a];
+[perusmuoto: "remittoida", alku: "remitto", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "ribonukleiinihappo", alku: "ribonukleiinihap", luokka: nimisana, jatko: <kippo>, äs: a, rakenne: "=ppppppppppppp=ppppp"];
 [perusmuoto: "somatisaatio", alku: "somatisaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "sytokiini", alku: "sytokiin", luokka: nimisana, jatko: <risti>, äs: a];
