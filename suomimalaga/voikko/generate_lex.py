@@ -18,13 +18,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import os
+# Path to source data directory
+VOIKKO_DATA = u"vocabulary"
 
-# Path to module directory
-MODULE_PATH_HFTOOLS = os.environ["HOME"] + u"/svn/voikko/trunk/tools/pylib"
-
-# Path to data directory
-VOIKKO_DATA = os.environ["HOME"] + u"/svn/voikko/trunk/data"
+# Path to target directory
+VOIKKO_LEX = u"voikko"
 
 # Vocabulary entries that should be saved to different files
 # (group, name, file)
@@ -36,17 +34,15 @@ SPECIAL_VOCABULARY = [
 	('style', 'foreign', 'vieraskieliset.lex')]
 
 
-import sys
-sys.path.append(MODULE_PATH_HFTOOLS)
 import hfconv
 import voikkoutils
 import xml.dom.minidom
 import codecs
 
-flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/words/flags.txt")
+flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/flags.txt")
 
 def open_lex(filename):
-	file = codecs.open(filename, 'w', 'UTF-8')
+	file = codecs.open(VOIKKO_LEX + u"/" + filename, 'w', 'UTF-8')
 	file.write(u"# This is automatically generated intermediate lexicon file for\n")
 	file.write(u"# Suomi-malaga Voikko edition. The original source data is\n")
 	file.write(u"# distributed under the GNU General Public License, version 2 or\n")
@@ -240,7 +236,7 @@ def handle_word(word):
 		write_entry(word, entry)
 
 
-listfile = open(VOIKKO_DATA + u'/words/fi_FI.xml', 'r')
+listfile = open(VOIKKO_DATA + u'/joukahainen.xml', 'r')
 
 line = ""
 while line != '<wordlist xml:lang="fi">\n': line = listfile.readline()

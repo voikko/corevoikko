@@ -2,20 +2,25 @@
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
-	 voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro
+         voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro voikko/voikkoutils.py \
+         voikko/generate_lex.py vocabulary/joukahainen.xml vocabulary/flags.txt
 
 VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
 	voikko/voikko-fi_FI.sym_?
 
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=suomi.lex all.inc mor.inc subrule.inc suomi.inc
-VOIKKO_COPY_FROM_VOCABULARY=joukahainen.lex erikoissanat.lex etuliitteet.lex seikkasanat.lex \
+VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex olla-ei.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex
 
+# Lexicon files generated for Voikko from Joukahainen
+VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede vieraskieliset
+
 # Files to ship in the preprocessed source package
 VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voikko-fi_FI.mor_l \
-                  voikko-fi_FI.sym_l voikko-fi_FI.all_l voikko-fi_FI.lex suomi.inc subrule.inc 
+                  voikko-fi_FI.sym_l voikko-fi_FI.all_l voikko-fi_FI.lex suomi.inc subrule.inc \
+                  $(patsubst %,%.lex,$(VOIKKO_LEX_FROM_XML))
 
 # Files to ship in the source package (duplicates are allowed)
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
@@ -27,7 +32,8 @@ SM_VERSION=svn
 
 all: voikko
 
-voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
+voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
+	$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
@@ -36,12 +42,17 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
+$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
+	voikko/generate_lex.py voikko/voikkoutils.py
+	voikko/generate_lex.py
+
 clean:
-	rm -f voikko/*_l voikko/transmit
+	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
+	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
 
 
 # Rules for creating the preprocessed source package
