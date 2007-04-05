@@ -3,8 +3,8 @@
 SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro voikko/voikkoutils.py \
-         vocabulary/joukahainen.xml vocabulary/flags.txt
-SRC_ONLY_EXEC=voikko/generate_lex.py
+         vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
+         voikko/hfconv.py
 
 VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
 	voikko/voikko-fi_FI.sym_?
@@ -44,11 +44,11 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
 $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	voikko/generate_lex.py voikko/voikkoutils.py
-	voikko/generate_lex.py
+	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py
+	python voikko/generate_lex.py
 
 clean:
-	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc
+	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc voikko/hfconv.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
@@ -72,14 +72,11 @@ $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST))): voikko-fi
 
 dist-gzip: suomi-malaga-$(SM_VERSION).tar.gz
 
-suomi-malaga-$(SM_VERSION).tar.gz: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST) $(SRC_ONLY_EXEC)))
+suomi-malaga-$(SM_VERSION).tar.gz: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST)))
 	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | gzip -9 > $@
 
 $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
 	install --mode=644 -D $^ $@
-
-$(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRC_ONLY_EXEC))): suomi-malaga-$(SM_VERSION)/%: %
-	install --mode=755 -D $^ $@
 
 voikko/transmit: common/transmit.cc
 	g++ -g common/transmit.cc -o voikko/transmit

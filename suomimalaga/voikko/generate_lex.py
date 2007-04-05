@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 # Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
