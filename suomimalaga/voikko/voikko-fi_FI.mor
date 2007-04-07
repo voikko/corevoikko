@@ -802,7 +802,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
     ? (not ($vasen.<1,luokka> = asemosana));
   end;
 
-  if ($sana in <"ni", "si", "s", "nsa", "nsä", "mme", "nne">) then
+  if ($sana in <"ni", "si", "nsa", "nsä", "mme", "nne">) then
     result $result,
            rules liitesana, loppu;
   else

@@ -290,3 +290,5 @@ kapsaisi # Kotus 78
 
 [muita virheitä]
 !kolaaa
+!kullakinkin
+
