@@ -263,8 +263,7 @@
 [perusmuoto: "kissun", alku: "kissun", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kohdakkain", alku: "kohdakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kohdakkoin", alku: "kohdakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kohmeeseen", alku: "kohmeeseen", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "kohmeessa", alku: "kohmeessa", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kohme", alku: "kohmee", luokka: seikkasana, jatko: <sisäolento_ssA, sisätulento_seen>, äs: a];
 [perusmuoto: "kohta", alku: "kohta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kolmasti", alku: "kolmasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kolmin", alku: "kolmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -309,8 +308,7 @@
 [perusmuoto: "kyllä", alku: "kyllä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllälti", alku: "kyllälti", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kyse", alku: "kyse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kyse", alku: "kysee", luokka: seikkasana, jatko: <omanto_n, olento_nA, sisäolento_ssA>, äs: ä];
-[perusmuoto: "kyse", alku: "kyseeseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kyse", alku: "kysee", luokka: seikkasana, jatko: <omanto_n, olento_nA, sisäolento_ssA, sisätulento_seen>, äs: ä];
 [perusmuoto: "käsikkäin", alku: "käsikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köpelösti", alku: "köpelösti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köykky", alku: "köykky", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: ä];
