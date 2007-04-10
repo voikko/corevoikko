@@ -156,8 +156,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
 
   if ($index greater 1) then
     define $edellinen := $vasen.($index - 1);
-    ? (($oikea.luokka in $edellinen.jatko) or
-       ((nimisana in $edellinen.jatko))    or
+    ? (((nimisana in $edellinen.jatko))    or
        ($edellinen.luokka = lukusana)      or
        ($oikea.lähtöluokka = teonsana and teonsana in $edellinen.jatko));
 

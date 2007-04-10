@@ -31,7 +31,7 @@ Build and installation
 ----------------------
 
 Building Suomi-malaga for Voikko from this package requires
-malaga and make.
+malaga, python and make.
 No configuration is required: to build the code, you only need to run
     make voikko
 Installation can be done by running
