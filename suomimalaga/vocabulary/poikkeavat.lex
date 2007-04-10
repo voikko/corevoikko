@@ -20,6 +20,7 @@
 [perusmuoto: "Adrianmeri", alku: "Adrianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
 [perusmuoto: "aika", alku: "a", luokka: nimisana, jatko: <aika>, äs: a, tiedot: <inen>];
+[perusmuoto: "talvisaika", alku: "talvisa", luokka: nimisana, jatko: <aika>, äs: a, tiedot: <inen>, rakenne: "=pppppp=pppp"];
 [perusmuoto: "aikaansaada", alku: "aikaansa", luokka: teonsana, jatko: <saada>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "ajast'aika", alku: "ajast'a", luokka: nimisana, jatko: <aika>, äs: a];
 [perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a, rakenne: "=ppppp=pppp"];

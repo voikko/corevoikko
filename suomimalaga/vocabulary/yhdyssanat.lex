@@ -66,6 +66,8 @@
 [perusmuoto: "Isokyrö", alku: "Isollekyrö", luokka: paikannimi, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ippppp=pppp"];
 [perusmuoto: "Isokyrö", alku: "Isottakyrö", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppp=pppp"];
 
+[perusmuoto: "isokyröläinen", alku: "isokyröläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppp=pppppppppp"];
+
 # {{{2 Mustameri
 
 [perusmuoto: "Mustameri", alku: "Mustameri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
@@ -181,6 +183,8 @@
 [perusmuoto: "Uusikaupunki", alku: "Uudellekaupungi", luokka: paikannimi, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ipppppp=pppppppp"];
 [perusmuoto: "Uusikaupunki", alku: "Uudettakaupungi", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppppp"];
 
+[perusmuoto: "uusikaupunkilainen", alku: "uusikaupunkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
+
 # {{{2 Uusimaa
 
 [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ippp=ppp"];
@@ -196,6 +200,9 @@
 [perusmuoto: "Uusimaa", alku: "Uudeltamaa", luokka: paikannimi, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=ipppppp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uudellemaa", luokka: paikannimi, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ipppppp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uudettamaa", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=ppp"];
+
+[perusmuoto: "uusimaalainen", alku: "uusimaalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "uudenmaalainen", alku: "uudenmaalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
 
 # {{{1 Yleisnimiä
 
@@ -628,7 +635,7 @@
 [perusmuoto: "uusivuosi", alku: "uusinevuos",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uusinvuos",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=ppppp=ppppp"];
 
-# {{{2 (esimerkkitietueet)
+# {{{2 (Esimerkkitietueet)
 
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: ""];
@@ -653,6 +660,7 @@
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: a, rakenne: ""];
+#[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: ""];
@@ -661,8 +669,8 @@
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: ""];
-#[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: ""];
+#[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <sisätulento_isiin>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: ""];
