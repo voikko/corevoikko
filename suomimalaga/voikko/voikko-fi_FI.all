@@ -3727,6 +3727,11 @@ subrule taivutuskaava ($tietue, $taivutus):
     end;
   end;
 
+  # Näitä johdoksia ei toistaiseksi tueta
+  if ($tietue.luokka = paikannimi) then
+    $taivutus :=- johdin_mAinen;
+  end;
+
   # Ei tarvita Voikko-versiossa
   $taivutus :=- nimi_laatusana;
 

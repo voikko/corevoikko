@@ -1262,7 +1262,17 @@ subrule tulostus_voikko ($tietue):
   foreach $t in $tietue:
     $tind :=+ 1;
     if $t.rakenne /= nil then
-      $tuloste :=+ $t.rakenne;
+      if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) then
+        foreach $i in length($t.rakenne):
+	  if substring($t.rakenne, $i) = "i" then
+	    $tuloste :=+ "p";
+	  else
+	    $tuloste :=+ substring($t.rakenne, $i);
+	  end;
+	end;
+      else
+        $tuloste :=+ $t.rakenne;
+      end;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
                          nimi_laatusana, asemosana, suhdesana,
                          etuliite> then

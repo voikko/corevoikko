@@ -105,7 +105,6 @@
 [perusmuoto: "isobritannialainen", alku: "isobritannialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppppppp"];
 [perusmuoto: "itävaltalainen", alku: "itävaltalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppp"];
 [perusmuoto: "joonialainen", alku: "joonialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "jugoslavialainen", alku: "jugoslavialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppp"];
 [perusmuoto: "kaledonialainen", alku: "kaledonialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kalevalainen", alku: "kalevalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kanaanilainen", alku: "kanaanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];

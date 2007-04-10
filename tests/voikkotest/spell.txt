@@ -62,6 +62,19 @@ Esankujalta
 Mikonvuori-lava
 !Mikonvuorilava
 !mikonvuori-lava
+Jugoslavia
+!jugoslavia
+jugoslavialainen
+Jugoslavialainen
+Sveitsi
+!sveitsi
+sveitsiläinen
+Sveitsiläinen
+!Sveitsimäinen
+!sveitsimäinen (tätä johdosta ei tueta ainakaan toistaiseksi)
+Teppo
+!teppo
+
 
 [lyhenteet]
 USA:ssa
