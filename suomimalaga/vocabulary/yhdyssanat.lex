@@ -808,6 +808,7 @@
 [perusmuoto: "mustaherukka", alku: "mustatherukkat", luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustienherukko", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustienherukka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaherukka", alku: "mustainherukka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustienheruko",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustiaherukko",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustiaheruko",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=pppppppp"];
@@ -845,6 +846,7 @@
 [perusmuoto: "mustaleipä", alku: "mustatleivät",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustienleip",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustienleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustaleipä", alku: "mustainleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustialeip",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustinaleip",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustiksileiv",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=pppppppp=ppppp"];
@@ -907,6 +909,8 @@
 
 [perusmuoto: "mustamaija", alku: "mustatmaijat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustienmaijo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamaija", alku: "mustienmaija",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamaija", alku: "mustainmaija",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustiamaijo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustinamaijo",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustiksimaijo", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppppp"];
@@ -938,6 +942,7 @@
 
 [perusmuoto: "mustamakkara", alku: "mustatmakkarat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustienmakkara",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustamakkara", alku: "mustainmakkara",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustienmakkaro",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustiamakkaro",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustinamakkaro",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppppp"];
