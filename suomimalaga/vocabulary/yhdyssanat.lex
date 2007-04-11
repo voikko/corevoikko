@@ -1,6 +1,7 @@
 # {{{1 Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2007 Teemu Likonen <tlikonen@iki.fi>
+#                      Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -54,7 +55,7 @@
 
 # {{{2 Isokyrö
 
-[perusmuoto: "Isokyrö", alku: "Isokyrö",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ipp=pppp"];
+[perusmuoto: "Isokyrö", alku: "Isokyrö",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipp=pppp"];
 [perusmuoto: "Isokyrö", alku: "Isonkyrö",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippp=pppp"];
 [perusmuoto: "Isokyrö", alku: "Isonkyrö",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippp=pppp"];
 [perusmuoto: "Isokyrö", alku: "Isoakyrö",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=ippp=pppp"];
@@ -73,7 +74,7 @@
 
 # {{{2 Mustameri
 
-[perusmuoto: "Mustameri", alku: "Mustameri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
+[perusmuoto: "Mustameri", alku: "Mustameri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
 [perusmuoto: "Mustameri", alku: "Mustanmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
 [perusmuoto: "Mustameri", alku: "Mustanmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppp=pppp"];
 [perusmuoto: "Mustameri", alku: "Mustaamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppp=pppp"];
@@ -107,7 +108,7 @@
 
 # {{{2 Punainenmeri
 
-[perusmuoto: "Punainenmeri", alku: "Punainenmeri",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ippppppp=pppp"];
+[perusmuoto: "Punainenmeri", alku: "Punainenmeri",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ippppppp=pppp"];
 [perusmuoto: "Punainenmeri", alku: "Punaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppppp=pppp"];
 [perusmuoto: "Punainenmeri", alku: "Punaisenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppppp=pppp"];
 [perusmuoto: "Punainenmeri", alku: "Punaistamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppppp=pppp"];
@@ -141,7 +142,7 @@
 
 # {{{2 Tyynimeri
 
-[perusmuoto: "Tyynimeri", alku: "Tyynimeri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
+[perusmuoto: "Tyynimeri", alku: "Tyynimeri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
 [perusmuoto: "Tyynimeri", alku: "Tyynenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
 [perusmuoto: "Tyynimeri", alku: "Tyynenmere",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppp=pppp"];
 [perusmuoto: "Tyynimeri", alku: "Tyyntämer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ippppp=pppp"];
@@ -175,7 +176,7 @@
 
 # {{{2 Uusikaupunki
 
-[perusmuoto: "Uusikaupunki", alku: "Uusikaupunki",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ippp=pppppppp"];
+[perusmuoto: "Uusikaupunki", alku: "Uusikaupunki",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=pppppppp"];
 [perusmuoto: "Uusikaupunki", alku: "Uudenkaupunki",   luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=pppppppp"];
 [perusmuoto: "Uusikaupunki", alku: "Uudenkaupungi",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=pppppppp"];
 [perusmuoto: "Uusikaupunki", alku: "Uuttakaupunki",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ipppp=pppppppp"];
@@ -193,7 +194,7 @@
 
 # {{{2 Uusimaa
 
-[perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ippp=ppp"];
+[perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ippp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uudenmaa",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=ppp"];
 [perusmuoto: "Uusimaa", alku: "Uuttamaa",   luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppp=ppp"];
@@ -214,7 +215,7 @@
 
 # {{{2 aavameri
 
-[perusmuoto: "aavameri", alku: "aavameri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "aavameri", alku: "aavameri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavanmere",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavanmere",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavaamer",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ppppp=pppp"];
@@ -248,7 +249,7 @@
 
 # {{{2 hienosokeri
 
-[perusmuoto: "hienosokeri", alku: "hienosokeri",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hienosokeri", alku: "hienosokeri",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "hienosokeri", alku: "hienonsokeri",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "hienosokeri", alku: "hienonsokeri",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "hienosokeri", alku: "hienoasokeri",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppp"];
@@ -282,7 +283,7 @@
 
 # {{{2 isojako
 
-[perusmuoto: "isojako", alku: "isojako",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=pppp"];
+[perusmuoto: "isojako", alku: "isojako",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
 [perusmuoto: "isojako", alku: "isonjako",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isojako", alku: "isonjao",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isojako", alku: "isoajako",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
@@ -314,7 +315,7 @@
 
 # {{{2 isomasto
 
-[perusmuoto: "isomasto", alku: "isomasto",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "isomasto", alku: "isomasto",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isonmasto",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isonmasto",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isoamasto",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
@@ -346,7 +347,7 @@
 
 # {{{2 isopurje
 
-[perusmuoto: "isopurje", alku: "isopurje",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "isopurje", alku: "isopurje",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isonpurjee",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isonpurjee",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isoapurje",    luokka: nimisana, luku: yksikkö, jatko: <osanto_ttA>, äs: a, rakenne: "=pppp=ppppp"];
@@ -379,7 +380,7 @@
 
 # {{{2 isorokko
 
-[perusmuoto: "isorokko", alku: "isorokko",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "isorokko", alku: "isorokko",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isonrokko",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isonroko",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isoarokko",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
@@ -411,7 +412,7 @@
 
 # {{{2 isorumpu
 
-[perusmuoto: "isorumpu", alku: "isorumpu",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "isorumpu", alku: "isorumpu",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isonrumpu",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isonrummu",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isoarumpu",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
@@ -443,7 +444,7 @@
 
 # {{{2 isosisar
 
-[perusmuoto: "isosisar", alku: "isosisar",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "isosisar", alku: "isosisar",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isonsisare",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isonsisare",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isoasisar",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppp=ppppp"];
@@ -476,7 +477,7 @@
 
 # {{{2 isosisko
 
-[perusmuoto: "isosisko", alku: "isosisko",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "isosisko", alku: "isosisko",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isonsisko",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isonsisko",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isoasisko",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
@@ -526,7 +527,7 @@
 
 # {{{2 isovarvas
 
-[perusmuoto: "isovarvas", alku: "isovarvas",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=pppppp"];
+[perusmuoto: "isovarvas", alku: "isovarvas",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isonvarpaa",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isonvarpaa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isoavarvas",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppp=pppppp"];
@@ -559,7 +560,7 @@
 
 # {{{2 isoveli
 
-[perusmuoto: "isoveli", alku: "isoveli",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppp"];
+[perusmuoto: "isoveli", alku: "isoveli",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppp=pppp"];
 [perusmuoto: "isoveli", alku: "isonvelje",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoveli", alku: "isonvelje",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoveli", alku: "isoavelje",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppp=pppp"];
@@ -592,7 +593,7 @@
 
 # {{{2 isoviha
 
-[perusmuoto: "isoviha", alku: "isoviha",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=pppp"];
+[perusmuoto: "isoviha", alku: "isoviha",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=pppp"];
 [perusmuoto: "isoviha", alku: "isonviha",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoviha", alku: "isonviha",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoviha", alku: "isoaviha",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=pppp"];
@@ -624,7 +625,7 @@
 
 # {{{2 kevytsarja
 
-[perusmuoto: "kevytsarja", alku: "kevytsarja",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "kevytsarja", alku: "kevytsarja",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyensarja",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyensarja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyttäsarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -658,7 +659,7 @@
 
 # {{{2 kuivakakku
 
-[perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuivankakku",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuivankaku",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuivakakku",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -690,7 +691,7 @@
 
 # {{{2 kuivamuona
 
-[perusmuoto: "kuivamuona", alku: "kuivamuona",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "kuivamuona", alku: "kuivamuona",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivanmuona",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivanmuona",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivaamuona",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
@@ -724,7 +725,7 @@
 
 # {{{2 kultainennoutaja
 
-[perusmuoto: "kultainennoutaja", alku: "kultainennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+[perusmuoto: "kultainennoutaja", alku: "kultainennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaisennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaisennoutaja",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaistanoutaja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppppppp=ppppppp"];
@@ -761,7 +762,7 @@
 
 # "ruoka : ruoan"
 
-[perusmuoto: "lämminruoka", alku: "lämminruoka",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "lämminruoka", alku: "lämminruoka",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimänruoka",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimänruoa",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämmintäruoka",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=ppppp"];
@@ -816,7 +817,7 @@
 
 # {{{2 matalameri
 
-[perusmuoto: "matalameri", alku: "matalameri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "matalameri", alku: "matalameri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalanmere",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalanmere",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalaamer",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -850,7 +851,7 @@
 
 # {{{2 mustaherukka
 
-[perusmuoto: "mustaherukka", alku: "mustaherukka",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "mustaherukka", alku: "mustaherukka",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustaherukka",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustanheruka",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustaaherukka",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
@@ -889,7 +890,7 @@
 
 # {{{2 mustaleipä
 
-[perusmuoto: "mustaleipä", alku: "mustaleipä",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "mustaleipä", alku: "mustaleipä",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustanleivä",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustanleivä",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustaaleipä",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=ppppp"];
@@ -923,7 +924,7 @@
 
 # {{{2 mustaleski
 
-[perusmuoto: "mustaleski", alku: "mustaleski",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "mustaleski", alku: "mustaleski",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustanleske",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustanleske",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustaaleske",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=ppppp"];
@@ -955,7 +956,7 @@
 
 # {{{2 mustamaija
 
-[perusmuoto: "mustamaija", alku: "mustamaija",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "mustamaija", alku: "mustamaija",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustanmaija",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustanmaija",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustaamaija",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
@@ -989,7 +990,7 @@
 
 # {{{2 mustamakkara
 
-[perusmuoto: "mustamakkara", alku: "mustamakkara",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppp"];
+[perusmuoto: "mustamakkara", alku: "mustamakkara",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustanmakkara",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustanmakkara",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustaamakkara",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppppp"];
@@ -1023,7 +1024,7 @@
 
 # {{{2 mustamies
 
-[perusmuoto: "mustamies", alku: "mustamies",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "mustamies", alku: "mustamies",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustanmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustanmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustaamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppp=pppp"];
@@ -1054,9 +1055,142 @@
 [perusmuoto: "mustamies", alku: "mustinemieh",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustinmieh",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=pppppp=pppp"];
 
+# {{{2 mustamulta
+
+[perusmuoto: "mustamulta", alku: "mustamulta",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustanmulta",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustanmulla",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustaamulta",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustanamulta",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustaksimulla", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustassamulla", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustastamulla", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustaanmulta",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustallamulla", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustaltamulla", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustallemulla", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustattamulla", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+
+[perusmuoto: "mustamulta", alku: "mustatmullat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustatmulta",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustienmult",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustienmulta",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustainmulta",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustiamult",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustinamult",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustiksimull",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustissamull",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustistamull",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustiinmult",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustillamull",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustiltamull",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustillemull",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustittamull",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustinemult",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustinmull",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppp"];
+
+# {{{2 mustapekka
+
+[perusmuoto: "mustapekka", alku: "mustapekka",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustanpekka",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustanpeka",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustaapekka",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustanapekka", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustaksipeka", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustassapeka", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustastapeka", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustaanpekka", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustallapeka", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustaltapeka", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustallepeka", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustattapeka", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+
+[perusmuoto: "mustapekka", alku: "mustatpekat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustatpekka",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustienpekko", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustainpekka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustiapekko",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustinapekko", luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustiksipeko", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustissapeko", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustistapeko", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustiinpekko", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustillapeko", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustiltapeko", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustillepeko", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustittapeko", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustinepekko", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustinpeko",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppp"];
+
+# {{{2 mustapippuri
+
+[perusmuoto: "mustapippuri", alku: "mustapippuri",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustanpippuri",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustanpippuri",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustaapippuri",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustanapippuri",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustaksipippuri", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustassapippuri", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustastapippuri", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustaanpippuri",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustallapippuri", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustaltapippuri", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustallepippuri", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustattapippuri", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+
+[perusmuoto: "mustapippuri", alku: "mustatpippurit",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustienpippur",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustienpippure",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustinapippure",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustiksipippure", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustissapippure", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustistapippure", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustiinpippure",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustillapippure", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustiltapippure", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustillepippure", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustittapippure", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustinepippure",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustinpippure",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppppp"];
+
+# {{{2 mustaraamattu
+
+[perusmuoto: "mustaraamattu", alku: "mustaraamattu",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustanraamattu",  luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustanraamatu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustaaraamattu",  luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustanaraamattu", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustaksiraamatu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustassaraamatu", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustastaraamatu", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustaanraamattu", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustallaraamatu", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustaltaraamatu", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustalleraamatu", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustattaraamatu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+
+[perusmuoto: "mustaraamattu", alku: "mustatraamatut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustatraamattu",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustienraamattu", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustiaraamattu",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustinaraamattu", luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustiksiraamatu", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustissaraamatu", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustistaraamatu", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustiinraamattu", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustillaraamatu", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustiltaraamatu", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustilleraamatu", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustittaraamatu", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustineraamattu", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustinraamatu",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=pppppppp"];
+
 # {{{2 omatunto
 
-[perusmuoto: "omatunto", alku: "omatunto",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppp"];
+[perusmuoto: "omatunto", alku: "omatunto",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
 [perusmuoto: "omatunto", alku: "omantunto",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "omatunto", alku: "omantunno",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "omatunto", alku: "omaatunto",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppp=ppppp"];
@@ -1088,7 +1222,7 @@
 
 # {{{2 pitkäperjantai
 
-[perusmuoto: "pitkäperjantai", alku: "pitkäperjantai",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppp"];
+[perusmuoto: "pitkäperjantai", alku: "pitkäperjantai",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkänperjantai",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkänperjantai",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkääperjantai",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppppp=ppppppppp"];
@@ -1120,7 +1254,7 @@
 
 # {{{2 uusivuosi
 
-[perusmuoto: "uusivuosi", alku: "uusivuosi",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "uusivuosi", alku: "uusivuosi",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uudenvuote",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uudenvuode",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uuttavuo",     luokka: nimisana, luku: yksikkö, jatko: <osanto_ttA>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -1154,7 +1288,7 @@
 
 # {{{2 (Esimerkkitietueet)
 
-#[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: ""];
+#[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: ""];
@@ -1199,10 +1333,6 @@
 
 # {{{1 (Kotuksen sanalistan taivutusluokan 51 sanoja)
 
-#<st><s>mustamulta</s><t><tn>51</tn></t></st>
-#<st><s>mustapekka</s><t><tn>51</tn></t></st>
-#<st><s>mustapippuri</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
-#<st><s>mustaraamattu</s><t><tn>51</tn></t></st>
 #<st><s>mustatorvisieni</s><t><tn>51</tn></t></st>
 #<st><s>mustaviinimarja</s><t><tn>51</tn></t></st>
 #<st><s>nuoriemäntä</s><t><tn>51</tn></t></st>
