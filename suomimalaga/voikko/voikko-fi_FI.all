@@ -3730,6 +3730,22 @@ subrule taivutuskaava ($tietue, $taivutus):
   # Näitä johdoksia ei toistaiseksi tueta
   if ($tietue.luokka = paikannimi) then
     $taivutus :=- johdin_mAinen;
+  else
+    $taivutus :=- johdin_lAinen;
+  end;
+
+  # Näitä johdoksia ei tehdä erisnimistä
+  if ($tietue.luokka in <nimi, etunimi, sukunimi, paikannimi>) then
+    $taivutus :=- johdin_tOn;
+    $taivutus :=- johdin_llinen;
+    $taivutus :=- johdin_UUs;
+    $taivutus :=- johdin_ittAin;
+    $taivutus :=- voittoaste;
+    $taivutus :=- yliaste;
+    $taivutus :=- nimisana;
+    $taivutus :=- laatusana;
+    $taivutus :=- teonsana;
+    $taivutus :=- etuliite;
   end;
 
   # Ei tarvita Voikko-versiossa
