@@ -1,6 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#                 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -43,9 +44,6 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
-#
-# This file has been modified by the contributors of Hunspell-fi project.
-# Last change was on $Date$ by $Author$.
 
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
@@ -649,19 +647,23 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
 end;
 
 combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka = lukusanan_jälkiliite;
-  # FIXME: yhdysviivan käyttöä ei vielä tueta
-  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
-  define $edellinen := $vasen.($index - 1);
-  ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, omistusliite,
-               nimisana, etuliite,
-               liitesana,
-               nimisanan_johdos,
-               nimisana_laatusanasta, nimisana_teonsanasta,
-               tavuviiva,
-               loppu;
+  ? $oikea.luokka in <lukusanan_jälkiliite, tavuviiva>;
+  # FIXME: yhdysviivan käyttöä ei vielä tueta lukusanan ja sen jälkiliitteen välissä
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if $oikea.luokka = tavuviiva then
+    result $res, rules loppu;
+  else
+    define $edellinen := $vasen.($index - 1);
+    ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
+    result $vasen + <[alku: $sana] + $oikea>,
+           rules sijapääte, omistusliite,
+                 nimisana, etuliite,
+                 liitesana,
+                 nimisanan_johdos,
+                 nimisana_laatusanasta, nimisana_teonsanasta,
+                 tavuviiva,
+                 loppu;
+  end;
 end;
 
 ###### LUKUSANASÄÄNNÖT PÄÄTTYVÄT

@@ -246,6 +246,9 @@ nelivuotias
 biljoonia
 biljoona
 triljoonin
+kaksi-
+viidessadaskolmaskymmenes-
+!kaksitoista-vuotias
 
 [johtimet]
 märänlaiselleko
