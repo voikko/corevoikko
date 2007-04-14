@@ -399,7 +399,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "millänsäkään", alku: "milläsikään",  luokka: seikkasana, jatko: @loppu, äs: a];
 [perusmuoto: "millänsäkään", alku: "millänsäkään", luokka: seikkasana, jatko: @loppu, äs: a];
 [perusmuoto: "millänsäkään", alku: "millämmekään", luokka: seikkasana, jatko: @loppu, äs: a];
-[perusmuoto: "millänsäkään", alku: "millättekään", luokka: seikkasana, jatko: @loppu, äs: a]; # Onko sana?
+[perusmuoto: "millänsäkään", alku: "millättekään", luokka: seikkasana, jatko: @loppu, äs: a, tiedot: <ei_voikko>]; # Onko sana?
 
 ######################################################
 
@@ -589,10 +589,10 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "edessä", alku: "eteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edessä", alku: "ede", luokka: seikkasana, jatko: @heikkoasteiset_paikallissijat, äs: ä];
 
-[perusmuoto: "edelläoleva", alku: "edelläolev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "edessäoleva", alku: "edessäolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "edelläoleva", alku: "edelläolev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "edessäoleva", alku: "edessäolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 # Seuraava on sanaliitto Kotuksen nettisivujen mukaan mutta yhdyssana kielitoimiston MOT-sanakirjassa
-[perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
 
 [perusmuoto: "eteenpäin", alku: "edeltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "eteenpäin", alku: "edessäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];

@@ -45,25 +45,25 @@
 # combination.
 
 
-[perusmuoto: "heinjokelainen", alku: "heinjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "heinjokinen", alku: "heinjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "jongunjokelainen", alku: "jongunjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "jongunjokinen", alku: "jongunjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "padasjokelainen", alku: "padasjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "padasjokinen", alku: "padasjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "pisinjokelainen", alku: "pisinjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "pisinjokinen", alku: "pisinjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "siestarjokelainen", alku: "siestarjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "siestarjokinen", alku: "siestarjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "terijokelainen", alku: "terijokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "terijokinen", alku: "terijoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "tohmajokelainen", alku: "tohmajokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "tohmajokinen", alku: "tohmajoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "tuulosjokelainen", alku: "tuulosjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "tuulosjokinen", alku: "tuulosjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "utsjokelainen", alku: "utsjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "utsjokinen", alku: "utsjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "vaaherjokelainen", alku: "vaaherjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "vaaherjokinen", alku: "vaaherjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "väinäjokelainen", alku: "väinäjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "väinäjokinen", alku: "väinäjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "heinjokelainen", alku: "heinjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppp"];
+[perusmuoto: "heinjokinen", alku: "heinjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "jongunjokelainen", alku: "jongunjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=pppppppppp"];
+[perusmuoto: "jongunjokinen", alku: "jongunjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "padasjokelainen", alku: "padasjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "padasjokinen", alku: "padasjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppp"];
+[perusmuoto: "pisinjokelainen", alku: "pisinjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "pisinjokinen", alku: "pisinjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppp"];
+[perusmuoto: "siestarjokelainen", alku: "siestarjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppp"];
+[perusmuoto: "siestarjokinen", alku: "siestarjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "terijokelainen", alku: "terijokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppp"];
+[perusmuoto: "terijokinen", alku: "terijoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "tohmajokelainen", alku: "tohmajokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "tohmajokinen", alku: "tohmajoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppp"];
+[perusmuoto: "tuulosjokelainen", alku: "tuulosjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=pppppppppp"];
+[perusmuoto: "tuulosjokinen", alku: "tuulosjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "utsjokelainen", alku: "utsjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=pppppppppp"];
+[perusmuoto: "utsjokinen", alku: "utsjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppp"];
+[perusmuoto: "vaaherjokelainen", alku: "vaaherjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=pppppppppp"];
+[perusmuoto: "vaaherjokinen", alku: "vaaherjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "väinäjokelainen", alku: "väinäjokelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "väinäjokinen", alku: "väinäjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppp"];
