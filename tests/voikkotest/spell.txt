@@ -188,6 +188,7 @@ kanssaan
 [nimitavat]
 puhuakseen
 puhuakseni
+!lammasvetäessä
 
 [lukusanat]
 kolme

@@ -202,7 +202,7 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   end;
   result $vasen + <[alku: $sana] + $oikea>,
          rules teonsanan_johdos, # FIXME: johdetun muodon on oltava nimisana
-	       nimitavat;
+               nimitapa_4;
 end;
 
 # Laatusanasta johdettu nimisana, esim. vapaus <- vapaa.
@@ -707,7 +707,6 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-  ? yhdysteonsana_oikein ($vasen, $index - 1);
 
   if (($oikea.luokka = kestämän_tekijäpääte_y3)
       and ($edellinen.alku matches ".*" + @ääntiö)) then
@@ -719,6 +718,26 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $index):
          rules liitesana, loppu;
 end;
 
+###### NIMITAPASÄÄNNÖT ALKAVAT
+
+combi_rule nimitapa_4 ($vasen, $oikea, $sana):
+  ? $oikea.luokka = nimitapa_4;
+  ? ääntiösointu_oikein($vasen, $oikea, $sana);
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if (tavuviiva in $oikea.jatko) then
+    result $res, rules yhdysmerkki_sanan_lopussa;
+  end;
+  if (nimitapa_1_pitkä in $oikea.jatko) then
+    result $res, rules nimitapa_1_pitkä;
+  end;
+  result $res,
+         rules sijapääte, omistusliite,
+               liitesana, nimisana,
+               loppu;
+end;
+
+###### NIMITAPASÄÄNNÖT PÄÄTTYVÄT
 
 combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @nimitapa_1 + @nimitapa_2 + @nimitapa_3 + <nimitapa_4, nimitapa_5>;
@@ -726,10 +745,6 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-  if ($oikea.luokka in @nimitapa_1 + @nimitapa_2 + @nimitapa_3) then
-    ? yhdysteonsana_oikein ($vasen, $index - 1);
-  end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (tavuviiva in $oikea.jatko) then
@@ -1036,23 +1051,6 @@ subrule ääntiösointu_oikein ($vasen, $oikea, $sana):
 end;
 
 
-# Hyväksytäänkö teonsanat tyyppiä "ohjelma+listata".
-#
-subrule yhdysteonsana_oikein ($vasen, $i):
-# Ota kommentti pois seuraavan rivin alusta, jos haluat hyväksyä yhdysteonsanat.
-#  return yes;
-
-  if ($i greater 1) then
-    foreach $k in $vasen:
-      if (not ($k.luokka in <teonsana, etuliite>)) then
-        stop;
-      end;
-    end;
-  end;
-  return yes;
-end;
-
-
 subrule omistusliite3_oikein ($sana, $liite):
   return ((($sana matches ".*" + @a) and ($liite = "an")) or
           (($sana matches ".*" + @e) and ($liite = "en")) or
@@ -1157,7 +1155,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"koti", "kotiin">, <"pää">>,    # Kotiinpäin.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luksus", "luminen">>,
-      <<"loinen">,    <"tee", "tehdä">>,
+      <<"loinen">,    <"tehdä">>,
       <<"maa">,       <"nisä">>,
       <<"maagi">,     <"seksi", "silta">>,
       <<"mansi">,     <"kastaa", "koi", "koittaa">>,
@@ -1174,11 +1172,11 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"soinen">,    <"aari">>,
       <<"sota", "säihky">, <"väkä">>,
       <<"suo">,       <"musti", "nina">>,
-      <<"suu">,       <"tee", "tehdä", "teloa">>,
+      <<"suu">,       <"tehdä", "teloa">>,
       <<"sävel">,     <"eittää">>,
       <<"taulu">,     <"koittaa">>,
       <<"taus">,      <"takki">>,
-      <<"tie">,       <"tee", "tie", "toinen", "tokko">>,
+      <<"tie">,       <"tie", "toinen", "tokko">>,
       <<"traditio">,  <"naali">>,
       <<"ulko">,      <"naida", "nainen">>,
       <<"uus">,       <"arpoa">>,
