@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2005, 2006 Harri Pitkänen (hatapitk@cc.jyu.fi)
-# Functions and data for Hunspell-fi <-> Suomi-malaga converter
+# Copyright 2005 - 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Functions and data for Joukahainen -> Suomi-malaga converter
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -171,6 +171,7 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(None,u'(.*CU)U',u'revyy')]),
 	(u'pii', u'-', [(None,u'(.*V)i',u'pii'),
 		      (None,u'(.*CA)A',u'maa'),
+		      (None,u'(.*Ce)e',u'tee'),
 		      (None,u'(.*U)U',u'puu')]),
 	(u'suo', u'-', [(None,u'(.*C)UO',u'suo')]),
 	(u'askel', u'ws', [(None,u'(.*VC)',u'askel'),

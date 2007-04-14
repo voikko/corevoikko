@@ -218,7 +218,6 @@
 [perusmuoto: "tallessa", alku: "tallessa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tallessa", alku: "talteen", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: <osanto_tA, liitesana, loppu>, äs: a];
-[perusmuoto: "tee", alku: "te", luokka: nimisana, jatko: <tee>, äs: ä];
 [perusmuoto: "tehdä", alku: "te", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "tenkkapoo", alku: "tenkkapoo", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "terve", alku: "terve", luokka: nimi_laatusana, jatko: <terve>, äs: ä, tiedot: <inen>];
