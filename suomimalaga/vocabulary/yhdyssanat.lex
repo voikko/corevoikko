@@ -1294,6 +1294,144 @@
 [perusmuoto: "nuoriherra", alku: "nuorineherro",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "nuoriherra", alku: "nuorinherro",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppp"];
 
+# {{{2 nuori-isäntä (51)
+
+[perusmuoto: "nuori-isäntä", alku: "nuori-isäntä",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp-=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorenisäntä",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorenisännä",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuortaisäntä",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorenaisäntä",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoreksi-isännä", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp-=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoressaisännä",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorestaisännä",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoreenisäntä",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorellaisännä",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoreltaisännä",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorelleisännä",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorettaisännä",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+
+[perusmuoto: "nuori-isäntä", alku: "nuoretisännät",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoretisäntä",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorienisänt",    luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuortenisänt",    luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorienisäntä",   luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuortenisäntä",   luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoriaisänt",     luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorinaisänt",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoriksi-isänn",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=pppppppp-=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorissaisänn",   luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoristaisänn",   luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoriinisänt",    luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorillaisänn",   luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoriltaisänn",   luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorilleisänn",   luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorittaisänn",   luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorineisänt",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuorinisänn",     luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=pppppp=pppppp"];
+
+# {{{2 nuorikarja (51)
+
+[perusmuoto: "nuorikarja", alku: "nuorikarja",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorenkarja",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorenkarja",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuortakarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorenakarja",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoreksikarja", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoressakarja", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorestakarja", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoreenkarja",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorellakarja", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoreltakarja", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorellekarja", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorettakarja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+
+[perusmuoto: "nuorikarja", alku: "nuoretkarjat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorienkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuortenkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorienkarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuortenkarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoriakarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorinakarjo",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoriksikarjo", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorissakarjo", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoristakarjo", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoriinkarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorillakarjo", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoriltakarjo", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorillekarjo", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorittakarjo", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorinekarjo",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuorinkarjo",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppp"];
+
+# {{{2 nuorimies (51)
+
+[perusmuoto: "nuorimies", alku: "nuorimies",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorenmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorenmiehe",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuortamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorenamiehe",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoreksimiehe", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoressamiehe", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorestamiehe", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoreenmiehe",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorellamiehe", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoreltamiehe", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorellemiehe", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorettamiehe", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
+
+[perusmuoto: "nuorimies", alku: "nuoretmiehet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorienmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuortenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorienmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuortenmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoriamieh",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorinamieh",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoriksimieh",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorissamieh",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoristamieh",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoriinmieh",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorillamieh",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoriltamieh",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorillemieh",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorittamieh",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorinemieh",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuorinmieh",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=pppppp=pppp"];
+
+# {{{2 nuoripari (51)
+
+[perusmuoto: "nuoripari", alku: "nuoripari",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorenpari",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorenpari",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuortapari",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorenapari",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoreksipari", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoressapari", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorestapari", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoreenpari",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorellapari", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoreltapari", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorellepari", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorettapari", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppp"];
+
+[perusmuoto: "nuoripari", alku: "nuoretparit",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorienpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuortenpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoriapare",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorinapare",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoriksipare", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorissapare", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoristapare", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoriinpare",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorillapare", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoriltapare", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorillepare", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorittapare", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorinepare",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuorinpare",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=pppp"];
+
 # {{{2 omatunto (51)
 
 [perusmuoto: "omatunto", alku: "omatunto",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppppp"];
@@ -1439,10 +1577,6 @@
 
 # {{{1 (Kotuksen sanalistan taivutusluokan 51 sanoja)
 
-#<st><s>nuori-isäntä</s><t><tn>51</tn></t></st>
-#<st><s>nuorikarja</s><t><tn>51</tn></t></st>
-#<st><s>nuorimies</s><t><tn>51</tn></t></st>
-#<st><s>nuoripari</s><t><tn>5</tn></t><t><tn>51</tn></t></st>
 #<st><s>omakuva</s><t><tn>51</tn></t><t><tn>50</tn></t></st>
 #<st><s>pahahenki</s><t><tn>51</tn></t></st>
 #<st><s>pahaputki</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
