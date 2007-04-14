@@ -1000,7 +1000,7 @@ end: class
 # Kotus 18 maa
 class: 18
 sm-class: pii
-match-word: V[aäiuy]
+match-word: V[aäeiuy]
 consonant-gradation: -
 group: t
 transform-group: e
@@ -1013,27 +1013,27 @@ translatiivi	0	kse	w	ps=r
 essiivi		0	na	s
 inessiivi		0	ssa	w
 elatiivi		0	sta	w
-illatiivi		([aiu])	(1)h(1)n	s
+illatiivi		([aeiu])	(1)h(1)n	s
 adessiivi		0	lla	w
 ablatiivi		0	lta	w
 allatiivi		0	lle	w
 abessiivi		0	tta	w	ps=f
 nominatiivi_mon	0	t	w	ps=f
-genetiivi_mon	[aiu]	iden	s
-genetiivi_mon	[aiu]	itten	s
-partitiivi_mon	[aiu]	ita	s
-translatiivi_mon	[aiu]	iksi	w	ps=f
-translatiivi_mon	[aiu]	ikse	w	ps=r
-essiivi_mon	[aiu]	ina	s
-inessiivi_mon	[aiu]	issa	w
-elatiivi_mon	[aiu]	ista	w
-illatiivi_mon	[aiu]	ihin	s
-adessiivi_mon	[aiu]	illa	w
-ablatiivi_mon	[aiu]	ilta	w
-allatiivi_mon	[aiu]	ille	w
-abessiivi_mon	[aiu]	itta	w	ps=f
-komitatiivi_mon	[aiu]	ine	s	ps=r
-instruktiivi_mon	[aiu]	in	w	ps=f
+genetiivi_mon	[aeiu]	iden	s
+genetiivi_mon	[aeiu]	itten	s
+partitiivi_mon	[aeiu]	ita	s
+translatiivi_mon	[aeiu]	iksi	w	ps=f
+translatiivi_mon	[aeiu]	ikse	w	ps=r
+essiivi_mon	[aeiu]	ina	s
+inessiivi_mon	[aeiu]	issa	w
+elatiivi_mon	[aeiu]	ista	w
+illatiivi_mon	[aeiu]	ihin	s
+adessiivi_mon	[aeiu]	illa	w
+ablatiivi_mon	[aeiu]	ilta	w
+allatiivi_mon	[aeiu]	ille	w
+abessiivi_mon	[aeiu]	itta	w	ps=f
+komitatiivi_mon	[aeiu]	ine	s	ps=r
+instruktiivi_mon	[aeiu]	in	w	ps=f
 end: rules
 end: class
 
