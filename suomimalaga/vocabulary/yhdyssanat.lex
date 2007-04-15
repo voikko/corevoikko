@@ -49,9 +49,10 @@
 # Yhdyssanoja, joiden molemmat osat taipuvat.
 
 # {{{1 Paikannimiä
-# Voikko sallii tällä hetkellä (11.4.2007) mitkä tahansa sijamuodot yhdysmerkin
-# eri puolilla, esimerkiksi "*Isona-Britannissa" ja "*Uudella-Seelantia". Näin
-# ollen tällaisia paikannimiä ei vielä ole hyötyä lisätä tähän tiedostoon.
+# Suomi-Malaga sallii tällä hetkellä (11.4.2007) mitkä tahansa sijamuodot
+# yhdysmerkin eri puolilla, esimerkiksi "*Isona-Britannissa" ja
+# "*Uudella-Seelantia". Näin ollen tällaisia paikannimiä ei vielä ole hyötyä
+# lisätä tähän tiedostoon.
 
 # {{{2 Isokyrö
 
@@ -1689,6 +1690,57 @@
 [perusmuoto: "pitkäsiima", alku: "pitkinesiimo",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "pitkäsiima", alku: "pitkinsiimo",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppp"];
 
+# {{{2 pitkäthousut (51)
+
+[perusmuoto: "pitkäthousut", alku: "pitkäthousut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkienhousu",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkiähousu",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkinähousu",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkiksihousu", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkissähousu", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkistähousu", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkiinhousu",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkillähousu", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkiltähousu", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkillehousu", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkittähousu", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkinehousu",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkinhousu",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=pppppp"];
+
+# {{{2 puolikuu (51) 'kuukauden puoliväli'
+
+[perusmuoto: "puolikuu", alku: "puolikuu",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolenkuu",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoltakuu",   luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolenakuu",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoleksikuu", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolessakuu", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolestakuu", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoleenkuu",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolellakuu", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoleltakuu", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolellekuu", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolettakuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppp"];
+
+[perusmuoto: "puolikuu", alku: "puoletkuut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoletkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoltenku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoliaku",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolinaku",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoliksiku",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolissaku",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolistaku",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoliinku",   luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolillaku",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoliltaku",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolilleku",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolittaku",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolineku",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puolinku",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppp"];
+
 # {{{2 uusivuosi (51)
 
 [perusmuoto: "uusivuosi", alku: "uusivuosi",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppppp"];
@@ -1770,9 +1822,6 @@
 
 # {{{1 (Kotuksen sanalistan taivutusluokan 51 sanoja)
 
-#<st><s>pitkätakki</s><t><tn>51</tn></t></st>
-#<st><s>pitkäthousut</s><t><tn>51</tn></t></st>
-#<st><s>puolikuu</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
 #<st><s>puolikymmentä</s><t><tn>51</tn></t></st>
 #<st><s>puolimatka</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
 #<st><s>puolipäivä</s><t><tn>51</tn></t><t><tn>50</tn></t></st>
@@ -1791,7 +1840,6 @@
 #<st><s>tyhjäpaino</s><t><tn>51</tn></t></st>
 #<st><s>täysikuu</s><t><tn>51</tn></t><t><tn>50</tn></t></st>
 #<st><s>uusikuu</s><t><tn>51</tn></t></st>
-#<st><s>uusivuosi</s><t><tn>51</tn></t></st>
 #<st><s>vanhaemäntä</s><t><tn>51</tn></t></st>
 #<st><s>vanhaisäntä</s><t><tn>51</tn></t></st>
 #<st><s>vanhakaupunki</s><t><tn>51</tn></t></st>
