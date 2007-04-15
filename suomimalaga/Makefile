@@ -29,7 +29,7 @@ SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 
 SM_VERSION=svn
 
-.PHONY: all clean voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
+.PHONY: all clean update-vocabulary voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
 
 all: voikko
 
@@ -87,4 +87,9 @@ ifndef DESTDIR
 endif
 	install --mode=755 -d $(DESTDIR)
 	install --mode=644 -t $(DESTDIR) $(VOIKKO_BINDIST)
+
+# Vocabulary update
+update-vocabulary:
+	wget http://joukahainen.lokalisointi.org/sanastot/joukahainen.xml.gz -O - \
+	| gunzip > vocabulary/joukahainen.xml
 

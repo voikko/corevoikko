@@ -37,6 +37,7 @@ import hfconv
 import voikkoutils
 import xml.dom.minidom
 import codecs
+import sys
 
 flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/flags.txt")
 
@@ -238,7 +239,11 @@ def handle_word(word):
 listfile = open(VOIKKO_DATA + u'/joukahainen.xml', 'r')
 
 line = ""
-while line != '<wordlist xml:lang="fi">\n': line = listfile.readline()
+while line != '<wordlist xml:lang="fi">\n':
+	line = listfile.readline()
+	if line == '':
+		sys.stderr.write("Malformed file " + VOIKKO_DATA + "/joukahainen.xml\n")
+		sys.exit(1)
 
 while True:
 	wordstr = ""
