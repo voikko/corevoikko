@@ -1982,6 +1982,145 @@
 [perusmuoto: "raitisilma", alku: "raittiineilmo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "raitisilma", alku: "raittiinilmo",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppppp=pppp"];
 
+# {{{2 raskassarja (51)
+
+[perusmuoto: "raskassarja", alku: "raskassarja",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaansarja",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaansarja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskastasarja",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaanasarja",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaaksisarja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaassasarja",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaastasarja",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaaseensarja", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaallasarja",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaaltasarja",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaallesarja",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaattasarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+
+[perusmuoto: "raskassarja", alku: "raskaatsarjat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaidensarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaittensarja", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaitasarjo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskainasarjo",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaiksisarjo",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaissasarjo",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaistasarjo",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaisiinsarjo", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaihinsarjo",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaillasarjo",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskailtasarjo",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaillesarjo",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaittasarjo",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskainesarjo",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskainsarjo",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+
+# {{{2 raskasvesi (50, 51)
+
+[perusmuoto: "raskasvesi", alku: "raskasvesi",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaanvete",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaanvede",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskastavet",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaanavete",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaaksivede",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaassavede",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaastavede",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaaseenvete", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaallavede",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaaltavede",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaallevede",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaattavede",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+
+[perusmuoto: "raskasvesi", alku: "raskaatvedet",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaatvete",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaidenves",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaittenves",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaidenvet",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaittenvet",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaitaves",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskainaves",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaiksives",   luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaissaves",   luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaistaves",   luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaisiinves",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaihinves",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaillaves",   luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskailtaves",   luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskailleves",   luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaittaves",   luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaineves",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskainves",     luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=ppppppp=pppp"];
+
+# {{{2 raskasvety (50, 51)
+
+[perusmuoto: "raskasvety", alku: "raskasvety",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaanvety",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaanvedy",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskastavety",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaanavety",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaaksivedy",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaassavedy",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaastavedy",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaaseenvety", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaallavedy",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaaltavedy",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaallevedy",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaattavedy",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+
+[perusmuoto: "raskasvety", alku: "raskaatvedyt",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaatvety",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaidenvety",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaittenvety", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaitavety",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskainavety",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaiksivedy",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaissavedy",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaistavedy",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaisiinvety", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaihinvety",  luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaillavedy",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskailtavedy",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaillevedy",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaittavedy",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskainevety",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskainvedy",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=ppppppp=pppp"];
+
+# {{{2 suorakulma (50, 51)
+
+[perusmuoto: "suorakulma", alku: "suorakulma",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorankulma",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorankulma",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoraakulma",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoranakulma",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoraksikulma", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorassakulma", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorastakulma", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoraankulma",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorallakulma", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoraltakulma", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorallekulma", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorattakulma", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+
+[perusmuoto: "suorakulma", alku: "suoratkulmat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorienkulm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorienkulma",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoriakulm",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorinakulm",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoriksikulm",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorissakulm",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoristakulm",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoriinkulm",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorillakulm",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoriltakulm",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorillekulm",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorittakulm",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorinekulm",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suorinkulm",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=pppppp=ppppp"];
+
 # {{{2 uusivuosi (51)
 
 [perusmuoto: "uusivuosi", alku: "uusivuosi",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppppp"];
@@ -2063,11 +2202,6 @@
 
 # {{{1 (Kotuksen sanalistan taivutusluokan 51 sanoja)
 
-#<st><s>raskassarja</s><t><tn>51</tn></t></st>
-#<st><s>raskasvesi</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
-#<st><s>raskasvety</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
-#<st><s>sepiväpeippi</s><t><tn>51</tn></t><t><tn>50</tn></t></st>
-#<st><s>suorakulma</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
 #<st><s>suoraommel</s><t><tn>50</tn></t><t><tn>51</tn></t></st>
 #<st><s>syvämeri</s><t><tn>51</tn></t></st>
 #<st><s>särkynytsydän</s><t><tn>51</tn></t></st>
