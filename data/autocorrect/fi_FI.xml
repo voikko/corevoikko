@@ -190,6 +190,10 @@
   <correct>ikään kuin</correct>
 </replacement>
 <replacement>
+  <incorrect>itse=asiassa</incorrect>
+  <correct>itse asiassa</correct>
+</replacement>
+<replacement>
   <incorrect>itse=kukin</incorrect>
   <correct>itse kukin</correct>
 </replacement>
