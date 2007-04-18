@@ -6856,33 +6856,35 @@ subrule voikko_lista_vain_lipulla($lippu, $lista):
   end;
 end;
 
-output_filter output($lista):
+output_filter output($lista_orig):
+  # Poistetaan täydelliset kaksoiskappaleet
+  define $lista := set($lista_orig);
   # Yhdistetään tietueita, jotka poikkeavat toisistaan vain jatko-kentän osalta
   if length($lista) = 2 then
     if $lista.1 - jatko = $lista.2 - jatko then
-      result $lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko>];
+      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<2, jatko>)];
       stop;
     end;
   elseif length($lista) = 3 then
     if $lista.1 - jatko = $lista.2 - jatko and $lista.2 - jatko = $lista.3 - jatko then
-      result $lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko> + $lista.<3, jatko>];
+      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<2, jatko> + $lista.<3, jatko>)];
       stop;
     elseif $lista.1 - jatko = $lista.2 - jatko then
-      result $lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko>];
+      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<2, jatko>)];
       result $lista.3;
       stop;
     elseif $lista.2 - jatko = $lista.3 - jatko then
-      result $lista.2 + [jatko: $lista.<2, jatko> + $lista.<3, jatko>];
+      result $lista.2 + [jatko: set($lista.<2, jatko> + $lista.<3, jatko>)];
       result $lista.1;
       stop;
     elseif $lista.1 - jatko = $lista.3 - jatko then
-      result $lista.1 + [jatko: $lista.<1, jatko> + $lista.<3, jatko>];
+      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<3, jatko>)];
       result $lista.2;
       stop;
     end;
   end;
   foreach $l in $lista:
-    result $l;
+    result $l + [jatko: set($l.jatko)];
   end;
 end;
 
