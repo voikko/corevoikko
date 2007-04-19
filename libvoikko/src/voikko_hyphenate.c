@@ -54,11 +54,14 @@ int voikko_allow_rule_hyphenation(const wchar_t * word, size_t nchars) {
 	// Word is too short
 	if (nchars <= 1) return 0;
 	
-	// URL detection
-	if (wmemchr(word, L'/', nchars)) return 0;
+	if (voikko_options.no_ugly_hyphenation) {
+		// URL detection
+		if (wmemchr(word, L'/', nchars)) return 0;
+		if (nchars > 2 && wmemchr(word + 1, L'.', nchars - 2)) return 0;
 	
-	// Word ends with number (not safe to be hyphenated)
-	if (word[nchars - 1] >= L'0' && word[nchars - 1] <= L'9') return 0;
+		// Word ends with number (not safe to be hyphenated)
+		if (word[nchars - 1] >= L'0' && word[nchars - 1] <= L'9') return 0;
+	}
 	
 	return 1;
 }

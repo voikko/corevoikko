@@ -26,6 +26,7 @@ pöytähienosto	pöy-tä-hienos-to
 hiili-12        hiili-12
 hiili12         hiili12
 http://www.lappeenranta.fi     http://www.lappeenranta.fi
+www.lappeenranta.fi     www.lappeenranta.fi
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
@@ -49,7 +50,9 @@ proteiini       pro-te-ii-ni
 intiaani        in-ti-aa-ni
 jesuiitta       je-su-iit-ta
 yö              yö
+hiili-12        hii-li-12
 Ruokala.com     Ruo-ka-la.com
+http://www.lappeenranta.fi     http://www.lap-peen-ran-ta.fi
 KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
 
 [no_ugly_hyphenation=0 ignore_dot=1]
