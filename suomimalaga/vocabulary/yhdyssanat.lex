@@ -2325,6 +2325,74 @@
 [perusmuoto: "vanhaemäntä", alku: "vanhoineemänt",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "vanhaemäntä", alku: "vanhoinemänn",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=ppppppp=pppppp"];
 
+# {{{2 vanhaisäntä (51)
+
+[perusmuoto: "vanhaisäntä", alku: "vanhaisäntä",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhanisäntä",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhanisännä",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhaaisäntä",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhanaisäntä",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhaksiisännä", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhassaisännä", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhastaisännä", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhaanisäntä",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhallaisännä", luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhaltaisännä", luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhalleisännä", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhattaisännä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+
+[perusmuoto: "vanhaisäntä", alku: "vanhatisännät",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhatisäntä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhojenisänt",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhainisänt",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhojenisäntä", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhainisäntä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhojaisänt",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoinaisänt",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoiksiisänn", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoissaisänn", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoistaisänn", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoihinisänt", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoillaisänn", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoiltaisänn", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoilleisänn", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoittaisänn", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoineisänt",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhoinisänn",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=ppppppp=pppppp"];
+
+# {{{2 vanhakaupunki (51)
+
+[perusmuoto: "vanhakaupunki", alku: "vanhakaupunki",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhankaupunki",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhankaupungi",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhaakaupunki",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhanakaupunki",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhaksikaupungi",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhassakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhastakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhaankaupunki",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhallakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhaltakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhallekaupungi",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhattakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+
+[perusmuoto: "vanhakaupunki", alku: "vanhatkaupungit",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhatkaupunki",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhojenkaupunki",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhainkaupunki",   luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhojakaupunke",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoinakaupunke",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoiksikaupunge", luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoissakaupunge", luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoistakaupunge", luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoihinkaupunke", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoillakaupunge", luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoiltakaupunge", luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoillekaupunge", luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoittakaupunge", luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=ppppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoinekaupunke",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhoinkaupunge",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=ppppppp=pppppppp"];
+
 # {{{2 (Esimerkkitietueet)
 
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: ""];
@@ -2372,8 +2440,6 @@
 
 # {{{1 (Kotuksen sanalistan taivutusluokan 51 sanoja)
 
-#<st><s>vanhaisäntä</s><t><tn>51</tn></t></st>
-#<st><s>vanhakaupunki</s><t><tn>51</tn></t></st>
 #<st><s>vanhapiika</s><t><tn>51</tn></t></st>
 #<st><s>vanhapoika</s><t><tn>51</tn></t></st>
 #<st><s>vierasmies</s><t><tn>51</tn></t><t><tn>50</tn></t></st>
