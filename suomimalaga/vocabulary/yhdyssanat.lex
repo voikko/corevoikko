@@ -2393,6 +2393,112 @@
 [perusmuoto: "vanhakaupunki", alku: "vanhoinekaupunke",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=pppppppp"];
 [perusmuoto: "vanhakaupunki", alku: "vanhoinkaupunge",   luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=ppppppp=pppppppp"];
 
+# {{{2 vanhapiika (51)
+
+[perusmuoto: "vanhapiika", alku: "vanhapiika",     luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhanpiika",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhanpiia",     luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhaapiika",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhanapiika",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhaksipiia",   luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhassapiia",   luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhastapiia",   luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhaanpiika",   luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhallapiia",   luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhaltapiia",   luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhallepiia",   luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhattapiia",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+
+[perusmuoto: "vanhapiika", alku: "vanhatpiiat",    luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhatpiika",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhojenpiiko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhainpiiko",   luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhojenpiika",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhainpiika",   luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhojapiiko",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoinapiiko",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoiksipiio",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoissapiio",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoistapiio",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoihinpiiko", luokka: nimisana, luku: monikko, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoillapiio",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoiltapiio",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoillepiio",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoittapiio",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoinepiiko",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhoinpiio",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+
+# {{{2 vanhapoika (51)
+
+[perusmuoto: "vanhapoika", alku: "vanhapoika",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhanpoika",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhanpoja",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhaapoika",   luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhanapoika",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhaksipoja",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhassapoja",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhastapoja",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhaanpoika",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhallapoja",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhaltapoja",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhallepoja",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhattapoja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
+
+[perusmuoto: "vanhapoika", alku: "vanhatpojat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhatpoika",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhojenpoik",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhainpoik",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhojenpoika", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhainpoika",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhojapoik",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoinapoik",  luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoiksipoj",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoissapoj",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoistapoj",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoihinpoik", luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoillapoj",  luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoiltapoj",  luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoillepoj",  luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoittapoj",  luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: a, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoinepoik",  luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhoinpoj",    luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
+
+# {{{2 vierasmies (51, 50) '(jäävitön) todistaja'
+
+[perusmuoto: "vierasmies", alku: "vierasmies",      luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraanmiehe",    luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraanmiehe",    luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vierastamies",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraanamiehe",   luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraaksimiehe",  luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraassamiehe",  luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraastamiehe",  luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraaseenmiehe", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraallamiehe",  luokka: nimisana, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraaltamiehe",  luokka: nimisana, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraallemiehe",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraattamiehe",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+
+[perusmuoto: "vierasmies", alku: "vieraatmiehet",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraidenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraittenmieh",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraidenmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraittenmies",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraitamieh",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vierainamieh",    luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraiksimieh",   luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraissamieh",   luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraistamieh",   luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraisiinmieh",  luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraihinmieh",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraillamieh",   luokka: nimisana, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vierailtamieh",   luokka: nimisana, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraillemieh",   luokka: nimisana, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraittamieh",   luokka: nimisana, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vierainemieh",    luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vierainmieh",     luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=ppppppp=pppp"];
+
 # {{{2 (Esimerkkitietueet)
 
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: ""];
@@ -2438,11 +2544,6 @@
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <keinonto_in>, äs: a, rakenne: ""];
 
-# {{{1 (Kotuksen sanalistan taivutusluokan 51 sanoja)
-
-#<st><s>vanhapiika</s><t><tn>51</tn></t></st>
-#<st><s>vanhapoika</s><t><tn>51</tn></t></st>
-#<st><s>vierasmies</s><t><tn>51</tn></t><t><tn>50</tn></t></st>
 
 # vim: nowrap filetype=conf
 # vim600: foldmethod=marker
