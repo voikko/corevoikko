@@ -1584,7 +1584,7 @@ end: class
 # Kotus 34 onneton
 class: 34
 sm-class: onneton
-match-word: ton
+match-word: t[oö]n
 consonant-gradation: ws
 group: t
 transform-group: e
