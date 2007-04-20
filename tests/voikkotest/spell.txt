@@ -106,6 +106,8 @@ kielipoliittinen
 !lahkoainen
 !tuliinen
 viisiulotteinen
+hauenhampainen
+hopeahelainen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
