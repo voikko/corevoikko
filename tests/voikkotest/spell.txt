@@ -151,6 +151,8 @@ sosiaali-
 !Kaakkois
 !sosiaali
 !juoksemise-
+-äänisesti
+!äänisesti
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri

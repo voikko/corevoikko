@@ -384,7 +384,7 @@ combi_rule yhdysmerkki_sanan_alussa ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
   result <[vokaaliehto: no] + $oikea>,
          rules nimisana, erisnimi, laatusana, lyhennesääntö,
-               etuliite, teonsana, lukusanan_jälkiliite;
+               etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta;
 end;
 
 combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
