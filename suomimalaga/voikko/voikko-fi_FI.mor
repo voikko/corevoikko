@@ -48,7 +48,7 @@
 
 initial <>, rules nimisana, erisnimi, laatusana, asemosana, apusana, lyhennesääntö,
                   lukusana, etuliite, teonsana, kieltosana, yhdysmerkki_sanan_alussa,
-		  laatusana_laatusanasta, seikka_tai_suhdesana;
+                  laatusana_laatusanasta, seikka_tai_suhdesana, paikannimen_lainen_johdos;
 
 include "suomi.inc";
 include "mor.inc";
@@ -93,7 +93,7 @@ define @johdin_teonsanasta := @johtimet_nimisana_teonsanasta
 define @johtimet_nimisana_nimisanasta := <johdin_tAr, johdin_lAinen>;
 
 define @johtimet_laatusana_nimisanasta := <johdin_llinen, johdin_inen, johdin_tOn,
-                                           johdin_mAinen, johdin_lAinen>;
+                                           johdin_mAinen>;
 
 define @johtimet_seikkasana_nimisanasta := <johdin_ittAin>;
 
@@ -120,17 +120,20 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
     ? etuliite in $vasen.($index - 1).jatko;
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (nimisana in $oikea.jatko or teonsana in $oikea.jatko) then
-    result $vasen + <[alku: $sana] + $oikea>,
-           rules nimisana_teonsanasta;
+    result $res, rules nimisana_teonsanasta;
+  end;
+
+  if (nimisana in $oikea.jatko) then
+    result $res, rules inen_johdos_nimisanasta;
   end;
 
   if (kieltosana in $oikea.jatko) then
-    result $vasen + <[alku: $sana] + $oikea>, rules kieltosana;
+    result $res, rules kieltosana;
   else
-    result $vasen + <[alku: $sana] + $oikea>,
-           rules etuliite, nimisana, laatusana, teonsana, tavuviiva;
+    result $res, rules etuliite, nimisana, laatusana, teonsana, tavuviiva;
   end;
 end;
 
@@ -141,7 +144,6 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
          rules erisnimen_sijapääte,
                omistusliite,
                liitesana,
-               nimisanan_johdos, # -lainen
                yhdysmerkki_erisnimen_jälkeen,
                loppu;
 end;
@@ -178,7 +180,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   end;
   if (nimisana in $oikea.jatko) then
     result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta,
-                       etuliite,
+                       etuliite, paikannimen_lainen_johdos,
                        inen_johdos_nimisanasta, inen_päätteinen_laatusana; # Kieli=poliittinen
   end;
   result $res,
@@ -227,6 +229,16 @@ combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   result $vasen + <[alku: $sana] + $oikea>, rules johdin_inen;
 end;
 
+# Paikannimestä johdettu kansallisuuden nimi
+combi_rule paikannimen_lainen_johdos ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = paikannimi;
+  ? johdin_lAinen in $oikea.jatko;
+  if ($index greater 1) then
+    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  end;
+  result $vasen + <[alku: $sana] + $oikea>, rules paikannimen_lainen_johdin;
+end;
+
 ###### JOHDETTUJEN SANOJEN ALOITUSSÄÄNNÖT PÄÄTTYVÄT
 
 ###### JOHDINSÄÄNNÖT ALKAVAT
@@ -268,6 +280,15 @@ combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
                  loppu;
 end;
 
+combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
+  ? $oikea.luokka = johdin_lAinen;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if nimisana in $oikea.jatko then result $res, rules nimisana; end;
+  if loppu in $oikea.jatko then result $res, rules loppu; end;
+  result $res, rules sijapääte, laatusanan_johdos;
+end;
+
 ###### JOHDINSÄÄNNÖT PÄÄTTYVÄT
 
 
@@ -281,6 +302,9 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
   end;
 
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if tavuviiva in $oikea.jatko then result $res, rules yhdysmerkki_laatusanan_jälkeen; end;
+
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
                liitesana,
@@ -288,7 +312,6 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
                inen_johdos_nimisanasta,
                laatusanan_johdos,
                voitto_yliaste,
-               tavuviiva,
                etuliite,
                loppu;
 end;
@@ -376,6 +399,13 @@ combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
   result $vasen + <[vokaaliehto: no] + $oikea>, rules
          nimisana, erisnimi, laatusana,
          etuliite, teonsana, loppu;
+end;
+
+combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+  result $vasen + <[vokaaliehto: yes] + $oikea>, rules
+         nimisana, erisnimi, laatusana, lyhennesääntö,
+         etuliite, teonsana, inen_johdos_nimisanasta, loppu;
 end;
 
 combi_rule yhdysmerkki_sanan_lopussa ($vasen, $oikea, $sana):
@@ -896,14 +926,15 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
     $vasen.($index - 1) :=+ [lähtöluokka: teonsana];
     $vasen.($index - 1).luokka := nimisana;
   end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
                         johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
-    result $vasen + <[alku: $sana] + $oikea>, rules nimisana, nimisana_teonsanasta,
-                                                    nimisana_laatusanasta;
+    result $res, rules nimisana, nimisana_teonsanasta,
+                       nimisana_laatusanasta, inen_johdos_nimisanasta;
   end;
 
-  result $vasen + <[alku: $sana] + $oikea>,
+  result $res,
           rules sijapääte, omistusliite, liitesana,
                 teonsanan_johdos,
                 voitto_yliaste,
@@ -917,9 +948,6 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
-  if $oikea.luokka = johdin_lAinen then
-    ? $edellinen.luokka = paikannimi;
-  end;
 
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -946,7 +974,6 @@ end;
 
 
 combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
-# Laatusana voi olla myös nimi_laatusana, siksi @johdin_nimisanasta.
   ? $oikea.luokka in @johtimet_nimisana_laatusanasta;
 
   if ($index greater 1) then

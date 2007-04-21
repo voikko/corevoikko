@@ -74,7 +74,12 @@ Sveitsiläinen
 !sveitsimäinen (tätä johdosta ei tueta ainakaan toistaiseksi)
 Teppo
 !teppo
-
+eteläafrikkalainen
+eteläafrikkalaisissa
+eteläafrikkalaiskylä
+!eteläafrikkaläinen
+!etelä-afrikkalainen
+afrikkalaisuus
 
 [lyhenteet]
 USA:ssa
@@ -108,6 +113,9 @@ kielipoliittinen
 viisiulotteinen
 hauenhampainen
 hopeahelainen
+terävä-älyinen
+!nopea-älyinen
+viittomakielinen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
@@ -178,6 +186,7 @@ etnosukellan
 ulosottaa
 ulosotto # teonsanan etuliitteen on käytävä myös teonsanasta johdetun nimisanan eteen
 !uloskissa # teonsanan etuliite ei saa olla tavallisen nimisanan edessä
+valkolakkinen # nimisanan etuliite nimisanan inen-johdoksen edessä
 
 [seikkasanat]
 keskenään
