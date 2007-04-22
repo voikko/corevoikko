@@ -155,7 +155,7 @@
 [perusmuoto: "seis", alku: "seis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "sekä", alku: "sekä", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat + @sana2, äs: ä];
 [perusmuoto: "skool", alku: "skool", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sus", alku: "sus", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
