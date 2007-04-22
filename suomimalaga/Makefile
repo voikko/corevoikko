@@ -93,3 +93,31 @@ update-vocabulary:
 	wget http://joukahainen.lokalisointi.org/sanastot/joukahainen.xml.gz -O - \
 	| gunzip > vocabulary/joukahainen.xml
 
+
+SUKIJA_COPY_FROM_VOCABULARY=\
+erikoiset.lex \
+erikoissanat.lex \
+etuliitteet.lex \
+jokinen.lex \
+lainen.lex \
+latex.lex \
+lukusanat.lex \
+lyhenteet.lex \
+olla-ei.lex \
+omat.lex \
+poikkeavat.lex \
+seikkasanat.lex \
+suhdesanat.lex \
+yhdyssanat.lex
+
+sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
+	$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML))
+	@malmake sukija/suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
+
+$(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikonsanat/%: vocabulary/%
+	cp $^ $@
+
+$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
+	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py
+	python voikko/generate_lex.py
+	mv $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) sukija/voikonsanat
