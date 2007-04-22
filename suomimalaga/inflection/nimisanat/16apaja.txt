@@ -130,6 +130,7 @@ sisätulento_iin
 
 sisätulento_ihin
           apaj+o+ihin  ei_voikko
+          apaj++ihin  vanha_h
 
 ulko_olento_illA
           apaj++illa

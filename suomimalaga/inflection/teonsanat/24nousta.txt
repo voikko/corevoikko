@@ -159,6 +159,3 @@ käskytapa_ttA
 
 johdin_jA_kulkija
           nous+i+ja
-
-johdin_U_nousu
-          nous++u

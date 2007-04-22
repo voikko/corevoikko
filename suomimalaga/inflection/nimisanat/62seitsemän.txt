@@ -122,6 +122,9 @@ sisäeronto_istA
 sisätulento_iin
           seitse+m+iin
 
+sisätulento_ihin
+          seitse+m+ihin  vanha_h
+
 ulko_olento_illA
           seitse+m+illä
 

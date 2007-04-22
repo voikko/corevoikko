@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -53,6 +53,7 @@ nimitapa_1_tA
 
 nimitapa_2
           antau+tu+essa
+          antau++essa  ei_voikko
 
 nimitapa_2_tA
 
@@ -77,6 +78,7 @@ nimitapa_5
 
 laatutapa_1_vA
           antau+tu+va
+          antau++va  ei_voikko
 
 laatutapa_1_tA
 

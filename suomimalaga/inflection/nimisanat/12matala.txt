@@ -136,6 +136,7 @@ sisätulento_iin
 
 sisätulento_ihin
           vihan+to+ihin
+          vihan+t+ihin  vanha_h
 
 ulko_olento_illA
           vihan+n+illa

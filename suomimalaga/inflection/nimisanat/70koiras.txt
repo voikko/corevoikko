@@ -113,6 +113,7 @@ vajanto_ttA
 
 nimentö_t
           naara+a+t
+          naara+ha+t  ei_voikko
 
 omanto_ien
           naara+ks+ien
@@ -155,6 +156,7 @@ sisäeronto_istA
 
 sisätulento_ihin
           naara++ihin
+          naara+ks+ihin  vanha_h
 
 sisätulento_isiin
           naara++isiin

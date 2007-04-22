@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -48,7 +48,6 @@
 muistaa     muistaa     a    e    ""          %muistella("","")    %muistua("","","")
 aavistaa    alittaa     a    e    a   ""  ""  %muistella("","")    %muistua("","","")
 alittaa     alittaa     ta   e    a   ""  t   %muistella("t","")   %muistua("","t","")
-ammottaa    ammottaa    tta  itta te  ite ta ita t it tt itt       %kirjoittua("t","it") %kirjoitella("t","it") %kirjoittautua("tt","itt")
 astahtaa    alittaa     ta   de   da  d   t   %muistella("t","d")
 autioittaa  voitaa      ta   e    a   ""  t
 heittää     voitaa      ta   e    a   ""  t   %muistella("t","")    %heitto
@@ -57,7 +56,7 @@ hohtaa      hohtaa      ta   de   da  d   t   %muistella("t","d")   %punottaa("d
 hujahtaa    alittaa     hta  hde  hda hd  ht  %muistella("ht","hd") %punottaa("ut")
 inttää      voitaa      tä   e    ä   ""  t   %muistella("t","")
 itää        voitaa      tä   de   dä  d   t   %muistella("t","d")
-kirjoittaa  kirjoittaa  itta tta  ite te  ita ta it t itt tt        %kirjoittua("it","t")  %kirjoitella("it","t") %kirjoittautua("itt","tt")
+kirjoittaa  kirjoittaa  ta   e    a   ""  t   %muistella("t","")     %muistua("","t","") %kirjoittautua
 kuluttaa    alittaa     ta   e    a   ""  t   %muistella("t","")
 kyntää      voitaa      tä   ne   nä  n   t
 loistaa     loistaa     a    e    ""          %muistella("","")

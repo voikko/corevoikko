@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,137 +46,103 @@
 
 
 nimitapa_1_A
-          kirjo+itta+a
-          kirjo+tta+a  ei_voikko
+          kirjoit+ta+a
 
 nimitapa_2
-          kirjo+itta+essa
-          kirjo+tta+essa  ei_voikko
+          kirjoit+ta+essa
 
 nimitapa_2_ttA
-          kirjo+ite+ttaessa
-          kirjo+te+ttaessa  ei_voikko
+          kirjoit+e+ttaessa
 
 nimitapa_3
-          kirjo+itta+ma
-          kirjo+tta+ma  ei_voikko
+          kirjoit+ta+ma
 
 nimitapa_3_ttA
-          kirjo+ite+ttaman
-          kirjo+te+ttaman  ei_voikko
+          kirjoit+e+ttaman
 
 nimitapa_4
-          kirjo+itta+minen
-          kirjo+tta+minen  ei_voikko
+          kirjoit+ta+minen
 
 nimitapa_5
-          kirjo+itta+maisillani
-          kirjo+tta+maisillani  ei_voikko
+          kirjoit+ta+maisillani
 
 laatutapa_1_vA
-          kirjo+itta+va
-          kirjo+tta+va  ei_voikko
+          kirjoit+ta+va
 
 laatutapa_1_ttA
-          kirjo+ite+ttava
-          kirjo+te+ttava  ei_voikko
+          kirjoit+e+ttava
 
 laatutapa_2_nUt
-          kirjo+itta+nut
-          kirjo+tta+nut  ei_voikko
+          kirjoit+ta+nut
 
 laatutapa_2_ttU
-          kirjo+ite+ttu
-          kirjo+te+ttu  ei_voikko
+          kirjoit+e+ttu
 
 kestämän_tekijäpääte_y1
-          kirjo+ita+n
-          kirjo+ta+n  ei_voikko
+          kirjoit+a+n
 
 kestämän_tekijäpääte_y2
-          kirjo+ita+t
-          kirjo+ta+t  ei_voikko
+          kirjoit+a+t
 
 kestämän_tekijäpääte_y3
-          kirjo+itta+a
-          kirjo+tta+a  ei_voikko
+          kirjoit+ta+a
 
 kestämän_tekijäpääte_m1
-          kirjo+ita+mme
-          kirjo+ta+mme  ei_voikko
+          kirjoit+a+mme
 
 kestämän_tekijäpääte_m2
-          kirjo+ita+tte
-          kirjo+ta+tte  ei_voikko
+          kirjoit+a+tte
 
 kestämän_tekijäpääte_m3
-          kirjo+itta+vat
-          kirjo+tta+vat  ei_voikko
+          kirjoit+ta+vat
 
 tositavan_kestämä_tAAn
-          kirjo+ite+taan
-          kirjo+te+taan  ei_voikko
+          kirjoit+e+taan
 
 kertoman_tekijäpääte_y1
-          kirjo+it+in
-          kirjo+t+in  ei_voikko
+          kirjoit++in
 
 kertoman_tekijäpääte_y2
-          kirjo+it+it
-          kirjo+t+it  ei_voikko
+          kirjoit++it
 
 kertoman_tekijäpääte_y3
-          kirjo+itt+i
-          kirjo+tt+i  ei_voikko
+          kirjoit+t+i
 
 kertoman_tekijäpääte_m1
-          kirjo+it+imme
-          kirjo+t+imme  ei_voikko
+          kirjoit++imme
 
 kertoman_tekijäpääte_m2
-          kirjo+it+itte
-          kirjo+t+itte  ei_voikko
+          kirjoit++itte
 
 kertoman_tekijäpääte_m3
-          kirjo+itt+ivat
-          kirjo+tt+ivat  ei_voikko
+          kirjoit+t+ivat
 
 tositavan_kertoma_ttiin
-          kirjo+ite+ttiin
-          kirjo+te+ttiin  ei_voikko
+          kirjoit+e+ttiin
 
 ehtotapa
-          kirjo+itta+isin
-          kirjo+tta+isin  ei_voikko
+          kirjoit+ta+isin
 
 ehtotapa_ttA
-          kirjo+ite+ttaisiin
-          kirjo+te+ttaisiin  ei_voikko
+          kirjoit+e+ttaisiin
 
 mahtotapa_ne
-          kirjo+itta+nen
-          kirjo+tta+nen  ei_voikko
+          kirjoit+ta+nen
 
 mahtotapa_ttA
-          kirjo+ite+ttaneen
-          kirjo+te+ttaneen  ei_voikko
+          kirjoit+e+ttaneen
 
 käskytapa_y2
-          kirjo+ita+
-          kirjo+ta+  ei_voikko
+          kirjoit+a+
 
 käskytapa_kielto
-          kirjo+itta+ko
-          kirjo+tta+ko  ei_voikko
+          kirjoit+ta+ko
 
 käskytapa_ttA
-          kirjo+ite+ttakoon
-          kirjo+te+ttakoon  ei_voikko
+          kirjoit+e+ttakoon
 
 johdin_jA_kantaja
-          kirjo+itta+ja
-          kirjo+tta+ja  ei_voikko
+          kirjoit+ta+ja
 
 johdin_Us_ksen
-          kirjo+it+us
-          kirjo+t+us  ei_voikko
+          kirjoit++us

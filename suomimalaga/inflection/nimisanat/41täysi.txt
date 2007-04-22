@@ -112,6 +112,9 @@ sisäeronto_istA
 sisätulento_iin
           täy+s+iin
 
+sisätulento_ihin
+          täy+s+ihin  vanha_h
+
 ulko_olento_illA
           täy+s+illä
 

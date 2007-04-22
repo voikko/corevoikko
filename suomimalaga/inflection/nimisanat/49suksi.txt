@@ -120,6 +120,9 @@ sisäeronto_istA
 sisätulento_iin
           su+ks+iin
 
+sisätulento_ihin
+          su+ks+ihin  vanha_h
+
 ulko_olento_illA
           su+ks+illa
 

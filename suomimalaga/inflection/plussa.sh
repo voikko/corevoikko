@@ -2,7 +2,7 @@
 
 # Tarkista, että jokaisessa esimerkkisanassa on kaksi +-merkkiä.
 
-fmt -1 [0-9]*txt \
+fmt -1 $@ \
 | grep -F '+' \
 | gawk '{
   n = 0

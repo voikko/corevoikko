@@ -127,6 +127,9 @@ sisäeronto_istA
 sisätulento_iin
           hap+pam+iin
 
+sisätulento_ihin
+          hap+pam+ihin  vanha_h
+
 ulko_olento_illA
           hap+pam+illa
 

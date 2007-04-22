@@ -134,6 +134,7 @@ sisäeronto_istA
 
 sisätulento_ihin
           kiisk+e+ihin  ei_voikko
+          kiisk++ihin  vanha_h
 
 sisätulento_iin
           kiisk++iin

@@ -45,5 +45,5 @@
 # combination.
 
 
-rakentaa rakentaa  nta nne nna ns nn nt %muistella("nt","nn")
-kääntää  kääntää   ntä nne nnä ns nn nt %muistella("nt","nn")
+rakentaa rakentaa  nta "" t nne n nna ns nn nt %muistella("nt","nn")
+kääntää  kääntää   nta "" t nne n nna ns nn nt %muistella("nt","nn")

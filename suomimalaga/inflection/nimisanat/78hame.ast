@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,7 +46,7 @@
 
 
 hame     hame    "" e   he   "" t   hit   h
-alkeet   alkeet  e  ""  is
+alkeet   alkeet  e  he  ""   is
 enne     hame    ne tee tehe te tet tehit teh
 hake     hame    e  kee kehe ke ket kehit keh
 helle    hame    le tee tehe te tet tehit teh
@@ -56,6 +56,6 @@ lape     hame    e  pee pehe pe pet pehit peh
 lumme    hame    me pee pehe pe pet pehit peh
 sade     hame    de tee tehe te tet tehit teh
 taive    hame    ve pee pehe pe pet pehit peh
-tarvike  tarvike e  kee ke
+tarvike  tarvike e  kee kehe ke et  ehit  keh
 vaate    hame    e  tee tehe te tet tehit teh
 viive    viive   ve pee vee  pe

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -48,13 +48,18 @@
 nimitapa_1_A
           rake+nta+a
 
+nimitapa_1_tA
+          rake++ta  ei_voikko
+
 nimitapa_2
           rake+nta+essa
+          rake+t+essa  ei_voikko
 
 nimitapa_2_tA
 
 nimitapa_2_ttA
           rake+nne+ttaessa
+          rake++ttaessa  ei_voikko
 
 nimitapa_3
           rake+nta+ma
@@ -63,6 +68,7 @@ nimitapa_3_tA
 
 nimitapa_3_ttA
           rake+nne+ttaman
+          rake++ttaman ei_voikko
 
 nimitapa_4
           rake+nta+minen
@@ -73,18 +79,17 @@ nimitapa_5
 laatutapa_1_vA
           rake+nta+va
 
-laatutapa_1_tA
-
 laatutapa_1_ttA
           rake+nne+ttava
+          rake++ttava  ei_voikko
 
 laatutapa_2_nUt
           rake+nta+nut
-
-laatutapa_2_tU
+          rake+n+nut ei_voikko
 
 laatutapa_2_ttU
           rake+nne+ttu
+          rake++ttu
 
 kestämän_tekijäpääte_y1
           rake+nna+n
@@ -135,6 +140,7 @@ tositavan_kertoma_tiin
 
 tositavan_kertoma_ttiin
           rake+nne+ttiin
+          rake++ttiin  ei_voikko
 
 ehtotapa
           rake+nta+isin
@@ -143,6 +149,7 @@ ehtotapa_tA
 
 ehtotapa_ttA
           rake+nne+ttaisiin
+          rake++ttaisiin  ei_voikko
 
 mahtotapa_ne
           rake+nta+nen
@@ -151,17 +158,20 @@ mahtotapa_tA
 
 mahtotapa_ttA
           rake+nne+ttaneen
+          rake++ttaneen  ei_voikko
 
 käskytapa_y2
           rake+nna+
 
 käskytapa_kielto
           rake+nta+ko
+          rake+t+ko  ei_voikko
 
 käskytapa_tA
 
 käskytapa_ttA
           rake+nne+ttakoon
+          rake++ttakoon ei_voikko
 
 johdin_jA_kantaja
           rake+nta+ja

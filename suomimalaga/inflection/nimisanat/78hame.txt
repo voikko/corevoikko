@@ -79,6 +79,7 @@ sisätulento_seen
           en+tee+seen
 
 sisätulento_sen
+          en+tee+sen  ei_voikko
           en+tehe+sen  ei_voikko
 
 ulko_olento_llA
@@ -117,6 +118,7 @@ osanto_iA
 
 osanto_itA
           en+te+itä
+          en+teh+itä  ei_voikko
 
 olento_inA
           en+te+inä

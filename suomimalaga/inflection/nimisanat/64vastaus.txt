@@ -114,6 +114,9 @@ sisäeronto_istA
 sisätulento_iin
           vere+ks+iin
 
+sisätulento_ihin
+          vere+ks+ihin  vanha_h
+
 ulko_olento_illA
           vere+ks+illä
 

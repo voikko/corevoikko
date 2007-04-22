@@ -114,6 +114,9 @@ sisäeronto_istA
 sisätulento_iin
           kolm++iin
 
+sisätulento_ihin
+          kolm++ihin  vanha_h
+
 ulko_olento_illA
           kolm++illa
 

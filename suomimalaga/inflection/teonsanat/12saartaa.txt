@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -110,26 +110,32 @@ tositavan_kestämä_tAAn
 kertoman_tekijäpääte_y1
           kaar+ro+in
           kaar+s+in
+          kaar+t+in
 
 kertoman_tekijäpääte_y2
           kaar+ro+it
           kaar+s+it
+          kaar+t+it
 
 kertoman_tekijäpääte_y3
           kaar+to+i
           kaar+s+i
+          kaar+t+i
 
 kertoman_tekijäpääte_m1
           kaar+ro+imme
           kaar+s+imme
+          kaar+t+imme
 
 kertoman_tekijäpääte_m2
           kaar+ro+itte
           kaar+s+itte
+          kaar+t+itte
 
 kertoman_tekijäpääte_m3
           kaar+to+ivat
           kaar+s+ivat
+          kaar+t+ivat
 
 tositavan_kertoma_tiin
 

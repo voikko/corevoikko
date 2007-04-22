@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -50,109 +50,150 @@ nimentö
 
 omistusliite
           tarvik+kee+ni
+          tarvik+kehe+ni  vanha_h
 
 omanto_n
           tarvik+kee+n
+          tarvik+kehe+n  vanha_h
 
 osanto_ttA
           tarvik+e+tta
 
 olento_nA
           tarvik+kee+na
+          tarvik+kehe+na  vanha_h
 
 tulento_ksi
           tarvik+kee+ksi
+          tarvik+kehe+ksi  vanha_h
 
 sisäolento_ssA
           tarvik+kee+ssa
+          tarvik+kehe+ssa  vanha_h
 
 sisäeronto_stA
           tarvik+kee+sta
+          tarvik+kehe+sta  vanha_h
 
 sisätulento_seen
           tarvik+kee+seen
 
+sisätulento_sen
+          tarvik+kee+sen  ei_voikko
+          tarvik+kehe+sen  vanha_h
+
 ulko_olento_llA
           tarvik+kee+lla
+          tarvik+kehe+lla  vanha_h
 
 ulkoeronto_ltA
           tarvik+kee+lta
+          tarvik+kehe+lta  vanha_h
 
 ulkotulento_lle
           tarvik+kee+lle
+          tarvik+kehe+lle  vanha_h
 
 vajanto_ttA
           tarvik+kee+tta
+          tarvik+kehe+tta  vanha_h
 
 nimentö_t
           tarvik+kee+t
+          tarvik+kehe+t  vanha_h
 
 omanto_iT
           tarvik+ke+iden
           tarvik+ke+itten
 
+omanto_ten
+          tarvik+et+ten  ei_voikko
+          tarvik+ehit+ten  vanha_h
+
 osanto_itA
           tarvik+ke+ita
+          tarvik+keh+ita  vanha_h
+
+osanto_iA
+          tarvik+keh+ia  vanha_h
 
 olento_inA
           tarvik+ke+ina
+          tarvik+keh+ina  vanha_h
 
 tulento_iksi
           tarvik+ke+iksi
+          tarvik+keh+iksi  vanha_h
 
 sisäolento_issA
           tarvik+ke+issa
+          tarvik+keh+issa  vanha_h
 
 sisäeronto_istA
           tarvik+ke+ista
+          tarvik+keh+ista  vanha_h
 
 sisätulento_isiin
           tarvik+ke+isiin
+          tarvik+keh+isiin  vanha_h
 
 ulko_olento_illA
           tarvik+ke+illa
+          tarvik+keh+illa  vanha_h
 
 ulkoeronto_iltA
           tarvik+ke+ilta
+          tarvik+keh+ilta  vanha_h
 
 ulkotulento_ille
           tarvik+ke+ille
+          tarvik+keh+ille  vanha_h
 
 vajanto_ittA
           tarvik+ke+itta
+          tarvik+keh+itta  vanha_h
 
 seuranto_ine
           tarvik+ke+ine
+          tarvik+keh+ine  vanha_h
 
 keinonto_in
           tarvik+ke+in
+          tarvik+keh+in  vanha_h
 
 kerronto_sti
           +kee+sti
+          +kehe+sti  vanha_h
 
 voittoaste
           +kee+mpi
+          +kehe+mpi  vanha_h
 
 yliaste
           +ke+in
+          +keh+in  vanha_h
 
 johdin_inen
           tarvik+ke+inen
+          tarvik+keh+inen  vanha_h
 
 johdin_ittain
           tarvik+ke+ittain
+          tarvik+keh+ittain  vanha_h
 
 johdin_lAinen
           tarvik+e+lainen
 
 johdin_llinen
           tarvik+kee+llinen
+          tarvik+kehe+llinen  vanha_h
 
 johdin_mAinen
           tarvik+e+mainen
 
 johdin_tOn
           tarvik+kee+ton
+          tarvik+kehe+ton  vanha_h
 
 johdin_Us
           +ke+us

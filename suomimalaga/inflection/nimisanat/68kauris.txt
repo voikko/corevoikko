@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -103,6 +103,7 @@ vajanto_ttA
 
 nimentö_t
           ru+kii+t
+          ru+kihi+t  ei_voikko
 
 omanto_iT
           ru+ki+iden
@@ -179,8 +180,8 @@ voittoaste
           +kihi+mpi  ei_voikko
 
 yliaste
-          +ki+in
-          +kih+in  ei_voikko
+          +ke+in
+          +keh+in  ei_voikko
 
 johdin_inen
           ru+ki+inen

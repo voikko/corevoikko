@@ -2,7 +2,7 @@
 
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -89,12 +89,12 @@ my %table = (
   "laatutapa_2_tU_rU"          => "johdin_tU_rU",
   "laatutapa_2_stU_juostu"     => "johdin_stU_juostu",
   "laatutapa_2_stU_nuolaistu"  => "johdin_stU_nuolaistu",
-  "laatutapa_2_ttU"        => "johdin_ttU",
-  "tositavan_kestämä_dAAn" => "tositavan_kestämä_dAAn_kielto",
-  "tositavan_kestämä_lAAn" => "tositavan_kestämä_lAAn_kielto",
-  "tositavan_kestämä_nAAn" => "tositavan_kestämä_nAAn_kielto",
-  "tositavan_kestämä_rAAn" => "tositavan_kestämä_rAAn_kielto",
-  "tositavan_kestämä_tAAn" => "tositavan_kestämä_tAAn_kielto",
+  "laatutapa_2_ttU"         => "johdin_ttU",
+  "tositavan_kestämä_dAAn"  => "tositavan_kestämä_dAAn_kielto",
+  "tositavan_kestämä_lAAn"  => "tositavan_kestämä_lAAn_kielto",
+  "tositavan_kestämä_nAAn"  => "tositavan_kestämä_nAAn_kielto",
+  "tositavan_kestämä_rAAn"  => "tositavan_kestämä_rAAn_kielto",
+  "tositavan_kestämä_tAAn"  => "tositavan_kestämä_tAAn_kielto",
   "mahtotapa_le"     => "mahtotapa_le_kielto",
   "mahtotapa_ne"     => "mahtotapa_ne_kielto",
   "mahtotapa_re"     => "mahtotapa_re_kielto",
@@ -108,6 +108,8 @@ sub xprint
 {
   my $s = shift @_;
 
+#print "# xprint\n";
+
   foreach my $i (@_) {
     my @a = split / +/, $i;
     foreach my $j (@a) {
@@ -118,8 +120,6 @@ sub xprint
 }
 
 
-#my %s1 = ("kestämän_tekijäpääte_y3" => "_y3",    "käskytapa_y2" => "_k2");
-#my %s2 = ("kestämän_tekijäpääte_y3" => qr/[+]$/, "käskytapa_y2" => qr/.*/);
 my %s1 = ("kestämän_tekijäpääte_y3" => "_y3");
 my %s2 = ("kestämän_tekijäpääte_y3" => qr/[+]$/);
 
@@ -174,6 +174,7 @@ foreach my $file (@ARGV) {
         }
       }
       $n++;
+#print "\n", $_, " n=", $n, "\n";
     }
   }
 
@@ -267,6 +268,8 @@ foreach my $file (@ARGV) {
 #print "\nhead [", $head, "] [", $word, "]\n";
         }
         $m++;
+#print "\n", $_, " m=", $m, "\n";
+
         my $s = "<" . join(", ", @x) . ">";
 
 
@@ -275,7 +278,36 @@ foreach my $file (@ARGV) {
         $extra{$head} = $s;
 
         if (($head ne "yhdyssana")) {
-          print $first, $head, ": ", $s; 
+          print $first, $head, ": ", $s;
+          if ($head eq "kestämän_tekijäpääte_y3") {
+            #
+            # Päätteet pi/vi: punoa, hän punoo => hän punoopi/punovi.
+            # Sanoille, joiden pääte on sulautunut vartaloon, on
+            # vain pääte pi. Esim. voida, hän voi => hän voipi.
+            #
+            if ($s =~ /_y3/) {
+              my @is_y3;
+              my @is_not_y3;
+              for my $i (@x) {
+                if ($i =~ /_y3/) {
+                  push @is_y3, $i;
+                }
+                else {
+                  push @is_not_y3, $i;
+                }
+              }
+              my $s_y3     = "<" . join(", ", @is_y3)     . ">";
+              my $s_not_y3 = "<" . join(", ", @is_not_y3) . ">";
+
+              print $first, $head, "_vi: ",  $s_not_y3;  # Punovi.
+              print $first, $head, "_Vpi: ", $s_not_y3;  # Punoopi.
+              print $first, $head, "_pi: " , $s_y3;      # Voipi.
+            }
+            else {
+              print $first, $head, "_vi: ",  $s;   # Punovi.
+              print $first, $head, "_Vpi: ", $s;   # Punoopi.
+            }
+          }
         }
 
 #print "\n[[", $_, "]] ", $m, " ", $n, "\n";

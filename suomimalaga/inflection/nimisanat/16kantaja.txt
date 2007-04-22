@@ -130,6 +130,7 @@ sisätulento_iin
 
 sisätulento_ihin
           kanta+jo+ihin  ei_voikko
+          kanta+j+ihin  vanha_h
 
 ulko_olento_illA
           kanta+j+illa

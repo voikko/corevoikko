@@ -121,6 +121,9 @@ sisäeronto_istA
 sisätulento_iin
           vase+mp+iin
 
+sisätulento_ihin
+          vase+mp+ihin  vanha_h
+
 ulko_olento_illA
           vase+mm+illa
 

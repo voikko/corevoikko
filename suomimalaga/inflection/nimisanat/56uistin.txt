@@ -114,6 +114,9 @@ sisäeronto_istA
 sisätulento_iin
           suodat+tim+iin
 
+sisätulento_ihin
+          suodat+tim+ihin  vanha_h
+
 ulko_olento_illA
           suodat+tim+illa
 

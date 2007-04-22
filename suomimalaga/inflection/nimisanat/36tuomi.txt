@@ -117,6 +117,9 @@ sisäeronto_istA
 sisätulento_iin
           luo+m+iin
 
+sisätulento_ihin
+          luo+m+ihin  vanha_h
+
 ulko_olento_illA
           luo+m+illa
 

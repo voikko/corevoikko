@@ -55,7 +55,7 @@ omanto_n
           kaikkeu+de+n
 
 osanto_tA
-          kaikkeu+t+tA
+          kaikkeu+t+ta
 
 olento_nA
           kaikkeu+te+na
@@ -113,6 +113,9 @@ sisäeronto_istA
 
 sisätulento_iin
           kaikkeu+ks+iin
+
+sisätulento_ihin
+          kaikkeu+ks+ihin  vanha_h
 
 ulko_olento_illA
           kaikkeu+ks+illa

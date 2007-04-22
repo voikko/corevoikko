@@ -101,7 +101,8 @@ vajanto_ttA
           kuol+lehe+tta  ei_voikko
 
 nimentö_t
-          kuol+lee+n
+          kuol+lee+t
+          kuol+lehe+t  ei_voikko
 
 omanto_iT
           kuol+le+iden

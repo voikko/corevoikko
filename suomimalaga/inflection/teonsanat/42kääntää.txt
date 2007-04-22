@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -48,13 +48,18 @@
 nimitapa_1_A
           kää+ntä+ä
 
+nimitapa_1_tA
+          kää++tä  ei_voikko
+
 nimitapa_2
           kää+ntä+essä
+          kää+t+essä  ei_voikko
 
 nimitapa_2_tA
 
 nimitapa_2_ttA
           kää+nne+ttäessä
+          kää++ttäessä  ei_voikko
 
 nimitapa_3
           kää+ntä+mä
@@ -63,6 +68,7 @@ nimitapa_3_tA
 
 nimitapa_3_ttA
           kää+nne+ttämän
+          kää++ttämän  ei_voikko
 
 nimitapa_4
           kää+ntä+minen
@@ -77,14 +83,17 @@ laatutapa_1_tA
 
 laatutapa_1_ttA
           kää+nne+ttävä
+          kää++ttävä  ei_voikko
 
 laatutapa_2_nUt
           kää+ntä+nyt
+          kää+n+nyt  ei_voikko
 
 laatutapa_2_tU
 
 laatutapa_2_ttU
           kää+nne+tty
+          kää++tty ei_voikko
 
 kestämän_tekijäpääte_y1
           kää+nnä+n
@@ -135,6 +144,7 @@ tositavan_kertoma_tiin
 
 tositavan_kertoma_ttiin
           kää+nne+ttiin
+          kää++ttiin  ei_voikko
 
 ehtotapa
           kää+ntä+isin
@@ -143,6 +153,7 @@ ehtotapa_tA
 
 ehtotapa_ttA
           kää+nne+ttäisiin
+          kää++ttäisiin  ei_voikko
 
 mahtotapa_ne
           kää+ntä+nen
@@ -151,17 +162,20 @@ mahtotapa_tA
 
 mahtotapa_ttA
           kää+nne+ttäneen
+          kää++ttäneen  ei_voikko
 
 käskytapa_y2
           kää+nnä+
 
 käskytapa_kielto
           kää+ntä+kö
+          kää+t+kö  ei_voikko
 
 käskytapa_tA
 
 käskytapa_ttA
           kää+nne+ttäköön
+          kää++ttäköön  ei_voikko
 
 johdin_jA_kantaja
           kää+ntä+jä

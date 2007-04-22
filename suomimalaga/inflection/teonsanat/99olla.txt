@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -83,26 +83,6 @@ laatutapa_2_lUt
 
 laatutapa_2_tU_lU_oltu
           o+l+tu
-
-laatutapa_2_ttU
-
-kestämän_tekijäpääte_y1
-          o+le+n
-
-kestämän_tekijäpääte_y2
-          o+le+t
-
-kestämän_tekijäpääte_y3
-          o+n+
-
-kestämän_tekijäpääte_m1
-          o+le+mme
-
-kestämän_tekijäpääte_m2
-          o+le+tte
-
-kestämän_tekijäpääte_m3
-          o++vat
 
 tositavan_kestämä_lAAn
           o+l+laan

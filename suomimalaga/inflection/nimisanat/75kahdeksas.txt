@@ -112,6 +112,9 @@ sisäeronto_istA
 sisätulento_iin
           kolma+ns+iin
 
+sisätulento_ihin
+          kolma+ns+ihin  vanha_h
+
 ulko_olento_illA
           kolma+ns+illa
 

@@ -136,6 +136,7 @@ sisätulento_iin
 
 sisätulento_ihin
           ikkun+o+ihin
+          ikkun++ihin  vanha_h
 
 ulko_olento_illA
           ikkun++illa

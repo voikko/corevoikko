@@ -136,6 +136,7 @@ sisätulento_iin
 
 sisätulento_ihin
           opot+to+ihin
+          opot+t+ihin  vanha_h
 
 ulko_olento_illA
           opot++illa

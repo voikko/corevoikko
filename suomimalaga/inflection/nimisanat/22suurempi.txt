@@ -117,6 +117,9 @@ sisäeronto_istA
 sisätulento_iin
           piene+mp+iin
 
+sisätulento_ihin
+          piene+mp+ihin  vanha_h
+
 ulko_olento_illA
           piene+mm+illä
 

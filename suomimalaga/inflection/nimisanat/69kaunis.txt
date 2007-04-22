@@ -100,6 +100,7 @@ vajanto_ttA
 
 nimentö_t
           alt+tii+t
+          alt+tihi+t ei_voikko
 
 omanto_iT
           alt+ti+iden

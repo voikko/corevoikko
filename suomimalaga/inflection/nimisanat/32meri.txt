@@ -111,6 +111,9 @@ sisäeronto_istA
 sisätulento_iin
           mer++iin
 
+sisätulento_ihin
+          mer++ihin  vanha_h
+
 ulko_olento_illA
           mer++illä
 

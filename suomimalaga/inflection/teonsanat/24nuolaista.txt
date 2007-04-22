@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,153 +46,119 @@
 
 
 nimitapa_1_tA
-          nuola+is+ta
-          nuola+s+ta  ei_voikko
+          nuolais++ta
 
 nimitapa_2
-          nuola+ist+essa
-          nuola+st+essa  ei_voikko
+          nuolais+t+essa
 
 nimitapa_2_tA
-          nuola+is+taessa
-          nuola+s+taessa  ei_voikko
+          nuolais++taessa
 
 nimitapa_2_ttA
 
 nimitapa_3
-          nuola+ise+ma
-          nuola+se+ma  ei_voikko
+          nuolais+e+ma
 
 nimitapa_3_tA
-          nuola+is+taman
-          nuola+s+taman  ei_voikko
+          nuolais++taman
 
 nimitapa_3_ttA
 
 nimitapa_4
-          nuola+ise+minen
-          nuola+se+minen  ei_voikko
+          nuolais+e+minen
 
 nimitapa_5
-          nuola+ise+maisillani
-          nuola+se+maisillani  ei_voikko
+          nuolais+e+maisillani
 
 laatutapa_1_vA
-          nuola+ise+va
-          nuola+se+va  ei_voikko
+          nuolais+e+va
 
 laatutapa_1_tA
-          nuola+is+tava
-          nuola+s+tava  ei_voikko
+          nuolais++tava
 
 laatutapa_1_ttA
 
 laatutapa_2_sUt
-          nuola+is+sut
-          nuola+s+sut  ei_voikko
+          nuolais++sut
 
 laatutapa_2_tU
 
 laatutapa_2_stU_nuolaistu
-          nuola+is+tu
-          nuola+s+tu  ei_voikko
+          nuolais++tu
 
 kestämän_tekijäpääte_y1
-          nuola+ise+n
-          nuola+se+n  ei_voikko
+          nuolais+e+n
 
 kestämän_tekijäpääte_y2
-          nuola+ise+t
-          nuola+se+t  ei_voikko
+          nuolais+e+t
 
 kestämän_tekijäpääte_y3
-          nuola+ise+e
-          nuola+se+e  ei_voikko
+          nuolais+e+e
 
 kestämän_tekijäpääte_m1
-          nuola+ise+mme
-          nuola+se+mme  ei_voikko
+          nuolais+e+mme
 
 kestämän_tekijäpääte_m2
-          nuola+ise+tte
-          nuola+se+tte  ei_voikko
+          nuolais+e+tte
 
 kestämän_tekijäpääte_m3
-          nuola+ise+vat
-          nuola+se+vat  ei_voikko
+          nuolais+e+vat
 
 tositavan_kestämä_tAAn
-          nuola+is+taan
-          nuola+s+taan  ei_voikko
+          nuolais++taan
 
 kertoman_tekijäpääte_y1
-          nuola+is+in
-          nuola+s+in  ei_voikko
+          nuolais++in
 
 kertoman_tekijäpääte_y2
-          nuola+is+it
-          nuola+s+it  ei_voikko
+          nuolais++it
 
 kertoman_tekijäpääte_y3
-          nuola+is+i
-          nuola+s+i  ei_voikko
+          nuolais++i
 
 kertoman_tekijäpääte_m1
-          nuola+is+imme
-          nuola+s+imme  ei_voikko
+          nuolais++imme
 
 kertoman_tekijäpääte_m2
-          nuola+is+itte
-          nuola+s+itte  ei_voikko
+          nuolais++itte
 
 kertoman_tekijäpääte_m3
-          nuola+is+ivat
-          nuola+s+ivat  ei_voikko
+          nuolais++ivat
 
 tositavan_kertoma_tiin
-          nuola+is+tiin
-          nuola+s+tiin  ei_voikko
+          nuolais++tiin
 
 tositavan_kertoma_ttiin
 
 ehtotapa
-          nuola+is+isin
-          nuola+s+isin  ei_voikko
+          nuolais++isin
 
 ehtotapa_tA
-          nuola+is+taisiin
-          nuola+s+taisiin  ei_voikko
+          nuolais++taisiin
 
 ehtotapa_ttA
 
 mahtotapa_se
-          nuola+is+sen
-          nuola+s+sen  ei_voikko
+          nuolais++sen
 
 mahtotapa_tA
-          nuola+is+taneen
-          nuola+s+taneen  ei_voikko
+          nuolais++taneen
 
 mahtotapa_ttA
 
 käskytapa_y2
-          nuola+ise+
-          nuola+se+  ei_voikko
+          nuolais+e+
 
 käskytapa_kielto
-          nuola+is+ko
-          nuola+s+ko  ei_voikko
+          nuolais++ko
 
 käskytapa_tA
-          nuola+is+takoon
-          nuola+s+takoon  ei_voikko
+          nuolais++takoon
 
 käskytapa_ttA
 
 johdin_jA_kulkija
-          nuola+isi+ja
-          nuola+si+ja  ei_voikko
+          nuolais+i+ja
 
 johdin_U_arvelu
-          nuola+is+u
-          nuola+s+u  ei_voikko
+          nuolais++u

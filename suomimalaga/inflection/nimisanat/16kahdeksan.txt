@@ -130,6 +130,7 @@ sisätulento_iin
 
 sisätulento_ihin
           kahdeks+o+ihin  ei_voikko
+          kahdeks++ihin   vanha_h
 
 ulko_olento_illA
           kahdeks++illa

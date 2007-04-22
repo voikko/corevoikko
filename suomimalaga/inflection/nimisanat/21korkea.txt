@@ -54,11 +54,13 @@ omistusliite
           kork+ea+ni
           kork+ia+ni  ei_voikko
           kork+ee+ni  ei_voikko
+          kork+ehe+ni  vanha_h
 
 omanto_n
           kork+ea+n
           kork+ia+n  ei_voikko
           kork+ee+n  ei_voikko
+          kork+ehe+n  vanha_h
 
 osanto_A
           kork+ea+a
@@ -73,21 +75,25 @@ olento_nA
           kork+ea+na
           kork+ia+na  ei_voikko
           kork+ee+na  ei_voikko
+          kork+ehe+na  vanha_h
 
 tulento_ksi
           kork+ea+ksi
           kork+ia+ksi  ei_voikko
           kork+ee+ksi  ei_voikko
+          kork+ehe+ksi  vanha_h
 
 sisäolento_ssA
           kork+ea+ssa
           kork+ia+ssa  ei_voikko
           kork+ee+ssa  ei_voikko
+          kork+ehe+ssa  vanha_h
 
 sisäeronto_stA
           kork+ea+sta
           kork+ia+sta  ei_voikko
           kork+ee+sta  ei_voikko
+          kork+ehe+sta  vanha_h
 
 sisätulento_Vn
           kork+ea+an
@@ -95,41 +101,52 @@ sisätulento_Vn
 
 sisätulento_hVn
           kork+ea+han  vanha_h
-          kork+ia+han  vanha_h ei_voikko
+          kork+ia+han  vanha_h
 
 sisätulento_seen
           kork+ee+seen  ei_voikko
+
+sisätulento_sen
+          kork+ehe+sen  vanha_h
 
 ulko_olento_llA
           kork+ea+lla
           kork+ia+lla  ei_voikko
           kork+ee+lla  ei_voikko
+          kork+ehe+lla  vanha_h
 
 ulkoeronto_ltA
           kork+ea+lta
           kork+ia+lta  ei_voikko
           kork+ee+lta  ei_voikko
+          kork+ehe+lta  vanha_h
 
 ulkotulento_lle
           kork+ea+lle
           kork+ia+lle  ei_voikko
           kork+ee+lle  ei_voikko
+          kork+ehe+lle  vanha_h
 
 vajanto_ttA
           kork+ea+tta
           kork+ia+tta  ei_voikko
           kork+ee+tta  ei_voikko
+          kork+ehe+tta  vanha_h
 
 nimentö_t
           kork+ea+t
           kork+ia+t  ei_voikko
           kork+ee+t  ei_voikko
+          kork+ehe+t  vanha_h
 
 omanto_iT
           kork+e+iden
           kork+e+itten
           kork+io+iden  ei_voikko
           kork+io+itten  ei_voikko
+
+omanto_ten
+          kork+ehit+ten  vanha_h
 
 omanto_in
           kork+ea+in
@@ -139,20 +156,27 @@ osanto_itA
           kork+e+ita
           kork+io+ita  ei_voikko
 
+osanto_iA
+          kork+eh+ia  vanha_h
+
 olento_inA
           kork+e+ina
+          kork+eh+ina  vanha_h
           kork+io+ina  ei_voikko
 
 tulento_iksi
           kork+e+iksi
+          kork+eh+iksi  vanha_h
           kork+io+iksi  ei_voikko
 
 sisäolento_issA
           kork+e+issa
+          kork+eh+issa  vanha_h
           kork+io+issa  ei_voikko
 
 sisäeronto_istA
           kork+e+ista
+          kork+eh+ista  vanha_h
           kork+io+ista  ei_voikko
 
 sisätulento_ihin
@@ -163,42 +187,54 @@ sisätulento_isiin
           kork+e+isiin
           kork+io+isiin  ei_voikko
 
+sisätulento_isin
+          kork+eh+isin  vanha_h
+
 ulko_olento_illA
           kork+e+illa
+          kork+eh+illa  vanha_h
           kork+io+illa  ei_voikko
 
 ulkoeronto_iltA
           kork+e+ilta
+          kork+eh+ilta  vanha_h
           kork+io+ilta  ei_voikko
 
 ulkotulento_ille
           kork+e+ille
+          kork+eh+ille  vanha_h
           kork+io+ille  ei_voikko
 
 vajanto_ittA
           kork+e+itta
+          kork+eh+itta  vanha_h
           kork+io+itta  ei_voikko
 
 seuranto_ine
           kork+e+ine
+          kork+eh+ine  vanha_h
           kork+io+ine  ei_voikko
 
 keinonto_in
           kork+e+in
+          kork+eh+in  vanha_h
           kork+io+in  ei_voikko
 
 kerronto_sti
           kork+ea+sti
           kork+ia+sti  ei_voikko
           kork+ee+sti  ei_voikko
+          kork+ehe+sti  vanha_h
 
 voittoaste
           kork+ea+mpi
           kork+ia+mpi  ei_voikko
           kork+ee+mpi  ei_voikko
+          kork+ehe+mpi  vanha_h
 
 yliaste
           kork+e+in
+          kork+eh+in  vanha_h
           kork+io+in  ei_voikko
 
 johdin_inen
@@ -207,6 +243,7 @@ johdin_inen
 
 johdin_ittain
           hop+e+ittain
+          hop+eh+ittain  vanha_h
           hop+io+ittain  ei_voikko
 
 johdin_lAinen

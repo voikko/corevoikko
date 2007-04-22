@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -52,20 +52,30 @@ omanto_iT
           hart+e+iden
           hart+e+itten
 
+omanto_ten
+          hart+ehit+ten  vanha_h
+
 osanto_itA
           hart+e+ita
 
+osanto_tA
+          hart+eh+ia
+
 olento_inA
           hart+e+ina
+          hart+eh+ina  vanha_h
 
 tulento_iksi
           hart+e+iksi
+          hart+eh+iksi  vanha_h
 
 sisäolento_issA
           hart+e+issa
+          hart+eh+issa  vanha_h
 
 sisäeronto_istA
           hart+e+ista
+          hart+eh+ista  vanha_h
 
 sisätulento_ihin
           hart+e+ihin
@@ -73,29 +83,39 @@ sisätulento_ihin
 sisätulento_isiin
           hart+e+isiin
 
+sisätulento_isin
+          hart+eh+isin  vanha_h
+
 ulko_olento_illA
           hart+e+illa
+          hart+eh+illa  vanha_h
 
 ulkoeronto_iltA
           hart+e+ilta
+          hart+eh+ilta  vanha_h
 
 ulkotulento_ille
           hart+e+ille
+          hart+eh+ille  vanha_h
 
 vajanto_ittA
           hart+e+itta
+          hart+eh+itta  vanha_h
 
 seuranto_ine
           hart+e+ine
+          hart+eh+ine  vanha_h
 
 keinonto_in
           hart+e+in
+          hart+eh+in  vanha_h
 
 johdin_inen
           hart+e+inen
 
 johdin_ittain
           hart+e+ittain
+          hart+eh+ittain  vanha_h
 
 johdin_tOn
           hart+ee+ton
