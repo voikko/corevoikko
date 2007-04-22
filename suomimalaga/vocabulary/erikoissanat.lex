@@ -640,3 +640,34 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "sofi", alku: "sof", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "sofinen", alku: "sofi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
 
+
+######################################################
+
+[perusmuoto: "minä", alku: "minä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minuun",  luokka: asemosana, sija: sisätulento_Vn,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+
+[perusmuoto: "sinä", alku: "sinä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinuun",  luokka: asemosana, sija: sisätulento_Vn,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+

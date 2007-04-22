@@ -81,7 +81,7 @@
 [perusmuoto: "jippii", alku: "jippii", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "joko", alku: "joko", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "jompi", alku: "jom", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jompi", alku: "jom", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "joo", alku: "joo", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "jos", alku: "jos", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "joten", alku: "joten", luokka: sidesana, jatko: <loppu>, äs: a];
@@ -102,7 +102,8 @@
 [perusmuoto: "kukas", alku: "kukas", luokka: asemosana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumpainen", alku: "kumpai", luokka: asemosana, jatko: <nainen>, äs: a];
 [perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a];
-[perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a];
+[perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kun", alku: "kun", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunhan", alku: "kunhan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunnes", alku: "kunnes", luokka: sidesana, jatko: <loppu>, äs: a];
@@ -117,7 +118,7 @@
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: @sana1 + <loppu>, äs: a];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <omanto_n, loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # Mikä.
-[perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a];
+[perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä];
 [perusmuoto: "moi", alku: "moi", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "moksis", alku: "moksis", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
@@ -154,7 +155,7 @@
 [perusmuoto: "seis", alku: "seis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "sekä", alku: "sekä", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a];
+[perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat + @sana2, äs: ä];
 [perusmuoto: "skool", alku: "skool", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sus", alku: "sus", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
