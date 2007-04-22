@@ -1,8 +1,6 @@
-#!/bin/bash
-
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen <Etunimi.Sukunimi@joensuu.fi>
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,16 +43,3 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
-
-
-# Generoi taivutuskaavoista Malaga-koodia.
-
-cat ../inflection/ALKU.TXT >suomi.all
-
-../inflection/ast.pl ../inflection/nimisanat/*.ast ../inflection/teonsanat/*.ast >>suomi.all
-
-tail --lines=+47 ../inflection/KESKIOSA.TXT >>suomi.all
-
-../inflection/txt.pl ../inflection/nimisanat/*.txt ../inflection/teonsanat/*.txt >>suomi.all
-
-tail --lines=+47 ../inflection/LOPPU.TXT >>suomi.all

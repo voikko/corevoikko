@@ -1,8 +1,6 @@
-#!/bin/bash
-
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen <Etunimi.Sukunimi@joensuu.fi>
+# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,15 +44,53 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
+# Tiedosto suomi.pro Voikkoa varten.
 
-# Generoi taivutuskaavoista Malaga-koodia.
 
-cat ../inflection/ALKU.TXT >suomi.all
+sym: suomi.sym
 
-../inflection/ast.pl ../inflection/nimisanat/*.ast ../inflection/teonsanat/*.ast >>suomi.all
+all: suomi.all suomi.inc suomi.pro voikko-fi_FI.pro
 
-tail --lines=+47 ../inflection/KESKIOSA.TXT >>suomi.all
+lex: suomi.lex suomi.inc suomi.pro voikko-fi_FI.pro
 
-../inflection/txt.pl ../inflection/nimisanat/*.txt ../inflection/teonsanat/*.txt >>suomi.all
+lex: sanat/erikoisalat/atk.lex
+lex: sanat/erikoisalat/laaketiede.lex
+lex: sanat/erikoiset.lex
+lex: sanat/erikoissanat.lex
+lex: sanat/etuliitteet.lex
+lex: sanat/jokinen.lex
+lex: sanat/joukahainen.lex
+lex: sanat/lainen.lex
+lex: sanat/latex.lex
+lex: sanat/lukusanat.lex
+lex: sanat/lyhenteet.lex
+lex: sanat/olla-ei.lex
+lex: sanat/omat.lex
+lex: sanat/poikkeavat.lex
+lex: sanat/yhdyssanat.lex
+lex: sanat/11-19.lex
 
-tail --lines=+47 ../inflection/LOPPU.TXT >>suomi.all
+
+mor: suomi.mor suomi.inc
+
+mallex: set transmit-line "./transmit"
+malaga: set transmit-line "./transmit"
+
+#mallex: set hidden +jatko
+#malaga: set hidden +jatko
+
+malaga: set display-line "malshow"
+mallex: set display-line "malshow"
+
+mallex: set use-display yes
+malaga: set use-display yes
+
+info: Voikko-Dictionary-Format: 1
+
+
+# Lipuilla malli ja tulostus voidaan säätää suomi-malagan toimintaa.
+# Lippujen arvot on selitetty tiedostossa suomi-sukija.pro.
+
+malaga: set switch tulostus merkitse_yhdyssanat
+malaga: set switch malli voikko
+mallex: set switch malli voikko
