@@ -34,16 +34,20 @@
 [perusmuoto: "aivan", alku: "aivan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ajoittain", alku: "ajoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alakkain", alku: "alakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "alekkain", alku: "alekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alas", alku: "alas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alasti", alku: "alasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alati", alku: "alati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alemmas", alku: "alemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "alimmas", alku: "alimmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "alinomaa", alku: "alinomaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alinomaan", alku: "alinomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "allapäin", alku: "allapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"]; # OK kielitoimiston sanakirjan mukaan
+[perusmuoto: "altapäin", alku: "altapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"]; # OK kielitoimiston sanakirjan mukaan
 [perusmuoto: "allekkain", alku: "allekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alunperin", alku: "alunperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
+[perusmuoto: "alvariinsa", alku: "alvariinsa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ammoin", alku: "ammoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ani", alku: "ani", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "anteeksi", alku: "anteeksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
