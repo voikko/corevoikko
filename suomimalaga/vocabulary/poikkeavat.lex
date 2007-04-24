@@ -17,6 +17,22 @@
 
 # Sanatietueita, joita on tarkoitus jatkossa käsitellä Joukahaisen kautta.
 
+[perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "aamukolme", alku: "aamukolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "aamuseitsemän", alku: "aamuseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "aamukahdeksan", alku: "aamukahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
+
+[perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "iltakolme", alku: "iltakolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "iltaseitsemän", alku: "iltaseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "iltakahdeksan", alku: "iltakahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
+
 [perusmuoto: "Adrianmeri", alku: "Adrianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
 [perusmuoto: "aika", alku: "a", luokka: nimisana, jatko: <aika>, äs: a, tiedot: <inen>];
