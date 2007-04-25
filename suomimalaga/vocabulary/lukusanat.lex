@@ -145,6 +145,7 @@
 [perusmuoto: "monituhat", alku: "monituhat", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=ppppp"];
 
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
+[perusmuoto: "askelinen", alku: "askeli", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
 [perusmuoto: "karkeinen", alku: "karkei", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
 [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
 [perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];

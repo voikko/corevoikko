@@ -736,3 +736,15 @@ remonttireiska
 parkkipirkko
 huumehemmo
 alekkain
+aamukaksi
+aamukolme
+aamuneljä
+aamuviisi
+aamukuusi
+aamuseitsemän
+aamukahdeksan
+aamuyhdeksän
+iltaneljä
+iltaviisi
+iltakuusi
+ahkeraliisa

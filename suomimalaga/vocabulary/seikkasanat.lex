@@ -34,6 +34,7 @@
 [perusmuoto: "aivan", alku: "aivan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ajoittain", alku: "ajoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alakkain", alku: "alakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "alatusten", alku: "alatusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alekkain", alku: "alekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alas", alku: "alas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alasti", alku: "alasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -52,6 +53,7 @@
 [perusmuoto: "ani", alku: "ani", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "anteeksi", alku: "anteeksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "apposen", alku: "apposen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "arkipäivisin", alku: "arkipäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "auki", alku: "auki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "avoinna", alku: "avoinna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "edemmäs", alku: "edemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
