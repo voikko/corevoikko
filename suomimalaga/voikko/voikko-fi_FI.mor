@@ -1286,7 +1286,7 @@ subrule tulostus_voikko ($tietue):
         $tuloste :=+ $t.rakenne;
       end;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
-                         nimi_laatusana, asemosana, suhdesana,
+                         nimi_laatusana, asemosana, suhdesana, lukusanan_jälkiliite,
                          etuliite> then
       $tuloste :=+ "=";
       foreach $i in length($t.alku):

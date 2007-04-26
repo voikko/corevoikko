@@ -27,6 +27,7 @@ hiili-12        hiili-12
 hiili12         hiili12
 http://www.lappeenranta.fi     http://www.lappeenranta.fi
 www.lappeenranta.fi     www.lappeenranta.fi
+tuhataskelinen	tu-hat-as-ke-li-nen
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
