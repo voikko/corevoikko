@@ -209,7 +209,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 #[alku: "maanvilj.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "maist.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # maisteri
 [alku: "marrask.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "mHz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=qjq"]; # megahertsi(ä)
+[alku: "MHz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjq"]; # megahertsi(ä)
 #[alku: "mikropc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "milj.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "mk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # markka(a)
