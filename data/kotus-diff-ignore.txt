@@ -754,3 +754,5 @@ lyhytaskelinen
 pitkäaskelinen
 hidasaskelinen
 nopea-askelinen
+atomisti
+birgittalainen

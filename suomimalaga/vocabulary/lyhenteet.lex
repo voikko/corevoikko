@@ -90,7 +90,9 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "c", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 #[alku: "c.s.i.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "cd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
+[alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
 [alku: "CD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # cd-levy
+[alku: "CD-ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj-=jjj"]; # cd-levy
 [alku: "CIA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Central Intelligence Agency
 [alku: "cm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # senttimetri(ä)
 [alku: "CNN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Cable News Network
