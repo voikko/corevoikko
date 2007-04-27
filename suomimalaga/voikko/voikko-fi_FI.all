@@ -5266,7 +5266,7 @@ subrule taival ($tietue, $vahva_aste, $heikko_aste):
                         [johdin_tOn:       $vahva_aste + "ee",
                          johdin_llinen:    $vahva_aste + "ee",
                          johdin_mAinen:    $vahva_aste + "e",
-                         johdin_inen:      $vahva_aste + "e",
+                         johdin_inen:      $vahva_aste,
 
                          nimentö_t:         $vahva_aste + "ee",
                          omanto_iT:         $vahva_aste + "e",

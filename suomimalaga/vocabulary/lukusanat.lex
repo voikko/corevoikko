@@ -147,8 +147,7 @@
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
 #
 # HUOMIO! Vokaalilla alkavat jälkiliitteet eivät välttämättä toimi oikein,
-# koska yhdysmerkkiä ei hyväksytä. Esimerkiksi "sata-askelinen" ei tunnistu.
-#[perusmuoto: "askelinen", alku: "askeli", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
+# koska yhdysmerkkiä ei hyväksytä.
 [perusmuoto: "karkeinen", alku: "karkei", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
 [perusmuoto: "kiloinen", alku: "kiloi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: a];
 [perusmuoto: "kulmio", alku: "kulmio", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <autio>, äs: a];
