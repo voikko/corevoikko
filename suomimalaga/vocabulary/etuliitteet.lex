@@ -144,6 +144,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "edestakais", alku: "edestakais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
 [perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];

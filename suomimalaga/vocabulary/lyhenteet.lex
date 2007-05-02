@@ -110,6 +110,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 #[alku: "dvi", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "e", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "ed.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # edellinen; edellä; edustaja
+[alku: "EAN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # European Article Number, EAN-koodi
 #[alku: "EEC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "EEST", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Eastern European Summer Time
 [alku: "EET", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Eastern European Time
