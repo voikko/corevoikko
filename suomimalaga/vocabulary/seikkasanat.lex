@@ -515,6 +515,8 @@
 [perusmuoto: "päinvastoin", alku: "päinvastoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "päistikkaa", alku: "päistikkaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "päiten", alku: "päiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "turhanpäiten", alku: "turhanpäiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "pilanpäiten", alku: "pilanpäiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "päivemmällä", alku: "päivem", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
 [perusmuoto: "päivisin", alku: "päivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päiväselti", alku: "päiväselti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

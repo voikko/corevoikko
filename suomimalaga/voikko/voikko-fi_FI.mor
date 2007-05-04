@@ -171,10 +171,8 @@ end;
 combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = etuliite;
 
-  if ($index greater 1) then
-    ? etuliite in $vasen.($index - 1).jatko;
-    ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
-  end;
+  ? etuliite in $vasen.($index - 1).jatko;
+  ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (nimisana in $oikea.jatko or teonsana in $oikea.jatko) then
@@ -546,8 +544,14 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $index):
       result $res,
              rules omistusliite, liitesana, loppu;
       if ($edellinen.tiedot = nil or not (ei_ysa in $edellinen.tiedot)) then
-        result $res,
-               rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+        # "kissan+karva", "työhön+otto"
+        # FIXME: paikallisijat voisi rajoittaa tapauksiin, jossa jatkona on verbijohdos
+        # (ei hyväksyttäisi "työhön+kissa")
+        if sijamuoto_sijasta($oikea.sija) in <omanto, sisäolento, sisäeronto, sisätulento,
+                                                     ulko_olento, ulkoeronto, ulkotulento> then
+          result $res,
+                 rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+        end;
       end;
       if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
         result $res, rules inen_johdos_nimisanasta;

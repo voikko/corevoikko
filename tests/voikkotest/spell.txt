@@ -34,6 +34,7 @@ vanhempaintalo
 kirkkoisillä
 johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 !äidinsalli
+!laputkerimä
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -180,6 +181,7 @@ johtamis-
 ahdistuneisuushäiriö
 !ahdistuneisuuskaunis
 !ahdistunuthäiriö
+työhönotto
 
 [etuliitteet]
 yleisopetus
