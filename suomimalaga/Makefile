@@ -1,10 +1,27 @@
+# Source files for Sukija version.
+SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
+           sukija/suomi.lex sukija/Makefile sukija/suomi.mor sukija/suomi.pro \
+           sukija/suomi.sym sukija/sukija.copyright sukija/LUE.MINUT \
+           sukija/sanat/11-19.lex sukija/sanat/erikoiset.lex \
+           sukija/sanat/olla-ei.lex sukija/sanat/jokinen.lex \
+           sukija/sanat/omat.lex sukija/sanat/sitaattilainat.txt \
+           sukija/sanat/etuliitteet.lex sukija/sanat/poikkeavat.lex \
+           sukija/sanat/lukusanat.lex sukija/sanat/joukahainen.lex \
+           sukija/sanat/jokinen.sh sukija/sanat/lainen.lex \
+           sukija/sanat/erikoissanat.lex sukija/sanat/lyhenteet.lex \
+           sukija/sanat/yhdyssanat.lex sukija/sanat/latex.lex \
+           sukija/sanat/erikoisalat/laaketiede.lex \
+           sukija/sanat/erikoisalat/atk.lex sukija/generoi.sh sukija/inc/all.inc \
+           sukija/inc/mor.inc sukija/inc/subrule.inc
+
 
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro voikko/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
-         voikko/hfconv.py
+         voikko/hfconv.py \
+         $(SUKIJA_SRC)
 
 VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
 	voikko/voikko-fi_FI.sym_?

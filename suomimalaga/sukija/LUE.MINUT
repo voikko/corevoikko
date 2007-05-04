@@ -1,0 +1,6 @@
+Suomi-malagan Sukija-versio eli original-versio. Tämä versio on
+tarkoitus yhdistää Voikko-version kanssa, mutta yhdistäminen ei ole
+vielä valmis, eikä tämä välttämättä toimi vielä kunnolla. Toimivan
+Sukija-version saa komennolla
+
+svn co https://svn.sourceforge.net/svnroot/voikko/branches/suomimalaga/original

@@ -47,9 +47,9 @@
 
 sym: suomi.sym
 
-all: suomi.all suomi.inc suomi.pro voikko-fi_FI.pro
+all: suomi.all suomi.inc suomi.pro
 
-lex: suomi.lex suomi.inc suomi.pro voikko-fi_FI.pro
+lex: suomi.lex suomi.inc suomi.pro
 
 #lex: sanat/erikoisalat/atk.lex
 #lex: sanat/erikoisalat/laaketiede.lex
