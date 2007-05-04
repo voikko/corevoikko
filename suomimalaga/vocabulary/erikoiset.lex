@@ -39,6 +39,7 @@
 [perusmuoto: "hah", alku: "hah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "haha", alku: "haha", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hahaa", alku: "hahaa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "halleluja", alku: "halleluja", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "he", alku: "he", luokka: asemosana, jatko: <me>, äs: ä];
 [perusmuoto: "heh", alku: "heh", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hehee", alku: "hehee", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];

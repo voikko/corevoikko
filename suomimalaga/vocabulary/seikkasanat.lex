@@ -107,10 +107,11 @@
 [perusmuoto: "etäällä", alku: "etää", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "etäämpänä", alku: "etääm", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "haiskin", alku: "haiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hahmotteilla", alku: "hahmotteilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hajalla", alku: "haja", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "hajalla", alku: "hajan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "halki", alku: "halki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "halleluja", alku: "halleluj", luokka: seikkasana, jatko: <koira>, äs: a];
+[perusmuoto: "halleluja", alku: "halleluj", luokka: seikkasana, jatko: <koira>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "haltioihin", alku: "haltioihin", luokka: seikkasana, jatko: <omistusliite>, äs: a];
