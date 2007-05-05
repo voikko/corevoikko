@@ -245,6 +245,7 @@ while line != '<wordlist xml:lang="fi">\n':
 		sys.stderr.write("Malformed file " + VOIKKO_DATA + "/joukahainen.xml\n")
 		sys.exit(1)
 
+wcount = 0
 while True:
 	wordstr = ""
 	line = listfile.readline()
@@ -254,7 +255,11 @@ while True:
 		line = listfile.readline()
 	word = xml.dom.minidom.parseString(wordstr + line)
 	handle_word(word)
+	wcount = wcount + 1
+	if wcount % 1000 == 0:
+		sys.stderr.write("#")
 
+sys.stderr.write("\n")
 listfile.close()
 main_vocabulary.close()
 for (name, file) in vocabulary_files.iteritems():
