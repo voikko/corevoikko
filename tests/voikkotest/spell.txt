@@ -35,6 +35,7 @@ kirkkoisillä
 johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 !äidinsalli
 !laputkerimä
+pinta-alaltaan
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -81,6 +82,9 @@ eteläafrikkalaiskylä
 !eteläafrikkaläinen
 !etelä-afrikkalainen
 afrikkalaisuus
+saksalais-roomalainen
+saksalais-Kari
+!pannuunkarilainen
 
 [lyhenteet]
 USA:ssa
