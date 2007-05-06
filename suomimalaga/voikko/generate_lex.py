@@ -257,9 +257,10 @@ while True:
 	handle_word(word)
 	wcount = wcount + 1
 	if wcount % 1000 == 0:
-		sys.stderr.write("#")
+		sys.stdout.write("#")
+		sys.stdout.flush()
 
-sys.stderr.write("\n")
+sys.stdout.write("\n")
 listfile.close()
 main_vocabulary.close()
 for (name, file) in vocabulary_files.iteritems():
