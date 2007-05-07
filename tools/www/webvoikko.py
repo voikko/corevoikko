@@ -17,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-# This file contains tools to find inflection class for a word
-
 from mod_python import apache
 
 import sys
@@ -29,6 +27,8 @@ import xml.sax.saxutils
 # Hyphenator and spell checker commands
 HYPHCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkohyphenate ignore_dot=1 '
 SPELLCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkospell -s -t ignore_dot=1'
+
+MAX_INPUT_LENGTH = 20000
 
 def _write(req, text):
 	req.write(text.encode('UTF-8'))
@@ -117,10 +117,15 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 <html>
 <head>
  <title>Voikko-tavuttaja</title>
+ <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
- <p><a href="/webvoikko">Webvoikon etusivulle</a></p>
- <h1>Voikko-tavuttaja</h1>
+ <div class="topbar">
+  <h1><a href="..">Joukahainen</a> &gt; <a href="../webvoikko">Webvoikko</a> &gt;
+      Tavutus</h1>
+  <div class="clear"></div>
+  </div>
+ <div class="main">
  <p>Tavutuksessa huomioitavaa:</p>
  <ul>
  <li>Monikäsitteisten yhdyssanojen kohdalla ohjelma ei yleensä ryhdy arvailemaan
@@ -132,7 +137,7 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
  </ul>
  ''')
 	
-	if hyphstring != None and len(hyphstring) > 0:
+	if hyphstring != None and len(hyphstring) > 0 and len(hyphstring) < MAX_INPUT_LENGTH:
 		(words, separators) = _split_words(_decode_form_value(hyphstring))
 		if htype == 'nougly': options = 'no_ugly_hyphenation=1'
 		else: options = 'no_ugly_hyphenation=0'
@@ -169,7 +174,7 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 	<textarea name="hyphstring" rows="30" cols="90"></textarea>
 	<p><input type="submit" value="Tavuta" /></p>
 	</form>
-	</body></html>
+	</div></body></html>
 	''')
 
 def spell(req, spellstring = None):
@@ -179,16 +184,22 @@ def spell(req, spellstring = None):
  <html>
  <head>
   <title>Voikko-oikolukija</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
   <style type="text/css">
     span.virhe { color: red; }
     span.virhe_ehdotukset { color: red; text-decoration: underline; }
   </style>
  </head>
- <p><a href="/webvoikko">Webvoikon etusivulle</a></p>
- <h1>Voikko-oikolukija</h1>
+ <body>
+ <div class="topbar">
+  <h1><a href="..">Joukahainen</a> &gt; <a href="../webvoikko">Webvoikko</a> &gt;
+      Oikoluku</h1>
+  <div class="clear"></div>
+  </div>
+ <div class="main">
  ''')
 	
-	if spellstring != None and len(spellstring) > 0:
+	if spellstring != None and len(spellstring) > 0 and len(spellstring) < MAX_INPUT_LENGTH:
 		(words, separators) = _split_words(_decode_form_value(spellstring))
 		spellresults = _spell_wordlist(words)
 		_write(req, u'<p>Alla antamasi teksti oikoluettuna. Virheelliset sanat on ' \
@@ -217,7 +228,7 @@ def spell(req, spellstring = None):
 	_write(req, u'<textarea name="spellstring" rows="30" cols="90"></textarea>\n')
 	_write(req, u'<p><input type="submit" value="Oikolue" /></p>\n')
 	_write(req, u'</form>\n')
-	_write(req, u'</body></html>\n')
+	_write(req, u'</div></body></html>\n')
 
 def index(req, spellstring = None):
 	req.content_type = "text/html; charset=UTF-8"
@@ -226,8 +237,13 @@ def index(req, spellstring = None):
  <html>
  <head>
   <title>Webvoikko</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
  </head>
- <h1>Webvoikko</h1>
+ <div class="topbar">
+  <h1><a href=".">Joukahainen</a> &gt; Webvoikko</h1>
+  <div class="clear"></div>
+  </div>
+ <div class="main">
  <p>Tämä on <a href="http://voikko.sourceforge.net">Voikko-projektin</a> tarjoama oikoluku- ja
  tavutuspalvelu, jonka on ensisijainen tarkoitus on toimia helppokäyttöisenä testiympäristönä
  Voikon kehittäjiä varten. Palvelua saa kuitenkin käyttää muutenkin, esimerkiksi Voikon
@@ -235,11 +251,8 @@ def index(req, spellstring = None):
  ei satu olemaan käytettävissä toimivaa oikolukuohjelmaa. Seuraavat rajoitteet
  kannattaa huomioida:</p>
  <ul>
-  <li>Oikoluettavien ja tavutettavien sanojen pituus on rajattu sataan merkkiin. Sanojen määrää
-   tai ohjelman käyttökertoja ei ole rajattu, mutta kovin pitkien tekstien käsitteleminen turhaan
-   ei ole suositeltavaa, jottei tällaisia rajoituksia tarvitsisi myöhemmin lisätä.</li>
-  <li>Jos tekstissä on muutakin kuin tavallisia sanoja (esim. url-osoitteita),
-   myös ne käsitellään kuin ne olisivat sanoja.</li>
+  <li>Oikoluettavien ja tavutettavien sanojen pituus on rajattu sataan merkkiin, ja tekstin
+   yhteispituus %i merkkiin.</li>
   <li>Ohjelma käsittelee vain suomenkielistä tekstiä. Älä yritä tavuttaa tai etenkään oikolukea muun
    kielisiä tekstejä, tämä vain kuluttaa turhaan palvelimen prosessoriaikaa.</li>
   <li>Palveluun lähetettäviä tekstejä ei tallenneta mihinkään, joten periaatteessa kukaan ulkopuolinen
@@ -248,12 +261,11 @@ def index(req, spellstring = None):
    mitään kovin arkaluontoista materiaalia. Kaikilta osin palvelun käyttö tapahtuu käyttäjän omalla
    vastuulla.</li>
   <li>Palvelua ei ole tarkoitettu korvaamaan tavallista oikoluku- tai tavutusohjelmaa.</li>
-  <li>Palvelussa käytettävä versio Voikosta ei yleensä ole ns. "vakaa versio" vaan
-   jokin suhteellisen toimivaksi havaittu kehitysversio. Palvelua yritetään päivittää silloin
-   tällöin niin, että se suunnilleen kuvastaisi Voikon nykyistä toiminnallisuutta. Koska kyseessä
-   kuitenkin on testiversio, se saattaa sisältää virheitä joita vakaissa versioissa ei ole.
-   Havaituista virheistä voi ilmoittaa sähköpostitse osoitteeseen
-   <a href="mailto:palaute@hunspell-fi.org">palaute@hunspell-fi.org</a>.</li>
+  <li>Palvelussa käytettävä versio Voikosta ei yleensä ole ns. "vakaa versio". Sanasto generoidaan
+   automaattisesti kerran vuorokaudessa Joukahaisen sanastotietokannasta, ja muita komponentteja
+   päivitetään myös suhteellisen usein. Koska kyseessä on testiversio, se saattaa sisältää virheitä,
+   joita vakaissa versioissa ei ole.
+   Havaituista virheistä voi ilmoittaa sähköpostitse osoitteeseen hatapitk@iki.fi.</li>
  </ul>
  <ul>
   <li><a href="/webvoikko/spell">Siirry oikolukupalveluun</a></li>
@@ -265,6 +277,7 @@ def index(req, spellstring = None):
   <a href="http://voikko.sourceforge.net">Voikko-projektin</a> kotisivuilta löydät lisää tietoa
   asiasta sekä yhteystietomme.
  </p>
+ </div>
  </body>
  </html>
- ''')
+ ''' % MAX_INPUT_LENGTH)
