@@ -31,6 +31,7 @@ int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenatio
 	int has_vowel;
 	size_t i;
 	
+	// Check for out of bounds hyphen
 	if (new_hyphen_pos == 0 || new_hyphen_pos + 1 >= nchars) return 0;
 	
 	has_vowel = 0;
@@ -96,10 +97,11 @@ void voikko_rule_hyphenation(const wchar_t * word, char * hyphenation_points, si
 	i = 0;
 	while (word_copy[i] != L'\0' && wcschr(VOIKKO_CONSONANTS, word_copy[i])) i++;
 	
-	/* -CV (not after special characters) */
+	/* -CV (not after special characters, hyphenating "vast'edes" as "vast'e-des" is ugly) */
 	for (; i <= nchars - 2; i++) {
 		if (wcschr(VOIKKO_CONSONANTS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1])
-		    && !wcschr(L"/.:&%", word_copy[i-1]))
+		    && !wcschr(L"/.:&%", word_copy[i-1])
+		    && (i <= 1 || !voikko_options.no_ugly_hyphenation || word_copy[i-2] != L'\''))
 			hyphenation_points[i] = '-';
 	}
 	

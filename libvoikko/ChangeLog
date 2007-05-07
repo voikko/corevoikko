@@ -1,3 +1,7 @@
+2007-05-07 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Hyphenating "vast'edes" as "vast'e-des" is ugly
+
 2007-04-19 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Check for embedded dots in URL detection
