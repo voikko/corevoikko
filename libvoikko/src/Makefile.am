@@ -1,7 +1,7 @@
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = voikko_suggest.c voikko_utils.c voikko_setup.c voikko_spell.c \
                        voikko_hyphenate.c voikko_charset.c porting.c
-libvoikko_la_LDFLAGS = -no-undefined -version-info 4:2:3
+libvoikko_la_LDFLAGS = -no-undefined -version-info 4:3:3
 
 bin_PROGRAMS = voikkospell voikkohyphenate
 voikkospell_SOURCES = voikkospell.c porting.c

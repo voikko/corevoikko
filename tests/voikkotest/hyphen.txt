@@ -28,6 +28,8 @@ hiili12         hiili12
 http://www.lappeenranta.fi     http://www.lappeenranta.fi
 www.lappeenranta.fi     www.lappeenranta.fi
 tuhataskelinen	tu-hat-as-ke-li-nen
+jok'ikinen       jok-iki-nen
+te'vaste         te'vas-te # Ei tavutusta heittomerkin jälkeen, eikä kohdalla, kun perässä on konsonantti
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
@@ -55,6 +57,7 @@ hiili-12        hii-li-12
 Ruokala.com     Ruo-ka-la.com
 http://www.lappeenranta.fi     http://www.lap-peen-ran-ta.fi
 KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
+jok'ikinen       jok-i-ki-nen
 
 [no_ugly_hyphenation=0 ignore_dot=1]
 kansaneläke.    kan-san-e-lä-ke.

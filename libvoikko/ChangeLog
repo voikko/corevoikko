@@ -1,6 +1,8 @@
 2007-05-07 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Hyphenating "vast'edes" as "vast'e-des" is ugly
+	* Hyphenating after ' is wrong
+	* Increase version numbers for 1.4.1
 
 2007-04-19 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -100,7 +100,7 @@ void voikko_rule_hyphenation(const wchar_t * word, char * hyphenation_points, si
 	/* -CV (not after special characters, hyphenating "vast'edes" as "vast'e-des" is ugly) */
 	for (; i <= nchars - 2; i++) {
 		if (wcschr(VOIKKO_CONSONANTS, word_copy[i]) && wcschr(VOIKKO_VOWELS, word_copy[i+1])
-		    && !wcschr(L"/.:&%", word_copy[i-1])
+		    && !wcschr(L"/.:&%\'", word_copy[i-1])
 		    && (i <= 1 || !voikko_options.no_ugly_hyphenation || word_copy[i-2] != L'\''))
 			hyphenation_points[i] = '-';
 	}
