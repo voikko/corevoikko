@@ -114,7 +114,9 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
 	_write(req, u'''
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
 <head>
  <title>Voikko-tavuttaja</title>
  <link rel="stylesheet" type="text/css" href="../style.css" />
@@ -181,7 +183,9 @@ def spell(req, spellstring = None):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
 	_write(req, u'''
- <html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
  <head>
   <title>Voikko-oikolukija</title>
   <link rel="stylesheet" type="text/css" href="../style.css" />
@@ -234,7 +238,9 @@ def index(req, spellstring = None):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
 	_write(req, u'''
- <html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
  <head>
   <title>Webvoikko</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
