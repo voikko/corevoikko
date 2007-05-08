@@ -173,7 +173,7 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 	 merkkiä pitkiä.
 	</p>
 	<p>Kirjoita alla olevaan kenttään teksti, jonka haluat tavuttaa, ja paina "Tavuta".</p>
-	<textarea name="hyphstring" rows="30" cols="90"></textarea>
+	<p><textarea name="hyphstring" rows="30" cols="90"></textarea></p>
 	<p><input type="submit" value="Tavuta" /></p>
 	</form>
 	</div></body></html>
@@ -229,7 +229,7 @@ def spell(req, spellstring = None):
 	_write(req, u'<form method="post" action="spell">\n')
 	_write(req, u'<p>Kirjoita alla olevaan kenttään teksti, jonka haluat oikolukea, ja\n')
 	_write(req, u'paina "Oikolue".</p>\n')
-	_write(req, u'<textarea name="spellstring" rows="30" cols="90"></textarea>\n')
+	_write(req, u'<p><textarea name="spellstring" rows="30" cols="90"></textarea></p>\n')
 	_write(req, u'<p><input type="submit" value="Oikolue" /></p>\n')
 	_write(req, u'</form>\n')
 	_write(req, u'</div></body></html>\n')
