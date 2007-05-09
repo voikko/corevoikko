@@ -36,6 +36,7 @@ johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 !äidinsalli
 !laputkerimä
 pinta-alaltaan
+vapaa-ajallaan
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -158,6 +159,7 @@ sosiaali-
 !juoksemise-
 -äänisesti
 !äänisesti
+-albumillaan
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri

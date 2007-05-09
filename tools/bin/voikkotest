@@ -25,17 +25,25 @@ import enchant
 import codecs
 import os
 import subprocess
-
+import getopt
 
 # Set defaults
 ENCODING = locale.getpreferredencoding()
-TESTDIR = os.environ["HOME"] + "/svn/voikko/trunk/tests/voikkotest"
+SVNROOT = os.environ["HOME"] + "/svn/voikko"
+WORKSPACE = os.environ["HOME"] + "/tmp/voikkotest"
 HYPHENCMD = "voikkohyphenate"
+SPELLCMD = "voikkospell"
 langcode = "fi_FI"
 
 
-spelltest = TESTDIR + "/spell.txt"
-hyphentest = TESTDIR + "/hyphen.txt"
+spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
+hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
+BASE = WORKSPACE + "/base"
+WORDLIST = WORKSPACE + "/wordlist.txt.gz"
+BASE_CORRECT = WORKSPACE + "/base-correct.txt"
+BASE_INFO = WORKSPACE + "/base-info.txt"
+CURRENT_CORRECT = WORKSPACE + "/current-correct.txt"
+SMV = SVNROOT + "/trunk/suomimalaga"
 
 # Returns a list of hyphenated words. Wordlist is a list of words to hyphenate and
 # params is a string containing the parameters for HYPHENCMD
@@ -61,6 +69,25 @@ def _check_hyphens(section, expected_results, results):
 			failcount = failcount + 1
 	return failcount
 
+# Read command line options
+(opts, args) = ([], [])
+try:
+	(opts, args) = getopt.getopt(sys.argv[1:], "", ["base", "compare"])
+except getopt.GetoptError:
+	sys.stderr.write("Usage: voikkotest           (run only developer tests)\n")
+	sys.stderr.write("Usage: voikkotest --base    (use current version as baseline)\n")
+	sys.stderr.write("Usage: voikkotest --compare (compare current version against baseline)\n")
+	sys.exit(1)
+
+if "--base" in [opt[0] for opt in opts]:
+	if os.system('cd "%s" && make voikko-install DESTDIR="%s"' % (SMV, BASE)) != 0:
+		sys.stderr.write(u"Failed to create baseline version.\n")
+		sys.exit(1)
+	sys.stderr.write("Running voikkospell on full wordlist...\n")
+	os.system('time zcat "%s" | "%s" -p "%s" | grep "^C:" > "%s"' % \
+	          (WORDLIST, SPELLCMD, BASE, BASE_CORRECT))
+	sys.exit(0)
+
 # Initialise the spellchecker
 try:
 	dict = enchant.Dict(langcode)
@@ -69,6 +96,7 @@ except enchant.DictNotFoundError:
 	sys.exit(1)
 sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
 
+testcase_failed = False
 
 # Run the spelling tests
 try:
@@ -104,6 +132,7 @@ try:
 		print u"All %i spelling tests were successful." % testcount
 	else:
 		print u"%i out of %i spelling tests failed." % (failcount, testcount)
+		testcase_failed = True
 except IOError:
 	sys.stderr.write("Could not read from file " + spelltest + "\n")
 	sys.exit(1)
@@ -143,6 +172,25 @@ try:
 		print u"All %i hyphenation tests were successful." % testcount
 	else:
 		print u"%i out of %i hyphenation tests failed." % (failcount, testcount)
+		testcase_failed = True
 except IOError:
 	sys.stderr.write("Could not read from file " + hyphentest + "\n")
 	sys.exit(1)
+
+
+if "--compare" in [opt[0] for opt in opts]:
+	if os.system('cd "%s" && make voikko' % SMV) != 0:
+		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
+		sys.exit(1)
+	sys.stderr.write("Running voikkospell on full wordlist...\n")
+	os.system('time zcat "%s" | "%s" | grep "^C:" > "%s"' % \
+	          (WORDLIST, SPELLCMD, CURRENT_CORRECT))
+	diffcmd = 'diff -U0 "%s" "%s" | ' % (BASE_CORRECT, CURRENT_CORRECT)
+	new_accept = int(os.popen('%s grep ^+C: | wc -l' % diffcmd).read())
+	old_accept = int(os.popen('%s grep ^-C: | wc -l' % diffcmd).read())
+	if new_accept == 0 and old_accept == 0:
+		sys.stderr.write("No changes\n")
+		sys.exit(0)
+	sys.stderr.write("%s previously rejected strings are now accepted.\n" % new_accept)
+	sys.stderr.write("%s previously accepted strings are now rejected.\n" % old_accept)
+	os.system('%s grep .C: | less' % diffcmd)

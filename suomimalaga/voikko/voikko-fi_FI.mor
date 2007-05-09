@@ -161,7 +161,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
            rules sijapääte, liitesana, tavuviiva, loppu;
 
   elseif $oikea.luokka = tavuviiva then
-    result <[vokaaliehto: no] + $oikea>,
+    result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
                  etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta;
 
@@ -435,7 +435,7 @@ end;
 
 combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
-  result $vasen + <[vokaaliehto: yes] + $oikea>, rules
+  result $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>, rules
          nimisana, erisnimi, laatusana, lyhennesääntö,
          etuliite, teonsana, inen_johdos_nimisanasta, loppu;
 end;
