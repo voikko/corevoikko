@@ -338,7 +338,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if nimisana in $oikea.jatko then result $res,
-    rules nimisana, yhdysmerkki_lainen_johdoksen_jälkeen; end;
+    rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen; end;
   if loppu in $oikea.jatko then result $res, rules loppu; end;
   result $res, rules sijapääte, laatusanan_johdos;
 end;
@@ -448,7 +448,8 @@ end;
 combi_rule yhdysmerkki_lainen_johdoksen_jälkeen ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
   result $vasen + <[vokaaliehto: no] + $oikea>,
-         rules erisnimi, paikannimen_lainen_johdos, loppu;
+         rules erisnimi, paikannimen_lainen_johdos,
+	       inen_päätteinen_laatusana, loppu;
 end;
 
 ###### YHDYSMERKKISÄÄNNÖT PÄÄTTYVÄT

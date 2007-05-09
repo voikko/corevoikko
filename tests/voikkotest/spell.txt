@@ -188,6 +188,8 @@ ahdistuneisuushäiriö
 !ahdistuneisuuskaunis
 !ahdistunuthäiriö
 työhönotto
+ranskalais-suomalainen
+irlantilaissyntyinen
 
 [etuliitteet]
 yleisopetus

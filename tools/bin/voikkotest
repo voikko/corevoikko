@@ -88,6 +88,13 @@ if "--base" in [opt[0] for opt in opts]:
 	          (WORDLIST, SPELLCMD, BASE, BASE_CORRECT))
 	sys.exit(0)
 
+
+# Ensure that the current version is up to date
+if os.system('cd "%s" && make voikko' % SMV) != 0:
+		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
+		sys.exit(1)
+
+
 # Initialise the spellchecker
 try:
 	dict = enchant.Dict(langcode)
@@ -179,9 +186,6 @@ except IOError:
 
 
 if "--compare" in [opt[0] for opt in opts]:
-	if os.system('cd "%s" && make voikko' % SMV) != 0:
-		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
-		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
 	os.system('time zcat "%s" | "%s" | grep "^C:" > "%s"' % \
 	          (WORDLIST, SPELLCMD, CURRENT_CORRECT))
