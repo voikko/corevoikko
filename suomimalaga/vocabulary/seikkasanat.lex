@@ -837,5 +837,7 @@
 [perusmuoto: "äskettäin", alku: "äskettäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ääneti", alku: "ääneti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äärimmilleen", alku: "äärimmilleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "äärimmilleni", alku: "äärimmilleni", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # Teoreettisesti muutkin persoonat mahdollisia mutta 3. persoonan -Vn-liite on kiteytynyt lähes kaikkiin tapauksiin
 [perusmuoto: "äärimmillään", alku: "äärimmillään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "äärimmilläni", alku: "äärimmilläni", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "öisin", alku: "öisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
