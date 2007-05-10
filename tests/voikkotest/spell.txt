@@ -86,6 +86,9 @@ afrikkalaisuus
 saksalais-roomalainen
 saksalais-Kari
 !pannuunkarilainen
+Uutta-Seelantia
+Ison-Britannian
+Isoa-Britanniaa
 
 [lyhenteet]
 USA:ssa
@@ -160,6 +163,7 @@ sosiaali-
 -äänisesti
 !äänisesti
 -albumillaan
+presidentin-
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri

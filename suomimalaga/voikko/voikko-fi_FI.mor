@@ -560,6 +560,9 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $index):
           result $res,
                  rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
         end;
+        if $edellinen.luokka in <laatusana, nimi_laatusana> then
+          result $res, rules yhdysmerkki_laatusanan_jälkeen;
+        end;
       end;
       if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
         result $res, rules inen_johdos_nimisanasta;

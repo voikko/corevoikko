@@ -519,6 +519,7 @@
 [perusmuoto: "pilanpäiten", alku: "pilanpäiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "päivemmällä", alku: "päivem", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
 [perusmuoto: "päivisin", alku: "päivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "päiväsaikaan", alku: "päiväsaikaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "päiväselti", alku: "päiväselti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päiväseltään", alku: "päiväseltään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pälkähästä", alku: "pälkähästä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -835,4 +836,6 @@
 [perusmuoto: "äsken", alku: "äsken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äskettäin", alku: "äskettäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ääneti", alku: "ääneti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "äärimmilleen", alku: "äärimmilleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "äärimmillään", alku: "äärimmillään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "öisin", alku: "öisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
