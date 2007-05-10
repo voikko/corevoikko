@@ -47,6 +47,7 @@
 [perusmuoto: "heippa", alku: "heippa", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hep", alku: "hep", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hik", alku: "hik", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "hittolainen", alku: "hittolainen", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hmm", alku: "hmm", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hoi", alku: "hoi", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hoo", alku: "hoo", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];

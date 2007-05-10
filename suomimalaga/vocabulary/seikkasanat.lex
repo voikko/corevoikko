@@ -132,12 +132,15 @@
 [perusmuoto: "hevin", alku: "hevin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hieman", alku: "hieman", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hienokseltaan", alku: "hienokseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hiirenhiljaa", alku: "hiirenhiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "hiljaa", alku: "hiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljakkoin", alku: "hiljakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hiljakseen", alku: "hiljakseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljalleen", alku: "hiljalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljan", alku: "hiljan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljattain", alku: "hiljattain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljemmin", alku: "hiljemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hilkulla", alku: "hilkulla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "himpun", alku: "himpun", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hissukseen", alku: "hissukseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hissuksiin", alku: "hissuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
