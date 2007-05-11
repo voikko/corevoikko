@@ -20,6 +20,7 @@
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "aamutuimaan", alku: "aamutuimaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "aamuvarhain", alku: "aamuvarhain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "aiemmin", alku: "aiemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aika-ajoin", alku: "aika-ajoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
