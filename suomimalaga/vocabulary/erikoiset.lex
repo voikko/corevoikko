@@ -57,6 +57,7 @@
 [perusmuoto: "hunningolla", alku: "hunningo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "huomassa", alku: "huoma", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "hupsis", alku: "hupsis", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "hupsista", alku: "hupsista", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hus", alku: "hus", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "huut", alku: "huut", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hyi", alku: "hyi", luokka: huudahdussana, jatko: <loppu>, äs: ä];
