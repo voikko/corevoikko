@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -55,8 +55,8 @@
 [alku: "liene", luokka: teonsana, jatko: <liitesana, liitesana2, loppu>, perusmuoto: "olla",
                 äs: ä, tapaluokka: ehtotapa];
 
-[alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a];
-
+[alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a, tiedot: <ei_sukija>];
+[alku: "o",   luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a, tiedot: <ei_voikko>];
 
 [alku: "ol",  luokka: teonsana, jatko: <loppu>, perusmuoto: "olla",  # Oli.
               äs: a, tapaluokka: tositapa, aikamuoto: kertoma,

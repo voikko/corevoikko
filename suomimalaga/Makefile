@@ -136,5 +136,5 @@ $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikon
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
 	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py
-	python voikko/generate_lex.py
+	python voikko/generate_lex.py -s
 	mv $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) sukija/voikonsanat

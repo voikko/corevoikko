@@ -36,7 +36,8 @@ generoi:
 	malmake suomi.pro
 	
 clean:
-	/bin/rm -f *_l core.* transmit [emr][123] voikonsanat/*
+	/bin/rm -f *_l core.* transmit voikonsanat/*
+#	/bin/rm -f *_l core.* transmit [emr][123] voikonsanat/*
 
 dist:
 	cp sanat/omat.lex-jakeluversio sanat/omat.lex
@@ -63,29 +64,29 @@ bcopy:
 	cp *_l *.pro ~/.voikko
 
 koea:
-	cat ~/sanat.koe | malaga -m suomi.pro >ka
+	cat ../../sanat.koe | malaga -m suomi.pro >ka
 
 koeb:
-	cat ~/sanat.koe | malaga -m suomi.pro >kb
+	cat ../../sanat.koe | malaga -m suomi.pro >kb
 
 
 koe1:
-	cat ~/ekirjat.txt | malaga -m suomi.pro >e1
-	cat ~/m*8 | malaga -m suomi.pro >m1
-	./koe.sh ~/raam/* | malaga -m suomi.pro >r1
+	cat ../../ekirjat.txt | malaga -m suomi.pro >e1
+	cat ../../m*8 | malaga -m suomi.pro >m1
+	../../*/koe.sh ../../raam/* | malaga -m suomi.pro >r1
 
 koe2:
-	cat ~/ekirjat.txt | malaga -m suomi.pro >e2
-	cat ~/m*8 | malaga -m suomi.pro >m2
-	./koe.sh ~/raam/* | malaga -m suomi.pro >r2
+	cat ../../ekirjat.txt | malaga -m suomi.pro >e2
+	cat ../../m*8 | malaga -m suomi.pro >m2
+	../../*/koe.sh ../../raam/* | malaga -m suomi.pro >r2
 
 koe3:
-	cat ~/ekirjat.txt | malaga -m suomi.pro >e3
-	cat ~/m*8 | malaga -m suomi.pro >m3
-	./koe.sh ~/raam/* | malaga -m suomi.pro >r3
+	cat ../../ekirjat.txt | malaga -m suomi.pro >e3
+	cat ../../m*8 | malaga -m suomi.pro >m3
+	../../*/koe.sh ../../raam/* | malaga -m suomi.pro >r3
 
 ekirjat:
-	cat ~/ekirjat.txt | malaga -m suomi.pro
+	cat ../../ekirjat.txt | malaga -m suomi.pro
 
 
 # Erojen löytyminen tiedostoista ei ole virhe, siksi "-" rivien alussa.

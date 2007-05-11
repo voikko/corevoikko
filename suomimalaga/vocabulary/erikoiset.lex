@@ -61,7 +61,7 @@
 [perusmuoto: "huut", alku: "huut", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hyi", alku: "hyi", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "häh", alku: "häh", luokka: huudahdussana, jatko: <loppu>, äs: ä];
-[perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä]; # Hällä, hälle, hältä.
+[perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_sukija>]; # Hällä, hälle, hältä.
 [perusmuoto: "hän", alku: "hän", luokka: asemosana, jatko: <hän>, äs: ä];
 [perusmuoto: "hää", alku: "hää", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "höh", alku: "höh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
