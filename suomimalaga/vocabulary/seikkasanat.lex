@@ -156,6 +156,9 @@
 [perusmuoto: "hujan", alku: "hujan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukkaan", alku: "hukkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hukuksiin", alku: "hukuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hukuksissa", alku: "hukuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hukuksista", alku: "hukuksista", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huoleti", alku: "huoleti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huomenna", alku: "huomenna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "huonoiten", alku: "huonoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
