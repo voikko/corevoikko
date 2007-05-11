@@ -89,6 +89,7 @@ saksalais-Kari
 Uutta-Seelantia
 Ison-Britannian
 Isoa-Britanniaa
+saksalaismiehityksen
 
 [lyhenteet]
 USA:ssa

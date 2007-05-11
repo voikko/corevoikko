@@ -337,8 +337,10 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_lAinen;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if nimisana in $oikea.jatko then result $res,
-    rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen; end;
+  if nimisana in $oikea.jatko then
+    result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
+                 nimisana_teonsanasta;
+  end;
   if loppu in $oikea.jatko then result $res, rules loppu; end;
   result $res, rules sijapääte, laatusanan_johdos;
 end;
