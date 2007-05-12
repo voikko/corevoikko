@@ -216,52 +216,52 @@
 
 # {{{2 aamuyksitoista
 
-[perusmuoto: "aamuyksitoista", alku: "aamuyksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
-[perusmuoto: "aamuyksitoista", alku: "aamuyhdentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
-[perusmuoto: "aamuyksitoista", alku: "aamuyhtätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
+[perusmuoto: "aamuyksitoista", alku: "aamuyksitoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
+[perusmuoto: "aamuyksitoista", alku: "aamuyhdentoista",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
+[perusmuoto: "aamuyksitoista", alku: "aamuyhtätoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
 [perusmuoto: "aamuyksitoista", alku: "aamuyhdeksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "aamuyksitoista", alku: "aamuyhdessätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "aamuyksitoista", alku: "aamuyhdestätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
-[perusmuoto: "aamuyksitoista", alku: "aamuyhteentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
+[perusmuoto: "aamuyksitoista", alku: "aamuyhteentoista",  luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
 [perusmuoto: "aamuyksitoista", alku: "aamuyhdellätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "aamuyksitoista", alku: "aamuyhdeltätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "aamuyksitoista", alku: "aamuyhdelletoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 
 # {{{2 aamukaksitoista
 
-[perusmuoto: "aamukaksitoista", alku: "aamukaksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
-[perusmuoto: "aamukaksitoista", alku: "aamukahdentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
-[perusmuoto: "aamukaksitoista", alku: "aamukahtatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
+[perusmuoto: "aamukaksitoista", alku: "aamukaksitoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
+[perusmuoto: "aamukaksitoista", alku: "aamukahdentoista",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
+[perusmuoto: "aamukaksitoista", alku: "aamukahtatoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
 [perusmuoto: "aamukaksitoista", alku: "aamukahdeksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "aamukaksitoista", alku: "aamukahdessatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "aamukaksitoista", alku: "aamukahdestatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
-[perusmuoto: "aamukaksitoista", alku: "aamukahteentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
+[perusmuoto: "aamukaksitoista", alku: "aamukahteentoista",  luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "aamukaksitoista", alku: "aamukahdellatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "aamukaksitoista", alku: "aamukahdeltatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "aamukaksitoista", alku: "aamukahdelletoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 
 # {{{2 iltayksitoista
 
-[perusmuoto: "iltayksitoista", alku: "iltayksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
-[perusmuoto: "iltayksitoista", alku: "iltayhdentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
-[perusmuoto: "iltayksitoista", alku: "iltayhtätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
+[perusmuoto: "iltayksitoista", alku: "iltayksitoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
+[perusmuoto: "iltayksitoista", alku: "iltayhdentoista",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
+[perusmuoto: "iltayksitoista", alku: "iltayhtätoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp=pppppp"];
 [perusmuoto: "iltayksitoista", alku: "iltayhdeksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "iltayksitoista", alku: "iltayhdessätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "iltayksitoista", alku: "iltayhdestätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
-[perusmuoto: "iltayksitoista", alku: "iltayhteentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
+[perusmuoto: "iltayksitoista", alku: "iltayhteentoista",  luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
 [perusmuoto: "iltayksitoista", alku: "iltayhdellätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "iltayksitoista", alku: "iltayhdeltätoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "iltayksitoista", alku: "iltayhdelletoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 
 # {{{2 iltakaksitoista
 
-[perusmuoto: "iltakaksitoista", alku: "iltakaksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
-[perusmuoto: "iltakaksitoista", alku: "iltakahdentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
-[perusmuoto: "iltakaksitoista", alku: "iltakahtatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
+[perusmuoto: "iltakaksitoista", alku: "iltakaksitoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
+[perusmuoto: "iltakaksitoista", alku: "iltakahdentoista",   luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp=pppppp"];
+[perusmuoto: "iltakaksitoista", alku: "iltakahtatoista",    luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp=pppppp"];
 [perusmuoto: "iltakaksitoista", alku: "iltakahdeksitoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "iltakaksitoista", alku: "iltakahdessatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "iltakaksitoista", alku: "iltakahdestatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
-[perusmuoto: "iltakaksitoista", alku: "iltakahteentoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
+[perusmuoto: "iltakaksitoista", alku: "iltakahteentoista",  luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp=pppppp"];
 [perusmuoto: "iltakaksitoista", alku: "iltakahdellatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "iltakaksitoista", alku: "iltakahdeltatoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
 [perusmuoto: "iltakaksitoista", alku: "iltakahdelletoista", luokka: nimisana, luku: yksikkö, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp=pppppp"];
