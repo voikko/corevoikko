@@ -37,6 +37,7 @@ johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 !laputkerimä
 pinta-alaltaan
 vapaa-ajallaan
+kantaaottava
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -90,6 +91,7 @@ Uutta-Seelantia
 Ison-Britannian
 Isoa-Britanniaa
 saksalaismiehityksen
+!-setieuivin
 
 [lyhenteet]
 USA:ssa
