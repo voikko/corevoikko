@@ -43,7 +43,7 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 #
-# This file has been modified by the contributors of Hunspell-fi project.
+# This file has been modified by the contributors of Voikko project.
 # Last change was on $Date$ by $Author$.
 #
 # This file contains some special words and workarounds for known bugs.

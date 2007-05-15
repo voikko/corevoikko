@@ -44,7 +44,7 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 #
-# This file has been modified by the contributors of Hunspell-fi project.
+# This file has been modified by the contributors of Voikko project.
 # Last change was on $Date: 2006-11-13 13:44:31 +0200 (ma, 13 marras 2006) $ by $Author: tlikonen $.
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)

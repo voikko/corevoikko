@@ -12,7 +12,7 @@ Currently Suomi-malaga is used in two different applications: text
 indexer Sukija and spellchecker/hyphenator Voikko. Unfortunately it
 is not yet possible to use unmodified Suomi-malaga with Voikko. In
 order to differentiate between the original Suomi-malaga from Hannu
-Väisänen and the "Voikko edition" from Hunspell-fi project
+Väisänen and the "Voikko edition" from Voikko project
 "Voikko edition" will have an additional component in its version number
 and this notice in README file. So for example stable releases of
 "Voikko edition" that have version numbers 0.7.0, 0.7.1, 0.7.2 etc.
