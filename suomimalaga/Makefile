@@ -60,12 +60,15 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
-$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py
+voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
+	voikko/voikkoutils.py voikko/hfconv.py
 	python voikko/generate_lex.py
+	touch $@
+
+$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
 
 clean:
-	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc voikko/hfconv.pyc
+	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc voikko/hfconv.pyc voikko/generate_lex.flag
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))

@@ -110,6 +110,9 @@ subrule vokaaliehdollinen_yhdysviiva_ok($vasen, $sana):
     if ($i = 1) then
       return yes;
     end;
+    if $vasen.$i.vokaaliehto = no then
+      return yes;
+    end;
     if (vokaali(first($sana)) and first($sana) = last($vasen.($i-1).alku)) then
       return yes;
     else

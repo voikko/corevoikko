@@ -184,8 +184,10 @@ except IOError:
 	sys.stderr.write("Could not read from file " + hyphentest + "\n")
 	sys.exit(1)
 
-
 if "--compare" in [opt[0] for opt in opts]:
+	if testcase_failed:
+		sys.stderr.write("Some of the basic tests failed, fix this before using --compare again!\n")
+		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
 	os.system('time zcat "%s" | "%s" | grep "^C:" > "%s"' % \
 	          (WORDLIST, SPELLCMD, CURRENT_CORRECT))
