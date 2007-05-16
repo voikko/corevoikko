@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
-# List words from a Wikipedia dump
+# List words from a Wikipedia dump or other similar XML source.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 
 # Usage:
 # bzcat fiwiki-20070128-pages-articles.xml.bz2 | wp-wordlist | gzip > full-wordlist.txt.gz
+# (see http://download.wikimedia.org for suitable Wikipedia dump)
 # zcat full-wordlist.txt.gz | LC_ALL=C sort | gzip > full-wordlist-sorted.txt.gz
 # zcat full-wordlist-sorted.txt.gz | uniq -c | gzip > full-wordlist-uniq.txt.gz
 # zcat full-wordlist-uniq.txt.gz | sort -n | gzip > full-wordlist-uniq-sorted.txt.gz
@@ -27,6 +28,9 @@
 # zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 <= 1000 && $1 > 500) print $2}' | gzip > words-501-1000.txt.gz
 # zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 <= 500 && $1 > 100) print $2}' | gzip > words-101-500.txt.gz
 # zcat full-wordlist-uniq-sorted.txt.gz | awk '{if ($1 <= 100) print $2}' | gzip > words-under101.txt.gz
+
+# The name of the element containing the text to be collected
+TEXT_ELEMENT = 'text'
 
 import sys
 import locale
@@ -75,7 +79,7 @@ def end_element(name):
 
 def char_data(data):
 	global current_element
-	if current_element == 'text':
+	if current_element == TEXT_ELEMENT:
 		(words, separators) = _split_words(data)
 		for word in words:
 			hasalpha = False
@@ -95,6 +99,6 @@ parser.StartElementHandler = start_element
 parser.EndElementHandler = end_element
 parser.CharacterDataHandler = char_data
 
-# Parse the Kotus word list
+# Parse the Wikipedia dump
 parser.ParseFile(sys.stdin)
 
