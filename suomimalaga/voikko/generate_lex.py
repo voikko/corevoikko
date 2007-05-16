@@ -32,13 +32,14 @@ SPECIAL_VOCABULARY = [
 	('usage', 'education', 'kasvatustiede.lex'),
 	('style', 'foreign', 'vieraskieliset.lex')]
 
-
+import sys
+sys.path.append("common")
 import hfconv
+import generate_lex_common
 import voikkoutils
 import sukija
 import xml.dom.minidom
 import codecs
-import sys
 import getopt
 
 flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/flags.txt")

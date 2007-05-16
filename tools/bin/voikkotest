@@ -69,6 +69,29 @@ def _check_hyphens(section, expected_results, results):
 			failcount = failcount + 1
 	return failcount
 
+# Ensure that the current version is up to date
+def update_smv():
+	if os.system('cd "%s" && make voikko' % SMV) != 0:
+		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
+		sys.exit(1)
+
+# Run "make clean"
+def clean_smv():
+	if os.system('cd "%s" && make clean' % SMV) != 0:
+		sys.stderr.write(u'Failed to run "make clean"\n')
+		sys.exit(1)
+
+# Initialise the spellchecker
+def init_speller():
+	dict = None
+	try:
+		dict = enchant.Dict(langcode)
+	except enchant.DictNotFoundError:
+		print u"No dictionary was found for language " + langcode
+		sys.exit(1)
+	sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
+	return dict
+
 # Read command line options
 (opts, args) = ([], [])
 try:
@@ -89,103 +112,94 @@ if "--base" in [opt[0] for opt in opts]:
 	sys.exit(0)
 
 
-# Ensure that the current version is up to date
-if os.system('cd "%s" && make voikko' % SMV) != 0:
-		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
+# Run the spelling tests
+def spell_tests(dict):
+	try:
+		inputfile = codecs.open(spelltest, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		linecount = 0
+		section = u"(none)"
+		negative_test = False
+		while True:
+			line_orig = inputfile.readline()
+			linecount = linecount + 1
+			if line_orig == u'': break
+			line = line_orig.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1: line = line[:commentstart].strip()
+			if line.startswith(u'[') and line.endswith(u']'):
+				section = line[1:-1]
+				continue
+			if line.startswith(u'!'):
+				negative_test = True
+				word = line[1:]
+			else:
+				negative_test = False
+				word = line
+			testcount = testcount + 1
+			if not (dict.check(word) ^ negative_test):
+				print u'Spelling test failed at line %i, section "%s":\n  %s' \
+				      % (linecount, section, line_orig)
+				failcount = failcount + 1
+		inputfile.close()
+		if failcount == 0:
+			print u"All %i spelling tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i spelling tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + spelltest + "\n")
 		sys.exit(1)
 
-
-# Initialise the spellchecker
-try:
-	dict = enchant.Dict(langcode)
-except enchant.DictNotFoundError:
-	print u"No dictionary was found for language " + langcode
-	sys.exit(1)
-sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
-
-testcase_failed = False
-
-# Run the spelling tests
-try:
-	inputfile = codecs.open(spelltest, "r", ENCODING)
-	testcount = 0
-	failcount = 0
-	linecount = 0
-	section = u"(none)"
-	negative_test = False
-	while True:
-		line_orig = inputfile.readline()
-		linecount = linecount + 1
-		if line_orig == u'': break
-		line = line_orig.strip()
-		commentstart = line.find(u"#")
-		if commentstart != -1: line = line[:commentstart].strip()
-		if line.startswith(u'[') and line.endswith(u']'):
-			section = line[1:-1]
-			continue
-		if line.startswith(u'!'):
-			negative_test = True
-			word = line[1:]
-		else:
-			negative_test = False
-			word = line
-		testcount = testcount + 1
-		if not (dict.check(word) ^ negative_test):
-			print u'Spelling test failed at line %i, section "%s":\n  %s' \
-			      % (linecount, section, line_orig)
-			failcount = failcount + 1
-	inputfile.close()
-	if failcount == 0:
-		print u"All %i spelling tests were successful." % testcount
-	else:
-		print u"%i out of %i spelling tests failed." % (failcount, testcount)
-		testcase_failed = True
-except IOError:
-	sys.stderr.write("Could not read from file " + spelltest + "\n")
-	sys.exit(1)
-
 # Run the hyphenator tests
-try:
-	inputfile = codecs.open(hyphentest, "r", ENCODING)
-	testcount = 0
-	failcount = 0
-	section = u"(none)"
-	inputwords = []
-	expresults = []
-	while True:
-		line_orig = inputfile.readline()
-		if line_orig == u'': break
-		line = line_orig.strip()
-		commentstart = line.find(u"#")
-		if commentstart != -1: line = line[:commentstart].strip()
-		if line.startswith(u'[') and line.endswith(u']'):
-			if len(inputwords) > 0:
-				results = _hyphenate_wordlist(inputwords, section)
-				failcount = failcount + _check_hyphens(section, expresults, results)
-				inputwords = []
-				expresults = []
-			section = line[1:-1]
-			continue
-		parts = line.split()
-		if len(parts) == 0: continue
-		inputwords.append(parts[0].strip())
-		expresults.append(parts[1].strip())
-		testcount = testcount + 1
-	inputfile.close()
-	if len(inputwords) > 0:
-		results = _hyphenate_wordlist(inputwords, section)
-		failcount = failcount + _check_hyphens(section, expresults, results)
-	if failcount == 0:
-		print u"All %i hyphenation tests were successful." % testcount
-	else:
-		print u"%i out of %i hyphenation tests failed." % (failcount, testcount)
-		testcase_failed = True
-except IOError:
-	sys.stderr.write("Could not read from file " + hyphentest + "\n")
-	sys.exit(1)
+def hyphen_tests():
+	try:
+		inputfile = codecs.open(hyphentest, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		section = u"(none)"
+		inputwords = []
+		expresults = []
+		while True:
+			line_orig = inputfile.readline()
+			if line_orig == u'': break
+			line = line_orig.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1: line = line[:commentstart].strip()
+			if line.startswith(u'[') and line.endswith(u']'):
+				if len(inputwords) > 0:
+					results = _hyphenate_wordlist(inputwords, section)
+					failcount = failcount + _check_hyphens(section, expresults, results)
+					inputwords = []
+					expresults = []
+				section = line[1:-1]
+				continue
+			parts = line.split()
+			if len(parts) == 0: continue
+			inputwords.append(parts[0].strip())
+			expresults.append(parts[1].strip())
+			testcount = testcount + 1
+		inputfile.close()
+		if len(inputwords) > 0:
+			results = _hyphenate_wordlist(inputwords, section)
+			failcount = failcount + _check_hyphens(section, expresults, results)
+		if failcount == 0:
+			print u"All %i hyphenation tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i hyphenation tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + hyphentest + "\n")
+		sys.exit(1)
 
 if "--compare" in [opt[0] for opt in opts]:
-	if testcase_failed:
+	clean_smv()
+	update_smv()
+	dict = init_speller()
+	if not spell_tests(dict) or not hyphen_tests():
 		sys.stderr.write("Some of the basic tests failed, fix this before using --compare again!\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
@@ -200,3 +214,8 @@ if "--compare" in [opt[0] for opt in opts]:
 	sys.stderr.write("%s previously rejected strings are now accepted.\n" % new_accept)
 	sys.stderr.write("%s previously accepted strings are now rejected.\n" % old_accept)
 	os.system('%s grep .C: | less' % diffcmd)
+else:
+	update_smv()
+	dict = init_speller()
+	spell_tests(dict)
+	hyphen_tests()
