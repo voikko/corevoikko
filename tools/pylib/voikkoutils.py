@@ -21,6 +21,7 @@
 
 import codecs
 import os
+import locale
 
 # Vowel types
 VOWEL_DEFAULT=0
@@ -116,11 +117,19 @@ def get_preference(prefname):
 	u'Returns the value of given preference'
 	try:
 		import voikko_dev_prefs
-		if prefname == 'svnroot': return voikko_dev_prefs.svnroot
-		elif prefname == 'voikkotest_dir': return voikko_dev_prefs.voikkotest_dir
-		else: return None
+		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
+			return voikko_dev_prefs.svnroot
+		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'prefname'):
+			return voikko_dev_prefs.voikkotest_dir
+		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
+			return voikko_dev_prefs.encoding
+		if prefname == 'libvoikko_bin' and hasattr(voikko_dev_prefs, 'libvoikko_bin'):
+			return voikko_dev_prefs.libvoikko_bin
 	except ImportError:
-		if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
-		elif prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
-		else: return None
+		pass
+	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
+	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
+	if prefname == 'encoding': return locale.getpreferredencoding()
+	if prefname == 'libvoikko_bin': return '/usr/bin'
+	return None
 

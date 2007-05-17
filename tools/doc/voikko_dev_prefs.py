@@ -1,11 +1,25 @@
+# -*- coding: utf-8 -*-
+
 # This file contains the preferences for Voikko
 # developer tools. Copy this file somewhere within
 # your Python module search path and modify as needed.
 # You do not need to do this if the defaults suit you.
 
+# Remember to uncomment the lines you modify.
+# Note that the defaults may not be the same as the
+# ones below. For example, the home directory of the
+# user is determined programmatically by default.
+
 # The location of Voikko SVN repository checkout
-svnroot='/home/uname/svn/voikko'
+#svnroot='/home/uname/svn/voikko'
 
 # Data directory for voikkotest
-voikkotest_dir='/home/uname/tmp/voikkotest'
+#voikkotest_dir='/home/uname/tmp/voikkotest'
+
+# The input/output encoding for programs that read
+# or write data.
+#encoding='UTF-8'
+
+# The installation directory of libvoikko binaries
+#libvoikko_bin='/usr/bin'
 

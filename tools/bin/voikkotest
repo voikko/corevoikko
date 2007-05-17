@@ -28,15 +28,14 @@ import subprocess
 import getopt
 import voikkoutils
 
-# Set defaults
-ENCODING = locale.getpreferredencoding()
-HYPHENCMD = "voikkohyphenate"
-SPELLCMD = "voikkospell"
-langcode = "fi_FI"
-
 
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
+ENCODING = voikkoutils.get_preference('encoding')
+HYPHENCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkohyphenate'
+SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
+
+langcode = "fi_FI"
 spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 BASE = WORKSPACE + "/base"

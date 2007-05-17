@@ -23,11 +23,11 @@ import hfaffix
 import hfutils
 import sys
 import locale
+import voikkoutils
 
-
-NOUN_AFFIX_FILE = 'orig_data/subst.aff'
-VERB_AFFIX_FILE = 'orig_data/verb.aff'
-PARAM_ENCODING = locale.getpreferredencoding()
+NOUN_AFFIX_FILE = voikkoutils.get_preference('svnroot') + '/trunk/data/subst.aff'
+VERB_AFFIX_FILE = voikkoutils.get_preference('svnroot') + '/trunk/data/verb.aff'
+PARAM_ENCODING = voikkoutils.get_preference('encoding')
 
 if len(sys.argv) == 3:
 	word = unicode(sys.argv[1], PARAM_ENCODING)
@@ -39,14 +39,15 @@ else:
 infclass_parts = infclass.split('-')
 if len(infclass_parts) == 2:
 	wordclass = infclass_parts[0]
-	infclass_main = infclass
+	infclass_main = infclass_parts[1]
 	grad_type = '-'
 elif len(infclass_parts) == 3:
 	wordclass = infclass_parts[0]
-	infclass_main = infclass_parts[0]+'-'+infclass_parts[1]
+	infclass_main = infclass_parts[1]
 	grad_type = infclass_parts[2]
 else:
 	print 'Incorrect inflection class'
+	sys.exit(1)
 
 if wordclass == u'subst': affixfile = NOUN_AFFIX_FILE
 elif wordclass == u'verbi': affixfile = VERB_AFFIX_FILE
@@ -56,7 +57,7 @@ else:
 
 word_classes = hfaffix.read_word_classes(affixfile)
 for word_class in word_classes:
-	if word_class['cname'] != infclass_main: continue
+	if not infclass_main in word_class['smcnames']: continue
 	inflected_words = hfaffix.inflect_word(word, grad_type, word_class)
 	if inflected_words == None: continue
 	for inflected_word in inflected_words:
