@@ -26,16 +26,17 @@ import codecs
 import os
 import subprocess
 import getopt
+import voikkoutils
 
 # Set defaults
 ENCODING = locale.getpreferredencoding()
-SVNROOT = os.environ["HOME"] + "/svn/voikko"
-WORKSPACE = os.environ["HOME"] + "/tmp/voikkotest"
 HYPHENCMD = "voikkohyphenate"
 SPELLCMD = "voikkospell"
 langcode = "fi_FI"
 
 
+SVNROOT = voikkoutils.get_preference('svnroot')
+WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
 spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 BASE = WORKSPACE + "/base"

@@ -20,6 +20,7 @@
 # with Python and Voikko.
 
 import codecs
+import os
 
 # Vowel types
 VOWEL_DEFAULT=0
@@ -110,3 +111,16 @@ def get_wordform_infl_vowel_type(wordform):
 	vtype_part = get_wordform_infl_vowel_type(wordform[startind+1:])
 	if vtype_whole == vtype_part: return vtype_whole
 	else: return VOWEL_BOTH
+
+def get_preference(prefname):
+	u'Returns the value of given preference'
+	try:
+		import voikko_dev_prefs
+		if prefname == 'svnroot': return voikko_dev_prefs.svnroot
+		elif prefname == 'voikkotest_dir': return voikko_dev_prefs.voikkotest_dir
+		else: return None
+	except ImportError:
+		if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
+		elif prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
+		else: return None
+
