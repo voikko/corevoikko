@@ -316,9 +316,12 @@ def _replace_conditional_aposthrope(word):
 	ind = word.find(u'$')
 	if ind == -1: return word
 	if ind == 0 or ind == len(word) - 1: return word.replace(u'$', u'')
-	if word[ind-1] == word[ind+1] and \
-	   word[ind-1] in [u'a', u'i', u'o', u'u', u'y', u'ä', u'ö']: return word.replace(u'$', u'\'')
-	else: return word.replace(u'$', u'')
+	if word[ind-1] == word[ind+1]:
+		if word[ind-1] in [u'i', u'o', u'u', u'y', u'ö']:
+			return word.replace(u'$', u'\'')
+		if word[ind-1] in [u'a', u'ä'] and ind > 1 and word[ind-2] == word[ind-1]:
+			return word.replace(u'$', u'\'')
+	return word.replace(u'$', u'')
 
 # Returns a list of inflected forms for a given word or None, if word cannot be
 # inflected in the given class. The list will contain tuples in the form
