@@ -88,7 +88,8 @@ def remove_comments(line):
 
 
 # Applies given gradation type to given word. Returns a tuple in the form
-# (strong, weak) or None if this is not possible.
+# (strong, weak) or None if this is not possible. Conditional aposthrope
+# is represented by $.
 def apply_gradation(word, grad_type):
 	if grad_type == u'-': return (word, word)
 	if consonant(word[-1]) and not consonant(word[-2]):
@@ -162,10 +163,7 @@ def apply_gradation(word, grad_type):
 			return (word[:-3]+u'k'+word[-2]+word[-1]+last_letter, word+last_letter)
 	if grad_type == u'av5': # k -> -
 		if word[-2] == u'k':
-			if word[-3] == word[-1]: # ruoko, vaaka
-				return (word+last_letter, word[:-2]+u'\''+word[-1]+last_letter)
-			else:
-				return (word+last_letter, word[:-2]+word[-1]+last_letter)
+			return (word+last_letter, word[:-2]+u'$'+word[-1]+last_letter)
 	if grad_type == u'av6': # - -> k
 		if consonant(word[-1]): # FIXME: hack
 			return (word[:-2]+u'k'+word[-2:]+last_letter, word+last_letter)

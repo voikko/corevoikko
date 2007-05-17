@@ -19,6 +19,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import hfutils
+import voikkoutils
 import codecs
 import sys
 import re
@@ -311,11 +312,18 @@ def get_matching_noun_class(word, cname, grad_exact_type, noun_classes):
 		return noun_class
 	return None
 
+def _replace_conditional_aposthrope(word):
+	ind = word.find(u'$')
+	if ind == -1: return word
+	if ind == 0 or ind == len(word) - 1: return word.replace(u'$', u'')
+	if word[ind-1] == word[ind+1] and \
+	   word[ind-1] in [u'a', u'i', u'o', u'u', u'y', u'ä', u'ö']: return word.replace(u'$', u'\'')
+	else: return word.replace(u'$', u'')
 
 # Returns a list of inflected forms for a given word or None, if word cannot be
 # inflected in the given class. The list will contain tuples in the form
 # (form_name, word, flags).
-def inflect_word(word, grad_exact_type, noun_class, vowel_type = hfutils.VOWEL_DEFAULT):
+def inflect_word(word, grad_exact_type, noun_class, vowel_type = voikkoutils.VOWEL_DEFAULT):
 	l = len(noun_class['rmsfx'])
 	if l == 0: word_no_sfx = word
 	else: word_no_sfx = word[:-l]
@@ -328,10 +336,10 @@ def inflect_word(word, grad_exact_type, noun_class, vowel_type = hfutils.VOWEL_D
 	if not re.compile(__word_pattern_to_pcre(noun_class['match']),
 	                  re.IGNORECASE).match(word): return None
 	inflection_list = []
-	if vowel_type == hfutils.VOWEL_DEFAULT: vowel_type = hfutils.vowel_type(word)
-	if vowel_type in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
+	if vowel_type == voikkoutils.VOWEL_DEFAULT: vowel_type = hfutils.vowel_type(word)
+	if vowel_type in [voikkoutils.VOWEL_BACK, voikkoutils.VOWEL_BOTH] and \
 	   noun_class['group'] != 't': return None # FIXME
-	if vowel_type in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
+	if vowel_type in [voikkoutils.VOWEL_FRONT, voikkoutils.VOWEL_BOTH] and \
 	   noun_class['tgroup'] != 'e': return None # FIXME
 	for rule in noun_class['rules']:
 		if len(rule) == 5:
@@ -348,13 +356,15 @@ def inflect_word(word, grad_exact_type, noun_class, vowel_type = hfutils.VOWEL_D
 			else: affix = hunspell_rule[1]
 			if hunspell_rule[2] == '.': pattern = ''
 			else: pattern = hunspell_rule[2]
-			if vowel_type in [hfutils.VOWEL_BACK, hfutils.VOWEL_BOTH] and \
+			if vowel_type in [voikkoutils.VOWEL_BACK, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(pattern):
-				word_infl = word_stripped_base + affix
+				word_infl = _replace_conditional_aposthrope(
+				             word_stripped_base + affix)
 				inflection_list.append((rule[0], word_infl, optflags))
-			if vowel_type in [hfutils.VOWEL_FRONT, hfutils.VOWEL_BOTH] and \
+			if vowel_type in [voikkoutils.VOWEL_FRONT, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(__convert_tv_ev(pattern)):
-				word_infl = word_stripped_base + __convert_tv_ev(affix)
+				word_infl = _replace_conditional_aposthrope(
+				             word_stripped_base + __convert_tv_ev(affix))
 				inflection_list.append((rule[0], word_infl, optflags))
 	return inflection_list
 
