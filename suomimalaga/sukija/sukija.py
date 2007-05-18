@@ -25,7 +25,7 @@ import hfconv
 import voikkoutils
 
 
-def handle_word(word):
+def handle_word(main_vocabulary,vocabulary_files,word):
 	# Get the inflection class. Exactly one inflection class is needed
 	infclasses = word.getElementsByTagName("infclass")
 	voikko_infclass = None
@@ -65,10 +65,10 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if alku == None:
-			generate_lex_common.write_entry(word, u"#Malaga class not found for (%s, %s)\n" \
+			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, u"#Malaga class not found for (%s, %s)\n" \
 			                   % (wordform, voikko_infclass))
 			continue
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 				   generate_lex_common.get_structure(altform, malaga_word_class))
-		generate_lex_common.write_entry(word, entry)
+		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)

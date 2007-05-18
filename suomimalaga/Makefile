@@ -12,7 +12,8 @@ SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
            sukija/sanat/yhdyssanat.lex sukija/sanat/latex.lex \
            sukija/sanat/erikoisalat/laaketiede.lex \
            sukija/sanat/erikoisalat/atk.lex sukija/generoi.sh sukija/inc/all.inc \
-           sukija/inc/mor.inc sukija/inc/subrule.inc
+           sukija/inc/mor.inc sukija/inc/subrule.inc \
+           sukija/sukija.py
 
 
 # Files to ship only in the full source package
@@ -20,7 +21,7 @@ SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro voikko/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
-         voikko/hfconv.py common/generate_lex_common.py voikko/sukija.py \
+         voikko/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC)
 
 VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
@@ -69,13 +70,13 @@ $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
 
 clean:
 	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc voikko/hfconv.pyc voikko/generate_lex.flag
-	rm -f common/generate_lex_common.pyc voikko/sukija.pyc
+	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
 	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
-
+	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
 
 # Rules for creating the preprocessed source package
 
@@ -139,6 +140,5 @@ $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikon
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py voikko/sukija.py
+	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py sukija/sukija.py
 	python voikko/generate_lex.py -s
-	mv $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) sukija/voikonsanat

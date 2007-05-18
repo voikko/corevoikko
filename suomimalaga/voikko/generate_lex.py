@@ -22,6 +22,7 @@ VOIKKO_DATA = u"vocabulary"
 
 # Path to target directory
 VOIKKO_LEX = u"voikko"
+SUKIJA_LEX = u"sukija/voikonsanat"
 
 # Vocabulary entries that should be saved to different files
 # (group, name, file)
@@ -34,6 +35,7 @@ SPECIAL_VOCABULARY = [
 
 import sys
 sys.path.append("common")
+sys.path.append("sukija")
 import hfconv
 import generate_lex_common
 import voikkoutils
@@ -42,10 +44,23 @@ import xml.dom.minidom
 import codecs
 import getopt
 
+path = VOIKKO_LEX
+
+try:
+	opts, args = getopt.getopt(sys.argv[1:], "s", ["sukija"])
+except getopt.GetoptError:
+	usage()
+sukija_version = False
+for o, a in opts:
+	if o == "-s":
+		sukija_version = True
+		path = SUKIJA_LEX
+
+
 flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/flags.txt")
 
-def open_lex(filename):
-	file = codecs.open(VOIKKO_LEX + u"/" + filename, 'w', 'UTF-8')
+def open_lex(path,filename):
+	file = codecs.open(path + u"/" + filename, 'w', 'UTF-8')
 	file.write(u"# This is automatically generated intermediate lexicon file for\n")
 	file.write(u"# Suomi-malaga Voikko edition. The original source data is\n")
 	file.write(u"# distributed under the GNU General Public License, version 2 or\n")
@@ -55,10 +70,10 @@ def open_lex(filename):
 	file.write(u"# you got this file from.\n\n")
 	return file
 
-main_vocabulary = open_lex("joukahainen.lex")
+main_vocabulary = open_lex(path,"joukahainen.lex")
 vocabulary_files = {}
 for voc in SPECIAL_VOCABULARY:
-	vocabulary_files[voc[2]] = open_lex(voc[2])
+	vocabulary_files[voc[2]] = open_lex(path,voc[2])
 
 def tValue(element):
 	rc = ""
@@ -245,16 +260,6 @@ def usage():
 	sys.exit()
 
 
-try:
-	opts, args = getopt.getopt(sys.argv[1:], "s", ["sukija"])
-except getopt.GetoptError:
-	usage()
-sukija_version = False
-for o, a in opts:
-	if o == "-s":
-		sukija_version = True
-
-
 listfile = open(VOIKKO_DATA + u'/joukahainen.xml', 'r')
 
 line = ""
@@ -274,7 +279,7 @@ while True:
 		line = listfile.readline()
 	word = xml.dom.minidom.parseString(wordstr + line)
 	if sukija_version:
-		sukija.handle_word(word)
+		sukija.handle_word(main_vocabulary, vocabulary_files, word)
 	else:
 		handle_word(word)
 	wcount = wcount + 1

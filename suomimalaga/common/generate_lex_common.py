@@ -22,12 +22,12 @@
 import hfconv
 import voikkoutils
 import codecs
+import sys
+sys.path.append("common")
+
 
 # Path to source data directory
 VOIKKO_DATA = u"vocabulary"
-
-# Path to target directory
-VOIKKO_LEX = u"voikko"
 
 # Vocabulary entries that should be saved to different files
 # (group, name, file)
@@ -38,9 +38,8 @@ SPECIAL_VOCABULARY = [
 	('usage', 'education', 'kasvatustiede.lex'),
 	('style', 'foreign', 'vieraskieliset.lex')]
 
-
-def open_lex(filename):
-	file = codecs.open(VOIKKO_LEX + u"/" + filename, 'w', 'UTF-8')
+def open_lex(path,filename):
+	file = codecs.open(path + u"/" + filename, 'w', 'UTF-8')
 	file.write(u"# This is automatically generated intermediate lexicon file for\n")
 	file.write(u"# Suomi-malaga Voikko edition. The original source data is\n")
 	file.write(u"# distributed under the GNU General Public License, version 2 or\n")
@@ -49,12 +48,6 @@ def open_lex(filename):
 	file.write(u"# generate this file (or instructions to obtain them) wherever\n")
 	file.write(u"# you got this file from.\n\n")
 	return file
-
-
-main_vocabulary = open_lex("joukahainen.lex")
-vocabulary_files = {}
-for voc in SPECIAL_VOCABULARY:
-	vocabulary_files[voc[2]] = open_lex(voc[2])
 
 def tValue(element):
 	rc = ""
@@ -170,9 +163,7 @@ def get_structure(wordform, malaga_word_class):
 	else: return u""
 
 # Writes the vocabulary entry to a suitable file
-def write_entry(word, entry):
-	global vocabulary_files
-        global main_vocabulary
+def write_entry(main_vocabulary,vocabulary_files,word, entry):
 	special = False
 	for voc in SPECIAL_VOCABULARY:
 		group = word.getElementsByTagName(voc[0])
