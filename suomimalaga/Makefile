@@ -13,7 +13,7 @@ SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
            sukija/sanat/erikoisalat/laaketiede.lex \
            sukija/sanat/erikoisalat/atk.lex sukija/generoi.sh sukija/inc/all.inc \
            sukija/inc/mor.inc sukija/inc/subrule.inc \
-           sukija/sukija.py
+           sukija/sukija.py sukija/generate_lex.py
 
 
 # Files to ship only in the full source package
@@ -140,5 +140,5 @@ $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikon
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	voikko/generate_lex.py common/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py sukija/sukija.py
-	python voikko/generate_lex.py -s
+	sukija/generate_lex.py common/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py sukija/sukija.py
+	python sukija/generate_lex.py

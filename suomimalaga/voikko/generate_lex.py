@@ -18,39 +18,22 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 # Path to target directory
-VOIKKO_LEX = u"voikko"
-SUKIJA_LEX = u"sukija/voikonsanat"
+VOIKKO_LEX_DIR = u"voikko"
 
 import sys
 sys.path.append("common")
-sys.path.append("sukija")
 import hfconv
 import generate_lex_common
 import voikkoutils
-import sukija
 import xml.dom.minidom
 import codecs
-import getopt
-
-path = VOIKKO_LEX
-
-try:
-	opts, args = getopt.getopt(sys.argv[1:], "s", ["sukija"])
-except getopt.GetoptError:
-	usage()
-sukija_version = False
-for o, a in opts:
-	if o == "-s":
-		sukija_version = True
-		path = SUKIJA_LEX
-
 
 flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
 
-main_vocabulary = generate_lex_common.open_lex(path,"joukahainen.lex")
+main_vocabulary = generate_lex_common.open_lex(VOIKKO_LEX_DIR, "joukahainen.lex")
 vocabulary_files = {}
 for voc in generate_lex_common.SPECIAL_VOCABULARY:
-	vocabulary_files[voc[2]] = generate_lex_common.open_lex(path,voc[2])
+	vocabulary_files[voc[2]] = generate_lex_common.open_lex(VOIKKO_LEX_DIR, voc[2])
 
 def frequency(word):
 	fclass = word.getElementsByTagName("fclass")
@@ -122,12 +105,6 @@ def handle_word(word):
 		write_entry(word, entry)
 
 
-def usage():
-	print "Usage: generate_lex.py [-s]"
-	print "-s: generate Sukija version."
-	sys.exit()
-
-
 listfile = open(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', 'r')
 
 line = ""
@@ -147,10 +124,7 @@ while True:
 		wordstr = wordstr + line
 		line = listfile.readline()
 	word = xml.dom.minidom.parseString(wordstr + line)
-	if sukija_version:
-		sukija.handle_word(main_vocabulary, vocabulary_files, word)
-	else:
-		handle_word(word)
+	handle_word(word)
 	wcount = wcount + 1
 	if wcount % 1000 == 0:
 		sys.stdout.write("#")

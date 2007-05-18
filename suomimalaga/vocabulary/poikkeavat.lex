@@ -163,8 +163,6 @@
 [perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nalle>, äs: a];
-[perusmuoto: "poika", alku: "po", luokka: nimisana, jatko: <poika>, äs: a];
-[perusmuoto: "herraspoika", alku: "herraspo", luokka: nimisana, jatko: <poika>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "posti", alku: "postitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a]; #NS: seikkasana.
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];

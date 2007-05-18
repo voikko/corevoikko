@@ -1,0 +1,12 @@
+Do not edit voikkoutils.py in this directory! It contains
+functions used also outside Suomi-malaga. The original
+file is located at /trunk/tools/pylib/voikkoutils.py in
+the Subversion repository of the Voikko project.
+
+If changes are needed to this file, change the original and
+use "svn cp" to copy it here. It would be better if
+changes were mirrored automatically, but unfortunately
+Subversion has a limitation in its support for svn:externals
+that prevents us from doing that: externals can only be used
+with whole directories, not with single files.
+
