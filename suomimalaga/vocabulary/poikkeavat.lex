@@ -78,7 +78,6 @@
 [perusmuoto: "hurraa", alku: "hurraa", luokka: nimisana, jatko: <liitesana, osanto_tA, loppu>, äs: a];
 [perusmuoto: "hyljätä", alku: "hyl", luokka: teonsana, jatko: <hyljätä>, äs: ä];
 [perusmuoto: "hylätä", alku: "hyl", luokka: teonsana, jatko: <hylätä>, äs: ä];
-[perusmuoto: "hänenlaisensa", alku: "hänenlaisensa", luokka: laatusana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
 [perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "ien", alku: "i", luokka: nimisana, jatko: <ien>, äs: ä];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
