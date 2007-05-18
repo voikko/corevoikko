@@ -19,7 +19,7 @@ SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
-         voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro voikko/voikkoutils.py \
+         voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro common/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          voikko/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC)
@@ -62,14 +62,14 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
 voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
-	voikko/voikkoutils.py voikko/hfconv.py
+	common/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py
 	python voikko/generate_lex.py
 	touch $@
 
 $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
 
 clean:
-	rm -f voikko/*_l voikko/transmit voikko/voikkoutils.pyc voikko/hfconv.pyc voikko/generate_lex.flag
+	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc voikko/hfconv.pyc voikko/generate_lex.flag
 	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
@@ -140,5 +140,5 @@ $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikon
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	voikko/generate_lex.py voikko/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py sukija/sukija.py
+	voikko/generate_lex.py common/voikkoutils.py voikko/hfconv.py common/generate_lex_common.py sukija/sukija.py
 	python voikko/generate_lex.py -s

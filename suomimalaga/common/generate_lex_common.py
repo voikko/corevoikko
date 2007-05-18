@@ -22,12 +22,10 @@
 import hfconv
 import voikkoutils
 import codecs
-import sys
-sys.path.append("common")
 
 
 # Path to source data directory
-VOIKKO_DATA = u"vocabulary"
+VOCABULARY_DATA = u"vocabulary"
 
 # Vocabulary entries that should be saved to different files
 # (group, name, file)
@@ -38,7 +36,7 @@ SPECIAL_VOCABULARY = [
 	('usage', 'education', 'kasvatustiede.lex'),
 	('style', 'foreign', 'vieraskieliset.lex')]
 
-def open_lex(path,filename):
+def open_lex(path, filename):
 	file = codecs.open(path + u"/" + filename, 'w', 'UTF-8')
 	file.write(u"# This is automatically generated intermediate lexicon file for\n")
 	file.write(u"# Suomi-malaga Voikko edition. The original source data is\n")
@@ -91,7 +89,7 @@ def get_malaga_flags(word):
 	flag_string = flag_string[:-1] + u">"
 	return flag_string
 
-flag_attributes = voikkoutils.readFlagAttributes(VOIKKO_DATA + u"/flags.txt")
+flag_attributes = voikkoutils.readFlagAttributes(VOCABULARY_DATA + u"/flags.txt")
 
 def vowel_type(group):
 	vtypes = group.getElementsByTagName("vtype")

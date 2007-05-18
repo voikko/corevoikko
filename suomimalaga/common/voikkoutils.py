@@ -20,6 +20,8 @@
 # with Python and Voikko.
 
 import codecs
+import os
+import locale
 
 # Vowel types
 VOWEL_DEFAULT=0
@@ -110,3 +112,24 @@ def get_wordform_infl_vowel_type(wordform):
 	vtype_part = get_wordform_infl_vowel_type(wordform[startind+1:])
 	if vtype_whole == vtype_part: return vtype_whole
 	else: return VOWEL_BOTH
+
+def get_preference(prefname):
+	u'Returns the value of given preference'
+	try:
+		import voikko_dev_prefs
+		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
+			return voikko_dev_prefs.svnroot
+		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'prefname'):
+			return voikko_dev_prefs.voikkotest_dir
+		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
+			return voikko_dev_prefs.encoding
+		if prefname == 'libvoikko_bin' and hasattr(voikko_dev_prefs, 'libvoikko_bin'):
+			return voikko_dev_prefs.libvoikko_bin
+	except ImportError:
+		pass
+	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
+	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
+	if prefname == 'encoding': return locale.getpreferredencoding()
+	if prefname == 'libvoikko_bin': return '/usr/bin'
+	return None
+
