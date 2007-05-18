@@ -39,6 +39,7 @@
 [perusmuoto: "alekkain", alku: "alekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alas", alku: "alas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alasti", alku: "alasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ilkialasti", alku: "ilkialasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "alati", alku: "alati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alemmas", alku: "alemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alimmas", alku: "alimmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -176,13 +177,16 @@
 [perusmuoto: "idempi", alku: "idemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ihan", alku: "ihan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ihka", alku: "ihka", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ihkasen", alku: "ihkasen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "iki", alku: "iki", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ikinä", alku: "ikinä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ikäänkuin", alku: "ikäänkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppp=pppp"];
 [perusmuoto: "ilki", alku: "ilki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ilkosen", alku: "ilkosen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ilkosilla", alku: "ilkosi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
+[perusmuoto: "illemmaksi", alku: "illemmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "illemmalla", alku: "illemma", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
+[perusmuoto: "illempana", alku: "illempana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "iltapäivisin", alku: "iltapäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "infra", alku: "infra", luokka: seikkasana, jatko: <loppu>, äs: a]; #Ei oo
 [perusmuoto: "irrallaan", alku: "irrallaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
