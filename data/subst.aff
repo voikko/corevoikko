@@ -464,7 +464,7 @@ end: rules
 end: class
 
 
-# Kotus 10 luokka (1/3)
+# Kotus 10 luokka (1/4)
 class: 10
 sm-class: koira
 match-word: CA
@@ -505,7 +505,7 @@ instruktiivi_mon	a	in	w	ps=f
 end: rules
 end: class
 
-# Kotus 10 luokka (2/3)
+# Kotus 10 luokka (2/4)
 class: 10
 sm-class: asema
 match-word: CA
@@ -547,7 +547,7 @@ instruktiivi_mon	a	in	w	ps=f
 end: rules
 end: class
 
-# Kotus 10 luokka (3/3)
+# Kotus 10 luokka (3/4)
 class: 10
 sm-class: apaja
 match-word: CA
@@ -587,6 +587,47 @@ allatiivi_mon	a	ille	w
 abessiivi_mon	a	itta	w	ps=f
 komitatiivi_mon	a	ine	s	ps=r
 instruktiivi_mon	a	in	w	ps=f
+end: rules
+end: class
+
+# Kotus 10 luokka (4/4)
+class: 10
+sm-class: poika
+match-word: poika
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+nominatiivi	0	0	s
+genetiivi		ika	jan	s	ps=f
+partitiivi	0	a	s
+partitiivi	0	ta	s	prio=3
+translatiivi	ika	jiksi	s	ps=f
+translatiivi	ika	jikse	s	ps=r
+essiivi		0	na	s
+inessiivi		ika	jissa	s
+elatiivi		ika	jista	s
+illatiivi		([aeiou])	(1)(1)n	s
+adessiivi		ika	jilla	s
+ablatiivi		ika	jilta	s
+allatiivi		ika	jille	s
+abessiivi		ika	jitta	s	ps=f
+nominatiivi_mon	ika	jat	s	ps=f
+genetiivi_mon	a	ien	s
+genetiivi_mon	0	in	s	ps=f,prio=2
+partitiivi_mon	a	ia	s
+translatiivi_mon	ika	jiksi	s	ps=f
+translatiivi_mon	ika	jikse	s	ps=r
+essiivi_mon	a	ina	s
+inessiivi_mon	ika	jissa	s
+elatiivi_mon	ika	jista	s
+illatiivi_mon	a	iin	s
+adessiivi_mon	ika	jilla	s
+ablatiivi_mon	ika	jilta	s
+allatiivi_mon	ika	jille	s
+abessiivi_mon	ika	jitta	s	ps=f
+komitatiivi_mon	a	ine	s	ps=r
+instruktiivi_mon	ika	jin	s	ps=f
 end: rules
 end: class
 
@@ -1522,6 +1563,7 @@ allatiivi		0	elle	s
 abessiivi		0	etta	s	ps=f
 nominatiivi_mon	0	et	s	ps=f
 genetiivi_mon	0	ien	s
+genetiivi_mon	0	ten	w
 partitiivi_mon	0	ia	s
 translatiivi_mon	0	iksi	s	ps=f
 translatiivi_mon	0	ikse	s	ps=r
