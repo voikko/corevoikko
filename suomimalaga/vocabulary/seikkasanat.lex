@@ -428,6 +428,7 @@
 [perusmuoto: "myötä", alku: "myötä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myötäänsä", alku: "myötäänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "määrälti", alku: "määrälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "mönkään", alku: "mönkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "naukin", alku: "naukin", luokka: seikkasana, jatko: <loppu>, äs: a]; # Niukin naukin.
 [perusmuoto: "nenäkkäin", alku: "nenäkkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nenätysten", alku: "nenätysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
