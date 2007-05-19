@@ -119,7 +119,7 @@ def get_preference(prefname):
 		import voikko_dev_prefs
 		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
 			return voikko_dev_prefs.svnroot
-		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'prefname'):
+		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'voikkotest_dir'):
 			return voikko_dev_prefs.voikkotest_dir
 		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
 			return voikko_dev_prefs.encoding
