@@ -131,7 +131,7 @@
 [alku: "oltaneen", luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
                    äs: a, tapaluokka: mahtotapa, aikamuoto: kestämä, tekijä: 4];
 
-# "Ollos huoleton, poikas valveil' on..."
+# "Ollos huoleton, poikas valveil' on..." (optatiivi)
 #
 [alku: "ollos", luokka: teonsana, jatko: <loppu>, perusmuoto: "olla",
                 äs: a, tapaluokka: käskytapa, tekijä: 2, luku: yksikkö, tiedot: <murre>];
@@ -203,7 +203,7 @@
 [alku: "olko", luokka: teonsana, jatko: <loppu>, perusmuoto: "olla", äs: a];  # Älkää olko.
 
 
-# "Ällös itke, oma kulta..."
+# "Ällös itke, oma kulta..." (optatiivi)
 #
 [alku: "ällös", luokka: kieltosana, jatko: <loppu>,
                 äs: ä, tapaluokka: käskytapa, tekijä: 2, luku: yksikkö, tiedot: <murre>];
