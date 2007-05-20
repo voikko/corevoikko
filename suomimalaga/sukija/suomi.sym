@@ -149,6 +149,7 @@ luokka;
   liitesana2;
   liitesana_s;  # Tulkaa+s.
   liitesana_kä; # Ei+kä, älä+kä.
+  kieltosanan_liitesana;
   etuliite;
   lyhenne;
   kaksoispiste;

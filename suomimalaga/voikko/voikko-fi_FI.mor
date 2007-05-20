@@ -142,10 +142,10 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     end;
 
   elseif $oikea.luokka = kieltosana then
-    if liitesana_kä in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules liitesana_kä;
+    if kieltosanan_liitesana in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules kieltosanan_liitesana;
     end;
-    result <[alku: $sana] + $oikea>, rules liitesana, loppu;
+    result <[alku: $sana] + $oikea>, rules loppu;
 
   elseif $oikea.luokka in <seikkasana, suhdesana> then
     if (loppu in $oikea.jatko) then
@@ -840,10 +840,10 @@ combi_rule kieltosana ($vasen, $oikea, $sana):
   ? $oikea.luokka = kieltosana;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if liitesana_kä in $oikea.jatko then
-    result $res, rules liitesana_kä;
+  if kieltosanan_liitesana in $oikea.jatko then
+    result $res, rules kieltosanan_liitesana;
   end;
-  result $res, rules liitesana, loppu;
+  result $res, rules loppu;
 end;
 
 
@@ -865,9 +865,10 @@ combi_rule liitesana ($vasen, $oikea, $sana, $index):
 end;
 
 
-combi_rule liitesana_kä ($vasen, $oikea, $sana):
-  ? $oikea.luokka = liitesana_kä;
-  result $vasen + <[alku: $sana] + $oikea>, rules liitesana, loppu;
+combi_rule kieltosanan_liitesana ($vasen, $oikea, $sana):
+  ? $oikea.luokka = kieltosanan_liitesana;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
 end;
 
 

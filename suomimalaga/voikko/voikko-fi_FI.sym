@@ -182,7 +182,7 @@ luokka; alaluokka; jluokka;
   liitesana;
   liitesana2;
   liitesana_s;  # Tulkaa+s.
-  liitesana_kä; # Ei+kä, älä+kä.
+  kieltosanan_liitesana;
   liitesana_pi; # Tulee+pi.
   etuliite;
   lyhenne;

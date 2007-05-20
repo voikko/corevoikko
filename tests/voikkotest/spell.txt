@@ -296,6 +296,15 @@ purreempi
 lakaisseempi
 enimmäkseen
 
+[kieltosanat]
+eihän
+ei
+!eikään
+!eikaan
+emmepä
+!emmepa
+!emmekin
+
 [taivutusluokat]
 vihkon # Kotus 1
 vihon # Kotus 1

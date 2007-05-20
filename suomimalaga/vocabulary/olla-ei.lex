@@ -139,22 +139,22 @@
 
 # Kieltosana.
 #
-[alku: "en",         luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "en",         luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 1, luku: yksikkö];
-[alku: "et",         luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "et",         luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 2, luku: yksikkö];
-[alku: "ei",         luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "ei",         luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 3, luku: yksikkö];
-[alku: "emme",       luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "emme",       luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 1, luku: monikko];
-[alku: "ette",       luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "ette",       luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 2, luku: monikko];
-[alku: "eivät",      luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "eivät",      luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 3, luku: monikko];
 
@@ -184,19 +184,19 @@
 [alku: "mutt",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "mutt", äs: ä];
 
 
-[alku: "älä",        luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "älä",        luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 2, luku: yksikkö];
-[alku: "älköön",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "älköön",     luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 3, luku: yksikkö];
-[alku: "älkäämme",   luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "älkäämme",   luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 1, luku: monikko];
-[alku: "älkää",      luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "älkää",      luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 2, luku: monikko];
-[alku: "älkööt",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+[alku: "älkööt",     luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 3, luku: monikko];
 

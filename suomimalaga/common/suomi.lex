@@ -455,7 +455,6 @@ define @jatko_mm := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
 # Karlsson 1983, s. 234,
 #
 [alku: "kin",       luokka: liitesana, äs: aä, jatko: <loppu>];
-
 [alku: "kaan",      luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "kään",      luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "kaanhan",   luokka: liitesana, äs: a, jatko: <loppu>];
@@ -491,17 +490,32 @@ define @jatko_mm := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
 [alku: "kaankos",   luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "käänkös",   luokka: liitesana, äs: ä, jatko: <loppu>];
 
+[alku: "ko",        luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "kö",        luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "pa",        luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "pä",        luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "han",       luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "hän",       luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "kohan",     luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "köhän",     luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "pahan",     luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "pähän",     luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "kos",       luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "kös",       luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "pas",       luokka: kieltosanan_liitesana, äs: a, jatko: <loppu>];
+[alku: "päs",       luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>];
+[alku: "kä",        luokka: kieltosanan_liitesana, äs: ä, jatko: <loppu>]; # Ei+kä, älä+kä.
 
-[alku: "kkaan",     luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <murre>]; # Murteissa.
-[alku: "kkään",     luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <murre>];
-[alku: "ppa",       luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <murre>];
-[alku: "ppä",       luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <murre>];
-[alku: "ppas",      luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <murre>];
-[alku: "ppäs",      luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <murre>];
+[alku: "kkaan",     luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <ei_voikko>]; # Murteissa.
+[alku: "kkään",     luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>];
+[alku: "ppa",       luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <ei_voikko>];
+[alku: "ppä",       luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>];
+[alku: "ppas",      luokka: liitesana2, äs: a, jatko: <loppu>, tiedot: <ei_voikko>];
+[alku: "ppäs",      luokka: liitesana2, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>];
 
-[alku: "s",         luokka: liitesana_s, äs: aä, jatko: <loppu>, tiedot: <murre>];
+[alku: "s",         luokka: liitesana_s, äs: aä, jatko: <loppu>, tiedot: <ei_voikko>];
 
-
+[alku: "pi", luokka: liitesana_pi, äs: aä, jatko: <liitesana, loppu>]; # Tulee+pi.
 
 # Teonsanojen tositavan kestämän tekijäpäätteet.
 #
@@ -829,9 +843,6 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 # TT? [alku: "kokaan", luokka: käskytapa_kielto, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 # TT? [alku: "kökään", luokka: käskytapa_kielto, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-
-[alku: "kä", luokka: liitesana_kä, äs: ä, jatko: <liitesana, loppu>]; # Ei+kä, älä+kä.
-[alku: "pi", luokka: liitesana_pi, äs: aä, jatko: <liitesana, loppu>]; # Tulee+pi.
 
 
 # Ensimmäinen nimitapa.
