@@ -757,3 +757,8 @@ nopea-askelinen
 atomisti
 birgittalainen
 avantgarde
+minunlainen # vain 1. persoonan omistusliite
+sinunlainen # vain 2. persoonan omistusliite
+hänenlainen # vain 3. persoonan omistusliite
+lukittautua
+raskassarjalainen
