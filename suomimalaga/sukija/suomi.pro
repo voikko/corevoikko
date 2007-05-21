@@ -69,6 +69,7 @@ lex: suomi.lex suomi.inc suomi.pro
 #lex: sanat/11-19.lex
 
 lex: sanat/11-19.lex
+lex: sanat/olla-ei.lex
 lex: sanat/omat.lex
 lex: voikonsanat/atk.lex
 lex: voikonsanat/erikoiset.lex
@@ -81,7 +82,6 @@ lex: voikonsanat/lainen.lex
 lex: voikonsanat/lukusanat.lex
 lex: voikonsanat/lyhenteet.lex
 lex: voikonsanat/matluonnontiede.lex
-lex: voikonsanat/olla-ei.lex
 lex: voikonsanat/poikkeavat.lex
 lex: voikonsanat/seikkasanat.lex
 lex: voikonsanat/suhdesanat.lex
