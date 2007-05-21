@@ -222,6 +222,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "rinnakkais", alku: "rinnakkais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "sala", alku: "sala", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "satunnais", alku: "satunnais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "seitsen", alku: "seitsen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "seka", alku: "seka", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
