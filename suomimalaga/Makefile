@@ -19,6 +19,7 @@ SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
+         voikko/olla-ei.lex \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro common/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          voikko/hfconv.py common/generate_lex_common.py \
@@ -30,7 +31,7 @@ VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-f
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=suomi.lex all.inc mor.inc subrule.inc suomi.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
-	suhdesanat.lex lukusanat.lex lyhenteet.lex olla-ei.lex yhdyssanat.lex erikoiset.lex \
+	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex
 
 # Lexicon files generated for Voikko from Joukahainen
@@ -125,7 +126,6 @@ lainen.lex \
 latex.lex \
 lukusanat.lex \
 lyhenteet.lex \
-olla-ei.lex \
 omat.lex \
 poikkeavat.lex \
 seikkasanat.lex \
