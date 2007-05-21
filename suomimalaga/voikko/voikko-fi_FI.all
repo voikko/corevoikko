@@ -2433,7 +2433,7 @@ allo_rule generate_allos ($tietue):
                + taivutuskaava ($tietue,
                                 tositapa ($tietue, tA($tietue), rA($tietue),
                                           tO($tietue), rO($tietue),
-                                          tositapa_4_tt ("e")) +
+                                          tositapa_4_tt ("re")) +
                                 ehtotapa_ttA       ($tietue, tA($tietue), "re") +
                                 mahtotapa_ne_ttA   ($tietue, tA($tietue), "re") +
                                 käskytapa_ttA      ($tietue, tA($tietue), "re") +

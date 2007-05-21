@@ -338,6 +338,10 @@ heikensi # Kotus 54
 !heikenti # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
+!saaretaan # Kotus 57
+!saarettiin # Kotus 57
+saarretaan # Kotus 57
+saarrettiin # Kotus 57
 rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66
