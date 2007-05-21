@@ -22,7 +22,6 @@ SUKIJA_LEX = u"sukija/voikonsanat"
 
 import sys
 sys.path.append("common")
-sys.path.append("voikko")
 sys.path.append("sukija")
 import generate_lex_common
 import voikkoutils
