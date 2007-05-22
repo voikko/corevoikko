@@ -213,7 +213,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
 
-    # Nämä pitäisi korjata sanston generoinnissa.
+    # Nämä pitäisi korjata sanaston generoinnissa.
     #
     if ((hän in $tietue1.jatko) and ($tietue1.alku = "hän")) then
       $tietue1.alku := "hä";
@@ -457,13 +457,19 @@ allo_rule generate_allos ($tietue1):
      $tietuelista := <$tietue1, $tietue2>;
    end;
 
-   # Korjataan alku-kenttien arvoja.
+   # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
+   # generoidaan XML-tiedostosta Malaga-koodia.
    #
    if (($tavujen_lkm greater 2) and (arvailla in $tietue1.jatko) and
        ($tietue1.perusmuoto matches ".*" : $alku, "ill[aä]" : $loppu)) then
 #define $a := transmit ($tietue1);
      $tietue1.alku := $alku;
 #define $b := transmit ($tietue1);
+     $tietuelista := <$tietue1>;
+   end;
+   if ((rakentaa in $tietue1.jatko) and
+       ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
+     $tietue1.alku := $alku;
      $tietuelista := <$tietue1>;
    end;
  end;
