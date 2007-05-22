@@ -140,48 +140,48 @@
 # Kieltosana.
 #
 [alku: "en",         luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
-                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     perusmuoto: "ei", tapaluokka: tositapa,
                      aikamuoto: kestämä, tekijä: 1, luku: yksikkö];
 [alku: "et",         luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
-                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     perusmuoto: "ei", tapaluokka: tositapa,
                      aikamuoto: kestämä, tekijä: 2, luku: yksikkö];
 [alku: "ei",         luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
-                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     perusmuoto: "ei", tapaluokka: tositapa,
                      aikamuoto: kestämä, tekijä: 3, luku: yksikkö];
 [alku: "emme",       luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
-                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     perusmuoto: "ei", tapaluokka: tositapa,
                      aikamuoto: kestämä, tekijä: 1, luku: monikko];
 [alku: "ette",       luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
-                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     perusmuoto: "ei", tapaluokka: tositapa,
                      aikamuoto: kestämä, tekijä: 2, luku: monikko];
 [alku: "eivät",      luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
-                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     perusmuoto: "ei", äs: ä, tapaluokka: tositapa,
                      aikamuoto: kestämä, tekijä: 3, luku: monikko];
 
 
-[alku: "ehk",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "ehk",  äs: ä];
-[alku: "ell",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "ell",  äs: ä];
-[alku: "ett",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "ett",  äs: ä];
-[alku: "ehk'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "ehk'", äs: ä];
-[alku: "ell'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "ell'", äs: ä];
-[alku: "ett'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "ett'", äs: ä];
+[alku: "ehk",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "ehk"];
+[alku: "ell",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "ell"];
+[alku: "ett",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "ett"];
+[alku: "ehk'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "ehk'"];
+[alku: "ell'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "ell'"];
+[alku: "ett'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "ett'"];
 
-[alku: "joll",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "joll",  äs: ä];
-[alku: "jott",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "jott",  äs: ä];
-[alku: "joll'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "joll'", äs: ä];
-[alku: "jott'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "jott'", äs: ä];
+[alku: "joll",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "joll",  äs: a];
+[alku: "jott",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "jott",  äs: a];
+[alku: "joll'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "joll'", äs: a];
+[alku: "jott'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "jott'", äs: a];
 
-[alku: "miks",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "miks",  äs: ä];
-[alku: "miks'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "miks'", äs: ä];
+[alku: "miks",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "miks"];
+[alku: "miks'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "miks'"];
 
-[alku: "vaikk",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "vaikk",  äs: ä];
-[alku: "vaikk'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "vaikk'", äs: ä];
+[alku: "vaikk",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "vaikk",  äs: a];
+[alku: "vaikk'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "vaikk'", äs: a];
 
-[alku: "kosk'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "kosk'", äs: ä];
-[alku: "kosk",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "kosk", äs: ä];
+[alku: "kosk'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "kosk'", äs: a];
+[alku: "kosk",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "kosk", äs: a];
 
-[alku: "mutt'", luokka: etuliite, jatko: <kieltosana>, perusmuoto: "mutt'", äs: ä];
-[alku: "mutt",  luokka: etuliite, jatko: <kieltosana>, perusmuoto: "mutt", äs: ä];
+[alku: "mutt'", luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "mutt'", äs: a];
+[alku: "mutt",  luokka: kieltosanan_etuliite, jatko: <>, perusmuoto: "mutt", äs: a];
 
 
 [alku: "älä",        luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,

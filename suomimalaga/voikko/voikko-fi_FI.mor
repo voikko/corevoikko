@@ -135,11 +135,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if nimisana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta;
     end;
-    if kieltosana in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules kieltosana;
-    else
-      result <[alku: $sana] + $oikea>, rules etuliite, nimisana, laatusana, teonsana, tavuviiva;
-    end;
+    result <[alku: $sana] + $oikea>, rules etuliite, nimisana, laatusana, teonsana, tavuviiva;
 
   elseif $oikea.luokka = kieltosana then
     if kieltosanan_liitesana in $oikea.jatko then
@@ -159,6 +155,9 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
   elseif $oikea.luokka = asemosana then
     result <[alku: $sana] + $oikea>,
            rules sijapääte, liitesana, tavuviiva, loppu;
+
+  elseif $oikea.luokka = kieltosanan_etuliite then
+    result <[alku: $sana] + $oikea>, rules kieltosana;
 
   elseif $oikea.luokka = tavuviiva then
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
@@ -837,11 +836,21 @@ end;
 
 
 combi_rule kieltosana ($vasen, $oikea, $sana):
+  # Esiehto: tämä sääntö on aina järjestyksessä toisen allomorfin sääntö,
+  # ensimmäinen allomorfi on kieltosanan_etuliite.
   ? $oikea.luokka = kieltosana;
+  ? $oikea.tapaluokka = tositapa;
 
-  define $res := $vasen + <[alku: $sana] + $oikea>;
+  define $äs := ä;
+  if $oikea.äs /= nil then
+    $äs := $oikea.äs;
+  elseif ($vasen.1).äs /= nil then
+    $äs := ($vasen.1).äs;
+  end;
+
+  define $res := $vasen + <[alku: $sana] + $oikea + [äs: $äs]>;
   if kieltosanan_liitesana in $oikea.jatko then
-    result $res, rules kieltosanan_liitesana;
+    result $res, rules yhdyskieltosanan_liitesana;
   end;
   result $res, rules loppu;
 end;
@@ -871,6 +880,11 @@ combi_rule kieltosanan_liitesana ($vasen, $oikea, $sana):
   result $vasen + <[alku: $sana] + $oikea>, rules loppu;
 end;
 
+combi_rule yhdyskieltosanan_liitesana ($vasen, $oikea, $sana):
+  ? $oikea.luokka = liitesana;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
+end;
 
 combi_rule omistusliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = omistusliite;
@@ -1114,8 +1128,7 @@ subrule ääntiösointu_oikein ($vasen, $oikea, $sana):
   elseif ($äs = ä) then
     return ($oikea.äs in <ä, aä>);
   else
-    define $a := transmit (<$äs> + <$oikea.äs>);
-    error "subrule ääntiösointu_oikein: muuttujalla $äs tai $oikea.äs on väärä arvo.";
+    return ($oikea.äs in <ä, aä>);
   end;
 end;
 

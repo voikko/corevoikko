@@ -185,6 +185,7 @@ luokka; alaluokka; jluokka;
   kieltosanan_liitesana;
   liitesana_pi; # Tulee+pi.
   etuliite;
+  kieltosanan_etuliite;
   lyhenne;
   kaksoispiste;
   tavuviiva;

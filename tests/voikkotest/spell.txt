@@ -304,6 +304,13 @@ ei
 emmepä
 !emmepa
 !emmekin
+!jollälä
+!vaikkälkäämme
+vaikkette
+jott'ei
+!joll'eikään
+vaikkeikaan
+!vaikkeikään
 
 [taivutusluokat]
 vihkon # Kotus 1
