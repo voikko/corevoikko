@@ -75,7 +75,7 @@ imperatiivi_yks_3	0	koon	s
 partisiippi_2	0	nut	s
 imperfekti_pass	a	ettiin	w
 !verbi_ellA	a	ella	w
-!subst_tO	a	o	s # FIXME: vokaalisointu
+!subst_tO	a	o	s
 !subst_ntA	0	nta	w
 end: rules
 end: class
@@ -96,7 +96,7 @@ partisiippi_2	a	nut	s
 imperfekti_pass	aa	ettiin	w
 !verbi_ellA	aa	ella	w
 !verbi_UA	aa	ua	w
-!subst_tO	aa	o	s # FIXME: vokaalisointu
+!subst_tO	aa	o	s
 end: rules
 end: class
 
@@ -154,7 +154,7 @@ partisiippi_2	0	nut	s
 imperfekti_pass	a	ettiin	w
 !verbi_ellA	a	ella	w
 !verbi_ttAA	0	ttaa	w
-!subst_tO	a	o	s # FIXME: vokaalisointu
+!subst_tO	a	o	s
 end: rules
 end: class
 
@@ -316,7 +316,7 @@ partisiippi_2	0	nut	s
 imperfekti_pass	a	ettiin	w
 !verbi_ellA	a	ella	w
 !subst_Os	a	os	w
-!subst_tO	a	o	s # FIXME: vokaalisointu
+!subst_tO	a	o	s
 end: rules
 end: class
 
@@ -336,7 +336,7 @@ imperatiivi_yks_3	0	koon	s
 partisiippi_2	0	nut	s
 imperfekti_pass	a	ettiin	w
 !verbi_ellA	a	ella	w
-!subst_tO	a	o	s # FIXME: vokaalisointu
+!subst_tO	a	o	s
 end: rules
 end: class
 

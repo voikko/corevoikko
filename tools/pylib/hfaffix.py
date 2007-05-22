@@ -323,6 +323,13 @@ def _replace_conditional_aposthrope(word):
 			return word.replace(u'$', u'\'')
 	return word.replace(u'$', u'')
 
+def _vtype_subst_tO(base):
+	base = base.lower()
+	last_back = max(base.rfind(u'a'), base.rfind(u'o'), base.rfind(u'å'), base.rfind(u'u'))
+	last_front = max(base.rfind(u'ä'), base.rfind(u'ö'), base.rfind(u'y'))
+	if last_front > last_back: return voikkoutils.VOWEL_FRONT
+	else: return voikkoutils.VOWEL_BACK
+
 # Returns a list of inflected forms for a given word or None, if word cannot be
 # inflected in the given class. The list will contain tuples in the form
 # (form_name, word, flags).
@@ -359,6 +366,13 @@ def inflect_word(word, grad_exact_type, noun_class, vowel_type = voikkoutils.VOW
 			else: affix = hunspell_rule[1]
 			if hunspell_rule[2] == '.': pattern = ''
 			else: pattern = hunspell_rule[2]
+			if rule[0].endswith('subst_tO') or rule[0].endswith('subst_Os'):
+				if _vtype_subst_tO(word_stripped_base) == voikkoutils.VOWEL_FRONT:
+					word_infl = word_stripped_base + __convert_tv_ev(affix)
+				else:
+					word_infl = word_stripped_base + affix
+				inflection_list.append((rule[0], word_infl, optflags))
+				continue
 			if vowel_type in [voikkoutils.VOWEL_BACK, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(pattern):
 				word_infl = _replace_conditional_aposthrope(
