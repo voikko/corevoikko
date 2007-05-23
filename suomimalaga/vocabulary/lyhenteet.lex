@@ -156,7 +156,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "ilm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ilmestynyt; ilmoitus
 [alku: "IMF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # International Monetary Fund
 #[alku: "ip.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "IP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # Internet Protocol
+[alku: "IP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # Internet Protocol
 [alku: "ISBN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # International Standard Book Number
 [alku: "it", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # information technology; ilmatorjunta
 [alku: "IT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # information technology; ilmatorjunta
