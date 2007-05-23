@@ -340,6 +340,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
                  nimisana_teonsanasta;
   end;
+  if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, rules loppu; end;
   result $res, rules sijapääte, laatusanan_johdos;
 end;

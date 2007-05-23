@@ -92,6 +92,8 @@ Ison-Britannian
 Isoa-Britanniaa
 saksalaismiehityksen
 !-setieuivin
+helsinkiläinenkö
+!helsinkiläinenko
 
 [lyhenteet]
 USA:ssa
