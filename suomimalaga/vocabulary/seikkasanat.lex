@@ -205,6 +205,7 @@
 [perusmuoto: "itsekseen", alku: "itsekseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsestään", alku: "itsestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsetykönä", alku: "itsetykönä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
+[perusmuoto: "itsevaltiaasti", alku: "itsevaltiaasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "iäti", alku: "iäti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "jahka", alku: "jahka", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jaksain", alku: "jaksain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -228,15 +229,20 @@
 [perusmuoto: "jotenkuten", alku: "jotenkuten", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "jotensakin", alku: "jotensakin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "jouten", alku: "jouten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "joutessa", alku: "joutessa", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "joutuin", alku: "joutuin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jukra", alku: "jukra", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "julki", alku: "julki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "juovuksissa", alku: "juovuksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a];
+[perusmuoto: "juovuspäissä", alku: "juovuspäissä", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "justiin", alku: "justiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "justiinsa", alku: "justiinsa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "juttusilla", alku: "juttus", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: a];
 [perusmuoto: "juuri", alku: "juur", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jälekkäin", alku: "jälekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "jäljekkäin", alku: "jäljekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "jäljemmäs", alku: "jäljemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "jäljestäpäin", alku: "jäljestäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "jälkeen", alku: "jälkeen", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "jälkeenpäin", alku: "jälkeenpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

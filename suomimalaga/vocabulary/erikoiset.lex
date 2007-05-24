@@ -92,7 +92,6 @@
 [perusmuoto: "jotta", alku: "jotta", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jumalauta", alku: "jumalauta", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "jumaliste", alku: "jumaliste", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "juovuksissa", alku: "juovuksi", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "juu", alku: "juu", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kah", alku: "kah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kappas", alku: "kappas", luokka: huudahdussana, jatko: <loppu>, äs: a];
