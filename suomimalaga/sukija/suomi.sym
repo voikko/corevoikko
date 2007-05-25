@@ -951,8 +951,8 @@ triljoona;
 järjestysluku;
 lukusanan_jälkiliite;
 
-# Näille pitäät tehdä taivutuskaavat.
-asiakas;
-avokas;
-saattaa;
-varas;
+# Nämä pitää vaihtaa Sukija-version taivutuskaavoihin.
+asiakas; # iäkäs
+avokas;  # iäkäs
+saattaa; # maattaa
+varas;   # vilkas

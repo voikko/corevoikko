@@ -158,6 +158,3 @@ johdin_mAinen
 
 johdin_tOn
           to+de+ton
-
-johdin_UUs
-          to+t+uus

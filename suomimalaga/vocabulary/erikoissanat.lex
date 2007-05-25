@@ -1,28 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#
-# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
-# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
-# ehtojen mukaan sellaisina kuin Free Software Foundation
-# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
-# mukaan) minkä tahansa myöhemmän version mukaisesti.
-#
-# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
-# hyödyllinen, mutta ilman mitään takuuta; ilman edes
-# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
-# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
-# lisenssistä lisää yksityiskohtia.
-#
-# Tämän ohjelman mukana pitäisi tulla kopio GPL
-# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
-# Software Foundation Inc., 59 Temple Place - Suite 330,
-# Boston, MA 02111-1307, USA.
-#
-# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
-# muihin moduuleihin on ohjelmaan perustuvan teoksen
-# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
-#
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -55,6 +33,8 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <meri>, äs: ä];
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
+# Nykysuomen sanakirjassa venättä-sanan perusmuoto on "venät".
+[perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];
@@ -671,3 +651,60 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "sinä", alku: "sinulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sinä", alku: "sinutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
+# Puhekielisiä ja murteellisia muotoja.
+
+[perusmuoto: "mä", alku: "mä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "mun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "mut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "mua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "muna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "muksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "mussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "musta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "muhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "mulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "multa", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mä", alku: "mulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+#[perusmuoto: "mä", alku: "mutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+
+[perusmuoto: "sä", alku: "sä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "suna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "suksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "susta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "suhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sä", alku: "sulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+#[perusmuoto: "sä", alku: "sutta", luokka: asemosana, sija: vajanto_ttA,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+
+[perusmuoto: "mie", alku: "mie",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miuta",  luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mie", alku: "miutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+
+[perusmuoto: "sie", alku: "sie",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siuta",  luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sie", alku: "siutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];

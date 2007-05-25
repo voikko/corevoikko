@@ -197,6 +197,8 @@ combi_rule laatusana ($vasen, $oikea, $sana):
     ? yhdyssana_oikein ($vasen, $oikea, $i);
   end;
 
+#define $n := transmit (<$vasen> + <$oikea> + <$sana>);
+
 ##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>,
@@ -540,6 +542,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana):
 
   define $i := length ($vasen);
   ? $oikea.luokka in $vasen.$i.jatko;
+
 
 #define $nimi := transmit ("omistusliite " + $vasen.$i.alku + " " + $sana);
 
@@ -1113,13 +1116,15 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
       <<"kemi">,      <"alli">>,
+####      <<"koiras">,    <"euro">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"komi">,      <"teko">>,        # Komi+teoille.
       <<"koti", "kotiin">, <"pää">>,    # Kotiinpäin.
       <<"krim">,           <"naali">>,  # Krimi+naali.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luja", "luksus", "luminen", "luu">>,
-      <<"kymmen">,         <"vuota">>,
+      <<"kymmen">,    <"vuota">>,
+##    <<"kymmen", "kymmenen">, <"vuota">>,
       <<"lainen">,    <"kala", "kasti", "kistu", "kuri", "kuu">>,
       <<"loinen">,    <"kaksi", "tee", "tehdä">>,
       <<"lukunen">,   <"alin">>,
@@ -1169,6 +1174,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"suu">,       <"tee", "tehdä", "teloa">>,
       <<"syy">,       <"tee">>,
       <<"sävel">,     <"eittää">>,
+##      <<"taide">,     <"luomi">>,
       <<"taulu">,     <"koi", "koittaa">>,
       <<"taus">,      <"takki">>,
       <<"tee">,       <"maa">>,    # Tee+maa+n.

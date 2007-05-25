@@ -23,6 +23,7 @@
 import generate_lex_common
 import hfconv
 import voikkoutils
+import sys
 
 
 def handle_word(main_vocabulary,vocabulary_files,word):
@@ -33,12 +34,26 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if infclass.getAttribute("type") == "historical":
 			voikko_infclass = generate_lex_common.tValue(infclass)
 			break
+	
+	if voikko_infclass == u"antautua":
+		voikko_infclass = u"antautua-av1"
+	elif voikko_infclass == u"kaihtaa":
+		voikko_infclass = u"kaihtaa-av1"
+	elif voikko_infclass == u"laittaa":
+		voikko_infclass = u"laittaa-av1"
+	elif voikko_infclass == u"paahtaa":
+		voikko_infclass = u"paahtaa-av1"
+	elif voikko_infclass == u"taittaa":
+		voikko_infclass = u"taittaa-av1"
+	elif voikko_infclass == u"virkkaa":
+		voikko_infclass = u"virkkaa-av1"
+		
 	if voikko_infclass == None:
 		for infclass in word.getElementsByTagName("infclass"):
 			if infclass.getAttribute("type") != "historical":
 				voikko_infclass = generate_lex_common.tValue(infclass)
 				break
-
+	
 	if voikko_infclass == None: return
 	if voikko_infclass == u"poikkeava": return
 	
@@ -57,6 +72,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses)
+#		sys.stdout.write (u"Huu " + str(voikko_infclass) + u" " + str(alku) + u" " + str(jatko) + u" " + wordform + u"\n")
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
