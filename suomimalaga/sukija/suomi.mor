@@ -374,7 +374,6 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana):
                      + @kertoman_tekijäpääte
                      + @ehtotapa + @mahtotapa + @käskytapa;
 
-
   define $i := length ($vasen);
   ? $vasen.$i.luokka = teonsana;
   ? $oikea.luokka in $vasen.$i.jatko;
@@ -1244,11 +1243,12 @@ end_rule loppu ($tietue):
 #  define $n := transmit (<"loppu "> + <$k.luokka> + <$k.alku>);
 #end;
 
-
   define $n := $i;
   if ($tietue.$i.luokka in <liitesana, liitesana_s, omistusliite>) then
     $n := $i - 1;
   end;
+
+
   if (not (teonsana_ok ($tietue, $n))) then
     stop;
   end;

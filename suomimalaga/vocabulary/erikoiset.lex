@@ -105,7 +105,7 @@
 [perusmuoto: "kumpainen", alku: "kumpai", luokka: asemosana, jatko: <nainen>, äs: a];
 [perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a];
 [perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
-[perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kumpi", alku: "ku", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kun", alku: "kun", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunhan", alku: "kunhan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunnes", alku: "kunnes", luokka: sidesana, jatko: <loppu>, äs: a];

@@ -121,7 +121,6 @@
 [perusmuoto: "nurinkurinen", alku: "nurinkuri", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "nurinperin", alku: "nurinperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nurinpäin", alku: "nurinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "organisatoorinen", alku: "organisatoori", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "paratiissi", alku: "paratiiss", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "pentsiini", alku: "pentsiin", luokka: nimisana, jatko: <banaali>, äs: ä];
 [perusmuoto: "pitali", alku: "pital", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -255,8 +254,6 @@
 [perusmuoto: "senohessa", alku: "senohe", luokka: suhdesana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "Thrax", alku: "Thrax", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "sntliitto", alku: "sntliit", luokka: nimisana, jatko: <liitto>, äs: a];
-#[perusmuoto: "filosoofinen", alku: "filosoofi", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "ideolooginen", alku: "ideoloogi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ideolookinen", alku: "ideolooki", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "irooninen", alku: "irooni", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kaikellainen", alku: "kaikellai", luokka: laatusana, jatko: <nainen>, äs: a];
@@ -285,6 +282,8 @@
 [perusmuoto: "viksu", alku: "viksu", luokka: laatusana, jatko: <valo>, äs: a];
 [perusmuoto: "ylähinen", alku: "ylähi", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "Globalia", alku: "Globali", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "lähtö", alku: "läh", luokka: nimisana, jatko: <leuto>, äs: ä];
+
 
 [alku: "a:set", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Asianosaiset.
 [alku: "a:sia", luokka: lyhenne, jatko: <loppu>, äs: aä];
