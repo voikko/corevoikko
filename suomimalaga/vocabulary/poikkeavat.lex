@@ -233,7 +233,7 @@
 [perusmuoto: "tyyni", alku: "tyyn", luokka: laatusana, jatko: <pieni>, äs: ä];
 [perusmuoto: "täpötäysi", alku: "täpötäy", luokka: laatusana, jatko: <tosi>, äs: ä, rakenne: "=pppp=ppppp"];
 [perusmuoto: "täpötäysi", alku: "täpötäynnä", luokka: laatusana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
-[perusmuoto: "täpötäysi", alku: "täpötäynnään", luokka: laatusana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "täpötäysi", alku: "täpötäynnään", luokka: laatusana, jatko: <omistusliite, liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "täysi", alku: "täy", luokka: laatusana, jatko: <tosi>, äs: ä];
 [perusmuoto: "täyteys", alku: "täytey", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
