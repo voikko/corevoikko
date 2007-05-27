@@ -212,8 +212,9 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
        ($edellinen.luokka = lukusana)      or
        ($oikea.lähtöluokka = teonsana and teonsana in $edellinen.jatko));
 
-    ? $edellinen.luokka = etuliite or $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
-    ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+    ? $edellinen.luokka = etuliite or $oikea.tiedot = nil or
+      (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
+    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
     if $edellinen.luokka in <laatusana, nimi_laatusana> then
       result $res, rules nimisanan_johdos;
@@ -230,17 +231,19 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
     result $res, rules voittoaste;
   end;
-  if (nimisana in $oikea.jatko) then
+  if (tavuviiva in $oikea.jatko and ($oikea.tiedot = nil or
+      (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
     result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta,
-                       etuliite, paikannimen_lainen_johdos,
+                       etuliite, paikannimen_lainen_johdos, yhdysmerkki_yleisnimen_jälkeen,
                        inen_johdos_nimisanasta, inen_päätteinen_laatusana; # Kieli=poliittinen
+  end;
+  if (loppu in $oikea.jatko) then
+    result $res, rules loppu;
   end;
   result $res,
          rules sijapääte, omistusliite,
                liitesana,
-               nimisanan_johdos,
-               tavuviiva,
-               loppu;
+               nimisanan_johdos;
 end;
 
 ###### JOHDETTUJEN SANOJEN ALOITUSSÄÄNNÖT ALKAVAT
@@ -421,6 +424,14 @@ end;
 
 ###### YHDYSMERKKISÄÄNNÖT ALKAVAT
 
+combi_rule yhdysmerkki_yleisnimen_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+
+  result $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>,
+         rules nimisana, erisnimi, laatusana, lyhennesääntö, etuliite,
+	       nimisana_teonsanasta, loppu;
+end;
+
 combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
   result $vasen + <[vokaaliehto: no] + $oikea>, rules
@@ -553,7 +564,8 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $index):
     else
       result $res,
              rules omistusliite, liitesana, loppu;
-      if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or not (ei_ysa in $edellinen.tiedot))) then
+      if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
+          (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
         # "kissan+karva", "työhön+otto"
         # FIXME: paikallisijat voisi rajoittaa tapauksiin, jossa jatkona on verbijohdos
         # (ei hyväksyttäisi "työhön+kissa")

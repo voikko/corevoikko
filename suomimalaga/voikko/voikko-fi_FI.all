@@ -6811,6 +6811,7 @@ end;
 subrule yhdyssana ($yhdyssana):
   return [nimisana:        $yhdyssana,
           nimi_laatusana:  $yhdyssana,
+	  tavuviiva:       $yhdyssana,
           laatusana:       $yhdyssana,
           teonsana:        $yhdyssana,
           etuliite:        $yhdyssana];

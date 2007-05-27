@@ -117,6 +117,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kahtia", alku: "kahtia", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "koe", alku: "koe", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kolmin", alku: "kolmin", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "mukaan", alku: "mukaan", luokka: etuliite, jatko: @elt, äs: aä];

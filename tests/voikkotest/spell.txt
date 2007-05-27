@@ -38,6 +38,16 @@ johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 pinta-alaltaan
 vapaa-ajallaan
 kantaaottava
+!työöitä
+työ-öitä
+kuutamoöitä
+!kuutamo-öitä
+liike-elämä
+matemaattis-luonnontieteellinen # -is
+oopiumsodan
+!kissaismi
+!turunväylän
+!turkuväylä
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -169,6 +179,7 @@ sosiaali-
 !äänisesti
 -albumillaan
 presidentin-
+!id- # itä-
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri
@@ -325,6 +336,7 @@ lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24
 unten # Kotus 24
+hyttynen # Kotus 38
 kauriiden # Kotus 41
 !kauriiiden # Kotus 41
 vilkkaana # Kotus 41

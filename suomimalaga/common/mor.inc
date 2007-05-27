@@ -115,6 +115,10 @@ subrule vokaaliehdollinen_yhdysviiva_ok($vasen, $sana):
     end;
     if (vokaali(first($sana)) and first($sana) = last($vasen.($i-1).alku)) then
       return yes;
+    # is- ("teknillis-tieteellinen", "Kaakkois-Suomi")
+    # FIXME: tämä ei ole tarkalleen ottaen oikein, mutta toistaiseksi riittävän hyvä
+    elseif (($vasen.($i - 1).alku) matches ".*is") then
+      return yes;
     else
       return no;
     end;
