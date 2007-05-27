@@ -221,7 +221,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "nimim.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # nimimerkki
 [alku: "n.k.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # Niin kutsuttu.
 [alku: "nk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin kutsuttu
-[alku: "NKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Neuvostoliiton kommunistinen puolue.
+[alku: "NKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Neuvostoliiton kommunistinen puolue.
 [alku: "nm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # nanometri (nm); newtonmetri (Nm)
 [alku: "n:o.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Numero.
 [alku: "n.s.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Niin sanottu.
@@ -305,7 +305,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "tms.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # tai muuta sellaista
 [alku: "toim.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # toimittanut, toimittaja
 [alku: "toukok.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "tov.", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "tov.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "TPSL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj", tiedot: <ei_voikko>];
 [alku: "tri", luokka: lyhenne, jatko: <loppu>, äs: aä]; # tohtori
 [alku: "tsfs", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];

@@ -22,7 +22,7 @@
 import hfconv
 import voikkoutils
 import codecs
-import sys
+
 
 # Path to source data directory
 VOCABULARY_DATA = u"vocabulary"
@@ -127,14 +127,7 @@ def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses):
 		if infclass[0] != classparts[0]: continue
 		for subclass in infclass[2]:
 			if len(subclass) > 3 and not wclass in subclass[3]: continue
-#			sys.stdout.write("Haa " + wordform + u" " + j_infclass + u" " + str(infclass[0])
-#					 + u" " + str(subclass[0])
-#					 + u" " + str(subclass[1])
-#					 + u" " + str(subclass[2])
-#					 + u" " + str(gradtypes)
-#					 + u"\n")
 			if not subclass[0] in gradtypes: continue
-#			sys.stdout.write("Hee " + wordform + u" " + j_infclass + u" " + str(infclass[0]) + u"\n")
 			alku = hfconv.match_re(wordform, subclass[1])
 			if alku != None: return (alku, subclass[2])
 	

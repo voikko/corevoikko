@@ -16,6 +16,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 # Sanatietueita, joita on tarkoitus jatkossa käsitellä Joukahaisen kautta.
+# KAIKKI TÄHÄN TIEDOSTOON LISÄTTÄVÄT SANAT ON LISÄTTÄVÄ MYÖS JOUKAHAISEEN
+# TAIVUTUSLUOKALLA "poikkeava"!
 
 [perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
@@ -235,7 +237,6 @@
 [perusmuoto: "täpötäysi", alku: "täpötäynnä", luokka: laatusana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "täpötäysi", alku: "täpötäynnään", luokka: laatusana, jatko: <omistusliite, liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "täysi", alku: "täy", luokka: laatusana, jatko: <tosi>, äs: ä];
-[perusmuoto: "täyteys", alku: "täytey", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "uljas", alku: "ulj", luokka: laatusana, jatko: <autuas>, äs: a];
 [perusmuoto: "ulko", alku: "ulolta", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
