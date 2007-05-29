@@ -55,7 +55,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
         ]
 
-classmap = hfconv.classmap
+classmap = hfconv.modern_classmap
 classmap.extend(historical)
 
 

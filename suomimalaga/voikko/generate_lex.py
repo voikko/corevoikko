@@ -64,7 +64,6 @@ def handle_word(word):
 	if frequency(word) == 9 and generate_lex_common.has_flag(word, "confusing"): return
 	
 	# Get the inflection class. Exactly one inflection class is needed
-	infclasses = word.getElementsByTagName("infclass")
 	voikko_infclass = None
 	for infclass in word.getElementsByTagName("infclass"):
 		if infclass.getAttribute("type") != "historical":
@@ -87,7 +86,7 @@ def handle_word(word):
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
-		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, hfconv.classmap)
+		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, hfconv.modern_classmap)
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype

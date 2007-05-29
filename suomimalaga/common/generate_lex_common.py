@@ -48,11 +48,7 @@ def open_lex(path, filename):
 	return file
 
 def tValue(element):
-	rc = ""
-	for node in element.childNodes:
-		if node.nodeType == node.TEXT_NODE:
-			rc = rc + node.data
-	return rc
+	return element.firstChild.wholeText
 
 def tValues(group, element_name):
 	values = []
@@ -106,14 +102,10 @@ def has_flag(word, flag):
 
 # Returns tuple (alku, jatko) for given word in Joukahainen
 def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap):
-	classparts = j_infclass.split(u'-')
-	if len(classparts) == 1:
-		classparts.append(None)
-		gradtypes = [None]
-	else:
-		gradtypes = []
-		for grad in hfconv.grads:
-			if grad[2] == classparts[1]: gradtypes.append(grad[1])
+	(infclass, gradclass) = (list(j_infclass.split(u'-')) + [None])[:2]
+
+	if gradclass == None: gradtypes = [None]
+	else: gradtypes = [grad[1] for grad in hfconv.grads if grad[2] == gradclass]
 	
 	# Determine the word class for the given word
 	if "adjective" in j_wordclasses: wclass = hfconv.ADJ
@@ -122,14 +114,15 @@ def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap)
 	     "pnoun_misc" in j_wordclasses: wclass = hfconv.SUBST
 	elif "verb" in j_wordclasses: wclass = hfconv.VERB 
 	else: return (None, None)
-	
-	for infclass in j_classmap:
-		if infclass[0] != classparts[0]: continue
-		for subclass in infclass[2]:
-			if len(subclass) > 3 and not wclass in subclass[3]: continue
-			if not subclass[0] in gradtypes: continue
-			alku = hfconv.match_re(wordform, subclass[1])
-			if alku != None: return (alku, subclass[2])
+		
+	for (m_infclass, m_infclass_gradation, m_smclasses) in j_classmap:
+		if m_infclass != infclass: continue
+		for m_smclass in m_smclasses:
+			(m_gradtype, pattern, jatko, wclasses) = (list(m_smclass) + [None])[:4]
+			if wclasses != None and not wclass in wclasses: continue
+			if not m_gradtype in gradtypes: continue
+			alku = hfconv.match_re(wordform, pattern)
+			if alku != None: return (alku, jatko)
 	
 	return (None, None)
 

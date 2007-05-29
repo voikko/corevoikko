@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2005 - 2007 Harri Pitkänen (hatapitk@iki.fi)
-#           2007 Hannu Väisänen (Firstname.Lastname@joensuu.fi) (Historical
-#                inflections for file indexing.)
 # Functions and data for Joukahainen -> Suomi-malaga converter
 
 # This program is free software; you can redistribute it and/or modify
@@ -53,7 +51,7 @@ SUBST = 1
 ADJ = 2
 VERB = 3
 
-classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
+modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'k>',u'(ko)ko',u'koko'),
 			(u'k>',u'(ruo)ko',u'ruoko'),
 			(u'kk',u'(.*k)kU',u'alku'),
@@ -413,14 +411,6 @@ classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'kihistä', u'-', [(None,u'(.*C)istA',u'kihistä')]),
 	(u'kitistä', u'-', [(None,u'(.*C)istA',u'kitistä')])
 	]
-
-flagmap = [(u'inen', 3), (u'ei_inen', 4), (u'ei_voikko', 5), (u'ei_sukija', 6), (u'ei_ys', 7),
-	 (u'ei_ysa', 8), (u'ei_ysj', 9), (u'siv', 17), (u'ei_lAinen', 27),
-	 (u'ysj', 29), (u'ei_mAinen', 30), (u'murre', 2), (u'yt', 31), (u'ei_vertm', 32),
-	 (u'ei_yks', 37), (u'ei_voikko', 40)]
-
-histmap = [(u'antautua', u'kaatua'), (u'banaali', u'paperi'), (u'kirjoitella', 'aatella'),
-	 (u'kantaja', u'apaja'), (u'pasuuna', u'peruna'), (u'tuomi', u'niemi')]
 
 def match_re(string, pattern):
 	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')
