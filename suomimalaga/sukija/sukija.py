@@ -25,6 +25,39 @@ import hfconv
 import voikkoutils
 import sys
 
+# Historical inflections in alphabetical order.
+historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
+        (u'antautua', u'sw', [(u't',u'(.*)tUA',u'antautua')]),
+        (u'banaali', u'sw', [(None,u'(.*)i',u'banaali'),
+                        (u'nt',u'(.*n)ti',u'hollanti'),
+                        (u'nk',u'(.*n)ki',u'killinki'),
+                        (u'kk',u'(.*k)ki',u'kajakki'),
+                        (u'tt',u'(.*t)ti',u'salaatti'),
+                        (u'pp',u'(.*p)pi',u'sinappi'),
+                        (u't',u'(.*)ti',u'konvehti') ]),
+        (u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
+        (u'haastaa', u'sw', [(None,u'(.*C)AA',u'haastaa')]),
+        (u'kaihtaa', u'sw', [(u't',u'(.*)tAA',u'kaihtaa')]),
+        (u'kantaja', u'-', [(None,u'(.*)jA',u'johdin_jA_kantaja')]),
+        (u'kirjoitella', u'ws', [(None,u'(...*O)itellA',u'kilvoitella'),
+                                 (None,u'(.*O)tellA',u'ilotella')]),
+        (u'koiras', u'ws', [(None,u'(.*A)s',u'koiras')]),
+        (u'laittaa', u'sw', [(u'tt',u'(.*t)tAA',u'laittaa')]),
+        (u'nuori', u'-', [(None,u'(.*C)i',u'nuori')]),
+        (u'paahtaa', u'sw', [(u't',u'(.*)tAA',u'paahtaa')]),
+        (u'paistaa', u'sw', [(None,u'(.*C)AA',u'paistaa')]),
+        (u'palata', u'ws', [(None,u'(.*)AtA',u'palata')]),
+        (u'palaa', u'ws', [(None,u'(.*C)AA',u'palaa')]),
+        (u'pasuuna', u'sw', [(None,u'(.*)A',u'pasuuna')]),
+        (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
+        (u'taittaa', u'sw', [(u'tt',u'(.*t)tAA',u'taittaa')]),
+        (u'tuomi', u'-', [(None,u'(.*V)mi',u'tuomi')]),
+        (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
+        ]
+
+classmap = hfconv.classmap
+classmap.extend(historical)
+
 
 def handle_word(main_vocabulary,vocabulary_files,word):
 	# Get the inflection class. Exactly one inflection class is needed
@@ -71,7 +104,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
-		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses)
+		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
 #		sys.stdout.write (u"Huu " + str(voikko_infclass) + u" " + str(alku) + u" " + str(jatko) + u" " + wordform + u"\n")
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)

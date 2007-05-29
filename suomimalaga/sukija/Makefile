@@ -73,17 +73,17 @@ koeb:
 koe1:
 	cat ../../ekirjat.txt | malaga -m suomi.pro >e1
 	cat ../../m*8 | malaga -m suomi.pro >m1
-	../../*/koe.sh ../../raam/* | malaga -m suomi.pro >r1
+	cat ../../raam.txt | malaga -m suomi.pro >r1
 
 koe2:
 	cat ../../ekirjat.txt | malaga -m suomi.pro >e2
 	cat ../../m*8 | malaga -m suomi.pro >m2
-	../../*/koe.sh ../../raam/* | malaga -m suomi.pro >r2
+	cat ../../raam.txt | malaga -m suomi.pro >r2
 
 koe3:
 	cat ../../ekirjat.txt | malaga -m suomi.pro >e3
 	cat ../../m*8 | malaga -m suomi.pro >m3
-	../../*/koe.sh ../../raam/* | malaga -m suomi.pro >r3
+	cat ../../raam.txt | malaga -m suomi.pro >r3
 
 ekirjat:
 	cat ../../ekirjat.txt | malaga -m suomi.pro
