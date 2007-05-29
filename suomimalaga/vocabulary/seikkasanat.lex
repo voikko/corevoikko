@@ -17,6 +17,8 @@
 
 # Seikkasanat
 # Jatko-kentässä sallittuja ovat ainoastaan loppu, liitesana, omistusliite ja sijapäätteet.
+# (Huomaa, että sijapäätteiden, esim. sisäolento_ssA, jälkeen hyväksytään
+# automaattisesti myös omistusliite.)
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
