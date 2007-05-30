@@ -434,14 +434,14 @@ end;
 
 combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
-  result $vasen + <[vokaaliehto: no] + $oikea>, rules
+  result $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>, rules
          nimisana, erisnimi, laatusana,
          etuliite, teonsana, loppu;
 end;
 
 combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
-  result $vasen + <[vokaaliehto: no] + $oikea>, rules
+  result $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>, rules
          nimisana, erisnimi, laatusana,
          etuliite, teonsana, loppu;
 end;
@@ -455,12 +455,12 @@ end;
 
 combi_rule yhdysmerkki_sanan_lopussa ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
-  result $vasen + <[vokaaliehto: no] + $oikea>, rules loppu;
+  result $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>, rules loppu;
 end;
 
 combi_rule yhdysmerkki_lainen_johdoksen_jälkeen ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
-  result $vasen + <[vokaaliehto: no] + $oikea>,
+  result $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>,
          rules erisnimi, paikannimen_lainen_johdos,
 	       inen_päätteinen_laatusana, loppu;
 end;
@@ -1372,9 +1372,24 @@ end;
 
 
 pruning_rule prune ($list):
+  define $alut := <>;
   define $filter := <>;
-  foreach $i in length($list):
-    $filter :=+ <($i less_equal 25)>;
+  define $j := 0;
+  foreach $an in $list:
+    $alut :=+ <($an.1).alku>;
+  end;
+  $alut := set($alut);
+  foreach $an in $list:
+    if $j = 20 then
+      $filter :=+ <no>;
+    else
+      if (length($an) greater 1) and ($an.1).alku + ($an.2).alku in $alut then
+        $filter :=+ <no>;
+      else
+        $filter :=+ <yes>;
+	$j :=+ 1;
+      end;
+    end;
   end;
   return $filter;
 end;

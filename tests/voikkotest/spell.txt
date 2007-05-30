@@ -48,6 +48,7 @@ oopiumsodan
 !kissaismi
 !turunväylän
 !turkuväylä
+teollisuusliitoissa
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
