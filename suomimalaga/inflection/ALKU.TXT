@@ -497,6 +497,29 @@ allo_rule generate_allos ($tietue1):
      $tietuelista := <$tietue1, $tietue2>;
    end;
 
+   # Utelias => uteliaisuus.
+   #
+   if ((vieras in $tietue1.jatko) and ($tavujen_lkm greater 3) and
+       ($tietue1.perusmuoto matches ".*li" : $alku, "[aä]" : $keskikohta, "s")) then
+     define $tietue2 := $tietue1;
+     $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
+     if ($keskikohta = "a") then
+       $tietue2.alku := $alku + "aisuu";
+     else
+       $tietue2.alku := $alku + "äisyy";
+     end;
+     $tietue2.perusmuoto := $tietue2.alku + "s";
+     $tietue2.luokka := nimisana;
+     $tietue2.jatko := <kalleus>;
+     if ($tietue2.tiedot /= nil) then
+       $tietue2.tiedot := nil;
+     end;
+#define $a := transmit ($tietue1);
+#define $b := transmit ($tietue2);
+     $tietuelista := <$tietue1, $tietue2>;
+   end;
+
+
    # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
    # generoidaan XML-tiedostosta Malaga-koodia.
    #
@@ -517,6 +540,22 @@ allo_rule generate_allos ($tietue1):
      $tietue1.alku := $alku;
      $tietuelista := <$tietue1>;
 #define $a := transmit ($tietue1);
+   end;
+   if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
+     $tietue1.alku := "hart";
+     $tietuelista := <$tietue1>;
+   end;
+   if ((kuollut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) then
+     $tietue1.jatko := <neitsyt>;
+     $tietuelista := <$tietue1>;
+   end;
+   if ((ori in $tietue1.jatko) and ($tietue1.perusmuoto = "ori")) then
+     $tietue1.alku:= "or";
+     $tietuelista := <$tietue1>;
+   end;
+   if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
+       ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
+     stop;
    end;
  end;
 
