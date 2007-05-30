@@ -258,8 +258,10 @@
 [perusmuoto: "kahtaanne", alku: "kahtaanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kahtapuolin", alku: "kahtapuolin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "kahtia", alku: "kahtia", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kai", alku: "kai", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kai", alku: "kai", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kai", alku: "kai", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kaiketi", alku: "kaiketi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kaipa", alku: "kaipa", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kaikinpuolin", alku: "kaikinpuolin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "kaikitenkin", alku: "kaikitenkin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "kaikkialla", alku: "kaikkia", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
