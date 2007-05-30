@@ -262,9 +262,10 @@
 [perusmuoto: "kaiketi", alku: "kaiketi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaikinpuolin", alku: "kaikinpuolin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "kaikitenkin", alku: "kaikitenkin", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "kaikkialla", alku: "kaikkialla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kaikkialle", alku: "kaikkialle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kaikkialta", alku: "kaikkialta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kaikkialla", alku: "kaikkia", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kaikkialla", alku: "kaikkialla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "kaikkialle", alku: "kaikkialle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "kaikkialta", alku: "kaikkialta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kaksin", alku: "kaksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kallellaan", alku: "kallellaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kallelleen", alku: "kallelleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
