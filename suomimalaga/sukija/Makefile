@@ -102,3 +102,6 @@ diff2:
 
 move:
 	mv -f e2 e1; mv -f r2 r1; mv -f m2 m1
+
+move2:
+	mv -f e3 e2; mv -f r3 r2; mv -f m3 m2

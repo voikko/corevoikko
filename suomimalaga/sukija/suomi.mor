@@ -1184,6 +1184,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"traditio">,  <"naali">>,
       <<"tuore">,     <"utu">>,
       <<"ulko">,      <"naida", "nainen">>,
+      <<"ulos">,      <"pää", "tavi", "tuma", "tupa", "tuttava">>,
       <<"uus">,       <"arpoa">>,
       <<"varus">,     <"tee">>,    # Varus+tee+t.
       <<"vasta">,     <"pää">>,

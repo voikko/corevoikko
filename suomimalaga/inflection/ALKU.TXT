@@ -124,13 +124,6 @@ allo_rule generate_allos ($tietue1):
     # Kolmitavuiset nuolaista-tyyppiset sanat
     # tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
     #
-#    if ((nuolaista in $tietue1.jatko) and ($tavujen_lkm = 3)) then
-#      define $tietue2 := $tietue1;
-#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-#      $tietue2.alku := substring ($tietue1.alku, 1, 3R) + "s";
-#      $tietue2.perusmuoto := $tietue2.alku + "t" + A($tietue1);
-#      $tietuelista := <$tietue1, $tietue2>;
-#    end;
     # Alku-kenttä pitäisi korjata, kun generoidaan xml-tiedostoa tai siitä sanastoa.
     #
     if ((nuolaista in $tietue1.jatko) and ($tavujen_lkm = 3)) then
@@ -213,6 +206,22 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
 
+    if (asiakas in $tietue1.jatko) then
+      $tietue1.jatko := <iäkäs>;
+      define $tietue2 := $tietue1;
+      if ($tietue1.äs = a) then
+        $tietue2.alku := $tietue1.alku + "kuu";
+      else
+        $tietue2.alku := $tietue1.alku + "kyy";
+      end;
+      $tietue2.perusmuoto := $tietue2.alku + "s";
+      $tietue2.jatko := <kalleus>;
+      $tietuelista := <$tietue1, $tietue2>;
+#define $a := transmit ($tietue1);
+#define $b := transmit ($tietue2);
+    end;
+
+
     # Nämä pitäisi korjata sanaston generoinnissa, mutta se ei
     # liene mahdollista ennen kuin Voikko-versio siirtyy käyttämään
     # taivutuskaavojen esimerkkisanoista generoitua koodia.
@@ -233,6 +242,10 @@ allo_rule generate_allos ($tietue1):
       $tietue1.jatko := <iäkäs>;
       $tietuelista := <$tietue1>;
     end;
+    if (avokas in $tietue1.jatko) then
+      $tietue1.jatko := <iäkäs>;
+      $tietuelista := <$tietue1>;
+    end;
     if (varas in $tietue1.jatko) then
       $tietue1.jatko := <vilkas>;
       $tietuelista := <$tietue1>;
@@ -250,9 +263,19 @@ allo_rule generate_allos ($tietue1):
       $tietue1.jatko := <käsi>;
       $tietuelista := <$tietue1>;
     end;
+    if (($tietue1.perusmuoto in <"vuosi">) and (susi in $tietue1.jatko)) then
+      $tietue1.jatko := <vesi>;
+      $tietuelista := <$tietue1>;
+    end;
     if ((vieras in $tietue1.jatko) and ($tietue1.perusmuoto matches ".*lias")) then
       $tietue1.jatko := <utelias>;
       $tietuelista := <$tietue1>;
+    end;
+    if (($tietue1.perusmuoto /= nil) and ($tietue1.perusmuoto = "uros")) then
+      $tietue1.alku := "uro";
+      $tietue1.jatko := <uros>;
+      $tietuelista := <$tietue1>;
+#define $b := transmit ($tietue1);
     end;
 
     # Aivoitus => aivotus.
@@ -555,6 +578,22 @@ allo_rule generate_allos ($tietue1):
    end;
    if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
        ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
+     stop;
+   end;
+
+   # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
+   #
+   if (($tietue1.perusmuoto /= nil) and
+       ($tietue1.perusmuoto in <"otto", "voima">) and
+       ($tietue1.luokka in <nimisana>)) then
+     stop;
+   end;
+
+   # Nämä tunnistetaan etuliite + sana -yhdistelminä.
+   #
+   if (($tietue1.perusmuoto /= nil) and
+       (($tietue1.perusmuoto matches "herras(kartano|mies|poika|väki)") or
+        ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
      stop;
    end;
  end;

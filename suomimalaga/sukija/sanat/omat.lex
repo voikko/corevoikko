@@ -442,9 +442,6 @@
 [perusmuoto: "toisahalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "pajattaa", alku: "pajat", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "pajunetti", alku: "pajunet", luokka: nimisana, jatko: <tatti>, äs: a];
-[perusmuoto: "slavofiili", alku: "slavofiil", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "slavofiilinen", alku: "slavofiili", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "slavofilia", alku: "slavofili", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "slavofilismi", alku: "slavofilism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "salvos", alku: "salvo", luokka: nimisana, jatko: <vastaus>, äs: a];
 
@@ -588,7 +585,6 @@
 [perusmuoto: "esilleantaa", alku: "esillean", luokka: teonsana, jatko: <antaa>, äs: a];
 [perusmuoto: "Pekurinen", alku: "Pekuri", luokka: sukunimi, jatko: <nainen>, äs: a];
 [perusmuoto: "Wood", alku: "Wood", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "irtolainen", alku: "irtolai", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "oksitaani", alku: "oksitaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Navarra", alku: "Navarr", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Aragonia", alku: "Aragoni", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -622,6 +618,12 @@
 [perusmuoto: "vaaleaverikkö", alku: "vaaleaverik", luokka: nimisana, jatko: <laatikko>, äs: ä];
 [perusmuoto: "tummaverikkö", alku: "tummaverik", luokka: nimisana, jatko: <laatikko>, äs: ä];
 [perusmuoto: "ruskeaverikkö", alku: "ruskeaverik", luokka: nimisana, jatko: <laatikko>, äs: ä];
+
+[perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
+[perusmuoto: "Vincent", alku: "Vincent", luokka: etunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Isabelle", alku: "Isabelle", luokka: etunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Coco", alku: "Coco", luokka: etunimi, jatko: <valo>, äs: a];
+[perusmuoto: "pahis", alku: "pahi", luokka: nimisana, jatko: <vastaus>, äs: a];
 
 ##############
 
