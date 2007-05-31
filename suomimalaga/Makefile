@@ -2,16 +2,8 @@
 SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
            sukija/suomi.lex sukija/Makefile sukija/suomi.mor sukija/suomi.pro \
            sukija/suomi.sym sukija/sukija.copyright sukija/LUE.MINUT \
-           sukija/sanat/11-19.lex sukija/sanat/erikoiset.lex \
-           sukija/sanat/olla-ei.lex sukija/sanat/jokinen.lex \
-           sukija/sanat/omat.lex sukija/sanat/sitaattilainat.txt \
-           sukija/sanat/etuliitteet.lex sukija/sanat/poikkeavat.lex \
-           sukija/sanat/lukusanat.lex sukija/sanat/joukahainen.lex \
-           sukija/sanat/jokinen.sh sukija/sanat/lainen.lex \
-           sukija/sanat/erikoissanat.lex sukija/sanat/lyhenteet.lex \
-           sukija/sanat/yhdyssanat.lex sukija/sanat/latex.lex \
-           sukija/sanat/erikoisalat/laaketiede.lex \
-           sukija/sanat/erikoisalat/atk.lex sukija/generoi.sh sukija/inc/all.inc \
+           sukija/sanat/11-19.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
+           sukija/generoi.sh sukija/inc/all.inc \
            sukija/inc/mor.inc sukija/inc/subrule.inc \
            sukija/sukija.py sukija/generate_lex.py
 
@@ -97,6 +89,11 @@ dist-gzip: suomi-malaga-$(SM_VERSION).tar.gz
 
 suomi-malaga-$(SM_VERSION).tar.gz: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST)))
 	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | gzip -9 > $@
+
+dist-bzip2: suomi-malaga-$(SM_VERSION).tar.bz2
+
+suomi-malaga-$(SM_VERSION).tar.bz2: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST)))
+	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | bzip2 -9 > $@
 
 $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
 	install --mode=644 -D $^ $@

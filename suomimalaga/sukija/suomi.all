@@ -267,7 +267,8 @@ allo_rule generate_allos ($tietue1):
       $tietue1.jatko := <vesi>;
       $tietuelista := <$tietue1>;
     end;
-    if ((vieras in $tietue1.jatko) and ($tietue1.perusmuoto matches ".*lias")) then
+    if ((vieras in $tietue1.jatko) and ($tietue1.perusmuoto matches ".*[lr]i[aä]s") and
+        ($tietue1.luokka = laatusana)) then
       $tietue1.jatko := <utelias>;
       $tietuelista := <$tietue1>;
     end;
