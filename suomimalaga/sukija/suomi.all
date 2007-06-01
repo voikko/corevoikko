@@ -597,6 +597,15 @@ allo_rule generate_allos ($tietue1):
         ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
      stop;
    end;
+
+   # Nämä sanat voivat olla myös erillisinä sanoina.
+   #
+   if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
+       (($tietue1.perusmuoto /= nil) and
+       (($tietue1.perusmuoto = "vuotias") and ($tietue1.luokka = nimi_laatusana)))) then
+     $tietue1.tiedot :=- <ysj>;
+     $tietuelista := <$tietue1>;
+   end;
  end;
 
 

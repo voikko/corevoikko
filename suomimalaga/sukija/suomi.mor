@@ -1081,6 +1081,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"apu">,             <"olka">>,
       <<"arja">,            <"lainen">>,
       <<"askar">,           <"re">>,
+      <<"auki">,            <"naida">>, # Auki+nainen.
       <<"auto">,            <"nova">>,  # Auto+novien.
       <<"avo">,             <"nainen">>,
       <<"de">,              <"lego", "mono", "sika">>,  # Ei de+lego+iva, de+mono+logi, geo+de+siassa.
@@ -1149,6 +1150,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
       <<"polvinen">,  <"tuki">>,
       <<"punk">,      <"arka", "kari">>,
+      <<"puoli">,     <"nainen">>,  # On oma sanansa.
       <<"puu">,       <"hai">>,
       <<"priori">,    <"soida">>,
       <<"pyro">,      <"maa">>,

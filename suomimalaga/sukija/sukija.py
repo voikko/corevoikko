@@ -52,6 +52,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
         (u'taittaa', u'sw', [(u'tt',u'(.*t)tAA',u'taittaa')]),
         (u'tuomi', u'-', [(None,u'(.*V)mi',u'tuomi')]),
+	(u'vihanta', u'sw', [(u'nt',u'(.*n)tA',u'vihanta')]),
         (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
         ]
 
@@ -67,7 +68,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if infclass.getAttribute("type") == "historical":
 			voikko_infclass = generate_lex_common.tValue(infclass)
 			break
-	
+
 	if voikko_infclass == u"antautua":
 		voikko_infclass = u"antautua-av1"
 	elif voikko_infclass == u"kaihtaa":
@@ -78,9 +79,11 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		voikko_infclass = u"paahtaa-av1"
 	elif voikko_infclass == u"taittaa":
 		voikko_infclass = u"taittaa-av1"
+	elif voikko_infclass == u"vihanta":
+		voikko_infclass = u"vihanta-av1"
 	elif voikko_infclass == u"virkkaa":
 		voikko_infclass = u"virkkaa-av1"
-		
+	
 	if voikko_infclass == None:
 		for infclass in word.getElementsByTagName("infclass"):
 			if infclass.getAttribute("type") != "historical":
@@ -104,6 +107,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
+#		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
 #		sys.stdout.write (u"Huu " + str(voikko_infclass) + u" " + str(alku) + u" " + str(jatko) + u" " + wordform + u"\n")
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:

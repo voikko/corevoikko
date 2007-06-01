@@ -57,6 +57,7 @@
 [perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "digata", alku: "dig", luokka: teonsana, jatko: <digata>, äs: a, tiedot: <murre>];
+[perusmuoto: "lobata", alku: "lob", luokka: teonsana, jatko: <lobata>, äs: a, tiedot: <murre>];
 [perusmuoto: "Eddie", alku: "Eddie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "El", alku: "El", luokka: nimi, jatko: <loppu>, äs: a]; # El Salvador
@@ -237,7 +238,7 @@
 [perusmuoto: "täpötäysi", alku: "täpötäynnään", luokka: laatusana, jatko: <omistusliite, liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "täysi", alku: "täy", luokka: laatusana, jatko: <tosi>, äs: ä];
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
-[perusmuoto: "uljas", alku: "ulj", luokka: laatusana, jatko: <autuas>, äs: a];
+#[perusmuoto: "uljas", alku: "ulj", luokka: laatusana, jatko: <autuas>, äs: a];  # On Joukahaisessa.
 [perusmuoto: "ulko", alku: "ulolta", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vaka", alku: "vaka", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "valmis", alku: "valm", luokka: nimi_laatusana, jatko: <valmis>, äs: a];
