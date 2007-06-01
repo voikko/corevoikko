@@ -122,7 +122,6 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'p',u'(.*)pi',u'siipi'),
 			(u'k>',u'(.*)ki',u'kaikki')]),
 	(u'nalle', u'sw', [(None,u'(.*Ce)',u'nalle'),
-			   (None,u'(.*Cie)',u'nalle'), # Zombie.
 		         (u'tt',u'(.*t)te',u'atte'),
 		         (u'kk',u'(.*k)ke',u'nukke')]),
 	(u'kala', u'sw',   [(None,u'(.*)A',u'kala'),
