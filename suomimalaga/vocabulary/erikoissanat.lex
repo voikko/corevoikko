@@ -708,3 +708,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "sie", alku: "siulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sie", alku: "siulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sie", alku: "siutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+
+# Muutama on nimisana Joukahaisessa, ja sillä ei ole -sti-päätettä automaattisesti.
+[perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];

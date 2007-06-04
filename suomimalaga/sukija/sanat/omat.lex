@@ -212,7 +212,7 @@
 [perusmuoto: "photo", alku: "photo", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "pääty", alku: "päädytse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jollon", alku: "jollon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "oottaa", alku: "oot", luokka: teonsana, jatko: <ottaa>, äs: a];
+[perusmuoto: "oottaa", alku: "oot", luokka: teonsana, jatko: <alittaa>, äs: a];
 [perusmuoto: "filee", alku: "filettä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "curevents", alku: "curevents", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "resitentti", alku: "resitent", luokka: nimisana, jatko: <tatti>, äs: a];

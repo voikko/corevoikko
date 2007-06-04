@@ -61,7 +61,6 @@ kuluttaa    alittaa     ta   e    a   ""  t   %muistella("t","")
 kyntää      voitaa      tä   ne   nä  n   t
 loistaa     loistaa     a    e    ""          %muistella("","")
 lypsää      lypsää      ä    e    ""          %muistella("","")
-ottaa       ottaa       ta   e    a   ""  t   %muistella("t","")    %heitto
 purkaa      voitaa      ka   e    a   ""  k
 sulaa       voitaa      a    e    a   ""  ""
 verkottaa   alittaa     ta   e    a   ""  ""  %muistua("","t","")
