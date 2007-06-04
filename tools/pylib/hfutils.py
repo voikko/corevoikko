@@ -149,7 +149,7 @@ def apply_gradation(word, grad_type):
 			return (word[:-3]+u'rt'+word[-1]+last_letter, word+last_letter)
 		if word[-2] == u'd':
 			return (word[:-2]+u't'+word[-1]+last_letter, word+last_letter)
-		if word[-2] in u'tkp':
+		if word[-2] in u'tkpbg':
 			return (word[:-1]+word[-2:]+last_letter, word+last_letter)
 		if word[-2] == u'v':
 			return (word[:-2]+u'p'+word[-1]+last_letter, word+last_letter)
