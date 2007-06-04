@@ -426,7 +426,7 @@ end: class
 # Kotus 9 kissa
 class: 9
 sm-class: kala
-match-word: a
+match-word: A
 consonant-gradation: sw
 group: t
 transform-group: e # Onko näitä?
