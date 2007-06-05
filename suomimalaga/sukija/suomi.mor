@@ -350,7 +350,6 @@ combi_rule teonsana ($vasen, $oikea, $sana):
   if ($i greater 0) then
     ? $oikea.luokka in $vasen.$i.jatko;
     ? yhdyssana_oikein ($vasen, $oikea, $i);
-
   end;
 
 ##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);

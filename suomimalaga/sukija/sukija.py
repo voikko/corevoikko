@@ -52,6 +52,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
         (u'taittaa', u'sw', [(u'tt',u'(.*t)tAA',u'taittaa')]),
         (u'tuomi', u'-', [(None,u'(.*V)mi',u'tuomi')]),
+	(u'veranta', u'sw', [(u'nt',u'(.*n)tA',u'veranta')]),
 	(u'vihanta', u'sw', [(u'nt',u'(.*n)tA',u'vihanta')]),
         (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
         ]
@@ -79,6 +80,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		voikko_infclass = u"paahtaa-av1"
 	elif voikko_infclass == u"taittaa":
 		voikko_infclass = u"taittaa-av1"
+	elif voikko_infclass == u"veranta":
+		voikko_infclass = u"veranta-av1"
 	elif voikko_infclass == u"vihanta":
 		voikko_infclass = u"vihanta-av1"
 	elif voikko_infclass == u"virkkaa":

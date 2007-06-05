@@ -581,6 +581,21 @@ allo_rule generate_allos ($tietue1):
        ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
      stop;
    end;
+   if (kuollut in $tietue1.jatko) then
+     if ($tietue1.perusmuoto matches ".*" : $alku, "n[uy]t") then
+       $tietue1.alku := $alku;
+       $tietue1.jatko := <punonut>;
+       $tietuelista := <$tietue1>;
+     elseif ($tietue1.perusmuoto matches ".*" : $alku, "r[uy]t") then
+       $tietue1.alku := $alku;
+       $tietue1.jatko := <purrut>;
+       $tietuelista := <$tietue1>;
+     elseif ($tietue1.perusmuoto matches ".*" : $alku, "s[uy]t") then
+       $tietue1.alku := $alku;
+       $tietue1.jatko := <juossut>;
+       $tietuelista := <$tietue1>;
+     end;
+   end;
 
    # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
    #
@@ -589,6 +604,10 @@ allo_rule generate_allos ($tietue1):
        ($tietue1.luokka in <nimisana>)) then
      stop;
    end;
+   if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
+     stop;
+   end;
+
 
    # Nämä tunnistetaan etuliite + sana -yhdistelminä.
    #
