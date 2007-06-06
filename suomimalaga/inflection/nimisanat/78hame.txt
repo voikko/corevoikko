@@ -107,18 +107,18 @@ omanto_iT
           en+te+itten
 
 omanto_ten
-          en+tet+ten  ei_voikko
+          en+net+ten  ei_voikko
           en+tehit+ten  ei_voikko
 
 omanto_ien
           en+teh+ien  ei_voikko
 
-osanto_iA
-          en+teh+iä  ei_voikko
-
 osanto_itA
           en+te+itä
           en+teh+itä  ei_voikko
+
+osanto_iA
+          en+teh+iä  ei_voikko
 
 olento_inA
           en+te+inä
@@ -138,6 +138,7 @@ sisäeronto_istA
 
 sisätulento_isiin
           en+te+isiin
+          en+teh+isiin  ei_voikko
 
 sisätulento_ihin
           en+te+ihin

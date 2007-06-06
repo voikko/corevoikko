@@ -71,6 +71,9 @@ sisäeronto_istA
 sisätulento_isiin
           alke++isiin
 
+sisätulento_ihin
+          alke++ihin
+
 ulko_olento_illA
           alke++illa
 

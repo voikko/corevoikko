@@ -198,9 +198,16 @@ allo_rule generate_allos ($tietue1):
         $tietuelista := <$tietue1, $tietue2>;
 #define $a := transmit ($tietue1);
 #define $b := transmit ($tietue2);
+      elseif (ammottaa in $tietue1.jatko) then
+        $tietue1.jatko := <kirjoittaa>;
+        $tietue1.alku :=+ "t";
+        $tietuelista := <$tietue1>;
+#define $a := transmit ($tietue1);
       else
         $tietue1.jatko := <alittaa>;
         $tietue1.alku :=+ "t";
+#        define $tietue2 := kirjoittautua ($tietue1);
+#        $tietuelista := <$tietue1, $tietue2>;
         $tietuelista := <$tietue1>;
 #define $a := transmit ($tietue1);
       end;
@@ -608,7 +615,6 @@ allo_rule generate_allos ($tietue1):
      stop;
    end;
 
-
    # Nämä tunnistetaan etuliite + sana -yhdistelminä.
    #
    if (($tietue1.perusmuoto /= nil) and
@@ -629,6 +635,8 @@ allo_rule generate_allos ($tietue1):
 
 
   choose $tietue in $tietuelista;
+
+#define $a := transmit ($tietue);
 
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
