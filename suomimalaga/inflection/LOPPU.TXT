@@ -100,6 +100,8 @@ subrule taivutus2 ($sanatietue, $lisä, $jatko, $tietue, $alku):
       end;
       return $result;
     else
+#      define $a := transmit($alku);
+#      define $b := transmit($lisä);
       return <[alku: $alku + $lisä]
               + ($sanatietue - alku - jatko)
               + [jatko: $jatko]

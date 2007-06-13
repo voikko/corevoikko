@@ -84,7 +84,7 @@
 [perusmuoto: "jippii", alku: "jippii", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "joko", alku: "joko", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "jompi", alku: "jom", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jompi", alku: "jo", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "joo", alku: "joo", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "jos", alku: "jos", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "joten", alku: "joten", luokka: sidesana, jatko: <loppu>, äs: a];

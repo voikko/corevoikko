@@ -23,6 +23,7 @@
 import generate_lex_common
 import hfconv
 import voikkoutils
+import re
 import sys
 
 # Historical inflections in alphabetical order.
@@ -59,6 +60,132 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
 
 classmap = hfconv.modern_classmap
 classmap.extend(historical)
+
+
+rx_ammottaa   = re.compile(u"(.*)([oö]t)(taa|tää)$")
+rx_kirjoittaa = re.compile(u"(.*)([oö]it)(taa|tää)$")
+rx_ammottaa_kirjoittaa = re.compile(u"(.*)([oö]i?t)(taa|tää)$")
+rx_nuolaista_alku = re.compile(u"(.*)is$")
+
+
+# Jaetaan sana tavuihin. Esim.
+# hyphenate(u"valkoinen") = val-koi-nen.
+#
+#
+# Algoritmi: Facta-tietosanakirja (1970), osa 9, palsta 50.
+#
+# "(1) kaksi peräkkäistä vokaalikirjainta kuuluvat samaan tavuun
+# jos ja vain jos ne ääntyvät pitkänä vokaalina tai diftongina.
+#
+# (2) jos konsonanttia seuraa vokaali, ne kuuluvat samaan tavuun,
+# muutoin konsonantti kuuluu edellisen kirjaimen tavuun (kuitenkin
+# vierasperäisen sanan kaikki alkukonsonantit kuuluvat samaan tavuun)."
+
+# Kahden ääntiön yhdistelmät, jotka voivat olla tavussa.
+A0 = [u"ei", u"ai", u"äi", u"ui", u"yi", u"oi", u"öi"]
+A1 = [u"au", u"äy", u"ou", u"öy", u"iu", u"iy", u"eu", u"ey", u"uo", u"yö", u"ie"]
+A1.extend(A0)
+A2 = [u"aa", u"ee", u"ii", u"oo", u"uu", u"yy", u"ää", u"öö"]
+
+V2 = A1
+V2.extend(A2)
+
+V = u"AÀÁÂÃEÈÉÊËŒÆIÌÍÎÏOÒÓÔUÙÚÛYÝÿÜÅÄÖØÕaàáâãeèéêëœæiìíîïoòóôuùúûyýÿüåäöøõ"
+C = u"BCDFGHJKLMNPQRSTVWXZŠŽÇÐÑÞßbcdfghjklmnpqrstvwxzšžçðñþß"
+
+
+# Palautetaan True, jos sanassa on ainakin yksi ääntiö.
+#
+def has_vowel(s):
+	for i in s:
+		if (i in V):
+			return 1
+	return 0
+
+
+def hyphenate(word):
+	n = len(word)
+	i = 0
+	s = u""
+
+	if (n <= 2):
+		return word
+
+#	sys.stdout.write(word + u"\n");
+	
+	# Jos sanassa on joku merkeistä -':.
+	# tavutetaan sanan molemmat puoliskot erikseen.
+	#
+	p = re.compile(u"[-':.]+").search(word)
+	if (p != None):
+		return hyphenate(word[:p.start(0)]) + u"-" + hyphenate(word[p.end(0):])
+
+	# Kerakkeet sanan alussa.
+	#
+	while ((i < n) and (word[i] in C) and (word[i+1] in C)):
+		s = s + word[i]
+		i = i + 1
+
+	if (i == n):
+		return word  # Lyhenne, jossa on vain kerakkeita.
+
+	while (i < n-1):
+###		sys.stdout.write (s + u" " + str(i) + u" " + str(n) + u"\n")
+		if ((word[i] in V) and (word[i+1] in V)):
+###			sys.stdout.write (u"Foo 1 " + str(i) + u" " + word[i] + word[i+1] + u"\n")
+			if ((i + 2 < n) and (word[i+1:i+3] in V2)):
+				# Re-aa-li.
+				s = s + word[i] + u"-" + word[i+1:i+3]
+				i = i + 3
+			elif (word[i:i+2] in V2):
+				s = s + word[i:i+2]
+				i = i + 2
+			else:
+				s = s + word[i] + u"-" + word[i+1]
+				i = i + 2
+		elif ((word[i] in C) and (word[i+1] in V)):
+			if ((len(s) > 0) and (s[-1] != u"-") and (has_vowel(s))):
+				s = s + u"-"
+			s = s + word[i]
+			i = i + 1
+		elif ((word[i] in C) and (word[i+1] in C)):
+			if (i+2 == n):  # Sanan lopussa on kaksi keraketta.
+				s = s + word[i:i+2]
+				i = i + 2
+			elif (word[i+2] in V):
+				s = s + word[i] + u"-"
+				i = i + 1
+			else:
+				s = s + word[i]
+				i = i + 1
+		elif (word[i] in V):
+			if ((i > 2) and (word[i-2:i] in V2)):
+				s = s + u"-" + word[i]
+			else:
+				s = s + word[i]
+			i = i + 1
+		if (i+1 == n):
+			if ((s[-1] in V) and (word[i] == V)):
+				if (s[-1] + word[i] in V2):
+					s = s + word[i]
+				else:
+					s = u"-" + word[i]
+			else:
+				s = s + word[i]
+			i = i + 1
+	
+	return s
+
+
+# Palautetaan sanassa olevien tavujen määrä.
+#
+def number_of_syllabels(word):
+	n = 1
+	s = hyphenate(word)
+	for c in s:
+		if (c == u"-"):
+			n = n + 1
+	return n;
 
 
 def handle_word(main_vocabulary,vocabulary_files,word):
@@ -110,9 +237,10 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
-#		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
+##		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
+##		sys.stdout.write(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
-#		sys.stdout.write (u"Huu " + str(voikko_infclass) + u" " + str(alku) + u" " + str(jatko) + u" " + wordform + u"\n")
+##		sys.stdout.write (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass) + u"\n")
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
@@ -124,7 +252,112 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, u"#Malaga class not found for (%s, %s)\n" \
 			                   % (wordform, voikko_infclass))
 			continue
+#		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
+#		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
+#				   generate_lex_common.get_structure(altform, malaga_word_class))
+#		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
+
+		nsyl = number_of_syllabels(wordform)
+
+		alku2 = u""
+		jatko2 = u""
+		wordform2 = u""
+		s = u""
+		
+		# Kolmitavuiset, perusmuodossaan O(i)ttAA-loppuiset sanat
+		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
+		#
+		if ((jatko == u"alittaa") and (nsyl == 3)):
+			p = rx_ammottaa_kirjoittaa.match(wordform)
+			if (p != None):
+				jatko = u"kirjoittaa"
+				jatko2 = u"kirjoittaa"
+				
+				g = p.groups()
+				if (g[1][1] == u"i"):
+					alku2 = g[0] + g[1][0] + u"t"   # Kirjoittaa => kirjottaa.
+				else:
+					alku2 = g[0] + g[1][0] + u"it"  # Ammottaa => ammoittaa.
+				wordform2 = alku2 + g[2]
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#				sys.stdout.write ("Aa1 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+		#
+		# Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
+		#
+		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2)):
+			p = rx_ammottaa.match(wordform)
+			q = rx_kirjoittaa.match(wordform)
+			if (p != None):
+				jatko = u"kirjoittaa"
+				jatko2 = jatko
+				
+				g = p.groups()
+				alku = g[0] + g[1][0] + u"t"
+				alku2 = g[0] + g[1][0] + u"it"
+				wordform2 = alku2 + g[2]
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#				sys.stdout.write ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+			elif (q != None):
+				jatko = u"kirjoittaa"
+				jatko2 = jatko
+				
+				g = q.groups()
+				alku = g[0] + g[1][0] + u"it"
+				alku2 = g[0] + g[1][0] + u"t"
+				wordform2 = alku2 + g[2]
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#				sys.stdout.write ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+			elif (jatko == u"ammottaa"):
+				jatko = u"kirjoittaa"
+				alku = alku + u"t"
+			else:
+				jatko = u"alittaa"
+				alku = alku + u"t"
+		#
+		# Kolmitavuiset nuolaista-tyyppiset sanat
+		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
+		#
+		elif ((jatko == u"nuolaista") and (nsyl == 3)):
+			p = rx_nuolaista_alku.match(wordform)
+			if (p != None):
+				g = p.groups()
+				alku2 = g[0] + u"s"
+				jatko2 = jatko
+				wordform2 = alku2 + wordform[-2:]
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#				sys.stdout.write("N1 " + wordform2 + u" " + alku2 + u"\n")
+			else:
+				alku2 = alku + u"s"
+				jatko2 = jatko
+				alku = alku + u"is"
+				wordform2 = alku2 + wordform[-2:]
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#				sys.stdout.write("N2 " + wordform2 + u" " + alku2 + u"\n")
+		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
+			jatko = u"ajaa"
+#		elif ((wordform == u"hän") and (jatko == u"hän")):
+#			alku = u"hä"
+#		elif (jatko == u"yö_yksikkö"):
+#			jatko = u"yö"
+#		elif (jatko == u"saattaa"):
+#			jatko = u"maattaa"
+#		elif (jatko in [u"asiakas", u"avokas"]):
+#			jatko = u"iäkäs"
+#		elif (jatko == u"varas"):
+#			jatko = u"vilkas"
+
+		# Tulostetaan.
+
+#		sys.stdout.write("Wor1 " + wordform + u"\n")
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
-		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
-				   generate_lex_common.get_structure(altform, malaga_word_class))
+			% (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
+			   generate_lex_common.get_structure(altform, malaga_word_class))
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
+
+		if (len(wordform2) > 0):
+#			sys.stdout.write("Wor1 " + wordform + u"\n")
+#			sys.stdout.write("Wor2 " + wordform2 + u"\n")
+			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
+				% (wordform2, alku2, malaga_word_class, jatko2, malaga_vtype, malaga_flags,
+				   generate_lex_common.get_structure(altform, malaga_word_class), s)
+			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)

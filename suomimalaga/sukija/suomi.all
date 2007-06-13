@@ -71,6 +71,9 @@ allo_rule generate_allos ($tietue1):
 #                       "];");
 
 #define $a := transmit ($tietue1);
+#if ($tietue1.perusmuoto /= nil) then
+#  define $b := transmit ("Tavutus2 " + $tietue1.perusmuoto + " " + tavutus($tietue1.perusmuoto));
+#end;
 
   if ($malli = sukija) then
     if ($tietue1.jatko_sukija /= nil) then
@@ -120,98 +123,6 @@ allo_rule generate_allos ($tietue1):
       $tietuelista := <$tietue1, $tietue2>;
     end;
 
-
-    # Kolmitavuiset nuolaista-tyyppiset sanat
-    # tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
-    #
-    # Alku-kenttä pitäisi korjata, kun generoidaan xml-tiedostoa tai siitä sanastoa.
-    #
-    if ((nuolaista in $tietue1.jatko) and ($tavujen_lkm = 3)) then
-      define $tietue2 := $tietue1;
-      if ($tietue1.alku matches ".+is") then
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-        $tietue2.alku := substring ($tietue1.alku, 1, 3R) + "s";
-        $tietue2.perusmuoto := $tietue2.alku + "t" + A($tietue1);
-        $tietuelista := <$tietue1, $tietue2>;
-      else
-        $tietue1.alku :=+ "is";
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-        $tietue2.alku := substring ($tietue1.alku, 1, 3R) + "s";
-        $tietue2.perusmuoto := $tietue2.alku + "t" + A($tietue1);
-        $tietuelista := <$tietue1, $tietue2>;
-      end;
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-    end;
-
-
-    # Kolmitavuiset O(i)ttAA-loppuiset sanat, jotka taipuvat kuten alittaa,
-    # tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
-    #
-    if ((alittaa in $tietue1.jatko) and ($tavujen_lkm = 3)) then
-      if ($tietue1.perusmuoto matches ".*" : $alku, "[oö]t" : $keskiosa, "t(aa|ää)" : $loppu) then
-        #
-        # Ammottaa => ammoittaa, ammo(i)ttua, ammo(i)tella, ammo(i)ttautua.
-        #
-        $tietue1.jatko := <kirjoittaa>;
-        define $tietue2 := $tietue1;
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-        $tietue2.alku := $alku + substring($keskiosa,1) + "it";
-        $tietue2.perusmuoto := $tietue2.alku + $loppu;
-        $tietuelista := <$tietue1, $tietue2>;
-      end;
-      if ($tietue1.perusmuoto matches ".*" : $alku, "[oö]it" : $keskiosa, "t(aa|ää)" : $loppu) then
-        #
-        # Kirjoittaa => kirjottaa, kirjo(i)ttua, kirjo(i)tella, kirjo(i)ttautua.
-        #
-        $tietue1.jatko := <kirjoittaa>;
-        define $tietue2 := $tietue1;
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-        $tietue2.alku := $alku + substring($keskiosa,1,1) + "t";
-        $tietue2.perusmuoto := $tietue2.alku + $loppu;
-        $tietuelista := <$tietue1, $tietue2>;
-      end;
-    end;
-
-    # Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
-    # Tämä pitäisi oikeastaan tehdä, kun generoidaan koodia xml-tiedostosta.
-    #
-    if (((ammottaa in $tietue1.jatko) or (kirjoittaa in $tietue1.jatko)) and
-        ($tavujen_lkm greater 2)) then
-      if ($tietue1.perusmuoto matches ".*" : $alku, "[oö]t" : $keskiosa, "t(aa|ää)" : $loppu) then
-        $tietue1.jatko := <kirjoittaa>;
-        $tietue1.alku := $alku + substring($keskiosa,1) + "t";
-        define $tietue2 := $tietue1;
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-        $tietue2.alku := $alku + substring($keskiosa,1) + "it";
-        $tietue2.perusmuoto := $tietue2.alku + $loppu;
-        $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-      elseif ($tietue1.perusmuoto matches ".*" : $alku, "[oö]it" : $keskiosa, "t(aa|ää)" : $loppu) then
-        $tietue1.jatko := <kirjoittaa>;
-        $tietue1.alku := $alku + substring($keskiosa,1) + "it";
-        define $tietue2 := $tietue1;
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-        $tietue2.alku := $alku + substring($keskiosa,1) + "t";
-        $tietue2.perusmuoto := $tietue2.alku + $loppu;
-        $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-      elseif (ammottaa in $tietue1.jatko) then
-        $tietue1.jatko := <kirjoittaa>;
-        $tietue1.alku :=+ "t";
-        $tietuelista := <$tietue1>;
-#define $a := transmit ($tietue1);
-      else
-        $tietue1.jatko := <alittaa>;
-        $tietue1.alku :=+ "t";
-#        define $tietue2 := kirjoittautua ($tietue1);
-#        $tietuelista := <$tietue1, $tietue2>;
-        $tietuelista := <$tietue1>;
-#define $a := transmit ($tietue1);
-      end;
-    end;
 
     if (asiakas in $tietue1.jatko) then
       $tietue1.jatko := <iäkäs>;
@@ -14328,6 +14239,8 @@ subrule taivutus2 ($sanatietue, $lisä, $jatko, $tietue, $alku):
       end;
       return $result;
     else
+#      define $a := transmit($alku);
+#      define $b := transmit($lisä);
       return <[alku: $alku + $lisä]
               + ($sanatietue - alku - jatko)
               + [jatko: $jatko]
