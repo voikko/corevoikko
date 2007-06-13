@@ -125,6 +125,7 @@
 [perusmuoto: "korte", alku: "kort", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "käydä", alku: "kä", luokka: teonsana, jatko: <käydä>, äs: ä];
+[perusmuoto: "edeskäydä", alku: "edeskä", luokka: teonsana, jatko: <käydä>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "kääntää", alku: "kään", luokka: teonsana, jatko: <rakentaa>, äs: ä];
 [perusmuoto: "laidun", alku: "lai", luokka: nimisana, jatko: <laidun>, äs: a];
 [perusmuoto: "lapsi", alku: "la", luokka: nimisana, jatko: <lapsi>, äs: a];
