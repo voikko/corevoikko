@@ -144,18 +144,10 @@ allo_rule generate_allos ($tietue1):
     # liene mahdollista ennen kuin Voikko-versio siirtyy käyttämään
     # taivutuskaavojen esimerkkisanoista generoitua koodia.
     #
-    if ((hän in $tietue1.jatko) and ($tietue1.alku = "hän")) then
-      $tietue1.alku := "hä";
-      $tietuelista := <$tietue1>;
-    end;
-    if (yö_yksikkö in $tietue1.jatko) then
-      $tietue1.jatko := <yö>;
-      $tietuelista := <$tietue1>;
-    end;
-    if (saattaa in $tietue1.jatko) then
-      $tietue1.jatko := <maattaa>;
-      $tietuelista := <$tietue1>;
-    end;
+#    if (yö_yksikkö in $tietue1.jatko) then
+#      $tietue1.jatko := <yö>;
+#      $tietuelista := <$tietue1>;
+#    end;
     if ((asiakas in $tietue1.jatko) or (avokas in $tietue1.jatko)) then
       $tietue1.jatko := <iäkäs>;
       $tietuelista := <$tietue1>;
@@ -167,15 +159,6 @@ allo_rule generate_allos ($tietue1):
     if (varas in $tietue1.jatko) then
       $tietue1.jatko := <vilkas>;
       $tietuelista := <$tietue1>;
-    end;
-    if (seitsemän in $tietue1.jatko) then
-      if ($tietue1.alku matches ".*seitse": $alku, "m") then
-        $tietue1.alku := $alku;
-        $tietuelista := <$tietue1>;
-      elseif ($tietue1.alku matches ".*(kahdeks|yhdeks)") then
-        $tietue1.jatko := <kahdeksan>;
-        $tietuelista := <$tietue1>;
-      end;
     end;
     if ((vieras in $tietue1.jatko) and ($tietue1.perusmuoto matches ".*[lr]i[aä]s") and
         ($tietue1.luokka = laatusana)) then
@@ -3538,16 +3521,6 @@ allo_rule generate_allos ($tietue1):
         result $j.alku, $j - alku;
       end;
     end;
-  elseif (maattaa in $tietue.jatko) then
-    choose $i in kaivaa ($tietue, "t"+A($tietue), "e", A($tietue), O($tietue), "t"+O($tietue))
-                 + muistella ($tietue, "t", "");
-    if (value_type($i) = record) then
-      result $i.alku, $i - alku;
-    else
-      foreach $j in $i:
-        result $j.alku, $j - alku;
-      end;
-    end;
   elseif (palaa in $tietue.jatko) then
     choose $i in kaivaa ($tietue, A($tietue), "e", A($tietue), O($tietue), O($tietue));
     if (value_type($i) = record) then
@@ -3560,6 +3533,16 @@ allo_rule generate_allos ($tietue1):
   elseif (raataa in $tietue.jatko) then
     choose $i in kaivaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d"+O($tietue), "t"+O($tietue))
                  + muistella ($tietue, "t", "d");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (saattaa in $tietue.jatko) then
+    choose $i in kaivaa ($tietue, "t"+A($tietue), "e", A($tietue), O($tietue), "t"+O($tietue))
+                 + muistella ($tietue, "t", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else

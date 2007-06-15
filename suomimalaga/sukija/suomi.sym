@@ -754,9 +754,9 @@ kaivaa;     # => Kaivella, kaivattaa.
   jakaa;
   kapsaa;   # Ei => kapsella.
   lappaa;
-  maattaa;
   palaa;
-  raataa;   # => raadella, raadanta.
+  raataa;   # => Raadella, raadanta.
+  saattaa;  # => Saatella.
 haastaa;
   kaihtaa;
   laittaa;
@@ -951,5 +951,4 @@ lukusanan_jälkiliite;
 # Nämä pitää vaihtaa Sukija-version taivutuskaavoihin.
 asiakas; # iäkäs
 avokas;  # iäkäs
-saattaa; # maattaa
 varas;   # vilkas

@@ -51,6 +51,6 @@ antaa    antaa   ta ne na no to  %muistella("t","n") %punottaa("nat")
 jakaa    antaa   ka e  a  o  ko  %muistella("k","")
 kapsaa   kaivaa  a  e  a  o  o
 lappaa   kaivaa  pa e  a  o  po
-maattaa  kaivaa  ta e  a  o  to  %muistella("t","")
 palaa    kaivaa  a  e  a  o  o
 raataa   kaivaa  ta de da do to  %muistella("t","d")
+saattaa  kaivaa  ta e  a  o  to  %muistella("t","")

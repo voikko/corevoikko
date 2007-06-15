@@ -335,8 +335,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 #				sys.stdout.write("N2 " + wordform2 + u" " + alku2 + u"\n")
 		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
 			jatko = u"ajaa"
-#		elif ((wordform == u"hän") and (jatko == u"hän")):
-#			alku = u"hä"
 #		elif (jatko == u"yö_yksikkö"):
 #			jatko = u"yö"
 #		elif (jatko == u"saattaa"):

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006 - 2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #                 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
@@ -52,10 +52,13 @@
 [perusmuoto: "neljä", alku: "nelj", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <koira>, äs: ä];
 [perusmuoto: "viisi", alku: "vii", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <susi>, äs: ä];
 [perusmuoto: "kuusi", alku: "kuu", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <susi>, äs: a];
-[perusmuoto: "seitsemän", alku: "seitsem", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä];
-[perusmuoto: "kahdeksan", alku: "kahdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: a];
-[perusmuoto: "yhdeksän", alku: "yhdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä];
-[perusmuoto: "kymmenen", alku: "kymmen", luokka: lukusana, lukutyyppi: perusluku, alaluokka: kymmenen, jatko: <kymmenen>, äs: ä];
+[perusmuoto: "seitsemän", alku: "seitsem", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "kahdeksan", alku: "kahdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "yhdeksän",  alku: "yhdeks",  luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "seitsemän", alku: "seitse",  luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <seitsemän>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kahdeksan", alku: "kahdeks", luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <kahdeksan>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "yhdeksän",  alku: "yhdeks",  luokka: lukusana, lukutyyppi: perusluku, alaluokka: yksiyhdeksän, jatko: <kahdeksan>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kymmenen",  alku: "kymmen",  luokka: lukusana, lukutyyppi: perusluku, alaluokka: kymmenen, jatko: <kymmenen>, äs: ä];
 
 # Yksitoista, ..., yhdeksäntoista.
 [perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a];
