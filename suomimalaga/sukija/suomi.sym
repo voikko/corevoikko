@@ -566,8 +566,9 @@ suo;
   yö;   # Vain yksikkö, monikko on erikseen sanastossa.
 bébé;
 
-tuohi;
+tuohi;   # Tuohi, tuohen.
   meri;  # Merta, meressä.
+  neiti; # Neiti, neiden (astevaihtelu).
 lohi;
 lahti;
 lumi;
@@ -575,11 +576,8 @@ tuomi;
 niemi;
 pieni;
 nuori;
-susi;    # => Susinen.
-  käsi;  # => Kätinen.
-  vesi;  # => Vesinen, vetinen.
-tosi;    # => Totuus.  Totena.
-  täysi; # => Täyteys. Täytenä, täynnä.
+susi;
+tosi;
 hirsi;
 jälsi;
 kansi;

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,122 +46,98 @@
 
 
 nimentö
-          ve+si+
+          nei+ti+
 
 omistusliite
-          ve+te+ni
+          nei+te+ni
 
 omanto_n
-          ve+de+n
+          nei+de+n
 
 osanto_ttA
-          ve++ttä
+          nei++ttä
 
 olento_nA
-          ve+te+nä
+          nei+te+nä
+          nei+n+nä
 
 tulento_ksi
-          ve+de+ksi
+          nei+de+ksi
 
 sisäolento_ssA
-          ve+de+ssä
+          nei+de+ssä
 
 sisäeronto_stA
-          ve+de+stä
+          nei+de+stä
 
 sisätulento_Vn
-          ve+te+en
+          nei+te+en
 
 sisätulento_hVn
-          ve+te+hen  vanha_h
+          nei+te+hen  vanha_h
 
 ulko_olento_llA
-          ve+de+llä
+          nei+de+llä
 
 ulkoeronto_ltA
-          ve+de+ltä
+          nei+de+ltä
 
 ulkotulento_lle
-          ve+de+lle
+          nei+de+lle
 
 vajanto_ttA
-          ve+de+ttä
+          nei+de+ttä
 
 nimentö_t
-          ve+de+t
+          nei+de+t
 
 omanto_ien
-          ve+s+ien
+          nei+t+ien
 
 omanto_ten
-          ve+t+ten
+          nei+t+ten
 
 osanto_iA
-          ve+s+iä
+          nei+t+iä
 
 olento_inA
-          ve+s+inä
+          nei+t+inä
 
 tulento_iksi
-          ve+s+iksi
+          nei+d+iksi
 
 sisäolento_issA
-          ve+s+issä
+          nei+d+issä
 
 sisäeronto_istA
-          ve+s+istä
+          nei+d+istä
 
 sisätulento_iin
-          ve+s+iin
+          nei+t+iin
 
 sisätulento_ihin
-          ve+s+ihin  vanha_h
+          nei+t+ihin  vanha_h
 
 ulko_olento_illA
-          ve+s+illä
+          nei+d+illä
 
 ulkoeronto_iltA
-          ve+s+iltä
+          nei+d+iltä
 
 ulkotulento_ille
-          ve+s+illä
+          nei+d+ille
 
 vajanto_ittA
-          ve+s+ittä
+          nei+d+ittä
 
 seuranto_ine
-          ve+s+ine
+          nei+t+ine
 
 keinonto_in
-          ve+s+in
-
-kerronto_sti
-          uu+de+sti
-
-voittoaste
-          uu+de+mpi
-
-yliaste
-          uu+s+in
-
-johdin_inen
-          ve+s+inen
-          ve+t+inen
+          nei+d+in
 
 johdin_ittain
-          ve+s+ittäin
-
-johdin_lAinen
-          ve+si+läinen
-
-johdin_llinen
-          ve+de+llinen
-
-johdin_mAinen
-          ve+si+mäinen
+          nei+d+ittäin
 
 johdin_tOn
-          ve+de+tön
-
-johdin_UUs
-          uu+t+uus
+          nei+de+tön

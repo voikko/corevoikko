@@ -611,6 +611,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "nomia", alku: "nomi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "nomi", alku: "nom", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "nominen", alku: "nomi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+[perusmuoto: "noominen", alku: "noomi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa, ei_voikko>];
 
 [perusmuoto: "pedia", alku: "pedi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "pedi", alku: "ped", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];

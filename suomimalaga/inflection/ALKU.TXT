@@ -177,14 +177,6 @@ allo_rule generate_allos ($tietue1):
         $tietuelista := <$tietue1>;
       end;
     end;
-    if (($tietue1.perusmuoto in <"kausi", "käsi">) and (susi in $tietue1.jatko)) then
-      $tietue1.jatko := <käsi>;
-      $tietuelista := <$tietue1>;
-    end;
-    if (($tietue1.perusmuoto in <"vuosi">) and (susi in $tietue1.jatko)) then
-      $tietue1.jatko := <vesi>;
-      $tietuelista := <$tietue1>;
-    end;
     if ((vieras in $tietue1.jatko) and ($tietue1.perusmuoto matches ".*[lr]i[aä]s") and
         ($tietue1.luokka = laatusana)) then
       $tietue1.jatko := <utelias>;
