@@ -245,15 +245,20 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	enum spellresult sres;
 	if (nchars == 0) return VOIKKO_SPELL_OK;
 	if (nchars > LIBVOIKKO_MAX_WORD_CHARS) return VOIKKO_INTERNAL_ERROR;
+	ENTER_V
 	
 	nword = voikko_normalise(word, nchars);
-	if (nword == 0) return VOIKKO_INTERNAL_ERROR;
+	if (nword == 0) {
+		EXIT_V
+		return VOIKKO_INTERNAL_ERROR;
+	}
 	nchars = wcslen(nword);
 	
 	if (voikko_options.ignore_numbers) {
 		for (i = 0; i < nchars; i++) {
 			if (iswdigit(nword[i])) {
 				free(nword);
+				EXIT_V
 				return VOIKKO_SPELL_OK;
 			}
 		}
@@ -261,12 +266,14 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	caps = voikko_casetype(nword, nchars);
 	if (voikko_options.ignore_uppercase && caps == CT_ALL_UPPER){
 		free(nword);
+		EXIT_V
 		return VOIKKO_SPELL_OK;
 	}
 	
 	buffer = malloc((nchars + 1) * sizeof(wchar_t));
 	if (buffer == 0) {
 		free(nword);
+		EXIT_V
 		return VOIKKO_INTERNAL_ERROR;
 	}
 
@@ -297,6 +304,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 		}
 		free(nword);
 		free(buffer);
+		EXIT_V
 		return result;
 	}
 	

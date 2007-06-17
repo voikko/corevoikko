@@ -366,8 +366,12 @@ char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 		return hyphenation;
 	}
 	
+	ENTER_V
 	hyphenations = voikko_split_compounds(word, wlen, &dot_removed);
-	if (hyphenations == 0) return 0;
+	if (hyphenations == 0) {
+		EXIT_V
+		return 0;
+	}
 	
 	/*i=0; while (hyphenations[i] != 0) printf("hyph='%s'\n", hyphenations[i++]);*/
 	i = 0;
@@ -377,6 +381,7 @@ char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 	hyphenation = voikko_intersect_hyphenations(hyphenations);
 	if (hyphenation == 0) {
 		free(hyphenations);
+		EXIT_V
 		return 0;
 	}
 
@@ -384,6 +389,7 @@ char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 	while (hyphenations[i] != 0) free(hyphenations[i++]);
 	free(hyphenations);
 	/*printf("hyphenation = '%s'\n", hyphenation);*/
+	EXIT_V
 	return hyphenation;
 }
 

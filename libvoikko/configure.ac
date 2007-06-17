@@ -88,6 +88,11 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
   AC_MSG_RESULT([no])
 ])
 
+dnl Windows specific settings
+if test x$build_os == xmingw32; then
+  LIBLDFLAGSWIN="-Wl,--output-def,libvoikko-1.def"
+fi
+AC_SUBST(LIBLDFLAGSWIN)
 
 dnl Functions
 AC_FUNC_MALLOC

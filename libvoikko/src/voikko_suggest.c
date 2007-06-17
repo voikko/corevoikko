@@ -401,13 +401,18 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	wlen = wcslen(word);
 	if (wlen <= 1 || wlen > LIBVOIKKO_MAX_WORD_CHARS) return 0;
 	
+	ENTER_V
 	nword = voikko_normalise(word, wlen);
-	if (nword == 0) return 0;
+	if (nword == 0) {
+		EXIT_V
+		return 0;
+	}
 	wlen = wcslen(nword);
 	
 	if (voikko_options.ignore_dot) {
 		if (wlen == 2) {
 			free(nword);
+			EXIT_V
 			return 0;
 		}
 		if (nword[wlen-1] == L'.') {
@@ -419,12 +424,14 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	suggestions = calloc(MAX_SUGGESTIONS * 3 + 1, sizeof(wchar_t *));
 	if (suggestions == 0) {
 		free(nword);
+		EXIT_V
 		return 0;
 	}
 	prios = malloc(MAX_SUGGESTIONS * 3 * sizeof(int));
 	if (prios == 0) {
 		free(suggestions);
 		free(nword);
+		EXIT_V
 		return 0;
 	}
 	
@@ -442,6 +449,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		free(prios);
 		free(nword);
 		if (add_dots) voikko_suggest_add_dots(suggestions);
+		EXIT_V
 		return suggestions;
 	}
 	if (voikko_options.suggestion_type == ST_OCR) {
@@ -463,6 +471,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		free(suggestions);
 		free(prios);
 		free(nword);
+		EXIT_V
 		return 0;
 	}
 	
@@ -511,6 +520,7 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	
 	free(nword);
 	if (add_dots) voikko_suggest_add_dots(suggestions);
+	EXIT_V
 	return suggestions;
 }
 

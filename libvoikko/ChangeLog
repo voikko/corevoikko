@@ -1,3 +1,11 @@
+2007-06-17 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Generate libvoikko-1.def on Windows to enable
+	  dynamic linking of libvoikko-1.dll with code
+	  generated using MSVC.
+	* Set Finnish locale on Windows to ensure that
+	  character case conversions work correctly.
+
 2007-05-07 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Hyphenating "vast'edes" as "vast'e-des" is ugly

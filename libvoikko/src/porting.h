@@ -41,8 +41,13 @@ char	*nl_langinfo(nl_item);
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
 #define WIN32
 #define INTERNAL_CHARSET "UCS-2-INTERNAL"
+#include <locale.h>
+#define ENTER_V char*enter_v_origl=setlocale(LC_CTYPE,0);setlocale(LC_CTYPE,"fin");
+#define EXIT_V setlocale(LC_CTYPE,enter_v_origl);
 #else
 #define INTERNAL_CHARSET "WCHAR_T"
+#define ENTER_V
+#define EXIT_V
 #endif
 
 #endif
