@@ -19,21 +19,21 @@
 # KAIKKI TÄHÄN TIEDOSTOON LISÄTTÄVÄT SANAT ON LISÄTTÄVÄ MYÖS JOUKAHAISEEN
 # TAIVUTUSLUOKALLA "poikkeava"!
 
-[perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamukolme", alku: "aamukolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamuseitsemän", alku: "aamuseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamukahdeksan", alku: "aamukahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
+[perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamukolme", alku: "aamukolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamuseitsemän", alku: "aamuseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamukahdeksan", alku: "aamukahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
 
-[perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltakolme", alku: "iltakolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltaseitsemän", alku: "iltaseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltakahdeksan", alku: "iltakahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
-[perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
+[perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltakolme", alku: "iltakolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltaseitsemän", alku: "iltaseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltakahdeksan", alku: "iltakahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
 
 [perusmuoto: "Adrianmeri", alku: "Adrianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
@@ -53,7 +53,7 @@
 [perusmuoto: "business", alku: "business", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "censeo", alku: "censeo", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "ceterum", alku: "ceterum", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "Châlons-sur-Marne", alku: "Châlons-sur-Marne", luokka: paikannimi, jatko: <parfait>, äs: a, rakenne: "=ipppppp-=ppp-=ipppp", tiedot: <ei_voikko>]; # Taivutus todennäköisesti väärin
+[perusmuoto: "Châlons-sur-Marne", alku: "Châlons-sur-Marne", luokka: paikannimi, jatko: <parfait>, äs: a, rakenne: "=ipppppp-=ppp-=ipppp"]; # Taivutus todennäköisesti väärin
 [perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Eddie", alku: "Eddie", luokka: etunimi, jatko: <nalle>, äs: ä];
