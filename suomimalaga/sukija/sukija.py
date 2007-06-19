@@ -44,6 +44,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
                                  (None,u'(.*O)tellA',u'ilotella')]),
         (u'koiras', u'ws', [(None,u'(.*A)s',u'koiras')]),
         (u'laittaa', u'sw', [(u'tt',u'(.*t)tAA',u'laittaa')]),
+	(u'neiti', u'sw', [(u't',u'(.*)ti',u'neiti')]),
         (u'nuori', u'-', [(None,u'(.*C)i',u'nuori')]),
         (u'paahtaa', u'sw', [(u't',u'(.*)tAA',u'paahtaa')]),
         (u'paistaa', u'sw', [(None,u'(.*C)AA',u'paistaa')]),
@@ -203,6 +204,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		voikko_infclass = u"kaihtaa-av1"
 	elif voikko_infclass == u"laittaa":
 		voikko_infclass = u"laittaa-av1"
+	elif voikko_infclass == u"neiti":
+		voikko_infclass = u"neiti-av1"
 	elif voikko_infclass == u"paahtaa":
 		voikko_infclass = u"paahtaa-av1"
 	elif voikko_infclass == u"taittaa":
@@ -237,10 +240,10 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
-##		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
-##		sys.stdout.write(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
+		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
+		sys.stdout.write(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
-##		sys.stdout.write (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass) + u"\n")
+		sys.stdout.write (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass) + u"\n")
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
