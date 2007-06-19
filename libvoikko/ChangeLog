@@ -1,3 +1,11 @@
+2007-06-19 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add exported functions for freeing the memory
+	  allocated for result structures. This is needed
+	  in environments where multiple C runtime libraries
+	  are used in one process.
+	* Increase version numbers for 1.5
+
 2007-06-17 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Generate libvoikko-1.def on Windows to enable

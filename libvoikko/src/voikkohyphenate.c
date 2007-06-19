@@ -76,7 +76,7 @@ void hyphenate_word(int handle, char * word) {
 	*hyphenatedptr = '\0';
 	printf("%s\n", hyphenated_word);
 	free(hyphenated_word);
-	free(result);
+	voikko_free_hyphenate(result);
 }
 
 
@@ -101,7 +101,7 @@ int main(int argc, char ** argv) {
 	for (i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
 	}
-	const char * voikko_error = voikko_init_with_path(&handle, "fi_FI", 0, path);
+	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", 0, path);
 
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);

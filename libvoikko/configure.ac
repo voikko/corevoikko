@@ -18,7 +18,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, U
 
 dnl General options for autoconf
 AC_PREREQ(2.60)
-AC_INIT([libvoikko],[1.4.1],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[1.5],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 
@@ -32,7 +32,7 @@ AC_PROG_LIBTOOL
 AM_MAINTAINER_MODE
 
 dnl Default compiler settings
-CFLAGS="$CFLAGS -Wall -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
+CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 
 # FIXME: the following is wrong (it should be possible to change this when running make)
 if test ${prefix} = "NONE"

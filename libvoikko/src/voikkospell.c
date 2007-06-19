@@ -61,9 +61,8 @@ void check_word(int handle, char * word) {
 				for (i = 0; suggestions[i] != 0; i++) {
 					if (space || (!space && strchr (suggestions[i], ' ') == 0))
 						printf ("%c%s", word_separator, suggestions[i]);
-					free(suggestions[i]);
 				}
-				free(suggestions);
+				voikko_free_suggest_cstr(suggestions);
 			}
 		}
 		printf ("\n");
@@ -77,9 +76,8 @@ void check_word(int handle, char * word) {
 		if (suggestions) {
 			for (i = 0; suggestions[i] != 0; i++) {
 				printf("S: %s\n", suggestions[i]);
-				free(suggestions[i]);
 			}
-			free(suggestions);
+			voikko_free_suggest_cstr(suggestions);
 		}
 	}
 }
@@ -109,7 +107,7 @@ int main(int argc, char ** argv) {
 		}
 		else if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
 	}
-	const char * voikko_error = voikko_init_with_path(&handle, "fi_FI", cache_size, path);
+	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", cache_size, path);
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
 		free(line);

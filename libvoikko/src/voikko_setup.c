@@ -337,3 +337,21 @@ int voikko_check_file(const char * name) {
  #endif // WIN32
 #endif // HAVE_GETPWUID_R
 }
+
+void voikko_free_suggest_ucs4(wchar_t ** suggest_result) {
+	if (suggest_result) {
+		for (wchar_t ** p = suggest_result; *p; p++) free(*p);
+		free(suggest_result);
+	}
+}
+
+void voikko_free_suggest_cstr(char ** suggest_result) {
+	if (suggest_result) {
+		for (char ** p = suggest_result; *p; p++) free(*p);
+		free(suggest_result);
+	}
+}
+
+void voikko_free_hyphenate(char * hyphenate_result) {
+	free(hyphenate_result);
+}

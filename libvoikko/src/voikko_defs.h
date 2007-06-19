@@ -63,5 +63,10 @@ VOIKKOEXPORT char * voikko_hyphenate_cstr(int handle, const char * word);
 
 VOIKKOEXPORT char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
 
+VOIKKOEXPORT void voikko_free_suggest_ucs4(wchar_t ** suggest_result);
+
+VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result);
+
+VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result);
 
 #endif

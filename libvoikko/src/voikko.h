@@ -244,6 +244,24 @@ char * voikko_hyphenate_cstr(int handle, const char * word);
  */
 char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
 
+/**
+ * Frees the memory allocated for spelling suggestions.
+ * @param suggest_result spelling suggestions
+ */
+void voikko_free_suggest_ucs4(wchar_t ** suggest_result);
+
+/**
+ * Frees the memory allocated for spelling suggestions.
+ * @param suggest_result spelling suggestions
+ */
+void voikko_free_suggest_cstr(char ** suggest_result);
+
+/**
+ * Frees the memory allocated for hyphenation results.
+ * @param hyphenate_result hyphenation result
+ */
+void voikko_free_hyphenate(char * hyphenate_result);
+
 END_C_DECLS
 #endif
 
