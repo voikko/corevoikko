@@ -564,6 +564,31 @@ define @jatko_y3 := <liitesana, loppu>;
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3,
               tiedot: <murre>];
 
+[alku: "avi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "evi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "ivi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "ovi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "uvi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "yvi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "ävi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3,
+              tiedot: <murre>];
+[alku: "övi", luokka: kestämän_tekijäpääte_y3_Vvi, luku: yksikkö, tekijä: 3,
+              tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3,
+              tiedot: <murre>];
+
 [alku: "pi", luokka: kestämän_tekijäpääte_y3_pi, luku: yksikkö, tekijä: 3,
              tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3,
              tiedot: <murre>];

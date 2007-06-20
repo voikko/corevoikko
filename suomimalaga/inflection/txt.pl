@@ -281,7 +281,7 @@ foreach my $file (@ARGV) {
           print $first, $head, ": ", $s;
           if ($head eq "kestämän_tekijäpääte_y3") {
             #
-            # Päätteet pi/vi: punoa, hän punoo => hän punoopi/punovi.
+            # Päätteet pi/vi: punoa, hän punoo => hän punoopi/punoovi/punovi.
             # Sanoille, joiden pääte on sulautunut vartaloon, on
             # vain pääte pi. Esim. voida, hän voi => hän voipi.
             #
@@ -301,11 +301,13 @@ foreach my $file (@ARGV) {
 
               print $first, $head, "_vi: ",  $s_not_y3;  # Punovi.
               print $first, $head, "_Vpi: ", $s_not_y3;  # Punoopi.
+              print $first, $head, "_Vvi: ", $s_not_y3;  # Punoovi.
               print $first, $head, "_pi: " , $s_y3;      # Voipi.
             }
             else {
               print $first, $head, "_vi: ",  $s;   # Punovi.
               print $first, $head, "_Vpi: ", $s;   # Punoopi.
+              print $first, $head, "_Vvi: ", $s;   # Punoovi.
             }
           }
         }

@@ -175,10 +175,11 @@ luokka;
 
   # Tositavan kestämän ja kertoman tekijäpäätteet.
   #
-  kestämän_tekijäpääte_y1;    # Yksikön ensimmäinen, toinen ja kolmas tekijä.
+  kestämän_tekijäpääte_y1;     # Yksikön ensimmäinen, toinen ja kolmas tekijä.
   kestämän_tekijäpääte_y2;
   kestämän_tekijäpääte_y3;
-  kestämän_tekijäpääte_y3_Vpi; # Murteissa: puhu+upi, teke+epi
+  kestämän_tekijäpääte_y3_Vpi; # Murteissa: puhu+upi, teke+epi.
+  kestämän_tekijäpääte_y3_Vvi; # Murteissa: puhu+uvi, teke+evi.
   kestämän_tekijäpääte_y3_pi;  # Murteissa: saa+pi.
   kestämän_tekijäpääte_y3_vi;  # Murteissa: puhuvi, tekevi.
   kestämän_tekijäpääte_m1;     # Monikon ensimmäinen, toinen ja kolmas tekijä.

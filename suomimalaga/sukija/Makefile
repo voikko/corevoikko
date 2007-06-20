@@ -61,7 +61,7 @@ mcopy:
 	mdel a:${SM}.tar.bz2; mcopy ${SM}.tar.bz2 a:; mdir
 
 bcopy:
-	cp *_l *.pro ~/.voikko
+	cp *_l *.pro ~/.sukija
 
 koea:
 	cat ../../sanat.koe | malaga -m suomi.pro >ka
