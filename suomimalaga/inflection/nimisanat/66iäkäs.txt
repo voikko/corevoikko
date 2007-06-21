@@ -59,6 +59,7 @@ osanto_tA
 
 olento_nA
           iäk+kää+nä
+          iäk+äs+nä  ei_voikko
 
 tulento_ksi
           iäk+kää+ksi

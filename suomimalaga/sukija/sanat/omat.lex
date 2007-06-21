@@ -620,10 +620,6 @@
 [perusmuoto: "kätinen", alku: "käti", luokka: laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "vuotinen", alku: "vuoti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kautinen", alku: "kauti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "ylimysneiti", alku: "ylimysnei", luokka: nimisana, jatko: <neiti>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "paimenneiti", alku: "paimennei", luokka: nimisana, jatko: <neiti>, äs: ä, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "hovineiti", alku: "hovinei", luokka: nimisana, jatko: <neiti>, äs: ä, rakenne: "=pppp=ppppp"];
-#[perusmuoto: "neiti", alku: "nei", luokka: nimisana, jatko: <neiti>, äs: ä, rakenne: "==ppppp"];
 
 
 ##############
