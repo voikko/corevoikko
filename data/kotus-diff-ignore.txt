@@ -767,3 +767,4 @@ individuaali
 instrumentaali
 intensiivi
 toteemi
+dubata
