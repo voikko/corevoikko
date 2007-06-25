@@ -90,7 +90,7 @@
 [perusmuoto: "Mustameri", alku: "Mustattamere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppp=pppp"];
 
 # Monikko taitaa olla tarpeeton
-#[perusmuoto: "Mustameri", alku: "Mustatmeret", luokka: paikannimi, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ippppp=pppp"];
+#[perusmuoto: "Mustameri", alku: "Mustatmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppp=pppp"];
 #[perusmuoto: "Mustameri", alku: "Mustatmere",  luokka: paikannimi, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
 #[perusmuoto: "Mustameri", alku: "Mustienmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ipppppp=pppp"];
 #[perusmuoto: "Mustameri", alku: "Mustienmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ipppppp=pppp"];
@@ -124,7 +124,7 @@
 [perusmuoto: "Punainenmeri", alku: "Punaisettamere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppppp=pppp"];
 
 # Monikko taitaa olla terpeeton
-#[perusmuoto: "Punainenmeri", alku: "Punaisetmeret", luokka: paikannimi, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ippppppp=pppp"];
+#[perusmuoto: "Punainenmeri", alku: "Punaisetmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppppp=pppp"];
 #[perusmuoto: "Punainenmeri", alku: "Punaisetmere",  luokka: paikannimi, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ippppppp=pppp"];
 #[perusmuoto: "Punainenmeri", alku: "Punaisienmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ipppppppp=pppp"];
 #[perusmuoto: "Punainenmeri", alku: "Punaistenmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ipppppppp=pppp"];
@@ -158,7 +158,7 @@
 [perusmuoto: "Tyynimeri", alku: "Tyynettämere", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppp=pppp"];
 
 # Monikko taitaa olla tarpeeton
-#[perusmuoto: "Tyynimeri", alku: "Tyynetmeret", luokka: paikannimi, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ippppp=pppp"];
+#[perusmuoto: "Tyynimeri", alku: "Tyynetmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppp=pppp"];
 #[perusmuoto: "Tyynimeri", alku: "Tyynetmere",  luokka: paikannimi, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ippppp=pppp"];
 #[perusmuoto: "Tyynimeri", alku: "Tyynienmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ipppppp=pppp"];
 #[perusmuoto: "Tyynimeri", alku: "Tyyntenmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ipppppp=pppp"];
@@ -287,7 +287,7 @@
 [perusmuoto: "aavameri", alku: "aavallemere", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavattamere", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=pppp"];
 
-[perusmuoto: "aavameri", alku: "aavatmeret",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "aavameri", alku: "aavatmere",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavatmere",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavojenmer",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "aavameri", alku: "aavojenmer",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -321,7 +321,7 @@
 [perusmuoto: "hienosokeri", alku: "hienollesokeri",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "hienosokeri", alku: "hienottasokeri",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "hienosokeri", alku: "hienotsokerit",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "hienosokeri", alku: "hienojensoker",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "hienosokeri", alku: "hienojensokere",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
@@ -355,7 +355,7 @@
 [perusmuoto: "isojako", alku: "isollejao",   luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "isojako", alku: "isottajao",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "isojako", alku: "isotjaot",    luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "isojako", alku: "isotjao",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isojako", alku: "isotjako",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isojako", alku: "isojenjako",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "isojako", alku: "isojajako",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=pppp"];
@@ -387,7 +387,7 @@
 [perusmuoto: "isomasto", alku: "isollemasto",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isottamasto",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isomasto", alku: "isotmastot",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isomasto", alku: "isotmasto",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isotmasto",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isojenmasto",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isomasto", alku: "isojamasto",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -419,7 +419,7 @@
 [perusmuoto: "isopurje", alku: "isollepurjee", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isottapurjee", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isopurje", alku: "isotpurjeet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isopurje", alku: "isotpurjee",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isotpurjee",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isojenpurje",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isopurje", alku: "isojapurje",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -452,7 +452,7 @@
 [perusmuoto: "isorokko", alku: "isolleroko",   luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isottaroko",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isorokko", alku: "isotrokot",    luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isorokko", alku: "isotroko",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isotrokko",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isojenrokko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isorokko", alku: "isojarokko",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -484,7 +484,7 @@
 [perusmuoto: "isorumpu", alku: "isollerummu",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isottarummu",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isorumpu", alku: "isotrummut",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isorumpu", alku: "isotrummu",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isotrumpu",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isojenrumpu",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isorumpu", alku: "isojarumpu",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -516,7 +516,7 @@
 [perusmuoto: "isosisar", alku: "isollesisare", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isottasisare", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isosisar", alku: "isotsisaret",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isosisar", alku: "isotsisare",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isotsisare",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isojensisar",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isosisar", alku: "isojensisar",  luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: a, rakenne: "=pppppp=ppppp"];
@@ -549,7 +549,7 @@
 [perusmuoto: "isosisko", alku: "isollesisko",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isottasisko",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "isosisko", alku: "isotsiskot",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isosisko", alku: "isotsisko",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isotsisko",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isojensisko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isosisko", alku: "isojasisko",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=ppppp"];
@@ -567,7 +567,7 @@
 
 # {{{2 isotaivot (51)
 
-[perusmuoto: "isotaivot", alku: "isotaivot",    luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "isotaivot", alku: "isotaivo",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isotaivot", alku: "isotaivo",     luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "isotaivot", alku: "isojenaivo",   luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "isotaivot", alku: "isoja-aivo",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp-=ppppp"];
@@ -599,7 +599,7 @@
 [perusmuoto: "isovarvas", alku: "isollevarpaa", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isottavarpaa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppppp"];
 
-[perusmuoto: "isovarvas", alku: "isotvarpaat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp"];
+[perusmuoto: "isovarvas", alku: "isotvarpaa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isotvarpaa",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isojenvarpa",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "isovarvas", alku: "isojavarpa",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppp=pppppp"];
@@ -632,7 +632,7 @@
 [perusmuoto: "isoveli", alku: "isollevelje", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "isoveli", alku: "isottavelje", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "isoveli", alku: "isotveljet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "isoveli", alku: "isotvelje",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoveli", alku: "isotvelje",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoveli", alku: "isojenveli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "isoveli", alku: "isojenvelj",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppp"];
@@ -665,7 +665,7 @@
 [perusmuoto: "isoviha", alku: "isolleviha",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "isoviha", alku: "isottaviha",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "isoviha", alku: "isotvihat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "isoviha", alku: "isotviha",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoviha", alku: "isotviha",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "isoviha", alku: "isojenviho",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "isoviha", alku: "isojaviho",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppp=pppp"];
@@ -697,7 +697,7 @@
 [perusmuoto: "kevytsarja", alku: "kevyellesarja",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyettäsarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "kevytsarja", alku: "kevyetsarjat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "kevytsarja", alku: "kevyetsarja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyetsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "kevytsarja", alku: "kevyittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
@@ -731,7 +731,7 @@
 [perusmuoto: "kuivakakku", alku: "kuivallekaku", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuivattakaku", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "kuivakakku", alku: "kuivatkakut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "kuivakakku", alku: "kuivatkaku",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuivatkakku",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuivienkakku", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "kuivakakku", alku: "kuiviakakku",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppp"];
@@ -763,7 +763,7 @@
 [perusmuoto: "kuivamuona", alku: "kuivallemuona", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivattamuona", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "kuivamuona", alku: "kuivatmuonat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "kuivamuona", alku: "kuivatmuona",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivatmuona",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivienmuon",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "kuivamuona", alku: "kuivienmuona",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -797,7 +797,7 @@
 [perusmuoto: "kultainennoutaja", alku: "kultaisellenoutaja", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaisettanoutaja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppppp=ppppppp"];
 
-[perusmuoto: "kultainennoutaja", alku: "kultaisetnoutajat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppppp=ppppppp"];
+[perusmuoto: "kultainennoutaja", alku: "kultaisetnoutaja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaisetnoutaja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaistennoutaj",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppppp=ppppppp"];
 [perusmuoto: "kultainennoutaja", alku: "kultaisiennoutaj",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppppp=ppppppp"];
@@ -834,7 +834,7 @@
 [perusmuoto: "lämminruoka", alku: "lämpimälleruoa", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimättäruoa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
-[perusmuoto: "lämminruoka", alku: "lämpimätruoat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "lämminruoka", alku: "lämpimätruoa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimätruoka",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimienruok",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimienruoka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppppp=ppppp"];
@@ -863,7 +863,7 @@
 [perusmuoto: "lämminruoka", alku: "lämpimälleruua", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimättäruua", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=ppppp"];
 
-[perusmuoto: "lämminruoka", alku: "lämpimätruuat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "lämminruoka", alku: "lämpimätruua",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimiksiruu",  luokka: nimisana, luku: monikko, jatko: <tulento_iksi>, äs: a, rakenne: "=pppppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimissäruu",  luokka: nimisana, luku: monikko, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppppppppp=ppppp"];
 [perusmuoto: "lämminruoka", alku: "lämpimistäruu",  luokka: nimisana, luku: monikko, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppppppppp=ppppp"];
@@ -889,7 +889,7 @@
 [perusmuoto: "matalameri", alku: "matalallemere", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalattamere", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "matalameri", alku: "matalatmeret",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "matalameri", alku: "matalatmere",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalatmere",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "matalameri", alku: "matalienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppppp=pppp"];
@@ -923,7 +923,7 @@
 [perusmuoto: "mustaherukka", alku: "mustalleheruka", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustattaheruka", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "mustaherukka", alku: "mustatherukat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaherukka", alku: "mustatheruka",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustatherukka",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustienherukko", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "mustaherukka", alku: "mustienherukka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=pppppppp"];
@@ -962,7 +962,7 @@
 [perusmuoto: "mustaleipä", alku: "mustalleleivä", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustattaleivä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "mustaleipä", alku: "mustatleivät",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustaleipä", alku: "mustatleivä",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustatleipä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustienleip",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustaleipä", alku: "mustienleipä",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: ä, rakenne: "=ppppppp=ppppp"];
@@ -996,7 +996,7 @@
 [perusmuoto: "mustaleski", alku: "mustalleleske", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustattaleske", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "mustaleski", alku: "mustatlesket",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustaleski", alku: "mustatleske",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustatleske",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustienlesk",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustaleski", alku: "mustialesk",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
@@ -1028,7 +1028,7 @@
 [perusmuoto: "mustamaija", alku: "mustallemaija", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustattamaija", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "mustamaija", alku: "mustatmaijat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamaija", alku: "mustatmaija",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustatmaija",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustienmaijo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustamaija", alku: "mustienmaija",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1062,7 +1062,7 @@
 [perusmuoto: "mustamakkara", alku: "mustallemakkara", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustattamakkara", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppp"];
 
-[perusmuoto: "mustamakkara", alku: "mustatmakkarat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustamakkara", alku: "mustatmakkara",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustatmakkara",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustienmakkara",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "mustamakkara", alku: "mustainmakkara",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppppp"];
@@ -1096,7 +1096,7 @@
 [perusmuoto: "mustamies", alku: "mustallemiehe", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustattamiehe", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "mustamies", alku: "mustatmiehet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "mustamies", alku: "mustatmiehe",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustatmiehe",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustienmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "mustamies", alku: "mustienmies",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -1129,7 +1129,7 @@
 [perusmuoto: "mustamulta", alku: "mustallemulla", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "mustamulta", alku: "mustattamulla", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "mustamulta", alku: "mustatmullat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustamulta", alku: "mustatmulla",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamulta", alku: "mustatmulta",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustamulta", alku: "mustienmult",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustamulta", alku: "mustienmulta",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1163,7 +1163,7 @@
 [perusmuoto: "mustapekka", alku: "mustallepeka", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "mustapekka", alku: "mustattapeka", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "mustapekka", alku: "mustatpekat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "mustapekka", alku: "mustatpeka",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustapekka", alku: "mustatpekka",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "mustapekka", alku: "mustienpekko", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "mustapekka", alku: "mustainpekka", luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1196,7 +1196,7 @@
 [perusmuoto: "mustapippuri", alku: "mustallepippuri", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustattapippuri", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppp"];
 
-[perusmuoto: "mustapippuri", alku: "mustatpippurit",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustienpippur",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustienpippure",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppp"];
@@ -1230,7 +1230,7 @@
 [perusmuoto: "mustaraamattu", alku: "mustalleraamatu", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppppppp"];
 [perusmuoto: "mustaraamattu", alku: "mustattaraamatu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "mustaraamattu", alku: "mustatraamatut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "mustaraamattu", alku: "mustatraamatu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaraamattu", alku: "mustatraamattu",  luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "mustaraamattu", alku: "mustienraamattu", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "mustaraamattu", alku: "mustiaraamattu",  luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppppp"];
@@ -1262,7 +1262,7 @@
 [perusmuoto: "mustaviinimarja", alku: "mustalleviinimarja", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp=ppppp"];
 [perusmuoto: "mustaviinimarja", alku: "mustattaviinimarja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp=ppppp"];
 
-[perusmuoto: "mustaviinimarja", alku: "mustatviinimarjat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp=ppppp"];
+[perusmuoto: "mustaviinimarja", alku: "mustatviinimarja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp=ppppp"];
 [perusmuoto: "mustaviinimarja", alku: "mustatviinimarja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp=ppppp"];
 [perusmuoto: "mustaviinimarja", alku: "mustienviinimarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp=ppppp"];
 [perusmuoto: "mustaviinimarja", alku: "mustainviinimarja",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp=ppppp"];
@@ -1295,7 +1295,7 @@
 [perusmuoto: "nuoriemäntä", alku: "nuorelle-emännä", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp-=pppppp"];
 [perusmuoto: "nuoriemäntä", alku: "nuorettaemännä",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "nuoriemäntä", alku: "nuoretemännät",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuoriemäntä", alku: "nuoretemännä",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "nuoriemäntä", alku: "nuoretemäntä",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "nuoriemäntä", alku: "nuorienemänt",    luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "nuoriemäntä", alku: "nuortenemänt",    luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
@@ -1330,7 +1330,7 @@
 [perusmuoto: "nuoriherra", alku: "nuorelleherra", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "nuoriherra", alku: "nuorettaherra", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "nuoriherra", alku: "nuoretherrat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuoriherra", alku: "nuoretherra",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "nuoriherra", alku: "nuoretherra",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "nuoriherra", alku: "nuorienherro",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "nuoriherra", alku: "nuortenherro",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1365,7 +1365,7 @@
 [perusmuoto: "nuori-isäntä", alku: "nuorelleisännä",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "nuori-isäntä", alku: "nuorettaisännä",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "nuori-isäntä", alku: "nuoretisännät",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "nuori-isäntä", alku: "nuoretisännä",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "nuori-isäntä", alku: "nuoretisäntä",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "nuori-isäntä", alku: "nuorienisänt",    luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "nuori-isäntä", alku: "nuortenisänt",    luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
@@ -1400,7 +1400,7 @@
 [perusmuoto: "nuorikarja", alku: "nuorellekarja", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "nuorikarja", alku: "nuorettakarja", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "nuorikarja", alku: "nuoretkarjat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "nuorikarja", alku: "nuoretkarja",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "nuorikarja", alku: "nuorienkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "nuorikarja", alku: "nuortenkarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1435,7 +1435,7 @@
 [perusmuoto: "nuorimies", alku: "nuorellemiehe", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "nuorimies", alku: "nuorettamiehe", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "nuorimies", alku: "nuoretmiehet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "nuorimies", alku: "nuoretmiehe",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "nuorimies", alku: "nuorienmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "nuorimies", alku: "nuortenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -1470,7 +1470,7 @@
 [perusmuoto: "nuoripari", alku: "nuorellepari", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "nuoripari", alku: "nuorettapari", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "nuoripari", alku: "nuoretparit",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "nuoripari", alku: "nuoretpari",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "nuoripari", alku: "nuorienpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "nuoripari", alku: "nuortenpari",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppp"];
@@ -1503,7 +1503,7 @@
 [perusmuoto: "omakuva", alku: "omallekuva", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "omakuva", alku: "omattakuva", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=pppp"];
 
-[perusmuoto: "omakuva", alku: "omatkuvat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "omakuva", alku: "omatkuva",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "omakuva", alku: "omatkuva",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "omakuva", alku: "omienkuv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "omakuva", alku: "omiakuv",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=pppp=pppp"];
@@ -1535,7 +1535,7 @@
 [perusmuoto: "omatunto", alku: "omalletunno", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "omatunto", alku: "omattatunno", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppp=ppppp"];
 
-[perusmuoto: "omatunto", alku: "omattunnot",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp"];
+[perusmuoto: "omatunto", alku: "omattunno",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "omatunto", alku: "omattunto",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "omatunto", alku: "omientunto",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "omatunto", alku: "omiatunto",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppp=ppppp"];
@@ -1567,7 +1567,7 @@
 [perusmuoto: "pahahenki", alku: "pahallehenge", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "pahahenki", alku: "pahattahenge", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=ppppp"];
 
-[perusmuoto: "pahahenki", alku: "pahathenget",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "pahahenki", alku: "pahathenge",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "pahahenki", alku: "pahathenke",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "pahahenki", alku: "pahojenhenk",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "pahahenki", alku: "pahojahenk",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=pppppp=ppppp"];
@@ -1599,7 +1599,7 @@
 [perusmuoto: "palavakivi", alku: "palavallekive", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "palavakivi", alku: "palavattakive", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "palavakivi", alku: "palavatkivet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "palavakivi", alku: "palavatkive",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "palavakivi", alku: "palavatkive",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "palavakivi", alku: "palavienkiv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "palavakivi", alku: "palaviakiv",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -1631,7 +1631,7 @@
 [perusmuoto: "palavapensas", alku: "palavallepensaa", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppppp=pppppp"];
 [perusmuoto: "palavapensas", alku: "palavattapensaa", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=pppppp"];
 
-[perusmuoto: "palavapensas", alku: "palavatpensaat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppp=pppppp"];
+[perusmuoto: "palavapensas", alku: "palavatpensaa",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "palavapensas", alku: "palavatpensaa",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "palavapensas", alku: "palavienpensa",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "palavapensas", alku: "palaviapensa",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppppp=pppppp"];
@@ -1663,7 +1663,7 @@
 [perusmuoto: "palavarakkaus", alku: "palavallerakkaude", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 [perusmuoto: "palavarakkaus", alku: "palavattarakkaude", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppppp"];
 
-[perusmuoto: "palavarakkaus", alku: "palavatrakkaudet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "palavarakkaus", alku: "palavatrakkaude",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "palavarakkaus", alku: "palavatrakkaute",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "palavarakkaus", alku: "palavienrakkauks",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppppp"];
 [perusmuoto: "palavarakkaus", alku: "palaviarakkauks",   luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: a, rakenne: "=ppppppp=ppppppp"];
@@ -1695,7 +1695,7 @@
 [perusmuoto: "pitkäperjantai", alku: "pitkälleperjantai", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkättäperjantai", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppppppp"];
 
-[perusmuoto: "pitkäperjantai", alku: "pitkätperjantait",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppppp"];
+[perusmuoto: "pitkäperjantai", alku: "pitkätperjantai",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkätperjantai",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkienperjanta",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppppp"];
 [perusmuoto: "pitkäperjantai", alku: "pitkiäperjanta",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppppp"];
@@ -1727,7 +1727,7 @@
 [perusmuoto: "pitkäsiima", alku: "pitkällesiima", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "pitkäsiima", alku: "pitkättäsiima", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "pitkäsiima", alku: "pitkätsiimat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "pitkäsiima", alku: "pitkätsiima",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "pitkäsiima", alku: "pitkätsiima",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "pitkäsiima", alku: "pitkiensiimo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "pitkäsiima", alku: "pitkäinsiima",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1746,7 +1746,7 @@
 
 # {{{2 pitkäthousut (51)
 
-[perusmuoto: "pitkäthousut", alku: "pitkäthousut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "pitkäthousut", alku: "pitkäthousu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "pitkäthousut", alku: "pitkienhousu",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "pitkäthousut", alku: "pitkiähousu",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=pppppp"];
@@ -1778,7 +1778,7 @@
 [perusmuoto: "puolikuu", alku: "puolellekuu", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppp"];
 [perusmuoto: "puolikuu", alku: "puolettakuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppp"];
 
-[perusmuoto: "puolikuu", alku: "puoletkuut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "puolikuu", alku: "puoletkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppp"];
 [perusmuoto: "puolikuu", alku: "puoletkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
 [perusmuoto: "puolikuu", alku: "puolienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
 [perusmuoto: "puolikuu", alku: "puoltenku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
@@ -1811,7 +1811,7 @@
 [perusmuoto: "puolikymmentä", alku: "puolellekymmene", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppppppp"];
 [perusmuoto: "puolikymmentä", alku: "puolettakymmene", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "puolikymmentä", alku: "puoletkymmenet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "puolikymmentä", alku: "puoletkymmene",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "puolikymmentä", alku: "puoletkymmene",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "puolikymmentä", alku: "puolienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "puolikymmentä", alku: "puoltenkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppppp"];
@@ -1846,7 +1846,7 @@
 [perusmuoto: "puolimatka", alku: "puolellematka", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "puolimatka", alku: "puolettamatka", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "puolimatka", alku: "puoletmatkat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "puolimatka", alku: "puoletmatka",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "puolimatka", alku: "puoletmatka",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "puolimatka", alku: "puolienmatko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "puolimatka", alku: "puoltenmatko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1881,7 +1881,7 @@
 [perusmuoto: "puolipäivä", alku: "puolellepäivä", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "puolipäivä", alku: "puolettapäivä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "puolipäivä", alku: "puoletpäivät",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "puolipäivä", alku: "puoletpäivä",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "puolipäivä", alku: "puoletpäivä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "puolipäivä", alku: "puolienpäiv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "puolipäivä", alku: "puoltenpäiv",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=ppppp"];
@@ -1916,7 +1916,7 @@
 [perusmuoto: "puolisataa", alku: "puolellesada", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "puolisataa", alku: "puolettasada", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "puolisataa", alku: "puoletsadat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "puolisataa", alku: "puoletsada",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "puolisataa", alku: "puoletsata",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "puolisataa", alku: "puoliensato",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "puolisataa", alku: "puoltensato",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -1951,7 +1951,7 @@
 [perusmuoto: "puoliväli", alku: "puolelleväli", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "puoliväli", alku: "puolettaväli", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppp"];
 
-[perusmuoto: "puoliväli", alku: "puoletvälit",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "puoliväli", alku: "puoletväli",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "puoliväli", alku: "puoletväli",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "puoliväli", alku: "puolienväli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "puoliväli", alku: "puoltenväli",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -1984,7 +1984,7 @@
 [perusmuoto: "puoliyö", alku: "puolelleyö", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pp"];
 [perusmuoto: "puoliyö", alku: "puolettayö", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pp"];
 
-[perusmuoto: "puoliyö", alku: "puoletyöt",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pp"];
+[perusmuoto: "puoliyö", alku: "puoletyö",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pp"];
 [perusmuoto: "puoliyö", alku: "puoletyö",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pp"];
 [perusmuoto: "puoliyö", alku: "puolienö",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: ä, rakenne: "=ppppppp=pp"];
 [perusmuoto: "puoliyö", alku: "puoltenö",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: ä, rakenne: "=ppppppp=pp"];
@@ -2017,7 +2017,7 @@
 [perusmuoto: "raitisilma", alku: "raittiilleilma",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppppp=pppp"];
 [perusmuoto: "raitisilma", alku: "raittiittailma",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppppp=pppp"];
 
-[perusmuoto: "raitisilma", alku: "raittiitilmat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "raitisilma", alku: "raittiitilma",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "raitisilma", alku: "raittiitilma",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "raitisilma", alku: "raittiidenilmo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=pppp"];
 [perusmuoto: "raitisilma", alku: "raittiittenilmo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppppp=pppp"];
@@ -2052,7 +2052,7 @@
 [perusmuoto: "raskassarja", alku: "raskaallesarja",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppppp=ppppp"];
 [perusmuoto: "raskassarja", alku: "raskaattasarja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppppp=ppppp"];
 
-[perusmuoto: "raskassarja", alku: "raskaatsarjat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "raskassarja", alku: "raskaatsarja",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "raskassarja", alku: "raskaidensarjo",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppppp=ppppp"];
 [perusmuoto: "raskassarja", alku: "raskaittensarjo", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppppp=ppppp"];
@@ -2088,7 +2088,7 @@
 [perusmuoto: "raskasvesi", alku: "raskaallevede",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "raskasvesi", alku: "raskaattavede",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "raskasvesi", alku: "raskaatvedet",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvesi", alku: "raskaatvede",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "raskasvesi", alku: "raskaatvete",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "raskasvesi", alku: "raskaidenves",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "raskasvesi", alku: "raskaittenves",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppp=pppp"];
@@ -2124,7 +2124,7 @@
 [perusmuoto: "raskasvety", alku: "raskaallevedy",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "raskasvety", alku: "raskaattavedy",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "raskasvety", alku: "raskaatvedyt",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "raskasvety", alku: "raskaatvedy",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "raskasvety", alku: "raskaatvety",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "raskasvety", alku: "raskaidenvety",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "raskasvety", alku: "raskaittenvety", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: ä, rakenne: "=pppppppppp=pppp"];
@@ -2158,7 +2158,7 @@
 [perusmuoto: "suorakulma", alku: "suorallekulma", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "suorakulma", alku: "suorattakulma", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "suorakulma", alku: "suoratkulmat",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "suorakulma", alku: "suoratkulma",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "suorakulma", alku: "suorienkulm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "suorakulma", alku: "suorienkulma",  luokka: nimisana, luku: monikko, jatko: <omanto_in>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -2191,7 +2191,7 @@
 [perusmuoto: "syvämeri", alku: "syvällemere", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "syvämeri", alku: "syvättämere", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=pppp"];
 
-[perusmuoto: "syvämeri", alku: "syvätmeret",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "syvämeri", alku: "syvätmere",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "syvämeri", alku: "syvätmere",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "syvämeri", alku: "syvienmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "syvämeri", alku: "syväinmer",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=pppp"];
@@ -2226,7 +2226,7 @@
 [perusmuoto: "särkynytsydän", alku: "särkyneellesydäme",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
 [perusmuoto: "särkynytsydän", alku: "särkyneettäsydäme",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
 
-[perusmuoto: "särkynytsydän", alku: "särkyneetsydämet",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppppp=ppppp"];
+[perusmuoto: "särkynytsydän", alku: "särkyneetsydäme",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppppp=ppppp"];
 [perusmuoto: "särkynytsydän", alku: "särkyneetsydäme",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppppp=ppppp"];
 [perusmuoto: "särkynytsydän", alku: "särkyneidensydäm",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppppp=ppppp"];
 [perusmuoto: "särkynytsydän", alku: "särkyneittensydäm",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppppp=ppppp"];
@@ -2261,7 +2261,7 @@
 [perusmuoto: "täysikuu", alku: "täydellekuu", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppp"];
 [perusmuoto: "täysikuu", alku: "täydettäkuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppp"];
 
-[perusmuoto: "täysikuu", alku: "täydetkuut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppp"];
+[perusmuoto: "täysikuu", alku: "täydetkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppp"];
 [perusmuoto: "täysikuu", alku: "täydetkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppp"];
 [perusmuoto: "täysikuu", alku: "täysienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppp"];
 [perusmuoto: "täysikuu", alku: "täysiäku",    luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppp"];
@@ -2293,7 +2293,7 @@
 [perusmuoto: "uusikuu", alku: "uudellekuu", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppp=ppp"];
 [perusmuoto: "uusikuu", alku: "uudettakuu", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppp"];
 
-[perusmuoto: "uusikuu", alku: "uudetkuut",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppp"];
+[perusmuoto: "uusikuu", alku: "uudetkuu",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppp=ppp"];
 [perusmuoto: "uusikuu", alku: "uudetkuu",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppp"];
 [perusmuoto: "uusikuu", alku: "uusienku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppp"];
 [perusmuoto: "uusikuu", alku: "uuttenku",   luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppp=ppp"];
@@ -2327,7 +2327,7 @@
 [perusmuoto: "uusivuosi", alku: "uudellevuode", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uudettavuode", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppppp"];
 
-[perusmuoto: "uusivuosi", alku: "uudetvuodet",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "uusivuosi", alku: "uudetvuode",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uudetvuote",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uusienvuos",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "uusivuosi", alku: "uuttenvuot",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: a, rakenne: "=pppppp=ppppp"];
@@ -2360,7 +2360,7 @@
 [perusmuoto: "vanhaemäntä", alku: "vanhalleemännä", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "vanhaemäntä", alku: "vanhattaemännä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "vanhaemäntä", alku: "vanhatemännät",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaemäntä", alku: "vanhatemännä",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "vanhaemäntä", alku: "vanhatemäntä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "vanhaemäntä", alku: "vanhojenemänt",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "vanhaemäntä", alku: "vanhainemänt",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
@@ -2395,7 +2395,7 @@
 [perusmuoto: "vanhaisäntä", alku: "vanhalleisännä", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "vanhaisäntä", alku: "vanhattaisännä", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "vanhaisäntä", alku: "vanhatisännät",  luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "vanhaisäntä", alku: "vanhatisännä",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "vanhaisäntä", alku: "vanhatisäntä",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "vanhaisäntä", alku: "vanhojenisänt",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "vanhaisäntä", alku: "vanhainisänt",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppp=pppppp"];
@@ -2430,7 +2430,7 @@
 [perusmuoto: "vanhakaupunki", alku: "vanhallekaupungi",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=pppppppp"];
 [perusmuoto: "vanhakaupunki", alku: "vanhattakaupungi",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "vanhakaupunki", alku: "vanhatkaupungit",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "vanhakaupunki", alku: "vanhatkaupungi",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "vanhakaupunki", alku: "vanhatkaupunki",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "vanhakaupunki", alku: "vanhojenkaupunki",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=pppppppp"];
 [perusmuoto: "vanhakaupunki", alku: "vanhainkaupunki",   luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=pppppppp"];
@@ -2463,7 +2463,7 @@
 [perusmuoto: "vanhapiika", alku: "vanhallepiia",   luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "vanhapiika", alku: "vanhattapiia",   luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "vanhapiika", alku: "vanhatpiiat",    luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapiika", alku: "vanhatpiia",     luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "vanhapiika", alku: "vanhatpiika",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "vanhapiika", alku: "vanhojenpiiko",  luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "vanhapiika", alku: "vanhainpiiko",   luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -2498,7 +2498,7 @@
 [perusmuoto: "vanhapoika", alku: "vanhallepoja",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "vanhapoika", alku: "vanhattapoja",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppppppp=ppppp"];
 
-[perusmuoto: "vanhapoika", alku: "vanhatpojat",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "vanhapoika", alku: "vanhatpoja",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "vanhapoika", alku: "vanhatpoika",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "vanhapoika", alku: "vanhojenpoik",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "vanhapoika", alku: "vanhainpoik",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppp"];
@@ -2533,7 +2533,7 @@
 [perusmuoto: "vierasmies", alku: "vieraallemiehe",  luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "vierasmies", alku: "vieraattamiehe",  luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
-[perusmuoto: "vierasmies", alku: "vieraatmiehet",   luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "vierasmies", alku: "vieraatmiehe",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "vierasmies", alku: "vieraidenmieh",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "vierasmies", alku: "vieraittenmieh",  luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppppppp=pppp"];
@@ -2573,7 +2573,7 @@
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: ""];
 #
-#[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <liitesana, loppu>, äs: a, rakenne: ""];
+#[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: monikko, jatko: <omanto_jen>, äs: a, rakenne: ""];
