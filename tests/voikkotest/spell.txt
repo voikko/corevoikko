@@ -367,6 +367,7 @@ saarrettiin # Kotus 57
 rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66
+lobbasi # Kotus 73
 kapsaa # Kotus 78
 !kapsan # Kotus 78
 !kapsat # Kotus 78
