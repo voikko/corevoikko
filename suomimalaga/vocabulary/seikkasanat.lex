@@ -626,6 +626,7 @@
 [perusmuoto: "sinällään", alku: "sinällään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sinänsä", alku: "sinänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sisäkkäin", alku: "sisäkkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "sisäänpäin", alku: "sisäänpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "siten", alku: "siten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sittemmin", alku: "sittemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sitten", alku: "sitten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -633,6 +634,8 @@
 [perusmuoto: "sittenkun", alku: "sittenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppp"];
 [perusmuoto: "sitäpaitsi", alku: "sitäpaitsi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
 [perusmuoto: "sitävastoin", alku: "sitävastoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "sivullepäin", alku: "sivullepäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "sivultapäin", alku: "sivultapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "sivumennen", alku: "sivumen", luokka: seikkasana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "sivumpana", alku: "sivum", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "sivuttain", alku: "sivuttain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
