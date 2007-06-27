@@ -961,8 +961,8 @@ end;
 # Sanoja, joilla voi tehdä paikannimiä etu-, suku-, tai paikannimistä.
 # Näiden on hyvä olla aakkosjärjestyksessä.
 #
-define @esp_loppuosa := <"joki", "katu", "kuja", "lahti", "niemi", "saari",
-                         "tie", "vaara", "vuori">;
+define @esp_loppuosa := <"joki", "järvi", "katu", "kuja", "lahti", "maa", "meri", "mäki", "niemi", "saari",
+                         "tie", "vaara", "virta", "vuori">;
 define @etunimi_loppuosa := <"kirkko", "päivä", "poika", "tytär">;
 
 
@@ -977,10 +977,33 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 #define $d := transmit (<"d"> + <$i>);
 
 
+  if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
+    return no;
+  end;
+
   # Erisnimet eivät voi olla yhdyssanojen osana.
   #
-  define $nimet := <etunimi, sukunimi, nimi>;  # Ei hyväksytä Maununtytärtä!
+  define $nimet := <etunimi, sukunimi, nimi>;
 #  define $nimet := <>;
+
+  define $n := length ($vasen);
+
+  if ($vasen.<1,perusmuoto> = "aito") and
+     ($oikea.luokka = paikannimi) then
+    return yes;
+  end;
+
+  foreach $k in length ($vasen):
+    if ($k greater 1) and
+       ($vasen.($i-1).luokka in <etunimi, sukunimi, paikannimi, nimi>) and
+       ($vasen.$i.luokka = johdin_lAinen) then
+      return yes;
+    end;
+  end;
+
+  if ($oikea.luokka = johdin_lAinen) then
+    return yes;
+  end;
 
   if (switch (malli) = voikko) then
     $nimet := <etunimi, sukunimi, paikannimi, nimi>;
@@ -1004,6 +1027,24 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     # kanssa yhdyssanassa ("Anna-niminen").
     #
     return yes;
+  end;
+
+  # Ei tunnisteta kahteen kertaan sanoja, jotka ovat sekä yleis- että erisnimiä.
+  #
+  if ((($vasen.$i.luokka in $nimet) and
+       ($vasen.$i.perusmuoto in <"Aho", "Alan", "Aro", "Aura", "Autio",
+                                 "Elo", "Halti", "Hanko", "Helmi", "Hovi", "Huhta",
+                                 "Ilma", "Ilta", "Impi",
+                                 "Kai", "Kallio", "Kangas", "Kari", "Koivu", "Kukka", "Kuokka",
+                                 "Kurki", "Kytö",
+                                 "Laakso", "Lehto", "Lempi", "Maa", "Malmi", "Manner", "Marja", "Meri",
+                                 "Niemi", "Pohja", "Raitio", "Ranta", "Rauha", "Ruusu",
+                                 "Salo", "Satu", "Sini", "Soini", "Somero", "Sulo",
+                                 "Taisto", "Taimi", "Tikka", "Toimi", "Toivo", "Tuisku", "Tuuli",
+                                 "Valta", "Vasara", "Viita">)) or
+      (($oikea.luokka in <paikannimi, sukunimi, nimi>) and
+       ($oikea.perusmuoto in <"Järvi", "Lahti", "Maa", "Meri", "Niemi", "Saari", "Virta">))) then
+    return no;
   end;
 
 
@@ -1031,6 +1072,12 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return yes;
   end;
 
+  # Hyväksytään sanat tyyppiä Washingtonkatu, siis erisnimi voi olla nimennössä.
+  #
+  if ($vasen.$i.luokka in $nimet) and ($oikea.perusmuoto in @esp_loppuosa) then
+    return yes;
+  end;
+
 # Ei tunnista esim. sanaa "berliininmakkara".
 #  if (($i greater_equal 2) and
 #      ($vasen.$i.luokka = sijapääte and $vasen.$i.sija = omanto_n) and
@@ -1041,11 +1088,14 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 #    return no;
 #  end;
 
+#define $a := transmit (<"Huuhaa."> + <length($vasen)>);
+
   if ($oikea.luokka in $nimet) then
     return no;
   else
     foreach $k in $vasen:
       if ($k.luokka in $nimet) then
+#define $ö := transmit ($k.perusmuoto);
         return no;
       end;
     end;
@@ -1083,7 +1133,29 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return no;
   else
 #define $a := transmit ("Huuhaa.");
-    define $taulukko := <
+
+    if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
+      return no;
+    elseif ($oikea.perusmuoto = "ilta") then
+      #
+      # Ei muotoja punais+ilta (punainen + ilta).
+      #
+      if (($vasen.$i.luokka = laatusana) and ($vasen.$i.perusmuoto matches ".*inen")) then
+        return no;
+      end;
+    elseif ($vasen.$i.perusmuoto /= nil) then
+      if ((substring($vasen.$i.perusmuoto,1R) matches @ääntiö) and
+          (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+        return (substring($vasen.$i.perusmuoto,1R) /= substring($oikea.perusmuoto,1));
+      end;
+    end;
+  end;
+  return yes;
+end;
+
+
+subrule yhdyssanataulukko ($eka, $toka):
+  define $taulukko := <
 #      <<"">,    <"">>,
       <<"agra">,            <"ari", "arka">>,
       <<"alanen">,          <"pää", "suka", "sukia", "suu", "tulo">>,
@@ -1105,9 +1177,11 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"elo">,             <"tee">>,
       <<"eri", "esi">,      <"koi">>,   # Eri+koi+sala, esi+kois- (esi + koi + inen).
       <<"esikoinen">,       <"uusi">>,  # Esikois+uutensa (esikois + uusi).
+      <<"eura">,            <"joki">>,  # On omana sana.
       <<"fakki", "suhta">,  <"utu">>,   # Fakki+utu+a, suhta+utu+a.
       <<"funktio">,   <"naali">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
+      <<"halti">,     <"joki">>,     # Halti+joiksi.
       <<"hara">,      <"voi", "voida", "vuo">>,
       <<"harras">,    <"teli">>,
       <<"heila">,     <"utu">>,
@@ -1131,7 +1205,8 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"karja">,     <"lainen">>,
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
-      <<"kemi">,      <"alli">>,
+      <<"kemi">,      <"alli", "joki">>,
+      <<"Kim">,       <"maa">>,
 ####      <<"koiras">,    <"euro">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"komi">,      <"teko">>,        # Komi+teoille.
@@ -1160,11 +1235,15 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"ope">,       <"reti">>,
       <<"oppinen">,   <"ääntö">>,
       <<"orto">,      <"peti">>,
+      <<"Osta">,      <"maa">>,
+      <<"Pal", "Pál">, <"joki", "maa", "meri">>,
       <<"peli">,      <"manni">>,
       <<"perin">,     <"tee">>,   # Perin+tee(llinen).
       <<"perso">,     <"nalli">>,
+      <<"pihla">,     <"joki">>,
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
       <<"polvinen">,  <"tuki">>,
+      <<"puh">,       <"tie">>,
       <<"punk">,      <"arka", "kari">>,
       <<"puoli">,     <"nainen">>,  # On oma sanansa.
       <<"puu">,       <"hai">>,
@@ -1179,6 +1258,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"rondo">,     <"letto">>,
       <<"rusi">,      <"koi", "noita">>,
       <<"salme">,     <"kivi", "oja", "perä", "suu">>,
+      <<"Sam">,       <"maa">>,
       <<"samainen">,  <"tuta">>,
       <<"samu">,      <"raita">>,
       <<"sankar">,    <"ien", "itara", "naida">>,  # Sankar+itarina. Sankar+nainen ei ole sankar+naida.
@@ -1197,6 +1277,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"tee">,       <"maa">>,    # Tee+maa+n.
       <<"terve">,     <"yty">>,
       <<"tie">,       <"tee", "tie", "toinen", "tokko">>,
+      <<"timo">,      <"tie">>,
       <<"toivo">,     <"malla">>,
       <<"tove">,      <"re", "reisi">>,
       <<"traditio">,  <"naali">>,
@@ -1216,29 +1297,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"yhtä", "yksi">, <"toinen", "toistaa">>,
       <<"äiti">,         <"nisä">>
     >;
-    if (yhdyssanataulukko ($vasen.$i.perusmuoto,
-                           $oikea.perusmuoto,
-                           $taulukko)) then
-      return no;
-    elseif ($oikea.perusmuoto = "ilta") then
-      #
-      # Ei muotoja punais+ilta (punainen + ilta).
-      #
-      if (($vasen.$i.luokka = laatusana) and ($vasen.$i.perusmuoto matches ".*inen")) then
-        return no;
-      end;
-    elseif ($vasen.$i.perusmuoto /= nil) then
-      if ((substring($vasen.$i.perusmuoto,1R) matches @ääntiö) and
-          (substring($oikea.perusmuoto,1) matches @ääntiö)) then
-        return (substring($vasen.$i.perusmuoto,1R) /= substring($oikea.perusmuoto,1));
-      end;
-    end;
-  end;
-  return yes;
-end;
 
-
-subrule yhdyssanataulukko ($eka, $toka, $taulukko):
   foreach $k in $taulukko:
     if (($eka in $k.1) and ($toka in $k.2)) then
       return yes;
@@ -1277,6 +1336,15 @@ end_rule loppu ($tietue):
   repeat while ($tietue.$j.luokka in <sijapääte, omistusliite>);
     $j :=- 1;
   end;
+
+
+  # Iloakaan ei ole ilo+Akaa+n.
+  #
+  if ($j greater 1) and ($tietue.$j.luokka = paikannimi) and
+     ($tietue.$j.perusmuoto = "Akaa") then
+    stop;
+  end;
+
 
   # Jotkut sanat eivät voi olla yhdyssanan jälkiosana.
   #

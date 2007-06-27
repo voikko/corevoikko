@@ -54,6 +54,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
         (u'taittaa', u'sw', [(u'tt',u'(.*t)tAA',u'taittaa')]),
         (u'tuomi', u'-', [(None,u'(.*V)mi',u'tuomi')]),
+	(u'uros', u'-', [(None,u'(.*)s',u'uros')]),
 	(u'veranta', u'sw', [(u'nt',u'(.*n)tA',u'veranta')]),
 	(u'vihanta', u'sw', [(u'nt',u'(.*n)tA',u'vihanta')]),
         (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
@@ -62,14 +63,24 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
 classmap = hfconv.modern_classmap
 classmap.extend(historical)
 
+pattern = u"^(?P<alku>.*)(?:" + \
+	  u"(?P<ammottaa>OttAA)|" + \
+          u"(?P<kirjoittaa>OittAA)|" + \
+          u"(?P<jaotus>OtUs)|" + \
+          u"(?P<aivoitus>OitUs)|" + \
+          u"(?P<nuolaista>AistA)|" + \
+          u"(?P<utelias_ankerias>[lr]iAs)|" + \
+          u"(?P<obligaatio>Caatio)|" + \
+          u"(?P<resoluutio>Cuutio)" + \
+          u")$"
 
-rx_ammottaa   = re.compile(u"(.*)([oö]t)(taa|tää)$")
-rx_kirjoittaa = re.compile(u"(.*)([oö]it)(taa|tää)$")
-rx_ammottaa_kirjoittaa = re.compile(u"(.*)([oö]i?t)(taa|tää)$")
-rx_nuolaista_alku = re.compile(u"(.*)is$")
-rx_utelias_ankerias_loppu = re.compile(u".*[lr]i[aä]s$")
-rx_aivoitus_jaotus = re.compile(u"(.+)([oö]i?t)([uy]s)$")
-rx_aatio_uutio = re.compile(u"(.*[bcdfghjklmnpqrstvwxzšžçðñþß])(aatio|uutio)$")
+pattern = pattern.replace(u"A", u"[aä]")
+pattern = pattern.replace(u"O", u"[oö]")
+pattern = pattern.replace(u"U", u"[uy]")
+pattern = pattern.replace(u"C", u"[bcdfghjklmnpqrstvwxzšžçðñþß]")
+rx = re.compile(pattern, re.IGNORECASE)
+
+#print pattern
 
 # Jaetaan sana tavuihin. Esim.
 # hyphenate(u"valkoinen") = val-koi-nen.
@@ -262,6 +273,15 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 
 		nsyl = number_of_syllabels(wordform)
 
+		m = rx.match(wordform)
+		d = None
+
+		if (m != None):
+			d = m.groupdict()
+#			g = m.groups()
+#			for i in range(len(g)):
+#				if (g[i] != None):
+#					sys.stdout.write(wordform + u" " + str(i) + u" " + g[i] + u"\n")
 		alku2 = u""
 		jatko2 = u""
 		wordform2 = u""
@@ -274,50 +294,49 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		jatko4 = u""
 		wordform4 = u""
 
+		alku5 = u""
+		jatko5 = u""
+		wordform5 = u""
+
 		s = u""
 		
 		# Kolmitavuiset, perusmuodossaan O(i)ttAA-loppuiset sanat
 		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
 		#
-		if ((jatko == u"alittaa") and (nsyl == 3)):
-			p = rx_ammottaa_kirjoittaa.match(wordform)
-			if (p != None):
-				jatko = u"kirjoittaa"
-				jatko2 = u"kirjoittaa"
-				
-				g = p.groups()
-				if (g[1][1] == u"i"):
-					alku2 = g[0] + g[1][0] + u"t"   # Kirjoittaa => kirjottaa.
-				else:
-					alku2 = g[0] + g[1][0] + u"it"  # Ammottaa => ammoittaa.
-				wordform2 = alku2 + g[2]
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#				sys.stdout.write ("Aa1 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+		if ((jatko == u"alittaa") and (nsyl == 3) and
+		    (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
+			jatko = u"kirjoittaa"
+			jatko2 = u"kirjoittaa"
+			
+			if (d['kirjoittaa'] != None):
+				alku2 = wordform[0:-5] + u"t"   # Kirjoittaa => kirjottaa.
+			elif (d['ammottaa'] != None):
+				alku2 = wordform[0:-4] + u"it"  # Ammottaa => ammoittaa.
+			else:
+				sys.stdout.write(u"Wordform=" + wordform + u"\n")
+				abort()
+			wordform2 = alku2 + wordform[-3:]
+			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#			sys.stdout.write ("Aa1 " + s + u" w=" + wordform2 + u" a=" + alku2 + u" A=" + d['alku'] + u"\n")
 		#
 		# Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
 		#
 		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2)):
-			p = rx_ammottaa.match(wordform)
-			q = rx_kirjoittaa.match(wordform)
-			if (p != None):
+			if ((d != None) and (d['ammottaa'] != None)):
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 				jatko = u"kirjoittaa"
 				jatko2 = jatko
-				
-				g = p.groups()
-				alku = g[0] + g[1][0] + u"t"
-				alku2 = g[0] + g[1][0] + u"it"
-				wordform2 = alku2 + g[2]
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+				alku = wordform[0:-4] + u"t"
+				alku2 = wordform[0:-4] + u"it"
+				wordform2 = alku2 + wordform[-3:]
 #				sys.stdout.write ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
-			elif (q != None):
+			elif ((d != None) and (d['kirjoittaa'] != None)):
+				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 				jatko = u"kirjoittaa"
 				jatko2 = jatko
-				
-				g = q.groups()
-				alku = g[0] + g[1][0] + u"it"
-				alku2 = g[0] + g[1][0] + u"t"
-				wordform2 = alku2 + g[2]
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+				alku = wordform[0:-5] + u"it"
+				alku2 = wordform[0:-5] + u"t"
+				wordform2 = alku2 + wordform[-3:]
 #				sys.stdout.write ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
 			elif (jatko == u"ammottaa"):
 				jatko = u"kirjoittaa"
@@ -330,68 +349,66 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
 		#
 		elif ((jatko == u"nuolaista") and (nsyl == 3)):
-			p = rx_nuolaista_alku.match(wordform)
-			if (p != None):
-				g = p.groups()
-				alku2 = g[0] + u"s"
+			if ((d != None) and (d['nuolaista'] != None)):
+				alku = wordform[0:-4] + u"is"
+				alku2 = wordform[0:-4] + u"s"
 				jatko2 = jatko
 				wordform2 = alku2 + wordform[-2:]
 				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#				sys.stdout.write("N1 " + wordform2 + u" " + alku2 + u"\n")
+#				sys.stdout.write("N1 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
 			else:
 				alku2 = alku + u"s"
 				jatko2 = jatko
 				alku = alku + u"is"
 				wordform2 = alku2 + wordform[-2:]
 				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#				sys.stdout.write("N2 " + wordform2 + u" " + alku2 + u"\n")
+#				sys.stdout.write("N2 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
 		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
 			jatko = u"ajaa"
 		elif (jatko in [u"asiakas", u"avokas"]):
 			jatko = u"iäkäs"
 		elif (jatko == u"varas"):
 			jatko = u"vilkas"
-		elif ((jatko == u"vieras") and (rx_utelias_ankerias_loppu.match(wordform) != None)):
+		elif ((jatko == u"vieras") and (d != None) and (d['utelias_ankerias'] != None)):
 			jatko = u"utelias"
-		elif ((nsyl > 2) and (jatko == u"vastaus")):
+		elif ((nsyl > 2) and (jatko == u"vastaus") and
+		      (rx != None) and (d != None) and ((d['aivoitus'] != None) or (d['jaotus'] != None))):
 			#
 			# Aivoitus => aivotus. Jaotus => jaoitus.
 			#
-			p = rx_aivoitus_jaotus.match(wordform)
-			if (p != None):
-				g = p.groups()
-				if (g[1][1] == u"i"):
-					alku2 = g[0] + g[1][0] + u"t" + g[2][0]    # Aivoitus => aivotus.
-				else:
-					alku2 = g[0] + g[1][0] + u"it" + g[2][0]   # Jaotus => jaoitus.
-				jatko2 = jatko
-				wordform2 = alku2 + wordform[-1:]
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-		elif ((nsyl > 3) and (jatko == u"autio")):
+			if (d['aivoitus'] != None):
+				alku2 = wordform[:-4] + wordform[-3:-1]           # Aivoitus => aivotus.
+			else:
+				alku2 = wordform[:-3] + u"i" + wordform[-3:-1]    # Jaotus => jaoitus.
+			jatko2 = jatko
+			wordform2 = alku2 + wordform[-1:]
+			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+#			sys.stdout.write("J " + wordform2 + u" " + alku2 + u" " + s + u"\n")
+		elif ((nsyl > 3) and (jatko == u"autio") and
+		      (rx != None) and (d != None) and ((d['obligaatio'] != None) or (d['resoluutio'] != None))):
 			#
-			# Obligaatio => obligatsioni, obligatsiooni, obligatio.
-			# Revoluutio => revolutsioni, revolutsiooni, revolutio.
+			# Obligaatio => obligatsioni, obligatsiooni, obligatio, obligationi.
+			# Revoluutio => revolutsioni, revolutsiooni, revolutio, revolutioni.
 			# Tässä -ni ei ole omistusliite.
 			#
-			p = rx_aatio_uutio.match(wordform)
-			if (p != None):
-				g = p.groups()
-				alku2 = g[0] + g[1][0] + u"tsion"
-				jatko2 = u"paperi"
-				wordform2 = alku2 + "i"
+			alku2 = wordform[:-4] + u"tsion"      # Obligatsioni, revolutsioni.
+			jatko2 = u"paperi"
+			wordform2 = alku2 + u"i"
 				
-				alku3 = g[0] + g[1][0] + u"tsioon"
-				jatko3 = u"paperi"
-				wordform3 = alku3 + "i"
-				
-				alku4 = g[0] + g[1][1:]
-				jatko4 = jatko
-				wordform4 = alku4
-				
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-				
-
-
+			alku3 = wordform[:-4] + u"tsioon"     # Obligatsiooni, revolutsiooni.
+			jatko3 = u"paperi"
+			wordform3 = alku3 + u"i"
+			
+			alku4 = wordform[:-4] + wordform[-3:] # Obligatio, revolutio.
+			jatko4 = jatko
+			wordform4 = alku4
+			
+			alku5 = alku4 + u"n"                  # Obligationi, revolutioni.
+			jatko5 = u"paperi"
+			wordform5 = alku5 + u"i"
+			
+			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+		
 		# Tulostetaan.
 
 #		sys.stdout.write("Wor1 " + wordform + u"\n")
@@ -415,5 +432,11 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if (len(wordform4) > 0):
 			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
 				% (wordform4, alku4, malaga_word_class, jatko4, malaga_vtype, malaga_flags,
+				   generate_lex_common.get_structure(altform, malaga_word_class), s)
+			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
+
+		if (len(wordform5) > 0):
+			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
+				% (wordform5, alku5, malaga_word_class, jatko5, malaga_vtype, malaga_flags,
 				   generate_lex_common.get_structure(altform, malaga_word_class), s)
 			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
