@@ -768,3 +768,5 @@ instrumentaali
 intensiivi
 toteemi
 dubata
+kielilläpuhuminen
+palvelukseenastuminen
