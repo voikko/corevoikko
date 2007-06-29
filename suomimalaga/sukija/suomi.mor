@@ -1130,7 +1130,11 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     end;
   elseif (($vasen.$i.tiedot /= nil) and (ei_ysa in $vasen.$i.tiedot) and
           ($oikea.luokka in @nimisana + <nimi_laatusana>)) then
-    return no;
+    if ($i greater 1 and $vasen.$i.perusmuoto = "nomia") then
+       return yes;
+    else
+      return no;
+    end;
   else
 #define $a := transmit ("Huuhaa.");
 

@@ -600,26 +600,48 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "gami", alku: "gam", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "gaminen", alku: "gami", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
 
+[perusmuoto: "gaami", alku: "gaam", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa, ei_voikko>];
+[perusmuoto: "gaaminen", alku: "gaami", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa, ei_voikko>];
+
+
 [perusmuoto: "grafia", alku: "grafi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "grafi", alku: "graf", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "grafinen", alku: "grafi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "graafi", alku: "graaf", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa, ei_voikko>];
+[perusmuoto: "graafinen", alku: "graafi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa, ei_voikko>];
+
 
 [perusmuoto: "logia", alku: "logi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "logi", alku: "log", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "loginen", alku: "logi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ysj>];
 
+[perusmuoto: "loogi", alku: "loog", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa, ei_voikko>];
+[perusmuoto: "looginen", alku: "loogi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ysj, ei_voikko>];
+
+
 [perusmuoto: "nomia", alku: "nomi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "nomi", alku: "nom", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "nominen", alku: "nomi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "noomi", alku: "noom", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa, ei_voikko>];
 [perusmuoto: "noominen", alku: "noomi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa, ei_voikko>];
+
 
 [perusmuoto: "pedia", alku: "pedi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "pedi", alku: "ped", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "pedinen", alku: "pedi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
 
+[perusmuoto: "peedi", alku: "peed", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa, ei_voikko>];
+[perusmuoto: "peedinen", alku: "peedi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa, ei_voikko>];
+
+
 [perusmuoto: "sofia", alku: "sofi", luokka: nimisana, jatko: <karahka>, äs: a, tiedot: <siv, ei_ysa>];
 [perusmuoto: "sofi", alku: "sof", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa>];
 [perusmuoto: "sofinen", alku: "sofi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa>];
+
+[perusmuoto: "soofi", alku: "soof", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen, siv, ei_ysa, ei_voikko>];
+[perusmuoto: "soofinen", alku: "soofi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <siv, ei_ysa, ei_voikko>];
 
 
 ######################################################

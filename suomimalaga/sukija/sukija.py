@@ -63,7 +63,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
 classmap = hfconv.modern_classmap
 classmap.extend(historical)
 
-pattern = u"^(?P<alku>.*)(?:" + \
+pattern = u"^(?P<alku>.+)(?:" + \
 	  u"(?P<ammottaa>OttAA)|" + \
           u"(?P<kirjoittaa>OittAA)|" + \
           u"(?P<jaotus>OtUs)|" + \
@@ -71,16 +71,25 @@ pattern = u"^(?P<alku>.*)(?:" + \
           u"(?P<nuolaista>AistA)|" + \
           u"(?P<utelias_ankerias>[lr]iAs)|" + \
           u"(?P<obligaatio>Caatio)|" + \
-          u"(?P<resoluutio>Cuutio)" + \
+          u"(?P<resoluutio>Cuutio)|" + \
+          u"(?P<illuusio>Cuusio)|" + \
+          u"(?P<traditio>Citio)|" + \
+	  u"(?P<symboli_ym>[^aeouyäö]o[dfglmnrv]i)" + \
           u")$"
+
+#	  u"(?P<logia_ym>gogia|logia|sofia)|" + \
+#	  u"(?P<loginen_ym>goginen|loginen|sofinen)|" + \
+#	  u"(?P<symboli_ym>[^aeouyäö]Co[dfglmnrv]i)|" + \
+
 
 pattern = pattern.replace(u"A", u"[aä]")
 pattern = pattern.replace(u"O", u"[oö]")
 pattern = pattern.replace(u"U", u"[uy]")
 pattern = pattern.replace(u"C", u"[bcdfghjklmnpqrstvwxzšžçðñþß]")
+#pattern = pattern.replace(u"V", u"aeouyäö")
 rx = re.compile(pattern, re.IGNORECASE)
 
-#print pattern
+print pattern
 
 # Jaetaan sana tavuihin. Esim.
 # hyphenate(u"valkoinen") = val-koi-nen.
@@ -251,6 +260,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
+		if (voikko_infclass == u"nuolaista-av2") and (wordform in [u"häväistä", u"vavista"]):
+			voikko_infclass = u"nuolaista"
 #		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
 #		sys.stdout.write(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
@@ -297,6 +308,10 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		alku5 = u""
 		jatko5 = u""
 		wordform5 = u""
+
+		alku6 = u""
+		jatko6 = u""
+		wordform6 = u""
 
 		s = u""
 		
@@ -387,8 +402,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		elif ((nsyl > 3) and (jatko == u"autio") and
 		      (rx != None) and (d != None) and ((d['obligaatio'] != None) or (d['resoluutio'] != None))):
 			#
-			# Obligaatio => obligatsioni, obligatsiooni, obligatio, obligationi.
-			# Revoluutio => revolutsioni, revolutsiooni, revolutio, revolutioni.
+			# Obligaatio => obligatsioni, obligatsiooni, obligatio, obligationi, obligatiooni.
+			# Revoluutio => revolutsioni, revolutsiooni, revolutio, revolutioni, revolutiooni.
 			# Tässä -ni ei ole omistusliite.
 			#
 			alku2 = wordform[:-4] + u"tsion"      # Obligatsioni, revolutsioni.
@@ -407,6 +422,56 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko5 = u"paperi"
 			wordform5 = alku5 + u"i"
 			
+			alku6 = alku4 + u"on"                 # Obligatiooni, revolutiooni.
+			jatko6 = u"paperi"
+			wordform6 = alku6 + u"i"
+			
+			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+		elif ((nsyl > 3) and (jatko == u"autio") and
+		      (rx != None) and (d != None) and (d['illuusio'] != None)):
+			#
+			# Illuusio => illusioni, illusiooni, illusio.
+			#
+			alku2 = wordform[:-4] + u"sion"     # Illusioni.
+			jatko2 = u"paperi"
+			wordform2 = alku2 + u"i"
+
+			alku3 = wordform[:-4] + u"sioon"    # Illusiooni.
+			jatko3 = u"paperi"
+			wordform3 = alku3 + u"i"
+
+			alku4 = wordform[:-4] + u"sio"      # Illusio.
+			jatko4 = jatko
+			wordform4 = alku4
+		
+			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+		elif ((nsyl > 3) and (jatko == u"autio") and
+		      (rx != None) and (d != None) and (d['traditio'] != None)):
+			#
+			# Traditio => traditsioni, traditsiooni, traditsio.
+			#
+			alku2 = wordform[:-2] + u"sion"    # Traditsioni.
+			jatko2 = u"paperi"
+			wordform2 = alku2 + u"i"
+
+			alku3 = wordform[:-2] + u"sioon"   # Traditsiooni.
+			jatko3 = u"paperi"
+			wordform3 = alku2 + u"i"
+			
+			alku4 = wordform[:-2] + u"sio"      # Traditsio.
+			jatko4 = jatko
+			wordform4 = alku4
+		
+			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['symboli_ym'] != None) and
+		      (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"])):
+			#
+			# Symboli => symbooli, atoomi, uniooni, tenoori, alkoovi, aploodi,
+			# pedagoogi, psykoloogi, filosoofi, katastroofi, mutta ei esim. koni => kooni.
+			#
+			alku2 = wordform[:-2] + u"o" + wordform[-2]
+			jatko2 = jatko
+			wordform2 = alku2 + u"i"
 			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 		
 		# Tulostetaan.
@@ -438,5 +503,11 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if (len(wordform5) > 0):
 			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
 				% (wordform5, alku5, malaga_word_class, jatko5, malaga_vtype, malaga_flags,
+				   generate_lex_common.get_structure(altform, malaga_word_class), s)
+			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
+
+		if (len(wordform6) > 0):
+			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
+				% (wordform6, alku6, malaga_word_class, jatko6, malaga_vtype, malaga_flags,
 				   generate_lex_common.get_structure(altform, malaga_word_class), s)
 			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
