@@ -770,3 +770,4 @@ toteemi
 dubata
 kielilläpuhuminen
 palvelukseenastuminen
+unissakäveleminen
