@@ -47,6 +47,7 @@ all: voikko
 voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
+	@grep "Malaga class not found" voikko/joukahainen.lex
 
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
 	cp $^ $@
