@@ -368,6 +368,8 @@ rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66
 lobbasi # Kotus 73
+peljätköön # Kotus 73
+!peljäsi # Kotus 73
 kapsaa # Kotus 78
 !kapsan # Kotus 78
 !kapsat # Kotus 78

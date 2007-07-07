@@ -2992,6 +2992,10 @@ allo_rule generate_allos ($tietue):
     choose $i in salata_salailla ($tietue, tA($tietue), dA($tietue));
     result $i.alku, $i - alku;
 
+  elseif (peljätä in $tietue.jatko) then
+    choose $i in salata_salailla ($tietue, kA($tietue), jA($tietue));
+    result $i.alku, $i - alku;
+
   elseif (pakata in $tietue.jatko) then
     choose $i in salata_salailla ($tietue, kA($tietue), A($tietue));
     result $i.alku, $i - alku;
@@ -3493,6 +3497,10 @@ subrule iO ($tietue):
   return ("i" + O($tietue));
 end;
 
+
+subrule jA ($tietue):
+  return ("j" + A($tietue));
+end;
 
 subrule kA ($tietue):
   return ("k" + A($tietue));
