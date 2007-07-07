@@ -1,0 +1,15 @@
+[]
+Annna	Anna
+hkoira	koira	!h-koira
+marko	Marko	!marko
+keski-ranska	keski-Ranska	!keski-ranska
+kerros-talo	kerrostalo	!kerros- talo	!kerros -talo
+kuormaauto	kuorma-auto	kuorma auto
+
+[ignore_dot=1]
+koirra.	koira.	!koira
+
+[ocr_suggestions=1]
+Män_sälä	Mäntsälä
+horrelioosi	borrelioosi
+baapa	haapa
