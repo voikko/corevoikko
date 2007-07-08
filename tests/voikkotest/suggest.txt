@@ -13,3 +13,8 @@ koirra.	koira.	!koira
 Män_sälä	Mäntsälä
 horrelioosi	borrelioosi
 baapa	haapa
+h0usut	housut
+
+[ocr_suggestions=1 ignore_numbers=1]
+h0usut	!housut
+
