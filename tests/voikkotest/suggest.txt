@@ -5,6 +5,10 @@ marko	Marko	!marko
 keski-ranska	keski-Ranska	!keski-ranska
 kerros-talo	kerrostalo	!kerros- talo	!kerros -talo
 kuormaauto	kuorma-auto	kuorma auto
+ras'an	raa'an	!raa’an
+ras’an	raa’an	!raa'an
+kuorma-audo	kuorma-auto	!kuorma‐auto
+kuorma‐audo	kuorma‐auto	!kuorma-auto
 
 [ignore_dot=1]
 koirra.	koira.	!koira

@@ -2,6 +2,7 @@
 
 	* Add option ignore_numbers=n to voikkospell. Change
 	  default from 1 to 0 (the library default).
+	* Undo 1-to-1 normalisations in spelling suggestions.
 
 2007-06-19 Harri Pitkänen <hatapitk@iki.fi>
 

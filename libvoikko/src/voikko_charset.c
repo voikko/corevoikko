@@ -172,3 +172,37 @@ wchar_t * voikko_normalise(const wchar_t * word, size_t len) {
 	*ptr = L'\0';
 	return buffer;
 }
+
+void voikko_cset_reformat(const wchar_t * orig, size_t orig_len, wchar_t ** modified, size_t modified_len) {
+	size_t i, j, limit, minl;
+	if (orig_len < 1 || modified_len < 1) return;
+	if (orig_len < modified_len) minl = orig_len;
+	else minl = modified_len;
+
+	/* Process the leading part of the string */
+	limit = minl;
+	for (i = 0; i < limit; i++) {
+		if (orig[i] == (*modified)[i]) continue;
+		for (j = 0; j < N_1TO1; j++) {
+			if (orig[i] == CONV_1TO1[2*j] && (*modified)[i] == CONV_1TO1[2*j+1]) {
+				(*modified)[i] = CONV_1TO1[2*j];
+				break;
+			}
+		}
+		if (orig[i] != (*modified)[i]) break;
+	}
+
+	/* Process the trailing part of the string */
+	limit = minl - i;
+	for (i = 1; i <= limit; i++) {
+		if (orig[orig_len-i] == (*modified)[modified_len-i]) continue;
+		for (j = 0; j < N_1TO1; j++) {
+			if (orig[orig_len-i] == CONV_1TO1[2*j] &&
+ 			    (*modified)[modified_len-i] == CONV_1TO1[2*j+1]) {
+				(*modified)[modified_len-i] = CONV_1TO1[2*j];
+				break;
+			}
+		}
+		if (orig[orig_len-i] != (*modified)[modified_len-i]) break;
+	}
+}

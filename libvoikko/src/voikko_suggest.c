@@ -517,7 +517,15 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 			i++;
 		}
 	}
-	
+
+	/* Undo character set normalisation */
+	i = 0;
+	while (suggestions[i] != 0) {
+		suglen = wcslen(suggestions[i]);
+		voikko_cset_reformat(word, wlen, &(suggestions[i]), suglen);
+		i++;
+	}
+
 	free(nword);
 	if (add_dots) voikko_suggest_add_dots(suggestions);
 	EXIT_V

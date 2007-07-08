@@ -28,4 +28,14 @@
  */
 wchar_t * voikko_normalise(const wchar_t * word, size_t len);
 
+/** Formats modified string to more closely match the original
+ * @param orig original string
+ * @param orig_len length of the original string
+ * @param modified pointer to the modified string. The string may be
+ *        relocated if it needs to be expanded, otherwise it is modified
+ *        in place.
+ * @param modified_len length of the modified string
+ */
+void voikko_cset_reformat(const wchar_t * orig, size_t orig_len, wchar_t ** modified, size_t modified_len);
+
 #endif
