@@ -219,6 +219,8 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "porvaris", alku: "porvaris", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "post", alku: "post", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "pre", alku: "pre", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "puoli", alku: "puoli", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "puolittais", alku: "puolittais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "pysyväis", alku: "pysyväis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];

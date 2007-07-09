@@ -47,7 +47,6 @@ all: voikko
 voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
-	@grep "Malaga class not found" voikko/joukahainen.lex
 
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
 	cp $^ $@
@@ -59,6 +58,7 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	python voikko/generate_lex.py
 	touch $@
+	@grep "Malaga class not found" voikko/joukahainen.lex
 
 $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
 
