@@ -55,7 +55,6 @@
 
 define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 
-# Mitä nämä tarkoittavat?
 [alku: "1:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # 1°
 [alku: "2:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # 2° jne
 [alku: "3:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
@@ -164,8 +163,8 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "j.e.p.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Ja niin edespäin.
 [alku: "Jk.", luokka: lyhenne, jatko: <loppu>, äs: aä, rakenne: "=jqq"]; # jälkikirjoitus
 [alku: "jKr.", luokka: lyhenne, jatko: <loppu>, äs: aä, rakenne: "=qjqq"]; # jälkeen Kristuksen syntymän
-[alku: "j.n.e.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "jne.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ja niin edelleen
+[alku: "j.n.e.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "jnep", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Ja niin edespäin.
 [alku: "jouluk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "kd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>]; # Kansandemokraatti.
@@ -220,18 +219,18 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "MTV", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "mv", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>]; # Maanviljelijä.
 [alku: "nimim.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # nimimerkki
-[alku: "n.k.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # Niin kutsuttu.
 [alku: "nk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin kutsuttu
+[alku: "n.k.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # Niin kutsuttu.
 [alku: "NKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Neuvostoliiton kommunistinen puolue.
 [alku: "nm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # nanometri (nm); newtonmetri (Nm)
 [alku: "n:o.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Numero.
-[alku: "n.s.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Niin sanottu.
 [alku: "ns.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin sanottu
+[alku: "n.s.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Niin sanottu.
 [alku: "ns", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # nanosekunti(a)
 [alku: "nuor.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Nuorsuomalainen.
 [alku: "OK", luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=jj"];
-[alku: "op.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # opettaja
 [alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <ei_voikko>];
+[alku: "op.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # opettaja
 [alku: "o.s.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # omaa sukua
 [alku: "os.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # osoite; osasto
 [alku: "OTK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Osuustukkukauppa.
@@ -253,6 +252,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "puh.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # puhelin
 [alku: "pvä", luokka: lyhenne, jatko: <loppu>, äs: aä]; # päivä
 [alku: "qt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
+[alku: "rad", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # radiaani(a)
 [alku: "rkl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # ruokalusikallinen, -sta
 [alku: "RKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Ruotsalainen Kansanpuolue
 [alku: "r.l.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
@@ -268,8 +268,8 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "sf", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "sfst", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "SI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # kansainvälinen mittayksikköjärjestelmä 
-[alku: "s.k.d.l", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "SKDL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # Suomen Kansan Demokraattinen Liitto
+[alku: "s.k.d.l", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "SKL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Kristillinen Liitto; Suomen kuntaliitto
 [alku: "SK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # Suomen Kuvalehti
 [alku: "SKOP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
