@@ -789,3 +789,8 @@ kokoonpuristuminen
 kokoonpuristuvuus
 loppuunsaattaminen
 maahantuotu
+silmälläpidettävä
+viinaanmenevä
+selkäänpuukottaja
+työssäkäynti
+merkillepantava

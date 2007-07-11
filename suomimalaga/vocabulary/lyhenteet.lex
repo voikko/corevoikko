@@ -88,8 +88,8 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "BBC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # British Broadcasting Corporation
 [alku: "cd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
 [alku: "CD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # cd-levy
-[alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
-[alku: "CD-ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj-=jjj"]; # cd-levy
+[alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "CD-ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj-=jjj"];
 [alku: "CIA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Central Intelligence Agency
 [alku: "cm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # senttimetri(ä)
 [alku: "CNN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Cable News Network
