@@ -49,6 +49,7 @@ oopiumsodan
 !turunväylän
 !turkuväylä
 teollisuusliitoissa
+!lähkoirainen
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen

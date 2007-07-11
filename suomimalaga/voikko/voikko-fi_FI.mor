@@ -362,16 +362,17 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if tavuviiva in $oikea.jatko then result $res, rules yhdysmerkki_laatusanan_jälkeen; end;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules yhdysmerkki_laatusanan_jälkeen,
+           nimisana, laatusana, etuliite,
+           inen_johdos_nimisanasta;
+  end;
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
                liitesana,
-               nimisana, laatusana,
-               inen_johdos_nimisanasta,
                laatusanan_johdos,
                voitto_yliaste,
-               etuliite,
                loppu;
 end;
 
