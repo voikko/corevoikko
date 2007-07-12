@@ -11,6 +11,9 @@ viljamaa
 #taloonjuoksu
 seinäkissa
 seinänkissa
+!seinääkissa
+!seinästäkissa
+!työhönkissa
 suvialainen
 !vaikealammas
 !lammasvaikea
@@ -34,10 +37,17 @@ vanhempaintalo
 kirkkoisillä
 johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 !äidinsalli
-!laputkerimä
+# !laputkerimä
 pinta-alaltaan
 vapaa-ajallaan
-kantaaottava
+verhokonttaava
+!verhotkonttaava
+verhonkonttaava
+verhojenkonttaava
+!verhoakonttaava
+!verhojakonttaava
+!verhostakonttaava
+!verhottakonttaava
 !työöitä
 työ-öitä
 kuutamoöitä
@@ -210,7 +220,6 @@ johtamis-
 ahdistuneisuushäiriö
 !ahdistuneisuuskaunis
 !ahdistunuthäiriö
-työhönotto
 ranskalais-suomalainen
 irlantilaissyntyinen
 
@@ -380,4 +389,17 @@ kapsaisi # Kotus 78
 [muita virheitä]
 !kolaaa
 !kullakinkin
+tuntematon
+varovaisuuden
+lämmönjohtavuus
+ohjelmointisuuntautunut
+työelämäsuuntautunut
+uppopaistettu
+pitkäaikaisvihollistensa
+näkökohdista
+turvallisuusnäkökohdista
+tummanpuhuva
+valkoisenkellertävä
+TV-kanavalistaus
+tv-kanavalistaus
 
