@@ -1315,6 +1315,35 @@ output_filter tulosta ($tulos):
   end;
 end;
 
+# Palauttaa tietueen rakenne-kentän mukaisen rakennekuvauksen oikean mittaisena.
+# Jos $pienet_kirjaimet = yes, niin rakenteen i-merkit muutetaan p-merkeiksi.
+subrule rakenne ($tietue, $pienet_kirjaimet):
+  define $alen := length($tietue.alku);
+  define $i := 0;
+  define $tuloste := "";
+  define $kirjain := "";
+  foreach $k in length($tietue.rakenne):
+    $kirjain := substring($tietue.rakenne, $k);
+    if $i less $alen then
+      if $kirjain = "=" then
+        $tuloste :=+ "=";
+      else
+        if $pienet_kirjaimet and $kirjain = "i" then
+	  $tuloste :=+ "p";
+	else
+	  $tuloste :=+ $kirjain;
+	end;
+        $i :=+ 1;
+      end;
+    end;
+  end;
+  if $i less $alen then
+    foreach $j in $alen - $i:
+      $tuloste :=+ "p";
+    end;
+  end;
+  return $tuloste;
+end;
 
 subrule tulostus_voikko ($tietue):
   define $tuloste := "";
@@ -1324,15 +1353,9 @@ subrule tulostus_voikko ($tietue):
     $tind :=+ 1;
     if $t.rakenne /= nil then
       if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) then
-        foreach $i in length($t.rakenne):
-	  if substring($t.rakenne, $i) = "i" then
-	    $tuloste :=+ "p";
-	  else
-	    $tuloste :=+ substring($t.rakenne, $i);
-	  end;
-	end;
+        $tuloste :=+ rakenne($t, yes);
       else
-        $tuloste :=+ $t.rakenne;
+        $tuloste :=+ rakenne($t, no);
       end;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
                          nimi_laatusana, asemosana, suhdesana, lukusanan_jälkiliite,

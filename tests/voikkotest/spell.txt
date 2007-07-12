@@ -50,6 +50,7 @@ oopiumsodan
 !turkuväylä
 teollisuusliitoissa
 !lähkoirainen
+!juurihoito-klubi
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen

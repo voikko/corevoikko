@@ -30,6 +30,7 @@ www.lappeenranta.fi     www.lappeenranta.fi
 tuhataskelinen	tu-hat-as-ke-li-nen
 jok'ikinen       jok-iki-nen
 te'vaste         te'vas-te # Ei tavutusta heittomerkin jälkeen, eikä kohdalla, kun perässä on konsonantti
+juurihoitoklubi	juu-ri-hoi-to-klu-bi
 
 [no_ugly_hyphenation=0 ignore_dot=0]
 elävä           e-lä-vä
