@@ -124,6 +124,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "mukana", alku: "mukana", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @elt, äs: aä]; # Haitallinen nimisanoissa, koska päälle+käin väärin
 [perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv>];
 [perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @elt, äs: aä];
@@ -261,7 +262,6 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "puolittais", alku: "puolittais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "pyro", alku: "pyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "pysyväis", alku: "pysyväis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "rinnakkais", alku: "rinnakkais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
