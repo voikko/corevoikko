@@ -19,7 +19,8 @@
 # Jatko-kentässä sallittuja ovat ainoastaan seuraavat:
 # "loppu", "liitesana", "omistusliite" ja sijapäätteet.
 # Huomaa, että sijapäätteiden (esim. sisäolento_ssA) jälkeen hyväksytään
-# automaattisesti myös omistusliite tai liitepartikkeli.
+# automaattisesti myös omistusliite tai liitepartikkeli. Tästä syystä
+# sijapäätteet sopivat vain sanoille, joita voi käyttää substantiivien tavoin.
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -568,8 +569,10 @@
 [perusmuoto: "pälkähästä", alku: "pälkähästä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pääksytysten", alku: "pääksytysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päällekkäin", alku: "päällekkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "päällepäin", alku: "päällepäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "päälletysten", alku: "päälletysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "päällitse", alku: "päällitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "päältäpäin", alku: "päältäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "pökerryksissä", alku: "pökerryksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "ratki", alku: "ratki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ratsailla", alku: "ratsai", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];

@@ -37,7 +37,7 @@ vanhempaintalo
 kirkkoisillä
 johtamis-tapa # voi olla sekä yhdyssana että yksittäinen sana
 !äidinsalli
-# !laputkerimä
+!laputkerimä
 pinta-alaltaan
 vapaa-ajallaan
 verhokonttaava
@@ -48,6 +48,14 @@ verhojenkonttaava
 !verhojakonttaava
 !verhostakonttaava
 !verhottakonttaava
+elämähyppivä
+!elämäthyppivä
+!elämäähyppivä
+elämänhyppivä
+sairashyppivä
+!sairaathyppivä
+!sairastahyppivä
+sairaanhyppivä
 !työöitä
 työ-öitä
 kuutamoöitä

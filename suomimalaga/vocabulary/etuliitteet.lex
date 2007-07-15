@@ -119,7 +119,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "koe", alku: "koe", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kolmin", alku: "kolmin", luokka: etuliite, jatko: @elt, äs: aä];
-[perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "mukaan", alku: "mukaan", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "mukana", alku: "mukana", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä];

@@ -369,7 +369,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   end;
 
   result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, omistusliite,
+         rules laatusanan_sijapääte, omistusliite,
                liitesana,
                laatusanan_johdos,
                voitto_yliaste,
@@ -577,6 +577,44 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
   end;
 end;
 
+combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+
+  define $edellinen := $vasen.($index - 1);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  ? $oikea.sija in $edellinen.jatko;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+
+  if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
+    require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
+  end;
+
+  if ($oikea.sija = kerronto_sti) then
+    ? $edellinen.luokka in @sti_edeltäjä;
+    result $res,
+           rules liitesana, loppu;
+  else
+    result $res,
+           rules omistusliite, liitesana, loppu;
+    if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
+        (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
+      if sijamuoto_sijasta($oikea.sija) = omanto then
+        result $res,
+               rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+      end;
+      if sijamuoto_sijasta($oikea.sija) = nimentö and luku_sijasta($oikea.sija) = yksikkö then
+       result $res, rules nimisana_teonsanasta; # FIXME: laatusana_teonsanasta
+      end;
+      if $edellinen.luokka in <laatusana, nimi_laatusana> then
+        result $res, rules yhdysmerkki_laatusanan_jälkeen;
+      end;
+    end;
+    if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
+      result $res, rules inen_johdos_nimisanasta;
+    end;
+  end;
+end;
 
 ###### SIJAPÄÄTESÄÄNNÖT PÄÄTTYVÄT
 
@@ -1035,11 +1073,14 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
                         johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
     result $res, rules nimisana, nimisana_teonsanasta,
-                       nimisana_laatusanasta, inen_johdos_nimisanasta;
+                       nimisana_laatusanasta, inen_johdos_nimisanasta,
+                       nimisanan_sijapääte;
+  else
+    result $res, rules sijapääte;
   end;
 
   result $res,
-          rules sijapääte, omistusliite, liitesana,
+          rules omistusliite, liitesana,
                 teonsanan_johdos,
                 voitto_yliaste,
                 etuliite,
