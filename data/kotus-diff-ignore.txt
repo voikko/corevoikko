@@ -794,3 +794,7 @@ viinaanmenevä
 selkäänpuukottaja
 työssäkäynti
 merkillepantava
+anteeksiantaminen
+duoesitys
+virkaanastumispäivä
+molempi
