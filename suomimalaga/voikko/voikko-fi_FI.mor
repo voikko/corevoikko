@@ -154,7 +154,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
 
   elseif $oikea.luokka = asemosana then
     result <[alku: $sana] + $oikea>,
-           rules asemosanan_sijapääte, liitesana, tavuviiva, loppu;
+           rules sijapääte, liitesana, tavuviiva, loppu;
 
   elseif $oikea.luokka = kieltosanan_etuliite then
     result <[alku: $sana] + $oikea>, rules kieltosana;
@@ -613,29 +613,6 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
     if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
       result $res, rules inen_johdos_nimisanasta;
     end;
-  end;
-end;
-
-combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka = sijapääte;
-
-  define $edellinen := $vasen.($index - 1);
-  define $res := $vasen + <[alku: $sana] + $oikea>;
-
-  ? $oikea.sija in $edellinen.jatko;
-  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-  if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
-    require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
-  end;
-
-  if ($oikea.sija = kerronto_sti) then
-    ? $edellinen.luokka in @sti_edeltäjä;
-    result $res,
-           rules liitesana, loppu;
-  else
-    result $res,
-           rules omistusliite, liitesana, loppu;
   end;
 end;
 
@@ -1157,7 +1134,7 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>,
-          rules nimisanan_sijapääte, omistusliite, liitesana,
+          rules sijapääte, omistusliite, liitesana,
                 nimisana, laatusana, teonsana,
                 laatusanan_johdos, nimisanan_johdos,
                 voitto_yliaste,
