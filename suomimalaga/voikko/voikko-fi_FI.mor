@@ -679,54 +679,6 @@ end;
 
 ###### SIJAPÄÄTESÄÄNNÖT PÄÄTTYVÄT
 
-combi_rule sijapääte ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka = sijapääte;
-
-  define $edellinen := $vasen.($index - 1);
-  define $res := $vasen + <[alku: $sana] + $oikea>;
-
-  if ($edellinen.luokka = kaksoispiste) then
-    ? $oikea.sija /= keinonto_n;
-    ? ($edellinen.äs = aä) or ($oikea.äs = aä) or ($edellinen.äs = $oikea.äs);
-    result $res,
-           rules omistusliite, liitesana, loppu;
-  else
-    ? $oikea.sija in $edellinen.jatko;
-    ? ääntiösointu_oikein ($vasen, $oikea, $sana);
-
-    if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
-      require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
-    end;
-
-    if ($oikea.sija = kerronto_sti) then
-      ? $edellinen.luokka in @sti_edeltäjä;
-      result $res,
-             rules liitesana, loppu;
-    else
-      result $res,
-             rules omistusliite, liitesana, loppu;
-      if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
-          (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
-        # "kissan+karva", "työhön+otto"
-        if sijamuoto_sijasta($oikea.sija) = omanto then
-          result $res,
-                 rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
-        end;
-	# "kantaa+ottava"
-	if sijamuoto_sijasta($oikea.sija) = osanto then
-	  result $res, rules nimisana_teonsanasta;
-	end;
-        if $edellinen.luokka in <laatusana, nimi_laatusana> then
-          result $res, rules yhdysmerkki_laatusanan_jälkeen;
-        end;
-      end;
-      if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
-        result $res, rules inen_johdos_nimisanasta;
-      end;
-    end;
-  end;
-end;
-
 
 ###### LUKUSANASÄÄNNÖT ALKAVAT
 
@@ -1137,7 +1089,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
                        nimisana_laatusanasta, inen_johdos_nimisanasta,
                        nimisanan_sijapääte;
   else
-    result $res, rules sijapääte;
+    result $res, rules laatusanan_sijapääte;
   end;
 
   result $res,

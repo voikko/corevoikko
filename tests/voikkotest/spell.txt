@@ -77,6 +77,8 @@ juoksemisenmenemisenkasvattava
 !juoksemisenmenemistäkasvattava
 koirallisenkasvattava
 !koirallistakasvattava
+ohjelmointisuuntautuneenkasvattava
+!ohjelmointisuuntautunuttakasvattava
 !työöitä
 työ-öitä
 kuutamoöitä
