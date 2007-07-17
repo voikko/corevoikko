@@ -56,6 +56,9 @@ sairashyppivä
 !sairaathyppivä
 !sairastahyppivä
 sairaanhyppivä
+virkeydenlakaiseva
+!virkeyttälakaiseva
+!minuahyppäävä
 !työöitä
 työ-öitä
 kuutamoöitä
