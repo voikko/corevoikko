@@ -890,7 +890,7 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
     define $edellinen := $vasen.($index - 1);
     ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
     result $vasen + <[alku: $sana] + $oikea>,
-           rules sijapääte, omistusliite,
+           rules ei_ys_sijapääte, omistusliite,
                  nimisana, etuliite,
                  liitesana,
                  nimisanan_johdos,
@@ -973,7 +973,7 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
     result $res, rules nimitapa_1_pitkä;
   end;
   result $res,
-         rules sijapääte, omistusliite,
+         rules nimisanan_sijapääte, omistusliite,
                liitesana,
                nimisana, laatusana, teonsana,
                loppu;

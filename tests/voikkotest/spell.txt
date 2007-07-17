@@ -70,6 +70,9 @@ bosnialaisenkasvattava
 !bosnialaistakasvattava
 neljäabsoluuttisenkasvattava
 !neljäabsoluuttistakasvattava
+!viisivuotiastakasvattava
+juoksemisenkasvattava
+!juoksemisiakasvattava
 !työöitä
 työ-öitä
 kuutamoöitä
