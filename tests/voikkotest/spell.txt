@@ -60,6 +60,12 @@ virkeydenlakaiseva
 !virkeyttälakaiseva
 !minuahyppäävä
 heidänlehtinen
+kauniinlaisenkasvattava
+!kauniinlaistakasvattava
+suolaisienkasvattava
+!suolaistakasvattava
+hilpeälampaisenkasvattava
+!hilpeälampaistakasvattava
 !työöitä
 työ-öitä
 kuutamoöitä

@@ -301,7 +301,7 @@ end;
 combi_rule johdin_nlainen ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_nlainen;
   result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, omistusliite,
+         rules laatusanan_sijapääte, omistusliite,
 	       liitesana,
 	       nimisana, laatusana,
 	       laatusanan_johdos,
@@ -314,7 +314,7 @@ end;
 combi_rule johdin_inen ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_inen;
     result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, omistusliite,
+         rules laatusanan_sijapääte, omistusliite,
 	       liitesana,
 	       nimisana, laatusana,
 	       laatusanan_johdos,
@@ -1126,7 +1126,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   if ($oikea.luokka = johdin_inen) then
     if ($edellinen.tiedot /= nil and inen in $edellinen.tiedot) then
       result $res,
-             rules sijapääte, omistusliite, liitesana,
+             rules laatusanan_sijapääte, omistusliite, liitesana,
                    voitto_yliaste, laatusanan_johdos,
                    tavuviiva, loppu;
     end;
