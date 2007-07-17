@@ -48,6 +48,7 @@ define @elt := <tavuviiva, etuliite, teonsana>;
 [perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "suhu", alku: "suhu", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "varhais", alku: "varhais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "varo", alku: "varo", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @eln, äs: aä];
 
