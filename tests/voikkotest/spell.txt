@@ -66,6 +66,10 @@ suolaisienkasvattava
 !suolaistakasvattava
 hilpeälampaisenkasvattava
 !hilpeälampaistakasvattava
+bosnialaisenkasvattava
+!bosnialaistakasvattava
+neljäabsoluuttisenkasvattava
+!neljäabsoluuttistakasvattava
 !työöitä
 työ-öitä
 kuutamoöitä

@@ -150,7 +150,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if (liitesana in $oikea.jatko) then
       result <[alku: $sana] + $oikea>, rules liitesana;
     end;
-    result <[alku: $sana] + $oikea>, rules sijapääte, omistusliite; # FIXME: esiehto testaamatta
+    result <[alku: $sana] + $oikea>, rules ei_ys_sijapääte, omistusliite; # FIXME: esiehto testaamatta
 
   elseif $oikea.luokka = asemosana then
     result <[alku: $sana] + $oikea>,
@@ -345,7 +345,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
   end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, rules loppu; end;
-  result $res, rules sijapääte, laatusanan_johdos;
+  result $res, rules laatusanan_sijapääte, laatusanan_johdos;
 end;
 
 ###### JOHDINSÄÄNNÖT PÄÄTTYVÄT
@@ -386,7 +386,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
   # nimisana, laatusana ja etuliite jätetty pois, koska todennäköinen käyttö vähäistä
   # (teoriassa voi olla OK)
   result $vasen + <[alku: $sana] + $oikea>,
-         rules sijapääte, omistusliite,
+         rules laatusanan_sijapääte, omistusliite,
 	       liitesana,
 	       laatusanan_johdos,
 	       tavuviiva,
@@ -408,7 +408,7 @@ combi_rule kaksoispiste ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = kaksoispiste;
 
   result $vasen + <[alku: $sana] + $oikea + [äs: $vasen.($index - 1).äs]>,
-         rules sijapääte;
+         rules kaksoispisteen_sijapääte;
 end;
 
 
@@ -640,6 +640,41 @@ combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
       result $res, rules inen_johdos_nimisanasta;
     end;
   end;
+end;
+
+# Sijapääte, jota ei voi käyttää yhdyssanan sisällä
+combi_rule ei_ys_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+
+  define $edellinen := $vasen.($index - 1);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  ? $oikea.sija in $edellinen.jatko;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+
+  if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
+    require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
+  end;
+
+  if ($oikea.sija = kerronto_sti) then
+    ? $edellinen.luokka in @sti_edeltäjä;
+    result $res,
+           rules liitesana, loppu;
+  else
+    result $res,
+           rules omistusliite, liitesana, loppu;
+  end;
+end;
+
+combi_rule kaksoispisteen_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+  ? $oikea.sija /= keinonto_n;
+
+  define $edellinen := $vasen.($index - 1);
+  ? ($edellinen.äs = aä) or ($oikea.äs = aä) or ($edellinen.äs = $oikea.äs);
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  result $res, rules omistusliite, liitesana, loppu;
 end;
 
 ###### SIJAPÄÄTESÄÄNNÖT PÄÄTTYVÄT
