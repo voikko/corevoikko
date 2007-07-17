@@ -73,6 +73,10 @@ neljäabsoluuttisenkasvattava
 !viisivuotiastakasvattava
 juoksemisenkasvattava
 !juoksemisiakasvattava
+juoksemisenmenemisenkasvattava
+!juoksemisenmenemistäkasvattava
+koirallisenkasvattava
+!koirallistakasvattava
 !työöitä
 työ-öitä
 kuutamoöitä

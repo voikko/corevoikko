@@ -951,7 +951,7 @@ combi_rule nimitapa_4 ($vasen, $oikea, $sana):
     result $res, rules nimitapa_1_pitkä;
   end;
   result $res,
-         rules sijapääte, omistusliite,
+         rules nimisanan_sijapääte, omistusliite,
                liitesana, nimisana,
                loppu;
 end;
@@ -1169,7 +1169,8 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   end;
 
   result $res,
-          rules sijapääte, omistusliite, liitesana,
+          rules nimisanan_sijapääte, #FIXME: voi olla laatusana
+                omistusliite, liitesana,
                 nimisana, laatusana, teonsana,
                 voitto_yliaste,
                 laatusanan_johdos, nimisanan_johdos,
