@@ -2187,6 +2187,12 @@ allo_rule generate_allos ($tietue):
                  + hohdattaa ($tietue, "t", "d");
     result $i.alku, $i - alku;
 
+  elseif (jättää in $tietue.jatko) then
+    choose $i in muistaa_muistella ($tietue, tA($tietue), A($tietue), "t", "")
+                 + heitto ($tietue)
+		 + hohdattaa ($tietue, "", "");
+    result $i.alku, $i - alku;
+
   elseif (inttää in $tietue.jatko) then
     choose $i in muistaa_muistella ($tietue, tA($tietue), A($tietue), "t", "");
     result $i.alku, $i - alku;
