@@ -45,8 +45,8 @@ elif len(sys.argv) == 2 and sys.argv[1].find("|") != -1:
 	word = unicode(sys.argv[1][:ind], PARAM_ENCODING)
 	infclass = unicode(sys.argv[1][ind+1:], PARAM_ENCODING)
 else:
-	print 'Usage: hf-inflect-word word inflection_class'
-	print '       hf-inflect-word word|inflection_class'
+	print 'Usage: voikko-inflect-word word inflection_class'
+	print '       voikko-inflect-word word|inflection_class'
 	sys.exit(1)
 
 infclass_parts = infclass.split('-')
