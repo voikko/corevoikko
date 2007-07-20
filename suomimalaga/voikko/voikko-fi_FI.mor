@@ -255,9 +255,12 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   if ($index greater 1) then
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   end;
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules teonsanan_johdos, # FIXME: johdetun muodon on oltava nimisana
-               nimitapa_4;
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if nimitapa_4 in $oikea.jatko then
+    result $res, rules nimitapa_4;
+  end;
+  result $res, rules teonsanan_johdos; # FIXME: johdetun muodon on oltava nimisana
 end;
 
 # Laatusanasta johdettu nimisana, esim. vapaus <- vapaa.

@@ -335,6 +335,10 @@ triljoonin
 kaksi-
 viidessadaskolmaskymmenes-
 !kaksitoista-vuotias
+kissaloikkiminen
+!kissaloikiminen
+koiramääkiminen
+!koiramääminen
 
 [johtimet]
 märänlaiselleko
