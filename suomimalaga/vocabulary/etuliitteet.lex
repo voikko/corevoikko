@@ -26,15 +26,11 @@
 
 # == Näitä voi käyttää jatko-kentissä ==
 # Etuliite (nimisanat)
-define @eln := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
+define @eln := <tavuviiva, nimisana>;
 # Etuliite (laatusanat)
-define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
+define @ell := <tavuviiva, laatusana>;
 # Etuliite (teonsanat)
-define @elt := <tavuviiva, etuliite, teonsana>;
-
-# Aikaisemmin käytetyt määritelmät jatko-kentissä, älä käytä näitä enää
-# define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
-# define @sana2 := @sana1 + <teonsana>;
+define @elt := <tavuviiva, teonsana>;
 
 # Etuliite + nimisana
 

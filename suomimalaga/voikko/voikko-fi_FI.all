@@ -3764,9 +3764,7 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
     $taivutus :=- nimisana;
-    $taivutus :=- laatusana;
     $taivutus :=- teonsana;
-    $taivutus :=- etuliite;
   end;
 
   define $lista := lajittele ($taivutus);
@@ -6811,9 +6809,7 @@ end;
 subrule yhdyssana ($yhdyssana):
   return [nimisana:        $yhdyssana,
 	  tavuviiva:       $yhdyssana,
-          laatusana:       $yhdyssana,
-          teonsana:        $yhdyssana,
-          etuliite:        $yhdyssana];
+          teonsana:        $yhdyssana];
 end;
 
 
