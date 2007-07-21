@@ -3769,34 +3769,13 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- etuliite;
   end;
 
-  # Ei tarvita Voikko-versiossa
-  $taivutus :=- nimi_laatusana;
-
-
   define $lista := lajittele ($taivutus);
-
-#if ($tietue.tiedot /= nil and ei_inen in $tietue.tiedot) then
-#  define $a := transmit ($tietue);
-#  define $b := transmit ($taivutus);
-#  define $c := transmit ($lista);
-#end;
 
   define $t := <>;
 
   foreach $i in $lista:
     $t :=+ <taivutus ($tietue, $i.1, $i.2, [])>;
   end;
-
-#  foreach $i in $lista:
-#    define $u := <taivutus ($tietue, $i.1, $i.2, [])>;
-#    assert (length($u) = 1);
-#   if (($u.<1,luokka> in @nimisana - <nimi_laatusana>) and (kerronto_sti in $u.<1,jatko>)) then
-#      $u.<1,jatko> :=- <kerronto_sti>;
-##define $p := transmit ($u);
-#    end;
-#    $t :=+ $u;
-#  end;
-##  define $b := transmit (<$t>);
 
   return $t;
 end;
@@ -6831,7 +6810,6 @@ end;
 
 subrule yhdyssana ($yhdyssana):
   return [nimisana:        $yhdyssana,
-          nimi_laatusana:  $yhdyssana,
 	  tavuviiva:       $yhdyssana,
           laatusana:       $yhdyssana,
           teonsana:        $yhdyssana,
