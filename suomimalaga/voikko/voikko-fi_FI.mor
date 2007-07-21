@@ -173,7 +173,6 @@ end;
 combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = etuliite;
 
-  ? tavuviiva in $vasen.($index - 1).jatko;
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
@@ -227,8 +226,11 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
       result $res, rules nimisanan_johdos;
       if $edellinen.luokka = laatusana then stop; end;
     elseif $edellinen.lukutyyppi /= nil then
+      if tavuviiva in $oikea.jatko then
+        result $res, rules etuliite;
+      end;
       result $res,
-             rules nimisanan_johdos, nimisana, etuliite, nimisana_laatusanasta, nimisana_teonsanasta, tavuviiva;
+             rules nimisanan_johdos, nimisana, nimisana_laatusanasta, nimisana_teonsanasta, tavuviiva;
       stop;
     end;
   else
@@ -310,28 +312,38 @@ end;
 
 combi_rule johdin_nlainen ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_nlainen;
-  result $vasen + <[alku: $sana] + $oikea>,
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules nimisana, laatusana,
+           tavuviiva, etuliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
+  result $res,
          rules laatusanan_sijapääte, omistusliite,
 	       liitesana,
-	       nimisana, laatusana,
 	       laatusanan_johdos,
-	       voitto_yliaste,
-	       tavuviiva,
-	       etuliite,
-	       loppu;
+	       voitto_yliaste;
 end;
 
 combi_rule johdin_inen ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_inen;
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules nimisana, laatusana,
+           tavuviiva, etuliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
     result $vasen + <[alku: $sana] + $oikea>,
          rules laatusanan_sijapääte, omistusliite,
 	       liitesana,
-	       nimisana, laatusana,
 	       laatusanan_johdos,
-	       voitto_yliaste,
-	       tavuviiva,
-	       etuliite,
-	       loppu;
+	       voitto_yliaste;
 end;
 
 combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
@@ -1102,12 +1114,16 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
     result $res, rules laatusanan_sijapääte;
   end;
 
+  if tavuviiva in $oikea.jatko then
+    result $res, rules etuliite, tavuviiva;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
   result $res,
           rules omistusliite, liitesana,
                 teonsanan_johdos,
-                voitto_yliaste,
-                etuliite,
-                tavuviiva, loppu;
+                voitto_yliaste;
 end;
 
 
@@ -1130,15 +1146,18 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
     stop;
   end;
 
+  if tavuviiva in $oikea.jatko then
+    result $res, rules nimisana, laatusana, teonsana,
+           etuliite, tavuviiva;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
   result $res,
           rules nimisanan_sijapääte, #FIXME: voi olla laatusana
                 omistusliite, liitesana,
-                nimisana, laatusana, teonsana,
                 voitto_yliaste,
-                laatusanan_johdos, nimisanan_johdos,
-                etuliite,
-                tavuviiva,
-                loppu;
+                laatusanan_johdos, nimisanan_johdos;
 end;
 
 
@@ -1157,13 +1176,18 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
 
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-  result $vasen + <[alku: $sana] + $oikea>,
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules nimisana, laatusana, teonsana,
+           etuliite, tavuviiva;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
+  result $res,
           rules nimisanan_sijapääte, omistusliite, liitesana,
-                nimisana, laatusana, teonsana,
                 laatusanan_johdos, nimisanan_johdos,
-                voitto_yliaste,
-                etuliite,
-                tavuviiva, loppu;
+                voitto_yliaste;
 end;
 
 
