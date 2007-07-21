@@ -135,7 +135,10 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if nimisana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta;
     end;
-    result <[alku: $sana] + $oikea>, rules etuliite, nimisana, laatusana, teonsana, tavuviiva;
+    if laatusana in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules laatusana;
+    end;
+    result <[alku: $sana] + $oikea>, rules etuliite, nimisana, teonsana, tavuviiva;
 
   elseif $oikea.luokka = kieltosana then
     if kieltosanan_liitesana in $oikea.jatko then
@@ -170,7 +173,7 @@ end;
 combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = etuliite;
 
-  ? etuliite in $vasen.($index - 1).jatko;
+  ? tavuviiva in $vasen.($index - 1).jatko;
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
@@ -182,10 +185,14 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
     result $res, rules inen_johdos_nimisanasta;
   end;
 
+  if (laatusana in $oikea.jatko) then
+    result $res, rules laatusana;
+  end;
+
   if (kieltosana in $oikea.jatko) then
     result $res, rules kieltosana;
   else
-    result $res, rules etuliite, nimisana, laatusana, teonsana, tavuviiva;
+    result $res, rules etuliite, nimisana, teonsana, tavuviiva;
   end;
 end;
 
@@ -342,7 +349,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
   ? $oikea.luokka = johdin_lAinen;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if nimisana in $oikea.jatko then
+  if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
                  nimisana_teonsanasta;
   end;
@@ -358,7 +365,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
 
   if ($index greater 1) then
-    ? (laatusana in $vasen.($index - 1).jatko);
+    ? (tavuviiva in $vasen.($index - 1).jatko);
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   else
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
@@ -861,7 +868,7 @@ combi_rule teonsana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = teonsana;
 
   if ($index greater 1) then
-    ? teonsana in $vasen.($index - 1).jatko;
+    ? tavuviiva in $vasen.($index - 1).jatko;
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   end;
 
