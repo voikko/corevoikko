@@ -1,6 +1,6 @@
 include "suomi.inc";
 
-define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
+define @sana1 := <nimisana, tavuviiva>;
 define @sana2 := @sana1 + <teonsana>;
 
 include "lyhenteet.lex";
