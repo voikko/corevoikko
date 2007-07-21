@@ -184,6 +184,7 @@ hopeahelainen
 terävä-älyinen
 !nopea-älyinen
 viittomakielinen
+kaunokirjallisuus
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
@@ -441,4 +442,4 @@ valkoisenkellertävä
 TV-kanavalistaus
 tv-kanavalistaus
 !päällekäin
-
+ja
