@@ -615,6 +615,8 @@
 [perusmuoto: "semminkin", alku: "semminkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "semminkin", alku: "semminkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sentään", alku: "sentään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "sielläpäin", alku: "sielläpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "sieltäpäin", alku: "sieltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "siis", alku: "siis", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikin", alku: "sikin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikseen", alku: "sikseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

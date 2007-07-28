@@ -57,6 +57,9 @@ define @elt := <tavuviiva, teonsana>;
 
 # Etuliite + nimisana/laatusana
 
+[perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "erikois", alku: "erikois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
@@ -119,7 +122,7 @@ define @elt := <tavuviiva, teonsana>;
 
 [perusmuoto: "auki", alku: "auki", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "de", alku: "de", luokka: etuliite, jatko: @elt, äs: aä];
-[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @elt, äs: aä];
+#[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_sukija>]; # Mahdollisesti sopisi verbin subst.- ja adj.johdoksiin
 [perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "kahtia", alku: "kahtia", luokka: etuliite, jatko: @elt, äs: aä];
@@ -169,10 +172,8 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "ekso", alku: "ekso", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "ennen", alku: "ennen", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "epä", alku: "epä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "erikois", alku: "erikois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "esi", alku: "esi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
