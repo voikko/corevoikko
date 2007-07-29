@@ -798,3 +798,10 @@ anteeksiantaminen
 duoesitys
 virkaanastumispäivä
 molempi
+anteeksiantaja
+anteeksiantavainen
+anteeksipyydettävä
+anteeksipyytävä
+kyykyttää
+panija
+lobata

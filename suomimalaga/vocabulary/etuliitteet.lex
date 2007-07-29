@@ -38,6 +38,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "alkeis", alku: "alkeis", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "bile", alku: "bile", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "kaakkois", alku: "kaakkois", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "koillis", alku: "koillis", luokka: etuliite, jatko: @eln, äs: aä];
@@ -57,16 +58,6 @@ define @elt := <tavuviiva, teonsana>;
 
 # Etuliite + nimisana/laatusana
 
-[perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "erikois", alku: "erikois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell, äs: a, tiedot: <ei_sukija>];
-[perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "astraali", alku: "astraali", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp", tiedot: <ei_sukija>];
 [perusmuoto: "ainois", alku: "ainois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -75,26 +66,44 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "alkuperäis", alku: "alkuperäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "anglo", alku: "anglo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "anti", alku: "anti", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "astraali", alku: "astraali", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "astro", alku: "astro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "asuin", alku: "asuin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "bi-", alku: "bi-", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "digitaali", alku: "digitaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "elektro", alku: "elektro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "enimmäis", alku: "enimmäis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "enkel", alku: "enkel", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "erikois", alku: "erikois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "fenno", alku: "fenno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; #Ei oo
 [perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "itsestään", alku: "itsestään", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "jumal", alku: "jumal", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "lehmi", alku: "lehmi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "leivin", alku: "leivin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "mestaris", alku: "mestaris", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -145,7 +154,7 @@ define @elt := <tavuviiva, teonsana>;
 
 # Etuliite + teonsana/nimisana
 
-[perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt + @eln, äs: aä]; # -kamppailla, -kamppailu, -peli
+[perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt + @eln, äs: aä, tiedot: <ei_voikko>]; # -kamppailla, -kamppailu, -peli
 
 
 # Etuliite + nimisana/laatusana/teonsana
@@ -176,10 +185,10 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "epä", alku: "epä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "esi", alku: "esi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etymo", alku: "etymo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etä", alku: "etä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
@@ -187,22 +196,21 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "grafo", alku: "grafo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "gyneko", alku: "gyneko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "gyro", alku: "gyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "histo", alku: "histo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "hypo", alku: "hypo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
+[perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "iktyo", alku: "iktyo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "inter", alku: "inter", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "iono", alku: "iono", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
-[perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "islami", alku: "islami", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "jalko", alku: "jalko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "jalko", alku: "jalko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "julki", alku: "julki", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kaksois", alku: "kaksois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
