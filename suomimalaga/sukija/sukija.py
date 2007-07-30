@@ -63,8 +63,8 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
 classmap = hfconv.modern_classmap
 classmap.extend(historical)
 
-pattern = u"^(?P<alku>.+)(?:" + \
-	  u"(?P<ammottaa>OttAA)|" + \
+pattern = u"^(?P<alku>.*)(?:" + \
+          u"(?P<ammottaa>OttAA)|" + \
           u"(?P<kirjoittaa>OittAA)|" + \
           u"(?P<jaotus>OtUs)|" + \
           u"(?P<aivoitus>OitUs)|" + \
@@ -74,22 +74,25 @@ pattern = u"^(?P<alku>.+)(?:" + \
           u"(?P<resoluutio>Cuutio)|" + \
           u"(?P<illuusio>Cuusio)|" + \
           u"(?P<traditio>Citio)|" + \
-	  u"(?P<symboli_ym>[^aeouyäö]o[dfglmnrv]i)" + \
+	  u"(?P<symboli_ym>[^aeouyäö]o[dfglmnrv]i)|" + \
+	  u"(?P<logia_ym>gogia|logia|sofia)|" + \
+	  u"(?P<loginen_ym>goginen|loginen|sofinen)|" + \
+	  u"(?P<ironinen_ym>Co[nr]inen)|" + \
+	  u"(?P<psyykkinen_ym>(?:aa|ee|ii|oo|uu|yy|ää|öö)(?:kk|pp|tt)inen)|" + \
+	  u"(?P<relatiivinen>tiivinen)|" + \
+	  u"(?P<aarteisto>eistO)|" + \
+	  u"(?P<keltainen>C[aouyäö]i?nen)" + \
           u")$"
-
-#	  u"(?P<logia_ym>gogia|logia|sofia)|" + \
-#	  u"(?P<loginen_ym>goginen|loginen|sofinen)|" + \
-#	  u"(?P<symboli_ym>[^aeouyäö]Co[dfglmnrv]i)|" + \
-
 
 pattern = pattern.replace(u"A", u"[aä]")
 pattern = pattern.replace(u"O", u"[oö]")
 pattern = pattern.replace(u"U", u"[uy]")
 pattern = pattern.replace(u"C", u"[bcdfghjklmnpqrstvwxzšžçðñþß]")
-#pattern = pattern.replace(u"V", u"aeouyäö")
 rx = re.compile(pattern, re.IGNORECASE)
 
-print pattern
+
+#print pattern
+
 
 # Jaetaan sana tavuihin. Esim.
 # hyphenate(u"valkoinen") = val-koi-nen.
@@ -134,7 +137,7 @@ def hyphenate(word):
 	if (n <= 2):
 		return word
 
-#	sys.stdout.write(word + u"\n");
+#	print(word + u"\n");
 	
 	# Jos sanassa on joku merkeistä -':.
 	# tavutetaan sanan molemmat puoliskot erikseen.
@@ -153,9 +156,9 @@ def hyphenate(word):
 		return word  # Lyhenne, jossa on vain kerakkeita.
 
 	while (i < n-1):
-###		sys.stdout.write (s + u" " + str(i) + u" " + str(n) + u"\n")
+###		print (s + u" " + str(i) + u" " + str(n) + u"\n")
 		if ((word[i] in V) and (word[i+1] in V)):
-###			sys.stdout.write (u"Foo 1 " + str(i) + u" " + word[i] + word[i+1] + u"\n")
+###			print (u"Foo 1 " + str(i) + u" " + word[i] + word[i+1] + u"\n")
 			if ((i + 2 < n) and (word[i+1:i+3] in V2)):
 				# Re-aa-li.
 				s = s + word[i] + u"-" + word[i+1:i+3]
@@ -262,10 +265,10 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
 		if (voikko_infclass == u"nuolaista-av2") and (wordform in [u"häväistä", u"vavista"]):
 			voikko_infclass = u"nuolaista"
-#		sys.stdout.write (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
-#		sys.stdout.write(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
+#		print (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
+#		print(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
-#		sys.stdout.write (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass) + u"\n")
+#		print (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass) + u"\n")
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
@@ -289,10 +292,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 
 		if (m != None):
 			d = m.groupdict()
-#			g = m.groups()
-#			for i in range(len(g)):
-#				if (g[i] != None):
-#					sys.stdout.write(wordform + u" " + str(i) + u" " + g[i] + u"\n")
+		
 		alku2 = u""
 		jatko2 = u""
 		wordform2 = u""
@@ -313,12 +313,27 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		jatko6 = u""
 		wordform6 = u""
 
-		s = u""
-		
+		s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+
+		# Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
+		# Esim. kelta(i)nen, hevo(i)nen.
+		#
+		if ((jatko == u"nainen") and (nsyl == 3) and
+		    (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"]) and
+		    (rx != None) and (d != None) and (d['keltainen'] != None) and
+		    (not (wordform in [u"armainen", u"omainen"]))):
+			if (wordform[-4] == u"i"):
+				alku2 = alku[:-1]    # Keltainen => keltanen.
+			else:
+				alku2 = alku + u"i"  # Hevonen => hevoinen.
+			jatko2 = jatko
+			wordform2 = alku2 + u"nen"
+#			print (u"Keltainen " + wordform2 + u" " + alku2 + u" " + jatko2)
+		#
 		# Kolmitavuiset, perusmuodossaan O(i)ttAA-loppuiset sanat
 		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
 		#
-		if ((jatko == u"alittaa") and (nsyl == 3) and
+		elif ((jatko == u"alittaa") and (nsyl == 3) and
 		    (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
 			jatko = u"kirjoittaa"
 			jatko2 = u"kirjoittaa"
@@ -328,31 +343,28 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			elif (d['ammottaa'] != None):
 				alku2 = wordform[0:-4] + u"it"  # Ammottaa => ammoittaa.
 			else:
-				sys.stdout.write(u"Wordform=" + wordform + u"\n")
+				print(u"Wordform=" + wordform + u"\n")
 				abort()
 			wordform2 = alku2 + wordform[-3:]
-			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#			sys.stdout.write ("Aa1 " + s + u" w=" + wordform2 + u" a=" + alku2 + u" A=" + d['alku'] + u"\n")
+#			print ("Aa1 " + s + u" w=" + wordform2 + u" a=" + alku2 + u" A=" + d['alku'] + u"\n")
 		#
 		# Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
 		#
 		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2)):
 			if ((d != None) and (d['ammottaa'] != None)):
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 				jatko = u"kirjoittaa"
 				jatko2 = jatko
 				alku = wordform[0:-4] + u"t"
 				alku2 = wordform[0:-4] + u"it"
 				wordform2 = alku2 + wordform[-3:]
-#				sys.stdout.write ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+#				print ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
 			elif ((d != None) and (d['kirjoittaa'] != None)):
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 				jatko = u"kirjoittaa"
 				jatko2 = jatko
 				alku = wordform[0:-5] + u"it"
 				alku2 = wordform[0:-5] + u"t"
 				wordform2 = alku2 + wordform[-3:]
-#				sys.stdout.write ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+#				print ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
 			elif (jatko == u"ammottaa"):
 				jatko = u"kirjoittaa"
 				alku = alku + u"t"
@@ -369,15 +381,13 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				alku2 = wordform[0:-4] + u"s"
 				jatko2 = jatko
 				wordform2 = alku2 + wordform[-2:]
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#				sys.stdout.write("N1 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
+#				print("N1 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
 			else:
 				alku2 = alku + u"s"
 				jatko2 = jatko
 				alku = alku + u"is"
 				wordform2 = alku2 + wordform[-2:]
-				s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#				sys.stdout.write("N2 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
+#				print("N2 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
 		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
 			jatko = u"ajaa"
 		elif (jatko in [u"asiakas", u"avokas"]):
@@ -386,6 +396,31 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko = u"vilkas"
 		elif ((jatko == u"vieras") and (d != None) and (d['utelias_ankerias'] != None)):
 			jatko = u"utelias"
+		elif (wordform == u"piillä"):
+			jatko = u"nuolla"
+		#
+		# Korjataan alku- ja jatko-kenttien arvoja.
+		#
+		elif ((nsyl > 2) and (jatko == u"arvailla")):
+			alku = alku[:-2]
+		elif (jatko == u"rakentaa"):
+			alku = wordform[:-4]
+		elif (jatko in [u"onneton", u"alaston"]):
+			alku = alku[:-1]
+		elif ((jatko == u"harteet") and (wordform == u"harteet")):
+			alku = u"hart"
+		elif ((jatko == u"kuollut") and (wordform == u"neitsyt")):
+			jatko = u"neitsyt"
+		elif ((jatko == u"ori") and (wordform == u"ori")):
+			alku = u"or"
+		elif (jatko == u"kuollut"):
+			if (wordform[-3] == u"n"):
+				jatko = u"punonut"
+			elif (wordform[-3] == u"r"):
+				jatko = u"purrut"
+			elif (wordform[-3] == u"s"):
+				jatko = u"juossut"
+			alku = alku[:-1]
 		elif ((nsyl > 2) and (jatko == u"vastaus") and
 		      (rx != None) and (d != None) and ((d['aivoitus'] != None) or (d['jaotus'] != None))):
 			#
@@ -397,8 +432,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				alku2 = wordform[:-3] + u"i" + wordform[-3:-1]    # Jaotus => jaoitus.
 			jatko2 = jatko
 			wordform2 = alku2 + wordform[-1:]
-			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-#			sys.stdout.write("J " + wordform2 + u" " + alku2 + u" " + s + u"\n")
+#			print(u"J " + wordform2 + u" " + alku2 + u" " + s + u"\n")
 		elif ((nsyl > 3) and (jatko == u"autio") and
 		      (rx != None) and (d != None) and ((d['obligaatio'] != None) or (d['resoluutio'] != None))):
 			#
@@ -425,9 +459,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku6 = alku4 + u"on"                 # Obligatiooni, revolutiooni.
 			jatko6 = u"paperi"
 			wordform6 = alku6 + u"i"
-			
-			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
-		elif ((nsyl > 3) and (jatko == u"autio") and
+       		elif ((nsyl > 3) and (jatko == u"autio") and
 		      (rx != None) and (d != None) and (d['illuusio'] != None)):
 			#
 			# Illuusio => illusioni, illusiooni, illusio.
@@ -443,8 +475,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku4 = wordform[:-4] + u"sio"      # Illusio.
 			jatko4 = jatko
 			wordform4 = alku4
-		
-			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 		elif ((nsyl > 3) and (jatko == u"autio") and
 		      (rx != None) and (d != None) and (d['traditio'] != None)):
 			#
@@ -461,8 +491,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku4 = wordform[:-2] + u"sio"      # Traditsio.
 			jatko4 = jatko
 			wordform4 = alku4
-		
-			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['symboli_ym'] != None) and
 		      (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"])):
 			#
@@ -472,11 +500,69 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku2 = wordform[:-2] + u"o" + wordform[-2]
 			jatko2 = jatko
 			wordform2 = alku2 + u"i"
-			s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['logia_ym'] != None) and
+		      (malaga_word_class in [u"nimisana", u"nimi_laatusana"])):
+			#
+			# Pedagogia => pedagoogia, psykolo(o)gia, filoso(o)fia.
+			#
+			alku2 = wordform[:-3] + u"o" + wordform[-3:-1]
+			jatko2 = jatko
+			wordform2 = alku2 + u"a"
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['loginen_ym'] != None) and
+		      (malaga_word_class in [u"nimisana", u"nimi_laatusana"])):
+			#
+			# Pedagoginen => pedagooginen, psykolo(o)ginen, filoso(o)finen.
+			#
+			alku2 = wordform[:-5] + u"o" + wordform[-5:-3]
+			jatko2 = jatko
+			wordform2 = alku2 + u"nen"
+		elif ((rx != None) and (d != None) and (d['ironinen_ym'] != None) and
+		      (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"])):
+			#
+			# Ironinen => irooninen, allegorinen => allegoorinen.
+			#
+			alku2 = wordform[:-5] + u"o" + wordform[-5:-3]
+			jatko2 = jatko
+			wordform2 = alku2 + u"nen"
+#			print (u"Ironinen " + wordform2 + u" " + alku2 + u" " + jatko2)
+		elif ((rx != None) and (d != None) and (d['psyykkinen_ym'] != None) and
+		      (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"]) and
+		      (wordform != "eettinen")):  # "Eetillinen" on Joukahaisessa.
+			#
+			# Psyykkinen => psyykillinen, eeppinen => eepillinen, kriittinen => kriitillinen.
+			#
+			alku2 = wordform[:-5] + u"illi"
+			jatko2 = jatko
+			wordform2 = alku2 + u"nen"
+		elif ((rx != None) and (d != None) and (d['relatiivinen'] != None)):
+			#
+			# Relatiivinen => relativinen.
+			#
+			alku2 = wordform[:-6] + u"vi"
+			jatko2 = jatko
+			wordform2 = alku2 + u"nen"
+		elif ((rx != None) and (d != None) and (d['aarteisto'] != None)):
+			#
+			# Aarteisto => aartehisto.
+			#
+			alku2 = wordform[:-4] + u"h" + wordform[-4:]
+			jatko2 = jatko
+			wordform2 = alku2
+#			print (u"Aarteisto " + wordform2 + u" " + alku2 + u" " + jatko2)
+		elif ((jatko == u"iäkäs") and (malaga_word_class in [u"nimi_laatusana", u"laatusana"])):
+			#
+			# Iäkäs => iäkkäisyys.
+			#
+			if (wordform[-2] == u"a"):
+				alku2 = alku + u"kaisuu";
+			else:
+				alku2 = alku + u"käisyy";
+			jatko2 = u"kalleus"
+			wordform2 = alku2 + u"s"
 		
 		# Tulostetaan.
 
-#		sys.stdout.write("Wor1 " + wordform + u"\n")
+#		print("Wor1 " + wordform + u"\n")
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
 			% (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class))

@@ -138,50 +138,6 @@ subrule U ($tietue):
 end;
 
 
-# Tehdään yhdestä tietueesta uudet tietueet, niin että sana voidaan
-# tunnistaa kahdella eri kirjotusasulla, esim. "kirjoittaa" tai "kirjottaa".
-#
-# Jos $tietue1.perusmuoto = "kirjoittaa", niin
-# uudet_tietueet ($tietue1, "kirj", "ot", "taa") palauttaa
-# neljä tietuetta, joiden perusmuoto- ja alku-kentät ovat
-#
-#         perusmuoto  alku
-# tietue1 kirjoittaa  kirjoit
-# tietue2 kirjoittaa  kirjot
-# tietue3 kirjottaa   kirjoit
-# tietue4 kirjottaa   kirjot
-#
-subrule uudet_tietueet ($tietue1, $alku, $uusi_keskiosa, $loppu):
-  define $tietue2 := $tietue1;
-  define $tietue3 := $tietue1;
-  define $tietue4 := $tietue1;
-
-  $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-  $tietue3 :=+ [lähtösana: $tietue1.perusmuoto];
-  $tietue4 :=+ [lähtösana: $tietue1.perusmuoto];
-
-  $tietue2.alku := $alku + $uusi_keskiosa;
-  $tietue4.alku := $tietue2.alku;
-
-  $tietue3.perusmuoto := $alku + $uusi_keskiosa + $loppu;
-  $tietue4.perusmuoto := $tietue3.perusmuoto;
-
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku
-#                       + " " + $uusi_keskiosa + " " + $loppu);
-#define $b := transmit ($tietue1.perusmuoto + " " + $tietue2.perusmuoto + " " + 
-#                       $tietue3.perusmuoto + " " + $tietue4.perusmuoto);
-#define $c := transmit ($tietue1.alku + " " + $tietue2.alku + " " + 
-#                       $tietue3.alku + " " + $tietue4.alku);
-
-#define $d := transmit ($tietue1.perusmuoto + " " + $tietue1.alku);
-#define $e := transmit ($tietue2.perusmuoto + " " + $tietue2.alku);
-#define $f := transmit ($tietue3.perusmuoto + " " + $tietue3.alku);
-#define $g := transmit ($tietue4.perusmuoto + " " + $tietue4.alku);
-
-  return <$tietue1, $tietue2, $tietue2, $tietue4>;
-end;
-
-
 # Johtimia, joilla teonsanoista muodostetaan nimisanoja.
 #
 define @johtimia := <johdin_ntA, johdin_nti, johdin_O,

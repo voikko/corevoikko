@@ -106,194 +106,22 @@ allo_rule generate_allos ($tietue1):
     # Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
     # Esim. kelta(i)nen, hevo(i)nen.
     #
-    if ((nainen in $tietue1.jatko) and
-        ($tietue1.luokka in <nimisana, laatusana, nimi_laatusana>) and
-        ($tietue1.perusmuoto matches ".*" + @kerake + "[aouyäö]i?nen") and
-        (not ($tietue1.perusmuoto matches ".*m[aä]inen")) and # Ei "omainen".
-        ($tavujen_lkm = 3)) then
-      define $tietue2 := $tietue1;
-      if (substring($tietue1.alku,1R) = "i") then
-        $tietue2.alku := substring($tietue1.alku,1,2R);   # Keltainen => keltanen.
-
-      else
-        $tietue2.alku :=+ "i";                            # Hevonen   => hevoinen.
-      end;
-      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-      $tietue2.perusmuoto := $tietue2.alku + "nen";
-      $tietuelista := <$tietue1, $tietue2>;
-    end;
-
-
-    # Illuusio => illusioni, illusiooni, illusio.
-    #
-#    if (($tavujen_lkm greater 3) and
-#        ($tietue1.perusmuoto /= nil) and
-#        ($tietue1.perusmuoto matches ".*" + @kerake : $alku, "uusio" : $loppu)) then
+#    if ((nainen in $tietue1.jatko) and
+#        ($tietue1.luokka in <nimisana, laatusana, nimi_laatusana>) and
+#        ($tietue1.perusmuoto matches ".*" + @kerake + "[aouyäö]i?nen") and
+#        (not ($tietue1.perusmuoto matches ".*m[aä]inen")) and # Ei "omainen".
+#        ($tavujen_lkm = 3) and
+#        ($tietue1.lähtösana = nil) then
 #      define $tietue2 := $tietue1;
-#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue2.alku := $alku + "usion";
-#      $tietue2.perusmuoto := $tietue2.alku + "i";
-#      $tietue2.jatko := <paperi>;
-#
-#      define $tietue3 := $tietue1;
-#      $tietue3 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue3.alku := $alku + "usioon";
-#      $tietue3.perusmuoto := $tietue3.alku + "i";
-#      $tietue3.jatko := <paperi>;
-#
-#      define $tietue4 := $tietue1;
-#      $tietue4 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue4.alku := $alku + "usio";
-#      $tietue4.perusmuoto := $tietue4.alku;
-#
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $loppu);
-#define $b := transmit ($tietue2);
-#define $c := transmit ($tietue3);
-#define $d := transmit ($tietue4);
-#      $tietuelista := <$tietue1, $tietue2, $tietue3, $tietue4>;
-#    end;
-
-
-    # Traditio => traditsioni, traditsiooni, traditsio.
-    #
-#    if (($tavujen_lkm greater 3) and
-#        ($tietue1.perusmuoto /= nil) and
-#        ($tietue1.perusmuoto matches ".*" + @kerake : $alku, "itio" : $loppu)) then
-#      define $tietue2 := $tietue1;
-#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue2.alku := $alku + "itsion";
-#      $tietue2.perusmuoto := $tietue2.alku + "i";
-#      $tietue2.jatko := <paperi>;
-#
-#      define $tietue3 := $tietue1;
-#      $tietue3 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue3.alku := $alku + "itsioon";
-#      $tietue3.perusmuoto := $tietue3.alku + "i";
-#      $tietue3.jatko := <paperi>;
-#
-#      define $tietue4 := $tietue1;
-#      $tietue4 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue4.alku := $alku + "itsio";
-#      $tietue4.perusmuoto := $tietue4.alku;
-#
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $loppu);
-#define $b := transmit ($tietue2);
-#define $c := transmit ($tietue3);
-#define $d := transmit ($tietue4);
-#      $tietuelista := <$tietue1, $tietue2, $tietue3, $tietue4>;
-#    end;
-
-    # Symboli => symbooli, atoomi, uniooni, tenoori, alkoovi, aploodi, mutta kooni ei ole koni.
-    # Myös pedagoogi, psykoloogi, filosoofi, katastroofi.
-    #
-#    if (($tavujen_lkm greater 2) and
-#        ($tietue1.luokka in <nimisana, nimi_laatusana, laatusana>) and
-#        ($tietue1.perusmuoto /= nil) and
-#        ($tietue1.perusmuoto matches ".*[^aeouyäö]": $alku, "o[dfglmnrv]": $keskiosa, "i")) then
-#      define $tietue2 := $tietue1;
-#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-#      $tietue2.alku := $alku + "o" + $keskiosa;
-#      $tietue2.perusmuoto := $tietue2.alku + "i";
+#      if (substring($tietue1.alku,1R) = "i") then
+#        $tietue2.alku := substring($tietue1.alku,1,2R);   # Keltainen => keltanen.
+#      else
+#        $tietue2.alku :=+ "i";                            # Hevonen   => hevoinen.
+#      end;
+#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
+#      $tietue2.perusmuoto := $tietue2.alku + "nen";
 #      $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $keskiosa);
-#define $b := transmit ($tietue2);
 #    end;
-
-    # Pedagogia => pedagoogia, psykologia => psykoloogia,
-    # filosofia => filosoofia.
-    # Samoin Pedagooginen, psykolooginen, filosoofinen.
-    #
-    if (($tavujen_lkm greater 2) and
-        ($tietue1.perusmuoto /= nil) and
-        ($tietue1.perusmuoto matches ".+": $alku, "(gogi|logi|sofi)" : $keskiosa, "(a|nen)" : $loppu)) then
-      define $tietue2 := $tietue1;
-      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-      $tietue2.alku := $alku + substring($keskiosa,1) + "o" + substring($keskiosa,2,3);
-      if ($loppu = "") then
-        $tietue2.perusmuoto := $tietue2.alku + "i";
-      else
-        $tietue2.alku :=+ "i";
-        $tietue2.perusmuoto := $tietue2.alku + $loppu;
-      end;
-      $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $keskiosa + " " + $loppu);
-#define $b := transmit ($tietue2);
-    end;
-
-    # -orinen => -oorinen. Esim alleg(o)orinen, infat(o)orinen.
-    #
-    if (($tietue1.perusmuoto /= nil) and ($tietue1.luokka = laatusana) and
-        ($tietue1.perusmuoto matches ".+": $alku, "ori": $keskiosa, "nen": $loppu)) then
-      if (substring ($alku,1R) /= "o") then
-        define $tietue2 := $tietue1;
-        $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-        $tietue2.alku := $alku + "o" + $keskiosa;
-        $tietue2.perusmuoto := $tietue2.alku + $loppu;
-        $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-      end;
-    end;
-
-
-    # Psyykkinen => psyykillinen, eeppinen => eepillinen, kriittinen => kriitillinen.
-    #
-    if (($tietue1.perusmuoto /= nil) and
-        ($tietue1.luokka in <nimisana, nimi_laatusana, laatusana>) and
-        ($tietue1.perusmuoto matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)" : $alku,
-                                     "(kk|pp|tt)i" : $keskiosa, "nen" : $loppu)) then
-      define $tietue2 := $tietue1;
-      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-      $tietue2.alku := $alku + substring($keskiosa,1) + "illi";
-      $tietue2.perusmuoto := $tietue2.alku + $loppu;
-      $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $keskiosa + " " + $loppu);
-#define $b := transmit ($tietue2);
-    end;
-
-    # Relatiivinen => relativinen.
-    #
-    if (($tietue1.perusmuoto /= nil) and
-        ($tietue1.perusmuoto matches ".+" : $alku, "tiivi" : $keskiosa, "nen" : $loppu)) then
-      define $tietue2 := $tietue1;
-      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-      $tietue2.alku := $alku + substring($keskiosa,1) + "ivi";
-      $tietue2.perusmuoto := $tietue2.alku + $loppu;
-      $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $keskiosa + " " + $loppu);
-#define $b := transmit ($tietue2);
-   end;
-
-   # Aarteisto => aartehisto.
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       ($tietue1.perusmuoto matches ".+e": $alku, "ist[oö]": $loppu)) then
-     define $tietue2 := $tietue1;
-     $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-     $tietue2.alku := $alku + "h" + $loppu;
-     $tietue2.perusmuoto := $tietue2.alku;
-     $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku + " " + $loppu);
-#define $b := transmit ($tietue2);
-   end;
-
-   # Iäkäs => iäkkäisyys.
-   #
-   if ((iäkäs in $tietue1.jatko) and ($tietue1.luokka in <laatusana, nimi_laatusana>)) then
-     define $tietue2 := $tietue1;
-     $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-     assert ($tietue1.äs in <a, ä>);
-     if ($tietue1.äs = a) then
-       $tietue2.alku := $tietue1.alku + "kaisuu";
-     else
-       $tietue2.alku := $tietue1.alku + "käisyy";
-     end;
-     $tietue2.perusmuoto := $tietue2.alku + "s";
-     $tietue2.jatko := <kalleus>;
-     $tietuelista := <$tietue1, $tietue2>;
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-   end;
 
    # Korvataan aksentilliset merkit aksentittomilla (esim. Linné => Linne).
    #
@@ -308,80 +136,22 @@ allo_rule generate_allos ($tietue1):
      $tietuelista := <$tietue1, $tietue2>;
    end;
 
-   # Utelias => uteliaisuus.
-   #
-   if ((vieras in $tietue1.jatko) and ($tavujen_lkm greater 3) and
-       ($tietue1.perusmuoto matches ".*li" : $alku, "[aä]" : $keskikohta, "s")) then
-     define $tietue2 := $tietue1;
-     $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-     if ($keskikohta = "a") then
-       $tietue2.alku := $alku + "aisuu";
-     else
-       $tietue2.alku := $alku + "äisyy";
-     end;
-     $tietue2.perusmuoto := $tietue2.alku + "s";
-     $tietue2.luokka := nimisana;
-     $tietue2.jatko := <kalleus>;
-     if ($tietue2.tiedot /= nil) then
-       $tietue2.tiedot := nil;
-     end;
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-     $tietuelista := <$tietue1, $tietue2>;
-   end;
-
 
    # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
    # generoidaan XML-tiedostosta Malaga-koodia.
    #
-   if (($tavujen_lkm greater 2) and (arvailla in $tietue1.jatko) and
-       ($tietue1.perusmuoto matches ".*" : $alku, "ill[aä]" : $loppu)) then
-#define $a := transmit ($tietue1);
-     $tietue1.alku := $alku;
-#define $b := transmit ($tietue1);
-     $tietuelista := <$tietue1>;
-   end;
    if ((rakentaa in $tietue1.jatko) and
        ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
      $tietue1.alku := $alku;
      $tietuelista := <$tietue1>;
    end;
-   if (((onneton in $tietue1.jatko) or (alaston in $tietue1.jatko)) and
-       ($tietue1.alku matches ".*" : $alku, "t")) then
-     $tietue1.alku := $alku;
-     $tietuelista := <$tietue1>;
-#define $a := transmit ($tietue1);
-   end;
    if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
      $tietue1.alku := "hart";
-     $tietuelista := <$tietue1>;
-   end;
-   if ((kuollut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) then
-     $tietue1.jatko := <neitsyt>;
-     $tietuelista := <$tietue1>;
-   end;
-   if ((ori in $tietue1.jatko) and ($tietue1.perusmuoto = "ori")) then
-     $tietue1.alku:= "or";
      $tietuelista := <$tietue1>;
    end;
    if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
        ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
      stop;
-   end;
-   if (kuollut in $tietue1.jatko) then
-     if ($tietue1.perusmuoto matches ".*" : $alku, "n[uy]t") then
-       $tietue1.alku := $alku;
-       $tietue1.jatko := <punonut>;
-       $tietuelista := <$tietue1>;
-     elseif ($tietue1.perusmuoto matches ".*" : $alku, "r[uy]t") then
-       $tietue1.alku := $alku;
-       $tietue1.jatko := <purrut>;
-       $tietuelista := <$tietue1>;
-     elseif ($tietue1.perusmuoto matches ".*" : $alku, "s[uy]t") then
-       $tietue1.alku := $alku;
-       $tietue1.jatko := <juossut>;
-       $tietuelista := <$tietue1>;
-     end;
    end;
 
    # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
@@ -14141,50 +13911,6 @@ subrule U ($tietue):
   else
     return "y";
   end;
-end;
-
-
-# Tehdään yhdestä tietueesta uudet tietueet, niin että sana voidaan
-# tunnistaa kahdella eri kirjotusasulla, esim. "kirjoittaa" tai "kirjottaa".
-#
-# Jos $tietue1.perusmuoto = "kirjoittaa", niin
-# uudet_tietueet ($tietue1, "kirj", "ot", "taa") palauttaa
-# neljä tietuetta, joiden perusmuoto- ja alku-kentät ovat
-#
-#         perusmuoto  alku
-# tietue1 kirjoittaa  kirjoit
-# tietue2 kirjoittaa  kirjot
-# tietue3 kirjottaa   kirjoit
-# tietue4 kirjottaa   kirjot
-#
-subrule uudet_tietueet ($tietue1, $alku, $uusi_keskiosa, $loppu):
-  define $tietue2 := $tietue1;
-  define $tietue3 := $tietue1;
-  define $tietue4 := $tietue1;
-
-  $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-  $tietue3 :=+ [lähtösana: $tietue1.perusmuoto];
-  $tietue4 :=+ [lähtösana: $tietue1.perusmuoto];
-
-  $tietue2.alku := $alku + $uusi_keskiosa;
-  $tietue4.alku := $tietue2.alku;
-
-  $tietue3.perusmuoto := $alku + $uusi_keskiosa + $loppu;
-  $tietue4.perusmuoto := $tietue3.perusmuoto;
-
-#define $a := transmit ($tietue1.perusmuoto + " " + $alku
-#                       + " " + $uusi_keskiosa + " " + $loppu);
-#define $b := transmit ($tietue1.perusmuoto + " " + $tietue2.perusmuoto + " " + 
-#                       $tietue3.perusmuoto + " " + $tietue4.perusmuoto);
-#define $c := transmit ($tietue1.alku + " " + $tietue2.alku + " " + 
-#                       $tietue3.alku + " " + $tietue4.alku);
-
-#define $d := transmit ($tietue1.perusmuoto + " " + $tietue1.alku);
-#define $e := transmit ($tietue2.perusmuoto + " " + $tietue2.alku);
-#define $f := transmit ($tietue3.perusmuoto + " " + $tietue3.alku);
-#define $g := transmit ($tietue4.perusmuoto + " " + $tietue4.alku);
-
-  return <$tietue1, $tietue2, $tietue2, $tietue4>;
 end;
 
 

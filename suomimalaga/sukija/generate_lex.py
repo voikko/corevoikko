@@ -31,6 +31,11 @@ import xml.dom.minidom
 import codecs
 import getopt
 
+import locale
+#print locale.getlocale(locale.LC_ALL)
+locale.setlocale(locale.LC_ALL, '')
+
+
 path = SUKIJA_LEX
 
 flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
