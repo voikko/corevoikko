@@ -396,6 +396,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko = u"vilkas"
 		elif ((jatko == u"vieras") and (d != None) and (d['utelias_ankerias'] != None)):
 			jatko = u"utelias"
+		elif (jatko == u"jättää"):
+			jatko = u"heittää"
 		elif (wordform == u"piillä"):
 			jatko = u"nuolla"
 		#

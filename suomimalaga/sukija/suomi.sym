@@ -934,6 +934,7 @@ kumpi;
 liitesana_pi;
 minä;
 yö_yksikkö;
+peljätä;
 
 lukutyyppi;
 perusluku;
@@ -953,3 +954,4 @@ lukusanan_jälkiliite;
 asiakas; # iäkäs
 avokas;  # iäkäs
 varas;   # vilkas
+jättää;  # heittää

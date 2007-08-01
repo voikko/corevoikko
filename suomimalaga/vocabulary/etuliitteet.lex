@@ -32,6 +32,17 @@ define @ell := <tavuviiva, laatusana>;
 # Etuliite (teonsanat)
 define @elt := <tavuviiva, teonsana>;
 
+
+## Vanhat määritelmät muistin tueksi.
+## == Näitä voi käyttää jatko-kentissä ==
+## Etuliite (nimisanat)
+#define @eln := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
+## Etuliite (laatusanat)
+#define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
+## Etuliite (teonsanat)
+#define @elt := <tavuviiva, etuliite, teonsana>;
+
+
 # Etuliite + nimisana
 
 [perusmuoto: "ainais", alku: "ainais", luokka: etuliite, jatko: @eln, äs: aä];
@@ -48,7 +59,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "suhu", alku: "suhu", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "varhais", alku: "varhais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "varo", alku: "varo", luokka: etuliite, jatko: @eln, äs: aä];
-[perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 
 # Etuliite + laatusana
 
@@ -118,7 +129,6 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "refleksiivi", alku: "refleksiivi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "valko", alku: "valko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "vertais", alku: "vertais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -144,7 +154,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "mukana", alku: "mukana", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @elt, äs: aä];
-[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @elt, äs: aä]; # Haitallinen nimisanoissa, koska päälle+käin väärin
+[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_sukija>]; # Haitallinen nimisanoissa, koska päälle+käin väärin
 [perusmuoto: "re", alku: "re", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv>];
 [perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @elt, äs: aä];
@@ -185,7 +195,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "epä", alku: "epä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "esi", alku: "esi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etymo", alku: "etymo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etä", alku: "etä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
@@ -273,10 +283,11 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "porvaris", alku: "porvaris", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "post", alku: "post", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "pre", alku: "pre", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "puoli", alku: "puoli", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "puoli", alku: "puoli", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "puolittais", alku: "puolittais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "pyro", alku: "pyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "pysyväis", alku: "pysyväis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "rinnakkais", alku: "rinnakkais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
@@ -313,6 +324,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uro", alku: "uro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
@@ -324,7 +336,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "veneeri", alku: "veneeri", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "vierekkäis", alku: "vierekkäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "viher", alku: "viher", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-#[perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "vihki", alku: "vihki", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "viitois", alku: "viitois", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "vuos", alku: "vuos", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "yhdys", alku: "yhdys", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];

@@ -102,6 +102,20 @@ allo_rule generate_allos ($tietue1):
   if ($malli = sukija) then
     define $tavujen_lkm := tavujen_määrä ($tietue1.perusmuoto);
 
+    if ($tietue1.luokka = etuliite) then
+##      define $a := transmit ($tietue1.perusmuoto + " " + value_string($tietue1.jatko));
+      if (not (etuliite in $tietue1.jatko)) then
+        $tietue1.jatko :=+ <etuliite>;
+      end;
+      if (((nimisana in $tietue1.jatko) or (laatusana in $tietue1.jatko)) and
+          (not (nimi_laatusana in $tietue1.jatko))) then
+        $tietue1.jatko :=+ <nimi_laatusana>;
+      end;
+      $tietue1.jatko := set ($tietue1.jatko);
+##      define $b := transmit ($tietue1.perusmuoto + " " + value_string($tietue1.jatko));
+      $tietuelista := <$tietue1>;
+    end;
+
     #
     # Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
     # Esim. kelta(i)nen, hevo(i)nen.
