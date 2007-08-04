@@ -1756,7 +1756,7 @@ pruning_rule prune ($list):
   end;
   $alut := set($alut);
   foreach $an in $list:
-    if $j = 20 then
+    if $j = 30 then
       $filter :=+ <no>;
     else
       if (length($an) greater 1) and ($an.1).alku + ($an.2).alku in $alut then
