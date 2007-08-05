@@ -785,7 +785,6 @@ ylösnoussut
 öljytä
 henkiinherättäminen
 kokoonpuristuminen
-kokoonpuristuminen
 kokoonpuristuvuus
 loppuunsaattaminen
 maahantuotu
@@ -805,3 +804,17 @@ anteeksipyytävä
 kyykyttää
 panija
 lobata
+kuusinkertaistaa
+kymmenkertaistaa
+vastaanhangoitteleva
+vastaantuleva
+viisinkertaistaa
+viljaisa
+yhteenkuuluva
+yhteenlaskettava
+yhteensopimaton
+yhteensovittaminen
+yhteensulautuminen
+tasavertaistaa
+seitsenkertaistaa
+yhteenliittyminen
