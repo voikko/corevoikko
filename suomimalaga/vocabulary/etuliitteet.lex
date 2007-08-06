@@ -100,7 +100,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "erikois", alku: "erikois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "esi", alku: "esi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Mahdollisesti sopiisi Voikkoon verbien subst.- ja adj.johdoksiin
+[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Mahdollisesti sopisi Voikkoon verbien subst.- ja adj.johdoksiin
 [perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -371,20 +371,37 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "yhteen", alku: "yhteen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "yhteis", alku: "yhteis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "yhtä", alku: "yhtä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "yksin", alku: "yksin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "yksittäis", alku: "yksittäis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "yksityis", alku: "yksityis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "yksin", alku: "yksin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "yksin", alku: "yksin", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "yksittäis", alku: "yksittäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "yksityis", alku: "yksityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "yksöis", alku: "yksöis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "yleis", alku: "yleis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "yleis", alku: "yleis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ylen", alku: "ylen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
-[perusmuoto: "yli", alku: "yli", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "yli", alku: "yli", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "yli", alku: "yli", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ylitse", alku: "ylitse", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Ei välttämättä tarpeellinen.
+[perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "yltiö", alku: "yltiö", luokka: etuliite, jatko: @ell, äs: aä];
 [perusmuoto: "yltä", alku: "yltä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ylön", alku: "ylön", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ympäri", alku: "ympäri", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "äkki", alku: "äkki", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "ääreis", alku: "ääreis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "öky", alku: "öky", luokka: etuliite, jatko: @ell, äs: aä];
+[perusmuoto: "äkki", alku: "äkki", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "äkki", alku: "äkki", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "ääreis", alku: "ääreis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "ääreis", alku: "ääreis", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "öky", alku: "öky", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+
+# Nämä liitetään usein toisiin sanoihin yhdysmerkin avulla:
+# (Lähinnä konsonanttiin päättyviä vierasperäisiä sanoja.)
+# TOISTAISEKSI EIVÄT TOIMI OIKEIN
+
+#[perusmuoto: "blues-", alku: "blues-", luokka: etuliite, jatko: @eln, äs: aä];
+#[perusmuoto: "golf-", alku: "golf-", luokka: etuliite, jatko: @eln, äs: aä];
+#[perusmuoto: "jazz-", alku: "jazz-", luokka: etuliite, jatko: @eln, äs: aä];
+#[perusmuoto: "pop-", alku: "pop-", luokka: etuliite, jatko: @eln, äs: aä];
+#[perusmuoto: "rock-", alku: "rock-", luokka: etuliite, jatko: @eln, äs: aä];
+#[perusmuoto: "squash-", alku: "squash-", luokka: etuliite, jatko: @eln, äs: aä];

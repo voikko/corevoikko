@@ -818,3 +818,5 @@ yhteensulautuminen
 tasavertaistaa
 seitsenkertaistaa
 yhteenliittyminen
+kahdeksankertaistaa
+yhdeksänkertaistaa
