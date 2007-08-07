@@ -433,9 +433,6 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
            nimisana, laatusana, etuliite,
            inen_johdos_nimisanasta;
   end;
-  if omistusliite in $oikea.jatko then
-    result $res, rules omistusliite;
-  end;
   if loppu in $oikea.jatko then
     result $res, accept;
   end;
@@ -695,6 +692,49 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
 end;
 
 combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+
+  define $edellinen := $vasen.($index - 1);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  ? $oikea.sija in $edellinen.jatko;
+  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+
+  if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
+    require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
+  end;
+
+  if ($oikea.sija = kerronto_sti) then
+    ? $edellinen.luokka in @sti_edeltäjä;
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
+  else
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
+    if (tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
+        (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
+      if sijamuoto_sijasta($oikea.sija) = omanto then
+        result $res,
+               rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+      end;
+      if sijamuoto_sijasta($oikea.sija) = nimentö and luku_sijasta($oikea.sija) = yksikkö then
+       result $res, rules nimisana_teonsanasta; # FIXME: laatusana_teonsanasta
+      end;
+      if $edellinen.luokka in <laatusana, nimi_laatusana> then
+        result $res, rules yhdysmerkki_laatusanan_jälkeen;
+      end;
+    end;
+    if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
+      result $res, rules inen_johdos_nimisanasta;
+    end;
+  end;
+end;
+
+combi_rule laatusanan_sijapääte_omistusliitteellä ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = sijapääte;
 
   define $edellinen := $vasen.($index - 1);
@@ -1329,7 +1369,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
                        nimisana_laatusanasta, inen_johdos_nimisanasta,
                        nimisanan_sijapääte;
   else
-    result $res, rules laatusanan_sijapääte;
+    result $res, rules laatusanan_sijapääte_omistusliitteellä;
   end;
 
   if tavuviiva in $oikea.jatko then
@@ -1369,7 +1409,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
         result $res, accept;
       end;
       result $res,
-             rules laatusanan_sijapääte, liitesana,
+             rules laatusanan_sijapääte_omistusliitteellä, liitesana,
                    voitto_yliaste, laatusanan_johdos;
     end;
     stop;

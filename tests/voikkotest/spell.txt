@@ -382,6 +382,11 @@ jott'ei
 vaikkeikaan
 !vaikkeikään
 
+[omistusliitteet]
+koirani
+!kauniini
+!kauniistani
+
 [taivutusluokat]
 vihkon # Kotus 1
 vihon # Kotus 1

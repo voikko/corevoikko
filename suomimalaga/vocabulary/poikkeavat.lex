@@ -153,7 +153,7 @@
 [perusmuoto: "ori", alku: "ori", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "ori", alku: "or", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "orja", alku: "orja", luokka: nimisana, jatko: <johdin_tAr>, äs: a];
-[perusmuoto: "paras", alku: "par", luokka: laatusana, jatko: <paras>, äs: a];
+[perusmuoto: "paras", alku: "par", luokka: nimi_laatusana, jatko: <paras>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
 [perusmuoto: "perä", alku: "peräitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
