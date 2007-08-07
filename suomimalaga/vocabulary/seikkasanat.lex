@@ -127,7 +127,10 @@
 [perusmuoto: "hamaan", alku: "hamaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "hamassa", alku: "hamassa", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "hamasta", alku: "hamasta", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "harvaan", alku: "harvaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "harvakseen", alku: "harvakseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "harvakseltaan", alku: "harvakseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "harvassa", alku: "harvassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "harvoin", alku: "harvoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helkkaristi", alku: "helkkaristi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hellävaroen", alku: "hellävaroen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
@@ -144,7 +147,7 @@
 [perusmuoto: "hiirenhiljaa", alku: "hiirenhiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "hiljaa", alku: "hiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljakkoin", alku: "hiljakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "hiljakseen", alku: "hiljakseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hiljakseen", alku: "hiljakse", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "hiljalleen", alku: "hiljalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljan", alku: "hiljan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljattain", alku: "hiljattain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -177,9 +180,11 @@
 [perusmuoto: "huorin", alku: "huorin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "huosta", alku: "huosta", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + <loppu>, äs: a];
 [perusmuoto: "huutia", alku: "huutia", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hyvilleen", alku: "hyville", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
+[perusmuoto: "hyvillään", alku: "hyvillä", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyvin", alku: "hyvin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "hyväkseen", alku: "hyväkseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "hyväksensä", alku: "hyväksensä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hyvineen", alku: "hyvine", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
+[perusmuoto: "hyväksi", alku: "hyväkse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyvänen", alku: "hyvänen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "hyvänsä", alku: "hyvänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
@@ -226,6 +231,7 @@
 [perusmuoto: "jokatapauksessa", alku: "jokatapauksessa", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppppppp"];
 [perusmuoto: "jokseenkin", alku: "jokseenkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jolloin", alku: "jolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "joltinenkin", alku: "joltiseltaankin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "jonkajälkeen", alku: "jonkajälkeen", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "jonkatähden", alku: "jonkatähden", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "jonkavuoksi", alku: "jonkavuoksi", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppp=pppppp"];
@@ -485,6 +491,7 @@
 [perusmuoto: "nykyisellään", alku: "nykyisellään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nykyä", alku: "nykyä", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "nykyään", alku: "nykyään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "nyreissään", alku: "nyreissä", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "nyt", alku: "nyt", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nyttemmin", alku: "nyttemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näemmä", alku: "näemmä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
