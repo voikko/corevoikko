@@ -267,6 +267,8 @@ valkolakkinen # nimisanan etuliite nimisanan inen-johdoksen edessä
 !biojuosta # nimisanan etuliite ei saa olla teonsanan edessä
 !kissabiojuosta # nimisanan etuliite ei saa olla teonsanan edessä
 !siistiesiinkaunis
+ulkohartolalainen
+perusulkohartolalainen
 
 [seikkasanat]
 keskenään

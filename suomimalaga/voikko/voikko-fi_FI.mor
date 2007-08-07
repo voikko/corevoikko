@@ -139,7 +139,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta;
     end;
     if laatusana in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules laatusana;
+      result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos;
     end;
     if tavuviiva in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules tavuviiva;
@@ -203,7 +203,7 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
   end;
 
   if (laatusana in $oikea.jatko) then
-    result $res, rules laatusana;
+    result $res, rules laatusana, paikannimen_lainen_johdos;
   end;
 
   if (kieltosana in $oikea.jatko) then
