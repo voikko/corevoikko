@@ -148,6 +148,7 @@ saksalaismiehityksen
 !-setieuivin
 helsinkiläinenkö
 !helsinkiläinenko
+tamperelaisemme
 
 [lyhenteet]
 USA:ssa
@@ -269,6 +270,8 @@ valkolakkinen # nimisanan etuliite nimisanan inen-johdoksen edessä
 !siistiesiinkaunis
 ulkohartolalainen
 perusulkohartolalainen
+kaakkoishartolalainen
+peruskaakkoishartolalainen
 
 [seikkasanat]
 keskenään

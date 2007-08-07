@@ -135,10 +135,12 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
            rules liitesana;
 
   elseif $oikea.luokka = etuliite then
-    if nimisana in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta;
-    end;
-    if laatusana in $oikea.jatko then
+    if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules
+        inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos;
+    elseif nimisana in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
+    elseif laatusana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos;
     end;
     if tavuviiva in $oikea.jatko then
@@ -194,16 +196,17 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if (nimisana in $oikea.jatko) then
-    result $res, rules inen_johdos_nimisanasta;
+  if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
+    result $res, rules
+      inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos;
+  elseif nimisana in $oikea.jatko then
+    result $res, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
+  elseif laatusana in $oikea.jatko then
+    result $res, rules laatusana, paikannimen_lainen_johdos;
   end;
 
   if (teonsana in $oikea.jatko) then
     result $res, rules teonsana;
-  end;
-
-  if (laatusana in $oikea.jatko) then
-    result $res, rules laatusana, paikannimen_lainen_johdos;
   end;
 
   if (kieltosana in $oikea.jatko) then
@@ -405,6 +408,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
                  nimisana_teonsanasta;
   end;
+  if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, accept; end;
   result $res, rules laatusanan_sijapääte, laatusanan_johdos;
