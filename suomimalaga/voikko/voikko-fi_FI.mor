@@ -428,7 +428,8 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if tavuviiva in $oikea.jatko then
+  if tavuviiva in $oikea.jatko and
+    ($oikea.tiedot = nil or not (ei_ys in $oikea.tiedot or ei_ysa in $oikea.tiedot)) then
     result $res, rules yhdysmerkki_laatusanan_jälkeen,
            nimisana, laatusana, etuliite,
            inen_johdos_nimisanasta;

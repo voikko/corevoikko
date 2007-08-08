@@ -92,6 +92,7 @@ oopiumsodan
 teollisuusliitoissa
 !lähkoirainen
 !juurihoito-klubi
+!paraslehmäinen # "paras" ei sallittu yhdyssanan osana
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
