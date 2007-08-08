@@ -193,7 +193,7 @@ end;
 combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = etuliite;
 
-  ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
@@ -1629,9 +1629,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
   else
     define $taulukko := <
       <<"alko">,            <"iva", "ivata">>,
-      <<"anti">,            <"lainata">>,
       <<"auto">,            <"nova">>,  # Auto+novien.
-      <<"de">,              <"lego", "mono">>,  # Ei de+lego+iva, de+mono+logi.
       <<"funktio">,   <"naali">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"hara">,      <"voi", "vuo">>,
@@ -1641,9 +1639,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"hyppy">,     <"selli">>,
       <<"hätä">,      <"katka">>,
       <<"isä">,       <"nisä">>,
-      <<"itse">,      <"matto", "tie">>,
       <<"iva">,       <"nova">>,
-      <<"jumal">,     <"uus">>,
       <<"kapi">,      <"nalli">>,  # Kapi+nallinen.
       <<"kare">,      <"lika">>,
       <<"karri">,     <"ääri">>,
@@ -1660,7 +1656,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
       <<"punk">,      <"arka", "kari">>,
       <<"polvinen">,  <"tuki">>, # polvistuin
-      <<"pyro">,      <"maa">>,
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
       <<"samainen">,  <"tuta">>,
       <<"soinen">,    <"aari">>,
@@ -1671,9 +1666,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       <<"tie">,       <"tie">>,
       <<"traditio">,  <"naali">>,
       <<"ulko">,      <"naida", "nainen">>,
-      <<"uus">,       <"arpoa">>,
       <<"vasta">,     <"pää">>,
-      <<"viher">,     <"vuotaa">>,
       <<"viive">,     <"itä">>,
       <<"voinen">,    <"iva", "ivata">>    # Voisivatko => vois+iva(ta).
     >;

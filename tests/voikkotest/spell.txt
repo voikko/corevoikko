@@ -227,6 +227,8 @@ sosiaali-
 -albumillaan
 presidentin-
 !id- # itä-
+matka-aerokissa # yhdysmerkki etuliitteen edessä
+!matkaaerokissa
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri
