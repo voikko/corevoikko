@@ -212,6 +212,226 @@
 [perusmuoto: "uusimaalainen", alku: "uusimaalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "uudenmaalainen", alku: "uudenmaalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
 
+# {{{1 Adjektiiveja
+
+# {{{2 minunlainen + omistusliite
+
+[perusmuoto: "minunlainen", alku: "minunlaiseni",    luokka: laatusana, luku: yksikkö, sija: nimentö, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaistani",   luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisenani",  luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisekseni", luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisessani", luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisestani", luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaiseeni",   luokka: laatusana, luku: yksikkö, sija: sisätulento_Vn, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisellani", luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaiseltani", luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaiselleni", luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisettani", luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+[perusmuoto: "minunlainen", alku: "minunlaisieni",   luokka: laatusana, luku: monikko, sija: omanto_ien, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisteni",   luokka: laatusana, luku: monikko, sija: omanto_ten, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisiani",   luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisinani",  luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisikseni", luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisissani", luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisistani", luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisiini",   luokka: laatusana, luku: monikko, sija: sisätulento_iin, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisillani", luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisiltani", luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisilleni", luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisittani", luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "minunlainen", alku: "minunlaisineni",  luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+# {{{2 sinunlainen + omistusliite
+
+[perusmuoto: "sinunlainen", alku: "sinunlaisesi",    luokka: laatusana, luku: yksikkö, sija: nimentö, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaistasi",   luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisenasi",  luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaiseksesi", luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisessasi", luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisestasi", luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaiseesi",   luokka: laatusana, luku: yksikkö, sija: sisätulento_Vn, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisellasi", luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaiseltasi", luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisellesi", luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisettasi", luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+[perusmuoto: "sinunlainen", alku: "sinunlaisiesi",   luokka: laatusana, luku: monikko, sija: omanto_ien, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaistesi",   luokka: laatusana, luku: monikko, sija: omanto_ten, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisiasi",   luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisinasi",  luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisiksesi", luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisissasi", luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisistasi", luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisiisi",   luokka: laatusana, luku: monikko, sija: sisätulento_iin, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisillasi", luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisiltasi", luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisillesi", luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisittasi", luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "sinunlainen", alku: "sinunlaisinesi",  luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+# {{{2 hänenlainen + omistusliite
+
+# -nsA
+
+[perusmuoto: "hänenlainen", alku: "hänenlaisensa",    luokka: laatusana, luku: yksikkö, sija: nimentö, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaistansa",   luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisenansa",  luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaiseksensa", luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisessansa", luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisestansa", luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaiseensa",   luokka: laatusana, luku: yksikkö, sija: sisätulento_Vn, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisellansa", luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaiseltansa", luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisellensa", luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisettansa", luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+[perusmuoto: "hänenlainen", alku: "hänenlaisiensa",   luokka: laatusana, luku: monikko, sija: omanto_ien, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaistensa",   luokka: laatusana, luku: monikko, sija: omanto_ten, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisiansa",   luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisinansa",  luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisiksensa", luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisissansa", luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisistansa", luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisiinsa",   luokka: laatusana, luku: monikko, sija: sisätulento_iin, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisillansa", luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisiltansa", luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisillensa", luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisittansa", luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisinensa",  luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+# -Vn
+
+[perusmuoto: "hänenlainen", alku: "hänenlaistaan",    luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisenaan",   luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisekseen",  luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisessaan",  luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisestaan",  luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisellaan",  luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaiseltaan",  luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaiselleen",  luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisettaan",  luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+[perusmuoto: "hänenlainen", alku: "hänenlaisiaan",    luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisinaan",   luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisikseen",  luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisissaan",  luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisistaan",  luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisillaan",  luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisiltaan",  luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisilleen",  luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisittaan",  luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hänenlainen", alku: "hänenlaisineen",   luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppp=pppppp"];
+
+# {{{2 meidänlainen + omistusliite
+
+[perusmuoto: "meidänlainen", alku: "meidänlaisemme",    luokka: laatusana, luku: yksikkö, sija: nimentö, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaistamme",   luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisenamme",  luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaiseksemme", luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisessamme", luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisestamme", luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaiseemme",   luokka: laatusana, luku: yksikkö, sija: sisätulento_Vn, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisellamme", luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaiseltamme", luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisellemme", luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisettamme", luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+[perusmuoto: "meidänlainen", alku: "meidänlaisiemme",   luokka: laatusana, luku: monikko, sija: omanto_ien, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaistemme",   luokka: laatusana, luku: monikko, sija: omanto_ten, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisiamme",   luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisinamme",  luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisiksemme", luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisissamme", luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisistamme", luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisiimme",   luokka: laatusana, luku: monikko, sija: sisätulento_iin, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisillamme", luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisiltamme", luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisillemme", luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisittamme", luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "meidänlainen", alku: "meidänlaisinemme",  luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+# {{{2 teidänlainen + omistusliite
+
+[perusmuoto: "teidänlainen", alku: "teidänlaisenne",    luokka: laatusana, luku: yksikkö, sija: nimentö, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaistanne",   luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisenanne",  luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaiseksenne", luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisessanne", luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisestanne", luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaiseenne",   luokka: laatusana, luku: yksikkö, sija: sisätulento_Vn, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisellanne", luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaiseltanne", luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisellenne", luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisettanne", luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+[perusmuoto: "teidänlainen", alku: "teidänlaisienne",   luokka: laatusana, luku: monikko, sija: omanto_ien, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaistenne",   luokka: laatusana, luku: monikko, sija: omanto_ten, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisianne",   luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisinanne",  luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisiksenne", luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisissanne", luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisistanne", luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisiinne",   luokka: laatusana, luku: monikko, sija: sisätulento_iin, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisillanne", luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisiltanne", luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisillenne", luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisittanne", luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "teidänlainen", alku: "teidänlaisinenne",  luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+# {{{2 heidänlainen + omistusliite
+
+# -nsA
+
+[perusmuoto: "heidänlainen", alku: "heidänlaisensa",    luokka: laatusana, luku: yksikkö, sija: nimentö, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaistansa",   luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisenansa",  luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaiseksensa", luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisessansa", luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisestansa", luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaiseensa",   luokka: laatusana, luku: yksikkö, sija: sisätulento_Vn, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisellansa", luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaiseltansa", luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisellensa", luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisettansa", luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+[perusmuoto: "heidänlainen", alku: "heidänlaisiensa",   luokka: laatusana, luku: monikko, sija: omanto_ien, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaistensa",   luokka: laatusana, luku: monikko, sija: omanto_ten, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisiansa",   luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisinansa",  luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisiksensa", luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisissansa", luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisistansa", luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisiinsa",   luokka: laatusana, luku: monikko, sija: sisätulento_iin, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisillansa", luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisiltansa", luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisillensa", luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisittansa", luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisinensa",  luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+# -Vn
+
+[perusmuoto: "heidänlainen", alku: "heidänlaistaan",    luokka: laatusana, luku: yksikkö, sija: osanto_tA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisenaan",   luokka: laatusana, luku: yksikkö, sija: olento_nA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisekseen",  luokka: laatusana, luku: yksikkö, sija: tulento_ksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisessaan",  luokka: laatusana, luku: yksikkö, sija: sisäolento_ssA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisestaan",  luokka: laatusana, luku: yksikkö, sija: sisäeronto_stA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisellaan",  luokka: laatusana, luku: yksikkö, sija: ulko_olento_llA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaiseltaan",  luokka: laatusana, luku: yksikkö, sija: ulkoeronto_ltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaiselleen",  luokka: laatusana, luku: yksikkö, sija: ulkotulento_lle, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisettaan",  luokka: laatusana, luku: yksikkö, sija: vajanto_tta, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
+[perusmuoto: "heidänlainen", alku: "heidänlaisiaan",    luokka: laatusana, luku: monikko, sija: osanto_iA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisinaan",   luokka: laatusana, luku: monikko, sija: olento_inA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisikseen",  luokka: laatusana, luku: monikko, sija: tulento_iksi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisissaan",  luokka: laatusana, luku: monikko, sija: sisäolento_issA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisistaan",  luokka: laatusana, luku: monikko, sija: sisäeronto_istA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisillaan",  luokka: laatusana, luku: monikko, sija: ulko_olento_illA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisiltaan",  luokka: laatusana, luku: monikko, sija: ulkoeronto_iltA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisilleen",  luokka: laatusana, luku: monikko, sija: ulkotulento_ille, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisittaan",  luokka: laatusana, luku: monikko, sija: vajanto_ittA, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "heidänlainen", alku: "heidänlaisineen",   luokka: laatusana, luku: monikko, sija: seuranto_ine, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppp=pppppp"];
+
 # {{{1 Lukusanoja
 
 # {{{2 aamuyksitoista
@@ -2563,7 +2783,7 @@
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <osanto_ttA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: ""];
-#[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: ""];
+#[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <sisäolento_ssA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: ""];
 #[perusmuoto: "", alku: "", luokka: nimisana, luku: yksikkö, jatko: <sisätulento_hVn>, äs: a, rakenne: ""];
