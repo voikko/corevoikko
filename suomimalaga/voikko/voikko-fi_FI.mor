@@ -411,7 +411,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, accept; end;
-  result $res, rules laatusanan_sijapääte, laatusanan_johdos;
+  result $res, rules laatusanan_sijapääte_omistusliitteellä, laatusanan_johdos;
 end;
 
 ###### JOHDINSÄÄNNÖT PÄÄTTYVÄT
