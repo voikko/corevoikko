@@ -133,6 +133,6 @@ def get_preference(prefname):
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
-	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: | less'
+	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 	return None
 
