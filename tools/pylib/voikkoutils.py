@@ -125,11 +125,14 @@ def get_preference(prefname):
 			return voikko_dev_prefs.encoding
 		if prefname == 'libvoikko_bin' and hasattr(voikko_dev_prefs, 'libvoikko_bin'):
 			return voikko_dev_prefs.libvoikko_bin
+		if prefname == 'diffviewcmd' and hasattr(voikko_dev_prefs, 'diffviewcmd'):
+			return voikko_dev_prefs.diffviewcmd
 	except ImportError:
 		pass
 	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
+	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: | less'
 	return None
 

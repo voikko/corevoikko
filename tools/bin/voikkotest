@@ -34,6 +34,7 @@ WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
 ENCODING = voikkoutils.get_preference('encoding')
 HYPHENCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkohyphenate'
 SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
+DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
 
 langcode = "fi_FI"
 spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
@@ -109,11 +110,12 @@ def init_speller():
 # Read command line options
 (opts, args) = ([], [])
 try:
-	(opts, args) = getopt.getopt(sys.argv[1:], "", ["base", "compare"])
+	(opts, args) = getopt.getopt(sys.argv[1:], "", ["base", "current", "compare"])
 except getopt.GetoptError:
 	sys.stderr.write("Usage: voikkotest           (run only developer tests)\n")
-	sys.stderr.write("Usage: voikkotest --base    (use current version as baseline)\n")
-	sys.stderr.write("Usage: voikkotest --compare (compare current version against baseline)\n")
+	sys.stderr.write("Usage: voikkotest --base    (create baseline from current version)\n")
+	sys.stderr.write("Usage: voikkotest --current (create new 'current' for comparison)\n")
+	sys.stderr.write("Usage: voikkotest --compare (compare current version against the baseline)\n")
 	sys.exit(1)
 
 if "--base" in [opt[0] for opt in opts]:
@@ -251,12 +253,12 @@ def suggestion_tests():
 		sys.stderr.write("Could not read from file " + suggesttest + "\n")
 		sys.exit(1)
 
-if "--compare" in [opt[0] for opt in opts]:
+if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
 	dict = init_speller()
 	if not spell_tests(dict) or not suggestion_tests() or not hyphen_tests():
-		sys.stderr.write("Some of the basic tests failed, fix this before using --compare again!\n")
+		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
 	os.system('time zcat "%s" | "%s" | grep "^C:" > "%s"' % \
@@ -269,7 +271,10 @@ if "--compare" in [opt[0] for opt in opts]:
 		sys.exit(0)
 	sys.stderr.write("%s previously rejected strings are now accepted.\n" % new_accept)
 	sys.stderr.write("%s previously accepted strings are now rejected.\n" % old_accept)
-	os.system('%s grep .C: | less' % diffcmd)
+
+if "--compare" in [opt[0] for opt in opts]:
+	os.system(DIFFVIEWCMD % (BASE_CORRECT, CURRENT_CORRECT))
+
 else:
 	update_smv()
 	dict = init_speller()

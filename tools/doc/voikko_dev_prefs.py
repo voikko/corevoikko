@@ -23,3 +23,6 @@
 # The installation directory of libvoikko binaries
 #libvoikko_bin='/usr/bin'
 
+# Command for viewing differences between 'base' and 'current'.
+#diffviewcmd='diff -u0 "%s" "%s" | grep ^.C: | less'
+#diffviewcmd='vimdiff "%s" "%s"'
