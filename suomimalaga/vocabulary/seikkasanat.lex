@@ -16,6 +16,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 # Seikkasanat
+
 # Jatko-kentässä sallittuja ovat ainoastaan seuraavat:
 # "loppu", "liitesana", "omistusliite" ja sijapäätteet.
 # Huomaa, että sijapäätteiden (esim. sisäolento_ssA) jälkeen hyväksytään
@@ -40,6 +41,8 @@
 [perusmuoto: "ajoittain", alku: "ajoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alakkain", alku: "alakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alas", alku: "alas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "alaspäin", alku: "alaspäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "alassuin", alku: "alassuin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alasti", alku: "alasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alati", alku: "alati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alatusten", alku: "alatusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -70,7 +73,7 @@
 [perusmuoto: "ehken", alku: "ehken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ehkä", alku: "ehkä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "eilen", alku: "eilen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "eittämättä", alku: "eittämä", luokka: seikkasana, jatko: <vajanto_ttA>, äs: ä];
+[perusmuoto: "eittämättä", alku: "eittämättä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "eksyksissä", alku: "eksyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "enemmälti", alku: "enemmälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "enemmän", alku: "enemmän", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -503,7 +506,10 @@
 [perusmuoto: "näinollen", alku: "näinollen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "näkemiin", alku: "näkemiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näköjään", alku: "näköjään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "näkösällä", alku: "näkösä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
+[perusmuoto: "näkösälle", alku: "näkösälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "näkösällä", alku: "näkösä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "näkösällä", alku: "näkösällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "näkösältä", alku: "näkösältä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "näytille", alku: "näytille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näytillä", alku: "näytillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näännyksiin", alku: "näännyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -521,14 +527,20 @@
 [perusmuoto: "pahiten", alku: "pahiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pahitteeksi", alku: "pahitteeksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pahoin", alku: "pahoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "paikkeilla", alku: "paikkei", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "paikkeilla", alku: "paikkeilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "paikkeille", alku: "paikkeille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "paikkeilta", alku: "paikkeilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "paikoin", alku: "paikoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "painuksissa", alku: "painuksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "paitasilla", alku: "paitas", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "paitasillaan", alku: "paitasilla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
-[perusmuoto: "paitasilleen", alku: "paitasille", luokka: seikkasana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "paitasillaan", alku: "paitasilla", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "paitasilleen", alku: "paitasille", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "paitsi", alku: "paitsi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "pakosalla", alku: "pakosa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "pakosalle", alku: "pakosalle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "pakosalla", alku: "pakosa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "pakosalla", alku: "pakosalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "pakosalle", alku: "pakosalle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "pakosalta", alku: "pakosalta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "paksulti", alku: "paksulti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "paljaaltaan", alku: "paljaalta", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "paljolti", alku: "paljolti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -687,7 +699,11 @@
 [perusmuoto: "suutuksiin", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuspäissä", alku: "suutuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "syksymmällä", alku: "syksymmä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
+[perusmuoto: "syksymmäksi", alku: "syksymmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "syksymmälle", alku: "syksymmälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "syksymmällä", alku: "syksymmällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "syksymmäs", alku: "syksymmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "syksympänä", alku: "syksympänä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sylikkäin", alku: "sylikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "syrjemmällä", alku: "syrjemmä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "syvälti", alku: "syvälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

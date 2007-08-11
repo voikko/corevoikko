@@ -134,8 +134,8 @@
 [perusmuoto: "muu", alku: "mu", luokka: asemosana, jatko: <puu>, äs: a];
 [perusmuoto: "muuan", alku: "muua", luokka: asemosana, jatko: <osanto_ttA>, äs: a];
 [perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a];
-[perusmuoto: "muudan", alku: "muuda", luokka: asemosana, jatko: <osanto_ttA>, äs: a];
-[perusmuoto: "muudan", alku: "muudan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a];
+[perusmuoto: "muudan", alku: "muuda", luokka: asemosana, jatko: <osanto_ttA>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "muudan", alku: "muudan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "mää", alku: "mää", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "nau", alku: "nau", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "oho", alku: "oho", luokka: huudahdussana, jatko: <loppu>, äs: a];
@@ -143,7 +143,6 @@
 [perusmuoto: "ohoo", alku: "ohoo", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "oi", alku: "oi", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "okei", alku: "okei", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "paikkeilla", alku: "paikkei", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "peri", alku: "peri", luokka: nimisana, jatko: @sana1, äs: aä];
 [perusmuoto: "phui", alku: "phui", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "phyi", alku: "phyi", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];

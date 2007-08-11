@@ -43,23 +43,24 @@ define @elt := <tavuviiva, teonsana>;
 #define @elt := <tavuviiva, etuliite, teonsana>;
 
 
-[perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @elt, äs: aä, rakenne: "=pppp=pppp", tiedot: <ei_voikko>]; # Aikakaus+julkaisu (julkaista => julkaisu).
 [perusmuoto: "ainais", alku: "ainais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "ainois", alku: "ainois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ajantasa", alku: "ajantasa", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
-[perusmuoto: "alas", alku: "alas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "alas", alku: "alas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "alati", alku: "alati", luokka: etuliite, jatko: @ell, äs: aä];
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "alkeis", alku: "alkeis", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "alkuperäis", alku: "alkuperäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppppp"];
-[perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä]; # Alkuunpanija jne.
-[perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Alkuunpanija jne.
+[perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "allo", alku: "allo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "amfi", alku: "amfi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "andro", alku: "andro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "anestesio", alku: "anestesio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
@@ -71,7 +72,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "astraali", alku: "astraali", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "astro", alku: "astro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "asuin", alku: "asuin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "auki", alku: "auki", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "auki", alku: "auki", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "bakterio", alku: "bakterio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
@@ -83,7 +84,8 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "digitaali", alku: "digitaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "edestakais", alku: "edestakais", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp=pppppp"];
+[perusmuoto: "edestakais", alku: "edestakais", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppppp"];
+[perusmuoto: "edestakais", alku: "edestakais", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
 [perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ei-", alku: "ei-", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <siv>];
@@ -102,7 +104,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "esi", alku: "esi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Mahdollisesti sopisi Voikkoon verbien subst.- ja adj.johdoksiin
-[perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä];
+[perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etymo", alku: "etymo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
@@ -113,20 +115,23 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
-[perusmuoto: "gastro", alku: "gastro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv>];
+[perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <siv>];
+[perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv, ei_voikko>];
+[perusmuoto: "gastro", alku: "gastro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "grafo", alku: "grafo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "gyneko", alku: "gyneko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
-[perusmuoto: "gyro", alku: "gyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "gyro", alku: "gyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "histo", alku: "histo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "hypo", alku: "hypo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
@@ -138,10 +143,10 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; #Ei oo
-[perusmuoto: "inter", alku: "inter", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
+[perusmuoto: "inter", alku: "inter", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "iono", alku: "iono", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä];
+[perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -320,6 +325,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "tieteis", alku: "tieteis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "tomo", alku: "tomo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
@@ -382,8 +388,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "yli", alku: "yli", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "yli", alku: "yli", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ylitse", alku: "ylitse", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Ei välttämättä tarpeellinen.
-[perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "yllä", alku: "yllä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "yltiö", alku: "yltiö", luokka: etuliite, jatko: @ell, äs: aä];
 [perusmuoto: "yltä", alku: "yltä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -396,7 +401,7 @@ define @elt := <tavuviiva, teonsana>;
 [perusmuoto: "ääreis", alku: "ääreis", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "öky", alku: "öky", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
-# Nämä liitetään usein toisiin sanoihin yhdysmerkin avulla:
+# Nämä liitetään usein toisiin sanoihin yhdysmerkin avulla.
 # (Lähinnä konsonanttiin päättyviä vierasperäisiä sanoja.)
 # TOISTAISEKSI EIVÄT TOIMI OIKEIN
 
