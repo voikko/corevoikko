@@ -820,3 +820,7 @@ seitsenkertaistaa
 yhteenliittyminen
 kahdeksankertaistaa
 yhdeksänkertaistaa
+alaskirjaus
+esiintuominen
+esilletuominen
+paneva
