@@ -4462,7 +4462,7 @@ subrule onneton ($tietue, $vahva_aste, $heikko_aste):
                                    omanto_ten: $heikko_aste + "n"],
                                   [osanto_iA:  $vahva_aste + "m"],
                                   [sisätulento_iin: $vahva_aste + "m"],
-                                  $vahva_aste + mA($tietue)) +
+                                  $vahva_aste + "m") +
                         [johdin_UUs: $vahva_aste + "m"]) +
          taivutuskaava ($tietue,
                         [olento_nA:        $heikko_aste + "n"]) +  # Onneton+na.

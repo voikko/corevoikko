@@ -401,6 +401,10 @@ lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24
 unten # Kotus 24
+hervottomimman # Kotus 34
+hervottomimpaa # Kotus 34
+!hervottomaimman # Kotus 34
+!hervottomaimpaa # Kotus 34
 hyttynen # Kotus 38
 kauriiden # Kotus 41
 !kauriiiden # Kotus 41
