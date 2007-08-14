@@ -50,7 +50,7 @@ class FlagAttribute:
 	malagaFlag = None
 	description = None
 
-# Remove comments from a given line of text.
+## Remove comments from a given line of text.
 def removeComments(line):
 	comment_start = line.find(u'#')
 	if comment_start == -1:
@@ -59,7 +59,7 @@ def removeComments(line):
 		return u''
 	return line[:comment_start]
 
-# Returns a list of flag attributes from given file
+## Returns a list of flag attributes from given file
 def readFlagAttributes(filename):
 	inputfile = codecs.open(filename, 'r', 'UTF-8')
 	flags = []
@@ -87,7 +87,7 @@ def readFlagAttributes(filename):
 	inputfile.close()
 	return flags
 
-# Function that returns the type of vowels that are allowed in the suffixes for
+## Function that returns the type of vowels that are allowed in the suffixes for
 # given simple word.
 # The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
 def _simple_vowel_type(word):
@@ -107,7 +107,7 @@ def _simple_vowel_type(word):
 	else:
 		return VOWEL_BOTH
 
-# Returns autodetected vowel type of infection suffixes for a word.
+## Returns autodetected vowel type of infection suffixes for a word.
 # If word contains character '=', automatic detection is only performed on the
 # trailing part. If word contains character '|', automatic detection is performed
 # on the trailing part and the whole word, and the union of accepted vowel types is returned.
@@ -149,3 +149,38 @@ def get_preference(prefname):
 	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 	return None
 
+## Returns True, if given character is a consonant, otherwise retuns False.
+def is_consonant(letter):
+	if letter.lower() in u'qwrtpsdfghjklzxcvbnm':
+		return True
+	else:
+		return False
+
+## Function that returns the type of vowels that are allowed in the affixes for given word.
+# The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
+def vowel_type(word):
+	word = word.lower()
+	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å'), word.rfind(u'u'))
+	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
+	last_y = word.rfind(u'y')
+	if last_back > -1 and max(last_ord_front, last_y) == -1:
+		return VOWEL_BACK
+	if last_back == -1 and max(last_ord_front, last_y) > -1:
+		return VOWEL_FRONT
+	if max(last_back, last_ord_front, last_y) == -1:
+		return VOWEL_FRONT
+	if last_y < max(last_back, last_ord_front):
+		if last_back > last_ord_front: return VOWEL_BACK
+		else: return VOWEL_FRONT
+	else:
+		return VOWEL_BOTH
+
+
+## Expands capital letters to useful character classes for regular expressions
+def capital_char_regexp(pattern):
+	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö|é|è|á|ó|â)')
+	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z|š|ž)')
+	pattern = pattern.replace('A', u'(?:a|ä)')
+	pattern = pattern.replace('O', u'(?:o|ö)')
+	pattern = pattern.replace('U', u'(?:u|y)')
+	return pattern

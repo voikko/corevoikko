@@ -18,7 +18,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-import hfutils
 import voikkoutils
 import codecs
 import sys
@@ -61,10 +60,95 @@ class InflectedWord:
 	def __str__(self):
 		return self.formName + u"\t" + self.inflectedWord
 
-# Function to convert a string containing back vowels to an equivalent string containing
+## Function to convert a string containing back vowels to an equivalent string containing
 # front vowels.
 def __convert_tv_ev(text):
 	return text.replace('a', u'ä').replace('o', u'ö').replace('u', u'y')
+
+
+## Applies given gradation type to given word. Returns a tuple in the form
+# (strong, weak) or None if this is not possible. Conditional aposthrope
+# is represented by $.
+def __apply_gradation(word, grad_type):
+	if grad_type == u'-': return (word, word)
+	if voikkoutils.is_consonant(word[-1]) and not voikkoutils.is_consonant(word[-2]):
+		if word[-4:-2] == u'ng':
+			return (word[:-4]+u'nk'+word[-2:], word)
+		# uvu/yvy->uku/yky not possible?
+		if word[-4:-2] == u'mm':
+			return (word[:-4]+u'mp'+word[-2:], word)
+		if word[-4:-2] == u'nn':
+			return (word[:-4]+u'nt'+word[-2:], word)
+		if word[-4:-2] == u'll':
+			return (word[:-4]+u'lt'+word[-2:], word)
+		if word[-4:-2] == u'rr':
+			return (word[:-4]+u'rt'+word[-2:], word)
+		if word[-3] == u'd':
+			return (word[:-3]+u't'+word[-2:], word)
+		if word[-3] in u'tkp':
+			return (word[:-2]+word[-3:], word)
+		if word[-3] == u'v':
+			return (word[:-3]+u'p'+word[-2:], word)
+	
+	# This can be used to carry suffixes. Not currently needed.
+	last_letter = u''
+	
+	if grad_type == u'av1':
+		if word[-3:-1] in (u'tt',u'kk',u'pp'):
+			return (word+last_letter, word[:-2]+word[-1]+last_letter)
+		if word[-3:-1] == u'mp':
+			return (word+last_letter, word[:-3]+u'mm'+word[-1]+last_letter)
+		if word[-2] == u'p' and not voikkoutils.is_consonant(word[-1]):
+			return (word+last_letter, word[:-2]+u'v'+word[-1]+last_letter)
+		if word[-3:-1] == u'nt':
+			return (word+last_letter, word[:-3]+u'nn'+word[-1]+last_letter)
+		if word[-3:-1] == u'lt':
+			return (word+last_letter, word[:-3]+u'll'+word[-1]+last_letter)
+		if word[-3:-1] == u'rt':
+			return (word+last_letter, word[:-3]+u'rr'+word[-1]+last_letter)
+		if word[-2] == u't':
+			return (word+last_letter, word[:-2]+u'd'+word[-1]+last_letter)
+		if word[-3:-1] == u'nk':
+			return (word+last_letter, word[:-3]+u'ng'+word[-1]+last_letter)
+		if word[-3:] == u'uku':
+			return (word+last_letter, word[:-3]+u'uvu'+last_letter)
+		if word[-3:] == u'yky':
+			return (word+last_letter, word[:-3]+u'yvy'+last_letter)
+	if grad_type == u'av2':
+		if word[-3:-1] == u'ng':
+			return (word[:-3]+u'nk'+word[-1]+last_letter, word+last_letter)
+		# uvu/yvy->uku/yky not possible?
+		if word[-3:-1] == u'mm':
+			return (word[:-3]+u'mp'+word[-1]+last_letter, word+last_letter)
+		if word[-3:-1] == u'nn':
+			return (word[:-3]+u'nt'+word[-1]+last_letter, word+last_letter)
+		if word[-3:-1] == u'll':
+			return (word[:-3]+u'lt'+word[-1]+last_letter, word+last_letter)
+		if word[-3:-1] == u'rr':
+			return (word[:-3]+u'rt'+word[-1]+last_letter, word+last_letter)
+		if word[-2] == u'd':
+			return (word[:-2]+u't'+word[-1]+last_letter, word+last_letter)
+		if word[-2] in u'tkpbg':
+			return (word[:-1]+word[-2:]+last_letter, word+last_letter)
+		if word[-2] == u'v':
+			return (word[:-2]+u'p'+word[-1]+last_letter, word+last_letter)
+	if grad_type == u'av3': # k -> j
+		if word[-2] == u'k':
+			return (word+last_letter, word[:-2]+u'j'+word[-1]+last_letter)
+	if grad_type == u'av4': # j -> k
+		if word[-2] == u'j':
+			return (word[:-2]+u'k'+word[-1]+last_letter, word+last_letter)
+		if word[-3] == u'j':
+			return (word[:-3]+u'k'+word[-2]+word[-1]+last_letter, word+last_letter)
+	if grad_type == u'av5': # k -> -
+		if word[-2] == u'k':
+			return (word+last_letter, word[:-2]+u'$'+word[-1]+last_letter)
+	if grad_type == u'av6': # - -> k
+		if voikkoutils.is_consonant(word[-1]): # FIXME: hack
+			return (word[:-2]+u'k'+word[-2:]+last_letter, word+last_letter)
+		else:
+			return (word[:-1]+u'k'+word[-1]+last_letter, word+last_letter)
+	return None
 
 
 # Read header line from a file. Return value will be a tuple in the form (name, value) or
@@ -204,7 +288,7 @@ def __regex_to_hunspell(exp, repl):
 
 # Translates word match pattern to a Perl-compatible regular expression
 def __word_pattern_to_pcre(pattern):
-	return '.*' + hfutils.hf_regexp(pattern) + '$'
+	return '.*' + voikkoutils.capital_char_regexp(pattern) + '$'
 
 
 # Public functions
@@ -240,12 +324,13 @@ def _vtype_subst_tO(base):
 	if last_front > last_back: return voikkoutils.VOWEL_FRONT
 	else: return voikkoutils.VOWEL_BACK
 
+## Returns a list of InflectedWord objects for given word and inflection type.
 def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type):
 	if not infclass in inflection_type.joukahainenClasses: return []
 	l = len(inflection_type.rmsfx)
 	if l == 0: word_no_sfx = word
 	else: word_no_sfx = word[:-l]
-	word_grad = hfutils.apply_gradation(word_no_sfx, gradclass)
+	word_grad = __apply_gradation(word_no_sfx, gradclass)
 	if word_grad == None: return []
 	if gradclass == '-': grad_type = voikkoutils.GRAD_NONE
 	elif gradclass in ['av1', 'av3', 'av5']: grad_type = voikkoutils.GRAD_SW
@@ -254,7 +339,7 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type):
 	if not re.compile(__word_pattern_to_pcre(inflection_type.matchWord),
 	                  re.IGNORECASE).match(word): return []
 	inflection_list = []
-	if vowel_type == voikkoutils.VOWEL_DEFAULT: vowel_type = hfutils.vowel_type(word)
+	if vowel_type == voikkoutils.VOWEL_DEFAULT: vowel_type = voikkoutils.vowel_type(word)
 	for rule in inflection_type.inflectionRules:
 		if rule.gradation == voikkoutils.GRAD_STRONG: word_base = word_grad[0]
 		else: word_base = word_grad[1]
@@ -294,6 +379,7 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type):
 				inflection_list.append(infl)
 	return inflection_list
 
+## Returns a list of InflectedWord objects for given word.
 def inflectWord(word, jo_infclass, inflection_types, vowel_type = voikkoutils.VOWEL_DEFAULT):
 	dash = jo_infclass.find(u'-')
 	if dash == -1:
