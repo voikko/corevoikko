@@ -22,12 +22,27 @@
 import codecs
 import os
 import locale
+import sys
+import xml.dom.minidom
+
+# Word classes
+NOUN=1
+ADJECTIVE=2
+VERB=3
 
 # Vowel types
 VOWEL_DEFAULT=0
 VOWEL_FRONT=1
 VOWEL_BACK=2
 VOWEL_BOTH=3
+
+# Gradation types
+GRAD_NONE = 0
+GRAD_SW = 1
+GRAD_WS = 2
+
+GRAD_WEAK = 3
+GRAD_STRONG = 4
 
 class FlagAttribute:
 	"Vocabulary flag attribute"
@@ -37,7 +52,7 @@ class FlagAttribute:
 	malagaFlag = None
 	description = None
 
-# Remove comments from a given line of text.
+## Remove comments from a given line of text.
 def removeComments(line):
 	comment_start = line.find(u'#')
 	if comment_start == -1:
@@ -46,7 +61,7 @@ def removeComments(line):
 		return u''
 	return line[:comment_start]
 
-# Returns a list of flag attributes from given file
+## Returns a list of flag attributes from given file
 def readFlagAttributes(filename):
 	inputfile = codecs.open(filename, 'r', 'UTF-8')
 	flags = []
@@ -74,7 +89,7 @@ def readFlagAttributes(filename):
 	inputfile.close()
 	return flags
 
-# Function that returns the type of vowels that are allowed in the suffixes for
+## Function that returns the type of vowels that are allowed in the suffixes for
 # given simple word.
 # The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
 def _simple_vowel_type(word):
@@ -94,7 +109,7 @@ def _simple_vowel_type(word):
 	else:
 		return VOWEL_BOTH
 
-# Returns autodetected vowel type of infection suffixes for a word.
+## Returns autodetected vowel type of infection suffixes for a word.
 # If word contains character '=', automatic detection is only performed on the
 # trailing part. If word contains character '|', automatic detection is performed
 # on the trailing part and the whole word, and the union of accepted vowel types is returned.
@@ -119,17 +134,90 @@ def get_preference(prefname):
 		import voikko_dev_prefs
 		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
 			return voikko_dev_prefs.svnroot
-		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'prefname'):
+		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'voikkotest_dir'):
 			return voikko_dev_prefs.voikkotest_dir
 		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
 			return voikko_dev_prefs.encoding
 		if prefname == 'libvoikko_bin' and hasattr(voikko_dev_prefs, 'libvoikko_bin'):
 			return voikko_dev_prefs.libvoikko_bin
+		if prefname == 'diffviewcmd' and hasattr(voikko_dev_prefs, 'diffviewcmd'):
+			return voikko_dev_prefs.diffviewcmd
 	except ImportError:
 		pass
 	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
+	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 	return None
 
+## Returns True, if given character is a consonant, otherwise retuns False.
+def is_consonant(letter):
+	if letter.lower() in u'qwrtpsdfghjklzxcvbnm':
+		return True
+	else:
+		return False
+
+## Function that returns the type of vowels that are allowed in the affixes for given word.
+# The possible values are VOWEL_FRONT, VOWEL_BACK and VOWEL_BOTH.
+def vowel_type(word):
+	word = word.lower()
+	last_back = max(word.rfind(u'a'), word.rfind(u'o'), word.rfind(u'å'), word.rfind(u'u'))
+	last_ord_front = max(word.rfind(u'ä'), word.rfind(u'ö'))
+	last_y = word.rfind(u'y')
+	if last_back > -1 and max(last_ord_front, last_y) == -1:
+		return VOWEL_BACK
+	if last_back == -1 and max(last_ord_front, last_y) > -1:
+		return VOWEL_FRONT
+	if max(last_back, last_ord_front, last_y) == -1:
+		return VOWEL_FRONT
+	if last_y < max(last_back, last_ord_front):
+		if last_back > last_ord_front: return VOWEL_BACK
+		else: return VOWEL_FRONT
+	else:
+		return VOWEL_BOTH
+
+
+## Expands capital letters to useful character classes for regular expressions
+def capital_char_regexp(pattern):
+	pattern = pattern.replace('V', u'(?:a|e|i|o|u|y|ä|ö|é|è|á|ó|â)')
+	pattern = pattern.replace('C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|z|š|ž)')
+	pattern = pattern.replace('A', u'(?:a|ä)')
+	pattern = pattern.replace('O', u'(?:o|ö)')
+	pattern = pattern.replace('U', u'(?:u|y)')
+	return pattern
+
+## Reads the word list in XML format specified by filename. If the name ends
+# with .gz, the file is assumed to be gzip compressed. Calls function word_handler
+# for each word, passing a XML Document object representing the word as a parameter.
+# If show_progress == True, prints progess information to stdout
+def process_wordlist(filename, word_handler, show_progress = False):
+	if filename.endswith(".gz"):
+		pass
+	else:
+		listfile = open(filename, 'r')
+	line = ""
+	while line != '<wordlist xml:lang="fi">\n':
+		line = listfile.readline()
+		if line == '':
+			sys.stderr.write("Malformed file " + generate_lex_common.VOCABULARY_DATA + \
+					"/joukahainen.xml\n")
+			return
+	
+	wcount = 0
+	while True:
+		wordstr = ""
+		line = listfile.readline()
+		if line == "</wordlist>\n": break
+		while line != '</word>\n':
+			wordstr = wordstr + line
+			line = listfile.readline()
+		word = xml.dom.minidom.parseString(wordstr + line)
+		word_handler(word)
+		wcount = wcount + 1
+		if show_progress and wcount % 1000 == 0:
+			sys.stdout.write("#")
+			sys.stdout.flush()
+	
+	if show_progress: sys.stdout.write("\n")
+	listfile.close()

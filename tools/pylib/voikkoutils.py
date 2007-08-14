@@ -22,6 +22,8 @@
 import codecs
 import os
 import locale
+import sys
+import xml.dom.minidom
 
 # Word classes
 NOUN=1
@@ -184,3 +186,38 @@ def capital_char_regexp(pattern):
 	pattern = pattern.replace('O', u'(?:o|ö)')
 	pattern = pattern.replace('U', u'(?:u|y)')
 	return pattern
+
+## Reads the word list in XML format specified by filename. If the name ends
+# with .gz, the file is assumed to be gzip compressed. Calls function word_handler
+# for each word, passing a XML Document object representing the word as a parameter.
+# If show_progress == True, prints progess information to stdout
+def process_wordlist(filename, word_handler, show_progress = False):
+	if filename.endswith(".gz"):
+		pass
+	else:
+		listfile = open(filename, 'r')
+	line = ""
+	while line != '<wordlist xml:lang="fi">\n':
+		line = listfile.readline()
+		if line == '':
+			sys.stderr.write("Malformed file " + generate_lex_common.VOCABULARY_DATA + \
+					"/joukahainen.xml\n")
+			return
+	
+	wcount = 0
+	while True:
+		wordstr = ""
+		line = listfile.readline()
+		if line == "</wordlist>\n": break
+		while line != '</word>\n':
+			wordstr = wordstr + line
+			line = listfile.readline()
+		word = xml.dom.minidom.parseString(wordstr + line)
+		word_handler(word)
+		wcount = wcount + 1
+		if show_progress and wcount % 1000 == 0:
+			sys.stdout.write("#")
+			sys.stdout.flush()
+	
+	if show_progress: sys.stdout.write("\n")
+	listfile.close()

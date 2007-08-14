@@ -104,33 +104,9 @@ def handle_word(word):
 		write_entry(word, entry)
 
 
-listfile = open(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', 'r')
+voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
+                             handle_word, True)
 
-line = ""
-while line != '<wordlist xml:lang="fi">\n':
-	line = listfile.readline()
-	if line == '':
-		sys.stderr.write("Malformed file " + generate_lex_common.VOCABULARY_DATA + \
-		                 "/joukahainen.xml\n")
-		sys.exit(1)
-
-wcount = 0
-while True:
-	wordstr = ""
-	line = listfile.readline()
-	if line == "</wordlist>\n": break
-	while line != '</word>\n':
-		wordstr = wordstr + line
-		line = listfile.readline()
-	word = xml.dom.minidom.parseString(wordstr + line)
-	handle_word(word)
-	wcount = wcount + 1
-	if wcount % 1000 == 0:
-		sys.stdout.write("#")
-		sys.stdout.flush()
-
-sys.stdout.write("\n")
-listfile.close()
 main_vocabulary.close()
 for (name, file) in vocabulary_files.iteritems():
 	file.close()
