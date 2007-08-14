@@ -23,6 +23,11 @@ import codecs
 import os
 import locale
 
+# Word classes
+NOUN=1
+ADJECTIVE=2
+VERB=3
+
 # Vowel types
 VOWEL_DEFAULT=0
 VOWEL_FRONT=1
@@ -33,6 +38,9 @@ VOWEL_BOTH=3
 GRAD_NONE = 0
 GRAD_SW = 1
 GRAD_WS = 2
+
+GRAD_WEAK = 3
+GRAD_STRONG = 4
 
 class FlagAttribute:
 	"Vocabulary flag attribute"
