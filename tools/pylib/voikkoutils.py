@@ -29,6 +29,11 @@ VOWEL_FRONT=1
 VOWEL_BACK=2
 VOWEL_BOTH=3
 
+# Gradation types
+GRAD_NONE = 0
+GRAD_SW = 1
+GRAD_WS = 2
+
 class FlagAttribute:
 	"Vocabulary flag attribute"
 	joukahainen = 0
