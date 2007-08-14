@@ -115,7 +115,7 @@ def __read_inflection_rule(file):
 		if columns[3] == u's': r.gradation = voikkoutils.GRAD_STRONG
 		if len(columns) > 4:
 			if __read_option(columns[4], u'ps', u'') == u'r': continue
-			r.rulePriority = __read_option(columns[4], u'prio', 1)
+			r.rulePriority = int(__read_option(columns[4], u'prio', u'1'))
 		
 		return r
 
@@ -283,6 +283,10 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type):
 				infl.inflectedWord = _replace_conditional_aposthrope(
 				                     word_stripped_base + affix)
 				inflection_list.append(infl)
+				infl = InflectedWord()
+				infl.formName = rule.name
+				infl.isCharacteristic = rule.isCharacteristic
+				infl.priority = rule.rulePriority
 			if vowel_type in [voikkoutils.VOWEL_FRONT, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(__convert_tv_ev(pattern)):
 				infl.inflectedWord = _replace_conditional_aposthrope(

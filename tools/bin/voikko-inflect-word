@@ -23,12 +23,12 @@
 # database dump of Joukahainen with the following query:
 #  select w.word, case when w.class in (1,2) then 'subst-' when w.class=3 then 'verbi-' end || s.value
 #  from word w, string_attribute_value s where w.wid = s.wid and s.aid = 1;
-#
-# Such list of words can be processed by running
-# cat sanat.txt | xargs -d \\n -n 1 voikko-inflect-word > taivutukset.txt
+# Use unaligned format (\a) and "show only tuples" (\t)
 
-import hfaffix
-import hfutils
+# Such list of words can be processed by running
+# cat sanat.txt | voikko-inflect-word > taivutukset.txt
+
+import voikkoinfl
 import sys
 import locale
 import voikkoutils
@@ -37,43 +37,58 @@ NOUN_AFFIX_FILE = voikkoutils.get_preference('svnroot') + '/trunk/data/subst.aff
 VERB_AFFIX_FILE = voikkoutils.get_preference('svnroot') + '/trunk/data/verb.aff'
 PARAM_ENCODING = voikkoutils.get_preference('encoding')
 
+noun_types = voikkoinfl.readInflectionTypes(NOUN_AFFIX_FILE)
+verb_types = voikkoinfl.readInflectionTypes(VERB_AFFIX_FILE)
+
+def word_and_infl_class(fullclass):
+	infclass_parts = fullclass.split('-')
+	if len(infclass_parts) == 2:
+		wordclass = infclass_parts[0]
+		infclass = infclass_parts[1]
+	elif len(infclass_parts) == 3:
+		wordclass = infclass_parts[0]
+		infclass = infclass_parts[1]+u'-'+infclass_parts[2]
+	else:
+		print 'Incorrect inflection class'
+		sys.exit(1)
+	if not wordclass in [u'subst', u'verbi']:
+		print 'Incorrect word class'
+		sys.exit(1)
+	return (wordclass, infclass)
+
+def print_inflected_word(word):
+	if word.priority > 2: return
+	if word.isCharacteristic: line = "!"
+	else: line = ""
+	line = ((line + word.formName).ljust(20)+word.inflectedWord).encode(PARAM_ENCODING)
+	print line
+
+def inflect_word(word, classes):
+	global verb_types
+	global noun_types
+	(wclass, infclass) = word_and_infl_class(classes)
+	if wclass == u'verbi': itypes = verb_types
+	else: itypes = noun_types
+	for iword in voikkoinfl.inflectWord(word, infclass, itypes):
+		print_inflected_word(iword)
+
 if len(sys.argv) == 3:
-	word = unicode(sys.argv[1], PARAM_ENCODING)
-	infclass = unicode(sys.argv[2], PARAM_ENCODING)
+	inflect_word(unicode(sys.argv[1], PARAM_ENCODING), unicode(sys.argv[2], PARAM_ENCODING))
 elif len(sys.argv) == 2 and sys.argv[1].find("|") != -1:
 	ind = sys.argv[1].find("|")
-	word = unicode(sys.argv[1][:ind], PARAM_ENCODING)
-	infclass = unicode(sys.argv[1][ind+1:], PARAM_ENCODING)
+	inflect_word(unicode(sys.argv[1][:ind], PARAM_ENCODING), unicode(sys.argv[1][ind+1:], PARAM_ENCODING))
+elif len(sys.argv) == 1:
+	line = sys.stdin.readline()
+	while line.endswith('\n'):
+		line = unicode(line, PARAM_ENCODING).strip()
+		if len(line) == 0: break
+		ind = line.find(u"|")
+		inflect_word(line[:ind], line[ind+1:])
+		line = sys.stdin.readline()
 else:
-	print 'Usage: voikko-inflect-word word inflection_class'
+	print 'Usage: voikko-inflect-word'
+	print '       voikko-inflect-word word inflection_class'
 	print '       voikko-inflect-word word|inflection_class'
+	print 'If no arguments are given, the program expects as input lines in format'
+	print '     word|inflection_class'
 	sys.exit(1)
-
-infclass_parts = infclass.split('-')
-if len(infclass_parts) == 2:
-	wordclass = infclass_parts[0]
-	infclass_main = infclass_parts[1]
-	grad_type = '-'
-elif len(infclass_parts) == 3:
-	wordclass = infclass_parts[0]
-	infclass_main = infclass_parts[1]
-	grad_type = infclass_parts[2]
-else:
-	print 'Incorrect inflection class'
-	sys.exit(1)
-
-if wordclass == u'subst': affixfile = NOUN_AFFIX_FILE
-elif wordclass == u'verbi': affixfile = VERB_AFFIX_FILE
-else:
-	print 'Incorrect word class'
-	sys.exit(1)
-
-word_classes = hfaffix.read_word_classes(affixfile)
-for word_class in word_classes:
-	if not infclass_main in word_class['smcnames']: continue
-	inflected_words = hfaffix.inflect_word(word, grad_type, word_class)
-	if inflected_words == None: continue
-	for inflected_word in inflected_words:
-		if hfutils.read_option(inflected_word[2], 'ps', '-') != 'r':
-			print (inflected_word[0].ljust(20)+inflected_word[1]).encode(PARAM_ENCODING)
-
