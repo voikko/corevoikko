@@ -143,6 +143,7 @@
 [perusmuoto: "morsian", alku: "morsia", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "myydä", alku: "my", luokka: teonsana, jatko: <myydä>, äs: ä];
+[perusmuoto: "jälleenmyydä", alku: "jälleenmy", luokka: teonsana, jatko: <myydä>, äs: ä, rakenne: "=ppppppp=ppppp"]; # Tämä yhdysverbi on jo varsin vakiintunut.
 [perusmuoto: "nahka", alku: "nah", luokka: nimisana, jatko: <nahka>, äs: a, tiedot: <inen>];
 [perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "niiata", alku: "nii", luokka: teonsana, jatko: <salata>, äs: a];

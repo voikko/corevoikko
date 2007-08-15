@@ -824,3 +824,9 @@ alaskirjaus
 esiintuominen
 esilletuominen
 paneva
+interaktio
+jälleenhankinta
+jälleenlastaus
+jälleensyntymä
+alveolaarinen
+determinoida

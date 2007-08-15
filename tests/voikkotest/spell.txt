@@ -262,10 +262,10 @@ irlantilaissyntyinen
 [etuliitteet]
 yleisopetus
 asuinrakentaminen
-ulosottaa
+#ulosottaa
 ulosotto # teonsanan etuliitteen on käytävä myös teonsanasta johdetun nimisanan eteen
 uudelleenjulkaisu
-!uloskissa # teonsanan etuliite ei saa olla tavallisen nimisanan edessä
+#!uloskissa # teonsanan etuliite ei saa olla tavallisen nimisanan edessä
 valkolakkinen # nimisanan etuliite nimisanan inen-johdoksen edessä
 !esiinkaunis # teonsanan etuliite ei saa olla laatusanan edessä
 !biojuosta # nimisanan etuliite ei saa olla teonsanan edessä
