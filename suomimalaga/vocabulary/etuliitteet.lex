@@ -15,6 +15,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+include "sovellusriippuvat.inc";
+
 # Etuliitteitä. Näitä löytyy myös tiedostosta erikoiset.lex, mutta kaikki
 # kuuluisi kuitenkin siirtää tähän tiedostoon. Siirtäessäsi etuliitteitä
 # tänne mieti, minkä sanaluokan sanoille kyseistä etuliitettä todella
@@ -25,24 +27,11 @@
 # äs = aä.
 
 # == Näitä voi käyttää jatko-kentissä ==
-# Etuliite (nimisanat)
-define @eln := <tavuviiva, nimisana>;
-# Etuliite (laatusanat)
-define @ell := <tavuviiva, laatusana>;
-# Etuliite (teonsanat)
-define @elt := <tavuviiva, teonsana>;
+# @eln: etuliite (nimisanat)
+# @ell: etuliite (laatusanat)
+# @elt: etuliite (teonsanat)
 # Huomio. Nimisanojen etuliite kelpaa myös partisiipeille, ja laatusanojen
 # etuliite verbien -minen-substantiivijohdoksille.
-
-
-## Vanhat määritelmät muistin tueksi.
-## == Näitä voi käyttää jatko-kentissä ==
-## Etuliite (nimisanat)
-#define @eln := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
-## Etuliite (laatusanat)
-#define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
-## Etuliite (teonsanat)
-#define @elt := <tavuviiva, etuliite, teonsana>;
 
 
 [perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell, äs: aä];
