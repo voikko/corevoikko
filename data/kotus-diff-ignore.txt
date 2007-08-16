@@ -830,3 +830,5 @@ jälleenlastaus
 jälleensyntymä
 alveolaarinen
 determinoida
+ylitsepursuava
+ylitsepääsemätön
