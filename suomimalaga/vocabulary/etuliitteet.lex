@@ -30,7 +30,9 @@ include "sovellusriippuvat.inc";
 # @eln: etuliite (nimisanat)
 # @ell: etuliite (laatusanat)
 # @elt: etuliite (teonsanat)
-# Huomio. Nimisanojen etuliite kelpaa myös partisiipeille, ja laatusanojen
+# @eltj: etuliite (teonsanojen nimi- ja laatusanajohdokset)
+# Huom! Jatkoa @eltj EI SAA käyttää yhdessä jatkon @eln tai @ell kanssa.
+# FIXME: Nimisanojen etuliite kelpaa myös partisiipeille, ja laatusanojen
 # etuliite verbien -minen-substantiivijohdoksille.
 
 
@@ -165,7 +167,7 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "kesken", alku: "kesken", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @eln, äs: aä]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -223,9 +225,9 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "nelis", alku: "nelis", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "nyky", alku: "nyky", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "nyky", alku: "nyky", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "ohi", alku: "ohi", luokka: etuliite, jatko: @eln + @ell, äs: a]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "ohi", alku: "ohi", luokka: etuliite, jatko: @eltj, äs: a];
 [perusmuoto: "ohi", alku: "ohi", luokka: etuliite, jatko: @elt, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "oikein", alku: "oikein", luokka: etuliite, jatko: @eln + @ell, äs: a]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "oikein", alku: "oikein", luokka: etuliite, jatko: @eltj, äs: a];
 [perusmuoto: "oikein", alku: "oikein", luokka: etuliite, jatko: @elt, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "oiko", alku: "oiko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "oiko", alku: "oiko", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -251,7 +253,7 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "poikittais", alku: "poikittais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "poikittais", alku: "poikittais", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "poikki", alku: "poikki", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "poissa-", alku: "poissa-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "polito", alku: "polito", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
@@ -290,7 +292,7 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "seksuaali", alku: "seksuaali", luokka: etuliite, jatko: @elt, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sino", alku: "sino", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "sisällis", alku: "sisällis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "sisään", alku: "sisään", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "sivuttais", alku: "sivuttais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "sivuttais", alku: "sivuttais", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -332,14 +334,14 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uro", alku: "uro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eln, äs: aä]; # Mielellään vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -368,7 +370,7 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "vähimmäis", alku: "vähimmäis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "väkisin", alku: "väkisin", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "väliaikais", alku: "väliaikais", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppppp"];
-[perusmuoto: "väärin", alku: "väärin", luokka: etuliite, jatko: @eln, äs: aä]; # Mieluiten vain verbien subst.- ja adj.johdoksiin
+[perusmuoto: "väärin", alku: "väärin", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "väärin", alku: "väärin", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "yhdys", alku: "yhdys", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "yhdys", alku: "yhdys", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -392,7 +394,7 @@ include "sovellusriippuvat.inc";
 [perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ylä", alku: "ylä", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ylön", alku: "ylön", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "ympäri", alku: "ympäri", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Mieluiten vain verbin subst.- ja adj.johdoksiin
+[perusmuoto: "ympäri", alku: "ympäri", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "ympäri", alku: "ympäri", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "äkki", alku: "äkki", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "äkki", alku: "äkki", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];

@@ -262,9 +262,14 @@ irlantilaissyntyinen
 [etuliitteet]
 yleisopetus
 asuinrakentaminen
-#ulosottaa
+koeottaa
 ulosotto # teonsanan etuliitteen on käytävä myös teonsanasta johdetun nimisanan eteen
-uudelleenjulkaisu
+# "uudelleen" on teonsanan substantiivi
+uudelleenjulkaisu # teonsanan nimisanajohdos
+uudelleenjuoksevainen # teonsanan laatusanajohdos
+!uudelleenjuoksen # teonsana
+!uudelleenkissaa # nimisana
+!uudelleenkaunis # laatusana
 #!uloskissa # teonsanan etuliite ei saa olla tavallisen nimisanan edessä
 valkolakkinen # nimisanan etuliite nimisanan inen-johdoksen edessä
 !esiinkaunis # teonsanan etuliite ei saa olla laatusanan edessä

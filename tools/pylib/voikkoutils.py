@@ -24,6 +24,7 @@ import os
 import locale
 import sys
 import xml.dom.minidom
+import gzip
 
 # Word classes
 NOUN=1
@@ -193,7 +194,7 @@ def capital_char_regexp(pattern):
 # If show_progress == True, prints progess information to stdout
 def process_wordlist(filename, word_handler, show_progress = False):
 	if filename.endswith(".gz"):
-		pass
+		listfile = gzip.GzipFile(filename, 'r')
 	else:
 		listfile = open(filename, 'r')
 	line = ""
