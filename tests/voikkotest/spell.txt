@@ -280,6 +280,14 @@ ulkohartolalainen
 perusulkohartolalainen
 kaakkoishartolalainen
 peruskaakkoishartolalainen
+bi-vihreä
+!bi--vihreä
+bi-
+!bi--
+miniei-
+!miniei--
+miniei-opisto
+!miniei--opisto
 
 [seikkasanat]
 keskenään

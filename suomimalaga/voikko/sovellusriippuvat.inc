@@ -1,8 +1,8 @@
 # Etuliite (nimisanat)
-define @eln := <tavuviiva, nimisana>;
+define @eln := <nimisana>;
 # Etuliite (laatusanat)
-define @ell := <tavuviiva, laatusana>;
+define @ell := <laatusana>;
 # Etuliite (teonsanat)
-define @elt := <tavuviiva, teonsana>;
+define @elt := <teonsana>;
 # Etuliite (teonsanojen nimi- ja laatusanajohdokset)
-define @eltj := <tavuviiva, teonsanan_johdoksen_etuliite>;
+define @eltj := <teonsanan_johdoksen_etuliite>;

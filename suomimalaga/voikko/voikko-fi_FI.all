@@ -76,6 +76,14 @@ allo_rule generate_allos ($tietue):
        (ei_voikko in $tietue.tiedot))) then
     stop;
 
+  elseif ($tietue.luokka = etuliite) then
+    if (last($tietue.alku) = "-") then
+      result $tietue.perusmuoto, $tietue - alku;
+    else
+      result $tietue.perusmuoto, $tietue - alku + [jatko: $tietue.jatko + <tavuviiva>];
+    end;
+
+
   elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
           (ei_sukija in $tietue.tiedot)) then
     stop;

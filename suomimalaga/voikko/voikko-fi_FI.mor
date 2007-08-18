@@ -145,6 +145,8 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     end;
     if tavuviiva in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules tavuviiva;
+    else
+      result <[alku: $sana] + $oikea>, accept;
     end;
     if teonsana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules teonsana;
@@ -214,6 +216,8 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
   else
     if tavuviiva in $oikea.jatko then
       result $res, rules tavuviiva;
+    else
+      result $res, accept;
     end;
     result $res, rules etuliite, nimisana, nimisana_teonsanasta;
   end;
