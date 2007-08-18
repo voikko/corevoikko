@@ -193,7 +193,12 @@ def __read_inflection_rule(file):
 			r.isCharacteristic = True
 		else:
 			r.name = columns[0]
-			r.isCharacteristic = False
+			if columns[0] in ['nominatiivi', 'genetiivi', 'partitiivi', 'illatiivi',
+				'nominatiivi_mon', 'genetiivi_mon', 'partitiivi_mon', 'illatiivi_mon',
+				'infinitiivi_1', 'preesens_yks_1', 'imperfekti_yks_3',
+				'kondit_yks_3', 'imperatiivi_yks_3', 'partisiippi_2',
+				'imperfekti_pass']: r.isCharacteristic = True
+			else: r.isCharacteristic = False
 		if columns[1] != u'0': r.delSuffix = columns[1]
 		if columns[2] != u'0': r.addSuffix = columns[2]
 		if columns[3] == u's': r.gradation = voikkoutils.GRAD_STRONG
@@ -325,7 +330,7 @@ def _vtype_subst_tO(base):
 	else: return voikkoutils.VOWEL_BACK
 
 ## Returns a list of InflectedWord objects for given word and inflection type.
-def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type):
+def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type = voikkoutils.VOWEL_DEFAULT):
 	if not infclass in inflection_type.joukahainenClasses: return []
 	l = len(inflection_type.rmsfx)
 	if l == 0: word_no_sfx = word
