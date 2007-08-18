@@ -28,10 +28,10 @@ import subprocess
 import _pg
 import os
 import datetime
+import voikkoutils
 import voikkoinfl
 
-sys.path.append(os.environ["HOME"] + u"/svn/voikko/trunk/tools/pylib")
-HF_DATA = os.environ["HOME"] + u"/svn/voikko/trunk/data"
+VOIKKO_DATA = voikkoutils.get_preference('voikko_data_dir')
 SPELLCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkospell | grep "W: " | sort | sponge'
 
 kwordlist = {}
@@ -103,8 +103,8 @@ def _get_inflection_gradation(db, wid):
 	else: return None
 	return (infclass_main, grad_type)
 
-noun_types = voikkoinfl.readInflectionTypes(HF_DATA + "/subst.aff")
-verb_types = voikkoinfl.readInflectionTypes(HF_DATA + "/verb.aff")
+noun_types = voikkoinfl.readInflectionTypes(VOIKKO_DATA + "/subst.aff")
+verb_types = voikkoinfl.readInflectionTypes(VOIKKO_DATA + "/verb.aff")
 # Returns the correct InflectioType for given word.
 # classid is the word class identifier in Joukahainen.
 # Returns None if no class information could be retrieved

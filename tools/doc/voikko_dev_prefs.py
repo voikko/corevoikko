@@ -16,6 +16,9 @@
 # Data directory for voikkotest
 #voikkotest_dir='/home/uname/tmp/voikkotest'
 
+# Data directory for voikko
+#voikko_data_dir='/home/uname/svn/voikko/trunk/data'
+
 # The input/output encoding for programs that read
 # or write data.
 #encoding='UTF-8'
