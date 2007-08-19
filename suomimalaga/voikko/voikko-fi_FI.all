@@ -4994,6 +4994,7 @@ subrule kalleus ($tietue):
                         [johdin_tOn:      "de",
                          johdin_llinen:   "de",
                          johdin_mAinen:   "s",
+                         johdin_lAinen:   "te",
                          johdin_inen:     "ks",
 
                          nimentö_t: "de",

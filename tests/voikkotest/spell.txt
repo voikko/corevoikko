@@ -419,6 +419,7 @@ hervottomimpaa # Kotus 34
 !hervottomaimman # Kotus 34
 !hervottomaimpaa # Kotus 34
 hyttynen # Kotus 38
+alavutelainen # Kotus 40
 kauriiden # Kotus 41
 !kauriiiden # Kotus 41
 vilkkaana # Kotus 41
