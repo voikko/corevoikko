@@ -81,8 +81,8 @@ voikko-fi-lsrc-$(SM_VERSION).tar.gz: voikko $(patsubst %,voikko-fi-$(SM_VERSION)
 	tar c --group 0 --owner 0 voikko-fi-$(SM_VERSION) | gzip -9 > $@
 
 $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST))): voikko-fi-$(SM_VERSION)/%: voikko/%
-	install --mode=755 -d voikko-fi-$(SM_VERSION)
-	install --mode=644 -t voikko-fi-$(SM_VERSION) $^
+	install -m 755 -d voikko-fi-$(SM_VERSION)
+	install -m 644 $^ voikko-fi-$(SM_VERSION)
 
 
 # Rules for creating the source distribution
@@ -98,7 +98,7 @@ suomi-malaga-$(SM_VERSION).tar.bz2: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $
 	tar c --group 0 --owner 0 suomi-malaga-$(SM_VERSION) | bzip2 -9 > $@
 
 $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
-	install --mode=644 -D $^ $@
+	install -m 644 -D $^ $@
 
 voikko/transmit: common/transmit.cc
 	g++ -g common/transmit.cc -o voikko/transmit
@@ -107,8 +107,8 @@ voikko-install: voikko
 ifndef DESTDIR
 	$(error DESTDIR must be specified)
 endif
-	install --mode=755 -d $(DESTDIR)
-	install --mode=644 -t $(DESTDIR) $(VOIKKO_BINDIST)
+	install -m 755 -d $(DESTDIR)
+	install -m 644 $(VOIKKO_BINDIST) $(DESTDIR)
 
 # Vocabulary update
 update-vocabulary:
