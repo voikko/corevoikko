@@ -54,13 +54,10 @@
 # rajalla.
 
 [perusmuoto: "abessinialainen", alku: "abessinialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "afroamerikkalainen", alku: "afroamerikkalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
-[perusmuoto: "afrokuubalainen", alku: "afrokuubalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppppp"];
 [perusmuoto: "ambrosialainen", alku: "ambrosialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "amerikanjuutalainen", alku: "amerikanjuutalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppp=ppppppppppp"];
 [perusmuoto: "amerikansuomalainen", alku: "amerikansuomalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppp=ppppppppppp"];
 [perusmuoto: "andalusialainen", alku: "andalusialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "angloamerikkalainen", alku: "angloamerikkalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppppppppppp"];
 [perusmuoto: "areiolainen", alku: "areiolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "attikalainen", alku: "attikalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "austroaasialainen", alku: "austroaasialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppppp"];
@@ -74,7 +71,6 @@
 [perusmuoto: "beniniläinen", alku: "beniniläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "bhutanilainen", alku: "bhutanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "boiotialainen", alku: "boiotialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "bolivialainen", alku: "bolivialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "botswanalainen", alku: "botswanalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "brabantilainen", alku: "brabantilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "brandenburgilainen", alku: "brandenburgilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -99,10 +95,8 @@
 [perusmuoto: "heprealainen", alku: "heprealai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "herrnhutilainen", alku: "herrnhutilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "hongkongilainen", alku: "hongkongilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppppp"];
-[perusmuoto: "indoeurooppalainen", alku: "indoeurooppalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
 [perusmuoto: "inkeriläinen", alku: "inkeriläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "isaurialainen", alku: "isaurialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "isobritannialainen", alku: "isobritannialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppppppp"];
 [perusmuoto: "itävaltalainen", alku: "itävaltalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppp"];
 [perusmuoto: "joonialainen", alku: "joonialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kaledonialainen", alku: "kaledonialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -110,7 +104,6 @@
 [perusmuoto: "kanaanilainen", alku: "kanaanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kanadanranskalainen", alku: "kanadanranskalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppppp"];
 [perusmuoto: "kanadansuomalainen", alku: "kanadansuomalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=ppppppppppp"];
-[perusmuoto: "kangasalalainen", alku: "kangasalalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "kapverdeläinen", alku: "kapverdeläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kartesiolainen", alku: "kartesiolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kastilialainen", alku: "kastilialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -154,7 +147,6 @@
 [perusmuoto: "normandialainen", alku: "normandialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "normandianranskalainen", alku: "normandianranskalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppppp=pppppppppppp"];
 [perusmuoto: "norsunluurannikkolainen", alku: "norsunluurannikkolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppp=pppppppppppppp"];
-[perusmuoto: "novgorodilainen", alku: "novgorodilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "nuorturkkilainen", alku: "nuorturkkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppp"];
 [perusmuoto: "nyssalainen", alku: "nyssalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ockhamilainen", alku: "ockhamilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -174,13 +166,11 @@
 [perusmuoto: "rasilainen", alku: "rasilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "rhodoslainen", alku: "rhodoslai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "rotterdamilainen", alku: "rotterdamilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "rovaniemeläinen", alku: "rovaniemeläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=pppp=ppppppppppp"];
 [perusmuoto: "ruskolainen", alku: "ruskolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "saamelainen", alku: "saamelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "saksilainen", alku: "saksilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "samoalainen", alku: "samoalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sanfranciscolainen", alku: "sanfranciscolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppppppp"];
-[perusmuoto: "satakuntalainen", alku: "satakuntalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppppp"];
 [perusmuoto: "savoijilainen", alku: "savoijilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "serbiamontenegrolainen", alku: "serbiamontenegrolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppp=ppppppppppp"];
 [perusmuoto: "sevillalainen", alku: "sevillalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -204,7 +194,6 @@
 [perusmuoto: "transilvanialainen", alku: "transilvanialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "trinidadtobagolainen", alku: "trinidadtobagolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppp=pppppppppppp"];
 [perusmuoto: "trotskilainen", alku: "trotskilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "turkkilainen", alku: "turkkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tuvalulainen", alku: "tuvalulai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tyanalainen", alku: "tyanalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tšadilainen", alku: "tšadilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
@@ -213,11 +202,9 @@
 [perusmuoto: "uzbekistanilainen", alku: "uzbekistanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "valencialainen", alku: "valencialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "valentinolainen", alku: "valentinolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "varkautelainen", alku: "varkautelai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vatjalainen", alku: "vatjalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vedalainen", alku: "vedalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "venezuelalainen", alku: "venezuelalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "vihtiläinen", alku: "vihtiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "wittgensteinilainen", alku: "wittgensteinilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppppp"];
 [perusmuoto: "wrightiläinen", alku: "wrightiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kelttiläinen", alku: "kelttiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
@@ -225,7 +212,6 @@
 [perusmuoto: "friisiläinen", alku: "friisiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "setiläinen", alku: "setiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "suomalais-permiläinen", alku: "suomalais-permiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppppppppp-=ppppppppppp"];
-[perusmuoto: "järvenpääläinen", alku: "järvenpääläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "heettiläinen", alku: "heettiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "räisäläinen", alku: "räisäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "härmäläinen", alku: "härmäläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
