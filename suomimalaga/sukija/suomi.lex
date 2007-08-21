@@ -50,6 +50,11 @@ include "suomi.inc";
 define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
 define @sana2 := @sana1 + <teonsana>;
 
+define @eln := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
+define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
+define @elt := <tavuviiva, etuliite, teonsana>;
+define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, teonsana>;
+
 #include "sanat/lyhenteet.lex";
 #include "sanat/erikoisalat/atk.lex";
 #include "sanat/erikoisalat/laaketiede.lex";
@@ -68,7 +73,6 @@ define @sana2 := @sana1 + <teonsana>;
 #include "sanat/yhdyssanat.lex";
 #include "sanat/11-19.lex";
 #include "sanat/sukija.lex";
-
 
 include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";

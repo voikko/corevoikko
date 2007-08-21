@@ -123,6 +123,7 @@ combi_rule etuliite ($vasen, $oikea, $sana):
 
   if ($i greater 0) then
     ? ($oikea.luokka in $vasen.$i.jatko);
+#define $a := transmit (<$oikea> + <$sana>);
     ? yhdyssana_oikein ($vasen, $oikea, $i);
   end;
 
@@ -162,9 +163,9 @@ combi_rule nimisana ($vasen, $oikea, $sana):
 
 ##  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-#define $n1 := transmit (<"nimisana"> + <$vasen>);
-#define $n2 := transmit (<"nimisana"> + <$oikea>);
-#define $n3 := transmit (<"nimisana"> + <$sana>);
+#define $n1 := transmit (<"nimisana1"> + <$vasen>);
+#define $n2 := transmit (<"nimisana2"> + <$oikea>);
+#define $n3 := transmit (<"nimisana3"> + <$sana>);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
@@ -1137,6 +1138,10 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     end;
   else
 #define $a := transmit ("Huuhaa.");
+#define $a := transmit ($vasen.$i);
+#define $b := transmit ($oikea);
+#define $c := transmit (value_type($vasen.$i));
+#define $d := transmit (value_type($oikea));
 
     if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
       return no;
