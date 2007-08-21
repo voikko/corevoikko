@@ -205,6 +205,7 @@
 [perusmuoto: "vatjalainen", alku: "vatjalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vedalainen", alku: "vedalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "venezuelalainen", alku: "venezuelalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "virtolainen", alku: "virtolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a]; # Virrat-nimisen kunnan asukas
 [perusmuoto: "wittgensteinilainen", alku: "wittgensteinilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppppp"];
 [perusmuoto: "wrightiläinen", alku: "wrightiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "kelttiläinen", alku: "kelttiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];

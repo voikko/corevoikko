@@ -32,14 +32,13 @@ VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede vie
 # Files to ship in the preprocessed source package
 VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voikko-fi_FI.mor_l \
                   voikko-fi_FI.sym_l voikko-fi_FI.all_l voikko-fi_FI.lex suomi.inc subrule.inc \
-                  sovellusriippuvat.inc \
-                  $(patsubst %,%.lex,$(VOIKKO_LEX_FROM_XML))
+                  $(patsubst %,%.lex,$(VOIKKO_LEX_FROM_XML)) olla-ei.lex
 
 # Files to ship in the source package (duplicates are allowed)
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 
-SM_VERSION=0.7.5
+SM_VERSION=0.7.6
 
 .PHONY: all clean update-vocabulary voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
 
