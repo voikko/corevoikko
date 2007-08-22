@@ -426,7 +426,6 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
 
   if ($index greater 1) then
-    ? (tavuviiva in $vasen.($index - 1).jatko);
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   else
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
@@ -1173,7 +1172,7 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (tavuviiva in $oikea.jatko) then
-    result $res, rules yhdysmerkki_sanan_lopussa;
+    result $res, rules yhdysmerkki_sanan_lopussa, nimisana, laatusana, teonsana;
   end;
   if (nimitapa_1_pitkä in $oikea.jatko) then
     result $res, rules nimitapa_1_pitkä;
@@ -1186,8 +1185,7 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   end;
   result $res,
          rules nimisanan_sijapääte,
-               liitesana,
-               nimisana, laatusana, teonsana;
+               liitesana;
 end;
 
 

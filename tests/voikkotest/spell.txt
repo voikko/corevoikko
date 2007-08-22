@@ -282,6 +282,8 @@ kaakkoishartolalainen
 peruskaakkoishartolalainen
 bi-vihreä
 !bi--vihreä
+ei-kaunis
+!ei--kaunis
 bi-
 !bi--
 miniei-
