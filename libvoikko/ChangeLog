@@ -1,3 +1,7 @@
+2007-08-23 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Change configure.ac to fix build on FreeBSD
+
 2007-08-20 Harri Pitkänen <hatapitk@iki.fi>
 
 	* FreeBSD fix, thanks to Jaakko Heinonen

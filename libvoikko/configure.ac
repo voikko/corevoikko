@@ -31,6 +31,9 @@ AC_PROG_LIBTOOL
 
 AM_MAINTAINER_MODE
 
+dnl Compiler features
+AC_C_CONST
+
 dnl Default compiler settings
 CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 
@@ -63,9 +66,6 @@ AC_CHECK_HEADERS([malaga.h],,[AC_MSG_ERROR([malaga.h not found])])
 
 dnl Types
 AC_TYPE_SIZE_T
-
-dnl Compiler features
-AC_C_CONST
 
 dnl GCC visibility support
 AH_TEMPLATE(GCC_VISIBILITY, [GCC visibility support])
