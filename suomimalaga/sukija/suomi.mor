@@ -934,7 +934,7 @@ end;
 
 subrule omistusliite3_oikein ($sana, $liite):
   return ((($sana matches ".*" + @a) and ($liite = "an")) or
-          (($sana matches ".*" + @e) and ($liite = "en")) or
+          (($sana matches ".*" + @e) and ($liite in <"en", "hen">)) or
           (($sana matches ".*" + @i) and ($liite = "in")) or
           (($sana matches ".*" + @o) and ($liite = "on")) or
           (($sana matches ".*" + @u) and ($liite = "un")) or
@@ -1044,7 +1044,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
                                  "Taisto", "Taimi", "Tikka", "Toimi", "Toivo", "Tuisku", "Tuuli",
                                  "Valta", "Vasara", "Viita">)) or
       (($oikea.luokka in <paikannimi, sukunimi, nimi>) and
-       ($oikea.perusmuoto in <"Järvi", "Lahti", "Maa", "Meri", "Niemi", "Saari", "Virta">))) then
+       ($oikea.perusmuoto in <"Järvi", "Lahti", "Maa", "Meri", "Niemi", "Saari", "Turkki", "Virta">))) then
     return no;
   end;
 

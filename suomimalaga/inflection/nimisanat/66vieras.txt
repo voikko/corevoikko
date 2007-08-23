@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -78,6 +78,7 @@ sisäeronto_stA
 
 sisätulento_seen
           ham+paa+seen
+          ham+paha+seen  ei_voikko
 
 sisätulento_sen
           ham+paha+sen  ei_voikko
@@ -107,7 +108,8 @@ omanto_iT
           ham+pa+itten  ei_voikko
 
 omanto_ten
-          ham+mas+ten  ei_voikko
+          ham+mas+ten    ei_voikko
+          ham+pahit+ten  ei_voikko
 
 omanto_ien
           ham+pah+ien  ei_voikko

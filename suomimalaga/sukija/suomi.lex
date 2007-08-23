@@ -363,6 +363,11 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "see",   luokka: sijapääte, sija: sisätulento_seen,
                 luku: yksikkö, äs: aä, jatko: <omistusliite>];
 
+[alku: "sehen",  luokka: sijapääte, sija: sisätulento_seen,
+                 luku: yksikkö, äs: aä, jatko: @sijan_jatko, tiedot: <ei_voikko>];
+[alku: "sehe",   luokka: sijapääte, sija: sisätulento_seen,
+                 luku: yksikkö, äs: aä, jatko: <omistusliite>, tiedot: <ei_voikko>];
+
 [alku: "isiin", luokka: sijapääte, sija: sisätulento_isiin,
                 luku: monikko, äs: aä, jatko: @sijan_jatko];
 [alku: "isii",  luokka: sijapääte, sija: sisätulento_isiin,
@@ -455,6 +460,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
 [alku: "an",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "en",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+[alku: "hen", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>]; # Esim. verkoille(h)en.
 [alku: "in",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
 [alku: "on",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "un",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];

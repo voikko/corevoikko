@@ -57,6 +57,9 @@ omanto_n
 osanto_A
           solak+ka+a
 
+osanto_tA
+          solak+ka+ta  ei_voikko
+
 olento_nA
           solak+ka+na
 

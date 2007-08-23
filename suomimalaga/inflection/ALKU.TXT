@@ -102,100 +102,65 @@ allo_rule generate_allos ($tietue1):
   if ($malli = sukija) then
     define $tavujen_lkm := tavujen_määrä ($tietue1.perusmuoto);
 
-    if ($tietue1.luokka = etuliite) then
-##      define $a := transmit ($tietue1.perusmuoto + " " + value_string($tietue1.jatko));
-      if (not (etuliite in $tietue1.jatko)) then
-        $tietue1.jatko :=+ <etuliite>;
-      end;
-      if (((nimisana in $tietue1.jatko) or (laatusana in $tietue1.jatko)) and
-          (not (nimi_laatusana in $tietue1.jatko))) then
-        $tietue1.jatko :=+ <nimi_laatusana>;
-      end;
-      $tietue1.jatko := set ($tietue1.jatko);
-##      define $b := transmit ($tietue1.perusmuoto + " " + value_string($tietue1.jatko));
-      $tietuelista := <$tietue1>;
-    end;
-
+    # Korvataan aksentilliset merkit aksentittomilla (esim. Linné => Linne).
     #
-    # Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
-    # Esim. kelta(i)nen, hevo(i)nen.
-    #
-#    if ((nainen in $tietue1.jatko) and
-#        ($tietue1.luokka in <nimisana, laatusana, nimi_laatusana>) and
-#        ($tietue1.perusmuoto matches ".*" + @kerake + "[aouyäö]i?nen") and
-#        (not ($tietue1.perusmuoto matches ".*m[aä]inen")) and # Ei "omainen".
-#        ($tavujen_lkm = 3) and
-#        ($tietue1.lähtösana = nil) then
-#      define $tietue2 := $tietue1;
-#      if (substring($tietue1.alku,1R) = "i") then
-#        $tietue2.alku := substring($tietue1.alku,1,2R);   # Keltainen => keltanen.
-#      else
-#        $tietue2.alku :=+ "i";                            # Hevonen   => hevoinen.
-#      end;
-#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-#      $tietue2.perusmuoto := $tietue2.alku + "nen";
-#      $tietuelista := <$tietue1, $tietue2>;
-#    end;
-
-   # Korvataan aksentilliset merkit aksentittomilla (esim. Linné => Linne).
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       ($tietue1.perusmuoto matches ".*[" + @aksenttimerkki + "]+.*")) then
-     define $tietue2 := $tietue1;
-     $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-     $tietue2.alku       := tr ($tietue2.alku,       @aksenttimerkki, @korvausmerkki);
-     $tietue2.perusmuoto := tr ($tietue2.perusmuoto, @aksenttimerkki, @korvausmerkki);
+    if (($tietue1.perusmuoto /= nil) and
+        ($tietue1.perusmuoto matches ".*[" + @aksenttimerkki + "]+.*")) then
+      define $tietue2 := $tietue1;
+      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
+      $tietue2.alku       := tr ($tietue2.alku,       @aksenttimerkki, @korvausmerkki);
+      $tietue2.perusmuoto := tr ($tietue2.perusmuoto, @aksenttimerkki, @korvausmerkki);
 #define $a := transmit ($tietue1);
 #define $b := transmit ($tietue2);
-     $tietuelista := <$tietue1, $tietue2>;
-   end;
+      $tietuelista := <$tietue1, $tietue2>;
+    end;
 
 
-   # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
-   # generoidaan XML-tiedostosta Malaga-koodia.
-   #
-   if ((rakentaa in $tietue1.jatko) and
-       ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
-     $tietue1.alku := $alku;
-     $tietuelista := <$tietue1>;
-   end;
-   if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
-     $tietue1.alku := "hart";
-     $tietuelista := <$tietue1>;
-   end;
-   if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
-       ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
-     stop;
-   end;
+    # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
+    # generoidaan XML-tiedostosta Malaga-koodia.
+    #
+    if ((rakentaa in $tietue1.jatko) and
+        ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
+      $tietue1.alku := $alku;
+      $tietuelista := <$tietue1>;
+    end;
+    if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
+      $tietue1.alku := "hart";
+      $tietuelista := <$tietue1>;
+    end;
+    if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
+        ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
+      stop;
+    end;
 
-   # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       ($tietue1.perusmuoto in <"otto", "voima">) and
-       ($tietue1.luokka in <nimisana>)) then
-     stop;
-   end;
-   if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
-     stop;
-   end;
+    # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
+    #
+    if (($tietue1.perusmuoto /= nil) and
+        ($tietue1.perusmuoto in <"otto", "voima">) and
+        ($tietue1.luokka in <nimisana>)) then
+      stop;
+    end;
+    if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
+      stop;
+    end;
 
-   # Nämä tunnistetaan etuliite + sana -yhdistelminä.
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       (($tietue1.perusmuoto matches "herras(kartano|mies|poika|väki)") or
-        ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
-     stop;
-   end;
+    # Nämä tunnistetaan etuliite + sana -yhdistelminä.
+    #
+    if (($tietue1.perusmuoto /= nil) and
+        (($tietue1.perusmuoto matches "herras(kartano|mies|poika|väki)") or
+         ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
+      stop;
+    end;
 
-   # Nämä sanat voivat olla myös erillisinä sanoina.
-   #
-   if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
-       (($tietue1.perusmuoto /= nil) and
-       (($tietue1.perusmuoto = "vuotias") and ($tietue1.luokka = nimi_laatusana)))) then
-     $tietue1.tiedot :=- <ysj>;
-     $tietuelista := <$tietue1>;
-   end;
- end;
+    # Nämä sanat voivat olla myös erillisinä sanoina.
+    #
+    if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
+        (($tietue1.perusmuoto /= nil) and
+        (($tietue1.perusmuoto = "vuotias") and ($tietue1.luokka = nimi_laatusana)))) then
+      $tietue1.tiedot :=- <ysj>;
+      $tietuelista := <$tietue1>;
+    end;
+  end;
 
 
   choose $tietue in $tietuelista;

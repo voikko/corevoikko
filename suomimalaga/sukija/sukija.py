@@ -90,8 +90,27 @@ pattern = pattern.replace(u"U", u"[uy]")
 pattern = pattern.replace(u"C", u"[bcdfghjklmnpqrstvwxzšžçðñþß]")
 rx = re.compile(pattern, re.IGNORECASE)
 
-
 #print pattern
+
+# Aksentilliset kirjaimet UTF-8 -merkistössä 0000-017F.
+#
+# C0 Controls and Basic Latin.        Range: 0000-007F
+# C1 Controls and Latin-1 Supplement  Range: 0080-00FF
+# Latin Extended-A                    Range: 0100-017F
+#
+# C0 on sama kuin ASCII, C0+C1 on sama kuin ISO-8859-1.
+#
+# Kirjaimet å, ä ja ö eivät ole aksentillisia kirjaimia suomen kielessä.
+#
+accents = u"ÀÁÂÃÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕØÙÚÛÜÝÞßàáâãæçèéêëìíîïðñòóôõøùúûüýþÿ" + \
+          u"ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸ" + \
+	  u"ĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſ"
+
+replace = u"AAAAÆCEEEEIIIIDNOOOÖÖUUUUYÞßaaaaæceeeeiiiidnoooööuuuuyþy" + \
+          u"AaAaAaCcCcCcCcDdDdEeEeEeEeEeGgGgGgGgHhHhIiIiIiIiIiĲĳJjKkk" + \
+	  u"LlLlLlLlLlNnNnNnnNnOoOoÖöŒœRrRrSsSsSsSsTtTtTtUuUuUuUuYyUuWwYyYZzZzZzs"
+
+rx_accents = re.compile (u"[" + accents + u"]")
 
 
 # Jaetaan sana tavuihin. Esim.
@@ -280,10 +299,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, u"#Malaga class not found for (%s, %s)\n" \
 			                   % (wordform, voikko_infclass))
 			continue
-#		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
-#		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
-#				   generate_lex_common.get_structure(altform, malaga_word_class))
-#		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
 
 		nsyl = number_of_syllabels(wordform)
 
@@ -409,8 +424,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku = wordform[:-4]
 		elif (jatko in [u"onneton", u"alaston"]):
 			alku = alku[:-1]
-		elif ((jatko == u"harteet") and (wordform == u"harteet")):
-			alku = u"hart"
 		elif ((jatko == u"kuollut") and (wordform == u"neitsyt")):
 			jatko = u"neitsyt"
 		elif ((jatko == u"ori") and (wordform == u"ori")):
@@ -564,12 +577,16 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		
 		# Tulostetaan.
 
-#		print("Wor1 " + wordform + u"\n")
+#		print(u"Word   " + wordform + u"\n")
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
 			% (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class))
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
 
+		if (rx_accents.search(wordform) != None):
+			print(u"Huuhaa " + wordform + u" " + entry + u"\n")
+			entry2 = entry
+		
 		if (len(wordform2) > 0):
 			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
 				% (wordform2, alku2, malaga_word_class, jatko2, malaga_vtype, malaga_flags,

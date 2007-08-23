@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,19 +45,19 @@
 # combination.
 
 
-vieras   vieras s   a   ha   ""  h   ""
-ahdas    vieras das taa taha ta  tah ta
-allas    vieras las taa taha ta  tah ta
+vieras   vieras s   a   ha   ""  hit   h   ""
+ahdas    vieras das taa taha ta  tahit tah ta
+allas    vieras las taa taha ta  tahit tah ta
 autuas   iäkäs  as  aa  a   ""
-harras   vieras ras taa taha ta  tah ta
-hammas   vieras mas paa paha pa  pah pa
+harras   vieras ras taa taha ta  tahit tah ta
+hammas   vieras mas paa paha pa  pahit pah pa
 iäkäs    iäkäs  äs  kää kä   ky
-kangas   vieras gas kaa kaha ka  kah ka
-kinnas   vieras nas taa taha ta  tah ta
+kangas   vieras gas kaa kaha ka  kahit kah ka
+kinnas   vieras nas taa taha ta  tahit tah ta
 laupias  iäkäs  ias iaa ia   e
-paras    vieras as  haa aha  ha  h   ha
-ratas    vieras as  taa taha ta  tah ta
-saapas   vieras as  paa paha pa  pah pa
+paras    vieras as  haa aha  ha  ahit  ha  ha
+ratas    vieras as  taa taha ta  tahit tah ta
+saapas   vieras as  paa paha pa  pahit pah pa
 utelias  iäkäs  s   a   ""   isu
-varvas   vieras vas paa paha pa  pah pa
-vilkas   vieras as  kaa kaha ka  kah ka
+varvas   vieras vas paa paha pa  pahit pah pa
+vilkas   vieras as  kaa kaha ka  kahit kah ka

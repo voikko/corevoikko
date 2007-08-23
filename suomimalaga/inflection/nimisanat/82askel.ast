@@ -45,11 +45,11 @@
 # combination.
 
 
-askel   askel ""  e    ee    ""
-auer    askel er  tere teree ter
-kannel  askel nel tele telee tel
-kinner  askel ner tere teree ter
-ommel   askel mel pele pelee pel
-penger  askel ger kere keree ker
-piennar askel nar tare taree tar
-taival  askel val pale palee pal
+askel   askel ""  e    ee    et    ""
+auer    askel er  tere teree teret ter
+kannel  askel nel tele telee telet tel
+kinner  askel ner tere teree teret ter
+ommel   askel mel pele pelee pelet pel
+penger  askel ger kere keree keret ker
+piennar askel nar tare taree taret tar
+taival  askel val pale palee palet pal

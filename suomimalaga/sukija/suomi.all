@@ -102,100 +102,65 @@ allo_rule generate_allos ($tietue1):
   if ($malli = sukija) then
     define $tavujen_lkm := tavujen_määrä ($tietue1.perusmuoto);
 
-    if ($tietue1.luokka = etuliite) then
-##      define $a := transmit ($tietue1.perusmuoto + " " + value_string($tietue1.jatko));
-      if (not (etuliite in $tietue1.jatko)) then
-        $tietue1.jatko :=+ <etuliite>;
-      end;
-      if (((nimisana in $tietue1.jatko) or (laatusana in $tietue1.jatko)) and
-          (not (nimi_laatusana in $tietue1.jatko))) then
-        $tietue1.jatko :=+ <nimi_laatusana>;
-      end;
-      $tietue1.jatko := set ($tietue1.jatko);
-##      define $b := transmit ($tietue1.perusmuoto + " " + value_string($tietue1.jatko));
-      $tietuelista := <$tietue1>;
-    end;
-
+    # Korvataan aksentilliset merkit aksentittomilla (esim. Linné => Linne).
     #
-    # Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
-    # Esim. kelta(i)nen, hevo(i)nen.
-    #
-#    if ((nainen in $tietue1.jatko) and
-#        ($tietue1.luokka in <nimisana, laatusana, nimi_laatusana>) and
-#        ($tietue1.perusmuoto matches ".*" + @kerake + "[aouyäö]i?nen") and
-#        (not ($tietue1.perusmuoto matches ".*m[aä]inen")) and # Ei "omainen".
-#        ($tavujen_lkm = 3) and
-#        ($tietue1.lähtösana = nil) then
-#      define $tietue2 := $tietue1;
-#      if (substring($tietue1.alku,1R) = "i") then
-#        $tietue2.alku := substring($tietue1.alku,1,2R);   # Keltainen => keltanen.
-#      else
-#        $tietue2.alku :=+ "i";                            # Hevonen   => hevoinen.
-#      end;
-#      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto, lähtöalku: $tietue1.alku];
-#      $tietue2.perusmuoto := $tietue2.alku + "nen";
-#      $tietuelista := <$tietue1, $tietue2>;
-#    end;
-
-   # Korvataan aksentilliset merkit aksentittomilla (esim. Linné => Linne).
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       ($tietue1.perusmuoto matches ".*[" + @aksenttimerkki + "]+.*")) then
-     define $tietue2 := $tietue1;
-     $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-     $tietue2.alku       := tr ($tietue2.alku,       @aksenttimerkki, @korvausmerkki);
-     $tietue2.perusmuoto := tr ($tietue2.perusmuoto, @aksenttimerkki, @korvausmerkki);
+    if (($tietue1.perusmuoto /= nil) and
+        ($tietue1.perusmuoto matches ".*[" + @aksenttimerkki + "]+.*")) then
+      define $tietue2 := $tietue1;
+      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
+      $tietue2.alku       := tr ($tietue2.alku,       @aksenttimerkki, @korvausmerkki);
+      $tietue2.perusmuoto := tr ($tietue2.perusmuoto, @aksenttimerkki, @korvausmerkki);
 #define $a := transmit ($tietue1);
 #define $b := transmit ($tietue2);
-     $tietuelista := <$tietue1, $tietue2>;
-   end;
+      $tietuelista := <$tietue1, $tietue2>;
+    end;
 
 
-   # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
-   # generoidaan XML-tiedostosta Malaga-koodia.
-   #
-   if ((rakentaa in $tietue1.jatko) and
-       ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
-     $tietue1.alku := $alku;
-     $tietuelista := <$tietue1>;
-   end;
-   if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
-     $tietue1.alku := "hart";
-     $tietuelista := <$tietue1>;
-   end;
-   if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
-       ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
-     stop;
-   end;
+    # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
+    # generoidaan XML-tiedostosta Malaga-koodia.
+    #
+    if ((rakentaa in $tietue1.jatko) and
+        ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
+      $tietue1.alku := $alku;
+      $tietuelista := <$tietue1>;
+    end;
+    if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
+      $tietue1.alku := "hart";
+      $tietuelista := <$tietue1>;
+    end;
+    if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
+        ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
+      stop;
+    end;
 
-   # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       ($tietue1.perusmuoto in <"otto", "voima">) and
-       ($tietue1.luokka in <nimisana>)) then
-     stop;
-   end;
-   if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
-     stop;
-   end;
+    # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
+    #
+    if (($tietue1.perusmuoto /= nil) and
+        ($tietue1.perusmuoto in <"otto", "voima">) and
+        ($tietue1.luokka in <nimisana>)) then
+      stop;
+    end;
+    if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
+      stop;
+    end;
 
-   # Nämä tunnistetaan etuliite + sana -yhdistelminä.
-   #
-   if (($tietue1.perusmuoto /= nil) and
-       (($tietue1.perusmuoto matches "herras(kartano|mies|poika|väki)") or
-        ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
-     stop;
-   end;
+    # Nämä tunnistetaan etuliite + sana -yhdistelminä.
+    #
+    if (($tietue1.perusmuoto /= nil) and
+        (($tietue1.perusmuoto matches "herras(kartano|mies|poika|väki)") or
+         ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
+      stop;
+    end;
 
-   # Nämä sanat voivat olla myös erillisinä sanoina.
-   #
-   if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
-       (($tietue1.perusmuoto /= nil) and
-       (($tietue1.perusmuoto = "vuotias") and ($tietue1.luokka = nimi_laatusana)))) then
-     $tietue1.tiedot :=- <ysj>;
-     $tietuelista := <$tietue1>;
-   end;
- end;
+    # Nämä sanat voivat olla myös erillisinä sanoina.
+    #
+    if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
+        (($tietue1.perusmuoto /= nil) and
+        (($tietue1.perusmuoto = "vuotias") and ($tietue1.luokka = nimi_laatusana)))) then
+      $tietue1.tiedot :=- <ysj>;
+      $tietuelista := <$tietue1>;
+    end;
+  end;
 
 
   choose $tietue in $tietuelista;
@@ -1215,15 +1180,6 @@ allo_rule generate_allos ($tietue1):
         result $j.alku, $j - alku;
       end;
     end;
-  elseif (mahorkka in $tietue.jatko) then
-    choose $i in matala ($tietue, "k"+A($tietue), A($tietue), "k", O($tietue), "k"+O($tietue), "");
-    if (value_type($i) = record) then
-      result $i.alku, $i - alku;
-    else
-      foreach $j in $i:
-        result $j.alku, $j - alku;
-      end;
-    end;
   elseif (asema in $tietue.jatko) then
     choose $i in asema ($tietue, A($tietue), A($tietue), "", "");
     if (value_type($i) = record) then
@@ -2035,7 +1991,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (vieras in $tietue.jatko) then
-    choose $i in vieras ($tietue, "s", A($tietue), "h"+A($tietue), "", "h", "");
+    choose $i in vieras ($tietue, "s", A($tietue), "h"+A($tietue), "", "hit", "h", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2044,7 +2000,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (ahdas in $tietue.jatko) then
-    choose $i in vieras ($tietue, "d"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"h", "t"+A($tietue));
+    choose $i in vieras ($tietue, "d"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"hit", "t"+A($tietue)+"h", "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2053,7 +2009,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (allas in $tietue.jatko) then
-    choose $i in vieras ($tietue, "l"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"h", "t"+A($tietue));
+    choose $i in vieras ($tietue, "l"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"hit", "t"+A($tietue)+"h", "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2071,7 +2027,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (harras in $tietue.jatko) then
-    choose $i in vieras ($tietue, "r"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"h", "t"+A($tietue));
+    choose $i in vieras ($tietue, "r"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"hit", "t"+A($tietue)+"h", "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2080,7 +2036,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (hammas in $tietue.jatko) then
-    choose $i in vieras ($tietue, "m"+A($tietue)+"s", "p"+A($tietue)+A($tietue), "p"+A($tietue)+"h"+A($tietue), "p"+A($tietue), "p"+A($tietue)+"h", "p"+A($tietue));
+    choose $i in vieras ($tietue, "m"+A($tietue)+"s", "p"+A($tietue)+A($tietue), "p"+A($tietue)+"h"+A($tietue), "p"+A($tietue), "p"+A($tietue)+"hit", "p"+A($tietue)+"h", "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2098,7 +2054,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (kangas in $tietue.jatko) then
-    choose $i in vieras ($tietue, "g"+A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+A($tietue)+"h", "k"+A($tietue));
+    choose $i in vieras ($tietue, "g"+A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+A($tietue)+"hit", "k"+A($tietue)+"h", "k"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2107,7 +2063,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (kinnas in $tietue.jatko) then
-    choose $i in vieras ($tietue, "n"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"h", "t"+A($tietue));
+    choose $i in vieras ($tietue, "n"+A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"hit", "t"+A($tietue)+"h", "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2125,7 +2081,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (paras in $tietue.jatko) then
-    choose $i in vieras ($tietue, A($tietue)+"s", "h"+A($tietue)+A($tietue), A($tietue)+"h"+A($tietue), "h"+A($tietue), "h", "h"+A($tietue));
+    choose $i in vieras ($tietue, A($tietue)+"s", "h"+A($tietue)+A($tietue), A($tietue)+"h"+A($tietue), "h"+A($tietue), A($tietue)+"hit", "h"+A($tietue), "h"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2134,7 +2090,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (ratas in $tietue.jatko) then
-    choose $i in vieras ($tietue, A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"h", "t"+A($tietue));
+    choose $i in vieras ($tietue, A($tietue)+"s", "t"+A($tietue)+A($tietue), "t"+A($tietue)+"h"+A($tietue), "t"+A($tietue), "t"+A($tietue)+"hit", "t"+A($tietue)+"h", "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2143,7 +2099,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (saapas in $tietue.jatko) then
-    choose $i in vieras ($tietue, A($tietue)+"s", "p"+A($tietue)+A($tietue), "p"+A($tietue)+"h"+A($tietue), "p"+A($tietue), "p"+A($tietue)+"h", "p"+A($tietue));
+    choose $i in vieras ($tietue, A($tietue)+"s", "p"+A($tietue)+A($tietue), "p"+A($tietue)+"h"+A($tietue), "p"+A($tietue), "p"+A($tietue)+"hit", "p"+A($tietue)+"h", "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2161,7 +2117,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (varvas in $tietue.jatko) then
-    choose $i in vieras ($tietue, "v"+A($tietue)+"s", "p"+A($tietue)+A($tietue), "p"+A($tietue)+"h"+A($tietue), "p"+A($tietue), "p"+A($tietue)+"h", "p"+A($tietue));
+    choose $i in vieras ($tietue, "v"+A($tietue)+"s", "p"+A($tietue)+A($tietue), "p"+A($tietue)+"h"+A($tietue), "p"+A($tietue), "p"+A($tietue)+"hit", "p"+A($tietue)+"h", "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2170,7 +2126,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (vilkas in $tietue.jatko) then
-    choose $i in vieras ($tietue, A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+A($tietue)+"h", "k"+A($tietue));
+    choose $i in vieras ($tietue, A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+A($tietue)+"hit", "k"+A($tietue)+"h", "k"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2503,7 +2459,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (askel in $tietue.jatko) then
-    choose $i in askel ($tietue, "", "e", "ee", "");
+    choose $i in askel ($tietue, "", "e", "ee", "et", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2512,7 +2468,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (auer in $tietue.jatko) then
-    choose $i in askel ($tietue, "er", "tere", "teree", "ter");
+    choose $i in askel ($tietue, "er", "tere", "teree", "teret", "ter");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2521,7 +2477,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (kannel in $tietue.jatko) then
-    choose $i in askel ($tietue, "nel", "tele", "telee", "tel");
+    choose $i in askel ($tietue, "nel", "tele", "telee", "telet", "tel");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2530,7 +2486,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (kinner in $tietue.jatko) then
-    choose $i in askel ($tietue, "ner", "tere", "teree", "ter");
+    choose $i in askel ($tietue, "ner", "tere", "teree", "teret", "ter");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2539,7 +2495,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (ommel in $tietue.jatko) then
-    choose $i in askel ($tietue, "mel", "pele", "pelee", "pel");
+    choose $i in askel ($tietue, "mel", "pele", "pelee", "pelet", "pel");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2548,7 +2504,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (penger in $tietue.jatko) then
-    choose $i in askel ($tietue, "ger", "kere", "keree", "ker");
+    choose $i in askel ($tietue, "ger", "kere", "keree", "keret", "ker");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2557,7 +2513,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (piennar in $tietue.jatko) then
-    choose $i in askel ($tietue, "n"+A($tietue)+"r", "t"+A($tietue)+"re", "t"+A($tietue)+"ree", "t"+A($tietue)+"r");
+    choose $i in askel ($tietue, "n"+A($tietue)+"r", "t"+A($tietue)+"re", "t"+A($tietue)+"ree", "t"+A($tietue)+"ret", "t"+A($tietue)+"r");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2566,7 +2522,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (taival in $tietue.jatko) then
-    choose $i in askel ($tietue, "v"+A($tietue)+"l", "p"+A($tietue)+"le", "p"+A($tietue)+"lee", "p"+A($tietue)+"l");
+    choose $i in askel ($tietue, "v"+A($tietue)+"l", "p"+A($tietue)+"le", "p"+A($tietue)+"lee", "p"+A($tietue)+"let", "p"+A($tietue)+"l");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -5795,7 +5751,7 @@ subrule matala ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          sisäolento_issA: <<$param06, <>>, <$param04, <>>>,
                          sisäeronto_istA: <<$param06, <>>, <$param04, <>>>,
                          sisätulento_iin: <<$param03, <>>>,
-                         sisätulento_ihin: <<$param05, <>>, <$param03, <vanha_h>>>,
+                         sisätulento_ihin: <<$param05, <>>, <$param04, <ei_voikko>>, <$param03, <vanha_h>>>,
                          ulko_olento_illA: <<$param06, <>>, <$param04, <>>>,
                          ulkoeronto_iltA: <<$param06, <>>, <$param04, <>>>,
                          ulkotulento_ille: <<$param06, <>>, <$param04, <>>>,
@@ -5975,6 +5931,7 @@ subrule solakka ($tietue, $param01, $param02, $param03, $param04, $param05):
                          omistusliite: <<$param01, <>>>,
                          omanto_n: <<$param02, <>>>,
                          osanto_A: <<$param01, <>>>,
+                         osanto_tA: <<$param01, <ei_voikko>>>,
                          olento_nA: <<$param01, <>>>,
                          tulento_ksi: <<$param02, <>>>,
                          sisäolento_ssA: <<$param02, <>>>,
@@ -8907,7 +8864,7 @@ subrule iäkäs ($tietue, $param01, $param02, $param03, $param04):
                          etuliite: <<$param01, <>>>,
                          tavuviiva: <<$param01, <>>>]);
 end;
-subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $johdin_Us):
+subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_Us):
   return taivutuskaava ($tietue,
                         [nimentö: <<$param01, <>>>,
                          omistusliite: <<$param02, <>>, <$param03, <ei_voikko>>>,
@@ -8917,7 +8874,7 @@ subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $johd
                          tulento_ksi: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          sisäolento_ssA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          sisäeronto_stA: <<$param02, <>>, <$param03, <ei_voikko>>>,
-                         sisätulento_seen: <<$param02, <>>>,
+                         sisätulento_seen: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          sisätulento_sen: <<$param03, <ei_voikko>>>,
                          ulko_olento_llA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          ulkoeronto_ltA: <<$param02, <>>, <$param03, <ei_voikko>>>,
@@ -8925,28 +8882,28 @@ subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $johd
                          vajanto_ttA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          nimentö_t: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          omanto_iT: <<$param04, <>>>,
-                         omanto_ten: <<$param01, <ei_voikko>>>,
-                         omanto_ien: <<$param05, <ei_voikko>>>,
-                         osanto_iA: <<$param05, <ei_voikko>>>,
+                         omanto_ten: <<$param01, <ei_voikko>>, <$param05, <ei_voikko>>>,
+                         omanto_ien: <<$param06, <ei_voikko>>>,
+                         osanto_iA: <<$param06, <ei_voikko>>>,
                          osanto_itA: <<$param04, <>>>,
-                         olento_inA: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         tulento_iksi: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         sisäolento_issA: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         sisäeronto_istA: <<$param04, <>>, <$param05, <ei_voikko>>>,
+                         olento_inA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         tulento_iksi: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         sisäolento_issA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         sisäeronto_istA: <<$param04, <>>, <$param06, <ei_voikko>>>,
                          sisätulento_isiin: <<$param04, <>>>,
-                         sisätulento_isin: <<$param05, <ei_voikko>>>,
+                         sisätulento_isin: <<$param06, <ei_voikko>>>,
                          sisätulento_ihin: <<$param04, <>>>,
-                         ulko_olento_illA: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         ulkoeronto_iltA: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         ulkotulento_ille: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         vajanto_ittA: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         seuranto_ine: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         keinonto_in: <<$param04, <>>, <$param05, <ei_voikko>>>,
+                         ulko_olento_illA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         ulkoeronto_iltA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         ulkotulento_ille: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         vajanto_ittA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         seuranto_ine: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         keinonto_in: <<$param04, <>>, <$param06, <ei_voikko>>>,
                          kerronto_sti: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          voittoaste: <<$param02, <>>, <$param03, <ei_voikko>>>,
-                         yliaste: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         johdin_inen: <<$param04, <>>, <$param05, <ei_voikko>>>,
-                         johdin_ittain: <<$param04, <>>, <$param05, <ei_voikko>>>,
+                         yliaste: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         johdin_inen: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         johdin_ittain: <<$param04, <>>, <$param06, <ei_voikko>>>,
                          johdin_lAinen: <<$param01, <>>>,
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
@@ -9874,7 +9831,7 @@ subrule kiiru ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          etuliite: <<$param01, <>>>,
                          tavuviiva: <<$param01, <>>>]);
 end;
-subrule askel ($tietue, $param01, $param02, $param03, $param04):
+subrule askel ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
                         [nimentö: <<$param01, <>>, <$param02, <>>>,
                          omistusliite: <<$param02, <>>, <$param03, <>>>,
@@ -9892,29 +9849,29 @@ subrule askel ($tietue, $param01, $param02, $param03, $param04):
                          ulkotulento_lle: <<$param02, <>>, <$param03, <>>>,
                          vajanto_ttA: <<$param02, <>>, <$param03, <>>>,
                          nimentö_t: <<$param02, <>>, <$param03, <>>>,
-                         omanto_ten: <<$param01, <>>>,
-                         omanto_ien: <<$param04, <>>>,
+                         omanto_ten: <<$param01, <>>, <$param04, <ei_voikko>>>,
+                         omanto_ien: <<$param05, <>>>,
                          omanto_iT: <<$param02, <>>>,
-                         osanto_iA: <<$param04, <>>>,
+                         osanto_iA: <<$param05, <>>>,
                          osanto_itA: <<$param02, <>>>,
-                         olento_inA: <<$param04, <>>, <$param02, <>>>,
-                         tulento_iksi: <<$param04, <>>, <$param02, <>>>,
-                         sisäolento_issA: <<$param04, <>>, <$param02, <>>>,
-                         sisäeronto_istA: <<$param04, <>>, <$param02, <>>>,
-                         sisätulento_iin: <<$param04, <>>>,
-                         sisätulento_ihin: <<$param02, <>>>,
+                         olento_inA: <<$param05, <>>, <$param02, <>>>,
+                         tulento_iksi: <<$param05, <>>, <$param02, <>>>,
+                         sisäolento_issA: <<$param05, <>>, <$param02, <>>>,
+                         sisäeronto_istA: <<$param05, <>>, <$param02, <>>>,
+                         sisätulento_iin: <<$param05, <>>>,
+                         sisätulento_ihin: <<$param05, <ei_voikko>>, <$param02, <>>>,
                          sisätulento_isiin: <<$param02, <>>>,
-                         ulko_olento_illA: <<$param04, <>>, <$param02, <>>>,
-                         ulkoeronto_iltA: <<$param04, <>>, <$param02, <>>>,
-                         ulkotulento_ille: <<$param04, <>>, <$param02, <>>>,
-                         vajanto_ittA: <<$param04, <>>, <$param02, <>>>,
-                         seuranto_ine: <<$param04, <>>, <$param02, <>>>,
-                         keinonto_in: <<$param04, <>>, <$param02, <>>>,
+                         ulko_olento_illA: <<$param05, <>>, <$param02, <>>>,
+                         ulkoeronto_iltA: <<$param05, <>>, <$param02, <>>>,
+                         ulkotulento_ille: <<$param05, <>>, <$param02, <>>>,
+                         vajanto_ittA: <<$param05, <>>, <$param02, <>>>,
+                         seuranto_ine: <<$param05, <>>, <$param02, <>>>,
+                         keinonto_in: <<$param05, <>>, <$param02, <>>>,
                          kerronto_sti: <>,
                          voittoaste: <>,
                          yliaste: <>,
                          johdin_inen: <<$param02, <>>, <$param02, <>>>,
-                         johdin_ittain: <<$param04, <>>, <$param02, <>>>,
+                         johdin_ittain: <<$param05, <>>, <$param02, <>>>,
                          johdin_lAinen: <<$param01, <>>, <$param02, <>>>,
                          johdin_llinen: <<$param02, <>>, <$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>, <$param02, <>>>,

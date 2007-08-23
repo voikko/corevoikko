@@ -99,6 +99,9 @@
 [perusmuoto: "olla", alku: "olet",   luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: yksikkö, tekijä: 2,
                                      jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "olla", alku: "oot",    luokka: teonsana, tapaluokka: tositapa,
+                                     aikamuoto: kestämä, luku: yksikkö, tekijä: 2,
+                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre, ei_ys>];
 [perusmuoto: "olla", alku: "on",     luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: yksikkö, tekijä: 3,
                                      jatko: <liitesana, loppu>, äs: a];
@@ -107,16 +110,22 @@
                                      jatko: <liitesana>, äs: a, tiedot: <murre, ei_ys>];  # Ompahan.
 [perusmuoto: "olla", alku: "ompi",   luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: yksikkö, tekijä: 3,
-                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
+                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre, ei_ys>];
 [perusmuoto: "olla", alku: "onpi",   luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: yksikkö, tekijä: 3,
-                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
+                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre, ei_ys>];
 [perusmuoto: "olla", alku: "olemme", luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: monikko, tekijä: 1,
                                      jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "olla", alku: "oomme",  luokka: teonsana, tapaluokka: tositapa,
+                                     aikamuoto: kestämä, luku: monikko, tekijä: 1,
+                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre, ei_ys>];
 [perusmuoto: "olla", alku: "olette", luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: monikko, tekijä: 2,
                                      jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "olla", alku: "ootte",  luokka: teonsana, tapaluokka: tositapa,
+                                     aikamuoto: kestämä, luku: monikko, tekijä: 2,
+                                     jatko: <liitesana, loppu>, äs: a, tiedot: <murre, ei_ys>];
 [perusmuoto: "olla", alku: "ovat",   luokka: teonsana, tapaluokka: tositapa,
                                      aikamuoto: kestämä, luku: monikko, tekijä: 3,
                                      jatko: <liitesana, loppu>, äs: a];
@@ -212,6 +221,49 @@
 [alku: "älköhöt",    luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 3, luku: monikko, tiedot: <murre>];
+
+[alku: "elä",        luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: yksikkö, tiedot: <murre, ei_ys>];
+[alku: "elköön",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 3, luku: yksikkö, tiedot: <murre, ei_ys>];
+[alku: "elköhön",    luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 3, luku: yksikkö, tiedot: <murre, ei_ys>];
+[alku: "elkäämme",   luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 1, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkää",      luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkä",       luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkään",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkääs",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkäät",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkäätte",   luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkätte",    luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkäte",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 2, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elkööt",     luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 3, luku: monikko, tiedot: <murre, ei_ys>];
+[alku: "elköhöt",    luokka: kieltosana, jatko: <liitesana, liitesana_kä, loppu>,
+                     perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
+                     aikamuoto: kestämä, tekijä: 3, luku: monikko, tiedot: <murre, ei_ys>];
 
 
 # »Älkäästä vielä puhuko, minun täytyy mennä katsomaan, seisooko hevoseni,
