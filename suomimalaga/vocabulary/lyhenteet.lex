@@ -348,6 +348,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "yms.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ynnä muuta sellaista
 [alku: "YTL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
 [alku: "YYA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # ystävyys-, yhteistyö- ja avunantosopimus
+[alku: "ÄO", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # Älykkyysosamäärä
 
 [alku: "a", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "á", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
