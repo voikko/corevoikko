@@ -419,7 +419,6 @@
 [perusmuoto: "toisaalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "toisahalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "pajattaa", alku: "pajat", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "pajunetti", alku: "pajunet", luokka: nimisana, jatko: <tatti>, äs: a];
 
 [perusmuoto: "logi", alku: "log", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Sofi", alku: "Sof", luokka: etunimi, jatko: <risti>, äs: a];
@@ -462,20 +461,9 @@
 [perusmuoto: "Leoni", alku: "Leon", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Giulio", alku: "Giulio", luokka: etunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Juuti", alku: "Juu", luokka: sukunimi, jatko: <vati>, äs: a];
-[perusmuoto: "vaatteisto", alku: "vaatteisto", luokka: nimisana, jatko: <arvelu>, äs: a];
-[perusmuoto: "vaattehisto", alku: "vaattehisto", luokka: nimisana, jatko: <arvelu>, äs: a, lähtösana: "vaatteisto", lähtöalku: "vaatteisto"];
-[perusmuoto: "eteistö", alku: "eteistö", luokka: nimisana, jatko: <arvelu>, äs: ä];
-[perusmuoto: "etehistö", alku: "etehistö", luokka: nimisana, jatko: <arvelu>, äs: ä, lähtösana: "eteistö", lähtöalku: "eteistö"];
-[perusmuoto: "säikeistö", alku: "säikeistö", luokka: nimisana, jatko: <arvelu>, äs: ä];
-[perusmuoto: "säikehistö", alku: "säikehistö", luokka: nimisana, jatko: <arvelu>, äs: ä, lähtösana: "säikeistö", lähtöalku: "säikeistö"];
-[perusmuoto: "veneistö", alku: "veneistö", luokka: nimisana, jatko: <arvelu>, äs: ä];
-[perusmuoto: "venehistö", alku: "venehistö", luokka: nimisana, jatko: <arvelu>, äs: ä, lähtösana: "veneistö", lähtöalku: "veneistö"];
-[perusmuoto: "hileistö", alku: "hileistö", luokka: nimisana, jatko: <arvelu>, äs: ä];
-[perusmuoto: "hilehistö", alku: "hilehistö", luokka: nimisana, jatko: <arvelu>, äs: ä, lähtösana: "hileistö", lähtöalku: "hileistö"];
 [perusmuoto: "kokoutua", alku: "kokou", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "huikennella", alku: "huiken", luokka: teonsana, jatko: <pienennellä>, äs: a];
-[perusmuoto: "isämeitä", alku: "isämei", luokka: nimisana, jatko: <pata>, äs: ä];
-[perusmuoto: "harmaja", alku: "harmaj", luokka: laatusana, jatko: <apila>, äs: a];
+
 
 [perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
 [perusmuoto: "Vincent", alku: "Vincent", luokka: etunimi, jatko: <kalsium>, äs: ä];
