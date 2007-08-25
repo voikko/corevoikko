@@ -427,6 +427,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
 
   if ($index greater 1) then
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+    ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   else
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
   end;

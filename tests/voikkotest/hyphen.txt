@@ -60,6 +60,7 @@ http://www.lappeenranta.fi     http://www.lap-peen-ran-ta.fi
 KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
 jok'ikinen       jok-i-ki-nen
 pop-musiikkia   pop-mu-siik-ki-a
+erinomaisuutta  e-rin-o-mai-suut-ta
 
 [no_ugly_hyphenation=0 ignore_dot=1]
 kansaneläke.    kan-san-e-lä-ke.
