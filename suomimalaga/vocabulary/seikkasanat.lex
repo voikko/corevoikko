@@ -189,6 +189,8 @@
 [perusmuoto: "hyväksi", alku: "hyväkse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyvänen", alku: "hyvänen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "hyvänsä", alku: "hyvänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hyvänänne", alku: "hyvänänne", luokka: seikkasana, jatko: <loppu>, äs: ä]; # "pitäkää hyvänänne"
+[perusmuoto: "hyvänäsi", alku: "hyvänäsi", luokka: seikkasana, jatko: <loppu>, äs: ä]; # "pidä hyvänäsi"
 [perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hämillä", alku: "hämillä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "häthätää", alku: "häthätää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
