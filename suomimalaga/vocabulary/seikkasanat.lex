@@ -189,8 +189,7 @@
 [perusmuoto: "hyväksi", alku: "hyväkse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyvänen", alku: "hyvänen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "hyvänsä", alku: "hyvänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "hyvänänne", alku: "hyvänänne", luokka: seikkasana, jatko: <loppu>, äs: ä]; # "pitäkää hyvänänne"
-[perusmuoto: "hyvänäsi", alku: "hyvänäsi", luokka: seikkasana, jatko: <loppu>, äs: ä]; # "pidä hyvänäsi"
+[perusmuoto: "hyvänään", alku: "hyvänä", luokka: seikkasana, jatko: <omistusliite>, äs: ä]; # "pidä hyvänäsi"
 [perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hämillä", alku: "hämillä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "häthätää", alku: "häthätää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
@@ -381,6 +380,8 @@
 [perusmuoto: "kyse", alku: "kyseeseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyse", alku: "kyseessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "käsikkäin", alku: "käsikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "käsikopelolla", alku: "käsikopelolla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "käsikopelolta", alku: "käsikopelolta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "köpelösti", alku: "köpelösti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köykky", alku: "köykky", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "köykky", alku: "köyky", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: ä];
