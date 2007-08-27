@@ -1,3 +1,6 @@
+
+PYTHON=python
+
 # Source files for Sukija version.
 SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
            sukija/suomi.lex sukija/Makefile sukija/suomi.mor sukija/suomi.pro \
@@ -58,7 +61,7 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
-	python voikko/generate_lex.py
+	$(PYTHON) voikko/generate_lex.py
 	touch $@
 	@grep "Malaga class not found" voikko/joukahainen.lex
 
@@ -143,5 +146,5 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukah
 	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
-	python sukija/generate_lex.py
+	$(PYTHON) sukija/generate_lex.py
 	@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex
