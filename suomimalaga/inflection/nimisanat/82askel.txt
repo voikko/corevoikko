@@ -82,6 +82,9 @@ sisäeronto_stA
 sisätulento_Vn
           kan+tele+en
 
+sisätulento_hVn
+          kan+tele+hen
+
 sisätulento_seen
           kan+telee+seen
 

@@ -62,6 +62,7 @@ nimitapa_2_ttA
 
 nimitapa_3
           antau+tu+ma
+          antau++ma  ei_voikko
 
 nimitapa_3_tA
 
@@ -88,6 +89,7 @@ laatutapa_1_ttA
 laatutapa_2_nUt
           antau+tu+nut
           antau+n+nut  ei_voikko
+          antau++nut  ei_voikko
 
 laatutapa_2_tU
 

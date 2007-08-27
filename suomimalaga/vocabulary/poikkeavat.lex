@@ -210,7 +210,7 @@
 [perusmuoto: "sujut", alku: "sujut", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
 [perusmuoto: "surra", alku: "sur", luokka: teonsana, jatko: <purra>, äs: a];
-[perusmuoto: "sydän", alku: "sydä", luokka: nimisana, jatko: <uistin>, äs: ä];
+[perusmuoto: "sydän", alku: "sydä", luokka: nimisana, jatko: <sydän>, äs: ä];
 [perusmuoto: "sydän", alku: "sydännä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];

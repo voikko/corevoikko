@@ -93,6 +93,8 @@ nimentö_t
 omanto_iT
           airu++iden
           airu++itten
+          airu+e+iden  ei_voikko
+          airu+e+itten  ei_voikko
 
 omanto_ten
           airu+t+ten  ei_voikko
@@ -106,21 +108,26 @@ osanto_iA
 
 osanto_itA
           airu++ita
+          airu+e+ita ei_voikko
 
 olento_inA
           airu++ina
+          airu+e+ina  ei_voikko
           airu+h+ina  ei_voikko
 
 tulento_iksi
           airu++iksi
+          airu+e+iksi  ei_voikko
           airu+h+iksi  ei_voikko
 
 sisäolento_issA
           airu++issa
+          airu+e+issa  ei_voikko
           airu+h+issa  ei_voikko
 
 sisäeronto_istA
           airu++ista
+          airu+e+ista  ei_voikko
           airu+h+ista  ei_voikko
 
 sisätulento_ihin
@@ -128,24 +135,29 @@ sisätulento_ihin
 
 sisätulento_isiin
           airu++isiin
+          airu+e+isiin  ei_voikko
 
 sisätulento_isin
           airu+h+isin  ei_voikko
 
 ulko_olento_illA
           airu++illa
+          airu+e+illa  ei_voikko
           airu+h+illa  ei_voikko
 
 ulkoeronto_iltA
           airu++ilta
+          airu+e+ilta  ei_voikko
           airu+h+ilta  ei_voikko
 
 ulkotulento_ille
           airu++ille
+          airu+e+ille  ei_voikko
           airu+h+ille  ei_voikko
 
 vajanto_ittA
           airu++itta
+          airu+e+itta  ei_voikko
           airu+h+itta  ei_voikko
 
 seuranto_ine
@@ -167,6 +179,7 @@ yliaste
 
 johdin_inen
           airu++inen
+          airu+e+inen  ei_voikko
           airu+h+inen
 
 johdin_ittain

@@ -314,6 +314,9 @@
 [perusmuoto: "keskenään", alku: "keskenä", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "keskessä", alku: "keske", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "keskimäärin", alku: "keskimäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "keskipaikkeilla", alku: "keskipaikkeilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "keskipaikkeilla", alku: "keskipaikkeille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "keskipaikkeilla", alku: "keskipaikkeilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "keskitse", alku: "keskitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "keskiviikkoisin", alku: "keskiviikkoisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "keväämmällä", alku: "kevääm", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
@@ -379,6 +382,8 @@
 [perusmuoto: "kyse", alku: "kyseenä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyse", alku: "kyseeseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyse", alku: "kyseessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kyyry", alku: "kyyrysillä", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kyyry", alku: "kyyrysissä", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "käsikkäin", alku: "käsikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "käsikopelolla", alku: "käsikopelolla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "käsikopelolta", alku: "käsikopelolta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppppp"];
@@ -391,8 +396,8 @@
 [perusmuoto: "lainkaan", alku: "lainkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "laisinkaan", alku: "laisinkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "lauantaisin", alku: "lauantaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "leikisti", alku: "leikisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "leikiten", alku: "leikiten", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "leikki", alku: "leikisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "leikki", alku: "leikiten", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "leveälti", alku: "leveälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "liialti", alku: "liialti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "liian", alku: "liian", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -405,10 +410,10 @@
 [perusmuoto: "likipitäen", alku: "likipitäen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "likoon", alku: "likoon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "limittäin", alku: "limittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "lintallaan", alku: "lintallaan", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "lintalleen", alku: "lintalleen", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "lintassa", alku: "lintassa", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "linttaan", alku: "linttaan", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "lintalla", alku: "lintallaan", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "lintalla", alku: "lintalleen", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "lintalla", alku: "lintassa", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "lintalla", alku: "linttaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "liossa", alku: "liossa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "loitolla", alku: "loito", luokka: seikkasana, jatko: <loitolla>, äs: a]; # Hyväksytään on myös tulosija "loitos"
 [perusmuoto: "lomitse", alku: "lomitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -431,7 +436,7 @@
 [perusmuoto: "lähtöisin", alku: "lähtöisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läpikotaisin", alku: "läpikotaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "lävitse", alku: "lävitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "läpi", alku: "lävitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "lääpällä", alku: "lääpällä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "maanantaisin", alku: "maanantaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "maestoso", alku: "maestoso", luokka: seikkasana, jatko: <loppu>, äs: a];
@@ -487,7 +492,7 @@
 [perusmuoto: "nenäkkäin", alku: "nenäkkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nenätysten", alku: "nenätysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "niikseen", alku: "niikseen", luokka: seikkasana, jatko: <loppu>, äs: ä];
-[perusmuoto: "niin", alku: "niin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; #NS: myös suhdesana.
+[perusmuoto: "niin", alku: "niin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nimenomaan", alku: "nimenomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "nimittäin", alku: "nimittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "nipin", alku: "nipin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -716,6 +721,7 @@
 [perusmuoto: "suutuspäissä", alku: "suutuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "syksympänä", alku: "syksym", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "sylikkäin", alku: "sylikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "synnyinpaikkeilla", alku: "synnyinpaikkei", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppppp=pppppppppp"];
 [perusmuoto: "syrjemmällä", alku: "syrjemmä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "syvälti", alku: "syvälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "taa", alku: "taa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];

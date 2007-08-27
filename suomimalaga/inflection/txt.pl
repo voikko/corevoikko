@@ -49,10 +49,11 @@
 
 # Muutetaan tiedostot *.txt Malaga-koodiksi.
 #
-# Käyttö: ./txt.pl a/*.txt b/*.txt
-#          /txt.pl -d a/*.txt b/*.txt
+# Käyttö: ./txt.pl */*.txt
+#          /txt.pl -d [-D] */*.txt
 #
 #  -d tulostaa kommentteja generoituun tiedostoon virheiden korjausta varten.
+#  -D tulostaa lisää kommentteja generoituun tiedostoon virheiden korjausta varten.
 
 use strict;
 use utf8;
@@ -65,9 +66,9 @@ setlocale (LC_ALL, "fi_FI.utf8");
 
 
 my %options=();
-getopts ("d", \%options);
+getopts ("dD", \%options);
 print "# -d $options{d}\n" if defined $options{d};
-
+print "# -D $options{D}\n" if defined $options{D};
 
 # Taivutusmuodoista johdettavat taivutusmuodot tai johtimet.
 #
@@ -178,9 +179,11 @@ foreach my $file (@ARGV) {
     }
   }
 
-#  while ((my $key, my $value) = each %par) {
-#    print "key ", $key, " value ", $value, "\n";
-#  }
+  if (defined $options{D}) {
+    while ((my $key, my $value) = each %par) {
+      print "#D key ", $key, " value ", $value, "\n";
+    }
+  }
 
   close INFILE;
 
@@ -231,9 +234,9 @@ foreach my $file (@ARGV) {
   while (<INFILE>) {
     chomp;
     if (length($_) > 0) {
-#      if (defined $options{d}) {
-#        print "# ", $n++, " ", $_, "\n";
-#      }
+      if (defined $options{D}) {
+        print "\n#D ", $n++, " ", $_, "\n";
+      }
 
       s/#.*//gs;   # Poistetaan kommentit.
 
@@ -257,7 +260,7 @@ foreach my $file (@ARGV) {
             if (exists($par{$z})) {
               if (exists($s1{$head}) && ($word =~ $s2{$head})) {
                 push @flags, $s1{$head};
-#print "\nhead [", $head, "] [", $word, "]\n";
+if (defined $options{D}) {print "\nhead [", $head, "] [", $word, "]\n";}
               }
               push @x, ("<\$param" . $par{$z} . ", <" . join(",",@flags) . ">>");
             }
@@ -265,15 +268,15 @@ foreach my $file (@ARGV) {
               die "'\$z' ei ole olemassa. Jotain on pahasti vialla (", $word, ")\n";
             }
           }
-#print "\nhead [", $head, "] [", $word, "]\n";
+if (defined $options{D}) {print "\n#Dhead [", $head, "] [", $word, "]\n";}
         }
         $m++;
-#print "\n", $_, " m=", $m, "\n";
+if (defined $options{D}) {print "\n#D ", $_, " m=", $m, "\n";}
 
         my $s = "<" . join(", ", @x) . ">";
 
 
-#print "\ns    [", $s, "]\n";
+if (defined $options{D}) {print "\n#D s    [", $s, "]\n";}
 
         $extra{$head} = $s;
 
@@ -312,7 +315,7 @@ foreach my $file (@ARGV) {
           }
         }
 
-#print "\n[[", $_, "]] ", $m, " ", $n, "\n";
+if (defined $options{D}) {print "\n#D [[", $_, "]] ", $m, " ", $n, "\n"};
 
         if ($m + 1 == $n) {
           if (exists($extra{"yhdyssana"})) {

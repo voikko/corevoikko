@@ -92,7 +92,8 @@ rx = re.compile(pattern, re.IGNORECASE)
 
 #print pattern
 
-# Aksentilliset kirjaimet UTF-8 -merkistössä 0000-017F.
+# Aksentilliset kirjaimet UTF-8 -merkistössä 0000-017F,
+# ei kuitenkaan merkkejä š ja ž.
 #
 # C0 Controls and Basic Latin.        Range: 0000-007F
 # C1 Controls and Latin-1 Supplement  Range: 0080-00FF
@@ -104,11 +105,11 @@ rx = re.compile(pattern, re.IGNORECASE)
 #
 accents = u"ÀÁÂÃÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕØÙÚÛÜÝÞßàáâãæçèéêëìíîïðñòóôõøùúûüýþÿ" + \
           u"ĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸ" + \
-	  u"ĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſ"
+	  u"ĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżſ"
 
 replace = u"AAAAÆCEEEEIIIIDNOOOÖÖUUUUYÞßaaaaæceeeeiiiidnoooööuuuuyþy" + \
           u"AaAaAaCcCcCcCcDdDdEeEeEeEeEeGgGgGgGgHhHhIiIiIiIiIiĲĳJjKkk" + \
-	  u"LlLlLlLlLlNnNnNnnNnOoOoÖöŒœRrRrSsSsSsSsTtTtTtUuUuUuUuYyUuWwYyYZzZzZzs"
+	  u"LlLlLlLlLlNnNnNnnNnOoOoÖöŒœRrRrSsSsSsTtTtTtUuUuUuUuYyUuWwYyYZzZzs"
 
 rx_accents = re.compile (u"[" + accents + u"]")
 
@@ -231,6 +232,34 @@ def number_of_syllabels(word):
 		if (c == u"-"):
 			n = n + 1
 	return n;
+
+
+# Korvataan sanasta 'word' aksenttimerkit
+# aksentittomilla kohtien 'start' ja 'end' välistä.
+#
+def deaccent(word, start, end):
+	s = u""
+	for i in range(start, end):
+		j = accents.find(word[i])
+		if (j >= 0):
+			s = s + replace[j]
+		else:
+			s = s + word[i]
+	s = s + word[end:]
+	return s
+
+
+# Kirjoitetaan sana Malagan tietokantaan korvaamalla aksenttimerkit aksentittomilla (esim. á == a),
+# mutta ei korvata kirjaimia š ja ž s:llä ja z:lla.
+#
+def write_word_without_accents(main_vocabulary, vocabulary_files, word, entry, wordform):
+	if ((rx_accents.search(wordform) != None) and (wordform != u"šakki")):
+		n = entry.find(u" luokka: ")
+		if (n == -1):
+			print("write_word_without_accents: Virhe Malaga-koodissa väärin: " + entry + u"\n")
+		entry2 = deaccent (entry, 0, n)
+#		print (entry2 + u"\n")
+		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry2)
 
 
 def handle_word(main_vocabulary,vocabulary_files,word):
@@ -582,10 +611,9 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			% (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class))
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
+		
+##		write_word_without_accents(main_vocabulary, vocabulary_files, word, entry, wordform)
 
-		if (rx_accents.search(wordform) != None):
-			print(u"Huuhaa " + wordform + u" " + entry + u"\n")
-			entry2 = entry
 		
 		if (len(wordform2) > 0):
 			entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s, %s];' \
