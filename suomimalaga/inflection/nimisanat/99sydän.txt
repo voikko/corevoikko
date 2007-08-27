@@ -1,0 +1,188 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+#
+# Indeksoinnissa hyväksytään myös sydämmen virheellinen, mutta yleinen
+# kahden m:n taivutus. Tässä johdetaan sana sydämellinen, mutta ei
+# kahden m:n sanaa sydämmellinen, joska se on jo Joukahaisen sanastossa.
+
+nimentö
+          sydä+n+
+
+omistusliite
+          sydä+me+ni
+          sydä+mme+ni ei_voikko
+
+omanto_n
+          sydä+me+n
+          sydä+mme+n ei_voikko
+
+osanto_tA
+          sydä+n+tä
+
+olento_nA
+          sydä+me+nä
+          sydä+mme+nä ei_voikko
+
+tulento_ksi
+          sydä+me+ksi
+          sydä+mme+ksi ei_voikko
+
+sisäolento_ssA
+          sydä+me+ssä
+          sydä+mme+ssä ei_voikko
+
+sisäeronto_stA
+          sydä+me+stä
+          sydä+mme+stä ei_voikko
+
+sisätulento_Vn
+          sydä+me+en
+          sydä+mme+en ei_voikko
+
+sisätulento_hVn
+          sydä+me+hen  vanha_h
+          sydä+mme+hen  ei_voikko
+
+ulko_olento_llA
+          sydä+me+llä
+          sydä+mme+llä ei_voikko
+
+ulkoeronto_ltA
+          sydä+me+ltä
+          sydä+mme+ltä ei_voikko
+
+ulkotulento_lle
+          sydä+me+lle
+          sydä+mme+lle ei_voikko
+
+vajanto_ttA
+          sydä+me+ttä
+          sydä+mme+ttä ei_voikko
+
+nimentö_t
+          sydä+me+t
+          sydä+mme+t ei_voikko
+
+omanto_ien
+          sydä+m+ien
+          sydä+mm+ien ei_voikko
+
+omanto_ten
+          sydä+n+ten
+
+osanto_iA
+          sydä+m+iä
+          sydä+mm+iä ei_voikko
+
+olento_inA
+          sydä+m+inä
+          sydä+mm+inä ei_voikko
+
+tulento_iksi
+          sydä+m+iksi
+          sydä+mm+iksi ei_voikko
+
+sisäolento_issA
+          sydä+m+issä
+          sydä+mm+issä ei_voikko
+
+sisäeronto_istA
+          sydä+m+istä
+          sydä+mm+istä ei_voikko
+
+sisätulento_iin
+          sydä+m+iin
+          sydä+mm+iin ei_voikko
+
+sisätulento_ihin
+          sydä+m+ihin  vanha_h
+          sydä+mm+ihin  ei_voikko
+
+ulko_olento_illA
+          sydä+m+illä
+          sydä+mm+illä ei_voikko
+
+ulkoeronto_iltA
+          sydä+m+iltä
+          sydä+mm+iltä ei_voikko
+
+ulkotulento_ille
+          sydä+m+ille
+          sydä+mm+ille ei_voikko
+
+vajanto_ittA
+          sydä+m+ittä
+          sydä+mm+ittä ei_voikko
+
+seuranto_ine
+          sydä+m+ine
+          sydä+mm+ine ei_voikko
+
+keinonto_in
+          sydä+m+in
+          sydä+mm+in ei_voikko
+
+johdin_inen
+          sydä+m+inen
+          sydä+mm+inen ei_voikko
+
+johdin_ittain
+          sydä+m+ittäin
+          sydä+mm+ittäin ei_voikko
+
+johdin_lAinen
+          sydä+n+lainen
+
+johdin_llinen
+          sydä+me+llinen
+
+
+johdin_mAinen
+          sydä+n+mäinen
+
+johdin_tOn
+          sydä+me+tön
+          sydä+mme+tön ei_voikko
