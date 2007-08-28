@@ -39,7 +39,7 @@
 [perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
-[perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @elt, äs: aä, rakenne: "=pppp=pppp", tiedot: <ei_voikko>]; # Aikakaus+julkaisu (julkaista => julkaisu).
+[perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @elt, äs: aä, rakenne: "=pppp=pppp", tiedot: <ei_voikko>];
 [perusmuoto: "ainais", alku: "ainais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "ainois", alku: "ainois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ajantasa", alku: "ajantasa", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
@@ -199,6 +199,7 @@
 [perusmuoto: "leivin", alku: "leivin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "leksiko", alku: "leksiko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "luontais", alku: "luontais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -324,6 +325,7 @@
 [perusmuoto: "tasa", alku: "tasa", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "telemark-", alku: "telemark-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp=pppp-"];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "tieteis", alku: "tieteis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
