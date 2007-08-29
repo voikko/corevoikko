@@ -152,7 +152,7 @@ def get_preference(prefname):
 	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
-	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
+	if prefname == 'diffviewcmd': return 'diff -U 0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 	return None
 
 ## Returns True, if given character is a consonant, otherwise retuns False.

@@ -27,5 +27,5 @@
 #libvoikko_bin='/usr/bin'
 
 # Command for viewing differences between 'base' and 'current'.
-#diffviewcmd='diff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
+#diffviewcmd='diff -U 0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 #diffviewcmd='vimdiff "%s" "%s"'
