@@ -133,17 +133,6 @@ allo_rule generate_allos ($tietue1):
       stop;
     end;
 
-    # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
-    #
-    if (($tietue1.perusmuoto /= nil) and
-        ($tietue1.perusmuoto in <"otto", "voima">) and
-        ($tietue1.luokka in <nimisana>)) then
-      stop;
-    end;
-    if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
-      stop;
-    end;
-
     # Nämä tunnistetaan etuliite + sana -yhdistelminä.
     #
     if (($tietue1.perusmuoto /= nil) and
@@ -2180,7 +2169,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (kaunis in $tietue.jatko) then
-    choose $i in kaunis ($tietue, "is", "ii", "ihi", "is", "i", "e", "ih", "eh", "ehi", "e");
+    choose $i in kaunis ($tietue, "is", "ii", "ihi", "is", "i", "e", "ih", "eh", "ehit", "ehi", "e");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2189,7 +2178,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (valmis in $tietue.jatko) then
-    choose $i in kaunis ($tietue, "is", "ii", "ihi", "is", "i", "e", "ih", "eh", "ehi", "i");
+    choose $i in kaunis ($tietue, "is", "ii", "ihi", "is", "i", "e", "ih", "eh", "ehit", "ehi", "i");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2198,7 +2187,7 @@ allo_rule generate_allos ($tietue1):
       end;
     end;
   elseif (altis in $tietue.jatko) then
-    choose $i in kaunis ($tietue, "is", "tii", "tihi", "tis", "ti", "te", "tih", "teh", "tehi", "ti");
+    choose $i in kaunis ($tietue, "is", "tii", "tihi", "tis", "ti", "te", "tih", "teh", "tehit", "tehi", "ti");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -9030,7 +9019,7 @@ subrule kauris ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          etuliite: <<$param01, <>>>,
                          tavuviiva: <<$param01, <>>>]);
 end;
-subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $johdin_Us):
+subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10, $johdin_Us):
   return taivutuskaava ($tietue,
                         [nimentö: <<$param01, <>>>,
                          omistusliite: <<$param02, <>>, <$param03, <ei_voikko>>>,
@@ -9041,7 +9030,7 @@ subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          sisäolento_ssA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          sisäeronto_stA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          sisätulento_seen: <<$param02, <>>>,
-                         sisätulento_sen: <<$param03, <ei_voikko,ei_voikko>>>,
+                         sisätulento_sen: <<$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
                          ulko_olento_llA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          ulkoeronto_ltA: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          ulkotulento_lle: <<$param02, <>>, <$param03, <ei_voikko>>>,
@@ -9049,7 +9038,7 @@ subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          nimentö_t: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          omanto_iT: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          omanto_ien: <<$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
-                         omanto_ten: <<$param01, <ei_voikko>>>,
+                         omanto_ten: <<$param01, <ei_voikko>>, <$param09, <ei_voikko>>>,
                          osanto_itA: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          osanto_iA: <<$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
                          olento_inA: <<$param05, <>>, <$param06, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
@@ -9065,8 +9054,8 @@ subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          vajanto_ittA: <<$param05, <>>, <$param06, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
                          seuranto_ine: <<$param05, <>>, <$param06, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
                          keinonto_in: <<$param05, <>>, <$param06, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
-                         kerronto_sti: <<$param02, <>>, <$param03, <ei_voikko>>, <$param09, <ei_voikko>>>,
-                         voittoaste: <<$param02, <>>, <$param03, <ei_voikko>>, <$param09, <ei_voikko>>>,
+                         kerronto_sti: <<$param02, <>>, <$param03, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         voittoaste: <<$param02, <>>, <$param03, <ei_voikko>>, <$param10, <ei_voikko>>>,
                          yliaste: <<$param06, <>>, <$param08, <ei_voikko>>>,
                          johdin_inen: <>,
                          johdin_ittain: <>,

@@ -80,7 +80,8 @@ sisätulento_seen
           alt+tii+seen
 
 sisätulento_sen
-          alt+tihi+sen  ei_voikko  ei_voikko
+          alt+tii+sen   ei_voikko
+          alt+tihi+sen  ei_voikko
 
 ulko_olento_llA
           alt+tii+lla
@@ -113,7 +114,8 @@ omanto_ien
           alt+teh+ien  ei_voikko
 
 omanto_ten
-          alt+is+ten   ei_voikko
+          alt+is+ten    ei_voikko
+          alt+tihit+ten ei_voikko
 
 osanto_itA
           alt+ti+ita

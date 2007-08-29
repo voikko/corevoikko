@@ -82,7 +82,8 @@ pattern = u"^(?P<alku>.*)(?:" + \
 	  u"(?P<psyykkinen_ym>(?:aa|ee|ii|oo|uu|yy|ää|öö)(?:kk|pp|tt)inen)|" + \
 	  u"(?P<relatiivinen>tiivinen)|" + \
 	  u"(?P<aarteisto>eistO)|" + \
-	  u"(?P<keltainen>C[aouyäö]i?nen)" + \
+	  u"(?P<keltainen>C[aouyäö]i?nen)|" + \
+	  u"(?P<maineikas>[mntv]eikAs)" + \
           u")$"
 
 pattern = pattern.replace(u"A", u"[aä]")
@@ -330,6 +331,13 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			                   % (wordform, voikko_infclass))
 			continue
 
+		# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
+		#
+		if (wordform in [u"käynti", u"lyönti", u"otto", u"voima",
+				 u"itkettynyt", u"itkettyä", u"jälkeenjäänyt", u"ylösnoussut"]):
+#			print ("Ei tarvita: " + wordform + u"\n")
+			continue
+		
 		nsyl = number_of_syllabels(wordform)
 
 		m = rx.match(wordform)
@@ -604,6 +612,15 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				alku2 = alku + u"käisyy";
 			jatko2 = u"kalleus"
 			wordform2 = alku2 + u"s"
+
+			if ((nsyl == 3) and (rx != None) and (d != None) and (d['maineikas'] != None)):
+				#
+				# Maineikas => mainehikas.
+				#
+				alku3 = wordform[:-4] + u"hik"
+				wordform3 = alku3 + wordform[-2:]
+				jatko3 = jatko
+#				print ("Huuhaa " + wordform + u" " + wordform3 + u" " + alku3 + u"\n");
 		
 		# Tulostetaan.
 

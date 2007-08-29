@@ -133,17 +133,6 @@ allo_rule generate_allos ($tietue1):
       stop;
     end;
 
-    # Sanat, jotka generoidaan automaattisesti Sukija-versiossa.
-    #
-    if (($tietue1.perusmuoto /= nil) and
-        ($tietue1.perusmuoto in <"otto", "voima">) and
-        ($tietue1.luokka in <nimisana>)) then
-      stop;
-    end;
-    if ($tietue1.perusmuoto in <"itkettynyt", "itkettyä", "jälkeenjäänyt", "ylösnoussut">) then
-      stop;
-    end;
-
     # Nämä tunnistetaan etuliite + sana -yhdistelminä.
     #
     if (($tietue1.perusmuoto /= nil) and
