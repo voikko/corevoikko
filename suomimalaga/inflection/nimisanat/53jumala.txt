@@ -93,6 +93,10 @@ nimentö_t
 omanto_ien
           jumal++ien
 
+omanto_iT
+          jumal+o+iden
+          jumal+o+itten
+
 omanto_in
           jumal+a+in
 
@@ -102,38 +106,51 @@ omanto_ten
 osanto_iA
           jumal++ia
 
+osanto_itA
+          jumal+o+ita  ei_voikko
+
 olento_inA
           jumal++ina
+          jumal+o+ina  ei_voikko
 
 tulento_iksi
           jumal++iksi
+          jumal+o+iksi  ei_voikko
 
 sisäolento_issA
           jumal++issa
+          jumal+o+issa  ei_voikko
 
 sisäeronto_istA
           jumal++ista
+          jumal+o+ista  ei_voikko
 
 sisätulento_iin
           jumal++iin
 
 sisätulento_ihin
           jumal++ihin  vanha_h
+          jumal+o+ihin  ei_voikko
 
 ulko_olento_illA
           jumal++illa
+          jumal+o+illa  ei_voikko
 
 ulkoeronto_iltA
           jumal++ilta
+          jumal+o+ilta  ei_voikko
 
 ulkotulento_ille
           jumal++ille
+          jumal+o+ille  ei_voikko
 
 vajanto_ittA
           jumal++itta
+          jumal+o+itta  ei_voikko
 
 seuranto_ine
           jumal++ine
+          jumal+o+ine  ei_voikko
 
 keinonto_in
           jumal++in
@@ -149,6 +166,7 @@ johdin_inen
 
 johdin_ittain
           jumal++ittain
+          jumal+o+ittain  ei_voikko
 
 johdin_lAinen
           jumal+a+lainen

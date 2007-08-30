@@ -166,8 +166,9 @@ foreach my $file (@ARGV) {
             $dollar_par{$word} = ("\$" . $head);
           }
           elsif ($word !~ /(\w|[+])+[+]itten/) {
-#print "\nword ", $word, "\n";
+if (defined $options{D}) {print "\n#D1 word ", $word, "\n";}
             $word =~ /[+]([^+]*)[+]/;
+if (defined $options{D}) {print "\n#D2 word ", $word, " [", $1, "]\n";}
             if (!exists($par{$1})) {
               $par{$1} = sprintf ("%02d", $u++);
             }

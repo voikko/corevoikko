@@ -52,7 +52,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'palaa', u'ws', [(None,u'(.*C)AA',u'palaa')]),
         (u'pasuuna', u'sw', [(None,u'(.*)A',u'pasuuna')]),
         (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
-	(u'sydän', u'-', [(None,u'(.*dä)n',u'sydän')]),
+	(u'sydän', u'-', [(None,u'(.*A)n',u'sydän')]),
         (u'taittaa', u'sw', [(u'tt',u'(.*t)tAA',u'taittaa')]),
         (u'tuomi', u'-', [(None,u'(.*V)mi',u'tuomi')]),
 	(u'uros', u'-', [(None,u'(.*)s',u'uros')]),
@@ -333,8 +333,12 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 
 		# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
 		#
-		if (wordform in [u"käynti", u"lyönti", u"otto", u"voima",
-				 u"itkettynyt", u"itkettyä", u"jälkeenjäänyt", u"ylösnoussut"]):
+		if (wordform in [u"itkettynyt", u"itkettyä",
+				 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
+				 u"käynti", u"lyönti", u"opetus", u"otto",
+				 u"täysihoito", u"täysihoitola",
+				 u"voima",
+				 u"ylösnoussut"]):
 #			print ("Ei tarvita: " + wordform + u"\n")
 			continue
 		
