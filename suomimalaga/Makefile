@@ -12,7 +12,7 @@ SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
 
 
 # Files to ship only in the full source package
-SRC_ONLY=ChangeLog CONTRIBUTORS LUE.MINUT Makefile README COPYING \
+SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
          voikko/olla-ei.lex \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro common/voikkoutils.py \
