@@ -1172,6 +1172,10 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
+  if ($oikea.äs = aä) then
+    $res := $vasen + <[alku: $sana] + $oikea + [äs: $edellinen.äs]>;
+  end;
+
   if (tavuviiva in $oikea.jatko) then
     result $res, rules yhdysmerkki_sanan_lopussa, nimisana, laatusana, teonsana;
   end;

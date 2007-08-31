@@ -405,6 +405,10 @@ koirani
 !kauniini
 !kauniistani
 
+[vokaalisointu]
+!jakamisessä
+jakamisessa
+
 [taivutusluokat]
 vihkon # Kotus 1
 vihon # Kotus 1
