@@ -410,6 +410,10 @@ koirani
 [vokaalisointu]
 !jakamisessä
 jakamisessa
+!puintiä
+puintia
+!kaurallisessä
+kaurallisessa
 
 [taivutusluokat]
 vihkon # Kotus 1

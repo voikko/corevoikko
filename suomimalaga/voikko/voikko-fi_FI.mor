@@ -1171,10 +1171,10 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in $edellinen.jatko;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-  define $res := $vasen + <[alku: $sana] + $oikea>;
-  if ($oikea.äs = aä) then
-    $res := $vasen + <[alku: $sana] + $oikea + [äs: $edellinen.äs]>;
+  if $oikea.äs = aä then
+    $oikea.äs := $edellinen.äs;
   end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (tavuviiva in $oikea.jatko) then
     result $res, rules yhdysmerkki_sanan_lopussa, nimisana, laatusana, nimisana_teonsanasta;
@@ -1370,6 +1370,9 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
     $vasen.($index - 1) :=+ [lähtöluokka: teonsana];
     $vasen.($index - 1).luokka := nimisana;
   end;
+  if $oikea.äs = aä then
+    $oikea.äs := $edellinen.äs;
+  end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
@@ -1404,6 +1407,9 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in $edellinen.jatko;
 
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+  if $oikea.äs = aä then
+    $oikea.äs := $edellinen.äs;
+  end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.luokka = johdin_inen) then
