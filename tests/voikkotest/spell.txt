@@ -303,6 +303,8 @@ kanssaan
 puhuakseen
 puhuakseni
 !lammasvetäessä
+!jakamisjuokse
+jakamisjuokseminen
 
 [lukusanat]
 kolme

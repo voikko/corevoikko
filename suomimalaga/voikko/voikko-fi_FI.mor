@@ -1177,7 +1177,7 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $index):
   end;
 
   if (tavuviiva in $oikea.jatko) then
-    result $res, rules yhdysmerkki_sanan_lopussa, nimisana, laatusana, teonsana;
+    result $res, rules yhdysmerkki_sanan_lopussa, nimisana, laatusana, nimisana_teonsanasta;
   end;
   if (nimitapa_1_pitkä in $oikea.jatko) then
     result $res, rules nimitapa_1_pitkä;
