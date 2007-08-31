@@ -34,6 +34,8 @@
 # FIXME: Nimisanojen etuliite kelpaa myös partisiipeille, ja laatusanojen
 # etuliite verbien -minen-substantiivijohdoksille.
 
+# tiedot-listassa voi käyttää symbolia ei_ysj estämään etuliitteen käyttö
+# muualla kuin sanan alussa.
 
 [perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -321,7 +323,7 @@
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_ysj>];
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "uusio", alku: "uusio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uusio", alku: "uusio", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];

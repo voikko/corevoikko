@@ -290,6 +290,8 @@ miniei-
 !miniei--
 miniei-opisto
 !miniei--opisto
+!talouuskoira # etuliite "uus" on sallittu vain sanan alussa
+talotäsmäkoira
 
 [seikkasanat]
 keskenään

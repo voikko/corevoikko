@@ -195,6 +195,7 @@ end;
 combi_rule etuliite ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = etuliite;
 
+  ? $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
