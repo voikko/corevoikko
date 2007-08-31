@@ -416,6 +416,8 @@ jakamisessa
 puintia
 !kaurallisessä
 kaurallisessa
+!ryöstökalastamisessä
+ryöstökalastamisessa
 
 [taivutusluokat]
 vihkon # Kotus 1

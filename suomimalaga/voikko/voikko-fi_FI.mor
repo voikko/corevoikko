@@ -1141,10 +1141,13 @@ end;
 
 ###### NIMITAPASÄÄNNÖT ALKAVAT
 
-combi_rule nimitapa_4 ($vasen, $oikea, $sana):
+combi_rule nimitapa_4 ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = nimitapa_4;
   ? ääntiösointu_oikein($vasen, $oikea, $sana);
 
+  if $oikea.äs = aä then
+    $oikea.äs := $vasen.($index - 1).äs;
+  end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (tavuviiva in $oikea.jatko) then
     result $res, rules yhdysmerkki_sanan_lopussa;
