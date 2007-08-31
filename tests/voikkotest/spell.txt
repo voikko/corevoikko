@@ -418,6 +418,8 @@ puintia
 kaurallisessa
 !ryöstökalastamisessä
 ryöstökalastamisessa
+!Kullervollä
+Kullervolla
 
 [taivutusluokat]
 vihkon # Kotus 1

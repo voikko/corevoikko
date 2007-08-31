@@ -369,9 +369,10 @@ combi_rule johdin_nlainen ($vasen, $oikea, $sana):
 	       voitto_yliaste;
 end;
 
-combi_rule johdin_inen ($vasen, $oikea, $sana):
+combi_rule johdin_inen ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = johdin_inen;
 
+  $oikea.äs := $vasen.($index - 1).äs;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, laatusana,
@@ -406,9 +407,10 @@ combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
          yhdysmerkki_erisnimen_jälkeen;
 end;
 
-combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana):
+combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = johdin_lAinen;
-  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+  ? vokaalisointu_oikein_ei_aä($vasen.($index - 1), $oikea);
+
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
@@ -581,7 +583,8 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? $oikea.sija in $edellinen.jatko;
-  ? ääntiösointu_oikein ($vasen, $oikea, $sana);
+  ? vokaalisointu_oikein($edellinen, $oikea);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
@@ -1530,6 +1533,15 @@ subrule sisätulento_oikein ($sija, $alku, $sana):
           ($sija = sisätulento_isiin));
 end;
 
+# Onko vokaalisointu oikein silloin, kun tiedetään, että $oikea.äs ei ole aä
+subrule vokaalisointu_oikein_ei_aä($edellinen, $oikea):
+  return ($edellinen.äs = aä or $oikea.äs = $edellinen.äs);
+end;
+
+# Onko vokaalisointu oikein silloin, kun $oikea.äs voi olla aä
+subrule vokaalisointu_oikein($edellinen, $oikea):
+  return ($oikea.äs = aä or $edellinen.äs = aä or $oikea.äs = $edellinen.äs);
+end;
 
 subrule ääntiösointu_oikein ($vasen, $oikea, $sana):
   define $äs := "?";
