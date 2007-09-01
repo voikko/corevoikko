@@ -1632,47 +1632,30 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return no;
   else
     define $taulukko := <
-      <<"alko">,            <"iva", "ivata">>,
-      <<"auto">,            <"nova">>,  # Auto+novien.
       <<"funktio">,   <"naali">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"hara">,      <"voi", "vuo">>,
-      <<"harras">,    <"teli">>,
       <<"heinä">,     <"tupo">>,
-      <<"helve">,     <"tilli">>,
       <<"hyppy">,     <"selli">>,
       <<"hätä">,      <"katka">>,
       <<"isä">,       <"nisä">>,
-      <<"iva">,       <"nova">>,
       <<"kapi">,      <"nalli">>,  # Kapi+nallinen.
-      <<"kare">,      <"lika">>,
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luksus", "luminen">>,
       <<"maa">,       <"nisä">>,
-      <<"maagi">,     <"seksi", "silta">>,
       <<"mansi">,     <"kastaa", "koittaa">>,
-      <<"moni">,      <"naida", "nainen", "tora", "tori">>,
-      <<"onninen">,   <"tuttu">>, # onnistuttu
-      <<"oppinen">,   <"ääntö">>, # oppisääntö
-      <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
-      <<"punk">,      <"arka", "kari">>,
-      <<"polvinen">,  <"tuki">>, # polvistuin
+      <<"moni">,      <"nainen", "tora", "tori">>,
+      <<"punk">,      <"kari">>,
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
-      <<"samainen">,  <"tuta">>,
-      <<"soinen">,    <"aari">>,
       <<"sota", "säihky">, <"väkä">>,
-      <<"suo">,       <"musti", "nina">>,
-      <<"suu">,       <"tehdä", "teloa">>,
-      <<"taus">,      <"takki">>,
       <<"tie">,       <"tie">>,
       <<"traditio">,  <"naali">>,
-      <<"ulko">,      <"naida", "nainen">>,
+      <<"ulko">,      <"nainen">>,
       <<"vasta">,     <"pää">>,
-      <<"viive">,     <"itä">>,
-      <<"voinen">,    <"iva", "ivata">>    # Voisivatko => vois+iva(ta).
+      <<"viive">,     <"itä">>
     >;
 
     if (yhdyssanataulukko ($vasen.$i.perusmuoto,
