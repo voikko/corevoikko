@@ -381,6 +381,8 @@ lähtösana;   # Sana josta toinen sana on johdettu. Esimerkiksi
 lähtöluokka; # Sanaluokka, josta toisen sanaluokan sana on johdettu.
              # Esimerkiksi nimisana leikata on johdettu teonsanasta leikkaus.
 
+paikannimen_jälkiliite; # -katu, -vuori, ...
+inen_loppu; # -inen
 
 äs; # Ääntiösointu.
   a;

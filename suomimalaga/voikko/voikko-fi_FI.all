@@ -3775,6 +3775,17 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- teonsana;
   end;
 
+  # Paikannimien jälkiliitteet
+  if ($tietue.perusmuoto in <"katu", "kuja", "tie", "saari", "lahti", "niemi",
+                             "vuori", "vaara", "joki">) then
+    $tietue :=+ [paikannimen_jälkiliite: yes];
+  end;
+
+  # Inen-loppuiset sanat
+  if ($tietue.perusmuoto matches ".*inen") then
+    $tietue :=+ [inen_loppu: yes];
+  end;
+
   define $lista := lajittele ($taivutus);
 
   define $t := <>;

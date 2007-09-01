@@ -392,8 +392,7 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $index):
 end;
 
 combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
-  ? $oikea.perusmuoto in <"katu", "kuja", "tie", "saari", "lahti", "niemi",
-                          "vuori", "vaara", "joki">;
+  ? $oikea.paikannimen_jälkiliite = yes;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
@@ -455,7 +454,7 @@ end;
 
 combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
-  ? $oikea.perusmuoto matches ".*inen";
+  ? $oikea.inen_loppu = yes;
 
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
 
