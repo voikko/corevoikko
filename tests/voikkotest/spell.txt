@@ -420,6 +420,34 @@ kaurallisessa
 ryöstökalastamisessa
 !Kullervollä
 Kullervolla
+!leveimmässa
+leveimmässä
+!leveässa
+leveässä
+!belgialaisessäni
+belgialaisessani
+!hänessa
+hänessä
+!lähella
+lähellä
+!VR:ssa
+VR:ssä
+!kolmessä
+kolmessa
+!kolmessakymmenessa
+kolmessakymmenessä
+!laulavät
+laulavat
+!kalastamässä
+kalastamassa
+!karhunsä
+karhunsa
+!selvemmalle
+selvemmälle
+!talotön
+taloton
+!siisteus
+siisteys
 
 [taivutusluokat]
 vihkon # Kotus 1
