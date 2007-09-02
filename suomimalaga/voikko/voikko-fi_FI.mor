@@ -326,10 +326,12 @@ combi_rule laatusana_laatusanasta ($vasen, $oikea, $sana):
 end;
 
 # inen-johdinta edeltävä nimisana
+# sääntö ei voi olla sanan alussa
 combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
   ? johdin_inen in $oikea.jatko;
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+  ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>, rules johdin_inen;
@@ -460,6 +462,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
 
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
 
   # nimisana, laatusana ja etuliite jätetty pois, koska todennäköinen käyttö vähäistä
   # (teoriassa voi olla OK)
@@ -1586,17 +1589,9 @@ end;
 
 
 subrule yhdyssana_oikein ($vasen, $oikea, $i):
-  define $nimet := <etunimi, sukunimi, paikannimi, nimi>;
-
-  if ($oikea.luokka in $nimet) then
-    return no;
-  end;
-
-
   # Jotkut sanat eivät voi olla yhdyssanojen osina.
   #
-  if ((($vasen.$i.tiedot /= nil) and ((ei_ys in $vasen.$i.tiedot))) or
-      (($oikea.tiedot    /= nil) and ((ei_ys in $oikea.tiedot)   ))) then
+  if ($vasen.$i.tiedot /= nil) and (ei_ys in $vasen.$i.tiedot) then
     return no;
   end;
   # Ei hyväksytä tälläisia sanoja silloinkaan, kun sijamuoto on joku muu kuin nimentö (isi+n+maa ei käy).

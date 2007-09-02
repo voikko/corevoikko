@@ -95,6 +95,9 @@ teollisuusliitoissa
 !paraslehmäinen # "paras" ei sallittu yhdyssanan osana
 !koeelää
 koe-elää
+!makeamäreinen # "märe" ei sallittu yhdyssanan osana
+!makeakäkinen # "käki" ei sallittu yhdyssanan jälkiosana
+!leipämainen # "mainen" ei sallittu yhdyssanan osana
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
