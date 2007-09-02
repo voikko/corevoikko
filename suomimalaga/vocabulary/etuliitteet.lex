@@ -31,7 +31,7 @@
 # @elt: etuliite (teonsanat)
 # @eltj: etuliite (teonsanojen nimi- ja laatusanajohdokset)
 # Huom! Jatkoa @eltj EI SAA käyttää yhdessä jatkon @eln tai @ell kanssa.
-# FIXME: Nimisanojen etuliite kelpaa myös partisiipeille, ja laatusanojen
+# FIXME: Nimisanojen etuliite kelpaa myös partisiipeille ja laatusanojen
 # etuliite verbien -minen-substantiivijohdoksille.
 
 # tiedot-listassa voi käyttää symbolia ei_ysj estämään etuliitteen käyttö
