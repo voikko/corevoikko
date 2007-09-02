@@ -431,7 +431,6 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
 
   if ($index greater 1) then
-    ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
     ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   else
@@ -460,7 +459,6 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
   ? $oikea.inen_loppu = yes;
 
-  ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
 
@@ -1119,7 +1117,6 @@ combi_rule teonsana ($vasen, $oikea, $sana, $index):
 
   if ($index greater 1) then
     ? tavuviiva in $vasen.($index - 1).jatko;
-    ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   end;
 
@@ -1591,29 +1588,11 @@ end;
 subrule yhdyssana_oikein ($vasen, $oikea, $i):
     define $taulukko := <
       <<"funktio">,   <"naali">>,
-      <<"hai">,       <"talli">>,    # Hai+tallinen.
-      <<"hara">,      <"voi", "vuo">>,
-      <<"heinä">,     <"tupo">>,
       <<"hyppy">,     <"selli">>,
-      <<"hätä">,      <"katka">>,
-      <<"isä">,       <"nisä">>,
       <<"kapi">,      <"nalli">>,  # Kapi+nallinen.
-      <<"karri">,     <"ääri">>,
-      <<"kato">,      <"lila">>,
-      <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
-      <<"kulti">,          <"voi", "vuo">>,
-      <<"kuu">,            <"kausittainen", "luksus", "luminen">>,
-      <<"maa">,       <"nisä">>,
-      <<"mansi">,     <"kastaa", "koittaa">>,
-      <<"moni">,      <"nainen", "tora", "tori">>,
-      <<"punk">,      <"kari">>,
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
-      <<"sota", "säihky">, <"väkä">>,
-      <<"tie">,       <"tie">>,
       <<"traditio">,  <"naali">>,
-      <<"ulko">,      <"nainen">>,
-      <<"vasta">,     <"pää">>,
-      <<"viive">,     <"itä">>
+      <<"vasta">,     <"pää">>
     >;
 
     if (yhdyssanataulukko ($vasen.$i.perusmuoto,
