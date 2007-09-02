@@ -93,6 +93,8 @@ teollisuusliitoissa
 !lähkoirainen
 !juurihoito-klubi
 !paraslehmäinen # "paras" ei sallittu yhdyssanan osana
+!koeelää
+koe-elää
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
@@ -187,6 +189,8 @@ terävä-älyinen
 !nopea-älyinen
 viittomakielinen
 kaunokirjallisuus
+!pulaaerobinen
+pula-aerobinen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
@@ -292,6 +296,8 @@ miniei-opisto
 !miniei--opisto
 !talouuskoira # etuliite "uus" on sallittu vain sanan alussa
 talotäsmäkoira
+!avoohut
+avo-ohut
 
 [seikkasanat]
 keskenään

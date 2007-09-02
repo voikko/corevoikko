@@ -330,6 +330,7 @@ combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
   ? johdin_inen in $oikea.jatko;
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
   result $vasen + <[alku: $sana] + $oikea>, rules johdin_inen;
 end;
@@ -429,6 +430,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
 
   if ($index greater 1) then
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
     ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   else
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
@@ -457,6 +459,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
   ? $oikea.inen_loppu = yes;
 
   ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
   # nimisana, laatusana ja etuliite jätetty pois, koska todennäköinen käyttö vähäistä
   # (teoriassa voi olla OK)
@@ -1114,6 +1117,7 @@ combi_rule teonsana ($vasen, $oikea, $sana, $index):
   if ($index greater 1) then
     ? tavuviiva in $vasen.($index - 1).jatko;
     ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
+    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -1583,31 +1587,6 @@ end;
 
 subrule yhdyssana_oikein ($vasen, $oikea, $i):
   define $nimet := <etunimi, sukunimi, paikannimi, nimi>;
-  #
-  # Yhdysviivan käsittely
-  #
-  if ($i greater_equal 2) and ($vasen.$i.luokka = tavuviiva) then
-
-    # Yhdysviivan käyttö on jo todettu sallituksi
-    if ($vasen.$i.vokaaliehto = no) then
-      return yes;
-
-    # Yhdysviiva sallittu, kun alkuosa loppuu samaan vokaaliin jolla loppuosa alkaa
-    elseif ((($vasen.($i - 1).alku) matches ".*" + @ääntiö) and
-            (last($vasen.($i - 1).alku) = first($oikea.perusmuoto))) then
-      return yes;
-
-    # is- ("teknillis-tieteellinen", "Kaakkois-Suomi")
-    # FIXME: tämä ei ole tarkalleen ottaen oikein, mutta toistaiseksi riittävän hyvä
-    elseif (($vasen.($i - 1).alku) matches ".*is") then
-      return yes;
-
-    end;
-
-    # Yhdysviiva muutoin kielletty
-    return no;
-
-  end;
 
   if ($oikea.luokka in $nimet) then
     return no;
@@ -1661,11 +1640,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
                            $oikea.perusmuoto,
                            $taulukko)) then
       return no;
-    elseif ($vasen.$i.perusmuoto /= nil) then
-      if ((last($vasen.$i.perusmuoto) matches @ääntiö) and
-          (first($oikea.perusmuoto) matches @ääntiö)) then
-        return (last($vasen.$i.perusmuoto) /= first($oikea.perusmuoto));
-      end;
     end;
   end;
   return yes;
