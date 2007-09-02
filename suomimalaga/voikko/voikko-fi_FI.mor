@@ -1589,21 +1589,6 @@ end;
 
 
 subrule yhdyssana_oikein ($vasen, $oikea, $i):
-  # Jotkut sanat eivät voi olla yhdyssanojen osina.
-  #
-  if ($vasen.$i.tiedot /= nil) and (ei_ys in $vasen.$i.tiedot) then
-    return no;
-  end;
-  # Ei hyväksytä tälläisia sanoja silloinkaan, kun sijamuoto on joku muu kuin nimentö (isi+n+maa ei käy).
-  #
-  if (($vasen.$i.luokka = sijapääte) and ($vasen.($i-1).tiedot /= nil) and (ei_ys in $vasen.($i-1).tiedot)) then
-    return no;
-  end;
-
-  if (($vasen.$i.tiedot /= nil) and (ei_ysa in $vasen.$i.tiedot) and
-          ($oikea.luokka in @nimisana + <nimi_laatusana>)) then
-    return no;
-  else
     define $taulukko := <
       <<"funktio">,   <"naali">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
@@ -1636,7 +1621,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
                            $taulukko)) then
       return no;
     end;
-  end;
   return yes;
 end;
 
