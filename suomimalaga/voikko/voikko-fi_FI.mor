@@ -330,7 +330,6 @@ end;
 combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
   ? johdin_inen in $oikea.jatko;
-  ? yhdyssana_oikein ($vasen, $oikea, $index - 1);
   ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
@@ -1581,36 +1580,6 @@ subrule viimeinen_kirjain ($sana):
   else
     error "Viimeinen kirjain ei ole ääntiö sanassa " + $sana;
   end;
-end;
-
-
-
-subrule yhdyssana_oikein ($vasen, $oikea, $i):
-    define $taulukko := <
-      <<"funktio">,   <"naali">>,
-      <<"hyppy">,     <"selli">>,
-      <<"kapi">,      <"nalli">>,  # Kapi+nallinen.
-      <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
-      <<"traditio">,  <"naali">>,
-      <<"vasta">,     <"pää">>
-    >;
-
-    if (yhdyssanataulukko ($vasen.$i.perusmuoto,
-                           $oikea.perusmuoto,
-                           $taulukko)) then
-      return no;
-    end;
-  return yes;
-end;
-
-
-subrule yhdyssanataulukko ($eka, $toka, $taulukko):
-  foreach $k in $taulukko:
-    if (($eka in $k.1) and ($toka in $k.2)) then
-      return yes;
-    end;
-  end;
-  return no;
 end;
 
 
