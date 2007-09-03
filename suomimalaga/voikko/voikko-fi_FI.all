@@ -3367,6 +3367,12 @@ end;
 subrule taivutus ($tietue, $lisä, $jatko, $tulos):
   assert (value_type ($jatko) = list);
 
+  # Tuotantoversiossa ei tarvita kaikkia kenttiä
+  if (not switch(voikko_debug)) then
+    $tietue :=- perusmuoto;
+    $tulos :=- aikamuoto;
+  end;
+
   if ($tietue.luokka in @nimisana + <laatusana> and $tietue.sija = nil) then
     return ([alku: $tietue.alku + $lisä]
             + ($tietue - alku - jatko)

@@ -46,9 +46,8 @@ mallex: set display-line "malshow"
 mallex: set use-display yes
 malaga: set use-display yes
 malaga: set mor-pruning 30
-malaga: set switch tulostus merkitse_yhdyssanat
-malaga: set switch malli voikko
 mallex: set switch malli voikko
+mallex: set switch voikko_debug no
 malaga: set mor-incomplete no
 ## End-Internal-Configuration
 

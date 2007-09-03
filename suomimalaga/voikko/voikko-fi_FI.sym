@@ -440,6 +440,7 @@ tulostus;
   tavallinen;
   merkitse_yhdyssanat;
   koe;
+voikko_debug;
 
 
 # Nykysuomen sanakirja
