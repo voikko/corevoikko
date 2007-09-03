@@ -397,6 +397,10 @@ purreempi
 lakaisseempi
 enimmäkseen
 
+[sijapäätteet]
+!Erkkiän
+Erkkiin
+
 [kieltosanat]
 eihän
 ei
@@ -417,6 +421,7 @@ vaikkeikaan
 koirani
 !kauniini
 !kauniistani
+!eteeen
 
 [vokaalisointu]
 !jakamisessä
