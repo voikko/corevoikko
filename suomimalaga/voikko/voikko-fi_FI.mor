@@ -298,7 +298,6 @@ end;
 # Teonsanasta johdettu nimisana, esim. sanoma <- sanoa.
 combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = teonsana;
-  define $edellinen := $vasen.($index - 1);
   if ($index greater 1) then
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   end;
@@ -586,12 +585,12 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $oikea.sija in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
 
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
@@ -621,13 +620,12 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
   ? $oikea.sija in $edellinen.jatko;
   ? $oikea.sija /= kerronto_sti or $edellinen.luokka in @sti_edeltäjä;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
 
-  define $kantasana := $vasen.(length($vasen)-1);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
@@ -644,6 +642,7 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
       result $res, accept;
     end;
     result $res, rules liitesana;
+    define $kantasana := $vasen.(length($vasen)-1);
     if (sijamuoto_sijasta($oikea.sija) = omanto and
         ($kantasana.tiedot = nil or
          not (ei_ysa in $kantasana.tiedot and ei_ys in $kantasana.tiedot))) then
@@ -664,12 +663,13 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $oikea.sija in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
+
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
@@ -712,12 +712,13 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $oikea.sija in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
+
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
@@ -756,12 +757,13 @@ combi_rule laatusanan_sijapääte_omistusliitteellä ($vasen, $oikea, $sana, $in
 
   ? $oikea.sija in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
+
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
@@ -803,12 +805,13 @@ combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $oikea.sija in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
+
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
@@ -817,9 +820,6 @@ combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
     end;
     result $res, rules liitesana;
   else
-    if omistusliite in $oikea.jatko then
-      result $res, rules omistusliite;
-    end;
     if loppu in $oikea.jatko then
       result $res, accept;
     end;
@@ -838,12 +838,13 @@ combi_rule ei_ys_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $oikea.sija in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
     require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
   end;
+
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
@@ -1141,13 +1142,12 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
   ? vokaalisointu_oikein($edellinen, $oikea);
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-
   if (($oikea.luokka = kestämän_tekijäpääte_y3)
       and ($edellinen.alku matches ".*" + @ääntiö)) then
-    require (viimeinen_kirjain ($edellinen.alku) = $sana);
+    require (taivutusvokaali(last($edellinen.alku)) = $sana);
   end;
 
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if loppu in $oikea.jatko then
     result $res, accept;
@@ -1284,13 +1284,9 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
 
   ? vokaalisointu_oikein($edellinen, $oikea);
+
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
-
   define $result := $vasen + <[alku: $sana] + $oikea>;
-
-  if ($index greater 2) then
-    ? (not ($vasen.<1,luokka> = asemosana));
-  end;
 
   if ($sana in <"ni", "si", "nsa", "nsä", "mme", "nne">) then
     if loppu in $oikea.jatko then
@@ -1557,28 +1553,28 @@ end;
 
 
 subrule omistusliite3_oikein ($sana, $liite):
-  return ((($sana matches ".*" + @a) and ($liite = "an")) or
-          (($sana matches ".*" + @e) and ($liite = "en")) or
-          (($sana matches ".*" + @i) and ($liite = "in")) or
-          (($sana matches ".*" + @o) and ($liite = "on")) or
-          (($sana matches ".*" + @u) and ($liite = "un")) or
-          (($sana matches ".*" + @y) and ($liite = "yn")) or
-          (($sana matches ".*" + @ä) and ($liite = "än")) or
-          (($sana matches ".*" + @ö) and ($liite = "ön")));
+  return ((($liite = "an") and ($sana matches ".*" + @a)) or
+          (($liite = "en") and ($sana matches ".*" + @e)) or
+          (($liite = "in") and ($sana matches ".*" + @i)) or
+          (($liite = "on") and ($sana matches ".*" + @o)) or
+          (($liite = "un") and ($sana matches ".*" + @u)) or
+          (($liite = "yn") and ($sana matches ".*" + @y)) or
+          (($liite = "än") and ($sana matches ".*" + @ä)) or
+          (($liite = "ön") and ($sana matches ".*" + @ö)));
 end;
 
-
-subrule viimeinen_kirjain ($sana):
-  if     ($sana matches ".*" + @a) then return "a";
-  elseif ($sana matches ".*" + @e) then return "e";
-  elseif ($sana matches ".*" + @i) then return "i";
-  elseif ($sana matches ".*" + @o) then return "o";
-  elseif ($sana matches ".*" + @u) then return "u";
-  elseif ($sana matches ".*" + @y) then return "y";
-  elseif ($sana matches ".*" + @ä) then return "ä";
-  elseif ($sana matches ".*" + @ö) then return "ö";
+# Taivutuspäätteessä annettua kirjainta vastaava pidennetty vokaali
+subrule taivutusvokaali($kirjain):
+  if     ($kirjain matches @a) then return "a";
+  elseif ($kirjain matches @e) then return "e";
+  elseif ($kirjain matches @i) then return "i";
+  elseif ($kirjain matches @o) then return "o";
+  elseif ($kirjain matches @u) then return "u";
+  elseif ($kirjain matches @y) then return "y";
+  elseif ($kirjain matches @ä) then return "ä";
+  elseif ($kirjain matches @ö) then return "ö";
   else
-    error "Viimeinen kirjain ei ole ääntiö sanassa " + $sana;
+    error "Kirjain ei ole vokaali: " + $kirjain;
   end;
 end;
 
