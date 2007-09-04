@@ -78,6 +78,8 @@ pattern = u"^(?P<alku>.*)(?:" + \
 	  u"(?P<symboli_ym>[^aeouyäö]o[dfglmnrv]i)|" + \
 	  u"(?P<logia_ym>gogia|logia|sofia)|" + \
 	  u"(?P<loginen_ym>goginen|loginen|sofinen)|" + \
+	  u"(?P<grafia>grafia)|" + \
+	  u"(?P<grafinen>.grafinen)|" + \
 	  u"(?P<ironinen_ym>Co[nr]inen)|" + \
 	  u"(?P<psyykkinen_ym>(?:aa|ee|ii|oo|uu|yy|ää|öö)(?:kk|pp|tt)inen)|" + \
 	  u"(?P<relatiivinen>tiivinen)|" + \
@@ -337,7 +339,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 				 u"käynti", u"lyönti", u"opetus", u"otto",
 				 u"täysihoito", u"täysihoitola",
-				 u"voima",
+				 u"voima", u"väärinkäsitys",
 				 u"ylösnoussut"]):
 #			print ("Ei tarvita: " + wordform + u"\n")
 			continue
@@ -571,6 +573,20 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			# Pedagoginen => pedagooginen, psykolo(o)ginen, filoso(o)finen.
 			#
 			alku2 = wordform[:-5] + u"o" + wordform[-5:-3]
+			jatko2 = jatko
+			wordform2 = alku2 + u"nen"
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['grafia'] != None)):
+			#
+			# Topografia => topograafia.
+			#
+			alku2 = wordform[:-3] + u"a" + wordform[-3:-1]
+			jatko2 = jatko
+			wordform2 = alku2 + u"a"
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['grafia'] != None)):
+			#
+			# Topografinen => topograafinen.
+			#
+			alku2 = wordform[:-5] + u"a" + wordform[-5:-3]
 			jatko2 = jatko
 			wordform2 = alku2 + u"nen"
 		elif ((rx != None) and (d != None) and (d['ironinen_ym'] != None) and
