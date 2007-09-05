@@ -125,6 +125,13 @@ combi_rule etuliite ($vasen, $oikea, $sana):
     ? ($oikea.luokka in $vasen.$i.jatko);
 #define $a := transmit (<$oikea> + <$sana>);
     ? yhdyssana_oikein ($vasen, $oikea, $i);
+
+    # Sama etuliite ei voi olla kahta kertaa peräkkäin.
+    #
+    if ($vasen.$i.luokka = etuliite) then
+#      define $a := transmit (<$vasen.$i.perusmuoto> + <$oikea>+ <$sana>);
+      ? ($vasen.$i.alku /= $sana);
+    end;
   end;
 
   if (kieltosana in $oikea.jatko) then
@@ -1296,7 +1303,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"uus">,       <"arpoa">>,
       <<"varus">,     <"tee">>,    # Varus+tee+t.
       <<"vasta">,     <"pää">>,
-      <<"viher">,     <"vuotaa">>,
+      <<"viher">,     <"iäinen", "vuotaa">>,
       <<"viive">,     <"itä">>,
       <<"vik">,       <"koko", "oja", "uros">>,
       <<"voinen">,    <"iva", "ivata">>,    # Voisivatko => vois+iva(ta).
@@ -1304,6 +1311,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"vyö">,       <"täi">>,             # Vyö+täinen.
       <<"väli">,      <"syys">>,            # Kansain+väli+syys.
       <<"yhtä", "yksi">, <"toinen", "toistaa">>,
+      <<"ylä">,          <"hää">>,
       <<"äiti">,         <"nisä">>
     >;
 
