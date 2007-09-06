@@ -44,26 +44,12 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-
 initial <>,
             rules nimisana, laatusana, asemosana, apusana, lyhennesääntö,
                   etuliite, teonsana, kieltosana, tavuviiva;
 
 include "suomi.inc";
 
-
-#combi_rule lukusana ($vasen, $oikea, $sana):
-#  ? $oikea.luokka in @lukusana;
-#
-#  define $i := length ($vasen);
-#  if ($i greater 0) then
-#    ? ($oikea.luokka in $vasen.$i.jatko);
-#  end;
-#
-#  result $vasen + <[alku: $sana] + $oikea>,
-#         rules lukusana, nimisana, laatusana, teonsana,
-#               omistusliite, liitesana, loppu;
-#end;
 
 define @teonsana := <teonsana, kieltosana>;
 
@@ -161,8 +147,9 @@ combi_rule nimisana ($vasen, $oikea, $sana):
        ((nimisana in $vasen.$i.jatko) and
         ($oikea.luokka in @nimisana + @lukusana)));
 
-   ? not ($oikea.perusmuoto in <"aini", "aki", "asta", "eini", "ella", "ida", "ii",
-                                "ismi", "isto", "itu", "jani", "tuko", "uksi">);
+    ? not ($oikea.perusmuoto in <"aini", "ella", "ii">);
+#   ? not ($oikea.perusmuoto in <"aini", "aki", "asta", "eini", "ella", "ida", "ii",
+#                                "ismi", "isto", "itu", "jani", "tuko", "uksi">);
 
     ? yhdyssana_oikein ($vasen, $oikea, $i);
   end;
@@ -1634,7 +1621,7 @@ subrule tulostus_voikko ($tietue):
     if $t.rakenne /= nil then
       $tuloste :=+ $t.rakenne;
     elseif $t.luokka in <nimisana, seikkasana, laatusana, teonsana, lukusana, huudahdussana, sidesana,
-                         nimi_laatusana, lukusana, lukusana1, lukusana2, lukusana3, asemosana,
+                         nimi_laatusana, lukusana, asemosana,
                          etuliite> then
       $tuloste :=+ "=";
       foreach $i in length($t.alku):

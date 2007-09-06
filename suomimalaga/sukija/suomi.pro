@@ -45,7 +45,8 @@
 # combination.
 
 
-sym: suomi.sym
+#sym: suomi.sym
+sym: symbols.sym
 
 all: suomi.all suomi.inc suomi.pro
 

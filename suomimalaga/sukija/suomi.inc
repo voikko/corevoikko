@@ -166,15 +166,14 @@ define @ulkopaikallissijat_monikko := <ulko_olento_illA, ulkoeronto_iltA, ulkotu
 
 define @heikkoasteiset_paikallissijat := <sisäolento_ssA,  sisäeronto_stA> + @ulkopaikallissijat;
 
-#define @lukusana := <lukusana1, lukusana2, lukusana3>;
 define @lukusana := <lukusana>;
 
 define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
                                   etuliite, tavuviiva>;
 
-define @lukusana1_jatko := <lukusana3, omistusliite, liitesana, loppu> + @yhdyssana;
-define @lukusana2_jatko := <omistusliite, liitesana, loppu>;
-define @lukusana3_jatko := <lukusana1, omistusliite, liitesana, loppu> + @yhdyssana;
+#define @lukusana1_jatko := <lukusana3, omistusliite, liitesana, loppu> + @yhdyssana;
+#define @lukusana2_jatko := <omistusliite, liitesana, loppu>;
+#define @lukusana3_jatko := <lukusana1, omistusliite, liitesana, loppu> + @yhdyssana;
 
 define @johdin_stU := <johdin_stU_juostu, johdin_stU_nuolaistu>;
 
