@@ -1295,7 +1295,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
         result $result, rules liitesana;
       end;
     elseif ($edellinen.luokka = sijapääte) then
-      if (($edellinen.sija in <osanto_A, osanto_iA,
+      if (($edellinen.sija in <osanto_iA,
                               osanto_tA, osanto_ttA, osanto_itA,
                               osanto_jA,
                               olento_nA, olento_inA,
@@ -1307,7 +1307,8 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
                               ulkotulento_lle, ulkotulento_ille,
                               vajanto_ttA, vajanto_ittA,
                               seuranto_ine>) and
-          omistusliite3_oikein ($edellinen.alku, $sana)) then
+          omistusliite3_oikein ($edellinen.alku, $sana)) or
+          ($edellinen.sija = osanto_A and not last($vasen.($index - 2).alku) in <"a", "ä">) then
         if loppu in $oikea.jatko then
           result $result, accept;
         end;

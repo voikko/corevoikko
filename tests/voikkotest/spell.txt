@@ -422,6 +422,9 @@ koirani
 !kauniini
 !kauniistani
 !eteeen
+!kissaaan
+kissaansa
+taloaan
 
 [vokaalisointu]
 !jakamisessä
