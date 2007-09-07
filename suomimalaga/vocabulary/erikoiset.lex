@@ -187,8 +187,6 @@
 [perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
 [perusmuoto: "voilà", alku: "voilà", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
-[perusmuoto: "yltäpäätä", alku: "yltäpäätä", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "yltäpäätä", alku: "yltäpäältä", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "yäk", alku: "yäk", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ähä", alku: "ähä", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ähäkutti", alku: "ähäkutti", luokka: huudahdussana, jatko: <loppu>, äs: ä];
@@ -202,3 +200,5 @@
 # (Heittomerkin käyttö on sallittua, jos haluaa selventää eron sanoihin
 # "hauki" tai "hauis".)
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
+
+[perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
