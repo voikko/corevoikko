@@ -1385,8 +1385,9 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
-                        johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
+  if (($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
+                        johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana) and
+      (tavuviiva in $oikea.jatko) then
     result $res, rules nimisana, nimisana_teonsanasta,
                        nimisana_laatusanasta, inen_johdos_nimisanasta,
                        nimisanan_sijapääte;

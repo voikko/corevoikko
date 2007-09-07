@@ -265,6 +265,7 @@ ahdistuneisuushäiriö
 !ahdistunuthäiriö
 ranskalais-suomalainen
 irlantilaissyntyinen
+!voimmetsäinen
 
 [etuliitteet]
 yleisopetus
