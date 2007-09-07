@@ -397,7 +397,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
 [alku: "an",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "en",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "in",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+[alku: "in",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <ei_voikko>];
 [alku: "on",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "un",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
 [alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
