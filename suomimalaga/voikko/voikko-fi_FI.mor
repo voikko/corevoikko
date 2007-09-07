@@ -1474,7 +1474,7 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, laatusana, teonsana,
-           etuliite, tavuviiva;
+           etuliite, tavuviiva, inen_johdos_nimisanasta;
   end;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
