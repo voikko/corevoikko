@@ -1211,6 +1211,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kemi">,      <"alli", "joki">>,
       <<"Kim">,       <"maa">>,
 ####      <<"koiras">,    <"euro">>,
+      <<"kita">,      <"risti">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"komi">,      <"teko">>,        # Komi+teoille.
       <<"koti", "kotiin">, <"pää">>,    # Kotiinpäin.
@@ -1229,6 +1230,8 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"maini">,     <"ostaa", "ottaa", "tukea", "tuki">>,
       <<"mari">,      <"nasta">>,
       <<"mansi">,     <"kastaa", "koi", "koittaa">>,
+      <<"mehiläinen">, <"pesis">>,  # Mehiläis+pesis+tä.
+      <<"meno">,      <"paussi">>,
       <<"metaani">,   <"rikastaa">>,
       <<"mieli">,     <"syy", "syys">>,
       <<"moni">,      <"naida", "nainen", "tora", "tori">>,

@@ -4181,6 +4181,15 @@ allo_rule generate_allos ($tietue1):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (kutiaa in $tietue.jatko) then
+    choose $i in kutiaa ($tietue, "");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (kohota in $tietue.jatko) then
     choose $i in kohota ($tietue, "", "t", A($tietue), O($tietue), "n", "s", O($tietue))
                  + salailla ($tietue, "");
@@ -13125,6 +13134,65 @@ subrule katketa ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          käskytapa: <<$param02, <>>>,
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
+end;
+subrule kutiaa ($tietue, $param01):
+  return taivutuskaava ($tietue,
+                        [nimitapa_1_tA: <<$param01, <>>>,
+                         nimitapa_2: <>,
+                         nimitapa_2_tA: <>,
+                         nimitapa_2_ttA: <>,
+                         nimitapa_3: <<$param01, <>>>,
+                         nimitapa_3_tA: <>,
+                         nimitapa_3_ttA: <>,
+                         nimitapa_4: <<$param01, <>>>,
+                         nimitapa_5: <<$param01, <>>>,
+                         laatutapa_1_vA: <<$param01, <>>>,
+                         laatutapa_1_tA: <>,
+                         laatutapa_1_ttA: <>,
+                         laatutapa_2_nUt: <>,
+                         laatutapa_2_tU: <>,
+                         laatutapa_2_ttU: <>,
+                         kestämän_tekijäpääte_y1: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y2: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>>,
+                         kestämän_tekijäpääte_m1: <<$param01, <>>>,
+                         kestämän_tekijäpääte_m2: <<$param01, <>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn: <>,
+                         kertoman_tekijäpääte_y1: <>,
+                         kertoman_tekijäpääte_y2: <>,
+                         kertoman_tekijäpääte_y3: <>,
+                         kertoman_tekijäpääte_m1: <>,
+                         kertoman_tekijäpääte_m2: <>,
+                         kertoman_tekijäpääte_m3: <>,
+                         tositavan_kertoma_tiin: <>,
+                         tositavan_kertoma_ttiin: <>,
+                         ehtotapa: <<$param01, <>>>,
+                         ehtotapa_tA: <>,
+                         ehtotapa_ttA: <>,
+                         mahtotapa_ne: <>,
+                         mahtotapa_tA: <>,
+                         mahtotapa_ttA: <>,
+                         käskytapa_y2: <<$param01, <>>>,
+                         käskytapa_kielto: <>,
+                         käskytapa_tA: <>,
+                         käskytapa_ttA: <>,
+                         johdin_jA_kulkija: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
+                         johdin_ttU: <>,
+                         johdin_nUt: <>,
+                         johdin_mA: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <>,
+                         johdin_tAvA: <>,
+                         johdin_tAvAinen: <>,
+                         tositavan_kestämä_tAAn_kielto: <>,
+                         käskytapa: <>,
+                         johdin_ttAvA: <>,
+                         johdin_ttAvAinen: <>]);
 end;
 subrule selvitä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,

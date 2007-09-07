@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,8 +45,98 @@
 # combination.
 
 
-selvitä selvitä  i  it  iä  ii  in  is  i
-hellitä selvitä  li lit tiä tii lin tis ti
-keritä  selvitä  i  it  kiä kii in  kis ki
-lämmitä selvitä  mi mit piä pii min pis pi
-kutiaa  kutiaa   ""
+nimitapa_1_tA
+          kutia++a
+
+nimitapa_2
+
+nimitapa_2_tA
+
+nimitapa_2_ttA
+
+nimitapa_3
+          kutia++ma
+
+nimitapa_3_tA
+
+nimitapa_3_ttA
+
+nimitapa_4
+          kutia++minen
+
+nimitapa_5
+          kutia++maisillani
+
+laatutapa_1_vA
+          kutia++va
+
+laatutapa_1_tA
+
+laatutapa_1_ttA
+
+laatutapa_2_nUt
+
+laatutapa_2_tU
+
+laatutapa_2_ttU
+
+kestämän_tekijäpääte_y1
+          kutia++n
+
+kestämän_tekijäpääte_y2
+          kutia++t
+
+kestämän_tekijäpääte_y3
+          kutia++a
+
+kestämän_tekijäpääte_m1
+          kutia++mme
+
+kestämän_tekijäpääte_m2
+          kutia++tte
+
+kestämän_tekijäpääte_m3
+          kutia++vat
+
+tositavan_kestämä_tAAn
+
+kertoman_tekijäpääte_y1
+
+kertoman_tekijäpääte_y2
+
+kertoman_tekijäpääte_y3
+
+kertoman_tekijäpääte_m1
+
+kertoman_tekijäpääte_m2
+
+kertoman_tekijäpääte_m3
+
+tositavan_kertoma_tiin
+
+tositavan_kertoma_ttiin
+
+ehtotapa
+          kutia++isin
+
+ehtotapa_tA
+
+ehtotapa_ttA
+
+mahtotapa_ne
+
+mahtotapa_tA
+
+mahtotapa_ttA
+
+käskytapa_y2
+          kutia++
+
+käskytapa_kielto
+
+käskytapa_tA
+
+käskytapa_ttA
+
+johdin_jA_kulkija
+          kutia++ja

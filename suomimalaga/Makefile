@@ -29,9 +29,6 @@ VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex
 
-# Shared files needed in Sukija
-SUKIJA_COPY_FROM_COMMON=symbols.sym
-
 # Lexicon files generated for Voikko from Joukahainen
 VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede vieraskieliset
 
@@ -79,7 +76,6 @@ clean:
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
 	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
 	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
-	rm -f $(patsubst %,sukija/%,$(SUKIJA_COPY_FROM_COMMON))
 
 # Rules for creating the preprocessed source package
 
@@ -140,15 +136,11 @@ suhdesanat.lex \
 yhdyssanat.lex
 
 sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
-	$(patsubst %,sukija/%,$(SUKIJA_COPY_FROM_COMMON)) \
 	$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML))
 	@malmake sukija/suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikonsanat/%: vocabulary/%
 	cp $^ $@
-
-$(patsubst %,sukija/%,$(SUKIJA_COPY_FROM_COMMON)): sukija/%: common/%
-	   cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
 	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py

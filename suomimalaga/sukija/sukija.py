@@ -335,7 +335,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 
 		# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
 		#
-		if (wordform in [u"itkettynyt", u"itkettyä",
+		if (wordform in [u"elämä",
+				 u"itkettynyt", u"itkettyä",
 				 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 				 u"käynti", u"lyönti", u"opetus", u"otto",
 				 u"täysihoito", u"täysihoitola",

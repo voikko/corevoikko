@@ -1,8 +1,28 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
-# Description of Finnish morphology.
 #
-# Copyright © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                       Harri Pitkänen (hatapitk@iki.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,38 +43,10 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
-#
-# This file has been modified by the contributors of Voikko project.
-# Last change was on $Date: 2007-09-03 11:49:25 +0300 (ma, 03 syys   2007) $ by $Author: hatp $.
 
 
-# Tähän tiedostoon saa lisätä symboleja vapaasti.
-# Symboleja voi poistaa vain, jos poistaminen ei aiheuta virheitä
-# Sukija- eikä Voikko-versioissa.
-#
-# Huomaa, että sama symboli voi tarkoittaa eri asioita Sukija- ja Voikko-versiossa!
-
-# Sijamuodot.
-sijamuoto;
-  nimentö;     # nominatiivi  "kissa"
-  omanto;      # genetiivi    "kissan"
-  kohdanto;    # akkusatiivi  "kissan"
-  osanto;      # partitiivi   "kissaa"
-  olento;      # essiivi      "kissana"
-  tulento;     # translatiivi "kissaksi"
-  sisäolento;  # inessiivi    "kissassa"
-  sisäeronto;  # elatiivi     "kissasta"
-  sisätulento; # illatiivi    "kissaan"
-  ulko_olento; # adessiivi    "kissalla"
-  ulkoeronto;  # ablatiivi    "kissalta"
-  ulkotulento; # allatiivi    "kissalle"
-  vajanto;     # abessiivi    "kissatta"
-  seuranto;    # komitatiivi  "kissoine(ni)"
-  keinonto;    # instruktiivi "kissoin"
-
-# Sijapäätteiden allomorfit.
 sija;
-  #nimentö;    # Yksikön nimentö (myös sijamuoto).
+  nimentö;     # Yksikön nimentö.
   nimentö_t;   # Monikon nimentö.
   nimentö_tkA; # Jo+tka, mi+tkä, ke+tkä.
 
@@ -132,7 +124,7 @@ luku;
   monikko;
 
 
-luokka; alaluokka; jluokka;
+luokka;
   laatusana;
   seikkasana;
   huudahdussana;
@@ -147,22 +139,9 @@ luokka; alaluokka; jluokka;
   teonsana;
     kieltosana;
   lukusana;
-    lukutyyppi;
-      perusluku;
-      järjestysluku;
-    # Alaluokat.
-    toista;
-    nolla;
-    yksiyhdeksän;
-    kymmenen;
-    sata;
-    tuhat;
-    miljoona;
-    miljardi;
-    biljoona;
-    triljoona;
-    erikoisluku;
-    lukusanan_jälkiliite;
+  lukusana1;
+  lukusana2;
+  lukusana3;
   asemosana;
   sijapääte;
   omistusliite;
@@ -170,15 +149,10 @@ luokka; alaluokka; jluokka;
   liitesana2;
   liitesana_s;  # Tulkaa+s.
   liitesana_kä; # Ei+kä, älä+kä.
-  kieltosanan_liitesana;
-  liitesana_pi; # Tulee+pi.
   etuliite;
-  kieltosanan_etuliite;
-  teonsanan_johdoksen_etuliite;
   lyhenne;
   kaksoispiste;
   tavuviiva;
-    vokaaliehto;
 
   tositavan_kestämä_dAAn;  # Voi+daan.
   tositavan_kestämä_lAAn;  # Tul+laan.
@@ -322,13 +296,6 @@ tapaluokka;
   johdin_rUt;
   johdin_sUt;
 
-  johdin_dU;
-  johdin_lU;
-  johdin_nU;
-  johdin_rU;
-  johdin_tU;
-  johdin_stU;       # Juosta => juostu.
-
   johdin_tU_dU;
   johdin_tU_lU_katseltu;
   johdin_tU_lU_oltu;
@@ -346,7 +313,6 @@ tapaluokka;
   johdin_O;          # Muistaa  => muisto, muiston.
   johdin_Os;         # Murtaa   => murros.
   johdin_U_arvelu;   # Arvailla => arvelu, arveluiden.
-  johdin_U_nousu;    # Nousta   => nousu, nousujen.
 
 aikamuoto;
   kestämä;
@@ -375,8 +341,6 @@ lähtöalku;   # Lähtösanan alkuosa.
 lähtöluokka; # Sanaluokka, josta toisen sanaluokan sana on johdettu.
              # Esimerkiksi nimisana leikata on johdettu teonsanasta leikkaus.
 
-paikannimen_jälkiliite; # -katu, -vuori, ...
-inen_loppu; # -inen
 
 äs; # Ääntiösointu.
   a;
@@ -402,7 +366,6 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   ei_ys;     # Sana ei voi olla yhdyssanan osana.
   ei_ysa;    # Sana ei voi olla yhdyssanan alkuosana. (ei =mais=tiainen eli mainen + tiainen).
   ei_ysj;    # Sana ei voi olla yhdyssanan jälkiosana (ei =räme=isyys).
-  ei_yks;    # Sana ei taivu yksikkömuodoissa.
   inen;      # Nimisanasta johdettu inen-loppuinen laatusana
              # hyväksytään myös erillisenä sanana (aamu+inen).
              # Muuten tällaiset sanat hyväksytään vain yhdyssanan jälkiosana.
@@ -423,10 +386,9 @@ vanha_h;     # Valohon-tyyppiset taivutusmuodot, joista Nykysuomen sankirja sano
 rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sekä
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.
 
-# Lippuja. Merkitys on selitetty tiedostossa *.pro.
+# Lippuja. Merkitys on selitetty suomi-*.pro -tiedostoissa.
 malli;
   voikko;
-    vanhahkot_muodot;
   sukija;
 taivutus;
   vanhat_muodot;
@@ -434,7 +396,6 @@ tulostus;
   tavallinen;
   merkitse_yhdyssanat;
   koe;
-voikko_debug;
 
 
 # Nykysuomen sanakirja
@@ -502,7 +463,6 @@ risti;
   siisti; # => Siisteys (ei *siistiys).
   takki;
   tatti;
-  kiltti; # => Kiltteys (ei *kilttiys).
   tunti;
   vati;
 paperi;
@@ -522,7 +482,6 @@ lovi;
   hanki;
   happi;
   jälki;
-  kumpi;
   kaikki; # Kaikesta, kaikista.
   kiiski; # Sukijan taivutus on kiiskin tai kiisken, Voikon taivutus vain kiisken.
   kylki;
@@ -663,8 +622,6 @@ vieras;     # => vieraus
   ahdas;
   allas;
   autuas;   # => autuus
-  avokas;     # Sukija-versiossa iäkäs.
-    asiakas;  # Sukija-versiossa iäkäs.
   harras;
   hammas;
   iäkäs;    # => iäkkyys
@@ -674,7 +631,6 @@ vieras;     # => vieraus
   paras;
   ratas;
   saapas;
-  varas;    # Sukija-versiossa vilkas.
   utelias;  # => uteliaisuus
   varvas;
   vilkas;   # => vilkkaus
@@ -733,7 +689,6 @@ nuoripari;
 
 
 yö; # Yö, yön, jne.
-yö_yksikkö; # Yö, yön, jne.
 yö_monikko; # Öiden, öinä, jne.
 
 loitolla;    # Loitolla, loitolta, loitolle, loitompaa, loitos, ...
@@ -771,7 +726,6 @@ muistaa;      # => muistella, muisto, muistua
   heittää;    # => heitellä, heitto
   hidastaa;   # => hidastella, hidastus, hidastua, hidastuttaa
   hohtaa;     # => hohdella, hohto
-    jättää;   # Sukija-versiossa heittää.
   hujahtaa;   # => hujahdella, hujauttaa, hujahdus
   inttää;     # => intellä
   itää;
@@ -856,7 +810,6 @@ mennä;
 katsella;
   aatella;
   askarrella;
-  kirjoitella;
   ilotella;     # Sukija-versiossa myös iloitella.
   kilvoitella;  # Sukija-versiossa myös kilvotella.
   kohdella;
@@ -895,7 +848,6 @@ salata;    # => salailla
   kerrata;
   kivetä;
   kuitata;
-  peljätä;
   ladata;
   pakata;
   pompata;
@@ -915,6 +867,7 @@ selvitä;
   hellitä;
   keritä;
   lämmitä;
+  kutiaa;
 kohota;    # => kohoilla
   irrota;  # => irtoilla
   laota;   # => lakoilla  Vilja lakoaa ja lakoilee.
@@ -954,7 +907,6 @@ kaikaa;
 
 # Omat lisäykset.
 
-minä;
 hän;
 me;
 joka;
@@ -973,3 +925,37 @@ lienee;
 # generoinnissa.
 #
 _y3;
+
+
+# Nämä symbolit eivät ole käytössä Sukija-versiossa,
+# mutta ne tarvitaan, jotta koodi menee läpi kääntäjästä.
+#
+ei_yks;
+kiltti;
+kumpi;
+liitesana_pi;
+minä;
+yö_yksikkö;
+peljätä;
+
+lukutyyppi;
+perusluku;
+alaluokka;
+yksiyhdeksän;
+toista;
+erikoisluku;
+sata;
+miljoona;
+miljardi;
+biljoona;
+triljoona;
+järjestysluku;
+lukusanan_jälkiliite;
+
+# Nämä pitää vaihtaa Sukija-version taivutuskaavoihin.
+asiakas; # iäkäs
+avokas;  # iäkäs
+varas;   # vilkas
+jättää;  # heittää
+
+teonsanan_johdoksen_etuliite;
