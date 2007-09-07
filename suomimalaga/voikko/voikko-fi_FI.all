@@ -3787,8 +3787,8 @@ subrule taivutuskaava ($tietue, $taivutus):
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
 
-  # Inen-loppuiset sanat
-  if ($tietue.perusmuoto matches ".*inen") then
+  # Inen-loppuiset laatusanat
+  if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];
   end;
 

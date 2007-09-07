@@ -454,7 +454,6 @@ end;
 
 
 combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka in @laatusana;
   ? $oikea.inen_loppu = yes;
 
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
@@ -603,7 +602,9 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    result $res, rules yhdysmerkki_erisnimen_jälkeen;
+    if tavuviiva in $oikea.jatko then
+      result $res, rules yhdysmerkki_erisnimen_jälkeen;
+    end;
   end;
   if loppu in $oikea.jatko then
     result $res, accept;
@@ -739,9 +740,9 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
       if $edellinen.luokka in <laatusana, nimi_laatusana> then
         result $res, rules yhdysmerkki_laatusanan_jälkeen;
       end;
-    end;
-    if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
-      result $res, rules inen_johdos_nimisanasta;
+      if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
+        result $res, rules inen_johdos_nimisanasta;
+      end;
     end;
   end;
 end;
@@ -786,9 +787,6 @@ combi_rule laatusanan_sijapääte_omistusliitteellä ($vasen, $oikea, $sana, $in
       if $edellinen.luokka in <laatusana, nimi_laatusana> then
         result $res, rules yhdysmerkki_laatusanan_jälkeen;
       end;
-    end;
-    if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
-      result $res, rules inen_johdos_nimisanasta;
     end;
   end;
 end;
