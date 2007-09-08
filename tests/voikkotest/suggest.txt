@@ -9,6 +9,7 @@ ras'an	raa'an	!raa’an
 ras’an	raa’an	!raa'an
 kuorma-audo	kuorma-auto	!kuorma‐auto
 kuorma‐audo	kuorma‐auto	!kuorma-auto
+23.24	23,24
 
 [ignore_dot=1]
 koirra.	koira.	!koira

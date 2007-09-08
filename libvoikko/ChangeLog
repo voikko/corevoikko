@@ -1,3 +1,7 @@
+2007-09-08 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add replacement suggestion "." -> ","
+
 2007-08-23 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Change configure.ac to fix build on FreeBSD

@@ -222,10 +222,10 @@ void voikko_suggest_word_split(voikko_sugg_status_t * s) {
 
 
 const wchar_t * STD_REPL_ORIG =
-	L"aiittes"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbccwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
+	L".aiittes"  L"snulkko\u00e4mrrvppyhjjddd\u00f6gggffbbccwwxz"  L"zq\u00e5\u00e5\u00e5\u00e5aitesnul"
 	L"ko\u00e4mrvpyhjd\u00f6gfbcwxzq\u00e5a"  L"e"  L"a"  L"ks";
 const wchar_t * STD_REPL_REPL = 
-	L"suordr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvsevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
+	L",suordr\u0161amiklgi\u00f6netbbotjhktsf\u00e4fhkgdpnvsevc\u017exao"  L"p"  L"\u00e4\u00f6ekysdhj\u00f6"
 	L"jpp"  L"kdglhuiel"  L"tvvkasaka"  L"\u00e5\u00e9\u00e2cc";
 
 const wchar_t * OCR_REPL_ORIG =
@@ -239,6 +239,7 @@ void voikko_suggest_replacement(voikko_sugg_status_t * s, const wchar_t * from, 
 	int i;
 	wchar_t * pos;
 	wchar_t * buffer = malloc(((*s).wlen + 1) * sizeof(wchar_t));
+	wchar_t upper_from;
 	if (buffer == 0) return;
 	wcsncpy(buffer, (*s).word, (*s).wlen);
 	buffer[(*s).wlen] = L'\0';
@@ -250,12 +251,16 @@ void voikko_suggest_replacement(voikko_sugg_status_t * s, const wchar_t * from, 
 			*pos = from[i];
 		}
 		if (abort_search(s)) break;
-		for (pos = wcschr(buffer, towupper(from[i])); pos != 0;
-		     pos = wcschr(pos + 1, towupper(from[i]))) {
+		
+		/* Only search for upper case letter if it differs from lower case version */
+		upper_from = towupper(from[i]);
+		if (upper_from == from[i]) continue;
+		for (pos = wcschr(buffer, upper_from); pos != 0;
+		     pos = wcschr(pos + 1, upper_from)) {
 			*pos = towupper(to[i]);
 			voikko_suggest_correct_case(s, buffer, (*s).wlen);
 			if (abort_search(s)) break;
-			*pos = towupper(from[i]);
+			*pos = upper_from;
 		}
 		if (abort_search(s)) break;
 	}
@@ -457,13 +462,13 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	}
 	else {
 		voikko_suggest_vowel_change(&status);
-		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG, STD_REPL_REPL, 51);
+		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG, STD_REPL_REPL, 52);
 		if (!abort_search(&status)) voikko_suggest_deletion(&status);
 		if (!abort_search(&status)) voikko_suggest_insert_special(&status);
 		if (!abort_search(&status)) voikko_suggest_word_split(&status);
 		if (!abort_search(&status)) voikko_suggest_insertion(&status, 0, 5);
 		if (!abort_search(&status)) voikko_suggest_swap(&status);
-		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG + 51, STD_REPL_REPL + 51, 30);
+		if (!abort_search(&status)) voikko_suggest_replacement(&status, STD_REPL_ORIG + 52, STD_REPL_REPL + 52, 30);
 		if (!abort_search(&status)) voikko_suggest_insertion(&status, 6, 29);
 	}
 
