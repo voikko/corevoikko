@@ -487,6 +487,8 @@ hervottomimpaa # Kotus 34
 !hervottomaimman # Kotus 34
 !hervottomaimpaa # Kotus 34
 hyttynen # Kotus 38
+!leikkimielisisissä # Kotus 38, ei inen-johdosta
+!kissanaisinen # Kotus 38, ei inen-johdosta
 alavutelainen # Kotus 40
 kauriiden # Kotus 41
 !kauriiiden # Kotus 41

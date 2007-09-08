@@ -49,8 +49,6 @@
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)
 
-define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
-
 [alku: "ASCII", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjjj"];
 [alku: "ctrl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
@@ -60,6 +58,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "gcc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "glibc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "GPL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
+[alku: "Gt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jq"];
 [alku: "icewm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "IDE", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "IMAP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
@@ -67,9 +66,12 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "IRC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "jpg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 [alku: "KDE", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
+[alku: "kt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qq"];
 [alku: "LGPL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "libstdc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "MS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"];
 [alku: "MS-DOS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj-=jjj"];
+[alku: "Mt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jq"];
 [alku: "NNTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "NTFS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "NTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];

@@ -5418,7 +5418,6 @@ subrule nainen ($tietue):
                            johdin_llinen:    "se",
                            johdin_lAinen:    "s",
                            johdin_mAinen:    "s",
-                           johdin_inen:      "s",
                            nimentö_t:        "se",
                            omanto_ien:       "s",
                            omanto_ten:       "s",
