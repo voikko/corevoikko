@@ -147,6 +147,18 @@
 [perusmuoto: "monisata", alku: "monisata", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "monituhat", alku: "monituhat", luokka: lukusana, alaluokka: erikoisluku, jatko: <lukusanan_jälkiliite>, äs: a, rakenne: "=pppp=ppppp"];
 
+[alku: "1", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "2", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "3", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "4", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "5", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "6", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "7", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "8", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "9", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: "0", luokka: lukusana, alaluokka: numeromerkki, jatko: <>];
+[alku: ",", luokka: lukusana, alaluokka: pilkku, jatko: <>];
+
 # Lukusanoihin suoraan liittyviä jälkiliitteitä
 #
 # HUOMIO! Vokaalilla alkavat jälkiliitteet eivät välttämättä toimi oikein,
@@ -161,6 +173,7 @@
 [perusmuoto: "osa", alku: "os", luokka: lukusanan_jälkiliite, lukutyyppi: järjestysluku, jatko: <koira>, äs: a];
 [perusmuoto: "tekijäinen", alku: "tekijäi", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <nainen>, äs: ä];
 [perusmuoto: "vuotias", alku: "vuotia", luokka: lukusanan_jälkiliite, lukutyyppi: perusluku, jatko: <vieras>, äs: a];
+
 
 # Roomalaiset numerot 2-4, 6-9, 11-40. I, V ja X jäsennetään kirjaimina.
 # Luvut 4, 9, 14, 19, ..., kirjoitetaan kahdella eri tavalla.

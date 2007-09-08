@@ -175,6 +175,8 @@ luokka; alaluokka; jluokka;
     biljoona;
     triljoona;
     erikoisluku;
+    numeromerkki;
+    pilkku;
     lukusanan_jälkiliite;
   asemosana;
   sijapääte;
