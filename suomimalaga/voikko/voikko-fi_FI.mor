@@ -780,6 +780,9 @@ combi_rule laatusanan_sijapääte_omistusliitteellä ($vasen, $oikea, $sana, $in
       if sijamuoto_sijasta($oikea.sija) = omanto then
         result $res,
                rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+        if luku_sijasta($oikea.sija) = yksikkö then
+          result $res, rules inen_johdos_nimisanasta;
+        end;
       end;
       if sijamuoto_sijasta($oikea.sija) = nimentö and luku_sijasta($oikea.sija) = yksikkö then
        result $res, rules nimisana_teonsanasta; # FIXME: laatusana_teonsanasta
@@ -1383,18 +1386,22 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if (($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
-                        johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana) and
-      (tavuviiva in $oikea.jatko) then
-    result $res, rules nimisana, nimisana_teonsanasta,
-                       nimisana_laatusanasta, inen_johdos_nimisanasta,
-                       nimisanan_sijapääte;
+  if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
+                        johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
+    result $res, rules nimisanan_sijapääte;
   else
     result $res, rules laatusanan_sijapääte_omistusliitteellä;
   end;
 
   if tavuviiva in $oikea.jatko then
-    result $res, rules etuliite, tavuviiva;
+    if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
+        johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
+      result $res, rules nimisana, nimisana_teonsanasta,
+                         nimisana_laatusanasta, inen_johdos_nimisanasta,
+                         etuliite, tavuviiva;
+    else
+      result $res, rules inen_johdos_nimisanasta, etuliite, tavuviiva;
+    end;
   end;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;

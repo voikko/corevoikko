@@ -195,6 +195,9 @@ viittomakielinen
 kaunokirjallisuus
 !pulaaerobinen
 pula-aerobinen
+kiiltäväkorvainen
+vihertävänhohtoinen
+!vihertävienhohtoinen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
@@ -237,6 +240,7 @@ presidentin-
 !id- # itä-
 matka-aerokissa # yhdysmerkki etuliitteen edessä
 !matkaaerokissa
+tiedotus-
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri
