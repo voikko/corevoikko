@@ -1249,6 +1249,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"pihla">,     <"joki">>,
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
       <<"polvinen">,  <"tuki">>,
+      <<"poli">,      <"klinikka">>, # On oma sanansa.
       <<"puh">,       <"tie">>,
       <<"punk">,      <"arka", "kari">>,
       <<"puoli">,     <"nainen">>,  # On oma sanansa.
@@ -1301,7 +1302,8 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"vyö">,       <"täi">>,             # Vyö+täinen.
       <<"väli">,      <"syys">>,            # Kansain+väli+syys.
       <<"yhtä", "yksi">, <"toinen", "toistaa">>,
-      <<"ylä">,          <"hää">>,
+      <<"ylä">,          <"hää", "silla">>,
+      <<"ylänen">,       <"ilta">>,
       <<"äiti">,         <"nisä">>
     >;
 
@@ -1400,9 +1402,9 @@ end_rule loppu ($tietue):
 
   # Jotkut sanat voivat olla vain yhdyssanojen jälkiosana.
   #
-  if ((($tietue.1).tiedot /= nil) and (ysj in ($tietue.1).tiedot)) then
-    stop;
-  end;
+#  if ((($tietue.1).tiedot /= nil) and (ysj in ($tietue.1).tiedot)) then
+#    stop;
+#  end;
 
 
   # Ei heitto+is+tu+in eli =heittois=tuki (heitto+inen + tuki).
