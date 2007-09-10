@@ -127,7 +127,7 @@
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "islami", alku: "islami", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "itsestään", alku: "itsestään", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "itsestään", alku: "itsestään", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "jalko", alku: "jalko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "jazz-", alku: "jazz-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-"];
 [perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
@@ -149,6 +149,7 @@
 [perusmuoto: "karto", alku: "karto", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kauko", alku: "kauko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kauko", alku: "kauko", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "kausaali", alku: "kausaali", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "kautta", alku: "kautta", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kesken", alku: "kesken", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -159,6 +160,7 @@
 [perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "koe", alku: "koe", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "koillis", alku: "koillis", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "kollegiaali", alku: "kollegiaali", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kolmi", alku: "kolmi", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kolmin", alku: "kolmin", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];

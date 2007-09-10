@@ -222,6 +222,7 @@
 [perusmuoto: "irvissä", alku: "irvissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "istualla", alku: "istua", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "itsekseen", alku: "itsekseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "itsessään", alku: "itsessään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsestään", alku: "itsestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsetykönä", alku: "itsetykönä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "itsevaltiaasti", alku: "itsevaltiaasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
@@ -302,6 +303,10 @@
 [perusmuoto: "kelteisillä", alku: "kelteisi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: ä];
 [perusmuoto: "kenties", alku: "kenties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kertaalleen", alku: "kertaalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kesemmäksi", alku: "kesemmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kesemmälle", alku: "kesemmälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kesemmällä", alku: "kesemmällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kesempänä", alku: "kesempänä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "keskellä", alku: "keske", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "keskemmä", alku: "keskemmä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "keskemmäksi", alku: "keskemmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -330,6 +335,8 @@
 [perusmuoto: "kiireimmiten", alku: "kiireimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiiruusti", alku: "kiiruusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kissun", alku: "kissun", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kiukuspäissä", alku: "kiukuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "kiusanpäiten", alku: "kiusanpäiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "kohdakkain", alku: "kohdakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kohdakkoin", alku: "kohdakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kohme", alku: "kohmee", luokka: seikkasana, jatko: <sisäolento_ssA, sisätulento_seen>, äs: a];
