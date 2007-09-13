@@ -62,7 +62,6 @@
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "bi-", alku: "bi-", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pp-"];
-[perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "blues-", alku: "blues-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=ppppp-"];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];

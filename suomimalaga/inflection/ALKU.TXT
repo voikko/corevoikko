@@ -149,6 +149,19 @@ allo_rule generate_allos ($tietue1):
       $tietue1.tiedot :=- <ysj>;
       $tietuelista := <$tietue1>;
     end;
+
+    # Mielinen yms ovat sanastossa.
+    #
+    if (($tietue1.perusmuoto /= nil) and ($tietue1.perusmuoto in <"mieli">)) then
+define $a := transmit ($tietue1);
+      if ($tietue1.tiedot = nil) then
+        $tietue1 :=+ [tiedot: <ei_inen>];
+      else
+        $tietue1.tiedot :=+ <ei_inen>;
+      end;
+      $tietue1.tiedot :=- <ysj>;
+      $tietuelista := <$tietue1>;
+    end;
   end;
 
 

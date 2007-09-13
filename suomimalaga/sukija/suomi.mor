@@ -190,6 +190,7 @@ combi_rule laatusana ($vasen, $oikea, $sana):
                 or (($vasen.$i.luokka in @laatusana)
                     and ($vasen.$i.perusmuoto matches ".*inen"))));
     ? yhdyssana_oikein ($vasen, $oikea, $i);
+#    ? not (($vasen.$i.perusmuoto /= nil) and ($vasen.$i.perusmuoto matches ".*inen") and ($oikea.luokka = johdin_inen));
   end;
 
 #define $n := transmit (<$vasen> + <$oikea> + <$sana>);
@@ -979,7 +980,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
   # Erisnimet eivät voi olla yhdyssanojen osana.
   #
   define $nimet := <etunimi, sukunimi, nimi>;
-#  define $nimet := <>;
+#  define $nimet := <etunimi, sukunimi, paikannimi, nimi>;
 
   define $n := length ($vasen);
 
@@ -1000,21 +1001,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return yes;
   end;
 
-  if (switch (malli) = voikko) then
-    $nimet := <etunimi, sukunimi, paikannimi, nimi>;
-    #
-    # Hyväksytään esim. linja-auto, mutta ei paketti-autoa.
-    #
-    if ($i greater_equal 2) and ($vasen.$i.luokka = tavuviiva) then
-      if ($vasen.($i-1).luokka in $nimet) then
-        return yes;
-      elseif ($vasen.($i-1).luokka in <nimisana, nimi_laatusana>) and
-             ((not ($vasen.($i-1).alku) matches ".*" + @ääntiö) or
-              (substring($vasen.($i-1).alku,1R) /= substring($oikea.perusmuoto,1))) then
-        return no;
-      end;
-    end;
-  elseif (($i greater_equal 2) and
+  if (($i greater_equal 2) and
           ($vasen.$i.luokka = tavuviiva) and
           (($vasen.($i - 1).luokka in $nimet) or ($oikea.luokka in $nimet))) then
     #
@@ -1030,7 +1017,7 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
        ($vasen.$i.perusmuoto in <"Aho", "Alan", "Aro", "Aura", "Autio",
                                  "Elo", "Halti", "Hanko", "Helmi", "Hovi", "Huhta",
                                  "Ilma", "Ilta", "Impi",
-                                 "Kai", "Kallio", "Kangas", "Kari", "Koivu", "Kukka", "Kuokka",
+                                 "Kai", "Kallio", "Kangas", "Karjala", "Kari", "Koivu", "Kukka", "Kuokka",
                                  "Kurki", "Kytö",
                                  "Laakso", "Lehto", "Lempi", "Maa", "Malmi", "Manner", "Marja", "Meri",
                                  "Niemi", "Pohja", "Raitio", "Ranta", "Rauha", "Ruusu",
@@ -1143,10 +1130,10 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
       #
       # Ei muotoja punais+ilta (punainen + ilta).
       #
-      if (($vasen.$i.luokka = laatusana) and ($vasen.$i.perusmuoto matches ".*inen")) then
+      if (($vasen.$i.luokka = laatusana) and ($vasen.$i.perusmuoto /= nil) and ($vasen.$i.perusmuoto matches ".*inen")) then
         return no;
       end;
-    elseif ($vasen.$i.perusmuoto /= nil) then
+    elseif (($vasen.$i.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
       if ((substring($vasen.$i.perusmuoto,1R) matches @ääntiö) and
           (substring($oikea.perusmuoto,1) matches @ääntiö)) then
         return (substring($vasen.$i.perusmuoto,1R) /= substring($oikea.perusmuoto,1));
@@ -1205,7 +1192,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kana">,      <"voida">>,  # Kana+voitu.
       <<"kapi">,      <"nalli", "tali">>,  # Kapi+nallinen, kapi+talis+tien (kapi+talinen+tie).
       <<"kare">,      <"lika">>,
-      <<"karja">,     <"lainen">>,
+      <<"karja">,     <"lainen", "lassa">>,
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
       <<"kemi">,      <"alli", "joki">>,
@@ -1214,6 +1201,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kita">,      <"risti">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"komi">,      <"teko">>,        # Komi+teoille.
+      <<"korni">,     <"lovi">>,        # Korni+lovi(n).
       <<"koti", "kotiin">, <"pää">>,    # Kotiinpäin.
       <<"krim">,           <"naali">>,  # Krimi+naali.
       <<"kulti">,          <"voi", "vuo">>,
@@ -1234,6 +1222,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"meno">,      <"paussi">>,
       <<"metaani">,   <"rikastaa">>,
       <<"mieli">,     <"syy", "syys">>,
+      <<"mielinen">,  <"ikä", "säkä", "sää", "tele", "teli", "tikki">>, # Mielis+ikä(än).
       <<"moni">,      <"naida", "nainen", "tora", "tori">>,
       <<"musti">,     <"koi", "koettaa">>,
       <<"nomi">,      <"suu">>,
@@ -1245,6 +1234,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"Pal", "Pál">, <"joki", "maa", "meri">>,
       <<"peli">,      <"manni">>,
       <<"perin">,     <"tee">>,   # Perin+tee(llinen).
+      <<"peru">,      <"noki">>,  # Peru+noissa.
       <<"perso">,     <"nalli">>,
       <<"pihla">,     <"joki">>,
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,

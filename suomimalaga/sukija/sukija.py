@@ -340,7 +340,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				 u"itkettynyt", u"itkettyä",
 				 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 				 u"käynti", u"lyönti",
-				 u"mielinen",
 				 u"opetus", u"otto",
 				 u"täysihoito", u"täysihoitola",
 				 u"voima", u"väärinkäsitys",
