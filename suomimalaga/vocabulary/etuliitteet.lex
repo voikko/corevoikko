@@ -40,15 +40,14 @@
 [perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
-[perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @elt, äs: aä, rakenne: "=pppp=pppp", tiedot: <ei_voikko>];
+[perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>, rakenne: "=pppp=pppp"];
 [perusmuoto: "ainais", alku: "ainais", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "ainois", alku: "ainois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ajantasa", alku: "ajantasa", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
 [perusmuoto: "alas", alku: "alas", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "alati", alku: "alati", luokka: etuliite, jatko: @ell, äs: aä];
+[perusmuoto: "alati", alku: "alati", luokka: etuliite, jatko: @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ali", alku: "ali", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "alkeis", alku: "alkeis", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "alkeis", alku: "alkeis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "alkuperäis", alku: "alkuperäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>, rakenne: "=pppp=pppppp"];
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Alkuunpanija jne.
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
@@ -75,7 +74,7 @@
 [perusmuoto: "eko", alku: "eko", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "elektro", alku: "elektro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "enimmäis", alku: "enimmäis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "enkel", alku: "enkel", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "enkel", alku: "enkel", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ennen", alku: "ennen", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ensi", alku: "ensi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ensiö", alku: "ensiö", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -85,7 +84,7 @@
 [perusmuoto: "erillis", alku: "erillis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "erityis", alku: "erityis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "esi", alku: "esi", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Mahdollisesti sopisi Voikkoon verbien subst.- ja adj.johdoksiin
+[perusmuoto: "esiin", alku: "esiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "esille", alku: "esille", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "etno", alku: "etno", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
@@ -102,7 +101,7 @@
 [perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <siv>];
 [perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "gastro", alku: "gastro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
-[perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Aiheuttaa joidenkin väärien sanojen tunnistumisen, mm. *geograafia.
 [perusmuoto: "golf-", alku: "golf-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-"];
 [perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
