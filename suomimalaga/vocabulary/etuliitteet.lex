@@ -96,9 +96,9 @@
 [perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "futuro", alku: "futuro", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <siv>];
+[perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "fysio", alku: "fysio", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "gastro", alku: "gastro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <siv, ei_voikko>];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Aiheuttaa joidenkin väärien sanojen tunnistumisen, mm. *geograafia.
@@ -117,14 +117,15 @@
 [perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; #Ei oo
+[perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Lähes turha
 [perusmuoto: "inter", alku: "inter", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @ell, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "iono", alku: "iono", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "islami", alku: "islami", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "itsestään", alku: "itsestään", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "jalko", alku: "jalko", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
