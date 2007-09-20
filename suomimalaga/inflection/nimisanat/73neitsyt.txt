@@ -50,10 +50,12 @@ nimentö
 
 omistusliite
           neits+ye+ni
+          neits+yee+ni  ei_voikko
           neits+ee+ni  ei_voikko
 
 omanto_n
           neits+ye+n
+          neits+yee+n  ei_voikko
           neits+ee+n  ei_voikko
 
 osanto_ttA
@@ -61,24 +63,29 @@ osanto_ttA
 
 olento_nA
           neits+ye+nä
+          neits+yee+nä  ei_voikko
           neits+ee+nä  ei_voikko
 
 tulento_ksi
           neits+ye+ksi
+          neits+yee+ksi  ei_voikko
           neits+ee+ksi  ei_voikko
 
 sisäolento_ssA
           neits+ye+ssä
+          neits+yee+ssä  ei_voikko
           neits+ee+ssä  ei_voikko
 
 sisäeronto_stA
           neits+ye+stä
+          neits+yee+stä  ei_voikko
           neits+ee+stä  ei_voikko
 
 sisätulento_Vn
           neits+ye+en
 
 sisätulento_hVn
+          neits+yee+hen  vanha_h
           neits+ye+hen  vanha_h
 
 sisätulento_seen
@@ -86,27 +93,34 @@ sisätulento_seen
 
 ulko_olento_llA
           neits+ye+llä
+          neits+yee+llä  ei_voikko
           neits+ee+llä  ei_voikko
 
 ulkoeronto_ltA
           neits+ye+ltä
+          neits+yee+ltä  ei_voikko
           neits+ee+ltä  ei_voikko
 
 ulkotulento_lle
           neits+ye+lle
+          neits+yee+lle  ei_voikko
           neits+ee+lle  ei_voikko
 
 vajanto_ttA
           neits+ye+ttä
+          neits+yee+ttä  ei_voikko
           neits+ee+ttä  ei_voikko
 
 nimentö_t
           neits+ye+t
+          neits+yee+t  ei_voikko
           neits+ee+t  ei_voikko
 
 omanto_iT
           neits+y+iden
+          neits+ye+iden  ei_voikko
           neits+y+itten
+          neits+ye+itten  ei_voikko
           neits+e+iden  ei_voikko
           neits+e+itten  ei_voikko
 
@@ -125,40 +139,47 @@ osanto_iA
 
 osanto_itA
           neits+y+itä
+          neits+ye+itä  ei_voikko
           neits+e+itä  ei_voikko
 
 olento_inA
           neits+y+inä
+          neits+ye+inä  ei_voikko
           neits+yh+inä  ei_voikko
           neits+e+inä  ei_voikko
           neits+eh+inä  ei_voikko
 
 tulento_iksi
           neits+y+iksi
+          neits+ye+iksi  ei_voikko
           neits+yh+iksi  ei_voikko
           neits+e+iksi  ei_voikko
           neits+eh+iksi  ei_voikko
 
 sisäolento_issA
           neits+y+issä
+          neits+ye+issä  ei_voikko
           neits+yh+issä  ei_voikko
           neits+e+issä  ei_voikko
           neits+eh+issä  ei_voikko
 
 sisäeronto_istA
           neits+y+istä
+          neits+ye+istä  ei_voikko
           neits+yh+istä  ei_voikko
           neits+e+istä  ei_voikko
           neits+eh+istä  ei_voikko
 
 sisätulento_ihin
           neits+y+ihin
+          neits+ye+ihin  ei_voikko
           neits+yh+ihin  ei_voikko
           neits+e+ihin  ei_voikko
           neits+eh+ihin  ei_voikko
 
 sisätulento_isiin
           neits+y+isiin
+          neits+ye+isiin  ei_voikko
 
 sisätulento_isin
           neits+yh+isin  ei_voikko
@@ -166,36 +187,42 @@ sisätulento_isin
 
 ulko_olento_illA
           neits+y+illä
+          neits+ye+illä  ei_voikko
           neits+yh+illä  ei_voikko
           neits+e+illä  ei_voikko
           neits+eh+illä  ei_voikko
 
 ulkoeronto_iltA
           neits+y+iltä
+          neits+ye+iltä  ei_voikko
           neits+yh+iltä  ei_voikko
           neits+e+iltä  ei_voikko
           neits+eh+iltä  ei_voikko
 
 ulkotulento_ille
           neits+y+ille
+          neits+ye+ille  ei_voikko
           neits+yh+ille  ei_voikko
           neits+e+ille  ei_voikko
           neits+eh+ille  ei_voikko
 
 vajanto_ittA
           neits+y+ittä
+          neits+ye+ittä  ei_voikko
           neits+yh+ittä  ei_voikko
           neits+e+ittä  ei_voikko
           neits+eh+ittä  ei_voikko
 
 seuranto_ine
           neits+y+ine
+          neits+ye+ine  ei_voikko
           neits+yh+ine  ei_voikko
           neits+e+ine  ei_voikko
           neits+eh+ine  ei_voikko
 
 keinonto_in
           neits+y+in
+          neits+ye+in  ei_voikko
           neits+yh+in  ei_voikko
           neits+e+in  ei_voikko
           neits+eh+in  ei_voikko
@@ -223,6 +250,7 @@ johdin_lAinen
 
 johdin_llinen
           neits+ye+llinen
+          neits+yee+llinen  ei_voikko
           neits+ee+llinen
 
 johdin_mAinen
@@ -230,6 +258,7 @@ johdin_mAinen
 
 johdin_tOn
           neits+ye+tön
+          neits+yee+tön  ei_voikko
           neits+ee+tön
 
 johdin_Us

@@ -45,8 +45,10 @@
 # combination.
 
 initial <>,
-            rules nimisana, laatusana, asemosana, apusana, lyhennesääntö,
-                  etuliite, teonsana, kieltosana, tavuviiva;
+            rules nimisana, laatusana,
+                  etuliite, teonsana, tavuviiva,
+#                 asemosana, kieltosana, apusana, lyhennesääntö
+                  sanan_alku;
 
 include "suomi.inc";
 
@@ -100,6 +102,43 @@ define @johdin_laatusanasta := <johdin_nlainen, johdin_Us, johdin_UUs>;
 
 
 define @johdin := @johdin_teonsanasta + @johdin_nimisanasta + @johdin_laatusanasta;
+
+
+# Sääntö sanan_alku on muokattu Harri Pitkäsen Voikko-versiosta.
+#
+combi_rule sanan_alku ($vasen, $oikea, $sana):
+#  define $a := transmit ($vasen);
+#  define $b := transmit ($oikea);
+#  define $c := transmit ($sana);
+
+  if $oikea.luokka = lyhenne then
+    if (kaksoispiste in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, rules kaksoispiste;
+    end;
+    if (tavuviiva in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, rules tavuviiva;
+    end;
+    if (loppu in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, accept;
+    end;
+  elseif $oikea.luokka in <huudahdussana, sidesana> then
+    if (tavuviiva in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, rules tavuviiva;
+    end;
+    if (loppu in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, accept;
+    end;
+    result <[alku: $sana] + $oikea>,
+           rules liitesana;
+  elseif $oikea.luokka = kieltosana then
+    result <[alku: $sana] + $oikea>,
+           rules liitesana, liitesana_kä, tavuviiva, loppu;
+  elseif $oikea.luokka = asemosana then
+    result <[alku: $sana] + $oikea>,
+           rules sijapääte, liitesana, tavuviiva, voitto_yliaste, loppu;
+  end;
+  stop;
+end;
 
 
 combi_rule etuliite ($vasen, $oikea, $sana):
@@ -243,13 +282,6 @@ end;
 
 combi_rule kaksoispiste ($vasen, $oikea, $sana):
   ? $oikea.luokka in <kaksoispiste>;
-
-#HP/4.5.06: Voiko mitenkään olla length($vasen) = 0?
-#  define $i := length ($vasen);
-#  if ($i greater 0) then
-#    ? ($oikea.luokka in $vasen.$i.jatko);
-#  end;
-
 
 #define $nimi := transmit (<":"> + <$vasen> + <$oikea> + <$sana> + <length($vasen)>);
 
@@ -1016,14 +1048,16 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
   if ((($vasen.$i.luokka in $nimet) and
        ($vasen.$i.perusmuoto in <"Aho", "Alan", "Aro", "Aura", "Autio",
                                  "Elo", "Halti", "Hanko", "Helmi", "Hovi", "Huhta",
-                                 "Ilma", "Ilta", "Impi",
-                                 "Kai", "Kallio", "Kangas", "Karjala", "Kari", "Koivu", "Kukka", "Kuokka",
-                                 "Kurki", "Kytö",
-                                 "Laakso", "Lehto", "Lempi", "Maa", "Malmi", "Manner", "Marja", "Meri",
+                                 "Georgia",
+                                 "Ilma", "Ilta", "Impi", "Islanti",
+                                 "Kai", "Kallio", "Kangas", "Karjala", "Kari", "Koivu", "Kroatia",
+                                 "Kukka", "Kuokka", "Kurki", "Kytö",
+                                 "Laakso", "Lehto", "Lempi",
+                                 "Maa", "Malmi", "Matti", "Manner", "Marja", "Meri",
                                  "Niemi", "Pohja", "Raitio", "Ranta", "Rauha", "Ruusu",
                                  "Salo", "Satu", "Sini", "Soini", "Somero", "Sulo",
                                  "Taisto", "Taimi", "Tikka", "Toimi", "Toivo", "Tuisku", "Tuuli",
-                                 "Valta", "Vasara", "Viita">)) or
+                                 "Valta", "Varis", "Vasara", "Viita">)) or
       (($oikea.luokka in <paikannimi, sukunimi, nimi>) and
        ($oikea.perusmuoto in <"Järvi", "Lahti", "Maa", "Meri", "Niemi", "Saari", "Turkki", "Virta">))) then
     return no;

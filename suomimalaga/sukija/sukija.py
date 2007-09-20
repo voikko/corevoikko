@@ -267,6 +267,17 @@ def write_word_without_accents(main_vocabulary, vocabulary_files, word, entry, w
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry2)
 
 
+word_end = re.compile(u".+geeni(nen)?$")
+
+# Hyväksytään esim. karsinogeenia ja karsinogeeniä.
+#
+def new_vtype (malaga_vtype, wordform):
+	if (word_end.match(wordform)):
+		return u"aä"
+	else:
+		return malaga_vtype
+	
+
 def handle_word(main_vocabulary,vocabulary_files,word):
 	# Get the inflection class. Exactly one inflection class is needed
 	infclasses = word.getElementsByTagName("infclass")
@@ -328,6 +339,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = u'ä'
 		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
+		malaga_vtype = new_vtype (malaga_vtype, wordform)
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if alku == None:
 			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, u"#Malaga class not found for (%s, %s)\n" \
@@ -340,6 +352,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				 u"itkettynyt", u"itkettyä",
 				 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 				 u"käynti", u"lyönti",
+				 u"maallistua", # Johdetaan: maallistaa -> maallistua.
 				 u"opetus", u"otto",
 				 u"täysihoito", u"täysihoitola",
 				 u"voima", u"väärinkäsitys",

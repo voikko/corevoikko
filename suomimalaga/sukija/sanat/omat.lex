@@ -323,10 +323,9 @@
 [alku: "kys", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "lun", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Lunastus.
 [alku: "m.l", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "m.m", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "m.m", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "m.t.k", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "mk:alla", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Markalla.
-[alku: "mk:alla", luokka: lyhenne, jatko: <loppu>, äs: aä]; #Markalla.
 [alku: "ms", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "mttk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "o:den", luokka: lyhenne, jatko: <loppu>, äs: aä];
