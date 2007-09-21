@@ -218,7 +218,7 @@
 [perusmuoto: "irti", alku: "irti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irveen", alku: "irveen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irvessä", alku: "irvessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "irviin", alku: "irviin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "irvissä", alku: "irviin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irvissä", alku: "irvissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "istualla", alku: "istua", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "itsekseen", alku: "itsekseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

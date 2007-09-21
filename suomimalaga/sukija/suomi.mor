@@ -1196,7 +1196,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"auki">,            <"naida">>, # Auki+nainen.
       <<"auto">,            <"nova">>,  # Auto+novien.
       <<"avo">,             <"nainen">>,
-      <<"de">,              <"lego", "mono", "sika">>,  # Ei de+lego+iva, de+mono+logi, geo+de+siassa.
+####      <<"de">,              <"lego", "mono", "sika">>,  # Ei de+lego+iva, de+mono+logi, geo+de+siassa.
       <<"ele">,             <"itä">>,
       <<"elo">,             <"tee">>,
       <<"eri", "esi">,      <"koi">>,   # Eri+koi+sala, esi+kois- (esi + koi + inen).
@@ -1242,10 +1242,12 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kuu">,            <"kausittainen", "luja", "luksus", "luminen", "luu">>,
       <<"kymmen">,    <"vuota">>,
 ##    <<"kymmen", "kymmenen">, <"vuota">>,
+      <<"laaja">,     <"kaista">>,  # On sanastossa.
       <<"lainen">,    <"kala", "kasti", "kistu", "kuri", "kuu">>,
       <<"loinen">,    <"kaksi", "tee", "tehdä">>,
       <<"lukunen">,   <"alin">>,
       <<"läinen">,    <"käki">>,
+      <<"läsnä">,     <"olija", "olo", "olonen", "Olos">>, # 2 ekaa ovat sanastossa.
       <<"maa">,       <"gis", "nisä">>,
       <<"maagi">,     <"seksi", "silta">>,
       <<"mainen">,    <"emä">>,
@@ -1284,6 +1286,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"pyy">,       <"tee">>,   # Pyy+tee+llinen.
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
       <<"rad">,       <"kaali">>,
+      <<"ratsas">,    <"tapa", "tavi", "tele", "teli", "tikki">>,
       <<"rauni">,     <"ottaa">>,      # Rauni+ota
       <<"re">,        <"aktio", "väkä">>,
       <<"rondo">,     <"letto">>,

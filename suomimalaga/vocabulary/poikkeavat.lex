@@ -82,8 +82,6 @@
 [perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "ien", alku: "i", luokka: nimisana, jatko: <ien>, äs: ä];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
-[perusmuoto: "irvissä", alku: "irviin", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "irvissä", alku: "irvissä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
 [perusmuoto: "itää", alku: "i", luokka: teonsana, jatko: <itää>, äs: ä];
 [perusmuoto: "Jodie", alku: "Jodie", luokka: etunimi, jatko: <nalle>, äs: a];
