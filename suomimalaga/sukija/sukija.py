@@ -77,6 +77,7 @@ pattern = u"^(?P<alku>.*)(?:" + \
           u"(?P<illuusio>Cuusio)|" + \
           u"(?P<traditio>Citio)|" + \
 	  u"(?P<symboli_ym>[^aeouyäö]o[dfglmnrv]i)|" + \
+	  u"(?P<balladi>...adi)|" + \
 	  u"(?P<logia_ym>gogia|logia|sofia)|" + \
 	  u"(?P<loginen_ym>goginen|loginen|sofinen)|" + \
 	  u"(?P<grafia>grafia)|" + \
@@ -575,6 +576,13 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku2 = wordform[:-2] + u"o" + wordform[-2]
 			jatko2 = jatko
 			wordform2 = alku2 + u"i"
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['balladi'] != None)):
+			#
+			# Balladi => ballaadi.
+			#
+			alku2 = wordform[:-2] + u"a" + wordform[-2]
+			jatko2 = jatko
+			wordform2 = alku2 + u"i"
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['logia_ym'] != None) and
 		      (malaga_word_class in [u"nimisana", u"nimi_laatusana"])):
 			#
@@ -598,7 +606,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku2 = wordform[:-3] + u"a" + wordform[-3:-1]
 			jatko2 = jatko
 			wordform2 = alku2 + u"a"
-		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['grafia'] != None)):
+		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['grafinen'] != None)):
 			#
 			# Topografinen => topograafinen.
 			#

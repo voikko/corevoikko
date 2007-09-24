@@ -47,8 +47,8 @@
 initial <>,
             rules nimisana, laatusana,
                   etuliite, teonsana, tavuviiva,
-#                 asemosana, kieltosana, apusana, lyhennesääntö
-                  sanan_alku;
+                  asemosana, kieltosana, apusana, lyhennesääntö;
+##                  sanan_alku;
 
 include "suomi.inc";
 
@@ -349,9 +349,8 @@ combi_rule sijapääte ($vasen, $oikea, $sana):
     ? $oikea.sija in $edellinen.jatko;
     ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-    if ($oikea.sija in <sisätulento_Vn, sisätulento_hVn>) then
-      require (sisätulento_oikein ($oikea.sija, $edellinen.alku, $sana));
-    end;
+    ? ($oikea.sija /= sisätulento_Vn)  or sisätulento_Vn_oikein  ($oikea.sija, substring($edellinen.alku,1R), $sana);
+    ? ($oikea.sija /= sisätulento_hVn) or sisätulento_hVn_oikein ($oikea.sija, substring($edellinen.alku,1R), $sana);
 
     if ($oikea.sija = kerronto_sti) then
       ? $edellinen.luokka in @sti_edeltäjä;
@@ -683,13 +682,8 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana):
 
   ? $vasen.$i.luokka in @laatusana
                         + <johdin_lAinen, johdin_mAinen, johdin_llinen,
-                           johdin_inen, johdin_tOn, johdin_vAinen,
-                           asemosana>  # Jompi ja kumpi.
+                           johdin_inen, johdin_tOn, johdin_vAinen>
                         + @laatutapa_1 + @laatutapa_2 + @johdin_laatutapa;
-
-  if $vasen.$i.luokka = asemosana then
-    ? $vasen.$i.perusmuoto in <"jompi", "kumpi">;
-  end;
 
   ? (voittoaste in $vasen.$i.jatko) or (yliaste in $vasen.$i.jatko);
   ? $oikea.luokka in $vasen.$i.jatko;
@@ -869,38 +863,28 @@ subrule sana1 ($tietue):
 end;
 
 
-subrule sisätulento_Vn_oikein ($sija, $alku, $sana):
-  return (($sija = sisätulento_Vn)
-          and ((($alku matches ".*" + @a) and ($sana matches "an?")) or
-               (($alku matches ".*" + @e) and ($sana matches "en?")) or
-               (($alku matches ".*" + @i) and ($sana matches "in?")) or
-               (($alku matches ".*" + @o) and ($sana matches "on?")) or
-               (($alku matches ".*" + @u) and ($sana matches "un?")) or
-               (($alku matches ".*" + @y) and ($sana matches "yn?")) or
-               (($alku matches ".*" + @ä) and ($sana matches "än?")) or
-               (($alku matches ".*" + @ö) and ($sana matches "ön?"))));
+subrule sisätulento_Vn_oikein ($sija, $ed_kirjain, $sana):
+  return ((($ed_kirjain matches @a) and ($sana matches "an?")) or
+          (($ed_kirjain matches @e) and ($sana matches "en?")) or
+          (($ed_kirjain matches @i) and ($sana matches "in?")) or
+          (($ed_kirjain matches @o) and ($sana matches "on?")) or
+          (($ed_kirjain matches @u) and ($sana matches "un?")) or
+          (($ed_kirjain matches @y) and ($sana matches "yn?")) or
+          (($ed_kirjain matches @ä) and ($sana matches "än?")) or
+          (($ed_kirjain matches @ö) and ($sana matches "ön?")));
 end;
 
 
-subrule sisätulento_hVn_oikein ($sija, $alku, $sana):
-  return (($sija = sisätulento_hVn)
-          and ((($alku matches ".*" + @a) and ($sana matches "han?")) or
-               (($alku matches ".*" + @e) and ($sana matches "hen?")) or
-               (($alku matches ".*" + @i) and ($sana matches "hin?")) or
-               (($alku matches ".*" + @o) and ($sana matches "hon?")) or
-               (($alku matches ".*" + @u) and ($sana matches "hun?")) or
-               (($alku matches ".*" + @y) and ($sana matches "hyn?")) or
-               (($alku matches ".*" + @ä) and ($sana matches "hän?")) or
-               (($alku matches ".*" + @ö) and ($sana matches "hön?")) or
-               (($alku matches ".*'")))); # Parfait'hen yms.
-end;
-
-
-subrule sisätulento_oikein ($sija, $alku, $sana):
-  return (sisätulento_Vn_oikein  ($sija, $alku, $sana) or
-          sisätulento_hVn_oikein ($sija, $alku, $sana) or
-          ($sija = sisätulento_seen) or
-          ($sija = sisätulento_isiin));
+subrule sisätulento_hVn_oikein ($sija, $ed_kirjain, $sana):
+  return ((($ed_kirjain matches @a) and ($sana matches "han?")) or
+          (($ed_kirjain matches @e) and ($sana matches "hen?")) or
+          (($ed_kirjain matches @i) and ($sana matches "hin?")) or
+          (($ed_kirjain matches @o) and ($sana matches "hon?")) or
+          (($ed_kirjain matches @u) and ($sana matches "hun?")) or
+          (($ed_kirjain matches @y) and ($sana matches "hyn?")) or
+          (($ed_kirjain matches @ä) and ($sana matches "hän?")) or
+          (($ed_kirjain matches @ö) and ($sana matches "hön?")) or
+          (($ed_kirjain matches "'"))); # Parfait'hen yms.
 end;
 
 
@@ -1196,7 +1180,6 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"auki">,            <"naida">>, # Auki+nainen.
       <<"auto">,            <"nova">>,  # Auto+novien.
       <<"avo">,             <"nainen">>,
-####      <<"de">,              <"lego", "mono", "sika">>,  # Ei de+lego+iva, de+mono+logi, geo+de+siassa.
       <<"ele">,             <"itä">>,
       <<"elo">,             <"tee">>,
       <<"eri", "esi">,      <"koi">>,   # Eri+koi+sala, esi+kois- (esi + koi + inen).
@@ -1231,7 +1214,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kato">,      <"lila">>,
       <<"kemi">,      <"alli", "joki">>,
       <<"Kim">,       <"maa">>,
-####      <<"koiras">,    <"euro">>,
+      <<"koiras">,    <"euro">>,
       <<"kita">,      <"risti">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"komi">,      <"teko">>,        # Komi+teoille.
@@ -1274,8 +1257,9 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"perso">,     <"nalli">>,
       <<"pihla">,     <"joki">>,
       <<"pois">,      <"pää", "taka", "tuki", "tutti", "tuttu">>,
-      <<"polvinen">,  <"tuki">>,
+      <<"polvinen">,  <"tuki">>,     # Polvis+tuen.
       <<"poli">,      <"klinikka">>, # On oma sanansa.
+      <<"prono">,     <"graafi">>,   # On oma sanansa.
       <<"puh">,       <"tie">>,
       <<"punk">,      <"arka", "kari">>,
       <<"puoli">,     <"nainen">>,  # On oma sanansa.
@@ -1305,7 +1289,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"suu">,       <"tee", "tehdä", "teloa">>,
       <<"syy">,       <"tee">>,
       <<"sävel">,     <"eittää">>,
-##      <<"taide">,     <"luomi">>,
+      <<"taide">,     <"luomi", "luomu">>,
       <<"taulu">,     <"koi", "koittaa">>,
       <<"taus">,      <"takki">>,
       <<"tee">,       <"maa">>,    # Tee+maa+n.
