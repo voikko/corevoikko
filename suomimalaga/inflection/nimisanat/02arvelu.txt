@@ -122,6 +122,7 @@ sisäeronto_istA
 
 sisätulento_ihin
           alan+ko+ihin
+          alan+go+ihin
 
 ulko_olento_illA
           alan+go+illa

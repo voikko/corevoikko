@@ -4735,7 +4735,7 @@ subrule arvelu ($tietue, $param01, $param02):
                          tulento_iksi: <<$param02, <>>>,
                          sisäolento_issA: <<$param02, <>>>,
                          sisäeronto_istA: <<$param02, <>>>,
-                         sisätulento_ihin: <<$param01, <>>>,
+                         sisätulento_ihin: <<$param01, <>>, <$param02, <>>>,
                          ulko_olento_illA: <<$param02, <>>>,
                          ulkoeronto_iltA: <<$param02, <>>>,
                          ulkotulento_ille: <<$param02, <>>>,
