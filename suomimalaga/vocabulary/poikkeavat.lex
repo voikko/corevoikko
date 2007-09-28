@@ -153,7 +153,6 @@
 [perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
 [perusmuoto: "ori", alku: "ori", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "ori", alku: "or", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "orja", alku: "orja", luokka: nimisana, jatko: <johdin_tAr>, äs: a];
 [perusmuoto: "paras", alku: "par", luokka: nimi_laatusana, jatko: <paras>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
@@ -259,7 +258,6 @@
 [perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta
-[perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
 [perusmuoto: "vuosituhat", alku: "vuosituha", luokka: nimisana, jatko: <tuhat>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "vääntää", alku: "vään", luokka: teonsana, jatko: <rakentaa>, äs: ä];
 [perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];

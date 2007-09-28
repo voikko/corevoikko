@@ -383,6 +383,8 @@ vanha_h;     # Valohon-tyyppiset taivutusmuodot, joista Nykysuomen sankirja sano
              # runokielessä h:llisia rinnakkaismuotoja (valoon---valohon,
              # punokoon---punokohon, punottiin---punottihin)."
 
+hd_h0;       # Puhekielinen taivutusmuoto, jossa d on kadonnut (esim. kaksi, kah(d)en).
+
 rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sekä
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.
 

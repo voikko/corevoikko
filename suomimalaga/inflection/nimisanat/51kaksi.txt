@@ -53,6 +53,7 @@ omistusliite
 
 omanto_n
           ka+hde+n
+          ka+he+n  hd_h0
 
 osanto_tA
           ka+h+ta
@@ -62,12 +63,15 @@ olento_nA
 
 tulento_ksi
           ka+hde+ksi
+          ka+he+ksi  hd_h0
 
 sisäolento_ssA
           ka+hde+ssa
+          ka+he+ssa  hd_h0
 
 sisäeronto_stA
           ka+hde+sta
+          ka+he+sta  hd_h0
 
 sisätulento_Vn
           ka+hte+en
@@ -77,18 +81,23 @@ sisätulento_hVn
 
 ulko_olento_llA
           ka+hde+lla
+          ka+he+lla  hd_h0
 
 ulkoeronto_ltA
           ka+hde+lta
+          ka+he+lta  hd_h0
 
 ulkotulento_lle
           ka+hde+lla
+          ka+he+lla  hd_h0
 
 vajanto_ttA
           ka+hde+tta
+          ka+he+tta  hd_h0
 
 nimentö_t
           ka+hde+t
+          ka+he+t  hd_h0
 
 omanto_ien
           ka+ks+ien
@@ -134,6 +143,7 @@ keinonto_in
 
 kerronto_sti
           ka+hde+sti
+          ka+he+sti  hd_h0
 
 voittoaste
 

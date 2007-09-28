@@ -1027,27 +1027,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return yes;
   end;
 
-  # Ei tunnisteta kahteen kertaan sanoja, jotka ovat sekä yleis- että erisnimiä.
-  #
-  if ((($vasen.$i.luokka in $nimet) and
-       ($vasen.$i.perusmuoto in <"Aho", "Alan", "Aro", "Aura", "Autio",
-                                 "Elo", "Halti", "Hanko", "Helmi", "Hovi", "Huhta",
-                                 "Georgia",
-                                 "Ilma", "Ilta", "Impi", "Islanti",
-                                 "Kai", "Kallio", "Kangas", "Karjala", "Kari", "Koivu", "Kroatia",
-                                 "Kukka", "Kuokka", "Kurki", "Kytö",
-                                 "Laakso", "Lehto", "Lempi",
-                                 "Maa", "Malmi", "Matti", "Manner", "Marja", "Meri",
-                                 "Niemi", "Pohja", "Raitio", "Ranta", "Rauha", "Ruusu",
-                                 "Salo", "Satu", "Sini", "Soini", "Somero", "Sulo",
-                                 "Taisto", "Taimi", "Tikka", "Toimi", "Toivo", "Tuisku", "Tuuli",
-                                 "Valta", "Varis", "Vasara", "Viita">)) or
-      (($oikea.luokka in <paikannimi, sukunimi, nimi>) and
-       ($oikea.perusmuoto in <"Järvi", "Lahti", "Maa", "Meri", "Niemi", "Saari", "Turkki", "Virta">))) then
-    return no;
-  end;
-
-
   # Hyväksytään yhdyssanat etunimi|sukunimi + vainaja (esim väisäsvainaja).
   #
   if (($vasen.$i.luokka in <etunimi, sukunimi>) and

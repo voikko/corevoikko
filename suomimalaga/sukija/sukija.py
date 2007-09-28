@@ -76,8 +76,9 @@ pattern = u"^(?P<alku>.*)(?:" + \
           u"(?P<resoluutio>Cuutio)|" + \
           u"(?P<illuusio>Cuusio)|" + \
           u"(?P<traditio>Citio)|" + \
+	  u"(?P<funktio>.ktio)|" + \
 	  u"(?P<symboli_ym>[^aeouyäö]o[dfglmnrv]i)|" + \
-	  u"(?P<balladi>...adi)|" + \
+	  u"(?P<balladi>..adi)|" + \
 	  u"(?P<logia_ym>gogia|logia|sofia)|" + \
 	  u"(?P<loginen_ym>goginen|loginen|sofinen)|" + \
 	  u"(?P<grafia>grafia)|" + \
@@ -343,11 +344,15 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		malaga_vtype = new_vtype (malaga_vtype, wordform)
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if alku == None:
-			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, u"#Malaga class not found for (%s, %s)\n" \
+			generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, \
+							u"#Malaga class not found for (%s, %s)\n" \
 			                   % (wordform, voikko_infclass))
 			continue
 
 		# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
+		# Sukijassa ei tarvita erisnimiä, jotka ovat myös yleisnimiä.
+		# Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka taipuvat
+		# eri tavalla yleis- ja erisniminä. Esim. Lempi, Lempin; lempi, lemmen.
 		#
 		if (wordform in [u"elämä",
 				 u"itkettynyt", u"itkettyä",
@@ -357,7 +362,23 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				 u"opetus", u"otto",
 				 u"täysihoito", u"täysihoitola",
 				 u"voima", u"väärinkäsitys",
-				 u"ylösnoussut"]):
+				 u"ylösnoussut",
+				 
+				 u"Aho", u"Aro", u"Aura", u"Aurinko", u"Autio",
+                                 u"Elo",
+                                 u"Georgia",
+				 u"Hanko", u"Hovi", u"Huhta",
+                                 u"Ilma", u"Ilta", u"Islanti",
+				 u"Järvi",
+                                 u"Kallio", u"Kangas", u"Karjala", u"Kari", u"Koivu", u"Kroatia",
+                                 u"Kukka", u"Kuokka", u"Kurki", u"Kytö",
+                                 u"Laakso", u"Lahti", u"Lehto",
+                                 u"Maa", u"Malmi", u"Matti", u"Marja",
+                                 u"Niemi", u"Pohja", u"Raitio", u"Ranta", u"Rauha", u"Ruusu",
+                                 u"Saari", u"Saksa", u"Salo", u"Satu", u"Sini", u"Somero", u"Sulo", u"Säde",
+				 u"Ranska",
+                                 u"Taimi", u"Taisto", u"Tikka", u"Toivo", u"Tuisku", u"Turkki", u"Tuuli",
+				 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta"]):
 #			print ("Ei tarvita: " + wordform + u"\n")
 			continue
 		
@@ -551,20 +572,20 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			alku4 = wordform[:-4] + u"sio"      # Illusio.
 			jatko4 = jatko
 			wordform4 = alku4
-		elif ((nsyl > 3) and (jatko == u"autio") and
-		      (rx != None) and (d != None) and (d['traditio'] != None)):
+		elif ((nsyl > 2) and (jatko == u"autio") and
+		      (rx != None) and (d != None) and ((d['traditio'] != None) or (d['funktio'] != None))):
 			#
 			# Traditio => traditsioni, traditsiooni, traditsio.
 			#
-			alku2 = wordform[:-2] + u"sion"    # Traditsioni.
+			alku2 = wordform[:-2] + u"sion"    # Traditsioni, funktsioni.
 			jatko2 = u"paperi"
 			wordform2 = alku2 + u"i"
 
-			alku3 = wordform[:-2] + u"sioon"   # Traditsiooni.
+			alku3 = wordform[:-2] + u"sioon"   # Traditsiooni, funktsiooni.
 			jatko3 = u"paperi"
 			wordform3 = alku2 + u"i"
 			
-			alku4 = wordform[:-2] + u"sio"      # Traditsio.
+			alku4 = wordform[:-2] + u"sio"      # Traditsio, funktsio.
 			jatko4 = jatko
 			wordform4 = alku4
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['symboli_ym'] != None) and
