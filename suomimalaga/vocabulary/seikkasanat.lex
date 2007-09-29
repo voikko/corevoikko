@@ -512,6 +512,7 @@
 [perusmuoto: "nokikkain", alku: "nokikkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "noloissaan", alku: "noloissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "nonstop", alku: "nonstop", luokka: seikkasana, jatko: <kalsium>, äs: a, rakenne: "=ppp=pppp"];
+[perusmuoto: "nopeiten", alku: "nopeiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # OK Kotuksen mukaan
 [perusmuoto: "nukuksiin", alku: "nukuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nukuksissa", alku: "nukuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nurin", alku: "nurin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

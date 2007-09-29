@@ -49,6 +49,7 @@
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)
 
+[alku: "alt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "ASCII", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjjj"];
 [alku: "ctrl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
@@ -88,6 +89,7 @@
 [alku: "SSH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "ssh", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
+[alku: "URI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, tiedot: <atk>, rakenne: "=jjj"];
 [alku: "URL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>, rakenne: "=jjj"];
 [alku: "UTF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "vis5d", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
