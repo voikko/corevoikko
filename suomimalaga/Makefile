@@ -1,5 +1,9 @@
 
 PYTHON=python
+DESTDIR=/usr/lib/voikko
+
+# Optional vocabulary files
+OPTIONAL_LEX=atk-lyhenteet po-oikoluku
 
 # Source files for Sukija version.
 SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
@@ -18,7 +22,7 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro common/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          common/hfconv.py common/generate_lex_common.py \
-         $(SUKIJA_SRC) vocabulary/erikoisalat/atk-lyhenteet.lex
+         $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX))
 
 VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
 	voikko/voikko-fi_FI.sym_?
@@ -108,9 +112,6 @@ voikko/transmit: common/transmit.cc
 	g++ -g common/transmit.cc -o voikko/transmit
 
 voikko-install: voikko
-ifndef DESTDIR
-	$(error DESTDIR must be specified)
-endif
 	install -m 755 -d $(DESTDIR)
 	install -m 644 $(VOIKKO_BINDIST) $(DESTDIR)
 

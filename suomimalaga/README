@@ -48,7 +48,8 @@ Supported Make targets
   Builds the binary files needed by libvoikko.
 - voikko-install DESTDIR=/usr/lib/voikko
   Installs the binary files needed by libvoikko to the directory
-  specified by DESTDIR.
+  specified by DESTDIR. DESTDIR is optional and defaults to
+  /usr/lib/voikko
 - voikko-preprocessed-l-gzip
   Builds the partial source package that contains only binaries
   and sources that are needed to create custom vocabulary files
