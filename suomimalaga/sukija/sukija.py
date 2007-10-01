@@ -88,6 +88,7 @@ pattern = u"^(?P<alku>.*)(?:" + \
 	  u"(?P<relatiivinen>tiivinen)|" + \
 	  u"(?P<aarteisto>eistO)|" + \
 	  u"(?P<keltainen>C[aouyäö]i?nen)|" + \
+	  u"(?P<antautua>CAUtUA)|" + \
 	  u"(?P<maineikas>[mntv]eikAs)" + \
           u")$"
 
@@ -350,9 +351,13 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			continue
 
 		# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
+		#
 		# Sukijassa ei tarvita erisnimiä, jotka ovat myös yleisnimiä.
 		# Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka taipuvat
 		# eri tavalla yleis- ja erisniminä. Esim. Lempi, Lempin; lempi, lemmen.
+		#
+		# Sanaluettelon saa näin:
+		# grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
 		#
 		if (wordform in [u"elämä",
 				 u"itkettynyt", u"itkettyä",
@@ -360,25 +365,28 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				 u"käynti", u"lyönti",
 				 u"maallistua", # Johdetaan: maallistaa -> maallistua.
 				 u"opetus", u"otto",
+				 u"rivittyä",   # Johdetaan: rivittää -> rivittyä.
 				 u"täysihoito", u"täysihoitola",
 				 u"voima", u"väärinkäsitys",
 				 u"ylösnoussut",
 				 
-				 u"Aho", u"Aro", u"Aura", u"Aurinko", u"Autio",
-                                 u"Elo",
-                                 u"Georgia",
+				 u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
+                                 u"Eesti", u"Elo", u"Eno", u"Espanja", u"Esteri",
+                                 u"Georgia", u"Guinea",
 				 u"Hanko", u"Hovi", u"Huhta",
                                  u"Ilma", u"Ilta", u"Islanti",
 				 u"Järvi",
-                                 u"Kallio", u"Kangas", u"Karjala", u"Kari", u"Koivu", u"Kroatia",
+                                 u"Kallio", u"Kangas", u"Karjala", u"Kari", u"Koivu", u"Koski", u"Kroatia",
                                  u"Kukka", u"Kuokka", u"Kurki", u"Kytö",
                                  u"Laakso", u"Lahti", u"Lehto",
                                  u"Maa", u"Malmi", u"Matti", u"Marja",
-                                 u"Niemi", u"Pohja", u"Raitio", u"Ranta", u"Rauha", u"Ruusu",
+                                 u"Niemi", u"Norja",
+				 u"Pohja", u"Puola",
+				 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Ruotsi", u"Ruusu",
                                  u"Saari", u"Saksa", u"Salo", u"Satu", u"Sini", u"Somero", u"Sulo", u"Säde",
-				 u"Ranska",
-                                 u"Taimi", u"Taisto", u"Tikka", u"Toivo", u"Tuisku", u"Turkki", u"Tuuli",
-				 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta"]):
+                                 u"Taimi", u"Taisto", u"Tanska", u"Tikka", u"Toivo", u"Tuisku", u"Turkki", u"Tuuli",
+				 u"Ukraina",
+				 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta", u"Visa"]):
 #			print ("Ei tarvita: " + wordform + u"\n")
 			continue
 		
@@ -485,6 +493,9 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				alku = alku + u"is"
 				wordform2 = alku2 + wordform[-2:]
 #				print("N2 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
+		elif ((nsyl == 4) and (rx != None) and (d != None) and (d['antautua'] != None) and (jatko != u"antautua")):
+			jatko = u"antautua"
+#			print (u"Antautua " + wordform);
 		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
 			jatko = u"ajaa"
 		elif (jatko in [u"asiakas", u"avokas"]):

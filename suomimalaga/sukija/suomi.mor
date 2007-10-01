@@ -1170,6 +1170,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"halti">,     <"joki">>,     # Halti+joiksi.
       <<"hara">,      <"voi", "voida", "vuo">>,
       <<"harras">,    <"teli">>,
+      <<"hauta">,     <"usma">>,
       <<"heila">,     <"utu">>,
       <<"heinä">,     <"tupo">>,
       <<"helve">,     <"tilli">>,
@@ -1200,6 +1201,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"korni">,     <"lovi">>,        # Korni+lovi(n).
       <<"koti", "kotiin">, <"pää">>,    # Kotiinpäin.
       <<"krim">,           <"naali">>,  # Krimi+naali.
+      <<"kuiva">,          <"usma">>,   # Kuiva+usma+ssa.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luja", "luksus", "luminen", "luu">>,
       <<"kymmen">,    <"vuota">>,
@@ -1224,12 +1226,14 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"moni">,      <"naida", "nainen", "tora", "tori">>,
       <<"musti">,     <"koi", "koettaa">>,
       <<"nomi">,      <"suu">>,
+      <<"ohja">,      <"usma">>,
       <<"onninen">,   <"tuttu">>,
       <<"ope">,       <"reti">>,
       <<"oppinen">,   <"ääntö">>,
       <<"orto">,      <"peti">>,
       <<"Osta">,      <"maa">>,
       <<"Pal", "Pál">, <"joki", "maa", "meri">>,
+      <<"pala">,      <"usma">>,
       <<"peli">,      <"manni">>,
       <<"perin">,     <"tee">>,   # Perin+tee(llinen).
       <<"peru">,      <"noki">>,  # Peru+noissa.
@@ -1249,6 +1253,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"pyy">,       <"tee">>,   # Pyy+tee+llinen.
       <<"päällys">,   <"tie">>,   # Päällysteinen (päällys + tie + inen).
       <<"rad">,       <"kaali">>,
+      <<"raitti">,    <"usma">>,
       <<"ratsas">,    <"tapa", "tavi", "tele", "teli", "tikki">>,
       <<"rauni">,     <"ottaa">>,      # Rauni+ota
       <<"re">,        <"aktio", "väkä">>,
@@ -1259,6 +1264,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"samainen">,  <"tuta">>,
       <<"samu">,      <"raita">>,
       <<"sankar">,    <"ien", "itara", "naida">>,  # Sankar+itarina. Sankar+nainen ei ole sankar+naida.
+      <<"sauma">,     <"usma">>,
       <<"sivula">,    <"usea">>,
       <<"snellman">,  <"laki">>,
       <<"soinen">,    <"aari">>,
@@ -1269,6 +1275,8 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"syy">,       <"tee">>,
       <<"sävel">,     <"eittää">>,
       <<"taide">,     <"luomi", "luomu">>,
+      <<"talo">,      <"usma">>,
+      <<"tasa">,      <"uni">>,
       <<"taulu">,     <"koi", "koittaa">>,
       <<"taus">,      <"takki">>,
       <<"tee">,       <"maa">>,    # Tee+maa+n.
