@@ -15,13 +15,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-# Seikkasanat
+# Seikkasanat.
 
 # Jatko-kentässä sallittuja ovat ainoastaan seuraavat:
 # "loppu", "liitesana", "omistusliite" ja sijapäätteet.
 # Huomaa, että sijapäätteiden (esim. sisäolento_ssA) jälkeen hyväksytään
 # automaattisesti myös omistusliite tai liitepartikkeli. Tästä syystä
 # sijapäätteet sopivat vain sanoille, joita voi käyttää substantiivien tavoin.
+#
+# Jos sanalla on useampi kuin yksi taivutusmuoto (esim. vieraisilla,
+# vieraisille, vieraisilta), perusmuodoksi laitetaan joko
+# ulko_olento_llA (jos se on olemassa) tai sisäolento_ssA, ja
+# substantiiveista johdetuille sti-päätteisille seikkasanoille
+# asetetaan perusmuodoksi nominatiivi/nimentö (esim. hitosti:
+# perusmuoto: hitto). Adjektiiveista johdetut sti-päätteiset
+# seikkasanat tunnistetaan automattisesti eli niitä ei tarvitse lisätä
+# sanastoon.
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -125,9 +134,9 @@
 [perusmuoto: "halleluja", alku: "halleluj", luokka: seikkasana, jatko: <koira>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
-[perusmuoto: "haltioihin", alku: "haltioihi", luokka: seikkasana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "haltioissa", alku: "haltioihi", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "haltioissa", alku: "haltioissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
-[perusmuoto: "hamaan", alku: "hamaan", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "hamassa", alku: "hamaan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "hamassa", alku: "hamassa", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "hamassa", alku: "hamasta", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "harvaan", alku: "harvaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -163,13 +172,14 @@
 [perusmuoto: "hissunkissun", alku: "hissunkissun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "hitto", alku: "hitosti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hollilla", alku: "hollilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "hollille", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hollilla", alku: "hollille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "housusilla", alku: "housus", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "housusillaan", alku: "housusilla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
-[perusmuoto: "housusilleen", alku: "housusille", luokka: seikkasana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "housusilla", alku: "housusilla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "housusilla", alku: "housusille", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "huiskin", alku: "huiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujakassa", alku: "hujaka", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "hujakoilla", alku: "hujakoilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hujakoilta", alku: "hujakoilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujakoilla", alku: "hujakoille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujan", alku: "hujan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -190,8 +200,8 @@
 [perusmuoto: "hyväksi", alku: "hyväkse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyvänen", alku: "hyvänen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "hyvänsä", alku: "hyvänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "hyvänään", alku: "hyvänä", luokka: seikkasana, jatko: <omistusliite>, äs: ä]; # "pidä hyvänäsi"
-[perusmuoto: "hämille", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "hyvänään", alku: "hyvänä", luokka: seikkasana, jatko: <omistusliite>, äs: ä]; # "Pidä hyvänäsi."
+[perusmuoto: "hämillä", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hämillä", alku: "hämillä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "häthätää", alku: "häthätää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
 [perusmuoto: "höplästä", alku: "höplästä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -674,19 +684,22 @@
 [perusmuoto: "satamäärin", alku: "satamäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "sattumoisin", alku: "sattumoisin", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "seassa", alku: "sea", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
+[perusmuoto: "seassa", alku: "seka", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "seisaalla", alku: "seisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "sekaan", alku: "seka", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
+[perusmuoto: "seisoalla", alku: "seisoa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "selin", alku: "selin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "selville", alku: "selville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "selvillä", alku: "selville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "selvillä", alku: "selvillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "semminkin", alku: "semminkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "semminkin", alku: "semminkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "senjälkeen", alku: "senjälkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "sentään", alku: "sentään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sielläpäin", alku: "sielläpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "sieltäpäin", alku: "sieltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "siis", alku: "siis", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikin", alku: "sikin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikseen", alku: "sikseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "sikseen", alku: "siksensä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "siksi", alku: "siksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikäli", alku: "sikäli", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "silleen", alku: "silleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -727,7 +740,7 @@
 [perusmuoto: "suppu", alku: "supu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA, ulko_olento_llA, ulkotulento_lle>, äs: a];
 [perusmuoto: "surku", alku: "surku", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suurelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "suutuksiin", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "suutuksissa", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuspäissä", alku: "suutuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "syksympänä", alku: "syksym", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
@@ -887,11 +900,12 @@
 [perusmuoto: "verrattain", alku: "verrattain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "via", alku: "via", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "vielä", alku: "vielä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vieraisilla", alku: "vieraisi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "vieraisille", alku: "vieraisille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vieraisilla", alku: "vieraisilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vieraisilla", alku: "vieraisille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vieraisilla", alku: "vieraisilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vierekkäin", alku: "vierekkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vieretysten", alku: "vieretysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vieritse", alku: "vieritse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vieri", alku: "vieritse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vihdoin", alku: "vihdoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "viimein", alku: "viimein", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "viimeistään", alku: "viimeistään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -911,8 +925,8 @@
 [perusmuoto: "väijyksissä", alku: "väijyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "väkisin", alku: "väkisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "väli", alku: "välitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vängällä", alku: "vängällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # Väen vängällä
-[perusmuoto: "väsyksiin", alku: "väsyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vängällä", alku: "vängällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # Väen vängällä.
+[perusmuoto: "väsyksissä", alku: "väsyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "väsyksissä", alku: "väsyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "vääjäämättä", alku: "vääjäämä", luokka: seikkasana, jatko: <vajanto_ttA>, äs: ä];
 [perusmuoto: "väärin", alku: "väärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

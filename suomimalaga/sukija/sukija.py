@@ -100,6 +100,44 @@ rx = re.compile(pattern, re.IGNORECASE)
 
 #print pattern
 
+# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
+#
+# Sukijassa ei tarvita erisnimiä, jotka ovat myös yleisnimiä.
+# Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka taipuvat
+# eri tavalla yleis- ja erisniminä. Esim. Lempi, Lempin; lempi, lemmen.
+#
+# Sanaluettelon saa näin:
+# grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
+#
+words = [u"elämä",
+	 u"itkettynyt", u"itkettyä",
+	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
+	 u"käynti", u"lyönti",
+	 u"maallistua", # Johdetaan: maallistaa -> maallistua.
+	 u"opetus", u"otto",
+	 u"rivittyä",   # Johdetaan: rivittää -> rivittyä.
+	 u"täysihoito", u"täysihoitola",
+	 u"voima", u"väärinkäsitys",
+	 u"ylösnoussut",
+	 u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
+	 u"Eesti", u"Elo", u"Eno", u"Espanja", u"Esteri",
+	 u"Georgia", u"Guinea",
+	 u"Hanko", u"Hovi", u"Huhta",
+	 u"Ilma", u"Ilta", u"Islanti",
+	 u"Järvi",
+	 u"Kallio", u"Kangas", u"Karjala", u"Kari", u"Koivu", u"Koski", u"Kreikka", u"Kroatia",
+	 u"Kukka", u"Kuokka", u"Kurki", u"Kytö",
+	 u"Laakso", u"Lahti", u"Lehto",
+	 u"Maa", u"Malmi", u"Matti", u"Marja",
+	 u"Niemi", u"Norja",
+	 u"Pohja", u"Puola",
+	 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Ruotsi", u"Ruusu",
+	 u"Saari", u"Saksa", u"Salo", u"Satu", u"Sini", u"Somero", u"Sulo", u"Säde",
+	 u"Taimi", u"Taisto", u"Tanska", u"Tikka", u"Toivo", u"Tuisku", u"Turkki", u"Tuuli",
+	 u"Ukraina",
+	 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta", u"Visa"]
+
+
 # Aksentilliset kirjaimet UTF-8 -merkistössä 0000-017F,
 # ei kuitenkaan merkkejä š ja ž.
 #
@@ -359,34 +397,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		# Sanaluettelon saa näin:
 		# grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
 		#
-		if (wordform in [u"elämä",
-				 u"itkettynyt", u"itkettyä",
-				 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
-				 u"käynti", u"lyönti",
-				 u"maallistua", # Johdetaan: maallistaa -> maallistua.
-				 u"opetus", u"otto",
-				 u"rivittyä",   # Johdetaan: rivittää -> rivittyä.
-				 u"täysihoito", u"täysihoitola",
-				 u"voima", u"väärinkäsitys",
-				 u"ylösnoussut",
-				 
-				 u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
-                                 u"Eesti", u"Elo", u"Eno", u"Espanja", u"Esteri",
-                                 u"Georgia", u"Guinea",
-				 u"Hanko", u"Hovi", u"Huhta",
-                                 u"Ilma", u"Ilta", u"Islanti",
-				 u"Järvi",
-                                 u"Kallio", u"Kangas", u"Karjala", u"Kari", u"Koivu", u"Koski", u"Kroatia",
-                                 u"Kukka", u"Kuokka", u"Kurki", u"Kytö",
-                                 u"Laakso", u"Lahti", u"Lehto",
-                                 u"Maa", u"Malmi", u"Matti", u"Marja",
-                                 u"Niemi", u"Norja",
-				 u"Pohja", u"Puola",
-				 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Ruotsi", u"Ruusu",
-                                 u"Saari", u"Saksa", u"Salo", u"Satu", u"Sini", u"Somero", u"Sulo", u"Säde",
-                                 u"Taimi", u"Taisto", u"Tanska", u"Tikka", u"Toivo", u"Tuisku", u"Turkki", u"Tuuli",
-				 u"Ukraina",
-				 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta", u"Visa"]):
+		if (wordform in words):
 #			print ("Ei tarvita: " + wordform + u"\n")
 			continue
 		
