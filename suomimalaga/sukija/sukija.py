@@ -110,16 +110,19 @@ rx = re.compile(pattern, re.IGNORECASE)
 # grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
 #
 words = [u"elämä",
+	 u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
 	 u"itkettynyt", u"itkettyä",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 	 u"käynti", u"lyönti",
 	 u"maallistua", # Johdetaan: maallistaa -> maallistua.
 	 u"opetus", u"otto",
 	 u"rivittyä",   # Johdetaan: rivittää -> rivittyä.
+	 u"sisäänajo", u"sisäänmeno", u"sisääntulo",
 	 u"täysihoito", u"täysihoitola",
 	 u"voima", u"väärinkäsitys",
 	 u"ylösnoussut",
 	 u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
+	 u"Bulgaria",
 	 u"Eesti", u"Elo", u"Eno", u"Espanja", u"Esteri",
 	 u"Georgia", u"Guinea",
 	 u"Hanko", u"Hovi", u"Huhta",
@@ -130,11 +133,11 @@ words = [u"elämä",
 	 u"Laakso", u"Lahti", u"Lehto",
 	 u"Maa", u"Malmi", u"Matti", u"Marja",
 	 u"Niemi", u"Norja",
-	 u"Pohja", u"Puola",
+	 u"Pohja", u"Portugali", u"Puola",
 	 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Ruotsi", u"Ruusu",
-	 u"Saari", u"Saksa", u"Salo", u"Satu", u"Sini", u"Somero", u"Sulo", u"Säde",
-	 u"Taimi", u"Taisto", u"Tanska", u"Tikka", u"Toivo", u"Tuisku", u"Turkki", u"Tuuli",
-	 u"Ukraina",
+	 u"Saari", u"Saksa", u"Salo", u"Satu", u"Sini", u"Somero", u"Sulo", u"Suomi", u"Säde",
+	 u"Taimi", u"Taisto", u"Tanska", u"Tikka", u"Toivo", u"Tšekki", u"Tuisku", u"Turkki", u"Tuuli",
+	 u"Ukraina", u"Unkari",
 	 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta", u"Visa"]
 
 
@@ -387,17 +390,12 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 							u"#Malaga class not found for (%s, %s)\n" \
 			                   % (wordform, voikko_infclass))
 			continue
-
-		# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
-		#
-		# Sukijassa ei tarvita erisnimiä, jotka ovat myös yleisnimiä.
-		# Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka taipuvat
-		# eri tavalla yleis- ja erisniminä. Esim. Lempi, Lempin; lempi, lemmen.
-		#
-		# Sanaluettelon saa näin:
-		# grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
-		#
+		
 		if (wordform in words):
+#			print ("Ei tarvita: " + wordform + u"\n")
+			continue
+		if (((wordform == u"neitsyt") and (jatko == u"airut")) or
+		    ((wordform == u"ori")     and (jatko == u"risti"))):
 #			print ("Ei tarvita: " + wordform + u"\n")
 			continue
 		

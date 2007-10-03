@@ -75,25 +75,6 @@ allo_rule generate_allos ($tietue1):
 #  define $b := transmit ("Tavutus2 " + $tietue1.perusmuoto + " " + tavutus($tietue1.perusmuoto));
 #end;
 
-  if ($malli = sukija) then
-    if ($tietue1.jatko_sukija /= nil) then
-      $tietue1 :=+ [jatko: $tietue1.jatko_sukija];
-    end;
-    if ($tietue1.alku_sukija /= nil) then
-      $tietue1 :=+ [alku: $tietue1.alku_sukija];
-    end;
-  end;
-
-  if ($malli = voikko) then
-    if ($tietue1.jatko_voikko /= nil) then
-      $tietue1 :=+ [jatko: $tietue1.jatko_voikko];
-    end;
-    if ($tietue1.alku_voikko /= nil) then
-      $tietue1 :=+ [alku: $tietue1.alku_voikko];
-    end;
-  end;
-
-
   assert (value_type($tietue1) = record);
 
   define $tietuelista := <$tietue1>;
@@ -115,32 +96,6 @@ allo_rule generate_allos ($tietue1):
       $tietuelista := <$tietue1, $tietue2>;
     end;
 
-
-    # Korjataan alku-kenttien arvoja. Nämä pitäisi tehdä, kun
-    # generoidaan XML-tiedostosta Malaga-koodia.
-    #
-    if ((rakentaa in $tietue1.jatko) and
-        ($tietue1.alku matches ".*[aeiouyäö]" : $alku, "n" : $loppu)) then
-      $tietue1.alku := $alku;
-      $tietuelista := <$tietue1>;
-    end;
-    if ((harteet in $tietue1.jatko) and ($tietue1.perusmuoto = "harteet")) then
-      $tietue1.alku := "hart";
-      $tietuelista := <$tietue1>;
-    end;
-    if (((airut in $tietue1.jatko) and ($tietue1.perusmuoto = "neitsyt")) or
-        ((risti in $tietue1.jatko) and ($tietue1.perusmuoto = "ori"))) then
-      stop;
-    end;
-
-    # Nämä tunnistetaan etuliite + sana -yhdistelminä.
-    #
-    if (($tietue1.perusmuoto /= nil) and
-        (($tietue1.perusmuoto matches "herras(kartano|mies|poika|väki)") or
-         ($tietue1.perusmuoto matches "sisään(ajo|meno|tulo)"))) then
-      stop;
-    end;
-
     # Nämä sanat voivat olla myös erillisinä sanoina.
     #
     if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
@@ -159,6 +114,11 @@ allo_rule generate_allos ($tietue1):
         $tietue1.tiedot :=+ <ei_inen>;
       end;
       $tietue1.tiedot :=- <ysj>;
+      $tietuelista := <$tietue1>;
+    end;
+
+    if ($tietue1.luokka = etuliite) then
+      $tietue1.jatko := set ($tietue1.jatko);
       $tietuelista := <$tietue1>;
     end;
   end;
