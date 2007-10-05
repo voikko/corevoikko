@@ -100,11 +100,13 @@ rx = re.compile(pattern, re.IGNORECASE)
 
 #print pattern
 
-# Nämä sanat tunnistetaan Sukija-versiossa automaagisesti.
+# Sanat, jotka tunnistetaan Sukija-versiossa automaagisesti toisten
+# sanojen johdoksina.
 #
-# Sukijassa ei tarvita erisnimiä, jotka ovat myös yleisnimiä.
-# Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka taipuvat
-# eri tavalla yleis- ja erisniminä. Esim. Lempi, Lempin; lempi, lemmen.
+# Niiden lisäksi Sukijassa ei tarvita erisnimiä, jotka ovat myös
+# yleisnimiä. Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka
+# taipuvat eri tavalla yleis- ja erisniminä. Esim. Lempi, Lempin;
+# lempi, lemmen.
 #
 # Sanaluettelon saa näin:
 # grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
@@ -113,14 +115,15 @@ words = [u"elämä",
 	 u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
 	 u"itkettynyt", u"itkettyä",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
-	 u"käynti", u"lyönti",
-	 u"maallistua", # Johdetaan: maallistaa -> maallistua.
+	 u"kansallismielinen", u"käynti",
+	 u"lyönti",
+	 u"maallistua",
 	 u"opetus", u"otto",
-	 u"rivittyä",   # Johdetaan: rivittää -> rivittyä.
+	 u"rivittyä",
 	 u"sisäänajo", u"sisäänmeno", u"sisääntulo",
 	 u"täysihoito", u"täysihoitola",
-	 u"voima", u"väärinkäsitys",
-	 u"ylösnoussut",
+	 u"vajaamielinen", u"voima", u"väärinkäsitys",
+	 u"ylösnoussut", u"ystävällismielinen",
 	 u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
 	 u"Bulgaria",
 	 u"Eesti", u"Elo", u"Eno", u"Espanja", u"Esteri",
@@ -128,10 +131,10 @@ words = [u"elämä",
 	 u"Hanko", u"Hovi", u"Huhta",
 	 u"Ilma", u"Ilta", u"Islanti",
 	 u"Järvi",
-	 u"Kallio", u"Kangas", u"Karjala", u"Kari", u"Koivu", u"Koski", u"Kreikka", u"Kroatia",
+	 u"Kallio", u"Kangas", u"Kannus", u"Karjala", u"Kari", u"Koivu", u"Koski", u"Kreikka", u"Kroatia",
 	 u"Kukka", u"Kuokka", u"Kurki", u"Kytö",
-	 u"Laakso", u"Lahti", u"Lehto",
-	 u"Maa", u"Malmi", u"Matti", u"Marja",
+	 u"Laakso", u"Lahti", u"Lehto", u"Lintunen",
+	 u"Maa", u"Malmi", u"Marja", u"Matti",
 	 u"Niemi", u"Norja",
 	 u"Pohja", u"Portugali", u"Puola",
 	 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Ruotsi", u"Ruusu",
@@ -139,7 +142,6 @@ words = [u"elämä",
 	 u"Taimi", u"Taisto", u"Tanska", u"Tikka", u"Toivo", u"Tšekki", u"Tuisku", u"Turkki", u"Tuuli",
 	 u"Ukraina", u"Unkari",
 	 u"Valta", u"Varis", u"Vasara", u"Venäjä", u"Viita", u"Virta", u"Visa"]
-
 
 # Aksentilliset kirjaimet UTF-8 -merkistössä 0000-017F,
 # ei kuitenkaan merkkejä š ja ž.
@@ -305,9 +307,9 @@ def write_word_without_accents(main_vocabulary, vocabulary_files, word, entry, w
 	if ((rx_accents.search(wordform) != None) and (wordform != u"šakki")):
 		n = entry.find(u" luokka: ")
 		if (n == -1):
-			print("write_word_without_accents: Virhe Malaga-koodissa väärin: " + entry + u"\n")
+			print("write_word_without_accents: Virhe Malaga-koodissa: " + entry + u"\n")
 		entry2 = deaccent (entry, 0, n)
-#		print (entry2 + u"\n")
+#		print (entry  + entry2 + u"\n")
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry2)
 
 
@@ -323,30 +325,33 @@ def new_vtype (malaga_vtype, wordform):
 	
 
 def handle_word(main_vocabulary,vocabulary_files,word):
-	# Get the inflection class. Exactly one inflection class is needed
+	# Get the inflection class. Exactly one inflection class is needed.
 	infclasses = word.getElementsByTagName("infclass")
 	voikko_infclass = None
 	for infclass in word.getElementsByTagName("infclass"):
 		if infclass.getAttribute("type") == "historical":
 			voikko_infclass = generate_lex_common.tValue(infclass)
 			break
-
-	if voikko_infclass == u"antautua":
-		voikko_infclass = u"antautua-av1"
-	elif voikko_infclass == u"kaihtaa":
-		voikko_infclass = u"kaihtaa-av1"
-	elif voikko_infclass == u"laittaa":
-		voikko_infclass = u"laittaa-av1"
-	elif voikko_infclass == u"paahtaa":
-		voikko_infclass = u"paahtaa-av1"
-	elif voikko_infclass == u"taittaa":
-		voikko_infclass = u"taittaa-av1"
-	elif voikko_infclass == u"veranta":
-		voikko_infclass = u"veranta-av1"
-	elif voikko_infclass == u"vihanta":
-		voikko_infclass = u"vihanta-av1"
-	elif voikko_infclass == u"virkkaa":
-		voikko_infclass = u"virkkaa-av1"
+	if (voikko_infclass in [u"antautua", u"kaihtaa", u"laittaa", u"paahtaa",
+				u"taittaa", u"veranta", u"vihanta", u"virkkaa"]):
+		voikko_infclass = voikko_infclass + u"-av1"
+	
+#	if voikko_infclass == u"antautua":
+#		voikko_infclass = u"antautua-av1"
+#	elif voikko_infclass == u"kaihtaa":
+#		voikko_infclass = u"kaihtaa-av1"
+#	elif voikko_infclass == u"laittaa":
+#		voikko_infclass = u"laittaa-av1"
+#	elif voikko_infclass == u"paahtaa":
+#		voikko_infclass = u"paahtaa-av1"
+#	elif voikko_infclass == u"taittaa":
+#		voikko_infclass = u"taittaa-av1"
+#	elif voikko_infclass == u"veranta":
+#		voikko_infclass = u"veranta-av1"
+#	elif voikko_infclass == u"vihanta":
+#		voikko_infclass = u"vihanta-av1"
+#	elif voikko_infclass == u"virkkaa":
+#		voikko_infclass = u"virkkaa-av1"
 	
 	if voikko_infclass == None:
 		for infclass in word.getElementsByTagName("infclass"):
@@ -715,7 +720,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			   generate_lex_common.get_structure(altform, malaga_word_class))
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
 		
-##		write_word_without_accents(main_vocabulary, vocabulary_files, word, entry, wordform)
+		write_word_without_accents(main_vocabulary, vocabulary_files, word, entry, wordform)
 
 		
 		if (len(wordform2) > 0):

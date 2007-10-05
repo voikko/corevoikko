@@ -81,20 +81,7 @@ allo_rule generate_allos ($tietue1):
 
 
   if ($malli = sukija) then
-    define $tavujen_lkm := tavujen_määrä ($tietue1.perusmuoto);
-
-    # Korvataan aksentilliset merkit aksentittomilla (esim. Linné => Linne).
-    #
-    if (($tietue1.perusmuoto /= nil) and
-        ($tietue1.perusmuoto matches ".*[" + @aksenttimerkki + "]+.*")) then
-      define $tietue2 := $tietue1;
-      $tietue2 :=+ [lähtösana: $tietue1.perusmuoto];
-      $tietue2.alku       := tr ($tietue2.alku,       @aksenttimerkki, @korvausmerkki);
-      $tietue2.perusmuoto := tr ($tietue2.perusmuoto, @aksenttimerkki, @korvausmerkki);
-#define $a := transmit ($tietue1);
-#define $b := transmit ($tietue2);
-      $tietuelista := <$tietue1, $tietue2>;
-    end;
+#    define $tavujen_lkm := tavujen_määrä ($tietue1.perusmuoto);
 
     # Nämä sanat voivat olla myös erillisinä sanoina.
     #

@@ -109,13 +109,15 @@ sub xprint
 {
   my $s = shift @_;
 
-#print "# xprint\n";
+#print "\n# xprint {", $s, "}\n";
 
-  foreach my $i (@_) {
-    my @a = split / +/, $i;
-    foreach my $j (@a) {
-      print ",\n";
-      print "                         ", $j, ": ", $s;
+  if ($s !~ /^[<][>]$/) {
+    foreach my $i (@_) {
+      my @a = split / +/, $i;
+      foreach my $j (@a) {
+        print ",\n";
+        print "                         ", $j, ": ", $s;
+      }
     }
   }
 }
@@ -182,7 +184,7 @@ if (defined $options{D}) {print "\n#D2 word ", $word, " [", $1, "]\n";}
 
   if (defined $options{D}) {
     while ((my $key, my $value) = each %par) {
-      print "#D key ", $key, " value ", $value, "\n";
+      print "#D3 key ", $key, " value ", $value, "\n";
     }
   }
 
@@ -236,7 +238,7 @@ if (defined $options{D}) {print "\n#D2 word ", $word, " [", $1, "]\n";}
     chomp;
     if (length($_) > 0) {
       if (defined $options{D}) {
-        print "\n#D ", $n++, " ", $_, "\n";
+        print "\n#D4 ", $n++, " ", $_, "\n";
       }
 
       s/#.*//gs;   # Poistetaan kommentit.
@@ -269,20 +271,22 @@ if (defined $options{D}) {print "\nhead [", $head, "] [", $word, "]\n";}
               die "'\$z' ei ole olemassa. Jotain on pahasti vialla (", $word, ")\n";
             }
           }
-if (defined $options{D}) {print "\n#Dhead [", $head, "] [", $word, "]\n";}
+if (defined $options{D}) {print "\n#D5 head [", $head, "] [", $word, "]\n";}
         }
         $m++;
-if (defined $options{D}) {print "\n#D ", $_, " m=", $m, "\n";}
+if (defined $options{D}) {print "\n#D6 ", $_, " m=", $m, "\n";}
 
         my $s = "<" . join(", ", @x) . ">";
 
 
-if (defined $options{D}) {print "\n#D s    [", $s, "]\n";}
+if (defined $options{D}) {print "\n#D7 s    [", $s, "]\n";}
 
         $extra{$head} = $s;
 
         if (($head ne "yhdyssana")) {
-          print $first, $head, ": ", $s;
+          if ($s !~ /^[<][>]$/) {
+            print $first, $head, ": ", $s;
+          }
           if ($head eq "kestämän_tekijäpääte_y3") {
             #
             # Päätteet pi/vi: punoa, hän punoo => hän punoopi/punoovi/punovi.
@@ -316,7 +320,7 @@ if (defined $options{D}) {print "\n#D s    [", $s, "]\n";}
           }
         }
 
-if (defined $options{D}) {print "\n#D [[", $_, "]] ", $m, " ", $n, "\n"};
+if (defined $options{D}) {print "\n#D8 [[", $_, "]] ", $m, " ", $n, "\n"};
 
         if ($m + 1 == $n) {
           if (exists($extra{"yhdyssana"})) {

@@ -1099,42 +1099,28 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return no;
   end;
 
-  if (($oikea.luokka = etuliite) and
-          ($oikea.perusmuoto = "uus") and
-          ($vasen.$i.perusmuoto /= nil)) then
-    if ($vasen.$i.perusmuoto = "jumal") then
-      return no;     # Ei jumal+uus+oppi.
-    else
-      return (not ($vasen.$i.perusmuoto matches ".*inen"));
-    end;
+  if (($oikea.luokka = etuliite) and ($oikea.perusmuoto = "uus") and
+      ($vasen.$i.perusmuoto /= nil)) then
+    return (not ($vasen.$i.perusmuoto matches ".*inen"));
   elseif (($vasen.$i.tiedot /= nil) and (ei_ysa in $vasen.$i.tiedot) and
           ($oikea.luokka in @nimisana + <nimi_laatusana>)) then
-    if ($i greater 1 and $vasen.$i.perusmuoto = "nomia") then
-       return yes;
-    else
+    return no;
+  elseif ($oikea.perusmuoto = "laatuisa") then
+    if (not ($vasen.$i.luokka in <etuliite>)) then
       return no;
     end;
-  else
-#define $a := transmit ("Huuhaa.");
-#define $a := transmit ($vasen.$i);
-#define $b := transmit ($oikea);
-#define $c := transmit (value_type($vasen.$i));
-#define $d := transmit (value_type($oikea));
-
-    if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
+  elseif ($oikea.perusmuoto = "ilta") then
+    #
+    # Ei muotoja punais+ilta (punainen + ilta).
+    #
+    if (($vasen.$i.luokka = laatusana) and
+        ($vasen.$i.perusmuoto /= nil) and ($vasen.$i.perusmuoto matches ".*inen")) then
       return no;
-    elseif ($oikea.perusmuoto = "ilta") then
-      #
-      # Ei muotoja punais+ilta (punainen + ilta).
-      #
-      if (($vasen.$i.luokka = laatusana) and ($vasen.$i.perusmuoto /= nil) and ($vasen.$i.perusmuoto matches ".*inen")) then
-        return no;
-      end;
-    elseif (($vasen.$i.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
-      if ((substring($vasen.$i.perusmuoto,1R) matches @ääntiö) and
-          (substring($oikea.perusmuoto,1) matches @ääntiö)) then
-        return (substring($vasen.$i.perusmuoto,1R) /= substring($oikea.perusmuoto,1));
-      end;
+    end;
+  elseif (($vasen.$i.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
+    if ((substring($vasen.$i.perusmuoto,1R) matches @ääntiö) and
+        (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+      return (substring($vasen.$i.perusmuoto,1R) /= substring($oikea.perusmuoto,1));
     end;
   end;
   return yes;
@@ -1186,6 +1172,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"joka">,      <"kulta", "kusi", "kuu">>,
       <<"kalla">,     <"vesi">>,
       <<"kana">,      <"voida">>,  # Kana+voitu.
+      <<"kannus">,    <"tavi">>,
       <<"kapi">,      <"nalli", "tali">>,  # Kapi+nallinen, kapi+talis+tien (kapi+talinen+tie).
       <<"kare">,      <"lika">>,
       <<"karja">,     <"lainen", "lassa">>,
@@ -1203,10 +1190,11 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"krim">,           <"naali">>,  # Krimi+naali.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luja", "luksus", "luminen", "luu">>,
-      <<"kymmen">,    <"vuota">>,
-##    <<"kymmen", "kymmenen">, <"vuota">>,
+##      <<"kymmen">,    <"vuota">>,
+    <<"kymmen", "kymmenen">, <"vuota">>,
       <<"laaja">,     <"kaista">>,  # On sanastossa.
       <<"lainen">,    <"kala", "kasti", "kistu", "kuri", "kuu">>,
+      <<"lakka">,     <"rissa">>,
       <<"loinen">,    <"kaksi", "tee", "tehdä">>,
       <<"lukunen">,   <"alin">>,
       <<"läinen">,    <"käki">>,
