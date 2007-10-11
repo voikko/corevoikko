@@ -80,7 +80,10 @@
 [alku: "opengl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 [alku: "PCI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "PDF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
+[alku: "RAID", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
+[alku: "RAM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "RFC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
+[alku: "ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"];
 [alku: "RPM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "SCSI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "SGML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];

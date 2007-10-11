@@ -36,11 +36,13 @@
 # HTML-elementtejä ja muita vastaavia
 [perusmuoto: "application", alku: "application", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "big", alku: "big", luokka: sidesana, jatko: <loppu>, äs: ä];
+[perusmuoto: "em", alku: "em", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "emphasis", alku: "emphasis", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "phrase", alku: "phrase", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "quote", alku: "quote", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "small", alku: "small", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "span", alku: "span", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "strong", alku: "strong", luokka: sidesana, jatko: <loppu>, äs: a];
 
 # TLD-päätteitä
 [perusmuoto: "com", alku: "com", luokka: sidesana, jatko: <loppu>, äs: a];
