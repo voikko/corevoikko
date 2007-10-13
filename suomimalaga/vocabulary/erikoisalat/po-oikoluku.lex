@@ -48,3 +48,9 @@
 [perusmuoto: "com", alku: "com", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "org", alku: "org", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "net", alku: "net", luokka: sidesana, jatko: <loppu>, äs: a];
+
+# Vakioita yms.
+[perusmuoto: "false", alku: "false", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "null", alku: "null", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "true", alku: "true", luokka: sidesana, jatko: <loppu>, äs: a];
+

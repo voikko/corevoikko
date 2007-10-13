@@ -6782,11 +6782,15 @@ end;
 
 
 subrule ääntiösointu ($tietue):
-  if ($tietue.alku matches ".*" + @yäö + ".*") then
-    return ä;
-  else
-    return a;
+  define $l := length($tietue.alku);
+  foreach $i in -$l:
+    if substring($tietue.alku, $l + $i + 1) matches @yäö then
+      return ä;
+    elseif substring($tietue.alku, $l + $i + 1) matches @uao then
+      return a;
+    end;
   end;
+  return a;
 end;
 
 

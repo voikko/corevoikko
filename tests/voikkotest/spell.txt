@@ -485,6 +485,8 @@ selvemmälle
 taloton
 !siisteus
 siisteys
+!synkronoitynyt
+synkronoitunut
 
 [taivutusluokat]
 vihkon # Kotus 1
