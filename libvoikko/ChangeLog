@@ -1,3 +1,9 @@
+2007-10-15 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add preliminary version of string tokenizer
+	  voikko_next_token_ucs4.
+	* Increase version numbers for 1.6.
+
 2007-09-08 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add replacement suggestion "." -> ","

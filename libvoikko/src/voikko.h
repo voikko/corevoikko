@@ -262,6 +262,24 @@ void voikko_free_suggest_cstr(char ** suggest_result);
  */
 void voikko_free_hyphenate(char * hyphenate_result);
 
+/**
+ * Token types for string tokenization
+ * TOKEN_NONE:        End of text or error
+ * TOKEN_WORD:        Word
+ * TOKEN_PUNCTUATION: Punctuation
+ * TOKEN_WHITESPACE:  Whitespace
+ */
+enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE};
+
+/**
+ * Find the next token in text stream.
+ * @param text Pointer to the start of a text buffer
+ * @param textlen Number of characters left in the buffer
+ * @param tokenlen (out) Number of characters in the identified token
+ * @return Type of the identified token.
+ */
+enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textlen, size_t * tokenlen);
+
 END_C_DECLS
 #endif
 
