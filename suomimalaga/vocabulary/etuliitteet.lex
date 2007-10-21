@@ -131,7 +131,7 @@
 [perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt + @eln, äs: aä, tiedot: <ei_voikko>]; # -kamppailla, -kamppailu, -peli
 [perusmuoto: "kaksois", alku: "kaksois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kaksois", alku: "kaksois", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Mahdollisesti vain verbin subst.- ja adj.johdoksiin
 [perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "karjo", alku: "karjo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kauko", alku: "kauko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
