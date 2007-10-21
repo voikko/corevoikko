@@ -4069,7 +4069,7 @@ subrule koira ($tietue,
                          johdin_UUs:       $vahva_aste,
                          johdin_llinen:    $heikko_aste + A($tietue),
                          johdin_lAinen:    $vahva_aste + A($tietue),
-                         johdin_mAinen:    $heikko_aste + A($tietue),
+                         johdin_mAinen:    $vahva_aste + A($tietue),
                          johdin_inen:      $vahva_aste + A($tietue)] +
                         monikko7 ($heikko_aste + A($tietue),
                                   $vahva_aste, $monikon_heikko_aste,

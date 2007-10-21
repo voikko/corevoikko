@@ -495,6 +495,8 @@ pehkon # Kotus 1
 !pehon # Kotus 1
 rei'illä # Kotus 10
 !reiillä # Kotus 10
+pöytämäinen # Kotus 10
+!pöydämäinen # Kotus 10
 lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24

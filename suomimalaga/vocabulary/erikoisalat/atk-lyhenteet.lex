@@ -52,6 +52,7 @@
 [alku: "alt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "ASCII", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjjj"];
 [alku: "ctrl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "CUPS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjjj"];
 [alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "ftp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
 [alku: "FTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
