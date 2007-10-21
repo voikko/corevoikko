@@ -1,3 +1,8 @@
+2007-10-21 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Allow the use of environment variable VOIKKO_DICTIONARY_PATH
+	  to specify the dictionary path.
+
 2007-10-15 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add preliminary version of string tokenizer

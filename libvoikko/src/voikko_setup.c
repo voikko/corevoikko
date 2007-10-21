@@ -234,6 +234,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	DWORD dwBufLen;
 	LONG lRet;
 #endif // WIN32
+	char * path_from_env;
 	// Minimum sensible size for the buffer
 	if (buflen < 18) return 0;
 	char * tmp_buf = malloc(buflen + 2048);
@@ -252,6 +253,19 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 				return 1;
 			}
 		}
+
+		/* Check the path specified by environment variable VOIKKO_DICTIONARY_PATH */
+		/* FIXME: thread safety */
+		path_from_env = getenv("VOIKKO_DICTIONARY_PATH");
+		if (path_from_env && strlen(path_from_env) < buflen - 18) {
+			strcpy(buffer, path_from_env);
+			strcpy(buffer + strlen(path_from_env), "/" VOIKKO_DICTIONARY_FILE);
+			if (voikko_check_file(buffer)) {
+				free(tmp_buf);
+				return 1;
+			}
+		}
+
 		#ifdef HAVE_GETPWUID_R
 		/* Check for project file in $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
 		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);

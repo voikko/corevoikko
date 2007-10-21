@@ -15,13 +15,28 @@ voikko-fi_FI.pro. The file should start with the following line:
 
 info: Voikko-Dictionary-Format: 1
 
-The file voikko-fi_FI.pro and other required files of Suomi-malaga should be placed
-under the directory /usr/lib/voikko (this directory can be chosen during compile
-time using option --with-dictionary-path).
 
-Under Linux and Mac OS X user may have a personal version of Suomi-malaga under
-directory $HOME/.voikko which, if found, will be used instead of the system default.
-Under Windows the location of user personal dictionary may be specified using the
-Windows registry. The key SOFTWARE\\Voikko\DictionaryPath may be placed under either
-HKEY_CURRENT_USER or HKEY_LOCAL_MACHINE and it should contain the full path of the
-dictionary directory to use.
+Search order for dictionary files
+=================================
+
+Upon initialization libvoikko will search for file voikko-fi_FI.pro. Once this
+file is found, it will check whether the file is a valid Malaga project file for
+Voikko dictionary, and that all required additional files are present. If
+voikko-fi_FI.pro turns out to be invalid, it has a wrong version or some required
+files are missing or corrupt, initialization will fail with an error and no
+additional directories will be checked.
+
+The search is done in the following order:
+
+1) Path given as the last argument to voikko_init_with_path, if that function is
+   used to initialize the library.
+2) Path specified by the environment variable VOIKKO_DICTIONARY_PATH, if the
+   variable is set in the environment of the process initializing the library.
+3) Only on platforms with Unix home directories (Linux, BSD and Mac OS X):
+   from directory $HOME/.voikko.
+4) Only on Windows: Directory specified by the registry key
+   HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath.
+5) Only on Windows: Directory specified by the registry key
+   HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath.
+6) Path specified at compile time using --with-dictionary-path (this defaults to
+   /usr/lib/voikko).
