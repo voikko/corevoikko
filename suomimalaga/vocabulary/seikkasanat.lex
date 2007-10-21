@@ -179,8 +179,8 @@
 [perusmuoto: "huiskin", alku: "huiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujakassa", alku: "hujaka", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "hujakoilla", alku: "hujakoilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "hujakoilta", alku: "hujakoilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujakoilla", alku: "hujakoille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hujakoilta", alku: "hujakoilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hujan", alku: "hujan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hukassa", alku: "hukkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -467,6 +467,7 @@
 [perusmuoto: "mieluusti", alku: "mieluusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "mihinpäin", alku: "mihinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
 [perusmuoto: "mikäli", alku: "mikäli", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "miljoonittain", alku: "miljoonittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "milloin", alku: "milloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "milloin", alku: "milloinka", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "milloin", alku: "milloinkas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -672,6 +673,7 @@
 [perusmuoto: "saatana", alku: "saatanasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "saati", alku: "saati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "saatikka", alku: "saatikka", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "sadoittain", alku: "sadoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sakeanaan", alku: "sakeanaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "salaa", alku: "salaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "salavihkaa", alku: "salavihkaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp"];
@@ -810,6 +812,7 @@
 [perusmuoto: "toki", alku: "toki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tokko", alku: "tokko", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "torstaisin", alku: "torstaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuhansittain", alku: "tuhansittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuhatkunta", alku: "tuhatkunta", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"]; # Oikeastaan lukusana, mutta taipumaton
 [perusmuoto: "tuiki", alku: "tuiki", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuohduksissa", alku: "tuohduks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
@@ -974,8 +977,8 @@
 [perusmuoto: "ynnä", alku: "ynnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ypö", alku: "ypö", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ypöyksin", alku: "ypöyksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
-[perusmuoto: "äkkiä", alku: "äkisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äkkiseltä", alku: "äkkiseltä", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+[perusmuoto: "äkkiä", alku: "äkisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äkkiä", alku: "äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ällikällä", alku: "ällikällä", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "äsken", alku: "äsken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
