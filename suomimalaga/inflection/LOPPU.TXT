@@ -62,7 +62,6 @@ subrule taivutus ($sanatietue1, $lisä, $jatko, $tietue):
 
 
   define $a := taivutus2 ($sanatietue1, $lisä, $jatko, $tietue, $sanatietue1.alku);
-
   define $n := length ($a);
 
   foreach $i in $n:
@@ -138,14 +137,6 @@ subrule U ($tietue):
 end;
 
 
-# Johtimia, joilla teonsanoista muodostetaan nimisanoja.
-#
-define @johtimia := <johdin_ntA, johdin_nti, johdin_O,
-                     johdin_U_arvelu,
-                     johdin_Us, johdin_Us_ksen>
-                    + @johdin_jA + @johdin_mA;
-
-
 # $tietue    Sanatietue
 # $taivutus  Sanan taivutus eri taivutusmuodoissa.
 #
@@ -187,7 +178,8 @@ subrule taivutuskaava ($tietue, $taivutus):
   $taivutus := $uusi_taivutus;
 
 
-  if (($tietue.luokka in @nimisana + @johtimia + <laatusana>) and ($taivutus.nimentö /= nil)) then
+ if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana>)
+      and ($taivutus.nimentö /= nil)) then
     if ($taivutus.tavuviiva = nil) then
       $taivutus :=+ [tavuviiva: $taivutus.nimentö];
     elseif ($taivutus.tavuviiva /= $taivutus.nimentö) then
@@ -195,13 +187,12 @@ subrule taivutuskaava ($tietue, $taivutus):
     end;
   end;
 
-
-  if (not ($tietue.luokka in <nimisana, nimi_laatusana> + @johtimia) or
+  if (not ($tietue.luokka in <nimisana, nimi_laatusana> + @teonsanasta_johdettu_nimisana) or
      (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
     $taivutus :=- johdin_inen;
   end;
 
-  if ($tietue.luokka in @johdin_jA + @johdin_mA) then
+  if ($tietue.luokka in <nimitapa_4>) then
     $taivutus :=- johdin_inen;
   end;
 

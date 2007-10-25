@@ -448,8 +448,6 @@
 [perusmuoto: "lannoitin", alku: "lannoit", luokka: nimisana, jatko: <suodatin>, äs: ä];
 [perusmuoto: "lujike", alku: "lujik", luokka: nimisana, jatko: <tarvike>, äs: a];
 [perusmuoto: "lajite", alku: "lajit", luokka: nimisana, jatko: <vaate>, äs: a];
-[perusmuoto: "äsken", alku: "äsken", luokka: etuliite, jatko: @sana2, äs: aä];
-[perusmuoto: "ylös", alku: "ylös", luokka: etuliite, jatko: @sana2, äs: ä];
 [perusmuoto: "Oksitania", alku: "Oksitani", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Brown", alku: "Brown", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ludvig", alku: "Ludvig", luokka: etunimi, jatko: <kalsium>, äs: a];
@@ -536,27 +534,29 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "sade", alku: "saitta", luokka: teonsana, jatko: <liitesana, loppu>, äs: a];  # Sadetta.
 [perusmuoto: "sadekuuro", alku: "saikuuro", luokka: nimisana, jatko: <valo>, äs: a];
 
-[perusmuoto: "tarvita", alku: "tarvi",    luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tarvita", alku: "tarvii",   luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tarvita", alku: "tarviin",  luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tarvita", alku: "tarviis",  luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; # Tarvitsisi.
-[perusmuoto: "tarvita", alku: "tarvi", luokka: teonsana, jatko: <ehtotapa>, äs: a]; # Tarvitsisi.
+[perusmuoto: "tarvita", alku: "tarvi",   luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tarvita", alku: "tarvii",  luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tarvita", alku: "tarviin", luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tarvita", alku: "tarviis", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; # Tarvitsisi.
+[perusmuoto: "tarvita", alku: "tarvi",   luokka: teonsana, jatko: <ehtotapa>, äs: a]; # Tarvitsisi.
 
 
-[perusmuoto: "tietää", alku: "tiiä", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "tietää", alku: "tiiän", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "tietää", alku: "tiiät", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "tietää", alku: "tiiämme", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "tietää", alku: "tiiätte", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "tietää", alku: "tiietä", luokka: teonsana, jatko: <loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiiä",      luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiiän",     luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiiät",     luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiiämme",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiiätte",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiietä",    luokka: teonsana, jatko: <loppu>, äs: ä]; # Ei tiietä.
+[perusmuoto: "tietää", alku: "tiiettiin", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tiietty",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "vesi", alku: "vee", luokka: nimisana, jatko: @yksikön_heikko_aste_ja_monikon_nimentö, äs: ä];
 
-[perusmuoto: "vetää", alku: "vejin", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vetää", alku: "vejit", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejin",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejit",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vetää", alku: "vejimme", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vetää", alku: "vejitte", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vetää", alku: "vejä", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejä",    luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "viedä", alku: "viiä", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 

@@ -98,11 +98,11 @@
 [perusmuoto: "ennen", alku: "ennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ennenkun", alku: "ennenkun", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppp=ppp"];
 [perusmuoto: "ennestään", alku: "ennestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija>];
-[perusmuoto: "ensiksi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "ensi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensin", alku: "ensin", luokka: seikkasana, jatko: <olento_nA, liitesana, loppu>, äs: ä];
 [perusmuoto: "ensinkään", alku: "ensinkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "entiselleen", alku: "entiselleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "entisellään", alku: "entiselleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisellään", alku: "entisellään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisestään", alku: "entisestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entuudelta", alku: "entuudelta", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];

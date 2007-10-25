@@ -113,7 +113,7 @@ rx = re.compile(pattern, re.IGNORECASE)
 #
 words = [u"elämä",
 	 u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
-	 u"itkettynyt", u"itkettyä",
+	 u"institutionalisoitua", u"itkettynyt", u"itkettyä",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 	 u"kansallismielinen", u"käynti",
 	 u"lyönti",
@@ -123,8 +123,9 @@ words = [u"elämä",
 	 u"sisäänajo", u"sisäänmeno", u"sisääntulo",
 	 u"täysihoito", u"täysihoitola",
 	 u"vajaamielinen", u"voima", u"väärinkäsitys",
-	 u"ylösnoussut", u"ystävällismielinen",
-	 u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
+	 u"vähittäishinta", u"vähittäiskauppa", u"vähittäismaksu", u"vähittäismyymälä", u"vähittäismyynti",
+	 u"ylivoimainen", u"ylösnoussut", u"yritellä", u"ystävällismielinen",
+	 u"Aamu", u"Aho", u"Arabia", u"Armenia", u"Aro", u"Aura", u"Aurinko", u"Autio",
 	 u"Bulgaria",
 	 u"Eesti", u"Elo", u"Eno", u"Espanja", u"Esteri",
 	 u"Georgia", u"Guinea",
@@ -321,10 +322,12 @@ def new_vtype (malaga_vtype, wordform):
 	if (word_end.match(wordform)):
 		return u"aä"
 	else:
-		return malaga_vtype
+	       	return malaga_vtype
 	
 
 def handle_word(main_vocabulary,vocabulary_files,word):
+	if generate_lex_common.has_flag(word, "not_sukija"): return
+
 	# Get the inflection class. Exactly one inflection class is needed.
 	infclasses = word.getElementsByTagName("infclass")
 	voikko_infclass = None
@@ -335,23 +338,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 	if (voikko_infclass in [u"antautua", u"kaihtaa", u"laittaa", u"paahtaa",
 				u"taittaa", u"veranta", u"vihanta", u"virkkaa"]):
 		voikko_infclass = voikko_infclass + u"-av1"
-	
-#	if voikko_infclass == u"antautua":
-#		voikko_infclass = u"antautua-av1"
-#	elif voikko_infclass == u"kaihtaa":
-#		voikko_infclass = u"kaihtaa-av1"
-#	elif voikko_infclass == u"laittaa":
-#		voikko_infclass = u"laittaa-av1"
-#	elif voikko_infclass == u"paahtaa":
-#		voikko_infclass = u"paahtaa-av1"
-#	elif voikko_infclass == u"taittaa":
-#		voikko_infclass = u"taittaa-av1"
-#	elif voikko_infclass == u"veranta":
-#		voikko_infclass = u"veranta-av1"
-#	elif voikko_infclass == u"vihanta":
-#		voikko_infclass = u"vihanta-av1"
-#	elif voikko_infclass == u"virkkaa":
-#		voikko_infclass = u"virkkaa-av1"
 	
 	if voikko_infclass == None:
 		for infclass in word.getElementsByTagName("infclass"):

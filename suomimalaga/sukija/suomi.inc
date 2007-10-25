@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -159,6 +159,7 @@ define @tositapa := @kestämän_tekijäpääte + @kertoman_tekijäpääte
                        tositavan_kestämä_nAAn_kielto, tositavan_kestämä_rAAn_kielto,
                        tositavan_kestämä_tAAn_kielto>;
 
+
 define @sisäpaikallissijat_Vn  := <sisäolento_ssA,  sisäeronto_stA, sisätulento_Vn>;
 define @sisäpaikallissijat_hVn := <sisäolento_ssA,  sisäeronto_stA, sisätulento_hVn>;
 define @ulkopaikallissijat     := <ulko_olento_llA, ulkoeronto_ltA, ulkotulento_lle>;
@@ -187,4 +188,46 @@ define @johdin_tU := <johdin_tU_dU,
                       johdin_tU_nU,
                       johdin_tU_rU>;
 
-define @johdin_laatutapa := @johdin_nUt + @johdin_tU + @johdin_stU + <johdin_ttU, johdin_vA, johdin_vE>;
+define @johdin_laatutapa := @johdin_nUt + @johdin_tU + @johdin_stU +
+                            <johdin_ttU, johdin_vA, johdin_vE>;
+
+define @johdin_tAvA := <johdin_tAvA, johdin_ttAvA,
+                        johdin_tAvAinen, johdin_ttAvAinen>;
+
+define @teonsanasta_johdettu_nimi_tai_laatusana :=
+       <johdin_jA_kantaja, johdin_jA_kulkija, johdin_jA_myyjä, johdin_lUt,
+        johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti,
+        johdin_nUt, johdin_O, johdin_Os, johdin_rUt, johdin_stU_juostu,
+        johdin_stU_nuolaistu, johdin_sUt, johdin_tAvA, johdin_tAvAinen,
+        johdin_ttAvA, johdin_ttAvAinen, johdin_ttU, johdin_tU_dU,
+        johdin_tU_lU_katseltu, johdin_tU_lU_oltu, johdin_tU_nU, johdin_tU_rU,
+        johdin_U_arvelu, johdin_Us_ksen, johdin_vA, johdin_vAinen, johdin_vE,
+        nimitapa_4>;
+
+define @teonsanasta_johdettu_nimisana :=
+       <johdin_jA_kantaja, johdin_jA_kulkija, johdin_jA_myyjä,
+        johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti,
+        johdin_O, johdin_Os,
+        johdin_U_arvelu, johdin_Us_ksen,
+        nimitapa_4>;
+
+
+define @teonsanasta_johdettu_laatusana :=
+       <johdin_lUt,
+        johdin_nUt, johdin_rUt, johdin_stU_juostu,
+        johdin_stU_nuolaistu, johdin_sUt, johdin_tAvA, johdin_tAvAinen,
+        johdin_ttAvA, johdin_ttAvAinen, johdin_ttU, johdin_tU_dU,
+        johdin_tU_lU_katseltu, johdin_tU_lU_oltu, johdin_tU_nU, johdin_tU_rU,
+        johdin_vA, johdin_vAinen, johdin_vE>;
+
+define @nimisanasta_johdettu_nimisana :=
+       <johdin_tAr, johdin_lAinen, johdin_ittAin,
+        johdin_UUs>; # Tekijä => tekijyys.
+
+define @nimisanasta_johdettu_laatusana :=
+       <johdin_inen, johdin_llinen, johdin_lAinen, johdin_mAinen, johdin_tOn>;
+
+define @laatusanasta_johdettu_nimisana :=
+       <johdin_mmUUs, johdin_immUUs, johdin_Us, johdin_UUs>;
+
+define @laatusanasta_johdettu_laatusana := <johdin_lAinen, johdin_llinen, johdin_nlainen>;

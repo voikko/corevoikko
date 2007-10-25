@@ -51,69 +51,34 @@
 include "suomi.inc";
 
 
-# Vain ne aksenttimerkit, jotka ovat ISO-8859-15:ssä, paitsi š ja ž.
-# Merkit ovat ISO-8859-15:n mukaisessa järjestyksessä.
-#
-define @aksenttimerkki := "ŸÀÁÂÃÇÈÉÊËÌÍÎÏÐÑÒÓÔÙÚÛÝàáâãçèéêëìíîïðñòóôùúûýÿ";
-define @korvausmerkki  := "YAAAACEEEEIIIIDNOOOUUUYaaaaceeeeiiiidnooouuuyy";
-
-
-allo_rule generate_allos ($tietue1):
+allo_rule generate_allos ($tietue):
   define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
 
 
-##define $aa := transmit (<"a"> + <$tietue1.perusmuoto> + <$tietue1.alku> + <$tietue1.äs>);
-#define $ö := transmit ("[perusmuoto: §" + $tietue1.perusmuoto + "§" +
-#                       ", alku: §"      + $tietue1.alku + "§" +
-#                       ", luokka: "     + value_string ($tietue1.luokka) +
-#                       ", jatko: "      + value_string ($tietue1.jatko) +
-#                       ", äs: "         + value_string ($tietue1.äs) +
+##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
+#define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
+#                       ", alku: §"      + $tietue.alku + "§" +
+#                       ", luokka: "     + value_string ($tietue.luokka) +
+#                       ", jatko: "      + value_string ($tietue.jatko) +
+#                       ", äs: "         + value_string ($tietue.äs) +
 #                       "];");
 
-#define $a := transmit ($tietue1);
-#if ($tietue1.perusmuoto /= nil) then
-#  define $b := transmit ("Tavutus2 " + $tietue1.perusmuoto + " " + tavutus($tietue1.perusmuoto));
-#end;
-
-  assert (value_type($tietue1) = record);
-
-  define $tietuelista := <$tietue1>;
-
+  assert (value_type($tietue) = record);
 
   if ($malli = sukija) then
-#    define $tavujen_lkm := tavujen_määrä ($tietue1.perusmuoto);
-
     # Nämä sanat voivat olla myös erillisinä sanoina.
     #
-    if (($tietue1.tiedot /= nil) and (ysj in $tietue1.tiedot) and
-        (($tietue1.perusmuoto /= nil) and
-        (($tietue1.perusmuoto = "vuotias") and ($tietue1.luokka = nimi_laatusana)))) then
-      $tietue1.tiedot :=- <ysj>;
-      $tietuelista := <$tietue1>;
+    if (($tietue.tiedot /= nil) and (ysj in $tietue.tiedot) and
+        (($tietue.perusmuoto /= nil) and
+        (($tietue.perusmuoto = "vuotias") and ($tietue.luokka = nimi_laatusana)))) then
+      $tietue.tiedot :=- <ysj>;
     end;
 
-    # Mielinen yms ovat sanastossa.
-    #
-    if (($tietue1.perusmuoto /= nil) and ($tietue1.perusmuoto in <"mieli">)) then
-      if ($tietue1.tiedot = nil) then
-        $tietue1 :=+ [tiedot: <ei_inen>];
-      else
-        $tietue1.tiedot :=+ <ei_inen>;
-      end;
-      $tietue1.tiedot :=- <ysj>;
-      $tietuelista := <$tietue1>;
-    end;
-
-    if ($tietue1.luokka = etuliite) then
-      $tietue1.jatko := set ($tietue1.jatko);
-      $tietuelista := <$tietue1>;
+    if ($tietue.luokka = etuliite) then
+      $tietue.jatko := set ($tietue.jatko);
     end;
   end;
 
-
-  choose $tietue in $tietuelista;
-
-#define $a := transmit ($tietue);
 
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or

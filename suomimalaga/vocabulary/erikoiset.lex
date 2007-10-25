@@ -30,7 +30,6 @@
 [perusmuoto: "ehei", alku: "ehei", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "eli", alku: "eli", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "elikkä", alku: "elikkä", luokka: sidesana, jatko: <loppu>, äs: ä];
-[perusmuoto: "ensi", alku: "ensi", luokka: laatusana, jatko: @sana2 + <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä];
 [perusmuoto: "että", alku: "että", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "että", alku: "ettäs", luokka: sidesana, jatko: <loppu>, äs: ä];
@@ -177,13 +176,13 @@
 [perusmuoto: "tuut", alku: "tuut", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "täh", alku: "täh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "tööt", alku: "tööt", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: @sana2 + <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vaan", alku: "vaan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "vai", alku: "vai", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "vaikka", alku: "vaikka", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vaiko", alku: "vaiko", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
-[perusmuoto: "veliseni", alku: "veliseni", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_ysa>];
+[perusmuoto: "veli", alku: "veliseni", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_ysa>];
 [perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
 [perusmuoto: "voilà", alku: "voilà", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
