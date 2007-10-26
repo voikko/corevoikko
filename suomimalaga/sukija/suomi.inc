@@ -230,4 +230,5 @@ define @nimisanasta_johdettu_laatusana :=
 define @laatusanasta_johdettu_nimisana :=
        <johdin_mmUUs, johdin_immUUs, johdin_Us, johdin_UUs>;
 
-define @laatusanasta_johdettu_laatusana := <johdin_lAinen, johdin_llinen, johdin_nlainen>;
+define @laatusanasta_johdettu_laatusana :=
+       <johdin_lAinen, johdin_llinen, johdin_nlainen>;

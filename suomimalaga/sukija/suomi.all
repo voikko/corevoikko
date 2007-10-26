@@ -13156,7 +13156,7 @@ subrule taivutuskaava ($tietue, $taivutus):
     end;
   end;
 
-  if (not ($tietue.luokka in <nimisana, nimi_laatusana> + @teonsanasta_johdettu_nimisana) or
+  if (not ($tietue.luokka in <nimisana, nimi_laatusana, johdin_Us> + @teonsanasta_johdettu_nimisana) or
      (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
     $taivutus :=- johdin_inen;
   end;
