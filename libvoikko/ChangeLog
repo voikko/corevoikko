@@ -1,3 +1,7 @@
+2007-10-27 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Additional work on string tokenizer.
+
 2007-10-21 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Allow the use of environment variable VOIKKO_DICTIONARY_PATH

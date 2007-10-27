@@ -18,18 +18,8 @@
 
 #include "voikko_defs.h"
 #include "voikko_setup.h"
-#include <ctype.h>
+#include "voikko_charset.h"
 #include <wchar.h>
-
-enum char_type {CHAR_UNKNOWN, CHAR_LETTER, CHAR_DIGIT, CHAR_WHITESPACE, CHAR_PUNCTUATION};
-
-enum char_type get_char_type(wchar_t c) {
-	if (wcschr(L".,;-!?:'\"", c)) return CHAR_PUNCTUATION;
-	if (isalpha(c)) return CHAR_LETTER;
-	if (isdigit(c)) return CHAR_DIGIT;
-	if (isspace(c)) return CHAR_WHITESPACE;
-	return CHAR_UNKNOWN;
-}
 
 size_t word_length(const wchar_t * text, size_t textlen) {
 	size_t wlen = 0;

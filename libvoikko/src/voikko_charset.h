@@ -21,6 +21,14 @@
 
 #include <stddef.h>
 
+enum char_type {CHAR_UNKNOWN, CHAR_LETTER, CHAR_DIGIT, CHAR_WHITESPACE, CHAR_PUNCTUATION};
+
+/** Returns character type for given character
+ * @param c character to check
+ * @return the character type
+ */
+enum char_type get_char_type(wchar_t c);
+
 /** Normalises an unicode string according to our conventions
  * @param word string to normalise
  * @param len length of the string
