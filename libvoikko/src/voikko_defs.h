@@ -74,4 +74,6 @@ VOIKKOEXPORT enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textlen,
                                                       size_t * tokenlen);
 
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(const char * text, size_t textlen,
+                                                           size_t * tokenlen);
 #endif

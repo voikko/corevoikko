@@ -54,7 +54,7 @@ void hyphenate_word(int handle, char * word) {
 		printf("E: out of memory\n");
 		return;
 	}
-	memset(&mbstate, '\0', sizeof(mbstate));
+	memset(&mbstate, '\0', sizeof(mbstate_t));
 	wordptr = word;
 	hyphenatedptr = hyphenated_word;
 	resultptr = result;
@@ -79,7 +79,45 @@ void hyphenate_word(int handle, char * word) {
 	voikko_free_hyphenate(result);
 }
 
-
+void print_tokens(int handle, const char * line) {
+	size_t len;
+	const char * lineptr;
+	size_t charlen;
+	mbstate_t mbstate;
+	enum voikko_token_type token_type;
+	size_t tokenchars;
+	len = strlen(line);
+	memset(&mbstate, '\0', sizeof(mbstate_t));
+	lineptr = line;
+	while (len > 0) {
+		token_type = voikko_next_token_cstr(lineptr, len, &tokenchars);
+		switch (token_type) {
+			case TOKEN_WORD:
+				printf("W: \"");
+				break;
+			case TOKEN_PUNCTUATION:
+				printf("P: \"");
+				break;
+			case TOKEN_WHITESPACE:
+				printf("S: \"");
+				break;
+			case TOKEN_NONE:
+				printf("E: unknown token\n");
+				return;
+		}
+		while (tokenchars > 0) {
+			charlen = mbrlen(lineptr, len, &mbstate);
+			while (charlen > 0) {
+				putchar(lineptr[0]);
+				lineptr++;
+				charlen--;
+				len--;
+			}
+			tokenchars--;
+		}
+		printf("\"\n");
+	}
+}
 
 int main(int argc, char ** argv) {
 	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
@@ -91,6 +129,7 @@ int main(int argc, char ** argv) {
 	int minhwlen;
 	int iclevel;
 	int i;
+	int tokenize = 0;
 	
 	line = malloc(size);
 	if (line == 0) {
@@ -133,6 +172,9 @@ int main(int argc, char ** argv) {
 			iclevel = atoi(argv[i] + 25);
 			voikko_set_int_option(handle, VOIKKO_INTERSECT_COMPOUND_LEVEL, iclevel);
 		}
+		else if (strncmp(argv[i], "--tokenize", 10) == 0) {
+			tokenize = 1;
+		}
 	}
 	
 	while (1) {
@@ -141,7 +183,8 @@ int main(int argc, char ** argv) {
 		if (chars_read > 0 && line[chars_read - 1] == '\n') {
 			line[chars_read - 1] = '\0';
 		}
-		hyphenate_word(handle, line);
+		if (tokenize) print_tokens(handle, line);
+		else hyphenate_word(handle, line);
 	}
 	free(line);
 	voikko_terminate(handle);

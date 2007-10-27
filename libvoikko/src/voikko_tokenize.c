@@ -19,10 +19,13 @@
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include "voikko_charset.h"
+#include "voikko_utils.h"
 #include <wchar.h>
+#include <stdlib.h>
 
 size_t word_length(const wchar_t * text, size_t textlen) {
 	size_t wlen = 0;
+	int processing_number = 0;
 	
 	size_t adot;
 	if (voikko_options.ignore_dot) adot = 1;
@@ -31,7 +34,11 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 	while (wlen < textlen) {
 		switch (get_char_type(text[wlen])) {
 			case CHAR_LETTER:
+				processing_number = 0;
+				wlen++;
+				break;
 			case CHAR_DIGIT:
+				processing_number = 1;
 				wlen++;
 				break;
 			case CHAR_WHITESPACE:
@@ -72,6 +79,13 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 								return wlen + adot;
 						}
 						break;
+					case L',':
+						if (!processing_number) return wlen;
+						if (wlen + 1 == textlen) return wlen;
+						if (get_char_type(text[wlen+1]) ==
+						    CHAR_DIGIT) break;
+						return wlen;
+						
 					default:
 						return wlen;
 				}
@@ -123,4 +137,15 @@ enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textl
 			return TOKEN_PUNCTUATION;
 	}
 	return TOKEN_NONE; // unreachable
+}
+
+enum voikko_token_type voikko_next_token_cstr(const char * text, size_t textlen, size_t * tokenlen) {
+	wchar_t * text_ucs4;
+	enum voikko_token_type result;
+	if (text == 0) return TOKEN_NONE;
+	text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
+	if (text_ucs4 == 0) return TOKEN_NONE;
+	result = voikko_next_token_ucs4(text_ucs4, wcslen(text_ucs4), tokenlen);
+	free(text_ucs4);
+	return result;
 }
