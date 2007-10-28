@@ -101,6 +101,9 @@ void print_tokens(int handle, const char * line) {
 			case TOKEN_WHITESPACE:
 				printf("S: \"");
 				break;
+			case TOKEN_UNKNOWN:
+				printf("U: \"");
+				break;
 			case TOKEN_NONE:
 				printf("E: unknown token\n");
 				return;

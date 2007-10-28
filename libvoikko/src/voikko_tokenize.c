@@ -134,7 +134,7 @@ enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textl
 			return TOKEN_PUNCTUATION;
 		case CHAR_UNKNOWN:
 			*tokenlen = 1;
-			return TOKEN_PUNCTUATION;
+			return TOKEN_UNKNOWN;
 	}
 	return TOKEN_NONE; // unreachable
 }

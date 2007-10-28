@@ -268,8 +268,9 @@ void voikko_free_hyphenate(char * hyphenate_result);
  * TOKEN_WORD:        Word
  * TOKEN_PUNCTUATION: Punctuation
  * TOKEN_WHITESPACE:  Whitespace
+ * TOKEN_UNKNOWN:     Character not used in Finnish
  */
-enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE};
+enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE, TOKEN_UNKNOWN};
 
 /**
  * Find the next token in text stream.
