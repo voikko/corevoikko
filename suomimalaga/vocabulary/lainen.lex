@@ -233,7 +233,9 @@
 # genetiivi + liitepartikkeli + inen-adjektiivi
 
 [perusmuoto: "kahdenlainen", alku: "kahdenkinlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "kahdenlainen", alku: "kahdenkaanlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=pppppppppp=pppppp"];
 [perusmuoto: "kolmenlainen", alku: "kolmenkinlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=ppppppppp=pppppp"];
+[perusmuoto: "kolmenlainen", alku: "kolmenkaanlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=pppppppppp=pppppp"];
 [perusmuoto: "kummanlainen", alku: "kummankaanlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=pppppppppp=pppppp"];
 [perusmuoto: "kummanlainen", alku: "kummankinlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=ppppppppp=pppppp"];
 [perusmuoto: "minkälainen", alku: "minkähänlai", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_vertm>, rakenne: "=pppppppp=pppppp"];

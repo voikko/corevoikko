@@ -306,7 +306,7 @@
 [perusmuoto: "kesemmällä", alku: "kesemmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kesemmällä", alku: "kesemmälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kesemmällä", alku: "kesemmällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kesempällä", alku: "kesempänä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kesemmällä", alku: "kesempänä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "keskellä", alku: "keske", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "keskellä", alku: "keskemmä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "keskellä", alku: "keskemmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -485,7 +485,7 @@
 [perusmuoto: "muuten", alku: "muuten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "muutoin", alku: "muutoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "mynkään", alku: "mynkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "myöden", alku: "myöden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # Paremmin "myöten".
+[perusmuoto: "myöden", alku: "myöden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # KS: paremmin "myöten".
 [perusmuoto: "myöhemmin", alku: "myöhemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myös", alku: "myös", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myöten", alku: "myöten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -585,10 +585,10 @@
 [perusmuoto: "perätysten", alku: "perätysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "piakkoin", alku: "piakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pian", alku: "pian", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "piilosilla", alku: "piilosilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "piilosilla", alku: "piilosille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "piilosilla", alku: "piilosilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "piip", alku: "piip", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "piilosilla", alku: "piilosilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "piilosilla", alku: "piilosille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "piilosilla", alku: "piilosilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pika", alku: "pika", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "pikaiseltaan", alku: "pikaiseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pikemmin", alku: "pikemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
