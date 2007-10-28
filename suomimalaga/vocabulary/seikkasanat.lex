@@ -126,7 +126,6 @@
 [perusmuoto: "hajalla", alku: "haja", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "hajalla", alku: "hajan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "halki", alku: "halki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "halleluja", alku: "halleluj", luokka: seikkasana, jatko: <koira>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "haltioissa", alku: "haltioihi", luokka: seikkasana, jatko: <omistusliite>, äs: a];
@@ -560,7 +559,6 @@
 [perusmuoto: "pakosalla", alku: "pakosalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pakosalla", alku: "pakosalle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pakosalla", alku: "pakosalta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "paksu", alku: "paksusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "paksulti", alku: "paksulti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "paljaaltaan", alku: "paljaalta", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "paljolti", alku: "paljolti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -588,8 +586,10 @@
 [perusmuoto: "piakkoin", alku: "piakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pian", alku: "pian", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "piip", alku: "piip", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "piilosilla", alku: "piilosilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "piilosilla", alku: "piilosille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "piilosilla", alku: "piilosilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pika", alku: "pika", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "pika", alku: "pikana", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "pikaiseltaan", alku: "pikaiseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pikemmin", alku: "pikemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pikimmin", alku: "pikimmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
