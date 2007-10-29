@@ -80,17 +80,21 @@ allo_rule generate_allos ($tietue):
   end;
 
   # Paikannimien jälkiliitteet.
-  if ($tietue.perusmuoto in <"joki", "järvi", "katu", "kuja", "lahti", "maa",
+  #
+  if ($tietue.perusmuoto in <"joki", "järvi",
+                             "kangas", "katu", "korpi", "kuja", "kylä",
+                             "lahti", "maa",
                              "meri", "mäki", "niemi", "saari",
                              "tie", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
 
-# Voikko-versio.
-#  if ($tietue.perusmuoto in <"katu", "kuja", "tie", "saari", "lahti", "niemi",
-#                             "vuori", "vaara", "joki">) then
-#    $tietue :=+ [paikannimen_jälkiliite: yes];
-#  end;
+  # Etunimien jälkiliitteet.
+  # Esim. Pietarinkirkko, Kallenpoika, Marianpäivä, Kallentytär.
+  #
+  if ($tietue.perusmuoto in <"kirkko", "poika", "päivä", "tytär">) then
+    $tietue :=+ [etunimen_jälkiliite: yes];
+  end;
 
 
   if (($malli = voikko) and ($tietue.tiedot /= nil) and

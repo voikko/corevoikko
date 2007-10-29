@@ -384,6 +384,7 @@ lähtöluokka; # Sanaluokka, josta toisen sanaluokan sana on johdettu.
              # Esimerkiksi nimisana leikata on johdettu teonsanasta leikkaus.
 
 paikannimen_jälkiliite; # -katu, -vuori, ...
+etunimen_jälkiliite; # Kallenpoika, -tytär, ...
 inen_loppu; # -inen
 
 äs; # Ääntiösointu.

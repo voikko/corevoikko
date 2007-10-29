@@ -47,7 +47,7 @@
 initial <>,
             rules nimisana, laatusana, teonsana,
 #                  tavuviiva, etuliite, asemosana, kieltosana, apusana, lyhennesääntö;
-                  erisnimi, sanan_alku;
+                  erisnimi, paikannimen_lainen_johdos, sanan_alku;
 
 include "suomi.inc";
 
@@ -361,7 +361,8 @@ combi_rule tavuviiva ($vasen, $oikea, $sana, $n):
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules nimisana, laatusana, asemosana, apusana, lyhennesääntö,
-               etuliite, teonsana, kieltosana, erisnimi, loppu;
+               etuliite, teonsana, kieltosana, erisnimi,
+               paikannimen_lainen_johdos,  loppu;
 end;
 
 
@@ -987,6 +988,16 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 #define $d := transmit (<"d"> + <$i>);
 
 
+#  if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
+#    return no;
+#  end;
+
+#  if (($i greater 1) and
+#      yhdyssanataulukko2 ($vasen.($i-1).perusmuoto, $vasen.$i.perusmuoto, $oikea.perusmuoto)) then
+#    return no;
+#  end;
+
+
   # Erisnimet eivät voi olla yhdyssanojen osana.
   #
   define $nimet := <etunimi, sukunimi, nimi>;
@@ -1108,15 +1119,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
         (substring($oikea.perusmuoto,1) matches @ääntiö)) then
       return (substring($vasen.$i.perusmuoto,1R) /= substring($oikea.perusmuoto,1));
     end;
-  end;
-
-  if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
-    return no;
-  end;
-
-  if (($i greater 1) and
-      yhdyssanataulukko2 ($vasen.($i-1).perusmuoto, $vasen.$i.perusmuoto, $oikea.perusmuoto)) then
-    return no;
   end;
 
   return yes;
@@ -1423,6 +1425,22 @@ end_rule loppu ($tietue):
       ($tietue.$n.perusmuoto = "ääntö") and
       ($tietue.($n-1).luokka = johdin_inen)) then
     stop;
+  end;
+
+
+  if ($i greater 1) then
+    foreach $p in $i-1:
+      if (yhdyssanataulukko ($tietue.$p.perusmuoto, $tietue.($p+1).perusmuoto)) then
+        stop;
+      end;
+    end;
+  end;
+  if ($i greater 2) then
+    foreach $p in $i-2:
+      if (yhdyssanataulukko2 ($tietue.$p.perusmuoto, $tietue.($p+1).perusmuoto, $tietue.($p+2).perusmuoto)) then
+        stop;
+      end;
+    end;
   end;
 
   result $tietue, accept;
@@ -1745,17 +1763,18 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
   if (loppu in $oikea.jatko) then
     result $res, accept;
   end;
-  if (($oikea.luokka in <paikannimi, sukunimi>) and (johdin_lAinen in $oikea.jatko)) then
-    result $res, rules paikannimen_lainen_johdin;
-  end;
+#  if (($oikea.luokka in <paikannimi, sukunimi>) and (johdin_lAinen in $oikea.jatko)) then
+#    result $res, rules paikannimen_lainen_johdin;
+#  end;
   result $res, rules erisnimen_sijapääte, liitesana, tavuviiva;
 ##result $res, rules sijapääte, liitesana, tavuviiva, nimisana;
 end;
 
 
 # Paikannimestä johdettu kansallisuuden nimi.
+#
 combi_rule paikannimen_lainen_johdos ($vasen, $oikea, $sana, $n):
-  ? $oikea.luokka in <paikannimi, sukunimi>;
+  ? $oikea.luokka = paikannimi;
   ? johdin_lAinen in $oikea.jatko;
   result $vasen + <[alku: $sana] + $oikea>, rules paikannimen_lainen_johdin;
 end;
@@ -1765,10 +1784,28 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = johdin_lAinen;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules tavuviiva, nimisana, laatusana,
-               nimisanan_johdos, laatusanan_johdos,
-               sijapääte, omistusliite, liitesana, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if tavuviiva in $oikea.jatko then
+    result $res,
+           rules nimisana, laatusana, ##### inen_johdos_nimisanasta,
+                 yhdysmerkki_lainen_johdoksen_jälkeen,
+                 teonsanasta_johdettu_nimisana;
+  end;
+
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+
+  if loppu in $oikea.jatko then
+     result $res, accept;
+   end;
+
+   result $res,
+          rules sijapääte, laatusanan_johdos;
 end;
 
 
@@ -1795,7 +1832,7 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi;
+    result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi, johdettu_etunimi;
   else
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
@@ -1821,6 +1858,7 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
          etuliite, teonsana;
 end;
 
+
 combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
   ? $oikea.paikannimen_jälkiliite = yes;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -1834,4 +1872,71 @@ combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
          erisnimen_sijapääte,
          liitesana,
          yhdysmerkki_erisnimen_jälkeen;
+end;
+
+
+combi_rule johdettu_etunimi ($vasen, $oikea, $sana):
+  ? $oikea.etunimen_jälkiliite = yes;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  result $res, rules
+         erisnimen_sijapääte,
+         liitesana,
+         yhdysmerkki_erisnimen_jälkeen;
+end;
+
+
+# inen-johdinta edeltävä nimisana
+# sääntö ei voi olla sanan alussa
+combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka in <nimisana, nimi_laatusana>;
+  ? johdin_inen in $oikea.jatko;
+  ? $oikea.tiedot = nil or
+    (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
+
+#  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+
+  result $vasen + <[alku: $sana] + $oikea>, rules johdin_inen;
+end;
+
+
+combi_rule johdin_inen ($vasen, $oikea, $sana, $n):
+  ? $oikea.luokka = johdin_inen;
+
+  $oikea.äs := $vasen.($n - 1).äs;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules nimisana, laatusana,
+           tavuviiva, etuliite;
+  end;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+    result $vasen + <[alku: $sana] + $oikea>,
+##       rules laatusanan_sijapääte,
+         rules sijapääte,
+	       liitesana,
+	       laatusanan_johdos,
+	       voitto_yliaste;
+end;
+
+
+combi_rule yhdysmerkki_lainen_johdoksen_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+
+#  define $res := $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  result $res, accept;
+  result $res,
+         rules erisnimi, paikannimen_lainen_johdos,
+               nimisana, laatusana;
+##             inen_päätteinen_laatusana;
 end;
