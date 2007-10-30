@@ -94,7 +94,6 @@
 [perusmuoto: "helluntailainen", alku: "helluntailai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "heprealainen", alku: "heprealai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "herrnhutilainen", alku: "herrnhutilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "hongkongilainen", alku: "hongkongilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppppp"];
 [perusmuoto: "inkeriläinen", alku: "inkeriläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
 [perusmuoto: "isaurialainen", alku: "isaurialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "itävaltalainen", alku: "itävaltalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppp"];
@@ -180,7 +179,6 @@
 [perusmuoto: "skottilainen", alku: "skottilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "slaavilainen", alku: "slaavilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "spartalainen", alku: "spartalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "srilankalainen", alku: "srilankalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppppppp"];
 [perusmuoto: "stoalainen", alku: "stoalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sumerilainen", alku: "sumerilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sunnalainen", alku: "sunnalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];

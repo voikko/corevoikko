@@ -47,7 +47,7 @@
 initial <>,
             rules nimisana, laatusana, teonsana,
 #                  tavuviiva, etuliite, asemosana, kieltosana, apusana, lyhennesääntö;
-                  erisnimi, paikannimen_lainen_johdos, sanan_alku;
+                  erisnimi, paikannimen_ja_sukunimen_lainen_johdos, sanan_alku;
 
 include "suomi.inc";
 
@@ -142,7 +142,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $r, rules kieltosana;
     end;
     if (nimisana in $oikea.jatko) then
-      result $r, rules nimisana, teonsanasta_johdettu_nimisana, paikannimen_lainen_johdos;
+      result $r, rules nimisana, teonsanasta_johdettu_nimisana, paikannimen_ja_sukunimen_lainen_johdos;
     end;
     if (laatusana in $oikea.jatko) then
       result $r, rules laatusana, teonsanasta_johdettu_laatusana;
@@ -266,7 +266,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
                laatusana,
                teonsana,
                nimisanan_johdos,
-               paikannimen_lainen_johdos,
+               paikannimen_ja_sukunimen_lainen_johdos,
                tavuviiva,
                etuliite,
                loppu;
@@ -302,6 +302,7 @@ combi_rule laatusana ($vasen, $oikea, $sana):
                liitesana, liitesana2,
                nimisana, laatusana, teonsana,
                laatusanan_johdos,
+               paikannimen_ja_sukunimen_lainen_johdos,
                voitto_yliaste,
                tavuviiva,
                etuliite,
@@ -362,7 +363,7 @@ combi_rule tavuviiva ($vasen, $oikea, $sana, $n):
   result $vasen + <[alku: $sana] + $oikea>,
          rules nimisana, laatusana, asemosana, apusana, lyhennesääntö,
                etuliite, teonsana, kieltosana, erisnimi,
-               paikannimen_lainen_johdos,  loppu;
+               paikannimen_ja_sukunimen_lainen_johdos,  loppu;
 end;
 
 
@@ -795,6 +796,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $n):
                 nimisana, laatusana, teonsana,
                 voitto_yliaste,
                 laatusanan_johdos, nimisanan_johdos,
+                paikannimen_ja_sukunimen_lainen_johdos,
                 etuliite,
                 tavuviiva,
                 loppu;
@@ -988,16 +990,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 #define $d := transmit (<"d"> + <$i>);
 
 
-#  if (yhdyssanataulukko ($vasen.$i.perusmuoto, $oikea.perusmuoto)) then
-#    return no;
-#  end;
-
-#  if (($i greater 1) and
-#      yhdyssanataulukko2 ($vasen.($i-1).perusmuoto, $vasen.$i.perusmuoto, $oikea.perusmuoto)) then
-#    return no;
-#  end;
-
-
   # Erisnimet eivät voi olla yhdyssanojen osana.
   #
   define $nimet := <etunimi, sukunimi, nimi>;
@@ -1005,54 +997,10 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
 
   define $n := length ($vasen);
 
-  if ($vasen.<1,perusmuoto> = "aito") and
-     ($oikea.luokka = paikannimi) then
-    return yes;
-  end;
-
-  foreach $k in length ($vasen):
-    if ($k greater 1) and
-       ($vasen.($i-1).luokka in <etunimi, sukunimi, paikannimi, nimi>) and
-       ($vasen.$i.luokka = johdin_lAinen) then
-      return yes;
-    end;
-  end;
-
-  if ($oikea.luokka = johdin_lAinen) then
-    return yes;
-  end;
-
-  if (($i greater_equal 2) and
-          ($vasen.$i.luokka = tavuviiva) and
-          (($vasen.($i - 1).luokka in $nimet) or ($oikea.luokka in $nimet))) then
-    #
-    # Hyväksytään kaksiosainen erisnimi ("Anna-Mari") tai erisnimi viivan
-    # kanssa yhdyssanassa ("Anna-niminen").
-    #
-    return yes;
-  end;
-
   # Hyväksytään yhdyssanat etunimi|sukunimi + vainaja (esim väisäsvainaja).
   #
   if (($vasen.$i.luokka in <etunimi, sukunimi>) and
       ($oikea.perusmuoto = "vainaja")) then
-    return yes;
-  end;
-
-
-  # Hyväksytään yhdyssanat etunimi + omanto_n + kirkko|päivä|poika|tytär
-  # (esim. Nikolainkirkko, Mikonpäivä, Marianpoika, Maununtytär)
-  # ja etunimi|sukunimi|paikannimi + omanto_n + tie|katu|kuja
-  # (esim. Heikinkuja, Mannerheimintie, Sortavalankatu).
-  #
-  if (($i greater_equal 2) and
-      ($vasen.$i.luokka = sijapääte and $vasen.$i.sija = omanto_n) and
-       (   (($vasen.($i-1).luokka = etunimi)
-            and ($oikea.perusmuoto in @etunimi_loppuosa))
-        or (($vasen.($i-1).luokka in <etunimi, sukunimi, paikannimi>)
-            and ($oikea.perusmuoto in @esp_loppuosa)
-            and (not ($oikea.luokka in <etunimi, sukunimi, paikannimi>))))) then
-#define $a := transmit ("Huuhaa.");
     return yes;
   end;
 
@@ -1062,24 +1010,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $i):
     return yes;
   end;
 
-#define $a := transmit (<"Huuhaa."> + <length($vasen)>);
-
-  if ($oikea.luokka in $nimet) then
-    return no;
-#  else
-#    foreach $k in $vasen:
-#      if ($k.luokka in $nimet) then
-#define $ö := transmit ($k.perusmuoto);
-#        return no;
-#      end;
-#    end;
-  end;
-
-#define $b := transmit (<$vasen.$i.perusmuoto> + <$oikea.perusmuoto>);
-
-#define $a2 := transmit (<"a2"> + <$vasen>);
-#define $b2 := transmit (<"b2"> + <$oikea>);
-#define $c2 := transmit (<"c2"> + <$i>);
 
   # Jotkut sanat eivät voi olla yhdyssanojen osina.
   #
@@ -1128,6 +1058,7 @@ end;
 subrule yhdyssanataulukko ($eka, $toka):
   define $taulukko := <
 #      <<"">,    <"">>,
+      <<"aasi">,            <"ala", "alainen">>,  # Aasi+ala+inen, aasi+alainen.
       <<"agra">,            <"ari", "arka">>,
       <<"alanen">,          <"pää", "suka", "sukia", "suu", "tulo">>,
       <<"alas">,            <"suka", "sukia">>,
@@ -1764,23 +1695,31 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
     result $res, accept;
   end;
 #  if (($oikea.luokka in <paikannimi, sukunimi>) and (johdin_lAinen in $oikea.jatko)) then
-#    result $res, rules paikannimen_lainen_johdin;
+#    result $res, rules paikannimen_ja_sukunimen_lainen_johdin;
 #  end;
   result $res, rules erisnimen_sijapääte, liitesana, tavuviiva;
 ##result $res, rules sijapääte, liitesana, tavuviiva, nimisana;
 end;
 
 
-# Paikannimestä johdettu kansallisuuden nimi.
+# Paikannimestä johdettu kansallisuuden nimi tai
+# sukunimestä johdettu aatteen kannattajan nimi.
 #
-combi_rule paikannimen_lainen_johdos ($vasen, $oikea, $sana, $n):
-  ? $oikea.luokka = paikannimi;
+combi_rule paikannimen_ja_sukunimen_lainen_johdos ($vasen, $oikea, $sana, $n):
+  ? $oikea.luokka in <paikannimi, sukunimi>;
+#define $a := transmit ($vasen);
+#define $b := transmit ($oikea);
+#define $c := transmit ($sana);
+#define $d := transmit ($n);
+
+  ? ($n = 1) or ($vasen.($n-1).jatko * <nimisana, nimi_laatusana, laatusana, etuliite, tavuviiva> /= <>);
   ? johdin_lAinen in $oikea.jatko;
-  result $vasen + <[alku: $sana] + $oikea>, rules paikannimen_lainen_johdin;
+
+  result $vasen + <[alku: $sana] + $oikea>, rules paikannimen_ja_sukunimen_lainen_johdin;
 end;
 
 
-combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
+combi_rule paikannimen_ja_sukunimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = johdin_lAinen;
   ? ääntiösointu_oikein ($vasen, $oikea, $sana);
 
@@ -1824,8 +1763,12 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana):
   ? ($oikea.sija /= sisätulento_Vn)  or sisätulento_Vn_oikein  ($oikea.sija, substring($edellinen.alku,1R), $sana);
   ? ($oikea.sija /= sisätulento_hVn) or sisätulento_hVn_oikein ($oikea.sija, substring($edellinen.alku,1R), $sana);
 
-  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  if $oikea.äs = aä then
+    $oikea.äs := $edellinen.äs;
+  end;
+
   define $res := $vasen + <[alku: $sana] + $oikea>;
+
   if ($oikea.sija = kerronto_sti) then
     ? $edellinen.luokka in @sti_edeltäjä;
   elseif ($oikea.sija = omanto_n) then
@@ -1891,8 +1834,9 @@ combi_rule johdettu_etunimi ($vasen, $oikea, $sana):
 end;
 
 
-# inen-johdinta edeltävä nimisana
-# sääntö ei voi olla sanan alussa
+# inen-johdinta edeltävä nimisana.
+# Sääntö ei voi olla sanan alussa.
+#
 combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
   ? johdin_inen in $oikea.jatko;
@@ -1936,7 +1880,7 @@ combi_rule yhdysmerkki_lainen_johdoksen_jälkeen ($vasen, $oikea, $sana):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   result $res, accept;
   result $res,
-         rules erisnimi, paikannimen_lainen_johdos,
+         rules erisnimi, paikannimen_ja_sukunimen_lainen_johdos,
                nimisana, laatusana;
 ##             inen_päätteinen_laatusana;
 end;

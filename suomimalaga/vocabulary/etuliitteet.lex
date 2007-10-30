@@ -48,8 +48,10 @@
 [perusmuoto: "alkuperäis", alku: "alkuperäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>, rakenne: "=pppp=pppppp"];
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Alkuunpanija jne.
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä];
-[perusmuoto: "anglo", alku: "anglo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];   # On sana: "amfibio lentokone".
+[perusmuoto: "ammonium", alku: "ammonium", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>]; # -karbonaatti, -suola jne.
+[perusmuoto: "anarko", alku: "anarko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>]; # -kapitalismi, -kommunismi.
+[perusmuoto: "anglo", alku: "anglo", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];   # On sana: "anglo saksi".
 [perusmuoto: "anti", alku: "anti", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "astraali", alku: "astraali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "astro", alku: "astro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -129,7 +131,6 @@
 [perusmuoto: "kolmois", alku: "kolmois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kontra", alku: "kontra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kosio", alku: "kosio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "kosio", alku: "kosio", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kotiin", alku: "kotiin", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kuolin", alku: "kuolin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kvasi", alku: "kvasi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -179,7 +180,6 @@
 [perusmuoto: "pre-", alku: "pre-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=ppp-", tiedot: <ei_voikko>];
 [perusmuoto: "puoli", alku: "puoli", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "puolittais", alku: "puolittais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "pyro", alku: "pyro", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "pysyväis", alku: "pysyväis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "päälle", alku: "päälle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "raitio", alku: "raitio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
