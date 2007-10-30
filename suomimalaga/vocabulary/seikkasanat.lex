@@ -784,6 +784,7 @@
 [perusmuoto: "tuhansittain", alku: "tuhansittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuhatkunta", alku: "tuhatkunta", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"]; # Oikeastaan lukusana, mutta taipumaton.
 [perusmuoto: "tuiki", alku: "tuiki", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "tukkanuottasilla", alku: "tukkanuottas", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: a, rakenne: "=ppppp=ppppppppppp"];
 [perusmuoto: "tuohduksissa", alku: "tuohduks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
 [perusmuoto: "tuolloin", alku: "tuolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuonnemma", alku: "tuonnemma", luokka: seikkasana, jatko: <loppu>, äs: a];
@@ -936,6 +937,8 @@
 [perusmuoto: "ynnä", alku: "ynnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ypö", alku: "ypö", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ypöyksin", alku: "ypöyksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=ppppp"];
+[perusmuoto: "yöpaitasilla", alku: "yöpaitasilla", luokka: seikkasana, jatko: <omistusliite>, äs: a, rakenne: "=pp=pppppppppp"];
+[perusmuoto: "yöpaitasilla", alku: "yöpaitasille", luokka: seikkasana, jatko: <omistusliite>, äs: a, rakenne: "=pp=pppppppppp"];
 [perusmuoto: "äkkiseltä", alku: "äkkiseltä", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "äkkiä", alku: "äkisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "äkkiä", alku: "äkkiä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
