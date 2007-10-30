@@ -47,12 +47,15 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 			case CHAR_PUNCTUATION:
 				switch (text[wlen]) {
 					case L'\'':
+					case L'\u2019': /* RIGHT SINGLE QUOTATION MARK */
 					case L':':
 						if (wlen + 1 == textlen) return wlen;
 						if (get_char_type(text[wlen+1]) ==
 						    CHAR_LETTER) break;
 						return wlen;
 					case L'-':
+					case L'\u2010': /* HYPHEN */
+					case L'\u2011': /* NON-BREAKING HYPHEN */
 						if (wlen + 1 == textlen) return wlen + 1;
 						if (wcschr(L"\",", text[wlen+1]))
 							return wlen + 1;
@@ -117,7 +120,7 @@ enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textl
 			*tokenlen = textlen;
 			return TOKEN_WHITESPACE;
 		case CHAR_PUNCTUATION:
-			if (text[0] == L'-') {
+			if (wcschr(L"-\u2010\u2011", text[0])) {
 				if (textlen == 1) {
 					*tokenlen = 1;
 					return TOKEN_PUNCTUATION;

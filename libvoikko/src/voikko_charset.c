@@ -24,8 +24,12 @@
 #include <wchar.h>
 
 enum char_type get_char_type(wchar_t c) {
+	if (wcschr(L".,;-!?:'\"()[]{}"
+	           L"\u2019"  /* RIGHT SINGLE QUOTATION MARK */
+	           L"\u2010"  /* HYPHEN */
+	           L"\u2011"  /* NON-BREAKING HYPHEN */
+	           , c)) return CHAR_PUNCTUATION;
 	if (isspace(c)) return CHAR_WHITESPACE;
-	if (wcschr(L".,;-!?:'\"", c)) return CHAR_PUNCTUATION;
 	if (wcschr(L"aAbBcCdDeEfFfGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
 	           L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
 	           L"\u00C1"  /* LATIN CAPITAL LETTER A WITH ACUTE */
@@ -84,6 +88,11 @@ enum char_type get_char_type(wchar_t c) {
 	           L"\u0161"  /* LATIN SMALL LETTER S WITH CARON */
 	           L"\u017D"  /* LATIN CAPITAL LETTER Z WITH CARON */
 	           L"\u017E"  /* LATIN SMALL LETTER Z WITH CARON */
+	           L"\uFB00"  /* LATIN SMALL LIGATURE FF */
+	           L"\uFB01"  /* LATIN SMALL LIGATURE FI */
+	           L"\uFB02"  /* LATIN SMALL LIGATURE FL */
+	           L"\uFB03"  /* LATIN SMALL LIGATURE FFI */
+	           L"\uFB04"  /* LATIN SMALL LIGATURE FFL */
 	           , c)) return CHAR_LETTER;
 	if (wcschr(L"0123456789", c)) return CHAR_DIGIT;
 	return CHAR_UNKNOWN;

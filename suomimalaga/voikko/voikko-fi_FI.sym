@@ -1,6 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#                 2006-2007 Harri Pitkänen <hatapitk@iki.fi>
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -369,11 +370,7 @@ laatutapa;
 
 perusmuoto;     # Sanan perusmuoto (hevonen, puhua, keltainen, jne).
 alku;           # Sanan taipumaton alkuosa (hevo(sta), puhu(essa), keltai(seen)).
-  alku_sukija;  # Sanan taipumaton alkuosa Sukija-versiossa.
-  alku_voikko;  # Sanan taipumaton alkuosa Voikko-versiossa.
 jatko;          # Sääntö, jolla sanan jäsennystä jatketaan.
-  jatko_sukija; # Sääntö, jolla sanan jäsennystä jatketaan Sukija-versiossa.
-  jatko_voikko; # Sääntö, jolla sanan jäsennystä jatketaan Voikko-versiossa.
 
 
 loppu; # Sana loppuu tähän.
@@ -384,7 +381,6 @@ lähtöluokka; # Sanaluokka, josta toisen sanaluokan sana on johdettu.
              # Esimerkiksi nimisana leikata on johdettu teonsanasta leikkaus.
 
 paikannimen_jälkiliite; # -katu, -vuori, ...
-etunimen_jälkiliite; # Kallenpoika, -tytär, ...
 inen_loppu; # -inen
 
 äs; # Ääntiösointu.
@@ -392,18 +388,12 @@ inen_loppu; # -inen
   ä;
   aä;  # Analyysia, analyysiä.
 
-alkuperäinen_äs;  # Joskus ääntiösointu pitää vaihtaa johdoksissa: pitää -> pito.
-
-
 tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestyksessä.
   atk;       # Tietojenkäsittelyn sana.
   ei_inen;   # Sanasta ei voi johtaa inen-loppista laatusanaa. Esimerkiksi
              # aateli => aatelinen, koska aatelinen voi olla myös nimisana, ja
              # se on erikseen sanastossa.
   ei_lAinen; # Sanalla ei ole -lAinen-johdosta. Ei suomi+lainen.
-  ei_ns;     # Taivutusmuotoa ei ole Nykysuomen sanakirjan (NS) taivutuskaavoissa, esim.
-             # ainoa => ainoisiin (sisätulento_isiin). Lippua ei käytetä missään,
-             # vaan se on ainoastaan merkkinä poikkeamisesta NS:n taivutuksesta.
   ei_mAinen; # Sanalla ei ole -mAinen-johdosta.
   ei_sukija; # Sanaa ei ole sukija-versiossa.
   ei_vertm;  # Laatusana ei taivu vertailumuodoissa.
@@ -422,12 +412,6 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   UUs;       # Nimisana, josta voidaan johtaa ominaisuuden nimi uus-johtimella.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
 
-vanha_h;     # Valohon-tyyppiset taivutusmuodot, joista Nykysuomen sankirja sanoo:
-             # "Niissä taivutusmuodoissa, joiden päätteessä esiintyy pitkä vokaali,
-             # tavataan Kalevalan kielessä ja muussakin, varsinkin vanhemmassa
-             # runokielessä h:llisia rinnakkaismuotoja (valoon---valohon,
-             # punokoon---punokohon, punottiin---punottihin)."
-
 rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sekä
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.
 
@@ -439,10 +423,6 @@ malli;
   sukija;
 taivutus;
   vanhat_muodot;
-tulostus;
-  tavallinen;
-  merkitse_yhdyssanat;
-  koe;
 voikko_debug;
 
 
@@ -973,12 +953,3 @@ kymmenen;
 
 olla;
 lienee;
-
-
-
-# Tositavan kestämän yksikön kolmas tekijä, jossa pääte (vartalon
-# viimeisen ääntiön pidentymä) on sulautunut vartaloon.
-# Esim. saada -> saa, voida -> voi; vertaa puhua -> puhuu.
-# Tätä lippua tarvitaan koodin automaattisessa generoinnissa.
-#
-_y3;
