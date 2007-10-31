@@ -76,8 +76,22 @@ allo_rule generate_allos ($tietue):
 
     if ($tietue.luokka = etuliite) then
       $tietue.jatko := set ($tietue.jatko);
+      if ($tietue.alku = "amerikan") then
+        #
+        # "Amerikan-" tunnistetaan "amerika" + omanto_n + tavuviiva.
+        #
+        $tietue.jatko :=- <tavuviiva>;
+      end;
     end;
   end;
+
+  # Nämä sanat tunnistetaan yhdyssanoina.
+  #
+  if (($tietue.perusmuoto /= nil) and
+      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
+    stop;
+  end;
+
 
   # Paikannimien jälkiliitteet.
   #

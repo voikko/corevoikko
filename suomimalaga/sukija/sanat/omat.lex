@@ -117,7 +117,6 @@
 [perusmuoto: "niinsanottu", alku: "niinsanot", luokka: laatusana, jatko: <raamattu>, äs: a];
 [perusmuoto: "normienmukainen", alku: "normienmukai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "nurinkurin", alku: "nurinkurin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "nurinkurinen", alku: "nurinkuri", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "nurinperin", alku: "nurinperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nurinpäin", alku: "nurinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "paratiissi", alku: "paratiiss", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -126,7 +125,6 @@
 [perusmuoto: "pohjalaanen", alku: "pohjalaa", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "politikko", alku: "politik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "presitenti", alku: "presitent", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "putipuhdas", alku: "putipuh", luokka: nimi_laatusana, jatko: <ahdas>, äs: a];
 [perusmuoto: "rebublikaani", alku: "rebublikaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "reklementti", alku: "reklement", luokka: nimisana, jatko: <tatti>, äs: a];
 [perusmuoto: "revy", alku: "revy", luokka: nimisana, jatko: <valo>, äs: ä];
