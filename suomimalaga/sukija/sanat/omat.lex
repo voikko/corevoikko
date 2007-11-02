@@ -52,7 +52,6 @@
 [perusmuoto: "aikaansaannos", alku: "aikaansaanno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "aikasemmin", alku: "aikasemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alote", alku: "alot", luokka: nimisana, jatko: <vaate>, äs: a];
-[perusmuoto: "amerikan", alku: "amerikan", luokka: etuliite, jatko: @sana1, äs: aä];
 [perusmuoto: "asestautua", alku: "asestau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "asija", alku: "asij", luokka: nimisana, jatko: <karahka>, äs: a]; # Asia.
 [perusmuoto: "babtisti", alku: "babtist", luokka: nimisana, jatko: <banaali>, äs: a];

@@ -1042,7 +1042,8 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"apu">,             <"olka">>,
       <<"arja">,            <"lainen">>,
       <<"askar">,           <"re">>,
-      <<"auto">,            <"nova">>,  # Auto+novien.
+      <<"auki">,            <"naida", "nainen">>, # Auki+naida.
+      <<"auto">,            <"nova">>,   # Auto+novien.
       <<"avo">,             <"nainen">>,
       <<"ele">,             <"itä">>,
       <<"elo">,             <"tee">>,
@@ -1118,6 +1119,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"ope">,       <"reti">>,
       <<"oppinen">,   <"ääntö">>,
       <<"Osta">,      <"maa">>,
+      <<"paita">,     <"silla">>,
       <<"Pal", "Pál">, <"joki", "maa", "meri">>,
       <<"peli">,      <"manni">>,
       <<"perin">,     <"tee">>,   # Perin+tee(llinen).
@@ -1212,8 +1214,9 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"muuri">,  <"inen">, <"ääntö">>,   # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
       <<"pari">,   <"inen">, <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
       <<"suoda">,  <"ma">,   <"lainen">>,  # Suo+ma+lainen. Suoda + johdin_mA_saama + johdin_lainen.
-      <<"suoda">,  <"ma">,   <"laki">>     # Suo+ma+laista. Suoda + johdin_mA_saama + laki.
+      <<"suoda">,  <"ma">,   <"laki">>,    # Suo+ma+laista. Suoda + johdin_mA_saama + laki.
                                            # "Suomalainen" on sanastossa.
+      <<"tukka">,  <"nuotta">, <"silla">>
   >;
 
   foreach $k in $taulukko:

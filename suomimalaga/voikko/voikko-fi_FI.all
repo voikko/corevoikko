@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -956,6 +956,10 @@ allo_rule generate_allos ($tietue):
 
   elseif (tee in $tietue.jatko) then
     choose $i in tee ($tietue, "e");
+    result $i.alku, $i - alku;
+
+  elseif (nugaa in $tietue.jatko) then
+    choose $i in kamee ($tietue, A($tietue));
     result $i.alku, $i - alku;
 
   elseif (trikoo in $tietue.jatko) then

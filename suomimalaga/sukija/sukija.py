@@ -120,7 +120,7 @@ words = [u"aikalainen", u"amerikanenglanti", u"amerikanenglantilainen", u"amerik
 	 u"institutionalisoitua", u"itkettynyt", u"itkettyä",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 	 u"kansallismielinen", u"kuntalainen", u"käynti",
-	 u"luokkalainen", u"lyönti",
+	 u"lahtelainen", u"luokkalainen", u"lyönti",
 	 u"maallistua", u"maolainen", u"marxilainen",
 	 u"opetus", u"otto",
 	 u"rivittyä",
