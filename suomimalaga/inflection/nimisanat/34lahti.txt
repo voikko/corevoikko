@@ -151,7 +151,7 @@ johdin_ittain
           lah+d+ittain
 
 johdin_lAinen
-          lah+ti+lainen
+          lah+te+lainen
 
 johdin_llinen
           lah+de+llinen

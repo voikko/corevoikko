@@ -222,7 +222,8 @@ define @teonsanasta_johdettu_laatusana :=
 
 define @nimisanasta_johdettu_nimisana :=
        <johdin_tAr, johdin_lAinen, johdin_ittAin,
-        johdin_UUs>; # Tekijä => tekijyys.
+        johdin_UUs> # Tekijä => tekijyys.
+       + @johdin_jA;
 
 define @nimisanasta_johdettu_laatusana :=
        <johdin_inen, johdin_llinen, johdin_lAinen, johdin_mAinen, johdin_tOn>;

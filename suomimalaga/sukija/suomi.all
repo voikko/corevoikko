@@ -65,25 +65,24 @@ allo_rule generate_allos ($tietue):
 
   assert (value_type($tietue) = record);
 
-  if ($malli = sukija) then
-    # Nämä sanat voivat olla myös erillisinä sanoina.
-    #
-    if (($tietue.tiedot /= nil) and (ysj in $tietue.tiedot) and
-        (($tietue.perusmuoto /= nil) and
-        (($tietue.perusmuoto = "vuotias") and ($tietue.luokka = nimi_laatusana)))) then
-      $tietue.tiedot :=- <ysj>;
-    end;
+  # Nämä sanat voivat olla myös erillisinä sanoina.
+  #
+  if (($tietue.tiedot /= nil) and (ysj in $tietue.tiedot) and
+      (($tietue.perusmuoto /= nil) and
+      (($tietue.perusmuoto = "vuotias") and ($tietue.luokka = nimi_laatusana)))) then
+    $tietue.tiedot :=- <ysj>;
+  end;
 
-    if ($tietue.luokka = etuliite) then
-      $tietue.jatko := set ($tietue.jatko);
-      if ($tietue.alku = "amerikan") then
-        #
-        # "Amerikan-" tunnistetaan "amerika" + omanto_n + tavuviiva.
-        #
-        $tietue.jatko :=- <tavuviiva>;
-      end;
+  if ($tietue.luokka = etuliite) then
+    $tietue.jatko := set ($tietue.jatko);
+    if ($tietue.alku = "amerikan") then
+      #
+      # "Amerikan-" tunnistetaan "amerika" + omanto_n + tavuviiva.
+      #
+      $tietue.jatko :=- <tavuviiva>;
     end;
   end;
+
 
   # Nämä sanat tunnistetaan yhdyssanoina.
   #
@@ -97,8 +96,8 @@ allo_rule generate_allos ($tietue):
   #
   if ($tietue.perusmuoto in <"joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
-                             "lahti", "maa",
-                             "meri", "mäki", "niemi", "saari",
+                             "laakso", "lahti",
+                             "maa", "meri", "mäki", "niemi", "saari",
                              "tie", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
@@ -7082,7 +7081,7 @@ subrule lahti ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          keinonto_in: <<$param06, <>>>,
                          johdin_inen: <<$param05, <>>>,
                          johdin_ittain: <<$param06, <>>>,
-                         johdin_lAinen: <<$param01, <>>>,
+                         johdin_lAinen: <<$param02, <>>>,
                          johdin_llinen: <<$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
@@ -13219,7 +13218,6 @@ subrule taivutuskaava ($tietue, $taivutus):
   if ($tietue.luokka in <johdin_ntA, nimisana> + @erisnimi + @johdin_jA) then
     $taivutus :=- <voittoaste, yliaste, kerronto_sti>;
   end;
-
 
   define $lista := lajittele ($taivutus);
 

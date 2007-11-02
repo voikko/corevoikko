@@ -220,7 +220,6 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- <voittoaste, yliaste, kerronto_sti>;
   end;
 
-
   define $lista := lajittele ($taivutus);
 
 
