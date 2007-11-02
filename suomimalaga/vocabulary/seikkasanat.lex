@@ -381,6 +381,7 @@
 [perusmuoto: "kuten", alku: "kuten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuulemiin", alku: "kuulemiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuulemma", alku: "kuulemma", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kylliksi", alku: "kyllikse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "kylliksi", alku: "kylliksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllin", alku: "kyllin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllä", alku: "kyl", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
