@@ -837,9 +837,10 @@ väärinteko
 diabolinen
 elealainen
 
-# Huudahdussanoja ja muita puheilmaisuja
+# Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
 aijai
+bravo
 ehei
 haa
 hah
@@ -852,8 +853,13 @@ hyh
 hys
 hä
 jep
+jukolaut
+jukolauta
+jukoliste
 juku
+jumalaut
 just
+juukeli
 kop
 mau
 miau
@@ -888,4 +894,9 @@ yök
 mä
 sä
 tää
+
+# Murteellisia seikkasanoja
+deekikselle
+deekiksellä
+jetsulleen
 
