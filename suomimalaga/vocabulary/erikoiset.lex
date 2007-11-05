@@ -92,6 +92,8 @@
 [perusmuoto: "jotenka", alku: "jotenka", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jotta", alku: "jotta", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jumalauta", alku: "jumalauta", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "jumalauta", alku: "jumal-auta", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jumalauta", alku: "jumal-avita", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jumaliste", alku: "jumaliste", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "juu", alku: "juu", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kah", alku: "kah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
