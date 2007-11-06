@@ -853,6 +853,7 @@ hyh
 hys
 hä
 jep
+jessus
 jukolaut
 jukolauta
 jukoliste
@@ -899,4 +900,11 @@ tää
 deekikselle
 deekiksellä
 jetsulleen
+
+# Yhdyssanoja, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
+# oikolukusanastoon
+bulevardisportti
+sporttihenkinen
+sporttimalli
+sporttimallinen
 
