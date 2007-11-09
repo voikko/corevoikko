@@ -112,17 +112,19 @@ rx = re.compile(pattern, re.IGNORECASE)
 # grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
 #
 #        Sukija-versiossa "amerikan" on etuliite. (-:
-words = [u"aikalainen", u"amerikanenglanti", u"amerikanenglantilainen", u"amerikanjuutalainen",
+words = [u"aikalainen", u"alaisuus",
+	 u"amerikanenglanti", u"amerikanenglantilainen", u"amerikanjuutalainen",
          u"amerikanrauta", u"amerikansalaatti", u"amerikansuomalainen", u"amerikansuomi",
          u"elämä",
          u"freudilainen",
-	 u"halpatyö", u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
+	 u"halpatyö", u"hautaus", u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
 	 u"institutionalisoitua", u"itkettynyt", u"itkettyä",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 	 u"kansallismielinen", u"kuntalainen", u"käynti",
-	 u"lahtelainen", u"luokkalainen", u"lyönti",
+	 u"laajakuva", u"lahtelainen", u"liittolainen", u"luokkalainen", u"lyönti",
 	 u"maallistua", u"maolainen", u"marxilainen",
-	 u"opetus", u"otto",
+	 u"oikeistolainen", u"opetus", u"otto",
+         u"pakolainen",
 	 u"rivittyä",
 	 u"sisäänajo", u"sisäänmeno", u"sisääntulo",
 	 u"trotskilainen", u"työläinen", u"täysihoito", u"täysihoitola",

@@ -162,7 +162,7 @@
 [perusmuoto: "olympia", alku: "olympia", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ominais", alku: "ominais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "online", alku: "online", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pp=pppp"];
-[perusmuoto: "online-", alku: "online-", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pp=pppp-"];
+[perusmuoto: "online-", alku: "online-", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pp=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "osittais", alku: "osittais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "pappis", alku: "pappis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "perille", alku: "perille", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];

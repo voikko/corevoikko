@@ -178,7 +178,13 @@ subrule taivutuskaava ($tietue, $taivutus):
   $taivutus := $uusi_taivutus;
 
 
- if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana>)
+#if ($tietue.luokka = johdin_lAinen) or ($tietue.perusmuoto = "nainen") then
+#  define $aa := transmit ($tietue);
+#  define $bb := transmit ($taivutus);
+#end;
+
+
+ if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana, johdin_lAinen>)
       and ($taivutus.nimentö /= nil)) then
     if ($taivutus.tavuviiva = nil) then
       $taivutus :=+ [tavuviiva: $taivutus.nimentö];
@@ -203,7 +209,7 @@ subrule taivutuskaava ($tietue, $taivutus):
       $taivutus :=- johdin_inen;
     end;
     if (ei_lAinen in $tietue.tiedot) then
-      $taivutus :=- johdin_lAinen;
+       $taivutus :=- johdin_lAinen;
     end;
     if (ei_mAinen in $tietue.tiedot) then
       $taivutus :=- johdin_mAinen;
@@ -216,9 +222,38 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
 
-  if ($tietue.luokka in <johdin_ntA, nimisana> + @erisnimi + @johdin_jA) then
+  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste, lukusana>
+                             + @teonsanasta_johdettu_laatusana + @nimisanasta_johdettu_laatusana
+                             + @laatutapa_1 + @laatutapa_2)) then
     $taivutus :=- <voittoaste, yliaste, kerronto_sti>;
   end;
+
+
+  if ($tietue.luokka in <voittoaste, yliaste, lukusana>) then
+    $taivutus :=- <voittoaste, yliaste>;
+  end;
+
+
+  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste,
+                              johdin_tAr>    # Tekijätär => tekijättäryys.
+                             + @johdin_jA    # Tekijä => tekijyys.
+                             + @teonsanasta_johdettu_laatusana
+                             + @nimisanasta_johdettu_laatusana)) then
+    $taivutus :=- <johdin_Us, johdin_UUs>;
+  end;
+
+
+  # Esim. sanan "vanhanmallisista" perusmuoto ei ole "vanhanmallisinen".
+  #
+  if ($tietue.luokka in <laatusana, nimi_laatusana>) and ($tietue.perusmuoto matches ".*inen") then
+    $taivutus :=- <johdin_inen>;
+  end;
+
+#if ($tietue.luokka = johdin_lAinen) or ($tietue.perusmuoto = "nainen") then
+#  define $a := transmit ($tietue);
+#  define $b := transmit ($taivutus);
+#end;
+
 
   define $lista := lajittele ($taivutus);
 

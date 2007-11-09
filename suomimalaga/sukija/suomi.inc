@@ -131,6 +131,13 @@ define @laatutapa_2_tU := <laatutapa_2_tU_dU,
                            laatutapa_2_tU_nU,
                            laatutapa_2_tU_rU>;
 
+define @laatutapa_1 := <laatutapa_1_vA, laatutapa_1_vE, laatutapa_1_ttA, laatutapa_1_tA>;
+
+define @laatutapa_2 := <laatutapa_2_lUt, laatutapa_2_nUt, laatutapa_2_rUt, laatutapa_2_sUt,
+                        laatutapa_2_ttU> +
+                       @laatutapa_2_tU +
+                       @laatutapa_2_stU;
+
 define @tositapa_4_d  := <tositavan_kestämä_dAAn,
                           tositavan_kestämä_dAAn_kielto,
                           tositavan_kertoma_tiin>;
@@ -221,15 +228,15 @@ define @teonsanasta_johdettu_laatusana :=
         johdin_vA, johdin_vAinen, johdin_vE>;
 
 define @nimisanasta_johdettu_nimisana :=
-       <johdin_tAr, johdin_lAinen, johdin_ittAin,
+####       <johdin_tAr, johdin_lAinen, johdin_ittAin,
+       <johdin_tAr, johdin_ittAin,  # johdin_lAinen on vain laatusana.
         johdin_UUs> # Tekijä => tekijyys.
        + @johdin_jA;
 
 define @nimisanasta_johdettu_laatusana :=
        <johdin_inen, johdin_llinen, johdin_lAinen, johdin_mAinen, johdin_tOn>;
 
-define @laatusanasta_johdettu_nimisana :=
-       <johdin_mmUUs, johdin_immUUs, johdin_Us, johdin_UUs>;
+define @laatusanasta_johdettu_nimisana := <johdin_Us, johdin_UUs>;
 
 define @laatusanasta_johdettu_laatusana :=
        <johdin_lAinen, johdin_llinen, johdin_nlainen>;
