@@ -414,6 +414,10 @@ kuolleempi
 purreempi
 lakaisseempi
 enimmäkseen
+soittajamainen # johdin_jA + mAinen
+!soittajamäinen
+metsästäjämäinen
+!metsastajamainen
 
 [sijapäätteet]
 !Erkkiän

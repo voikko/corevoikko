@@ -1417,7 +1417,7 @@ define @jatko_jA :=
    ulkoeronto_ltA, ulkotulento_lle, vajanto_ttA, kerronto_sti,
    voittoaste, nimisana, nimi_laatusana, laatusana, teonsana,
    etuliite, johdin_tOn, johdin_tAr, johdin_llinen, nimentö_t, omanto_in,
-   liitesana, loppu>;
+   johdin_mAinen, liitesana, loppu>;
 
 
 define @jatko_j_myyjä :=
