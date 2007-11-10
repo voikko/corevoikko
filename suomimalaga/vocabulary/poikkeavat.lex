@@ -230,7 +230,10 @@
 [perusmuoto: "karkutie", alku: "karkut", luokka: nimisana, jatko: <tie>, äs: ä, rakenne: "=ppppp=ppp"]; # Esim. tie-sanan kirjoitusasuksi
 [perusmuoto: "tie", alku: "teitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tietää", alku: "tie", luokka: teonsana, jatko: <taitaa>, äs: ä];
-[perusmuoto: "tiivis", alku: "tiiv", luokka: nimi_laatusana, jatko: <valmis>, äs: ä];
+[perusmuoto: "tiivis", alku: "tiiv", luokka: laatusana, jatko: <valmis>, äs: ä];
+[perusmuoto: "ilmatiivis", alku: "ilmatiiv", luokka: laatusana, jatko: <valmis>, äs: ä, rakenne: "=pppp=pppppp"];
+[perusmuoto: "pölytiivis", alku: "pölytiiv", luokka: laatusana, jatko: <valmis>, äs: ä, rakenne: "=pppp=pppppp"];
+[perusmuoto: "vesitiivis", alku: "vesitiiv", luokka: laatusana, jatko: <valmis>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a];
 [perusmuoto: "tosi", alku: "to", luokka: nimi_laatusana, jatko: <tosi>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "tuntea", alku: "tun", luokka: teonsana, jatko: <tuntea>, äs: a];
