@@ -447,28 +447,23 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: yksikkö, äs: aä, jatko: <liitesana, loppu>];
 
 
-# Matkallain. Tämä on oltava erikseen etu- ja takaääntiöille,
-# jotta se ei sekaantuisi yksikön ja monikon kolmannen omistusliitteeseen
-#
-[alku: "in",  luokka: omistusliite, äs: a, jatko: <liitesana, loppu>, tiedot: <murre>];
-[alku: "in",  luokka: omistusliite, äs: ä, jatko: <liitesana, loppu>, tiedot: <murre>];
-
-[alku: "ni",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "si",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "s",   luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>];
-[alku: "nsa", luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "an",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "en",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "hen", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>]; # Esim. verkoille(h)en.
-[alku: "in",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "on",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "un",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "än",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "ön",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "mme", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "nne", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+[alku: "ni",  luokka: omistusliite, äs: aä, tekijä: 1, jatko: <liitesana, loppu>];                  # Matkalle+ni.
+[alku: "in",  luokka: omistusliite, äs: aä, tekijä: 1, jatko: <liitesana, loppu>, tiedot: <murre>]; # Matkalle+in.
+[alku: "si",  luokka: omistusliite, äs: aä, tekijä: 2, jatko: <liitesana, loppu>];
+[alku: "s",   luokka: omistusliite, äs: aä, tekijä: 2, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "nsa", luokka: omistusliite, äs: a,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "nsä", luokka: omistusliite, äs: ä,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "an",  luokka: omistusliite, äs: a,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "en",  luokka: omistusliite, äs: aä, tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "hen", luokka: omistusliite, äs: aä, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>]; # Esim. verkoille(h)en.
+[alku: "in",  luokka: omistusliite, äs: aä, tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "on",  luokka: omistusliite, äs: a,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "un",  luokka: omistusliite, äs: a,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "yn",  luokka: omistusliite, äs: ä,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "än",  luokka: omistusliite, äs: ä,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "ön",  luokka: omistusliite, äs: ä,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "mme", luokka: omistusliite, äs: aä, tekijä: 1, jatko: <liitesana, loppu>];
+[alku: "nne", luokka: omistusliite, äs: aä, tekijä: 1, jatko: <liitesana, loppu>];
 
 
 # Karlsson 1983, s. 234,

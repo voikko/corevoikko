@@ -198,6 +198,17 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_inen;
   end;
 
+##  if (not ($tietue.luokka in <nimisana, nimi_laatusana, johdin_tAr>
+##                             + @laatusanasta_johdettu_nimisana + @teonsanasta_johdettu_nimisana)) then
+##   $taivutus :=- @nimisanasta_johdettu_laatusana;
+##  end;
+
+  # Ei kahta -llinen-johdinta peräkkäin.
+  #
+  if ($tietue.luokka in <johdin_llinen>) then
+    $taivutus :=- johdin_llinen;
+  end;
+
   if ($tietue.luokka in <nimitapa_4>) then
     $taivutus :=- johdin_inen;
   end;
