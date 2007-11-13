@@ -251,7 +251,6 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
                nimisana,
                laatusana,
                teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana,
-##               nimisanan_johdos,
                nimisanasta_johdettu_nimisana, nimisanasta_johdettu_laatusana,
                paikannimen_ja_sukunimen_lainen_johdos,
                tavuviiva,
@@ -282,12 +281,19 @@ combi_rule laatusana ($vasen, $oikea, $sana):
 
 #define $n := transmit (<$vasen> + <$oikea> + <$sana>);
 
+#  if ($oikea.luokka = nimi_laatusana) then
+#    result $vasen + <[alku: $sana] + $oikea>,
+#           rules nimisanasta_johdettu_nimisana, nimisanasta_johdettu_laatusana;
+#  end;
+
+
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, omistusliite,
                liitesana, liitesana2,
                nimisana, laatusana,
                teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana,
                laatusanan_johdos,
+##               laatusanasta_johdettu_nimisana, laatusanasta_johdettu_laatusana,
                paikannimen_ja_sukunimen_lainen_johdos,
                voitto_yliaste,
                tavuviiva,
@@ -773,7 +779,8 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $n):
                 nimisana, laatusana,
                 teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana,
                 voitto_yliaste,
-                laatusanan_johdos, nimisanan_johdos,
+                laatusanan_johdos,
+                nimisanasta_johdettu_nimisana, nimisanasta_johdettu_laatusana,
                 paikannimen_ja_sukunimen_lainen_johdos,
                 etuliite,
                 tavuviiva,
@@ -819,8 +826,7 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $n):
                 nimisana, laatusana,
                 teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana,
                 laatusanan_johdos,
-                nimisanan_johdos,
-##                nimisanasta_johdettu_nimisana, nimisanasta_johdettu_laatusana,
+                nimisanasta_johdettu_nimisana, nimisanasta_johdettu_laatusana,
                 paikannimen_ja_sukunimen_lainen_johdos,
                 voitto_yliaste,
                 etuliite,

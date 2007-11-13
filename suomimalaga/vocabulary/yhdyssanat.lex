@@ -193,6 +193,24 @@
 
 [perusmuoto: "uusikaupunkilainen", alku: "uusikaupunkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
 
+# {{{2 Uusikirkko
+
+[perusmuoto: "Uusikirkko", alku: "Uusikirkko",   luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudenkirkko",  luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ipppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudenkirko",   luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ipppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uuttakirkko",  luokka: paikannimi, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ipppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uutenakirkko", luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=ippppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudeksikirko", luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ipppppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudessakirko", luokka: paikannimi, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: a, rakenne: "=ipppppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudestakirko", luokka: paikannimi, luku: yksikkö, jatko: <sisäeronto_stA>, äs: a, rakenne: "=ipppppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uuteenkirkko", luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=ippppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudellakirko", luokka: paikannimi, luku: yksikkö, jatko: <ulko_olento_llA>, äs: a, rakenne: "=ipppppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudeltakirko", luokka: paikannimi, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=ipppppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudellekirko", luokka: paikannimi, luku: yksikkö, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ipppppp=pppppp"];
+[perusmuoto: "Uusikirkko", alku: "Uudettakirko", luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ipppppp=pppppp"];
+
+[perusmuoto: "uusikirkkolainen", alku: "uusikirkkolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppp"];
+
 # {{{2 Uusimaa
 
 [perusmuoto: "Uusimaa", alku: "Uusimaa",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ippp=ppp"];
