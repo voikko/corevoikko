@@ -836,6 +836,8 @@ ruskeaverikkö
 väärinteko
 diabolinen
 elealainen
+pannaanjulistus
+käsikynkkä
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
