@@ -838,6 +838,7 @@ diabolinen
 elealainen
 pannaanjulistus
 käsikynkkä
+palloveikko
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
