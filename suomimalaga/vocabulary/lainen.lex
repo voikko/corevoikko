@@ -128,7 +128,7 @@
 [perusmuoto: "manchesterilainen", alku: "manchesterilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=pppppppppppppp"];
 [perusmuoto: "manikealainen", alku: "manikealai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "maolainen", alku: "maolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "marxilais-leniniläinen", alku: "marxilais-leniniläi", luokka: laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppppppppp-=pppppppppppp"];
+[perusmuoto: "marxilais-leniniläinen", alku: "marxilais-leniniläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppppppppp-=pppppppppppp"];
 [perusmuoto: "maurilainen", alku: "maurilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "medinalainen", alku: "medinalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "megaralainen", alku: "megaralai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
