@@ -233,9 +233,11 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
 
-  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste, lukusana>
-                             + @teonsanasta_johdettu_laatusana + @nimisanasta_johdettu_laatusana
-                             + @laatutapa_1 + @laatutapa_2)) then
+  if (not ($tietue.luokka in
+             <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste, lukusana>
+             + @teonsanasta_johdettu_laatusana + @nimisanasta_johdettu_laatusana
+             + @nimi_laatusanan_johdin
+             + @laatutapa_1 + @laatutapa_2)) then
     $taivutus :=- <voittoaste, yliaste, kerronto_sti>;
   end;
 
@@ -249,7 +251,8 @@ subrule taivutuskaava ($tietue, $taivutus):
                               johdin_tAr>    # Tekijätär => tekijättäryys.
                              + @johdin_jA    # Tekijä => tekijyys.
                              + @teonsanasta_johdettu_laatusana
-                             + @nimisanasta_johdettu_laatusana)) then
+                             + @nimisanasta_johdettu_laatusana
+                             + @nimi_laatusanan_johdin)) then
     $taivutus :=- <johdin_Us, johdin_UUs>;
   end;
 

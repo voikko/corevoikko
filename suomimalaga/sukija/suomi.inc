@@ -228,15 +228,14 @@ define @teonsanasta_johdettu_laatusana :=
         johdin_vA, johdin_vAinen, johdin_vE>;
 
 define @nimisanasta_johdettu_nimisana :=
-####       <johdin_tAr, johdin_lAinen, johdin_ittAin,
-       <johdin_tAr, johdin_ittAin,  # johdin_lAinen on vain laatusana.
-        johdin_UUs> # Tekijä => tekijyys.
+       <johdin_tAr, johdin_ittAin, johdin_UUs> # Tekijä => tekijyys.
        + @johdin_jA;
 
-define @nimisanasta_johdettu_laatusana :=
-       <johdin_inen, johdin_llinen, johdin_lAinen, johdin_mAinen, johdin_tOn>;
+define @nimisanasta_johdettu_laatusana := <johdin_inen, johdin_tOn>;
 
 define @laatusanasta_johdettu_nimisana := <johdin_Us, johdin_UUs>;
 
-define @laatusanasta_johdettu_laatusana :=
-       <johdin_lAinen, johdin_llinen, johdin_nlainen>;
+define @laatusanasta_johdettu_laatusana := <johdin_nlainen>;
+
+define @nimi_laatusanan_johdin :=
+       <johdin_lAinen, johdin_mAinen, johdin_llinen>;

@@ -110,6 +110,10 @@ allo_rule generate_allos ($tietue):
   end;
 
 
+  if ($tietue.perusmuoto = "lehdes") then
+    $tietue.tiedot :=+ <ei_ysj>;
+  end;
+
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
        (murre in $tietue.tiedot) or
