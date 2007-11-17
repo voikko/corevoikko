@@ -156,6 +156,7 @@ editori
 eetos
 efedriini
 efesolainen
+eka # murteellinen lukusana
 eksosentrinen
 eksplikoida
 ekvatoriaali
@@ -721,6 +722,7 @@ tihru
 tiili
 tilhi
 toiste
+toka # murteellinen lukusana
 toksiini
 tomera
 tomuta
@@ -906,14 +908,20 @@ aletusten
 alimma
 deekikselle
 deekiksellä
+edeltäkäsin
+edemmä
+eespäin
 jetsulleen
 vek
 veke
 veks
 
-# Yhdyssanoja, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
+# Yhdyssanoja ja johdoksia, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
 # oikolukusanastoon
 bulevardisportti
+diureettinen
+dokaus
+elvistely
 sporttihenkinen
 sporttimalli
 sporttimallinen

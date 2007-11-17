@@ -70,7 +70,7 @@
 [perusmuoto: "arkipäivisin", alku: "arkipäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "auki", alku: "auki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "avoinna", alku: "avoinna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"]; # Kotuksen sanakirjan mukaan OK.
+[perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"]; # sanaliitto Kotuksen nettisivujen mukaan mutta yhdyssana kielitoimiston MOT-sanakirjassa
 [perusmuoto: "edemmäs", alku: "edemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edes", alku: "edes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "editse", alku: "editse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
