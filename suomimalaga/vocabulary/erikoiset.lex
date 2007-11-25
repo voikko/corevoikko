@@ -197,10 +197,3 @@
 [perusmuoto: "öky", alku: "öky", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ökö", alku: "ökö", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ööh", alku: "ööh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
-
-# Haku-sanan monikon sijat heittomerkin kanssa.
-# (Heittomerkin käyttö on sallittua, jos haluaa selventää eron sanoihin
-# "hauki" tai "hauis".)
-[perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
-
-[perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
