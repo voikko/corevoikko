@@ -327,6 +327,7 @@
 [perusmuoto: "keskiviikkoisin", alku: "keskiviikkoisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "keulilla", alku: "keulilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "keulilla", alku: "keulille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "keulilla", alku: "keulilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "keväämmällä", alku: "kevääm", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
 [perusmuoto: "kieppeillä", alku: "kieppeille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kieppeillä", alku: "kieppeillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
