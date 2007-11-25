@@ -325,7 +325,7 @@
 [perusmuoto: "keskipaikkeilla", alku: "keskipaikkeilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "keskitse", alku: "keskitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "keskiviikkoisin", alku: "keskiviikkoisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
-[perusmuoto: "keulilla", alku: "keulilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "keulilla", alku: "keulilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # ark. "olla keulilla"
 [perusmuoto: "keulilla", alku: "keulille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "keulilla", alku: "keulilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "keväämmällä", alku: "kevääm", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
@@ -775,7 +775,7 @@
 [perusmuoto: "tipotiehen", alku: "tipotie", luokka: seikkasana, jatko: <sisätulento_hVn>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "tipotiessään", alku: "tipotiessään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "tismalleen", alku: "tismalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tiukilla", alku: "tiukilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tiukilla", alku: "tiukilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # ark. "rahat tiukilla"
 [perusmuoto: "tiukilla", alku: "tiukille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohjona", alku: "tohjoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tohjona", alku: "tohjona", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
