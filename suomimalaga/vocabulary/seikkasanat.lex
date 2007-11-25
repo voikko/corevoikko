@@ -17,20 +17,23 @@
 
 # Seikkasanat.
 
-# Jatko-kentässä sallittuja ovat ainoastaan seuraavat:
-# "loppu", "liitesana", "omistusliite" ja sijapäätteet.
-# Huomaa, että sijapäätteiden (esim. sisäolento_ssA) jälkeen hyväksytään
-# automaattisesti myös omistusliite tai liitepartikkeli. Tästä syystä
-# sijapäätteet sopivat vain sanoille, joita voi käyttää substantiivien tavoin.
+# Jatko-kentässä sallittuja ovat ainoastaan seuraavat: <loppu>, <liitesana>,
+# <omistusliite> ja sijapäätteet (sekä <sivumpana>). Huomaa, että
+# sijapäätteiden (esim. sisäolento_ssA) jälkeen hyväksytään automaattisesti
+# myös omistusliite tai liitepartikkeli. Tästä syystä sijapäätteet sopivat
+# vain sanoille, joita voi käyttää substantiivien tavoin.
 #
-# Jos sanalla on useampi kuin yksi taivutusmuoto (esim. vieraisilla,
-# vieraisille, vieraisilta), perusmuodoksi laitetaan joko
-# ulko_olento_llA (jos se on olemassa) tai sisäolento_ssA, ja
-# substantiiveista johdetuille sti-päätteisille seikkasanoille
-# asetetaan perusmuodoksi nominatiivi/nimentö (esim. hitosti:
-# perusmuoto: hitto). Adjektiiveista johdetut sti-päätteiset
-# seikkasanat tunnistetaan automattisesti eli niitä ei tarvitse lisätä
-# sanastoon.
+# Seikkasanojen perusmuodot:
+#
+# Jos sanalla on useampi kuin yksi taivutusmuoto (esim. "vieraisilla,
+# vieraisille, vieraisilta"), perusmuodoksi laitetaan joko ulko_olento_llA
+# (jos se on olemassa) tai sisäolento_ssA. Omistusliitteen perusmuoto on
+# kolmannen persoonan -Vn.
+#
+# Substantiiveista johdetuille sti-päätteisille seikkasanoille asetetaan
+# perusmuodoksi nominatiivi/nimentö (esim. "hitosti", perusmuoto: "hitto").
+# Adjektiiveista johdetut sti-päätteiset seikkasanat tunnistetaan
+# automattisesti eli niitä ei tarvitse lisätä sanastoon.
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -152,12 +155,14 @@
 [perusmuoto: "hienokseltaan", alku: "hienokseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiirenhiljaa", alku: "hiirenhiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "hiljaa", alku: "hiljaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hiljaa", alku: "hiljemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hiljaa", alku: "hiljempaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hiljaa", alku: "hiljempää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hiljakkoin", alku: "hiljakkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljakseen", alku: "hiljakse", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "hiljalleen", alku: "hiljalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljan", alku: "hiljan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljattain", alku: "hiljattain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "hiljemmin", alku: "hiljemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hilkulla", alku: "hilkulla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "himpun", alku: "himpun", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hissukseen", alku: "hissukseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
