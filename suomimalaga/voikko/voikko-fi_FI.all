@@ -4153,7 +4153,7 @@ subrule apila ($tietue, $yksikkö, $monikko):
                         monikko7 ($yksikkö, $monikko, $monikko,
                                   [omanto_in: $yksikkö, omanto_iT: $monikko],
                                   [osanto_itA: $monikko],
-                                  [sisätulento_ihin: $monikko], $monikko));
+                                  [sisätulento_ihin: $monikko], ""));
 end;
 
 
