@@ -20,7 +20,8 @@ voikonsanat/poikkeavat.lex \
 voikonsanat/seikkasanat.lex \
 voikonsanat/suhdesanat.lex \
 voikonsanat/vieraskieliset.lex \
-voikonsanat/yhdyssanat.lex
+voikonsanat/yhdyssanat.lex \
+voikonsanat/taivutustäydennykset.lex
 
 all: suomi.pro
 	malmake suomi.pro

@@ -24,6 +24,7 @@ include "erikoissanat.lex";
 include "lukusanat.lex";
 include "yhdyssanat.lex";
 include "lainen.lex";
+include "taivutustäydennykset.lex";
 
 include "suomi.lex";
 
