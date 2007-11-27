@@ -98,6 +98,9 @@
  * Default: false */
 #define VOIKKO_OPT_OCR_SUGGESTIONS 8
 
+/* (Spell checking only): Ignore non-words such as URLs and email addresses.
+ * Default: true */
+#define VOIKKO_OPT_IGNORE_NONWORDS 10
 
 /* Integer options */
 

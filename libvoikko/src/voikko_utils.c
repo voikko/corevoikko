@@ -236,3 +236,25 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
 			return;
 	}
 }
+
+int voikko_is_nonword(const wchar_t * word, size_t nchars) {
+	wchar_t * i;
+	
+	// If X is a character (possibly other than '.'), then
+	// URL:           X*//X*.X+
+	//                X*.X+.X+
+	// email address: X*@X+.X+
+	
+	if (nchars < 4) return 0;
+	
+	i = wmemchr(word, L'/', nchars - 3);
+	if (i && i[1] == L'/' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) return 1;
+	
+	i = wmemchr(word, L'.', nchars - 3);
+	if (i && i[1] != L'.' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) return 1;
+	
+	i = wmemchr(word, L'@', nchars - 3);
+	if (i && i[1] != L'.' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) return 1;
+	
+	return 0;
+}

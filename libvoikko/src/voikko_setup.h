@@ -31,6 +31,7 @@ typedef struct {
 	int ignore_dot;
 	int ignore_numbers;
 	int ignore_uppercase;
+	int ignore_nonwords;
 	int accept_first_uppercase;
 	int accept_all_uppercase;
 	int no_ugly_hyphenation;

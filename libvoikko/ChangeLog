@@ -1,3 +1,7 @@
+2007-11-27 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add boolean option VOIKKO_OPT_IGNORE_NONWORDS.
+
 2007-10-30 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Additional work on string tokenizer.

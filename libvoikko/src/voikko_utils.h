@@ -72,4 +72,11 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars);
  */
 void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars);
 
+/** Detect special non-word strings such as URLs and email addresses
+ * @param word string to check
+ * @param nchars length of the string
+ * @return 1 if string is a non-word, otherwise 0
+ */
+int voikko_is_nonword(const wchar_t * word, size_t nchars);
+
 #endif

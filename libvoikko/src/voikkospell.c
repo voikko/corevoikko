@@ -129,6 +129,10 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
 		else if (strcmp(argv[i], "ignore_numbers=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 0);
+		else if (strcmp(argv[i], "ignore_nonwords=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NONWORDS, 1);
+		else if (strcmp(argv[i], "ignore_nonwords=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NONWORDS, 0);
 		else if (strcmp(argv[i], "accept_first_uppercase=1") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
 		else if (strcmp(argv[i], "accept_first_uppercase=0") == 0)

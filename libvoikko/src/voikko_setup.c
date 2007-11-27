@@ -65,6 +65,10 @@ int voikko_set_bool_option(int handle, int option, int value) {
 			if (value) voikko_options.suggestion_type = ST_OCR;
 			else voikko_options.suggestion_type = ST_STD;
 			return 1;
+		case VOIKKO_OPT_IGNORE_NONWORDS:
+			if (value) voikko_options.ignore_nonwords = 1;
+			else voikko_options.ignore_nonwords = 0;
+			return 1;
 	}
 	return 0;
 }
@@ -116,6 +120,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
 	voikko_options.ignore_uppercase = 0;
+	voikko_options.ignore_nonwords = 1;
 	voikko_options.accept_first_uppercase = 1;
 	voikko_options.accept_all_uppercase = 1;
 	voikko_options.no_ugly_hyphenation = 0;
