@@ -91,6 +91,15 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
+  if (($tietue.perusmuoto /= nil) and ($tietue.perusmuoto in <"kukkura", "kippura">) and
+      ($tietue.luokka = laatusana)) then
+   stop;
+  end;
+
+  if (($tietue.perusmuoto /= nil) and ($tietue.perusmuoto = "nasta") and ($tietue.luokka = nimisana)) then
+    stop;
+  end;
+
 
   # Paikannimien jälkiliitteet.
   #

@@ -91,6 +91,7 @@ include "voikonsanat/omat.lex";
 include "voikonsanat/poikkeavat.lex";
 include "voikonsanat/seikkasanat.lex";
 include "voikonsanat/suhdesanat.lex";
+include "voikonsanat/taivutustäydennykset.lex";
 include "voikonsanat/vieraskieliset.lex";
 include "voikonsanat/yhdyssanat.lex";
 include "sanat/11-19.lex";

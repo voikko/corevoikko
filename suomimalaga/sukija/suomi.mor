@@ -1124,6 +1124,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"mielinen">,  <"ikä", "säkä", "sää", "tele", "teli", "tikki">>, # Mielis+ikä(än).
       <<"moni">,      <"naida", "nainen", "tora", "tori">>,
       <<"musti">,     <"koi", "koettaa">>,
+      <<"mäki">,      <"tupalainen">>,
       <<"nomi">,      <"suu">>,
       <<"onninen">,   <"tuttu">>,
       <<"ope">,       <"reti">>,
@@ -1429,19 +1430,16 @@ subrule perusmuoto ($tietue):
 #    define $cd := transmit (<"bbbb"> + <$k> + <$on_ollut_lukusana>);
     $luokka := $tietue.$k.luokka;
 
-    if ($tietue.$k.luokka in @lukusana) then
-      $on_ollut_lukusana := yes;
-    end;
+#    if ($tietue.$k.luokka in @lukusana) then
+#      $on_ollut_lukusana := yes;
+#    end;
 
     if ($on_yhdyssana) then
-      if ($tietue.$k.luokka in @lukusana) then
-        $t :=+ <$tietue.$k.perusmuoto>;
-#define $foobar := transmit (<"Bing"> + <$on_ollut_lukusana> + <$tietue.$k>);
-      elseif (not ($tietue.$k.luokka = sijapääte)) then
+#      if ($tietue.$k.luokka in @lukusana) then
+#        $t :=+ <$tietue.$k.perusmuoto>;
+#      elseif (not ($tietue.$k.luokka = sijapääte)) then
         $t :=+ <$tietue.$k.alku>;
-#define $foobar := transmit (<"Bong"> + <$on_ollut_lukusana> + <$tietue.$k>);
-      end;
-#define $foobar := transmit (<"Hung"> + <$on_ollut_lukusana> + <$tietue.$k>);
+#      end;
     elseif ($tietue.$k.luokka = etuliite) then
       $t :=+ <$tietue.$k.alku>;
     elseif ($edellinen_luokka in @johdin + <nimitapa_4>) then
