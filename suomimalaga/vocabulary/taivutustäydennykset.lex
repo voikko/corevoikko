@@ -50,8 +50,9 @@
 [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 
 # Kiva-sanan kive-kantainen konditionaali etuvokaalisena {{{1
+# (Yksikön nominatiivi ilman liitteitä tunnistuu normaalin taivutuksen kautta.)
 
-[perusmuoto: "kiva", alku: "kivempi", luokka: laatusana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "kiva", alku: "kivempi", luokka: laatusana, jatko: <liitesana>, äs: ä];
 [perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "kiva", alku: "kivempä", luokka: laatusana, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "kiva", alku: "kivempä", luokka: laatusana, jatko: <olento_nA>, äs: ä];
