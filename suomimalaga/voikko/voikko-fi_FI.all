@@ -3168,6 +3168,10 @@ allo_rule generate_allos ($tietue):
     choose $i in haluta ($tietue, "", "");
     result $i.alku, $i - alku;
 
+  elseif (bingota in $tietue.jatko) then
+    choose $i in haluta ($tietue, "", "");
+    result $i.alku, $i - alku;
+
   elseif (juoruta in $tietue.jatko) then
     choose $i in haluta ($tietue, "", "")
                  + salailla ($tietue, "");  # Juoruilla.

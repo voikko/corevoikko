@@ -4284,6 +4284,15 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (bingota in $tietue.jatko) then
+    choose $i in haluta ($tietue, "", "t", A($tietue), O($tietue), "n", "s", "");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (juoruta in $tietue.jatko) then
     choose $i in haluta ($tietue, "", "t", A($tietue), U($tietue), "n", "s", "")
                  + salailla ($tietue, "");

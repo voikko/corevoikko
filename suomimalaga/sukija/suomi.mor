@@ -44,14 +44,14 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
+include "lukusanat.inc";
+
 initial <>,
-            rules nimisana, laatusana, teonsana,
-#                  tavuviiva, etuliite, asemosana, kieltosana, apusana, lyhennesääntö;
-                  nimi_laatusana,
+            rules nimisana, laatusana, teonsana, nimi_laatusana,
+                  lukusana,
                   erisnimi, paikannimen_ja_sukunimen_lainen_johdos, sanan_alku;
 
 include "suomi.inc";
-
 
 define @teonsana := <teonsana, kieltosana>;
 
@@ -221,10 +221,8 @@ end;
 
 
 combi_rule nimisana ($vasen, $oikea, $sana, $n):
-  # Jos tähän panee nimi_laatusanan, ne tulevat jäsennetyksi kahdesti:
-  # tässä ja laatusana-säännössä.
-  #
-  ? $oikea.luokka in <nimisana, lukusana>;
+  ? $oikea.luokka = nimisana;
+##  ? $oikea.luokka in <nimisana, lukusana>;
 
 #define $n1 := transmit (<"nimisana1"> + <vasen>);
 #define $n2 := transmit (<"nimisana2"> + <$oikea>);
@@ -1041,7 +1039,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"alli", "pasi">,    <"anssi">>,
       <<"alli">,            <"suu">>,
       <<"amfi">,            <"bio">>,
-      <<"amfibi">,          <"olento">>,
+      <<"amfibi">,          <"olento">>, # Amfibi+olennon.
       <<"ampu">,            <"vaisu">>,
       <<"anti">,            <"lainata">>,
       <<"apu">,             <"olka">>,
@@ -1051,6 +1049,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"auki">,            <"naida", "nainen">>, # Auki+naida.
       <<"auto">,            <"nova">>,   # Auto+novien.
       <<"avo">,             <"nainen">>,
+      <<"avoke">,           <"lassa", "loka">>, # Avoke+lassa, avoke+loilla.
       <<"bodi">,            <"anus">>,
       <<"dia">,             <"spora">>,
       <<"ele">,             <"itä">>,
@@ -1418,6 +1417,7 @@ subrule perusmuoto ($tietue):
   define $t := <>;
   define $on_yhdyssana := no;
   define $on_ollut_johdin_UUs := no;
+  define $on_ollut_lukusana := no;
 
 #define $aa := transmit ($tietue);
 
@@ -1425,17 +1425,23 @@ subrule perusmuoto ($tietue):
   # sanan lopussa olevat johtimet.
   #
   repeat
-##define $aa := transmit ("foo");
+#    define $ab := transmit (<"aaaa"> + <$tietue.$k> + <$k> + <$on_ollut_lukusana>);
+#    define $cd := transmit (<"bbbb"> + <$k> + <$on_ollut_lukusana>);
     $luokka := $tietue.$k.luokka;
 
+    if ($tietue.$k.luokka in @lukusana) then
+      $on_ollut_lukusana := yes;
+    end;
+
     if ($on_yhdyssana) then
-#      if ($tietue.$k.luokka in @lukusana) then
-#        $t :=+ <"F]">;
-#        $t :=+ <$tietue.$k.perusmuoto>;
-#        $t :=+ <"[F">;
-#      else
+      if ($tietue.$k.luokka in @lukusana) then
+        $t :=+ <$tietue.$k.perusmuoto>;
+#define $foobar := transmit (<"Bing"> + <$on_ollut_lukusana> + <$tietue.$k>);
+      elseif (not ($tietue.$k.luokka = sijapääte)) then
         $t :=+ <$tietue.$k.alku>;
-#      end;
+#define $foobar := transmit (<"Bong"> + <$on_ollut_lukusana> + <$tietue.$k>);
+      end;
+#define $foobar := transmit (<"Hung"> + <$on_ollut_lukusana> + <$tietue.$k>);
     elseif ($tietue.$k.luokka = etuliite) then
       $t :=+ <$tietue.$k.alku>;
     elseif ($edellinen_luokka in @johdin + <nimitapa_4>) then
@@ -1457,8 +1463,11 @@ subrule perusmuoto ($tietue):
       else
         $t :=+ <sana1($tietue.$k)>;
       end;
+#    elseif ($luokka = sijapääte) and ($tietue.$k.lukutyyppi = perusluku)
     else
       $t := <"">;
+#      define $a := transmit (<$k> + <$on_ollut_lukusana> + <$tietue.$k>);
+#      define $a := transmit (<"Ding"> + <$on_ollut_lukusana> + <$tietue.$k.luokka>);
     end;
     $edellinen_luokka := $luokka;
     if ($tietue.$k.luokka in @nimisana
@@ -1478,12 +1487,15 @@ subrule perusmuoto ($tietue):
   #
   define $s := "";
 
-  $k := length ($t);
+  define $m := length ($t);
+
+#define $q := transmit ($t);
 
   repeat
-  while ($k greater 0);
-    $s :=+ $t.$k;
-    $k :=- 1;
+  while ($m greater 0);
+#define $p := transmit (<$s> + <$t.$m> + <$tietue.$m.perusmuoto>);
+    $s :=+ $t.$m;
+    $m :=- 1;
   end;
 
   return $s;
