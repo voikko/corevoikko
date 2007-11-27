@@ -777,7 +777,7 @@ end: class
 class: 75
 sm-class: haluta
 rmsfx: tA
-match-word: (?:i|U)tA
+match-word: (?:i|U|gO)tA
 consonant-gradation: ws
 group: t
 transform-group: e
