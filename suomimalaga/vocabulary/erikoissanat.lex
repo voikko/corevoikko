@@ -33,12 +33,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <meri>, äs: ä];
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
-# Nykysuomen sanakirjassa venättä-sanan perusmuoto on "venät".
-[perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-
-# Vuosi-sanan säännölliset taivutusmuodot tulevat Joukahaisessa kautta.
-[perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
-
 [perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jotakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: <loppu>, äs: a];

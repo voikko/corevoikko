@@ -48,6 +48,10 @@
 
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
+[perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
+
+# Nykysuomen sanakirjassa venättä-sanan perusmuoto on "venät".
+[perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 # Kiva-sanan kive-kantainen konditionaali etuvokaalisena {{{1
 # (Yksikön nominatiivi ilman liitteitä tunnistuu normaalin taivutuksen kautta.)
