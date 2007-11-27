@@ -51,10 +51,6 @@ AC_ARG_WITH(dictionary-path,
 AC_DEFINE_UNQUOTED(DICTIONARY_PATH, "$DICTIONARY_PATH", [Dictionary path])
 AC_SUBST(DICTIONARY_PATH)
 
-
-dnl Checks for libraries
-AC_CHECK_LIB(malaga, init_libmalaga, ,[AC_MSG_ERROR([libmalaga not found])])
-
 dnl Checks for headers
 AC_CHECK_HEADERS([stddef.h])
 AC_CHECK_HEADERS([stdlib.h])

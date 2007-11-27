@@ -265,7 +265,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	}
 	caps = voikko_casetype(nword, nchars);
 	if ((voikko_options.ignore_uppercase && caps == CT_ALL_UPPER) ||
-	    (voikko_options.ignore_nonwords && !voikko_is_nonword(nword, nchars))) {
+	    (voikko_options.ignore_nonwords && voikko_is_nonword(nword, nchars))) {
 		free(nword);
 		EXIT_V
 		return VOIKKO_SPELL_OK;
