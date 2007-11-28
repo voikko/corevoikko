@@ -134,8 +134,8 @@ omat.lex \
 poikkeavat.lex \
 seikkasanat.lex \
 suhdesanat.lex \
-yhdyssanat.lex \
-taivutustäydennykset.lex
+taivutustäydennykset.lex \
+yhdyssanat.lex
 
 sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
 	$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML))

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -50,24 +50,6 @@ sym: suomi.sym
 all: suomi.all suomi.inc suomi.pro
 
 lex: suomi.lex suomi.inc suomi.pro
-
-#lex: sanat/erikoisalat/atk.lex
-#lex: sanat/erikoisalat/laaketiede.lex
-#lex: sanat/erikoiset.lex
-#lex: sanat/erikoissanat.lex
-#lex: sanat/etuliitteet.lex
-#lex: sanat/jokinen.lex
-#lex: sanat/joukahainen.lex
-#lex: sanat/lainen.lex
-#lex: sanat/latex.lex
-#lex: sanat/lukusanat.lex
-#lex: sanat/lyhenteet.lex
-#lex: sanat/olla-ei.lex
-#lex: sanat/omat.lex
-#lex: sanat/poikkeavat.lex
-#lex: sanat/yhdyssanat.lex
-#lex: sanat/11-19.lex
-
 lex: sanat/11-19.lex
 lex: sanat/olla-ei.lex
 lex: sanat/omat.lex
@@ -84,6 +66,7 @@ lex: voikonsanat/lyhenteet.lex
 lex: voikonsanat/matluonnontiede.lex
 lex: voikonsanat/poikkeavat.lex
 lex: voikonsanat/seikkasanat.lex
+lex: voikonsanat/taivutustäydennykset.lex
 lex: voikonsanat/suhdesanat.lex
 lex: voikonsanat/vieraskieliset.lex
 lex: voikonsanat/yhdyssanat.lex

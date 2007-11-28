@@ -33,6 +33,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <meri>, äs: ä];
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
+
 [perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jotakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: <loppu>, äs: a];
@@ -364,19 +365,9 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "mikä", alku: "miltä",   luokka: asemosana, sija: ulkoeronto_ltA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "mille",   luokka: asemosana, sija: ulkotulento_lle, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "millekä", luokka: asemosana, sija: ulkotulento_lle, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-##[perusmuoto: "mikä", alku: "mittä",   luokka: asemosana, sija: vajanto_ttA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+#[perusmuoto: "mikä", alku: "mittä",   luokka: asemosana, sija: vajanto_ttA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, sija: nimentö_tkA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 [perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, sija: nimentö_tkA, jatko: @loppu, äs: ä];
-
-[perusmuoto: "miten", alku: "miten", luokka: seikkasana, jatko: @loppu, äs: ä];
-[perusmuoto: "miten", alku: "mitenkä", luokka: seikkasana, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "miten", alku: "mites", luokka: seikkasana, jatko: <loppu>, äs: ä];
-
-[perusmuoto: "millänsäkään", alku: "millänikään",  luokka: seikkasana, jatko: @loppu, äs: a];
-[perusmuoto: "millänsäkään", alku: "milläsikään",  luokka: seikkasana, jatko: @loppu, äs: a];
-[perusmuoto: "millänsäkään", alku: "millänsäkään", luokka: seikkasana, jatko: @loppu, äs: a];
-[perusmuoto: "millänsäkään", alku: "millämmekään", luokka: seikkasana, jatko: @loppu, äs: a];
-[perusmuoto: "millänsäkään", alku: "millättekään", luokka: seikkasana, jatko: @loppu, äs: a, tiedot: <ei_voikko>]; # Onko sana?
 
 ######################################################
 
@@ -391,10 +382,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "se", alku: "sillä",  luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "se", alku: "siltä",  luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "se", alku: "sille",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
-
-[perusmuoto: "siellä", alku: "siellä", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "siellä", alku: "sieltä", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "siellä", alku: "sinne",  luokka: asemosana, sija: sisätulento_nne, luku: yksikkö, jatko: @loppu, äs: ä];
 
 ######################################################
 
@@ -429,17 +416,9 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "tämä", alku: "tälle",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
 
 # Murteissa.
-[perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "tämä", alku: "tän",    luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "tämä", alku: "tään",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-
-
-######################################################
-
-
-[perusmuoto: "täällä", alku: "täällä", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "täällä", alku: "täältä", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "täällä", alku: "tänne",  luokka: asemosana, sija: sisätulento_nne, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sija: nimentö,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tän",    luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tään",   luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 
 ######################################################
@@ -498,94 +477,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "nuo", alku: "noitta",  luokka: asemosana, sija: vajanto_ittA,     luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "nuo", alku: "noine",   luokka: asemosana, sija: seuranto_ine,     luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "nuo", alku: "noin",    luokka: asemosana, sija: keinonto_in,      luku: monikko, jatko: @loppu, äs: a];
-
-######################################################
-
-
-# Nämä taitavat olla ainoat sanat, jotka taipuvat näin, ja
-# on helpointa tallentaa ne erikseen kuin tehdä uusi sääntö.
-
-[alku: "kuulteni",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "kuulla", äs: a];
-[alku: "kuultesi",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "kuulla", äs: a];
-[alku: "kuultensa", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "kuulla", äs: a];
-[alku: "kuultemme", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "kuulla", äs: a];
-[alku: "kuultenne", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "kuulla", äs: a];
-
-[alku: "nähteni",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "nähdä", äs: ä];
-[alku: "nähtesi",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "nähdä", äs: ä];
-[alku: "nähtensä", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "nähdä", äs: ä];
-[alku: "nähtemme", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "nähdä", äs: ä];
-[alku: "nähtenne", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "nähdä", äs: ä];
-
-[alku: "tieteni",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "tietää", äs: ä];
-[alku: "tietesi",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "tietää", äs: ä];
-[alku: "tietensä", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "tietää", äs: ä];
-[alku: "tietemme", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "tietää", äs: ä];
-[alku: "tietenne", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n,
- jatko: @loppu, perusmuoto: "tietää", äs: ä];
-
-
-[perusmuoto: "kauas", alku: "kaukaa",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kaukana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauaa",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauan",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauas",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-
-[perusmuoto: "kauas", alku: "kauempaa",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauempana",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauemmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauemmin",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauemmas",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-
-[perusmuoto: "kauas", alku: "kauimpaa",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauimpana",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauimmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauimmin",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kauas", alku: "kauimmas",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-
-######################################################
-
-# Joku näistä oli valittava perusmuodoksi. (-:
-
-[perusmuoto: "edessä", alku: "etee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "edessä", alku: "eteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "edessä", alku: "ede", luokka: seikkasana, jatko: @heikkoasteiset_paikallissijat, äs: ä];
-
-[perusmuoto: "edelläoleva", alku: "edelläolev", luokka: laatusana, jatko: <asema>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "edessäoleva", alku: "edessäolev", luokka: nimisana, jatko: <asema>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"];
-
-[perusmuoto: "eteenpäin", alku: "edeltäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "eteenpäin", alku: "edessäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "eteenpäin", alku: "edestäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
-[perusmuoto: "eteenpäin", alku: "eteenpäin",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
-
-######################################################
-
-# Joku näistä oli valittava perusmuodoksi. (-:
-
-[perusmuoto: "takana", alku: "takaa",  luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "takana", alku: "takana", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "takana", alku: "taakse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-
-######################################################
-
-[perusmuoto: "poikessa", alku: "poikessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "poikessa", alku: "poikkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
 
@@ -674,10 +565,3 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "sie", alku: "siulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sie", alku: "siulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "sie", alku: "siutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-
-[perusmuoto: "maailma", alku: "maailmoiden", luokka: nimisana, jatko: @loppu + <tavuviiva>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "maailma", alku: "maailmoita",  luokka: nimisana, jatko: @loppu + <omistusliite, tavuviiva>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-
-# Muutama on nimisana Joukahaisessa, ja sillä ei ole -sti-päätettä automaattisesti.
-[perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: @loppu, äs: a, tiedot: <ei_voikko>];

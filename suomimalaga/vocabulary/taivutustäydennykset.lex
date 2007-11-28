@@ -48,10 +48,12 @@
 
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
+[perusmuoto: "maailma", alku: "maailmo", luokka: nimisana, jatko: <omanto_iT, osanto_itA>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
 
-# Nykysuomen sanakirjassa venättä-sanan perusmuoto on "venät".
-[perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 
 # Kiva-sanan kive-kantainen konditionaali etuvokaalisena {{{1
 # (Yksikön nominatiivi ilman liitteitä tunnistuu normaalin taivutuksen kautta.)
@@ -142,6 +144,28 @@
 [perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <vajanto_ittA>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimp", luokka: laatusana, jatko: <seuranto_ine>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <keinonto_in>, äs: a];
+
+
+# Nämä taitavat olla ainoat sanat, jotka taipuvat tällä tavalla,
+# ja on helpointa tallentaa nämä erikseen kuin tehdä uusi sääntö.
+
+[perusmuoto: "kuulla", alku: "kuulteni",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kuulla", alku: "kuultesi",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kuulla", alku: "kuultensa", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kuulla", alku: "kuultemme", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kuulla", alku: "kuultenne", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: a];
+
+[perusmuoto: "nähdä", alku: "nähteni",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "nähdä", alku: "nähtesi",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "nähdä", alku: "nähtensä", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "nähdä", alku: "nähtemme", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "nähdä", alku: "nähtenne", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+
+[perusmuoto: "tietää", alku: "tieteni",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tietesi",  luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tietensä", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tietemme", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "tietää", alku: "tietenne", luokka: teonsana, tapaluokka: nimitapa_2, sija: keinonto_n, jatko: <liitesana, loppu>, äs: ä];
 
 # vim: nowrap filetype=conf
 # vim600: foldmethod=marker
