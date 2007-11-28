@@ -554,6 +554,15 @@ kapsaa # Kotus 78
 !kapsat # Kotus 78
 kapsaisi # Kotus 78
 
+[ei-sanat]
+http://kissa.fi
+!kissa.fi
+www.kissa.fi
+!www..kissa.fi
+hatapitk@iki.fi
+!iki.fi
+!J.K.Paasikivi
+
 [muita virheitä]
 !kolaaa
 !kullakinkin

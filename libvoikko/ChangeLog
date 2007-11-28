@@ -1,6 +1,8 @@
 2007-11-28 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix configure test AM_ICONV failing with -Wall on FreeBSD.
+	* Tweak URL recognition so that "J.K.Paasikivi" will not be
+	  considered as hostname.
 
 2007-11-27 Harri Pitkänen <hatapitk@iki.fi>
 
