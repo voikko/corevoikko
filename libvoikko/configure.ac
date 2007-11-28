@@ -34,9 +34,6 @@ AM_MAINTAINER_MODE
 dnl Compiler features
 AC_C_CONST
 
-dnl Default compiler settings
-CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
-
 # FIXME: the following is wrong (it should be possible to change this when running make)
 if test ${prefix} = "NONE"
 then
@@ -102,6 +99,9 @@ AC_CHECK_FUNCS([strchr])
 AC_CHECK_FUNCS([getpwuid_r])
 AC_CHECK_FUNCS([getline])
 AM_ICONV
+
+dnl Default compiler settings
+CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT
