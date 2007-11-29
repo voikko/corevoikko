@@ -912,10 +912,37 @@ deekiksellä
 edeltäkäsin
 edemmä
 eespäin
+etemmä
+etemmäksi
+etemmäs
+etempänä
+etempää
 jetsulleen
 vek
 veke
 veks
+
+# Etuliitteitä
+atto-
+deka-
+eksa-
+elementaari-
+ex-
+femto-
+ferri-
+jotta-
+lerppa-
+peta-
+piko-
+pseudo-
+pääli-
+päälli-
+päälys-
+siko-
+stretch-
+tera-
+tsepto-
+vaki-
 
 # Yhdyssanoja ja johdoksia, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
 # oikolukusanastoon
