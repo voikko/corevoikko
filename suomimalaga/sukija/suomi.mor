@@ -44,8 +44,6 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-include "lukusanat.inc";
-
 initial <>,
             rules nimisana, laatusana, teonsana, nimi_laatusana,
                   lukusana,
@@ -135,7 +133,8 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $r, rules kieltosana;
     end;
     if (nimisana in $oikea.jatko) then
-      result $r, rules nimisana, teonsanasta_johdettu_nimisana, paikannimen_ja_sukunimen_lainen_johdos;
+      result $r, rules nimisana, teonsanasta_johdettu_nimisana,
+                       paikannimen_ja_sukunimen_lainen_johdos;
     end;
     if (laatusana in $oikea.jatko) then
       result $r, rules laatusana, teonsanasta_johdettu_laatusana;
@@ -154,6 +153,9 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     end;
     if (etuliite in $oikea.jatko) then
       result $r, rules etuliite;
+    end;
+    if (lukusana in $oikea.jatko) then
+      result $r, rules lukusana;
     end;
     if (tavuviiva in $oikea.jatko) then
       result $r, rules tavuviiva;
@@ -214,7 +216,9 @@ combi_rule etuliite ($vasen, $oikea, $sana):
   else
     result $vasen + <[alku: $sana] + $oikea>,
            rules etuliite, nimisana, laatusana, nimi_laatusana, teonsana,
-           teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana, 
+           teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana,
+           paikannimen_ja_sukunimen_lainen_johdos,
+           lukusana,
            tavuviiva;
   end;
 end;
@@ -1078,6 +1082,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"jumal">,     <"uus">>,
       <<"joka">,      <"kulta", "kusi", "kuu">>,
       <<"kalla">,     <"vesi">>,
+      <<"kali">,      <"umpi">>,   # Kali+umpi+toinen.
       <<"kana">,      <"voida">>,  # Kana+voitu.
       <<"kannus">,    <"tavi">>,
       <<"kapi">,      <"nalli", "tali">>,  # Kapi+nallinen, kapi+talis+tien (kapi+talinen+tie).
@@ -1418,7 +1423,7 @@ subrule perusmuoto ($tietue):
   define $t := <>;
   define $on_yhdyssana := no;
   define $on_ollut_johdin_UUs := no;
-  define $on_ollut_lukusana := no;
+  define $on_aito_lukusana := yes;  # Sanassa on vain lukusanoja ja sijapäätteitä.
 
 #define $aa := transmit ($tietue);
 
@@ -1426,19 +1431,21 @@ subrule perusmuoto ($tietue):
   # sanan lopussa olevat johtimet.
   #
   repeat
-#    define $ab := transmit (<"aaaa"> + <$tietue.$k> + <$k> + <$on_ollut_lukusana>);
-#    define $cd := transmit (<"bbbb"> + <$k> + <$on_ollut_lukusana>);
     $luokka := $tietue.$k.luokka;
 
-#    if ($tietue.$k.luokka in @lukusana) then
-#      $on_ollut_lukusana := yes;
+#    if (not ($tietue.$k.luokka = lukusana or $tietue.$k.luokka = sijapääte)) then
+#      $on_aito_lukusana := no;
 #    end;
 
     if ($on_yhdyssana) then
-#      if ($tietue.$k.luokka in @lukusana) then
+      $t :=+ <$tietue.$k.alku>;
+#      if ($tietue.$k.luokka in @lukusana) and ($on_aito_lukusana = yes) then
 #        $t :=+ <$tietue.$k.perusmuoto>;
-#      elseif (not ($tietue.$k.luokka = sijapääte)) then
-        $t :=+ <$tietue.$k.alku>;
+#      elseif ($tietue.$k.luokka = sijapääte) and
+#             ($tietue.$k.lukutyyppi in <perusluku, järjestysluku>) then
+#        $t :=+ <"">;
+#      else
+#        $t :=+ <$tietue.$k.alku>;
 #      end;
     elseif ($tietue.$k.luokka = etuliite) then
       $t :=+ <$tietue.$k.alku>;
@@ -1448,7 +1455,6 @@ subrule perusmuoto ($tietue):
       else
         $t :=+ <$tietue.$k.alku>;
       end;
-#      $t :=+ <$tietue.$k.alku>;
     elseif (not ($luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
                              omistusliite, kaksoispiste,
                              voittoaste, yliaste,
@@ -1461,11 +1467,8 @@ subrule perusmuoto ($tietue):
       else
         $t :=+ <sana1($tietue.$k)>;
       end;
-#    elseif ($luokka = sijapääte) and ($tietue.$k.lukutyyppi = perusluku)
     else
       $t := <"">;
-#      define $a := transmit (<$k> + <$on_ollut_lukusana> + <$tietue.$k>);
-#      define $a := transmit (<"Ding"> + <$on_ollut_lukusana> + <$tietue.$k.luokka>);
     end;
     $edellinen_luokka := $luokka;
     if ($tietue.$k.luokka in @nimisana
@@ -1931,4 +1934,320 @@ combi_rule nimi_laatusanan_johdin ($vasen, $oikea, $sana, $n):
                tavuviiva,
                etuliite,
                loppu;
+end;
+
+
+##########################################
+
+# Lukusanojen käsittely on muokattu Harri Pitkäsen Voikko-versiosta.
+
+combi_rule lukusana ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = lukusana;
+  define $sijamuoto := nil;
+  define $luku := nil;
+
+  if ($oikea.alaluokka = erikoisluku) then
+    define $erikoisres := $vasen + <[alku: $sana] + $oikea>;
+    if (loppu in $oikea.jatko) then
+      result $erikoisres, accept;
+    end;
+    if (liitesana in $oikea.jatko) then
+      result $erikoisres, rules liitesana;
+    end;
+    if (lukusanan_jälkiliite in $oikea.jatko) then
+      result $erikoisres, rules lukusanan_jälkiliite;
+    end;
+    stop;
+  end;
+
+  if ($index greater 1) then
+    define $edellinen := $vasen.($index - 1);
+    ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
+    $sijamuoto := $edellinen.sijamuoto;
+    $luku := $edellinen.luku;
+    # Estetään peräkkäiset "satasata", "tuhattuhat" jne.
+    if ($edellinen.luokka = lukusana) then
+      ? not ($oikea.alaluokka = $edellinen.alaluokka);
+    end;
+  end;
+  define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, luku: $luku] + $oikea>;
+
+  if ($oikea.alaluokka = yksiyhdeksän) then
+    if (nimentö in $oikea.jatko) then
+      if loppu in $oikea.jatko then
+        result $res, accept;
+      end;
+      result $res, rules lukusana_toista, lukusana_sisäkerroin,
+                   liitesana, lukusanan_jälkiliite,
+                   nimisana, laatusana;
+##                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+    end;
+    if (omistusliite in $oikea.jatko) then
+      result $res, rules omistusliite;
+    end;
+  elseif ($oikea.alaluokka in <kymmenen, sata>) then
+    if (nimentö in $oikea.jatko) then
+      if omistusliite in $oikea.jatko then
+        result $res, rules omistusliite;
+      end;
+      if loppu in $oikea.jatko then
+        result $res, accept;
+      end;
+      result $res, rules lukusana_sisäkerroin,
+                   liitesana, lukusanan_jälkiliite,
+                   nimisana, laatusana;
+##                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+    end;
+  elseif ($oikea.alaluokka in <tuhat, miljoona, miljardi, biljoona, triljoona> and nimentö in $oikea.jatko) then
+    if omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    result $res, rules liitesana, lukusanan_jälkiliite,
+                 nimisana, laatusana;
+##                 nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+   elseif ($oikea.alaluokka = numeromerkki) then
+     $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "=q"] + $oikea>;
+     result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
+     result $res, accept;
+  end;
+  if ($oikea.alaluokka in <sata, tuhat>) then
+    if (nimentö in $oikea.jatko) then
+      result $res, rules lukusana;
+    end;
+  end;
+  result $res, rules lukusana_sijapääte;
+
+end;
+
+combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+  define $edellinen := $vasen.($index - 1);
+  ? $oikea.sija in $edellinen.jatko;
+  ? äs_ok($edellinen, $oikea);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+
+  define $sijamuoto := sijamuoto_sijasta($oikea.sija);
+  ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $sijamuoto;
+  ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
+
+  define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
+  if ($edellinen.alaluokka = yksiyhdeksän) then
+    if omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    result $res, rules lukusana_toista, lukusana_sisäkerroin,
+                 liitesana, lukusanan_jälkiliite,
+                 nimisana, laatusana;
+##                 nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+  elseif ($edellinen.alaluokka in <kymmenen, sata>) then
+    if omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    result $res, rules lukusana_sisäkerroin, lukusanan_jälkiliite,
+                 liitesana;
+  else
+    result $res, rules nimisana, lukusanan_jälkiliite, laatusana; ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  if ($edellinen.alaluokka in <sata, tuhat>) then
+    result $res, rules lukusana;
+  end;
+end;
+
+combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = lukusana;
+  ? $oikea.alaluokka in <kymmenen, sata, tuhat, miljoona, miljardi, biljoona>;
+
+  define $edellinen := $vasen.($index - 1);
+  ? $edellinen.lukutyyppi = $oikea.lukutyyppi;
+  define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto, luku: $edellinen.luku] + $oikea>;
+
+  if ($edellinen.sijamuoto in <nil, nimentö>) then
+    result $res, rules lukusana_sisäkerroin_osanto;
+  else
+    result $res, rules lukusana_sisäkerroin_sijapääte;
+  end;
+  
+  if ($oikea.lukutyyppi = järjestysluku) then
+    result $res, rules lukusana;
+  end;
+  
+  if ($oikea.lukutyyppi = järjestysluku and loppu in $oikea.jatko) then
+    if omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
+  end;
+end;
+
+combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+  define $edellinen := $vasen.($index - 1);
+  ? $oikea.sija in $edellinen.jatko;
+  ? äs_ok($edellinen, $oikea);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+
+  define $sijamuoto := sijamuoto_sijasta($oikea.sija);
+  ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $sijamuoto;
+  ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
+
+  define $res := $vasen + <[alku: $sana, sijamuoto: $sijamuoto, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  result $res, rules lukusana,
+               liitesana, lukusanan_jälkiliite,
+               nimisana, laatusana;
+##               nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+end;
+
+combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = sijapääte;
+  define $edellinen := $vasen.($index - 1);
+  ? $oikea.sija in $edellinen.jatko;
+  ? sijamuoto_sijasta($oikea.sija) = osanto;
+  ? äs_ok($edellinen, $oikea);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+
+  define $res := $vasen + <[alku: $sana, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  result $res, rules lukusana, lukusanan_jälkiliite,
+               liitesana,
+               nimisana, laatusana; ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+end;
+
+combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = lukusana;
+  ? $oikea.alaluokka = toista;
+  define $edellinen := $vasen.($index - 1);
+  define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto,
+                            luku: $edellinen.luku, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  result $res, rules lukusana_sisäkerroin,
+                     liitesana, lukusanan_jälkiliite,
+                     nimisana, laatusana; ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+end;
+
+combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka in <lukusanan_jälkiliite, tavuviiva>;
+  # FIXME: yhdysviivan käyttöä ei vielä tueta lukusanan ja sen jälkiliitteen välissä
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if $oikea.luokka = tavuviiva then
+    result $res, accept;
+  else
+    define $edellinen := $vasen.($index - 1);
+    ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
+    if omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    if tavuviiva in $oikea.jatko then
+      result $res, rules tavuviiva;
+    end;
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    result $res,
+           rules ## ei_ys_sijapääte,
+                 nimisana, etuliite,
+                 liitesana,
+                 nimisanan_johdos;
+##                 nimisana_laatusanasta, nimisana_teonsanasta;
+  end;
+end;
+
+combi_rule lukusana_numero ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = lukusana;
+
+  define $edellinen := $vasen.($index - 1);
+  $oikea :=+ [pilkku: $edellinen.pilkku];
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if $oikea.alaluokka = numeromerkki then
+    result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
+    result $res, accept;
+  elseif $oikea.alaluokka = pilkku and $oikea.pilkku /= yes then
+    $oikea :=+ [pilkku: yes];
+    result $vasen + <[alku: $sana] + $oikea>, rules lukusana_numero;
+  end;
+end;
+
+
+# Aputaulukko funktiolle sijamuoto_sijasta
+define @sijamuoto_sijasta_muunnostaulu :=
+[nimentö:     nimentö,
+ nimentö_t:   nimentö,
+ nimentö_tkA: nimentö,
+ omanto_n:    omanto,
+ omanto_nkA:  omanto,
+ omanto_ien:  omanto,
+ omanto_jen:  omanto,
+ omanto_en:   omanto,
+ omanto_in:   omanto,
+ omanto_ten:  omanto,
+ omanto_iT:   omanto,
+ omanto_idän: omanto,
+ kohdanto_idät: kohdanto,
+ kohdanto_t: kohdanto,
+ osanto_A:    osanto,
+ osanto_AA:   osanto,
+ osanto_iA:   osanto,
+ osanto_jA:   osanto,
+ osanto_ttA:  osanto,
+ osanto_itA:  osanto,
+ osanto_tA:   osanto,
+ olento_nA:   olento,
+ olento_inA:  olento,
+ tulento_ksi: tulento,
+ tulento_iksi: tulento,
+ sisäolento_ssA: sisäolento,
+ sisäolento_issA: sisäolento,
+ sisäolento_nA: sisäolento,
+ sisäeronto_stA: sisäeronto,
+ sisäeronto_istA: sisäeronto,
+ sisäeronto_tA: sisäeronto,
+ sisätulento_Vn: sisätulento,
+ sisätulento_VVn: sisätulento,
+ sisätulento_hVn: sisätulento,
+ sisätulento_iin: sisätulento,
+ sisätulento_ihin: sisätulento,
+ sisätulento_seen: sisätulento,
+ sisätulento_isiin: sisätulento,
+ sisätulento_sen: sisätulento,
+ sisätulento_isin: sisätulento,
+ sisätulento_nne: sisätulento,
+ ulko_olento_llA: ulko_olento,
+ ulko_olento_illA: ulko_olento,
+ ulkoeronto_ltA: ulkoeronto,
+ ulkoeronto_iltA: ulkoeronto,
+ ulkotulento_lle: ulkotulento,
+ ulkotulento_ille: ulkotulento,
+ vajanto_ttA: vajanto,
+ vajanto_ittA: vajanto,
+ seuranto_ine: seuranto,
+ keinonto_n: keinonto,
+ keinonto_in: keinonto,
+ tulento_s: tulento
+];
+
+# Palauttaa annettua sijasymbolia vastaavan sijamuodon
+subrule sijamuoto_sijasta($sija):
+  return @sijamuoto_sijasta_muunnostaulu.$sija;
 end;
