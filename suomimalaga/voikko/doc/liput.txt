@@ -1,31 +1,11 @@
-Suomi-malagan toimintaan vaikuttavat .pro-tiedoston liput
+Suomi-malagan Voikko-version toimintaan vaikuttavat .pro-tiedoston liput
 
-Lippu: malli
-Ohjelma: malaga, mallex
-Arvo: voikko, sukija
-  voikko    Noudatetaan tarkasti suomen kielen oikeinkirjoitussääntöjä
-        Lisäoptioita (Arvo: yes, no)
-        vanhahkot_muodot (mallex) Hyväksytään sellaisia vanhempia taivutusmuotoja
-                         ja johdoksia, joita vielä jonkin verran käytetään
-                         vaikkapa runokielessä, ja joita ei ole tapana tulkita
-                         virheellisiksi muodoiksi vaikka eivät enää olekaan
-                         arkikielessä käytössä.
-        vanhat_muodot    (mallex) Hyväksytään vanhoja tai murteellisia taivutusmuotoja,
-                         joiden käyttö ei ole suositeltavaa yleiskielessä.
-  sukija    Hyväksytään myös yleisimmät kirjoitusvirheet, esim. "julkasta".
-
-
-Lippu: tulostus
-Ohjelma: malaga
-Arvo: tavallinen, merkitse_yhdyssanat, koe
-  tavallinen           Tulostetaan sanan perusmuoto, esim. "kansaneläkelaitos".
-  merkitse_yhdyssanat  Merkitään yhdyssanoihin eri sanat: "=kansan=eläke=laitos".
-  koe                  Tämä tulostus on ohjelman testausta varten.
-
-
-Lippu: taivutus
-Ohjelma: malaga, mallex
-Arvo: vanha, uusi
-  vanha   Nykysuomen sanakirjan mukainen taivutus.
-  uusi    Suomen kielen perussanakirjan mukainen taivutus.
+Lisäoptioita (Arvo: yes, no)
+vanhahkot_muodot (mallex) Hyväksytään sellaisia vanhempia taivutusmuotoja
+                          ja johdoksia, joita vielä jonkin verran käytetään
+                          vaikkapa runokielessä, ja joita ei ole tapana tulkita
+                          virheellisiksi muodoiksi vaikka eivät enää olekaan
+                          arkikielessä käytössä.
+vanhat_muodot    (mallex) Hyväksytään vanhoja tai murteellisia taivutusmuotoja,
+                          joiden käyttö ei ole suositeltavaa yleiskielessä.
 
