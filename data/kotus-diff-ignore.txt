@@ -842,6 +842,7 @@ pannaanjulistus
 käsikynkkä
 palloveikko
 kylmäkalle
+sanfranciscolainen
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
