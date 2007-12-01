@@ -8,7 +8,7 @@ OPTIONAL_LEX=atk-lyhenteet po-oikoluku
 # Source files for Sukija version.
 SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
            sukija/suomi.lex sukija/Makefile sukija/suomi.mor sukija/suomi.pro \
-           sukija/suomi.sym sukija/sukija.copyright sukija/LUE.MINUT \
+           sukija/suomi.sym sukija/LUE.MINUT \
            sukija/sanat/11-19.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
            sukija/generoi.sh sukija/inc/all.inc \
            sukija/inc/mor.inc sukija/inc/subrule.inc \
