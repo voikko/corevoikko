@@ -71,9 +71,9 @@ VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result);
 
 VOIKKOEXPORT enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE, TOKEN_UNKNOWN};
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textlen,
-                                                      size_t * tokenlen);
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
+                                                           size_t textlen, size_t * tokenlen);
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(const char * text, size_t textlen,
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
                                                            size_t * tokenlen);
 #endif

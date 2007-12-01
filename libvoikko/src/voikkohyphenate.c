@@ -90,7 +90,7 @@ void print_tokens(int handle, const char * line) {
 	memset(&mbstate, '\0', sizeof(mbstate_t));
 	lineptr = line;
 	while (len > 0) {
-		token_type = voikko_next_token_cstr(lineptr, len, &tokenchars);
+		token_type = voikko_next_token_cstr(handle, lineptr, len, &tokenchars);
 		switch (token_type) {
 			case TOKEN_WORD:
 				printf("W: \"");

@@ -1,3 +1,8 @@
+2007-12-01 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Tokenization functions should not be used without initializing the
+	  library.
+
 2007-11-28 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix configure test AM_ICONV failing with -Wall on FreeBSD.

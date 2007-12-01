@@ -277,21 +277,25 @@ enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESP
 
 /**
  * Find the next token in text stream.
+ * @param handle voikko instance
  * @param text Pointer to the start of a text buffer
  * @param textlen Number of characters left in the buffer
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textlen, size_t * tokenlen);
+enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
+                                              size_t * tokenlen);
 
 /**
  * Find the next token in text stream.
+ * @param handle voikko instance
  * @param text Pointer to the start of a text buffer
  * @param textlen Number of bytes left in the buffer
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikko_next_token_cstr(const char * text, size_t textlen, size_t * tokenlen);
+enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
+                                              size_t * tokenlen);
 
 
 END_C_DECLS

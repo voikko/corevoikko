@@ -98,7 +98,8 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 	return textlen;
 }
 
-enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textlen, size_t * tokenlen) {
+enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
+                                              size_t * tokenlen) {
 	size_t i;
 	size_t wlen;
 	if (textlen == 0) {
@@ -142,13 +143,14 @@ enum voikko_token_type voikko_next_token_ucs4(const wchar_t * text, size_t textl
 	return TOKEN_NONE; // unreachable
 }
 
-enum voikko_token_type voikko_next_token_cstr(const char * text, size_t textlen, size_t * tokenlen) {
+enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
+                                              size_t * tokenlen) {
 	wchar_t * text_ucs4;
 	enum voikko_token_type result;
 	if (text == 0) return TOKEN_NONE;
 	text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
 	if (text_ucs4 == 0) return TOKEN_NONE;
-	result = voikko_next_token_ucs4(text_ucs4, wcslen(text_ucs4), tokenlen);
+	result = voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
 	free(text_ucs4);
 	return result;
 }
