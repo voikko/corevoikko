@@ -1055,6 +1055,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"avo">,             <"nainen">>,
       <<"avoke">,           <"lassa", "loka">>, # Avoke+lassa, avoke+loilla.
       <<"bodi">,            <"anus">>,
+      <<"botti">,           <"cell">>,
       <<"dia">,             <"spora">>,
       <<"ele">,             <"itä">>,
       <<"elo">,             <"tee">>,

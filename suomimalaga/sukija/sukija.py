@@ -140,7 +140,7 @@ words = [u"aikalainen", u"alaisuus",
 	 u"Bulgaria",
 	 u"Eesti", u"Elo", u"Englanti", u"Eno", u"Espanja", u"Esteri",
 	 u"Georgia", u"Guinea",
-	 u"Hamina", u"Hanko", u"Helo", u"Hovi", u"Huhta", u"Hukka", u"Härmä",
+	 u"Hamina", u"Hanko", u"Helo", u"Hollanti", u"Hovi", u"Huhta", u"Hukka", u"Härmä",
 	 u"Ilma", u"Ilta", u"Islanti", u"Italia",
 	 u"Jalo", u"Jylhä", u"Järvi",
 	 u"Kallio", u"Kangas", u"Kannus", u"Kanttura", u"Karjala", u"Karjalainen", u"Kari",
@@ -216,7 +216,7 @@ V2 = A1
 V2.extend(A2)
 
 V = u"AÀÁÂÃEÈÉÊËŒÆIÌÍÎÏOÒÓÔUÙÚÛYÝÿÜÅÄÖØÕaàáâãeèéêëœæiìíîïoòóôuùúûyýÿüåäöøõ"
-C = u"BCDFGHJKLMNPQRSTVWXZŠŽÇÐÑÞßbcdfghjklmnpqrstvwxzšžçðñþß"
+C = u"BCDFGHJKLMNŃPQRSTVWXZŠŽÇÐÑÞßbcdfghjklmnńpqrstvwxzšžçðñþß"
 
 
 # Palautetaan True, jos sanassa on ainakin yksi ääntiö.
