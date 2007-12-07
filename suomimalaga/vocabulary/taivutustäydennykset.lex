@@ -56,7 +56,7 @@
 [perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
 
-# Kiva-sanan kive-kantainen konditionaali etuvokaalisena {{{1
+# Kiva-sanan kive-kantainen komparatiivi etuvokaalisena {{{1
 # (Yksikön nominatiivi ilman liitteitä tunnistuu normaalin taivutuksen kautta.)
 
 [perusmuoto: "kiva", alku: "kivempi", luokka: laatusana, jatko: <liitesana>, äs: ä];
