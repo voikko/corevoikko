@@ -892,6 +892,7 @@ tse
 tuut
 tyyt
 tööt
+uppista
 ups
 upsis
 upsista
@@ -907,7 +908,7 @@ yhdeksäinen
 yks
 ysi
 
-# Murteellisia tai vanhoja seikkasanoja
+# Murteellisia, puhekielisiä tai vanhoja seikkasanoja
 alemma
 aletusten
 alimma
@@ -921,7 +922,31 @@ etemmäksi
 etemmäs
 etempänä
 etempää
+hakusassa
 jetsulleen
+juntturassa
+korjussa
+sotkeuksiin
+sotkeuksissa
+sotkeuksista
+sotkoksiin
+sotkoksissa
+sotkoksista
+sotkuksiin
+sotkuksissa
+sotkuksista
+sulkeuksiin
+sulkeuksissa
+synkassa
+tuiteriin
+tuiterissa
+tukkeuksiin
+tukkeuksissa
+umpisukkeloon
+umpisukkelossa
+umpisukkelosta
+uppeluksiin
+uppeluksissa
 vasiten
 vek
 veke
@@ -930,6 +955,10 @@ vierettäin
 vieretyksin
 vihonviimein
 vihoviimein
+vituraan
+viturallaan
+vituralleen
+viturassa
 yhtäänne
 ylemmä
 ylimmä
@@ -964,6 +993,8 @@ bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata
 elvistely # elvistellä
+fusku # fuskata
+futismatsi # futis, matsi
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
