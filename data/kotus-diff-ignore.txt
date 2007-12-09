@@ -899,10 +899,13 @@ vau
 voi
 yök
 
-# Murteellisia ja puhekielisiä pronomineja
+# Murteellisia ja puhekielisiä pronomineja ja numeraaleja
 mä
 sä
 tää
+yhdeksäinen
+yks
+ysi
 
 # Murteellisia tai vanhoja seikkasanoja
 alemma
@@ -919,9 +922,18 @@ etemmäs
 etempänä
 etempää
 jetsulleen
+vasiten
 vek
 veke
 veks
+vierettäin
+vieretyksin
+vihonviimein
+vihoviimein
+yhtäänne
+ylemmä
+ylimmä
+ylimmäs
 
 # Etuliitteitä
 atto-
@@ -944,14 +956,16 @@ stretch-
 tera-
 tsepto-
 vaki-
+öky
 
 # Yhdyssanoja ja johdoksia, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
 # oikolukusanastoon
-bulevardisportti
-diureettinen
-dokaus
-elvistely
-sporttihenkinen
-sporttimalli
-sporttimallinen
+bulevardisportti # sportti
+diureettinen # diureetti
+dokaus # dokata
+elvistely # elvistellä
+sporttihenkinen # sportti
+sporttimalli # sportti
+sporttimallinen # sportti
+valkkaus # valkata
 
