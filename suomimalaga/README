@@ -67,6 +67,14 @@ Supported Make targets
   be available.
 
 
+Variables for tuning the build process
+--------------------------------------
+
+- make voikko, make voikko-preprocessed-l-gzip:
+  * MIN_FREQUENCY=n
+    Limits the words to be included in the .lex files to the
+    specified higher frequency class. Default is 9.
+
 Copyright and license information
 ---------------------------------
 
