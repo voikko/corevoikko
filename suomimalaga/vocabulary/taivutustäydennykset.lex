@@ -47,8 +47,9 @@
 
 # Täydennyksiä eräiden sanojen taivutusmuotoihin
 
-[perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
+[perusmuoto: "Bangladesh", alku: "Bangladesh", luokka: paikannimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # "Banglade-sh"-tavutusta varten.
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
+[perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "maailma", alku: "maailmo", luokka: nimisana, jatko: <omanto_iT, osanto_itA>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
