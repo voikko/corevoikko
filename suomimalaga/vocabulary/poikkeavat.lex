@@ -81,7 +81,7 @@
 [perusmuoto: "hyljätä", alku: "hyl", luokka: teonsana, jatko: <hyljätä>, äs: ä];
 [perusmuoto: "hylätä", alku: "hyl", luokka: teonsana, jatko: <hylätä>, äs: ä];
 [perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "ien", alku: "i", luokka: nimisana, jatko: <ien>, äs: ä];
+[perusmuoto: "ien", alku: "i", luokka: nimisana, jatko: <ien>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
 [perusmuoto: "itää", alku: "i", luokka: teonsana, jatko: <itää>, äs: ä];
