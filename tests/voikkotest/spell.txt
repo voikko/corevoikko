@@ -505,6 +505,10 @@ höppänin # Kotus 12
 !höppänöimmän # Kotus 12
 höppänimmän # Kotus 12
 nugaata # Kotus 20
+!parfait'illinen # Kotus 22
+!-parfait'iinen # Kotus 22
+parfait'llinen # Kotus 22
+-parfait'inen # Kotus 22
 lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24
