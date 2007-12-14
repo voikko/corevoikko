@@ -448,6 +448,8 @@ koirani
 !kissaaan
 kissaansa
 taloaan
+!taloaen
+!taloaon
 !kampaamoain # vanhahtava muoto
 
 [vokaalisointu]

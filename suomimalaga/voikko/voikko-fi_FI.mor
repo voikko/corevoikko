@@ -1336,7 +1336,8 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
                               vajanto_ttA, vajanto_ittA,
                               seuranto_ine>) and
           omistusliite3_oikein ($edellinen.alku, $sana)) or
-          ($edellinen.sija = osanto_A and not last($vasen.($index - 2).alku) in <"a", "ä">) then
+          ($edellinen.sija = osanto_A and not last($vasen.($index - 2).alku) in <"a", "ä">
+           and $sana in <"an", "än">) then
         if loppu in $oikea.jatko then
           result $result, accept;
         end;
