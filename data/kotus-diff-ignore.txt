@@ -854,6 +854,11 @@ haa
 hah
 hau
 heh
+helkatti
+helkutti
+hellanlettas
+hellurei
+helskutti
 hep
 hip
 hoi
@@ -923,6 +928,11 @@ etemmäs
 etempänä
 etempää
 hakusassa
+harilla
+harillaan
+harille
+harilleen
+hemmetisti
 jetsulleen
 juntturassa
 korjussa
@@ -995,6 +1005,8 @@ dokaus # dokata
 elvistely # elvistellä
 fusku # fuskata
 futismatsi # futis, matsi
+haploidinen # halploidi
+heksagoninen # heksagoni
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
