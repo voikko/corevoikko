@@ -215,7 +215,7 @@
 [perusmuoto: "surra", alku: "sur", luokka: teonsana, jatko: <purra>, äs: a];
 [perusmuoto: "sydän", alku: "sydä", luokka: nimisana, jatko: <uistin>, äs: ä, tiedot: <ei_sukija>]; # Sukijassa on oma taivutuskaava.
 [perusmuoto: "sydän", alku: "sydännä", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä];
+[perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];
 [perusmuoto: "tallessa", alku: "tallessa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
