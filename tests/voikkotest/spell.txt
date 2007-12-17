@@ -452,6 +452,9 @@ taloaan
 !taloaon
 !kampaamoain # vanhahtava muoto
 
+[liitesanat]
+kissakin
+
 [vokaalisointu]
 !jakamisessä
 jakamisessa
@@ -511,6 +514,8 @@ nugaata # Kotus 20
 !-parfait'iinen # Kotus 22
 parfait'llinen # Kotus 22
 -parfait'inen # Kotus 22
+show'kin # Kotus 22
+!showkin # Kotus 22
 lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24
