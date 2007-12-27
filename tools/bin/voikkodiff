@@ -20,17 +20,12 @@ done
 
 cd "$voikkotest_dir" || exit 1
 
-# Pakataan gzipillä current-corrent.txt-r* -tiedostot.
-unset IFS
-for tiedosto in $(find -type f -name "${current}-r*" ! -name '*.gz' -print); do
-	gzip "$tiedosto"
-done
-
 if [ ! -f "$current" ]; then
 	echo "VIRHE: Tiedostoa \"$current\" ei löydy. Aja \"voikkotest --current\""
 	exit 1
 fi
 
 # Ja vertaillaan
-base=$(echo current-correct.txt-r* | awk '{print $NF}')
+uusi_base=$(find -maxdepth 1 -type f -name "${current}-r*" -printf "%f\n" | sort | tail -n1)
+[ "$uusi_base" ] && base="$uusi_base"
 eval $(printf "$diffviewcmd\n" "$base" "$current")
