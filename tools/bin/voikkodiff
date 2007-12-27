@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Vertaa voikkotest-hakemistossa olevia tiedostoja ${base} ja ${current}
+# keskenään. ${base}:n tilalla käytetään aakkosjärjestyksessä viimeistä
+# ${current}-r* -tiedostoa, mikäli sellainen löytyy.
+
+base=base-correct.txt
+current=current-correct.txt
+asetustiedosto=voikko_dev_prefs.py
+voikkotest_dir="."
+diffviewcmd='zdiff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
+
+# Etsitään voikkotest-hakemisto sekä ${asetustiedosto} ja asetetaan sen avulla
+# muuttujat voikkotest_dir ja diffviewcmd.
+IFS=:
+for hakemisto in $PYTHONPATH; do
+	eval $(grep ^voikkotest_dir= "$hakemisto/$asetustiedosto" 2>/dev/null)
+	eval $(grep ^diffviewcmd= "$hakemisto/$asetustiedosto" 2>/dev/null)
+done
+
+cd "$voikkotest_dir" || exit 1
+
+# Pakataan gzipillä current-corrent.txt-r* -tiedostot.
+unset IFS
+for tiedosto in $(find -type f -name "${current}-r*" ! -name '*.gz' -print); do
+	gzip "$tiedosto"
+done
+
+if [ ! -f "$current" ]; then
+	echo "VIRHE: Tiedostoa \"$current\" ei löydy. Aja \"voikkotest --current\""
+	exit 1
+fi
+
+# Ja vertaillaan
+base=$(echo current-correct.txt-r* | awk '{print $NF}')
+eval $(printf "$diffviewcmd\n" "$base" "$current")
