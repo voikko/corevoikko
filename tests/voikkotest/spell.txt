@@ -451,6 +451,8 @@ taloaan
 !taloaen
 !taloaon
 !kampaamoain # vanhahtava muoto
+!maleksimaaan
+maleksimaansa
 
 [liitesanat]
 kissakin

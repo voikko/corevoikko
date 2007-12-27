@@ -1344,7 +1344,8 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
         result $result, rules liitesana;
       end;
     elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_5>) and
-            omistusliite3_oikein ($edellinen.alku, $sana)) then
+            omistusliite3_oikein ($edellinen.alku, $sana)
+            and not $edellinen.alku in <"maa", "mää">) then
       if loppu in $oikea.jatko then
         result $result, accept;
       end;
