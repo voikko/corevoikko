@@ -167,6 +167,16 @@ def compare_gradclasses(kotus, joukahainen):
 	   (len(kotus - set(['-'])) != 0 and len(joukahainen - set(['-'])) == 0): return False
 	return True
 
+def print_unknown_line(word):
+	global kwordlist
+	global gradclasses
+	line = word
+	if len(kwordlist[word]) == 0: return line.encode('UTF-8') + "<br>"
+	line = line + u" (%s)" % reduce(lambda x, y: u"%s, %s" % (x, y), kwordlist[word])
+	if gradclasses[word] == set(['-']): return line.encode('UTF-8') + '<br>'
+	line = line + u"(%s)" % reduce(lambda x, y: u"%s, %s" % (x, y), gradclasses[word])
+	return line.encode('UTF-8') + "<br>"
+
 # Start of main program
 
 # Set defaults
@@ -261,7 +271,6 @@ for (word, wid, classid, infl) in jwordlist:
 print '</table>'
 
 # Words that should be added
-gradclasses = None
 jwordlist = db.query("SELECT w.word FROM word w ORDER BY w.word").getresult()
 knownwords = []
 for jword in jwordlist:
@@ -285,7 +294,7 @@ for unknown in unknownlist:
 	if word in ignlist: continue
 	if len(word) < 2: continue
 	if word[0] == u'-' and word[1:] in knownwords: continue
-	print '%s<br>' % word.encode('UTF-8')
+	print print_unknown_line(word)
 	count = count + 1
 print (u'(Yhteensä %i sanaa)' % count).encode('UTF-8')
 print '</p>'
