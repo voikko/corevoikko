@@ -102,6 +102,13 @@
  * Default: true */
 #define VOIKKO_OPT_IGNORE_NONWORDS 10
 
+/* (Spell checking only): Allow some extra hyphens in words. This option relaxes
+ * hyphen checking rules to work around some unresolved issues in the underlying
+ * morphology, but it may cause some incorrect words to be accepted. The exact
+ * behaviour (if any) of this option is not specified.
+ * Default: false */
+#define VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS 11
+
 /* Integer options */
 
 /* There are two possible rules that can be applied when hyphenating compound words

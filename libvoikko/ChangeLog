@@ -1,3 +1,7 @@
+2007-12-29 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add option VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS.
+
 2007-12-01 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Tokenization functions should not be used without initializing the

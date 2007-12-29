@@ -69,6 +69,10 @@ int voikko_set_bool_option(int handle, int option, int value) {
 			if (value) voikko_options.ignore_nonwords = 1;
 			else voikko_options.ignore_nonwords = 0;
 			return 1;
+		case VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS:
+			if (value) voikko_options.accept_extra_hyphens = 1;
+			else voikko_options.accept_extra_hyphens = 0;
+			return 1;
 	}
 	return 0;
 }
@@ -124,6 +128,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	voikko_options.accept_first_uppercase = 1;
 	voikko_options.accept_all_uppercase = 1;
 	voikko_options.no_ugly_hyphenation = 0;
+	voikko_options.accept_extra_hyphens = 0;
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.min_hyphenated_word_length = 2;
 	voikko_options.encoding = "UTF-8";

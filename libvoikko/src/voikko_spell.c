@@ -118,6 +118,14 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		wcsncpy(buffer + leading_len, hyphen_pos + 1, len - leading_len - 1);
 		buffer[len - 1] = L'\0';
 		
+		if (voikko_options.accept_extra_hyphens && buffer[leading_len] != L'-') {
+			/* All hyphens are optional */
+			/* FIXME: deep recursion */
+			spres = voikko_do_spell(buffer, len - 1);
+			free(buffer);
+			return spres;
+		}
+		
 		/* Leading part ends with the same VC pair as the trailing part starts ('pop-opisto') */
 		if (leading_len >= 2 && len - leading_len >= 3) {
 			vctest1 = towlower(word[leading_len - 2]);
