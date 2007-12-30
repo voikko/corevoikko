@@ -44,6 +44,14 @@ enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len
  */
 enum spellresult voikko_do_spell(const wchar_t * word, size_t len);
 
+/** Checks the spelling of given word. Missing hyphens at the start or end of the
+ * word are ignored.
+ * @param word word to check (does not need to be null terminated)
+ * @param len length of the word to check
+ * @return spelling result
+ */
+enum spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len);
+
 /** Checks the spelling of given word. This function does not accept optional hyphens.
  * @param word word to check (does not need to be null terminated)
  * @param len length of the word to check

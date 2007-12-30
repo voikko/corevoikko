@@ -109,6 +109,14 @@
  * Default: false */
 #define VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS 11
 
+/* (Spell checking only): Accept missing hyphens at the start and end of the word.
+ * Some application programs do not consider hyphens to be word characters. This
+ * is reasonable assumption for many languages but not for Finnish. If the
+ * application cannot be fixed to use proper tokenisation algorithm for Finnish,
+ * this option may be used to tell libvoikko to work around this defect.
+ * Default: false */
+#define VOIKKO_OPT_ACCEPT_MISSING_HYPHENS 12
+
 /* Integer options */
 
 /* There are two possible rules that can be applied when hyphenating compound words

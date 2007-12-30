@@ -1,6 +1,7 @@
 2007-12-30 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Some fixes for VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS.
+	* Add option VOIKKO_OPT_ACCEPT_MISSING_HYPHENS.
 
 2007-12-29 Harri Pitkänen <hatapitk@iki.fi>
 

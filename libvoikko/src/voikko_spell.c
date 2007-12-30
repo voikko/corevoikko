@@ -60,7 +60,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	value_t analysis;
 	char * analysis_str;
 
-	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", 0);
+	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", len);
 	if (malaga_buffer == 0) return SPELL_FAILED;
 	analyse_item(malaga_buffer, MORPHOLOGY);
 	free(malaga_buffer);
@@ -187,6 +187,33 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	return result;
 }
 
+enum spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len) {
+	enum spellresult spres = voikko_do_spell(word, len);
+	if (spres != SPELL_FAILED) return spres;
+	
+	// Hyphens were already present, so we cannot do anything more
+	if (len < 2 || (word[0] == L'-' && word[len - 1] == L'-')) return SPELL_FAILED;
+	
+	wchar_t * buffer = malloc((len + 2) * sizeof(wchar_t));
+	if (!buffer) return SPELL_FAILED;
+	size_t newlen = len + 1;
+	if (word[0] == L'-') {
+		wcsncpy(buffer, word, len);
+		buffer[len] = L'-';
+	}
+	else {
+		buffer[0] = L'-';
+		wcsncpy(buffer + 1, word, len);
+		if (word[len - 1] != L'-') {
+			buffer[len + 1] = L'-';
+			newlen++;
+		}
+	}
+	spres = voikko_do_spell(buffer, newlen);
+	free(buffer);
+	return spres;
+}
+
 int voikko_spell_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	int result;
@@ -233,7 +260,10 @@ enum spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 			else return SPELL_OK;
 		}
 		/* not in cache */
-		result = voikko_do_spell(buffer, len);
+		if (voikko_options.accept_missing_hyphens)
+			result = voikko_do_spell_ignore_hyphens(buffer, len);
+		else
+			result = voikko_do_spell(buffer, len);
 		if (result == SPELL_OK || result == SPELL_CAP_FIRST) {
 			wcsncpy(voikko_options.cache + cache_offset, buffer, len);
 			voikko_options.cache_meta[meta_offset] = (result == SPELL_OK) ? 'p' : 'i';
@@ -241,7 +271,10 @@ enum spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 		return result;
 	}
 	/* no cache available */
-	return voikko_do_spell(buffer, len);
+	if (voikko_options.accept_missing_hyphens)
+		return voikko_do_spell_ignore_hyphens(buffer, len);
+	else
+		return voikko_do_spell(buffer, len);
 }
 
 
@@ -302,14 +335,20 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	    (caps == CT_ALL_UPPER && !voikko_options.accept_all_uppercase)) {
 		wcsncpy(buffer, nword, nchars);
 		buffer[0] = towlower(buffer[0]);
-		sres = voikko_do_spell(buffer, nchars);
+		if (voikko_options.accept_missing_hyphens)
+			sres = voikko_do_spell_ignore_hyphens(buffer, nchars);
+		else
+			sres = voikko_do_spell(buffer, nchars);
 		if (sres == SPELL_OK ||
 		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
 			result = VOIKKO_SPELL_OK;
 		else result = VOIKKO_SPELL_FAILED;
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
-			sres = voikko_do_spell(buffer, nchars);
+			if (voikko_options.accept_missing_hyphens)
+				sres = voikko_do_spell_ignore_hyphens(buffer, nchars);
+			else
+				sres = voikko_do_spell(buffer, nchars);
 			if (sres == SPELL_OK ||
 			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
 				result = VOIKKO_SPELL_OK;

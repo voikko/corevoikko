@@ -36,6 +36,7 @@ typedef struct {
 	int accept_all_uppercase;
 	int no_ugly_hyphenation;
 	int accept_extra_hyphens;
+	int accept_missing_hyphens;
 	int intersect_compound_level;
 	int min_hyphenated_word_length;
 	const char * encoding;
