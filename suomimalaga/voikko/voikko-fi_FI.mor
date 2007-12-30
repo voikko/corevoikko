@@ -124,15 +124,12 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result <[alku: $sana] + $oikea>, accept;
     end;
 
-  elseif $oikea.luokka in <huudahdussana, sidesana> then
-    if (tavuviiva in $oikea.jatko) then
-      result <[alku: $sana] + $oikea>, rules tavuviiva;
+
+  elseif $oikea.luokka = sidesana then
+    if (liitesana in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, rules liitesana;
     end;
-    if (loppu in $oikea.jatko) then
-      result <[alku: $sana] + $oikea>, accept;
-    end;
-    result <[alku: $sana] + $oikea>,
-           rules liitesana;
+    result <[alku: $sana] + $oikea>, accept;
 
   elseif $oikea.luokka = etuliite then
     if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
@@ -188,6 +185,9 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
                  etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta;
+
+  elseif $oikea.luokka = huudahdussana then
+      result <[alku: $sana] + $oikea>, accept;
 
   end;
 end;
@@ -1461,7 +1461,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
         result $res, rules omistusliite;
       end;
       if tavuviiva in $oikea.jatko then
-        result $res, rules tavuviiva;
+        result $res, rules yhdysmerkki_yleisnimen_jälkeen;
       end;
       if loppu in $oikea.jatko then
         result $res, accept;

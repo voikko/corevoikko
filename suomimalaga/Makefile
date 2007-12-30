@@ -32,7 +32,8 @@ VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-f
 VOIKKO_COPY_FROM_COMMON=suomi.lex all.inc mor.inc subrule.inc suomi.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
-	poikkeavat.lex lainen.lex taivutustäydennykset.lex
+	poikkeavat.lex lainen.lex taivutustäydennykset.lex sidesanat.lex \
+	huudahdussanat.lex
 
 # Lexicon files generated for Voikko from Joukahainen
 VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede vieraskieliset
@@ -136,7 +137,9 @@ poikkeavat.lex \
 seikkasanat.lex \
 suhdesanat.lex \
 taivutustäydennykset.lex \
-yhdyssanat.lex
+yhdyssanat.lex \
+sidesanat.lex \
+huudahdussanat.lex
 
 sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
 	$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML))

@@ -39,6 +39,8 @@ lex: erikoiset.lex
 lex: poikkeavat.lex
 lex: lainen.lex
 lex: taivutustäydennykset.lex
+lex: huudahdussanat.lex
+lex: sidesanat.lex
 mor: voikko-fi_FI.mor suomi.inc mor.inc subrule.inc
 mallex: set transmit-line "./transmit"
 malaga: set transmit-line "./transmit"
