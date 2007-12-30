@@ -471,7 +471,7 @@ match-word: CA
 consonant-gradation: sw
 group: t
 transform-group: e
-note: kaksitavuinen sana
+note: substantiivi tai kaksitavuinen adjektiivi
 rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w	ps=f
@@ -512,7 +512,7 @@ match-word: CA
 consonant-gradation: sw
 group: t
 transform-group: e
-note: kolme- tai useampitavuinen sana
+note: substantiivi tai kolme- tai useampitavuinen adjektiivi
 rules:
 nominatiivi	0	0	s
 genetiivi		0	n	w	ps=f
@@ -601,7 +601,6 @@ rules:
 nominatiivi	0	0	s
 genetiivi		ika	jan	s	ps=f
 partitiivi	0	a	s
-partitiivi	0	ta	s	prio=3
 translatiivi	ika	jiksi	s	ps=f
 translatiivi	ika	jikse	s	ps=r
 essiivi		0	na	s
