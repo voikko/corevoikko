@@ -15,8 +15,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-# Sidesanoja. Jatko-kentässä on oltava symboli "loppu" ja tarpeen mukaan
-# sybmoli "liitesana". Muut symbolit eivät ole sallittuja.
+# Sidesanoja. Jatko-kentässä on oltava symboli "loppu". Voikossa mahdolliset
+# muut symbolit jätetään huomiotta.
 
 [perusmuoto: "alias", alku: "alias", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "eli", alku: "eli", luokka: sidesana, jatko: <loppu>, äs: ä];
@@ -25,14 +25,20 @@
 [perusmuoto: "että", alku: "ettäs", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ja", alku: "ja", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "joko", alku: "joko", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "jos", alku: "jos", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "jos", alku: "jos", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "jos", alku: "joskaan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "jos", alku: "joskin", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "jos", alku: "josko", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "jos", alku: "jospa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "joten", alku: "joten", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jotenka", alku: "jotenka", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "jotta", alku: "jotta", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "koska", alku: "koska", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "koska", alku: "koska", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "koska", alku: "koskahan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuin", alku: "kuin", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "kuinka", alku: "kuinka", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kuinkas", alku: "kuinkas", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kuinka", alku: "kuinka", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuinka", alku: "kuinkahan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuinka", alku: "kuinkas", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kun", alku: "kun", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunhan", alku: "kunhan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunnes", alku: "kunnes", luokka: sidesana, jatko: <loppu>, äs: a];
@@ -45,5 +51,8 @@
 [perusmuoto: "taikka", alku: "taikka", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "vaan", alku: "vaan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "vai", alku: "vai", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "vaikka", alku: "vaikka", luokka: sidesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vaikka", alku: "vaikka", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "vaikka", alku: "vaikkakaan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "vaikka", alku: "vaikkakin", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "vaikka", alku: "vaikkapa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "vaiko", alku: "vaiko", luokka: sidesana, jatko: <loppu>, äs: a];

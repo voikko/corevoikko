@@ -125,10 +125,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     end;
 
 
-  elseif $oikea.luokka = sidesana then
-    if (liitesana in $oikea.jatko) then
-      result <[alku: $sana] + $oikea>, rules liitesana;
-    end;
+  elseif $oikea.luokka in <sidesana, huudahdussana> then
     result <[alku: $sana] + $oikea>, accept;
 
   elseif $oikea.luokka = etuliite then
@@ -185,9 +182,6 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
                  etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta;
-
-  elseif $oikea.luokka = huudahdussana then
-      result <[alku: $sana] + $oikea>, accept;
 
   end;
 end;

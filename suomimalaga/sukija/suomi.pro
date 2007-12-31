@@ -57,6 +57,7 @@ lex: voikonsanat/atk.lex
 lex: voikonsanat/erikoiset.lex
 lex: voikonsanat/erikoissanat.lex
 lex: voikonsanat/etuliitteet.lex
+lex: voikonsanat/huudahdussanat.lex
 lex: voikonsanat/joukahainen.lex
 lex: voikonsanat/kasvatustiede.lex
 lex: voikonsanat/laaketiede.lex
@@ -66,6 +67,7 @@ lex: voikonsanat/lyhenteet.lex
 lex: voikonsanat/matluonnontiede.lex
 lex: voikonsanat/poikkeavat.lex
 lex: voikonsanat/seikkasanat.lex
+lex: voikonsanat/sidesanat.lex
 lex: voikonsanat/taivutustäydennykset.lex
 lex: voikonsanat/suhdesanat.lex
 lex: voikonsanat/vieraskieliset.lex
