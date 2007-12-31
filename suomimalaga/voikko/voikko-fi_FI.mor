@@ -138,7 +138,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos;
     end;
     if tavuviiva in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules tavuviiva;
+      result <[alku: $sana] + $oikea>, rules yhdysmerkki_etuliitteen_jälkeen;
     else
       result <[alku: $sana] + $oikea>, accept;
     end;
@@ -166,9 +166,6 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     result <[alku: $sana] + $oikea>, rules ei_ys_sijapääte; # FIXME: esiehto testaamatta
 
   elseif $oikea.luokka = asemosana then
-    if tavuviiva in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules tavuviiva;
-    end;
     if loppu in $oikea.jatko then
       result <[alku: $sana] + $oikea>, accept;
     end;
@@ -210,7 +207,7 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
     result $res, rules kieltosana;
   else
     if tavuviiva in $oikea.jatko then
-      result $res, rules tavuviiva;
+      result $res, rules yhdysmerkki_etuliitteen_jälkeen;
     else
       result $res, accept;
     end;
@@ -490,7 +487,7 @@ combi_rule kaksoispiste ($vasen, $oikea, $sana, $index):
 end;
 
 
-combi_rule tavuviiva ($vasen, $oikea, $sana, $index):
+combi_rule tavuviiva ($vasen, $oikea, $sana):
   ? $oikea.luokka = tavuviiva;
 
   define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
@@ -521,6 +518,14 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
   result $res, rules
          nimisana, erisnimi, laatusana,
          etuliite, teonsana;
+end;
+
+combi_rule yhdysmerkki_teonsanan_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+
+  define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
+  result $res, accept;
+  result $res, rules nimisana, erisnimi, laatusana, lyhennesääntö, etuliite;
 end;
 
 combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
@@ -564,6 +569,14 @@ combi_rule yhdysmerkki_numeron_jälkeen ($vasen, $oikea, $sana):
   define $res := $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>;
   result $res, accept;
   result $res, rules lukusanan_jälkiliite, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+end;
+
+combi_rule yhdysmerkki_etuliitteen_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+
+  define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
+  result $res, accept;
+  result $res, rules nimisana, laatusana, etuliite, teonsana, erisnimi, lyhennesääntö;
 end;
 
 ###### YHDYSMERKKISÄÄNNÖT PÄÄTTYVÄT
@@ -690,7 +703,7 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
       # "kissan+karva", "työhön+otto"
       if sijamuoto_sijasta($oikea.sija) = omanto then
         result $res,
-               rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+               rules nimisana, laatusana, nimisana_teonsanasta, yhdysmerkki_yleisnimen_jälkeen;
       end;
       if sijamuoto_sijasta($oikea.sija) = nimentö and luku_sijasta($oikea.sija) = yksikkö then
         result $res, rules nimisana_teonsanasta;
@@ -1095,7 +1108,7 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
       result $res, rules omistusliite;
     end;
     if tavuviiva in $oikea.jatko then
-      result $res, rules tavuviiva;
+      result $res, rules yhdysmerkki_yleisnimen_jälkeen;
     end;
     if loppu in $oikea.jatko then
       result $res, accept;
@@ -1137,7 +1150,7 @@ combi_rule teonsana ($vasen, $oikea, $sana, $index):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
-    result $res, rules tavuviiva;
+    result $res, rules yhdysmerkki_teonsanan_jälkeen;
   end;
   if loppu in $oikea.jatko then
     result $res, accept;
@@ -1421,7 +1434,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
         johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
       result $res, rules nimisana, nimisana_teonsanasta,
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
-                         etuliite, tavuviiva;
+                         etuliite, yhdysmerkki_yleisnimen_jälkeen;
     else
       result $res, rules inen_johdos_nimisanasta, etuliite, tavuviiva;
     end;
