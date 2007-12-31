@@ -1317,16 +1317,13 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
   define $result := $vasen + <[alku: $sana] + $oikea>;
 
   if ($sana in <"ni", "si", "nsa", "nsä", "mme", "nne">) then
-    if loppu in $oikea.jatko then
-      result $result, accept;
-    end;
+    result $result, accept;
     result $result, rules liitesana;
-  else
-    if ($edellinen.luokka in <seikkasana, suhdesana> and omistusliite3_oikein ($edellinen.alku, $sana)) then
+
+  elseif (omistusliite3_oikein(last($edellinen.alku), $sana)) then
+    if ($edellinen.luokka in <seikkasana, suhdesana>) then
       if (not ($edellinen.alku matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)")) then
-        if loppu in $oikea.jatko then
-          result $result, accept;
-        end;
+        result $result, accept;
         result $result, rules liitesana;
       end;
     elseif ($edellinen.luokka = sijapääte) then
@@ -1341,21 +1338,14 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
                               ulkoeronto_ltA, ulkoeronto_iltA,
                               ulkotulento_lle, ulkotulento_ille,
                               vajanto_ttA, vajanto_ittA,
-                              seuranto_ine>) and
-          omistusliite3_oikein ($edellinen.alku, $sana)) or
-          ($edellinen.sija = osanto_A and not last($vasen.($index - 2).alku) in <"a", "ä">
-           and $sana in <"an", "än">) then
-        if loppu in $oikea.jatko then
-          result $result, accept;
-        end;
+                              seuranto_ine>)) or
+          ($edellinen.sija = osanto_A and not last($vasen.($index - 2).alku) in <"a", "ä">) then
+        result $result, accept;
         result $result, rules liitesana;
       end;
-    elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_5>) and
-            omistusliite3_oikein ($edellinen.alku, $sana)
+    elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_5>)
             and not $edellinen.alku in <"maa", "mää">) then
-      if loppu in $oikea.jatko then
-        result $result, accept;
-      end;
+      result $result, accept;
       result $result, rules liitesana;
     end;
   end;
@@ -1504,11 +1494,6 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
 
-  # Ilman tätä kulkea => kulki+ja+tar -johdokset tulevat kahdesti.
-  if ($edellinen.luokka in @johdin_jA) then
-    ? $oikea.luokka /= johdin_tAr;
-  end;
-
   ? vokaalisointu_oikein($edellinen, $oikea);
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
@@ -1566,15 +1551,15 @@ subrule vokaalisointu_oikein($edellinen, $oikea):
 end;
 
 
-subrule omistusliite3_oikein ($sana, $liite):
-  return ((($liite = "an") and ($sana matches ".*" + @a)) or
-          (($liite = "en") and ($sana matches ".*" + @e)) or
-          (($liite = "in") and ($sana matches ".*" + @i)) or
-          (($liite = "on") and ($sana matches ".*" + @o)) or
-          (($liite = "un") and ($sana matches ".*" + @u)) or
-          (($liite = "yn") and ($sana matches ".*" + @y)) or
-          (($liite = "än") and ($sana matches ".*" + @ä)) or
-          (($liite = "ön") and ($sana matches ".*" + @ö)));
+subrule omistusliite3_oikein ($kirjain, $liite):
+  return ((($liite = "an") and ($kirjain matches @a)) or
+          (($liite = "en") and ($kirjain matches @e)) or
+          (($liite = "in") and ($kirjain matches @i)) or
+          (($liite = "on") and ($kirjain matches @o)) or
+          (($liite = "un") and ($kirjain matches @u)) or
+          (($liite = "yn") and ($kirjain matches @y)) or
+          (($liite = "än") and ($kirjain matches @ä)) or
+          (($liite = "ön") and ($kirjain matches @ö)));
 end;
 
 # Taivutuspäätteessä annettua kirjainta vastaava pidennetty vokaali
