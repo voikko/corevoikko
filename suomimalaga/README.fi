@@ -5,53 +5,36 @@ version 7.8.
 Ohjelman merkistökoodaus on UTF-8 eli myös lokaalin pitää tukea
 UTF-8:aa. Fedora Coressa käy fi_FI.utf8
 
-Tämä on Voikko-oikoluvun tarpeita varten mukautettu versio, joka pohjautuu
-Hannu Väisäsen julkaisemaan versioon 0.7. Voikon ja Sukijan on jatkossa
-tarkoitus käyttää samaa versiota Suomi-malagasta, mutta toistaiseksi niiden
-käyttämien versioiden välillä on pieniä mutta oleellisia eroja. Jos haluat
-käyttää Sukijaa, hae alkuperäinen (tai uudempi) versio osoitteesta
-http://joyds1.joensuu.fi/sukija/sukija.html
-Jos taas haluat käyttää Voikkoa, uusin versio tästä paketista
-löytyy osoitteesta http://voikko.sourceforge.net
+Tämä versio toimii sekä Sukija-indeksointiohjelmassa että
+Voikko-oikolukijassa.
 
 
 KÄÄNTÄMINEN
 
 Sukija-versio tiedostojen indeksointiin
 
-make sukija
+$ make sukija
 
 Voikko-versio oikolukuun
 
-make voikko
+$ make voikko
 
 
 ANALYYSI
 
-malaga voikko/voikko-fi_FI.pro
-
-Kirjoita sen jälkeen esim.
-
-ma alusta
-
-
-ja tuloksen pitäisi olla tällainen:
-
-
-Analyses of "alusta":
-1: "alustaa"
-2: "alusta"
-3: "alku"
-4: "alunen"
-5: "alus"
+$ echo alusta | malaga -m sukija/suomi.pro
+1: "alusta": "alusta"
+1: "alusta": "alustaa"
+1: "alusta": "alku"
+1: "alusta": "alunen"
+1: "alusta": "alus"
+Analysed wordforms:        1
+Recognised:                1 (100.00%)
+Recognised by combi rules: 1 (100.00%)
+Results per wordform:      5
 
 
-Lisää ohjeita on alihakemistossa doc.
-
-
-Ohjelman toimintaa voi säätää erilaisten lippujen avulla.
-Lisätietoja on tiedostossa doc/liput.txt.
-
+LISENSSI
 
 Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää edelleen ja
 muuttaa GNU yleisen lisenssin (GPL lisenssin) ehtojen mukaan
@@ -74,11 +57,11 @@ muihin moduuleihin on ohjelmaan perustuvan teoksen
 tekemistä, joka on siis GPL lisenssin ehtojen alainen.
 
 GPL-lisenssin epävirallinen suomennos löytyy osoitteesta
-http://www.turre.com/licenses/gpl_fi.php, mutta vain alkuperäinen
+http://www.turre.com/licenses/gpl-2.0_fi.html, mutta vain alkuperäinen
 englanninkielinen versio on oikeudellisesti sitova.
 
-Tekijänoikeus © 2006 Hannu Väisänen (sähköposti: Etunimi.Sukunimi@joensuu.fi,
-vaihda ä:t a-kirjaimiin sukunimessä) ja 2006 - 2007 Harri Pitkänen
-(hatapitk@iki.fi). Sanastoon tekijänoikeuksia on tiedostossa
-CONTRIBUTORS mainituilla henkilöillä.
+Tekijänoikeus © 2006 - 2007 Hannu Väisänen (sähköposti:
+Etunimi.Sukunimi@joensuu.fi, vaihda ä:t a-kirjaimiin sukunimessä)
+ja 2006 - 2008 Harri Pitkänen (hatapitk@iki.fi). Sanastoon
+tekijänoikeuksia on tiedostossa CONTRIBUTORS mainituilla henkilöillä.
 

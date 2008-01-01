@@ -9,18 +9,8 @@ Suomi-malaga is a description of Finnish morphology written in Malaga
 version 7.8 or later.
 
 Currently Suomi-malaga is used in two different applications: text
-indexer Sukija and spellchecker/hyphenator Voikko. Unfortunately it
-is not yet possible to use unmodified Suomi-malaga with Voikko. In
-order to differentiate between the original Suomi-malaga from Hannu
-Väisänen and the "Voikko edition" from Voikko project
-"Voikko edition" will have an additional component in its version number
-and this notice in README file. So for example stable releases of
-"Voikko edition" that have version numbers 0.7.0, 0.7.1, 0.7.2 etc.
-are derived from version 0.7 of the "original edition". Development
-versions may have different version numbers to avoid breaking package
-managers. New versions of the original Suomi-Malaga are available from
-http://joyds1.joensuu.fi/sukija/sukija.html and new versions of
-"Voikko edition" from http://voikko.sourceforge.net.
+indexer Sukija and spellchecker/hyphenator Voikko. Version 1.0 and
+later will work with both applications.
 
 All of the documentation about Finnish morphology is in Finnish (see
 README.fi and subdirectory doc). This README contains only build
@@ -30,20 +20,23 @@ and usage instructions for distribution packagers.
 Build and installation
 ----------------------
 
-Building Suomi-malaga for Voikko from this package requires
-malaga, python and make.
-No configuration is required: to build the code, you only need to run
+Building Suomi-malaga for from this package requires malaga, python
+and make. No configuration is required: to build the code for Voikko,
+you only need to run
     make voikko
 Installation can be done by running
     make voikko-install DESTDIR=/usr/lib/voikko
 (Replace /usr/lib/voikko with the directory you want to install the
 files to. Installing to ~/.voikko will cause libvoikko to use this
 version of Suomi-malaga only for the user who does the installation.)
-
+Building the code for Sukija can be done by running
+    make sukija
 
 Supported Make targets
 ----------------------
 
+- sukija
+  Builds the binary files needed by text indexer Sukija.
 - voikko
   Builds the binary files needed by libvoikko.
 - voikko-install DESTDIR=/usr/lib/voikko

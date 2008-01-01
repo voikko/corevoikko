@@ -231,8 +231,7 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules erisnimen_sijapääte,
+  result $res, rules erisnimen_sijapääte,
                yhdysmerkki_erisnimen_jälkeen;
 end;
 
@@ -386,8 +385,7 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $index):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-    result $vasen + <[alku: $sana] + $oikea>,
-         rules laatusanan_sijapääte,
+    result $res, rules laatusanan_sijapääte,
 	       laatusanan_johdos,
 	       voitto_yliaste;
 end;
