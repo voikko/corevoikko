@@ -35,9 +35,13 @@
 [perusmuoto: "jotta", alku: "jotta", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "koska", alku: "koska", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "koska", alku: "koskahan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "koska", alku: "koskakohan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "koska", alku: "koskapa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuin", alku: "kuin", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinka", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkahan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuinka", alku: "kuinkakohan", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuinka", alku: "kuinkapa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkas", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kun", alku: "kun", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunhan", alku: "kunhan", luokka: sidesana, jatko: <loppu>, äs: a];
