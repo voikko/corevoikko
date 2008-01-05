@@ -453,6 +453,7 @@ taloaan
 !kampaamoain # vanhahtava muoto
 !maleksimaaan
 maleksimaansa
+erityistoivomustensa
 
 [liitesanat]
 kissakin
