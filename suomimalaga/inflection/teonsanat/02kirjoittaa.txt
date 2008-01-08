@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,103 +46,103 @@
 
 
 nimitapa_1_A
-          kirjoit+ta+a
+          kirjo+itta+a
 
 nimitapa_2
-          kirjoit+ta+essa
+          kirjo+itta+essa
 
 nimitapa_2_ttA
-          kirjoit+e+ttaessa
+          kirjo+ite+ttaessa
 
 nimitapa_3
-          kirjoit+ta+ma
+          kirjo+itta+ma
 
 nimitapa_3_ttA
-          kirjoit+e+ttaman
+          kirjo+ite+ttaman
 
 nimitapa_4
-          kirjoit+ta+minen
+          kirjo+itta+minen
 
 nimitapa_5
-          kirjoit+ta+maisillani
+          kirjo+itta+maisillani
 
 laatutapa_1_vA
-          kirjoit+ta+va
+          kirjo+itta+va
 
 laatutapa_1_ttA
-          kirjoit+e+ttava
+          kirjo+ite+ttava
 
 laatutapa_2_nUt
-          kirjoit+ta+nut
+          kirjo+itta+nut
 
 laatutapa_2_ttU
-          kirjoit+e+ttu
+          kirjo+ite+ttu
 
 kestämän_tekijäpääte_y1
-          kirjoit+a+n
+          kirjo+ita+n
 
 kestämän_tekijäpääte_y2
-          kirjoit+a+t
+          kirjo+ita+t
 
 kestämän_tekijäpääte_y3
-          kirjoit+ta+a
+          kirjo+itta+a
 
 kestämän_tekijäpääte_m1
-          kirjoit+a+mme
+          kirjo+ita+mme
 
 kestämän_tekijäpääte_m2
-          kirjoit+a+tte
+          kirjo+ita+tte
 
 kestämän_tekijäpääte_m3
-          kirjoit+ta+vat
+          kirjo+itta+vat
 
 tositavan_kestämä_tAAn
-          kirjoit+e+taan
+          kirjo+ite+taan
 
 kertoman_tekijäpääte_y1
-          kirjoit++in
+          kirjo+it+in
 
 kertoman_tekijäpääte_y2
-          kirjoit++it
+          kirjo+it+it
 
 kertoman_tekijäpääte_y3
-          kirjoit+t+i
+          kirjo+itt+i
 
 kertoman_tekijäpääte_m1
-          kirjoit++imme
+          kirjo+it+imme
 
 kertoman_tekijäpääte_m2
-          kirjoit++itte
+          kirjo+it+itte
 
 kertoman_tekijäpääte_m3
-          kirjoit+t+ivat
+          kirjo+itt+ivat
 
 tositavan_kertoma_ttiin
-          kirjoit+e+ttiin
+          kirjo+ite+ttiin
 
 ehtotapa
-          kirjoit+ta+isin
+          kirjo+itta+isin
 
 ehtotapa_ttA
-          kirjoit+e+ttaisiin
+          kirjo+ite+ttaisiin
 
 mahtotapa_ne
-          kirjoit+ta+nen
+          kirjo+itta+nen
 
 mahtotapa_ttA
-          kirjoit+e+ttaneen
+          kirjo+ite+ttaneen
 
 käskytapa_y2
-          kirjoit+a+
+          kirjo+ita+
 
 käskytapa_kielto
-          kirjoit+ta+ko
+          kirjo+itta+ko
 
 käskytapa_ttA
-          kirjoit+e+ttakoon
+          kirjo+ite+ttakoon
 
 johdin_jA_kantaja
-          kirjoit+ta+ja
+          kirjo+itta+ja
 
 johdin_Us_ksen
-          kirjoit++us
+          kirjo+it+us

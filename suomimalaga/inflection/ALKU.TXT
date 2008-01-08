@@ -123,6 +123,10 @@ allo_rule generate_allos ($tietue):
     $tietue.tiedot :=+ <ei_ysj>;
   end;
 
+  if ($tietue.perusmuoto = "erityinen") then
+    $tietue.tiedot :=- <ei_ysa>;
+  end;
+
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
        (murre in $tietue.tiedot) or

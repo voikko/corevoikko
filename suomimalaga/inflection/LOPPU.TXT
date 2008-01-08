@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -448,9 +448,16 @@ subrule muistua ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
 end;
 
 
+subrule ammottautua ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ "tt" + A($tietue) + U($tietue);
+  $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
+  return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
+end;
+
 subrule kirjoittautua ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "t" + A($tietue) + U($tietue);
+  $tietue.alku :=+ "itt" + A($tietue) + U($tietue);
   $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
   return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
 end;

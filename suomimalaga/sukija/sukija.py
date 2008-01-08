@@ -465,44 +465,69 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		# Kolmitavuiset, perusmuodossaan O(i)ttAA-loppuiset sanat
 		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
 		#
-		elif ((jatko == u"alittaa") and (nsyl == 3) and
-		    (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
-			jatko = u"kirjoittaa"
-			jatko2 = u"kirjoittaa"
-			
-			if (d['kirjoittaa'] != None):
-				alku2 = wordform[0:-5] + u"t"   # Kirjoittaa => kirjottaa.
-			elif (d['ammottaa'] != None):
-				alku2 = wordform[0:-4] + u"it"  # Ammottaa => ammoittaa.
-			else:
-				print(u"Wordform=" + wordform + u"\n")
-				abort()
-			wordform2 = alku2 + wordform[-3:]
+#		elif ((jatko == u"alittaa") and (nsyl == 3) and
+#		    (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
+#			jatko = u"kirjoittaa"
+#			jatko2 = u"kirjoittaa"
+#			if (d['kirjoittaa'] != None):
+#				alku2 = wordform[0:-5] + u"t"   # Kirjoittaa => kirjottaa.
+#			elif (d['ammottaa'] != None):
+#				alku2 = wordform[0:-4] + u"it"  # Ammottaa => ammoittaa.
+#			else:
+#				print(u"Wordform=" + wordform + u"\n")
+#				abort()
+#			wordform2 = alku2 + wordform[-3:]
 #			print ("Aa1 " + s + u" w=" + wordform2 + u" a=" + alku2 + u" A=" + d['alku'] + u"\n")
+#		#
+#		# Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
+#		#
+#		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2)):
+#			if ((d != None) and (d['ammottaa'] != None)):
+#				jatko = u"kirjoittaa"
+#				jatko2 = jatko
+#				alku = wordform[0:-4] + u"t"
+#				alku2 = wordform[0:-4] + u"it"
+#				wordform2 = alku2 + wordform[-3:]
+##				print ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+#			elif ((d != None) and (d['kirjoittaa'] != None)):
+#				jatko = u"kirjoittaa"
+#				jatko2 = jatko
+#				alku = wordform[0:-5] + u"it"
+#				alku2 = wordform[0:-5] + u"t"
+#				wordform2 = alku2 + wordform[-3:]
+##				print ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
+#			elif (jatko == u"ammottaa"):
+#				jatko = u"kirjoittaa"
+#				alku = alku + u"t"
+#			else:
+#				jatko = u"alittaa"
+#				alku = alku + u"t"
 		#
-		# Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
+		# Muutetaan taivutuksia: alittaa => ammottaa tai kirjoittaa; ammottaa => alittaa.
 		#
-		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2)):
-			if ((d != None) and (d['ammottaa'] != None)):
-				jatko = u"kirjoittaa"
-				jatko2 = jatko
-				alku = wordform[0:-4] + u"t"
-				alku2 = wordform[0:-4] + u"it"
-				wordform2 = alku2 + wordform[-3:]
-#				print ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
-			elif ((d != None) and (d['kirjoittaa'] != None)):
-				jatko = u"kirjoittaa"
-				jatko2 = jatko
-				alku = wordform[0:-5] + u"it"
-				alku2 = wordform[0:-5] + u"t"
-				wordform2 = alku2 + wordform[-3:]
-#				print ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
-			elif (jatko == u"ammottaa"):
-				jatko = u"kirjoittaa"
-				alku = alku + u"t"
-			else:
-				jatko = u"alittaa"
-				alku = alku + u"t"
+#		elif ((jatko in [u"alittaa"]) and (nsyl == 3) and
+#		      (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
+#			print (u"a1 " + wordform + u" " + alku + u" " + jatko)
+#			if (alku[-2:] == u"it"):
+#				alku = alku[0:-2]
+#			else:
+#				alku = alku[0:-1]
+#			if (d['ammottaa'] != None):
+#				jatko = u"ammottaa"
+#				print (u"a2 " + wordform + u" " + alku + u" " + jatko)
+#			elif (d['kirjoittaa'] != None):
+#				jatko = u"kirjoittaa"
+#				print (u"a2 " + wordform + u" " + alku + u" " + jatko)
+#		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2) and (rx != None)):
+#			print (u"b1 " + wordform + u" " + alku + u" " + jatko + "\n")
+#			if ((d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
+#				if (alku[:-1] == u"i"):
+#					alku = alku[0:-1]
+#					print (u"b2 " + wordform + u" " + alku + u" " + jatko)
+#			else:
+#				alku = alku + u"t"
+#				jatko = u"alittaa"
+#				print (u"b2 " + wordform + u" " + alku + u" " + jatko)
 		#
 		# Kolmitavuiset nuolaista-tyyppiset sanat
 		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.

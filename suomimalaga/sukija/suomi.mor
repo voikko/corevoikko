@@ -1116,7 +1116,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"lukunen">,   <"alin">>,
       <<"läinen">,    <"käki">>,
       <<"läsnä">,     <"olija", "olo", "olonen", "Olos">>, # 2 ekaa ovat sanastossa.
-      <<"maa">,       <"gis", "nisä">>,
+      <<"maa">,       <"gis", "ilma", "nisä">>,            # "Maailma" on sanastossa.
       <<"maagi">,     <"seksi", "silta">>,
       <<"mainen">,    <"emä">>,
       <<"maini">,     <"ostaa", "ottaa", "tukea", "tuki">>,
