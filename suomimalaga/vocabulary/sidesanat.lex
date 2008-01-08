@@ -47,7 +47,7 @@
 [perusmuoto: "kuinka", alku: "kuinka", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkahan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkakin", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "kuinka", alku: "kuinkako", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kuinka", alku: "kuinkako", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkakohan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkapa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kuinka", alku: "kuinkapas", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
@@ -57,7 +57,7 @@
 [perusmuoto: "kunnes", alku: "kunnes", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunpa", alku: "kunpa", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "mutta", alku: "mutta", luokka: sidesana, jatko: <loppu>, äs: a];
-[perusmuoto: "mutta", alku: "muttia", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "mutta", alku: "muttia", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "sekä", alku: "sekä", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "tahi", alku: "tahi", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "tahikka", alku: "tahikka", luokka: sidesana, jatko: <loppu>, äs: a];
