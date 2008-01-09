@@ -198,6 +198,8 @@ pula-aerobinen
 kiiltäväkorvainen
 vihertävänhohtoinen
 !vihertävienhohtoinen
+vaikuttava-aittainen
+!vaikuttavaaittainen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen

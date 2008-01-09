@@ -1478,7 +1478,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
                          etuliite, yhdysmerkki_yleisnimen_jälkeen;
     else
-      result $res, rules inen_johdos_nimisanasta, etuliite, tavuviiva;
+      result $res, rules inen_johdos_nimisanasta, etuliite, yhdysmerkki_laatusanan_jälkeen;
     end;
   end;
   if omistusliite in $oikea.jatko then
