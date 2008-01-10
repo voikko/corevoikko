@@ -46,7 +46,7 @@
 # combination.
 
 
-initial <>, rules nimisana, erisnimi, laatusana,
+initial <>, rules nimisana_sanan_alussa, erisnimi, laatusana,
                   lukusana, sanan_alku, teonsana,
                   laatusana_laatusanasta, paikannimen_lainen_johdos;
 
@@ -236,35 +236,60 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
 end;
 
 
+combi_rule nimisana_sanan_alussa ($vasen, $oikea, $sana):
+  ? $oikea.luokka in <nimisana, nimi_laatusana>;
+  ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
+    result $res, rules voittoaste;
+  end;
+  if (tavuviiva in $oikea.jatko and ($oikea.tiedot = nil or
+      (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
+    result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta,
+                       etuliite, paikannimen_lainen_johdos, yhdysmerkki_yleisnimen_jälkeen,
+                       inen_johdos_nimisanasta, inen_päätteinen_laatusana; # Kieli=poliittinen
+  end;
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+  result $res, rules nimisanan_sijapääte, nimisanan_johdos;
+end;
+
+
+# Esiehto: ei sanan alussa
 combi_rule nimisana ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if ($index greater 1) then
-    define $edellinen := $vasen.($index - 1);
-    ? (((nimisana in $edellinen.jatko))    or
-       ($edellinen.luokka = lukusana)      or
-       ($oikea.lähtöluokka = teonsana and
-        (teonsana in $edellinen.jatko or teonsanan_johdoksen_etuliite in $edellinen.jatko)));
+  define $edellinen := $vasen.($index - 1);
+  ? (((nimisana in $edellinen.jatko))    or
+     ($edellinen.luokka = lukusana)      or
+     ($oikea.lähtöluokka = teonsana and
+      (teonsana in $edellinen.jatko or teonsanan_johdoksen_etuliite in $edellinen.jatko)));
 
-    ? $edellinen.luokka = etuliite or $oikea.tiedot = nil or
-      (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
-    ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  ? $edellinen.luokka = etuliite or $oikea.tiedot = nil or
+    (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
-    if $edellinen.luokka in <laatusana, nimi_laatusana> then
-      result $res, rules nimisanan_johdos;
-      if $edellinen.luokka = laatusana then stop; end;
-    elseif $edellinen.lukutyyppi /= nil then
-      if tavuviiva in $oikea.jatko then
-        result $res, rules etuliite, tavuviiva;
-      end;
-      result $res,
-             rules nimisanan_johdos, nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
-      stop;
+  if $edellinen.luokka in <laatusana, nimi_laatusana> then
+    result $res, rules nimisanan_johdos;
+    if $edellinen.luokka = laatusana then stop; end;
+  elseif $edellinen.lukutyyppi /= nil then
+    if tavuviiva in $oikea.jatko then
+      result $res, rules etuliite, tavuviiva;
     end;
-  else
-    ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
+    result $res,
+           rules nimisanan_johdos, nimisana, nimisana_laatusanasta, nimisana_teonsanasta;
+    stop;
   end;
 
   if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
