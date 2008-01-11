@@ -561,7 +561,7 @@
 
 [perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "hienosokeri", alku: "hienotsokeri",    luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "hienosokeri", alku: "hienojensoker",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=pppppppp=ppppp"];
+[perusmuoto: "hienosokeri", alku: "hienojensokeri",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "hienosokeri", alku: "hienojensokere",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "hienosokeri", alku: "hienojasokere",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=ppppppp=pppppp"];
 [perusmuoto: "hienosokeri", alku: "hienojasokere",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=ppppppp=pppppp"];
@@ -1436,7 +1436,7 @@
 
 [perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustatpippuri",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: a, rakenne: "=pppppp=ppppppp"];
-[perusmuoto: "mustapippuri", alku: "mustienpippur",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "mustapippuri", alku: "mustienpippuri",  luokka: nimisana, luku: monikko, jatko: <omanto_en>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustienpippure",  luokka: nimisana, luku: monikko, jatko: <omanto_iT>, äs: a, rakenne: "=ppppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_jA>, äs: a, rakenne: "=pppppp=ppppppp"];
 [perusmuoto: "mustapippuri", alku: "mustiapippure",   luokka: nimisana, luku: monikko, jatko: <osanto_itA>, äs: a, rakenne: "=pppppp=ppppppp"];
