@@ -17,6 +17,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+
+# Hannu Väisänen has added some inflection types.
+
 import re
 
 grads = [ (u'sw', u'tt', u'av1'),
@@ -249,7 +252,8 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 		        (u'v',u'(.*)ve',u'taive'),
 		        (u'k',u'(.*k)e',u'tarvike'),
 		        (u'>k',u'(.*V)e',u'tarvike'),
-		        (u't',u'(.*Vt)e',u'vaate')]),
+		        (u't',u'(.*Vt)e',u'vaate'),
+		        (u't',u'(.*rt)e',u'vaate')]),
 	# Verbs
 	(u'punoa', u'sw', [(None,u'(.*)A',u'punoa'),
 	                   (u'mp',u'(.*m)pUA',u'ampua'),

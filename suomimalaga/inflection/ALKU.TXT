@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -126,6 +126,11 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto = "erityinen") then
     $tietue.tiedot :=- <ei_ysa>;
   end;
+
+#  if ($tietue.luokka in <huudahdussana, seikkasana, sidesana, suhdesana>) then
+#    $tietue.jatko :=+ <tavuviiva>;
+#  end;
+
 
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or

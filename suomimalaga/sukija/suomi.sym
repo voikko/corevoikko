@@ -724,6 +724,8 @@ muistaa;      # => muistella, muisto, muistua
   aavistaa;   # => aavistella, aavistus
   alittaa;    # => alitella, alitus
   ammottaa;   # Sukija-versiossa myös ammoittaa => ammo(i)tella ammo(i)tus.
+  ammottua;
+  asettaa;
   astahtaa;   # => astahdella, astahdus
   autioittaa;
   heittää;    # => heitellä, heitto
@@ -733,13 +735,13 @@ muistaa;      # => muistella, muisto, muistua
   inttää;     # => intellä
   itää;
   kirjoittaa; # Sukija-versiossa myös kirjottaa => kirjo(i)tella, kirjo(i)tus.
+  kirjoittua;
   kuluttaa;
   kyntää;
   loistaa;    # => Loistella, loisto.
   lypsää;     # => Lypsellä, lypsy.
   purkaa;
   sulaa;
-  verkottaa;  # => Verkotus, verkottua.
   voitaa;     # => Voidella.
 huutaa;       # => Huuto.
   alentaa;    # => Alennus.
@@ -807,7 +809,6 @@ nuolaista;   # Ja nuolasta. >= Nuolaisu, nuolasu.
   seistä;
   nousta;
 tulla;
-  nuolla; # => nuoleskella
 purra;
 mennä;
 katsella;
@@ -903,6 +904,7 @@ rakentaa;  # => Rakennus.
   kääntää; # => Käännös.
 taitaa;
 antautua;
+  kirjoittautua;
 kaata;
 
 kumajaa;

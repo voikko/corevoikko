@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -126,6 +126,11 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto = "erityinen") then
     $tietue.tiedot :=- <ei_ysa>;
   end;
+
+#  if ($tietue.luokka in <huudahdussana, seikkasana, sidesana, suhdesana>) then
+#    $tietue.jatko :=+ <tavuviiva>;
+#  end;
+
 
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
@@ -2590,6 +2595,15 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (ammottua in $tietue.jatko) then
+    choose $i in ammottua ($tietue, "tt"+U($tietue), "itt"+U($tietue), "t"+U($tietue), "it"+U($tietue));
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (asettua in $tietue.jatko) then
     choose $i in punoa ($tietue, "t"+U($tietue), U($tietue));
     if (value_type($i) = record) then
@@ -2646,6 +2660,15 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (kieppua in $tietue.jatko) then
     choose $i in punoa ($tietue, "p"+U($tietue), U($tietue));
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (kirjoittua in $tietue.jatko) then
+    choose $i in kirjoittua ($tietue, "itt"+U($tietue), "tt"+U($tietue), "it"+U($tietue), "t"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2777,10 +2800,22 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (ammottaa in $tietue.jatko) then
-    choose $i in ammottaa ($tietue, "tt"+A($tietue), "te", "t"+A($tietue), "t", "tt")
-                 + muistella ($tietue, "tt", "t")
-                 + muistua ($tietue, "", "tt", "t")
-                 + ammottautua ($tietue);
+    choose $i in ammottaa ($tietue, "tt"+A($tietue), "itt"+A($tietue), "te", "ite", "t"+A($tietue), "it"+A($tietue), "t", "it", "tt", "itt")
+                 + ammotella ($tietue)
+                 + ammottua2 ($tietue)
+                 + ammottautua2 ($tietue);
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (asettaa in $tietue.jatko) then
+    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t")
+                 + muistella ($tietue, "t", "")
+                 + muistua ($tietue, "", "t", "")
+                 + asettautua ($tietue);
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2874,10 +2909,10 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kirjoittaa in $tietue.jatko) then
-    choose $i in kirjoittaa ($tietue, "itt"+A($tietue), "ite", "it"+A($tietue), "it", "itt")
-                 + muistella ($tietue, "itt", "it")
-                 + muistua ($tietue, "", "itt", "it")
-                 + kirjoittautua ($tietue);
+    choose $i in kirjoittaa ($tietue, "itt"+A($tietue), "tt"+A($tietue), "ite", "te", "it"+A($tietue), "t"+A($tietue), "it", "t", "itt", "tt")
+                 + kirjoitella ($tietue)
+                 + kirjoittua2 ($tietue)
+                 + kirjoittautua2 ($tietue);
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2935,16 +2970,6 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (sulaa in $tietue.jatko) then
     choose $i in voitaa ($tietue, A($tietue), "e", A($tietue), "", "");
-    if (value_type($i) = record) then
-      result $i.alku, $i - alku;
-    else
-      foreach $j in $i:
-        result $j.alku, $j - alku;
-      end;
-    end;
-  elseif (verkottaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "")
-                 + muistua ($tietue, "", "t", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3514,7 +3539,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (nuolaista in $tietue.jatko) then
-    choose $i in nuolaista ($tietue, "", "t", "e", "i");
+    choose $i in nuolaista ($tietue, "is", "s", "ist", "st", "ise", "se", "isi", "si");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3560,16 +3585,6 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (tulla in $tietue.jatko) then
     choose $i in tulla ($tietue, "", "l", "e", "i");
-    if (value_type($i) = record) then
-      result $i.alku, $i - alku;
-    else
-      foreach $j in $i:
-        result $j.alku, $j - alku;
-      end;
-    end;
-  elseif (nuolla in $tietue.jatko) then
-    choose $i in tulla ($tietue, "", "l", "e", "i")
-                 + muistella ($tietue, "esk", "esk");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4485,6 +4500,15 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (antautua in $tietue.jatko) then
     choose $i in antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (kirjoittautua in $tietue.jatko) then
+    choose $i in kirjoittautua ($tietue, "itt"+A($tietue)+U($tietue)+"t"+U($tietue), "tt"+A($tietue)+U($tietue)+"t"+U($tietue), "itt"+A($tietue)+U($tietue), "tt"+A($tietue)+U($tietue), "itt"+A($tietue)+U($tietue)+"d"+U($tietue), "tt"+A($tietue)+U($tietue)+"d"+U($tietue), "itt"+A($tietue)+U($tietue)+"n", "tt"+A($tietue)+U($tietue)+"n", "itt"+A($tietue)+U($tietue)+"s", "tt"+A($tietue)+U($tietue)+"s");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -9797,6 +9821,104 @@ subrule sydän ($tietue, $param01, $param02, $param03, $param04, $param05):
                          etuliite: <<$param01, <>>>,
                          tavuviiva: <<$param01, <>>>]);
 end;
+subrule ammottua ($tietue, $param01, $param02, $param03, $param04):
+  return taivutuskaava ($tietue,
+                        [nimitapa_1_A: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_3_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_4: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_5: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         laatutapa_2_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_2_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kertoma_ttiin: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         ehtotapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         ehtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa_y2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+end;
+subrule kirjoittua ($tietue, $param01, $param02, $param03, $param04):
+  return taivutuskaava ($tietue,
+                        [nimitapa_1_A: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_3_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_4: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_5: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         laatutapa_2_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_2_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m1: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kertoma_ttiin: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         ehtotapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         ehtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa_y2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
+end;
 subrule punoa ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
                         [nimitapa_1_A: <<$param01, <>>>,
@@ -9897,55 +10019,55 @@ subrule alittaa ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>]);
 end;
-subrule ammottaa ($tietue, $param01, $param02, $param03, $param04, $param05):
+subrule ammottaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
-                        [nimitapa_1_A: <<$param01, <>>>,
-                         nimitapa_2: <<$param01, <>>>,
-                         nimitapa_2_ttA: <<$param02, <>>>,
-                         nimitapa_3: <<$param01, <>>>,
-                         nimitapa_3_ttA: <<$param02, <>>>,
-                         nimitapa_4: <<$param01, <>>>,
-                         nimitapa_5: <<$param01, <>>>,
-                         laatutapa_1_vA: <<$param01, <>>>,
-                         laatutapa_1_ttA: <<$param02, <>>>,
-                         laatutapa_2_nUt: <<$param01, <>>>,
-                         laatutapa_2_ttU: <<$param02, <>>>,
-                         kestämän_tekijäpääte_y1: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y2: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y3: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>>,
-                         kestämän_tekijäpääte_m1: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m2: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m3: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn: <<$param02, <>>>,
-                         kertoman_tekijäpääte_y1: <<$param04, <>>>,
-                         kertoman_tekijäpääte_y2: <<$param04, <>>>,
-                         kertoman_tekijäpääte_y3: <<$param05, <>>>,
-                         kertoman_tekijäpääte_m1: <<$param04, <>>>,
-                         kertoman_tekijäpääte_m2: <<$param04, <>>>,
-                         kertoman_tekijäpääte_m3: <<$param05, <>>>,
-                         tositavan_kertoma_ttiin: <<$param02, <>>>,
-                         ehtotapa: <<$param01, <>>>,
-                         ehtotapa_ttA: <<$param02, <>>>,
-                         mahtotapa_ne: <<$param01, <>>>,
-                         mahtotapa_ttA: <<$param02, <>>>,
-                         käskytapa_y2: <<$param03, <>>>,
-                         käskytapa_kielto: <<$param01, <>>>,
-                         käskytapa_ttA: <<$param02, <>>>,
-                         johdin_jA_kantaja: <<$param01, <>>>,
-                         johdin_Us_ksen: <<$param04, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         johdin_nUt: <<$param01, <>>>,
-                         johdin_mA: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_ttAvA: <<$param02, <>>>,
-                         johdin_ttAvAinen: <<$param02, <>>>]);
+                        [nimitapa_1_A: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_3_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_4: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_5: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         laatutapa_2_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_2_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y1: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m1: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y1: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y2: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y3: <<$param09, <>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m1: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m2: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m3: <<$param09, <>>, <$param10, <ei_voikko>>>,
+                         tositavan_kertoma_ttiin: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         ehtotapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         ehtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_Us_ksen: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
 end;
 subrule hohtaa ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -9996,55 +10118,55 @@ subrule hohtaa ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>]);
 end;
-subrule kirjoittaa ($tietue, $param01, $param02, $param03, $param04, $param05):
+subrule kirjoittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
-                        [nimitapa_1_A: <<$param01, <>>>,
-                         nimitapa_2: <<$param01, <>>>,
-                         nimitapa_2_ttA: <<$param02, <>>>,
-                         nimitapa_3: <<$param01, <>>>,
-                         nimitapa_3_ttA: <<$param02, <>>>,
-                         nimitapa_4: <<$param01, <>>>,
-                         nimitapa_5: <<$param01, <>>>,
-                         laatutapa_1_vA: <<$param01, <>>>,
-                         laatutapa_1_ttA: <<$param02, <>>>,
-                         laatutapa_2_nUt: <<$param01, <>>>,
-                         laatutapa_2_ttU: <<$param02, <>>>,
-                         kestämän_tekijäpääte_y1: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y2: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y3: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>>,
-                         kestämän_tekijäpääte_m1: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m2: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m3: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn: <<$param02, <>>>,
-                         kertoman_tekijäpääte_y1: <<$param04, <>>>,
-                         kertoman_tekijäpääte_y2: <<$param04, <>>>,
-                         kertoman_tekijäpääte_y3: <<$param05, <>>>,
-                         kertoman_tekijäpääte_m1: <<$param04, <>>>,
-                         kertoman_tekijäpääte_m2: <<$param04, <>>>,
-                         kertoman_tekijäpääte_m3: <<$param05, <>>>,
-                         tositavan_kertoma_ttiin: <<$param02, <>>>,
-                         ehtotapa: <<$param01, <>>>,
-                         ehtotapa_ttA: <<$param02, <>>>,
-                         mahtotapa_ne: <<$param01, <>>>,
-                         mahtotapa_ttA: <<$param02, <>>>,
-                         käskytapa_y2: <<$param03, <>>>,
-                         käskytapa_kielto: <<$param01, <>>>,
-                         käskytapa_ttA: <<$param02, <>>>,
-                         johdin_jA_kantaja: <<$param01, <>>>,
-                         johdin_Us_ksen: <<$param04, <>>>,
-                         johdin_vA: <<$param01, <>>>,
-                         johdin_vAinen: <<$param01, <>>>,
-                         johdin_ttU: <<$param02, <>>>,
-                         johdin_nUt: <<$param01, <>>>,
-                         johdin_mA: <<$param01, <>>>,
-                         mahtotapa_ne_kielto: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param02, <>>>,
-                         käskytapa: <<$param01, <>>>,
-                         johdin_ttAvA: <<$param02, <>>>,
-                         johdin_ttAvAinen: <<$param02, <>>>]);
+                        [nimitapa_1_A: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_3_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_4: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_5: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_1_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         laatutapa_2_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_2_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y1: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m1: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y1: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y2: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y3: <<$param09, <>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m1: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m2: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m3: <<$param09, <>>, <$param10, <ei_voikko>>>,
+                         tositavan_kertoma_ttiin: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         ehtotapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         ehtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_Us_ksen: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
 end;
 subrule loistaa ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -11637,55 +11759,55 @@ subrule nousta ($tietue, $param01, $param02, $param03, $param04):
                          johdin_sUt: <<$param01, <>>>,
                          käskytapa: <<$param01, <>>>]);
 end;
-subrule nuolaista ($tietue, $param01, $param02, $param03, $param04):
+subrule nuolaista ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
-                        [nimitapa_1_tA: <<$param01, <>>>,
-                         nimitapa_2: <<$param02, <>>>,
-                         nimitapa_2_tA: <<$param01, <>>>,
-                         nimitapa_3: <<$param03, <>>>,
-                         nimitapa_3_tA: <<$param01, <>>>,
-                         nimitapa_4: <<$param03, <>>>,
-                         nimitapa_5: <<$param03, <>>>,
-                         laatutapa_1_vA: <<$param03, <>>>,
-                         laatutapa_1_tA: <<$param01, <>>>,
-                         laatutapa_2_sUt: <<$param01, <>>>,
-                         laatutapa_2_stU_nuolaistu: <<$param01, <>>>,
-                         kestämän_tekijäpääte_y1: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y2: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y3: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y3_vi: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y3_Vpi: <<$param03, <>>>,
-                         kestämän_tekijäpääte_y3_Vvi: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m1: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m2: <<$param03, <>>>,
-                         kestämän_tekijäpääte_m3: <<$param03, <>>>,
-                         tositavan_kestämä_tAAn: <<$param01, <>>>,
-                         kertoman_tekijäpääte_y1: <<$param01, <>>>,
-                         kertoman_tekijäpääte_y2: <<$param01, <>>>,
-                         kertoman_tekijäpääte_y3: <<$param01, <>>>,
-                         kertoman_tekijäpääte_m1: <<$param01, <>>>,
-                         kertoman_tekijäpääte_m2: <<$param01, <>>>,
-                         kertoman_tekijäpääte_m3: <<$param01, <>>>,
-                         tositavan_kertoma_tiin: <<$param01, <>>>,
-                         ehtotapa: <<$param01, <>>>,
-                         ehtotapa_tA: <<$param01, <>>>,
-                         mahtotapa_se: <<$param01, <>>>,
-                         mahtotapa_tA: <<$param01, <>>>,
-                         käskytapa_y2: <<$param03, <>>>,
-                         käskytapa_kielto: <<$param01, <>>>,
-                         käskytapa_tA: <<$param01, <>>>,
-                         johdin_jA_kulkija: <<$param04, <>>>,
-                         johdin_U_arvelu: <<$param01, <>>>,
-                         johdin_vA: <<$param03, <>>>,
-                         johdin_vAinen: <<$param03, <>>>,
-                         johdin_mA: <<$param03, <>>>,
-                         mahtotapa_se_kielto: <<$param01, <>>>,
-                         johdin_tAvA: <<$param01, <>>>,
-                         johdin_tAvAinen: <<$param01, <>>>,
-                         johdin_stU_nuolaistu: <<$param01, <>>>,
-                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
-                         johdin_sUt: <<$param01, <>>>,
-                         käskytapa: <<$param01, <>>>]);
+                        [nimitapa_1_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_2: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         nimitapa_2_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_3: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         nimitapa_3_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_4: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         nimitapa_5: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         laatutapa_1_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         laatutapa_1_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_2_sUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         laatutapa_2_stU_nuolaistu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y1: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m1: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m3: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y1: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y2: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m1: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m2: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kertoma_tiin: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         ehtotapa: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         ehtotapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_se: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         mahtotapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa_tA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_jA_kulkija: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_U_arvelu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_vA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_vAinen: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_mA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         mahtotapa_se_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvA: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_tAvAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_stU_nuolaistu: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         johdin_sUt: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule rangaista ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10, $param11):
   return taivutuskaava ($tietue,
@@ -11989,7 +12111,7 @@ subrule katsella ($tietue, $param01, $param02, $param03, $param04, $param05):
                          tositavan_kertoma_tiin: <<$param01, <>>>,
                          ehtotapa: <<$param04, <>>, <$param03, <ei_voikko>>>,
                          ehtotapa_tA: <<$param01, <>>>,
-                         mahtotapa_le: <<$param04, <>>>,
+                         mahtotapa_le: <<$param01, <>>>,
                          mahtotapa_tA: <<$param01, <>>>,
                          käskytapa_y2: <<$param03, <>>>,
                          käskytapa_kielto: <<$param01, <>>>,
@@ -12000,7 +12122,7 @@ subrule katsella ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_vAinen: <<$param03, <>>>,
                          tositavan_kestämä_lAAn_kielto: <<$param01, <>>>,
                          johdin_lUt: <<$param01, <>>>,
-                         mahtotapa_le_kielto: <<$param04, <>>>,
+                         mahtotapa_le_kielto: <<$param01, <>>>,
                          johdin_mA: <<$param03, <>>>,
                          johdin_tAvA: <<$param01, <>>>,
                          johdin_tAvAinen: <<$param01, <>>>,
@@ -13102,6 +13224,56 @@ subrule antautua ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_ttAvA: <<$param03, <>>>,
                          johdin_ttAvAinen: <<$param03, <>>>]);
 end;
+subrule kirjoittautua ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
+  return taivutuskaava ($tietue,
+                        [nimitapa_1_A: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         nimitapa_1_tA: <<$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         nimitapa_2: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         nimitapa_2_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         nimitapa_3: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         nimitapa_3_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         nimitapa_4: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         nimitapa_5: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         laatutapa_1_vA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         laatutapa_1_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         laatutapa_2_nUt: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         laatutapa_2_ttU: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y1: <<$param05, <>>, <$param03, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y2: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m1: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m2: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y1: <<$param05, <>>, <$param06, <ei_voikko>>, <$param09, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y2: <<$param05, <>>, <$param06, <ei_voikko>>, <$param09, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_y3: <<$param01, <>>, <$param02, <ei_voikko>>, <$param09, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m1: <<$param05, <>>, <$param06, <ei_voikko>>, <$param09, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m2: <<$param05, <>>, <$param06, <ei_voikko>>, <$param09, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         kertoman_tekijäpääte_m3: <<$param01, <>>, <$param02, <ei_voikko>>, <$param09, <ei_voikko>>, <$param10, <ei_voikko>>>,
+                         tositavan_kertoma_ttiin: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         ehtotapa: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         ehtotapa_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         mahtotapa_ne: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
+                         mahtotapa_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa_y2: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         käskytapa_kielto: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         käskytapa_ttA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_ttU: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_nUt: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_mA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>, <$param02, <ei_voikko>>, <$param07, <ei_voikko>>, <$param08, <ei_voikko>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param05, <>>, <$param06, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         käskytapa: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <ei_voikko>>>,
+                         johdin_ttAvA: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_ttAvAinen: <<$param05, <>>, <$param06, <ei_voikko>>>]);
+end;
 subrule olla ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
                         [nimitapa_1_lA: <<$param01, <>>>,
@@ -13215,6 +13387,15 @@ subrule A ($tietue):
 end;
 
 
+subrule AU ($tietue):
+  if ($tietue.äs = a) then
+    return "au";
+  else
+    return "äy";
+  end;
+end;
+
+
 subrule O ($tietue):
   if ($tietue.äs = a) then
     return "o";
@@ -13229,6 +13410,15 @@ subrule U ($tietue):
     return "u";
   else
     return "y";
+  end;
+end;
+
+
+subrule UA ($tietue):
+  if ($tietue.äs = a) then
+    return "ua";
+  else
+    return "yä";
   end;
 end;
 
@@ -13539,23 +13729,74 @@ subrule muistua ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $alun_lisä;
-  $tietue.perusmuoto := $tietue.alku + $vahva_aste + U($tietue) + A($tietue);
+  $tietue.perusmuoto := $tietue.alku + $vahva_aste + UA($tietue);
   return punoa ($tietue, $vahva_aste + U($tietue), $heikko_aste + U($tietue));
 end;
 
 
-subrule ammottautua ($tietue):
+subrule ammotella ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "tt" + A($tietue) + U($tietue);
-  $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "tell" + A($tietue);
+  return kilvoitella ($tietue, "tel", "itel", "tell", "itell", "ttele", "ittele", "ttel", "ittel", "tteli", "itteli");
+end;
+
+subrule ammottua2 ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "tt" + UA($tietue);
+  return ammottua ($tietue, "tt"+U($tietue), "itt"+U($tietue), "t"+U($tietue), "it"+U($tietue));
+end;
+
+
+subrule ammottautua2 ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+#  $tietue.alku :=+ "tt" + AU($tietue);
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "tt" + AU($tietue) + "t" + UA($tietue);
+  return kirjoittautua ($tietue, "tt" + AU($tietue) + "t" + U($tietue), "itt" + AU($tietue) + "t" + U($tietue),
+                                 "tt" + AU($tietue),                    "itt" + AU($tietue),
+                                 "tt" + AU($tietue) + "d" + U($tietue), "itt" + AU($tietue) + "d" + U($tietue),
+                                 "tt" + AU($tietue) + "n",              "itt" + AU($tietue) + "n",
+                                 "tt" + AU($tietue) + "s",              "itt" + AU($tietue) + "s");
+end;
+
+
+subrule asettautua ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.alku :=+ "t" + A($tietue) + U($tietue);
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "t" + UA($tietue);
   return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
 end;
 
-subrule kirjoittautua ($tietue):
+
+subrule kirjoitella ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "itt" + A($tietue) + U($tietue);
-  $tietue.perusmuoto := $tietue.alku + "t" + U($tietue) + A($tietue);
-  return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "itell" + A($tietue);
+  return kilvoitella ($tietue, "itel", "tel", "itell", "tell", "ittele", "ttele", "ittel", "ttel", "itteli", "tteli");
+end;
+
+
+subrule kirjoittua2 ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "itt" + UA($tietue);
+  return kirjoittua ($tietue, "ittu", "ttu", "itu", "tu");
+end;
+
+
+subrule kirjoittautua2 ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+#  $tietue.alku :=+ "itt" + AU($tietue);
+  $tietue :=+ [lähtöalku: $tietue.alku];
+  $tietue.perusmuoto := $tietue.alku + "itt" + AU($tietue) + "t" + UA($tietue);
+  return kirjoittautua ($tietue, "itt" + AU($tietue) + "t" + U($tietue), "tt" + AU($tietue) + "t" + U($tietue),
+                                 "itt" + AU($tietue),                    "tt" + AU($tietue),
+                                 "itt" + AU($tietue) + "d" + U($tietue), "tt" + AU($tietue) + "d" + U($tietue),
+                                 "itt" + AU($tietue) + "n",              "tt" + AU($tietue) + "n",
+                                 "itt" + AU($tietue) + "s",              "tt" + AU($tietue) + "s");
 end;
 
 
@@ -13564,7 +13805,6 @@ subrule kihinä ($tietue):
   $tietue.alku :=+ "in";
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + A($tietue);
-
   return kulkija ($tietue, A($tietue), O($tietue), "");
 end;
 
@@ -13582,7 +13822,7 @@ end;
 subrule kihauttaa ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.äs := ääntiösointu ($tietue);
-  $tietue.alku :=+ A($tietue) + U($tietue) + "t";
+  $tietue.alku :=+ AU($tietue) + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
   return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t")
          + muistella ($tietue, "t", "");
@@ -13665,7 +13905,7 @@ end;
 subrule pahentua ($tietue, $vahva_aste, $heikko_aste):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := teonsana;
-  $tietue.perusmuoto := $tietue.alku + $vahva_aste + U($tietue) + A($tietue);
+  $tietue.perusmuoto := $tietue.alku + $vahva_aste + UA($tietue);
 
   return punoa ($tietue, $vahva_aste+U($tietue), $heikko_aste+U($tietue));
 end;

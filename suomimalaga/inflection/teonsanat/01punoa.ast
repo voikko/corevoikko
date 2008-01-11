@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,23 +45,25 @@
 # combination.
 
 
-punoa      punoa  "" ""
-aikoa      punoa  ko o
-ampua      punoa  pu mu  %punottaa("mut")
-asettua    punoa  tu u
-harppoa    punoa  po o
-jakaantua  punoa  tu nu
-kaatua     punoa  tu du
-kertoa     punoa  to ro
-kiekua     punoa  ku u
-kieppua    punoa  pu u
-kumartua   punoa  tu ru
-leipoa     punoa  po vo
-liukua     punoa  ku 'u
-mankua     punoa  ku gu
-paleltua   punoa  tu lu
-penkoa     punoa  ko go
-saapua     punoa  pu vu
-tahtoa     punoa  to do
-tempoa     punoa  po mo
-viittoa    punoa  to o
+punoa      punoa    "" ""
+aikoa      punoa    ko o
+ampua      punoa    pu mu            %punottaa("mut")
+ammottua   ammottua ttu ittu tu itu
+asettua    punoa    tu u
+harppoa    punoa    po o
+jakaantua  punoa    tu nu
+kaatua     punoa    tu du
+kertoa     punoa    to ro
+kiekua     punoa    ku u
+kieppua    punoa    pu u
+kirjoittua kirjoittua ittu ttu itu tu
+kumartua   punoa      tu ru
+leipoa     punoa      po vo
+liukua     punoa      ku 'u
+mankua     punoa      ku gu
+paleltua   punoa      tu lu
+penkoa     punoa      ko go
+saapua     punoa      pu vu
+tahtoa     punoa      to do
+tempoa     punoa      po mo
+viittoa    punoa      to o

@@ -47,102 +47,136 @@
 
 nimitapa_1_A
           kirjo+itta+a
+          kirjo+tta+a  ei_voikko
 
 nimitapa_2
           kirjo+itta+essa
+          kirjo+tta+essa  ei_voikko
 
 nimitapa_2_ttA
           kirjo+ite+ttaessa
+          kirjo+te+ttaessa  ei_voikko
 
 nimitapa_3
           kirjo+itta+ma
+          kirjo+tta+ma  ei_voikko
 
 nimitapa_3_ttA
           kirjo+ite+ttaman
+          kirjo+te+ttaman  ei_voikko
 
 nimitapa_4
           kirjo+itta+minen
+          kirjo+tta+minen  ei_voikko
 
 nimitapa_5
           kirjo+itta+maisillani
+          kirjo+tta+maisillani  ei_voikko
 
 laatutapa_1_vA
           kirjo+itta+va
+          kirjo+tta+va  ei_voikko
 
 laatutapa_1_ttA
           kirjo+ite+ttava
+          kirjo+te+ttava  ei_voikko
 
 laatutapa_2_nUt
           kirjo+itta+nut
+          kirjo+tta+nut  ei_voikko
 
 laatutapa_2_ttU
           kirjo+ite+ttu
+          kirjo+te+ttu  ei_voikko
 
 kestämän_tekijäpääte_y1
           kirjo+ita+n
+          kirjo+ta+n  ei_voikko
 
 kestämän_tekijäpääte_y2
           kirjo+ita+t
+          kirjo+ta+t  ei_voikko
 
 kestämän_tekijäpääte_y3
           kirjo+itta+a
+          kirjo+tta+a  ei_voikko
 
 kestämän_tekijäpääte_m1
           kirjo+ita+mme
+          kirjo+ta+mme  ei_voikko
 
 kestämän_tekijäpääte_m2
           kirjo+ita+tte
+          kirjo+ta+tte  ei_voikko
 
 kestämän_tekijäpääte_m3
           kirjo+itta+vat
+          kirjo+tta+vat  ei_voikko
 
 tositavan_kestämä_tAAn
           kirjo+ite+taan
+          kirjo+te+taan  ei_voikko
 
 kertoman_tekijäpääte_y1
           kirjo+it+in
+          kirjo+t+in  ei_voikko
 
 kertoman_tekijäpääte_y2
           kirjo+it+it
+          kirjo+t+it  ei_voikko
 
 kertoman_tekijäpääte_y3
           kirjo+itt+i
+          kirjo+tt+i  ei_voikko
 
 kertoman_tekijäpääte_m1
           kirjo+it+imme
+          kirjo+t+imme  ei_voikko
 
 kertoman_tekijäpääte_m2
           kirjo+it+itte
+          kirjo+t+itte  ei_voikko
 
 kertoman_tekijäpääte_m3
           kirjo+itt+ivat
+          kirjo+tt+ivat  ei_voikko
 
 tositavan_kertoma_ttiin
           kirjo+ite+ttiin
+          kirjo+te+ttiin  ei_voikko
 
 ehtotapa
           kirjo+itta+isin
+          kirjo+tta+isin  ei_voikko
 
 ehtotapa_ttA
           kirjo+ite+ttaisiin
+          kirjo+te+ttaisiin  ei_voikko
 
 mahtotapa_ne
           kirjo+itta+nen
+          kirjo+tta+nen  ei_voikko
 
 mahtotapa_ttA
           kirjo+ite+ttaneen
+          kirjo+te+ttaneen  ei_voikko
 
 käskytapa_y2
           kirjo+ita+
+          kirjo+ta+  ei_voikko
 
 käskytapa_kielto
           kirjo+itta+ko
+          kirjo+tta+ko  ei_voikko
 
 käskytapa_ttA
           kirjo+ite+ttakoon
+          kirjo+te+ttakoon  ei_voikko
 
 johdin_jA_kantaja
           kirjo+itta+ja
+          kirjo+tta+ja  ei_voikko
 
 johdin_Us_ksen
           kirjo+it+us
+          kirjo+t+us  ei_voikko

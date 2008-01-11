@@ -413,9 +413,6 @@
 [perusmuoto: "valheenisä", alku: "valeenis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=ppp"];
 [perusmuoto: "sankar", alku: "sankar", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "vallas", alku: "vallas", luokka: etuliite, jatko: @sana1, äs: aä];
-[perusmuoto: "toisaalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "toisahalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "pajattaa", alku: "pajat", luokka: teonsana, jatko: <alittaa>, äs: a];
 
 [perusmuoto: "logi", alku: "log", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Sofi", alku: "Sof", luokka: etunimi, jatko: <risti>, äs: a];
@@ -424,7 +421,6 @@
 [perusmuoto: "Hasselblatt", alku: "Hasselblatt", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Boxström", alku: "Boxström", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "puikula", alku: "puikul", luokka: nimisana, jatko: <apila>, äs: a];
-[perusmuoto: "syönnös", alku: "syönnö", luokka: nimisana, jatko: <vastaus>, äs: ä];
 [perusmuoto: "Sharp", alku: "Sharp", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Kantala", alku: "Kantal", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "ryittää", alku: "ryit", luokka: teonsana, jatko: <alittaa>, äs: ä, tiedot: <yt>];
@@ -442,21 +438,14 @@
 [perusmuoto: "Irving", alku: "Irving", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "varjokas", alku: "varjok", luokka: laatusana, jatko: <iäkäs>, äs: a];
 [perusmuoto: "heilakka", alku: "heilak", luokka: laatusana, jatko: <solakka>, äs: a];
-[perusmuoto: "lujite", alku: "lujit", luokka: nimisana, jatko: <vaate>, äs: a];
-[perusmuoto: "lannoitin", alku: "lannoit", luokka: nimisana, jatko: <suodatin>, äs: ä];
-[perusmuoto: "lujike", alku: "lujik", luokka: nimisana, jatko: <tarvike>, äs: a];
-[perusmuoto: "lajite", alku: "lajit", luokka: nimisana, jatko: <vaate>, äs: a];
-[perusmuoto: "Oksitania", alku: "Oksitani", luokka: paikannimi, jatko: <apila>, äs: a];
 [perusmuoto: "Brown", alku: "Brown", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ludvig", alku: "Ludvig", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Graal", alku: "Graal", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dante", alku: "Dante", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Wood", alku: "Wood", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "oksitaani", alku: "oksitaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Leoni", alku: "Leon", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Giulio", alku: "Giulio", luokka: etunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Juuti", alku: "Juu", luokka: sukunimi, jatko: <vati>, äs: a];
-[perusmuoto: "kokoutua", alku: "kokou", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "huikennella", alku: "huiken", luokka: teonsana, jatko: <pienennellä>, äs: a];
 
 

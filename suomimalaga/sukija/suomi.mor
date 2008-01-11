@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -1415,6 +1415,47 @@ output_filter tulosta ($tulos):
 end;
 
 
+subrule alku2 ($tietue, $alku):
+  define $n := length ($alku);
+  if ((substring ($tietue.perusmuoto, $n+1) = "i") and (substring ($tietue.alku, $n+1) /= "i")) then
+    return (substring ($tietue.alku,1,$n) + "i" + substring ($tietue.alku, $n+1, length($tietue.alku)));
+  end;
+  if ((substring ($tietue.perusmuoto, $n+1) /= "i") and (substring ($tietue.alku, $n+1) = "i")) then
+    return (substring ($tietue.alku,1,$n) + substring ($tietue.alku, $n+2, length($tietue.alku)));
+  end;
+  return $tietue.alku;
+end;
+
+
+# Kirjo(i)ttaa-, ammo(i)ttaa, nuola(i)sta-tyyppiset sanat ja niiden johdokset ja taivutusmuodot.
+#
+subrule alku ($tietue):
+#define $a := transmit ($tietue);
+  #
+  # Kirjo(i)ttaa, kirjo(i)tella, kirjo(i)ttua, kirjo(i)ttautua.
+  #
+  if ($tietue.perusmuoto matches (".+[oö]" : $alku, "i?(tt(aa|ää)|tell[aä]|tt(ua|yä)|tt(au|äy)t(ua|yä))" : $loppu)) then
+    return alku2 ($tietue, $alku);
+  end;
+  #
+  # Nuola(i)sta.
+  #
+  if ($tietue.perusmuoto matches ("..+[^aeiouyäö][aä]" : $alku, "i?st[aä]" : $loppu)) then
+    if (not ($tietue.perusmuoto in <"rangaista", "rankaista">)) then
+      return alku2 ($tietue, $alku);
+    end;
+  end;
+  #
+  # Antautua/antauta. Antau(du)ttu-muodolle tulee väärä perusmuoto antaututtu.
+  #
+#  if ($tietue.perusmuoto matches ("...*(au|äy)" : $alku, "t(ua|yä)" : $loppu)) then
+#    define $n := length ($alku);
+#    return substring($tietue.perusmuoto,1,$n+2);
+#  end;
+  return $tietue.alku;
+end;
+
+
 # Muutetaan sana perusmuotoon: Väisäsillemmekö -> Väisänen.
 #
 subrule perusmuoto ($tietue):
@@ -1454,7 +1495,8 @@ subrule perusmuoto ($tietue):
       if (($tietue.$k.luokka in @johdin_nUt) and ($tietue.$k.alku matches "[lnrs][uy]nn[aä]")) then
         $t :=+ <$tietue.$k.perusmuoto>;
       else
-        $t :=+ <$tietue.$k.alku>;
+#        $t :=+ <$tietue.$k.alku>;
+         $t :=+ <alku ($tietue.$k)>;
       end;
     elseif (not ($luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
                              omistusliite, kaksoispiste,

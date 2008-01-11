@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,8 +45,7 @@
 # combination.
 
 
-#nuolaista nuolaista  is s   ist st  ise se isi si
-nuolaista nuolaista  "" t   e   i
+nuolaista nuolaista  is s ist st ise se isi si
 rangaista rangaista  gais gas gaist gast kaise kase kais kas kaisi kasi is
 kalista   kalista    is ist ise isi i
 nousta    nousta     "" t   e   i

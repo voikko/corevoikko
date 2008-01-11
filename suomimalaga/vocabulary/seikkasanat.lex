@@ -292,6 +292,9 @@
 [perusmuoto: "kaiketi", alku: "kaiketi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaikinpuolin", alku: "kaikinpuolin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "kaikitenkin", alku: "kaikitenkin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kaikkialla", alku: "kaikkiaalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kaikkialla", alku: "kaikkiaalle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kaikkialla", alku: "kaikkiaalta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kaikkialla", alku: "kaikkialla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaikkialla", alku: "kaikkialle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaikkialla", alku: "kaikkialta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -821,6 +824,7 @@
 [perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "toisaalla", alku: "toisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
+[perusmuoto: "toisaalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "toisaanne", alku: "toisaanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toisinaan", alku: "toisinaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toisin", alku: "toisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi
+# Copyright 2007-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi
 # Program to generate lexicon files for Suomi-malaga Sukija edition.
 
 # This program is free software; you can redistribute it and/or modify
@@ -27,7 +27,20 @@ import re
 import sys
 
 # Historical inflections in alphabetical order.
-historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
+historical = [(u'aavistaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
+				    (u'tt',u'(.*O)ttAA',u'ammottaa'),
+				    (None,u'(.*t)AA',u'aavistaa'),
+				    (u'tt',u'(.*[AeiU]t)tAA',u'alittaa'),
+				    (u't',u'(.*h)tAA',u'astahtaa')]),
+	      (u'arvailla', u'-', [(None,u'(.*[AOU]])illA',u'arvailla')]),
+	      (u'katsella', u'ws', [(None,u'(.*[AOU])illA',u'arvailla')]),
+	      (u'kirjoittaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
+				      (u'tt',u'(.*O)ttAA',u'ammottaa'),
+				      (u'tt',u'(.*[AeiU]t)tAA',u'asettaa')]),
+	      (u'onneton', u'ws', [(None,u'(.*)tOn',u'alaston'),
+				   (u't',u'(.*)tOn',u'onneton')]),
+	      (u'punoa', u'sw', [(u't',u'(...*AU)tUA',u'antautua')]),
+	(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'antautua', u'sw', [(u't',u'(.*)tUA',u'antautua')]),
         (u'banaali', u'sw', [(None,u'(.*)i',u'banaali'),
                         (u'nt',u'(.*n)ti',u'hollanti'),
@@ -42,6 +55,7 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'kantaja', u'-', [(None,u'(.*)jA',u'johdin_jA_kantaja')]),
         (u'kirjoitella', u'ws', [(None,u'(...*O)itellA',u'kilvoitella'),
                                  (None,u'(.*O)tellA',u'ilotella')]),
+	(u'tulla', u'ws', [(None,u'(.*Vl)lA',u'tulla')]),
         (u'koiras', u'ws', [(None,u'(.*A)s',u'koiras')]),
 	(u'kutiaa', u'-',  [(None,u'(.*Cia)a',u'kutiaa')]),
         (u'laittaa', u'sw', [(u'tt',u'(.*t)tAA',u'laittaa')]),
@@ -62,8 +76,8 @@ historical = [(u'ahven', u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
         ]
 
-classmap = hfconv.modern_classmap
-classmap.extend(historical)
+classmap = historical
+classmap.extend(hfconv.modern_classmap)
 
 pattern = u"^(?P<alku>.*)(?:" + \
           u"(?P<ammottaa>OttAA)|" + \
@@ -152,7 +166,7 @@ words = [u"aikalainen", u"alaisuus",
 	 u"Laakso", u"Lahja", u"Lahti", u"Laina", u"Laine", u"Lauha",
 	 u"Lehto", u"Lemu", u"Lilja", u"Lintunen", u"Liperi", u"Lotta",
 	 u"Maa", u"Maila", u"Malmi", u"Marja", u"Matti", u"Mela", u"Metso", u"Miina",
-	 u"Minttu", u"Missi", u"Moisio", u"Muikku", "Murto",
+	 u"Minttu", u"Missi", u"Moisio", u"Muikku", u"Murto", u"Mäkinen",
 	 u"Niemi", u"Niva", u"Norja",
 	 u"Oiva", u"Orvokki", u"Otto",
 	 u"Pajari", u"Palmu", u"Paula", u"Perho", u"Pinja",
@@ -461,93 +475,9 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko2 = jatko
 			wordform2 = alku2 + u"nen"
 #			print (u"Keltainen " + wordform2 + u" " + alku2 + u" " + jatko2)
-		#
-		# Kolmitavuiset, perusmuodossaan O(i)ttAA-loppuiset sanat
-		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
-		#
-#		elif ((jatko == u"alittaa") and (nsyl == 3) and
-#		    (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
-#			jatko = u"kirjoittaa"
-#			jatko2 = u"kirjoittaa"
-#			if (d['kirjoittaa'] != None):
-#				alku2 = wordform[0:-5] + u"t"   # Kirjoittaa => kirjottaa.
-#			elif (d['ammottaa'] != None):
-#				alku2 = wordform[0:-4] + u"it"  # Ammottaa => ammoittaa.
-#			else:
-#				print(u"Wordform=" + wordform + u"\n")
-#				abort()
-#			wordform2 = alku2 + wordform[-3:]
-#			print ("Aa1 " + s + u" w=" + wordform2 + u" a=" + alku2 + u" A=" + d['alku'] + u"\n")
-#		#
-#		# Muutetaan taivutus ammottaa tai kirjoittaa => alittaa tai kirjoittaa.
-#		#
-#		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2)):
-#			if ((d != None) and (d['ammottaa'] != None)):
-#				jatko = u"kirjoittaa"
-#				jatko2 = jatko
-#				alku = wordform[0:-4] + u"t"
-#				alku2 = wordform[0:-4] + u"it"
-#				wordform2 = alku2 + wordform[-3:]
-##				print ("Aa3 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
-#			elif ((d != None) and (d['kirjoittaa'] != None)):
-#				jatko = u"kirjoittaa"
-#				jatko2 = jatko
-#				alku = wordform[0:-5] + u"it"
-#				alku2 = wordform[0:-5] + u"t"
-#				wordform2 = alku2 + wordform[-3:]
-##				print ("Aa4 " + s + u" " + wordform2 + u" " + alku2 + u"\n")
-#			elif (jatko == u"ammottaa"):
-#				jatko = u"kirjoittaa"
-#				alku = alku + u"t"
-#			else:
-#				jatko = u"alittaa"
-#				alku = alku + u"t"
-		#
-		# Muutetaan taivutuksia: alittaa => ammottaa tai kirjoittaa; ammottaa => alittaa.
-		#
-#		elif ((jatko in [u"alittaa"]) and (nsyl == 3) and
-#		      (rx != None) and (d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
-#			print (u"a1 " + wordform + u" " + alku + u" " + jatko)
-#			if (alku[-2:] == u"it"):
-#				alku = alku[0:-2]
-#			else:
-#				alku = alku[0:-1]
-#			if (d['ammottaa'] != None):
-#				jatko = u"ammottaa"
-#				print (u"a2 " + wordform + u" " + alku + u" " + jatko)
-#			elif (d['kirjoittaa'] != None):
-#				jatko = u"kirjoittaa"
-#				print (u"a2 " + wordform + u" " + alku + u" " + jatko)
-#		elif ((jatko in [u"ammottaa", u"kirjoittaa"]) and (nsyl > 2) and (rx != None)):
-#			print (u"b1 " + wordform + u" " + alku + u" " + jatko + "\n")
-#			if ((d != None) and ((d['ammottaa'] != None) or (d['kirjoittaa'] != None))):
-#				if (alku[:-1] == u"i"):
-#					alku = alku[0:-1]
-#					print (u"b2 " + wordform + u" " + alku + u" " + jatko)
-#			else:
-#				alku = alku + u"t"
-#				jatko = u"alittaa"
-#				print (u"b2 " + wordform + u" " + alku + u" " + jatko)
-		#
-		# Kolmitavuiset nuolaista-tyyppiset sanat
-		# tunnistetaan Sukija-versiossa sekä i:n kanssa että ilman.
-		#
-		elif ((jatko == u"nuolaista") and (nsyl == 3)):
-			if ((d != None) and (d['nuolaista'] != None)):
-				alku = wordform[0:-4] + u"is"
-				alku2 = wordform[0:-4] + u"s"
-				jatko2 = jatko
-				wordform2 = alku2 + wordform[-2:]
-#				print("N1 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
-			else:
-				alku2 = alku + u"s"
-				jatko2 = jatko
-				alku = alku + u"is"
-				wordform2 = alku2 + wordform[-2:]
-#				print("N2 " + wordform2 + u" " + alku2 + u" " + s + u"\n")
-		elif ((nsyl == 4) and (rx != None) and (d != None) and (d['antautua'] != None) and (jatko != u"antautua")):
-			jatko = u"antautua"
-#			print (u"Antautua " + wordform);
+##		elif ((nsyl == 4) and (rx != None) and (d != None) and (d['antautua'] != None) and (jatko != u"antautua")):
+##			print (u"Antautua " + wordform + u" " + jatko);
+##			jatko = u"antautua"
 		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
 			jatko = u"ajaa"
 		elif (jatko in [u"asiakas", u"avokas"]):
@@ -558,17 +488,15 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko = u"utelias"
 		elif (jatko == u"jättää"):
 			jatko = u"heittää"
-		elif (wordform == u"piillä"):
-			jatko = u"nuolla"
 		#
 		# Korjataan alku- ja jatko-kenttien arvoja.
 		#
-		elif ((nsyl > 2) and (jatko == u"arvailla")):
-			alku = alku[:-2]
+#		elif ((nsyl > 2) and (jatko == u"arvailla")):
+#			alku = alku[:-2]
 		elif (jatko == u"rakentaa"):
 			alku = wordform[:-4]
-		elif (jatko in [u"onneton", u"alaston"]):
-			alku = alku[:-1]
+#		elif (jatko in [u"onneton", u"alaston"]):
+#			alku = alku[:-1]
 		elif ((jatko == u"kuollut") and (wordform == u"neitsyt")):
 			jatko = u"neitsyt"
 		elif ((jatko == u"ori") and (wordform == u"ori")):
