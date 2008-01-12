@@ -281,8 +281,10 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
   if $edellinen.luokka in <laatusana, nimi_laatusana> then
-    result $res, rules nimisanan_johdos;
-    if $edellinen.luokka = laatusana then stop; end;
+    if $edellinen.luokka = laatusana then
+      result $res, rules nimisanan_johdos;
+      stop;
+    end;
   elseif $edellinen.lukutyyppi /= nil then
     if tavuviiva in $oikea.jatko then
       result $res, rules etuliite, tavuviiva;
