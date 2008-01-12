@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007-2008 Harri Pitkänen (hatapitk@iki.fi)
 # Search for differences between the XML word list from the
 # Research Institute for the Languages of Finland and vocabulary
 # database of Joukahainen.
@@ -213,12 +213,13 @@ db = _pg.connect(dbname='joukahainen')
 
 # Get the list of relevant words from Joukahainen
 jwordlist = db.query("""
-SELECT w.word, w.wid, w.class, s.value FROM word w, string_attribute_value s
+SELECT w.word, w.wid, w.class, s.value,
+  (w.wid NOT IN (SELECT f2.wid FROM int_attribute_value f2 WHERE f2.aid = 38) AND
+   w.wid NOT IN (SELECT f3.wid FROM string_attribute_value f3 WHERE f3.aid = 18))
+FROM word w, string_attribute_value s
 WHERE w.wid = s.wid AND s.aid = 1
 AND w.wid NOT IN (SELECT f.wid FROM flag_attribute_value f
   WHERE f.aid in (2, 5, 11, 12, 13, 14, 15, 17, 19, 24, 26, 29, 33, 34, 35, 36, 37, 40))
-AND w.wid NOT IN (SELECT f2.wid FROM int_attribute_value f2 WHERE f2.aid = 38)
-AND w.wid NOT IN (SELECT f3.wid FROM string_attribute_value f3 WHERE f3.aid = 18)
 ORDER BY w.word""").getresult()
 
 # Page header
@@ -236,7 +237,7 @@ print '<tr><th>Linkit</th><th>Sana</th><th>Eroavuudet</th></tr>'
 prev_word = None
 inf_classes = []
 grad_classes = []
-for (word, wid, classid, infl) in jwordlist:
+for (word, wid, classid, infl, isOKtoIgnoreMissing) in jwordlist:
 	word = unicode(word, 'UTF-8')
 	if word in ignlist: continue
 	if word != prev_word:
@@ -248,7 +249,7 @@ for (word, wid, classid, infl) in jwordlist:
 				if db.query("SELECT count(*) FROM flag_attribute_value WHERE " +
 					  "wid=%i AND aid = 29" % wid).getresult()[0][0] == 0:
 					print_line(prev_word, u'Kotus: vain yhdyssanan jälkiosana')
-			else:
+			elif not isOKtoIgnoreMissing:
 				print_line(prev_word, 'Vain Joukahaisessa')
 			prev_word = word
 			inf_classes = []
