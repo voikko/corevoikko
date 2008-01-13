@@ -80,10 +80,8 @@
 [perusmuoto: "hyljätä", alku: "hyl", luokka: teonsana, jatko: <hyljätä>, äs: ä];
 [perusmuoto: "hylätä", alku: "hyl", luokka: teonsana, jatko: <hylätä>, äs: ä];
 [perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "ien", alku: "i", luokka: nimisana, jatko: <ien>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
-[perusmuoto: "itää", alku: "i", luokka: teonsana, jatko: <itää>, äs: ä];
 [perusmuoto: "Jodie", alku: "Jodie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "joki", alku: "joitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "joutsi", alku: "jou", luokka: nimisana, jatko: <peitsi>, äs: a, tiedot: <ei_voikko>];
@@ -107,7 +105,6 @@
 [perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "kaunis", alku: "kaun", luokka: laatusana, jatko: <kaunis>, äs: a];
 [perusmuoto: "Kemie", alku: "Kemie", luokka: paikannimi, jatko: <nalle>, äs: ä];
-[perusmuoto: "keritä", alku: "ker", luokka: teonsana, jatko: <keritä>, äs: ä];
 [perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
 [perusmuoto: "kimmokerroin", alku: "kimmoker", luokka: nimisana, jatko: <kerroin>, äs: a, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
@@ -147,7 +144,6 @@
 [perusmuoto: "loppuunmyydä", alku: "loppuunmy", luokka: teonsana, jatko: <myydä>, äs: ä, rakenne: "=ppppppp=ppppp"]; # Tämä yhdysverbi on jo varsin vakiintunut.
 [perusmuoto: "nahka", alku: "nah", luokka: nimisana, jatko: <nahka>, äs: a, tiedot: <inen>];
 [perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
-[perusmuoto: "niiata", alku: "nii", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "nähdä", alku: "nä", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "ojentaa", alku: "ojen", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_sukija>];
@@ -185,7 +181,6 @@
 [perusmuoto: "reilassa", alku: "reilaan", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "reilassa", alku: "reilassa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a]; # lt-loppuiset parfait-luokan sanat eivät sovi Joukahaiseen
-[perusmuoto: "riiata", alku: "rii", luokka: teonsana, jatko: <salata>, äs: a];
 [perusmuoto: "ruoka", alku: "ru", luokka: nimisana, jatko: <ruoka>, äs: a];
 [perusmuoto: "saada", alku: "sa", luokka: teonsana, jatko: <saada>, äs: a];
 [perusmuoto: "saada", alku: "saas", luokka: teonsana, jatko: <loppu>, äs: a];
@@ -195,11 +190,9 @@
 [perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <sankari>, äs: a];
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
-[perusmuoto: "selitä", alku: "sel", luokka: teonsana, jatko: <keritä>, äs: ä];
 [perusmuoto: "Selkie", alku: "Selkie", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Sergej", alku: "Serge", luokka: etunimi, jatko: <pii>, äs: ä]; # Perusmuoto "Sergej" ei tunnistu
 [perusmuoto: "siisti", alku: "siist", luokka: laatusana, jatko: <siisti>, äs: ä];
-[perusmuoto: "siitä", alku: "si", luokka: teonsana, jatko: <keritä>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "Sillitoe", alku: "Sillitoe", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "sir", alku: "sir", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "sivu", alku: "sivuitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
