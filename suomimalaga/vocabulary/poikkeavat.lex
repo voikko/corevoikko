@@ -100,7 +100,7 @@
 [perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
 [perusmuoto: "kallis", alku: "kall", luokka: laatusana, jatko: <kaunis>, äs: a];
 [perusmuoto: "kalveta", alku: "kal", luokka: teonsana, jatko: <kevetä>, äs: a];
-[perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a];
+[perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
 [perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "kaunis", alku: "kaun", luokka: laatusana, jatko: <kaunis>, äs: a];
@@ -152,7 +152,7 @@
 [perusmuoto: "ori", alku: "ori", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "ori", alku: "or", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "paras", alku: "par", luokka: nimi_laatusana, jatko: <paras>, äs: a, tiedot: <ei_ys>];
-[perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a];
+[perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
 [perusmuoto: "perä", alku: "peräitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pieni", alku: "pien", luokka: laatusana, jatko: <pieni>, äs: ä];

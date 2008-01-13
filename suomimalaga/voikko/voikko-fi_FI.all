@@ -4440,8 +4440,7 @@ end;
 
 
 subrule ahven ($tietue, $vahva_aste, $heikko_aste):
-  return sisar ($tietue, $vahva_aste, $heikko_aste)
-         + taivutuskaava ($tietue, [olento_nA: $vahva_aste]);  # Ahven+na.
+  return sisar ($tietue, $vahva_aste, $heikko_aste);
 end;
 
 

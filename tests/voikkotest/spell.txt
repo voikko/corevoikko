@@ -525,6 +525,7 @@ lohien # Kotus 23
 !lohten # Kotus 23
 unien # Kotus 24
 unten # Kotus 24
+!ikennä # Kotus 32
 hervottomimman # Kotus 34
 hervottomimpaa # Kotus 34
 !hervottomaimman # Kotus 34
