@@ -103,7 +103,7 @@ end: class
 class: 53
 sm-class: inttää
 rmsfx: a
-match-word: ttAA
+match-word: tAA
 consonant-gradation: sw
 group: t
 transform-group: e

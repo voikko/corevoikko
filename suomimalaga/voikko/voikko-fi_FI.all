@@ -1332,11 +1332,6 @@ allo_rule generate_allos ($tietue):
 ##########################################################
 
 
-  elseif (ahven in $tietue.jatko) then
-    choose $i in ahven ($tietue, "", "");
-    result $i.alku, $i - alku;
-
-
   elseif (ien in $tietue.jatko) then
     choose $i in ahven ($tietue, "ken", "en");
     result $i.alku, $i - alku;

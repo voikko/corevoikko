@@ -1541,7 +1541,7 @@ end: class
 # Kotus 32 ien
 class: 32
 sm-class: sisar
-match-word: CVC
+match-word: (?:CVC|ien)
 consonant-gradation: ws
 group: t
 transform-group: e
