@@ -72,7 +72,6 @@
 [perusmuoto: "Helotie", alku: "Helot", luokka: sukunimi, jatko: <tie>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
 [perusmuoto: "heureka", alku: "heureka", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "hiki", alku: "hi", luokka: nimisana, jatko: <piki>, äs: ä, tiedot: <inen>];
 [perusmuoto: "hoteissa", alku: "hoteisiin", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hoteissa", alku: "hoteissa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hoteissa", alku: "hoteista", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
@@ -165,7 +164,6 @@
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pika", alku: "pikaa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pika", alku: "pikana", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "piki", alku: "pi", luokka: nimisana, jatko: <piki>, äs: ä, tiedot: <inen>];
 [perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nalle>, äs: a];
