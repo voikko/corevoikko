@@ -159,6 +159,7 @@
 [perusmuoto: "myötä", alku: "myötä", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "nano", alku: "nano", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "nyky", alku: "nyky", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "näennäis", alku: "näennäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ohi", alku: "ohi", luokka: etuliite, jatko: @eltj, äs: a];
 [perusmuoto: "oikein", alku: "oikein", luokka: etuliite, jatko: @eltj, äs: a];
 [perusmuoto: "oiko", alku: "oiko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
