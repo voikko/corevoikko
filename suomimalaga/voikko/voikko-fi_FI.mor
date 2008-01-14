@@ -46,7 +46,7 @@
 # combination.
 
 
-initial <>, rules nimisana_sanan_alussa, erisnimi, laatusana,
+initial <>, rules erisnimi, laatusana,
                   lukusana, sanan_alku, teonsana,
                   laatusana_laatusanasta, paikannimen_lainen_johdos;
 
@@ -183,6 +183,30 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
                  etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta;
 
+  elseif $oikea.luokka in <nimisana, nimi_laatusana> then
+    ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
+
+    if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, rules voittoaste;
+    end;
+    if (tavuviiva in $oikea.jatko and ($oikea.tiedot = nil or
+        (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
+      result <[alku: $sana] + $oikea>, rules nimisana, nimisana_laatusanasta,
+             nimisana_teonsanasta, etuliite, paikannimen_lainen_johdos,
+             yhdysmerkki_yleisnimen_jälkeen, inen_johdos_nimisanasta,
+             inen_päätteinen_laatusana; # Kieli=poliittinen
+    end;
+    if (loppu in $oikea.jatko) then
+      result <[alku: $sana] + $oikea>, accept;
+    end;
+    if omistusliite in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules omistusliite;
+    end;
+    if liitesana in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules liitesana;
+    end;
+    result <[alku: $sana] + $oikea>, rules nimisanan_sijapääte, nimisanan_johdos;
+
   end;
 end;
 
@@ -233,34 +257,6 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
   end;
   result $res, rules erisnimen_sijapääte,
                yhdysmerkki_erisnimen_jälkeen;
-end;
-
-
-combi_rule nimisana_sanan_alussa ($vasen, $oikea, $sana):
-  ? $oikea.luokka in <nimisana, nimi_laatusana>;
-  ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
-
-  define $res := $vasen + <[alku: $sana] + $oikea>;
-
-  if ($oikea.luokka = nimisana and voittoaste in $oikea.jatko) then
-    result $res, rules voittoaste;
-  end;
-  if (tavuviiva in $oikea.jatko and ($oikea.tiedot = nil or
-      (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
-    result $res, rules nimisana, nimisana_laatusanasta, nimisana_teonsanasta,
-                       etuliite, paikannimen_lainen_johdos, yhdysmerkki_yleisnimen_jälkeen,
-                       inen_johdos_nimisanasta, inen_päätteinen_laatusana; # Kieli=poliittinen
-  end;
-  if (loppu in $oikea.jatko) then
-    result $res, accept;
-  end;
-  if omistusliite in $oikea.jatko then
-    result $res, rules omistusliite;
-  end;
-  if liitesana in $oikea.jatko then
-    result $res, rules liitesana;
-  end;
-  result $res, rules nimisanan_sijapääte, nimisanan_johdos;
 end;
 
 
