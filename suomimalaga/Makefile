@@ -7,13 +7,17 @@ MIN_FREQUENCY=9
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
 
 # Source files for Sukija version.
-SUKIJA_SRC=sukija/README sukija/suomi.inc sukija/suomi.all \
-           sukija/suomi.lex sukija/Makefile sukija/suomi.mor sukija/suomi.pro \
-           sukija/suomi.sym sukija/LUE.MINUT \
-           sukija/sanat/11-19.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
-           sukija/generoi.sh sukija/inc/all.inc \
-           sukija/inc/mor.inc sukija/inc/subrule.inc \
-           sukija/sukija.py sukija/generate_lex.py
+#           sukija/sanat/vieraskieliset.lex \
+#
+
+SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
+           sukija/Makefile sukija/malaga1.png sukija/malaga2.png \
+           sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
+           sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh \
+           sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
+           sukija/sukija.py sukija/suomi.all sukija/suomi.haux sukija/suomi.html \
+           sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro \
+           sukija/suomi.sym sukija/suomi.tex
 
 
 # Files to ship only in the full source package
@@ -127,19 +131,16 @@ SUKIJA_COPY_FROM_VOCABULARY=\
 erikoiset.lex \
 erikoissanat.lex \
 etuliitteet.lex \
-jokinen.lex \
+huudahdussanat.lex \
 lainen.lex \
-latex.lex \
 lukusanat.lex \
 lyhenteet.lex \
-omat.lex \
 poikkeavat.lex \
 seikkasanat.lex \
+sidesanat.lex \
 suhdesanat.lex \
 taivutustäydennykset.lex \
-yhdyssanat.lex \
-sidesanat.lex \
-huudahdussanat.lex
+yhdyssanat.lex
 
 sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
 	$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML))

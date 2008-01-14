@@ -1,27 +1,28 @@
 LEXICON = \
 sanat/11-19.lex \
-sanat/sukija.lex \
+sanat/latex.lex \
+sanat/jokinen.lex \
+sanat/olla-ei.lex \
+sanat/omat.lex \
+sanat/vieraskieliset.lex \
 voikonsanat/atk.lex \
 voikonsanat/erikoiset.lex \
 voikonsanat/erikoissanat.lex \
 voikonsanat/etuliitteet.lex \
-voikonsanat/jokinen.lex \
+voikonsanat/huudahdussanat.lex \
 voikonsanat/joukahainen.lex \
 voikonsanat/kasvatustiede.lex \
 voikonsanat/laaketiede.lex \
 voikonsanat/lainen.lex \
-voikonsanat/latex.lex \
 voikonsanat/lukusanat.lex \
 voikonsanat/lyhenteet.lex \
 voikonsanat/matluonnontiede.lex \
-voikonsanat/olla-ei.lex \
-voikonsanat/omat.lex \
 voikonsanat/poikkeavat.lex \
 voikonsanat/seikkasanat.lex \
+voikonsanat/sidesanat.lex \
 voikonsanat/suhdesanat.lex \
-voikonsanat/vieraskieliset.lex \
-voikonsanat/yhdyssanat.lex \
-voikonsanat/taivutustäydennykset.lex
+voikonsanat/taivutustäydennykset.lex \
+voikonsanat/yhdyssanat.lex
 
 all: suomi.pro
 	malmake suomi.pro

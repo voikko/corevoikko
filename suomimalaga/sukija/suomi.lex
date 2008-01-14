@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -55,51 +55,31 @@ define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
 define @elt := <tavuviiva, etuliite, teonsana>;
 define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, teonsana>;
 
-#include "sanat/lyhenteet.lex";
-#include "sanat/erikoisalat/atk.lex";
-#include "sanat/erikoisalat/laaketiede.lex";
-#include "sanat/erikoiset.lex";
-#include "sanat/erikoissanat.lex";
-#include "sanat/etuliitteet.lex";
-#include "sanat/jokinen.lex";
-#include "sanat/joukahainen.lex";
-#include "sanat/lainen.lex";
-#include "sanat/latex.lex";
-#include "sanat/lukusanat.lex";
-
-#include "sanat/olla-ei.lex";
-#include "sanat/omat.lex";
-#include "sanat/poikkeavat.lex";
-#include "sanat/yhdyssanat.lex";
-#include "sanat/11-19.lex";
-#include "sanat/sukija.lex";
-
 include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";
 include "voikonsanat/erikoissanat.lex";
 include "voikonsanat/etuliitteet.lex";
 include "voikonsanat/huudahdussanat.lex";
-include "voikonsanat/jokinen.lex";
 include "voikonsanat/joukahainen.lex";
 include "voikonsanat/kasvatustiede.lex";
 include "voikonsanat/laaketiede.lex";
 include "voikonsanat/lainen.lex";
-include "voikonsanat/latex.lex";
 include "voikonsanat/lukusanat.lex";
 include "voikonsanat/lyhenteet.lex";
 include "voikonsanat/matluonnontiede.lex";
-include "voikonsanat/omat.lex";
 include "voikonsanat/poikkeavat.lex";
 include "voikonsanat/seikkasanat.lex";
 include "voikonsanat/sidesanat.lex";
 include "voikonsanat/suhdesanat.lex";
 include "voikonsanat/taivutustäydennykset.lex";
-include "voikonsanat/vieraskieliset.lex";
 include "voikonsanat/yhdyssanat.lex";
+include "voikonsanat/vieraskieliset.lex";
 include "sanat/11-19.lex";
+include "sanat/jokinen.lex";
+include "sanat/latex.lex";
 include "sanat/olla-ei.lex";
 include "sanat/omat.lex";
-
+#include "sanat/vieraskieliset.lex";
 
 # Karlsson 1983:
 # Fred Karlsson: Suomen kielen äänne- ja muotorakenne.
