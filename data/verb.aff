@@ -504,6 +504,25 @@ end: rules
 end: class
 
 
+# Kotus 63 saada
+class: 63
+sm-class: saada
+match-word: CVVdA
+consonant-gradation: -
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	0	w
+preesens_yks_1	da	n	w
+imperfekti_yks_3	[ayä]da	i	w
+kondit_yks_3	[ayä]da	isi	w
+imperatiivi_yks_3	da	koon	w
+partisiippi_2	da	nut	w
+imperfekti_pass	da	tiin	w
+end: rules
+end: class
+
+
 # Kotus 64 juoda
 class: 64
 sm-class: juoda
