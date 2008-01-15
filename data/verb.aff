@@ -426,6 +426,47 @@ end: rules
 end: class
 
 
+# Kotus 59 tuntea
+class: 59
+sm-class: tuntea
+rmsfx: a
+match-word: tuntea
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	te	si	s
+kondit_yks_3	e	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	0	ttiin	w
+end: rules
+end: class
+
+
+# Kotus 60 lähteä
+class: 60
+sm-class: lähteä
+rmsfx: a
+match-word: lähteä
+consonant-gradation: sw
+group: t
+transform-group: e
+rules:
+infinitiivi_1	0	a	s
+preesens_yks_1	0	n	w
+imperfekti_yks_3	e	i	s
+imperfekti_yks_3	hte	ksi	s	prio=2
+kondit_yks_3	e	isi	s
+imperatiivi_yks_3	0	koon	s
+partisiippi_2	0	nut	s
+imperfekti_pass	0	ttiin	w
+end: rules
+end: class
+
+
 # Kotus 61 sallia (1/2)
 class: 61
 sm-class: sallia
