@@ -39,7 +39,6 @@
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
 [perusmuoto: "aika", alku: "a", luokka: nimisana, jatko: <aika>, äs: a, tiedot: <inen>];
 [perusmuoto: "talvisaika", alku: "talvisa", luokka: nimisana, jatko: <aika>, äs: a, tiedot: <inen>, rakenne: "=pppppp=pppp"];
-[perusmuoto: "aikaansaada", alku: "aikaansa", luokka: teonsana, jatko: <saada>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "ajast'aika", alku: "ajast'a", luokka: nimisana, jatko: <aika>, äs: a];
 [perusmuoto: "ajastaika", alku: "ajasta", luokka: nimisana, jatko: <aika>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
@@ -86,11 +85,9 @@
 [perusmuoto: "jumala", alku: "jumal", luokka: nimisana, jatko: <jumala>, äs: a, tiedot: <inen>];
 [perusmuoto: "juoni", alku: "juon", luokka: nimi_laatusana, jatko: <pieni>, äs: a];
 [perusmuoto: "juosta", alku: "juo", luokka: teonsana, jatko: <juosta>, äs: a];
-[perusmuoto: "jälkeenjäädä", alku: "jälkeenjä", luokka: teonsana, jatko: <saada>, äs: ä, tiedot: <ei_voikko>, rakenne: "=ppppppp=ppppp"];
 [perusmuoto: "jälki", alku: "jäl", luokka: nimisana, jatko: <jälki>, äs: ä];
 [perusmuoto: "jälleenrakentaa", alku: "jälleenraken", luokka: teonsana, jatko: <rakentaa>, äs: a, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "jää", alku: "jäitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä]; #NS: seikkasana.
-[perusmuoto: "jäädä", alku: "jä", luokka: teonsana, jatko: <saada>, äs: ä];
 [perusmuoto: "jöötä", alku: "jöötä", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "Ka", alku: "Ka", luokka: nimi, jatko: <loppu, omanto_n, sisätulento_hVn>, äs: a];
 [perusmuoto: "kaartaa", alku: "kaar", luokka: teonsana, jatko: <saartaa>, äs: a];
@@ -137,9 +134,6 @@
 [perusmuoto: "moni", alku: "mon", luokka: nimisana, jatko: <pieni>, äs: a];
 [perusmuoto: "morsian", alku: "morsia", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <maa>, äs: a];
-[perusmuoto: "myydä", alku: "my", luokka: teonsana, jatko: <myydä>, äs: ä];
-[perusmuoto: "jälleenmyydä", alku: "jälleenmy", luokka: teonsana, jatko: <myydä>, äs: ä, rakenne: "=ppppppp=ppppp"]; # Tämä yhdysverbi on jo varsin vakiintunut.
-[perusmuoto: "loppuunmyydä", alku: "loppuunmy", luokka: teonsana, jatko: <myydä>, äs: ä, rakenne: "=ppppppp=ppppp"]; # Tämä yhdysverbi on jo varsin vakiintunut.
 [perusmuoto: "nahka", alku: "nah", luokka: nimisana, jatko: <nahka>, äs: a, tiedot: <inen>];
 [perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "nähdä", alku: "nä", luokka: teonsana, jatko: <nähdä>, äs: ä];
@@ -179,7 +173,6 @@
 [perusmuoto: "reilassa", alku: "reilassa", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a]; # lt-loppuiset parfait-luokan sanat eivät sovi Joukahaiseen
 [perusmuoto: "ruoka", alku: "ru", luokka: nimisana, jatko: <ruoka>, äs: a];
-[perusmuoto: "saada", alku: "sa", luokka: teonsana, jatko: <saada>, äs: a];
 [perusmuoto: "saada", alku: "saas", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "saartaa", alku: "saar", luokka: teonsana, jatko: <saartaa>, äs: a];
 [perusmuoto: "Saint", alku: "Saint", luokka: nimi, jatko: <loppu>, äs: a];
