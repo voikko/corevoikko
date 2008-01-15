@@ -125,7 +125,6 @@
 [perusmuoto: "leikkaantua", alku: "leikkaan", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "levätä", alku: "le", luokka: teonsana, jatko: <levätä>, äs: ä];
 [perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a, rakenne: "=pppppp=ppppp"];
-[perusmuoto: "lähteä", alku: "lä", luokka: teonsana, jatko: <lähteä>, äs: ä];
 [perusmuoto: "lämmin", alku: "läm", luokka: nimi_laatusana, jatko: <lämmin>, äs: ä];
 [perusmuoto: "maa", alku: "maitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "Martinique", alku: "Martinique", luokka: paikannimi, jatko: <nalle>, äs: a];
@@ -213,7 +212,6 @@
 [perusmuoto: "tietää", alku: "tie", luokka: teonsana, jatko: <taitaa>, äs: ä];
 [perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a];
 [perusmuoto: "tosi", alku: "to", luokka: nimi_laatusana, jatko: <tosi>, äs: a, tiedot: <ei_inen>];
-[perusmuoto: "tuntea", alku: "tun", luokka: teonsana, jatko: <tuntea>, äs: a];
 [perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
 [perusmuoto: "uunituore", alku: "uunituore", luokka: laatusana, jatko: <terve>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a];
