@@ -52,7 +52,7 @@ transmit: ../common/transmit.cc
 	g++ -g ../common/transmit.cc -o transmit
 
 
-SM=voikko-suomimalaga
+SM=suomimalaga
 
 tar:
 	rm -f ${SM}.tar ${SM}.tar.bz2

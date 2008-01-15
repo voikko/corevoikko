@@ -1,0 +1,182 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimitapa_1_A
+          ammo+tta+a
+          ammo+itta+a  ei_voikko
+
+nimitapa_2
+          ammo+tta+essa
+          ammo+itta+essa  ei_voikko
+
+nimitapa_2_ttA
+          ammo+te+ttaessa
+          ammo+ite+ttaessa  ei_voikko
+
+nimitapa_3
+          ammo+tta+ma
+          ammo+itta+ma  ei_voikko
+
+nimitapa_3_ttA
+          ammo+te+ttaman
+          ammo+ite+ttaman  ei_voikko
+
+nimitapa_4
+          ammo+tta+minen
+          ammo+itta+minen  ei_voikko
+
+nimitapa_5
+          ammo+tta+maisillani
+          ammo+itta+maisillani  ei_voikko
+
+laatutapa_1_vA
+          ammo+tta+va
+          ammo+itta+va  ei_voikko
+
+laatutapa_1_ttA
+          ammo+te+ttava
+          ammo+ite+ttava  ei_voikko
+
+laatutapa_2_nUt
+          ammo+tta+nut
+          ammo+itta+nut  ei_voikko
+
+laatutapa_2_ttU
+          ammo+te+ttu
+          ammo+ite+ttu  ei_voikko
+
+kestämän_tekijäpääte_y1
+          ammo+ta+n
+          ammo+ita+n  ei_voikko
+
+kestämän_tekijäpääte_y2
+          ammo+ta+t
+          ammo+ita+t  ei_voikko
+
+kestämän_tekijäpääte_y3
+          ammo+tta+a
+          ammo+itta+a  ei_voikko
+
+kestämän_tekijäpääte_m1
+          ammo+ta+mme
+          ammo+ita+mme  ei_voikko
+
+kestämän_tekijäpääte_m2
+          ammo+ta+tte
+          ammo+ita+tte  ei_voikko
+
+kestämän_tekijäpääte_m3
+          ammo+tta+vat
+          ammo+itta+vat  ei_voikko
+
+tositavan_kestämä_tAAn
+          ammo+te+taan
+          ammo+ite+taan  ei_voikko
+
+kertoman_tekijäpääte_y1
+          ammo+t+in
+          ammo+it+in  ei_voikko
+
+kertoman_tekijäpääte_y2
+          ammo+t+it
+          ammo+it+it  ei_voikko
+
+kertoman_tekijäpääte_y3
+          ammo+tt+i
+          ammo+itt+i  ei_voikko
+
+kertoman_tekijäpääte_m1
+          ammo+t+imme
+          ammo+it+imme  ei_voikko
+
+kertoman_tekijäpääte_m2
+          ammo+t+itte
+          ammo+it+itte  ei_voikko
+
+kertoman_tekijäpääte_m3
+          ammo+tt+ivat
+          ammo+itt+ivat  ei_voikko
+
+tositavan_kertoma_ttiin
+          ammo+te+ttiin
+          ammo+ite+ttiin  ei_voikko
+
+ehtotapa
+          ammo+tta+isin
+          ammo+itta+isin  ei_voikko
+
+ehtotapa_ttA
+          ammo+te+ttaisiin
+          ammo+ite+ttaisiin  ei_voikko
+
+mahtotapa_ne
+          ammo+tta+nen
+          ammo+itta+nen  ei_voikko
+
+mahtotapa_ttA
+          ammo+te+ttaneen
+          ammo+ite+ttaneen  ei_voikko
+
+käskytapa_y2
+          ammo+ta+
+          ammo+ita+  ei_voikko
+
+käskytapa_kielto
+          ammo+tta+ko
+          ammo+itta+ko  ei_voikko
+
+käskytapa_ttA
+          ammo+te+ttakoon
+          ammo+ite+ttakoon  ei_voikko
+
+johdin_jA_kantaja
+          ammo+tta+ja
+          ammo+itta+ja  ei_voikko
+
+johdin_Us_ksen
+          ammo+t+us
+          ammo+it+us  ei_voikko

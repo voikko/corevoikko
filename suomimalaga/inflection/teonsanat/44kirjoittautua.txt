@@ -1,0 +1,247 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+nimitapa_1_A
+          kirjo+ittautu+a
+          kirjo+ttautu+a  ei_voikko
+
+nimitapa_1_tA
+          kirjo+ittau+ta ei_voikko
+          kirjo+ttau+ta ei_voikko
+
+nimitapa_2
+          kirjo+ittautu+essa
+          kirjo+ttautu+essa  ei_voikko
+          kirjo+ittau+essa  ei_voikko
+          kirjo+ttau+essa  ei_voikko
+
+nimitapa_2_tA
+
+nimitapa_2_ttA
+          kirjo+ittaudu+ttaessa
+          kirjo+ttaudu+ttaessa  ei_voikko
+
+nimitapa_3
+          kirjo+ittautu+ma
+          kirjo+ttautu+ma  ei_voikko
+          kirjo+ittau+ma  ei_voikko
+          kirjo+ttau+ma  ei_voikko
+
+nimitapa_3_tA
+
+nimitapa_3_ttA
+          kirjo+ittaudu+ttaman
+          kirjo+ttaudu+ttaman  ei_voikko
+
+nimitapa_4
+          kirjo+ittautu+minen
+          kirjo+ttautu+minen  ei_voikko
+          kirjo+ittau+minen  ei_voikko
+          kirjo+ttau+minen  ei_voikko
+
+nimitapa_5
+          kirjo+ittautu+maisillani
+          kirjo+ttautu+maisillani  ei_voikko
+          kirjo+ittau+maisillani  ei_voikko
+          kirjo+ttau+maisillani  ei_voikko
+
+laatutapa_1_vA
+          kirjo+ittautu+va
+          kirjo+ttautu+va  ei_voikko
+          kirjo+ittau+va  ei_voikko
+          kirjo+ttau+va  ei_voikko
+
+laatutapa_1_tA
+
+laatutapa_1_ttA
+          kirjo+ittaudu+ttava
+          kirjo+ttaudu+ttava  ei_voikko
+
+laatutapa_2_nUt
+          kirjo+ittautu+nut
+          kirjo+ttautu+nut  ei_voikko
+          kirjo+ittaun+nut  ei_voikko
+          kirjo+ttaun+nut  ei_voikko
+          kirjo+ittau+nut  ei_voikko
+          kirjo+ttau+nut  ei_voikko
+
+laatutapa_2_tU
+
+laatutapa_2_ttU
+          kirjo+ittaudu+ttu
+          kirjo+ttaudu+ttu  ei_voikko
+          kirjo+ittau+ttu  ei_voikko
+          kirjo+ttau+ttu  ei_voikko
+
+kestämän_tekijäpääte_y1
+          kirjo+ittaudu+n
+          kirjo+ittau+n  ei_voikko
+
+kestämän_tekijäpääte_y2
+          kirjo+ittaudu+t
+          kirjo+ttaudu+t  ei_voikko
+          kirjo+ittau+t  ei_voikko
+          kirjo+ttau+t  ei_voikko
+
+kestämän_tekijäpääte_y3
+          kirjo+ittautu+u
+          kirjo+ttautu+u  ei_voikko
+          kirjo+ittau+u  ei_voikko
+          kirjo+ttau+u  ei_voikko
+
+kestämän_tekijäpääte_m1
+          kirjo+ittaudu+mme
+          kirjo+ttaudu+mme  ei_voikko
+          kirjo+ittau+mme  ei_voikko
+          kirjo+ttau+mme  ei_voikko
+
+kestämän_tekijäpääte_m2
+          kirjo+ittaudu+tte
+          kirjo+ttaudu+tte  ei_voikko
+          kirjo+ittau+tte  ei_voikko
+          kirjo+ttau+tte  ei_voikko
+
+kestämän_tekijäpääte_m3
+          kirjo+ittautu+vat
+          kirjo+ttautu+vat  ei_voikko
+          kirjo+ittau+vat  ei_voikko
+          kirjo+ttau+vat  ei_voikko
+
+tositavan_kestämä_tAAn
+          kirjo+ittaudu+taan
+          kirjo+ttaudu+taan  ei_voikko
+          kirjo+ittau+taan  ei_voikko
+          kirjo+ttau+taan  ei_voikko
+
+kertoman_tekijäpääte_y1
+          kirjo+ittaudu+in
+          kirjo+ttaudu+in  ei_voikko
+          kirjo+ittaus+in  ei_voikko
+          kirjo+ttaus+in  ei_voikko
+
+kertoman_tekijäpääte_y2
+          kirjo+ittaudu+it
+          kirjo+ttaudu+it  ei_voikko
+          kirjo+ittaus+it  ei_voikko
+          kirjo+ttaus+it  ei_voikko
+
+kertoman_tekijäpääte_y3
+          kirjo+ittautu+i
+          kirjo+ttautu+i  ei_voikko
+          kirjo+ittaus+i  ei_voikko
+          kirjo+ttaus+i  ei_voikko
+
+kertoman_tekijäpääte_m1
+          kirjo+ittaudu+imme
+          kirjo+ttaudu+imme  ei_voikko
+          kirjo+ittaus+imme  ei_voikko
+          kirjo+ttaus+imme  ei_voikko
+
+kertoman_tekijäpääte_m2
+          kirjo+ittaudu+itte
+          kirjo+ttaudu+itte  ei_voikko
+          kirjo+ittaus+itte  ei_voikko
+          kirjo+ttaus+itte  ei_voikko
+
+kertoman_tekijäpääte_m3
+          kirjo+ittautu+ivat
+          kirjo+ttautu+ivat  ei_voikko
+          kirjo+ittaus+ivat  ei_voikko
+          kirjo+ttaus+ivat  ei_voikko
+
+tositavan_kertoma_tiin
+
+tositavan_kertoma_ttiin
+          kirjo+ittaudu+ttiin
+          kirjo+ttaudu+ttiin  ei_voikko
+          kirjo+ittau+ttiin  ei_voikko
+          kirjo+ttau+ttiin  ei_voikko
+
+ehtotapa
+          kirjo+ittautu+isin
+          kirjo+ttautu+isin  ei_voikko
+          kirjo+ittau+isin  ei_voikko
+          kirjo+ttau+isin  ei_voikko
+
+ehtotapa_tA
+
+ehtotapa_ttA
+          kirjo+ittaudu+ttaisiin
+          kirjo+ttaudu+ttaisiin  ei_voikko
+
+mahtotapa_ne
+          kirjo+ittautu+nen
+          kirjo+ttautu+nen  ei_voikko
+          kirjo+ittaun+nen  ei_voikko
+          kirjo+ttaun+nen  ei_voikko
+
+mahtotapa_tA
+
+mahtotapa_ttA
+          kirjo+ittaudu+ttaneen
+          kirjo+ttaudu+ttaneen  ei_voikko
+
+käskytapa_y2
+          kirjo+ittaudu+
+          kirjo+ttaudu+  ei_voikko
+
+käskytapa_kielto
+          kirjo+ittautu+ko
+          kirjo+ttautu+ko  ei_voikko
+          kirjo+ittau+ko  ei_voikko
+          kirjo+ttau+ko  ei_voikko
+
+käskytapa_tA
+
+käskytapa_ttA
+          kirjo+ittaudu+ttakoon
+          kirjo+ttaudu+ttakoon  ei_voikko
+
+johdin_jA_kantaja
+          kirjo+ittautu+ja
+          kirjo+ttautu+ja  ei_voikko
+          kirjo+ittau+ja  ei_voikko
+          kirjo+ttau+ja  ei_voikko
