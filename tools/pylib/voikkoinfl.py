@@ -49,6 +49,68 @@ class InflectionType:
 		self.gradation = voikkoutils.GRAD_NONE
 		self.note = u""
 		self.inflectionRules = []
+	
+	"Return the given word with suffix removed"
+	def removeSuffix(self, word):
+		l = len(self.rmsfx)
+		if l == 0: return word
+		elif len(word) <= l: return u""
+		else: return word[:-l]
+	
+	"Return the Kotus gradation class for word and gradation class in Joukahainen"
+	def kotusGradClass(self, word, grad_type):
+		if not grad_type in ["av1", "av2", "av3", "av4", "av5", "av6"]:
+			return u""
+		word = self.removeSuffix(word)
+		if len(word) == 0: return u""
+		if voikkoutils.is_consonant(word[-1]) and not voikkoutils.is_consonant(word[-2]):
+			if word[-4:-2] == u'ng': return u'G'
+			if word[-4:-2] == u'mm': return u'H'
+			if word[-4:-2] == u'nn': return u'J'
+			if word[-4:-2] == u'll': return u'I'
+			if word[-4:-2] == u'rr': return u'K'
+			if word[-3] == u'd': return u'F'
+			if word[-3] == u't': return u'C'
+			if word[-3] == u'k': return u'A'
+			if word[-3] == u'p': return u'B'
+			if word[-3] == u'v': return u'E'
+		if grad_type == u'av1':
+			if word[-3:-1] == u'tt': return u'C'
+			if word[-3:-1] == u'kk': return u'A'
+			if word[-3:-1] == u'pp': return u'B'
+			if word[-3:-1] == u'mp': return u'H'
+			if word[-2] == u'p' and not voikkoutils.is_consonant(word[-1]):
+				return u'E'
+			if word[-3:-1] == u'nt': return u'J'
+			if word[-3:-1] == u'lt': return u'I'
+			if word[-3:-1] == u'rt': return u'K'
+			if word[-2] == u't': return u'F'
+			if word[-3:-1] == u'nk': return u'G'
+			if word[-3:] == u'uku': return u'M'
+			if word[-3:] == u'yky': return u'M'
+		if grad_type == u'av2':
+			if word[-4:-2] == u'ng': return u'G'
+			if word[-4:-2] == u'mm': return u'H'
+			if word[-4:-2] == u'nn': return u'J'
+			if word[-4:-2] == u'll': return u'I'
+			if word[-4:-2] == u'rr': return u'K'
+			if word[-3] == u'd': return u'F'
+			if word[-3] == u't': return u'C'
+			if word[-3] == u'k': return u'A'
+			if word[-3] == u'p': return u'B'
+			if word[-3] == u'b': return u'O' # Unofficial, not in Kotus
+			if word[-3] == u'g': return u'P' # Unofficial, not in Kotus
+			if word[-3] == u'v': return u'E'
+		if grad_type == u'av3': # k -> j
+			if word[-2] == u'k': return u'L'
+		if grad_type == u'av4': # j -> k
+			if word[-2] == u'j': return u'L'
+			if word[-3] == u'j': return u'L'
+		if grad_type == u'av5': # k -> -
+			if word[-2] == u'k': return u'D'
+		if grad_type == u'av6': # - -> k
+			return u'D'
+		return u''
 
 class InflectedWord:
 	"Word in inflected form"
@@ -90,64 +152,61 @@ def __apply_gradation(word, grad_type):
 		if word[-3] == u'v':
 			return (word[:-3]+u'p'+word[-2:], word)
 	
-	# This can be used to carry suffixes. Not currently needed.
-	last_letter = u''
-	
 	if grad_type == u'av1':
 		if word[-3:-1] in (u'tt',u'kk',u'pp'):
-			return (word+last_letter, word[:-2]+word[-1]+last_letter)
+			return (word, word[:-2]+word[-1])
 		if word[-3:-1] == u'mp':
-			return (word+last_letter, word[:-3]+u'mm'+word[-1]+last_letter)
+			return (word, word[:-3]+u'mm'+word[-1])
 		if word[-2] == u'p' and not voikkoutils.is_consonant(word[-1]):
-			return (word+last_letter, word[:-2]+u'v'+word[-1]+last_letter)
+			return (word, word[:-2]+u'v'+word[-1])
 		if word[-3:-1] == u'nt':
-			return (word+last_letter, word[:-3]+u'nn'+word[-1]+last_letter)
+			return (word, word[:-3]+u'nn'+word[-1])
 		if word[-3:-1] == u'lt':
-			return (word+last_letter, word[:-3]+u'll'+word[-1]+last_letter)
+			return (word, word[:-3]+u'll'+word[-1])
 		if word[-3:-1] == u'rt':
-			return (word+last_letter, word[:-3]+u'rr'+word[-1]+last_letter)
+			return (word, word[:-3]+u'rr'+word[-1])
 		if word[-2] == u't':
-			return (word+last_letter, word[:-2]+u'd'+word[-1]+last_letter)
+			return (word, word[:-2]+u'd'+word[-1])
 		if word[-3:-1] == u'nk':
-			return (word+last_letter, word[:-3]+u'ng'+word[-1]+last_letter)
+			return (word, word[:-3]+u'ng'+word[-1])
 		if word[-3:] == u'uku':
-			return (word+last_letter, word[:-3]+u'uvu'+last_letter)
+			return (word, word[:-3]+u'uvu')
 		if word[-3:] == u'yky':
-			return (word+last_letter, word[:-3]+u'yvy'+last_letter)
+			return (word, word[:-3]+u'yvy')
 	if grad_type == u'av2':
 		if word[-3:-1] == u'ng':
-			return (word[:-3]+u'nk'+word[-1]+last_letter, word+last_letter)
+			return (word[:-3]+u'nk'+word[-1], word)
 		# uvu/yvy->uku/yky not possible?
 		if word[-3:-1] == u'mm':
-			return (word[:-3]+u'mp'+word[-1]+last_letter, word+last_letter)
+			return (word[:-3]+u'mp'+word[-1], word)
 		if word[-3:-1] == u'nn':
-			return (word[:-3]+u'nt'+word[-1]+last_letter, word+last_letter)
+			return (word[:-3]+u'nt'+word[-1], word)
 		if word[-3:-1] == u'll':
-			return (word[:-3]+u'lt'+word[-1]+last_letter, word+last_letter)
+			return (word[:-3]+u'lt'+word[-1], word)
 		if word[-3:-1] == u'rr':
-			return (word[:-3]+u'rt'+word[-1]+last_letter, word+last_letter)
+			return (word[:-3]+u'rt'+word[-1], word)
 		if word[-2] == u'd':
-			return (word[:-2]+u't'+word[-1]+last_letter, word+last_letter)
+			return (word[:-2]+u't'+word[-1], word)
 		if word[-2] in u'tkpbg':
-			return (word[:-1]+word[-2:]+last_letter, word+last_letter)
+			return (word[:-1]+word[-2:], word)
 		if word[-2] == u'v':
-			return (word[:-2]+u'p'+word[-1]+last_letter, word+last_letter)
+			return (word[:-2]+u'p'+word[-1], word)
 	if grad_type == u'av3': # k -> j
 		if word[-2] == u'k':
-			return (word+last_letter, word[:-2]+u'j'+word[-1]+last_letter)
+			return (word, word[:-2]+u'j'+word[-1])
 	if grad_type == u'av4': # j -> k
 		if word[-2] == u'j':
-			return (word[:-2]+u'k'+word[-1]+last_letter, word+last_letter)
+			return (word[:-2]+u'k'+word[-1], word)
 		if word[-3] == u'j':
-			return (word[:-3]+u'k'+word[-2]+word[-1]+last_letter, word+last_letter)
+			return (word[:-3]+u'k'+word[-2]+word[-1], word)
 	if grad_type == u'av5': # k -> -
 		if word[-2] == u'k':
-			return (word+last_letter, word[:-2]+u'$'+word[-1]+last_letter)
+			return (word, word[:-2]+u'$'+word[-1])
 	if grad_type == u'av6': # - -> k
 		if voikkoutils.is_consonant(word[-1]): # FIXME: hack
-			return (word[:-2]+u'k'+word[-2:]+last_letter, word+last_letter)
+			return (word[:-2]+u'k'+word[-2:], word)
 		else:
-			return (word[:-1]+u'k'+word[-1]+last_letter, word+last_letter)
+			return (word[:-1]+u'k'+word[-1], word)
 	return None
 
 
@@ -332,9 +391,7 @@ def _vtype_subst_tO(base):
 ## Returns a list of InflectedWord objects for given word and inflection type.
 def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type = voikkoutils.VOWEL_DEFAULT):
 	if not infclass in inflection_type.joukahainenClasses: return []
-	l = len(inflection_type.rmsfx)
-	if l == 0: word_no_sfx = word
-	else: word_no_sfx = word[:-l]
+	word_no_sfx = inflection_type.removeSuffix(word)
 	word_grad = __apply_gradation(word_no_sfx, gradclass)
 	if word_grad == None: return []
 	if gradclass == '-': grad_type = voikkoutils.GRAD_NONE
