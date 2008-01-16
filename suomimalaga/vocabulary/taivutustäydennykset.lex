@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2007	Teemu Likonen <tlikonen@iki.fi>
-# 			Hannu Väisänen
+# Tekijänoikeus © 2007-2008	Teemu Likonen <tlikonen@iki.fi>
+# 				Hannu Väisänen
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -50,11 +50,11 @@
 [perusmuoto: "Bangladesh", alku: "Bangladesh", luokka: paikannimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # "Banglade-sh"-tavutusta varten.
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
-#[perusmuoto: "maailma", alku: "maailmo", luokka: nimisana, jatko: <omanto_iT, osanto_itA>, äs: a, tiedot: <ei_voikko>]; # Tätä ei ehkä tarvita lainkaan, koska Joukahaisessa on nyt "maailma" <karahka>.
 [perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "nukke", alku: "nukk", luokka: nimisana, jatko: <omanto_ien>, äs: a];
 [perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "tie", alku: "teitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];  # Lentoteitse, neuvotteluteitse, ...
 [perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
 
