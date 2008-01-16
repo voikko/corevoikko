@@ -649,6 +649,7 @@
 [perusmuoto: "pika", alku: "pikaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pika", alku: "pikana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pikaiseltaan", alku: "pikaiseltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "pikapika", alku: "pikapikaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "pikemmin", alku: "pikemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pikimmin", alku: "pikimmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pikimmiten", alku: "pikimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -669,6 +670,9 @@
 [perusmuoto: "poissa", alku: "poissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "posti", alku: "postitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ys_perusosa>];
 [perusmuoto: "puhelin", alku: "puhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "radiopuhelin", alku: "radiopuhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppppp"];
+[perusmuoto: "matkapuhelin", alku: "matkapuhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppppp"];
+[perusmuoto: "lankapuhelin", alku: "lankapuhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppppp"];
 [perusmuoto: "puhki", alku: "puhki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puolinukuksissa", alku: "puolinukuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
 [perusmuoto: "puolinukuksissa", alku: "puolinukuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
