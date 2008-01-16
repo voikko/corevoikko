@@ -290,10 +290,19 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "ken", alku: "kellekä",   luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keillekä",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kehenkä",   luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: <liitesana_s, loppu>, äs: ä];
+[perusmuoto: "ken", alku: "kehenkä",   luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kehenkäs",  luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keidenkä",  luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keittenkä", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
 
+# Kenelle-taivutusmuodon murteellisia muotoja.
+[perusmuoto: "ken", alku: "kellen",     luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkä",   luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkäkö", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkänä", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkäs",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkään", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenpä",   luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 ##########################################################
 
