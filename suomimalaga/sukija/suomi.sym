@@ -376,6 +376,8 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
              # (asiak+as+ => asiak+ku+us).
   UUs;       # Nimisana, josta voidaan johtaa ominaisuuden nimi uus-johtimella.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
+  ys_perusosa; # Sanaa voi normaaleista säännöistä poiketen käyttää yleisnimen tavoin
+               # yhdyssanan perusosana.
 
 vanha_h;     # Valohon-tyyppiset taivutusmuodot, joista Nykysuomen sankirja sanoo:
              # "Niissä taivutusmuodoissa, joiden päätteessä esiintyy pitkä vokaali,

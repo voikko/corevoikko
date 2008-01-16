@@ -318,6 +318,7 @@ takanansa
 tykönään
 tykönänsä
 kanssaan
+kissateitse # ys_perusosa-lippu
 
 [nimitavat]
 puhuakseen

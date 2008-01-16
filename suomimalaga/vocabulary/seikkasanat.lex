@@ -34,6 +34,11 @@
 # perusmuodoksi nominatiivi/nimentö (esim. "hitosti", perusmuoto: "hitto").
 # Adjektiiveista johdetut sti-päätteiset seikkasanat tunnistetaan
 # automattisesti eli niitä ei tarvitse lisätä sanastoon.
+#
+# Seikkasanoja ei hyväksytä Voikossa yhdyssanan osina. Niille voidaan
+# kuitenkin asettaa lippu ys_perusosa, jolloin sana sallitaan yhdyssanan
+# perusosana samoissa tilanteissa, joissa yleisnimen käyttö yhdyssanan
+# perusosana on sallittu.
 
 [perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -662,12 +667,12 @@
 [perusmuoto: "poikkiteloin", alku: "poikkiteloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "pois", alku: "pois", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "poissa", alku: "poissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "posti", alku: "postitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "posti", alku: "postitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ys_perusosa>];
 [perusmuoto: "puhelin", alku: "puhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puhki", alku: "puhki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puolinukuksissa", alku: "puolinukuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
 [perusmuoto: "puolinukuksissa", alku: "puolinukuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
-[perusmuoto: "puolitse", alku: "puolitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "puolitse", alku: "puolitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ys_perusosa>];
 [perusmuoto: "puolivakavissaan", alku: "puolivakavissa", luokka: seikkasana, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppppppppp"];
 [perusmuoto: "puseroisilla", alku: "puseroisi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: a];
 [perusmuoto: "puuduksissa", alku: "puuduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -831,7 +836,7 @@
 [perusmuoto: "tasa", alku: "tasa", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: a];
 [perusmuoto: "tasa", alku: "taso", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_ihin>, äs: a]; # Tunnistuvat myös sanasta "taso" mutta se on eri sana
 [perusmuoto: "tasan", alku: "tasan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tie", alku: "teitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_sukija>];
+[perusmuoto: "tie", alku: "teitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ys_perusosa, ei_sukija>];
 [perusmuoto: "tekeillä", alku: "teke", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: ä];
 [perusmuoto: "tenä", alku: "tenä", luokka: seikkasana, jatko: <loppu, nimentö_t, osanto_A, omanto_n, sisäolento_ssA>, äs: ä];
 [perusmuoto: "ties", alku: "ties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

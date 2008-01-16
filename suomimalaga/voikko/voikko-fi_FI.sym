@@ -411,6 +411,8 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   Us;        # Nimisana, josta voidaan johtaa ominaisuuden nimi us-johtimella (asiak+as+ => asiak+ku+us).
   UUs;       # Nimisana, josta voidaan johtaa ominaisuuden nimi uus-johtimella.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
+  ys_perusosa; # Sanaa voi normaaleista säännöistä poiketen käyttää yleisnimen tavoin
+               # yhdyssanan perusosana.
 
 rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sekä
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.

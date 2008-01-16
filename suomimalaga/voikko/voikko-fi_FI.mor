@@ -262,6 +262,20 @@ end;
 
 # Esiehto: ei sanan alussa
 combi_rule nimisana ($vasen, $oikea, $sana, $index):
+  if ($oikea.luokka = seikkasana and $oikea.tiedot /= nil and
+      ys_perusosa in $oikea.tiedot) then
+    if (loppu in $oikea.jatko) then
+      result $vasen + <[alku: $sana] + $oikea>, accept;
+    end;
+    if (liitesana in $oikea.jatko) then
+      result $vasen + <[alku: $sana] + $oikea>, rules liitesana;
+    end;
+    if (omistusliite in $oikea.jatko) then
+      result $vasen + <[alku: $sana] + $oikea>, rules omistusliite;
+    end;
+    result $vasen + <[alku: $sana] + $oikea>, rules ei_ys_sijapääte; # FIXME: esiehto testaamatta
+  end;
+
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
