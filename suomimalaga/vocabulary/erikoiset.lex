@@ -67,7 +67,7 @@
 [perusmuoto: "te", alku: "te", luokka: asemosana, jatko: <me>, äs: ä];
 [perusmuoto: "tex", alku: "tex", luokka: lyhenne, jatko: <kalsium>, äs: ä];
 [perusmuoto: "toteen", alku: "toteen", luokka: nimisana, jatko: @sana2, äs: aä];
-[perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # "ulko" on myös etuliite.
 [perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
 [perusmuoto: "veli", alku: "veliseni", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_ysa>];
 [perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: @sana2 + <liitesana, loppu>, äs: ä];
