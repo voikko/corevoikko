@@ -47,7 +47,7 @@ char	*nl_langinfo(nl_item);
 #else
 # define ENTER_V
 # define EXIT_V
-# ifdef __FreeBSD__
+# if defined(__FreeBSD__) || defined(__APPLE__)
 #  define INTERNAL_CHARSET "UCS-4-INTERNAL"
 # else
 #  define INTERNAL_CHARSET "WCHAR_T"

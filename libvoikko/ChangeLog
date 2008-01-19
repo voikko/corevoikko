@@ -1,3 +1,7 @@
+2008-01-19 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Iconv on OS X should use UCS-4-INTERNAL too.
+
 2007-12-30 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Some fixes for VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS.
