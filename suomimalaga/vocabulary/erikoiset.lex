@@ -32,9 +32,9 @@
 [perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "jompi", alku: "jo", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kuka", alku: "ku", luokka: asemosana, jatko: <joka>, äs: a];
-[perusmuoto: "kukas", alku: "kukas", luokka: asemosana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuka", alku: "kukas", luokka: asemosana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumpainen", alku: "kumpai", luokka: asemosana, jatko: <nainen>, äs: a];
-[perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a];
+[perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kumpi", alku: "ku", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu> + @sana2, äs: ä];
@@ -49,16 +49,17 @@
 [perusmuoto: "mones", alku: "mone", luokka: asemosana, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "moni", alku: "montaa", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "muu", alku: "mu", luokka: asemosana, jatko: <puu>, äs: a];
-[perusmuoto: "muuan", alku: "muua", luokka: asemosana, jatko: <osanto_ttA>, äs: a];
-[perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a];
-[perusmuoto: "muudan", alku: "muuda", luokka: asemosana, jatko: <osanto_ttA>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "muudan", alku: "muudan", luokka: asemosana, jatko: <olento_nA, liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "muuan", alku: "muuatta", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "muuan", alku: "muuanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "muuan", alku: "muudan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "muuan", alku: "muudatta", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "muuan", alku: "muudanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "peri", alku: "peri", luokka: nimisana, jatko: @sana1, äs: aä];
-[perusmuoto: "pikku", alku: "pikku", luokka: laatusana, jatko: @sana2 + <loppu>, äs: a];
+[perusmuoto: "pikku", alku: "pikku", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: a];
 [perusmuoto: "pro", alku: "pro", luokka: asemosana, jatko: <loppu>, äs: a]; #NS:n taivutus: suo.
 [perusmuoto: "päikkäin", alku: "päikkäin", luokka: asemosana, jatko: <loppu>, äs: ä];
-[perusmuoto: "ruti", alku: "ruti", luokka: liitesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat + @sana2, äs: ä];

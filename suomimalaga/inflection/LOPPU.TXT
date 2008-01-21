@@ -227,7 +227,8 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_llinen;
   end;
 
-  if ($tietue.luokka in <nimitapa_4>) then
+  if ($tietue.luokka in @johdin_mA + <nimitapa_4>) then
+#  if ($tietue.luokka in <johdin_mA, johdin_mA_saama, nimitapa_4>) then
     $taivutus :=- johdin_inen;
   end;
 

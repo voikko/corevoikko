@@ -114,6 +114,13 @@ pattern = pattern.replace(u"U", u"[uy]")
 pattern = pattern.replace(u"C", u"[bcdfghjklmnpqrstvwxzšžçðñþß]")
 rx = re.compile(pattern, re.IGNORECASE)
 
+begin = u"(jälleen|uudelleen).+"
+rx_begin = re.compile(begin, re.IGNORECASE)
+
+end = u".+(herkkä)"
+rx_end = re.compile(end, re.IGNORECASE)
+
+
 #print pattern
 
 # Sanat, jotka tunnistetaan Sukija-versiossa automaagisesti toisten
@@ -136,23 +143,24 @@ words = [u"aikalainen", u"alaisuus",
          u"freudilainen",
 	 u"halpatyö", u"hautaus", u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
 	 u"institutionalisoitua", u"itkettynyt", u"itkettyä",
-	 u"julkishyödyke", u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
+	 u"julkishallinto", u"julkissektori", u"julkistalous",
+	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 	 u"kansalainen", u"kansallismielinen", u"kuntalainen", u"kymmenvuotinen",
 	 u"kyyhkyläinen", u"käynti",
 	 u"laajakangas", u"laajakulma", u"laajakuva", u"lahkolainen", u"lahopuu",
 	 u"lahtelainen", u"laulattaa", u"liittolainen", u"luokkalainen", u"luontoistalous", u"lyönti",
 	 u"maallistua", u"maolainen", u"marxilainen", u"mäkitupalainen",
 	 u"nimismies",
-	 u"oikeistolainen", u"oikeus", u"opetus", u"otto",
+	 u"ohutsuoli", u"oikeistolainen", u"oikeus", u"opetus", u"otto",
          u"pakolainen", u"pito", u"poltto",
 	 u"rivittyä",
-	 u"sisäänajo", u"sisäänmeno", u"sisääntulo",
+	 u"salakuljettaa", u"siirtolainen", u"sisäänajo", u"sisäänmeno", u"sisääntulo",
 	 u"tietynlainen", u"trotskilainen", u"tuonti", u"tupalainen", u"työläinen",
 	 u"täysihoito", u"täysihoitola",
-	 u"vajaamielinen", u"vasemmistolainen", u"voima", u"wrightiläinen", u"väärinkäsitys",
+	 u"vajaamielinen", u"vasemmistolainen", u"veto", u"voima", u"wrightiläinen", u"väärinkäsitys",
 	 u"vähittäishinta", u"vähittäiskauppa", u"vähittäismaksu", u"vähittäismyymälä",
          u"vähittäismyynti",
-	 u"ylivoimainen", u"ylösnoussut", u"yritellä", u"ystävällismielinen",
+	 u"ylösnoussut", u"yritellä", u"ystävällismielinen",
 	 u"Aaltonen", u"Aamu", u"Aarnio", u"Aho", u"Alanko", u"Alkio", u"Arabia",
 	 u"Armenia", u"Aro", u"Asukas", u"Aura", u"Aurinko", u"Autio",
 	 u"Bulgaria",
@@ -426,13 +434,18 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 							u"#Malaga class not found for (%s, %s)\n" \
 			                   % (wordform, voikko_infclass))
 			continue
-		
 		if (wordform in words):
-#			print ("Ei tarvita: " + wordform + u"\n")
+#			print ("Ei tarvita: " + wordform)
+			continue
+		if (rx_begin.match(wordform) != None):
+#			print ("Ei tarvita: " + wordform)
+			continue
+		if (rx_end.match(wordform) != None):
+#			print ("Ei tarvita: " + wordform)
 			continue
 		if (((wordform == u"neitsyt") and (jatko == u"airut")) or
 		    ((wordform == u"ori")     and (jatko == u"risti"))):
-#			print ("Ei tarvita: " + wordform + u"\n")
+#			print ("Ei tarvita: " + wordform)
 			continue
 		
 		nsyl = number_of_syllabels(wordform)

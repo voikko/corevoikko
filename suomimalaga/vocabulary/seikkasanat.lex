@@ -540,7 +540,7 @@
 [perusmuoto: "mukaan", alku: "mukaa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "mukaan", alku: "mukaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "mukamas", alku: "mukamas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "mukana", alku: "mukana", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
+[perusmuoto: "mukaan", alku: "mukana", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "muualla", alku: "muua", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "muuanne", alku: "muuanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "muulloin", alku: "muulloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -707,6 +707,7 @@
 [perusmuoto: "pöpperössä", alku: "pöpperössä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pöpperössä", alku: "pöpperöstä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "radio", alku: "radioitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "radiopuhelin", alku: "radiopuhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ratki", alku: "ratki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ratsailla", alku: "ratsai", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "ratsain", alku: "ratsain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

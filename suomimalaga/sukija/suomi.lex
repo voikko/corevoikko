@@ -53,7 +53,9 @@ define @sana2 := @sana1 + <teonsana>;
 define @eln := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
 define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
 define @elt := <tavuviiva, etuliite, teonsana>;
-define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, teonsana>;
+define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
+#define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, teonsana>;
+#define @eltj := <tavuviiva, etuliite, teonsanan_johdoksen_etuliite>;
 
 include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";
@@ -1110,10 +1112,15 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 [perusmuoto: "minen", alku: "mi", luokka: nimitapa_4, jatko: <nainen>, äs: ä];
 
 
-# Viides nimitapa: puhu+maisillaan, teke+mäisillään.
+# Viides nimitapa: puhu+maisilla(an), teke+mäisillä(än).
 #
 [perusmuoto: "maisilla", alku: "maisilla", luokka: nimitapa_5, jatko: <omistusliite>, äs: a];
 [perusmuoto: "mäisillä", alku: "mäisillä", luokka: nimitapa_5, jatko: <omistusliite>, äs: ä];
+
+# Viides nimitapa: murteellinen puhu+maisilla(h)an, teke+mäisillä(h)än.
+#
+[perusmuoto: "maisilla", alku: "maisillahan", luokka: nimitapa_5, jatko: <loppu>, äs: a, tiedot: <murre>];
+[perusmuoto: "mäisillä", alku: "mäisillähän", luokka: nimitapa_5, jatko: <loppu>, äs: ä, tiedot: <murre>];
 
 
 
