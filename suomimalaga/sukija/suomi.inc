@@ -70,8 +70,6 @@ define @yäö := "[yýÿüäöøõ]";
 define @erisnimi := <etunimi, sukunimi, paikannimi, nimi>;
 define @nimisana := <nimisana, nimi_laatusana> + @erisnimi;
 
-define @laatusana := <laatusana, nimi_laatusana>;
-
 define @kestämän_tekijäpääte := <kestämän_tekijäpääte_y1,
                                  kestämän_tekijäpääte_y2,
                                  kestämän_tekijäpääte_y3,

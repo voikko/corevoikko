@@ -114,7 +114,7 @@ pattern = pattern.replace(u"U", u"[uy]")
 pattern = pattern.replace(u"C", u"[bcdfghjklmnpqrstvwxzšžçðñþß]")
 rx = re.compile(pattern, re.IGNORECASE)
 
-begin = u"(jälleen|uudelleen).+"
+begin = u"(amerikan|jälleen|uudelleen).+"
 rx_begin = re.compile(begin, re.IGNORECASE)
 
 end = u".+(herkkä)"
@@ -142,7 +142,7 @@ words = [u"aikalainen", u"alaisuus",
          u"edellisvuotinen", u"elämä", u"etruskilainen",
          u"freudilainen",
 	 u"halpatyö", u"hautaus", u"herraskartano", u"herrasmies", u"herraspoika", u"herrasväki",
-	 u"institutionalisoitua", u"itkettynyt", u"itkettyä",
+	 u"innoittua", u"institutionalisoitua", u"itkettynyt", u"itkettyä",
 	 u"julkishallinto", u"julkissektori", u"julkistalous",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
 	 u"kansalainen", u"kansallismielinen", u"kuntalainen", u"kymmenvuotinen",

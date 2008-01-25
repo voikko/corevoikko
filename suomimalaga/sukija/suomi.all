@@ -86,20 +86,10 @@ allo_rule generate_allos ($tietue):
 
   # Nämä sanat tunnistetaan yhdyssanoina.
   #
-  if (($tietue.perusmuoto /= nil) and
-      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
-    stop;
-  end;
-
-  if (($tietue.perusmuoto /= nil) and ($tietue.perusmuoto in <"kukkura", "kippura">) and
-      ($tietue.luokka = laatusana)) then
-   stop;
-  end;
-
-  if (($tietue.perusmuoto /= nil) and ($tietue.perusmuoto = "nasta") and ($tietue.luokka = nimisana)) then
-    stop;
-  end;
-
+#  if (($tietue.perusmuoto /= nil) and
+#      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
+#    stop;
+#  end;
 
   # Paikannimien jälkiliitteet.
   #
@@ -13496,7 +13486,6 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
   if ($tietue.luokka in @johdin_mA + <nimitapa_4>) then
-#  if ($tietue.luokka in <johdin_mA, johdin_mA_saama, nimitapa_4>) then
     $taivutus :=- johdin_inen;
   end;
 
@@ -13548,6 +13537,11 @@ subrule taivutuskaava ($tietue, $taivutus):
   #
   if ($tietue.luokka in <laatusana, nimi_laatusana>) and ($tietue.perusmuoto matches ".*inen") then
     $taivutus :=- <johdin_inen>;
+  end;
+
+
+  if ($tietue.luokka = yliaste) then
+    $taivutus :=- <nimisana, nimi_laatusana, laatusana, teonsana, etuliite>;
   end;
 
 #if ($tietue.luokka = johdin_lAinen) or ($tietue.perusmuoto = "nainen") then

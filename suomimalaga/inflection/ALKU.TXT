@@ -86,20 +86,10 @@ allo_rule generate_allos ($tietue):
 
   # Nämä sanat tunnistetaan yhdyssanoina.
   #
-  if (($tietue.perusmuoto /= nil) and
-      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
-    stop;
-  end;
-
-  if (($tietue.perusmuoto /= nil) and ($tietue.perusmuoto in <"kukkura", "kippura">) and
-      ($tietue.luokka = laatusana)) then
-   stop;
-  end;
-
-  if (($tietue.perusmuoto /= nil) and ($tietue.perusmuoto = "nasta") and ($tietue.luokka = nimisana)) then
-    stop;
-  end;
-
+#  if (($tietue.perusmuoto /= nil) and
+#      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
+#    stop;
+#  end;
 
   # Paikannimien jälkiliitteet.
   #

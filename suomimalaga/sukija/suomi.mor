@@ -379,7 +379,6 @@ end;
 
 combi_rule laatusana ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka = laatusana;
-# ? $oikea.luokka in @laatusana;
 
   define $i := $n - 1;
 
@@ -895,21 +894,11 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $n):
 #define $nimi2a := transmit (<"voitto_yliaste2"> + <$vasen.$i>);
 #define $nimi3a := transmit (<"voitto_yliaste3"> + <$oikea> + <$sana>);
 
-  ? $vasen.$i.luokka in @laatusana
-                        + <johdin_lAinen, johdin_mAinen, johdin_llinen,
-                           johdin_inen, johdin_tOn, johdin_vAinen>
-                        + @laatutapa_1 + @laatutapa_2
-                        + @johdin_laatutapa + @johdin_tAvA;
-
   ? (voittoaste in $vasen.$i.jatko) or (yliaste in $vasen.$i.jatko);
   ? $oikea.luokka in $vasen.$i.jatko;
   ? äs_ok ($vasen.$i, $oikea);
 
   if $oikea.äs = aä then $oikea.äs := $vasen.$i.äs; end;
-
-#define $nimi1 := transmit ("voitto_yliaste1 " + $vasen.$i.alku + " " + $sana);
-#define $nimi2 := transmit (<"voitto_yliaste2"> + <$vasen>);
-#define $nimi3 := transmit (<"voitto_yliaste3"> + <$oikea> + <$sana>);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules sijapääte, liitesana, omistusliite,
