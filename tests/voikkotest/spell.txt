@@ -312,6 +312,8 @@ talotäsmäkoira
 avo-ohut
 kissanpikaliitäjä # nimisanan genetiivi + nimisanan etuliite
 !kissanpikaliitää # nimisanan genetiivi + nimisanan etuliite
+kiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
+!mielenkiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
 
 [seikkasanat]
 keskenään

@@ -312,7 +312,8 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
      ($oikea.lähtöluokka = teonsana and
       (teonsana in $edellinen.jatko or teonsanan_johdoksen_etuliite in $edellinen.jatko)));
 
-  ? $edellinen.luokka = etuliite or $oikea.tiedot = nil or
+  ? ($oikea.tiedot = nil) or
+    ($edellinen.luokka = etuliite and $index = 2) or
     (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
