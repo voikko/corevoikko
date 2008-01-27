@@ -310,6 +310,8 @@ miniei-opisto
 talotäsmäkoira
 !avoohut
 avo-ohut
+kissanpikaliitäjä # nimisanan genetiivi + nimisanan etuliite
+!kissanpikaliitää # nimisanan genetiivi + nimisanan etuliite
 
 [seikkasanat]
 keskenään

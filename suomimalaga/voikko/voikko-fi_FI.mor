@@ -242,6 +242,32 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
   end;
 end;
 
+###### ETULIITESÄÄNNÖT ALKAVAT
+
+combi_rule nimisanan_etuliite ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = etuliite;
+
+  ? $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
+    result $res, rules
+      inen_johdos_nimisanasta;
+  elseif nimisana in $oikea.jatko then
+    result $res, rules inen_johdos_nimisanasta;
+  end;
+
+  ? not kieltosana in $oikea.jatko;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules yhdysmerkki_etuliitteen_jälkeen;
+  end;
+  result $res, rules etuliite, nimisana, nimisana_teonsanasta;
+end;
+
+###### ETULIITESÄÄNNÖT PÄÄTTYVÄT
+
+
 combi_rule erisnimi ($vasen, $oikea, $sana):
   ? $oikea.luokka in @erisnimi;
 
@@ -753,7 +779,8 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
       # "kissan+karva", "työhön+otto"
       if sijamuoto_sijasta($oikea.sija) = omanto then
         result $res,
-               rules nimisana, laatusana, nimisana_teonsanasta, yhdysmerkki_yleisnimen_jälkeen;
+               rules nimisana, laatusana, nimisana_teonsanasta, yhdysmerkki_yleisnimen_jälkeen,
+                     nimisanan_etuliite;
       end;
       if sijamuoto_sijasta($oikea.sija) = nimentö and luku_sijasta($oikea.sija) = yksikkö then
         result $res, rules nimisana_teonsanasta;
