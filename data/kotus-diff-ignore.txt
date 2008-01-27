@@ -850,6 +850,7 @@ ravata # Kaksi eri merkitystä ja taivutusta
 tokko # Kaksi eri merkitystä ja taivutusluokkaa.
 tuhannes # Joukahaisessa murtoluku mutta Kotuksen sanastossa järjestysluku
 vapaaherratar # Kotus 32*C+50
+siitä
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
