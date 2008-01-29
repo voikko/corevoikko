@@ -117,6 +117,14 @@ allo_rule generate_allos ($tietue):
     $tietue.tiedot :=- <ei_ysa>;
   end;
 
+  if ($tietue.perusmuoto = "pöllö") then
+    if ($tietue.luokka = nimisana) then
+       stop;
+    elseif ($tietue.luokka = laatusana) then
+      $tietue.luokka := nimi_laatusana;
+    end;
+  end;
+
 #  if ($tietue.luokka in <huudahdussana, seikkasana, sidesana, suhdesana>) then
 #    $tietue.jatko :=+ <tavuviiva>;
 #  end;

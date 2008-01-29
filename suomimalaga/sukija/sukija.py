@@ -117,7 +117,7 @@ rx = re.compile(pattern, re.IGNORECASE)
 begin = u"(amerikan|jälleen|uudelleen).+"
 rx_begin = re.compile(begin, re.IGNORECASE)
 
-end = u".+(herkkä)"
+end = u".+(herkkä|pöllö)"
 rx_end = re.compile(end, re.IGNORECASE)
 
 
@@ -175,7 +175,7 @@ words = [u"aikalainen", u"alaisuus",
          u"Koitto", u"Koivisto", u"Koivu", u"Kolari", u"Kotka", u"Koppelo",
 	 u"Koski", u"Kreikka", u"Kroatia", u"Kuha", u"Kuikka", u"Kukka", u"Kulho",
 	 u"Kuokka", u"Kurki", u"Kurppa", u"Kuru", u"Kuutti", u"Kytö",
-	 u"Laakso", u"Lahja", u"Lahti", u"Laina", u"Laine", u"Lauha",
+	 u"Laakso", u"Lahja", u"Lahti", u"Laina", u"Laine", u"Lappi", u"Lauha",
 	 u"Lehto", u"Lemu", u"Lilja", u"Lintunen", u"Liperi", u"Lotta",
 	 u"Maa", u"Maila", u"Malmi", u"Marja", u"Matti", u"Mela", u"Metso", u"Miina",
 	 u"Minttu", u"Missi", u"Moisio", u"Muikku", u"Murto", u"Mäkinen",
@@ -193,7 +193,7 @@ words = [u"aikalainen", u"alaisuus",
          u"Tšekki", u"Tuisku", u"Turkki", u"Tuuli",
 	 u"Ukraina", u"Unelma", u"Unkari",
 	 u"Valta", u"Valtti", u"Varis", u"Varkaus", u"Varma", u"Vasara", u"Vento",
-         u"Venäjä", u"Venäläinen", u"Vesa", u"Vieno", u"Viita", u"Viro", u"Virolainen",
+         u"Venäjä", u"Venäläinen", u"Vesa", u"Vieno", u"Vietnam", u"Viita", u"Viro", u"Virolainen",
 	 u"Virta", u"Visa", u"Vuokko", u"Vuoksi",
 	 u"Ylämaa"]
 

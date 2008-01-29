@@ -117,6 +117,14 @@ allo_rule generate_allos ($tietue):
     $tietue.tiedot :=- <ei_ysa>;
   end;
 
+  if ($tietue.perusmuoto = "pöllö") then
+    if ($tietue.luokka = nimisana) then
+       stop;
+    elseif ($tietue.luokka = laatusana) then
+      $tietue.luokka := nimi_laatusana;
+    end;
+  end;
+
 #  if ($tietue.luokka in <huudahdussana, seikkasana, sidesana, suhdesana>) then
 #    $tietue.jatko :=+ <tavuviiva>;
 #  end;
@@ -8964,7 +8972,7 @@ subrule uros ($tietue, $param01, $param02, $param03, $param04, $param05, $param0
                          ulkoeronto_ltA: <<$param02, <>>, <$param03, <>>, <$param04, <ei_voikko>>>,
                          ulkotulento_lle: <<$param02, <>>, <$param03, <>>, <$param04, <ei_voikko>>>,
                          vajanto_ttA: <<$param02, <>>, <$param03, <>>, <$param04, <ei_voikko>>>,
-                         nimentö_t: <<$param02, <>>, <$param04, <ei_voikko>>>,
+                         nimentö_t: <<$param03, <>>, <$param02, <>>, <$param04, <ei_voikko>>>,
                          omanto_ien: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          omanto_iT: <<$param07, <>>>,
                          omanto_ten: <<$param01, <>>, <$param08, <ei_voikko>>>,

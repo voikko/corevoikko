@@ -1606,7 +1606,7 @@ subrule perusmuoto ($tietue):
     end;
     $edellinen_luokka := $luokka;
     if ($tietue.$k.luokka in @nimisana
-                             + <seikkasana, laatusana,
+                             + <lukusanan_jälkiliite, seikkasana, laatusana,
                                 teonsana> + @lukusana) then
       $on_yhdyssana := yes;
     end;
@@ -2089,7 +2089,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
   if ($oikea.alaluokka = erikoisluku) then
     define $erikoisres := $vasen + <[alku: $sana] + $oikea>;
     if (loppu in $oikea.jatko) then
-      result $erikoisres, accept;
+      result $erikoisres, rules loppu;
     end;
     if (liitesana in $oikea.jatko) then
       result $erikoisres, rules liitesana;
@@ -2115,7 +2115,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
   if ($oikea.alaluokka = yksiyhdeksän) then
     if (nimentö in $oikea.jatko) then
       if loppu in $oikea.jatko then
-        result $res, accept;
+        result $res, rules loppu;
       end;
       result $res, rules lukusana_toista, lukusana_sisäkerroin,
                    liitesana, lukusanan_jälkiliite,
@@ -2131,7 +2131,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
         result $res, rules omistusliite;
       end;
       if loppu in $oikea.jatko then
-        result $res, accept;
+        result $res, rules loppu;
       end;
       result $res, rules lukusana_sisäkerroin,
                    liitesana, lukusanan_jälkiliite,
@@ -2143,7 +2143,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
       result $res, rules omistusliite;
     end;
     if loppu in $oikea.jatko then
-      result $res, accept;
+      result $res, rules loppu;
     end;
     result $res, rules liitesana, lukusanan_jälkiliite,
                  nimisana, laatusana;
@@ -2151,7 +2151,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
    elseif ($oikea.alaluokka = numeromerkki) then
      $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "=q"] + $oikea>;
      result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
-     result $res, accept;
+     result $res, rules loppu;
   end;
   if ($oikea.alaluokka in <sata, tuhat>) then
     if (nimentö in $oikea.jatko) then
@@ -2189,10 +2189,11 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     result $res, rules lukusana_sisäkerroin, lukusanan_jälkiliite,
                  liitesana;
   else
-    result $res, rules nimisana, lukusanan_jälkiliite, laatusana; ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+    result $res, rules nimisana, lukusanan_jälkiliite, laatusana;
+                       ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   end;
   if loppu in $oikea.jatko then
-    result $res, accept;
+    result $res, rules loppu;
   end;
   if ($edellinen.alaluokka in <sata, tuhat>) then
     result $res, rules lukusana;
@@ -2222,7 +2223,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
       result $res, rules omistusliite;
     end;
     if loppu in $oikea.jatko then
-      result $res, accept;
+      result $res, rules loppu;
     end;
     result $res, rules liitesana;
   end;
@@ -2244,7 +2245,7 @@ combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
-    result $res, accept;
+    result $res, rules loppu;
   end;
   result $res, rules lukusana,
                liitesana, lukusanan_jälkiliite,
@@ -2265,7 +2266,7 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
-    result $res, accept;
+    result $res, rules loppu;
   end;
   result $res, rules lukusana, lukusanan_jälkiliite,
                liitesana,
@@ -2279,11 +2280,12 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto,
                             luku: $edellinen.luku, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
   if loppu in $oikea.jatko then
-    result $res, accept;
+    result $res, rules loppu;
   end;
   result $res, rules lukusana_sisäkerroin,
                      liitesana, lukusanan_jälkiliite,
-                     nimisana, laatusana; ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+##                   inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+                     nimisana, laatusana;
 end;
 
 combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
@@ -2291,7 +2293,7 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
   # FIXME: yhdysviivan käyttöä ei vielä tueta lukusanan ja sen jälkiliitteen välissä
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if $oikea.luokka = tavuviiva then
-    result $res, accept;
+    result $res, rules loppu;
   else
     define $edellinen := $vasen.($index - 1);
     ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
@@ -2302,10 +2304,11 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
       result $res, rules tavuviiva;
     end;
     if loppu in $oikea.jatko then
-      result $res, accept;
+      result $res, rules loppu;
     end;
     result $res,
            rules ## ei_ys_sijapääte,
+                 sijapääte,
                  nimisana, etuliite,
                  liitesana,
                  nimisanan_johdos;
@@ -2322,7 +2325,7 @@ combi_rule lukusana_numero ($vasen, $oikea, $sana, $index):
 
   if $oikea.alaluokka = numeromerkki then
     result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
-    result $res, accept;
+    result $res, rules loppu;
   elseif $oikea.alaluokka = pilkku and $oikea.pilkku /= yes then
     $oikea :=+ [pilkku: yes];
     result $vasen + <[alku: $sana] + $oikea>, rules lukusana_numero;
