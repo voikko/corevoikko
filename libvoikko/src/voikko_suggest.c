@@ -28,7 +28,7 @@
 #include <malaga.h>
 
 #define MAX_SUGGESTIONS 5
-#define COST_LIMIT 250
+#define COST_LIMIT 350
 
 static int abort_search(voikko_sugg_status_t * s) {
 	if ((*s).max_suggestions == 0 || (*s).max_cost <= 0) return 1;
