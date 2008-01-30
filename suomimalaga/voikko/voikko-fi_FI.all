@@ -1,6 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#                 2006-2008 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -43,10 +44,6 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
-#
-# This file has been modified by the contributors of Voikko project.
-# Last change was on $Date$ by $Author$.
-
 
 include "suomi.inc";
 include "all.inc";
@@ -6403,6 +6400,7 @@ subrule yksikkö_tuohi ($lisä1, $lisä2):
          [johdin_tOn:    $lisä1,
           johdin_llinen: $lisä1,
           johdin_lAinen: $lisä1,
+          johdin_mAinen: $lisä2,
           johdin_inen: ""];
 end;
 
