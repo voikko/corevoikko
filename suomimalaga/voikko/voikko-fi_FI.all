@@ -2571,11 +2571,6 @@ allo_rule generate_allos ($tietue):
     choose $i in sallia ($tietue, "k", "");
     result $i.alku, $i - alku;
 
-  elseif (moittia in $tietue.jatko) then
-    choose $i in sallia ($tietue,  "t", "")
-                 + muistella ($tietue, "isk", "isk");  # Moitiskella.
-    result $i.alku, $i - alku;
-
   elseif (onkia in $tietue.jatko) then
     choose $i in sallia ($tietue, "k", "g");
     result $i.alku, $i - alku;

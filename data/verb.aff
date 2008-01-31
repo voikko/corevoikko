@@ -467,7 +467,7 @@ end: rules
 end: class
 
 
-# Kotus 61 sallia (1/2)
+# Kotus 61 sallia
 class: 61
 sm-class: sallia
 rmsfx: a
@@ -483,26 +483,6 @@ kondit_yks_3	0	si	s
 imperatiivi_yks_3	0	koon	s
 partisiippi_2	0	nut	s
 imperfekti_pass	0	ttiin	w
-end: rules
-end: class
-
-# Kotus 61 sallia (1/2)
-class: 61
-sm-class: moittia
-rmsfx: a
-match-word: CiA
-consonant-gradation: sw
-group: t
-transform-group: e
-rules:
-infinitiivi_1	0	a	s
-preesens_yks_1	0	n	w
-imperfekti_yks_3	0	0	s
-kondit_yks_3	0	si	s
-imperatiivi_yks_3	0	koon	s
-partisiippi_2	0	nut	s
-imperfekti_pass	0	ttiin	w
-!verbi_ellA	0	skella	w
 end: rules
 end: class
 
