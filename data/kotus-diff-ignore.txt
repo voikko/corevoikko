@@ -1033,9 +1033,11 @@ monasti
 must
 mut
 myöhemmä
+myöhemmäs
 mäskäksi
 mäskänä
 naftisti
+nureissaan
 nytten
 näes
 nähkääs
@@ -1048,6 +1050,7 @@ pahimmoiksi
 pahimmoillaan
 pahimmoilleen
 pahki
+pahuksesti
 paraiksi
 paraiten
 peevelisti
@@ -1141,6 +1144,7 @@ vaki-
 
 # Yhdyssanoja ja johdoksia, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
 # oikolukusanastoon
+adsorbointi # adsorboida
 bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata
@@ -1149,8 +1153,11 @@ fusku # fuskata
 futismatsi # futis, matsi
 haploidinen # halploidi
 heksagoninen # heksagoni
+mentorointi # mentoroida
+metkasti # metka
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
+tunnelointi # tunneloida
 valkkaus # valkata
 
