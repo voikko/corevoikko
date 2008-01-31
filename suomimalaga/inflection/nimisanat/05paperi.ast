@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -51,6 +51,6 @@ edam     laser   "" i  e
 hollanti paperi  ti ni ne te t
 kajakki  paperi  ki i  e  ke k
 killinki paperi  ki gi ge ke k
-konvehti paperi  ti di de de t
+konvehti paperi  ti di de te t
 salaatti paperi  ti i  e  te t
 sinappi  paperi  pi i  e  pe p

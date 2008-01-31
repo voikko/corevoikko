@@ -122,7 +122,7 @@ omanto_ien
 
 omanto_iT
           uro++iden
-          uro++itteyn
+          uro++itten
 
 omanto_ten
           uro+s+ten

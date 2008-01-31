@@ -631,7 +631,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (konvehti in $tietue.jatko) then
-    choose $i in paperi ($tietue, "ti", "di", "de", "de", "t");
+    choose $i in paperi ($tietue, "ti", "di", "de", "te", "t");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3419,16 +3419,6 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (loikkia in $tietue.jatko) then
     choose $i in sallia ($tietue, "ki", "i", "", "k");
-    if (value_type($i) = record) then
-      result $i.alku, $i - alku;
-    else
-      foreach $j in $i:
-        result $j.alku, $j - alku;
-      end;
-    end;
-  elseif (moittia in $tietue.jatko) then
-    choose $i in sallia ($tietue, "ti", "i", "", "t")
-                 + muistella ($tietue, "isk", "isk");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else

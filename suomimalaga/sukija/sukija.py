@@ -33,13 +33,24 @@ historical = [(u'aavistaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
 				    (u'tt',u'(.*[AeiU]t)tAA',u'alittaa'),
 				    (u't',u'(.*h)tAA',u'astahtaa')]),
 	      (u'arvailla',   u'-',  [(None,u'(.*[AOU]])illA',u'arvailla')]),
+	      (u'hohtaa',     u'sw', [(u'tt',u'(.*t)tAA',u'heittää')]),
+	      (u'iäkäs',      u'ws', [(u'k',u'(.*k)As',u'iäkäs')]),
 	      (u'katsella',   u'ws', [(None,u'(.*[AOU])illA',u'arvailla')]),
+	      (u'kaivaa',     u'sw', [(None,u'(.*aj)AA',u'ajaa')]),
 	      (u'kirjoittaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
 				      (u'tt',u'(.*O)ttAA',u'ammottaa'),
 				      (u'tt',u'(.*[AeiU]t)tAA',u'asettaa')]),
+	      (u'kuollut', u'-', [(None,u'(.*neits)yt',u'neitsyt'),
+				  (None,u'(.*C)lUt',u'kuollut'),
+				  (None,u'(.*)nUt', u'punonut'),
+				  (None,u'(.*C)rUt',u'purrut'),
+				  (None,u'(.*C)sUt',u'juossut')]),
 	      (u'onneton', u'ws', [(None,u'(.*)tOn',u'alaston'),
 				   (u't',u'(.*)tOn',u'onneton')]),
 	      (u'punoa',   u'sw', [(u't',u'(...*AU)tUA',u'antautua')]),
+##	      (u'vieras',  u'ws', [(u'k',u'(.*k)As',u'iäkäs'),
+##				   (None,u'(.*[lr]iA)s',u'utelias'),
+##				   (u'>k',u'(.*)As',u'vilkas')]),
 	(u'ahven',    u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'antautua', u'sw', [(u't',u'(.*)tUA',u'antautua')]),
 	(u'altis',    u'ws', [(None, u'(.*t)is', u'altis')]),
@@ -153,8 +164,8 @@ words = [u"aikalainen", u"alaisuus",
 	 u"nimismies",
 	 u"ohutsuoli", u"oikeistolainen", u"oikeus", u"opetus", u"otto",
          u"pakolainen", u"pito", u"poltto",
-	 u"rivittyä",
-	 u"salakuljettaa", u"siirtolainen", u"sisäänajo", u"sisäänmeno", u"sisääntulo",
+	 u"rivittyä", u"romahdusmainen", u"ruskettua", u"rusketus",
+	 u"siirtolainen", u"sisäänajo", u"sisäänmeno", u"sisääntulo",
 	 u"tietynlainen", u"trotskilainen", u"tuonti", u"tupalainen", u"työläinen",
 	 u"täysihoito", u"täysihoitola",
 	 u"vajaamielinen", u"vasemmistolainen", u"veto", u"voima", u"wrightiläinen", u"väärinkäsitys",
@@ -443,8 +454,9 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if (rx_end.match(wordform) != None):
 #			print ("Ei tarvita: " + wordform)
 			continue
-		if (((wordform == u"neitsyt") and (jatko == u"airut")) or
-		    ((wordform == u"ori")     and (jatko == u"risti"))):
+#		if (((wordform == u"neitsyt") and (jatko == u"airut")) or
+#		    ((wordform == u"ori")     and (jatko == u"risti"))):
+		if ((wordform == u"ori") and (jatko == u"risti")):
 #			print ("Ei tarvita: " + wordform)
 			continue
 		
@@ -492,40 +504,31 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko2 = jatko
 			wordform2 = alku2 + u"nen"
 #			print (u"Keltainen " + wordform2 + u" " + alku2 + u" " + jatko2)
-##		elif ((nsyl == 4) and (rx != None) and (d != None) and (d['antautua'] != None) and (jatko != u"antautua")):
-##			print (u"Antautua " + wordform + u" " + jatko);
-##			jatko = u"antautua"
-		elif ((wordform == u"ajaa") and (jatko == u"kaivaa")):
-			jatko = u"ajaa"
 		elif (jatko in [u"asiakas", u"avokas"]):
 			jatko = u"iäkäs"
 		elif (jatko == u"varas"):
 			jatko = u"vilkas"
 		elif ((jatko == u"vieras") and (d != None) and (d['utelias_ankerias'] != None)):
 			jatko = u"utelias"
-		elif (jatko == u"jättää"):
-			jatko = u"heittää"
+##		elif (jatko == u"jättää"):
+##			jatko = u"heittää"
 		#
 		# Korjataan alku- ja jatko-kenttien arvoja.
 		#
-#		elif ((nsyl > 2) and (jatko == u"arvailla")):
-#			alku = alku[:-2]
 		elif (jatko == u"rakentaa"):
 			alku = wordform[:-4]
-#		elif (jatko in [u"onneton", u"alaston"]):
-#			alku = alku[:-1]
 		elif ((jatko == u"kuollut") and (wordform == u"neitsyt")):
 			jatko = u"neitsyt"
 		elif ((jatko == u"ori") and (wordform == u"ori")):
 			alku = u"or"
-		elif (jatko == u"kuollut"):
-			if (wordform[-3] == u"n"):
-				jatko = u"punonut"
-			elif (wordform[-3] == u"r"):
-				jatko = u"purrut"
-			elif (wordform[-3] == u"s"):
-				jatko = u"juossut"
-			alku = alku[:-1]
+#		elif (jatko == u"kuollut"):
+#			if (wordform[-3] == u"n"):
+#				jatko = u"punonut"
+#			elif (wordform[-3] == u"r"):
+#				jatko = u"purrut"
+#			elif (wordform[-3] == u"s"):
+#				jatko = u"juossut"
+#			alku = alku[:-1]
 		elif ((nsyl > 2) and (jatko == u"vastaus") and
 		      (rx != None) and (d != None) and ((d['aivoitus'] != None) or (d['jaotus'] != None))):
 			#

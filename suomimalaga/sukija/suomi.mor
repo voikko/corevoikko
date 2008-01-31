@@ -211,7 +211,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
 #    ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
 
     if (tavuviiva in $oikea.jatko) then
-      result $vasen + <[alku: $sana] + $oikea>,
+      result <[alku: $sana] + $oikea>,
              rules nimisana,
                    laatusana,
                    nimi_laatusana,
@@ -221,27 +221,29 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
                    etuliite;
     end;
     if (@nimisanasta_johdettu_laatusana * $oikea.jatko /= <>) then
-      result $vasen + <[alku: $sana] + $oikea>, rules nimisanasta_johdettu_laatusana;
+      result <[alku: $sana] + $oikea>, rules nimisanasta_johdettu_laatusana;
     end;
     if (@nimisanasta_johdettu_nimisana * $oikea.jatko /= <>) then
-      result $vasen + <[alku: $sana] + $oikea>, rules nimisanasta_johdettu_nimisana;
+      result <[alku: $sana] + $oikea>, rules nimisanasta_johdettu_nimisana;
     end;
     if (@nimi_laatusanan_johdin * $oikea.jatko /= <>) then
-      result $vasen + <[alku: $sana] + $oikea>, rules nimi_laatusanan_johdin;
+      result <[alku: $sana] + $oikea>, rules nimi_laatusanan_johdin;
     end;
     if (omistusliite in $oikea.jatko) then
-      result $vasen + <[alku: $sana] + $oikea>, rules omistusliite;
+      result <[alku: $sana] + $oikea>, rules omistusliite;
     end;
     if (liitesana in $oikea.jatko) then
-      result $vasen + <[alku: $sana] + $oikea>, rules liitesana;
+      result <[alku: $sana] + $oikea>, rules liitesana;
     end;
     if (liitesana2 in $oikea.jatko) then
-      result $vasen + <[alku: $sana] + $oikea>, rules liitesana2;
+      result <[alku: $sana] + $oikea>, rules liitesana2;
     end;
     if (loppu in $oikea.jatko) then
-      result $vasen + <[alku: $sana] + $oikea>, rules loppu;
+      result <[alku: $sana] + $oikea>, rules loppu;
     end;
-    result $vasen + <[alku: $sana] + $oikea>, rules sijapääte;
+#define $b := transmit ($oikea);
+#define $c := transmit ($sana);
+    result <[alku: $sana] + $oikea>, rules sijapääte;
   end;
   stop;
 end;
@@ -1256,6 +1258,8 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"romani">,    <"alainen">>,
       <<"rondo">,     <"letto">>,
       <<"rusi">,      <"koi", "noita">>,
+      <<"rulla">,     <"lautailla">>,     # On oma sanansa.
+      <<"sala">,      <"kuljettaa">>,     # On oma sanansa.
       <<"salme">,     <"kivi", "oja", "perä", "suu">>,
       <<"Sam">,       <"maa">>,
       <<"samainen">,  <"tuta">>,
@@ -1264,7 +1268,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"sivula">,    <"usea">>,
       <<"snellman">,  <"laki">>,
       <<"soinen">,    <"aari">>,
-      <<"sola">,      <"koi">>,    # Sola+koi(hin).
+      <<"sose">,      <"uros">>,
       <<"sota", "säihky">, <"väkä">>,
       <<"sportti">,   <"suu">>,
       <<"suo">,       <"musti", "nina">>,
