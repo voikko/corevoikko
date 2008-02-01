@@ -240,6 +240,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "oy", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # osakeyhtiö
 [alku: "pc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # parsek(ia); pesonal computer
 [alku: "PC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # personal computer
+[alku: "pH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qj"];
 [alku: "pj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä]; # puheenjohtaja
 [alku: "pj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # puheenjohtaja
 [alku: "pm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];

@@ -913,11 +913,13 @@ ohhoijaa
 ohoh
 ohoi
 oijoi
+pai
 pas
 phui
 phyi
 ptruu
 presiis
+prosit
 pus
 pusi
 pyh
@@ -952,7 +954,7 @@ yhdeksäinen
 yks
 ysi
 
-# Murteellisia, puhekielisiä tai vanhoja seikkasanoja
+# Murteellisia, puhekielisiä, harvinaisia tai vanhoja seikkasanoja
 ainiaksi
 ainian
 ajetuksissa
@@ -1045,26 +1047,54 @@ näämmä
 nääs
 näät
 näätsen
+olakkain
+oudokseltaan
 out
 pahimmoiksi
 pahimmoillaan
 pahimmoilleen
 pahki
 pahuksesti
+paisuksiin
+paisuksissa
+pakahduksiin
+pakahduksissa
+pakahduksissaan
+pakanasti
 paraiksi
 paraiten
+parastaikaa
 peevelisti
 peijakkaasti
 penteleesti
+per
 peremmä
 perhanasti
+perätyksin
 pikimmiltä
 pikimmiltään
 pikimmältä
 pikimmältään
+pilkkoisen
+pinnakkain
 piupaut
+pohjoisemmas
 poies
 prikulleen
+päädytysten
+pääkkäin
+päällettäin
+päällimmiten
+päällimpänä
+pömpöllään
+pöyhölle
+pöyhölleen
+pöyhöllä
+pöyhöllään
+quasi
+rajakkain
+rajatuksin
+rajatusten
 ranttaliksi
 rapiat
 sassiin
@@ -1155,6 +1185,7 @@ haploidinen # halploidi
 heksagoninen # heksagoni
 mentorointi # mentoroida
 metkasti # metka
+pneumaattisesti # pneumaattinen
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
