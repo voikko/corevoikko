@@ -165,7 +165,7 @@ words = [u"aikalainen", u"alaisuus",
 	 u"ohutsuoli", u"oikeistolainen", u"oikeus", u"opetus", u"otto",
          u"pakolainen", u"pito", u"poltto",
 	 u"rivittyä", u"romahdusmainen", u"ruskettua", u"rusketus",
-	 u"siirtolainen", u"sisäänajo", u"sisäänmeno", u"sisääntulo",
+	 u"siirtolainen", u"sisäänajo", u"sisäänmeno", u"sisääntulo", u"strippaus",
 	 u"tietynlainen", u"trotskilainen", u"tuonti", u"tupalainen", u"työläinen",
 	 u"täysihoito", u"täysihoitola",
 	 u"vajaamielinen", u"vasemmistolainen", u"veto", u"voima", u"wrightiläinen", u"väärinkäsitys",
@@ -454,8 +454,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if (rx_end.match(wordform) != None):
 #			print ("Ei tarvita: " + wordform)
 			continue
-#		if (((wordform == u"neitsyt") and (jatko == u"airut")) or
-#		    ((wordform == u"ori")     and (jatko == u"risti"))):
 		if ((wordform == u"ori") and (jatko == u"risti")):
 #			print ("Ei tarvita: " + wordform)
 			continue
@@ -510,25 +508,11 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko = u"vilkas"
 		elif ((jatko == u"vieras") and (d != None) and (d['utelias_ankerias'] != None)):
 			jatko = u"utelias"
-##		elif (jatko == u"jättää"):
-##			jatko = u"heittää"
 		#
 		# Korjataan alku- ja jatko-kenttien arvoja.
 		#
 		elif (jatko == u"rakentaa"):
 			alku = wordform[:-4]
-		elif ((jatko == u"kuollut") and (wordform == u"neitsyt")):
-			jatko = u"neitsyt"
-		elif ((jatko == u"ori") and (wordform == u"ori")):
-			alku = u"or"
-#		elif (jatko == u"kuollut"):
-#			if (wordform[-3] == u"n"):
-#				jatko = u"punonut"
-#			elif (wordform[-3] == u"r"):
-#				jatko = u"purrut"
-#			elif (wordform[-3] == u"s"):
-#				jatko = u"juossut"
-#			alku = alku[:-1]
 		elif ((nsyl > 2) and (jatko == u"vastaus") and
 		      (rx != None) and (d != None) and ((d['aivoitus'] != None) or (d['jaotus'] != None))):
 			#

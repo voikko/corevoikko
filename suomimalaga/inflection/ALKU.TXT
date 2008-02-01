@@ -84,13 +84,6 @@ allo_rule generate_allos ($tietue):
   end;
 
 
-  # Nämä sanat tunnistetaan yhdyssanoina.
-  #
-#  if (($tietue.perusmuoto /= nil) and
-#      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
-#    stop;
-#  end;
-
   # Paikannimien jälkiliitteet.
   #
   if ($tietue.perusmuoto in <"joki", "järvi",
