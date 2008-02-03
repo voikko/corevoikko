@@ -927,6 +927,7 @@ röh
 selkis
 skool
 so
+sorry
 sun
 sus
 tse
@@ -1097,20 +1098,60 @@ rajatuksin
 rajatusten
 ranttaliksi
 rapiat
+rinnatusten
+ryypyksiin
+ryypyksissä
+rökkiin
+rökkiinsä
 sassiin
 sees
+seinäkkäin
+seinäkkäinen
+seinätyksin
+seinätysten
 seisoalla
 seisoallaan
 seisoalle
 seisoalleen
 seisoalta
 seisoaltaan
+selikkäin
+seläkkäin
+sepposen
+seutuville
+seutuvilta
+sikkuraan
+sikkuralla
+sikkurallaan
+sikkuralle
+sikkuralleen
+sikkurassa
+silko
+sillaikaa
+silmikkäin
+silmityksin
+silmitysten
 sinnemmä
 sinuiksi
 sinälleen
 sinältään
 sisemmä
+sisemmäs
+sisimmäs
+sisättäin
+sisätyksin
+sisätysten
+sivukkain
 sojolla
+sojollaan
+sojolle
+sojolleen
+sojoon
+sojossa
+sokkosilla
+sokkosille
+sotasilla
+sotasille
 sotkeuksiin
 sotkeuksissa
 sotkeuksista
@@ -1120,9 +1161,30 @@ sotkoksista
 sotkuksiin
 sotkuksissa
 sotkuksista
+suht
+suhtkoht
+suitsait
 sulkeuksiin
 sulkeuksissa
+sylityksin
+sylitysten
 synkassa
+synkkaan
+syssyyn
+syvemmäs
+säilytteille
+säilytteillä
+säntilleen
+taa
+taaemma
+taajalti
+taamma
+taammaksi
+taammas
+taampaa
+taampana
+taemma
+taimmas
 tuiteriin
 tuiterissa
 tukkeuksiin
@@ -1175,6 +1237,7 @@ vaki-
 # Yhdyssanoja ja johdoksia, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
 # oikolukusanastoon
 adsorbointi # adsorboida
+analgeettisesti # analgeettinen
 bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata

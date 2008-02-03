@@ -775,6 +775,8 @@
 [perusmuoto: "pörhössä", alku: "pörhössä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pörhössä", alku: "pörhöön", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "radio", alku: "radioitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "rannempana", alku: "rannem", luokka: seikkasana, jatko: <sivumpana>, äs: a];
+[perusmuoto: "rannimpana", alku: "rannim", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "ratki", alku: "ratki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ratsailla", alku: "ratsai", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "ratsain", alku: "ratsain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -790,7 +792,10 @@
 [perusmuoto: "rillumarei", alku: "rillumarei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Voinee taivuttaa täydellisesti
 [perusmuoto: "rinnakkain", alku: "rinnakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ristikkäin", alku: "ristikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "rivittäin", alku: "rivittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "rohduksissa", alku: "rohduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "roppakaupalla", alku: "roppakaupalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "runsaiten", alku: "runsaiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ruti", alku: "ruti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "rutiini", alku: "rutiinisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "rutto", alku: "rutosti", luokka: nimi_laatusana, jatko: <liitesana, loppu>, äs: a];
@@ -801,6 +806,7 @@
 [perusmuoto: "saatana", alku: "saatanasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "saati", alku: "saatikka", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "saati", alku: "saati", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "saatille", alku: "saatille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sadoittain", alku: "sadoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sakeanaan", alku: "sakeanaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "salaa", alku: "salaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -813,8 +819,10 @@
 [perusmuoto: "sangen", alku: "sangen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "satamäärin", alku: "satamäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "sattumoisin", alku: "sattumoisin", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "savolaisittain", alku: "savolaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "seassa", alku: "sea", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "seassa", alku: "seka", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
+[perusmuoto: "seinempänä", alku: "seinem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "seisaalla", alku: "seisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "seisoalla", alku: "seisoa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "selin", alku: "selin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -838,6 +846,8 @@
 [perusmuoto: "silloin", alku: "silloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sillään", alku: "sillänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sillään", alku: "sillään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "silmäkkäin", alku: "silmäkkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "silmätyksin", alku: "silmätyksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "silmätysten", alku: "silmätysten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "siltään", alku: "siltänsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "siltään", alku: "siltään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -861,6 +871,8 @@
 [perusmuoto: "suinkin", alku: "suinkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suinkin", alku: "suinkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sujut", alku: "sujut", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "sukkasillaan", alku: "sukkasillaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "sukkasillaan", alku: "sukkasilleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "summamutikassa", alku: "summamutikassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppp"];
 [perusmuoto: "summanmutikassa", alku: "summanmutikassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "sunnuntaisin", alku: "sunnuntaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -870,14 +882,15 @@
 [perusmuoto: "surku", alku: "surku", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suurelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "suutuksissa", alku: "suutuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "suutuksissa", alku: "suutuksissa", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "suutuspäissä", alku: "suutuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "sydän", alku: "sydännä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "syksympänä", alku: "syksym", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "sylikkäin", alku: "sylikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "synnyinpaikkeilla", alku: "synnyinpaikkei", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppppp=pppppppppp"];
-[perusmuoto: "syrjemmällä", alku: "syrjemmä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
+[perusmuoto: "syrjempänä", alku: "syrjem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "syvälti", alku: "syvälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "sähke", alku: "sähkeitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "taa", alku: "taa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "taaemmas", alku: "taaemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taaimmaksi", alku: "taaimmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
