@@ -1249,9 +1249,16 @@ heksagoninen # heksagoni
 mentorointi # mentoroida
 metkasti # metka
 pneumaattisesti # pneumaattinen
+santsaus # santsata
+shoppailla # shopata
+shoppailu # shopata
+skimbaus # skimbata
+spiikkaus # spiikata
+splittaus # splitata
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
+sumplaus # sumplata
 tunnelointi # tunneloida
 valkkaus # valkata
 
