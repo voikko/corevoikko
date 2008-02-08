@@ -501,8 +501,9 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				alku2 = alku + u"i"  # Hevonen => hevoinen.
 			jatko2 = jatko
 			wordform2 = alku2 + u"nen"
-#			print (u"Keltainen " + wordform2 + u" " + alku2 + u" " + jatko2)
+###			print (u"Keltainen " + wordform2 + u" " + alku2 + u" " + jatko2)
 		elif (jatko in [u"asiakas", u"avokas"]):
+#		if (jatko in [u"asiakas", u"avokas"]):
 			jatko = u"iäkäs"
 		elif (jatko == u"varas"):
 			jatko = u"vilkas"
