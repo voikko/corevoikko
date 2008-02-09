@@ -930,7 +930,10 @@ so
 sorry
 sun
 sus
+tattista
+titityy
 tse
+tuku
 tuut
 tyyt
 tööt
@@ -950,6 +953,7 @@ miss
 mä
 sa
 sä
+tonne
 tää
 yhdeksäinen
 yks
@@ -1185,10 +1189,54 @@ taampaa
 taampana
 taemma
 taimmas
+taivuksiin
+taivuksissa
+talosilla
+talosille
+talvemmaksi
+talvemmalla
+talvemmalle
+talvempana
+tasakkain
+tasatusten
+tautta
+televisioitse
+tiptop
+top
 tuiteriin
 tuiterissa
 tukkeuksiin
 tukkeuksissa
+tuollaan
+tuolleen
+tuoltaan
+tuonnimmas
+typerryksiin
+typerryksissä
+typerryksistä
+tyrehdyksiin
+tyrehdyksissä
+tyrkylle
+tyrkyllä
+tälleen
+tällään
+tältään
+tännemmä
+tännimmäksi
+tännimmäs
+tännimpänä
+tännimpää
+törrölle
+törrölleen
+törröllä
+törröllään
+törölle
+törölleen
+töröllä
+töröllään
+törössä
+töröstä
+töröön
 umpisukkeloon
 umpisukkelossa
 umpisukkelosta
@@ -1246,6 +1294,7 @@ fusku # fuskata
 futismatsi # futis, matsi
 haploidinen # halploidi
 heksagoninen # heksagoni
+hömpsötys # hömpsöttää
 mentorointi # mentoroida
 metkasti # metka
 pneumaattisesti # pneumaattinen

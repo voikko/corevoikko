@@ -901,23 +901,30 @@
 [perusmuoto: "taas", alku: "taas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taasen", alku: "taasen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taemmas", alku: "taemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "takana", alku: "takaa", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "takana", alku: "takana", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "takana", alku: "taakse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "tallessa", alku: "tallessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tallessa", alku: "talteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tahallaan", alku: "tahalla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "tahansa", alku: "tahansa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taimmaksi", alku: "taimmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taimpaa", alku: "taimpaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taimpana", alku: "taimpana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnoksissa", alku: "tainnoksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnoksissa", alku: "tainnoksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnoksissa", alku: "tainnoksista", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnuksissa", alku: "tainnuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnuksissa", alku: "tainnuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnuksissa", alku: "tainnuksista", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taiten", alku: "taiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taitse", alku: "taitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taivasalla", alku: "taivasa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
+[perusmuoto: "takana", alku: "takaa", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
+[perusmuoto: "takana", alku: "takana", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
+[perusmuoto: "takana", alku: "taakse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "takaperin", alku: "takaperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "takia", alku: "takia", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "tallella", alku: "tallella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tallelle", alku: "tallelle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tallella", alku: "tallelle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tallessa", alku: "tallessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tallessa", alku: "tallesta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tallessa", alku: "talteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tanassa", alku: "tanaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tanassa", alku: "tanassa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarjolla", alku: "tarjolla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -956,10 +963,16 @@
 [perusmuoto: "toiste", alku: "toiste", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toki", alku: "toki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tokko", alku: "tokko", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "torkuksissa", alku: "torkuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "torstaisin", alku: "torstaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuhansittain", alku: "tuhansittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuhatkunta", alku: "tuhatkunta", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"]; # Oikeastaan lukusana, mutta taipumaton.
+[perusmuoto: "tuhatmäärin", alku: "tuhatmäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "tuiki", alku: "tuiki", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "tukahduksissa", alku: "tukahduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tukahduksissa", alku: "tukahduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tukehduksissa", alku: "tukehduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tukehduksissa", alku: "tukehduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tukkanuottasilla", alku: "tukkanuottas", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: a, rakenne: "=ppppp=ppppppppppp"];
 [perusmuoto: "tuohduksissa", alku: "tuohduks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
 [perusmuoto: "tuolloin", alku: "tuolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -975,11 +988,15 @@
 [perusmuoto: "turvoksissa", alku: "turvoksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "turvoksissa", alku: "turvoksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuskin", alku: "tuskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuuperruksissa", alku: "tuuperruksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuuperruksissa", alku: "tuuperruksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuuperruksissa", alku: "tuuperruksisa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuusan", alku: "tuusan", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tykkänään", alku: "tykkänään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tykö", alku: "tykö", luokka: seikkasana, jatko: <omistusliite, loppu>, äs: ä];
 [perusmuoto: "tykö", alku: "tyköä", luokka: seikkasana, jatko: <omistusliite, loppu>, äs: ä];
 [perusmuoto: "tykö", alku: "tykönä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "typö", alku: "typö", luokka: seikkasana, jatko: <loppu>, äs: ä]; # "typö tyhjä"
 [perusmuoto: "tyynni", alku: "tyynni", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tyystin", alku: "tyystin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tyyten", alku: "tyyten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -987,7 +1004,7 @@
 [perusmuoto: "tännempänä", alku: "tännem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "tänäpäivänä", alku: "tänäpäivänä", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "tänään", alku: "tänään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "täpö", alku: "täpö", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "täpö", alku: "täpö", luokka: seikkasana, jatko: <loppu>, äs: ä]; # "täpö täysi"
 [perusmuoto: "täpösen", alku: "täpösen", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "täpötäysi", alku: "täpötäynnä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "täsmälleen", alku: "täsmälleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
