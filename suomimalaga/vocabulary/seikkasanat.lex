@@ -472,6 +472,7 @@
 [perusmuoto: "lainkaan", alku: "lainkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "laisinkaan", alku: "laisinkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "lauantaisin", alku: "lauantaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "leikinpäiten", alku: "leikinpäiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "leikki", alku: "leikisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "leikki", alku: "leikiten", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "lerpalla", alku: "lerpalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
