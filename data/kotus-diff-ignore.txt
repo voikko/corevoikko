@@ -944,6 +944,7 @@ upsista
 vau
 voi
 yök
+ähäpiti
 
 # Murteellisia ja puhekielisiä pronomineja ja numeraaleja
 kaks
@@ -1242,7 +1243,10 @@ umpisukkelossa
 umpisukkelosta
 uppeluksiin
 uppeluksissa
+vainen
+vaineskaan
 vasiten
+vastatuksin
 vek
 veke
 veks
@@ -1250,14 +1254,27 @@ vierettäin
 vieretyksin
 vihonviimein
 vihoviimein
+vilkkaa # "kiireen vilkkaa"
+vinoittain
 vituraan
 viturallaan
 vituralleen
 viturassa
+voivuksiin
+voivuksissa
+väljälti
+väännyksiin
+väännyksissä
 yhtäänne
+yksinvaltiaasti
 ylemmä
 ylimmä
 ylimmäs
+ylössuin
+äkikseltä
+äkikseltään
+äkimmin
+äkimmiten
 
 # Etuliitteitä
 atto-
