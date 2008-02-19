@@ -1007,6 +1007,7 @@ jänskästi
 kait
 kanttuvei
 kaput
+karttusilla
 kauemma
 kauimma
 kauintaan
@@ -1307,14 +1308,22 @@ bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata
 elvistely # elvistellä
+endokrinologisesti # endokrinologinen
+foniatrisesti # foniatrinen
 fusku # fuskata
 futismatsi # futis, matsi
+gnostisistisesti # gnostisistinen
 haploidinen # halploidi
 heksagoninen # heksagoni
 hömpsötys # hömpsöttää
 mentorointi # mentoroida
 metkasti # metka
 pneumaattisesti # pneumaattinen
+profylaktisesti # profylaktinen
+profylaktisuus # profylaktinen
+reflektorisesti # reflektorinen
+reflektorisuus # reflektorinen
+reteästi # reteä
 santsaus # santsata
 shoppailla # shopata
 shoppailu # shopata
