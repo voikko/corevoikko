@@ -1197,9 +1197,8 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"krim">,           <"naali">>,  # Krimi+naali.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "luja", "luksus", "luminen", "luu">>,
-##      <<"kymmen">,    <"vuota">>,
-    <<"kymmen", "kymmenen">, <"vuota">>,
-      <<"laaja">,     <"kaista">>,  # On sanastossa.
+      <<"kymmen", "kymmenen">, <"vuota">>,
+      <<"käsin">,     <"oja", "ukki">>,
       <<"lainen">,    <"kala", "kasti", "kistu", "kuri", "kuu">>,
       <<"lakka">,     <"rissa">>,
       <<"lehdes">,    <"säkä", "sää">>,

@@ -36,6 +36,11 @@
 # tiedot-listassa voi käyttää symbolia ei_ysj estämään etuliitteen käyttö
 # muualla kuin sanan alussa.
 
+# Etuliitteille, joissa on yhdysviiva lopussa ja jotka ovat sanastossa myös
+# omina nimi- tai laatusanoina tai etuliitteinä (esim. "jazz-", "online")
+# kannatta laittaa tiedot-kenttään symboli ei_sukija, koska Sukija-versiossa
+# yhdysviiva kelpaa  minkä tahansa etuliitteen jälkeen.
+
 [perusmuoto: "aero", alku: "aero", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "agro", alku: "agro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "aikakaus", alku: "aikakaus", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pppp=pppp"];
@@ -53,7 +58,7 @@
 [perusmuoto: "anarko", alku: "anarko", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>]; # -kapitalismi, -kommunismi.
 [perusmuoto: "anglo", alku: "anglo", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];   # On sana: "anglo saksi".
 [perusmuoto: "anti", alku: "anti", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "approbatur-", alku: "approbatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pp=pppppppp-"];
+[perusmuoto: "approbatur-", alku: "approbatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pp=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "astraali", alku: "astraali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "astro", alku: "astro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "asuin", alku: "asuin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -61,7 +66,7 @@
 [perusmuoto: "avo", alku: "avo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "bi-", alku: "bi-", luokka: etuliite, jatko: @eln + @ell, äs: aä, rakenne: "=pp-"];
 [perusmuoto: "bio", alku: "bio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "blues-", alku: "blues-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=ppppp-"];
+[perusmuoto: "blues-", alku: "blues-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "digi", alku: "digi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "digitaali", alku: "digitaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "edestakais", alku: "edestakais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>, rakenne: "=pppp=pppppp"];
@@ -88,7 +93,7 @@
 [perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Aiheuttaa joidenkin väärien sanojen tunnistumisen, mm. *geograafia.
-[perusmuoto: "golf-", alku: "golf-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-"];
+[perusmuoto: "golf-", alku: "golf-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp-", tiedot: <ei_voikko>];
 [perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
@@ -99,7 +104,7 @@
 [perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell, äs: ä];
 [perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "improbatur-", alku: "improbatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pp=pppppppp-"];
+[perusmuoto: "improbatur-", alku: "improbatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pp=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Lähes turha.
 [perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @ell, äs: aä, tiedot: <ei_voikko>];
@@ -109,7 +114,7 @@
 [perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "islami", alku: "islami", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "itseis", alku: "itseis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "jazz-", alku: "jazz-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-"];
+[perusmuoto: "jazz-", alku: "jazz-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "julki", alku: "julki", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "jumal", alku: "jumal", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -144,7 +149,7 @@
 [perusmuoto: "kyynär", alku: "kyynär", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "käsin", alku: "käsin", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
-[perusmuoto: "laudatur-", alku: "laudatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppppp-"];
+[perusmuoto: "laudatur-", alku: "laudatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "lehmi", alku: "lehmi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "leivin", alku: "leivin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä];
@@ -186,7 +191,7 @@
 [perusmuoto: "pois", alku: "pois", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "poissa-", alku: "poissa-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppppp-", tiedot: <ei_voikko>];
 [perusmuoto: "poly", alku: "poly", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "pop-", alku: "pop-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=ppp-"];
+[perusmuoto: "pop-", alku: "pop-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=ppp-", tiedot: <ei_sukija>];
 [perusmuoto: "porvaris", alku: "porvaris", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "post-", alku: "post-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp-", tiedot: <ei_voikko>];
 [perusmuoto: "pre-", alku: "pre-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=ppp-", tiedot: <ei_voikko>];
@@ -200,7 +205,7 @@
 [perusmuoto: "refleksiivi", alku: "refleksiivi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "riippu", alku: "riippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "rinnakkais", alku: "rinnakkais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "rock-", alku: "rock-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-"];
+[perusmuoto: "rock-", alku: "rock-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "rouvas", alku: "rouvas", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "sala", alku: "sala", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
 [perusmuoto: "satunnais", alku: "satunnais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
@@ -214,7 +219,7 @@
 [perusmuoto: "sosiaali", alku: "sosiaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "sosio", alku: "sosio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "sovinnais", alku: "sovinnais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "squash-", alku: "squash-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppp-"];
+[perusmuoto: "squash-", alku: "squash-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "suhu", alku: "suhu", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "super", alku: "super", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -225,7 +230,7 @@
 [perusmuoto: "takaisin", alku: "takaisin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "tasa", alku: "tasa", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "telemark-", alku: "telemark-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp=pppp-"];
+[perusmuoto: "telemark-", alku: "telemark-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tieteis", alku: "tieteis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
