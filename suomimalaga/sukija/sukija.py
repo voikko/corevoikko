@@ -128,7 +128,7 @@ rx = re.compile(pattern, re.IGNORECASE)
 begin = u"(amerikan|jälleen|uudelleen).+"
 rx_begin = re.compile(begin, re.IGNORECASE)
 
-end = u".+(herkkä|pöllö)"
+end = u".+(herkkä|pöllö|rämeä|valmis)"
 rx_end = re.compile(end, re.IGNORECASE)
 
 
@@ -157,19 +157,26 @@ words = [u"aikalainen", u"alaisuus",
 	 u"innoittua", u"institutionalisoitua", u"itkettynyt", u"itkettyä",
 	 u"julkishallinto", u"julkissektori", u"julkistalous",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
-	 u"kansalainen", u"kansallismielinen", u"kuntalainen", u"kymmenvuotinen",
+	 u"kansalainen", u"kansallismielinen", u"kuntalainen", u"kurssilainen", u"kymmenvuotinen",
 	 u"kyyhkyläinen", u"käynti",
 	 u"laajakangas", u"laajakulma", u"laajakuva", u"lahkolainen", u"lahopuu",
-	 u"lahtelainen", u"laulattaa", u"liittolainen", u"luokkalainen", u"luontoistalous", u"lyönti",
+	 u"lahtelainen", u"laulattaa", u"liittolainen", u"lojaalisuus",
+	 u"luokkalainen", u"luontoistalous", u"lyönti",
 	 u"maallistua", u"maolainen", u"marxilainen", u"mäkitupalainen",
 	 u"nimismies",
 	 u"ohutsuoli", u"oikeistolainen", u"oikeus", u"opetus", u"otto",
          u"pakolainen", u"pito", u"poltto",
 	 u"rivittyä", u"romahdusmainen", u"ruskettua", u"rusketus",
-	 u"siirtolainen", u"sisäänajo", u"sisäänmeno", u"sisääntulo", u"strippaus",
+	 u"siirtolainen", u"sisäpiiriläinen", u"sisäänajo", u"sisäänmeno",
+	 u"sisääntulo", u"strippaus", u"säteisliike",
 	 u"tietynlainen", u"trotskilainen", u"tuonti", u"tupalainen", u"työläinen",
 	 u"täysihoito", u"täysihoitola",
-	 u"vajaamielinen", u"vasemmistolainen", u"veto", u"voima", u"wrightiläinen", u"väärinkäsitys",
+	 u"uurteisvalas",
+	 u"vajaamielinen", u"valmistuttaa",
+	 u"valmisateria", u"valmisbetoni", u"valmismatka", u"valmisosa",
+	 u"valmispakkaus", u"valmistalo", u"valmistuote", u"valmisvaate",
+	 u"vasemmistolainen", u"veto",
+	 u"voima", u"wrightiläinen", u"väärinkäsitys",
 	 u"vähittäishinta", u"vähittäiskauppa", u"vähittäismaksu", u"vähittäismyymälä",
          u"vähittäismyynti",
 	 u"ylösnoussut", u"yritellä", u"ystävällismielinen",
@@ -197,7 +204,7 @@ words = [u"aikalainen", u"alaisuus",
 	 u"Pohja", u"Pokka", u"Portugali", u"Posti", u"Puola", u"Päivä",
 	 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Rautio", u"Rautu", u"Reima", u"Riski",
 	 u"Ruotsi", u"Ruukki", u"Ruusu", u"Rönkkö",
-	 u"Saari", u"Saksa", u"Salo", u"Satu", u"Savikko", u"Seppä",
+	 u"Saari", u"Saksa", u"Saku", u"Salo", u"Satu", u"Savikko", u"Seppä",
 	 u"Siimes", u"Sikiö", u"Sini", u"Sirkka", u"Sisko",
 	 u"Somero", u"Sorsa", u"Sulo", u"Suomi", u"Säde", u"Säteri",
 	 u"Taimi", u"Taisto", u"Tallus", u"Tanska", u"Tapani", u"Tarkka", u"Tarmo",
