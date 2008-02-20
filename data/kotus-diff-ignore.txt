@@ -1304,6 +1304,7 @@ vaki-
 # oikolukusanastoon
 adsorbointi # adsorboida
 analgeettisesti # analgeettinen
+analgeettisuus # analgeettinen
 bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata
@@ -1335,5 +1336,6 @@ sporttimalli # sportti
 sporttimallinen # sportti
 sumplaus # sumplata
 tunnelointi # tunneloida
+tähysteisesti # tähysteinen
 valkkaus # valkata
-
+vasituisesti # vasituinen
