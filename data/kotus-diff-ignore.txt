@@ -851,6 +851,7 @@ tokko # Kaksi eri merkitystä ja taivutusluokkaa.
 tuhannes # Joukahaisessa murtoluku mutta Kotuksen sanastossa järjestysluku
 vapaaherratar # Kotus 32*C+50
 siitä
+laiskajaakko # Kotus 1+50
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
