@@ -94,8 +94,8 @@
 [perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Aiheuttaa joidenkin väärien sanojen tunnistumisen, mm. *geograafia.
 [perusmuoto: "golf-", alku: "golf-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
-[perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp-", tiedot: <ei_voikko>];
 [perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp-", tiedot: <ei_voikko>];
 [perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -152,6 +152,8 @@
 [perusmuoto: "laudatur-", alku: "laudatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "lehmi", alku: "lehmi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "leivin", alku: "leivin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "liehu", alku: "liehu", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "live-", alku: "live-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "luontais", alku: "luontais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä];

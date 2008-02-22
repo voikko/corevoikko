@@ -81,6 +81,7 @@
 [perusmuoto: "avoinna", alku: "avoinna", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "edeltäkäsin", alku: "edeltäkäsin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=ppppp"]; # sanaliitto Kotuksen nettisivujen mukaan mutta yhdyssana kielitoimiston MOT-sanakirjassa
 [perusmuoto: "edemmäs", alku: "edemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "lännemmäs", alku: "lännemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edes", alku: "edes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edessä", alku: "etee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "edessä", alku: "eteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -489,7 +490,12 @@
 [perusmuoto: "liiskana", alku: "liiskaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "liiskana", alku: "liiskana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "likellä", alku: "like", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
+[perusmuoto: "likemmäs", alku: "likemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "likimain", alku: "likimain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "likimmäs", alku: "likimmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "likimmäs", alku: "likimmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "likimmäs", alku: "likimpänä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "likimmäs", alku: "likimpää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "likimäärin", alku: "likimäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "likipitäen", alku: "likipitäen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "limikkäin", alku: "limikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -527,12 +533,14 @@
 [perusmuoto: "lähemmäs", alku: "lähemmä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lähemmäs", alku: "lähemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lähes", alku: "lähes", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "lähestulkoon", alku: "lähestulkoon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "lähettyvillä", alku: "lähettyvi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "lähi", alku: "lähi", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "lähimmäs", alku: "lähimmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lähtöisin", alku: "lähtöisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "läkähdyksiin", alku: "läkähdyskiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "läkähdyksiin", alku: "läkähdyksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "läkähdyksiin", alku: "läkähdyksissään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "läkähdyksissä", alku: "läkähdyksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "läkähdyksissä", alku: "läkähdyksissään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "läkähdyksissä", alku: "läkähdyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läpi", alku: "lävitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "läpikotaisin", alku: "läpikotaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

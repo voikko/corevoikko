@@ -196,6 +196,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "lkm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # lukumäärä
 [alku: "LKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Liberaalinen kansanpuolue.
 [alku: "lokak.", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[alku: "LP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # LP-levy
 [alku: "lut.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # luterilainen
 [alku: "LVI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # lämmitys-, vesijohto- ja ilmanvaihtotekniikka 
 [alku: "maalisk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
