@@ -65,6 +65,7 @@
 [perusmuoto: "alekkain", alku: "alekkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alemmas", alku: "alemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
+[perusmuoto: "alias", alku: "alias", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "alimmas", alku: "alimmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alinomaa", alku: "alinomaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "alinomaan", alku: "alinomaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];

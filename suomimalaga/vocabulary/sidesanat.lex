@@ -18,7 +18,6 @@
 # Sidesanoja. Jatko-kentässä on oltava symboli "loppu". Voikossa mahdolliset
 # muut symbolit jätetään huomiotta.
 
-[perusmuoto: "alias", alku: "alias", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "eli", alku: "eli", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "elikkä", alku: "elikkä", luokka: sidesana, jatko: <loppu>, äs: ä];
 [perusmuoto: "että", alku: "että", luokka: sidesana, jatko: <loppu>, äs: ä];
