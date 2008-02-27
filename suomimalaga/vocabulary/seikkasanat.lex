@@ -538,6 +538,9 @@
 [perusmuoto: "lähettyvillä", alku: "lähettyvi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "lähi", alku: "lähi", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "lähimmäs", alku: "lähimmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "lähiseutuvilla", alku: "lähiseutuvilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
+[perusmuoto: "lähiseutuvilla", alku: "lähiseutuvilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
+[perusmuoto: "lähiseutuvilla", alku: "lähiseutuville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "lähtöisin", alku: "lähtöisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läkähdyksissä", alku: "läkähdyksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läkähdyksissä", alku: "läkähdyksissään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
