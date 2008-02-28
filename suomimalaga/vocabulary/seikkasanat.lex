@@ -542,8 +542,7 @@
 [perusmuoto: "lähiseutuvilla", alku: "lähiseutuvilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "lähiseutuvilla", alku: "lähiseutuville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "lähtöisin", alku: "lähtöisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "läkähdyksissä", alku: "läkähdyksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "läkähdyksissä", alku: "läkähdyksissään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "läkähdyksissä", alku: "läkähdyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "läkähdyksissä", alku: "läkähdyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läpi", alku: "lävitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "läpikotaisin", alku: "läpikotaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp"];
