@@ -844,6 +844,9 @@
 [perusmuoto: "semminkin", alku: "semminkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "senjälkeen", alku: "senjälkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "sentään", alku: "sentään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "seutuvilla", alku: "seutuvilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "seutuvilla", alku: "seutuvilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "seutuvilla", alku: "seutuville", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "siellä", alku: "siellä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "siellä", alku: "sieltä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "siellä", alku: "sinne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
