@@ -156,6 +156,8 @@
 [perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <keinonto_in>, äs: a];
 
 
+# Kuulla, nähdä, tietää {{{1
+#
 # Nämä taitavat olla ainoat sanat, jotka taipuvat tällä tavalla,
 # ja on helpointa tallentaa nämä erikseen kuin tehdä uusi sääntö.
 
