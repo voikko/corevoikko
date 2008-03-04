@@ -852,6 +852,7 @@ tuhannes # Joukahaisessa murtoluku mutta Kotuksen sanastossa järjestysluku
 vapaaherratar # Kotus 32*C+50
 siitä
 laiskajaakko # Kotus 1+50
+alias
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
