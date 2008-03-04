@@ -352,6 +352,7 @@
 [perusmuoto: "kauas", alku: "kauimmin",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kauas", alku: "kauimmas",   luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaulakkain", alku: "kaulakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kaulatusten", alku: "kaulatusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kauttaalta", alku: "kauttaalta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kauttaalta", alku: "kauttaalta", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "kelteisillä", alku: "kelteisi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: ä];
@@ -464,6 +465,7 @@
 [perusmuoto: "käsikkäin", alku: "käsikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "käsikopelolla", alku: "käsikopelolla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "käsikopelolla", alku: "käsikopelolta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "käymäseltä", alku: "käymäseltä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "köpelösti", alku: "köpelösti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köykky", alku: "köykkyyn", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "köykky", alku: "köykyssä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
