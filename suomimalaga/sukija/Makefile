@@ -4,7 +4,6 @@ sanat/latex.lex \
 sanat/jokinen.lex \
 sanat/olla-ei.lex \
 sanat/omat.lex \
-sanat/vieraskieliset.lex \
 voikonsanat/atk.lex \
 voikonsanat/erikoiset.lex \
 voikonsanat/erikoissanat.lex \
@@ -24,7 +23,7 @@ voikonsanat/suhdesanat.lex \
 voikonsanat/taivutustäydennykset.lex \
 voikonsanat/yhdyssanat.lex
 
-all: suomi.pro
+all: suomi.pro $(LEXICON)
 	malmake suomi.pro
 
 run: suomi.pro
@@ -40,13 +39,6 @@ generoi:
 clean:
 	/bin/rm -f *_l core.* transmit voikonsanat/*
 #	/bin/rm -f *_l core.* transmit [emr][123] voikonsanat/*
-
-dist:
-	cp sanat/omat.lex-jakeluversio sanat/omat.lex
-	rm sanat/omat2.lex
-	touch sanat/omat2.lex
-	rm -rf .svn */.svn */*/.svn
-
 
 transmit: ../common/transmit.cc
 	g++ -g ../common/transmit.cc -o transmit
@@ -65,45 +57,14 @@ mcopy:
 bcopy:
 	cp *_l *.pro ~/.sukija
 
-koea:
-	cat ../../sanat.koe | malaga -m suomi.pro >ka
+f1:
+	cat ../../fiwiki.txt | malaga -m suomi.pro >f1
 
-koeb:
-	cat ../../sanat.koe | malaga -m suomi.pro >kb
+s1:
+	cat ../../sanat.txt | malaga -m suomi.pro >s1
 
-
-koe1:
-	cat ../../ekirjat.txt | malaga -m suomi.pro >e1
-	cat ../../m*8 | malaga -m suomi.pro >m1
-	cat ../../raam.txt | malaga -m suomi.pro >r1
-
-koe2:
-	cat ../../ekirjat.txt | malaga -m suomi.pro >e2
-	cat ../../m*8 | malaga -m suomi.pro >m2
-	cat ../../raam.txt | malaga -m suomi.pro >r2
-
-koe3:
-	cat ../../ekirjat.txt | malaga -m suomi.pro >e3
-	cat ../../m*8 | malaga -m suomi.pro >m3
-	cat ../../raam.txt | malaga -m suomi.pro >r3
-
-ekirjat:
-	cat ../../ekirjat.txt | malaga -m suomi.pro
-
-
-# Erojen löytyminen tiedostoista ei ole virhe, siksi "-" rivien alussa.
 diff:
-	-diff m1 m2
-	-diff r1 r2
-	-diff e1 e2
+	(diff ../../fiwiki.out f1; diff ../../sanat.out s1) >foo
 
-diff2:
-	-diff m2 m3
-	-diff r2 r3
-	-diff e2 e3
-
-move:
-	mv -f e2 e1; mv -f r2 r1; mv -f m2 m1
-
-move2:
-	mv -f e3 e2; mv -f r3 r2; mv -f m3 m2
+cp1:
+	cp f1 ../../fiwiki.out; cp s1 ../../sanat.out

@@ -84,13 +84,6 @@ allo_rule generate_allos ($tietue):
   end;
 
 
-  # Nämä sanat tunnistetaan yhdyssanoina.
-  #
-#  if (($tietue.perusmuoto /= nil) and
-#      ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen">)) then
-#    stop;
-#  end;
-
   # Paikannimien jälkiliitteet.
   #
   if ($tietue.perusmuoto in <"joki", "järvi",
@@ -13536,6 +13529,12 @@ subrule taivutuskaava ($tietue, $taivutus):
   if ($tietue.luokka in <laatusana, nimi_laatusana>) and ($tietue.perusmuoto matches ".*inen") then
     $taivutus :=- <johdin_inen>;
   end;
+
+  # Esim. puhua => puhuja => puhujainen ei käy.
+  #
+##  if ($tietue.luokka in @johdin_jA) then
+##    $taivutus :=- <johdin_inen>;
+##  end;
 
 
   if ($tietue.luokka = yliaste) then

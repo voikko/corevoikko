@@ -82,7 +82,6 @@
 [perusmuoto: "kaliiberi", alku: "kaliiber", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "kaliiperi", alku: "kaliiper", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "kamppanja", alku: "kamppanj", luokka: nimisana, jatko: <karahka>, äs: a];
-[perusmuoto: "karrikatyyri", alku: "karrikatyyr", luokka: nimisana, jatko: <risti>, äs: aä];
 [perusmuoto: "kasetta", alku: "kaset", luokka: nimisana, jatko: <savotta>, äs: a];
 [perusmuoto: "kauvas", alku: "kauvaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kauvas", alku: "kauvan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

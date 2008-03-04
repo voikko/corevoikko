@@ -41,6 +41,8 @@
 [perusmuoto: "hittolainen", alku: "hittolainen", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hmm", alku: "hmm", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hoi", alku: "hoi", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "hoijaa", alku: "hoijaa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Hoh hoijaa.
+[perusmuoto: "hoh", alku: "hoi", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Hoh hoijaa.
 [perusmuoto: "hoo", alku: "hoo", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hop", alku: "hop", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "huh", alku: "huh", luokka: huudahdussana, jatko: <loppu>, äs: a];

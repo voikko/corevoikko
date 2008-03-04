@@ -281,6 +281,12 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- <johdin_inen>;
   end;
 
+  # Esim. puhua => puhuja => puhujainen ei käy.
+  #
+##  if ($tietue.luokka in @johdin_jA) then
+##    $taivutus :=- <johdin_inen>;
+##  end;
+
 
   if ($tietue.luokka = yliaste) then
     $taivutus :=- <nimisana, nimi_laatusana, laatusana, teonsana, etuliite>;
