@@ -33,7 +33,7 @@ te'vaste         te'vas-te # Ei tavutusta heittomerkin jälkeen, eikä kohdalla,
 nougat'ssa      nou-gat'ssa
 nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfeemiraja
 nougat'kaan     nou-gat'kaan
-nougat'tkaan    nou-gat't-kaan # Liitepartikkelin edestä sopii näin mutta voi jättää pääte+liitteen tavuttamattakin
+nougat'tkaan    nou-gat'tkaan
 nougat'tahan    nou-gat'ta-han
 nougat'itahan   nou-gat'ita-han
 nougat'llinen   nou-gat'lli-nen
