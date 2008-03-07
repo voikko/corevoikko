@@ -111,9 +111,10 @@ void voikko_rule_hyphenation(const wchar_t * word, char * hyphenation_points, si
 	}
 	
 	/* Split before and after long vowels */
-	for (i = 0; i < nchars - 1; i++) {
+	for (i = 1; i < nchars - 1; i++) {
 		if (wcschr(VOIKKO_VOWELS, word_copy[i]) && word_copy[i] == word_copy[i+1]) {
-			if (voikko_is_good_hyphen_position(word_copy, hyphenation_points, i, nchars))
+			if (wcschr(VOIKKO_VOWELS, word_copy[i-1]) &&
+			    voikko_is_good_hyphen_position(word_copy, hyphenation_points, i, nchars))
 				hyphenation_points[i] = '-';
 			if (voikko_is_good_hyphen_position(word_copy, hyphenation_points, i+2, nchars))
 				hyphenation_points[i+2] = '-';
