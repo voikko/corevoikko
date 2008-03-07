@@ -35,6 +35,7 @@ nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfe
 nougat'kaan     nou-gat'kaan
 nougat'tkaan    nou-gat't-kaan # Liitepartikkelin edestä sopii näin mutta voi jättää pääte+liitteen tavuttamattakin
 nougat'tahan    nou-gat'ta-han
+nougat'itahan   nou-gat'ita-han
 nougat'llinen   nou-gat'lli-nen
 juurihoitoklubi	juu-ri-hoi-to-klu-bi
 kissa/koira     kis-sa/koi-ra
@@ -72,6 +73,7 @@ nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfe
 nougat'kaan     nou-gat'kaan
 nougat'tkaan    nou-gat't-kaan
 nougat'tahan    nou-gat'ta-han
+nougat'itahan   nou-gat'i-ta-han
 nougat'llinen   nou-gat'l-li-nen
 pop-musiikkia   pop-mu-siik-ki-a
 erinomaisuutta  e-rin-o-mai-suut-ta
