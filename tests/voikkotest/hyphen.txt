@@ -30,13 +30,13 @@ www.lappeenranta.fi     www.lappeenranta.fi
 tuhataskelinen	tu-hat-as-ke-li-nen
 jok'ikinen       jok-iki-nen
 te'vaste         te'vas-te # Ei tavutusta heittomerkin jälkeen, eikä kohdalla, kun perässä on konsonantti
-nougat'ssa      nou-gat'ssa
-nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfeemiraja
-nougat'kaan     nou-gat'kaan
-nougat'tkaan    nou-gat'tkaan
-nougat'tahan    nou-gat'ta-han
-nougat'itahan   nou-gat'ita-han
-nougat'llinen   nou-gat'lli-nen
+#nougat'ssa      nou-gat'ssa
+#nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfeemiraja
+#nougat'kaan     nou-gat'kaan
+#nougat'tkaan    nou-gat'tkaan
+#nougat'tahan    nou-gat'ta-han
+#nougat'itahan   nou-gat'ita-han
+#nougat'llinen   nou-gat'lli-nen
 juurihoitoklubi	juu-ri-hoi-to-klu-bi
 kissa/koira     kis-sa/koi-ra
 hatapitk@iki.fi hatapitk@iki.fi
@@ -68,13 +68,13 @@ Ruokala.com     Ruo-ka-la.com
 http://www.lappeenranta.fi     http://www.lap-peen-ran-ta.fi
 KURETORPO:na    KU-RE-TOR-PO:na # Tuntematon lyhenne
 jok'ikinen       jok-i-ki-nen
-nougat'ssa      nou-gat's-sa
-nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfeemiraja
-nougat'kaan     nou-gat'kaan
-nougat'tkaan    nou-gat't-kaan
-nougat'tahan    nou-gat'ta-han
-nougat'itahan   nou-gat'i-ta-han
-nougat'llinen   nou-gat'l-li-nen
+#nougat'ssa      nou-gat's-sa
+#nougat'issa     nou-gat'is-sa # Heittomerkin kohdalla ei ole tavuraja vaan morfeemiraja
+#nougat'kaan     nou-gat'kaan
+#nougat'tkaan    nou-gat't-kaan
+#nougat'tahan    nou-gat'ta-han
+#nougat'itahan   nou-gat'i-ta-han
+#nougat'llinen   nou-gat'l-li-nen
 pop-musiikkia   pop-mu-siik-ki-a
 erinomaisuutta  e-rin-o-mai-suut-ta
 
