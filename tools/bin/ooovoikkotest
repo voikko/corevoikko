@@ -1,0 +1,71 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Copyright 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Test program for openoffice.org
+# This program requires OpenOffice.org, openoffice.org-voikko and python-uno.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import uno
+from subprocess import Popen
+from time import sleep
+from os import getpid
+from locale import getpreferredencoding
+from com.sun.star.lang import Locale, DisposedException
+from com.sun.star.beans import PropertyValue
+from com.sun.star.connection import NoConnectException
+
+# Start OpenOffice.org instance
+CONSTR = "pipe,name=ooovoikkotest" + str(getpid()) + ";urp;"
+ooo = Popen(["ooffice", "-accept=" + CONSTR, "-headless"])
+
+# Connect to office and obtain the service manager
+localContext = uno.getComponentContext()
+resolver = localContext.ServiceManager.createInstanceWithContext(
+           "com.sun.star.bridge.UnoUrlResolver", localContext)
+while True:
+	try:
+		ctx = resolver.resolve("uno:" + CONSTR + "StarOffice.ComponentContext")
+	except NoConnectException:
+		sleep(1)
+		continue
+	break
+smgr = ctx.ServiceManager
+
+# Initialize the hyphenator
+hyphenator = smgr.createInstance("voikko.Hyphenator")
+hyphenator.initialize(())
+locale = Locale()
+locale.Language = "fi"
+properties = ()
+
+# Hyphenate lines from stdin
+lineEnc = getpreferredencoding()
+line = sys.stdin.readline()
+while line.endswith('\n'):
+	line = unicode(line, lineEnc).strip()
+	if len(line) > 0:
+		hyphens = hyphenator.createPossibleHyphens(line, locale, properties)
+		print hyphens.PossibleHyphens.encode(lineEnc)
+	line = sys.stdin.readline()
+
+# Terminate the office instance
+desktop = smgr.createInstanceWithContext("com.sun.star.frame.Desktop", ctx)
+try:
+	desktop.terminate()
+except DisposedException:
+	pass
