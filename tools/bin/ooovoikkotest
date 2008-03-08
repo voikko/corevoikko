@@ -60,7 +60,10 @@ while line.endswith('\n'):
 	line = unicode(line, lineEnc).strip()
 	if len(line) > 0:
 		hyphens = hyphenator.createPossibleHyphens(line, locale, properties)
-		print hyphens.PossibleHyphens.encode(lineEnc)
+		if hyphens == None:
+			print line.encode(lineEnc)
+		else:
+			print hyphens.PossibleHyphens.encode(lineEnc)
 	line = sys.stdin.readline()
 
 # Terminate the office instance
