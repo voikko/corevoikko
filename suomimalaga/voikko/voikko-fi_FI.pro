@@ -4,7 +4,7 @@ info: Voikko-Dictionary-Format: 1
 info: Language-Code: fi_FI
 info: Language-Variant: standard
 info: Description: Default morphology for Voikko
-info: Copyright: 2006 Hannu Väisänen, Harri Pitkänen, Teemu Likonen
+info: Copyright: 2006-2008 Hannu Väisänen, Harri Pitkänen, Teemu Likonen
 info: License: GPL version 2 or later
 info: Update-URI: http://joukahainen.lokalisointi.org/update/index-2
 info: Lex-Version: 2
