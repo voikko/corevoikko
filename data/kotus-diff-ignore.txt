@@ -1318,6 +1318,10 @@ futismatsi # futis, matsi
 gnostisistisesti # gnostisistinen
 haploidinen # halploidi
 heksagoninen # heksagoni
+heterotsygootti # hetero, tsygootti
+heterotsygoottinen # hetero, tsygootti
+homotsygootti # homo, tsygootti
+homotsygoottinen # homo, tsygootti
 hömpsötys # hömpsöttää
 mentorointi # mentoroida
 metkasti # metka
