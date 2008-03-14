@@ -1323,6 +1323,10 @@ heterotsygoottinen # hetero, tsygootti
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 hömpsötys # hömpsöttää
+lirputella # lirputtaa
+litsahdella # litsahtaa
+longerrella # longertaa
+lupsahdella # lupsahtaa
 mentorointi # mentoroida
 metkasti # metka
 pneumaattisesti # pneumaattinen
