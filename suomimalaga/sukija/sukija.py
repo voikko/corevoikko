@@ -146,7 +146,9 @@ rx_end = re.compile(end, re.IGNORECASE)
 # grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
 #
 #        Sukija-versiossa "amerikan" on etuliite. (-:
-words = [u"aikalainen", u"alaisuus",
+#u"punanen", u"päivänen",
+words = [
+	 u"aikalainen", u"alaisuus", u"alastulo",
 	 u"amerikanenglanti", u"amerikanenglantilainen", u"amerikanjuutalainen",
          u"amerikanrauta", u"amerikansalaatti", u"amerikansuomalainen", u"amerikansuomi",
          u"arastella",
@@ -154,7 +156,7 @@ words = [u"aikalainen", u"alaisuus",
          u"freudilainen",
 	 u"halpatyö", u"hautaus", u"herraskartano", u"herrasmies", u"herraspoika",
 	 u"herrasväki",
-	 u'huiskauttaa',
+	 u'huiskauttaa', u"hyvinvoida", u"hyvinvointi",
 	 u"innoittua", u"institutionalisoitua", u"itkettynyt", u"itkettyä",
 	 u"julkishallinto", u"julkissektori", u"julkistalous",
 	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
@@ -512,16 +514,20 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if ((jatko == u"nainen") and (nsyl == 3) and
 		    (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"]) and
 		    (rx != None) and (d != None) and (d['keltainen'] != None) and
-		    (not (wordform in [u"armainen", u"omainen"]))):
+		    (not (wordform in [u"armainen", u"lukunen", u"omainen", u"osanen", u"vastuinen"]))):
 			if (wordform[-4] == u"i"):
 				alku2 = alku[:-1]    # Keltainen => keltanen.
 			else:
 				alku2 = alku + u"i"  # Hevonen => hevoinen.
 			jatko2 = jatko
 			wordform2 = alku2 + u"nen"
-###			print (u"Keltainen " + wordform2 + u" " + alku2 + u" " + jatko2)
+##			if (wordform[-4] == u"i"):
+##				alku = wordform[:-4]    # Keltainen => keltanen.
+##				jatko = u"punainen"
+##			else:
+##				jatko = u"hevoinen"
+##			print (u"Keltainen " + wordform + u" " + alku + u" " + jatko)
 		elif (jatko in [u"asiakas", u"avokas"]):
-#		if (jatko in [u"asiakas", u"avokas"]):
 			jatko = u"iäkäs"
 		elif (jatko == u"varas"):
 			jatko = u"vilkas"

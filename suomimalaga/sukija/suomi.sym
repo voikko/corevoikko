@@ -621,6 +621,8 @@ vasen;
 muuan;
 seitsemän;
 nainen;
+  punainen; # Hyväksytään myös i:ttömät muodot punanen jne.
+  hevoinen; # Hyväksytään myös i:lliset muodot.
 vastaus;
 kalleus;
 vieras;     # => vieraus

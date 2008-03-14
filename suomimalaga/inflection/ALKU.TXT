@@ -101,9 +101,16 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
+  if ($tietue.perusmuoto in <"mani", "tisu">) then
+    $tietue :=+ [tiedot: <ei_ys>];
+  end;
 
-  if ($tietue.perusmuoto = "lehdes") then
-    $tietue.tiedot :=+ <ei_ysj>;
+  if ($tietue.perusmuoto in <"lehdes", "riksi">) then
+    if ($tietue.tiedot /= nil) then
+      $tietue.tiedot :=+ <ei_ysj>;
+    else
+      $tietue :=+ [tiedot: <ei_ysj>];
+    end;
   end;
 
   if ($tietue.perusmuoto = "erityinen") then
@@ -112,7 +119,7 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.perusmuoto = "pöllö") then
     if ($tietue.luokka = nimisana) then
-       stop;
+      stop;
     elseif ($tietue.luokka = laatusana) then
       $tietue.luokka := nimi_laatusana;
     end;

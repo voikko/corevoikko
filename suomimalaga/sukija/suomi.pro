@@ -88,6 +88,8 @@ mallex: set display-line "malshow"
 mallex: set use-display yes
 malaga: set use-display yes
 
+#malaga: set robust-rule no
+
 info: Voikko-Dictionary-Format: 1
 
 

@@ -70,6 +70,7 @@
 [perusmuoto: "hihhuuli", alku: "hihhuul", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "hihuli", alku: "hihul", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "hiljempaa", alku: "hiljempaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hopeariksi", alku: "hopiariks", luokka: nimisana, jatko: <risti>, äs: ä, rakenne: "ppppp=ppppp"];
 [perusmuoto: "hulikaani", alku: "hulikaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "hulikanismi", alku: "hulikanism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "humpuukki", alku: "humpuuk", luokka: nimisana, jatko: <takki>, äs: a];
@@ -192,7 +193,6 @@
 [perusmuoto: "anex", alku: "anex", luokka: etunimi, jatko: <kalsium>, äs: a]; # Keksitty etunimi.
 [perusmuoto: "samppoo", alku: "samppo", luokka: nimisana, jatko: <trikoo>, äs: a];
 [perusmuoto: "akitatoorinen", alku: "akitatoori", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "renksu", alku: "renksu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "millon", alku: "millon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tällön", alku: "tällön", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kukeloinen", alku: "kukeloi", luokka: laatusana, jatko: <nainen>, äs: a];

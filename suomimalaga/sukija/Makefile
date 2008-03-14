@@ -37,8 +37,7 @@ generoi:
 	malmake suomi.pro
 	
 clean:
-	/bin/rm -f *_l core.* transmit voikonsanat/*
-#	/bin/rm -f *_l core.* transmit [emr][123] voikonsanat/*
+	/bin/rm -f *_l core.* transmit voikonsanat/* f1 s1 foo
 
 transmit: ../common/transmit.cc
 	g++ -g ../common/transmit.cc -o transmit
@@ -57,10 +56,10 @@ mcopy:
 bcopy:
 	cp *_l *.pro ~/.sukija
 
-f1:
+f1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 	cat ../../fiwiki.txt | malaga -m suomi.pro >f1
 
-s1:
+s1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 	cat ../../sanat.txt | malaga -m suomi.pro >s1
 
 diff:
