@@ -1350,4 +1350,4 @@ tähysteisesti # tähysteinen
 valkkaus # valkata
 vasituisesti # vasituinen
 välibosoni # bosoni
-
+meikämanne
