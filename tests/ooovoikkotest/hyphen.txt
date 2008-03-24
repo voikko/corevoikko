@@ -1,0 +1,14 @@
+["HyphMinWordLength":5, "HyphMinLeading":2, "HyphMinTrailing":2]
+koira	koi=ra
+
+["HyphMinWordLength":6, "HyphMinLeading":3, "HyphMinTrailing":2]
+koira	koira
+koiraa	koi=raa
+hevonen	hevo=nen
+
+["HyphMinWordLength":5, "HyphMinLeading":2, "HyphMinTrailing":3]
+kotoisa	ko=toisa
+koruton	ko=ru=ton
+
+["HyphMinWordLength":5, "HyphMinLeading":6, "HyphMinTrailing":6]
+koira	koira

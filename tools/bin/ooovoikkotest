@@ -21,7 +21,9 @@
 
 import sys
 import getopt
+import codecs
 import uno
+import voikkoutils
 from subprocess import Popen
 from time import sleep
 from os import getpid
@@ -30,9 +32,21 @@ from com.sun.star.lang import Locale, DisposedException
 from com.sun.star.beans import PropertyValue
 from com.sun.star.connection import NoConnectException
 
-# Finnish locale
+# Constants
 LOCALE = Locale()
 LOCALE.Language = "fi"
+ENCODING = voikkoutils.get_preference('encoding')
+SVNROOT = voikkoutils.get_preference('svnroot')
+HYPHENTESTS = SVNROOT + "/trunk/tests/ooovoikkotest/hyphen.txt"
+
+def unoPropertySeq(props):
+	propList = []
+	for (name, value) in props.items():
+		property = PropertyValue()
+		property.Name = name
+		property.Value = value
+		propList.append(property)
+	return tuple(propList)
 
 def hyphenateStdin():
 	"Hyphenate lines from stdin"
@@ -48,6 +62,50 @@ def hyphenateStdin():
 			else:
 				print hyphens.PossibleHyphens.encode(lineEnc)
 		line = sys.stdin.readline()
+
+def hyphenTests():
+	"Run the hyphenator tests"
+	try:
+		inputfile = codecs.open(HYPHENTESTS, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		section = u"(none)"
+		inputwords = []
+		expresults = []
+		while True:
+			line_orig = inputfile.readline()
+			if line_orig == u'': break
+			line = line_orig.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1: line = line[:commentstart].strip()
+			if line.startswith(u'[') and line.endswith(u']'):
+				section = line[1:-1]
+				continue
+			parts = line.split()
+			if len(parts) == 0: continue
+			inputword = parts[0].strip()
+			expresult = parts[1].strip()
+			testcount = testcount + 1
+			properties = unoPropertySeq(eval("{" + section + "}"))
+			hyphens = hyphenator.createPossibleHyphens(inputword, LOCALE, properties)
+			if hyphens == None and inputword != expresult:
+				print u'Hyphenation test failed in section "%s":' % section
+				print u'  Expected "%s", got "%s"' % (expresult, inputword)
+				failcount = failcount + 1
+			if hyphens != None and hyphens.PossibleHyphens != expresult:
+				print u'Hyphenation test failed in section "%s":' % section
+				print u'  Expected "%s", got "%s"' % (expresult, hyphens.PossibleHyphens)
+				failcount = failcount + 1
+		inputfile.close()
+		if failcount == 0:
+			print u"All %i hyphenation tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i hyphenation tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + HYPHENTESTS + "\n")
+		sys.exit(1)
 
 # Read command line options
 (opts, args) = ([], [])
@@ -85,6 +143,7 @@ hyphenator.initialize(())
 speller = smgr.createInstance("voikko.SpellChecker")
 speller.initialize(())
 
+hyphenTests()
 if "--hyphenate" in [opt[0] for opt in opts]:
 	hyphenateStdin()
 
