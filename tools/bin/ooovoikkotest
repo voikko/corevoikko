@@ -20,6 +20,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import sys
+import getopt
 import uno
 from subprocess import Popen
 from time import sleep
@@ -28,6 +29,36 @@ from locale import getpreferredencoding
 from com.sun.star.lang import Locale, DisposedException
 from com.sun.star.beans import PropertyValue
 from com.sun.star.connection import NoConnectException
+
+# Finnish locale
+LOCALE = Locale()
+LOCALE.Language = "fi"
+
+def hyphenateStdin():
+	"Hyphenate lines from stdin"
+	lineEnc = getpreferredencoding()
+	properties = ()
+	line = sys.stdin.readline()
+	while line.endswith('\n'):
+		line = unicode(line, lineEnc).strip()
+		if len(line) > 0:
+			hyphens = hyphenator.createPossibleHyphens(line, LOCALE, properties)
+			if hyphens == None:
+				print line.encode(lineEnc)
+			else:
+				print hyphens.PossibleHyphens.encode(lineEnc)
+		line = sys.stdin.readline()
+
+# Read command line options
+(opts, args) = ([], [])
+try:
+	(opts, args) = getopt.getopt(sys.argv[1:], "", ["hyphenate", "spell", "suggest"])
+except getopt.GetoptError:
+	sys.stderr.write("Usage: ooovoikkotest             (run only developer tests)\n")
+	sys.stderr.write("Usage: ooovoikkotest --hyphenate (hyphenate words from stdin)\n")
+	sys.stderr.write("Usage: ooovoikkotest --spell     (check spelling of words from stdin)\n")
+	sys.stderr.write("Usage: ooovoikkotest --suggest   (suggest corrections for words from stdin)\n")
+	sys.exit(1)
 
 # Start OpenOffice.org instance
 CONSTR = "pipe,name=ooovoikkotest" + str(getpid()) + ";urp;"
@@ -49,22 +80,13 @@ smgr = ctx.ServiceManager
 # Initialize the hyphenator
 hyphenator = smgr.createInstance("voikko.Hyphenator")
 hyphenator.initialize(())
-locale = Locale()
-locale.Language = "fi"
-properties = ()
 
-# Hyphenate lines from stdin
-lineEnc = getpreferredencoding()
-line = sys.stdin.readline()
-while line.endswith('\n'):
-	line = unicode(line, lineEnc).strip()
-	if len(line) > 0:
-		hyphens = hyphenator.createPossibleHyphens(line, locale, properties)
-		if hyphens == None:
-			print line.encode(lineEnc)
-		else:
-			print hyphens.PossibleHyphens.encode(lineEnc)
-	line = sys.stdin.readline()
+# Initialize the spell checker
+speller = smgr.createInstance("voikko.SpellChecker")
+speller.initialize(())
+
+if "--hyphenate" in [opt[0] for opt in opts]:
+	hyphenateStdin()
 
 # Terminate the office instance
 desktop = smgr.createInstanceWithContext("com.sun.star.frame.Desktop", ctx)
