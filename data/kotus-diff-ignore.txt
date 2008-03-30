@@ -853,6 +853,7 @@ vapaaherratar # Kotus 32*C+50
 siitä
 laiskajaakko # Kotus 1+50
 alias
+meikämanne
 
 # Huudahdussanoja ja muita taipumattomia puheilmaisuja
 ah
@@ -1312,10 +1313,13 @@ diureettinen # diureetti
 dokaus # dokata
 elvistely # elvistellä
 endokrinologisesti # endokrinologinen
+fillarointi # fillaroida
 foniatrisesti # foniatrinen
 fusku # fuskata
+futaaja # futata
 futismatsi # futis, matsi
 gnostisistisesti # gnostisistinen
+halstaroida # halsteroida
 haploidinen # halploidi
 heksagoninen # heksagoni
 heterotsygootti # hetero, tsygootti
@@ -1329,6 +1333,7 @@ longerrella # longertaa
 lupsahdella # lupsahtaa
 mentorointi # mentoroida
 metkasti # metka
+narkkaus # narkata
 pneumaattisesti # pneumaattinen
 profylaktisesti # profylaktinen
 profylaktisuus # profylaktinen
@@ -1350,4 +1355,4 @@ tähysteisesti # tähysteinen
 valkkaus # valkata
 vasituisesti # vasituinen
 välibosoni # bosoni
-meikämanne
+
