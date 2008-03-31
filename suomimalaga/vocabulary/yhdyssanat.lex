@@ -2838,18 +2838,18 @@
 
 # {{{2 Summayhdyssanoja (bugi #1579872)
 
-[perusmuoto: "tammi-helmikuu", alku: "tammi-helmiku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppppp-=ppppp=ppp"];
-[perusmuoto: "helmi-maaliskuu", alku: "helmi-maalisku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppppp-=pppppp=ppp"];
-[perusmuoto: "huhti-toukokuu", alku: "huhti-toukoku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppppp-=ppppp=ppp"];
-[perusmuoto: "touko-kesäkuu", alku: "touko-kesäku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppppp-=pppp=ppp"];
-[perusmuoto: "kesä-heinäkuu", alku: "kesä-heinäku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=pppp-=ppppp=ppp"];
-[perusmuoto: "heinä-elokuu", alku: "heinä-eloku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppppp-=ppp=ppp"];
-[perusmuoto: "elo-syyskuu", alku: "elo-syysku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppp-=pppp=ppp"];
-[perusmuoto: "syys-lokakuu", alku: "syys-lokaku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=pppp-=pppp=ppp"];
-[perusmuoto: "loka-marraskuu", alku: "loka-marrasku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=pppp-=pppppp=ppp"];
-[perusmuoto: "marras-joulukuu", alku: "marras-jouluku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=pppppp-=ppppp=ppp"];
-[perusmuoto: "joulu-tammikuu", alku: "joulu-tammiku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen>, rakenne: "=ppppp-=ppppp=ppp"];
-[perusmuoto: "jääkaappi-pakastin", alku: "jääkaappi-pakasti", luokka: nimisana, jatko: <uistin>, äs: a, rakenne: "=ppppppppp-=pppppppp"];
+[perusmuoto: "tammi-helmikuu", alku: "tammi-helmiku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=ppppp=ppp"];
+[perusmuoto: "helmi-maaliskuu", alku: "helmi-maalisku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=pppppp=ppp"];
+[perusmuoto: "huhti-toukokuu", alku: "huhti-toukoku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=ppppp=ppp"];
+[perusmuoto: "touko-kesäkuu", alku: "touko-kesäku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=pppp=ppp"];
+[perusmuoto: "kesä-heinäkuu", alku: "kesä-heinäku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=pppp-=ppppp=ppp"];
+[perusmuoto: "heinä-elokuu", alku: "heinä-eloku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=ppp=ppp"];
+[perusmuoto: "elo-syyskuu", alku: "elo-syysku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppp-=pppp=ppp"];
+[perusmuoto: "syys-lokakuu", alku: "syys-lokaku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=pppp-=pppp=ppp"];
+[perusmuoto: "loka-marraskuu", alku: "loka-marrasku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=pppp-=pppppp=ppp"];
+[perusmuoto: "marras-joulukuu", alku: "marras-jouluku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=pppppp-=ppppp=ppp"];
+[perusmuoto: "joulu-tammikuu", alku: "joulu-tammiku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=ppppp=ppp"];
+[perusmuoto: "jääkaappi-pakastin", alku: "jääkaappi-pakasti", luokka: nimisana, jatko: <uistin>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppppp-=pppppppp"];
 
 # vim: nowrap filetype=conf
 # vim600: foldmethod=marker

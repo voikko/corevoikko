@@ -1278,7 +1278,9 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"krim">,           <"naali">>,  # Krimi+naali.
       <<"kulti">,          <"voi", "vuo">>,
       <<"kuu">,            <"kausittainen", "lakka", "luja", "luksus", "luminen", "luu">>,
+      <<"kuuma", "kylmä">, <"valssata">>,
       <<"kure">,           <"misu">>,
+      <<"kyllänen">,       <"tie">>,
       <<"kymmen", "kymmenen">, <"vuota">>,
       <<"käsin">,     <"oja", "ukki">>,
       <<"lainen">,    <"kala", "kasti", "kistu", "kuri", "kuu">>,
@@ -1350,7 +1352,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"rondo">,     <"letto">>,
       <<"rusi">,      <"koi", "noita">>,
       <<"rulla">,     <"lautailla">>,     # On oma sanansa.
-      <<"sala">,      <"kuljettaa">>,     # On oma sanansa.
+      <<"sala">,      <"kuljettaa", "manner">>,  # Ei sala+mantereista.
       <<"salme">,     <"kivi", "oja", "perä", "suu">>,
       <<"Sam">,       <"maa">>,
       <<"samainen">,  <"tuta">>,
@@ -1374,8 +1376,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"tee">,       <"maa">>,    # Tee+maa+n.
       <<"terve">,     <"yty">>,
       <<"terä">,      <"sportti">>,
-      <<"tie">,       <"tee", "tie", "toinen", "tokko">>,
-##      <<"tisu">,      <"osittaa">>,   # Varasto+in+tisu+ositus.
+      <<"tie">,       <"naukaista", "tee", "tie", "toinen", "tokko">>,
       <<"tiu">,       <"kimma">>,
       <<"timo">,      <"tie">>,
       <<"tois">,      <"tapa">>,
@@ -1385,6 +1386,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"traditio">,  <"naali">>,
       <<"ulko">,      <"naida", "nainen">>,
       <<"ulos">,      <"pää", "tavi", "tuma", "tupa", "tuttava">>,
+      <<"ura">,       <"naukaista">>,  # Ura+naukaisija.
       <<"uus">,       <"arpoa">>,
       <<"vaja">,      <"nainen">>,
       <<"varus">,     <"tee">>,    # Varus+tee+t.
