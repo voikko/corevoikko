@@ -1327,12 +1327,15 @@ heterotsygoottinen # hetero, tsygootti
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 hömpsötys # hömpsöttää
+kaltevointi # kaltevoida
+kolmiointi # kolmioida
 lirputella # lirputtaa
 litsahdella # litsahtaa
 longerrella # longertaa
 lupsahdella # lupsahtaa
 mentorointi # mentoroida
 metkasti # metka
+metastasointi # metastasoida
 narkkaus # narkata
 pneumaattisesti # pneumaattinen
 profylaktisesti # profylaktinen
