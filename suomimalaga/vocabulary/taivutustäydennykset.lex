@@ -186,6 +186,39 @@
 # ehdottoman tarkasti kielenhuollon suositusten mukaisia vaan on harkittu
 # tilannekohtaisesti mahdollisimman luonnollisia taivutusmuotoja.
 
+# Brontë [bronti] {{{2
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_n>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <osanto_A>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <olento_nA>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <sisäolento_ssA>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontëen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontëën", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
+
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_jen>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_in>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_iT>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <osanto_jA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <osanto_itA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <olento_inA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <tulento_iksi>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <sisäolento_issA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <sisäeronto_istA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <sisätulento_ihin>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulko_olento_illA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkoeronto_iltA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
+#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
+
 # Dalí {{{2
 
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
