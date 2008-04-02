@@ -185,6 +185,7 @@
 # taivutusluokkien kautta. Tässä listatut sanatkaan eivät välttämättä ole
 # ehdottoman tarkasti kielenhuollon suositusten mukaisia vaan on harkittu
 # tilannekohtaisesti mahdollisimman luonnollisia taivutusmuotoja.
+# (Illatiivin osalta nämä liittyvän bugiin #1829873)
 
 # Brontë [bronti] {{{2
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
