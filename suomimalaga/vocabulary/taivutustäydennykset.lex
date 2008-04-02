@@ -186,6 +186,54 @@
 # ehdottoman tarkasti kielenhuollon suositusten mukaisia vaan on harkittu
 # tilannekohtaisesti mahdollisimman luonnollisia taivutusmuotoja.
 
+# Dalí {{{2
+
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_n>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <osanto_A>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <olento_nA>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <tulento_ksi>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <sisäolento_ssA>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalíin", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalíín", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
+
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_en>, äs: a];
+
+# Luonnollinen taivutus mutta mahdollisesti ei normin mukainen
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <osanto_jA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <olento_inA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <tulento_iksi>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <sisäolento_issA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <sisäeronto_istA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <sisätulento_ihin>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <ulko_olento_illA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <ulkoeronto_iltA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
+
+# Ilmeisesti normin mukainen taivutus
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_in>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_jen>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <osanto_itA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <olento_inA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <tulento_iksi>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <sisäolento_issA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <sisäeronto_istA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <sisätulento_ihin>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulko_olento_illA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkoeronto_iltA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
+#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 # Jersey [dzöösi] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
