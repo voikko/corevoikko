@@ -1337,9 +1337,14 @@ mentorointi # mentoroida
 metkasti # metka
 metastasointi # metastasoida
 narkkaus # narkata
+palpointi # palpoida
+parafinointi # parafinoida
 pneumaattisesti # pneumaattinen
+polaroitua # polaroida
+polymeroitua # polymerisoida
 profylaktisesti # profylaktinen
 profylaktisuus # profylaktinen
+psykologiointi # psykologioida
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
 reteästi # reteä
