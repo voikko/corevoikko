@@ -1352,12 +1352,15 @@ santsaus # santsata
 shoppailla # shopata
 shoppailu # shopata
 skimbaus # skimbata
+smirgelöinti # smirgelöidä
+somatisointi # somatisoida
 spiikkaus # spiikata
 splittaus # splitata
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
 sumplaus # sumplata
+teksturointi # teksturoida
 tunnelointi # tunneloida
 tähysteisesti # tähysteinen
 valkkaus # valkata
