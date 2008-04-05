@@ -282,6 +282,36 @@
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
+# Linné [linnee] {{{2
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_n>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_tA>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_nA>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tulento_ksi>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisäolento_ssA>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: ä];
+[perusmuoto: "Linné", alku: "Linnéhen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisätulento_seen>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <vajanto_ttA>, äs: ä];
+
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nimentö_t>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_iT>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_itA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_inA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tulento_iksi>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisäolento_issA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisäeronto_istA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisätulento_ihin>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulko_olento_illA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkoeronto_iltA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <vajanto_ittA>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <seuranto_ine>, äs: ä];
+#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <keinonto_in>, äs: ä];
+
 # Monroe [manrou] {{{2
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
