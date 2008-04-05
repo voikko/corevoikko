@@ -186,7 +186,7 @@
 [perusmuoto: "duoraitiotie", alku: "duoraitiot", luokka: nimisana, jatko: <tie>, äs: ä, rakenne: "=ppp=pppppp=ppp"];
 [perusmuoto: "karkutie", alku: "karkut", luokka: nimisana, jatko: <tie>, äs: ä, rakenne: "=ppppp=ppp"]; # Esim. tie-sanan kirjoitusasuksi
 [perusmuoto: "tietää", alku: "tie", luokka: teonsana, jatko: <taitaa>, äs: ä];
-[perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a];
+[perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "tosi", alku: "to", luokka: nimi_laatusana, jatko: <tosi>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
 [perusmuoto: "uunituore", alku: "uunituore", luokka: laatusana, jatko: <terve>, äs: a, rakenne: "=pppp=ppppp"];
