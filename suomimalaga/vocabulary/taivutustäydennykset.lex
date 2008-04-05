@@ -249,6 +249,36 @@
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
+# Cowboy [kauboi] {{{2
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <omanto_n>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <olento_nA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <tulento_ksi>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisäolento_ssA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboyhyn", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppp=ppp"];
+
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <nimentö_t>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <omanto_iT>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <osanto_itA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <olento_inA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <tulento_iksi>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisäolento_issA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisäeronto_istA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisätulento_ihin>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulko_olento_illA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkotulento_ille>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <vajanto_ittA>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <seuranto_ine>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <keinonto_in>, äs: a, rakenne: "=ppp=ppp"];
+
 # Dalí {{{2
 
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
@@ -369,6 +399,36 @@
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
+
+# Playboy [pleiboi] {{{2
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <olento_nA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <tulento_ksi>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisäolento_ssA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboyhyn", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppp=ppp"];
+
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <omanto_iT>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <osanto_itA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <olento_inA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <tulento_iksi>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisäolento_issA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisäeronto_istA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisätulento_ihin>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulko_olento_illA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkoeronto_iltA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkotulento_ille>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <seuranto_ine>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <keinonto_in>, äs: a, rakenne: "=pppp=ppp"];
 
 # Poe [pou] {{{2
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
