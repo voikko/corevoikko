@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2008 Harri Pitkänen (hatapitk@iki.fi)
 # Web interface for Finnish linguistic tools based on Voikko
 
 # This program is free software; you can redistribute it and/or modify
@@ -18,8 +18,10 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from mod_python import apache
+from tempfile import mkstemp
 
 import sys
+import os
 import subprocess
 import urllib
 import xml.sax.saxutils
@@ -234,6 +236,83 @@ def spell(req, spellstring = None):
 	_write(req, u'</form>\n')
 	_write(req, u'</div></body></html>\n')
 
+def _poErrorHeader(headerLine):
+	errors = headerLine.split(", check spelling of ")
+	out = u""
+	for error in errors:
+		sepIndex = error.find(" ")
+		word = error[:sepIndex]
+		out += "\n<span class='virhe'>" + _escape_html(word) + "</span> "
+		out += "(" + _escape_html(error[sepIndex+11:])
+	return out
+
+def _highlightPofilter(req, file):
+	"Reads pofilter output from a file and writes it to request with highlighting."
+	line = unicode(file.readline(), "UTF-8")
+	while line != "":
+		if line.startswith("# (pofilter) spellcheck:"):
+			_write(req, _poErrorHeader(line[43:]))
+		elif line.startswith("#"):
+			pass
+		else:
+			_write(req, _escape_html(line))
+		line = unicode(file.readline(), "UTF-8")
+
+def pospell(req, pofile = None):
+	req.content_type = "text/html; charset=UTF-8"
+	req.send_http_header()
+	_write(req, u'''
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+ <head>
+  <title>Po-oikolukija</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <style type="text/css">
+    span.virhe { font-size: 1.3em; color: #bb0000; font-weight: bold }
+  </style>
+ </head>
+ <body>
+ <div class="topbar">
+  <h1><a href="..">Joukahainen</a> &gt; <a href="../webvoikko">Webvoikko</a> &gt;
+      Po-oikoluku</h1>
+  <div class="clear"></div>
+  </div>
+ <div class="main">
+ ''')
+	_write(req, u'<form enctype="multipart/form-data" method="post" action="">\n')
+	_write(req, u'<p>Valitse oikoluettava po-tiedosto: ')
+	_write(req, u'<input type="file" name="pofile" /> ')
+	_write(req, u'<input type="submit" value="Oikolue!" /></p>\n')
+	_write(req, u'</form>\n')
+	
+	if pofile != None:
+		_write(req, (u'<p>Alla po-tiedoston <kbd>%s</kbd> oikoluvun tulokset. ' \
+		          + u'Mahdolliset kirjoitusvirheet on ' \
+		          + u'värjätty punaiseksi.</p>\n') % pofile.filename)
+		_write(req, u'<pre style="border: 1px solid black">')
+		poInputFile = pofile.file
+		(inTempHandle, inTempName) = mkstemp(".po")
+		(outTempHandle, outTempName) = mkstemp(".po")
+		inTempFile = os.fdopen(inTempHandle, "w")
+		inTempFile.write(poInputFile.read())
+		p = subprocess.Popen(["pofilter", "--lang=fi", "-tspellcheck", "--gnome",
+		                     "-i", inTempName, "-o", outTempName])
+		p.wait()
+		inTempFile.close()
+		os.remove(inTempName)
+		outTempFile = os.fdopen(outTempHandle, "r")
+		_highlightPofilter(req, outTempFile)
+		outTempFile.close()
+		try:
+			os.remove(outTempName)
+		except:
+			_write(req, u"<i>(ei virheitä)</i>")
+		_write(req, u'</pre>\n')
+	
+	_write(req, u'</div></body></html>\n')
+
+
 def index(req, spellstring = None):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
@@ -276,6 +355,7 @@ def index(req, spellstring = None):
  <ul>
   <li><a href="/webvoikko/spell">Siirry oikolukupalveluun</a></li>
   <li><a href="/webvoikko/hyphenate">Siirry tavutuspalveluun</a></li>
+  <li><a href="/webvoikko/pospell">Siirry po-tiedostojen oikolukupalveluun</a></li>
  </ul>
  <p>Webvoikko (kuten Voikko muutenkin) on kokonaisuudessaan vapaata ohjelmistoa. Se on saatavilla
   maksutta GPL-lisenssillä, joten jos haluat, voit asentaa ohjelmiston myös omalle palvelimellesi
