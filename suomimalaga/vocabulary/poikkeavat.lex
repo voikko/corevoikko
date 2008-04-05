@@ -143,7 +143,7 @@
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
