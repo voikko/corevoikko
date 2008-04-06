@@ -298,9 +298,15 @@ def pospell(req, pofile = None, potype = "gnome"):
   </div>
  <div class="main">
  <ul>
- <li>Toistaiseksi vain UTF-8-koodattujen po-tiedostojen oikoluku on mahdollista
-     tämän www-liittymän kautta.</li>
+ <li>Toistaiseksi vain UTF-8-koodattujen
+     <acronym title="GNU Gettext Portable Object">po-tiedostojen</acronym> oikoluku on
+     mahdollista tämän www-liittymän kautta.</li>
  <li>Oikoluettavan tiedoston enimmäiskoko on %s kilotavua.</li>
+ <li>Tämä www-palvelu ei osaa aina käsitellä oikein kaksoispisteen tai yhdysmerkin
+     sisältäviä sanoja. Myös ä- ja ö-kirjaimet pikanäppäiminä tuottavat vaikeuksia.
+     Osa näistä ongelmista korjataan tulevissa versioissa. Muista sanasto-ongelmista
+     voi raportoida <a href="http://joukahainen.lokalisointi.org/ehdotasanoja">Voikon
+     kehittäjille</a>.</li>
  </ul>
  <form enctype="multipart/form-data" method="post" action="">
  <p>Oikoluettava po-tiedosto: <input type="file" name="pofile" /><br />
