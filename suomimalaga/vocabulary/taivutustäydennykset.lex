@@ -99,8 +99,10 @@
 # Kiva-sanan kiv-kantainen superlatiivi etuvokaalisena {{{1
 # (Yksikön nominatiivi ilman liitteitä tunnistuu normaalin taivutuksen kautta.)
 
-[perusmuoto: "kiva", alku: "kivin", luokka: laatusana, jatko: <liitesana, osanto_tA>, äs: ä];
+[perusmuoto: "kiva", alku: "kivin", luokka: laatusana, jatko: <liitesana>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <omanto_n>, äs: ä];
+[perusmuoto: "kiva", alku: "kivin", luokka: laatusana, jatko: <osanto_tA>, äs: ä];
+[perusmuoto: "kiva", alku: "kivimpä", luokka: laatusana, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimpä", luokka: laatusana, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <tulento_ksi>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <sisäolento_ssA>, äs: ä];
@@ -128,8 +130,10 @@
 
 # Kiva-sanan kivo-kantainen superlatiivi {{{1
 
-[perusmuoto: "kiva", alku: "kivoin", luokka: laatusana, jatko: <liitesana, loppu, osanto_tA>, äs: a];
+[perusmuoto: "kiva", alku: "kivoin", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <omanto_n>, äs: a];
+[perusmuoto: "kiva", alku: "kivoin", luokka: laatusana, jatko: <osanto_tA>, äs: a];
+[perusmuoto: "kiva", alku: "kivoimpa", luokka: laatusana, jatko: <osanto_A>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimpa", luokka: laatusana, jatko: <olento_nA>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <tulento_ksi>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <sisäolento_ssA>, äs: a];
@@ -280,7 +284,6 @@
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <keinonto_in>, äs: a, rakenne: "=ppp=ppp"];
 
 # Dalí {{{2
-
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_n>, äs: a];
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <osanto_A>, äs: a];
@@ -327,6 +330,7 @@
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
+
 # Jersey [dzöösi] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
