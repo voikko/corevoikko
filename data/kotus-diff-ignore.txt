@@ -952,6 +952,7 @@ yök
 # Murteellisia ja puhekielisiä pronomineja ja numeraaleja
 kaks
 ma
+meitsi
 mi
 miss
 mä
@@ -1314,25 +1315,32 @@ dokaus # dokata
 elvistely # elvistellä
 endokrinologisesti # endokrinologinen
 fillarointi # fillaroida
+fluoritus # fluorittaa
 foniatrisesti # foniatrinen
+fudut # futu
 fusku # fuskata
 futaaja # futata
 futismatsi # futis, matsi
 gnostisistisesti # gnostisistinen
 halstaroida # halsteroida
 haploidinen # halploidi
+harmonistua # harmonistaa
 heksagoninen # heksagoni
 heterotsygootti # hetero, tsygootti
 heterotsygoottinen # hetero, tsygootti
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 hömpsötys # hömpsöttää
+jortsut # jortsu
 kaltevointi # kaltevoida
 kolmiointi # kolmioida
+lemput # lemppu
 lirputella # lirputtaa
 litsahdella # litsahtaa
 longerrella # longertaa
 lupsahdella # lupsahtaa
+menkut # menkku
+mensut # mensu
 mentorointi # mentoroida
 metkasti # metka
 metastasointi # metastasoida
@@ -1361,6 +1369,7 @@ sporttimalli # sportti
 sporttimallinen # sportti
 sumplaus # sumplata
 teksturointi # teksturoida
+terkut # terkku
 tunnelointi # tunneloida
 tähysteisesti # tähysteinen
 valkkaus # valkata
