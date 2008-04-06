@@ -29,21 +29,32 @@ import xml.sax.saxutils
 # Hyphenator and spell checker commands
 HYPHCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkohyphenate ignore_dot=1 '
 SPELLCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkospell -s -t ignore_dot=1'
+POFILTERCOMMAND = 'pofilter'
 
+# Maximum input length for hyphenator and spell checker interfaces (in bytes)
 MAX_INPUT_LENGTH = 20000
 
+# Maximum file size for po file checking (in kbytes)
+MAX_PO_SIZE = 800
+
+# Suomi-malaga project directory for pofilter
+POFILTER_DICT_DIR = '/home/harri/po-oikoluku/suomimalaga/voikko'
+
 def _write(req, text):
+	"""Write to http response using output encoding"""
 	req.write(text.encode('UTF-8'))
 
-# Decodes a string from html form to unicode
 def _decode_form_value(string):
+	"""Decodes a string from html form to unicode"""
 	return unicode(urllib.unquote_plus(string), 'UTF-8')
 
-# Converts a string to a form that is suitable for use in html document text
 def _escape_html(string):
+	"""Converts a string to a form that is suitable for use in html document text"""
 	return xml.sax.saxutils.escape(string)
 
 def _hyphenate_wordlist(wordlist, options):
+	"""Hyphenates a list of words with given voikkohyphenate command line opitions.
+	Returns a list of hyphenated words."""
 	hyphenator = subprocess.Popen(HYPHCOMMAND + options, shell = True, stdin = subprocess.PIPE,
 	                              stdout = subprocess.PIPE, close_fds = True)
 	for word in wordlist:
@@ -57,6 +68,9 @@ def _hyphenate_wordlist(wordlist, options):
 	return hyphenatedlist #FIXME: last item is an extra empty string
 
 def _spell_wordlist(wordlist):
+	"""Checks the spelling of given list of words. Returns a list of results
+	where None corresponds to correctly spelled word and list of suggestions
+	(possibly empty) is given for incorrectly spelled words."""
 	speller = subprocess.Popen(SPELLCOMMAND, shell = True, stdin = subprocess.PIPE,
 	                           stdout = subprocess.PIPE, close_fds = True)
 	for word in wordlist:
@@ -84,6 +98,8 @@ def _spell_wordlist(wordlist):
 	return spellresults
 
 def _split_words(text):
+	"""Splits the given text to words. Returns a list of words and list
+	of word separators."""
 	words = []
 	separators = []
 	prev_separator = u''
@@ -237,6 +253,8 @@ def spell(req, spellstring = None):
 	_write(req, u'</div></body></html>\n')
 
 def _poErrorHeader(headerLine):
+	"""Returns formatted version of pofilter output describing the spelling
+	errors in given msgtxt item."""
 	errors = headerLine.split(", check spelling of ")
 	out = u""
 	for error in errors:
@@ -247,7 +265,7 @@ def _poErrorHeader(headerLine):
 	return out
 
 def _highlightPofilter(req, file):
-	"Reads pofilter output from a file and writes it to request with highlighting."
+	"""Reads pofilter output from a file and writes it to request with highlighting."""
 	line = unicode(file.readline(), "UTF-8")
 	while line != "":
 		if line.startswith("# (pofilter) spellcheck:"):
@@ -258,7 +276,7 @@ def _highlightPofilter(req, file):
 			_write(req, _escape_html(line))
 		line = unicode(file.readline(), "UTF-8")
 
-def pospell(req, pofile = None):
+def pospell(req, pofile = None, potype = "gnome"):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
 	_write(req, u'''
@@ -279,27 +297,47 @@ def pospell(req, pofile = None):
   <div class="clear"></div>
   </div>
  <div class="main">
- ''')
-	_write(req, u'<form enctype="multipart/form-data" method="post" action="">\n')
-	_write(req, u'<p>Valitse oikoluettava po-tiedosto: ')
-	_write(req, u'<input type="file" name="pofile" /> ')
-	_write(req, u'<input type="submit" value="Oikolue!" /></p>\n')
-	_write(req, u'</form>\n')
+ <ul>
+ <li>Toistaiseksi vain UTF-8-koodattujen po-tiedostojen oikoluku on mahdollista
+     tämän www-liittymän kautta.</li>
+ <li>Oikoluettavan tiedoston enimmäiskoko on %s kilotavua.</li>
+ </ul>
+ <form enctype="multipart/form-data" method="post" action="">
+ <p>Oikoluettava po-tiedosto: <input type="file" name="pofile" /><br />
+ Sovelluksen tyyppi:
+ <select name="potype">
+  <option value="gnome" selected="selected">Gnome (tai muu kuin jokin alla olevista)</option>
+  <option value="kde">KDE</option>
+  <option value="mozilla">Mozilla</option>
+  <option value="openoffice">OpenOffice.org</option>
+ </select>
+ <input type="submit" value="Oikolue!" /></p>
+ </form>
+ ''' % MAX_PO_SIZE)
+	
 	
 	if pofile != None:
-		_write(req, (u'<p>Alla po-tiedoston <kbd>%s</kbd> oikoluvun tulokset. ' \
-		          + u'Mahdolliset kirjoitusvirheet on ' \
-		          + u'värjätty punaiseksi.</p>\n') % pofile.filename)
+		if not potype in ["gnome", "kde", "mozilla", "openoffice"]:
+			potype = "gnome"
+		_write(req, (u'<p>Alla po-tiedoston <kbd>%s</kbd> (tyyppi %s) oikoluvun tulokset. ' + \
+		    u'Mahdolliset kirjoitusvirheet on värjätty punaiseksi.</p>\n') % \
+		    (_escape_html(pofile.filename), potype))
 		_write(req, u'<pre style="border: 1px solid black">')
 		poInputFile = pofile.file
 		(inTempHandle, inTempName) = mkstemp(".po")
-		(outTempHandle, outTempName) = mkstemp(".po")
 		inTempFile = os.fdopen(inTempHandle, "w")
-		inTempFile.write(poInputFile.read())
-		p = subprocess.Popen(["pofilter", "--lang=fi", "-tspellcheck", "--gnome",
-		                     "-i", inTempName, "-o", outTempName])
-		p.wait()
+		inTempFile.write(poInputFile.read(MAX_PO_SIZE * 1024))
 		inTempFile.close()
+		if (len(poInputFile.read(1)) > 0):
+			_write(req, u"<i>(lähettämäsi tiedosto on liian suuri)</i>")
+			os.remove(inTempName)
+			return ""
+		(outTempHandle, outTempName) = mkstemp(".po")
+		env = {"VOIKKO_DICTIONARY_PATH": POFILTER_DICT_DIR}
+		p = subprocess.Popen([POFILTERCOMMAND, "--lang=fi", "-tspellcheck",
+		                      "--" + potype, "-i", inTempName,
+		                      "-o", outTempName], env=env)
+		p.wait()
 		os.remove(inTempName)
 		outTempFile = os.fdopen(outTempHandle, "r")
 		_highlightPofilter(req, outTempFile)
