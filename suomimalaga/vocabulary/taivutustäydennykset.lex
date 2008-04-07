@@ -193,6 +193,7 @@
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_Vn>, äs: a];
+[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a];
@@ -223,6 +224,7 @@
 
 # Brontë [bronti] {{{2
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <omanto_n>, äs: a];
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <osanto_A>, äs: a];
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <olento_nA>, äs: a];
@@ -262,8 +264,9 @@
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <tulento_ksi>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisäolento_ssA>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a, rakenne: "=ppp=ppp"];
-[perusmuoto: "cowboy", alku: "cowboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, rakenne: "=ppp=ppp"];
-[perusmuoto: "cowboy", alku: "cowboyhyn", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboyhi", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppp=ppp", tiedot: <ei_voikko>];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppp=ppp"];
@@ -286,6 +289,7 @@
 
 # Dalí {{{2
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_n>, äs: a];
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <osanto_A>, äs: a];
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <olento_nA>, äs: a];
@@ -342,6 +346,8 @@
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisäeronto_stA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Jersey", alku: "Jerseyhin", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Jersey", alku: "Jerseyhi", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
@@ -349,6 +355,7 @@
 
 # Linné [linnee] {{{2
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Linné", alku: "Linnéen", luokka: sukunimi, sija: omanto_n, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_voikko>]; # "Linnéen luokittelujärjestelmä."
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_tA>, äs: ä];
@@ -380,6 +387,7 @@
 
 # Monroe [manrou] {{{2
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <osanto_tA>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <olento_nA>, äs: a];
@@ -417,8 +425,9 @@
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <tulento_ksi>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisäolento_ssA>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "playboy", alku: "playboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "playboy", alku: "playboyhyn", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana, omistusliite>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboyhi", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppp=ppp"];
@@ -441,6 +450,7 @@
 
 # Poe [pou] {{{2
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <tavuviiva>, äs: a, tiedot: <ei_voikko>];  # Poe-vaikutteinen.
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <omanto_n>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <osanto_tA>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <olento_nA>, äs: a];
@@ -480,6 +490,9 @@
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <sisäolento_ssA>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <sisäeronto_stA>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <sisätulento_Vn>, äs: ä];
+[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Sidney", alku: "Sidneyhin", luokka: paikannimi, sija: sisätulento, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Sidney", alku: "Sidneyhi", luokka: paikannimi, sija: sisätulento, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
@@ -494,7 +507,9 @@
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <sisäolento_ssA>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <sisäeronto_stA>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <sisätulento_Vn>, äs: ä];
-[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
+[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Sydney", alku: "Sydneyhin", luokka: paikannimi, sija: sisätulento, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "Sydney", alku: "Sydneyhi", luokka: paikannimi, sija: sisätulento, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];

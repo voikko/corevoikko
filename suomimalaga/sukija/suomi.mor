@@ -1228,7 +1228,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"euro">,            <"palanen">>,
       <<"euronen", "pikkunen">, <"portti">>, # Euros+portti, pikkus+portti.
       <<"funktio">,   <"naali">>,
-      <<"futu">,      <"risti">>,
+      <<"futu">,      <"rissa", "risti">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"halti">,     <"joki">>,     # Halti+joiksi.
       <<"hara">,      <"voi", "voida", "vuo">>,
