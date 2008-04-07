@@ -60,6 +60,7 @@
 [perusmuoto: "maailma", alku: "maailmoitse", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muutama", alku: "muutamasti", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "nukke", alku: "nukk", luokka: nimisana, jatko: <omanto_ien>, äs: a];
+[perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <omanto_ten>, äs: a];
 [perusmuoto: "Thaimaa", alku: "Thaimaaseen", luokka: paikannimi, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "venäjä", alku: "venättä", luokka: nimisana, sija: osanto_tA, luku: yksikkö, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "vuosi", alku: "vuon", luokka: nimisana, jatko: <olento_nA>, äs: a];
@@ -340,6 +341,7 @@
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisäolento_ssA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisäeronto_stA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_Vn>, äs: ä];
+[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
@@ -348,6 +350,7 @@
 # Linné [linnee] {{{2
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_n>, äs: ä];
+[perusmuoto: "Linné", alku: "Linnéen", luokka: sukunimi, sija: omanto_n, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_voikko>]; # "Linnéen luokittelujärjestelmä."
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_tA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tulento_ksi>, äs: ä];
@@ -384,6 +387,8 @@
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_Vn>, tiedot: <ei_voikko>];  # Monroeen.
+[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_hVn>, tiedot: <ei_voikko>]; # Monroehen.
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
@@ -443,6 +448,8 @@
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "Poe", alku: "Poehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
+[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_Vn>, tiedot: <ei_voikko>];  # Poeen.
+[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_hVn>, tiedot: <ei_voikko>]; # Poehen.
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];

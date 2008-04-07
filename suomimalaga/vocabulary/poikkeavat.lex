@@ -143,7 +143,6 @@
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
@@ -160,7 +159,6 @@
 [perusmuoto: "Saint", alku: "Saint", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "Sakar", alku: "Sakar", luokka: etunimi, jatko: <loppu>, äs: a];
 [perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
-[perusmuoto: "sankari", alku: "sankar", luokka: nimisana, jatko: <sankari>, äs: a];
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
 [perusmuoto: "Selkie", alku: "Selkie", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Sergej", alku: "Serge", luokka: etunimi, jatko: <pii>, äs: ä]; # Perusmuoto "Sergej" ei tunnistu

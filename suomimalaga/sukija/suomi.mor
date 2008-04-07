@@ -1228,6 +1228,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"euro">,            <"palanen">>,
       <<"euronen", "pikkunen">, <"portti">>, # Euros+portti, pikkus+portti.
       <<"funktio">,   <"naali">>,
+      <<"futu">,      <"risti">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"halti">,     <"joki">>,     # Halti+joiksi.
       <<"hara">,      <"voi", "voida", "vuo">>,
@@ -1305,6 +1306,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"mansi">,     <"kastaa", "koi", "koittaa">>,
       <<"mehiläinen">, <"pesis">>,  # Mehiläis+pesis+tä.
       <<"meno">,      <"paussi">>,
+      <<"mensu">,     <"rae">>,
       <<"metaani">,   <"rikastaa">>,
       <<"mieli">,     <"syy", "syys">>,
       <<"mielinen">,  <"ikä", "säkä", "sää", "tele", "teli", "tikki">>, # Mielis+ikä(än).
@@ -1364,7 +1366,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"sose">,      <"uros">>,
       <<"sota", "säihky">, <"väkä">>,
       <<"sportti">,   <"suu">>,
-      <<"suo">,       <"misu", "musti", "nina">>,
+      <<"suo">,       <"mensu", "misu", "musti", "nina">>,
       <<"suu">,       <"tee", "tehdä", "teloa">>,
       <<"syy">,       <"tee">>,
       <<"sävel">,     <"eittää">>,
