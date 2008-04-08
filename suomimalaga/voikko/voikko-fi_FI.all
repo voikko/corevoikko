@@ -2263,6 +2263,14 @@ allo_rule generate_allos ($tietue):
                  + muisto ($tietue);
     result $i.alku, $i - alku;
 
+  # Longertaa-sanan frekvenssi on 10, joten se ei tule mukaan Voikon sanastoon,
+  # mutta lisätään tämä siltä varalta, että frekvenssiä muutetaan.
+  #
+  elseif (longertaa in $tietue.jatko) then
+    choose $i in muistaa_muistella ($tietue, tA($tietue), rA($tietue), "t", "r")
+                 + taivutuskaava ($tietue, [johdin_Us_ksen: "r"]);
+    result $i.alku, $i - alku;
+
   elseif (purkaa in $tietue.jatko) then
     choose $i in muistaa ($tietue, kA($tietue), A($tietue), "k", "");
     result $i.alku, $i - alku;

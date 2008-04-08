@@ -2965,6 +2965,16 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (longertaa in $tietue.jatko) then
+    choose $i in alittaa ($tietue, "t"+A($tietue), "re", "r"+A($tietue), "r", "t")
+                 + muistella ($tietue, "t", "r");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (lypsää in $tietue.jatko) then
     choose $i in lypsää ($tietue, A($tietue), "e", "")
                  + muistella ($tietue, "", "");

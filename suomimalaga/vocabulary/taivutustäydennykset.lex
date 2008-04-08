@@ -338,6 +338,7 @@
 
 # Jersey [dzöösi] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
@@ -483,6 +484,7 @@
 
 # Sidney [sidni] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
@@ -498,8 +500,11 @@
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
+[perusmuoto: "sidneyläinen", alku: "sidneyläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
+
 # Sydney [sidni] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
+[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <olento_nA>, äs: ä];

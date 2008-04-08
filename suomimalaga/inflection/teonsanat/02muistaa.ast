@@ -62,6 +62,7 @@ kirjoittaa  kirjoittaa  itta tta ite te ita ta it t itt tt          %kirjoitella
 kuluttaa    alittaa     ta   e    a   ""  t   %muistella("t","")
 kyntää      voitaa      tä   ne   nä  n   t
 loistaa     loistaa     a    e    ""          %muistella("","")
+longertaa   alittaa     ta   re   ra  r   t   %muistella("t","r")
 lypsää      lypsää      ä    e    ""          %muistella("","")
 purkaa      voitaa      ka   e    a   ""  k
 sulaa       voitaa      a    e    a   ""  ""
