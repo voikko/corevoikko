@@ -1312,15 +1312,18 @@ analgeettisuus # analgeettinen
 bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata
+dongarit # dongari
 elvistely # elvistellä
 endokrinologisesti # endokrinologinen
 fillarointi # fillaroida
+finanssit # finanssi
 fluoritus # fluorittaa
 foniatrisesti # foniatrinen
 fudut # futu
 fusku # fuskata
 futaaja # futata
 futismatsi # futis, matsi
+geimit # geimi
 gnostisistisesti # gnostisistinen
 halstaroida # halsteroida
 haploidinen # halploidi
@@ -1328,37 +1331,55 @@ harmonistua # harmonistaa
 heksagoninen # heksagoni
 heterotsygootti # hetero, tsygootti
 heterotsygoottinen # hetero, tsygootti
+hiihtarit # hiihtari
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 hömpsötys # hömpsöttää
 jortsut # jortsu
+kalsongit # kalsonki
 kaltevointi # kaltevoida
+keimit # geimi
+kokkarit # kokkari
 kolmiointi # kolmioida
+kummarit # kummari
 lemput # lemppu
+lantsarit # lantsari
 lirputella # lirputtaa
 litsahdella # litsahtaa
 longerrella # longertaa
 lupsahdella # lupsahtaa
 menkut # menkku
+mensikset # mensis
 mensut # mensu
 mentorointi # mentoroida
 metkasti # metka
 metastasointi # metastasoida
 narkkaus # narkata
+nyyttärit # nyyttäri
 palpointi # palpoida
 parafinointi # parafinoida
+penkkarit # penkkari
+persaukset # persaus
+persukset # persaus
+persuukset # persaus
+pitkikset # pitkis
 pneumaattisesti # pneumaattinen
 polaroitua # polaroida
+polvarit # polvari
 polymeroitua # polymerisoida
+prillit # prilli
 profylaktisesti # profylaktinen
 profylaktisuus # profylaktinen
 psykologiointi # psykologioida
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
 reteästi # reteä
+sammarit # sammari
 santsaus # santsata
+senssit # senssi
 shoppailla # shopata
 shoppailu # shopata
+simmarit # simmari
 skimbaus # skimbata
 smirgelöinti # smirgelöidä
 somatisointi # somatisoida
@@ -1367,7 +1388,9 @@ splittaus # splitata
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
+sukkikset # sukkis
 sumplaus # sumplata
+tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
 tunnelointi # tunneloida
