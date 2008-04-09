@@ -365,6 +365,9 @@
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisäolento_ssA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linnéhen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: ä];
+[perusmuoto: "Linné", alku: "Linnéhe", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: ä];
+[perusmuoto: "Linné", alku: "Linnéseen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: ä];
+[perusmuoto: "Linné", alku: "Linnésee", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisätulento_seen>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: ä];
