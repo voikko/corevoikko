@@ -1309,6 +1309,8 @@ vaki-
 adsorbointi # adsorboida
 analgeettisesti # analgeettinen
 analgeettisuus # analgeettinen
+blandaus # blandata
+blokkaus # blokata
 bulevardisportti # sportti
 diureettinen # diureetti
 dokaus # dokata
@@ -1320,6 +1322,7 @@ finanssit # finanssi
 fluoritus # fluorittaa
 foniatrisesti # foniatrinen
 fudut # futu
+fuskaus # fuskata
 fusku # fuskata
 futaaja # futata
 futismatsi # futis, matsi
@@ -1334,6 +1337,7 @@ heterotsygoottinen # hetero, tsygootti
 hiihtarit # hiihtari
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
+huiskaus # huiskata
 hömpsötys # hömpsöttää
 jortsut # jortsu
 kalsongit # kalsonki
@@ -1365,15 +1369,19 @@ persuukset # persaus
 pitkikset # pitkis
 pneumaattisesti # pneumaattinen
 polaroitua # polaroida
+polotus # polottaa
 polvarit # polvari
 polymeroitua # polymerisoida
 prillit # prilli
 profylaktisesti # profylaktinen
 profylaktisuus # profylaktinen
+prutkutus # prutkuttaa
 psykologiointi # psykologioida
+pupellus # pupeltaa
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
 reteästi # reteä
+räknäys # räknätä
 sammarit # sammari
 santsaus # santsata
 senssit # senssi
