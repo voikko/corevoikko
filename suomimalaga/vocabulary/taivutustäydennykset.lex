@@ -341,6 +341,7 @@
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
+[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <osanto_tA>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <tulento_ksi>, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisäolento_ssA>, äs: ä];
@@ -358,7 +359,7 @@
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <omanto_n>, äs: ä];
-[perusmuoto: "Linné", alku: "Linnéen", luokka: sukunimi, sija: omanto_n, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_voikko>]; # "Linnéen luokittelujärjestelmä."
+[perusmuoto: "Linné", alku: "Linnée", luokka: sukunimi, jatko: <omanto_n>, äs: ä, tiedot: <ei_voikko>]; # "Linnéen luokittelujärjestelmä."
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <osanto_tA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <tulento_ksi>, äs: ä];
@@ -490,6 +491,7 @@
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
+[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <osanto_tA>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <tulento_ksi>, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <sisäolento_ssA>, äs: ä];
@@ -510,6 +512,7 @@
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <tavuviiva>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <omanto_n>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <osanto_A>, äs: ä];
+[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <osanto_tA>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <tulento_ksi>, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <sisäolento_ssA>, äs: ä];

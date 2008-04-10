@@ -37,7 +37,7 @@
 # muualla kuin sanan alussa.
 
 # Etuliitteille, joissa on yhdysviiva lopussa ja jotka ovat sanastossa myös
-# omina nimi- tai laatusanoina tai etuliitteinä (esim. "jazz-", "online")
+# omina nimi- tai laatusanoina tai etuliitteinä (esim. "jazz-", "online-")
 # kannatta laittaa tiedot-kenttään symboli ei_sukija, koska Sukija-versiossa
 # yhdysviiva kelpaa  minkä tahansa etuliitteen jälkeen.
 
@@ -182,7 +182,7 @@
 [perusmuoto: "osittais", alku: "osittais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "pappis", alku: "pappis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "perille", alku: "perille", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "perään", alku: "perään", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "pienois", alku: "pienois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "pika", alku: "pika", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "pikku", alku: "pikku", luokka: etuliite, jatko: @eln + @ell, äs: aä];
