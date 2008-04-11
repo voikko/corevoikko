@@ -110,7 +110,7 @@
 [perusmuoto: "ensi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ensin", alku: "ensin", luokka: seikkasana, jatko: <olento_nA, liitesana, loppu>, äs: ä];
-[perusmuoto: "ensinkään", alku: "ensinkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "ensin", alku: "ensinkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisellään", alku: "entiselleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisellään", alku: "entisellään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisestään", alku: "entisestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -121,7 +121,7 @@
 [perusmuoto: "entä", alku: "entäpäs", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "entä", alku: "entäs", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "enää", alku: "enää", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "enään", alku: "enään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "enää", alku: "enään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "erillään", alku: "erikseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "erillään", alku: "erilleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "erillään", alku: "erillään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -129,6 +129,7 @@
 [perusmuoto: "erittäin", alku: "erittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "esillä", alku: "esiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "esillä", alku: "esille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "esillä", alku: "esillen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];  # Murteellinen sijapääte -llen.
 [perusmuoto: "esillä", alku: "esillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "etelämpi", alku: "etelämmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "etenkin", alku: "etenkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -1242,6 +1243,7 @@
 [perusmuoto: "perässäpäin", alku: "perästäkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppppp=pppp"];
 [perusmuoto: "perässäpäin", alku: "perästäkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppppp=pppp"];
 [perusmuoto: "perässäpäin", alku: "perästäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "perässäpäin", alku: "peräänpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp", tiedot: <ei_voikko>];
 [perusmuoto: "poispäin", alku: "poiskaanpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "poispäin", alku: "poiskinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "poispäin", alku: "poispäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];

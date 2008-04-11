@@ -1,0 +1,218 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+#
+# Lippua ei_voikko ei ole i:ttömissä muodoissa, koska tätä
+# taivutuskaavaa ei käytetä Voikossa.
+
+nimentö
+          puna+inen+
+          puna+nen+
+
+omistusliite
+          puna+ise+ni
+          puna+se+ni
+
+omanto_n
+          puna+ise+n
+          puna+se+n
+
+osanto_tA
+          puna+is+ta
+          puna+s+ta
+
+olento_nA
+          puna+ise+na
+          puna+se+na
+          puna+is+na
+          puna+s+na
+
+tulento_ksi
+          puna+ise+ksi
+          puna+se+ksi
+
+sisäolento_ssA
+          puna+ise+ssa
+          puna+se+ssa
+
+sisäeronto_stA
+          puna+ise+sta
+          puna+se+sta
+
+sisätulento_Vn
+          puna+ise+en
+          puna+se+en
+
+sisätulento_hVn
+          puna+ise+hen  vanha_h
+          puna+se+hen  vanha_h
+
+ulko_olento_llA
+          puna+ise+lla
+          puna+se+lla
+
+ulkoeronto_ltA
+          puna+ise+lta
+          puna+se+lta
+
+ulkotulento_lle
+          puna+ise+lle
+          puna+se+lle
+
+vajanto_ttA
+          puna+ise+tta
+          puna+se+tta
+
+nimentö_t
+          puna+ise+t
+          puna+se+t
+
+omanto_ien
+          puna+is+ien
+          puna+s+ien
+
+omanto_ten
+          puna+is+ten
+          puna+s+ten
+
+osanto_iA
+          puna+is+ia
+          puna+s+ia
+
+olento_inA
+          puna+is+ina
+          puna+s+ina
+
+tulento_iksi
+          puna+is+iksi
+          puna+s+iksi
+
+sisäolento_issA
+          puna+is+issa
+          puna+s+issa
+
+sisäeronto_istA
+          puna+is+ista
+          puna+s+ista
+
+sisätulento_iin
+          puna+is+iin
+          puna+s+iin
+
+sisätulento_ihin
+          puna+is+ihin  vanha_h
+          puna+s+ihin  vanha_h
+
+ulko_olento_illA
+          puna+is+illa
+          puna+s+illa
+
+ulkoeronto_iltA
+          puna+is+ilta
+          puna+s+ilta
+
+ulkotulento_ille
+          puna+is+ille
+          puna+s+ille
+
+vajanto_ittA
+          puna+is+itta
+          puna+s+itta
+
+seuranto_ine
+          puna+is+ine
+          puna+s+ine
+
+keinonto_in
+          puna+is+in
+          puna+s+in
+
+kerronto_sti
+          puna+ise+sti
+          puna+se+sti
+
+voittoaste
+          puna+ise+mpi
+          puna+se+mpi
+
+yliaste
+          puna+is+in
+          puna+s+in
+
+johdin_inen
+          puna+is+inen
+          puna+s+inen
+
+johdin_ittain
+          puna+is+ittain
+          puna+s+ittain
+
+johdin_lAinen
+          puna+is+lainen
+          puna+s+lainen
+
+johdin_llinen
+          puna+ise+llinen
+          puna+se+llinen
+
+johdin_mAinen
+          puna+is+mainen
+          puna+s+mainen
+
+johdin_tOn
+          puna+ise+ton
+          puna+se+ton
+
+johdin_UUs
+          puna+is+uus
+          puna+s+uus
+
+yhdyssana
+          puna+is+
+          puna+s+
+
+loppu
+          puna+is+
+

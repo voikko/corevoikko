@@ -149,10 +149,11 @@ rx_end = re.compile(end, re.IGNORECASE)
 #u"punanen", u"päivänen",
 words = [
 	 u"aikalainen", u"alaisuus", u"alastulo",
+	 u"allekirjoittaa", u"alleviivata",
 	 u"amerikanenglanti", u"amerikanenglantilainen", u"amerikanjuutalainen",
          u"amerikanrauta", u"amerikansalaatti", u"amerikansuomalainen", u"amerikansuomi",
-         u"arastella", u"aukiolo",
-         u"edellisvuotinen", u"elämä", u"etruskilainen",
+         u"arastella",
+         u"edellisvuotinen", u"elämä", u"esilletuominen", u"esilletuonti", u"etruskilainen",
          u"freudilainen",
 	 u"halpatyö", u"hautaus", u"herraskartano", u"herrasmies", u"herraspoika",
 	 u"herrasväki",

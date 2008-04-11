@@ -462,31 +462,28 @@
 
 [perusmuoto: "aukikaulata", alku: "aukikaul", luokka: teonsana, jatko: <salata>, äs: a];
 
-[perusmuoto: "sisäänajaa", alku: "sisäänaj", luokka: teonsana, jatko: <ajaa>, äs: a];
-[perusmuoto: "sisäänastua", alku: "sisäänastu", luokka: teonsana, jatko: <punoa>, äs: a];
-[perusmuoto: "sisäänkirjoittaa", alku: "sisäänkirjo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "sisäänkäydä", alku: "sisäänkä", luokka: teonsana, jatko: <käydä>, äs: ä];
-[perusmuoto: "sisäänhengittää", alku: "sisäänhengit", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "sisäänmuuttaa", alku: "sisäänmuut", luokka: teonsana, jatko: <heittää>, äs: a];
 [perusmuoto: "sisäänrakentaa", alku: "sisäänrake", luokka: teonsana, jatko: <rakentaa>, äs: a];
-[perusmuoto: "sisääntulla", alku: "sisääntul", luokka: teonsana, jatko: <tulla>, äs: a];
 
-[perusmuoto: "ohiajaa", alku: "ohiaj", luokka: teonsana, jatko: <ajaa>, äs: a];
-[perusmuoto: "ohinastua", alku: "ohiastu", luokka: teonsana, jatko: <punoa>, äs: a];
-[perusmuoto: "ohikulkea", alku: "ohikul", luokka: teonsana, jatko: <polkea>, äs: a];
 [perusmuoto: "ohikäydä", alku: "ohikä", luokka: teonsana, jatko: <käydä>, äs: ä];
-[perusmuoto: "ohimennä", alku: "ohimen", luokka: teonsana, jatko: <mennä>, äs: ä];
 
+
+# Nämä on lisätty Joukahaiseen.
 [perusmuoto: "kiinnijäädä", alku: "kiinnijä", luokka: teonsana, jatko: <saada>, äs: ä];
 [perusmuoto: "kiinniottaa", alku: "kiinniot", luokka: teonsana, jatko: <heittää>, äs: a];
 [perusmuoto: "kiinnisaattaa", alku: "kiinnisaat", luokka: teonsana, jatko: <saattaa>, äs: a];
 [perusmuoto: "kiinniriippua", alku: "kiinniriip", luokka: teonsana, jatko: <kieppua>, äs: a];
 [perusmuoto: "kiinnisulkea", alku: "kiinnisul", luokka: teonsana, jatko: <polkea>, äs: a];
-
+[perusmuoto: "sisäänastua", alku: "sisäänastu", luokka: teonsana, jatko: <punoa>, äs: a];
+[perusmuoto: "sisäänkirjoittaa", alku: "sisäänkirjo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
+[perusmuoto: "sisäänhengittää", alku: "sisäänhengit", luokka: teonsana, jatko: <alittaa>, äs: ä];
+[perusmuoto: "sisäänmuuttaa", alku: "sisäänmuut", luokka: teonsana, jatko: <heittää>, äs: a];
+[perusmuoto: "sisääntulla", alku: "sisääntul", luokka: teonsana, jatko: <tulla>, äs: a];
 [perusmuoto: "väärinkirjoittaa", alku: "väärinkirjo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
 [perusmuoto: "väärinkäsittää", alku: "väärinkäsit", luokka: teonsana, jatko: <autioittaa>, äs: ä];
-
 [perusmuoto: "ympärimitata", alku: "ympärimit", luokka: teonsana, jatko: <kuitata>, äs: a];
+
+
 
 ##############
 

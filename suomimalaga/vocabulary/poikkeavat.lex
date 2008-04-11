@@ -19,21 +19,21 @@
 # KAIKKI TÄHÄN TIEDOSTOON LISÄTTÄVÄT SANAT ON LISÄTTÄVÄ MYÖS JOUKAHAISEEN
 # TAIVUTUSLUOKALLA "poikkeava"!
 
-[perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp", tiedot: <ei_sukija>];
-[perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
-[perusmuoto: "aamukolme", alku: "aamukolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
-[perusmuoto: "aamuseitsemän", alku: "aamuseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
-[perusmuoto: "aamukahdeksan", alku: "aamukahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
-[perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
-[perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "aamuyksi", alku: "aamuy", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "aamukaksi", alku: "aamuka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "aamukolme", alku: "aamukolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "aamuseitsemän", alku: "aamuseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "aamukahdeksan", alku: "aamukahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "aamuyhdeksän", alku: "aamuyhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "aamukymmenen", alku: "aamukymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
-[perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp", tiedot: <ei_sukija>];
-[perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
-[perusmuoto: "iltakolme", alku: "iltakolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp", tiedot: <ei_sukija>];
-[perusmuoto: "iltaseitsemän", alku: "iltaseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
-[perusmuoto: "iltakahdeksan", alku: "iltakahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp", tiedot: <ei_sukija>];
-[perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
-[perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_sukija>];
+[perusmuoto: "iltayksi", alku: "iltay", luokka: nimisana, jatko: <kaksi>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "iltakaksi", alku: "iltaka", luokka: nimisana, jatko: <kaksi>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "iltakolme", alku: "iltakolm", luokka: nimisana, jatko: <kolme>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "iltaseitsemän", alku: "iltaseitsem", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "iltakahdeksan", alku: "iltakahdeks", luokka: nimisana, jatko: <seitsemän>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <seitsemän>, äs: ä, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
 [perusmuoto: "Adrianmeri", alku: "Adrianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
@@ -66,7 +66,6 @@
 [perusmuoto: "hapsi", alku: "ha", luokka: nimisana, jatko: <hapsi>, äs: a];
 [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "Helotie", alku: "Helot", luokka: sukunimi, jatko: <tie>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
 [perusmuoto: "heureka", alku: "heureka", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "huiskata", alku: "huisk", luokka: teonsana, jatko: <huiskata>, äs: a, tiedot: <ei_voikko>];
@@ -142,7 +141,7 @@
 [perusmuoto: "pierrä", alku: "pier", luokka: teonsana, jatko: <purra>, äs: ä];
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
-[perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä];
+[perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
@@ -187,8 +186,6 @@
 [perusmuoto: "tosi", alku: "to", luokka: nimi_laatusana, jatko: <tosi>, äs: a, tiedot: <ei_inen>];
 [perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
 [perusmuoto: "uunituore", alku: "uunituore", luokka: laatusana, jatko: <terve>, äs: a, rakenne: "=pppp=ppppp"];
-[perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a];
-[perusmuoto: "tuta", alku: "tutaan", luokka: teonsana, jatko: <loppu>, äs: a];
 [perusmuoto: "tyyni", alku: "tyyn", luokka: laatusana, jatko: <pieni>, äs: ä];
 [perusmuoto: "täpötäysi", alku: "täpötäy", luokka: laatusana, jatko: <tosi>, äs: ä, rakenne: "=pppp=ppppp"];
 [perusmuoto: "täysi", alku: "täy", luokka: laatusana, jatko: <tosi>, äs: ä];
@@ -206,7 +203,7 @@
 [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta
+[perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta.
 [perusmuoto: "vuosituhat", alku: "vuosituha", luokka: nimisana, jatko: <tuhat>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "vääntää", alku: "vään", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "vääntää", alku: "vää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
