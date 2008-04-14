@@ -438,7 +438,7 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, laatusana,
-           tavuviiva, etuliite;
+           tavuviiva, etuliite, nimisana_teonsanasta;
   end;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;

@@ -1398,11 +1398,13 @@ sporttimalli # sportti
 sporttimallinen # sportti
 sukkikset # sukkis
 sumplaus # sumplata
+sämpläys # sämplätä
 tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
 tunnelointi # tunneloida
 tähysteisesti # tähysteinen
+törmäytys # törmäyttää
 valkkaus # valkata
 vasituisesti # vasituinen
 välibosoni # bosoni

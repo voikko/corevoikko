@@ -200,6 +200,7 @@ vihertävänhohtoinen
 !vihertävienhohtoinen
 vaikuttava-aittainen
 !vaikuttavaaittainen
+yhtäaikaissuoritus # teonsanan nimisanajohdos perusosana
 
 [voitto- ja yliasteet]
 kauniimmanvärinen
