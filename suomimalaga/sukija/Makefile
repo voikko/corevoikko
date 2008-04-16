@@ -37,7 +37,7 @@ generoi:
 	malmake suomi.pro
 	
 clean:
-	/bin/rm -f *_l core.* transmit voikonsanat/* f1 s1 foo
+	/bin/rm -f *_l core.* transmit voikonsanat/* f1 s1 foo f2 s2 bar
 
 transmit: ../common/transmit.cc
 	g++ -g ../common/transmit.cc -o transmit
@@ -62,8 +62,17 @@ f1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 s1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 	cat ../../sanat.txt | malaga -m suomi.pro >s1
 
+f2: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
+	cat ../../fiwiki.txt | malaga -m suomi.pro >f2
+
+s2: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
+	cat ../../sanat.txt | malaga -m suomi.pro >s2
+
 diff:
 	(diff ../../fiwiki.out f1; diff ../../sanat.out s1) >foo
+
+diff2:
+	(diff f1 f2; diff s1 s2) >bar
 
 cp1:
 	cp f1 ../../fiwiki.out; cp s1 ../../sanat.out

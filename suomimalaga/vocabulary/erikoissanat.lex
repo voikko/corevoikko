@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,6 +33,9 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <meri>, äs: ä];
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
+# Vain nämä muodot ovat yleisessä käytössä. Tuttu ja tuttava tajutaan eri sanoiksi.
+[perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];
+[perusmuoto: "tuta", alku: "tutaan", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];
 
 [perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];

@@ -445,8 +445,9 @@
 [perusmuoto: "Leoni", alku: "Leon", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Giulio", alku: "Giulio", luokka: etunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Juuti", alku: "Juu", luokka: sukunimi, jatko: <vati>, äs: a];
-[perusmuoto: "huikennella", alku: "huiken", luokka: teonsana, jatko: <pienennellä>, äs: a];
 
+[perusmuoto: "myöhäisilta", alku: "myöhäisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "varhaisilta", alku: "varhaisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
 
 [perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
 [perusmuoto: "Vincent", alku: "Vincent", luokka: etunimi, jatko: <kalsium>, äs: ä];
@@ -469,21 +470,9 @@
 
 
 # Nämä on lisätty Joukahaiseen.
-[perusmuoto: "kiinnijäädä", alku: "kiinnijä", luokka: teonsana, jatko: <saada>, äs: ä];
-[perusmuoto: "kiinniottaa", alku: "kiinniot", luokka: teonsana, jatko: <heittää>, äs: a];
-[perusmuoto: "kiinnisaattaa", alku: "kiinnisaat", luokka: teonsana, jatko: <saattaa>, äs: a];
-[perusmuoto: "kiinniriippua", alku: "kiinniriip", luokka: teonsana, jatko: <kieppua>, äs: a];
-[perusmuoto: "kiinnisulkea", alku: "kiinnisul", luokka: teonsana, jatko: <polkea>, äs: a];
-[perusmuoto: "sisäänastua", alku: "sisäänastu", luokka: teonsana, jatko: <punoa>, äs: a];
-[perusmuoto: "sisäänkirjoittaa", alku: "sisäänkirjo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
-[perusmuoto: "sisäänhengittää", alku: "sisäänhengit", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "sisäänmuuttaa", alku: "sisäänmuut", luokka: teonsana, jatko: <heittää>, äs: a];
-[perusmuoto: "sisääntulla", alku: "sisääntul", luokka: teonsana, jatko: <tulla>, äs: a];
-[perusmuoto: "väärinkirjoittaa", alku: "väärinkirjo", luokka: teonsana, jatko: <kirjoittaa>, äs: a];
-[perusmuoto: "väärinkäsittää", alku: "väärinkäsit", luokka: teonsana, jatko: <autioittaa>, äs: ä];
-[perusmuoto: "ympärimitata", alku: "ympärimit", luokka: teonsana, jatko: <kuitata>, äs: a];
 
 
+# Lisäykset Joukahaiseen loppuivat.
 
 ##############
 

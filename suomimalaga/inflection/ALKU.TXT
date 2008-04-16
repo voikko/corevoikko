@@ -101,7 +101,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"mani", "tisu">) then
+  if ($tietue.perusmuoto in <"luisti", "mani", "nasu", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 

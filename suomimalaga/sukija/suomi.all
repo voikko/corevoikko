@@ -101,7 +101,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"mani", "tisu">) then
+  if ($tietue.perusmuoto in <"luisti", "mani", "nasu", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
@@ -13394,6 +13394,7 @@ subrule taivutus ($sanatietue1, $lisä, $jatko, $tietue):
 
 #define $b := transmit ("AAA " + $sanatietue1.perusmuoto + " " + tavutus($sanatietue1.perusmuoto));
 
+
   define $a := taivutus2 ($sanatietue1, $lisä, $jatko, $tietue, $sanatietue1.alku);
   define $n := length ($a);
 
@@ -13494,6 +13495,7 @@ end;
 subrule taivutuskaava ($tietue, $taivutus):
   define $malli := switch (malli);
 
+
   # Poistetaan liput.
   #
   define $uusi_taivutus := [];
@@ -13522,6 +13524,7 @@ subrule taivutuskaava ($tietue, $taivutus):
 #    end;
   end;
 
+#define $ä := transmit ($uusi_taivutus);
 #define $ö := transmit ("LOPPU");
 
   $taivutus := $uusi_taivutus;
@@ -13628,7 +13631,9 @@ subrule taivutuskaava ($tietue, $taivutus):
 #  define $b := transmit ($taivutus);
 #end;
 
+
   define $lista := lajittele ($taivutus);
+
 
   define $t := <>;
 
