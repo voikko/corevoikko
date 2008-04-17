@@ -19,14 +19,14 @@
 
 
 \begin{document}
-\title{Suomi-malaga}
+\title{Suomi-Malaga}
 \author{Hannu Väisänen}
 
 \maketitle
 
 \newpage
 
-Copyright (©) 2006-2007 Hannu Väisänen.
+Copyright (©) 2006-2008 Hannu Väisänen.
 
 Tämä dokumentti on vapaa; tätä dokumenttia on sallittu levittää
 edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin) ehtojen
@@ -41,13 +41,18 @@ any later version.
 
 \newpage
 
-Suomi-malaga on Malaga"-nimisellä ohjelmointikielellä
+Suomi-Malaga on Malaga"-nimisellä ohjelmointikielellä
 \begin{latexonly} \\ \end{latexonly}
 \M{http://home.arcor.de/bjoern-beutel/malaga/}
 tehty suomen kielen muoto"-opin kuvaus.
 
 Sen voi ladata SourceForgesta
-\ahrefurl{http://sourceforge.net/project/showfiles.php?group_id=156731}
+%\begin{latexonly}
+%\begin{verbatim}
+%http://sourceforge.net/project/showfiles.php?group_id=156731
+%\end{verbatim}
+%\end{latexonly}
+\ahrefurl{http://sourceforge.net/project/showfiles.php?group\_id=156731}
 
 Uusimman version saa SourceForgesta komennolla
 
@@ -56,7 +61,7 @@ svn co https://voikko.svn.sourceforge.net/svnroot/voikko/trunk/suomimalaga
 \end{verbatim}
 
 
-Suomi"-malagaa voidaan levittää edelleen ja muuttaa GNU yleisen
+Suomi"-Malagaa voidaan levittää edelleen ja muuttaa GNU yleisen
 lisenssin (GPL"-lisenssin) ehtojen mukaan.
 
 Pikainen asennusohje
@@ -68,7 +73,7 @@ Fedora Coressa käy \verb=fi_FI.utf8=.
 
 1. Asenna Malaga ohjeiden mukaan.
 
-2. Asenna Suomi-malaga.
+2. Asenna Suomi-Malaga.
 
 \begin{verbatim}
 bunzip2 -c suomi-malaga-x.y.z.tar.bz2 | tar xf -
@@ -78,7 +83,7 @@ make
 
 Korvaa x.y.z lataamasi version numerolla.
 
-Tämän jälkeen voit kokeilla Suomi-malagaa komennolla
+Tämän jälkeen voit kokeilla Suomi-Malagaa komennolla
 \verb=malaga suomi.pro=
 
 Ohjelma tulostaa jotain tällaista:
@@ -91,7 +96,7 @@ You can distribute it under the terms of the GNU General Public License.
 malaga>
 \end{verbatim}
 
-Nyt voit kokeilla Suomi-malagaa kirjoittamalla
+Nyt voit kokeilla Suomi-Malagaa kirjoittamalla
 \verb=ma alusta=
 
 Tuloksena pitäisi olla \M{malaga1.png}
@@ -125,9 +130,21 @@ suomen kielen oikolukuohjelma.
 
 Molemmat ohjelmat on julkaistu GPL"-lisenssillä.
 
+Suomi-Malagaa voi käyttää myös Lucenessa
+\begin{latexonly} \\ \end{latexonly}
+(\ahrefurl{http://lucene.apache.org/java/}).
+
+Lisätietoja asiasta on sivulla
+\begin{latexonly} \\ \end{latexonly}
+\ahrefurl{http://joyds1.joensuu.fi/programs/index.html}
+
+Suomi-Malagaa voi testata Internetissä
+\begin{latexonly} \\ \end{latexonly}
+\ahrefurl{http://www.cl.uzh.ch/kitt/cgi-bin/clsmm/suomimalaga-query.pl}
+
 \bigskip
 
-Tällä hetkellä Sukija ja Voikko käyttävät Suomi"-malagasta eri
+Tällä hetkellä Sukija ja Voikko käyttävät Suomi-Malagasta eri
 versioita, mutta koodien yhdistäminen on käynnissä.
 
 Eri versioitten käyttö johtuu siitä, että indeksoinnin ja oikoluvun
@@ -144,12 +161,12 @@ olemassa, sillä vaikka suomesta on kirjoitettu monia kielioppeja, kun
 niiden perusteella rupeaa tekemään tietokoneohjelmaa, huomaa pian,
 että niissä on jätetty paljon lukijan kielikorvan varaan.
 
-Molemmat Suomi-malagan versiot ovat siis vain tekijöidensä
+Molemmat Suomi-Malagan versiot ovat siis vain tekijöidensä
 mielipiteitä siitä, millainen suomen kieli on.
 
 \bigskip
 
-Suomi-malagan versioitten välisiä eroja ovat muun muassa
+Suomi-Malagan versioitten välisiä eroja ovat muun muassa
 
 Sukija-versio hyväksyy joitakin yleisiä kirjoitusvirheitä,
 esimerkiksi: julka(i)sta, julka(i)su, keho(i)ttaa, kirjo(i)ttaa,
