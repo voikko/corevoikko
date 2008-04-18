@@ -99,6 +99,7 @@ koe-elää
 !makeakäkinen # "käki" ei sallittu yhdyssanan jälkiosana
 !leipämainen # "mainen" ei sallittu yhdyssanan osana
 virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
+!uutelleennimeä # adjektiivin genetiivi + substantiivi
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
