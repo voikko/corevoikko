@@ -1,6 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#                 2007-2008 Teemu Likonen <tlikonen@iki.fi>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +32,18 @@ define @loppu := <liitesana, loppu>;
 # Vain nämä muodot ovat yleisessä käytössä. Tuttu ja tuttava tajutaan eri sanoiksi.
 [perusmuoto: "tuta", alku: "tuta", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "tuta", alku: "tutaan", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
+
+# Tosi harvinaiset muodot I infinitiivin pitkä muoto (vrt. puhuakse(ni)) ja II infinitiivin instruktiivi (vrt. puhuen).
+[perusmuoto: "tuta", alku: "tutakseni", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
+[perusmuoto: "tuta", alku: "tutaksein", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];  # Tutakseni.
+[perusmuoto: "tuta", alku: "tutaksesi", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
+[perusmuoto: "tuta", alku: "tutakseen", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
+[perusmuoto: "tuta", alku: "tutaksensa", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
+[perusmuoto: "tuta", alku: "tutaksemme", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
+##[perusmuoto: "tuta", alku: "tutaksette", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];  # Eivät taida olla
+##[perusmuoto: "tuta", alku: "tutaksevat", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];  # mahdollisia edes teoriassa.
+[perusmuoto: "tuta", alku: "tuten", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
+
 
 [perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];
