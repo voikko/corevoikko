@@ -40,8 +40,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "tuta", alku: "tutakseen", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "tuta", alku: "tutaksensa", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "tuta", alku: "tutaksemme", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
-##[perusmuoto: "tuta", alku: "tutaksette", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];  # Eivät taida olla
-##[perusmuoto: "tuta", alku: "tutaksevat", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];  # mahdollisia edes teoriassa.
+[perusmuoto: "tuta", alku: "tutaksenne", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "tuta", alku: "tuten", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
 
 
