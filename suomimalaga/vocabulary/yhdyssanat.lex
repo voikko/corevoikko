@@ -73,6 +73,42 @@
 
 [perusmuoto: "isokyröläinen", alku: "isokyröläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppp=pppppppppp"];
 
+# {{{2 Kuollutmeri
+
+[perusmuoto: "Kuollutmeri", alku: "Kuollutmeri",     luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleenmere",    luokka: paikannimi, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ippppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleenmere",    luokka: paikannimi, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ippppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolluttamer",    luokka: paikannimi, luku: yksikkö, jatko: <osanto_tA>, äs: a, rakenne: "=ipppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleenamere",   luokka: paikannimi, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=ipppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleeksimere",  luokka: paikannimi, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ippppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleessamere",  luokka: paikannimi, luku: yksikkö, jatko: <sisäolento_ssA>,  äs: ä, rakenne: "=ippppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleestamere",  luokka: paikannimi, luku: yksikkö, jatko: <sisäeronto_stA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleeseenmere", luokka: paikannimi, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=ipppppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleellamere",  luokka: paikannimi, luku: yksikkö, jatko: <ulko_olento_llA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleeltamere",  luokka: paikannimi, luku: yksikkö, jatko: <ulkoeronto_ltA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleellemere",  luokka: paikannimi, luku: yksikkö, jatko: <ulkotulento_lle>, äs: ä, rakenne: "=ippppppppp=pppp"];
+[perusmuoto: "Kuollutmeri", alku: "Kuolleettamere",  luokka: paikannimi, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+
+# Monikko taitaa olla tarpeeton
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleetmere",  luokka: paikannimi, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ippppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleetmere",  luokka: paikannimi, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ippppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleidenmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleittenmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=ipppppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleidenmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleittenmer",  luokka: paikannimi, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=ipppppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleitamer",   luokka: paikannimi, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ipppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleinamer",  luokka: paikannimi, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=ipppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleiksimer", luokka: paikannimi, luku: monikko, jatko: <tulento_iksi>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleissamer", luokka: paikannimi, luku: monikko, jatko: <sisäolento_issA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleistamer", luokka: paikannimi, luku: monikko, jatko: <sisäeronto_istA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleisiinmer",  luokka: paikannimi, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=ipppppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleillamer", luokka: paikannimi, luku: monikko, jatko: <ulko_olento_illA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleiltamer", luokka: paikannimi, luku: monikko, jatko: <ulkoeronto_iltA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleillemer", luokka: paikannimi, luku: monikko, jatko: <ulkotulento_ille>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleittamer", luokka: paikannimi, luku: monikko, jatko: <vajanto_ittA>, äs: ä, rakenne: "=ippppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleinemer",  luokka: paikannimi, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=ipppppppp=pppp"];
+#[perusmuoto: "Kuollutmeri", alku: "Kuolleinmer",   luokka: paikannimi, luku: monikko, jatko: <keinonto_in>, äs: ä, rakenne: "=ippppppp=pppp"];
+
 # {{{2 Mustameri
 
 [perusmuoto: "Mustameri", alku: "Mustameri",    luokka: paikannimi, luku: yksikkö, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=ipppp=pppp"];
