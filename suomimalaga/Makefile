@@ -15,7 +15,7 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
            sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh \
            sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
-           sukija/sukija.py sukija/suomi.all sukija/suomi.haux sukija/suomi.html \
+           sukija/sukija.py sukija/suomi.all \
            sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro \
            sukija/suomi.sym sukija/suomi.tex
 
@@ -147,6 +147,7 @@ sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
 	@malmake sukija/suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikonsanat/%: vocabulary/%
+	@mkdir -p sukija/voikonsanat
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
