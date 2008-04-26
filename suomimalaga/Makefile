@@ -51,7 +51,7 @@ VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voik
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 
-SM_VERSION=1.0
+SM_VERSION=1.1
 
 .PHONY: all clean update-vocabulary voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
 
