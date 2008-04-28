@@ -33,11 +33,12 @@ flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_
 # Get command line options
 OPTIONS = generate_lex_common.get_options()
 
-# According to the options, make some vocabularies non-special
+# According to the options, remove some special vocabularies
 old_special = generate_lex_common.SPECIAL_VOCABULARY
 generate_lex_common.SPECIAL_VOCABULARY = []
 for s in old_special:
-	if s[0] == "usage" and s[1] in OPTIONS["extra-usage"]: continue
+	if s[0] != "usage": continue
+	if s[1] in OPTIONS["extra-usage"]: continue
 	generate_lex_common.SPECIAL_VOCABULARY.append(s)
 
 main_vocabulary = generate_lex_common.open_lex(VOIKKO_LEX_DIR, "joukahainen.lex")
@@ -51,12 +52,20 @@ def frequency(word):
 	if len(fclass) == 0: return 7
 	return int(generate_lex_common.tValue(fclass[0]))
 
+# Check the style flags of the word according to current options.
+# Returns True if the word is acceptable, otherwise returns false.
+def check_style(word):
+	global OPTIONS
+	for styleE in word.getElementsByTagName("style"):
+		for style in generate_lex_common.tValues(styleE, "flag"):
+			if not style in OPTIONS["style"]: return False
+	return True
+
 def handle_word(word):
 	global OPTIONS
 	# Drop words that are not needed in the Voikko lexicon
 	if generate_lex_common.has_flag(word, "not_voikko"): return
-	if generate_lex_common.has_flag(word, "incorrect"): return
-	if generate_lex_common.has_flag(word, "dialect"): return
+	if not check_style(word): return
 	if frequency(word) >= OPTIONS["frequency"] + 1: return
 	if frequency(word) == OPTIONS["frequency"] and generate_lex_common.has_flag(word, "confusing"): return
 	

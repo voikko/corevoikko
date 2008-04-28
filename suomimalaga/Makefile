@@ -1,7 +1,7 @@
 
 PYTHON=python
 DESTDIR=/usr/lib/voikko
-GENLEX_OPTS=--min-frequency=9
+GENLEX_OPTS=--min-frequency=9 --style=old,international
 
 # Optional vocabulary files
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
@@ -40,7 +40,7 @@ VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	huudahdussanat.lex
 
 # Lexicon files generated for Voikko from Joukahainen
-VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede vieraskieliset
+VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede
 
 # Files to ship in the preprocessed source package
 VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voikko-fi_FI.mor_l \

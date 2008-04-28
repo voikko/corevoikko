@@ -64,7 +64,7 @@ Variables for tuning the build process
 --------------------------------------
 
 - make voikko, make voikko-preprocessed-l-gzip:
-  * GENLEX_OPTS=option_string
+  * GENLEX_OPTS="--option1=xxx --option2=yyy ..."
     Sets options string for generate_lex.py. The default is "--min-frequency=9"
     Available options for generate_lex.py are
     + --min-frequency=n
@@ -72,8 +72,15 @@ Variables for tuning the build process
       specified or higher frequency class. Default is 9.
     + --extra-usage=usage1,usage2,...
       If a word has usage flags (it belongs to a special vocabulary), it is
-      included to the vocabulary only if at least one of the usage flags is
-      listed here. By default, no special vocabularies are included.
+      included in the vocabulary only if at least one of the usage flags is
+      listed here. Available usage flags are listed in file
+      vocabulary/flags.txt.
+      By default, no special vocabularies are included.
+    + --style=style1,style2,...
+      If a word has style flags (such as old, foreign or dialect), it is
+      included in the vocabulary only if all of the style flags are listed
+      here. Available style flags are listed in file vocabulary/flags.txt.
+      Default: old,international
 
 Copyright and license information
 ---------------------------------
