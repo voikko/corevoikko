@@ -43,21 +43,6 @@ def frequency(word):
 	if len(fclass) == 0: return 7
 	return int(generate_lex_common.tValue(fclass[0]))
 
-
-# Writes the vocabulary entry to a suitable file
-def write_entry(word, entry):
-	global vocabulary_files
-	global main_vocabulary
-	special = False
-	for voc in generate_lex_common.SPECIAL_VOCABULARY:
-		group = word.getElementsByTagName(voc[0])
-		if len(group) == 0: continue
-		if generate_lex_common.has_flag(group[0], voc[1]):
-			vocabulary_files[voc[2]].write(entry + u"\n")
-			special = True
-	if not special:
-		main_vocabulary.write(entry + u"\n")
-
 def handle_word(word):
 	global OPTIONS
 	# Drop words that are not needed in the Voikko lexicon
@@ -99,13 +84,14 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if alku == None:
-			write_entry(word, u"#Malaga class not found for (%s, %s)\n" \
-			            % (wordform, voikko_infclass))
+			generate_lex_common.write_entry(main_vocabulary, vocabulary_files,
+				word, u"#Malaga class not found for (%s, %s)\n" \
+				% (wordform, voikko_infclass))
 			continue
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 				   generate_lex_common.get_structure(altform, malaga_word_class))
-		write_entry(word, entry)
+		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
 
 
 voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
