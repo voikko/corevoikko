@@ -1,7 +1,7 @@
 
 PYTHON=python
 DESTDIR=/usr/lib/voikko
-MIN_FREQUENCY=9
+GENLEX_OPTS=--min-frequency=9
 
 # Optional vocabulary files
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
@@ -71,7 +71,7 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
-	$(PYTHON) voikko/generate_lex.py $(MIN_FREQUENCY)
+	$(PYTHON) voikko/generate_lex.py $(GENLEX_OPTS)
 	touch $@
 	@grep "Malaga class not found" voikko/joukahainen.lex
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2008 Harri Pitkänen (hatapitk@iki.fi)
 # Program to generate lexicon files for Suomi-malaga Voikko edition
 
 # This program is free software; you can redistribute it and/or modify
@@ -35,9 +35,8 @@ vocabulary_files = {}
 for voc in generate_lex_common.SPECIAL_VOCABULARY:
 	vocabulary_files[voc[2]] = generate_lex_common.open_lex(VOIKKO_LEX_DIR, voc[2])
 
-# Get the minimal frequency of words to be included
-MIN_FREQUENCY = 9
-if len(sys.argv) > 1: MIN_FREQUENCY = int(sys.argv[1])
+# Get command line options
+OPTIONS = generate_lex_common.get_options()
 
 def frequency(word):
 	fclass = word.getElementsByTagName("fclass")
@@ -60,13 +59,13 @@ def write_entry(word, entry):
 		main_vocabulary.write(entry + u"\n")
 
 def handle_word(word):
-	global MIN_FREQUENCY
+	global OPTIONS
 	# Drop words that are not needed in the Voikko lexicon
 	if generate_lex_common.has_flag(word, "not_voikko"): return
 	if generate_lex_common.has_flag(word, "incorrect"): return
 	if generate_lex_common.has_flag(word, "dialect"): return
-	if frequency(word) >= MIN_FREQUENCY + 1: return
-	if frequency(word) == MIN_FREQUENCY and generate_lex_common.has_flag(word, "confusing"): return
+	if frequency(word) >= OPTIONS["frequency"] + 1: return
+	if frequency(word) == OPTIONS["frequency"] and generate_lex_common.has_flag(word, "confusing"): return
 	
 	# Get the inflection class. Exactly one inflection class is needed
 	voikko_infclass = None
