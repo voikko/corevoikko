@@ -67,10 +67,10 @@ Variables for tuning the build process
   * GENLEX_OPTS=option_string
     Sets options string for generate_lex.py. The default is "--min-frequency=9"
     Available options for generate_lex.py are
-    - --min-frequency=n
+    + --min-frequency=n
       Limits the words to be included in the .lex files to the
       specified or higher frequency class. Default is 9.
-    - --extra-usage=usage1,usage2,...
+    + --extra-usage=usage1,usage2,...
       If a word has usage flags (it belongs to a special vocabulary), it is
       included to the vocabulary only if at least one of the usage flags is
       listed here. By default, no special vocabularies are included.
@@ -83,8 +83,8 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
-Copyright (©) 2006 - 2007 Hannu Väisänen (Email: Firstname.Lastname@joensuu.fi
-but replace ä's with a's) and 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi).
+Copyright (©) 2006 - 2008 Hannu Väisänen (Email: Firstname.Lastname@joensuu.fi
+but replace ä's with a's) and 2006 - 2008 Harri Pitkänen (hatapitk@iki.fi).
 Contributors listed in file CONTRIBUTORS hold copyrights to the
 vocabulary data.
 

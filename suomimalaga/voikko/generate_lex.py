@@ -30,13 +30,21 @@ import codecs
 
 flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
 
+# Get command line options
+OPTIONS = generate_lex_common.get_options()
+
+# According to the options, make some vocabularies non-special
+old_special = generate_lex_common.SPECIAL_VOCABULARY
+generate_lex_common.SPECIAL_VOCABULARY = []
+for s in old_special:
+	if s[0] == "usage" and s[1] in OPTIONS["extra-usage"]: continue
+	generate_lex_common.SPECIAL_VOCABULARY.append(s)
+
 main_vocabulary = generate_lex_common.open_lex(VOIKKO_LEX_DIR, "joukahainen.lex")
 vocabulary_files = {}
 for voc in generate_lex_common.SPECIAL_VOCABULARY:
 	vocabulary_files[voc[2]] = generate_lex_common.open_lex(VOIKKO_LEX_DIR, voc[2])
 
-# Get command line options
-OPTIONS = generate_lex_common.get_options()
 
 def frequency(word):
 	fclass = word.getElementsByTagName("fclass")

@@ -169,16 +169,16 @@ def write_entry(main_vocabulary,vocabulary_files,word, entry):
 # Parse command line options and return them in a dictionary
 def get_options():
 	try:
-		optlist = ["min-frequency=", "extra_usage="]
+		optlist = ["min-frequency=", "extra-usage="]
 		(opts, args) = getopt.getopt(sys.argv[1:], "", optlist)
 	except getopt.GetoptError:
 		sys.stderr.write("Invalid option list for %s\n" % sys.argv[0])
 		sys.exit(1)
 	options = {"frequency": 9,
-	           "extra_usage": []}
+	           "extra-usage": []}
 	for (name, value) in opts:
 		if name == "--min-frequency":
 			options["frequency"] = int(value)
-		elif name == "--extra_usage":
-			options["extra_usage"] = value.split(",")
+		elif name == "--extra-usage":
+			options["extra-usage"] = value.split(",")
 	return options
