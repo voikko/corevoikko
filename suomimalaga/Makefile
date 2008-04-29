@@ -2,7 +2,7 @@
 # Build configuration. See README for more information.
 PYTHON=python
 DESTDIR=/usr/lib/voikko
-GENLEX_OPTS=--min-frequency=9 --style=old,international
+GENLEX_OPTS=
 EXTRA_LEX=
 
 # Optional vocabulary files (needed in the source package)

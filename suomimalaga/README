@@ -65,7 +65,7 @@ Variables for tuning the build process
 
 - make voikko, make voikko-preprocessed-l-gzip:
   * GENLEX_OPTS="--option1=xxx --option2=yyy ..."
-    Sets options string for generate_lex.py. The default is "--min-frequency=9"
+    Sets options string for generate_lex.py.
     Available options for generate_lex.py are
     + --min-frequency=n
       Limits the words to be included in the .lex files to the
