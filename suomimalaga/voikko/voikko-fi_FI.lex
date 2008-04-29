@@ -30,5 +30,5 @@ include "sidesanat.lex";
 
 include "suomi.lex";
 
-include "joukahainen.lex";
+include "main.lex";
 

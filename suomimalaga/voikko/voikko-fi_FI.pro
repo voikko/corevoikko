@@ -12,7 +12,7 @@ info: Lex-Version: 2
 
 ## Begin-User-Configuration
 lex: voikko-fi_FI.lex suomi.lex
-lex: joukahainen.lex
+lex: main.lex
 lex: #atk.lex
 lex: #atk-lyhenteet.lex
 lex: #kasvatustiede.lex

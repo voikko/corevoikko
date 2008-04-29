@@ -1,9 +1,11 @@
 
+# Build configuration. See README for more information.
 PYTHON=python
 DESTDIR=/usr/lib/voikko
 GENLEX_OPTS=--min-frequency=9 --style=old,international
+EXTRA_LEX=
 
-# Optional vocabulary files
+# Optional vocabulary files (needed in the source package)
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
 
 # Source files for Sukija version.
@@ -58,7 +60,7 @@ SM_VERSION=1.1
 all: voikko
 
 voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
-	$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
+	voikko/main.lex
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
@@ -75,6 +77,9 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 	touch $@
 	@grep "Malaga class not found" voikko/joukahainen.lex
 
+voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
+	cat voikko/joukahainen.lex $(EXTRA_LEX) > $@
+
 $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
 
 clean:
@@ -84,7 +89,7 @@ clean:
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
-	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML))
+	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) voikko/main.lex
 	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
 
 # Rules for creating the preprocessed source package
