@@ -292,6 +292,15 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- <nimisana, nimi_laatusana, laatusana, teonsana, etuliite>;
   end;
 
+  # Yksitekijäiset teonsanat taipuvat vain yksikön ja monikon kolmannessa.
+  #
+  if ($tietue.luokka = teonsana and $tietue.perusmuoto in <"sataa">) then
+    $taivutus :=- <kestämän_tekijäpääte_y1, kestämän_tekijäpääte_y2,
+                   kestämän_tekijäpääte_m1, kestämän_tekijäpääte_m2, 
+                   kertoman_tekijäpääte_y1, kertoman_tekijäpääte_y2,
+                   kertoman_tekijäpääte_m1, kertoman_tekijäpääte_m2>;
+  end;
+
 #if ($tietue.luokka = johdin_lAinen) or ($tietue.perusmuoto = "nainen") then
 #  define $a := transmit ($tietue);
 #  define $b := transmit ($taivutus);

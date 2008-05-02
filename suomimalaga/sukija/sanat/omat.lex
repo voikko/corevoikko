@@ -404,6 +404,11 @@
 [perusmuoto: "Magazine", alku: "Magazine", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Gefilusmehu", alku: "Gefilusmehu", luokka: nimi, jatko: <valo>, äs: a];
 
+[perusmuoto: "politiikka", alku: "politik", luokka: nimisana, jatko: <haka>, äs: a];
+[perusmuoto: "politiikki", alku: "politiik", luokka: nimisana, jatko: <takki>, äs: a];  # Politiikka.
+[perusmuoto: "poliisi", alku: "polis", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "polina", alku: "polin", luokka: nimisana, jatko: <apila>, äs: a];   # Puheenpolina.
+
 
 [perusmuoto: "mafiaisä", alku: "mafiais", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppp=ppp"];
 [perusmuoto: "opetusisä", alku: "opetusis", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=pppppp=ppp"];
@@ -446,8 +451,10 @@
 [perusmuoto: "Giulio", alku: "Giulio", luokka: etunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Juuti", alku: "Juu", luokka: sukunimi, jatko: <vati>, äs: a];
 
+[perusmuoto: "vuossata", alku: "vuossa", luokka: nimisana, jatko: <pata>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "myöhäisilta", alku: "myöhäisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "varhaisilta", alku: "varhaisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "ripsiä", alku: "rips", luokka: teonsana, jatko: <sallia>, äs: ä];
 
 [perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
 [perusmuoto: "Vincent", alku: "Vincent", luokka: etunimi, jatko: <kalsium>, äs: ä];
@@ -460,6 +467,10 @@
 [perusmuoto: "asianomanen", alku: "asianoma", luokka: nimisana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "aukioleva", alku: "aukiolev", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "Sigurðardóttir", alku: "Sigurðardóttir", luokka: etunimi, jatko: <kalsium>, äs: a];
+
+[perusmuoto: "muuntaajuinen", alku: "muuntaajui", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "muunkuntalainen", alku: "muunkuntalai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppppp"];
+[perusmuoto: "meidän-", alku: "meidän-", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
 [perusmuoto: "aukikaulata", alku: "aukikaul", luokka: teonsana, jatko: <salata>, äs: a];
 
