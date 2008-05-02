@@ -84,6 +84,10 @@ Variables for tuning the build process
   * EXTRA_LEX="path/to/file1.lex path/to/file2.lex ..."
     Adds extra malaga lexicon files to the vocabulary. By default, no extra
     lexicons are added.
+  * VANHAHKOT_MUODOT=yes|no
+    See voikko/doc/liput.txt. Default: yes
+  * VANHAT_MUODOT=yes|no
+    See voikko/doc/liput.txt. Default: no
 
 
 Copyright and license information

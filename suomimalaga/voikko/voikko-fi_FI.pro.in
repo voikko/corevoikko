@@ -19,8 +19,8 @@ lex: #kasvatustiede.lex
 lex: #kasvatustiede-lyhenteet.lex
 lex: #laaketiede.lex
 lex: #matluonnontiede.lex
-mallex: set switch vanhahkot_muodot yes
-mallex: set switch vanhat_muodot no
+mallex: set switch vanhahkot_muodot VANHAHKOT_MUODOT
+mallex: set switch vanhat_muodot VANHAT_MUODOT
 ## End-User-Configuration
 
 ## Begin-Internal-Configuration

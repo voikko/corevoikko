@@ -4,6 +4,8 @@ PYTHON=python
 DESTDIR=/usr/lib/voikko
 GENLEX_OPTS=
 EXTRA_LEX=
+VANHAHKOT_MUODOT=yes
+VANHAT_MUODOT=no
 
 # Optional vocabulary files (needed in the source package)
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
@@ -26,7 +28,7 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
 SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
          voikko/olla-ei.lex \
-         voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro common/voikkoutils.py \
+         voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro.in common/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX))
@@ -60,7 +62,7 @@ SM_VERSION=1.1
 all: voikko
 
 voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
-	voikko/main.lex
+	voikko/main.lex voikko/voikko-fi_FI.pro
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
@@ -80,6 +82,12 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
 	cat voikko/joukahainen.lex $(EXTRA_LEX) > $@
 
+VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
+	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/"
+
+voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
+	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@
+
 $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
 
 clean:
@@ -89,7 +97,7 @@ clean:
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
-	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) voikko/main.lex
+	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) voikko/main.lex voikko/voikko-fi_FI.pro
 	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
 
 # Rules for creating the preprocessed source package
