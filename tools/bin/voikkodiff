@@ -17,6 +17,7 @@ for hakemisto in $PYTHONPATH; do
 	eval $(grep ^voikkotest_dir= "$hakemisto/$asetustiedosto" 2>/dev/null)
 	eval $(grep ^diffviewcmd= "$hakemisto/$asetustiedosto" 2>/dev/null)
 done
+unset IFS
 
 cd "$voikkotest_dir" || exit 1
 
