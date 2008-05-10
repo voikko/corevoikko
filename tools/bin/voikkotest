@@ -154,7 +154,7 @@ def spell_tests(dict):
 				negative_test = False
 				word = line
 			testcount = testcount + 1
-			if not (dict.check(word) ^ negative_test):
+			if not ((len(word) == 0 or dict.check(word)) ^ negative_test):
 				print u'Spelling test failed at line %i, section "%s":\n  %s' \
 				      % (linecount, section, line_orig)
 				failcount = failcount + 1
