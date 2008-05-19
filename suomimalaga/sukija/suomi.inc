@@ -231,6 +231,8 @@ define @nimisanasta_johdettu_nimisana :=
 
 define @nimisanasta_johdettu_laatusana := <johdin_inen, johdin_tOn>;
 
+#                                          Länsimainen => länsimaisittain.
+#define @laatusanasta_johdettu_nimisana := <johdin_ittAin, johdin_Us, johdin_UUs>;
 define @laatusanasta_johdettu_nimisana := <johdin_Us, johdin_UUs>;
 
 define @laatusanasta_johdettu_laatusana := <johdin_nlainen>;

@@ -423,11 +423,7 @@ assert ($i = length($vasen));
 #define $nimi := transmit (<"laatusana"> + <$vasen.$i.alku> + <$oikea> + <$sana>);
 #define $n := transmit (<"luokka"> + <$vasen.$i.luokka>);
 
-##  if ($i greater 0) then
-##    ? (($oikea.luokka in $vasen.$i.jatko) or
-##       ((nimisana in $vasen.$i.jatko) and ($oikea.luokka in @nimisana + @lukusana)));
-##    ? yhdyssana_oikein ($vasen, $oikea, $i);
-##  end;
+#  assert ($i greater 0);
 
   if ($i greater 0) then
     ? ($oikea.luokka in $vasen.$i.jatko);
@@ -449,6 +445,19 @@ assert ($i = length($vasen));
   end;
   if (liitesana2 in $oikea.jatko) then
     result $res, rules liitesana2;
+  end;
+  if (@nimi_laatusanan_johdin * $oikea.jatko /= <>) then
+    result $res, rules nimi_laatusanan_johdin;
+  end;
+  if (@voittoaste + @yliaste * $oikea.jatko /= <>) then
+    result $res, rules voitto_yliaste;
+  end;
+  if (@johdin_laatusanasta + @johdin_nimisanasta * $oikea.jatko /= <>) then
+    result $res, rules laatusanan_johdos;
+###    result $res, rules laatusanasta_johdettu_nimisana, laatusanasta_johdettu_laatusana;
+  end;
+  if (loppu in $oikea.jatko) then
+    result $res, rules loppu;
   end;
 if (1 = 1) then
   if (tavuviiva in $oikea.jatko) then
@@ -472,18 +481,6 @@ else
     result $res, rules tavuviiva;
   end;
 end;
-  if (@nimi_laatusanan_johdin * $oikea.jatko /= <>) then
-    result $res, rules nimi_laatusanan_johdin;
-  end;
-  if (@voittoaste + @yliaste * $oikea.jatko /= <>) then
-    result $res, rules voitto_yliaste;
-  end;
-  if (@johdin_laatusanasta + @johdin_nimisanasta * $oikea.jatko /= <>) then
-    result $res, rules laatusanan_johdos;
-  end;
-  if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
-  end;
 
   result $res, rules sijapääte;
 end;
@@ -1164,6 +1161,9 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $n):
   if (@nimi_laatusanan_johdin * $oikea.jatko /= <>) then
     result $res, rules nimi_laatusanan_johdin;
   end;
+  if (@johdin_laatusanasta + @johdin_nimisanasta * $oikea.jatko /= <>) then
+    result $res, rules laatusanan_johdos;
+  end;
 
 if (1 = 1) then
   if (tavuviiva in $oikea.jatko) then
@@ -1171,11 +1171,11 @@ if (1 = 1) then
   end;
 else
   result $res,
-         rules sijapääte,
+         rules #sijapääte,
                nimisana, laatusana,
                nimi_laatusana,
                teonsanasta_johdettu_nimisana, teonsanasta_johdettu_laatusana,
-               laatusanan_johdos,
+##               laatusanan_johdos,
                nimisanasta_johdettu_nimisana, nimisanasta_johdettu_laatusana,
                paikannimen_ja_sukunimen_lainen_johdos,
 ##               nimi_laatusanan_johdin,
@@ -1456,6 +1456,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"muta">,      <"geeni", "geeninen">>,
       <<"mäki">,      <"tupalainen">>,
       <<"nomi">,      <"suu">>,
+      <<"omatunto">,  <"vapa">>,
       <<"onninen">,   <"tuttu">>,
       <<"ope">,       <"reti">>,
       <<"oppinen">,   <"ääntö">>,
@@ -1463,6 +1464,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"osto">,      <"skeida">>,
       <<"paita">,     <"silla">>,
       <<"Pal", "Pál">, <"joki", "maa", "meri">>,
+      <<"palava">,    <"kivi">>,
       <<"peli">,      <"manni">>,
       <<"perin">,     <"tee">>,   # Perin+tee(llinen).
       <<"peru">,      <"noki">>,  # Peru+noissa.
@@ -1532,6 +1534,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"ura">,       <"naukaista">>,  # Ura+naukaisija.
       <<"us">,        <"Neuvonen">>,
       <<"uus">,       <"arpoa">>,
+#      <<"vanha">,     <"kaupunki", "piika", "poika">>,
       <<"vaja">,      <"nainen">>,
       <<"varus">,     <"tee">>,    # Varus+tee+t.
       <<"vasta">,     <"pää">>,
@@ -1572,16 +1575,18 @@ end;
 subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
   define $taulukko := <
 #      <<"">,    <"">,    <"">>,
-      <<"heitto">,   <"inen">, <"tuki">>,    # Heitto+is+tu+in. Heitto + johdin_inen + tuki + keinonto_n.
-      <<"hima">,     <"n">,    <"kala", "kalaisa">>,    # Hima+n+kalainen.
-      <<"kani">,     <"n">,    <"manne">>,
-      <<"luokka">,   <"inen">, <"tupa">>,
-      <<"muuri">,    <"inen">, <"ääntö">>,   # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
-      <<"pari">,     <"inen">, <"hissa">>,
-      <<"pari">,     <"inen">, <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
-      <<"suoda">,    <"ma">,   <"lainen", "laki">>,  # Suo+ma+lainen. Suoda + johdin_mA_saama + johdin_lainen.
-                                                     # Suo+ma+laista. Suoda + johdin_mA_saama + laki.
-                                                     # "Suomalainen" on sanastossa.
+      <<"heitto">,   <"inen">,  <"tuki">>,    # Heitto+is+tu+in. Heitto + johdin_inen + tuki + keinonto_n.
+      <<"hima">,     <"n">,     <"kala", "kalaisa">>,    # Hima+n+kalainen.
+      <<"kani">,     <"n">,     <"manne">>,
+      <<"luokka">,   <"inen">,  <"tupa">>,
+      <<"muuri">,    <"inen">,  <"ääntö">>,   # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
+      <<"oma">,      <"tunto">, <"vapa">>,
+      <<"palaa">,    <"va">,    <"kivi">>,
+      <<"pari">,     <"inen">,  <"hissa">>,
+      <<"pari">,     <"inen">,  <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
+      <<"suoda">,    <"ma">,    <"lainen", "laki">>,  # Suo+ma+lainen. Suoda + johdin_mA_saama + johdin_lainen.
+                                                      # Suo+ma+laista. Suoda + johdin_mA_saama + laki.
+                                                      # "Suomalainen" on sanastossa.
       <<"tukka">,  <"nuotta">, <"silla">>,
       <<"väsky">,  <"n">,      <"yö">>               # Väsky+n+öitä.
   >;

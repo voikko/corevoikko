@@ -404,6 +404,10 @@
 [perusmuoto: "Magazine", alku: "Magazine", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Gefilusmehu", alku: "Gefilusmehu", luokka: nimi, jatko: <valo>, äs: a];
 
+#[perusmuoto: "omatunto", alku: "omatun", luokka: nimisana, jatko: <anto>, äs: a];
+#[perusmuoto: "puolikuu", alku: "puoliku", luokka: nimisana, jatko: <puu>, äs: a];
+
+
 [perusmuoto: "politiikka", alku: "politik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "politiikki", alku: "politiik", luokka: nimisana, jatko: <takki>, äs: a];  # Politiikka.
 [perusmuoto: "poliisi", alku: "polis", luokka: nimisana, jatko: <banaali>, äs: a];
