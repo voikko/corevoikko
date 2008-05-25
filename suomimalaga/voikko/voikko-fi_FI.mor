@@ -789,9 +789,9 @@ combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
       if $edellinen.luokka in <laatusana, nimi_laatusana> then
         result $res, rules yhdysmerkki_laatusanan_jälkeen;
       end;
-    end;
-    if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
-      result $res, rules inen_johdos_nimisanasta;
+      if sijamuoto_sijasta($oikea.sija) = omanto and luku_sijasta($oikea.sija) = yksikkö then
+        result $res, rules inen_johdos_nimisanasta;
+      end;
     end;
   end;
 end;
@@ -1537,8 +1537,8 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   end;
 
   if tavuviiva in $oikea.jatko then
-    if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
-        johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
+    if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>
+        + @johdin_jA) or $oikea.jluokka = nimisana then
       result $res, rules nimisana, nimisana_teonsanasta,
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
                          etuliite, yhdysmerkki_yleisnimen_jälkeen;

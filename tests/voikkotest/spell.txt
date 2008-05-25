@@ -192,7 +192,7 @@ hauenhampainen
 hopeahelainen
 terävä-älyinen
 !nopea-älyinen
-viittomakielinen
+viitontakielinen
 kaunokirjallisuus
 !pulaaerobinen
 pula-aerobinen
@@ -250,7 +250,8 @@ tiedotus-
 luovuttajarekisteri
 hakasitoja
 hevossitoja
-syntymäpäivä
+!leipomapäivä
+!suomankielisessä
 yritystoiminnassa
 toimintamahdollisuus
 joukkuepelaaminen

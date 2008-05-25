@@ -1187,15 +1187,16 @@ define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
                      sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
                      ulko_olento_llA, ulkoeronto_ltA, ulkotulento_lle,
                      vajanto_ttA, ##### voittoaste,
-                     nimentö_t, omanto_in, johdin_tOn, johdin_llinen>
-                    + @yhdyssana;
+                     nimentö_t, omanto_in, johdin_tOn, johdin_llinen>;
 
 # Puno+ma, teke+mä.
 #
 [alku: "m",  luokka: johdin_mA, äs: a, jatko: @m_jatko,  perusmuoto: "ma"];
 [alku: "m",  luokka: johdin_mA, äs: ä, jatko: @m_jatko,  perusmuoto: "mä"];
-[alku: "ma", luokka: johdin_mA, äs: a, jatko: @mA_jatko, perusmuoto: "ma"];
-[alku: "mä", luokka: johdin_mA, äs: ä, jatko: @mA_jatko, perusmuoto: "mä"];
+[alku: "ma", luokka: johdin_mA, äs: a, jatko: @mA_jatko, perusmuoto: "ma", tiedot: <ei_ysa, ei_sukija>];
+[alku: "mä", luokka: johdin_mA, äs: ä, jatko: @mA_jatko, perusmuoto: "mä", tiedot: <ei_ysa, ei_sukija>];
+[alku: "ma", luokka: johdin_mA, äs: a, jatko: @mA_jatko + @yhdyssana, perusmuoto: "ma", tiedot: <ei_voikko>];
+[alku: "mä", luokka: johdin_mA, äs: ä, jatko: @mA_jatko + @yhdyssana, perusmuoto: "mä", tiedot: <ei_voikko>];
 
 # Maa+ton, pää+tön, puno+maton, teke+mätön.
 
