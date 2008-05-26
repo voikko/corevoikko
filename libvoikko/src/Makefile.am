@@ -17,3 +17,6 @@ noinst_HEADERS = voikko_utils.h voikko_setup.h voikko_spell.h voikko_charset.h \
 
 dist_man_MANS = voikkospell.1 voikkohyphenate.1
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = libvoikko.pc
+

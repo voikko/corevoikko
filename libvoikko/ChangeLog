@@ -1,3 +1,7 @@
+2008-05-26 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
+
+	* Provide libvoikko.pc for pkg-config.
+
 2008-03-07 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix hyphenation of nougat'kaan.
