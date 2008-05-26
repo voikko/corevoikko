@@ -148,7 +148,7 @@ rx_end = re.compile(end, re.IGNORECASE)
 #        Sukija-versiossa "amerikan" on etuliite. (-:
 #u"punanen", u"päivänen",
 words = [
-	 u"aikalainen", u"alaisuus", u"alastulo", u"alkiolainen",
+	 u"aikalainen", "ajoneuvo", u"alaisuus", u"alastulo", u"alkiolainen",
 	 u"allekirjoittaa", u"alleviivata",
 	 u"amerikanenglanti", u"amerikanenglantilainen", u"amerikanjuutalainen",
          u"amerikanrauta", u"amerikansalaatti", u"amerikansuomalainen", u"amerikansuomi",
@@ -180,7 +180,7 @@ words = [
 	 u"maallistua", u"maattojohdin", u"maattojohto", u"maolainen",
 	 u"marxilainen", u"marksismi-leninismi", u"marxismi-leninismi",
 	 u"metsäläinen", u"mierolainen",
-	 u"mikkelinpäivä", u"mittatarkka", u"mongolilainen", u"mäkitupalainen",
+	 u"mikkelinpäivä", u"mittatarkka", u"mongolilainen", u"myynti", u"mäkitupalainen",
 	 u"naarmuttua", u"nimismies",
 	 u"ohutsuoli", u"oikeanlainen", u"oikeistolainen", u"oikeus",
 	 u"omanlainen", u"opetus", u"opistolainen", u"otto",

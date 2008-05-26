@@ -60,6 +60,8 @@ sija;
   omanto_ten;  # Nais+ten.
   omanto_iT;   # Valtio+iden, valtio+itten.
   omanto_idän; # Me+idän, te+idän, he+idän.
+  omanto_hitten; # Korke+hitten. Ei Voikko-versiossa.
+  omanto_hien;   # Korke+hien. Ei Voikko-versiossa.
 
   kohdanto_idät; # Me+idät, te+idät, he+idät.
   kohdanto_t;    # Minu+t, sinu+t, häne+t, nämä+t, kene+t.

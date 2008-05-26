@@ -483,6 +483,17 @@
 
 [perusmuoto: "ohikäydä", alku: "ohikä", luokka: teonsana, jatko: <käydä>, äs: ä];
 
+[perusmuoto: "tulenta", alku: "tulen", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "taianta", alku: "taian", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "pilanta", alku: "pilan", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "muikunta", alku: "muikun", luokka: nimisana, jatko: <veranta>, äs: a];
+[perusmuoto: "pojannasta", alku: "pojannast", luokka: nimisana, jatko: <kala>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "miljoonamyynti", alku: "miljoonamyyn", luokka: nimisana, jatko: <tunti>, äs: ä, rakenne: "=pppppppp=pppppp"];
+#[perusmuoto: "Verona", alku: "Veron", luokka: paikannimi, jatko: <karahka>, äs: a];
+[perusmuoto: "lerpahtaa", alku: "lerpah", luokka: teonsana, jatko: <astahtaa>, äs: a];
+[perusmuoto: "kitkos", alku: "kitko", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "Waldrop", alku: "Waldrop", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Forester", alku: "Forester", luokka: sukunimi, jatko: <kalsium>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 

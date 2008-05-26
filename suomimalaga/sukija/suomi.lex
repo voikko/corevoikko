@@ -149,6 +149,18 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "itte",  luokka: sijapääte, sija: omanto_iT,
                 luku: monikko, äs: aä, jatko: <omistusliite>];
 
+
+[alku: "hitten", luokka: sijapääte, sija: omanto_hitten,
+                 luku: monikko, äs: aä, jatko: @sijan_jatko + @yhdyssana, tiedot: <ei_voikko>];  # Korkehitten.
+[alku: "hitte",  luokka: sijapääte, sija: omanto_hitten,
+                 luku: monikko, äs: aä, jatko: <omistusliite>, tiedot: <ei_voikko>];
+
+[alku: "hien", luokka: sijapääte, sija: omanto_hien,
+               luku: monikko, äs: aä, jatko: @sijan_jatko + @yhdyssana, tiedot: <ei_voikko>];  # Korkehien.
+[alku: "hie",  luokka: sijapääte, sija: omanto_hien,
+               luku: monikko, äs: aä, jatko: <omistusliite>, tiedot: <ei_voikko>];
+
+
 [alku: "idän",  luokka: sijapääte, sija: omanto_idän,
                 luku: monikko, äs: ä, jatko: @sijan_jatko];
 

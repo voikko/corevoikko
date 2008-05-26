@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -145,6 +145,9 @@ omanto_iT
           kork+io+iden  ei_voikko
           kork+io+itten  ei_voikko
 
+omanto_ien
+          kork+eh+ien  vanha_h
+
 omanto_ten
           kork+ehit+ten  vanha_h
 
@@ -154,6 +157,7 @@ omanto_in
 
 osanto_itA
           kork+e+ita
+          kork+eo+ita  ei_voikko
           kork+io+ita  ei_voikko
 
 osanto_iA
@@ -162,29 +166,35 @@ osanto_iA
 olento_inA
           kork+e+ina
           kork+eh+ina  vanha_h
+          kork+eo+ina  ei_voikko
           kork+io+ina  ei_voikko
 
 tulento_iksi
           kork+e+iksi
           kork+eh+iksi  vanha_h
+          kork+eo+iksi  ei_voikko
           kork+io+iksi  ei_voikko
 
 sisäolento_issA
           kork+e+issa
           kork+eh+issa  vanha_h
+          kork+eo+issa  ei_voikko
           kork+io+issa  ei_voikko
 
 sisäeronto_istA
           kork+e+ista
           kork+eh+ista  vanha_h
+          kork+eo+ista  ei_voikko
           kork+io+ista  ei_voikko
 
 sisätulento_ihin
           kork+e+ihin
+          kork+eo+ihin  ei_voikko
           kork+io+ihin  ei_voikko
 
 sisätulento_isiin
           kork+e+isiin
+          kork+eo+isiin  ei_voikko
           kork+io+isiin  ei_voikko
 
 sisätulento_isin
@@ -198,26 +208,31 @@ ulko_olento_illA
 ulkoeronto_iltA
           kork+e+ilta
           kork+eh+ilta  vanha_h
+          kork+eo+ilta  ei_voikko
           kork+io+ilta  ei_voikko
 
 ulkotulento_ille
           kork+e+ille
           kork+eh+ille  vanha_h
+          kork+eo+ille  ei_voikko
           kork+io+ille  ei_voikko
 
 vajanto_ittA
           kork+e+itta
           kork+eh+itta  vanha_h
+          kork+eo+itta  ei_voikko
           kork+io+itta  ei_voikko
 
 seuranto_ine
           kork+e+ine
           kork+eh+ine  vanha_h
+          kork+eo+ine  ei_voikko
           kork+io+ine  ei_voikko
 
 keinonto_in
           kork+e+in
           kork+eh+in  vanha_h
+          kork+eo+in  ei_voikko
           kork+io+in  ei_voikko
 
 kerronto_sti
@@ -244,6 +259,7 @@ johdin_inen
 johdin_ittain
           hop+e+ittain
           hop+eh+ittain  vanha_h
+          hop+eo+ittain  ei_voikko
           hop+io+ittain  ei_voikko
 
 johdin_lAinen

@@ -124,7 +124,7 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
-  if ($tietue.perusmuoto = "pöllö") then
+  if ($tietue.perusmuoto in <"nasta", "pöllö">) then
     if ($tietue.luokka = nimisana) then
       stop;
     elseif ($tietue.luokka = laatusana) then

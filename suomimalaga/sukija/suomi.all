@@ -124,7 +124,7 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
-  if ($tietue.perusmuoto = "pöllö") then
+  if ($tietue.perusmuoto in <"nasta", "pöllö">) then
     if ($tietue.luokka = nimisana) then
       stop;
     elseif ($tietue.luokka = laatusana) then
@@ -1313,7 +1313,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (korkea in $tietue.jatko) then
-    choose $i in korkea ($tietue, "e"+A($tietue), "i"+A($tietue), "ee", "ehe", "e", "i"+O($tietue), "ehit", "eh");
+    choose $i in korkea ($tietue, "e"+A($tietue), "i"+A($tietue), "ee", "ehe", "e", "i"+O($tietue), "eh", "ehit", "e"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -1349,7 +1349,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (tienoo in $tietue.jatko) then
-    choose $i in tienoo ($tietue, O($tietue), "h"+O($tietue), "", "hit", "h");
+    choose $i in tienoo ($tietue, O($tietue), "h"+O($tietue), "", "h", "hit");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -2195,7 +2195,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (altis in $tietue.jatko) then
-    choose $i in kaunis ($tietue, "is", "tii", "tihi", "tis", "ti", "te", "tih", "teh", "tehit", "tehi", "ti");
+    choose $i in kaunis ($tietue, "is", "tii", "tihi", "tis", "ti", "te", "tih", "teh", "tihit", "tehi", "ti");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -6374,7 +6374,7 @@ subrule harteet ($tietue, $param01, $param02, $param03, $param04):
                          johdin_ittain: <<$param02, <>>, <$param04, <vanha_h>>>,
                          johdin_tOn: <<$param01, <>>>]);
 end;
-subrule korkea ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
+subrule korkea ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09):
   return taivutuskaava ($tietue,
                         [nimentö: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
                          omistusliite: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <vanha_h>>>,
@@ -6395,28 +6395,29 @@ subrule korkea ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          vajanto_ttA: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <vanha_h>>>,
                          nimentö_t: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <vanha_h>>>,
                          omanto_iT: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         omanto_ten: <<$param07, <vanha_h>>>,
+                         omanto_ien: <<$param07, <vanha_h>>>,
+                         omanto_ten: <<$param08, <vanha_h>>>,
                          omanto_in: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         osanto_itA: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         osanto_iA: <<$param08, <vanha_h>>>,
-                         olento_inA: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         tulento_iksi: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         sisäolento_issA: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         sisäeronto_istA: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         sisätulento_ihin: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         sisätulento_isiin: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         sisätulento_isin: <<$param08, <vanha_h>>>,
-                         ulko_olento_illA: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         ulkoeronto_iltA: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         ulkotulento_ille: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         vajanto_ittA: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         seuranto_ine: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
-                         keinonto_in: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
+                         osanto_itA: <<$param05, <>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         osanto_iA: <<$param07, <vanha_h>>>,
+                         olento_inA: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         tulento_iksi: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         sisäolento_issA: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         sisäeronto_istA: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         sisätulento_ihin: <<$param05, <>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         sisätulento_isiin: <<$param05, <>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         sisätulento_isin: <<$param07, <vanha_h>>>,
+                         ulko_olento_illA: <<$param05, <>>, <$param07, <vanha_h>>, <$param06, <ei_voikko>>>,
+                         ulkoeronto_iltA: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         ulkotulento_ille: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         vajanto_ittA: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         seuranto_ine: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         keinonto_in: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
                          kerronto_sti: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <vanha_h>>>,
                          voittoaste: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>, <$param04, <vanha_h>>>,
-                         yliaste: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
+                         yliaste: <<$param05, <>>, <$param07, <vanha_h>>, <$param06, <ei_voikko>>>,
                          johdin_inen: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         johdin_ittain: <<$param05, <>>, <$param08, <vanha_h>>, <$param06, <ei_voikko>>>,
+                         johdin_ittain: <<$param05, <>>, <$param07, <vanha_h>>, <$param09, <ei_voikko>>, <$param06, <ei_voikko>>>,
                          johdin_lAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_llinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_mAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
@@ -6540,27 +6541,28 @@ subrule tienoo ($tietue, $param01, $param02, $param03, $param04, $param05):
                          vajanto_ttA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          nimentö_t: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          omanto_iT: <<$param03, <>>>,
-                         omanto_ten: <<$param04, <ei_voikko>>>,
+                         omanto_ien: <<$param04, <ei_voikko>>>,
+                         omanto_ten: <<$param05, <ei_voikko>>>,
                          osanto_itA: <<$param03, <>>>,
-                         osanto_iA: <<$param05, <ei_voikko>>>,
-                         olento_inA: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         tulento_iksi: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         sisäolento_issA: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         sisäeronto_istA: <<$param03, <>>, <$param05, <ei_voikko>>>,
+                         osanto_iA: <<$param04, <ei_voikko>>>,
+                         olento_inA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         tulento_iksi: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         sisäolento_issA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         sisäeronto_istA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          sisätulento_ihin: <<$param03, <>>>,
                          sisätulento_isiin: <<$param03, <>>>,
-                         sisätulento_isin: <<$param05, <ei_voikko>>>,
-                         ulko_olento_illA: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         ulkoeronto_iltA: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         ulkotulento_ille: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         vajanto_ittA: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         seuranto_ine: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         keinonto_in: <<$param03, <>>, <$param05, <ei_voikko>>>,
+                         sisätulento_isin: <<$param04, <ei_voikko>>>,
+                         ulko_olento_illA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         ulkoeronto_iltA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         ulkotulento_ille: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         vajanto_ittA: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         seuranto_ine: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         keinonto_in: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          kerronto_sti: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          voittoaste: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         yliaste: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         johdin_inen: <<$param03, <>>, <$param05, <ei_voikko>>>,
-                         johdin_ittain: <<$param03, <>>, <$param05, <ei_voikko>>>,
+                         yliaste: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_inen: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_ittain: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_lAinen: <<$param01, <>>>,
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
