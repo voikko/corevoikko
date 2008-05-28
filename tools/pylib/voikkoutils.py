@@ -137,6 +137,8 @@ def get_preference(prefname):
 			return voikko_dev_prefs.svnroot
 		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'voikkotest_dir'):
 			return voikko_dev_prefs.voikkotest_dir
+		if prefname == 'voikkotest_build_options' and hasattr(voikko_dev_prefs, 'voikkotest_build_options'):
+			return voikko_dev_prefs.voikkotest_build_options
 		if prefname == 'voikko_data_dir' and hasattr(voikko_dev_prefs, 'voikko_data_dir'):
 			return voikko_dev_prefs.voikko_data_dir
 		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
@@ -149,6 +151,7 @@ def get_preference(prefname):
 		pass
 	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
+	if prefname == 'voikkotest_build_options': return ''
 	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'

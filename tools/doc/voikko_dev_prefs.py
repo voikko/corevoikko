@@ -16,6 +16,9 @@
 # Data directory for voikkotest
 #voikkotest_dir='/home/uname/tmp/voikkotest'
 
+# Build options used when calling "make voikko"
+#voikkotest_build_options=''
+
 # Data directory for voikko
 #voikko_data_dir='/home/uname/svn/voikko/trunk/data'
 

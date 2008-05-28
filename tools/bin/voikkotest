@@ -31,6 +31,7 @@ import voikkoutils
 
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
+BUILD_OPTIONS = voikkoutils.get_preference('voikkotest_build_options')
 ENCODING = voikkoutils.get_preference('encoding')
 HYPHENCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkohyphenate'
 SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
@@ -86,7 +87,7 @@ def _suggest(word, params):
 
 # Ensure that the current version is up to date
 def update_smv():
-	if os.system('cd "%s" && make voikko' % SMV) != 0:
+	if os.system('cd "%s" && make voikko %s' % (SMV, BUILD_OPTIONS)) != 0:
 		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
 		sys.exit(1)
 
