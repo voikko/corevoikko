@@ -89,6 +89,11 @@ def handle_word(word):
 	# Get forced vowel type
 	forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
 	
+	# Construct debug information
+	debug_info = u""
+	if OPTIONS["debug"]:
+		debug_info = u', sourceid: "%s"' % word.documentElement.getAttribute("id")
+	
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
@@ -105,9 +110,10 @@ def handle_word(word):
 				word, u"#Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass))
 			continue
-		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s];' \
+		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
-				   generate_lex_common.get_structure(altform, malaga_word_class))
+			   generate_lex_common.get_structure(altform, malaga_word_class),
+			   debug_info)
 		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
 
 
