@@ -6,6 +6,7 @@ GENLEX_OPTS=
 EXTRA_LEX=
 VANHAHKOT_MUODOT=yes
 VANHAT_MUODOT=no
+VOIKKO_DEBUG=no
 
 # Optional vocabulary files (needed in the source package)
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
@@ -83,7 +84,7 @@ voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
 	cat voikko/joukahainen.lex $(EXTRA_LEX) > $@
 
 VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
-	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/"
+	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/;s/VOIKKO_DEBUG/$(VOIKKO_DEBUG)/"
 
 voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
 	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@

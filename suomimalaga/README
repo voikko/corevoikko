@@ -88,6 +88,8 @@ Variables for tuning the build process
     See voikko/doc/liput.txt. Default: yes
   * VANHAT_MUODOT=yes|no
     See voikko/doc/liput.txt. Default: no
+  * VOIKKO_DEBUG=yes|no
+    Insert debug information into binary allomorph lexicon. Default: no
 
 
 Copyright and license information
