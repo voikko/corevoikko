@@ -70,6 +70,7 @@
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
 [perusmuoto: "hapan", alku: "hap", luokka: nimi_laatusana, jatko: <hapan>, äs: a];
 [perusmuoto: "hapsi", alku: "ha", luokka: nimisana, jatko: <hapsi>, äs: a];
+[perusmuoto: "juurtumahapsi", alku: "juurtumaha", luokka: nimisana, jatko: <hapsi>, äs: a, tiedot: <ei_sukija>, rakenne: "=pppppppp=ppppp"];
 [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
