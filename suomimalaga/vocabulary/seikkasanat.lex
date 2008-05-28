@@ -336,6 +336,8 @@
 [perusmuoto: "kasvokkain", alku: "kasvokkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kasvotusten", alku: "kasvotusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "katki", alku: "katki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "katumapäällä", alku: "katumapäällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "katumapäällä", alku: "katumapäälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "kauas", alku: "kaukaa",  luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kauas", alku: "kaukana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kauas", alku: "kauaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
