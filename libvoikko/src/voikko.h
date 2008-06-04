@@ -312,6 +312,37 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, 
 enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
                                               size_t * tokenlen);
 
+/**
+ * Sentence start types
+ * SENTENCE_NONE: End of text reached or error.
+ * SENTENCE_NO_START: This is not a start of a new sentence.
+ * SENTENCE_POSSIBLE: This may be a start of a new sentence.
+ * SENTENCE_PROBABLE: This is a probable start of a new sentence.
+ */
+enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START, SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
+
+/**
+ * Find the next sentence in text stream.
+ * @param handle voikko instance
+ * @param text Pointer to the start of a text buffer
+ * @param textlen Number of characters left in the buffer
+ * @param sentencelen (out) Offset of the character that starts the next sentence.
+ * @return Type of the next found sentence, if any.
+ */
+enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle, const wchar_t * text,
+     size_t textlen, size_t * sentencelen);
+
+/**
+ * Find the next sentence in text stream.
+ * @param handle voikko instance
+ * @param text Pointer to the start of a text buffer
+ * @param textlen Number of bytes left in the buffer
+ * @param sentencelen (out) Offset of the character (in charactes, not bytes) that
+ *        starts the next sentence.
+ * @return Type of the next found sentence, if any.
+ */
+enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
+     size_t textlen, size_t * sentencelen);
 
 END_C_DECLS
 #endif

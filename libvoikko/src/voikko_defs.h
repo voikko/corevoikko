@@ -69,11 +69,21 @@ VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result);
 
 VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result);
 
-VOIKKOEXPORT enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE, TOKEN_UNKNOWN};
+VOIKKOEXPORT enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION,
+             TOKEN_WHITESPACE, TOKEN_UNKNOWN};
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
                                                            size_t textlen, size_t * tokenlen);
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
                                                            size_t * tokenlen);
+
+VOIKKOEXPORT enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START,
+             SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
+
+VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
+             const wchar_t * text, size_t textlen, size_t * sentencelen);
+
+VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle,
+             const char * text, size_t textlen, size_t * sentencelen);
 #endif
