@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2006 - 2008 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for Voikko spellchecker.
 # This program requires Python and python-enchant.
 
@@ -107,27 +107,6 @@ def init_speller():
 		sys.exit(1)
 	sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
 	return dict
-
-# Read command line options
-(opts, args) = ([], [])
-try:
-	(opts, args) = getopt.getopt(sys.argv[1:], "", ["base", "current", "compare"])
-except getopt.GetoptError:
-	sys.stderr.write("Usage: voikkotest           (run only developer tests)\n")
-	sys.stderr.write("Usage: voikkotest --base    (create baseline from current version)\n")
-	sys.stderr.write("Usage: voikkotest --current (create new 'current' for comparison)\n")
-	sys.stderr.write("Usage: voikkotest --compare (compare current version against the baseline)\n")
-	sys.exit(1)
-
-if "--base" in [opt[0] for opt in opts]:
-	if os.system('cd "%s" && make voikko-install DESTDIR="%s"' % (SMV, BASE)) != 0:
-		sys.stderr.write(u"Failed to create baseline version.\n")
-		sys.exit(1)
-	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('time zcat "%s" | "%s" -p "%s" | grep "^C:" > "%s"' % \
-	          (WORDLIST, SPELLCMD, BASE, BASE_CORRECT))
-	sys.exit(0)
-
 
 # Run the spelling tests
 def spell_tests(dict):
@@ -254,6 +233,46 @@ def suggestion_tests():
 		sys.stderr.write("Could not read from file " + suggesttest + "\n")
 		sys.exit(1)
 
+# Run tokenizer tests
+def tokenizer_tests():
+	testfile = SVNROOT + "/trunk/tests/tokenizer/input.txt"
+	resultfile = WORKSPACE + "/tokenizer.txt"
+	expresults = SVNROOT + "/trunk/tests/tokenizer/output.txt"
+	sys.stderr.write("Testing next_token functions...\n")
+	os.system('cat "%s" | "%s" --tokenize > "%s"' % (testfile, HYPHENCMD, resultfile))
+	os.system('diff -U 0 "%s" "%s"' % (expresults, resultfile))
+
+# Run sentence tests
+def sentence_tests():
+	testfile = SVNROOT + "/trunk/tests/sentence/next-in.txt"
+	resultfile = WORKSPACE + "/sentence-next.txt"
+	expresults = SVNROOT + "/trunk/tests/sentence/next-out.txt"
+	sys.stderr.write("Testing next_sentence_start functions...\n")
+	os.system('cat "%s" | "%s" --split-sentences > "%s"' % (testfile, HYPHENCMD, resultfile))
+	os.system('diff -U 0 "%s" "%s"' % (expresults, resultfile))
+
+# START OF MAIN PROGRAM
+
+# Read command line options
+(opts, args) = ([], [])
+try:
+	(opts, args) = getopt.getopt(sys.argv[1:], "", ["base", "current", "compare"])
+except getopt.GetoptError:
+	sys.stderr.write("Usage: voikkotest           (run only developer tests)\n")
+	sys.stderr.write("Usage: voikkotest --base    (create baseline from current version)\n")
+	sys.stderr.write("Usage: voikkotest --current (create new 'current' for comparison)\n")
+	sys.stderr.write("Usage: voikkotest --compare (compare current version against the baseline)\n")
+	sys.exit(1)
+
+if "--base" in [opt[0] for opt in opts]:
+	if os.system('cd "%s" && make voikko-install DESTDIR="%s"' % (SMV, BASE)) != 0:
+		sys.stderr.write(u"Failed to create baseline version.\n")
+		sys.exit(1)
+	sys.stderr.write("Running voikkospell on full wordlist...\n")
+	os.system('time zcat "%s" | "%s" -p "%s" | grep "^C:" > "%s"' % \
+	          (WORDLIST, SPELLCMD, BASE, BASE_CORRECT))
+	sys.exit(0)
+
 if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
@@ -282,3 +301,5 @@ else:
 	spell_tests(dict)
 	suggestion_tests()
 	hyphen_tests()
+	tokenizer_tests()
+	sentence_tests()
