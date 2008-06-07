@@ -23,14 +23,29 @@
 
 enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
                           const wchar_t * text, size_t textlen, size_t * sentencelen) {
-	// TODO
+	enum voikko_token_type token = TOKEN_WORD;
+	size_t slen = 0;
+	size_t tokenlen;
+	int end_found = 0;
+	while (token != TOKEN_NONE && textlen - slen > 0) {
+		token = voikko_next_token_ucs4(handle, text + slen,
+		                               textlen - slen, &tokenlen);
+		if (end_found) {
+			if (token != TOKEN_WHITESPACE) {
+				*sentencelen = slen;
+				return SENTENCE_PROBABLE;
+			}
+		}
+		else if (token == TOKEN_PUNCTUATION) end_found = 1;
+		slen += tokenlen;
+	}
 	return SENTENCE_NONE;
 }
 
 enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
                           size_t textlen, size_t * sentencelen) {
 	wchar_t * text_ucs4;
-	enum voikko_token_type result;
+	enum voikko_sentence_type result;
 	if (text == 0) return SENTENCE_NONE;
 	text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
 	if (text_ucs4 == 0) return SENTENCE_NONE;
