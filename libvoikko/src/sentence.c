@@ -21,6 +21,29 @@
 #include "voikko_utils.h"
 #include "voikko_spell.h"
 #include <stdlib.h>
+#include <wctype.h>
+
+/**
+ * Returns 1 if given word ending with a dot can be interpreted
+ * as a single word, 0 if the dot does not belong to the word.
+ */
+int dot_part_of_word(const wchar_t * text, size_t len) {
+	if (len < 2) return 0;
+	
+	// ordinal numbers
+	int only_numbers = 1;
+	for (int i = 0; i < len - 1; i++) {
+		if (!iswdigit(text[i])) {
+			only_numbers = 0;
+			break;
+		}
+	}
+	if (only_numbers) return 1;
+	
+	// abbreviations
+	if (voikko_do_spell(text, len) != SPELL_FAILED) return 1;
+	return 0;
+}
 
 enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
                           const wchar_t * text, size_t textlen, size_t * sentencelen) {
@@ -48,9 +71,8 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 				end_found = 1;
 				if (slen != 0 &&
 				    previous_token_type == TOKEN_WORD &&
-				    voikko_do_spell(text + previous_token_start,
-				      slen - previous_token_start + 1) !=
-				      SPELL_FAILED) {
+				    dot_part_of_word(text + previous_token_start,
+				      slen - previous_token_start + 1)) {
 					end_dotword = 1;
 				}
 			}

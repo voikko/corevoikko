@@ -7,3 +7,5 @@ B: Oletko hullu?
 E: Arvasin.
 P: Juhliin saapuu mm. 
 E: Martta ja Reijo.
+P: Perjantai 13. 
+E: päivä on ensi viikolla.
