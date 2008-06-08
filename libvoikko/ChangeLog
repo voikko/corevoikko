@@ -1,6 +1,8 @@
 2008-06-08 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Work on sentence splitting.
+	* Allow strings longer than LIBVOIKKO_MAX_WORD_CHARS to
+	  be converted with voikko_cstrtoucs4.
 
 2008-06-07 Harri Pitkänen <hatapitk@iki.fi>
 

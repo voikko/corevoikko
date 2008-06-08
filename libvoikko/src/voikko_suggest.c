@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 #include "voikko_spell.h"
 #include "voikko_charset.h"
 #include <stdlib.h>
+#include <string.h>
 #include <wchar.h>
 #include <wctype.h>
 #include <malaga.h>
@@ -546,7 +547,9 @@ char ** voikko_suggest_cstr(int handle, const char * word) {
 	int scount;
 	char * suggestion;
 	if (word == 0 || word[0] == '\0') return 0;
-	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, 0);
+	size_t len = strlen(word);
+	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
+	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
 	if (word_ucs4 == 0) return 0;
 	suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
 	free(word_ucs4);

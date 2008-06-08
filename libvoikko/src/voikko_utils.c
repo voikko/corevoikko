@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -34,16 +34,15 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	iconv_t cd;
 	int using_temporary_converter = 0;
 	size_t conv_bytes;
-	wchar_t * ucs4_buffer = malloc((LIBVOIKKO_MAX_WORD_CHARS + 1) * sizeof(wchar_t));
+	size_t outbytesleft = len * sizeof(wchar_t);
+	wchar_t * ucs4_buffer = malloc(outbytesleft + sizeof(wchar_t));
 	if (ucs4_buffer == 0) return 0;
+	ucs4_buffer[len] = L'\0';
 	size_t res_size;
 	char * outptr = (char *) ucs4_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
 	size_t inbytesleft;
-	size_t outbytesleft = LIBVOIKKO_MAX_WORD_CHARS * sizeof(wchar_t);
-	ucs4_buffer[LIBVOIKKO_MAX_WORD_CHARS] = L'\0';
 	
-	if (len == 0) len = strlen(word);
 	inbytesleft = len;
 	
 	if (strcmp(encoding, "UTF-8") == 0) cd = voikko_options.iconv_utf8_ucs4;
@@ -87,12 +86,12 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	else return 0;
 	// On Windows we actually use UTF-16 data internally, so two units may be needed to
 	// represent a single character.
-	size_t buflen = (LIBVOIKKO_MAX_WORD_CHARS * 2 + 1);
+	size_t buflen = (len * 2 + 1);
 	wchar_t * ucs4_buffer = malloc(buflen * sizeof(wchar_t));
 	if (ucs4_buffer == 0) return 0;
 	// Illegal characters are ignored, because MB_ERR_INVALID_CHARS is not supported
 	// before WIN2K_SP4.
-	int result = MultiByteToWideChar(cp, 0, word, len ? len : -1, ucs4_buffer, buflen - 1);
+	int result = MultiByteToWideChar(cp, 0, word, len, ucs4_buffer, buflen - 1);
 	if (result == 0) {
 		free(ucs4_buffer);
 		return 0;
