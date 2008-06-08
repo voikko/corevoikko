@@ -27,6 +27,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 	size_t slen = 0;
 	size_t tokenlen;
 	int end_found = 0;
+	int end_dot = 0;
 	while (token != TOKEN_NONE && textlen - slen > 0) {
 		token = voikko_next_token_ucs4(handle, text + slen,
 		                               textlen - slen, &tokenlen);
@@ -36,7 +37,13 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 				return SENTENCE_PROBABLE;
 			}
 		}
-		else if (token == TOKEN_PUNCTUATION) end_found = 1;
+		else if (token == TOKEN_PUNCTUATION) {
+			wchar_t punct = text[slen];
+			if (wcschr(L".!?", punct)) {
+				end_found = 1;
+				if (punct == L'.') end_dot = 1;
+			}
+		}
 		slen += tokenlen;
 	}
 	return SENTENCE_NONE;
