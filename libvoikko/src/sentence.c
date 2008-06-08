@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
+#include "voikko_spell.h"
 #include <stdlib.h>
 
 enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
@@ -26,24 +27,36 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 	enum voikko_token_type token = TOKEN_WORD;
 	size_t slen = 0;
 	size_t tokenlen;
+	size_t previous_token_start = 0;
+	enum voikko_token_type previous_token_type = TOKEN_NONE;
 	int end_found = 0;
-	int end_dot = 0;
+	int end_dotword = 0;
 	while (token != TOKEN_NONE && textlen - slen > 0) {
 		token = voikko_next_token_ucs4(handle, text + slen,
 		                               textlen - slen, &tokenlen);
 		if (end_found) {
 			if (token != TOKEN_WHITESPACE) {
 				*sentencelen = slen;
-				return SENTENCE_PROBABLE;
+				if (end_dotword) return SENTENCE_POSSIBLE;
+				else return SENTENCE_PROBABLE;
 			}
 		}
 		else if (token == TOKEN_PUNCTUATION) {
 			wchar_t punct = text[slen];
-			if (wcschr(L".!?", punct)) {
+			if (wcschr(L"!?", punct)) end_found = 1;
+			else if (punct == L'.') {
 				end_found = 1;
-				if (punct == L'.') end_dot = 1;
+				if (slen != 0 &&
+				    previous_token_type == TOKEN_WORD &&
+				    voikko_do_spell(text + previous_token_start,
+				      slen - previous_token_start + 1) !=
+				      SPELL_FAILED) {
+					end_dotword = 1;
+				}
 			}
 		}
+		previous_token_start = slen;
+		previous_token_type = token;
 		slen += tokenlen;
 	}
 	return SENTENCE_NONE;

@@ -2,3 +2,8 @@ E: Kissa ja koira.
 B: Ulkona paistaa aurinko. 
 E: On lämmintä.
 E: Kun aurinko paistaa, ei yleensä sada vettä.
+B: Varo vähän! 
+B: Oletko hullu? 
+E: Arvasin.
+P: Juhliin saapuu mm. 
+E: Martta ja Reijo.
