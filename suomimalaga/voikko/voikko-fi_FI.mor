@@ -1725,10 +1725,10 @@ subrule rakenne ($tietue, $pienet_kirjaimet):
         $tuloste :=+ "=";
       else
         if $pienet_kirjaimet and $kirjain = "i" then
-	  $tuloste :=+ "p";
-	else
-	  $tuloste :=+ $kirjain;
-	end;
+          $tuloste :=+ "p";
+        else
+          $tuloste :=+ $kirjain;
+        end;
         $i :=+ 1;
       end;
     end;
@@ -1764,8 +1764,8 @@ subrule tulostus_voikko ($tietue):
       $tuloste :=+ "=";
       if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) then
         foreach $i in length($t.alku):
-	  $tuloste :=+ "p";
-	end;
+          $tuloste :=+ "p";
+        end;
       else
         $tuloste :=+ "i";
         foreach $i in length($t.alku) - 1:
@@ -1809,7 +1809,7 @@ pruning_rule prune ($list):
         $filter :=+ <no>;
       else
         $filter :=+ <yes>;
-	$j :=+ 1;
+        $j :=+ 1;
       end;
     end;
   end;
