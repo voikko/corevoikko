@@ -111,7 +111,7 @@
 [perusmuoto: "improbatur-", alku: "improbatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pp=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Lähes turha.
-[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @ell, äs: aä, tiedot: <ei_voikko>];
+##[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_ysj>];
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -250,13 +250,16 @@
 [perusmuoto: "syömä", alku: "syömä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "taka", alku: "taka", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "takaisin", alku: "takaisin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
+<<<<<<< .mine
+[perusmuoto: "tasa", alku: "tasa", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+=======
 [perusmuoto: "tarttuma", alku: "tarttuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "tasa", alku: "tasa", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+>>>>>>> .r2204
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "telemark-", alku: "telemark-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tieteis", alku: "tieteis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "totaali", alku: "totaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "tämän-", alku: "tämän-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>, rakenne: "=ppppp-"];

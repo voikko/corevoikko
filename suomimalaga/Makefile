@@ -18,7 +18,7 @@ OPTIONAL_LEX=atk-lyhenteet po-oikoluku
 SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/Makefile sukija/malaga1.png sukija/malaga2.png \
            sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
-           sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh \
+           sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh sukija/ei-sukija.txt \
            sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
            sukija/sukija.py sukija/suomi.all \
            sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro \
@@ -169,7 +169,8 @@ $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikon
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py
+	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py \
+	sukija/ei-sukija.txt
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
 	$(PYTHON) sukija/generate_lex.py

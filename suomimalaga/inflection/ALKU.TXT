@@ -137,6 +137,10 @@ allo_rule generate_allos ($tietue):
 #  end;
 
 
+  if ($tietue.luokka = lukusanan_jälkiliite) then
+    stop;
+  end;
+
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
        (murre in $tietue.tiedot) or

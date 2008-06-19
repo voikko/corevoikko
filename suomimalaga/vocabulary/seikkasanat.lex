@@ -549,6 +549,7 @@
 [perusmuoto: "lähtöisin", alku: "lähtöisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "läkähdyksissä", alku: "läkähdyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "läkähdyksissä", alku: "läkähdyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "länsimaisittain", alku: "länsimaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "läpi", alku: "lävitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "läpikotaisin", alku: "läpikotaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -857,6 +858,7 @@
 [perusmuoto: "siellä", alku: "sinne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "siis", alku: "siis", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikin", alku: "sikin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "sikäläisittäin", alku: "sikäläisittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikseen", alku: "sikseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sikseen", alku: "siksensä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "siksi", alku: "siksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -1020,6 +1022,7 @@
 [perusmuoto: "tyynni", alku: "tyynni", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tyystin", alku: "tyystin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tyyten", alku: "tyyten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "täkäläisittäin", alku: "täkäläisittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tällöin", alku: "tällöin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tännempänä", alku: "tännem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "tänäpäivänä", alku: "tänäpäivänä", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
@@ -1111,6 +1114,7 @@
 [perusmuoto: "viimeksi", alku: "viimeksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "viljalti", alku: "viljalti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vinottain", alku: "vinottain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vinottain", alku: "vinoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vitkaan", alku: "vitkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vittu", alku: "vitusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vuoksi", alku: "vuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

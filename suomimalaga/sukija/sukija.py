@@ -20,6 +20,7 @@
 
 # This code is heavily based on code written by Harri Pitkänen.
 
+import codecs
 import generate_lex_common
 import hfconv
 import voikkoutils
@@ -134,8 +135,10 @@ rx_end = re.compile(end, re.IGNORECASE)
 
 #print pattern
 
+
 # Sanat, jotka tunnistetaan Sukija-versiossa automaagisesti toisten
-# sanojen johdoksina.
+# sanojen johdoksina. Tällaiset sanat pitäisi merkitä Joukahaisen
+# sanastoon lipulla ei kuulu indeksointisanastoon.
 #
 # Niiden lisäksi Sukijassa ei tarvita erisnimiä, jotka ovat myös
 # yleisnimiä. Kuitenkin mukaan pitää ottaa sellaiset sanat, jotka
@@ -145,106 +148,16 @@ rx_end = re.compile(end, re.IGNORECASE)
 # Sanaluettelon saa näin:
 # grep '<form>' ../*/*xml | sed -e "s@</\?form>@@g" | sort
 #
-#        Sukija-versiossa "amerikan" on etuliite. (-:
-#u"punanen", u"päivänen",
-words = [
-	 u"aikalainen", "ajoneuvo", u"alaisuus", u"alastulo", u"alkiolainen",
-	 u"allekirjoittaa", u"alleviivata",
-	 u"amerikanenglanti", u"amerikanenglantilainen", u"amerikanjuutalainen",
-         u"amerikanrauta", u"amerikansalaatti", u"amerikansuomalainen", u"amerikansuomi",
-         u"ammattilainen", u"arastella", u"armeijalainen",
-         u"edellisvuotinen", u"elämä", u"esilletuominen", u"esilletuonti",
-	 u"esimerkki", u"etelävaltalainen", u"etruskilainen",
-         u"freudilainen",
-	 u"halpatyö", u"hautaus", u"herraskartano", u"herrasmies", u"herraspoika",
-	 u"herrasväki",
-	 u'huiskauttaa', u"hyvinvoida", u"hyvinvointi", u"hänenkaltainen",
-	 u"innoittua", u"institutionalisoitua", u"itkettynyt", u"itkettyä",
-	 u"julkishallinto", u"julkissektori", u"julkistalous",
-	 u"jumalaistaru", u"jumalaistarusto", u"jälkeenjäänyt",
-	 u"kansalainen", u"kansallismielinen", u"kepulainen", u"kerholainen",
-	 u"kestitys", u"kesytön", u"kiertuelainen", u"kiltalainen", u"kumous", u"kuntalainen",
-	 u"kuolleenkoura", u"kuolleenmiehenkytkin", u"kuorolainen",
-	 u"kurssilainen", u"kymmenvuotinen", u"kyyhkyläinen",
-	 u"käsinkylvö", u"käsinpesu", u"käsinlypsy", u"käsinkohonta",
-	 u"käsinladonta", u"käsinlajittelu", u"käsinlatoja", u"käsinohjaus",
-	 u"käsinseisonta", u"käsinkäynti",
-	 u"käynti", u"käytävä",
-	 u"laajakaista", u"laajakangas", u"laajakulma", u"laajakuva",
-	 u"laakafilmi", u"laakalyönti", u"laakapaino", u"laakapihti",
-	 u"lahkolainen", u"lahopuu",
-	 u"lahtelainen", u"laulattaa", u"leniniläinen", u"lesbolainen",
-	 u"liittolainen", u"lojaalisuus",
-	 u"luokkalainen", u"luontoistalous", u"lyhytvalinta", u"lyönti",
-	 u"maailmanympärimatka",
-	 u"maallistua", u"maattojohdin", u"maattojohto", u"maolainen",
-	 u"marxilainen", u"marksismi-leninismi", u"marxismi-leninismi",
-	 u"metsäläinen", u"mierolainen",
-	 u"mikkelinpäivä", u"mittatarkka", u"mongolilainen", u"myynti", u"mäkitupalainen",
-	 u"naarmuttua", u"nimismies",
-	 u"ohutsuoli", u"oikeanlainen", u"oikeistolainen", u"oikeus",
-	 u"omanlainen", u"opetus", u"opistolainen", u"otto",
-         u"pahalainen", u"pakolainen", u"palkkalainen", u"peräänajo", u"pirulainen",
-	 u"pito", u"pohjoisvaltalainen", u"poltto", u"puoluelainen",
-	 u"repolainen", u"rivittyä", u"romahdusmainen", u"ruskettua", u"rusketus",
-	 u"saarelainen", u"saaristolainen", u"seminaarilainen",
-	 u"siirtolainen", u"sirkuslainen", u"sisäpiiriläinen", u"sisäänajo", u"sisäänmeno",
-	 u"sisääntulo", u"strippaus", u"säteisliike", u"sätkytellä",
-	 u"takaisinkytkentä", u"tataarilainen", u"teatterilainen",
-	 u"tietynlainen", u"tolstoilainen", u"trotskilainen", u"tukkilainen", u"tuonti",
-	 u"tupalainen", u"työläinen",
-	 u"täysihoito", u"täysihoitola",
-	 u"uloskäytävä", u"uurteisvalas",
-	 u"vainolainen", u"vaivaisenluu", u"vajaamielinen", u"valmistuttaa",
-	 u"valmisateria", u"valmisbetoni", u"valmismatka", u"valmisosa",
-	 u"valmispakkaus", u"valmisruoka", u"valmistalo", u"valmistuote", u"valmisvaate",
-         u"valtioviisas", u"vammainen",
-	 u"vasemmistolainen", u"vastaavanlainen", u"veto",
-	 u"voima", u"vuorolainen", u"wrightiläinen", u"vuoristolainen", u"vuorolainen",
-	 u"väärinkäsitys",
-	 u"vähittäishinta", u"vähittäiskauppa", u"vähittäismaksu", u"vähittäismyymälä",
-         u"vähittäismyynti",
-	 u"yliopistolainen", u"ylösnoussut", u"yritellä", u"ystävällismielinen",
-	 u"höyhensarjalainen",
-	 u"raskassarjalainen",
-	 u"kärpässarjalainen",
-	 u"kääpiösarjalainen",
-	 u"Aaltonen", u"Aamu", u"Aarnio", u"Aho", u"Alanko", u"Albania", u"Alkio", u"Arabia",
-	 u"Armenia", u"Aro", u"Astuvansalmi", u"Asukas", u"Aura", u"Aurinko", u"Autio",
-	 u"Bulgaria",
-	 u"Eesti", u"Elo", u"Englanti", u"Eno", u"Espanja", u"Esteri",
-	 u"Georgia", u"Guinea",
-	 u"Hamina", u"Hanko", u"Helo", u"Hollanti", u"Hovi", u"Huhta", u"Hukka", u"Härmä",
-	 u"Ilma", u"Ilta", u"Islanti", u"Italia",
-	 u"Jalo", u"Jylhä", u"Järvi",
-	 u"Kainulainen", u"Kallio", u"Kangas", u"Kannus", u"Kanttura",
-	 u"Karjala", u"Karjalainen", u"Kari",
-         u"Kartano", u"Kartio", u"Kaste",
-	 u"Kerttu", u"Kerttunen", u"Kielo", u"Kiina", u"Kilpi", u"Kisko", u"Knuutinpoika",
-         u"Koitto", u"Koivisto", u"Koivu", u"Kokkari", u"Kolari", u"Kotka", u"Koppelo",
-	 u"Koski", u"Kreikka", u"Kroatia", u"Kuha", u"Kuikka", u"Kukka", u"Kulho",
-	 u"Kuokka", u"Kurki", u"Kurppa", u"Kuru", u"Kuutti", u"Kytö", u"Kärkistensalmi",
-	 u"Laakso", u"Lahja", u"Lahti", u"Laina", u"Laine", u"Lappi", u"Lauha",
-	 u"Lehto", u"Lemu", u"Lilja", u"Lintunen", u"Liperi", u"Lotta",
-	 u"Maa", u"Maila", u"Malmi", u"Marja", u"Martta", u"Matti", u"Mela", u"Metso", u"Miina",
-	 u"Minttu", u"Missi", u"Moisio", u"Muikku", u"Murto", u"Mäkinen",
-	 u"Niemi", u"Niva", u"Norja",
-	 u"Oiva", u"Orvokki", u"Otto",
-	 u"Pajari", u"Palmu", u"Paula", u"Perho", u"Pinja", u"Pirkkalainen",
-	 u"Pohja", u"Pokka", u"Portugali", u"Posti", u"Puola", u"Päivä",
-	 u"Raitio", u"Ranta", u"Ranska", u"Rauha", u"Rautio", u"Rautu", u"Reima", u"Riski",
-	 u"Ruotsi", u"Ruukki", u"Ruusu", u"Rönkkö",
-	 u"Saari", u"Saksa", u"Saku", u"Salo", u"Satu", u"Savikko", u"Seppä",
-	 u"Siimes", u"Sikiö", u"Sini", u"Sirkka", u"Sisko",
-	 u"Somero", u"Sorsa", u"Sulo", u"Suomi", u"Säde", u"Säteri",
-	 u"Taimi", u"Taisto", u"Tallus", u"Tanska", u"Tapani", u"Tarkka", u"Tarmo",
-	 u"Terho", u"Terttu", u"Tiibet", u"Tikka", u"Timpuri", u"Toivo",
-         u"Tšekki", u"Tuisku", u"Turkki", u"Tuuli",
-	 u"Ukraina", u"Unelma", u"Unkari",
-	 u"Valta", u"Valtti", u"Varis", u"Varkaus", u"Varma", u"Vasara", u"Vento",
-         u"Venäjä", u"Venäläinen", u"Vesa", u"Vieno", u"Vietnam", u"Viita", u"Viro", u"Virolainen",
-	 u"Virta", u"Visa", u"Vuokko", u"Vuoksi",
-	 u"Ylämaa"]
+words = []
+inputfile = codecs.open ('sukija/ei-sukija.txt', 'r', 'UTF-8')
+while True:
+	word = inputfile.readline()
+	if (len(word) == 0):
+		break
+	word = word[:-1]      # Poistetaan \n sanan lopusta.
+#	print (word)
+	words.append (word)
+
 
 # Aksentilliset kirjaimet UTF-8 -merkistössä 0000-017F,
 # ei kuitenkaan merkkejä š ja ž.
@@ -546,6 +459,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 ##				jatko = u"hevoinen"
 ##			print (u"Keltainen " + wordform + u" " + alku + u" " + jatko)
 		elif (jatko in [u"asiakas", u"avokas"]):
+#		if (jatko in [u"asiakas", u"avokas"]):
 			jatko = u"iäkäs"
 		elif (jatko == u"varas"):
 			jatko = u"vilkas"

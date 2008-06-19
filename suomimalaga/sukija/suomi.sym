@@ -341,6 +341,9 @@ lähtöalku;   # Lähtösanan alkuosa.
 lähtöluokka; # Sanaluokka, josta toisen sanaluokan sana on johdettu.
              # Esimerkiksi nimisana leikata on johdettu teonsanasta leikkaus.
 
+yhdyssana; # Tämä voi olla jatko-kentän arvona.
+
+
 paikannimen_jälkiliite; # -katu, -vuori, ...
 etunimen_jälkiliite; # Kallenpoika, -tytär, ...
 

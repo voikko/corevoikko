@@ -174,8 +174,10 @@ define @heikkoasteiset_paikallissijat := <sisäolento_ssA,  sisäeronto_stA> + @
 
 define @lukusana := <lukusana>;
 
-define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
-                                  etuliite, tavuviiva>;
+#define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
+#                                  etuliite, tavuviiva>;
+
+define @yhdyssana := <yhdyssana>;
 
 #define @lukusana1_jatko := <lukusana3, omistusliite, liitesana, loppu> + @yhdyssana;
 #define @lukusana2_jatko := <omistusliite, liitesana, loppu>;

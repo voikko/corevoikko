@@ -321,7 +321,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "TUL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Työväen Urheiluliitto
 [alku: "TVL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
 [alku: "TV", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # televisio, teevee
-[alku: "tv", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # televisio, teevee
+[alku: "tv", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <ei_sukija>]; # televisio, teevee
 [alku: "ty", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "UKK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Usein kysyttyjä kysymyksiä; Urho Kaleva Kekkonen
 [alku: "UMTS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Universal Mobile Telecommunication System

@@ -47,13 +47,13 @@
 
 include "suomi.inc";
 
-define @sana1 := <nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
+define @sana1 := <yhdyssana, nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
 define @sana2 := @sana1 + <teonsana>;
 
-define @eln := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
-define @ell := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
-define @elt := <tavuviiva, etuliite, teonsana>;
-define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
+define @eln := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana>;
+define @ell := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
+define @elt := <yhdyssana, tavuviiva, etuliite, teonsana>;
+define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
 #define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
 #define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, teonsana>;
 #define @eltj := <tavuviiva, etuliite, nimisana, laatusana, nimi_laatusana, teonsana>;

@@ -37,7 +37,7 @@ generoi:
 	malmake suomi.pro
 	
 clean:
-	/bin/rm -f *_l core.* transmit voikonsanat/* f1 s1 foo f2 s2 bar
+	/bin/rm -f *_l core.* transmit voikonsanat/* k1 k2 foo bar
 
 transmit: ../common/transmit.cc
 	g++ -g ../common/transmit.cc -o transmit
@@ -56,23 +56,23 @@ mcopy:
 bcopy:
 	cp *_l *.pro ~/.sukija
 
-f1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
-	cat ../../fiwiki.txt | malaga -m suomi.pro >f1
+koe: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
+	cat ../../koesanat.txt | malaga -m suomi.pro >koe
 
-s1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
-	cat ../../sanat.txt | malaga -m suomi.pro >s1
+k1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
+	cat ../../koesanat1.txt | malaga -m suomi.pro >k1
 
-f2: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
-	cat ../../fiwiki.txt | malaga -m suomi.pro >f2
+k2: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
+	cat ../../koesanat2.txt | malaga -m suomi.pro >k2
 
-s2: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
-	cat ../../sanat.txt | malaga -m suomi.pro >s2
 
 diff:
-	(diff ../../fiwiki.out f1; diff ../../sanat.out s1) >foo
+	(diff ../../koesanat1.out k1; diff ../../koesanat2.out k2) >foo
 
-diff2:
-	(diff f1 f2; diff s1 s2) >bar
+
+diff-koe:
+	diff ../../koesanat.out f1 >foo
+
 
 cp1:
-	cp f1 ../../fiwiki.out; cp s1 ../../sanat.out
+	cp k1 ../../koesanat1.out; cp k2 ../../koesanat2.out

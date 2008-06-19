@@ -202,7 +202,7 @@ subrule taivutuskaava ($tietue, $taivutus):
 #end;
 
 
- if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana, johdin_lAinen>)
+  if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana, johdin_lAinen>)
       and ($taivutus.nimentö /= nil)) then
     if ($taivutus.tavuviiva = nil) then
       $taivutus :=+ [tavuviiva: $taivutus.nimentö];

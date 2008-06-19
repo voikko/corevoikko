@@ -324,12 +324,14 @@ if (defined $options{D}) {print "\n#D8 [[", $_, "]] ", $m, " ", $n, "\n"};
 
         if ($m + 1 == $n) {
           if (exists($extra{"yhdyssana"})) {
-            xprint ($extra{"yhdyssana"}, "nimisana nimi_laatusana laatusana teonsana etuliite tavuviiva");
-###            xprint ($extra{"yhdyssana"}, "yhdyssana");
+###            xprint ($extra{"yhdyssana"}, "yhdyssana nimisana nimi_laatusana laatusana teonsana etuliite tavuviiva");
+###            xprint ($extra{"yhdyssana"}, "nimisana nimi_laatusana laatusana teonsana etuliite tavuviiva");
+            xprint ($extra{"yhdyssana"}, "tavuviiva yhdyssana");
           }
           elsif (exists($extra{"nimentö"})) {
-            xprint ($extra{"nimentö"}, "nimisana nimi_laatusana laatusana teonsana etuliite tavuviiva");
-###            xprint ($extra{"nimentö"}, "yhdyssana");
+###            xprint ($extra{"nimentö"}, "yhdyssana nimisana nimi_laatusana laatusana teonsana etuliite tavuviiva");
+###            xprint ($extra{"nimentö"}, "nimisana nimi_laatusana laatusana teonsana etuliite tavuviiva");
+            xprint ($extra{"nimentö"}, "tavuviiva yhdyssana");
           }
 
           while ((my $key, my $value) = each %table) {

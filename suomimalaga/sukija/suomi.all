@@ -137,6 +137,10 @@ allo_rule generate_allos ($tietue):
 #  end;
 
 
+  if ($tietue.luokka = lukusanan_jälkiliite) then
+    stop;
+  end;
+
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
        (murre in $tietue.tiedot) or
@@ -4642,12 +4646,8 @@ subrule koko ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule valo ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -4690,12 +4690,8 @@ subrule valo ($tietue, $param01, $param02):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule vihko ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -4738,12 +4734,8 @@ subrule vihko ($tietue, $param01, $param02):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param01, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule arvelu ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -4788,12 +4780,8 @@ subrule arvelu ($tietue, $param01, $param02):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule hontelo ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -4838,12 +4826,8 @@ subrule hontelo ($tietue, $param01, $param02):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_UUs: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule laatikko ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -4888,12 +4872,8 @@ subrule laatikko ($tietue, $param01, $param02):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule puhuttu ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -4932,12 +4912,8 @@ subrule puhuttu ($tietue, $param01, $param02):
                          voittoaste: <<$param02, <>>>,
                          yliaste: <<$param02, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule autio ($tietue, $param01):
   return taivutuskaava ($tietue,
@@ -4981,12 +4957,8 @@ subrule autio ($tietue, $param01):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kaihi ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -5027,12 +4999,8 @@ subrule kaihi ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>, <$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule risti ($tietue, $param01, $param02, $param03, $param04, $johdin_inen, $johdin_Us):
   return taivutuskaava ($tietue,
@@ -5075,12 +5043,8 @@ subrule risti ($tietue, $param01, $param02, $param03, $param04, $johdin_inen, $j
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$johdin_Us, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule laser ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -5125,12 +5089,8 @@ subrule laser ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule paperi ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -5175,12 +5135,8 @@ subrule paperi ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kalsium ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -5223,12 +5179,8 @@ subrule kalsium ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param02, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule pop ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -5271,12 +5223,8 @@ subrule pop ($tietue, $param01, $param02, $param03, $param04, $param05, $param06
                          johdin_mAinen: <<$param01, <>>, <$param02, <>>>,
                          johdin_tOn: <<$param03, <>>>,
                          johdin_Us: <<$param03, <>>, <$param02, <>>>,
-                         nimisana: <<$param01, <>>, <$param02, <>>>,
-                         nimi_laatusana: <<$param01, <>>, <$param02, <>>>,
-                         laatusana: <<$param01, <>>, <$param02, <>>>,
-                         teonsana: <<$param01, <>>, <$param02, <>>>,
-                         etuliite: <<$param01, <>>, <$param02, <>>>,
-                         tavuviiva: <<$param01, <>>, <$param02, <>>>]);
+                         tavuviiva: <<$param01, <>>, <$param02, <>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <>>>]);
 end;
 subrule kiiski ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -5317,12 +5265,8 @@ subrule kiiski ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param01, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule lampi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -5366,12 +5310,8 @@ subrule lampi ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>, <$param04, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule lovi ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -5415,12 +5355,8 @@ subrule lovi ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kolme ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -5456,12 +5392,8 @@ subrule kolme ($tietue, $param01, $param02):
                          keinonto_in: <<$param02, <>>>,
                          kerronto_sti: <<$param01, <>>>,
                          johdin_ittain: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule nalle ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -5504,12 +5436,8 @@ subrule nalle ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kala ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -5552,12 +5480,8 @@ subrule kala ($tietue, $param01, $param02, $param03, $param04, $param05, $param0
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param07, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule nahka ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -5600,12 +5524,8 @@ subrule nahka ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param01, <>>>,
                          johdin_Us: <<$param07, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule koira ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -5649,12 +5569,8 @@ subrule koira ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule pitkä ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -5692,12 +5608,8 @@ subrule pitkä ($tietue, $param01, $param02, $param03, $param04, $param05):
                          voittoaste: <<$param03, <>>, <$param04, <>>>,
                          yliaste: <<$param05, <>>>,
                          johdin_ittAin: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule ruoka ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -5741,12 +5653,8 @@ subrule ruoka ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <>>>,
                          johdin_Us: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule matala ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -5795,12 +5703,8 @@ subrule matala ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param06, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule asema ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -5845,12 +5749,8 @@ subrule asema ($tietue, $param01, $param02, $param03, $param04):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kulkija ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -5894,12 +5794,8 @@ subrule kulkija ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule karahka ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -5945,12 +5841,8 @@ subrule karahka ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule solakka ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -5996,12 +5888,8 @@ subrule solakka ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule apaja ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -6048,12 +5936,8 @@ subrule apaja ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_Us: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kahdeksan ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -6094,12 +5978,8 @@ subrule kahdeksan ($tietue, $param01, $param02, $param03, $param04):
                          voittoaste: <<$param02, <>>>,
                          yliaste: <<$param04, <>>>,
                          johdin_inen: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kantaja ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -6146,12 +6026,8 @@ subrule kantaja ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule peruna ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -6200,12 +6076,8 @@ subrule peruna ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule pasuuna ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -6254,12 +6126,8 @@ subrule pasuuna ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule ainoa ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -6298,12 +6166,8 @@ subrule ainoa ($tietue, $param01, $param02, $param03):
                          voittoaste: <<$param01, <>>>,
                          yliaste: <<$param01, <>>>,
                          johdin_Us: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         nimi_laatusana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         laatusana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         teonsana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         etuliite: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule herttua ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -6343,12 +6207,8 @@ subrule herttua ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule harteet ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -6423,12 +6283,8 @@ subrule korkea ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_mAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_tOn: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_Us: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
-                         nimi_laatusana: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
-                         laatusana: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
-                         teonsana: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
-                         etuliite: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
-                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>]);
+                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <ei_voikko>>, <$param03, <ei_voikko>>>]);
 end;
 subrule suurempi ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -6465,12 +6321,8 @@ subrule suurempi ($tietue, $param01, $param02, $param03, $param04, $param05):
                          keinonto_in: <<$param05, <>>>,
                          kerronto_sti: <<$param03, <>>>,
                          johdin_UUs: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule vapaa ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -6516,12 +6368,8 @@ subrule vapaa ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_Us: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule tienoo ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -6568,12 +6416,8 @@ subrule tienoo ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_Us: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule leikkuu ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -6615,12 +6459,8 @@ subrule leikkuu ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kamee ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -6659,12 +6499,8 @@ subrule kamee ($tietue, $param01, $param02):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule pii ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -6701,12 +6537,8 @@ subrule pii ($tietue, $param01, $param02):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule maa ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -6743,12 +6575,8 @@ subrule maa ($tietue, $param01, $param02):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule puu ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -6785,12 +6613,8 @@ subrule puu ($tietue, $param01, $param02):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule tiu ($tietue, $param01):
   return taivutuskaava ($tietue,
@@ -6808,12 +6632,8 @@ subrule tiu ($tietue, $param01):
                          ulkotulento_lle: <<$param01, <>>>,
                          vajanto_ttA: <<$param01, <>>>,
                          nimentö_t: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule suo ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -6850,12 +6670,8 @@ subrule suo ($tietue, $param01, $param02):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule yö ($tietue, $param01):
   return taivutuskaava ($tietue,
@@ -6877,12 +6693,8 @@ subrule yö ($tietue, $param01):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule bébé ($tietue, $param01):
   return taivutuskaava ($tietue,
@@ -6919,12 +6731,8 @@ subrule bébé ($tietue, $param01):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule parfait ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -6961,12 +6769,8 @@ subrule parfait ($tietue, $param01, $param02):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param02, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule meri ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -7004,12 +6808,8 @@ subrule meri ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule neiti ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -7045,12 +6845,8 @@ subrule neiti ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          keinonto_in: <<$param07, <>>>,
                          johdin_ittain: <<$param07, <>>>,
                          johdin_tOn: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule tuohi ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -7090,12 +6886,8 @@ subrule tuohi ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule lohi ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -7135,12 +6927,8 @@ subrule lohi ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule lahti ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7181,12 +6969,8 @@ subrule lahti ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_llinen: <<$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule lumi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7226,12 +7010,8 @@ subrule lumi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule tuomi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7272,12 +7052,8 @@ subrule tuomi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule pieni ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -7321,12 +7097,8 @@ subrule pieni ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule nuori ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -7371,12 +7143,8 @@ subrule nuori ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule susi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7420,12 +7188,8 @@ subrule susi ($tietue, $param01, $param02, $param03, $param04, $param05, $param0
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
                          johdin_UUs: <<$param06, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule tosi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7467,12 +7231,8 @@ subrule tosi ($tietue, $param01, $param02, $param03, $param04, $param05, $param0
                          johdin_llinen: <<$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule hirsi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7516,12 +7276,8 @@ subrule hirsi ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule jälsi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7565,12 +7321,8 @@ subrule jälsi ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kansi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7614,12 +7366,8 @@ subrule kansi ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule lapsi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7663,12 +7411,8 @@ subrule lapsi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule hapsi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7713,12 +7457,8 @@ subrule hapsi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule veitsi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7761,12 +7501,8 @@ subrule veitsi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule peitsi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7810,12 +7546,8 @@ subrule peitsi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule suksi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7857,12 +7589,8 @@ subrule suksi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule uksi ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -7903,12 +7631,8 @@ subrule uksi ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kaksi ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -7943,12 +7667,8 @@ subrule kaksi ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          keinonto_in: <<$param06, <>>>,
                          kerronto_sti: <<$param03, <>>, <$param04, <hd_h0>>>,
                          johdin_ittain: <<$param06, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule sankari ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -7994,12 +7714,8 @@ subrule sankari ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_UUs: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule jumala ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8043,12 +7759,8 @@ subrule jumala ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          johdin_UUs: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule sisar ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8089,12 +7801,8 @@ subrule sisar ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule ahven ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8138,12 +7846,8 @@ subrule ahven ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kymmenen ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8182,12 +7886,8 @@ subrule kymmenen ($tietue, $param01, $param02, $param03):
                          johdin_ittain: <<$param03, <>>>,
                          johdin_llinen: <<$param02, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule hapan ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -8226,12 +7926,8 @@ subrule hapan ($tietue, $param01, $param02, $param03, $param04):
                          yliaste: <<$param04, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <>>>,
                          johdin_UUs: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule uistin ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8275,12 +7971,8 @@ subrule uistin ($tietue, $param01, $param02, $param03):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule onneton ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -8319,12 +8011,8 @@ subrule onneton ($tietue, $param01, $param02, $param03, $param04):
                          voittoaste: <<$param03, <>>>,
                          yliaste: <<$param04, <>>>,
                          johdin_UUs: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         nimi_laatusana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         laatusana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         teonsana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         etuliite: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule lämmin ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -8364,12 +8052,8 @@ subrule lämmin ($tietue, $param01, $param02, $param03, $param04):
                          voittoaste: <<$param02, <>>>,
                          yliaste: <<$param03, <>>>,
                          johdin_UUs: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule pahin ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -8407,12 +8091,8 @@ subrule pahin ($tietue, $param01, $param02, $param03, $param04, $param05):
                          keinonto_in: <<$param05, <>>>,
                          kerronto_sti: <<$param03, <>>>,
                          johdin_UUs: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule vasen ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -8449,12 +8129,8 @@ subrule vasen ($tietue, $param01, $param02, $param03, $param04, $param05):
                          seuranto_ine: <<$param04, <>>>,
                          keinonto_in: <<$param05, <>>>,
                          kerronto_sti: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule muuan ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -8490,12 +8166,8 @@ subrule muuan ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          vajanto_ittA: <<$param06, <>>>,
                          seuranto_ine: <<$param06, <>>>,
                          keinonto_in: <<$param06, <>>>,
-                         nimisana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         nimi_laatusana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         laatusana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         teonsana: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         etuliite: <<$param01, <>>, <$param02, <ei_voikko>>>,
-                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>>]);
+                         tavuviiva: <<$param01, <>>, <$param02, <ei_voikko>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <ei_voikko>>>]);
 end;
 subrule seitsemän ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -8532,12 +8204,8 @@ subrule seitsemän ($tietue, $param01, $param02, $param03, $param04):
                          seuranto_ine: <<$param04, <>>>,
                          keinonto_in: <<$param04, <>>>,
                          kerronto_sti: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule hevonen ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8582,12 +8250,8 @@ subrule hevonen ($tietue, $param01, $param02, $param03):
                          johdin_tOn: <<$param02, <>>>,
                          johdin_UUs: <<$param03, <>>>,
                          loppu: <<$param03, <ei_voikko>>>,
-                         nimisana: <<$param03, <>>>,
-                         nimi_laatusana: <<$param03, <>>>,
-                         laatusana: <<$param03, <>>>,
-                         teonsana: <<$param03, <>>>,
-                         etuliite: <<$param03, <>>>,
-                         tavuviiva: <<$param03, <>>>]);
+                         tavuviiva: <<$param03, <>>>,
+                         yhdyssana: <<$param03, <>>>]);
 end;
 subrule punainen ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -8632,12 +8296,8 @@ subrule punainen ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_tOn: <<$param03, <>>, <$param04, <>>>,
                          johdin_UUs: <<$param05, <>>, <$param06, <>>>,
                          loppu: <<$param05, <>>>,
-                         nimisana: <<$param05, <>>, <$param06, <>>>,
-                         nimi_laatusana: <<$param05, <>>, <$param06, <>>>,
-                         laatusana: <<$param05, <>>, <$param06, <>>>,
-                         teonsana: <<$param05, <>>, <$param06, <>>>,
-                         etuliite: <<$param05, <>>, <$param06, <>>>,
-                         tavuviiva: <<$param05, <>>, <$param06, <>>>]);
+                         tavuviiva: <<$param05, <>>, <$param06, <>>>,
+                         yhdyssana: <<$param05, <>>, <$param06, <>>>]);
 end;
 subrule vastaus ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -8680,12 +8340,8 @@ subrule vastaus ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kalleus ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -8725,12 +8381,8 @@ subrule kalleus ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_llinen: <<$param03, <>>, <$param06, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule iäkäs ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -8773,12 +8425,8 @@ subrule iäkäs ($tietue, $param01, $param02, $param03, $param04):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_Us):
   return taivutuskaava ($tietue,
@@ -8825,12 +8473,8 @@ subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          johdin_Us: <<$johdin_Us, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kirves ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -8876,12 +8520,8 @@ subrule kirves ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kauris ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -8929,12 +8569,8 @@ subrule kauris ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10, $johdin_Us):
   return taivutuskaava ($tietue,
@@ -8975,12 +8611,8 @@ subrule kaunis ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          voittoaste: <<$param02, <>>, <$param03, <ei_voikko>>, <$param10, <ei_voikko>>>,
                          yliaste: <<$param06, <>>, <$param08, <ei_voikko>>>,
                          johdin_Us: <<$johdin_Us, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule koiras ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -9025,12 +8657,8 @@ subrule koiras ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_llinen: <<$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <>>, <$param04, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule uros ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08):
   return taivutuskaava ($tietue,
@@ -9075,12 +8703,8 @@ subrule uros ($tietue, $param01, $param02, $param03, $param04, $param05, $param0
                          johdin_llinen: <<$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <>>, <$param04, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule mies ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -9120,12 +8744,8 @@ subrule mies ($tietue, $param01, $param02, $param03):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule airut ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -9172,12 +8792,8 @@ subrule airut ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param06, <ei_voikko>>>,
                          johdin_Us: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule neitsyt ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10):
   return taivutuskaava ($tietue,
@@ -9222,12 +8838,8 @@ subrule neitsyt ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>, <$param04, <>>>,
                          johdin_Us: <<$param05, <>>, <$param06, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kevät ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -9269,12 +8881,8 @@ subrule kevät ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kahdeksas ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -9308,12 +8916,8 @@ subrule kahdeksas ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          seuranto_ine: <<$param06, <>>>,
                          keinonto_in: <<$param06, <>>>,
                          kerronto_sti: <<$param03, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule tuhat ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -9350,12 +8954,8 @@ subrule tuhat ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          kerronto_sti: <<$param03, <>>>,
                          johdin_inen: <<$param07, <>>, <$param05, <>>>,
                          johdin_ittain: <<$param05, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kuollut ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
   return taivutuskaava ($tietue,
@@ -9396,12 +8996,8 @@ subrule kuollut ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          kerronto_sti: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          voittoaste: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          yliaste: <<$param04, <>>, <$param06, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule alkeet ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -9425,12 +9021,8 @@ subrule alkeet ($tietue, $param01, $param02, $param03, $param04):
                          johdin_llinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
                          loppu: <<$param04, <ei_voikko>>>,
-                         nimisana: <<$param04, <>>>,
-                         nimi_laatusana: <<$param04, <>>>,
-                         laatusana: <<$param04, <>>>,
-                         teonsana: <<$param04, <>>>,
-                         etuliite: <<$param04, <>>>,
-                         tavuviiva: <<$param04, <>>>]);
+                         tavuviiva: <<$param04, <>>>,
+                         yhdyssana: <<$param04, <>>>]);
 end;
 subrule hame ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -9477,12 +9069,8 @@ subrule hame ($tietue, $param01, $param02, $param03, $param04, $param05, $param0
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          johdin_Us: <<$param04, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule viive ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -9524,12 +9112,8 @@ subrule viive ($tietue, $param01, $param02, $param03, $param04):
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <>>>,
                          johdin_Us: <<$param04, <>>, <$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule terve ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -9575,12 +9159,8 @@ subrule terve ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          johdin_Us: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule ori ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -9628,12 +9208,8 @@ subrule ori ($tietue, $param01, $param02, $param03, $param04, $param05, $param06
                          johdin_llinen: <<$param01, <>>, <$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule kiiru ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
@@ -9680,12 +9256,8 @@ subrule kiiru ($tietue, $param01, $param02, $param03, $param04, $param05, $param
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          johdin_Us: <<$param07, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule askel ($tietue, $param01, $param02, $param03, $param04, $param05):
   return taivutuskaava ($tietue,
@@ -9730,12 +9302,8 @@ subrule askel ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_llinen: <<$param02, <>>, <$param03, <>>>,
                          johdin_mAinen: <<$param01, <>>, <$param02, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <>>>,
-                         nimisana: <<$param01, <>>, <$param02, <>>>,
-                         nimi_laatusana: <<$param01, <>>, <$param02, <>>>,
-                         laatusana: <<$param01, <>>, <$param02, <>>>,
-                         teonsana: <<$param01, <>>, <$param02, <>>>,
-                         etuliite: <<$param01, <>>, <$param02, <>>>,
-                         tavuviiva: <<$param01, <>>, <$param02, <>>>]);
+                         tavuviiva: <<$param01, <>>, <$param02, <>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <>>>]);
 end;
 subrule hän ($tietue, $param01, $param02, $param03):
   return taivutuskaava ($tietue,
@@ -9752,12 +9320,8 @@ subrule hän ($tietue, $param01, $param02, $param03):
                          ulkoeronto_ltA: <<$param02, <>>, <$param03, <>>>,
                          ulkotulento_lle: <<$param02, <>>, <$param03, <>>>,
                          vajanto_ttA: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule joka ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -9786,12 +9350,8 @@ subrule joka ($tietue, $param01, $param02):
                          ulkotulento_ille: <<$param02, <>>>,
                          vajanto_ittA: <<$param02, <>>>,
                          seuranto_ine: <<$param02, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule keväämmällä ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -9831,12 +9391,8 @@ subrule me ($tietue, $param01):
                          vajanto_ittA: <<$param01, <>>>,
                          seuranto_ine: <<$param01, <>>>,
                          keinonto_in: <<$param01, <>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule sivumpana ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
@@ -9889,12 +9445,8 @@ subrule sydän ($tietue, $param01, $param02, $param03, $param04, $param05):
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
-                         nimisana: <<$param01, <>>>,
-                         nimi_laatusana: <<$param01, <>>>,
-                         laatusana: <<$param01, <>>>,
-                         teonsana: <<$param01, <>>>,
-                         etuliite: <<$param01, <>>>,
-                         tavuviiva: <<$param01, <>>>]);
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule ammottua ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,
@@ -13545,7 +13097,7 @@ subrule taivutuskaava ($tietue, $taivutus):
 #end;
 
 
- if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana, johdin_lAinen>)
+  if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana, johdin_lAinen>)
       and ($taivutus.nimentö /= nil)) then
     if ($taivutus.tavuviiva = nil) then
       $taivutus :=+ [tavuviiva: $taivutus.nimentö];
