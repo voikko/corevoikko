@@ -250,11 +250,8 @@
 [perusmuoto: "syömä", alku: "syömä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "taka", alku: "taka", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "takaisin", alku: "takaisin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
-<<<<<<< .mine
 [perusmuoto: "tasa", alku: "tasa", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-=======
 [perusmuoto: "tarttuma", alku: "tarttuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
->>>>>>> .r2204
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "telemark-", alku: "telemark-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
