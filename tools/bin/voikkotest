@@ -269,7 +269,7 @@ if "--base" in [opt[0] for opt in opts]:
 		sys.stderr.write(u"Failed to create baseline version.\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('time zcat "%s" | "%s" -p "%s" | grep "^C:" > "%s"' % \
+	os.system('bash -c \'time zcat "%s" | "%s" -p "%s" | grep "^C:" > "%s"\'' % \
 	          (WORDLIST, SPELLCMD, BASE, BASE_CORRECT))
 	sys.exit(0)
 
@@ -281,7 +281,7 @@ if "--current" in [opt[0] for opt in opts]:
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('time zcat "%s" | "%s" | grep "^C:" > "%s"' % \
+	os.system('bash -c \'time zcat "%s" | "%s" | grep "^C:" > "%s"\'' % \
 	          (WORDLIST, SPELLCMD, CURRENT_CORRECT))
 	diffcmd = 'diff -U0 "%s" "%s" | ' % (BASE_CORRECT, CURRENT_CORRECT)
 	new_accept = int(os.popen('%s grep ^+C: | wc -l' % diffcmd).read())
