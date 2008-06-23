@@ -24,6 +24,7 @@ import os
 import locale
 import sys
 import xml.dom.minidom
+import gzip
 
 # Word classes
 NOUN=1
@@ -136,6 +137,10 @@ def get_preference(prefname):
 			return voikko_dev_prefs.svnroot
 		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'voikkotest_dir'):
 			return voikko_dev_prefs.voikkotest_dir
+		if prefname == 'voikkotest_build_options' and hasattr(voikko_dev_prefs, 'voikkotest_build_options'):
+			return voikko_dev_prefs.voikkotest_build_options
+		if prefname == 'voikko_data_dir' and hasattr(voikko_dev_prefs, 'voikko_data_dir'):
+			return voikko_dev_prefs.voikko_data_dir
 		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
 			return voikko_dev_prefs.encoding
 		if prefname == 'libvoikko_bin' and hasattr(voikko_dev_prefs, 'libvoikko_bin'):
@@ -146,9 +151,11 @@ def get_preference(prefname):
 		pass
 	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
+	if prefname == 'voikkotest_build_options': return ''
+	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
-	if prefname == 'diffviewcmd': return 'diff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
+	if prefname == 'diffviewcmd': return 'diff -U 0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 	return None
 
 ## Returns True, if given character is a consonant, otherwise retuns False.
@@ -193,15 +200,14 @@ def capital_char_regexp(pattern):
 # If show_progress == True, prints progess information to stdout
 def process_wordlist(filename, word_handler, show_progress = False):
 	if filename.endswith(".gz"):
-		pass
+		listfile = gzip.GzipFile(filename, 'r')
 	else:
 		listfile = open(filename, 'r')
 	line = ""
 	while line != '<wordlist xml:lang="fi">\n':
 		line = listfile.readline()
 		if line == '':
-			sys.stderr.write("Malformed file " + generate_lex_common.VOCABULARY_DATA + \
-					"/joukahainen.xml\n")
+			sys.stderr.write("Malformed file " + filename + "\n")
 			return
 	
 	wcount = 0

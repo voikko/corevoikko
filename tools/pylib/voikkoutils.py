@@ -207,8 +207,7 @@ def process_wordlist(filename, word_handler, show_progress = False):
 	while line != '<wordlist xml:lang="fi">\n':
 		line = listfile.readline()
 		if line == '':
-			sys.stderr.write("Malformed file " + generate_lex_common.VOCABULARY_DATA + \
-					"/joukahainen.xml\n")
+			sys.stderr.write("Malformed file " + filename + "\n")
 			return
 	
 	wcount = 0
