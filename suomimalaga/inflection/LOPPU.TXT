@@ -251,6 +251,13 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
 
+  if ($tietue.luokka in @johdin_laatutapa) then
+    $taivutus :=- <johdin_lAinen, johdin_lAisittain, johdin_mAinen, johdin_tOn>;
+  elseif ($tietue.luokka in  @laatutapa_1 + @laatutapa_2) then
+    $taivutus :=- <johdin_tOn, tavuviiva, yhdyssana> + @nimi_laatusanan_johdin;
+  end;
+
+
   if (not ($tietue.luokka in
              <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste, lukusana>
              + @teonsanasta_johdettu_laatusana + @nimisanasta_johdettu_laatusana

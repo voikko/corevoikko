@@ -264,12 +264,13 @@ tapaluokka;
   laatutapa_2_stU_juostu;    # Juos+tu, juostujen.  Siis astevaihteluton tU-loppuinen.
   laatutapa_2_stU_nuolaistu; # Nuolais+tu, nuolaistujen/nuolaistuiden.  Siis astevaihteluton tU-loppuinen.
 
-  johdin_tAr;       # Pappi >= papitar.
-  johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).
-  johdin_llinen;    # Juhla+llinen.
-  johdin_lAinen;    # Kaupunki+lainen.
-  johdin_mAinen;    # Kaupunki+mainen.
-  johdin_nlainen;   # Hyvänlainen, pahanlainen.
+  johdin_tAr;         # Pappi >= papitar.
+  johdin_inen;        # Valo+inen (vain yhdyssanojen jälkiosissa).
+  johdin_llinen;      # Juhla+llinen.
+  johdin_lAinen;      # Kaupunki+lainen.
+  johdin_lAisittain;  # Kaupunki+laisittain.
+  johdin_mAinen;      # Kaupunki+mainen.
+  johdin_nlainen;     # Hyvänlainen, pahanlainen.
 
   johdin_tOn;       # Maa+ton, pää+tön.
   johdin_Us;        # Kallis => kalle+us (kalleuden).

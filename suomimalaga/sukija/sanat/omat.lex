@@ -469,7 +469,6 @@
 [perusmuoto: "kautinen", alku: "kauti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kertanen", alku: "kerta", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "asianomanen", alku: "asianoma", luokka: nimisana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "aukioleva", alku: "aukiolev", luokka: laatusana, jatko: <asema>, äs: a];
 [perusmuoto: "Sigurðardóttir", alku: "Sigurðardóttir", luokka: etunimi, jatko: <kalsium>, äs: a];
 
 [perusmuoto: "muuntaajuinen", alku: "muuntaajui", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
@@ -490,30 +489,20 @@
 [perusmuoto: "pojannasta", alku: "pojannast", luokka: nimisana, jatko: <kala>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "miljoonamyynti", alku: "miljoonamyyn", luokka: nimisana, jatko: <tunti>, äs: ä, rakenne: "=pppppppp=pppppp"];
 #[perusmuoto: "Verona", alku: "Veron", luokka: paikannimi, jatko: <karahka>, äs: a];
-[perusmuoto: "lerpahtaa", alku: "lerpah", luokka: teonsana, jatko: <astahtaa>, äs: a];
 [perusmuoto: "kitkos", alku: "kitko", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "Waldrop", alku: "Waldrop", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Forester", alku: "Forester", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "ujoton", alku: "ujo", luokka: laatusana, jatko: <onneton>, äs: a];
-[perusmuoto: "araton", alku: "ara", luokka: laatusana, jatko: <onneton>, äs: a];
-[perusmuoto: "julmaton", alku: "julma", luokka: laatusana, jatko: <onneton>, äs: a];
 [perusmuoto: "mahdoton", alku: "maho", luokka: laatusana, jatko: <onneton>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "puliton", alku: "puli", luokka: laatusana, jatko: <onneton>, äs: a];
-[perusmuoto: "siistitön", alku: "siisti", luokka: laatusana, jatko: <onneton>, äs: ä];
-[perusmuoto: "kuuluton", alku: "kuulu", luokka: laatusana, jatko: <onneton>, äs: a];
 [perusmuoto: "törröittäin", alku: "törröittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 
-# Katso Wikipediasta nämä sanat.
 [perusmuoto: "ortodoksisittain", alku: "ortodoksisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hiljaisittain", alku: "hiljaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kaukaisittain", alku: "kaukaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "erilaisettomuus", alku: "erilaisettomuu", luokka: nimisana, jatko: <kalleus>, äs: a];
-[perusmuoto: "hellittäin", alku: "hellittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "jännittäin", alku: "jännittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+
+[perusmuoto: "säkäkorkeus", alku: "säkäkorkeu", luokka: nimisana, jatko: <kalleus>, äs: a, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "vähimmäissäkä", alku: "vähimmäissäk", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppppppp=pppp"];
 
 # Nämä on lisätty Joukahaiseen.
-
-
 # Lisäykset Joukahaiseen loppuivat.
 
 ##############

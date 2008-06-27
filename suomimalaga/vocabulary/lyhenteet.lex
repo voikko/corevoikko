@@ -71,7 +71,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "ADHD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Attention Deficit (and) Hyperactivity Disorder
 [alku: "adj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # adjektiivi
 [alku: "ADSL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "AIDS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Acquired Immune Deficiency Syndrome
+[alku: "AIDS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj", tiedot: <ei_sukija>]; # Acquired Immune Deficiency Syndrome
 [alku: "alk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # alkuaan, alkaen
 [alku: "ao.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # asianomainen
 [alku: "a.p.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];

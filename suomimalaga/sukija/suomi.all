@@ -105,7 +105,8 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi">) then
+##if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi", "säkä", "sää">) then
+  if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi", "säkä">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else
@@ -113,8 +114,20 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-  if ($tietue.perusmuoto = "erityinen") then
-    $tietue.tiedot :=- <ei_ysa>;
+  if ($tietue.perusmuoto in <"erityinen">) then
+    if ($tietue.tiedot /= nil) then
+      $tietue.tiedot :=- <ei_ysa>;
+    else
+      $tietue :=- [tiedot: <ei_ysa>];
+    end;
+  end;
+
+  if ($tietue.perusmuoto in <"alunen">) then
+    if ($tietue.tiedot /= nil) then
+      $tietue.tiedot :=+ <ei_ysa>;
+    else
+      $tietue :=+ [tiedot: <ei_ysa>];
+    end;
   end;
 
   # Mattila on paikannimi ja sukunimi, ja tiedostojen indeksoinnissa
@@ -131,10 +144,6 @@ allo_rule generate_allos ($tietue):
       $tietue.luokka := nimi_laatusana;
     end;
   end;
-
-#  if ($tietue.luokka in <huudahdussana, seikkasana, sidesana, suhdesana>) then
-#    $tietue.jatko :=+ <tavuviiva>;
-#  end;
 
 
   if ($tietue.luokka = lukusanan_jälkiliite) then
@@ -13143,6 +13152,13 @@ subrule taivutuskaava ($tietue, $taivutus):
 
   if ($tietue.luokka in <nimi_laatusana, laatusana> + @johdin_laatutapa) then
     $taivutus :=+ [johdin_nlainen: $taivutus.omanto_n];
+  end;
+
+
+  if ($tietue.luokka in @johdin_laatutapa) then
+    $taivutus :=- <johdin_lAinen, johdin_lAisittain, johdin_mAinen, johdin_tOn>;
+  elseif ($tietue.luokka in  @laatutapa_1 + @laatutapa_2) then
+    $taivutus :=- <johdin_tOn, tavuviiva, yhdyssana> + @nimi_laatusanan_johdin;
   end;
 
 

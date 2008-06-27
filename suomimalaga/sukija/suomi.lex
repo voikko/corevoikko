@@ -1372,3 +1372,24 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 
 [perusmuoto: "os", alku: "o", luokka: johdin_Os, jatko: <vastaus>, äs: a, tiedot: <inen>];
 [perusmuoto: "ös", alku: "ö", luokka: johdin_Os, jatko: <vastaus>, äs: ä, tiedot: <inen>];
+
+
+# johdin_lAinen + johdin_ittAin
+[perusmuoto: "laisittain", alku: "laisittain", luokka: johdin_lAinen, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "läisittäin", alku: "läisittäin", luokka: johdin_lAinen, jatko: <liitesana, loppu>, äs: ä];
+
+# johdin_llinen + johdin_ittAin
+[perusmuoto: "llisittain", alku: "llisittain", luokka: johdin_llinen, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "llisittäin", alku: "llisittäin", luokka: johdin_llinen, jatko: <liitesana, loppu>, äs: ä];
+
+# johdin_mAinen + johdin_ittAin
+[perusmuoto: "maisittain", alku: "maisittain", luokka: johdin_mAinen, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "mäisittäin", alku: "mäisittäin", luokka: johdin_mAinen, jatko: <liitesana, loppu>, äs: ä];
+
+# johdin_lAinen + johdin_mAinen
+[perusmuoto: "laismainen", alku: "laismai", luokka: johdin_lAinen, jatko: <nainen>, äs: a];
+[perusmuoto: "läismäinen", alku: "läismäi", luokka: johdin_lAinen, jatko: <nainen>, äs: ä];
+
+# johdin_mAinen + johdin_llinen
+[perusmuoto: "maisellinen", alku: "maiselli", luokka: johdin_mAinen, jatko: <nainen>, äs: a];
+[perusmuoto: "mäisellinen", alku: "mäiselli", luokka: johdin_mAinen, jatko: <nainen>, äs: ä];

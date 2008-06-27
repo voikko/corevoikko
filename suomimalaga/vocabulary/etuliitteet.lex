@@ -111,8 +111,7 @@
 [perusmuoto: "improbatur-", alku: "improbatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pp=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Lähes turha.
-##[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @ell, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_ysj>];
+[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_ysj, ei_sukija>];
 [perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
@@ -140,7 +139,7 @@
 [perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kierteis", alku: "kierteis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @eltj, äs: aä];
-[perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "koe", alku: "koe", luokka: etuliite, jatko: @elt, äs: aä];
 [perusmuoto: "koillis", alku: "koillis", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kollegiaali", alku: "kollegiaali", luokka: etuliite, jatko: @eln, äs: aä];
@@ -255,7 +254,7 @@
 [perusmuoto: "tekno", alku: "tekno", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "telemark-", alku: "telemark-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "termo", alku: "termo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "tieteis", alku: "tieteis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "tieteis", alku: "tieteis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "totaali", alku: "totaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
