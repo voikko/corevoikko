@@ -138,6 +138,24 @@
  * Default: UTF-8 */
 #define VOIKKO_OPT_ENCODING 2
 
+/**
+ * Grammar error description.
+ */
+typedef struct {
+	/** Error code. 0 = no error was found */
+	int error_code;
+	/** Unused (indicates the probability of a false positive) */
+	int error_level;
+	/** Unused (detailed error description) */
+	char * error_description;
+	/** Start position of the error in the text */
+	size_t startpos;
+	/** Length of the error in the text */
+	size_t errorlen;
+	/** Possible corrections. These should be freed after
+	 *  use by calling voikko_free_suggest_cstr */
+	char ** suggestions;
+} voikko_grammar_error;
 
 #ifndef VOIKKO_DEFS_H
 BEGIN_C_DECLS
@@ -343,6 +361,29 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle, const wcha
  */
 enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
      size_t textlen, size_t * sentencelen);
+
+/**
+ * Find next grammar error.
+ * @param handle Voikko instance
+ * @param text Pointer to the start of a text buffer. This should usually
+ *        be at the start of a paragraph or a sentence.
+ * @param textlen Number of bytes in the buffer. The end of the buffer should
+ *        be the end of a paragraph or a sentence.
+ * @param startpos Report the next error that starts at or after this byte
+ *        offset from the start of the text.
+ * @return Grammar error description.
+ */
+voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
+                                                    size_t textlen, size_t startpos);
+
+/**
+ * Localized error message.
+ * @param error_code Error code (from voikko_grammar_error)
+ * @param language ISO language code or null, if the language from current locale
+ *        should be used.
+ * @return The localized error message for the error code.
+ */
+const char * voikko_error_message_cstr(int error_code, const char * language);
 
 END_C_DECLS
 #endif

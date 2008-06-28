@@ -1,7 +1,7 @@
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = voikko_suggest.c voikko_utils.c voikko_setup.c voikko_spell.c \
                        voikko_hyphenate.c voikko_charset.c porting.c \
-                       voikko_tokenize.c sentence.c
+                       voikko_tokenize.c sentence.c grammar.c
 libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 8:0:7 @LIBLDFLAGSWIN@
 bin_PROGRAMS = voikkospell voikkohyphenate
 voikkospell_SOURCES = voikkospell.c porting.c
