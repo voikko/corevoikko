@@ -42,6 +42,7 @@ langcode = "fi_FI"
 spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 suggesttest = SVNROOT + "/trunk/tests/voikkotest/suggest.txt"
+GRAMMARTESTFILE = SVNROOT + "/trunk/tests/voikkotest/grammar.txt"
 BASE = WORKSPACE + "/base"
 WORDLIST = WORKSPACE + "/wordlist.txt.gz"
 BASE_CORRECT = WORKSPACE + "/base-correct.txt"
@@ -73,6 +74,19 @@ def _check_hyphens(section, expected_results, results):
 			failcount = failcount + 1
 	return failcount
 
+def _check_gcerrors(inputpara, expresults, results):
+	failcount = 0
+	for i in range(0, len(expresults)):
+		if expresults[i] != results[i]:
+			print u'Grammar test failed. Input:'
+			print u' ' + inputpara[i]
+			print u'Expected results:'
+			for r in expresults[i]: print u' ' + r
+			print u'Actual results:'
+			for r in results[i]: print u' ' + r
+			failcount = failcount + 1
+	return failcount
+
 # Returns a list of spelling suggestions.
 def _suggest(word, params):
 	speller = subprocess.Popen(SPELLCMD + " -s " + params, shell = True, stdin = subprocess.PIPE,
@@ -85,6 +99,23 @@ def _suggest(word, params):
 		line = unicode(line, 'UTF-8')
 		if line.startswith(u'S: '): suggestions.append(line[3:])
 	return suggestions
+
+# Returns a list of grammar errors.
+def _check_grammar(paragraphlist):
+	gc = subprocess.Popen(GCCMD, shell = True, stdin = subprocess.PIPE,
+	                      stdout = subprocess.PIPE, close_fds = True)
+	for paragraph in paragraphlist:
+		gc.stdin.write(paragraph.encode('UTF-8') + '\n')
+	(out, err) = gc.communicate()
+	paragrapherrors = []
+	grammarerrors = []
+	for error in out.split('\n'):
+		if error == '-':
+			paragrapherrors.append(grammarerrors)
+			grammarerrors = []
+			continue
+		grammarerrors.append(unicode(error, 'UTF-8'))
+	return paragrapherrors
 
 # Ensure that the current version is up to date
 def update_smv():
@@ -190,6 +221,44 @@ def hyphen_tests():
 			return False
 	except IOError:
 		sys.stderr.write("Could not read from file " + hyphentest + "\n")
+		sys.exit(1)
+
+# Run grammar tests
+def grammar_tests():
+	try:
+		inputfile = codecs.open(GRAMMARTESTFILE, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		inputpara = []
+		expresults = []
+		line = inputfile.readline()
+		while True:
+			if line == u'': break
+			line = line.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1: line = line[:commentstart].strip()
+			inputpara.append(line)
+			expresult = []
+			while True:
+				line = inputfile.readline().strip()
+				commentstart = line.find(u"#")
+				if commentstart != -1: line = line[:commentstart].strip()
+				if line == u'' or line[0] != u'[': break
+				expresult.append(line)
+			expresults.append(expresult)
+			testcount = testcount + 1
+		inputfile.close()
+		if testcount > 0:
+			results = _check_grammar(inputpara)
+			failcount = _check_gcerrors(inputpara, expresults, results)
+		if failcount == 0:
+			print u"All %i grammar tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i grammar tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + GRAMMARTESTFILE + "\n")
 		sys.exit(1)
 
 # Run suggestion tests
@@ -302,5 +371,6 @@ else:
 	spell_tests(dict)
 	suggestion_tests()
 	hyphen_tests()
+	grammar_tests()
 	tokenizer_tests()
 	sentence_tests()

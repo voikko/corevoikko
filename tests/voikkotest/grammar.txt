@@ -1,0 +1,4 @@
+Kissa ja koira ovat karvaisia.
+Mies on joten kuten selvillä siitä, että hänen on joten kuten palattava kotiinsa.
+ [code=1, level=0, descr="", stpos=8, len=11, suggs={}]
+ [code=1, level=0, descr="", stpos=50, len=11, suggs={}]

@@ -17,6 +17,11 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
+#include "voikko_setup.h"
+#include "voikko_utils.h"
+#include <stdlib.h>
+
+#define GCERR_WRITE_TOGETHER 1
 
 voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
                                                    size_t textlen, size_t startpos) {
@@ -27,9 +32,27 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
 	e.startpos = 0;
 	e.errorlen = 0;
 	e.suggestions = 0;
+	if (text == 0 || textlen == 0) return e;
+	wchar_t * text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
+	if (text_ucs4 == 0) return e;
+	
+	size_t wtextlen = wcslen(text_ucs4);
+	if (startpos < wtextlen) {
+		wchar_t * errorpos = wcsstr(text_ucs4 + startpos, L"joten kuten");
+		if (errorpos) {
+			e.error_code = GCERR_WRITE_TOGETHER;
+			e.startpos = errorpos - text_ucs4;
+			e.errorlen = 11;
+		}
+	}
+	
+	free(text_ucs4);
 	return e;
 }
 
 const char * voikko_error_message_cstr(int error_code, const char * language) {
+	switch (error_code) {
+		case GCERR_WRITE_TOGETHER: return "Sanat on kirjoitettava yhteen.";
+	}
 	return "Tuntematon virhe";
 }

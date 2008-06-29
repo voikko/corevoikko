@@ -118,14 +118,34 @@ void split_sentences(int handle, const char * line) {
 }
 
 
+void check_grammar(int handle, const char * line) {
+	size_t len;
+	voikko_grammar_error grammar_error;
+	size_t startpos = 0;
+	len = strlen(line);
+	while (1) {
+		grammar_error = voikko_next_grammar_error_cstr(handle, line, len,
+		                startpos);
+		if (grammar_error.error_code == 0) {
+			printf("-\n");
+			return;
+		}
+		printf("[code=%i, level=0, ", grammar_error.error_code);
+		printf("descr=\"\", stpos=%zd, ", grammar_error.startpos);
+		printf("len=%zd, suggs={}]\n", grammar_error.errorlen);
+		startpos += grammar_error.startpos + 1;
+	}
+}
+
+enum operation {TOKENIZE, SPLIT_SENTENCES, CHECK_GRAMMAR};
+
 int main(int argc, char ** argv) {
 	size_t bufsize = 10000;
 	char * line;
 	char * encoding;
 	char * path = 0;
+	enum operation op = CHECK_GRAMMAR;
 	int handle;
-	int tokenize = 0;
-	int split_snts = 0;
 	
 	line = malloc(bufsize);
 	if (line == 0) {
@@ -151,10 +171,10 @@ int main(int argc, char ** argv) {
 	
 	for (int i = 1; i < argc; i++) {
 		if (strncmp(argv[i], "--tokenize", 10) == 0) {
-			tokenize = 1;
+			op = TOKENIZE;
 		}
 		else if (strncmp(argv[i], "--split-sentences", 17) == 0) {
-			split_snts = 1;
+			op = SPLIT_SENTENCES;
 		}
 	}
 	
@@ -164,8 +184,16 @@ int main(int argc, char ** argv) {
 		if (chars_read > 0 && line[chars_read - 1] == '\n') {
 			line[chars_read - 1] = '\0';
 		}
-		if (split_snts) split_sentences(handle, line);
-		else if (tokenize) print_tokens(handle, line);
+		switch (op) {
+			case TOKENIZE:
+				print_tokens(handle, line);
+				break;
+			case SPLIT_SENTENCES:
+				split_sentences(handle, line);
+				break;
+			case CHECK_GRAMMAR:
+				check_grammar(handle, line);
+		}
 	}
 	free(line);
 	voikko_terminate(handle);
