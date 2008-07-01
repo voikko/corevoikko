@@ -50,6 +50,12 @@ void init_gc_cache(voikko_gc_cache * gc_cache);
 
 
 /**
+ * Clears grammar checker error cache.
+ */
+void gc_clear_cache(int handle);
+
+
+/**
  * Returns a pointer to a cached grammar error or null, if there are no cached
  * results for given paragraph.
  */

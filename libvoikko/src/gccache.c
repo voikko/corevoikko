@@ -20,7 +20,6 @@
 #include "voikko_setup.h"
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 void init_gc_cache(voikko_gc_cache * gc_cache) {
 	memset(gc_cache, 0, sizeof(voikko_gc_cache));
@@ -42,10 +41,9 @@ const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * tex
 	}
 }
 
-/**
- * Clears current grammar checker error cache.
- */
 void gc_clear_cache(int handle) {
+	if (voikko_options.gc_cache.paragraph)
+		free(voikko_options.gc_cache.paragraph);
 	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
 	while (entry) {
 		voikko_gc_cache_entry * next = entry->next_error;

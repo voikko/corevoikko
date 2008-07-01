@@ -228,6 +228,7 @@ int voikko_terminate(int handle) {
 			free(voikko_options.cache);
 			free(voikko_options.cache_meta);
 		}
+		gc_clear_cache(handle);
 		return 1;
 	}
 	else return 0;
