@@ -1,6 +1,7 @@
 2008-07-01 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Split and update manual pages.
+	* Add single paragraph grammar checker cache.
 
 2008-06-29 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -19,6 +19,7 @@
 #ifndef VOIKKO_SETUP_H
 #define VOIKKO_SETUP_H
 
+#include "gccache.h"
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
@@ -50,6 +51,7 @@ typedef struct {
 	char * cache_meta;
 	int cache_size;
 	enum suggtype suggestion_type;
+	voikko_gc_cache gc_cache;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;
