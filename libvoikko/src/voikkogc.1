@@ -1,1 +1,27 @@
-.so man1/voikkospell.1
+.TH VOIKKOGC 1 "2008-07-01"
+.SH NAME
+voikkogc \- test program for Voikko grammar checker
+.SH SYNOPSIS
+.B voikkogc
+.RI [ options ]
+.SH DESCRIPTION
+.B voikkogc
+is a test program for grammar checking functionality in libvoikko, library of Finnish language tools.
+It reads sentences or paragraphs from stdin (one per line) and print the results to stdout.
+The results are structures containing information about grammar errors found in the input paragraph.
+.SH OPTIONS
+.TP
+.B \-\-tokenize
+Instead of looking for grammar errors, split input into tokens. The tokens are prefixed
+by type: "W" is a word, "P" is punctuation, "S" is whitespace, "U" is unknown and "E" is
+a prefix for error messages.
+.TP
+.B \-\-split\-sentences
+Instead of looking for grammar errors, split input into sentences. The sentences are prefixed
+by type: "B" means that end of sentence is a probably correct, "P" means that end of sentence
+is a possibly correct (but probably this and the next identified sentence should be joined) and
+"E" means that sentence ends at the end of input.
+.SH AUTHOR
+voikkogc and this manual page were written by Harri Pitk\[:a]nen (hatapitk@iki.fi).
+
+

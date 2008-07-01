@@ -1,1 +1,32 @@
-.so man1/voikkospell.1
+.TH VOIKKOHYPHENATE 1 "2008-07-01"
+.SH NAME
+voikkohyphenate \- test program for Voikko hyphenator
+.SH SYNOPSIS
+.B voikkohyphenate
+.RI [ options ]
+.SH DESCRIPTION
+.B voikkohyphenate
+is a test program for hyphenator functionality in libvoikko,
+library of Finnish language tools. It reads words from stdin (one word on a line) and prints
+them stdout in fully hyphenated form.
+.SH OPTIONS
+.TP
+.BI min_hyphenated_word_length= n
+Set
+.I n
+as the minimun length for words to hyphenate.
+.TP
+.BI intersect_compound_level= n
+Set
+.I n
+as the value of option VOIKKO_INTERSECT_COMPOUND_LEVEL.
+.TP
+.BI no_ugly_hyphenation= n
+Set the value of the specified boolean option.
+.I n
+can be either 0 (false) or 1 (true).
+.SH SEE ALSO
+.B voikkospell
+for common options of different Voikko test tools.
+.SH AUTHOR
+voikkohyphenate and this manual page were written by Harri Pitk\[:a]nen (hatapitk@iki.fi).

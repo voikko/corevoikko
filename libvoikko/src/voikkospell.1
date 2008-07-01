@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2007-12-30"
+.TH VOIKKOSPELL 1 "2008-07-01"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -16,36 +16,29 @@
 .\" .sp <n>    insert n+1 empty lines
 .\" for manpage-specific macros, see man(7)
 .SH NAME
-voikkospell, voikkohyphenate \- voikko test programs
+voikkospell \- test program for Voikko spell checker
 .SH SYNOPSIS
 .B voikkospell
 .RI [ options ]
-.br
-.B voikkohyphenate
-.RI [ options ]
 .SH DESCRIPTION
 .B voikkospell
-and
-.B voikkohyphenate
-are test programs for libvoikko, Finnish spellchecker and hyphenator library.
-They read words from stdin (one word on a line) and print the results to stdout. voikkospell adds
+is a test program for spell checking functionality in libvoikko,
+library of Finnish language tools.
+It reads words from stdin (one word on a line) and print them to stdout, adding
 "C: " in front of correct words and "W: " in front of incorrect words. voikkohyphenate prints
 words in fully hyphenated form.
+
+Common options of different Voikko test programs are listed in COMMON OPTIONS.
 .SH OPTIONS
 .TP
-.BI \-p " directory"
-Look from
-.I directory
-before the standard locations when searching for dictionary files.
-.TP
 .B \-t
-(voikkospell) Prints only "C" or "W" instead of typical full output.
+Prints only "C" or "W" instead of typical full output.
 .TP
 .B \-s
-(voikkospell) Prints suggestions (S:) for incorrectly spelled words.
+Prints suggestions (S:) for incorrectly spelled words.
 .TP
 .BI \-c n
-(voikkospell) Set cache size parameter to
+Set cache size parameter to
 .IR n .
 \-1 disables the cache and 0 is the default.
 For checking large amounts of unsorted text you may want to set
@@ -53,7 +46,7 @@ For checking large amounts of unsorted text you may want to set
 to 5 to get better performance.
 .TP
 .BI \-x c
-(voikkospell) Like
+Like
 .B voikkospell -s
 but output is printed on one line separated by character
 .IR c 
@@ -63,41 +56,35 @@ If
 is not defined words are separated by space and suggestions that have
 spaces in them are not printed.
 .TP
-.BI min_hyphenated_word_length= n
-(voikkohyphenate) Set
-.I n
-as the minimun length for words to hyphenate.
-.TP
-.BI intersect_compound_level= n
-(voikkohyphenate) Set
-.I n
-as the value of option VOIKKO_INTERSECT_COMPOUND_LEVEL.
-.TP
-.BI ignore_dot= n
-.TP
-.BI ignore_numbers= n
-.TP
 .BI ignore_nonwords= n
-(voikkospell)
 .TP
 .BI accept_first_uppercase= n
-(voikkospell)
 .TP
 .BI accept_extra_hyphens= n
-(voikkospell)
 .TP
 .BI accept_missing_hyphens= n
-(voikkospell)
 .TP
 .BI ocr_suggestions= n
-(voikkospell)
+.br
+Set the value of the specified boolean option.
+.I n
+can be either 0 (false) or 1 (true).
+.SH COMMON OPTIONS
 .TP
-.BI no_ugly_hyphenation= n
-(voikkohyphenate)
+.BI \-p " directory"
+(voikkospell, voikkohyphenate)
+Look from
+.I directory
+before the standard locations when searching for dictionary files.
+.TP
+.BI ignore_dot= n
+(voikkospell, voikkohyphenate)
+.TP
+.BI ignore_numbers= n
+(voikkospell, voikkohyphenate)
 .br
 Set the value of the specified boolean option.
 .I n
 can be either 0 (false) or 1 (true).
 .SH AUTHOR
 voikkospell and this manual page were written by Harri Pitk\[:a]nen (hatapitk@iki.fi).
-
