@@ -24,13 +24,13 @@
 /**
  * Grammar checker cache entry.
  */
-typedef struct {
+struct voikko_gc_cache_entry_s {
 	/** Grammar error */
 	voikko_grammar_error error;
 	/** Next error in linked list */
-	voikko_grammar_error * next_error;
-} voikko_gc_cache_entry;
-
+	struct voikko_gc_cache_entry_s * next_error;
+};
+typedef struct voikko_gc_cache_entry_s voikko_gc_cache_entry;
 
 /**
  * Grammar checker cache. Currently the cache can hold only one paragraph.
@@ -38,9 +38,8 @@ typedef struct {
 typedef struct {
 	/** Null terminated string containing the paragraph text. */
 	wchar_t * paragraph;
-	/** First error in linked list. If there are no errors, this must
-	 *  have error.code == 0. */
-	voikko_gc_cache_entry first_error;
+	/** First error in linked list. */
+	voikko_gc_cache_entry * first_error;
 } voikko_gc_cache;
 
 
@@ -54,6 +53,12 @@ void init_gc_cache(voikko_gc_cache * gc_cache);
  * Returns a pointer to a cached grammar error or null, if there are no cached
  * results for given paragraph.
  */
-voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t text, size_t startpos);
+const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text, size_t startpos);
+
+/**
+ * Performs grammar checking on the entire paragraph and stores the results
+ * to cache.
+ */
+void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
 
 #endif
