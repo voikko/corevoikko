@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "gccache.h"
+#include "gcerror.h"
 #include "voikko_setup.h"
 #include <string.h>
 #include <stdlib.h>
@@ -92,7 +93,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 		if (errorpos) {
 			voikko_gc_cache_entry * e = gc_new_cache_entry();
 			if (!e) return;
-			e->error.error_code = 1; //FIXME: GCERR_WRITE_TOGETHER
+			e->error.error_code = GCERR_WRITE_TOGETHER;
 			e->error.startpos = errorpos - text;
 			e->error.errorlen = 11;
 			gc_cache_append_error(handle, e);

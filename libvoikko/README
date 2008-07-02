@@ -1,14 +1,50 @@
-This is libvoikko, library for spellcheckers and hyphenators using Malaga
+General information
+===================
+
+This is libvoikko, library of free language tools using Malaga
 natural language grammar development tool. The library is written in C.
 
-Currently only Finnish is supported, but the API of the library has been designed
-to allow adding support for other languages later. Note however that Malaga is
-rather low level tool that requires implementing the whole morphology of a
-language as a left associative grammar. Therefore languages that have simple or
-even moderately complex morphologies and do not require morphological analysis
-in their hyphenators should be implemented using other tools such as Hunspell.
+Libvoikko provides spell checking, hyphenation and grammar checking for
+Finnish language. No other languages are supported at the moment, and there
+are no serious plans to add such support. This is because internals of this
+library may change significantly in future releases, and we think that
+generally useful bits and ideas (if any) should rather be merged to existing
+multi language tools such as Hunspell and LanguageTools. In fact, we hope to
+make libvoikko obsolete, but currently there are no other libraries that
+provide all the features we need. We feel that pushing new features to Hunspell
+where they would need to be maintained essentially indefinitely should not be
+done until we have gained enough experience to know which solutions work in the
+real world.
+
+This library is released under the GPL, version 2 or later. The author is
+willing to license selected parts under other free licenses (such as LGPL or
+MPL) if this will directly help the development of other free software
+products.
+
+
+Features
+========
+
+ - Spell checking using compound word and derivation rule system that is
+   largely compatible with widely used proprietary Finnish spell checkers
+   (Soikko, MS Word).
+ - Spelling suggestions that are generated to catch most probable typing
+   errors.
+ - Special spelling suggestion mode that can be used to correct errors
+   produced by optical character recognition software.
+ - Hyphenator with compound hyphenation based on morphological analysis.
+ - Various options to tune spell checking and hyphenation for different
+   purposes and applications.
+
+ Work in progress:
+ - Grammar checking and context sensitive spell checking using paragraph
+   based API.
 
 Documentation for using the library can be found from header file voikko.h.
+
+
+Requirements
+============
 
 The library needs libmalaga and a version of Suomi-malaga containing a file named
 voikko-fi_FI.pro. The file should start with the following line:
@@ -40,3 +76,15 @@ The search is done in the following order:
    HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath.
 6) Path specified at compile time using --with-dictionary-path (this defaults to
    /usr/lib/voikko).
+
+
+Author
+======
+
+2006 - 2008 Harri Pitkänen (hatapitk@iki.fi)
+
+
+Website
+=======
+
+http://voikko.sourceforge.net
