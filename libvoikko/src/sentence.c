@@ -81,6 +81,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 		previous_token_type = token;
 		slen += tokenlen;
 	}
+	*sentencelen = textlen;
 	return SENTENCE_NONE;
 }
 

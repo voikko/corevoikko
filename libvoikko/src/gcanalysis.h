@@ -22,10 +22,10 @@
 #include "voikko_defs.h"
 
 /* Maximum number of sentences in a paragraph */
-#define GCANALYSIS_MAX_SENTENCES = 200;
+#define GCANALYSIS_MAX_SENTENCES 200
 
 /* Maximum number of tokens in a sentence */
-#define GCANALYSIS_MAX_TOKENS = 500;
+#define GCANALYSIS_MAX_TOKENS 500
 
 /**
  * Grammar checker sentence token.
@@ -37,31 +37,31 @@ typedef struct {
 	wchar_t * str;
 	/** Length of the token */
 	size_t tokenlen;
-} voikko_gc_token;
+} gc_token;
 
 /**
  * Analyzed sentence for grammar checker.
  */
 typedef struct {
-	/** Type of this sentence */
+	/** Type of this sentence (start type of next sentence) */
 	enum voikko_sentence_type type;
 	/** Array of gc tokens */
-	voikko_gc_token * tokens;
+	gc_token * tokens;
 	/** Number of tokens in the sentence */
 	int token_count;
-} voikko_gc_sentence;
+} gc_sentence;
 
 /**
  * Analyzed paragraph for grammar checker.
  */
 typedef struct {
 	/** Pointers to analyzed sentences */
-	voikko_gc_sentence ** sentences;
+	gc_sentence ** sentences;
 	/** Number of sentences in the paragraph */
 	int sentence_count;
-} voikko_gc_paragraph;
+} gc_paragraph;
 
-/** Analyze a paragraph text */
-voikko_gc_paragraph * gc_analyze_paragraph(const wchar_t * text, size_t textlen);
+/** Analyze paragraph text */
+gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen);
 
 #endif

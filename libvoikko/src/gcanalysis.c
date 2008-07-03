@@ -17,7 +17,42 @@
  *********************************************************************************/
 
 #include "gcanalysis.h"
+#include <stdlib.h>
 
-voikko_gc_paragraph * gc_analyze_paragraph(const wchar_t * text, size_t textlen) {
+/** Analyze sentence text */
+gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text, size_t textlen) {
 	return 0;
+}
+
+
+gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
+	gc_paragraph * p = malloc(sizeof(gc_paragraph));
+	if (!p) return 0;
+	p->sentences = malloc(GCANALYSIS_MAX_SENTENCES * sizeof(gc_sentence *));
+	if (!p->sentences) {
+		free(p);
+		return 0;
+	}
+	p->sentence_count = 0;
+	size_t sentencelen;
+	const wchar_t * pos = text;
+	size_t remaining = textlen;
+	enum voikko_sentence_type st;
+	do {
+		st = voikko_next_sentence_start_ucs4(handle, pos,
+		                               remaining, &sentencelen);
+		gc_sentence * s = gc_analyze_sentence(handle, pos, remaining);
+		if (!s) {
+			free(p->sentences);
+			free(p);
+			return 0;
+		}
+		s->type = st;
+		p->sentences[p->sentence_count++] = s;
+		pos += sentencelen;
+		remaining -= sentencelen;
+		
+	} while (st != SENTENCE_NONE && st != SENTENCE_NO_START &&
+	         p->sentence_count < GCANALYSIS_MAX_SENTENCES);
+	return p;
 }
