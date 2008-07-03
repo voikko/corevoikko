@@ -19,9 +19,11 @@
 #include "gcerror.h"
 #include "voikko_defs.h"
 
+// FIXME: non-ascii characters
 const char * voikko_error_message_cstr(int error_code, const char * language) {
 	switch (error_code) {
 		case GCERR_WRITE_TOGETHER: return "Sanat on kirjoitettava yhteen.";
+		case GCERR_EXTRA_WHITESPACE: return "Poista ylimääräinen väli.";
 	}
 	return "Tuntematon virhe";
 }

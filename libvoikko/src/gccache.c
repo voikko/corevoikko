@@ -104,6 +104,24 @@ void gc_static_replacements(int handle, const gc_sentence * sentence) {
 	}
 }
 
+/**
+ * GC errors due to wrong context independent use of punctuation or whitespace
+ * within a sentence.
+ */
+void gc_local_punctuation(int handle, const gc_sentence * sentence) {
+	for (int i = 0; i < sentence->token_count; i++) {
+		gc_token t = sentence->tokens[i];
+		if (t.type != TOKEN_WHITESPACE) continue;
+		if (t.tokenlen == 1) continue;
+		voikko_gc_cache_entry * e = gc_new_cache_entry();
+		if (!e) return;
+		e->error.error_code = GCERR_EXTRA_WHITESPACE;
+		e->error.startpos = sentence->tokens[i].pos;
+		e->error.errorlen = sentence->tokens[i].tokenlen;
+		gc_cache_append_error(handle, e);
+	}
+}
+
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(handle);
 	voikko_options.gc_cache.paragraph = malloc((textlen + 1) * sizeof(wchar_t));
@@ -114,6 +132,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	if (!para) return;
 	for (int i = 0; i < para->sentence_count; i++) {
 		gc_static_replacements(handle, para->sentences[i]);
+		gc_local_punctuation(handle, para->sentences[i]);
 	}
 	free_gc_paragraph(para);
 }

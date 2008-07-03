@@ -1,6 +1,7 @@
 2008-07-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Work on grammar checker.
+	* Add whitespace error checks.
 
 2008-07-02 Harri Pitkänen <hatapitk@iki.fi>
 

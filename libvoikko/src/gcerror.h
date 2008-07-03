@@ -20,5 +20,6 @@
 #define VOIKKO_GCERROR_H
 
 #define GCERR_WRITE_TOGETHER 1
+#define GCERR_EXTRA_WHITESPACE 2
 
 #endif
