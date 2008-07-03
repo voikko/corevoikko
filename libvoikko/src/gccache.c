@@ -65,6 +65,11 @@ void gc_cache_append_error(int handle, voikko_gc_cache_entry * new_entry) {
 		voikko_options.gc_cache.first_error = new_entry;
 		return;
 	}
+	if (entry->error.startpos > new_entry->error.startpos) {
+		new_entry->next_error = voikko_options.gc_cache.first_error;
+		voikko_options.gc_cache.first_error = new_entry;
+		return;
+	}
 	while (entry) {
 		if (!entry->next_error) {
 			entry->next_error = new_entry;

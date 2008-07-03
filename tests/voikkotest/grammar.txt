@@ -5,3 +5,6 @@ Mies on joten kuten selvillä siitä, että hänen on joten kuten palattava koti
 Se oli joten  kuten.
  [code=1, level=0, descr="", stpos=7, len=12, suggs={}]
  [code=2, level=0, descr="", stpos=12, len=2, suggs={}]
+Välivirhe  ennen kuin joten kuten tulee toinen virhe.
+ [code=2, level=0, descr="", stpos=9, len=2, suggs={}]
+ [code=1, level=0, descr="", stpos=22, len=11, suggs={}]
