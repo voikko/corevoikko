@@ -29,7 +29,6 @@ void free_gc_sentence(gc_sentence * sentence) {
 	free(sentence);
 }
 
-/** Free the memory allocated for paragraph analysis */
 void free_gc_paragraph(gc_paragraph * para) {
 	if (!para) return;
 	if (para->sentences) {
@@ -42,10 +41,12 @@ void free_gc_paragraph(gc_paragraph * para) {
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */
-gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text, size_t textlen) {
+gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
+                                   size_t textlen, size_t sentencepos) {
 	gc_sentence * s = malloc(sizeof(gc_sentence));
 	if (!s) return 0;
 	s->token_count = 0;
+	s->pos = sentencepos;
 	size_t tokenlen;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
@@ -57,9 +58,10 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text, size_t textl
 		s->tokens[i].tokenlen = tokenlen;
 		wchar_t * tstr = malloc((tokenlen + 1) * sizeof(wchar_t));
 		if (!tstr) break;
-		memcpy(tstr, pos, tokenlen);
+		memcpy(tstr, pos, tokenlen * sizeof(wchar_t));
 		tstr[tokenlen] = L'\0';
 		s->tokens[i].str = tstr;
+		s->tokens[i].pos = sentencepos + (pos - text);
 		s->token_count++;
 		pos += tokenlen;
 		remaining -= tokenlen;
@@ -87,7 +89,7 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 	do {
 		st = voikko_next_sentence_start_ucs4(handle, pos, remaining,
 		                                     &sentencelen);
-		gc_sentence * s = gc_analyze_sentence(handle, pos, sentencelen);
+		gc_sentence * s = gc_analyze_sentence(handle, pos, sentencelen, pos - text);
 		if (!s) {
 			free_gc_paragraph(p);
 			return 0;

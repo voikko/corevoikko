@@ -37,6 +37,8 @@ typedef struct {
 	wchar_t * str;
 	/** Length of the token */
 	size_t tokenlen;
+	/** Position of this token within paragraph */
+	size_t pos;
 } gc_token;
 
 /**
@@ -49,6 +51,8 @@ typedef struct {
 	gc_token tokens[GCANALYSIS_MAX_TOKENS];
 	/** Number of tokens in the sentence */
 	int token_count;
+	/** Position of this sentence within paragraph */
+	size_t pos;
 } gc_sentence;
 
 /**
@@ -63,5 +67,8 @@ typedef struct {
 
 /** Analyze paragraph text */
 gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen);
+
+/** Free the memory allocated for paragraph analysis */
+void free_gc_paragraph(gc_paragraph * para);
 
 #endif

@@ -18,6 +18,7 @@
 
 #include "gccache.h"
 #include "gcerror.h"
+#include "gcanalysis.h"
 #include "voikko_setup.h"
 #include <string.h>
 #include <stdlib.h>
@@ -81,24 +82,38 @@ voikko_gc_cache_entry * gc_new_cache_entry() {
 	return e;
 }
 
+/**
+ * GC errors from static list of incorrect patterns
+ */
+void gc_static_replacements(int handle, const gc_sentence * sentence) {
+	for (int i = 0; i < sentence->token_count - 2; i++) {
+		gc_token t = sentence->tokens[i];
+		if (t.type != TOKEN_WORD) continue;
+		if (wcscmp(t.str, L"joten")) continue;
+		t = sentence->tokens[i+1];
+		if (t.type != TOKEN_WHITESPACE) continue;
+		t = sentence->tokens[i+2];
+		if (t.type != TOKEN_WORD) continue;
+		if (wcscmp(t.str, L"kuten")) continue;
+		voikko_gc_cache_entry * e = gc_new_cache_entry();
+		if (!e) return;
+		e->error.error_code = GCERR_WRITE_TOGETHER;
+		e->error.startpos = sentence->tokens[i].pos;
+		e->error.errorlen = 10 + sentence->tokens[i+1].tokenlen;
+		gc_cache_append_error(handle, e);
+	}
+}
+
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(handle);
 	voikko_options.gc_cache.paragraph = malloc((textlen + 1) * sizeof(wchar_t));
 	if (!voikko_options.gc_cache.paragraph) return;
 	memcpy(voikko_options.gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikko_options.gc_cache.paragraph[textlen] = L'\0';
-	size_t pos = 0;
-	while (1) {
-		wchar_t * errorpos = wcsstr(text + pos, L"joten kuten");
-		if (errorpos) {
-			voikko_gc_cache_entry * e = gc_new_cache_entry();
-			if (!e) return;
-			e->error.error_code = GCERR_WRITE_TOGETHER;
-			e->error.startpos = errorpos - text;
-			e->error.errorlen = 11;
-			gc_cache_append_error(handle, e);
-			pos = e->error.startpos + e->error.errorlen;
-		}
-		else break;
+	gc_paragraph * para = gc_analyze_paragraph(handle, text, textlen);
+	if (!para) return;
+	for (int i = 0; i < para->sentence_count; i++) {
+		gc_static_replacements(handle, para->sentences[i]);
 	}
+	free_gc_paragraph(para);
 }
