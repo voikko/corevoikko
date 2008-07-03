@@ -18,9 +18,55 @@
 
 #include "gcanalysis.h"
 #include <stdlib.h>
+#include <string.h>
 
-/** Analyze sentence text */
+/** Free the memory allocated for sentence analysis */
+void free_gc_sentence(gc_sentence * sentence) {
+	if (!sentence) return;
+	for (int i = 0; i < sentence->token_count; i++) {
+		free(sentence->tokens[i].str);
+	}
+	free(sentence);
+}
+
+/** Free the memory allocated for paragraph analysis */
+void free_gc_paragraph(gc_paragraph * para) {
+	if (!para) return;
+	if (para->sentences) {
+		for (int i = 0; i < para->sentence_count; i++) {
+			free_gc_sentence(para->sentences[i]);
+		}
+		free(para->sentences);
+	}
+	free(para);
+}
+
+/** Analyze sentence text. Sentence type must be set by the caller. */
 gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text, size_t textlen) {
+	gc_sentence * s = malloc(sizeof(gc_sentence));
+	if (!s) return 0;
+	s->token_count = 0;
+	size_t tokenlen;
+	const wchar_t * pos = text;
+	size_t remaining = textlen;
+	for (int i = 0; i < GCANALYSIS_MAX_TOKENS; i++) {
+		enum voikko_token_type tt;
+		tt = voikko_next_token_ucs4(handle, pos, remaining, &tokenlen);
+		if (tt == TOKEN_NONE) return s;
+		s->tokens[i].type = tt;
+		s->tokens[i].tokenlen = tokenlen;
+		wchar_t * tstr = malloc((tokenlen + 1) * sizeof(wchar_t));
+		if (!tstr) break;
+		memcpy(tstr, pos, tokenlen);
+		tstr[tokenlen] = L'\0';
+		s->tokens[i].str = tstr;
+		s->token_count++;
+		pos += tokenlen;
+		remaining -= tokenlen;
+		if (!remaining) return s;
+	}
+	// Too long sentence or error
+	free_gc_sentence(s);
 	return 0;
 }
 
@@ -39,12 +85,11 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 	size_t remaining = textlen;
 	enum voikko_sentence_type st;
 	do {
-		st = voikko_next_sentence_start_ucs4(handle, pos,
-		                               remaining, &sentencelen);
-		gc_sentence * s = gc_analyze_sentence(handle, pos, remaining);
+		st = voikko_next_sentence_start_ucs4(handle, pos, remaining,
+		                                     &sentencelen);
+		gc_sentence * s = gc_analyze_sentence(handle, pos, sentencelen);
 		if (!s) {
-			free(p->sentences);
-			free(p);
+			free_gc_paragraph(p);
 			return 0;
 		}
 		s->type = st;

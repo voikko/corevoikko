@@ -46,7 +46,7 @@ typedef struct {
 	/** Type of this sentence (start type of next sentence) */
 	enum voikko_sentence_type type;
 	/** Array of gc tokens */
-	gc_token * tokens;
+	gc_token tokens[GCANALYSIS_MAX_TOKENS];
 	/** Number of tokens in the sentence */
 	int token_count;
 } gc_sentence;
