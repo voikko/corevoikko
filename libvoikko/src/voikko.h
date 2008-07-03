@@ -135,6 +135,7 @@
 /* String options */
 /* The encoding in which multibyte character strings are interpreteted and returned
  * as results.
+ * This option is deprecated. Future releases will support UTF-8 encoding only.
  * Default: UTF-8 */
 #define VOIKKO_OPT_ENCODING 2
 
@@ -181,7 +182,7 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size);
  * @param cache_size size of the spellchecker cache. This can be -1 (no cache) or
  *        >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
  * @param path path to a directory from which dictionary files should be searched
- *        first before looking into the standard dictionary locatiosn
+ *        first before looking into the standard dictionary locations
  * @return null, if initialisation completed without error, otherwise a pointer
  *         to a string describing the error
  */
@@ -381,7 +382,7 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
  * @param error_code Error code (from voikko_grammar_error)
  * @param language ISO language code or null, if the language from current locale
  *        should be used.
- * @return The localized error message for the error code.
+ * @return The UTF-8 encoded localized error message for the error code.
  */
 const char * voikko_error_message_cstr(int error_code, const char * language);
 

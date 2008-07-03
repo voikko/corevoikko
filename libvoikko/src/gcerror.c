@@ -18,12 +18,26 @@
 
 #include "gcerror.h"
 #include "voikko_defs.h"
+#include <string.h>
 
-// FIXME: non-ascii characters
 const char * voikko_error_message_cstr(int error_code, const char * language) {
-	switch (error_code) {
-		case GCERR_WRITE_TOGETHER: return "Sanat on kirjoitettava yhteen.";
-		case GCERR_EXTRA_WHITESPACE: return "Poista ylimääräinen väli.";
+	if (strncmp(language, "fi", 2) == 0) {
+		// ä=\xc3\xa4, ö=\xc3\xb6, Ä=\xc3\x84, Ö=\xc3\x96
+		switch (error_code) {
+			case GCERR_WRITE_TOGETHER:
+				return "Sanat on kirjoitettava yhteen.";
+			case GCERR_EXTRA_WHITESPACE:
+				return "Poista ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li.";
+		}
+		return "Tuntematon virhe";
 	}
-	return "Tuntematon virhe";
+	else {
+		switch (error_code) {
+			case GCERR_WRITE_TOGETHER:
+				return "Remove space between words.";
+			case GCERR_EXTRA_WHITESPACE:
+				return "Remove extra space.";
+		}
+		return "Unknown error";
+	}
 }
