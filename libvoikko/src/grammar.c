@@ -36,8 +36,10 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
 	
 	size_t wtextlen = wcslen(text_ucs4);
 	const voikko_grammar_error * c_error = gc_error_from_cache(handle, text_ucs4, startpos);
-	if (!c_error) gc_paragraph_to_cache(handle, text_ucs4, wtextlen);
-	c_error = gc_error_from_cache(handle, text_ucs4, startpos);
+	if (!c_error) {
+		gc_paragraph_to_cache(handle, text_ucs4, wtextlen);
+		c_error = gc_error_from_cache(handle, text_ucs4, startpos);
+	}
 	
 	free(text_ucs4);
 	if (c_error) return *c_error;

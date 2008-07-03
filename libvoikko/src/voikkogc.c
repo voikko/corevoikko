@@ -133,7 +133,7 @@ void check_grammar(int handle, const char * line) {
 		printf("[code=%i, level=0, ", grammar_error.error_code);
 		printf("descr=\"\", stpos=%zd, ", grammar_error.startpos);
 		printf("len=%zd, suggs={}]\n", grammar_error.errorlen);
-		startpos += grammar_error.startpos + 1;
+		startpos = grammar_error.startpos + 1;
 	}
 }
 

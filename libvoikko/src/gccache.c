@@ -59,7 +59,6 @@ void gc_clear_cache(int handle) {
  * Appends an entry to the grammar checker error cache.
  */
 void gc_cache_append_error(int handle, voikko_gc_cache_entry * new_entry) {
-	// TODO: errors should be inserted in correct order
 	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
 	if (!entry) {
 		voikko_options.gc_cache.first_error = new_entry;
@@ -70,8 +69,14 @@ void gc_cache_append_error(int handle, voikko_gc_cache_entry * new_entry) {
 		voikko_options.gc_cache.first_error = new_entry;
 		return;
 	}
-	while (entry) {
+	while (1) {
 		if (!entry->next_error) {
+			entry->next_error = new_entry;
+			return;
+		}
+		if (entry->error.startpos <= new_entry->error.startpos &&
+		    entry->next_error->error.startpos > new_entry->error.startpos) {
+			new_entry->next_error = entry->next_error;
 			entry->next_error = new_entry;
 			return;
 		}
