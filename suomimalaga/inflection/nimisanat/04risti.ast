@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006,2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -56,3 +56,12 @@ takki  risti  ki i  ke e  k  ki
 tatti  risti  ti i  te e  t  ti
 tunti  risti  ti ni te ne t  ti
 vati   risti  ti di te de t  ti
+telefoni_di telefoni di odi de ode d od
+telefoni_fi telefoni fi ofi fe ofe f of
+telefoni_gi telefoni gi ogi ge oge g og
+telefoni_li telefoni li oli le ole l ol
+telefoni_mi telefoni mi omi me ome m om
+telefoni_ni telefoni ni oni ne one n on
+telefoni_ri telefoni ri ori re ore r or
+telefoni_vi telefoni vi ovi ve ove v ov
+marinadi    marinadi di adi de ade d ad

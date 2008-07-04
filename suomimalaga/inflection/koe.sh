@@ -8,4 +8,4 @@ grep -v '#' $* \
 | grep -v '^[+]' \
 | sed -e "s/[+]//g" \
 | grep -v 'inen$' \
-| malaga -m ../suomi.pro
+| malaga -m ../sukija/suomi.pro

@@ -464,6 +464,11 @@ arvelu;
   puhuttu;    # Teonsanojen laatutavoissa.
   raamattu;
 autio;
+  funktio;
+  illuusio;
+  obligaatio;
+  resoluutio;
+  traditio;
 risti;
   hupi;
   keppi;
@@ -475,6 +480,15 @@ risti;
   tatti;
   tunti;
   vati;
+  telefoni_di;  # Esim. diodi, dioodi.
+  telefoni_fi;
+  telefoni_gi;
+  telefoni_li;
+  telefoni_mi;
+  telefoni_ni;
+  telefoni_ri;
+  telefoni_vi;
+  marinadi;     # Marina(a)di.
 paperi;
   banaali;
   edam;      # Taipuu kuten paperi tai banaali, mutta sana ei lopu i:hin.
@@ -484,6 +498,15 @@ paperi;
   konvehti;
   salaatti;
   sinappi;
+  symboli_di;  # Esim. episodi, episoodi;
+  symboli_fi;
+  symboli_gi;
+  symboli_li;
+  symboli_mi;
+  symboli_ni;
+  symboli_ri;
+  symboli_vi;
+  balladi;      # Balla(a)di.
 kalsium;
   fan;
   pop;
@@ -549,6 +572,8 @@ karahka;
     savotta;
     ulappa;
   veranta;
+  analogia;   # Analo(o)gia.
+  filosofia;  # Filoso(o)fia.
 kantaja; # => kantajuus
   apaja;
   kahdeksan;

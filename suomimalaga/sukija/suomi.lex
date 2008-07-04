@@ -1315,6 +1315,8 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 # Juhla => juhlainen.
 [perusmuoto: "inen", alku: "i", luokka: johdin_inen, jatko: <nainen>, äs: a];
 [perusmuoto: "inen", alku: "i", luokka: johdin_inen, jatko: <nainen>, äs: ä];
+#[perusmuoto: "nen", alku: "", luokka: johdin_inen, jatko: <nainen>, äs: a, tiedot: <ei_voikko>]; # Puna+(i)nen yms.
+#[perusmuoto: "nen", alku: "", luokka: johdin_inen, jatko: <nainen>, äs: ä, tiedot: <ei_voikko>];
 
 
 # Juhla => juhlittain.

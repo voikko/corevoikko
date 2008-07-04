@@ -1,0 +1,296 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          ill+uusio+
+          ill+usio+
+          ill+usioni+
+          ill+usiooni+
+
+omistusliite
+          ill+uusio+ni
+          ill+usio+ni
+          ill+usioni+ni
+          ill+usiooni+ni
+
+omanto_n
+          ill+uusio+n
+          ill+usio+n
+          ill+usioni+n
+          ill+usiooni+n
+
+osanto_tA
+          ill+uusio+ta
+          ill+usio+ta
+
+osanto_A
+          ill+uusio+a
+          ill+usio+a
+          ill+usioni+a
+          ill+usiooni+a
+
+olento_nA
+          ill+uusio+na
+          ill+usio+na
+          ill+usioni+na
+          ill+usiooni+na
+
+tulento_ksi
+          ill+uusio+ksi
+          ill+usio+ksi
+          ill+usioni+ksi
+          ill+usiooni+ksi
+
+sisäolento_ssA
+          ill+uusio+ssa
+          ill+usio+ssa
+          ill+usioni+ssa
+          ill+usiooni+ssa
+
+sisäeronto_stA
+          ill+uusio+sta
+          ill+usio+sta
+          ill+usioni+sta
+          ill+usiooni+sta
+
+sisätulento_Vn
+          ill+uusio+on
+          ill+usio+on
+          ill+usioni+in
+          ill+usiooni+in
+
+sisätulento_hVn
+          ill+uusio+hon  vanha_h
+          ill+usio+hon  vanha_h
+          ill+usioni+hin  vanha_h
+          ill+usiooni+hin  vanha_h
+
+ulko_olento_llA
+          ill+uusio+lla
+          ill+usio+lla
+          ill+usioni+lla
+          ill+usiooni+lla
+
+ulkoeronto_ltA
+          ill+uusio+lta
+          ill+usio+lta
+          ill+usioni+lta
+          ill+usiooni+lta
+
+ulkotulento_lle
+          ill+uusio+lle
+          ill+usio+lle
+          ill+usioni+lle
+          ill+usiooni+lle
+
+vajanto_ttA
+          ill+uusio+tta
+          ill+usio+tta
+          ill+usioni+tta
+          ill+usiooni+tta
+
+nimentö_t
+          ill+uusio+t
+          ill+usio+t
+          ill+usioni+t
+          ill+usiooni+t
+
+omanto_en
+          ill+usioni+en
+          ill+usiooni+en
+
+omanto_iT
+          ill+uusio+iden
+          ill+usio+iden
+          ill+uusio+itten
+          ill+usio+itten
+          ill+usione+iden
+          ill+usioone+iden
+          ill+usione+itten
+          ill+usioone+itten
+
+omanto_in
+          ill+uusio+in
+          ill+usio+in
+          ill+usione+in
+          ill+usioone+in
+
+osanto_itA
+          ill+uusio+ita
+          ill+usio+ita
+          ill+usione+ita
+          ill+usioone+ita
+
+osanto_jA
+          ill+usione+ja
+          ill+usioone+ja
+
+olento_inA
+          ill+uusio+ina
+          ill+usio+ina
+          ill+usione+ina
+          ill+usioone+ina
+
+tulento_iksi
+          ill+uusio+iksi
+          ill+usio+iksi
+          ill+usione+iksi
+          ill+usioone+iksi
+
+sisäolento_issA
+          ill+uusio+issa
+          ill+usio+issa
+          ill+usione+issa
+          ill+usioone+issa
+
+sisäeronto_istA
+          ill+uusio+ista
+          ill+usio+ista
+          ill+usione+ista
+          ill+usioone+ista
+
+sisätulento_ihin
+          ill+uusio+ihin
+          ill+usio+ihin
+          ill+usione+ihin
+          ill+usioone+ihin
+
+ulko_olento_illA
+          ill+uusio+illa
+          ill+usio+illa
+          ill+usione+illa
+          ill+usioone+illa
+
+ulkoeronto_iltA
+          ill+uusio+ilta
+          ill+usio+ilta
+          ill+usione+ilta
+          ill+usioone+ilta
+
+ulkotulento_ille
+          ill+uusio+ille
+          ill+usio+ille
+          ill+usione+ille
+          ill+usioone+ille
+
+vajanto_ittA
+          ill+uusio+itta
+          ill+usione+itta
+          ill+usione+itta
+          ill+usioone+itta
+
+seuranto_ine
+          ill+uusio+ine
+          ill+usio+ine
+          ill+usione+ine
+          ill+usioone+ine
+
+keinonto_in
+          ill+uusio+in
+          ill+usio+in
+          ill+usione+in
+          ill+usioone+in
+
+kerronto_sti
+          ill+uusio+sti
+          ill+usio+sti
+          ill+usioni+sti
+          ill+usiooni+sti
+
+voittoaste
+          ill+uusio+mpi
+          ill+usio+mpi
+          ill+usioni+mpi
+          ill+usiooni+mpi
+
+yliaste
+          ill+uusio+in
+          ill+usio+in
+          ill+usione+in
+          ill+usioone+in
+
+johdin_inen
+          ill+uusio+inen
+          ill+usio+inen
+          ill+usion+inen
+          ill+usioon+inen
+
+johdin_ittain
+          ill+uusio+ittain
+          ill+usio+ittain
+          ill+usione+ittain
+          ill+usioone+ittain
+
+johdin_lAinen
+          ill+uusio+lainen
+          ill+usio+lainen
+          ill+usioni+lainen
+          ill+usiooni+lainen
+
+johdin_llinen
+          ill+uusio+llinen
+          ill+usio+llinen
+          ill+usioni+llinen
+          ill+usiooni+llinen
+
+johdin_mAinen
+          ill+uusio+mainen
+          ill+usio+mainen
+          ill+usioni+mainen
+          ill+usiooni+mainen
+
+johdin_tOn
+          ill+uusio+ton
+          ill+usio+ton
+          ill+usioni+ton
+          ill+usiooni+ton
+
+johdin_Us
+          ill+uusio+us
+          ill+usio+us
+          ill+usioni+us
+          ill+usiooni+us

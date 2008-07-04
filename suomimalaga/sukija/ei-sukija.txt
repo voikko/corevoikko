@@ -69,6 +69,7 @@ Georgia
 Guinea
 haarautuma
 haaroittua
+haaroitus
 halkeama
 halpatyö
 Hamina
@@ -100,7 +101,6 @@ hyvinvointi
 hyvinvoiva
 hyytymä
 häipymä
-hänenkaltainen
 Härmä
 höyhensarjalainen
 Ilma
@@ -193,6 +193,7 @@ kolhiutuma
 Koppelo
 Koski
 Kotka
+koulutus
 kovettuma
 Kreikka
 Kroatia
@@ -527,12 +528,14 @@ turpoama
 Tuuli
 työläinen
 työläisyys
+työntyä
 täydellistymä
 täysihoito
 täysihoitola
 Ukraina
 uloskäytävä
 ulosotto
+ulottua
 ulottuma
 Unelma
 Unkari
@@ -612,3 +615,6 @@ ystävällismielinen
 ärtymä
 äänitys
 äännellä
+#päivänen
+#punanen
+#kultanen

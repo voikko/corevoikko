@@ -1,0 +1,212 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          balla+di+
+          balla+adi+
+
+omistusliite
+          balla+di+ni
+          balla+adi+ni
+
+omanto_n
+          balla+di+n
+          balla+adi+n
+
+osanto_A
+          balla+di+a
+          balla+adi+a
+
+olento_nA
+          balla+di+na
+          balla+adi+na
+
+tulento_ksi
+          balla+di+ksi
+          balla+adi+ksi
+
+sisäolento_ssA
+          balla+di+ssa
+          balla+adi+ssa
+
+sisäeronto_stA
+          balla+di+sta
+          balla+adi+sta
+
+sisätulento_Vn
+          balla+di+in
+          balla+adi+in
+
+sisätulento_hVn
+          balla+di+hin  vanha_h
+          balla+adi+hin  vanha_h
+
+ulko_olento_llA
+          balla+di+lla
+          balla+adi+lla
+
+ulkoeronto_ltA
+          balla+di+lta
+          balla+adi+lta
+
+ulkotulento_lle
+          balla+di+lle
+          balla+adi+lle
+
+vajanto_ttA
+          balla+di+tta
+          balla+adi+tta
+
+nimentö_t
+          balla+di+t
+          balla+adi+t
+
+omanto_en
+          balla+di+en
+          balla+adi+en
+
+omanto_iT
+          balla+de+iden
+          balla+ade+iden
+          balla+de+itten
+          balla+ade+itten
+
+omanto_in
+          balla+de+in  ei_voikko
+          balla+ade+in  ei_voikko
+
+osanto_jA
+          balla+de+ja
+          balla+ade+ja
+
+osanto_itA
+          balla+de+ita
+          balla+ade+ita
+
+olento_inA
+          balla+de+ina
+          balla+ade+ina
+
+tulento_iksi
+          balla+de+iksi
+          balla+ade+iksi
+
+sisäolento_issA
+          balla+de+issa
+          balla+ade+issa
+
+sisäeronto_istA
+          balla+de+ista
+          balla+ade+ista
+
+sisätulento_ihin
+          balla+de+ihin
+          balla+ade+ihin
+
+ulko_olento_illA
+          balla+de+illa
+          balla+ade+illa
+
+ulkoeronto_iltA
+          balla+de+ilta
+          balla+ade+ilta
+
+ulkotulento_ille
+          balla+de+ille
+          balla+ade+ille
+
+vajanto_ittA
+          balla+de+itta
+          balla+ade+itta
+
+seuranto_ine
+          balla+de+ine
+          balla+ade+ine
+
+keinonto_in
+          balla+de+in
+          balla+ade+in
+
+kerronto_sti
+          +di+sti
+          +adi+sti
+
+voittoaste
+          +di+mpi
+          +adi+mpi
+
+yliaste
+          +de+in
+          +ade+in
+
+johdin_inen
+          balla+d+inen
+          balla+ad+inen
+
+johdin_ittain
+          balla+de+ittain
+          balla+ade+ittain
+
+johdin_lAinen
+          balla+di+lainen
+          balla+adi+lainen
+
+johdin_llinen
+          balla+di+llinen
+          balla+adi+llinen
+
+johdin_mAinen
+          balla+di+mainen
+          balla+adi+mainen
+
+johdin_tOn
+          balla+di+ton
+          balla+adi+ton
+
+johdin_Us
+          +di+us
+          +adi+us

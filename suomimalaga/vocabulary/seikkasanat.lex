@@ -930,10 +930,14 @@
 [perusmuoto: "taimpana", alku: "taimpana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tainnoksissa", alku: "tainnoksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tainnoksissa", alku: "tainnoksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnoksissa", alku: "tainnoksissa", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tainnoksissa", alku: "tainnoksista", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnoksissa", alku: "tainnoksista", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tainnuksissa", alku: "tainnuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tainnuksissa", alku: "tainnuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnuksissa", alku: "tainnuksissa", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tainnuksissa", alku: "tainnuksista", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tainnuksissa", alku: "tainnuksista", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "taiten", alku: "taiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taitse", alku: "taitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "taivasalla", alku: "taivasa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
@@ -942,8 +946,8 @@
 [perusmuoto: "takana", alku: "taakse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "takaperin", alku: "takaperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "takia", alku: "takia", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
-[perusmuoto: "tallella", alku: "tallella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "tallella", alku: "tallelle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tallessa", alku: "tallella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tallessa", alku: "tallelle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tallessa", alku: "tallessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tallessa", alku: "tallesta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tallessa", alku: "talteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

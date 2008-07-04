@@ -1,0 +1,203 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          marina+di+
+          marina+adi+
+
+omistusliite
+          marina+di+ni
+          marina+adi+ni
+
+omanto_n
+          marina+di+n
+          marina+adi+n
+
+osanto_A
+          marina+di+a
+          marina+adi+a
+
+olento_nA
+          marina+di+na
+          marina+adi+na
+
+tulento_ksi
+          marina+di+ksi
+          marina+adi+ksi
+
+sisäolento_ssA
+          marina+di+ssa
+          marina+adi+ssa
+
+sisäeronto_stA
+          marina+di+sta
+          marina+adi+sta
+
+sisätulento_Vn
+          marina+di+in
+          marina+adi+in
+
+sisätulento_hVn
+          marina+di+hin  vanha_h
+          marina+adi+hin  vanha_h
+
+ulko_olento_llA
+          marina+di+lla
+          marina+adi+lla
+
+ulkoeronto_ltA
+          marina+di+lta
+          marina+adi+lta
+
+ulkotulento_lle
+          marina+di+lle
+          marina+adi+lle
+
+vajanto_ttA
+          marina+di+tta
+          marina+adi+tta
+
+nimentö_t
+          marina+di+t
+          marina+adi+t
+
+omanto_en
+          marina+di+en
+          marina+adi+en
+
+omanto_in
+          marina+de+in  ei_voikko
+          marina+ade+in  ei_voikko
+
+osanto_jA
+          marina+de+ja
+          marina+ade+ja
+
+olento_inA
+          marina+de+ina
+          marina+ade+ina
+
+tulento_iksi
+          marina+de+iksi
+          marina+ade+iksi
+
+sisäolento_issA
+          marina+de+issa
+          marina+ade+issa
+
+sisäeronto_istA
+          marina+de+ista
+          marina+ade+ista
+
+sisätulento_ihin
+          marina+de+ihin
+          marina+ade+ihin
+
+ulko_olento_illA
+          marina+de+illa
+          marina+ade+illa
+
+ulkoeronto_iltA
+          marina+de+ilta
+          marina+ade+ilta
+
+ulkotulento_ille
+          marina+de+ille
+          marina+ade+ille
+
+vajanto_ittA
+          marina+de+itta
+          marina+ade+itta
+
+seuranto_ine
+          marina+de+ine
+          marina+ade+ine
+
+keinonto_in
+          marina+de+in
+          marina+ade+in
+
+kerronto_sti
+          marina+di+sti
+          marina+adi+sti
+
+voittoaste
+          marina+di+mpi
+          marina+adi+mpi
+
+yliaste
+          marina+de+in
+          marina+ade+in
+
+johdin_inen
+          marina+d+inen
+          marina+ad+inen
+
+johdin_ittain
+          marina+de+ittain
+          marina+ade+ittain
+
+johdin_lAinen
+          marina+di+lainen
+          marina+adi+lainen
+
+johdin_llinen
+          marina+di+llinen
+          marina+adi+llinen
+
+johdin_mAinen
+          marina+di+mainen
+          marina+adi+mainen
+
+johdin_tOn
+          marina+di+ton
+          marina+adi+ton
+
+johdin_Us
+          marina+di+us
+          marina+adi+us
+

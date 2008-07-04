@@ -1,0 +1,379 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          oblig+aatio+
+          oblig+atio+
+          oblig+atsioni+
+          oblig+atsiooni+
+          oblig+ationi+
+          oblig+atiooni+
+
+omistusliite
+          oblig+aatio+ni
+          oblig+atio+ni
+          oblig+atsioni+ni
+          oblig+atsiooni+ni
+          oblig+ationi+ni
+          oblig+atiooni+ni
+
+omanto_n
+          oblig+aatio+n
+          oblig+atio+n
+          oblig+atsioni+n
+          oblig+atsiooni+n
+          oblig+ationi+n
+          oblig+atiooni+n
+
+osanto_tA
+          oblig+aatio+ta
+          oblig+atio+ta
+
+osanto_A
+          oblig+aatio+a
+          oblig+atio+a
+          oblig+atsioni+a
+          oblig+atsiooni+a
+          oblig+ationi+a
+          oblig+atiooni+a
+
+olento_nA
+          oblig+aatio+na
+          oblig+atio+na
+          oblig+atsioni+na
+          oblig+atsiooni+na
+          oblig+ationi+na
+          oblig+atiooni+na
+
+tulento_ksi
+          oblig+aatio+ksi
+          oblig+atio+ksi
+          oblig+atsioni+ksi
+          oblig+atsiooni+ksi
+          oblig+ationi+ksi
+          oblig+atiooni+ksi
+
+sisäolento_ssA
+          oblig+aatio+ssa
+          oblig+atio+ssa
+          oblig+atsioni+ssa
+          oblig+atsiooni+ssa
+          oblig+ationi+ssa
+          oblig+atiooni+ssa
+
+sisäeronto_stA
+          oblig+aatio+sta
+          oblig+atio+sta
+          oblig+atsioni+sta
+          oblig+atsiooni+sta
+          oblig+ationi+sta
+          oblig+atiooni+sta
+
+sisätulento_Vn
+          oblig+aatio+on
+          oblig+atio+on
+          oblig+atsioni+in
+          oblig+atsiooni+in
+          oblig+ationi+in
+          oblig+atiooni+in
+
+sisätulento_hVn
+          oblig+aatio+hon  vanha_h
+          oblig+atio+hon  vanha_h
+          oblig+atsioni+hin  vanha_h
+          oblig+atsiooni+hin  vanha_h
+          oblig+ationi+hin  vanha_h
+          oblig+atiooni+hin  vanha_h
+
+ulko_olento_llA
+          oblig+aatio+lla
+          oblig+atio+lla
+          oblig+atsioni+lla
+          oblig+atsiooni+lla
+          oblig+ationi+lla
+          oblig+atiooni+lla
+
+ulkoeronto_ltA
+          oblig+aatio+lta
+          oblig+atio+lta
+          oblig+atsioni+lta
+          oblig+atsiooni+lta
+          oblig+ationi+lta
+          oblig+atiooni+lta
+
+ulkotulento_lle
+          oblig+aatio+lle
+          oblig+atio+lle
+          oblig+atsioni+lle
+          oblig+atsiooni+lle
+          oblig+ationi+lle
+          oblig+atiooni+lle
+
+vajanto_ttA
+          oblig+aatio+tta
+          oblig+atio+tta
+          oblig+atsioni+tta
+          oblig+atsiooni+tta
+          oblig+ationi+tta
+          oblig+atiooni+tta
+
+nimentö_t
+          oblig+aatio+t
+          oblig+atio+t
+          oblig+atsioni+t
+          oblig+atsiooni+t
+          oblig+ationi+t
+          oblig+atiooni+t
+
+omanto_en
+          oblig+atsioni+en
+          oblig+atsiooni+en
+          oblig+ationi+en
+          oblig+atiooni+en
+
+omanto_iT
+          oblig+aatio+iden
+          oblig+atio+iden
+          oblig+aatio+itten
+          oblig+atio+itten
+          oblig+atsione+iden
+          oblig+atsioone+iden
+          oblig+atione+iden
+          oblig+atioone+iden
+          oblig+atsione+itten
+          oblig+atsioone+itten
+          oblig+atione+itten
+          oblig+atioone+itten
+
+omanto_in
+          oblig+aatio+in
+          oblig+atio+in
+          oblig+atsione+in
+          oblig+atsioone+in
+          oblig+atione+in
+          oblig+atioone+in
+
+osanto_itA
+          oblig+aatio+ita
+          oblig+atio+ita
+          oblig+atsione+ita
+          oblig+atsioone+ita
+          oblig+atione+ita
+          oblig+atioone+ita
+
+osanto_jA
+          oblig+atsione+ja
+          oblig+atsioone+ja
+          oblig+atione+ja
+          oblig+atioone+ja
+
+olento_inA
+          oblig+aatio+ina
+          oblig+atio+ina
+          oblig+atsione+ina
+          oblig+atsioone+ina
+          oblig+atione+ina
+          oblig+atioone+ina
+
+tulento_iksi
+          oblig+aatio+iksi
+          oblig+atio+iksi
+          oblig+atsione+iksi
+          oblig+atsioone+iksi
+          oblig+atione+iksi
+          oblig+atioone+iksi
+
+sisäolento_issA
+          oblig+aatio+issa
+          oblig+atio+issa
+          oblig+atsione+issa
+          oblig+atsioone+issa
+          oblig+atione+issa
+          oblig+atioone+issa
+
+sisäeronto_istA
+          oblig+aatio+ista
+          oblig+atio+ista
+          oblig+atsione+ista
+          oblig+atsioone+ista
+          oblig+atione+ista
+          oblig+atioone+ista
+
+sisätulento_ihin
+          oblig+aatio+ihin
+          oblig+atio+ihin
+          oblig+atsione+ihin
+          oblig+atsioone+ihin
+          oblig+atione+ihin
+          oblig+atioone+ihin
+
+ulko_olento_illA
+          oblig+aatio+illa
+          oblig+atio+illa
+          oblig+atsione+illa
+          oblig+atsioone+illa
+          oblig+atione+illa
+          oblig+atioone+illa
+
+ulkoeronto_iltA
+          oblig+aatio+ilta
+          oblig+atio+ilta
+          oblig+atsione+ilta
+          oblig+atsioone+ilta
+          oblig+atione+ilta
+          oblig+atioone+ilta
+
+ulkotulento_ille
+          oblig+aatio+ille
+          oblig+atio+ille
+          oblig+atsione+ille
+          oblig+atsioone+ille
+          oblig+atione+ille
+          oblig+atioone+ille
+
+vajanto_ittA
+          oblig+aatio+itta
+          oblig+atione+itta
+          oblig+atsione+itta
+          oblig+atsioone+itta
+          oblig+atione+itta
+          oblig+atioone+itta
+
+seuranto_ine
+          oblig+aatio+ine
+          oblig+atio+ine
+          oblig+atsione+ine
+          oblig+atsioone+ine
+          oblig+atione+ine
+          oblig+atioone+ine
+
+keinonto_in
+          oblig+aatio+in
+          oblig+atio+in
+          oblig+atsione+in
+          oblig+atsioone+in
+          oblig+atione+in
+          oblig+atioone+in
+
+kerronto_sti
+          oblig+aatio+sti
+          oblig+atio+sti
+          oblig+atsioni+sti
+          oblig+atsiooni+sti
+          oblig+ationi+sti
+          oblig+atiooni+sti
+
+voittoaste
+          oblig+aatio+mpi
+          oblig+atio+mpi
+          oblig+atsioni+mpi
+          oblig+atsiooni+mpi
+          oblig+ationi+mpi
+          oblig+atiooni+mpi
+
+yliaste
+          oblig+aatio+in
+          oblig+atio+in
+          oblig+atsione+in
+          oblig+atsioone+in
+          oblig+atione+in
+
+johdin_inen
+          oblig+aatio+inen
+          oblig+atio+inen
+          oblig+atsion+inen
+          oblig+atsioon+inen
+          oblig+ation+inen
+          oblig+atioon+inen
+
+johdin_ittain
+          oblig+aatio+ittain
+          oblig+atio+ittain
+          oblig+atsione+ittain
+          oblig+atsioone+ittain
+          oblig+atione+ittain
+          oblig+atioone+ittain
+
+johdin_lAinen
+          oblig+aatio+lainen
+          oblig+atio+lainen
+          oblig+atsioni+lainen
+          oblig+atsiooni+lainen
+          oblig+ationi+lainen
+          oblig+atiooni+lainen
+
+johdin_llinen
+          oblig+aatio+llinen
+          oblig+atio+llinen
+          oblig+atsioni+llinen
+          oblig+atsiooni+llinen
+          oblig+ationi+llinen
+          oblig+atiooni+llinen
+
+johdin_mAinen
+          oblig+aatio+mainen
+          oblig+atio+mainen
+          oblig+atsioni+mainen
+          oblig+atsiooni+mainen
+          oblig+ationi+mainen
+          oblig+atiooni+mainen
+
+johdin_tOn
+          oblig+aatio+ton
+          oblig+atio+ton
+          oblig+atsioni+ton
+          oblig+atsiooni+ton
+          oblig+ationi+ton
+          oblig+atiooni+ton
+
+johdin_Us
+          oblig+aatio+us
+          oblig+atio+us
+          oblig+atsioni+us
+          oblig+atsiooni+us
+          oblig+ationi+us
+          oblig+atiooni+us

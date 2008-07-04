@@ -1,0 +1,212 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          analo+gia+
+          analo+ogia+
+
+omistusliite
+          analo+gia+ni
+          analo+ogia+ni
+
+omanto_n
+          analo+gia+n
+          analo+ogia+n
+
+osanto_A
+          analo+gia+a
+          analo+ogia+a
+
+osanto_tA
+          analo+gia+ta  ei_voikko
+          analo+ogia+ta  ei_voikko
+
+olento_nA
+          analo+gia+na
+          analo+ogia+na
+
+tulento_ksi
+          analo+gia+ksi
+          analo+ogia+ksi
+
+sisäolento_ssA
+          analo+gia+ssa
+          analo+ogia+ssa
+
+sisäeronto_stA
+          analo+gia+sta
+          analo+ogia+sta
+
+sisätulento_Vn
+          analo+gia+an
+          analo+ogia+an
+
+sisätulento_hVn
+          analo+gia+han  vanha_h
+          analo+ogia+han  vanha_h
+
+ulko_olento_llA
+          analo+gia+lla
+          analo+ogia+lla
+
+ulkoeronto_ltA
+          analo+gia+lta
+          analo+ogia+lta
+
+ulkotulento_lle
+          analo+gia+lle
+          analo+ogia+lle
+
+vajanto_ttA
+          analo+gia+tta
+          analo+ogia+tta
+
+nimentö_t
+          analo+gia+t
+          analo+ogia+t
+
+omanto_jen
+          analo+gio+jen
+          analo+ogio+jen
+
+omanto_iT
+          analo+gio+iden
+          analo+ogio+iden
+          analo+gio+itten
+          analo+ogio+itten
+
+omanto_in
+          analo+gia+in
+          analo+ogia+in
+
+osanto_jA
+          analo+gio+ja
+          analo+ogio+ja
+
+osanto_itA
+          analo+gio+ita
+          analo+ogio+ita
+
+olento_inA
+          analo+gio+ina
+          analo+ogio+ina
+
+tulento_iksi
+          analo+gio+iksi
+          analo+ogio+iksi
+
+sisäolento_issA
+          analo+gio+issa
+          analo+ogio+issa
+
+sisäeronto_istA
+          analo+gio+ista
+          analo+ogio+ista
+
+sisätulento_ihin
+          analo+gio+ihin
+          analo+ogio+ihin
+
+ulko_olento_illA
+          analo+gio+illa
+          analo+ogio+illa
+
+ulkoeronto_iltA
+          analo+gio+ilta
+          analo+ogio+ilta
+
+ulkotulento_ille
+          analo+gio+ille
+          analo+ogio+ille
+
+vajanto_ittA
+          analo+gio+itta
+          analo+ogio+itta
+
+seuranto_ine
+          analo+gio+ine
+          analo+ogio+ine
+
+keinonto_in
+          analo+gio+in
+          analo+ogio+in
+
+kerronto_sti
+          +gia+sti
+          +ogia+sti
+
+voittoaste
+          +gia+mpi
+          +ogia+mpi
+
+yliaste
+          +ogia+in
+
+johdin_inen
+          analo+gia+inen
+          analo+ogia+inen
+
+johdin_ittain
+          analo+gio+ittain
+          analo+ogio+ittain
+
+johdin_lAinen
+          analo+gia+lainen
+          analo+ogia+lainen
+
+johdin_llinen
+          analo+gia+llinen
+          analo+ogia+llinen
+
+johdin_mAinen
+          analo+gia+mainen
+          analo+ogia+mainen
+
+johdin_tOn
+          analo+gia+ton
+          analo+ogia+ton
+

@@ -101,12 +101,16 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
+  if ($tietue.perusmuoto in <"kallas">) then   # "Kaltainen" on sanastossa.
+    $tietue :=+ [tiedot: <ei_inen>];
+  end;
+
   if ($tietue.perusmuoto in <"luisti", "mani", "nasu", "poli", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
 ##if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi", "säkä", "sää">) then
-  if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi", "säkä">) then
+  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "lehdes", "riksi", "säkä">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else
@@ -150,14 +154,16 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
-  if (($malli = voikko) and ($tietue.tiedot /= nil) and
-      ((latex in $tietue.tiedot) or
-       (murre in $tietue.tiedot) or
-       (ei_voikko in $tietue.tiedot))) then
-    stop;
+#  if (($malli = voikko) and ($tietue.tiedot /= nil) and
+#      ((latex in $tietue.tiedot) or
+#       (murre in $tietue.tiedot) or
+#       (ei_voikko in $tietue.tiedot))) then
+#    stop;
+#  elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
+#          (ei_sukija in $tietue.tiedot)) then
+#    stop;
 
-  elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
-          (ei_sukija in $tietue.tiedot)) then
+  if (($tietue.tiedot /= nil) and (ei_sukija in $tietue.tiedot)) then
     stop;
 
 #####################################################################

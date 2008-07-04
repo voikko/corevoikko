@@ -55,6 +55,12 @@ historical = [(u'aavistaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
 	(u'ahven',    u'ws', [(None,u'(.*CVC)',u'ahven')]),
         (u'antautua', u'sw', [(u't',u'(.*)tUA',u'antautua')]),
 	(u'altis',    u'ws', [(None, u'(.*t)is', u'altis')]),
+	(u'autio', u'-', [(None,u'(..*C)aatio',u'obligaatio'),
+			  (None,u'(..*C)uutio',u'resoluutio'),
+			  (None,u'(..*C)uusio',u'illuusio'),
+			  (None,u'(..*C)itio',u'traditio'),
+			  (None,u'(.*)ktio',u'funktio'),
+			  (None,u'(.*)',u'autio')]),
         (u'banaali',  u'sw', [(None,u'(.*)i',u'banaali'),
                               (u'nt',u'(.*n)ti',u'hollanti'),
 			      (u'nk',u'(.*n)ki',u'killinki'),
@@ -66,7 +72,6 @@ historical = [(u'aavistaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
         (u'haastaa', u'sw', [(None,u'(.*C)AA',u'haastaa')]),
         (u'kaihtaa', u'sw', [(u't',u'(.*)tAA',u'kaihtaa')]),
         (u'kantaja', u'-', [(None,u'(.*)jA',u'kantaja')]),
-##        (u'kantaja', u'-', [(None,u'(.*)jA',u'johdin_jA_kantaja')]),
         (u'kirjoitella', u'ws', [(None,u'(...*O)itellA',u'kilvoitella'),
                                  (None,u'(.*O)tellA',u'ilotella')]),
 	(u'tulla', u'ws', [(None,u'(.*Vl)lA',u'tulla')]),
@@ -155,6 +160,8 @@ while True:
 	word = inputfile.readline()
 	if (len(word) == 0):
 		break
+	if (word[0] == '#'):
+		continue;
 	word = word[:-1]      # Poistetaan \n sanan lopusta.
 #	print (word)
 	words.append (word)
@@ -339,7 +346,17 @@ def new_vtype (malaga_vtype, wordform):
 		return u"aä"
 	else:
 	       	return malaga_vtype
-	
+
+
+def jatko_x (wordform, jatko, jatko1, jatko2, testi1, testi2):
+	if testi1:
+		return jatko1
+	elif testi2:
+		return jatko2
+	else:
+		print (u'Väärä taivutus: ' + wordform + u' ' + jatko)
+		sys.exit (1)
+
 
 def handle_word(main_vocabulary,vocabulary_files,word):
 	if generate_lex_common.has_flag(word, "not_sukija"): return
@@ -458,9 +475,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 ##				jatko = u"punainen"
 ##			else:
 ##				jatko = u"hevoinen"
-##			print (u"Keltainen " + wordform + u" " + alku + u" " + jatko)
+####			print (u"Keltainen " + wordform + u" " + alku + u" " + jatko)
 		elif (jatko in [u"asiakas", u"avokas"]):
-#		if (jatko in [u"asiakas", u"avokas"]):
 			jatko = u"iäkäs"
 		elif (jatko == u"varas"):
 			jatko = u"vilkas"
@@ -483,103 +499,124 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 			jatko2 = jatko
 			wordform2 = alku2 + wordform[-1:]
 #			print(u"J " + wordform2 + u" " + alku2 + u" " + s + u"\n")
-		elif ((nsyl > 3) and (jatko == u"autio") and
-		      (rx != None) and (d != None) and ((d['obligaatio'] != None) or (d['resoluutio'] != None))):
-			#
-			# Obligaatio => obligatsioni, obligatsiooni, obligatio, obligationi, obligatiooni.
-			# Revoluutio => revolutsioni, revolutsiooni, revolutio, revolutioni, revolutiooni.
-			# Tässä -ni ei ole omistusliite.
-			#
-			alku2 = wordform[:-4] + u"tsion"      # Obligatsioni, revolutsioni.
-			jatko2 = u"paperi"
-			wordform2 = alku2 + u"i"
-				
-			alku3 = wordform[:-4] + u"tsioon"     # Obligatsiooni, revolutsiooni.
-			jatko3 = u"paperi"
-			wordform3 = alku3 + u"i"
-			
-			alku4 = wordform[:-4] + wordform[-3:] # Obligatio, revolutio.
-			jatko4 = jatko
-			wordform4 = alku4
-			
-			alku5 = alku4 + u"n"                  # Obligationi, revolutioni.
-			jatko5 = u"paperi"
-			wordform5 = alku5 + u"i"
-			
-			alku6 = alku4 + u"on"                 # Obligatiooni, revolutiooni.
-			jatko6 = u"paperi"
-			wordform6 = alku6 + u"i"
-       		elif ((nsyl > 3) and (jatko == u"autio") and
-		      (rx != None) and (d != None) and (d['illuusio'] != None)):
-			#
-			# Illuusio => illusioni, illusiooni, illusio.
-			#
-			alku2 = wordform[:-4] + u"sion"     # Illusioni.
-			jatko2 = u"paperi"
-			wordform2 = alku2 + u"i"
-
-			alku3 = wordform[:-4] + u"sioon"    # Illusiooni.
-			jatko3 = u"paperi"
-			wordform3 = alku3 + u"i"
-
-			alku4 = wordform[:-4] + u"sio"      # Illusio.
-			jatko4 = jatko
-			wordform4 = alku4
-		elif ((nsyl > 2) and (jatko == u"autio") and
-		      (rx != None) and (d != None) and ((d['traditio'] != None) or (d['funktio'] != None))):
-			#
-			# Traditio => traditsioni, traditsiooni, traditsio.
-			#
-			alku2 = wordform[:-2] + u"sion"    # Traditsioni, funktsioni.
-			jatko2 = u"paperi"
-			wordform2 = alku2 + u"i"
-
-			alku3 = wordform[:-2] + u"sioon"   # Traditsiooni, funktsiooni.
-			jatko3 = u"paperi"
-			wordform3 = alku2 + u"i"
-			
-			alku4 = wordform[:-2] + u"sio"      # Traditsio, funktsio.
-			jatko4 = jatko
-			wordform4 = alku4
+#		elif ((nsyl > 3) and (jatko == u"autio") and
+#		      (rx != None) and (d != None) and ((d['obligaatio'] != None) or (d['resoluutio'] != None))):
+#			#
+#			# Obligaatio => obligatsioni, obligatsiooni, obligatio, obligationi, obligatiooni.
+#			# Revoluutio => revolutsioni, revolutsiooni, revolutio, revolutioni, revolutiooni.
+#			# Tässä -ni ei ole omistusliite.
+#			#
+#			alku2 = wordform[:-4] + u"tsion"      # Obligatsioni, revolutsioni.
+#			jatko2 = u"paperi"
+#			wordform2 = alku2 + u"i"
+#				
+#			alku3 = wordform[:-4] + u"tsioon"     # Obligatsiooni, revolutsiooni.
+#			jatko3 = u"paperi"
+#			wordform3 = alku3 + u"i"
+#			
+#			alku4 = wordform[:-4] + wordform[-3:] # Obligatio, revolutio.
+#			jatko4 = jatko
+#			wordform4 = alku4
+#			
+#			alku5 = alku4 + u"n"                  # Obligationi, revolutioni.
+#			jatko5 = u"paperi"
+#			wordform5 = alku5 + u"i"
+#			
+#			alku6 = alku4 + u"on"                 # Obligatiooni, revolutiooni.
+#			jatko6 = u"paperi"
+#			wordform6 = alku6 + u"i"
+#       		elif ((nsyl > 3) and (jatko == u"autio") and
+#		      (rx != None) and (d != None) and (d['illuusio'] != None)):
+#			#
+#			# Illuusio => illusioni, illusiooni, illusio.
+#			#
+#			alku2 = wordform[:-4] + u"sion"     # Illusioni.
+#			jatko2 = u"paperi"
+#			wordform2 = alku2 + u"i"
+#
+#			alku3 = wordform[:-4] + u"sioon"    # Illusiooni.
+#			jatko3 = u"paperi"
+#			wordform3 = alku3 + u"i"
+#
+#			alku4 = wordform[:-4] + u"sio"      # Illusio.
+#			jatko4 = jatko
+#			wordform4 = alku4
+#		elif ((nsyl > 2) and (jatko == u"autio") and
+#		      (rx != None) and (d != None) and ((d['traditio'] != None) or (d['funktio'] != None))):
+#			#
+#			# Traditio => traditsioni, traditsiooni, traditsio.
+#			#
+#			alku2 = wordform[:-2] + u"sion"    # Traditsioni, funktsioni.
+#			jatko2 = u"paperi"
+#			wordform2 = alku2 + u"i"
+#
+#			alku3 = wordform[:-2] + u"sioon"   # Traditsiooni, funktsiooni.
+#			jatko3 = u"paperi"
+#			wordform3 = alku2 + u"i"
+#			
+#			alku4 = wordform[:-2] + u"sio"      # Traditsio, funktsio.
+#			jatko4 = jatko
+#			wordform4 = alku4
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['symboli_ym'] != None) and
 		      (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"])):
 			#
 			# Symboli => symbooli, atoomi, uniooni, tenoori, alkoovi, aploodi,
 			# pedagoogi, psykoloogi, filosoofi, katastroofi, mutta ei esim. koni => kooni.
 			#
-			alku2 = wordform[:-2] + u"o" + wordform[-2]
-			jatko2 = jatko
-			wordform2 = alku2 + u"i"
+#			alku2 = wordform[:-2] + u"o" + wordform[-2]
+#			jatko2 = jatko
+#			wordform2 = alku2 + u"i"
+##			print (u'A ' + wordform + u' ' + jatko)
+			alku = wordform[:-2]
+#			jatko = jatko_oCi (wordform, jatko)
+			jatko = jatko_x (wordform, jatko, (u'telefoni_' + wordform[-2:]), (u'symboli_' + wordform[-2:]),
+					 (jatko == u'risti'), (jatko in [u'paperi', u'banaali']))
+##			print (u'B ' + wordform + u' ' + jatko)
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['balladi'] != None)):
 			#
-			# Balladi => ballaadi.
+			# Balla(a)di.
 			#
-			alku2 = wordform[:-2] + u"a" + wordform[-2]
-			jatko2 = jatko
-			wordform2 = alku2 + u"i"
+#			alku2 = wordform[:-2] + u"a" + wordform[-2]
+#			jatko2 = jatko
+#			wordform2 = alku2 + u"i"
+##			print (u'A ' + wordform + u' ' + jatko)
+			alku = wordform[:-2]
+			jatko = jatko_x (wordform, jatko, u'marinadi', u'balladi',
+					 (jatko == u'risti'), (jatko in [u'paperi', u'banaali']))
+##			print (u'B ' + wordform + u' ' + jatko)
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['logia_ym'] != None) and
 		      (malaga_word_class in [u"nimisana", u"nimi_laatusana"])):
 			#
 			# Pedagogia => pedagoogia, psykolo(o)gia, filoso(o)fia.
 			#
-			alku2 = wordform[:-3] + u"o" + wordform[-3:-1]
-			jatko2 = jatko
-			wordform2 = alku2 + u"a"
+#			alku2 = wordform[:-3] + u"o" + wordform[-3:-1]
+#			jatko2 = jatko
+			alku = wordform[:-3]
+			jatko = jatko_x (wordform, jatko, u'filosofia', u'analogia',
+					 (wordform[-3] == u'f'), (wordform[-3] == u'g'))
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['loginen_ym'] != None) and
 		      (malaga_word_class in [u"nimisana", u"nimi_laatusana"])):
 			#
 			# Pedagoginen => pedagooginen, psykolo(o)ginen, filoso(o)finen.
 			#
-			alku2 = wordform[:-5] + u"o" + wordform[-5:-3]
-			jatko2 = jatko
-			wordform2 = alku2 + u"nen"
+#			alku2 = wordform[:-5] + u"o" + wordform[-5:-3]
+#			jatko2 = jatko
+#			wordform2 = alku2 + u"nen"
+			alku = wordform[:-5]
+			jatko = jatko_x (wordform, jatko, u'filosofinen', u'psykologinen',
+					 (wordform[-5] == u'f'), (wordform[-5] == u'g'))
+			print (u'B ' + wordform + u' ' + jatko)
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['grafia'] != None)):
 			#
 			# Topografia => topograafia.
 			#
-			alku2 = wordform[:-3] + u"a" + wordform[-3:-1]
-			jatko2 = jatko
-			wordform2 = alku2 + u"a"
+#			alku2 = wordform[:-3] + u"a" + wordform[-3:-1]
+#			jatko2 = jatko
+#			wordform2 = alku2 + u"a"
+			alku = wordform[:-3]
+			jatko = jatko_x (wordform, jatko, u'filosofia', u'analogia',
+					 (wordform[-3] == u'f'), (wordform[-3] == u'g'))
+##			print (u'B ' + wordform + u' ' + jatko)
 		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['grafinen'] != None)):
 			#
 			# Topografinen => topograafinen.

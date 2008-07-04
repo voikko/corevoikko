@@ -1,0 +1,298 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          trad+itio+
+          trad+itsio+
+          trad+itsioni+
+          trad+itsiooni+
+
+omistusliite
+          trad+itio+ni
+          trad+itsio+ni
+          trad+itsioni+ni
+          trad+itsiooni+ni
+
+omanto_n
+          trad+itio+n
+          trad+itsio+n
+          trad+itsioni+n
+          trad+itsiooni+n
+
+osanto_tA
+          trad+itio+ta
+          trad+itsio+ta
+
+osanto_A
+          trad+itio+a
+          trad+itsio+a
+          trad+itsioni+a
+          trad+itsiooni+a
+
+olento_nA
+          trad+itio+na
+          trad+itsio+na
+          trad+itsioni+na
+          trad+itsiooni+na
+
+tulento_ksi
+          trad+itio+ksi
+          trad+itsio+ksi
+          trad+itsioni+ksi
+          trad+itsiooni+ksi
+
+sisäolento_ssA
+          trad+itio+ssa
+          trad+itsio+ssa
+          trad+itsioni+ssa
+          trad+itsiooni+ssa
+
+sisäeronto_stA
+          trad+itio+sta
+          trad+itsio+sta
+          trad+itsioni+sta
+          trad+itsiooni+sta
+
+sisätulento_Vn
+          trad+itio+on
+          trad+itsio+on
+          trad+itsioni+in
+          trad+itsiooni+in
+
+sisätulento_hVn
+          trad+itio+hon  vanha_h
+          trad+itsio+hon  vanha_h
+          trad+itsioni+hin  vanha_h
+          trad+itsiooni+hin  vanha_h
+
+ulko_olento_llA
+          trad+itio+lla
+          trad+itsio+lla
+          trad+itsioni+lla
+          trad+itsiooni+lla
+
+ulkoeronto_ltA
+          trad+itio+lta
+          trad+itsio+lta
+          trad+itsioni+lta
+          trad+itsiooni+lta
+
+ulkotulento_lle
+          trad+itio+lle
+          trad+itsio+lle
+          trad+itsioni+lle
+          trad+itsiooni+lle
+
+vajanto_ttA
+          trad+itio+tta
+          trad+itsio+tta
+          trad+itsioni+tta
+          trad+itsiooni+tta
+
+nimentö_t
+          trad+itio+t
+          trad+itsio+t
+          trad+itsioni+t
+          trad+itsiooni+t
+
+omanto_en
+          trad+itsioni+en
+          trad+itsiooni+en
+          trad+itsioni+en
+
+omanto_iT
+          trad+itio+iden
+          trad+itio+itten
+          trad+itsio+iden
+          trad+itsio+itten
+          trad+itsione+iden
+          trad+itsione+itten
+          trad+itsioone+iden
+          trad+itsioone+itten
+
+
+omanto_in
+          trad+itio+in
+          trad+itsio+in
+          trad+itsione+in
+          trad+itsioone+in
+
+osanto_itA
+          trad+itio+ita
+          trad+itsio+ita
+          trad+itsione+ita
+          trad+itsioone+ita
+
+osanto_jA
+          trad+itsione+ja
+          trad+itsioone+ja
+
+olento_inA
+          trad+itio+ina
+          trad+itsio+ina
+          trad+itsione+ina
+          trad+itsioone+ina
+
+tulento_iksi
+          trad+itio+iksi
+          trad+itsio+iksi
+          trad+itsione+iksi
+          trad+itsioone+iksi
+
+sisäolento_issA
+          trad+itio+issa
+          trad+itsio+issa
+          trad+itsione+issa
+          trad+itsioone+issa
+
+sisäeronto_istA
+          trad+itio+ista
+          trad+itsio+ista
+          trad+itsione+ista
+          trad+itsioone+ista
+
+sisätulento_ihin
+          trad+itio+ihin
+          trad+itsio+ihin
+          trad+itsione+ihin
+          trad+itsioone+ihin
+
+ulko_olento_illA
+          trad+itio+illa
+          trad+itsio+illa
+          trad+itsione+illa
+          trad+itsioone+illa
+
+ulkoeronto_iltA
+          trad+itio+ilta
+          trad+itsio+ilta
+          trad+itsione+ilta
+          trad+itsioone+ilta
+
+ulkotulento_ille
+          trad+itio+ille
+          trad+itsio+ille
+          trad+itsione+ille
+          trad+itsioone+ille
+
+vajanto_ittA
+          trad+itio+itta
+          trad+itsione+itta
+          trad+itsione+itta
+          trad+itsioone+itta
+
+seuranto_ine
+          trad+itio+ine
+          trad+itsio+ine
+          trad+itsione+ine
+          trad+itsioone+ine
+
+keinonto_in
+          trad+itio+in
+          trad+itsio+in
+          trad+itsione+in
+          trad+itsioone+in
+
+kerronto_sti
+          trad+itio+sti
+          trad+itsio+sti
+          trad+itsioni+sti
+          trad+itsiooni+sti
+
+voittoaste
+          trad+itio+mpi
+          trad+itsio+mpi
+          trad+itsioni+mpi
+          trad+itsiooni+mpi
+
+yliaste
+          trad+itio+in
+          trad+itsio+in
+          trad+itsione+in
+          trad+itsioone+in
+
+johdin_inen
+          trad+itio+inen
+          trad+itsio+inen
+          trad+itsion+inen
+          trad+itsioon+inen
+
+johdin_ittain
+          trad+itio+ittain
+          trad+itsio+ittain
+          trad+itsione+ittain
+          trad+itsioone+ittain
+
+johdin_lAinen
+          trad+itio+lainen
+          trad+itsio+lainen
+          trad+itsioni+lainen
+          trad+itsiooni+lainen
+
+johdin_llinen
+          trad+itio+llinen
+          trad+itsio+llinen
+          trad+itsioni+llinen
+          trad+itsiooni+llinen
+
+johdin_mAinen
+          trad+itio+mainen
+          trad+itsio+mainen
+          trad+itsioni+mainen
+          trad+itsiooni+mainen
+
+johdin_tOn
+          trad+itio+ton
+          trad+itsio+ton
+          trad+itsioni+ton
+          trad+itsiooni+ton
+
+johdin_Us
+          trad+itio+us
+          trad+itsio+us
+          trad+itsioni+us
+          trad+itsiooni+us

@@ -501,6 +501,20 @@
 
 [perusmuoto: "säkäkorkeus", alku: "säkäkorkeu", luokka: nimisana, jatko: <kalleus>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "vähimmäissäkä", alku: "vähimmäissäk", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "teidänkaltainen", alku: "teidänkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppp"];
+[perusmuoto: "tämänkaltainen", alku: "täänkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
+[perusmuoto: "minunkaltainen", alku: "minunkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
+[perusmuoto: "erinkaltainen", alku: "erinkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
+
+[perusmuoto: "kylpyamme", alku: "kylpyamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
+[perusmuoto: "pesuamme", alku: "pesuamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "poreamme", alku: "poreamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "petäjäamme", alku: "petäjäamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "ränniamme", alku: "ränniamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
+[perusmuoto: "siiliamme", alku: "siiliamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
+[perusmuoto: "sinkkiamme", alku: "sinkkiamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "vesiamme", alku: "vesiamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "viiniamme", alku: "viiniamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.
