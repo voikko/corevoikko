@@ -370,12 +370,13 @@ enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char
  *        be at the start of a paragraph or a sentence.
  * @param textlen Number of bytes in the buffer. The end of the buffer should
  *        be the end of a paragraph or a sentence.
- * @param startpos Report the next error that starts at or after this character
+ * @param startpos Do not consider errors that start before this character
  *        offset from the start of the text.
+ * @param skiperrors Skip this number of errors from the start of the text.
  * @return Grammar error description.
  */
 voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                                                    size_t textlen, size_t startpos);
+                     size_t textlen, size_t startpos, int skiperrors);
 
 /**
  * Localized error message.

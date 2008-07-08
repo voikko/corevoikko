@@ -88,7 +88,7 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handl
              const char * text, size_t textlen, size_t * sentencelen);
 
 VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                                                                 size_t textlen, size_t startpos);
+                                  size_t textlen, size_t startpos, int skiperrors);
 
 VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char * language);
 

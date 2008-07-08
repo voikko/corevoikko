@@ -27,20 +27,22 @@ void init_gc_cache(voikko_gc_cache * gc_cache) {
 	memset(gc_cache, 0, sizeof(voikko_gc_cache));
 }
 
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text, size_t startpos) {
+const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
+                             size_t startpos, int skiperrors) {
 	if (!voikko_options.gc_cache.paragraph) return 0;	
 	if (wcscmp(voikko_options.gc_cache.paragraph, text) != 0) return 0;
 	voikko_gc_cache_entry * e = voikko_options.gc_cache.first_error;
-	while (1) {
-		if (!e) {
-			// This will be initialized to zero meaning "no errors"
-			static const voikko_grammar_error no_error;
-			return &no_error;
-		}
-		if (e->error.startpos >= startpos)
+	int preverrors = 0;
+	while (e) {
+		if (preverrors >= skiperrors &&
+		    e->error.startpos >= startpos)
 			return &e->error;
+		preverrors++;
 		e = e->next_error;
 	}
+	// This will be initialized to zero meaning "no errors"
+	static const voikko_grammar_error no_error;
+	return &no_error;
 }
 
 void gc_clear_cache(int handle) {

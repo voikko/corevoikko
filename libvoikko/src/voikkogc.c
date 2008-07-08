@@ -121,11 +121,11 @@ void split_sentences(int handle, const char * line) {
 void check_grammar(int handle, const char * line) {
 	size_t len;
 	voikko_grammar_error grammar_error;
-	size_t startpos = 0;
+	int skiperrors = 0;
 	len = strlen(line);
 	while (1) {
 		grammar_error = voikko_next_grammar_error_cstr(handle, line, len,
-		                startpos);
+		                0, skiperrors);
 		if (grammar_error.error_code == 0) {
 			printf("-\n");
 			return;
@@ -133,7 +133,7 @@ void check_grammar(int handle, const char * line) {
 		printf("[code=%i, level=0, ", grammar_error.error_code);
 		printf("descr=\"\", stpos=%zd, ", grammar_error.startpos);
 		printf("len=%zd, suggs={}]\n", grammar_error.errorlen);
-		startpos = grammar_error.startpos + 1;
+		skiperrors++;
 	}
 }
 

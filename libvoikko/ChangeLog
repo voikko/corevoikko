@@ -1,3 +1,8 @@
+2008-07-08 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Change grammar checker API to allow more than one
+	  grammar error with the same start position.
+
 2008-07-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Work on grammar checker.

@@ -27,7 +27,7 @@ void init_gc_error(voikko_grammar_error * gc_error) {
 }
 
 voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                                                   size_t textlen, size_t startpos) {
+                     size_t textlen, size_t startpos, int skiperrors) {
 	voikko_grammar_error e;
 	init_gc_error(&e);
 	if (text == 0 || textlen == 0) return e;
@@ -35,10 +35,10 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
 	if (text_ucs4 == 0) return e;
 	
 	size_t wtextlen = wcslen(text_ucs4);
-	const voikko_grammar_error * c_error = gc_error_from_cache(handle, text_ucs4, startpos);
+	const voikko_grammar_error * c_error = gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
 	if (!c_error) {
 		gc_paragraph_to_cache(handle, text_ucs4, wtextlen);
-		c_error = gc_error_from_cache(handle, text_ucs4, startpos);
+		c_error = gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
 	}
 	
 	free(text_ucs4);

@@ -59,7 +59,8 @@ void gc_clear_cache(int handle);
  * Returns a pointer to a cached grammar error or null, if there are no cached
  * results for given paragraph.
  */
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text, size_t startpos);
+const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
+                             size_t startpos, int skiperrors);
 
 /**
  * Performs grammar checking on the entire paragraph and stores the results
