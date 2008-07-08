@@ -121,16 +121,29 @@ void gc_static_replacements(int handle, const gc_sentence * sentence) {
  * within a sentence.
  */
 void gc_local_punctuation(int handle, const gc_sentence * sentence) {
+	voikko_gc_cache_entry * e;
 	for (int i = 0; i < sentence->token_count; i++) {
 		gc_token t = sentence->tokens[i];
 		if (t.type != TOKEN_WHITESPACE) continue;
-		if (t.tokenlen == 1) continue;
-		voikko_gc_cache_entry * e = gc_new_cache_entry();
-		if (!e) return;
-		e->error.error_code = GCERR_EXTRA_WHITESPACE;
-		e->error.startpos = sentence->tokens[i].pos;
-		e->error.errorlen = sentence->tokens[i].tokenlen;
-		gc_cache_append_error(handle, e);
+		if (t.tokenlen > 1) {
+			e = gc_new_cache_entry();
+			if (!e) return;
+			e->error.error_code = GCERR_EXTRA_WHITESPACE;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = sentence->tokens[i].tokenlen;
+			gc_cache_append_error(handle, e);
+		}
+		else if (i + 1 < sentence->token_count) {
+			gc_token t2 = sentence->tokens[i+1];
+			if (t2.type != TOKEN_PUNCTUATION ||
+			    t2.str[0] != ',') continue;
+			e = gc_new_cache_entry();
+			if (!e) return;
+			e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = 2;
+			gc_cache_append_error(handle, e);
+		}
 	}
 }
 

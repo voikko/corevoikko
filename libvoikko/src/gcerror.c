@@ -28,6 +28,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Sanat on kirjoitettava yhteen.";
 			case GCERR_EXTRA_WHITESPACE:
 				return "Poista ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li.";
+			case GCERR_SPACE_BEFORE_PUNCTUATION:
+				return "Ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li v\xc3\xa4limerkin edess\xc3\xa4.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -37,6 +39,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Remove space between words.";
 			case GCERR_EXTRA_WHITESPACE:
 				return "Remove extra space.";
+			case GCERR_SPACE_BEFORE_PUNCTUATION:
+				return "Remove space before punctuation.";
 		}
 		return "Unknown error";
 	}

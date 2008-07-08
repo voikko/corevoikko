@@ -2,6 +2,7 @@
 
 	* Change grammar checker API to allow more than one
 	  grammar error with the same start position.
+	* New grammar checker test for space before punctuation.
 
 2008-07-03 Harri Pitkänen <hatapitk@iki.fi>
 

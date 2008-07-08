@@ -13,3 +13,5 @@ Nyt on joten kuten  tehtävä joten kuten hankalampi  virheyhdistelmä.
  [code=2, level=0, descr="", stpos=18, len=2, suggs={}]
  [code=1, level=0, descr="", stpos=28, len=11, suggs={}]
  [code=2, level=0, descr="", stpos=50, len=2, suggs={}]
+Lause , jossa on pilkun edellä turha väli.
+ [code=3, level=0, descr="", stpos=5, len=2, suggs={}]
