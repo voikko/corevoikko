@@ -124,25 +124,55 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 	voikko_gc_cache_entry * e;
 	for (int i = 0; i < sentence->token_count; i++) {
 		gc_token t = sentence->tokens[i];
-		if (t.type != TOKEN_WHITESPACE) continue;
-		if (t.tokenlen > 1) {
-			e = gc_new_cache_entry();
-			if (!e) return;
-			e->error.error_code = GCERR_EXTRA_WHITESPACE;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = sentence->tokens[i].tokenlen;
-			gc_cache_append_error(handle, e);
-		}
-		else if (i + 1 < sentence->token_count) {
-			gc_token t2 = sentence->tokens[i+1];
-			if (t2.type != TOKEN_PUNCTUATION ||
-			    t2.str[0] != ',') continue;
-			e = gc_new_cache_entry();
-			if (!e) return;
-			e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = 2;
-			gc_cache_append_error(handle, e);
+		switch (t.type) {
+		case TOKEN_WHITESPACE:
+			if (t.tokenlen > 1) {
+				e = gc_new_cache_entry();
+				if (!e) return;
+				e->error.error_code = GCERR_EXTRA_WHITESPACE;
+				e->error.startpos = sentence->tokens[i].pos;
+				e->error.errorlen = sentence->tokens[i].tokenlen;
+				gc_cache_append_error(handle, e);
+			}
+			else if (i + 1 < sentence->token_count) {
+				gc_token t2 = sentence->tokens[i+1];
+				if (t2.type != TOKEN_PUNCTUATION ||
+				    t2.str[0] != L',') continue;
+				e = gc_new_cache_entry();
+				if (!e) return;
+				e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
+				e->error.startpos = sentence->tokens[i].pos;
+				e->error.errorlen = 2;
+				gc_cache_append_error(handle, e);
+			}
+			break;
+		case TOKEN_PUNCTUATION:
+			if (i == 0) {
+				if (t.str[0] == L'(' || t.str[0] == L')') continue;
+				e = gc_new_cache_entry();
+				if (!e) return;
+				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
+				e->error.startpos = sentence->tokens[i].pos;
+				e->error.errorlen = 1;
+				gc_cache_append_error(handle, e);
+				continue;
+			}
+			if (t.str[0] == L',' && i + 1 < sentence->token_count) {
+				gc_token t2 = sentence->tokens[i+1];
+				if (t2.type != TOKEN_PUNCTUATION ||
+				    t2.str[0] != L',') continue;
+				e = gc_new_cache_entry();
+				if (!e) return;
+				e->error.error_code = GCERR_EXTRA_COMMA;
+				e->error.startpos = sentence->tokens[i+1].pos;
+				e->error.errorlen = 1;
+				gc_cache_append_error(handle, e);
+			}
+			break;
+		case TOKEN_NONE:
+		case TOKEN_WORD:
+		case TOKEN_UNKNOWN:
+			break;
 		}
 	}
 }

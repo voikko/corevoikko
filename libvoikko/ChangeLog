@@ -1,3 +1,7 @@
+2008-07-16 Harri Pitkänen <hatapitk@iki.fi>
+
+	* More punctuation checks to grammar checker.
+
 2008-07-08 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Change grammar checker API to allow more than one
