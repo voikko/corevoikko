@@ -36,6 +36,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Virheellinen virkkeen aloittava merkki.";
 			case GCERR_WRITE_FIRST_LOWERCASE:
 				return "Sana on kirjoitettava pienell\xc3\xa4 alkukirjaimella.";
+			case GCERR_WRITE_FIRST_UPPERCASE:
+				return "Sana on kirjoitettava isolla alkukirjaimella.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -53,6 +55,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Invalid character at the start of a sentence.";
 			case GCERR_WRITE_FIRST_LOWERCASE:
 				return "Change first letter to lower case.";
+			case GCERR_WRITE_FIRST_UPPERCASE:
+				return "Change first letter to upper case.";
 		}
 		return "Unknown error";
 	}

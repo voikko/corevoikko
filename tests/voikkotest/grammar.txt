@@ -20,3 +20,8 @@ Lause,, jossa kaksi peräkkäistä pilkkua.
 Aurinko paistaa. (Tämä virke on suluissa.)
 Lause., jossa pilkun edellä piste.
  [code=5, level=0, descr="", stpos=6, len=1, suggs={}]
+ [code=7, level=0, descr="", stpos=8, len=5, suggs={}]
+Avaimet löytyivät Reetan Taskun pohjalta.
+ [code=6, level=0, descr="", stpos=25, len=6, suggs={}]
+Ensimmäinen virke on oikein. toinen virke on väärin.
+ [code=7, level=0, descr="", stpos=29, len=6, suggs={}]
