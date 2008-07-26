@@ -33,6 +33,9 @@
 typedef struct {
 	/** Type of this token */
 	enum voikko_token_type type;
+	/** True if this is a word token that should start with
+	 *  lower case letter. */
+	int first_letter_lcase;
 	/** Null terminated string containing the token text */
 	wchar_t * str;
 	/** Length of the token */

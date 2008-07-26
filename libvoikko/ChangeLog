@@ -1,3 +1,7 @@
+2008-07-26 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add character case checks to grammar checker.
+
 2008-07-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* More punctuation checks to grammar checker.

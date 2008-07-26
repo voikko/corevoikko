@@ -34,6 +34,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Poista ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen pilkku.";
 			case GCERR_INVALID_SENTENCE_STARTER:
 				return "Virheellinen virkkeen aloittava merkki.";
+			case GCERR_WRITE_FIRST_LOWERCASE:
+				return "Sana on kirjoitettava pienell\xc3\xa4 alkukirjaimella.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -49,6 +51,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Remove extra comma.";
 			case GCERR_INVALID_SENTENCE_STARTER:
 				return "Invalid character at the start of a sentence.";
+			case GCERR_WRITE_FIRST_LOWERCASE:
+				return "Change first letter to lower case.";
 		}
 		return "Unknown error";
 	}

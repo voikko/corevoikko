@@ -17,6 +17,8 @@
  *********************************************************************************/
 
 #include "gcanalysis.h"
+#include "voikko_utils.h"
+#include <malaga.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -38,6 +40,32 @@ void free_gc_paragraph(gc_paragraph * para) {
 		free(para->sentences);
 	}
 	free(para);
+}
+
+/** Analyze given text token. Token type, length and text must have already
+ *  been set. */
+void gc_analyze_token(int handle, gc_token * token) {
+	token->first_letter_lcase = 0;
+	if (token->type != TOKEN_WORD) return;
+	
+	char * malaga_buffer = voikko_ucs4tocstr(token->str, "UTF-8", token->tokenlen);
+	if (malaga_buffer == 0) return;
+	analyse_item(malaga_buffer, MORPHOLOGY);
+	free(malaga_buffer);
+	
+	// Check if first letter should be lower case letter
+	value_t analysis = first_analysis_result();
+	while (analysis) {
+		char * analysis_str = get_value_string(analysis);
+		if (strlen(analysis_str) < 2 || (analysis_str[1] != 'p' &&
+		    analysis_str[1] != 'q')) {
+			free(analysis_str);
+			return;
+		}
+		free(analysis_str);
+		analysis = next_analysis_result();
+	}
+	token->first_letter_lcase = 1;
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */
@@ -62,6 +90,7 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 		tstr[tokenlen] = L'\0';
 		s->tokens[i].str = tstr;
 		s->tokens[i].pos = sentencepos + (pos - text);
+		gc_analyze_token(handle, s->tokens + i);
 		s->token_count++;
 		pos += tokenlen;
 		remaining -= tokenlen;

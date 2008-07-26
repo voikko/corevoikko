@@ -22,6 +22,7 @@
 #include "voikko_setup.h"
 #include <string.h>
 #include <stdlib.h>
+#include <wctype.h>
 
 void init_gc_cache(voikko_gc_cache * gc_cache) {
 	memset(gc_cache, 0, sizeof(voikko_gc_cache));
@@ -177,6 +178,29 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 	}
 }
 
+/**
+ * GC errors due to incorrect character case
+ */
+void gc_character_case(int handle, const gc_sentence * sentence) {
+	int first_word_seen = 0;
+	for (int i = 0; i < sentence->token_count; i++) {
+		gc_token t = sentence->tokens[i];
+		if (t.type != TOKEN_WORD) continue;
+		if (!first_word_seen) {
+			first_word_seen = 1;
+			continue;
+		}
+		if (!t.first_letter_lcase) continue;
+		if (!iswupper(t.str[0])) continue;
+		voikko_gc_cache_entry * e = gc_new_cache_entry();
+		if (!e) return;
+		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
+		e->error.startpos = t.pos;
+		e->error.errorlen = t.tokenlen;
+		gc_cache_append_error(handle, e);
+	}
+}
+
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(handle);
 	voikko_options.gc_cache.paragraph = malloc((textlen + 1) * sizeof(wchar_t));
@@ -188,6 +212,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	for (int i = 0; i < para->sentence_count; i++) {
 		gc_static_replacements(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
+		gc_character_case(handle, para->sentences[i]);
 	}
 	free_gc_paragraph(para);
 }
