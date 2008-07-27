@@ -42,6 +42,21 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
 	}
 	
 	free(text_ucs4);
-	if (c_error) return *c_error;
-	else return e;
+	if (!c_error) return e;
+	
+	// Return a deep copy of cached error
+	memcpy(&e, c_error, sizeof(voikko_grammar_error));
+	if (!c_error->suggestions) return e;
+	int sugg_count = 0;
+	for (char ** s = c_error->suggestions; *s; s++) {
+		sugg_count++;
+	}
+	e.suggestions = calloc(sugg_count + 1, sizeof(char *));
+	if (!e.suggestions) return e;
+	for (int i = 0; i < sugg_count; i++) {
+		e.suggestions[i] = malloc((strlen(c_error->suggestions[i]) + 1) * sizeof(char));
+		if (!e.suggestions[i]) return e;
+		strcpy(e.suggestions[i], c_error->suggestions[i]);
+	}
+	return e;
 }

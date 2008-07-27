@@ -52,6 +52,7 @@ void gc_clear_cache(int handle) {
 	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
 	while (entry) {
 		voikko_gc_cache_entry * next = entry->next_error;
+		voikko_free_suggest_cstr(entry->error.suggestions);
 		free(entry);
 		entry = next;
 	}
@@ -89,9 +90,18 @@ void gc_cache_append_error(int handle, voikko_gc_cache_entry * new_entry) {
 
 /**
  * Create a new empty grammar checker error cache entry.
+ * @param suggestions number of suggestions that will be added to this entry
  */
-voikko_gc_cache_entry * gc_new_cache_entry() {
+voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
 	voikko_gc_cache_entry * e = calloc(1, sizeof(voikko_gc_cache_entry));
+	if (!e) return 0;
+	if (suggestions > 0) {
+		e->error.suggestions = calloc(suggestions + 1, sizeof(char *));
+		if (!e->error.suggestions) {
+			free(e);
+			return 0;
+		}
+	}
 	return e;
 }
 
@@ -108,11 +118,14 @@ void gc_static_replacements(int handle, const gc_sentence * sentence) {
 		t = sentence->tokens[i+2];
 		if (t.type != TOKEN_WORD) continue;
 		if (wcscmp(t.str, L"kuten")) continue;
-		voikko_gc_cache_entry * e = gc_new_cache_entry();
+		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
 		if (!e) return;
 		e->error.error_code = GCERR_WRITE_TOGETHER;
 		e->error.startpos = sentence->tokens[i].pos;
 		e->error.errorlen = 10 + sentence->tokens[i+1].tokenlen;
+		e->error.suggestions[0] = malloc(11 * sizeof(char));
+		if (e->error.suggestions[0])
+			strcpy(e->error.suggestions[0], "jotenkuten");
 		gc_cache_append_error(handle, e);
 	}
 }
@@ -128,7 +141,7 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 		switch (t.type) {
 		case TOKEN_WHITESPACE:
 			if (t.tokenlen > 1) {
-				e = gc_new_cache_entry();
+				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_WHITESPACE;
 				e->error.startpos = sentence->tokens[i].pos;
@@ -139,7 +152,7 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				gc_token t2 = sentence->tokens[i+1];
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
-				e = gc_new_cache_entry();
+				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
 				e->error.startpos = sentence->tokens[i].pos;
@@ -150,7 +163,7 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 		case TOKEN_PUNCTUATION:
 			if (i == 0) {
 				if (t.str[0] == L'(' || t.str[0] == L')') continue;
-				e = gc_new_cache_entry();
+				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
 				e->error.startpos = sentence->tokens[i].pos;
@@ -162,7 +175,7 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				gc_token t2 = sentence->tokens[i+1];
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
-				e = gc_new_cache_entry();
+				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_COMMA;
 				e->error.startpos = sentence->tokens[i+1].pos;
@@ -189,7 +202,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 		if (!first_word_seen) {
 			first_word_seen = 1;
 			if (!iswupper(t.str[0])) {
-				voikko_gc_cache_entry * e = gc_new_cache_entry();
+				voikko_gc_cache_entry * e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 				e->error.startpos = t.pos;
@@ -200,7 +213,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 		}
 		if (!t.first_letter_lcase) continue;
 		if (!iswupper(t.str[0])) continue;
-		voikko_gc_cache_entry * e = gc_new_cache_entry();
+		voikko_gc_cache_entry * e = gc_new_cache_entry(0);
 		if (!e) return;
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
 		e->error.startpos = t.pos;

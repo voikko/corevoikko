@@ -132,7 +132,18 @@ void check_grammar(int handle, const char * line) {
 		}
 		printf("[code=%i, level=0, ", grammar_error.error_code);
 		printf("descr=\"\", stpos=%zd, ", grammar_error.startpos);
-		printf("len=%zd, suggs={}]\n", grammar_error.errorlen);
+		printf("len=%zd, suggs={", grammar_error.errorlen);
+		if (grammar_error.suggestions) {
+			char ** sugg = grammar_error.suggestions;
+			while (*sugg) {
+				// FIXME: convert from UTF-8
+				printf("\"%s\"", *sugg);
+				sugg++;
+				if (*sugg) printf(",");
+			}
+			voikko_free_suggest_cstr(grammar_error.suggestions);
+		}
+		printf("}]\n");
 		skiperrors++;
 	}
 }
