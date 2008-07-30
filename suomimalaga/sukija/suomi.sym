@@ -454,6 +454,7 @@ valo;
   verkko;
   vihko;   # Vihkon tai vihon.
 arvelu;
+  aarteisto;  # Aarte(h)isto.
   alanko;
   avanto;
   hontelo;    # => Honteluus (ei hontelous).
@@ -489,6 +490,7 @@ risti;
   telefoni_ri;
   telefoni_vi;
   marinadi;     # Marina(a)di.
+  biografi;     # Biogra(a)fi.
 paperi;
   banaali;
   edam;      # Taipuu kuten paperi tai banaali, mutta sana ei lopu i:hin.
@@ -574,6 +576,7 @@ karahka;
   veranta;
   analogia;   # Analo(o)gia.
   filosofia;  # Filoso(o)fia.
+  topografia; # Topogra(a)fia.
 kantaja; # => kantajuus
   apaja;
   kahdeksan;
@@ -654,7 +657,18 @@ seitsemän;
 nainen;
   punainen; # Hyväksytään myös i:ttömät muodot punanen jne.
   hevoinen; # Hyväksytään myös i:lliset muodot.
+  ironinen; # Iro(o)ninen yms.
+  allegorinen;  # Allego(o)rinen yms.
+  filosofinen;  # Filoso(o)finen.
+  psykologinen; # Psykolo(o)ginen.
+  topografinen; # Topogra(a)finen yms.
+  eeppinen;     # Eeppinen, eepillinen.
+  kriittinen;   # Kriittinen, kriitillinen
+  psyykkinen;   # Psyykkinen, psyykillinen.
+  relatiivinen; # Relati(i)vinen.
 vastaus;
+  aivoitus;     # Aivo(i)tus.
+  jaotus;       # Jao(i)tus.
 kalleus;
 vieras;     # => vieraus
   ahdas;
@@ -670,8 +684,8 @@ vieras;     # => vieraus
   ratas;
   saapas;
   utelias;  # => uteliaisuus
+  varas;    # Vilkas => vilkkaus.
   varvas;
-  vilkas;   # => vilkkaus
 kirves;
   ies;
 kauris;

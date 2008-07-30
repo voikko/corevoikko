@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,137 +46,120 @@
 
 
 nimentö
-          iäk+äs+
+          utelia+s+
 
 omistusliite
-          iäk+kää+ni
-          iäk+kähä+ni  ei_voikko
+          utelia+a+ni
 
 omanto_n
-          iäk+kää+n
-          iäk+kähä+n  ei_voikko
+          utelia+a+n
 
 osanto_tA
-          iäk+äs+tä
+          utelia+s+tä
 
 olento_nA
-          iäk+kää+nä
-          iäk+kähä+nä  ei_voikko
-          iäk+äs+nä  ei_voikko
+          utelia+a+na
+          utelia+s+na  ei_voikko
 
 tulento_ksi
-          iäk+kää+ksi
-          iäk+kähä+ksi  ei_voikko
+          utelia+a+ksi
 
 sisäolento_ssA
-          iäk+kää+ssä
-          iäk+kähä+ssä  ei_voikko
+          utelia+a+ssa
 
 sisäeronto_stA
-          iäk+kää+stä
-          iäk+kähä+stä  ei_voikko
+          utelia+a+sta
 
 sisätulento_seen
-          iäk+kää+seen
-          iäk+kähä+seen  ei_voikko
+          utelia+a+seen
 
 ulko_olento_llA
-          iäk+kää+llä
-          iäk+kähä+llä  ei_voikko
+          utelia+a+lla
 
 ulkoeronto_ltA
-          iäk+kää+ltä
-          iäk+kähä+ltä  ei_voikko
+          utelia+a+lta
 
 ulkotulento_lle
-          iäk+kää+lle
-          iäk+kähä+lle  ei_voikko
+          utelia+a+lle
 
 vajanto_ttA
-          iäk+kää+ttä
-          iäk+kähä+ttä  ei_voikko
+          utelia+a+tta
 
 nimentö_t
-          iäk+kää+t
-          iäk+kähä+t  ei_voikko
+          utelia+a+t
 
 omanto_iT
-          iäk+kä+iden
-          iäk+kä+itten
+          utelia++iden
+          utelia++itten
 
 omanto_ten
-          iäk+äs+ten  ei_voikko
+          utelia+s+ten  ei_voikko
 
 osanto_itA
-          iäk+kä+itä
+          utelia++ita
 
 olento_inA
-          iäk+kä+inä
+          utelia++ina
 
 tulento_iksi
-          iäk+kä+iksi
+          utelia++iksi
 
 sisäolento_issA
-          iäk+kä+issä
+          utelia++issa
 
 sisäeronto_istA
-          iäk+kä+istä
+          utelia++ista
 
 sisätulento_isiin
-          iäk+kä+isiin
+          utelia++isiin
 
 sisätulento_ihin
-          iäk+kä+ihin
+          utelia++ihin
 
 ulko_olento_illA
-          iäk+kä+illä
+          utelia++illa
 
 ulkoeronto_iltA
-          iäk+kä+iltä
+          utelia++ilta
 
 ulkotulento_ille
-          iäk+kä+ille
+          utelia++ille
 
 vajanto_ittA
-          iäk+kä+ittä
+          utelia++ittä
 
 seuranto_ine
-          iäk+kä+ine
+          utelia++ine
 
 keinonto_in
-          iäk+kä+in
+          utelia++in
 
 kerronto_sti
-          iäk+kää+sti
-          iäk+kähä+sti  ei_voikko
+          utelia+a+sti
 
 voittoaste
-          iäk+kää+mpi
-          iäk+kähä+mpi  ei_voikko
+          utelia+a+mpi
 
 yliaste
-          iäk+kä+in
+          utelia++in
 
 johdin_inen
-          nisäk+kä+inen
+          ankeria++inen
 
 johdin_ittain
-          nisäk+kä+ittäin
+          ankeria++ittin
 
 johdin_lAinen
-          nisäk+äs+läinen
+          ankeria+s+lainen
 
 johdin_llinen
-          nisäk+kää+llinen
-          nisäk+kähä+llinen  ei_voikko
+          ankeria+a+llinen
 
 johdin_mAinen
-          nisäk+äs+mäinen
+          ankeria+s+mainen
 
 johdin_tOn
-          nisäk+kää+tön
-          nisäk+kähä+tön  ei_voikko
+          ankeria+a+ton
 
 johdin_Us
-          iäk+ky+ys
-          iäk+käisy+ys  ei_voikko
+          utelia+isu+us

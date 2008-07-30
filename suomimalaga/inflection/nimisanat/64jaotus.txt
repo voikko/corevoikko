@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,137 +46,157 @@
 
 
 nimentö
-          iäk+äs+
+          jao+tus+
+          jao+itus+
 
 omistusliite
-          iäk+kää+ni
-          iäk+kähä+ni  ei_voikko
+          jao+tukse+ni
+          jao+itukse+ni
 
 omanto_n
-          iäk+kää+n
-          iäk+kähä+n  ei_voikko
+          jao+tukse+n
+          jao+itukse+n
 
 osanto_tA
-          iäk+äs+tä
+          jao+tus+ta
+          jao+itus+ta
 
 olento_nA
-          iäk+kää+nä
-          iäk+kähä+nä  ei_voikko
-          iäk+äs+nä  ei_voikko
+          jao+tukse+na
+          jao+itukse+na
 
 tulento_ksi
-          iäk+kää+ksi
-          iäk+kähä+ksi  ei_voikko
+          jao+tukse+ksi
+          jao+itukse+ksi
 
 sisäolento_ssA
-          iäk+kää+ssä
-          iäk+kähä+ssä  ei_voikko
+          jao+tukse+ssa
+          jao+itukse+ssa
 
 sisäeronto_stA
-          iäk+kää+stä
-          iäk+kähä+stä  ei_voikko
+          jao+tukse+sta
+          jao+itukse+sta
 
-sisätulento_seen
-          iäk+kää+seen
-          iäk+kähä+seen  ei_voikko
+sisätulento_Vn
+          jao+tukse+en
+          jao+itukse+en
+
+sisätulento_hVn
+          jao+tukse+hen  vanha_h
+          jao+itukse+hen  vanha_h
 
 ulko_olento_llA
-          iäk+kää+llä
-          iäk+kähä+llä  ei_voikko
+          jao+tukse+lla
+          jao+itukse+lla
 
 ulkoeronto_ltA
-          iäk+kää+ltä
-          iäk+kähä+ltä  ei_voikko
+          jao+tukse+lta
+          jao+itukse+lta
 
 ulkotulento_lle
-          iäk+kää+lle
-          iäk+kähä+lle  ei_voikko
+          jao+tukse+lle
+          jao+itukse+lle
 
 vajanto_ttA
-          iäk+kää+ttä
-          iäk+kähä+ttä  ei_voikko
+          jao+tukse+tta
+          jao+itukse+tta
 
 nimentö_t
-          iäk+kää+t
-          iäk+kähä+t  ei_voikko
+          jao+tukse+n
+          jao+itukse+n
 
-omanto_iT
-          iäk+kä+iden
-          iäk+kä+itten
+omanto_ien
+          jao+tuks+ien
+          jao+ituks+ien
 
 omanto_ten
-          iäk+äs+ten  ei_voikko
+          jao+tus+ten
+          jao+itus+ten
 
-osanto_itA
-          iäk+kä+itä
+osanto_iA
+          jao+tuks+ia
+          jao+ituks+ia
 
 olento_inA
-          iäk+kä+inä
+          jao+tuks+ina
+          jao+ituks+ina
 
 tulento_iksi
-          iäk+kä+iksi
+          jao+tuks+iksi
+          jao+ituks+iksi
 
 sisäolento_issA
-          iäk+kä+issä
+          jao+tuks+issa
+          jao+ituks+issa
 
 sisäeronto_istA
-          iäk+kä+istä
+          jao+tuks+ista
+          jao+ituks+ista
 
-sisätulento_isiin
-          iäk+kä+isiin
+sisätulento_iin
+          jao+tuks+iin
+          jao+ituks+iin
 
 sisätulento_ihin
-          iäk+kä+ihin
+          jao+tuks+ihin  vanha_h
+          jao+ituks+ihin  vanha_h
 
 ulko_olento_illA
-          iäk+kä+illä
+          jao+tuks+illa
+          jao+ituks+illa
 
 ulkoeronto_iltA
-          iäk+kä+iltä
+          jao+tuks+ilta
+          jao+ituks+ilta
 
 ulkotulento_ille
-          iäk+kä+ille
+          jao+tuks+ille
+          jao+ituks+ille
 
 vajanto_ittA
-          iäk+kä+ittä
+          jao+tuks+itta
+          jao+ituks+itta
 
 seuranto_ine
-          iäk+kä+ine
+          jao+tuks+ine
+          jao+ituks+ine
 
 keinonto_in
-          iäk+kä+in
+          jao+tuks+in
+          jao+ituks+in
 
 kerronto_sti
-          iäk+kää+sti
-          iäk+kähä+sti  ei_voikko
+          +tukse+sti
+          +itukse+sti
 
 voittoaste
-          iäk+kää+mpi
-          iäk+kähä+mpi  ei_voikko
+          +tukse+mpi
+          +itukse+mpi
 
 yliaste
-          iäk+kä+in
+          +tuks+in
+          +ituks+in
 
 johdin_inen
-          nisäk+kä+inen
+          jao+tuks+inen
+          jao+ituks+inen
 
 johdin_ittain
-          nisäk+kä+ittäin
+          jao+tuks+ittain
+          jao+ituks+ittain
 
 johdin_lAinen
-          nisäk+äs+läinen
+          jao+tus+lainen
+          jao+itus+lainen
 
 johdin_llinen
-          nisäk+kää+llinen
-          nisäk+kähä+llinen  ei_voikko
+          jao+tukse+llinen
+          jao+itukse+llinen
 
 johdin_mAinen
-          nisäk+äs+mäinen
+          jao+tus+mainen
+          jao+itus+mainen
 
 johdin_tOn
-          nisäk+kää+tön
-          nisäk+kähä+tön  ei_voikko
-
-johdin_Us
-          iäk+ky+ys
-          iäk+käisy+ys  ei_voikko
+          jao+tukse+ton
+          jao+itukse+ton

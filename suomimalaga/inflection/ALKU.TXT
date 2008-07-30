@@ -110,7 +110,7 @@ allo_rule generate_allos ($tietue):
   end;
 
 ##if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi", "säkä", "sää">) then
-  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "lehdes", "riksi", "säkä">) then
+  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else
@@ -148,7 +148,6 @@ allo_rule generate_allos ($tietue):
       $tietue.luokka := nimi_laatusana;
     end;
   end;
-
 
   if ($tietue.luokka = lukusanan_jälkiliite) then
     stop;

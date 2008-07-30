@@ -155,7 +155,7 @@
 [perusmuoto: "ees", alku: "ees", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ressi", alku: "ress", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "tommoinen", alku: "tommoi", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "oplikaatio", alku: "oplikaatio", luokka: nimisana, jatko: <autio>, äs: a];
+####[perusmuoto: "oplikaatio", alku: "oplikaatio", luokka: nimisana, jatko: <autio>, äs: a];
 [perusmuoto: "saada", alku: "saaha", luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "olumppialainen", alku: "olumppialai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ruuppo", alku: "ruup", luokka: nimisana, jatko: <kippo>, äs: a];
@@ -244,10 +244,8 @@
 [perusmuoto: "Thrax", alku: "Thrax", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "sntliitto", alku: "sntliit", luokka: nimisana, jatko: <liitto>, äs: a];
 [perusmuoto: "ideolookinen", alku: "ideolooki", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "irooninen", alku: "irooni", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kaikellainen", alku: "kaikellai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kapinetti", alku: "kapinet", luokka: nimisana, jatko: <tatti>, äs: a];
-[perusmuoto: "kategoorinen", alku: "kategoori", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kuukilainen", alku: "kuukilai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kuukkilainen", alku: "kuukkilai", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "lauvantai", alku: "lauvanta", luokka: nimisana, jatko: <pii>, äs: a];
@@ -408,6 +406,7 @@
 #[perusmuoto: "puolikuu", alku: "puoliku", luokka: nimisana, jatko: <puu>, äs: a];
 
 
+[perusmuoto: "pistooli", alku: "pistol", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "politiikka", alku: "politik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "politiikki", alku: "politiik", luokka: nimisana, jatko: <takki>, äs: a];  # Politiikka.
 [perusmuoto: "poliisi", alku: "polis", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -505,6 +504,8 @@
 [perusmuoto: "tämänkaltainen", alku: "täänkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
 [perusmuoto: "minunkaltainen", alku: "minunkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
 [perusmuoto: "erinkaltainen", alku: "erinkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
+[perusmuoto: "Paulow", alku: "Paulow", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Taponen", alku: "Tapo", luokka: sukunimi, jatko: <nainen>, äs: a];
 
 [perusmuoto: "kylpyamme", alku: "kylpyamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "pesuamme", alku: "pesuamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];
@@ -515,6 +516,8 @@
 [perusmuoto: "sinkkiamme", alku: "sinkkiamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "vesiamme", alku: "vesiamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "viiniamme", alku: "viiniamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
+[perusmuoto: "turvekoksi", alku: "turvekoks", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "verokoksi", alku: "verokoks", luokka: nimisana, jatko: <risti>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

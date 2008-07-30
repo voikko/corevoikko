@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,137 +46,153 @@
 
 
 nimentö
-          iäk+äs+
+          aarte+isto+
+          aarte+histo+
 
 omistusliite
-          iäk+kää+ni
-          iäk+kähä+ni  ei_voikko
+          aarte+isto+ni
+          aarte+histo+ni
 
 omanto_n
-          iäk+kää+n
-          iäk+kähä+n  ei_voikko
+          aarte+isto+n
+          aarte+histo+n
 
-osanto_tA
-          iäk+äs+tä
+osanto_A
+          aarte+isto+a
+          aarte+histo+a
 
 olento_nA
-          iäk+kää+nä
-          iäk+kähä+nä  ei_voikko
-          iäk+äs+nä  ei_voikko
+          aarte+isto+na
+          aarte+histo+na
 
 tulento_ksi
-          iäk+kää+ksi
-          iäk+kähä+ksi  ei_voikko
+          aarte+isto+ksi
+          aarte+histo+ksi
 
 sisäolento_ssA
-          iäk+kää+ssä
-          iäk+kähä+ssä  ei_voikko
+          aarte+isto+ssa
+          aarte+histo+ssa
 
 sisäeronto_stA
-          iäk+kää+stä
-          iäk+kähä+stä  ei_voikko
+          aarte+isto+sta
+          aarte+histo+sta
 
-sisätulento_seen
-          iäk+kää+seen
-          iäk+kähä+seen  ei_voikko
+sisätulento_Vn
+          aarte+isto+on
+          aarte+histo+on
+
+sisätulento_hVn
+          aarte+isto+hon  vanha_h
+          aarte+histo+hon  vanha_h
 
 ulko_olento_llA
-          iäk+kää+llä
-          iäk+kähä+llä  ei_voikko
+          aarte+isto+lla
+          aarte+histo+lla
 
 ulkoeronto_ltA
-          iäk+kää+ltä
-          iäk+kähä+ltä  ei_voikko
+          aarte+isto+lta
+          aarte+histo+lta
 
 ulkotulento_lle
-          iäk+kää+lle
-          iäk+kähä+lle  ei_voikko
+          aarte+isto+lle
+          aarte+histo+lle
 
 vajanto_ttA
-          iäk+kää+ttä
-          iäk+kähä+ttä  ei_voikko
+          aarte+isto+tta
+          aarte+histo+tta
+
+
 
 nimentö_t
-          iäk+kää+t
-          iäk+kähä+t  ei_voikko
+          aarte+isto+t
+          aarte+histo+t
+
+omanto_jen
+          aarte+isto+jen
+          aarte+histo+jen
 
 omanto_iT
-          iäk+kä+iden
-          iäk+kä+itten
+          aarte+isto+iden
+          aarte+histo+iden
+          aarte+isto+itten
+          aarte+histo+itten
 
-omanto_ten
-          iäk+äs+ten  ei_voikko
+omanto_in
+          aarte+isto+in
+          aarte+histo+in
+
+osanto_jA
+          aarte+isto+ja
+          aarte+histo+ja
 
 osanto_itA
-          iäk+kä+itä
+          aarte+isto+ita
+          aarte+histo+ita
 
 olento_inA
-          iäk+kä+inä
+          aarte+isto+ina
+          aarte+histo+ina
 
 tulento_iksi
-          iäk+kä+iksi
+          aarte+isto+iksi
+          aarte+histo+iksi
 
 sisäolento_issA
-          iäk+kä+issä
+          aarte+isto+issa
+          aarte+histo+issa
 
 sisäeronto_istA
-          iäk+kä+istä
-
-sisätulento_isiin
-          iäk+kä+isiin
+          aarte+isto+ista
+          aarte+histo+ista
 
 sisätulento_ihin
-          iäk+kä+ihin
+          aarte+isto+ihin
+          aarte+histo+ihin
 
 ulko_olento_illA
-          iäk+kä+illä
+          aarte+isto+illa
+          aarte+histo+illa
 
 ulkoeronto_iltA
-          iäk+kä+iltä
+          aarte+isto+ilta
+          aarte+histo+ilta
 
 ulkotulento_ille
-          iäk+kä+ille
+          aarte+isto+ille
+          aarte+histo+ille
 
 vajanto_ittA
-          iäk+kä+ittä
+          aarte+isto+itta
+          aarte+histo+itta
 
 seuranto_ine
-          iäk+kä+ine
+          aarte+isto+ine
+          aarte+histo+ine
 
 keinonto_in
-          iäk+kä+in
-
-kerronto_sti
-          iäk+kää+sti
-          iäk+kähä+sti  ei_voikko
-
-voittoaste
-          iäk+kää+mpi
-          iäk+kähä+mpi  ei_voikko
-
-yliaste
-          iäk+kä+in
+          aarte+isto+in
+          aarte+histo+in
 
 johdin_inen
-          nisäk+kä+inen
+          aarte+isto+inen
+          aarte+histo+inen
 
 johdin_ittain
-          nisäk+kä+ittäin
+          aarte+isto+ittain
+          aarte+histo+ittain
 
 johdin_lAinen
-          nisäk+äs+läinen
+          aarte+isto+lainen
+          aarte+histo+lainen
 
 johdin_llinen
-          nisäk+kää+llinen
-          nisäk+kähä+llinen  ei_voikko
+          aarte+isto+llinen
+          aarte+histo+llinen
 
 johdin_mAinen
-          nisäk+äs+mäinen
+          aarte+isto+mainen
+          aarte+histo+mainen
 
 johdin_tOn
-          nisäk+kää+tön
-          nisäk+kähä+tön  ei_voikko
-
-johdin_Us
-          iäk+ky+ys
-          iäk+käisy+ys  ei_voikko
+          aarte+isto+ton
+          aarte+histo+ton

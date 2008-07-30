@@ -215,6 +215,7 @@ if (defined $options{D}) {print "\n#D2 word ", $word, " [", $1, "]\n";}
   #
   $file =~ m&([^./0-9]+)[.]txt$&;
   print "subrule ", $1, " (\$tietue";
+if (defined $options{D}) {print "\n#A0 [", $1, "][", $file, "]\n";}
   for my $i (1 .. $u-1) {
     printf (", \$param%02d", $i);
   }

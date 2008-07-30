@@ -1,6 +1,8 @@
 Aaltonen
 Aamu
 Aarnio
+agroekologi
+agroekologia
 Aho
 ahtautuma
 ahtojää
@@ -47,6 +49,7 @@ brittiläinen
 Bulgaria
 edellisvuotinen
 Eesti
+eetillinen
 eksymä
 Elo
 elokuva
@@ -82,6 +85,7 @@ hautaus
 heijastuma
 heikentymä
 Helo
+heloitus
 henkilöitymä
 herraskartano
 herrasmies
@@ -154,6 +158,7 @@ kartoitus
 kasaantuma
 kasautuma
 Kaste
+kasvattaa
 katkeama
 kaventuma
 kehittymä
@@ -191,6 +196,8 @@ kokoutuma
 Kolari
 kolhiutuma
 Koppelo
+koroitus
+korotus
 Koski
 Kotka
 koulutus
@@ -294,7 +301,17 @@ luontoistalous
 lupaus
 lyhentymä
 lyhytaalto
-lyhytvalinta
+lyhytelokuva
+lyhytfilmi
+lyhytiskusylinteri
+lyhytnumero
+lyhytohjelma
+lyhytproosa
+lyhytrakennesylinteri
+lyhytsulku
+lyhytterapia
+lyhytvalintakoodi
+lyhytvalintanumero
 lyönti
 lämmitys
 Maa
@@ -501,6 +518,7 @@ tasavalta
 tasavaltalainen
 tataarilainen
 teatterilainen
+teloitus
 teollinen
 teollisuus
 Terho
