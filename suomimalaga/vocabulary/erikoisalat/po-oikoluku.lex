@@ -54,3 +54,22 @@
 [perusmuoto: "null", alku: "null", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "true", alku: "true", luokka: sidesana, jatko: <loppu>, äs: a];
 
+# Lähinnä OpenOffice.orgia varten
+[perusmuoto: "align", alku: "align", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "arrange", alku: "arrange", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "Base", alku: "Base", luokka: nimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Calc", alku: "Calc", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Chart", alku: "Chart", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Draw", alku: "Draw", luokka: nimi, jatko: <parfait>, äs: a];
+[perusmuoto: "guide", alku: "guide", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "hid", alku: "hid", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "id", alku: "id", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "Impress", alku: "Impress", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "link", alku: "link", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "Math", alku: "Math", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "name", alku: "name", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "shared", alku: "shared", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "text", alku: "text", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "variable", alku: "variable", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "Writer", alku: "Writer", luokka: nimi, jatko: <kalsium>, äs: a];
+
