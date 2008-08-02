@@ -162,7 +162,8 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 			break;
 		case TOKEN_PUNCTUATION:
 			if (i == 0) {
-				if (t.str[0] == L'(' || t.str[0] == L')') continue;
+				if (t.str[0] == L'(' || t.str[0] == L')' ||
+				    t.str[0] == L'"' || t.str[0] == L'\'') continue;
 				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
@@ -211,6 +212,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 			}
 			continue;
 		}
+		if (!t.is_valid_word) continue;
 		if (!t.first_letter_lcase) continue;
 		if (!iswupper(t.str[0])) continue;
 		voikko_gc_cache_entry * e = gc_new_cache_entry(0);

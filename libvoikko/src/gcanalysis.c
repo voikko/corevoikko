@@ -46,6 +46,7 @@ void free_gc_paragraph(gc_paragraph * para) {
 /** Analyze given text token. Token type, length and text must have already
  *  been set. */
 void gc_analyze_token(int handle, gc_token * token) {
+	token->is_valid_word = 0;
 	token->first_letter_lcase = 0;
 	if (token->type != TOKEN_WORD) return;
 	
@@ -57,6 +58,7 @@ void gc_analyze_token(int handle, gc_token * token) {
 	// Check if first letter should be lower case letter
 	value_t analysis = first_analysis_result();
 	while (analysis) {
+		token->is_valid_word = 1;
 		char * analysis_str = get_value_string(analysis);
 		if (strlen(analysis_str) < 2 || (analysis_str[1] != 'p' &&
 		    analysis_str[1] != 'q')) {
