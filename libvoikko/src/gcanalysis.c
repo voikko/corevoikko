@@ -18,6 +18,7 @@
 
 #include "gcanalysis.h"
 #include "voikko_utils.h"
+#include "voikko_setup.h"
 #include <malaga.h>
 #include <stdlib.h>
 #include <string.h>
@@ -80,8 +81,12 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 	size_t remaining = textlen;
 	for (int i = 0; i < GCANALYSIS_MAX_TOKENS; i++) {
 		enum voikko_token_type tt;
+		int ignore_dot_saved = voikko_options.ignore_dot;
+		voikko_options.ignore_dot = 0;
 		tt = voikko_next_token_ucs4(handle, pos, remaining, &tokenlen);
+		voikko_options.ignore_dot = ignore_dot_saved;
 		if (tt == TOKEN_NONE) return s;
+
 		s->tokens[i].type = tt;
 		s->tokens[i].tokenlen = tokenlen;
 		wchar_t * tstr = malloc((tokenlen + 1) * sizeof(wchar_t));

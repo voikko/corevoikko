@@ -66,7 +66,8 @@
 /* Ignore dot at the end of the word (needed for use in some word processors).
  * If this option is set and input word ends with a dot, spell checking and
  * hyphenation functions try to analyse the word without the dot if no results
- * can be obtained for the original form.
+ * can be obtained for the original form. Also with this option, string tokenizer
+ * will consider trailing dot of a word to be a part of that word.
  * Default: false */
 #define VOIKKO_OPT_IGNORE_DOT 0
 

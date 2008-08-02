@@ -1,3 +1,9 @@
+2008-08-02 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Ignore option VOIKKO_OPT_IGNORE_DOT in sentence
+	  splitting and grammar checking, but document its effects
+	  on string tokenizer.
+
 2008-07-27 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add support for suggestions from grammar checker.
