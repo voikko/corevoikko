@@ -30,7 +30,7 @@ enum char_type get_char_type(wchar_t c) {
 	           L"\u2011"  /* NON-BREAKING HYPHEN */
 	           , c)) return CHAR_PUNCTUATION;
 	if (isspace(c)) return CHAR_WHITESPACE;
-	if (wcschr(L"aAbBcCdDeEfFfGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+	if (wcschr(L"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
 	           L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
 	           L"\u00C1"  /* LATIN CAPITAL LETTER A WITH ACUTE */
 	           L"\u00C2"  /* LATIN CAPITAL LETTER A WITH CIRCUMFLEX */
