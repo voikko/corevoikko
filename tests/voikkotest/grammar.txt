@@ -26,5 +26,6 @@ Avaimet löytyivät Reetan Taskun pohjalta.
 "Lause voi olla myös lainausmerkeissä."
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
 Hyllyllä on mm. hilloa.
+Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
 Ensimmäinen virke on oikein. toinen virke on väärin.
  [code=7, level=0, descr="", stpos=29, len=6, suggs={}]

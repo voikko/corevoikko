@@ -214,6 +214,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 		}
 		if (!t.is_valid_word) continue;
 		if (!t.first_letter_lcase) continue;
+		if (t.possible_sentence_start) continue;
 		if (!iswupper(t.str[0])) continue;
 		voikko_gc_cache_entry * e = gc_new_cache_entry(0);
 		if (!e) return;
