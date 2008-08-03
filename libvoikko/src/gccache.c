@@ -20,6 +20,7 @@
 #include "gcerror.h"
 #include "gcanalysis.h"
 #include "voikko_setup.h"
+#include "voikko_utils.h"
 #include <string.h>
 #include <stdlib.h>
 #include <wctype.h>
@@ -225,6 +226,37 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 	}
 }
 
+/**
+ * GC errors due to word repetition
+ */
+void gc_repeating_words(int handle, const gc_sentence * sentence) {
+	for (int i = 0; i < sentence->token_count - 2; i++) {
+		if (sentence->tokens[i].type != TOKEN_WORD) continue;
+		if (sentence->tokens[i + 1].type != TOKEN_WHITESPACE) {
+			i++;
+			continue;
+		}
+		if (sentence->tokens[i + 2].type != TOKEN_WORD) {
+			i += 2;
+			continue;
+		}
+		if (wcscmp(sentence->tokens[i].str, sentence->tokens[i + 2].str)) {
+			i++;
+			continue;
+		}
+		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
+		if (!e) return;
+		e->error.error_code = GCERR_REPEATING_WORD;
+		e->error.startpos = sentence->tokens[i].pos;
+		e->error.errorlen = sentence->tokens[i].tokenlen +
+		                    sentence->tokens[i + 1].tokenlen +
+		                    sentence->tokens[i + 2].tokenlen;
+		e->error.suggestions[0] = voikko_ucs4tocstr(sentence->tokens[i].str,
+		                          "UTF-8", sentence->tokens[i].tokenlen);
+		gc_cache_append_error(handle, e);
+	}
+}
+
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(handle);
 	voikko_options.gc_cache.paragraph = malloc((textlen + 1) * sizeof(wchar_t));
@@ -237,6 +269,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 		gc_static_replacements(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
 		gc_character_case(handle, para->sentences[i]);
+		gc_repeating_words(handle, para->sentences[i]);
 	}
 	free_gc_paragraph(para);
 }

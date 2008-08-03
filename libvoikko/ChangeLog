@@ -1,6 +1,7 @@
 2008-08-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Bug fixing.
+	* Add check for duplicated words.
 
 2008-08-02 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -29,3 +29,5 @@ Hyllyllä on mm. hilloa.
 Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
 Ensimmäinen virke on oikein. toinen virke on väärin.
  [code=7, level=0, descr="", stpos=29, len=6, suggs={}]
+On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
+ [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]

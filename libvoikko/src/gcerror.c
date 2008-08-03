@@ -38,6 +38,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Sana on kirjoitettava pienell\xc3\xa4 alkukirjaimella.";
 			case GCERR_WRITE_FIRST_UPPERCASE:
 				return "Sana on kirjoitettava isolla alkukirjaimella.";
+			case GCERR_REPEATING_WORD:
+				return "Sana on kirjoitettu kahteen kertaan.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -57,6 +59,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Change first letter to lower case.";
 			case GCERR_WRITE_FIRST_UPPERCASE:
 				return "Change first letter to upper case.";
+			case GCERR_REPEATING_WORD:
+				return "Remove duplicate word.";
 		}
 		return "Unknown error";
 	}
