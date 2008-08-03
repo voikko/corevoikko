@@ -48,6 +48,7 @@ void free_gc_paragraph(gc_paragraph * para) {
 void gc_analyze_token(int handle, gc_token * token) {
 	token->is_valid_word = 0;
 	token->first_letter_lcase = 0;
+	token->possible_sentence_start = 0;
 	if (token->type != TOKEN_WORD) return;
 	
 	char * malaga_buffer = voikko_ucs4tocstr(token->str, "UTF-8", token->tokenlen);
@@ -123,8 +124,17 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 	size_t remaining = textlen;
 	enum voikko_sentence_type st;
 	do {
-		st = voikko_next_sentence_start_ucs4(handle, pos, remaining,
-		                                     &sentencelen);
+		const wchar_t * pos2 = pos;
+		size_t sentencelen2;
+		sentencelen = 0;
+		do {
+			st = voikko_next_sentence_start_ucs4(handle, pos2, remaining,
+			                                     &sentencelen2);
+			pos2 += sentencelen2;
+			sentencelen += sentencelen2;
+			remaining -= sentencelen2;
+		} while (st == SENTENCE_POSSIBLE);
+		
 		gc_sentence * s = gc_analyze_sentence(handle, pos, sentencelen, pos - text);
 		if (!s) {
 			free_gc_paragraph(p);
@@ -133,8 +143,6 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 		s->type = st;
 		p->sentences[p->sentence_count++] = s;
 		pos += sentencelen;
-		remaining -= sentencelen;
-		
 	} while (st != SENTENCE_NONE && st != SENTENCE_NO_START &&
 	         p->sentence_count < GCANALYSIS_MAX_SENTENCES);
 	return p;

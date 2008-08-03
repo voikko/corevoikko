@@ -38,6 +38,9 @@ typedef struct {
 	/** True if this is a word token that should start with
 	 *  lower case letter. */
 	int first_letter_lcase;
+	/** True if this word may be (but is not necessarily) the first
+	 *  word in a sentence. */
+	int possible_sentence_start;
 	/** Null terminated string containing the token text */
 	wchar_t * str;
 	/** Length of the token */
