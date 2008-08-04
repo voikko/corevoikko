@@ -1346,12 +1346,15 @@ keimit # geimi
 kokkarit # kokkari
 kolmiointi # kolmioida
 kummarit # kummari
+käninä # känistä
 lemput # lemppu
 lantsarit # lantsari
+laparoskopialeikkaus # laparoskopia
 lirputella # lirputtaa
 litsahdella # litsahtaa
 longerrella # longertaa
 lupsahdella # lupsahtaa
+löpinä # löpistä
 menkut # menkku
 mensikset # mensis
 mensut # mensu
