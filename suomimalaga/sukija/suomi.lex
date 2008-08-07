@@ -234,11 +234,15 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: yksikkö, äs: aä, jatko: @sijan_jatko];
 [alku: "kse",   luokka: sijapääte, sija: tulento_ksi,
                 luku: yksikkö, äs: aä, jatko: <omistusliite>];
+[alku: "ks",    luokka: sijapääte, sija: tulento_ksi,
+                luku: yksikkö, äs: aä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "ksi"];
 
 [alku: "iksi",  luokka: sijapääte, sija: tulento_iksi,
                 luku: monikko, äs: aä, jatko: @sijan_jatko];
 [alku: "ikse",  luokka: sijapääte, sija: tulento_iksi,
                 luku: monikko, äs: aä, jatko: <omistusliite>];
+[alku: "iks",   luokka: sijapääte, sija: tulento_iksi,
+                luku: monikko, äs: aä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "iksi"];
 
 
 [alku: "ssa",   luokka: sijapääte, sija: sisäolento_ssA,
@@ -256,11 +260,19 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: yksikkö, äs: a, jatko: @sijan_jatko_ol];
 [alku: "stä",   luokka: sijapääte, sija: sisäeronto_stA,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
+[alku: "st",    luokka: sijapääte, sija: sisäeronto_stA,
+                luku: yksikkö, äs: a, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "sta"];
+[alku: "st",    luokka: sijapääte, sija: sisäeronto_stA,
+                luku: yksikkö, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "stä"];
 
 [alku: "ista",  luokka: sijapääte, sija: sisäeronto_istA,
                 luku: monikko, äs: a, jatko: @sijan_jatko_ol];
 [alku: "istä",  luokka: sijapääte, sija: sisäeronto_istA,
                 luku: monikko, äs: ä, jatko: @sijan_jatko_ol];
+[alku: "ist",   luokka: sijapääte, sija: sisäeronto_istA,
+                luku: monikko, äs: a, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "ista"];
+[alku: "ist",   luokka: sijapääte, sija: sisäeronto_istA,
+                luku: monikko, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "istä"];
 
 
 [alku: "an",   luokka: sijapääte, sija: sisätulento_Vn,
@@ -400,11 +412,19 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: yksikkö, äs: a, jatko: @sijan_jatko_ol];
 [alku: "ltä",   luokka: sijapääte, sija: ulkoeronto_ltA,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
+[alku: "lt",    luokka: sijapääte, sija: ulkoeronto_ltA,
+                luku: yksikkö, äs: a, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "lta"];
+[alku: "lt",    luokka: sijapääte, sija: ulkoeronto_ltA,
+                luku: yksikkö, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "lta"];
 
 [alku: "ilta",  luokka: sijapääte, sija: ulkoeronto_iltA,
                 luku: monikko, äs: a, jatko: @sijan_jatko_ol];
 [alku: "iltä",  luokka: sijapääte, sija: ulkoeronto_iltA,
                 luku: monikko, äs: ä, jatko: @sijan_jatko_ol];
+[alku: "ilt",   luokka: sijapääte, sija: ulkoeronto_iltA,
+                luku: monikko, äs: a, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "ilta"];
+[alku: "ilt",   luokka: sijapääte, sija: ulkoeronto_iltA,
+                luku: monikko, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "lta"];
 
 
 [alku: "lle",   luokka: sijapääte, sija: ulkotulento_lle,
@@ -414,10 +434,16 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: monikko, äs: aä, jatko: @sijan_jatko_ol];
 
 [alku: "llen",  luokka: sijapääte, sija: ulkotulento_lle,                           # Lehmä+llen.
-                luku: yksikkö, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>];
+                luku: yksikkö, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>, perusmuoto: "lle"];
 
 [alku: "illen", luokka: sijapääte, sija: ulkotulento_ille,
-                luku: monikko, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>];
+                luku: monikko, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>, perusmuoto: "ille"];
+
+[alku: "ll",    luokka: sijapääte, sija: ulkotulento_lle,    # Perusmuoto voisi olla myös llA.
+                luku: yksikkö, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>, perusmuoto: "lle"];
+
+[alku: "ill",   luokka: sijapääte, sija: ulkotulento_ille,   # Perusmuoto voisi olla myös illA.
+                luku: monikko, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>, perusmuoto: "ille"];
 
 
 [alku: "tta",   luokka: sijapääte, sija: vajanto_ttA,

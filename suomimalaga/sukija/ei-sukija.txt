@@ -110,6 +110,7 @@ höyhensarjalainen
 Ilma
 ilmentymä
 Ilta
+Indonesia
 innoittua
 institutionalisoitua
 Islanti
@@ -123,6 +124,7 @@ Japani
 julkishallinto
 julkissektori
 julkistalous
+Jumala
 jumalaistaru
 jumalaistarusto
 juoma
@@ -134,6 +136,7 @@ Järviluoma
 jättiläinen
 jäykistymä
 jäätymä
+kaato
 kahdentuma
 Kainulainen
 kalkkeuma
@@ -160,6 +163,7 @@ kasautuma
 Kaste
 kasvattaa
 katkeama
+katsojainen
 kaventuma
 kehittymä
 kepulainen
@@ -172,6 +176,7 @@ keräymä
 keräytymä
 keskittymä
 kestitys
+Keto
 Kielo
 kieroutuma
 kiertuelainen
@@ -183,6 +188,7 @@ kiltalainen
 Kisko
 kiteymä
 kiteytymä
+Kitunen
 kivettymä
 Knuutinpoika
 koaksiaalikaapeli
@@ -315,6 +321,7 @@ lyhytvalintanumero
 lyönti
 lämmitys
 Maa
+maakostea
 maalainen
 maailmanympärimatka
 maallistua
@@ -322,6 +329,7 @@ maattojohdin
 maattojohto
 Maila
 majoitus
+malaijilainen
 Malmi
 maolainen
 Marja
@@ -384,10 +392,12 @@ paisuma
 Pajari
 pakolainen
 paleltuma
+paljastajainen
 palkkalainen
 Palmu
 patoutuma
 Paula
+peitto
 Perho
 perimä
 peräänajo
@@ -436,6 +446,7 @@ repeytymä
 repeämä
 repolainen
 Riihimäki
+rikkakasvi
 Riski
 risteytymä
 rivittyä
@@ -479,6 +490,7 @@ sisäänajo
 sisäänmeno
 sisääntulo
 soistuma
+soitto
 Somero
 Sorsa
 sortuma
@@ -619,6 +631,7 @@ vähittäismaksu
 vähittäismyymälä
 vähittäismyynti
 väittämä
+Väistö
 vääntymä
 väärinkäsitys
 vääristymä

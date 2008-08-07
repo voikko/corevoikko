@@ -469,6 +469,8 @@
 [perusmuoto: "kertanen", alku: "kerta", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "asianomanen", alku: "asianoma", luokka: nimisana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "Sigurðardóttir", alku: "Sigurðardóttir", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Bomba", alku: "Bomb", luokka: nimi, jatko: <koira>, äs: a];
+[perusmuoto: "Lucene", alku: "Lucene", luokka: nimi, jatko: <nalle>, äs: a];
 
 [perusmuoto: "muuntaajuinen", alku: "muuntaajui", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "muunkuntalainen", alku: "muunkuntalai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppppp"];
@@ -506,6 +508,14 @@
 [perusmuoto: "erinkaltainen", alku: "erinkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "Paulow", alku: "Paulow", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Taponen", alku: "Tapo", luokka: sukunimi, jatko: <nainen>, äs: a];
+
+[perusmuoto: "oljennella", alku: "oljen", luokka: teonsana, jatko: <pienennellä>, äs: a];
+[perusmuoto: "parannutella", alku: "parannut", luokka: teonsana, jatko: <aatella>, äs: a];
+[perusmuoto: "reipastella", alku: "reipastel", luokka: teonsana, jatko: <katsella>, äs: a];
+[perusmuoto: "riipustaa", alku: "riipust", luokka: teonsana, jatko: <muistaa>, äs: a];
+[perusmuoto: "rinnustella", alku: "rinnustel", luokka: teonsana, jatko: <katsella>, äs: a];
+[perusmuoto: "tuulutella", alku: "tuulut", luokka: teonsana, jatko: <aatella>, äs: a];
+
 
 [perusmuoto: "kylpyamme", alku: "kylpyamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "pesuamme", alku: "pesuamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];

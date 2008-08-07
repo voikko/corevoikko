@@ -109,7 +109,6 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
-##if ($tietue.perusmuoto in <"höyli", "kokkari", "lehdes", "riksi", "säkä", "sää">) then
   if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
@@ -8497,6 +8496,7 @@ subrule jumala ($tietue, $param01, $param02, $param03):
                          omistusliite: <<$param01, <>>>,
                          omanto_n: <<$param01, <>>>,
                          osanto_A: <<$param01, <>>>,
+                         osanto_tA: <<$param01, <>>>,
                          olento_nA: <<$param01, <>>>,
                          tulento_ksi: <<$param01, <>>>,
                          sisäolento_ssA: <<$param01, <>>>,

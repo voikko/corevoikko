@@ -1343,13 +1343,14 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
       <<"kemi">,      <"alli", "joki">>,
-      <<"Kim", "tu">, <"maa">>,
+      <<"Kim", "tele", "tu">, <"maa">>,
       <<"kimma">,     <"huti">>,
       <<"kiri">,      <"tiikki">>,  # Luultavasti väärin kirjoitettu "kritiikki".
       <<"kirjo">,     <"rasta">>,
       <<"kirkas">,    <"tuma">>,
       <<"kiska">,     <"istua", "seka">>,   # Kiska+istuja.
       <<"kita">,      <"risti">>,
+      <<"kitunen">,   <"sari">>,        # Messi+n+kitus+sari+lla.
       <<"koiras">,    <"euro">>,
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"koli">,      <"brie">>,        # Koli+brie+n.
@@ -1358,7 +1359,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"korsi">,     <"kaksi", "kalla">>,
       <<"kulti">,     <"voi", "vuo">>,
       <<"kuokka">,    <"lassa", "lasta">>,
-      <<"kuu">,       <"kausittainen", "lakka", "luja", "luksus", "luminen", "luu">>,
+      <<"kuu">,       <"kausittainen", "lakka", "lemma", "luja", "luksus", "luminen", "luu">>,
       <<"kure">,      <"misu">>,
       <<"kyllänen", "liukas", "puh", "päällys", "timo", "valmis">,  <"tie">>,
       <<"käsi">,      <"kirjoittaa">>,
@@ -1371,7 +1372,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"loinen">,    <"kaksi", "tee", "tehdä">>,
       <<"lukunen">,   <"alin">>,
       <<"luokka">,    <"istua">>,
-      <<"luu">,       <"hattu", "kutu">>,
+      <<"luu">,       <"hattu", "kutu", "lemma">>,
       <<"läinen">,    <"käki">>,
       <<"länsi">,     <"maistua">>,
       <<"läpi">,      <"käydä">>,
@@ -1435,7 +1436,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"rondo">,     <"letto">>,
       <<"rusi">,      <"koi", "noita">>,
       <<"rulla">,     <"lautailla">>,     # On oma sanansa.
-      <<"sala">,      <"kuljettaa", "manner">>,  # Ei sala+mantereista.
+      <<"sala">,      <"kuljettaa", "maa", "maki", "makki", "maksi", "mana", "manner", "massa", "matti", "moinen", "moni">>,
       <<"salme">,     <"kivi", "oja", "perä", "suu">>,
       <<"Sam">,       <"maa">>,
       <<"samainen">,  <"tuta">>,
@@ -1763,27 +1764,32 @@ subrule alku ($tietue):
     # Tradit(s)io,  traditsio(o)ni.
     # Funkt(s)io,   funktsio(o)ni; akt(s)io, aktsio(o)ni.
     #
-    if (($tietue.alku matches ("..*[bcdfghjklmnpqrstuvwxyz](aa?tio|ats?ioo?(n|ne|ni))")) or
-        ($tietue.alku matches ("..*[bcdfghjklmnpqrstuvwxyz](uu?tio|uts?ioo?(n|ne|ni))")) or
-        ($tietue.alku matches ("..*[bcdfghjklmnpqrstuvwxyz](uu?sio|usioo?(n|ni|ne))")) or
-        ($tietue.alku matches ("..*[bcdfghjklmnpqrstuvwxyz](its?io|itsioo?(n|ni|ne))")) or
+    if (($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](aa?tio|ats?ioo?(n|ne|ni))")) or
+        ($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](uu?tio|uts?ioo?(n|ne|ni))")) or
+        ($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](uu?sio|usioo?(n|ni|ne))")) or
+        ($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](its?io|itsioo?(n|ni|ne))")) or
         ($tietue.alku matches (".*(kts?io|ktsioo?(n|ni|ne))"))) then
       return $tietue.perusmuoto;
     #    
     # Symbo(o)li yms.
     #
-    elseif ($tietue.alku matches ("...*[bcdfghjklmnpqrstuvwxyz]" : $alku, "oo[dfglmnrv](i|e)?" : $loppu)) then
+    elseif ($tietue.alku matches ("...*[bcdfghjklmnpqrstvwxyz]" : $alku, "oo[dfglmnrv](i|e)?" : $loppu)) then
       return $alku + substring ($loppu, 2, 1R);
     #
     # Balla(a)di.
     #
-    elseif ($tietue.alku matches ("...*[bcdfghjklmnpqrstuvwxyz]" : $alku,  "aad(i|e)?" : $loppu)) then
+    elseif ($tietue.alku matches ("...*[bcdfghjklmnpqrstvwxyz]" : $alku,  "aad(i|e)?" : $loppu)) then
       return $alku + substring ($loppu, 2, 1R);
     #
     # Biogra(a)fi.
     #
     elseif ($tietue.alku matches (".*.gr" : $alku, "aaf(i|e)?" : $loppu))  then
       return $alku + substring ($loppu, 2, 1R);
+    #
+    # Poli(i)si.
+    #
+    elseif ($tietue.perusmuoto = "poliisi" and substring ($tietue.alku, 1, 5) = "polis") then
+      return "polii" + substring ($tietue.alku, 5, 1R);
     end;
   end;
 
