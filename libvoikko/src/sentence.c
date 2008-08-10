@@ -54,6 +54,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 	enum voikko_token_type previous_token_type = TOKEN_NONE;
 	int end_found = 0;
 	int end_dotword = 0;
+	int end_colon = 0;
 	while (token != TOKEN_NONE && textlen - slen > 0) {
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
@@ -63,7 +64,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 		if (end_found) {
 			if (token != TOKEN_WHITESPACE) {
 				*sentencelen = slen;
-				if (end_dotword) return SENTENCE_POSSIBLE;
+				if (end_dotword || end_colon) return SENTENCE_POSSIBLE;
 				else return SENTENCE_PROBABLE;
 			}
 		}
@@ -78,6 +79,10 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 				      slen - previous_token_start + 1)) {
 					end_dotword = 1;
 				}
+			}
+			else if (punct == L':') {
+				end_found = 1;
+				end_colon = 1;
 			}
 		}
 		previous_token_start = slen;

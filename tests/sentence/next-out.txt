@@ -11,3 +11,6 @@ P: Perjantai 13.
 E: päivä on ensi viikolla.
 B: Hänen Lappeen kihlakunnan mies oli paitsi komea myös muotitietoinen, sillä miehet liikkuivat työasioissa alueella. 
 E: Viipuri ja Pietari olivat rahtimiehille tuttuja, lännen suunnalla Tallinnaan, Turkuun ja kauemmaksikin ja saivat vaikutteita pukeutumiseensa.
+P: Tähän liittyy kaksi virkettä: 
+B: Ensimmäinen virke on tässä. 
+E: Toinen on tässä.

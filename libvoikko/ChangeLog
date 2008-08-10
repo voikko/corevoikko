@@ -1,3 +1,7 @@
+2008-08-10 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix character case check after colon.
+
 2008-08-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Bug fixing.

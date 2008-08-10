@@ -27,6 +27,8 @@ Avaimet löytyivät Reetan Taskun pohjalta.
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
 Hyllyllä on mm. hilloa.
 Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
+Hyllyllä on kahdenlaisia elintarvikkeita: hilloja ja säilykkeitä.
+Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on tässä.
 Ensimmäinen virke on oikein. toinen virke on väärin.
  [code=7, level=0, descr="", stpos=29, len=6, suggs={}]
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.

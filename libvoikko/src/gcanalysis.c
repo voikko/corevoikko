@@ -105,8 +105,10 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 			s->tokens[i].possible_sentence_start = 1;
 			next_word_is_possible_sentence_start = 0;
 		}
-		else if (tt == TOKEN_PUNCTUATION && tokenlen == 1 && tstr[0] == L'.')
+		else if (tt == TOKEN_PUNCTUATION && tokenlen == 1 &&
+		         (tstr[0] == L'.' || tstr[0] == L':')) {
 			next_word_is_possible_sentence_start = 1;
+		}
 		
 		s->token_count++;
 		pos += tokenlen;
