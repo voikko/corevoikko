@@ -5,7 +5,7 @@
 " License:	Public domain
 
 " {{{1 The Beginning
-if &compatible || v:version < 700 || !executable('enchant') || exists('g:loaded_enchant_spellcheck')
+if &compatible || v:version < 700 || !executable('enchant') || exists('g:loaded_vimchant')
 	finish
 endif
 let s:save_cpo = &cpo
@@ -24,7 +24,7 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 	elseif tolower(a:switch) == 'off'
 		let switch = 0
 	elseif tolower(a:switch) == 'switch'
-		if exists('b:enchant_spellcheck_enabled')
+		if exists('b:vimchant_spellcheck_enabled')
 			let switch = 0
 		else
 			let switch = 1
@@ -39,8 +39,8 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 	endif
 
 	if switch
-		if !exists('b:enchant_spellcheck_save_isk')
-			let b:enchant_spellcheck_save_isk = &l:isk
+		if !exists('b:vimchant_spellcheck_save_isk')
+			let b:vimchant_spellcheck_save_isk = &l:isk
 		endif
 		setlocal isk&
 		call s:CheckSpelling()
@@ -51,20 +51,20 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 			autocmd BufLeave,WinLeave,TabLeave <buffer> call clearmatches()
 		augroup END
 		if !silence | echo 'Spell-checking turned on' | endif
-		let b:enchant_spellcheck_enabled = 1
+		let b:vimchant_spellcheck_enabled = 1
 	else
 		augroup VimchantSpellCheck
 			autocmd! * <buffer>
 		augroup END
 		call clearmatches()
-		if exists('b:enchant_spellcheck_save_isk')
-			let &l:isk = b:enchant_spellcheck_save_isk
-			unlet b:enchant_spellcheck_save_isk
+		if exists('b:vimchant_spellcheck_save_isk')
+			let &l:isk = b:vimchant_spellcheck_save_isk
+			unlet b:vimchant_spellcheck_save_isk
 		endif
 		if &term != 'builtin_gui'
 			redraw!
 		endif
-		silent! unlet b:enchant_spellcheck_enabled
+		silent! unlet b:vimchant_spellcheck_enabled
 		if !silence | echo 'Spell-checking turned off' | endif
 	endif
 endfunction
@@ -111,6 +111,6 @@ if maparg('<Leader>ss') == '' && !hasmapto('<Plug>VimchantSpellCheckSwitch')
 endif
 
 " {{{1 The End
-let g:loaded_enchant_spellcheck = 1
+let g:loaded_vimchant = 1
 let &cpo = s:save_cpo
 " vim600: fdm=marker
