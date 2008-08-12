@@ -47,7 +47,7 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 		augroup VimchantSpellCheck
 			autocmd! * <buffer>
 			autocmd CursorHold,CursorHoldI <buffer> call s:CheckSpelling()
-			autocmd BufWinLeave <buffer> call s:SpellCheckSwitch('Off',1)
+			autocmd BufDelete <buffer> execute 'autocmd! VimchantSpellCheck * <buffer='.expand('<abuf>').'>'
 			autocmd BufLeave,WinLeave,TabLeave <buffer> call clearmatches()
 		augroup END
 		if !silence | echo 'Spell-checking turned on' | endif
