@@ -24,7 +24,7 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 	elseif tolower(a:switch) == 'off'
 		let switch = 0
 	elseif tolower(a:switch) == 'switch'
-		if exists('b:vimchant_spellcheck_enabled')
+		if exists('#VimchantSpellCheck#CursorHold#<buffer>')
 			let switch = 0
 		else
 			let switch = 1
@@ -51,7 +51,6 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 			autocmd BufLeave,WinLeave,TabLeave <buffer> call clearmatches()
 		augroup END
 		if !silence | echo 'Spell-checking turned on' | endif
-		let b:vimchant_spellcheck_enabled = 1
 	else
 		augroup VimchantSpellCheck
 			autocmd! * <buffer>
@@ -64,7 +63,6 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 		if &term != 'builtin_gui'
 			redraw!
 		endif
-		silent! unlet b:vimchant_spellcheck_enabled
 		if !silence | echo 'Spell-checking turned off' | endif
 	endif
 endfunction
