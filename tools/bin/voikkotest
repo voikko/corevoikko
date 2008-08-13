@@ -101,8 +101,8 @@ def _suggest(word, params):
 	return suggestions
 
 # Returns a list of grammar errors.
-def _check_grammar(paragraphlist):
-	gc = subprocess.Popen(GCCMD, shell = True, stdin = subprocess.PIPE,
+def _check_grammar(paragraphlist, params):
+	gc = subprocess.Popen(GCCMD + " " + params, shell = True, stdin = subprocess.PIPE,
 	                      stdout = subprocess.PIPE, close_fds = True)
 	for paragraph in paragraphlist:
 		gc.stdin.write(paragraph.encode('UTF-8') + '\n')
@@ -223,33 +223,51 @@ def hyphen_tests():
 		sys.stderr.write("Could not read from file " + hyphentest + "\n")
 		sys.exit(1)
 
+def read_nonempty(inputfile):
+	while True:
+		line = inputfile.readline()
+		if line == u"": return u""
+		commentstart = line.find(u"#")
+		if commentstart != -1: line = line[:commentstart]
+		line = line.strip()
+		if len(line) > 0: return line
+
 # Run grammar tests
 def grammar_tests():
 	try:
 		inputfile = codecs.open(GRAMMARTESTFILE, "r", ENCODING)
 		testcount = 0
 		failcount = 0
+		section = u"(none)"
 		inputpara = []
 		expresults = []
-		line = inputfile.readline()
+		line = read_nonempty(inputfile)
 		while True:
 			if line == u'': break
-			line = line.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1: line = line[:commentstart].strip()
+			if line.startswith(u'{') and line.endswith(u'}'):
+				if len(inputpara) > 0:
+					results = _check_grammar(inputpara, section)
+					failcount = _check_gcerrors(inputpara, expresults, results)
+					inputpara = []
+					expresults = []
+				section = line[1:-1]
+				line = read_nonempty(inputfile)
+				continue
+			if len(line) == 0:
+				line = read_nonempty(inputfile)
+				continue
+			testcount = testcount + 1
 			inputpara.append(line)
 			expresult = []
 			while True:
-				line = inputfile.readline().strip()
-				commentstart = line.find(u"#")
-				if commentstart != -1: line = line[:commentstart].strip()
-				if line == u'' or line[0] != u'[': break
+				line = read_nonempty(inputfile)
+				if line == u'': break
+				if line[0] != u'[': break
 				expresult.append(line)
 			expresults.append(expresult)
-			testcount = testcount + 1
 		inputfile.close()
-		if testcount > 0:
-			results = _check_grammar(inputpara)
+		if len(inputpara) > 0:
+			results = _check_grammar(inputpara, section)
 			failcount = _check_gcerrors(inputpara, expresults, results)
 		if failcount == 0:
 			print u"All %i grammar tests were successful." % testcount

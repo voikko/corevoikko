@@ -1,3 +1,8 @@
+2008-08-13 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add check for missing punctuation at the end of sentence.
+	* Add option VOIKKO_OPT_ACCEPT_TITLES_IN_GC.
+
 2008-08-10 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix character case check after colon.

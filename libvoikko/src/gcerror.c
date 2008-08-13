@@ -40,6 +40,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Sana on kirjoitettava isolla alkukirjaimella.";
 			case GCERR_REPEATING_WORD:
 				return "Sana on kirjoitettu kahteen kertaan.";
+			case GCERR_TERMINATING_PUNCTUATION_MISSING:
+				return "V\xc3\xa4limerkki puuttuu virkkeen lopusta.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -61,6 +63,8 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 				return "Change first letter to upper case.";
 			case GCERR_REPEATING_WORD:
 				return "Remove duplicate word.";
+			case GCERR_TERMINATING_PUNCTUATION_MISSING:
+				return "Terminating punctuation is missing.";
 		}
 		return "Unknown error";
 	}

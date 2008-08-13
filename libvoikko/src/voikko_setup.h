@@ -40,6 +40,7 @@ typedef struct {
 	int accept_missing_hyphens;
 	int intersect_compound_level;
 	int min_hyphenated_word_length;
+	int accept_titles_in_gc;
 	const char * encoding;
 	#ifdef HAVE_ICONV
 	iconv_t iconv_ucs4_utf8;

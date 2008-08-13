@@ -1,3 +1,4 @@
+{}
 Kissa ja koira ovat karvaisia.
 Mies on joten kuten selvillä siitä, että hänen on joten kuten palattava kotiinsa.
  [code=1, level=0, descr="", stpos=8, len=11, suggs={"jotenkuten"}]
@@ -33,3 +34,10 @@ Ensimmäinen virke on oikein. toinen virke on väärin.
  [code=7, level=0, descr="", stpos=29, len=6, suggs={}]
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
  [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]
+Hieno eka otsikko
+ [code=9, level=0, descr="", stpos=10, len=7, suggs={}]
+
+{accept_titles=1}
+Hieno toka otsikko
+Avaimet löytyivät Reetan Taskun pohjalta.
+ [code=6, level=0, descr="", stpos=25, len=6, suggs={}]

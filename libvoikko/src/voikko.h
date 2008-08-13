@@ -118,6 +118,13 @@
  * Default: false */
 #define VOIKKO_OPT_ACCEPT_MISSING_HYPHENS 12
 
+/* (Grammar checking only): Accept incomplete sentences that could occur in
+ * titles or headings. Set this option to true if your application is not able
+ * to differentiate titles from normal text paragraphs, or if you know that
+ * you are checking title text.
+ * Default: false */
+#define VOIKKO_OPT_ACCEPT_TITLES_IN_GC 13
+
 /* Integer options */
 
 /* There are two possible rules that can be applied when hyphenating compound words

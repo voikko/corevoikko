@@ -1,7 +1,7 @@
 General information
 ===================
 
-This is libvoikko, library of free language tools using Malaga
+This is libvoikko, library of free Finnish language tools using Malaga
 natural language grammar development tool. The library is written in C.
 
 Libvoikko provides spell checking, hyphenation and grammar checking for
@@ -9,7 +9,7 @@ Finnish language. No other languages are supported at the moment, and there
 are no serious plans to add such support. This is because internals of this
 library may change significantly in future releases, and we think that
 generally useful bits and ideas (if any) should rather be merged to existing
-multi language tools such as Hunspell and LanguageTools. In fact, we hope to
+multi language tools such as Hunspell and LanguageTool. In fact, we hope to
 make libvoikko obsolete, but currently there are no other libraries that
 provide all the features we need. We feel that pushing new features to Hunspell
 where they would need to be maintained essentially indefinitely should not be
@@ -35,10 +35,10 @@ Features
  - Hyphenator with compound hyphenation based on morphological analysis.
  - Various options to tune spell checking and hyphenation for different
    purposes and applications.
-
- Work in progress:
  - Grammar checking and context sensitive spell checking using paragraph
-   based API.
+   based API. This feature is still work in progress, but may already
+   be useful.
+ - String tokenizer and sentence splitter.
 
 Documentation for using the library can be found from header file voikko.h.
 
@@ -47,9 +47,14 @@ Requirements
 ============
 
 The library needs libmalaga and a version of Suomi-malaga containing a file named
-voikko-fi_FI.pro. The file should start with the following line:
+voikko-fi_FI.pro. The file must start with the following line:
 
 info: Voikko-Dictionary-Format: 1
+
+This should be considered a strict requirement for now. While some parts
+of the library may work without Suomi-malaga, this mode of operation is
+not tested and not guaranteed to behave consistently across minor releases
+of the library.
 
 
 Search order for dictionary files

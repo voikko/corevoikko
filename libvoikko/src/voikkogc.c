@@ -187,6 +187,10 @@ int main(int argc, char ** argv) {
 		else if (strncmp(argv[i], "--split-sentences", 17) == 0) {
 			op = SPLIT_SENTENCES;
 		}
+		else if (strcmp(argv[i], "accept_titles=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 1);
+		else if (strcmp(argv[i], "accept_titles=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 0);
 	}
 	
 	while (1) {

@@ -257,6 +257,22 @@ void gc_repeating_words(int handle, const gc_sentence * sentence) {
 	}
 }
 
+/**
+ * GC errors due to missing punctuation at the end of paragraph
+ */
+void gc_end_punctuation(int handle, const gc_paragraph * paragraph) {
+	if (voikko_options.accept_titles_in_gc && paragraph->sentence_count == 1) return;
+	gc_sentence * sentence = paragraph->sentences[paragraph->sentence_count - 1];
+	gc_token * token = sentence->tokens + (sentence->token_count - 1);
+	if (token->type == TOKEN_PUNCTUATION) return;
+	voikko_gc_cache_entry * e = gc_new_cache_entry(0);
+	if (!e) return;
+	e->error.error_code = GCERR_TERMINATING_PUNCTUATION_MISSING;
+	e->error.startpos = token->pos;
+	e->error.errorlen = token->tokenlen;
+	gc_cache_append_error(handle, e);
+}
+
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(handle);
 	voikko_options.gc_cache.paragraph = malloc((textlen + 1) * sizeof(wchar_t));
@@ -271,5 +287,6 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 		gc_character_case(handle, para->sentences[i]);
 		gc_repeating_words(handle, para->sentences[i]);
 	}
+	gc_end_punctuation(handle, para);
 	free_gc_paragraph(para);
 }
