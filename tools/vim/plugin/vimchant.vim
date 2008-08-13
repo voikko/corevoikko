@@ -18,11 +18,11 @@ if !hlexists(s:match_group)
 endif
 
 function! s:SpellCheckSwitch(switch, ...) "{{{1
-	if tolower(a:switch) == 'on'
+	if a:switch ==? 'on'
 		let switch = 1
-	elseif tolower(a:switch) == 'off'
+	elseif a:switch ==? 'off'
 		let switch = 0
-	elseif tolower(a:switch) == 'switch'
+	elseif a:switch ==? 'switch'
 		if exists('#VimchantSpellCheck#CursorHold#<buffer>')
 			let switch = 0
 		else
