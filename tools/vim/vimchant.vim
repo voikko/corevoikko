@@ -1,6 +1,5 @@
 " Vimchant - An Enchant-based spell-checker for Vim text editor
 "
-" Version:	0.3
 " Maintainer:	Teemu Likonen <tlikonen@iki.fi>
 " License:	Public domain
 
