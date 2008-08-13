@@ -1,0 +1,56 @@
+*vimchant.txt*          Vimchant - spell-checker plugin             2008-08-13
+
+
+Description     Vimchant is a simple but efficient spell-checker plugin. It's 
+                not bundled with many features but it provides fast real-time 
+                spell-checking while typing and editing text. Vimchant uses 
+                Enchant as its back-end program. Enchant, in turn, is 
+                a front-end for several different spell-checkers, including 
+                Ispell, Aspell and Voikko. This plugin does not provide 
+                Enchant itself; it's a separate component included in modern 
+                GNU/Linux systems.
+
+Author          Teemu Likonen <tlikonen@iki.fi>
+
+
+==============================================================================
+COMMANDS AND CONFIGURATION                            *:VimchantSpellCheckOn*
+                                                      *:VimchantSpellCheckOff*
+
+The spell-checker can be turned on and off for current buffer with the 
+following ex commands:
+
+        :VimchantSpellCheckOn
+        :VimchantSpellCheckOff
+
+Alternatively, there's a short-cut key for quick switching:
+
+        <Leader>ss              Turn the spell-checker on/off
+
+It works in Vim's normal mode. By default <Leader> is the backslash key (\ss) 
+but it can be configured with g:mapleader variable. The short-cut key may not 
+be available if it has been already taken by some other plugin or defined by 
+user. You can bind it to another key or key combination with Vim's |:map| 
+commands. For example, you could put these lines to your ~/.vimrc file: >
+
+        nmap <F7> <Plug>VimchantSpellCheckSwitch
+        imap <F7> <C-O><Plug>VimchantSpellCheckSwitch
+
+This would make <F7> as the switch key in normal and insert mode. Notice that 
+in insert mode mappings you need to precede the right-hand side with <C-O>.
+
+Spell-checker's state, whether it's on or off, is preserved buffer-wise until 
+the buffer is removed from Vim's buffer list. Only the text in currently 
+active window is actually checked for spelling, though. When the spell-checker 
+is turned on the check is run once every time user stops moving the cursor and 
+editing text. The interval period is defined by 'updatetime' option. It's 4000 
+milliseconds (= 4 seconds) by default but you might want to reduce the value 
+so that the spell-checker responds faster. For example, you could add the 
+following line to your ~/.vimrc file: >
+
+        set updatetime=1000
+
+That's pretty much it. Happy typing!
+
+==============================================================================
+vim: ft=help tw=78 ts=8 sts=8 et norl fo+=2aw
