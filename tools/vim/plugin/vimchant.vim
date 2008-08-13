@@ -42,7 +42,10 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 			let b:vimchant_spellcheck_save_isk = &l:isk
 		endif
 		setlocal isk&
-		call s:CheckSpelling()
+		if s:CheckSpelling()
+			" There was an error so don't start autocmds.
+			return
+		endif
 		augroup VimchantSpellCheck
 			autocmd! * <buffer>
 			autocmd CursorHold,CursorHoldI <buffer> call s:CheckSpelling()
@@ -66,12 +69,15 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 	endif
 endfunction
 
-function! s:RemoveAutoCmds(buffer) "{{{1
-	call clearmatches()
-	execute 'autocmd! VimchantSpellCheck * <buffer='.a:buffer.'>'
-endfunction
-
 function! s:CheckSpelling() "{{{1
+	if exists('b:vimchant_spellcheck_lang') && b:vimchant_spellcheck_lang != ''
+		let lang = 'LANG='.split(b:vimchant_spellcheck_lang)[0].' '
+	elseif exists('g:vimchant_spellcheck_lang') && g:vimchant_spellcheck_lang != ''
+		let lang = 'LANG='.split(g:vimchant_spellcheck_lang)[0].' '
+	else
+		let lang = ''
+	endif
+
 	call clearmatches()
 
 	let line = line('w0')
@@ -89,12 +95,44 @@ function! s:CheckSpelling() "{{{1
 
 	let content_string = substitute(content_string,'\v\s[[:punct:]]*''(\k)',' \1','g')
 	let content_string = substitute(content_string,'\v(\k)''[[:punct:]]*\s','\1 ','g')
-	let spelling_errors = split(system(s:spellcheck_prg,content_string))
-	for word in spelling_errors
+	let spelling_errors = system(lang.s:spellcheck_prg,content_string)
+	if v:shell_error != 0
+		if spelling_errors =~ '\cCouldn''t create a dictionary for'
+			call s:SpellCheckSwitch('Off',1)
+			echohl WarningMsg
+			echo 'No dictionary available for language "'.substitute(lang,'\v\C^LANG\=(\S*)\s*$','\1','').
+						\'". Spell-checking turned off.'
+			echohl None
+		else
+			call s:SpellCheckSwitch('Off',1)
+			echohl ErrorMsg
+			echo 'Error in executing spell-checking program. Spell-checking turned off.'
+			echohl None
+		endif
+		return 1
+	endif
+	for word in split(spelling_errors)
 		call matchadd(s:match_group,'\V\C\<'.word.'\>')
 	endfor
 	if &term != 'builtin_gui'
 		redraw!
+	endif
+	return 0
+endfunction
+
+function! s:RemoveAutoCmds(buffer) "{{{1
+	call clearmatches()
+	execute 'autocmd! VimchantSpellCheck * <buffer='.a:buffer.'>'
+endfunction
+
+function! s:ChangeLanguage() "{{{1
+	echohl Question
+	let b:vimchant_spellcheck_lang = input('Language code: ',
+				\(exists('b:vimchant_spellcheck_lang') && b:vimchant_spellcheck_lang != '') ?
+				\split(b:vimchant_spellcheck_lang)[0] : '')
+	echohl None
+	if b:vimchant_spellcheck_lang != ''
+		let b:vimchant_spellcheck_lang = split(b:vimchant_spellcheck_lang)[0]
 	endif
 endfunction
 
@@ -106,9 +144,13 @@ if !exists(':VimchantSpellCheckOn') && !exists(':VimchantSpellCheckOff')
 endif
 
 nnoremap <silent> <Plug>VimchantSpellCheckSwitch :call <SID>SpellCheckSwitch('Switch')<CR>
+nnoremap <silent> <Plug>VimchantChangeLanguage :call <SID>ChangeLanguage()<CR>
 
 if maparg('<Leader>ss') == '' && !hasmapto('<Plug>VimchantSpellCheckSwitch')
 	nmap <Leader>ss <Plug>VimchantSpellCheckSwitch
+endif
+if maparg('<Leader>sl') == '' && !hasmapto('<Plug>VimchantChangeLanguage')
+	nmap <Leader>sl <Plug>VimchantChangeLanguage
 endif
 
 " {{{1 The End
