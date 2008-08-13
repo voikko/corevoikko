@@ -24,8 +24,8 @@ The spell-checker can be turned on and off with the following ex commands:
 
 There are also two keymappings available in normal mode:
 
-        <Leader>ss      Spell-checker on/off
-        <Leader>sl      Change the language (prompt for language code)
+        <Leader>ss      Spell-checking on/off
+        <Leader>sl      Change the language (prompts for language code)
 
 By default, <Leader> is the backslash key but it can be configured with 
 g:mapleader variable. Consult the Vim reference manual for more information on 
@@ -45,7 +45,7 @@ Keymaps ~
 
 The default keymaps <Leader>ss and <Leader>sl are available only if they have 
 not been taken by some other plugin or defined by user. You can always bind 
-them to another key or key combination with Vim's |:map| commands. For 
+them to other keys or key combinations with Vim's |:map| commands. For 
 example, you could put these lines to your ~/.vimrc file:
 >
         nmap <F7> <Plug>VimchantSpellCheckSwitch
@@ -56,8 +56,8 @@ This would make <F7> the switching key and <F8> the language selector key.
 
 Update interval ~
 
-When the spell-checker is turned on the check is run once every time user has  
-stopped moving the cursor and editing text. There's a short interval period 
+When the spell-checker is turned on the check is run every time when user 
+stops moving the cursor and editing text. There's a short interval period 
 which is determined by 'updatetime' option. It's 4000 milliseconds (i.e., 
 4 seconds) by default but you might want to reduce the value a bit so that the 
 spell-checker responds faster. For example, you could add the following line 
@@ -69,9 +69,9 @@ to your ~/.vimrc file:
 Language ~
 
 The LANG environment variable in GNU/Linux systems determines the default 
-language used in spell-checking. For spell-checking other languages there are 
-two options. First, you can define a global Vim variable and put the preferred 
-language code there:
+language used in spell-checking. Apart from changing the LANG variable there 
+are two options for configuring languages from Vim. First, you can define 
+a global Vim variable and put the preferred language code there:
 >
         let g:vimchant_spellcheck_lang = 'fi'
 
@@ -80,18 +80,17 @@ You can also use local to buffer variables, for example:
         let b:vimchant_spellcheck_lang = 'en'
 
 As the names suggest, global variable has global effect (all buffers) and 
-local variables have local effect (current buffer). If set and not empty local 
-variables take preference over other settings; the global variable takes 
+local variables have local effect (current buffer). Local variables (if set 
+and not empty) take preference over other settings; the global variable takes 
 preference over the LANG environment variable.
 
-Note: The <Leader>sl keymap which was explained before actually just changes 
-the local to buffer variable. It's provided for quick and convenient language 
-switching.
+Note: The <Leader>sl keymap actually just changes the local to buffer 
+variable. It's provided for quick and convenient language switching.
 
 
 Highlight ~
 
-Mispelled words are highlighted with the same highlight color group which the 
+Misspelled words are highlighted with the same highlight color group which the 
 Vim's internal spell-checker uses. The group is called "SpellBad". If you are 
 unhappy with the default colors you can change them with |:highlight| command. 
 An example:
