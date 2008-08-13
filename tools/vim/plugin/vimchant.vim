@@ -12,9 +12,17 @@ set cpo&vim
 
 let s:spellcheck_prg = 'enchant -l'
 
-let s:match_group = 'SpellBad'
-if !hlexists(s:match_group)
-	execute 'highlight '.s:match_group.' term=reverse ctermbg=Red gui=undercurl guisp=Red'
+if !hlexists('SpellBad')
+	highlight SpellBad term=reverse ctermbg=1 gui=undercurl guisp=Red
+endif
+if !hlexists('ErrorMsg')
+	highlight ErrorMsg term=standout cterm=bold ctermfg=7 ctermbg=1 guifg=White guibg=Red
+endif
+if !hlexists('WarningMsg')
+	highlight WarningMsg term=standout cterm=bold ctermfg=1 guifg=Red
+endif
+if !hlexists('Question')
+	highlight Question term=standout cterm=bold ctermfg=2 gui=bold guifg=Green
 endif
 
 function! s:SpellCheckSwitch(switch, ...) "{{{1
@@ -112,7 +120,7 @@ function! s:CheckSpelling() "{{{1
 		return 1
 	endif
 	for word in split(spelling_errors)
-		call matchadd(s:match_group,'\V\C\<'.word.'\>')
+		call matchadd('SpellBad','\V\C\<'.word.'\>')
 	endfor
 	if &term != 'builtin_gui'
 		redraw!
