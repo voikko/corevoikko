@@ -74,10 +74,10 @@ endfunction
 function! s:CheckSpelling() "{{{1
 	call clearmatches()
 
-	let line = winsaveview()['topline']
-	let lines = winheight(0)
+	let line = line('w0')
+	let last_line = line('w$')
 	let content_string = ' '
-	while lines > 0 && line <= line('$')
+	while line <= last_line
 		let fold_end = foldclosedend(line)
 		if fold_end > 0
 			let line = fold_end
@@ -85,7 +85,6 @@ function! s:CheckSpelling() "{{{1
 			let content_string .= getline(line).' '
 		endif
 		let line += 1
-		let lines -= 1
 	endwhile
 
 	let content_string = substitute(content_string,'\v\s[[:punct:]]*''(\k)',' \1','g')
