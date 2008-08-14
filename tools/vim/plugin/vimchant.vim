@@ -70,9 +70,7 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 			let &l:isk = b:vimchant_spellcheck_save_isk
 			unlet b:vimchant_spellcheck_save_isk
 		endif
-		if &term != 'builtin_gui'
-			redraw!
-		endif
+		if &term != 'builtin_gui' | redraw! | endif
 		if !silence | echo 'Spell-checking turned off' | endif
 	endif
 endfunction
@@ -122,9 +120,7 @@ function! s:CheckSpelling() "{{{1
 	for word in split(spelling_errors)
 		call matchadd('SpellBad','\V\C\<'.word.'\>')
 	endfor
-	if &term != 'builtin_gui'
-		redraw!
-	endif
+	if &term != 'builtin_gui' | redraw! | endif
 	return 0
 endfunction
 

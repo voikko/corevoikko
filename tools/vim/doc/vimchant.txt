@@ -63,7 +63,7 @@ which is determined by 'updatetime' option. It's 4000 milliseconds (i.e.,
 spell-checker responds faster. For example, you could add the following line 
 to your ~/.vimrc file:
 >
-        set updatetime=1000
+        set updatetime=500
 
 
 Language ~
