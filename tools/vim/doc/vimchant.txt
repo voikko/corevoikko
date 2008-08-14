@@ -77,9 +77,9 @@ a global Vim variable and put the preferred language code there:
 
 You can also use local to buffer variables, for example:
 >
-        let b:vimchant_spellcheck_lang = 'en'
+        let b:vimchant_spellcheck_lang = 'en_GB'
 
-As the names suggest, global variable has global effect (all buffers) and 
+As the names suggest, the global variable has global effect (all buffers) and 
 local variables have local effect (current buffer). Local variables (if set 
 and not empty) take preference over other settings; the global variable takes 
 preference over the LANG environment variable.
