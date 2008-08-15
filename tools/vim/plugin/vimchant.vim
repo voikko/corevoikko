@@ -4,9 +4,16 @@
 " License:	Public domain
 
 " {{{1 The Beginning
-if &compatible || v:version < 700 || !executable('enchant') || exists('g:loaded_vimchant')
+if &compatible || !executable('enchant') || exists('g:loaded_vimchant')
 	finish
 endif
+if v:version < 701 || (v:version == 701 && !has('patch040'))
+	echohl WarningMsg
+	echo 'Vimchant spell-checker plugin requires Vim version 7.1.040 or later. Sorry.'
+	echohl None
+	finish
+endif
+
 let s:save_cpo = &cpo
 set cpo&vim
 
