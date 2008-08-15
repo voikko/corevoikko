@@ -89,7 +89,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
-                             "maa", "meri", "mäki", "niemi", "saari",
+                             "maa", "meri", "mäki", "niemi", "polku", "saari",
                              "tie", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
@@ -2492,6 +2492,15 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (varas in $tietue.jatko) then
     choose $i in vieras ($tietue, A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+A($tietue)+"hit", "k"+A($tietue)+"h", "k"+A($tietue));
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (maineikas in $tietue.jatko) then
+    choose $i in maineikas ($tietue, "ik"+A($tietue)+"s", "hik"+A($tietue)+"s", "ikk"+A($tietue)+A($tietue), "hikk"+A($tietue)+A($tietue), "ikk"+A($tietue)+"h"+A($tietue), "hikk"+A($tietue)+"h"+A($tietue), "ikk"+A($tietue), "hikk"+A($tietue), "ikk"+U($tietue), "hikk"+U($tietue), "ikk"+A($tietue)+"is"+U($tietue), "hikk"+A($tietue)+"is"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -9114,7 +9123,7 @@ subrule punainen ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_mAinen: <<$param05, <>>, <$param06, <>>>,
                          johdin_tOn: <<$param03, <>>, <$param04, <>>>,
                          johdin_UUs: <<$param05, <>>, <$param06, <>>>,
-                         loppu: <<$param05, <>>>,
+                         loppu: <<$param05, <>>, <$param06, <>>>,
                          tavuviiva: <<$param05, <>>, <$param06, <>>>,
                          yhdyssana: <<$param05, <>>, <$param06, <>>>]);
 end;
@@ -9290,6 +9299,50 @@ subrule iäkäs ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_Us: <<$param05, <>>, <$param06, <ei_voikko>>>,
                          tavuviiva: <<$param01, <>>>,
                          yhdyssana: <<$param01, <>>>]);
+end;
+subrule maineikas ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $param08, $param09, $param10, $param11, $param12):
+  return taivutuskaava ($tietue,
+                        [nimentö: <<$param01, <>>, <$param02, <>>>,
+                         omistusliite: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         omanto_n: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         osanto_tA: <<$param01, <>>, <$param02, <>>>,
+                         olento_nA: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>, <$param01, <>>, <$param02, <>>>,
+                         tulento_ksi: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         sisäolento_ssA: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         sisäeronto_stA: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         sisätulento_seen: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         ulko_olento_llA: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         ulkoeronto_ltA: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         ulkotulento_lle: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         vajanto_ttA: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         nimentö_t: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         omanto_iT: <<$param07, <>>, <$param08, <>>>,
+                         omanto_ten: <<$param01, <>>, <$param02, <>>>,
+                         osanto_itA: <<$param07, <>>, <$param08, <>>>,
+                         olento_inA: <<$param07, <>>, <$param08, <>>>,
+                         tulento_iksi: <<$param07, <>>, <$param08, <>>>,
+                         sisäolento_issA: <<$param07, <>>, <$param08, <>>>,
+                         sisäeronto_istA: <<$param07, <>>, <$param08, <>>>,
+                         sisätulento_isiin: <<$param07, <>>, <$param08, <>>>,
+                         sisätulento_ihin: <<$param07, <>>, <$param08, <>>>,
+                         ulko_olento_illA: <<$param07, <>>, <$param08, <>>>,
+                         ulkoeronto_iltA: <<$param07, <>>, <$param08, <>>>,
+                         ulkotulento_ille: <<$param07, <>>, <$param08, <>>>,
+                         vajanto_ittA: <<$param07, <>>, <$param08, <>>>,
+                         seuranto_ine: <<$param07, <>>, <$param08, <>>>,
+                         keinonto_in: <<$param07, <>>, <$param08, <>>>,
+                         kerronto_sti: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         voittoaste: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         yliaste: <<$param07, <>>, <$param08, <>>>,
+                         johdin_inen: <<$param07, <>>, <$param08, <>>>,
+                         johdin_ittain: <<$param07, <>>, <$param08, <>>>,
+                         johdin_lAinen: <<$param01, <>>, <$param02, <>>>,
+                         johdin_llinen: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         johdin_mAinen: <<$param01, <>>, <$param02, <>>>,
+                         johdin_tOn: <<$param03, <>>, <$param04, <>>, <$param05, <>>, <$param06, <>>>,
+                         johdin_Us: <<$param09, <>>, <$param10, <>>, <$param11, <>>, <$param12, <>>>,
+                         tavuviiva: <<$param01, <>>, <$param02, <>>>,
+                         yhdyssana: <<$param01, <>>, <$param02, <>>>]);
 end;
 subrule utelias ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,

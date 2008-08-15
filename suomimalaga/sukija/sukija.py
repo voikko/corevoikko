@@ -45,7 +45,15 @@ historical = [
 			  (None,u'(..*C)itio',u'traditio'),
 			  (None,u'(.*)ktio',u'funktio'),
 			  (None,u'(.*)',u'autio')]),
-        (u'banaali',  u'sw', [(None,u'(..*a)di',u'balladi'),
+        (u'banaali',  u'sw', [(None,u'(..*[^aeouyäö]o)di',u'symboli_di'),
+			      (None,u'(..*[^aeouyäö]o)fi',u'symboli_fi'),
+			      (None,u'(..*[^aeouyäö]o)gi',u'symboli_gi'),
+			      (None,u'(..*[^aeouyäö]o)li',u'symboli_li'),
+			      (None,u'(..*[^aeouyäö]o)mi',u'symboli_mi'),
+			      (None,u'(..*[^aeouyäö]o)ni',u'symboli_ni'),
+			      (None,u'(..*[^aeouyäö]o)ri',u'symboli_ri'),
+			      (None,u'(..*[^aeouyäö]o)vi',u'symboli_vi'),
+			      (None,u'(..*a)di',u'balladi'),
 			      (None,u'(.*)i',u'banaali'),
                               (u'nt',u'(.*n)ti',u'hollanti'),
 			      (u'nk',u'(.*n)ki',u'killinki'),
@@ -56,7 +64,8 @@ historical = [
         (u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
         (u'haastaa', u'sw', [(None,u'(.*C)AA',u'haastaa')]),
 	(u'hohtaa',  u'sw', [(u'tt',u'(.*t)tAA',u'heittää')]),
-	(u'iäkäs',   u'ws', [(u'k',u'(.*k)As',u'iäkäs')]),
+	(u'iäkäs',   u'ws', [(u'k',u'(.*[mntv]e)ikAs',u'maineikas'),
+			     (u'k',u'(.*k)As',u'iäkäs')]),
         (u'kaihtaa', u'sw', [(u't',u'(.*)tAA',u'kaihtaa')]),
 	(u'kaivaa',     u'sw', [(None,u'(.*aj)AA',u'ajaa')]),
         (u'kantaja', u'-', [(None,u'(.*)jA',u'kantaja')]),
@@ -99,10 +108,26 @@ historical = [
         (u'paistaa', u'sw', [(None,u'(.*C)AA',u'paistaa')]),
         (u'palata', u'ws', [(None,u'(.*)AtA',u'palata')]),
         (u'palaa', u'ws', [(None,u'(.*C)AA',u'palaa')]),
-        (u'paperi',  u'sw', [(None,u'(..*a)di',u'balladi')]),
+        (u'paperi',  u'sw', [(None,u'(..*[^aeouyäö]o)di',u'symboli_di'),
+			     (None,u'(..*[^aeouyäö]o)fi',u'symboli_fi'),
+			     (None,u'(..*[^aeouyäö]o)gi',u'symboli_gi'),
+			     (None,u'(..*[^aeouyäö]o)li',u'symboli_li'),
+			     (None,u'(..*[^aeouyäö]o)mi',u'symboli_mi'),
+			     (None,u'(..*[^aeouyäö]o)ni',u'symboli_ni'),
+			     (None,u'(..*[^aeouyäö]o)ri',u'symboli_ri'),
+			     (None,u'(..*[^aeouyäö]o)vi',u'symboli_vi'),
+			     (None,u'(..*a)di',u'balladi')]),
         (u'pasuuna', u'sw', [(None,u'(.*)A',u'pasuuna')]),
 	(u'punoa',   u'sw', [(u't',u'(...*AU)tUA',u'antautua')]),
-        (u'risti',   u'sw', [(None,u'(..*gra)fi',u'biografi'),
+        (u'risti',   u'sw', [(None,u'(..*[^aeouyäö]o)di',u'telefoni_di'),
+			     (None,u'(..*[^aeouyäö]o)fi',u'telefoni_fi'),
+			     (None,u'(..*[^aeouyäö]o)gi',u'telefoni_gi'),
+			     (None,u'(..*[^aeouyäö]o)li',u'telefoni_li'),
+			     (None,u'(..*[^aeouyäö]o)mi',u'telefoni_mi'),
+			     (None,u'(..*[^aeouyäö]o)ni',u'telefoni_ni'),
+			     (None,u'(..*[^aeouyäö]o)ri',u'telefoni_ri'),
+			     (None,u'(..*[^aeouyäö]o)vi',u'telefoni_vi'),
+		             (None,u'(..*gra)fi',u'biografi'),
 			     (None, u'(..*a)di',u'marinadi')]),
         (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
 	(u'sydän', u'-', [(None,u'(.*A)n',u'sydän')]),
@@ -480,49 +505,19 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 				alku2 = alku + u"i"  # Hevonen => hevoinen.
 			jatko2 = jatko
 			wordform2 = alku2 + u"nen"
-##			if (wordform[-4] == u"i"):
-##				alku = wordform[:-4]    # Keltainen => keltanen.
-##				jatko = u"punainen"
-##			else:
-##				jatko = u"hevoinen"
+#			if (wordform[-4] == u"i"):
+#				alku = wordform[:-4]    # Keltainen => keltanen.
+#				jatko = u"punainen"
+#			else:
+#				jatko = u"hevoinen"
 ####			print (u"Keltainen " + wordform + u" " + alku + u" " + jatko)
 		#
 		# Korjataan alku- ja jatko-kenttien arvoja.
 		#
 		elif (jatko == u"rakentaa"):
+#		if (jatko == u"rakentaa"):
 			alku = wordform[:-4]
-#		elif ((nsyl > 2) and (jatko == u"vastaus") and
-#		      (rx != None) and (d != None) and ((d['aivoitus'] != None) or (d['jaotus'] != None))):
-#			#
-#			# Aivoitus => aivotus. Jaotus => jaoitus.
-#			#
-#			if (d['aivoitus'] != None):
-#				alku2 = wordform[:-4] + wordform[-3:-1]           # Aivoitus => aivotus.
-#			else:
-#				alku2 = wordform[:-3] + u"i" + wordform[-3:-1]    # Jaotus => jaoitus.
-#			jatko2 = jatko
-#			wordform2 = alku2 + wordform[-1:]
-##			print(u"J " + wordform2 + u" " + alku2 + u" " + s + u"\n")
-		elif ((nsyl > 2) and (rx != None) and (d != None) and (d['symboli_ym'] != None) and
-		      (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"])):
-			#
-			# Symbo(o)li, ato(o)mi, unio(o)ni, teno(o)ri, alko(o)vi, aplo(o)di,
-			# pedago(o)gi, psykolo(o)gi, filoso(o)fi, katastro(o)fi, mutta ei esim. koni => kooni.
-			#
-			alku = wordform[:-2]
-			jatko = jatko_x (wordform, jatko, (u'telefoni_' + wordform[-2:]), (u'symboli_' + wordform[-2:]),
-					 (jatko == u'risti'), (jatko in [u'paperi', u'banaali']))
-#			print (u'Ö ' + wordform + u' ' + jatko)
-		elif ((jatko == u"iäkäs") and (malaga_word_class in [u"nimi_laatusana", u"laatusana"]) and
-		      (nsyl == 3) and (rx != None) and (d != None) and (d['maineikas'] != None)):
-			#
-			# Maineikas => mainehikas.
-			#
-			alku3 = wordform[:-4] + u"hik"
-			wordform3 = alku3 + wordform[-2:]
-			jatko3 = jatko
-#			print ("Huuhaa " + wordform + u" " + wordform3 + u" " + alku3 + u"\n");
-		
+
 		# Tulostetaan.
 
 #		print(u"Word   " + wordform + u"\n")

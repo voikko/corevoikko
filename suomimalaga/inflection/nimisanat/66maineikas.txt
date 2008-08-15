@@ -1,0 +1,240 @@
+# Suomi-malaga, suomen kielen muoto-opin kuvaus.
+#
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+#
+# Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
+# edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
+# ehtojen mukaan sellaisina kuin Free Software Foundation
+# on ne julkaissut; joko Lisenssin version 2, tai (valinnan
+# mukaan) minkä tahansa myöhemmän version mukaisesti.
+#
+# Tätä ohjelmaa levitetään siinä toivossa, että se olisi
+# hyödyllinen, mutta ilman mitään takuuta; ilman edes
+# hiljaista takuuta kaupallisesti hyväksyttävästä laadusta tai
+# soveltuvuudesta tiettyyn tarkoitukseen. Katso GPL
+# lisenssistä lisää yksityiskohtia.
+#
+# Tämän ohjelman mukana pitäisi tulla kopio GPL
+# lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
+# Software Foundation Inc., 59 Temple Place - Suite 330,
+# Boston, MA 02111-1307, USA.
+#
+# Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
+# muihin moduuleihin on ohjelmaan perustuvan teoksen
+# tekemistä, joka on siis GPL lisenssin ehtojen alainen.
+#
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to the
+# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
+# 02111-1307 USA.
+#
+# Linking this program statically or dynamically with other modules is
+# making a combined work based on this program.  Thus, the terms and
+# conditions of the GNU General Public License cover the whole
+# combination.
+
+
+nimentö
+          maine+ikas+
+          maine+hikas+
+
+omistusliite
+          maine+ikkaa+ni
+          maine+hikkaa+ni
+          maine+ikkaha+ni
+          maine+hikkaha+ni
+
+omanto_n
+          maine+ikkaa+n
+          maine+hikkaa+n
+          maine+ikkaha+n
+          maine+hikkaha+n
+
+osanto_tA
+          maine+ikas+ta
+          maine+hikas+ta
+
+olento_nA
+          maine+ikkaa+na
+          maine+hikkaa+na
+          maine+ikkaha+na
+          maine+hikkaha+na
+          maine+ikas+na
+          maine+hikas+na
+
+tulento_ksi
+          maine+ikkaa+ksi
+          maine+hikkaa+ksi
+          maine+ikkaha+ksi
+          maine+hikkaha+ksi
+
+sisäolento_ssA
+          maine+ikkaa+ssa
+          maine+hikkaa+ssa
+          maine+ikkaha+ssa
+          maine+hikkaha+ssa
+
+sisäeronto_stA
+          maine+ikkaa+sta
+          maine+hikkaa+sta
+          maine+ikkaha+sta
+          maine+hikkaha+sta
+
+sisätulento_seen
+          maine+ikkaa+seen
+          maine+hikkaa+seen
+          maine+ikkaha+seen
+          maine+hikkaha+seen
+
+ulko_olento_llA
+          maine+ikkaa+lla
+          maine+hikkaa+lla
+          maine+ikkaha+lla
+          maine+hikkaha+lla
+
+ulkoeronto_ltA
+          maine+ikkaa+lta
+          maine+hikkaa+lta
+          maine+ikkaha+lta
+          maine+hikkaha+lta
+
+ulkotulento_lle
+          maine+ikkaa+lle
+          maine+hikkaa+lle
+          maine+ikkaha+lle
+          maine+hikkaha+lle
+
+vajanto_ttA
+          maine+ikkaa+tta
+          maine+hikkaa+tta
+          maine+ikkaha+tta
+          maine+hikkaha+tta
+
+nimentö_t
+          maine+ikkaa+t
+          maine+hikkaa+t
+          maine+ikkaha+t
+          maine+hikkaha+t
+
+omanto_iT
+          maine+ikka+iden
+          maine+hikka+iden
+          maine+ikka+itten
+          maine+hikka+itten
+
+omanto_ten
+          maine+ikas+ten
+          maine+hikas+ten
+
+osanto_itA
+          maine+ikka+ita
+          maine+hikka+ita
+
+olento_inA
+          maine+ikka+ina
+          maine+hikka+ina
+
+tulento_iksi
+          maine+ikka+iksi
+          maine+hikka+iksi
+
+sisäolento_issA
+          maine+ikka+issa
+          maine+hikka+issa
+
+sisäeronto_istA
+          maine+ikka+ista
+          maine+hikka+ista
+
+sisätulento_isiin
+          maine+ikka+isiin
+          maine+hikka+isiin
+
+sisätulento_ihin
+          maine+ikka+ihin
+          maine+hikka+ihin
+
+ulko_olento_illA
+          maine+ikka+illa
+          maine+hikka+illa
+
+ulkoeronto_iltA
+          maine+ikka+ilta
+          maine+hikka+ilta
+
+ulkotulento_ille
+          maine+ikka+ille
+          maine+hikka+ille
+
+vajanto_ittA
+          maine+ikka+itta
+          maine+hikka+itta
+
+seuranto_ine
+          maine+ikka+ine
+          maine+hikka+ine
+
+keinonto_in
+          maine+ikka+in
+          maine+hikka+in
+
+kerronto_sti
+          maine+ikkaa+sti
+          maine+hikkaa+sti
+          maine+ikkaha+sti
+          maine+hikkaha+sti
+
+voittoaste
+          maine+ikkaa+mpi
+          maine+hikkaa+mpi
+          maine+ikkaha+mpi
+          maine+hikkaha+mpi
+
+yliaste
+          maine+ikka+in
+          maine+hikka+in
+
+johdin_inen
+          +ikka+inen
+          +hikka+inen
+
+johdin_ittain
+          +ikka+ittain
+          +hikka+ittain
+
+johdin_lAinen
+          +ikas+lainen
+          +hikas+lainen
+
+johdin_llinen
+          +ikkaa+llinen
+          +hikkaa+llinen
+          +ikkaha+llinen
+          +hikkaha+llinen
+
+johdin_mAinen
+          +ikas+mainen
+          +hikas+mainen
+
+johdin_tOn
+          +ikkaa+ton
+          +hikkaa+ton
+          +ikkaha+ton
+          +hikkaha+ton
+
+johdin_Us
+          maine+ikku+us
+          maine+hikku+us
+          maine+ikkaisu+us
+          maine+hikkaisu+us

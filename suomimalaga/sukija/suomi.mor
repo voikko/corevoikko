@@ -1461,6 +1461,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"terve">,     <"yty">>,
       <<"terä">,      <"sportti">>,
       <<"tie">,       <"naukaista", "tee", "tie", "toinen", "tokko">>,
+      <<"tieto">,     <"turpa">>,  # Tietoturvan ei ole tieto+turpa.
       <<"tiu">,       <"kimma">>,
       <<"tois">,      <"tapa">>,
       <<"toivo">,     <"malla">>,
@@ -1468,9 +1469,10 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"tove">,      <"re", "reisi">>,
       <<"ttu">,       <"nakki">>,
       <<"ttu", "tu">, <"valta">>,
-      <<"tu">,        <"vasta">>,   # Vilkais+tu+vasta.
+      <<"tu">,        <"anne", "vasta">>,   # Esim. vilkais+tu+anne, vilkais+tu+vasta.
       <<"täti">,      <"lanne">>,
       <<"ulko">,      <"naida", "nainen">>,
+      <<"ulkonen">,   <"uoma">>,
       <<"ulos">,      <"pää", "tavi", "tuma", "tupa", "tuttava">>,
       <<"ura">,       <"naukaista">>,  # Ura+naukaisija.
       <<"us">,        <"Neuvonen">>,
@@ -1548,13 +1550,14 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"oma">,       <"tunto">,  <"vapa">>,
       <<"oppi">,      <"n">,      <"ioni">>,
       <<"palaa">,     <"va">,     <"kivi">>,    # Pala+va+kivi.
-      <<"para">,      <"n">,      <"tola">>,
-      <<"pari">,      <"inen">,   <"hissa">>,
-      <<"pari">,      <"inen">,   <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
-      <<"suoda">,     <"ma">,     <"lainen", "laismainen", "laki">>,  # Suo+ma+lainen, suo+ma+laista (laki).
-      <<"tukka">,     <"nuotta">, <"silla">>,
-      <<"us">,        <"n">,      <"amme">>,   # Esim. takoit+ukse+n+amme (ukse == johdin_Us).
-      <<"väsky">,     <"n">,      <"yö">>               # Väsky+n+öitä.
+      <<"para", "ravi">, <"n">,      <"tola">>,
+      <<"pari">,         <"inen">,   <"hissa">>,
+      <<"pari">,         <"inen">,   <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
+      <<"suoda">,        <"ma">,     <"lainen", "laismainen", "laki">>,  # Suo+ma+lainen, suo+ma+laista (laki).
+      <<"tukka">,        <"nuotta">, <"silla">>,
+      <<"ulko">,         <"ravinto">, <"laaki">>,  # Ulko+ravinto+laakin.
+      <<"us">,           <"n">,       <"amme">>,   # Esim. takoit+ukse+n+amme (ukse == johdin_Us).
+      <<"väsky">,        <"n">,       <"yö">>      # Väsky+n+öitä.
   >;
 
   foreach $k in $taulukko:
@@ -2258,6 +2261,12 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $n):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
+#    if ($vasen.($n-1).luokka in <etunimi, sukunimi>) then
+#      result $res, rules johdettu_etunimi;
+#    elseif ($vasen.($n-1).luokka = paikannimi) then
+#      result $res, rules johdettu_paikannimi;
+#    end;
+#    result $res, rules yhdysmerkki_erisnimen_jälkeen;
     result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi, johdettu_etunimi;
   else
     if omistusliite in $oikea.jatko then

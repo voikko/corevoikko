@@ -972,6 +972,17 @@ define @jatko_y3 := <liitesana, loppu>;
 [alku: "täkö",    luokka: käskytapa_tA, tekijä: 4, äs: ä,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
+# Vanhoja h:llisia muotoja.
+[alku: "ttakohon", luokka: käskytapa_ttA, tekijä: 4, äs: a,
+                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä, tiedot: <murre>];
+[alku: "ttäköhön", luokka: käskytapa_ttA, tekijä: 4, äs: ä,
+                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä, tiedot: <murre>];
+[alku: "takohon",  luokka: käskytapa_tA, tekijä: 4, äs: a,
+                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä, tiedot: <murre>];
+[alku: "täköhön",  luokka: käskytapa_tA, tekijä: 4, äs: ä,
+                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä, tiedot: <murre>];
+
+
 [alku: "ko", luokka: käskytapa_kielto, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 [alku: "kö", luokka: käskytapa_kielto, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 

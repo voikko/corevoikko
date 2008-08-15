@@ -680,6 +680,7 @@ vieras;     # => vieraus
   kangas;
   kinnas;
   laupias;  # => laupeus
+  maineikas; # Myös mainehikas.
   paras;
   ratas;
   saapas;

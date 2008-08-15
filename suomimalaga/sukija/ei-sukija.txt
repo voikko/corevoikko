@@ -120,6 +120,7 @@ itkettynyt
 itkettyä
 itsesäätyvä
 Jalo
+jaotus
 Japani
 julkishallinto
 julkissektori
@@ -200,6 +201,7 @@ Kokkari
 kokoontuma
 kokoutuma
 Kolari
+Koli
 kolhiutuma
 Koppelo
 koroitus
