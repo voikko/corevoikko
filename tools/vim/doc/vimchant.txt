@@ -1,4 +1,4 @@
-*vimchant.txt*          Vimchant - spell-checker plugin             2008-08-13
+*vimchant.txt*          Vimchant - spell-checker plugin             2008-08-16
 
 
 Description     Vimchant is a simple but efficient spell-checker plugin. It's 
@@ -63,7 +63,7 @@ which is determined by 'updatetime' option. It's 4000 milliseconds (i.e.,
 spell-checker responds faster. For example, you could add the following line 
 to your ~/.vimrc file:
 >
-        set updatetime=500
+        set updatetime=1000
 
 
 Language ~
