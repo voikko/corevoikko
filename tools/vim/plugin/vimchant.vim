@@ -4,7 +4,7 @@
 " Maintainer:	Teemu Likonen <tlikonen@iki.fi>
 " License:	Public domain
 "
-" GetLatestVimScripts: 0 0 :AutoInstall: Vimchant
+" GetLatestVimScripts: 2345 1 :AutoInstall: Vimchant
 
 " {{{1 The Beginning
 if &compatible || !executable('enchant') || exists('g:loaded_vimchant')
