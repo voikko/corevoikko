@@ -1,7 +1,10 @@
 " Vimchant - An Enchant-based spell-checker for Vim text editor
 "
+" Version:	0.9 (2008-08-17)
 " Maintainer:	Teemu Likonen <tlikonen@iki.fi>
 " License:	Public domain
+"
+" GetLatestVimScripts: 0 0 :AutoInstall: Vimchant
 
 " {{{1 The Beginning
 if &compatible || !executable('enchant') || exists('g:loaded_vimchant')
