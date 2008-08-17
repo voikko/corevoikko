@@ -1346,6 +1346,7 @@ keimit # geimi
 kokkarit # kokkari
 kolmiointi # kolmioida
 kummarit # kummari
+kusettaja # kusettaa
 käninä # känistä
 lemput # lemppu
 lantsarit # lantsari
@@ -1381,6 +1382,7 @@ profylaktisuus # profylaktinen
 prutkutus # prutkuttaa
 psykologiointi # psykologioida
 pupellus # pupeltaa
+pälätys # pälättää
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
 reteästi # reteä
