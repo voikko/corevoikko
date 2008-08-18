@@ -59,7 +59,7 @@ function! s:SpellCheckSwitch(switch, ...) "{{{1
 		if !exists('b:vimchant_spellcheck_save_isk')
 			let b:vimchant_spellcheck_save_isk = &l:isk
 		endif
-		setlocal isk&
+		setlocal isk=@,48-57,192-255
 		if s:CheckSpelling()
 			" There was an error so don't start autocmds.
 			return
@@ -109,6 +109,7 @@ function! s:CheckSpelling() "{{{1
 		let line += 1
 	endwhile
 
+	let content_string = tr(content_string,'_',' ')
 	let content_string = substitute(content_string,'\v\s[[:punct:]]*''(\k)',' \1','g')
 	let content_string = substitute(content_string,'\v(\k)''[[:punct:]]*\s','\1 ','g')
 	let spelling_errors = system(lang.s:spellcheck_prg,content_string)
