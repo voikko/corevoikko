@@ -75,7 +75,7 @@ a global Vim variable and put the preferred language code there:
 >
         let g:vimchant_spellcheck_lang = 'fi'
 
-You can also use local to buffer variables, for example:
+You can also use local-to-buffer variables, for example:
 >
         let b:vimchant_spellcheck_lang = 'en_GB'
 
@@ -84,7 +84,7 @@ local variables have local effect (current buffer). Local variables (if set
 and not empty) take preference over other settings; the global variable takes 
 preference over the LANG environment variable.
 
-Note: The <Leader>sl keymap actually just changes the local to buffer 
+Note: The <Leader>sl keymap actually just changes the local-to-buffer 
 variable. It's provided for quick and convenient language switching.
 
 
