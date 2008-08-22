@@ -168,8 +168,14 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
-				e->error.startpos = sentence->tokens[i].pos;
-				e->error.errorlen = 1;
+				if (sentence->tokens[i].pos == 0) {
+					e->error.startpos = 0;
+					e->error.errorlen = 1;
+				}
+				else {
+					e->error.startpos = sentence->tokens[i].pos - 1;
+					e->error.errorlen = 2;
+				}
 				gc_cache_append_error(handle, e);
 				continue;
 			}
@@ -180,8 +186,8 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_COMMA;
-				e->error.startpos = sentence->tokens[i+1].pos;
-				e->error.errorlen = 1;
+				e->error.startpos = sentence->tokens[i].pos;
+				e->error.errorlen = 2;
 				gc_cache_append_error(handle, e);
 			}
 			break;

@@ -1,4 +1,4 @@
-.TH VOIKKOGC 1 "2008-08-13"
+.TH VOIKKOGC 1 "2008-08-22"
 .SH NAME
 voikkogc \- test program for Voikko grammar checker
 .SH SYNOPSIS
@@ -25,6 +25,12 @@ is a possibly correct (but probably this and the next identified sentence should
 .BI accept_titles= n
 .br
 Set the value of the specified boolean option.
+.TP
+.BI explanation_language= langcode
+Print human readable error explanation in the specified language.
+.SH BUGS
+Human readable error explanations are printed in UTF-8 regardless of current locale
+settings.
 .SH AUTHOR
 voikkogc and this manual page were written by Harri Pitk\[:a]nen (hatapitk@iki.fi).
 

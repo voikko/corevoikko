@@ -118,7 +118,7 @@ void split_sentences(int handle, const char * line) {
 }
 
 
-void check_grammar(int handle, const char * line) {
+void check_grammar(int handle, const char * line, const char * explanation_language) {
 	size_t len;
 	voikko_grammar_error grammar_error;
 	int skiperrors = 0;
@@ -143,7 +143,12 @@ void check_grammar(int handle, const char * line) {
 			}
 			voikko_free_suggest_cstr(grammar_error.suggestions);
 		}
-		printf("}]\n");
+		printf("}]");
+		if (explanation_language) {
+			printf(" (%s)", voikko_error_message_cstr(
+				grammar_error.error_code, explanation_language));
+		}
+		printf("\n");
 		skiperrors++;
 	}
 }
@@ -180,6 +185,8 @@ int main(int argc, char ** argv) {
 	
 	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
+	char * explanation_language = 0;
+	
 	for (int i = 1; i < argc; i++) {
 		if (strncmp(argv[i], "--tokenize", 10) == 0) {
 			op = TOKENIZE;
@@ -191,6 +198,10 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 1);
 		else if (strcmp(argv[i], "accept_titles=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 0);
+		else if (strncmp(argv[i], "explanation_language=fi", 23) == 0)
+			explanation_language = "fi";
+		else if (strncmp(argv[i], "explanation_language=", 21) == 0)
+			explanation_language = "en";
 	}
 	
 	while (1) {
@@ -207,7 +218,7 @@ int main(int argc, char ** argv) {
 				split_sentences(handle, line);
 				break;
 			case CHECK_GRAMMAR:
-				check_grammar(handle, line);
+				check_grammar(handle, line, explanation_language);
 		}
 	}
 	free(line);
