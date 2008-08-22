@@ -20,7 +20,7 @@
 #include "voikko_defs.h"
 #include "voikko_charset.h"
 #include <stdlib.h>
-#include <ctype.h>
+#include <wctype.h>
 #include <wchar.h>
 
 enum char_type get_char_type(wchar_t c) {
@@ -29,7 +29,7 @@ enum char_type get_char_type(wchar_t c) {
 	           L"\u2010"  /* HYPHEN */
 	           L"\u2011"  /* NON-BREAKING HYPHEN */
 	           , c)) return CHAR_PUNCTUATION;
-	if (isspace(c)) return CHAR_WHITESPACE;
+	if (iswspace(c)) return CHAR_WHITESPACE;
 	if (wcschr(L"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
 	           L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
 	           L"\u00C1"  /* LATIN CAPITAL LETTER A WITH ACUTE */

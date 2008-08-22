@@ -4,6 +4,7 @@
 	  1 character so that they become slightly easier to see.
 	* Add option explanation_language=... to voikkogc for printing
 	  human readable error explanations.
+	* Fix whitespace detection in get_char_type.
 
 2008-08-13 Harri Pitkänen <hatapitk@iki.fi>
 

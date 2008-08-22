@@ -35,7 +35,6 @@
 void print_tokens(int handle, const char * line) {
 	size_t len;
 	const char * lineptr;
-	size_t charlen;
 	mbstate_t mbstate;
 	enum voikko_token_type token_type;
 	size_t tokenchars;
@@ -62,7 +61,7 @@ void print_tokens(int handle, const char * line) {
 				return;
 		}
 		while (tokenchars > 0) {
-			charlen = mbrlen(lineptr, len, &mbstate);
+			size_t charlen = mbrlen(lineptr, len, &mbstate);
 			while (charlen > 0) {
 				putchar(lineptr[0]);
 				lineptr++;
@@ -158,7 +157,6 @@ enum operation {TOKENIZE, SPLIT_SENTENCES, CHECK_GRAMMAR};
 int main(int argc, char ** argv) {
 	size_t bufsize = 10000;
 	char * line;
-	char * encoding;
 	char * path = 0;
 	enum operation op = CHECK_GRAMMAR;
 	int handle;
@@ -181,8 +179,7 @@ int main(int argc, char ** argv) {
 	}
 	
 	setlocale(LC_ALL, "");
-	encoding = nl_langinfo(CODESET);
-	
+	char * encoding = nl_langinfo(CODESET);
 	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
 	char * explanation_language = 0;

@@ -55,7 +55,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 	int end_found = 0;
 	int end_dotword = 0;
 	int end_colon = 0;
-	while (token != TOKEN_NONE && textlen - slen > 0) {
+	while (token != TOKEN_NONE && textlen > slen) {
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
 		token = voikko_next_token_ucs4(handle, text + slen,

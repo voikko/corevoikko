@@ -100,8 +100,6 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 
 enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
                                               size_t * tokenlen) {
-	size_t i;
-	size_t wlen;
 	if (textlen == 0) {
 		*tokenlen = 0;
 		return TOKEN_NONE;
@@ -112,7 +110,7 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, 
 			*tokenlen = word_length(text, textlen);
 			return TOKEN_WORD;
 		case CHAR_WHITESPACE:
-			for (i = 1; i < textlen; i++) {
+			for (size_t i = 1; i < textlen; i++) {
 				if (get_char_type(text[i]) != CHAR_WHITESPACE) {
 					*tokenlen = i;
 					return TOKEN_WHITESPACE;
@@ -126,7 +124,7 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, 
 					*tokenlen = 1;
 					return TOKEN_PUNCTUATION;
 				}
-				wlen = word_length(text + 1, textlen - 1);
+				size_t wlen = word_length(text + 1, textlen - 1);
 				if (wlen == 0) {
 					*tokenlen = 1;
 					return TOKEN_PUNCTUATION;
