@@ -35,7 +35,7 @@ if !hlexists('Question')
 	highlight Question term=standout cterm=bold ctermfg=2 gui=bold guifg=Green
 endif
 
-function! s:SpellCheckSwitch(switch, ...) "{{{1
+function! vimchant#SpellCheckSwitch(switch, ...) "{{{1
 	if a:switch ==? 'on'
 		let switch = 1
 	elseif a:switch ==? 'off'
@@ -115,13 +115,13 @@ function! s:CheckSpelling() "{{{1
 	let spelling_errors = system(lang.s:spellcheck_prg,content_string)
 	if v:shell_error != 0
 		if spelling_errors =~ '\cCouldn''t create a dictionary for'
-			call s:SpellCheckSwitch('Off',1)
+			call vimchant#SpellCheckSwitch('Off',1)
 			echohl WarningMsg
 			echo 'No dictionary available for language "'.substitute(lang,'\v\C^LANG\=(\S*)\s*$','\1','').
 						\'". Spell-checking turned off.'
 			echohl None
 		else
-			call s:SpellCheckSwitch('Off',1)
+			call vimchant#SpellCheckSwitch('Off',1)
 			echohl ErrorMsg
 			echo 'Error in executing spell-checking program. Spell-checking turned off.'
 			echohl None
@@ -140,7 +140,7 @@ function! s:RemoveAutoCmds(buffer) "{{{1
 	execute 'autocmd! VimchantSpellCheck * <buffer='.a:buffer.'>'
 endfunction
 
-function! s:ChangeLanguage() "{{{1
+function! vimchant#ChangeLanguage() "{{{1
 	echohl Question
 	let b:vimchant_spellcheck_lang = input('Language code: ',
 				\(exists('b:vimchant_spellcheck_lang') && b:vimchant_spellcheck_lang != '') ?
@@ -154,12 +154,12 @@ endfunction
 " {{{1 Commands and key mappings
 
 if !exists(':VimchantSpellCheckOn') && !exists(':VimchantSpellCheckOff')
-	command VimchantSpellCheckOn  call s:SpellCheckSwitch('On')
-	command VimchantSpellCheckOff call s:SpellCheckSwitch('Off')
+	command VimchantSpellCheckOn  call vimchant#SpellCheckSwitch('On')
+	command VimchantSpellCheckOff call vimchant#SpellCheckSwitch('Off')
 endif
 
-nnoremap <silent> <Plug>VimchantSpellCheckSwitch :call <SID>SpellCheckSwitch('Switch')<CR>
-nnoremap <silent> <Plug>VimchantChangeLanguage :call <SID>ChangeLanguage()<CR>
+nnoremap <silent> <Plug>VimchantSpellCheckSwitch :call vimchant#SpellCheckSwitch('Switch')<CR>
+nnoremap <silent> <Plug>VimchantChangeLanguage :call vimchant#ChangeLanguage()<CR>
 
 if maparg('<Leader>ss') == '' && !hasmapto('<Plug>VimchantSpellCheckSwitch')
 	nmap <Leader>ss <Plug>VimchantSpellCheckSwitch
