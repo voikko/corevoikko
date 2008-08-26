@@ -489,8 +489,9 @@ risti;
   telefoni_ni;
   telefoni_ri;
   telefoni_vi;
-  marinadi;     # Marina(a)di.
   biografi;     # Biogra(a)fi.
+  marinadi;     # Marina(a)di.
+  pyramidi;     # Pyrami(i)di.
 paperi;
   banaali;
   edam;      # Taipuu kuten paperi tai banaali, mutta sana ei lopu i:hin.

@@ -81,6 +81,7 @@ Hanko
 hapettuma
 harrastua
 harventuma
+haurastua
 hautaus
 heijastuma
 heikentymä
@@ -113,6 +114,7 @@ Ilta
 Indonesia
 innoittua
 institutionalisoitua
+irtauma
 Islanti
 isoäiti
 Italia
@@ -122,6 +124,7 @@ itsesäätyvä
 Jalo
 jaotus
 Japani
+Jukka
 julkishallinto
 julkissektori
 julkistalous
@@ -216,6 +219,7 @@ Kuha
 Kuikka
 Kukka
 Kulho
+kulkeuma
 kuluma
 kumous
 kuntalainen
@@ -225,6 +229,7 @@ kuolleenkoura
 kuolleenmiehenkytkin
 kuorolainen
 Kurki
+kurouma
 Kurppa
 kurssilainen
 Kuru
@@ -272,6 +277,7 @@ Lahti
 Laina
 Laine
 Lappi
+latauma
 latoma
 latomahaka
 latomakone
@@ -281,6 +287,7 @@ laulattaa
 lausuma
 Lehto
 leikkaus
+Leini
 Lemu
 leniniläinen
 lesbolainen
@@ -400,6 +407,7 @@ Palmu
 patoutuma
 Paula
 peitto
+pensastua
 Perho
 perimä
 peräänajo
@@ -634,10 +642,12 @@ vähittäismyymälä
 vähittäismyynti
 väittämä
 Väistö
+väritys
 vääntymä
 väärinkäsitys
 vääristymä
 yhdistymä
+yhteenkasvettuma
 yhtymä
 yliopistolainen
 Ylämaa

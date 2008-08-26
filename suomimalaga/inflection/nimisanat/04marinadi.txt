@@ -46,158 +46,158 @@
 
 
 nimentö
-          marina+di+
-          marina+adi+
+          marin+adi+
+          marin+aadi+
 
 omistusliite
-          marina+di+ni
-          marina+adi+ni
+          marin+adi+ni
+          marin+aadi+ni
 
 omanto_n
-          marina+di+n
-          marina+adi+n
+          marin+adi+n
+          marin+aadi+n
 
 osanto_A
-          marina+di+a
-          marina+adi+a
+          marin+adi+a
+          marin+aadi+a
 
 olento_nA
-          marina+di+na
-          marina+adi+na
+          marin+adi+na
+          marin+aadi+na
 
 tulento_ksi
-          marina+di+ksi
-          marina+adi+ksi
+          marin+adi+ksi
+          marin+aadi+ksi
 
 sisäolento_ssA
-          marina+di+ssa
-          marina+adi+ssa
+          marin+adi+ssa
+          marin+aadi+ssa
 
 sisäeronto_stA
-          marina+di+sta
-          marina+adi+sta
+          marin+adi+sta
+          marin+aadi+sta
 
 sisätulento_Vn
-          marina+di+in
-          marina+adi+in
+          marin+adi+in
+          marin+aadi+in
 
 sisätulento_hVn
-          marina+di+hin  vanha_h
-          marina+adi+hin  vanha_h
+          marin+adi+hin  vanha_h
+          marin+aadi+hin  vanha_h
 
 ulko_olento_llA
-          marina+di+lla
-          marina+adi+lla
+          marin+adi+lla
+          marin+aadi+lla
 
 ulkoeronto_ltA
-          marina+di+lta
-          marina+adi+lta
+          marin+adi+lta
+          marin+aadi+lta
 
 ulkotulento_lle
-          marina+di+lle
-          marina+adi+lle
+          marin+adi+lle
+          marin+aadi+lle
 
 vajanto_ttA
-          marina+di+tta
-          marina+adi+tta
+          marin+adi+tta
+          marin+aadi+tta
 
 nimentö_t
-          marina+di+t
-          marina+adi+t
+          marin+adi+t
+          marin+aadi+t
 
 omanto_en
-          marina+di+en
-          marina+adi+en
+          marin+adi+en
+          marin+aadi+en
 
 omanto_in
-          marina+de+in  ei_voikko
-          marina+ade+in  ei_voikko
+          marin+ade+in  ei_voikko
+          marin+aade+in  ei_voikko
 
 osanto_jA
-          marina+de+ja
-          marina+ade+ja
+          marin+ade+ja
+          marin+aade+ja
 
 olento_inA
-          marina+de+ina
-          marina+ade+ina
+          marin+ade+ina
+          marin+aade+ina
 
 tulento_iksi
-          marina+de+iksi
-          marina+ade+iksi
+          marin+ade+iksi
+          marin+aade+iksi
 
 sisäolento_issA
-          marina+de+issa
-          marina+ade+issa
+          marin+ade+issa
+          marin+aade+issa
 
 sisäeronto_istA
-          marina+de+ista
-          marina+ade+ista
+          marin+ade+ista
+          marin+aade+ista
 
 sisätulento_ihin
-          marina+de+ihin
-          marina+ade+ihin
+          marin+ade+ihin
+          marin+aade+ihin
 
 ulko_olento_illA
-          marina+de+illa
-          marina+ade+illa
+          marin+ade+illa
+          marin+aade+illa
 
 ulkoeronto_iltA
-          marina+de+ilta
-          marina+ade+ilta
+          marin+ade+ilta
+          marin+aade+ilta
 
 ulkotulento_ille
-          marina+de+ille
-          marina+ade+ille
+          marin+ade+ille
+          marin+aade+ille
 
 vajanto_ittA
-          marina+de+itta
-          marina+ade+itta
+          marin+ade+itta
+          marin+aade+itta
 
 seuranto_ine
-          marina+de+ine
-          marina+ade+ine
+          marin+ade+ine
+          marin+aade+ine
 
 keinonto_in
-          marina+de+in
-          marina+ade+in
+          marin+ade+in
+          marin+aade+in
 
 kerronto_sti
-          marina+di+sti
-          marina+adi+sti
+          marin+adi+sti
+          marin+aadi+sti
 
 voittoaste
-          marina+di+mpi
-          marina+adi+mpi
+          marin+adi+mpi
+          marin+aadi+mpi
 
 yliaste
-          marina+de+in
-          marina+ade+in
+          marin+ade+in
+          marin+aade+in
 
 johdin_inen
-          marina+d+inen
-          marina+ad+inen
+          marin+ad+inen
+          marin+aad+inen
 
 johdin_ittain
-          marina+de+ittain
-          marina+ade+ittain
+          marin+ade+ittain
+          marin+aade+ittain
 
 johdin_lAinen
-          marina+di+lainen
-          marina+adi+lainen
+          marin+adi+lainen
+          marin+aadi+lainen
 
 johdin_llinen
-          marina+di+llinen
-          marina+adi+llinen
+          marin+adi+llinen
+          marin+aadi+llinen
 
 johdin_mAinen
-          marina+di+mainen
-          marina+adi+mainen
+          marin+adi+mainen
+          marin+aadi+mainen
 
 johdin_tOn
-          marina+di+ton
-          marina+adi+ton
+          marin+adi+ton
+          marin+aadi+ton
 
 johdin_Us
-          marina+di+us
-          marina+adi+us
+          marin+adi+us
+          marin+aadi+us
 

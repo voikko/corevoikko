@@ -89,7 +89,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
-                             "maa", "meri", "mäki", "niemi", "polku", "saari",
+                             "maa", "meri", "mäki", "niemi", "polku", "saari", "selkä",
                              "tie", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
@@ -109,7 +109,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä">) then
+  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä", "tavi">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else

@@ -273,7 +273,7 @@
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "uudis", alku: "uudis", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_ysj>];
-[perusmuoto: "uusio", alku: "uusio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "uusio", alku: "uusio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "vaivais", alku: "vaivais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "valko", alku: "valko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "vammais", alku: "vammais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];

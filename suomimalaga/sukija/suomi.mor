@@ -1288,6 +1288,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"apu">,             <"olka">>,
       <<"arja">,            <"lainen">>,
       <<"aro">,             <"matti", "misu">>,
+      <<"arvo">,            <"istua">>,          # Arvo+istuma.
       <<"ase">,             <"maata">>,          # Ase+makaa+va.
       <<"askar">,           <"re">>,
       <<"auki">,            <"naida", "nainen", "naisinen", "olla", "olo">>,
@@ -1432,6 +1433,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"rauni">,     <"ottaa">>,      # Rauni+ota.
       <<"re">,        <"aktio", "väkä">>,
       <<"reva">,      <"niksi">>,
+      <<"risti">,     <"kuulustella">>,
       <<"romani">,    <"alainen">>,
       <<"rondo">,     <"letto">>,
       <<"rusi">,      <"koi", "noita">>,
@@ -1500,6 +1502,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"ylänen">,    <"ilta">>,
       <<"äiti">,      <"nisä">>,
 
+      <<"aamu", "helma", "hännys", "kevät", "musta", "nahka", "oma", "puna", "päällys">,  <"tae">>, # Aamutakeista ei ole aamu+tae.
       <<"ahne", "verta", "vuos">,       <"ilta">>, # Ahne+ilta, verta+illakseen, vuos+ilta.
       <<"aisti", "kanta", "rikko", "kerto", "kutsu", "toivo", "usko">,   <"muksia">>,
       <<"alainen", "alanen">,                                            <"pää", "suka", "sukia", "suu", "tulo">>,
@@ -1536,6 +1539,7 @@ end;
 subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
   define $taulukko := <
 #      <<"">,    <"">,    <"">>,
+      <<"arvo">,         <"is">,   <"tuma">>,         # Eri+arvo+is+tum+ista  arvo + johdin_inen + tuma.
       <<"evoluutio">,    <"n">,    <"aari", "ääri">>,
       <<"fotometri", "metri">, <"inen">,   <"säkä", "sää">>,
       <<"heitto">,    <"inen">,   <"tuki">>,    # Heitto+is+tu+in. Heitto + johdin_inen + tuki + keinonto_n.
@@ -1543,7 +1547,8 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"ilmaista", "karjaista">, <"u">,      <"oja">>,     # Ilmas+u+oja (ilma(i)sta + johdin_U + oja).
       <<"inkluusio">, <"inen">,   <"mikki">>,
       <<"kani">,      <"n">,      <"manne">>,
-      <<"keskinen">,  <"uoma">,   <"lainen">>,  # Keskis+uoma+lainen
+      <<"keskinen">,  <"uoma">,   <"lainen">>,  # Keskis+uoma+lainen.
+      <<"laki">,      <"n">,      <"asana">>,   # Lai+n+asana.
       <<"luokka">,    <"inen">,   <"tupa">>,
       <<"muuri">,     <"inen">,   <"ääntö">>,           # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
       <<"näky">,      <"tön">,    <"ohja", "ohjain">>,  # Näy+tön+ohja+in, näy+tön+ohjain.
@@ -2261,13 +2266,8 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $n):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-#    if ($vasen.($n-1).luokka in <etunimi, sukunimi>) then
-#      result $res, rules johdettu_etunimi;
-#    elseif ($vasen.($n-1).luokka = paikannimi) then
-#      result $res, rules johdettu_paikannimi;
-#    end;
-#    result $res, rules yhdysmerkki_erisnimen_jälkeen;
-    result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi, johdettu_etunimi;
+    result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_erisnimi;
+#    result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi, johdettu_etunimi;
   else
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
@@ -2286,6 +2286,26 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   result $res, rules yhdyssana, erisnimi;
+end;
+
+
+combi_rule johdettu_erisnimi ($vasen, $oikea, $sana):
+####define $profile := transmit ("johdettu_erisnimi ($vasen, $oikea, $sana):");
+  ? ($oikea.paikannimen_jälkiliite = yes) or ($oikea.etunimen_jälkiliite = yes);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules yhdysmerkki_erisnimen_jälkeen;
+  end;
+  result $res, rules erisnimen_sijapääte;
 end;
 
 

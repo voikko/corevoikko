@@ -89,7 +89,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
-                             "maa", "meri", "mäki", "niemi", "polku", "saari",
+                             "maa", "meri", "mäki", "niemi", "polku", "saari", "selkä",
                              "tie", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
@@ -109,7 +109,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä">) then
+  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä", "tavi">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else
@@ -727,7 +727,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (marinadi in $tietue.jatko) then
-    choose $i in marinadi ($tietue, "di", A($tietue)+"di", "de", A($tietue)+"de", "d", A($tietue)+"d");
+    choose $i in marinadi ($tietue, A($tietue)+"di", A($tietue)+A($tietue)+"di", A($tietue)+"de", A($tietue)+A($tietue)+"de", A($tietue)+"d", A($tietue)+A($tietue)+"d");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -736,7 +736,16 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (biografi in $tietue.jatko) then
-    choose $i in marinadi ($tietue, "fi", A($tietue)+"fi", "fe", A($tietue)+"fe", "f", A($tietue)+"f");
+    choose $i in marinadi ($tietue, A($tietue)+"fi", A($tietue)+A($tietue)+"fi", A($tietue)+"fe", A($tietue)+A($tietue)+"fe", A($tietue)+"f", A($tietue)+A($tietue)+"f");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (pyramidi in $tietue.jatko) then
+    choose $i in marinadi ($tietue, "idi", "iidi", "ide", "iide", "id", "iid");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else

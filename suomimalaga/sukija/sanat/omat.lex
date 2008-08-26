@@ -75,7 +75,6 @@
 [perusmuoto: "hulikanismi", alku: "hulikanism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "humpuukki", alku: "humpuuk", luokka: nimisana, jatko: <takki>, äs: a];
 [perusmuoto: "inteksi", alku: "inteks", luokka: nimisana, jatko: <banaali>, äs: ä];
-[perusmuoto: "invaliidi", alku: "invaliid", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "invaliiti", alku: "invaliit", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "jakaranta", alku: "jakarant", luokka: nimisana, jatko: <kala>, äs: a];
 [perusmuoto: "jukurtti", alku: "jukurt", luokka: nimisana, jatko: <tatti>, äs: a];
@@ -457,7 +456,6 @@
 [perusmuoto: "vuossata", alku: "vuossa", luokka: nimisana, jatko: <pata>, äs: a, rakenne: "=pppp=pppp"];
 [perusmuoto: "myöhäisilta", alku: "myöhäisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "varhaisilta", alku: "varhaisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "ripsiä", alku: "rips", luokka: teonsana, jatko: <sallia>, äs: ä];
 
 [perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
 [perusmuoto: "Vincent", alku: "Vincent", luokka: etunimi, jatko: <kalsium>, äs: ä];
@@ -507,7 +505,6 @@
 [perusmuoto: "minunkaltainen", alku: "minunkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
 [perusmuoto: "erinkaltainen", alku: "erinkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "Paulow", alku: "Paulow", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Taponen", alku: "Tapo", luokka: sukunimi, jatko: <nainen>, äs: a];
 
 [perusmuoto: "oljennella", alku: "oljen", luokka: teonsana, jatko: <pienennellä>, äs: a];
 [perusmuoto: "parannutella", alku: "parannut", luokka: teonsana, jatko: <aatella>, äs: a];
@@ -515,7 +512,13 @@
 [perusmuoto: "riipustaa", alku: "riipust", luokka: teonsana, jatko: <muistaa>, äs: a];
 [perusmuoto: "rinnustella", alku: "rinnustel", luokka: teonsana, jatko: <katsella>, äs: a];
 [perusmuoto: "tuulutella", alku: "tuulut", luokka: teonsana, jatko: <aatella>, äs: a];
+[perusmuoto: "pensastaa", alku: "pensast", luokka: teonsana, jatko: <hidastaa>, äs: a];
 
+[perusmuoto: "amerikantavi", alku: "amerikantav", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "heinätavi", alku: "heinätav", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "sinisiipitavi", alku: "sinisiipitav", luokka: nimisana, jatko: <risti>, äs: a];
+
+[perusmuoto: "omatakeinen", alku: "omatakei", luokka: laatusana, jatko: <nainen>, äs: a];
 
 [perusmuoto: "kylpyamme", alku: "kylpyamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=ppppp=pppp"];
 [perusmuoto: "pesuamme", alku: "pesuamme", luokka: nimisana, jatko: <hame>, äs: a, rakenne: "=pppp=pppp"];
