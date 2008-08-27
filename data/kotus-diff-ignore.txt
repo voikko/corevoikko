@@ -1339,6 +1339,8 @@ homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 huiskaus # huiskata
 hömpsötys # hömpsöttää
+inkubaatioaika # inkubaatio
+jenkkifutis # futis
 jortsut # jortsu
 kalsongit # kalsonki
 kaltevointi # kaltevoida
