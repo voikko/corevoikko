@@ -168,7 +168,6 @@
 #[perusmuoto: "kaistanen", alku: "kaista", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sillon", alku: "sillon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "promed", alku: "promed", luokka: nimi, jatko: <kalsium>, äs: aä];
-#[perusmuoto: "kertanen", alku: "kerta", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "osote", alku: "osot", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "tavote", alku: "tavot", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "rosentti", alku: "rosent", luokka: nimisana, jatko: <salaatti>, äs: a];

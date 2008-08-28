@@ -148,18 +148,13 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+#  if ($tietue.luokka = lukusana) then
+#    $tietue.jatko :=- <yhdyssana>;
+#  end;
+
   if ($tietue.luokka = lukusanan_jälkiliite) then
     stop;
   end;
-
-#  if (($malli = voikko) and ($tietue.tiedot /= nil) and
-#      ((latex in $tietue.tiedot) or
-#       (murre in $tietue.tiedot) or
-#       (ei_voikko in $tietue.tiedot))) then
-#    stop;
-#  elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
-#          (ei_sukija in $tietue.tiedot)) then
-#    stop;
 
   if (($tietue.tiedot /= nil) and (ei_sukija in $tietue.tiedot)) then
     stop;

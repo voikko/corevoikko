@@ -21,6 +21,7 @@ Alkio
 alkiolainen
 allekirjoittaa
 alleviivata
+ambrosialainen
 amerikanenglanti
 amerikanenglantilainen
 amerikanjuutalainen
@@ -35,6 +36,7 @@ armeijalainen
 Armenia
 Aro
 arpeutuma
+arvioitsija
 astuma
 astumajalka
 Astuvansalmi
@@ -62,6 +64,7 @@ esikasvattaa
 esilletuominen
 esilletuonti
 esimerkki
+esitelmöitsijä
 Espanja
 Esteri
 estymä
@@ -83,6 +86,7 @@ harrastua
 harventuma
 haurastua
 hautaus
+havainnoitsija
 heijastuma
 heikentymä
 Helo
