@@ -1,14 +1,14 @@
-*vimchant.txt*          Vimchant - spell-checker plugin             2008-08-16
+*vimchant.txt*          Vimchant - spell-checker plugin             2008-08-31
 
 
-Description     Vimchant is a simple but efficient spell-checker plugin. It's 
-                not bundled with many features but it provides fast real-time 
-                spell-checking while typing and editing text. Vimchant uses 
-                Enchant as its back-end program. Enchant, in turn, is 
-                a front-end for several different spell-checkers, including 
-                Ispell, Myspell and Voikko, for example. This plugin does not 
-                provide Enchant itself; it's a separate component included in 
-                modern GNU/Linux systems.
+Description     Vimchant is a simple but efficient spell-checker plugin. It 
+                provides fast on-the-fly spell-checking while typing and 
+                editing text. Vimchant uses Enchant as its back-end program. 
+                Enchant, in turn, is a front-end for several different 
+                spell-checkers, including Voikko, Zemberek, Hunspell and 
+                Myspell, for example. This plugin does not provide Enchant 
+                itself; it's a separate component included in modern GNU/Linux 
+                systems.
 
 Author          Teemu Likonen <tlikonen@iki.fi>
 
@@ -31,11 +31,11 @@ By default, <Leader> is the backslash key but it can be configured with
 g:mapleader variable. Consult the Vim reference manual for more information on 
 <Leader>.
 
-Spell-checker's state, whether it's on or off, as well as the language 
-settings are buffer-specific. That is, you can have spell-checker active only 
-in certain buffers and you can use different languages in different buffers.
-Settings are preserved while navigating through buffers but only the text in 
-active window is actually checked for spelling.
+Spell-checker's state as well as the language settings are buffer-specific. 
+That is, you can have spell-checker active only in some buffers and you can 
+use different languages in different buffers. Settings are preserved while 
+navigating through buffers but only the text in active window is actually 
+checked for spelling.
 
 ==============================================================================
 CONFIGURATION                                                *vimchant-config*
@@ -44,8 +44,8 @@ CONFIGURATION                                                *vimchant-config*
 Keymaps ~
 
 The default keymaps <Leader>ss and <Leader>sl are available only if they have 
-not been taken by some other plugin or defined by user. You can always bind 
-them to other keys or key combinations with Vim's |:map| commands. For 
+not been taken by some other plugin or already defined by user. You can always 
+bind them to other keys or key combinations with Vim's |:map| commands. For 
 example, you could put these lines to your ~/.vimrc file:
 >
         nmap <F7> <Plug>VimchantSpellCheckSwitch
@@ -96,6 +96,16 @@ unhappy with the default colors you can change them with |:highlight| command.
 An example:
 >
         highlight SpellBad cterm=underline ctermbg=bg ctermfg=Red gui=undercurl guisp=Red
+
+
+Disabling the plugin ~
+
+The most part of this plugin is loaded into memory when the spell-checker is 
+used for the first time. Only the very minimum is loaded automatically when 
+Vim is started. To completely prevent Vim from loading this plugin you can put 
+the following line to your ~/.vimrc file:
+>
+        let g:loaded_vimchant = 1
 
 
 That's pretty much it. Happy typing! :-)
