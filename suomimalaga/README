@@ -90,6 +90,15 @@ Variables for tuning the build process
     See voikko/doc/liput.txt. Default: no
   * VOIKKO_DEBUG=yes|no
     Insert debug information into binary allomorph lexicon. Default: no
+  * VOIKKO_VARIANT=variant
+    Set the short name for the language variant of this vocabulary. This
+    should be a string consisting of letters only. Default: standard
+  * VOIKKO_DESCRIPTION="Description of the vocabulary"
+    Set the long description for the language variant of this vocabulary.
+  * SM_PATCHINFO="Information about applied patches"
+    If you have modified the source code or are distributing prerelease
+    versions, describe any modifications made to the released version here.
+    It may be best to change this directly in the Makefile.
 
 
 Copyright and license information

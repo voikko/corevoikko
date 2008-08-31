@@ -4,9 +4,16 @@ PYTHON=python
 DESTDIR=/usr/lib/voikko
 GENLEX_OPTS=
 EXTRA_LEX=
+VOIKKO_VARIANT=standard
+VOIKKO_DESCRIPTION=Default morphology for Voikko
+SM_PATCHINFO=
 VANHAHKOT_MUODOT=yes
 VANHAT_MUODOT=no
 VOIKKO_DEBUG=no
+
+# Suomi-malaga version
+SM_VERSION=1.2
+SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
@@ -56,7 +63,6 @@ VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voik
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 
-SM_VERSION=1.1
 
 .PHONY: all clean update-vocabulary voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
 
@@ -87,8 +93,18 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
 	cat voikko/joukahainen.lex $(EXTRA_LEX) > $@
 
+
+# Rule to generate voikko-fi_FI.pro
+
 VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
-	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/;s/VOIKKO_DEBUG/$(VOIKKO_DEBUG)/"
+	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/; \
+	s/VOIKKO_DEBUG/$(VOIKKO_DEBUG)/; \
+	s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
+	s/SM_VOIKKO_DESCRIPTION/$(VOIKKO_DESCRIPTION)/; \
+	s/SM_VERSION/$(SM_VERSION)/; \
+	s/SM_PATCHINFO/$(SM_PATCHINFO)/; \
+	s/SM_BUILDCONFIG/$(subst /,\\/,GENLEX_OPTS=$(GENLEX_OPTS) EXTRA_LEX=$(EXTRA_LEX))/; \
+	s/SM_BUILDDATE/$(SM_BUILDDATE)/"
 
 voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
 	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@

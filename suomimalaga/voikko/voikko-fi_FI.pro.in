@@ -1,24 +1,21 @@
 info: Voikko-Dictionary-Format: 1
 
 ## Begin-Malaga-Configuration
+info: Lex-Version: 3
 info: Language-Code: fi_FI
-info: Language-Variant: standard
-info: Description: Default morphology for Voikko
-info: Copyright: 2006-2008 Hannu Väisänen, Harri Pitkänen, Teemu Likonen
+info: Copyright: 2006-2008 Hannu Väisänen, Harri Pitkänen, Teemu Likonen and others
 info: License: GPL version 2 or later
-info: Update-URI: http://joukahainen.lokalisointi.org/update/index-2
-info: Lex-Version: 2
+info: Language-Variant: SM_VOIKKO_VARIANT
+info: Description: SM_VOIKKO_DESCRIPTION
+info: SM-Version: SM_VERSION
+info: SM-Patchinfo: SM_PATCHINFO
+info: Build-Config: SM_BUILDCONFIG
+info: Build-Date: SM_BUILDDATE
 ## End-Malaga-Configuration
 
 ## Begin-User-Configuration
 lex: voikko-fi_FI.lex suomi.lex
 lex: main.lex
-lex: #atk.lex
-lex: #atk-lyhenteet.lex
-lex: #kasvatustiede.lex
-lex: #kasvatustiede-lyhenteet.lex
-lex: #laaketiede.lex
-lex: #matluonnontiede.lex
 mallex: set switch vanhahkot_muodot VANHAHKOT_MUODOT
 mallex: set switch vanhat_muodot VANHAT_MUODOT
 ## End-User-Configuration
