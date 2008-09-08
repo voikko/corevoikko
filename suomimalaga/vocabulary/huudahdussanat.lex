@@ -43,12 +43,13 @@
 [perusmuoto: "hoi", alku: "hoi", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hoijaa", alku: "hoijaa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Hoh hoijaa.
 [perusmuoto: "hoh", alku: "hoh", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Hoh hoijaa.
+[perusmuoto: "hojo", alku: "hojo", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Hojo hojo!
 [perusmuoto: "hoo", alku: "hoo", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hop", alku: "hop", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "huh", alku: "huh", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hui", alku: "hui", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hupsis", alku: "hupsis", luokka: huudahdussana, jatko: <loppu>, äs: a];
-[perusmuoto: "hupsista", alku: "hupsista", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "hupsis", alku: "hupsista", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "hus", alku: "hus", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "huut", alku: "huut", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hyi", alku: "hyi", luokka: huudahdussana, jatko: <loppu>, äs: ä];
@@ -69,16 +70,18 @@
 [perusmuoto: "jestas", alku: "jestas", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "jippii", alku: "jippii", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "joo", alku: "joo", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "joo", alku: "joopa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];  # Joopa joo.
 [perusmuoto: "jumalauta", alku: "jumalauta", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "jumalauta", alku: "jumal-auta", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jumalauta", alku: "jumal-avita", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jumaliste", alku: "jumaliste", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "juu", alku: "juu", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "juu", alku: "juupa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Juupa juu.
 [perusmuoto: "kah", alku: "kah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kappas", alku: "kappas", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kas", alku: "kas", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "kippis", alku: "kippis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
-[perusmuoto: "kutti", alku: "kutti", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kutti", alku: "kutti", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # "Ähä kutti".
 [perusmuoto: "mars", alku: "mars", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "mau", alku: "mau", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moi", alku: "moi", luokka: huudahdussana, jatko: <loppu>, äs: a];

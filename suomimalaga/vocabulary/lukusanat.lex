@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 - 2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006 - 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #                 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
@@ -61,8 +61,16 @@
 [perusmuoto: "kymmenen",  alku: "kymmen",  luokka: lukusana, lukutyyppi: perusluku, alaluokka: kymmenen, jatko: <kymmenen>, äs: ä];
 
 # Yksitoista, ..., yhdeksäntoista.
-#[perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "toista", alku: "toista", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a];
+
+# Yksikolmatta (21), ..., yhdeksänyhdeksättä (89).
+[perusmuoto: "kolmatta",    alku: "kolmatta", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "neljättä",    alku: "neljättä", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "viidettä",    alku: "viidettä", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kuudetta",    alku: "kuudetta", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "seitsemättä", alku: "seitsemättä", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kahdeksatta", alku: "kahdeksatta", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "yhdeksättä",  alku: "yhdeksättä", luokka: lukusana, alaluokka: toista, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 
 [perusmuoto: "puolitoista", alku: "puolitoista", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "puolitoista", alku: "puolentoista", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];

@@ -103,6 +103,7 @@ hoito
 Hollanti
 Hovi
 Huhta
+huhuilla
 huipentuma
 huiskauttaa
 Hukka
@@ -238,6 +239,7 @@ Kurppa
 kurssilainen
 Kuru
 kutistuma
+kuulustella
 Kuutti
 Kuvaaja
 kuvaama
@@ -365,6 +367,8 @@ Moisio
 mongolilainen
 Muikku
 muistuma
+mulperipuu
+multippeliskleroosi
 muodostuma
 muovautuma
 Murto
@@ -414,6 +418,7 @@ peitto
 pensastua
 Perho
 perimä
+Persia
 peräänajo
 pidentymä
 pidättyä
@@ -442,6 +447,7 @@ puoluelainen
 purema
 puristuma
 putoama
+pysähdys
 Päivä
 pöhöttymä
 raakalainen
@@ -561,6 +567,7 @@ toteutuma
 trotskilainen
 Tsekki
 Tšekki
+tuhkatiheä
 Tuisku
 tukkeutuma
 tukkilainen
@@ -627,6 +634,7 @@ viipymä
 Viita
 viittoma
 vioittuma
+viritys
 Viro
 Virolainen
 Virta

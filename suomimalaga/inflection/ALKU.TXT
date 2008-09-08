@@ -101,7 +101,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"kallas">) then   # "Kaltainen" on sanastossa.
+  if ($tietue.perusmuoto in <"bitti", "kallas">) then   # -inen-johdokset ovat sanastossa.
     $tietue :=+ [tiedot: <ei_inen>];
   end;
 
@@ -152,9 +152,9 @@ allo_rule generate_allos ($tietue):
 #    $tietue.jatko :=- <yhdyssana>;
 #  end;
 
-  if ($tietue.luokka = lukusanan_jälkiliite) then
-    stop;
-  end;
+##  if ($tietue.luokka = lukusanan_jälkiliite) then
+##    stop;
+##  end;
 
   if (($tietue.tiedot /= nil) and (ei_sukija in $tietue.tiedot)) then
     stop;

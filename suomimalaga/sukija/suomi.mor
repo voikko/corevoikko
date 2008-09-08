@@ -1314,6 +1314,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"halti">,     <"joki">>,     # Halti+joiksi.
       <<"hara">,      <"voi", "voida", "vuo">>,
       <<"harras">,    <"teli">>,
+      <<"hauras", "kangas", "kirkas", "pahanen", "paljas", "punanen", "vauras", "viisas", "vilkas">,    <"tupa">>,
       <<"heinä">,     <"tupo">>,
       <<"helve">,     <"tilli">>,
       <<"hima">,      <"lapsi", "lassa", "lasta", "lika">>,
@@ -1324,6 +1325,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"hyvin">,     <"voida", "voiva", "voipa">>,
       <<"hyvä">,      <"isotella">>,
       <<"hätä">,      <"katka">>,
+      <<"hää">,       <"läsi">>,
       <<"inen">,      <"sakki">>,
       <<"ikä">,       <"vihi", "vihki">>,
       <<"isä">,       <"nisä">>,
@@ -1336,7 +1338,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kalla">,     <"vesi">>,
       <<"kalsa">,     <"reisi", "risa">>,
       <<"kali">,      <"umpi">>,   # Kali+umpi+toinen.
-      <<"kana">,      <"voida">>,  # Kana+voitu.
+      <<"kana">,      <"vapari", "voida">>,  # Kana+voitu.
       <<"kannus">,    <"tavi">>,
       <<"kansa">,     <"inva">>,
       <<"kapi">,      <"nalli", "tali">>,  # Kapi+nallinen, kapi+talis+tien (kapi+talinen+tie).
@@ -1390,6 +1392,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"mehiläinen">, <"pesis">>,  # Mehiläis+pesis+tä.
       <<"meno">,      <"paussi">>,
       <<"mensu">,     <"rae">>,
+      <<"meta">,      <"staasi">>,
       <<"metaani">,   <"rikastaa">>,
       <<"mieli">,     <"syy", "syys">>,
       <<"mielinen">,  <"ikä", "säkä", "sää", "tele", "teli", "tikki">>, # Mielis+ikä(än).
@@ -1422,6 +1425,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"polvinen">,  <"tuki">>,     # Polvis+tuen.
       <<"poli">,      <"klinikka">>, # On oma sanansa.
       <<"porno">,     <"graafi">>,   # On oma sanansa.
+      <<"posteri">,   <"ori">>,
       <<"punk">,      <"arka", "kari">>,
       <<"puoli">,     <"nainen">>,  # On oma sanansa.
       <<"puu">,       <"hai">>,
@@ -1486,10 +1490,10 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"varus">,     <"tee">>,    # Varus+tee+t.
       <<"vasta">,     <"pää">>,
       <<"vastaan">,   <"otto">>,
+      <<"web">,       <"erä">>,    # Web+er+ille.
       <<"viher">,     <"ikä", "iäinen", "vuotaa">>,
       <<"viive">,     <"itä">>,
       <<"vik">,       <"koko", "oja", "uros">>,
-      <<"hauras", "kangas", "kirkas", "pahanen", "paljas", "punanen", "vauras", "viisas", "vilkas">,    <"tupa">>,
       <<"vipunen">,   <"ilta">>,            # Vipus+ilta.
       <<"voi">,       <"malli", "mallinen", "manne", "paha", "tuma">>,
       <<"voinen">,    <"iva", "ivata">>,    # Voisivatko => vois+iva(ta).
@@ -1548,8 +1552,11 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"hima">,      <"n">,      <"kala", "kalaisa">>,     # Hima+n+kalainen.
       <<"ilmaista", "karjaista">, <"u">,      <"oja">>,     # Ilmas+u+oja (ilma(i)sta + johdin_U + oja).
       <<"inkluusio">,             <"inen">,   <"mikki">>,
+      <<"kaksi">,                 <"n">,      <"tuma", "tupa">>,    # Kahde+n+tuma, kahde+n+tuva+t.
       <<"kani">,                  <"n">,      <"manne">>,
       <<"keskinen">,              <"uoma">,   <"lainen">>,  # Keskis+uoma+lainen.
+      <<"kolme">,                 <"n">,      <"aula">>,    # Kolme+n+aula+inen.
+      <<"kutsu">,                 <"n">,      <"tapiiri">>,
       <<"laki">,                  <"n">,      <"asana">>,   # Lai+n+asana.
       <<"luokka">,    <"inen">,   <"tupa">>,
       <<"muuri">,     <"inen">,   <"ääntö">>,           # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
@@ -1562,9 +1569,10 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"pari">,         <"inen">,   <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
       <<"suoda">,        <"ma">,     <"lainen", "laismainen", "laki">>,  # Suo+ma+lainen, suo+ma+laista (laki).
       <<"tukka">,        <"nuotta">, <"silla">>,
-      <<"ulko">,         <"ravinto">, <"laaki">>,  # Ulko+ravinto+laakin.
-      <<"us">,           <"n">,       <"amme">>,   # Esim. takoit+ukse+n+amme (ukse == johdin_Us).
-      <<"väsky">,        <"n">,       <"yö">>,      # Väsky+n+öitä.
+      <<"ulko">,         <"ravinto">, <"laaki">>,    # Ulko+ravinto+laakin.
+      <<"us">,           <"n">,       <"amme">>,     # Esim. takoit+ukse+n+amme (ukse == johdin_Us).
+      <<"väsky">,        <"n">,       <"yö">>,       # Väsky+n+öitä.
+      <<"yksi">,          <"n">,      <"mukainen">>, # Yhdenmukainen on sanastossa.
       <<"yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmen", "kymmenen">,
                   <"n">,      <"vuota">>   # Yhden+vuotiaan ei ole yksi+vuota.
   >;
@@ -1740,6 +1748,10 @@ subrule lukusanan_perusmuoto ($tietue, $i, $k, $s):
     return $tietue.$i.perusmuoto;
   end;
 
+  if ($tietue.$i.luokka = lukusanan_jälkiliite) then
+    return $tietue.$i.perusmuoto;
+  end;
+
   if ($tietue.$i.alaluokka = yksiyhdeksän) then
     if (($k greater 2) and ($i less $k) and ($tietue.($i+1).luokka = sijapääte) and ($tietue.($i+2).luokka /= lukusana)) then
       return $tietue.$i.alku;
@@ -1761,7 +1773,8 @@ subrule lukusanan_perusmuoto ($tietue, $i, $k, $s):
       return $tietue.$i.perusmuoto;
     end;
   elseif ($tietue.$i.luokka = sijapääte) then
-    if ($i less $k and $tietue.($i+1).luokka = lukusana) then
+#define $ö := transmit (<"ö"> + <$tietue.$i.alku> + <$tietue.$i.perusmuoto> + <length($tietue)> + <$i> + <$k> + <$s>);
+    if ($i less $k and $tietue.($i+1).luokka in <lukusana, lukusanan_jälkiliite>) then
       return "";
     else
       return $tietue.$i.alku;
@@ -2535,8 +2548,9 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
         result $res, rules loppu;
       end;
       result $res, rules lukusana_toista, lukusana_sisäkerroin,
-                   liitesana, lukusanan_jälkiliite,
-                   nimisana, laatusana;
+                         liitesana;
+##                   liitesana, lukusanan_jälkiliite;
+##                   nimisana, laatusana;
 ##                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
     end;
     if (omistusliite in $oikea.jatko) then
@@ -2551,8 +2565,9 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
         result $res, rules loppu;
       end;
       result $res, rules lukusana_sisäkerroin,
-                   liitesana, lukusanan_jälkiliite,
-                   nimisana, laatusana;
+                         liitesana;
+##                   liitesana, lukusanan_jälkiliite;
+##                   nimisana, laatusana;
 ##                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
     end;
   elseif ($oikea.alaluokka in <tuhat, miljoona, miljardi, biljoona, triljoona> and nimentö in $oikea.jatko) then
@@ -2562,8 +2577,9 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
     if loppu in $oikea.jatko then
       result $res, rules loppu;
     end;
-    result $res, rules liitesana, lukusanan_jälkiliite,
-                 nimisana, laatusana;
+    result $res, rules liitesana, lukusanan_jälkiliite;
+##                       yhdyssana;
+##                 nimisana, laatusana;
 ##                 nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
    elseif ($oikea.alaluokka = numeromerkki) then
      $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "=q"] + $oikea>;
@@ -2575,9 +2591,10 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
       result $res, rules lukusana;
     end;
   end;
+#  result $res, rules lukusana_sijapääte;
   result $res, rules yhdyssana, lukusana_sijapääte;
-
 end;
+
 
 combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
 ####define $profile := transmit ("lukusana_sijapääte ($vasen, $oikea, $sana, $index):");
@@ -2596,9 +2613,14 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    result $res, rules lukusana_toista, lukusana_sisäkerroin,
-                 liitesana,
-                 yhdyssana;
+    #
+    # Estetään seitsmä+n+kertainen-tyyppisten sanojen tunnistuminen kahdesti.
+    #
+    if (not (($oikea.sija = omanto_n) and ($vasen.($index-1).perusmuoto in <"seitsemän", "kahdeksan", "yhdeksän">))) then
+      result $res, rules yhdyssana;
+    end;
+    result $res, rules lukusana_toista, lukusana_sisäkerroin;
+##                       yhdyssana;
 ##                 lukusanan_jälkiliite;
 ##                 nimisana, laatusana;
 ##                 nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
@@ -2606,8 +2628,7 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    result $res, rules lukusana_sisäkerroin, lukusanan_jälkiliite,
-                 liitesana;
+    result $res, rules lukusana_sisäkerroin, lukusanan_jälkiliite;
   else
     result $res, rules yhdyssana;
                        ## , nimisana, lukusanan_jälkiliite, laatusana;
@@ -2619,7 +2640,11 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
   if ($edellinen.alaluokka in <sata, tuhat>) then
     result $res, rules lukusana;
   end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
 end;
+
 
 combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
 ####define $profile := transmit ("lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):");
@@ -2651,6 +2676,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
   end;
 end;
 
+
 combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
 ####define $profile := transmit ("lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):");
   ? $oikea.luokka = sijapääte;
@@ -2671,7 +2697,8 @@ combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
     result $res, rules loppu;
   end;
   result $res, rules lukusana,
-               yhdyssana, liitesana, lukusanan_jälkiliite;
+                     liitesana, lukusanan_jälkiliite;
+#                     yhdyssana, liitesana, lukusanan_jälkiliite;
 ##               nimisana, laatusana;
 ##               nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
 end;
@@ -2693,8 +2720,8 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
     result $res, rules loppu;
   end;
   result $res, rules lukusana, lukusanan_jälkiliite,
-               liitesana,
-               yhdyssana;
+                     liitesana;
+##, yhdyssana;
 ##               nimisana, laatusana; ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
 end;
 
@@ -2708,7 +2735,8 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
   if loppu in $oikea.jatko then
     result $res, rules loppu;
   end;
-  result $res, rules yhdyssana, lukusana_sisäkerroin,
+##  result $res, rules yhdyssana, lukusana_sisäkerroin,
+  result $res, rules lukusana_sisäkerroin,
                      liitesana, lukusanan_jälkiliite;
 ##                   inen_johdos_nimisanasta, inen_päätteinen_laatusana;
 ##                     nimisana, laatusana;
@@ -2737,7 +2765,7 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
            rules ## ei_ys_sijapääte,
                  yhdyssana,
                  sijapääte,
-                 nimisana, etuliite,
+##                 nimisana, etuliite,
                  liitesana,
                  nimisanan_johdos;
 ##                 nimisana_laatusanasta, nimisana_teonsanasta;
