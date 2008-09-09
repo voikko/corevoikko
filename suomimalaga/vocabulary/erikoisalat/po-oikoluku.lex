@@ -58,6 +58,7 @@
 [perusmuoto: "align", alku: "align", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "arrange", alku: "arrange", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "Base", alku: "Base", luokka: nimi, jatko: <nalle>, äs: a];
+[perusmuoto: "bookmark", alku: "bookmark", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "Calc", alku: "Calc", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Chart", alku: "Chart", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Draw", alku: "Draw", luokka: nimi, jatko: <parfait>, äs: a];
@@ -68,8 +69,10 @@
 [perusmuoto: "link", alku: "link", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "Math", alku: "Math", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "name", alku: "name", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "select", alku: "select", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "shared", alku: "shared", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "text", alku: "text", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "value", alku: "value", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "variable", alku: "variable", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "Writer", alku: "Writer", luokka: nimi, jatko: <kalsium>, äs: a];
 
