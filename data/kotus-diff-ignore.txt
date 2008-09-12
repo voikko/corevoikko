@@ -1344,6 +1344,7 @@ jenkkifutis # futis
 jortsut # jortsu
 kalsongit # kalsonki
 kaltevointi # kaltevoida
+karioottisuus # karioottinen
 keimit # geimi
 kokkarit # kokkari
 kolmiointi # kolmioida
@@ -1364,8 +1365,11 @@ mensut # mensu
 mentorointi # mentoroida
 metkasti # metka
 metastasointi # metastasoida
+molaarisuus # molaarinen
 narkkaus # narkata
 nyyttärit # nyyttäri
+onkogeeninen # onkogeeni
+onkogeenisuus # onkogeeni
 palpointi # palpoida
 parafinointi # parafinoida
 penkkarit # penkkari
@@ -1387,6 +1391,7 @@ pupellus # pupeltaa
 pälätys # pälättää
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
+resistiivisyys # resistiivinen
 reteästi # reteä
 räknäys # räknätä
 sammarit # sammari
@@ -1398,6 +1403,7 @@ simmarit # simmari
 skimbaus # skimbata
 smirgelöinti # smirgelöidä
 somatisointi # somatisoida
+spastisuus # spastinen
 spiikkaus # spiikata
 splittaus # splitata
 sporttihenkinen # sportti
@@ -1410,9 +1416,11 @@ tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
 tunnelointi # tunneloida
+tyvekkyys # tyvekäs
 tähysteisesti # tähysteinen
 törmäytys # törmäyttää
 valkkaus # valkata
+verekkyys # verekäs
 vasituisesti # vasituinen
 välibosoni # bosoni
 
