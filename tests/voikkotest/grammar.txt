@@ -17,11 +17,17 @@ Nyt on joten kuten  tehtävä joten kuten hankalampi  virheyhdistelmä.
 Lause , jossa on pilkun edellä turha väli.
  [code=3, level=0, descr="", stpos=5, len=2, suggs={}]
 Lause,, jossa kaksi peräkkäistä pilkkua.
- [code=4, level=0, descr="", stpos=6, len=1, suggs={}]
+ [code=4, level=0, descr="", stpos=5, len=2, suggs={}]
 Aurinko paistaa. (Tämä virke on suluissa.)
 Lause., jossa pilkun edellä piste.
- [code=5, level=0, descr="", stpos=6, len=1, suggs={}]
+ [code=5, level=0, descr="", stpos=5, len=2, suggs={}]
  [code=7, level=0, descr="", stpos=8, len=5, suggs={}]
+Lause. , jossa pilkun edellä piste.
+ [code=5, level=0, descr="", stpos=6, len=2, suggs={}]
+ [code=7, level=0, descr="", stpos=9, len=5, suggs={}]
+, pilkku on aivan alussa.
+ [code=5, level=0, descr="", stpos=0, len=1, suggs={}]
+ [code=7, level=0, descr="", stpos=2, len=6, suggs={}]
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={}]
 "Lause voi olla myös lainausmerkeissä."
