@@ -1348,6 +1348,7 @@ kalsongit # kalsonki
 kaltevointi # kaltevoida
 karioottisuus # karioottinen
 keimit # geimi
+kelmentyä # kelmentää
 kokkarit # kokkari
 kolmiointi # kolmioida
 kummarit # kummari
@@ -1375,6 +1376,8 @@ onkogeenisuus # onkogeeni
 palpointi # palpoida
 parafinointi # parafinoida
 penkkarit # penkkari
+perinataaliaika # perinataali
+perinataalinen # perinataali
 persaukset # persaus
 persukset # persaus
 persuukset # persaus
@@ -1393,6 +1396,7 @@ pupellus # pupeltaa
 pälätys # pälättää
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
+respiittiaika # respiitti
 resistiivisyys # resistiivinen
 reteästi # reteä
 räknäys # räknätä
@@ -1414,6 +1418,7 @@ sporttimallinen # sportti
 sukkikset # sukkis
 sumplaus # sumplata
 sämpläys # sämplätä
+tangat # tanga
 tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
