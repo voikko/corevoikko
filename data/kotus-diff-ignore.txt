@@ -29,6 +29,7 @@ ahkeraliisa
 aids
 aiheisto
 aito
+aitosyöpä # Kotus 50 (yhdyssana)
 ajast'aika
 akkumuloida
 akryyli
@@ -1309,6 +1310,7 @@ vaki-
 adsorbointi # adsorboida
 analgeettisesti # analgeettinen
 analgeettisuus # analgeettinen
+asetaattikuitu # asetaatti
 blandaus # blandata
 blokkaus # blokata
 bulevardisportti # sportti
