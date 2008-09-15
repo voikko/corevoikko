@@ -2307,6 +2307,14 @@ allo_rule generate_allos ($tietue):
     choose $i in huutaa ($tietue, "t", "l");
     result $i.alku, $i - alku;
 
+  elseif (juurtaa in $tietue.jatko) then
+    choose $i in huutaa ($tietue, "t", "r");
+    result $i.alku, $i - alku;
+
+  elseif (saksantaa in $tietue.jatko) then
+    choose $i in huutaa ($tietue, "t", "n");
+    result $i.alku, $i - alku;
+
   elseif (sukeltaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "l")
                  + sana_Vs ($tietue, lU($tietue))   # Sukellus.
@@ -2316,6 +2324,11 @@ allo_rule generate_allos ($tietue):
   elseif (paleltaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "l")
                  + sana_Vs ($tietue, lU($tietue));
+    result $i.alku, $i - alku;
+
+  elseif (nuotintaa in $tietue.jatko) then
+    choose $i in huutaa ($tietue, "t", "n")
+                 + sana_Vs ($tietue, nU($tietue));
     result $i.alku, $i - alku;
 
 

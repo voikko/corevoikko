@@ -563,6 +563,16 @@ muunsi # Kotus 54
 !muunti # Kotus 54
 heikensi # Kotus 54
 !heikenti # Kotus 54
+juursi # Kotus 54
+!juurrella # Kotus 54
+!juurto # Kotus 54
+saksansi # Kotus 54
+!saksannella # Kotus 54
+!saksanto # Kotus 54
+nuotinsi # Kotus 54
+!nuotinnella # Kotus 54
+!nuotinto # Kotus 54
+nuotinnus # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
 !saaretaan # Kotus 57

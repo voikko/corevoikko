@@ -782,8 +782,11 @@ huutaa;       # => Huuto.
 soutaa;       # => Soudella.
   vuotaa;
 puoltaa;
+  juurtaa;
+  saksantaa;
   sukeltaa; # => Sukellella, sukellus.
   paleltaa;
+  nuotintaa;
 murtaa;     # => Murrella, murros, murto. Kaksitavuiset.
   musertaa; # => Muserrella, muserrus.
 sortaa;     # => Sorrella, sorros, sorto.
