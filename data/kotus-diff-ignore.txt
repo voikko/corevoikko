@@ -1308,9 +1308,11 @@ vaki-
 # Yhdyssanoja ja johdoksia, joiden jokin osa on Joukahaisen sanastossa, mutta ei kuulu
 # oikolukusanastoon
 adsorbointi # adsorboida
+akseptointi # akseptoida
 analgeettisesti # analgeettinen
 analgeettisuus # analgeettinen
 asetaattikuitu # asetaatti
+auktorointi # auktoroida
 blandaus # blandata
 blokkaus # blokata
 bulevardisportti # sportti
@@ -1322,7 +1324,10 @@ endokrinologisesti # endokrinologinen
 fillarointi # fillaroida
 finanssit # finanssi
 fluoritus # fluorittaa
+fluorointi # fluoroida
 foniatrisesti # foniatrinen
+formatointi # formatoida
+fraktiointi # fraktioida
 fudut # futu
 fuskaus # fuskata
 fusku # fuskata
@@ -1341,11 +1346,13 @@ homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 huiskaus # huiskata
 hömpsötys # hömpsöttää
+inhalointi # inhaloida
 inkubaatioaika # inkubaatio
 jenkkifutis # futis
 jortsut # jortsu
 kalsongit # kalsonki
 kaltevointi # kaltevoida
+kapitalointi # kapitaloida
 karioottisuus # karioottinen
 keimit # geimi
 kelmentyä # kelmentää
@@ -1362,14 +1369,17 @@ litsahdella # litsahtaa
 longerrella # longertaa
 lupsahdella # lupsahtaa
 löpinä # löpistä
+martiointi # martioida
 menkut # menkku
 mensikset # mensis
 mensut # mensu
 mentorointi # mentoroida
+merserointi # merseroida
 metkasti # metka
 metastasointi # metastasoida
 molaarisuus # molaarinen
 narkkaus # narkata
+nyansointi # nyansoida
 nyyttärit # nyyttäri
 onkogeeninen # onkogeeni
 onkogeenisuus # onkogeeni
@@ -1409,6 +1419,7 @@ simmarit # simmari
 skimbaus # skimbata
 smirgelöinti # smirgelöidä
 somatisointi # somatisoida
+sopulointi # sopuloida
 spastisuus # spastinen
 spiikkaus # spiikata
 splittaus # splitata
@@ -1422,6 +1433,8 @@ tangat # tanga
 tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
+transponointi # transponoida
+tumpelointi # tumpeloida
 tunnelointi # tunneloida
 tyvekkyys # tyvekäs
 tähysteisesti # tähysteinen
