@@ -785,6 +785,7 @@ puoltaa;
   juurtaa;
   saksantaa;
   sukeltaa; # => Sukellella, sukellus.
+  jäykentää;
   paleltaa;
   nuotintaa;
 murtaa;     # => Murrella, murros, murto. Kaksitavuiset.
@@ -792,6 +793,7 @@ murtaa;     # => Murrella, murros, murto. Kaksitavuiset.
 sortaa;     # => Sorrella, sorros, sorto.
 pahentaa;   # => Pahennella, pahennus.
   juontaa;  # => Juonnella, juonto.
+  pyörtää;
 kaivaa;     # => Kaivella, kaivattaa.
   antaa;    # => Annella.
   jakaa;

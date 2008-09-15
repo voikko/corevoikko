@@ -2321,6 +2321,12 @@ allo_rule generate_allos ($tietue):
                  + muistella ($tietue, "t", "l");   # Sukellella.
     result $i.alku, $i - alku;
 
+  elseif (jäykentää in $tietue.jatko) then
+    choose $i in huutaa ($tietue, "t", "n")
+                 + sana_Vs ($tietue, nU($tietue))   # Jäykennys.
+                 + muistella ($tietue, "t", "n");   # Jäykennellä.
+    result $i.alku, $i - alku;
+
   elseif (paleltaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "l")
                  + sana_Vs ($tietue, lU($tietue));
@@ -2364,6 +2370,12 @@ allo_rule generate_allos ($tietue):
     choose $i in huutaa ($tietue, "t", "n")
                  + juonto ($tietue)
                  + muistella ($tietue, "t", "n");
+    result $i.alku, $i - alku;
+
+  elseif (pyörtää in $tietue.jatko) then
+    choose $i in huutaa ($tietue, "t", "r")
+                 + pyörtö ($tietue)
+                 + muistella ($tietue, "t", "r");
     result $i.alku, $i - alku;
 
 
@@ -6691,6 +6703,14 @@ subrule juonto ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.perusmuoto := $tietue.alku + tO($tietue);
   return valo ($tietue, tO($tietue), nO($tietue));
+end;
+
+subrule pyörtö ($tietue):
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
+  $tietue.luokka := nimisana;
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.perusmuoto := $tietue.alku + tO($tietue);
+  return valo ($tietue, tO($tietue), rO($tietue));
 end;
 
 

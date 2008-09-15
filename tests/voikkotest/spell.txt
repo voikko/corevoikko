@@ -573,6 +573,12 @@ nuotinsi # Kotus 54
 !nuotinnella # Kotus 54
 !nuotinto # Kotus 54
 nuotinnus # Kotus 54
+pyörsi # Kotus 54
+pyörrellä # Kotus 54
+pyörrön # Kotus 54
+jäykensi # Kotus 54
+jäykennellä # Kotus 54
+jäykennys # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
 !saaretaan # Kotus 57
