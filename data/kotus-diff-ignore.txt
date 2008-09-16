@@ -449,6 +449,7 @@ mure
 mutru
 myeliini
 myografia
+mysjuusto # täysin tuntematon sana
 myönnyttää
 mätiä
 määrittyä
@@ -1430,6 +1431,8 @@ sukkikset # sukkis
 sumplaus # sumplata
 sämpläys # sämplätä
 tangat # tanga
+tangeeraus # tangeerata
+tangeerauspiste # tangeerata
 tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
