@@ -6,11 +6,14 @@ agroekologia
 Aho
 ahtautuma
 ahtojää
+aidaskääpä
 AIDS
 aikalainen
 aineellistuma
+aitosyöpä
 ajettuma
 ajoneuvo
+ajuruoho
 alaisuus
 Alanko
 Alankomaa
@@ -45,6 +48,7 @@ aukeama
 Aura
 Aurinko
 Autio
+autoimmuunisairaus
 avauma
 avautuma
 brittiläinen
@@ -59,6 +63,7 @@ elämä
 Englanti
 ennätys
 Eno
+eritasoliittymä
 esiintymä
 esikasvattaa
 esilletuominen
@@ -96,10 +101,12 @@ herraskartano
 herrasmies
 herraspoika
 herrasväki
+hienorakenteinen
 hieroutuma
 hiertymä
 hindulainen
 hoito
+hokema
 Hollanti
 Hovi
 Huhta
@@ -185,7 +192,11 @@ keräymä
 keräytymä
 keskittymä
 kestitys
+kesyhanhi
+kesykyyhky
 Keto
+kevytjukurtti
+kevytmetalli
 Kielo
 kieroutuma
 kiertuelainen
@@ -283,6 +294,7 @@ Lahti
 Laina
 Laine
 Lappi
+laskeutuma
 latauma
 latoma
 latomahaka
@@ -320,7 +332,9 @@ luomapuu
 luomatauti
 luontoistalous
 lupaus
+lyhennys
 lyhentymä
+lyhentää
 lyhytaalto
 lyhytelokuva
 lyhytfilmi
@@ -330,6 +344,7 @@ lyhytohjelma
 lyhytproosa
 lyhytrakennesylinteri
 lyhytsulku
+lyhyttavara
 lyhytterapia
 lyhytvalintakoodi
 lyhytvalintanumero
@@ -354,6 +369,7 @@ marxilainen
 marxismi-leninismi
 Matti
 Mela
+meltorauta
 Metso
 metsäläinen
 mielipide
@@ -381,6 +397,7 @@ mäkitupalainen
 naarmuttua
 Niemi
 nimismies
+niukentaa
 Niva
 Norja
 nousema
@@ -388,12 +405,14 @@ näkymä
 näyttämä
 näyttö
 ohentuma
+ohutkalvo
 ohutsuoli
 oikeanlainen
 oikeistolainen
 oikeus
 Oiva
 omanlainen
+opettajainen
 opetus
 opistolainen
 Orvokki
@@ -414,6 +433,7 @@ palkkalainen
 Palmu
 patoutuma
 Paula
+pehmytkudos
 peitto
 pensastua
 Perho
@@ -472,6 +492,7 @@ risteytymä
 rivittyä
 rohtuma
 romahdusmainen
+ruhjoutuma
 Ruotsi
 rupeama
 ruskettua
@@ -572,6 +593,8 @@ Tuisku
 tukkeutuma
 tukkilainen
 tuonti
+tuoreravinto
+tuoretavara
 tupalainen
 turhautuma
 Turkki
@@ -589,6 +612,7 @@ ulosotto
 ulottua
 ulottuma
 Unelma
+uniikkikappale
 Unkari
 uppoama
 uurteisvalas
@@ -633,6 +657,13 @@ Vietnam
 viipymä
 Viita
 viittoma
+vinokaitale
+vinokatto
+vinoköysisilta
+vinonauha
+vinoristi
+vinoruutu
+vinotuki
 vioittuma
 viritys
 Viro

@@ -64,6 +64,8 @@ historical = [
         (u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
         (u'haastaa', u'sw', [(None,u'(.*C)AA',u'haastaa')]),
 	(u'hohtaa',  u'sw', [(u'tt',u'(.*t)tAA',u'heittää')]),
+	(u'huutaa', u'sw', [(u'nt',u'(.*Vn)tAA',u'alentaa'),
+			(u't',u'(.*V)tAA',u'huutaa')]),
 	(u'iäkäs',   u'ws', [(u'k',u'(.*[mntv]e)ikAs',u'maineikas'),
 			     (u'k',u'(.*k)As',u'iäkäs')]),
         (u'kaihtaa', u'sw', [(u't',u'(.*)tAA',u'kaihtaa')]),

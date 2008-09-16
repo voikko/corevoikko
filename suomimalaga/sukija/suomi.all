@@ -2414,7 +2414,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (iäkäs in $tietue.jatko) then
-    choose $i in iäkäs ($tietue, A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+U($tietue), "k"+A($tietue)+"is"+U($tietue));
+    choose $i in iäkäs ($tietue, A($tietue)+"s", "k"+A($tietue)+A($tietue), "k"+A($tietue)+"h"+A($tietue), "k"+A($tietue), "k"+A($tietue)+"h", "k"+U($tietue), "k"+A($tietue)+"is"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -9260,7 +9260,7 @@ subrule kalleus ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          tavuviiva: <<$param01, <>>>,
                          yhdyssana: <<$param01, <>>>]);
 end;
-subrule iäkäs ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
+subrule iäkäs ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
                         [nimentö: <<$param01, <>>>,
                          omistusliite: <<$param02, <>>, <$param03, <ei_voikko>>>,
@@ -9293,14 +9293,14 @@ subrule iäkäs ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          keinonto_in: <<$param04, <>>>,
                          kerronto_sti: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          voittoaste: <<$param02, <>>, <$param03, <ei_voikko>>>,
-                         yliaste: <<$param04, <>>>,
+                         yliaste: <<$param04, <>>, <$param05, <>>>,
                          johdin_inen: <<$param04, <>>>,
                          johdin_ittain: <<$param04, <>>>,
                          johdin_lAinen: <<$param01, <>>>,
                          johdin_llinen: <<$param02, <>>, <$param03, <ei_voikko>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
-                         johdin_Us: <<$param05, <>>, <$param06, <ei_voikko>>>,
+                         johdin_Us: <<$param06, <>>, <$param07, <ei_voikko>>>,
                          tavuviiva: <<$param01, <>>>,
                          yhdyssana: <<$param01, <>>>]);
 end;

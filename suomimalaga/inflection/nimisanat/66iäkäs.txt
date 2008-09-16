@@ -156,6 +156,7 @@ voittoaste
 
 yliaste
           iäk+kä+in
+          iäk+käh+in
 
 johdin_inen
           nisäk+kä+inen

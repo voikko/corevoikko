@@ -54,10 +54,6 @@ define @eln := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana>;
 define @ell := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
 define @elt := <yhdyssana, tavuviiva, etuliite, teonsana>;
 define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
-#define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
-#define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, teonsana>;
-#define @eltj := <tavuviiva, etuliite, nimisana, laatusana, nimi_laatusana, teonsana>;
-#define @eltj := <tavuviiva, etuliite, teonsanan_johdoksen_etuliite>;
 
 include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";

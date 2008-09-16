@@ -1301,6 +1301,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"botti">,           <"cell">>,
       <<"dia">,             <"koni", "midi", "nasta", "spora">>,
       <<"ele">,             <"itä">>,
+      <<"elektro", "äiti">, <"nisä">>, # Eletro+nisin. Äitin+isä, ei äiti+nisä.
       <<"elo">,             <"tee">>,
       <<"ensi">,            <"sää">>,
       <<"ensimmäinen">,     <"impi">>,   # Ensimmäis+impiä.
@@ -1408,6 +1409,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"onninen">,   <"tuttu">>,
       <<"ope">,       <"reti">>,
       <<"oppinen">,   <"ääntö">>,
+      <<"oranssi">,   <"seksi">>,
       <<"Osta">,      <"maa">>,
       <<"osto">,      <"skeida">>,
       <<"paita">,     <"silla">>,
@@ -1457,7 +1459,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"sose">,      <"uros">>,
       <<"sportti">,   <"suu">>,
       <<"suo">,       <"mensu", "misu", "musti", "nina">>,
-      <<"suu">,       <"ruis", "tee", "tehdä", "teloa">>,
+      <<"suu">,       <"reki", "ruis", "tee", "tehdä", "teloa">>,
       <<"syy">,       <"tee">>,
       <<"sävel">,     <"eittää">>,
       <<"taide">,     <"luomi", "luomu">>,
@@ -1478,13 +1480,14 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"ttu">,       <"nakki">>,
       <<"ttu", "tu">, <"valta">>,
       <<"tu">,        <"anne", "vasta">>,   # Esim. vilkais+tu+anne, vilkais+tu+vasta.
+      <<"tuore">,     <"suola">>,
       <<"täti">,      <"lanne">>,
       <<"ulko">,      <"naida", "nainen">>,
       <<"ulkonen">,   <"uoma">>,
       <<"ulos">,      <"pää", "tavi", "tuma", "tupa", "tuttava">>,
       <<"ura">,       <"naukaista">>,  # Ura+naukaisija.
       <<"us">,        <"Neuvonen">>,
-      <<"uus">,       <"arpoa">>,
+      <<"uus">,       <"arpoa", "into">>,
       <<"vaja">,      <"nainen">>,
       <<"varo">,      <"vaisu">>,
       <<"varus">,     <"tee">>,    # Varus+tee+t.
@@ -1506,7 +1509,6 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"yli">,       <"härmä", "mitoittaa", "voi">>,    # Yli+voi+mainen (johdin_mAinen).
       <<"ylä">,       <"hää", "silla">>,
       <<"ylänen">,    <"ilta">>,
-      <<"äiti">,      <"nisä">>,
 
       <<"aamu", "helma", "hännys", "kevät", "musta", "nahka", "oma", "puna", "päällys">,  <"tae">>, # Aamutakeista ei ole aamu+tae.
       <<"ahne", "verta", "vuos">,       <"ilta">>, # Ahne+ilta, verta+illakseen, vuos+ilta.
