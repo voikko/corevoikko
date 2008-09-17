@@ -1348,6 +1348,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
       <<"kemi">,      <"alli", "joki">>,
+      <<"kiero", "kirkas", "moni", "musta", "piilo", "puna", "pyöreä", "sini", "tumma", "vaalea", "viiru">,    <"silmäistä">>,
       <<"Kim", "tele", "tu">, <"maa">>,
       <<"kimma">,     <"huti">>,
       <<"kiri">,      <"tiikki">>,  # Luultavasti väärin kirjoitettu "kritiikki".
@@ -1428,6 +1429,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"poli">,      <"klinikka">>, # On oma sanansa.
       <<"porno">,     <"graafi">>,   # On oma sanansa.
       <<"posteri">,   <"ori">>,
+      <<"pottu", "pysty">,    <"nokkaista">>,
       <<"punk">,      <"arka", "kari">>,
       <<"puoli">,     <"nainen">>,  # On oma sanansa.
       <<"puu">,       <"hai">>,

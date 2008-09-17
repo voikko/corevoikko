@@ -613,6 +613,15 @@ subrule juonto ($tietue):
 end;
 
 
+subrule pyörtö ($tietue):
+  $tietue :=+ [lähtösana: $tietue.perusmuoto];
+  $tietue.luokka := nimisana;
+  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
+  return valo ($tietue, "t"+O($tietue), "r"+O($tietue));
+end;
+
+
 subrule hohto ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := nimisana;

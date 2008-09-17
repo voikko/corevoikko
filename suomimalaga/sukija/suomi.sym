@@ -800,6 +800,11 @@ huutaa;       # => Huuto.
 soutaa;       # => Soudella.
   vuotaa;
 puoltaa;
+  juurtaa;
+  jäykentää;
+  nuotintaa;
+  pyörtää;
+  saksantaa;
   sukeltaa; # => Sukellella, sukellus.
   paleltaa;
 murtaa;     # => Murrella, murros, murto. Kaksitavuiset.

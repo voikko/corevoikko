@@ -56,6 +56,9 @@ mcopy:
 bcopy:
 	cp *_l *.pro ~/.sukija
 
+vcopy:
+	cp voikko/*_l voikko/*.pro ~/.voikko
+
 koe: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 	cat ../../koesanat.txt | malaga -m suomi.pro >koe
 

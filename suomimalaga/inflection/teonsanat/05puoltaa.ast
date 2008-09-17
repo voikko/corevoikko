@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,6 +45,11 @@
 # combination.
 
 
-puoltaa  puoltaa  ta le la s l t
-sukeltaa sukeltaa ta le la s l t %muistella("t","l")
-paleltaa puoltaa  ta le la s l t
+juurtaa   puoltaa   ta re ra s r t
+jäykentää jäykentää tä ne nä s n t %muistella("t","n")
+nuotintaa puoltaa   ta ne na s n t
+puoltaa   puoltaa   ta le la s l t
+pyörtää   puoltaa   ta re ra s r t %muistella("t","r") %pyörtö
+saksantaa puoltaa   ta ne na s n t
+sukeltaa  sukeltaa  ta le la s l t %muistella("t","l")
+paleltaa  puoltaa   ta le la s l t
