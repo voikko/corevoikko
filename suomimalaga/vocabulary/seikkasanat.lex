@@ -155,6 +155,7 @@
 [perusmuoto: "harvoin", alku: "harvoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helkkari", alku: "helkkaristi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hellävaroen", alku: "hellävaroen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
+[perusmuoto: "hellävaroin", alku: "hellävaroin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "helpoiten", alku: "helpoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helvetti", alku: "helvetisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä, rakenne: "=ppppp=pppppppppp"];

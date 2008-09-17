@@ -1343,10 +1343,13 @@ heksagoninen # heksagoni
 heterotsygootti # hetero, tsygootti
 heterotsygoottinen # hetero, tsygootti
 hiihtarit # hiihtari
+hiushygrometri # hygrometri
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
 huiskaus # huiskata
+hydroksyyliryhmä # hydroksyyli
 hömpsötys # hömpsöttää
+höösäys # höösätä
 inhalointi # inhaloida
 inkubaatioaika # inkubaatio
 jenkkifutis # futis
