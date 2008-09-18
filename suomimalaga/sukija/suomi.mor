@@ -1289,7 +1289,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"arja">,            <"lainen">>,
       <<"aro">,             <"matti", "misu">>,
       <<"arvo">,            <"istua">>,          # Arvo+istuma.
-      <<"ase">,             <"maata">>,          # Ase+makaa+va.
+      <<"ase">,             <"maata", "mana">>,          # Ase+makaa+va.
       <<"askar">,           <"re">>,
       <<"auki">,            <"naida", "nainen", "naisinen", "olla", "olo">>,
       <<"auto">,            <"nova">>,   # Auto+novien.
@@ -1354,6 +1354,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kiri">,      <"tiikki">>,  # Luultavasti väärin kirjoitettu "kritiikki".
       <<"kirjo">,     <"rasta">>,
       <<"kirkas">,    <"tuma">>,
+      <<"kirkaste">,  <"tuki">>,            # Kirkaste+tuissa.
       <<"kiska">,     <"istua", "seka">>,   # Kiska+istuja.
       <<"kita">,      <"risti">>,
       <<"kitunen">,   <"sari">>,        # Messi+n+kitus+sari+lla.
@@ -1571,6 +1572,7 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"para", "ravi">, <"n">,      <"tola">>,
       <<"pari">,         <"inen">,   <"hissa">>,
       <<"pari">,         <"inen">,   <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
+      <<"silla">,        <"n">,      <"pää">>,
       <<"suoda">,        <"ma">,     <"lainen", "laismainen", "laki">>,  # Suo+ma+lainen, suo+ma+laista (laki).
       <<"tukka">,        <"nuotta">, <"silla">>,
       <<"ulko">,         <"ravinto">, <"laaki">>,    # Ulko+ravinto+laakin.

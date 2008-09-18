@@ -39,6 +39,8 @@ historical = [
 	(u'antautua', u'sw', [(u't',u'(.*)tUA',u'antautua')]),
 	(u'arvailla',   u'-',  [(None,u'(.*[AOU]])illA',u'arvailla')]),
 	(u'arvelu',   u'sw', [(None,u'(.*e)istO',u'aarteisto')]),
+	(u'askel', u'ws', [(u't',u'(.*V)dAr',u'udar')]),
+#                           (u'>k',u'(.*CA)en',u'säen')]),
 	(u'autio', u'-', [(None,u'(..*C)aatio',u'obligaatio'),
 			  (None,u'(..*C)uutio',u'resoluutio'),
 			  (None,u'(..*C)uusio',u'illuusio'),

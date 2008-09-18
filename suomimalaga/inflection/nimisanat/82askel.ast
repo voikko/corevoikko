@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -52,4 +52,6 @@ kinner  askel ner tere teree teret ter
 ommel   askel mel pele pelee pelet pel
 penger  askel ger kere keree keret ker
 piennar askel nar tare taree taret tar
+säen    askel en  kene kenee kenet ken
 taival  askel val pale palee palet pal
+udar    askel dar tare taree taret tar

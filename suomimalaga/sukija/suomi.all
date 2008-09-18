@@ -2899,8 +2899,26 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (säen in $tietue.jatko) then
+    choose $i in askel ($tietue, "en", "kene", "kenee", "kenet", "ken");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (taival in $tietue.jatko) then
     choose $i in askel ($tietue, "v"+A($tietue)+"l", "p"+A($tietue)+"le", "p"+A($tietue)+"lee", "p"+A($tietue)+"let", "p"+A($tietue)+"l");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (udar in $tietue.jatko) then
+    choose $i in askel ($tietue, "d"+A($tietue)+"r", "t"+A($tietue)+"re", "t"+A($tietue)+"ree", "t"+A($tietue)+"ret", "t"+A($tietue)+"r");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else

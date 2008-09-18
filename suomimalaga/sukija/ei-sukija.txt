@@ -1,3 +1,6 @@
+# Nämä pitäisi merkitä Joukahaiseen lipulla "ei kuulu ideksointisanastoon",
+# mutta tähän tiedostoon laittaminen on kätevämpää, jos Internet-yhteys
+# on liian hidas. (-:
 Aaltonen
 Aamu
 Aarnio
@@ -94,6 +97,7 @@ hautaus
 havainnoitsija
 heijastuma
 heikentymä
+heitellä
 Helo
 heloitus
 henkilöitymä
@@ -136,6 +140,7 @@ itsesäätyvä
 Jalo
 jaotus
 Japani
+jengiläinen
 Jukka
 julkishallinto
 julkissektori
@@ -396,6 +401,7 @@ myynti
 Mäkinen
 mäkitupalainen
 naarmuttua
+Neuvostoliitto
 Niemi
 nimismies
 niukentaa

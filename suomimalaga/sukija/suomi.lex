@@ -646,6 +646,10 @@ define @jatko_y3 := <liitesana, loppu>;
 [alku: "i",    luokka: kertoman_tekijäpääte_y3, luku: yksikkö, tekijä: 3, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 
+# Oikeastaan itsekohtainen taivutus "opettelihe".
+[alku: "ihe",  luokka: kertoman_tekijäpääte_y3, luku: yksikkö, tekijä: 3, äs: aä,
+               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>, tiedot: <murre>];
+
 [alku: "imme", luokka: kertoman_tekijäpääte_m1, luku: monikko, tekijä: 1, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 [alku: "itte", luokka: kertoman_tekijäpääte_m2, luku: monikko, tekijä: 2, äs: aä,
