@@ -722,7 +722,7 @@ end: class
 # Kotus 12 lattia (2/3)
 class: 12
 sm-class: peruna
-match-word: A
+match-word: CA
 consonant-gradation: -
 group: t
 transform-group: e

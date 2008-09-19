@@ -1360,7 +1360,10 @@ kapitalointi # kapitaloida
 karioottisuus # karioottinen
 keimit # geimi
 kelmentyä # kelmentää
+kilopondimetri # kilopondi
 kokkarit # kokkari
+kolloidiliuos # kolloidi
+kolloidinen # kolloidi
 kolmiointi # kolmioida
 kummarit # kummari
 kusettaja # kusettaa
@@ -1383,6 +1386,7 @@ metkasti # metka
 metastasointi # metastasoida
 molaarisuus # molaarinen
 narkkaus # narkata
+natriumsilikaatti # silikaatti
 nyansointi # nyansoida
 nyyttärit # nyyttäri
 onkogeeninen # onkogeeni
