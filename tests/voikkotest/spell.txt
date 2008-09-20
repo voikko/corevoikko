@@ -549,6 +549,14 @@ vilkkaana # Kotus 41
 !vilkasna # Kotus 41 (vanhat_muodot)
 röyhkeäpenkereinen # Kotus 49
 röyhkeäpenkerinen # Kotus 49
+säen # Kotus 49
+säkene # Kotus 49
+säenten # Kotus 49
+säkenien # Kotus 49
+udar # Kotus 49
+utare # Kotus 49
+udarta # Kotus 49
+utaretta # Kotus 49
 kielsi # Kotus 54
 !kielti # Kotus 54
 löysi # Kotus 54
@@ -588,6 +596,10 @@ saarrettiin # Kotus 57
 rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66
+vavista # Kotus 66
+vapista # Kotus 66
+!vavisen # Kotus 66
+vapisen # Kotus 66
 lobbasi # Kotus 73
 peljätköön # Kotus 73
 !peljäsi # Kotus 73

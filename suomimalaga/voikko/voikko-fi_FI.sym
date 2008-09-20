@@ -714,6 +714,8 @@ askel;
   penger;
   piennar;
   taival;
+  säen;
+  udar;
 
 
 # Vain Suomen kielen perussanakirjassa.
@@ -845,6 +847,7 @@ nuolaista;   # Ja nuolasta. >= Nuolaisu, nuolasu.
   kusta;
   seistä;
   nousta;
+  vavista;
 tulla;
   nuolla; # => nuoleskella
 purra;

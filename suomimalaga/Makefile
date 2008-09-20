@@ -88,7 +88,6 @@ voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
 	$(PYTHON) voikko/generate_lex.py $(GENLEX_OPTS)
 	touch $@
-	@grep "Malaga class not found" voikko/joukahainen.lex
 
 voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
 	cat voikko/joukahainen.lex $(EXTRA_LEX) > $@

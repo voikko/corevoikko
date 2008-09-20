@@ -1920,6 +1920,14 @@ allo_rule generate_allos ($tietue):
     choose $i in taival ($tietue, "pal", "val");
     result $i.alku, $i - alku;
 
+  elseif (säen in $tietue.jatko) then
+    choose $i in taival ($tietue, "ken", "en");
+    result $i.alku, $i - alku;
+
+  elseif (udar in $tietue.jatko) then
+    choose $i in taival ($tietue, "tar", "dar");
+    result $i.alku, $i - alku;
+
 ##############################################
 
 
@@ -2703,6 +2711,10 @@ allo_rule generate_allos ($tietue):
   elseif (nousta in $tietue.jatko) then
     choose $i in nuolaista ($tietue, "", "")
                  + sana_U ($tietue, "");  # Nousu.
+    result $i.alku, $i - alku;
+
+  elseif (vavista in $tietue.jatko) then
+    choose $i in nuolaista ($tietue, "pis", "vis");
     result $i.alku, $i - alku;
 
 ######################################

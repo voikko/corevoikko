@@ -186,9 +186,11 @@ fiasko
 filippiläinen
 finiitti
 flekteerata
+follikkeli # Taivutus 6 eikä 5, koska "follikkeleiden" näyttää olevan laajasti käytössä
 fonotaksi
 fonotaktinen
 fooni
+fortuna # Googlen mukaan Kotuksen hyväksymät taivutukset "fortunien" jne. eivät ole käytössä
 fosfori
 fragmentoida
 futuristi

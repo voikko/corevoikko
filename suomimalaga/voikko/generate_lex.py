@@ -106,9 +106,11 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if alku == None:
+			errorstr = u"#Malaga class not found for (%s, %s)\n" \
+				% (wordform, voikko_infclass)
 			generate_lex_common.write_entry(main_vocabulary, vocabulary_files,
-				word, u"#Malaga class not found for (%s, %s)\n" \
-				% (wordform, voikko_infclass))
+				word, errorstr)
+			print(errorstr)
 			continue
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
