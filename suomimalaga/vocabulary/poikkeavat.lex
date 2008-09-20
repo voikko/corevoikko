@@ -126,7 +126,6 @@
 [perusmuoto: "laupias", alku: "laup", luokka: laatusana, jatko: <laupias>, äs: a];
 [perusmuoto: "leikkaantua", alku: "leikkaan", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "levätä", alku: "le", luokka: teonsana, jatko: <levätä>, äs: ä];
-[perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a, rakenne: "=pppppp=ppppp"];
 [perusmuoto: "lämmin", alku: "läm", luokka: nimi_laatusana, jatko: <lämmin>, äs: ä];
 [perusmuoto: "Martinique", alku: "Martinique", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "memoriam", alku: "memoriam", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
@@ -155,7 +154,6 @@
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "purra", alku: "pur", luokka: teonsana, jatko: <purra>, äs: a];
 [perusmuoto: "pyyhe", alku: "pyyh", luokka: nimisana, jatko: <tarvike>, äs: ä];
-[perusmuoto: "päre", alku: "päre", luokka: nimisana, jatko: <terve>, äs: ä];
 [perusmuoto: "rakentaa", alku: "raken", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "rakentaa", alku: "rake", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a]; # lt-loppuiset parfait-luokan sanat eivät sovi Joukahaiseen
@@ -185,15 +183,12 @@
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: <osanto_tA, liitesana, loppu>, äs: a];
 [perusmuoto: "tehdä", alku: "te", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "tenkkapoo", alku: "tenkkapoo", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "terve", alku: "terve", luokka: nimi_laatusana, jatko: <terve>, äs: ä, tiedot: <inen>];
 [perusmuoto: "tie", alku: "t", luokka: nimisana, jatko: <tie>, äs: ä];
 [perusmuoto: "duoraitiotie", alku: "duoraitiot", luokka: nimisana, jatko: <tie>, äs: ä, rakenne: "=ppp=pppppp=ppp"];
 [perusmuoto: "karkutie", alku: "karkut", luokka: nimisana, jatko: <tie>, äs: ä, rakenne: "=ppppp=ppp"]; # Esim. tie-sanan kirjoitusasuksi
 [perusmuoto: "tietää", alku: "tie", luokka: teonsana, jatko: <taitaa>, äs: ä];
 [perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "tosi", alku: "to", luokka: nimi_laatusana, jatko: <tosi>, äs: a, tiedot: <ei_inen>];
-[perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
-[perusmuoto: "uunituore", alku: "uunituore", luokka: laatusana, jatko: <terve>, äs: a, rakenne: "=pppp=ppppp"];
 [perusmuoto: "tyyni", alku: "tyyn", luokka: laatusana, jatko: <pieni>, äs: ä];
 [perusmuoto: "täpötäysi", alku: "täpötäy", luokka: laatusana, jatko: <tosi>, äs: ä, rakenne: "=pppp=ppppp"];
 [perusmuoto: "täysi", alku: "täy", luokka: laatusana, jatko: <tosi>, äs: ä];
