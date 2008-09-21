@@ -212,6 +212,8 @@ kauniimpivärinen
 !kauneinvärinen
 !kauniimmastavärinen
 !kauneimmastavärinen
+karkeampirakenteinen
+painavarakenteinen
 luettavampina
 suoraviivaisempaa
 talottomampi

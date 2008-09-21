@@ -1506,7 +1506,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
   end;
   result $res, rules voitto_yliasteen_sijapääte;
   if ($oikea.luokka = voittoaste) then
-    result $res, rules inen_johdos_nimisanasta;
+    result $res, rules inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   end;
 
   if johdin_UUs in $oikea.jatko then
@@ -1543,7 +1543,8 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
                          etuliite, yhdysmerkki_yleisnimen_jälkeen;
     else
-      result $res, rules inen_johdos_nimisanasta, etuliite, yhdysmerkki_laatusanan_jälkeen;
+      result $res, rules inen_johdos_nimisanasta, etuliite, yhdysmerkki_laatusanan_jälkeen,
+                         inen_päätteinen_laatusana;
     end;
   end;
   if omistusliite in $oikea.jatko then
