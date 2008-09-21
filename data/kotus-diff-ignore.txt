@@ -1425,7 +1425,10 @@ santsaus # santsata
 senssit # senssi
 shoppailla # shopata
 shoppailu # shopata
+sightseeingbussi # sightseeing
 simmarit # simmari
+sintraus # sintrata
+siselöinti # siselöidä
 skimbaus # skimbata
 smirgelöinti # smirgelöidä
 somatisointi # somatisoida
