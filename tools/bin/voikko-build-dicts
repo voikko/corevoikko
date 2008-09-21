@@ -1,0 +1,70 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Copyright 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Script for automating the build of multiple dictionary variants for
+# Voikko.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+from subprocess import Popen
+from os import waitpid
+
+def runCmd(cmd):
+	p = Popen(cmd, shell=True)
+	sts = waitpid(p.pid, 0)
+	if sts[1] != 0:
+		print u"Error while executing command: " + cmd
+		exit(1)
+
+# === Define dictionary properties ===
+
+class Voikkodict:
+	idSuffix = u""
+	nameFi = u""
+	nameEn = u""
+	smOptions = u""
+
+allDicts = []
+
+d = Voikkodict()
+d.idSuffix = u""
+d.nameFi = u"perussanasto"
+d.nameEn = u"basic vocabulary"
+d.smOptions = u""
+allDicts.append(d)
+
+d = Voikkodict()
+d.idSuffix = u"-erityis"
+d.nameFi = u"tieteellinen sanasto"
+d.nameEn = u"scientific vocabulary"
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,education" EXTRA_LEX=vocabulary/erikoisalat/atk-lyhenteet.lex'
+allDicts.append(d)
+
+d = Voikkodict()
+d.idSuffix = u"-murre"
+d.nameFi = u"murresanasto"
+d.nameEn = u"Finnish dialects"
+d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
+allDicts.append(d)
+
+
+# === Phase 1: build the dictionaries ===
+
+DICT_DIR_PREFIX="dict"
+
+for dict in allDicts:
+	runCmd('make clean')
+	runCmd('make voikko-install DESTDIR="' + DICT_DIR_PREFIX + dict.idSuffix + '" ' + dict.smOptions)
