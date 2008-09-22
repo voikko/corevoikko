@@ -1342,12 +1342,14 @@ halstaroida # halsteroida
 haploidinen # halploidi
 harmonistua # harmonistaa
 heksagoninen # heksagoni
+hentoilu # hentoilla
 heterotsygootti # hetero, tsygootti
 heterotsygoottinen # hetero, tsygootti
 hiihtarit # hiihtari
 hiushygrometri # hygrometri
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
+hotaisu # hotaista
 huiskaus # huiskata
 hydroksyyliryhmä # hydroksyyli
 hömpsötys # hömpsöttää
@@ -1355,6 +1357,7 @@ höösäys # höösätä
 inhalointi # inhaloida
 inkubaatioaika # inkubaatio
 jenkkifutis # futis
+jippoilu # jippoilla
 jortsut # jortsu
 kalsongit # kalsonki
 kaltevointi # kaltevoida
@@ -1367,12 +1370,16 @@ kokkarit # kokkari
 kolloidiliuos # kolloidi
 kolloidinen # kolloidi
 kolmiointi # kolmioida
+kuikuilu # kuikuilla
 kummarit # kummari
 kusettaja # kusettaa
 käninä # känistä
+käppäily # käppäillä
 lemput # lemppu
 lantsarit # lantsari
 laparoskopialeikkaus # laparoskopia
+lieroilu # lieroilla
+limboilu # limboilla
 lirputella # lirputtaa
 litsahdella # litsahtaa
 longerrella # longertaa
