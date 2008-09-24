@@ -52,7 +52,7 @@ include "suomi.inc";
 
 
 allo_rule generate_allos ($tietue):
-  define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
+##  define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
 
 
 ##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
@@ -101,11 +101,15 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"bitti", "kallas">) then   # -inen-johdokset ovat sanastossa.
+  if ($tietue.perusmuoto in <"bitti", "kallas", "terve">) then
     $tietue :=+ [tiedot: <ei_inen>];
   end;
 
-  if ($tietue.perusmuoto in <"luisti", "mani", "nasu", "poli", "tisu">) then
+  if ($tietue.perusmuoto in <"yhde">) then
+    $tietue :=+ [tiedot: <ei_inen, ei_ys>];
+  end;
+
+  if ($tietue.perusmuoto in <"luisti", "mani", "nasu", "paikko", "poli", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
@@ -145,6 +149,14 @@ allo_rule generate_allos ($tietue):
       stop;
     elseif ($tietue.luokka = laatusana) then
       $tietue.luokka := nimi_laatusana;
+    end;
+  end;
+
+  if ($tietue.perusmuoto = "sini") then
+    if ($tietue.jatko = <risti>) then
+      stop;
+    elseif ($tietue.jatko = <lovi>) then
+      $tietue.jatko := <kiiski>;
     end;
   end;
 

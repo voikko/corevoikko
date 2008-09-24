@@ -1321,7 +1321,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"hima">,      <"lapsi", "lassa", "lasta", "lika">>,
       <<"hurri">,     <"kaani">>,
       <<"huvi">,      <"lassa">>,
-      <<"hyppy">,     <"selli">>,
+      <<"hyppy">,     <"selli", "voimaan">>,   # Hyppy+voimaan+sakin.
       <<"hypo">,      <"tee", "teesi">>,
       <<"hyvin">,     <"voida", "voiva", "voipa">>,
       <<"hyvä">,      <"isotella">>,
@@ -1364,11 +1364,13 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"komi">,      <"teko">>,        # Komi+teoille.
       <<"korni">,     <"lovi">>,        # Korni+lovi(n).
       <<"korsi">,     <"kaksi", "kalla">>,
+      <<"kuli">,      <"kovis">>,       # Kuli+kovis+ta.
       <<"kulti">,     <"voi", "vuo">>,
       <<"kuokka">,    <"lassa", "lasta">>,
-      <<"kuu">,       <"kausittainen", "lakka", "lemma", "luja", "luksus", "luminen", "luu">>,
+      <<"kuu">,       <"kausittainen", "lakka", "lemma", "luja", "luksus", "luminen", "lupa", "luu">>,
       <<"kure">,      <"misu">>,
       <<"kyllänen", "liukas", "puh", "päällys", "timo", "valmis">,  <"tie">>,
+      <<"kylmä">,     <"varastoida">>,  # On sanastossa.
       <<"yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen">,  <"vuota", "tuhka">>,
       <<"käsi">,      <"kirjoittaa">>,
       <<"käsin">,     <"oja", "ukki">>,
@@ -1414,6 +1416,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"oranssi">,   <"seksi">>,
       <<"Osta">,      <"maa">>,
       <<"osto">,      <"skeida">>,
+      <<"paine">,     <"kyllästää">>,
       <<"paita">,     <"silla">>,
       <<"palava">,    <"kivi">>,
       <<"peli">,      <"manni">>,
@@ -1421,6 +1424,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"peru">,      <"noki">>,  # Peru+noissa.
       <<"perus">,     <"korjata">>,  # On oma sanansa.
       <<"perso">,     <"nalli">>,
+      <<"peruste">,   <"luu">>,     # Peruste+luissa.
       <<"perään">,    <"pää">>,
       <<"pihla">,     <"joki">>,
       <<"pitkis">,    <"täkki">>,
@@ -1438,7 +1442,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"psyko">,     <"fyysinen">>, # On sanastossa.
       <<"pyy">,       <"tee">>,   # Pyy+tee+llinen.
       <<"rad">,       <"kaali">>,
-      <<"raju">,      <"ilma">>,
+      <<"ranta">,      <"sippi">>,
       <<"rationaali">, <"seksi", "suu">>,
       <<"ratsas">,     <"tapa", "tavi", "tele", "teli", "tikki">>,
       <<"rauni">,     <"ottaa">>,      # Rauni+ota.
@@ -1455,7 +1459,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"samainen">,  <"tuta">>,
       <<"samu">,      <"raita">>,
       <<"sankar">,    <"ien", "itara", "naida">>,  # Sankar+itarina. Sankar+nainen ei ole sankar+naida.
-      <<"seka">,      <"">>,
+      <<"savo">,      <"taksi">>,
       <<"sivula">,    <"usea">>,
       <<"snellman">,  <"laki">>,
       <<"soinen">,    <"aari">>,
@@ -1470,7 +1474,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"tasa">,      <"uni">>,
       <<"taulu">,     <"koi", "koittaa">>,
       <<"taus">,      <"takki">>,
-      <<"tee">,       <"maa">>,    # Tee+maa+n.
+      <<"tee">,       <"maa", "maki", "makki">>,    # Tee+maa+n, tee+makin.
       <<"terve">,     <"yty">>,
       <<"terä">,      <"sportti">>,
       <<"tie">,       <"naukaista", "tee", "tie", "toinen", "tokko">>,
@@ -1492,6 +1496,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"us">,        <"Neuvonen">>,
       <<"uus">,       <"arpoa", "into">>,
       <<"vaja">,      <"nainen">>,
+      <<"valo">,      <"kuvata">>,
       <<"varo">,      <"vaisu">>,
       <<"varus">,     <"tee">>,    # Varus+tee+t.
       <<"vasta">,     <"pää">>,
@@ -1501,7 +1506,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"viive">,     <"itä">>,
       <<"vik">,       <"koko", "oja", "uros">>,
       <<"vipunen">,   <"ilta">>,            # Vipus+ilta.
-      <<"voi">,       <"malli", "mallinen", "manne", "paha", "tuma">>,
+      <<"voi">,       <"maa", "malli", "mallinen", "manne", "paha", "tuma">>,
       <<"voinen">,    <"iva", "ivata">>,    # Voisivatko => vois+iva(ta).
       <<"vuo">,       <"leski", "vuosilta", "tee">>,    # Vuo+leske+llen, vuos+ilta, vuo+tee+n.
       <<"vuoro">,     <"vaikuttaa">>,       # On sanastossa.
@@ -1551,6 +1556,7 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
   define $taulukko := <
 #      <<"">,    <"">,    <"">>,
       <<"arvo">,         <"is">,   <"tuma">>,         # Eri+arvo+is+tum+ista  arvo + johdin_inen + tuma.
+      <<"elää">,         <"o">,    <"kuvata">>,       # Elokuvata.
       <<"evoluutio">,    <"n">,    <"aari", "ääri">>,
       <<"fotometri", "metri">, <"inen">,   <"säkä", "sää">>,
       <<"heitto">,    <"inen">,   <"tuki">>,    # Heitto+is+tu+in. Heitto + johdin_inen + tuki + keinonto_n.
@@ -1561,17 +1567,18 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"kani">,                  <"n">,      <"manne">>,
       <<"keskinen">,              <"uoma">,   <"lainen">>,  # Keskis+uoma+lainen.
       <<"kolme">,                 <"n">,      <"aula">>,    # Kolme+n+aula+inen.
+      <<"kori">,                  <"inen">,   <"tie">>,     # Kor+is+te+iden.
       <<"kutsu">,                 <"n">,      <"tapiiri">>,
       <<"laki">,                  <"n">,      <"asana">>,   # Lai+n+asana.
-      <<"luokka">,    <"inen">,   <"tupa">>,
-      <<"muuri">,     <"inen">,   <"ääntö">>,           # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
-      <<"näky">,      <"tön">,    <"ohja", "ohjain">>,  # Näy+tön+ohja+in, näy+tön+ohjain.
-      <<"oma">,       <"tunto">,  <"vapa">>,
-      <<"oppi">,      <"n">,      <"ioni">>,
-      <<"palaa">,     <"va">,     <"kivi">>,    # Pala+va+kivi.
+      <<"luokka">,       <"inen">,   <"tupa">>,
+      <<"muuri">,        <"inen">,   <"ääntö">>,           # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
+      <<"näky">,         <"tön">,    <"ohja", "ohjain">>,  # Näy+tön+ohja+in, näy+tön+ohjain.
+      <<"oma">,          <"tunto">,  <"vapa">>,
+      <<"oppi">,         <"n">,      <"ioni">>,
+      <<"palaa">,        <"va">,     <"kivi">>,    # Pala+va+kivi.
       <<"para", "ravi">, <"n">,      <"tola">>,
-      <<"pari">,         <"inen">,   <"hissa">>,
-      <<"pari">,         <"inen">,   <"printti">>, # Par+is+printti. Pari + johdin_inen + printti.
+      <<"pari">,         <"inen">,   <"hissa", "printti">>, # Par+is+printti. Pari + johdin_inen + printti.
+      <<"pito">,         <"inen">,   <"uus">>,     # Pitoisuus on sanastossa.
       <<"silla">,        <"n">,      <"pää">>,
       <<"suoda">,        <"ma">,     <"lainen", "laismainen", "laki">>,  # Suo+ma+lainen, suo+ma+laista (laki).
       <<"tukka">,        <"nuotta">, <"silla">>,
@@ -1874,6 +1881,16 @@ subrule alku ($tietue):
     #
     elseif ($tietue.perusmuoto = "poliisi" and substring ($tietue.alku, 1, 5) = "polis") then
       return "polii" + substring ($tietue.alku, 5, 1R);
+    #
+    # Tea(a)tteri.
+    #
+    elseif ($tietue.perusmuoto = "teatteri" and substring ($tietue.alku, 1, 5) = "teaat") then
+      return "teat" + substring ($tietue.alku, 5, 1R);
+    #
+    # Liipa(i)sin.
+    #
+    elseif ($tietue.perusmuoto = "liipaisin" and substring ($tietue.alku, 1, 6) = "liipas") then
+      return "liipai" + substring ($tietue.alku, 6, 1R);
     end;
   end;
 

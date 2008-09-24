@@ -408,6 +408,9 @@
 [perusmuoto: "politiikka", alku: "politik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "politiikki", alku: "politiik", luokka: nimisana, jatko: <takki>, äs: a];  # Politiikka.
 [perusmuoto: "poliisi", alku: "polis", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "teatteri", alku: "teaatter", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "liipaisin", alku: "liipasi", luokka: nimisana, jatko: <uistin>, äs: a];
+
 [perusmuoto: "polina", alku: "polin", luokka: nimisana, jatko: <apila>, äs: a];   # Puheenpolina.
 
 
@@ -504,6 +507,13 @@
 [perusmuoto: "minunkaltainen", alku: "minunkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=ppppppppp"];
 [perusmuoto: "erinkaltainen", alku: "erinkaltai", luokka: laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=ppppppppp"];
 [perusmuoto: "Paulow", alku: "Paulow", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Quartermain", alku: "Quatermain", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Nemo", alku: "Nemo", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Evanovich", alku: "Evanovich", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Haggard", alku: "Haggard", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Mitchell", alku: "Mitchell", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Fokker", alku: "Fokker", luokka: sukunimi, jatko: <edam>, äs: a];
+
 
 [perusmuoto: "oljennella", alku: "oljen", luokka: teonsana, jatko: <pienennellä>, äs: a];
 [perusmuoto: "parannutella", alku: "parannut", luokka: teonsana, jatko: <aatella>, äs: a];
@@ -531,7 +541,22 @@
 [perusmuoto: "turvekoksi", alku: "turvekoks", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "verokoksi", alku: "verokoks", luokka: nimisana, jatko: <risti>, äs: a];
 
+[perusmuoto: "filippiinien", alku: "filippiinien", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "voimaan", alku: "voimaan", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "voimaantua", alku: "voimaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
+[perusmuoto: "savolainen", alku: "savolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "liikkeelle", alku: "liikkeelle", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "liikkeeseen", alku: "liikkeeseen", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "savo", alku: "savo", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <ei_ysj, ei_lAinen>];
+
+
 # Nämä on lisätty Joukahaiseen.
+#[perusmuoto: "politikoitsija", alku: "politikoitsi", luokka: nimisana, jatko: <kulkija>, äs: a];
+#[perusmuoto: "tykky", alku: "tyk", luokka: nimisana, jatko: <alku>, äs: ä];
+#[perusmuoto: "tyrannius", alku: "tyranniu", luokka: nimisana, jatko: <kalleus>, äs: a];
+#[perusmuoto: "tyroksiini", alku: "tyroksiin", luokka: nimisana, jatko: <risti>, äs: a];
+#[perusmuoto: "tyrosiini", alku: "tyrosiin", luokka: nimisana, jatko: <risti>, äs: a];
+#[perusmuoto: "tyräkki", alku: "tyräk", luokka: nimisana, jatko: <takki>, äs: ä];
 # Lisäykset Joukahaiseen loppuivat.
 
 ##############

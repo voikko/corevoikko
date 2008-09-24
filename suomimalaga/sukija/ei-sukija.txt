@@ -78,7 +78,9 @@ Esteri
 estymä
 etelävaltalainen
 etruskilainen
+Fidži
 freudilainen
+fryygialainen
 Georgia
 Guinea
 haarautuma
@@ -138,6 +140,7 @@ itkettynyt
 itkettyä
 itsesäätyvä
 Jalo
+jalokivi
 jaotus
 Japani
 jengiläinen
@@ -180,6 +183,7 @@ karsimakirves
 Kartano
 Kartio
 kartoitus
+karvasmanteli
 kasaantuma
 kasautuma
 Kaste
@@ -204,6 +208,7 @@ Keto
 kevytjukurtti
 kevytmetalli
 Kielo
+kierosilmä
 kieroutuma
 kiertuelainen
 kiertymä
@@ -257,6 +262,7 @@ kurssilainen
 Kuru
 kutistuma
 kuulustella
+Kuusisto
 Kuutti
 Kuvaaja
 kuvaama
@@ -328,6 +334,7 @@ lojaalisuus
 Lotta
 lukema
 lumoojatar
+luokitus
 luokkalainen
 luoma
 Luoma
@@ -402,6 +409,7 @@ Mäkinen
 mäkitupalainen
 naarmuttua
 Neuvostoliitto
+Newton
 Niemi
 nimismies
 niukentaa
@@ -409,6 +417,7 @@ Niva
 Norja
 nousema
 näkymä
+näytellä
 näyttämä
 näyttö
 ohentuma
@@ -463,6 +472,7 @@ poisto
 poistuma
 Pokka
 poltto
+pommitus
 Portugali
 Posti
 puhkeama
@@ -479,6 +489,7 @@ Päivä
 pöhöttymä
 raakalainen
 Raitio
+rajuilma
 Ranska
 Ranta
 rappeutuma
@@ -521,6 +532,9 @@ sanoma
 saostuma
 Satu
 Savikko
+Savolainen
+Savo
+savo
 sekasortoinen
 seminaarilainen
 Seppä
@@ -537,6 +551,7 @@ sisäpiiriläinen
 sisäänajo
 sisäänmeno
 sisääntulo
+Savo
 soistuma
 soitto
 Somero

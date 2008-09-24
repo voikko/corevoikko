@@ -57,10 +57,7 @@ bcopy:
 	cp *_l *.pro ~/.sukija
 
 vcopy:
-	cp voikko/*_l voikko/*.pro ~/.voikko
-
-koe: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
-	cat ../../koesanat.txt | malaga -m suomi.pro >koe
+	cp ../voikko/*_l ../voikko/*.pro ~/.voikko
 
 k1: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 	cat ../../koesanat1.txt | malaga -m suomi.pro >k1
@@ -71,11 +68,6 @@ k2: suomi.all_l suomi.lex_l suomi.mor_l suomi.sym_l
 
 diff:
 	(diff ../../koesanat1.out k1; diff ../../koesanat2.out k2) >foo
-
-
-diff-koe:
-	diff ../../koesanat.out f1 >foo
-
 
 cp1:
 	cp k1 ../../koesanat1.out; cp k2 ../../koesanat2.out
