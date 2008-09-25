@@ -1474,14 +1474,25 @@ terkut # terkku
 tissutella # tissuttaa
 tissuttelu # tissuttaa
 titraus # titrata
+torveilu # torveilla
 transponointi # transponoida
 tumpelointi # tumpeloida
 tunnelointi # tunneloida
 tyvekkyys # tyvekäs
 tähysteisesti # tähysteinen
+töppöily # töppöillä
 törmäytys # törmäyttää
+törppöily # törppöillä
+ufoilu # ufoilla
+ujoilu # ujoilla
 valkkaus # valkata
-verekkyys # verekäs
 vasituisesti # vasituinen
+veikistelijä # veikistellä
+veikistely # veikistellä
+verekkyys # verekäs
+vitkutella # vitkuttaa
+vitkuttelu # vitkuttaa
+vokotella # vokottaa
+vokottelu # vokottaa
 välibosoni # bosoni
 
