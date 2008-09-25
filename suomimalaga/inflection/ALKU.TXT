@@ -113,7 +113,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "säkä", "tavi">) then
+  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "silla", "säkä", "tavi">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else

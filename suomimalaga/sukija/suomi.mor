@@ -981,7 +981,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
   #
   # Siis hyväksytään esim. isäinsä, valainsa, kasvoinsa, pöytäimme, synteimme, mutta ei uskoimme.
   #
-  if ($sana in <"ni", "si", "s", "nsa", "nsä", "mme", "nne">) then
+  if ($sana in <"ni", "si", "s", "nsa", "nsä", "ns", "mme", "nne">) then
     if ($vasen.$i.sija = omanto_in) then
       if (($sana in <"nsa", "nsä">) or
           (($sana in <"mme">) and (substring ($vasen.($i-1).alku, 1R) in <"a", "e", "ä">))) then
@@ -1310,7 +1310,6 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"eura">,            <"joki">>,   # On omana sanana.
       <<"euro">,            <"palanen">>,
       <<"futu">,      <"rissa", "risti">>,
-      <<"litografi">, <"koksi">>,
       <<"hai">,       <"talli">>,    # Hai+tallinen.
       <<"halti">,     <"joki">>,     # Halti+joiksi.
       <<"hara">,      <"voi", "voida", "vuo">>,
@@ -1378,7 +1377,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"lakka">,     <"rissa">>,
       <<"lehdes">,    <"säkä", "sää">>,
       <<"liehu">,     <"koko", "maa", "maha", "massa", "vana", "vasta", "villa">>,
-      <<"litografi">, <"koksi">>,
+      <<"llinen">,    <"impi">,
       <<"loinen">,    <"kaksi", "tee", "tehdä">>,
       <<"lukunen">,   <"alin">>,
       <<"luokka">,    <"istua">>,
@@ -1584,6 +1583,7 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"tukka">,        <"nuotta">, <"silla">>,
       <<"ulko">,         <"ravinto">, <"laaki">>,    # Ulko+ravinto+laakin.
       <<"us">,           <"n">,       <"amme">>,     # Esim. takoit+ukse+n+amme (ukse == johdin_Us).
+      <<"vesi">,         <"inen">,    <"työ">>,      # Ves+is+töihin.
       <<"väsky">,        <"n">,       <"yö">>,       # Väsky+n+öitä.
       <<"yksi">,          <"n">,      <"mukainen">>, # Yhdenmukainen on sanastossa.
       <<"yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmen", "kymmenen">,

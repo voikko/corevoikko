@@ -474,6 +474,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "s",   luokka: omistusliite, äs: aä, tekijä: 2, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "nsa", luokka: omistusliite, äs: a,  tekijä: 3, jatko: <liitesana, loppu>];
 [alku: "nsä", luokka: omistusliite, äs: ä,  tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "ns",  luokka: omistusliite, äs: aä, tekijä: 3, jatko: <loppu>, tiedot: <murre>];
 [alku: "an",  luokka: omistusliite, äs: a,  tekijä: 3, jatko: <liitesana, loppu>];
 [alku: "en",  luokka: omistusliite, äs: aä, tekijä: 3, jatko: <liitesana, loppu>];
 [alku: "hen", luokka: omistusliite, äs: aä, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>]; # Esim. verkoille(h)en.

@@ -648,3 +648,10 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "viedä", alku: "viiä", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "vuosi", alku: "vuuve", luokka: nimisana, jatko: @yksikön_heikko_aste_ja_monikon_nimentö, äs: a];
+
+
+#[perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a, rakenne: "=pppppp=ppppp"];
+#[perusmuoto: "päre", alku: "päre", luokka: nimisana, jatko: <terve>, äs: ä];
+#[perusmuoto: "terve", alku: "terve", luokka: nimi_laatusana, jatko: <terve>, äs: ä, tiedot: <inen>];
+#[perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
+#[perusmuoto: "uunituore", alku: "uunituore", luokka: laatusana, jatko: <terve>, äs: a, rakenne: "=pppp=ppppp"];

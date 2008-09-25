@@ -190,6 +190,7 @@ Kaste
 kasvattaa
 katkeama
 katsojainen
+kauhistuttaa
 kaventuma
 kehittymä
 kepulainen
@@ -237,6 +238,7 @@ Koppelo
 koroitus
 korotus
 Koski
+Kotiranta
 Kotka
 koulutus
 kovettuma
@@ -244,6 +246,7 @@ Kreikka
 Kroatia
 Kuha
 Kuikka
+kuivamuona
 Kukka
 Kulho
 kulkeuma
@@ -268,6 +271,7 @@ Kuvaaja
 kuvaama
 kuvaamataide
 kuvaamataito
+kyllästyttää
 kymmenvuotinen
 Kytö
 kyyhkyläinen
@@ -332,6 +336,7 @@ liukuma
 lohkeama
 lojaalisuus
 Lotta
+luikerrella
 lukema
 lumoojatar
 luokitus
@@ -401,6 +406,7 @@ multippeliskleroosi
 muodostuma
 muovautuma
 Murto
+murtua
 murtuma
 mustuma
 myrkytys
@@ -494,6 +500,7 @@ Ranska
 Ranta
 rappeutuma
 rappeuma
+rasitus
 raskassarjalainen
 ratkeama
 Rauha
@@ -536,6 +543,7 @@ Savolainen
 Savo
 savo
 sekasortoinen
+selittyä
 seminaarilainen
 Seppä
 Siimes
@@ -614,6 +622,7 @@ tuhkatiheä
 Tuisku
 tukkeutuma
 tukkilainen
+tulitus
 tuonti
 tuoreravinto
 tuoretavara
@@ -661,6 +670,7 @@ Valta
 valtioviisas
 Valtti
 valuma
+Valuri
 vammainen
 Varis
 Varkaus

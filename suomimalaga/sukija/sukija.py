@@ -39,8 +39,6 @@ historical = [
 	(u'antautua', u'sw', [(u't',u'(.*)tUA',u'antautua')]),
 	(u'arvailla',   u'-',  [(None,u'(.*[AOU]])illA',u'arvailla')]),
 	(u'arvelu',   u'sw', [(None,u'(.*e)istO',u'aarteisto')]),
-	(u'askel', u'ws', [(u't',u'(.*V)dAr',u'udar')]),
-#                           (u'>k',u'(.*CA)en',u'säen')]),
 	(u'autio', u'-', [(None,u'(..*C)aatio',u'obligaatio'),
 			  (None,u'(..*C)uutio',u'resoluutio'),
 			  (None,u'(..*C)uusio',u'illuusio'),
@@ -140,6 +138,7 @@ historical = [
 	(u'tulla', u'ws', [(None,u'(.*Vl)lA',u'tulla')]),
         (u'tuomi', u'-', [(None,u'(.*V)mi',u'tuomi')]),
 	(u'uros', u'-', [(None,u'(.*)s',u'uros')]),
+	(u'terve', u'-',[(None,u'(.*)',u'terve')]),
 	(u'valmis',u'ws', [(None,u'(.*)is',u'valmis')]),
 	(u'vastaus', u'-', [(None,u'(..[^oö]*O)itUs',u'aivoitus'),
 			    (None,u'(..[^oö]*O)tUs',u'jaotus'),
@@ -386,17 +385,6 @@ def new_vtype (malaga_vtype, wordform):
 	else:
 	       	return malaga_vtype
 
-
-def jatko_x (wordform, jatko, jatko1, jatko2, testi1, testi2):
-	if testi1:
-		return jatko1
-	elif testi2:
-		return jatko2
-	else:
-		print (u'Väärä taivutus: ' + wordform + u' ' + jatko + u' ' + jatko1 + u' ' + jatko2)
-		sys.exit (1)
-
-
 def handle_word(main_vocabulary,vocabulary_files,word):
 	if generate_lex_common.has_flag(word, "not_sukija"): return
 
@@ -439,7 +427,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 #		print (u"Hoo " + str(voikko_infclass) + u" " + u" " + wordform + u"\n")
 #		print(u"Tavutus1 " + wordform + u" " + hyphenate(wordform.lower()) + u"\n")
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, classmap)
-#		print (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass) + u"\n")
+#		print (u"Huu " + wordform + u" " + str(alku) + u" " + str(jatko) + u" "  + str(voikko_infclass))
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
