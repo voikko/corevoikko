@@ -4,6 +4,7 @@
 Aaltonen
 Aamu
 Aarnio
+Aatami
 agroekologi
 agroekologia
 Aho
@@ -120,6 +121,7 @@ huhuilla
 huipentuma
 huiskauttaa
 Hukka
+huuto
 hyvinvointi
 hyvinvoiva
 hyytymä
@@ -139,6 +141,7 @@ Italia
 itkettynyt
 itkettyä
 itsesäätyvä
+itsetutkiskelu
 Jalo
 jalokivi
 jaotus
@@ -608,6 +611,7 @@ Terho
 Terttu
 tietynlainen
 Tiibet
+tiiliskivi
 tiivistymä
 Tikka
 Timpuri
@@ -707,6 +711,7 @@ voima
 wrightiläinen
 Vuokko
 Vuoksi
+Vuolle
 vuoristolainen
 vuorolainen
 vyörymä

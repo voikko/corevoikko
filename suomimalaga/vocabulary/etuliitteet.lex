@@ -169,7 +169,7 @@
 [perusmuoto: "live-", alku: "live-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
 [perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "luontais", alku: "luontais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä,  tiedot: <ei_sukija>];
 [perusmuoto: "lyömä", alku: "lyömä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];

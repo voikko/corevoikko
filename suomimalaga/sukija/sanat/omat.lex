@@ -547,16 +547,13 @@
 [perusmuoto: "savolainen", alku: "savolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "liikkeelle", alku: "liikkeelle", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "liikkeeseen", alku: "liikkeeseen", luokka: etuliite, jatko: @sana2, äs: aä];
+[perusmuoto: "live", alku: "live", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "savo", alku: "savo", luokka: nimisana, jatko: <valo>, äs: a, tiedot: <ei_ysj, ei_lAinen>];
-
+[perusmuoto: "kahtainen", alku: "kahtai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "pueblo", alku: "pueblo", luokka: nimisana, jatko: <arvelu>, äs: a];
+[perusmuoto: "kaivuu", alku: "kaivu", luokka: nimisana, jatko: <puu>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
-#[perusmuoto: "politikoitsija", alku: "politikoitsi", luokka: nimisana, jatko: <kulkija>, äs: a];
-#[perusmuoto: "tykky", alku: "tyk", luokka: nimisana, jatko: <alku>, äs: ä];
-#[perusmuoto: "tyrannius", alku: "tyranniu", luokka: nimisana, jatko: <kalleus>, äs: a];
-#[perusmuoto: "tyroksiini", alku: "tyroksiin", luokka: nimisana, jatko: <risti>, äs: a];
-#[perusmuoto: "tyrosiini", alku: "tyrosiin", luokka: nimisana, jatko: <risti>, äs: a];
-#[perusmuoto: "tyräkki", alku: "tyräk", luokka: nimisana, jatko: <takki>, äs: ä];
 # Lisäykset Joukahaiseen loppuivat.
 
 ##############

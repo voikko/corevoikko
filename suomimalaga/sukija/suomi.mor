@@ -1328,6 +1328,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"hää">,       <"läsi">>,
       <<"inen">,      <"sakki">>,
       <<"ikä">,       <"vihi", "vihki">>,
+      <<"irti">,      <"sanoutua">>,       # On sanastossa.
       <<"isä">,       <"nisä">>,
       <<"itse">,      <"matto", "tie">>,
       <<"iva">,               <"nova">>,
@@ -1366,7 +1367,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"kuli">,      <"kovis">>,       # Kuli+kovis+ta.
       <<"kulti">,     <"voi", "vuo">>,
       <<"kuokka">,    <"lassa", "lasta">>,
-      <<"kuu">,       <"kausittainen", "lakka", "lemma", "luja", "luksus", "luminen", "lupa", "luu">>,
+      <<"kuu">,       <"kausittainen", "lakka", "lape", "lemma", "luja", "luksus", "luminen", "lupa", "luu">>,
       <<"kure">,      <"misu">>,
       <<"kyllänen", "liukas", "puh", "päällys", "timo", "valmis">,  <"tie">>,
       <<"kylmä">,     <"varastoida">>,  # On sanastossa.
@@ -1377,7 +1378,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"lakka">,     <"rissa">>,
       <<"lehdes">,    <"säkä", "sää">>,
       <<"liehu">,     <"koko", "maa", "maha", "massa", "vana", "vasta", "villa">>,
-      <<"llinen">,    <"impi">,
+      <<"llinen">,    <"impi">>,
       <<"loinen">,    <"kaksi", "tee", "tehdä">>,
       <<"lukunen">,   <"alin">>,
       <<"luokka">,    <"istua">>,
@@ -1570,11 +1571,13 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"kutsu">,                 <"n">,      <"tapiiri">>,
       <<"laki">,                  <"n">,      <"asana">>,   # Lai+n+asana.
       <<"luokka">,       <"inen">,   <"tupa">>,
+      <<"luu">,          <"inen">,   <"kahtainen">>,       # Lu+is+kahtaisin.
       <<"muuri">,        <"inen">,   <"ääntö">>,           # Palo+muur+is+ääntö. Palo + johdin_inen + ääntö.
       <<"näky">,         <"tön">,    <"ohja", "ohjain">>,  # Näy+tön+ohja+in, näy+tön+ohjain.
       <<"oma">,          <"tunto">,  <"vapa">>,
       <<"oppi">,         <"n">,      <"ioni">>,
       <<"palaa">,        <"va">,     <"kivi">>,    # Pala+va+kivi.
+      <<"palkki">,       <"n">,      <"nolla">>,   # Palki+n+nolla.
       <<"para", "ravi">, <"n">,      <"tola">>,
       <<"pari">,         <"inen">,   <"hissa", "printti">>, # Par+is+printti. Pari + johdin_inen + printti.
       <<"pito">,         <"inen">,   <"uus">>,     # Pitoisuus on sanastossa.
@@ -2534,10 +2537,15 @@ end;
 # Lukusanojen käsittely on muokattu Harri Pitkäsen Voikko-versiosta.
 
 combi_rule lukusana ($vasen, $oikea, $sana, $index):
-####define $profile := transmit ("lukusana ($vasen, $oikea, $sana, $index):");
+#define $profile := transmit ("lukusana ($vasen, $oikea, $sana, $index):");
   ? $oikea.luokka = lukusana;
   define $sijamuoto := nil;
   define $luku := nil;
+
+#define $a1 := transmit ($vasen);
+#define $a2 := transmit ($oikea);
+#define $a3 := transmit ($sana);
+#define $a4 := transmit ($index);
 
   if ($oikea.alaluokka = erikoisluku) then
     define $erikoisres := $vasen + <[alku: $sana] + $oikea>;
@@ -2551,6 +2559,10 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
       result $erikoisres, rules lukusanan_jälkiliite;
     end;
     stop;
+  end;
+
+  if ($index = 1) and ($oikea.alaluokka = toista) then
+    stop;   # "Toistamaan" ei ole toista+maa+n.
   end;
 
   if ($index greater 1) then

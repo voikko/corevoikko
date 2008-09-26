@@ -97,7 +97,7 @@ allo_rule generate_allos ($tietue):
   # Etunimien jälkiliitteet.
   # Esim. Pietarinkirkko, Kallenpoika, Marianpäivä, Kallentytär.
   #
-  if ($tietue.perusmuoto in <"kirkko", "poika", "päivä", "tytär">) then
+  if ($tietue.perusmuoto in <"kirkko", "poika", "päivä", "niemi", "silta", "tytär">) then
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
@@ -160,9 +160,12 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-#  if ($tietue.luokka = lukusana) then
-#    $tietue.jatko :=- <yhdyssana>;
-#  end;
+  if ($tietue.luokka = lukusana) then
+    if ($tietue.alaluokka in <erikoisluku, toista>) then
+      $tietue.jatko :=+ <yhdyssana>;
+    end;
+  end;
+
 
 ##  if ($tietue.luokka = lukusanan_jälkiliite) then
 ##    stop;
