@@ -1420,6 +1420,7 @@ polvarit # polvari
 polymeroitua # polymerisoida
 pomoilu # pomoilla
 pottuilu # pottuilla
+prenataalinen # prenataali
 prillit # prilli
 profylaktisesti # profylaktinen
 profylaktisuus # profylaktinen
