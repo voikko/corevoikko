@@ -19,8 +19,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+import codecs
 from subprocess import Popen
+from os import access, F_OK
 from os import waitpid
+from shutil import copyfile, move
 
 def runCmd(cmd):
 	p = Popen(cmd, shell=True)
@@ -60,6 +63,7 @@ d.nameEn = u"Finnish dialects"
 d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
 allDicts.append(d)
 
+WORK_DIR="build"
 
 # === Phase 1: build the dictionaries ===
 
@@ -67,4 +71,38 @@ DICT_DIR_PREFIX="dict"
 
 for dict in allDicts:
 	runCmd('make clean')
-	runCmd('make voikko-install DESTDIR="' + DICT_DIR_PREFIX + dict.idSuffix + '" ' + dict.smOptions)
+	runCmd('make voikko-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix + '" ' + dict.smOptions)
+
+# === Phase 2: build oxt packages ===
+
+OXT_TEMPLATE_DIR="oxt-template"
+OXT_PACKAGE_DIR="oxt"
+DICT_FILES_TO_COPY=[
+	'voikko-fi_FI.lex_l',
+	'voikko-fi_FI.mor_l',
+	'voikko-fi_FI.sym_l',
+	'voikko-fi_FI.pro'
+]
+OXT_DESCRIPTION="description.xml"
+
+oxtdir = WORK_DIR + '/' + OXT_TEMPLATE_DIR + '/'
+if access(oxtdir + OXT_DESCRIPTION, F_OK):
+	for dict in allDicts:
+		for dictFile in DICT_FILES_TO_COPY:
+			copyfile(WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix + '/' + dictFile,
+			         oxtdir + dictFile)
+		descIn = codecs.open(oxtdir + OXT_DESCRIPTION, "r", "UTF-8")
+		descOut = codecs.open(oxtdir + OXT_DESCRIPTION + ".new", "w", "UTF-8")
+		line = descIn.readline()
+		while (line != u""):
+			descOut.write(line)
+			if (line.find(u"<display-name>") >= 0):
+				descIn.readline()
+				descOut.write(u'    <name lang="en-US">Voikko - %s</name>\n' % dict.nameEn)
+				descIn.readline()
+				descOut.write(u'    <name lang="fi">Voikko - %s</name>\n' % dict.nameFi)
+			line = descIn.readline()
+		descIn.close()
+		descOut.close()
+		move(oxtdir + OXT_DESCRIPTION + ".new", oxtdir + OXT_DESCRIPTION)
+		runCmd('cd ' + oxtdir + ' && zip -r ../voikko' + dict.idSuffix + '.oxt *')
