@@ -43,13 +43,6 @@ Supported Make targets
   Installs the binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
   /usr/lib/voikko
-- voikko-preprocessed-l-gzip
-  Builds the partial source package that contains only binaries
-  and sources that are needed to create custom vocabulary files
-  for little endian architectures.
-  Note that this package alone does not satisfy the source
-  distribution requirements of the GPL. If you distribute it,
-  you must make the full source package available as well.
 - dist-gzip
   Builds the full source package.
 - clean
@@ -63,7 +56,7 @@ Supported Make targets
 Variables for tuning the build process
 --------------------------------------
 
-- make voikko, make voikko-preprocessed-l-gzip:
+- make voikko:
   * GENLEX_OPTS="--option1=xxx --option2=yyy ..."
     Sets options string for generate_lex.py.
     Available options for generate_lex.py are
