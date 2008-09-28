@@ -189,4 +189,4 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukah
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
 	$(PYTHON) sukija/generate_lex.py
-	@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex
+	-@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex
