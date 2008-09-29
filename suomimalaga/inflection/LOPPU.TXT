@@ -231,6 +231,14 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_inen;
   end;
 
+  if ($tietue.luokka in @johdin_jA) then
+    if ($tietue.perusmuoto in <"jatar", "jätär">) then
+      $taivutus :=- <johdin_inen, johdin_UUs>;   # Esim. taitelijattarinen ei ole sana.
+    elseif ($tietue.perusmuoto in <"ja", "jä">) then
+      $taivutus :=- johdin_UUs;    # Johtimet johdin_jA_* ja johdin_UUs on yhdistetty.
+    end;
+  end;
+
   # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
   #
   if ($tietue.tiedot /= nil) then

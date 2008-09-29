@@ -167,9 +167,9 @@ allo_rule generate_allos ($tietue):
   end;
 
 
-##  if ($tietue.luokka = lukusanan_jälkiliite) then
-##    stop;
-##  end;
+#  if ($tietue.luokka = lukusanan_jälkiliite) then
+#    stop;
+#  end;
 
   if (($tietue.tiedot /= nil) and (ei_sukija in $tietue.tiedot)) then
     stop;

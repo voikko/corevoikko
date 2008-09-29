@@ -1376,24 +1376,44 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 [perusmuoto: "nlainen", alku: "nlai", luokka: johdin_nlainen, jatko: <nainen>, äs: a];
 
 
-[perusmuoto: "tar", alku: "t", luokka: johdin_tAr, jatko: <tytär>, äs: a];
-[perusmuoto: "tär", alku: "t", luokka: johdin_tAr, jatko: <tytär>, äs: ä];
+#[perusmuoto: "tar", alku: "t", luokka: johdin_tAr, jatko: <tytär>, äs: a];
+#[perusmuoto: "tär", alku: "t", luokka: johdin_tAr, jatko: <tytär>, äs: ä];
 
 
 [perusmuoto: "ja", alku: "",   luokka: johdin_jA_myyjä, jatko: <myyjä>,      äs: a];
 [perusmuoto: "jä", alku: "",   luokka: johdin_jA_myyjä, jatko: <myyjä>,      äs: ä];
-[perusmuoto: "ja", alku: "ja", luokka: johdin_jA_myyjä, jatko: <johdin_tAr>, äs: a];
-[perusmuoto: "jä", alku: "jä", luokka: johdin_jA_myyjä, jatko: <johdin_tAr>, äs: ä];
+[perusmuoto: "jatar", alku: "jat", luokka: johdin_jA_myyjä, jatko: <tytär>, äs: a];
+[perusmuoto: "jätär", alku: "jät", luokka: johdin_jA_myyjä, jatko: <tytär>, äs: ä];
+[perusmuoto: "juus",  alku: "juu", luokka: johdin_jA_myyjä, jatko: <kalleus>, äs: a];
+[perusmuoto: "jyys",  alku: "jyy", luokka: johdin_jA_myyjä, jatko: <kalleus>, äs: ä];
+[perusmuoto: "jattaruus", alku: "jattaruu", luokka: johdin_jA_myyjä, jatko: <kalleus>, äs: a];
+[perusmuoto: "jättäryys", alku: "jättäryy", luokka: johdin_jA_myyjä, jatko: <kalleus>, äs: ä];
+#[perusmuoto: "jittain",   alku: "jittain",  luokka: johdin_jA_myyjä, jatko: <liitesana, loppu>, äs: a];
+#[perusmuoto: "jittäin",   alku: "jittäin",  luokka: johdin_jA_myyjä, jatko: <liitesana, loppu>, äs: ä]; # Myyjittäin.
 
 [perusmuoto: "ja", alku: "",   luokka: johdin_jA_kulkija, jatko: <kulkija>,    äs: a];
 [perusmuoto: "jä", alku: "",   luokka: johdin_jA_kulkija, jatko: <kulkija>,    äs: ä];
-[perusmuoto: "ja", alku: "ja", luokka: johdin_jA_kulkija, jatko: <johdin_tAr>, äs: a];
-[perusmuoto: "jä", alku: "jä", luokka: johdin_jA_kulkija, jatko: <johdin_tAr>, äs: ä];
+[perusmuoto: "jatar", alku: "jat", luokka: johdin_jA_kulkija, jatko: <tytär>, äs: a];
+[perusmuoto: "jätär", alku: "jät", luokka: johdin_jA_kulkija, jatko: <tytär>, äs: ä];
+[perusmuoto: "juus",  alku: "juu", luokka: johdin_jA_kulkija, jatko: <kalleus>, äs: a];
+[perusmuoto: "jyys",  alku: "jyy", luokka: johdin_jA_kulkija, jatko: <kalleus>, äs: ä];
+[perusmuoto: "jattaruus", alku: "jattaruu", luokka: johdin_jA_kulkija, jatko: <kalleus>, äs: a];
+[perusmuoto: "jättäryys", alku: "jättäryy", luokka: johdin_jA_kulkija, jatko: <kalleus>, äs: ä];
+#[perusmuoto: "joittain",  alku: "joittain",  luokka: johdin_jA_kulkija, jatko: <liitesana, loppu>, äs: a]; # Kulkijoittain.
+#[perusmuoto: "jöittäin",  alku: "jöittäin",  luokka: johdin_jA_kulkija, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "ja", alku: "",   luokka: johdin_jA_kantaja, jatko: <kantaja>,    äs: a];
 [perusmuoto: "jä", alku: "",   luokka: johdin_jA_kantaja, jatko: <kantaja>,    äs: ä];
-[perusmuoto: "ja", alku: "ja", luokka: johdin_jA_kantaja, jatko: <johdin_tAr>, äs: a];
-[perusmuoto: "jä", alku: "jä", luokka: johdin_jA_kantaja, jatko: <johdin_tAr>, äs: ä];
+[perusmuoto: "jatar", alku: "jat", luokka: johdin_jA_kantaja, jatko: <tytär>, äs: a];
+[perusmuoto: "jätär", alku: "jät", luokka: johdin_jA_kantaja, jatko: <tytär>, äs: ä];
+[perusmuoto: "juus",  alku: "juu", luokka: johdin_jA_kantaja, jatko: <kalleus>, äs: a];
+[perusmuoto: "jyys",  alku: "jyy", luokka: johdin_jA_kantaja, jatko: <kalleus>, äs: ä];
+[perusmuoto: "jattaruus", alku: "jattaruu", luokka: johdin_jA_kantaja, jatko: <kalleus>, äs: a];
+[perusmuoto: "jättäryys", alku: "jättäryy", luokka: johdin_jA_kantaja, jatko: <kalleus>, äs: ä];
+#[perusmuoto: "jittain",  alku: "jittain",   luokka: johdin_jA_kantaja, jatko: <liitesana, loppu>, äs: a]; # Kantaj(o)ittain.
+#[perusmuoto: "jittäin",  alku: "jittäin",   luokka: johdin_jA_kantaja, jatko: <liitesana, loppu>, äs: ä];
+#[perusmuoto: "jittain",  alku: "joittain",  luokka: johdin_jA_kantaja, jatko: <liitesana, loppu>, äs: a];
+#[perusmuoto: "jittäin",  alku: "jöittäin",  luokka: johdin_jA_kantaja, jatko: <liitesana, loppu>, äs: ä];
 
 
 [perusmuoto: "o", alku: "o", luokka: johdin_O , jatko: <valo>, äs: a];
