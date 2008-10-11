@@ -195,6 +195,10 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 1);
 		else if (strcmp(argv[i], "accept_titles=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 0);
+		else if (strcmp(argv[i], "accept_unfinished_paragraphs=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 1);
+		else if (strcmp(argv[i], "accept_unfinished_paragraphs=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 0);
 		else if (strncmp(argv[i], "explanation_language=fi", 23) == 0)
 			explanation_language = "fi";
 		else if (strncmp(argv[i], "explanation_language=", 21) == 0)

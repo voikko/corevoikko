@@ -1,6 +1,8 @@
 2008-10-11 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Allow sentences to start with a digit.
+	* Add option for accepting unfinished paragraphs.
+	* Increase version info for 2.1.
 
 2008-08-22 Harri Pitkänen <hatapitk@iki.fi>
 

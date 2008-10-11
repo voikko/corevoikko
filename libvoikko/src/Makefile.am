@@ -3,7 +3,7 @@ libvoikko_la_SOURCES = voikko_suggest.c voikko_utils.c voikko_setup.c voikko_spe
                        voikko_hyphenate.c voikko_charset.c porting.c \
                        voikko_tokenize.c sentence.c grammar.c gccache.c \
                        gcerror.c gcanalysis.c
-libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 8:0:7 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 9:0:8 @LIBLDFLAGSWIN@
 bin_PROGRAMS = voikkospell voikkohyphenate voikkogc
 voikkospell_SOURCES = voikkospell.c porting.c
 voikkospell_CFLAGS = $(AM_CFLAGS)

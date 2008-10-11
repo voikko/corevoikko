@@ -41,6 +41,7 @@ typedef struct {
 	int intersect_compound_level;
 	int min_hyphenated_word_length;
 	int accept_titles_in_gc;
+	int accept_unfinished_paragraphs_in_gc;
 	const char * encoding;
 	#ifdef HAVE_ICONV
 	iconv_t iconv_ucs4_utf8;

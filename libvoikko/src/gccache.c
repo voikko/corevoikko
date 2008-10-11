@@ -268,6 +268,8 @@ void gc_repeating_words(int handle, const gc_sentence * sentence) {
  */
 void gc_end_punctuation(int handle, const gc_paragraph * paragraph) {
 	if (voikko_options.accept_titles_in_gc && paragraph->sentence_count == 1) return;
+	if (voikko_options.accept_unfinished_paragraphs_in_gc) return;
+	
 	gc_sentence * sentence = paragraph->sentences[paragraph->sentence_count - 1];
 	gc_token * token = sentence->tokens + (sentence->token_count - 1);
 	if (token->type == TOKEN_PUNCTUATION) return;

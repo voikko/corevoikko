@@ -51,3 +51,7 @@ Virkkeessä on kolme pistettä... ja jotain muutakin.
 Hieno toka otsikko
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={}]
+
+{accept_unfinished_paragraphs=1}
+Piste puuttuu vielä
+Seuraava sana puuttuu 

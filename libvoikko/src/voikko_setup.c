@@ -81,6 +81,10 @@ int voikko_set_bool_option(int handle, int option, int value) {
 			if (value) voikko_options.accept_titles_in_gc = 1;
 			else voikko_options.accept_titles_in_gc = 0;
 			return 1;
+		case VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC:
+			if (value) voikko_options.accept_unfinished_paragraphs_in_gc = 1;
+			else voikko_options.accept_unfinished_paragraphs_in_gc = 0;
+			return 1;
 	}
 	return 0;
 }

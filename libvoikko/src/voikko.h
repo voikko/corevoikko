@@ -125,6 +125,11 @@
  * Default: false */
 #define VOIKKO_OPT_ACCEPT_TITLES_IN_GC 13
 
+/* (Grammar checking only): Accept incomplete sentences at the end of the
+ * paragraph. These may exist when text is still being written.
+ * Default: false */
+#define VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC 14
+
 /* Integer options */
 
 /* There are two possible rules that can be applied when hyphenating compound words
