@@ -209,7 +209,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 		if (t.type != TOKEN_WORD) continue;
 		if (!first_word_seen) {
 			first_word_seen = 1;
-			if (!iswupper(t.str[0])) {
+			if (!iswupper(t.str[0]) && !iswdigit(t.str[0])) {
 				voikko_gc_cache_entry * e = gc_new_cache_entry(0);
 				if (!e) return;
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;

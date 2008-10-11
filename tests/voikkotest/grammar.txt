@@ -38,6 +38,7 @@ Hyllyllä on kahdenlaisia elintarvikkeita: hilloja ja säilykkeitä.
 Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on tässä.
 Ensimmäinen virke on oikein. toinen virke on väärin.
  [code=7, level=0, descr="", stpos=29, len=6, suggs={}]
+Ensimmäinen virke on oikein. 2. virke on myös oikein.
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
  [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]
 Hieno eka otsikko

@@ -1,3 +1,7 @@
+2008-10-11 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Allow sentences to start with a digit.
+
 2008-08-22 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Modify some grammar error checks to affect 2 instead of
