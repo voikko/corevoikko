@@ -43,6 +43,9 @@ On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
  [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]
 Hieno eka otsikko
  [code=9, level=0, descr="", stpos=10, len=7, suggs={}]
+Virke päättyy kolmeen pisteeseen...
+Virke päättyy kolmeen pisteeseen... Toinen alkaa sen jälkeen.
+Virkkeessä on kolme pistettä... ja jotain muutakin.
 
 {accept_titles=1}
 Hieno toka otsikko

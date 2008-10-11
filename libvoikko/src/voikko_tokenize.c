@@ -132,6 +132,11 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, 
 				*tokenlen = wlen + 1;
 				return TOKEN_WORD;
 			}
+			else if (textlen >= 3 && text[0] == L'.' && text[1] == L'.'
+			         && text[2] == L'.') {
+				*tokenlen = 3;
+				return TOKEN_PUNCTUATION;
+			}
 			*tokenlen = 1;
 			return TOKEN_PUNCTUATION;
 		case CHAR_UNKNOWN:

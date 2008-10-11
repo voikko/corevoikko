@@ -54,7 +54,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 	enum voikko_token_type previous_token_type = TOKEN_NONE;
 	int end_found = 0;
 	int end_dotword = 0;
-	int end_colon = 0;
+	int possible_end_punctuation = 0;
 	while (token != TOKEN_NONE && textlen > slen) {
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
@@ -64,13 +64,17 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 		if (end_found) {
 			if (token != TOKEN_WHITESPACE) {
 				*sentencelen = slen;
-				if (end_dotword || end_colon) return SENTENCE_POSSIBLE;
+				if (end_dotword || possible_end_punctuation) return SENTENCE_POSSIBLE;
 				else return SENTENCE_PROBABLE;
 			}
 		}
 		else if (token == TOKEN_PUNCTUATION) {
 			wchar_t punct = text[slen];
 			if (wcschr(L"!?", punct)) end_found = 1;
+			else if (punct == L'.' && tokenlen == 3) {
+				end_found = 1;
+				possible_end_punctuation = 1;
+			}
 			else if (punct == L'.') {
 				end_found = 1;
 				if (slen != 0 &&
@@ -82,7 +86,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 			}
 			else if (punct == L':') {
 				end_found = 1;
-				end_colon = 1;
+				possible_end_punctuation = 1;
 			}
 		}
 		previous_token_start = slen;
