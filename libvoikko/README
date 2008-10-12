@@ -36,8 +36,7 @@ Features
  - Various options to tune spell checking and hyphenation for different
    purposes and applications.
  - Grammar checking and context sensitive spell checking using paragraph
-   based API. This feature is still work in progress, but may already
-   be useful.
+   based API. This feature is still work in progress, but is already useful.
  - String tokenizer and sentence splitter.
 
 Documentation for using the library can be found from header file voikko.h.

@@ -1,6 +1,7 @@
 2008-10-11 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Allow sentences to start with a digit.
+	* Detect and handle ellipsis correctly.
 	* Add option for accepting unfinished paragraphs.
 	* Increase version info for 2.1.
 
@@ -294,7 +295,7 @@
 
 2006-12-09 Harri Pitkänen <hatapitk@iki.fi>
 
-        * Fix character case check for words with punctuation.
+	* Fix character case check for words with punctuation.
 
 2006-12-07 Harri Pitkänen <hatapitk@iki.fi>
 
@@ -319,9 +320,9 @@
 
 2006-11-16 Harri Pitkänen <hatapitk@iki.fi>
 
-        * Support parallel installations of Automake versions
-          1.9 and 1.10. Both seem to work, but default will still
-          be 1.9.
+	* Support parallel installations of Automake versions
+	  1.9 and 1.10. Both seem to work, but default will still
+	  be 1.9.
 
 2006-11-11 Harri Pitkänen  <hatapitk@iki.fi>
 
@@ -449,7 +450,7 @@
 	* nl_langinfo() ported for Windows version.
 	* Dictionary path is searched from Windows registry:
 		- first from HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath
-		- and then if not found from HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath 
+		- and then if not found from HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath
 	* Minor changes for Windows version. 
 
 2006-05-30  Harri Pitkänen  <hatapitk@iki.fi>
