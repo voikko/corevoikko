@@ -103,6 +103,7 @@
 [perusmuoto: "pöh", alku: "pöh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "seis", alku: "seis", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "skool", alku: "skool", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "stop", alku: "stop", luokka: huudahdussana, jatko: <loppu>, äs: a]; # Saa kuulua oikolukusanastoonkin, koska on yleinen eikä kovin haitallinen
 [perusmuoto: "sus", alku: "sus", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tattis", alku: "tattis", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "tervetuloa", alku: "tervetuloa", luokka: huudahdussana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"];
