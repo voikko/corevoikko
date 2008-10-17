@@ -122,7 +122,6 @@
 [perusmuoto: "pentsiini", alku: "pentsiin", luokka: nimisana, jatko: <banaali>, äs: ä];
 [perusmuoto: "pitali", alku: "pital", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "pohjalaanen", alku: "pohjalaa", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "politikko", alku: "politik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "presitenti", alku: "presitent", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "rebublikaani", alku: "rebublikaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "reklementti", alku: "reklement", luokka: nimisana, jatko: <tatti>, äs: a];
@@ -404,14 +403,13 @@
 #[perusmuoto: "puolikuu", alku: "puoliku", luokka: nimisana, jatko: <puu>, äs: a];
 
 
+[perusmuoto: "kirjoitelma", alku: "kirjotelm", luokka: nimisana, jatko: <asema>, äs: a];
+[perusmuoto: "liipaisin", alku: "liipasi", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "pistooli", alku: "pistol", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "poliitikko", alku: "politik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "politiikka", alku: "politik", luokka: nimisana, jatko: <haka>, äs: a];
-[perusmuoto: "politiikki", alku: "politiik", luokka: nimisana, jatko: <takki>, äs: a];  # Politiikka.
 [perusmuoto: "poliisi", alku: "polis", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "teatteri", alku: "teaatter", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "liipaisin", alku: "liipasi", luokka: nimisana, jatko: <uistin>, äs: a];
-
-[perusmuoto: "polina", alku: "polin", luokka: nimisana, jatko: <apila>, äs: a];   # Puheenpolina.
 
 
 [perusmuoto: "mafiaisä", alku: "mafiais", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppp=ppp"];
@@ -422,6 +420,8 @@
 [perusmuoto: "sankar", alku: "sankar", luokka: etuliite, jatko: @sana2, äs: aä];
 [perusmuoto: "vallas", alku: "vallas", luokka: etuliite, jatko: @sana1, äs: aä];
 
+[perusmuoto: "politiikki", alku: "politiik", luokka: nimisana, jatko: <takki>, äs: a];  # Politiikka.
+[perusmuoto: "polina", alku: "polin", luokka: nimisana, jatko: <apila>, äs: a];   # Puheenpolina.
 [perusmuoto: "logi", alku: "log", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Sofi", alku: "Sof", luokka: etunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Moe", alku: "Moe", luokka: sukunimi, jatko: <nalle>, äs: a];
@@ -552,6 +552,23 @@
 [perusmuoto: "kahtainen", alku: "kahtai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pueblo", alku: "pueblo", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "kaivuu", alku: "kaivu", luokka: nimisana, jatko: <puu>, äs: a];
+
+[perusmuoto: "Isabella", alku: "Isabell", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Callisto", alku: "Callisto", luokka: paikannimi, jatko: <valo>, äs: a];
+[perusmuoto: "Huttula", alku: "Huttul", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "sadankomitea", alku: "sadankomite", luokka: nimisana, jatko: <karahka>, äs: a];
+[perusmuoto: "Saikkola", alku: "Saikkol", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Sartre", alku: "Sartre", luokka: sukunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Pehkola", alku: "Pehkol", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "kuljetteinen", alku: "kuljettei", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "kaskadi", alku: "kaskad", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "psyykikko", alku: "psyykik", luokka: nimisana, jatko: <laatikko>, äs: a];
+[perusmuoto: "suoni", alku: "suonitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+
+[perusmuoto: "Weisman", alku: "Weisman", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "liettää", alku: "liet", luokka: teonsana, jatko: <asettaa>, äs: ä];
+[perusmuoto: "googlata", alku: "googl", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "googlettaa", alku: "googlet", luokka: teonsana, jatko: <alittaa>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

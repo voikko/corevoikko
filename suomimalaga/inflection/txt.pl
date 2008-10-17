@@ -224,6 +224,7 @@ if (defined $options{D}) {print "\n#A0 [", $1, "][", $file, "]\n";}
   }
 
   print "):\n";
+##  print "  define \$a := transmit (\$tietue.perusmuoto + \" $1\");\n";
   print "  return taivutuskaava (\$tietue,\n";
 
 

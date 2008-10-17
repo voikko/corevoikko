@@ -59,7 +59,9 @@ subrule taivutus ($sanatietue1, $lisä, $jatko, $tietue):
   assert (value_type ($jatko) = list);
 
 #define $b := transmit ("AAA " + $sanatietue1.perusmuoto + " " + tavutus($sanatietue1.perusmuoto));
-
+#if ($sanatietue1.luokka = lukusana) then
+#  define $a := transmit (<$sanatietue1> + <$lisä> + <$jatko> + <$tietue>);
+#end;
 
   define $a := taivutus2 ($sanatietue1, $lisä, $jatko, $tietue, $sanatietue1.alku);
   define $n := length ($a);
@@ -159,8 +161,11 @@ end;
 # $taivutus  Sanan taivutus eri taivutusmuodoissa.
 #
 subrule taivutuskaava ($tietue, $taivutus):
-  define $malli := switch (malli);
-
+#if ($tietue.luokka = lukusana) then
+#  define $a := transmit (<$tietue>);
+#  define $b := transmit (<$taivutus>);
+#  define $c := transmit ("<>");
+#end;
 
   # Poistetaan liput.
   #
@@ -176,18 +181,16 @@ subrule taivutuskaava ($tietue, $taivutus):
       define $lisä := $j.1;
       define $liput := $j.2;
 
-#      if (($malli = sukija) or (($malli = voikko and not (ei_voikko in $liput)))) then
 #define $f := transmit (<$i> + <"§"> + <$j> + <"§§"> + <$lisä> + <"L="> + <$liput>);
-        if ($i = käskytapa_y2) then
-          $käskytapa_y2 :=+ <$j>;
-        elseif (($i in <kestämän_tekijäpääte_y3>) and (_y3 in $liput)) then
-          $kestämän_tekijäpääte_y3 :=+ <$j>;
-        else
-          $lista :=+ <$lisä>;
-        end;
+      if ($i = käskytapa_y2) then
+        $käskytapa_y2 :=+ <$j>;
+      elseif (($i in <kestämän_tekijäpääte_y3>) and (_y3 in $liput)) then
+        $kestämän_tekijäpääte_y3 :=+ <$j>;
+      else
+        $lista :=+ <$lisä>;
       end;
       $uusi_taivutus :=+ [$i: $lista];
-#    end;
+    end;
   end;
 
 #define $ä := transmit ($uusi_taivutus);

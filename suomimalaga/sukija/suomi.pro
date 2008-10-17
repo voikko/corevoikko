@@ -51,6 +51,7 @@ all: suomi.all suomi.inc suomi.pro
 
 lex: suomi.lex suomi.inc suomi.pro
 lex: sanat/11-19.lex
+##lex: sanat/luvut.lex
 lex: sanat/olla-ei.lex
 lex: sanat/omat.lex
 lex: voikonsanat/atk.lex

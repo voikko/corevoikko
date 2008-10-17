@@ -128,12 +128,12 @@
 [perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaakkois", alku: "kaakkois", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaatuma", alku: "kaatuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @elt + @eln, äs: aä, tiedot: <ei_voikko>]; # -kamppailla, -kamppailu, -peli
 [perusmuoto: "kaksois", alku: "kaksois", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kanssa", alku: "kanssa", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Mahdollisesti vain verbin subst.- ja adj.johdoksiin
-[perusmuoto: "karjo", alku: "karjo", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "karjo", alku: "karjo", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "karting-", alku: "karting-", luokka: etuliite, jatko: @eln, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppp-"];
 [perusmuoto: "kauko", alku: "kauko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kausaali", alku: "kausaali", luokka: etuliite, jatko: @eln, äs: aä];
@@ -159,7 +159,7 @@
 [perusmuoto: "kvasi", alku: "kvasi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kyynär", alku: "kyynär", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "käsin", alku: "käsin", luokka: etuliite, jatko: @eltj, äs: aä];
-[perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "käänteis", alku: "käänteis", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kääntymä", alku: "kääntymä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "laudatur-", alku: "laudatur-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "lehmi", alku: "lehmi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -167,9 +167,9 @@
 [perusmuoto: "liehu", alku: "liehu", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "liikkuma", alku: "liikkuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "live-", alku: "live-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
-[perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä];
-[perusmuoto: "luontais", alku: "luontais", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä,  tiedot: <ei_sukija>];
+[perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "luontais", alku: "luontais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "lyömä", alku: "lyömä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];

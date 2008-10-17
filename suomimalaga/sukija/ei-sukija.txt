@@ -37,6 +37,7 @@ amerikansalaatti
 amerikansuomalainen
 amerikansuomi
 ammattilainen
+apulainen
 Arabia
 arastella
 armeijalainen
@@ -62,11 +63,15 @@ Eesti
 eetillinen
 eksymä
 Elo
+elohopea
 elokuva
+eläkeläinen
 elämä
 Englanti
 ennätys
 Eno
+ensikertalainen
+entisenlainen
 eritasoliittymä
 esiintymä
 esikasvattaa
@@ -89,6 +94,7 @@ haaroittua
 haaroitus
 halkeama
 halpatyö
+halutunlainen
 Hamina
 hankautuma
 Hanko
@@ -100,6 +106,7 @@ hautaus
 havainnoitsija
 heijastuma
 heikentymä
+heimolainen
 heitellä
 Helo
 heloitus
@@ -122,11 +129,13 @@ huipentuma
 huiskauttaa
 Hukka
 huuto
+huutolainen
 hyvinvointi
 hyvinvoiva
 hyytymä
 häipymä
 Härmä
+hölmöläinen
 höyhensarjalainen
 Ilma
 ilmentymä
@@ -142,11 +151,14 @@ itkettynyt
 itkettyä
 itsesäätyvä
 itsetutkiskelu
+itäsaksalainen
 Jalo
 jalokivi
 jaotus
 Japani
+jatkuvalämmitteinen
 jengiläinen
+jousitus
 Jukka
 julkishallinto
 julkissektori
@@ -164,6 +176,7 @@ jättiläinen
 jäykentää
 jäykistymä
 jäätymä
+kaartilainen
 kaato
 kahdentuma
 Kainulainen
@@ -198,8 +211,10 @@ kaventuma
 kehittymä
 kepulainen
 kerholainen
+kerrotunlainen
 kertoma
 Kerttu
+Kerttuli
 Kerttunen
 kertymä
 keräymä
@@ -214,9 +229,11 @@ kevytmetalli
 Kielo
 kierosilmä
 kieroutuma
+kiertolainen
 kiertuelainen
 kiertymä
 kietoutuma
+kiihdytys
 Kiina
 Kilpi
 kiltalainen
@@ -228,6 +245,7 @@ kivettymä
 Knuutinpoika
 koaksiaalikaapeli
 kohoama
+kohtalainen
 Koitto
 Koivisto
 Koivu
@@ -243,9 +261,11 @@ korotus
 Koski
 Kotiranta
 Kotka
+koululainen
 koulutus
 kovettuma
 Kreikka
+kreikkalaiskatolilainen
 Kroatia
 Kuha
 Kuikka
@@ -275,6 +295,7 @@ kuvaama
 kuvaamataide
 kuvaamataito
 kyllästyttää
+kyläläinen
 kymmenvuotinen
 Kytö
 kyyhkyläinen
@@ -290,6 +311,7 @@ käsinlypsy
 käsinohjaus
 käsinpesu
 käsinseisonta
+käskyläinen
 kävijä
 käynti
 käytävä
@@ -312,6 +334,7 @@ lahtelainen
 Lahti
 Laina
 Laine
+laiskanpulskea
 Lappi
 laskeutuma
 latauma
@@ -332,12 +355,15 @@ liittolainen
 liittoutuma
 liittymä
 Lilja
+Linnunrata
 Lintunen
 Liperi
 litistymä
 liukuma
 lohkeama
+loisto
 lojaalisuus
+lomalainen
 Lotta
 luikerrella
 lukema
@@ -371,7 +397,10 @@ lyhytvalintakoodi
 lyhytvalintanumero
 lyönti
 lämmitys
+länsisaksalainen
 Maa
+maahantuoja
+maahantuonti
 maakostea
 maalainen
 maailmanympärimatka
@@ -416,6 +445,7 @@ myrkytys
 myynti
 Mäkinen
 mäkitupalainen
+mökkiläinen
 naarmuttua
 Neuvostoliitto
 Newton
@@ -456,6 +486,7 @@ paleltuma
 paljastajainen
 palkkalainen
 Palmu
+partiolainen
 patoutuma
 Paula
 pehmytkudos
@@ -482,6 +513,7 @@ poistuma
 Pokka
 poltto
 pommitus
+populaarikulttuuri
 Portugali
 Posti
 puhkeama
@@ -520,6 +552,7 @@ risteytymä
 rivittyä
 rohtuma
 romahdusmainen
+roomalaiskatolilainen
 ruhjoutuma
 Ruotsi
 rupeama
@@ -538,6 +571,7 @@ sairaus
 Saksa
 Saku
 Salo
+Sampo
 sanoma
 saostuma
 Satu
@@ -569,6 +603,7 @@ Somero
 Sorsa
 sortuma
 strippaus
+suitsutus
 sulautuma
 sulkeutuma
 Sulo
@@ -615,6 +650,8 @@ tiiliskivi
 tiivistymä
 Tikka
 Timpuri
+tiukentaa
+toimenpide
 Toivo
 tolstoilainen
 toteuma
@@ -641,6 +678,7 @@ työntyä
 täydellistymä
 täysihoito
 täysihoitola
+täysisukulainen
 Ukraina
 uloskäytävä
 ulosotto
@@ -676,6 +714,7 @@ Valtti
 valuma
 Valuri
 vammainen
+varallisuus
 Varis
 Varkaus
 Varma
@@ -722,6 +761,7 @@ vähittäismyymälä
 vähittäismyynti
 väittämä
 Väistö
+väitellä
 väritys
 vääntymä
 väärinkäsitys

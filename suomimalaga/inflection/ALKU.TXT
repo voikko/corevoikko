@@ -56,12 +56,14 @@ allo_rule generate_allos ($tietue):
 
 
 ##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
+#if ($tietue.luokka = lukusana) then
 #define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
 #                       ", alku: §"      + $tietue.alku + "§" +
 #                       ", luokka: "     + value_string ($tietue.luokka) +
 #                       ", jatko: "      + value_string ($tietue.jatko) +
 #                       ", äs: "         + value_string ($tietue.äs) +
 #                       "];");
+#end;
 
   assert (value_type($tietue) = record);
 
@@ -97,7 +99,7 @@ allo_rule generate_allos ($tietue):
   # Etunimien jälkiliitteet.
   # Esim. Pietarinkirkko, Kallenpoika, Marianpäivä, Kallentytär.
   #
-  if ($tietue.perusmuoto in <"kirkko", "poika", "päivä", "niemi", "silta", "tytär">) then
+  if ($tietue.perusmuoto in <"kirkko", "poika", "päivä", "niemi", "silta", "tori", "tytär">) then
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
@@ -109,11 +111,12 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"luisti", "mani", "nasu", "paikko", "poli", "tisu">) then
+  if ($tietue.perusmuoto in <"kukkaisa", "luisti", "mani", "nasu", "paikko", "poli", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "silla", "säkä", "tavi">) then
+  if ($tietue.perusmuoto in
+        <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "silla", "säkä", "tavi">) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=+ <ei_ysj>;
     else
@@ -144,7 +147,7 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
-  if ($tietue.perusmuoto in <"nasta", "pöllö">) then
+  if ($tietue.perusmuoto in <"nasta", "pöllö", "vilja">) then
     if ($tietue.luokka = nimisana) then
       stop;
     elseif ($tietue.luokka = laatusana) then
@@ -166,6 +169,11 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+#  if ($tietue.luokka = lukusana) then
+#    if ($tietue.perusmuoto = "miljoona") then
+#      $tietue.jatko := <triljoona, biljoona, miljardi, tuhat, sata, kymmenen, yksi, liitesana, loppu>;
+#    end;
+#  end;
 
 #  if ($tietue.luokka = lukusanan_jälkiliite) then
 #    stop;
