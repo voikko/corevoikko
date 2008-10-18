@@ -23,7 +23,7 @@ AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 
 dnl Checks for programs
-AC_PROG_CC
+AC_PROG_CXX
 AC_PROG_INSTALL
 AC_LIBTOOL_WIN32_DLL
 AC_PROG_LIBTOOL
@@ -103,5 +103,5 @@ AM_ICONV
 dnl Default compiler settings
 CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 
-AC_CONFIG_FILES([Makefile src/Makefile src/libvoikko.pc])
+AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile src/libvoikko.pc])
 AC_OUTPUT

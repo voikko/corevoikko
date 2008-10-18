@@ -2,7 +2,7 @@ General information
 ===================
 
 This is libvoikko, library of free Finnish language tools using Malaga
-natural language grammar development tool. The library is written in C.
+natural language grammar development tool. The library is written in C++.
 
 Libvoikko provides spell checking, hyphenation and grammar checking for
 Finnish language. No other languages are supported at the moment, and there

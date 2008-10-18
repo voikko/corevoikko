@@ -1,5 +1,5 @@
 /* Voikkospell: Testing tool for libvoikko
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,14 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#define _GNU_SOURCE
-
-#include <voikko.h>
+#include "../voikko.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
-#include "porting.h"
+#include "../porting.h"
 #ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
 #endif // HAVE_NL_LANGINFO
@@ -94,7 +92,7 @@ int main(int argc, char ** argv) {
 	int i;
 	int cache_size;
 
-	line = malloc(size);
+	line = new char[size];
 	if (line == 0) {
 		printf("E: Out of memory\n");
 		return 1;
@@ -110,7 +108,7 @@ int main(int argc, char ** argv) {
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", cache_size, path);
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
-		free(line);
+		delete line;
 		return 1;
 	}
 	
@@ -165,7 +163,7 @@ int main(int argc, char ** argv) {
 		}
 		check_word(handle, line);
 	}
-	free(line);
+	delete line;
 	voikko_terminate(handle);
 	return 0;
 }
