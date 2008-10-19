@@ -17,7 +17,7 @@
  *********************************************************************************/
 
 #include "../voikko.h"
-#include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
@@ -25,9 +25,10 @@
 #ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
 #endif // HAVE_NL_LANGINFO
-#include <stdio.h>
 #include <wchar.h>
 #include <string.h>
+
+using namespace std;
 
 #ifdef HAVE_MBRLEN
 void hyphenate_word(int handle, char * word) {
@@ -41,7 +42,7 @@ void hyphenate_word(int handle, char * word) {
 	mbstate_t mbstate;
 	result = voikko_hyphenate_cstr(handle, word);
 	if (result == 0) {
-		printf("E: hyphenation failed\n");
+		cerr << "E: hyphenation failed" << endl;
 		return;
 	}
 	len = strlen(word);
@@ -49,7 +50,7 @@ void hyphenate_word(int handle, char * word) {
 	   multibyte representation in a given encoding. */
 	hyphenated_word = new char[strlen(word) * 2 + 1];
 	if (hyphenated_word == 0) {
-		printf("E: out of memory\n");
+		cerr << "E: out of memory" << endl;
 		return;
 	}
 	memset(&mbstate, '\0', sizeof(mbstate_t));
@@ -72,7 +73,7 @@ void hyphenate_word(int handle, char * word) {
 		len -= charlen;
 	}
 	*hyphenatedptr = '\0';
-	printf("%s\n", hyphenated_word);
+	cout << hyphenated_word << endl;
 	delete hyphenated_word;
 	voikko_free_hyphenate(result);
 }
@@ -91,7 +92,7 @@ int main(int argc, char ** argv) {
 	
 	line = new char[size];
 	if (line == 0) {
-		printf("E: Out of memory\n");
+		cerr << "E: Out of memory" << endl;
 		return 1;
 	}
 	
@@ -101,7 +102,7 @@ int main(int argc, char ** argv) {
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", 0, path);
 
 	if (voikko_error) {
-		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
+		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
 		delete line;
 		return 1;
 	}
@@ -147,7 +148,7 @@ int main(int argc, char ** argv) {
 
 #else
 int main(int argc, char ** argv) {
-	printf("E: This tool is not supported on your operating system.\n");
+	cerr << "E: This tool is not supported on your operating system." << endl;
 	return 1;
 }
 #endif

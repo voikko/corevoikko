@@ -70,7 +70,7 @@ void print_tokens(int handle, const char * line) {
 			}
 			tokenchars--;
 		}
-		printf("\"\n");
+		cout << "\"" << endl;
 	}
 }
 
@@ -90,7 +90,7 @@ void split_sentences(int handle, const char * line) {
 		                &sentencechars);
 		switch (sentence_type) {
 			case SENTENCE_NONE:
-				printf("E: %s\n", lineptr);
+				cout << "E: " << lineptr << endl;
 				return;
 			case SENTENCE_PROBABLE:
 				cout << "B: ";
@@ -112,7 +112,7 @@ void split_sentences(int handle, const char * line) {
 			}
 			sentencechars--;
 		}
-		printf("\n");
+		cout << endl;
 	}
 }
 
@@ -126,7 +126,7 @@ void check_grammar(int handle, const char * line, const char * explanation_langu
 		grammar_error = voikko_next_grammar_error_cstr(handle, line, len,
 		                0, skiperrors);
 		if (grammar_error.error_code == 0) {
-			printf("-\n");
+			cout << "-" << endl;
 			return;
 		}
 		cout << "[code=" << grammar_error.error_code << ", level=0, ";
@@ -136,16 +136,20 @@ void check_grammar(int handle, const char * line, const char * explanation_langu
 			char ** sugg = grammar_error.suggestions;
 			while (*sugg) {
 				// FIXME: convert from UTF-8
-				printf("\"%s\"", *sugg);
+				cout << "\"" << *sugg << "\"";
 				sugg++;
-				if (*sugg) printf(",");
+				if (*sugg) {
+					cout << ",";
+				}
 			}
 			voikko_free_suggest_cstr(grammar_error.suggestions);
 		}
 		cout << "}]";
 		if (explanation_language) {
-			printf(" (%s)", voikko_error_message_cstr(
-				grammar_error.error_code, explanation_language));
+			cout << " (";
+			cout << voikko_error_message_cstr(
+			         grammar_error.error_code, explanation_language);
+			cout << ")";
 		}
 		cout << endl;
 		skiperrors++;
@@ -173,7 +177,7 @@ int main(int argc, char ** argv) {
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", 0, path);
 
 	if (voikko_error) {
-		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
+		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
 		delete line;
 		return 1;
 	}

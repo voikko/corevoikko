@@ -17,7 +17,6 @@
  *********************************************************************************/
 
 #include "../voikko.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
@@ -25,8 +24,10 @@
 #ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
 #endif // HAVE_NL_LANGINFO
-#include <stdio.h>
-#include <string.h>
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 int autotest = 0;
 int suggest = 0;
@@ -34,46 +35,56 @@ int one_line_output = 0;
 char word_separator = ' ';
 int space = 0;  /* Set to nonzero if you want to output suggestions that has spaces in them. */
 
-void check_word(int handle, char * word) {
+void check_word(int handle, string &word) {
 	char ** suggestions;
 	int i;
-	int result = voikko_spell_cstr(handle, word);
+	int result = voikko_spell_cstr(handle, word.c_str());
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
-		printf("E: charset conversion failed\n");
+		cerr << "E: charset conversion failed" << endl;
 		return;
 	}
 	if (result == VOIKKO_INTERNAL_ERROR) {
-		printf("E: internal error\n");
+		cerr << "E: internal error" << endl;
 		return;
 	}
 	if (autotest) {
-		if (result) printf("C\n");
-		else printf("W\n");
+		if (result) {
+			cout << "C" << endl;
+		}
+		else {
+			cout << "W" << endl;
+		}
 		fflush(0);
 	}
 	else if (one_line_output) {
-		printf ("%s", word);
+		cout << word;
 		if (!result) {
-			suggestions = voikko_suggest_cstr(handle, word);
+			suggestions = voikko_suggest_cstr(handle, word.c_str());
 			if (suggestions) {
 				for (i = 0; suggestions[i] != 0; i++) {
-					if (space || (!space && strchr (suggestions[i], ' ') == 0))
-						printf ("%c%s", word_separator, suggestions[i]);
+					string suggestion(suggestions[i]);
+					if (space || suggestion.find(' ') != string::npos) {
+						cout << word_separator << suggestion;
+					}
 				}
 				voikko_free_suggest_cstr(suggestions);
 			}
 		}
-		printf ("\n");
+		cout << endl;
 	}
 	else {
-		if (result) printf("C: %s\n", word);
-		else printf("W: %s\n", word);
+		if (result) {
+			cout << "C: " << word << endl;
+		}
+		else {
+			cout << "W: " << word << endl;
+		}
 	}
 	if (!one_line_output && suggest && !result) {
-		suggestions = voikko_suggest_cstr(handle, word);
+		suggestions = voikko_suggest_cstr(handle, word.c_str());
 		if (suggestions) {
 			for (i = 0; suggestions[i] != 0; i++) {
-				printf("S: %s\n", suggestions[i]);
+				cout << "S: " << suggestions[i] << endl;
 			}
 			voikko_free_suggest_cstr(suggestions);
 		}
@@ -83,32 +94,24 @@ void check_word(int handle, char * word) {
 
 
 int main(int argc, char ** argv) {
-	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
-	char * line;
-	ssize_t chars_read;
 	char * encoding;
 	char * path = 0;
 	int handle;
-	int i;
 	int cache_size;
-
-	line = new char[size];
-	if (line == 0) {
-		printf("E: Out of memory\n");
-		return 1;
-	}
 	
 	cache_size = 0;
-	for (i = 1; i < argc; i++) {
-		if (strncmp(argv[i], "-c", 2) == 0) {
+	for (int i = 1; i < argc; i++) {
+		string args(argv[i]);
+		if (args.find("-c") == 0) {
 			cache_size = atoi(argv[i] + 2);
 		}
-		else if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
+		else if (args == "-p" && i + 1 < argc) {
+			path = argv[++i];
+		}
 	}
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", cache_size, path);
 	if (voikko_error) {
-		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
-		delete line;
+		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
 		return 1;
 	}
 	
@@ -117,53 +120,55 @@ int main(int argc, char ** argv) {
 	
 	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
-	for (i = 1; i < argc; i++) {
-		if (strcmp(argv[i], "-t") == 0) autotest = 1;
-		else if (strcmp(argv[i], "ignore_dot=1") == 0)
+	for (int i = 1; i < argc; i++) {
+		string args(argv[i]);
+		if (args == "-t") {
+			autotest = 1;
+		}
+		else if (args == "ignore_dot=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
-		else if (strcmp(argv[i], "ignore_dot=0") == 0)
+		else if (args == "ignore_dot=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
-		else if (strcmp(argv[i], "ignore_numbers=1") == 0)
+		else if (args == "ignore_numbers=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
-		else if (strcmp(argv[i], "ignore_numbers=0") == 0)
+		else if (args == "ignore_numbers=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 0);
-		else if (strcmp(argv[i], "ignore_nonwords=1") == 0)
+		else if (args == "ignore_nonwords=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NONWORDS, 1);
-		else if (strcmp(argv[i], "ignore_nonwords=0") == 0)
+		else if (args == "ignore_nonwords=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NONWORDS, 0);
-		else if (strcmp(argv[i], "accept_first_uppercase=1") == 0)
+		else if (args == "accept_first_uppercase=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
-		else if (strcmp(argv[i], "accept_first_uppercase=0") == 0)
+		else if (args == "accept_first_uppercase=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 0);
-		else if (strcmp(argv[i], "accept_extra_hyphens=1") == 0)
+		else if (args == "accept_extra_hyphens=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 1);
-		else if (strcmp(argv[i], "accept_extra_hyphens=0") == 0)
+		else if (args == "accept_extra_hyphens=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 0);
-		else if (strcmp(argv[i], "accept_missing_hyphens=1") == 0)
+		else if (args == "accept_missing_hyphens=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_MISSING_HYPHENS, 1);
-		else if (strcmp(argv[i], "accept_missing_hyphens=0") == 0)
+		else if (args == "accept_missing_hyphens=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_MISSING_HYPHENS, 0);
-		else if (strcmp(argv[i], "ocr_suggestions=1") == 0)
+		else if (args == "ocr_suggestions=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 1);
-		else if (strcmp(argv[i], "ocr_suggestions=0") == 0)
+		else if (args == "ocr_suggestions=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
-		else if (strncmp(argv[i], "-x", 2) == 0) {
+		else if (args.find("-x") == 0) {
 			one_line_output = 1;
-			if (strlen(argv[i]) == 3) word_separator = argv[i][2];
+			if (args.size() == 3) {
+				word_separator = argv[i][2];
+			}
 			space = (word_separator != ' ');
 		}
-		else if (strcmp(argv[i], "-s") == 0) suggest = 1;
+		else if (args == "-s") {
+			suggest = 1;
+		}
 	}
 	
-	while (1) {
-		chars_read = getline(&line, &size, stdin);
-		if (chars_read == -1) break;
-		if (chars_read > 0 && line[chars_read - 1] == '\n') {
-			line[chars_read - 1] = '\0';
-		}
+	string line;
+	while (getline(cin, line)) {
 		check_word(handle, line);
 	}
-	delete line;
 	voikko_terminate(handle);
 	return 0;
 }
