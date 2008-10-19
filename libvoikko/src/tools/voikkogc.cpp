@@ -16,19 +16,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#define _GNU_SOURCE
-
-#include "voikko.h"
-#include <stdio.h>
+#include "../voikko.h"
+#include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <wchar.h>
 #include <locale.h>
-#include "porting.h"
+#include "../porting.h"
 #ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
 #endif // HAVE_NL_LANGINFO
+
+using namespace std;
 
 #ifdef HAVE_MBRLEN
 
@@ -45,19 +45,19 @@ void print_tokens(int handle, const char * line) {
 		token_type = voikko_next_token_cstr(handle, lineptr, len, &tokenchars);
 		switch (token_type) {
 			case TOKEN_WORD:
-				printf("W: \"");
+				cout << "W: \"";
 				break;
 			case TOKEN_PUNCTUATION:
-				printf("P: \"");
+				cout << "P: \"";
 				break;
 			case TOKEN_WHITESPACE:
-				printf("S: \"");
+				cout << "S: \"";
 				break;
 			case TOKEN_UNKNOWN:
-				printf("U: \"");
+				cout << "U: \"";
 				break;
 			case TOKEN_NONE:
-				printf("E: unknown token\n");
+				cout << "E: unknown token\n";
 				return;
 		}
 		while (tokenchars > 0) {
@@ -93,10 +93,10 @@ void split_sentences(int handle, const char * line) {
 				printf("E: %s\n", lineptr);
 				return;
 			case SENTENCE_PROBABLE:
-				printf("B: ");
+				cout << "B: ";
 				break;
 			case SENTENCE_POSSIBLE:
-				printf("P: ");
+				cout << "P: ";
 				break;
 			case SENTENCE_NO_START:
 				// Not returned from this function
@@ -129,9 +129,9 @@ void check_grammar(int handle, const char * line, const char * explanation_langu
 			printf("-\n");
 			return;
 		}
-		printf("[code=%i, level=0, ", grammar_error.error_code);
-		printf("descr=\"\", stpos=%zd, ", grammar_error.startpos);
-		printf("len=%zd, suggs={", grammar_error.errorlen);
+		cout << "[code=" << grammar_error.error_code << ", level=0, ";
+		cout << "descr=\"\", stpos=" << grammar_error.startpos << ", ";
+		cout << "len=" << grammar_error.errorlen << ", suggs={";
 		if (grammar_error.suggestions) {
 			char ** sugg = grammar_error.suggestions;
 			while (*sugg) {
@@ -142,12 +142,12 @@ void check_grammar(int handle, const char * line, const char * explanation_langu
 			}
 			voikko_free_suggest_cstr(grammar_error.suggestions);
 		}
-		printf("}]");
+		cout << "}]";
 		if (explanation_language) {
 			printf(" (%s)", voikko_error_message_cstr(
 				grammar_error.error_code, explanation_language));
 		}
-		printf("\n");
+		cout << endl;
 		skiperrors++;
 	}
 }
@@ -161,9 +161,9 @@ int main(int argc, char ** argv) {
 	enum operation op = CHECK_GRAMMAR;
 	int handle;
 	
-	line = malloc(bufsize);
+	line = new char[bufsize];
 	if (line == 0) {
-		printf("E: Out of memory\n");
+		cerr << "E: Out of memory" << endl;
 		return 1;
 	}
 	
@@ -174,7 +174,7 @@ int main(int argc, char ** argv) {
 
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
-		free(line);
+		delete line;
 		return 1;
 	}
 	
@@ -182,7 +182,7 @@ int main(int argc, char ** argv) {
 	char * encoding = nl_langinfo(CODESET);
 	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
-	char * explanation_language = 0;
+	const char * explanation_language = 0;
 	
 	for (int i = 1; i < argc; i++) {
 		if (strncmp(argv[i], "--tokenize", 10) == 0) {
@@ -222,14 +222,14 @@ int main(int argc, char ** argv) {
 				check_grammar(handle, line, explanation_language);
 		}
 	}
-	free(line);
+	delete line;
 	voikko_terminate(handle);
 	return 0;
 }
 
 #else
 int main(int argc, char ** argv) {
-	printf("E: This tool is not supported on your operating system.\n");
+	cerr << "E: This tool is not supported on your operating system." << endl;
 	return 1;
 }
 #endif

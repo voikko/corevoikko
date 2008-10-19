@@ -16,14 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#define _GNU_SOURCE
-
-#include <voikko.h>
+#include "../voikko.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
-#include "porting.h"
+#include "../porting.h"
 #ifdef HAVE_NL_LANGINFO
 #include <langinfo.h>
 #endif // HAVE_NL_LANGINFO
@@ -49,7 +47,7 @@ void hyphenate_word(int handle, char * word) {
 	len = strlen(word);
 	/* We assume that character '-' always has the shortest possible
 	   multibyte representation in a given encoding. */
-	hyphenated_word = malloc(strlen(word) * 2 + 1);
+	hyphenated_word = new char[strlen(word) * 2 + 1];
 	if (hyphenated_word == 0) {
 		printf("E: out of memory\n");
 		return;
@@ -75,7 +73,7 @@ void hyphenate_word(int handle, char * word) {
 	}
 	*hyphenatedptr = '\0';
 	printf("%s\n", hyphenated_word);
-	free(hyphenated_word);
+	delete hyphenated_word;
 	voikko_free_hyphenate(result);
 }
 
@@ -91,7 +89,7 @@ int main(int argc, char ** argv) {
 	int iclevel;
 	int i;
 	
-	line = malloc(size);
+	line = new char[size];
 	if (line == 0) {
 		printf("E: Out of memory\n");
 		return 1;
@@ -104,7 +102,7 @@ int main(int argc, char ** argv) {
 
 	if (voikko_error) {
 		printf("E: Initialisation of Voikko failed: %s\n", voikko_error);
-		free(line);
+		delete line;
 		return 1;
 	}
 	
@@ -142,7 +140,7 @@ int main(int argc, char ** argv) {
 		}
 		hyphenate_word(handle, line);
 	}
-	free(line);
+	delete line;
 	voikko_terminate(handle);
 	return 0;
 }

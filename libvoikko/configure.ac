@@ -102,6 +102,7 @@ AM_ICONV
 
 dnl Default compiler settings
 CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
+CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"
 
 AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile src/libvoikko.pc])
 AC_OUTPUT

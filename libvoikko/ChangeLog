@@ -1,3 +1,7 @@
+2008-10-19 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Refactoring and porting to C++.
+
 2008-10-18 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Refactoring and porting to C++.

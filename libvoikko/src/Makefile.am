@@ -4,21 +4,11 @@ libvoikko_la_SOURCES = voikko_suggest.c voikko_utils.c voikko_setup.c voikko_spe
                        voikko_tokenize.c sentence.c grammar.c gccache.c \
                        gcerror.c gcanalysis.c
 libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 9:0:8 @LIBLDFLAGSWIN@
-bin_PROGRAMS = voikkohyphenate voikkogc
-voikkohyphenate_SOURCES = voikkohyphenate.c porting.c
-voikkohyphenate_CFLAGS = $(AM_CFLAGS)
-voikkohyphenate_LDADD = libvoikko.la
-voikkogc_SOURCES = voikkogc.c porting.c
-voikkogc_CFLAGS = $(AM_CFLAGS)
-voikkogc_LDADD = libvoikko.la
-
 
 pkginclude_HEADERS = voikko.h
 noinst_HEADERS = voikko_utils.h voikko_setup.h voikko_spell.h voikko_charset.h \
                  voikko_hyphenate.h voikko_defs.h porting.h voikko_suggest.h \
                  gccache.h gcerror.h gcanalysis.h
-
-dist_man_MANS = voikkospell.1 voikkohyphenate.1 voikkogc.1
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc
