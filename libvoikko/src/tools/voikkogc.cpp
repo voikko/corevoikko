@@ -117,13 +117,13 @@ void split_sentences(int handle, const char * line) {
 }
 
 
-void check_grammar(int handle, const char * line, const char * explanation_language) {
+void check_grammar(int handle, string &line, const char * explanation_language) {
 	size_t len;
 	voikko_grammar_error grammar_error;
 	int skiperrors = 0;
-	len = strlen(line);
+	len = line.size();
 	while (1) {
-		grammar_error = voikko_next_grammar_error_cstr(handle, line, len,
+		grammar_error = voikko_next_grammar_error_cstr(handle, line.c_str(), len,
 		                0, skiperrors);
 		if (grammar_error.error_code == 0) {
 			cout << "-" << endl;
@@ -159,17 +159,9 @@ void check_grammar(int handle, const char * line, const char * explanation_langu
 enum operation {TOKENIZE, SPLIT_SENTENCES, CHECK_GRAMMAR};
 
 int main(int argc, char ** argv) {
-	size_t bufsize = 10000;
-	char * line;
 	char * path = 0;
 	enum operation op = CHECK_GRAMMAR;
 	int handle;
-	
-	line = new char[bufsize];
-	if (line == 0) {
-		cerr << "E: Out of memory" << endl;
-		return 1;
-	}
 	
 	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
@@ -178,7 +170,6 @@ int main(int argc, char ** argv) {
 
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
-		delete line;
 		return 1;
 	}
 	
@@ -209,24 +200,19 @@ int main(int argc, char ** argv) {
 			explanation_language = "en";
 	}
 	
-	while (1) {
-		ssize_t chars_read = getline(&line, &bufsize, stdin);
-		if (chars_read == -1) break;
-		if (chars_read > 0 && line[chars_read - 1] == '\n') {
-			line[chars_read - 1] = '\0';
-		}
+	string line;
+	while (getline(cin, line)) {
 		switch (op) {
 			case TOKENIZE:
-				print_tokens(handle, line);
+				print_tokens(handle, line.c_str());
 				break;
 			case SPLIT_SENTENCES:
-				split_sentences(handle, line);
+				split_sentences(handle, line.c_str());
 				break;
 			case CHECK_GRAMMAR:
 				check_grammar(handle, line, explanation_language);
 		}
 	}
-	delete line;
 	voikko_terminate(handle);
 	return 0;
 }

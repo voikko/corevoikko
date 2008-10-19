@@ -27,15 +27,16 @@
 #endif // HAVE_NL_LANGINFO
 #include <wchar.h>
 #include <string.h>
+#include <string>
 
 using namespace std;
 
 #ifdef HAVE_MBRLEN
-void hyphenate_word(int handle, char * word) {
+void hyphenate_word(int handle, const char * word) {
 	size_t len;
 	char * result;
 	char * hyphenated_word;
-	char * wordptr;
+	const char * wordptr;
 	char * hyphenatedptr;
 	char * resultptr;
 	size_t charlen;
@@ -80,21 +81,12 @@ void hyphenate_word(int handle, char * word) {
 
 
 int main(int argc, char ** argv) {
-	size_t size = LIBVOIKKO_MAX_WORD_CHARS;
-	char * line;
-	ssize_t chars_read;
 	char * encoding;
 	char * path = 0;
 	int handle;
 	int minhwlen;
 	int iclevel;
 	int i;
-	
-	line = new char[size];
-	if (line == 0) {
-		cerr << "E: Out of memory" << endl;
-		return 1;
-	}
 	
 	for (i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
@@ -103,7 +95,6 @@ int main(int argc, char ** argv) {
 
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
-		delete line;
 		return 1;
 	}
 	
@@ -133,15 +124,10 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	while (1) {
-		chars_read = getline(&line, &size, stdin);
-		if (chars_read == -1) break;
-		if (chars_read > 0 && line[chars_read - 1] == '\n') {
-			line[chars_read - 1] = '\0';
-		}
-		hyphenate_word(handle, line);
+	string line;
+	while (getline(cin, line)) {
+		hyphenate_word(handle, line.c_str());
 	}
-	delete line;
 	voikko_terminate(handle);
 	return 0;
 }

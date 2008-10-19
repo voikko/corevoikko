@@ -20,28 +20,6 @@
  * on systems that do not have them. */
 
 #include <config.h>
-#ifndef HAVE_GETLINE
-
-#include "porting.h"
-
-/* Clone of getline() from the GNU C library. FIXME: this implementation is not complete
- * or correct. */
-size_t getline(char ** lineptr, size_t * n, FILE * stream) {
-	char * charptr = *lineptr;
-	size_t i;
-	if (*n <= 0) return 0;
-	for (i = 0; i < *n - 1; i++) {
-		if (fgets(charptr, 2, stream) == 0) {
-			if (i == 0) return -1;
-			else break;
-		}
-		if (*charptr == '\n') break;
-		charptr++;
-	}
-	*charptr = '\0';
-	return i;
-}
-#endif
 
 #ifndef HAVE_NL_LANGINFO
 #ifdef WIN32

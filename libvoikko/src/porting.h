@@ -24,11 +24,6 @@
 
 #include <config.h>
 
-#ifndef HAVE_GETLINE
-#include <stdio.h>
-size_t getline(char ** lineptr, size_t * n, FILE * stream);
-#endif
-
 #ifndef HAVE_NL_LANGINFO
 #include <stdio.h>
 typedef int nl_item;
