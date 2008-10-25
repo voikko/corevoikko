@@ -19,26 +19,23 @@
 #include "../voikko.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <locale.h>
-#include "../porting.h"
-#ifdef HAVE_NL_LANGINFO
-#include <langinfo.h>
-#endif // HAVE_NL_LANGINFO
-#include <string>
+#include <stdio.h>
+#include <wchar.h>
+#include <string.h>
 #include <iostream>
 
 using namespace std;
 
-int autotest = 0;
-int suggest = 0;
-int one_line_output = 0;
-char word_separator = ' ';
-int space = 0;  /* Set to nonzero if you want to output suggestions that has spaces in them. */
+static const int MAX_WORD_LENGTH = 5000;
 
-void check_word(int handle, string &word) {
-	char ** suggestions;
-	int i;
-	int result = voikko_spell_cstr(handle, word.c_str());
+static int autotest = 0;
+static int suggest = 0;
+static int one_line_output = 0;
+static char word_separator = ' ';
+static int space = 0;  /* Set to nonzero if you want to output suggestions that has spaces in them. */
+
+void check_word(int handle, const wchar_t * word, size_t wlen) {
+	int result = voikko_spell_ucs4(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		cerr << "E: charset conversion failed" << endl;
 		return;
@@ -59,34 +56,34 @@ void check_word(int handle, string &word) {
 	else if (one_line_output) {
 		cout << word;
 		if (!result) {
-			suggestions = voikko_suggest_cstr(handle, word.c_str());
+			wchar_t ** suggestions = voikko_suggest_ucs4(handle, word);
 			if (suggestions) {
-				for (i = 0; suggestions[i] != 0; i++) {
-					string suggestion(suggestions[i]);
-					if (space || suggestion.find(' ') != string::npos) {
-						cout << word_separator << suggestion;
+				for (int i = 0; suggestions[i] != 0; i++) {
+					if (space || wcschr(suggestions[i], L' ')) {
+						cout << word_separator;
+						wcout << suggestions[i];
 					}
 				}
-				voikko_free_suggest_cstr(suggestions);
+				voikko_free_suggest_ucs4(suggestions);
 			}
 		}
 		cout << endl;
 	}
 	else {
 		if (result) {
-			cout << "C: " << word << endl;
+			wcout << L"C: " << word << endl;
 		}
 		else {
-			cout << "W: " << word << endl;
+			wcout << L"W: " << word << endl;
 		}
 	}
 	if (!one_line_output && suggest && !result) {
-		suggestions = voikko_suggest_cstr(handle, word.c_str());
+		wchar_t ** suggestions = voikko_suggest_ucs4(handle, word);
 		if (suggestions) {
-			for (i = 0; suggestions[i] != 0; i++) {
-				cout << "S: " << suggestions[i] << endl;
+			for (int i = 0; suggestions[i] != 0; i++) {
+				wcout << L"S: " << suggestions[i] << endl;
 			}
-			voikko_free_suggest_cstr(suggestions);
+			voikko_free_suggest_ucs4(suggestions);
 		}
 	}
 }
@@ -94,7 +91,6 @@ void check_word(int handle, string &word) {
 
 
 int main(int argc, char ** argv) {
-	char * encoding;
 	char * path = 0;
 	int handle;
 	int cache_size;
@@ -114,11 +110,6 @@ int main(int argc, char ** argv) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
 		return 1;
 	}
-	
-	setlocale(LC_ALL, "");
-	encoding = nl_langinfo(CODESET);
-	
-	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
@@ -165,11 +156,27 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	string line;
-	while (getline(cin, line)) {
-		check_word(handle, line);
+	wchar_t * line = new wchar_t[MAX_WORD_LENGTH + 1];
+	if (!line) {
+		cerr << "E: Out of memory" << endl;
 	}
+	
+	setlocale(LC_ALL, "");
+	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
+		size_t lineLen = wcslen(line);
+		if (lineLen == 0) continue;
+		if (line[lineLen - 1] == L'\n') {
+			line[lineLen - 1] = L'\0';
+			lineLen--;
+		}
+		check_word(handle, line, lineLen);
+	}
+	int error = ferror(stdin);
+	if (error) {
+		cerr << "E: Error while reading from stdin" << endl;
+	}
+	delete[] line;
+	
 	voikko_terminate(handle);
 	return 0;
 }
-

@@ -1,6 +1,6 @@
 bin_PROGRAMS = voikkospell voikkohyphenate voikkogc
 
-voikkospell_SOURCES = voikkospell.cpp ../porting.c
+voikkospell_SOURCES = voikkospell.cpp
 voikkospell_CFLAGS = $(AM_CFLAGS)
 voikkospell_LDADD = ../libvoikko.la
 
