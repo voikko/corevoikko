@@ -4,7 +4,7 @@ voikkospell_SOURCES = voikkospell.cpp
 voikkospell_CFLAGS = $(AM_CFLAGS)
 voikkospell_LDADD = ../libvoikko.la
 
-voikkohyphenate_SOURCES = voikkohyphenate.cpp ../porting.c
+voikkohyphenate_SOURCES = voikkohyphenate.cpp
 voikkohyphenate_CFLAGS = $(AM_CFLAGS)
 voikkohyphenate_LDADD = ../libvoikko.la
 

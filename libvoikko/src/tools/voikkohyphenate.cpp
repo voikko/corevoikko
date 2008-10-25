@@ -19,92 +19,71 @@
 #include "../voikko.h"
 #include <iostream>
 #include <stdlib.h>
-#include <unistd.h>
-#include <locale.h>
-#include "../porting.h"
-#ifdef HAVE_NL_LANGINFO
-#include <langinfo.h>
-#endif // HAVE_NL_LANGINFO
+#include <stdio.h>
 #include <wchar.h>
 #include <string.h>
-#include <string>
 
 using namespace std;
 
-#ifdef HAVE_MBRLEN
-void hyphenate_word(int handle, const char * word) {
-	size_t len;
-	char * result;
-	char * hyphenated_word;
-	const char * wordptr;
-	char * hyphenatedptr;
-	char * resultptr;
-	size_t charlen;
-	mbstate_t mbstate;
-	result = voikko_hyphenate_cstr(handle, word);
+static const int MAX_WORD_LENGTH = 5000;
+
+void hyphenate_word(int handle, const wchar_t * word, size_t wlen) {
+	char * result = voikko_hyphenate_ucs4(handle, word);
 	if (result == 0) {
 		cerr << "E: hyphenation failed" << endl;
 		return;
 	}
-	len = strlen(word);
-	/* We assume that character '-' always has the shortest possible
-	   multibyte representation in a given encoding. */
-	hyphenated_word = new char[strlen(word) * 2 + 1];
-	if (hyphenated_word == 0) {
+	
+	wchar_t * hyphenatedWord = new wchar_t[wlen * 2 + 1];
+	if (hyphenatedWord == 0) {
 		cerr << "E: out of memory" << endl;
+		voikko_free_hyphenate(result);
 		return;
 	}
-	memset(&mbstate, '\0', sizeof(mbstate_t));
-	wordptr = word;
-	hyphenatedptr = hyphenated_word;
-	resultptr = result;
-	while (len > 0) {
-		charlen = mbrlen(wordptr, len, &mbstate);
-		if (*resultptr != ' ') {
-			/* FIXME: assumes single byte representation for '-' */
-			*hyphenatedptr = '-';
-			hyphenatedptr++;
+	
+	const wchar_t * wordPtr = word;
+	wchar_t * hyphenatedPtr = hyphenatedWord;
+	char * resultPtr = result;
+	size_t charsLeft = wlen;
+	while (charsLeft > 0) {
+		if (*resultPtr != ' ') {
+			*hyphenatedPtr = L'-';
+			hyphenatedPtr++;
 		}
-		if (*resultptr != '=') {
-			strncpy(hyphenatedptr, wordptr, charlen);
-			hyphenatedptr += charlen;
+		if (*resultPtr != '=') {
+			*hyphenatedPtr = *wordPtr;
+			hyphenatedPtr++;
 		}
-		resultptr++;
-		wordptr += charlen;
-		len -= charlen;
+		resultPtr++;
+		wordPtr++;
+		charsLeft--;
 	}
-	*hyphenatedptr = '\0';
-	cout << hyphenated_word << endl;
-	delete[] hyphenated_word;
+	*hyphenatedPtr = L'\0';
+	wcout << hyphenatedWord << endl;
+	delete[] hyphenatedWord;
 	voikko_free_hyphenate(result);
 }
 
 
 int main(int argc, char ** argv) {
-	char * encoding;
 	char * path = 0;
 	int handle;
 	int minhwlen;
 	int iclevel;
-	int i;
 	
-	for (i = 1; i < argc; i++) {
+	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
 	}
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", 0, path);
-
+	
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
 		return 1;
 	}
 	
-	setlocale(LC_ALL, "");
-	encoding = nl_langinfo(CODESET);
-	
 	voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
-	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
 	
-	for (i = 1; i < argc; i++) {
+	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "no_ugly_hyphenation=1") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 1);
 		else if (strcmp(argv[i], "no_ugly_hyphenation=0") == 0)
@@ -124,18 +103,27 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	string line;
-	while (getline(cin, line)) {
-		hyphenate_word(handle, line.c_str());
+	wchar_t * line = new wchar_t[MAX_WORD_LENGTH + 1];
+	if (!line) {
+		cerr << "E: Out of memory" << endl;
 	}
+	
+	setlocale(LC_ALL, "");
+	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
+		size_t lineLen = wcslen(line);
+		if (lineLen == 0) continue;
+		if (line[lineLen - 1] == L'\n') {
+			line[lineLen - 1] = L'\0';
+			lineLen--;
+		}
+		hyphenate_word(handle, line, lineLen);
+	}
+	int error = ferror(stdin);
+	if (error) {
+		cerr << "E: Error while reading from stdin" << endl;
+	}
+	delete[] line;
+	
 	voikko_terminate(handle);
 	return 0;
 }
-
-#else
-int main(int argc, char ** argv) {
-	cerr << "E: This tool is not supported on your operating system." << endl;
-	return 1;
-}
-#endif
-

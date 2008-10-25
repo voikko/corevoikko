@@ -18,7 +18,6 @@
 
 #include "../voikko.h"
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <wchar.h>
 #include <string.h>
