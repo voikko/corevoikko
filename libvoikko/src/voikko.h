@@ -381,6 +381,21 @@ enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char
  * @param handle Voikko instance
  * @param text Pointer to the start of a text buffer. This should usually
  *        be at the start of a paragraph or a sentence.
+ * @param textlen Number of characters in the buffer. The end of the buffer should
+ *        be the end of a paragraph or a sentence.
+ * @param startpos Do not consider errors that start before this character
+ *        offset from the start of the text.
+ * @param skiperrors Skip this number of errors from the start of the text.
+ * @return Grammar error description.
+ */
+voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text,
+                     size_t textlen, size_t startpos, int skiperrors);
+
+/**
+ * Find next grammar error.
+ * @param handle Voikko instance
+ * @param text Pointer to the start of a text buffer. This should usually
+ *        be at the start of a paragraph or a sentence.
  * @param textlen Number of bytes in the buffer. The end of the buffer should
  *        be the end of a paragraph or a sentence.
  * @param startpos Do not consider errors that start before this character

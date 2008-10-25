@@ -24,15 +24,6 @@
 
 #include <config.h>
 
-#ifndef HAVE_NL_LANGINFO
-#include <stdio.h>
-typedef int nl_item;
-
-#define	CODESET		0	/* codeset name */
-
-char	*nl_langinfo(nl_item);
-#endif
-
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
 # define WIN32
 # define INTERNAL_CHARSET "UCS-2-INTERNAL"

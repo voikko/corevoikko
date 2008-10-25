@@ -19,111 +19,88 @@
 #include "../voikko.h"
 #include <iostream>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
 #include <wchar.h>
-#include <locale.h>
-#include "../porting.h"
-#ifdef HAVE_NL_LANGINFO
-#include <langinfo.h>
-#endif // HAVE_NL_LANGINFO
 
 using namespace std;
 
-#ifdef HAVE_MBRLEN
+static const int MAX_PARAGRAPH_LENGTH = 100000;
 
-void print_tokens(int handle, const char * line) {
-	size_t len;
-	const char * lineptr;
-	mbstate_t mbstate;
+void print_tokens(int handle, const wchar_t * line, size_t lineLen) {
 	enum voikko_token_type token_type;
 	size_t tokenchars;
-	len = strlen(line);
-	memset(&mbstate, '\0', sizeof(mbstate_t));
-	lineptr = line;
-	while (len > 0) {
-		token_type = voikko_next_token_cstr(handle, lineptr, len, &tokenchars);
+	const wchar_t * linePtr = line;
+	size_t charsLeft = lineLen;
+	while (charsLeft > 0) {
+		token_type = voikko_next_token_ucs4(handle, linePtr, charsLeft, &tokenchars);
 		switch (token_type) {
 			case TOKEN_WORD:
-				cout << "W: \"";
+				wcout << L"W: \"";
 				break;
 			case TOKEN_PUNCTUATION:
-				cout << "P: \"";
+				wcout << L"P: \"";
 				break;
 			case TOKEN_WHITESPACE:
-				cout << "S: \"";
+				wcout << L"S: \"";
 				break;
 			case TOKEN_UNKNOWN:
-				cout << "U: \"";
+				wcout << L"U: \"";
 				break;
 			case TOKEN_NONE:
-				cout << "E: unknown token\n";
+				wcout << L"E: unknown token\n";
 				return;
 		}
 		while (tokenchars > 0) {
-			size_t charlen = mbrlen(lineptr, len, &mbstate);
-			while (charlen > 0) {
-				putchar(lineptr[0]);
-				lineptr++;
-				charlen--;
-				len--;
-			}
+			wcout << linePtr[0];
+			linePtr++;
+			charsLeft--;
 			tokenchars--;
 		}
-		cout << "\"" << endl;
+		wcout << "\"" << endl;
 	}
 }
 
 
-void split_sentences(int handle, const char * line) {
-	size_t len;
-	const char * lineptr;
-	size_t charlen;
-	mbstate_t mbstate;
+void split_sentences(int handle, const wchar_t * line, size_t lineLen) {
 	enum voikko_sentence_type sentence_type;
 	size_t sentencechars;
-	len = strlen(line);
-	memset(&mbstate, '\0', sizeof(mbstate_t));
-	lineptr = line;
-	while (len > 0) {
-		sentence_type = voikko_next_sentence_start_cstr(handle, lineptr, len,
+	const wchar_t * linePtr = line;
+	size_t charsLeft = lineLen;
+	while (charsLeft > 0) {
+		sentence_type = voikko_next_sentence_start_ucs4(handle, linePtr, charsLeft,
 		                &sentencechars);
 		switch (sentence_type) {
 			case SENTENCE_NONE:
-				cout << "E: " << lineptr << endl;
+				wcout << L"E: ";
+				wcout << linePtr << endl;
 				return;
 			case SENTENCE_PROBABLE:
-				cout << "B: ";
+				wcout << L"B: ";
 				break;
 			case SENTENCE_POSSIBLE:
-				cout << "P: ";
+				wcout << L"P: ";
 				break;
 			case SENTENCE_NO_START:
 				// Not returned from this function
 				break;
 		}
 		while (sentencechars > 0) {
-			charlen = mbrlen(lineptr, len, &mbstate);
-			while (charlen > 0) {
-				putchar(lineptr[0]);
-				lineptr++;
-				charlen--;
-				len--;
-			}
+			wcout << linePtr[0];
+			linePtr++;
+			charsLeft--;
 			sentencechars--;
 		}
-		cout << endl;
+		wcout << endl;
 	}
 }
 
 
-void check_grammar(int handle, string &line, const char * explanation_language) {
-	size_t len;
+void check_grammar(int handle, const wchar_t * line, size_t lineLen,
+		const char * explanation_language) {
 	voikko_grammar_error grammar_error;
 	int skiperrors = 0;
-	len = line.size();
 	while (1) {
-		grammar_error = voikko_next_grammar_error_cstr(handle, line.c_str(), len,
+		grammar_error = voikko_next_grammar_error_ucs4(handle, line, lineLen,
 		                0, skiperrors);
 		if (grammar_error.error_code == 0) {
 			cout << "-" << endl;
@@ -173,10 +150,6 @@ int main(int argc, char ** argv) {
 		return 1;
 	}
 	
-	setlocale(LC_ALL, "");
-	char * encoding = nl_langinfo(CODESET);
-	voikko_set_string_option(handle, VOIKKO_OPT_ENCODING, encoding);
-	
 	const char * explanation_language = 0;
 	
 	for (int i = 1; i < argc; i++) {
@@ -200,27 +173,36 @@ int main(int argc, char ** argv) {
 			explanation_language = "en";
 	}
 	
-	string line;
-	while (getline(cin, line)) {
+	wchar_t * line = new wchar_t[MAX_PARAGRAPH_LENGTH + 1];
+	if (!line) {
+		cerr << "E: Out of memory" << endl;
+	}
+	
+	setlocale(LC_ALL, "");
+	while (fgetws(line, MAX_PARAGRAPH_LENGTH, stdin)) {
+		size_t lineLen = wcslen(line);
+		if (lineLen == 0) continue;
+		if (line[lineLen - 1] == L'\n') {
+			line[lineLen - 1] = L'\0';
+			lineLen--;
+		}
 		switch (op) {
 			case TOKENIZE:
-				print_tokens(handle, line.c_str());
+				print_tokens(handle, line, lineLen);
 				break;
 			case SPLIT_SENTENCES:
-				split_sentences(handle, line.c_str());
+				split_sentences(handle, line, lineLen);
 				break;
 			case CHECK_GRAMMAR:
-				check_grammar(handle, line, explanation_language);
+				check_grammar(handle, line, lineLen, explanation_language);
 		}
 	}
+	int error = ferror(stdin);
+	if (error) {
+		cerr << "E: Error while reading from stdin" << endl;
+	}
+	delete[] line;
+	
 	voikko_terminate(handle);
 	return 0;
 }
-
-#else
-int main(int argc, char ** argv) {
-	cerr << "E: This tool is not supported on your operating system." << endl;
-	return 1;
-}
-#endif
-

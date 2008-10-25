@@ -8,7 +8,7 @@ voikkohyphenate_SOURCES = voikkohyphenate.cpp
 voikkohyphenate_CFLAGS = $(AM_CFLAGS)
 voikkohyphenate_LDADD = ../libvoikko.la
 
-voikkogc_SOURCES = voikkogc.cpp ../porting.c
+voikkogc_SOURCES = voikkogc.cpp
 voikkogc_CFLAGS = $(AM_CFLAGS)
 voikkogc_LDADD = ../libvoikko.la
 

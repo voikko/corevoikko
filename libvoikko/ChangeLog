@@ -1,6 +1,10 @@
 2008-10-25 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Small fixes, thanks to Reijo Tomperi and Cppcheck.
+	* Remove porting.c.
+	* Stop using deprecated option VOIKKO_OPT_ENCODING in testing tools.
+	* Add voikko_next_grammar_error_ucs4 to public API.
+	* Fix voikkohyphenate and voikkogc to (hopefully) work on Windows.
 
 2008-10-19 Harri Pitkänen <hatapitk@iki.fi>
 
