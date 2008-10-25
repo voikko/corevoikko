@@ -4,7 +4,8 @@ libdir=@libdir@
 includedir=@includedir@
 
 Name: libvoikko
-Description: Library for spellcheckers and hyphenators
+Description: Library for Finnish language tools
+URL: http://voikko.sourceforge.net
 Version: @VERSION@
 Libs: -L${libdir} -lvoikko
 Libs.private: -lmalaga

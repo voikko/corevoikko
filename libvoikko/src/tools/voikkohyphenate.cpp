@@ -75,7 +75,7 @@ void hyphenate_word(int handle, const char * word) {
 	}
 	*hyphenatedptr = '\0';
 	cout << hyphenated_word << endl;
-	delete hyphenated_word;
+	delete[] hyphenated_word;
 	voikko_free_hyphenate(result);
 }
 

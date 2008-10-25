@@ -132,7 +132,9 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 
 const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
-	char * project;
+	/* FIXME: Temporary hack needed for MT unsafe malaga library */
+	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
+	
 	voikko_options.ignore_dot = 0;
 	voikko_options.ignore_numbers = 0;
 	voikko_options.ignore_uppercase = 0;
@@ -150,11 +152,8 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	voikko_options.suggestion_type = ST_STD;
 	init_gc_cache(&voikko_options.gc_cache);
 	
-	project = malloc(1024);
+	char * project = malloc(1024);
 	if (project == 0) return "Out of memory";
-	
-	/* FIXME: Temporary hack needed for MT unsafe malaga library */
-	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
 	
 	if (!voikko_find_malaga_project(project, 1024, langcode, path)) {
 		free(project);
@@ -193,13 +192,13 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	const char * malaga_init_error = voikko_init_malaga(project);
 	free(project);
 	if (malaga_init_error) {
-		voikko_handle_count--;
 		#ifdef HAVE_ICONV
 		iconv_close(voikko_options.iconv_ext_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_ext);
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		#endif
+		voikko_handle_count--;
 		return malaga_init_error;
 	}
 	if (cache_size >= 0) {
