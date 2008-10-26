@@ -85,7 +85,7 @@ endif
 voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
-		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
+		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) voikko/generate_lex.py $(GENLEX_OPTS)
 	touch $@
 
@@ -156,7 +156,7 @@ voikko-install: voikko
 
 # Vocabulary update
 update-vocabulary:
-	wget http://joukahainen.lokalisointi.org/sanastot/joukahainen.xml.gz -O - \
+	wget http://joukahainen.puimula.org/sanastot/joukahainen.xml.gz -O - \
 	| gunzip > vocabulary/joukahainen.xml
 
 
@@ -187,6 +187,6 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukah
 	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py \
 	sukija/ei-sukija.txt
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
-		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.lokalisointi.org/word/edit?wid=\1|p"
+		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) sukija/generate_lex.py
 	-@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex

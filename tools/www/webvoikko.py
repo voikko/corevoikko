@@ -35,7 +35,7 @@ POFILTERCOMMAND = 'pofilter'
 MAX_INPUT_LENGTH = 20000
 
 # Maximum file size for po file checking (in kbytes)
-MAX_PO_SIZE = 800
+MAX_PO_SIZE = 1800
 
 # Suomi-malaga project directory for pofilter
 POFILTER_DICT_DIR = '/home/harri/po-oikoluku/suomimalaga/voikko'
