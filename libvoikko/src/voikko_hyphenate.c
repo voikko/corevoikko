@@ -34,6 +34,7 @@ int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenatio
 	// Check for out of bounds hyphen
 	if (new_hyphen_pos == 0 || new_hyphen_pos + 1 >= nchars) return 0;
 	
+	// Check backwards for vowels
 	has_vowel = 0;
 	for (i = new_hyphen_pos - 1; hyphenation_points[i] != '-' && hyphenation_points[i] != '='; i--) {
 		if (i == 0) break;
@@ -41,9 +42,11 @@ int voikko_is_good_hyphen_position(const wchar_t * word, const char * hyphenatio
 	}
 	if (has_vowel == 0) return 0;
 	
+	// Check forward for vowels
 	has_vowel = 0;
 	for (i = new_hyphen_pos; i < nchars &&
 	     hyphenation_points[i] != '-' && hyphenation_points[i] != '='; i++) {
+		if (word[i] == L'.') break;
 		if (wcschr(VOIKKO_VOWELS, word[i])) has_vowel = 1;
 	}
 	if (has_vowel == 0) return 0;

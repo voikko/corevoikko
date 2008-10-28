@@ -1,3 +1,7 @@
+2008-10-28 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Prevent totally incorrect hyphenation for "asukkaat.hoas.fi"
+
 2008-10-25 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Small fixes, thanks to Reijo Tomperi and Cppcheck.

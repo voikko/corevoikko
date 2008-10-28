@@ -27,6 +27,7 @@ hiili-12        hiili-12
 hiili12         hiili12
 http://www.lappeenranta.fi     http://www.lappeenranta.fi
 www.lappeenranta.fi     www.lappeenranta.fi
+asukkaat.hoas.fi asuk-kaat.hoas.fi
 tuhataskelinen	tu-hat-as-ke-li-nen
 jok'ikinen       jok-iki-nen
 nougat'kaan     nou-gat'kaan
