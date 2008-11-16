@@ -18,8 +18,8 @@
 
 #include "../voikko.h"
 #include <iostream>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <wchar.h>
 
 using namespace std;

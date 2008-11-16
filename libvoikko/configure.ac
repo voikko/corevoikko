@@ -32,6 +32,7 @@ AC_PROG_LIBTOOL
 AM_MAINTAINER_MODE
 
 dnl Compiler features
+AC_LANG_CPLUSPLUS
 AC_C_CONST
 
 # FIXME: the following is wrong (it should be possible to change this when running make)
@@ -74,6 +75,7 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
 [
   AC_DEFINE(GCC_VISIBILITY, 1)
   CFLAGS="$tmp_CFLAGS -fvisibility=hidden"
+  CXXFLAGS="$CXXFLAGS -fvisibility=hidden"
   AC_MSG_RESULT([yes])
 ],
 [

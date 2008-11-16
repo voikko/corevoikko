@@ -17,16 +17,22 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
+// TODO: C linkage
+extern "C" {
 #include "voikko_setup.h"
 #include "voikko_utils.h"
-#include <stdlib.h>
-#include <string.h>
+#include "gccache.h"
+}
+#include <cstdlib>
+#include <cstring>
+
+namespace libvoikko {
 
 void init_gc_error(voikko_grammar_error * gc_error) {
 	memset(gc_error, 0, sizeof(gc_error));
 }
 
-voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
+VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
                      size_t textlen, size_t startpos, int skiperrors) {
 	if (text == 0 || textlen == 0) {
 		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
@@ -45,7 +51,7 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
 	return e;
 }
 
-voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text_ucs4,
+VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text_ucs4,
                      size_t wtextlen, size_t startpos, int skiperrors) {
 	voikko_grammar_error e;
 	init_gc_error(&e);
@@ -66,12 +72,16 @@ voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * 
 	for (char ** s = c_error->suggestions; *s; s++) {
 		sugg_count++;
 	}
-	e.suggestions = calloc(sugg_count + 1, sizeof(char *));
+	// TODO: C allocation
+	e.suggestions = (char **) calloc(sugg_count + 1, sizeof(char *));
 	if (!e.suggestions) return e;
 	for (int i = 0; i < sugg_count; i++) {
-		e.suggestions[i] = malloc((strlen(c_error->suggestions[i]) + 1) * sizeof(char));
+		// TODO: C allocation
+		e.suggestions[i] = (char *) malloc((strlen(c_error->suggestions[i]) + 1) * sizeof(char));
 		if (!e.suggestions[i]) return e;
 		strcpy(e.suggestions[i], c_error->suggestions[i]);
 	}
 	return e;
+}
+
 }

@@ -1,3 +1,7 @@
+2008-11-16 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Start porting the library to C++.
+
 2008-10-28 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Prevent totally incorrect hyphenation for "asukkaat.hoas.fi"

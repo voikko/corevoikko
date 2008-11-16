@@ -26,14 +26,20 @@
 #include <assert.h>
 #include "porting.h"
 
+#ifdef __cplusplus
+  #define VOIKKOLINKAGE extern "C"
+#else
+  #define VOIKKOLINKAGE
+#endif
+
 /* Shared library support */
 #ifdef WIN32
-  #define VOIKKOEXPORT __declspec(dllexport)
+  #define VOIKKOEXPORT VOIKKOLINKAGE __declspec(dllexport)
 #else
   #ifdef GCC_VISIBILITY
-    #define VOIKKOEXPORT __attribute__ ((visibility("default")))
+    #define VOIKKOEXPORT VOIKKOLINKAGE __attribute__ ((visibility("default")))
   #else
-    #define VOIKKOEXPORT
+    #define VOIKKOEXPORT VOIKKOLINKAGE
   #endif
 #endif
 
@@ -69,7 +75,7 @@ VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result);
 
 VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result);
 
-VOIKKOEXPORT enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION,
+enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION,
              TOKEN_WHITESPACE, TOKEN_UNKNOWN};
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
@@ -78,7 +84,7 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wch
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
                                                            size_t * tokenlen);
 
-VOIKKOEXPORT enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START,
+enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START,
              SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
