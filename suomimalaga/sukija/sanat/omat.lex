@@ -566,11 +566,32 @@
 [perusmuoto: "suoni", alku: "suonitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 
 [perusmuoto: "Weisman", alku: "Weisman", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "liettää", alku: "liet", luokka: teonsana, jatko: <asettaa>, äs: ä];
-[perusmuoto: "googlata", alku: "googl", luokka: teonsana, jatko: <salata>, äs: a];
-[perusmuoto: "googlettaa", alku: "googlet", luokka: teonsana, jatko: <alittaa>, äs: a];
+[perusmuoto: "Daína", alku: "Daín", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Chaviano", alku: "Chaviano", luokka: sukunimi, jatko: <arvelu>, äs: a];
+[perusmuoto: "Kenwood", alku: "Kenwood", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "ViewSonic", alku: "ViewSonic", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Child", alku: "Child", luokka: sukunimi, jatko: <kalsium>, äs: aä];
+[perusmuoto: "Kurlansky", alku: "Kurlansky", luokka: sukunimi, jatko: <valo>, äs: aä];
+[perusmuoto: "Batista", alku: "Batist", luokka: sukunimi, jatko: <kala>, äs: a];
+[perusmuoto: "Groove", alku: "Groove", luokka: nimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Vegas", alku: "Vegas", luokka: paikannimi, jatko: <kalsium>, äs: a]; # Las Vegas.
+[alku: "YTHS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
+[perusmuoto: "Lamora", alku: "Lamor", luokka: sukunimi, jatko: <karahka>, äs: a];
+###[perusmuoto: "kaukolainata", alku: "kaukolain", luokka: teonsana, jatko: <salata>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
+[perusmuoto: "Jakarta", alku: "Jakart", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "hörhö", alku: "hörhö", luokka: nimisana, jatko: <valo>, äs: ä];
+[perusmuoto: "Skoone", alku: "Skoone", luokka: paikannimi, jatko: <nalle>, äs: a];
+[perusmuoto: "googlata", alku: "googl", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "googlettaa", alku: "googlet", luokka: teonsana, jatko: <alittaa>, äs: a];
+[perusmuoto: "liettää", alku: "liet", luokka: teonsana, jatko: <alittaa>, äs: ä];
+[perusmuoto: "syanoottinen", alku: "syanootti", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "lutkuttaa", alku: "lutkut", luokka: teonsana, jatko: <alittaa>, äs: a];
+[perusmuoto: "tapioka", alku: "tapiok", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "maniokki", alku: "maniok", luokka: nimisana, jatko: <takki>, äs: ä];
+[perusmuoto: "lasvegasilainen", alku: "lasvegasilai", luokka: nimisana, jatko: <nainen>, äs: a];
+
 # Lisäykset Joukahaiseen loppuivat.
 
 ##############
@@ -653,19 +674,13 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 
 [perusmuoto: "vesi", alku: "vee", luokka: nimisana, jatko: @yksikön_heikko_aste_ja_monikon_nimentö, äs: ä];
 
-[perusmuoto: "vetää", alku: "vejin",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vetää", alku: "vejit",   luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vetää", alku: "vejimme", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vetää", alku: "vejitte", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "vetää", alku: "vejä",    luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejin",    luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejit",    luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejimme",  luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejitte",  luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejä",     luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vetää", alku: "vejetään", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "viedä", alku: "viiä", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "vuosi", alku: "vuuve", luokka: nimisana, jatko: @yksikön_heikko_aste_ja_monikon_nimentö, äs: a];
-
-
-#[perusmuoto: "Lievestuore", alku: "Lievestuore", luokka: paikannimi, jatko: <terve>, äs: a, rakenne: "=pppppp=ppppp"];
-#[perusmuoto: "päre", alku: "päre", luokka: nimisana, jatko: <terve>, äs: ä];
-#[perusmuoto: "terve", alku: "terve", luokka: nimi_laatusana, jatko: <terve>, äs: ä, tiedot: <inen>];
-#[perusmuoto: "tuore", alku: "tuore", luokka: laatusana, jatko: <terve>, äs: a];
-#[perusmuoto: "uunituore", alku: "uunituore", luokka: laatusana, jatko: <terve>, äs: a, rakenne: "=pppp=ppppp"];

@@ -1268,6 +1268,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"karjo">,     <"mökä">>,    # Karjo+mökille.
       <<"karri">,     <"ääri">>,
       <<"kato">,      <"lila">>,
+###      <<"kauko">,     <"lainata">>,  # On sanastossa.
       <<"kemi">,      <"alli", "joki">>,
       <<"kiero", "kirkas", "moni", "musta", "piilo", "puna", "pyöreä", "sini", "tumma", "vaalea", "viiru">,    <"silmäistä">>,
       <<"Kim", "tele", "tu">, <"maa">>,

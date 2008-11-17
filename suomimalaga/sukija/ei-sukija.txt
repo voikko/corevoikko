@@ -746,6 +746,7 @@ Virolainen
 Virta
 virtaama
 Visa
+voidella
 voima
 wrightiläinen
 Vuokko
