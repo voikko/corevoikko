@@ -2353,14 +2353,14 @@ allo_rule generate_allos ($tietue):
           (sortaa in $tietue.jatko)) then
     choose $i in huutaa ($tietue, "t", "r")
                  + muistella ($tietue, "t", "r")
-                 + sana_Vs ($tietue, rV($tietue))  # Murros.
+                 + murros ($tietue)
                  + murto ($tietue);
     result $i.alku, $i - alku;
 
   elseif (musertaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "r")
                  + muistella ($tietue, "t", "r")
-                 + sana_Vs ($tietue, rV($tietue));  # Murros.
+                 + sana_Vs ($tietue, rV($tietue));
     result $i.alku, $i - alku;
 
 
@@ -5827,6 +5827,15 @@ subrule sana_Vs ($tietue, $lisä):
   return vastaus ($tietue);
 end;
 
+subrule murros ($tietue):
+  $tietue :=+ johdoksen_lähtötiedot($tietue);
+  $tietue.alku :=+ "ro";
+  $tietue.luokka := nimisana;
+  $tietue.perusmuoto := $tietue.alku +"s";
+  $tietue.äs := a;
+
+  return vastaus ($tietue);
+end;
 
 # Kirjoittaa, kirjottaa => kirjoittautua, kirjottautua.
 #

@@ -517,6 +517,8 @@ vihkon # Kotus 1
 vihon # Kotus 1
 pehkon # Kotus 1
 !pehon # Kotus 1
+luo'on # Kotus 1
+!luoon # Kotus 1
 rei'illä # Kotus 10
 !reiillä # Kotus 10
 pöytämäinen # Kotus 10
@@ -589,6 +591,13 @@ pyörrön # Kotus 54
 jäykensi # Kotus 54
 jäykennellä # Kotus 54
 jäykennys # Kotus 54
+murros # Kotus 54
+!murrös # Kotus 54
+kierros # Kotus 54
+!kierrös # Kotus 54
+vierroksessa # Kotus 54
+!vierroksessä # Kotus 54
+!piirrys # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
 !saaretaan # Kotus 57

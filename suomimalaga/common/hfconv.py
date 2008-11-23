@@ -58,7 +58,7 @@ VERB = 3
 
 modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'k>',u'(ko)ko',u'koko'),
-			(u'k>',u'(ruo)ko',u'ruoko'),
+			(u'k>',u'(.*uo)ko',u'ruoko'),
 			(u'kk',u'(.*k)kU',u'alku'),
 			(u'uku',u'(.*U)kU',u'luku'),
 			(u'k>',u'(..U)kU',u'tiuku'),
