@@ -2295,6 +2295,9 @@ allo_rule generate_allos ($tietue):
     choose $i in huutaa ($tietue, "t", "d") + muistella ($tietue, "t", "d");
     result $i.alku, $i - alku;
 
+  elseif (alentaa in $tietue.jatko) then
+    choose $i in huutaa ($tietue, "t", "n") + muistella ($tietue, "t", "n");
+    result $i.alku, $i - alku;
 
   elseif (soutaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "d")

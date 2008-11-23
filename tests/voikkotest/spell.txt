@@ -600,6 +600,10 @@ kierros # Kotus 54
 vierroksessa # Kotus 54
 !vierroksessä # Kotus 54
 !piirrys # Kotus 54
+uusinnettiin # Kotus 54
+!uusindettiin # Kotus 54
+lyhennettiin # Kotus 54
+!lyhendettiin # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
 !saaretaan # Kotus 57
