@@ -842,7 +842,7 @@ allo_rule generate_allos ($tietue):
                                           [omanto_iT: "",
                                            omanto_in: A($tietue)],
                                           [osanto_itA: ""],
-                                          [sisätulento_isiin: ""], ""));
+                                          [sisätulento_isiin: "", sisätulento_ihin: ""], ""));
     result $i.alku, $i - alku;
 
 
