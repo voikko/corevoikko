@@ -381,12 +381,31 @@ def _replace_conditional_aposthrope(word):
 			return word.replace(u'$', u'\'')
 	return word.replace(u'$', u'')
 
-def _vtype_subst_tO(base):
+DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_1 = [u'subst_tO', u'subst_Os']
+DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_2 = [u'verbi_AjAA', 'verbi_AhtAA', 'verbi_AUttAA', 'verbi_AUtellA']
+
+def _vtype_special_class_1(base):
 	base = base.lower()
 	last_back = max(base.rfind(u'a'), base.rfind(u'o'), base.rfind(u'å'), base.rfind(u'u'))
 	last_front = max(base.rfind(u'ä'), base.rfind(u'ö'), base.rfind(u'y'))
 	if last_front > last_back: return voikkoutils.VOWEL_FRONT
 	else: return voikkoutils.VOWEL_BACK
+
+def _vtype_special_class_2(base):
+	base = base.lower()
+	last_back = max(base.rfind(u'a'), base.rfind(u'o'), base.rfind(u'å'), base.rfind(u'u'))
+	last_front = max(base.rfind(u'ä'), base.rfind(u'ö'), base.rfind(u'y'))
+	if last_front > last_back: return voikkoutils.VOWEL_FRONT
+	elif last_front < last_back: return voikkoutils.VOWEL_BACK
+	else:
+		# no front or back vowels
+		if base.rfind(u'e') >= 0:
+			# "hel|istä" -> "heläjää"
+			return voikkoutils.VOWEL_FRONT
+		else:
+			# "kih|istä" -> "kihajaa"
+			return voikkoutils.VOWEL_BACK
+
 
 ## Returns a list of InflectedWord objects for given word and inflection type.
 def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type = voikkoutils.VOWEL_DEFAULT):
@@ -418,13 +437,20 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type =
 			infl.formName = rule.name
 			infl.isCharacteristic = rule.isCharacteristic
 			infl.priority = rule.rulePriority
-			if rule.name in [u'subst_tO', u'subst_Os']:
-				if _vtype_subst_tO(word_stripped_base) == voikkoutils.VOWEL_FRONT:
+			
+			vowel_harmony_rule = None
+			if rule.name in DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_1:
+				vowel_harmony_rule = _vtype_special_class_1
+			elif rule.name in DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_2:
+				vowel_harmony_rule = _vtype_special_class_2
+			if vowel_harmony_rule != None:
+				if vowel_harmony_rule(word_stripped_base) == voikkoutils.VOWEL_FRONT:
 					infl.inflectedWord = word_stripped_base + __convert_tv_ev(affix)
 				else:
 					infl.inflectedWord = word_stripped_base + affix
 				inflection_list.append(infl)
 				continue
+			
 			if vowel_type in [voikkoutils.VOWEL_BACK, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(pattern):
 				infl.inflectedWord = _replace_conditional_aposthrope(
