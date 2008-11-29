@@ -698,8 +698,15 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (kulkija in $tietue.jatko) then
-    choose $i in kulkija ($tietue, A($tietue), O($tietue));
-    result $i.alku, $i - alku;
+    if ($tietue.luokka = nimisana) then
+      choose $i in kulkija ($tietue, A($tietue), O($tietue));
+      result $i.alku, $i - alku;
+    else
+      # Erisnimi ei ole verbijohdos
+      $tietue.alku := $tietue.alku + "j";
+      choose $i in apila ($tietue, A($tietue), O($tietue));
+      result $i.alku, $i - alku;
+    end;
 
   elseif (apila in $tietue.jatko) then
     choose $i in apila ($tietue, A($tietue), O($tietue));

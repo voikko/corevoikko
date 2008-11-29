@@ -526,6 +526,9 @@ pöytämäinen # Kotus 10
 höppänin # Kotus 12
 !höppänöimmän # Kotus 12
 höppänimmän # Kotus 12
+Berija # Kotus 12
+Berijoiden # Kotus 12
+Berijoitten # Kotus 12
 ainoisiin # Kotus 15
 ainoihin # Kotus 15
 nugaata # Kotus 20
