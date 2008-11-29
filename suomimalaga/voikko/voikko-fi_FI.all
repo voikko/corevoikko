@@ -5925,7 +5925,7 @@ end;
 
 
 subrule kihajaa ($tietue):
-  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.äs := ääntiösointu_kihistä ($tietue);
 
   return tositavan_kestämä ($tietue, AjA($tietue), AjA($tietue))  # Kihaja+n.
          + tositavan_kertoma ($tietue, Aj($tietue), Aj($tietue))  # Kihaj+i.
@@ -5945,7 +5945,7 @@ end;
 
 subrule kihahtaa ($tietue):
   $tietue :=+ johdoksen_lähtötiedot($tietue);
-  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.äs := ääntiösointu_kihistä ($tietue);
   $tietue.alku :=+ A($tietue) + "h";
   $tietue.perusmuoto := $tietue.alku + "t" + AA($tietue);
   return  muistaa_muistella ($tietue, tA($tietue), dA($tietue), "t", "d")
@@ -5955,7 +5955,7 @@ end;
 
 subrule kihauttaa_kihautella ($tietue):
   $tietue :=+ johdoksen_lähtötiedot($tietue);
-  $tietue.äs := ääntiösointu ($tietue);
+  $tietue.äs := ääntiösointu_kihistä ($tietue);
   $tietue.alku :=+ A($tietue) + U($tietue) + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + AA($tietue);
   return muistaa_muistella ($tietue, tA($tietue), A($tietue), "t", "")
@@ -6864,6 +6864,20 @@ subrule ääntiösointu ($tietue):
   return a;
 end;
 
+subrule ääntiösointu_kihistä ($tietue):
+  define $l := length($tietue.alku);
+  define $neutraali := a;
+  foreach $i in -$l:
+    if substring($tietue.alku, $l + $i + 1) matches @yäö then
+      return ä;
+    elseif substring($tietue.alku, $l + $i + 1) matches @uao then
+      return a;
+    elseif substring($tietue.alku, $l + $i + 1) = "e" then
+      $neutraali := ä;
+    end;
+  end;
+  return $neutraali;
+end;
 
 subrule salailla ($tietue, $vahva_aste):
   $tietue :=+ johdoksen_lähtötiedot($tietue);

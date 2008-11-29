@@ -632,6 +632,10 @@ vavista # Kotus 66
 vapista # Kotus 66
 !vavisen # Kotus 66
 vapisen # Kotus 66
+kihajaa # Kotus 66
+!kihäjää # Kotus 66
+!helajaa # Kotus 66
+heläjää # Kotus 66
 lobbasi # Kotus 73
 peljätköön # Kotus 73
 !peljäsi # Kotus 73
