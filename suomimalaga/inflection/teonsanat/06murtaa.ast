@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -44,6 +44,5 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-
-murtaa   murtaa   ta re ra s r t  %muistella("t","r")  %muistua("","t","r")  %murto
-musertaa musertaa ta re ra s r t  %muistella("t","r")
+murtaa   murtaa   ta re ra s r t   %muistua("","t","r")  %murto
+musertaa musertaa ta re ra s r t

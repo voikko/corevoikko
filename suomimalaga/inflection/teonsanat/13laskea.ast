@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,9 +45,9 @@
 # combination.
 
 
-laskea laskea  e  i  e  "" ""  %muistella("esk","esk")
-hakea  laskea  ke ki e  "" k   %muistella("esk","esk")
-kutea  laskea  te ti de d  t   %muistella("desk","desk")
-polkea laskea  ke ki je j  k   %muistella("jesk","jesk")
-rypeä  laskea  pe pi ve v  p   %muistella("vesk","vesk")
-tunkea laskea  ke ki ge g  k   %muistella("gesk","gesk")
+laskea laskea  e  i  e  "" ""
+hakea  laskea  ke ki e  "" k
+kutea  laskea  te ti de d  t
+polkea laskea  ke ki je j  k
+rypeä  laskea  pe pi ve v  p
+tunkea laskea  ke ki ge g  k

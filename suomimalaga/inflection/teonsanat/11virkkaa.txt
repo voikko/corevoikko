@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,100 +46,122 @@
 
 
 nimitapa_1_A
-          lyps+ä+ä
+          virk+ka+a
 
 nimitapa_2
-          lyps+ä+essä
+          virk+ka+essa
+
+nimitapa_2_tA
 
 nimitapa_2_ttA
-          lyps+e+ttäessä
+          virk+e+ttaessa
 
 nimitapa_3
-          lyps+ä+mä
+          virk+ka+ma
+
+nimitapa_3_tA
 
 nimitapa_3_ttA
-          lyps+e+ttämän
+          virk+e+ttaman
 
 nimitapa_4
-          lyps+ä+minen
+          virk+ka+minen
 
 nimitapa_5
-          lyps+ä+mäisilläni
+          virk+ka+maisillani
 
 laatutapa_1_vA
-          lyps+ä+vä
+          virk+ka+va
+
+laatutapa_1_tA
 
 laatutapa_1_ttA
-          lyps+e+ttävä
+          virk+e+ttava
 
 laatutapa_2_nUt
-          lyps+ä+nyt
+          virk+ka+nut
+
+laatutapa_2_tU
 
 laatutapa_2_ttU
-          lyps+e+tty
+          virk+e+ttu
 
 kestämän_tekijäpääte_y1
-          lyps+ä+n
+          virk+a+n
 
 kestämän_tekijäpääte_y2
-          lyps+ä+t
+          virk+a+t
 
 kestämän_tekijäpääte_y3
-          lyps+ä+ä
+          virk+ka+a
 
 kestämän_tekijäpääte_m1
-          lyps+ä+mme
+          virk+a+mme
 
 kestämän_tekijäpääte_m2
-          lyps+ä+tte
+          virk+a+tte
 
 kestämän_tekijäpääte_m3
-          lyps+ä+vät
+          virk+ka+vat
 
 tositavan_kestämä_tAAn
-          lyps+e+tään
+          virk+e+taan
 
 kertoman_tekijäpääte_y1
-          lyps++in
+          virk+o+in
+          virk++in  ei_voikko
 
 kertoman_tekijäpääte_y2
-          lyps++it
+          virk+o+it
+          virk++it  ei_voikko
 
 kertoman_tekijäpääte_y3
-          lyps++i
+          virk+ko+i
+          virk+k+i  ei_voikko
 
 kertoman_tekijäpääte_m1
-          lyps++imme
+          virk+o+imme
+          virk++imme  ei_voikko
 
 kertoman_tekijäpääte_m2
-          lyps++itte
+          virk+o+itte
+          virk++itte  ei_voikko
 
 kertoman_tekijäpääte_m3
-          lyps++ivät
+          virk+ko+ivat
+          virk+k+ivat  ei_voikko
+
+tositavan_kertoma_tiin
 
 tositavan_kertoma_ttiin
-          lyps+e+ttiin
+          virk+e+ttiin
 
 ehtotapa
-          lyps+ä+isin
+          virk+ka+isin
+
+ehtotapa_tA
 
 ehtotapa_ttA
-          lyps+e+ttäisiin
+          virk+e+ttaisiin
 
 mahtotapa_ne
-          lyps+ä+nen
+          virk+ka+nen
+
+mahtotapa_tA
 
 mahtotapa_ttA
-          lyps+e+ttäneen
+          virk+e+ttaneen
 
 käskytapa_y2
-          lyps+ä+
+          virk+a+
 
 käskytapa_kielto
-          lyps+ä+kö
+          virk+ka+ko
+
+käskytapa_tA
 
 käskytapa_ttA
-          lyps+e+ttäköön
+          virk+e+ttakoon
 
-johdin_jA_kantaja
-          lyps+ä+jä
+johdin_jA_kulkija
+          virk+ka+ja

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -44,7 +44,6 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-
-haastaa haastaa  a  e  a  o  "" o  ""  %muistella("","")
-kaihtaa haastaa  ta de da do d  to t   %muistella("t","d")
-laittaa haastaa  ta e  a  o  "" to t   %muistella("t","")
+haastaa haastaa  a  e  a  o  "" o  "" ""
+kaihtaa haastaa  ta de da do d  to t  d
+laittaa haastaa  ta e  a  o  "" to t  t

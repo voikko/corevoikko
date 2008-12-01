@@ -62,7 +62,7 @@ historical = [
 			      (u'pp',u'(.*p)pi',u'sinappi'),
 			      (u't',u'(.*)ti',u'konvehti') ]),
         (u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
-        (u'haastaa', u'sw', [(None,u'(.*C)AA',u'haastaa')]),
+        (u'haastaa', u'sw', [(None,u'(.*Ct)AA',u'haastaa')]),
 	(u'hohtaa',  u'sw', [(u'tt',u'(.*t)tAA',u'heittää')]),
 	(u'huutaa', u'sw', [(u'nt',u'(.*Vn)tAA',u'alentaa'),
 			(u't',u'(.*V)tAA',u'huutaa')]),
@@ -81,6 +81,10 @@ historical = [
 			    (None,u'(.*so)fia',u'filosofia'),
 			    (None,u'(.*gra)fia',u'topografia')]),
         (u'koiras', u'ws', [(None,u'(.*A)s',u'koiras')]),
+	(u'kohota', u'ws', [(u'k',u'(.*ik)OtA',u'laota'),
+			    (u'k',u'(.*Vk)OtA',u'saota'),
+			    (u'>k',u'(hi|la)OtA',u'laota'),
+			    (u'>k',u'(C[AiU])OtA',u'saota')]),
 	(u'kulkija', u'-', [(None,u'(.*lo)gia',u'analogia'),
 			    (None,u'(.*so)fia',u'filosofia'),
 			    (None,u'(.*gra)fia',u'topografia')]),
@@ -148,7 +152,7 @@ historical = [
 			     (u'k',u'(.*mek)As',u'iäkäs'),
 			     (u'k',u'(.*k)As',u'varas')]),
 	(u'vihanta', u'sw', [(u'nt',u'(.*n)tA',u'vihanta')]),
-        (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'jakaa')])
+        (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'virkkaa')])
         ]
 
 classmap = historical

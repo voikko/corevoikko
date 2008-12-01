@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,18 +45,18 @@
 # combination.
 
 
-aleta    aleta   "" t   ne   n    n   ni             %loitontaa("n") %loitontua("n") %muistella("nt","nn")
+aleta    aleta   "" t   ne   n    n   ni             %loitontaa("n") %loitontua("n")
 edetä    aleta   de det tene den  ten teni
 erata    aleta   a  at  kane an   kan kani
 hapata   aleta   a  at  pane an   pan pani           %loitontua("an")
 kangeta  aleta   ge get kene gen  ken keni
-kaveta   aleta   ve vet pene ven  pen peni           %loitontaa("ven") %loitontua("ven") %muistella("vent","venn")
-kevetä   kevetä  ve vet pene vene ven pen  peni veni %loitontaa("ven") %loitontua("ven") %muistella("vent","venn")
+kaveta   aleta   ve vet pene ven  pen peni           %loitontaa("ven") %loitontua("ven")
+kevetä   kevetä  ve vet pene vene ven pen  peni veni %loitontaa("ven") %loitontua("ven")
 leudota  aleta   do dot tone don  ton toni           %loitontaa("don") %loitontua("don") 
-loitota  aleta   o  ot  tone on   ton toni           %loitontaa("on")  %loitontua("on")  %muistella("ont","onn")
+loitota  aleta   o  ot  tone on   ton toni           %loitontaa("on")  %loitontua("on")
 lämmetä  aleta   me met pene men  pen peni
 mädätä   aleta   dä dät täne dän  tän täni           %loitontua("dän")
-suipeta  aleta   e  et  pene en   pen peni           %loitontaa("en")  %loitontua("en") %muistella("ent","enn")
+suipeta  aleta   e  et  pene en   pen peni           %loitontaa("en")  %loitontua("en")
 tarjeta  aleta   je jet kene jen  ken keni
 ulota    aleta   o  ot  kone on   kon koni           %loitontua("on")
 vaieta   aleta   e  et  kene en   ken keni           %loitontaa("en")  %loitontua("en")

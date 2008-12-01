@@ -91,7 +91,7 @@
 [perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
+[perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "franchise-", alku: "franchise-", luokka: etuliite, jatko: @eln, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppppp-"];
 [perusmuoto: "franchising-", alku: "franchising-", luokka: etuliite, jatko: @eln, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppppppp-"];
 [perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Aiheuttaa joidenkin väärien sanojen tunnistumisen, mm. *geograafia.
@@ -271,7 +271,7 @@
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];

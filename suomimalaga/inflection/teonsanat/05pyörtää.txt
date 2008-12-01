@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,119 +46,125 @@
 
 
 nimitapa_1_A
-          an+ta+a
+          pyör+tä+ä
 
 nimitapa_2
-          an+ta+essa
+          pyör+tä+essä
 
 nimitapa_2_tA
 
 nimitapa_2_ttA
-          an+ne+ttaessa
+          pyör+re+ttäessä
 
 nimitapa_3
-          an+ta+ma
+          pyör+tä+mä
 
 nimitapa_3_tA
 
 nimitapa_3_ttA
-          an+ne+ttaman
+          pyör+re+ttämän
 
 nimitapa_4
-          an+ta+minen
+          pyör+tä+minen
 
 nimitapa_5
-          an+ta+maisillani
+          pyör+tä+mäisilläni
 
 laatutapa_1_vA
-          an+ta+va
+          pyör+tä+vä
 
 laatutapa_1_tA
 
 laatutapa_1_ttA
-          an+ne+ttava
+          pyör+re+ttävä
 
 laatutapa_2_nUt
-          an+ta+nut
+          pyör+tä+nyt
 
 laatutapa_2_tU
 
 laatutapa_2_ttU
-          an+ne+ttu
+          pyör+re+tty
 
 kestämän_tekijäpääte_y1
-          an+na+n
+          pyör+rä+n
 
 kestämän_tekijäpääte_y2
-          an+na+t
+          pyör+rä+t
 
 kestämän_tekijäpääte_y3
-          an+ta+a
+          pyör+tä+ä
 
 kestämän_tekijäpääte_m1
-          an+na+mme
+          pyör+rä+mme
 
 kestämän_tekijäpääte_m2
-          an+na+tte
+          pyör+rä+tte
 
 kestämän_tekijäpääte_m3
-          an+ta+vat
+          pyör+tä+vät
 
 tositavan_kestämä_tAAn
-          an+ne+taan
+          pyör+re+tään
 
 kertoman_tekijäpääte_y1
-          an+no+in
+          pyör+s+in
+          pyör+r+in  ei_voikko
 
 kertoman_tekijäpääte_y2
-          an+no+it
+          pyör+s+it
+          pyör+r+it  ei_voikko
 
 kertoman_tekijäpääte_y3
-          an+to+i
+          pyör+s+i
+          pyör+t+i  ei_voikko
 
 kertoman_tekijäpääte_m1
-          an+no+imme
+          pyör+s+imme
+          pyör+r+imme  ei_voikko
 
 kertoman_tekijäpääte_m2
-          an+no+itte
+          pyör+s+itte
+          pyör+r+itte  ei_voikko
 
 kertoman_tekijäpääte_m3
-          an+to+ivat
+          pyör+s+ivät
+          pyör+t+ivät  ei_voikko
 
 tositavan_kertoma_tiin
 
 tositavan_kertoma_ttiin
-          an+ne+ttiin
+          pyör+re+ttiin
 
 ehtotapa
-          an+ta+isin
+          pyör+tä+isin
 
 ehtotapa_tA
 
 ehtotapa_ttA
-          an+ne+ttaisiin
+          pyör+re+ttäisiin
 
 mahtotapa_ne
-          an+ta+nen
+          pyör+tä+nen
 
 mahtotapa_tA
 
 mahtotapa_ttA
-          an+ne+ttaneen
+          pyör+re+ttäneen
 
 käskytapa_y2
-          an+na+
+          pyör+rä+
 
 käskytapa_kielto
-          an+ta+ko
+          pyör+tä+kö
 
 käskytapa_tA
 
 käskytapa_ttA
-          an+ne+ttakoon
+          pyör+re+ttäköön
 
 johdin_jA_kantaja
-          an+ta+ja
+          pyör+tä+jä
 
-johdin_ellA
-          an+n+ella
+johdin_ella
+          pyör+r+ellä

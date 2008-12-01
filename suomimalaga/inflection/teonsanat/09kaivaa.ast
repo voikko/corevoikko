@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,12 +45,12 @@
 # combination.
 
 
-kaivaa   kaivaa  a  e  a  o  o   %muistella("","")   %punottaa("at")
-ajaa     kaivaa  a  e  a  o  o   %muistella("","")
-antaa    antaa   ta ne na no to  %muistella("t","n") %punottaa("nat")
-jakaa    antaa   ka e  a  o  ko  %muistella("k","")
-kapsaa   kaivaa  a  e  a  o  o
-lappaa   kaivaa  pa e  a  o  po
-palaa    kaivaa  a  e  a  o  o
-raataa   kaivaa  ta de da do to  %muistella("t","d")
-saattaa  kaivaa  ta e  a  o  to  %muistella("t","")
+kaivaa   kaivaa  a  e  a  o  o  ""  %punottaa("at")
+ajaa     kaivaa  a  e  a  o  o  ""
+antaa    antaa   ta ne na no to n   %punottaa("nat")
+jakaa    jakaa   ka e  a  o  ko
+kapsaa   lappaa  a  e  a  o  o
+lappaa   lappaa  pa e  a  o  po
+palaa    lappaa  a  e  a  o  o
+raataa   kaivaa  ta de da do to d
+saattaa  kaivaa  ta e  a  o  to t

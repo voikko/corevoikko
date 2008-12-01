@@ -206,6 +206,7 @@ define @teonsanasta_johdettu_nimi_tai_laatusana :=
         johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti,
         johdin_nUt, johdin_O, johdin_Os, johdin_rUt, johdin_stU_juostu,
         johdin_stU_nuolaistu, johdin_sUt, johdin_tAvA, johdin_tAvAinen,
+        johdin_tO_leuto, johdin_tO_liitto,
         johdin_ttAvA, johdin_ttAvAinen, johdin_ttU, johdin_tU_dU,
         johdin_tU_lU_katseltu, johdin_tU_lU_oltu, johdin_tU_nU, johdin_tU_rU,
         johdin_U_arvelu, johdin_Us_ksen, johdin_vA, johdin_vAinen, johdin_vE,
@@ -214,7 +215,7 @@ define @teonsanasta_johdettu_nimi_tai_laatusana :=
 define @teonsanasta_johdettu_nimisana :=
        <johdin_jA_kantaja, johdin_jA_kulkija, johdin_jA_myyjä,
         johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti,
-        johdin_O, johdin_Os,
+        johdin_O, johdin_Os, johdin_tO_leuto, johdin_tO_liitto,
         johdin_U_arvelu, johdin_Us_ksen,
         nimitapa_4>;
 
@@ -235,5 +236,9 @@ define @laatusanasta_johdettu_nimisana := <johdin_Us, johdin_UUs>;
 
 define @laatusanasta_johdettu_laatusana := <johdin_nlainen>;
 
-define @nimi_laatusanan_johdin :=
-       <johdin_lAinen, johdin_lAisittain, johdin_mAinen, johdin_llinen>;
+define @nimi_laatusanan_johdin := <johdin_lAinen, johdin_mAinen, johdin_llinen>;
+
+define @teonsanasta_johdettu_teonsana :=
+       <johdin_ellA, johdin_dellA, johdin_hdella, johdin_kellA, johdin_lellA,
+        johdin_nellA, johdin_nnellA, johdin_rellA, johdin_tellA,
+        johdin_eskellA, johdin_oitellA, johdin_otellA>;

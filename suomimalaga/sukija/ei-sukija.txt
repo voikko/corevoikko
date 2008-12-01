@@ -73,6 +73,8 @@ Eno
 ensikertalainen
 entisenlainen
 eritasoliittymä
+erittyä
+eritys
 esiintymä
 esikasvattaa
 esilletuominen
@@ -108,6 +110,7 @@ heijastuma
 heikentymä
 heimolainen
 heitellä
+Heitto
 Helo
 heloitus
 henkilöitymä
@@ -229,6 +232,7 @@ kevytmetalli
 Kielo
 kierosilmä
 kieroutuma
+kierros
 kiertolainen
 kiertuelainen
 kiertymä
@@ -269,6 +273,7 @@ kreikkalaiskatolilainen
 Kroatia
 Kuha
 Kuikka
+kuiskutus
 kuivamuona
 Kukka
 Kulho
@@ -315,6 +320,7 @@ käskyläinen
 kävijä
 käynti
 käytävä
+käännös
 kääpiösarjalainen
 laajakaista
 laajakangas
@@ -456,6 +462,7 @@ Niva
 Norja
 nousema
 näkymä
+näppäillä
 näytellä
 näyttämä
 näyttö
@@ -498,11 +505,13 @@ Persia
 peräänajo
 pidentymä
 pidättyä
+piirros
 Pinja
 pinttymä
 Pirkkalainen
 pirulainen
 pito
+pitoisuus
 Pohja
 pohjoisvaltalainen
 poikima
@@ -525,6 +534,7 @@ puoluelainen
 purema
 puristuma
 putoama
+pysyttäytyä
 pysähdys
 Päivä
 pöhöttymä
@@ -549,6 +559,7 @@ Riihimäki
 rikkakasvi
 Riski
 risteytymä
+Ritva
 rivittyä
 rohtuma
 romahdusmainen
@@ -563,6 +574,7 @@ ruumiillistuma
 Ruusu
 ryhmittymä
 ryhmittyä
+ryvettyä
 Rönkkö
 saarelainen
 Saari
@@ -584,8 +596,10 @@ selittyä
 seminaarilainen
 Seppä
 Siimes
+siirros
 siirtolainen
 siirtymä
+siirtyä
 siivous
 Sikiö
 Sini
@@ -619,6 +633,7 @@ säteisliike
 Säteri
 sätkytellä
 säästö
+säätö
 taantuma
 Taimi
 taipuma
@@ -664,6 +679,7 @@ Tuisku
 tukkeutuma
 tukkilainen
 tulitus
+tunnusomainen
 tuonti
 tuoreravinto
 tuoretavara
@@ -720,6 +736,7 @@ Varkaus
 Varma
 Vasara
 vasemmistolainen
+vastaanotto
 vastaavanlainen
 Vento
 venymä

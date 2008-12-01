@@ -168,3 +168,6 @@ johdin_jA_kantaja
 
 johdin_Us_ksen
           jäyken+n+ys
+
+johdin_ellA
+          jäyken+n+ellä

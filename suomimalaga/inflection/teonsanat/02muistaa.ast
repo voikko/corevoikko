@@ -44,26 +44,24 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-
-muistaa     muistaa     a    e    ""          %muistella("","")     %muistua("","","")
-aavistaa    alittaa     a    e    a   ""  ""  %muistella("","")     %muistua("","","")
-alittaa     alittaa     ta   e    a   ""  t   %muistella("t","")    %muistua("","t","")
-ammottaa    ammottaa    tta itta te ite ta ita t it tt itt          %ammotella %ammottua2  %ammottautua2
-asettaa     alittaa     ta   e    a   ""  t   %muistella("t","")    %muistua("","t","")    %asettautua
-astahtaa    alittaa     ta   de   da  d   t   %muistella("t","d")
-autioittaa  voitaa      ta   e    a   ""  t
-heittää     voitaa      ta   e    a   ""  t   %muistella("t","")    %heitto
-hidastaa    alittaa     a    e    a   ""  ""  %muistella("","")     %muistua("","","") %punottaa("ut")
-hohtaa      hohtaa      ta   de   da  d   t   %muistella("t","d")   %punottaa("dat")   %hohto
-hujahtaa    alittaa     hta  hde  hda hd  ht  %muistella("ht","hd") %punottaa("ut")
-inttää      voitaa      tä   e    ä   ""  t   %muistella("t","")
-itää        voitaa      tä   de   dä  d   t   %muistella("t","d")
-kirjoittaa  kirjoittaa  itta tta ite te ita ta it t itt tt          %kirjoitella %kirjoittua2  %kirjoittautua2
-kuluttaa    alittaa     ta   e    a   ""  t   %muistella("t","")
-kyntää      voitaa      tä   ne   nä  n   t
-loistaa     loistaa     a    e    ""          %muistella("","")
-longertaa   alittaa     ta   re   ra  r   t   %muistella("t","r")
-lypsää      lypsää      ä    e    ""          %muistella("","")
-purkaa      voitaa      ka   e    a   ""  k
-sulaa       voitaa      a    e    a   ""  ""
-voitaa      voitaa      ta   de   da  d   t   %muistella("t","d")
+muistaa     muistaa     a    e    ""                                %muistua("","","")
+aavistaa    alittaa     a    e    a   ""  ""  ""                    %muistua("","","")
+alittaa     alittaa     ta   e    a   ""  t   t                     %muistua("","t","")
+ammottaa    ammottaa    tta itta te ite ta ita t it tt itt          %ammottua2  %ammottautua2
+asettaa     alittaa     ta   e    a   ""  t   t                     %muistua("","t","")    %asettautua
+astahtaa    alittaa     ta   de   da  d   t   d
+autioittaa  autioittaa  ta   e    a   ""  t
+heittää     heittää     ta   e    a   ""  t   t
+hidastaa    hidastaa    a    e    ""                                %muistua("","","")    %punottaa("ut")
+hohtaa      hohtaa      ta   de   da  d   t   "" d                  %punottaa("dat")
+hujahtaa    alittaa     hta  hde  hda hd  ht  hd                    %punottaa("ut")
+inttää      voitaa      tä   e    ä   ""  t   t
+itää        voitaa      tä   de   dä  d   t   d
+kirjoittaa  kirjoittaa  itta tta ite te ita ta it t itt tt          %kirjoittua2  %kirjoittautua2
+kuluttaa    alittaa     ta   e    a   ""  t   t
+kyntää      voitaa      tä   ne   nä  n   t   n
+loistaa     loistaa     a    e    ""
+longertaa   alittaa     ta   re   ra  r   t   r
+purkaa      voitaa      ka   e    a   ""  k   ""
+sulaa       voitaa      a    e    a   ""  ""  ""
+voitaa      voitaa      ta   de   da  d   t   d

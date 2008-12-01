@@ -579,19 +579,18 @@
 [perusmuoto: "Lamora", alku: "Lamor", luokka: sukunimi, jatko: <karahka>, äs: a];
 ###[perusmuoto: "kaukolainata", alku: "kaukolain", luokka: teonsana, jatko: <salata>, äs: a];
 
-# Nämä on lisätty Joukahaiseen.
-[perusmuoto: "Jakarta", alku: "Jakart", luokka: paikannimi, jatko: <kala>, äs: a];
-[perusmuoto: "hörhö", alku: "hörhö", luokka: nimisana, jatko: <valo>, äs: ä];
-[perusmuoto: "Skoone", alku: "Skoone", luokka: paikannimi, jatko: <nalle>, äs: a];
-[perusmuoto: "googlata", alku: "googl", luokka: teonsana, jatko: <salata>, äs: a];
-[perusmuoto: "googlettaa", alku: "googlet", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "liettää", alku: "liet", luokka: teonsana, jatko: <alittaa>, äs: ä];
-[perusmuoto: "syanoottinen", alku: "syanootti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "lutkuttaa", alku: "lutkut", luokka: teonsana, jatko: <alittaa>, äs: a];
-[perusmuoto: "tapioka", alku: "tapiok", luokka: nimisana, jatko: <koira>, äs: a];
-[perusmuoto: "maniokki", alku: "maniok", luokka: nimisana, jatko: <takki>, äs: ä];
-[perusmuoto: "lasvegasilainen", alku: "lasvegasilai", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "käännyksissä", alku: "käännyksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "väännyksissä", alku: "väännyksihin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "väännyksissä", alku: "väännyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "väännyksissä", alku: "väännyksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 
+[perusmuoto: "autostop", alku: "autostop", luokka: nimisana, jatko: <loppu>, äs: a];
+[perusmuoto: "rockstop", alku: "rockstop", luokka: nimisana, jatko: <loppu>, äs: a];
+[perusmuoto: "virkellä", alku: "virk", luokka: teonsana, jatko: <nakella>, äs: ä];
+#[perusmuoto: "vikaantua", alku: "vikaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
+
+
+# Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.
 
 ##############

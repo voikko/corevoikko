@@ -180,3 +180,7 @@ johdin_jA_kantaja
 johdin_Us_ksen
           ammo+t+us
           ammo+it+us  ei_voikko
+
+johdin_otellA
+          ammo+t+ella
+          ammo+it+ella  ei_voikko

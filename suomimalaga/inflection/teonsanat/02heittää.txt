@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,119 +46,106 @@
 
 
 nimitapa_1_A
-          an+ta+a
+          ot+ta+a
 
 nimitapa_2
-          an+ta+essa
-
-nimitapa_2_tA
+          ot+ta+essa
 
 nimitapa_2_ttA
-          an+ne+ttaessa
+          ot+e+ttaessa
 
 nimitapa_3
-          an+ta+ma
-
-nimitapa_3_tA
+          ot+ta+ma
 
 nimitapa_3_ttA
-          an+ne+ttaman
+          ot+e+ttaman
 
 nimitapa_4
-          an+ta+minen
+          ot+ta+minen
 
 nimitapa_5
-          an+ta+maisillani
+          ot+ta+maisillani
 
 laatutapa_1_vA
-          an+ta+va
-
-laatutapa_1_tA
+          ot+ta+va
 
 laatutapa_1_ttA
-          an+ne+ttava
+          ot+e+ttava
 
 laatutapa_2_nUt
-          an+ta+nut
-
-laatutapa_2_tU
+          ot+ta+nut
 
 laatutapa_2_ttU
-          an+ne+ttu
+          ot+e+ttu
 
 kestämän_tekijäpääte_y1
-          an+na+n
+          ot+a+n
 
 kestämän_tekijäpääte_y2
-          an+na+t
+          ot+a+t
 
 kestämän_tekijäpääte_y3
-          an+ta+a
+          ot+ta+a
 
 kestämän_tekijäpääte_m1
-          an+na+mme
+          ot+a+mme
 
 kestämän_tekijäpääte_m2
-          an+na+tte
+          ot+a+tte
 
 kestämän_tekijäpääte_m3
-          an+ta+vat
+          ot+ta+vat
 
 tositavan_kestämä_tAAn
-          an+ne+taan
+          ot+e+taan
 
 kertoman_tekijäpääte_y1
-          an+no+in
+          ot++in
 
 kertoman_tekijäpääte_y2
-          an+no+it
+          ot++it
 
 kertoman_tekijäpääte_y3
-          an+to+i
+          ot+t+i
 
 kertoman_tekijäpääte_m1
-          an+no+imme
+          ot++imme
 
 kertoman_tekijäpääte_m2
-          an+no+itte
+          ot++itte
 
 kertoman_tekijäpääte_m3
-          an+to+ivat
-
-tositavan_kertoma_tiin
+          ot+t+ivat
 
 tositavan_kertoma_ttiin
-          an+ne+ttiin
+          ot+e+ttiin
 
 ehtotapa
-          an+ta+isin
-
-ehtotapa_tA
+          ot+ta+isin
 
 ehtotapa_ttA
-          an+ne+ttaisiin
+          ot+e+ttaisiin
 
 mahtotapa_ne
-          an+ta+nen
-
-mahtotapa_tA
+          ot+ta+nen
 
 mahtotapa_ttA
-          an+ne+ttaneen
+          ot+e+ttaneen
 
 käskytapa_y2
-          an+na+
+          ot+a+
 
 käskytapa_kielto
-          an+ta+ko
-
-käskytapa_tA
+          ot+ta+ko
 
 käskytapa_ttA
-          an+ne+ttakoon
+          ot+e+ttakoon
 
 johdin_jA_kantaja
-          an+ta+ja
+          ot+ta+ja
+
+johdin_tO_liitto
+          ot++to
 
 johdin_ellA
-          an+n+ella
+          $1

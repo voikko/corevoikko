@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -267,9 +267,8 @@ tapaluokka;
   johdin_tAr;         # Pappi >= papitar.
   johdin_inen;        # Valo+inen (vain yhdyssanojen jälkiosissa).
   johdin_llinen;      # Juhla+llinen.
-  johdin_lAinen;      # Kaupunki+lainen.
-  johdin_lAisittain;  # Kaupunki+laisittain.
-  johdin_mAinen;      # Kaupunki+mainen.
+  johdin_lAinen;      # Kaupunki+lainen, kaupunki+laisittain.
+  johdin_mAinen;      # Kaupunki+mainen, kaupunki+maisittain.
   johdin_nlainen;     # Hyvänlainen, pahanlainen.
 
   johdin_tOn;       # Maa+ton, pää+tön.
@@ -313,7 +312,24 @@ tapaluokka;
   johdin_nA;         # Kalista  => kalina.
   johdin_O;          # Muistaa  => muisto, muiston.
   johdin_Os;         # Murtaa   => murros.
+  johdin_tO_liitto;  # Heittää  => heitto, heiton.
+  johdin_tO_leuto;   # Hohtaa   => hohto, hohdon.
   johdin_U_arvelu;   # Arvailla => arvelu, arveluiden.
+
+  johdin_ellA;       # Muistaa => muistella.
+  johdin_dellA;
+  johdin_hdellA;
+  johdin_kellA;      # Jakaa => jaella.
+  johdin_lellA;
+  johdin_nellA;
+  johdin_nnellA;
+  johdin_rellA;
+  johdin_tellA;
+
+  johdin_eskellA;    # Laskea => laskeskella.
+
+  johdin_oitellA;    # Kirjo(i)ttaa => kirjo(i)tella; i:llinen muoto oikein.
+  johdin_otellA;     # Ammo(i)ttaa  => ammo(i)tella; i:tön muoto oikein.
 
 aikamuoto;
   kestämä;

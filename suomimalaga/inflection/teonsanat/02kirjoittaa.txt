@@ -180,3 +180,7 @@ johdin_jA_kantaja
 johdin_Us_ksen
           kirjo+it+us
           kirjo+t+us  ei_voikko
+
+johdin_oitellA
+          kirjo+it+ella
+          kirjo+t+ella ei_voikko

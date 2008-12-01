@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,119 +46,100 @@
 
 
 nimitapa_1_A
-          an+ta+a
+          autioit+ta+a
 
 nimitapa_2
-          an+ta+essa
-
-nimitapa_2_tA
+          autioit+ta+essa
 
 nimitapa_2_ttA
-          an+ne+ttaessa
+          autioit+e+ttaessa
 
 nimitapa_3
-          an+ta+ma
-
-nimitapa_3_tA
+          autioit+ta+ma
 
 nimitapa_3_ttA
-          an+ne+ttaman
+          autioit+e+ttaman
 
 nimitapa_4
-          an+ta+minen
+          autioit+ta+minen
 
 nimitapa_5
-          an+ta+maisillani
+          autioit+ta+maisillani
 
 laatutapa_1_vA
-          an+ta+va
-
-laatutapa_1_tA
+          autioit+ta+va
 
 laatutapa_1_ttA
-          an+ne+ttava
+          autioit+e+ttava
 
 laatutapa_2_nUt
-          an+ta+nut
-
-laatutapa_2_tU
+          autioit+ta+nut
 
 laatutapa_2_ttU
-          an+ne+ttu
+          autioit+e+ttu
 
 kestämän_tekijäpääte_y1
-          an+na+n
+          autioit+a+n
 
 kestämän_tekijäpääte_y2
-          an+na+t
+          autioit+a+t
 
 kestämän_tekijäpääte_y3
-          an+ta+a
+          autioit+ta+a
 
 kestämän_tekijäpääte_m1
-          an+na+mme
+          autioit+a+mme
 
 kestämän_tekijäpääte_m2
-          an+na+tte
+          autioit+a+tte
 
 kestämän_tekijäpääte_m3
-          an+ta+vat
+          autioit+ta+vat
 
 tositavan_kestämä_tAAn
-          an+ne+taan
+          autioit+e+taan
 
 kertoman_tekijäpääte_y1
-          an+no+in
+          autioit++in
 
 kertoman_tekijäpääte_y2
-          an+no+it
+          autioit++it
 
 kertoman_tekijäpääte_y3
-          an+to+i
+          autioit+t+i
 
 kertoman_tekijäpääte_m1
-          an+no+imme
+          autioit++imme
 
 kertoman_tekijäpääte_m2
-          an+no+itte
+          autioit++itte
 
 kertoman_tekijäpääte_m3
-          an+to+ivat
-
-tositavan_kertoma_tiin
+          autioit+t+ivat
 
 tositavan_kertoma_ttiin
-          an+ne+ttiin
+          autioit+e+ttiin
 
 ehtotapa
-          an+ta+isin
-
-ehtotapa_tA
+          autioit+ta+isin
 
 ehtotapa_ttA
-          an+ne+ttaisiin
+          autioit+e+ttaisiin
 
 mahtotapa_ne
-          an+ta+nen
-
-mahtotapa_tA
+          autioit+ta+nen
 
 mahtotapa_ttA
-          an+ne+ttaneen
+          autioit+e+ttaneen
 
 käskytapa_y2
-          an+na+
+          autioit+a+
 
 käskytapa_kielto
-          an+ta+ko
-
-käskytapa_tA
+          autioit+ta+ko
 
 käskytapa_ttA
-          an+ne+ttakoon
+          autioit+e+ttakoon
 
 johdin_jA_kantaja
-          an+ta+ja
-
-johdin_ellA
-          an+n+ella
+          autioit+ta+ja

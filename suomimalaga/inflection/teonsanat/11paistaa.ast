@@ -44,7 +44,7 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-paistaa paistaa  a  e  a  o  "" o  ""  %muistella("","")
-virkkaa paistaa  ka e  a  o  "" o  k
-paahtaa paistaa  ta de da do d  to t   %muistella("t","d")
-taittaa paistaa  ta e  a  o  "" o  t   %muistella("t","")
+paistaa paistaa  a  e  a  o  "" o  "" ""
+virkkaa virkkaa  ka e  a  o  "" ko  k
+paahtaa paistaa  ta de da do d  to t  d
+taittaa paistaa  ta e  a  o  "" o  t  t

@@ -161,11 +161,32 @@ end;
 # $taivutus  Sanan taivutus eri taivutusmuodoissa.
 #
 subrule taivutuskaava ($tietue, $taivutus):
-#if ($tietue.luokka = lukusana) then
-#  define $a := transmit (<$tietue>);
-#  define $b := transmit (<$taivutus>);
+#  define $a := transmit ($tietue);
+#  define $b := transmit ($taivutus);
 #  define $c := transmit ("<>");
-#end;
+
+  # Laitetaan johdin_ellA:n astevaihtelu kuntoon.
+  # Esim. alittaa => alitella, alittelija.
+  #
+  if (($tietue.luokka = teonsana) and ($taivutus.johdin_ellA /= nil)) then
+    define $ellA := ($taivutus.johdin_ellA.1).1;
+    if ($ellA /= "") then
+      define $johdin_ellA := "johdin_" + $ellA + "ellA";
+#      define $a := transmit ($tietue);
+#      define $b := transmit ($taivutus);
+#      define $c := transmit ($johdin_ellA);
+#      define $d := transmit ("<>");
+
+      $taivutus :=- johdin_ellA;
+      $taivutus :=+ [johdin_CellA($ella): <<"", <>>>]; 
+
+#      define $aa := transmit ($tietue.perusmuoto);
+#      define $ab := transmit ($taivutus.johdin_ellA);
+#      define $ac := transmit ($ellA);
+#      define $ad := transmit (<$taivutus>);
+#      define $aö := transmit ("<>");
+   end;
+  end;
 
   # Poistetaan liput.
   #
@@ -263,7 +284,7 @@ subrule taivutuskaava ($tietue, $taivutus):
 
 
   if ($tietue.luokka in @johdin_laatutapa) then
-    $taivutus :=- <johdin_lAinen, johdin_lAisittain, johdin_mAinen, johdin_tOn>;
+    $taivutus :=- <johdin_lAinen, johdin_mAinen, johdin_tOn>;
   elseif ($tietue.luokka in  @laatutapa_1 + @laatutapa_2) then
     $taivutus :=- <johdin_tOn, tavuviiva, yhdyssana> + @nimi_laatusanan_johdin;
   end;
@@ -353,6 +374,20 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
   return $t;
+end;
+
+
+subrule johdin_CellA ($text):
+      if ($text = "d")  then return johdin_dellA;
+  elseif ($text = "hd") then return johdin_hdellA;
+  elseif ($text = "l")  then return johdin_lellA;
+  elseif ($text = "n")  then return johdin_nellA;
+  elseif ($text = "nn") then return johdin_nnellA;
+  elseif ($text = "r")  then return johdin_rellA;
+  elseif ($text = "t")  then return johdin_tellA;
+  else
+     error "johdin_CellA " + $text;
+  end;
 end;
 
 
@@ -504,13 +539,6 @@ subrule muistua ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
 end;
 
 
-subrule ammotella ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "tell" + A($tietue);
-  return kilvoitella ($tietue, "tel", "itel", "tell", "itell", "ttele", "ittele", "ttel", "ittel", "tteli", "itteli");
-end;
-
 subrule ammottua2 ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue :=+ [lähtöalku: $tietue.alku];
@@ -538,14 +566,6 @@ subrule asettautua ($tietue):
   $tietue :=+ [lähtöalku: $tietue.alku];
   $tietue.perusmuoto := $tietue.alku + "t" + UA($tietue);
   return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
-end;
-
-
-subrule kirjoitella ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "itell" + A($tietue);
-  return kilvoitella ($tietue, "itel", "tel", "itell", "tell", "ittele", "ttele", "ittel", "ttel", "itteli", "tteli");
 end;
 
 
@@ -584,7 +604,7 @@ subrule kihahtaa ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ A($tietue) + "h";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t")
+  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d")
          + muistella ($tietue, "t", "d");
 end;
 
@@ -594,7 +614,7 @@ subrule kihauttaa ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ AU($tietue) + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t")
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
          + muistella ($tietue, "t", "");
 end;
 
@@ -633,15 +653,6 @@ subrule pyörtö ($tietue):
 end;
 
 
-subrule hohto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.luokka := nimisana;
-  $tietue.äs := ääntiösointu ($tietue);
-  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
-  return valo ($tietue, "t"+O($tietue), "d"+O($tietue));
-end;
-
-
 subrule heitto ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := nimisana;
@@ -674,7 +685,7 @@ subrule punottaa ($tietue, $heikko_aste):
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $heikko_aste;
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t")
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
          + muistella ($tietue, "t", "")
          + muistua ($tietue, "", "t", "");
 end;
@@ -704,27 +715,27 @@ end;
 # Esim. tr ($s, "abc", "def") korvaa merkkijonossa olevat
 # a:t d:illä, b:t e:illä ja c:t f:illä.
 #
-subrule tr ($s, $u, $v):
-  assert (length($u) greater_equal length($v));
-  define $p := "";
-  foreach $i in length ($s):
-    define $korvattu := no;
-    foreach $j in length ($u):
-      define $c1 := substring ($s, $i);
-      define $c2 := substring ($u, $j);
-      if ((capital ($c1) = capital ($c2)) and ($c1 = $c2)) then
-        $p :=+ substring ($v, $j);
-        $korvattu := yes;
-        break;
-      end;
-    end;
-    if ($korvattu = no) then
-      $p :=+ substring ($s, $i);
-    end;
-#define $foo := transmit ($p);
-  end;
-  return $p;
-end;
+#subrule tr ($s, $u, $v):
+#  assert (length($u) greater_equal length($v));
+#  define $p := "";
+#  foreach $i in length ($s):
+#    define $korvattu := no;
+#    foreach $j in length ($u):
+#      define $c1 := substring ($s, $i);
+#      define $c2 := substring ($u, $j);
+#      if ((capital ($c1) = capital ($c2)) and ($c1 = $c2)) then
+#        $p :=+ substring ($v, $j);
+#        $korvattu := yes;
+#        break;
+#      end;
+#    end;
+#    if ($korvattu = no) then
+#      $p :=+ substring ($s, $i);
+#    end;
+##define $foo := transmit ($p);
+#  end;
+#  return $p;
+#end;
 
 
 # Jaetaan sana tavuihin. Esim.
@@ -748,156 +759,156 @@ define @ä2 := <"aa", "ee", "ii", "oo", "uu", "yy", "ää", "öö">;
 define @ääntiö2 := @ä1 + @ä2;
 
 
-subrule tavutus ($sana):
-#  if ($sana = nil) then
-#    return nil;
+#subrule tavutus ($sana):
+##  if ($sana = nil) then
+##    return nil;
+##  end;
+#
+##define $ab := transmit ($sana);
+#
+#  define $n := length ($sana);
+#  define $i := 1;
+#  define $s := "";
+#
+##define $ab := transmit ("X " + $sana);
+#
+#  if ($n less_equal 2) then
+#    return $sana;
 #  end;
-
-#define $ab := transmit ($sana);
-
-  define $n := length ($sana);
-  define $i := 1;
-  define $s := "";
-
-#define $ab := transmit ("X " + $sana);
-
-  if ($n less_equal 2) then
-    return $sana;
-  end;
-
-
-  # Jos sanassa on joku merkeistä -':.
-  # tavutetaan sanan molemmat puoliskot erikseen.
-  #
-  if ($sana matches ("[^\\-':\\.]+" : $alku, "[\\-':\\.]", ".*" : $loppu)) then
-#define $a := transmit ("[" + $alku + "] [" + $loppu + "]");
-    return (tavutus ($alku) + "-" + tavutus ($loppu));
-  end;
-
-
-  # Kerakkeet sanan alussa.
-  #
-  repeat
-    while (($i less $n) and
-           (substring($sana,$i) matches @kerake) and
-           (substring($sana,$i+1) matches @kerake));
-    $s :=+ substring($sana,$i);
-#    define $a2 := transmit (<"V " + $s> + <$i> + <$n>);
-    $i:=+ 1;
-  end;
-
-#define $aw := transmit (<"W " + $s> + <$i> + <$n>);
-
-  if ($i = $n) then
-    return $sana;  # Lyhenne, jossa on vain kerakkeita.
-  end;
-
-  repeat
-    if (substring ($sana, $i, $i+1) matches (@ääntiö, @ääntiö)) then
-#define $a0 := transmit (<"A " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
-      if (($i + 2 less_equal $n) and (substring ($sana, $i+1, $i+2) in @ä2)) then
-        # Re-aa-li.
-#define $a2 := transmit (<"B " + $s> + <$i> + <$n>);
-        $s :=+ substring ($sana, $i) + "-" + substring ($sana, $i+1, $i+2);
-#define $a3 := transmit (<"C " + $s> + <$i> + <$n>);
-        $i :=+ 3;
-      elseif (substring ($sana, $i, $i+1) in @ääntiö2) then
-        $s :=+ substring ($sana, $i, $i+1);
-#define $a1 := transmit (<"a " + $s> + <$i> + <$n>);
-        $i :=+ 2;
-      else
-        $s :=+ substring ($sana, $i) + "-" + substring ($sana, $i+1);
-#define $a1 := transmit (<"b " + $s> + <$i> + <$n>);
-        $i :=+ 2;
-      end;
-    elseif (substring ($sana, $i, $i+1) matches (@kerake, @ääntiö)) then
-      if ((length ($s) greater 0) and
-          (substring ($s, 1R) /= "-") and
-          (not vain_kerakkeita ($s))) then  # Stres-si.
-        $s :=+ "-";
-      end;
-      $s :=+ substring ($sana, $i);
-#define $a1 := transmit (<"c " + $s> + <$i> + <$n> + <substring ($sana, $i)>);
-      $i :=+ 1;
-    elseif (substring ($sana, $i, $i+1) matches (@kerake, @kerake)) then
-#define $aa := transmit (<"D " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
-      if ($i+1 = $n) then # Sanan lopussa on kaksi keraketta.
-        $s :=+ substring ($sana, $i, $i+1);
-#define $a1 := transmit (<"1 " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
-        $i :=+ 2;
-      elseif (substring ($sana, $i+2) matches @ääntiö) then
-        $s :=+ substring ($sana, $i) + "-";
-#define $a1 := transmit (<"f " + $s> + <$i> + <$n> + <substring ($sana, $i+2)>);
-        $i :=+ 1;
-      else
-        $s :=+ substring ($sana, $i);
-#define $a1 := transmit (<"g " + $s> + <$i> + <$n>);
-        $i :=+ 1;
-      end;
-    elseif (substring ($sana, $i) matches @ääntiö) then
-#define $a1 := transmit (<"H " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
-      if (($i greater 2) and (substring ($sana, $i-2, $i-1) in @ääntiö2)) then
-        $s :=+ "-" + substring ($sana, $i);
-      else
-#define $a1 := transmit (<"H " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
-        $s :=+ substring ($sana, $i);
-      end;
-#define $a2 := transmit (<"h " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
-#       $s :=+ substring ($sana, $i);
-       $i :=+ 1;
-    end;
-    if ($i = $n) then
-      if ((substring ($s, 1R) matches @ääntiö) and
-          (substring ($sana, $i) matches @ääntiö)) then
-        if (substring ($s, 1R) + substring ($sana, $i) in @ääntiö2) then
-          $s :=+ substring ($sana, $i);
-        else
-          $s :=+ "-" + substring ($sana, $i);
-        end;
-      else
-        $s :=+ substring ($sana, $i);
-      end;
-#define $a1 := transmit (<"i " + $s> + <$i> + <$n>);
-      $i :=+ 1;
-    end;
-#define $a1 := transmit (<"ö " + $s> + <$i> + <$n>);
-    if ($i greater_equal $n) then
-      return $s;
-    end;
-  while (yes);
-  end;
-end;
+#
+#
+#  # Jos sanassa on joku merkeistä -':.
+#  # tavutetaan sanan molemmat puoliskot erikseen.
+#  #
+#  if ($sana matches ("[^\\-':\\.]+" : $alku, "[\\-':\\.]", ".*" : $loppu)) then
+##define $a := transmit ("[" + $alku + "] [" + $loppu + "]");
+#    return (tavutus ($alku) + "-" + tavutus ($loppu));
+#  end;
+#
+#
+#  # Kerakkeet sanan alussa.
+#  #
+#  repeat
+#    while (($i less $n) and
+#           (substring($sana,$i) matches @kerake) and
+#           (substring($sana,$i+1) matches @kerake));
+#    $s :=+ substring($sana,$i);
+##    define $a2 := transmit (<"V " + $s> + <$i> + <$n>);
+#    $i:=+ 1;
+#  end;
+#
+##define $aw := transmit (<"W " + $s> + <$i> + <$n>);
+#
+#  if ($i = $n) then
+#    return $sana;  # Lyhenne, jossa on vain kerakkeita.
+#  end;
+#
+#  repeat
+#    if (substring ($sana, $i, $i+1) matches (@ääntiö, @ääntiö)) then
+##define $a0 := transmit (<"A " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+#      if (($i + 2 less_equal $n) and (substring ($sana, $i+1, $i+2) in @ä2)) then
+#        # Re-aa-li.
+##define $a2 := transmit (<"B " + $s> + <$i> + <$n>);
+#        $s :=+ substring ($sana, $i) + "-" + substring ($sana, $i+1, $i+2);
+##define $a3 := transmit (<"C " + $s> + <$i> + <$n>);
+#        $i :=+ 3;
+#      elseif (substring ($sana, $i, $i+1) in @ääntiö2) then
+#        $s :=+ substring ($sana, $i, $i+1);
+##define $a1 := transmit (<"a " + $s> + <$i> + <$n>);
+#        $i :=+ 2;
+#      else
+#        $s :=+ substring ($sana, $i) + "-" + substring ($sana, $i+1);
+##define $a1 := transmit (<"b " + $s> + <$i> + <$n>);
+#        $i :=+ 2;
+#      end;
+#    elseif (substring ($sana, $i, $i+1) matches (@kerake, @ääntiö)) then
+#      if ((length ($s) greater 0) and
+#          (substring ($s, 1R) /= "-") and
+#          (not vain_kerakkeita ($s))) then  # Stres-si.
+#        $s :=+ "-";
+#      end;
+#      $s :=+ substring ($sana, $i);
+##define $a1 := transmit (<"c " + $s> + <$i> + <$n> + <substring ($sana, $i)>);
+#      $i :=+ 1;
+#    elseif (substring ($sana, $i, $i+1) matches (@kerake, @kerake)) then
+##define $aa := transmit (<"D " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+#      if ($i+1 = $n) then # Sanan lopussa on kaksi keraketta.
+#        $s :=+ substring ($sana, $i, $i+1);
+##define $a1 := transmit (<"1 " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+#        $i :=+ 2;
+#      elseif (substring ($sana, $i+2) matches @ääntiö) then
+#        $s :=+ substring ($sana, $i) + "-";
+##define $a1 := transmit (<"f " + $s> + <$i> + <$n> + <substring ($sana, $i+2)>);
+#        $i :=+ 1;
+#      else
+#        $s :=+ substring ($sana, $i);
+##define $a1 := transmit (<"g " + $s> + <$i> + <$n>);
+#        $i :=+ 1;
+#      end;
+#    elseif (substring ($sana, $i) matches @ääntiö) then
+##define $a1 := transmit (<"H " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+#      if (($i greater 2) and (substring ($sana, $i-2, $i-1) in @ääntiö2)) then
+#        $s :=+ "-" + substring ($sana, $i);
+#      else
+##define $a1 := transmit (<"H " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+#        $s :=+ substring ($sana, $i);
+#      end;
+##define $a2 := transmit (<"h " + $s> + <$i> + <$n> + <substring ($sana, $i, $i+1)>);
+##       $s :=+ substring ($sana, $i);
+#       $i :=+ 1;
+#    end;
+#    if ($i = $n) then
+#      if ((substring ($s, 1R) matches @ääntiö) and
+#          (substring ($sana, $i) matches @ääntiö)) then
+#        if (substring ($s, 1R) + substring ($sana, $i) in @ääntiö2) then
+#          $s :=+ substring ($sana, $i);
+#        else
+#          $s :=+ "-" + substring ($sana, $i);
+#        end;
+#      else
+#        $s :=+ substring ($sana, $i);
+#      end;
+##define $a1 := transmit (<"i " + $s> + <$i> + <$n>);
+#      $i :=+ 1;
+#    end;
+##define $a1 := transmit (<"ö " + $s> + <$i> + <$n>);
+#    if ($i greater_equal $n) then
+#      return $s;
+#    end;
+#  while (yes);
+#  end;
+#end;
 
 
 # Palautetaan yes, jos sanassa on vain kerakkeita.
 #
-subrule vain_kerakkeita ($sana):
-  foreach $i in length ($sana):
-    if (substring ($sana, $i) matches @ääntiö) then
-      return no;
-    end;
-  end;
-  return yes;
-end;
+#subrule vain_kerakkeita ($sana):
+#  foreach $i in length ($sana):
+#    if (substring ($sana, $i) matches @ääntiö) then
+#      return no;
+#    end;
+#  end;
+#  return yes;
+#end;
 
 
 # Lasketaan tavujen määrä sanassa.
 #
-subrule tavujen_määrä ($sana):
-  if ($sana = nil) then
-    return 0;
-  end;
-
-  define $n := 1;
-  define $s := tavutus ($sana);
-
-  foreach $i in length ($s):
-    if (substring ($s, $i) = "-") then
-      $n :=+ 1;
-    end;
-  end;
-  return $n;
-end;
+#subrule tavujen_määrä ($sana):
+#  if ($sana = nil) then
+#    return 0;
+#  end;
+#
+#  define $n := 1;
+#  define $s := tavutus ($sana);
+#
+#  foreach $i in length ($s):
+#    if (substring ($s, $i) = "-") then
+#      $n :=+ 1;
+#    end;
+#  end;
+#  return $n;
+#end;
 
 
 # Harri Pitkäsen vokaalisointualgoritmi.

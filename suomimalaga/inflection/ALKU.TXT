@@ -75,6 +75,10 @@ allo_rule generate_allos ($tietue):
     $tietue.tiedot :=- <ysj>;
   end;
 
+  if ($tietue.rakenne /= nil) then
+    $tietue :=- rakenne;
+  end;
+
   if ($tietue.luokka = etuliite) then
     $tietue.jatko := set ($tietue.jatko);
     if ($tietue.alku = "amerikan") then
@@ -167,6 +171,10 @@ allo_rule generate_allos ($tietue):
     if ($tietue.alaluokka in <erikoisluku, toista>) then
       $tietue.jatko :=+ <yhdyssana>;
     end;
+  end;
+
+  if ($tietue.jatko = <rakentaa> and $tietue.perusmuoto matches ".*ääntää") then
+    $tietue.jatko := <kääntää>;
   end;
 
 #  if ($tietue.luokka = lukusana) then

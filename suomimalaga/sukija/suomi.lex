@@ -626,6 +626,10 @@ define @jatko_y3 := <liitesana, loppu>;
 
 [alku: "mme", luokka: kestämän_tekijäpääte_m1, luku: monikko, tekijä: 1, äs: aä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
+[alku: "mma", luokka: kestämän_tekijäpääte_m1, luku: monikko, tekijä: 1, äs: a,
+              tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "mmä", luokka: kestämän_tekijäpääte_m1, luku: monikko, tekijä: 1, äs: ä,
+              tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "tte", luokka: kestämän_tekijäpääte_m2, luku: monikko, tekijä: 2, äs: aä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
 [alku: "vat", luokka: kestämän_tekijäpääte_m3, luku: monikko, tekijä: 3, äs: a,
@@ -1419,6 +1423,12 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 [perusmuoto: "o", alku: "o", luokka: johdin_O , jatko: <valo>, äs: a];
 [perusmuoto: "ö", alku: "ö", luokka: johdin_O , jatko: <valo>, äs: ä];
 
+[perusmuoto: "to", alku: "", luokka: johdin_tO_leuto, jatko: <leuto>, äs: a];
+[perusmuoto: "tö", alku: "", luokka: johdin_tO_leuto, jatko: <leuto>, äs: ä];
+
+[perusmuoto: "to", alku: "", luokka: johdin_tO_liitto, jatko: <liitto>, äs: a];
+[perusmuoto: "tö", alku: "", luokka: johdin_tO_liitto, jatko: <liitto>, äs: ä];
+
 [perusmuoto: "u", alku: "u", luokka: johdin_U_arvelu, jatko: <arvelu>, äs: a];
 [perusmuoto: "y", alku: "y", luokka: johdin_U_arvelu, jatko: <arvelu>, äs: ä];
 
@@ -1453,3 +1463,43 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 # johdin_mAinen + johdin_llinen
 [perusmuoto: "maisellinen", alku: "maiselli", luokka: johdin_mAinen, jatko: <nainen>, äs: a];
 [perusmuoto: "mäisellinen", alku: "mäiselli", luokka: johdin_mAinen, jatko: <nainen>, äs: ä];
+
+# Muistaa => muistella.
+[perusmuoto: "ella", alku: "el", luokka: johdin_ellA, jatko: <katsella>, äs: a];
+[perusmuoto: "ellä", alku: "el", luokka: johdin_ellA, jatko: <katsella>, äs: ä];
+
+[perusmuoto: "ella", alku: "", luokka: johdin_tellA, jatko: <aatella>, äs: a];
+[perusmuoto: "ellä", alku: "", luokka: johdin_tellA, jatko: <aatella>, äs: ä];
+
+[perusmuoto: "della", alku: "", luokka: johdin_dellA, jatko: <kohdella>, äs: a];
+[perusmuoto: "dellä", alku: "", luokka: johdin_dellA, jatko: <kohdella>, äs: ä];
+
+[perusmuoto: "hdella", alku: "h", luokka: johdin_hdellA, jatko: <kohdella>, äs: a];
+[perusmuoto: "hdellä", alku: "h", luokka: johdin_hdellA, jatko: <kohdella>, äs: ä];
+
+#[perusmuoto: "ella", alku: "", luokka: johdin_kellA, jatko: <nakella>, äs: a];
+#[perusmuoto: "ellä", alku: "", luokka: johdin_kellA, jatko: <nakella>, äs: ä];
+
+[perusmuoto: "lella", alku: "", luokka: johdin_lellA, jatko: <takellella>, äs: a];
+[perusmuoto: "lellä", alku: "", luokka: johdin_lellA, jatko: <takellella>, äs: ä];
+
+[perusmuoto: "nella", alku: "", luokka: johdin_nellA, jatko: <pienennellä>, äs: a];
+[perusmuoto: "nellä", alku: "", luokka: johdin_nellA, jatko: <pienennellä>, äs: ä];
+
+[perusmuoto: "nnella", alku: "n", luokka: johdin_nnellA, jatko: <pienennellä>, äs: a];
+[perusmuoto: "nnellä", alku: "n", luokka: johdin_nnellA, jatko: <pienennellä>, äs: ä];
+
+[perusmuoto: "rella", alku: "", luokka: johdin_rellA, jatko: <askarrella>, äs: a];
+[perusmuoto: "rellä", alku: "", luokka: johdin_rellA, jatko: <askarrella>, äs: ä];
+
+# Laskea => laskeskella.
+[perusmuoto: "eskella", alku: "eskel", luokka: johdin_eskellA, jatko: <katsella>, äs: a];
+[perusmuoto: "eskellä", alku: "eskel", luokka: johdin_eskellA, jatko: <katsella>, äs: ä];
+
+# Kirjo(i)ttaa => kirjo(i)tella.
+[perusmuoto: "ella", alku: "", luokka: johdin_oitellA, jatko: <aatella>, äs: a];
+[perusmuoto: "ellä", alku: "", luokka: johdin_oitellA, jatko: <aatella>, äs: ä];
+
+# Ammo(i)ttaa => ammo(i)tella.
+[perusmuoto: "ella", alku: "", luokka: johdin_otellA, jatko: <aatella>, äs: a];
+[perusmuoto: "ellä", alku: "", luokka: johdin_otellA, jatko: <aatella>, äs: ä];
