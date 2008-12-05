@@ -1,3 +1,7 @@
+2008-12-05 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add option -s to voikkohyphenate.
+
 2008-11-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Start porting the library to C++.

@@ -1,4 +1,4 @@
-.TH VOIKKOHYPHENATE 1 "2008-07-01"
+.TH VOIKKOHYPHENATE 1 "2008-12-05"
 .SH NAME
 voikkohyphenate \- test program for Voikko hyphenator
 .SH SYNOPSIS
@@ -10,6 +10,12 @@ is a test program for hyphenator functionality in libvoikko,
 library of Finnish language tools. It reads words from stdin (one word on a line) and prints
 them stdout in fully hyphenated form.
 .SH OPTIONS
+.TP
+.BI \-s c
+Use
+.IR c
+to separate syllables. By default \- is used. If separator is set to a character
+other than \-, all original characters of the hyphenated word are printed.
 .TP
 .BI min_hyphenated_word_length= n
 Set

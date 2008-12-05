@@ -27,7 +27,7 @@ using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
 
-void hyphenate_word(int handle, const wchar_t * word, size_t wlen) {
+void hyphenate_word(int handle, const wchar_t * word, size_t wlen, wchar_t separator) {
 	char * result = voikko_hyphenate_ucs4(handle, word);
 	if (result == 0) {
 		cerr << "E: hyphenation failed" << endl;
@@ -47,10 +47,10 @@ void hyphenate_word(int handle, const wchar_t * word, size_t wlen) {
 	size_t charsLeft = wlen;
 	while (charsLeft > 0) {
 		if (*resultPtr != ' ') {
-			*hyphenatedPtr = L'-';
+			*hyphenatedPtr = separator;
 			hyphenatedPtr++;
 		}
-		if (*resultPtr != '=') {
+		if (*resultPtr != '=' || separator != L'-') {
 			*hyphenatedPtr = *wordPtr;
 			hyphenatedPtr++;
 		}
@@ -67,6 +67,7 @@ void hyphenate_word(int handle, const wchar_t * word, size_t wlen) {
 
 int main(int argc, char ** argv) {
 	char * path = 0;
+	wchar_t separator = L'-';
 	int handle;
 	int minhwlen;
 	int iclevel;
@@ -101,6 +102,13 @@ int main(int argc, char ** argv) {
 			iclevel = atoi(argv[i] + 25);
 			voikko_set_int_option(handle, VOIKKO_INTERSECT_COMPOUND_LEVEL, iclevel);
 		}
+		else if (strncmp(argv[i], "-s", 2) == 0) {
+			if (strlen(argv[i]) != 3) {
+				cerr << "Invalid separator argument for option -s" << endl;
+				return 1;
+			}
+			mbtowc(&separator, argv[i] + 2, 1);
+		}
 	}
 	
 	wchar_t * line = new wchar_t[MAX_WORD_LENGTH + 1];
@@ -116,7 +124,7 @@ int main(int argc, char ** argv) {
 			line[lineLen - 1] = L'\0';
 			lineLen--;
 		}
-		hyphenate_word(handle, line, lineLen);
+		hyphenate_word(handle, line, lineLen, separator);
 	}
 	int error = ferror(stdin);
 	if (error) {

@@ -82,3 +82,7 @@ pöytähienosto	pöy-tä-hie-nos-to
 hienosto        hienos-to
 pöytähienosto   pöy-tä-hienos-to
 
+[-s!]
+kissa           kis!sa
+kuorma-auto     kuor!ma!-au!to
+jok'ikinen      jok!'i!ki!nen
