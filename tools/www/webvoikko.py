@@ -40,6 +40,12 @@ MAX_PO_SIZE = 1800
 # Suomi-malaga project directory for pofilter
 POFILTER_DICT_DIR = '/home/harri/po-oikoluku/suomimalaga/voikko'
 
+# Colors for background-based hyphenator
+HYPH_COLORS = ['#ffaaaa', '#aaaaff']
+
+# Line length for output text
+LINE_LENGTH = 80
+
 def _write(req, text):
 	"""Write to http response using output encoding"""
 	req.write(text.encode('UTF-8'))
@@ -120,7 +126,7 @@ def _split_words(text):
 				word = word[:-1]
 			words.append(word)
 			linelength = linelength + len(word)
-			if linelength > 100:
+			if linelength > LINE_LENGTH:
 				linelength = 0
 				prev_separator = prev_separator + u'\n'
 		prev_separator = prev_separator + u'\n'
@@ -128,7 +134,23 @@ def _split_words(text):
 	separators.append(prev_separator)
 	return (words, separators)
 
-def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
+def _hyphenated_to_html(word, hstyle):
+	if hstyle == 'color':
+		hyph_color_i = 0
+		syllables = word.split('#')
+		hyphenated = u''
+		for syllable in syllables:
+			hyphenated = hyphenated + u"<span style='background-color:"
+			hyphenated = hyphenated + HYPH_COLORS[hyph_color_i]
+			hyphenated = hyphenated + u"'>"
+			hyphenated = hyphenated + _escape_html(syllable)
+			hyphenated = hyphenated + u"</span>"
+			hyph_color_i = (hyph_color_i + 1) % len(HYPH_COLORS)
+		return hyphenated
+	else:
+		return _escape_html(word)
+
+def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2", hstyle = "hyphen"):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
 	_write(req, u'''
@@ -159,16 +181,20 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 	
 	if hyphstring != None and len(hyphstring) > 0 and len(hyphstring) < MAX_INPUT_LENGTH:
 		(words, separators) = _split_words(_decode_form_value(hyphstring))
+		
 		if htype == 'nougly': options = 'no_ugly_hyphenation=1'
 		else: options = 'no_ugly_hyphenation=0'
+		if hstyle == 'color': options = options + ' -s#'
+		
 		if hmin in ["2", "3", "4", "5", "6", "7", "8"]:
 			options = options + " min_hyphenated_word_length=" + hmin
 		hwords = _hyphenate_wordlist(words, options)
 		_write(req, u'<p>Alla antamasi teksti tavutettuna:</p>\n')
-		_write(req, u'<pre style="border: 1px solid black">')
+		_write(req, u'<pre style="border: 1px solid black; background-color: white;')
+		_write(req, u' font-size:1.3em; padding:3px; line-height: 1.5em;">')
 		_write(req, _escape_html(separators[0]))
 		for i in range(0, len(separators) - 1):
-			_write(req, _escape_html(hwords[i]))
+			_write(req, _hyphenated_to_html(hwords[i], hstyle))
 			_write(req, _escape_html(separators[i + 1]))
 		_write(req, u'</pre>\n')
 	
@@ -190,8 +216,17 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2"):
 	 </select>
 	 merkkiä pitkiä.
 	</p>
+	<p>Merkitse tavurajat
+	 <ul style="list-style-type:none">
+	  <li><label><input type="radio" name="hstyle" value="hyphen" checked="checked" />yhdysmerkillä</li>
+	  <li><label><input type="radio" name="hstyle" value="color" />vaihtuvalla taustavärillä</li>
+	 </ul>
+	</p>
 	<p>Kirjoita alla olevaan kenttään teksti, jonka haluat tavuttaa, ja paina "Tavuta".</p>
-	<p><textarea name="hyphstring" rows="30" cols="90"></textarea></p>
+	<p><textarea name="hyphstring" rows="30" cols="90">''')
+	if hyphstring != None:
+		_write(req, _escape_html(_decode_form_value(hyphstring)))
+	_write(req, u'''</textarea></p>
 	<p><input type="submit" value="Tavuta" /></p>
 	</form>
 	</div></body></html>
