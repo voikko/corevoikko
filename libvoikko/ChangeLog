@@ -1,6 +1,6 @@
 2008-12-07 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Port hyphenator to C++.
+	* Port hyphenator and spelling suggestions to C++.
 
 2008-12-05 Harri Pitkänen <hatapitk@iki.fi>
 

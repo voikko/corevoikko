@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -375,18 +375,4 @@ int voikko_check_file(const char * name) {
 	}
  #endif // WIN32
 #endif // HAVE_GETPWUID_R
-}
-
-void voikko_free_suggest_ucs4(wchar_t ** suggest_result) {
-	if (suggest_result) {
-		for (wchar_t ** p = suggest_result; *p; p++) free(*p);
-		free(suggest_result);
-	}
-}
-
-void voikko_free_suggest_cstr(char ** suggest_result) {
-	if (suggest_result) {
-		for (char ** p = suggest_result; *p; p++) free(*p);
-		free(suggest_result);
-	}
 }

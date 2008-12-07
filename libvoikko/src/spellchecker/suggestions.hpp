@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,10 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SUGGEST_H
-#define VOIKKO_SUGGEST_H
+#ifndef VOIKKO_SPELLCHECKER_SUGGESTIONS_H
+#define VOIKKO_SPELLCHECKER_SUGGESTIONS_H
 
-#include <stddef.h>
+#include <cstddef>
+
+namespace libvoikko {
 
 typedef struct {
 	/** handle */
@@ -36,13 +38,15 @@ typedef struct {
 	size_t wlen;
 	/** number of allowed malaga calls */
 	int max_cost;
-} voikko_sugg_status_t;
+} sugg_status_t;
 
 /** Suggests corrections to character case
  * @param status the suggestion status structure
  * @param buffer word to check, or null if the word in status structure should be used
  * @param buflen length of buffer, ignored if buffer is null
  */
-void voikko_suggest_correct_case(voikko_sugg_status_t * status, const wchar_t * buffer, size_t buflen);
+void suggest_correct_case(sugg_status_t * status, const wchar_t * buffer, size_t buflen);
+
+}
 
 #endif

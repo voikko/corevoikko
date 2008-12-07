@@ -72,8 +72,7 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, con
 	for (char ** s = c_error->suggestions; *s; s++) {
 		sugg_count++;
 	}
-	// TODO: C allocation
-	e.suggestions = (char **) calloc(sugg_count + 1, sizeof(char *));
+	e.suggestions = new char*[sugg_count + 1];
 	if (!e.suggestions) return e;
 	for (int i = 0; i < sugg_count; i++) {
 		// TODO: C allocation
@@ -81,6 +80,7 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, con
 		if (!e.suggestions[i]) return e;
 		strcpy(e.suggestions[i], c_error->suggestions[i]);
 	}
+	e.suggestions[sugg_count] = 0;
 	return e;
 }
 
