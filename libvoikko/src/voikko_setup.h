@@ -39,7 +39,7 @@ typedef struct {
 	int accept_extra_hyphens;
 	int accept_missing_hyphens;
 	int intersect_compound_level;
-	int min_hyphenated_word_length;
+	size_t min_hyphenated_word_length;
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	const char * encoding;

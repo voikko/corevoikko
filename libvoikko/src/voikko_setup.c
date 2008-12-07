@@ -390,7 +390,3 @@ void voikko_free_suggest_cstr(char ** suggest_result) {
 		free(suggest_result);
 	}
 }
-
-void voikko_free_hyphenate(char * hyphenate_result) {
-	free(hyphenate_result);
-}
