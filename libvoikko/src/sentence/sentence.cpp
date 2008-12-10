@@ -16,12 +16,17 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+// TODO: C linkage
+extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
 #include "voikko_spell.h"
-#include <stdlib.h>
+}
+#include <cstdlib>
 #include <wctype.h>
+
+namespace libvoikko {
 
 /**
  * Returns 1 if given word ending with a dot can be interpreted
@@ -32,7 +37,7 @@ int dot_part_of_word(const wchar_t * text, size_t len) {
 	
 	// ordinal numbers
 	int only_numbers = 1;
-	for (int i = 0; i < len - 1; i++) {
+	for (size_t i = 0; i < len - 1; i++) {
 		if (!iswdigit(text[i])) {
 			only_numbers = 0;
 			break;
@@ -45,7 +50,7 @@ int dot_part_of_word(const wchar_t * text, size_t len) {
 	return 0;
 }
 
-enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
+VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
                           const wchar_t * text, size_t textlen, size_t * sentencelen) {
 	enum voikko_token_type token = TOKEN_WORD;
 	size_t slen = 0;
@@ -97,7 +102,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
 	return SENTENCE_NONE;
 }
 
-enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
+VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
                           size_t textlen, size_t * sentencelen) {
 	wchar_t * text_ucs4;
 	enum voikko_sentence_type result;
@@ -108,4 +113,6 @@ enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char
 	                                         sentencelen);
 	free(text_ucs4);
 	return result;
+}
+
 }
