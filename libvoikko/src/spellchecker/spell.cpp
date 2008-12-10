@@ -16,16 +16,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+// TODO: C linkage
+extern "C" {
 #include "voikko_defs.h"
-#include "voikko_spell.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
 #include "voikko_charset.h"
-#include <stdlib.h>
-#include <string.h>
+}
+#include "spellchecker/spell.hpp"
+#include <cstdlib>
+#include <cstring>
 #include <malaga.h>
 #include <wchar.h>
 #include <wctype.h>
+
+namespace libvoikko {
 
 enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str) {
 	size_t i, j;
@@ -94,7 +99,6 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 }
 
 enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
-	wchar_t * buffer;
 	wchar_t * hyphen_pos;
 	size_t leading_len;
 	char * malaga_buffer;
@@ -103,7 +107,6 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	enum spellresult result_with_border = SPELL_FAILED;
 	enum spellresult result_without_border = SPELL_FAILED;
 	enum spellresult spres;
-	char vctest1, vctest2;
 	size_t i, j;
 	
 	enum spellresult result = voikko_spell_with_priority(word, len, 0);
@@ -112,7 +115,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	
 	if (hyphen_pos) { /* Check optional hyphens */
 		leading_len = hyphen_pos - word;
-		buffer = malloc(len * sizeof(wchar_t));
+		wchar_t * buffer = new wchar_t[len];
 		if (!buffer) return result;
 		wcsncpy(buffer, word, leading_len);
 		wcsncpy(buffer + leading_len, hyphen_pos + 1, len - leading_len - 1);
@@ -124,22 +127,22 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			/* FIXME: deep recursion */
 			spres = voikko_do_spell(buffer, len - 1);
 			if (spres == SPELL_OK) {
-				free(buffer);
+				delete[] buffer;
 				return spres;
 			}
 		}
 		
 		/* Leading part ends with the same VC pair as the trailing part starts ('pop-opisto') */
 		if (leading_len >= 2 && len - leading_len >= 3) {
-			vctest1 = towlower(word[leading_len - 2]);
-			vctest2 = towlower(word[leading_len - 1]);
+			wint_t vctest1 = towlower(word[leading_len - 2]);
+			wint_t vctest2 = towlower(word[leading_len - 1]);
 			if (wcschr(VOIKKO_VOWELS, vctest1) &&
 			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
 			    towlower(word[leading_len + 1]) == vctest1 &&
 			    towlower(word[leading_len + 2]) == vctest2) {
 				spres = voikko_spell_with_priority(buffer, len - 1, 0);
 				if (result == SPELL_FAILED || result > spres) {
-					free(buffer);
+					delete[] buffer;
 					return spres;
 				}
 			}
@@ -148,7 +151,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
 		malaga_buffer = voikko_ucs4tocstr(buffer, "UTF-8", 0);
 		if (!malaga_buffer) {
-			free(buffer);
+			delete[] buffer;
 			return result;
 		}
 		analyse_item(malaga_buffer, MORPHOLOGY);
@@ -156,7 +159,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		
 		current_analysis = first_analysis_result();
 		if (!current_analysis) {
-			free(buffer);
+			delete[] buffer;
 			return result;
 		}
 		
@@ -179,7 +182,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			current_analysis = next_analysis_result();
 		} while (current_analysis);
 		
-		free(buffer);
+		delete[] buffer;
 		if (result_with_border != SPELL_FAILED && result_without_border != SPELL_FAILED &&
 		    (result == SPELL_FAILED || result > result_with_border)) return result_with_border;
 	}
@@ -194,7 +197,7 @@ enum spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len
 	// Hyphens were already present, so we cannot do anything more
 	if (len < 2 || (word[0] == L'-' && word[len - 1] == L'-')) return SPELL_FAILED;
 	
-	wchar_t * buffer = malloc((len + 2) * sizeof(wchar_t));
+	wchar_t * buffer = new wchar_t[len + 2];
 	if (!buffer) return SPELL_FAILED;
 	size_t newlen = len + 1;
 	if (word[0] == L'-') {
@@ -210,11 +213,11 @@ enum spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len
 		}
 	}
 	spres = voikko_do_spell(buffer, newlen);
-	free(buffer);
+	delete[] buffer;
 	return spres;
 }
 
-int voikko_spell_cstr(int handle, const char * word) {
+VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word) {
 	wchar_t * word_ucs4;
 	int result;
 	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
@@ -280,12 +283,10 @@ enum spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 }
 
 
-int voikko_spell_ucs4(int handle, const wchar_t * word) {
+VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	size_t nchars = wcslen(word);
-	int i;
 	int result;
 	wchar_t * nword;
-	wchar_t * buffer;
 	int dot_index;
 	enum casetype caps;
 	enum spellresult sres;
@@ -301,7 +302,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	nchars = wcslen(nword);
 	
 	if (voikko_options.ignore_numbers) {
-		for (i = 0; i < nchars; i++) {
+		for (size_t i = 0; i < nchars; i++) {
 			if (iswdigit(nword[i])) {
 				free(nword);
 				EXIT_V
@@ -317,14 +318,16 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 		return VOIKKO_SPELL_OK;
 	}
 	
-	buffer = malloc((nchars + 1) * sizeof(wchar_t));
+	wchar_t * buffer = new wchar_t[nchars + 1];
 	if (buffer == 0) {
 		free(nword);
 		EXIT_V
 		return VOIKKO_INTERNAL_ERROR;
 	}
 
-	for (i = 0; i < nchars; i++) buffer[i] = towlower(nword[i]);
+	for (size_t i = 0; i < nchars; i++) {
+		buffer[i] = towlower(nword[i]);
+	}
 	buffer[nchars] = L'\0';
 	if (voikko_options.ignore_dot && buffer[nchars - 1] == L'.') {
 		dot_index = nchars - 1;
@@ -356,7 +359,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 				result = VOIKKO_SPELL_OK;
 		}
 		free(nword);
-		free(buffer);
+		delete[] buffer;
 		EXIT_V
 		return result;
 	}
@@ -384,7 +387,7 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	}
 	if (result == VOIKKO_SPELL_OK) {
 		free(nword);
-		free(buffer);
+		delete[] buffer;
 		return VOIKKO_SPELL_OK;
 	}
 	
@@ -411,6 +414,8 @@ int voikko_spell_ucs4(int handle, const wchar_t * word) {
 		}
 	}
 	free(nword);
-	free(buffer);
+	delete[] buffer;
 	return result;
+}
+
 }

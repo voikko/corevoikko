@@ -21,8 +21,8 @@ extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
-#include "voikko_spell.h"
 }
+#include "spellchecker/spell.hpp"
 #include <cstdlib>
 #include <wctype.h>
 

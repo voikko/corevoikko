@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,10 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SPELL_H
-#define VOIKKO_SPELL_H
+#ifndef VOIKKO_SPELLCHECKER_SPELL_H
+#define VOIKKO_SPELLCHECKER_SPELL_H
 
-#include <stddef.h>
+#include <cstddef>
+
+namespace libvoikko {
 
 /* SPELL_FAILED:    Word does not exist in the language even if the character cases
  *                  were changed.
@@ -68,5 +70,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
  * @return spelling result
  */
 enum spellresult voikko_cached_spell(const wchar_t * word, size_t len);
+
+}
 
 #endif
