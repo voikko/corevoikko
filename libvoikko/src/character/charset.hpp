@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,10 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_CHARSET_H
-#define VOIKKO_CHARSET_H
+#ifndef VOIKKO_CHARACTER_CHARSET_H
+#define VOIKKO_CHARACTER_CHARSET_H
 
-#include <stddef.h>
+#include <cstddef>
+
+namespace libvoikko {
 
 enum char_type {CHAR_UNKNOWN, CHAR_LETTER, CHAR_DIGIT, CHAR_WHITESPACE, CHAR_PUNCTUATION};
 
@@ -45,5 +47,7 @@ wchar_t * voikko_normalise(const wchar_t * word, size_t len);
  * @param modified_len length of the modified string
  */
 void voikko_cset_reformat(const wchar_t * orig, size_t orig_len, wchar_t ** modified, size_t modified_len);
+
+}
 
 #endif

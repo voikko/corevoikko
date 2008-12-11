@@ -1,6 +1,6 @@
 2008-12-11 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Port tokenizer to C++.
+	* Port tokenizer and voikko_charset.c to C++.
 
 2008-12-10 Harri Pitkänen <hatapitk@iki.fi>
 

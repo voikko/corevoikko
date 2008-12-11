@@ -21,8 +21,8 @@
 extern "C" {
 #include "voikko_utils.h"
 #include "voikko_setup.h"
-#include "voikko_charset.h"
 }
+#include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include "spellchecker/suggestions.hpp"
 #include <cstdlib>
@@ -417,7 +417,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	
 	if (voikko_options.ignore_dot) {
 		if (wlen == 2) {
-			free(nword);
+			delete[] nword;
 			EXIT_V
 			return 0;
 		}
@@ -429,7 +429,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	
 	wchar_t ** suggestions = new wchar_t*[MAX_SUGGESTIONS * 3 + 1];
 	if (suggestions == 0) {
-		free(nword);
+		delete[] nword;
 		EXIT_V
 		return 0;
 	}
@@ -438,7 +438,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	int * prios = new int[MAX_SUGGESTIONS * 3];
 	if (prios == 0) {
 		delete[] suggestions;
-		free(nword);
+		delete[] nword;
 		EXIT_V
 		return 0;
 	}
@@ -455,7 +455,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	suggest_correct_case(&status, 0, 0);
 	if (status.max_suggestions != MAX_SUGGESTIONS * 3) {
 		delete[] prios;
-		free(nword);
+		delete[] nword;
 		if (add_dots) suggest_add_dots(suggestions);
 		EXIT_V
 		return suggestions;
@@ -478,7 +478,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (status.max_suggestions == MAX_SUGGESTIONS * 3) {
 		delete[] suggestions;
 		delete[] prios;
-		free(nword);
+		delete[] nword;
 		EXIT_V
 		return 0;
 	}
@@ -534,7 +534,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		i++;
 	}
 
-	free(nword);
+	delete[] nword;
 	if (add_dots) suggest_add_dots(suggestions);
 	EXIT_V
 	return suggestions;

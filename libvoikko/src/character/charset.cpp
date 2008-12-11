@@ -1,6 +1,6 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>,
- *                    Teemu Likonen <tlikonen@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>,
+ *                           Teemu Likonen <tlikonen@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,11 +17,16 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+// TODO: C linkage
+extern "C" {
 #include "voikko_defs.h"
-#include "voikko_charset.h"
-#include <stdlib.h>
+}
+#include "character/charset.hpp"
+#include <cstdlib>
 #include <wctype.h>
 #include <wchar.h>
+
+namespace libvoikko {
 
 enum char_type get_char_type(wchar_t c) {
 	if (wcschr(L".,;-!?:'\"()[]{}"
@@ -101,7 +106,7 @@ enum char_type get_char_type(wchar_t c) {
 /* Character conversion tables. After normalisation all character sequences on
  * the left are converted to the ones on the right. */
 
-const int N_2TO1 = 57; /* Number of entries in this table */
+const size_t N_2TO1 = 57; /* Number of entries in this table */
 const wchar_t * CONV_2TO1 =
 	/* Basic Latin + Combining Diacritical Marks --> Latin-1 Supplement */
 	L"A\u0300" L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
@@ -163,14 +168,14 @@ const wchar_t * CONV_2TO1 =
 	L"Z\u030C" L"\u017D"  /* LATIN CAPITAL LETTER Z WITH CARON */
 	L"z\u030C" L"\u017E"; /* LATIN SMALL LETTER Z WITH CARON */
 
-const int N_1TO1 = 3; /* Number of entries in this table */
+const size_t N_1TO1 = 3; /* Number of entries in this table */
 const wchar_t * CONV_1TO1 =
 	/* General Punctuation --> Basic Latin */
 	L"\u2019" L"'"  /* RIGHT SINGLE QUOTATION MARK <--> APOSTROPHE */
 	L"\u2010" L"-"  /* HYPHEN <--> HYPHEN-MINUS */
 	L"\u2011" L"-"; /* NON-BREAKING HYPHEN <--> HYPHEN-MINUS */
 
-const int N_1TO2 = 5; /* Number of entries in this table */
+const size_t N_1TO2 = 5; /* Number of entries in this table */
 const wchar_t * CONV_1TO2 =
 	/* Letterlike Symbols --> Latin-1 Supplement / Basic Latin */
 	L"\u2103" L"°C"  /* U+2103 DEGREE CELSIUS <--> U+00B0 DEGREE SIGN + U+0043 LATIN CAPITAL LETTER C */
@@ -180,7 +185,7 @@ const wchar_t * CONV_1TO2 =
 	L"\uFB01" L"fi"  /* LATIN SMALL LIGATURE FI <--> LATIN SMALL LETTER F + LATIN SMALL LETTER I */
 	L"\uFB02" L"fl"; /* LATIN SMALL LIGATURE FL <--> LATIN SMALL LETTER F + LATIN SMALL LETTER L */
 
-const int N_1TO3 = 2; /* Number of entries in this table */
+const size_t N_1TO3 = 2; /* Number of entries in this table */
 const wchar_t * CONV_1TO3 =
 	/* Alphabetic Presentation Forms --> Basic Latin */
 	L"\uFB03" L"ffi"  /* LATIN SMALL LIGATURE FFI <--> 2 X LATIN SMALL LETTER F + LATIN SMALL LETTER I */
@@ -189,15 +194,15 @@ const wchar_t * CONV_1TO3 =
 
 wchar_t * voikko_normalise(const wchar_t * word, size_t len) {
 	size_t i;
-	int j, offset;
+	int offset;
 	/* Worst case for space usage is a string with only three character ligatures in it. */
-	wchar_t * buffer = malloc(len * sizeof(wchar_t) * 3 + 1);
+	wchar_t * buffer = new wchar_t[len * 3 + 1];
 	wchar_t * ptr = buffer;
 	if (buffer == 0) return 0;
 	for (i = 0; i < len;) {
 		offset = 0;
 		if (i < len - 1) {
-			for (j = 0; j < N_2TO1; j++) {
+			for (size_t j = 0; j < N_2TO1; j++) {
 				if (word[i] == CONV_2TO1[3*j] && word[i+1] == CONV_2TO1[3*j+1]) {
 					*ptr = CONV_2TO1[3*j+2];
 					ptr++;
@@ -207,7 +212,7 @@ wchar_t * voikko_normalise(const wchar_t * word, size_t len) {
 			}
 		}
 		if (offset == 0) {
-			for (j = 0; j < N_1TO1; j++) {
+			for (size_t j = 0; j < N_1TO1; j++) {
 				if (word[i] == CONV_1TO1[2*j]) {
 					*ptr = CONV_1TO1[2*j+1];
 					ptr++;
@@ -217,7 +222,7 @@ wchar_t * voikko_normalise(const wchar_t * word, size_t len) {
 			}
 		}
 		if (offset == 0) {
-			for (j = 0; j < N_1TO2; j++) {
+			for (size_t j = 0; j < N_1TO2; j++) {
 				if (word[i] == CONV_1TO2[3*j]) {
 					*ptr = CONV_1TO2[3*j+1];
 					*(ptr+1) = CONV_1TO2[3*j+2];
@@ -228,7 +233,7 @@ wchar_t * voikko_normalise(const wchar_t * word, size_t len) {
 			}
 		}
 		if (offset == 0) {
-			for (j = 0; j < N_1TO3; j++) {
+			for (size_t j = 0; j < N_1TO3; j++) {
 				if (word[i] == CONV_1TO3[4*j]) {
 					*ptr = CONV_1TO3[4*j+1];
 					*(ptr+1) = CONV_1TO3[4*j+2];
@@ -282,4 +287,6 @@ void voikko_cset_reformat(const wchar_t * orig, size_t orig_len, wchar_t ** modi
 		}
 		if (orig[orig_len-i] != (*modified)[modified_len-i]) break;
 	}
+}
+
 }

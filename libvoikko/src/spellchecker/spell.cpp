@@ -21,8 +21,8 @@ extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
-#include "voikko_charset.h"
 }
+#include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include <cstdlib>
 #include <cstring>
@@ -304,7 +304,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	if (voikko_options.ignore_numbers) {
 		for (size_t i = 0; i < nchars; i++) {
 			if (iswdigit(nword[i])) {
-				free(nword);
+				delete[] nword;
 				EXIT_V
 				return VOIKKO_SPELL_OK;
 			}
@@ -313,14 +313,14 @@ VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
 	caps = voikko_casetype(nword, nchars);
 	if ((voikko_options.ignore_uppercase && caps == CT_ALL_UPPER) ||
 	    (voikko_options.ignore_nonwords && voikko_is_nonword(nword, nchars))) {
-		free(nword);
+		delete[] nword;
 		EXIT_V
 		return VOIKKO_SPELL_OK;
 	}
 	
 	wchar_t * buffer = new wchar_t[nchars + 1];
 	if (buffer == 0) {
-		free(nword);
+		delete[] nword;
 		EXIT_V
 		return VOIKKO_INTERNAL_ERROR;
 	}
@@ -358,7 +358,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
 			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
 				result = VOIKKO_SPELL_OK;
 		}
-		free(nword);
+		delete[] nword;
 		delete[] buffer;
 		EXIT_V
 		return result;
@@ -386,7 +386,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
 			result = VOIKKO_INTERNAL_ERROR;
 	}
 	if (result == VOIKKO_SPELL_OK) {
-		free(nword);
+		delete[] nword;
 		delete[] buffer;
 		return VOIKKO_SPELL_OK;
 	}
@@ -413,7 +413,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
 				result = VOIKKO_INTERNAL_ERROR;
 		}
 	}
-	free(nword);
+	delete[] nword;
 	delete[] buffer;
 	return result;
 }
