@@ -1,3 +1,7 @@
+2008-12-11 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Port tokenizer to C++.
+
 2008-12-10 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Port sentence.c and voikko_spell.c to C++.

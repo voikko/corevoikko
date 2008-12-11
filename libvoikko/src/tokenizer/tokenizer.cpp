@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2007 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2007 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,12 +16,17 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+// TODO: C linkage
+extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
 #include "voikko_charset.h"
 #include "voikko_utils.h"
+}
 #include <wchar.h>
-#include <stdlib.h>
+#include <cstdlib>
+
+namespace libvoikko {
 
 size_t word_length(const wchar_t * text, size_t textlen) {
 	size_t wlen = 0;
@@ -98,8 +103,8 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 	return textlen;
 }
 
-enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
-                                              size_t * tokenlen) {
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
+                                                           size_t * tokenlen) {
 	if (textlen == 0) {
 		*tokenlen = 0;
 		return TOKEN_NONE;
@@ -146,8 +151,8 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, 
 	return TOKEN_NONE; // unreachable
 }
 
-enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
-                                              size_t * tokenlen) {
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
+                                                           size_t * tokenlen) {
 	wchar_t * text_ucs4;
 	enum voikko_token_type result;
 	if (text == 0) return TOKEN_NONE;
@@ -156,4 +161,6 @@ enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, siz
 	result = voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
 	free(text_ucs4);
 	return result;
+}
+
 }
