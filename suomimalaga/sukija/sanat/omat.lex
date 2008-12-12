@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -51,7 +51,6 @@
 [perusmuoto: "aijemmin", alku: "aijemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aikaansaannos", alku: "aikaansaanno", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "aikasemmin", alku: "aikasemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "alote", alku: "alot", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "asestautua", alku: "asestau", luokka: teonsana, jatko: <antautua>, äs: a];
 [perusmuoto: "asija", alku: "asij", luokka: nimisana, jatko: <karahka>, äs: a]; # Asia.
 [perusmuoto: "babtisti", alku: "babtist", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -157,7 +156,6 @@
 [perusmuoto: "saada", alku: "saaha", luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "olumppialainen", alku: "olumppialai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "ruuppo", alku: "ruup", luokka: nimisana, jatko: <kippo>, äs: a];
-[perusmuoto: "kammari", alku: "kammar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "lasanje", alku: "lasanje", luokka: nimisana, jatko: <nalle>, äs: a];
 [perusmuoto: "kolitsi", alku: "kolits", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "poonus", alku: "poonu", luokka: nimisana, jatko: <vastaus>, äs: a];
@@ -167,8 +165,6 @@
 #[perusmuoto: "kaistanen", alku: "kaista", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "sillon", alku: "sillon", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "promed", alku: "promed", luokka: nimi, jatko: <kalsium>, äs: aä];
-[perusmuoto: "osote", alku: "osot", luokka: nimisana, jatko: <vaate>, äs: a];
-[perusmuoto: "tavote", alku: "tavot", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "rosentti", alku: "rosent", luokka: nimisana, jatko: <salaatti>, äs: a];
 [perusmuoto: "rojekti", alku: "rojekt", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "ugri", alku: "ugr", luokka: nimisana, jatko: <risti>, äs: a];
@@ -403,7 +399,9 @@
 #[perusmuoto: "puolikuu", alku: "puoliku", luokka: nimisana, jatko: <puu>, äs: a];
 
 
+[perusmuoto: "kamari", alku: "kammar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "kirjoitelma", alku: "kirjotelm", luokka: nimisana, jatko: <asema>, äs: a];
+[perusmuoto: "kulttuuri", alku: "kultuur", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "liipaisin", alku: "liipasi", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "pistooli", alku: "pistol", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "poliitikko", alku: "politik", luokka: nimisana, jatko: <laatikko>, äs: a];
@@ -448,7 +446,6 @@
 [perusmuoto: "heilakka", alku: "heilak", luokka: laatusana, jatko: <solakka>, äs: a];
 [perusmuoto: "Brown", alku: "Brown", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ludvig", alku: "Ludvig", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Graal", alku: "Graal", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Dante", alku: "Dante", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Wood", alku: "Wood", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Leoni", alku: "Leon", luokka: sukunimi, jatko: <risti>, äs: a];
@@ -589,6 +586,8 @@
 [perusmuoto: "virkellä", alku: "virk", luokka: teonsana, jatko: <nakella>, äs: ä];
 #[perusmuoto: "vikaantua", alku: "vikaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
 
+[perusmuoto: "tuonaikainen", alku: "tuonaikai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "tuonaikuinen", alku: "tuonaikui", luokka: laatusana, jatko: <nainen>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

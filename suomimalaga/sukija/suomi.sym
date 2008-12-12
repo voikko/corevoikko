@@ -733,11 +733,13 @@ hame;
   lahje;
   lape;
   lumme;
+  osoite;  # Osoite ja osote.
   sade;
   taive;
   tarvike;
+  tiedote; # Tiedote ja tiedoite.
   vaate;
-  viive;  # Viiveen tai viipeen.
+  viive;   # Viiveen tai viipeen.
 terve;
 ori;
 kiiru;

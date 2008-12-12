@@ -159,7 +159,7 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-  if ($tietue.perusmuoto = "sini") then
+  if ($tietue.perusmuoto in <"ripsi", "sini">) then
     if ($tietue.jatko = <risti>) then
       stop;
     elseif ($tietue.jatko = <lovi>) then

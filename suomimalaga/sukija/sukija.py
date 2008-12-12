@@ -63,6 +63,8 @@ historical = [
 			      (u't',u'(.*)ti',u'konvehti') ]),
         (u'bébé', u'-', [(None,u'(.*V)',u'bébé')]),
         (u'haastaa', u'sw', [(None,u'(.*Ct)AA',u'haastaa')]),
+	(u'hame', u'ws', [(u't',u'(..*CO)ite',u'osoite'),
+			  (u't',u'(..*CO)te',u'tiedote')]),
 	(u'hohtaa',  u'sw', [(u'tt',u'(.*t)tAA',u'heittää')]),
 	(u'huutaa', u'sw', [(u'nt',u'(.*Vn)tAA',u'alentaa'),
 			(u't',u'(.*V)tAA',u'huutaa')]),
@@ -144,8 +146,9 @@ historical = [
 	(u'uros', u'-', [(None,u'(.*)s',u'uros')]),
 	(u'terve', u'-',[(None,u'(.*)',u'terve')]),
 	(u'valmis',u'ws', [(None,u'(.*)is',u'valmis')]),
-	(u'vastaus', u'-', [(None,u'(..[^oö]*O)itUs',u'aivoitus'),
-			    (None,u'(..[^oö]*O)tUs',u'jaotus'),
+	(u'vastaus', u'-', [(None,u'(lootu)s',u'vastaus'),
+			    (None,u'(..*CO)itUs',u'aivoitus'),
+			    (None,u'(...*O)tUs',u'jaotus'),
 			    (None,u'(.*V)s',u'vastaus'),]),
 	(u'veranta', u'sw', [(u'nt',u'(.*n)tA',u'veranta')]),
 	(u'vieras',  u'ws', [(None,u'(.*[lr]iA)s',u'utelias'),
@@ -157,10 +160,6 @@ historical = [
 
 classmap = historical
 classmap.extend(hfconv.modern_classmap)
-
-#          u"(?P<jaotus>OtUs)|" + \
-#          u"(?P<aivoitus>OitUs)|" + \
-#
 
 pattern = u"^(?P<alku>.*)(?:" + \
 	  u"(?P<keltainen>C[aouyäö]i?nen)|" + \

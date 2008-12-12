@@ -58,6 +58,8 @@ avauma
 avautuma
 brittiläinen
 Bulgaria
+calmetterokote
+calmetterokotus
 edellisvuotinen
 Eesti
 eetillinen
@@ -100,7 +102,9 @@ halutunlainen
 Hamina
 hankautuma
 Hanko
+hapatus
 hapettuma
+hapetus
 harrastua
 harventuma
 haurastua
@@ -139,6 +143,7 @@ hyytymä
 häipymä
 Härmä
 hölmöläinen
+höpötys
 höyhensarjalainen
 Ilma
 ilmentymä
@@ -181,6 +186,7 @@ jäykistymä
 jäätymä
 kaartilainen
 kaato
+kaavoitus
 kahdentuma
 Kainulainen
 kalkkeuma
@@ -341,6 +347,7 @@ Lahti
 Laina
 Laine
 laiskanpulskea
+langoitus
 Lappi
 laskeutuma
 latauma
@@ -361,6 +368,7 @@ liittolainen
 liittoutuma
 liittymä
 Lilja
+linnoitus
 Linnunrata
 Lintunen
 Liperi
@@ -537,6 +545,7 @@ putoama
 pysyttäytyä
 pysähdys
 Päivä
+päällekirjoitus
 pöhöttymä
 raakalainen
 Raitio
@@ -584,6 +593,7 @@ Saksa
 Saku
 Salo
 Sampo
+sanoitus
 sanoma
 saostuma
 Satu
@@ -738,6 +748,7 @@ Vasara
 vasemmistolainen
 vastaanotto
 vastaavanlainen
+velvoitus
 Vento
 venymä
 Venäjä
