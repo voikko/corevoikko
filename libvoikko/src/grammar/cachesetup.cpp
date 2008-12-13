@@ -29,8 +29,14 @@ voikko_gc_cache_entry::voikko_gc_cache_entry() :
 	init_grammar_error(&(this->error));
 }
 
-void init_gc_cache(voikko_gc_cache * gc_cache) {
-	memset(gc_cache, 0, sizeof(voikko_gc_cache));
+voikko_gc_cache::voikko_gc_cache() :
+	paragraph(0),
+	first_error(0) {
+}
+
+void voikko_gc_cache::clear() {
+	paragraph = 0;
+	first_error = 0;
 }
 
 void gc_clear_cache(int handle) {
@@ -44,7 +50,7 @@ void gc_clear_cache(int handle) {
 		delete entry;
 		entry = next;
 	}
-	init_gc_cache(&voikko_options.gc_cache);
+	voikko_options.gc_cache.clear();
 }
 
 }

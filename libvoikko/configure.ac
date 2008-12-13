@@ -1,5 +1,5 @@
 dnl Libvoikko: Finnish spellchecker and hyphenator library
-dnl Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+dnl Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
 dnl
 dnl This program is free software; you can redistribute it and/or
 dnl modify it under the terms of the GNU General Public License
@@ -101,7 +101,6 @@ AC_CHECK_FUNCS([getpwuid_r])
 AM_ICONV
 
 dnl Default compiler settings
-CFLAGS="$CFLAGS -Wall -Werror -pedantic -std=c99 -D_POSIX_C_SOURCE=200112L"
 CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"
 
 AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile src/libvoikko.pc])

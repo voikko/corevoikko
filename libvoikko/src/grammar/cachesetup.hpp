@@ -40,19 +40,19 @@ class voikko_gc_cache_entry {
 /**
  * Grammar checker cache. Currently the cache can hold only one paragraph.
  */
-typedef struct {
+class voikko_gc_cache {
+	public:
+	/** Constructs an empty cache */
+	voikko_gc_cache();
+	
+	/** Clears the cache */
+	void clear();
+	
 	/** Null terminated string containing the paragraph text. */
 	wchar_t * paragraph;
 	/** First error in linked list. */
 	voikko_gc_cache_entry * first_error;
-} voikko_gc_cache;
-
-
-/**
- * Initialise grammar checker cache.
- */
-void init_gc_cache(voikko_gc_cache * gc_cache);
-
+};
 
 /**
  * Clears grammar checker error cache.

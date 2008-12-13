@@ -152,7 +152,6 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
 	voikko_options.suggestion_type = ST_STD;
-	init_gc_cache(&voikko_options.gc_cache);
 	
 	char * project = new char[1024];
 	if (project == 0) return "Out of memory";
