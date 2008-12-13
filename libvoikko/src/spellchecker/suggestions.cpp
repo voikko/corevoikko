@@ -91,7 +91,7 @@ void suggest_correct_case(sugg_status_t * s, const wchar_t * buffer, size_t bufl
 			malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", wlen);
 			if (malaga_buffer == 0) return;
 			analyse_item(malaga_buffer, MORPHOLOGY);
-			free(malaga_buffer);
+			delete[] malaga_buffer;
 			charge(s);
 			analysis = first_analysis_result();
 			if (!analysis) return;

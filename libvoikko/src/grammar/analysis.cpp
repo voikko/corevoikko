@@ -56,7 +56,7 @@ void gc_analyze_token(int handle, gc_token * token) {
 	char * malaga_buffer = voikko_ucs4tocstr(token->str, "UTF-8", token->tokenlen);
 	if (malaga_buffer == 0) return;
 	analyse_item(malaga_buffer, MORPHOLOGY);
-	free(malaga_buffer);
+	delete[] malaga_buffer;
 	
 	// Check if first letter should be lower case letter
 	value_t analysis = first_analysis_result();

@@ -65,7 +65,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
 	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", len);
 	if (malaga_buffer == 0) return SPELL_FAILED;
 	analyse_item(malaga_buffer, MORPHOLOGY);
-	free(malaga_buffer);
+	delete[] malaga_buffer;
 	if (prio != 0) *prio = 0;
 	
 	analysis = first_analysis_result();
@@ -152,7 +152,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			return result;
 		}
 		analyse_item(malaga_buffer, MORPHOLOGY);
-		free(malaga_buffer);
+		delete[] malaga_buffer;
 		
 		current_analysis = first_analysis_result();
 		if (!current_analysis) {

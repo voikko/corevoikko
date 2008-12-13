@@ -50,8 +50,7 @@ const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * tex
 
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(handle);
-	// TODO: C allocation
-	voikko_options.gc_cache.paragraph = (wchar_t *) malloc((textlen + 1) * sizeof(wchar_t));
+	voikko_options.gc_cache.paragraph = new wchar_t[textlen + 1];
 	if (!voikko_options.gc_cache.paragraph) return;
 	memcpy(voikko_options.gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikko_options.gc_cache.paragraph[textlen] = L'\0';

@@ -34,13 +34,14 @@ void init_gc_cache(voikko_gc_cache * gc_cache) {
 }
 
 void gc_clear_cache(int handle) {
-	if (voikko_options.gc_cache.paragraph)
-		free(voikko_options.gc_cache.paragraph);
+	if (voikko_options.gc_cache.paragraph) {
+		delete[] voikko_options.gc_cache.paragraph;
+	}
 	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
 	while (entry) {
 		voikko_gc_cache_entry * next = entry->next_error;
 		voikko_free_suggest_cstr(entry->error.suggestions);
-		free(entry);
+		delete entry;
 		entry = next;
 	}
 	init_gc_cache(&voikko_options.gc_cache);

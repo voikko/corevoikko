@@ -72,8 +72,7 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, con
 	e.suggestions = new char*[sugg_count + 1];
 	if (!e.suggestions) return e;
 	for (int i = 0; i < sugg_count; i++) {
-		// TODO: C allocation
-		e.suggestions[i] = (char *) malloc((strlen(c_error->suggestions[i]) + 1) * sizeof(char));
+		e.suggestions[i] = new char[strlen(c_error->suggestions[i]) + 1];
 		if (!e.suggestions[i]) return e;
 		strcpy(e.suggestions[i], c_error->suggestions[i]);
 	}
