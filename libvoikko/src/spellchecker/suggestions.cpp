@@ -19,9 +19,9 @@
 #include "voikko_defs.h"
 // TODO: C linkage
 extern "C" {
-#include "voikko_utils.h"
 #include "voikko_setup.h"
 }
+#include "utils/utils.hpp"
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include "spellchecker/suggestions.hpp"
@@ -553,7 +553,7 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
 	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
 	if (word_ucs4 == 0) return 0;
 	suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
-	free(word_ucs4);
+	delete[] word_ucs4;
 	if (suggestions_ucs4 == 0) return 0;
 	scount = 0;
 	while (suggestions_ucs4[scount] != 0) scount++;
@@ -594,8 +594,7 @@ VOIKKOEXPORT void voikko_free_suggest_ucs4(wchar_t ** suggest_result) {
 VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result) {
 	if (suggest_result) {
 		for (char ** p = suggest_result; *p; p++) {
-			// TODO: C allocation
-			free(*p);
+			delete[] *p;
 		}
 		delete[] suggest_result;
 	}

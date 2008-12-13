@@ -17,9 +17,9 @@
  *********************************************************************************/
 
 #include "grammar/analysis.hpp"
+#include "utils/utils.hpp"
 // TODO: C linkage
 extern "C" {
-#include "voikko_utils.h"
 #include "voikko_setup.h"
 }
 #include <malaga.h>

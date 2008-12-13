@@ -20,8 +20,8 @@
 extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
+#include "utils/utils.hpp"
 #include "character/charset.hpp"
 #include <wchar.h>
 #include <cstdlib>
@@ -159,7 +159,7 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const cha
 	text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
 	if (text_ucs4 == 0) return TOKEN_NONE;
 	result = voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
-	free(text_ucs4);
+	delete[] text_ucs4;
 	return result;
 }
 

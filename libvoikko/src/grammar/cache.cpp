@@ -20,8 +20,8 @@
 extern "C" {
 #include "gccache.h"
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
+#include "utils/utils.hpp"
 #include "grammar/cache.hpp"
 #include "grammar/checks.hpp"
 #include "grammar/analysis.hpp"

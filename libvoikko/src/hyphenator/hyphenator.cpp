@@ -18,10 +18,10 @@
 
 #include "voikko_defs.h"
 #include "hyphenator/hyphenator.hpp"
+#include "utils/utils.hpp"
 // TODO: C linkage
 extern "C" {
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
 #include <wchar.h>
 #include <stdlib.h>

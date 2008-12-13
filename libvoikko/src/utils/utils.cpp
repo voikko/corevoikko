@@ -17,8 +17,11 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
-#include "voikko_utils.h"
+#include "utils/utils.hpp"
+// TODO: C linkage
+extern "C" {
 #include "voikko_setup.h"
+}
 #include <stdlib.h>
 #include <string.h>
 #include <wctype.h>
@@ -29,16 +32,17 @@
   #endif
 #endif
 
+namespace libvoikko {
+
 wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len) {
 #ifdef HAVE_ICONV
 	iconv_t cd;
 	int using_temporary_converter = 0;
 	size_t conv_bytes;
 	size_t outbytesleft = len * sizeof(wchar_t);
-	wchar_t * ucs4_buffer = malloc(outbytesleft + sizeof(wchar_t));
+	wchar_t * ucs4_buffer = new wchar_t[len + 1];
 	if (ucs4_buffer == 0) return 0;
 	ucs4_buffer[len] = L'\0';
-	size_t res_size;
 	char * outptr = (char *) ucs4_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
 	size_t inbytesleft;
@@ -50,7 +54,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	else {
 		cd = iconv_open(INTERNAL_CHARSET, encoding);
 		if (cd == (iconv_t) -1) {
-			free(ucs4_buffer);
+			delete[] ucs4_buffer;
 			return 0;
 		}
 		using_temporary_converter = 1;
@@ -66,17 +70,15 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	LOG(("inbytesleft = %d\n", (int) inbytesleft));
 	LOG(("outbytesleft = %d\n", (int) outbytesleft));
 	LOG(("inptr = '%s'\n", inptr));
-	if (conv_bytes == -1) {
+	if (conv_bytes == (size_t) -1) {
 		if (using_temporary_converter) iconv_close(cd);
-		free(ucs4_buffer);
+		delete[] ucs4_buffer;
 		return 0;
 	}
 	
 	if (using_temporary_converter) iconv_close(cd);
 	*((wchar_t *) outptr) = L'\0'; /* terminate the output buffer */
 	LOG(("ucs4_buffer = '%ls'\n", ucs4_buffer));
-	res_size = ((size_t) outptr) - ((size_t) ucs4_buffer) + sizeof(wchar_t);
-	ucs4_buffer = realloc(ucs4_buffer, res_size);
 	return ucs4_buffer;
 #else
   #ifdef WIN32
@@ -93,7 +95,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	// before WIN2K_SP4.
 	int result = MultiByteToWideChar(cp, 0, word, len, ucs4_buffer, buflen - 1);
 	if (result == 0) {
-		free(ucs4_buffer);
+		delete[] ucs4_buffer;
 		return 0;
 	}
 	else {
@@ -109,9 +111,8 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 	iconv_t cd;
 	int using_temporary_converter = 0;
 	size_t conv_bytes;
-	char * utf8_buffer = malloc(LIBVOIKKO_MAX_WORD_CHARS * 6 + 1);
+	char * utf8_buffer = new char[LIBVOIKKO_MAX_WORD_CHARS * 6 + 1];
 	if (utf8_buffer == 0) return 0;
-	size_t res_size;
 	char * outptr = utf8_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
 	size_t inbytesleft;
@@ -126,7 +127,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 	else {
 		cd = iconv_open(encoding, INTERNAL_CHARSET);
 		if (cd == (iconv_t) -1) {
-			free(utf8_buffer);
+			delete[] utf8_buffer;
 			return 0;
 		}
 		using_temporary_converter = 1;
@@ -142,16 +143,14 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 	LOG(("inbytesleft = %d\n", (int) inbytesleft));
 	LOG(("outbytesleft = %d\n", (int) outbytesleft));
 	LOG(("inptr = '%s'\n", inptr));
-	if (conv_bytes == -1) {
+	if (conv_bytes == (size_t) -1) {
 		if (using_temporary_converter) iconv_close(cd);
-		free(utf8_buffer);
+		delete[] utf8_buffer;
 		return 0;
 	}
 	if (using_temporary_converter) iconv_close(cd);
 	*outptr = '\0'; /* terminate the output buffer */
 	LOG(("utf8_buffer = '%s'\n", utf8_buffer));
-	res_size = ((size_t) outptr) - ((size_t) utf8_buffer) + 1;
-	utf8_buffer = realloc(utf8_buffer, res_size);
 	return utf8_buffer;
 #else
   #ifdef WIN32
@@ -164,7 +163,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
   	if (utf8_buffer == 0) return 0;
   	int result = WideCharToMultiByte(cp, 0, word, len ? len : -1, utf8_buffer, buflen - 1, 0, 0);
   	if (result == 0) {
-		free(utf8_buffer);
+		delete[] utf8_buffer;
 		return 0;
 	}
 	else {
@@ -189,7 +188,6 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 	int rest_lc = 1;
 	int all_uc = 1;
 	int no_letters = 1;
-	int i;
 	if (nchars == 0) return CT_NO_LETTERS;
 	if (iswupper(word[0])) {
 		first_uc = 1;
@@ -199,7 +197,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 		all_uc = 0;
 		no_letters = 0;
 	}
-	for (i = 1; i < nchars; i++) {
+	for (size_t i = 1; i < nchars; i++) {
 		if (iswupper(word[i])) {
 			no_letters = 0;
 			rest_lc = 0;
@@ -259,4 +257,6 @@ int voikko_is_nonword(const wchar_t * word, size_t nchars) {
 	    wmemchr(word + 5, L'.', nchars - 5)) return 1;
 	
 	return 0;
+}
+
 }

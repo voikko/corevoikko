@@ -16,10 +16,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_UTILS_H
-#define VOIKKO_UTILS_H
+#ifndef VOIKKO_UTILS_UTILS_H
+#define VOIKKO_UTILS_UTILS_H
 
-#include <stddef.h>
+#include <cstddef>
 
 #ifdef DEBUG
 #define LOG(x) printf x
@@ -29,6 +29,8 @@
 
 #define VOIKKO_CONSONANTS L"bcdfghjklmnpqrstvwxz\u0161\u017e"
 #define VOIKKO_VOWELS L"aeiouy\u00e4\u00f6"
+
+namespace libvoikko {
 
 enum casetype {CT_NO_LETTERS, CT_ALL_LOWER, CT_FIRST_UPPER, CT_COMPLEX, CT_ALL_UPPER};
 
@@ -78,5 +80,7 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars);
  * @return 1 if string is a non-word, otherwise 0
  */
 int voikko_is_nonword(const wchar_t * word, size_t nchars);
+
+}
 
 #endif

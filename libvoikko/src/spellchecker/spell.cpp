@@ -20,8 +20,8 @@
 extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
+#include "utils/utils.hpp"
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include <cstdlib>
@@ -226,7 +226,7 @@ VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word) {
 	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
 	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
 	result = voikko_spell_ucs4(handle, word_ucs4);
-	free(word_ucs4);
+	delete[] word_ucs4;
 	return result;
 }
 

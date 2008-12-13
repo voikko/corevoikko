@@ -20,8 +20,8 @@
 // TODO: C linkage
 extern "C" {
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
+#include "utils/utils.hpp"
 #include "grammar/cache.hpp"
 #include <cstdlib>
 #include <cstring>
@@ -46,7 +46,7 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, con
 	size_t wtextlen = wcslen(text_ucs4);
 	voikko_grammar_error e = voikko_next_grammar_error_ucs4(handle, text_ucs4,
 	                         wtextlen, startpos, skiperrors);
-	free(text_ucs4);
+	delete[] text_ucs4;
 	
 	return e;
 }

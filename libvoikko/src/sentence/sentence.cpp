@@ -20,8 +20,8 @@
 extern "C" {
 #include "voikko_defs.h"
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
+#include "utils/utils.hpp"
 #include "spellchecker/spell.hpp"
 #include <cstdlib>
 #include <wctype.h>

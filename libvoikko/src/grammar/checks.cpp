@@ -18,6 +18,7 @@
 
 #include "grammar/checks.hpp"
 #include "grammar/error.hpp"
+#include "utils/utils.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <wctype.h>
@@ -25,7 +26,6 @@
 extern "C" {
 #include "gccache.h"
 #include "voikko_setup.h"
-#include "voikko_utils.h"
 }
 
 namespace libvoikko {
