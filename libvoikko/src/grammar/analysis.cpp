@@ -16,20 +16,25 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "gcanalysis.h"
+#include "grammar/analysis.hpp"
+// TODO: C linkage
+extern "C" {
 #include "voikko_utils.h"
 #include "voikko_setup.h"
+}
 #include <malaga.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
+
+namespace libvoikko {
 
 /** Free the memory allocated for sentence analysis */
 void free_gc_sentence(gc_sentence * sentence) {
 	if (!sentence) return;
 	for (int i = 0; i < sentence->token_count; i++) {
-		free(sentence->tokens[i].str);
+		delete[] sentence->tokens[i].str;
 	}
-	free(sentence);
+	delete sentence;
 }
 
 void free_gc_paragraph(gc_paragraph * para) {
@@ -38,9 +43,9 @@ void free_gc_paragraph(gc_paragraph * para) {
 		for (int i = 0; i < para->sentence_count; i++) {
 			free_gc_sentence(para->sentences[i]);
 		}
-		free(para->sentences);
+		delete[] para->sentences;
 	}
-	free(para);
+	delete para;
 }
 
 /** Analyze given text token. Token type, length and text must have already
@@ -75,7 +80,7 @@ void gc_analyze_token(int handle, gc_token * token) {
 /** Analyze sentence text. Sentence type must be set by the caller. */
 gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
                                    size_t textlen, size_t sentencepos) {
-	gc_sentence * s = malloc(sizeof(gc_sentence));
+	gc_sentence * s = new gc_sentence;
 	if (!s) return 0;
 	s->token_count = 0;
 	s->pos = sentencepos;
@@ -93,7 +98,7 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 
 		s->tokens[i].type = tt;
 		s->tokens[i].tokenlen = tokenlen;
-		wchar_t * tstr = malloc((tokenlen + 1) * sizeof(wchar_t));
+		wchar_t * tstr = new wchar_t[tokenlen + 1];
 		if (!tstr) break;
 		memcpy(tstr, pos, tokenlen * sizeof(wchar_t));
 		tstr[tokenlen] = L'\0';
@@ -123,11 +128,11 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 
 
 gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
-	gc_paragraph * p = malloc(sizeof(gc_paragraph));
+	gc_paragraph * p = new gc_paragraph;
 	if (!p) return 0;
-	p->sentences = malloc(GCANALYSIS_MAX_SENTENCES * sizeof(gc_sentence *));
+	p->sentences = new gc_sentence*[GCANALYSIS_MAX_SENTENCES];
 	if (!p->sentences) {
-		free(p);
+		delete p;
 		return 0;
 	}
 	p->sentence_count = 0;
@@ -158,4 +163,6 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 	} while (st != SENTENCE_NONE && st != SENTENCE_NO_START &&
 	         p->sentence_count < GCANALYSIS_MAX_SENTENCES);
 	return p;
+}
+
 }

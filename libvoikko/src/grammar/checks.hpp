@@ -19,10 +19,7 @@
 #ifndef VOIKKO_GRAMMAR_CHECKS_H
 #define VOIKKO_GRAMMAR_CHECKS_H
 
-// TODO: C linkage
-extern "C" {
-#include "gcanalysis.h"
-}
+#include "grammar/analysis.hpp"
 
 namespace libvoikko {
 

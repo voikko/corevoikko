@@ -20,12 +20,12 @@
 extern "C" {
 #include "gccache.h"
 #include "gcerror.h"
-#include "gcanalysis.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
 }
 #include "grammar/cache.hpp"
 #include "grammar/checks.hpp"
+#include "grammar/analysis.hpp"
 #include <cstring>
 #include <cstdlib>
 #include <wctype.h>

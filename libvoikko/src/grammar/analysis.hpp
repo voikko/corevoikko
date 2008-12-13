@@ -16,8 +16,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GCANALYSIS_H
-#define VOIKKO_GCANALYSIS_H
+#ifndef VOIKKO_GRAMMAR_ANALYSIS_H
+#define VOIKKO_GRAMMAR_ANALYSIS_H
 
 #include "voikko_defs.h"
 
@@ -26,6 +26,8 @@
 
 /* Maximum number of tokens in a sentence */
 #define GCANALYSIS_MAX_TOKENS 500
+
+namespace libvoikko {
 
 /**
  * Grammar checker sentence token.
@@ -78,5 +80,7 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 
 /** Free the memory allocated for paragraph analysis */
 void free_gc_paragraph(gc_paragraph * para);
+
+}
 
 #endif
