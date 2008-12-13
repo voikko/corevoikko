@@ -17,25 +17,27 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
-#include "voikko_setup.h"
+#include "setup/setup.hpp"
 #ifdef HAVE_GETPWUID_R
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
 #include <malaga.h>
-#include <string.h>
+#include <cstring>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <stdlib.h>
+#include <cstdlib>
 
 #ifdef WIN32
 #include <windows.h>
 #endif
 
+namespace libvoikko {
+
 voikko_options_t voikko_options;
 
 int voikko_handle_count;
 
-int voikko_set_bool_option(int handle, int option, int value) {
+VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
 			if (value) voikko_options.ignore_dot = 1;
@@ -89,7 +91,7 @@ int voikko_set_bool_option(int handle, int option, int value) {
 	return 0;
 }
 
-int voikko_set_int_option(int handle, int option, int value) {
+VOIKKOEXPORT int voikko_set_int_option(int handle, int option, int value) {
 	switch (option) {
 		case VOIKKO_INTERSECT_COMPOUND_LEVEL:
 			voikko_options.intersect_compound_level = value;
@@ -101,7 +103,7 @@ int voikko_set_int_option(int handle, int option, int value) {
 	return 0;
 }
 
-int voikko_set_string_option(int handle, int option, const char * value) {
+VOIKKOEXPORT int voikko_set_string_option(int handle, int option, const char * value) {
 	switch (option) {
 		case VOIKKO_OPT_ENCODING:
 			if (!value) return 0;
@@ -126,11 +128,11 @@ int voikko_set_string_option(int handle, int option, const char * value) {
 	return 0;
 }
 
-const char * voikko_init(int * handle, const char * langcode, int cache_size) {
+VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 	return voikko_init_with_path(handle, langcode, cache_size, 0);
 }
 
-const char * voikko_init_with_path(int * handle, const char * langcode,
+VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
 	/* FIXME: Temporary hack needed for MT unsafe malaga library */
 	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
@@ -152,31 +154,31 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	voikko_options.suggestion_type = ST_STD;
 	init_gc_cache(&voikko_options.gc_cache);
 	
-	char * project = malloc(1024);
+	char * project = new char[1024];
 	if (project == 0) return "Out of memory";
 	
 	if (!voikko_find_malaga_project(project, 1024, langcode, path)) {
-		free(project);
+		delete[] project;
 		return "Unsupported language";
 	}
 	#ifdef HAVE_ICONV
 	/* Initialise converters */
 	voikko_options.iconv_ucs4_utf8 = iconv_open("UTF-8", INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_utf8 == (iconv_t) -1) {
-		free(project);
+		delete[] project;
 		return "iconv_open(\"UTF-8\", \"" INTERNAL_CHARSET "\") failed";
 	}
 	voikko_options.iconv_utf8_ucs4 = iconv_open(INTERNAL_CHARSET, "UTF-8");
 	if (voikko_options.iconv_utf8_ucs4 == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_ucs4_utf8);
-		free(project);
+		delete[] project;
 		return "iconv_open(\"" INTERNAL_CHARSET "\", \"UTF-8\") failed";
 	}
 	voikko_options.iconv_ucs4_ext = iconv_open(voikko_options.encoding, INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_ext == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
-		free(project);
+		delete[] project;
 		return "iconv_open(voikko_options.encoding, \"" INTERNAL_CHARSET "\") failed";
 	}
 	voikko_options.iconv_ext_ucs4 = iconv_open(INTERNAL_CHARSET, voikko_options.encoding);
@@ -184,13 +186,13 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 		iconv_close(voikko_options.iconv_ucs4_ext);
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
-		free(project);
+		delete[] project;
 		return "iconv_open(\"" INTERNAL_CHARSET "\", voikko_options.encoding) failed";
 	}
 	#endif
 	
 	const char * malaga_init_error = voikko_init_malaga(project);
-	free(project);
+	delete[] project;
 	if (malaga_init_error) {
 		#ifdef HAVE_ICONV
 		iconv_close(voikko_options.iconv_ext_ucs4);
@@ -202,13 +204,13 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 		return malaga_init_error;
 	}
 	if (cache_size >= 0) {
-		voikko_options.cache = malloc(6544 * sizeof(wchar_t) << cache_size);
+		voikko_options.cache = new wchar_t[6544 << cache_size];
 		if (voikko_options.cache) {
-			voikko_options.cache_meta = malloc(1008 << cache_size);
+			voikko_options.cache_meta = new char[1008 << cache_size];
 			if (voikko_options.cache_meta)
 				memset(voikko_options.cache_meta, 0, 1008 << cache_size);
 			else {
-				free(voikko_options.cache);
+				delete[] voikko_options.cache;
 				voikko_options.cache = 0;
 			}
 			memset(voikko_options.cache, 0, 6544 * sizeof(wchar_t) << cache_size);
@@ -219,7 +221,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
 	return 0;
 }
 
-int voikko_terminate(int handle) {
+VOIKKOEXPORT int voikko_terminate(int handle) {
 	if (handle == 1 && voikko_handle_count > 0) {
 		voikko_handle_count--;
 		#ifdef HAVE_ICONV
@@ -233,8 +235,8 @@ int voikko_terminate(int handle) {
 		for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;
 		printf("Cache slots used: %d\n", c);*/
 		if (voikko_options.cache) {
-			free(voikko_options.cache);
-			free(voikko_options.cache_meta);
+			delete[] voikko_options.cache;
+			delete[] voikko_options.cache_meta;
 		}
 		gc_clear_cache(handle);
 		return 1;
@@ -262,7 +264,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 	char * path_from_env;
 	// Minimum sensible size for the buffer
 	if (buflen < 18) return 0;
-	char * tmp_buf = malloc(buflen + 2048);
+	char * tmp_buf = new char[buflen + 2048];
 	if (tmp_buf == 0) return 0;
 	
 	// Clear the buffer.
@@ -274,7 +276,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 			strcpy(buffer, path);
 			strcpy(buffer + strlen(path), "/" VOIKKO_DICTIONARY_FILE);
 			if (voikko_check_file(buffer)) {
-				free(tmp_buf);
+				delete[] tmp_buf;
 				return 1;
 			}
 		}
@@ -286,7 +288,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 			strcpy(buffer, path_from_env);
 			strcpy(buffer + strlen(path_from_env), "/" VOIKKO_DICTIONARY_FILE);
 			if (voikko_check_file(buffer)) {
-				free(tmp_buf);
+				delete[] tmp_buf;
 				return 1;
 			}
 		}
@@ -298,7 +300,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 			strcpy(buffer, pwd.pw_dir);
 			strcpy(buffer + strlen(pwd.pw_dir), "/.voikko/" VOIKKO_DICTIONARY_FILE);
 			if (voikko_check_file(buffer)) {
-				free(tmp_buf);
+				delete[] tmp_buf;
 				return 1;
 			}
 		}
@@ -315,7 +317,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 			if ((ERROR_SUCCESS == lRet)) {
 				strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
 				if (voikko_check_file(buffer)) {
-					free(tmp_buf);
+					delete[] tmp_buf;
 					return 1;
 				}
 			}
@@ -332,7 +334,7 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 			if ((ERROR_SUCCESS == lRet)) {
 				strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
 				if (voikko_check_file(buffer)) {
-					free(tmp_buf);
+					delete[] tmp_buf;
 					return 1;
 				}
 			}
@@ -340,11 +342,11 @@ int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langco
 		#endif // WIN32
 		/* Fall back to using the compile time default project file */
 		strcpy(buffer, DICTIONARY_PATH "/" VOIKKO_DICTIONARY_FILE);
-		free(tmp_buf);
+		delete[] tmp_buf;
 		return 1;
 	}
 	/* Language is not supported */
-	free(tmp_buf);
+	delete[] tmp_buf;
 	return 0;
 }
 
@@ -375,4 +377,6 @@ int voikko_check_file(const char * name) {
 	}
  #endif // WIN32
 #endif // HAVE_GETPWUID_R
+}
+
 }

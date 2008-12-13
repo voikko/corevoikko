@@ -16,12 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-// TODO: C linkage
-extern "C" {
-#include "gccache.h"
-#include "voikko_setup.h"
-}
+#include "setup/setup.hpp"
 #include "utils/utils.hpp"
+#include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
 #include "grammar/checks.hpp"
 #include "grammar/analysis.hpp"

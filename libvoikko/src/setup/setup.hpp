@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,14 +16,16 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SETUP_H
-#define VOIKKO_SETUP_H
+#ifndef VOIKKO_SETUP_SETUP_H
+#define VOIKKO_SETUP_SETUP_H
 
-#include "gccache.h"
+#include "grammar/cachesetup.hpp"
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
 #include <wchar.h>
+
+namespace libvoikko {
 
 /** Suggestion types */
 enum suggtype {ST_STD, ST_OCR};
@@ -87,5 +89,7 @@ const char * voikko_init_malaga(const char * project);
  * @return 1 if the specified file exists, otherwise 0
  */
 int voikko_check_file(const char * name);
+
+}
 
 #endif

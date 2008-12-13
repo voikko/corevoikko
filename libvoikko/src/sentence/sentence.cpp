@@ -16,11 +16,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-// TODO: C linkage
-extern "C" {
 #include "voikko_defs.h"
-#include "voikko_setup.h"
-}
+#include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "spellchecker/spell.hpp"
 #include <cstdlib>

@@ -16,10 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "gccache.h"
-#include "voikko_setup.h"
-#include <string.h>
-#include <stdlib.h>
+#include "grammar/cachesetup.hpp"
+#include "setup/setup.hpp"
+#include <cstring>
+#include <cstdlib>
+
+namespace libvoikko {
 
 void init_gc_cache(voikko_gc_cache * gc_cache) {
 	memset(gc_cache, 0, sizeof(voikko_gc_cache));
@@ -38,3 +40,4 @@ void gc_clear_cache(int handle) {
 	init_gc_cache(&voikko_options.gc_cache);
 }
 
+}

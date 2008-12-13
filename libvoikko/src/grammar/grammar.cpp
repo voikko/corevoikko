@@ -17,10 +17,7 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
-// TODO: C linkage
-extern "C" {
-#include "voikko_setup.h"
-}
+#include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "grammar/cache.hpp"
 #include <cstdlib>

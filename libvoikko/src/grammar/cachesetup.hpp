@@ -16,10 +16,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GCCACHE_H
-#define VOIKKO_GCCACHE_H
+#ifndef VOIKKO_GRAMMAR_CACHESETUP_H
+#define VOIKKO_GRAMMAR_CACHESETUP_H
 
 #include "voikko_defs.h"
+
+namespace libvoikko {
 
 /**
  * Grammar checker cache entry.
@@ -53,5 +55,7 @@ void init_gc_cache(voikko_gc_cache * gc_cache);
  * Clears grammar checker error cache.
  */
 void gc_clear_cache(int handle);
+
+}
 
 #endif

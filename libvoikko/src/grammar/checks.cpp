@@ -18,15 +18,12 @@
 
 #include "grammar/checks.hpp"
 #include "grammar/error.hpp"
+#include "grammar/cachesetup.hpp"
+#include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <wctype.h>
-// TODO: C linkage
-extern "C" {
-#include "gccache.h"
-#include "voikko_setup.h"
-}
 
 namespace libvoikko {
 

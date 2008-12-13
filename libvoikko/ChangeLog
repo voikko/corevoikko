@@ -1,7 +1,7 @@
 2008-12-13 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Port gcanalysis.c, gcerror.c, utils.c
-	  and parts of gccache.c to C++.
+	* Port gcanalysis.c, gcerror.c, voikko_utils.c,
+	  voikko_setup.c and gccache.c to C++.
 
 2008-12-11 Harri Pitkänen <hatapitk@iki.fi>
 

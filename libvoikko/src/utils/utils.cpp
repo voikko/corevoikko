@@ -18,10 +18,7 @@
 
 #include "voikko_defs.h"
 #include "utils/utils.hpp"
-// TODO: C linkage
-extern "C" {
-#include "voikko_setup.h"
-}
+#include "setup/setup.hpp"
 #include <stdlib.h>
 #include <string.h>
 #include <wctype.h>
