@@ -54,18 +54,4 @@ void init_gc_cache(voikko_gc_cache * gc_cache);
  */
 void gc_clear_cache(int handle);
 
-
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
-                             size_t startpos, int skiperrors);
-
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
-
 #endif

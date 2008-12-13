@@ -1,3 +1,7 @@
+2008-12-13 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Port parts of gccache.c to C++.
+
 2008-12-11 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Port tokenizer and voikko_charset.c to C++.

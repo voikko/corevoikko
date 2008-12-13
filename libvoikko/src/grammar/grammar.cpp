@@ -21,8 +21,8 @@
 extern "C" {
 #include "voikko_setup.h"
 #include "voikko_utils.h"
-#include "gccache.h"
 }
+#include "grammar/cache.hpp"
 #include <cstdlib>
 #include <cstring>
 

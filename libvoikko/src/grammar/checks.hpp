@@ -16,25 +16,42 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "gccache.h"
-#include "voikko_setup.h"
-#include <string.h>
-#include <stdlib.h>
+#ifndef VOIKKO_GRAMMAR_CHECKS_H
+#define VOIKKO_GRAMMAR_CHECKS_H
 
-void init_gc_cache(voikko_gc_cache * gc_cache) {
-	memset(gc_cache, 0, sizeof(voikko_gc_cache));
+// TODO: C linkage
+extern "C" {
+#include "gcanalysis.h"
 }
 
-void gc_clear_cache(int handle) {
-	if (voikko_options.gc_cache.paragraph)
-		free(voikko_options.gc_cache.paragraph);
-	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
-	while (entry) {
-		voikko_gc_cache_entry * next = entry->next_error;
-		voikko_free_suggest_cstr(entry->error.suggestions);
-		free(entry);
-		entry = next;
-	}
-	init_gc_cache(&voikko_options.gc_cache);
+namespace libvoikko {
+
+/**
+ * GC errors from static list of incorrect patterns
+ */
+void gc_static_replacements(int handle, const gc_sentence * sentence);
+
+/**
+ * GC errors due to wrong context independent use of punctuation or whitespace
+ * within a sentence.
+ */
+void gc_local_punctuation(int handle, const gc_sentence * sentence);
+
+/**
+ * GC errors due to incorrect character case
+ */
+void gc_character_case(int handle, const gc_sentence * sentence);
+
+/**
+ * GC errors due to word repetition
+ */
+void gc_repeating_words(int handle, const gc_sentence * sentence);
+
+/**
+ * GC errors due to missing punctuation at the end of paragraph
+ */
+void gc_end_punctuation(int handle, const gc_paragraph * paragraph);
+
 }
 
+#endif

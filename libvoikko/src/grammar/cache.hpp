@@ -16,25 +16,26 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "gccache.h"
-#include "voikko_setup.h"
-#include <string.h>
-#include <stdlib.h>
+#ifndef VOIKKO_GRAMMAR_CACHE_H
+#define VOIKKO_GRAMMAR_CACHE_H
 
-void init_gc_cache(voikko_gc_cache * gc_cache) {
-	memset(gc_cache, 0, sizeof(voikko_gc_cache));
+#include "voikko_defs.h"
+
+namespace libvoikko {
+
+/**
+ * Returns a pointer to a cached grammar error or null, if there are no cached
+ * results for given paragraph.
+ */
+const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
+                             size_t startpos, int skiperrors);
+
+/**
+ * Performs grammar checking on the entire paragraph and stores the results
+ * to cache.
+ */
+void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
+
 }
 
-void gc_clear_cache(int handle) {
-	if (voikko_options.gc_cache.paragraph)
-		free(voikko_options.gc_cache.paragraph);
-	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
-	while (entry) {
-		voikko_gc_cache_entry * next = entry->next_error;
-		voikko_free_suggest_cstr(entry->error.suggestions);
-		free(entry);
-		entry = next;
-	}
-	init_gc_cache(&voikko_options.gc_cache);
-}
-
+#endif
