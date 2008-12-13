@@ -26,13 +26,16 @@ namespace libvoikko {
 /**
  * Grammar checker cache entry.
  */
-struct voikko_gc_cache_entry_s {
+class voikko_gc_cache_entry {
+	public:
+	/** Constructs an empty cache entry */
+	voikko_gc_cache_entry();
+	
 	/** Grammar error */
 	voikko_grammar_error error;
 	/** Next error in linked list */
-	struct voikko_gc_cache_entry_s * next_error;
+	voikko_gc_cache_entry * next_error;
 };
-typedef struct voikko_gc_cache_entry_s voikko_gc_cache_entry;
 
 /**
  * Grammar checker cache. Currently the cache can hold only one paragraph.

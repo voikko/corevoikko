@@ -39,8 +39,9 @@ const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * tex
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
-		    e->error.startpos >= startpos)
+		    e->error.startpos >= startpos) {
 			return &e->error;
+		}
 		preverrors++;
 		e = e->next_error;
 	}

@@ -61,14 +61,15 @@ void gc_cache_append_error(int handle, voikko_gc_cache_entry * new_entry) {
  * @param suggestions number of suggestions that will be added to this entry
  */
 voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
-	// TODO: C allocation
-	voikko_gc_cache_entry * e = (voikko_gc_cache_entry *) calloc(1, sizeof(voikko_gc_cache_entry));
+	voikko_gc_cache_entry * e = new voikko_gc_cache_entry;
 	if (!e) return 0;
 	if (suggestions > 0) {
-		// TODO: C allocation
-		e->error.suggestions = (char **) calloc(suggestions + 1, sizeof(char *));
+		e->error.suggestions = new char*[suggestions + 1];
+		for (int i = 0; i < suggestions + 1; i++) {
+			e->error.suggestions[i] = 0;
+		}
 		if (!e->error.suggestions) {
-			free(e);
+			delete e;
 			return 0;
 		}
 	}

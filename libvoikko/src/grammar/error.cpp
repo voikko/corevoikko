@@ -72,4 +72,13 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 	}
 }
 
+void init_grammar_error(voikko_grammar_error * error) {
+	error->error_code = 0;
+	error->error_level = 0;
+	error->error_description = 0;
+	error->startpos = 0;
+	error->errorlen = 0;
+	error->suggestions = 0;
+}
+
 }

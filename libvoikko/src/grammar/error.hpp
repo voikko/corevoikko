@@ -29,4 +29,15 @@
 #define GCERR_REPEATING_WORD 8
 #define GCERR_TERMINATING_PUNCTUATION_MISSING 9
 
+#include "voikko_defs.h"
+
+namespace libvoikko {
+
+/**
+ * Initialize given grammar error to "no error"
+ */
+void init_grammar_error(voikko_grammar_error * error);
+
+}
+
 #endif

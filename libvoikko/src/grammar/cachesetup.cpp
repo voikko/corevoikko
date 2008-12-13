@@ -17,11 +17,17 @@
  *********************************************************************************/
 
 #include "grammar/cachesetup.hpp"
+#include "grammar/error.hpp"
 #include "setup/setup.hpp"
 #include <cstring>
 #include <cstdlib>
 
 namespace libvoikko {
+
+voikko_gc_cache_entry::voikko_gc_cache_entry() :
+	next_error(0) {
+	init_grammar_error(&(this->error));
+}
 
 void init_gc_cache(voikko_gc_cache * gc_cache) {
 	memset(gc_cache, 0, sizeof(voikko_gc_cache));

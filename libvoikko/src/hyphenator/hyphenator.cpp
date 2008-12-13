@@ -204,7 +204,6 @@ void interpret_analysis(value_t analysis, char * buffer, size_t len) {
 }
 
 char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
-	char * word_utf8;
 	value_t analysis_result;
 	int analysis_count;
 	size_t utf8_len;
@@ -213,7 +212,7 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 	char ** all_results = new char*[LIBVOIKKO_MAX_ANALYSIS_COUNT + 1];
 	if (all_results == 0) return 0;
 	all_results[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
-	word_utf8 = voikko_ucs4tocstr(word, "UTF-8", len);
+	char * word_utf8 = voikko_ucs4tocstr(word, "UTF-8", len);
 	if (word_utf8 == 0) {
 		delete[] all_results;
 		return 0;
@@ -267,7 +266,7 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 		analysis_count++;
 	}
 	all_results[analysis_count] = 0;
-	free(word_utf8);
+	delete[] word_utf8;
 
 	remove_extra_hyphenations(all_results, len, voikko_options.intersect_compound_level);
 
@@ -392,15 +391,14 @@ VOIKKOEXPORT char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 }
 
 VOIKKOEXPORT char * voikko_hyphenate_cstr(int handle, const char * word) {
-	wchar_t * word_ucs4;
 	char * result;
 	if (word == 0) return 0;
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
-	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
+	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
 	if (word_ucs4 == 0) return 0;
 	result = voikko_hyphenate_ucs4(handle, word_ucs4);
-	free(word_ucs4);
+	delete[] word_ucs4;
 	return result;
 }
 

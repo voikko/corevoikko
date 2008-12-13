@@ -108,7 +108,7 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handl
 	if (text_ucs4 == 0) return SENTENCE_NONE;
 	result = voikko_next_sentence_start_ucs4(handle, text_ucs4, wcslen(text_ucs4),
 	                                         sentencelen);
-	free(text_ucs4);
+	delete[] text_ucs4;
 	return result;
 }
 
