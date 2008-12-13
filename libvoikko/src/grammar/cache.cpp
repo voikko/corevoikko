@@ -19,7 +19,6 @@
 // TODO: C linkage
 extern "C" {
 #include "gccache.h"
-#include "gcerror.h"
 #include "voikko_setup.h"
 #include "voikko_utils.h"
 }

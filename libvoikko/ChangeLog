@@ -1,6 +1,6 @@
 2008-12-13 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Port gcanalysis.c and parts of gccache.c to C++.
+	* Port gcanalysis.c, gcerror.c and parts of gccache.c to C++.
 
 2008-12-11 Harri Pitkänen <hatapitk@iki.fi>
 

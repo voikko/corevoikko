@@ -16,11 +16,13 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "gcerror.h"
+#include "grammar/error.hpp"
 #include "voikko_defs.h"
-#include <string.h>
+#include <cstring>
 
-const char * voikko_error_message_cstr(int error_code, const char * language) {
+namespace libvoikko {
+
+VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char * language) {
 	if (strncmp(language, "fi", 2) == 0) {
 		// ä=\xc3\xa4, ö=\xc3\xb6, Ä=\xc3\x84, Ö=\xc3\x96
 		switch (error_code) {
@@ -68,4 +70,6 @@ const char * voikko_error_message_cstr(int error_code, const char * language) {
 		}
 		return "Unknown error";
 	}
+}
+
 }
