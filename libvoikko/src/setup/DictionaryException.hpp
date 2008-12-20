@@ -30,6 +30,7 @@ class DictionaryException : public std::exception {
 	
 	public:
 	DictionaryException(const char * errorMessage);
+	const char * what() const throw();
 
 };
 

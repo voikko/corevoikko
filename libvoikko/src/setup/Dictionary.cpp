@@ -20,6 +20,17 @@
 
 namespace libvoikko { namespace setup {
 
+Dictionary::Dictionary(const std::string & morPath, const std::string & variant) :
+	morPath(morPath),
+	variant(variant) {
+}
 
+std::string Dictionary::getMorPath() {
+	return morPath;
+}
+
+std::string Dictionary::getVariant() {
+	return variant;
+}
 
 } }

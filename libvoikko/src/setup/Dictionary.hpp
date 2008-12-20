@@ -26,9 +26,13 @@ namespace libvoikko { namespace setup {
 class Dictionary {
 
 	private:
-	std::string morPath;
-	std::string variant;
-	
+	const std::string morPath;
+	const std::string variant;
+
+	public:
+	Dictionary(const std::string & morPath, const std::string & variant);
+	std::string getMorPath();
+	std::string getVariant();
 
 };
 

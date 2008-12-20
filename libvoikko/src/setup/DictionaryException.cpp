@@ -20,6 +20,13 @@
 
 namespace libvoikko { namespace setup {
 
+DictionaryException::DictionaryException(const char * errorMessage) :
+	errorMessage(errorMessage) {
+}
+
+const char * DictionaryException::what() const throw() {
+	return errorMessage;
+}
 
 
 } }

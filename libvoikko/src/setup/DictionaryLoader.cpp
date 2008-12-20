@@ -17,9 +17,31 @@
  *********************************************************************************/
 
 #include "setup/DictionaryLoader.hpp"
+#include <string>
+
+using namespace std;
 
 namespace libvoikko { namespace setup {
 
+set<Dictionary> DictionaryLoader::findAllAvailable() {
+	return findAllAvailable(string());
+}
 
+
+set<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
+	set<Dictionary> dicts;
+	//TODO: unimplemented
+	return dicts;
+}
+
+Dictionary DictionaryLoader::load(const string & variant) throw(DictionaryException) {
+	return load(variant, string());
+}
+
+Dictionary DictionaryLoader::load(const string & variant, const string & path)
+		throw(DictionaryException) {
+	//TODO: unimplemented
+	return Dictionary(string(), string());
+}
 
 } }
