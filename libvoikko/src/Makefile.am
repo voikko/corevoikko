@@ -1,6 +1,8 @@
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = spellchecker/spell.cpp spellchecker/suggestions.cpp \
-                       utils/utils.cpp setup/setup.cpp \
+                       utils/utils.cpp \
+                       setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
+                       setup/DictionaryException.cpp \
                        hyphenator/hyphenator.cpp character/charset.cpp \
                        tokenizer/tokenizer.cpp sentence/sentence.cpp \
                        grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
@@ -8,7 +10,10 @@ libvoikko_la_SOURCES = spellchecker/spell.cpp spellchecker/suggestions.cpp \
 libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 9:0:8 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h
-noinst_HEADERS = utils/utils.hpp setup/setup.hpp character/charset.hpp \
+noinst_HEADERS = utils/utils.hpp \
+                 setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
+                 setup/DictionaryException.hpp \
+                 character/charset.hpp \
                  hyphenator/hyphenator.hpp voikko_defs.h porting.h \
                  spellchecker/spell.hpp spellchecker/suggestions.hpp \
                  grammar/cache.hpp grammar/checks.hpp grammar/error.hpp \
