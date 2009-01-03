@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -87,6 +87,10 @@ VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 			if (value) voikko_options.accept_unfinished_paragraphs_in_gc = 1;
 			else voikko_options.accept_unfinished_paragraphs_in_gc = 0;
 			return 1;
+		case VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS:
+			if (value) voikko_options.hyphenate_unknown_words = 1;
+			else voikko_options.hyphenate_unknown_words = 0;
+			return 1;
 	}
 	return 0;
 }
@@ -147,6 +151,7 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.accept_extra_hyphens = 0;
 	voikko_options.accept_missing_hyphens = 0;
 	voikko_options.accept_titles_in_gc = 0;
+	voikko_options.hyphenate_unknown_words = 1;
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.min_hyphenated_word_length = 2;
 	voikko_options.encoding = "UTF-8";

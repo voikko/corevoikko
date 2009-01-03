@@ -70,7 +70,7 @@ erinomaisuutta  e-rin-o-mai-suut-ta
 kansaneläke.    kan-san-e-lä-ke.
 kuorma-allas.   kuor-ma-al-las.
 
-[no_ugly_hyphenatio=0 ignore_dot=1 min_hyphenated_word_length=6]
+[no_ugly_hyphenation=0 ignore_dot=1 min_hyphenated_word_length=6]
 kuorma-allas.   kuor-ma-allas.
 talon.          talon.
 
@@ -86,3 +86,7 @@ pöytähienosto   pöy-tä-hienos-to
 kissa           kis!sa
 kuorma-auto     kuor!ma!-au!to
 jok'ikinen      jok!'i!ki!nen
+
+[hyphenate_unknown_words=0]
+koirra          koirra
+koira           koi-ra

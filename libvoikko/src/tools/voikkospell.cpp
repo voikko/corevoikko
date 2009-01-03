@@ -1,5 +1,5 @@
 /* Voikkospell: Testing tool for libvoikko
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -152,6 +152,10 @@ int main(int argc, char ** argv) {
 		}
 		else if (args == "-s") {
 			suggest = 1;
+		}
+		else {
+			cerr << "Unknown option " << args << endl;
+			return 1;
 		}
 	}
 	

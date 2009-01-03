@@ -1,5 +1,5 @@
 /* Voikkogc: Testing tool for libvoikko
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -159,18 +159,28 @@ int main(int argc, char ** argv) {
 		else if (strncmp(argv[i], "--split-sentences", 17) == 0) {
 			op = SPLIT_SENTENCES;
 		}
-		else if (strcmp(argv[i], "accept_titles=1") == 0)
+		else if (strcmp(argv[i], "accept_titles=1") == 0) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 1);
-		else if (strcmp(argv[i], "accept_titles=0") == 0)
+		}
+		else if (strcmp(argv[i], "accept_titles=0") == 0) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 0);
-		else if (strcmp(argv[i], "accept_unfinished_paragraphs=1") == 0)
+		}
+		else if (strcmp(argv[i], "accept_unfinished_paragraphs=1") == 0) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 1);
-		else if (strcmp(argv[i], "accept_unfinished_paragraphs=0") == 0)
+		}
+		else if (strcmp(argv[i], "accept_unfinished_paragraphs=0") == 0) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 0);
-		else if (strncmp(argv[i], "explanation_language=fi", 23) == 0)
+		}
+		else if (strncmp(argv[i], "explanation_language=fi", 23) == 0) {
 			explanation_language = "fi";
-		else if (strncmp(argv[i], "explanation_language=", 21) == 0)
+		}
+		else if (strncmp(argv[i], "explanation_language=", 21) == 0) {
 			explanation_language = "en";
+		}
+		else {
+			cerr << "Unknown option " << argv[i] << endl;
+			return 1;
+		}
 	}
 	
 	wchar_t * line = new wchar_t[MAX_PARAGRAPH_LENGTH + 1];

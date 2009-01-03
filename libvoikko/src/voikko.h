@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -129,6 +129,10 @@
  * paragraph. These may exist when text is still being written.
  * Default: false */
 #define VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC 14
+
+/* (Hyphenation only): Hyphenate unknown words.
+ * Default: true */
+#define VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS 15
 
 /* Integer options */
 

@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -44,6 +44,7 @@ typedef struct {
 	size_t min_hyphenated_word_length;
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
+	int hyphenate_unknown_words;
 	const char * encoding;
 	#ifdef HAVE_ICONV
 	iconv_t iconv_ucs4_utf8;

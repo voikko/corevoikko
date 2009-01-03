@@ -16,8 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
  
-/* Prototypes for GNU extensions of C library that need to be separately implemented
- * on systems that do not have them. */
+/* Macro definitions for helping portability. */
 
 #ifndef VOIKKO_PORTING_H
 #define VOIKKO_PORTING_H

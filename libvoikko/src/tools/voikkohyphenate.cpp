@@ -1,5 +1,5 @@
 /* Voikkohyphenate: Testing tool for libvoikko
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -93,6 +93,10 @@ int main(int argc, char ** argv) {
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
 		else if (strcmp(argv[i], "ignore_dot=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+		else if (strcmp(argv[i], "hyphenate_unknown_words=1") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 1);
+		else if (strcmp(argv[i], "hyphenate_unknown_words=0") == 0)
+			voikko_set_bool_option(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 0);
 		else if (strncmp(argv[i], "min_hyphenated_word_length=", 27) == 0) {
 			minhwlen = atoi(argv[i] + 27);
 			if (minhwlen < 2) minhwlen = 2;
@@ -108,6 +112,10 @@ int main(int argc, char ** argv) {
 				return 1;
 			}
 			mbtowc(&separator, argv[i] + 2, 1);
+		}
+		else {
+			cerr << "Unknown option " << argv[i] << endl;
+			return 1;
 		}
 	}
 	

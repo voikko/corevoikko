@@ -223,7 +223,7 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 	analysis_count = 0;
 	analysis_result = first_analysis_result();
 	
-	/** We may have to remove the trailing dot before hyphenation */
+	/* We may have to remove the trailing dot before hyphenation */
 	if (!analysis_result && voikko_options.ignore_dot && len > 1 &&
 	    word_utf8[utf8_len - 1] == '.') {
 		word_utf8[utf8_len - 1] = '\0';
@@ -234,7 +234,7 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 	}
 	else *dot_removed = 0;
 	
-	/** Iterate over all analyses and add results to all_results */
+	/* Iterate over all analyses and add results to all_results */
 	while (analysis_result) {
 		char * result = new char[len + 1];
 		if (result == 0) break;
@@ -246,17 +246,21 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 		analysis_result = next_analysis_result();
 	}
 	
-	/** If the word could not be parsed, assume that it does not contain any
-	    morpheme borders that we should know about (unless there is a hyphen,
-	    which tells us where the border is). If the entire word seems impossible
-	    to hyphenate, do not split it. */
+	/* If the word could not be parsed, assume that it does not contain any
+	   morpheme borders that we should know about (unless there is a hyphen,
+	   which tells us where the border is). If the entire word seems impossible
+	   to hyphenate, do not split it. */
 	if (analysis_count == 0) {
 		char * result = new char[len + 1];
 		if (result == 0) {
 			delete[] all_results;
 			return 0;
 		}
-		memset(result, ' ', len);
+		
+		// If unknown words are not allowed to be hyphenated, forbid hypenation
+		// at all positions.
+		memset(result, voikko_options.hyphenate_unknown_words ? ' ' : 'X', len);
+		
 		if (allow_rule_hyphenation(word, len)) {
 			for (i = 0; i < len; i++)
 				if (word[i] == L'-') result[i] = '=';

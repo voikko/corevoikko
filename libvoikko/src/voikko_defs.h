@@ -22,15 +22,11 @@
 #define VOIKKO_DEFS_H
 #include "voikko.h"
 #include <config.h>
-#include <stddef.h>
+#include <cstddef>
 #include <assert.h>
 #include "porting.h"
 
-#ifdef __cplusplus
-  #define VOIKKOLINKAGE extern "C"
-#else
-  #define VOIKKOLINKAGE
-#endif
+#define VOIKKOLINKAGE extern "C"
 
 /* Shared library support */
 #ifdef WIN32
