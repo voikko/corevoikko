@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include "grammar/cache.hpp"
 #include <cstdlib>
 #include <cstring>
@@ -65,18 +66,22 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, con
 	// Return a deep copy of cached error
 	memcpy(&e, c_error, sizeof(voikko_grammar_error));
 	if (!c_error->suggestions) return e;
+	
+	// Use C allocation for suggestions to maintain compatibility with some
+	// broken applications before libvoikko 1.5.
 	int sugg_count = 0;
 	for (char ** s = c_error->suggestions; *s; s++) {
 		sugg_count++;
 	}
-	e.suggestions = new char*[sugg_count + 1];
+	e.suggestions = (char **) malloc((sugg_count + 1) * sizeof(char *));
 	if (!e.suggestions) return e;
 	for (int i = 0; i < sugg_count; i++) {
-		e.suggestions[i] = new char[strlen(c_error->suggestions[i]) + 1];
+		e.suggestions[i] = (char *) malloc((strlen(c_error->suggestions[i]) + 1) * sizeof(char));
 		if (!e.suggestions[i]) return e;
 		strcpy(e.suggestions[i], c_error->suggestions[i]);
 	}
 	e.suggestions[sugg_count] = 0;
+	
 	return e;
 }
 

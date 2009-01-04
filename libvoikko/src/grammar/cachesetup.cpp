@@ -19,6 +19,7 @@
 #include "grammar/cachesetup.hpp"
 #include "grammar/error.hpp"
 #include "setup/setup.hpp"
+#include "utils/StringUtils.hpp"
 #include <cstring>
 #include <cstdlib>
 
@@ -46,7 +47,7 @@ void gc_clear_cache(int handle) {
 	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
 	while (entry) {
 		voikko_gc_cache_entry * next = entry->next_error;
-		voikko_free_suggest_cstr(entry->error.suggestions);
+		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
 		delete entry;
 		entry = next;
 	}

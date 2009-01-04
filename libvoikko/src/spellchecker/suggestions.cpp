@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include "spellchecker/suggestions.hpp"
@@ -576,6 +577,9 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
 		suggestions[j] = 0;
 	}
 	
+	// Convert to C allocation to maintain compatibility with some
+	// broken applications before libvoikko 1.5.
+	utils::StringUtils::convertCStringArrayToMalloc(suggestions);
 	return suggestions;
 }
 
@@ -589,11 +593,13 @@ VOIKKOEXPORT void voikko_free_suggest_ucs4(wchar_t ** suggest_result) {
 }
 
 VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result) {
+	// C deallocation is used here to maintain compatibility with some
+	// broken applications before libvoikko 1.5.
 	if (suggest_result) {
 		for (char ** p = suggest_result; *p; p++) {
-			delete[] *p;
+			free(*p);
 		}
-		delete[] suggest_result;
+		free(suggest_result);
 	}
 }
 

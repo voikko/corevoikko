@@ -1,3 +1,13 @@
+2009-01-04 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Return char strings and string arrays allocated with
+	  malloc() instead of new[]. This is needed to maintain
+	  compatibility with some (broken) applications that were
+	  written before libvoikko 1.5 and used free() to free these
+	  structures. Theoretically the same should be done for
+	  wchar_t interfaces, but since I know of no application that
+	  uses these and has similar bug, this will not be done.
+
 2009-01-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add option VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS.

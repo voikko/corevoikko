@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "hyphenator/hyphenator.hpp"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include "setup/setup.hpp"
 #include <wchar.h>
 #include <stdlib.h>
@@ -362,6 +363,9 @@ VOIKKOEXPORT char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 		if (!hyphenation) return 0;
 		memset(hyphenation, ' ', wlen);
 		hyphenation[wlen] = '\0';
+		// Convert to C allocation to maintain compatibility with some
+		// broken applications before libvoikko 1.5.
+		utils::StringUtils::convertCStringToMalloc(hyphenation);
 		return hyphenation;
 	}
 	
@@ -391,6 +395,9 @@ VOIKKOEXPORT char * voikko_hyphenate_ucs4(int handle, const wchar_t * word) {
 	delete[] hyphenations;
 	
 	EXIT_V
+	// Convert to C allocation to maintain compatibility with some
+	// broken applications before libvoikko 1.5.
+	utils::StringUtils::convertCStringToMalloc(hyphenation);
 	return hyphenation;
 }
 
@@ -407,7 +414,9 @@ VOIKKOEXPORT char * voikko_hyphenate_cstr(int handle, const char * word) {
 }
 
 VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result) {
-	delete[] hyphenate_result;
+	// C deallocation is used here to maintain compatibility with some
+	// broken applications before libvoikko 1.5.
+	free(hyphenate_result);
 }
 
 }
