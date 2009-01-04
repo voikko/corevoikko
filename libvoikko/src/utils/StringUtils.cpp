@@ -69,6 +69,7 @@ void StringUtils::convertCStringArrayToMalloc(char ** & stringArray) {
 		}
 		strcpy(newArray[i], stringArray[i]);
 	}
+	newArray[numberOfStrings] = 0;
 	
 	for (size_t i = 0; i < numberOfStrings; i++) {
 		delete[] stringArray[i];
