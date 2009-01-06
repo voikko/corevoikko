@@ -153,6 +153,13 @@ int main(int argc, char ** argv) {
 		else if (args == "-s") {
 			suggest = 1;
 		}
+		else if (args.find("-c") == 0) {
+			continue;
+		}
+		else if (args == "-p") {
+			i++;
+			continue;
+		}
 		else {
 			cerr << "Unknown option " << args << endl;
 			return 1;

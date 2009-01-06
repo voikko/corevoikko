@@ -177,6 +177,10 @@ int main(int argc, char ** argv) {
 		else if (strncmp(argv[i], "explanation_language=", 21) == 0) {
 			explanation_language = "en";
 		}
+		else if (strcmp(argv[i], "-p") == 0) {
+			i++;
+			continue;
+		}
 		else {
 			cerr << "Unknown option " << argv[i] << endl;
 			return 1;

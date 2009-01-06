@@ -113,6 +113,10 @@ int main(int argc, char ** argv) {
 			}
 			mbtowc(&separator, argv[i] + 2, 1);
 		}
+		else if (strcmp(argv[i], "-p") == 0) {
+			i++;
+			continue;
+		}
 		else {
 			cerr << "Unknown option " << argv[i] << endl;
 			return 1;
