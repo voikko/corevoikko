@@ -1401,6 +1401,9 @@ merserointi # merseroida
 metkasti # metka
 metastasointi # metastasoida
 molaarisuus # molaarinen
+mulahdus # mulahtaa
+murrostus # murrostaa
+nahoitus # nahoittaa
 narkkaus # narkata
 natriumsilikaatti # silikaatti
 nyansointi # nyansoida
