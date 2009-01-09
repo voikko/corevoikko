@@ -148,6 +148,8 @@ höyhensarjalainen
 Ilma
 ilmentymä
 Ilta
+imeväinen
+imeväisikä
 Indonesia
 innoittua
 institutionalisoitua
@@ -268,6 +270,7 @@ kolhiutuma
 Koppelo
 koroitus
 korotus
+kosimakirje
 Koski
 Kotiranta
 Kotka
@@ -546,6 +549,7 @@ pysyttäytyä
 pysähdys
 Päivä
 päällekirjoitus
+päästö
 pöhöttymä
 raakalainen
 Raitio
@@ -682,6 +686,7 @@ tolstoilainen
 toteuma
 toteutuma
 trotskilainen
+Trulli
 Tsekki
 Tšekki
 tuhkatiheä

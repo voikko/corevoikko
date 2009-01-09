@@ -1283,6 +1283,7 @@ subrule yhdyssanataulukko ($eka, $toka):
       <<"koko">,      <"nainen">>,      # Koko+nais+valtainen.
       <<"koli">,      <"brie">>,        # Koli+brie+n.
       <<"komi">,      <"teko">>,        # Komi+teoille.
+      <<"koris">,     <"tapa", "tavis", "teetto", "tele", "teli", "tie", "tupa">>,
       <<"korni">,     <"lovi">>,        # Korni+lovi(n).
       <<"korsi">,     <"kaksi", "kalla">>,
       <<"kuli">,      <"kovis">>,       # Kuli+kovis+ta.
@@ -1516,7 +1517,7 @@ subrule yhdyssanataulukko2 ($eka, $toka, $kolmas):
       <<"saali">,        <"inen">,    <"kone", "koni">>,
       <<"silla">,        <"n">,       <"pää">>,
       <<"suoda">,        <"ma">,      <"lainen", "laismainen", "laki">>,  # Suo+ma+lainen, suo+ma+laista (laki).
-      <<"suu">,          <"n">,       <"taaja">>,
+      <<"suu">,          <"n">,       <"taaja", "taus">>,
       <<"to">,           <"inen">,    <"tuki">>,     # Heit+to+is+tuin. johdin_tO_liitto + johdin_inen + tuki.
       <<"tukka">,        <"nuotta">,  <"silla">>,
       <<"ulko">,         <"ravinto">, <"laaki">>,    # Ulko+ravinto+laakin.

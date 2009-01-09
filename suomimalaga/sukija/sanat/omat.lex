@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -588,6 +588,33 @@
 
 [perusmuoto: "tuonaikainen", alku: "tuonaikai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "tuonaikuinen", alku: "tuonaikui", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "Akropolites", alku: "Akropolite", luokka: sukunimi, jatko: <vastaus>, äs: a];
+
+[perusmuoto: "Lagerspetz", alku: "Lagerspetz", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Poirot", alku: "Poirot", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Expert", alku: "Expert", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Germania", alku: "Germani", luokka: paikannimi, jatko: <apila>, äs: a];
+[perusmuoto: "Elbe", alku: "Elbe", luokka: paikannimi, jatko: <nalle>, äs: ä];
+[perusmuoto: "Nautilus", alku: "Nautilu", luokka: nimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "vokki", alku: "vok", luokka: nimisana, jatko: <takki>, äs: a];
+[perusmuoto: "Rocher", alku: "Rocher", luokka: sukunimi, jatko: <edam>, äs: a];
+[perusmuoto: "Tristan", alku: "Tristan", luokka: etunimi, jatko: <edam>, äs: a];
+[perusmuoto: "grub", alku: "grub", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Teutoburg", alku: "Teutoburg", luokka: paikannimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Arminius", alku: "Arminiu", luokka: nimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Germanopolis", alku: "Germanopoli", luokka: paikannimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "fenni", alku: "fenn", luokka: nimisana, jatko: <risti>, äs: ä];
+#[perusmuoto: "Myy", alku: "Myy", luokka: nimi, jatko: <puu>, äs: ä];
+[perusmuoto: "Bergerac", alku: "Bergerac", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Münchhausen", alku: "Münchhausen", luokka: sukunimi, jatko: <edam>, äs: a];
+[perusmuoto: "Kaitaro", alku: "Kaitaro", luokka: sukunimi, jatko: <autio>, äs: a];
+[perusmuoto: "Saleva", alku: "Salev", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Gulliver", alku: "Gulliver", luokka: etunimi, jatko: <edam>, äs: a];
+[perusmuoto: "Elia", alku: "Eli", luokka: etunimi, jatko: <apila>, äs: a];
+[perusmuoto: "regain", alku: "regain", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Acer", alku: "Acer", luokka: nimi, jatko: <edam>, äs: a];
+[perusmuoto: "Nivea", alku: "Nive", luokka: nimi, jatko: <apila>, äs: a];
+[perusmuoto: "Krups", alku: "Krups", luokka: nimi, jatko: <kalsium>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

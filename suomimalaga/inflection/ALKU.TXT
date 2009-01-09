@@ -115,7 +115,8 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"kukkaisa", "luisti", "mani", "nasu", "paikko", "poli", "tisu">) then
+  if ($tietue.perusmuoto in <"kukkaisa", "luisti", "mani", "nasu", "paikko",
+                             "poli", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
