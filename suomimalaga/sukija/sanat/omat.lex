@@ -615,6 +615,16 @@
 [perusmuoto: "Acer", alku: "Acer", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Nivea", alku: "Nive", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Krups", alku: "Krups", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "couscous", alku: "couscous", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "alieni", alku: "alien", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "Cussler", alku: "Cussler", luokka: sukunimi, jatko: <edam>, äs: a];
+[perusmuoto: "Cook", alku: "Cook", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Regina", alku: "Regin", luokka: etunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Strugatski", alku: "Strugatsk", luokka: sukunimi, jatko: <risti>, äs: a];
+[perusmuoto: "Ohlson", alku: "Ohlson", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Anders", alku: "Anders", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Linpus", alku: "Linpus", luokka: nimi, jatko: <kalsium>, äs: a];
+
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

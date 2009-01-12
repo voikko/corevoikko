@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -808,6 +808,8 @@ define @jatko_y3 := <liitesana, loppu>;
                  äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
 [alku: "lee",    luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "lehe",   luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "lemme",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
 [alku: "lette",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -826,6 +828,8 @@ define @jatko_y3 := <liitesana, loppu>;
                  äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
 [alku: "nee",    luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "nehe",   luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "nemme",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
 [alku: "nette",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -844,6 +848,8 @@ define @jatko_y3 := <liitesana, loppu>;
                  äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
 [alku: "ree",    luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "rehe",   luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "remme",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
 [alku: "rette",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -862,6 +868,8 @@ define @jatko_y3 := <liitesana, loppu>;
                  äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
 [alku: "see",    luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+[alku: "sehe",   luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "semme",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
 [alku: "sette",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -903,6 +911,24 @@ define @jatko_y3 := <liitesana, loppu>;
 [alku: "täneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
 
+# Vanhoja h:llisia muotoja.
+#
+[alku: "ttanehen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: a, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "ttänehen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "tanehen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: a, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "tänehen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "ttanehe",  luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: a, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "ttänehe",  luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "tanehe",   luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: a, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
+[alku: "tänehe",   luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
+                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>, tiedot: <murre>];
 
 
 # Teonsanojen käskytavan (punokoon) henkilöpäätteet.
