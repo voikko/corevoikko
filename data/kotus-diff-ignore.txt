@@ -1468,11 +1468,13 @@ sopulointi # sopuloida
 spastisuus # spastinen
 spiikkaus # spiikata
 splittaus # splitata
+sponssaus # sponssata
 sporttihenkinen # sportti
 sporttimalli # sportti
 sporttimallinen # sportti
 sukkikset # sukkis
 sumplaus # sumplata
+synkopointi # synkopoida
 sämpläys # sämplätä
 söpöily # söpöillä
 tangat # tanga
