@@ -3834,7 +3834,8 @@ subrule taivutuskaava ($tietue, $taivutus):
 
   # Paikannimien jälkiliitteet
   if ($tietue.perusmuoto in <"katu", "kuja", "tie", "saari", "lahti", "niemi",
-                             "vuori", "vaara", "joki", "kylä", "salo">) then
+                             "vuori", "vaara", "joki", "kylä", "salo", "mäki",
+                             "laakso", "suo", "pelto", "puro", "ranta">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
 
