@@ -247,6 +247,9 @@ presidentin-
 matka-aerokissa # yhdysmerkki etuliitteen edessä
 !matkaaerokissa
 tiedotus-
+!Jyväskyl-paikka
+Jyväskylä-paikka
+Moilanen-Savolainen
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri

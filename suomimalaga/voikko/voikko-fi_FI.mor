@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                 2006 - 2008 Harri Pitkänen (hatapitk@iki.fi)
+#                 2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -281,8 +281,10 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  result $res, rules erisnimen_sijapääte,
-               yhdysmerkki_erisnimen_jälkeen;
+  if tavuviiva in $oikea.jatko or loppu in $oikea.jatko then
+    result $res, rules yhdysmerkki_erisnimen_jälkeen;
+  end;
+  result $res, rules erisnimen_sijapääte;
 end;
 
 
