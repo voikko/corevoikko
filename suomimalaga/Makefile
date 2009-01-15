@@ -11,6 +11,9 @@ VANHAHKOT_MUODOT=yes
 VANHAT_MUODOT=no
 VOIKKO_DEBUG=no
 
+# Include user's configuration
+-include config.mak
+
 # Suomi-malaga version
 SM_VERSION=1.2
 SM_BUILDDATE=$(shell date -R -u)
