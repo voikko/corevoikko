@@ -131,10 +131,16 @@ int main(int argc, char ** argv) {
 	setlocale(LC_ALL, "");
 	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
 		size_t lineLen = wcslen(line);
-		if (lineLen == 0) continue;
+		if (lineLen == 0) {
+			continue;
+		}
 		if (line[lineLen - 1] == L'\n') {
 			line[lineLen - 1] = L'\0';
 			lineLen--;
+		}
+		if (lineLen > LIBVOIKKO_MAX_WORD_CHARS) {
+			cerr << "E: Too long word" << endl;
+			continue;
 		}
 		hyphenate_word(handle, line, lineLen, separator);
 	}

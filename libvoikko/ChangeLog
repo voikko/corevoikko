@@ -1,3 +1,8 @@
+2009-01-15 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Print more informative error message from voikkospell and
+	  voikkohyphenate if too long is encountered.
+
 2009-01-04 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Return char strings and string arrays allocated with
