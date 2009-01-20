@@ -622,6 +622,36 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <seuranto_ine>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <keinonto_in>, äs: a];
 
+# rokokoo (Kotuksen taivutusluokka 18 "maa") {{{1
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <omanto_n>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <osanto_tA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <olento_nA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <tulento_ksi>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisäolento_ssA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisätulento_seen>, tiedot: <ei_voikko>];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <vajanto_ttA>, äs: a];
+
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <nimentö_t>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <omanto_iT>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <osanto_itA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <olento_inA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <tulento_iksi>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <sisäolento_issA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <sisäeronto_istA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <sisätulento_ihin>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <ulko_olento_illA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <ulkoeronto_iltA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <ulkotulento_ille>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <vajanto_ittA>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <seuranto_ine>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <keinonto_in>, äs: a];
+
 # Vierasperäisiä sanoja {{{1
 #
 # Näitä ei toistaiseksi voi taivuttaa Voikossa oikein automaattisten
