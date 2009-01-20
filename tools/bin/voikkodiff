@@ -8,10 +8,10 @@ base=base-correct.txt
 current=current-correct.txt
 asetustiedosto=voikko_dev_prefs.py
 voikkotest_dir="."
-diffviewcmd='zdiff -u0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
+diffviewcmd='zdiff -U 0 "%s" "%s" | grep ^.C: 2>/dev/null | less'
 
-# Etsitään voikkotest-hakemisto sekä ${asetustiedosto} ja asetetaan sen avulla
-# muuttujat voikkotest_dir ja diffviewcmd.
+# Etsitään voikkotest-hakemisto sekä ${asetustiedosto} ja asetetaan
+# tämän avulla muuttujat voikkotest_dir ja diffviewcmd.
 IFS=:
 for hakemisto in $PYTHONPATH; do
 	eval $(grep ^voikkotest_dir= "$hakemisto/$asetustiedosto" 2>/dev/null)
@@ -27,6 +27,8 @@ if [ ! -f "$current" ]; then
 fi
 
 # Ja vertaillaan
-uusi_base=$(find -maxdepth 1 -type f -name "${current}-r*" -printf "%f\n" | sort | tail -n1)
+uusi_base=$(find -maxdepth 1 -type f -name "${current}-r*" \
+	-printf "%f\n" | sort | tail -n1)
 [ "$uusi_base" ] && base="$uusi_base"
+
 eval $(printf "$diffviewcmd\n" "$base" "$current")
