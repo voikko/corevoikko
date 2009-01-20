@@ -664,7 +664,7 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
-# Cowboy [kauboi] {{{2
+# cowboy [kauboi] {{{2
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <omanto_n>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppp=ppp"];
@@ -828,7 +828,7 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
-# Playboy [pleiboi] {{{2
+# playboy [pleiboi] {{{2
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <omanto_n>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=pppp=ppp"];
