@@ -122,6 +122,7 @@ clean:
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
 	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) voikko/main.lex voikko/voikko-fi_FI.pro
 	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
+	rm -f TAGS
 
 # Rules for creating the preprocessed source package
 
@@ -193,3 +194,9 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukah
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) sukija/generate_lex.py
 	-@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex
+
+TAGS: $(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
+		$(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX))
+	etags --lang=none --output=$@ \
+		--regex='/[ \t]*\[.*\<perusmuoto:[ \t]*"\([^"]+\)"/\1/' \
+		-- $^

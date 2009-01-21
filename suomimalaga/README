@@ -51,6 +51,8 @@ Supported Make targets
   Updates the XML vocabulary from the nightly snapshot at
   joukahainen.puimula.org. This target requires wget to
   be available.
+- TAGS
+  Builds an Emacs tag table file from the vocabulary database.
 
 
 Variables for tuning the build process
