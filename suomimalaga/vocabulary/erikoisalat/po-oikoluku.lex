@@ -76,3 +76,6 @@
 [perusmuoto: "variable", alku: "variable", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "Writer", alku: "Writer", luokka: nimi, jatko: <kalsium>, äs: a];
 
+# Erinäisiä normaaliin sanastoon sopimattomia nimiä
+[perusmuoto: "Evolution", alku: "Evolution", luokka: nimi, jatko: <kalsium>, äs: a];
+

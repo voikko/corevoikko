@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2009 Harri Pitkänen (hatapitk@iki.fi)
 # Web interface for Finnish linguistic tools based on Voikko
 
 # This program is free software; you can redistribute it and/or modify
@@ -311,6 +311,23 @@ def _highlightPofilter(req, file):
 			_write(req, _escape_html(line))
 		line = unicode(file.readline(), "UTF-8")
 
+PO_FILE_TYPES = [
+	(u"gnome", u"Gnome (tai muu kuin jokin alla olevista)"),
+	(u"kde", u"KDE"),
+	(u"mozilla", u"Mozilla"),
+	(u"openoffice", u"OpenOffice.org")
+]
+
+def _poFileTypeCombo(req, potype):
+	"""Writes the file type combo box to the request"""
+	_write(req, u'<select name="potype">\n')
+	for fileType in PO_FILE_TYPES:
+		_write(req, u'<option value="' + fileType[0] + '"')
+		if fileType[0] == potype:
+			_write(req, u' selected="selected"')
+		_write(req, u'>' + fileType[1] + u"</option>\n")
+	_write(req, u'</select>\n')
+
 def pospell(req, pofile = None, potype = "gnome"):
 	req.content_type = "text/html; charset=UTF-8"
 	req.send_http_header()
@@ -346,18 +363,11 @@ def pospell(req, pofile = None, potype = "gnome"):
  <form enctype="multipart/form-data" method="post" action="">
  <p>Oikoluettava po-tiedosto: <input type="file" name="pofile" /><br />
  Sovelluksen tyyppi:
- <select name="potype">
-  <option value="gnome" selected="selected">Gnome (tai muu kuin jokin alla olevista)</option>
-  <option value="kde">KDE</option>
-  <option value="mozilla">Mozilla</option>
-  <option value="openoffice">OpenOffice.org</option>
- </select>
- <input type="submit" value="Oikolue!" /></p>
- </form>
  ''' % MAX_PO_SIZE)
+	_poFileTypeCombo(req, potype)
+	_write(req, u'<input type="submit" value="Oikolue!" /></p></form>\n')
 	
-	
-	if pofile != None:
+	if pofile != None and hasattr(pofile, "filename"):
 		if not potype in ["gnome", "kde", "mozilla", "openoffice"]:
 			potype = "gnome"
 		_write(req, (u'<p>Alla po-tiedoston <kbd>%s</kbd> (tyyppi %s) oikoluvun tulokset. ' + \
