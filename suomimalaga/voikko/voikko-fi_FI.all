@@ -3840,7 +3840,7 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
   # Aluetta tarkentavat etuliitteet
-  if ($tietue.perusmuoto in <"etelä", "itä", "kaakko", "keski", "koillis", "lounais",
+  if ($tietue.perusmuoto in <"etelä", "itä", "kaakkois", "keski", "koillis", "lounais",
                              "luoteis", "länsi", "manner", "pohjois", "suur", "sydän">) then
     $tietue :=+ [aluetta_tarkentava_etuliite: yes];
   end;
