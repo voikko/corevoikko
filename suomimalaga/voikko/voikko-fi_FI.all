@@ -3839,6 +3839,12 @@ subrule taivutuskaava ($tietue, $taivutus):
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
 
+  # Aluetta tarkentavat etuliitteet
+  if ($tietue.perusmuoto in <"etelä", "itä", "kaakko", "keski", "koillis", "lounais",
+                             "luoteis", "länsi", "manner", "pohjois", "suur", "sydän">) then
+    $tietue :=+ [aluetta_tarkentava_etuliite: yes];
+  end;
+
   # Inen-loppuiset laatusanat
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];

@@ -10,6 +10,8 @@ ras’an	raa’an	!raa'an
 kuorma-audo	kuorma-auto	!kuorma‐auto
 kuorma‐audo	kuorma‐auto	!kuorma-auto
 23.24	23,24
+etelä-afrikka	Etelä-Afrikka
+natsi-saksa	natsi-Saksa
 
 [ignore_dot=1]
 koirra.	koira.	!koira
@@ -22,4 +24,3 @@ h0usut	housut
 
 [ocr_suggestions=1 ignore_numbers=1]
 h0usut	!housut
-

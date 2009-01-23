@@ -1760,7 +1760,13 @@ subrule tulostus_voikko ($tietue):
                          nimi_laatusana, asemosana, suhdesana, lukusanan_jälkiliite, etuliite> or
                          ($t.luokka = lukusana and not $t.alaluokka in <numeromerkki, pilkku>) then
       $tuloste :=+ "=";
-      foreach $i in length($t.alku):
+      if ($t.aluetta_tarkentava_etuliite = yes and $tlen + 1 greater $tind and
+          $tietue.($tind+1).luokka = tavuviiva and $tietue.($tind+2).luokka = paikannimi) then
+        $tuloste :=+ "i";
+      else
+        $tuloste :=+ "p";
+      end;
+      foreach $i in length($t.alku) - 1:
         $tuloste :=+ "p";
       end;
     elseif $t.luokka in <etunimi, sukunimi, nimi, paikannimi> then
