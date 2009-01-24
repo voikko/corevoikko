@@ -22,6 +22,8 @@
 #include "setup/Dictionary.hpp"
 #include "setup/DictionaryException.hpp"
 #include <set>
+#include <map>
+#include <list>
 
 namespace libvoikko { namespace setup {
 
@@ -53,6 +55,12 @@ class DictionaryLoader {
 	static Dictionary load(const std::string & variant, const std::string & path)
 	       throw(DictionaryException);
 
+	private:
+	static std::map<std::string, std::string> getVariantsFromPath(const std::string & path);
+	
+	static bool isValid(std::string & path);
+	
+	static std::list<std::string> getDefaultLocations();
 };
 
 } }
