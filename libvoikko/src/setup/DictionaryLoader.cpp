@@ -19,21 +19,42 @@
 #include "setup/DictionaryLoader.hpp"
 #include "config.h"
 #include <string>
+#include <fstream>
 #include <cstdlib>
 #include <pwd.h>
+#include <dirent.h>
+
+#define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
+#define VOIKKO_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: 1"
+#ifdef WIN32
+# define VOIKKO_KEY                   "SOFTWARE\\Voikko"
+# define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
+#endif
 
 using namespace std;
 
 namespace libvoikko { namespace setup {
 
-set<Dictionary> DictionaryLoader::findAllAvailable() {
+list<Dictionary> DictionaryLoader::findAllAvailable() {
 	return findAllAvailable(string());
 }
 
 
-set<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
-	set<Dictionary> dicts;
-	//TODO: unimplemented
+list<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
+	list<string> locations = getDefaultLocations();
+	if (!path.empty()) {
+		locations.push_front(path);
+	}
+	
+	map<string, string> dictMap;
+	for (list<string>::iterator i = locations.begin(); i != locations.end(); i++) {
+		addVariantsFromPath(*i, dictMap);
+	}
+	
+	list<Dictionary> dicts;
+	for (map< string, string >::iterator i = dictMap.begin(); i != dictMap.end(); i++) {
+		dicts.push_back(Dictionary(i->second, i->first));
+	}
 	return dicts;
 }
 
@@ -47,15 +68,42 @@ Dictionary DictionaryLoader::load(const string & variant, const string & path)
 	return Dictionary(string(), string());
 }
 
-map<string, string> DictionaryLoader::getVariantsFromPath(const string & path) {
-	//TODO: unimplemented
-	map<string, string> variants;
-	return variants;
+void DictionaryLoader::addVariantsFromPath(const string & path, map<string, string> & variants) {
+	DIR * dp = opendir(path.c_str());
+	if (!dp) {
+		return;
+	}
+	while (dirent * dirp = readdir(dp)) {
+		string dirName(dirp->d_name);
+		if (dirName.find("mor_") != 0) {
+			continue;
+		}
+		string variantName = dirName.substr(4);
+		if (variantName.empty() || variants.find(variantName) != variants.end()) {
+			continue;
+		}
+		string fullDirName(path);
+		fullDirName.append("/");
+		fullDirName.append(dirName);
+		if (isValid(fullDirName)) {
+			variants[variantName] = fullDirName;
+		}
+	}
 }
 
-bool DictionaryLoader::isValid(std::string & path) {
-	//TODO: unimplemented
-	return false;
+bool DictionaryLoader::isValid(const string & path) {
+	string fileName(path);
+	fileName.append("/");
+	fileName.append(VOIKKO_DICTIONARY_FILE);
+	
+	string line;
+	ifstream file(fileName.c_str(), ifstream::in);
+	if (file.good()) {
+		getline(file, line);
+	}
+	file.close();
+	
+	return line.compare(VOIKKO_DICTIONARY_VERSION_KEY) == 0;
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {

@@ -21,7 +21,6 @@
 
 #include "setup/Dictionary.hpp"
 #include "setup/DictionaryException.hpp"
-#include <set>
 #include <map>
 #include <list>
 
@@ -34,13 +33,13 @@ class DictionaryLoader {
 	 * Find available dictionaries from default locations.
 	 * @return a set of unitialized dictionaries
 	 */
-	static std::set<Dictionary> findAllAvailable();
+	static std::list<Dictionary> findAllAvailable();
 	
 	/**
 	 * Find available dictionaries from given path and default locations.
 	 * @return a set of unitialized dictionaries
 	 */
-	static std::set<Dictionary> findAllAvailable(const std::string & path);
+	static std::list<Dictionary> findAllAvailable(const std::string & path);
 	
 	/**
 	 * Load dictionary from default locations.
@@ -56,9 +55,10 @@ class DictionaryLoader {
 	       throw(DictionaryException);
 
 	private:
-	static std::map<std::string, std::string> getVariantsFromPath(const std::string & path);
+	static void addVariantsFromPath(const std::string & path,
+	       std::map<std::string, std::string> & variants);
 	
-	static bool isValid(std::string & path);
+	static bool isValid(const std::string & path);
 	
 	static std::list<std::string> getDefaultLocations();
 };

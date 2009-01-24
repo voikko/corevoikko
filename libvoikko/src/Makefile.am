@@ -2,7 +2,7 @@ lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = spellchecker/spell.cpp spellchecker/suggestions.cpp \
                        utils/utils.cpp utils/StringUtils.cpp \
                        setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
-                       setup/DictionaryException.cpp \
+                       setup/DictionaryException.cpp setup/interface.cpp \
                        hyphenator/hyphenator.cpp character/charset.cpp \
                        tokenizer/tokenizer.cpp sentence/sentence.cpp \
                        grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \

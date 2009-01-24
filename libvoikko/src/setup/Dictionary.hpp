@@ -25,15 +25,17 @@ namespace libvoikko { namespace setup {
 
 class Dictionary {
 
+	friend bool operator<(const Dictionary & d1, const Dictionary & d2);
+
 	private:
 	const std::string morPath;
 	const std::string variant;
 
 	public:
 	Dictionary(const std::string & morPath, const std::string & variant);
-	std::string getMorPath();
-	std::string getVariant();
-
+	Dictionary(const Dictionary & dictionary);
+	std::string getMorPath() const;
+	std::string getVariant() const;
 };
 
 } }

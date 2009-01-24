@@ -25,12 +25,21 @@ Dictionary::Dictionary(const std::string & morPath, const std::string & variant)
 	variant(variant) {
 }
 
-std::string Dictionary::getMorPath() {
+Dictionary::Dictionary(const Dictionary & dictionary) :
+	morPath(dictionary.morPath),
+	variant(dictionary.variant) {
+}
+
+std::string Dictionary::getMorPath() const {
 	return morPath;
 }
 
-std::string Dictionary::getVariant() {
+std::string Dictionary::getVariant() const {
 	return variant;
+}
+
+bool operator<(const Dictionary & d1, const Dictionary & d2) {
+	return d1.variant < d2.variant;
 }
 
 } }

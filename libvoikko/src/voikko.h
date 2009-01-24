@@ -419,6 +419,19 @@ voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * tex
  */
 const char * voikko_error_message_cstr(int error_code, const char * language);
 
+/**
+ * A type representing a dictionary
+ */
+struct voikko_dict;
+
+voikko_dict ** voikko_list_dicts(const char * path);
+
+void voikko_free_dicts(voikko_dict ** dicts);
+
+const char * voikko_dict_variant(const voikko_dict * dict);
+
+const char * voikko_dict_description(const voikko_dict * dict);
+
 END_C_DECLS
 #endif
 
