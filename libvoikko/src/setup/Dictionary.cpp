@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,24 +18,54 @@
 
 #include "setup/Dictionary.hpp"
 
+using namespace std;
+
 namespace libvoikko { namespace setup {
 
-Dictionary::Dictionary(const std::string & morPath, const std::string & variant) :
+Dictionary::Dictionary() :
+	morPath(),
+	variant(),
+	description(),
+	isDefaultDict(false) {
+}
+
+Dictionary::Dictionary(const string & morPath, const string & variant,
+                       const string & description) :
 	morPath(morPath),
-	variant(variant) {
+	variant(variant),
+	description(description),
+	isDefaultDict(false) {
 }
 
 Dictionary::Dictionary(const Dictionary & dictionary) :
 	morPath(dictionary.morPath),
-	variant(dictionary.variant) {
+	variant(dictionary.variant),
+	description(dictionary.description),
+	isDefaultDict(dictionary.isDefaultDict) {
 }
 
-std::string Dictionary::getMorPath() const {
+string Dictionary::getMorPath() const {
 	return morPath;
 }
 
-std::string Dictionary::getVariant() const {
+string Dictionary::getVariant() const {
 	return variant;
+}
+
+string Dictionary::getDescription() const {
+	return description;
+}
+
+bool Dictionary::isValid() const {
+	return !variant.empty();
+}
+
+bool Dictionary::isDefault() const {
+	return isDefaultDict;
+}
+
+void Dictionary::setDefault(bool isDefault) {
+	this->isDefaultDict = isDefault;
 }
 
 bool operator<(const Dictionary & d1, const Dictionary & d2) {

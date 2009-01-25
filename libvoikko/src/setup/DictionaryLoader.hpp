@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -55,12 +55,31 @@ class DictionaryLoader {
 	       throw(DictionaryException);
 
 	private:
+	/**
+	 * Add dictionary variants from a directory path to a map
+	 * "variant name" -> "dictionary".
+	 * If a dictionary already exists in the map, it will not be replaced.
+	 */
 	static void addVariantsFromPath(const std::string & path,
-	       std::map<std::string, std::string> & variants);
+	       std::map<std::string, Dictionary> & variants);
 	
-	static bool isValid(const std::string & path);
+	/**
+	 * Create a dictionary object from a path to a morphology location. If the
+	 * location does not contain a valid dictionary, the method retuns an invalid
+	 * dictionary.
+	 */
+	static Dictionary dictionaryFromPath(const std::string & path);
 	
+	/**
+	 * Get a list of default dictionary locations. The entries are listed in
+	 * decreasing priority order.
+	 */
 	static std::list<std::string> getDefaultLocations();
+	
+	/**
+	 * Returns true if the given variant map contains a default dictionary.
+	 */
+	static bool hasDefault(std::map<std::string, Dictionary> & variants);
 };
 
 } }

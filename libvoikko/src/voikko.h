@@ -424,12 +424,30 @@ const char * voikko_error_message_cstr(int error_code, const char * language);
  */
 struct voikko_dict;
 
+/**
+ * Get a list of available dictionaries.
+ * @param path path to a directory from which dictionary files should be searched
+ *        first before looking into the standard dictionary locations.
+ * @return A pointer to a null terminated array of dictionary entries.
+ */
 voikko_dict ** voikko_list_dicts(const char * path);
 
+/**
+ * Free the memory allocated for dictionary list.
+ * @param dicts A list of available dictionaries obtained with voikko_list_dicts
+ */
 void voikko_free_dicts(voikko_dict ** dicts);
 
+/**
+ * Get the variant identifier for a dictionary.
+ * @return The variant identifier for given dictionary.
+ */
 const char * voikko_dict_variant(const voikko_dict * dict);
 
+/**
+ * Get the human readable description for a dictionary.
+ * @return The description for given dictionary.
+ */
 const char * voikko_dict_description(const voikko_dict * dict);
 
 END_C_DECLS

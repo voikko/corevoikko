@@ -46,14 +46,22 @@ list<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
 		locations.push_front(path);
 	}
 	
-	map<string, string> dictMap;
+	map<string, Dictionary> dictMap;
 	for (list<string>::iterator i = locations.begin(); i != locations.end(); i++) {
 		addVariantsFromPath(*i, dictMap);
 	}
 	
 	list<Dictionary> dicts;
-	for (map< string, string >::iterator i = dictMap.begin(); i != dictMap.end(); i++) {
-		dicts.push_back(Dictionary(i->second, i->first));
+	for (map< string, Dictionary >::iterator i = dictMap.begin(); i != dictMap.end(); i++) {
+		if (i->second.isDefault()) {
+			dicts.push_front(i->second);
+		}
+		else if (i->first == "standard" && !hasDefault(dictMap)) {
+			dicts.push_front(i->second);
+		}
+		else {
+			dicts.push_back(i->second);
+		}
 	}
 	return dicts;
 }
@@ -65,33 +73,43 @@ Dictionary DictionaryLoader::load(const string & variant) throw(DictionaryExcept
 Dictionary DictionaryLoader::load(const string & variant, const string & path)
 		throw(DictionaryException) {
 	//TODO: unimplemented
-	return Dictionary(string(), string());
+	return Dictionary(string(), string(), string());
 }
 
-void DictionaryLoader::addVariantsFromPath(const string & path, map<string, string> & variants) {
+void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
 	DIR * dp = opendir(path.c_str());
 	if (!dp) {
 		return;
 	}
 	while (dirent * dirp = readdir(dp)) {
 		string dirName(dirp->d_name);
-		if (dirName.find("mor_") != 0) {
+		if (dirName.find("mor-") != 0) {
 			continue;
 		}
 		string variantName = dirName.substr(4);
-		if (variantName.empty() || variants.find(variantName) != variants.end()) {
+		if (variantName.empty()) {
 			continue;
 		}
 		string fullDirName(path);
 		fullDirName.append("/");
 		fullDirName.append(dirName);
-		if (isValid(fullDirName)) {
-			variants[variantName] = fullDirName;
+		Dictionary dict = dictionaryFromPath(fullDirName);
+		if (variantName == "default" && !hasDefault(variants)) {
+			dict.setDefault(true);
+		}
+		if (dict.isValid()) {
+			if (variants.find(dict.getVariant()) == variants.end()) {
+				variants[dict.getVariant()] = dict;
+			}
+			else if (dict.isDefault()) {
+				variants[dict.getVariant()].setDefault(true);
+			}
 		}
 	}
+	closedir(dp);
 }
 
-bool DictionaryLoader::isValid(const string & path) {
+Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	string fileName(path);
 	fileName.append("/");
 	fileName.append(VOIKKO_DICTIONARY_FILE);
@@ -101,9 +119,25 @@ bool DictionaryLoader::isValid(const string & path) {
 	if (file.good()) {
 		getline(file, line);
 	}
-	file.close();
+	if (line.compare(VOIKKO_DICTIONARY_VERSION_KEY) != 0) {
+		// Not a valid dictionary for this version of libvoikko
+		file.close();
+		return Dictionary();
+	}
 	
-	return line.compare(VOIKKO_DICTIONARY_VERSION_KEY) == 0;
+	string variant;
+	string description;
+	while (file.good()) {
+		getline(file, line);
+		if (line.find("info: Language-Variant: ") == 0) {
+			variant = line.substr(24);
+		}
+		else if (line.find("info: Description: ") == 0) {
+			description = line.substr(19);
+		}
+	}
+	file.close();
+	return Dictionary(path, variant, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {
@@ -132,7 +166,7 @@ list<string> DictionaryLoader::getDefaultLocations() {
 	}
 	
 	/* /etc on the same systems where getpwuid_r is available */
-	locations.push_back("/etc");
+	locations.push_back("/etc/voikko");
 	#endif
 	
 	#ifdef WIN32
@@ -176,6 +210,15 @@ list<string> DictionaryLoader::getDefaultLocations() {
 	locations.push_back(DICTIONARY_PATH);
 	
 	return locations;
+}
+
+bool DictionaryLoader::hasDefault(map<string, Dictionary> & variants) {
+	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); i++) {
+		if (i->second.isDefault()) {
+			return true;
+		}
+	}
+	return false;
 }
 
 } }

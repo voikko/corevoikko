@@ -28,14 +28,22 @@ class Dictionary {
 	friend bool operator<(const Dictionary & d1, const Dictionary & d2);
 
 	private:
-	const std::string morPath;
-	const std::string variant;
+	std::string morPath;
+	std::string variant;
+	std::string description;
+	bool isDefaultDict;
 
 	public:
-	Dictionary(const std::string & morPath, const std::string & variant);
+	Dictionary();
+	Dictionary(const std::string & morPath, const std::string & variant,
+	           const std::string & description);
 	Dictionary(const Dictionary & dictionary);
 	std::string getMorPath() const;
 	std::string getVariant() const;
+	std::string getDescription() const;
+	bool isValid() const;
+	bool isDefault() const;
+	void setDefault(bool isDefault);
 };
 
 } }

@@ -87,6 +87,25 @@ void check_word(int handle, const wchar_t * word, size_t wlen) {
 	}
 }
 
+/**
+ * Print a list of available dictionaries to stdout.
+ * @return status code to be returned when the program exits.
+ */
+int list_dicts(const char * path) {
+	voikko_dict ** dicts = voikko_list_dicts(path);
+	if (!dicts) {
+		cerr << "E: Failed to list available dictionaries." << endl;
+		return 1;
+	}
+	for (voikko_dict ** i = dicts; *i; i++) {
+		cout << voikko_dict_variant(*i);
+		cout << ": ";
+		cout << voikko_dict_description(*i);
+		cout << endl;
+	}
+	voikko_free_dicts(dicts);
+	return 0;
+}
 
 
 int main(int argc, char ** argv) {
@@ -95,6 +114,7 @@ int main(int argc, char ** argv) {
 	int cache_size;
 	
 	cache_size = 0;
+	bool list_dicts_requested = false;
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args.find("-c") == 0) {
@@ -103,7 +123,15 @@ int main(int argc, char ** argv) {
 		else if (args == "-p" && i + 1 < argc) {
 			path = argv[++i];
 		}
+		else if (args == "-l") {
+			list_dicts_requested = true;
+		}
 	}
+	
+	if (list_dicts_requested) {
+		return list_dicts(path);
+	}
+	
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", cache_size, path);
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;

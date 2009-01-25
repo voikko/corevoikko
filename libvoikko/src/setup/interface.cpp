@@ -52,8 +52,7 @@ VOIKKOEXPORT const char * voikko_dict_variant(const voikko_dict * dict) {
 }
 
 VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
-	// FIXME: unimplemented
-	return "";
+	return dict->getDescription().c_str();
 }
 
 } }

@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2008-07-01"
+.TH VOIKKOSPELL 1 "2009-01-25"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -25,8 +25,7 @@ voikkospell \- test program for Voikko spell checker
 is a test program for spell checking functionality in libvoikko,
 library of Finnish language tools.
 It reads words from stdin (one word on a line) and print them to stdout, adding
-"C: " in front of correct words and "W: " in front of incorrect words. voikkohyphenate prints
-words in fully hyphenated form.
+"C: " in front of correct words and "W: " in front of incorrect words.
 
 Common options of different Voikko test programs are listed in COMMON OPTIONS.
 .SH OPTIONS
@@ -55,6 +54,10 @@ If
 .IR c
 is not defined words are separated by space and suggestions that have
 spaces in them are not printed.
+.TP
+.B \-l
+Prints a list of available dictionary variants and exits. The first variant
+is the default to be used when no specific variant has been requested.
 .TP
 .BI ignore_nonwords= n
 .TP
