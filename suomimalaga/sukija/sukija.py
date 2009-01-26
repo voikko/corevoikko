@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi
+# Copyright 2007-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi
 # Program to generate lexicon files for Suomi-malaga Sukija edition.
 
 # This program is free software; you can redistribute it and/or modify
@@ -26,6 +26,7 @@ import hfconv
 import voikkoutils
 import re
 import sys
+
 
 # Historical inflections in alphabetical order.
 historical = [
@@ -491,16 +492,16 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		# Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
 		# Esim. kelta(i)nen, hevo(i)nen.
 		#
-		if ((jatko == u"nainen") and (nsyl == 3) and
-		    (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"]) and
-		    (rx != None) and (d != None) and (d['keltainen'] != None) and
-		    (not (wordform in [u"armainen", u"lukunen", u"omainen", u"osanen", u"vastuinen"]))):
-			if (wordform[-4] == u"i"):
-				alku2 = alku[:-1]    # Keltainen => keltanen.
-			else:
-				alku2 = alku + u"i"  # Hevonen => hevoinen.
-			jatko2 = jatko
-			wordform2 = alku2 + u"nen"
+#		if ((jatko == u"nainen") and (nsyl == 3) and
+#		    (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"]) and
+#		    (rx != None) and (d != None) and (d['keltainen'] != None) and
+#		    (not (wordform in [u"armainen", u"lukunen", u"omainen", u"osanen", u"vastuinen"]))):
+##			if (wordform[-4] == u"i"):
+##				alku2 = alku[:-1]    # Keltainen => keltanen.
+##			else:
+##				alku2 = alku + u"i"  # Hevonen => hevoinen.
+##			jatko2 = jatko
+##			wordform2 = alku2 + u"nen"
 #			if (wordform[-4] == u"i"):
 #				alku = wordform[:-4]    # Keltainen => keltanen.
 #				jatko = u"punainen"
@@ -510,8 +511,8 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		#
 		# Korjataan alku- ja jatko-kenttien arvoja.
 		#
-		elif (jatko == u"rakentaa"):
-#		if (jatko == u"rakentaa"):
+#		elif (jatko == u"rakentaa"):
+		if (jatko == u"rakentaa"):
 			alku = wordform[:-4]
 
 		# Tulostetaan.

@@ -75,7 +75,7 @@ include "voikonsanat/taivutustäydennykset.lex";
 include "voikonsanat/yhdyssanat.lex";
 include "voikonsanat/vieraskieliset.lex";
 #include "sanat/11-19.lex";
-include "sanat/jokinen.lex";
+####include "sanat/jokinen.lex";
 include "sanat/latex.lex";
 ##include "sanat/luvut.lex";
 include "sanat/olla-ei.lex";

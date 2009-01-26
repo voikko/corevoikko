@@ -394,24 +394,32 @@
 [perusmuoto: "Aclovir", alku: "Aclovir", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Magazine", alku: "Magazine", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Gefilusmehu", alku: "Gefilusmehu", luokka: nimi, jatko: <valo>, äs: a];
+[perusmuoto: "Golla", alku: "Goll", luokka: nimi, jatko: <koira>, äs: a];
 
 #[perusmuoto: "omatunto", alku: "omatun", luokka: nimisana, jatko: <anto>, äs: a];
 #[perusmuoto: "puolikuu", alku: "puoliku", luokka: nimisana, jatko: <puu>, äs: a];
 
 
+[perusmuoto: "hevonen", alku: "hevoi", luokka: nimisana, jatko: <nainen>, äs: a];
 [perusmuoto: "kamari", alku: "kammar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "kirjoitelma", alku: "kirjotelm", luokka: nimisana, jatko: <asema>, äs: a];
 [perusmuoto: "kulttuuri", alku: "kultuur", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "liipaisin", alku: "liipasi", luokka: nimisana, jatko: <uistin>, äs: a];
+[perusmuoto: "mahdoton", alku: "maho", luokka: laatusana, jatko: <onneton>, äs: a];
 [perusmuoto: "pistooli", alku: "pistol", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "poliitikko", alku: "politik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "politiikka", alku: "politik", luokka: nimisana, jatko: <haka>, äs: a];
 [perusmuoto: "poliisi", alku: "polis", luokka: nimisana, jatko: <banaali>, äs: a];
+[perusmuoto: "punainen", alku: "puna", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "teatteri", alku: "teaatter", luokka: nimisana, jatko: <paperi>, äs: a];
 
 
+[perusmuoto: "aavikkoisä", alku: "aavikkois", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppppp=ppp"];
+[perusmuoto: "jesuiittaisä", alku: "jesuittais", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppppppp=ppp"];
 [perusmuoto: "mafiaisä", alku: "mafiais", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=ppppp=ppp"];
+[perusmuoto: "kauppiasisä", alku: "kauppiasis", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=pppppppp=ppp"];
 [perusmuoto: "opetusisä", alku: "opetusis", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=pppppp=ppp"];
+[perusmuoto: "ottoisä", alku: "ottois", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=pppp=ppp"];
 [perusmuoto: "sukuisä", alku: "sukuis", luokka: nimisana, jatko: <koira>, äs: ä, rakenne: "=pppp=ppp"];
 [perusmuoto: "valheenisä", alku: "valheenis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_voikko>, rakenne: "=ppppppp=ppp"];
 [perusmuoto: "valheenisä", alku: "valeenis", luokka: nimisana, jatko: <koira>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppppp=ppp"];
@@ -446,15 +454,14 @@
 [perusmuoto: "heilakka", alku: "heilak", luokka: laatusana, jatko: <solakka>, äs: a];
 [perusmuoto: "Brown", alku: "Brown", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Ludvig", alku: "Ludvig", luokka: etunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Dante", alku: "Dante", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Wood", alku: "Wood", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Leoni", alku: "Leon", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Giulio", alku: "Giulio", luokka: etunimi, jatko: <autio>, äs: a];
 [perusmuoto: "Juuti", alku: "Juu", luokka: sukunimi, jatko: <vati>, äs: a];
 
 [perusmuoto: "vuossata", alku: "vuossa", luokka: nimisana, jatko: <pata>, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "myöhäisilta", alku: "myöhäisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
-[perusmuoto: "varhaisilta", alku: "varhaisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
+#[perusmuoto: "myöhäisilta", alku: "myöhäisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
+#[perusmuoto: "varhaisilta", alku: "varhaisil", luokka: nimisana, jatko: <valta>, äs: a, rakenne: "=ppppppp=pppp"];
 
 [perusmuoto: "vavista", alku: "vav", luokka: teonsana, jatko: <kalista>, äs: a];
 [perusmuoto: "Vincent", alku: "Vincent", luokka: etunimi, jatko: <kalsium>, äs: ä];
@@ -484,13 +491,11 @@
 [perusmuoto: "taianta", alku: "taian", luokka: nimisana, jatko: <veranta>, äs: a];
 [perusmuoto: "pilanta", alku: "pilan", luokka: nimisana, jatko: <veranta>, äs: a];
 [perusmuoto: "muikunta", alku: "muikun", luokka: nimisana, jatko: <veranta>, äs: a];
-[perusmuoto: "pojannasta", alku: "pojannast", luokka: nimisana, jatko: <kala>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "miljoonamyynti", alku: "miljoonamyyn", luokka: nimisana, jatko: <tunti>, äs: ä, rakenne: "=pppppppp=pppppp"];
 #[perusmuoto: "Verona", alku: "Veron", luokka: paikannimi, jatko: <karahka>, äs: a];
 [perusmuoto: "kitkos", alku: "kitko", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "Waldrop", alku: "Waldrop", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Forester", alku: "Forester", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "mahdoton", alku: "maho", luokka: laatusana, jatko: <onneton>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "törröittäin", alku: "törröittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "ortodoksisittain", alku: "ortodoksisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -510,7 +515,7 @@
 [perusmuoto: "Haggard", alku: "Haggard", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Mitchell", alku: "Mitchell", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Fokker", alku: "Fokker", luokka: sukunimi, jatko: <edam>, äs: a];
-
+[perusmuoto: "päiväsaika", alku: "päiväsa", luokka: nimisana, jatko: <aika>, äs: a, tiedot: <inen>];
 
 [perusmuoto: "oljennella", alku: "oljen", luokka: teonsana, jatko: <pienennellä>, äs: a];
 [perusmuoto: "parannutella", alku: "parannut", luokka: teonsana, jatko: <aatella>, äs: a];
@@ -624,7 +629,57 @@
 [perusmuoto: "Ohlson", alku: "Ohlson", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Anders", alku: "Anders", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Linpus", alku: "Linpus", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Hill", alku: "Hill", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Lingsoft", alku: "Lingsoft", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "meili", alku: "meil", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "utsjokinen", alku: "utsjoki", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppp=ppppppp"];
+[perusmuoto: "aro", alku: "aroitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 
+[perusmuoto: "duokilpailu", alku: "duokilpailu", luokka: nimisana, jatko: <arvelu>, äs: a];
+[perusmuoto: "duolevytys", alku: "duolevyty", luokka: nimisana, jatko: <vastaus>, äs: ä];
+[perusmuoto: "alkusyyjumalisuus", alku: "alkusyyjumalisuu", luokka: nimisana, jatko: <kalleus>, äs: a];
+[perusmuoto: "kuolemansyytutkija", alku: "kuolemansyytutki", luokka: nimisana, jatko: <kulkija>, äs: a];
+[perusmuoto: "syysolu", alku: "syysolu", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "syyhyinen", alku: "syyhyi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "syytekijä", alku: "syyteki", luokka: nimisana, jatko: <kulkija>, äs: ä];
+[perusmuoto: "tauslaulaja", alku: "tauslaula", luokka: nimisana, jatko: <kantaja>, äs: a];
+#[perusmuoto: "syyhyä", alku: "syyhy", luokka: teonsana, jatko: <punoa>, äs: ä];
+[perusmuoto: "säkkärä", alku: "säkkär", luokka: laatusana, jatko: <matala>, äs: ä];
+[perusmuoto: "syyseuraus", alku: "syyseurau", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "aitokoi", alku: "aitoko", luokka: nimisana, jatko: <pii>, äs: a];
+[perusmuoto: "herukkakoi", alku: "herukkako", luokka: nimisana, jatko: <pii>, äs: a];
+[perusmuoto: "jättiläiskoi", alku: "jättiläisko", luokka: nimisana, jatko: <pii>, äs: a];
+[perusmuoto: "kehrääjäkoi", alku: "kehrääjäko", luokka: nimisana, jatko: <pii>, äs: a];
+[perusmuoto: "atollikäki", alku: "atollikä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "harakkakäki", alku: "harakkakä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "harmaakäki", alku: "harmaakä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "kiljukäki", alku: "kiljukä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "kirjokäki", alku: "kirjokä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "liskokäki", alku: "liskokä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "maakäki", alku: "maakä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "kirjopyrstökäki", alku: "kirjopyrstökä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "harmaapääkäki", alku: "harmaapääkä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+[perusmuoto: "brittitee", alku: "brittite", luokka: nimisana, jatko: <tee>, äs: a];
+[perusmuoto: "inkivääritee", alku: "inkiväärite", luokka: nimisana, jatko: <tee>, äs: a];
+[perusmuoto: "irtotee", alku: "irtote", luokka: nimisana, jatko: <tee>, äs: a];
+####[perusmuoto: "itsehallinnollinen", alku: "itsehallinnolli", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "etuharus", alku: "etuharu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "keulaharus", alku: "keulaharu", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "hämyisä", alku: "hämyis", luokka: laatusana, jatko: <asema>, äs: ä];
+[perusmuoto: "joukkoitsemurha", alku: "joukkoitsemurh", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "kaasuitsemurha", alku: "kaasuitsemurh", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "kaksoisitsemurha", alku: "kaksoisitsemurh", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "jälkeentulevainen", alku: "jälkeentulevai", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "kainalo", alku: "kainaloitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "päätäi", alku: "päätä", luokka: nimisana, jatko: <pii>, äs: ä, tiedot: <ei_ysj>];
+[perusmuoto: "kalatäi", alku: "kalatä", luokka: nimisana, jatko: <pii>, äs: ä];
+[perusmuoto: "kanatäi", alku: "kanatä", luokka: nimisana, jatko: <pii>, äs: ä];
+[perusmuoto: "kanslerius", alku: "kansleriu", luokka: nimisana, jatko: <>, äs: a];
+[perusmuoto: "karhikko", alku: "karhik", luokka: nimisana, jatko: <laatikko>, äs: a];
+[perusmuoto: "limakko", alku: "limak", luokka: nimisana, jatko: <laatikko>, äs: a];
+[perusmuoto: "sivu", alku: "sivuitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
+[perusmuoto: "spartakiadi", alku: "spartakiad", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "sparrata", alku: "sparr", luokka: teonsana, jatko: <salata>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

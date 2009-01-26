@@ -295,7 +295,8 @@
 [perusmuoto: "jäljekkäin", alku: "jälekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "jäljekkäin", alku: "jäljekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "jäljemmäs", alku: "jäljemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "jälkeen", alku: "jälkeen", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "jälkeen", alku: "jälkee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
+[perusmuoto: "jälkeen", alku: "jälkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "jären", alku: "jären", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "järin", alku: "järin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -982,7 +983,7 @@
 [perusmuoto: "tohkeissa", alku: "tohkeissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "toisaalla", alku: "toisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "toisaalla", alku: "toisaha", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "toisaanne", alku: "toisaanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "toisaalla", alku: "toisaanne", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toisinaan", alku: "toisinaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toisin", alku: "toisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "toissa", alku: "toissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -1059,7 +1060,8 @@
 [perusmuoto: "umpimähkään", alku: "umpimähkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "unenpöpperössä", alku: "unenpöpperössä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "unenpöpperössä", alku: "unen-pöpperössä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp-=pppppppppp"];
-[perusmuoto: "upoksissa", alku: "upoksiin", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
+[perusmuoto: "upoksissa", alku: "upoksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "upoksissa", alku: "upoksii", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "upoksissa", alku: "upoksissa", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "upoksissa", alku: "upoksista", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "uppo", alku: "uppo", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
