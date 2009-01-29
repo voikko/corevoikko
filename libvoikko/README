@@ -78,6 +78,10 @@ occurrence is used and the rest are ignored.
 5) Path specified at compile time using --with-dictionary-path (this defaults to
    /usr/lib/voikko).
 
+To all of the paths above additional path component "/1" is appended at the end.
+This corresponds to the dictionary version and allows multiple versions of the same
+dictionary to be installed simultaneously.
+
 Variants are searched from subdirectories whose name start with "mor-". The
 identifier and other dictionary metadata are read from a file "voikko-fi_FI.pro"
 residing in that directory. If the file does not exist or is somehow considered
@@ -90,9 +94,9 @@ following rules:
    name "mor-default", the default dictionary will be the variant that is found
    from that directory. Note that this does not affect the actual decision about
    the dictionary instance used to provide the variant. If, for example, there is
-   a directory $HOME/.voikko/mor-a containing variant "a" and a directory
-   /etc/voikko/mor-default containing variant "a", the variant "a" will become the
-   default but it will still be provided by $HOME/.voikko/mor-a.
+   a directory $HOME/.voikko/1/mor-a containing variant "a" and a directory
+   /etc/voikko/1/mor-default containing variant "a", the variant "a" will become the
+   default but it will still be provided by $HOME/.voikko/1/mor-a.
 
 2) If no default is specified, variant "standard" is used as the default.
 

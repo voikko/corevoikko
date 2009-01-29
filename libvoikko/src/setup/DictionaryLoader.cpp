@@ -26,7 +26,8 @@
 #include <malaga.h>
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
-#define VOIKKO_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: 1"
+#define VOIKKO_DICTIONARY_VERSION "1"
+#define VOIKKO_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: " VOIKKO_DICTIONARY_VERSION
 #ifdef WIN32
 # define VOIKKO_KEY                   "SOFTWARE\\Voikko"
 # define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
@@ -93,7 +94,10 @@ Dictionary DictionaryLoader::load(const string & variant, const string & path)
 }
 
 void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
-	DIR * dp = opendir(path.c_str());
+	string mainPath(path);
+	mainPath.append("/");
+	mainPath.append(VOIKKO_DICTIONARY_VERSION);
+	DIR * dp = opendir(mainPath.c_str());
 	if (!dp) {
 		return;
 	}
@@ -106,7 +110,7 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 		if (variantName.empty()) {
 			continue;
 		}
-		string fullDirName(path);
+		string fullDirName(mainPath);
 		fullDirName.append("/");
 		fullDirName.append(dirName);
 		Dictionary dict = dictionaryFromPath(fullDirName);
