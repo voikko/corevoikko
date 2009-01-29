@@ -1,3 +1,7 @@
+2009-01-29 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Load dictionaries with the new dictionary loader.
+
 2009-01-25 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Implement new functions for getting information about all

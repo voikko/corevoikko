@@ -23,6 +23,7 @@
 #include <cstdlib>
 #include <pwd.h>
 #include <dirent.h>
+#include <malaga.h>
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
 #define VOIKKO_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: 1"
@@ -72,8 +73,23 @@ Dictionary DictionaryLoader::load(const string & variant) throw(DictionaryExcept
 
 Dictionary DictionaryLoader::load(const string & variant, const string & path)
 		throw(DictionaryException) {
-	//TODO: unimplemented
-	return Dictionary(string(), string(), string());
+	list<Dictionary> dicts = findAllAvailable(path);
+	if (dicts.size() == 0) {
+		throw DictionaryException("No valid dictionaries were found");
+	}
+	if (variant.empty() || variant == "default" || variant == "fi_FI") {
+		loadDictionary(dicts.front());
+		return dicts.front();
+	}
+	else {
+		for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); i++) {
+			if ((*i).getVariant() == variant) {
+				loadDictionary(*i);
+				return *i;
+			}
+		}
+		throw DictionaryException("Specified dictionary variant was not found");
+	}
 }
 
 void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
@@ -219,6 +235,17 @@ bool DictionaryLoader::hasDefault(map<string, Dictionary> & variants) {
 		}
 	}
 	return false;
+}
+
+void DictionaryLoader::loadDictionary(const Dictionary & dictionary)
+		throw(DictionaryException) {
+	string projectFile(dictionary.getMorPath());
+	projectFile.append("/");
+	projectFile.append(VOIKKO_DICTIONARY_FILE);
+	init_libmalaga(projectFile.c_str());
+	if (malaga_error) {
+		throw DictionaryException(malaga_error);
+	}
 }
 
 } }

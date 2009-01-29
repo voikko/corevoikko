@@ -59,27 +59,45 @@ of the library.
 Search order for dictionary files
 =================================
 
-Upon initialization libvoikko will search for file voikko-fi_FI.pro. Once this
-file is found, it will check whether the file is a valid Malaga project file for
-Voikko dictionary, and that all required additional files are present. If
-voikko-fi_FI.pro turns out to be invalid, it has a wrong version or some required
-files are missing or corrupt, initialization will fail with an error and no
-additional directories will be checked.
-
-The search is done in the following order:
+A set of available dictionary variants is built by examining the contents of the
+following directories. If a variant exists in more than one location, the first
+occurrence is used and the rest are ignored.
 
 1) Path given as the last argument to voikko_init_with_path, if that function is
    used to initialize the library.
 2) Path specified by the environment variable VOIKKO_DICTIONARY_PATH, if the
    variable is set in the environment of the process initializing the library.
 3) Only on platforms with Unix home directories (Linux, BSD and Mac OS X):
-   from directory $HOME/.voikko.
-4) Only on Windows: Directory specified by the registry key
-   HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath.
-5) Only on Windows: Directory specified by the registry key
-   HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath.
-6) Path specified at compile time using --with-dictionary-path (this defaults to
+   a) from directory $HOME/.voikko
+   b) from directory /etc/voikko
+4) Only on Windows:
+   a) Directory specified by the registry key
+      HKEY_CURRENT_USER\SOFTWARE\Voikko\DictionaryPath.
+   b) Directory specified by the registry key
+      HKEY_LOCAL_MACHINE\SOFTWARE\Voikko\DictionaryPath.
+5) Path specified at compile time using --with-dictionary-path (this defaults to
    /usr/lib/voikko).
+
+Variants are searched from subdirectories whose name start with "mor-". The
+identifier and other dictionary metadata are read from a file "voikko-fi_FI.pro"
+residing in that directory. If the file does not exist or is somehow considered
+invalid, that particular variant is ignored.
+
+One of the dictionaries is chosen to be the default dictionary by trying the
+following rules:
+
+1) If one of the subdirectories in the main directory paths described above has
+   name "mor-default", the default dictionary will be the variant that is found
+   from that directory. Note that this does not affect the actual decision about
+   the dictionary instance used to provide the variant. If, for example, there is
+   a directory $HOME/.voikko/mor-a containing variant "a" and a directory
+   /etc/voikko/mor-default containing variant "a", the variant "a" will become the
+   default but it will still be provided by $HOME/.voikko/mor-a.
+
+2) If no default is specified, variant "standard" is used as the default.
+
+3) If variant "standard" is not available, the variant with the name that comes
+   first in alphabetical order is selected as the default.
 
 
 Author

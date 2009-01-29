@@ -18,6 +18,7 @@
 
 #include "voikko_defs.h"
 #include "setup/setup.hpp"
+#include "setup/DictionaryLoader.hpp"
 #ifdef HAVE_GETPWUID_R
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
@@ -26,12 +27,17 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <cstdlib>
+#include <string>
 
 #ifdef WIN32
 #include <windows.h>
 #endif
 
+using namespace std;
+
 namespace libvoikko {
+
+using namespace setup;
 
 voikko_options_t voikko_options;
 
@@ -158,31 +164,21 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.cache_size = cache_size;
 	voikko_options.suggestion_type = ST_STD;
 	
-	char * project = new char[1024];
-	if (project == 0) return "Out of memory";
-	
-	if (!voikko_find_malaga_project(project, 1024, langcode, path)) {
-		delete[] project;
-		return "Unsupported language";
-	}
 	#ifdef HAVE_ICONV
 	/* Initialise converters */
 	voikko_options.iconv_ucs4_utf8 = iconv_open("UTF-8", INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_utf8 == (iconv_t) -1) {
-		delete[] project;
 		return "iconv_open(\"UTF-8\", \"" INTERNAL_CHARSET "\") failed";
 	}
 	voikko_options.iconv_utf8_ucs4 = iconv_open(INTERNAL_CHARSET, "UTF-8");
 	if (voikko_options.iconv_utf8_ucs4 == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_ucs4_utf8);
-		delete[] project;
 		return "iconv_open(\"" INTERNAL_CHARSET "\", \"UTF-8\") failed";
 	}
 	voikko_options.iconv_ucs4_ext = iconv_open(voikko_options.encoding, INTERNAL_CHARSET);
 	if (voikko_options.iconv_ucs4_ext == (iconv_t) -1) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
-		delete[] project;
 		return "iconv_open(voikko_options.encoding, \"" INTERNAL_CHARSET "\") failed";
 	}
 	voikko_options.iconv_ext_ucs4 = iconv_open(INTERNAL_CHARSET, voikko_options.encoding);
@@ -190,23 +186,31 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 		iconv_close(voikko_options.iconv_ucs4_ext);
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
-		delete[] project;
 		return "iconv_open(\"" INTERNAL_CHARSET "\", voikko_options.encoding) failed";
 	}
 	#endif
 	
-	const char * malaga_init_error = voikko_init_malaga(project);
-	delete[] project;
-	if (malaga_init_error) {
-		#ifdef HAVE_ICONV
-		iconv_close(voikko_options.iconv_ext_ucs4);
-		iconv_close(voikko_options.iconv_ucs4_ext);
-		iconv_close(voikko_options.iconv_utf8_ucs4);
-		iconv_close(voikko_options.iconv_ucs4_utf8);
-		#endif
-		voikko_handle_count--;
-		return malaga_init_error;
+	if (langcode) {
+		try {
+			if (path) {
+				DictionaryLoader::load(string(langcode), string(path));
+			}
+			else {
+				DictionaryLoader::load(string(langcode));
+			}
+		}
+		catch (DictionaryException e) {
+			#ifdef HAVE_ICONV
+			iconv_close(voikko_options.iconv_ext_ucs4);
+			iconv_close(voikko_options.iconv_ucs4_ext);
+			iconv_close(voikko_options.iconv_utf8_ucs4);
+			iconv_close(voikko_options.iconv_ucs4_utf8);
+			#endif
+			voikko_handle_count--;
+			return e.what();
+		}
 	}
+	
 	if (cache_size >= 0) {
 		voikko_options.cache = new wchar_t[6544 << cache_size];
 		if (voikko_options.cache) {
@@ -246,141 +250,6 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 		return 1;
 	}
 	else return 0;
-}
-
-#define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
-#ifdef WIN32
-#define VOIKKO_KEY                   "SOFTWARE\\Voikko"
-#define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
-#endif // WIN32
-
-int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode,
-                               const char * path) {
-#ifdef HAVE_GETPWUID_R
-	struct passwd pwd;
-	struct passwd * pwd_result;
-#endif // HAVE_GETPWUID_R
-#ifdef WIN32
-	HKEY hKey;
-	DWORD dwBufLen;
-	LONG lRet;
-#endif // WIN32
-	char * path_from_env;
-	// Minimum sensible size for the buffer
-	if (buflen < 18) return 0;
-	char * tmp_buf = new char[buflen + 2048];
-	if (tmp_buf == 0) return 0;
-	
-	// Clear the buffer.
-	memset(buffer, 0x00, buflen);
-
-	if (strcmp(langcode, "fi_FI") == 0) {
-		/* Check the user specified dictionary path */
-		if (path && strlen(path) < buflen - 18 ) {
-			strcpy(buffer, path);
-			strcpy(buffer + strlen(path), "/" VOIKKO_DICTIONARY_FILE);
-			if (voikko_check_file(buffer)) {
-				delete[] tmp_buf;
-				return 1;
-			}
-		}
-
-		/* Check the path specified by environment variable VOIKKO_DICTIONARY_PATH */
-		/* FIXME: thread safety */
-		path_from_env = getenv("VOIKKO_DICTIONARY_PATH");
-		if (path_from_env && strlen(path_from_env) < buflen - 18) {
-			strcpy(buffer, path_from_env);
-			strcpy(buffer + strlen(path_from_env), "/" VOIKKO_DICTIONARY_FILE);
-			if (voikko_check_file(buffer)) {
-				delete[] tmp_buf;
-				return 1;
-			}
-		}
-
-		#ifdef HAVE_GETPWUID_R
-		/* Check for project file in $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
-		getpwuid_r(getuid(), &pwd, tmp_buf, buflen + 2048, &pwd_result);
-		if (pwd_result && pwd.pw_dir && strlen(pwd.pw_dir) < buflen - 26 ) {
-			strcpy(buffer, pwd.pw_dir);
-			strcpy(buffer + strlen(pwd.pw_dir), "/.voikko/" VOIKKO_DICTIONARY_FILE);
-			if (voikko_check_file(buffer)) {
-				delete[] tmp_buf;
-				return 1;
-			}
-		}
-		#endif // HAVE_GETPWUID_R
-		#ifdef WIN32
-		/* Check the user default dictionary from Windows registry */
-		lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
-		                    0, KEY_QUERY_VALUE, &hKey);
-		dwBufLen = buflen - 18;
-		if (ERROR_SUCCESS == lRet) {
-			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
-			                       (LPBYTE)buffer, &dwBufLen);
-			RegCloseKey(hKey);
-			if ((ERROR_SUCCESS == lRet)) {
-				strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
-				if (voikko_check_file(buffer)) {
-					delete[] tmp_buf;
-					return 1;
-				}
-			}
-		}
-
-		/* Check the system default dictionary from Windows registry */
-		lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
-			                    0, KEY_QUERY_VALUE, &hKey);
-		dwBufLen = buflen - 18;
-		if (ERROR_SUCCESS == lRet) {
-			lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
-			                       (LPBYTE)buffer, &dwBufLen);
-			RegCloseKey(hKey);
-			if ((ERROR_SUCCESS == lRet)) {
-				strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
-				if (voikko_check_file(buffer)) {
-					delete[] tmp_buf;
-					return 1;
-				}
-			}
-		}
-		#endif // WIN32
-		/* Fall back to using the compile time default project file */
-		strcpy(buffer, DICTIONARY_PATH "/" VOIKKO_DICTIONARY_FILE);
-		delete[] tmp_buf;
-		return 1;
-	}
-	/* Language is not supported */
-	delete[] tmp_buf;
-	return 0;
-}
-
-const char * voikko_init_malaga(const char * project) {
-	init_libmalaga(project);
-	if (malaga_error) return malaga_error;
-	
-	if (strncmp(get_info(), "Voikko-Dictionary-Format: 1\n", 28) == 0) return 0;
-	else {
-		terminate_libmalaga();
-		return "Dictionary file has incompatible version";
-	}
-}
-
-int voikko_check_file(const char * name) {
-#ifdef HAVE_GETPWUID_R
-	struct stat sbuf;
-	if (stat(name, &sbuf) == 0) return 1;
-	else return 0;
-#else
- #ifdef WIN32
-	HANDLE h;
-	h = CreateFileA(name, 0, 0, NULL, OPEN_EXISTING, 0, NULL);
-	if (h == INVALID_HANDLE_VALUE) return 0;
-	else {
-		CloseHandle(h);
-		return 1;
-	}
- #endif // WIN32
-#endif // HAVE_GETPWUID_R
 }
 
 }
