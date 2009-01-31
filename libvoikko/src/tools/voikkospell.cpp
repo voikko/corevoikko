@@ -109,7 +109,8 @@ int list_dicts(const char * path) {
 
 
 int main(int argc, char ** argv) {
-	char * path = 0;
+	const char * path = 0;
+	const char * variant = "";
 	int handle;
 	int cache_size;
 	
@@ -123,6 +124,9 @@ int main(int argc, char ** argv) {
 		else if (args == "-p" && i + 1 < argc) {
 			path = argv[++i];
 		}
+		else if (args == "-d" && i + 1 < argc) {
+			variant = argv[++i];
+		}
 		else if (args == "-l") {
 			list_dicts_requested = true;
 		}
@@ -132,7 +136,7 @@ int main(int argc, char ** argv) {
 		return list_dicts(path);
 	}
 	
-	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", cache_size, path);
+	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, cache_size, path);
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
 		return 1;
@@ -184,7 +188,7 @@ int main(int argc, char ** argv) {
 		else if (args.find("-c") == 0) {
 			continue;
 		}
-		else if (args == "-p") {
+		else if (args == "-p" || args == "-d") {
 			i++;
 			continue;
 		}

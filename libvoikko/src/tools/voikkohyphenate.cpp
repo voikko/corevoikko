@@ -66,16 +66,22 @@ void hyphenate_word(int handle, const wchar_t * word, size_t wlen, wchar_t separ
 
 
 int main(int argc, char ** argv) {
-	char * path = 0;
+	const char * path = 0;
+	const char * variant = "";
 	wchar_t separator = L'-';
 	int handle;
 	int minhwlen;
 	int iclevel;
 	
 	for (int i = 1; i < argc; i++) {
-		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
+		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) {
+			path = argv[++i];
+		}
+		if (strcmp(argv[i], "-d") == 0 && i + 1 < argc) {
+			variant = argv[++i];
+		}
 	}
-	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", 0, path);
+	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, 0, path);
 	
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
@@ -113,7 +119,7 @@ int main(int argc, char ** argv) {
 			}
 			mbtowc(&separator, argv[i] + 2, 1);
 		}
-		else if (strcmp(argv[i], "-p") == 0) {
+		else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "-d") == 0) {
 			i++;
 			continue;
 		}

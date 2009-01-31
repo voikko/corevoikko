@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2009-01-25"
+.TH VOIKKOSPELL 1 "2009-01-31"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -75,10 +75,16 @@ can be either 0 (false) or 1 (true).
 .SH COMMON OPTIONS
 .TP
 .BI \-p " directory"
-(voikkospell, voikkohyphenate)
+(voikkospell, voikkohyphenate, voikkogc)
 Look from
 .I directory
 before the standard locations when searching for dictionary files.
+.TP
+.BI \-d " variant"
+(voikkospell, voikkohyphenate, voikkogc)
+Use dictionary variant
+.I variant
+instead of the default dictionary variant.
 .TP
 .BI ignore_dot= n
 (voikkospell, voikkohyphenate)

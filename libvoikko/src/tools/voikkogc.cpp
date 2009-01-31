@@ -136,14 +136,20 @@ void check_grammar(int handle, const wchar_t * line, size_t lineLen,
 enum operation {TOKENIZE, SPLIT_SENTENCES, CHECK_GRAMMAR};
 
 int main(int argc, char ** argv) {
-	char * path = 0;
+	const char * path = 0;
+	const char * variant = "";
 	enum operation op = CHECK_GRAMMAR;
 	int handle;
 	
 	for (int i = 1; i < argc; i++) {
-		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) path = argv[++i];
+		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) {
+			path = argv[++i];
+		}
+		else if (strcmp(argv[i], "-d") == 0 && i + 1 < argc) {
+			variant = argv[++i];
+		}
 	}
-	const char * voikko_error = (const char *) voikko_init_with_path(&handle, "fi_FI", 0, path);
+	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, 0, path);
 
 	if (voikko_error) {
 		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
@@ -177,7 +183,7 @@ int main(int argc, char ** argv) {
 		else if (strncmp(argv[i], "explanation_language=", 21) == 0) {
 			explanation_language = "en";
 		}
-		else if (strcmp(argv[i], "-p") == 0) {
+		else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "-d") == 0) {
 			i++;
 			continue;
 		}
