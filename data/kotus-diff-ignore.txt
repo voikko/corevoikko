@@ -1349,6 +1349,7 @@ hiihtarit # hiihtari
 hiushygrometri # hygrometri
 homotsygootti # homo, tsygootti
 homotsygoottinen # homo, tsygootti
+homssuinen # homssu
 hotaisu # hotaista
 huiskaus # huiskata
 hydroksyyliryhmä # hydroksyyli
@@ -1497,6 +1498,7 @@ törmäytys # törmäyttää
 törppöily # törppöillä
 ufoilu # ufoilla
 ujoilu # ujoilla
+uniapnea # apnea
 valkkaus # valkata
 vasituisesti # vasituinen
 veikistelijä # veikistellä
