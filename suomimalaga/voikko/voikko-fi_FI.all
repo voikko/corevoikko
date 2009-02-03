@@ -5143,7 +5143,7 @@ subrule kauris ($tietue, $kerake):
                          johdin_Us:         $monikko,
                          johdin_llinen:     $vahva_aste,
                          johdin_mAinen:     "is",
-                         johdin_inen:       $vahva_aste,
+                         johdin_inen:       $kerake + "i",
 
                          nimentö_t:         $vahva_aste,
                          omanto_iT:         $monikko,

@@ -559,6 +559,12 @@ kauriiden # Kotus 41
 !kauriiiden # Kotus 41
 vilkkaana # Kotus 41
 !vilkasna # Kotus 41 (vanhat_muodot)
+!-ruumiiinen # Kotus 41
+-ruumiinen # Kotus 41
+!-ruuminen # Kotus 41
+!-rukiiinen # Kotus 41
+-rukiinen # Kotus 41
+!-rukinen # Kotus 41
 röyhkeäpenkereinen # Kotus 49
 röyhkeäpenkerinen # Kotus 49
 säen # Kotus 49

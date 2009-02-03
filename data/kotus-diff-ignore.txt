@@ -1376,6 +1376,7 @@ kovitus # kovittaa
 kromitus # kromittaa
 kuikuilu # kuikuilla
 kummarit # kummari
+kurvainen # kurva
 kusettaja # kusettaa
 käninä # känistä
 käppäily # käppäillä
