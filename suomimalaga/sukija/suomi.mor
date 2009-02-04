@@ -144,14 +144,8 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if (teonsana in $oikea.jatko) then
       result $res, rules teonsana;
     end;
-    if (etuliite in $oikea.jatko) then
-      result $res, rules etuliite;
-    end;
-    if (lukusana in $oikea.jatko) then
-      result $res, rules lukusana;
-    end;
-    # Tavuviiva on aina jatkossa eli sitä ei tarvitse testata.
-    result $res, rules tavuviiva;
+    # Tavuviiva ja etuliite ovat aina jatkossa eli niitä ei tarvitse testata.
+    result $res, rules tavuviiva, etuliite;
   elseif ($oikea.luokka = teonsana) then
     if (liitesana in $oikea.jatko) then
       result $res, rules liitesana;
@@ -285,16 +279,10 @@ combi_rule etuliite ($vasen, $oikea, $sana, $n):
   if (teonsana in $oikea.jatko) then
     result $r, rules teonsana;
   end;
-  if (etuliite in $oikea.jatko) then
-    result $r, rules etuliite;
-  end;
-  if (lukusana in $oikea.jatko) then
-    result $r, rules lukusana;
-  end;
 
-  # Tavuviiva on aina jatkossa eli sitä ei tarvitse testata.
+  # Tavuviiva ja etuliite ovat aina jatkossa eli niitä ei tarvitse testata.
   #
-  result $r, rules tavuviiva;
+  result $r, rules tavuviiva, etuliite;
 end;
 
 
@@ -422,8 +410,33 @@ assert ($i = length($vasen));
   end;
   if (yhdyssana in $oikea.jatko) then
     result $res, rules yhdyssana;
+#    result $res, rules inen_päätteinen_laatusana;
   end;
   result $res, rules sijapääte;
+end;
+
+
+combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $n):
+  ? $oikea.perusmuoto /= nil;
+  ? $oikea.luokka in <laatusana, nimi_laatusana>;
+  ? $oikea.perusmuoto matches ".*inen";
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules tavuviiva;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, rules loppu;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+  result $res, rules sijapääte;
+#  result $res, rules laatusanan_sijapäte; laatusanan_johdos;
 end;
 
 
@@ -531,10 +544,7 @@ end;
 combi_rule tavuviiva ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("tavuviiva ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in <tavuviiva>;
-
-  define $i := $n - 1 ;
-
-  ? $oikea.luokka in $vasen.$i.jatko;
+  ? $oikea.luokka in $vasen.($n-1).jatko;
 
 #define $nimi1 := transmit (<"tavuviiva1"> + <$vasen>);
 #define $nimi2 := transmit (<"tavuviiva2"> + <$oikea>);
@@ -781,37 +791,34 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka in $vasen.$i.jatko;
 #define $n3 := transmit (<"nimitavat3"> + <$vasen.$i.luokka> + <$oikea.jatko> + <$sana>);
 
-  # Ääntiö + "iss[aä] käy mutta ei kerake + "iss[aä]".
-  # Esim. puno+issa (puno+essa) käy mutta ei tull+issa (tull+essa).
-  # Nyt esim. "aitoissa" on sekä aitta-sanan että aitoa-sanan muoto (aitoessa).
-  #
-  if (($oikea.luokka = nimitapa_2) and ($sana in <"issa", "issä">)) then
-    ? ($vasen.$i.alku matches ".*[aeiouyäö]");
-  end;
-
   ? äs_ok ($vasen.$i, $oikea);
 
   if $oikea.äs = aä then $oikea.äs := $vasen.$i.äs; end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if (nimitapa_1_pitkä in $oikea.jatko) then
-    result $res, rules nimitapa_1_pitkä;
-  end;
-
-  if ($oikea.luokka = nimitapa_5) then
-    result $res, rules omistusliite, loppu;
-  else
+  if ($oikea.luokka in @nimitapa_1) then
+    result $res, rules nimitapa_1_pitkä, liitesana, loppu;
+  elseif ($oikea.luokka in @nimitapa_2) then
+    #
+    # Ääntiö + "iss[aä] käy mutta ei kerake + "iss[aä]".
+    # Esim. puno+issa (puno+essa) käy mutta ei tull+issa (tull+essa).
+    # Nyt esim. "aitoissa" on sekä aitta-sanan että aitoa-sanan muoto (aitoessa).
+    #
+    if ($sana in <"issa", "issä">) then
+      ? ($vasen.$i.alku matches ".*[aeiouyäö]");
+    end;
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
-    end;
-    if (liitesana in $oikea.jatko) then
-      result $res, rules liitesana;
-    end;
-    if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
-    end;
-    result $res, rules sijapääte;
+    end;    
+    result $res, rules liitesana, loppu;
+  elseif ($oikea.luokka in @nimitapa_3) then
+    if (omistusliite in $oikea.jatko) then
+      result $res, rules omistusliite;
+    end;    
+    result $res, rules liitesana, loppu;
+  elseif ($oikea.luokka = nimitapa_5) then
+    result $res, rules omistusliite, loppu;
   end;
 end;
 
@@ -1157,6 +1164,10 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
       return (substring($s,1R) /= substring($oikea.perusmuoto,1));
     end;
   end;
+
+##  if (($vasen.$n.luokka = laatusana) and ($oikea.luokka = laatusana)) then
+##    return no;
+##  end;
 
   return yes;
 end;
@@ -1950,11 +1961,6 @@ combi_rule teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):
       $vasen.($n-1).äs := a;
     end;
   end;
-#  if (($oikea.luokka in <johdin_O, johdin_Os, johdin_tO_heitto, johdin_tO_leuto>) then
-#      (not ($vasen.($n-1).alku matches ".*" + @yäö + ".*"))) then
-#    $vasen.($n-1) :=+ [alkuperäinen_äs: $vasen.($n-1).äs];
-#    $vasen.($n-1).äs := a;
-#  end;
 
   ? äs_ok ($vasen.($n-1), $oikea);
 
@@ -2098,12 +2104,8 @@ combi_rule teonsanan_johdos_teonsana ($vasen, $oikea, $sana, $n):
 #    result $res, rules laatutavat;
 #  end;
 # Tämä on nopeampi kuin kaikki erikseen!
-#  result $res, rules tekijämuodot, nimitavat, laatutavat,
-#                     teonsanan_johdos_nimisana, teonsanan_johdos_laatusana;
-##  if ($n = 2) or ($n = 3 and $vasen.($n-2).luokka = etuliite and teonsana in $vasen.($n-2).jatko) then
-    result $res, rules tekijämuodot, nimitavat, laatutavat;
-    result $res, rules teonsanan_johdos_nimisana, teonsanan_johdos_laatusana;
-##  end;
+  result $res, rules tekijämuodot, nimitavat, laatutavat,
+                     teonsanan_johdos_nimisana, teonsanan_johdos_laatusana;
 end;
 
 

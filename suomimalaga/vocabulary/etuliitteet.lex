@@ -104,7 +104,7 @@
 [perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "hieroma", alku: "hieroma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "hioma", alku: "hioma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "hyvin", alku: "hyvin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];

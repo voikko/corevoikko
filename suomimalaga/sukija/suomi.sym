@@ -508,6 +508,7 @@ risti;
   biografi;     # Biogra(a)fi.
   marinadi;     # Marina(a)di.
   pyramidi;     # Pyrami(i)di.
+  äiti;         # Äidin tai äitin.
 paperi;
   banaali;
   edam;      # Taipuu kuten paperi tai banaali, mutta sana ei lopu i:hin.
@@ -997,6 +998,8 @@ kymmenen;
 olla;
 lienee;
 
+
+inen_loppu; # Inen-loppuinen laatusana tai nimi_laatusana.
 
 # Tositavan kestämän yksikön kolmas tekijä, jossa pääte (vartalon
 # viimeisen ääntiön pidentymä) on sulautunut vartaloon.

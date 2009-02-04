@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -43,128 +43,146 @@
 # making a combined work based on this program.  Thus, the terms and
 # conditions of the GNU General Public License cover the whole
 # combination.
+#
+#
+# Äitin tai äidin.
 
+nimentö
+          äi+ti+
 
-nimitapa_1_A
-          paah+ta+a
+omistusliite
+          äi+ti+ni
 
-nimitapa_2
-          paah+ta+essa
+omanto_n
+          äi+di+n
+          äi+ti+n
 
-nimitapa_2_tA
+osanto_A
+          äi+ti+ä
 
-nimitapa_2_ttA
-          paah+de+ttaessa
+olento_nA
+          äi+ti+nä
 
-nimitapa_3
-          paah+ta+ma
+tulento_ksi
+          äi+di+ksi
+          äi+ti+ksi
 
-nimitapa_3_tA
+sisäolento_ssA
+          äi+di+ssä
+          äi+ti+ssä
 
-nimitapa_3_ttA
-          paah+de+ttaman
+sisäeronto_stA
+          äi+di+stä
+          äi+ti+stä
 
-nimitapa_4
-          paah+ta+minen
+sisätulento_Vn
+          äi+ti+in
 
-nimitapa_5
-          paah+ta+maisillani
+sisätulento_hVn
+          äi+ti+hin  vanha_h
 
-laatutapa_1_vA
-          paah+ta+va
+ulko_olento_llA
+          äi+di+llä
+          äi+ti+llä
 
-laatutapa_1_tA
+ulkoeronto_ltA
+          äi+di+ltä
+          äi+ti+ltä
 
-laatutapa_1_ttA
-          paah+de+ttava
+ulkotulento_lle
+          äi+di+lle
+          äi+ti+lle
 
-laatutapa_2_nUt
-          paah+ta+nut
+vajanto_ttA
+          äi+di+ttä
+          äi+ti+ttä
 
-laatutapa_2_tU
+nimentö_t
+          äi+di+t
+          äi+ti+t
 
-laatutapa_2_ttU
-          paah+de+ttu
+omanto_en
+          äi+ti+en
 
-kestämän_tekijäpääte_y1
-          paah+da+n
+omanto_in
+          äi+te+in  ei_voikko
 
-kestämän_tekijäpääte_y2
-          paah+da+t
+osanto_jA
+          äi+te+jä
 
-kestämän_tekijäpääte_y3
-          paah+ta+a
+olento_inA
+          äi+te+inä
 
-kestämän_tekijäpääte_m1
-          paah+da+mme
+tulento_iksi
+          äi+de+iksi
+          äi+te+iksi
 
-kestämän_tekijäpääte_m2
-          paah+da+tte
+sisäolento_issA
+          äi+de+issä
+          äi+te+issä
 
-kestämän_tekijäpääte_m3
-          paah+ta+vat
+sisäeronto_istA
+          äi+de+istä
+          äi+te+istä
 
-tositavan_kestämä_tAAn
-          paah+de+taan
+sisätulento_ihin
+          äi+te+ihin
 
-kertoman_tekijäpääte_y1
-          paah+do+in
-          paah+d+in  ei_voikko
+ulko_olento_illA
+          äi+de+illä
+          äi+te+illä
 
-kertoman_tekijäpääte_y2
-          paah+do+it
-          paah+d+it  ei_voikko
+ulkoeronto_iltA
+          äi+de+iltä
+          äi+te+iltä
 
-kertoman_tekijäpääte_y3
-          paah+to+i
-          paah+t+i  ei_voikko
+ulkotulento_ille
+          äi+de+ille
+          äi+te+ille
 
-kertoman_tekijäpääte_m1
-          paah+do+imme
-          paah+d+imme  ei_voikko
+vajanto_ittA
+          äi+de+ittä
+          äi+te+ittä
 
-kertoman_tekijäpääte_m2
-          paah+do+itte
-          paah+d+itte  ei_voikko
+seuranto_ine
+          äi+te+ine
 
-kertoman_tekijäpääte_m3
-          paah+to+ivat
-          paah+t+ivat  ei_voikko
+keinonto_in
+          äi+de+in
+          äi+te+in
 
-tositavan_kertoma_tiin
+kerronto_sti
+          +di+sti
+          +ti+sti
 
-tositavan_kertoma_ttiin
-          paah+de+ttiin
+voittoaste
+          +di+mpi
+          +ti+mpi
 
-ehtotapa
-          paah+ta+isin
+yliaste
+          +de+in
+          +te+in
 
-ehtotapa_tA
+johdin_inen
+          äi+t+inen
 
-ehtotapa_ttA
-          paah+de+ttaisiin
+johdin_ittain
+          äi+de+ittäin
+          äi+te+ittäin
 
-mahtotapa_ne
-          paah+ta+nen
+johdin_lAinen
+          äi+ti+läinen
 
-mahtotapa_tA
+johdin_llinen
+          äi+di+llinen
+          äi+ti+llinen
 
-mahtotapa_ttA
-          paah+de+ttaneen
+johdin_mAinen
+          äi+ti+mäinen
 
-käskytapa_y2
-          paah+da+
+johdin_tOn
+          äi+di+tön
+          äi+ti+tön
 
-käskytapa_kielto
-          paah+ta+ko
-
-käskytapa_tA
-
-käskytapa_ttA
-          paah+de+ttakoon
-
-johdin_jA_kantaja
-          paah+ta+ja
-
-johdin_ellA
-          $1
+johdin_Us
+          äi+ti+ys

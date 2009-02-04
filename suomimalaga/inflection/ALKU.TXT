@@ -67,6 +67,7 @@ allo_rule generate_allos ($tietue):
 
   assert (value_type($tietue) = record);
 
+
   # Nämä sanat voivat olla myös erillisinä sanoina.
   #
   if (($tietue.tiedot /= nil) and (ysj in $tietue.tiedot) and
@@ -108,7 +109,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"bitti", "kallas", "terve">) then
+  if ($tietue.perusmuoto in <"bitti", "kallas", "malli", "terve">) then
     $tietue :=+ [tiedot: <ei_inen>];
   end;
 
@@ -116,7 +117,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"kukkaisa", "laatuisa", "luisti", "mani", "nasu", "paikko",
+  if ($tietue.perusmuoto in <"kukkaisa", "laatuisa", "luisti", "mani", "miehinen", "nasu", "paikko",
                              "poli", "tisu">) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
@@ -146,12 +147,14 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+
   # Mattila on paikannimi ja sukunimi, ja tiedostojen indeksoinnissa
   # riittää niistä vain toinen.
   #
   if ($tietue.perusmuoto = "Mattila" and $tietue.luokka = sukunimi) then
     stop;
   end;
+
 
   if ($tietue.perusmuoto in <"nasta", "pöllö", "vilja">) then
     if ($tietue.luokka = nimisana) then
@@ -161,13 +164,6 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-  if ($tietue.perusmuoto in <"ripsi", "sini">) then
-    if ($tietue.jatko = <risti>) then
-      stop;
-    elseif ($tietue.jatko = <lovi>) then
-      $tietue.jatko := <kiiski>;
-    end;
-  end;
 
   if ($tietue.luokka = lukusana) then
     if ($tietue.alaluokka in <erikoisluku, toista>) then
@@ -179,6 +175,10 @@ allo_rule generate_allos ($tietue):
     $tietue.jatko := <kääntää>;
   end;
 
+  if ($tietue.perusmuoto = "riisi" and susi in $tietue.jatko) then
+    $tietue :=+ [tiedot: <ei_ys>];
+  end;
+
 #  if ($tietue.luokka = lukusana) then
 #    if ($tietue.perusmuoto = "miljoona") then
 #      $tietue.jatko := <triljoona, biljoona, miljardi, tuhat, sata, kymmenen, yksi, liitesana, loppu>;
@@ -187,6 +187,11 @@ allo_rule generate_allos ($tietue):
 
 #  if ($tietue.luokka = lukusanan_jälkiliite) then
 #    stop;
+#  end;
+
+  # Inen-loppuiset laatusanat.
+#  if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
+#    $tietue :=+ [inen_loppu: yes];
 #  end;
 
   if (($tietue.tiedot /= nil) and (ei_sukija in $tietue.tiedot)) then

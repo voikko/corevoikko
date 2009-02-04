@@ -99,6 +99,7 @@ historical = [
 	(u'kutiaa', u'-',  [(None,u'(.*Cia)a',u'kutiaa')]),
         (u'laittaa', u'sw', [(u'tt',u'(.*t)tAA',u'laittaa')]),
 	(u'lampi', u'-',   [(None,u'(.*kam)pi',u'lampi')]),
+	(u'lovi', u'sw',   [(None,u'(rips|sin)i',u'kiiski')]),
 	(u'nainen', u'-', [(None,u'(.*Co)rinen',u'allegorinen'),
 			   (None,u'(.*Co)finen',u'filosofinen'),
 			   (None,u'(.*Co)ginen',u'psykologinen'),
@@ -138,7 +139,8 @@ historical = [
 			     (None,u'(..*[^aeouyäö]o)vi',u'telefoni_vi'),
 		             (None,u'(..*gr)afi',u'biografi'),
 			     (None,u'(..*)adi',u'marinadi'),
-			     (None,u'(..*)idi',u'pyramidi')]),
+			     (None,u'(..*)idi',u'pyramidi'),
+			     (u't',u'(tä|äi)ti',u'äiti')]),
         (u'siivota', u'ws', [(None,u'(.*O)tA',u'siivota')]),
 	(u'sydän', u'-', [(None,u'(.*A)n',u'sydän')]),
         (u'taittaa', u'sw', [(u'tt',u'(.*t)tAA',u'taittaa')]),
@@ -177,7 +179,7 @@ rx = re.compile(pattern, re.IGNORECASE)
 begin = u"(amerikan|jälleen|tiibetin|uudelleen).+"
 rx_begin = re.compile(begin, re.IGNORECASE)
 
-end = u".+(herkkä|pöllö|rämeä|valmis)"
+end = u".+(herkkä|pöllö|valmis)"
 rx_end = re.compile(end, re.IGNORECASE)
 
 
@@ -454,8 +456,12 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 		if (rx_end.match(wordform) != None):
 #			print ("Ei tarvita: " + wordform)
 			continue
-		if (((wordform == u"ori")   and (jatko == u"risti")) or
-		    ((wordform == u'kampi') and (jatko == u'sampi'))):
+		# Joillakin sanoilla on sanastossa kaksi taivususkaavaa, Sukijassa
+		# taivutuskaavat on yhdistetty, ja toisen taivutuskaavan voi poistaa.
+		if ((wordform in [u'ori', u'ripsi', u'sini', u'täti', u'äiti']) and (jatko == u'risti')):
+#			print ("Ei tarvita: " + wordform)
+			continue
+		if  ((wordform == u'kampi') and (jatko == u'sampi')):
 #			print ("Ei tarvita: " + wordform)
 			continue
 		

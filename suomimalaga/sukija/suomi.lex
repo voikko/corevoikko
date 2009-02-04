@@ -245,11 +245,19 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: yksikkö, äs: a, jatko: @sijan_jatko_ol];
 [alku: "ssä",   luokka: sijapääte, sija: sisäolento_ssA,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
+[alku: "ss",    luokka: sijapääte, sija: sisäolento_ssA,
+                luku: yksikkö, äs: a, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "ssa"];
+[alku: "ss",    luokka: sijapääte, sija: sisäolento_ssA,
+                luku: yksikkö, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "ssä"];
 
 [alku: "issa",  luokka: sijapääte, sija: sisäolento_issA,
                 luku: monikko, äs: a, jatko: @sijan_jatko_ol];
 [alku: "issä",  luokka: sijapääte, sija: sisäolento_issA,
                 luku: monikko, äs: ä, jatko: @sijan_jatko_ol];
+[alku: "iss",   luokka: sijapääte, sija: sisäolento_issA,
+                luku: monikko, äs: a, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "issa"];
+[alku: "iss",   luokka: sijapääte, sija: sisäolento_issA,
+                luku: monikko, äs: ä, jatko: <loppu>, tiedot: <ei_voikko>, perusmuoto: "issä"];
 
 
 [alku: "sta",   luokka: sijapääte, sija: sisäeronto_stA,

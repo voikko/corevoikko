@@ -245,14 +245,18 @@ subrule taivutuskaava ($tietue, $taivutus):
 ##   $taivutus :=- @nimisanasta_johdettu_laatusana;
 ##  end;
 
-  # Ei kahta -llinen-johdinta peräkkäin.
+  # Eräät johtimet eivät esiinny peräkkäin.
   #
   if ($tietue.luokka in <johdin_llinen>) then
-    $taivutus :=- johdin_llinen;
+    $taivutus :=- <johdin_inen, johdin_ittAin, johdin_lAinen, johdin_llinen, johdin_mAinen>;
   end;
 
-  if ($tietue.luokka in @johdin_mA + <nimitapa_4>) then
-    $taivutus :=- johdin_inen;
+  if ($tietue.luokka in <nimitapa_4>) then
+    $taivutus :=- <johdin_inen, johdin_lAinen, johdin_mAinen>;
+  end;
+
+  if ($tietue.luokka in @johdin_mA) then
+    $taivutus :=- <johdin_inen, johdin_lAinen>;
   end;
 
   if ($tietue.luokka in @johdin_jA) then
@@ -650,15 +654,6 @@ subrule pyörtö ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
   return valo ($tietue, "t"+O($tietue), "r"+O($tietue));
-end;
-
-
-subrule heitto ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.luokka := nimisana;
-  $tietue.äs := ääntiösointu ($tietue);
-  $tietue.perusmuoto := $tietue.alku + "t"+O($tietue);
-  return valo ($tietue, "t"+O($tietue), O($tietue));
 end;
 
 
