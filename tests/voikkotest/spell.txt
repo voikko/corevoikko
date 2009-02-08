@@ -150,6 +150,7 @@ saksalais-roomalainen
 saksalais-Kari
 !pannuunkarilainen
 Uutta-Seelantia
+!uutta-asiaa
 Ison-Britannian
 Isoa-Britanniaa
 saksalaismiehityksen
