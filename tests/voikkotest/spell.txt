@@ -100,6 +100,9 @@ koe-elää
 !leipämainen # "mainen" ei sallittu yhdyssanan osana
 virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
 !uutelleennimeä # adjektiivin genetiivi + substantiivi
+!kaivertajajuoda
+!kaivertajajoi
+kaivertajajuonti
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen

@@ -1602,7 +1602,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   end;
 
   if tavuviiva in $oikea.jatko then
-    result $res, rules nimisana, laatusana, teonsana,
+    result $res, rules nimisana, laatusana, nimisana_teonsanasta,
            etuliite, tavuviiva;
   end;
   if omistusliite in $oikea.jatko then
