@@ -183,6 +183,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "k:llo", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "klo", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kello (sisälyhenne, ei taivuteta kaksoispisteen avulla)
 [alku: "km", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # kilometri
+[alku: "ko.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # kyseessä oleva
 [alku: "kok.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Kokoomus; kokelas
 [alku: "kom.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Kommunisti(t).
 [alku: "kpl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # kappale(tta)

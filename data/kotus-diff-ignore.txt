@@ -1415,6 +1415,7 @@ nyyttärit # nyyttäri
 onkogeeninen # onkogeeni
 onkogeenisuus # onkogeeni
 palpointi # palpoida
+parabolinen # paraboli
 parafinointi # parafinoida
 patsastelu # patsastella
 penkkarit # penkkari
@@ -1455,6 +1456,7 @@ räknäys # räknätä
 sammarit # sammari
 santsaus # santsata
 senssit # senssi
+serologinen # serologi
 shoppailla # shopata
 shoppailu # shopata
 sightseeingbussi # sightseeing
