@@ -1404,6 +1404,7 @@ metkasti # metka
 metastasointi # metastasoida
 molaarisuus # molaarinen
 mulahdus # mulahtaa
+murkkuikäinen # murkku + ikä
 murrostus # murrostaa
 nahoitus # nahoittaa
 narkkaus # narkata

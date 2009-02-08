@@ -4461,7 +4461,7 @@ subrule edam ($tietue, $vahva_aste, $heikko_aste):
                          johdin_llinen:   $heikko_aste + "i",
                          johdin_lAinen:   $vahva_aste + "i",
                          johdin_mAinen:   $vahva_aste,
-                         johdin_inen:     $vahva_aste + "i"] +
+                         johdin_inen:     $vahva_aste] +
                          monikko7 ($heikko_aste + "i",
                                    $heikko_aste + "e", $heikko_aste + "e",
                                    [omanto_iT:  $heikko_aste + "e",
