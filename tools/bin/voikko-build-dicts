@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2008 - 2009 Harri Pitkänen (hatapitk@iki.fi)
 # Script for automating the build of multiple dictionary variants for
-# Voikko.
+# Voikko. This script should be run in the main directory of
+# Suomi-malaga source package.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -63,6 +64,13 @@ d.nameEn = u"Finnish dialects"
 d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
 allDicts.append(d)
 
+d = Voikkodict()
+d.idSuffix = u"-education"
+d.nameFi = u"kasvatustieteen sanasto"
+d.nameEn = u"education vocabulary"
+d.smOptions = u'GENLEX_OPTS="--extra-usage=education"'
+allDicts.append(d)
+
 WORK_DIR="build"
 
 # === Phase 1: build the dictionaries ===
@@ -106,3 +114,10 @@ if access(oxtdir + OXT_DESCRIPTION, F_OK):
 		descOut.close()
 		move(oxtdir + OXT_DESCRIPTION + ".new", oxtdir + OXT_DESCRIPTION)
 		runCmd('cd ' + oxtdir + ' && zip -r ../voikko' + dict.idSuffix + '.oxt *')
+
+# === Phase 3: build zip packages ===
+
+for dict in allDicts:
+	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
+	zipFile = dirName + '.zip'
+	runCmd('zip -j ' + zipFile + ' ' + dirName + '/*')
