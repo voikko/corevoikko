@@ -15,7 +15,7 @@ VOIKKO_DEBUG=no
 -include config.mak
 
 # Suomi-malaga version
-SM_VERSION=1.2
+SM_VERSION=1.3
 SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
@@ -54,13 +54,7 @@ VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	poikkeavat.lex lainen.lex taivutustäydennykset.lex sidesanat.lex \
 	huudahdussanat.lex
 
-# Lexicon files generated for Voikko from Joukahainen
-VOIKKO_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede
-
-# Files to ship in the preprocessed source package
-VOIKKO_FI_SRCDIST=$(VOIKKO_COPY_FROM_VOCABULARY) suomi.lex voikko-fi_FI.pro voikko-fi_FI.mor_l \
-                  voikko-fi_FI.sym_l voikko-fi_FI.all_l voikko-fi_FI.lex suomi.inc subrule.inc \
-                  $(patsubst %,%.lex,$(VOIKKO_LEX_FROM_XML)) olla-ei.lex
+SUKIJA_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede
 
 # Files to ship in the source package (duplicates are allowed)
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
@@ -111,7 +105,7 @@ VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
 voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
 	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@
 
-$(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)): voikko/generate_lex.flag
+voikko/joukahainen.lex: voikko/generate_lex.flag
 
 clean:
 	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc common/hfconv.pyc voikko/generate_lex.flag
@@ -120,21 +114,9 @@ clean:
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
-	rm -f $(patsubst %,voikko/%.lex,$(VOIKKO_LEX_FROM_XML)) voikko/main.lex voikko/voikko-fi_FI.pro
+	rm -f voikko/joukahainen.lex voikko/main.lex voikko/voikko-fi_FI.pro
 	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
 	rm -f TAGS
-
-# Rules for creating the preprocessed source package
-
-voikko-preprocessed-l-gzip: voikko-fi-lsrc-$(SM_VERSION).tar.gz
-
-voikko-fi-lsrc-$(SM_VERSION).tar.gz: voikko $(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST)))
-	tar c --group 0 --owner 0 voikko-fi-$(SM_VERSION) | gzip -9 > $@
-
-$(patsubst %,voikko-fi-$(SM_VERSION)/%, $(sort $(VOIKKO_FI_SRCDIST))): voikko-fi-$(SM_VERSION)/%: voikko/%
-	install -m 755 -d voikko-fi-$(SM_VERSION)
-	install -m 644 $^ voikko-fi-$(SM_VERSION)
-
 
 # Rules for creating the source distribution
 
@@ -180,14 +162,14 @@ taivutustäydennykset.lex \
 yhdyssanat.lex
 
 sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
-	$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML))
+	$(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML))
 	@malmake sukija/suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikonsanat/%: vocabulary/%
 	@mkdir -p sukija/voikonsanat
 	cp $^ $@
 
-$(patsubst %,sukija/voikonsanat/%.lex,$(VOIKKO_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
+$(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
 	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py \
 	sukija/ei-sukija.txt
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2009 Harri Pitkänen (hatapitk@iki.fi)
 # Program to generate lexicon files for Suomi-malaga Voikko edition
 
 # This program is free software; you can redistribute it and/or modify
@@ -33,19 +33,10 @@ flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_
 # Get command line options
 OPTIONS = generate_lex_common.get_options()
 
-# According to the options, remove some special vocabularies
-old_special = generate_lex_common.SPECIAL_VOCABULARY
+# No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
-for s in old_special:
-	if s[0] != "usage": continue
-	if s[1] in OPTIONS["extra-usage"]: continue
-	generate_lex_common.SPECIAL_VOCABULARY.append(s)
 
 main_vocabulary = generate_lex_common.open_lex(VOIKKO_LEX_DIR, "joukahainen.lex")
-vocabulary_files = {}
-for voc in generate_lex_common.SPECIAL_VOCABULARY:
-	vocabulary_files[voc[2]] = generate_lex_common.open_lex(VOIKKO_LEX_DIR, voc[2])
-
 
 def frequency(word):
 	fclass = word.getElementsByTagName("fclass")
@@ -61,11 +52,22 @@ def check_style(word):
 			if not style in OPTIONS["style"]: return False
 	return True
 
+# Returns True if the word is acceptable according to its usage flags.
+def check_usage(word):
+	global OPTIONS
+	wordUsage = word.getElementsByTagName("usage")
+	if len(wordUsage) == 0: return True
+	for usageE in wordUsage:
+		for usage in generate_lex_common.tValues(usageE, "flag"):
+			if usage in OPTIONS["extra-usage"]: return True
+	return False
+
 def handle_word(word):
 	global OPTIONS
 	# Drop words that are not needed in the Voikko lexicon
 	if generate_lex_common.has_flag(word, "not_voikko"): return
 	if not check_style(word): return
+	if not check_usage(word): return
 	if frequency(word) >= OPTIONS["frequency"] + 1: return
 	if frequency(word) == OPTIONS["frequency"] and generate_lex_common.has_flag(word, "confusing"): return
 	
@@ -108,21 +110,17 @@ def handle_word(word):
 		if alku == None:
 			errorstr = u"#Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
-			generate_lex_common.write_entry(main_vocabulary, vocabulary_files,
-				word, errorstr)
+			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
 			print(errorstr)
 			continue
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
 			   debug_info)
-		generate_lex_common.write_entry(main_vocabulary, vocabulary_files, word, entry)
+		generate_lex_common.write_entry(main_vocabulary, {}, word, entry)
 
 
 voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
                              handle_word, True)
 
 main_vocabulary.close()
-for (name, file) in vocabulary_files.iteritems():
-	file.close()
-

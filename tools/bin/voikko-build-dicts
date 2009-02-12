@@ -65,7 +65,7 @@ d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-fre
 allDicts.append(d)
 
 d = Voikkodict()
-d.idSuffix = u"-education"
+d.idSuffix = u"-kasvatus"
 d.nameFi = u"kasvatustieteen sanasto"
 d.nameEn = u"education vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=education"'
