@@ -268,6 +268,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "rva", luokka: lyhenne, jatko: <loppu>, äs: aä]; # rouva
 [alku: "r.y.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "ry", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # rekisteröity yhdistys
+[alku: "s.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # sivu
 [alku: "SAJ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Suomen Ammattijärjestöjen Keskusjärjestö.
 [alku: "SAK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Ammattiliittojen Keskusjärjestö
 [alku: "SA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # Suomen Akatemia; Suomen armeija
