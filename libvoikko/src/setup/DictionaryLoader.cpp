@@ -78,19 +78,28 @@ Dictionary DictionaryLoader::load(const string & variant, const string & path)
 	if (dicts.size() == 0) {
 		throw DictionaryException("No valid dictionaries were found");
 	}
+	
+	string finalVariant(variant);
 	if (variant.empty() || variant == "default" || variant == "fi_FI") {
-		loadDictionary(dicts.front());
-		return dicts.front();
-	}
-	else {
-		for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); i++) {
-			if ((*i).getVariant() == variant) {
-				loadDictionary(*i);
-				return *i;
-			}
+		// Use dictionary specified by environment variable VOIKKO_DICTIONARY_PATH
+		// FIXME: thread safety
+		char * dict_from_env = getenv("VOIKKO_DICTIONARY");
+		if (dict_from_env) {
+			finalVariant = string(dict_from_env);
 		}
-		throw DictionaryException("Specified dictionary variant was not found");
+		else {
+			// No dictionary specified anywhere, so take the one with highest priority.
+			loadDictionary(dicts.front());
+			return dicts.front();
+		}
 	}
+	for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); i++) {
+		if ((*i).getVariant() == finalVariant) {
+			loadDictionary(*i);
+			return *i;
+		}
+	}
+	throw DictionaryException("Specified dictionary variant was not found");
 }
 
 void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {

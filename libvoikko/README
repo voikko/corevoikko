@@ -104,6 +104,25 @@ following rules:
    first in alphabetical order is selected as the default.
 
 
+Selection of the variant to use
+===============================
+
+The dictionary variant to be used is determined using the following rules, starting
+from rule 1:
+
+1) If the parameter 'langcode' given to functions voikko_init or voikko_init_with_path
+   is NULL, no dictionary will be loaded. The behaviour of the library after such
+   initialization is currently undefined.
+2) If the parameter 'langcode' given to functions voikko_init or voikko_init_with_path
+   is something else than "", "default" or "fi_FI", variant with that name is loaded.
+   If the variant is not available, an error is returned.
+3) If environment variable VOIKKO_DICTIONARY is defined, its value is used as the
+   name of the dictionary variant to load. If the variant is not available, an error
+   is returned.
+4) Finally, the default variant is loaded. If no dictionary variants are available,
+   an error is returned.
+
+
 Author
 ======
 
