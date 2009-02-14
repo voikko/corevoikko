@@ -77,7 +77,7 @@ voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
 }
 
 void gc_static_replacements(int handle, const gc_sentence * sentence) {
-	for (int i = 0; i < sentence->token_count - 2; i++) {
+	for (size_t i = 0; i + 2 < sentence->token_count; i++) {
 		gc_token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
 		if (wcscmp(t.str, L"joten")) continue;
@@ -101,7 +101,7 @@ void gc_static_replacements(int handle, const gc_sentence * sentence) {
 
 void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 	voikko_gc_cache_entry * e;
-	for (int i = 0; i < sentence->token_count; i++) {
+	for (size_t i = 0; i < sentence->token_count; i++) {
 		gc_token t = sentence->tokens[i];
 		switch (t.type) {
 		case TOKEN_WHITESPACE:
@@ -164,8 +164,28 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 }
 
 void gc_character_case(int handle, const gc_sentence * sentence) {
+	// Check if the sentence is written fully in upper case letters.
+	// If it is, no character case errors should be reported.
+	bool onlyUpper = true;
+	for (size_t i = 0; i < sentence->token_count; i++) {
+		gc_token t = sentence->tokens[i];
+		if (t.type != TOKEN_WORD) continue;
+		for (size_t j = 0; j < t.tokenlen; j++) {
+			if (iswlower(t.str[j])) {
+				onlyUpper = false;
+				break;
+			}
+		}
+		if (!onlyUpper) {
+			break;
+		}
+	}
+	if (onlyUpper) {
+		return;
+	}
+	
 	int first_word_seen = 0;
-	for (int i = 0; i < sentence->token_count; i++) {
+	for (size_t i = 0; i < sentence->token_count; i++) {
 		gc_token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
 		if (!first_word_seen) {
@@ -194,7 +214,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 }
 
 void gc_repeating_words(int handle, const gc_sentence * sentence) {
-	for (int i = 0; i < sentence->token_count - 2; i++) {
+	for (size_t i = 0; i + 2 < sentence->token_count; i++) {
 		if (sentence->tokens[i].type != TOKEN_WORD) continue;
 		if (sentence->tokens[i + 1].type != TOKEN_WHITESPACE) {
 			i++;

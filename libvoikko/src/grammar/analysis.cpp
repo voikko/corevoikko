@@ -28,7 +28,7 @@ namespace libvoikko {
 /** Free the memory allocated for sentence analysis */
 void free_gc_sentence(gc_sentence * sentence) {
 	if (!sentence) return;
-	for (int i = 0; i < sentence->token_count; i++) {
+	for (size_t i = 0; i < sentence->token_count; i++) {
 		delete[] sentence->tokens[i].str;
 	}
 	delete sentence;

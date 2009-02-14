@@ -77,6 +77,11 @@ def _check_hyphens(section, expected_results, results):
 def _check_gcerrors(inputpara, expresults, results):
 	failcount = 0
 	for i in range(0, len(expresults)):
+		if len(results) - 1 < i:
+			print u'Grammar test failed: less results than expected.'
+			print u'The first paragraph with missing results:'
+			print u' ' + inputpara[i]
+			return failcount + 1
 		if expresults[i] != results[i]:
 			print u'Grammar test failed. Input:'
 			print u' ' + inputpara[i]
@@ -247,7 +252,7 @@ def grammar_tests():
 			if line.startswith(u'{') and line.endswith(u'}'):
 				if len(inputpara) > 0:
 					results = _check_grammar(inputpara, section)
-					failcount = _check_gcerrors(inputpara, expresults, results)
+					failcount = failcount + _check_gcerrors(inputpara, expresults, results)
 					inputpara = []
 					expresults = []
 				section = line[1:-1]
@@ -268,7 +273,7 @@ def grammar_tests():
 		inputfile.close()
 		if len(inputpara) > 0:
 			results = _check_grammar(inputpara, section)
-			failcount = _check_gcerrors(inputpara, expresults, results)
+			failcount = failcount + _check_gcerrors(inputpara, expresults, results)
 		if failcount == 0:
 			print u"All %i grammar tests were successful." % testcount
 			return True

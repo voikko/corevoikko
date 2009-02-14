@@ -60,7 +60,7 @@ typedef struct {
 	/** Array of gc tokens */
 	gc_token tokens[GCANALYSIS_MAX_TOKENS];
 	/** Number of tokens in the sentence */
-	int token_count;
+	size_t token_count;
 	/** Position of this sentence within paragraph */
 	size_t pos;
 } gc_sentence;

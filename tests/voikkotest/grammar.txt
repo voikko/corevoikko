@@ -46,6 +46,10 @@ Hieno eka otsikko
 Virke päättyy kolmeen pisteeseen...
 Virke päättyy kolmeen pisteeseen... Toinen alkaa sen jälkeen.
 Virkkeessä on kolme pistettä... ja jotain muutakin.
+VIRKE ON KIRJOITETTU KOKONAAN ISOILLA KIRJAIMILLA.
+ISOLLA KIRJOITETUSSA VIRKKEESSÄ ON 1 NUMERO.
+YKSI VIRKE ON KOKONAAN ISOLLA. Toisessa on Silti virhe.
+ [code=6, level=0, descr="", stpos=43, len=5, suggs={}]
 
 {accept_titles=1}
 Hieno toka otsikko
