@@ -27,13 +27,13 @@ using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
 
-static int autotest = 0;
-static int suggest = 0;
-static int one_line_output = 0;
+static bool autotest = false;
+static bool suggest = false;
+static int one_line_output = false;
 static char word_separator = ' ';
-static int space = 0;  /* Set to nonzero if you want to output suggestions that has spaces in them. */
+static bool space = false;  /* Set to true if you want to output suggestions that has spaces in them. */
 
-void check_word(int handle, const wchar_t * word, size_t wlen) {
+void check_word(int handle, const wchar_t * word) {
 	int result = voikko_spell_ucs4(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		cerr << "E: charset conversion failed" << endl;
@@ -145,7 +145,7 @@ int main(int argc, char ** argv) {
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args == "-t") {
-			autotest = 1;
+			autotest = true;
 		}
 		else if (args == "ignore_dot=1")
 			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
@@ -176,14 +176,14 @@ int main(int argc, char ** argv) {
 		else if (args == "ocr_suggestions=0")
 			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
 		else if (args.find("-x") == 0) {
-			one_line_output = 1;
+			one_line_output = true;
 			if (args.size() == 3) {
 				word_separator = argv[i][2];
 			}
 			space = (word_separator != ' ');
 		}
 		else if (args == "-s") {
-			suggest = 1;
+			suggest = true;
 		}
 		else if (args.find("-c") == 0) {
 			continue;
@@ -217,7 +217,7 @@ int main(int argc, char ** argv) {
 			cerr << "E: Too long word" << endl;
 			continue;
 		}
-		check_word(handle, line, lineLen);
+		check_word(handle, line);
 	}
 	int error = ferror(stdin);
 	if (error) {

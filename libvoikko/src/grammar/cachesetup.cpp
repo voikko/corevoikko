@@ -40,7 +40,7 @@ void voikko_gc_cache::clear() {
 	first_error = 0;
 }
 
-void gc_clear_cache(int handle) {
+void gc_clear_cache(int /*handle*/) {
 	if (voikko_options.gc_cache.paragraph) {
 		delete[] voikko_options.gc_cache.paragraph;
 	}

@@ -280,7 +280,7 @@ enum spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 }
 
 
-VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word) {
+VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	size_t nchars = wcslen(word);
 	int result;
 	wchar_t * nword;

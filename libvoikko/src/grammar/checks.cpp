@@ -30,7 +30,7 @@ namespace libvoikko {
 /**
  * Appends an entry to the grammar checker error cache.
  */
-void gc_cache_append_error(int handle, voikko_gc_cache_entry * new_entry) {
+void gc_cache_append_error(int /*handle*/, voikko_gc_cache_entry * new_entry) {
 	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
 	if (!entry) {
 		voikko_options.gc_cache.first_error = new_entry;

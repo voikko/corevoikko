@@ -47,7 +47,7 @@ void free_gc_paragraph(gc_paragraph * para) {
 
 /** Analyze given text token. Token type, length and text must have already
  *  been set. */
-void gc_analyze_token(int handle, gc_token * token) {
+void gc_analyze_token(int /*handle*/, gc_token * token) {
 	token->is_valid_word = 0;
 	token->first_letter_lcase = 0;
 	token->possible_sentence_start = 0;

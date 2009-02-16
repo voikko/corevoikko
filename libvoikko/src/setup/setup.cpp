@@ -43,7 +43,7 @@ voikko_options_t voikko_options;
 
 int voikko_handle_count;
 
-VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
+VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
 			if (value) voikko_options.ignore_dot = 1;
@@ -101,7 +101,7 @@ VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 	return 0;
 }
 
-VOIKKOEXPORT int voikko_set_int_option(int handle, int option, int value) {
+VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
 	switch (option) {
 		case VOIKKO_INTERSECT_COMPOUND_LEVEL:
 			voikko_options.intersect_compound_level = value;
@@ -113,7 +113,7 @@ VOIKKOEXPORT int voikko_set_int_option(int handle, int option, int value) {
 	return 0;
 }
 
-VOIKKOEXPORT int voikko_set_string_option(int handle, int option, const char * value) {
+VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
 	switch (option) {
 		case VOIKKO_OPT_ENCODING:
 			if (!value) return 0;

@@ -100,7 +100,7 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 	return textlen;
 }
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const wchar_t * text, size_t textlen,
                                                            size_t * tokenlen) {
 	if (textlen == 0) {
 		*tokenlen = 0;

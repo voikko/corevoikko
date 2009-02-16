@@ -54,7 +54,8 @@ void StringUtils::convertCStringArrayToMalloc(char ** & stringArray) {
 	}
 	
 	size_t numberOfStrings;
-	for (numberOfStrings = 0; stringArray[numberOfStrings] != 0; numberOfStrings++);
+	for (numberOfStrings = 0; stringArray[numberOfStrings] != 0; numberOfStrings++) {
+	}
 	
 	char ** newArray = (char **) malloc((numberOfStrings + 1) * sizeof(char *));
 	if (!newArray) {

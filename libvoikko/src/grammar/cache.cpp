@@ -31,7 +31,7 @@ namespace libvoikko {
 // This will be initialized to zero meaning "no errors"
 static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
+const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t * text,
                              size_t startpos, int skiperrors) {
 	if (!voikko_options.gc_cache.paragraph) return 0;	
 	if (wcscmp(voikko_options.gc_cache.paragraph, text) != 0) return 0;

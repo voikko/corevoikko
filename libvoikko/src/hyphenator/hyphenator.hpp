@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -30,19 +30,19 @@ namespace libvoikko {
  * @param hyphenation_points hyphenation buffer containing the existing hyphenation points
  * @param new_hyphen_pos position of the proposed new hyphenation point
  * @param nchars number of characters in the word
- * @return 1 if the proposed hyphenation point is valid (will not result in syllables without
- *         any vowels), 0 if it is invalid.
+ * @return true if the proposed hyphenation point is valid (will not result in syllables without
+ *         any vowels), false if it is invalid.
  */
-int is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
-                            size_t new_hyphen_pos, size_t nchars);
+bool is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
+                             size_t new_hyphen_pos, size_t nchars);
 
 /**
  * Checks if given word can be safely hyphenated using standard hyphenation rules
  * @param word word to check
  * @param nchars number of characters in the word
- * @return 1 if the word should be hyphenated with rule based hyphenator, otherwise 0
+ * @return true if the word should be hyphenated with rule based hyphenator, otherwise false.
  */
-int allow_rule_hyphenation(const wchar_t * word, size_t nchars);
+bool allow_rule_hyphenation(const wchar_t * word, size_t nchars);
 
 /**
  * Performs rule-based hyphenation.
