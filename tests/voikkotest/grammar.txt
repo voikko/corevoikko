@@ -17,7 +17,7 @@ Nyt on joten kuten  tehtävä joten kuten hankalampi   virheyhdistelmä.
 Lause , jossa on pilkun edellä turha väli.
  [code=3, level=0, descr="", stpos=5, len=2, suggs={","}]
 Lause,, jossa kaksi peräkkäistä pilkkua.
- [code=4, level=0, descr="", stpos=5, len=2, suggs={}]
+ [code=4, level=0, descr="", stpos=5, len=2, suggs={","}]
 Aurinko paistaa. (Tämä virke on suluissa.)
 Lause., jossa pilkun edellä piste.
  [code=5, level=0, descr="", stpos=5, len=2, suggs={}]

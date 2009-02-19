@@ -152,11 +152,13 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				gc_token t2 = sentence->tokens[i+1];
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
-				e = gc_new_cache_entry(0);
+				e = gc_new_cache_entry(1);
 				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_COMMA;
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = 2;
+				e->error.suggestions[0] = new char[2];
+				strcpy(e->error.suggestions[0], ",");
 				gc_cache_append_error(handle, e);
 			}
 			break;
