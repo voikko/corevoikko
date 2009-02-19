@@ -29,7 +29,7 @@ Lause. , jossa pilkun edellä piste.
  [code=5, level=0, descr="", stpos=0, len=1, suggs={}]
  [code=7, level=0, descr="", stpos=2, len=6, suggs={}]
 Avaimet löytyivät Reetan Taskun pohjalta.
- [code=6, level=0, descr="", stpos=25, len=6, suggs={}]
+ [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 "Lause voi olla myös lainausmerkeissä."
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
 Hyllyllä on mm. hilloa.
@@ -49,12 +49,12 @@ Virkkeessä on kolme pistettä... ja jotain muutakin.
 VIRKE ON KIRJOITETTU KOKONAAN ISOILLA KIRJAIMILLA.
 ISOLLA KIRJOITETUSSA VIRKKEESSÄ ON 1 NUMERO.
 YKSI VIRKE ON KOKONAAN ISOLLA. Toisessa on Silti virhe.
- [code=6, level=0, descr="", stpos=43, len=5, suggs={}]
+ [code=6, level=0, descr="", stpos=43, len=5, suggs={"silti"}]
 
 {accept_titles=1}
 Hieno toka otsikko
 Avaimet löytyivät Reetan Taskun pohjalta.
- [code=6, level=0, descr="", stpos=25, len=6, suggs={}]
+ [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 
 {accept_unfinished_paragraphs=1}
 Piste puuttuu vielä

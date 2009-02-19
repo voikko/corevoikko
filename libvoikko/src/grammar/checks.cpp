@@ -211,11 +211,16 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 		if (!t.first_letter_lcase) continue;
 		if (t.possible_sentence_start) continue;
 		if (!iswupper(t.str[0])) continue;
-		voikko_gc_cache_entry * e = gc_new_cache_entry(0);
+		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
 		if (!e) return;
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
 		e->error.startpos = t.pos;
 		e->error.errorlen = t.tokenlen;
+		wchar_t * suggestion = new wchar_t[t.tokenlen];
+		suggestion[0] = towlower(t.str[0]);
+		wcsncpy(suggestion + 1, t.str + 1, t.tokenlen - 1);
+		e->error.suggestions[0] = voikko_ucs4tocstr(suggestion, "UTF-8", t.tokenlen);
+		delete[] suggestion;
 		gc_cache_append_error(handle, e);
 	}
 }
