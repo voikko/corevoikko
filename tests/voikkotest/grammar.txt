@@ -21,13 +21,13 @@ Lause,, jossa kaksi peräkkäistä pilkkua.
 Aurinko paistaa. (Tämä virke on suluissa.)
 Lause., jossa pilkun edellä piste.
  [code=5, level=0, descr="", stpos=5, len=2, suggs={}]
- [code=7, level=0, descr="", stpos=8, len=5, suggs={}]
+ [code=7, level=0, descr="", stpos=8, len=5, suggs={"Jossa"}]
 Lause. , jossa pilkun edellä piste.
  [code=5, level=0, descr="", stpos=6, len=2, suggs={}]
- [code=7, level=0, descr="", stpos=9, len=5, suggs={}]
+ [code=7, level=0, descr="", stpos=9, len=5, suggs={"Jossa"}]
 , pilkku on aivan alussa.
  [code=5, level=0, descr="", stpos=0, len=1, suggs={}]
- [code=7, level=0, descr="", stpos=2, len=6, suggs={}]
+ [code=7, level=0, descr="", stpos=2, len=6, suggs={"Pilkku"}]
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 "Lause voi olla myös lainausmerkeissä."
@@ -37,7 +37,7 @@ Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
 Hyllyllä on kahdenlaisia elintarvikkeita: hilloja ja säilykkeitä.
 Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on tässä.
 Ensimmäinen virke on oikein. toinen virke on väärin.
- [code=7, level=0, descr="", stpos=29, len=6, suggs={}]
+ [code=7, level=0, descr="", stpos=29, len=6, suggs={"Toinen"}]
 Ensimmäinen virke on oikein. 2. virke on myös oikein.
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
  [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]

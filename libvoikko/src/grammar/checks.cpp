@@ -198,11 +198,16 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 		if (!first_word_seen) {
 			first_word_seen = 1;
 			if (!iswupper(t.str[0]) && !iswdigit(t.str[0])) {
-				voikko_gc_cache_entry * e = gc_new_cache_entry(0);
+				voikko_gc_cache_entry * e = gc_new_cache_entry(1);
 				if (!e) return;
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 				e->error.startpos = t.pos;
 				e->error.errorlen = t.tokenlen;
+				wchar_t * suggestion = new wchar_t[t.tokenlen];
+				suggestion[0] = towupper(t.str[0]);
+				wcsncpy(suggestion + 1, t.str + 1, t.tokenlen - 1);
+				e->error.suggestions[0] = voikko_ucs4tocstr(suggestion, "UTF-8", t.tokenlen);
+				delete[] suggestion;
 				gc_cache_append_error(handle, e);
 			}
 			continue;
