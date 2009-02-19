@@ -106,11 +106,13 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 		switch (t.type) {
 		case TOKEN_WHITESPACE:
 			if (t.tokenlen > 1) {
-				e = gc_new_cache_entry(0);
+				e = gc_new_cache_entry(1);
 				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_WHITESPACE;
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = sentence->tokens[i].tokenlen;
+				e->error.suggestions[0] = new char[2];
+				strcpy(e->error.suggestions[0], " ");
 				gc_cache_append_error(handle, e);
 			}
 			else if (i + 1 < sentence->token_count) {
