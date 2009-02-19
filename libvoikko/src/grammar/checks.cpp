@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -119,11 +119,14 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				gc_token t2 = sentence->tokens[i+1];
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
-				e = gc_new_cache_entry(0);
+				e = gc_new_cache_entry(1);
 				if (!e) return;
 				e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = 2;
+				e->error.suggestions[0] = new char[2];
+				e->error.suggestions[0][0] = t2.str[0];
+				e->error.suggestions[0][1] = L'\0';
 				gc_cache_append_error(handle, e);
 			}
 			break;

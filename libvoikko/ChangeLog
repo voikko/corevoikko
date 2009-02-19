@@ -1,3 +1,7 @@
+2009-02-19 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add suggestions for some detected grammar errors.
+
 2009-02-14 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add support for environment variable VOIKKO_DICTIONARY.
