@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -34,9 +34,9 @@
 
 namespace libvoikko {
 
-static int abort_search(sugg_status_t * s) {
-	if ((*s).max_suggestions == 0 || (*s).max_cost <= 0) return 1;
-	else return 0;
+static bool abort_search(sugg_status_t * s) {
+	if ((*s).max_suggestions == 0 || (*s).max_cost <= 0) return true;
+	else return false;
 }
 
 static void charge(sugg_status_t * s) {
@@ -44,12 +44,8 @@ static void charge(sugg_status_t * s) {
 }
 
 void suggest_correct_case(sugg_status_t * s, const wchar_t * buffer, size_t buflen) {
-	enum spellresult sres;
 	wchar_t * newsugg;
-	value_t analysis;
-	const char * analysis_str;
-	char * malaga_buffer;
-	size_t i, j, wlen;
+	size_t wlen;
 	int prio;
 	const wchar_t * word;
 	if (abort_search(s)) return;
@@ -61,14 +57,13 @@ void suggest_correct_case(sugg_status_t * s, const wchar_t * buffer, size_t bufl
 		word = buffer;
 		wlen = buflen;
 	}
-	sres = voikko_spell_with_priority(word, wlen, &prio);
+	enum spellresult sres = voikko_spell_with_priority(word, wlen, &prio);
 	charge(s);
 	switch (sres) {
 		case SPELL_FAILED:
 			return;
 		case SPELL_OK:
 			newsugg = new wchar_t[wlen + 1];
-			if (newsugg == 0) return;
 			wcscpy(newsugg, word);
 			*((*s).suggestions) = newsugg;
 			*((*s).prios) = prio;
@@ -78,7 +73,6 @@ void suggest_correct_case(sugg_status_t * s, const wchar_t * buffer, size_t bufl
 			return;
 		case SPELL_CAP_FIRST:
 			newsugg = new wchar_t[wlen + 1];
-			if (newsugg == 0) return;
 			newsugg[0] = towupper(word[0]);
 			wcsncpy(newsugg + 1, word + 1, wlen - 1);
 			newsugg[wlen] = L'\0';
@@ -89,19 +83,18 @@ void suggest_correct_case(sugg_status_t * s, const wchar_t * buffer, size_t bufl
 			((*s).max_suggestions)--;
 			return;
 		case SPELL_CAP_ERROR:
-			malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", wlen);
+			char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", wlen);
 			if (malaga_buffer == 0) return;
 			analyse_item(malaga_buffer, MORPHOLOGY);
 			delete[] malaga_buffer;
 			charge(s);
-			analysis = first_analysis_result();
+			value_t analysis = first_analysis_result();
 			if (!analysis) return;
-			analysis_str = get_value_string(analysis);
+			const char * analysis_str = get_value_string(analysis);
 			newsugg = new wchar_t[wlen + 1];
-			if (newsugg == 0) return;
 			wcscpy(newsugg, word);
-			j = 0;
-			for (i = 0; i < wlen; i++) {
+			size_t j = 0;
+			for (size_t i = 0; i < wlen; i++) {
 				while (analysis_str[j] == '=') j++;
 				if (analysis_str[j] == '\0') break;
 				if (analysis_str[j] == 'i' || analysis_str[j] == 'j')
@@ -124,14 +117,11 @@ const wchar_t * BACK_VOWELS =  L"aouAOU";
 const wchar_t * FRONT_VOWELS = L"\u00e4\u00f6y\u00c4\u00d6Y";
 
 void suggest_vowel_change(sugg_status_t * s) {
-	size_t i;
-	int j;
-	int k;
 	int mask = 0;
-	int vcount = 0;
+	size_t vcount = 0;
 	int pat = 1;
-	for (i = 0; i < (*s).wlen; i++)
-		for (j = 0; j < 6; j++)
+	for (size_t i = 0; i < (*s).wlen; i++)
+		for (int j = 0; j < 6; j++)
 			if (((*s).word)[i] == BACK_VOWELS[j] ||
 			    ((*s).word)[i] == FRONT_VOWELS[j]) {
 				vcount++;
@@ -141,15 +131,14 @@ void suggest_vowel_change(sugg_status_t * s) {
 			}
 	if (vcount == 0 || vcount > 7) return;
 	wchar_t * buffer = new wchar_t[(*s).wlen + 1];
-	if (buffer == 0) return;
 	while ((pat & mask) != 0) {
-		i = 0;
+		size_t i = 0;
 		wcscpy(buffer, (*s).word);
-		for (j = 0; j < vcount; j++) {
+		for (size_t j = 0; j < vcount; j++) {
 			while (!wcschr(BACK_VOWELS,  buffer[i]) &&
 			       !wcschr(FRONT_VOWELS, buffer[i])) i++;
 			if (pat & (1 << j)) {
-				for (k = 0; k < 6; k++) {
+				for (int k = 0; k < 6; k++) {
 					if (buffer[i] == BACK_VOWELS[k]) {
 						buffer[i] = FRONT_VOWELS[k];
 						break;
@@ -173,31 +162,27 @@ void suggest_vowel_change(sugg_status_t * s) {
 }
 
 void suggest_word_split(sugg_status_t * s) {
-	size_t splitind;
 	int prio_part;
 	int prio_total;
-	enum spellresult part1_res, part2_res;
 	wchar_t * part1 = new wchar_t[(*s).wlen + 1];
-	if (part1 == 0) return;
 	wcsncpy(part1, (*s).word, (*s).wlen);
 	part1[(*s).wlen] = L'\0';
 
-	for (splitind = (*s).wlen - 2; splitind >= 2; splitind--) {
+	for (size_t splitind = (*s).wlen - 2; splitind >= 2; splitind--) {
 		/* Do not split a word if there is a hyphen before the last character of part1
 		   or after the first character of part2. Do not suggest splitting immediately
 		   before or after a hyphen either. */
 		if (((*s).word)[splitind-2] == L'-' || ((*s).word)[splitind-1] == L'-' ||
 		    ((*s).word)[splitind]   == L'-' || ((*s).word)[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
-		part1_res = voikko_spell_with_priority(part1, splitind, &prio_total);
+		spellresult part1_res = voikko_spell_with_priority(part1, splitind, &prio_total);
 		charge(s);
 		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
-			part2_res = voikko_spell_with_priority((*s).word + splitind, (*s).wlen - splitind, &prio_part);
+			spellresult part2_res = voikko_spell_with_priority((*s).word + splitind, (*s).wlen - splitind, &prio_part);
 			prio_total += prio_part;
 			charge(s);
 			if (part2_res == SPELL_OK || part2_res == SPELL_CAP_FIRST) {
 				wchar_t * suggestion = new wchar_t[(*s).wlen + 2];
-				if (suggestion == 0) break;
 				wcsncpy(suggestion, (*s).word, splitind);
 				if (part1_res == SPELL_CAP_FIRST)
 					suggestion[0] = towupper(suggestion[0]);
@@ -237,15 +222,11 @@ const wchar_t * OCR_REPL_REPL =
 	L"abcdefghijklmnopqrstuvwxyz\u00e4\u00f6";
 
 void suggest_replacement(sugg_status_t * s, const wchar_t * from, const wchar_t * to, int count) {
-	int i;
-	wchar_t * pos;
 	wchar_t * buffer = new wchar_t[(*s).wlen + 1];
-	wchar_t upper_from;
-	if (buffer == 0) return;
 	wcsncpy(buffer, (*s).word, (*s).wlen);
 	buffer[(*s).wlen] = L'\0';
-	for (i = 0; i < count; i++) {
-		for (pos = wcschr(buffer, from[i]); pos != 0; pos = wcschr(pos+1, from[i])) {
+	for (int i = 0; i < count; i++) {
+		for (wchar_t * pos = wcschr(buffer, from[i]); pos != 0; pos = wcschr(pos+1, from[i])) {
 			*pos = to[i];
 			suggest_correct_case(s, buffer, (*s).wlen);
 			if (abort_search(s)) break;
@@ -254,9 +235,9 @@ void suggest_replacement(sugg_status_t * s, const wchar_t * from, const wchar_t 
 		if (abort_search(s)) break;
 		
 		/* Only search for upper case letter if it differs from lower case version */
-		upper_from = towupper(from[i]);
+		wchar_t upper_from = towupper(from[i]);
 		if (upper_from == from[i]) continue;
-		for (pos = wcschr(buffer, upper_from); pos != 0;
+		for (wchar_t * pos = wcschr(buffer, upper_from); pos != 0;
 		     pos = wcschr(pos + 1, upper_from)) {
 			*pos = towupper(to[i]);
 			suggest_correct_case(s, buffer, (*s).wlen);
@@ -269,10 +250,8 @@ void suggest_replacement(sugg_status_t * s, const wchar_t * from, const wchar_t 
 }
 
 void suggest_deletion(sugg_status_t * s) {
-	size_t i;
 	wchar_t * buffer = new wchar_t[(*s).wlen];
-	if (buffer == 0) return;
-	for (i = 0; i < (*s).wlen && !abort_search(s); i++) {
+	for (size_t i = 0; i < (*s).wlen && !abort_search(s); i++) {
 		if (i == 0 || towlower(((*s).word)[i]) != towlower(((*s).word)[i-1])) {
 			wcsncpy(buffer, (*s).word, i);
 			wcsncpy(buffer + i, (*s).word + (i + 1), (*s).wlen - i);
@@ -283,14 +262,12 @@ void suggest_deletion(sugg_status_t * s) {
 }
 
 void suggest_insert_special(sugg_status_t * s) {
-	size_t j;
 	wchar_t * buffer = new wchar_t[(*s).wlen + 2];
-	if (buffer == 0) return;
 	wcsncpy(buffer + 1, (*s).word, (*s).wlen);
 	buffer[(*s).wlen+1] = L'\0';
 	
 	/* suggest adding '-' */
-	for (j = 2; j <= (*s).wlen - 2 && !abort_search(s); j++) {
+	for (size_t j = 2; j <= (*s).wlen - 2 && !abort_search(s); j++) {
 		/* Do not add hyphen if there already is another nearby */
 		if (((*s).word)[j-2] == L'-' || ((*s).word)[j-1] == L'-' ||
 		    ((*s).word)[j] ==   L'-' || ((*s).word)[j+1] == L'-')
@@ -301,7 +278,7 @@ void suggest_insert_special(sugg_status_t * s) {
 	}
 	/* suggest character duplication */
 	wcsncpy(buffer + 1, (*s).word, (*s).wlen + 1);
-	for (j = 0; j < (*s).wlen && !abort_search(s); j++) {
+	for (size_t j = 0; j < (*s).wlen && !abort_search(s); j++) {
 		buffer[j] = ((*s).word)[j];
 		/* Do not duplicate if there already are two same letters */
 		if (j < (*s).wlen - 1 && ((*s).word)[j] == ((*s).word)[j+1]) {
@@ -318,15 +295,12 @@ void suggest_insert_special(sugg_status_t * s) {
 const wchar_t * INS_CHARS = L"aitesnulko\u00e4mrvpyhjd\u00f6gfbcw:xzq\u00e5";
 
 void suggest_insertion(sugg_status_t * s, int start, int end) {
-	int i;
-	size_t j;
 	wchar_t * buffer = new wchar_t[(*s).wlen + 2];
-	if (buffer == 0) return;
-	for (i = start; i <= end; i++) {
+	for (int i = start; i <= end; i++) {
 		buffer[0] = ((*s).word)[0];
 		wcsncpy(buffer + 1, (*s).word, (*s).wlen);
 		buffer[(*s).wlen+1] = L'\0';
-		for (j = 0; j < (*s).wlen && !abort_search(s); j++) {
+		for (size_t j = 0; j < (*s).wlen && !abort_search(s); j++) {
 			if (j != 0) buffer[j-1] = ((*s).word)[j-1];
 			if ((wint_t) INS_CHARS[i] == towlower(((*s).word[j]))) continue; /* avoid duplicates */
 			if (j > 0 && (wint_t) INS_CHARS[i] == towlower(((*s).word[j-1]))) continue; /* avoid duplicates */
@@ -344,23 +318,20 @@ void suggest_insertion(sugg_status_t * s, int start, int end) {
 
 void suggest_swap(sugg_status_t * s) {
 	size_t max_distance;
-	size_t i;
-	size_t j;
-	int k;
 	if ((*s).wlen <= 8) max_distance = 10;
 	else max_distance = 50 / (*s).wlen;
 	if (max_distance == 0) return;
 	wchar_t * buffer = new wchar_t[(*s).wlen + 1];
-	if (buffer == 0) return;
 	wcsncpy(buffer, (*s).word, (*s).wlen);
 	buffer[(*s).wlen] = L'\0';
-	for (i = 0; i < (*s).wlen && !abort_search(s); i++) {
-		for (j = i + 1; j < (*s).wlen && !abort_search(s); j++) {
+	for (size_t i = 0; i < (*s).wlen && !abort_search(s); i++) {
+		for (size_t j = i + 1; j < (*s).wlen && !abort_search(s); j++) {
 			if (j - i > max_distance) break;
 			/* do not suggest the same word */
 			if (towlower(buffer[i]) == towlower(buffer[j])) continue;
 			/* do not suggest swapping front and back vowels that have already been
 			   tested earlier */
+			int k;
 			for (k = 0; k < 3; k++) {
 				if ((towlower(buffer[i]) == (wint_t) BACK_VOWELS[k] &&
 				     towlower(buffer[j]) == (wint_t) FRONT_VOWELS[k]) ||
@@ -378,35 +349,27 @@ void suggest_swap(sugg_status_t * s) {
 	delete[] buffer;
 }
 
-int suggest_add_dots(wchar_t ** suggestions) {
-	int i;
-	size_t sugglen;
-	for (i = 0; suggestions[i] != 0; i++) {
-		sugglen = wcslen(suggestions[i]);
+void suggest_add_dots(wchar_t ** suggestions) {
+	for (int i = 0; suggestions[i] != 0; i++) {
+		size_t sugglen = wcslen(suggestions[i]);
 		wchar_t * buffer = new wchar_t[sugglen + 2];
-		if (!buffer) return 0; /* Stop if allocation fails */
 		wcsncpy(buffer, suggestions[i], sugglen);
 		buffer[sugglen] = L'.';
 		buffer[sugglen+1] = L'\0';
 		delete[] suggestions[i];
 		suggestions[i] = buffer;
 	}
-	return 1;
+	return;
 }
 
 VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
-	sugg_status_t status;
-	wchar_t * nword;
-	size_t wlen;
-	int add_dots;
-	
-	add_dots = 0;
+	bool add_dots = false;
 	if (word == 0) return 0;
-	wlen = wcslen(word);
+	size_t wlen = wcslen(word);
 	if (wlen <= 1 || wlen > LIBVOIKKO_MAX_WORD_CHARS) return 0;
 	
 	ENTER_V
-	nword = voikko_normalise(word, wlen);
+	wchar_t * nword = voikko_normalise(word, wlen);
 	if (nword == 0) {
 		EXIT_V
 		return 0;
@@ -421,26 +384,16 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		}
 		if (nword[wlen-1] == L'.') {
 			nword[--wlen] = L'\0';
-			add_dots = 1;
+			add_dots = true;
 		}
 	}
 	
 	wchar_t ** suggestions = new wchar_t*[MAX_SUGGESTIONS * 3 + 1];
-	if (suggestions == 0) {
-		delete[] nword;
-		EXIT_V
-		return 0;
-	}
 	memset(suggestions, 0, (MAX_SUGGESTIONS * 3 + 1) * sizeof(wchar_t *));
 	
 	int * prios = new int[MAX_SUGGESTIONS * 3];
-	if (prios == 0) {
-		delete[] suggestions;
-		delete[] nword;
-		EXIT_V
-		return 0;
-	}
 	
+	sugg_status_t status;
 	status.suggestions = suggestions;
 	status.prios = prios;
 	status.max_suggestions = MAX_SUGGESTIONS * 3;
@@ -539,21 +492,15 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 }
 
 VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
-	wchar_t * word_ucs4;
-	wchar_t ** suggestions_ucs4;
-	int i;
-	int j;
-	int scount;
-	char * suggestion;
 	if (word == 0 || word[0] == '\0') return 0;
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
-	word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
+	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
 	if (word_ucs4 == 0) return 0;
-	suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
+	wchar_t ** suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
 	delete[] word_ucs4;
 	if (suggestions_ucs4 == 0) return 0;
-	scount = 0;
+	int scount = 0;
 	while (suggestions_ucs4[scount] != 0) scount++;
 	
 	char ** suggestions = new char*[scount + 1];
@@ -562,9 +509,9 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
 		return 0;
 	}
 	
-	j = 0;
-	for (i = 0; i < scount; i++) {
-		suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding, 0);
+	int j = 0;
+	for (int i = 0; i < scount; i++) {
+		char * suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding, 0);
 		if (suggestion == 0) continue; /* suggestion cannot be encoded */
 		suggestions[j++] = suggestion;
 	}
