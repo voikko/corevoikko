@@ -20,6 +20,7 @@
 #define VOIKKO_GRAMMAR_ANALYSIS_H
 
 #include "voikko_defs.h"
+#include "grammar/Token.hpp"
 
 /* Maximum number of sentences in a paragraph */
 #define GCANALYSIS_MAX_SENTENCES 200
@@ -29,27 +30,6 @@
 
 namespace libvoikko {
 
-/**
- * Grammar checker sentence token.
- */
-typedef struct {
-	/** Type of this token */
-	enum voikko_token_type type;
-	/** True if this word token was recognized as a valid word */
-	int is_valid_word;
-	/** True if this is a word token that should start with
-	 *  lower case letter. */
-	int first_letter_lcase;
-	/** True if this word may be (but is not necessarily) the first
-	 *  word in a sentence. */
-	int possible_sentence_start;
-	/** Null terminated string containing the token text */
-	wchar_t * str;
-	/** Length of the token */
-	size_t tokenlen;
-	/** Position of this token within paragraph */
-	size_t pos;
-} gc_token;
 
 /**
  * Analyzed sentence for grammar checker.
@@ -58,7 +38,7 @@ typedef struct {
 	/** Type of this sentence (start type of next sentence) */
 	enum voikko_sentence_type type;
 	/** Array of gc tokens */
-	gc_token tokens[GCANALYSIS_MAX_TOKENS];
+	grammar::Token tokens[GCANALYSIS_MAX_TOKENS];
 	/** Number of tokens in the sentence */
 	size_t token_count;
 	/** Position of this sentence within paragraph */

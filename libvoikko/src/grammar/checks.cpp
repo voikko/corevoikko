@@ -25,6 +25,8 @@
 #include <cstring>
 #include <wctype.h>
 
+using namespace libvoikko::grammar;
+
 namespace libvoikko {
 
 /**
@@ -77,7 +79,7 @@ voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
 
 void gc_static_replacements(int handle, const gc_sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->token_count; i++) {
-		gc_token t = sentence->tokens[i];
+		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
 		if (wcscmp(t.str, L"joten")) continue;
 		t = sentence->tokens[i+1];
@@ -101,7 +103,7 @@ void gc_static_replacements(int handle, const gc_sentence * sentence) {
 void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 	voikko_gc_cache_entry * e;
 	for (size_t i = 0; i < sentence->token_count; i++) {
-		gc_token t = sentence->tokens[i];
+		Token t = sentence->tokens[i];
 		switch (t.type) {
 		case TOKEN_WHITESPACE:
 			if (t.tokenlen > 1) {
@@ -115,7 +117,7 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				gc_cache_append_error(handle, e);
 			}
 			else if (i + 1 < sentence->token_count) {
-				gc_token t2 = sentence->tokens[i+1];
+				Token t2 = sentence->tokens[i+1];
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
 				e = gc_new_cache_entry(1);
@@ -148,7 +150,7 @@ void gc_local_punctuation(int handle, const gc_sentence * sentence) {
 				continue;
 			}
 			if (t.str[0] == L',' && i + 1 < sentence->token_count) {
-				gc_token t2 = sentence->tokens[i+1];
+				Token t2 = sentence->tokens[i+1];
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
 				e = gc_new_cache_entry(1);
@@ -174,7 +176,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 	// If it is, no character case errors should be reported.
 	bool onlyUpper = true;
 	for (size_t i = 0; i < sentence->token_count; i++) {
-		gc_token t = sentence->tokens[i];
+		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
 		for (size_t j = 0; j < t.tokenlen; j++) {
 			if (iswlower(t.str[j])) {
@@ -192,7 +194,7 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 	
 	int first_word_seen = 0;
 	for (size_t i = 0; i < sentence->token_count; i++) {
-		gc_token t = sentence->tokens[i];
+		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
 		if (!first_word_seen) {
 			first_word_seen = 1;
@@ -211,9 +213,9 @@ void gc_character_case(int handle, const gc_sentence * sentence) {
 			}
 			continue;
 		}
-		if (!t.is_valid_word) continue;
-		if (!t.first_letter_lcase) continue;
-		if (t.possible_sentence_start) continue;
+		if (!t.isValidWord) continue;
+		if (!t.firstLetterLcase) continue;
+		if (t.possibleSentenceStart) continue;
 		if (!iswupper(t.str[0])) continue;
 		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
 		if (!e) return;
@@ -262,7 +264,7 @@ void gc_end_punctuation(int handle, const gc_paragraph * paragraph) {
 	if (voikko_options.accept_unfinished_paragraphs_in_gc) return;
 	
 	gc_sentence * sentence = paragraph->sentences[paragraph->sentence_count - 1];
-	gc_token * token = sentence->tokens + (sentence->token_count - 1);
+	Token * token = sentence->tokens + (sentence->token_count - 1);
 	if (token->type == TOKEN_PUNCTUATION) return;
 	voikko_gc_cache_entry * e = gc_new_cache_entry(0);
 	if (!e) return;

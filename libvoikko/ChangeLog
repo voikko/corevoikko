@@ -1,3 +1,7 @@
+2009-02-21 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Change struct gc_token into class Token.
+
 2009-02-19 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add suggestions for some detected grammar errors.

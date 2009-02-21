@@ -23,6 +23,8 @@
 #include <cstdlib>
 #include <cstring>
 
+using namespace libvoikko::grammar;
+
 namespace libvoikko {
 
 /** Free the memory allocated for sentence analysis */
@@ -47,10 +49,10 @@ void free_gc_paragraph(gc_paragraph * para) {
 
 /** Analyze given text token. Token type, length and text must have already
  *  been set. */
-void gc_analyze_token(int /*handle*/, gc_token * token) {
-	token->is_valid_word = 0;
-	token->first_letter_lcase = 0;
-	token->possible_sentence_start = 0;
+void gc_analyze_token(int /*handle*/, Token * token) {
+	token->isValidWord = false;
+	token->firstLetterLcase = false;
+	token->possibleSentenceStart = false;
 	if (token->type != TOKEN_WORD) return;
 	
 	char * malaga_buffer = voikko_ucs4tocstr(token->str, "UTF-8", token->tokenlen);
@@ -61,7 +63,7 @@ void gc_analyze_token(int /*handle*/, gc_token * token) {
 	// Check if first letter should be lower case letter
 	value_t analysis = first_analysis_result();
 	while (analysis) {
-		token->is_valid_word = 1;
+		token->isValidWord = true;
 		char * analysis_str = get_value_string(analysis);
 		if (strlen(analysis_str) < 2 || (analysis_str[1] != 'p' &&
 		    analysis_str[1] != 'q')) {
@@ -71,7 +73,7 @@ void gc_analyze_token(int /*handle*/, gc_token * token) {
 		free(analysis_str);
 		analysis = next_analysis_result();
 	}
-	token->first_letter_lcase = 1;
+	token->firstLetterLcase = true;
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */
@@ -83,7 +85,7 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 	size_t tokenlen;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
-	int next_word_is_possible_sentence_start = 0;
+	bool next_word_is_possible_sentence_start = false;
 	for (int i = 0; i < GCANALYSIS_MAX_TOKENS; i++) {
 		enum voikko_token_type tt;
 		int ignore_dot_saved = voikko_options.ignore_dot;
@@ -103,13 +105,13 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 		gc_analyze_token(handle, s->tokens + i);
 		
 		if (next_word_is_possible_sentence_start && tt == TOKEN_WORD) {
-			s->tokens[i].possible_sentence_start = 1;
-			next_word_is_possible_sentence_start = 0;
+			s->tokens[i].possibleSentenceStart = true;
+			next_word_is_possible_sentence_start = false;
 		}
 		else if (tt == TOKEN_PUNCTUATION &&
 		         ((tokenlen == 1 && (tstr[0] == L'.' || tstr[0] == L':'))
 		          || tokenlen == 3)) { // . : ... may separate sentences
-			next_word_is_possible_sentence_start = 1;
+			next_word_is_possible_sentence_start = true;
 		}
 		
 		s->token_count++;

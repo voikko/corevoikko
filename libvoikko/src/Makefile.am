@@ -17,7 +17,8 @@ noinst_HEADERS = utils/utils.hpp utils/StringUtils.hpp \
                  hyphenator/hyphenator.hpp voikko_defs.h porting.h \
                  spellchecker/spell.hpp spellchecker/suggestions.hpp \
                  grammar/cache.hpp grammar/checks.hpp grammar/error.hpp \
-                 grammar/cachesetup.hpp grammar/analysis.hpp
+                 grammar/cachesetup.hpp grammar/analysis.hpp \
+                 grammar/Token.hpp
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc
