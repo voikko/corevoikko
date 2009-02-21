@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -37,14 +37,14 @@ enum spellresult {SPELL_FAILED, SPELL_OK, SPELL_CAP_FIRST, SPELL_CAP_ERROR};
  *  @param analysis_str malaga analysis string
  *  @return spelling result
  */
-enum spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str);
+spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str);
 
 /** Checks the spelling of given word
  * @param word word to check (does not need to be null terminated)
  * @param len length of the word to check
  * @return spelling result
  */
-enum spellresult voikko_do_spell(const wchar_t * word, size_t len);
+spellresult voikko_do_spell(const wchar_t * word, size_t len);
 
 /** Checks the spelling of given word. Missing hyphens at the start or end of the
  * word are ignored.
@@ -52,7 +52,7 @@ enum spellresult voikko_do_spell(const wchar_t * word, size_t len);
  * @param len length of the word to check
  * @return spelling result
  */
-enum spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len);
+spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len);
 
 /** Checks the spelling of given word. This function does not accept optional hyphens.
  * @param word word to check (does not need to be null terminated)
@@ -61,7 +61,7 @@ enum spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len
  *             when words are listed as suggestions for a misspelled word
  * @return spelling result
  */
-enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio);
+spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio);
 
 /** Checks the spelling of given word and uses cache if possible
  * @param word word to check. Word does not need to be null terminated and it must
@@ -69,7 +69,7 @@ enum spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, in
  * @param len length of the word to check
  * @return spelling result
  */
-enum spellresult voikko_cached_spell(const wchar_t * word, size_t len);
+spellresult voikko_cached_spell(const wchar_t * word, size_t len);
 
 }
 

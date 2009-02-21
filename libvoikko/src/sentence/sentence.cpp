@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,34 +26,34 @@
 namespace libvoikko {
 
 /**
- * Returns 1 if given word ending with a dot can be interpreted
- * as a single word, 0 if the dot does not belong to the word.
+ * Returns true if given word ending with a dot can be interpreted
+ * as a single word, false if the dot does not belong to the word.
  */
-int dot_part_of_word(const wchar_t * text, size_t len) {
-	if (len < 2) return 0;
+bool dot_part_of_word(const wchar_t * text, size_t len) {
+	if (len < 2) return false;
 	
 	// ordinal numbers
-	int only_numbers = 1;
+	bool only_numbers = true;
 	for (size_t i = 0; i < len - 1; i++) {
 		if (!iswdigit(text[i])) {
-			only_numbers = 0;
+			only_numbers = false;
 			break;
 		}
 	}
-	if (only_numbers) return 1;
+	if (only_numbers) return true;
 	
 	// abbreviations
-	if (voikko_do_spell(text, len) != SPELL_FAILED) return 1;
-	return 0;
+	if (voikko_do_spell(text, len) != SPELL_FAILED) return true;
+	return false;
 }
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
                           const wchar_t * text, size_t textlen, size_t * sentencelen) {
-	enum voikko_token_type token = TOKEN_WORD;
+	voikko_token_type token = TOKEN_WORD;
 	size_t slen = 0;
 	size_t tokenlen;
 	size_t previous_token_start = 0;
-	enum voikko_token_type previous_token_type = TOKEN_NONE;
+	voikko_token_type previous_token_type = TOKEN_NONE;
 	int end_found = 0;
 	int end_dotword = 0;
 	int possible_end_punctuation = 0;

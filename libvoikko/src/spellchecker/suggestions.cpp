@@ -57,7 +57,7 @@ void suggest_correct_case(sugg_status_t * s, const wchar_t * buffer, size_t bufl
 		word = buffer;
 		wlen = buflen;
 	}
-	enum spellresult sres = voikko_spell_with_priority(word, wlen, &prio);
+	spellresult sres = voikko_spell_with_priority(word, wlen, &prio);
 	charge(s);
 	switch (sres) {
 		case SPELL_FAILED:
