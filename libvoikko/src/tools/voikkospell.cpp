@@ -138,7 +138,7 @@ int main(int argc, char ** argv) {
 	
 	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, cache_size, path);
 	if (voikko_error) {
-		cerr << "E: Initialisation of Voikko failed: " << voikko_error << endl;
+		cerr << "E: Initialization of Voikko failed: " << voikko_error << endl;
 		return 1;
 	}
 	

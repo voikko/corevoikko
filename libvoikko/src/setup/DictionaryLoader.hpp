@@ -31,13 +31,13 @@ class DictionaryLoader {
 	public:
 	/**
 	 * Find available dictionaries from default locations.
-	 * @return a set of unitialized dictionaries
+	 * @return a set of uninitialized dictionaries
 	 */
 	static std::list<Dictionary> findAllAvailable();
 	
 	/**
 	 * Find available dictionaries from given path and default locations.
-	 * @return a set of unitialized dictionaries
+	 * @return a set of uninitialized dictionaries
 	 */
 	static std::list<Dictionary> findAllAvailable(const std::string & path);
 	
