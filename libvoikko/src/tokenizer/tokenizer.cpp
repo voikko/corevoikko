@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2007 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2007 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ namespace libvoikko {
 
 size_t word_length(const wchar_t * text, size_t textlen) {
 	size_t wlen = 0;
-	int processing_number = 0;
+	bool processing_number = false;
 	
 	size_t adot;
 	if (voikko_options.ignore_dot) adot = 1;
@@ -36,11 +36,11 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 	while (wlen < textlen) {
 		switch (get_char_type(text[wlen])) {
 			case CHAR_LETTER:
-				processing_number = 0;
+				processing_number = false;
 				wlen++;
 				break;
 			case CHAR_DIGIT:
-				processing_number = 1;
+				processing_number = true;
 				wlen++;
 				break;
 			case CHAR_WHITESPACE:
@@ -150,12 +150,11 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
                                                            size_t * tokenlen) {
-	wchar_t * text_ucs4;
-	enum voikko_token_type result;
 	if (text == 0) return TOKEN_NONE;
-	text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
+	wchar_t * text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
 	if (text_ucs4 == 0) return TOKEN_NONE;
-	result = voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
+	voikko_token_type result =
+		voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
 	delete[] text_ucs4;
 	return result;
 }

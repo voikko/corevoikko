@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ namespace libvoikko {
 wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len) {
 #ifdef HAVE_ICONV
 	iconv_t cd;
-	int using_temporary_converter = 0;
+	bool using_temporary_converter = false;
 	size_t conv_bytes;
 	size_t outbytesleft = len * sizeof(wchar_t);
 	wchar_t * ucs4_buffer = new wchar_t[len + 1];
@@ -54,7 +54,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 			delete[] ucs4_buffer;
 			return 0;
 		}
-		using_temporary_converter = 1;
+		using_temporary_converter = true;
 	}
 	
 	LOG(("voikko_cstrtoucs4\n"));
@@ -106,10 +106,9 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len) {
 #ifdef HAVE_ICONV
 	iconv_t cd;
-	int using_temporary_converter = 0;
+	bool using_temporary_converter = false;
 	size_t conv_bytes;
 	char * utf8_buffer = new char[LIBVOIKKO_MAX_WORD_CHARS * 6 + 1];
-	if (utf8_buffer == 0) return 0;
 	char * outptr = utf8_buffer;
 	ICONV_CONST char * inptr = (ICONV_CONST char *) word;
 	size_t inbytesleft;
@@ -127,7 +126,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 			delete[] utf8_buffer;
 			return 0;
 		}
-		using_temporary_converter = 1;
+		using_temporary_converter = true;
 	}
 	
 	LOG(("voikko_ucs4tocstr\n"));
@@ -173,35 +172,34 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 
 int voikko_hash(const wchar_t * word, size_t len, int order) {
 	int hash = 0;
-	size_t counter;
-	for (counter = 0; counter < len; counter++) {
+	for (size_t counter = 0; counter < len; counter++) {
 		hash = (hash * 37 + word[counter]) % (1 << order);
 	}
 	return hash;
 }
 
 enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
-	int first_uc = 0;
-	int rest_lc = 1;
-	int all_uc = 1;
-	int no_letters = 1;
+	bool first_uc = false;
+	bool rest_lc = true;
+	bool all_uc = true;
+	bool no_letters = true;
 	if (nchars == 0) return CT_NO_LETTERS;
 	if (iswupper(word[0])) {
-		first_uc = 1;
-		no_letters = 0;
+		first_uc = true;
+		no_letters = false;
 	}
 	if (iswlower(word[0])) {
-		all_uc = 0;
-		no_letters = 0;
+		all_uc = false;
+		no_letters = false;
 	}
 	for (size_t i = 1; i < nchars; i++) {
 		if (iswupper(word[i])) {
-			no_letters = 0;
-			rest_lc = 0;
+			no_letters = false;
+			rest_lc = false;
 		}
 		if (iswlower(word[i])) {
-			all_uc = 0;
-			no_letters = 0;
+			all_uc = false;
+			no_letters = false;
 		}
 	}
 	if (no_letters) return CT_NO_LETTERS;
@@ -212,48 +210,59 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 }
 
 void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
-	size_t i;
 	if (nchars == 0) return;
 	switch (charcase) {
 		case CT_NO_LETTERS:
 		case CT_COMPLEX:
 			return; /* Do nothing */
 		case CT_ALL_LOWER:
-			for (i = 0; i < nchars; i++) word[i] = towlower(word[i]);
+			for (size_t i = 0; i < nchars; i++) {
+				word[i] = towlower(word[i]);
+			}
 			return;
 		case CT_ALL_UPPER:
-			for (i = 0; i < nchars; i++) word[i] = towupper(word[i]);
+			for (size_t i = 0; i < nchars; i++) {
+				word[i] = towupper(word[i]);
+			}
 			return;
 		case CT_FIRST_UPPER:
 			word[0] = towupper(word[0]);
-			for (i = 1; i < nchars; i++) word[i] = towlower(word[i]);
+			for (size_t i = 1; i < nchars; i++) {
+				word[i] = towlower(word[i]);
+			}
 			return;
 	}
 }
 
-int voikko_is_nonword(const wchar_t * word, size_t nchars) {
-	wchar_t * i;
-	
+bool voikko_is_nonword(const wchar_t * word, size_t nchars) {
 	// If X is a character (possibly other than '.'), then the following
 	// patterns (URLs and email addresses) will be considered non-words:
 	//   X*//X*.X+
 	//   X*@X+.X+
 	//   www.X+.X+
 	
-	if (nchars < 4) return 0;
+	if (nchars < 4) return false;
 	
-	i = wmemchr(word, L'/', nchars - 3);
-	if (i && i[1] == L'/' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) return 1;
+	wchar_t * i = wmemchr(word, L'/', nchars - 3);
+	if (i && i[1] == L'/' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) {
+		return true;
+	}
 	
 	i = wmemchr(word, L'@', nchars - 3);
-	if (i && i[1] != L'.' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) return 1;
+	if (i && i[1] != L'.' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) {
+		return true;
+	}
 	
-	if (nchars < 7) return 0;
+	if (nchars < 7) {
+		return false;
+	}
 	if ((wcsncmp(L"www.", word, 4) == 0) &&
 	    word[4] != L'.' &&
-	    wmemchr(word + 5, L'.', nchars - 5)) return 1;
+	    wmemchr(word + 5, L'.', nchars - 5)) {
+		return true;
+	}
 	
-	return 0;
+	return false;
 }
 
 }

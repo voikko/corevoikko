@@ -78,7 +78,6 @@ void gc_analyze_token(int /*handle*/, gc_token * token) {
 gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
                                    size_t textlen, size_t sentencepos) {
 	gc_sentence * s = new gc_sentence;
-	if (!s) return 0;
 	s->token_count = 0;
 	s->pos = sentencepos;
 	size_t tokenlen;
@@ -126,12 +125,7 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 
 gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
 	gc_paragraph * p = new gc_paragraph;
-	if (!p) return 0;
 	p->sentences = new gc_sentence*[GCANALYSIS_MAX_SENTENCES];
-	if (!p->sentences) {
-		delete p;
-		return 0;
-	}
 	p->sentence_count = 0;
 	size_t sentencelen;
 	const wchar_t * pos = text;

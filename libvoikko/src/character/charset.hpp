@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ enum char_type {CHAR_UNKNOWN, CHAR_LETTER, CHAR_DIGIT, CHAR_WHITESPACE, CHAR_PUN
  * @param c character to check
  * @return the character type
  */
-enum char_type get_char_type(wchar_t c);
+char_type get_char_type(wchar_t c);
 
 /** Normalises an unicode string according to our conventions
  * @param word string to normalise

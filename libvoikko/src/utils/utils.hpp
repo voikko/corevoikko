@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -77,9 +77,9 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars);
 /** Detect special non-word strings such as URLs and email addresses
  * @param word string to check
  * @param nchars length of the string
- * @return 1 if string is a non-word, otherwise 0
+ * @return true if string is a non-word, otherwise false
  */
-int voikko_is_nonword(const wchar_t * word, size_t nchars);
+bool voikko_is_nonword(const wchar_t * word, size_t nchars);
 
 }
 
