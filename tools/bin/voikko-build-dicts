@@ -37,6 +37,7 @@ def runCmd(cmd):
 
 class Voikkodict:
 	idSuffix = u""
+	variant = u""
 	nameFi = u""
 	nameEn = u""
 	smOptions = u""
@@ -45,6 +46,7 @@ allDicts = []
 
 d = Voikkodict()
 d.idSuffix = u""
+d.variant = u"standard"
 d.nameFi = u"perussanasto"
 d.nameEn = u"basic vocabulary"
 d.smOptions = u""
@@ -52,6 +54,7 @@ allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-erityis"
+d.variant = u"science"
 d.nameFi = u"tieteellinen sanasto"
 d.nameEn = u"scientific vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,education" EXTRA_LEX=vocabulary/erikoisalat/atk-lyhenteet.lex'
@@ -59,6 +62,7 @@ allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-murre"
+d.variant = u"dialects"
 d.nameFi = u"murresanasto"
 d.nameEn = u"Finnish dialects"
 d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
@@ -66,6 +70,7 @@ allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-kasvatus"
+d.variant = u"education"
 d.nameFi = u"kasvatustieteen sanasto"
 d.nameEn = u"education vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=education"'
@@ -79,7 +84,11 @@ DICT_DIR_PREFIX="dict"
 
 for dict in allDicts:
 	runCmd('make clean')
-	runCmd('make voikko-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix + '" ' + dict.smOptions)
+	runCmd('make voikko-install DESTDIR="' + WORK_DIR + '/' + DICT_DIR_PREFIX
+	                                       + dict.idSuffix + '" '
+	       + dict.smOptions
+	       + ' VOIKKO_VARIANT=' + dict.variant
+	       + ' VOIKKO_DESCRIPTION="' + d.nameFi + '"')
 
 # === Phase 2: build oxt packages ===
 
