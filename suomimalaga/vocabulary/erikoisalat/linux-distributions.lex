@@ -21,7 +21,9 @@
 [perusmuoto: "Evolution", alku: "Evolution", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Fedora", alku: "Fedor", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Firefox", alku: "Firefox", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ippp=ppp"];
+[perusmuoto: "Gnome", alku: "Gnome", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Iceweasel", alku: "Iceweasel", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=ipp=pppppp"];
+[alku: "KDE", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [perusmuoto: "KMail", alku: "KMail", luokka: nimi, jatko: <kalsium>, äs: a, rakenne: "=iippp"];
 [perusmuoto: "Kubuntu", alku: "Kubuntu", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Mandriva", alku: "Mandriv", luokka: nimi, jatko: <apila>, äs: a];
