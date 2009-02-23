@@ -112,7 +112,7 @@ clean:
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
 	rm -f voikko/joukahainen.lex voikko/main.lex voikko/voikko-fi_FI.pro
-	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*
+	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*.lex sukija/voikonsanat/erikoisalat/*.lex 
 	rm -f TAGS
 
 # Rules for creating the source distribution
