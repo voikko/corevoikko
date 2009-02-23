@@ -55,7 +55,7 @@ allDicts.append(d)
 d = Voikkodict()
 d.idSuffix = u"-erityis"
 d.variant = u"science"
-d.nameFi = u"tieteellinen sanasto"
+d.nameFi = u"matematiikan, fysiikan, kemian, lääketieteen, kasvatustieteen ja tietotekniikan sanastot"
 d.nameEn = u"scientific vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,education" EXTRA_LEX=vocabulary/erikoisalat/atk-lyhenteet.lex'
 allDicts.append(d)
@@ -63,7 +63,7 @@ allDicts.append(d)
 d = Voikkodict()
 d.idSuffix = u"-murre"
 d.variant = u"dialects"
-d.nameFi = u"murresanasto"
+d.nameFi = u"murteellisten, vanhojen ja harvinaisten sanojen sanasto"
 d.nameEn = u"Finnish dialects"
 d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
 allDicts.append(d)
@@ -88,7 +88,8 @@ for dict in allDicts:
 	                                       + dict.idSuffix + '" '
 	       + dict.smOptions
 	       + ' VOIKKO_VARIANT=' + dict.variant
-	       + ' VOIKKO_DESCRIPTION="' + d.nameFi + '"')
+	       + ' VOIKKO_DESCRIPTION="' + d.nameFi + '"'
+	       + ' SM_PATCHINFO="Development snapshot"')
 
 # === Phase 2: build oxt packages ===
 
@@ -130,3 +131,10 @@ for dict in allDicts:
 	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
 	zipFile = dirName + '.zip'
 	runCmd('zip -j ' + zipFile + ' ' + dirName + '/*')
+
+# === Phase 4: build source package ===
+
+runCmd('make clean')
+runCmd('make dist-gzip SM_VERSION=snapshot')
+runCmd('cp suomi-malaga-snapshot.tar.gz ' + WORK_DIR)
+runCmd('make clean SM_VERSION=snapshot')
