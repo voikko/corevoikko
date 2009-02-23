@@ -56,6 +56,7 @@ define @elt := <yhdyssana, tavuviiva, etuliite, teonsana>;
 define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
 
 include "voikonsanat/atk.lex";
+include "voikonsanat/atk-lyhenteet.lex";
 include "voikonsanat/erikoiset.lex";
 include "voikonsanat/erikoissanat.lex";
 include "voikonsanat/etuliitteet.lex";
@@ -64,6 +65,7 @@ include "voikonsanat/joukahainen.lex";
 include "voikonsanat/kasvatustiede.lex";
 include "voikonsanat/laaketiede.lex";
 include "voikonsanat/lainen.lex";
+include "voikonsanat/linux-distributions.lex";
 include "voikonsanat/lukusanat.lex";
 include "voikonsanat/lyhenteet.lex";
 include "voikonsanat/matluonnontiede.lex";

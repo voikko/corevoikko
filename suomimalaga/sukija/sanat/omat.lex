@@ -705,36 +705,31 @@
 [perusmuoto: "kardinaalinepos", alku: "kardinaalinepo", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "kareliaani", alku: "kareliaan", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "saituruus", alku: "saituruu", luokka: nimisana, jatko: <kalleus>, äs: a];
-[perusmuoto: "erytrioli", alku: "erytriol", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "pentaerytrioli", alku: "pentaerytriol", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "pentateukki", alku: "pentateuk", luokka: nimisana, jatko: <takki>, äs: a];
-[perusmuoto: "pentyyli", alku: "pentyyl", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "sensomotorinen", alku: "sensomotori", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "sentimentalisti", alku: "sentimentalist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
-[perusmuoto: "sentimentalismi", alku: "sentimentalism", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "sentraali", alku: "sentraal", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
-[perusmuoto: "sentromeeri", alku: "sentromeer", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Äkäsjoki", alku: "Äkäsjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "ärhäkäs", alku: "ärhäk", luokka: laatusana, jatko: <iäkäs>, äs: ä];
+[perusmuoto: "enkliittinen", alku: "enkliitti", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "Spinrad", alku: "Spinrad", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "kuskus", alku: "kuskus", luokka: nimisana, jatko: <kalsium>, äs: a];
+[perusmuoto: "vienoinen", alku: "vienoi", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "augustinolainen", alku: "augustinolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "auktori", alku: "auktor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "keratoosi", alku: "keratoos", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "keräin", alku: "keräi", luokka: nimisana, jatko: <uistin>, äs: ä];
+[perusmuoto: "autentikaattori", alku: "autentikaattor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "pommari", alku: "pommar", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "autuaaksijulistaminen", alku: "autuaaksijulistami", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "Ollila", alku: "Ollil", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "kuvernööriys", alku: "kuvernööriy", luokka: nimisana, jatko: <kalleus>, äs: ä];
+[perusmuoto: "dominaattori", alku: "dominaattor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "mccarthyismi", alku: "mccarthyism", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "kultaseni", alku: "kultase", luokka: nimisana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "Panasonic", alku: "Panasonic", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "nutch", alku: "nutch", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Skiftesvik", alku: "Skiftesvik", luokka: sukunimi, jatko: <kalsium>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
-[perusmuoto: "uneksua", alku: "uneksu", luokka: teonsana, jatko: <punoa>, äs: a];
-[perusmuoto: "pentoosi", alku: "pentoos", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "kenotsooinen", alku: "kenotsooi", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "riidenlieko", alku: "riidenlie", luokka: nimisana, jatko: <verkko>, äs: a];
-[perusmuoto: "riidenmarja", alku: "riidenmarj", luokka: nimisana, jatko: <kala>, äs: a];
-[perusmuoto: "muunmallinen", alku: "muunmalli", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "teevee", alku: "teeve", luokka: nimisana, jatko: <kamee>, äs: ä];
-[perusmuoto: "denaturaatio", alku: "denatur", luokka: nimisana, jatko: <obligaatio>, äs: a];
-[perusmuoto: "pentobarbitaali", alku: "pentobarbitaal", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "barbitaali", alku: "barbitaal", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "paradigmaattinen", alku: "paradigmaatti", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "paralyyttinen", alku: "paralyytti", luokka: laatusana, jatko: <nainen>, äs: ä];
-[perusmuoto: "karbonyyli", alku: "karbonyyl", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "parametrisaatio", alku: "parametrisaatio", luokka: nimisana, jatko: <autio>, äs: a];
-[perusmuoto: "pentameeri", alku: "pentameer", luokka: nimisana, jatko: <risti>, äs: a];
-[perusmuoto: "pentatoninen", alku: "pentatoni", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "piikuus", alku: "piikuu", luokka: nimisana, jatko: <kalleus>, äs: a];
 # Lisäykset Joukahaiseen loppuivat.
 
 ##############

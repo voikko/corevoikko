@@ -97,7 +97,7 @@ allo_rule generate_allos ($tietue):
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
                              "maa", "meri", "mäki", "niemi", "polku", "puisto",
-                             "rinne", "saari", "sarvi", "selkä",
+                             "ranta", "rinne", "saari", "sarvi", "selkä",
                              "tie", "torni", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
@@ -109,7 +109,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"bitti", "kallas", "malli", "terve">) then
+  if ($tietue.perusmuoto in <"ala", "bitti", "kallas", "malli", "terve">) then
     $tietue :=+ [tiedot: <ei_inen>];
   end;
 
@@ -173,10 +173,6 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.jatko = <rakentaa> and $tietue.perusmuoto matches ".*ääntää") then
     $tietue.jatko := <kääntää>;
-  end;
-
-  if ($tietue.perusmuoto = "riisi" and susi in $tietue.jatko) then
-    $tietue :=+ [tiedot: <ei_ys>];
   end;
 
 #  if ($tietue.luokka = lukusana) then

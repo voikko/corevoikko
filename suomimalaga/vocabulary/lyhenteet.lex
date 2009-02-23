@@ -102,7 +102,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "dm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # desimetri(ä)
 [alku: "DNA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # deoksiribonukleiinihappo
 [alku: "dvd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # digital versatile disk
-[alku: "DVD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # digital versatile disk
+[alku: "DVD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj", tiedot: <ei_sukija>]; # digital versatile disk
 [alku: "dvi", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "eaa.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ennen ajanlaskun alkua
 [alku: "EAN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # European Article Number, EAN-koodi

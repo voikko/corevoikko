@@ -1,6 +1,7 @@
 # Nämä pitäisi merkitä Joukahaiseen lipulla "ei kuulu ideksointisanastoon",
 # mutta tähän tiedostoon laittaminen on kätevämpää, jos Internet-yhteys
 # on liian hidas. (-:
+Aalto
 Aaltonen
 Aamu
 Aarnio
@@ -25,6 +26,7 @@ Alankomaa
 alastulo
 Albania
 alenema
+Alitalo
 Alkio
 alkiolainen
 alkuperäisteksti
@@ -80,6 +82,13 @@ entisenlainen
 eritasoliittymä
 erittyä
 eritys
+esiinmarssi
+esiinnousu
+esiintulo
+esiinhuutaa
+esiinluiskahdus
+esiintuonti
+esiintuominen
 esiintymä
 esikasvattaa
 esilletuominen
@@ -97,6 +106,8 @@ fryygialainen
 Georgia
 Guinea
 Haapajärvi
+Haapakoski
+Haapaniemi
 haarautuma
 haaroittua
 haaroitus
@@ -110,8 +121,10 @@ hapatus
 hapettuma
 hapetus
 harrastua
+Harri
 harventuma
 haurastua
+Hautamäki
 hautaus
 havainnoitsija
 heijastuma
@@ -135,12 +148,14 @@ Hirvensalmi
 hoito
 hokema
 Hollanti
+Honkajoki
 Hovi
 Huhta
 huhuilla
 huipentuma
 huiskauttaa
 Hukka
+Hurme
 huuto
 huutolainen
 hyvinvointi
@@ -171,6 +186,7 @@ itkettyä
 itsesäätyvä
 itsetutkiskelu
 itäsaksalainen
+Jaala
 jakauma
 Jalasjärvi
 Jalo
@@ -274,7 +290,9 @@ kiteymä
 kiteytymä
 Kitunen
 kivettymä
+Kiviharju
 Kivijärvi
+Kivinen
 Knuutinpoika
 koaksiaalikaapeli
 kohoama
@@ -323,6 +341,7 @@ kuormittua
 kuormitus
 kuorolainen
 Kurki
+Kurkilahti
 kurouma
 Kurppa
 kurssilainen
@@ -337,6 +356,7 @@ kuvaama
 kuvaamataide
 kuvaamataito
 kyllästyttää
+Kylmäkoski
 kyläläinen
 kymmenvuotinen
 Kytö
@@ -384,6 +404,7 @@ Laine
 laiskanpulskea
 langoitus
 Lapinjärvi
+Lappeenranta
 Lappi
 laskeutuma
 latauma
@@ -395,8 +416,10 @@ Latvia
 Lauha
 laulattaa
 lausuma
+Lavia
 Lehtimäki
 Lehto
+Lehtovaara
 leikkaus
 Leini
 Lemu
@@ -407,6 +430,7 @@ liittolainen
 liittoutuma
 liittymä
 Lilja
+linkittyä
 Linnamäki
 linnoitus
 Linnunrata
@@ -433,6 +457,7 @@ Luomanmäki
 luomapuu
 luomatauti
 luontoistalous
+Luoto
 lupaus
 Luumäki
 lyhennys
@@ -454,6 +479,7 @@ lyhytvalintanumero
 lyönti
 lämmitys
 länsisaksalainen
+Länsi-Turunmaa
 Maa
 maahanmuutto
 maahantuoja
@@ -477,6 +503,7 @@ marxismi-leninismi
 Matti
 Mela
 meltorauta
+Merijärvi
 Metso
 metsäläinen
 mielipide
@@ -516,6 +543,7 @@ Niva
 Norja
 nousema
 Nurmijärvi
+Nurminen
 näkymä
 näppäillä
 näytellä
@@ -635,6 +663,7 @@ Ruotsi
 rupeama
 ruskettua
 rusketus
+Rusko
 Ruukki
 ruumiillistuma
 Ruusu
@@ -666,6 +695,8 @@ sekasortoinen
 selittyä
 seminaarilainen
 Seppä
+Siikajoki
+Siikalatva
 Siilinjärvi
 Siimes
 siirros
@@ -699,6 +730,7 @@ Suomussalmi
 Suonenjoki
 supistuma
 surkastuma
+Suutari
 syntymä
 syöpymä
 syöttö
@@ -716,6 +748,7 @@ Taisto
 taittuma
 Taivalkoski
 takaisinkytkentä
+Takamäki
 takautuma
 takomakone
 takomataito
@@ -736,6 +769,7 @@ teollinen
 teollisuus
 Terho
 Terttu
+tieteisromaani
 tietynlainen
 Tiibet
 tiiliskivi
@@ -809,6 +843,7 @@ valmistuote
 valmistuttaa
 valmisvaate
 Valta
+Valtimo
 valtioviisas
 Valtti
 valuma
@@ -850,6 +885,7 @@ Virta
 virtaama
 Visa
 voidella
+Voikko
 voima
 wrightiläinen
 Vuokko

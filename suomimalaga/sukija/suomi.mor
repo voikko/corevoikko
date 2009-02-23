@@ -508,11 +508,14 @@ combi_rule asemosana ($vasen, $oikea, $sana):
 end;
 
 
-combi_rule lyhennesääntö ($vasen, $oikea, $sana):
+combi_rule lyhennesääntö ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("lyhennesääntö ($vasen, $oikea, $sana):");
   ? $oikea.luokka in <lyhenne>;
 
 #define $nimi := transmit (<"lyhennesääntö"> + <$vasen> + <$oikea> + <$sana>);
+#define $nimi1 := transmit (<"lyhennesääntö1"> + <$vasen.($n-1)>);
+#define $nimi2 := transmit (<"lyhennesääntö2"> + <$oikea>);
+#define $nimi3 := transmit (<"lyhennesääntö3"> + <$sana>);
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules kaksoispiste, tavuviiva, loppu;
@@ -3064,6 +3067,8 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
     result $res, rules yhdyssana;
 
   elseif ($oikea.luokka = tavuviiva) then
+#define $öa := transmit ($vasen.$i);
+#define $öb := transmit ($oikea.luokka);
     result $res, rules yhdyssana, erisnimi, asemosana, apusana, lyhennesääntö, loppu;
 
   elseif ($oikea.luokka in <paikannimi, sukunimi>) then

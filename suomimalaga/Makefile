@@ -22,9 +22,6 @@ SM_BUILDDATE=$(shell date -R -u)
 OPTIONAL_LEX=atk-lyhenteet po-oikoluku
 
 # Source files for Sukija version.
-#           sukija/sanat/vieraskieliset.lex \
-#
-
 SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/Makefile sukija/malaga1.png sukija/malaga2.png \
            sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
@@ -147,6 +144,8 @@ update-vocabulary:
 
 
 SUKIJA_COPY_FROM_VOCABULARY=\
+erikoisalat/atk-lyhenteet.lex \
+erikoisalat/linux-distributions.lex \
 erikoiset.lex \
 erikoissanat.lex \
 etuliitteet.lex \
