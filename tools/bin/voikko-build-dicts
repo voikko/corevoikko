@@ -21,10 +21,11 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import codecs
-from subprocess import Popen
+from subprocess import Popen, PIPE
 from os import access, F_OK
 from os import waitpid
 from shutil import copyfile, move
+from datetime import datetime
 
 def runCmd(cmd):
 	p = Popen(cmd, shell=True)
@@ -32,6 +33,28 @@ def runCmd(cmd):
 	if sts[1] != 0:
 		print u"Error while executing command: " + cmd
 		exit(1)
+
+def indexHeader(indexFile):
+	indexFile.write(u"<html><head><title>Voikon sanaston testiversioita</title>")
+	indexFile.write(u"<style type='text/css'>")
+	indexFile.write(u".small {font-size:0.8em; font-style:italic;}")
+	indexFile.write(u"table {border-collapse:collapse;}")
+	indexFile.write(u"table td {border:1px solid black;}")
+	indexFile.write(u"</style></head>")
+	indexFile.write(u"<body><h1>Voikon sanaston testiversioita</h1>")
+	indexFile.write(u"<p>Tämä sivu ja sivulla olevat Voikon sanaston testiversiot ")
+	indexFile.write(u"on generoitu automaattisesti ohjelmalla <kbd>voikko-build-dicts</kbd>. ")
+	indexFile.write(u"Sanastoja voi käyttää apuna Voikon kehittämisessä.</p>")
+
+def indexDict(indexFile, dict):
+	indexFile.write(u"<tr><td>Tunniste: <kbd>" + dict.variant + "</kbd><br />")
+	indexFile.write(u"Sisältö: <kbd>" + dict.nameFi + "</kbd></br />")
+	indexFile.write(u"Sanatietueita Joukahaisesta: <kbd>" + `dict.wordRecords` + "</kbd></td>")
+	dictFile = u"dict" + dict.idSuffix + ".zip"
+	indexFile.write(u"<td><a href='" + dictFile + "'>" + dictFile + "</a></td></tr>")
+
+def indexFooter(indexFile):
+	indexFile.write(u"</body></html>")
 
 # === Define dictionary properties ===
 
@@ -41,6 +64,7 @@ class Voikkodict:
 	nameFi = u""
 	nameEn = u""
 	smOptions = u""
+	wordRecords = 0
 
 allDicts = []
 
@@ -76,7 +100,15 @@ d.nameEn = u"education vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=education"'
 allDicts.append(d)
 
-WORK_DIR="build"
+WORK_DIR = "build"
+
+INDEX_FILE_NAME = WORK_DIR + "/index.html"
+
+# === Initialization ===
+
+startTime = datetime.now()
+indexFile = codecs.open(INDEX_FILE_NAME, "w", "UTF-8")
+indexHeader(indexFile)
 
 # === Phase 1: build the dictionaries ===
 
@@ -88,8 +120,12 @@ for dict in allDicts:
 	                                       + dict.idSuffix + '" '
 	       + dict.smOptions
 	       + ' VOIKKO_VARIANT=' + dict.variant
-	       + ' VOIKKO_DESCRIPTION="' + d.nameFi + '"'
+	       + ' VOIKKO_DESCRIPTION="' + dict.nameFi + '"'
 	       + ' SM_PATCHINFO="Development snapshot"')
+	p = Popen("grep '^[[]perusmuoto:' voikko/joukahainen.lex | wc -l",
+	          shell = True, stdout = PIPE, close_fds = True)
+	(out, err) = p.communicate()
+	dict.wordRecords = int(out)
 
 # === Phase 2: build oxt packages ===
 
@@ -127,10 +163,14 @@ if access(oxtdir + OXT_DESCRIPTION, F_OK):
 
 # === Phase 3: build zip packages ===
 
+indexFile.write(u"<h2>Sanastot</h2>")
+indexFile.write(u"<table>")
 for dict in allDicts:
 	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
 	zipFile = dirName + '.zip'
 	runCmd('zip -j ' + zipFile + ' ' + dirName + '/*')
+	indexDict(indexFile, dict)
+indexFile.write(u"</table>")
 
 # === Phase 4: build source package ===
 
@@ -138,3 +178,23 @@ runCmd('make clean')
 runCmd('make dist-gzip SM_VERSION=snapshot')
 runCmd('cp suomi-malaga-snapshot.tar.gz ' + WORK_DIR)
 runCmd('make clean SM_VERSION=snapshot')
+indexFile.write(u"<h2>Lähdekoodi</h2>")
+indexFile.write(u"<p><a href='suomi-malaga-snapshot.tar.gz'>suomi-malaga-snapshot.tar.gz</a></p>")
+
+# === Finalisation ===
+
+indexFile.write(u"<h2>Lähdekoodin versiotiedot</h2><pre>")
+p = Popen("svn info", shell = True, stdout = PIPE, close_fds = True)
+(out, err) = p.communicate()
+indexFile.write(unicode(out, "UTF-8"))
+indexFile.write(u"</pre><p>Viimeisin päivitys Joukahaisesta")
+p = Popen("grep 'Time of generation:' vocabulary/joukahainen.xml | sed -e 's/T.*on://'",
+      shell = True, stdout = PIPE, close_fds = True)
+(out, err) = p.communicate()
+indexFile.write(out)
+indexFile.write(u"</p>")
+endTime = datetime.now()
+indexFile.write(u"<p class='small'>Generointi valmis " + endTime.isoformat() + u"<br />")
+indexFile.write(u"Aikaa kului " + `(endTime - startTime).seconds` + u" sekuntia</p>")
+indexFooter(indexFile)
+indexFile.close()
