@@ -19,6 +19,8 @@
 #ifndef VOIKKO_GRAMMAR_TOKEN
 #define VOIKKO_GRAMMAR_TOKEN
 
+#include "voikko_defs.h"
+
 namespace libvoikko { namespace grammar {
 
 /**

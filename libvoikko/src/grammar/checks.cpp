@@ -259,11 +259,11 @@ void gc_repeating_words(int handle, const Sentence * sentence) {
 	}
 }
 
-void gc_end_punctuation(int handle, const gc_paragraph * paragraph) {
-	if (voikko_options.accept_titles_in_gc && paragraph->sentence_count == 1) return;
+void gc_end_punctuation(int handle, const Paragraph * paragraph) {
+	if (voikko_options.accept_titles_in_gc && paragraph->sentenceCount == 1) return;
 	if (voikko_options.accept_unfinished_paragraphs_in_gc) return;
 	
-	Sentence * sentence = paragraph->sentences[paragraph->sentence_count - 1];
+	Sentence * sentence = paragraph->sentences[paragraph->sentenceCount - 1];
 	Token * token = sentence->tokens + (sentence->tokenCount - 1);
 	if (token->type == TOKEN_PUNCTUATION) return;
 	voikko_gc_cache_entry * e = gc_new_cache_entry(0);

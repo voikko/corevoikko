@@ -26,6 +26,8 @@
 #include <cstdlib>
 #include <wctype.h>
 
+using namespace libvoikko::grammar;
+
 namespace libvoikko {
 
 // This will be initialized to zero meaning "no errors"
@@ -54,16 +56,16 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	if (!voikko_options.gc_cache.paragraph) return;
 	memcpy(voikko_options.gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikko_options.gc_cache.paragraph[textlen] = L'\0';
-	gc_paragraph * para = gc_analyze_paragraph(handle, text, textlen);
+	Paragraph * para = gc_analyze_paragraph(handle, text, textlen);
 	if (!para) return;
-	for (int i = 0; i < para->sentence_count; i++) {
+	for (int i = 0; i < para->sentenceCount; i++) {
 		gc_static_replacements(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
 		gc_character_case(handle, para->sentences[i]);
 		gc_repeating_words(handle, para->sentences[i]);
 	}
 	gc_end_punctuation(handle, para);
-	free_gc_paragraph(para);
+	delete para;
 }
 
 }

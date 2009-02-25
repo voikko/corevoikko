@@ -36,17 +36,6 @@ void free_gc_sentence(Sentence * sentence) {
 	delete sentence;
 }
 
-void free_gc_paragraph(gc_paragraph * para) {
-	if (!para) return;
-	if (para->sentences) {
-		for (int i = 0; i < para->sentence_count; i++) {
-			free_gc_sentence(para->sentences[i]);
-		}
-		delete[] para->sentences;
-	}
-	delete para;
-}
-
 /** Analyze given text token. Token type, length and text must have already
  *  been set. */
 void gc_analyze_token(int /*handle*/, Token * token) {
@@ -86,7 +75,7 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
 	bool next_word_is_possible_sentence_start = false;
-	for (int i = 0; i < GCANALYSIS_MAX_TOKENS; i++) {
+	for (int i = 0; i < Sentence::MAX_TOKENS_IN_SENTENCE; i++) {
 		enum voikko_token_type tt;
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
@@ -125,10 +114,8 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 }
 
 
-gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
-	gc_paragraph * p = new gc_paragraph;
-	p->sentences = new Sentence*[GCANALYSIS_MAX_SENTENCES];
-	p->sentence_count = 0;
+Paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
+	Paragraph * p = new Paragraph;
 	size_t sentencelen;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
@@ -147,14 +134,14 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 		
 		Sentence * s = gc_analyze_sentence(handle, pos, sentencelen, pos - text);
 		if (!s) {
-			free_gc_paragraph(p);
+			delete p;
 			return 0;
 		}
 		s->type = st;
-		p->sentences[p->sentence_count++] = s;
+		p->sentences[p->sentenceCount++] = s;
 		pos += sentencelen;
 	} while (st != SENTENCE_NONE && st != SENTENCE_NO_START &&
-	         p->sentence_count < GCANALYSIS_MAX_SENTENCES);
+	         p->sentenceCount < Paragraph::MAX_SENTENCES_IN_PARAGRAPH);
 	return p;
 }
 

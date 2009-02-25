@@ -47,7 +47,7 @@ void gc_repeating_words(int handle, const grammar::Sentence * sentence);
 /**
  * GC errors due to missing punctuation at the end of paragraph
  */
-void gc_end_punctuation(int handle, const gc_paragraph * paragraph);
+void gc_end_punctuation(int handle, const grammar::Paragraph * paragraph);
 
 }
 

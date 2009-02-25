@@ -16,36 +16,30 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_SENTENCE
-#define VOIKKO_GRAMMAR_SENTENCE
+#ifndef VOIKKO_GRAMMAR_PARAGRAPH
+#define VOIKKO_GRAMMAR_PARAGRAPH
 
-#include "grammar/Token.hpp"
+#include "grammar/Sentence.hpp"
 
 namespace libvoikko { namespace grammar {
 
 /**
- * Grammar checker sentence.
+ * Analyzed paragraph for grammar checker.
  */
-class Sentence {
+class Paragraph {
 	public:
-		Sentence();
+		Paragraph();
 		
-		~Sentence();
+		~Paragraph();
 		
-		/* Maximum number of tokens in a sentence */
-		static const int MAX_TOKENS_IN_SENTENCE = 500;
+		/* Maximum number of sentences in a paragraph */
+		static const int MAX_SENTENCES_IN_PARAGRAPH = 200;
 		
-		/** Type of this sentence (start type of next sentence) */
-		voikko_sentence_type type;
+		/** Pointers to analyzed sentences */
+		Sentence ** sentences;
 		
-		/** Array of gc tokens */
-		Token tokens[MAX_TOKENS_IN_SENTENCE];
-		
-		/** Number of tokens in the sentence */
-		size_t tokenCount;
-		
-		/** Position of this sentence within paragraph */
-		size_t pos;
+		/** Number of sentences in the paragraph */
+		int sentenceCount;
 };
 
 } }

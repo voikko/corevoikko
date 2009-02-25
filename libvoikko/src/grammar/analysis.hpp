@@ -20,28 +20,12 @@
 #define VOIKKO_GRAMMAR_ANALYSIS_H
 
 #include "voikko_defs.h"
-#include "grammar/Sentence.hpp"
-
-/* Maximum number of sentences in a paragraph */
-#define GCANALYSIS_MAX_SENTENCES 200
+#include "grammar/Paragraph.hpp"
 
 namespace libvoikko {
 
-/**
- * Analyzed paragraph for grammar checker.
- */
-typedef struct {
-	/** Pointers to analyzed sentences */
-	grammar::Sentence ** sentences;
-	/** Number of sentences in the paragraph */
-	int sentence_count;
-} gc_paragraph;
-
 /** Analyze paragraph text */
-gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen);
-
-/** Free the memory allocated for paragraph analysis */
-void free_gc_paragraph(gc_paragraph * para);
+grammar::Paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen);
 
 }
 
