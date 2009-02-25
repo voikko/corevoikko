@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,33 +16,34 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_ANALYSIS_H
-#define VOIKKO_GRAMMAR_ANALYSIS_H
+#ifndef VOIKKO_GRAMMAR_SENTENCE
+#define VOIKKO_GRAMMAR_SENTENCE
 
-#include "voikko_defs.h"
-#include "grammar/Sentence.hpp"
+#include "grammar/Token.hpp"
 
-/* Maximum number of sentences in a paragraph */
-#define GCANALYSIS_MAX_SENTENCES 200
+/* Maximum number of tokens in a sentence */
+#define GCANALYSIS_MAX_TOKENS 500
 
-namespace libvoikko {
+namespace libvoikko { namespace grammar {
 
 /**
- * Analyzed paragraph for grammar checker.
+ * Grammar checker sentence.
  */
-typedef struct {
-	/** Pointers to analyzed sentences */
-	grammar::Sentence ** sentences;
-	/** Number of sentences in the paragraph */
-	int sentence_count;
-} gc_paragraph;
+class Sentence {
+	public:
+		/** Type of this sentence (start type of next sentence) */
+		voikko_sentence_type type;
+		
+		/** Array of gc tokens */
+		Token tokens[GCANALYSIS_MAX_TOKENS];
+		
+		/** Number of tokens in the sentence */
+		size_t tokenCount;
+		
+		/** Position of this sentence within paragraph */
+		size_t pos;
+};
 
-/** Analyze paragraph text */
-gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen);
-
-/** Free the memory allocated for paragraph analysis */
-void free_gc_paragraph(gc_paragraph * para);
-
-}
+} }
 
 #endif

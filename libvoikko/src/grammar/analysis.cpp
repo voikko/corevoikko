@@ -28,9 +28,9 @@ using namespace libvoikko::grammar;
 namespace libvoikko {
 
 /** Free the memory allocated for sentence analysis */
-void free_gc_sentence(gc_sentence * sentence) {
+void free_gc_sentence(Sentence * sentence) {
 	if (!sentence) return;
-	for (size_t i = 0; i < sentence->token_count; i++) {
+	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		delete[] sentence->tokens[i].str;
 	}
 	delete sentence;
@@ -77,10 +77,10 @@ void gc_analyze_token(int /*handle*/, Token * token) {
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */
-gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
+Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
                                    size_t textlen, size_t sentencepos) {
-	gc_sentence * s = new gc_sentence;
-	s->token_count = 0;
+	Sentence * s = new Sentence;
+	s->tokenCount = 0;
 	s->pos = sentencepos;
 	size_t tokenlen;
 	const wchar_t * pos = text;
@@ -114,7 +114,7 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 			next_word_is_possible_sentence_start = true;
 		}
 		
-		s->token_count++;
+		s->tokenCount++;
 		pos += tokenlen;
 		remaining -= tokenlen;
 		if (!remaining) return s;
@@ -127,7 +127,7 @@ gc_sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 
 gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
 	gc_paragraph * p = new gc_paragraph;
-	p->sentences = new gc_sentence*[GCANALYSIS_MAX_SENTENCES];
+	p->sentences = new Sentence*[GCANALYSIS_MAX_SENTENCES];
 	p->sentence_count = 0;
 	size_t sentencelen;
 	const wchar_t * pos = text;
@@ -145,7 +145,7 @@ gc_paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t tex
 			remaining -= sentencelen2;
 		} while (st == SENTENCE_POSSIBLE);
 		
-		gc_sentence * s = gc_analyze_sentence(handle, pos, sentencelen, pos - text);
+		Sentence * s = gc_analyze_sentence(handle, pos, sentencelen, pos - text);
 		if (!s) {
 			free_gc_paragraph(p);
 			return 0;

@@ -1,3 +1,7 @@
+2009-02-25 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Change struct gc_sentence into class Sentence.
+
 2009-02-21 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Change struct gc_token into class Token.

@@ -26,23 +26,23 @@ namespace libvoikko {
 /**
  * GC errors from static list of incorrect patterns
  */
-void gc_static_replacements(int handle, const gc_sentence * sentence);
+void gc_static_replacements(int handle, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to wrong context independent use of punctuation or whitespace
  * within a sentence.
  */
-void gc_local_punctuation(int handle, const gc_sentence * sentence);
+void gc_local_punctuation(int handle, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to incorrect character case
  */
-void gc_character_case(int handle, const gc_sentence * sentence);
+void gc_character_case(int handle, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to word repetition
  */
-void gc_repeating_words(int handle, const gc_sentence * sentence);
+void gc_repeating_words(int handle, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to missing punctuation at the end of paragraph

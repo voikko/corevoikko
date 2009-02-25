@@ -18,7 +18,7 @@ noinst_HEADERS = utils/utils.hpp utils/StringUtils.hpp \
                  spellchecker/spell.hpp spellchecker/suggestions.hpp \
                  grammar/cache.hpp grammar/checks.hpp grammar/error.hpp \
                  grammar/cachesetup.hpp grammar/analysis.hpp \
-                 grammar/Token.hpp
+                 grammar/Token.hpp grammar/Sentence.hpp
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc
