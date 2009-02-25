@@ -46,6 +46,10 @@ class Sentence {
 		
 		/** Position of this sentence within paragraph */
 		size_t pos;
+	
+	private:
+		Sentence(Sentence const & other);
+		Sentence & operator = (const Sentence & other);
 };
 
 } }

@@ -40,6 +40,10 @@ class Paragraph {
 		
 		/** Number of sentences in the paragraph */
 		int sentenceCount;
+	
+	private:
+		Paragraph(Paragraph const & other);
+		Paragraph & operator = (const Paragraph & other);
 };
 
 } }

@@ -27,15 +27,6 @@ using namespace libvoikko::grammar;
 
 namespace libvoikko {
 
-/** Free the memory allocated for sentence analysis */
-void free_gc_sentence(Sentence * sentence) {
-	if (!sentence) return;
-	for (size_t i = 0; i < sentence->tokenCount; i++) {
-		delete[] sentence->tokens[i].str;
-	}
-	delete sentence;
-}
-
 /** Analyze given text token. Token type, length and text must have already
  *  been set. */
 void gc_analyze_token(int /*handle*/, Token * token) {
@@ -69,7 +60,6 @@ void gc_analyze_token(int /*handle*/, Token * token) {
 Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
                                    size_t textlen, size_t sentencepos) {
 	Sentence * s = new Sentence;
-	s->tokenCount = 0;
 	s->pos = sentencepos;
 	size_t tokenlen;
 	const wchar_t * pos = text;
@@ -109,7 +99,7 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 		if (!remaining) return s;
 	}
 	// Too long sentence or error
-	free_gc_sentence(s);
+	delete s;
 	return 0;
 }
 

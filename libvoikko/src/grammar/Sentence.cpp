@@ -20,7 +20,7 @@
 
 namespace libvoikko { namespace grammar {
 
-Sentence::Sentence() {
+Sentence::Sentence() : tokenCount(0) {
 }
 
 Sentence::~Sentence() {
