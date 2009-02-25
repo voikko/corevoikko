@@ -55,8 +55,7 @@ define @ell := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
 define @elt := <yhdyssana, tavuviiva, etuliite, teonsana>;
 define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
 
-include "voikonsanat/erikoisalat/atk.lex";
-include "voikonsanat/erikoisalat/atk-lyhenteet.lex";
+include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";
 include "voikonsanat/erikoissanat.lex";
 include "voikonsanat/etuliitteet.lex";
@@ -65,7 +64,6 @@ include "voikonsanat/joukahainen.lex";
 include "voikonsanat/kasvatustiede.lex";
 include "voikonsanat/laaketiede.lex";
 include "voikonsanat/lainen.lex";
-include "voikonsanat/linux-distributions.lex";
 include "voikonsanat/lukusanat.lex";
 include "voikonsanat/lyhenteet.lex";
 include "voikonsanat/matluonnontiede.lex";
@@ -82,6 +80,9 @@ include "sanat/latex.lex";
 ##include "sanat/luvut.lex";
 include "sanat/olla-ei.lex";
 include "sanat/omat.lex";
+include "voikonsanat/erikoisalat/atk-lyhenteet.lex";
+include "voikonsanat/erikoisalat/linux-distributions.lex";
+
 
 # Karlsson 1983:
 # Fred Karlsson: Suomen kielen äänne- ja muotorakenne.

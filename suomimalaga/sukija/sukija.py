@@ -33,6 +33,7 @@ historical = [
 	(u'aavistaa', u'sw', [(u'tt',u'(.*O)ittAA',u'kirjoittaa'),
 			      (u'tt',u'(.*O)ttAA',u'ammottaa'),
 			      (None,u'(.*t)AA',u'aavistaa'),
+			      (u'tt',u'(.*eUt)tAA',u'kuluttaa'),
 			      (u'tt',u'(.*[AeiU]t)tAA',u'alittaa'),
 			      (u't',u'(.*h)tAA',u'astahtaa')]),
 	(u'ahven',    u'ws', [(None,u'(.*CVC)',u'ahven')]),

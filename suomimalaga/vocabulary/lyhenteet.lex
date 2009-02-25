@@ -78,7 +78,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "apulaisj.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "apul.joht.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; 
 [alku: "arv.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # arvoisa
-[alku: "ASCII", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjjj", tiedot: <ei_voikko>];
 [alku: "ASO", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj", tiedot: <ei_voikko>];
 [alku: "atk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # automaattinen tietojen käsittely
 [alku: "ATK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # automaattinen tietojen käsittely
@@ -87,15 +86,14 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "BBC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # British Broadcasting Corporation
 [alku: "cd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
 [alku: "CD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # cd-levy
-[alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "CD-ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj-=jjj"];
+[alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_sukija>];
+[alku: "CD-ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj-=jjj", tiedot: <ei_sukija>];
 [alku: "CIA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Central Intelligence Agency
 [alku: "cm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # senttimetri(ä)
 [alku: "CNN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Cable News Network
 [alku: "COSS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj", tiedot: <ei_voikko>];
 [alku: "c.s.i.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "csi", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj", tiedot: <ei_voikko>];
 [alku: "dem.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # demokraattinen
 [alku: "dlf", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "dl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # desilitra(a)
@@ -156,8 +154,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "IKL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Isänmaallinen kansanliike
 [alku: "ilm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ilmestynyt; ilmoitus
 [alku: "IMF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # International Monetary Fund
-[alku: "ip.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];    # Iltapäivällä
-[alku: "IP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # Internet Protocol
 [alku: "ISBN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # International Standard Book Number
 [alku: "it", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # information technology; ilmatorjunta
 [alku: "IT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # information technology; ilmatorjunta
@@ -233,7 +229,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "ns", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # nanosekunti(a)
 [alku: "nuor.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Nuorsuomalainen.
 [alku: "OK", luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=jj"];
-[alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <ei_voikko>];
 [alku: "op.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # opettaja
 [alku: "o.s.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # omaa sukua
 [alku: "os.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # osoite; osasto
@@ -296,7 +291,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "sos.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # sosiaalinen; sosialisti(nen)
 [alku: "SOS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Save Our Souls
 [alku: "SPR", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "ST1", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "STL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Teollisuustoimihenkilöiden Liitto
 [alku: "STT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Tietotoimisto
@@ -305,7 +299,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "SYP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
 [alku: "syysk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "tammik.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "TEL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
 [alku: "TKK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "tlk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # tölkki(ä)
@@ -345,7 +338,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "wc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 [alku: "WC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"];
 [alku: "WHO", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # World Health Organization
-[alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "WSOY", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "WTO", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # World Trade Organisation
 [alku: "WWW", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # World Wide Web

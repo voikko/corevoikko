@@ -73,7 +73,8 @@ lex: voikonsanat/taivutustäydennykset.lex
 lex: voikonsanat/suhdesanat.lex
 lex: voikonsanat/vieraskieliset.lex
 lex: voikonsanat/yhdyssanat.lex
-
+lex: voikonsanat/erikoisalat/atk-lyhenteet.lex
+lex: voikonsanat/erikoisalat/linux-distributions.lex
 
 mor: suomi.mor suomi.inc
 

@@ -21,7 +21,9 @@ voikonsanat/seikkasanat.lex \
 voikonsanat/sidesanat.lex \
 voikonsanat/suhdesanat.lex \
 voikonsanat/taivutustäydennykset.lex \
-voikonsanat/yhdyssanat.lex
+voikonsanat/yhdyssanat.lex \
+voikonsanat/erikoisalat/atk-lyhenteet.lex \
+voikonsanat/erikoisalat/linux-distributions.lex
 
 all: suomi.pro $(LEXICON)
 	@malmake suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
@@ -37,7 +39,8 @@ generoi:
 	@malmake suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 	
 clean:
-	/bin/rm -f *_l core.* transmit voikonsanat/* k1 k2 foo bar
+	/bin/rm -f *_l core.* transmit voikonsanat/*.lex \
+                   voikonsanat/erikoisalat/*.lex k1 k2 foo bar
 
 transmit: ../common/transmit.cc
 	g++ -g ../common/transmit.cc -o transmit

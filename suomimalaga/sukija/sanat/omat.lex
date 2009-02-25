@@ -263,7 +263,7 @@
 [alku: "a:silla", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "a:sista", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "a:sten", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "alt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+###[alku: "alt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "amp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; #EK:n asiamapisto
 [alku: "ams", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "ao:sen", luokka: lyhenne, jatko: <loppu>, äs: aä]; 
@@ -314,7 +314,6 @@
 [alku: "m.m", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "m.t.k", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "mk:alla", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Markalla.
-[alku: "ms", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "mttk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "o:den", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "o:dessa", luokka: lyhenne, jatko: <loppu>, äs: aä];

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -90,22 +90,21 @@
 [alku: "SGML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
 [alku: "SPSS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # SPSS-ohjelma
 [alku: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "SSH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
+[alku: "SSH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_sukija>];
 [alku: "ssh", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "URI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, tiedot: <atk>, rakenne: "=jjj"];
 [alku: "URL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>, rakenne: "=jjj"];
 [alku: "UTF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "vis5d", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "VRML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
+[alku: "VRML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj", tiedot: <ei_sukija>];
 [alku: "vrml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
 [alku: "wxgtk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "wxx11", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "XML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
+[alku: "XML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj", tiedot: <ei_sukija>];
 [alku: "xml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 [alku: "xmms", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 
 
 #[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-
