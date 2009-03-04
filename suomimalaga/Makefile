@@ -19,7 +19,7 @@ SM_VERSION=1.3
 SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
-OPTIONAL_LEX=atk-lyhenteet po-oikoluku
+OPTIONAL_LEX=atk-lyhenteet po-oikoluku linux-distributions
 
 # Source files for Sukija version.
 SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
