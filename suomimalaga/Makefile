@@ -112,7 +112,7 @@ clean:
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
 	rm -f voikko/joukahainen.lex voikko/main.lex voikko/voikko-fi_FI.pro
-	rm -f sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat/*.lex sukija/voikonsanat/erikoisalat/*.lex 
+	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f TAGS
 
 # Rules for creating the source distribution
@@ -165,7 +165,7 @@ sukija: $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)) \
 	@malmake sukija/suomi.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikonsanat/%: vocabulary/%
-	@mkdir -p sukija/voikonsanat
+	@mkdir -p sukija/voikonsanat/erikoisalat
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
