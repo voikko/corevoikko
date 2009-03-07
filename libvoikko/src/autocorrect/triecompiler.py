@@ -26,8 +26,11 @@
 # All nodes representing an input string have node.replacementIndex != 0.
 # The replacement index is an index of array REPLACEMENTS that contains
 # the suggested replacement for the input string.
+#
+# Usage: python triecompiler.py input.xml output.hpp
 
 import xml.dom.minidom
+import sys
 
 class Node:
 	def __init__(self, value = None):
@@ -66,15 +69,17 @@ def indexTrie(trie, nextNodeIndex, nextValueIndex):
 
 def cHexCodeForChar(unicodeChar):
 	ordinal = ord(unicodeChar)
-	if (0x20 <= ordinal or ordinal <= 0x7f) and ordinal != 0x24 and ordinal != 0x40:
-		# These characters cannot be represented as unicode literals in XC++
+	if unicodeChar == u"\\":
+		return "\\\\"
+	if 0x20 <= ordinal and ordinal <= 0x7f:
+		# These characters cannot be represented as unicode literals in C++
 		return unicodeChar
 	hexCode = hex(ordinal)[2:]
 	return "\\u" + hexCode.rjust(4, "0")
 
 def writeTrieNodes(trie, outputFile):
 	for node in trie.children:
-		outputFile.write(",TrieNode(")
+		outputFile.write(",{")
 		outputFile.write("L'%s'" % cHexCodeForChar(node))
 		outputFile.write(",")
 		outputFile.write(`trie.children[node].valueIndex`)
@@ -83,8 +88,8 @@ def writeTrieNodes(trie, outputFile):
 			outputFile.write(`trie.children[node].children.itervalues().next().nodeIndex`)
 		else:
 			outputFile.write("0")
-		outputFile.write(")")
-	outputFile.write(",TrieNode(L'\\0',0,0)") # terminating null node
+		outputFile.write("}")
+	outputFile.write(",{L'\\0',0,0}") # terminating null node
 	for node in trie.children:
 		writeTrieNodes(trie.children[node], outputFile)
 
@@ -92,13 +97,14 @@ def writeTrieValues(trie, outputFile):
 	for node in trie.children.itervalues():
 		if node.value != None:
 			outputFile.write(',L"')
-			outputFile.write(node.value)
+			for char in node.value:
+				outputFile.write(cHexCodeForChar(char))
 			outputFile.write('"')
 	for node in trie.children.itervalues():
 		writeTrieValues(node, outputFile)
 
 # Open the XML file
-xmlFile = open("test.xml", "r")
+xmlFile = open(sys.argv[1], "r")
 autoCorrect = xml.dom.minidom.parseString(xmlFile.read())
 xmlFile.close()
 
@@ -114,19 +120,16 @@ autoCorrect = None
 indexTrie(trieRoot, 1, 1)
 
 # Write trie to a file as a C++ structure
-outputFile = open("Data.cpp", "w")
-outputFile.write('#include "TrieNode.hpp"\n')
-outputFile.write('namespace libvoikko { namespace autocorrect {\n')
+outputFile = open(sys.argv[2], "w")
 
 outputFile.write("static const TrieNode NODES[] = {\n")
-outputFile.write("TrieNode(L'\\0',0,1)")
+outputFile.write("{L'\\0',0,1}")
 writeTrieNodes(trieRoot, outputFile)
 outputFile.write('};\n')
 
-outputFile.write("static const wchar_t * REPLACEMENTS[] = {\n")
+outputFile.write("static const wchar_t * const REPLACEMENTS[] = {\n")
 outputFile.write("0")
 writeTrieValues(trieRoot, outputFile)
 outputFile.write('};\n')
 
-outputFile.write('}}\n')
 outputFile.close()
