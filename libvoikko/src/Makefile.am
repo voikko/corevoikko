@@ -23,6 +23,7 @@ noinst_HEADERS = utils/utils.hpp utils/StringUtils.hpp \
                  grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
                  autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp
 
+EXTRA_DIST = autocorrect/triecompiler.py
 BUILT_SOURCES = autocorrect/data.hpp
 CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile ../data/autocorrect/fi_FI.xml autocorrect/triecompiler.py
