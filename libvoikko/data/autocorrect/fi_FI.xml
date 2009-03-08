@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- Limitations in current version of libvoikko:
+  - Each replacement must have exactly one incorrect and correct expression.
+  - Attribute type="optional" is ignored.
+  - Only repacements where incorrect string contains one or two words will
+    be used.
+  - Reasons for replacement are ignored.
+-->
 <autocorrect xml:lang="fi">
 <replacement>
   <incorrect>aiemin</incorrect>

@@ -26,8 +26,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 	if (strncmp(language, "fi", 2) == 0) {
 		// ä=\xc3\xa4, ö=\xc3\xb6, Ä=\xc3\x84, Ö=\xc3\x96
 		switch (error_code) {
-			case GCERR_WRITE_TOGETHER:
-				return "Sanat on kirjoitettava yhteen.";
+			case GCERR_INVALID_SPELLING:
+				return "Virheellinen kirjoitusasu.";
 			case GCERR_EXTRA_WHITESPACE:
 				return "Poista ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li.";
 			case GCERR_SPACE_BEFORE_PUNCTUATION:
@@ -49,8 +49,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 	}
 	else {
 		switch (error_code) {
-			case GCERR_WRITE_TOGETHER:
-				return "Remove space between words.";
+			case GCERR_INVALID_SPELLING:
+				return "Incorrect spelling of word(s).";
 			case GCERR_EXTRA_WHITESPACE:
 				return "Remove extra space.";
 			case GCERR_SPACE_BEFORE_PUNCTUATION:

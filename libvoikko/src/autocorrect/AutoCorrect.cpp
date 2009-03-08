@@ -20,6 +20,7 @@
 #include "grammar/error.hpp"
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
+#include "utils/utils.hpp"
 #include "TrieNode.hpp"
 #include <cstring>
 #include <wchar.h>
@@ -30,7 +31,7 @@ namespace libvoikko { namespace autocorrect {
 
 #include "autocorrect/data.hpp"
 
-size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
+size_t AutoCorrect::traverse(size_t initial, const wchar_t * str, size_t strlen) {
 	size_t current = initial;
 	for (size_t i = 0; i < strlen; i++) {
 		if (NODES[current].subtreeStart) {
@@ -52,23 +53,60 @@ size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
 void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
-		if (t.type != TOKEN_WORD) continue;
-		if (wcscmp(t.str, L"joten")) continue;
-		t = sentence->tokens[i+1];
-		if (t.type != TOKEN_WHITESPACE) continue;
-		t = sentence->tokens[i+2];
-		if (t.type != TOKEN_WORD) continue;
-		if (wcscmp(t.str, L"kuten")) continue;
-		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
-		if (!e) return;
-		e->error.error_code = GCERR_WRITE_TOGETHER;
-		e->error.startpos = sentence->tokens[i].pos;
-		e->error.errorlen = 10 + sentence->tokens[i+1].tokenlen;
-		e->error.suggestions[0] = new char[11];
-		if (e->error.suggestions[0]) {
-			strcpy(e->error.suggestions[0], "jotenkuten");
+		if (t.type != TOKEN_WORD) {
+			continue;
 		}
-		gc_cache_append_error(handle, e);
+		
+		// Is the first word in the trie?
+		size_t trieNode = traverse(0, t.str, wcslen(t.str));
+		if (!trieNode) {
+			continue;
+		}
+		
+		// Is the first word alone an error?
+		if (NODES[trieNode].replacementIndex) {
+			voikko_gc_cache_entry * e = gc_new_cache_entry(1);
+			if (!e) return;
+			e->error.error_code = GCERR_INVALID_SPELLING;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = sentence->tokens[i].tokenlen;
+			e->error.suggestions[0] = voikko_ucs4tocstr(
+			        REPLACEMENTS[NODES[trieNode].replacementIndex], "UTF-8", 0);
+			gc_cache_append_error(handle, e);
+		}
+		
+		// Is there a second word (in the sentence and in trie)?
+		t = sentence->tokens[i+1];
+		if (t.type != TOKEN_WHITESPACE) {
+			continue;
+		}
+		t = sentence->tokens[i+2];
+		if (t.type != TOKEN_WORD) {
+			continue;
+		}
+		trieNode = traverse(trieNode, L" ", 1);
+		if (!trieNode) {
+			continue;
+		}
+		
+		// Is the second word in the trie?
+		trieNode = traverse(trieNode, t.str, wcslen(t.str));
+		if (!trieNode) {
+			continue;
+		}
+		
+		// Is the second word an error?
+		if (NODES[trieNode].replacementIndex) {
+			voikko_gc_cache_entry * e = gc_new_cache_entry(1);
+			if (!e) return;
+			e->error.error_code = GCERR_INVALID_SPELLING;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = sentence->tokens[i+2].pos + sentence->tokens[i+2].tokenlen
+			                    - e->error.startpos;
+			e->error.suggestions[0] = voikko_ucs4tocstr(
+			        REPLACEMENTS[NODES[trieNode].replacementIndex], "UTF-8", 0);
+			gc_cache_append_error(handle, e);
+		}
 	}
 }
 

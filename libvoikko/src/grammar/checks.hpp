@@ -24,11 +24,6 @@
 namespace libvoikko {
 
 /**
- * GC errors from static list of incorrect patterns
- */
-void gc_static_replacements(int handle, const grammar::Sentence * sentence);
-
-/**
  * GC errors due to wrong context independent use of punctuation or whitespace
  * within a sentence.
  */
