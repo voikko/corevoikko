@@ -19,6 +19,7 @@
 #include "grammar/checks.hpp"
 #include "grammar/error.hpp"
 #include "grammar/cachesetup.hpp"
+#include "grammar/cache.hpp"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
@@ -28,54 +29,6 @@
 using namespace libvoikko::grammar;
 
 namespace libvoikko {
-
-/**
- * Appends an entry to the grammar checker error cache.
- */
-void gc_cache_append_error(int /*handle*/, voikko_gc_cache_entry * new_entry) {
-	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
-	if (!entry) {
-		voikko_options.gc_cache.first_error = new_entry;
-		return;
-	}
-	if (entry->error.startpos > new_entry->error.startpos) {
-		new_entry->next_error = voikko_options.gc_cache.first_error;
-		voikko_options.gc_cache.first_error = new_entry;
-		return;
-	}
-	while (1) {
-		if (!entry->next_error) {
-			entry->next_error = new_entry;
-			return;
-		}
-		if (entry->error.startpos <= new_entry->error.startpos &&
-		    entry->next_error->error.startpos > new_entry->error.startpos) {
-			new_entry->next_error = entry->next_error;
-			entry->next_error = new_entry;
-			return;
-		}
-		entry = entry->next_error;
-	}
-}
-
-/**
- * Create a new empty grammar checker error cache entry.
- * @param suggestions number of suggestions that will be added to this entry
- */
-voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
-	voikko_gc_cache_entry * e = new voikko_gc_cache_entry;
-	if (suggestions > 0) {
-		e->error.suggestions = new char*[suggestions + 1];
-		for (int i = 0; i < suggestions + 1; i++) {
-			e->error.suggestions[i] = 0;
-		}
-		if (!e->error.suggestions) {
-			delete e;
-			return 0;
-		}
-	}
-	return e;
-}
 
 void gc_static_replacements(int handle, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {

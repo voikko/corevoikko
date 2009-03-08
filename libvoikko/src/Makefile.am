@@ -25,7 +25,7 @@ noinst_HEADERS = utils/utils.hpp utils/StringUtils.hpp \
 
 BUILT_SOURCES = autocorrect/data.hpp
 CLEANFILES = autocorrect/data.hpp
-autocorrect/data.hpp: Makefile ../data/autocorrect/fi_FI.xml
+autocorrect/data.hpp: Makefile ../data/autocorrect/fi_FI.xml autocorrect/triecompiler.py
 	python autocorrect/triecompiler.py ../data/autocorrect/fi_FI.xml autocorrect/data.hpp
 
 pkgconfigdir = $(libdir)/pkgconfig

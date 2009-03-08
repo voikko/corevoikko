@@ -22,11 +22,13 @@
 #include "grammar/cache.hpp"
 #include "grammar/checks.hpp"
 #include "grammar/analysis.hpp"
+#include "autocorrect/AutoCorrect.hpp"
 #include <cstring>
 #include <cstdlib>
 #include <wctype.h>
 
 using namespace libvoikko::grammar;
+using namespace libvoikko::autocorrect;
 
 namespace libvoikko {
 
@@ -59,13 +61,54 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	Paragraph * para = gc_analyze_paragraph(handle, text, textlen);
 	if (!para) return;
 	for (int i = 0; i < para->sentenceCount; i++) {
-		gc_static_replacements(handle, para->sentences[i]);
+		AutoCorrect::autoCorrect(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
 		gc_character_case(handle, para->sentences[i]);
 		gc_repeating_words(handle, para->sentences[i]);
 	}
 	gc_end_punctuation(handle, para);
 	delete para;
+}
+
+void gc_cache_append_error(int /*handle*/, voikko_gc_cache_entry * new_entry) {
+	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
+	if (!entry) {
+		voikko_options.gc_cache.first_error = new_entry;
+		return;
+	}
+	if (entry->error.startpos > new_entry->error.startpos) {
+		new_entry->next_error = voikko_options.gc_cache.first_error;
+		voikko_options.gc_cache.first_error = new_entry;
+		return;
+	}
+	while (1) {
+		if (!entry->next_error) {
+			entry->next_error = new_entry;
+			return;
+		}
+		if (entry->error.startpos <= new_entry->error.startpos &&
+		    entry->next_error->error.startpos > new_entry->error.startpos) {
+			new_entry->next_error = entry->next_error;
+			entry->next_error = new_entry;
+			return;
+		}
+		entry = entry->next_error;
+	}
+}
+
+voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
+	voikko_gc_cache_entry * e = new voikko_gc_cache_entry;
+	if (suggestions > 0) {
+		e->error.suggestions = new char*[suggestions + 1];
+		for (int i = 0; i < suggestions + 1; i++) {
+			e->error.suggestions[i] = 0;
+		}
+		if (!e->error.suggestions) {
+			delete e;
+			return 0;
+		}
+	}
+	return e;
 }
 
 }

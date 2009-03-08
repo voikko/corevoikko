@@ -17,14 +17,59 @@
  *********************************************************************************/
 
 #include "autocorrect/AutoCorrect.hpp"
+#include "grammar/error.hpp"
+#include "grammar/cachesetup.hpp"
+#include "grammar/cache.hpp"
 #include "TrieNode.hpp"
+#include <cstring>
+#include <wchar.h>
+
+using namespace libvoikko::grammar;
 
 namespace libvoikko { namespace autocorrect {
 
 #include "autocorrect/data.hpp"
 
+size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
+	size_t current = initial;
+	for (size_t i = 0; i < strlen; i++) {
+		if (NODES[current].subtreeStart) {
+			current = NODES[current].subtreeStart;
+			while (NODES[current].label != str[i]) {
+				current++;
+				if (!NODES[current].label) {
+					return 0;
+				}
+			}
+		}
+		else {
+			return 0;
+		}
+	}
+	return current;
+}
+
 void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * sentence) {
-	// TODO: unimplemented
+	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
+		Token t = sentence->tokens[i];
+		if (t.type != TOKEN_WORD) continue;
+		if (wcscmp(t.str, L"joten")) continue;
+		t = sentence->tokens[i+1];
+		if (t.type != TOKEN_WHITESPACE) continue;
+		t = sentence->tokens[i+2];
+		if (t.type != TOKEN_WORD) continue;
+		if (wcscmp(t.str, L"kuten")) continue;
+		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
+		if (!e) return;
+		e->error.error_code = GCERR_WRITE_TOGETHER;
+		e->error.startpos = sentence->tokens[i].pos;
+		e->error.errorlen = 10 + sentence->tokens[i+1].tokenlen;
+		e->error.suggestions[0] = new char[11];
+		if (e->error.suggestions[0]) {
+			strcpy(e->error.suggestions[0], "jotenkuten");
+		}
+		gc_cache_append_error(handle, e);
+	}
 }
 
 } }

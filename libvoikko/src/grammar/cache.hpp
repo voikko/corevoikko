@@ -36,6 +36,17 @@ const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * tex
  */
 void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
 
+/**
+ * Appends an entry to the grammar checker error cache.
+ */
+void gc_cache_append_error(int /*handle*/, voikko_gc_cache_entry * new_entry);
+
+/**
+ * Create a new empty grammar checker error cache entry.
+ * @param suggestions number of suggestions that will be added to this entry
+ */
+voikko_gc_cache_entry * gc_new_cache_entry(int suggestions);
+
 }
 
 #endif

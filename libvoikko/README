@@ -36,14 +36,21 @@ Features
  - Various options to tune spell checking and hyphenation for different
    purposes and applications.
  - Grammar checking and context sensitive spell checking using paragraph
-   based API. This feature is still work in progress, but is already useful.
+   based API.
  - String tokenizer and sentence splitter.
 
 Documentation for using the library can be found from header file voikko.h.
 
 
-Requirements
-============
+Build requirements
+==================
+
+C++ compiler (GCC), Malaga developement headers and Python must be available
+in order to build this library.
+
+
+Runtime requirements
+====================
 
 The library needs libmalaga and a version of Suomi-malaga containing a file named
 voikko-fi_FI.pro. The file must start with the following line:
