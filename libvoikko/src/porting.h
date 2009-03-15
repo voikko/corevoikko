@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -24,7 +24,9 @@
 #include <config.h>
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
-# define WIN32
+# ifndef WIN32
+#  define WIN32
+# endif
 # define INTERNAL_CHARSET "UCS-2-INTERNAL"
 # include <locale.h>
 # define ENTER_V char*enter_v_origl=setlocale(LC_CTYPE,0);setlocale(LC_CTYPE,"fin");

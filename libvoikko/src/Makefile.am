@@ -1,3 +1,5 @@
+AUTOMAKE_OPTIONS=subdir-objects
+
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = spellchecker/spell.cpp spellchecker/suggestions.cpp \
                        utils/utils.cpp utils/StringUtils.cpp \

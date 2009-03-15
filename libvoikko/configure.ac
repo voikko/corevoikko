@@ -1,5 +1,5 @@
 dnl Libvoikko: Finnish spellchecker and hyphenator library
-dnl Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+dnl Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
 dnl
 dnl This program is free software; you can redistribute it and/or
 dnl modify it under the terms of the GNU General Public License
@@ -63,8 +63,8 @@ AC_TYPE_SIZE_T
 
 dnl GCC visibility support
 AH_TEMPLATE(GCC_VISIBILITY, [GCC visibility support])
-tmp_CFLAGS="$CFLAGS"
-CFLAGS="$CFLAGS -Wall -Werror -fvisibility=hidden"
+tmp_CXXFLAGS="$CXXFLAGS"
+CXXFLAGS="$CXXFLAGS -Wall -Werror -fvisibility=hidden"
 AC_MSG_CHECKING([whether $CC supports the visibility attribute])
 AC_COMPILE_IFELSE(AC_LANG_SOURCE(
 [
@@ -74,12 +74,12 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
 ]),
 [
   AC_DEFINE(GCC_VISIBILITY, 1)
-  CFLAGS="$tmp_CFLAGS -fvisibility=hidden"
-  CXXFLAGS="$CXXFLAGS -fvisibility=hidden"
+  CFLAGS="$CFLAGS -fvisibility=hidden"
+  CXXFLAGS="$tmp_CXXFLAGS -fvisibility=hidden"
   AC_MSG_RESULT([yes])
 ],
 [
-  CFLAGS="$tmp_CFLAGS"
+  CXXFLAGS="$tmp_CXXFLAGS"
   AC_MSG_RESULT([no])
 ])
 

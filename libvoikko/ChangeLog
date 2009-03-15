@@ -1,3 +1,7 @@
+2009-03-15 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Restore Windows support (partially).
+
 2009-03-08 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Read replacement suggestions from data/autocorrect/fi_FI.xml.

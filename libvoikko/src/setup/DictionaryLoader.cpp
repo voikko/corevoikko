@@ -21,8 +21,12 @@
 #include <string>
 #include <fstream>
 #include <cstdlib>
-#include <pwd.h>
-#include <dirent.h>
+#ifdef WIN32
+# include <windows.h>
+#else
+# include <pwd.h>
+# include <dirent.h>
+#endif
 #include <malaga.h>
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
@@ -31,6 +35,7 @@
 #ifdef WIN32
 # define VOIKKO_KEY                   "SOFTWARE\\Voikko"
 # define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
+# define BUFFER_LENGTH 200
 #endif
 
 using namespace std;
@@ -106,12 +111,24 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(VOIKKO_DICTIONARY_VERSION);
+#ifdef WIN32
+	string searchPattern(path);
+	searchPattern.append("\\*");
+	WIN32_FIND_DATA dirData;
+	HANDLE handle = FindFirstFile(searchPattern.c_str(), &dirData);
+	if (handle == INVALID_HANDLE_VALUE) {
+		return;
+	}
+	do {
+		string dirName(dirData.cFileName);
+#else
 	DIR * dp = opendir(mainPath.c_str());
 	if (!dp) {
 		return;
 	}
 	while (dirent * dirp = readdir(dp)) {
 		string dirName(dirp->d_name);
+#endif
 		if (dirName.find("mor-") != 0) {
 			continue;
 		}
@@ -134,8 +151,13 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 				variants[dict.getVariant()].setDefault(true);
 			}
 		}
+#ifdef WIN32
+	} while (FindNextFile(handle, &dirData) != 0);
+	FindClose(handle);
+#else
 	}
 	closedir(dp);
+#endif
 }
 
 Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
@@ -200,37 +222,32 @@ list<string> DictionaryLoader::getDefaultLocations() {
 	
 	#ifdef WIN32
 	/* User default dictionary from Windows registry */
-	// FIXME: not yet converted from old code
-	lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
-	                    0, KEY_QUERY_VALUE, &hKey);
-	dwBufLen = buflen - 18;
+	HKEY hKey;
+	LONG lRet = RegOpenKeyEx(HKEY_CURRENT_USER, VOIKKO_KEY,
+						0, KEY_QUERY_VALUE, &hKey);
+	char buffer[BUFFER_LENGTH];
+	DWORD dwBufLen = BUFFER_LENGTH;
 	if (ERROR_SUCCESS == lRet) {
 		lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
 		                       (LPBYTE)buffer, &dwBufLen);
 		RegCloseKey(hKey);
 		if ((ERROR_SUCCESS == lRet)) {
-			strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
-			if (voikko_check_file(buffer)) {
-				delete[] tmp_buf;
-				return 1;
-			}
+			string dirName(buffer);
+			locations.push_back(dirName);
 		}
 	}
 	
 	/* System default dictionary from Windows registry */
 	lRet = RegOpenKeyEx(HKEY_LOCAL_MACHINE, VOIKKO_KEY,
 		                    0, KEY_QUERY_VALUE, &hKey);
-	dwBufLen = buflen - 18;
+	dwBufLen = BUFFER_LENGTH;
 	if (ERROR_SUCCESS == lRet) {
 		lRet = RegQueryValueEx(hKey, VOIKKO_VALUE_DICTIONARY_PATH, NULL, NULL,
 		                       (LPBYTE)buffer, &dwBufLen);
 		RegCloseKey(hKey);
 		if ((ERROR_SUCCESS == lRet)) {
-			strcpy(buffer + dwBufLen - 1, "/" VOIKKO_DICTIONARY_FILE);
-			if (voikko_check_file(buffer)) {
-				delete[] tmp_buf;
-				return 1;
-			}
+			string dirName(buffer);
+			locations.push_back(dirName);
 		}
 	}
 	#endif // WIN32

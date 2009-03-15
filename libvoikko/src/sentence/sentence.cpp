@@ -29,7 +29,7 @@ namespace libvoikko {
  * Returns true if given word ending with a dot can be interpreted
  * as a single word, false if the dot does not belong to the word.
  */
-bool dot_part_of_word(const wchar_t * text, size_t len) {
+static bool dot_part_of_word(const wchar_t * text, size_t len) {
 	if (len < 2) return false;
 	
 	// ordinal numbers
