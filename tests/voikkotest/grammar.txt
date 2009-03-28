@@ -3,6 +3,10 @@ Kissa ja koira ovat karvaisia.
 Mies on joten kuten selvillä siitä, että hänen on joten kuten palattava kotiinsa.
  [code=1, level=0, descr="", stpos=8, len=11, suggs={"jotenkuten"}]
  [code=1, level=0, descr="", stpos=50, len=11, suggs={"jotenkuten"}]
+Yksi sana on loppujenlopuksi väärin.
+ [code=1, level=0, descr="", stpos=13, len=15, suggs={"loppujen lopuksi"}]
+Virheessä voi olla mielinmäärin ä-kirjaimia.
+ [code=1, level=0, descr="", stpos=19, len=12, suggs={"mielin määrin"}]
 Se oli joten  kuten.
  [code=1, level=0, descr="", stpos=7, len=12, suggs={"jotenkuten"}]
  [code=2, level=0, descr="", stpos=12, len=2, suggs={" "}]
@@ -59,3 +63,13 @@ Avaimet löytyivät Reetan Taskun pohjalta.
 {accept_unfinished_paragraphs=1}
 Piste puuttuu vielä
 Seuraava sana puuttuu 
+
+{accept_bulleted_lists=1}
+ensimmäinen kohta,
+toinen kohta ja
+kolmas kohta.
+Kuitenkaan virheitä ei sallita Keskellä kappaletta.
+[code=6, level=0, descr="", stpos=31, len=8, suggs={"keskellä"}]
+Myös isot kirjaimet on muistettava. vaikka olisi lista.
+[code=7, level=0, descr="", stpos=36, len=6, suggs={"Vaikka"}]
+
