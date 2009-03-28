@@ -28,8 +28,8 @@ noinst_HEADERS = utils/utils.hpp utils/StringUtils.hpp \
 EXTRA_DIST = autocorrect/triecompiler.py
 BUILT_SOURCES = autocorrect/data.hpp
 CLEANFILES = autocorrect/data.hpp
-autocorrect/data.hpp: Makefile ../data/autocorrect/fi_FI.xml autocorrect/triecompiler.py
-	python autocorrect/triecompiler.py ../data/autocorrect/fi_FI.xml autocorrect/data.hpp
+autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
+	python $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc
