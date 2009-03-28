@@ -122,6 +122,22 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		return;
 	}
 	
+	// If the sentence contains a tab character as a word separator, it is
+	// likely that it is actually not a sentence. Maybe it would be best to
+	// disable all checks in that case, but character case checks are more
+	// likely to be wrong than others.
+	for (size_t i = 0; i < sentence->tokenCount; i++) {
+		Token t = sentence->tokens[i];
+		if (t.type != TOKEN_WHITESPACE) {
+			continue;
+		}
+		for (size_t j = 0; j < t.tokenlen; j++) {
+			if (t.str[j] == L'\t') {
+				return;
+			}
+		}
+	}
+	
 	int first_word_seen = 0;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];

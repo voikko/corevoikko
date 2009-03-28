@@ -1,6 +1,8 @@
 2009-03-28 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add option VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC.
+	* Disable character case checks if sentence contains a tab
+	  character.
 
 2009-03-15 Harri Pitkänen <hatapitk@iki.fi>
 
