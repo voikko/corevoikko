@@ -1,3 +1,7 @@
+2009-03-28 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add option VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC.
+
 2009-03-15 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Restore Windows support (partially).

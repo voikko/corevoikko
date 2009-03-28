@@ -44,6 +44,7 @@ typedef struct {
 	size_t min_hyphenated_word_length;
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
+	int accept_bulleted_lists_in_gc;
 	int hyphenate_unknown_words;
 	const char * encoding;
 	#ifdef HAVE_ICONV

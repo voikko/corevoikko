@@ -134,6 +134,11 @@
  * Default: true */
 #define VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS 15
 
+/* (Grammar checking only): Accept paragraphs if they would be valid within
+ * bulleted lists.
+ * Default: false */
+#define VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC 16
+
 /* Integer options */
 
 /* There are two possible rules that can be applied when hyphenating compound words

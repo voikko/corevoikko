@@ -32,7 +32,7 @@ void gc_local_punctuation(int handle, const grammar::Sentence * sentence);
 /**
  * GC errors due to incorrect character case
  */
-void gc_character_case(int handle, const grammar::Sentence * sentence);
+void gc_character_case(int handle, const grammar::Sentence * sentence, bool isFirstInParagraph);
 
 /**
  * GC errors due to word repetition

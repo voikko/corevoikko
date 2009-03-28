@@ -63,7 +63,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	for (int i = 0; i < para->sentenceCount; i++) {
 		AutoCorrect::autoCorrect(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
-		gc_character_case(handle, para->sentences[i]);
+		gc_character_case(handle, para->sentences[i], i == 0);
 		gc_repeating_words(handle, para->sentences[i]);
 	}
 	gc_end_punctuation(handle, para);

@@ -101,7 +101,7 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 	}
 }
 
-void gc_character_case(int handle, const Sentence * sentence) {
+void gc_character_case(int handle, const Sentence * sentence, bool isFirstInParagraph) {
 	// Check if the sentence is written fully in upper case letters.
 	// If it is, no character case errors should be reported.
 	bool onlyUpper = true;
@@ -128,7 +128,8 @@ void gc_character_case(int handle, const Sentence * sentence) {
 		if (t.type != TOKEN_WORD) continue;
 		if (!first_word_seen) {
 			first_word_seen = 1;
-			if (!iswupper(t.str[0]) && !iswdigit(t.str[0])) {
+			bool needCheckingOfFirstUppercase = (!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
+			if (needCheckingOfFirstUppercase && !iswupper(t.str[0]) && !iswdigit(t.str[0])) {
 				voikko_gc_cache_entry * e = gc_new_cache_entry(1);
 				if (!e) return;
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
@@ -192,6 +193,7 @@ void gc_repeating_words(int handle, const Sentence * sentence) {
 void gc_end_punctuation(int handle, const Paragraph * paragraph) {
 	if (voikko_options.accept_titles_in_gc && paragraph->sentenceCount == 1) return;
 	if (voikko_options.accept_unfinished_paragraphs_in_gc) return;
+	if (voikko_options.accept_bulleted_lists_in_gc) return;
 	
 	Sentence * sentence = paragraph->sentences[paragraph->sentenceCount - 1];
 	Token * token = sentence->tokens + (sentence->tokenCount - 1);
