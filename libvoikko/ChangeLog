@@ -3,6 +3,8 @@
 	* Add option VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC.
 	* Disable character case checks if sentence contains a tab
 	  character.
+	* Disable checks for paragraphs that contain only an URL or
+	  some other non-standard text.
 
 2009-03-15 Harri Pitkänen <hatapitk@iki.fi>
 

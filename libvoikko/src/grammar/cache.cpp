@@ -60,6 +60,30 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	voikko_options.gc_cache.paragraph[textlen] = L'\0';
 	Paragraph * para = gc_analyze_paragraph(handle, text, textlen);
 	if (!para) return;
+	
+	// If paragraph is a single sentence without any whitespace, do not try to
+	// do grammar checking on it. This could be an URL or something equally
+	// strange.
+	if (para->sentenceCount == 1) {
+		Sentence * sentence = para->sentences[0];
+		bool hasWhitespace = false;
+		for (size_t i = 0; i < sentence->tokenCount; i++) {
+			if (sentence->tokens[i].type == TOKEN_WHITESPACE) {
+				hasWhitespace = true;
+				break;
+			}
+		}
+		if (!hasWhitespace) {
+			// If this is a single word sentence, we should check it, otherwise
+			// it makes no sense to try.
+			if (sentence->tokenCount > 2 || sentence->tokenCount == 0 ||
+			    sentence->tokens[0].type != TOKEN_WORD) {
+				delete para;
+				return;
+			}
+		}
+	}
+	
 	for (int i = 0; i < para->sentenceCount; i++) {
 		AutoCorrect::autoCorrect(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
