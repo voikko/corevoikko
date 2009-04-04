@@ -20,22 +20,9 @@
 #define VOIKKO_GRAMMAR_CACHESETUP_H
 
 #include "voikko_defs.h"
+#include "grammar/CacheEntry.hpp"
 
 namespace libvoikko {
-
-/**
- * Grammar checker cache entry.
- */
-class voikko_gc_cache_entry {
-	public:
-	/** Constructs an empty cache entry */
-	voikko_gc_cache_entry();
-	
-	/** Grammar error */
-	voikko_grammar_error error;
-	/** Next error in linked list */
-	voikko_gc_cache_entry * next_error;
-};
 
 /**
  * Grammar checker cache. Currently the cache can hold only one paragraph.
@@ -51,7 +38,7 @@ class voikko_gc_cache {
 	/** Null terminated string containing the paragraph text. */
 	wchar_t * paragraph;
 	/** First error in linked list. */
-	voikko_gc_cache_entry * first_error;
+	grammar::CacheEntry * firstError;
 };
 
 /**

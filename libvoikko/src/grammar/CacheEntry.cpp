@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,39 +16,20 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "grammar/cachesetup.hpp"
+#include "grammar/CacheEntry.hpp"
 #include "grammar/error.hpp"
-#include "setup/setup.hpp"
-#include "utils/StringUtils.hpp"
-#include <cstring>
-#include <cstdlib>
 
-using namespace libvoikko::grammar;
+namespace libvoikko { namespace grammar {
 
-namespace libvoikko {
-
-voikko_gc_cache::voikko_gc_cache() :
-	paragraph(0),
-	firstError(0) {
-}
-
-void voikko_gc_cache::clear() {
-	paragraph = 0;
-	firstError = 0;
-}
-
-void gc_clear_cache(int /*handle*/) {
-	if (voikko_options.gc_cache.paragraph) {
-		delete[] voikko_options.gc_cache.paragraph;
+CacheEntry::CacheEntry(size_t suggestionCount) :
+	nextError(0) {
+	init_grammar_error(&(this->error));
+	if (suggestionCount > 0) {
+		error.suggestions = new char*[suggestionCount + 1];
+		for (size_t i = 0; i < suggestionCount + 1; i++) {
+			error.suggestions[i] = 0;
+		}
 	}
-	CacheEntry * entry = voikko_options.gc_cache.firstError;
-	while (entry) {
-		CacheEntry * next = entry->nextError;
-		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
-		delete entry;
-		entry = next;
-	}
-	voikko_options.gc_cache.clear();
 }
 
-}
+} }

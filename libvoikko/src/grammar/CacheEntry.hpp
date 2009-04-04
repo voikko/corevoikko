@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,32 +16,26 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#ifndef VOIKKO_GRAMMAR_CACHE_ENTRY
+#define VOIKKO_GRAMMAR_CACHE_ENTRY
 
-#include "voikko_defs.h"
+#include "grammar/Sentence.hpp"
 
-namespace libvoikko {
+namespace libvoikko { namespace grammar {
 
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+class CacheEntry {
+	public:
+		/** Constructs a cache entry with number of slots for grammar error
+		 *  suggestions */
+		CacheEntry(size_t suggestionCount);
+	
+		/** Grammar error */
+		voikko_grammar_error error;
+	
+		/** Next error in linked list */
+		CacheEntry * nextError;
+};
 
-/**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
- */
-void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
-
-/**
- * Appends an entry to the grammar checker error cache.
- */
-void gc_cache_append_error(int /*handle*/, grammar::CacheEntry * new_entry);
-
-
-}
+} }
 
 #endif

@@ -9,7 +9,7 @@ libvoikko_la_SOURCES = spellchecker/spell.cpp spellchecker/suggestions.cpp \
                        tokenizer/tokenizer.cpp sentence/sentence.cpp \
                        grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
                        grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
-                       grammar/Sentence.cpp grammar/Paragraph.cpp \
+                       grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
                        autocorrect/AutoCorrect.cpp
 libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 9:0:8 @LIBLDFLAGSWIN@
 
@@ -23,6 +23,7 @@ noinst_HEADERS = utils/utils.hpp utils/StringUtils.hpp \
                  grammar/cache.hpp grammar/checks.hpp grammar/error.hpp \
                  grammar/cachesetup.hpp grammar/analysis.hpp \
                  grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
+                 grammar/CacheEntry.hpp \
                  autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp
 
 EXTRA_DIST = autocorrect/triecompiler.py

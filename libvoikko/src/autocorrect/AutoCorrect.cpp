@@ -65,7 +65,7 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 		
 		// Is the first word alone an error?
 		if (NODES[trieNode].replacementIndex) {
-			voikko_gc_cache_entry * e = gc_new_cache_entry(1);
+			CacheEntry * e = new CacheEntry(1);
 			if (!e) return;
 			e->error.error_code = GCERR_INVALID_SPELLING;
 			e->error.startpos = sentence->tokens[i].pos;
@@ -97,7 +97,7 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 		
 		// Is the second word an error?
 		if (NODES[trieNode].replacementIndex) {
-			voikko_gc_cache_entry * e = gc_new_cache_entry(1);
+			CacheEntry * e = new CacheEntry(1);
 			if (!e) return;
 			e->error.error_code = GCERR_INVALID_SPELLING;
 			e->error.startpos = sentence->tokens[i].pos;

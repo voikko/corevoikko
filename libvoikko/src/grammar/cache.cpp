@@ -39,7 +39,7 @@ const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t *
                              size_t startpos, int skiperrors) {
 	if (!voikko_options.gc_cache.paragraph) return 0;	
 	if (wcscmp(voikko_options.gc_cache.paragraph, text) != 0) return 0;
-	voikko_gc_cache_entry * e = voikko_options.gc_cache.first_error;
+	CacheEntry * e = voikko_options.gc_cache.firstError;
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
@@ -47,7 +47,7 @@ const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t *
 			return &e->error;
 		}
 		preverrors++;
-		e = e->next_error;
+		e = e->nextError;
 	}
 	return &no_grammar_error;
 }
@@ -95,41 +95,30 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	delete para;
 }
 
-void gc_cache_append_error(int /*handle*/, voikko_gc_cache_entry * new_entry) {
-	voikko_gc_cache_entry * entry = voikko_options.gc_cache.first_error;
+void gc_cache_append_error(int /*handle*/, CacheEntry * new_entry) {
+	CacheEntry * entry = voikko_options.gc_cache.firstError;
 	if (!entry) {
-		voikko_options.gc_cache.first_error = new_entry;
+		voikko_options.gc_cache.firstError = new_entry;
 		return;
 	}
 	if (entry->error.startpos > new_entry->error.startpos) {
-		new_entry->next_error = voikko_options.gc_cache.first_error;
-		voikko_options.gc_cache.first_error = new_entry;
+		new_entry->nextError = voikko_options.gc_cache.firstError;
+		voikko_options.gc_cache.firstError = new_entry;
 		return;
 	}
 	while (1) {
-		if (!entry->next_error) {
-			entry->next_error = new_entry;
+		if (!entry->nextError) {
+			entry->nextError = new_entry;
 			return;
 		}
 		if (entry->error.startpos <= new_entry->error.startpos &&
-		    entry->next_error->error.startpos > new_entry->error.startpos) {
-			new_entry->next_error = entry->next_error;
-			entry->next_error = new_entry;
+		    entry->nextError->error.startpos > new_entry->error.startpos) {
+			new_entry->nextError = entry->nextError;
+			entry->nextError = new_entry;
 			return;
 		}
-		entry = entry->next_error;
+		entry = entry->nextError;
 	}
-}
-
-voikko_gc_cache_entry * gc_new_cache_entry(int suggestions) {
-	voikko_gc_cache_entry * e = new voikko_gc_cache_entry;
-	if (suggestions > 0) {
-		e->error.suggestions = new char*[suggestions + 1];
-		for (int i = 0; i < suggestions + 1; i++) {
-			e->error.suggestions[i] = 0;
-		}
-	}
-	return e;
 }
 
 }
