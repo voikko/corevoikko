@@ -30,6 +30,11 @@ namespace libvoikko {
 void gc_local_punctuation(int handle, const grammar::Sentence * sentence);
 
 /**
+ * GC errors due to wrong punctuation in quotations.
+ */
+void gc_punctuation_of_quotations(int handle, const grammar::Sentence * sentence);
+
+/**
  * GC errors due to incorrect character case
  */
 void gc_character_case(int handle, const grammar::Sentence * sentence, bool isFirstInParagraph);

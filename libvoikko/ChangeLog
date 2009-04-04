@@ -1,6 +1,7 @@
 2009-04-04 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Configure updates for libtool version 2.
+	* Improved handling of quotations in grammar checker.
 
 2009-03-28 Harri Pitkänen <hatapitk@iki.fi>
 

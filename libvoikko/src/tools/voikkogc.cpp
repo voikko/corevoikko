@@ -113,6 +113,7 @@ void check_grammar(int handle, const wchar_t * line, size_t lineLen,
 			char ** sugg = grammar_error.suggestions;
 			while (*sugg) {
 				// FIXME: convert from UTF-8
+				// FIXME: character " is not escaped -> results are not fully parseable
 				cout << "\"" << *sugg << "\"";
 				sugg++;
 				if (*sugg) {

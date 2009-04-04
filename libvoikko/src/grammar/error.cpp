@@ -44,6 +44,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Sana on kirjoitettu kahteen kertaan.";
 			case GCERR_TERMINATING_PUNCTUATION_MISSING:
 				return "V\xc3\xa4limerkki puuttuu virkkeen lopusta.";
+			case GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION:
+				return "Virheelliset v\xc3\xa4limerkit lainauksen lopussa.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -67,6 +69,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Remove duplicate word.";
 			case GCERR_TERMINATING_PUNCTUATION_MISSING:
 				return "Terminating punctuation is missing.";
+			case GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION:
+				return "Invalid punctuation at the end of quotation.";
 		}
 		return "Unknown error";
 	}

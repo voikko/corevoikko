@@ -38,7 +38,6 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 		case TOKEN_WHITESPACE:
 			if (t.tokenlen > 1) {
 				e = gc_new_cache_entry(1);
-				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_WHITESPACE;
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = sentence->tokens[i].tokenlen;
@@ -51,7 +50,6 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
 				e = gc_new_cache_entry(1);
-				if (!e) return;
 				e->error.error_code = GCERR_SPACE_BEFORE_PUNCTUATION;
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = 2;
@@ -66,7 +64,6 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 				if (t.str[0] == L'(' || t.str[0] == L')' ||
 				    t.str[0] == L'"' || t.str[0] == L'\'') continue;
 				e = gc_new_cache_entry(0);
-				if (!e) return;
 				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
 				if (sentence->tokens[i].pos == 0) {
 					e->error.startpos = 0;
@@ -84,7 +81,6 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 				if (t2.type != TOKEN_PUNCTUATION ||
 				    t2.str[0] != L',') continue;
 				e = gc_new_cache_entry(1);
-				if (!e) return;
 				e->error.error_code = GCERR_EXTRA_COMMA;
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = 2;
@@ -96,6 +92,50 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 		case TOKEN_NONE:
 		case TOKEN_WORD:
 		case TOKEN_UNKNOWN:
+			break;
+		}
+	}
+}
+
+void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
+	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
+		if (sentence->tokens[i].type != TOKEN_PUNCTUATION) {
+			continue;
+		}
+		if (sentence->tokens[i + 1].type != TOKEN_PUNCTUATION) {
+			continue;
+		}
+		if (sentence->tokens[i + 1].str[0] != L'"') {
+			continue;
+		}
+		if (sentence->tokens[i + 2].type != TOKEN_PUNCTUATION) {
+			continue;
+		}
+		if (sentence->tokens[i + 2].str[0] != L',') {
+			continue;
+		}
+		
+		voikko_gc_cache_entry * e;
+		switch (sentence->tokens[i].str[0]) {
+		case L'.':
+			e = gc_new_cache_entry(1);
+			e->error.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = 3;
+			e->error.suggestions[0] = new char[3];
+			strcpy(e->error.suggestions[0], "\",");
+			gc_cache_append_error(handle, e);
+			break;
+		case L'!':
+		case L'?':
+			e = gc_new_cache_entry(1);
+			e->error.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = 3;
+			e->error.suggestions[0] = new char[3];
+			e->error.suggestions[0][0] = (sentence->tokens[i].str[0] == L'!' ? '!' : '?');
+			strcpy(e->error.suggestions[0] + 1, "\"");
+			gc_cache_append_error(handle, e);
 			break;
 		}
 	}
@@ -147,7 +187,6 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			bool needCheckingOfFirstUppercase = (!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
 			if (needCheckingOfFirstUppercase && !iswupper(t.str[0]) && !iswdigit(t.str[0])) {
 				voikko_gc_cache_entry * e = gc_new_cache_entry(1);
-				if (!e) return;
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 				e->error.startpos = t.pos;
 				e->error.errorlen = t.tokenlen;
@@ -165,7 +204,6 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		if (t.possibleSentenceStart) continue;
 		if (!iswupper(t.str[0])) continue;
 		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
-		if (!e) return;
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
 		e->error.startpos = t.pos;
 		e->error.errorlen = t.tokenlen;
@@ -194,7 +232,6 @@ void gc_repeating_words(int handle, const Sentence * sentence) {
 			continue;
 		}
 		voikko_gc_cache_entry * e = gc_new_cache_entry(1);
-		if (!e) return;
 		e->error.error_code = GCERR_REPEATING_WORD;
 		e->error.startpos = sentence->tokens[i].pos;
 		e->error.errorlen = sentence->tokens[i].tokenlen +
@@ -215,7 +252,6 @@ void gc_end_punctuation(int handle, const Paragraph * paragraph) {
 	Token * token = sentence->tokens + (sentence->tokenCount - 1);
 	if (token->type == TOKEN_PUNCTUATION) return;
 	voikko_gc_cache_entry * e = gc_new_cache_entry(0);
-	if (!e) return;
 	e->error.error_code = GCERR_TERMINATING_PUNCTUATION_MISSING;
 	e->error.startpos = token->pos;
 	e->error.errorlen = token->tokenlen;

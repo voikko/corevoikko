@@ -42,7 +42,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
 void gc_cache_append_error(int /*handle*/, voikko_gc_cache_entry * new_entry);
 
 /**
- * Create a new empty grammar checker error cache entry.
+ * Create a new empty grammar checker error cache entry. Will not return null.
  * @param suggestions number of suggestions that will be added to this entry
  */
 voikko_gc_cache_entry * gc_new_cache_entry(int suggestions);
