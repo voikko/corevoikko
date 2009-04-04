@@ -21,13 +21,12 @@ AC_PREREQ(2.60)
 AC_INIT([libvoikko],[2.1],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
+AC_CONFIG_MACRO_DIR([m4])
 
 dnl Checks for programs
 AC_PROG_CXX
 AC_PROG_INSTALL
-AC_LIBTOOL_WIN32_DLL
-AC_PROG_LIBTOOL
-#AC_PROG_RANLIB
+LT_INIT([win32-dll])
 
 AM_MAINTAINER_MODE
 

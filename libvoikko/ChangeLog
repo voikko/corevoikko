@@ -1,3 +1,7 @@
+2009-04-04 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Configure updates for libtool version 2.
+
 2009-03-28 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add option VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC.

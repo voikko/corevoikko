@@ -10,7 +10,8 @@ find -type f \( -name missing -o -name install-sh -o -name mkinstalldirs \
         -o -name config.sub -o -name config.guess \
         -o -name Makefile.in \) -print0 | xargs -0 rm -f
 
-rm -f config.sub config.guess
+rm -f config.sub config.guess aclocal.m4 config.h.in config.rpath
+rm -rf m4
 cp /usr/share/misc/config.sub .
 cp /usr/share/misc/config.guess .
 cp /usr/share/gettext/config.rpath .
