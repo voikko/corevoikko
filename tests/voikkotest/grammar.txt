@@ -35,6 +35,15 @@ Lause. , jossa pilkun edellä piste.
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 "Lause voi olla myös lainausmerkeissä."
+"Lause voi olla myös lainausmerkeissä", kirjoittaa ohjelman tekijä.
+"Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
+"Lause voi olla myös lainausmerkeissä?" kirjoittaa ohjelman tekijä.
+"Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
+ [code=10, level=0, descr="", stpos=37, len=3, suggs={"","}]
+"Lause voi olla myös lainausmerkeissä?", kirjoittaa ohjelman tekijä.
+ [code=10, level=0, descr="", stpos=37, len=3, suggs={"?""}]
+"Lause voi olla myös lainausmerkeissä!", kirjoittaa ohjelman tekijä.
+ [code=10, level=0, descr="", stpos=37, len=3, suggs={"!""}]
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
 Hyllyllä on mm. hilloa.
 Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
