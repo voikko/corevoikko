@@ -26,7 +26,10 @@ AC_CONFIG_MACRO_DIR([m4])
 dnl Checks for programs
 AC_PROG_CXX
 AC_PROG_INSTALL
-LT_INIT([win32-dll])
+
+dnl Libtool (new and old)
+AC_LIBTOOL_WIN32_DLL
+ifdef([LT_INIT], [LT_INIT], [AC_PROG_LIBTOOL])
 
 AM_MAINTAINER_MODE
 
