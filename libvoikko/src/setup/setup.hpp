@@ -64,34 +64,6 @@ extern voikko_options_t voikko_options;
 
 extern int voikko_handle_count;
 
-/**
- * Finds the malaga project file for given language
- * @param buffer Buffer where path to the project file will be written
- * @param buflen Length of buffer
- * @param langcode Language code
- * @param path If path is not null, it is searched for dictionary files before checking the
- *             standard dictionary locations.
- * @return true if finding project file succeeded, otherwise false. It is not guaranteed that
- *         the file actually exists.
- */
-int voikko_find_malaga_project(char * buffer, size_t buflen, const char * langcode,
-                               const char * path);
-
-/**
- * Tries to initialise the given project file, and verifies that it matches current
- * dictionary format version
- * @param project Name of the project file
- * @return true if the project file was succesfully loaded and had correct version, otherwise false.
- */
-const char * voikko_init_malaga(const char * project);
-
-/**
- * Checks if the specified file exists
- * @param name name and path of the file to check
- * @return 1 if the specified file exists, otherwise 0
- */
-int voikko_check_file(const char * name);
-
 }
 
 #endif
