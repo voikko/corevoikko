@@ -67,6 +67,12 @@ PÄÄTÖS	Jos virkkeessä on sarkainmerkki, voi teksti sisältää vähän mitä
 http://www.puimula.org
 juokse!
  [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]
+Tavutusvihje ei estä vir­heen havaitsemista.
+Tavutusvihje ei estä Vir­heen havaitsemista.
+ [code=6, level=0, descr="", stpos=21, len=8, suggs={"vir­heen"}]
+Tavallinen yhdysmerkki tekee Vir-heen havaitsemisen mahdottomaksi.
+Tavutusvihe toimii jo­ten ku­ten.
+ [code=1, level=0, descr="", stpos=19, len=13, suggs={"jotenkuten"}]
 
 {accept_titles=1}
 Hieno toka otsikko
