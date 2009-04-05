@@ -35,7 +35,18 @@ void gc_analyze_token(int /*handle*/, Token * token) {
 	token->possibleSentenceStart = false;
 	if (token->type != TOKEN_WORD) return;
 	
-	char * malaga_buffer = voikko_ucs4tocstr(token->str, "UTF-8", token->tokenlen);
+	// Some characters need to be stripped before analysis
+	size_t wordLength = 0;
+	wchar_t * wordBuffer = new wchar_t[token->tokenlen];
+	for (size_t i = 0; i < token->tokenlen; i++) {
+		if (token->str[i] != L'\u00AD') {
+			// not a soft hyphen
+			wordBuffer[wordLength++] = token->str[i];
+		}
+	}
+	
+	char * malaga_buffer = voikko_ucs4tocstr(wordBuffer, "UTF-8", wordLength);
+	delete[] wordBuffer;
 	if (malaga_buffer == 0) return;
 	analyse_item(malaga_buffer, MORPHOLOGY);
 	delete[] malaga_buffer;
