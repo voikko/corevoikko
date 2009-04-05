@@ -80,4 +80,17 @@ void StringUtils::convertCStringArrayToMalloc(char ** & stringArray) {
 	stringArray = newArray;
 }
 
+wchar_t * StringUtils::stripSpecialCharsForMalaga(wchar_t * & original, size_t origLength) {
+	size_t wordLength = 0;
+	wchar_t * wordBuffer = new wchar_t[origLength + 1];
+	for (size_t i = 0; i < origLength; i++) {
+		if (original[i] != L'\u00AD') {
+			// not a soft hyphen
+			wordBuffer[wordLength++] = original[i];
+		}
+	}
+	wordBuffer[wordLength] = L'\0';
+	return wordBuffer;
+}
+
 } }

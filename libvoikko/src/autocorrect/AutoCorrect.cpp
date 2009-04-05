@@ -20,6 +20,7 @@
 #include "grammar/error.hpp"
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
+#include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
 #include "TrieNode.hpp"
 #include <cstring>
@@ -34,6 +35,10 @@ namespace libvoikko { namespace autocorrect {
 size_t AutoCorrect::traverse(size_t initial, const wchar_t * str, size_t strlen) {
 	size_t current = initial;
 	for (size_t i = 0; i < strlen; i++) {
+		if (str[i] == L'\u00AD') {
+			// skip soft hyphens in input string
+			continue;
+		}
 		if (NODES[current].subtreeStart) {
 			current = NODES[current].subtreeStart;
 			while (NODES[current].label != str[i]) {
@@ -58,7 +63,7 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 		}
 		
 		// Is the first word in the trie?
-		size_t trieNode = traverse(0, t.str, wcslen(t.str));
+		size_t trieNode = traverse(0, t.str, t.tokenlen);
 		if (!trieNode) {
 			continue;
 		}
@@ -90,7 +95,7 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 		}
 		
 		// Is the second word in the trie?
-		trieNode = traverse(trieNode, t.str, wcslen(t.str));
+		trieNode = traverse(trieNode, t.str, t.tokenlen);
 		if (!trieNode) {
 			continue;
 		}

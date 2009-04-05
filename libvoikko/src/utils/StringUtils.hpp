@@ -19,6 +19,8 @@
 #ifndef VOIKKO_UTILS_STRINGUTILS
 #define VOIKKO_UTILS_STRINGUTILS
 
+#include <cstring>
+
 namespace libvoikko { namespace utils {
 
 class StringUtils {
@@ -42,6 +44,11 @@ class StringUtils {
 	 */
 	static void convertCStringArrayToMalloc(char ** & stringArray);
 
+	/**
+	 * Creates a null terminated string where some special characters that cannot
+	 * be sent to malaga have been stripped.
+	 */
+	static wchar_t * stripSpecialCharsForMalaga(wchar_t * & original, size_t origLength);
 };
 
 } }
