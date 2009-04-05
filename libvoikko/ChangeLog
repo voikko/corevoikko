@@ -1,3 +1,7 @@
+2009-04-05 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Improved handling of soft hyphen in grammar checker.
+
 2009-04-04 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Configure updates for libtool version 2.

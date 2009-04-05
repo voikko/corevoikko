@@ -27,6 +27,7 @@ namespace libvoikko {
 
 char_type get_char_type(wchar_t c) {
 	if (wcschr(L".,;-!?:'\"()[]{}"
+	           L"\u00AD"  /* SOFT HYPHEN */
 	           L"\u2019"  /* RIGHT SINGLE QUOTATION MARK */
 	           L"\u2010"  /* HYPHEN */
 	           L"\u2011"  /* NON-BREAKING HYPHEN */

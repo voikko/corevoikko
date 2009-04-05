@@ -56,6 +56,7 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 						    CHAR_LETTER) break;
 						return wlen;
 					case L'-':
+					case L'\u00AD': /* SOFT HYPHEN */
 					case L'\u2010': /* HYPHEN */
 					case L'\u2011': /* NON-BREAKING HYPHEN */
 						if (wlen + 1 == textlen) return wlen + 1;
