@@ -69,7 +69,7 @@ allo_rule generate_allos ($tietue):
 
   if (($malli = voikko) and ($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
-       (murre in $tietue.tiedot) or
+       (murre in $tietue.tiedot and switch(voikko_murre) = no) or
        (ei_voikko in $tietue.tiedot))) then
     stop;
 

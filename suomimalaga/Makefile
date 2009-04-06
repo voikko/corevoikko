@@ -89,9 +89,15 @@ voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
 
 # Rule to generate voikko-fi_FI.pro
 
+VOIKKO_MURRE=no
+ifeq "$(findstring dialect,$(GENLEX_OPTS))" "dialect"
+	VOIKKO_MURRE=yes
+endif
+
 VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
 	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/; \
 	s/VOIKKO_DEBUG/$(VOIKKO_DEBUG)/; \
+	s/VOIKKO_MURRE/$(VOIKKO_MURRE)/; \
 	s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
 	s/SM_VOIKKO_DESCRIPTION/$(VOIKKO_DESCRIPTION)/; \
 	s/SM_VERSION/$(SM_VERSION)/; \

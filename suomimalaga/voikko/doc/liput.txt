@@ -8,4 +8,6 @@ vanhahkot_muodot (mallex) Hyväksytään sellaisia vanhempia taivutusmuotoja
                           arkikielessä käytössä.
 vanhat_muodot    (mallex) Hyväksytään vanhoja tai murteellisia taivutusmuotoja,
                           joiden käyttö ei ole suositeltavaa yleiskielessä.
-
+voikko_debug     (mallex) Lisätään sanastoon virheiden jäljityksessä hyödyllistä
+                          tietoa.
+voikko_murre     (mallex) Lisätään sanastoon murre-lipulla merkityt sanat.

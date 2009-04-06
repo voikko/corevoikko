@@ -419,7 +419,7 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
              # mahdollistaa tavurajojen asettamisen ja tavutuksen kieltämisen Voikossa.
 
 
-# Lippuja. Merkitys on selitetty tiedostossa ohjeet/liput.txt.
+# Lippuja. Merkitys on selitetty tiedostossa doc/liput.txt.
 malli;
   voikko;
     vanhahkot_muodot;
@@ -427,7 +427,8 @@ malli;
 taivutus;
   vanhat_muodot;
 voikko_debug;
-sourceid;
+  sourceid;
+voikko_murre;
 
 # Nykysuomen sanakirja
 # Ensimmäinen osa A-K
