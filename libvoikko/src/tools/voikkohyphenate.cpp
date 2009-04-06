@@ -113,11 +113,10 @@ int main(int argc, char ** argv) {
 			voikko_set_int_option(handle, VOIKKO_INTERSECT_COMPOUND_LEVEL, iclevel);
 		}
 		else if (strncmp(argv[i], "-s", 2) == 0) {
-			if (strlen(argv[i]) != 3) {
+			if (strlen(argv[i]) != 3 || mbtowc(&separator, argv[i] + 2, 1) < 1) {
 				cerr << "Invalid separator argument for option -s" << endl;
 				return 1;
 			}
-			mbtowc(&separator, argv[i] + 2, 1);
 		}
 		else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "-d") == 0) {
 			i++;

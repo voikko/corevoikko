@@ -20,6 +20,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <cstdio>
 #include <wchar.h>
 
 using namespace std;

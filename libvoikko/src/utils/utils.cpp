@@ -242,7 +242,7 @@ bool voikko_is_nonword(const wchar_t * word, size_t nchars) {
 	
 	if (nchars < 4) return false;
 	
-	wchar_t * i = wmemchr(word, L'/', nchars - 3);
+	const wchar_t * i = wmemchr(word, L'/', nchars - 3);
 	if (i && i[1] == L'/' && wmemchr(i + 1, L'.', nchars - (i - word) - 2)) {
 		return true;
 	}

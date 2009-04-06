@@ -94,7 +94,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	spellresult result_without_border = SPELL_FAILED;
 	
 	enum spellresult result = voikko_spell_with_priority(word, len, 0);
-	wchar_t * hyphen_pos;
+	const wchar_t * hyphen_pos;
 	if (result != SPELL_OK && len > 3) {
 		hyphen_pos = wmemchr(word + 1, L'-', len - 2);
 	}
