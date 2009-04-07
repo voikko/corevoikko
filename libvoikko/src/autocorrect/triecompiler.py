@@ -75,7 +75,8 @@ def cHexCodeForChar(unicodeChar):
 		# These characters cannot be represented as unicode literals in C++
 		return unicodeChar
 	hexCode = hex(ordinal)[2:]
-	return "\\u" + hexCode.rjust(4, "0")
+	# hexCode.rjust(4, "0") is not supported in Python version 2.3
+	return "\\u" + hexCode.rjust(4).replace(" ", "0")
 
 def writeTrieNodes(trie, outputFile):
 	for node in trie.children:
