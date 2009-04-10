@@ -24,6 +24,9 @@ Paragraph::Paragraph() : sentences(new Sentence*[MAX_SENTENCES_IN_PARAGRAPH]), s
 }
 
 Paragraph::~Paragraph() {
+	for (size_t i = 0; i < sentenceCount; i++) {
+		delete this->sentences[i];
+	}
 	delete[] this->sentences;
 }
 

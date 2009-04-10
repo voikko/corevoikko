@@ -84,7 +84,7 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 		}
 	}
 	
-	for (int i = 0; i < para->sentenceCount; i++) {
+	for (size_t i = 0; i < para->sentenceCount; i++) {
 		AutoCorrect::autoCorrect(handle, para->sentences[i]);
 		gc_local_punctuation(handle, para->sentences[i]);
 		gc_punctuation_of_quotations(handle, para->sentences[i]);

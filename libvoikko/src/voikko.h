@@ -436,25 +436,25 @@ struct voikko_dict;
  *        first before looking into the standard dictionary locations.
  * @return A pointer to a null terminated array of dictionary entries.
  */
-voikko_dict ** voikko_list_dicts(const char * path);
+struct voikko_dict ** voikko_list_dicts(const char * path);
 
 /**
  * Free the memory allocated for dictionary list.
  * @param dicts A list of available dictionaries obtained with voikko_list_dicts
  */
-void voikko_free_dicts(voikko_dict ** dicts);
+void voikko_free_dicts(struct voikko_dict ** dicts);
 
 /**
  * Get the variant identifier for a dictionary.
  * @return The variant identifier for given dictionary.
  */
-const char * voikko_dict_variant(const voikko_dict * dict);
+const char * voikko_dict_variant(const struct voikko_dict * dict);
 
 /**
  * Get the human readable description for a dictionary.
  * @return The description for given dictionary.
  */
-const char * voikko_dict_description(const voikko_dict * dict);
+const char * voikko_dict_description(const struct voikko_dict * dict);
 
 END_C_DECLS
 #endif

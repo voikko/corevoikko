@@ -2,6 +2,9 @@
 
 	* Fixed typo that prevented dictionary loader from
 	  working correctly on Windows.
+	* Add struct keywords to voikko.h to make the header
+	  compatible with plain C compilers.
+	* Fix memory leak in grammar checker.
 
 2009-04-07 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -24,7 +24,9 @@
 namespace libvoikko { namespace grammar {
 
 /**
- * Analyzed paragraph for grammar checker.
+ * Analyzed paragraph for grammar checker. The user of this class
+ * must ensure that sentenceCount matches the number of sentences
+ * stored in this paragraph.
  */
 class Paragraph {
 	public:
@@ -33,13 +35,13 @@ class Paragraph {
 		~Paragraph();
 		
 		/* Maximum number of sentences in a paragraph */
-		static const int MAX_SENTENCES_IN_PARAGRAPH = 200;
+		static const size_t MAX_SENTENCES_IN_PARAGRAPH = 200;
 		
 		/** Pointers to analyzed sentences */
 		Sentence ** sentences;
 		
 		/** Number of sentences in the paragraph */
-		int sentenceCount;
+		size_t sentenceCount;
 	
 	private:
 		Paragraph(Paragraph const & other);
