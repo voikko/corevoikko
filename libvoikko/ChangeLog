@@ -1,3 +1,8 @@
+2009-04-10 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fixed typo that prevented dictionary loader from
+	  working correctly on Windows.
+
 2009-04-07 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Change trie compiler to not use a construct that

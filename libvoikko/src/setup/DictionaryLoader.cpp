@@ -112,7 +112,7 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 	mainPath.append("/");
 	mainPath.append(VOIKKO_DICTIONARY_VERSION);
 #ifdef WIN32
-	string searchPattern(path);
+	string searchPattern(mainPath);
 	searchPattern.append("\\*");
 	WIN32_FIND_DATA dirData;
 	HANDLE handle = FindFirstFile(searchPattern.c_str(), &dirData);
