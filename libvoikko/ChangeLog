@@ -1,3 +1,9 @@
+2009-04-11 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Remove --as-needed from linker flags. It is
+	  unnecessary as long as libtool < 2.0 is used
+	  and breaks build on OS X.
+
 2009-04-10 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fixed typo that prevented dictionary loader from
