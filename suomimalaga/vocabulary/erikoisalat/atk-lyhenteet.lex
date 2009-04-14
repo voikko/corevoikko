@@ -54,6 +54,7 @@
 [alku: "ctrl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "CUPS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjjj"];
 [alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
+[alku: "eps", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # Encapsulated PostScript
 [alku: "ftp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
 [alku: "FTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
 [alku: "fvwm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
@@ -87,6 +88,7 @@
 [alku: "ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"];
 [alku: "RPM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
 [alku: "SCSI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
+[alku: "SFST", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # Stuttgart Finite State Transducer Tools
 [alku: "SGML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
 [alku: "SPSS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # SPSS-ohjelma
 [alku: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
