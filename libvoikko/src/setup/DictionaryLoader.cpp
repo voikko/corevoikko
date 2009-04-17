@@ -203,10 +203,10 @@ list<string> DictionaryLoader::getDefaultLocations() {
 
 	#ifdef HAVE_GETPWUID_R
 	/* $HOME/.voikko/VOIKKO_DICTIONARY_FILE */
-	passwd pwd;
 	passwd * pwdResult;
 	char * pwdBuf = new char[10000];
 	if (pwdBuf) {
+		passwd pwd;
 		getpwuid_r(getuid(), &pwd, pwdBuf, 10000, &pwdResult);
 		if (pwdResult && pwd.pw_dir) {
 			string pwdPath(pwd.pw_dir);

@@ -340,7 +340,7 @@ void remove_extra_hyphenations(char ** hyphenations, size_t len, int intersect_c
 			}
 		}
 		if (current_parts > min_parts) {
-			delete hyphenations[j];
+			delete[] hyphenations[j];
 			hyphenations[j] = hyphenations[--hyphenation_count];
 			hyphenations[hyphenation_count] = 0;
 		}

@@ -109,15 +109,14 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 
 Paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
 	Paragraph * p = new Paragraph;
-	size_t sentencelen;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
 	enum voikko_sentence_type st;
 	do {
 		const wchar_t * pos2 = pos;
-		size_t sentencelen2;
-		sentencelen = 0;
+		size_t sentencelen = 0;
 		do {
+			size_t sentencelen2;
 			st = voikko_next_sentence_start_ucs4(handle, pos2, remaining,
 			                                     &sentencelen2);
 			pos2 += sentencelen2;
