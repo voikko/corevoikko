@@ -1,3 +1,8 @@
+2009-04-17 Lauri Nurmi <lanurmi@iki.fi>
+
+	* Add "#error" if no charset conversion implementation
+	  is available.
+
 2009-04-17 Harri Pitkänen <hatapitk@iki.fi>
 
 	* valgrind: Fix invalid use of delete vs. delete[].

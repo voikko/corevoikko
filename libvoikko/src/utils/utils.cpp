@@ -77,8 +77,7 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 	*((wchar_t *) outptr) = L'\0'; /* terminate the output buffer */
 	LOG(("ucs4_buffer = '%ls'\n", ucs4_buffer));
 	return ucs4_buffer;
-#else
-  #ifdef WIN32
+#elif defined(WIN32)
 	int cp;
 	if (strcmp(encoding, "UTF-8") == 0) cp = CP_UTF8;
 	else if (strcmp(encoding, "CP850") == 0) cp = 850;
@@ -98,8 +97,9 @@ wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len
 		ucs4_buffer[result] = L'\0';
 		return ucs4_buffer;
 	}
-  #endif //WIN32
-#endif //HAVE_ICONV
+#else
+  #error A charset conversion implementation is mandatory.
+#endif
 }
 
 char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len) {
@@ -147,8 +147,7 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 	*outptr = '\0'; /* terminate the output buffer */
 	LOG(("utf8_buffer = '%s'\n", utf8_buffer));
 	return utf8_buffer;
-#else
-  #ifdef WIN32
+#elif defined(WIN32)
 	int cp;
   	if (strcmp(encoding, "UTF-8") == 0) cp = CP_UTF8;
 	else if (strcmp(encoding, "CP850") == 0) cp = 850;
@@ -165,8 +164,9 @@ char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len
 		utf8_buffer[result] = '\0';
 		return utf8_buffer;
 	}
-  #endif //WIN32
-#endif //HAVE_ICONV
+#else
+  #error A charset conversion implementation is mandatory.
+#endif
 }
 
 int voikko_hash(const wchar_t * word, size_t len, int order) {
