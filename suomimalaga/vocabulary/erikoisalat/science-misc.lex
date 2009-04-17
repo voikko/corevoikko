@@ -59,6 +59,15 @@
 [alku: "kW", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # kilowatti
 [alku: "mW", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # milliwatti
 
+# Ohmin symbolit käyttäen merkkiä U+03A9 GREEK CAPITAL LETTER OMEGA
+# (Unicode-standardi suosittelee tätä.)
+[alku: "GΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # gigaohmi
+[alku: "MΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # megaohmi
+[alku: "kΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qj"]; # kilo-ohmi
+[alku: "Ω", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=j"]; # ohmi
+[alku: "mΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qj"]; # milliohmi
+
+# Ohmin symbolit käyttäen merkkiä U+2126 OHM SIGN
 [alku: "GΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # gigaohmi
 [alku: "MΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # megaohmi
 [alku: "kΩ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qj"]; # kilo-ohmi
