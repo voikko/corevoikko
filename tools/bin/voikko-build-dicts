@@ -81,7 +81,7 @@ d.idSuffix = u"-erityis"
 d.variant = u"science"
 d.nameFi = u"matematiikan, fysiikan, kemian, lääketieteen, kasvatustieteen ja tietotekniikan sanastot"
 d.nameEn = u"scientific vocabulary"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,education" EXTRA_LEX=vocabulary/erikoisalat/atk-lyhenteet.lex'
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,education" EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/science-misc.lex"'
 allDicts.append(d)
 
 d = Voikkodict()
@@ -105,7 +105,7 @@ d.idSuffix = u"-laaketiede"
 d.variant = u"medicine"
 d.nameFi = u"matematiikan, fysiikan, kemian ja lääketieteen sanastot"
 d.nameEn = u"medical vocabulary"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science"'
+d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science" EXTRA_LEX=vocabulary/erikoisalat/science-misc.lex'
 allDicts.append(d)
 
 WORK_DIR = "build"

@@ -1,0 +1,40 @@
+#!/bin/bash
+# Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Script that uses valgrind to check for memory handling errors in libvoikko.
+# Should be run in /trunk/tests/voikkotest
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+echo '---- voikkospell - checking without suggestions ----'
+cat spell.txt | egrep -v '^[[]' | sed -e 's/!//;s/[ #].*//' \
+    | valgrind --leak-check=full --quiet voikkospell ignore_dot=1 > /dev/null
+
+echo '---- voikkospell - checking with suggestions ----'
+cat suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+    | valgrind --leak-check=full --quiet voikkospell -s ignore_dot=1 > /dev/null
+
+echo '---- enchant - checking with suggestions ----'
+cat suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+    | valgrind --leak-check=full --quiet enchant -a -dfi_FI > /dev/null
+
+echo '---- voikkohyphenate - configuration used with openoffice.org-voikko ----'
+cat hyphen.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+    | valgrind --leak-check=full --quiet \
+    voikkohyphenate no_ugly_hyphenation=1 ignore_dot=1 > /dev/null
+
+echo '---- voikkogc - configuration used with openoffice.org-voikko ----'
+cat grammar.txt | valgrind --leak-check=full --quiet voikkogc accept_bulleted_lists=1 \
+    accept_titles=1 accept_unfinished_paragraphs=1 > /dev/null
+
