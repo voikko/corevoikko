@@ -78,4 +78,4 @@
 
 # Erinäisiä normaaliin sanastoon sopimattomia nimiä
 [perusmuoto: "Evolution", alku: "Evolution", luokka: nimi, jatko: <kalsium>, äs: a];
-
+[alku: "VLC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Eräs mediasoitin

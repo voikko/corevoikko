@@ -21,6 +21,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import codecs
+from commands import getoutput
 from subprocess import Popen, PIPE
 from os import access, F_OK
 from os import waitpid
@@ -108,12 +109,21 @@ d.nameEn = u"medical vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science" EXTRA_LEX=vocabulary/erikoisalat/science-misc.lex'
 allDicts.append(d)
 
+d = Voikkodict()
+d.idSuffix = u"-po"
+d.variant = u"po"
+d.nameFi = u"po-tiedostojen oikolukusanasto"
+d.nameEn = u"po file spelling vocanulary"
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/po-oikoluku.lex vocabulary/erikoisalat/linux-distributions.lex"'
+allDicts.append(d)
+
 WORK_DIR = "build"
 
 INDEX_FILE_NAME = WORK_DIR + "/index.html"
 
 # === Initialization ===
 
+runCmd("svn update")
 startTime = datetime.now()
 indexFile = codecs.open(INDEX_FILE_NAME, "w", "UTF-8")
 indexHeader(indexFile)
@@ -192,13 +202,10 @@ indexFile.write(u"<p><a href='suomi-malaga-snapshot.tar.gz'>suomi-malaga-snapsho
 # === Finalisation ===
 
 indexFile.write(u"<h2>Lähdekoodin versiotiedot</h2><pre>")
-p = Popen("svn info", shell = True, stdout = PIPE, close_fds = True)
-(out, err) = p.communicate()
+out = getoutput("svn info")
 indexFile.write(unicode(out, "UTF-8"))
 indexFile.write(u"</pre><p>Viimeisin päivitys Joukahaisesta")
-p = Popen("grep 'Time of generation:' vocabulary/joukahainen.xml | sed -e 's/T.*on://'",
-      shell = True, stdout = PIPE, close_fds = True)
-(out, err) = p.communicate()
+out = getoutput("grep 'Time of generation:' vocabulary/joukahainen.xml | sed -e 's/T.*on://'")
 indexFile.write(out)
 indexFile.write(u"</p>")
 endTime = datetime.now()
