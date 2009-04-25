@@ -38,6 +38,8 @@ Avaimet löytyivät Reetan Taskun pohjalta.
 "Lause voi olla myös lainausmerkeissä", kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä?" kirjoittaa ohjelman tekijä.
+”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.
+»Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
  [code=10, level=0, descr="", stpos=37, len=3, suggs={"","}]
 "Lause voi olla myös lainausmerkeissä?", kirjoittaa ohjelman tekijä.
@@ -73,6 +75,7 @@ Tavutusvihje ei estä Vir­heen havaitsemista.
 Tavallinen yhdysmerkki tekee Vir-heen havaitsemisen mahdottomaksi.
 Tavutusvihe toimii jo­ten ku­ten.
  [code=1, level=0, descr="", stpos=19, len=13, suggs={"jotenkuten"}]
+Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
 
 {accept_titles=1}
 Hieno toka otsikko

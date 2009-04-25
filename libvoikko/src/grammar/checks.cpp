@@ -61,8 +61,9 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 			break;
 		case TOKEN_PUNCTUATION:
 			if (i == 0) {
-				if (t.str[0] == L'(' || t.str[0] == L')' ||
-				    t.str[0] == L'"' || t.str[0] == L'\'') continue;
+				if (wcschr(L"()\"”»'", t.str[0])) {
+					continue;
+				}
 				e = new CacheEntry(0);
 				e->error.error_code = GCERR_INVALID_SENTENCE_STARTER;
 				if (sentence->tokens[i].pos == 0) {
@@ -105,7 +106,7 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 		if (sentence->tokens[i + 1].type != TOKEN_PUNCTUATION) {
 			continue;
 		}
-		if (sentence->tokens[i + 1].str[0] != L'"') {
+		if (!wcschr(L"\"»\u201d", sentence->tokens[i + 1].str[0])) {
 			continue;
 		}
 		if (sentence->tokens[i + 2].type != TOKEN_PUNCTUATION) {
@@ -115,6 +116,7 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 			continue;
 		}
 		
+		wchar_t quoteChar = sentence->tokens[i + 1].str[0];
 		CacheEntry * e;
 		switch (sentence->tokens[i].str[0]) {
 		case L'.':
@@ -123,7 +125,9 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = 3;
 			e->error.suggestions[0] = new char[3];
-			strcpy(e->error.suggestions[0], "\",");
+			e->error.suggestions[0][0] = quoteChar;
+			e->error.suggestions[0][1] = L',';
+			e->error.suggestions[0][2] = L'\0';
 			gc_cache_append_error(handle, e);
 			break;
 		case L'!':
@@ -134,7 +138,8 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 			e->error.errorlen = 3;
 			e->error.suggestions[0] = new char[3];
 			e->error.suggestions[0][0] = (sentence->tokens[i].str[0] == L'!' ? '!' : '?');
-			strcpy(e->error.suggestions[0] + 1, "\"");
+			e->error.suggestions[0][1] = quoteChar;
+			e->error.suggestions[0][2] = L'\0';
 			gc_cache_append_error(handle, e);
 			break;
 		}
@@ -202,6 +207,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		if (!t.isValidWord) continue;
 		if (!t.firstLetterLcase) continue;
 		if (t.possibleSentenceStart) continue;
+		if (t.tokenlen == 1) continue;
 		if (!iswupper(t.str[0])) continue;
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;

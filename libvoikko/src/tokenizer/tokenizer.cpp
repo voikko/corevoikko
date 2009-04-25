@@ -60,7 +60,7 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 					case L'\u2010': /* HYPHEN */
 					case L'\u2011': /* NON-BREAKING HYPHEN */
 						if (wlen + 1 == textlen) return wlen + 1;
-						if (wcschr(L"\",", text[wlen+1]))
+						if (wcschr(L"\"»\u201d,", text[wlen+1]))
 							return wlen + 1;
 						switch (get_char_type(text[wlen+1])) {
 							case CHAR_LETTER:

@@ -1,3 +1,8 @@
+2009-04-25 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Handle different types of quote characters.
+	* Accept single letters written in uppercase.
+
 2009-04-17 Lauri Nurmi <lanurmi@iki.fi>
 
 	* Add "#error" if no charset conversion implementation

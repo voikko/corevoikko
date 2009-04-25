@@ -26,11 +26,12 @@
 namespace libvoikko {
 
 char_type get_char_type(wchar_t c) {
-	if (wcschr(L".,;-!?:'\"()[]{}"
+	if (wcschr(L".,;-!?:'\"»()[]{}"
 	           L"\u00AD"  /* SOFT HYPHEN */
 	           L"\u2019"  /* RIGHT SINGLE QUOTATION MARK */
 	           L"\u2010"  /* HYPHEN */
 	           L"\u2011"  /* NON-BREAKING HYPHEN */
+	           L"\u201d"  /* quotation mark, double comma */
 	           , c)) return CHAR_PUNCTUATION;
 	if (iswspace(c)) return CHAR_WHITESPACE;
 	if (wcschr(L"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"

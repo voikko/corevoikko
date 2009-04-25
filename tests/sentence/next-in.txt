@@ -9,3 +9,5 @@ Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on täss�
 Kolme pistettä... Neljä pistettä.... Kuusi pistettä......
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
+”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.
+»Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.
