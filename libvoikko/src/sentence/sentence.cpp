@@ -32,15 +32,17 @@ namespace libvoikko {
 static bool dot_part_of_word(const wchar_t * text, size_t len) {
 	if (len < 2) return false;
 	
-	// ordinal numbers
-	bool only_numbers = true;
+	// ordinal numbers and dates
+	bool onlyNumbersOrDots = true;
 	for (size_t i = 0; i < len - 1; i++) {
-		if (!iswdigit(text[i])) {
-			only_numbers = false;
+		if (text[i] != L'.' && !iswdigit(text[i])) {
+			onlyNumbersOrDots = false;
 			break;
 		}
 	}
-	if (only_numbers) return true;
+	if (onlyNumbersOrDots) {
+		return true;
+	}
 	
 	// abbreviations
 	if (voikko_do_spell(text, len) != SPELL_FAILED) return true;

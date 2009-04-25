@@ -54,6 +54,9 @@ Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on täss�
 Ensimmäinen virke on oikein. toinen virke on väärin.
  [code=7, level=0, descr="", stpos=29, len=6, suggs={"Toinen"}]
 Ensimmäinen virke on oikein. 2. virke on myös oikein.
+Myös 20.3. satoi lunta.
+Myös 20.3.1984 satoi lunta.
+Olin kotona 20.3., vaikka satoi lunta.
 On usein huono juttu, jos tekstissä toistuu toistuu sama sana kaksi kertaa.
  [code=8, level=0, descr="", stpos=36, len=15, suggs={"toistuu"}]
 Hieno eka otsikko
