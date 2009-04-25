@@ -1,8 +1,10 @@
 2009-04-25 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Handle different types of quote characters.
+	* Accept different types of quote characters.
 	* Accept single letters written in uppercase.
-	* Handle Finnish dates without year.
+	* Accept Finnish dates without year.
+	* Hyphen at the start of a paragraph may mean that the paragraph
+	  is a list item.
 
 2009-04-17 Lauri Nurmi <lanurmi@iki.fi>
 

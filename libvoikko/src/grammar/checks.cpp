@@ -61,7 +61,7 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 			break;
 		case TOKEN_PUNCTUATION:
 			if (i == 0) {
-				if (wcschr(L"()\"”»'", t.str[0])) {
+				if (wcschr(L"()\"”»'-", t.str[0])) {
 					continue;
 				}
 				e = new CacheEntry(0);
@@ -183,13 +183,19 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		}
 	}
 	
-	int first_word_seen = 0;
+	// Sentences starting with "-" may be list items.
+	bool sentenceStartsWithHyphen =
+		sentence->tokenCount > 0 && sentence->tokens[0].tokenlen == 1 &&
+		sentence->tokens[0].str[0] == '-';
+	
+	bool firstWordSeen = false;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
-		if (!first_word_seen) {
-			first_word_seen = 1;
-			bool needCheckingOfFirstUppercase = (!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
+		if (!firstWordSeen) {
+			firstWordSeen = true;
+			bool needCheckingOfFirstUppercase = !sentenceStartsWithHyphen &&
+				(!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
 			if (needCheckingOfFirstUppercase && !iswupper(t.str[0]) && !iswdigit(t.str[0])) {
 				CacheEntry * e = new CacheEntry(1);
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;

@@ -79,6 +79,10 @@ Tavallinen yhdysmerkki tekee Vir-heen havaitsemisen mahdottomaksi.
 Tavutusvihe toimii jo­ten ku­ten.
  [code=1, level=0, descr="", stpos=19, len=13, suggs={"jotenkuten"}]
 Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
+- Tavallinenkin kappale voi alkaa näin.
+- koira.
+- koira ja Kissa.
+ [code=6, level=0, descr="", stpos=11, len=5, suggs={"kissa"}]
 
 {accept_titles=1}
 Hieno toka otsikko
