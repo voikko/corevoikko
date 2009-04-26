@@ -20,6 +20,7 @@
 #include "grammar/error.hpp"
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
+#include "character/charset.hpp"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
@@ -61,7 +62,7 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 			break;
 		case TOKEN_PUNCTUATION:
 			if (i == 0) {
-				if (wcschr(L"()\"”»'-", t.str[0])) {
+				if (wcschr(L"()'-", t.str[0]) || isFinnishQuotationMark(t.str[0])) {
 					continue;
 				}
 				e = new CacheEntry(0);
@@ -106,7 +107,7 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 		if (sentence->tokens[i + 1].type != TOKEN_PUNCTUATION) {
 			continue;
 		}
-		if (!wcschr(L"\"»\u201d", sentence->tokens[i + 1].str[0])) {
+		if (!isFinnishQuotationMark(sentence->tokens[i + 1].str[0])) {
 			continue;
 		}
 		if (sentence->tokens[i + 2].type != TOKEN_PUNCTUATION) {
@@ -124,10 +125,14 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 			e->error.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = 3;
-			e->error.suggestions[0] = new char[3];
-			e->error.suggestions[0][0] = quoteChar;
-			e->error.suggestions[0][1] = L',';
-			e->error.suggestions[0][2] = L'\0';
+			{
+				wchar_t * suggDot = new wchar_t[e->error.errorlen];
+				suggDot[0] = quoteChar;
+				suggDot[1] = L',';
+				suggDot[2] = L'\0';
+				e->error.suggestions[0] = voikko_ucs4tocstr(suggDot, "UTF-8", e->error.errorlen);
+				delete[] suggDot;
+			}
 			gc_cache_append_error(handle, e);
 			break;
 		case L'!':
@@ -136,10 +141,14 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 			e->error.error_code = GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION;
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = 3;
-			e->error.suggestions[0] = new char[3];
-			e->error.suggestions[0][0] = (sentence->tokens[i].str[0] == L'!' ? '!' : '?');
-			e->error.suggestions[0][1] = quoteChar;
-			e->error.suggestions[0][2] = L'\0';
+			{
+				wchar_t * suggOther = new wchar_t[e->error.errorlen];
+				suggOther[0] = (sentence->tokens[i].str[0] == L'!' ? L'!' : L'?');
+				suggOther[1] = quoteChar;
+				suggOther[2] = L'\0';
+				e->error.suggestions[0] = voikko_ucs4tocstr(suggOther, "UTF-8", e->error.errorlen);
+				delete[] suggOther;
+			}
 			gc_cache_append_error(handle, e);
 			break;
 		}
@@ -189,9 +198,16 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		sentence->tokens[0].str[0] == '-';
 	
 	bool firstWordSeen = false;
+	bool isInQuotation = false;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
-		if (t.type != TOKEN_WORD) continue;
+		if (t.type != TOKEN_WORD) {
+			if (t.tokenlen == 1 && isFinnishQuotationMark(t.str[0])) {
+				// TODO: quotations within quotations do not work this ways
+				isInQuotation = !isInQuotation;
+			}
+			continue;
+		}
 		if (!firstWordSeen) {
 			firstWordSeen = true;
 			bool needCheckingOfFirstUppercase = !sentenceStartsWithHyphen &&
@@ -210,6 +226,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			}
 			continue;
 		}
+		if (isInQuotation) continue;
 		if (!t.isValidWord) continue;
 		if (!t.firstLetterLcase) continue;
 		if (t.possibleSentenceStart) continue;

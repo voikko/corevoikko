@@ -31,6 +31,13 @@ enum char_type {CHAR_UNKNOWN, CHAR_LETTER, CHAR_DIGIT, CHAR_WHITESPACE, CHAR_PUN
  */
 char_type get_char_type(wchar_t c);
 
+/** 
+ * Checks if a character is a Finnish quotation mark.
+ * @param c character to check
+ * @return true if the character is a Finnish quotation mark, false otherwise.
+ */
+bool isFinnishQuotationMark(wchar_t c);
+
 /** Normalises an unicode string according to our conventions
  * @param word string to normalise
  * @param len length of the string

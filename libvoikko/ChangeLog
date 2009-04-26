@@ -1,3 +1,8 @@
+2009-04-26 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Disable character case checks completely within quotations.
+	* Fix suggestions for punctuation at the end of quotes.
+
 2009-04-25 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Accept different types of quote characters.

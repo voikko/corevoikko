@@ -38,12 +38,17 @@ Avaimet löytyivät Reetan Taskun pohjalta.
 "Lause voi olla myös lainausmerkeissä", kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä?" kirjoittaa ohjelman tekijä.
+Hän huusi "Kissa! Oletko siellä?" mennessään kellariin.
 ”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.
 »Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
  [code=10, level=0, descr="", stpos=37, len=3, suggs={"","}]
+”Lause voi olla myös lainausmerkeissä.”, kirjoittaa ohjelman tekijä.
+ [code=10, level=0, descr="", stpos=37, len=3, suggs={"”,"}]
 "Lause voi olla myös lainausmerkeissä?", kirjoittaa ohjelman tekijä.
  [code=10, level=0, descr="", stpos=37, len=3, suggs={"?""}]
+”Lause voi olla myös lainausmerkeissä?”, kirjoittaa ohjelman tekijä.
+ [code=10, level=0, descr="", stpos=37, len=3, suggs={"?”"}]
 "Lause voi olla myös lainausmerkeissä!", kirjoittaa ohjelman tekijä.
  [code=10, level=0, descr="", stpos=37, len=3, suggs={"!""}]
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
