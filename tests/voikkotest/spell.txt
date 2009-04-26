@@ -437,6 +437,7 @@ soittajamainen # johdin_jA + mAinen
 !soittajamäinen
 metsästäjämäinen
 !metsastajamainen
+katkeruuksittain # myös "kokonaisuuksittain"
 
 [sijapäätteet]
 !Erkkiän

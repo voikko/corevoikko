@@ -1304,7 +1304,8 @@ define @jatko_de := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
 define @jatko_ks := <omanto_ien, osanto_iA, olento_inA, tulento_iksi,
                      sisäolento_issA, sisäeronto_istA, sisätulento_iin,
                      ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
-                     vajanto_ittA, seuranto_ine, keinonto_in, johdin_inen>;
+                     vajanto_ittA, seuranto_ine, keinonto_in, johdin_inen,
+                     johdin_ittAin>;
 
 [alku: "us", luokka: johdin_Us, äs: a, jatko: @jatko_Us, perusmuoto: "us"];
 [alku: "ys", luokka: johdin_Us, äs: ä, jatko: @jatko_Us, perusmuoto: "ys"];
