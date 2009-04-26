@@ -589,6 +589,8 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "meri", alku: "mer", luokka: nimisana, jatko: <meri>, äs: ä];
 [perusmuoto: "meri", alku: "mer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
+[perusmuoto: "Itämeri", alku: "Itämer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=ipp=ppp"];
+[perusmuoto: "Itämeri", alku: "Itämer", luokka: paikannimi, jatko: <osanto_tA>, äs: a, rakenne: "=ipp=ppp"];
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <meri>, äs: ä];
 [perusmuoto: "veri", alku: "ver", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 
