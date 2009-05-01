@@ -30,6 +30,8 @@
 
 [alku: "µg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # mikrogramma
 
+[alku: "mmHg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qqjq"]; # elohopeamillimetri
+
 [alku: "GHz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjq"]; # gigahertsi
 
 [alku: "MJ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # megajoule

@@ -1493,6 +1493,7 @@ tissuttelu # tissuttaa
 titraus # titrata
 torveilu # torveilla
 transponointi # transponoida
+tsekkaus # tsekata
 tumpelointi # tumpeloida
 tunnelointi # tunneloida
 tyvekkyys # tyvekäs

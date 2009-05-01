@@ -65,7 +65,7 @@ while True:
 		wordstr = wordstr + line
 		line = listfile.readline()
 	word = xml.dom.minidom.parseString(wordstr + line)
-	sukija.handle_word(main_vocabulary, vocabulary_files, word)
+	sukija.handle_word(main_vocabulary, vocabulary_files, word.documentElement)
 	wcount = wcount + 1
 	if wcount % 1000 == 0:
 		sys.stdout.write("#")

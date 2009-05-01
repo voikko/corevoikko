@@ -24,6 +24,7 @@ import voikkoutils
 import codecs
 import getopt
 import sys
+from xml.dom import Node
 
 # Path to source data directory
 VOCABULARY_DATA = u"vocabulary"
@@ -73,16 +74,21 @@ def get_malaga_word_class(j_wordclasses):
 # Returns malaga flags for given word in Joukahainen
 def get_malaga_flags(word):
 	global flag_attributes
-	malaga_flags = []
-	for flag_attribute in flag_attributes:
-		group = word.getElementsByTagName(flag_attribute.xmlGroup)
-		if len(group) == 0: continue
-		if flag_attribute.xmlFlag in tValues(group[0], "flag") and \
-		   flag_attribute.malagaFlag != None:
-			malaga_flags.append(flag_attribute.malagaFlag)
-	if len(malaga_flags) == 0: return u""
+	malagaFlags = []
+	for group in word.childNodes:
+		if group.nodeType != Node.ELEMENT_NODE:
+			continue
+		for flag in group.childNodes:
+			if flag.nodeType != Node.ELEMENT_NODE:
+				continue
+			if flag.tagName != "flag":
+				continue
+			flagAttribute = flag_attributes[group.tagName + u"/" + tValue(flag)]
+			if flagAttribute.malagaFlag != None:
+				malagaFlags.append(flagAttribute.malagaFlag)
+	if len(malagaFlags) == 0: return u""
 	flag_string = u", tiedot: <"
-	for flag in malaga_flags:
+	for flag in malagaFlags:
 		flag_string = flag_string + flag + u","
 	flag_string = flag_string[:-1] + u">"
 	return flag_string

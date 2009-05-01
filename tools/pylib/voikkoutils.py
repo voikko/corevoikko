@@ -62,10 +62,11 @@ def removeComments(line):
 		return u''
 	return line[:comment_start]
 
-## Returns a list of flag attributes from given file
 def readFlagAttributes(filename):
+	"""Returns a map of flag attributes from given file. The keys in the
+	map are in form xmlGroup/xmlFlag, such as 'compounding/ei_ys'."""
 	inputfile = codecs.open(filename, 'r', 'UTF-8')
-	flags = []
+	flags = {}
 	fileCont = True
 	while fileCont:
 		line = inputfile.readline()
@@ -86,7 +87,7 @@ def readFlagAttributes(filename):
 			if line[:endind] != u'-': f.malagaFlag = line[:endind]
 			line = line[endind:].strip()
 			if len(line) > 0: f.description = line
-			flags.append(f)
+			flags[f.xmlGroup + u'/' + f.xmlFlag] = f
 	inputfile.close()
 	return flags
 
@@ -219,7 +220,7 @@ def process_wordlist(filename, word_handler, show_progress = False):
 			wordstr = wordstr + line
 			line = listfile.readline()
 		word = xml.dom.minidom.parseString(wordstr + line)
-		word_handler(word)
+		word_handler(word.documentElement)
 		wcount = wcount + 1
 		if show_progress and wcount % 1000 == 0:
 			sys.stdout.write("#")
