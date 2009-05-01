@@ -162,8 +162,8 @@ historical = [
         (u'virkkaa', u'sw', [(u'kk',u'(.*k)kAA',u'virkkaa')])
         ]
 
-classmap = historical
-classmap.extend(hfconv.modern_classmap)
+classmap = hfconv.compileClassmapREs(historical)
+classmap.extend(hfconv.compileClassmapREs(hfconv.modern_classmap))
 
 pattern = u"^(?P<alku>.*)(?:" + \
 	  u"(?P<keltainen>C[aouyäö]i?nen)|" + \

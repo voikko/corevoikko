@@ -33,6 +33,9 @@ flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_
 # Get command line options
 OPTIONS = generate_lex_common.get_options()
 
+# Inflection class map
+CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
+
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
@@ -64,6 +67,7 @@ def check_usage(word):
 
 def handle_word(word):
 	global OPTIONS
+	global CLASSMAP
 	# Drop words that are not needed in the Voikko lexicon
 	if generate_lex_common.has_flag(word, "not_voikko"): return
 	if not check_style(word): return
@@ -94,12 +98,12 @@ def handle_word(word):
 	# Construct debug information
 	debug_info = u""
 	if OPTIONS["debug"]:
-		debug_info = u', sourceid: "%s"' % word.documentElement.getAttribute("id")
+		debug_info = u', sourceid: "%s"' % word.getAttribute("id")
 	
 	# Process all alternative forms
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
-		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, hfconv.modern_classmap)
+		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype

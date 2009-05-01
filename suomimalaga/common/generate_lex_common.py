@@ -111,7 +111,7 @@ def has_flag(word, flag):
 # Returns tuple (alku, jatko) for given word in Joukahainen
 def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap):
 	(infclass, gradclass) = (list(j_infclass.split(u'-')) + [None])[:2]
-
+	
 	if gradclass == None: gradtypes = [None]
 	else: gradtypes = [grad[1] for grad in hfconv.grads if grad[2] == gradclass]
 	
@@ -122,7 +122,7 @@ def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap)
 	     "pnoun_misc" in j_wordclasses: wclass = hfconv.SUBST
 	elif "verb" in j_wordclasses: wclass = hfconv.VERB 
 	else: return (None, None)
-		
+	
 	for (m_infclass, m_infclass_gradation, m_smclasses) in j_classmap:
 		if m_infclass != infclass: continue
 		for m_smclass in m_smclasses:

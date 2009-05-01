@@ -443,12 +443,28 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 	(u'kitistä', u'-', [(None,u'(.*C)istA',u'kitistä')])
 	]
 
-def match_re(string, pattern):
-	pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')
-	pattern = pattern.replace(u'C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š|ž)')
-	pattern = pattern.replace(u'A', u'(?:a|ä)')
-	pattern = pattern.replace(u'O', u'(?:o|ö)')
-	pattern = pattern.replace(u'U', u'(?:u|y)')
-	match = re.compile(u'^' + pattern + u'$', re.IGNORECASE).match(string)
+def compileClassmapREs(inputClassmap):
+	"""Converts a classmap to a form where regular expressions have been
+	compiled to regular expression objects"""
+	outputClassmap = []
+	for joClass in inputClassmap:
+		ruleList = []
+		for inputRule in joClass[2]:
+			pattern = inputRule[1]
+			pattern = pattern.replace(u'V', u'(?:a|e|i|o|u|y|ä|ö|é)')
+			pattern = pattern.replace(u'C', u'(?:b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|š|ž)')
+			pattern = pattern.replace(u'A', u'(?:a|ä)')
+			pattern = pattern.replace(u'O', u'(?:o|ö)')
+			pattern = pattern.replace(u'U', u'(?:u|y)')
+			regExp = re.compile(u'^' + pattern + u'$', re.IGNORECASE)
+			outputRule = (inputRule[0], regExp, inputRule[2])
+			if len(inputRule) == 4:
+				outputRule = (inputRule[0], regExp, inputRule[2], inputRule[3])
+			ruleList.append(outputRule)
+		outputClassmap.append((joClass[0], joClass[1], ruleList))
+	return outputClassmap
+
+def match_re(string, regExp):
+	match = regExp.match(string)
 	if match == None: return None
 	else: return match.group(1)
