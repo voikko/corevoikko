@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,23 +16,28 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SPELLCHECKER_SUGGESTIONS_H
-#define VOIKKO_SPELLCHECKER_SUGGESTIONS_H
+#ifndef VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_H
+#define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_H
 
-#include "spellchecker/suggestion/SuggestionStatus.hpp"
-#include <cstddef>
+namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-using namespace libvoikko::spellchecker::suggestion;
-
-namespace libvoikko {
-
-/** Suggests corrections to character case
- * @param status the suggestion status structure
- * @param buffer word to check, or null if the word in status structure should be used
- * @param buflen length of buffer, ignored if buffer is null
+/**
+ * Suggestion for misspelled word in spell checker.
  */
-void suggest_correct_case(SuggestionStatus * status, const wchar_t * buffer, size_t buflen);
+class Suggestion {
+	public:
+		/**
+		 * Creates a null suggestion.
+		 */
+		Suggestion();
+		
+		/** Suggested word */
+		const wchar_t * word;
+		
+		/** Priority of the suggestion */
+		int priority;
+};
 
-}
+}}}
 
 #endif

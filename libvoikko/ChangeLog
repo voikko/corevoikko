@@ -1,3 +1,8 @@
+2009-05-06 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Some refactoring of spelling suggestion code.
+	* Add project files for Qt Creator.
+
 2009-04-26 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Disable character case checks completely within quotations.
