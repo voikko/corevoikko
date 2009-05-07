@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2008 - 2009 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for openoffice.org
 # This program requires OpenOffice.org, openoffice.org-voikko and python-uno.
 
@@ -83,6 +83,71 @@ def spellStdin():
 					print (u"S: " + sug).encode(LINE_ENC)
 		line = sys.stdin.readline()
 
+def grammarTests():
+	"Run automated grammar checker tests"
+	aDocumentIdentifier = "someDocumentIdentifier"
+	aText = u"Kissa on joten kuten Märkä."
+	nStartOfSentencePos = 0
+	nSuggestedBehindEndOfSentencePosition = 24
+	aProperties = ()
+	result = gc.doProofreading(aDocumentIdentifier, aText, LOCALE,
+	         nStartOfSentencePos, nSuggestedBehindEndOfSentencePosition,
+	         aProperties)
+	
+	assert result.aDocumentIdentifier == aDocumentIdentifier
+	assert result.xFlatParagraph == None
+	assert result.aText == aText
+	assert result.aLocale == LOCALE
+	assert result.xProofreader == gc
+	
+	# TODO: start/end of sentence positions are not necessarily correct.
+	# Find out where these are actually needed and fix as necessary.
+	assert result.nStartOfSentencePosition == nStartOfSentencePos
+	# 26 is the position of the end of last error
+	assert result.nBehindEndOfSentencePosition == 26
+	assert result.nStartOfNextSentencePosition == 26
+	
+	errors = result.aErrors
+	assert len(errors) == 2
+	
+	error = errors[0]
+	assert error.nErrorStart == 9
+	assert error.nErrorLength == 11
+	assert error.nErrorType == 2 # TextMarkupType.PROOFREADING
+	assert error.aShortComment == u"Virheellinen kirjoitusasu."
+	assert error.aFullComment == u"Virheellinen kirjoitusasu."
+	suggestions = error.aSuggestions
+	assert len(suggestions) == 1
+	assert suggestions[0] == u"jotenkuten"
+	
+	error = errors[1]
+	assert error.nErrorStart == 21
+	assert error.nErrorLength == 5
+	assert error.nErrorType == 2 # TextMarkupType.PROOFREADING
+	assert error.aShortComment == u"Sana on kirjoitettava pienellä alkukirjaimella."
+	assert error.aFullComment == u"Sana on kirjoitettava pienellä alkukirjaimella."
+	suggestions = error.aSuggestions
+	assert len(suggestions) == 1
+	assert suggestions[0] == u"märkä"
+	
+	print u"All grammar checker tests were successful."
+
+def spellingTests():
+	"Run the spell checker tests"
+	properties = ()
+	
+	assert speller.isValid(u"märkä", LOCALE, properties)
+	assert not speller.isValid(u"märrä", LOCALE, properties)
+	
+	suggestions = speller.spell(u"borrelioosipparantola", LOCALE, properties)
+	assert suggestions.getWord() == u"borrelioosipparantola"
+	assert suggestions.getLocale().Language == LOCALE.Language
+	assert suggestions.getFailureType() == 4 # SpellFailure::SPELLING_ERROR
+	assert suggestions.getAlternativesCount() == 1
+	assert suggestions.getAlternatives()[0] == u"borrelioosiparantola"
+	
+	print u"All spell checker tests were successful."
+
 def hyphenTests():
 	"Run the hyphenator tests"
 	try:
@@ -162,7 +227,15 @@ hyphenator.initialize(())
 speller = smgr.createInstance("voikko.SpellChecker")
 speller.initialize(())
 
+# Initialize the grammar checker
+gc = smgr.createInstance("voikko.GrammarChecker")
+gc.initialize(())
+
+# Run automated test
 hyphenTests()
+spellingTests()
+grammarTests()
+
 if "--hyphenate" in [opt[0] for opt in opts]:
 	hyphenateStdin()
 elif "--spell" in [opt[0] for opt in opts]:
