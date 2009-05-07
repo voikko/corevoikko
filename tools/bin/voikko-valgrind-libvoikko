@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
 # Script that uses valgrind to check for memory handling errors in libvoikko.
-# Should be run in /trunk/tests/voikkotest
+# Requires the standard developer preferences for Voikko to be set.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,24 +17,30 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+binpath=`python -c 'import voikkoutils; print voikkoutils.get_preference("libvoikko_bin")'`
+testdatapath=`python -c 'import voikkoutils; print voikkoutils.get_preference("svnroot")'`/trunk/tests/voikkotest
+voikkospell=$binpath/voikkospell
+voikkohyphenate=$binpath/voikkohyphenate
+voikkogc=$binpath/voikkogc
+
 echo '---- voikkospell - checking without suggestions ----'
-cat spell.txt | egrep -v '^[[]' | sed -e 's/!//;s/[ #].*//' \
-    | valgrind --leak-check=full --quiet voikkospell ignore_dot=1 > /dev/null
+cat $testdatapath/spell.txt | egrep -v '^[[]' | sed -e 's/!//;s/[ #].*//' \
+    | valgrind --leak-check=full --quiet $voikkospell ignore_dot=1 > /dev/null
 
 echo '---- voikkospell - checking with suggestions ----'
-cat suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
-    | valgrind --leak-check=full --quiet voikkospell -s ignore_dot=1 > /dev/null
+cat $testdatapath/suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+    | valgrind --leak-check=full --quiet $voikkospell -s ignore_dot=1 > /dev/null
 
 echo '---- enchant - checking with suggestions ----'
-cat suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+cat $testdatapath/suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
     | valgrind --leak-check=full --quiet enchant -a -dfi_FI > /dev/null
 
 echo '---- voikkohyphenate - configuration used with openoffice.org-voikko ----'
-cat hyphen.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+cat $testdatapath/hyphen.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
     | valgrind --leak-check=full --quiet \
-    voikkohyphenate no_ugly_hyphenation=1 ignore_dot=1 > /dev/null
+    $voikkohyphenate no_ugly_hyphenation=1 ignore_dot=1 > /dev/null
 
 echo '---- voikkogc - configuration used with openoffice.org-voikko ----'
-cat grammar.txt | valgrind --leak-check=full --quiet voikkogc accept_bulleted_lists=1 \
+cat $testdatapath/grammar.txt | valgrind --leak-check=full --quiet $voikkogc accept_bulleted_lists=1 \
     accept_titles=1 accept_unfinished_paragraphs=1 > /dev/null
 
