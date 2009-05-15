@@ -52,7 +52,14 @@ def _write(req, text):
 
 def _decode_form_value(string):
 	"""Decodes a string from html form to unicode"""
-	return unicode(urllib.unquote_plus(string), 'UTF-8')
+	return _decode_if_valid(urllib.unquote_plus(string))
+
+def _decode_if_valid(string):
+	"""Decodes an UTF-8 string to unicode, returning empty string if decoding fails"""
+	try:
+		return unicode(string, 'UTF-8')
+	except UnicodeDecodeError:
+		return ""
 
 def _escape_html(string):
 	"""Converts a string to a form that is suitable for use in html document text"""
@@ -70,7 +77,7 @@ def _hyphenate_wordlist(wordlist, options):
 	rawlist = out.split('\n')
 	hyphenatedlist = []
 	for hword in rawlist:
-		hyphenatedlist.append(unicode(hword, 'UTF-8'))
+		hyphenatedlist.append(_decode_if_valid(hword))
 	return hyphenatedlist #FIXME: last item is an extra empty string
 
 def _spell_wordlist(wordlist):
@@ -95,11 +102,11 @@ def _spell_wordlist(wordlist):
 		else:
 			suggestions = []
 			i = i + 1
-			entry = unicode(rawlist[i], 'UTF-8')
+			entry = _decode_if_valid(rawlist[i])
 			while entry.startswith(u'S'):
 				suggestions.append(entry[3:])
 				i = i + 1
-				entry = unicode(rawlist[i], 'UTF-8')
+				entry = _decode_if_valid(rawlist[i])
 			spellresults.append(suggestions)
 	return spellresults
 
@@ -301,7 +308,7 @@ def _poErrorHeader(headerLine):
 
 def _highlightPofilter(req, file):
 	"""Reads pofilter output from a file and writes it to request with highlighting."""
-	line = unicode(file.readline(), "UTF-8")
+	line = _decode_if_valid(file.readline())
 	while line != "":
 		if line.startswith("# (pofilter) spellcheck:"):
 			_write(req, _poErrorHeader(line[43:]))
@@ -309,7 +316,7 @@ def _highlightPofilter(req, file):
 			pass
 		else:
 			_write(req, _escape_html(line))
-		line = unicode(file.readline(), "UTF-8")
+		line = _decode_if_valid(file.readline())
 
 PO_FILE_TYPES = [
 	(u"gnome", u"Gnome (tai muu kuin jokin alla olevista)"),
@@ -355,7 +362,7 @@ def pospell(req, pofile = None, potype = "gnome"):
      mahdollista tämän www-liittymän kautta.</li>
  <li>Oikoluettavan tiedoston enimmäiskoko on %s kilotavua.</li>
  <li>Tämä www-palvelu ei osaa aina käsitellä oikein kaksoispisteen tai yhdysmerkin
-     sisältäviä sanoja. Myös ä- ja ö-kirjaimet pikanäppäiminä tuottavat vaikeuksia.
+     sisältäviä sanoja.
      Osa näistä ongelmista korjataan tulevissa versioissa. Muista sanasto-ongelmista
      voi raportoida <a href="http://joukahainen.lokalisointi.org/ehdotasanoja">Voikon
      kehittäjille</a>.</li>
