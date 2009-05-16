@@ -452,16 +452,14 @@ oikeanlaiset."
 (defun wcheck-send-words (language wordlist)
   "Lähettää sanalistan WORDLIST oikolukuprosessille, joka
 käsittelee kieltä LANGUAGE."
-  (when (and (stringp language)
-             (listp wordlist))
-    ;; Noudetaan prosessi, joka hoitaa pyydetyn kielen.
-    (let ((proc (wcheck-start-get-process language))
-          string)
-      ;; Tehdään sanalistasta merkkijono, yksi sana rivillään.
-      (setq string (concat (mapconcat 'concat wordlist "\n")
-                           "\n"))
-      (process-send-string proc string)
-      string)))
+  ;; Noudetaan prosessi, joka hoitaa pyydetyn kielen.
+  (let ((proc (wcheck-start-get-process language))
+        string)
+    ;; Tehdään sanalistasta merkkijono, yksi sana rivillään.
+    (setq string (concat (mapconcat 'concat wordlist "\n")
+                         "\n"))
+    (process-send-string proc string)
+    string))
 
 
 (defun wcheck-paint-words (language window wordlist)
