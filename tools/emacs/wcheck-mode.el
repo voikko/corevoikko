@@ -294,10 +294,6 @@ muutettu."
                 'currentframe))
 
 
-;; Pitää keksiä vielä koukku, joka päivittää ikkunan, mikäli käyttäjä
-;; hyppää toiseen ikkunaan "C-x o" -komennolla.
-
-
 (defun wcheck-hook-after-change (beg end len)
   "Ajetaan aina, kun puskuria on muokattu."
   ;; Tämä hook ajetaan aina siinä puskurissa, mitä muokattiin.
