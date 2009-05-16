@@ -96,7 +96,8 @@ oletuskieli."
         (setq-default wcheck-language language)
       (setq wcheck-language language)
       (when wcheck-mode
-        (wcheck-update-buffer-process-data (current-buffer) language)))
+        (wcheck-update-buffer-process-data (current-buffer) language)
+        (wcheck-remove-overlays)))
 
     ;; Kieltä on muutettu, joten pyydetään päivitystä
     (wcheck-timer-request-for-update (current-buffer))))
