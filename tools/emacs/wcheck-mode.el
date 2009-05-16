@@ -427,11 +427,9 @@ oikeanlaiset."
                        "\\)"
                        (wcheck-query-language-data language 'regexp-end t)))
 
-              (syntax (eval (wcheck-query-language-data
-                             language 'syntax t)))
+              (syntax (eval (wcheck-query-language-data language 'syntax t)))
               (w-end (window-end window 'update))
-              (discard (wcheck-query-language-data
-                        language 'discard t))
+              (discard (wcheck-query-language-data language 'discard t))
               words)
 
           (move-to-window-line 0)
