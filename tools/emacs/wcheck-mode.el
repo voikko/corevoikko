@@ -456,8 +456,7 @@ käsittelee kieltä LANGUAGE."
   (let ((proc (wcheck-start-get-process language))
         string)
     ;; Tehdään sanalistasta merkkijono, yksi sana rivillään.
-    (setq string (concat (mapconcat 'concat wordlist "\n")
-                         "\n"))
+    (setq string (concat "\n" (mapconcat 'concat wordlist "\n") "\n"))
     (process-send-string proc string)
     string))
 
