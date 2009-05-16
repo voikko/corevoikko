@@ -203,17 +203,25 @@ oletuskieli."
 (defun wcheck-timer-read-send-words ()
   ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
   (dolist (buffer wcheck-timer-read-requested)
-    (let ((lang (cdr (assq buffer wcheck-buffer-process-data))))
-      ;; Käydään läpi kaikki ikkunat, joissa kyseinen puskuri on
-      ;; näkyvissä, ja lähetetään sanat ulkoiselle prosessille.
-      (walk-windows
-       (function (lambda (window)
-                   (when (eq buffer (window-buffer window))
-                     (wcheck-send-words lang (wcheck-read-words lang window)))))
-       'nomb t)
-      ;; Sanat on lähetetty, joten voidaan poistaa tämä puskuri
-      ;; päivityslistasta.
-      (wcheck-timer-read-request-delete buffer)))
+    (with-current-buffer buffer
+      (if (not (wcheck-language-valid-p wcheck-language))
+          (progn
+            (wcheck-mode 0)
+            (message
+             (format "Kieltä \"%s\" ei ole olemassa, sammutetaan oikoluku"
+                     wcheck-language)))
+        ;; Käydään läpi kaikki ikkunat, joissa kyseinen puskuri on
+        ;; näkyvissä, ja lähetetään sanat ulkoiselle prosessille.
+        (walk-windows
+         (function (lambda (window)
+                     (when (eq buffer (window-buffer window))
+                       (wcheck-send-words wcheck-language
+                                          (wcheck-read-words wcheck-language
+                                                             window)))))
+         'nomb t)
+        ;; Sanat on lähetetty, joten voidaan poistaa tämä puskuri
+        ;; päivityslistasta.
+        (wcheck-timer-read-request-delete buffer))))
 
   ;; Käynnistetään ajastin, joka maalaa sanat, mikäli joku puskuri on
   ;; sellaista pyytänyt.
