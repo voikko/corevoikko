@@ -137,14 +137,16 @@ oletuskieli."
        (t
         ;; Käynnistetään "oikoluku"
 
-        ;; local hooks
+        ;; Puskurikohtaiset koukut
         (add-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer nil t)
         (add-hook 'window-scroll-functions 'wcheck-hook-window-scroll nil t)
         (add-hook 'after-change-functions 'wcheck-hook-after-change nil t)
         (add-hook 'change-major-mode-hook
                   'wcheck-hook-change-major-mode nil t)
 
-        ;; global hooks
+        ;; Globaalit koukut. Riittää, että nämä lisää vain kerran, mutta
+        ;; varmuuden vuoksi ajetaan seuraavat komennot joka kerta, kun
+        ;; wcheck-tila kytketään päälle.
         (add-hook 'window-size-change-functions
                   'wcheck-hook-window-size-change)
         (add-hook 'window-configuration-change-hook
@@ -166,21 +168,21 @@ oletuskieli."
 
     (when (and (not wcheck-buffer-process-data)
                wcheck-timer)
-        (cancel-timer wcheck-timer)
-        (setq wcheck-timer nil))
+      (cancel-timer wcheck-timer)
+      (setq wcheck-timer nil)
+      ;; Globaalit koukut poistetaan vasta, kun ajastinkin poistetaan
+      ;; eli kun mikään puskuri ei enää tarvitse oikolukua.
+      (remove-hook 'window-size-change-functions
+                   'wcheck-hook-window-size-change)
+      (remove-hook 'window-configuration-change-hook
+                   'wcheck-hook-window-configuration-change))
 
-    ;; local hooks
+    ;; Puskurikohtaiset koukut
     (remove-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer t)
     (remove-hook 'window-scroll-functions 'wcheck-hook-window-scroll t)
     (remove-hook 'after-change-functions 'wcheck-hook-after-change t)
     (remove-hook 'change-major-mode-hook
-                 'wcheck-hook-change-major-mode t)
-
-    ;; global hooks
-    (remove-hook 'window-size-change-functions
-                 'wcheck-hook-window-size-change)
-    (remove-hook 'window-configuration-change-hook
-                 'wcheck-hook-window-configuration-change)))
+                 'wcheck-hook-change-major-mode t)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -215,6 +217,7 @@ oletuskieli."
             (message
              (format "Kieltä \"%s\" ei ole olemassa, sammutetaan oikoluku"
                      wcheck-language)))
+
         ;; Käydään läpi kaikki ikkunat, joissa kyseinen puskuri on
         ;; näkyvissä, ja lähetetään sanat ulkoiselle prosessille.
         (walk-windows
