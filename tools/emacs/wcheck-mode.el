@@ -51,7 +51,10 @@ muokata suoraan; kieli kannattaa muuttaa komennolla
 `\\[wcheck-change-language]'.")
 (make-variable-buffer-local 'wcheck-language)
 
-(setq wcheck-buffer-process-data nil)
+(setq-default wcheck-buffer-process-data nil
+              wcheck-received-words nil)
+
+(make-variable-buffer-local 'wcheck-received-words)
 
 (defconst wcheck-process-name-prefix "wcheck/"
   "Oikolukuprosessien nimen etuliite. Tämä on vain ohjelman
@@ -70,7 +73,7 @@ sisäiseen käyttöön.")
   "Keymap for wcheck-mode")
 
 
-(defconst wcheck-timer-event-idle 1
+(defconst wcheck-timer-idle .6
   "Näin monta sekuntia odotetaan, kunnes ajastin käynnistää
 oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
 
@@ -107,7 +110,7 @@ oletuskieli."
         (wcheck-remove-overlays)))
 
     ;; Kieltä on muutettu, joten pyydetään päivitystä
-    (wcheck-timer-request-for-update (current-buffer))))
+    (wcheck-timer-read-request (current-buffer))))
 
 
 (define-minor-mode wcheck-mode
@@ -135,8 +138,8 @@ oletuskieli."
         (add-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer nil t)
         (add-hook 'window-scroll-functions 'wcheck-hook-window-scroll nil t)
         (add-hook 'after-change-functions 'wcheck-hook-after-change nil t)
-        ;; (add-hook 'change-major-mode-hook
-        ;;           'wcheck-hook-change-major-mode nil t)
+        (add-hook 'change-major-mode-hook
+                  'wcheck-hook-change-major-mode nil t)
 
         ;; global hooks
         (add-hook 'window-size-change-functions
@@ -146,7 +149,7 @@ oletuskieli."
 
         (unless wcheck-buffer-process-data
           (setq wcheck-timer
-                (run-with-idle-timer wcheck-timer-event-idle t
+                (run-with-idle-timer wcheck-timer-idle t
                                      'wcheck-timer-read-send-words)))
 
         ;; Seuraavan komennon PITÄÄ olla ajastimen käynnistämisen
@@ -154,7 +157,7 @@ oletuskieli."
         ;; wcheck-buffer-process-data, että tarvitseeko ajastinta
         ;; ylipäätään käynnistää.
         (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
-        (wcheck-timer-request-for-update (current-buffer))))
+        (wcheck-timer-read-request (current-buffer))))
 
     ;; Oikoluku pois
     (setq wcheck-returned-words nil)
@@ -165,8 +168,8 @@ oletuskieli."
     (remove-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer t)
     (remove-hook 'window-scroll-functions 'wcheck-hook-window-scroll t)
     (remove-hook 'after-change-functions 'wcheck-hook-after-change t)
-    ;; (remove-hook 'change-major-mode-hook
-    ;;              'wcheck-hook-change-major-mode)
+    (remove-hook 'change-major-mode-hook
+                 'wcheck-hook-change-major-mode t)
 
     ;; global hooks
     (remove-hook 'window-size-change-functions
@@ -179,25 +182,27 @@ oletuskieli."
 ;;; Ajastimet
 
 
-(setq wcheck-timer nil
-      wcheck-timer-update-requested nil)
+(setq-default wcheck-timer nil
+              wcheck-timer-read-requested nil
+              wcheck-timer-paint-requested nil)
 
 
-(defun wcheck-timer-request-for-update (buffer)
-  "Lisää puskurin BUFFER listaan, josta ajastin katsoo, mitä
-puskureita pitää päivittää."
-  (add-to-list 'wcheck-timer-update-requested buffer))
+(defun wcheck-timer-read-request (buffer)
+  (add-to-list 'wcheck-timer-read-requested buffer))
+(defun wcheck-timer-read-request-delete (buffer)
+  (setq wcheck-timer-read-requested
+        (delq buffer wcheck-timer-read-requested)))
 
-
-(defun wcheck-timer-no-need-for-update (buffer)
-  "Poistaa puskurin päivitystä pyytäneiden puskurien listasta."
-  (setq wcheck-timer-update-requested
-        (delq buffer wcheck-timer-update-requested)))
+(defun wcheck-timer-paint-request (buffer)
+  (add-to-list 'wcheck-timer-paint-requested buffer))
+(defun wcheck-timer-paint-request-delete (buffer)
+  (setq wcheck-timer-paint-requested
+        (delq buffer wcheck-timer-paint-requested)))
 
 
 (defun wcheck-timer-read-send-words ()
   ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
-  (dolist (buffer wcheck-timer-update-requested)
+  (dolist (buffer wcheck-timer-read-requested)
     (let ((lang (cdr (assq buffer wcheck-buffer-process-data))))
       ;; Käydään läpi kaikki ikkunat, joissa kyseinen puskuri on
       ;; näkyvissä, ja lähetetään sanat ulkoiselle prosessille.
@@ -205,10 +210,41 @@ puskureita pitää päivittää."
        (function (lambda (window)
                    (when (eq buffer (window-buffer window))
                      (wcheck-send-words lang (wcheck-read-words lang window)))))
-       'nominiguf t)
+       'nomb t)
       ;; Sanat on lähetetty, joten voidaan poistaa tämä puskuri
       ;; päivityslistasta.
-      (wcheck-timer-no-need-for-update buffer))))
+      (wcheck-timer-read-request-delete buffer)))
+
+  ;; Käynnistetään ajastin, joka maalaa sana, mikäli joku puskuri on
+  ;; sellaista pyytänyt.
+  (run-with-idle-timer
+   (* 2 wcheck-timer-idle)
+   nil
+   (function (lambda ()
+               (dolist (buffer wcheck-timer-paint-requested)
+                 (with-current-buffer buffer
+                   (when wcheck-mode
+                     (wcheck-remove-overlays)
+                     (walk-windows
+                      (function (lambda (window)
+                                  (when (eq buffer (window-buffer window))
+                                    (with-current-buffer buffer
+                                      (wcheck-paint-words
+                                       wcheck-language
+                                       window
+                                       wcheck-received-words)))))
+                      'nomb t)
+                     (setq wcheck-received-words nil)
+                     (wcheck-timer-paint-request-delete buffer))))))))
+
+
+(defun wcheck-receive-words (process string)
+  "Ottaa sanat vastaan oikolukuprosessilta ja tallentaa ne
+listamuodossa puskurikohtaiseen muuttujaan
+wcheck-received-words."
+  (setq wcheck-received-words
+        (append wcheck-received-words (split-string string "\n+" t)))
+  (wcheck-timer-paint-request (current-buffer)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -219,33 +255,29 @@ puskureita pitää päivittää."
   "Ajetaan kun ikkunaa WINDOW on vieritetty."
   (with-current-buffer (window-buffer window)
     (when wcheck-mode
-      (wcheck-timer-request-for-update (window-buffer window)))))
+      (wcheck-timer-read-request (window-buffer window)))))
 
 
 (defun wcheck-hook-window-size-change (frame)
   "Tämä ajetaan aina, kun ikkunan kokoa on muutettu."
-  ;; Täällä pitäisi käydä FRAMEn kaikki ikkunat läpi (paitsi
-  ;; minibuffer), katsoa, mikä puskuri missäkin ikkunassa on, ja jos
-  ;; kyseisessä puskurissa on wcheck päällä, pyytää päivitystä.
   (walk-windows (function (lambda (window)
-                            (when wcheck-mode
-                              (wcheck-timer-request-for-update
-                               (window-buffer window)))))
-                'no-minibuf
+                            (with-current-buffer (window-buffer window)
+                              (when wcheck-mode
+                                (wcheck-timer-read-request
+                                 (window-buffer window))))))
+                'nomb
                 frame))
 
 
 (defun wcheck-hook-window-configuration-change ()
   "Tämä ajetaan aina, kun ikkunan kokoa tai muita asetuksia on
 muutettu."
-  ;; Täällä pitäisi käydä nykyisen framen kaikki ikkunat läpi (paitsi
-  ;; minibuffer), katsoa, mikä puskuri missäkin ikkunassa on, ja jos
-  ;; kyseisessä puskurissa on wcheck päällä, pyytää päivitystä.
   (walk-windows (function (lambda (window)
-                            (when wcheck-mode
-                              (wcheck-timer-request-for-update
-                               (window-buffer window)))))
-                'no-minibuf
+                            (with-current-buffer (window-buffer window)
+                              (when wcheck-mode
+                                (wcheck-timer-read-request
+                                 (window-buffer window))))))
+                'nomb
                 'currentframe))
 
 
@@ -257,7 +289,7 @@ muutettu."
   "Ajetaan aina, kun puskuria on muokattu."
   ;; Tämä hook ajetaan aina siinä puskurissa, mitä muokattiin.
   (when wcheck-mode
-    (wcheck-timer-request-for-update (current-buffer))))
+    (wcheck-timer-read-request (current-buffer))))
 
 
 (defun wcheck-hook-kill-buffer ()
@@ -363,7 +395,7 @@ oikeanlaiset."
                        (cons buffer language))
         ;; Oikolukua on pyydetty sammutettavaksi, joten poistetaan se
         ;; päivitystä pyytäneiden prosessien listasta.
-        (wcheck-timer-no-need-for-update buffer))
+        (wcheck-timer-read-request-delete buffer))
 
       ;; Poistetaan turhat prosessit
       (setq new-langs (mapcar 'cdr wcheck-buffer-process-data))
@@ -374,7 +406,8 @@ oikeanlaiset."
   (or wcheck-buffer-process-data
       (when wcheck-timer
         (cancel-timer wcheck-timer)
-        (setq wcheck-timer nil))))
+        (setq wcheck-timer nil)
+        nil)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -387,12 +420,12 @@ oikeanlaiset."
     (with-selected-window window
       (save-excursion
 
-        (let ((regexp (concat (wcheck-query-language-data
-                               language 'regexp-start t) "\\("
-                              (wcheck-query-language-data
-                               language 'regexp-word t) "\\)"
-                              (wcheck-query-language-data
-                               language 'regexp-end t)))
+        (let ((regexp (concat
+                       (wcheck-query-language-data language 'regexp-start t)
+                       "\\("
+                       (wcheck-query-language-data language 'regexp-word t)
+                       "\\)"
+                       (wcheck-query-language-data language 'regexp-end t)))
 
               (syntax (eval (wcheck-query-language-data
                              language 'syntax t)))
@@ -432,20 +465,7 @@ käsittelee kieltä LANGUAGE."
       string)))
 
 
-(defun wcheck-receive-words (process string)
-  "Ottaa sanat vastaan oikolukuprosessilta ja värjää ne kaikissa ikkuinoissa,
-joissa nykyinen puskuri on näkyvissä."
-  (let* ((buffer (current-buffer))
-         (lang (cdr (assq buffer wcheck-buffer-process-data)))
-         (wordlist (split-string string "\n+" t)))
-    (walk-windows
-     (function (lambda (window)
-                 (when (eq buffer (window-buffer window))
-                   (wcheck-mark-words lang window wordlist))))
-     'nominibuf t)))
-
-
-(defun wcheck-mark-words (language window wordlist)
+(defun wcheck-paint-words (language window wordlist)
   "Merkkaa listassa WORDLIST listatut sanat ikkunassa WINDOW."
   (when (window-live-p window)
     (with-selected-window window
@@ -481,8 +501,8 @@ oletusarvon."
 ulkoista ohjelmaa. Palauttaa t tai nil."
   ;; Löytyykö kieltä?
   (if (member language (mapcar 'car wcheck-language-data))
-    ;; Löytyy. Löytyykö sille määriteltyä ohjelmaa? Huom, tämä ei vielä
-    ;; testaa, onko kyseinen merkkijono ajettava ohjelma.
+      ;; Löytyy. Löytyykö sille määriteltyä ohjelmaa? Huom, tämä ei vielä
+      ;; testaa, onko kyseinen merkkijono ajettava ohjelma.
       (if (stringp (wcheck-query-language-data language 'program))
           t)))
 
