@@ -1,3 +1,8 @@
+2009-05-16 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Explicitly set stream orientation in voikkospell, otherwise
+	  setting LC_CTYPE may break the output to stdout.
+
 2009-05-06 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Some refactoring of spelling suggestion code.

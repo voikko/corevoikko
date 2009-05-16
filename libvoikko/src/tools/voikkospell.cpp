@@ -45,28 +45,28 @@ void check_word(int handle, const wchar_t * word) {
 	}
 	if (autotest) {
 		if (result) {
-			cout << "C" << endl;
+			wcout << L"C" << endl;
 		}
 		else {
-			cout << "W" << endl;
+			wcout << L"W" << endl;
 		}
 		fflush(0);
 	}
 	else if (one_line_output) {
-		cout << word;
+		wcout << word;
 		if (!result) {
 			wchar_t ** suggestions = voikko_suggest_ucs4(handle, word);
 			if (suggestions) {
 				for (int i = 0; suggestions[i] != 0; i++) {
 					if (space || wcschr(suggestions[i], L' ')) {
-						cout << word_separator;
+						wcout << word_separator;
 						wcout << suggestions[i];
 					}
 				}
 				voikko_free_suggest_ucs4(suggestions);
 			}
 		}
-		cout << endl;
+		wcout << endl;
 	}
 	else {
 		if (result) {
@@ -203,7 +203,10 @@ int main(int argc, char ** argv) {
 		cerr << "E: Out of memory" << endl;
 	}
 	
+	// Use stdout in wide character mode and stderr in narrow character mode.
 	setlocale(LC_ALL, "");
+	fwide(stdout, 1);
+	fwide(stderr, -1);
 	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
 		size_t lineLen = wcslen(line);
 		if (lineLen == 0) {
