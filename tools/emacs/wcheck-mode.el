@@ -391,7 +391,7 @@ oikeanlaiset."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Muu koodi
+;;; Matalan tason apufunktioita
 
 
 (defun wcheck-read-words (language window)
