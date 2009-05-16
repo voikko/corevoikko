@@ -200,11 +200,6 @@ puskureita pitää päivittää."
                            (selected-window)))))
 
 
-(defun wcheck-hook-change-major-mode ()
-  "Ajetaan ennen kuin käyttäjä vaihtaa major-tilaa. Tämä
-sammuttaa oikoluvun tästä puskurista."
-  (wcheck-mode 0))
-
 (defun wcheck-read-send-words-event (buffer)
   "Funktio lukee sanat ikkunasta ja lähettää ne ulkoiselle
 ohjelmalle. Tätä funktiota kutsutaan automaattisesti, kun
@@ -227,11 +222,6 @@ käyttäjä on keskeyttänyt tietyt toiminnot."
     (with-current-buffer (window-buffer window)
       (wcheck-remove-overlays)
       (wcheck-mark-words wcheck-language window wcheck-returned-words))))
-
-
-(defun wcheck-hook-kill-buffer ()
-  "Sammuttaa oikoluvun tämän puskurin osalta."
-  (wcheck-mode 0))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -281,6 +271,17 @@ muutettu."
   ;; Tämä hook ajetaan aina siinä puskurissa, mitä muokattiin.
   (when wcheck-mode
     (wcheck-timer-request-for-update (current-buffer))))
+
+
+(defun wcheck-hook-kill-buffer ()
+  "Sammuttaa oikoluvun tämän puskurin osalta."
+  (wcheck-mode 0))
+
+
+(defun wcheck-hook-change-major-mode ()
+  "Ajetaan ennen kuin käyttäjä vaihtaa major-tilaa. Tämä
+sammuttaa oikoluvun tästä puskurista."
+  (wcheck-mode 0))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
