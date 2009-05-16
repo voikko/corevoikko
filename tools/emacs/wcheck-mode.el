@@ -149,16 +149,13 @@ oletuskieli."
         (add-hook 'window-configuration-change-hook
                   'wcheck-hook-window-configuration-change)
 
-        (unless wcheck-buffer-process-data
+        (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
+
+        (unless wcheck-timer
           (setq wcheck-timer
                 (run-with-idle-timer wcheck-timer-idle t
                                      'wcheck-timer-event)))
 
-        ;; Seuraavan komennon PITÄÄ olla ajastimen käynnistämisen
-        ;; jälkeen, koska ajastimen käynnistys katsoo muuttujasta
-        ;; wcheck-buffer-process-data, että tarvitseeko ajastinta
-        ;; ylipäätään käynnistää.
-        (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
         (wcheck-timer-read-request (current-buffer))))
 
     ;; Oikoluku pois
