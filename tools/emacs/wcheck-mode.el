@@ -45,7 +45,10 @@
 
 (defvar wcheck-language
   (caar wcheck-language-data)
-  "Oletuskieli on globaalissa muuttujassa.")
+  "Oletuskieli on globaalissa muuttujassa, puskurikohtainen kieli
+on puskurikohtaisessa muuttujassa. Tätä muuttujaa ei kannata
+muokata suoraan; kieli kannattaa muuttaa komennolla
+`\\[wcheck-change-language]'.")
 (make-variable-buffer-local 'wcheck-language)
 
 (setq wcheck-buffer-process-data nil)
