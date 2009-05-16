@@ -99,8 +99,8 @@ oletuskieli."
                     default)
             comp nil t nil nil default)
            current-prefix-arg)))
-  (if (not (stringp language))
-      (error "Language must be a string")
+
+  (when (stringp language)
     (if global
         (setq-default wcheck-language language)
       (setq wcheck-language language)
