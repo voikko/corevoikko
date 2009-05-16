@@ -108,8 +108,11 @@ oletuskieli."
         (wcheck-update-buffer-process-data (current-buffer) language)
         (wcheck-remove-overlays)))
 
-    ;; Kieltä on muutettu, joten pyydetään päivitystä
-    (wcheck-timer-read-request (current-buffer))))
+    ;; Jos kutsuttiin interaktiivisesti ja oikoluku on kytketty päälle,
+    ;; pyydetään päivitystä oikolukuun. Kielihän on saattanut vaihtua.
+    (when (and (called-interactively-p)
+               wcheck-mode)
+      (wcheck-timer-read-request (current-buffer)))))
 
 
 (define-minor-mode wcheck-mode
