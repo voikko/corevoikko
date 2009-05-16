@@ -43,7 +43,8 @@
                 (regexp-discard . "\\`'+\\'")))
 
 (defvar wcheck-language
-  (caar wcheck-language-data)
+  (or (stringp (caar wcheck-language-data))
+      "")
   "Oletuskieli on globaalissa muuttujassa, puskurikohtainen kieli
 on puskurikohtaisessa muuttujassa. Tätä muuttujaa ei kannata
 muokata suoraan; kieli kannattaa muuttaa komennolla
