@@ -141,6 +141,15 @@ oletuskieli."
         (message (format "Sopimaton kieli \"%s\", ei kytketä oikolukua"
                          wcheck-language)))
 
+       ((not (wcheck-program-executable-p
+              (wcheck-query-language-data wcheck-language 'program)))
+        ;; Ohjelmaa ei löydy tai sillä ei ole suoritusoikeuksia
+        (wcheck-mode 0)
+        (message (format "Kielen \"%s\" ohjelma \"%s\" ei ole ajettava"
+                         wcheck-language
+                         (wcheck-query-language-data wcheck-language
+                                                     'program))))
+
        (t
         ;; Käynnistetään "oikoluku"
 
