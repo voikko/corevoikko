@@ -123,13 +123,13 @@ oletuskieli."
       (cond
        ((minibufferp (current-buffer))
         ;; Kyseessä on minibuffer, joten ei kytketä päälle
-        (setq wcheck-mode nil)
-        (message "Ei voi kytkeä minibufferissa"))
+        (setq wcheck-mode nil))
 
        ((not (wcheck-language-valid-p wcheck-language))
         ;; Kieli ei ole toimiva
         (setq wcheck-mode nil)
-        (message "Sopimaton kieli, ei kytketä oikolukua"))
+        (message (format "Sopimaton kieli \"%s\", ei kytketä oikolukua"
+                         wcheck-language)))
 
        (t
         ;; Käynnistetään "oikoluku"
