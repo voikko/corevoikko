@@ -152,7 +152,7 @@ oletuskieli."
         (unless wcheck-buffer-process-data
           (setq wcheck-timer
                 (run-with-idle-timer wcheck-timer-idle t
-                                     'wcheck-timer-read-send-words)))
+                                     'wcheck-timer-event)))
 
         ;; Seuraavan komennon PITÄÄ olla ajastimen käynnistämisen
         ;; jälkeen, koska ajastimen käynnistys katsoo muuttujasta
@@ -202,7 +202,7 @@ oletuskieli."
         (delq buffer wcheck-timer-paint-requested)))
 
 
-(defun wcheck-timer-read-send-words ()
+(defun wcheck-timer-event ()
   ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
   (dolist (buffer wcheck-timer-read-requested)
     (with-current-buffer buffer
