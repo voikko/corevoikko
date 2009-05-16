@@ -519,12 +519,9 @@ oletusarvon."
 (defun wcheck-language-valid-p (language)
   "Tarkistaa, onko LANGUAGE olemassa ja onko sille määritelty
 ulkoista ohjelmaa. Palauttaa t tai nil."
-  ;; Löytyykö kieltä?
-  (if (member language (mapcar 'car wcheck-language-data))
-      ;; Löytyy. Löytyykö sille määriteltyä ohjelmaa? Huom, tämä ei vielä
-      ;; testaa, onko kyseinen merkkijono ajettava ohjelma.
-      (if (stringp (wcheck-query-language-data language 'program))
-          t)))
+  (and (member language (mapcar 'car wcheck-language-data))
+       (stringp (wcheck-query-language-data language 'program))
+       t))
 
 
 (defun wcheck-program-executable-p (program)
