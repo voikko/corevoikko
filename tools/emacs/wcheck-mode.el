@@ -430,6 +430,7 @@ oikeanlaiset."
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
               (w-end (window-end window 'update))
               (discard (wcheck-query-language-data language 'discard t))
+              (case-fold-search nil)
               words)
 
           (move-to-window-line 0)
