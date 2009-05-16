@@ -329,7 +329,7 @@ Mikäli sellaista prosessia ei ennestään ole, käynnistetään."
                 (args (split-string
                        (wcheck-query-language-data language 'args t)
                        "[ \t\n]+" t))
-                (process-connection-type nil) ;Käytetään putkia
+                (process-connection-type t) ;Käytetään PTY:itä
                 proc)
 
             (when (file-executable-p program)
