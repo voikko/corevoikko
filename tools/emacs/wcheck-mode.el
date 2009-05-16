@@ -71,6 +71,14 @@ sisäiseen käyttöön.")
   "Keymap for wcheck-mode")
 
 
+(defconst wcheck-timer-event-idle 0.5
+  "Näin monta sekuntia odotetaan, kunnes ajastin käynnistää
+oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
+
+(defconst wcheck-timer-mark-words-idle
+  (+ wcheck-timer-event-idle 0.5))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Käyttäjän funktiot
 
@@ -142,7 +150,8 @@ oletuskieli."
 
         (unless wcheck-buffer-process-data
           (setq wcheck-timer
-                (run-with-idle-timer 0.5 t 'wcheck-timer-event)))
+                (run-with-idle-timer wcheck-timer-event-idle t
+                                     'wcheck-timer-event)))
 
         ;; Seuraavan komennon PITÄÄ olla ajastimen käynnistämisen
         ;; jälkeen, koska ajastimen käynnistys katsoo muuttujasta
@@ -199,7 +208,8 @@ puskureita pitää päivittää."
       ;; Poistetaan tämä puskuri listasta ja päivitetään.
       (wcheck-timer-no-need-for-update buffer)
       (wcheck-read-send-words-event buffer)
-      (run-with-idle-timer 1 nil 'wcheck-mark-words-event
+      (run-with-idle-timer wcheck-timer-mark-words-idle nil
+                           'wcheck-mark-words-event
                            (selected-window)))))
 
 
