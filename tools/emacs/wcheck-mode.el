@@ -511,6 +511,13 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
           t)))
 
 
+(defun wcheck-program-executable-p (program)
+  (and (stringp program)
+       (file-regular-p program)
+       (file-executable-p program)
+       t))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Overlay
 
