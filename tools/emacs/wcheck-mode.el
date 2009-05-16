@@ -33,15 +33,14 @@
     ("cat" . ((program . "/bin/cat"))))
   "Tiedot eri kielistä")
 
-
-(setq wcheck-language-data-defaults
-      '((args . "")
-        (face . wcheck-default-face)
-        (syntax . text-mode-syntax-table)
-        (regexp-start . "\\<'*")
-        (regexp-word . "\\sw+?")
-        (regexp-end . "'*\\>")
-        (discard . "\\`'+\\'")))
+(setq-default wcheck-language-data-defaults
+              '((args . "")
+                (face . wcheck-default-face)
+                (syntax . text-mode-syntax-table)
+                (regexp-start . "\\<'*")
+                (regexp-word . "\\sw+?")
+                (regexp-end . "'*\\>")
+                (discard . "\\`'+\\'")))
 
 (defvar wcheck-language
   (caar wcheck-language-data)
