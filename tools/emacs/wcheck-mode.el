@@ -166,6 +166,11 @@ oletuskieli."
     (wcheck-remove-overlays)
     (wcheck-update-buffer-process-data (current-buffer) nil)
 
+    (when (and (not wcheck-buffer-process-data)
+               wcheck-timer)
+        (cancel-timer wcheck-timer)
+        (setq wcheck-timer nil))
+
     ;; local hooks
     (remove-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer t)
     (remove-hook 'window-scroll-functions 'wcheck-hook-window-scroll t)
@@ -413,11 +418,7 @@ oikeanlaiset."
         (unless (member lang new-langs)
           (wcheck-end-process lang)))))
 
-  (or wcheck-buffer-process-data
-      (when wcheck-timer
-        (cancel-timer wcheck-timer)
-        (setq wcheck-timer nil)
-        nil)))
+  wcheck-buffer-process-data)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
