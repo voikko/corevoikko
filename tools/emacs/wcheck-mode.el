@@ -52,7 +52,6 @@ muokata suoraan; kieli kannattaa muuttaa komennolla
 (make-variable-buffer-local 'wcheck-language)
 
 (setq wcheck-buffer-process-data nil)
-(set (make-variable-buffer-local 'wcheck-returned-words) nil)
 
 (defconst wcheck-process-name-prefix "wcheck/"
   "Oikolukuprosessien nimen etuliite. Tämä on vain ohjelman
@@ -71,12 +70,9 @@ sisäiseen käyttöön.")
   "Keymap for wcheck-mode")
 
 
-(defconst wcheck-timer-event-idle 0.5
+(defconst wcheck-timer-event-idle 1
   "Näin monta sekuntia odotetaan, kunnes ajastin käynnistää
 oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
-
-(defconst wcheck-timer-mark-words-idle
-  (+ wcheck-timer-event-idle 0.5))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -151,7 +147,7 @@ oletuskieli."
         (unless wcheck-buffer-process-data
           (setq wcheck-timer
                 (run-with-idle-timer wcheck-timer-event-idle t
-                                     'wcheck-timer-event)))
+                                     'wcheck-timer-read-send-words)))
 
         ;; Seuraavan komennon PITÄÄ olla ajastimen käynnistämisen
         ;; jälkeen, koska ajastimen käynnistys katsoo muuttujasta
@@ -199,42 +195,20 @@ puskureita pitää päivittää."
         (delq buffer wcheck-timer-update-requested)))
 
 
-(defun wcheck-timer-event ()
+(defun wcheck-timer-read-send-words ()
   ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
   (dolist (buffer wcheck-timer-update-requested)
-    ;; Mutta päivitetään tosiasiassa vain sellainen puskuri, joka on
-    ;; nykyisessä ikkunassa.
-    (when (eq buffer (window-buffer (selected-window)))
-      ;; Poistetaan tämä puskuri listasta ja päivitetään.
-      (wcheck-timer-no-need-for-update buffer)
-      (wcheck-read-send-words-event buffer)
-      (run-with-idle-timer wcheck-timer-mark-words-idle nil
-                           'wcheck-mark-words-event
-                           (selected-window)))))
-
-
-(defun wcheck-read-send-words-event (buffer)
-  "Funktio lukee sanat ikkunasta ja lähettää ne ulkoiselle
-ohjelmalle. Tätä funktiota kutsutaan automaattisesti, kun
-käyttäjä on keskeyttänyt tietyt toiminnot."
-  (when (buffer-live-p buffer)
-    (with-current-buffer buffer
-      (if (not (wcheck-language-valid-p wcheck-language))
-          (progn
-            (wcheck-mode 0)
-            (message "Kieli ei ole toimiva, sammutetaan oikoluku"))
-        (setq wcheck-returned-words nil)
-        (wcheck-send-words wcheck-language
-                           (wcheck-read-words wcheck-language
-                                              (selected-window)))))))
-
-
-(defun wcheck-mark-words-event (window)
-  "Funktio merkitsee sanat nykyisessä ikkunassa."
-  (when (window-live-p window)
-    (with-current-buffer (window-buffer window)
-      (wcheck-remove-overlays)
-      (wcheck-mark-words wcheck-language window wcheck-returned-words))))
+    (let ((lang (cdr (assq buffer wcheck-buffer-process-data))))
+      ;; Käydään läpi kaikki ikkunat, joissa kyseinen puskuri on
+      ;; näkyvissä, ja lähetetään sanat ulkoiselle prosessille.
+      (walk-windows
+       (function (lambda (window)
+                   (when (eq buffer (window-buffer window))
+                     (wcheck-send-words lang (wcheck-read-words lang window)))))
+       'nominiguf t)
+      ;; Sanat on lähetetty, joten voidaan poistaa tämä puskuri
+      ;; päivityslistasta.
+      (wcheck-timer-no-need-for-update buffer))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -459,9 +433,16 @@ käsittelee kieltä LANGUAGE."
 
 
 (defun wcheck-receive-words (process string)
-  "Ottaa sanat vastaan oikolukuprosessilta."
-  (setq wcheck-returned-words (append wcheck-returned-words
-                                      (split-string string "\n+" t))))
+  "Ottaa sanat vastaan oikolukuprosessilta ja värjää ne kaikissa ikkuinoissa,
+joissa nykyinen puskuri on näkyvissä."
+  (let* ((buffer (current-buffer))
+         (lang (cdr (assq buffer wcheck-buffer-process-data)))
+         (wordlist (split-string string "\n+" t)))
+    (walk-windows
+     (function (lambda (window)
+                 (when (eq buffer (window-buffer window))
+                   (wcheck-mark-words lang window wordlist))))
+     'nominibuf t)))
 
 
 (defun wcheck-mark-words (language window wordlist)
@@ -514,7 +495,6 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
   (let ((overlay (make-overlay beg end))
         (face (wcheck-query-language-data language 'face t)))
     (dolist (prop `((wcheck-mode . t)
-                    (window . ,window)
                     (face . ,face)
                     (modification-hooks . (wcheck-remove-overlay-word))
                     (insert-in-front-hooks . (wcheck-remove-overlay-word))
