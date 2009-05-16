@@ -215,7 +215,7 @@ oletuskieli."
       ;; päivityslistasta.
       (wcheck-timer-read-request-delete buffer)))
 
-  ;; Käynnistetään ajastin, joka maalaa sana, mikäli joku puskuri on
+  ;; Käynnistetään ajastin, joka maalaa sanat, mikäli joku puskuri on
   ;; sellaista pyytänyt.
   (run-with-idle-timer
    (* 2 wcheck-timer-idle)
@@ -234,8 +234,8 @@ oletuskieli."
                                        window
                                        wcheck-received-words)))))
                       'nomb t)
-                     (setq wcheck-received-words nil)
-                     (wcheck-timer-paint-request-delete buffer))))))))
+                     (wcheck-timer-paint-request-delete buffer)
+                     (setq wcheck-received-words nil))))))))
 
 
 (defun wcheck-receive-words (process string)
