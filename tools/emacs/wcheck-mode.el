@@ -40,7 +40,7 @@
                 (regexp-start . "\\<'*")
                 (regexp-word . "\\sw+?")
                 (regexp-end . "'*\\>")
-                (discard . "\\`'+\\'")))
+                (regexp-discard . "\\`'+\\'")))
 
 (defvar wcheck-language
   (caar wcheck-language-data)
@@ -436,7 +436,7 @@ oikeanlaiset."
 
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
               (w-end (window-end window 'update))
-              (discard (wcheck-query-language-data language 'discard t))
+              (discard (wcheck-query-language-data language 'regexp-discard t))
               (case-fold-search nil)
               words)
 
