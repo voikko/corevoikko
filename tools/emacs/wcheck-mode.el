@@ -255,7 +255,7 @@ wcheck-received-words."
   "Ajetaan kun ikkunaa WINDOW on vieritetty."
   (with-current-buffer (window-buffer window)
     (when wcheck-mode
-      (wcheck-timer-read-request (window-buffer window)))))
+      (wcheck-timer-read-request (current-buffer)))))
 
 
 (defun wcheck-hook-window-size-change (frame)
@@ -276,7 +276,7 @@ muutettu."
                             (with-current-buffer (window-buffer window)
                               (when wcheck-mode
                                 (wcheck-timer-read-request
-                                 (window-buffer window))))))
+                                 (current-buffer))))))
                 'nomb
                 'currentframe))
 
