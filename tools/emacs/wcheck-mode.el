@@ -223,8 +223,8 @@ oletuskieli."
    (function (lambda ()
                (dolist (buffer wcheck-timer-paint-requested)
                  (with-current-buffer buffer
+                   (wcheck-remove-overlays)
                    (when wcheck-mode
-                     (wcheck-remove-overlays)
                      (walk-windows
                       (function (lambda (window)
                                   (when (eq buffer (window-buffer window))
