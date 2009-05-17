@@ -23,22 +23,151 @@
 ;;; Muuttujat ja asetukset
 
 
-(defvar wcheck-language-data
-  '(("suomi" . ((program . "/usr/bin/enchant")
-                (args . "-l -d fi_FI")))
-    ("amerikanenglanti" . ((program . "/usr/bin/enchant")
-                           (args . "-l -d en_US")))
-    ("brittienglanti" . ((program . "/usr/bin/enchant")
-                         (args . "-l -d en_GB")))
-    ("cat" . ((program . "/bin/cat"))))
-  "Tiedot eri kielistä")
+(defgroup wcheck nil
+  "Interface for external text-filtering programs."
+  :group 'applications)
+
+
+(defcustom wcheck-language-data nil
+  "Wcheck-mode language configuration.
+Elements of this alist are of the form:
+
+  (LANGUAGE (KEY . VALUE) [(KEY . VALUE) ...])
+
+LANGUAGE is a name string for a language and KEY and VALUE pairs
+denote settings for the language. Here is a list of possible KEYs
+and a description of VALUE types:
+
+  * `program': VALUE denotes the executable program that is
+    responsible for spell-checking this language. This setting is
+    mandatory.
+
+  * `args': Optional command-line arguments for the program.
+
+  * `syntax': VALUE is a symbol referring to an Emacs syntax
+    table. See the Info node `(elisp)Syntax Tables' for more
+    information. The default value is `text-mode-syntax-table'.
+
+  * `face': A symbol referring to a face which is used to mark
+    text with this LANGUAGE. The default value is
+    `wcheck-default-face'.
+
+  * `regexp-start', `regexp-body', `regexp-end': Regular
+    expression strings which match the start of a string body,
+    characters within the body and the end of the body,
+    respectively.
+
+    This is how they are used in practice: Wcheck mode looks for
+    text that matches the construct `regexp-start + regexp-body +
+    regexp-end'. The text that matches `regexp-body' is sent to
+    an external program to analyze. When strings return from the
+    external program they are marked in Emacs buffer using the
+    following construction: `regexp-start + (regexp-quote STRING)
+    + regexp-end'.
+
+    Do not use grouping constructs `\\( ... \\)' in the regular
+    expressions because the back reference `\\1' is used for
+    separating the body string from the start and end match. You
+    can use \"shy\" groups `\\(?: ... \\)' which do not record
+    the matched substring.
+
+    The default values for the regular expressions are:
+
+        \\=\\<'*         (regexp-start)
+        \\w+?         (regexp-body)
+        '*\\=\\>         (regexp-end)
+
+    Effectively they match word characters defined in the syntax
+    table. Single quotes (') at the start and end of a word are
+    excluded. This is probably a good thing when using Wcheck
+    mode as a spelling checker.
+
+  * `regexp-discard': The string that matched `regexp-body' is
+    then matched against the value of this option. If this
+    regular expression matches, then the word is discarded and
+    won't be sent to the external program. You can use this to
+    define exceptions to the previous regexp rules. The default
+    value is
+
+        \\`'+\\'
+
+    which discards the body string if it consists only of single
+    quotes. This was chosen as the default because the standard
+    syntax table `text-mode-syntax-table' defines single quote as
+    a word character. It's probably not useful to mark separate
+    single quotes in a buffer when Wcheck mode is used as a
+    spelling checker. If you don't want to have any discarding
+    rules set this to empty string.
+
+An example contents of the `wcheck-language-data' variable:
+
+    ((\"suomi\"
+      (program . \"/usr/bin/enchant\")
+      (args . \"-l -d fi_FI\"))
+      (syntax . my-finnish-syntax-table)
+     (\"British English\"
+      (program . \"/usr/bin/ispell\")
+      (args . \"-l -d british\")
+     (\"Trailing whitespace\"
+      (program . \"/bin/cat\")
+      (regexp-start . \"\")
+      (regexp-body . \"\\\\s-+\")
+      (regexp-end . \"$\"))))"
+
+  :group 'wcheck
+  :type '(alist :key-type (string :tag "Language")
+                :value-type
+                (cons :format "%v"
+                      (cons :format "%v"
+                            (const :tag "Program: "
+                                   :format "%t" program)
+                            (file :must-match t :format "%v"))
+                      (set :format "%v"
+                           (cons :format "%v"
+                                 (const :tag "Arguments:      "
+                                        :format "%t" args)
+                                 (string :format "%v"))
+                           (cons :format "%v"
+                                 (const :tag "Face:           "
+                                        :format "%t" face)
+                                 (symbol :format "%v"))
+                           (cons :format "%v"
+                                 (const :tag "Syntax table:   "
+                                        :format "%t" syntax)
+                                 (symbol :format "%v"))
+                           (cons :format "%v"
+                                 (const :tag "Regexp start:   "
+                                        :format "%t" regexp-start)
+                                 (regexp :format "%v"))
+                           (cons :format "%v"
+                                 (const :tag "Regexp body:    "
+                                        :format "%t" regexp-body)
+                                 (regexp :format "%v"))
+                           (cons :format "%v"
+                                 (const :tag "Regexp end:     "
+                                        :format "%t" regexp-end)
+                                 (regexp :format "%v"))
+                           (cons :format "%v"
+                                 (const :tag "Regexp discard: "
+                                        :format "%t" regexp-discard)
+                                 (regexp :format "%v"))))))
+
+
+
+(defface wcheck-default-face
+  '((t (:underline "red")))
+  "Default face for marking strings in a buffer.
+This is used when language does not define face."
+  :group 'wcheck
+  )
+
 
 (setq-default wcheck-language-data-defaults
               '((args . "")
                 (face . wcheck-default-face)
                 (syntax . text-mode-syntax-table)
                 (regexp-start . "\\<'*")
-                (regexp-word . "\\sw+?")
+                (regexp-body . "\\w+?")
                 (regexp-end . "'*\\>")
                 (regexp-discard . "\\`'+\\'")))
 
@@ -63,12 +192,6 @@ muokata suoraan; kieli kannattaa muuttaa komennolla
   "Oikolukuprosessien nimen etuliite. Tämä on vain ohjelman
 sisäiseen käyttöön.")
 
-
-(defface wcheck-default-face
-  '((t (:underline "red")))
-  "Tunnistamaton sana värjätään tällä värillä."
-  :group 'Wcheck
-  )
 
 
 (defvar wcheck-mode-map
@@ -450,7 +573,7 @@ oikeanlaiset."
         (let ((regexp (concat
                        (wcheck-query-language-data language 'regexp-start t)
                        "\\("
-                       (wcheck-query-language-data language 'regexp-word t)
+                       (wcheck-query-language-data language 'regexp-body t)
                        "\\)"
                        (wcheck-query-language-data language 'regexp-end t)))
 
@@ -465,8 +588,9 @@ oikeanlaiset."
           (with-syntax-table syntax
             (while (< (point) w-end)
               (while (re-search-forward regexp (line-end-position) t)
-                (unless (string-match discard
-                                      (match-string-no-properties 1))
+                (when (or (equal discard "")
+                          (not (string-match discard
+                                             (match-string-no-properties 1))))
                   (add-to-list 'words
                                (match-string-no-properties 1)
                                'append))
