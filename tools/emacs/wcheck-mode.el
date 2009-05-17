@@ -131,7 +131,8 @@ An example contents of the `wcheck-language-data' variable:
                            (cons :format "%v"
                                  (const :tag "Face:           "
                                         :format "%t" face)
-                                 (symbol :format "%v"))
+                                 (face :format "%v"
+                                       :value wcheck-default-face))
                            (cons :format "%v"
                                  (const :tag "Syntax table:   "
                                         :format "%t" syntax)
@@ -139,19 +140,23 @@ An example contents of the `wcheck-language-data' variable:
                            (cons :format "%v"
                                  (const :tag "Regexp start:   "
                                         :format "%t" regexp-start)
-                                 (regexp :format "%v"))
+                                 (regexp :format "%v"
+                                         :value "\\<'*"))
                            (cons :format "%v"
                                  (const :tag "Regexp body:    "
                                         :format "%t" regexp-body)
-                                 (regexp :format "%v"))
+                                 (regexp :format "%v"
+                                         :value "\\w+?"))
                            (cons :format "%v"
                                  (const :tag "Regexp end:     "
                                         :format "%t" regexp-end)
-                                 (regexp :format "%v"))
+                                 (regexp :format "%v"
+                                         :value "'*\\>"))
                            (cons :format "%v"
                                  (const :tag "Regexp discard: "
                                         :format "%t" regexp-discard)
-                                 (regexp :format "%v"))))))
+                                 (regexp :format "%v"
+                                         :value "\\`'+\\'"))))))
 
 
 
