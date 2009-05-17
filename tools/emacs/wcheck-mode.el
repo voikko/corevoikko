@@ -112,7 +112,8 @@ An example contents of the `wcheck-language-data' variable:
       (program . \"/bin/cat\")
       (regexp-start . \"\")
       (regexp-body . \"\\\\s-+\")
-      (regexp-end . \"$\"))))"
+      (regexp-end . \"$\")
+      (regexp-discard . \"\"))))"
 
   :group 'wcheck
   :type '(alist :key-type (string :tag "Language")
