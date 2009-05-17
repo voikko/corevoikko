@@ -6964,53 +6964,69 @@ subrule voikko_lista_vain_lipulla($lippu, $lista):
   end;
 end;
 
+# Rakentaa listasta sanatietueita tietueen, jonka attribuutteina
+# on luokkasymboleita ja arvoina listoja, jotka sisältävät kyseistä
+# luokkaa vastaavat sanatietueet alkuperäisestä listasta.
+subrule map_by_class($list):
+  define $map := [];
+  foreach $l in $list:
+    if not $l.luokka in $map then
+      $map :=+ [$l.luokka: <>];
+    end;
+    $map.($l.luokka) :=+ <$l>;
+  end;
+  return $map;
+end;
+
+# Yhdistää tietueet, jotka poikkeavat toisistaan vain äs-kentän osalta.
+subrule yhdistä_sama_äs($lista):
+  if length($lista) = 2 and $lista.1 - äs = $lista.2 - äs then
+    return <$lista.1 + [äs: aä]>;
+  end;
+  return $lista;
+end;
+
+# Yhdistää tietueet, jotka poikkeavat toisistaan vain jatko-kentän osalta.
+subrule yhdistä_sama_jatko($lista):
+  if length($lista) = 2 then
+    if $lista.1 - jatko = $lista.2 - jatko then
+      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko>]>;
+    end;
+  elseif length($lista) = 3 then
+    if $lista.1 - jatko = $lista.2 - jatko and $lista.2 - jatko = $lista.3 - jatko then
+      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko> + $lista.<3, jatko>]>;
+    elseif $lista.1 - jatko = $lista.2 - jatko then
+      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko>], $lista.3>;
+    elseif $lista.2 - jatko = $lista.3 - jatko then
+      return <$lista.2 + [jatko: $lista.<2, jatko> + $lista.<3, jatko>], $lista.1>;
+    elseif $lista.1 - jatko = $lista.3 - jatko then
+      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<3, jatko>], $lista.2>;
+    end;
+  end;
+  return $lista;
+end;
+
 output_filter output($lista_orig):
   # Tuotantoversiossa ei tarvita kaikkia kenttiä
-  define $lista_karsittu := $lista_orig;
+  define $lista := $lista_orig;
   if (not switch(voikko_debug)) then
-    $lista_karsittu := <>;
+    $lista := <>;
     foreach $l in $lista_orig:
-      $lista_karsittu :=+ <$l - perusmuoto - aikamuoto>;
+      $lista :=+ <$l - perusmuoto - aikamuoto>;
     end;
   end;
 
   # Poistetaan täydelliset kaksoiskappaleet
-  define $lista := set($lista_karsittu);
+  $lista := set($lista);
 
-  # Yhdistetään tietueita, jotka poikkeavat toisistaan vain äs-kentän osalta.
-  if length($lista) = 2 and $lista.1 - äs = $lista.2 - äs then
-    result $lista.1 + [äs: aä] + [jatko: set($lista.<1, jatko>)];
-    stop;
-  end;
-
-  # Yhdistetään tietueita, jotka poikkeavat toisistaan vain jatko-kentän osalta
-  if length($lista) = 2 then
-    if $lista.1 - jatko = $lista.2 - jatko then
-      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<2, jatko>)];
-      stop;
+  # Luodaan pintamuotoa vastaavat lopulliset tietueet luokittain
+  define $lista_luokittain := map_by_class($lista);
+  foreach $luokka in $lista_luokittain:
+    define $osalista := $lista_luokittain.($luokka);
+    $osalista := yhdistä_sama_äs($osalista);
+    $osalista := yhdistä_sama_jatko($osalista);
+    foreach $l in $osalista:
+      result $l + [jatko: set($l.jatko)];
     end;
-  elseif length($lista) = 3 then
-    if $lista.1 - jatko = $lista.2 - jatko and $lista.2 - jatko = $lista.3 - jatko then
-      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<2, jatko> + $lista.<3, jatko>)];
-      stop;
-    elseif $lista.1 - jatko = $lista.2 - jatko then
-      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<2, jatko>)];
-      result $lista.3;
-      stop;
-    elseif $lista.2 - jatko = $lista.3 - jatko then
-      result $lista.2 + [jatko: set($lista.<2, jatko> + $lista.<3, jatko>)];
-      result $lista.1;
-      stop;
-    elseif $lista.1 - jatko = $lista.3 - jatko then
-      result $lista.1 + [jatko: set($lista.<1, jatko> + $lista.<3, jatko>)];
-      result $lista.2;
-      stop;
-    end;
-  end;
-
-  # Ei voitu yhdistää mitään
-  foreach $l in $lista:
-    result $l + [jatko: set($l.jatko)];
   end;
 end;
-
