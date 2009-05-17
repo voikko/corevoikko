@@ -3395,13 +3395,10 @@ allo_rule generate_allos ($tietue):
 # END Suomi-malaga 0.9.7
 
   elseif ($tietue.alku /= nil) then
-#define $a := transmit (<"a"> + <$tietue.alku> + <$tietue - alku>);
     result $tietue.alku, $tietue - alku;
   else
-#define $b := transmit (<"b"> + <$tietue.perusmuoto> + <$tietue - alku>);
     result $tietue.perusmuoto, $tietue - alku;
   end;
-##define $b := transmit (<$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
 end;
 
 
@@ -3417,12 +3414,6 @@ end;
 #
 subrule taivutus ($tietue, $lisä, $jatko, $tulos):
   assert (value_type ($jatko) = list);
-
-  # Tuotantoversiossa ei tarvita kaikkia kenttiä
-  if (not switch(voikko_debug)) then
-    $tietue :=- perusmuoto;
-    $tulos :=- aikamuoto;
-  end;
 
   if ($tietue.luokka in @nimisana + <laatusana> and $tietue.sija = nil) then
     return ([alku: $tietue.alku + $lisä]
@@ -6974,8 +6965,24 @@ subrule voikko_lista_vain_lipulla($lippu, $lista):
 end;
 
 output_filter output($lista_orig):
+  # Tuotantoversiossa ei tarvita kaikkia kenttiä
+  define $lista_karsittu := $lista_orig;
+  if (not switch(voikko_debug)) then
+    $lista_karsittu := <>;
+    foreach $l in $lista_orig:
+      $lista_karsittu :=+ <$l - perusmuoto - aikamuoto>;
+    end;
+  end;
+
   # Poistetaan täydelliset kaksoiskappaleet
-  define $lista := set($lista_orig);
+  define $lista := set($lista_karsittu);
+
+  # Yhdistetään tietueita, jotka poikkeavat toisistaan vain äs-kentän osalta.
+  if length($lista) = 2 and $lista.1 - äs = $lista.2 - äs then
+    result $lista.1 + [äs: aä] + [jatko: set($lista.<1, jatko>)];
+    stop;
+  end;
+
   # Yhdistetään tietueita, jotka poikkeavat toisistaan vain jatko-kentän osalta
   if length($lista) = 2 then
     if $lista.1 - jatko = $lista.2 - jatko then
@@ -7000,6 +7007,8 @@ output_filter output($lista_orig):
       stop;
     end;
   end;
+
+  # Ei voitu yhdistää mitään
   foreach $l in $lista:
     result $l + [jatko: set($l.jatko)];
   end;

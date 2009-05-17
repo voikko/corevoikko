@@ -162,6 +162,18 @@ helsinkiläinenkö
 !helsinkiläinenko
 tamperelaisemme
 
+# Nämä testit bugin 1706814 korjaamiseksi
+#sveitsiläistyä
+#!sveitsiläistya
+#kuubalaistumme
+#porvoolaistuminen
+#porvoolaistumisessa
+#!porvoolaistyminen
+#!porvoolaistymisessä
+#!porvoolaistumisessä
+#porvoolaistumisilmiö
+#!porvoolaistuminenilmiö
+
 [lyhenteet]
 USA:ssa
 HTML-kieli
@@ -433,6 +445,10 @@ kuolleempi
 purreempi
 lakaisseempi
 enimmäkseen
+saajien
+syöjien
+syöjyys
+saajuus
 soittajamainen # johdin_jA + mAinen
 !soittajamäinen
 metsästäjämäinen
