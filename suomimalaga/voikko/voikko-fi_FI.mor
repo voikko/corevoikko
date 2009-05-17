@@ -81,11 +81,8 @@ define @johtimet_laatusana_teonsanasta :=
        <johdin_tOn, johdin_vA, johdin_vE, johdin_vAinen, johdin_tAvA, johdin_ttAvA,
         johdin_llinen, johdin_stU, johdin_ttU> + @johdin_nUt + @johdin_tU_voikko;
 
-define @johtimet_seikkasana_teonsanasta := <johdin_ittAin>; #FIXME: onko tämä oikein?
-
 define @johdin_teonsanasta := @johtimet_nimisana_teonsanasta
-                            + @johtimet_laatusana_teonsanasta
-                            + @johtimet_seikkasana_teonsanasta;
+                            + @johtimet_laatusana_teonsanasta;
 
 
 # Johtimet nimisanoista
@@ -108,9 +105,6 @@ define @johtimet_nimisana_laatusanasta := <johdin_Us, johdin_UUs>;
 define @johtimet_laatusana_laatusanasta := <johdin_nlainen>;
 define @johtimet_laatusanasta := @johtimet_nimisana_laatusanasta
                                + @johtimet_laatusana_laatusanasta;
-
-
-define @johdin := @johdin_teonsanasta + @johdin_nimisanasta + @johtimet_laatusanasta;
 
 combi_rule sanan_alku ($vasen, $oikea, $sana):
   if $oikea.luokka = lyhenne then
@@ -374,7 +368,7 @@ end;
 combi_rule nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
   result $vasen + <[alku: $sana] + $oikea>,
-         rules laatusanan_johdos; # FIXME: johdetun muodon on oltava nimisana
+         rules johdin_nimisana_laatusanasta;
 end;
 
 # Laatusanasta johdettu laatusana, esim. paha+nlai+nen <- paha.
@@ -429,8 +423,8 @@ combi_rule johdin_nlainen ($vasen, $oikea, $sana):
   end;
   result $res,
          rules laatusanan_sijapääte,
-	       laatusanan_johdos,
-	       voitto_yliaste;
+               johdin_nimisana_laatusanasta,
+               voitto_yliaste;
 end;
 
 combi_rule johdin_inen ($vasen, $oikea, $sana, $index):
@@ -452,8 +446,8 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $index):
     result $res, rules liitesana;
   end;
     result $res, rules laatusanan_sijapääte,
-	       laatusanan_johdos,
-	       voitto_yliaste;
+                 johdin_nimisana_laatusanasta,
+                 voitto_yliaste;
 end;
 
 combi_rule johdettu_paikannimi ($vasen, $oikea, $sana):
@@ -485,7 +479,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, accept; end;
-  result $res, rules laatusanan_sijapääte_omistusliitteellä, laatusanan_johdos;
+  result $res, rules laatusanan_sijapääte_omistusliitteellä, johdin_nimisana_laatusanasta;
 end;
 
 ###### JOHDINSÄÄNNÖT PÄÄTTYVÄT
@@ -516,7 +510,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   end;
   result $res,
          rules laatusanan_sijapääte,
-               laatusanan_johdos,
+               johdin_nimisana_laatusanasta,
                voitto_yliaste;
 end;
 
@@ -542,7 +536,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  result $res, rules laatusanan_sijapääte, laatusanan_johdos;
+  result $res, rules laatusanan_sijapääte, johdin_nimisana_laatusanasta;
 end;
 
 
@@ -730,7 +724,6 @@ combi_rule voitto_yliasteen_sijapääte ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.sija = kerronto_sti) then
-    ? $edellinen.luokka in @sti_edeltäjä;
     result $res, accept;
     result $res, rules liitesana;
   else
@@ -1520,7 +1513,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
   end;
 
   if johdin_UUs in $oikea.jatko then
-    result $res, rules laatusanan_johdos;
+    result $res, rules johdin_nimisana_laatusanasta;
   end;
 end;
 
@@ -1596,7 +1589,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
       end;
       result $res,
              rules laatusanan_sijapääte_omistusliitteellä,
-                   voitto_yliaste, laatusanan_johdos;
+                   voitto_yliaste, johdin_nimisana_laatusanasta;
     end;
     stop;
   end;
@@ -1617,11 +1610,11 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   result $res,
           rules nimisanan_sijapääte, #FIXME: voi olla laatusana
                 voitto_yliaste,
-                laatusanan_johdos, nimisanan_johdos;
+                johdin_nimisana_laatusanasta, nimisanan_johdos;
 end;
 
 
-combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
+combi_rule johdin_nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @johtimet_nimisana_laatusanasta;
 
   define $edellinen := $vasen.($index - 1);
@@ -1646,8 +1639,7 @@ combi_rule laatusanan_johdos ($vasen, $oikea, $sana, $index):
   end;
   result $res,
           rules nimisanan_sijapääte,
-                laatusanan_johdos, nimisanan_johdos,
-                voitto_yliaste;
+                nimisanan_johdos;
 end;
 
 
