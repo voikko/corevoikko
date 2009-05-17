@@ -215,10 +215,10 @@ oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
 
 
 (defun wcheck-change-language (language &optional global)
-  "Vaihtaa oikoluvun kielen arvoksi LANGUAGE. Tavallisesti muutos
-koskee vain nykyistä puskuri, mutta jos GLOBAL on
-non-nil (interaktiivisesti prefix argument), niin vaihdetaan
-oletuskieli."
+  "Change language for current buffer (or globally).
+Change `wcheck-mode' language to LANGUAGE. The change is
+buffer-local but if GLOBAL is non-nil (prefix argument if called
+interactively) then change the default language for new buffers."
   (interactive
    (let* ((comp (mapcar 'car wcheck-language-data))
           (default
@@ -226,13 +226,15 @@ oletuskieli."
                 wcheck-language
               (car comp))))
      (list (completing-read
-            (format "Vaihda %s (%s): " (if current-prefix-arg
-                                           "oletuskieli uusiin puskureihin"
-                                         "nykyisen puskurin kieli")
+            (format (if current-prefix-arg
+                        "Default language for new buffers (%s): "
+                      "Language for the current buffer (%s): ")
                     default)
             comp nil t nil nil default)
            current-prefix-arg)))
 
+  ;; Change the language, locally or globally, and update buffer-process
+  ;; bookkeeping data, if needed.
   (when (stringp language)
     (if global
         (setq-default wcheck-language language)
@@ -240,14 +242,19 @@ oletuskieli."
       (when wcheck-mode
         (wcheck-update-buffer-process-data (current-buffer) language)))
 
+    ;; If this was called interactively do some checks and maintenance.
     (when (called-interactively-p)
       (let ((program (wcheck-query-language-data language 'program)))
         (cond ((not (wcheck-program-executable-p program))
+               ;; No executable program for the selected language. Turn
+               ;; the mode off.
                (when wcheck-mode
                  (wcheck-mode 0))
-               (message (format "Kielen \"%s\" ohjelma \"%s\" ei ole ajettava"
-                                language program)))
+               (message
+                (format "Language \"%s\": program \"%s\" is not executable"
+                        language program)))
 
+              ;; If the mode is currently turned on we request an update
               (wcheck-mode
                (wcheck-timer-read-request (current-buffer))
                (wcheck-remove-overlays)))))
