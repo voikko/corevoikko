@@ -122,7 +122,7 @@ An example contents of the `wcheck-language-data' variable:
                       (cons :format "%v"
                             (const :tag "Program: "
                                    :format "%t" program)
-                            (file :must-match t :format "%v"))
+                            (file :format "%v"))
                       (set :format "%v"
                            (cons :format "%v"
                                  (const :tag "Arguments:      "
