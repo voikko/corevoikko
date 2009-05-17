@@ -3760,15 +3760,9 @@ subrule zU($tietue):
   return ("'" + U($tietue));
 end;
 
-
-subrule taivutuskaava ($tietue, $taivutus):
-##  $taivutus :=+ [tavuviiva: $taivutus.nimentö];
-
-  if (not ($tietue.luokka in <nimisana, nimi_laatusana>) or
-     (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
-    $taivutus :=- johdin_inen;
-  end;
-
+# Operaatioita, jotka tehdään taivutuskaavan muodostamisen yhteydessä
+# kaikille taivutuksille.
+subrule muokkaa_taivutusta($tietue, $taivutus):
   if ($tietue.luokka = nimisana) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
@@ -3822,7 +3816,13 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- nimisana;
     $taivutus :=- teonsana;
   end;
+  
+  return $taivutus;
+end;
 
+# Operaatioita, jotka tehdään taivutuskaavan muodostamisen yhteydessä
+# kaikille tietueille.
+subrule muokkaa_tietuetta($tietue, $taivutus):
   # Paikannimien jälkiliitteet
   if ($tietue.perusmuoto in <"katu", "kuja", "tie", "saari", "lahti", "niemi",
                              "vuori", "vaara", "joki", "kylä", "salo", "mäki",
@@ -3831,8 +3831,9 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
   # Aluetta tarkentavat etuliitteet
-  if ($tietue.perusmuoto in <"etelä", "itä", "kaakkois", "keski", "koillis", "lounais",
-                             "luoteis", "länsi", "manner", "pohjois", "suur", "sydän">) then
+  # FIXME: ei toimi seuraaville: "kaakkois", "lounais", "luoteis", "suur"
+  if ($tietue.perusmuoto in <"etelä", "itä", "keski", "koillinen",
+                             "länsi", "manner", "pohjoinen", "sydän">) then
     $tietue :=+ [aluetta_tarkentava_etuliite: yes];
   end;
 
@@ -3840,6 +3841,18 @@ subrule taivutuskaava ($tietue, $taivutus):
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];
   end;
+
+  return $tietue;
+end;
+
+subrule taivutuskaava ($tietue, $taivutus):
+  if (not ($tietue.luokka in <nimisana, nimi_laatusana>) or
+     (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
+    $taivutus :=- johdin_inen;
+  end;
+
+  $taivutus := muokkaa_taivutusta($tietue, $taivutus);
+  $tietue := muokkaa_tietuetta($tietue, $taivutus);
 
   define $lista := lajittele ($taivutus);
 
@@ -3872,20 +3885,8 @@ subrule taivutuskaava2 ($tietue, $taivutus, $ei_uusi):
     $taivutus :=- $ei_uusi;
   end;
 
-  # Ei kaikkia johdoksia kaikista nimisanoista (esim. aateli -> aatelinen).
-  #
-  if ($tietue.tiedot /= nil) then
-    if (ei_inen in $tietue.tiedot) then
-      $taivutus :=- johdin_inen;
-    end;
-    if (ei_lAinen in $tietue.tiedot) then
-      $taivutus :=- johdin_lAinen;
-    end;
-    if (ei_mAinen in $tietue.tiedot) then
-      $taivutus :=- johdin_mAinen;
-    end;
-  end;
-
+  $taivutus := muokkaa_taivutusta($tietue, $taivutus);
+  $tietue := muokkaa_tietuetta($tietue, $taivutus);
 
   define $lista := lajittele ($taivutus);
 

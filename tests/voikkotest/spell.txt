@@ -265,6 +265,8 @@ matka-aerokissa # yhdysmerkki etuliitteen edessä
 tiedotus-
 !Jyväskyl-paikka
 Jyväskylä-paikka
+Pohjois-Suomi
+!pohjois-Suomi
 Moilanen-Savolainen
 
 [johdetut sanat yhdyssanoissa]
