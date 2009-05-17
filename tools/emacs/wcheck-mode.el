@@ -493,7 +493,8 @@ käsittelee kieltä LANGUAGE."
   (when (window-live-p window)
     (with-selected-window window
       (save-excursion
-        (let ((w-start (window-start window))
+        (let ((buffer (window-buffer window))
+              (w-start (window-start window))
               (w-end (window-end window 'update))
               (r-start (wcheck-query-language-data language 'regexp-start t))
               (r-end (wcheck-query-language-data language 'regexp-end t))
@@ -506,7 +507,7 @@ käsittelee kieltä LANGUAGE."
               (while (re-search-forward
                       (concat r-start "\\(" word "\\)" r-end)
                       w-end t)
-                (wcheck-make-overlay language window
+                (wcheck-make-overlay language buffer
                                      (match-beginning 1)
                                      (match-end 1))))))))))
 
@@ -538,8 +539,8 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
 ;;; Overlay
 
 
-(defun wcheck-make-overlay (language window beg end)
-  (let ((overlay (make-overlay beg end))
+(defun wcheck-make-overlay (language buffer beg end)
+  (let ((overlay (make-overlay beg end buffer))
         (face (wcheck-query-language-data language 'face t)))
     (dolist (prop `((wcheck-mode . t)
                     (face . ,face)
