@@ -221,10 +221,10 @@ buffer-local but if GLOBAL is non-nil (prefix argument if called
 interactively) then change the default language for new buffers."
   (interactive
    (let* ((comp (mapcar 'car wcheck-language-data))
-          (default
-            (if (member wcheck-language comp)
-                wcheck-language
-              (car comp))))
+          (default (cond ((member wcheck-language comp)
+                          wcheck-language)
+                         ((car comp))
+                         (t ""))))
      (list (completing-read
             (format (if current-prefix-arg
                         "Default language for new buffers (%s): "
