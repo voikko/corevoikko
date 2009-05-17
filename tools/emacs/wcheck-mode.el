@@ -160,12 +160,20 @@ An example contents of the `wcheck-language-data' variable:
 
 
 
+(defcustom wcheck-language ""
+  "Default language for `wcheck-mode'.
+The default language used by new buffers. For buffer-specific
+languages use the command `\\[wcheck-change-language]'."
+  :type '(string :tag "Default language")
+  :group 'wcheck)
+(make-variable-buffer-local 'wcheck-language)
+
+
 (defface wcheck-default-face
   '((t (:underline "red")))
   "Default face for marking strings in a buffer.
 This is used when language does not define face."
-  :group 'wcheck
-  )
+  :group 'wcheck)
 
 
 (setq-default wcheck-language-data-defaults
@@ -177,17 +185,6 @@ This is used when language does not define face."
                 (regexp-end . "'*\\>")
                 (regexp-discard . "\\`'+\\'")))
 
-(defvar wcheck-language
-  (let ((first (caar wcheck-language-data)))
-    (if (stringp first)
-        first
-      ""))
-
-  "Oletuskieli on globaalissa muuttujassa, puskurikohtainen kieli
-on puskurikohtaisessa muuttujassa. Tätä muuttujaa ei kannata
-muokata suoraan; kieli kannattaa muuttaa komennolla
-`\\[wcheck-change-language]'.")
-(make-variable-buffer-local 'wcheck-language)
 
 (setq-default wcheck-buffer-process-data nil
               wcheck-received-words nil)
