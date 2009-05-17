@@ -29,7 +29,8 @@
 
 
 (defcustom wcheck-language-data nil
-  "Wcheck-mode language configuration.
+  "Wcheck mode language configuration.
+
 Elements of this alist are of the form:
 
   (LANGUAGE (KEY . VALUE) [(KEY . VALUE) ...])
@@ -260,76 +261,108 @@ interactively) then change the default language for new buffers."
 
 
 (define-minor-mode wcheck-mode
-  "Sanojen tarkistus, oikoluku."
+  "Interface for external spell-checkers and filtering programs.
+
+Wcheck is a minor mode for automatically marking words or other
+text pieces in Emacs buffer. Wcheck sends (parts of) buffer's
+content to an external text-filtering program and, based on its
+output, decides if some parts of text should be marked.
+
+Wcheck can be used with spell-checker programs such as Ispell,
+Aspell and Enchant. Then the semantics of operation is that the
+words returned from a spelling checker are spelling mistakes and
+are marked as such in Emacs buffer.
+
+The mode can also be useful with other kind of external tools.
+Any tool that can receive text stream from standard input and
+send text to standard output can be used. User is free to
+interpret the semantics. In Wcheck configuration different
+semantical units are called \"languages\".
+
+See the documentation of variable `wcheck-language-data' for
+information on how to configure Wcheck mode. Interactive command
+`wcheck-change-language' is used to switch languages."
+
   :init-value nil
   :lighter " Wck"
   :keymap wcheck-mode-map
   (if wcheck-mode
-      ;; Oikoluku päälle mutta ensin pari tarkistusta:
+      ;; Turn on Wcheck mode, but first some checks...
+
       (cond
        ((minibufferp (current-buffer))
-        ;; Kyseessä on minibuffer, joten ei kytketä päälle
+        ;; This is a minibuffer; stop here.
         (wcheck-mode 0))
 
        ((not (wcheck-language-valid-p wcheck-language))
-        ;; Kieli ei ole toimiva
+        ;; Not a valid language.
         (wcheck-mode 0)
-        (message (format "Sopimaton kieli \"%s\", ei kytketä oikolukua"
+        (message (format "Language \"%s\" is not valid"
                          wcheck-language)))
 
        ((not (wcheck-program-executable-p
               (wcheck-query-language-data wcheck-language 'program)))
-        ;; Ohjelmaa ei löydy tai sillä ei ole suoritusoikeuksia
+        ;; The program does not exist or is not executable.
         (wcheck-mode 0)
-        (message (format "Kielen \"%s\" ohjelma \"%s\" ei ole ajettava"
+        (message (format "Language \"%s\": program \"%s\" is not executable"
                          wcheck-language
                          (wcheck-query-language-data wcheck-language
                                                      'program))))
 
        (t
-        ;; Käynnistetään "oikoluku"
+        ;; We are ready to really turn on the mode.
 
-        ;; Puskurikohtaiset koukut
+        ;; Add buffer-local hooks. These ask for updates for the buffer
+        ;; or may sometimes automatically turn off the mode.
         (add-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer nil t)
         (add-hook 'window-scroll-functions 'wcheck-hook-window-scroll nil t)
         (add-hook 'after-change-functions 'wcheck-hook-after-change nil t)
         (add-hook 'change-major-mode-hook
                   'wcheck-hook-change-major-mode nil t)
 
-        ;; Globaalit koukut. Riittää, että nämä lisää vain kerran, mutta
-        ;; varmuuden vuoksi ajetaan seuraavat komennot joka kerta, kun
-        ;; wcheck-tila kytketään päälle.
+        ;; Add global hooks. It's probably sufficient to add these only
+        ;; once but it's no harm to ensure their existence every time.
         (add-hook 'window-size-change-functions
                   'wcheck-hook-window-size-change)
         (add-hook 'window-configuration-change-hook
                   'wcheck-hook-window-configuration-change)
 
+        ;; Add this buffer to the bookkeeper.
         (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
 
+        ;; Start idle timer if it's not already started. The timer runs
+        ;; a function which updates buffers which have requested for
+        ;; that.
         (unless wcheck-timer
           (setq wcheck-timer
                 (run-with-idle-timer wcheck-timer-idle t
                                      'wcheck-timer-event)))
 
+        ;; Request update for this buffer.
         (wcheck-timer-read-request (current-buffer))))
 
-    ;; Oikoluku pois
-    (setq wcheck-returned-words nil)
+    ;; Turn off the mode.
+
+    ;; We clear overlays form the buffer, remove the buffer from
+    ;; bookkeeper's data and clear the variable holding words received
+    ;; from external process.
     (wcheck-remove-overlays)
     (wcheck-update-buffer-process-data (current-buffer) nil)
+    (setq wcheck-received-words nil)
 
+    ;; If there are no buffers using Wcheck mode anymore, stop the idle
+    ;; timer and remove global hooks.
     (when (and (not wcheck-buffer-process-data)
                wcheck-timer)
       (cancel-timer wcheck-timer)
       (setq wcheck-timer nil)
-      ;; Globaalit koukut poistetaan vasta, kun ajastinkin poistetaan
-      ;; eli kun mikään puskuri ei enää tarvitse oikolukua.
+
       (remove-hook 'window-size-change-functions
                    'wcheck-hook-window-size-change)
       (remove-hook 'window-configuration-change-hook
                    'wcheck-hook-window-configuration-change))
 
-    ;; Puskurikohtaiset koukut
+    ;; Remove buffer-local hooks.
     (remove-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer t)
     (remove-hook 'window-scroll-functions 'wcheck-hook-window-scroll t)
     (remove-hook 'after-change-functions 'wcheck-hook-after-change t)
