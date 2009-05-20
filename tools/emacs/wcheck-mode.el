@@ -434,25 +434,24 @@ information on how to configure Wcheck mode. Interactive command
 
   ;; Käynnistetään ajastin, joka maalaa sanat, mikäli joku puskuri on
   ;; sellaista pyytänyt.
-  (run-with-idle-timer
-   (* 2 wcheck-timer-idle)
-   nil
-   (function (lambda ()
-               (dolist (buffer wcheck-timer-paint-requested)
-                 (with-current-buffer buffer
-                   (wcheck-remove-overlays)
-                   (when wcheck-mode
-                     (walk-windows
-                      (function (lambda (window)
-                                  (when (eq buffer (window-buffer window))
-                                    (with-current-buffer buffer
-                                      (wcheck-paint-words
-                                       wcheck-language
-                                       window
-                                       wcheck-received-words)))))
-                      'nomb t)
-                     (wcheck-timer-paint-request-delete buffer)
-                     (setq wcheck-received-words nil))))))))
+  (run-with-idle-timer (* 2 wcheck-timer-idle) nil
+                       'wcheck-timer-paint-event))
+
+
+(defun wcheck-timer-paint-event ()
+  (dolist (buffer wcheck-timer-paint-requested)
+    (with-current-buffer buffer
+      (wcheck-remove-overlays)
+      (when wcheck-mode
+        (walk-windows
+         (function (lambda (window)
+                     (when (eq buffer (window-buffer window))
+                       (with-current-buffer buffer
+                         (wcheck-paint-words wcheck-language window
+                                             wcheck-received-words)))))
+         'nomb t)
+        (wcheck-timer-paint-request-delete buffer)
+        (setq wcheck-received-words nil)))))
 
 
 (defun wcheck-receive-words (process string)
