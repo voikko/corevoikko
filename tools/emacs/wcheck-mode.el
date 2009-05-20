@@ -535,7 +535,7 @@ Mikäli sellaista prosessia ei ennestään ole, käynnistetään."
                 (process-connection-type t) ;Käytetään PTY:itä
                 proc)
 
-            (when (file-executable-p program)
+            (when (wcheck-program-executable-p program)
               (setq proc (apply 'start-process proc-name nil program args))
               ;; Asetetaan oikolukuprosessin tulosteenkäsittely kutsumaan
               ;; funktiota, joka tallentaa tulosteen eli tunnistamattomat
