@@ -409,20 +409,30 @@ information on how to configure Wcheck mode. Interactive command
 
 
 (defun wcheck-timer-read-event ()
-  ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
+  "Send windows' content to external program.
+This function is usually called by the wcheck-mode idle timer.
+The function walks through all windows which belong to buffer
+that have requested update. It reads windows' content and sends
+it to an external program. Finally, this function starts another
+idle timer (just once) for marking words or other text elements
+in buffers."
+
   (dolist (buffer wcheck-timer-read-requested)
     (with-current-buffer buffer
+
+      ;; We are about to fulfill buffer's window-reading request so
+      ;; remove this buffer from the request list.
       (wcheck-timer-read-request-delete buffer)
 
       (if (not (wcheck-language-valid-p wcheck-language))
           (progn
             (wcheck-mode 0)
             (message
-             (format "Kieltä \"%s\" ei ole olemassa, sammutetaan oikoluku"
+             (format "Language \"%s\" is not valid"
                      wcheck-language)))
 
-        ;; Käydään läpi kaikki ikkunat, joissa kyseinen puskuri on
-        ;; näkyvissä, ja lähetetään sanat ulkoiselle prosessille.
+        ;; Walk through all windows which belong to this buffer and send
+        ;; their content to an external program.
         (walk-windows
          (function (lambda (window)
                      (when (eq buffer (window-buffer window))
@@ -431,19 +441,27 @@ information on how to configure Wcheck mode. Interactive command
                                                              window)))))
          'nomb t))))
 
-  ;; Käynnistetään ajastin, joka maalaa sanat, mikäli joku puskuri on
-  ;; sellaista pyytänyt.
+  ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (* 2 wcheck-timer-idle) nil
                        'wcheck-timer-paint-event))
 
 
 (defun wcheck-timer-paint-event ()
+  "Mark text in windows.
+This function is normally called by the `wcheck-mode' idle timer.
+The function marks (with overlays) words or other text elements
+in buffers that have requested it."
+
   (dolist (buffer wcheck-timer-paint-requested)
     (with-current-buffer buffer
       (wcheck-remove-overlays)
 
+      ;; We are about to mark text in this buffer so remove the buffer
+      ;; from the request list.
       (wcheck-timer-paint-request-delete buffer)
 
+      ;; Walk through windows and mark text based on the word list
+      ;; returned by an external process.
       (when wcheck-mode
         (walk-windows
          (function (lambda (window)
