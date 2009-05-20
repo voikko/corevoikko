@@ -441,6 +441,9 @@ information on how to configure Wcheck mode. Interactive command
   (dolist (buffer wcheck-timer-paint-requested)
     (with-current-buffer buffer
       (wcheck-remove-overlays)
+
+      (wcheck-timer-paint-request-delete buffer)
+
       (when wcheck-mode
         (walk-windows
          (function (lambda (window)
@@ -449,7 +452,6 @@ information on how to configure Wcheck mode. Interactive command
                          (wcheck-paint-words wcheck-language window
                                              wcheck-received-words)))))
          'nomb t)
-        (wcheck-timer-paint-request-delete buffer)
         (setq wcheck-received-words nil)))))
 
 
