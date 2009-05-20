@@ -412,6 +412,8 @@ information on how to configure Wcheck mode. Interactive command
   ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
   (dolist (buffer wcheck-timer-read-requested)
     (with-current-buffer buffer
+      (wcheck-timer-read-request-delete buffer)
+
       (if (not (wcheck-language-valid-p wcheck-language))
           (progn
             (wcheck-mode 0)
@@ -427,10 +429,7 @@ information on how to configure Wcheck mode. Interactive command
                        (wcheck-send-words wcheck-language
                                           (wcheck-read-words wcheck-language
                                                              window)))))
-         'nomb t)
-        ;; Sanat on lähetetty, joten voidaan poistaa tämä puskuri
-        ;; päivityslistasta.
-        (wcheck-timer-read-request-delete buffer))))
+         'nomb t))))
 
   ;; Käynnistetään ajastin, joka maalaa sanat, mikäli joku puskuri on
   ;; sellaista pyytänyt.
