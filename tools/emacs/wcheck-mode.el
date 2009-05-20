@@ -352,7 +352,7 @@ information on how to configure Wcheck mode. Interactive command
         (unless wcheck-timer
           (setq wcheck-timer
                 (run-with-idle-timer wcheck-timer-idle t
-                                     'wcheck-timer-event)))
+                                     'wcheck-timer-read-event)))
 
         ;; Request update for this buffer.
         (wcheck-timer-read-request (current-buffer))))
@@ -408,7 +408,7 @@ information on how to configure Wcheck mode. Interactive command
         (delq buffer wcheck-timer-paint-requested)))
 
 
-(defun wcheck-timer-event ()
+(defun wcheck-timer-read-event ()
   ;; Käydään läpi kaikki puskurit, jotka ovat pyytäneet päivitystä.
   (dolist (buffer wcheck-timer-read-requested)
     (with-current-buffer buffer
