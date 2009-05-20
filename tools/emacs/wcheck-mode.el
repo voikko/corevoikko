@@ -442,8 +442,9 @@ in buffers."
          'nomb t))))
 
   ;; Start a timer which will mark text in buffers/windows.
-  (run-with-idle-timer (* 2 wcheck-timer-idle) nil
-                       'wcheck-timer-paint-event))
+  (run-with-idle-timer (+ wcheck-timer-idle
+                          (wcheck-current-idle-time-seconds))
+                       nil 'wcheck-timer-paint-event))
 
 
 (defun wcheck-timer-paint-event ()
@@ -734,6 +735,18 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
        (file-regular-p program)
        (file-executable-p program)
        t))
+
+
+(defun wcheck-current-idle-time-seconds ()
+  "Return current idle time in seconds."
+  (let* ((idle (current-idle-time))
+         (high (nth 0 idle))
+         (low (nth 1 idle))
+         (micros (nth 2 idle)))
+    (+ (* high
+          (expt 2 16))
+       low
+       (/ micros 1000000.0))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
