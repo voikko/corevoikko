@@ -1,5 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; wcheck-mode.el
+;;
+;; Interface for external spell-checkers and text-filtering programs.
 
 
 ;; Copyright (C) 2009 Teemu Likonen <tlikonen@iki.fi>
@@ -18,6 +20,20 @@
 ;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs. If not, see <http://www.gnu.org/licenses/>.
+
+
+;; INSTALLATION
+;;
+;; Put this file to some directory in your "load-path" and add the
+;; following lines to your Emacs initialization file (~/.emacs):
+;;
+;;     (autoload 'wcheck-mode "wcheck-mode"
+;;       "Toggle Wcheck mode." t)
+;;     (autoload 'wcheck-change-language "wcheck-mode"
+;;       "Switch Wcheck-mode languages." t)
+;;
+;; See customize group "wcheck" for information on how to configure
+;; Wcheck mode. (M-x customize-group RET wcheck RET)
 
 
 ;;; Muuttujat ja asetukset
