@@ -2859,10 +2859,8 @@ allo_rule generate_allos ($tietue):
 #                                   nimitapa_4: "itse",
 #                                   nimitapa_5: "itse",
 #                                   johdin_mA:  "itse",
-#                                   laatutapa_1:   "itse",
 #                                   johdin_vA:     "itse",
 #                                   johdin_vAinen: "itse",
-#                                   laatutapa_2_nUt: "in",
 #                                   johdin_nUt:      "in"])
                  + käskytapa ($tietue, "itse")
                  + taivutuskaava ($tietue, [käskytapa: "itse"])
@@ -3363,7 +3361,7 @@ allo_rule generate_allos ($tietue):
                             + @kertoman_tekijäpääte, []),
                   taivutus ($tietue, "l", <nimitapa_2>, []),
                   taivutus ($tietue, "e",
-                            <nimitapa_3, nimitapa_4, laatutapa_1,
+                            <nimitapa_3, nimitapa_4,
                              liitesana2, johdin_vA, johdin_vAinen>, []),
                   taivutus ($tietue, "e", <liitesana, loppu>,
                             [tapaluokka: käskytapa, aikamuoto: kestämä,
@@ -3763,6 +3761,11 @@ end;
 # Operaatioita, jotka tehdään taivutuskaavan muodostamisen yhteydessä
 # kaikille taivutuksille.
 subrule muokkaa_taivutusta($tietue, $taivutus):
+
+  # Näitä ei koskaan käytetä Voikossa
+  $taivutus :=- liitesana2;
+  $taivutus :=- liitesana_s;
+
   if ($tietue.luokka = nimisana) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
@@ -5779,9 +5782,7 @@ subrule seistä ($tietue):
                          nimitapa_2: "t",
                          nimitapa_2_tA: "",
                          nimitapa_3_tA: "",
-                         laatutapa_1_tA: "",
                          johdin_tAvA: "",
-                         laatutapa_2_sUt: "",
                          johdin_sUt: "",
                          johdin_stU: ""]);
 end;
@@ -6196,9 +6197,7 @@ subrule voida ($tietue, $lisä1, $lisä2):
                            nimitapa_2:      $lisä1 + "d",
                            nimitapa_2_tA:   $lisä1] +
                           nimitapa_3_tA_4 ($tietue, $lisä1, $lisä1) +
-                          [laatutapa_1_vE: $lisä1,
-                           laatutapa_1_tA: $lisä1,
-                           johdin_vE:      $lisä1,
+                          [johdin_vE:      $lisä1,
                            johdin_vAinen:  $lisä1,
                            johdin_tAvA:    $lisä1] +
                           laatutapa_2_nUt_dU ($tietue, $lisä1, $lisä1) +
@@ -6338,70 +6337,55 @@ end;
 
 
 subrule laatutapa_1_tA ($tietue, $vahva_aste, $heikko_aste):
-  return [laatutapa_1:    $vahva_aste,
-          laatutapa_1_tA: $heikko_aste,
-          johdin_vA:      $vahva_aste,
+  return [johdin_vA:      $vahva_aste,
           johdin_vAinen:  $vahva_aste,
           johdin_tAvA:    $heikko_aste];
 end;
 
 
 subrule laatutapa_1_ttA ($tietue, $vahva_aste, $heikko_aste):
-  return [laatutapa_1:     $vahva_aste,
-          laatutapa_1_ttA: $heikko_aste,
-          johdin_vA:       $vahva_aste,
+  return [johdin_vA:       $vahva_aste,
           johdin_vAinen:   $vahva_aste,
           johdin_ttAvA:    $heikko_aste];
 end;
 
 
 subrule laatutapa_2_lUt ($tietue, $lisä):
-  return [laatutapa_2_lUt: $lisä,
-          laatutapa_2_tU:  $lisä,
-          johdin_lUt:      $lisä,
+  return [johdin_lUt:      $lisä,
           johdin_tU:       $lisä,
           johdin_lU:       $lisä];
 end;
 
 
 subrule laatutapa_2_nUt ($tietue, $vahva_aste, $heikko_aste):
-  return [laatutapa_2_nUt: $vahva_aste,
-          laatutapa_2_tU:  $heikko_aste,
-          johdin_nUt:      $vahva_aste,
+  return [johdin_nUt:      $vahva_aste,
           johdin_tU:       $heikko_aste,
           johdin_nU:       $heikko_aste];
 end;
 
 
 subrule laatutapa_2_nUt_dU ($tietue, $vahva_aste, $heikko_aste):
-  return [laatutapa_2_nUt: $vahva_aste,
-          laatutapa_2_tU:  $heikko_aste,
-          johdin_nUt:      $vahva_aste,
+  return [johdin_nUt:      $vahva_aste,
           johdin_tU:       $heikko_aste,
           johdin_dU:       $heikko_aste];
 end;
 
 
 subrule laatutapa_2_nUt_ttU ($tietue, $vahva_aste, $heikko_aste):
-  return [laatutapa_2_nUt: $vahva_aste,
-          laatutapa_2_ttU: $heikko_aste,
-          johdin_nUt:      $vahva_aste,
+  return [johdin_nUt:      $vahva_aste,
           johdin_ttU:      $heikko_aste];
 end;
 
 
 subrule laatutapa_2_rUt ($tietue, $vahva_aste, $heikko_aste):
-  return [laatutapa_2_rUt: $vahva_aste,
-          laatutapa_2_tU:  $heikko_aste,
-          johdin_rUt:      $vahva_aste,
+  return [johdin_rUt:      $vahva_aste,
           johdin_tU:       $heikko_aste,
           johdin_rU:       $heikko_aste];
 end;
 
 
 subrule laatutapa_2_sUt ($tietue, $lisä):
-  return [laatutapa_2_sUt: $lisä,
-          johdin_sUt:      $lisä,
+  return [johdin_sUt:      $lisä,
           johdin_stU:      $lisä];
 end;
 

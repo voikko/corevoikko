@@ -95,8 +95,6 @@ sija;
   osanto_itA;    # Pu+ita.
 
   olento_nA;
-  olento_rA;     # Nuori => nuorra.
-  olento_sA;     # Mies => miessä.
   olento_inA;
 
   tulento_ksi;
@@ -183,8 +181,8 @@ luokka; alaluokka; jluokka;
   sijapääte;
   omistusliite;
   liitesana;
-  liitesana2;
-  liitesana_s;  # Tulkaa+s.
+  liitesana2;   # Poistetaan Voikossa.
+  liitesana_s;  # Tulkaa+s. Poistetaan Voikossa.
   kieltosanan_liitesana;
   liitesana_pi; # Tulee+pi.
   etuliite;
@@ -271,33 +269,10 @@ tapaluokka;
   nimitapa_2_tA;
   nimitapa_2_ttA;
   nimitapa_3;        # Taipuu kuten asema.
-  nimitapa_3_saama;  # Taipuu kuten koira.
   nimitapa_3_tA;
   nimitapa_3_ttA;
   nimitapa_4;
   nimitapa_5;
-  laatutapa_1;
-  laatutapa_1_vA;   # punoa => punova => punovampi
-  laatutapa_1_vE;   # myydä => myyvä  => myyvempi
-  laatutapa_1_tA;
-  laatutapa_1_ttA;
-
-  laatutapa_2;
-  laatutapa_2_lUt; # Tul+lut.
-  laatutapa_2_nUt; # Men+nyt, puno+nut.
-  laatutapa_2_rUt; # Pur+rut.
-  laatutapa_2_sUt; # Juos+sut.
-
-  laatutapa_2_tU;
-  laatutapa_2_tU_dU;          # Voitu, voidun.
-  laatutapa_2_tU_lU_katseltu; # Katseltu, katsellun, katseltujen, katselluiden/katselluitten.
-  laatutapa_2_tU_lU_oltu;     # Oltu, ollun, oltujen.
-  laatutapa_2_tU_nU;          # Menty, mennyn.
-  laatutapa_2_tU_rU;          # Purtu, purrun.
-
-  laatutapa_2_ttU; # Puno+ttu, puno+tu+n.
-  laatutapa_2_stU_juostu;    # Juos+tu, juostujen.  Siis astevaihteluton tU-loppuinen.
-  laatutapa_2_stU_nuolaistu; # Nuolais+tu, nuolaistujen/nuolaistuiden.  Siis astevaihteluton tU-loppuinen.
 
   johdin_tAr;       # Pappi >= papitar.
   johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).
@@ -313,7 +288,6 @@ tapaluokka;
   johdin_UUs;       # Valkoinen => valkois+uus (valkoisuuden).
 
   johdin_mA;        # Puno+ma, teke+mä.  Taipuu kuten asema.
-  johdin_mA_saama;  #                    Taipuu kuten koira.
   johdin_ntA;       # Valita => vali+nta.
   johdin_nti;       # Voida => voi+nti.
   johdin_Us_ksen;   # Salata => salaus (salauksen)
@@ -326,8 +300,6 @@ tapaluokka;
   johdin_vAinen;    # Tule+vainen.
   johdin_tAvA;      # Tul+tava.
   johdin_ttAvA;     # Luote+ttava.
-  johdin_tAvAinen;  # Tul+tavainen.
-  johdin_ttAvAinen; # Luote+ttavainen.
   johdin_lUt;       # Tul+lut, tul+tu, tul+leisuus.
   johdin_nUt;
   johdin_rUt;
@@ -339,24 +311,12 @@ tapaluokka;
   johdin_tU;
   johdin_stU;       # Juosta => juostu.
 
-  johdin_tU_dU;
-  johdin_tU_lU_katseltu;
   johdin_tU_lU_oltu;
-  johdin_tU_nU;
-  johdin_tU_rU;
 
-  johdin_stU_juostu;
-  johdin_stU_nuolaistu;
   johdin_ttU;
   johdin_jA_myyjä;   # Taivutukset ovat erilaisia.
   johdin_jA_kulkija;
   johdin_jA_kantaja;
-
-  johdin_nA;         # Kalista  => kalina.
-  johdin_O;          # Muistaa  => muisto, muiston.
-  johdin_Os;         # Murtaa   => murros.
-  johdin_U_arvelu;   # Arvailla => arvelu, arveluiden.
-  johdin_U_nousu;    # Nousta   => nousu, nousujen.
 
 aikamuoto;
   kestämä;
@@ -961,8 +921,6 @@ minä;
 hän;
 me;
 joka;
-
-kymmenen;
 
 olla;
 lienee;
