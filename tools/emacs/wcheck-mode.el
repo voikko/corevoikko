@@ -433,6 +433,9 @@ in buffers."
       ;; remove this buffer from the request list.
       (wcheck-timer-read-request-delete buffer)
 
+      ;; Reset also the list of received word.
+      (setq wcheck-received-words nil)
+
       (if (not (wcheck-language-valid-p wcheck-language))
           (progn
             (wcheck-mode 0)
@@ -453,14 +456,22 @@ in buffers."
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
                           (wcheck-current-idle-time-seconds))
-                       nil 'wcheck-timer-paint-event))
+                       nil 'wcheck-timer-paint-event
+                       2))
 
 
-(defun wcheck-timer-paint-event ()
+(defun wcheck-timer-paint-event (&optional repeat)
   "Mark text in windows.
-This function is normally called by the `wcheck-mode' idle timer.
-The function marks (with overlays) words or other text elements
-in buffers that have requested it."
+
+This is normally called by the `wcheck-mode' idle timer. This
+function marks (with overlays) words or other text elements in
+buffers that have requested it through the variable
+`wcheck-timer-paint-requested'.
+
+If the optional argument REPEAT exists and is integer then also
+call the function repeatedly that many times after the first
+call. The delay between consecutive calls is defined in variable
+`wcheck-timer-idle'."
 
   (dolist (buffer wcheck-timer-paint-requested)
     (with-current-buffer buffer
@@ -479,8 +490,16 @@ in buffers that have requested it."
                        (with-current-buffer buffer
                          (wcheck-paint-words wcheck-language window
                                              wcheck-received-words)))))
-         'nomb t)
-        (setq wcheck-received-words nil)))))
+         'nomb t))))
+
+  ;; If REPEAT is positive integer call this function again after
+  ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the parameter.
+  (when (and (integerp repeat)
+             (> repeat 0))
+    (run-with-idle-timer (+ wcheck-timer-idle
+                            (wcheck-current-idle-time-seconds))
+                         nil 'wcheck-timer-paint-event
+                         (1- repeat))))
 
 
 (defun wcheck-receive-words (process string)
