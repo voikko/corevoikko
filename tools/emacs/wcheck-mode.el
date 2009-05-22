@@ -733,25 +733,34 @@ syntax table settings defined in LANGUAGE (see
               (r-end (wcheck-query-language-data language 'regexp-end t))
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
               (case-fold-search nil)
-              regexp)
+              regexp old-point)
 
           (with-syntax-table syntax
             (dolist (word wordlist)
               (setq regexp (concat r-start "\\("
                                    (regexp-quote word) "\\)"
-                                   r-end))
+                                   r-end)
+                    old-point 0)
               (goto-char w-start)
 
-              (while (re-search-forward regexp w-end t)
-                ;; If the point is invisible jump forward to the next
-                ;; change of "invisible" text property, else make the
-                ;; overlay.
-                (if (get-char-property (match-beginning 1) 'invisible buffer)
-                    (goto-char (next-single-char-property-change
-                                (match-beginning 1) 'invisible buffer w-end))
-                  (wcheck-make-overlay language buffer
-                                       (match-beginning 1)
-                                       (match-end 1)))))))))))
+              (catch 'infinite
+                (while (re-search-forward regexp w-end t)
+                  (cond ((= (point) old-point)
+                         ;; We didn't move forward so break the loop.
+                         (throw 'infinite t))
+                        ((get-char-property (match-beginning 1)
+                                            'invisible buffer)
+                         ;; The point is invisible so jump forward to
+                         ;; the next change of "invisible" text property
+                         (goto-char (next-single-char-property-change
+                                     (match-beginning 1) 'invisible buffer
+                                     w-end)))
+                        (t
+                         ;; Make an overlay
+                         (wcheck-make-overlay language buffer
+                                              (match-beginning 1)
+                                              (match-end 1))))
+                  (setq old-point (point)))))))))))
 
 
 (defun wcheck-query-language-data (language key &optional default)
