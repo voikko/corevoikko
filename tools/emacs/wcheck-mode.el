@@ -39,11 +39,13 @@
 ;;; Muuttujat ja asetukset
 
 
+;;;###autoload
 (defgroup wcheck nil
   "Interface for external text-filtering programs."
   :group 'applications)
 
 
+;;;###autoload
 (defcustom wcheck-language-data nil
   "Wcheck mode language configuration.
 
@@ -177,6 +179,7 @@ An example contents of the `wcheck-language-data' variable:
 
 
 
+;;;###autoload
 (defcustom wcheck-language ""
   "Default language for `wcheck-mode'.
 The default language used by new buffers. For buffer-specific
@@ -186,6 +189,7 @@ languages use the command `\\[wcheck-change-language]'."
 (make-variable-buffer-local 'wcheck-language)
 
 
+;;;###autoload
 (defface wcheck-default-face
   '((t (:underline "red")))
   "Default face for marking strings in a buffer.
@@ -228,6 +232,7 @@ oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
 ;;; Käyttäjän funktiot
 
 
+;;;###autoload
 (defun wcheck-change-language (language &optional global)
   "Change language for current buffer (or globally).
 Change `wcheck-mode' language to LANGUAGE. The change is
@@ -276,6 +281,7 @@ interactively) then change the default language for new buffers."
     wcheck-buffer-process-data))
 
 
+;;;###autoload
 (define-minor-mode wcheck-mode
   "Interface for external spell-checkers and filtering programs.
 
