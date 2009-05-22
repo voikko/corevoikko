@@ -672,27 +672,35 @@ only visible text elements; all hidden parts are omitted."
               (buffer (window-buffer window))
               (discard (wcheck-query-language-data language 'regexp-discard t))
               (case-fold-search nil)
+              (old-point 0)
               words)
-
 
           (with-syntax-table syntax
             (goto-char w-start)
-            (while (re-search-forward regexp w-end t)
-              (cond ((get-char-property (match-beginning 1)
-                                        'invisible buffer)
-                     ;; This point is invisible. Let's jump forward to
-                     ;; next change of "invisible" property.
-                     (goto-char (next-single-char-property-change
-                                 (match-beginning 1) 'invisible buffer w-end)))
+            (catch 'infinite
+              (while (re-search-forward regexp w-end t)
+                (cond ((= (point) old-point)
+                       ;; Make sure we don't end up in an infinite loop
+                       ;; when the regexp always matches with zero width
+                       ;; in the current point position.
+                       (throw 'infinite t))
 
-                    ((or (equal discard "")
-                         (not (string-match discard
-                                            (match-string-no-properties 1))))
-                     ;; Add the match to the word list.
-                     (add-to-list 'words
-                                  (match-string-no-properties 1)
-                                  'append)
-                     (goto-char (1+ (point)))))))
+                      ((get-char-property (match-beginning 1)
+                                          'invisible buffer)
+                       ;; This point is invisible. Let's jump forward to
+                       ;; next change of "invisible" property.
+                       (goto-char (next-single-char-property-change
+                                   (match-beginning 1) 'invisible buffer
+                                   w-end)))
+
+                      ((or (equal discard "")
+                           (not (string-match
+                                 discard (match-string-no-properties 1))))
+                       ;; Add the match to the word list.
+                       (add-to-list 'words
+                                    (match-string-no-properties 1)
+                                    'append)))
+                (setq old-point (point)))))
           words)))))
 
 
