@@ -643,7 +643,10 @@ oikeanlaiset."
 
 
 (defun wcheck-read-words (language window)
-  "Palauttaa listan sanoista, jotka näkyvät ikkunassa IKKUNA."
+  "Return a list of visible text elements in WINDOW.
+Function scans WINDOW and searches for text elements defined in
+LANGUAGE (see `wcheck-language-data'). The returned list contains
+only visible text elements; all hidden parts are omitted."
   (when (window-live-p window)
     (with-selected-window window
       (save-excursion
@@ -669,12 +672,15 @@ oikeanlaiset."
             (while (re-search-forward regexp w-end t)
               (cond ((get-char-property (match-beginning 1)
                                         'invisible buffer)
+                     ;; This point is invisible. Let's jump forward to
+                     ;; next change of "invisible" property.
                      (goto-char (next-single-char-property-change
                                  (match-beginning 1) 'invisible buffer w-end)))
 
                     ((or (equal discard "")
                          (not (string-match discard
                                             (match-string-no-properties 1))))
+                     ;; Add the match to the word list.
                      (add-to-list 'words
                                   (match-string-no-properties 1)
                                   'append)
