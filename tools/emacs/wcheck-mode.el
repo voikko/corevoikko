@@ -335,6 +335,8 @@ information on how to configure Wcheck mode. Interactive command
         (add-hook 'after-change-functions 'wcheck-hook-after-change nil t)
         (add-hook 'change-major-mode-hook
                   'wcheck-hook-change-major-mode nil t)
+        (add-hook 'outline-view-change-hook
+                  'wcheck-hook-outline-view-change nil t)
 
         ;; Add global hooks. It's probably sufficient to add these only
         ;; once but it's no harm to ensure their existence every time.
@@ -382,7 +384,9 @@ information on how to configure Wcheck mode. Interactive command
     (remove-hook 'window-scroll-functions 'wcheck-hook-window-scroll t)
     (remove-hook 'after-change-functions 'wcheck-hook-after-change t)
     (remove-hook 'change-major-mode-hook
-                 'wcheck-hook-change-major-mode t)))
+                 'wcheck-hook-change-major-mode t)
+    (remove-hook 'outline-view-change-hook
+                 'wcheck-hook-outline-view-change t)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -519,6 +523,11 @@ muutettu."
 (defun wcheck-hook-after-change (beg end len)
   "Ajetaan aina, kun puskuria on muokattu."
   ;; Tämä hook ajetaan aina siinä puskurissa, mitä muokattiin.
+  (when wcheck-mode
+    (wcheck-timer-read-request (current-buffer))))
+
+
+(defun wcheck-hook-outline-view-change ()
   (when wcheck-mode
     (wcheck-timer-read-request (current-buffer))))
 
