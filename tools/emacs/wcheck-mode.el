@@ -368,15 +368,14 @@ information on how to configure Wcheck mode. Interactive command
 
     ;; If there are no buffers using Wcheck mode anymore, stop the idle
     ;; timer and remove global hooks.
-    (when (and (not wcheck-buffer-process-data)
-               wcheck-timer)
-      (cancel-timer wcheck-timer)
-      (setq wcheck-timer nil)
-
+    (when (not wcheck-buffer-process-data)
       (remove-hook 'window-size-change-functions
                    'wcheck-hook-window-size-change)
       (remove-hook 'window-configuration-change-hook
-                   'wcheck-hook-window-configuration-change))
+                   'wcheck-hook-window-configuration-change)
+      (when wcheck-timer
+        (cancel-timer wcheck-timer)
+        (setq wcheck-timer nil)))
 
     ;; Remove buffer-local hooks.
     (remove-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer t)
