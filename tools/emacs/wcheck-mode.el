@@ -794,7 +794,8 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
 
 (defun wcheck-current-idle-time-seconds ()
   "Return current idle time in seconds."
-  (let* ((idle (current-idle-time))
+  (let* ((idle (or (current-idle-time)
+                   '(0 0 0)))
          (high (nth 0 idle))
          (low (nth 1 idle))
          (micros (nth 2 idle)))
