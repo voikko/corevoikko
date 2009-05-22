@@ -719,14 +719,15 @@ käsittelee kieltä LANGUAGE."
               (r-start (wcheck-query-language-data language 'regexp-start t))
               (r-end (wcheck-query-language-data language 'regexp-end t))
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
-              (case-fold-search nil))
+              (case-fold-search nil)
+              regexp)
           (with-syntax-table syntax
             (dolist (word wordlist)
-              (setq word (regexp-quote word))
+              (setq regexp (concat r-start "\\("
+                                   (regexp-quote word) "\\)"
+                                   r-end))
               (goto-char w-start)
-              (while (re-search-forward
-                      (concat r-start "\\(" word "\\)" r-end)
-                      w-end t)
+              (while (re-search-forward regexp w-end t)
                 (wcheck-make-overlay language buffer
                                      (match-beginning 1)
                                      (match-end 1))))))))))
