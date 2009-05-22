@@ -709,7 +709,12 @@ käsittelee kieltä LANGUAGE."
 
 
 (defun wcheck-paint-words (language window wordlist)
-  "Merkkaa listassa WORDLIST listatut sanat ikkunassa WINDOW."
+  "Mark words in WORDLIST which are visible in WINDOW.
+Mark all words (or other text elements) in WORDLIST which are
+visible in WINDOW. Regular expression text-search respects the
+syntax table settings defined in LANGUAGE (see
+`wcheck-language-data')."
+
   (when (window-live-p window)
     (with-selected-window window
       (save-excursion
@@ -721,13 +726,18 @@ käsittelee kieltä LANGUAGE."
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
               (case-fold-search nil)
               regexp)
+
           (with-syntax-table syntax
             (dolist (word wordlist)
               (setq regexp (concat r-start "\\("
                                    (regexp-quote word) "\\)"
                                    r-end))
               (goto-char w-start)
+
               (while (re-search-forward regexp w-end t)
+                ;; If the point is invisible jump forward to the next
+                ;; change of "invisible" text property, else make the
+                ;; overlay.
                 (if (get-char-property (match-beginning 1) 'invisible buffer)
                     (goto-char (next-single-char-property-change
                                 (match-beginning 1) 'invisible buffer w-end))
