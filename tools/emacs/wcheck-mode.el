@@ -728,9 +728,12 @@ käsittelee kieltä LANGUAGE."
                                    r-end))
               (goto-char w-start)
               (while (re-search-forward regexp w-end t)
-                (wcheck-make-overlay language buffer
-                                     (match-beginning 1)
-                                     (match-end 1))))))))))
+                (if (get-char-property (match-beginning 1) 'invisible buffer)
+                    (goto-char (next-single-char-property-change
+                                (match-beginning 1) 'invisible buffer w-end))
+                  (wcheck-make-overlay language buffer
+                                       (match-beginning 1)
+                                       (match-end 1)))))))))))
 
 
 (defun wcheck-query-language-data (language key &optional default)
