@@ -656,25 +656,29 @@ oikeanlaiset."
                        (wcheck-query-language-data language 'regexp-end t)))
 
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
+              (w-start (window-start window))
               (w-end (window-end window 'update))
+              (buffer (window-buffer window))
               (discard (wcheck-query-language-data language 'regexp-discard t))
               (case-fold-search nil)
               words)
 
-          (move-to-window-line 0)
-          (beginning-of-line)
+
           (with-syntax-table syntax
-            (while (< (point) w-end)
-              (while (re-search-forward regexp (line-end-position) t)
-                (when (or (equal discard "")
-                          (not (string-match discard
-                                             (match-string-no-properties 1))))
-                  (add-to-list 'words
-                               (match-string-no-properties 1)
-                               'append))
-                (goto-char (1+ (point))))
-              (end-of-line)
-              (vertical-motion 1)))
+            (goto-char w-start)
+            (while (re-search-forward regexp w-end t)
+              (cond ((get-char-property (match-beginning 1)
+                                        'invisible buffer)
+                     (goto-char (next-single-char-property-change
+                                 (match-beginning 1) 'invisible buffer w-end)))
+
+                    ((or (equal discard "")
+                         (not (string-match discard
+                                            (match-string-no-properties 1))))
+                     (add-to-list 'words
+                                  (match-string-no-properties 1)
+                                  'append)
+                     (goto-char (1+ (point)))))))
           words)))))
 
 
