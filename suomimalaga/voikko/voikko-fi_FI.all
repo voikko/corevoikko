@@ -3766,6 +3766,10 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   $taivutus :=- liitesana2;
   $taivutus :=- liitesana_s;
 
+  if ($tietue.luokka /= etuliite) then
+    $taivutus :=- teonsana;
+  end;
+
   if ($tietue.luokka = nimisana) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;

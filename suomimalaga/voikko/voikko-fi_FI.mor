@@ -71,7 +71,7 @@ define @nimitapa_3 := <nimitapa_3, nimitapa_3_ttA, nimitapa_3_tA>;
 
 # Johtimet teonsanoista
 
-define @johdin_tU_voikko := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU, johdin_tU_lU_oltu>;
+define @johdin_tU := <johdin_dU, johdin_lU, johdin_nU, johdin_rU, johdin_tU, johdin_tU_lU_oltu>;
 
 define @johtimet_nimisana_teonsanasta :=
        <johdin_mA, johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen>
@@ -79,7 +79,7 @@ define @johtimet_nimisana_teonsanasta :=
 
 define @johtimet_laatusana_teonsanasta :=
        <johdin_tOn, johdin_vA, johdin_vE, johdin_vAinen, johdin_tAvA, johdin_ttAvA,
-        johdin_llinen, johdin_stU, johdin_ttU> + @johdin_nUt + @johdin_tU_voikko;
+        johdin_llinen, johdin_stU, johdin_ttU> + @johdin_nUt + @johdin_tU;
 
 define @johdin_teonsanasta := @johtimet_nimisana_teonsanasta
                             + @johtimet_laatusana_teonsanasta;
@@ -665,7 +665,7 @@ define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
                          johdin_vA, johdin_vAinen, johdin_vE,
                          johdin_stU>
-                        + @johdin_nUt + @johdin_tU_voikko
+                        + @johdin_nUt + @johdin_tU
                         + @johtimet_laatusana_nimisanasta
                         + @johtimet_laatusana_laatusanasta;
 
@@ -1522,6 +1522,7 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
 
   if ($edellinen.luokka = teonsana) then
     $vasen.($index - 1) :=+ [lähtöluokka: teonsana];
+    # FIXME: aika usein tämä on oikeasti laatusana
     $vasen.($index - 1).luokka := nimisana;
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
@@ -1795,6 +1796,24 @@ subrule tulostus_voikko ($tietue):
   return $tuloste;
 end;
 
+subrule tulostus_luokka($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
+                             nimi_laatusana, asemosana, suhdesana,
+                             huudahdussana, sidesana> then
+      return $allomorfi.luokka;
+    end;
+  end;
+  return nil;
+end;
+
+subrule tulostus_v2($tietue):
+  return [rakenne: tulostus_voikko($tietue),
+          luokka:  tulostus_luokka($tietue),
+          tiedot: $tietue];
+end;
 
 pruning_rule prune ($list):
   define $alut := <>;

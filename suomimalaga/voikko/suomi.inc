@@ -128,5 +128,3 @@ define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
 
 define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
-
-define @johdin_tU := <johdin_tU_lU_oltu>;
