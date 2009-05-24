@@ -36,7 +36,9 @@
 ;; Wcheck mode. (M-x customize-group RET wcheck RET)
 
 
-;;; Muuttujat ja asetukset
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Settings
 
 
 ;;;###autoload
@@ -229,7 +231,7 @@ oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Käyttäjän funktiot
+;;; Interactive commands
 
 
 ;;;###autoload
@@ -396,7 +398,7 @@ information on how to configure Wcheck mode. Interactive command
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Ajastimet
+;;; Timers
 
 
 (setq-default wcheck-timer nil
@@ -513,7 +515,7 @@ wcheck-received-words."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Koukut, joilla pyydetään oikoluvun päivitystä puskurille
+;;; Hooks
 
 
 (defun wcheck-hook-window-scroll (window window-start)
@@ -570,7 +572,7 @@ sammuttaa oikoluvun tästä puskurista."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Prosessien käsittely
+;;; Processes
 
 
 (defun wcheck-start-get-process (language)
@@ -673,7 +675,7 @@ oikeanlaiset."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Matalan tason apufunktioita
+;;; Low-level functions
 
 
 (defun wcheck-read-words (language window)
@@ -823,10 +825,6 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
           (expt 2 16))
        low
        (/ micros 1000000.0))))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Overlay
 
 
 (defun wcheck-make-overlay (language buffer beg end)
