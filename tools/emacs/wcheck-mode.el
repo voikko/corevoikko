@@ -220,7 +220,7 @@ sisäiseen käyttöön.")
 
 (defvar wcheck-mode-map
   (make-sparse-keymap)
-  "Keymap for wcheck-mode")
+  "Keymap for `wcheck-mode'.")
 
 
 (defconst wcheck-timer-idle .6
@@ -286,7 +286,7 @@ interactively) then change the default language for new buffers."
   "Interface for external spell-checkers and filtering programs.
 
 Wcheck is a minor mode for automatically marking words or other
-text pieces in Emacs buffer. Wcheck sends (parts of) buffer's
+text elements in Emacs buffer. Wcheck sends (parts of) buffer's
 content to an external text-filtering program and, based on its
 output, decides if some parts of text should be marked.
 
@@ -453,7 +453,8 @@ in buffers."
                                                              window)))))
          'nomb t))))
 
-  ;; Start a timer which will mark text in buffers/windows.
+  ;; Start a timer which will mark text in buffers/windows. We pass
+  ;; argument "2" for the timer so that it will run three times.
   (run-with-idle-timer (+ wcheck-timer-idle
                           (wcheck-current-idle-time-seconds))
                        nil 'wcheck-timer-paint-event
