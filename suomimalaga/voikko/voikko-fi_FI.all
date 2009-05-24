@@ -7005,6 +7005,16 @@ output_filter output($lista_orig):
     end;
   end;
 
+  # Kaikkia lippuja ei tarvita
+  foreach $i in length($lista):
+    if ($lista.$i.tiedot /= nil) then
+      $lista.$i.tiedot :=- <ei_sukija, murre>;
+      if (length($lista.$i.tiedot) = 0) then
+        $lista.$i :=- tiedot;
+      end;
+    end;
+  end;
+
   # Poistetaan täydelliset kaksoiskappaleet
   $lista := set($lista);
 
