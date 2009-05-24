@@ -218,7 +218,8 @@ This is used when language does not define face."
   "Oikolukuprosessien nimen etuliite. Tämä on vain ohjelman
 sisäiseen käyttöön.")
 
-
+(defvar wcheck-change-language-history nil
+  "Language history for command `wcheck-change-language'.")
 
 (defvar wcheck-mode-map
   (make-sparse-keymap)
@@ -251,7 +252,7 @@ interactively) then change the default language for new buffers."
                         "Default language for new buffers (%s): "
                       "Language for the current buffer (%s): ")
                     default)
-            comp nil t nil nil default)
+            comp nil t nil 'wcheck-change-language-history default)
            current-prefix-arg)))
 
   ;; Change the language, locally or globally, and update buffer-process
