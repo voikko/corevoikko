@@ -839,9 +839,9 @@ LANGUAGE."
         (face (wcheck-query-language-data language 'face t)))
     (dolist (prop `((wcheck-mode . t)
                     (face . ,face)
-                    (modification-hooks . (wcheck-remove-overlay-word))
-                    (insert-in-front-hooks . (wcheck-remove-overlay-word))
-                    (insert-behind-hooks . (wcheck-remove-overlay-word))
+                    (modification-hooks . (wcheck-remove-changed-overlay))
+                    (insert-in-front-hooks . (wcheck-remove-changed-overlay))
+                    (insert-behind-hooks . (wcheck-remove-changed-overlay))
                     (evaporate . t)))
       (overlay-put overlay (car prop) (cdr prop)))))
 
@@ -853,7 +853,7 @@ range BEG to END. Otherwise remove all overlays."
   (remove-overlays beg end 'wcheck-mode t))
 
 
-(defun wcheck-remove-overlay-word (overlay after beg end &optional len)
+(defun wcheck-remove-changed-overlay (overlay after beg end &optional len)
   "Hook for removing overlay which is being edited."
   (unless after
     (delete-overlay overlay)))
