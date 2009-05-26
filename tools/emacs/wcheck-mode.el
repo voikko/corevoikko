@@ -215,8 +215,7 @@ This is used when language does not define face."
 (make-variable-buffer-local 'wcheck-received-words)
 
 (defconst wcheck-process-name-prefix "wcheck/"
-  "Oikolukuprosessien nimen etuliite. Tämä on vain ohjelman
-sisäiseen käyttöön.")
+  "Process name prefix for `wcheck-mode'.")
 
 (defvar wcheck-change-language-history nil
   "Language history for command `wcheck-change-language'.")
@@ -227,8 +226,7 @@ sisäiseen käyttöön.")
 
 
 (defconst wcheck-timer-idle .6
-  "Näin monta sekuntia odotetaan, kunnes ajastin käynnistää
-oikoluvun niissä ikkunoissa, joiden puskuri on sitä pyytänyt.")
+  "`wcheck-mode' idle timer delay (in seconds).")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -269,7 +267,7 @@ interactively) then change the default language for new buffers."
       (let ((program (wcheck-query-language-data language 'program)))
         (cond ((not (wcheck-program-executable-p program))
                ;; No executable program for the selected language. Turn
-               ;; the mode off.
+               ;; off the mode.
                (when wcheck-mode
                  (wcheck-mode 0))
                (message
@@ -507,9 +505,7 @@ call. The delay between consecutive calls is defined in variable
 
 
 (defun wcheck-receive-words (process string)
-  "Ottaa sanat vastaan oikolukuprosessilta ja tallentaa ne
-listamuodossa puskurikohtaiseen muuttujaan
-wcheck-received-words."
+  "`wcheck-mode' process output handler function."
   (setq wcheck-received-words
         (append wcheck-received-words (split-string string "\n+" t)))
   (wcheck-timer-paint-request (current-buffer)))
@@ -520,14 +516,18 @@ wcheck-received-words."
 
 
 (defun wcheck-hook-window-scroll (window window-start)
-  "Ajetaan kun ikkunaa WINDOW on vieritetty."
+  "`wcheck-mode' hook for window scroll.
+Request update for the buffer when its window have been
+scrolled."
   (with-current-buffer (window-buffer window)
     (when wcheck-mode
       (wcheck-timer-read-request (current-buffer)))))
 
 
 (defun wcheck-hook-window-size-change (frame)
-  "Tämä ajetaan aina, kun ikkunan kokoa on muutettu."
+  "`wcheck-mode' hook for window size change.
+Request update for the buffer when its window's size has
+changed."
   (walk-windows (function (lambda (window)
                             (with-current-buffer (window-buffer window)
                               (when wcheck-mode
@@ -538,8 +538,9 @@ wcheck-received-words."
 
 
 (defun wcheck-hook-window-configuration-change ()
-  "Tämä ajetaan aina, kun ikkunan kokoa tai muita asetuksia on
-muutettu."
+  "`wcheck-mode' hook for window configuration change.
+Request update for the buffer when its window's configuration has
+changed."
   (walk-windows (function (lambda (window)
                             (with-current-buffer (window-buffer window)
                               (when wcheck-mode
@@ -550,25 +551,30 @@ muutettu."
 
 
 (defun wcheck-hook-after-change (beg end len)
-  "Ajetaan aina, kun puskuria on muokattu."
-  ;; Tämä hook ajetaan aina siinä puskurissa, mitä muokattiin.
+  "`wcheck-mode' hook for buffer content change.
+Request update for the buffer when its content has been edited."
+  ;; The buffer that has changed is the current buffer when this hook
+  ;; function is called.
   (when wcheck-mode
     (wcheck-timer-read-request (current-buffer))))
 
 
 (defun wcheck-hook-outline-view-change ()
+  "`wcheck-mode' hook for outline view change.
+Request update for the buffer when its outline view has changed."
   (when wcheck-mode
     (wcheck-timer-read-request (current-buffer))))
 
 
 (defun wcheck-hook-kill-buffer ()
-  "Sammuttaa oikoluvun tämän puskurin osalta."
+  "`wcheck-mode' hook for kill-buffer operation.
+Turn off `wcheck-mode' when buffer is being killed."
   (wcheck-mode 0))
 
 
 (defun wcheck-hook-change-major-mode ()
-  "Ajetaan ennen kuin käyttäjä vaihtaa major-tilaa. Tämä
-sammuttaa oikoluvun tästä puskurista."
+  "`wcheck-mode' hook for major mode change.
+Turn off `wcheck-mode' before changing major mode."
   (wcheck-mode 0))
 
 
@@ -577,39 +583,40 @@ sammuttaa oikoluvun tästä puskurista."
 
 
 (defun wcheck-start-get-process (language)
-  "Palauttaa oikolukuprosessin, joka käsittelee kieltä LANGUAGE.
-Mikäli sellaista prosessia ei ennestään ole, käynnistetään."
+  "Start or get external process for LANGUAGE.
+Start a new process or get already existing process which handles
+language LANGUAGE. Return the symbol of that particular process
+or nil if the operation was unsuccessful."
   (when (wcheck-language-valid-p language)
     (let ((proc-name (concat wcheck-process-name-prefix language)))
-      ;; Jos prosessi on jo ennestään olemassa, palautetaan se.
+      ;; If process for this LANGUAGE exists return it.
       (or (get-process proc-name)
-          ;; Ei ole, joten luodaan uusi.
+          ;; It doesn't exist so start a new one.
           (let ((program (wcheck-query-language-data language 'program))
                 (args (split-string
                        (wcheck-query-language-data language 'args t)
                        "[ \t\n]+" t))
-                (process-connection-type t) ;Käytetään PTY:itä
+                (process-connection-type t) ;Use PTYs for communication.
                 proc)
 
             (when (wcheck-program-executable-p program)
               (setq proc (apply 'start-process proc-name nil program args))
-              ;; Asetetaan oikolukuprosessin tulosteenkäsittely kutsumaan
-              ;; funktiota, joka tallentaa tulosteen eli tunnistamattomat
-              ;; sanat muuttujaan wcheck-returned-words (buffer-local).
+              ;; The next command sets `wcheck-receive-words' as the
+              ;; output handler function for the process we just
+              ;; started.
               (set-process-filter proc 'wcheck-receive-words)
               (when (wcheck-process-running-p language)
                 proc)))))))
 
 
 (defun wcheck-process-running-p (language)
-  "Tarkistetaan, onko prosessi käynnissä."
+  "Return t if the process for LANGUAGE is running."
   (eq 'run (process-status (concat wcheck-process-name-prefix language))))
 
 
 (defun wcheck-end-process (language)
-  "Poistaa oikolukuprosessin kielelle LANGUAGE, mikäli sellainen
-on olemassa. Palautetaan poistettu prosessi tai nil, mikäli ei
-tehty mitään."
+  "Stop the process for LANGUAGE.
+Return the stopped process or nil if there was no such process."
   (let ((proc (get-process (concat wcheck-process-name-prefix
                                    language))))
     (when proc
@@ -618,56 +625,48 @@ tehty mitään."
 
 
 (defun wcheck-update-buffer-process-data (buffer language)
-  "Päivittää `wcheck-buffer-process-data' -muuttujan puskurin
-BUFFER ja sitä vastaavan kielen LANGUAGE osalta. Mikäli LANGUAGE
-on nil, poistetaan kyseinen puskuri listasta ja lopetetaan myös
-kieltä vastaava prosessi, mikäli sitä ei enää mikään prosessi
-tarvitse. Palautetaan muuttujan `wcheck-buffer-process-data'
-uusi arvo tai nil, mikäli funktion parametrit eivät olleet
-oikeanlaiset."
-
-  ;; Tämä funktio voisi myös poistaa ne prosessit, joiden nimeen on
-  ;; tullut <1>, <2> jne. siitä syystä, ettei olisi kahta samannimistä.
-  ;; Tällaista ei pitäisi sattua mutta todellisuudessa kaikki on
-  ;; mahdollista. Toinen vaihtoehto on luopua kokonaan miettimästä
-  ;; prosessien nimiä ja tehdä sen sijaan alist, jossa on (KIELI .
-  ;; PROSESSI) -elementtejä. Se tosin olisi yksi ajan tasalla pidettävä
-  ;; lista lisää.
-
+  "Update variable `wcheck-buffer-process-data' for BUFFER.
+Calling this function is the primary way to tell `wcheck-mode'
+that BUFFER is using LANGUAGE and its settings. If LANGUAGE is
+nil remove BUFFER from the list."
   (when (and (bufferp buffer)
              (or (stringp language)
                  (not language)))
 
-    ;; Poistetaan listasta elementit, joiden cdr ei ole merkkijono
+    ;; Remove illegal elements from the list, that is, elements whose
+    ;; cdr is not a string.
     (dolist (item wcheck-buffer-process-data)
       (unless (stringp (cdr item))
         (setq wcheck-buffer-process-data
               (delq item wcheck-buffer-process-data))))
 
+    ;; Construct a list of currently needed languages/processes.
     (let ((old-langs (mapcar 'cdr wcheck-buffer-process-data))
           new-langs)
 
-      ;; Poistetaan listasta mahdolliset kuolleet puskurit sekä
-      ;; minibufferit.
+      ;; Remove dead buffers and possible minibuffers from the list.
       (dolist (item wcheck-buffer-process-data)
         (when (or (not (buffer-live-p (car item)))
                   (minibufferp (car item)))
           (setq wcheck-buffer-process-data
                 (delq item wcheck-buffer-process-data))))
 
-      ;; Poistetaan tämä puskuri listasta
+      ;; Remove BUFFER from the list.
       (setq wcheck-buffer-process-data
             (assq-delete-all buffer wcheck-buffer-process-data))
       (if language
-          ;; Lisätään puskurille uusi kieli
+          ;; LANGUAGE was given so add this BUFFER's language info to
+          ;; the list.
           (add-to-list 'wcheck-buffer-process-data
                        (cons buffer language))
-        ;; Oikolukua on pyydetty sammutettavaksi, joten poistetaan se
-        ;; päivitystä pyytäneiden prosessien listasta.
+        ;; LANGUAGE was not given so this usually means that wcheck-mode
+        ;; is being turned off from this buffer. Remove BUFFER from the
+        ;; list of buffers which request for wcheck update.
         (wcheck-timer-read-request-delete buffer))
 
-      ;; Poistetaan turhat prosessit
+      ;; Construct a list of languages/processes that are still needed.
       (setq new-langs (mapcar 'cdr wcheck-buffer-process-data))
+      ;; Stop those processes which are no longer needed.
       (dolist (lang old-langs)
         (unless (member lang new-langs)
           (wcheck-end-process lang)))))
@@ -734,12 +733,12 @@ only visible text elements; all hidden parts are omitted."
 
 
 (defun wcheck-send-words (language wordlist)
-  "Lähettää sanalistan WORDLIST oikolukuprosessille, joka
-käsittelee kieltä LANGUAGE."
-  ;; Noudetaan prosessi, joka hoitaa pyydetyn kielen.
+  "Send WORDLIST for the process that handles LANGUAGE.
+WORDLIST is a list of strings to be sent as input for the
+external process which handles LANGUAGE. Each string in WORDLIST
+is sent as separate line."
   (let ((proc (wcheck-start-get-process language))
         string)
-    ;; Tehdään sanalistasta merkkijono, yksi sana rivillään.
     (setq string (concat "\n" (mapconcat 'concat wordlist "\n") "\n"))
     (process-send-string proc string)
     string))
@@ -748,9 +747,8 @@ käsittelee kieltä LANGUAGE."
 (defun wcheck-paint-words (language window wordlist)
   "Mark words in WORDLIST which are visible in WINDOW.
 Mark all words (or other text elements) in WORDLIST which are
-visible in WINDOW. Regular expression text-search respects the
-syntax table settings defined in LANGUAGE (see
-`wcheck-language-data')."
+visible in WINDOW. Regular expression search respects the syntax
+table settings defined in LANGUAGE (see `wcheck-language-data')."
 
   (when (window-live-p window)
     (with-selected-window window
@@ -776,16 +774,17 @@ syntax table settings defined in LANGUAGE (see
                 (while (re-search-forward regexp w-end t)
                   (cond ((= (point) old-point)
                          ;; We didn't move forward so break the loop.
+                         ;; Otherwise we would loop endlessly.
                          (throw 'infinite t))
                         ((get-char-property (match-beginning 1)
                                             'invisible buffer)
                          ;; The point is invisible so jump forward to
-                         ;; the next change of "invisible" text property
+                         ;; the next change of "invisible" text property.
                          (goto-char (next-single-char-property-change
                                      (match-beginning 1) 'invisible buffer
                                      w-end)))
                         (t
-                         ;; Make an overlay
+                         ;; Make an overlay.
                          (wcheck-make-overlay language buffer
                                               (match-beginning 1)
                                               (match-end 1))))
@@ -793,22 +792,25 @@ syntax table settings defined in LANGUAGE (see
 
 
 (defun wcheck-query-language-data (language key &optional default)
-  "Palauttaa pyydetyn tiedon kielitietokannasta tai mahdollisesti
-oletusarvon."
+  "Query `wcheck-mode' language data.
+Return LANGUAGE's value for KEY in variable
+`wcheck-language-data'. If value for KEY does not exist and if
+DEFAULT is non-nil return the default value for that KEY as
+defined in variable `wcheck-language-data-defaults'."
   (or (cdr (assq key (cdr (assoc language wcheck-language-data))))
       (when default
         (cdr (assq key wcheck-language-data-defaults)))))
 
 
 (defun wcheck-language-valid-p (language)
-  "Tarkistaa, onko LANGUAGE olemassa ja onko sille määritelty
-ulkoista ohjelmaa. Palauttaa t tai nil."
+  "Return t if LANGUAGE exists and has configured external program."
   (and (member language (mapcar 'car wcheck-language-data))
        (stringp (wcheck-query-language-data language 'program))
        t))
 
 
 (defun wcheck-program-executable-p (program)
+  "Return t if PROGRAM is executable regular file."
   (and (stringp program)
        (file-regular-p program)
        (file-executable-p program)
@@ -829,6 +831,10 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
 
 
 (defun wcheck-make-overlay (language buffer beg end)
+  "Create an overlay for use with `wcheck-mode'.
+Create an overlay in BUFFER from range BEG to END. Use overlay's
+\"face\" property as configured in `wcheck-language-data' for
+LANGUAGE."
   (let ((overlay (make-overlay beg end buffer))
         (face (wcheck-query-language-data language 'face t)))
     (dolist (prop `((wcheck-mode . t)
@@ -841,13 +847,15 @@ ulkoista ohjelmaa. Palauttaa t tai nil."
 
 
 (defun wcheck-remove-overlays (&optional beg end)
+  "Remove `wcheck-mode' overlays from current buffer.
+If optional arguments BEG and END exist remove overlays from
+range BEG to END. Otherwise remove all overlays."
   (remove-overlays beg end 'wcheck-mode t))
 
 
 (defun wcheck-remove-overlay-word (overlay after beg end &optional len)
-  "Poistaa overlayn, jonka osoittamaa sanaa muokataan."
+  "Hook for removing overlay which is being edited."
   (unless after
-    ;; Juuri ennen kuin muokkaus alkaa poistetaan overlay.
     (delete-overlay overlay)))
 
 
