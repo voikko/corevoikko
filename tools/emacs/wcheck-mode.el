@@ -225,7 +225,7 @@ This is used when language does not define face."
   "Keymap for `wcheck-mode'.")
 
 
-(defconst wcheck-timer-idle .6
+(defconst wcheck-timer-idle .5
   "`wcheck-mode' idle timer delay (in seconds).")
 
 
