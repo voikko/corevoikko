@@ -315,7 +315,8 @@ information on how to configure Wcheck mode. Interactive command
       (cond
        ((minibufferp (current-buffer))
         ;; This is a minibuffer; stop here.
-        (wcheck-mode 0))
+        (message "Can't use `wcheck-mode' in a minibuffer")
+        (setq wcheck-mode nil))
 
        ((not (wcheck-language-valid-p wcheck-language))
         ;; Not a valid language.
