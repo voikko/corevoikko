@@ -455,12 +455,13 @@ in buffers."
                                                              window)))))
          'nomb t))))
 
-  ;; Start a timer which will mark text in buffers/windows. We pass
-  ;; argument "2" for the timer so that it will run three times.
+  ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
                           (wcheck-current-idle-time-seconds))
                        nil 'wcheck-timer-paint-event
-                       2))
+                       ;; Repeat the timer 3 times after the initial
+                       ;; call:
+                       3))
 
 
 (defun wcheck-timer-paint-event (&optional repeat)
@@ -496,7 +497,7 @@ call. The delay between consecutive calls is defined in variable
          'nomb t))))
 
   ;; If REPEAT is positive integer call this function again after
-  ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the parameter.
+  ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
   (when (and (integerp repeat)
              (> repeat 0))
     (run-with-idle-timer (+ wcheck-timer-idle
