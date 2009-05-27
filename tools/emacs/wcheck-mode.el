@@ -49,7 +49,7 @@
 
 ;;;###autoload
 (defcustom wcheck-language-data nil
-  "Wcheck mode language configuration.
+  "Language configuration for `wcheck-mode'.
 
 Elements of this alist are of the form:
 
