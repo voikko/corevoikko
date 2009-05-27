@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -203,7 +203,7 @@ define @johdin_tAvA := <johdin_tAvA, johdin_ttAvA,
 
 define @teonsanasta_johdettu_nimi_tai_laatusana :=
        <johdin_jA_kantaja, johdin_jA_kulkija, johdin_jA_myyjä, johdin_lUt,
-        johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti,
+        johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti, johdin_ntO,
         johdin_nUt, johdin_O, johdin_Os, johdin_rUt, johdin_stU_juostu,
         johdin_stU_nuolaistu, johdin_sUt, johdin_tAvA, johdin_tAvAinen,
         johdin_tO_leuto, johdin_tO_liitto,
@@ -214,7 +214,7 @@ define @teonsanasta_johdettu_nimi_tai_laatusana :=
 
 define @teonsanasta_johdettu_nimisana :=
        <johdin_jA_kantaja, johdin_jA_kulkija, johdin_jA_myyjä,
-        johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti,
+        johdin_mA, johdin_mA_saama, johdin_nA, johdin_ntA, johdin_nti, johdin_ntO,
         johdin_O, johdin_Os, johdin_tO_leuto, johdin_tO_liitto,
         johdin_U_arvelu, johdin_Us_ksen,
         nimitapa_4>;
@@ -241,4 +241,5 @@ define @nimi_laatusanan_johdin := <johdin_lAinen, johdin_mAinen, johdin_llinen>;
 define @teonsanasta_johdettu_teonsana :=
        <johdin_ellA, johdin_dellA, johdin_hdella, johdin_kellA, johdin_lellA,
         johdin_nellA, johdin_nnellA, johdin_rellA, johdin_tellA,
-        johdin_eskellA, johdin_oitellA, johdin_otellA>;
+        johdin_eskellA, johdin_oitellA, johdin_otellA,
+        johdin_illA>;

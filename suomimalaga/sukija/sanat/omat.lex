@@ -205,7 +205,6 @@
 [perusmuoto: "m:liitto", alku: "m:liit", luokka: nimisana, jatko: <liitto>, äs: a];
 [perusmuoto: "m.liitto", alku: "m.liit", luokka: nimisana, jatko: <liitto>, äs: a]; # Maalaisliitto.
 [perusmuoto: "n:ro", alku: "n:ro", luokka: nimisana, jatko: <arvelu>, äs: a];
-[perusmuoto: "nro", alku: "nro", luokka: nimisana, jatko: <arvelu>, äs: a];
 [perusmuoto: "o:us", alku: "o:u", luokka: nimisana, jatko: <kalleus>, äs: a]; # Oikeus
 [perusmuoto: "oko", alku: "oko", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "p:kirja", alku: "p:kirj", luokka: nimisana, jatko: <kala>, äs: a];
@@ -223,7 +222,12 @@
 
 [perusmuoto: "Arabwel", alku: "Arabwel", luokka: nimi, jatko: <kalsium>, äs: aä];
 [perusmuoto: "Ugudibuu", alku: "Ugudibu", luokka: nimi, jatko: <puu>, äs: a];
-[alku: "timebomb2000", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "Timebomb2000", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "THL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "pm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "dm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "nm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "ns", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [perusmuoto: "Shimo", alku: "Shimo", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "XMOR", alku: "XMOR", luokka: nimisana, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Birdy", alku: "Birdy", luokka: nimi, jatko: <valo>, äs: ä];
@@ -371,6 +375,7 @@
 [alku: "wp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "H5", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "H7", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "H1N1", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "H5N1", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "H5N2", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [perusmuoto: "kuinmyös", alku: "kuinmyös", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -390,7 +395,9 @@
 [perusmuoto: "GaudiaRay", alku: "GaudiaRay", luokka: nimi, jatko: <bébé>, äs: aä];
 [perusmuoto: "Scientist", alku: "Scientist", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Voltaren", alku: "Voltaren", luokka: nimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Aclovir", alku: "Aclovir", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Aclovir", alku: "Aclovir", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Aciclovir", alku: "Aciclovir", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Zovirax", alku: "Zovirax", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Magazine", alku: "Magazine", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Gefilusmehu", alku: "Gefilusmehu", luokka: nimi, jatko: <valo>, äs: a];
 [perusmuoto: "Golla", alku: "Goll", luokka: nimi, jatko: <koira>, äs: a];
@@ -637,7 +644,6 @@
 [perusmuoto: "syysolu", alku: "syysolu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "syytekijä", alku: "syyteki", luokka: nimisana, jatko: <kulkija>, äs: ä];
 [perusmuoto: "tauslaulaja", alku: "tauslaula", luokka: nimisana, jatko: <kantaja>, äs: a];
-[perusmuoto: "säkkärä", alku: "säkkär", luokka: laatusana, jatko: <matala>, äs: ä];
 [perusmuoto: "syyseuraus", alku: "syyseurau", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "jättiläiskoi", alku: "jättiläisko", luokka: nimisana, jatko: <pii>, äs: a];
 [perusmuoto: "brittitee", alku: "brittite", luokka: nimisana, jatko: <tee>, äs: a];
@@ -646,7 +652,6 @@
 [perusmuoto: "kaksoisitsemurha", alku: "kaksoisitsemurh", luokka: nimisana, jatko: <koira>, äs: a];
 [perusmuoto: "jälkeentulevainen", alku: "jälkeentulevai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "kainalo", alku: "kainaloitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "kanslerius", alku: "kansleriu", luokka: nimisana, jatko: <>, äs: a];
 [perusmuoto: "karhikko", alku: "karhik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "sivu", alku: "sivuitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "Pentium", alku: "Pentium", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -656,9 +661,6 @@
 [perusmuoto: "defenestraatio", alku: "defenestr", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "defibrillaatio", alku: "defibrill", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "deflagraatio", alku: "deflagr", luokka: nimisana, jatko: <obligaatio>, äs: a];
-[perusmuoto: "degranulaatio", alku: "degranul", luokka: nimisana, jatko: <obligaatio>, äs: a];
-[perusmuoto: "granulaatio", alku: "granul", luokka: nimisana, jatko: <obligaatio>, äs: a];
-[perusmuoto: "dehydraatio", alku: "dehydr", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "dekompositio", alku: "dekompos", luokka: nimisana, jatko: <traditio>, äs: a];
 [perusmuoto: "deathrock", alku: "deathrock", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "dedusoida", alku: "deduso", luokka: teonsana, jatko: <voida>, äs: a];
@@ -674,8 +676,8 @@
 [perusmuoto: "ilmavoimalainen", alku: "ilmavoimalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "hirviö", alku: "hirviösti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "taajuuksinen", alku: "taajuuksi", luokka: laatusana, jatko: <nainen>, äs: a, tiedot: <ysj>];
-
-[perusmuoto: "demoottinen", alku: "demootti", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "GMail", alku: "GMail", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Scroogle", alku: "Scroogle", luokka: nimi, jatko: <nalle>, äs: a];
 [perusmuoto: "dendrokronologi", alku: "dendrokronolog", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "nomologia", alku: "nomologi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "nomologi", alku: "nomolog", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
@@ -686,8 +688,8 @@
 [perusmuoto: "Deborah", alku: "Deborah", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "deduktoida", alku: "dedukto", luokka: teonsana, jatko: <voida>, äs: a];
 [perusmuoto: "deforestaatio", alku: "deforest", luokka: nimisana, jatko: <obligaatio>, äs: a];
-[perusmuoto: "deindustrialisaatio", alku: "deindustrialis", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "dekomposoida", alku: "dekomposo", luokka: teonsana, jatko: <kanavoida>, äs: a];
+[perusmuoto: "komposoida", alku: "komposo", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "dempata", alku: "demp", luokka: teonsana, jatko: <pompata>, äs: a];
 [perusmuoto: "hansikoida", alku: "hansiko", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "tempukas", alku: "tempuk", luokka: laatusana, jatko: <iäkäs>, äs: a];
@@ -719,14 +721,50 @@
 [perusmuoto: "autentikaattori", alku: "autentikaattor", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "pommari", alku: "pommar", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "autuaaksijulistaminen", alku: "autuaaksijulistami", luokka: nimisana, jatko: <nainen>, äs: a];
-[perusmuoto: "Ollila", alku: "Ollil", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "kuvernööriys", alku: "kuvernööriy", luokka: nimisana, jatko: <kalleus>, äs: ä];
 [perusmuoto: "dominaattori", alku: "dominaattor", luokka: nimisana, jatko: <paperi>, äs: a];
-[perusmuoto: "mccarthyismi", alku: "mccarthyism", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "kultaseni", alku: "kultase", luokka: nimisana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "Panasonic", alku: "Panasonic", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "nutch", alku: "nutch", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Skiftesvik", alku: "Skiftesvik", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Fagan", alku: "Fagan", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Szerb", alku: "Szerb", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Pendragon", alku: "Pendragon", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Mixu", alku: "Mixu", luokka: etunimi, jatko: <valo>, äs: a];
+[perusmuoto: "Miksu", alku: "Miksu", luokka: etunimi, jatko: <valo>, äs: a];
+[perusmuoto: "umpeen", alku: "umpeen", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[alku: "UHF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[perusmuoto: "Long", alku: "Long", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Christie", alku: "Christie", luokka: sukunimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Agatha", alku: "Agath", luokka: etunimi, jatko: <karahka>, äs: a];
+[perusmuoto: "koete", alku: "koet", luokka: nimisana, jatko: <>, äs: a];
+[perusmuoto: "kompensaattori", alku: "kompensaattor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "koketti", alku: "koket", luokka: laatusana, jatko: <tatti>, äs: a];
+[perusmuoto: "kollaboratiivinen", alku: "kollaboratiivi", luokka: laatusana, jatko: <nainen>, äs: ä];
+[perusmuoto: "kollaboraattori", alku: "kollaboraattor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "kollektori", alku: "kollektor", luokka: nimisana, jatko: <paperi>, äs: ä];
+[perusmuoto: "kollimaattori", alku: "kollimaattor", luokka: nimisana, jatko: <paperi>, äs: a];
+[perusmuoto: "kolonisti", alku: "kolonist", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "subversion", alku: "subversion", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Bluetooth", alku: "Bluetooth", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Händel", alku: "Händel", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Georg", alku: "Georg", luokka: etunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "tylsyttää", alku: "tylsyt", luokka: teonsana, jatko: <alittaa>, äs: ä];
+[perusmuoto: "Eniro", alku: "Eniro", luokka: nimi, jatko: <autio>, äs: a];
+[perusmuoto: "FreeDOS", alku: "FreeDOS", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "meroiittinen", alku: "meroiitti", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "pervasiivinen", alku: "pervasiivi", luokka: laatusana, jatko: <nainen>, äs: a];
+
+[perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
+[perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];
+[perusmuoto: "ampulintunen", alku: "ampulintu", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "ampumies", alku: "ampumie", luokka: nimisana, jatko: <mies>, äs: ä];
+[perusmuoto: "ampunaamio", alku: "ampunaamio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "ampuneuvo", alku: "ampuneuvo", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "ampuniekka", alku: "ampuniek", luokka: nimisana, jatko: <haka>, äs: a];
+[perusmuoto: "amputarvike", alku: "amputarvik", luokka: nimisana, jatko: <tarvike>, äs: a];
+[perusmuoto: "ampuvara", alku: "ampuvar", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
+[perusmuoto: "ampuvärkki", alku: "ampuvärk", luokka: nimisana, jatko: <takki>, äs: ä];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

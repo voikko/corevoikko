@@ -2222,7 +2222,7 @@ end;
 
 
 combi_rule laatusanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):
-####define $profile := transmit ("laatusanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):");
+#define $profile := transmit ("laatusanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in @laatusanasta_johdettu_nimisana;
   ? $oikea.luokka in $vasen.($n-1).jatko;
   ? äs_ok ($vasen.($n-1), $oikea);

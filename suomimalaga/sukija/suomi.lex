@@ -1477,6 +1477,9 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 [perusmuoto: "nta", alku: "n", luokka: johdin_ntA, jatko: <kanta>, äs: a, tiedot: <inen>];
 [perusmuoto: "ntä", alku: "n", luokka: johdin_ntA, jatko: <kanta>, äs: ä, tiedot: <inen>];
 
+[perusmuoto: "nto", alku: "n", luokka: johdin_ntO, jatko: <anto>, äs: a, tiedot: <inen>];
+[perusmuoto: "ntö", alku: "n", luokka: johdin_ntO, jatko: <anto>, äs: ä, tiedot: <inen>];
+
 [perusmuoto: "os", alku: "o", luokka: johdin_Os, jatko: <vastaus>, äs: a, tiedot: <inen>];
 [perusmuoto: "ös", alku: "ö", luokka: johdin_Os, jatko: <vastaus>, äs: ä, tiedot: <inen>];
 
@@ -1540,3 +1543,7 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 # Ammo(i)ttaa => ammo(i)tella.
 [perusmuoto: "ella", alku: "", luokka: johdin_otellA, jatko: <aatella>, äs: a];
 [perusmuoto: "ellä", alku: "", luokka: johdin_otellA, jatko: <aatella>, äs: ä];
+
+# Salata => salailla, salaella.
+[perusmuoto: "illa", alku: "", luokka: johdin_illA, jatko: <arvailla>, äs: a];
+[perusmuoto: "illä", alku: "", luokka: johdin_illA, jatko: <arvailla>, äs: ä];

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007, 2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,12 +45,12 @@
 # combination.
 
 
-haluta  haluta  "" t   a   u   n   s   ""
-bingota haluta  "" t   a   o   n   s   ""
-juoruta haluta  "" t   a   u   n   s   "" %salailla("")
-kavuta  haluta  vu vut pua puu vun pus pu
-kummuta haluta  mu mut pua puu mun pus pu %salailla("pu")
-luututa haluta  u  ut  tua tuu un  tus tu
-silputa haluta  u  ut  pua puu un  pus pu
-ryöpytä haluta  y  yt  pyä pyy yn  pys py %salailla("py")
-vivuta  haluta  vu vut pua puu vun pus pu
+haluta  haluta  "" t   a   u   n   s   "" -
+bingota haluta  "" t   a   o   n   s   "" -
+juoruta haluta  "" t   a   u   n   s   "" ""
+kavuta  haluta  vu vut pua puu vun pus pu -
+kummuta haluta  mu mut pua puu mun pus pu pu
+luututa haluta  u  ut  tua tuu un  tus tu -
+silputa haluta  u  ut  pua puu un  pus pu -
+ryöpytä haluta  y  yt  pyä pyy yn  pys py py
+vivuta  haluta  vu vut pua puu vun pus pu -

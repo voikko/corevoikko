@@ -279,6 +279,7 @@ tapaluokka;
   johdin_mA_saama;  #                    Taipuu kuten koira.
   johdin_ntA;       # Valita => vali+nta.
   johdin_nti;       # Voida => voi+nti.
+  johdin_ntO;       # Juontaa => juo+nto.
   johdin_Us_ksen;   # Salata => salaus (salauksen)
   johdin_ittAin;    # Alue => alue+ittain.
 
@@ -330,6 +331,8 @@ tapaluokka;
 
   johdin_oitellA;    # Kirjo(i)ttaa => kirjo(i)tella; i:llinen muoto oikein.
   johdin_otellA;     # Ammo(i)ttaa  => ammo(i)tella; i:tön muoto oikein.
+
+  johdin_illA;       # Salata => salailla, salaella.
 
 aikamuoto;
   kestämä;

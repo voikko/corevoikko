@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -91,6 +91,12 @@ allo_rule generate_allos ($tietue):
   end;
 
 
+  # Tunnistetaan yhdyssanana.
+  #
+  if ($tietue.perusmuoto in <"Itämeri">) then
+    stop;
+  end;
+
   # Paikannimien jälkiliitteet.
   #
   if ($tietue.perusmuoto in <"joki", "järvi",
@@ -109,7 +115,11 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [etunimen_jälkiliite: yes];
   end;
 
-  if ($tietue.perusmuoto in <"ala", "bitti", "kallas", "malli", "terve">) then
+  if ($tietue.perusmuoto in <"ala", "bitti", "kallas", "malli", "pölyte", "terve">) then
+    $tietue :=+ [tiedot: <ei_inen>];
+  end;
+
+  if ($tietue.perusmuoto in <"eosinofiili", "klooni">) then
     $tietue :=+ [tiedot: <ei_inen>];
   end;
 
@@ -4381,8 +4391,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (salata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", A($tietue)+A($tietue), A($tietue)+"n", A($tietue)+"s", A($tietue))
-                 + salailla ($tietue, A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", A($tietue)+A($tietue), A($tietue)+"n", A($tietue)+"s", A($tietue), A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4391,8 +4400,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (lobata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "b"+A($tietue)+A($tietue), A($tietue)+"n", "b"+A($tietue)+"s", "b"+A($tietue))
-                 + salailla ($tietue, "b"+A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "b"+A($tietue)+A($tietue), A($tietue)+"n", "b"+A($tietue)+"s", "b"+A($tietue), "b"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4401,8 +4409,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (digata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "g"+A($tietue)+A($tietue), A($tietue)+"n", "g"+A($tietue)+"s", "g"+A($tietue))
-                 + salailla ($tietue, "g"+A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "g"+A($tietue)+A($tietue), A($tietue)+"n", "g"+A($tietue)+"s", "g"+A($tietue), "g"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4411,8 +4418,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (hangata in $tietue.jatko) then
-    choose $i in salata ($tietue, "g"+A($tietue), "g"+A($tietue)+"t", "k"+A($tietue)+A($tietue), "g"+A($tietue)+"n", "k"+A($tietue)+"s", "k"+A($tietue))
-                 + salailla ($tietue, "k"+A($tietue));
+    choose $i in salata ($tietue, "g"+A($tietue), "g"+A($tietue)+"t", "k"+A($tietue)+A($tietue), "g"+A($tietue)+"n", "k"+A($tietue)+"s", "k"+A($tietue), "k"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4421,8 +4427,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (huiskata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue), A($tietue), A($tietue), A($tietue), A($tietue))
-                 + salailla ($tietue, A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue), A($tietue), A($tietue), A($tietue), A($tietue), A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4431,8 +4436,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kammata in $tietue.jatko) then
-    choose $i in salata ($tietue, "m"+A($tietue), "m"+A($tietue)+"t", "p"+A($tietue)+A($tietue), "m"+A($tietue)+"n", "p"+A($tietue)+"s", "p"+A($tietue))
-                 + salailla ($tietue, "p"+A($tietue));
+    choose $i in salata ($tietue, "m"+A($tietue), "m"+A($tietue)+"t", "p"+A($tietue)+A($tietue), "m"+A($tietue)+"n", "p"+A($tietue)+"s", "p"+A($tietue), "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4441,8 +4445,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kelvata in $tietue.jatko) then
-    choose $i in salata ($tietue, "v"+A($tietue), "v"+A($tietue)+"t", "p"+A($tietue)+A($tietue), "v"+A($tietue)+"n", "p"+A($tietue)+"s", "p"+A($tietue))
-                 + salailla ($tietue, "p"+A($tietue));
+    choose $i in salata ($tietue, "v"+A($tietue), "v"+A($tietue)+"t", "p"+A($tietue)+A($tietue), "v"+A($tietue)+"n", "p"+A($tietue)+"s", "p"+A($tietue), "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4451,8 +4454,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kerrata in $tietue.jatko) then
-    choose $i in salata ($tietue, "r"+A($tietue), "r"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "r"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue))
-                 + salailla ($tietue, "t"+A($tietue));
+    choose $i in salata ($tietue, "r"+A($tietue), "r"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "r"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue), "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4461,7 +4463,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kivetä in $tietue.jatko) then
-    choose $i in salata ($tietue, "", "t", A($tietue), "n", "s", "");
+    choose $i in salata ($tietue, "", "t", A($tietue), "n", "s", "", "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4470,8 +4472,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kuitata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "t"+A($tietue)+A($tietue), A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue))
-                 + salailla ($tietue, "t"+A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "t"+A($tietue)+A($tietue), A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue), "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4480,8 +4481,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (ladata in $tietue.jatko) then
-    choose $i in salata ($tietue, "d"+A($tietue), "d"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "d"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue))
-                 + salailla ($tietue, "t"+A($tietue));
+    choose $i in salata ($tietue, "d"+A($tietue), "d"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "d"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue), "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4490,8 +4490,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (pakata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "k"+A($tietue)+A($tietue), A($tietue)+"n", "k"+A($tietue)+"s", "k"+A($tietue))
-                 + salailla ($tietue, "k"+A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "k"+A($tietue)+A($tietue), A($tietue)+"n", "k"+A($tietue)+"s", "k"+A($tietue), "k"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4500,8 +4499,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (pompata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "p"+A($tietue)+A($tietue), A($tietue)+"n", "p"+A($tietue)+"s", "p"+A($tietue))
-                 + salailla ($tietue, "p"+A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "p"+A($tietue)+A($tietue), A($tietue)+"n", "p"+A($tietue)+"s", "p"+A($tietue), "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4510,7 +4508,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (saneerata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", A($tietue)+A($tietue), A($tietue)+"n", A($tietue)+"s", A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", A($tietue)+A($tietue), A($tietue)+"n", A($tietue)+"s", A($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4519,8 +4517,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (suunnata in $tietue.jatko) then
-    choose $i in salata ($tietue, "n"+A($tietue), "n"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "n"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue))
-                 + salailla ($tietue, "t"+A($tietue));
+    choose $i in salata ($tietue, "n"+A($tietue), "n"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "n"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue), "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4529,8 +4526,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (taata in $tietue.jatko) then
-    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "k"+A($tietue)+A($tietue), A($tietue)+"n", "k"+A($tietue)+"s", "k"+A($tietue))
-                 + salailla ($tietue, "k"+A($tietue));
+    choose $i in salata ($tietue, A($tietue), A($tietue)+"t", "k"+A($tietue)+A($tietue), A($tietue)+"n", "k"+A($tietue)+"s", "k"+A($tietue), "k"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4539,8 +4535,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (vallata in $tietue.jatko) then
-    choose $i in salata ($tietue, "l"+A($tietue), "l"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "l"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue))
-                 + salailla ($tietue, "t"+A($tietue));
+    choose $i in salata ($tietue, "l"+A($tietue), "l"+A($tietue)+"t", "t"+A($tietue)+A($tietue), "l"+A($tietue)+"n", "t"+A($tietue)+"s", "t"+A($tietue), "t"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4666,8 +4661,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kohota in $tietue.jatko) then
-    choose $i in kohota ($tietue, "", "t", A($tietue), O($tietue), "n", "s", O($tietue))
-                 + salailla ($tietue, "");
+    choose $i in kohota ($tietue, "", "t", A($tietue), O($tietue), "n", "s", O($tietue), "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4676,8 +4670,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (irrota in $tietue.jatko) then
-    choose $i in kohota ($tietue, "r"+O($tietue), "r"+O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), "r"+O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue))
-                 + salailla ($tietue, "t"+O($tietue));
+    choose $i in kohota ($tietue, "r"+O($tietue), "r"+O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), "r"+O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue), "t"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4686,8 +4679,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (laota in $tietue.jatko) then
-    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "k"+O($tietue)+A($tietue), "k"+O($tietue)+O($tietue), O($tietue)+"n", "k"+O($tietue)+"s", "k"+O($tietue))
-                 + salailla ($tietue, "k"+O($tietue));
+    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "k"+O($tietue)+A($tietue), "k"+O($tietue)+O($tietue), O($tietue)+"n", "k"+O($tietue)+"s", "k"+O($tietue), "k"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4696,7 +4688,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (saota in $tietue.jatko) then
-    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "k"+O($tietue)+A($tietue), "k"+O($tietue)+O($tietue), O($tietue)+"n", "k"+O($tietue)+"s", "k"+O($tietue));
+    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "k"+O($tietue)+A($tietue), "k"+O($tietue)+O($tietue), O($tietue)+"n", "k"+O($tietue)+"s", "k"+O($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4705,8 +4697,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kadota in $tietue.jatko) then
-    choose $i in kohota ($tietue, "d"+O($tietue), "d"+O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), "d"+O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue))
-                 + salailla ($tietue, "t"+O($tietue));
+    choose $i in kohota ($tietue, "d"+O($tietue), "d"+O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), "d"+O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue), "t"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4715,7 +4706,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (puota in $tietue.jatko) then
-    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue));
+    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4724,8 +4715,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kimmota in $tietue.jatko) then
-    choose $i in kohota ($tietue, "m"+O($tietue), "m"+O($tietue)+"t", "p"+O($tietue)+A($tietue), "p"+O($tietue)+O($tietue), "m"+O($tietue)+"n", "p"+O($tietue)+"s", "p"+O($tietue))
-                 + salailla ($tietue, "p"+O($tietue));
+    choose $i in kohota ($tietue, "m"+O($tietue), "m"+O($tietue)+"t", "p"+O($tietue)+A($tietue), "p"+O($tietue)+O($tietue), "m"+O($tietue)+"n", "p"+O($tietue)+"s", "p"+O($tietue), "p"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4734,8 +4724,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (lingota in $tietue.jatko) then
-    choose $i in kohota ($tietue, "g"+O($tietue), "g"+O($tietue)+"t", "k"+O($tietue)+A($tietue), "k"+O($tietue)+O($tietue), "g"+O($tietue)+"n", "k"+O($tietue)+"s", "k"+O($tietue))
-                 + salailla ($tietue, "k"+O($tietue));
+    choose $i in kohota ($tietue, "g"+O($tietue), "g"+O($tietue)+"t", "k"+O($tietue)+A($tietue), "k"+O($tietue)+O($tietue), "g"+O($tietue)+"n", "k"+O($tietue)+"s", "k"+O($tietue), "k"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4744,8 +4733,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (netota in $tietue.jatko) then
-    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue))
-                 + salailla ($tietue, "t"+O($tietue));
+    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "t"+O($tietue)+A($tietue), "t"+O($tietue)+O($tietue), O($tietue)+"n", "t"+O($tietue)+"s", "t"+O($tietue), "t"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4754,8 +4742,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (siivota in $tietue.jatko) then
-    choose $i in siivota ($tietue, "", "t", A($tietue), O($tietue), "n", "s")
-                 + salailla ($tietue, "");
+    choose $i in siivota ($tietue, "", "t", A($tietue), O($tietue), "n", "s", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4764,8 +4751,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (turvota in $tietue.jatko) then
-    choose $i in kohota ($tietue, "v"+O($tietue), "v"+O($tietue)+"t", "p"+O($tietue)+A($tietue), "p"+O($tietue)+O($tietue), "v"+O($tietue)+"n", "p"+O($tietue)+"s", "p"+O($tietue))
-                 + salailla ($tietue, "p"+O($tietue));
+    choose $i in kohota ($tietue, "v"+O($tietue), "v"+O($tietue)+"t", "p"+O($tietue)+A($tietue), "p"+O($tietue)+O($tietue), "v"+O($tietue)+"n", "p"+O($tietue)+"s", "p"+O($tietue), "p"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4774,8 +4760,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (upota in $tietue.jatko) then
-    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "p"+O($tietue)+A($tietue), "p"+O($tietue)+O($tietue), O($tietue)+"n", "p"+O($tietue)+"s", "p"+O($tietue))
-                 + salailla ($tietue, "p"+O($tietue));
+    choose $i in kohota ($tietue, O($tietue), O($tietue)+"t", "p"+O($tietue)+A($tietue), "p"+O($tietue)+O($tietue), O($tietue)+"n", "p"+O($tietue)+"s", "p"+O($tietue), "p"+O($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4784,7 +4769,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (haluta in $tietue.jatko) then
-    choose $i in haluta ($tietue, "", "t", A($tietue), U($tietue), "n", "s", "");
+    choose $i in haluta ($tietue, "", "t", A($tietue), U($tietue), "n", "s", "", "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4793,7 +4778,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (bingota in $tietue.jatko) then
-    choose $i in haluta ($tietue, "", "t", A($tietue), O($tietue), "n", "s", "");
+    choose $i in haluta ($tietue, "", "t", A($tietue), O($tietue), "n", "s", "", "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4802,8 +4787,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (juoruta in $tietue.jatko) then
-    choose $i in haluta ($tietue, "", "t", A($tietue), U($tietue), "n", "s", "")
-                 + salailla ($tietue, "");
+    choose $i in haluta ($tietue, "", "t", A($tietue), U($tietue), "n", "s", "", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4812,7 +4796,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kavuta in $tietue.jatko) then
-    choose $i in haluta ($tietue, "v"+U($tietue), "v"+U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), "v"+U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue));
+    choose $i in haluta ($tietue, "v"+U($tietue), "v"+U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), "v"+U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4821,8 +4805,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kummuta in $tietue.jatko) then
-    choose $i in haluta ($tietue, "m"+U($tietue), "m"+U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), "m"+U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue))
-                 + salailla ($tietue, "p"+U($tietue));
+    choose $i in haluta ($tietue, "m"+U($tietue), "m"+U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), "m"+U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue), "p"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4831,7 +4814,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (luututa in $tietue.jatko) then
-    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "t"+U($tietue)+A($tietue), "t"+U($tietue)+U($tietue), U($tietue)+"n", "t"+U($tietue)+"s", "t"+U($tietue));
+    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "t"+U($tietue)+A($tietue), "t"+U($tietue)+U($tietue), U($tietue)+"n", "t"+U($tietue)+"s", "t"+U($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4840,7 +4823,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (silputa in $tietue.jatko) then
-    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue));
+    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4849,8 +4832,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (ryöpytä in $tietue.jatko) then
-    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue))
-                 + salailla ($tietue, "p"+U($tietue));
+    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue), "p"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4859,7 +4841,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (vivuta in $tietue.jatko) then
-    choose $i in haluta ($tietue, "v"+U($tietue), "v"+U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), "v"+U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue));
+    choose $i in haluta ($tietue, "v"+U($tietue), "v"+U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), "v"+U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4868,8 +4850,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (palata in $tietue.jatko) then
-    choose $i in palata ($tietue, A($tietue), A($tietue)+"t", A($tietue)+A($tietue), A($tietue)+"n", A($tietue)+"j"+A($tietue), A($tietue)+"s", A($tietue))
-                 + salailla ($tietue, A($tietue));
+    choose $i in palata ($tietue, A($tietue), A($tietue)+"t", A($tietue)+A($tietue), A($tietue)+"n", A($tietue)+"j"+A($tietue), A($tietue)+"s", A($tietue), A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4887,8 +4868,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (hylätä in $tietue.jatko) then
-    choose $i in palata ($tietue, A($tietue), A($tietue)+"t", "k"+A($tietue)+A($tietue), A($tietue)+"n", "k"+A($tietue)+"j"+A($tietue), "k"+A($tietue)+"s", "k"+A($tietue))
-                 + salailla ($tietue, "k"+A($tietue));
+    choose $i in palata ($tietue, A($tietue), A($tietue)+"t", "k"+A($tietue)+A($tietue), A($tietue)+"n", "k"+A($tietue)+"j"+A($tietue), "k"+A($tietue)+"s", "k"+A($tietue), "k"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4897,8 +4877,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (levätä in $tietue.jatko) then
-    choose $i in palata ($tietue, "v"+A($tietue), "v"+A($tietue)+"t", "p"+A($tietue)+A($tietue), "v"+A($tietue)+"n", "p"+A($tietue)+"j"+A($tietue), "p"+A($tietue)+"s", "p"+A($tietue))
-                 + salailla ($tietue, "p"+A($tietue));
+    choose $i in palata ($tietue, "v"+A($tietue), "v"+A($tietue)+"t", "p"+A($tietue)+A($tietue), "v"+A($tietue)+"n", "p"+A($tietue)+"j"+A($tietue), "p"+A($tietue)+"s", "p"+A($tietue), "p"+A($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4907,7 +4886,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (varata in $tietue.jatko) then
-    choose $i in palata ($tietue, "r"+A($tietue), "r"+A($tietue)+"t", "r"+A($tietue)+A($tietue), "r"+A($tietue)+"n", "r"+A($tietue)+"j"+A($tietue), "r"+A($tietue)+"s", "r"+A($tietue));
+    choose $i in palata ($tietue, "r"+A($tietue), "r"+A($tietue)+"t", "r"+A($tietue)+A($tietue), "r"+A($tietue)+"n", "r"+A($tietue)+"j"+A($tietue), "r"+A($tietue)+"s", "r"+A($tietue), "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -13658,7 +13637,7 @@ subrule kevetä ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
 end;
-subrule salata ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
+subrule salata ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_illA):
   return taivutuskaava ($tietue,
                         [nimitapa_1_tA: <<$param01, <>>>,
                          nimitapa_2: <<$param02, <>>>,
@@ -13698,6 +13677,7 @@ subrule salata ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kantaja: <<$param03, <>>>,
                          johdin_Us_ksen: <<$param06, <>>>,
+                         johdin_illA: <<$johdin_illA, <>>>,
                          johdin_vA: <<$param03, <>>>,
                          johdin_vAinen: <<$param03, <>>>,
                          johdin_ttU: <<$param01, <>>>,
@@ -13832,7 +13812,7 @@ subrule selvitä ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
 end;
-subrule kohota ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
+subrule kohota ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_illA):
   return taivutuskaava ($tietue,
                         [nimitapa_1_tA: <<$param01, <>>>,
                          nimitapa_2: <<$param02, <>>>,
@@ -13872,6 +13852,7 @@ subrule kohota ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kantaja: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ntA: <<$param01, <>>>,
+                         johdin_illA: <<$johdin_illA, <>>>,
                          johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttU: <<$param01, <>>>,
@@ -13883,7 +13864,7 @@ subrule kohota ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
 end;
-subrule siivota ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
+subrule siivota ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $johdin_illA):
   return taivutuskaava ($tietue,
                         [nimitapa_1_tA: <<$param01, <>>>,
                          nimitapa_2: <<$param02, <>>>,
@@ -13924,6 +13905,7 @@ subrule siivota ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_jA_kantaja: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_Us_ksen: <<$param01, <>>>,
                          johdin_ntA: <<$param01, <>>>,
+                         johdin_illA: <<$johdin_illA, <>>>,
                          johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttU: <<$param01, <>>>,
@@ -13935,7 +13917,7 @@ subrule siivota ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
 end;
-subrule haluta ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
+subrule haluta ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_illA):
   return taivutuskaava ($tietue,
                         [nimitapa_1_tA: <<$param01, <>>>,
                          nimitapa_2: <<$param02, <>>>,
@@ -13974,6 +13956,7 @@ subrule haluta ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_kielto: <<$param02, <>>>,
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param03, <>>, <$param04, <ei_voikko>>>,
+                         johdin_illA: <<$johdin_illA, <>>>,
                          johdin_vA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_vAinen: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttU: <<$param01, <>>>,
@@ -14035,7 +14018,7 @@ subrule hyljätä ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
 end;
-subrule palata ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
+subrule palata ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07, $johdin_illA):
   return taivutuskaava ($tietue,
                         [nimitapa_1_tA: <<$param01, <>>>,
                          nimitapa_2: <<$param02, <>>>,
@@ -14075,6 +14058,7 @@ subrule palata ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          käskytapa_ttA: <<$param01, <>>>,
                          johdin_jA_kantaja: <<$param03, <>>>,
                          johdin_Us_ksen: <<$param07, <>>>,
+                         johdin_illA: <<$johdin_illA, <>>>,
                          johdin_vA: <<$param03, <>>>,
                          johdin_vAinen: <<$param03, <>>>,
                          johdin_ttU: <<$param01, <>>>,
@@ -14428,6 +14412,7 @@ subrule olla ($tietue, $param01, $param02, $param03, $param04):
                          johdin_tU_lU_oltu: <<$param01, <>>>]);
 end;
 
+
 # $sanatietue1 Sanastosta (tiedostosta *.lex) luettu tietue.
 # $lisä        Merkkijono, joka lisätään sanan alkuosaan ennen sijapäätteitä.
 #              Esimerkiksi sanan valkoinen alkuosa on valkoi.
@@ -14555,20 +14540,19 @@ subrule taivutuskaava ($tietue, $taivutus):
     define $ellA := ($taivutus.johdin_ellA.1).1;
     if ($ellA /= "") then
       define $johdin_ellA := "johdin_" + $ellA + "ellA";
-#      define $a := transmit ($tietue);
-#      define $b := transmit ($taivutus);
-#      define $c := transmit ($johdin_ellA);
-#      define $d := transmit ("<>");
-
       $taivutus :=- johdin_ellA;
       $taivutus :=+ [johdin_CellA($ella): <<"", <>>>]; 
-
-#      define $aa := transmit ($tietue.perusmuoto);
-#      define $ab := transmit ($taivutus.johdin_ellA);
-#      define $ac := transmit ($ellA);
-#      define $ad := transmit (<$taivutus>);
-#      define $aö := transmit ("<>");
    end;
+  end;
+
+  # Jos johdin_illA = "-", sanalla ei ole illA-johdinta.
+  # On esim. salata => salailla, mutta ei saneerata => .
+  #
+  if (($tietue.luokka = teonsana) and ($taivutus.johdin_illA /= nil)) then
+    define $illA := ($taivutus.johdin_illA.1).1;
+    if ($illA = "-") then
+      $taivutus :=- johdin_illA;
+    end;
   end;
 
   # Poistetaan liput.

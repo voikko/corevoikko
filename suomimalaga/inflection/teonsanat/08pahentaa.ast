@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2008-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -46,4 +46,4 @@
 
 
 pahentaa pahentaa ta ne na s n t  %pahentua("t","n")
-juontaa  juontaa  ta ne na s n t  %pahentua("t","n") %juonto
+juontaa  juontaa  ta ne na s n t  %pahentua("t","n")  %juonto

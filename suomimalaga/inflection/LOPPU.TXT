@@ -1,3 +1,4 @@
+
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
@@ -172,20 +173,19 @@ subrule taivutuskaava ($tietue, $taivutus):
     define $ellA := ($taivutus.johdin_ellA.1).1;
     if ($ellA /= "") then
       define $johdin_ellA := "johdin_" + $ellA + "ellA";
-#      define $a := transmit ($tietue);
-#      define $b := transmit ($taivutus);
-#      define $c := transmit ($johdin_ellA);
-#      define $d := transmit ("<>");
-
       $taivutus :=- johdin_ellA;
       $taivutus :=+ [johdin_CellA($ella): <<"", <>>>]; 
-
-#      define $aa := transmit ($tietue.perusmuoto);
-#      define $ab := transmit ($taivutus.johdin_ellA);
-#      define $ac := transmit ($ellA);
-#      define $ad := transmit (<$taivutus>);
-#      define $aö := transmit ("<>");
    end;
+  end;
+
+  # Jos johdin_illA = "-", sanalla ei ole illA-johdinta.
+  # On esim. salata => salailla, mutta ei saneerata => .
+  #
+  if (($tietue.luokka = teonsana) and ($taivutus.johdin_illA /= nil)) then
+    define $illA := ($taivutus.johdin_illA.1).1;
+    if ($illA = "-") then
+      $taivutus :=- johdin_illA;
+    end;
   end;
 
   # Poistetaan liput.

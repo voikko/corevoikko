@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,8 +45,8 @@
 # combination.
 
 
-palata   palata   a  at  aa  an  aja  as   a          %salailla("a")
+palata   palata   a  at  aa  an  aja  as   a   a
 hyljätä  hyljätä  jä jät kää jän jää  käjä käs jäs k
-hylätä   palata   ä  ät  kää än  käjä käs  kä         %salailla("kä")
-levätä   palata   vä vät pää vän päjä päs  pä         %salailla("pä")
-varata   palata   ra rat raa ran raja ras  ra
+hylätä   palata   ä  ät  kää än  käjä käs  kä  kä
+levätä   palata   vä vät pää vän päjä päs  pä  pä
+varata   palata   ra rat raa ran raja ras  ra  -

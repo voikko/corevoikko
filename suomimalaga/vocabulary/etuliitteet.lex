@@ -247,7 +247,7 @@
 [perusmuoto: "sovinnais", alku: "sovinnais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "squash-", alku: "squash-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "suhu", alku: "suhu", luokka: etuliite, jatko: @eln, äs: aä];
-[perusmuoto: "super", alku: "super", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "super", alku: "super", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "suur", alku: "suur", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -271,7 +271,7 @@
 [perusmuoto: "ulko", alku: "ulko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "ulos", alku: "ulos", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "ultra", alku: "ultra", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "umpi", alku: "umpi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "uppo", alku: "uppo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "uudelleen", alku: "uudelleen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];

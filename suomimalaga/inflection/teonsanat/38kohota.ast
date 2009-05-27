@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,15 +45,15 @@
 # combination.
 
 
-kohota   kohota   "" t   a   o   n   s   o  %salailla("")
-irrota   kohota   ro rot toa too ron tos to %salailla("to")
-laota    kohota   o  ot  koa koo on  kos ko %salailla("ko")
-saota    kohota   o  ot  koa koo on  kos ko
-kadota   kohota   do dot toa too don tos to %salailla("to")
-puota    kohota   o  ot  toa too on  tos to
-kimmota  kohota   mo mot poa poo mon pos po %salailla("po")
-lingota  kohota   go got koa koo gon kos ko %salailla("ko")
-netota   kohota   o  ot  toa too on  tos to %salailla("to")
-siivota  siivota  "" t   a   o   n   s      %salailla("")
-turvota  kohota   vo vot poa poo von pos po %salailla("po")
-upota    kohota   o  ot  poa poo on  pos po %salailla("po")
+kohota   kohota   "" t   a   o   n   s   o  ""
+irrota   kohota   ro rot toa too ron tos to to
+laota    kohota   o  ot  koa koo on  kos ko ko
+saota    kohota   o  ot  koa koo on  kos ko -
+kadota   kohota   do dot toa too don tos to to
+puota    kohota   o  ot  toa too on  tos to -
+kimmota  kohota   mo mot poa poo mon pos po po
+lingota  kohota   go got koa koo gon kos ko ko
+netota   kohota   o  ot  toa too on  tos to to
+siivota  siivota  "" t   a   o   n   s   ""
+turvota  kohota   vo vot poa poo von pos po po
+upota    kohota   o  ot  poa poo on  pos po po

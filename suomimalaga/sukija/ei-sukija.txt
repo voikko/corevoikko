@@ -1,6 +1,7 @@
 # Nämä pitäisi merkitä Joukahaiseen lipulla "ei kuulu ideksointisanastoon",
 # mutta tähän tiedostoon laittaminen on kätevämpää, jos Internet-yhteys
 # on liian hidas. (-:
+Alppi
 Aalto
 Aaltonen
 Aamu
@@ -41,6 +42,7 @@ amerikansalaatti
 amerikansuomalainen
 amerikansuomi
 ammattilainen
+antikolinerginen
 apulainen
 Arabia
 arastella
@@ -60,6 +62,7 @@ Autio
 autoimmuunisairaus
 avauma
 avautuma
+beetahemolyyttinen
 brittiläinen
 Bulgaria
 Burma
@@ -79,6 +82,7 @@ ennätys
 Eno
 ensikertalainen
 entisenlainen
+erisuuruus
 eritasoliittymä
 erittyä
 eritys
@@ -112,6 +116,7 @@ haarautuma
 haaroittua
 haaroitus
 halkeama
+Halme
 halpatyö
 halutunlainen
 Hamina
@@ -140,6 +145,7 @@ herraskartano
 herrasmies
 herraspoika
 herrasväki
+herätys
 hienorakenteinen
 hieroutuma
 hiertymä
@@ -268,6 +274,7 @@ keskittymä
 kestitys
 kesyhanhi
 kesykyyhky
+kesyrotta
 Keto
 kevytjukurtti
 kevytmetalli
@@ -301,6 +308,7 @@ Koitto
 Koivisto
 Koivu
 Kokkari
+Kokoomus
 kokoontuma
 kokoutuma
 Kolari
@@ -360,6 +368,7 @@ Kylmäkoski
 kyläläinen
 kymmenvuotinen
 Kytö
+kyyditys
 kyyhkyläinen
 Kähäräinen
 Kärkistensalmi
@@ -418,6 +427,7 @@ laulattaa
 lausuma
 Lavia
 Lehtimäki
+Lehtinen
 Lehto
 Lehtovaara
 leikkaus
@@ -490,6 +500,7 @@ maailmanympärimatka
 maallistua
 maattojohdin
 maattojohto
+madeirankeiju
 Maila
 majoitus
 malaijilainen
@@ -530,6 +541,7 @@ myrkytys
 myynti
 myöntyä
 Mäkeläinen
+Mäki
 Mäkinen
 mäkitupalainen
 mökkiläinen
@@ -556,6 +568,7 @@ oikeanlainen
 oikeistolainen
 oikeus
 Oiva
+omaisuus
 omanlainen
 opettajainen
 opetus
@@ -608,10 +621,12 @@ poisto
 poistuma
 Pokka
 poltto
+polymyalgia
 pommitus
 populaarikulttuuri
 Portugali
 Posti
+primaaripreventio
 Pudasjärvi
 puhkeama
 puhuma
@@ -624,12 +639,15 @@ puristuma
 putoama
 Pyhäjoki
 Pyhäjärvi
+pystytys
 pysyttäytyä
 pysähdys
 Päivä
 päällekirjoitus
 päästö
 pöhöttymä
+pölyttyä
+pölytys
 raakalainen
 Raitio
 rajuilma
@@ -670,6 +688,7 @@ Ruusu
 ryhmittymä
 ryhmittyä
 ryvettyä
+räpytellä
 Rönkkö
 saarelainen
 Saari
@@ -694,6 +713,7 @@ Seinäjoki
 sekasortoinen
 selittyä
 seminaarilainen
+sentraalinen
 Seppä
 Siikajoki
 Siikalatva
@@ -731,6 +751,7 @@ Suonenjoki
 supistuma
 surkastuma
 Suutari
+Suvi
 syntymä
 syöpymä
 syöttö
@@ -739,6 +760,7 @@ säteisliike
 Säteri
 sätkytellä
 säästö
+säätyläinen
 säätö
 taajuus
 taantuma
@@ -817,12 +839,17 @@ uloskäytävä
 ulosotto
 ulottua
 ulottuma
+umpeenkasvu
+umpeenmeno
 Unelma
 uniikkikappale
 Unkari
 uppoama
+Urho
 uurteisvalas
 uusiseelantilainen
+Uusitalo
+Vaajakoski
 vaatetus
 vahvuus
 vaikutus
@@ -925,8 +952,11 @@ yhteensovitus
 yhteensulautuminen
 yhteentörmäys
 yhteenveto
+yhtenäiskulttuuri
 yhtymä
+Yleisradio
 ylempiarvoinen
+Ylinen
 yliopistolainen
 Ylämaa
 ylösnoussut
