@@ -119,6 +119,8 @@ Erkki-eno
 Ruotsin-matka
 Kaakkois-Suomi
 Pohjois-Sveitsi
+Pohjois-Israel
+!pohjois-Israel
 !Erkkieno
 !enoerkki
 !janetten

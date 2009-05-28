@@ -1,3 +1,8 @@
+2009-05-28 Harri Pitkänen <hatapitk@iki.fi>
+
+	* SPELL_FAILED from "pop-opisto" check should not be used as
+	  the final result for words like "Pohjois-Israel".
+
 2009-05-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Explicitly set stream orientation in voikkospell, otherwise

@@ -129,7 +129,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			    towlower(word[leading_len + 1]) == vctest1 &&
 			    towlower(word[leading_len + 2]) == vctest2) {
 				spellresult spres = voikko_spell_with_priority(buffer, len - 1, 0);
-				if (result == SPELL_FAILED || result > spres) {
+				if (spres != SPELL_FAILED && (result == SPELL_FAILED || result > spres)) {
 					delete[] buffer;
 					return spres;
 				}
@@ -323,23 +323,31 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	    (caps == CT_ALL_UPPER && !voikko_options.accept_all_uppercase)) {
 		wcsncpy(buffer, nword, nchars);
 		buffer[0] = towlower(buffer[0]);
-		if (voikko_options.accept_missing_hyphens)
+		if (voikko_options.accept_missing_hyphens) {
 			sres = voikko_do_spell_ignore_hyphens(buffer, nchars);
-		else
+		}
+		else {
 			sres = voikko_do_spell(buffer, nchars);
+		}
 		if (sres == SPELL_OK ||
-		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
+		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0]))) {
 			result = VOIKKO_SPELL_OK;
-		else result = VOIKKO_SPELL_FAILED;
+		}
+		else {
+			result = VOIKKO_SPELL_FAILED;
+		}
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
-			if (voikko_options.accept_missing_hyphens)
+			if (voikko_options.accept_missing_hyphens) {
 				sres = voikko_do_spell_ignore_hyphens(buffer, nchars);
-			else
+			}
+			else {
 				sres = voikko_do_spell(buffer, nchars);
+			}
 			if (sres == SPELL_OK ||
-			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0])))
+			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0]))) {
 				result = VOIKKO_SPELL_OK;
+			}
 		}
 		delete[] nword;
 		delete[] buffer;
