@@ -22,13 +22,13 @@ include "poikkeavat.lex";
 include "olla-ei.lex";
 include "erikoissanat.lex";
 include "lukusanat.lex";
-include "yhdyssanat.lex";
 include "lainen.lex";
 include "taivutustäydennykset.lex";
 include "huudahdussanat.lex";
 include "sidesanat.lex";
 
 include "suomi.lex";
+include "yhdyssanat.lex";
 
 include "main.lex";
 

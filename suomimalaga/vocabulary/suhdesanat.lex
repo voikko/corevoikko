@@ -22,7 +22,8 @@
 [perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alaitse", alku: "alaitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "ammolla", alku: "ammo", luokka: suhdesana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: a];
+[perusmuoto: "ammolla", alku: "ammollaan", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ammolla", alku: "ammolleen", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "asti", alku: "asti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "de", alku: "de", luokka: suhdesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];

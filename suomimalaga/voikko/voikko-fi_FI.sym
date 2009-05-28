@@ -119,14 +119,12 @@ sija;
   sisätulento_isin;  # Kaunih+isin (kauni+isiin).
   sisätulento_nne;   # Sinne, tänne, tuonne, jonne (<=joka).
 
-  ulko_olento_llA;
-  ulko_olento_illA;
+  ulkopaikallissija_llA;
 
-  ulkoeronto_ltA;
-  ulkoeronto_iltA;
-
-  ulkotulento_lle;
-  ulkotulento_ille;
+  ulkopaikallissija_illA;
+    ulko_olento_illA;
+    ulkoeronto_iltA;
+    ulkotulento_ille;
 
   vajanto_ttA;
   vajanto_ittA;

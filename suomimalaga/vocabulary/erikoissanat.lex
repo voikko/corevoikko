@@ -44,141 +44,141 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "tuta", alku: "tuten", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_ys, ei_voikko>];
 
 
-[perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jotakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jonakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jossakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jostakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "johonkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jollakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joltakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jollekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jottakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jotakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jonakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jossakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jostakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "johonkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jollakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joltakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jollekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jottakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a];
 
-[perusmuoto: "jokin", alku: "jotkin", luokka: asemosana, sija: nimentö_t, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joittenkin", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joidenkin", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joitakin", luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joinakin", luokka: asemosana, sija: olento_inA, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joiksikin", luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joissakin", luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joistakin", luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joihinkin", luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joillakin", luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joiltakin", luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joillekin", luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joittakin", luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jotkin", luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joittenkin", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joidenkin", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joitakin", luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joinakin", luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joiksikin", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joissakin", luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joistakin", luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joihinkin", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joillakin", luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joiltakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joillekin", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joittakin", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: <loppu>, äs: a];
 
 
-[perusmuoto: "jokin", alku: "jotain", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "jonain", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "jossain", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "jostain", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "jollain", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joltain", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "jottain", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "jotain", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "jonain", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "jossain", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "jostain", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "jollain", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joltain", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "jottain", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a];
 
-[perusmuoto: "jokin", alku: "joitain", luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joinain", luokka: asemosana, sija: olento_inA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joissain", luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joistain", luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joillain", luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joiltain", luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joittain", luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: @loppu, äs: a];
-
-######################################################
-
-[perusmuoto: "joku", alku: "joku", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jonkun", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "jotakuta", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "joku", alku: "jonakuna", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppp=pppp"];
-[perusmuoto: "joku", alku: "joksikuksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "jossakussa", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "jostakusta", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "johonkuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "jollakulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "joltakulta", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "jollekulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "jottakutta", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-
-[perusmuoto: "joku", alku: "jotkut", luokka: asemosana, sija: nimentö_t, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joku", alku: "joittenkuitten", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "joku", alku: "joidenkuiden", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joitakuita", luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "joinakuina", luokka: asemosana, sija: olento_inA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "joku", alku: "joiksikuiksi", luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joissakuissa", luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joistakuista", luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joihinkuihin", luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joillakuilla", luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joiltakuilta", luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joillekuille", luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joittakuitta", luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "joku", alku: "joinekuine", luokka: asemosana, sija: seuranto_ine, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "jokin", alku: "joitain", luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joinain", luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joissain", luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joistain", luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joillain", luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joiltain", luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joittain", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: a];
 
 ######################################################
 
-[perusmuoto: "jompikumpi", alku: "jompikumpi", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "jompikumpi", alku: "jommankumman", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompaakumpaa", luokka: asemosana, sija: osanto_A, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompanakumpana", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommaksikummaksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommassakummassa", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommastakummasta", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompaankumpaan", luokka: asemosana, sija: sisätulento_Vn, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommallakummalla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommaltakummalta", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommallekummalle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommattakummatta", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "joku", alku: "joku", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joku", alku: "jonkun", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joku", alku: "jotakuta", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "joku", alku: "jonakuna", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppp=pppp"];
+[perusmuoto: "joku", alku: "joksikuksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jossakussa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jostakusta", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "johonkuhun", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jollakulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "joltakulta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jollekulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "jottakutta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
 
-[perusmuoto: "jompikumpi", alku: "jommatkummat", luokka: asemosana, sija: nimentö_t, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompienkumpien", luokka: asemosana, sija: omanto_ien, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompainkumpain", luokka: asemosana, sija: omanto_in, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompiakumpia", luokka: asemosana, sija: osanto_iA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompinakumpina", luokka: asemosana, sija: olento_inA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommiksikummiksi", luokka: asemosana, sija: tulento_iksi, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommissakummissa", luokka: asemosana, sija: sisäolento_issA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommistakummista", luokka: asemosana, sija: sisäeronto_istA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompiinkumpiin", luokka: asemosana, sija: sisätulento_iin, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommillakummilla", luokka: asemosana, sija: ulko_olento_illA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommiltakummilta", luokka: asemosana, sija: ulkoeronto_iltA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommillekummille", luokka: asemosana, sija: ulkotulento_ille, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommittakummitta", luokka: asemosana, sija: vajanto_ittA, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompinekumpine", luokka: asemosana, sija: seuranto_ine, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jomminkummin", luokka: asemosana, sija: keinonto_in, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "jotkut", luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "joku", alku: "joittenkuitten", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "joku", alku: "joidenkuiden", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joitakuita", luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "joinakuina", luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "joku", alku: "joiksikuiksi", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joissakuissa", luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joistakuista", luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joihinkuihin", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joillakuilla", luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joiltakuilta", luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joillekuille", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joittakuitta", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "joku", alku: "joinekuine", luokka: asemosana, sijamuoto: seuranto, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppp=ppppp"];
+
+######################################################
+
+[perusmuoto: "jompikumpi", alku: "jompikumpi", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "jompikumpi", alku: "jommankumman", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompaakumpaa", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompanakumpana", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommaksikummaksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommassakummassa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommastakummasta", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompaankumpaan", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommallakummalla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommaltakummalta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommallekummalle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommattakummatta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+
+[perusmuoto: "jompikumpi", alku: "jommatkummat", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompienkumpien", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompainkumpain", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompiakumpia", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "jompikumpi", alku: "jompinakumpina", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommiksikummiksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommissakummissa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommistakummista", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompiinkumpiin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommillakummilla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommiltakummilta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommillekummille", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jommittakummitta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+[perusmuoto: "jompikumpi", alku: "jompinekumpine", luokka: asemosana, sijamuoto: seuranto, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "jompikumpi", alku: "jomminkummin", luokka: asemosana, sijamuoto: keinonto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
 
 ######################################################
 
 # Tämä sana on vain yksikössä.
-[perusmuoto: "mikin", alku: "mikin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "minkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mitäkin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "minäkin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "miksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "missäkin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mistäkin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mihinkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "milläkin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "miltäkin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "millekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mittäkin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mikin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "minkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mitäkin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "minäkin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "miksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "missäkin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mistäkin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mihinkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "milläkin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "miltäkin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "millekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mittäkin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: ä];
 
 ######################################################
 
-[perusmuoto: "kukin", alku: "kukin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kunkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kutakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kunakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kuksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kussakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kustakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kuhunkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kullakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kultakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kullekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kuttakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kukin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kunkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kutakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kunakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kuksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kussakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kustakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kuhunkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kullakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kultakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kullekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kuttakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a];
 
 ######################################################
 
@@ -186,404 +186,404 @@ define @loppu := <liitesana, loppu>;
 # itsekukin	= itse + kukka(instruktiivi)
 # itsekustakin	= itse + kusi(yks. partitiivi) + kin
 # itsekultakin	= itse + kulta(yks. nominatiivi) + kin
-[perusmuoto: "itsekukin", alku: "itsekukin", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
-[perusmuoto: "itsekukin", alku: "itsekunkin", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
-[perusmuoto: "itsekukin", alku: "itsekutakin", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekunakin", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekuksikin", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekussakin", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekustakin", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekuhunkin", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekullakin", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekultakin", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekullekin", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
-[perusmuoto: "itsekukin", alku: "itsekuttakin", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekukin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
+[perusmuoto: "itsekukin", alku: "itsekunkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
+[perusmuoto: "itsekukin", alku: "itsekutakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekunakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekuksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekussakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekustakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekuhunkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekullakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekultakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekullekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "itsekukin", alku: "itsekuttakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppppp"];
 
 ######################################################
 
 #  Tämä sana on vain yksikössä.
-[perusmuoto: "mikään", alku: "mikään", luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "minkään", luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mitäkään", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "minäkään", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "miksikään", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "missäkään", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mistäkään", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mihinkään", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "milläkään", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "miltäkään", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "millekään", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mittäkään", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mikään", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "minkään", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mitäkään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "minäkään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "miksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "missäkään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mistäkään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mihinkään", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "milläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "miltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "millekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mittäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "mikään", alku: "mitään", luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "minään", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "missään", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mistään", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "millään", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "miltään", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mitään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "minään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "millään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "miltään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "mikään", alku: "mitänä", luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mitänä", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
 
 ######################################################
 
 # Ka-loppuiset joka-sanan muodot paitsi omanto jonka.
-[perusmuoto: "joka", alku: "joksika", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "johonka", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "jonneka", luokka: asemosana, sija: sisätulento_nne, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "jolleka", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "joksika", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "johonka", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "jonneka", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "jolleka", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
  
-[perusmuoto: "joka", alku: "joiksika", luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joihinka", luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joilleka", luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joidenka", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joittenka", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "joiksika", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "joihinka", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "joilleka", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "joidenka", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "joka", alku: "joittenka", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a];
 
 ######################################################
 
 # Ka-loppuiset kuka-sanan muodot.
-[perusmuoto: "kuka", alku: "kulleka",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "kuka", alku: "kuilleka", luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "kuka", alku: "kuhunka",  luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kuka", alku: "kulleka",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kuka", alku: "kuilleka", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "kuka", alku: "kuhunka",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
 
 
 ######################################################
 
-[perusmuoto: "ken", alku: "ken",     luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenen",   luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenet",   luokka: asemosana, sija: kohdanto_t, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "ketä",    luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenenä",  luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneksi", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenessä", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenestä", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneen",  luokka: asemosana, sija: sisätulento_Vn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenellä", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneltä", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenelle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenettä", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "ken",     luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenen",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenet",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "ketä",    luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenenä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keneksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenessä", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenestä", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keneen",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keneltä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenettä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "ken", alku: "kenä",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kessä", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kestä", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kehen", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kellä", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keltä", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kelle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenä",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kessä", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kestä", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kehen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keltä", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "ken", alku: "ketkä",   luokka: asemosana, sija: nimentö_tkA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keiden",  luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keitten", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keitä",   luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keinä",   luokka: asemosana, sija: olento_inA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keiksi",  luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keissä",  luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keistä",  luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keihin",  luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keillä",  luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keiltä",  luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keille",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keittä",  luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "ketkä",   luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keiden",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keitten", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keitä",   luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keinä",   luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keiksi",  luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keissä",  luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keistä",  luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keiltä",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keittä",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä];
 
 # Kä-loppuisen yksikön muodot ken-sanasta.
-[perusmuoto: "ken", alku: "kenenkä",   luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenenkäs",  luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenetkä",   luokka: asemosana, sija: kohdanto_t, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenenäkä",  luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneksikä", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenessäkä", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenestäkä", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneenkä",  luokka: asemosana, sija: sisätulento_Vn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenelläkä", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneltäkä", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenellekä", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenettäkä", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenenkä",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenenkäs",  luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenetkä",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenenäkä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keneksikä", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenessäkä", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenestäkä", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keneenkä",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenelläkä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keneltäkä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenellekä", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenettäkä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "ken", alku: "kellekä",   luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keillekä",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kehenkä",   luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kehenkäs",  luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keidenkä",  luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keittenkä", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kellekä",   luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keillekä",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kehenkä",   luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kehenkäs",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keidenkä",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keittenkä", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
 
 # Kenelle-taivutusmuodon murteellisia muotoja.
-[perusmuoto: "ken", alku: "kellen",     luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kellenkä",   luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kellenkäkö", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kellenkänä", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kellenkäs",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kellenkään", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kellenpä",   luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellen",     luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkä",   luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkäkö", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkänä", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkäs",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenkään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kellenpä",   luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 ##########################################################
 
 # Oikeita kukaan-sanan muotoja
 #
-[perusmuoto: "kukaan", alku: "kukaan",    luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "kukaan", alku: "kussaan",   luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "kukaan", alku: "kustaan",   luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "kukaan", alku: "kuhunkaan", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kukaan", alku: "kukaan",    luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kukaan", alku: "kussaan",   luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kukaan", alku: "kustaan",   luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kukaan", alku: "kuhunkaan", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
 
 # Kenkään-sanan muotoja.
 #
-#[perusmuoto: "kenkään", alku: "kenkään",     luokka: asemosana, sija: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
+#[perusmuoto: "kenkään", alku: "kenkään",     luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "kukaan", alku: "kenenkään",   luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenetkään",   luokka: asemosana, sija: kohdanto_t, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "ketään",      luokka: asemosana, sija: osanto_tA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenenäkään",  luokka: asemosana, sija: olento_nA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keneksikään", luokka: asemosana, sija: tulento_ksi, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenessäkään", luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenestäkään", luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keneenkään",  luokka: asemosana, sija: sisätulento_Vn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenelläkään", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keneltäkään", luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenellekään", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenettäkään", luokka: asemosana, sija: vajanto_ttA, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenenkään",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenetkään",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "ketään",      luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenenäkään",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keneksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenessäkään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenestäkään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keneenkään",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenelläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keneltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenettäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "kukaan", alku: "kessään",   luokka: asemosana, sija: sisäolento_ssA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kestään",   luokka: asemosana, sija: sisäeronto_stA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kehenkään", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kellään",   luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keltään",   luokka: asemosana, sija: ulkoeronto_ltA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kellekään", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kessään",   luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kestään",   luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kehenkään", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kellään",   luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keltään",   luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "kukaan", alku: "ketkään",     luokka: asemosana, sija: nimentö_tkA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keidenkään",  luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keittenkään", luokka: asemosana, sija: omanto_iT, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keitään",     luokka: asemosana, sija: osanto_itA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keinäkään",   luokka: asemosana, sija: olento_inA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keiksikään",  luokka: asemosana, sija: tulento_iksi, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keissäkään",  luokka: asemosana, sija: sisäolento_issA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keistäkään",  luokka: asemosana, sija: sisäeronto_istA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keihinkään",  luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keilläkään",  luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keiltäkään",  luokka: asemosana, sija: ulkoeronto_iltA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keillekään",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keittäkään",  luokka: asemosana, sija: vajanto_ittA, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "ketkään",     luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keidenkään",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keittenkään", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keitään",     luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keinäkään",   luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keiksikään",  luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keissäkään",  luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keistäkään",  luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keihinkään",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keilläkään",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keiltäkään",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keillekään",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keittäkään",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä];
 
 
 ########################################
 
 
-[perusmuoto: "mikä", alku: "mikä",    luokka: asemosana, sija: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minkä",   luokka: asemosana, sija: omanto_nkA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitä",    luokka: asemosana, sija: osanto_tA, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitäs",   luokka: asemosana, sija: osanto_tA, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minä",    luokka: asemosana, sija: olento_nA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "miksi",   luokka: asemosana, sija: tulento_ksi, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "miksikä", luokka: asemosana, sija: tulento_ksi, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "missä",   luokka: asemosana, sija: sisäolento_ssA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "missään", luokka: asemosana, sija: sisäolento_ssA, jatko: @loppu, äs: ä];
-[perusmuoto: "mikä", alku: "mistä",   luokka: asemosana, sija: sisäeronto_stA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mistään", luokka: asemosana, sija: sisäeronto_stA, jatko: @loppu, äs: ä];
-[perusmuoto: "mikä", alku: "mihin",   luokka: asemosana, sija: sisätulento_hVn, jatko: @loppu, äs: ä];
-[perusmuoto: "mikä", alku: "mihinkä", luokka: asemosana, sija: sisätulento_hVn, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minne",   luokka: asemosana, sija: sisätulento_nne, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minnekä", luokka: asemosana, sija: sisätulento_nne, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "millä",   luokka: asemosana, sija: ulko_olento_llA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "miltä",   luokka: asemosana, sija: ulkoeronto_ltA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mille",   luokka: asemosana, sija: ulkotulento_lle, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "millekä", luokka: asemosana, sija: ulkotulento_lle, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-#[perusmuoto: "mikä", alku: "mittä",   luokka: asemosana, sija: vajanto_ttA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, sija: nimentö_tkA, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, sija: nimentö_tkA, jatko: @loppu, äs: ä];
+[perusmuoto: "mikä", alku: "mikä",    luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "minkä",   luokka: asemosana, sijamuoto: omanto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mitä",    luokka: asemosana, sijamuoto: osanto, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mitäs",   luokka: asemosana, sijamuoto: osanto, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "minä",    luokka: asemosana, sijamuoto: olento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "miksi",   luokka: asemosana, sijamuoto: tulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "miksikä", luokka: asemosana, sijamuoto: tulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "missä",   luokka: asemosana, sijamuoto: sisäolento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, jatko: @loppu, äs: ä];
+[perusmuoto: "mikä", alku: "mistä",   luokka: asemosana, sijamuoto: sisäeronto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, jatko: @loppu, äs: ä];
+[perusmuoto: "mikä", alku: "mihin",   luokka: asemosana, sijamuoto: sisätulento, jatko: @loppu, äs: ä];
+[perusmuoto: "mikä", alku: "mihinkä", luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "minne",   luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "minnekä", luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "millä",   luokka: asemosana, sijamuoto: ulko_olento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "miltä",   luokka: asemosana, sijamuoto: ulkoeronto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mille",   luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "millekä", luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+#[perusmuoto: "mikä", alku: "mittä",   luokka: asemosana, sijamuoto: vajanto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+[perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, sijamuoto: nimentö, jatko: @loppu, äs: ä];
 
 ######################################################
 
-[perusmuoto: "se", alku: "se",     luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sen",    luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sitä",   luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sinä",   luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siksi",  luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siinä",  luokka: asemosana, sija: sisäolento_nA,   luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siitä",  luokka: asemosana, sija: sisäeronto_tA,   luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siihen", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sillä",  luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siltä",  luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sille",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "se",     luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "sen",    luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "sitä",   luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "sinä",   luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "siksi",  luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "siinä",  luokka: asemosana, sijamuoto: sisäolento,   luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "siitä",  luokka: asemosana, sijamuoto: sisäeronto,   luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "siihen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "sillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "siltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "se", alku: "sille",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
 ######################################################
 
-[perusmuoto: "ne", alku: "ne",      luokka: asemosana, sija: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niiden",  luokka: asemosana, sija: omanto_iT,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niitten", luokka: asemosana, sija: omanto_iT,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niitä",   luokka: asemosana, sija: osanto_itA,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niinä",   luokka: asemosana, sija: olento_inA,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niiksi",  luokka: asemosana, sija: tulento_iksi,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niissä",  luokka: asemosana, sija: sisäolento_issA,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niistä",  luokka: asemosana, sija: sisäeronto_istA,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niihin",  luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niillä",  luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niiltä",  luokka: asemosana, sija: ulkoeronto_iltA,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niille",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niittä",  luokka: asemosana, sija: vajanto_ittA,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niine",   luokka: asemosana, sija: seuranto_ine,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niin",    luokka: asemosana, sija: keinonto_in,      luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "ne",      luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niitä",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niinä",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niissä",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niistä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä];
 
 ######################################################
 
-[perusmuoto: "tämä", alku: "tämä",   luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tämän",  luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tätä",   luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tänä",   luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "täksi",  luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tässä",  luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tästä",  luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tähän",  luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tällä",  luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tältä",  luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tälle",  luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tämä",   luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tämän",  luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tätä",   luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tänä",   luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "täksi",  luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tässä",  luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tästä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tähän",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tällä",  luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tältä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "tämä", alku: "tälle",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
 # Murteissa.
-[perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sija: nimentö,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "tämä", alku: "tän",    luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "tämä", alku: "tään",   luokka: asemosana, sija: omanto_n, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sijamuoto: nimentö,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tän",    luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "tämä", alku: "tään",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 
 ######################################################
 
 
-[perusmuoto: "nämä", alku: "nämä",    luokka: asemosana, sija: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näiden",  luokka: asemosana, sija: omanto_iT,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näitten", luokka: asemosana, sija: omanto_iT,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "nämät",   luokka: asemosana, sija: kohdanto_t,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näitä",   luokka: asemosana, sija: osanto_itA,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näinä",   luokka: asemosana, sija: olento_inA,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näiksi",  luokka: asemosana, sija: tulento_iksi,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näissä",  luokka: asemosana, sija: sisäolento_issA,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näistä",  luokka: asemosana, sija: sisäeronto_istA,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näihin",  luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näillä",  luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näiltä",  luokka: asemosana, sija: ulkoeronto_iltA,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näille",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näittä",  luokka: asemosana, sija: vajanto_ittA,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näine",   luokka: asemosana, sija: seuranto_ine,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näin",    luokka: asemosana, sija: keinonto_in,      luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "nämä",    luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "nämät",   luokka: asemosana, sijamuoto: kohdanto,       luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näitä",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näinä",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näissä",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näistä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä];
 
 # Murteissa.
-[perusmuoto: "nämä", alku: "nää",     luokka: asemosana, sija: nimentö,          luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "nämä", alku: "nää",     luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 ######################################################
 
-[perusmuoto: "tuo", alku: "tuo",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuon",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuota",  luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuona",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuoksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuossa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuosta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuohon", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuolla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuolta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuolle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuo",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuon",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuota",  luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuona",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuoksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuossa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuosta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuohon", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuolla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuolta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuolle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
 
-[perusmuoto: "tuo", alku: "tuonne", luokka: asemosana, sija: sisätulento_nne, luku: yksikkö, jatko: @loppu, äs: a];
-
-######################################################
-
-[perusmuoto: "nuo", alku: "nuo",     luokka: asemosana, sija: nimentö,          luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noiden",  luokka: asemosana, sija: omanto_iT,        luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noitten", luokka: asemosana, sija: omanto_iT,        luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noita",   luokka: asemosana, sija: osanto_itA,       luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noina",   luokka: asemosana, sija: olento_inA,       luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noiksi",  luokka: asemosana, sija: tulento_iksi,     luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noissa",  luokka: asemosana, sija: sisäolento_issA,  luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noista",  luokka: asemosana, sija: sisäeronto_istA,  luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noihin",  luokka: asemosana, sija: sisätulento_ihin, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sija: ulko_olento_illA, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noilta",  luokka: asemosana, sija: ulkoeronto_iltA,  luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sija: ulkotulento_ille, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noitta",  luokka: asemosana, sija: vajanto_ittA,     luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noine",   luokka: asemosana, sija: seuranto_ine,     luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noin",    luokka: asemosana, sija: keinonto_in,      luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "tuo", alku: "tuonne", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
 
 ######################################################
 
-[perusmuoto: "minä", alku: "minä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minuun",  luokka: asemosana, sija: sisätulento_Vn,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "minä", alku: "minutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "nuo", alku: "nuo",     luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noita",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noina",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noissa",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noista",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noilta",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noitta",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: a];
 
-[perusmuoto: "sinä", alku: "sinä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinuun",  luokka: asemosana, sija: sisätulento_Vn,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sinä", alku: "sinutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+######################################################
+
+[perusmuoto: "minä", alku: "minä",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minun",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minut",   luokka: asemosana, sijamuoto: kohdanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minua",   luokka: asemosana, sijamuoto: osanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minuna",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minuksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minussa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minusta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minuun",  luokka: asemosana, sijamuoto: sisätulento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minulta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "minä", alku: "minutta", luokka: asemosana, sijamuoto: vajanto,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+
+[perusmuoto: "sinä", alku: "sinä",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinun",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinut",   luokka: asemosana, sijamuoto: kohdanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinua",   luokka: asemosana, sijamuoto: osanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinuna",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinuksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinussa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinusta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinuun",  luokka: asemosana, sijamuoto: sisätulento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinulta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "sinä", alku: "sinutta", luokka: asemosana, sijamuoto: vajanto,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
 # Puhekielisiä ja murteellisia muotoja.
 
-[perusmuoto: "mä", alku: "mä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
-[perusmuoto: "mä", alku: "mun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "mut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "mua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "muna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "muksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "mussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "musta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "muhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "mulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "multa", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mä", alku: "mulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-#[perusmuoto: "mä", alku: "mutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mä",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mun",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mut",   luokka: asemosana, sijamuoto: kohdanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mua",   luokka: asemosana, sijamuoto: osanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "muna",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "muksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mussa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "musta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "muhun", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "multa", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mä", alku: "mulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+#[perusmuoto: "mä", alku: "mutta", luokka: asemosana, sijamuoto: vajanto,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
 
-[perusmuoto: "sä", alku: "sä",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sua",   luokka: asemosana, sija: osanto_A,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "suna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "suksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "susta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "suhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sä", alku: "sulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-#[perusmuoto: "sä", alku: "sutta", luokka: asemosana, sija: vajanto_ttA,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sä",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sun",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sut",   luokka: asemosana, sijamuoto: kohdanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sua",   luokka: asemosana, sijamuoto: osanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "suna",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "suksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sussa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "susta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "suhun", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sulta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sä", alku: "sulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+#[perusmuoto: "sä", alku: "sutta", luokka: asemosana, sijamuoto: vajanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
 
-[perusmuoto: "mie", alku: "mie",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miuta",  luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "mie", alku: "miutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "mie",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miun",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miut",   luokka: asemosana, sijamuoto: kohdanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miuta",  luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miuna",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miuksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miussa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miusta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miuhun", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miulta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "mie", alku: "miutta", luokka: asemosana, sijamuoto: vajanto,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
 
-[perusmuoto: "sie", alku: "sie",    luokka: asemosana, sija: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siun",   luokka: asemosana, sija: omanto_n,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siut",   luokka: asemosana, sija: kohdanto_t,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siuta",  luokka: asemosana, sija: osanto_tA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siuna",  luokka: asemosana, sija: olento_nA,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siuksi", luokka: asemosana, sija: tulento_ksi,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siussa", luokka: asemosana, sija: sisäolento_ssA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siusta", luokka: asemosana, sija: sisäeronto_stA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siuhun", luokka: asemosana, sija: sisätulento_hVn, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siulla", luokka: asemosana, sija: ulko_olento_llA, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siulta", luokka: asemosana, sija: ulkoeronto_ltA,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siulle", luokka: asemosana, sija: ulkotulento_lle, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
-[perusmuoto: "sie", alku: "siutta", luokka: asemosana, sija: vajanto_ttA,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "sie",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siun",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siut",   luokka: asemosana, sijamuoto: kohdanto,      luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siuta",  luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siuna",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siuksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siussa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siusta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siuhun", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siulla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siulta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siulle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
+[perusmuoto: "sie", alku: "siutta", luokka: asemosana, sijamuoto: vajanto,     luku: yksikkö, jatko: @loppu, äs: a, tiedot: <murre>];
 
 #### Nimisanat ####
 
@@ -604,9 +604,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <vajanto_ttA>, äs: a];
 
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <nimentö_t>, äs: a];
@@ -634,9 +632,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a];
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <sisätulento_seen>, tiedot: <ei_voikko>];
-[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a];
-[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a];
-[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <vajanto_ttA>, äs: a];
 
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: <nimentö_t>, äs: a];
@@ -673,9 +669,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "Brontë", alku: "Brontëen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
 [perusmuoto: "Brontë", alku: "Brontëën", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
-[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
 [perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
@@ -707,9 +701,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "cowboy", alku: "cowboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboyhi", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, rakenne: "=ppp=ppp", tiedot: <ei_voikko>];
-[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a, rakenne: "=ppp=ppp"];
-[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=ppp=ppp"];
-[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a, rakenne: "=ppp=ppp"];
+[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppp=ppp"];
 
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <nimentö_t>, äs: a, rakenne: "=ppp=ppp"];
@@ -738,9 +730,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <sisäeronto_stA>, äs: a];
 [perusmuoto: "Dalí", alku: "Dalíin", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
 [perusmuoto: "Dalí", alku: "Dalíín", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
-[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
-[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
-[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
@@ -790,9 +780,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jerseyhin", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Jersey", alku: "Jerseyhi", luokka: paikannimi, sija: sisätulento, luku: monikko, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
-[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
+[perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
 # Linné [linnee] {{{2
@@ -808,9 +796,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Linné", alku: "Linnéhen", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: ä];
 [perusmuoto: "Linné", alku: "Linnéhe", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <sisätulento_seen>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: ä];
-[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: ä];
+[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <vajanto_ttA>, äs: ä];
 
 [perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <nimentö_t>, äs: ä];
@@ -840,9 +826,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Monroe", alku: "Monroehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_Vn>, tiedot: <ei_voikko>];  # Monroeen.
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_hVn>, tiedot: <ei_voikko>]; # Monroehen.
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
-[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
@@ -871,9 +855,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "playboy", alku: "playboyhin", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboyhi", luokka: nimisana, sija: sisätulento, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <sisätulento_hVn>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppp"];
-[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulko_olento_llA>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkoeronto_ltA>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <ulkotulento_lle>, äs: a, rakenne: "=pppp=ppp"];
+[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <vajanto_ttA>, äs: a, rakenne: "=pppp=ppp"];
 
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <nimentö_t>, äs: a, rakenne: "=pppp=ppp"];
@@ -903,9 +885,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Poe", alku: "Poehun", luokka: sukunimi, sija: sisätulento, luku: yksikkö, jatko: <loppu, liitesana>, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_Vn>, tiedot: <ei_voikko>];  # Poeen.
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, luku: yksikkö, jatko: <sisätulento_hVn>, tiedot: <ei_voikko>]; # Poehen.
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulko_olento_llA>, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulkoeronto_ltA>, äs: a];
-[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulkotulento_lle>, äs: a];
+[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <vajanto_ttA>, äs: a];
 
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <nimentö_t>, äs: a];
@@ -938,9 +918,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sidney", alku: "Sidneyhin", luokka: paikannimi, sija: sisätulento, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sidney", alku: "Sidneyhi", luokka: paikannimi, sija: sisätulento, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
-[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
-[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
+[perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
 [perusmuoto: "sidneyläinen", alku: "sidneyläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
@@ -959,9 +937,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <sisätulento_hVn>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sydney", alku: "Sydneyhin", luokka: paikannimi, sija: sisätulento, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Sydney", alku: "Sydneyhi", luokka: paikannimi, sija: sisätulento, jatko: <omistusliite>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <ulko_olento_llA>, äs: ä];
-[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <ulkoeronto_ltA>, äs: ä];
-[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <ulkotulento_lle>, äs: ä];
+[perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "Sydney", alku: "Sydney", luokka: paikannimi, jatko: <vajanto_ttA>, äs: ä];
 
 [perusmuoto: "sydneyläinen", alku: "sydneyläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];

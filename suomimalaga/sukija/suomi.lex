@@ -55,6 +55,9 @@ define @ell := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
 define @elt := <yhdyssana, tavuviiva, etuliite, teonsana>;
 define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
 
+define @sijan_jatko := <tavuviiva, liitesana, loppu>;
+define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
+
 include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";
 include "voikonsanat/erikoissanat.lex";
@@ -88,10 +91,6 @@ include "voikonsanat/erikoisalat/linux-distributions.lex";
 # Fred Karlsson: Suomen kielen äänne- ja muotorakenne.
 # WSOY, Juva 1983
 # ISBN 951-0-11633-5
-
-define @sijan_jatko := <tavuviiva, liitesana, loppu>;
-define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
-
 
 [alku: "t",    luokka: sijapääte, sija: nimentö_t,
                luku: monikko, äs: aä, jatko: @sijan_jatko];

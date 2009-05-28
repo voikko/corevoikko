@@ -159,7 +159,7 @@
 [perusmuoto: "helpoiten", alku: "helpoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helvetti", alku: "helvetisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä, rakenne: "=ppppp=pppppppppp"];
-[perusmuoto: "hereillä", alku: "here", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_lle>, äs: ä];
+[perusmuoto: "hereillä", alku: "here", luokka: seikkasana, jatko: <ulko_olento_illA, ulkotulento_ille>, äs: ä];
 [perusmuoto: "heti", alku: "heti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hetimmiten", alku: "hetimmiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "hevillä", alku: "hevillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -360,7 +360,7 @@
 [perusmuoto: "kaulatusten", alku: "kaulatusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kauttaalta", alku: "kauttaalta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kauttaalta", alku: "kauttaalta", luokka: seikkasana, jatko: <omistusliite>, äs: a];
-[perusmuoto: "kelteisillä", alku: "kelteisi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: ä];
+[perusmuoto: "kelteisillä", alku: "kelteisi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "kenties", alku: "kenties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kertaalleen", alku: "kertaalleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kesemmällä", alku: "kesemmäksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -760,7 +760,7 @@
 [perusmuoto: "puolinukuksissa", alku: "puolinukuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "puolitse", alku: "puolitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ys_perusosa>];
 [perusmuoto: "puolivakavissaan", alku: "puolivakavissa", luokka: seikkasana, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppppppppp"];
-[perusmuoto: "puseroisilla", alku: "puseroisi", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: a];
+[perusmuoto: "puseroisilla", alku: "puseroisi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "puuduksissa", alku: "puuduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "puuduksissa", alku: "puuduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pyhisin", alku: "pyhisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -902,7 +902,7 @@
 [perusmuoto: "sunnuntaisin", alku: "sunnuntaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suotta", alku: "suotta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suppu", alku: "suppu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
-[perusmuoto: "suppu", alku: "supu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA, ulko_olento_llA, ulkotulento_lle>, äs: a];
+[perusmuoto: "suppu", alku: "supu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA> + @ulkopaikallissijat, äs: a];
 [perusmuoto: "surku", alku: "surku", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suurelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -1177,7 +1177,7 @@
 [perusmuoto: "yltäpäätä", alku: "yltäpäätä", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ylösalaisin", alku: "ylösalaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "ylös", alku: "ylös", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ymmällä", alku: "ymmä", luokka: seikkasana, jatko: <ulko_olento_llA, ulkotulento_lle>, äs: ä];
+[perusmuoto: "ymmällä", alku: "ymmä", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "ympäri", alku: "ympäri", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ympäri", alku: "ympäriinsä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ympärillä", alku: "ympäri", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];

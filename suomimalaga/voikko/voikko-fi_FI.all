@@ -48,6 +48,66 @@
 include "suomi.inc";
 include "all.inc";
 
+# Aputaulukko funktiolle luku_sijasta
+define @luku_sijasta_muunnostaulu :=
+[nimentö:     yksikkö,
+ nimentö_t:   monikko,
+ nimentö_tkA: monikko,
+ omanto_n:    yksikkö,
+ omanto_nkA:  yksikkö,
+ omanto_ien:  monikko,
+ omanto_jen:  monikko,
+ omanto_en:   monikko,
+ omanto_in:   monikko,
+ omanto_ten:  monikko,
+ omanto_iT:   monikko,
+ omanto_idän: monikko,
+ kohdanto_idät: monikko,
+ kohdanto_t: monikko,
+ osanto_A:    yksikkö,
+ osanto_AA:   yksikkö,
+ osanto_iA:   monikko,
+ osanto_jA:   monikko,
+ osanto_ttA:  yksikkö,
+ osanto_itA:  monikko,
+ osanto_tA:   yksikkö,
+ olento_nA:   yksikkö,
+ olento_inA:  monikko,
+ tulento_ksi: yksikkö,
+ tulento_iksi: monikko,
+ sisäolento_ssA: yksikkö,
+ sisäolento_issA: monikko,
+ sisäolento_nA: yksikkö,
+ sisäeronto_stA: yksikkö,
+ sisäeronto_istA: monikko,
+ sisäeronto_tA: yksikkö,
+ sisätulento_Vn: yksikkö,
+ sisätulento_VVn: yksikkö,
+ sisätulento_hVn: yksikkö,
+ sisätulento_iin: monikko,
+ sisätulento_ihin: monikko,
+ sisätulento_seen: yksikkö,
+ sisätulento_isiin: monikko,
+ sisätulento_sen: yksikkö,
+ sisätulento_isin: monikko,
+ sisätulento_nne: monikko,
+ ulko_olento_illA: monikko,
+ ulkoeronto_iltA: monikko,
+ ulkotulento_ille: monikko,
+ vajanto_ttA: yksikkö,
+ vajanto_ittA: monikko,
+ seuranto_ine: monikko,
+ keinonto_n: yksikkö,
+ keinonto_in: monikko,
+ tulento_s: yksikkö
+];
+
+# Palauttaa annettua sijasymbolia vastaavan luvun
+subrule luku_sijasta($sija):
+  return @luku_sijasta_muunnostaulu.$sija;
+end;
+
+
 # Kaikista nimisanoista johdetaan laatusana tOn-johtimella, esim: valo+ton.
 
 # Laatusanoista johdetaan nimisana (U)Us-johtimella,
@@ -440,9 +500,7 @@ allo_rule generate_allos ($tietue):
                                  tulento_ksi:     "mi",
                                  sisäolento_ssA:  "mi",
                                  sisäeronto_stA:  "mi",
-                                 ulko_olento_llA: "mi",
-                                 ulkoeronto_ltA:  "mi",
-                                 ulkotulento_lle: "mi",
+                                 ulkopaikallissija_llA: "mi",
                                  vajanto_ttA:     "mi",
                                  kerronto_sti:    "mi",
                                  voittoaste:      "mi",
@@ -544,9 +602,7 @@ allo_rule generate_allos ($tietue):
                                  tulento_ksi:      kA($tietue),
                                  sisäolento_ssA:   kA($tietue),
                                  sisäeronto_stA:   kA($tietue),
-                                 ulko_olento_llA:  kA($tietue),
-                                 ulkoeronto_ltA:   kA($tietue),
-                                 ulkotulento_lle:  kA($tietue),
+                                 ulkopaikallissija_llA:  kA($tietue),
                                  vajanto_ttA:      kA($tietue),
                                  nimentö_t:        kA($tietue),
                                  tulento_iksi:     kO($tietue),
@@ -800,9 +856,7 @@ allo_rule generate_allos ($tietue):
                                 sisäolento_ssA:   A($tietue),
                                 sisäeronto_stA:   A($tietue),
                                 sisätulento_Vn:   tA($tietue),
-                                ulko_olento_llA:  A($tietue),
-                                ulkoeronto_ltA:   A($tietue),
-                                ulkotulento_lle:  A($tietue),
+                                ulkopaikallissija_llA:  A($tietue),
                                 vajanto_ttA:      A($tietue),
 
                                 johdin_tOn:       A($tietue),
@@ -1827,9 +1881,7 @@ allo_rule generate_allos ($tietue):
                                    sisäolento_ssA: "pee",
                                    sisäeronto_stA: "pee",
                                    sisätulento_seen: "pee",
-                                   ulko_olento_llA: "pee",
-                                   ulkoeronto_ltA: "pee",
-                                   ulkotulento_lle: "pee",
+                                   ulkopaikallissija_llA: "pee",
                                    vajanto_ttA: "pee",
                                    johdin_tOn: "pee",
                                    johdin_llinen: "pee",
@@ -1952,9 +2004,7 @@ allo_rule generate_allos ($tietue):
                                  sisäolento_ssA:   "u",
                                  sisäeronto_stA:   "u",
                                  sisätulento_Vn:   "u",
-                                 ulko_olento_llA:  "u",
-                                 ulkoeronto_ltA:   "u",
-                                 ulkotulento_lle:  "u",
+                                 ulkopaikallissija_llA:  "u",
                                  vajanto_ttA:      "u"])
                  + <taivutus ($tietue, "ä", <liitesana, loppu>, [äs: ä])>;
     result $i.alku, $i - alku;
@@ -1971,9 +2021,7 @@ allo_rule generate_allos ($tietue):
                                  sisäolento_ssA:  "e",
                                  sisäeronto_stA:  "e",
                                  sisätulento_Vn:  "e",
-                                 ulko_olento_llA: "e",
-                                 ulkoeronto_ltA:  "e",
-                                 ulkotulento_lle: "e",
+                                 ulkopaikallissija_llA: "e",
                                  vajanto_ttA:     "e"]);
     result $i.alku, $i - alku;
 
@@ -2009,9 +2057,7 @@ allo_rule generate_allos ($tietue):
                                  sisäeronto_stA:   "",
                                  sisätulento_hVn:  "",
                                  sisätulento_nne:  "",
-                                 ulko_olento_llA:  "",
-                                 ulkoeronto_ltA:   "",
-                                 ulkotulento_lle:  "",
+                                 ulkopaikallissija_llA:  "",
                                  vajanto_ttA:      ""] +
                                 monikko7 ([nimentö_tkA: ""], "", "",
                                           [omanto_iT:   ""],
@@ -2058,9 +2104,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (loitolla in $tietue.jatko) then 
     choose $i in taivutuskaava ($tietue,
-                                 [ulko_olento_llA: "",
-                                  ulkoeronto_ltA:  "",
-                                  ulkotulento_lle: "",
+                                 [ulkopaikallissija_llA: "",
                                   tulento_s:       ""])
                  + sivumpana ($tietue, "m" + pA($tietue), "m" + mA($tietue));
     result $i.alku, $i - alku;
@@ -4148,9 +4192,7 @@ subrule ruoka ($tietue):
                          tulento_ksi:      "ua",
                          sisäolento_ssA:   "ua",
                          sisäeronto_stA:   "ua",
-                         ulko_olento_llA:  "ua",
-                         ulkoeronto_ltA:   "ua",
-                         ulkotulento_lle:  "ua",
+                         ulkopaikallissija_llA:  "ua",
                          vajanto_ttA:      "ua",
                          johdin_tOn:       "ua",
                          johdin_llinen:    "ua",
@@ -4367,9 +4409,7 @@ subrule risti ($tietue, $vahva_aste, $heikko_aste):
                          sisäolento_ssA:  $heikko_aste + "i",
                          sisäeronto_stA:  $heikko_aste + "i",
                          sisätulento_Vn:  $vahva_aste  + "i",
-                         ulko_olento_llA: $heikko_aste + "i",
-                         ulkoeronto_ltA:  $heikko_aste + "i",
-                         ulkotulento_lle: $heikko_aste + "i",
+                         ulkopaikallissija_llA: $heikko_aste + "i",
                          vajanto_ttA:     $heikko_aste + "i",
                          kerronto_sti:    $heikko_aste + "i",
                          voittoaste:      $heikko_aste + "i",
@@ -4402,9 +4442,7 @@ subrule siisti ($tietue, $vahva_aste, $heikko_aste):
                          sisäolento_ssA:  $heikko_aste + "i",
                          sisäeronto_stA:  $heikko_aste + "i",
                          sisätulento_Vn:  $vahva_aste  + "i",
-                         ulko_olento_llA: $heikko_aste + "i",
-                         ulkoeronto_ltA:  $heikko_aste + "i",
-                         ulkotulento_lle: $heikko_aste + "i",
+                         ulkopaikallissija_llA: $heikko_aste + "i",
                          vajanto_ttA:     $heikko_aste + "i",
                          kerronto_sti:    $heikko_aste + "i",
                          voittoaste:      $heikko_aste + "i",
@@ -4688,9 +4726,7 @@ subrule piki ($tietue,
                           sisäolento_ssA:   $yksikön_heikko_aste + "e",
                           sisäeronto_stA:   $yksikön_heikko_aste + "e",
                           sisätulento_Vn:   $yksikön_vahva_aste  + "e",
-                          ulko_olento_llA:  $yksikön_heikko_aste + "e",
-                          ulkoeronto_ltA:   $yksikön_heikko_aste + "e",
-                          ulkotulento_lle:  $yksikön_heikko_aste + "e",
+                          ulkopaikallissija_llA:  $yksikön_heikko_aste + "e",
                           vajanto_ttA:      $yksikön_heikko_aste + "e",
 
                           nimentö_t:        $yksikön_heikko_aste + "e",
@@ -4755,9 +4791,7 @@ subrule jälki ($tietue, $vahva_aste, $heikko_aste):
                          tulento_ksi:     "e",   # Jäleksi.
                          sisäolento_ssA:  "e",
                          sisäeronto_stA:  "e",
-                         ulko_olento_llA: "e",
-                         ulkoeronto_ltA:  "e",
-                         ulkotulento_lle: "e",
+                         ulkopaikallissija_llA: "e",
                          vajanto_ttA:     "e",
                          johdin_tOn:      "e",
                          johdin_llinen:   "e",
@@ -5340,9 +5374,7 @@ subrule taival ($tietue, $vahva_aste, $heikko_aste):
                          sisäolento_ssA:   $vahva_aste + "ee",
                          sisäeronto_stA:   $vahva_aste + "ee",
                          sisätulento_seen: $vahva_aste + "ee",
-                         ulko_olento_llA:  $vahva_aste + "ee",
-                         ulkoeronto_ltA:   $vahva_aste + "ee",
-                         ulkotulento_lle:  $vahva_aste + "ee",
+                         ulkopaikallissija_llA:  $vahva_aste + "ee",
                          vajanto_ttA:      $vahva_aste + "ee"]
                         + yhdyssana ($vahva_aste + "e") +
 
@@ -5388,9 +5420,7 @@ subrule s_V_loppuinen ($tietue, $yksikkö, $monikko):
                          sisäolento_ssA:   $yksikkö,
                          sisäeronto_stA:   $yksikkö,
                          sisätulento_seen: $yksikkö,
-                         ulko_olento_llA:  $yksikkö,
-                         ulkoeronto_ltA:   $yksikkö,
-                         ulkotulento_lle:  $yksikkö,
+                         ulkopaikallissija_llA:  $yksikkö,
                          vajanto_ttA:      $yksikkö,
 
                          nimentö_t:         $yksikkö,
@@ -5426,9 +5456,7 @@ subrule s_hV_loppuinen ($tietue, $yksikkö, $monikko):
                          sisäolento_ssA:   $yksikkö,
                          sisäeronto_stA:   $yksikkö,
                          sisätulento_sen:  $yksikkö,
-                         ulko_olento_llA:  $yksikkö,
-                         ulkoeronto_ltA:   $yksikkö,
-                         ulkotulento_lle:  $yksikkö,
+                         ulkopaikallissija_llA:  $yksikkö,
                          vajanto_ttA:      $yksikkö,
                          voittoaste:       $yksikkö,
 
@@ -5466,9 +5494,7 @@ subrule nainen ($tietue):
                            sisäolento_ssA:   "se",
                            sisäeronto_stA:   "se",
                            sisätulento_Vn:   "se",
-                           ulko_olento_llA:  "se",
-                           ulkoeronto_ltA:   "se",
-                           ulkotulento_lle:  "se",
+                           ulkopaikallissija_llA:  "se",
                            vajanto_ttA:      "se",
                            kerronto_sti :    "se",
                            voittoaste:       "se",
@@ -5507,9 +5533,7 @@ subrule nainen ($tietue):
                            sisäolento_ssA:   "se",
                            sisäeronto_stA:   "se",
                            sisätulento_Vn:   "se",
-                           ulko_olento_llA:  "se",
-                           ulkoeronto_ltA:   "se",
-                           ulkotulento_lle:  "se",
+                           ulkopaikallissija_llA:  "se",
                            vajanto_ttA:      "se",
                            kerronto_sti :    "se",
                            voittoaste:       "se",
@@ -6456,15 +6480,12 @@ subrule yksikkö_meri ($e, $i):
           omistusliite:    $e,
           nimentö:         $i,
           omanto_n:        $e,
-####      osanto_tA:       "",  # Mer+ta.
           olento_nA:       $e,  # Mere+nä.
           tulento_ksi:     $e,
           sisäolento_ssA:  $e,
           sisäeronto_stA:  $e,
           sisätulento_Vn:  $e,
-          ulko_olento_llA: $e,
-          ulkoeronto_ltA:  $e,
-          ulkotulento_lle: $e,
+          ulkopaikallissija_llA: $e,
           vajanto_ttA:     $e,
           kerronto_sti:    $e,
           voittoaste:      $e,
@@ -6486,9 +6507,7 @@ subrule yksikkö_valo ($vahva_aste, $heikko_aste):
           sisäolento_ssA:  $heikko_aste,
           sisäeronto_stA:  $heikko_aste,
           sisätulento_Vn:  $vahva_aste,
-          ulko_olento_llA: $heikko_aste,
-          ulkoeronto_ltA:  $heikko_aste,
-          ulkotulento_lle: $heikko_aste,
+          ulkopaikallissija_llA: $heikko_aste,
           vajanto_ttA:     $heikko_aste,
           kerronto_sti:    $heikko_aste,
           voittoaste:      $heikko_aste,
@@ -6539,9 +6558,7 @@ subrule yksikkö8 ($omistusliite,
           sisäolento_ssA:  $heikko_aste,
           sisäeronto_stA:  $heikko_aste] +
          $st +
-         [ulko_olento_llA: $heikko_aste,
-          ulkoeronto_ltA:  $heikko_aste,
-          ulkotulento_lle: $heikko_aste,
+         [ulkopaikallissija_llA: $heikko_aste,
           vajanto_ttA:     $heikko_aste,
           kerronto_sti:    $heikko_aste,
           voittoaste:      $voittoaste]
@@ -6573,9 +6590,7 @@ subrule yksikkö8b ($omistusliite,
           sisäolento_ssA:  $heikko_aste,
           sisäeronto_stA:  $heikko_aste] +
          $st +
-         [ulko_olento_llA: $heikko_aste,
-          ulkoeronto_ltA:  $heikko_aste,
-          ulkotulento_lle: $heikko_aste,
+         [ulkopaikallissija_llA: $heikko_aste,
           vajanto_ttA:     $heikko_aste,
           kerronto_sti:    $heikko_aste]
          + yhdyssana ($yhdyssana);
@@ -6758,9 +6773,7 @@ subrule kiiski ($tietue):
                          sisäolento_ssA:   "e",
                          sisäeronto_stA:   "e",
                          sisätulento_Vn:   "e",
-                         ulko_olento_llA:  "e",
-                         ulkoeronto_ltA:   "e",
-                         ulkotulento_lle:  "e",
+                         ulkopaikallissija_llA:  "e",
                          vajanto_ttA:      "e",
                          nimentö_t:        "e",
                          omanto_ien:       "",
@@ -6931,9 +6944,7 @@ subrule sivumpana ($tietue, $vahva_aste, $heikko_aste):
                          sisäolento_ssA:  $heikko_aste,
                          sisäeronto_stA:  $heikko_aste,
                          sisätulento_Vn:  $vahva_aste,
-                         ulko_olento_llA: $heikko_aste,
-                         ulkoeronto_ltA:  $heikko_aste,
-                         ulkotulento_lle: $heikko_aste,
+                         ulkopaikallissija_llA: $heikko_aste,
                          tulento_s:       $heikko_aste]);
 end;
 
@@ -6942,9 +6953,7 @@ subrule keväämmällä ($tietue, $vahva_aste, $heikko_aste):
   return taivutuskaava ($tietue,
                         [olento_nA:       $vahva_aste,
                          tulento_ksi:     $heikko_aste,
-                         ulko_olento_llA: $heikko_aste,
-                         ulkoeronto_ltA:  $heikko_aste,
-                         ulkotulento_lle: $heikko_aste]);
+                         ulkopaikallissija_llA: $heikko_aste]);
 end;
 
 subrule voikko_lista_vain_lipulla($lippu, $lista):
