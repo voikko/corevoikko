@@ -1049,7 +1049,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
     result $res, rules lukusanan_jälkiliite,
                  nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
    elseif ($oikea.alaluokka = numeromerkki) then
-     $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "=q"] + $oikea>;
+     $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "q"] + $oikea>;
      result $res, rules lukusana_numero, yhdysmerkki_numeron_jälkeen;
      result $res, accept;
   end;
@@ -1715,7 +1715,7 @@ end;
 subrule rakenne ($tietue, $pienet_kirjaimet):
   define $alen := length($tietue.alku);
   define $i := 0;
-  define $tuloste := "";
+  define $tuloste := "=";
   define $kirjain := "";
   foreach $k in length($tietue.rakenne):
     $kirjain := substring($tietue.rakenne, $k);

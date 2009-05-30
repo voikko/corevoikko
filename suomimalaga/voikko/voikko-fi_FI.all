@@ -7014,12 +7014,22 @@ output_filter output($lista_orig):
     end;
   end;
 
-  # Kaikkia lippuja ei tarvita
   foreach $i in length($lista):
+    # Kaikkia lippuja ei tarvita
     if ($lista.$i.tiedot /= nil) then
       $lista.$i.tiedot :=- <ei_sukija, murre>;
       if (length($lista.$i.tiedot) = 0) then
         $lista.$i :=- tiedot;
+      end;
+    end;
+
+    # Ylimääräiset merkit pois rakenne-kentästä
+    if $lista.$i.rakenne /= nil then
+      repeat while last($lista.$i.rakenne) = "p";
+        $lista.$i.rakenne := substring($lista.$i.rakenne, 1L, 2R);
+      end;
+      if substring($lista.$i.rakenne, 1L) = "=" then
+        $lista.$i.rakenne := substring($lista.$i.rakenne, 2L, 1R);
       end;
     end;
   end;
