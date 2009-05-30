@@ -321,9 +321,9 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "llä",   luokka: sijapääte, sija: ulkopaikallissija_llA, sijamuoto: ulko_olento,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
 
-[alku: "illa",  luokka: sijapääte, sija: ulko_olento_illA, sijamuoto: ulko_olento,
+[alku: "illa",  luokka: sijapääte, sija: ulkopaikallissija_illA, sijamuoto: ulko_olento,
                 luku: monikko, äs: a, jatko: @sijan_jatko_ol];
-[alku: "illä",  luokka: sijapääte, sija: ulko_olento_illA, sijamuoto: ulko_olento,
+[alku: "illä",  luokka: sijapääte, sija: ulkopaikallissija_illA, sijamuoto: ulko_olento,
                 luku: monikko, äs: ä, jatko: @sijan_jatko_ol];
 
 
@@ -332,16 +332,16 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 [alku: "ltä",   luokka: sijapääte, sija: ulkopaikallissija_llA, sijamuoto: ulkoeronto,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
 
-[alku: "ilta",  luokka: sijapääte, sija: ulkoeronto_iltA, sijamuoto: ulkoeronto,
+[alku: "ilta",  luokka: sijapääte, sija: ulkopaikallissija_illA, sijamuoto: ulkoeronto,
                 luku: monikko, äs: a, jatko: @sijan_jatko_ol];
-[alku: "iltä",  luokka: sijapääte, sija: ulkoeronto_iltA, sijamuoto: ulkoeronto,
+[alku: "iltä",  luokka: sijapääte, sija: ulkopaikallissija_illA, sijamuoto: ulkoeronto,
                 luku: monikko, äs: ä, jatko: @sijan_jatko_ol];
 
 
 [alku: "lle",   luokka: sijapääte, sija: ulkopaikallissija_llA, sijamuoto: ulkotulento,
                 luku: yksikkö, äs: aä, jatko: @sijan_jatko_ol];
 
-[alku: "ille",  luokka: sijapääte, sija: ulkotulento_ille, sijamuoto: ulkotulento,
+[alku: "ille",  luokka: sijapääte, sija: ulkopaikallissija_illA, sijamuoto: ulkotulento,
                 luku: monikko, äs: aä, jatko: @sijan_jatko_ol];
 
 
@@ -396,7 +396,7 @@ define @jatko_mmA := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
                       vajanto_ttA, kerronto_sti>;
 define @jatko_mp := <omanto_ien, osanto_iA, olento_inA, sisätulento_iin, seuranto_ine>;
 define @jatko_mm := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
-                     ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                     ulkopaikallissija_illA,
                      vajanto_ittA, keinonto_in, johdin_UUs>;
 
 
@@ -913,7 +913,7 @@ define @jatko_se := <omistusliite, omanto_n,
 define @jatko_s := <osanto_tA, omanto_ien, omanto_ten,
                     osanto_iA, olento_inA, tulento_iksi, 
                     sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-                    ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                    ulkopaikallissija_illA,
                     vajanto_ittA, seuranto_ine, keinonto_in,
                     johdin_ittAin, johdin_UUs, yliaste> + @yhdyssana;
 
@@ -946,7 +946,7 @@ define @jatko_v :=
        <omanto_ien,
         osanto_iA, olento_inA, tulento_iksi,
         sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-        ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+        ulkopaikallissija_illA,
         vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
 [perusmuoto: "va", alku: "v", luokka: johdin_vA, jatko: <asema>, äs: a];
@@ -1020,7 +1020,7 @@ define @jatko_e := <omanto_iT,
                     osanto_itA, olento_inA, tulento_iksi,
                     sisäolento_issA, sisäeronto_istA,
                     sisätulento_isiin, sisätulento_ihin,
-                    ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                    ulkopaikallissija_illA,
                     vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
 [alku: "lee", luokka: johdin_lUt, äs: a, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "lut"];
@@ -1063,7 +1063,7 @@ define @jatko_heikko_aste :=
         kerronto_sti,
         nimentö_t, omanto_iT, osanto_itA, tulento_iksi,
         sisäolento_issA, sisäeronto_istA,
-        ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+        ulkopaikallissija_illA,
         vajanto_ittA, keinonto_in,
         voittoaste, yliaste>;
 
@@ -1092,8 +1092,8 @@ define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 
 define @m_jatko := <omanto_ien, osanto_iA, olento_inA, tulento_iksi,
                     sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-                    ulko_olento_illA, ulkoeronto_iltA,
-                    ulkotulento_ille, vajanto_ittA, seuranto_ine, keinonto_in>;
+                    ulkopaikallissija_illA,
+                    vajanto_ittA, seuranto_ine, keinonto_in>;
 
 
 define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
@@ -1129,7 +1129,7 @@ define @jatko_ttOmA := <omistusliite, omanto_n, osanto_A, olento_nA, tulento_ksi
 
 define @jatko_ttOm := <omanto_ien, osanto_iA, olento_inA, tulento_iksi,
                        sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-                       ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                       ulkopaikallissija_illA,
                        vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
 [alku: "ttom", luokka: johdin_tOn, äs: a, jatko: @jatko_ttOm, perusmuoto: "ton"];
@@ -1164,7 +1164,7 @@ define @jatko_ntO := <omanto_jen, osanto_jA, olento_inA, sisätulento_ihin, seur
 
 define @jatko_nnO := <omanto_iT, osanto_itA, tulento_iksi,
                       sisäolento_issA, sisäeronto_istA,
-                      ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                      ulkopaikallissija_illA,
                       vajanto_ittA, sisätulento_ihin, keinonto_in>;
 
 [alku: "nta", luokka: johdin_ntA, äs: a, jatko: @jatko_ntA, perusmuoto: "nta"];
@@ -1193,7 +1193,7 @@ define @jatko_nni := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
 define @jatko_nte := <osanto_jA, olento_inA, sisätulento_ihin, seuranto_ine>;
 
 define @jatko_nne := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
-                      ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                      ulkopaikallissija_illA,
                       vajanto_ittA, keinonto_in>;
 
 [alku: "nti", luokka: johdin_nti, äs: aä, jatko: @jatko_nti, perusmuoto: "nti"];
@@ -1213,7 +1213,7 @@ define @jatko_de := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
                      johdin_llinen, johdin_tOn, nimentö_t>;
 define @jatko_ks := <omanto_ien, osanto_iA, olento_inA, tulento_iksi,
                      sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-                     ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                     ulkopaikallissija_illA,
                      vajanto_ittA, seuranto_ine, keinonto_in, johdin_inen,
                      johdin_ittAin>;
 
@@ -1304,7 +1304,7 @@ define @jatko_tar := <liitesana, loppu, osanto_tA, omanto_ten> + @yhdyssana;
 
 define @jatko_ttar := <omanto_en, omanto_ien, osanto_iA, olento_inA, tulento_iksi,
                        sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-                       ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+                       ulkopaikallissija_illA,
                        vajanto_ittA, seuranto_ine, keinonto_in, johdin_UUs>;
 
 define @jatko_ttare := <olento_nA, tulento_ksi,
@@ -1334,7 +1334,7 @@ define @jatko_jA :=
 define @jatko_j_myyjä :=
   <omanto_ien, osanto_iA, olento_inA, tulento_iksi,
    sisäolento_issA, sisäeronto_istA, sisätulento_iin,
-   ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+   ulkopaikallissija_illA,
    vajanto_ittA, seuranto_ine, keinonto_in>;
 
 
@@ -1353,7 +1353,7 @@ define @jatko_jA_kulkija_kantaja := @jatko_jA + <osanto_tA>;
 define @jatko_jO_kulkija_kantaja :=
   <omanto_iT, osanto_itA, olento_inA, tulento_iksi,
    sisäolento_issA, sisäeronto_istA, sisätulento_ihin,
-   ulko_olento_illA, ulkoeronto_iltA, ulkotulento_ille,
+   ulkopaikallissija_illA,
    vajanto_ittA, seuranto_ine, keinonto_in, yliaste, johdin_ittAin>;
 
 
@@ -1369,8 +1369,8 @@ define @jatko_jO_kulkija_kantaja :=
 
 define @jatko_j_kantaja :=
   <omanto_ien, osanto_iA, olento_inA, tulento_iksi, sisäolento_issA,
-   sisäeronto_istA, sisätulento_iin, ulko_olento_illA, ulkoeronto_iltA,
-   ulkotulento_ille, vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
+   sisäeronto_istA, sisätulento_iin, ulkopaikallissija_illA,
+   vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
 
 [alku: "j", luokka: johdin_jA_kantaja, äs: aä, perusmuoto: "j", jatko: <johdin_ittAin, johdin_UUs>];

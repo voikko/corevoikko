@@ -1444,9 +1444,8 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
                               tulento_ksi, tulento_iksi,
                               sisäolento_ssA, sisäolento_issA,
                               sisäeronto_stA, sisäeronto_istA,
-                              ulkopaikallissija_llA, ulko_olento_illA,
-                              ulkoeronto_iltA,
-                              ulkotulento_ille,
+                              ulkopaikallissija_llA,
+                              ulkopaikallissija_illA,
                               vajanto_ttA, vajanto_ittA,
                               seuranto_ine>)) or
           ($edellinen.sija = osanto_A and not last($vasen.($index - 2).alku) in <"a", "ä">) then
