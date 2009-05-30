@@ -1431,7 +1431,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
     result $result, rules liitesana;
 
   elseif (omistusliite3_oikein(last($edellinen.alku), $sana)) then
-    if ($edellinen.luokka in <seikkasana, suhdesana>) then
+    if ($edellinen.luokka in <seikkasana, suhdesana, nimisana>) then
       if (not ($edellinen.alku matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)")) then
         result $result, accept;
         result $result, rules liitesana;
