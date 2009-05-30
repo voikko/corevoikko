@@ -304,9 +304,9 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: monikko, äs: aä, jatko: <omistusliite>];
 
 [alku: "sen",   luokka: sijapääte, sija: sisätulento_sen, sijamuoto: sisätulento,
-                luku: yksikkö, äs: aä, jatko: @sijan_jatko];
+                luku: yksikkö, äs: aä, jatko: @sijan_jatko, tiedot: <murre>]; # kaunihisen
 [alku: "se",    luokka: sijapääte, sija: sisätulento_sen, sijamuoto: sisätulento,
-                luku: yksikkö, äs: aä, jatko: <omistusliite>];
+                luku: yksikkö, äs: aä, jatko: <omistusliite>, tiedot: <murre>];
 
 [alku: "isin",  luokka: sijapääte, sija: sisätulento_isin, sijamuoto: sisätulento,
                 luku: monikko, äs: aä, jatko: @sijan_jatko];
