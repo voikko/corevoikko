@@ -270,9 +270,8 @@ interactively) then change the default language for new buffers."
                ;; off the mode.
                (when wcheck-mode
                  (wcheck-mode 0))
-               (message
-                (format "Language \"%s\": program \"%s\" is not executable"
-                        language program)))
+               (message "Language \"%s\": program \"%s\" is not executable"
+                        language program))
 
               ;; If the mode is currently turned on we request an update
               (wcheck-mode
@@ -321,17 +320,16 @@ information on how to configure Wcheck mode. Interactive command
        ((not (wcheck-language-valid-p wcheck-language))
         ;; Not a valid language.
         (wcheck-mode 0)
-        (message (format "Language \"%s\" is not valid"
-                         wcheck-language)))
+        (message "Language \"%s\" is not valid" wcheck-language))
 
        ((not (wcheck-program-executable-p
               (wcheck-query-language-data wcheck-language 'program)))
         ;; The program does not exist or is not executable.
         (wcheck-mode 0)
-        (message (format "Language \"%s\": program \"%s\" is not executable"
-                         wcheck-language
-                         (wcheck-query-language-data wcheck-language
-                                                     'program))))
+        (message "Language \"%s\": program \"%s\" is not executable"
+                 wcheck-language
+                 (wcheck-query-language-data wcheck-language
+                                             'program)))
 
        (t
         ;; We are ready to really turn on the mode.
@@ -441,9 +439,7 @@ in buffers."
       (if (not (wcheck-language-valid-p wcheck-language))
           (progn
             (wcheck-mode 0)
-            (message
-             (format "Language \"%s\" is not valid"
-                     wcheck-language)))
+            (message "Language \"%s\" is not valid" wcheck-language))
 
         ;; Walk through all windows which belong to this buffer and send
         ;; their content to an external program.
