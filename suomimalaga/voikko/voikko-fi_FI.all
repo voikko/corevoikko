@@ -96,7 +96,9 @@ define @luku_sijasta_muunnostaulu :=
  seuranto_ine: monikko,
  keinonto_n: yksikkö,
  keinonto_in: monikko,
- tulento_s: yksikkö
+ tulento_s: yksikkö,
+ ulkopaikallissija_llA: yksikkö,
+ ulkopaikallissija_illA: monikko
 ];
 
 # Palauttaa annettua sijasymbolia vastaavan luvun

@@ -464,6 +464,7 @@ pamahduksittain
 !Erkkiän
 Erkkiin
 !Erkkie-
+!saksella
 
 [kieltosanat]
 eihän
@@ -497,6 +498,8 @@ maleksimaansa
 erityistoivomustensa
 omalletunnolleen
 !omalletunnollean
+!sakseen
+!reggaeen
 
 [liitesanat]
 kissakin
