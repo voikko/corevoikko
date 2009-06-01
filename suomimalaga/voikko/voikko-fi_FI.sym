@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                 2006-2007 Harri Pitkänen <hatapitk@iki.fi>
+#                 2006-2009 Harri Pitkänen <hatapitk@iki.fi>
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -204,6 +204,10 @@ luokka; alaluokka; jluokka;
   tositavan_kertoma_ttiin; # Puhu+ttiin.
 
   tekijä;
+   tekijä_1;
+   tekijä_2;
+   tekijä_3;
+   tekijä_4;
 
   yt; # Yksitekijäinen teonsana.
 

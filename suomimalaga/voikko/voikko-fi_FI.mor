@@ -1383,7 +1383,7 @@ combi_rule liitesana ($vasen, $oikea, $sana, $index):
 
   if (($edellinen.luokka = teonsana) and
       ($edellinen.tapaluokka = käskytapa) and
-      ($edellinen.tekijä = 2) and
+      ($edellinen.tekijä = tekijä_2) and
       ($edellinen.luku = yksikkö)) then
     ? not ($sana in <"ko", "kö">);
   end;

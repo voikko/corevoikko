@@ -491,39 +491,39 @@ define @jatko_mm := <tulento_iksi, sisäolento_issA, sisäeronto_istA,
 
 # Teonsanojen tositavan kestämän tekijäpäätteet.
 #
-[alku: "n",   luokka: kestämän_tekijäpääte_y1, luku: yksikkö, tekijä: 1,
+[alku: "n",   luokka: kestämän_tekijäpääte_y1, luku: yksikkö, tekijä: tekijä_1,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: <liitesana, loppu>];
-[alku: "t",   luokka: kestämän_tekijäpääte_y2, luku: yksikkö, tekijä: 2,
+[alku: "t",   luokka: kestämän_tekijäpääte_y2, luku: yksikkö, tekijä: tekijä_2,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: <liitesana, loppu>];
 
 
 define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 
-[alku: "a",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "a",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
-[alku: "e",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "e",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3];
-[alku: "i",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "i",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3];
-[alku: "o",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "o",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
-[alku: "u",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "u",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
-[alku: "y",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "y",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
-[alku: "ä",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "ä",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
-[alku: "ö",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: 3,
+[alku: "ö",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
 
 
-[alku: "mme", luokka: kestämän_tekijäpääte_m1, luku: monikko, tekijä: 1, äs: aä,
+[alku: "mme", luokka: kestämän_tekijäpääte_m1, luku: monikko, tekijä: tekijä_1, äs: aä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
-[alku: "tte", luokka: kestämän_tekijäpääte_m2, luku: monikko, tekijä: 2, äs: aä,
+[alku: "tte", luokka: kestämän_tekijäpääte_m2, luku: monikko, tekijä: tekijä_2, äs: aä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
-[alku: "vat", luokka: kestämän_tekijäpääte_m3, luku: monikko, tekijä: 3, äs: a,
+[alku: "vat", luokka: kestämän_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: a,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
-[alku: "vät", luokka: kestämän_tekijäpääte_m3, luku: monikko, tekijä: 3, äs: ä,
+[alku: "vät", luokka: kestämän_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: ä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
 
 
@@ -533,99 +533,99 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 # Yhdistin kertoman tunnuksen ja tekijäpäätteen astevaihtelun vuoksi:
 # asetu+in, asetu+it, asettu+i, asetu+imme, asetu+itte, asettu+ivat.
 #
-[alku: "in",   luokka: kertoman_tekijäpääte_y1, luku: yksikkö, tekijä: 1, äs: aä,
+[alku: "in",   luokka: kertoman_tekijäpääte_y1, luku: yksikkö, tekijä: tekijä_1, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "it",   luokka: kertoman_tekijäpääte_y2, luku: yksikkö, tekijä: 2, äs: aä,
+[alku: "it",   luokka: kertoman_tekijäpääte_y2, luku: yksikkö, tekijä: tekijä_2, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "i",    luokka: kertoman_tekijäpääte_y3, luku: yksikkö, tekijä: 3, äs: aä,
-               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-
-[alku: "imme", luokka: kertoman_tekijäpääte_m1, luku: monikko, tekijä: 1, äs: aä,
-               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "itte", luokka: kertoman_tekijäpääte_m2, luku: monikko, tekijä: 2, äs: aä,
-               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "ivat", luokka: kertoman_tekijäpääte_m3, luku: monikko, tekijä: 3, äs: a,
-               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "ivät", luokka: kertoman_tekijäpääte_m3, luku: monikko, tekijä: 3, äs: ä,
+[alku: "i",    luokka: kertoman_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 
+[alku: "imme", luokka: kertoman_tekijäpääte_m1, luku: monikko, tekijä: tekijä_1, äs: aä,
+               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
+[alku: "itte", luokka: kertoman_tekijäpääte_m2, luku: monikko, tekijä: tekijä_2, äs: aä,
+               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
+[alku: "ivat", luokka: kertoman_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: a,
+               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
+[alku: "ivät", luokka: kertoman_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: ä,
+               tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 
-[alku: "da", luokka: tositavan_kestämä_dAAn_kielto, tekijä: 4, äs: a,  # Ei voi+da.
+
+[alku: "da", luokka: tositavan_kestämä_dAAn_kielto, tekijä: tekijä_4, äs: a,  # Ei voi+da.
              jatko: <liitesana, loppu>,
              tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "dä", luokka: tositavan_kestämä_dAAn_kielto, tekijä: 4, äs: ä,
+[alku: "dä", luokka: tositavan_kestämä_dAAn_kielto, tekijä: tekijä_4, äs: ä,
              jatko: <liitesana, loppu>,
              tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "daan", luokka: tositavan_kestämä_dAAn, tekijä: 4, äs: a,  # Voi+daan.
+[alku: "daan", luokka: tositavan_kestämä_dAAn, tekijä: tekijä_4, äs: a,  # Voi+daan.
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "dään", luokka: tositavan_kestämä_dAAn, tekijä: 4, äs: ä,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-
-[alku: "la",   luokka: tositavan_kestämä_lAAn_kielto, tekijä: 4, äs: a,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "lä",   luokka: tositavan_kestämä_lAAn_kielto, tekijä: 4, äs: ä,
+[alku: "dään", luokka: tositavan_kestämä_dAAn, tekijä: tekijä_4, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "laan", luokka: tositavan_kestämä_lAAn, tekijä: 4, äs: a,
+[alku: "la",   luokka: tositavan_kestämä_lAAn_kielto, tekijä: tekijä_4, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "lään", luokka: tositavan_kestämä_lAAn, tekijä: 4, äs: ä,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-
-[alku: "na",   luokka: tositavan_kestämä_nAAn_kielto, tekijä: 4, äs: a,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "nä",   luokka: tositavan_kestämä_nAAn_kielto, tekijä: 4, äs: ä,
+[alku: "lä",   luokka: tositavan_kestämä_lAAn_kielto, tekijä: tekijä_4, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "naan", luokka: tositavan_kestämä_nAAn, tekijä: 4, äs: a,
+[alku: "laan", luokka: tositavan_kestämä_lAAn, tekijä: tekijä_4, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "nään", luokka: tositavan_kestämä_nAAn, tekijä: 4, äs: ä,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-
-[alku: "ra",   luokka: tositavan_kestämä_rAAn_kielto, tekijä: 4, äs: a,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "rä",   luokka: tositavan_kestämä_rAAn_kielto, tekijä: 4, äs: ä,
+[alku: "lään", luokka: tositavan_kestämä_lAAn, tekijä: tekijä_4, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "raan", luokka: tositavan_kestämä_rAAn, tekijä: 4, äs: a,
+[alku: "na",   luokka: tositavan_kestämä_nAAn_kielto, tekijä: tekijä_4, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "rään", luokka: tositavan_kestämä_rAAn, tekijä: 4, äs: ä,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-
-[alku: "ta",   luokka: tositavan_kestämä_tAAn_kielto, tekijä: 4, äs: a,
-               jatko: <liitesana, loppu>,
-               tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "tä",   luokka: tositavan_kestämä_tAAn_kielto, tekijä: 4, äs: ä,
+[alku: "nä",   luokka: tositavan_kestämä_nAAn_kielto, tekijä: tekijä_4, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "taan", luokka: tositavan_kestämä_tAAn, tekijä: 4, äs: a,
+[alku: "naan", luokka: tositavan_kestämä_nAAn, tekijä: tekijä_4, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "tään", luokka: tositavan_kestämä_tAAn, tekijä: 4, äs: ä,
+[alku: "nään", luokka: tositavan_kestämä_nAAn, tekijä: tekijä_4, äs: ä,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+
+[alku: "ra",   luokka: tositavan_kestämä_rAAn_kielto, tekijä: tekijä_4, äs: a,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+[alku: "rä",   luokka: tositavan_kestämä_rAAn_kielto, tekijä: tekijä_4, äs: ä,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+
+[alku: "raan", luokka: tositavan_kestämä_rAAn, tekijä: tekijä_4, äs: a,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+[alku: "rään", luokka: tositavan_kestämä_rAAn, tekijä: tekijä_4, äs: ä,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+
+[alku: "ta",   luokka: tositavan_kestämä_tAAn_kielto, tekijä: tekijä_4, äs: a,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+[alku: "tä",   luokka: tositavan_kestämä_tAAn_kielto, tekijä: tekijä_4, äs: ä,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+
+[alku: "taan", luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, äs: a,
+               jatko: <liitesana, loppu>,
+               tapaluokka: tositapa, aikamuoto: kestämä];
+[alku: "tään", luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
 
-[alku: "ttiin", luokka: tositavan_kertoma_ttiin, tekijä: 4, äs: aä,
+[alku: "ttiin", luokka: tositavan_kertoma_ttiin, tekijä: tekijä_4, äs: aä,
                 jatko: <liitesana, loppu>,
                 tapaluokka: tositapa, aikamuoto: kertoma];
 
-[alku: "tiin", luokka: tositavan_kertoma_tiin, tekijä: 4, äs: aä,
+[alku: "tiin", luokka: tositavan_kertoma_tiin, tekijä: tekijä_4, äs: aä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kertoma];
 
@@ -633,90 +633,90 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 # Ehtotapa. Olen yhdistänyt ehtotavan tunnuksen (isi) ja tekijäpäätteen.
 #
 [alku: "isin",   luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "isit",   luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "isi",    luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "is",     luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>, tiedot: <murre>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>, tiedot: <murre>];
 [alku: "isimme", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "isitte", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "isivat", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: a, luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: a, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "isivät", luokka: ehtotapa, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                 äs: ä, luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: ä, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
 [alku: "ttaisi",   luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "ttäisi",   luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "ttaisiin", luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "ttäisiin", luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "taisi",    luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "täisi",    luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "taisiin",  luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "täisiin",  luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 
 
 # Mahtotapa.
 #
 [alku: "len",    luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "let",    luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "lee",    luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "lemme",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "lette",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "levat",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: a,    luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: a,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "levät",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: ä,    luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: ä,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
 [alku: "le",     luokka: mahtotapa_le_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "nen",    luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "net",    luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "nee",    luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "nemme",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "nette",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "nevat",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: a,    luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: a,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "nevät",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: ä,    luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: ä,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
 [alku: "ne",     luokka: mahtotapa_ne_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "ren",    luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "ret",    luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "ree",    luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "remme",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "rette",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "revat",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: a,    luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: a,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "revät",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: ä,  jatko: <liitesana, loppu>];
 
@@ -724,84 +724,84 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                  äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "sen",    luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "set",    luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "see",    luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: yksikkö, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: aä, luku: yksikkö, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "semme",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 1, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_1, jatko: <liitesana, loppu>];
 [alku: "sette",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: aä, luku: monikko, tekijä: 2, jatko: <liitesana, loppu>];
+                 äs: aä, luku: monikko, tekijä: tekijä_2, jatko: <liitesana, loppu>];
 [alku: "sevat",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: a,  luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: a,  luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 [alku: "sevät",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                 äs: ä,  luku: monikko, tekijä: 3, jatko: <liitesana, loppu>];
+                 äs: ä,  luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
 [alku: "se",     luokka: mahtotapa_se_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: aä, jatko: <liitesana, loppu>];
 
 
 [alku: "ttane",   luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "ttäne",   luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "ttaneen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "ttäneen", luokka: mahtotapa_ttA, tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "tane",    luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "täne",    luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "taneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: a, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 [alku: "täneen",  luokka: mahtotapa_tA,  tapaluokka: mahtotapa, aikamuoto: kestämä,
-                  äs: ä, tekijä: 4, jatko: <liitesana, loppu>];
+                  äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
 
 
 
 # Teonsanojen käskytavan (punokoon) henkilöpäätteet.
 #
-[alku: "koon",   luokka: käskytapa, luku: yksikkö, tekijä: 3, äs: a,
+[alku: "koon",   luokka: käskytapa, luku: yksikkö, tekijä: tekijä_3, äs: a,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "köön",   luokka: käskytapa, luku: yksikkö, tekijä: 3, äs: ä,
+[alku: "köön",   luokka: käskytapa, luku: yksikkö, tekijä: tekijä_3, äs: ä,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kaamme", luokka: käskytapa, luku: monikko, tekijä: 1, äs: a,
+[alku: "kaamme", luokka: käskytapa, luku: monikko, tekijä: tekijä_1, äs: a,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "käämme", luokka: käskytapa, luku: monikko, tekijä: 1, äs: ä,
+[alku: "käämme", luokka: käskytapa, luku: monikko, tekijä: tekijä_1, äs: ä,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kaa",    luokka: käskytapa, luku: monikko, tekijä: 2, äs: a,
+[alku: "kaa",    luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: a,
                  jatko: <liitesana, liitesana_s, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kaatte", luokka: käskytapa, luku: monikko, tekijä: 2, äs: a,
+[alku: "kaatte", luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: a,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kää",    luokka: käskytapa, luku: monikko, tekijä: 2, äs: ä,
+[alku: "kää",    luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: ä,
                  jatko: <liitesana, liitesana_s, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "käätte", luokka: käskytapa, luku: monikko, tekijä: 2, äs: ä,
+[alku: "käätte", luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: ä,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "koot",   luokka: käskytapa, luku: monikko, tekijä: 3, äs: a,
+[alku: "koot",   luokka: käskytapa, luku: monikko, tekijä: tekijä_3, äs: a,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kööt",   luokka: käskytapa, luku: monikko, tekijä: 3, äs: ä,
+[alku: "kööt",   luokka: käskytapa, luku: monikko, tekijä: tekijä_3, äs: ä,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "ttakoon", luokka: käskytapa_ttA, tekijä: 4, äs: a,
+[alku: "ttakoon", luokka: käskytapa_ttA, tekijä: tekijä_4, äs: a,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "ttäköön", luokka: käskytapa_ttA, tekijä: 4, äs: ä,
-                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-
-[alku: "ttako",   luokka: käskytapa_ttA, tekijä: 4, äs: a,        # Punoa, älköön puno+ttako.
-                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "ttäkö",   luokka: käskytapa_ttA, tekijä: 4, äs: ä,
+[alku: "ttäköön", luokka: käskytapa_ttA, tekijä: tekijä_4, äs: ä,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "takoon",  luokka: käskytapa_tA, tekijä: 4, äs: a,
+[alku: "ttako",   luokka: käskytapa_ttA, tekijä: tekijä_4, äs: a,        # Punoa, älköön puno+ttako.
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "täköön",  luokka: käskytapa_tA, tekijä: 4, äs: ä,
+[alku: "ttäkö",   luokka: käskytapa_ttA, tekijä: tekijä_4, äs: ä,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "tako",    luokka: käskytapa_tA, tekijä: 4, äs: a,         # Juosta, älköön juos+tako.
+[alku: "takoon",  luokka: käskytapa_tA, tekijä: tekijä_4, äs: a,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "täkö",    luokka: käskytapa_tA, tekijä: 4, äs: ä,
+[alku: "täköön",  luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä,
+                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+
+[alku: "tako",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: a,         # Juosta, älköön juos+tako.
+                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+[alku: "täkö",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
 [alku: "ko", luokka: käskytapa_kielto, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];

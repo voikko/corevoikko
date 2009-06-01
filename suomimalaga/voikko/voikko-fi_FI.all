@@ -3394,7 +3394,7 @@ allo_rule generate_allos ($tietue):
                              liitesana2, johdin_vA, johdin_vAinen>, []),
                   taivutus ($tietue, "e", <liitesana, loppu>,
                             [tapaluokka: käskytapa, aikamuoto: kestämä,
-                             luku: yksikkö, tekijä: 2])>;
+                             luku: yksikkö, tekijä: tekijä_2])>;
     result $i.alku, $i - alku;
 
 
@@ -3997,7 +3997,7 @@ end;
 subrule tositavan_kestämä_y3 ($tietue, $vahva_aste):
   return <taivutus ($tietue, $vahva_aste, <liitesana, liitesana_pi, loppu>,
                     [tapaluokka: tositapa, aikamuoto: kestämä,
-                     luku: yksikkö, tekijä: 3])>;
+                     luku: yksikkö, tekijä: tekijä_3])>;
 end;
 
 
@@ -4032,7 +4032,7 @@ subrule käskytapa ($tietue, $heikko_aste):
 ##                    <liitesana, liitesana2, loppu>,
                     <liitesana, liitesana2, liitesana_s, loppu>,
                     [tapaluokka: käskytapa, aikamuoto: kestämä,
-                    tekijä: 2, luku: yksikkö])>;
+                    tekijä: tekijä_2, luku: yksikkö])>;
 end;
 
 
