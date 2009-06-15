@@ -36,6 +36,15 @@
 ;; Wcheck mode. (M-x customize-group RET wcheck RET)
 
 
+(eval-when-compile
+  (defvar wcheck-mode nil)
+  (defvar wcheck-received-words nil)
+  (defvar wcheck-buffer-process-data nil)
+  (defvar wcheck-language-data-defaults nil)
+  (defvar wcheck-timer nil)
+  (defvar wcheck-timer-read-requested nil)
+  (defvar wcheck-timer-paint-requested nil))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Settings
