@@ -816,7 +816,8 @@ defined in variable `wcheck-language-data-defaults'."
 
 
 (defun wcheck-current-idle-time-seconds ()
-  "Return current idle time in seconds."
+  "Return current idle time in seconds.
+The returned value is a floating point number."
   (let* ((idle (or (current-idle-time)
                    '(0 0 0)))
          (high (nth 0 idle))
