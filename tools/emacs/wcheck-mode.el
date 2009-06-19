@@ -166,7 +166,8 @@ An example contents of the `wcheck-language-data' variable:
                            (cons :format "%v"
                                  (const :tag "Syntax table:   "
                                         :format "%t" syntax)
-                                 (symbol :format "%v"))
+                                 (variable :format "%v"
+                                           :value text-mode-syntax-table))
                            (cons :format "%v"
                                  (const :tag "Regexp start:   "
                                         :format "%t" regexp-start)
