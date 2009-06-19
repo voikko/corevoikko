@@ -720,8 +720,7 @@ only visible text elements; all hidden parts are omitted."
                        ;; in the current point position.
                        (throw 'infinite t))
 
-                      ((get-char-property (match-beginning 1)
-                                          'invisible buffer)
+                      ((invisible-p (match-beginning 1))
                        ;; This point is invisible. Let's jump forward to
                        ;; next change of "invisible" property.
                        (goto-char (next-single-char-property-change
@@ -783,8 +782,7 @@ table settings defined in LANGUAGE (see `wcheck-language-data')."
                          ;; We didn't move forward so break the loop.
                          ;; Otherwise we would loop endlessly.
                          (throw 'infinite t))
-                        ((get-char-property (match-beginning 1)
-                                            'invisible buffer)
+                        ((invisible-p (match-beginning 1))
                          ;; The point is invisible so jump forward to
                          ;; the next change of "invisible" text property.
                          (goto-char (next-single-char-property-change
