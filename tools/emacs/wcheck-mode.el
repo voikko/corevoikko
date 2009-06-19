@@ -189,6 +189,18 @@ An example contents of the `wcheck-language-data' variable:
                                          :value "\\`'+\\'"))))))
 
 
+(defconst wcheck-language-data-defaults
+  '((args . "")
+    (face . wcheck-default-face)
+    (syntax . text-mode-syntax-table)
+    (regexp-start . "\\<'*")
+    (regexp-body . "\\w+?")
+    (regexp-end . "'*\\>")
+    (regexp-discard . "\\`'+\\'"))
+  "Default language configuration for `wcheck-mode'.
+This constant is for Wcheck mode's internal use only. This
+provides useful defaults for `wcheck-language-data'.")
+
 
 ;;;###autoload
 (defcustom wcheck-language ""
@@ -206,16 +218,6 @@ languages use the command `\\[wcheck-change-language]'."
   "Default face for marking strings in a buffer.
 This is used when language does not define face."
   :group 'wcheck)
-
-
-(setq-default wcheck-language-data-defaults
-              '((args . "")
-                (face . wcheck-default-face)
-                (syntax . text-mode-syntax-table)
-                (regexp-start . "\\<'*")
-                (regexp-body . "\\w+?")
-                (regexp-end . "'*\\>")
-                (regexp-discard . "\\`'+\\'")))
 
 
 (setq-default wcheck-buffer-process-data nil
