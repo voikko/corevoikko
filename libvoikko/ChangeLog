@@ -1,3 +1,8 @@
+2009-06-24 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Replace the commands used to generate autotools files
+	  in autogen.sh with single call to autoreconf.
+
 2009-05-28 Harri Pitkänen <hatapitk@iki.fi>
 
 	* SPELL_FAILED from "pop-opisto" check should not be used as
