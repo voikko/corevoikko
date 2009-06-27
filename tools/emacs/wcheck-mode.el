@@ -748,7 +748,7 @@ external process which handles LANGUAGE. Each string in WORDLIST
 is sent as separate line."
   (let ((proc (wcheck-start-get-process language))
         string)
-    (setq string (concat "\n" (mapconcat 'concat wordlist "\n") "\n"))
+    (setq string (concat "\n" (mapconcat 'identity wordlist "\n") "\n"))
     (process-send-string proc string)
     string))
 
