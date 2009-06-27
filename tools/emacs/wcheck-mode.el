@@ -455,13 +455,12 @@ in buffers."
 
         ;; Walk through all windows which belong to this buffer and send
         ;; their content to an external program.
-        (walk-windows
-         (function (lambda (window)
-                     (when (eq buffer (window-buffer window))
-                       (wcheck-send-words wcheck-language
-                                          (wcheck-read-words wcheck-language
-                                                             window)))))
-         'nomb t))))
+        (walk-windows (lambda (window)
+                        (when (eq buffer (window-buffer window))
+                          (wcheck-send-words wcheck-language
+                                             (wcheck-read-words wcheck-language
+                                                                window))))
+                      'nomb t))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
@@ -496,13 +495,12 @@ call. The delay between consecutive calls is defined in variable
       ;; Walk through windows and mark text based on the word list
       ;; returned by an external process.
       (when wcheck-mode
-        (walk-windows
-         (function (lambda (window)
-                     (when (eq buffer (window-buffer window))
-                       (with-current-buffer buffer
-                         (wcheck-paint-words wcheck-language window
-                                             wcheck-received-words)))))
-         'nomb t))))
+        (walk-windows (lambda (window)
+                        (when (eq buffer (window-buffer window))
+                          (with-current-buffer buffer
+                            (wcheck-paint-words wcheck-language window
+                                                wcheck-received-words))))
+                      'nomb t))))
 
   ;; If REPEAT is positive integer call this function again after
   ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
@@ -538,11 +536,11 @@ scrolled."
   "`wcheck-mode' hook for window size change.
 Request update for the buffer when its window's size has
 changed."
-  (walk-windows (function (lambda (window)
-                            (with-current-buffer (window-buffer window)
-                              (when wcheck-mode
-                                (wcheck-timer-read-request
-                                 (window-buffer window))))))
+  (walk-windows (lambda (window)
+                  (with-current-buffer (window-buffer window)
+                    (when wcheck-mode
+                      (wcheck-timer-read-request
+                       (window-buffer window)))))
                 'nomb
                 frame))
 
@@ -551,11 +549,11 @@ changed."
   "`wcheck-mode' hook for window configuration change.
 Request update for the buffer when its window's configuration has
 changed."
-  (walk-windows (function (lambda (window)
-                            (with-current-buffer (window-buffer window)
-                              (when wcheck-mode
-                                (wcheck-timer-read-request
-                                 (current-buffer))))))
+  (walk-windows (lambda (window)
+                  (with-current-buffer (window-buffer window)
+                    (when wcheck-mode
+                      (wcheck-timer-read-request
+                       (current-buffer)))))
                 'nomb
                 'currentframe))
 
