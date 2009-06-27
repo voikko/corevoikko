@@ -318,7 +318,7 @@ information on how to configure Wcheck mode. Interactive command
 `wcheck-change-language' is used to switch languages."
 
   :init-value nil
-  :lighter " Wck"
+  :lighter " wck"
   :keymap wcheck-mode-map
   (if wcheck-mode
       ;; Turn on Wcheck mode, but first some checks...
