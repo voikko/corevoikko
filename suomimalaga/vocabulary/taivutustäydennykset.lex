@@ -51,7 +51,7 @@
 [perusmuoto: "Bach", alku: "Bach", luokka: sukunimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Ba-ch[+liitesana]"
 [perusmuoto: "Bangladesh", alku: "Bangladesh", luokka: paikannimi, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>]; # Estämään tavutus "Banglade-sh[+liitesana]"
 [perusmuoto: "Friedrich", alku: "Friedrich", luokka: etunimi, jatko: <loppu, liitesana>, äs: ä, tiedot: <ei_sukija>]; # Estämään tavutus "Friedri-ch[+liitesana]"
-[perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <tulento_iksi, sisäolento_issA, sisäeronto_istA, vajanto_ittA, keinonto_in> + @ulkopaikallissijat_monikko, äs: a];
+[perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <vajanto_ittA, keinonto_in> + @sija_monikko_1 + @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "kappale", alku: "kappal", luokka: nimisana, jatko: <omanto_ten>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kultanen", alku: "kultasemme", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
@@ -87,9 +87,7 @@
 [perusmuoto: "kiva", alku: "kivemp", luokka: laatusana, jatko: <omanto_ien>, äs: ä];
 [perusmuoto: "kiva", alku: "kivemp", luokka: laatusana, jatko: <osanto_iA>, äs: ä];
 [perusmuoto: "kiva", alku: "kivemp", luokka: laatusana, jatko: <olento_inA>, äs: ä];
-[perusmuoto: "kiva", alku: "kivemm", luokka: laatusana, jatko: <tulento_iksi>, äs: ä];
-[perusmuoto: "kiva", alku: "kivemm", luokka: laatusana, jatko: <sisäolento_issA>, äs: ä];
-[perusmuoto: "kiva", alku: "kivemm", luokka: laatusana, jatko: <sisäeronto_istA>, äs: ä];
+[perusmuoto: "kiva", alku: "kivemm", luokka: laatusana, jatko: @sija_monikko_1, äs: ä];
 [perusmuoto: "kiva", alku: "kivemp", luokka: laatusana, jatko: <sisätulento_iin>, äs: ä];
 [perusmuoto: "kiva", alku: "kivemm", luokka: laatusana, jatko: @ulkopaikallissijat_monikko, äs: ä];
 [perusmuoto: "kiva", alku: "kivemm", luokka: laatusana, jatko: <vajanto_ittA>, äs: ä];
@@ -115,9 +113,7 @@
 [perusmuoto: "kiva", alku: "kivimp", luokka: laatusana, jatko: <omanto_ien>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimp", luokka: laatusana, jatko: <osanto_iA>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimp", luokka: laatusana, jatko: <olento_inA>, äs: ä];
-[perusmuoto: "kiva", alku: "kivimm", luokka: laatusana, jatko: <tulento_iksi>, äs: ä];
-[perusmuoto: "kiva", alku: "kivimm", luokka: laatusana, jatko: <sisäolento_issA>, äs: ä];
-[perusmuoto: "kiva", alku: "kivimm", luokka: laatusana, jatko: <sisäeronto_istA>, äs: ä];
+[perusmuoto: "kiva", alku: "kivimm", luokka: laatusana, jatko: @sija_monikko_1, äs: ä];
 [perusmuoto: "kiva", alku: "kivimp", luokka: laatusana, jatko: <sisätulento_iin>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimm", luokka: laatusana, jatko: @ulkopaikallissijat_monikko, äs: ä];
 [perusmuoto: "kiva", alku: "kivimm", luokka: laatusana, jatko: <vajanto_ittA>, äs: ä];
@@ -142,9 +138,7 @@
 [perusmuoto: "kiva", alku: "kivoimp", luokka: laatusana, jatko: <omanto_ien>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimp", luokka: laatusana, jatko: <osanto_iA>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimp", luokka: laatusana, jatko: <olento_inA>, äs: a];
-[perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <tulento_iksi>, äs: a];
-[perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <sisäolento_issA>, äs: a];
-[perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <sisäeronto_istA>, äs: a];
+[perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: @sija_monikko_1, äs: a];
 [perusmuoto: "kiva", alku: "kivoimp", luokka: laatusana, jatko: <sisätulento_iin>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <vajanto_ittA>, äs: a];

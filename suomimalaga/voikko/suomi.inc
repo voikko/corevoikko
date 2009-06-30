@@ -118,8 +118,10 @@ define @kertoman_tekijäpääte_vahva_aste := <kertoman_tekijäpääte_y3,
 
 define @sisäpaikallissijat_Vn  := <sisäolento_ssA,  sisäeronto_stA, sisätulento_Vn>;
 define @sisäpaikallissijat_hVn := <sisäolento_ssA,  sisäeronto_stA, sisätulento_hVn>;
+
 define @ulkopaikallissijat     := <ulkopaikallissija_llA>;
 define @ulkopaikallissijat_monikko := <ulkopaikallissija_illA>;
+define @sija_monikko_1 := <sija_monikko_1>;
 
 define @heikkoasteiset_paikallissijat := <sisäolento_ssA,  sisäeronto_stA> + @ulkopaikallissijat;
 

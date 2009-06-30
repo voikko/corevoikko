@@ -394,7 +394,8 @@
 [perusmuoto: "kierryksissä", alku: "kierryksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kierryksissä", alku: "kierryksissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kierryksissä", alku: "kierryksistä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kiihdyksissä", alku: "kiihdyks", luokka: seikkasana, jatko: <sisäolento_issA,sisätulento_iin>, äs: ä];
+[perusmuoto: "kiihdyksissä", alku: "kiihdyksiin", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
+[perusmuoto: "kiihdyksissä", alku: "kiihdyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "kiikissä", alku: "kiikissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiikissä", alku: "kiikistä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kiikissä", alku: "kiikkiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -832,7 +833,8 @@
 [perusmuoto: "salaa", alku: "salaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "salavihkaa", alku: "salavihkaa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=pppppp"];
 [perusmuoto: "samaten", alku: "samaten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "sammuksissa", alku: "sammuks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
+[perusmuoto: "sammuksissa", alku: "sammuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "sammuksissa", alku: "sammuksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "samoin", alku: "samoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "samoinkuin", alku: "samoinkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppppp=pppp"];
 [perusmuoto: "samperi", alku: "samperisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -962,7 +964,8 @@
 [perusmuoto: "tarkimmin", alku: "tarkimmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarkoin", alku: "tarkoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tasa", alku: "tasa", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: a];
-[perusmuoto: "tasa", alku: "taso", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_ihin>, äs: a]; # Tunnistuvat myös sanasta "taso" mutta se on eri sana
+[perusmuoto: "tasa", alku: "tasoihin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Tunnistuu myös sanasta "taso" mutta se on eri sana
+[perusmuoto: "tasa", alku: "tasoissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Tunnistuu myös sanasta "taso" mutta se on eri sana
 [perusmuoto: "tasan", alku: "tasan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tie", alku: "teitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ys_perusosa>];
 [perusmuoto: "tekeillä", alku: "teke", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: ä];
@@ -1002,7 +1005,8 @@
 [perusmuoto: "tukehduksissa", alku: "tukehduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tukehduksissa", alku: "tukehduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tukkanuottasilla", alku: "tukkanuottas", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: a, rakenne: "=ppppp=ppppppppppp"];
-[perusmuoto: "tuohduksissa", alku: "tuohduks", luokka: seikkasana, jatko: <sisäolento_issA, sisätulento_iin>, äs: a];
+[perusmuoto: "tuohduksissa", alku: "tuohduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuohduksissa", alku: "tuohduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuolloin", alku: "tuolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuonnemma", alku: "tuonnemma", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuonnemma", alku: "tuonnemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

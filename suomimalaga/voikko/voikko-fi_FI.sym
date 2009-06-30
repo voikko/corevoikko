@@ -98,14 +98,11 @@ sija;
   olento_inA;
 
   tulento_ksi;
-  tulento_iksi;
 
   sisäolento_ssA;
-  sisäolento_issA;
   sisäolento_nA;   # Se => siinä.
 
   sisäeronto_stA;
-  sisäeronto_istA;
   sisäeronto_tA;   # Se => siitä.
 
   sisätulento_Vn;
@@ -122,6 +119,11 @@ sija;
   ulkopaikallissija_llA;
 
   ulkopaikallissija_illA;
+
+  sija_monikko_1;
+    # tulento_iksi;
+    # sisäolento_issA;
+    # sisäeronto_istA;
 
   vajanto_ttA;
   vajanto_ittA;
