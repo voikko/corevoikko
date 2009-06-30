@@ -1,7 +1,6 @@
-
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -240,7 +239,7 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_inen;
   end;
 
-##  if (not ($tietue.luokka in <nimisana, nimi_laatusana, johdin_tAr>
+##  if (not ($tietue.luokka in <nimisana, nimi_laatusana>
 ##                             + @laatusanasta_johdettu_nimisana + @teonsanasta_johdettu_nimisana)) then
 ##   $taivutus :=- @nimisanasta_johdettu_laatusana;
 ##  end;
@@ -308,9 +307,8 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
 
-  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste,
-                              johdin_tAr>    # Tekijätär => tekijättäryys.
-                             + @johdin_jA    # Tekijä => tekijyys.
+  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste>
+###                             + @johdin_jA    # johdin_jA ja johdin_UUS on yhdistetty: teki+jyys
                              + @teonsanasta_johdettu_laatusana
                              + @nimisanasta_johdettu_laatusana
                              + @nimi_laatusanan_johdin)) then
@@ -337,7 +335,7 @@ subrule taivutuskaava ($tietue, $taivutus):
 
   # Yksitekijäiset teonsanat taipuvat vain yksikön ja monikon kolmannessa.
   #
-  if ($tietue.luokka = teonsana and $tietue.perusmuoto in <"sataa">) then
+  if ($tietue.luokka = teonsana and $tietue.perusmuoto in <"poutaantua", "sataa">) then
     $taivutus :=- <kestämän_tekijäpääte_y1, kestämän_tekijäpääte_y2,
                    kestämän_tekijäpääte_m1, kestämän_tekijäpääte_m2, 
                    kertoman_tekijäpääte_y1, kertoman_tekijäpääte_y2,

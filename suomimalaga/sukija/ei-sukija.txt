@@ -117,6 +117,7 @@ haaroittua
 haaroitus
 halkeama
 Halme
+halpamainen
 halpatyö
 halutunlainen
 Hamina
@@ -166,6 +167,7 @@ huuto
 huutolainen
 hyvinvointi
 hyvinvoiva
+hypertensio
 hyytymä
 häipymä
 Härmä
@@ -511,6 +513,7 @@ marksismi-leninismi
 Martta
 marxilainen
 marxismi-leninismi
+mattaväri
 Matti
 Mela
 meltorauta
@@ -568,6 +571,7 @@ oikeanlainen
 oikeistolainen
 oikeus
 Oiva
+oivallinen
 omaisuus
 omanlainen
 opettajainen
@@ -704,6 +708,7 @@ Sampo
 sanoitus
 sanoma
 saostuma
+sattuma
 Satu
 Savikko
 Savolainen
@@ -828,6 +833,7 @@ Tuuli
 työläinen
 työläisyys
 työntyä
+täydellinen
 täydellistymä
 täysihoito
 täysihoitola

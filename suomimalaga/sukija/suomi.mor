@@ -73,7 +73,7 @@ define @voittoaste := <voittoaste>;
 define @yliaste    := <yliaste>;
 
 define @johdin_x:= <johdin_ittAin, johdin_nlainen,
-                    johdin_tOn, johdin_tAr, johdin_Us, johdin_UUs>
+                    johdin_tOn, johdin_Us, johdin_UUs>
                     + @johdin_jA;
 
 define @tekijämuodot := @kestämän_tekijäpääte + @tositavan_tekijäpääte_4 + @kertoman_tekijäpääte
@@ -390,6 +390,7 @@ assert ($i = length($vasen));
   if (liitesana in $oikea.jatko) then
     result $res, rules liitesana;
   end;
+  # Arka+mainen, halpa+mainen, oiva+llinen, täyde+llinen (= täysi + johdin_llinen), yms.
   if (@nimi_laatusanan_johdin * $oikea.jatko /= <>) then
     result $res, rules nimi_laatusanan_johdin;
   end;

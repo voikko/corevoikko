@@ -91,9 +91,9 @@ allo_rule generate_allos ($tietue):
   end;
 
 
-  # Tunnistetaan yhdyssanana.
+  # Tunnistetaan yhdyssanoina.
   #
-  if ($tietue.perusmuoto in <"Itämeri">) then
+  if ($tietue.perusmuoto in <"Itämeri", "syvämeri">) then
     stop;
   end;
 
@@ -14412,7 +14412,6 @@ subrule olla ($tietue, $param01, $param02, $param03, $param04):
                          johdin_tU_lU_oltu: <<$param01, <>>>]);
 end;
 
-
 # $sanatietue1 Sanastosta (tiedostosta *.lex) luettu tietue.
 # $lisä        Merkkijono, joka lisätään sanan alkuosaan ennen sijapäätteitä.
 #              Esimerkiksi sanan valkoinen alkuosa on valkoi.
@@ -14607,7 +14606,7 @@ subrule taivutuskaava ($tietue, $taivutus):
     $taivutus :=- johdin_inen;
   end;
 
-##  if (not ($tietue.luokka in <nimisana, nimi_laatusana, johdin_tAr>
+##  if (not ($tietue.luokka in <nimisana, nimi_laatusana>
 ##                             + @laatusanasta_johdettu_nimisana + @teonsanasta_johdettu_nimisana)) then
 ##   $taivutus :=- @nimisanasta_johdettu_laatusana;
 ##  end;
@@ -14675,9 +14674,8 @@ subrule taivutuskaava ($tietue, $taivutus):
   end;
 
 
-  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste,
-                              johdin_tAr>    # Tekijätär => tekijättäryys.
-                             + @johdin_jA    # Tekijä => tekijyys.
+  if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste>
+###                             + @johdin_jA    # johdin_jA ja johdin_UUS on yhdistetty: teki+jyys
                              + @teonsanasta_johdettu_laatusana
                              + @nimisanasta_johdettu_laatusana
                              + @nimi_laatusanan_johdin)) then
@@ -14704,7 +14702,7 @@ subrule taivutuskaava ($tietue, $taivutus):
 
   # Yksitekijäiset teonsanat taipuvat vain yksikön ja monikon kolmannessa.
   #
-  if ($tietue.luokka = teonsana and $tietue.perusmuoto in <"sataa">) then
+  if ($tietue.luokka = teonsana and $tietue.perusmuoto in <"poutaantua", "sataa">) then
     $taivutus :=- <kestämän_tekijäpääte_y1, kestämän_tekijäpääte_y2,
                    kestämän_tekijäpääte_m1, kestämän_tekijäpääte_m2, 
                    kertoman_tekijäpääte_y1, kertoman_tekijäpääte_y2,

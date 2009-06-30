@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -264,8 +264,7 @@ tapaluokka;
   laatutapa_2_stU_juostu;    # Juos+tu, juostujen.  Siis astevaihteluton tU-loppuinen.
   laatutapa_2_stU_nuolaistu; # Nuolais+tu, nuolaistujen/nuolaistuiden.  Siis astevaihteluton tU-loppuinen.
 
-  johdin_tAr;         # Pappi >= papitar.
-  johdin_inen;        # Valo+inen (vain yhdyssanojen jälkiosissa).
+  johdin_inen;        # Valo+inen.
   johdin_llinen;      # Juhla+llinen.
   johdin_lAinen;      # Kaupunki+lainen, kaupunki+laisittain.
   johdin_mAinen;      # Kaupunki+mainen, kaupunki+maisittain.
