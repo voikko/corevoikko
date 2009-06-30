@@ -22,8 +22,10 @@
 [perusmuoto: "ali", alku: "alitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alaitse", alku: "alaitse", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "alla", alku: "a", luokka: suhdesana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "ammolla", alku: "ammollaan", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "ammolla", alku: "ammolleen", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ammolla", alku: "ammollaan", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "ammolla", alku: "ammolleen", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
+[perusmuoto: "ammolla", alku: "ammolla", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "ammolla", alku: "ammolle", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "asti", alku: "asti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "de", alku: "de", luokka: suhdesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
@@ -31,8 +33,8 @@
 [perusmuoto: "kanssa", alku: "kanssa", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "kautta", alku: "kautta", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "kera", alku: "kera", luokka: suhdesana, jatko: <loppu>, äs: a];
-[perusmuoto: "keralla", alku: "keralla", luokka: suhdesana, jatko: <omistusliite, loppu>, äs: a];
-[perusmuoto: "keralle", alku: "keralle", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kera", alku: "keralla", luokka: suhdesana, jatko: <omistusliite, loppu>, äs: a];
+[perusmuoto: "kera", alku: "keralle", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "keskuudessa", alku: "keskuude", luokka: suhdesana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "keskuudessa", alku: "keskuute", luokka: suhdesana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "kohden", alku: "kohden", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];

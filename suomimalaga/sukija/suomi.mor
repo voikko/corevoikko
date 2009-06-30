@@ -929,9 +929,8 @@ end;
 
 
 combi_rule omistusliite ($vasen, $oikea, $sana, $n):
-####define $profile := transmit ("omistusliite ($vasen, $oikea, $sana, $n):");
+#define $profile := transmit ("omistusliite ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka = omistusliite;
-
   define $i := $n - 1;
 
   ? $oikea.luokka in $vasen.$i.jatko;
@@ -953,6 +952,10 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
            rules liitesana, loppu;
   end;
 
+#define $a := transmit ($vasen);
+#define $b := transmit ($oikea);
+#define $c := transmit ($sana);
+
   # Jos sijamuoto on omanto_in, hyväksytään vain omistusliitteet "nsa", "nsä", "mme".
   # Omistusliitteet "nsa" ja "nsä" hyväksytään aina, mutta omistusliite "mme" vain, jos
   # sanan vartalon viimeinen kirjain on a tai e tai ä. Tämä algoritmi kelpaa Juhani
@@ -973,8 +976,15 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
       result $result, rules liitesana, loppu;
     end;
   elseif omistusliite3_oikein ($vasen.$i.alku, $sana) then
+#define $o1 := transmit ($vasen.$i.alku + " " + $sana);
+#define $o2 := transmit ((strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)"));
+#define $o3 := transmit ((not (strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)")));
+#define $o4 := transmit (($vasen.$i.luokka = sijapääte));
     if ((not (strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)"))
         and (($vasen.$i.luokka in <seikkasana, suhdesana>)
+             or (($vasen.$i.luokka = nimisana)
+                 and ($vasen.$i.sijamuoto /= nil)
+                 and ($vasen.$i.sijamuoto in <olento, ulko_olento, ulkoeronto, ulkotulento>))
              or (($vasen.$i.luokka = sijapääte) and
                  ($vasen.$i.sija in <osanto_A, osanto_iA,
                                      osanto_tA, osanto_ttA, osanto_itA,

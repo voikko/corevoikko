@@ -93,7 +93,7 @@ allo_rule generate_allos ($tietue):
 
   # Tunnistetaan yhdyssanoina.
   #
-  if ($tietue.perusmuoto in <"Itämeri", "syvämeri">) then
+  if ($tietue.perusmuoto in <"Itämeri">) then
     stop;
   end;
 
