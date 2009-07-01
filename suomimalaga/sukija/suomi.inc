@@ -243,3 +243,5 @@ define @teonsanasta_johdettu_teonsana :=
         johdin_nellA, johdin_nnellA, johdin_rellA, johdin_tellA,
         johdin_eskellA, johdin_oitellA, johdin_otellA,
         johdin_illA>;
+
+define @sija_monikko_1 := <tulento_iksi, sisäolento_issA, sisäeronto_istA>;

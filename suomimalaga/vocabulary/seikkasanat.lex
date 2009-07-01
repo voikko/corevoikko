@@ -1007,6 +1007,7 @@
 [perusmuoto: "tukkanuottasilla", alku: "tukkanuottas", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: a, rakenne: "=ppppp=ppppppppppp"];
 [perusmuoto: "tuohduksissa", alku: "tuohduksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuohduksissa", alku: "tuohduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "tuohduksissa", alku: "tuohduksissa", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tuolloin", alku: "tuolloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tuonnemma", alku: "tuonnemma", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "tuonnemma", alku: "tuonnemmas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

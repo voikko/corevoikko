@@ -981,23 +981,24 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
 #define $o3 := transmit ((not (strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)")));
 #define $o4 := transmit (($vasen.$i.luokka = sijapääte));
     if ((not (strcat ($vasen) matches ".*(aa|ee|ii|oo|uu|yy|ää|öö)"))
-        and (($vasen.$i.luokka in <seikkasana, suhdesana>)
+        and ((($vasen.$i.luokka = sijapääte) and
+              ($vasen.$i.sija in <osanto_A, osanto_iA,
+                                  osanto_tA, osanto_ttA, osanto_itA,
+                                  osanto_jA,
+                                  olento_nA, olento_inA,
+                                  tulento_ksi, tulento_iksi,
+                                  sisäolento_ssA, sisäolento_issA,
+                                  sisäeronto_stA, sisäeronto_istA,
+                                  ulko_olento_llA, ulko_olento_illA,
+                                  ulkoeronto_ltA, ulkoeronto_iltA,
+                                  ulkotulento_lle, ulkotulento_ille,
+                                  vajanto_ttA, vajanto_ittA,
+                                  seuranto_ine>))
+             or ($vasen.$i.luokka in <seikkasana, suhdesana>)
              or (($vasen.$i.luokka = nimisana)
                  and ($vasen.$i.sijamuoto /= nil)
-                 and ($vasen.$i.sijamuoto in <olento, ulko_olento, ulkoeronto, ulkotulento>))
-             or (($vasen.$i.luokka = sijapääte) and
-                 ($vasen.$i.sija in <osanto_A, osanto_iA,
-                                     osanto_tA, osanto_ttA, osanto_itA,
-                                     osanto_jA,
-                                     olento_nA, olento_inA,
-                                     tulento_ksi, tulento_iksi,
-                                     sisäolento_ssA, sisäolento_issA,
-                                     sisäeronto_stA, sisäeronto_istA,
-                                     ulko_olento_llA, ulko_olento_illA,
-                                     ulkoeronto_ltA, ulkoeronto_iltA,
-                                     ulkotulento_lle, ulkotulento_ille,
-                                     vajanto_ttA, vajanto_ittA,
-                                     seuranto_ine>)))) then
+                 and ($vasen.$i.sijamuoto in <olento, ulko_olento, ulkoeronto, ulkotulento,
+                                              sisäolento, sisäeronto, sisätulento>)))) then
       result $result, rules liitesana, loppu;
     elseif ($vasen.$i.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_3_saama, nimitapa_5>) then
       result $result, rules liitesana, loppu;
