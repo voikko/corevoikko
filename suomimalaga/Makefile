@@ -76,15 +76,14 @@ ifeq "$(VOIKKO_DEBUG)" "yes"
     GENLEX_OPTS+= --debug
 endif
 
-voikko/generate_lex.flag: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
+voikko/joukahainen.lex: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) voikko/generate_lex.py $(GENLEX_OPTS)
-	touch $@
 
-voikko/main.lex: voikko/generate_lex.flag $(EXTRA_LEX)
-	cat voikko/joukahainen.lex $(EXTRA_LEX) > $@
+voikko/main.lex: voikko/joukahainen.lex $(EXTRA_LEX)
+	cat $^ > $@
 
 
 # Rule to generate voikko-fi_FI.pro
@@ -108,10 +107,8 @@ VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
 voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
 	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@
 
-voikko/joukahainen.lex: voikko/generate_lex.flag
-
 clean:
-	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc common/hfconv.pyc voikko/generate_lex.flag
+	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc common/hfconv.pyc
 	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
