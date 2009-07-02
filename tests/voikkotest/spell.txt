@@ -621,6 +621,8 @@ pientarilta # Kotus 49
 pientaritta # Kotus 49
 pientarille # Kotus 49
 pientareita # Kotus 49
+ylläpito # Kotus 53
+!ylläpitö # Kotus 53
 kielsi # Kotus 54
 !kielti # Kotus 54
 löysi # Kotus 54
