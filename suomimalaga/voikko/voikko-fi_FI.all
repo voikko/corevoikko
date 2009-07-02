@@ -6887,6 +6887,18 @@ subrule yhdistä_sama_äs($lista):
   return $lista;
 end;
 
+# Yhdistää tietueet, jotka poikkeavat toisistaan vain lähtöluokka-kentän osalta.
+subrule yhdistä_johdokset($lista):
+  if length($lista) = 2 and $lista.1 - lähtöluokka = $lista.2 - lähtöluokka then
+    if $lista.<1,lähtöluokka> = nil then
+      return <$lista.2>;
+    elseif $lista.<2,lähtöluokka> = nil then
+      return <$lista.1>;
+    end;
+  end;
+  return $lista;
+end;
+
 # Yhdistää tietueet, jotka poikkeavat toisistaan vain jatko-kentän osalta.
 subrule yhdistä_sama_jatko($lista):
   if length($lista) = 2 then
@@ -6946,6 +6958,7 @@ output_filter output($lista_orig):
     define $osalista := $lista_luokittain.($luokka);
     $osalista := yhdistä_sama_äs($osalista);
     $osalista := yhdistä_sama_jatko($osalista);
+    $osalista := yhdistä_johdokset($osalista);
     foreach $l in $osalista:
       result $l + [jatko: set($l.jatko)];
     end;
