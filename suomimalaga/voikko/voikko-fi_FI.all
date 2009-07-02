@@ -6735,10 +6735,29 @@ subrule haravoitua ($tietue):
   return punoa ($tietue, tU($tietue), dU($tietue));
 end;
 
+subrule merkkejä_ennen_loppuosaa($tietue):
+  if ($tietue.rakenne = nil) then
+    return 0;
+  end;
+  define $merkkejä := 0;
+  define $ennen_loppuosaa := 0;
+  foreach $i in length($tietue.rakenne):
+    if substring($tietue.rakenne, $i) = "=" then
+      $ennen_loppuosaa := $merkkejä;
+    elseif substring($tietue.rakenne, $i) = "-" then
+      $merkkejä :=+ 1;
+      $ennen_loppuosaa := $merkkejä;
+    else
+      $merkkejä :=+ 1;
+    end;
+  end;
+  return $ennen_loppuosaa;
+end;
 
 subrule ääntiösointu ($tietue):
   define $l := length($tietue.alku);
-  foreach $i in -$l:
+  define $ennen_loppuosaa := merkkejä_ennen_loppuosaa($tietue);
+  foreach $i in -($l - $ennen_loppuosaa):
     if substring($tietue.alku, $l + $i + 1) matches @yäö then
       return ä;
     elseif substring($tietue.alku, $l + $i + 1) matches @uao then
