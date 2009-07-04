@@ -297,10 +297,11 @@ interactively) then change the default language for new buffers."
 (define-minor-mode wcheck-mode
   "Interface for external spell-checkers and filtering programs.
 
-Wcheck is a minor mode for automatically marking words or other
-text elements in Emacs buffer. Wcheck sends (parts of) buffer's
-content to an external text-filtering program and, based on its
-output, decides if some parts of text should be marked.
+Wcheck is a minor mode for automatically checking and marking
+words or other text elements in Emacs buffer. Wcheck sends (parts
+of) buffer's content to an external text-filtering program and,
+based on its output, decides if some parts of text should be
+marked.
 
 Wcheck can be used with spell-checker programs such as Ispell,
 Aspell and Enchant. Then the semantics of operation is that the
