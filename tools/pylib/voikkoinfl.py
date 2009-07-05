@@ -406,11 +406,13 @@ def _vtype_special_class_2(base):
 			# "kih|istä" -> "kihajaa"
 			return voikkoutils.VOWEL_BACK
 
+def _removeStructure(word):
+	return word.replace(u"=", u"").replace(u"|", u"")
 
 ## Returns a list of InflectedWord objects for given word and inflection type.
 def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type = voikkoutils.VOWEL_DEFAULT):
 	if not infclass in inflection_type.joukahainenClasses: return []
-	word_no_sfx = inflection_type.removeSuffix(word)
+	word_no_sfx = inflection_type.removeSuffix(_removeStructure(word))
 	word_grad = __apply_gradation(word_no_sfx, gradclass)
 	if word_grad == None: return []
 	if gradclass == '-': grad_type = voikkoutils.GRAD_NONE

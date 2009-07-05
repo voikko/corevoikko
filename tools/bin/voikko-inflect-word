@@ -21,9 +21,12 @@
 
 # You may get the words and inflections classes for this command from a
 # database dump of Joukahainen with the following query:
-#  select w.word, case when w.class in (1,2) then 'subst-' when w.class=3 then 'verbi-' end || s.value
-#  from word w, string_attribute_value s where w.wid = s.wid and s.aid = 1;
-# Use unaligned format (\a) and "show only tuples" (\t)
+#  \pset fieldsep ;
+#  \a
+#  \t
+#  \o sanat.txt
+#  select wstruct, case when wclass in (1,2) then 'subst-' when wclass=3 then 'verbi-' end || infclass as infclass
+#  from view_voikko_inflection where infclass is not null order by wstruct, infclass;
 
 # Such list of words can be processed by running
 # cat sanat.txt | voikko-inflect-word > taivutukset.txt
@@ -74,21 +77,21 @@ def inflect_word(word, classes):
 
 if len(sys.argv) == 3:
 	inflect_word(unicode(sys.argv[1], PARAM_ENCODING), unicode(sys.argv[2], PARAM_ENCODING))
-elif len(sys.argv) == 2 and sys.argv[1].find("|") != -1:
-	ind = sys.argv[1].find("|")
+elif len(sys.argv) == 2 and sys.argv[1].find(";") != -1:
+	ind = sys.argv[1].find(";")
 	inflect_word(unicode(sys.argv[1][:ind], PARAM_ENCODING), unicode(sys.argv[1][ind+1:], PARAM_ENCODING))
 elif len(sys.argv) == 1:
 	line = sys.stdin.readline()
 	while line.endswith('\n'):
 		line = unicode(line, PARAM_ENCODING).strip()
 		if len(line) == 0: break
-		ind = line.find(u"|")
+		ind = line.find(u";")
 		inflect_word(line[:ind], line[ind+1:])
 		line = sys.stdin.readline()
 else:
 	print 'Usage: voikko-inflect-word'
 	print '       voikko-inflect-word word inflection_class'
-	print '       voikko-inflect-word word|inflection_class'
+	print '       voikko-inflect-word word;inflection_class'
 	print 'If no arguments are given, the program expects as input lines in format'
-	print '     word|inflection_class'
+	print '     word;inflection_class'
 	sys.exit(1)
