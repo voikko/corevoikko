@@ -384,15 +384,20 @@ def _replace_conditional_aposthrope(word):
 DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_1 = [u'subst_tO', u'subst_Os']
 DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_2 = [u'verbi_AjAA', 'verbi_AhtAA', 'verbi_AUttAA', 'verbi_AUtellA']
 
+def _normalize_base(base):
+	if base.find(u'=') != -1:
+		base = base[base.find(u'=') + 1:]
+	return base.lower()
+
 def _vtype_special_class_1(base):
-	base = base.lower()
+	base = _normalize_base(base)
 	last_back = max(base.rfind(u'a'), base.rfind(u'o'), base.rfind(u'å'), base.rfind(u'u'))
 	last_front = max(base.rfind(u'ä'), base.rfind(u'ö'), base.rfind(u'y'))
 	if last_front > last_back: return voikkoutils.VOWEL_FRONT
 	else: return voikkoutils.VOWEL_BACK
 
 def _vtype_special_class_2(base):
-	base = base.lower()
+	base = _normalize_base(base)
 	last_back = max(base.rfind(u'a'), base.rfind(u'o'), base.rfind(u'å'), base.rfind(u'u'))
 	last_front = max(base.rfind(u'ä'), base.rfind(u'ö'), base.rfind(u'y'))
 	if last_front > last_back: return voikkoutils.VOWEL_FRONT
@@ -412,7 +417,7 @@ def _removeStructure(word):
 ## Returns a list of InflectedWord objects for given word and inflection type.
 def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type = voikkoutils.VOWEL_DEFAULT):
 	if not infclass in inflection_type.joukahainenClasses: return []
-	word_no_sfx = inflection_type.removeSuffix(_removeStructure(word))
+	word_no_sfx = inflection_type.removeSuffix(word)
 	word_grad = __apply_gradation(word_no_sfx, gradclass)
 	if word_grad == None: return []
 	if gradclass == '-': grad_type = voikkoutils.GRAD_NONE
@@ -446,18 +451,19 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type =
 				vowel_harmony_rule = _vtype_special_class_1
 			elif rule.name in DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_2:
 				vowel_harmony_rule = _vtype_special_class_2
+			final_base = _removeStructure(word_stripped_base)
 			if vowel_harmony_rule != None:
 				if vowel_harmony_rule(word_stripped_base) == voikkoutils.VOWEL_FRONT:
-					infl.inflectedWord = word_stripped_base + __convert_tv_ev(affix)
+					infl.inflectedWord = final_base + __convert_tv_ev(affix)
 				else:
-					infl.inflectedWord = word_stripped_base + affix
+					infl.inflectedWord = final_base + affix
 				inflection_list.append(infl)
 				continue
 			
 			if vowel_type in [voikkoutils.VOWEL_BACK, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(pattern):
 				infl.inflectedWord = _replace_conditional_aposthrope(
-				                     word_stripped_base + affix)
+				                     final_base + affix)
 				inflection_list.append(infl)
 				infl = InflectedWord()
 				infl.formName = rule.name
@@ -466,7 +472,7 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type =
 			if vowel_type in [voikkoutils.VOWEL_FRONT, voikkoutils.VOWEL_BOTH] and \
 			   word_base.endswith(__convert_tv_ev(pattern)):
 				infl.inflectedWord = _replace_conditional_aposthrope(
-				                     word_stripped_base + __convert_tv_ev(affix))
+				                     final_base + __convert_tv_ev(affix))
 				inflection_list.append(infl)
 	return inflection_list
 
