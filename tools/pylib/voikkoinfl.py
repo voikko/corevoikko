@@ -422,7 +422,8 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type =
 	if not re.compile(__word_pattern_to_pcre(inflection_type.matchWord),
 	                  re.IGNORECASE).match(word): return []
 	inflection_list = []
-	if vowel_type == voikkoutils.VOWEL_DEFAULT: vowel_type = voikkoutils.vowel_type(word)
+	if vowel_type == voikkoutils.VOWEL_DEFAULT:
+		vowel_type = voikkoutils.get_wordform_infl_vowel_type(word)
 	for rule in inflection_type.inflectionRules:
 		if rule.gradation == voikkoutils.GRAD_STRONG: word_base = word_grad[0]
 		else: word_base = word_grad[1]
