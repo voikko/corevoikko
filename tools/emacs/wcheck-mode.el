@@ -146,48 +146,38 @@ An example contents of the `wcheck-language-data' variable:
       (regexp-discard . \"\"))))"
 
   :group 'wcheck
-  :type '(alist :key-type (string :tag "Language")
-                :value-type
-                (cons :format "%v"
-                      (cons :format "%v"
-                            (const :tag "Program: "
-                                   :format "%t" program)
-                            (file :format "%v"))
-                      (set :format "%v"
-                           (cons :format "%v"
-                                 (const :tag "Arguments:      "
-                                        :format "%t" args)
-                                 (string :format "%v"))
-                           (cons :format "%v"
-                                 (const :tag "Face:           "
-                                        :format "%t" face)
-                                 (face :format "%v"
-                                       :value wcheck-default-face))
-                           (cons :format "%v"
-                                 (const :tag "Syntax table:   "
-                                        :format "%t" syntax)
-                                 (variable :format "%v"
-                                           :value text-mode-syntax-table))
-                           (cons :format "%v"
-                                 (const :tag "Regexp start:   "
-                                        :format "%t" regexp-start)
-                                 (regexp :format "%v"
-                                         :value "\\<'*"))
-                           (cons :format "%v"
-                                 (const :tag "Regexp body:    "
-                                        :format "%t" regexp-body)
-                                 (regexp :format "%v"
-                                         :value "\\w+?"))
-                           (cons :format "%v"
-                                 (const :tag "Regexp end:     "
-                                        :format "%t" regexp-end)
-                                 (regexp :format "%v"
-                                         :value "'*\\>"))
-                           (cons :format "%v"
-                                 (const :tag "Regexp discard: "
-                                        :format "%t" regexp-discard)
-                                 (regexp :format "%v"
-                                         :value "\\`'+\\'"))))))
+  :type
+  '(alist
+    :key-type (string :tag "Language")
+    :value-type
+    (cons :format "%v"
+          (cons :format "%v"
+                (const :tag "Program: " :format "%t" program)
+                (file :format "%v"))
+          (repeat
+           :tag "Settings"
+           (choice
+            (cons :tag "Arguments" :format "%v"
+                  (const :tag "Arguments: " :format "%t" args)
+                  (string :format "%v"))
+            (cons :tag "Face" :format "%v"
+                  (const :tag "Face: " :format "%t" face)
+                  (face :format "%v" :value wcheck-default-face))
+            (cons :tag "Syntax table" :format "%v"
+                  (const :tag "Syntax table: " :format "%t" syntax)
+                  (variable :format "%v" :value text-mode-syntax-table))
+            (cons :tag "Regexp start" :format "%v"
+                  (const :tag "Regexp start: " :format "%t" regexp-start)
+                  (regexp :format "%v" :value "\\<'*"))
+            (cons :tag "Regexp body" :format "%v"
+                  (const :tag "Regexp body: " :format "%t" regexp-body)
+                  (regexp :format "%v" :value "\\w+?"))
+            (cons :tag "Regexp end" :format "%v"
+                  (const :tag "Regexp end: " :format "%t" regexp-end)
+                  (regexp :format "%v" :value "'*\\>"))
+            (cons :tag "Regexp discard" :format "%v"
+                  (const :tag "Regexp discard: " :format "%t" regexp-discard)
+                  (regexp :format "%v" :value "\\`'+\\'")))))))
 
 
 (defconst wcheck-language-data-defaults
