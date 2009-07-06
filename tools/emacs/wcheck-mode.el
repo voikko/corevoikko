@@ -80,13 +80,13 @@ and a description of VALUE types:
     `process-connection-type' for more information. The default
     is to use a pipe for communication (nil).
 
-  * `syntax': VALUE is a symbol referring to an Emacs syntax
-    table. See the Info node `(elisp)Syntax Tables' for more
-    information. The default value is `text-mode-syntax-table'.
-
   * `face': A symbol referring to a face which is used to mark
     text with this LANGUAGE. The default value is
     `wcheck-default-face'.
+
+  * `syntax': VALUE is a symbol referring to an Emacs syntax
+    table. See the Info node `(elisp)Syntax Tables' for more
+    information. The default value is `text-mode-syntax-table'.
 
   * `regexp-start', `regexp-body', `regexp-end': Regular
     expression strings which match the start of a string body,
