@@ -68,11 +68,12 @@ LANGUAGE is a name string for a language and KEY and VALUE pairs
 denote settings for the language. Here is a list of possible KEYs
 and a description of VALUE types:
 
-  * `program': VALUE denotes the executable program that is
-    responsible for spell-checking this language. This setting is
+  * `program': VALUE is a string that is the executable program
+    responsible for spell-checking LANGUAGE. This setting is
     mandatory.
 
-  * `args': Optional command-line arguments for the program.
+  * `args': Optional command-line argument string for the
+    program.
 
   * `connection': The value is used to set variable
     `process-connection-type' when starting the process for
