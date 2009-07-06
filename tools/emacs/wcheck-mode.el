@@ -129,6 +129,13 @@ and a description of VALUE types:
     spelling checker. If you don't want to have any discarding
     rules set this to empty string.
 
+  * `case-fold': This boolean value is used to set value for
+    variable `case-fold-search' for LANGUAGE. Similarly to
+    `case-fold-search' the nil value means case-sensitive and a
+    non-nil means case-insensitive search. The default is
+    case-sensitive (nil). Note that this only has effect on
+    `wcheck-mode's internal regular expression search.
+
 An example contents of the `wcheck-language-data' variable:
 
     ((\"suomi\"
@@ -177,7 +184,12 @@ An example contents of the `wcheck-language-data' variable:
                   (regexp :format "%v" :value "'*\\>"))
             (cons :tag "Regexp discard" :format "%v"
                   (const :tag "Regexp discard: " :format "%t" regexp-discard)
-                  (regexp :format "%v" :value "\\`'+\\'")))))))
+                  (regexp :format "%v" :value "\\`'+\\'"))
+            (cons :tag "Regexp case" :format "%v"
+                  (const :tag "Regexp case: " :format "%t" case-fold)
+                  (choice :format "%[Value Menu%] %v" :value nil
+                          (const :tag "sensitive" nil)
+                          (const :tag "insensitive" t))))))))
 
 
 (defconst wcheck-language-data-defaults
@@ -187,7 +199,8 @@ An example contents of the `wcheck-language-data' variable:
     (regexp-start . "\\<'*")
     (regexp-body . "\\w+?")
     (regexp-end . "'*\\>")
-    (regexp-discard . "\\`'+\\'"))
+    (regexp-discard . "\\`'+\\'")
+    (case-fold . nil))
   "Default language configuration for `wcheck-mode'.
 This constant is for Wcheck mode's internal use only. This
 provides useful defaults for `wcheck-language-data'.")
@@ -698,7 +711,8 @@ only visible text elements; all hidden parts are omitted."
               (w-end (window-end window 'update))
               (buffer (window-buffer window))
               (discard (wcheck-query-language-data language 'regexp-discard t))
-              (case-fold-search nil)
+              (case-fold-search
+               (wcheck-query-language-data language 'case-fold t))
               (old-point 0)
               words)
 
@@ -757,7 +771,8 @@ table settings defined in LANGUAGE (see `wcheck-language-data')."
               (r-start (wcheck-query-language-data language 'regexp-start t))
               (r-end (wcheck-query-language-data language 'regexp-end t))
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
-              (case-fold-search nil)
+              (case-fold-search
+               (wcheck-query-language-data language 'case-fold t))
               regexp old-point)
 
           (with-syntax-table syntax
@@ -814,7 +829,9 @@ defined in `wcheck-language-data-defaults'."
                (eq key 'regexp-body)
                (eq key 'regexp-end)
                (eq key 'regexp-discard))
-           (if (stringp value) value default-value)))))
+           (if (stringp value) value default-value))
+          ((eq key 'case-fold)
+           value))))
 
 
 (defun wcheck-language-valid-p (language)
