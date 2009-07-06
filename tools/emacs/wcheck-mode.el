@@ -68,36 +68,39 @@ LANGUAGE is a name string for a language and KEY and VALUE pairs
 denote settings for the language. Here is a list of possible KEYs
 and a description of VALUE types:
 
-  * `program': VALUE is a string that is the executable program
-    responsible for spell-checking LANGUAGE. This setting is
-    mandatory.
+program
+    VALUE is a string that is the executable program responsible
+    for spell-checking LANGUAGE. This setting is mandatory.
 
-  * `args': Optional command-line argument string for the
-    program.
+args
+     Optional command-line argument string for the program.
 
-  * `connection': The value is used to set variable
-    `process-connection-type' when starting the process for
-    LANGUAGE. See the documentation of variable
-    `process-connection-type' for more information. The default
-    is to use a pipe for communication (nil).
+connection
+    The value is used to set variable `process-connection-type'
+    when starting the process for LANGUAGE. See the documentation
+    of variable `process-connection-type' for more information.
+    The default is to use a pipe for communication (nil).
 
-  * `face': A symbol referring to a face which is used to mark
-    text with this LANGUAGE. The default value is
-    `wcheck-default-face'.
+face
+    A symbol referring to a face which is used to mark text with
+    this LANGUAGE. The default value is `wcheck-default-face'.
 
-  * `syntax': VALUE is a symbol referring to an Emacs syntax
-    table. See the Info node `(elisp)Syntax Tables' for more
-    information. The default value is `text-mode-syntax-table'.
+syntax
+    VALUE is a symbol referring to an Emacs syntax table. See the
+    Info node `(elisp)Syntax Tables' for more information. The
+    default value is `text-mode-syntax-table'.
 
-  * `regexp-start', `regexp-body', `regexp-end': Regular
-    expression strings which match the start of a string body,
-    characters within the body and the end of the body,
+regexp-start
+regexp-body
+regexp-end
+    Regular expression strings which match the start of a string
+    body, characters within the body and the end of the body,
     respectively.
 
     This is how they are used in practice: Wcheck mode looks for
     text that matches the construct `regexp-start + regexp-body +
-    regexp-end'. The text that matches `regexp-body' is sent to
-    an external program to analyze. When strings return from the
+    regexp-end'. The text that matches regexp-body is sent to an
+    external program to analyze. When strings return from the
     external program they are marked in Emacs buffer using the
     following construction: `regexp-start + (regexp-quote STRING)
     + regexp-end'.
@@ -119,12 +122,12 @@ and a description of VALUE types:
     excluded. This is probably a good thing when using Wcheck
     mode as a spelling checker.
 
-  * `regexp-discard': The string that matched `regexp-body' is
-    then matched against the value of this option. If this
-    regular expression matches, then the word is discarded and
-    won't be sent to the external program. You can use this to
-    define exceptions to the previous regexp rules. The default
-    value is
+regexp-discard
+    The string that matched regexp-body is then matched against
+    the value of this option. If this regular expression matches,
+    then the word is discarded and won't be sent to the external
+    program. You can use this to define exceptions to the
+    previous regexp rules. The default value is
 
         \\`'+\\'
 
@@ -136,8 +139,9 @@ and a description of VALUE types:
     spelling checker. If you don't want to have any discarding
     rules set this to empty string.
 
-  * `case-fold': This boolean value is used to set value for
-    variable `case-fold-search' for LANGUAGE. Similarly to
+case-fold
+    This boolean value is used to set value for variable
+    `case-fold-search' for LANGUAGE. Similarly to
     `case-fold-search' the nil value means case-sensitive and a
     non-nil means case-insensitive search. The default is
     case-sensitive (nil). Note that this only has effect on
