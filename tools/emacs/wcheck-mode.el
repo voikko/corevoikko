@@ -800,13 +800,31 @@ table settings defined in LANGUAGE (see `wcheck-language-data')."
 
 (defun wcheck-query-language-data (language key &optional default)
   "Query `wcheck-mode' language data.
-Return LANGUAGE's value for KEY in variable
-`wcheck-language-data'. If value for KEY does not exist and if
-DEFAULT is non-nil return the default value for that KEY as
-defined in variable `wcheck-language-data-defaults'."
-  (or (cdr (assq key (cdr (assoc language wcheck-language-data))))
-      (when default
-        (cdr (assq key wcheck-language-data-defaults)))))
+Return LANGUAGE's value for KEY as defined in variable
+`wcheck-language-data'. If DEFAULT is non-nil and value for KEY
+does not exist return the default value for the as defined in
+variable `wcheck-language-data-defaults'. Also, if DEFAULT is
+non-nil and value for KEY is invalid return the default value as
+defined in `wcheck-language-data-defaults'."
+  (let* ((key-value (assq key (cdr (assoc language wcheck-language-data))))
+         (value (cdr key-value))
+         (default-value
+           (and default (cdr (assq key wcheck-language-data-defaults)))))
+    (cond ((not key-value)
+           default-value)
+          ((eq key 'syntax)
+           (if (syntax-table-p (and (boundp value)
+                                    (eval value)))
+               value default-value))
+          ((eq key 'face)
+           (if (facep value) value default-value))
+          ((or (eq key 'program)
+               (eq key 'args)
+               (eq key 'regexp-start)
+               (eq key 'regexp-body)
+               (eq key 'regexp-end)
+               (eq key 'regexp-discard))
+           (if (stringp value) value default-value)))))
 
 
 (defun wcheck-language-valid-p (language)
