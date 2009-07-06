@@ -226,7 +226,7 @@ provides useful defaults for `wcheck-language-data'.")
 ;;;###autoload
 (defcustom wcheck-language ""
   "Default language for `wcheck-mode'.
-The default language used by new buffers. For buffer-specific
+The default language used by new buffers. For buffer-local
 languages use the command `\\[wcheck-change-language]'."
   :type '(string :tag "Default language")
   :group 'wcheck)
