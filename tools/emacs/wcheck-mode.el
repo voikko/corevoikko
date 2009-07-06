@@ -74,6 +74,12 @@ and a description of VALUE types:
 
   * `args': Optional command-line arguments for the program.
 
+  * `connection': The value is used to set variable
+    `process-connection-type' when starting the process for
+    LANGUAGE. See the documentation of variable
+    `process-connection-type' for more information. The default
+    is to use a pipe for communication (nil).
+
   * `syntax': VALUE is a symbol referring to an Emacs syntax
     table. See the Info node `(elisp)Syntax Tables' for more
     information. The default value is `text-mode-syntax-table'.
@@ -167,6 +173,11 @@ An example contents of the `wcheck-language-data' variable:
             (cons :tag "Arguments" :format "%v"
                   (const :tag "Arguments: " :format "%t" args)
                   (string :format "%v"))
+            (cons :tag "Connection type" :format "%v"
+                  (const :tag "Connection type: " :format "%t" connection)
+                  (choice :format "%[Value Menu%] %v" :value nil
+                          (const :tag "pipe (nil)" nil)
+                          (const :tag "pty" pty)))
             (cons :tag "Face" :format "%v"
                   (const :tag "Face: " :format "%t" face)
                   (face :format "%v" :value wcheck-default-face))
@@ -194,6 +205,7 @@ An example contents of the `wcheck-language-data' variable:
 
 (defconst wcheck-language-data-defaults
   '((args . "")
+    (connection . nil)
     (face . wcheck-default-face)
     (syntax . text-mode-syntax-table)
     (regexp-start . "\\<'*")
@@ -608,7 +620,8 @@ or nil if the operation was unsuccessful."
                 (args (split-string
                        (wcheck-query-language-data language 'args t)
                        "[ \t\n]+" t))
-                (process-connection-type t) ;Use PTYs for communication.
+                (process-connection-type
+                 (wcheck-query-language-data language 'connection t))
                 proc)
 
             (when (wcheck-program-executable-p program)
@@ -830,7 +843,8 @@ defined in `wcheck-language-data-defaults'."
                (eq key 'regexp-end)
                (eq key 'regexp-discard))
            (if (stringp value) value default-value))
-          ((eq key 'case-fold)
+          ((or (eq key 'connection)
+               (eq key 'case-fold))
            value))))
 
 
