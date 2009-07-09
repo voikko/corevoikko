@@ -36,16 +36,6 @@
 ;; Wcheck mode. (M-x customize-group RET wcheck RET)
 
 
-(eval-when-compile
-  (defvar wcheck-mode nil)
-  (defvar wcheck-received-words nil)
-  (defvar wcheck-buffer-process-data nil)
-  (defvar wcheck-language-data-defaults nil)
-  (defvar wcheck-timer nil)
-  (defvar wcheck-timer-read-requested nil)
-  (defvar wcheck-timer-paint-requested nil))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Settings
 
@@ -241,24 +231,30 @@ This is used when language does not define face."
   :group 'wcheck)
 
 
-(setq-default wcheck-buffer-process-data nil
-              wcheck-received-words nil)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Variables
 
-(make-variable-buffer-local 'wcheck-received-words)
 
-(defconst wcheck-process-name-prefix "wcheck/"
-  "Process name prefix for `wcheck-mode'.")
+(defvar wcheck-mode nil)
+(defvar wcheck-mode-map (make-sparse-keymap)
+  "Keymap for `wcheck-mode'.")
+
+(defvar wcheck-timer nil)
+(defconst wcheck-timer-idle .5
+  "`wcheck-mode' idle timer delay (in seconds).")
+(defvar wcheck-timer-read-requested nil)
+(defvar wcheck-timer-paint-requested nil)
 
 (defvar wcheck-change-language-history nil
   "Language history for command `wcheck-change-language'.")
 
-(defvar wcheck-mode-map
-  (make-sparse-keymap)
-  "Keymap for `wcheck-mode'.")
+(defvar wcheck-received-words nil)
+(make-variable-buffer-local 'wcheck-received-words)
 
+(defvar wcheck-buffer-process-data nil)
 
-(defconst wcheck-timer-idle .5
-  "`wcheck-mode' idle timer delay (in seconds).")
+(defconst wcheck-process-name-prefix "wcheck/"
+  "Process name prefix for `wcheck-mode'.")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -430,11 +426,6 @@ information on how to configure Wcheck mode. Interactive command
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Timers
-
-
-(setq-default wcheck-timer nil
-              wcheck-timer-read-requested nil
-              wcheck-timer-paint-requested nil)
 
 
 (defun wcheck-timer-read-request (buffer)
