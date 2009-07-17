@@ -175,7 +175,7 @@ An example contents of the `wcheck-language-data' variable:
                           (const :tag "pty" pty)))
             (cons :tag "Face" :format "%v"
                   (const :tag "Face: " :format "%t" face)
-                  (face :format "%v" :value wcheck-default-face))
+                  (symbol :format "%v" :value wcheck-default-face))
             (cons :tag "Syntax table" :format "%v"
                   (const :tag "Syntax table: " :format "%t" syntax)
                   (variable :format "%v" :value text-mode-syntax-table))
