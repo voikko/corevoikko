@@ -297,7 +297,7 @@ interactively) then change the default language for new buffers."
                ;; No executable program for the selected language. Turn
                ;; off the mode.
                (when wcheck-mode
-                 (wcheck-mode 0))
+                 (wcheck-mode -1))
                (message "Language \"%s\": program \"%s\" is not executable"
                         language program))
 
@@ -348,13 +348,13 @@ information on how to configure Wcheck mode. Interactive command
 
        ((not (wcheck-language-valid-p wcheck-language))
         ;; Not a valid language.
-        (wcheck-mode 0)
+        (wcheck-mode -1)
         (message "Language \"%s\" is not valid" wcheck-language))
 
        ((not (wcheck-program-executable-p
               (wcheck-query-language-data wcheck-language 'program)))
         ;; The program does not exist or is not executable.
-        (wcheck-mode 0)
+        (wcheck-mode -1)
         (message "Language \"%s\": program \"%s\" is not executable"
                  wcheck-language
                  (wcheck-query-language-data wcheck-language
@@ -462,7 +462,7 @@ in buffers."
 
       (if (not (wcheck-language-valid-p wcheck-language))
           (progn
-            (wcheck-mode 0)
+            (wcheck-mode -1)
             (message "Language \"%s\" is not valid" wcheck-language))
 
         ;; Walk through all windows which belong to this buffer and send
@@ -589,13 +589,13 @@ Request update for the buffer when its outline view has changed."
 (defun wcheck-hook-kill-buffer ()
   "`wcheck-mode' hook for kill-buffer operation.
 Turn off `wcheck-mode' when buffer is being killed."
-  (wcheck-mode 0))
+  (wcheck-mode -1))
 
 
 (defun wcheck-hook-change-major-mode ()
   "`wcheck-mode' hook for major mode change.
 Turn off `wcheck-mode' before changing major mode."
-  (wcheck-mode 0))
+  (wcheck-mode -1))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
