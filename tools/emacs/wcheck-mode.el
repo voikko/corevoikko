@@ -506,13 +506,18 @@ call. The delay between consecutive calls is defined in variable
 
       ;; Walk through windows and mark text based on the word list
       ;; returned by an external process.
-      (when wcheck-mode
-        (walk-windows (lambda (window)
-                        (when (eq buffer (window-buffer window))
-                          (with-current-buffer buffer
-                            (wcheck-paint-words wcheck-language window
-                                                wcheck-received-words))))
-                      'nomb t))))
+      (cond ((not wcheck-mode) nil)
+            ((not (wcheck-process-running-p wcheck-language))
+             (wcheck-mode -1)
+             (message "Process is not running for language \"%s\""
+                      wcheck-language))
+            (t
+             (walk-windows (lambda (window)
+                             (when (eq buffer (window-buffer window))
+                               (with-current-buffer buffer
+                                 (wcheck-paint-words wcheck-language window
+                                                     wcheck-received-words))))
+                           'nomb t)))))
 
   ;; If REPEAT is positive integer call this function again after
   ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
