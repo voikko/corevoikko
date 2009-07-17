@@ -613,9 +613,9 @@ or nil if the operation was unsuccessful."
       (or (get-process proc-name)
           ;; It doesn't exist so start a new one.
           (let ((program (wcheck-query-language-data language 'program))
-                (args (split-string
+                (args (split-string-and-unquote
                        (wcheck-query-language-data language 'args t)
-                       "[ \t\n]+" t))
+                       "[ \t\n]+"))
                 (process-connection-type
                  (wcheck-query-language-data language 'connection t))
                 proc)
