@@ -469,12 +469,23 @@ in buffers."
 
         ;; Walk through all windows which belong to this buffer and send
         ;; their content to an external program.
-        (walk-windows (lambda (window)
-                        (when (eq buffer (window-buffer window))
-                          (wcheck-send-words wcheck-language
-                                             (wcheck-read-words wcheck-language
-                                                                window))))
-                      'nomb t))))
+        (let (buffer-area-alist words)
+          (walk-windows (lambda (window)
+                          (when (eq buffer (window-buffer window))
+                            ;; Store the visible buffer area.
+                            (push (cons (window-start window)
+                                        (window-end window t))
+                                  buffer-area-alist)))
+                        'nomb t)
+
+          ;; Combine overlapping buffer areas and read words from all
+          ;; areas.
+          (dolist (area (wcheck-combine-overlapping-areas buffer-area-alist))
+            (setq words (append words
+                                (wcheck-read-words wcheck-language buffer
+                                                   (car area) (cdr area)))))
+          ;; Send words to external process.
+          (wcheck-send-words wcheck-language words)))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
@@ -706,13 +717,14 @@ nil remove BUFFER from the list."
 ;;; Low-level functions
 
 
-(defun wcheck-read-words (language window)
-  "Return a list of visible text elements in WINDOW.
-Function scans WINDOW and searches for text elements defined in
-LANGUAGE (see `wcheck-language-data'). The returned list contains
-only visible text elements; all hidden parts are omitted."
-  (when (window-live-p window)
-    (with-selected-window window
+(defun wcheck-read-words (language buffer beg end)
+  "Return a list of text elements in BUFFER.
+Scan BUFFER between positions BEG and END and search for text
+elements defined in LANGUAGE (see `wcheck-language-data'). Return
+a list containing visible text elements between BEG and END; all
+hidden parts are omitted."
+  (when (buffer-live-p buffer)
+    (with-current-buffer buffer
       (save-excursion
 
         (let ((regexp (concat
@@ -723,9 +735,6 @@ only visible text elements; all hidden parts are omitted."
                        (wcheck-query-language-data language 'regexp-end t)))
 
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
-              (w-start (window-start window))
-              (w-end (window-end window 'update))
-              (buffer (window-buffer window))
               (discard (wcheck-query-language-data language 'regexp-discard t))
               (case-fold-search
                (wcheck-query-language-data language 'case-fold t))
@@ -733,9 +742,9 @@ only visible text elements; all hidden parts are omitted."
               words)
 
           (with-syntax-table syntax
-            (goto-char w-start)
+            (goto-char beg)
             (catch 'infinite
-              (while (re-search-forward regexp w-end t)
+              (while (re-search-forward regexp end t)
                 (cond ((= (point) old-point)
                        ;; Make sure we don't end up in an infinite loop
                        ;; when the regexp always matches with zero width
@@ -747,7 +756,7 @@ only visible text elements; all hidden parts are omitted."
                        ;; next change of "invisible" property.
                        (goto-char (next-single-char-property-change
                                    (match-beginning 1) 'invisible buffer
-                                   w-end)))
+                                   end)))
 
                       ((or (equal discard "")
                            (not (string-match
@@ -907,6 +916,42 @@ range BEG to END. Otherwise remove all overlays."
   "Hook for removing overlay which is being edited."
   (unless after
     (delete-overlay overlay)))
+
+
+(defun wcheck-combine-overlapping-areas (alist)
+  "Combine overlapping items in ALIST.
+ALIST is a list of (A . B) items in which A and B are integers.
+Each item denote a buffer position range from A to B. This
+function returns a new list which has items in increasing order
+according to A's and all overlapping A B ranges are combined."
+  (let ((alist (sort alist #'(lambda (a b)
+                               (< (car a) (car b)))))
+        ready prev)
+    (while alist
+      (while (not (equal prev alist))
+        (setq prev alist
+              alist (append (wcheck-combine-two (car prev) (cadr prev))
+                            (nthcdr 2 prev))))
+      (setq ready (append ready (list (car alist)))
+            alist (cdr alist)
+            prev nil))
+    ready))
+
+
+(defun wcheck-combine-two (a b)
+  (let ((a1 (car a))
+        (a2 (cdr a))
+        (b1 (car b))
+        (b2 (cdr b)))
+    (cond ((and a b)
+           (if (>= a2 b1)
+               (list (cons a1 (if (> b2 a2) b2 a2)))
+             (list a b)))
+          ((and (not a)
+                (not b))
+           (list nil))
+          ((not b) (list a))
+          ((not a) (list b)))))
 
 
 (provide 'wcheck-mode)
