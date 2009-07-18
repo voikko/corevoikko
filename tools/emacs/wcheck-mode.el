@@ -76,9 +76,11 @@ face
     this LANGUAGE. The default value is `wcheck-default-face'.
 
 syntax
-    VALUE is a symbol referring to an Emacs syntax table. See the
-    Info node `(elisp)Syntax Tables' for more information. The
-    default value is `text-mode-syntax-table'.
+    VALUE is a symbol referring to an Emacs syntax table. This
+    will be the effective syntax table is used with regular
+    expressions. See the Info node `(elisp)Syntax Tables' for
+    more information. The default value is
+    `text-mode-syntax-table'.
 
 regexp-start
 regexp-body
@@ -93,7 +95,7 @@ regexp-end
     external program to analyze. When strings return from the
     external program they are marked in Emacs buffer using the
     following construction: `regexp-start + (regexp-quote STRING)
-    + regexp-end'.
+    + regexp-end'. The middle part is marked with face.
 
     Do not use grouping constructs `\\( ... \\)' in the regular
     expressions because the back reference `\\1' is used for
@@ -107,10 +109,10 @@ regexp-end
         \\w+?         (regexp-body)
         '*\\=\\>         (regexp-end)
 
-    Effectively they match word characters defined in the syntax
-    table. Single quotes (') at the start and end of a word are
-    excluded. This is probably a good thing when using Wcheck
-    mode as a spelling checker.
+    Effectively they match word characters defined in the
+    effective syntax table. Single quotes (') at the start and
+    end of a word are excluded. This is probably a good thing
+    when using Wcheck mode as a spelling checker.
 
 regexp-discard
     The string that matched regexp-body is then matched against
@@ -124,7 +126,7 @@ regexp-discard
     which discards the body string if it consists only of single
     quotes. This was chosen as the default because the standard
     syntax table `text-mode-syntax-table' defines single quote as
-    a word character. It's probably not useful to mark separate
+    a word character. It's probably not useful to mark individual
     single quotes in a buffer when Wcheck mode is used as a
     spelling checker. If you don't want to have any discarding
     rules set this to empty string.
