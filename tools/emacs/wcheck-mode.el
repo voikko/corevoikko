@@ -253,6 +253,9 @@ This is used when language does not define face."
 (defvar wcheck-received-words nil)
 (make-variable-buffer-local 'wcheck-received-words)
 
+(defvar wcheck-buffer-window-areas nil)
+(make-variable-buffer-local 'wcheck-buffer-window-areas)
+
 (defvar wcheck-buffer-process-data nil)
 
 (defconst wcheck-process-name-prefix "wcheck/"
@@ -459,28 +462,30 @@ in buffers."
       ;; remove this buffer from the request list.
       (wcheck-timer-read-request-delete buffer)
 
-      ;; Reset also the list of received word.
-      (setq wcheck-received-words nil)
+      ;; Reset also the list of received words and visible window areas.
+      (setq wcheck-received-words nil
+            wcheck-buffer-window-areas nil)
 
       (if (not (wcheck-language-valid-p wcheck-language))
           (progn
             (wcheck-mode -1)
             (message "Language \"%s\" is not valid" wcheck-language))
 
-        ;; Walk through all windows which belong to this buffer and send
-        ;; their content to an external program.
-        (let (buffer-area-alist words)
+        ;; Walk through all windows which belong to this buffer.
+        (let (area-alist words)
           (walk-windows (lambda (window)
                           (when (eq buffer (window-buffer window))
                             ;; Store the visible buffer area.
                             (push (cons (window-start window)
                                         (window-end window t))
-                                  buffer-area-alist)))
+                                  area-alist)))
                         'nomb t)
 
           ;; Combine overlapping buffer areas and read words from all
           ;; areas.
-          (dolist (area (wcheck-combine-overlapping-areas buffer-area-alist))
+          (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
+                                            area-alist))
+          (dolist (area wcheck-buffer-window-areas)
             (setq words (append words
                                 (wcheck-read-words wcheck-language buffer
                                                    (car area) (cdr area)))))
@@ -517,20 +522,18 @@ call. The delay between consecutive calls is defined in variable
       ;; from the request list.
       (wcheck-timer-paint-request-delete buffer)
 
-      ;; Walk through windows and mark text based on the word list
-      ;; returned by an external process.
+      ;; Walk through the visible text areas and mark text based on the
+      ;; word list returned by an external process.
       (cond ((not wcheck-mode) nil)
             ((not (wcheck-process-running-p wcheck-language))
              (wcheck-mode -1)
              (message "Process is not running for language \"%s\""
                       wcheck-language))
             (t
-             (walk-windows (lambda (window)
-                             (when (eq buffer (window-buffer window))
-                               (with-current-buffer buffer
-                                 (wcheck-paint-words wcheck-language window
-                                                     wcheck-received-words))))
-                           'nomb t)))))
+             (dolist (area wcheck-buffer-window-areas)
+               (wcheck-paint-words wcheck-language buffer
+                                   (car area) (cdr area)
+                                   wcheck-received-words))))))
 
   ;; If REPEAT is positive integer call this function again after
   ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
@@ -781,19 +784,17 @@ is sent as separate line."
     string))
 
 
-(defun wcheck-paint-words (language window wordlist)
-  "Mark words in WORDLIST which are visible in WINDOW.
-Mark all words (or other text elements) in WORDLIST which are
-visible in WINDOW. Regular expression search respects the syntax
-table settings defined in LANGUAGE (see `wcheck-language-data')."
+(defun wcheck-paint-words (language buffer beg end wordlist)
+  "Mark words of WORDLIST in BUFFER.
+Mark all words (or other text elements) of WORDLIST which are
+visible in BUFFER within postition range from BEG to END. Regular
+expression search respects the syntax table settings defined in
+LANGUAGE (see `wcheck-language-data')."
 
-  (when (window-live-p window)
-    (with-selected-window window
+  (when (buffer-live-p buffer)
+    (with-current-buffer buffer
       (save-excursion
-        (let ((buffer (window-buffer window))
-              (w-start (window-start window))
-              (w-end (window-end window 'update))
-              (r-start (wcheck-query-language-data language 'regexp-start t))
+        (let ((r-start (wcheck-query-language-data language 'regexp-start t))
               (r-end (wcheck-query-language-data language 'regexp-end t))
               (syntax (eval (wcheck-query-language-data language 'syntax t)))
               (case-fold-search
@@ -806,10 +807,10 @@ table settings defined in LANGUAGE (see `wcheck-language-data')."
                                    (regexp-quote word) "\\)"
                                    r-end)
                     old-point 0)
-              (goto-char w-start)
+              (goto-char beg)
 
               (catch 'infinite
-                (while (re-search-forward regexp w-end t)
+                (while (re-search-forward regexp end t)
                   (cond ((= (point) old-point)
                          ;; We didn't move forward so break the loop.
                          ;; Otherwise we would loop endlessly.
@@ -819,7 +820,7 @@ table settings defined in LANGUAGE (see `wcheck-language-data')."
                          ;; the next change of "invisible" text property.
                          (goto-char (next-single-char-property-change
                                      (match-beginning 1) 'invisible buffer
-                                     w-end)))
+                                     end)))
                         (t
                          ;; Make an overlay.
                          (wcheck-make-overlay language buffer
