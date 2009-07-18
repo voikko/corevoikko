@@ -273,7 +273,7 @@ Change `wcheck-mode' language to LANGUAGE. The change is
 buffer-local but if GLOBAL is non-nil (prefix argument if called
 interactively) then change the default language for new buffers."
   (interactive
-   (let* ((comp (mapcar 'car wcheck-language-data))
+   (let* ((comp (mapcar #'car wcheck-language-data))
           (default (cond ((member wcheck-language comp)
                           wcheck-language)
                          ((car comp))
@@ -370,20 +370,20 @@ information on how to configure Wcheck mode. Interactive command
 
         ;; Add buffer-local hooks. These ask for updates for the buffer
         ;; or may sometimes automatically turn off the mode.
-        (add-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer nil t)
-        (add-hook 'window-scroll-functions 'wcheck-hook-window-scroll nil t)
-        (add-hook 'after-change-functions 'wcheck-hook-after-change nil t)
+        (add-hook 'kill-buffer-hook #'wcheck-hook-kill-buffer nil t)
+        (add-hook 'window-scroll-functions #'wcheck-hook-window-scroll nil t)
+        (add-hook 'after-change-functions #'wcheck-hook-after-change nil t)
         (add-hook 'change-major-mode-hook
-                  'wcheck-hook-change-major-mode nil t)
+                  #'wcheck-hook-change-major-mode nil t)
         (add-hook 'outline-view-change-hook
-                  'wcheck-hook-outline-view-change nil t)
+                  #'wcheck-hook-outline-view-change nil t)
 
         ;; Add global hooks. It's probably sufficient to add these only
         ;; once but it's no harm to ensure their existence every time.
         (add-hook 'window-size-change-functions
-                  'wcheck-hook-window-size-change)
+                  #'wcheck-hook-window-size-change)
         (add-hook 'window-configuration-change-hook
-                  'wcheck-hook-window-configuration-change)
+                  #'wcheck-hook-window-configuration-change)
 
         ;; Add this buffer to the bookkeeper.
         (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
@@ -394,7 +394,7 @@ information on how to configure Wcheck mode. Interactive command
         (unless wcheck-timer
           (setq wcheck-timer
                 (run-with-idle-timer wcheck-timer-idle t
-                                     'wcheck-timer-read-event)))
+                                     #'wcheck-timer-read-event)))
 
         ;; Request update for this buffer.
         (wcheck-timer-read-request (current-buffer))))
@@ -412,21 +412,21 @@ information on how to configure Wcheck mode. Interactive command
     ;; timer and remove global hooks.
     (when (not wcheck-buffer-process-data)
       (remove-hook 'window-size-change-functions
-                   'wcheck-hook-window-size-change)
+                   #'wcheck-hook-window-size-change)
       (remove-hook 'window-configuration-change-hook
-                   'wcheck-hook-window-configuration-change)
+                   #'wcheck-hook-window-configuration-change)
       (when wcheck-timer
         (cancel-timer wcheck-timer)
         (setq wcheck-timer nil)))
 
     ;; Remove buffer-local hooks.
-    (remove-hook 'kill-buffer-hook 'wcheck-hook-kill-buffer t)
-    (remove-hook 'window-scroll-functions 'wcheck-hook-window-scroll t)
-    (remove-hook 'after-change-functions 'wcheck-hook-after-change t)
+    (remove-hook 'kill-buffer-hook #'wcheck-hook-kill-buffer t)
+    (remove-hook 'window-scroll-functions #'wcheck-hook-window-scroll t)
+    (remove-hook 'after-change-functions #'wcheck-hook-after-change t)
     (remove-hook 'change-major-mode-hook
-                 'wcheck-hook-change-major-mode t)
+                 #'wcheck-hook-change-major-mode t)
     (remove-hook 'outline-view-change-hook
-                 'wcheck-hook-outline-view-change t)))
+                 #'wcheck-hook-outline-view-change t)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -473,12 +473,12 @@ in buffers."
 
         ;; Walk through all windows which belong to this buffer.
         (let (area-alist words)
-          (walk-windows (lambda (window)
-                          (when (eq buffer (window-buffer window))
-                            ;; Store the visible buffer area.
-                            (push (cons (window-start window)
-                                        (window-end window t))
-                                  area-alist)))
+          (walk-windows #'(lambda (window)
+                            (when (eq buffer (window-buffer window))
+                              ;; Store the visible buffer area.
+                              (push (cons (window-start window)
+                                          (window-end window t))
+                                    area-alist)))
                         'nomb t)
 
           ;; Combine overlapping buffer areas and read words from all
@@ -495,7 +495,7 @@ in buffers."
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
                           (wcheck-current-idle-time-seconds))
-                       nil 'wcheck-timer-paint-event
+                       nil #'wcheck-timer-paint-event
                        ;; Repeat the timer 3 times after the initial
                        ;; call:
                        3))
@@ -541,7 +541,7 @@ call. The delay between consecutive calls is defined in variable
              (> repeat 0))
     (run-with-idle-timer (+ wcheck-timer-idle
                             (wcheck-current-idle-time-seconds))
-                         nil 'wcheck-timer-paint-event
+                         nil #'wcheck-timer-paint-event
                          (1- repeat))))
 
 
@@ -569,11 +569,11 @@ scrolled."
   "`wcheck-mode' hook for window size change.
 Request update for the buffer when its window's size has
 changed."
-  (walk-windows (lambda (window)
-                  (with-current-buffer (window-buffer window)
-                    (when wcheck-mode
-                      (wcheck-timer-read-request
-                       (window-buffer window)))))
+  (walk-windows #'(lambda (window)
+                    (with-current-buffer (window-buffer window)
+                      (when wcheck-mode
+                        (wcheck-timer-read-request
+                         (window-buffer window)))))
                 'nomb
                 frame))
 
@@ -582,11 +582,11 @@ changed."
   "`wcheck-mode' hook for window configuration change.
 Request update for the buffer when its window's configuration has
 changed."
-  (walk-windows (lambda (window)
-                  (with-current-buffer (window-buffer window)
-                    (when wcheck-mode
-                      (wcheck-timer-read-request
-                       (current-buffer)))))
+  (walk-windows #'(lambda (window)
+                    (with-current-buffer (window-buffer window)
+                      (when wcheck-mode
+                        (wcheck-timer-read-request
+                         (current-buffer)))))
                 'nomb
                 'currentframe))
 
@@ -646,7 +646,7 @@ or nil if the operation was unsuccessful."
               ;; The next command sets `wcheck-receive-words' as the
               ;; output handler function for the process we just
               ;; started.
-              (set-process-filter proc 'wcheck-receive-words)
+              (set-process-filter proc #'wcheck-receive-words)
               (when (wcheck-process-running-p language)
                 proc)))))))
 
@@ -683,7 +683,7 @@ nil remove BUFFER from the list."
               (delq item wcheck-buffer-process-data))))
 
     ;; Construct a list of currently needed languages/processes.
-    (let ((old-langs (mapcar 'cdr wcheck-buffer-process-data))
+    (let ((old-langs (mapcar #'cdr wcheck-buffer-process-data))
           new-langs)
 
       ;; Remove dead buffers and possible minibuffers from the list.
@@ -707,7 +707,7 @@ nil remove BUFFER from the list."
         (wcheck-timer-read-request-delete buffer))
 
       ;; Construct a list of languages/processes that are still needed.
-      (setq new-langs (mapcar 'cdr wcheck-buffer-process-data))
+      (setq new-langs (mapcar #'cdr wcheck-buffer-process-data))
       ;; Stop those processes which are no longer needed.
       (dolist (lang old-langs)
         (unless (member lang new-langs)
@@ -779,7 +779,7 @@ external process which handles LANGUAGE. Each string in WORDLIST
 is sent as separate line."
   (let ((proc (wcheck-start-get-process language))
         string)
-    (setq string (concat (mapconcat 'identity wordlist "\n") "\n"))
+    (setq string (concat (mapconcat #'identity wordlist "\n") "\n"))
     (process-send-string proc string)
     string))
 
@@ -863,7 +863,7 @@ defined in `wcheck-language-data-defaults'."
 
 (defun wcheck-language-valid-p (language)
   "Return t if LANGUAGE exists and has configured external program."
-  (and (member language (mapcar 'car wcheck-language-data))
+  (and (member language (mapcar #'car wcheck-language-data))
        (stringp (wcheck-query-language-data language 'program))
        t))
 
