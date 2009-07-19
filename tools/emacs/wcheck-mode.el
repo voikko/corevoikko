@@ -787,7 +787,7 @@ is sent as separate line."
 (defun wcheck-paint-words (language buffer beg end wordlist)
   "Mark words of WORDLIST in BUFFER.
 Mark all words (or other text elements) of WORDLIST which are
-visible in BUFFER within postition range from BEG to END. Regular
+visible in BUFFER within position range from BEG to END. Regular
 expression search respects the syntax table settings defined in
 LANGUAGE (see `wcheck-language-data')."
 
