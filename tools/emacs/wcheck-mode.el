@@ -796,22 +796,21 @@ sent as separate line."
     string))
 
 
-(defun wcheck-paint-words (language buffer beg end wordlist)
+(defun wcheck-paint-words (buffer beg end wordlist)
   "Mark words of WORDLIST in BUFFER.
 Mark all words (or other text elements) of WORDLIST which are
-visible in BUFFER within position range from BEG to END. Regular
-expression search respects the syntax table settings defined in
-LANGUAGE (see `wcheck-language-data')."
+visible in BUFFER within position range from BEG to END."
 
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
       (save-excursion
-        (let ((r-start (wcheck-query-language-data language 'regexp-start t))
-              (r-end (wcheck-query-language-data language 'regexp-end t))
-              (syntax (eval (wcheck-query-language-data language 'syntax t)))
-              (case-fold-search
-               (wcheck-query-language-data language 'case-fold t))
-              regexp old-point)
+        (let* ((language (wcheck-get-buffer-data buffer :language))
+               (r-start (wcheck-query-language-data language 'regexp-start t))
+               (r-end (wcheck-query-language-data language 'regexp-end t))
+               (syntax (eval (wcheck-query-language-data language 'syntax t)))
+               (case-fold-search
+                (wcheck-query-language-data language 'case-fold t))
+               regexp old-point)
 
           (with-syntax-table syntax
             (dolist (word wordlist)
