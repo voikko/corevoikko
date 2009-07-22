@@ -308,7 +308,7 @@ interactively) then change the default language for new buffers."
 
               ;; If the mode is currently turned on we request an update
               (wcheck-mode
-               (wcheck-timer-read-request (current-buffer))
+               (wcheck-timer-add-read-request (current-buffer))
                (wcheck-remove-overlays)))))
 
     wcheck-buffer-process-data))
@@ -388,7 +388,7 @@ information on how to configure Wcheck mode. Interactive command
                                      #'wcheck-timer-read-event)))
 
         ;; Request update for this buffer.
-        (wcheck-timer-read-request (current-buffer))))
+        (wcheck-timer-add-read-request (current-buffer))))
 
     ;; Turn off the mode.
 
@@ -415,15 +415,15 @@ information on how to configure Wcheck mode. Interactive command
 ;;; Timers
 
 
-(defun wcheck-timer-read-request (buffer)
+(defun wcheck-timer-add-read-request (buffer)
   (add-to-list 'wcheck-timer-read-requested buffer))
-(defun wcheck-timer-read-request-delete (buffer)
+(defun wcheck-timer-remove-read-request (buffer)
   (setq wcheck-timer-read-requested
         (delq buffer wcheck-timer-read-requested)))
 
-(defun wcheck-timer-paint-request (buffer)
+(defun wcheck-timer-add-paint-request (buffer)
   (add-to-list 'wcheck-timer-paint-requested buffer))
-(defun wcheck-timer-paint-request-delete (buffer)
+(defun wcheck-timer-remove-paint-request (buffer)
   (setq wcheck-timer-paint-requested
         (delq buffer wcheck-timer-paint-requested)))
 
@@ -442,7 +442,7 @@ in buffers."
 
       ;; We are about to fulfill buffer's window-reading request so
       ;; remove this buffer from the request list.
-      (wcheck-timer-read-request-delete buffer)
+      (wcheck-timer-remove-read-request buffer)
 
       ;; Reset also the list of received words and visible window areas.
       (setq wcheck-received-words nil
@@ -502,7 +502,7 @@ call. The delay between consecutive calls is defined in variable
 
       ;; We are about to mark text in this buffer so remove the buffer
       ;; from the request list.
-      (wcheck-timer-paint-request-delete buffer)
+      (wcheck-timer-remove-paint-request buffer)
 
       ;; Walk through the visible text areas and mark text based on the
       ;; word list returned by an external process.
@@ -531,7 +531,7 @@ call. The delay between consecutive calls is defined in variable
   "`wcheck-mode' process output handler function."
   (setq wcheck-received-words
         (append wcheck-received-words (split-string string "\n+" t)))
-  (wcheck-timer-paint-request (current-buffer)))
+  (wcheck-timer-add-paint-request (current-buffer)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -582,7 +582,7 @@ Request update for the buffer when its window have been
 scrolled."
   (with-current-buffer (window-buffer window)
     (when wcheck-mode
-      (wcheck-timer-read-request (current-buffer)))))
+      (wcheck-timer-add-read-request (current-buffer)))))
 
 
 (defun wcheck-hook-window-size-change (frame)
@@ -592,7 +592,7 @@ changed."
   (walk-windows #'(lambda (window)
                     (with-current-buffer (window-buffer window)
                       (when wcheck-mode
-                        (wcheck-timer-read-request
+                        (wcheck-timer-add-read-request
                          (window-buffer window)))))
                 'nomb
                 frame))
@@ -605,7 +605,7 @@ changed."
   (walk-windows #'(lambda (window)
                     (with-current-buffer (window-buffer window)
                       (when wcheck-mode
-                        (wcheck-timer-read-request
+                        (wcheck-timer-add-read-request
                          (current-buffer)))))
                 'nomb
                 'currentframe))
@@ -617,14 +617,14 @@ Request update for the buffer when its content has been edited."
   ;; The buffer that has changed is the current buffer when this hook
   ;; function is called.
   (when wcheck-mode
-    (wcheck-timer-read-request (current-buffer))))
+    (wcheck-timer-add-read-request (current-buffer))))
 
 
 (defun wcheck-hook-outline-view-change ()
   "`wcheck-mode' hook for outline view change.
 Request update for the buffer when its outline view has changed."
   (when wcheck-mode
-    (wcheck-timer-read-request (current-buffer))))
+    (wcheck-timer-add-read-request (current-buffer))))
 
 
 (defun wcheck-hook-kill-buffer ()
@@ -713,7 +713,7 @@ BUFFER from the list."
         ;; wcheck-mode is being turned off for this buffer. Remove
         ;; BUFFER from the list of buffers which request for wcheck
         ;; update and remove all buffer data.
-        (wcheck-timer-read-request-delete buffer)
+        (wcheck-timer-remove-read-request buffer)
         (wcheck-delete-buffer-data buffer))
 
       ;; Construct a list of processes that are still used.
