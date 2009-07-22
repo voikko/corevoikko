@@ -256,7 +256,6 @@ This is used when language does not define face."
 (defvar wcheck-buffer-window-areas nil)
 (make-variable-buffer-local 'wcheck-buffer-window-areas)
 
-(defvar wcheck-buffer-process-data nil)
 (defvar wcheck-buffer-data nil)
 
 (defconst wcheck-process-name-prefix "wcheck/"
@@ -667,54 +666,51 @@ Return the stopped process or nil if there was no such process."
       proc)))
 
 
-(defun wcheck-update-buffer-process-data (buffer language)
-  "Update variable `wcheck-buffer-process-data' for BUFFER.
-Calling this function is the primary way to tell `wcheck-mode'
-that BUFFER is using LANGUAGE and its settings. If LANGUAGE is
-nil remove BUFFER from the list."
+(defun wcheck-update-buffer-data (buffer language)
+  "Update process and language data for BUFFER.
+Calling this function is the primary way to maintain the language
+and process data associated to BUFFER. If LANGUAGE is nil remove
+BUFFER from the list."
   (when (and (bufferp buffer)
              (or (stringp language)
                  (not language)))
 
-    ;; Remove illegal elements from the list, that is, elements whose
-    ;; cdr is not a string.
-    (dolist (item wcheck-buffer-process-data)
-      (unless (stringp (cdr item))
-        (setq wcheck-buffer-process-data
-              (delq item wcheck-buffer-process-data))))
-
-    ;; Construct a list of currently needed languages/processes.
-    (let ((old-langs (mapcar #'cdr wcheck-buffer-process-data))
-          new-langs)
+    ;; Construct a list of currently used processes.
+    (let ((old-processes (wcheck-get-all-data :process))
+          new-processes)
 
       ;; Remove dead buffers and possible minibuffers from the list.
-      (dolist (item wcheck-buffer-process-data)
-        (when (or (not (buffer-live-p (car item)))
-                  (minibufferp (car item)))
-          (setq wcheck-buffer-process-data
-                (delq item wcheck-buffer-process-data))))
+      (dolist (item (wcheck-get-all-data :buffer))
+        (when (or (not (buffer-live-p item))
+                  (minibufferp item))
+          (wcheck-delete-buffer-data item)))
 
-      ;; Remove BUFFER from the list.
-      (setq wcheck-buffer-process-data
-            (assq-delete-all buffer wcheck-buffer-process-data))
       (if language
-          ;; LANGUAGE was given so add this BUFFER's language info to
-          ;; the list.
-          (add-to-list 'wcheck-buffer-process-data
-                       (cons buffer language))
-        ;; LANGUAGE was not given so this usually means that wcheck-mode
-        ;; is being turned off from this buffer. Remove BUFFER from the
-        ;; list of buffers which request for wcheck update.
-        (wcheck-timer-read-request-delete buffer))
+          (progn
+            ;; LANGUAGE was given. If data for this buffer does not
+            ;; exist create it.
+            (unless (wcheck-get-buffer-data buffer)
+              (wcheck-create-buffer-data buffer))
+            ;; Add this BUFFER's language info and reset the process
+            ;; info.
+            (wcheck-set-buffer-data buffer :language language)
+            (wcheck-set-buffer-data buffer :process nil))
 
-      ;; Construct a list of languages/processes that are still needed.
-      (setq new-langs (mapcar #'cdr wcheck-buffer-process-data))
+        ;; LANGUAGE was not given so this normally means that
+        ;; wcheck-mode is being turned off for this buffer. Remove
+        ;; BUFFER from the list of buffers which request for wcheck
+        ;; update and remove all buffer data.
+        (wcheck-timer-read-request-delete buffer)
+        (wcheck-delete-buffer-data buffer))
+
+      ;; Construct a list of processes that are still used.
+      (setq new-processes (wcheck-get-all-data :process))
       ;; Stop those processes which are no longer needed.
-      (dolist (lang old-langs)
-        (unless (member lang new-langs)
-          (wcheck-end-process lang)))))
+      (dolist (proc old-processes)
+        (unless (memq proc new-processes)
+          (wcheck-end-process proc)))))
 
-  wcheck-buffer-process-data)
+  wcheck-buffer-data)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
