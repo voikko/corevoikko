@@ -448,10 +448,12 @@ in buffers."
       (setq wcheck-received-words nil
             wcheck-buffer-window-areas nil)
 
-      (if (not (wcheck-language-valid-p wcheck-language))
+      (if (not (wcheck-language-valid-p
+                (wcheck-get-buffer-data buffer :language)))
           (progn
             (wcheck-mode -1)
-            (message "Language \"%s\" is not valid" wcheck-language))
+            (message "Language \"%s\" is not valid"
+                     (wcheck-get-buffer-data buffer :language)))
 
         ;; Walk through all windows which belong to this buffer.
         (let (area-alist words)
@@ -468,11 +470,10 @@ in buffers."
           (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
                                             area-alist))
           (dolist (area wcheck-buffer-window-areas)
-            (setq words (append words
-                                (wcheck-read-words wcheck-language buffer
-                                                   (car area) (cdr area)))))
+            (setq words (append words (wcheck-read-words
+                                       buffer (car area) (cdr area)))))
           ;; Send words to external process.
-          (wcheck-send-words wcheck-language words)))))
+          (wcheck-send-words buffer words)))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
@@ -507,14 +508,13 @@ call. The delay between consecutive calls is defined in variable
       ;; Walk through the visible text areas and mark text based on the
       ;; word list returned by an external process.
       (cond ((not wcheck-mode) nil)
-            ((not (wcheck-process-running-p wcheck-language))
+            ((not (wcheck-process-running-p buffer))
              (wcheck-mode -1)
-             (message "Process is not running for language \"%s\""
-                      wcheck-language))
+             (message "Process is not running for buffer \"%s\""
+                      (buffer-name buffer)))
             (t
              (dolist (area wcheck-buffer-window-areas)
-               (wcheck-paint-words wcheck-language buffer
-                                   (car area) (cdr area)
+               (wcheck-paint-words buffer (car area) (cdr area)
                                    wcheck-received-words))))))
 
   ;; If REPEAT is positive integer call this function again after
@@ -529,9 +529,10 @@ call. The delay between consecutive calls is defined in variable
 
 (defun wcheck-receive-words (process string)
   "`wcheck-mode' process output handler function."
-  (setq wcheck-received-words
-        (append wcheck-received-words (split-string string "\n+" t)))
-  (wcheck-timer-add-paint-request (current-buffer)))
+  (with-current-buffer (wcheck-get-process-data process :buffer)
+    (setq wcheck-received-words
+          (append wcheck-received-words (split-string string "\n+" t)))
+    (wcheck-timer-add-paint-request (current-buffer))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
