@@ -733,7 +733,7 @@ BUFFER from the list."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Miscellaneous low-level functions
+;;; Read and paint words
 
 
 (defun wcheck-read-words (buffer beg end)
@@ -843,6 +843,10 @@ visible in BUFFER within position range from BEG to END."
                          (wcheck-make-overlay
                           buffer (match-beginning 1) (match-end 1))))
                   (setq old-point (point)))))))))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Miscellaneous low-level functions
 
 
 (defun wcheck-query-language-data (language key &optional default)
