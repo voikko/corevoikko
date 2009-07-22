@@ -271,7 +271,7 @@ This is used when language does not define face."
   "Change language for current buffer (or globally).
 Change `wcheck-mode' language to LANGUAGE. The change is
 buffer-local but if GLOBAL is non-nil (prefix argument if called
-interactively) then change the default language for new buffers."
+interactively) then change the default language."
   (interactive
    (let* ((comp (mapcar #'car wcheck-language-data))
           (default (cond ((member wcheck-language comp)
@@ -280,20 +280,20 @@ interactively) then change the default language for new buffers."
                          (t ""))))
      (list (completing-read
             (format (if current-prefix-arg
-                        "Default language for new buffers (%s): "
+                        "Global default language (%s): "
                       "Language for the current buffer (%s): ")
                     default)
             comp nil t nil 'wcheck-change-language-history default)
            current-prefix-arg)))
 
-  ;; Change the language, locally or globally, and update buffer-process
-  ;; bookkeeping data, if needed.
+  ;; Change the language, locally or globally, and update buffer
+  ;; database, if needed.
   (when (stringp language)
     (if global
         (setq-default wcheck-language language)
       (setq wcheck-language language)
       (when wcheck-mode
-        (wcheck-update-buffer-process-data (current-buffer) language)))
+        (wcheck-update-buffer-data (current-buffer) language)))
 
     ;; If this was called interactively do some checks and maintenance.
     (when (called-interactively-p)
@@ -311,12 +311,15 @@ interactively) then change the default language for new buffers."
                (wcheck-timer-add-read-request (current-buffer))
                (wcheck-remove-overlays)))))
 
-    wcheck-buffer-process-data))
+    (wcheck-get-buffer-data (current-buffer) :language)))
 
 
 ;;;###autoload
 (define-minor-mode wcheck-mode
   "Interface for external spell-checkers and filtering programs.
+
+With optional ARG turn on the mode if ARG is positive, turn off
+if negative. if ARG is not given toggle the mode.
 
 Wcheck is a minor mode for automatically checking and marking
 words or other text elements in Emacs buffer. Wcheck sends (parts
@@ -362,8 +365,7 @@ information on how to configure Wcheck mode. Interactive command
         (wcheck-mode -1)
         (message "Language \"%s\": program \"%s\" is not executable"
                  wcheck-language
-                 (wcheck-query-language-data wcheck-language
-                                             'program)))
+                 (wcheck-query-language-data wcheck-language 'program)))
 
        (t
         ;; We are ready to really turn on the mode.
@@ -376,8 +378,8 @@ information on how to configure Wcheck mode. Interactive command
         ;; once but it's no harm to ensure their existence every time.
         (wcheck-add-global-hooks)
 
-        ;; Add this buffer to the bookkeeper.
-        (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
+        ;; Add this buffer to buffer database.
+        (wcheck-update-buffer-data (current-buffer) wcheck-language)
 
         ;; Start idle timer if it's not already started. The timer runs
         ;; a function which updates buffers which have requested for
@@ -392,16 +394,17 @@ information on how to configure Wcheck mode. Interactive command
 
     ;; Turn off the mode.
 
-    ;; We clear overlays form the buffer, remove the buffer from
-    ;; bookkeeper's data and clear the variable holding words received
-    ;; from external process.
+    ;; We clear overlays form the buffer, remove the buffer from buffer
+    ;; database and clear the variable holding words received from
+    ;; external process.
     (wcheck-remove-overlays)
-    (wcheck-update-buffer-process-data (current-buffer) nil)
-    (setq wcheck-received-words nil)
+    (wcheck-update-buffer-data (current-buffer) nil)
+    (setq wcheck-received-words nil
+          wcheck-buffer-window-areas nil)
 
-    ;; If there are no buffers using Wcheck mode anymore, stop the idle
+    ;; If there are no buffers using wcheck-mode anymore, stop the idle
     ;; timer and remove global hooks.
-    (when (not wcheck-buffer-process-data)
+    (when (null (wcheck-get-all-data :buffer))
       (wcheck-remove-global-hooks)
       (when wcheck-timer
         (cancel-timer wcheck-timer)
