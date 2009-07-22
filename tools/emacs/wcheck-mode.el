@@ -242,7 +242,7 @@ This is used when language does not define face."
   "Keymap for `wcheck-mode'.")
 
 (defvar wcheck-timer nil)
-(defconst wcheck-timer-idle .5
+(defconst wcheck-timer-idle .4
   "`wcheck-mode' idle timer delay (in seconds).")
 (defvar wcheck-timer-read-requested nil)
 (defvar wcheck-timer-paint-requested nil)
