@@ -370,20 +370,11 @@ information on how to configure Wcheck mode. Interactive command
 
         ;; Add buffer-local hooks. These ask for updates for the buffer
         ;; or may sometimes automatically turn off the mode.
-        (add-hook 'kill-buffer-hook #'wcheck-hook-kill-buffer nil t)
-        (add-hook 'window-scroll-functions #'wcheck-hook-window-scroll nil t)
-        (add-hook 'after-change-functions #'wcheck-hook-after-change nil t)
-        (add-hook 'change-major-mode-hook
-                  #'wcheck-hook-change-major-mode nil t)
-        (add-hook 'outline-view-change-hook
-                  #'wcheck-hook-outline-view-change nil t)
+        (wcheck-add-local-hooks (current-buffer))
 
         ;; Add global hooks. It's probably sufficient to add these only
         ;; once but it's no harm to ensure their existence every time.
-        (add-hook 'window-size-change-functions
-                  #'wcheck-hook-window-size-change)
-        (add-hook 'window-configuration-change-hook
-                  #'wcheck-hook-window-configuration-change)
+        (wcheck-add-global-hooks)
 
         ;; Add this buffer to the bookkeeper.
         (wcheck-update-buffer-process-data (current-buffer) wcheck-language)
@@ -411,22 +402,13 @@ information on how to configure Wcheck mode. Interactive command
     ;; If there are no buffers using Wcheck mode anymore, stop the idle
     ;; timer and remove global hooks.
     (when (not wcheck-buffer-process-data)
-      (remove-hook 'window-size-change-functions
-                   #'wcheck-hook-window-size-change)
-      (remove-hook 'window-configuration-change-hook
-                   #'wcheck-hook-window-configuration-change)
+      (wcheck-remove-global-hooks)
       (when wcheck-timer
         (cancel-timer wcheck-timer)
         (setq wcheck-timer nil)))
 
     ;; Remove buffer-local hooks.
-    (remove-hook 'kill-buffer-hook #'wcheck-hook-kill-buffer t)
-    (remove-hook 'window-scroll-functions #'wcheck-hook-window-scroll t)
-    (remove-hook 'after-change-functions #'wcheck-hook-after-change t)
-    (remove-hook 'change-major-mode-hook
-                 #'wcheck-hook-change-major-mode t)
-    (remove-hook 'outline-view-change-hook
-                 #'wcheck-hook-outline-view-change t)))
+    (wcheck-remove-local-hooks (current-buffer))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -554,6 +536,44 @@ call. The delay between consecutive calls is defined in variable
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Hooks
+
+
+(defun wcheck-add-local-hooks (buffer)
+  (with-current-buffer buffer
+    (dolist (hook '((kill-buffer-hook . wcheck-hook-kill-buffer)
+                    (window-scroll-functions . wcheck-hook-window-scroll)
+                    (after-change-functions . wcheck-hook-after-change)
+                    (change-major-mode-hook . wcheck-hook-change-major-mode)
+                    (outline-view-change-hook
+                     . wcheck-hook-outline-view-change)))
+      (add-hook (car hook) (cdr hook) nil t))))
+
+
+(defun wcheck-remove-local-hooks (buffer)
+  (with-current-buffer buffer
+    (dolist (hook '((kill-buffer-hook . wcheck-hook-kill-buffer)
+                    (window-scroll-functions . wcheck-hook-window-scroll)
+                    (after-change-functions . wcheck-hook-after-change)
+                    (change-major-mode-hook . wcheck-hook-change-major-mode)
+                    (outline-view-change-hook
+                     . wcheck-hook-outline-view-change)))
+      (remove-hook (car hook) (cdr hook) t))))
+
+
+(defun wcheck-add-global-hooks ()
+  (dolist (hook '((window-size-change-functions
+                   . wcheck-hook-window-size-change)
+                  (window-configuration-change-hook
+                   . wcheck-hook-window-configuration-change)))
+    (add-hook (car hook) (cdr hook))))
+
+
+(defun wcheck-remove-global-hooks ()
+  (dolist (hook '((window-size-change-functions
+                   . wcheck-hook-window-size-change)
+                  (window-configuration-change-hook
+                   . wcheck-hook-window-configuration-change)))
+    (remove-hook (car hook) (cdr hook))))
 
 
 (defun wcheck-hook-window-scroll (window window-start)
