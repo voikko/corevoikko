@@ -783,13 +783,14 @@ elements between BEG and END; all hidden parts are omitted."
           words)))))
 
 
-(defun wcheck-send-words (language wordlist)
-  "Send WORDLIST for the process that handles LANGUAGE.
+(defun wcheck-send-words (buffer wordlist)
+  "Send WORDLIST for the process that handles BUFFER.
 WORDLIST is a list of strings to be sent as input for the
-external process which handles LANGUAGE. Each string in WORDLIST
-is sent as separate line."
-  (let ((proc (wcheck-start-get-process language))
-        string)
+external process which handles BUFFER. Each string in WORDLIST is
+sent as separate line."
+  (let* ((language (wcheck-get-buffer-data buffer :language))
+         (proc (wcheck-start-get-process buffer))
+         string)
     (setq string (concat (mapconcat #'identity wordlist "\n") "\n"))
     (process-send-string proc string)
     string))
