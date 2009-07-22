@@ -948,11 +948,8 @@ according to A's and all overlapping A B ranges are combined."
            (if (>= a2 b1)
                (list (cons a1 (if (> b2 a2) b2 a2)))
              (list a b)))
-          ((and (not a)
-                (not b))
-           (list nil))
-          ((not b) (list a))
-          ((not a) (list b)))))
+          ((not a) (list b))
+          (t (append (list a) b)))))
 
 
 (provide 'wcheck-mode)
