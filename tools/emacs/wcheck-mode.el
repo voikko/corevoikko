@@ -229,7 +229,7 @@ languages use the command `\\[wcheck-change-language]'."
 (defface wcheck-default-face
   '((t (:underline "red")))
   "Default face for marking strings in a buffer.
-This is used when language does not define face."
+This is used when language does not define a face."
   :group 'wcheck)
 
 
@@ -271,7 +271,7 @@ This is used when language does not define face."
   "Change language for current buffer (or globally).
 Change `wcheck-mode' language to LANGUAGE. The change is
 buffer-local but if GLOBAL is non-nil (prefix argument if called
-interactively) then change the default language."
+interactively) then change the global default language."
   (interactive
    (let* ((comp (mapcar #'car wcheck-language-data))
           (default (cond ((member wcheck-language comp)
