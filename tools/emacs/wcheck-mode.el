@@ -257,6 +257,7 @@ This is used when language does not define face."
 (make-variable-buffer-local 'wcheck-buffer-window-areas)
 
 (defvar wcheck-buffer-process-data nil)
+(defvar wcheck-buffer-data nil)
 
 (defconst wcheck-process-name-prefix "wcheck/"
   "Process name prefix for `wcheck-mode'.")
@@ -954,6 +955,61 @@ range BEG to END. Otherwise remove all overlays."
   "Hook for removing overlay which is being edited."
   (unless after
     (delete-overlay overlay)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Buffer data access functions
+
+
+(defun wcheck-create-buffer-data (buffer)
+  "Create data instance for BUFFER."
+  (unless (wcheck-get-buffer-data buffer)
+    (push (list :buffer buffer :process nil :language nil)
+          wcheck-buffer-data))
+  wcheck-buffer-data)
+
+
+(defun wcheck-delete-buffer-data (buffer)
+  "Delete all data associated to BUFFER."
+  (mapc #'(lambda (item)
+            (when (eq buffer (plist-get item :buffer))
+              (setq wcheck-buffer-data (delq item wcheck-buffer-data))))
+        wcheck-buffer-data)
+  wcheck-buffer-data)
+
+
+(defun wcheck-get-buffer-data (buffer &optional key)
+  "Return the KEY value associated with BUFFER.
+If optional KEY is not given return BUFFER's all data."
+  (catch :answer
+    (dolist (item wcheck-buffer-data)
+      (when (eq buffer (plist-get item :buffer))
+        (throw :answer (if key (plist-get item key) item))))))
+
+
+(defun wcheck-get-process-data (process &optional key)
+  "Return the KEY value associated with PROCESS.
+If optional KEY is not given return PROCESS' all data."
+  (catch :answer
+    (dolist (item wcheck-buffer-data)
+      (when (eq process (plist-get item :process))
+        (throw :answer (if key (plist-get item key) item))))))
+
+
+(defun wcheck-get-all-data (key)
+  "Return all buffers' KEY value."
+  (delq nil (mapcar #'(lambda (item)
+                        (plist-get item key))
+                    wcheck-buffer-data)))
+
+
+(defun wcheck-set-buffer-data (buffer key value)
+  "Set KEY's VALUE for BUFFER."
+  (let ((item (wcheck-get-buffer-data buffer)))
+    (when item
+      (wcheck-delete-buffer-data buffer)
+      (plist-put item key value)
+      (push item wcheck-buffer-data))))
 
 
 (provide 'wcheck-mode)
