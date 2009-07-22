@@ -258,8 +258,8 @@ This is used when language does not define face."
 
 (defvar wcheck-buffer-data nil)
 
-(defconst wcheck-process-name-prefix "wcheck/"
-  "Process name prefix for `wcheck-mode'.")
+(defconst wcheck-process-name "wcheck"
+  "Process name for `wcheck-mode'.")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -623,47 +623,45 @@ Turn off `wcheck-mode' before changing major mode."
 ;;; Processes
 
 
-(defun wcheck-start-get-process (language)
-  "Start or get external process for LANGUAGE.
-Start a new process or get already existing process which handles
-language LANGUAGE. Return the symbol of that particular process
-or nil if the operation was unsuccessful."
-  (when (wcheck-language-valid-p language)
-    (let ((proc-name (concat wcheck-process-name-prefix language)))
-      ;; If process for this LANGUAGE exists return it.
-      (or (get-process proc-name)
-          ;; It doesn't exist so start a new one.
-          (let ((program (wcheck-query-language-data language 'program))
-                (args (split-string-and-unquote
-                       (wcheck-query-language-data language 'args t)
-                       "[ \t\n]+"))
-                (process-connection-type
-                 (wcheck-query-language-data language 'connection t))
-                proc)
+(defun wcheck-start-get-process (buffer)
+  "Start or get external process for BUFFER.
+Start a new process or get already existing process for BUFFER..
+Return the symbol of that particular process or nil if the
+operation was unsuccessful."
+  ;; If process for this BUFFER exists return it.
+  (or (wcheck-get-buffer-data buffer :process)
+      ;; It doesn't exist so start a new one.
+      (let* ((language (wcheck-get-buffer-data buffer :language))
+             (program (wcheck-query-language-data language 'program))
+             (args (split-string-and-unquote
+                    (wcheck-query-language-data language 'args t)
+                    "[ \t\n]+"))
+             (process-connection-type
+              (wcheck-query-language-data language 'connection t))
+             proc)
 
-            (when (wcheck-program-executable-p program)
-              (setq proc (apply 'start-process proc-name nil program args))
-              ;; The next command sets `wcheck-receive-words' as the
-              ;; output handler function for the process we just
-              ;; started.
-              (set-process-filter proc #'wcheck-receive-words)
-              (when (wcheck-process-running-p language)
-                proc)))))))
-
-
-(defun wcheck-process-running-p (language)
-  "Return t if the process for LANGUAGE is running."
-  (eq 'run (process-status (concat wcheck-process-name-prefix language))))
+        ;; Start the process.
+        (when (wcheck-program-executable-p program)
+          (setq proc (apply 'start-process wcheck-process-name nil
+                            program args))
+          ;; Add the process Lisp object to database.
+          (wcheck-set-buffer-data buffer :process proc)
+          ;; Set the output handler function.
+          (set-process-filter proc #'wcheck-receive-words)
+          ;; Prevent Emacs from querying user about running processes
+          ;; when killing Emacs.
+          (set-process-query-on-exit-flag proc nil)
+          proc))))
 
 
-(defun wcheck-end-process (language)
-  "Stop the process for LANGUAGE.
-Return the stopped process or nil if there was no such process."
-  (let ((proc (get-process (concat wcheck-process-name-prefix
-                                   language))))
-    (when proc
-      (delete-process proc)
-      proc)))
+(defun wcheck-process-running-p (buffer)
+  "Return t if the process for BUFFER is running."
+  (eq 'run (process-status (wcheck-get-buffer-data buffer :process))))
+
+
+(defun wcheck-end-process (process)
+  "Stop PROCESS."
+  (delete-process process))
 
 
 (defun wcheck-update-buffer-data (buffer language)
