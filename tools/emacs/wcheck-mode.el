@@ -717,7 +717,7 @@ nil remove BUFFER from the list."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Low-level functions
+;;; Miscellaneous low-level functions
 
 
 (defun wcheck-read-words (language buffer beg end)
@@ -890,35 +890,6 @@ The returned value is a floating point number."
        (/ micros 1000000.0))))
 
 
-(defun wcheck-make-overlay (language buffer beg end)
-  "Create an overlay for use with `wcheck-mode'.
-Create an overlay in BUFFER from range BEG to END. Use overlay's
-\"face\" property as configured in `wcheck-language-data' for
-LANGUAGE."
-  (let ((overlay (make-overlay beg end buffer))
-        (face (wcheck-query-language-data language 'face t)))
-    (dolist (prop `((wcheck-mode . t)
-                    (face . ,face)
-                    (modification-hooks . (wcheck-remove-changed-overlay))
-                    (insert-in-front-hooks . (wcheck-remove-changed-overlay))
-                    (insert-behind-hooks . (wcheck-remove-changed-overlay))
-                    (evaporate . t)))
-      (overlay-put overlay (car prop) (cdr prop)))))
-
-
-(defun wcheck-remove-overlays (&optional beg end)
-  "Remove `wcheck-mode' overlays from current buffer.
-If optional arguments BEG and END exist remove overlays from
-range BEG to END. Otherwise remove all overlays."
-  (remove-overlays beg end 'wcheck-mode t))
-
-
-(defun wcheck-remove-changed-overlay (overlay after beg end &optional len)
-  "Hook for removing overlay which is being edited."
-  (unless after
-    (delete-overlay overlay)))
-
-
 (defun wcheck-combine-overlapping-areas (alist)
   "Combine overlapping items in ALIST.
 ALIST is a list of (A . B) items in which A and B are integers.
@@ -950,6 +921,39 @@ according to A's and all overlapping A B ranges are combined."
              (list a b)))
           ((not a) (list b))
           (t (append (list a) b)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Overlays
+
+
+(defun wcheck-make-overlay (language buffer beg end)
+  "Create an overlay for use with `wcheck-mode'.
+Create an overlay in BUFFER from range BEG to END. Use overlay's
+\"face\" property as configured in `wcheck-language-data' for
+LANGUAGE."
+  (let ((overlay (make-overlay beg end buffer))
+        (face (wcheck-query-language-data language 'face t)))
+    (dolist (prop `((wcheck-mode . t)
+                    (face . ,face)
+                    (modification-hooks . (wcheck-remove-changed-overlay))
+                    (insert-in-front-hooks . (wcheck-remove-changed-overlay))
+                    (insert-behind-hooks . (wcheck-remove-changed-overlay))
+                    (evaporate . t)))
+      (overlay-put overlay (car prop) (cdr prop)))))
+
+
+(defun wcheck-remove-overlays (&optional beg end)
+  "Remove `wcheck-mode' overlays from current buffer.
+If optional arguments BEG and END exist remove overlays from
+range BEG to END. Otherwise remove all overlays."
+  (remove-overlays beg end 'wcheck-mode t))
+
+
+(defun wcheck-remove-changed-overlay (overlay after beg end &optional len)
+  "Hook for removing overlay which is being edited."
+  (unless after
+    (delete-overlay overlay)))
 
 
 (provide 'wcheck-mode)
