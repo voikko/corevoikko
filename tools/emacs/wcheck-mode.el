@@ -730,29 +730,30 @@ BUFFER from the list."
 ;;; Miscellaneous low-level functions
 
 
-(defun wcheck-read-words (language buffer beg end)
+(defun wcheck-read-words (buffer beg end)
   "Return a list of text elements in BUFFER.
 Scan BUFFER between positions BEG and END and search for text
-elements defined in LANGUAGE (see `wcheck-language-data'). Return
-a list containing visible text elements between BEG and END; all
-hidden parts are omitted."
+elements according to buffer's language settings (see
+`wcheck-language-data'). Return a list containing visible text
+elements between BEG and END; all hidden parts are omitted."
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
       (save-excursion
 
-        (let ((regexp (concat
-                       (wcheck-query-language-data language 'regexp-start t)
-                       "\\("
-                       (wcheck-query-language-data language 'regexp-body t)
-                       "\\)"
-                       (wcheck-query-language-data language 'regexp-end t)))
+        (let* ((language (wcheck-get-buffer-data buffer :language))
+               (regexp (concat
+                        (wcheck-query-language-data language 'regexp-start t)
+                        "\\("
+                        (wcheck-query-language-data language 'regexp-body t)
+                        "\\)"
+                        (wcheck-query-language-data language 'regexp-end t)))
 
-              (syntax (eval (wcheck-query-language-data language 'syntax t)))
-              (discard (wcheck-query-language-data language 'regexp-discard t))
-              (case-fold-search
-               (wcheck-query-language-data language 'case-fold t))
-              (old-point 0)
-              words)
+               (syntax (eval (wcheck-query-language-data language 'syntax t)))
+               (discard (wcheck-query-language-data language 'regexp-discard t))
+               (case-fold-search
+                (wcheck-query-language-data language 'case-fold t))
+               (old-point 0)
+               words)
 
           (with-syntax-table syntax
             (goto-char beg)
