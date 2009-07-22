@@ -311,7 +311,7 @@ interactively) then change the default language."
                (wcheck-timer-add-read-request (current-buffer))
                (wcheck-remove-overlays)))))
 
-    (wcheck-get-buffer-data (current-buffer) :language)))
+    (wcheck-get-data :buffer (current-buffer) :language)))
 
 
 ;;;###autoload
@@ -452,11 +452,11 @@ in buffers."
             wcheck-buffer-window-areas nil)
 
       (if (not (wcheck-language-valid-p
-                (wcheck-get-buffer-data buffer :language)))
+                (wcheck-get-data :buffer buffer :language)))
           (progn
             (wcheck-mode -1)
             (message "Language \"%s\" is not valid"
-                     (wcheck-get-buffer-data buffer :language)))
+                     (wcheck-get-data :buffer buffer :language)))
 
         ;; Walk through all windows which belong to this buffer.
         (let (area-alist words)
@@ -532,7 +532,7 @@ call. The delay between consecutive calls is defined in variable
 
 (defun wcheck-receive-words (process string)
   "`wcheck-mode' process output handler function."
-  (with-current-buffer (wcheck-get-process-data process :buffer)
+  (with-current-buffer (wcheck-get-data :process process :buffer)
     (setq wcheck-received-words
           (append wcheck-received-words (split-string string "\n+" t)))
     (wcheck-timer-add-paint-request (current-buffer))))
@@ -653,9 +653,9 @@ Start a new process or get already existing process for BUFFER..
 Return the symbol of that particular process or nil if the
 operation was unsuccessful."
   ;; If process for this BUFFER exists return it.
-  (or (wcheck-get-buffer-data buffer :process)
+  (or (wcheck-get-data :buffer buffer :process)
       ;; It doesn't exist so start a new one.
-      (let* ((language (wcheck-get-buffer-data buffer :language))
+      (let* ((language (wcheck-get-data :buffer buffer :language))
              (program (wcheck-query-language-data language 'program))
              (args (split-string-and-unquote
                     (wcheck-query-language-data language 'args t)
@@ -680,7 +680,7 @@ operation was unsuccessful."
 
 (defun wcheck-process-running-p (buffer)
   "Return t if the process for BUFFER is running."
-  (eq 'run (process-status (wcheck-get-buffer-data buffer :process))))
+  (eq 'run (process-status (wcheck-get-data :buffer buffer :process))))
 
 
 (defun wcheck-update-buffer-data (buffer language)
@@ -706,7 +706,7 @@ BUFFER from the list."
           (progn
             ;; LANGUAGE was given. If data for this buffer does not
             ;; exist create it.
-            (unless (wcheck-get-buffer-data buffer)
+            (unless (wcheck-get-data :buffer buffer)
               (wcheck-create-buffer-data buffer))
             ;; Add this BUFFER's language info and reset the process
             ;; info.
@@ -744,7 +744,7 @@ elements between BEG and END; all hidden parts are omitted."
     (with-current-buffer buffer
       (save-excursion
 
-        (let* ((language (wcheck-get-buffer-data buffer :language))
+        (let* ((language (wcheck-get-data :buffer buffer :language))
                (regexp (concat
                         (wcheck-query-language-data language 'regexp-start t)
                         "\\("
@@ -792,7 +792,7 @@ elements between BEG and END; all hidden parts are omitted."
 WORDLIST is a list of strings to be sent as input for the
 external process which handles BUFFER. Each string in WORDLIST is
 sent as separate line."
-  (let* ((language (wcheck-get-buffer-data buffer :language))
+  (let* ((language (wcheck-get-data :buffer buffer :language))
          (proc (wcheck-start-get-process buffer))
          string)
     (setq string (concat (mapconcat #'identity wordlist "\n") "\n"))
@@ -808,7 +808,7 @@ visible in BUFFER within position range from BEG to END."
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
       (save-excursion
-        (let* ((language (wcheck-get-buffer-data buffer :language))
+        (let* ((language (wcheck-get-data :buffer buffer :language))
                (r-start (wcheck-query-language-data language 'regexp-start t))
                (r-end (wcheck-query-language-data language 'regexp-end t))
                (syntax (eval (wcheck-query-language-data language 'syntax t)))
@@ -945,7 +945,7 @@ according to A's and all overlapping A B ranges are combined."
   "Create an overlay for use with `wcheck-mode'.
 Create an overlay in BUFFER from range BEG to END. Use overlay's
 \"face\" property as configured in `wcheck-language-data'."
-  (let* ((language (wcheck-get-buffer-data buffer :language))
+  (let* ((language (wcheck-get-data :buffer buffer :language))
          (overlay (make-overlay beg end buffer))
          (face (wcheck-query-language-data language 'face t)))
     (dolist (prop `((wcheck-mode . t)
@@ -976,7 +976,7 @@ range BEG to END. Otherwise remove all overlays."
 
 (defun wcheck-create-buffer-data (buffer)
   "Create data instance for BUFFER."
-  (unless (wcheck-get-buffer-data buffer)
+  (unless (wcheck-get-data :buffer buffer)
     (push (list :buffer buffer :process nil :language nil)
           wcheck-buffer-data))
   wcheck-buffer-data)
@@ -991,26 +991,18 @@ range BEG to END. Otherwise remove all overlays."
   wcheck-buffer-data)
 
 
-(defun wcheck-get-buffer-data (buffer &optional key)
-  "Return the KEY value associated with BUFFER.
-If optional KEY is not given return BUFFER's all data."
+(defun wcheck-get-data (key value &optional target-key)
+  "Query the first matching KEY VALUE pair and return TARGET-KEY.
+If optional TARGET-KEY is not given return all data associated
+with the matching KEY VALUE."
   (catch :answer
     (dolist (item wcheck-buffer-data)
-      (when (eq buffer (plist-get item :buffer))
-        (throw :answer (if key (plist-get item key) item))))))
-
-
-(defun wcheck-get-process-data (process &optional key)
-  "Return the KEY value associated with PROCESS.
-If optional KEY is not given return PROCESS' all data."
-  (catch :answer
-    (dolist (item wcheck-buffer-data)
-      (when (eq process (plist-get item :process))
-        (throw :answer (if key (plist-get item key) item))))))
+      (when (equal value (plist-get item key))
+        (throw :answer (if target-key (plist-get item target-key) item))))))
 
 
 (defun wcheck-get-all-data (key)
-  "Return all buffers' KEY value."
+  "Return every buffer's value for KEY."
   (delq nil (mapcar #'(lambda (item)
                         (plist-get item key))
                     wcheck-buffer-data)))
@@ -1018,7 +1010,7 @@ If optional KEY is not given return PROCESS' all data."
 
 (defun wcheck-set-buffer-data (buffer key value)
   "Set KEY's VALUE for BUFFER."
-  (let ((item (wcheck-get-buffer-data buffer)))
+  (let ((item (wcheck-get-data :buffer buffer)))
     (when item
       (wcheck-delete-buffer-data buffer)
       (plist-put item key value)
