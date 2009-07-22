@@ -532,10 +532,12 @@ call. The delay between consecutive calls is defined in variable
 
 (defun wcheck-receive-words (process string)
   "`wcheck-mode' process output handler function."
-  (with-current-buffer (wcheck-get-data :process process :buffer)
-    (setq wcheck-received-words
-          (append wcheck-received-words (split-string string "\n+" t)))
-    (wcheck-timer-add-paint-request (current-buffer))))
+  (let ((buffer (wcheck-get-data :process process :buffer)))
+    (when (buffer-live-p buffer)
+      (with-current-buffer buffer
+        (setq wcheck-received-words
+              (append wcheck-received-words (split-string string "\n+" t)))
+        (wcheck-timer-add-paint-request buffer)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
