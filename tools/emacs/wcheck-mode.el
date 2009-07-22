@@ -659,11 +659,6 @@ operation was unsuccessful."
   (eq 'run (process-status (wcheck-get-buffer-data buffer :process))))
 
 
-(defun wcheck-end-process (process)
-  "Stop PROCESS."
-  (delete-process process))
-
-
 (defun wcheck-update-buffer-data (buffer language)
   "Update process and language data for BUFFER.
 Calling this function is the primary way to maintain the language
@@ -706,7 +701,7 @@ BUFFER from the list."
       ;; Stop those processes which are no longer needed.
       (dolist (proc old-processes)
         (unless (memq proc new-processes)
-          (wcheck-end-process proc)))))
+          (delete-process proc)))))
 
   wcheck-buffer-data)
 
