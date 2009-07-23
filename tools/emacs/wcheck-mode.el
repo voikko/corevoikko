@@ -789,17 +789,13 @@ elements between BEG and END; all hidden parts are omitted."
           words)))))
 
 
-(defun wcheck-send-words (buffer wordlist)
-  "Send WORDLIST for the process that handles BUFFER.
-WORDLIST is a list of strings to be sent as input for the
-external process which handles BUFFER. Each string in WORDLIST is
-sent as separate line."
-  (let* ((language (wcheck-get-data :buffer buffer :language))
-         (proc (wcheck-start-get-process buffer))
-         string)
-    (setq string (concat (mapconcat #'identity wordlist "\n") "\n"))
-    (process-send-string proc string)
-    string))
+(defun wcheck-send-words (buffer strings)
+  "Send STRINGS for the process that handles BUFFER.
+STRINGS is a list of strings to be sent as input for the external
+process which handles BUFFER. Each string in STRINGS is sent as
+separate line."
+  (process-send-string (wcheck-start-get-process buffer)
+                       (concat (mapconcat #'identity strings "\n") "\n")))
 
 
 (defun wcheck-paint-words (buffer beg end wordlist)
