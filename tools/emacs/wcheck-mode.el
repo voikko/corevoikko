@@ -814,6 +814,7 @@ visible in BUFFER within position range from BEG to END."
                (r-start (wcheck-query-language-data language 'regexp-start t))
                (r-end (wcheck-query-language-data language 'regexp-end t))
                (syntax (eval (wcheck-query-language-data language 'syntax t)))
+               (face (wcheck-query-language-data language 'face t))
                (case-fold-search
                 (wcheck-query-language-data language 'case-fold t))
                regexp old-point)
@@ -841,7 +842,7 @@ visible in BUFFER within position range from BEG to END."
                         (t
                          ;; Make an overlay.
                          (wcheck-make-overlay
-                          buffer (match-beginning 1) (match-end 1))))
+                          buffer face (match-beginning 1) (match-end 1))))
                   (setq old-point (point)))))))))))
 
 
@@ -947,13 +948,11 @@ according to A's and all overlapping A B ranges are combined."
 ;;; Overlays
 
 
-(defun wcheck-make-overlay (buffer beg end)
-  "Create an overlay for use with `wcheck-mode'.
-Create an overlay in BUFFER from range BEG to END. Use overlay's
-\"face\" property as configured in `wcheck-language-data'."
-  (let* ((language (wcheck-get-data :buffer buffer :language))
-         (overlay (make-overlay beg end buffer))
-         (face (wcheck-query-language-data language 'face t)))
+(defun wcheck-make-overlay (buffer face beg end)
+  "Create an overlay to mark text.
+Create an overlay in BUFFER from range BEG to END. Put FACE as
+the overlay's \"face\" property."
+  (let ((overlay (make-overlay beg end buffer)))
     (dolist (prop `((wcheck-mode . t)
                     (face . ,face)
                     (modification-hooks . (wcheck-remove-changed-overlay))
