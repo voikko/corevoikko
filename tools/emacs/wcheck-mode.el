@@ -318,8 +318,8 @@ interactively) then change the global default language."
 (define-minor-mode wcheck-mode
   "Interface for external spell-checkers and filtering programs.
 
-With optional ARG turn on the mode if ARG is positive, turn off
-if negative. if ARG is not given toggle the mode.
+With optional (prefix) ARG turn on the mode if ARG is positive,
+otherwise turn it off. If ARG is not given toggle the mode.
 
 Wcheck is a minor mode for automatically checking and marking
 words or other text elements in Emacs buffer. Wcheck sends (parts
@@ -652,7 +652,7 @@ Turn off `wcheck-mode' before changing major mode."
 (defun wcheck-start-get-process (buffer)
   "Start or get external process for BUFFER.
 Start a new process or get already existing process for BUFFER..
-Return the symbol of that particular process or nil if the
+Return the object of that particular process or nil if the
 operation was unsuccessful."
   ;; If process for this BUFFER exists return it.
   (or (wcheck-get-data :buffer buffer :process)
@@ -666,8 +666,8 @@ operation was unsuccessful."
               (wcheck-query-language-data language 'connection t))
              proc)
 
-        ;; Start the process.
         (when (wcheck-program-executable-p program)
+          ;; Start the process.
           (setq proc (apply 'start-process wcheck-process-name nil
                             program args))
           ;; Add the process Lisp object to database.
@@ -677,6 +677,7 @@ operation was unsuccessful."
           ;; Prevent Emacs from querying user about running processes
           ;; when killing Emacs.
           (set-process-query-on-exit-flag proc nil)
+          ;; Return the process object.
           proc))))
 
 
