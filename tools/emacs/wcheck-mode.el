@@ -783,9 +783,7 @@ elements between BEG and END; all hidden parts are omitted."
                            (not (string-match
                                  discard (match-string-no-properties 1))))
                        ;; Add the match to the word list.
-                       (add-to-list 'words
-                                    (match-string-no-properties 1)
-                                    'append)))
+                       (add-to-list 'words (match-string-no-properties 1))))
                 (setq old-point (point)))))
           words)))))
 
