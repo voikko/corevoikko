@@ -463,8 +463,8 @@ in buffers."
         (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
                                           area-alist))
         (dolist (area wcheck-buffer-window-areas)
-          (setq words (append words (wcheck-read-words
-                                     buffer (car area) (cdr area)))))
+          (setq words (append (wcheck-read-words buffer (car area) (cdr area))
+                              words)))
         ;; Send words to external process.
         (wcheck-send-words buffer words))))
 
@@ -486,8 +486,8 @@ in buffers."
         ;; If process is running proceed to collect and paint the words.
         (if (eq 'run (process-status process))
             (progn (setq wcheck-received-words
-                         (append wcheck-received-words
-                                 (split-string string "\n+" t)))
+                         (append (split-string string "\n+" t)
+                                 wcheck-received-words))
                    (wcheck-timer-add-paint-request buffer))
 
           ;; It's not running. Turn off the mode.
