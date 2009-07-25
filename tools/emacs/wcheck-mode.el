@@ -438,35 +438,38 @@ idle timer (just once) for marking words or other text elements
 in buffers."
 
   (dolist (buffer wcheck-timer-read-requested)
-    (with-current-buffer buffer
+    (when (buffer-live-p buffer)
+      (with-current-buffer buffer
 
-      ;; We are about to fulfill buffer's window-reading request so
-      ;; remove this buffer from the request list.
-      (wcheck-timer-remove-read-request buffer)
+        ;; We are about to fulfill buffer's window-reading request so
+        ;; remove this buffer from the request list.
+        (wcheck-timer-remove-read-request buffer)
 
-      ;; Reset also the list of received words and visible window areas.
-      (setq wcheck-received-words nil
-            wcheck-buffer-window-areas nil)
-
-      ;; Walk through all windows which belong to this buffer.
-      (let (area-alist words)
-        (walk-windows #'(lambda (window)
-                          (when (eq buffer (window-buffer window))
-                            ;; Store the visible buffer area.
-                            (push (cons (window-start window)
-                                        (window-end window t))
-                                  area-alist)))
-                      'nomb t)
-
-        ;; Combine overlapping buffer areas and read words from all
+        ;; Reset also the list of received words and visible window
         ;; areas.
-        (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
-                                          area-alist))
-        (dolist (area wcheck-buffer-window-areas)
-          (setq words (append (wcheck-read-words buffer (car area) (cdr area))
-                              words)))
-        ;; Send words to external process.
-        (wcheck-send-words buffer words))))
+        (setq wcheck-received-words nil
+              wcheck-buffer-window-areas nil)
+
+        ;; Walk through all windows which belong to this buffer.
+        (let (area-alist words)
+          (walk-windows #'(lambda (window)
+                            (when (eq buffer (window-buffer window))
+                              ;; Store the visible buffer area.
+                              (push (cons (window-start window)
+                                          (window-end window t))
+                                    area-alist)))
+                        'nomb t)
+
+          ;; Combine overlapping buffer areas and read words from all
+          ;; areas.
+          (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
+                                            area-alist))
+          (dolist (area wcheck-buffer-window-areas)
+            (setq words (append (wcheck-read-words
+                                 buffer (car area) (cdr area))
+                                words)))
+          ;; Send words to external process.
+          (wcheck-send-words buffer words)))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
