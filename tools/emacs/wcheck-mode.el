@@ -841,7 +841,7 @@ visible in BUFFER within position range from BEG to END."
   "Query `wcheck-mode' language data.
 Return LANGUAGE's value for KEY as defined in variable
 `wcheck-language-data'. If DEFAULT is non-nil and value for KEY
-does not exist return the default value for the as defined in
+does not exist return the default value for the KEY as defined in
 variable `wcheck-language-data-defaults'. Also, if DEFAULT is
 non-nil and value for KEY is invalid return the default value as
 defined in `wcheck-language-data-defaults'."
