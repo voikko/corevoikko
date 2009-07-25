@@ -477,6 +477,25 @@ in buffers."
                        3))
 
 
+(defun wcheck-receive-words (process string)
+  "`wcheck-mode' process output handler function."
+  (let ((buffer (wcheck-get-data :process process :buffer)))
+    (when (buffer-live-p buffer)
+      (with-current-buffer buffer
+
+        ;; If process is running proceed to collect and paint the words.
+        (if (eq 'run (process-status process))
+            (progn (setq wcheck-received-words
+                         (append wcheck-received-words
+                                 (split-string string "\n+" t)))
+                   (wcheck-timer-add-paint-request buffer))
+
+          ;; It's not running. Turn off the mode.
+          (wcheck-mode -1)
+          (message "Process is not running for buffer \"%s\""
+                   (buffer-name buffer)))))))
+
+
 (defun wcheck-timer-paint-event (&optional repeat)
   "Mark text in windows.
 
@@ -514,25 +533,6 @@ call. The delay between consecutive calls is defined in variable
                             (wcheck-current-idle-time-seconds))
                          nil #'wcheck-timer-paint-event
                          (1- repeat))))
-
-
-(defun wcheck-receive-words (process string)
-  "`wcheck-mode' process output handler function."
-  (let ((buffer (wcheck-get-data :process process :buffer)))
-    (when (buffer-live-p buffer)
-      (with-current-buffer buffer
-
-        ;; If process is running proceed to collect and paint the words.
-        (if (eq 'run (process-status process))
-            (progn (setq wcheck-received-words
-                         (append wcheck-received-words
-                                 (split-string string "\n+" t)))
-                   (wcheck-timer-add-paint-request buffer))
-
-          ;; It's not running. Turn off the mode.
-          (wcheck-mode -1)
-          (message "Process is not running for buffer \"%s\""
-                   (buffer-name buffer)))))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
