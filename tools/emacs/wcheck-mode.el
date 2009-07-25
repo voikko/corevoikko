@@ -370,12 +370,8 @@ information on how to configure Wcheck mode. Interactive command
        (t
         ;; We are ready to really turn on the mode.
 
-        ;; Add buffer-local hooks. These ask for updates for the buffer
-        ;; or may sometimes automatically turn off the mode.
+        ;; Add hooks.
         (wcheck-add-local-hooks (current-buffer))
-
-        ;; Add global hooks. It's probably sufficient to add these only
-        ;; once but it's no harm to ensure their existence every time.
         (wcheck-add-global-hooks)
 
         ;; Add this buffer to buffer database.
