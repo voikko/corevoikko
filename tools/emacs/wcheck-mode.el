@@ -303,8 +303,7 @@ interactively) then change the global default language."
                ;; off the mode.
                (when wcheck-mode
                  (wcheck-mode -1))
-               (message "Language \"%s\": program \"%s\" is not executable"
-                        language program))
+               (wcheck-error-program-not-executable language program))
 
               ;; If the mode is currently turned on we request an update
               (wcheck-mode
@@ -354,18 +353,22 @@ information on how to configure Wcheck mode. Interactive command
         (message "Can't use `wcheck-mode' in a minibuffer")
         (setq wcheck-mode nil))
 
-       ((not (wcheck-language-valid-p wcheck-language))
+       ((not (wcheck-language-exists-p wcheck-language))
         ;; Not a valid language.
         (wcheck-mode -1)
-        (message "Language \"%s\" is not valid" wcheck-language))
+        (message "Language %sdoes not exist; check the configuration"
+                 (if (and (stringp wcheck-language)
+                          (> (length wcheck-language) 0))
+                     (format "\"%s\" " wcheck-language)
+                   "")))
 
        ((not (wcheck-program-executable-p
               (wcheck-query-language-data wcheck-language 'program)))
         ;; The program does not exist or is not executable.
         (wcheck-mode -1)
-        (message "Language \"%s\": program \"%s\" is not executable"
-                 wcheck-language
-                 (wcheck-query-language-data wcheck-language 'program)))
+        (wcheck-error-program-not-executable
+         wcheck-language
+         (wcheck-query-language-data wcheck-language 'program)))
 
        (t
         ;; We are ready to really turn on the mode.
@@ -447,32 +450,25 @@ in buffers."
       (setq wcheck-received-words nil
             wcheck-buffer-window-areas nil)
 
-      (if (not (wcheck-language-valid-p
-                (wcheck-get-data :buffer buffer :language)))
-          (progn
-            (wcheck-mode -1)
-            (message "Language \"%s\" is not valid"
-                     (wcheck-get-data :buffer buffer :language)))
+      ;; Walk through all windows which belong to this buffer.
+      (let (area-alist words)
+        (walk-windows #'(lambda (window)
+                          (when (eq buffer (window-buffer window))
+                            ;; Store the visible buffer area.
+                            (push (cons (window-start window)
+                                        (window-end window t))
+                                  area-alist)))
+                      'nomb t)
 
-        ;; Walk through all windows which belong to this buffer.
-        (let (area-alist words)
-          (walk-windows #'(lambda (window)
-                            (when (eq buffer (window-buffer window))
-                              ;; Store the visible buffer area.
-                              (push (cons (window-start window)
-                                          (window-end window t))
-                                    area-alist)))
-                        'nomb t)
-
-          ;; Combine overlapping buffer areas and read words from all
-          ;; areas.
-          (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
-                                            area-alist))
-          (dolist (area wcheck-buffer-window-areas)
-            (setq words (append words (wcheck-read-words
-                                       buffer (car area) (cdr area)))))
-          ;; Send words to external process.
-          (wcheck-send-words buffer words)))))
+        ;; Combine overlapping buffer areas and read words from all
+        ;; areas.
+        (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
+                                          area-alist))
+        (dolist (area wcheck-buffer-window-areas)
+          (setq words (append words (wcheck-read-words
+                                     buffer (car area) (cdr area)))))
+        ;; Send words to external process.
+        (wcheck-send-words buffer words))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
@@ -497,24 +493,20 @@ call. The delay between consecutive calls is defined in variable
 `wcheck-timer-idle'."
 
   (dolist (buffer wcheck-timer-paint-requested)
-    (with-current-buffer buffer
-      (wcheck-remove-overlays)
+    (when (buffer-live-p buffer)
+      (with-current-buffer buffer
+        (wcheck-remove-overlays)
 
-      ;; We are about to mark text in this buffer so remove the buffer
-      ;; from the request list.
-      (wcheck-timer-remove-paint-request buffer)
+        ;; We are about to mark text in this buffer so remove the buffer
+        ;; from the request list.
+        (wcheck-timer-remove-paint-request buffer)
 
-      ;; Walk through the visible text areas and mark text based on the
-      ;; word list returned by an external process.
-      (cond ((not wcheck-mode) nil)
-            ((not (wcheck-process-running-p buffer))
-             (wcheck-mode -1)
-             (message "Process is not running for buffer \"%s\""
-                      (buffer-name buffer)))
-            (t
-             (dolist (area wcheck-buffer-window-areas)
-               (wcheck-paint-words buffer (car area) (cdr area)
-                                   wcheck-received-words))))))
+        ;; Walk through the visible text areas and mark text based on
+        ;; the word list returned by an external process.
+        (when wcheck-mode
+          (dolist (area wcheck-buffer-window-areas)
+            (wcheck-paint-words buffer (car area) (cdr area)
+                                wcheck-received-words))))))
 
   ;; If REPEAT is positive integer call this function again after
   ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
@@ -531,9 +523,18 @@ call. The delay between consecutive calls is defined in variable
   (let ((buffer (wcheck-get-data :process process :buffer)))
     (when (buffer-live-p buffer)
       (with-current-buffer buffer
-        (setq wcheck-received-words
-              (append wcheck-received-words (split-string string "\n+" t)))
-        (wcheck-timer-add-paint-request buffer)))))
+
+        ;; If process is running proceed to collect and paint the words.
+        (if (eq 'run (process-status process))
+            (progn (setq wcheck-received-words
+                         (append wcheck-received-words
+                                 (split-string string "\n+" t)))
+                   (wcheck-timer-add-paint-request buffer))
+
+          ;; It's not running. Turn off the mode.
+          (wcheck-mode -1)
+          (message "Process is not running for buffer \"%s\""
+                   (buffer-name buffer)))))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -675,11 +676,6 @@ operation was unsuccessful."
           (set-process-query-on-exit-flag proc nil)
           ;; Return the process object.
           proc))))
-
-
-(defun wcheck-process-running-p (buffer)
-  "Return t if the process for BUFFER is running."
-  (eq 'run (process-status (wcheck-get-data :buffer buffer :process))))
 
 
 (defun wcheck-update-buffer-data (buffer language)
@@ -873,10 +869,11 @@ defined in `wcheck-language-data-defaults'."
            value))))
 
 
-(defun wcheck-language-valid-p (language)
-  "Return t if LANGUAGE exists and has configured external program."
+(defun wcheck-language-exists-p (language)
+  "Return t if LANGUAGE exists in `wcheck-language-data'."
   (and (member language (mapcar #'car wcheck-language-data))
-       (stringp (wcheck-query-language-data language 'program))
+       (stringp language)
+       (> (length language) 0)
        t))
 
 
@@ -886,6 +883,14 @@ defined in `wcheck-language-data-defaults'."
        (file-regular-p program)
        (file-executable-p program)
        t))
+
+
+(defun wcheck-error-program-not-executable (language program)
+  (if (and (stringp program)
+           (> (length program) 0))
+      (message "Language \"%s\": program \"%s\" is not executable"
+               language program)
+    (message "Language \"%s\": program is not configured" language)))
 
 
 (defun wcheck-current-idle-time-seconds ()
