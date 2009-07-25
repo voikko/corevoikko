@@ -398,8 +398,6 @@ information on how to configure Wcheck mode. Interactive command
     ;; external process.
     (wcheck-remove-overlays)
     (wcheck-update-buffer-data (current-buffer) nil)
-    (setq wcheck-received-words nil
-          wcheck-buffer-window-areas nil)
 
     ;; If there are no buffers using wcheck-mode anymore, stop the idle
     ;; timer and remove global hooks.
@@ -713,7 +711,9 @@ BUFFER from the list."
         ;; BUFFER from the list of buffers which request for wcheck
         ;; update and remove all buffer data.
         (wcheck-timer-remove-read-request buffer)
-        (wcheck-delete-buffer-data buffer))
+        (wcheck-delete-buffer-data buffer)
+        (setq wcheck-received-words nil
+              wcheck-buffer-window-areas nil))
 
       ;; Construct a list of processes that are still used.
       (setq new-processes (wcheck-get-all-data :process))
