@@ -1016,9 +1016,7 @@ with the matching KEY VALUE."
   "Set KEY's VALUE for BUFFER."
   (let ((item (wcheck-get-data :buffer buffer)))
     (when item
-      (wcheck-delete-buffer-data buffer)
-      (plist-put item key value)
-      (push item wcheck-buffer-data))))
+      (plist-put item key value))))
 
 
 (provide 'wcheck-mode)
