@@ -597,7 +597,7 @@ changed."
                     (with-current-buffer (window-buffer window)
                       (when wcheck-mode
                         (wcheck-timer-add-read-request
-                         (window-buffer window)))))
+                         (current-buffer)))))
                 'nomb
                 frame))
 
@@ -649,7 +649,7 @@ Turn off `wcheck-mode' before changing major mode."
 
 (defun wcheck-start-get-process (buffer)
   "Start or get external process for BUFFER.
-Start a new process or get already existing process for BUFFER..
+Start a new process or get already existing process for BUFFER.
 Return the object of that particular process or nil if the
 operation was unsuccessful."
   ;; If process for this BUFFER exists return it.
