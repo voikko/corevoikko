@@ -1017,7 +1017,7 @@ with the matching KEY VALUE."
   (let ((item (wcheck-get-data :buffer buffer)))
     (when item
       (wcheck-delete-buffer-data buffer)
-      (plist-put item key value)
+      (setq item (plist-put item key value))
       (push item wcheck-buffer-data))))
 
 
