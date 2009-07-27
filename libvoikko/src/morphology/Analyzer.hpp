@@ -38,6 +38,8 @@ class Analyzer {
 		                                        size_t wlen) const = 0;
 		virtual std::list<Analysis *> * analyze(const char * word) const = 0;
 
+		virtual ~Analyzer();
+
 		/**
 		 * Deletes a list of analyses returned from an analyzer.
 		 */

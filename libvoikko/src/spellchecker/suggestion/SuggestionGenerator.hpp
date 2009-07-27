@@ -26,6 +26,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 class SuggestionGenerator {
 	public:
 		virtual void generate(SuggestionStatus * s) const = 0;
+		virtual ~SuggestionGenerator() {};
 };
 
 }}}

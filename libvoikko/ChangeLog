@@ -1,3 +1,8 @@
+2009-07-27 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Increase version number to 2.2.
+	* Add virtual destructors to abstract base classes.
+
 2009-07-23 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Switch to dictionary format 2.

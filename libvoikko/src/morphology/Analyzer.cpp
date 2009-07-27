@@ -23,6 +23,9 @@ using namespace std;
 
 namespace libvoikko { namespace morphology {
 
+Analyzer::~Analyzer() {
+}
+
 void Analyzer::deleteAnalyses(list<Analysis *> * &analyses) {
 	list<Analysis *>::iterator it = analyses->begin();
 	while (it != analyses->end()) {

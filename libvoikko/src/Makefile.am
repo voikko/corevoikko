@@ -30,7 +30,7 @@ libvoikko_la_SOURCES = \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     autocorrect/AutoCorrect.cpp
-libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 9:0:8 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 10:0:9 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h
 noinst_HEADERS = \
