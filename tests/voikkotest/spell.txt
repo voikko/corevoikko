@@ -114,6 +114,9 @@ koirakulmio
 !kulmio
 !kutrinen
 
+[teonsanat]
+osteta # ei osteta, tositavan_kestämä_tAAn_kielto
+
 [erisnimet]
 Erkki-eno
 Ruotsin-matka
