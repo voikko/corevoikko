@@ -186,7 +186,7 @@ indexFile.write(u"<table>")
 for dict in allDicts:
 	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
 	zipFile = dirName + '.zip'
-	runCmd('zip -j ' + zipFile + ' ' + dirName + '/*')
+	runCmd('zip -r -j ' + zipFile + ' ' + dirName + '/*')
 	indexDict(indexFile, dict)
 indexFile.write(u"</table>")
 
