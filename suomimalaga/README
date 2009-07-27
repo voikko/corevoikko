@@ -10,7 +10,8 @@ version 7.8 or later.
 
 Currently Suomi-malaga is used in two different applications: text
 indexer Sukija and spellchecker/hyphenator Voikko. Version 1.0 and
-later will work with both applications.
+later will work with both applications. This release creates
+Voikko morphology with version 2 dictionary format.
 
 All of the documentation about Finnish morphology is in Finnish (see
 README.fi and subdirectory doc). This README contains only build

@@ -137,8 +137,8 @@ voikko/transmit: common/transmit.cc
 	g++ -g common/transmit.cc -o voikko/transmit
 
 voikko-install: voikko
-	install -m 755 -d $(DESTDIR)
-	install -m 644 $(VOIKKO_BINDIST) $(DESTDIR)
+	install -m 755 -d $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
+	install -m 644 $(VOIKKO_BINDIST) $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
 
 # Vocabulary update
 update-vocabulary:
