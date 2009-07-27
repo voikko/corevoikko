@@ -1,0 +1,118 @@
+# word:word
+# expected:number (not required)
+# analysis
+#  key=value
+word:kissa
+ expected:1
+ analysis
+  CLASS=nimisana
+  SIJAMUOTO=nimento
+  STRUCTURE==ppppp
+word:kuorma-auto
+ analysis
+  STRUCTURE==pppppp-=pppp
+word:koirra
+ expected:0
+word:EU
+ expected:1
+  STRUCTURE==jj
+word:alusta
+ analysis
+  STRUCTURE==pppppp
+word:kissan
+ analysis
+  SIJAMUOTO=omanto
+word:kissojen
+ analysis
+  SIJAMUOTO=omanto
+word:kissaa
+ analysis
+  SIJAMUOTO=osanto
+word:meidät
+ analysis
+  SIJAMUOTO=kohdanto
+word:kissana
+ analysis
+  SIJAMUOTO=olento
+word:kissaksi
+ analysis
+  SIJAMUOTO=tulento
+word:kissassa
+ analysis
+  SIJAMUOTO=sisaolento
+word:kissasta
+ analysis
+  SIJAMUOTO=sisaeronto
+word:kissaan
+ analysis
+  SIJAMUOTO=sisatulento
+word:kissalla
+ analysis
+  SIJAMUOTO=ulkoolento
+word:kissalta
+ analysis
+  SIJAMUOTO=ulkoeronto
+word:kissalle
+ analysis
+  SIJAMUOTO=ulkotulento
+word:kissatta
+ analysis
+  SIJAMUOTO=vajanto
+word:kissoineni
+ analysis
+  SIJAMUOTO=seuranto
+word:kissoin
+ analysis
+  SIJAMUOTO=keinonto
+word:nopeasti
+ analysis
+  SIJAMUOTO=kerrontosti
+word:juosta
+ analysis
+  CLASS=teonsana
+  SIJAMUOTO=none
+word:nopea
+ analysis
+  CLASS=laatusana
+word:hyvin
+ analysis
+  CLASS=seikkasana
+ analysis
+  CLASS=laatusana
+  SIJAMUOTO=keinonto
+word:taistolainen
+ analysis
+  CLASS=nimisana_laatusana
+word:joka
+ analysis
+  CLASS=asemosana
+word:ohi
+ analysis
+  CLASS=suhdesana
+word:hei
+ analysis
+  CLASS=huudahdussana
+word:eli
+ analysis
+  CLASS=sidesana
+ analysis
+  CLASS=teonsana
+word:Tiina
+ analysis
+  CLASS=etunimi
+word:Pitkänen
+ analysis
+  CLASS=sukunimi
+word:Helsinki
+ analysis
+  CLASS=paikannimi
+word:Neptunus
+ analysis
+  CLASS=nimi
+word:ei
+ analysis
+  CLASS=kieltosana
+word:EU
+ analysis
+  CLASS=lyhenne
+

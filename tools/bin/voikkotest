@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright 2006 - 2008 Harri Pitkänen (hatapitk@iki.fi)
-# Test program for Voikko spellchecker.
+# Copyright 2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Test program for Voikko.
 # This program requires Python and python-enchant.
 
 # This program is free software; you can redistribute it and/or modify
@@ -43,6 +43,7 @@ spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 suggesttest = SVNROOT + "/trunk/tests/voikkotest/suggest.txt"
 GRAMMARTESTFILE = SVNROOT + "/trunk/tests/voikkotest/grammar.txt"
+MORPHOTESTFILE = SVNROOT + "/trunk/tests/voikkotest/morpho.txt"
 BASE = WORKSPACE + "/base"
 WORDLIST = WORKSPACE + "/wordlist.txt.gz"
 BASE_CORRECT = WORKSPACE + "/base-correct.txt"
@@ -104,6 +105,34 @@ def _suggest(word, params):
 		line = unicode(line, 'UTF-8')
 		if line.startswith(u'S: '): suggestions.append(line[3:])
 	return suggestions
+
+# Returns morphological analysis results for a word
+def _morpho(word):
+	speller = subprocess.Popen(SPELLCMD + " -m ", shell = True,
+	                           stdin = subprocess.PIPE,
+	                           stdout = subprocess.PIPE, close_fds = True)
+	speller.stdin.write(word.encode('UTF-8') + '\n')
+	(out, err) = speller.communicate()
+	rawlist = out.split('\n')
+	analyses = []
+	currentAnalysis = {}
+	currentIndex = 1
+	for line in rawlist:
+		line = unicode(line, 'UTF-8')
+		if not line.startswith(u'A'):
+			continue
+		parts = line.split(u':')
+		if currentIndex != int(parts[1]):
+			currentIndex = int(parts[1])
+			analyses.append(currentAnalysis)
+			currentAnalysis = {}
+		keyValue = line[len(parts[0])+len(parts[1])+2:]
+		key = keyValue[:keyValue.find(u'=')]
+		value = keyValue[keyValue.find(u'=')+1:]
+		currentAnalysis[key] = value
+	if currentAnalysis != {}:
+		analyses.append(currentAnalysis)
+	return analyses
 
 # Returns a list of grammar errors.
 def _check_grammar(paragraphlist, params):
@@ -326,6 +355,96 @@ def suggestion_tests():
 		sys.stderr.write("Could not read from file " + suggesttest + "\n")
 		sys.exit(1)
 
+def containsMorphoAnalysis(expectedAnalysis, actualAnalyses):
+	for actualAnalysis in actualAnalyses:
+		match = True
+		for (key, value) in expectedAnalysis.iteritems():
+			if not key in actualAnalysis or actualAnalysis[key] != value:
+				match = False
+				break
+		if match:
+			return None
+	return u"Did not produce expected analysis:\n expected=%s\n actual=%s" \
+	       % (expectedAnalysis, actualAnalyses)
+
+def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount, actualAnalyses):
+	if expectedAnalysesCount != None and \
+	   len(actualAnalyses) != expectedAnalysesCount:
+		return u"Expected %i analyses, got %i." % \
+		       (expectedAnalysesCount, len(actualAnalyses))
+	for expectedAnalysis in expectedAnalyses:
+		result = containsMorphoAnalysis(expectedAnalysis, actualAnalyses)
+		if result != None:
+			return result
+	return None
+
+# Run morphological analysis tests
+def morpho_tests():
+	try:
+		inputfile = codecs.open(MORPHOTESTFILE, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		linecount = 0
+		word = None
+		expectedAnalysesCount = None
+		expectedAnalyses = []
+		currentExpected = {}
+		actualAnalyses = []
+		while True:
+			line_orig = inputfile.readline()
+			linecount = linecount + 1
+			if line_orig == u'':
+				break
+			line = line_orig.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1:
+				line = line[:commentstart].strip()
+			if line == u'':
+				continue
+			elif line.startswith(u'word:'):
+				testcount = testcount + 1
+				if currentExpected != {}:
+					expectedAnalyses.append(currentExpected)
+				error = diffMorphoAnalyses(expectedAnalyses,
+				        expectedAnalysesCount, actualAnalyses)
+				if error != None:
+					print u'Morphological test failed for word "%s":\n%s\n' \
+						% (word, error)
+					failcount = failcount + 1
+				word = line[5:]
+				actualAnalyses = _morpho(word)
+				expectedAnalyses = []
+				expectedAnalysesCount = None
+				currentExpected = {}
+			elif line.startswith(u'expected:'):
+				expectedAnalysesCount = int(line[9:])
+			elif line.startswith(u'analysis'):
+				expectedAnalyses.append(currentExpected)
+				currentExpected = {}
+			else:
+				key = line[:line.find(u'=')]
+				value = line[line.find(u'=')+1:]
+				currentExpected[key] = value
+		if currentExpected != {}:
+					expectedAnalyses.append(currentExpected)
+		error = diffMorphoAnalyses(expectedAnalyses,
+		        expectedAnalysesCount, actualAnalyses)
+		if error != None:
+			print u'Morphological test failed for word "%s":\n%s\n' \
+				% (word, error)
+			failcount = failcount + 1
+		inputfile.close()
+		if failcount == 0:
+			print u"All %i morphological tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i morphological tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + MORPHOTESTFILE + "\n")
+		sys.exit(1)
+
+
 # Run tokenizer tests
 def tokenizer_tests():
 	testfile = SVNROOT + "/trunk/tests/tokenizer/input.txt"
@@ -393,6 +512,7 @@ else:
 	dict = init_speller()
 	spell_tests(dict)
 	suggestion_tests()
+	morpho_tests()
 	hyphen_tests()
 	grammar_tests()
 	tokenizer_tests()
