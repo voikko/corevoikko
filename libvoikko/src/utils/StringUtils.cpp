@@ -17,12 +17,33 @@
  *********************************************************************************/
 
 #include "utils/StringUtils.hpp"
+#include "utils/utils.hpp"
 #include <cstring>
 #include <cstdlib>
+#include "wchar.h"
 
 using namespace std;
 
 namespace libvoikko { namespace utils {
+
+wchar_t * StringUtils::ucs4FromUtf8(const char * const original) {
+	return voikko_cstrtoucs4(original, "UTF-8", strlen(original));
+}
+
+char * StringUtils::utf8FromUcs4(const wchar_t * const original) {
+	return utf8FromUcs4(original, wcslen(original));
+}
+
+char * StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen) {
+	return voikko_ucs4tocstr(original, "UTF-8", wlen);
+}
+
+wchar_t * StringUtils::copy(const wchar_t * const original) {
+	size_t len = wcslen(original);
+	wchar_t * copied = new wchar_t[len + 1];
+	wcscpy(copied, original);
+	return copied;
+}
 
 void StringUtils::deleteCStringArray(char ** stringArray) {
 	if (stringArray) {

@@ -1,3 +1,26 @@
+2009-07-23 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Switch to dictionary format 2.
+	* Parse field "sijamuoto" during analysis.
+	* Parse field "luokka" during analysis.
+
+2009-07-22 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Change all internal users of morphological analysis to
+	  use abstract analyzer instead of calling Malaga directly.
+
+2009-07-20 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Allow longer suggestion search time if no valid
+	  candidates have been found during normal search.
+	* Add API for morphological analysis.
+
+2009-07-19 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Refactor spelling suggestion code.
+	* Suggest replacing numbers with nearby letters.
+	* Add letter replacement suggestions.
+
 2009-06-24 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Replace the commands used to generate autotools files
@@ -60,7 +83,7 @@
 	* Change trie compiler to not use a construct that
 	  is not supported in python 2.3.
 
-2009-07-05 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
+2009-04-05 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
 
 	* Build fixes for Fedora 11.
 

@@ -29,7 +29,7 @@ class DictionaryException : public std::exception {
 	const char * errorMessage;
 	
 	public:
-	DictionaryException(const char * errorMessage);
+	explicit DictionaryException(const char * errorMessage);
 	const char * what() const throw();
 
 };

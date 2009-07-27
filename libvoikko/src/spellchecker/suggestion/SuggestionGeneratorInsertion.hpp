@@ -1,4 +1,4 @@
-/* Libvoikko: Library of Finnish language tools
+/* Libvoikko: Finnish spellchecker and hyphenator library
  * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
@@ -16,26 +16,23 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_ENTRY
-#define VOIKKO_GRAMMAR_CACHE_ENTRY
+#ifndef VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_INSERTION_H
+#define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_INSERTION_H
 
-#include "grammar/Sentence.hpp"
+#include "spellchecker/suggestion/SuggestionGenerator.hpp"
 
-namespace libvoikko { namespace grammar {
+namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-class CacheEntry {
+class SuggestionGeneratorInsertion : public SuggestionGenerator {
 	public:
-		/** Constructs a cache entry with number of slots for grammar error
-		 *  suggestions */
-		explicit CacheEntry(size_t suggestionCount);
-	
-		/** Grammar error */
-		voikko_grammar_error error;
-	
-		/** Next error in linked list */
-		CacheEntry * nextError;
+		SuggestionGeneratorInsertion(const wchar_t * characters);
+
+		void generate(SuggestionStatus * s) const;
+
+	private:
+		const wchar_t * const characters;
 };
 
-} }
+}}}
 
 #endif

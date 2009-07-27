@@ -29,9 +29,27 @@ static const int MAX_WORD_LENGTH = 5000;
 
 static bool autotest = false;
 static bool suggest = false;
+static bool morphology = false;
 static int one_line_output = false;
 static char word_separator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that has spaces in them. */
+
+void printMorphology(int handle, const wchar_t * word) {
+	voikko_mor_analysis ** analysisList =
+	    voikko_analyze_word_ucs4(handle, word);
+	for (voikko_mor_analysis ** analysis = analysisList;
+	     *analysis; analysis++) {
+		const char ** keys = voikko_mor_analysis_keys(*analysis);
+		for (const char ** key = keys; *key; key++) {
+			wcout << L"A(" << word << L"):";
+			wcout << (analysis - analysisList) + 1 << L":";
+			wcout << *key << "=";
+			wcout << voikko_mor_analysis_value_ucs4(*analysis, *key);
+			wcout << endl;
+		}
+	}
+	voikko_free_mor_analysis(analysisList);
+}
 
 void check_word(int handle, const wchar_t * word) {
 	int result = voikko_spell_ucs4(handle, word);
@@ -75,6 +93,9 @@ void check_word(int handle, const wchar_t * word) {
 		else {
 			wcout << L"W: " << word << endl;
 		}
+	}
+	if (morphology && result) {
+		printMorphology(handle, word);
 	}
 	if (!one_line_output && suggest && !result) {
 		wchar_t ** suggestions = voikko_suggest_ucs4(handle, word);
@@ -184,6 +205,9 @@ int main(int argc, char ** argv) {
 		}
 		else if (args == "-s") {
 			suggest = true;
+		}
+		else if (args == "-m") {
+			morphology = true;
 		}
 		else if (args.find("-c") == 0) {
 			continue;

@@ -16,24 +16,32 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_ENTRY
-#define VOIKKO_GRAMMAR_CACHE_ENTRY
+#ifndef VOIKKO_MORPHOLOGY_ANALYZER
+#define VOIKKO_MORPHOLOGY_ANALYZER
 
-#include "grammar/Sentence.hpp"
+#include "morphology/Analysis.hpp"
+#include <list>
 
-namespace libvoikko { namespace grammar {
+namespace libvoikko { namespace morphology {
 
-class CacheEntry {
+/**
+ * General interface for morphological analyzers.
+ */
+class Analyzer {
 	public:
-		/** Constructs a cache entry with number of slots for grammar error
-		 *  suggestions */
-		explicit CacheEntry(size_t suggestionCount);
-	
-		/** Grammar error */
-		voikko_grammar_error error;
-	
-		/** Next error in linked list */
-		CacheEntry * nextError;
+		/**
+		 * Analyzes given word and returns a list of results.
+		 * The results and the list must be deleted after use.
+		 */
+		virtual std::list<Analysis *> * analyze(const wchar_t * word) const = 0;
+		virtual std::list<Analysis *> * analyze(const wchar_t * word,
+		                                        size_t wlen) const = 0;
+		virtual std::list<Analysis *> * analyze(const char * word) const = 0;
+
+		/**
+		 * Deletes a list of analyses returned from an analyzer.
+		 */
+		static void deleteAnalyses(std::list<Analysis *> * &analyses);
 };
 
 } }

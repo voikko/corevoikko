@@ -20,11 +20,12 @@
 #include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
 #include "setup/setup.hpp"
-#include <malaga.h>
+#include "morphology/AnalyzerFactory.hpp"
 #include <cstdlib>
 #include <cstring>
 
 using namespace libvoikko::grammar;
+using namespace std;
 
 namespace libvoikko {
 
@@ -36,26 +37,27 @@ void gc_analyze_token(int /*handle*/, Token * token) {
 	token->possibleSentenceStart = false;
 	if (token->type != TOKEN_WORD) return;
 	
-	wchar_t * wordBuffer = utils::StringUtils::stripSpecialCharsForMalaga(token->str, token->tokenlen);
-	char * malaga_buffer = voikko_ucs4tocstr(wordBuffer, "UTF-8", 0);
+	wchar_t * wordBuffer =
+	    utils::StringUtils::stripSpecialCharsForMalaga(token->str,
+	                                                   token->tokenlen);
+	const morphology::Analyzer * analyzer =
+	    morphology::AnalyzerFactory::getAnalyzer();
+	list<morphology::Analysis *> * analyses = analyzer->analyze(wordBuffer);
 	delete[] wordBuffer;
-	if (malaga_buffer == 0) return;
-	analyse_item(malaga_buffer, MORPHOLOGY);
-	delete[] malaga_buffer;
 	
 	// Check if first letter should be lower case letter
-	value_t analysis = first_analysis_result();
-	while (analysis) {
+	list<morphology::Analysis *>::const_iterator it = analyses->begin();
+	while (it != analyses->end()) {
 		token->isValidWord = true;
-		char * analysis_str = get_value_string(analysis);
-		if (strlen(analysis_str) < 2 || (analysis_str[1] != 'p' &&
-		    analysis_str[1] != 'q')) {
-			free(analysis_str);
+		const wchar_t * structure = (*it)->getValue("STRUCTURE");
+		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
+		    structure[1] != L'q')) {
+			morphology::Analyzer::deleteAnalyses(analyses);
 			return;
 		}
-		free(analysis_str);
-		analysis = next_analysis_result();
+		it++;
 	}
+	morphology::Analyzer::deleteAnalyses(analyses);
 	token->firstLetterLcase = true;
 }
 

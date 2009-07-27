@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,18 +16,24 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_H
-#define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_H
-
-#include "spellchecker/suggestion/SuggestionStatus.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorDeletion.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
+#include <wchar.h>
+#include <wctype.h>
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-class SuggestionGenerator {
-	public:
-		virtual void generate(SuggestionStatus * s) const = 0;
-};
+void SuggestionGeneratorDeletion::generate(SuggestionStatus * s) const {
+	wchar_t * buffer = new wchar_t[s->getWordLength()];
+	for (size_t i = 0; i < s->getWordLength() && !s->shouldAbort(); i++) {
+		if (i == 0 || towlower(s->getWord()[i]) != towlower(s->getWord()[i-1])) {
+			wcsncpy(buffer, s->getWord(), i);
+			wcsncpy(buffer + i, s->getWord() + (i + 1), s->getWordLength() - i);
+			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
+			    s->getWordLength() - 1);
+		}
+	}
+	delete[] buffer;
+}
 
 }}}
-
-#endif

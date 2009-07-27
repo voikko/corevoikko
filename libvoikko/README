@@ -38,6 +38,7 @@ Features
  - Grammar checking and context sensitive spell checking using paragraph
    based API.
  - String tokenizer and sentence splitter.
+ - Morphological analyzer.
 
 Documentation for using the library can be found from header file voikko.h.
 
@@ -55,7 +56,7 @@ Runtime requirements
 The library needs libmalaga and a version of Suomi-malaga containing a file named
 voikko-fi_FI.pro. The file must start with the following line:
 
-info: Voikko-Dictionary-Format: 1
+info: Voikko-Dictionary-Format: 2
 
 This should be considered a strict requirement for now. While some parts
 of the library may work without Suomi-malaga, this mode of operation is
@@ -85,7 +86,7 @@ occurrence is used and the rest are ignored.
 5) Path specified at compile time using --with-dictionary-path (this defaults to
    /usr/lib/voikko).
 
-To all of the paths above additional path component "/1" is appended at the end.
+To all of the paths above additional path component "/2" is appended at the end.
 This corresponds to the dictionary version and allows multiple versions of the same
 dictionary to be installed simultaneously.
 
@@ -101,9 +102,9 @@ following rules:
    name "mor-default", the default dictionary will be the variant that is found
    from that directory. Note that this does not affect the actual decision about
    the dictionary instance used to provide the variant. If, for example, there is
-   a directory $HOME/.voikko/1/mor-a containing variant "a" and a directory
-   /etc/voikko/1/mor-default containing variant "a", the variant "a" will become the
-   default but it will still be provided by $HOME/.voikko/1/mor-a.
+   a directory $HOME/.voikko/2/mor-a containing variant "a" and a directory
+   /etc/voikko/2/mor-default containing variant "a", the variant "a" will become the
+   default but it will still be provided by $HOME/.voikko/2/mor-a.
 
 2) If no default is specified, variant "standard" is used as the default.
 

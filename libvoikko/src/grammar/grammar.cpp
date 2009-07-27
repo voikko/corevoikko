@@ -30,32 +30,14 @@ void init_gc_error(voikko_grammar_error * gc_error) {
 	memset(gc_error, 0, sizeof(gc_error));
 }
 
-VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                     size_t textlen, size_t startpos, int skiperrors) {
-	if (text == 0 || textlen == 0) {
-		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
-	}
-	
-	wchar_t * text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
-	if (text_ucs4 == 0) {
-		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
-	}
-	
-	size_t wtextlen = wcslen(text_ucs4);
-	voikko_grammar_error e = voikko_next_grammar_error_ucs4(handle, text_ucs4,
-	                         wtextlen, startpos, skiperrors);
-	delete[] text_ucs4;
-	
-	return e;
-}
-
 VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text_ucs4,
                      size_t wtextlen, size_t startpos, int skiperrors) {
 	voikko_grammar_error e;
 	init_gc_error(&e);
 	if (text_ucs4 == 0 || wtextlen == 0) return e;
 	
-	const voikko_grammar_error * c_error = gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
+	const voikko_grammar_error * c_error =
+	    gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
 	if (!c_error) {
 		gc_paragraph_to_cache(handle, text_ucs4, wtextlen);
 		c_error = gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
@@ -76,11 +58,32 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, con
 	e.suggestions = (char **) malloc((sugg_count + 1) * sizeof(char *));
 	if (!e.suggestions) return e;
 	for (int i = 0; i < sugg_count; i++) {
-		e.suggestions[i] = (char *) malloc((strlen(c_error->suggestions[i]) + 1) * sizeof(char));
+		e.suggestions[i] = (char *) malloc(
+		    (strlen(c_error->suggestions[i]) + 1) * sizeof(char));
 		if (!e.suggestions[i]) return e;
 		strcpy(e.suggestions[i], c_error->suggestions[i]);
 	}
 	e.suggestions[sugg_count] = 0;
+	
+	return e;
+}
+
+VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
+                     size_t textlen, size_t startpos, int skiperrors) {
+	if (text == 0 || textlen == 0) {
+		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
+	}
+	
+	wchar_t * text_ucs4 =
+	    voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
+	if (text_ucs4 == 0) {
+		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
+	}
+	
+	size_t wtextlen = wcslen(text_ucs4);
+	voikko_grammar_error e = voikko_next_grammar_error_ucs4(handle, text_ucs4,
+	                         wtextlen, startpos, skiperrors);
+	delete[] text_ucs4;
 	
 	return e;
 }

@@ -286,10 +286,14 @@ wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);
  * Hyphenates the given word in current multibyte encoding.
  * @param handle voikko instance
  * @param word word to hyphenate
- * @return null-terminated character string containing the hyphenation using the following notation:
- *         ' ' = no hyphenation at this character, '-' = hyphenation point (character at this position
- *         is preserved in the hyphenated form), '=' = hyphentation point (character at this position
- *         is replaced by the hyphen.) Returns 0 on error.
+ * @return null-terminated character string containing the hyphenation using
+ * the following notation:
+ *     ' ' = no hyphenation at this character,
+ *     '-' = hyphenation point (character at this position
+ *           is preserved in the hyphenated form),
+ *     '=' = hyphentation point (character at this position
+ *           is replaced by the hyphen.)
+ * Returns 0 on error.
  */
 char * voikko_hyphenate_cstr(int handle, const char * word);
 
@@ -297,10 +301,14 @@ char * voikko_hyphenate_cstr(int handle, const char * word);
  * Hyphenates the given word in wide character Unicode string.
  * @param handle voikko instance
  * @param word word to hyphenate
- * @return null-terminated character string containing the hyphenation using the following notation:
- *         ' ' = no hyphenation at this character, '-' = hyphenation point (character at this position
- *         is preserved in the hyphenated form), '=' = hyphentation point (character at this position
- *         is replaced by the hyphen.) Returns 0 on error.
+ * @return null-terminated character string containing the hyphenation using
+ * the following notation:
+ *     ' ' = no hyphenation at this character,
+ *     '-' = hyphenation point (character at this position
+ *           is preserved in the hyphenated form),
+ *     '=' = hyphentation point (character at this position
+ *           is replaced by the hyphen.)
+ * Returns 0 on error.
  */
 char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
 
@@ -340,8 +348,8 @@ enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESP
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, size_t textlen,
-                                              size_t * tokenlen);
+enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
+                       size_t textlen, size_t * tokenlen);
 
 /**
  * Find the next token in text stream.
@@ -351,8 +359,8 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text, 
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
-                                              size_t * tokenlen);
+enum voikko_token_type voikko_next_token_cstr(int handle, const char * text,
+                       size_t textlen, size_t * tokenlen);
 
 /**
  * Sentence start types
@@ -371,8 +379,8 @@ enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START, SENTENCE_PROBABLE, 
  * @param sentencelen (out) Offset of the character that starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
-enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle, const wchar_t * text,
-     size_t textlen, size_t * sentencelen);
+enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
+                          const wchar_t * text, size_t textlen, size_t * sentencelen);
 
 /**
  * Find the next sentence in text stream.
@@ -383,8 +391,8 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle, const wcha
  *        starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
-enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
-     size_t textlen, size_t * sentencelen);
+enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle,
+                          const char * text, size_t textlen, size_t * sentencelen);
 
 /**
  * Find next grammar error.
@@ -455,6 +463,45 @@ const char * voikko_dict_variant(const struct voikko_dict * dict);
  * @return The description for given dictionary.
  */
 const char * voikko_dict_description(const struct voikko_dict * dict);
+
+/**
+ * A type representing result from morphological analysis.
+ */
+struct voikko_mor_analysis;
+
+/**
+ * Analyzes the morphology of given word.
+ * @param handle voikko instance
+ * @param word word to be analyzed.
+ * @return A pointer to a null terminated array of analysis results.
+ */
+struct voikko_mor_analysis ** voikko_analyze_word_ucs4(
+                              int handle, const wchar_t * word);
+
+/**
+ * Free the memory allocated for morphology analysis results.
+ * @param analysis A list of analysis results obtained with voikko_mor_analysis.
+ */
+void voikko_free_mor_analysis(struct voikko_mor_analysis ** analysis);
+
+/**
+ * Lists the keys available within given morphology analysis result.
+ * @param analysis Analysis to be examined.
+ * @return List of known keys within the result. This list will be freed
+ * upon call to voikko_free_mor_analysis.
+ */
+const char ** voikko_mor_analysis_keys(const struct voikko_mor_analysis * analysis);
+
+/**
+ * Get a value from morphology analysis result.
+ * @param analysis Analysis to be examined.
+ * @param key Key whose value should be returned.
+ * @return Value of the given key or null, if analysis does not contain
+ * any value for the key. Value will be freed upon call to voikko_free_mor_analysis.
+ */
+const wchar_t * voikko_mor_analysis_value_ucs4(
+                const struct voikko_mor_analysis * analysis,
+                const char * key);
 
 END_C_DECLS
 #endif

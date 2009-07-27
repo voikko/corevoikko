@@ -28,7 +28,16 @@ class SuggestionStatus {
 	public:
 		SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions, size_t maxCost);
 		~SuggestionStatus();
+		
+		/**
+		 * Returns true if no more suggestions should be generated.
+		 */
 		bool shouldAbort() const;
+		
+		/**
+		 * Increases the counter of calls made to morphological
+		 * analysis component (or other CPU-heavy operations).
+		 */
 		void charge();
 		
 		/**
@@ -75,14 +84,20 @@ class SuggestionStatus {
 		/** length of word */
 		const size_t wlen;
 		
+		/**
+		 * Maximum number of times the morphological analysis
+		 * may be performed.
+		 */
+		const size_t maxCost;
+		
 		/** Maximum number of suggestions that can be collected */
 		size_t maxSuggestions;
 		
 		/** Current count of collected suggestions */
 		size_t suggestionCount;
 		
-		/** number of allowed malaga calls */
-		size_t maxCost;
+		/** Current cost of suggestion search */
+		size_t currentCost;
 		
 		/** Array of suggestions */
 		Suggestion * suggestions;

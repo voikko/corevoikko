@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2009-01-31"
+.TH VOIKKOSPELL 1 "2009-07-20"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -29,6 +29,9 @@ It reads words from stdin (one word on a line) and print them to stdout, adding
 
 Common options of different Voikko test programs are listed in COMMON OPTIONS.
 .SH OPTIONS
+.TP
+.B \-m
+Prints morphological analysis info (A:) for recognized words.
 .TP
 .B \-t
 Prints only "C" or "W" instead of typical full output.

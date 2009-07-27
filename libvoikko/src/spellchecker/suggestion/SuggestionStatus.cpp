@@ -24,9 +24,10 @@ SuggestionStatus::SuggestionStatus(int handle, const wchar_t * word, size_t wlen
 	handle(handle),
 	word(word),
 	wlen(wlen),
+	maxCost(maxCost),
 	maxSuggestions(maxSuggestions),
 	suggestionCount(0),
-	maxCost(maxCost) {
+	currentCost(0) {
 	suggestions = new Suggestion[maxSuggestions + 1];
 }
 
@@ -38,16 +39,22 @@ SuggestionStatus::~SuggestionStatus() {
 }
 
 bool SuggestionStatus::shouldAbort() const {
-	if (suggestionCount == maxSuggestions || maxCost <= 0) {
+	if (suggestionCount == maxSuggestions) {
 		return true;
 	}
-	else {
+	if (currentCost < maxCost) {
 		return false;
 	}
+	if (suggestionCount == 0 && currentCost < 2 * maxCost) {
+		// If no suggestions have been found, we allow the search
+		// to take twice as long as usual.
+		return false;
+	}
+	return true;
 }
 
 void SuggestionStatus::charge() {
-	maxCost--;
+	currentCost++;
 }
 
 void SuggestionStatus::addSuggestion(const wchar_t * newSuggestion, int priority) {

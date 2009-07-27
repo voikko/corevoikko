@@ -16,24 +16,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_ENTRY
-#define VOIKKO_GRAMMAR_CACHE_ENTRY
+#ifndef VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
+#define VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
 
-#include "grammar/Sentence.hpp"
+#include "morphology/Analyzer.hpp"
 
-namespace libvoikko { namespace grammar {
+namespace libvoikko { namespace morphology {
 
-class CacheEntry {
+/**
+ * Factory for obtaining suitable morphological analyzer.
+ */
+class AnalyzerFactory {
 	public:
-		/** Constructs a cache entry with number of slots for grammar error
-		 *  suggestions */
-		explicit CacheEntry(size_t suggestionCount);
-	
-		/** Grammar error */
-		voikko_grammar_error error;
-	
-		/** Next error in linked list */
-		CacheEntry * nextError;
+		static const Analyzer * getAnalyzer();
+	private:
+		static Analyzer * currentAnalyzer;
 };
 
 } }

@@ -16,24 +16,47 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_ENTRY
-#define VOIKKO_GRAMMAR_CACHE_ENTRY
+#ifndef VOIKKO_MORPHOLOGY_ANALYSIS
+#define VOIKKO_MORPHOLOGY_ANALYSIS
 
-#include "grammar/Sentence.hpp"
+#include <string>
+#include <map>
 
-namespace libvoikko { namespace grammar {
+namespace libvoikko { namespace morphology {
 
-class CacheEntry {
+/**
+ * Results from morphological analysis.
+ */
+class Analysis {
 	public:
-		/** Constructs a cache entry with number of slots for grammar error
-		 *  suggestions */
-		explicit CacheEntry(size_t suggestionCount);
-	
-		/** Grammar error */
-		voikko_grammar_error error;
-	
-		/** Next error in linked list */
-		CacheEntry * nextError;
+		Analysis();
+		~Analysis();
+		
+		/**
+		 * Adds an attribute to analysis. Ownership of value
+		 * is transferred to this object.
+		 */
+		void addAttribute(const char * key, wchar_t * value);
+		
+		/**
+		 * Returns a null terminated array of strings containing
+		 * the attribute names in this analysis.
+		 */
+		const char ** getKeys() const;
+
+		/**
+		 * Returns the value of given attribute. If no such
+		 * attribute exists, returns null.
+		 */
+		const wchar_t * getValue(const char * key) const;
+	private:
+		Analysis(Analysis const & other);
+		Analysis & operator = (const Analysis & other);
+		
+		void deleteKeys();
+		void recreateKeys();
+		const char ** keys;
+		std::map<std::string, wchar_t *> attributes;
 };
 
 } }

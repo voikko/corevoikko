@@ -21,10 +21,14 @@
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include "setup/setup.hpp"
+#include "morphology/AnalyzerFactory.hpp"
 #include <wchar.h>
 #include <stdlib.h>
 #include <wctype.h>
 #include <string.h>
+
+using namespace libvoikko::morphology;
+using namespace std;
 
 namespace libvoikko {
 
@@ -173,29 +177,32 @@ void rule_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nc
 	delete[] word_copy;
 }
 
-void interpret_analysis(value_t analysis, char * buffer, size_t len) {
-	const char * analysis_string;
-	const char * analysis_ptr;
-	analysis_string = get_value_string(analysis);
+void interpret_analysis(const Analysis * analysis, char * buffer, size_t len) {
+	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	const wchar_t * structurePtr = structure;
 	memset(buffer, ' ', len);
-	analysis_ptr = analysis_string;
-	if (*analysis_ptr == '=') analysis_ptr++;
-	for (size_t i = 0; i < len; i++) {
-		if (analysis_ptr[0] == '\0') break;
-		if (analysis_ptr[0] == '-' && analysis_ptr[1] == '=') {
-			buffer[i] = '=';
-			analysis_ptr += 2;
-			continue;
-		}
-		if (analysis_ptr[0] == '=') {
-			buffer[i] = '-';
-			analysis_ptr += 2;
-			continue;
-		}
-		if (analysis_ptr[0] == 'j' || analysis_ptr[0] == 'q') buffer[i] = 'X';
-		analysis_ptr++;
+	if (*structurePtr == L'=') {
+		structurePtr++;
 	}
-	free((char *) analysis_string);
+	for (size_t i = 0; i < len; i++) {
+		if (structurePtr[0] == L'\0') {
+			break;
+		}
+		if (structurePtr[0] == L'-' && structurePtr[1] == L'=') {
+			buffer[i] = '=';
+			structurePtr += 2;
+			continue;
+		}
+		if (structurePtr[0] == L'=') {
+			buffer[i] = '-';
+			structurePtr += 2;
+			continue;
+		}
+		if (structurePtr[0] == L'j' || structurePtr[0] == L'q') {
+			buffer[i] = 'X';
+		}
+		structurePtr++;
+	}
 }
 
 char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
@@ -209,43 +216,45 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 	}
 	size_t utf8_len = strlen(word_utf8);
 	
-	analyse_item(word_utf8, MORPHOLOGY);
-	int analysis_count = 0;
-	value_t analysis_result = first_analysis_result();
+	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
+	list<Analysis *> * analyses = analyzer->analyze(word_utf8);
 	
 	/* We may have to remove the trailing dot before hyphenation */
-	if (!analysis_result && voikko_options.ignore_dot && len > 1 &&
+	if (analyses->empty() && voikko_options.ignore_dot && len > 1 &&
 	    word_utf8[utf8_len - 1] == '.') {
 		word_utf8[utf8_len - 1] = '\0';
 		utf8_len--;
 		*dot_removed = 1;
-		analyse_item(word_utf8, MORPHOLOGY);
-		analysis_result = first_analysis_result();
+		Analyzer::deleteAnalyses(analyses);
+		analyses = analyzer->analyze(word_utf8);
 	}
-	else *dot_removed = 0;
+	else {
+		*dot_removed = 0;
+	}
 	
 	/* Iterate over all analyses and add results to all_results */
-	while (analysis_result) {
+	list<Analysis *>::iterator it = analyses->begin();
+	size_t analysisCount = 0;
+	while (it != analyses->end()) {
 		char * result = new char[len + 1];
-		if (result == 0) break;
 		result[len] = '\0';
-		interpret_analysis(analysis_result, result, len - *dot_removed);
-		if (*dot_removed) result[len - 1] = ' ';
-		all_results[analysis_count] = result;
-		if (++analysis_count == LIBVOIKKO_MAX_ANALYSIS_COUNT) break;
-		analysis_result = next_analysis_result();
+		interpret_analysis(*it++, result, len - *dot_removed);
+		if (*dot_removed) {
+			result[len - 1] = ' ';
+		}
+		all_results[analysisCount] = result;
+		if (++analysisCount == LIBVOIKKO_MAX_ANALYSIS_COUNT) {
+			break;
+		}
 	}
+	Analyzer::deleteAnalyses(analyses);
 	
 	/* If the word could not be parsed, assume that it does not contain any
 	   morpheme borders that we should know about (unless there is a hyphen,
 	   which tells us where the border is). If the entire word seems impossible
 	   to hyphenate, do not split it. */
-	if (analysis_count == 0) {
+	if (analysisCount == 0) {
 		char * result = new char[len + 1];
-		if (result == 0) {
-			delete[] all_results;
-			return 0;
-		}
 		
 		// If unknown words are not allowed to be hyphenated, forbid hypenation
 		// at all positions.
@@ -257,12 +266,13 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 		}
 		result[len] = '\0';
 		all_results[0] = result;
-		analysis_count++;
+		analysisCount++;
 	}
-	all_results[analysis_count] = 0;
+	all_results[analysisCount] = 0;
 	delete[] word_utf8;
 
-	remove_extra_hyphenations(all_results, len, voikko_options.intersect_compound_level);
+	remove_extra_hyphenations(all_results, len,
+	                          voikko_options.intersect_compound_level);
 
 	return all_results;
 }

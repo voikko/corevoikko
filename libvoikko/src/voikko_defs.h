@@ -39,62 +39,16 @@
   #endif
 #endif
 
-
-VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size);
-
-VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
-                                                int cache_size, const char * path);
-
-VOIKKOEXPORT int voikko_terminate(int handle);
-
-VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value);
-
-VOIKKOEXPORT int voikko_set_int_option(int handle, int option, int value);
-
-VOIKKOEXPORT int voikko_set_string_option(int handle, int option, const char * value);
-
-VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word);
-
-VOIKKOEXPORT int voikko_spell_ucs4(int handle, const wchar_t * word);
-
-VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word);
-
-VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);
-
-VOIKKOEXPORT char * voikko_hyphenate_cstr(int handle, const char * word);
-
-VOIKKOEXPORT char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
-
-VOIKKOEXPORT void voikko_free_suggest_ucs4(wchar_t ** suggest_result);
-
-VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result);
-
-VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result);
-
 enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION,
              TOKEN_WHITESPACE, TOKEN_UNKNOWN};
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
                                                            size_t textlen, size_t * tokenlen);
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
-                                                           size_t * tokenlen);
-
 enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START,
              SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
              const wchar_t * text, size_t textlen, size_t * sentencelen);
-
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle,
-             const char * text, size_t textlen, size_t * sentencelen);
-
-VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text,
-                     size_t textlen, size_t startpos, int skiperrors);
-
-VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                                  size_t textlen, size_t startpos, int skiperrors);
-
-VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char * language);
 
 #endif

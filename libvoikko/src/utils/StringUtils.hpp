@@ -28,6 +28,22 @@ class StringUtils {
 	public:
 	
 	/**
+	 * Creates an UCS4 string from a null terminated UTF-8 string.
+	 */
+	static wchar_t * ucs4FromUtf8(const char * const original);
+	
+	/**
+	 * Creates an UTF-8 string from a null terminated UCS4 string.
+	 */
+	static char * utf8FromUcs4(const wchar_t * const original);
+	static char * utf8FromUcs4(const wchar_t * const original, size_t wlen);
+	
+	/**
+	 * Makes a copy of a string.
+	 */
+	static wchar_t * copy(const wchar_t * const original);
+
+	/**
 	 * Delete a C++ allocated char string array.
 	 */
 	static void deleteCStringArray(char ** stringArray);

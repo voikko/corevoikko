@@ -21,70 +21,105 @@
 #include "utils/utils.hpp"
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
+#include "morphology/AnalyzerFactory.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <malaga.h>
 #include <wchar.h>
 #include <wctype.h>
 
+using namespace libvoikko::morphology;
+using namespace std;
+
 namespace libvoikko {
 
-spellresult voikko_match_word_and_analysis(const wchar_t * word, size_t len, const char * analysis_str) {
+/** Returns the spelling result of a word when matched against given analysis string
+ *  @param word word  (does not need to be null terminated)
+ *  @param len length of the word
+ *  @param structure word structure from morphological analysis
+ *  @return spelling result
+ */
+static spellresult voikko_match_word_and_analysis(const wchar_t * word,
+        size_t len, const wchar_t * structure) {
 	char captype; /* 'i' = uppercase letter, 'p' = lowercase letter, 'v' = punctuation */
 	spellresult result = SPELL_OK;
 	size_t j = 0;
 	for (size_t i = 0; i < len; i++) {
-		while (analysis_str[j] == '=') j++;
-		if (analysis_str[j] == '\0') break;
-		
-		if (iswupper(word[i])) captype = 'i';
-		else if (iswlower(word[i])) captype = 'p';
-		else captype = 'v';
-		
-		if (captype == 'p' && (analysis_str[j] == 'i' || analysis_str[j] == 'j')) {
-			if (i == 0) result = SPELL_CAP_FIRST;
-			else result = SPELL_CAP_ERROR;
+		while (structure[j] == L'=') {
+			j++;
 		}
-		if (captype == 'i' && (analysis_str[j] == 'p' || analysis_str[j] == 'q')) {
+		if (structure[j] == L'\0') {
+			break;
+		}
+		
+		if (iswupper(word[i])) {
+			captype = 'i';
+		}
+		else if (iswlower(word[i])) {
+			captype = 'p';
+		}
+		else {
+			captype = 'v';
+		}
+		
+		if (captype == 'p' && (structure[j] == L'i' || structure[j] == L'j')) {
+			if (i == 0) {
+				result = SPELL_CAP_FIRST;
+			}
+			else {
+				result = SPELL_CAP_ERROR;
+			}
+		}
+		if (captype == 'i' && (structure[j] == L'p' || structure[j] == L'q')) {
 			result = SPELL_CAP_ERROR;
 		}
-		if (result == SPELL_CAP_ERROR) break;
+		if (result == SPELL_CAP_ERROR) {
+			break;
+		}
 		j++;
 	}
 	return result;
 }
 
 spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio) {
-	char * malaga_buffer = voikko_ucs4tocstr(word, "UTF-8", len);
-	if (malaga_buffer == 0) return SPELL_FAILED;
-	analyse_item(malaga_buffer, MORPHOLOGY);
-	delete[] malaga_buffer;
+	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
+	list<Analysis *> * analyses = analyzer->analyze(word, len);
 	if (prio != 0) *prio = 0;
 	
-	value_t analysis = first_analysis_result();
-	if (!analysis) return SPELL_FAILED;
+	if (analyses->empty()) {
+		Analyzer::deleteAnalyses(analyses);
+		return SPELL_FAILED;
+	}
 	
 	spellresult best_result = SPELL_FAILED;
-	do {
-		char * analysis_str = get_value_string(analysis);
-		spellresult result = voikko_match_word_and_analysis(word, len, analysis_str);
+	list<Analysis *>::const_iterator it = analyses->begin();
+	while (it != analyses->end()) {
+		const wchar_t * structure = (*it)->getValue("STRUCTURE");
+		spellresult result = voikko_match_word_and_analysis(word, len, structure);
 		if (best_result == SPELL_FAILED || best_result > result) {
 			best_result = result;
 			if (prio != 0) {
 				*prio = 0;
-				for (size_t j = 0; analysis_str[j] != '\0'; j++) {
-					if (analysis_str[j] == '=') (*prio)++;
+				for (size_t j = 0; structure[j] != L'\0'; j++) {
+					if (structure[j] == L'=') {
+						(*prio)++;
+					}
 				}
 			}
 		}
-		free(analysis_str);
-		if (best_result == SPELL_OK) break;
-		analysis = next_analysis_result();
-	} while (analysis);
+		if (best_result == SPELL_OK) {
+			break;
+		}
+		it++;
+	}
+	Analyzer::deleteAnalyses(analyses);
 	
 	if (prio != 0) {
-		if (best_result == SPELL_CAP_FIRST) (*prio) += 1;
-		else if (best_result == SPELL_CAP_ERROR) (*prio) += 2;
+		if (best_result == SPELL_CAP_FIRST) {
+			(*prio) += 1;
+		}
+		else if (best_result == SPELL_CAP_ERROR) {
+			(*prio) += 2;
+		}
 	}
 	return best_result;
 }
@@ -137,43 +172,49 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		}
 		
 		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
-		char * malaga_buffer = voikko_ucs4tocstr(buffer, "UTF-8", 0);
-		if (!malaga_buffer) {
-			delete[] buffer;
-			return result;
-		}
-		analyse_item(malaga_buffer, MORPHOLOGY);
-		delete[] malaga_buffer;
+		const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
+		list<Analysis *> * analyses = analyzer->analyze(buffer);
 		
-		value_t current_analysis = first_analysis_result();
-		if (!current_analysis) {
+		if (analyses->empty()) {
+			Analyzer::deleteAnalyses(analyses);
 			delete[] buffer;
 			return result;
 		}
 		
-		do {
-			char * analysis_str = get_value_string(current_analysis);
+		list<Analysis *>::const_iterator it = analyses->begin();
+		while (it != analyses->end()) {
+			const wchar_t * structure = (*it)->getValue("STRUCTURE");
 			size_t j = 0;
 			size_t i;
 			for (i = 0; i < leading_len; i++) {
-				while (analysis_str[j] == '=') j++;
-				if (analysis_str[j] == '\0') break;
+				while (structure[j] == L'=') {
+					j++;
+				}
+				if (structure[j] == L'\0') {
+					break;
+				}
 				j++;
 			}
 			if (i == leading_len) {
-				spellresult spres = voikko_match_word_and_analysis(buffer, len - 1, analysis_str);
-				if (analysis_str[j] == '=' && (result_with_border == SPELL_FAILED ||
-				    result_with_border > spres)) result_with_border = spres;
-				if (analysis_str[j] != '=' && (result_without_border == SPELL_FAILED ||
-				    result_without_border > spres)) result_without_border = spres;
+				spellresult spres = voikko_match_word_and_analysis(buffer, len - 1, structure);
+				if (structure[j] == L'=' && (result_with_border == SPELL_FAILED ||
+				    result_with_border > spres)) {
+					result_with_border = spres;
+				}
+				if (structure[j] != L'=' && (result_without_border == SPELL_FAILED ||
+				    result_without_border > spres)) {
+					result_without_border = spres;
+				}
 			}
-			free(analysis_str);
-			current_analysis = next_analysis_result();
-		} while (current_analysis);
+			it++;
+		}
 		
+		Analyzer::deleteAnalyses(analyses);
 		delete[] buffer;
 		if (result_with_border != SPELL_FAILED && result_without_border != SPELL_FAILED &&
-		    (result == SPELL_FAILED || result > result_with_border)) return result_with_border;
+		    (result == SPELL_FAILED || result > result_with_border)) {
+			return result_with_border;
+		}
 	}
 	
 	return result;
@@ -203,17 +244,6 @@ spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len) {
 	spres = voikko_do_spell(buffer, newlen);
 	delete[] buffer;
 	return spres;
-}
-
-VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word) {
-	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
-	size_t len = strlen(word);
-	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
-	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
-	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
-	int result = voikko_spell_ucs4(handle, word_ucs4);
-	delete[] word_ucs4;
-	return result;
 }
 
 /* A small result cache:
@@ -406,6 +436,17 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	}
 	delete[] nword;
 	delete[] buffer;
+	return result;
+}
+
+VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word) {
+	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
+	size_t len = strlen(word);
+	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
+	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
+	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
+	int result = voikko_spell_ucs4(handle, word_ucs4);
+	delete[] word_ucs4;
 	return result;
 }
 

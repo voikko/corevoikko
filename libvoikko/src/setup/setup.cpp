@@ -142,10 +142,6 @@ VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char
 	return 0;
 }
 
-VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size) {
-	return voikko_init_with_path(handle, langcode, cache_size, 0);
-}
-
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
 	/* FIXME: Temporary hack needed for MT unsafe malaga library */
@@ -231,6 +227,10 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	else voikko_options.cache = 0;
 	*handle = voikko_handle_count;
 	return 0;
+}
+
+VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size) {
+	return voikko_init_with_path(handle, langcode, cache_size, 0);
 }
 
 VOIKKOEXPORT int voikko_terminate(int handle) {

@@ -30,7 +30,7 @@
 #include <malaga.h>
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
-#define VOIKKO_DICTIONARY_VERSION "1"
+#define VOIKKO_DICTIONARY_VERSION "2"
 #define VOIKKO_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: " VOIKKO_DICTIONARY_VERSION
 #ifdef WIN32
 # define VOIKKO_KEY                   "SOFTWARE\\Voikko"
