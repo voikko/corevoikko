@@ -1706,7 +1706,7 @@ end;
 
 output_filter tulosta ($tulos):
   foreach $j in length ($tulos):
-    result tulostus_voikko($tulos.$j);
+    result tulostus_v2($tulos.$j);
   end;
 end;
 
@@ -1803,8 +1803,23 @@ subrule tulostus_luokka($tietue):
     define $allomorfi := $tietue.($tlen + 1 - $i);
     if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
-                             huudahdussana, sidesana> then
+                             huudahdussana, sidesana, etunimi, sukunimi,
+                             paikannimi, nimi, kieltosana, lyhenne> then
       return $allomorfi.luokka;
+    end;
+  end;
+  return nil;
+end;
+
+subrule tulostus_sijamuoto($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.sijamuoto /= nil then
+      return $allomorfi.sijamuoto;
+    end;
+    if $allomorfi.sija = nimentö then
+      return nimentö;
     end;
   end;
   return nil;
@@ -1813,6 +1828,7 @@ end;
 subrule tulostus_v2($tietue):
   return [rakenne: tulostus_voikko($tietue),
           luokka:  tulostus_luokka($tietue),
+          sijamuoto: tulostus_sijamuoto($tietue),
           tiedot: $tietue];
 end;
 
