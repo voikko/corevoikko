@@ -916,8 +916,9 @@ ALIST is a list of (A . B) items in which A and B are integers.
 Each item denote a buffer position range from A to B. This
 function returns a new list which has items in increasing order
 according to A's and all overlapping A B ranges are combined."
-  (let ((alist (sort alist #'(lambda (a b)
-                               (< (car a) (car b)))))
+  (let ((alist (sort (copy-tree alist)
+                     #'(lambda (a b)
+                         (< (car a) (car b)))))
         ready prev)
     (while alist
       (while (not (equal prev alist))
@@ -988,11 +989,11 @@ range BEG to END. Otherwise remove all overlays."
 
 (defun wcheck-delete-buffer-data (buffer)
   "Delete all data associated to BUFFER."
-  (mapc #'(lambda (item)
-            (when (eq buffer (plist-get item :buffer))
-              (setq wcheck-buffer-data (delq item wcheck-buffer-data))))
-        wcheck-buffer-data)
-  wcheck-buffer-data)
+  (setq wcheck-buffer-data
+        (remove nil (mapcar #'(lambda (item)
+                                (unless (eq buffer (plist-get item :buffer))
+                                  item))
+                            wcheck-buffer-data))))
 
 
 (defun wcheck-get-data (key value &optional target-key)
@@ -1007,9 +1008,9 @@ with the matching KEY VALUE."
 
 (defun wcheck-get-all-data (key)
   "Return every buffer's value for KEY."
-  (delq nil (mapcar #'(lambda (item)
-                        (plist-get item key))
-                    wcheck-buffer-data)))
+  (remove nil (mapcar #'(lambda (item)
+                          (plist-get item key))
+                      wcheck-buffer-data)))
 
 
 (defun wcheck-set-buffer-data (buffer key value)
