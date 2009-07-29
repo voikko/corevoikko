@@ -3,7 +3,7 @@
 
 # Copyright 2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for Voikko.
-# This program requires Python and python-enchant.
+# This program requires Python and Python interface to libvoikko.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,13 +21,12 @@
 
 import sys
 import locale
-import enchant
 import codecs
 import os
 import subprocess
 import getopt
 import voikkoutils
-
+from libvoikko import Voikko
 
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
@@ -106,34 +105,6 @@ def _suggest(word, params):
 		if line.startswith(u'S: '): suggestions.append(line[3:])
 	return suggestions
 
-# Returns morphological analysis results for a word
-def _morpho(word):
-	speller = subprocess.Popen(SPELLCMD + " -m ", shell = True,
-	                           stdin = subprocess.PIPE,
-	                           stdout = subprocess.PIPE, close_fds = True)
-	speller.stdin.write(word.encode('UTF-8') + '\n')
-	(out, err) = speller.communicate()
-	rawlist = out.split('\n')
-	analyses = []
-	currentAnalysis = {}
-	currentIndex = 1
-	for line in rawlist:
-		line = unicode(line, 'UTF-8')
-		if not line.startswith(u'A'):
-			continue
-		parts = line.split(u':')
-		if currentIndex != int(parts[1]):
-			currentIndex = int(parts[1])
-			analyses.append(currentAnalysis)
-			currentAnalysis = {}
-		keyValue = line[len(parts[0])+len(parts[1])+2:]
-		key = keyValue[:keyValue.find(u'=')]
-		value = keyValue[keyValue.find(u'=')+1:]
-		currentAnalysis[key] = value
-	if currentAnalysis != {}:
-		analyses.append(currentAnalysis)
-	return analyses
-
 # Returns a list of grammar errors.
 def _check_grammar(paragraphlist, params):
 	gc = subprocess.Popen(GCCMD + " " + params, shell = True, stdin = subprocess.PIPE,
@@ -163,26 +134,15 @@ def clean_smv():
 		sys.stderr.write(u'Failed to run "make clean"\n')
 		sys.exit(1)
 
-# Initialise the spellchecker
-def init_speller():
-	dict = None
-	try:
-		dict = enchant.Dict(langcode)
-	except enchant.DictNotFoundError:
-		print u"No dictionary was found for language " + langcode
-		sys.exit(1)
-	sys.stderr.write(u"Using language " + dict.tag + u" with Enchant " + dict.provider.desc + "\n")
-	return dict
-
 # Run the spelling tests
-def spell_tests(dict):
+def spell_tests(voikko):
 	try:
 		inputfile = codecs.open(spelltest, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		linecount = 0
 		section = u"(none)"
-		negative_test = False
+		negativeTest = False
 		while True:
 			line_orig = inputfile.readline()
 			linecount = linecount + 1
@@ -194,13 +154,16 @@ def spell_tests(dict):
 				section = line[1:-1]
 				continue
 			if line.startswith(u'!'):
-				negative_test = True
+				negativeTest = True
 				word = line[1:]
 			else:
-				negative_test = False
+				negativeTest = False
 				word = line
+			if len(word) == 0:
+				continue
 			testcount = testcount + 1
-			if not ((len(word) == 0 or dict.check(word)) ^ negative_test):
+			wordOk = voikko.spell(word)
+			if (not wordOk and not negativeTest) or (wordOk and negativeTest):
 				print u'Spelling test failed at line %i, section "%s":\n  %s' \
 				      % (linecount, section, line_orig)
 				failcount = failcount + 1
@@ -379,7 +342,7 @@ def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount, actualAnalyses):
 	return None
 
 # Run morphological analysis tests
-def morpho_tests():
+def morpho_tests(voikko):
 	try:
 		inputfile = codecs.open(MORPHOTESTFILE, "r", ENCODING)
 		testcount = 0
@@ -412,7 +375,7 @@ def morpho_tests():
 						% (word, error)
 					failcount = failcount + 1
 				word = line[5:]
-				actualAnalyses = _morpho(word)
+				actualAnalyses = voikko.analyze(word)
 				expectedAnalyses = []
 				expectedAnalysesCount = None
 				currentExpected = {}
@@ -488,10 +451,12 @@ if "--base" in [opt[0] for opt in opts]:
 if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
-	dict = init_speller()
-	if not spell_tests(dict) or not suggestion_tests() or not hyphen_tests():
+	voikko = Voikko()
+	voikko.init()
+	if not spell_tests(voikko):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
+	voikko.terminate()
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
 	os.system('bash -c \'time zcat "%s" | "%s" | grep "^C:" > "%s"\'' % \
 	          (WORDLIST, SPELLCMD, CURRENT_CORRECT))
@@ -509,11 +474,13 @@ if "--compare" in [opt[0] for opt in opts]:
 
 else:
 	update_smv()
-	dict = init_speller()
-	spell_tests(dict)
+	voikko = Voikko()
+	voikko.init()
+	spell_tests(voikko)
 	suggestion_tests()
-	morpho_tests()
+	morpho_tests(voikko)
 	hyphen_tests()
 	grammar_tests()
 	tokenizer_tests()
 	sentence_tests()
+	voikko.terminate()
