@@ -30,11 +30,25 @@ u"""
 <html>
 <head>
 <title>WebVoikko 2.0</title>
+<link type="text/css"
+ href="http://jqueryui.com/latest/themes/base/ui.all.css"
+ rel="stylesheet" />
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script>
 
+function wordInfoReceived(html) {
+  $(html).dialog().show();
+}
+
+function wordClicked(evt) {
+  var word = $(this).text()
+  console.log(word);
+  $.get("/wordinfo", {q: word}, wordInfoReceived, "html");
+}
+
 function updateReceived(html) {
   $("#result").html(html);
+  $("#result .word").click(wordClicked);
 }
 
 function inputChanged() {
@@ -43,13 +57,21 @@ function inputChanged() {
 }
 
 google.load("jquery", "1.3.2");
+google.load("jqueryui", "1.7.2");
 google.setOnLoadCallback(function() { jQuery(function($) {
   $("#input").keyup(inputChanged);
 });});
 </script>
 <style type="text/css">
-.error {
+span.error {
   color: red;
+}
+span.word {
+  -moz-border-radius: 3px;
+}
+span.word:hover {
+  background-color: #CCCCEE;
+  cursor: help;
 }
 </style>
 </head>
@@ -79,18 +101,65 @@ def mergeDots(tokenList):
 	return newList
 
 def spell(text):
-	voikko = _voikko
-	tokens = mergeDots(voikko.tokens(text))
+	tokens = mergeDots(_voikko.tokens(text))
 	res = u""
 	for token in tokens:
 		if token.tokenType == Token.WORD:
-			if not voikko.spell(token.tokenText):
-				res = res + u"<span class='error'>"
-				res = res + escape(token.tokenText)
-				res = res + u"</span>"
-				continue
-		res = res + escape(token.tokenText)
+			if not _voikko.spell(token.tokenText):
+				res = res + u"<span class='word error'>" \
+				      + escape(token.tokenText) \
+				      + u"</span>"
+			else:
+				res = res + u"<span class='word'>" \
+				      + escape(token.tokenText) \
+				      + u"</span>"
+		else:
+			res = res + escape(token.tokenText)
 	return res.replace(u"\n", u"<br />")
+
+def escapeAttr(word):
+	return escape(word).replace(u"'", u"&#39;").replace(u'"', u"&#34;")
+
+def suggestions(word):
+	suggs = _voikko.suggest(word)
+	res = u"<ul>"
+	for sugg in suggs:
+		res = res + u"<li>" + escape(sugg) + u"</li>"
+	res = res + "</ul>"
+	return res
+
+def getAnalysis(analysis):
+	res = u""
+	if "CLASS" in analysis:
+		res = res + u"Sanaluokka: " + analysis["CLASS"]
+	if "SIJAMUOTO" in analysis and analysis["SIJAMUOTO"] != "none":
+		res = res + u"<br />Sijamuoto: " + analysis["SIJAMUOTO"]
+	return res
+
+def analyzeWord(word):
+	analysisList = _voikko.analyze(word)
+	if len(analysisList) == 0:
+		return u""
+	if len(analysisList) == 1:
+		return getAnalysis(analysisList[0])
+	
+	res = u"Sanalla on useita merkityksiä: <ol>"
+	for analysis in analysisList:
+		res = res + u"<li> " \
+		      + getAnalysis(analysis) \
+		      + u"</li>"
+	res = res + u"</ol>"
+	return res
+
+def wordInfo(word):
+	res = u"<div title='Tietoja sanasta %s'>" % escapeAttr(word)
+	if not _voikko.spell(word):
+		res = res + u"Sana on tuntematon. Tarkoititiko kenties" \
+		      + suggestions(word)
+	else:
+		res = res + analyzeWord(word)
+	res = res + "</div>"
+	return res
 
 class VoikkoHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
@@ -105,6 +174,12 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 			self.end_headers()
 			query = unicode(unquote_plus(self.path[9:]), "UTF-8")
 			self.wfile.write(spell(query).encode("UTF-8"))
+		elif self.path.startswith("/wordinfo?q="):
+			self.send_response(200)
+			self.send_header("Content-Type", "text/html; charset=UTF-8")
+			self.end_headers()
+			query = unicode(unquote_plus(self.path[12:]), "UTF-8")
+			self.wfile.write(wordInfo(query).encode("UTF-8"))
 		else:
 			self.send_response(404)
 			self.end_headers()
