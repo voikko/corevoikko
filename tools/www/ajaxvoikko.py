@@ -37,12 +37,14 @@ u"""
 <script>
 
 function wordInfoReceived(html) {
-  $(html).dialog().show();
+  var options = {
+    width: 450
+  };
+  $(html).dialog(options).show();
 }
 
 function wordClicked(evt) {
-  var word = $(this).text()
-  console.log(word);
+  var word = $(this).text();
   $.get("/wordinfo", {q: word}, wordInfoReceived, "html");
 }
 
@@ -88,6 +90,50 @@ span.word:hover {
 """
 
 _voikko = None
+
+SANALUOKAT = {
+"asemosana": u"pronomini eli asemosana",
+"nimisana": u"substantiivi (yleisnimi)",
+"etunimi": u"substantiivi (etunimi)",
+"sukunimi": u"substantiivi (sukunimi)",
+"paikannimi": u"substantiivi (paikannimi)",
+"nimi": u"substantiivi (luokittelematon erisnimi)",
+"laatusana": u"adjektiivi eli laatusana",
+"nimisana_laatusana": u"substantiivi (yleisnimi) tai adjektiivi eli laatusana",
+"lukusana": u"numeraali eli lukusana",
+"teonsana": u"verbi eli teonsana",
+"seikkasana": u"adverbi eli seikkasana",
+"suhdesana": u"partikkeli (suhdesana)",
+"huudahdussana": u"partikkeli (huudahdussana)",
+"sidesana": u"partikkeli (konjunktio eli sidesana)",
+"kieltosana": u"partikkeli (kieltosana)",
+"lyhenne": u"lyhenne"
+}
+
+SIJAMUODOT = {
+"nimento": u"nominatiivi eli nimentö",
+"omanto": u"genetiivi eli omanto",
+"osanto": u"partitiivi eli osanto",
+"olento": u"essiivi eli olento",
+"tulento": u"translatiivi eli tulento",
+"kohdanto": u"akkusatiivi eli kohdanto",
+"sisaolento": u"inessiivi eli sisäolento",
+"sisaeronto": u"elatiivi eli sisäeronto",
+"sisatulento": u"illatiivi eli sisätulento",
+"ulkoolento": u"adessiivi eli ulko-olento",
+"ulkoeronto": u"ablatiivi eli ulkoeronto",
+"ulkotulento": u"allatiivi eli ulkotulento",
+"vajanto": u"abessiivi eli vajanto",
+"seuranto": u"komitatiivi eli seuranto",
+"keinonto": u"instruktiivi eli keinonto",
+"kerrontosti": u"sti-päätteinen kerronto (adverbi)"
+}
+
+def fromMapIfPossible(key, valueMap):
+	if key in valueMap:
+		return valueMap[key]
+	else:
+		return key
 
 def mergeDots(tokenList):
 	newList = []
@@ -158,9 +204,11 @@ def suggestions(word):
 def getAnalysis(analysis):
 	res = u""
 	if "CLASS" in analysis:
-		res = res + u"Sanaluokka: " + analysis["CLASS"]
+		res = res + u"Sanaluokka: " \
+		      + fromMapIfPossible(analysis["CLASS"], SANALUOKAT)
 	if "SIJAMUOTO" in analysis and analysis["SIJAMUOTO"] != "none":
-		res = res + u"<br />Sijamuoto: " + analysis["SIJAMUOTO"]
+		res = res + u"<br />Sijamuoto: " \
+		      + fromMapIfPossible(analysis["SIJAMUOTO"], SIJAMUODOT)
 	return res
 
 def analyzeWord(word):

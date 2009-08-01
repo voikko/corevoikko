@@ -127,6 +127,7 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(classMap, "nimi", L"nimi");
 	insertToSymbolMap(classMap, "kieltosana", L"kieltosana");
 	insertToSymbolMap(classMap, "lyhenne", L"lyhenne");
+	insertToSymbolMap(classMap, "lukusana", L"lukusana");
 	
 	symbolsInited = true;
 }

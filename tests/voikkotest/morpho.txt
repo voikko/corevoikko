@@ -115,4 +115,9 @@ word:ei
 word:EU
  analysis
   CLASS=lyhenne
-
+word:kymmenen
+ analysis
+  CLASS=lukusana
+word:10
+ analysis
+  CLASS=lukusana

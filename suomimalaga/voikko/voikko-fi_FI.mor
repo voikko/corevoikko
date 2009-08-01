@@ -1804,7 +1804,8 @@ subrule tulostus_luokka($tietue):
     if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
                              huudahdussana, sidesana, etunimi, sukunimi,
-                             paikannimi, nimi, kieltosana, lyhenne> then
+                             paikannimi, nimi, kieltosana, lyhenne,
+                             lukusana> then
       return $allomorfi.luokka;
     end;
   end;
