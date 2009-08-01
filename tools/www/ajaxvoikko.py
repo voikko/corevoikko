@@ -48,9 +48,30 @@ function wordClicked(evt) {
   $.get("/wordinfo", {q: word}, wordInfoReceived, "html");
 }
 
+function gErrorClicked(evt) {
+  var options = {
+    width: 450,
+    title: "Mahdollinen kielioppivirhe"
+  };
+  var outerElement = $(this).parent()
+  var original = $("<span />").text(outerElement.find(".gErrorInner").text());
+  var explanation = outerElement.attr("errortext");
+  var html = "<div>... " + original.html() + " ...<br />"
+             + explanation + "</div>";
+  $(html).dialog(options).show();
+}
+
+function buildGrammarError(outerElement) {
+  var content = outerElement.html();
+  outerElement.html("*<span class='gErrorInner'>" + html + "</span>");
+}
+
 function updateReceived(html) {
   $("#result").html(html);
+  $("#result .gErrorOuter").wrapInner("<span class='gErrorInner'></span>");
+  $("#result .gErrorOuter").prepend("<span class='gErrorHandle'>*</span>");
   $("#result .word").click(wordClicked);
+  $("#result .gErrorHandle").click(gErrorClicked);
 }
 
 function inputChanged() {
@@ -65,18 +86,25 @@ google.setOnLoadCallback(function() { jQuery(function($) {
 });});
 </script>
 <style type="text/css">
+#result {
+  line-height: 1.6em;
+}
 span.error {
   color: red;
 }
-span.grammarerror {
-  text-decoration: underline;
-  color: blue;
+span.gErrorOuter {
+  padding-bottom: 0.3em;
+  background-color: #FFBBBB;
+}
+span.gErrorInner {
+  background-color: white;
 }
 .word {
   color: black;
-  -moz-border-radius: 3px;
+  background-color: white;
+  -moz-border-radius: 0.2em;
 }
-span.word:hover {
+span.word:hover, span.gErrorHandle:hover {
   background-color: #CCCCEE;
   cursor: help;
 }
@@ -171,7 +199,10 @@ def spell(text):
 	for token in tokens:
 		if position in gErrors:
 			currentGError = gErrors[position]
-			res = res + u"<span class='grammarerror'>"
+			errorCode = currentGError.errorCode
+			errorText = _voikko.grammarErrorExplanation(errorCode, "fi")
+			res = res + u"<span class='gErrorOuter' " \
+			      + u"errortext='" + escape(errorText) + u"'>"
 		if token.tokenType == Token.WORD:
 			if not _voikko.spell(token.tokenText):
 				res = res + u"<span class='word error'>" \
@@ -231,7 +262,7 @@ def analyzeWord(word):
 def wordInfo(word):
 	res = u"<div title='Tietoja sanasta %s'>" % escapeAttr(word)
 	if not _voikko.spell(word):
-		res = res + u"Sana on tuntematon. Tarkoititiko kenties" \
+		res = res + u"Sana on tuntematon. Tarkoititko kenties" \
 		      + suggestions(word)
 	else:
 		res = res + analyzeWord(word)
@@ -272,5 +303,6 @@ if __name__ == '__main__':
 	_voikko = Voikko()
 	_voikko.init()
 	_voikko.setIgnoreDot(True)
+	_voikko.setAcceptUnfinishedParagraphsInGc(True)
 	runServer(8080)
 	_voikko.terminate()

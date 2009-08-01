@@ -93,6 +93,10 @@ def _boolToInt(bool):
 	else:
 		return 0
 
+def _setBoolOption(voikko, option, value):
+	_checkInited(voikko)
+	voikko.lib.voikko_set_bool_option(voikko.handle, option, _boolToInt(value))
+
 class Voikko:
 	def __init__(self):
 		self.handle = c_int(-1)
@@ -138,6 +142,9 @@ class Voikko:
 		self.lib.voikko_next_grammar_error_ucs4.argtypes = [c_int, c_wchar_p,
 		                                   c_size_t, c_size_t, c_int]
 		self.lib.voikko_next_grammar_error_ucs4.restype = CGrammarError
+		
+		self.lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
+		self.lib.voikko_error_message_cstr.restype = c_char_p
 	
 	def init(self):
 		if self.handle.value < 0:
@@ -191,6 +198,10 @@ class Voikko:
 			self.lib.voikko_free_suggest_cstr(error.suggestions)
 			skipErrors = skipErrors + 1
 	
+	def grammarErrorExplanation(self, errorCode, language):
+		explanation = self.lib.voikko_error_message_cstr(errorCode, language)
+		return unicode(explanation, "UTF-8")
+	
 	def analyze(self, word):
 		_checkInited(self)
 		cAnalysisList = self.lib.voikko_analyze_word_ucs4(self.handle, word)
@@ -233,7 +244,9 @@ class Voikko:
 			position = position + tokenLen.value
 			textLen = textLen - tokenLen.value
 		return result
+		
+	def setIgnoreDot(self, value):
+		_setBoolOption(self, 0, value)
 	
-	def setIgnoreDot(self, ignore):
-		_checkInited(self)
-		self.lib.voikko_set_bool_option(self.handle, 0, _boolToInt(ignore))
+	def setAcceptUnfinishedParagraphsInGc(self, value):
+		_setBoolOption(self, 14, value)
