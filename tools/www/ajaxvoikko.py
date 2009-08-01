@@ -66,7 +66,12 @@ google.setOnLoadCallback(function() { jQuery(function($) {
 span.error {
   color: red;
 }
-span.word {
+span.grammarerror {
+  text-decoration: underline;
+  color: blue;
+}
+.word {
+  color: black;
   -moz-border-radius: 3px;
 }
 span.word:hover {
@@ -100,10 +105,27 @@ def mergeDots(tokenList):
 			i = i + 1
 	return newList
 
+def nonOverlappingGrammarErrorsByStartPosition(text):
+	errors = _voikko.grammarErrors(text)
+	nonOverlapping = {}
+	lastEnd = 0
+	for error in errors:
+		if error.startPos < lastEnd:
+			continue
+		nonOverlapping[error.startPos] = error
+		lastEnd = error.startPos + error.errorLen
+	return nonOverlapping
+
 def spell(text):
 	tokens = mergeDots(_voikko.tokens(text))
+	gErrors = nonOverlappingGrammarErrorsByStartPosition(text)
 	res = u""
+	position = 0
+	currentGError = None
 	for token in tokens:
+		if position in gErrors:
+			currentGError = gErrors[position]
+			res = res + u"<span class='grammarerror'>"
 		if token.tokenType == Token.WORD:
 			if not _voikko.spell(token.tokenText):
 				res = res + u"<span class='word error'>" \
@@ -115,6 +137,11 @@ def spell(text):
 				      + u"</span>"
 		else:
 			res = res + escape(token.tokenText)
+		position = position + len(token.tokenText)
+		if currentGError != None and \
+		   currentGError.startPos + currentGError.errorLen == position:
+			currentGError = None
+			res = res + u"</span>"
 	return res.replace(u"\n", u"<br />")
 
 def escapeAttr(word):
@@ -138,6 +165,8 @@ def getAnalysis(analysis):
 
 def analyzeWord(word):
 	analysisList = _voikko.analyze(word)
+	if len(analysisList) == 0 and word.endswith(u"."):
+		analysisList = _voikko.analyze(word[:-1])
 	if len(analysisList) == 0:
 		return u""
 	if len(analysisList) == 1:

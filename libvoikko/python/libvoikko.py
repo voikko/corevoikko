@@ -27,6 +27,7 @@ from ctypes import c_size_t
 from ctypes import c_void_p
 from ctypes import pointer
 from ctypes import POINTER
+from ctypes import Structure
 
 class Token:
 	NONE = 0
@@ -44,6 +45,42 @@ class Token:
 	def __repr__(self):
 		return (u"<" + self.tokenText + u"," + \
 		       Token.TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
+
+class CGrammarError(Structure):
+	_fields_ = [("errorCode", c_int),
+	            ("errorLevel", c_int),
+	            ("errorDescription", c_char_p),
+	            ("startPos", c_size_t),
+	            ("errorLen", c_size_t),
+	            ("suggestions", POINTER(c_char_p))]
+
+class GrammarError:
+	def __init__(self, cGrammarError):
+		self.errorCode = cGrammarError.errorCode
+		self.startPos = cGrammarError.startPos
+		self.errorLen = cGrammarError.errorLen
+		self.suggestions = []
+		if bool(cGrammarError.suggestions):
+			i = 0
+			while bool(cGrammarError.suggestions[i]):
+				self.suggestions.append(
+				     unicode(cGrammarError.suggestions[i], "UTF-8"))
+				i = i + 1
+	
+	def __repr__(self):
+		return u"<" + self.toString() + u">"
+	
+	def toString(self):
+		s = u'[code=%i, level=0, descr="", stpos=%i, len=%i, suggs={' \
+		    % (self.errorCode, self.startPos, self.errorLen)
+		first = True
+		for suggestion in self.suggestions:
+			if not first:
+				s = s + u','
+				first = False
+			s = s + u'"' + suggestion + u'"'
+		s = s + u"}]"
+		return s
 
 def _checkInited(voikko):
 	if voikko.handle.value < 0:
@@ -76,6 +113,9 @@ class Voikko:
 		self.lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
 		self.lib.voikko_free_suggest_ucs4.restype = None
 		
+		self.lib.voikko_free_suggest_cstr.argtypes = [POINTER(c_char_p)]
+		self.lib.voikko_free_suggest_cstr.restype = None
+		
 		self.lib.voikko_analyze_word_ucs4.argtypes = [c_int, c_wchar_p]
 		self.lib.voikko_analyze_word_ucs4.restype = POINTER(c_void_p)
 		
@@ -94,6 +134,10 @@ class Voikko:
 		
 		self.lib.voikko_set_bool_option.argtypes = [c_int, c_int, c_int]
 		self.lib.voikko_set_bool_option.restype = c_int
+		
+		self.lib.voikko_next_grammar_error_ucs4.argtypes = [c_int, c_wchar_p,
+		                                   c_size_t, c_size_t, c_int]
+		self.lib.voikko_next_grammar_error_ucs4.restype = CGrammarError
 	
 	def init(self):
 		if self.handle.value < 0:
@@ -131,6 +175,21 @@ class Voikko:
 		
 		self.lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
+	
+	def grammarErrors(self, paragraph):
+		_checkInited(self)
+		paragraphUnicode = unicode(paragraph)
+		paragraphLen = len(paragraphUnicode)
+		skipErrors = 0
+		errorList = []
+		while True:
+			error = self.lib.voikko_next_grammar_error_ucs4(self.handle,
+			        paragraphUnicode, paragraphLen, 0, skipErrors)
+			if (error.errorCode == 0):
+				return errorList
+			errorList.append(GrammarError(error))
+			self.lib.voikko_free_suggest_cstr(error.suggestions)
+			skipErrors = skipErrors + 1
 	
 	def analyze(self, word):
 		_checkInited(self)
