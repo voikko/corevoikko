@@ -81,10 +81,19 @@ function inputChanged() {
   $.get("/spell", {q: text}, updateReceived, "html");
 }
 
+function keyUpInInput(evt) {
+  if (evt.keyCode >= 16 && evt.keyCode <= 40) {
+    // Modifier keys such as Ctrl
+    // Movement keys such as arrow left etc.
+    return;
+  }
+  inputChanged();
+}
+
 google.load("jquery", "1.3.2");
 google.load("jqueryui", "1.7.2");
 google.setOnLoadCallback(function() { jQuery(function($) {
-  $("#input").keyup(inputChanged);
+  $("#input").keyup(keyUpInInput);
 });});
 </script>
 <style type="text/css">
