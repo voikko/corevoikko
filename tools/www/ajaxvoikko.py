@@ -27,6 +27,8 @@ from libvoikko import Token
 
 _STATIC_PAGE = \
 u"""
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
 <title>WebVoikko 2.0</title>
@@ -163,22 +165,6 @@ def fromMapIfPossible(key, valueMap):
 	else:
 		return key
 
-def mergeDots(tokenList):
-	newList = []
-	i = 0
-	l = len(tokenList)
-	while i < l:
-		if i < l - 1 \
-		   and tokenList[i].tokenType == Token.WORD \
-		   and tokenList[i+1].tokenText == u".":
-			word = tokenList[i].tokenText + u"."
-			newList.append(Token(word, Token.WORD))
-			i = i + 2
-		else:
-			newList.append(tokenList[i])
-			i = i + 1
-	return newList
-
 def nonOverlappingGrammarErrorsByStartPosition(text):
 	errors = _voikko.grammarErrors(text)
 	nonOverlapping = {}
@@ -190,8 +176,24 @@ def nonOverlappingGrammarErrorsByStartPosition(text):
 		lastEnd = error.startPos + error.errorLen
 	return nonOverlapping
 
+def markTrailingDots(tokenList):
+	newList = []
+	i = 0
+	l = len(tokenList)
+	while i < l:
+		token = tokenList[i]
+		if i < l - 1 \
+		   and tokenList[i].tokenType == Token.WORD \
+		   and tokenList[i+1].tokenText == u".":
+			token.dotFollows = True
+		else:
+			token.dotFollows = False
+		newList.append(token)
+		i = i + 1
+	return newList
+
 def spell(text):
-	tokens = mergeDots(_voikko.tokens(text))
+	tokens = markTrailingDots(_voikko.tokens(text))
 	gErrors = nonOverlappingGrammarErrorsByStartPosition(text)
 	res = u""
 	position = 0
@@ -202,14 +204,15 @@ def spell(text):
 			errorCode = currentGError.errorCode
 			errorText = _voikko.grammarErrorExplanation(errorCode, "fi")
 			res = res + u"<span class='gErrorOuter' " \
-			      + u"errortext='" + escape(errorText) + u"'>"
+			      + u"errortext='" + escapeAttr(errorText) + u"'>"
 		if token.tokenType == Token.WORD:
-			if not _voikko.spell(token.tokenText):
-				res = res + u"<span class='word error'>" \
+			if _voikko.spell(token.tokenText) or \
+			   (token.dotFollows and _voikko.spell(token.tokenText + u".")):
+				res = res + u"<span class='word'>" \
 				      + escape(token.tokenText) \
 				      + u"</span>"
 			else:
-				res = res + u"<span class='word'>" \
+				res = res + u"<span class='word error'>" \
 				      + escape(token.tokenText) \
 				      + u"</span>"
 		else:
@@ -226,6 +229,8 @@ def escapeAttr(word):
 
 def suggestions(word):
 	suggs = _voikko.suggest(word)
+	if len(suggs) == 0:
+		return None
 	res = u"<ul>"
 	for sugg in suggs:
 		res = res + u"<li>" + escape(sugg) + u"</li>"
@@ -244,8 +249,6 @@ def getAnalysis(analysis):
 
 def analyzeWord(word):
 	analysisList = _voikko.analyze(word)
-	if len(analysisList) == 0 and word.endswith(u"."):
-		analysisList = _voikko.analyze(word[:-1])
 	if len(analysisList) == 0:
 		return u""
 	if len(analysisList) == 1:
@@ -260,10 +263,17 @@ def analyzeWord(word):
 	return res
 
 def wordInfo(word):
+	isRecognized = _voikko.spell(word)
+	if not isRecognized:
+		isRecognized = _voikko.spell(word + u".")
+		if isRecognized:
+			word = word + u"."
 	res = u"<div title='Tietoja sanasta %s'>" % escapeAttr(word)
-	if not _voikko.spell(word):
-		res = res + u"Sana on tuntematon. Tarkoititko kenties" \
-		      + suggestions(word)
+	if not isRecognized:
+		res = res + u"Sana on tuntematon."
+		suggs = suggestions(word)
+		if suggs is not None:
+			res = res + u" Tarkoititko kenties" + suggs
 	else:
 		res = res + analyzeWord(word)
 	res = res + "</div>"
@@ -302,7 +312,7 @@ def runServer(port):
 if __name__ == '__main__':
 	_voikko = Voikko()
 	_voikko.init()
-	_voikko.setIgnoreDot(True)
+	_voikko.setIgnoreDot(False)
 	_voikko.setAcceptUnfinishedParagraphsInGc(True)
 	runServer(8080)
 	_voikko.terminate()
