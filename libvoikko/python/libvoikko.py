@@ -46,6 +46,10 @@ class Token:
 		return (u"<" + self.tokenText + u"," + \
 		       Token.TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
 
+class SuggestionStrategy:
+	TYPO = 0
+	OCR = 1
+
 class CGrammarError(Structure):
 	_fields_ = [("errorCode", c_int),
 	            ("errorLevel", c_int),
@@ -169,6 +173,10 @@ class Voikko:
 	
 	def suggest(self, word):
 		_checkInited(self)
+		# FIXME: This should be done directly within libvoikko
+		if self.spell(word):
+			return [unicode(word)]
+		
 		cSuggestions = self.lib.voikko_suggest_ucs4(self.handle, word)
 		pSuggestions = []
 		
@@ -248,5 +256,16 @@ class Voikko:
 	def setIgnoreDot(self, value):
 		_setBoolOption(self, 0, value)
 	
+	def setIgnoreNumbers(self, value):
+		_setBoolOption(self, 1, value)
+	
 	def setAcceptUnfinishedParagraphsInGc(self, value):
 		_setBoolOption(self, 14, value)
+	
+	def setSuggestionStrategy(self, value):
+		if value == SuggestionStrategy.OCR:
+			_setBoolOption(self, 8, True)
+		elif value == SuggestionStrategy.TYPO:
+			_setBoolOption(self, 8, False)
+		else:
+			raise Exception("Invalid suggestion strategy")

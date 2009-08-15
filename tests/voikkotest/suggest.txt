@@ -22,14 +22,14 @@ maksakast9ke	maksakastike
 ka+akala	kapakala
 katunuoksu	katujuoksu
 
-[ignore_dot=1]
+[voikko.setIgnoreDot(True)]
 koirra.	koira.	!koira
 
-[ocr_suggestions=1]
+[voikko.setSuggestionStrategy(SuggestionStrategy.OCR)]
 Män_sälä	Mäntsälä
 horrelioosi	borrelioosi
 baapa	haapa
 h0usut	housut
 
-[ocr_suggestions=1 ignore_numbers=1]
+[voikko.setSuggestionStrategy(SuggestionStrategy.OCR) voikko.setIgnoreNumbers(True)]
 h0usut	!housut

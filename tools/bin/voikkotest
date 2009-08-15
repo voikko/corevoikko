@@ -27,6 +27,7 @@ import subprocess
 import getopt
 import voikkoutils
 from libvoikko import Voikko
+from libvoikko import SuggestionStrategy
 
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
@@ -91,19 +92,6 @@ def _check_gcerrors(inputpara, expresults, results):
 			for r in results[i]: print u' ' + r
 			failcount = failcount + 1
 	return failcount
-
-# Returns a list of spelling suggestions.
-def _suggest(word, params):
-	speller = subprocess.Popen(SPELLCMD + " -s " + params, shell = True, stdin = subprocess.PIPE,
-	                              stdout = subprocess.PIPE, close_fds = True)
-	speller.stdin.write(word.encode('UTF-8') + '\n')
-	(out, err) = speller.communicate()
-	rawlist = out.split('\n')
-	suggestions = []
-	for line in rawlist:
-		line = unicode(line, 'UTF-8')
-		if line.startswith(u'S: '): suggestions.append(line[3:])
-	return suggestions
 
 # Returns a list of grammar errors.
 def _check_grammar(paragraphlist, params):
@@ -276,13 +264,18 @@ def grammar_tests():
 		sys.stderr.write("Could not read from file " + GRAMMARTESTFILE + "\n")
 		sys.exit(1)
 
+def setDefaults(voikko):
+	voikko.setIgnoreDot(False)
+	voikko.setIgnoreNumbers(False)
+	voikko.setSuggestionStrategy(SuggestionStrategy.TYPO)
+
 # Run suggestion tests
-def suggestion_tests():
+def suggestion_tests(voikko):
 	try:
 		inputfile = codecs.open(suggesttest, "r", ENCODING)
 		testcount = 0
 		failcount = 0
-		section = u"(none)"
+		section = u""
 		while True:
 			line_orig = inputfile.readline()
 			if line_orig == u'': break
@@ -295,7 +288,11 @@ def suggestion_tests():
 			parts = line.split(u'\t')
 			if len(parts) < 2: continue
 			testcount = testcount + 1
-			suggestions = _suggest(parts[0], section)
+			for option in section.split(u" "):
+				if len(option) > 0:
+					eval(option)
+			suggestions = voikko.suggest(parts[0])
+			setDefaults(voikko)
 			for expresult in parts[1:]:
 				if expresult.startswith(u'!'):
 					if expresult[1:] in suggestions:
@@ -477,7 +474,7 @@ else:
 	voikko = Voikko()
 	voikko.init()
 	spell_tests(voikko)
-	suggestion_tests()
+	suggestion_tests(voikko)
 	morpho_tests(voikko)
 	hyphen_tests()
 	grammar_tests()
