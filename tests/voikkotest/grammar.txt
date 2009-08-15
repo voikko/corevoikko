@@ -89,16 +89,16 @@ Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
 - koira ja Kissa.
  [code=6, level=0, descr="", stpos=11, len=5, suggs={"kissa"}]
 
-{accept_titles=1}
+{voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 
-{accept_unfinished_paragraphs=1}
+{voikko.setAcceptUnfinishedParagraphsInGc(True)}
 Piste puuttuu vielä
 Seuraava sana puuttuu 
 
-{accept_bulleted_lists=1}
+{voikko.setAcceptBulletedListsInGc(True)}
 ensimmäinen kohta,
 toinen kohta ja
 kolmas kohta.

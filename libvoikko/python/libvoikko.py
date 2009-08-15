@@ -259,8 +259,14 @@ class Voikko:
 	def setIgnoreNumbers(self, value):
 		_setBoolOption(self, 1, value)
 	
+	def setAcceptTitlesInGc(self, value):
+		_setBoolOption(self, 13, value)
+	
 	def setAcceptUnfinishedParagraphsInGc(self, value):
 		_setBoolOption(self, 14, value)
+	
+	def setAcceptBulletedListsInGc(self, value):
+		_setBoolOption(self, 16, value)
 	
 	def setSuggestionStrategy(self, value):
 		if value == SuggestionStrategy.OCR:

@@ -94,20 +94,17 @@ def _check_gcerrors(inputpara, expresults, results):
 	return failcount
 
 # Returns a list of grammar errors.
-def _check_grammar(paragraphlist, params):
-	gc = subprocess.Popen(GCCMD + " " + params, shell = True, stdin = subprocess.PIPE,
-	                      stdout = subprocess.PIPE, close_fds = True)
-	for paragraph in paragraphlist:
-		gc.stdin.write(paragraph.encode('UTF-8') + '\n')
-	(out, err) = gc.communicate()
+def _check_grammar(paragraphlist, params, voikko):
+	for param in params.split(u" "):
+		if len(param) > 0:
+			eval(param)
 	paragrapherrors = []
-	grammarerrors = []
-	for error in out.split('\n'):
-		if error == '-':
-			paragrapherrors.append(grammarerrors)
-			grammarerrors = []
-			continue
-		grammarerrors.append(unicode(error, 'UTF-8'))
+	for paragraph in paragraphlist:
+		errorStrings = []
+		for error in voikko.grammarErrors(paragraph):
+			errorStrings.append(error.toString())
+		paragrapherrors.append(errorStrings)
+	setDefaults(voikko)
 	return paragrapherrors
 
 # Ensure that the current version is up to date
@@ -218,12 +215,12 @@ def read_nonempty(inputfile):
 		if len(line) > 0: return line
 
 # Run grammar tests
-def grammar_tests():
+def grammar_tests(voikko):
 	try:
 		inputfile = codecs.open(GRAMMARTESTFILE, "r", ENCODING)
 		testcount = 0
 		failcount = 0
-		section = u"(none)"
+		section = u""
 		inputpara = []
 		expresults = []
 		line = read_nonempty(inputfile)
@@ -231,7 +228,7 @@ def grammar_tests():
 			if line == u'': break
 			if line.startswith(u'{') and line.endswith(u'}'):
 				if len(inputpara) > 0:
-					results = _check_grammar(inputpara, section)
+					results = _check_grammar(inputpara, section, voikko)
 					failcount = failcount + _check_gcerrors(inputpara, expresults, results)
 					inputpara = []
 					expresults = []
@@ -252,7 +249,7 @@ def grammar_tests():
 			expresults.append(expresult)
 		inputfile.close()
 		if len(inputpara) > 0:
-			results = _check_grammar(inputpara, section)
+			results = _check_grammar(inputpara, section, voikko)
 			failcount = failcount + _check_gcerrors(inputpara, expresults, results)
 		if failcount == 0:
 			print u"All %i grammar tests were successful." % testcount
@@ -268,6 +265,9 @@ def setDefaults(voikko):
 	voikko.setIgnoreDot(False)
 	voikko.setIgnoreNumbers(False)
 	voikko.setSuggestionStrategy(SuggestionStrategy.TYPO)
+	voikko.setAcceptTitlesInGc(False)
+	voikko.setAcceptUnfinishedParagraphsInGc(False)
+	voikko.setAcceptBulletedListsInGc(False)
 
 # Run suggestion tests
 def suggestion_tests(voikko):
@@ -477,7 +477,7 @@ else:
 	suggestion_tests(voikko)
 	morpho_tests(voikko)
 	hyphen_tests()
-	grammar_tests()
+	grammar_tests(voikko)
 	tokenizer_tests()
 	sentence_tests()
 	voikko.terminate()
