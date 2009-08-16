@@ -28,6 +28,7 @@ from ctypes import c_void_p
 from ctypes import pointer
 from ctypes import POINTER
 from ctypes import Structure
+import os
 
 class Token:
 	NONE = 0
@@ -104,7 +105,10 @@ def _setBoolOption(voikko, option, value):
 class Voikko:
 	def __init__(self):
 		self.handle = c_int(-1)
-		self.lib = CDLL("libvoikko.so.1")
+		if os.name == 'nt':
+			self.lib = CDLL("libvoikko-1.dll")
+		else:
+			self.lib = CDLL("libvoikko.so.1")
 		
 		self.lib.voikko_init.argtypes = [POINTER(c_int), c_char_p, c_int]
 		self.lib.voikko_init.restype = c_char_p
@@ -192,6 +196,9 @@ class Voikko:
 		return pSuggestions
 	
 	def grammarErrors(self, paragraph):
+		if os.name == "nt":
+			# FIXME: grammar cheking does not work on Windows
+			return []
 		_checkInited(self)
 		paragraphUnicode = unicode(paragraph)
 		paragraphLen = len(paragraphUnicode)
