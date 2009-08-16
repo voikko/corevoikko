@@ -23,7 +23,7 @@ include "olla-ei.lex";
 include "erikoissanat.lex";
 include "lukusanat.lex";
 include "lainen.lex";
-include "taivutustäydennykset.lex";
+include "taivutustaydennykset.lex";
 include "huudahdussanat.lex";
 include "sidesanat.lex";
 

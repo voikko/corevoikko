@@ -69,7 +69,7 @@ lex: voikonsanat/matluonnontiede.lex
 lex: voikonsanat/poikkeavat.lex
 lex: voikonsanat/seikkasanat.lex
 lex: voikonsanat/sidesanat.lex
-lex: voikonsanat/taivutustäydennykset.lex
+lex: voikonsanat/taivutustaydennykset.lex
 lex: voikonsanat/suhdesanat.lex
 lex: voikonsanat/vieraskieliset.lex
 lex: voikonsanat/yhdyssanat.lex

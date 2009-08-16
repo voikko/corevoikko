@@ -74,7 +74,7 @@ include "voikonsanat/poikkeavat.lex";
 include "voikonsanat/seikkasanat.lex";
 include "voikonsanat/sidesanat.lex";
 include "voikonsanat/suhdesanat.lex";
-include "voikonsanat/taivutustäydennykset.lex";
+include "voikonsanat/taivutustaydennykset.lex";
 include "voikonsanat/yhdyssanat.lex";
 include "voikonsanat/vieraskieliset.lex";
 #include "sanat/11-19.lex";

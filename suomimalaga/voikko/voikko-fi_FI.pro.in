@@ -35,7 +35,7 @@ lex: yhdyssanat.lex
 lex: erikoiset.lex
 lex: poikkeavat.lex
 lex: lainen.lex
-lex: taivutustäydennykset.lex
+lex: taivutustaydennykset.lex
 lex: huudahdussanat.lex
 lex: sidesanat.lex
 mor: voikko-fi_FI.mor suomi.inc mor.inc subrule.inc
