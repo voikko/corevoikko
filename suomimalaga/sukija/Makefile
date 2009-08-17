@@ -20,7 +20,7 @@ voikonsanat/poikkeavat.lex \
 voikonsanat/seikkasanat.lex \
 voikonsanat/sidesanat.lex \
 voikonsanat/suhdesanat.lex \
-voikonsanat/taivutustäydennykset.lex \
+voikonsanat/taivutustaydennykset.lex \
 voikonsanat/yhdyssanat.lex \
 voikonsanat/erikoisalat/atk-lyhenteet.lex \
 voikonsanat/erikoisalat/linux-distributions.lex

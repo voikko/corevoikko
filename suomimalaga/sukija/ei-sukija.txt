@@ -5,6 +5,7 @@ Alppi
 Aalto
 Aaltonen
 Aamu
+aarnialue
 Aarnio
 Aatami
 agroekologi
@@ -635,6 +636,7 @@ Pudasjärvi
 puhkeama
 puhuma
 puhuma-alue
+puksipuu
 pullistuma
 Puola
 puoluelainen
@@ -671,6 +673,7 @@ repeytymä
 repeämä
 repolainen
 retkeläinen
+retrovirus
 Riihimäki
 rikkakasvi
 Riski
@@ -680,6 +683,7 @@ rivittyä
 rohtuma
 romahdusmainen
 roomalaiskatolilainen
+rossipohja
 ruhjoutuma
 Ruotsi
 rupeama
@@ -873,6 +877,7 @@ valmisosa
 valmispakkaus
 valmisruoka
 valmistalo
+valmistujainen
 valmistuote
 valmistuttaa
 valmisvaate

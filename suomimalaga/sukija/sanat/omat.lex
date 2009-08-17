@@ -224,6 +224,7 @@
 [perusmuoto: "Ugudibuu", alku: "Ugudibu", luokka: nimi, jatko: <puu>, äs: a];
 [alku: "Timebomb2000", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "THL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "ECDC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "pm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "dm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "nm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
@@ -692,7 +693,6 @@
 [perusmuoto: "dempata", alku: "demp", luokka: teonsana, jatko: <pompata>, äs: a];
 [perusmuoto: "hansikoida", alku: "hansiko", luokka: teonsana, jatko: <kanavoida>, äs: a];
 [perusmuoto: "tempukas", alku: "tempuk", luokka: laatusana, jatko: <iäkäs>, äs: a];
-[perusmuoto: "gruusia", alku: "gruusi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "pendentiivi", alku: "pendentiiv", luokka: nimisana, jatko: <risti>, äs: ä];
 [perusmuoto: "kenjutsu", alku: "kenjutsu", luokka: nimisana, jatko: <valo>, äs: a];
 [perusmuoto: "mennoniitti", alku: "mennoniit", luokka: nimisana, jatko: <tatti>, äs: a];
@@ -745,10 +745,6 @@
 [perusmuoto: "FreeDOS", alku: "FreeDOS", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "meroiittinen", alku: "meroiitti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "pervasiivinen", alku: "pervasiivi", luokka: laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "elektrofoni", alku: "elektrofon", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
-[perusmuoto: "elektrofiili", alku: "elektrofiil", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
-[perusmuoto: "elektroforeesi", alku: "elektroforees", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_inen>];
-[perusmuoto: "elektroforeettinen", alku: "elektroforeetti", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Düsseldorf", alku: "Düsseldorf", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "poutaantua", alku: "poutaan", luokka: teonsana, jatko: <jakaantua>, äs: a];
 [perusmuoto: "Toulouse", alku: "Toulouse", luokka: paikannimi, jatko: <nalle>, äs: a];
@@ -756,6 +752,14 @@
 [perusmuoto: "Novartis", alku: "Novarti", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Henrietta", alku: "Henriet", luokka: etunimi, jatko: <aitta>, äs: a];
 [perusmuoto: "Räätälilä", alku: "Räätälil", luokka: paikannimi, jatko: <apila>, äs: ä];
+[perusmuoto: "paskata", alku: "pask", luokka: teonsana, jatko: <salata>, äs: a];
+[perusmuoto: "Reichs", alku: "Reichs", luokka: sukunimi, jatko: <kalsium>, äs: aä];
+[perusmuoto: "Krugman", alku: "Krugman", luokka: sukunimi, jatko: <kalsium>, äs: aä];
+[perusmuoto: "gruusia", alku: "gruusi", luokka: nimisana, jatko: <apila>, äs: a];
+[perusmuoto: "hietikkonatalude", alku: "hietikkonatalu", luokka: nimisana, jatko: <sade>, äs: a];
+[perusmuoto: "punanataniitty", alku: "punanataniit", luokka: nimisana, jatko: <hattu>, äs: ä];
+
+[perusmuoto: "Utti", alku: "Ut", luokka: paikannimi, jatko: <tatti>, äs: a];
 
 [perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];
@@ -832,6 +836,9 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 
 [perusmuoto: "sade", alku: "saitta", luokka: teonsana, jatko: <liitesana, loppu>, äs: a];  # Sadetta.
 [perusmuoto: "sadekuuro", alku: "saikuuro", luokka: nimisana, jatko: <valo>, äs: a];
+
+[perusmuoto: "mennä", alku: "meen", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_ys>];
+[perusmuoto: "mennä", alku: "meet", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_ys>];
 
 [perusmuoto: "tarvita", alku: "tarvi",   luokka: teonsana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tarvita", alku: "tarvii",  luokka: teonsana, jatko: <liitesana, loppu>, äs: a];

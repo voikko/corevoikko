@@ -1594,23 +1594,22 @@ end_rule loppu ($tietue):
   # inen-johtimella tehty sana voi olla vain yhdyssanan lopussa,
   # paitsi jos se on merkitty omaksi sanakseen.
   #
-  repeat while ($tietue.$j.luokka in @johdin_x);
-    $j :=- 1;
-  end;
-  define $k := $j;
-  repeat
-    if ($tietue.$k.luokka = johdin_inen) then
-      if ($k = 2) then
-        if (($tietue.($k-1).tiedot /= nil) and (inen in $tietue.($k-1).tiedot)) then
-        else
-          stop;
-        end;
-      end;
-    end;
-    $k :=- 1;
-#end;
-  while ($k greater 0);
-  end;
+#  repeat while ($tietue.$j.luokka in @johdin_x);
+#    $j :=- 1;
+#  end;
+#  define $k := $j;
+#  repeat
+#    if ($tietue.$k.luokka = johdin_inen) then
+#      if ($k = 2) then
+#        if (($tietue.($k-1).tiedot /= nil) and (inen in $tietue.($k-1).tiedot)) then
+#        else
+#          stop;
+#        end;
+#      end;
+#    end;
+#    $k :=- 1;
+#  while ($k greater 0);
+#  end;
 
 
 
@@ -2184,20 +2183,27 @@ combi_rule nimisanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka in $vasen.$i.jatko;
   ? äs_ok ($vasen.$i, $oikea);
 
-#  if ($oikea.luokka = johdin_inen) then
-#define $a := transmit (<"a"> + <$vasen.$i.alku>);
+  if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if ($oikea.luokka = johdin_inen) then
+    if (($n = 2) and (($vasen.$i.tiedot = nil) or (not (inen in $vasen.$i.tiedot)))) then
+#define $aa := transmit ("Plonk");
+      stop;
+    end;
+#define $a := transmit (<"a"> + <$vasen.$i.perusmuoto> + <$vasen.$i.alku>);
+#define $a := transmit (<"a"> + <$vasen.$i>);
 #define $b := transmit (<"b"> + <$oikea>);
 #define $c := transmit (<"c"> + <$sana>);
+#define $d := transmit (<"d"> + <$n>);
 #define $d := transmit (<"d"> + <($vasen.$i.alku matches (".*[^aeiouyäö][aeiouyäö]"))>);
 #define $e := transmit (<"e"> + <($vasen.$i.alku matches (".*[aeiouyäö]"))>);
 #
 #    ? $vasen.$i.alku matches (".*[aeiouyäö]");
 #    ? $vasen.$i.alku matches (".*[^aeiouyäö][aeiouyäö]");
-#  end;
+  end;
 
-  if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
-
-  define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (tavuviiva in $oikea.jatko and not (yhdyssana in $oikea.jatko)) then
     result $res, rules tavuviiva;
