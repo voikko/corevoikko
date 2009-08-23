@@ -291,24 +291,24 @@ interactively) then change the global default language."
   (when (stringp language)
     (if global
         (setq-default wcheck-language language)
-      (setq wcheck-language language)
-      (when wcheck-mode
-        (wcheck-update-buffer-data (current-buffer) language)))
+      (setq wcheck-language language))
 
-    ;; If this was called interactively do some checks and maintenance.
-    (when (called-interactively-p)
+    ;; If the mode is currently turned on we check if language's program
+    ;; is executable and if all is OK request update for the buffer.
+    ;; Otherwise turn off the mode.
+    (when wcheck-mode
       (let ((program (wcheck-query-language-data language 'program)))
-        (cond ((not (wcheck-program-executable-p program))
-               ;; No executable program for the selected language. Turn
-               ;; off the mode.
-               (when wcheck-mode
-                 (wcheck-mode -1))
-               (wcheck-error-program-not-executable language program))
+        (if (wcheck-program-executable-p program)
+            ;; It's executable; update the buffer.
+            (progn
+              (wcheck-update-buffer-data (current-buffer) language)
+              (wcheck-timer-add-read-request (current-buffer))
+              (wcheck-remove-overlays))
 
-              ;; If the mode is currently turned on we request an update
-              (wcheck-mode
-               (wcheck-timer-add-read-request (current-buffer))
-               (wcheck-remove-overlays)))))
+          ;; It's not executable; turn off.
+          (wcheck-mode -1)
+          (when (interactive-p)
+            (wcheck-error-program-not-executable language program)))))
 
     (wcheck-get-data :buffer (current-buffer) :language)))
 
