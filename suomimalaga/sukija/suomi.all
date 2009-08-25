@@ -127,9 +127,18 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"kukkaisa", "laatuisa", "luisti", "mani", "miehinen", "nasu", "paikko",
-                             "poli", "tisu">) then
+  if ($tietue.perusmuoto in <"nano"> and $tietue.luokka = nimisana) then
     $tietue :=+ [tiedot: <ei_ys>];
+  end;
+
+  if ($tietue.perusmuoto in <"kukkaisa", "laatuisa", "lari", "luisti", "mani", "miehinen",
+                             "nasu", "paikko",
+                             "poli", "tisu">) then
+    if ($tietue.tiedot /= nil) then
+      $tietue.tiedot :=+ <ei_ys>;
+    else
+      $tietue :=+ [tiedot: <ei_ys>];
+    end;
   end;
 
   if ($tietue.perusmuoto in
@@ -162,6 +171,13 @@ allo_rule generate_allos ($tietue):
   # riittää niistä vain toinen.
   #
   if ($tietue.perusmuoto = "Mattila" and $tietue.luokka = sukunimi) then
+    stop;
+  end;
+
+
+  # Seitsen on myös etuliite, ja se riittää Sukijassa.
+  #
+  if ($tietue.perusmuoto = "seitsen" and $tietue.luokka = lukusana) then
     stop;
   end;
 

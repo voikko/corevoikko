@@ -263,6 +263,7 @@ Kauhajoki
 kauhistuttaa
 kaventuma
 kehittymä
+keitto
 kepulainen
 kerholainen
 kerrotunlainen
@@ -439,6 +440,7 @@ Lemu
 leniniläinen
 lesbolainen
 levytys
+liikutus
 liittolainen
 liittoutuma
 liittymä
@@ -519,6 +521,7 @@ Matti
 Mela
 meltorauta
 Merijärvi
+Merikanto
 Metso
 metsäläinen
 mielipide
@@ -664,6 +667,7 @@ rappeutuma
 rappeuma
 rasitus
 raskassarjalainen
+raskaus
 ratkeama
 Rauha
 Rautio
@@ -900,11 +904,13 @@ vastaavanlainen
 velvoitus
 Vento
 venymä
+venytys
 Venäjä
 Venäläinen
 Vesa
 veto
 Vieno
+vietellä
 Vietnam
 viipymä
 Viita
@@ -954,6 +960,7 @@ yhteenlaskettava
 yhteenlaskettu
 yhteenlasku
 yhteenliittyminen
+yhteenliittymä
 yhteenotto
 yhteensattuma
 yhteensopimaton

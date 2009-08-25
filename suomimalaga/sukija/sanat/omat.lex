@@ -728,6 +728,7 @@
 [perusmuoto: "Mixu", alku: "Mixu", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Miksu", alku: "Miksu", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "umpeen", alku: "umpeen", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[alku: "IBM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "UHF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [perusmuoto: "Long", alku: "Long", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Christie", alku: "Christie", luokka: sukunimi, jatko: <nalle>, äs: a];
@@ -758,8 +759,17 @@
 [perusmuoto: "gruusia", alku: "gruusi", luokka: nimisana, jatko: <apila>, äs: a];
 [perusmuoto: "hietikkonatalude", alku: "hietikkonatalu", luokka: nimisana, jatko: <sade>, äs: a];
 [perusmuoto: "punanataniitty", alku: "punanataniit", luokka: nimisana, jatko: <hattu>, äs: ä];
-
+[perusmuoto: "nukuksissa", alku: "nukuksissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
+[perusmuoto: "rajakkain", alku: "rajakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "Tiitto", alku: "Tiit", luokka: sukunimi, jatko: <liitto>, äs: a];
 [perusmuoto: "Utti", alku: "Ut", luokka: paikannimi, jatko: <tatti>, äs: a];
+[perusmuoto: "äitelähkö", alku: "äitelähkö", luokka: laatusana, jatko: <valo>, äs: ä];
+[perusmuoto: "piilari", alku: "piilar", luokka: nimisana, jatko: <paperi>, äs: a]; # Piilolasi(t).
+[perusmuoto: "kuulari", alku: "kuular", luokka: nimisana, jatko: <paperi>, äs: a]; # Muovikuulia ampuva lelupyssy.
+[perusmuoto: "Larioja", alku: "Larioj", luokka: paikannimi, jatko: <koira>, äs: a];
+[perusmuoto: "Larivaara", alku: "Larivaar", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "Lotila", alku: "Lotil", luokka: paikannimi, jatko: <apila>, äs: a];
+
 
 [perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];
