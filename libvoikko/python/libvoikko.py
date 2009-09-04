@@ -266,6 +266,9 @@ class Voikko:
 	def setIgnoreNumbers(self, value):
 		_setBoolOption(self, 1, value)
 	
+	def setIgnoreUppercase(self, value):
+		_setBoolOption(self, 3, value)
+	
 	def setAcceptTitlesInGc(self, value):
 		_setBoolOption(self, 13, value)
 	
