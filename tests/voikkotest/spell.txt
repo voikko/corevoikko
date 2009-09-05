@@ -166,6 +166,8 @@ saksalaismiehityksen
 helsinkiläinenkö
 !helsinkiläinenko
 tamperelaisemme
+Coca-Cola
+!Coca-cola
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä

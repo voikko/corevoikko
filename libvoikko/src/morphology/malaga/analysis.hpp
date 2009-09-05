@@ -73,10 +73,9 @@ extern void init_analysis( string_t morphology_file );
 extern void terminate_analysis( void );
 /* Free analysis module. */
 
-extern void preprocess_input( char_t *input, bool expect_quotes);
+extern void preprocess_input(char_t *input);
 /* Delete heading and trailing spaces in INPUT
- * and compress all whitespace sequences to a single space.
- * If EXPECT_QUOTES == TRUE, expect quoted input and remove the quotes. */
+ * and compress all whitespace sequences to a single space. */
 
 extern bool get_analysis_option( analysis_option_t selected );
 /* Return the current setting of analysis option SELECTED. */

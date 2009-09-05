@@ -91,7 +91,7 @@ analyse_item( string_t item )
   TRY 
   { 
     analysis_input = new_string( item, NULL );
-    preprocess_input( analysis_input, FALSE );
+    preprocess_input( analysis_input );
     analyse( analysis_input, FALSE, TRUE );
   }
   IF_ERROR 

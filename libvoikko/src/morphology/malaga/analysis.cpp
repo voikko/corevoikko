@@ -111,14 +111,13 @@ get_analysis_option( analysis_option_t selected )
 /* Functions for segmentation and preprocessing. ============================*/
 
 void 
-preprocess_input( char_t *input, bool expect_quotes )
+preprocess_input( char_t *input )
 /* Delete heading and trailing spaces in INPUT
  * and compress all whitespace sequences to a single space.
  * If EXPECT_QUOTES == TRUE, expect quoted input and remove the quotes. */
 { 
   string_t input_p;
   char_t *output_p;
-  int_t i;
   u_int_t code;
   
   output_p = input;
@@ -126,53 +125,19 @@ preprocess_input( char_t *input, bool expect_quotes )
   /* Cut heading spaces. */
   input_p = next_non_space( input );
 
-  if (expect_quotes)
-  {
-    input_p++;
-    while (*input_p != '"')
-    {
-      if (*input_p == '\\')
-      {
-	input_p++;
-	if (*input_p == '\\' || *input_p == '\"')
-	  *output_p++ = *input_p++;
-	else { 
-	  code = 0;
-	  for (i = 0; i < 3; i++) 
-	  { 
-	    code = 8 * code + *input_p++ - '0';
-	  }
-	  output_p += g_unichar_to_utf8( code, output_p );
-	} 
-      }
-      else /* No escape char. */
-      {
-	/* We must copy a whole UTF-8 character since next_non_space() below
-	 * expects to be at UTF-8 character boundary. */
-	code = g_utf8_get_char( input_p );
-	input_p = g_utf8_next_char( input_p );
-	output_p += g_unichar_to_utf8( code, output_p );
-      }
-    }
-    input_p++; /* Read over closing double quotes. */
-    input_p = next_non_space( input_p );
-  }
-  else
-  {
-    while (*input_p != EOS) 
+  while (*input_p != EOS) 
+  { 
+    code = g_utf8_get_char( input_p );
+    if (g_unichar_isspace( code ))
     { 
-      code = g_utf8_get_char( input_p );
-      if (g_unichar_isspace( code ))
-      { 
-	/* Overread all whitespace and write a single space. */
-	input_p = next_non_space( input_p );
-	*output_p++ = ' ';
-      } 
-      else 
-      {
-	input_p = g_utf8_next_char( input_p );
-	output_p += g_unichar_to_utf8( code, output_p );
-      }
+      /* Overread all whitespace and write a single space. */
+      input_p = next_non_space( input_p );
+      *output_p++ = ' ';
+    } 
+    else 
+    {
+      input_p = g_utf8_next_char( input_p );
+      output_p += g_unichar_to_utf8( g_unichar_tolower(code), output_p );
     }
   }
 
