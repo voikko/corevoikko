@@ -445,7 +445,7 @@ analysis_has_results( void )
 
 /*---------------------------------------------------------------------------*/
 
-extern "C" value_t
+value_t
 first_analysis_result( void )
 /* Return the feature structure of the first analysis result.
  * Return NULL if there are no results. */
@@ -456,7 +456,7 @@ first_analysis_result( void )
 
 /*---------------------------------------------------------------------------*/
 
-extern "C" value_t 
+value_t 
 next_analysis_result( void )
 /* Return the feature structure of the next analysis result.
  * Return NULL if there are no more results. */

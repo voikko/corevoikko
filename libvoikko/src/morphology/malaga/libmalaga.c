@@ -34,7 +34,7 @@ string_t malaga_error;
 
 /* Functions. ===============================================================*/
 
-extern "C" void 
+void 
 init_libmalaga( string_t project_file )
 /* Initialise this module. */
 { 
@@ -56,7 +56,7 @@ init_libmalaga( string_t project_file )
 
 /*---------------------------------------------------------------------------*/
 
-extern "C" void
+void
 terminate_libmalaga( void )
 /* Terminate this module. */
 { 
@@ -66,7 +66,7 @@ terminate_libmalaga( void )
 
 /*---------------------------------------------------------------------------*/
 
-extern "C" char_t *
+char_t *
 get_value_string( value_t string )
 /* Return the value of STRING as a C-style string. 
  * The string must be freed after use. */
@@ -79,7 +79,7 @@ get_value_string( value_t string )
 
 /*---------------------------------------------------------------------------*/
 
-extern "C" void
+void
 analyse_item( string_t item, grammar_t grammar )
 /* Analyse ITEM according to GRAMMAR.
  * GRAMMAR must be MORPHOLOGY */
@@ -114,7 +114,7 @@ get_info( void )
 
 /*---------------------------------------------------------------------------*/
 
-extern "C" value_t
+value_t
 parse_malaga_value( string_t string )
 /* Convert STRING to a Malaga value and return it.
  * The value must be freed after use.

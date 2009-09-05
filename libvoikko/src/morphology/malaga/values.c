@@ -405,7 +405,7 @@ insert_value( int_t n, value_t value )
 
 /* Symbol operations. =======================================================*/
 
-extern "C" symbol_t 
+symbol_t 
 value_to_symbol( value_t value )
 /* Return VALUE as a symbol. It is an error if VALUE is no symbol. */
 {
@@ -503,7 +503,7 @@ concat_string_values( void )
 
 /* Record operations. =======================================================*/
 
-extern "C" value_t 
+value_t 
 get_attribute( value_t record, symbol_t attribute )
 /* Return the value of ATTRIBUTE in the record RECORD 
  * or NULL if it doesn't exist. */

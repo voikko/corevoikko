@@ -91,11 +91,11 @@ extern void analyse( string_t input,
 extern bool analysis_has_results( void );
 /* Return TRUE iff the last analysis has created results. */
 
-extern "C" value_t first_analysis_result( void );
+extern value_t first_analysis_result( void );
 /* Return the feature structure of the first analysis result.
  * Return NULL if there are no results. */
 
-extern "C" value_t next_analysis_result( void );
+extern value_t next_analysis_result( void );
 /* Return the feature structure of the next analysis result.
  * Return NULL if there are no more results. */
 
