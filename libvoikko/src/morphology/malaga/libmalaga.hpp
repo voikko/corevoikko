@@ -21,9 +21,8 @@ extern void init_libmalaga( string_t project_file );
 extern void terminate_libmalaga( void );
 /* Terminate this module. */
 
-extern void analyse_item( string_t item, grammar_t grammar );
-/* Analyse ITEM according to GRAMMAR.
- * GRAMMAR must be MORPHOLOGY or SYNTAX.
+extern void analyse_item( string_t item );
+/* Analyse ITEM.
  * This function sets "malaga_error". */
 
 extern string_t get_info( void );

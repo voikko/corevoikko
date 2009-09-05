@@ -59,7 +59,6 @@ AC_CHECK_HEADERS([locale.h])
 AC_CHECK_HEADERS([wctype.h])
 AC_CHECK_HEADERS([wchar.h],,[AC_MSG_ERROR([wchar.h not found])])
 PKG_CHECK_MODULES(GLIB, glib-2.0)
-AC_CHECK_HEADERS([malaga.h],,[AC_MSG_ERROR([malaga.h not found])])
 
 dnl Types
 AC_TYPE_SIZE_T

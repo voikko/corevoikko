@@ -39,20 +39,12 @@ typedef const char_t *string_t; /* An EOS-terminated C-style string. */
 enum {EOS= '\0'}; /* End-Of-String control character. */
 #define ORD(c) ((u_byte_t) (c)) /* The ordinal number of character C. */
 
-/* Boolean type. */
-#undef bool /* <rpc/rpc.h> conflicts with "bool" definition */
-#undef TRUE
-#undef FALSE
-typedef enum {FALSE, TRUE} bool;
-
 typedef u_short_t cell_t;
 /* A value is stored in one or more cells.
  * Use this type if you want to allocate memory (pools etc.) for values. */ 
 
 typedef cell_t *value_t; /* Reference to a Malaga values by this type. */
 typedef cell_t symbol_t;
-
-typedef enum {MORPHOLOGY, SYNTAX} grammar_t; /* Grammatical analysis types. */
 
 /* Variables. ===============================================================*/
 
@@ -61,15 +53,6 @@ extern char_t malaga_version[]; /* Read only! */
 extern string_t malaga_error; 
 /* If one of the functions below has created an error, this variable
  * contains an error message. If a function did its job, it is NULL. */
-
-extern enum {INTERNAL_ORDER, ALPHABETIC_ORDER, 
-             DEFINITION_ORDER} attribute_order;
-/* The order in which attributes in a record are printed.
- * INTERNAL_ORDER is the order in which attributes are stored internally.
- * ALPHABETIC_ORDER means the alphabetic order of the attribute names.
- * DEFINITION_ORDER is the order in which the attributes are defined in the 
- * symbol file.
- * Used by "value_readable". */
 
 /* Value functions. =========================================================*/
 
@@ -163,9 +146,8 @@ extern value_t parse_malaga_value( string_t string );
 extern string_t get_info( void );
 /* Get info about the current grammar. */
 
-extern void analyse_item( string_t item, grammar_t grammar );
-/* Analyse ITEM according to GRAMMAR.
- * GRAMMAR must be MORPHOLOGY or SYNTAX.
+extern void analyse_item( string_t item );
+/* Analyse ITEM.
  * ITEM must be a valid UTF-8 string.
  * This function sets "malaga_error". */
 

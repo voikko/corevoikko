@@ -22,7 +22,7 @@
 #ifdef HAVE_GETPWUID_R
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
-#include <malaga.h>
+#include "morphology/malaga/malaga.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -253,7 +253,7 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		#endif
-		terminate_libmalaga();
+		libvoikko::morphology::malaga::terminate_libmalaga();
 		/*int c = 0;
 		for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;
 		printf("Cache slots used: %d\n", c);*/

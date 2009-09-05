@@ -1,19 +1,22 @@
 General information
 ===================
 
-This is libvoikko, library of free Finnish language tools using Malaga
-natural language grammar development tool. The library is written in C++.
+This is libvoikko, library of free Finnish language tools. The library is
+written in C++ and it uses a left associative grammar for describing the
+morphology of Finnish language. The morphology is developed using Malaga
+natural language grammar development tool.
 
-Libvoikko provides spell checking, hyphenation and grammar checking for
-Finnish language. No other languages are supported at the moment, and there
-are no serious plans to add such support. This is because internals of this
-library may change significantly in future releases, and we think that
-generally useful bits and ideas (if any) should rather be merged to existing
-multi language tools such as Hunspell and LanguageTool. In fact, we hope to
-make libvoikko obsolete, but currently there are no other libraries that
-provide all the features we need. We feel that pushing new features to Hunspell
-where they would need to be maintained essentially indefinitely should not be
-done until we have gained enough experience to know which solutions work in the
+Libvoikko provides spell checking, hyphenation, grammar checking and
+morphologican analysis for Finnish language. No other languages are
+supported at the moment, and there are no serious plans to add such
+support. This is because internals of this library may change significantly
+in future releases, and we think that generally useful bits and ideas
+(if any) should rather be merged to existing multi language tools such
+as Hunspell and LanguageTool. In fact, we hope to make libvoikko obsolete,
+but currently there are no other libraries that provide all the features
+we need. We feel that pushing new features to Hunspell where they would
+need to be maintained essentially indefinitely should not be done until
+we have gained enough experience to know which solutions work in the
 real world.
 
 This library is released under the GPL, version 2 or later. The author is
@@ -46,14 +49,14 @@ Documentation for using the library can be found from header file voikko.h.
 Build requirements
 ==================
 
-C++ compiler (GCC), Malaga developement headers and Python must be available
+C++ compiler (GCC), Glib developement headers and Python must be available
 in order to build this library.
 
 
 Runtime requirements
 ====================
 
-The library needs libmalaga and a version of Suomi-malaga containing a file named
+The library needs Glib and a version of Suomi-malaga containing a file named
 voikko-fi_FI.pro. The file must start with the following line:
 
 info: Voikko-Dictionary-Format: 2
@@ -131,11 +134,14 @@ from rule 1:
    an error is returned.
 
 
-Author
-======
+Authors
+=======
 
 2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
-
+ * Maintainer, core library developer.
+1995 - 2008 Björn Beutel
+ * Author of the original LAG implementation (Malaga), sligthly simplified version
+   of which has been embedded into libvoikko.
 
 Website
 =======

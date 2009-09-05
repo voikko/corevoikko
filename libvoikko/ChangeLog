@@ -2,6 +2,7 @@
 
 	* Clear grammar checker cache when options are
 	  changed.
+	* Switched to using internal implementation of malaga.
 
 2009-09-04 Harri Pitkänen <hatapitk@iki.fi>
 

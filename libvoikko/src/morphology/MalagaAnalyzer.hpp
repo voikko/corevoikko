@@ -20,7 +20,7 @@
 #define VOIKKO_MORPHOLOGY_MALAGA_ANALYZER
 
 #include "morphology/Analyzer.hpp"
-#include <malaga.h>
+#include "morphology/malaga/malaga.hpp"
 #include <map>
 
 namespace libvoikko { namespace morphology {
@@ -45,15 +45,15 @@ class MalagaAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const char * word) const;
 	
 	private:
-		void parseStructure(Analysis * &analysis, value_t &result) const;
-		void parseSijamuoto(Analysis * &analysis, value_t &result) const;
-		void parseClass(Analysis * &analysis, value_t &result) const;
+		void parseStructure(Analysis * &analysis, malaga::value_t &result) const;
+		void parseSijamuoto(Analysis * &analysis, malaga::value_t &result) const;
+		void parseClass(Analysis * &analysis, malaga::value_t &result) const;
 		static void initSymbols();
 		
 		static bool symbolsInited;
-		static symbol_t symbols[MS_LAST_SYMBOL];
-		static std::map<symbol_t, const wchar_t *> sijamuotoMap;
-		static std::map<symbol_t, const wchar_t *> classMap;
+		static malaga::symbol_t symbols[MS_LAST_SYMBOL];
+		static std::map<malaga::symbol_t, const wchar_t *> sijamuotoMap;
+		static std::map<malaga::symbol_t, const wchar_t *> classMap;
 };
 
 } }

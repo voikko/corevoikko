@@ -23,6 +23,7 @@
 
 using namespace std;
 using namespace libvoikko::utils;
+using namespace libvoikko::morphology::malaga;
 
 namespace libvoikko { namespace morphology {
 
@@ -45,7 +46,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
 
 list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 	initSymbols();
-	analyse_item(word, MORPHOLOGY);
+	analyse_item(word);
 	value_t res = first_analysis_result();
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	while (res) {

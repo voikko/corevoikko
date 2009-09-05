@@ -9,8 +9,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Types. ===================================================================*/
 
-typedef enum {MORPHOLOGY, SYNTAX} grammar_t; /* Types of grammatic analysis. */
-
 typedef enum {BREAK_NODE, FINAL_NODE, UNFINAL_NODE, INTER_NODE, 
 	      PRUNED_NODE} tree_node_type_t;
 

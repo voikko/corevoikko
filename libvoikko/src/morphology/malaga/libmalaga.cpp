@@ -81,9 +81,8 @@ get_value_string( value_t string )
 /*---------------------------------------------------------------------------*/
 
 void
-analyse_item( string_t item, grammar_t grammar )
-/* Analyse ITEM according to GRAMMAR.
- * GRAMMAR must be MORPHOLOGY */
+analyse_item( string_t item )
+/* Analyse ITEM */
 { 
   char_t *analysis_input;
 

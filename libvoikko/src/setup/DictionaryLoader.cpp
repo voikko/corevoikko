@@ -27,7 +27,7 @@
 # include <pwd.h>
 # include <dirent.h>
 #endif
-#include <malaga.h>
+#include "morphology/malaga/malaga.hpp"
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
 #define VOIKKO_DICTIONARY_VERSION "2"
@@ -39,6 +39,7 @@
 #endif
 
 using namespace std;
+using namespace libvoikko::morphology::malaga;
 
 namespace libvoikko { namespace setup {
 
