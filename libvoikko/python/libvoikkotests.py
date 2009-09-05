@@ -81,24 +81,18 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(self.voikko.spell(u"KAAAA"))
 	
 	def testSetAcceptTitlesInGc(self):
-		# FIXME: bug in libvoikko
-		return
 		self.voikko.setAcceptTitlesInGc(False)
 		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on eläin")))
 		self.voikko.setAcceptTitlesInGc(True)
 		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on eläin")))
 	
 	def testSetAcceptUnfinishedParagraphsInGc(self):
-		# FIXME: bug in libvoikko
-		return
 		self.voikko.setAcceptUnfinishedParagraphsInGc(False)
 		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on ")))
 		self.voikko.setAcceptUnfinishedParagraphsInGc(True)
 		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on ")))
 	
 	def testSetAcceptBulletedListsInGc(self):
-		# FIXME: bug in libvoikko
-		return
 		self.voikko.setAcceptBulletedListsInGc(False)
 		self.assertNotEqual(0, len(self.voikko.grammarErrors(u"kissa")))
 		self.voikko.setAcceptBulletedListsInGc(True)

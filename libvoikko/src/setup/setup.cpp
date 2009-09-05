@@ -43,7 +43,19 @@ voikko_options_t voikko_options;
 
 int voikko_handle_count;
 
-VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
+static int setGrammarOption(int handle, int value, int * option) {
+		if (value && !(*option)) {
+			*option = 1;
+			gc_clear_cache(handle);
+		}
+		else if (!value && (*option)) {
+			*option = 0;
+			gc_clear_cache(handle);
+		}
+		return 1;
+}
+
+VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
 			if (value) voikko_options.ignore_dot = 1;
@@ -86,17 +98,14 @@ VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
 			else voikko_options.accept_missing_hyphens = 0;
 			return 1;
 		case VOIKKO_OPT_ACCEPT_TITLES_IN_GC:
-			if (value) voikko_options.accept_titles_in_gc = 1;
-			else voikko_options.accept_titles_in_gc = 0;
-			return 1;
+			return setGrammarOption(handle, value,
+			       &(voikko_options.accept_titles_in_gc));
 		case VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC:
-			if (value) voikko_options.accept_unfinished_paragraphs_in_gc = 1;
-			else voikko_options.accept_unfinished_paragraphs_in_gc = 0;
-			return 1;
+			return setGrammarOption(handle, value,
+			       &(voikko_options.accept_unfinished_paragraphs_in_gc));
 		case VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC:
-			if (value) voikko_options.accept_bulleted_lists_in_gc = 1;
-			else voikko_options.accept_bulleted_lists_in_gc = 0;
-			return 1;
+			return setGrammarOption(handle, value,
+			       &(voikko_options.accept_bulleted_lists_in_gc));
 		case VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS:
 			if (value) voikko_options.hyphenate_unknown_words = 1;
 			else voikko_options.hyphenate_unknown_words = 0;
@@ -157,6 +166,8 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.accept_extra_hyphens = 0;
 	voikko_options.accept_missing_hyphens = 0;
 	voikko_options.accept_titles_in_gc = 0;
+	voikko_options.accept_unfinished_paragraphs_in_gc = 0;
+	voikko_options.accept_bulleted_lists_in_gc = 0;
 	voikko_options.hyphenate_unknown_words = 1;
 	voikko_options.intersect_compound_level = 1;
 	voikko_options.min_hyphenated_word_length = 2;
