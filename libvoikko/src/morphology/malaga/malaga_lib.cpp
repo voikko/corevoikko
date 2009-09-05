@@ -16,7 +16,6 @@
 #include "pools.h"
 #include "values.h"
 #include "input.h"
-#include "commands.h"
 #include "rule_type.h"
 #include "rules.h"
 #include "files.h"

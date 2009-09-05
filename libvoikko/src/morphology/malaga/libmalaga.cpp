@@ -20,7 +20,6 @@
 #include "rules.h"
 #include "analysis.h"
 #include "input.h"
-#include "commands.h"
 #include "malaga_lib.h"
 #include "scanner.h"
 #include "value_parser.h"
