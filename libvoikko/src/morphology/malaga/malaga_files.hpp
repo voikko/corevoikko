@@ -4,6 +4,8 @@
 
 /* This module defines the structure of compiled Malaga files. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 enum {MALAGA_LEN =  6}; /* Length of magic code at beginning of Malaga file. */
@@ -140,4 +142,4 @@ extern void check_header( common_header_t *header,
  * between MIN_CODE_VERSION and MAX_CODE_VERSION.
  * FILE_NAME is needed for error messages. */
 
-/* End of file. =============================================================*/
+}}}

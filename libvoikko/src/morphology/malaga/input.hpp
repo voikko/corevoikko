@@ -4,6 +4,8 @@
 
 /* This module supports reading and parsing input. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Functions. ===============================================================*/
 
 extern void parse_whitespace( string_t *input ); 
@@ -35,4 +37,4 @@ extern void init_input( void );
 extern void terminate_input( void );
 /* Terminate this module. */
 
-/* End of file. =============================================================*/
+}}}

@@ -26,6 +26,8 @@
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/malaga_lib.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Global variables. ========================================================*/
 
 bool auto_tree; /* TRUE if tree is shown automatically. */
@@ -206,4 +208,4 @@ terminate_malaga( void )
   terminate_input();
 }
 
-/* End of file. =============================================================*/
+}}}

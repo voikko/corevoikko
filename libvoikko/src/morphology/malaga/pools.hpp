@@ -5,6 +5,8 @@
 /* This module defines a new data type, "pool_t", for growing vectors of items 
  * of an arbitrary type. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Types. ===================================================================*/
 
 typedef struct pool *pool_t; /* The abstract data type. */
@@ -36,4 +38,4 @@ extern void *pool_item( pool_t pool, int_t index );
 /* Return the address of item with INDEX in pool POOL,
  * or NULL if there is no such item. */
 
-/* End of file. =============================================================*/
+}}}

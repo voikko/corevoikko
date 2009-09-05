@@ -13,6 +13,8 @@
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/input.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Variables. ===============================================================*/
 
 static text_t *text;
@@ -160,4 +162,4 @@ terminate_input( void )
   free_text( &text );
 }
 
-/* End of file. =============================================================*/
+}}}

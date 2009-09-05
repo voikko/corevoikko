@@ -14,6 +14,8 @@
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/scanner.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 /* List of all keywords and their token codes.
@@ -583,4 +585,4 @@ parse_token( int_t token )
   read_next_token();
 }
 
-/* End of file. =============================================================*/
+}}}

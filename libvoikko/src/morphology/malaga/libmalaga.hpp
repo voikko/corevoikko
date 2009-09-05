@@ -4,6 +4,8 @@
 
 /* This module defines a Malaga library to analyse words and sentences. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Variables. ===============================================================*/
 
 extern string_t malaga_error; 
@@ -36,4 +38,4 @@ extern value_t parse_malaga_value( string_t string );
  * The value must be freed after use.
  * This function sets "malaga_error". */
 
-/* End of file. =============================================================*/
+}}}

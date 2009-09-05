@@ -14,6 +14,8 @@
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/tries.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Macros. ==================================================================*/
 
 #define ALIGN(addr, n) (((ptr_t) (addr) + (ptr_t) (n - 1)) & ~ (ptr_t) (n - 1))
@@ -139,4 +141,4 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
   return FALSE;
 }
 
-/* End of file. =============================================================*/
+}}}

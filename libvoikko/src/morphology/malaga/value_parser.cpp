@@ -15,6 +15,8 @@
 #include "morphology/malaga/scanner.hpp"
 #include "morphology/malaga/value_parser.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Functions. ===============================================================*/
 
 static void 
@@ -102,4 +104,4 @@ parse_a_value( void )
   }
 }
 
-/* End of file. =============================================================*/
+}}}

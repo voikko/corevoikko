@@ -18,6 +18,8 @@
 #include "morphology/malaga/malaga_files.hpp"
 #include "morphology/malaga/lexicon.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Variables. ===============================================================*/
 
 static void *lexicon_data; /* Address of lexicon file mapped into memory. */
@@ -119,4 +121,4 @@ terminate_lexicon( void )
   unmap_file( &lexicon_data, lexicon_length ); 
 }
 
-/* End of file. =============================================================*/
+}}}

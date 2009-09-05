@@ -14,6 +14,8 @@
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/patterns.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 #define SPECIAL_CHARS ".[]-^()*?+|\\" /* Characters with a special meaning. */
@@ -472,4 +474,4 @@ terminate_patterns( void )
   stack_size = 0;
 }
 
-/* End of file. =============================================================*/
+}}}

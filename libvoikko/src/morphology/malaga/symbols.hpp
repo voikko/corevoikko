@@ -4,6 +4,8 @@
 
 /* This module administrates the name and atoms for each symbol. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Functions. ===============================================================*/
 
 extern string_t get_symbol_name( symbol_t symbol );
@@ -29,4 +31,4 @@ extern void init_symbols( string_t file_name );
 extern void terminate_symbols( void );
 /* Terminate this module. */
 
-/* End of file. =============================================================*/
+}}}

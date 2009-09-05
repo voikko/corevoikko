@@ -25,6 +25,8 @@
 #include "morphology/malaga/value_parser.hpp"
 #include "morphology/malaga/libmalaga.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Variables. ===============================================================*/
 
 string_t malaga_error; 
@@ -140,4 +142,4 @@ parse_malaga_value( string_t string )
   return value;
 }
 
-/* End of file. =============================================================*/
+}}}

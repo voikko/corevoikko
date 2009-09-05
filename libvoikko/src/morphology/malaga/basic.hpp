@@ -6,6 +6,8 @@
 
 #include <glib.h>
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 #undef NULL
@@ -275,4 +277,4 @@ extern void init_basic( string_t prog_name );
 extern void terminate_basic( void );
 /* Terminate this module. */
 
-/* End of file. =============================================================*/
+}}}

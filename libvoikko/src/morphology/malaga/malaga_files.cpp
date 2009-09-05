@@ -14,6 +14,8 @@
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/malaga_files.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 static char_t malaga[] = "MALAGA"; /* Magic key. */
@@ -66,4 +68,4 @@ check_header( common_header_t *header,
   } 
 }
 
-/* End of file. =============================================================*/
+}}}

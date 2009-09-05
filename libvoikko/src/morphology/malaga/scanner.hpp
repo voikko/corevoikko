@@ -4,6 +4,8 @@
 
 /* This module supports scanning (lexical analysis) of malaga source files. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 /* The next token is read by "read_next_token".
@@ -113,4 +115,4 @@ extern string_t token_as_text( int_t token );
 /* Return TOKEN as a string readable for humans.
  * Note that the string is only valid until this function is called again. */
 
-/* End of file. =============================================================*/
+}}}

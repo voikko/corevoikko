@@ -22,6 +22,8 @@
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 #define CELL_BITS BITS_PER_BYTE * sizeof( cell_t )
@@ -2514,4 +2516,4 @@ value_to_readable( value_t value, bool full_value, int_t indent )
   return new_string( value_text->buffer, NULL );
 }
 
-/* End of file. =============================================================*/
+}}}

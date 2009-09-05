@@ -5,6 +5,8 @@
 /* This file contains data structures and functions used for grammatical 
  * analysis. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Types. ===================================================================*/
 
 typedef enum {MORPHOLOGY, SYNTAX} grammar_t; /* Types of grammatic analysis. */
@@ -115,4 +117,4 @@ extern analysis_node_t *get_next_analysis_node( void );
 extern void free_analysis_node( analysis_node_t **node );
 /* Free the memory occupied by NODE. */
 
-/* End of file. =============================================================*/
+}}}

@@ -4,6 +4,8 @@
 
 /* Operations for files and file names. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* File operations. =========================================================*/
 
 extern bool file_exists( string_t file_name );
@@ -77,4 +79,4 @@ extern void set_binary_file_name( string_t *file_name_p, string_t file_name );
  * Print an error if *FILE_NAME_P is already set.
  * The created file name must be freed after use. */
 
-/* End of file. =============================================================*/
+}}}

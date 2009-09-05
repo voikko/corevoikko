@@ -4,6 +4,8 @@
 
 /* This module implements a static trie structure. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Types. ===================================================================*/
 
 typedef struct  /* A "trie_entry_t" associates KEY with CONTENT. */
@@ -24,4 +26,4 @@ extern bool lookup_trie( int_t *trie,
  *   *NODE contains the subnode for the matched input, and
  *   *INPUT points to the first char behind the prefix. */
 
-/* End of file. =============================================================*/
+}}}

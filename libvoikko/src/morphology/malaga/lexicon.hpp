@@ -4,6 +4,8 @@
 
 /* This module contains structures and functions for the run-time lexicon. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Functions. ===============================================================*/
 
 extern void init_lexicon( string_t file_name );
@@ -23,4 +25,4 @@ extern bool get_next_prefix( string_t *string_p, value_t *feat );
  * and *FEAT to the feature structure assigned to the lexicon entry.
  * STRING must have been set by "search_for_prefix". */
 
-/* End of file. =============================================================*/
+}}}

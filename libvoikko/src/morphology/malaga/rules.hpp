@@ -4,6 +4,8 @@
 
 /* This module contains the Malaga rule interpreter. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Types. ===================================================================*/
 
 typedef struct 
@@ -125,4 +127,4 @@ extern string_t variable_at_index( rule_sys_t *rule_sys,
 /* Return the name of the variable that is defined at STACK_INDEX
  * when instruction INSTR_INDEX is executed or NULL if there is none. */
 
-/* End of file. =============================================================*/
+}}}

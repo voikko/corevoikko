@@ -4,6 +4,8 @@
 
 /* Options for malaga and functions to start and terminate malaga. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Variables. ===============================================================*/
 
 extern bool auto_tree; /* TRUE if tree is shown automatically. */
@@ -23,4 +25,4 @@ extern void init_malaga( string_t project_file );
 extern void terminate_malaga( void );
 /* Terminate this module. */
 
-/* End of file. =============================================================*/
+}}}

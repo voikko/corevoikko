@@ -29,6 +29,8 @@
 #include <windows.h>
 #endif
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 enum {MAX_PATH_SIZE = 200}; /* Maximum path size in characters. */
@@ -513,4 +515,4 @@ set_binary_file_name( string_t *file_name_p, string_t file_name )
   free_mem( &binary_file_name );
 }
 
-/* End of file. =============================================================*/
+}}}

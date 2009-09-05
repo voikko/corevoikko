@@ -19,6 +19,8 @@
 #include "morphology/malaga/lexicon.hpp"
 #include "morphology/malaga/analysis.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Types. ===================================================================*/
 
 typedef struct tree_node /* A rule application is stored in "tree_node". */
@@ -958,4 +960,4 @@ analyse( string_t input,
   }
 }
 
-/* End of file. =============================================================*/
+}}}

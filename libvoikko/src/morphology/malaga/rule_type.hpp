@@ -4,6 +4,8 @@
 
 /* This module defines the data types needed for Malaga rules. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants ================================================================*/
 
 /* The rule-internal state is described by the following variables:
@@ -178,4 +180,4 @@ typedef struct /* A named constant. */
   int_t value; /* Value index. */
 } constant_t;
 
-/* End of file. =============================================================*/
+}}}

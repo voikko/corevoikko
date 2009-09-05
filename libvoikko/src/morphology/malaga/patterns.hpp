@@ -5,6 +5,8 @@
 /* This module contains function to compile and execute pattern matching 
  * strings (regular expressions). */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 enum {PATTERN_VAR_MAX = 5}; /* Maximum number of pattern variables. */
@@ -29,4 +31,4 @@ extern bool match_pattern( string_t string, string_t pattern );
 extern void terminate_patterns( void );
 /* Terminate this module. */
 
-/* End of file. =============================================================*/
+}}}

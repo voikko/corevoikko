@@ -7,6 +7,8 @@
  * There are six different types of values:
  * symbol, string, list, record, number and index. */
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 /* Some standard symbols. */
@@ -378,4 +380,4 @@ extern char_t *value_to_readable( value_t value,
  * on a line of its own. Assume the value is indented by INDENT columns.
  * The result must be freed after use. */
 
-/* End of file. =============================================================*/
+}}}

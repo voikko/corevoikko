@@ -22,6 +22,8 @@
 #include "morphology/malaga/rule_type.hpp"
 #include "morphology/malaga/rules.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Types. ===================================================================*/
 
 typedef struct /* Used to hold the value for a "switch". */
@@ -810,4 +812,4 @@ variable_at_index( rule_sys_t *rule_sys, int_t stack_index, int_t instr_index )
   return NULL;
 }
 
-/* End of file. =============================================================*/
+}}}

@@ -20,6 +20,8 @@
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/pools.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Constants. ===============================================================*/
 
 enum {MIN_CHUNK_SIZE = 400};
@@ -184,4 +186,4 @@ free_pool( pool_t *pool )
   free_mem( pool );
 }
 
-/* End of file. =============================================================*/
+}}}

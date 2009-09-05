@@ -13,6 +13,8 @@
 #include <setjmp.h>
 #include "morphology/malaga/basic.hpp"
 
+namespace libvoikko { namespace morphology { namespace malaga {
+
 /* Global variables. ========================================================*/
 
 char_t malaga_version[] = "7.12";
@@ -575,4 +577,4 @@ terminate_basic( void )
   free_text( &error_text );
 }
 
-/* End of file. =============================================================*/
+}}}
