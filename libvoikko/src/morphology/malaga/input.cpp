@@ -9,9 +9,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "files.h"
-#include "input.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/files.hpp"
+#include "morphology/malaga/input.hpp"
 
 /* Variables. ===============================================================*/
 

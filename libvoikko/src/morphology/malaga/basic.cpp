@@ -11,7 +11,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <setjmp.h>
-#include "basic.h"
+#include "morphology/malaga/basic.hpp"
 
 /* Global variables. ========================================================*/
 

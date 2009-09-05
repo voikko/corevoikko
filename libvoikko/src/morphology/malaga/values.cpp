@@ -18,9 +18,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "pools.h"
-#include "values.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
 
 /* Constants. ===============================================================*/
 

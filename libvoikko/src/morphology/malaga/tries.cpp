@@ -10,9 +10,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "pools.h"
-#include "tries.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/tries.hpp"
 
 /* Macros. ==================================================================*/
 

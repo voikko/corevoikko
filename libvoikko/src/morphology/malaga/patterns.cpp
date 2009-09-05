@@ -11,8 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "patterns.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/patterns.hpp"
 
 /* Constants. ===============================================================*/
 

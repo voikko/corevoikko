@@ -10,9 +10,9 @@
 #include <string.h>
 #include <time.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "files.h"
-#include "malaga_files.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/files.hpp"
+#include "morphology/malaga/malaga_files.hpp"
 
 /* Constants. ===============================================================*/
 

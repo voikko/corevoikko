@@ -58,6 +58,7 @@ AC_CHECK_HEADERS([langinfo.h])
 AC_CHECK_HEADERS([locale.h])
 AC_CHECK_HEADERS([wctype.h])
 AC_CHECK_HEADERS([wchar.h],,[AC_MSG_ERROR([wchar.h not found])])
+PKG_CHECK_MODULES(GLIB, glib-2.0)
 AC_CHECK_HEADERS([malaga.h],,[AC_MSG_ERROR([malaga.h not found])])
 
 dnl Types
@@ -103,7 +104,7 @@ AC_CHECK_FUNCS([getpwuid_r])
 AM_ICONV
 
 dnl Default compiler settings
-CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"
+CXXFLAGS="$CXXFLAGS $GLIB_CFLAGS -Wall -Werror -pedantic"
 
 AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile src/libvoikko.pc])
 AC_OUTPUT

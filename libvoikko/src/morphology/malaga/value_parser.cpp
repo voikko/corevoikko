@@ -8,12 +8,12 @@
 
 #include <stdio.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "pools.h"
-#include "values.h"
-#include "symbols.h"
-#include "scanner.h"
-#include "value_parser.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
+#include "morphology/malaga/symbols.hpp"
+#include "morphology/malaga/scanner.hpp"
+#include "morphology/malaga/value_parser.hpp"
 
 /* Functions. ===============================================================*/
 

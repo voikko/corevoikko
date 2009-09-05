@@ -11,12 +11,12 @@
 #include <time.h>
 #include <setjmp.h>
 #include <string.h>
-#include "basic.h"
-#include "pools.h"
-#include "values.h"
-#include "files.h"
-#include "malaga_files.h"
-#include "symbols.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
+#include "morphology/malaga/files.hpp"
+#include "morphology/malaga/malaga_files.hpp"
+#include "morphology/malaga/symbols.hpp"
 
 /* Variables. ===============================================================*/
 

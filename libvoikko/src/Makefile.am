@@ -22,6 +22,22 @@ libvoikko_la_SOURCES = \
     morphology/Analyzer.cpp \
     morphology/AnalyzerFactory.cpp \
     morphology/MalagaAnalyzer.cpp \
+    morphology/malaga/analysis.cpp \
+    morphology/malaga/files.cpp \
+    morphology/malaga/lexicon.cpp \
+    morphology/malaga/malaga_files.cpp \
+    morphology/malaga/patterns.cpp \
+    morphology/malaga/rules.cpp \
+    morphology/malaga/symbols.cpp \
+    morphology/malaga/value_parser.cpp \
+    morphology/malaga/basic.cpp \
+    morphology/malaga/input.cpp \
+    morphology/malaga/libmalaga.cpp \
+    morphology/malaga/malaga_lib.cpp \
+    morphology/malaga/pools.cpp \
+    morphology/malaga/scanner.cpp \
+    morphology/malaga/tries.cpp \
+    morphology/malaga/values.cpp \
     setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
     hyphenator/hyphenator.cpp character/charset.cpp \
@@ -30,7 +46,7 @@ libvoikko_la_SOURCES = \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     autocorrect/AutoCorrect.cpp
-libvoikko_la_LDFLAGS = -lmalaga -no-undefined -version-info 10:0:9 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = @GLIB_LIBS@ -lmalaga -no-undefined -version-info 10:0:9 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h
 noinst_HEADERS = \
@@ -39,6 +55,24 @@ noinst_HEADERS = \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \
     morphology/MalagaAnalyzer.hpp \
+    morphology/malaga/analysis.hpp \
+    morphology/malaga/input.hpp \
+    morphology/malaga/malaga_files.hpp \
+    morphology/malaga/patterns.hpp \
+    morphology/malaga/rule_type.hpp \
+    morphology/malaga/tries.hpp \
+    morphology/malaga/basic.hpp \
+    morphology/malaga/lexicon.hpp \
+    morphology/malaga/malaga.hpp \
+    morphology/malaga/pools.hpp \
+    morphology/malaga/scanner.hpp \
+    morphology/malaga/value_parser.hpp \
+    morphology/malaga/files.hpp \
+    morphology/malaga/libmalaga.hpp \
+    morphology/malaga/malaga_lib.hpp \
+    morphology/malaga/rules.hpp \
+    morphology/malaga/symbols.hpp \
+    morphology/malaga/values.hpp \
     setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     character/charset.hpp \

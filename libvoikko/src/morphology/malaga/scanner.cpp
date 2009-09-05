@@ -10,9 +10,9 @@
 #include <stdio.h>
 #include <errno.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "files.h"
-#include "scanner.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/files.hpp"
+#include "morphology/malaga/scanner.hpp"
 
 /* Constants. ===============================================================*/
 

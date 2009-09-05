@@ -12,19 +12,19 @@
 #include <stdlib.h>
 #include <setjmp.h>
 #include <time.h>
-#include "basic.h"
-#include "pools.h"
-#include "values.h"
-#include "input.h"
-#include "rule_type.h"
-#include "rules.h"
-#include "files.h"
-#include "analysis.h"
-#include "symbols.h"
-#include "lexicon.h"
-#include "scanner.h"
-#include "patterns.h"
-#include "malaga_lib.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
+#include "morphology/malaga/input.hpp"
+#include "morphology/malaga/rule_type.hpp"
+#include "morphology/malaga/rules.hpp"
+#include "morphology/malaga/files.hpp"
+#include "morphology/malaga/analysis.hpp"
+#include "morphology/malaga/symbols.hpp"
+#include "morphology/malaga/lexicon.hpp"
+#include "morphology/malaga/scanner.hpp"
+#include "morphology/malaga/patterns.hpp"
+#include "morphology/malaga/malaga_lib.hpp"
 
 /* Global variables. ========================================================*/
 

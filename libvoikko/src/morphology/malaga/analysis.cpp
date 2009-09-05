@@ -11,13 +11,13 @@
 #include <stdlib.h>
 #include <setjmp.h>
 #include <string.h>
-#include "basic.h"
-#include "pools.h"
-#include "values.h"
-#include "rule_type.h"
-#include "rules.h"
-#include "lexicon.h"
-#include "analysis.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
+#include "morphology/malaga/rule_type.hpp"
+#include "morphology/malaga/rules.hpp"
+#include "morphology/malaga/lexicon.hpp"
+#include "morphology/malaga/analysis.hpp"
 
 /* Types. ===================================================================*/
 

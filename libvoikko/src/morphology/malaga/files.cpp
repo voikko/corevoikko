@@ -6,14 +6,19 @@
 
 /* Includes. ================================================================*/
 
-#define _POSIX_SOURCE
+// XXX: what do we actually want here?
+#include "voikko_defs.h"
+#ifdef HAVE_GETPWUID_R
+#define POSIX
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "files.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/files.hpp"
 #ifdef POSIX
 #include <unistd.h>
 #include <pwd.h>

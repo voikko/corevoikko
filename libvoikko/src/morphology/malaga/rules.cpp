@@ -12,15 +12,15 @@
 #include <time.h>
 #include <math.h>
 #include <setjmp.h>
-#include "basic.h"
-#include "pools.h"
-#include "values.h"
-#include "symbols.h"
-#include "patterns.h"
-#include "files.h"
-#include "malaga_files.h"
-#include "rule_type.h"
-#include "rules.h"
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
+#include "morphology/malaga/symbols.hpp"
+#include "morphology/malaga/patterns.hpp"
+#include "morphology/malaga/files.hpp"
+#include "morphology/malaga/malaga_files.hpp"
+#include "morphology/malaga/rule_type.hpp"
+#include "morphology/malaga/rules.hpp"
 
 /* Types. ===================================================================*/
 
