@@ -275,6 +275,19 @@ class Voikko:
 		self.lib.voikko_free_hyphenate(cHyphenationPattern)
 		return hyphenationPattern
 	
+	def hyphenate(self, word):
+		pattern = self.getHyphenationPattern(word)
+		hyphenated = u""
+		for i in range(len(pattern)):
+			patternC = pattern[i]
+			if patternC == ' ':
+				hyphenated = hyphenated + word[i]
+			elif patternC == '-':
+				hyphenated = hyphenated + u"-" + word[i]
+			elif patternC == '=':
+				hyphenated = hyphenated + u"-"
+		return hyphenated
+	
 	def setIgnoreDot(self, value):
 		_setBoolOption(self, 0, value)
 	
