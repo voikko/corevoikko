@@ -275,6 +275,8 @@ Jyväskylä-paikka
 Pohjois-Suomi
 !pohjois-Suomi
 Moilanen-Savolainen
+!kaivooivuus
+kaivo-oivuus
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri
