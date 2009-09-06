@@ -21,12 +21,14 @@
 from ctypes import byref
 from ctypes import CDLL
 from ctypes import c_int
+from ctypes import c_char
 from ctypes import c_char_p
 from ctypes import c_wchar_p
 from ctypes import c_size_t
 from ctypes import c_void_p
 from ctypes import pointer
 from ctypes import POINTER
+from ctypes import string_at
 from ctypes import Structure
 import os
 
@@ -127,6 +129,12 @@ class Voikko:
 		
 		self.lib.voikko_free_suggest_cstr.argtypes = [POINTER(c_char_p)]
 		self.lib.voikko_free_suggest_cstr.restype = None
+		
+		self.lib.voikko_hyphenate_ucs4.argtypes = [c_int, c_wchar_p]
+		self.lib.voikko_hyphenate_ucs4.restype = POINTER(c_char)
+		
+		self.lib.voikko_free_hyphenate.argtypes = [POINTER(c_char)]
+		self.lib.voikko_free_hyphenate.restype = None
 		
 		self.lib.voikko_analyze_word_ucs4.argtypes = [c_int, c_wchar_p]
 		self.lib.voikko_analyze_word_ucs4.restype = POINTER(c_void_p)
@@ -259,7 +267,14 @@ class Voikko:
 			position = position + tokenLen.value
 			textLen = textLen - tokenLen.value
 		return result
-		
+	
+	def getHyphenationPattern(self, word):
+		_checkInited(self)
+		cHyphenationPattern = self.lib.voikko_hyphenate_ucs4(self.handle, word)
+		hyphenationPattern = string_at(cHyphenationPattern)
+		self.lib.voikko_free_hyphenate(cHyphenationPattern)
+		return hyphenationPattern
+	
 	def setIgnoreDot(self, value):
 		_setBoolOption(self, 0, value)
 	

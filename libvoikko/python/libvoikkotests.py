@@ -62,6 +62,16 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(libvoikko.Token.WORD, tokenJa.tokenType)
 		self.assertEqual(u"ja", tokenJa.tokenText)
 	
+	def testHyphenationPattern(self):
+		pattern = self.voikko.getHyphenationPattern(u"kissa")
+		self.assertEqual("   - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"määrä")
+		self.assertEqual("   - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"kuorma-auto")
+		self.assertEqual("    - =  - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"vaa'an")
+		self.assertEqual("   =  ", pattern)
+
 	def testSetIgnoreDot(self):
 		self.voikko.setIgnoreDot(False)
 		self.failIf(self.voikko.spell(u"kissa."))
