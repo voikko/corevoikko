@@ -42,6 +42,29 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.init()
 		self.failUnless(self.voikko.spell(u"kissa"))
 	
+	def testDictionaryComparisonWorks(self):
+		d1 = libvoikko.Dictionary("a", u"b")
+		d2 = libvoikko.Dictionary("a", u"c")
+		d3 = libvoikko.Dictionary("c", u"b")
+		d4 = libvoikko.Dictionary("a", u"b")
+		self.assertNotEqual(u"kissa", d1)
+		self.assertNotEqual(d1, u"kissa")
+		self.assertNotEqual(d1, d2)
+		self.assertNotEqual(d1, d3)
+		self.assertEqual(d1, d4)
+	
+	def testListDicts(self):
+		self.voikko.terminate()
+		uninitedDicts = self.voikko.listDicts()
+		self.failUnless(len(uninitedDicts) > 0)
+		standard = uninitedDicts[0]
+		self.assertEqual(u"standard", standard.variant,
+		     u"Standard dictionary must be the default in test environment.")
+		self.assertEqual(u"Voikon perussanasto", standard.description)
+		self.voikko.init()
+		initedDicts = self.voikko.listDicts()
+		self.assertEqual(uninitedDicts, initedDicts)
+	
 	def testSpell(self):
 		self.failUnless(self.voikko.spell(u"määrä"))
 		self.failIf(self.voikko.spell(u"määä"))

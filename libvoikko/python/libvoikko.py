@@ -32,6 +32,22 @@ from ctypes import string_at
 from ctypes import Structure
 import os
 
+class Dictionary:
+	def __init__(self, variant, description):
+		self.variant = variant
+		self.description = description
+	
+	def __repr__(self):
+		return u"<" + self.variant + u"," + self.description + u">"
+	
+	def __cmp__(self, other):
+		if not isinstance(other, Dictionary):
+			return -1
+		variantOrder = cmp(self.variant, other.variant)
+		if variantOrder != 0:
+			return variantOrder
+		return cmp(self.description, other.description)
+
 class Token:
 	NONE = 0
 	WORD = 1
@@ -121,6 +137,18 @@ class Voikko:
 		self.lib.voikko_terminate.argtypes = [c_int]
 		self.lib.voikko_terminate.restype = c_int
 		
+		self.lib.voikko_list_dicts.argtypes = [c_char_p]
+		self.lib.voikko_list_dicts.restype = POINTER(c_void_p)
+		
+		self.lib.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
+		self.lib.voikko_free_dicts.restype = None
+		
+		self.lib.voikko_dict_variant.argtypes = [c_void_p]
+		self.lib.voikko_dict_variant.restype = c_char_p
+		
+		self.lib.voikko_dict_description.argtypes = [c_void_p]
+		self.lib.voikko_dict_description.restype = c_char_p
+		
 		self.lib.voikko_spell_ucs4.argtypes = [c_int, c_wchar_p]
 		self.lib.voikko_spell_ucs4.restype = c_int
 		
@@ -178,6 +206,19 @@ class Voikko:
 		if self.handle.value >= 0:
 			self.lib.voikko_terminate(self.handle)
 			self.handle.value = -1
+	
+	def listDicts(self):
+		cDicts = self.lib.voikko_list_dicts(c_char_p())
+		dicts = []
+		i = 0
+		while bool(cDicts[i]):
+			cDict = cDicts[i]
+			variant = self.lib.voikko_dict_variant(cDict)
+			description = unicode(self.lib.voikko_dict_description(cDict), "UTF-8")
+			dicts.append(Dictionary(variant, description))
+			i = i + 1
+		self.lib.voikko_free_dicts(cDicts)
+		return dicts
 	
 	def spell(self, word):
 		_checkInited(self)
