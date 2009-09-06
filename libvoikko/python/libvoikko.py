@@ -89,9 +89,12 @@ class GrammarError:
 		s = s + u"}]"
 		return s
 
+class VoikkoException(Exception):
+	pass
+
 def _checkInited(voikko):
 	if voikko.handle.value < 0:
-		raise Exception("Voikko not initialized")
+		raise VoikkoException("Voikko not initialized")
 
 
 def _boolToInt(bool):
@@ -166,7 +169,7 @@ class Voikko:
 		if self.handle.value < 0:
 			error = self.lib.voikko_init(byref(self.handle), "fi_FI", 0)
 			if error != None:
-				raise Exception("Initialization of Voikko failed: " + error)
+				raise VoikkoException("Initialization of Voikko failed: " + error)
 	
 	def terminate(self):
 		if self.handle.value >= 0:
@@ -181,7 +184,7 @@ class Voikko:
 		elif result == 1:
 			return True
 		else:
-			raise Exception("Internal error returned from libvoikko")
+			raise VoikkoException("Internal error returned from libvoikko")
 	
 	def suggest(self, word):
 		_checkInited(self)
@@ -327,4 +330,4 @@ class Voikko:
 		elif value == SuggestionStrategy.TYPO:
 			_setBoolOption(self, 8, False)
 		else:
-			raise Exception("Invalid suggestion strategy")
+			raise VoikkoException("Invalid suggestion strategy")

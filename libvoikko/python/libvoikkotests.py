@@ -28,6 +28,20 @@ class LibvoikkoTest(unittest.TestCase):
 	def tearDown(self):
 		self.voikko.terminate()
 	
+	def testInitAndTerminate(self):
+		def trySpell():
+			self.voikko.spell(u"kissa")
+		# Init can be called multiple times
+		self.voikko.init()
+		self.failUnless(self.voikko.spell(u"kissa"))
+		# Terminate can be called multiple times
+		self.voikko.terminate()
+		self.voikko.terminate()
+		self.assertRaises(libvoikko.VoikkoException, trySpell)
+		# Initialization can be done again
+		self.voikko.init()
+		self.failUnless(self.voikko.spell(u"kissa"))
+	
 	def testSpell(self):
 		self.failUnless(self.voikko.spell(u"määrä"))
 		self.failIf(self.voikko.spell(u"määä"))
