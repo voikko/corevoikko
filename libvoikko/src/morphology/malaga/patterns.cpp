@@ -129,7 +129,6 @@ compile_char_class( text_t *text, string_t *string_p )
  * Save the resulting pattern in TEXT. */
 {
   string_t s;
-  gunichar ca, ce, c; /* First char, last char and current char for ranges. */
   int_t patch_index;
 
   s = *string_p;
@@ -146,7 +145,8 @@ compile_char_class( text_t *text, string_t *string_p )
   /* Read chars and ranges. */
   do 
   { 
-    ca = pattern_char( &s );
+    gunichar ca = pattern_char( &s );
+    gunichar ce;
     if (*s == '-') 
     { 
       s++;
@@ -154,7 +154,7 @@ compile_char_class( text_t *text, string_t *string_p )
     } 
     else 
       ce = ca;
-    for (c = ca; c <= ce; c++) 
+    for (gunichar c = ca; c <= ce; c++) 
       add_unichar_to_text( text, c );
   } while (*s != ']');
   *string_p = ++s;

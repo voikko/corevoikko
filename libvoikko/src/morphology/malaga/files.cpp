@@ -297,10 +297,10 @@ absolute_path( string_t src_path, string_t relative_to )
 { 
 #ifdef POSIX
   text_t *path;
-  string_t src_path_p, login, login_p;
+  string_t src_path_p, login;
   char_t *dest_path;
   struct passwd *password;
-  string_t relative_end, relative_dir;
+  string_t relative_dir;
   char_t current_dir[ MAX_PATH_SIZE ];
 
   path = new_text();
@@ -311,7 +311,7 @@ absolute_path( string_t src_path, string_t relative_to )
   { 
     /* Put a users home directory in front. */
     src_path_p++;
-    login_p = src_path_p;
+    string_t login_p = src_path_p;
     while (*src_path_p != '/' && *src_path_p != EOS) 
       src_path_p++;
     if (src_path_p == login_p) 
@@ -330,7 +330,7 @@ absolute_path( string_t src_path, string_t relative_to )
     if (relative_to != NULL) 
     { 
       /* Put RELATIVE_TO ahead (strip last name). */
-      relative_end = relative_to + strlen( relative_to );
+      string_t relative_end = relative_to + strlen( relative_to );
       while (relative_end[-1] != '/') 
 	relative_end--;
       relative_dir = new_string( relative_to, relative_end );
@@ -357,7 +357,7 @@ absolute_path( string_t src_path, string_t relative_to )
 #ifdef WIN32
   text_t *path;
   string_t src_path_p, dest_path;		
-  string_t relative_end, relative_dir;
+  string_t relative_dir;
   char_t current_dir[ MAX_PATH_SIZE ];
 
   path = new_text();
@@ -396,7 +396,7 @@ absolute_path( string_t src_path, string_t relative_to )
   else if (relative_to != NULL) 
   { 
     /* Put RELATIVE_TO ahead (strip last name). */
-    relative_end = relative_to + strlen( relative_to );
+    string_t relative_end = relative_to + strlen( relative_to );
     while (relative_end[-1] != '\\') 
       relative_end--;
     relative_dir = new_string( relative_to, relative_end );

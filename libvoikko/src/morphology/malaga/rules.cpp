@@ -71,8 +71,6 @@ standard_function( int_t function )
  * Perform function FUNCTION on VALUE yielding NEW_VALUE. */
 { 
   char_t *buffer;
-  string_t string;
-  int_t start, end, len;
 
   switch (function) 
   {
@@ -106,13 +104,14 @@ standard_function( int_t function )
     push_number_value( floor( value_to_double( value_stack[ --top ] ) ) );
     break;
   case FUNC_SUBSTRING:
-    string = value_to_string( value_stack[ top - 3 ] );
-    start = value_to_int( value_stack[ top - 2 ] );
+    string_t string = value_to_string( value_stack[ top - 3 ] );
+    int_t start = value_to_int( value_stack[ top - 2 ] );
+    int_t end;
     if (value_stack[ top - 1 ] == NULL) 
       end = start;
     else 
       end = value_to_int( value_stack[ top - 1 ] );
-    len = g_utf8_strlen( string, -1 );
+    int_t len = g_utf8_strlen( string, -1 );
     if (start < 0) 
       start += len + 1;
     if (end < 0) 
@@ -136,10 +135,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
  * Any parameters must be on the value stack. */
 { 
   static symbol_t nil = NIL_SYMBOL; /* The "nil" symbol. */
-  bool terminate; /* Shall we terminate the current rule internal path? */
-  int_t i, info, new_pc, old_top, old_base;
-  instr_t instruction;
-  symbol_t symbol;
   path_node_t *path;
           
   /* Initialise the value stack. */
@@ -158,12 +153,12 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
   pc = rule_sys->rules[ rule_number ].first_instr;
   { 
     rule_successful = FALSE;
-    terminate = FALSE;
+    bool terminate = FALSE;
     while (! terminate) 
     { 
-      instruction = rule_sys->instrs[ pc ];
-      new_pc = pc + 1;
-      info = INSTR_INFO( instruction );
+      instr_t instruction = rule_sys->instrs[ pc ];
+      int_t new_pc = pc + 1;
+      int_t info = INSTR_INFO( instruction );
       switch (OPCODE( instruction ) ) 
       {
       case INS_TERMINATE:
@@ -196,7 +191,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         terminate = TRUE;
         break;
       case INS_PUSH_NULL:
-        for (i = 0; i < info; i++) 
+        for (int_t i = 0; i < info; i++) 
 	  push_value( NULL );
         break;
       case INS_PUSH_VAR:
@@ -398,17 +393,22 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	  new_pc = info;
         break;
       case INS_JUMP_IF_YES:
-        symbol = value_to_symbol( value_stack[ --top ] );
+        {
+        symbol_t symbol = value_to_symbol( value_stack[ --top ] );
         if (symbol == YES_SYMBOL) 
 	  new_pc = info;
+	}
         break;
       case INS_JUMP_IF_NO:
-        symbol = value_to_symbol( value_stack[ --top ] );
+        {
+        symbol_t symbol = value_to_symbol( value_stack[ --top ] );
         if (symbol == NO_SYMBOL) 
 	  new_pc = info;
+	}
         break;
       case INS_JUMP_NOW:
-        old_top = top;
+        {
+        int_t old_top = top;
         path = (path_node_t *) new_node( &path_list, sizeof( path_node_t ), LIST_START );
         path->pc = new_pc;
         path->nested_subrules = nested_subrules;
@@ -419,9 +419,11 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         base += (top - old_top);
         path_count++;
         new_pc = info;
+	}
         break;
       case INS_JUMP_LATER:
-        old_top = top;
+        {
+        int_t old_top = top;
         path = (path_node_t *) new_node( &path_list, sizeof( path_node_t ), LIST_START );
         path->pc = info;
         path->nested_subrules = nested_subrules;
@@ -431,6 +433,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	  push_value( value_stack[ bottom++ ] );
         base += (top - old_top);
         path_count++;
+	}
         break;
       case INS_JUMP_SUBRULE:
         push_number_value( base - bottom );
@@ -440,12 +443,14 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         nested_subrules++;
         break;
       case INS_RETURN:
-        old_base = bottom + value_to_int( value_stack[ base - 2 ] );
+        {
+        int_t old_base = bottom + value_to_int( value_stack[ base - 2 ] );
         new_pc = value_to_int( value_stack[ base - 1 ] );
         value_stack[ base - info - 2 ] = value_stack[ top - 1 ]; /* Result. */
         top = base - (info + 1);
         base = old_base;
         nested_subrules--;
+        }
         break;
       default:
         malaga_throw();

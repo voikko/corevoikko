@@ -278,10 +278,7 @@ static void
 add_end_state_local( value_t feat )
 /* Add a state, consisting of FEAT, as an end state. */
 { 
-  value_t value;
-  rule_t *rule;
-
-  rule = executed_rule_sys->rules + executed_rule_number;
+  rule_t *rule = executed_rule_sys->rules + executed_rule_number;
 
   /* Combi-rules and end-rules must check for word boundary. */
   if ((rule->type != COMBI_RULE && rule->type != END_RULE)
@@ -293,7 +290,7 @@ add_end_state_local( value_t feat )
   else if (state_info.create_tree) 
   { 
     /* Preserve the feature structure. */
-    value = copy_value_to_pool( state_info.analysis->value_pool, feat, NULL );
+    value_t value = copy_value_to_pool( state_info.analysis->value_pool, feat, NULL );
     add_tree_node( value, state_info.input, -1, UNFINAL_NODE );
   }
 }
@@ -315,11 +312,10 @@ get_surface_local( surface_t surface_type )
 /* Return surface SURFACE_TYPE for currently executed rule.
  * The result must be freed after use. */
 { 
-  string_t state_surf_end;
-
   switch (surface_type) 
   {
-  case STATE_SURFACE:  
+  case STATE_SURFACE:
+    string_t state_surf_end;
     if (link_surface > state_surface && link_surface[-1] == ' ') 
       state_surf_end = link_surface - 1;
     else 

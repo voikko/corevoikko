@@ -37,8 +37,6 @@ parse_word( string_t *input )
  * and update *INPUT. Return the word. It must be freed after use.
  * If there's no word, report an error. */
 { 
-  gunichar code;
-
   clear_text( text );
   if (**input == '\"') 
   { 
@@ -56,7 +54,7 @@ parse_word( string_t *input )
   { 
     while (**input != EOS)
     { 
-      code = g_utf8_get_char( *input );
+      gunichar code = g_utf8_get_char( *input );
       if (g_unichar_isspace( code ))
 	break;
       add_unichar_to_text( text, code );
