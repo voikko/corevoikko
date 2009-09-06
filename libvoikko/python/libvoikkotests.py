@@ -161,6 +161,18 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setAcceptBulletedListsInGc(True)
 		self.assertEqual(0, len(self.voikko.grammarErrors(u"kissa")))
 	
+	def testSetNoUglyHyphenation(self):
+		self.voikko.setNoUglyHyphenation(False)
+		self.assertEqual(u"i-va", self.voikko.hyphenate(u"iva"))
+		self.voikko.setNoUglyHyphenation(True)
+		self.assertEqual(u"iva", self.voikko.hyphenate(u"iva"))
+	
+	def testSetMinHyphenatedWordLength(self):
+		self.voikko.setMinHyphenatedWordLength(6)
+		self.assertEqual(u"koira", self.voikko.hyphenate(u"koira"))
+		self.voikko.setMinHyphenatedWordLength(2)
+		self.assertEqual(u"koi-ra", self.voikko.hyphenate(u"koira"))
+	
 	def testSetSuggestionStrategy(self):
 		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.OCR)
 		self.failIf(u"koira" in self.voikko.suggest(u"koari"))

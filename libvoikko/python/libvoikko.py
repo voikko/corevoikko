@@ -158,6 +158,9 @@ class Voikko:
 		self.lib.voikko_set_bool_option.argtypes = [c_int, c_int, c_int]
 		self.lib.voikko_set_bool_option.restype = c_int
 		
+		self.lib.voikko_set_int_option.argtypes = [c_int, c_int, c_int]
+		self.lib.voikko_set_int_option.restype = c_int
+		
 		self.lib.voikko_next_grammar_error_ucs4.argtypes = [c_int, c_wchar_p,
 		                                   c_size_t, c_size_t, c_int]
 		self.lib.voikko_next_grammar_error_ucs4.restype = CGrammarError
@@ -323,6 +326,13 @@ class Voikko:
 	
 	def setAcceptBulletedListsInGc(self, value):
 		_setBoolOption(self, 16, value)
+	
+	def setNoUglyHyphenation(self, value):
+		_setBoolOption(self, 4, value)
+	
+	def setMinHyphenatedWordLength(self, value):
+		_checkInited(self)
+		self.lib.voikko_set_int_option(self.handle, 9, value)
 	
 	def setSuggestionStrategy(self, value):
 		if value == SuggestionStrategy.OCR:
