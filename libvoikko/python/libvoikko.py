@@ -269,6 +269,21 @@ class Voikko:
 	def setIgnoreUppercase(self, value):
 		_setBoolOption(self, 3, value)
 	
+	def setAcceptFirstUppercase(self, value):
+		_setBoolOption(self, 6, value)
+	
+	def setAcceptAllUppercase(self, value):
+		_setBoolOption(self, 7, value)
+	
+	def setIgnoreNonwords(self, value):
+		_setBoolOption(self, 10, value)
+	
+	def setAcceptExtraHyphens(self, value):
+		_setBoolOption(self, 11, value)
+	
+	def setAcceptMissingHyphens(self, value):
+		_setBoolOption(self, 12, value)
+	
 	def setAcceptTitlesInGc(self, value):
 		_setBoolOption(self, 13, value)
 	

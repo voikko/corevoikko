@@ -80,6 +80,39 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setIgnoreUppercase(True)
 		self.failUnless(self.voikko.spell(u"KAAAA"))
 	
+	def testAcceptFirstUppercase(self):
+		self.voikko.setAcceptFirstUppercase(False)
+		self.failIf(self.voikko.spell("Kissa"))
+		self.voikko.setAcceptFirstUppercase(True)
+		self.failUnless(self.voikko.spell("Kissa"))
+	
+	def testAcceptAllUppercase(self):
+		self.voikko.setIgnoreUppercase(False)
+		self.voikko.setAcceptAllUppercase(False)
+		self.failIf(self.voikko.spell("KISSA"))
+		self.voikko.setAcceptAllUppercase(True)
+		self.failUnless(self.voikko.spell("KISSA"))
+		self.failIf(self.voikko.spell("KAAAA"))
+	
+	def testIgnoreNonwords(self):
+		self.voikko.setIgnoreNonwords(False)
+		self.failIf(self.voikko.spell("hatapitk@iki.fi"))
+		self.voikko.setIgnoreNonwords(True)
+		self.failUnless(self.voikko.spell("hatapitk@iki.fi"))
+		self.failIf(self.voikko.spell("ashdaksd"))
+	
+	def testAcceptExtraHyphens(self):
+		self.voikko.setAcceptExtraHyphens(False)
+		self.failIf(self.voikko.spell("kerros-talo"))
+		self.voikko.setAcceptExtraHyphens(True)
+		self.failUnless(self.voikko.spell("kerros-talo"))
+	
+	def testAcceptMissingHyphens(self):
+		self.voikko.setAcceptMissingHyphens(False)
+		self.failIf(self.voikko.spell("sosiaali"))
+		self.voikko.setAcceptMissingHyphens(True)
+		self.failUnless(self.voikko.spell("sosiaali"))
+	
 	def testSetAcceptTitlesInGc(self):
 		self.voikko.setAcceptTitlesInGc(False)
 		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on eläin")))
@@ -104,6 +137,8 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(u"koira" in self.voikko.suggest(u"koir_"))
 		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.TYPO)
 		self.failUnless(u"koira" in self.voikko.suggest(u"koari"))
-		
+
+
+
 if __name__ == "__main__":
 	unittest.main()

@@ -1,3 +1,7 @@
+2009-09-06 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add more features to the Python interface.
+
 2009-09-05 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Clear grammar checker cache when options are
