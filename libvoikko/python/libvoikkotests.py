@@ -65,6 +65,36 @@ class LibvoikkoTest(unittest.TestCase):
 		initedDicts = self.voikko.listDicts()
 		self.assertEqual(uninitedDicts, initedDicts)
 	
+	def testListDictsWithPathWorks(self):
+		# TODO: better test
+		self.voikko.terminate()
+		uninitedDicts = self.voikko.listDicts("/path/to/nowhere")
+		self.failUnless(len(uninitedDicts) > 0)
+	
+	def testInitWithCorrectDictWorks(self):
+		# TODO: better test
+		self.voikko.terminate()
+		self.voikko.init(variant = "standard")
+		self.failUnless(self.voikko.spell(u"kissa"))
+	
+	def testInitWithNonExistentDictThrowsException(self):
+		def tryInit():
+			self.voikko.init(variant = "nonexistentvariantforlibvoikkotests")
+		self.voikko.terminate()
+		self.assertRaises(libvoikko.VoikkoException, tryInit)
+	
+	def testInitWithCacheSizeWorks(self):
+		# TODO: better test
+		self.voikko.terminate()
+		self.voikko.init(cacheSize = 3)
+		self.failUnless(self.voikko.spell(u"kissa"))
+	
+	def testInitWithPathWorks(self):
+		# TODO: better test
+		self.voikko.terminate()
+		self.voikko.init(path = "/path/to/nowhere")
+		self.failUnless(self.voikko.spell(u"kissa"))
+	
 	def testSpell(self):
 		self.failUnless(self.voikko.spell(u"määrä"))
 		self.failIf(self.voikko.spell(u"määä"))
@@ -189,6 +219,12 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(u"i-va", self.voikko.hyphenate(u"iva"))
 		self.voikko.setNoUglyHyphenation(True)
 		self.assertEqual(u"iva", self.voikko.hyphenate(u"iva"))
+	
+	def testSetHyphenateUnknownWordsWorks(self):
+		self.voikko.setHyphenateUnknownWords(False)
+		self.assertEqual(u"kirjutepo", self.voikko.hyphenate(u"kirjutepo"))
+		self.voikko.setHyphenateUnknownWords(True)
+		self.assertEqual(u"kir-ju-te-po", self.voikko.hyphenate(u"kirjutepo"))
 	
 	def testSetMinHyphenatedWordLength(self):
 		self.voikko.setMinHyphenatedWordLength(6)

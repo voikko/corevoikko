@@ -131,8 +131,8 @@ class Voikko:
 		else:
 			self.lib = CDLL("libvoikko.so.1")
 		
-		self.lib.voikko_init.argtypes = [POINTER(c_int), c_char_p, c_int]
-		self.lib.voikko_init.restype = c_char_p
+		self.lib.voikko_init_with_path.argtypes = [POINTER(c_int), c_char_p, c_int, c_char_p]
+		self.lib.voikko_init_with_path.restype = c_char_p
 		
 		self.lib.voikko_terminate.argtypes = [c_int]
 		self.lib.voikko_terminate.restype = c_int
@@ -196,9 +196,10 @@ class Voikko:
 		self.lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
 		self.lib.voikko_error_message_cstr.restype = c_char_p
 	
-	def init(self):
+	def init(self, path = None, variant = "fi_FI", cacheSize = 0):
 		if self.handle.value < 0:
-			error = self.lib.voikko_init(byref(self.handle), "fi_FI", 0)
+			error = self.lib.voikko_init_with_path(byref(self.handle), variant,
+			                                       cacheSize, path)
 			if error != None:
 				raise VoikkoException("Initialization of Voikko failed: " + error)
 	
@@ -207,8 +208,8 @@ class Voikko:
 			self.lib.voikko_terminate(self.handle)
 			self.handle.value = -1
 	
-	def listDicts(self):
-		cDicts = self.lib.voikko_list_dicts(c_char_p())
+	def listDicts(self, path = None):
+		cDicts = self.lib.voikko_list_dicts(path)
 		dicts = []
 		i = 0
 		while bool(cDicts[i]):
@@ -370,6 +371,9 @@ class Voikko:
 	
 	def setNoUglyHyphenation(self, value):
 		_setBoolOption(self, 4, value)
+	
+	def setHyphenateUnknownWords(self, value):
+		_setBoolOption(self, 15, value)
 	
 	def setMinHyphenatedWordLength(self, value):
 		_checkInited(self)
