@@ -8,7 +8,7 @@ Myös 20.3. satoi lunta.
 Myös 20.3.1984 satoi lunta.
 Hänen Lappeen kihlakunnan mies oli paitsi komea myös muotitietoinen, sillä miehet liikkuivat työasioissa alueella. Viipuri ja Pietari olivat rahtimiehille tuttuja, lännen suunnalla Tallinnaan, Turkuun ja kauemmaksikin ja saivat vaikutteita pukeutumiseensa.
 Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on tässä.
-Kolme pistettä... Neljä pistettä.... Kuusi pistettä......
+Kolme pistettä... Ellipsis… Neljä pistettä.... Kuusi pistettä......
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
 ”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.

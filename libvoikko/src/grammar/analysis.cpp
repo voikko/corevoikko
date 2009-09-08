@@ -93,7 +93,8 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 			next_word_is_possible_sentence_start = false;
 		}
 		else if (tt == TOKEN_PUNCTUATION &&
-		         ((tokenlen == 1 && (tstr[0] == L'.' || tstr[0] == L':'))
+		         ((tokenlen == 1 &&
+		           (tstr[0] == L'.' || tstr[0] == L':' || tstr[0] == L'\u2026'))
 		          || tokenlen == 3)) { // . : ... may separate sentences
 			next_word_is_possible_sentence_start = true;
 		}

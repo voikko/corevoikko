@@ -82,7 +82,8 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handl
 					possible_end_punctuation = true;
 				}
 			}
-			else if (punct == L'.' && tokenlen == 3) {
+			else if ((punct == L'.' && tokenlen == 3) || punct == L'\u2026') {
+				// ellipsis
 				end_found = true;
 				possible_end_punctuation = true;
 			}

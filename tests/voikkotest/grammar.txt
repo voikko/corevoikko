@@ -68,6 +68,7 @@ Hieno eka otsikko
  [code=9, level=0, descr="", stpos=10, len=7, suggs={}]
 Virke päättyy kolmeen pisteeseen...
 Virke päättyy kolmeen pisteeseen... Toinen alkaa sen jälkeen.
+Kolme pistettä voi olla myös yhtä merkkiä… Ja perässä voi olla toinen virke.
 Virkkeessä on kolme pistettä... ja jotain muutakin.
 VIRKE ON KIRJOITETTU KOKONAAN ISOILLA KIRJAIMILLA.
 ISOLLA KIRJOITETUSSA VIRKKEESSÄ ON 1 NUMERO.
