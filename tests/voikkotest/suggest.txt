@@ -22,6 +22,9 @@ maksakast9ke	maksakastike
 ka+akala	kapakala
 katunuoksu	katujuoksu
 kauheen	kauhean
+alurrn	alueen
+Sstami	Aatami
+hyppoo	hyppii
 
 [voikko.setIgnoreDot(True)]
 koirra.	koira.	!koira
