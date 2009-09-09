@@ -1,3 +1,7 @@
+2009-09-09 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add replacement a -> e to spelling suggestions.
+
 2009-09-06 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add more features to the Python interface.

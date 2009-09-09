@@ -46,7 +46,7 @@ SuggestionStrategyTyping::SuggestionStrategyTyping() {
 		L"bp" L"bn" L"cv" L"cs" L"we"
 		L"wv" L"xc" L"z\u017e" L"zx" L"qa"
 		L"\u00e5o" L"\u00e5p" L"\u00e5\u00e4" L"\u00e5\u00f6" L"ae"
-		L"ik" L"ty"
+		L"ik" L"ty" L"ea"
 		));
 	generators.push_back(
 		new SuggestionGeneratorDeletion());
