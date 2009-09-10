@@ -130,7 +130,7 @@ extern char_t *value_to_readable( value_t value,
                                   bool full_value,
                                   int_t indent );
 /* Return VALUE in a format readable for humans. 
- * If FULL_VALUE == TRUE, show all attributes, even those that are hidden.
+ * If FULL_VALUE == true, show all attributes, even those that are hidden.
  * If INDENT >= 0, format value, i.e. print each element of a list or record
  * on a line of its own. Assume the value is indented by INDENT columns.
  * Use "free" to free the space after use. */

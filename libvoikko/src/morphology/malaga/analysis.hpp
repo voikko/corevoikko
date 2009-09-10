@@ -44,10 +44,10 @@ extern int_t state_count; /* Counts number of generated states. Read only! */
 extern int_t current_state; /* Index of current state. Read only! */
 
 extern bool recognised_by_combi_rules;
-/* TRUE if last analysis was recognised by combi rules. Read only! */
+/* true if last analysis was recognised by combi rules. Read only! */
 
 extern bool recognised_by_robust_rule; 
-/* TRUE if last analysis was recognised by robust rule. Read only! */
+/* true if last analysis was recognised by robust rule. Read only! */
 
 extern string_t last_analysis_input; 
 /* Start of top level input string. Read only! */
@@ -84,11 +84,11 @@ extern void analyse( string_t input,
 		     bool create_tree,
 		     bool analyse_all );
 /* Perform a LAG analysis of INPUT.
- * An analysis tree will be built if CREATE_TREE == TRUE.
- * The whole input will be analysed if ANALYSE_ALL == TRUE. */
+ * An analysis tree will be built if CREATE_TREE == true.
+ * The whole input will be analysed if ANALYSE_ALL == true. */
 
 extern bool analysis_has_results( void );
-/* Return TRUE iff the last analysis has created results. */
+/* Return true iff the last analysis has created results. */
 
 extern value_t first_analysis_result( void );
 /* Return the feature structure of the first analysis result.
@@ -99,7 +99,7 @@ extern value_t next_analysis_result( void );
  * Return NULL if there are no more results. */
 
 extern bool analysis_has_nodes( void );
-/* Return TRUE iff the last analysis has created tree nodes. */
+/* Return true iff the last analysis has created tree nodes. */
 
 extern analysis_node_t *get_first_analysis_node( void );
 /* Return the first analysis tree node of the last analysis.

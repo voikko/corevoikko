@@ -402,7 +402,7 @@ read_next_token( void )
  * If end of input stream is reached, return EOF. */
 {
   /* Read chars until a token has been recognised. */
-  while (TRUE) 
+  while (true) 
   { 
     switch (next_char) 
     {

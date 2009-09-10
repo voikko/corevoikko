@@ -30,9 +30,9 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Global variables. ========================================================*/
 
-bool auto_tree; /* TRUE if tree is shown automatically. */
-bool auto_result; /* TRUE if result is shown automatically. */
-bool result_as_list; /* TRUE if results will be combined into a list. */
+bool auto_tree; /* true if tree is shown automatically. */
+bool auto_result; /* true if result is shown automatically. */
+bool result_as_list; /* true if results will be combined into a list. */
 text_t *grammar_info; /* Information about grammar. */
 
 string_t result_format, unknown_format, error_format; 
@@ -61,10 +61,10 @@ read_project_file( string_t project_file )
   string_t *name_p;
   volatile int_t line_count;
 
-  info_in_project_file = FALSE;
+  info_in_project_file = false;
   project_stream = open_stream( project_file, "r" );
   line_count = 0;
-  while (TRUE) 
+  while (true) 
   { 
     project_line = read_line( project_stream );
     if (project_line == NULL) 
@@ -119,7 +119,7 @@ read_project_file( string_t project_file )
 	    add_char_to_text( grammar_info, '\n' );
 	  add_to_text( grammar_info, project_line_p );
 	  add_char_to_text( grammar_info, '\n' );
-	  info_in_project_file = TRUE;
+	  info_in_project_file = true;
 	}
 	free_mem( &argument );
       
@@ -139,7 +139,7 @@ read_project_file( string_t project_file )
     free_mem( &project_line );
   }
   close_stream( &project_stream, project_file );
-  info_in_project_file = FALSE;
+  info_in_project_file = false;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -180,8 +180,8 @@ init_malaga( string_t project_file )
   error_format = new_string( "%l: %s: error: %e", NULL );
   result_format = new_string( "%l: %s: %f", NULL );
   unknown_format = new_string( "%l: %s: unknown", NULL );
-  auto_tree = FALSE;
-  auto_result = TRUE;
+  auto_tree = false;
+  auto_result = true;
 }
 
 /*---------------------------------------------------------------------------*/

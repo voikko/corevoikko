@@ -43,15 +43,15 @@ enum {MAX_PATH_SIZE = 200}; /* Maximum path size in characters. */
 
 bool 
 file_exists( string_t file_name )
-/* Return TRUE iff file FILE_NAME exists and can be read. */
+/* Return true iff file FILE_NAME exists and can be read. */
 { 
   FILE *stream;
 
   stream = fopen( file_name, "r" );
   if (stream == NULL) 
-    return FALSE;
+    return false;
   fclose( stream );
-  return TRUE;
+  return true;
 }
 
 /*---------------------------------------------------------------------------*/

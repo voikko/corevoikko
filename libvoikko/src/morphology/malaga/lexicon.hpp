@@ -20,7 +20,7 @@ extern void search_for_prefix( string_t string );
 
 extern bool get_next_prefix( string_t *string_p, value_t *feat );
 /* Get the next lexicon entry that is a prefix of STRING. 
- * Return FALSE iff no more entries exist.
+ * Return false iff no more entries exist.
  * If another entry exists, set *STRING_P to the remainder of STRING
  * and *FEAT to the feature structure assigned to the lexicon entry.
  * STRING must have been set by "search_for_prefix". */

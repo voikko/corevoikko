@@ -114,7 +114,7 @@ void
 preprocess_input( char_t *input )
 /* Delete heading and trailing spaces in INPUT
  * and compress all whitespace sequences to a single space.
- * If EXPECT_QUOTES == TRUE, expect quoted input and remove the quotes. */
+ * If EXPECT_QUOTES == true, expect quoted input and remove the quotes. */
 { 
   string_t input_p;
   char_t *output_p;
@@ -154,9 +154,9 @@ word_may_end_here( string_t string, rule_t *rule )
 /* Return whether there may be a word boundary between STRING-1 and STRING. */
 { 
   if (options[ MOR_INCOMPLETE_OPTION ])
-    return TRUE;
+    return true;
   if (rule->type == END_RULE && rule->param_count == 2) 
-    return TRUE;
+    return true;
   return (*string == EOS || *string == ' ');
 }
 
@@ -242,7 +242,7 @@ static void
 add_state( list_t *list, string_t input, value_t feat, int_t rule_set, 
 	   tree_node_type_t type )
 /* Add state, consisting of INPUT, FEAT and RULE_SET, to LIST.
- * When STATE_INFO.CREATE_TREE == TRUE, also generate a tree node. */
+ * When STATE_INFO.CREATE_TREE == true, also generate a tree node. */
 { 
   value_t new_feat;
   state_t *state;
@@ -381,7 +381,7 @@ init_analysis( string_t morphology_file )
 
   /* Set analysis options to start values. */
   for (i = 0; i < ANALYSIS_OPTION_COUNT; i++) 
-    options[i] = FALSE;
+    options[i] = false;
   options[ MOR_OUT_FILTER_OPTION ] = 
     (morphologyRuleSystem->output_filter != -1);
 }
@@ -401,7 +401,7 @@ terminate_analysis( void )
 
 bool
 analysis_has_results( void )
-/* Return TRUE iff the last analysis has created results. */
+/* Return true iff the last analysis has created results. */
 { 
   return (morphologyAnalysis->end_states.first != NULL); 
 }
@@ -437,7 +437,7 @@ next_analysis_result( void )
 
 bool
 analysis_has_nodes( void )
-/* Return TRUE iff the last analysis has created tree nodes. */
+/* Return true iff the last analysis has created tree nodes. */
 { 
   return (root_tree_node != NULL); 
 }
@@ -569,8 +569,8 @@ execute_robust_rule( analysis_t *analysis,
 
   /* Setup STATE_INFO. */
   state_info.analysis = analysis;
-  state_info.count_states = FALSE;
-  state_info.create_tree = FALSE;
+  state_info.count_states = false;
+  state_info.create_tree = false;
   state_info.item_index = 1;
   state_info.input = input_end;
 
@@ -618,8 +618,8 @@ execute_filter_rule( analysis_t *analysis,
 
     /* Execute filter rule. */
     state_info.analysis = analysis;
-    state_info.count_states = FALSE;
-    state_info.create_tree = FALSE;
+    state_info.count_states = false;
+    state_info.create_tree = false;
     state_info.item_index = 0;
     state_info.input = input;
     execute_rule( rule_sys, filter_rule );
@@ -715,7 +715,7 @@ execute_rules( analysis_t *analysis,
     current_state = state->tree_node->state_index;
 
   /* Execute rules in rule set. */
-  rules_executed = rules_successful = FALSE;
+  rules_executed = rules_successful = false;
   for (rule_p = rule_sys->rule_sets + state->rule_set; *rule_p != -1; rule_p++)
   { 
     if (*rule_p == -2) 
@@ -747,7 +747,7 @@ execute_rules( analysis_t *analysis,
 	    push_string_value( link_surf, NULL );
 	}
 	execute_rule( rule_sys, *rule_p );
-	rules_executed = TRUE;
+	rules_executed = true;
 	rules_successful |= rule_successful;
       }
     }
@@ -766,7 +766,7 @@ execute_rules( analysis_t *analysis,
 
 static void
 check_end_states( analysis_t *analysis,  bool analyse_all )
-/* If ANALYSE_ALL == TRUE,
+/* If ANALYSE_ALL == true,
  * delete all states in ANALYSIS that didn't consume all the input. */
 { 
   state_t *state;
@@ -775,7 +775,7 @@ check_end_states( analysis_t *analysis,  bool analyse_all )
   { 
     return;
   }
-  while (TRUE) 
+  while (true) 
   { 
     state = (state_t *) analysis->end_states.first;
     if (state == NULL || *state->input == EOS) 
@@ -794,8 +794,8 @@ analyse( string_t input,
          bool create_tree,
          bool analyse_all )
 /* Perform a LAG analysis of INPUT using.
- * An analysis tree will be built if CREATE_TREE == TRUE.
- * The whole input will be analysed if ANALYSE_ALL == TRUE. */
+ * An analysis tree will be built if CREATE_TREE == true.
+ * The whole input will be analysed if ANALYSE_ALL == true. */
 { 
   rule_sys_t *rule_sys;
   state_t *initial_state;
@@ -810,7 +810,7 @@ analyse( string_t input,
     root_tree_node = NULL;
     state_count = 1; /* We will insert the initial state. */
     last_analysis_input = input;
-    recognised_by_robust_rule = recognised_by_combi_rules = FALSE;
+    recognised_by_robust_rule = recognised_by_combi_rules = false;
   }
   rule_sys = morphologyRuleSystem;
 
@@ -893,7 +893,7 @@ analyse( string_t input,
 
     /* We have combined all analyses at CURRENT_INPUT with all states
      * that were at CURRENT_INPUT, so we can kill these states. */
-    while (TRUE) 
+    while (true) 
     { 
       state = (state_t *) analysis->running_states.first;
       if (state == NULL || state->input != current_input) 
@@ -905,14 +905,14 @@ analyse( string_t input,
 
   check_end_states( analysis, analyse_all );
   if (analyse_all && analysis->end_states.first != NULL) 
-    recognised_by_combi_rules = TRUE;
+    recognised_by_combi_rules = true;
 
   if (analysis->end_states.first == NULL && options[ ROBUST_RULE_OPTION ]) 
   { 
     execute_robust_rule( analysis, rule_sys, input );
     check_end_states( analysis, analyse_all );
     if (analyse_all && analysis->end_states.first != NULL) 
-      recognised_by_robust_rule = TRUE;
+      recognised_by_robust_rule = true;
   }
   if (options[ MOR_OUT_FILTER_OPTION ]) 
   { 

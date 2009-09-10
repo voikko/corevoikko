@@ -21,7 +21,7 @@ extern bool lookup_trie( int_t *trie,
                            string_t *input, 
                            int_t *content );
 /* Test if a prefix of *INPUT matches the node at *NODE_INDEX in TRIE.
- * If it does, return TRUE (else return FALSE) and:
+ * If it does, return true (else return false) and:
  *   *CONTENT contains the associated content,
  *   *NODE contains the subnode for the matched input, and
  *   *INPUT points to the first char behind the prefix. */

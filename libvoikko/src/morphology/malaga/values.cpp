@@ -2067,7 +2067,7 @@ compare_atom_lists( value_t atoms1, value_t atoms2 )
   int_t limit1, limit2;
 
   limit1 = limit2 = -1;
-  while (TRUE) 
+  while (true) 
   { 
     limit1 = next_symbol( atoms1, limit1 );
     limit2 = next_symbol( atoms2, limit2 );
@@ -2092,7 +2092,7 @@ values_equal( value_t value1, value_t value2 )
 
   if (TYPE( value1 ) != TYPE( value2 )) 
   {
-    return FALSE;
+    return false;
   }
   switch (TYPE( value1 )) 
   {
@@ -2110,7 +2110,7 @@ values_equal( value_t value1, value_t value2 )
          v1 = NEXT_VALUE( v1 ), v2 = NEXT_VALUE( v2 )) 
     { 
       if (! values_equal( v1, v2 )) 
-	return FALSE;
+	return false;
     }
     return (v1 == value1_end && v2 == value2_end);
   case RECORD_TYPE:
@@ -2119,7 +2119,7 @@ values_equal( value_t value1, value_t value2 )
 
     /* Do the records have the same length? */
     if (value1_end - value1 != value2_end - value2) 
-      return FALSE;
+      return false;
 
     /* Check whether for every attribute in VALUE1, there is one
      * in VALUE2 and that their values are equal. */
@@ -2135,9 +2135,9 @@ values_equal( value_t value1, value_t value2 )
       /* Return if we looked 'till end of value2 and didn't the find attribute,
        * or if they don't have the same values. */
       if (v2 == value2_end || ! values_equal( v1 + 1, v2 + 1 )) 
-	return FALSE;
+	return false;
     }
-    return TRUE;
+    return true;
   case NUMBER_TYPE:
     return (value_to_double( value1 ) == value_to_double( value2 ));
   default:
@@ -2169,12 +2169,12 @@ values_congruent( value_t value1, value_t value2 )
     for (v2 = value2 + 2; v2 < value2_end; v2 = NEXT_VALUE( v2 )) 
     { 
       if (values_equal( v1, v2 )) 
-	return TRUE;
+	return true;
     }
   }
 
   /* No common symbol found. */
-  return FALSE;
+  return false;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -2193,7 +2193,7 @@ value_in_value( value_t value1, value_t value2 )
     for (value2 += 2; value2 < value2_end; value2 = NEXT_VALUE( value2 )) 
     { 
       if (values_equal( value1, value2 )) 
-	return TRUE;
+	return true;
     }
   } 
   else if (IS_RECORD( value2 )) 
@@ -2201,10 +2201,10 @@ value_in_value( value_t value1, value_t value2 )
     for (value2 += 2; value2 < value2_end; value2 = NEXT_ATTRIB( value2 )) 
     { 
       if (*value1 == *value2) 
-	return TRUE;
+	return true;
     }
   }
-  return FALSE;
+  return false;
 }
 
 /* Functions to print values. ===============================================*/
@@ -2372,7 +2372,7 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
 /* Convert VALUE to a format readable for humans and add it to TEXT.
  * which extends to OUTPUT_END (this is a pointer to the first byte after
  * OUTPUT. The pointer returned points to the EOS of the built string.
- * If FULL_VALUE == TRUE, show all attributes, even those that are hidden. */
+ * If FULL_VALUE == true, show all attributes, even those that are hidden. */
 {
   value_t value_end;
   string_t string;
@@ -2401,12 +2401,12 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
       indent++;
 
     /* Check if all elements are simple. */
-    list_is_simple = TRUE;
+    list_is_simple = true;
     for (item = value + 2; item < value_end; item = NEXT_VALUE( item )) 
     { 
       if (IS_LIST( item ) || IS_RECORD( item )) 
       { 
-	list_is_simple = FALSE;
+	list_is_simple = false;
         break;
       }
     }
@@ -2453,7 +2453,7 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
     if (indent >= 0) 
       indent++;
     last_attr = NULL;
-    while (TRUE) 
+    while (true) 
     { 
       /* Find the next attribute to be printed. */
       next_attr = NULL;
@@ -2506,7 +2506,7 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
 char_t *
 value_to_readable( value_t value, bool full_value, int_t indent )
 /* Return VALUE in a format readable for humans. 
- * If FULL_VALUE == TRUE, show all attributes, even those that are hidden.
+ * If FULL_VALUE == true, show all attributes, even those that are hidden.
  * If INDENT >= 0, format value, i.e. print each element of a list or record
  * on a line of its own. Assume the value is indented by INDENT columns.
  * The result must be freed after use. */

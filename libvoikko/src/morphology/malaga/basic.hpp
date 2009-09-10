@@ -217,7 +217,7 @@ do { \
   } \
   text->buffer[ text->string_size++ ] = character; \
   text->buffer[ text->string_size ] = EOS; \
-} while (FALSE)
+} while (false)
 
 /* Error handlers. ==========================================================*/
 
@@ -251,9 +251,9 @@ do { \
   current_error_handler = older_error_handler; \
   if (rethrow) \
     malaga_throw(); \
-} while (FALSE)
+} while (false)
 
-#define RESUME rethrow = FALSE
+#define RESUME rethrow = false
 
 extern text_t *error_text; /* The text of the last error. */
 

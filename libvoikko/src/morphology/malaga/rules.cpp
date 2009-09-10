@@ -96,7 +96,7 @@ standard_function( int_t function )
     push_symbol_value( get_value_type( value_stack[ --top ] ) );
     break;
   case FUNC_GET_VALUE_STRING:
-    buffer = value_to_readable( value_stack[ --top ], TRUE, -1 );
+    buffer = value_to_readable( value_stack[ --top ], true, -1 );
     push_string_value( buffer, NULL );
     free_mem( &buffer );
     break;
@@ -152,8 +152,8 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 
   pc = rule_sys->rules[ rule_number ].first_instr;
   { 
-    rule_successful = FALSE;
-    bool terminate = FALSE;
+    rule_successful = false;
+    bool terminate = false;
     while (! terminate) 
     { 
       instr_t instruction = rule_sys->instrs[ pc ];
@@ -162,33 +162,33 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
       switch (OPCODE( instruction ) ) 
       {
       case INS_TERMINATE:
-        terminate = TRUE;
+        terminate = true;
         break;
       case INS_NOP:
         break;
       case INS_TERMINATE_IF_NULL:
         if (value_stack[ --top ] == NULL) 
-	  terminate = TRUE;
+	  terminate = true;
         break;
       case INS_ADD_END_STATE:
         add_end_state( value_stack[ --top ] );
-        rule_successful = TRUE;
+        rule_successful = true;
         break;
       case INS_ADD_STATE:
         add_running_state( value_stack[ --top ], info );
-        rule_successful = TRUE;
+        rule_successful = true;
         break;
       case INS_ADD_ALLO:
         add_allo( value_to_string( value_stack[ top - 2 ] ), 
 		  value_stack[ top - 1] );
         top -= 2;
-        rule_successful = TRUE;
+        rule_successful = true;
         break;
       case INS_ACCEPT:
         path_count = 0;
         while (path_list.first != NULL) 
 	  free_first_node( &path_list );
-        terminate = TRUE;
+        terminate = true;
         break;
       case INS_PUSH_NULL:
         for (int_t i = 0; i < info; i++) 
@@ -469,7 +469,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         pc = path->pc;
         nested_subrules = path->nested_subrules;
         free_first_node( &path_list );
-        terminate = FALSE;
+        terminate = false;
       }
     }
   } 
@@ -643,15 +643,15 @@ rule_set_readable( rule_sys_t *rule_sys, int_t rule_set )
   { 
     add_to_text( text, "rules " );
     rule = rule_sys->rule_sets + rule_set;
-    while (TRUE) 
+    while (true) 
     { 
-      name_has_been_printed = FALSE;
+      name_has_been_printed = false;
       while (*rule >= 0) 
       { 
 	if (name_has_been_printed) 
 	  add_to_text( text, ", " );
 	else 
-	  name_has_been_printed = TRUE;
+	  name_has_been_printed = true;
         add_to_text( text, 
 		     rule_sys->strings + rule_sys->rules[ *rule++ ].name );
       }

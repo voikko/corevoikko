@@ -71,7 +71,7 @@ typedef struct /* Pointers to the items of a compact trie node. */
 bool
 lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
 /* Test if a prefix of *INPUT matches the node at *NODE_INDEX in TRIE.
- * If it does, return TRUE (else return FALSE) and:
+ * If it does, return true (else return false) and:
  *   *CONTENT contains the associated content,
  *   *NODE contains the subnode for the matched input, and
  *   *INPUT points to the first char behind the prefix. */
@@ -86,7 +86,7 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
     r.prefix_len = (u_byte_t *) (trie + *node_index);
     r.prefix = (char_t *) (r.prefix_len + 1);
     if (strncmp( *input, r.prefix, *r.prefix_len ) != 0) 
-      return FALSE;
+      return false;
     (*input) += *r.prefix_len;
 
     /* Get the rest of the node. */
@@ -136,9 +136,9 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
 
     *input = g_utf8_next_char( *input );
     if (*content != -1) 
-      return TRUE;
+      return true;
   }
-  return FALSE;
+  return false;
 }
 
 }}}

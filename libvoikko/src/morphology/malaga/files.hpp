@@ -9,7 +9,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 /* File operations. =========================================================*/
 
 extern bool file_exists( string_t file_name );
-/* Return TRUE iff file FILE_NAME exists. */
+/* Return true iff file FILE_NAME exists. */
 
 extern FILE *open_stream( string_t file_name, string_t stream_mode );
 /* Open file FILE_NAME and create a stream from/to it in mode STREAM_MODE.

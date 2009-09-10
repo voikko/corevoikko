@@ -1,3 +1,7 @@
+2009-09-10 Lauri Nurmi <lanurmi@iki.fi>
+
+	* Replace TRUE and FALSE with true and false.
+
 2009-09-09 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add replacement a -> e to spelling suggestions.

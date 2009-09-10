@@ -8,9 +8,9 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-extern bool auto_tree; /* TRUE if tree is shown automatically. */
-extern bool auto_result; /* TRUE if result is shown automatically. */
-extern bool result_as_list; /* TRUE if results will be combined into 
+extern bool auto_tree; /* true if tree is shown automatically. */
+extern bool auto_result; /* true if result is shown automatically. */
+extern bool result_as_list; /* true if results will be combined into 
 			       * a list. */
 extern text_t *grammar_info; /* Information about grammar. */
 

@@ -27,12 +27,12 @@ enum /* These are the opcodes of the rule instructions. */
   INS_TERMINATE_IF_NULL, /* if (S[SP - 1] == NULL) {terminate;} else {SP--;} */
 
   /* result instructions */
-  INS_ADD_END_STATE, /* result = S[SP - 1]; rule_successful = TRUE; SP--; */
+  INS_ADD_END_STATE, /* result = S[SP - 1]; rule_successful = true; SP--; */
   INS_ADD_STATE, /* result = S[SP - 1]; rules = rules[I];
-                  * rule_successful = TRUE; SP--; */
+                  * rule_successful = true; SP--; */
   INS_ADD_ALLO, /* surf = S[SP-2]; allo = S[SP - 1];
-                 * rule_successful = TRUE; SP-= 2 */
-  INS_ACCEPT, /* rule_successful = TRUE; */
+                 * rule_successful = true; SP-= 2 */
+  INS_ACCEPT, /* rule_successful = true; */
 
   /* stack management instructions */
   INS_PUSH_NULL, /* for (i = 0; i < I; i++) { S[SP + i] = NULL; } SP += I; */

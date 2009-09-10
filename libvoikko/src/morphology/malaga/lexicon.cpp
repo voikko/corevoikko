@@ -60,7 +60,7 @@ search_for_prefix( string_t string )
 bool 
 get_next_prefix( string_t *string_p, value_t *feat )
 /* Get the next lexicon entry that is a prefix of STRING. 
- * Return FALSE iff no more entries exist.
+ * Return false iff no more entries exist.
  * If another entry exists, set *STRING_P to the remainder of STRING
  * and *FEAT to the feature structure assigned to the lexicon entry.
  * STRING must have been set by "search_for_prefix". */
@@ -70,7 +70,7 @@ get_next_prefix( string_t *string_p, value_t *feat )
   if (feat_list_index == -1) 
     lookup_trie( lexicon.trie, &trie_node, &prefix_end, &feat_list_index );
   if (feat_list_index == -1) 
-    return FALSE;
+    return false;
   feat_index = lexicon.feat_lists[ feat_list_index++ ];
   if (feat_index < 0) 
   { 
@@ -79,7 +79,7 @@ get_next_prefix( string_t *string_p, value_t *feat )
   }
   *string_p = prefix_end;
   *feat = lexicon.values + feat_index;
-  return TRUE;
+  return true;
 }
 
 /*---------------------------------------------------------------------------*/

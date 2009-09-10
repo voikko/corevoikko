@@ -170,10 +170,10 @@ check_greedy( string_t *string_p )
   if (**string_p == '?')
   {
     (*string_p)++;
-    return FALSE;
+    return false;
   }
   else 
-    return TRUE;
+    return true;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -182,17 +182,17 @@ static void
 compile_atom( text_t *text, string_t *string_p, bool *may_be_empty )
 /* Compile an atom at *STRING_P. 
  * Save the resulting pattern in TEXT. 
- * MAY_BE_EMPTY becomes TRUE iff the atom may match an empty string. */
+ * MAY_BE_EMPTY becomes true iff the atom may match an empty string. */
 {
   string_t s;
   int_t start, length;
   bool may_be_empty_local, greedy;
 
   s = *string_p;
-  *may_be_empty = TRUE;
-  while (TRUE) 
+  *may_be_empty = true;
+  while (true) 
   { 
-    may_be_empty_local = FALSE;
+    may_be_empty_local = false;
     start = text->string_size;
     if (*s == '[') 
       compile_char_class( text, &s );
@@ -244,7 +244,7 @@ compile_atom( text_t *text, string_t *string_p, bool *may_be_empty )
       else 
 	add_char_to_text( text, PAT_JUMP_LATER );
       add_char_to_text( text, offset( -length ) );
-      *may_be_empty = FALSE;
+      *may_be_empty = false;
     } 
     else 
       *may_be_empty &= may_be_empty_local;
@@ -329,7 +329,7 @@ match_pattern( string_t string, string_t pattern )
   gunichar c;
 
   sp = 0;
-  found_mismatch = FALSE;
+  found_mismatch = false;
 
   /* Clear all variables. */
   for (i = 0; i < PATTERN_VAR_MAX; i++) 
@@ -350,10 +350,10 @@ match_pattern( string_t string, string_t pattern )
             pattern_var[i] = new_string( var[i].start, var[i].end );
           }
         }
-        return TRUE;
+        return true;
       } 
       else 
-	found_mismatch = TRUE;
+	found_mismatch = true;
       break;
     case PAT_JUMP:
       pattern += (byte_t) pattern[1];
@@ -382,7 +382,7 @@ match_pattern( string_t string, string_t pattern )
       break;
     case PAT_MATCH_ANY:
       if (*string == EOS) 
-	found_mismatch = TRUE;
+	found_mismatch = true;
       else 
       {
 	pattern++;
@@ -391,7 +391,7 @@ match_pattern( string_t string, string_t pattern )
       break;
     case PAT_MATCH_CLASS:
       if (*string == EOS) 
-	found_mismatch = TRUE;
+	found_mismatch = true;
       else 
       { 
 	index = pattern + 2;
@@ -401,12 +401,12 @@ match_pattern( string_t string, string_t pattern )
         while (index < pattern && c != g_utf8_get_char( index ))
 	  index = g_utf8_next_char( index );
         if (index >= pattern) 
-	  found_mismatch = TRUE;
+	  found_mismatch = true;
       }
       break;
     case PAT_MATCH_NOT_CLASS:
       if (*string == EOS) 
-	found_mismatch = TRUE;
+	found_mismatch = true;
       else 
       { 
 	index = pattern + 2;
@@ -416,7 +416,7 @@ match_pattern( string_t string, string_t pattern )
         while (index < pattern && c != g_utf8_get_char( index ))
 	  index = g_utf8_next_char( index );
         if (index < pattern) 
-	  found_mismatch = TRUE;
+	  found_mismatch = true;
       }
       break;
     case PAT_START_VAR_0:
@@ -435,13 +435,13 @@ match_pattern( string_t string, string_t pattern )
       break;
     default:
       if (*string == EOS)
-	found_mismatch = TRUE;
+	found_mismatch = true;
       else
       {
 	c = g_unichar_tolower( g_utf8_get_char( string ) );
 	string = g_utf8_next_char( string );
 	if (c != g_utf8_get_char( pattern )) 
-	  found_mismatch = TRUE;
+	  found_mismatch = true;
 	else
 	  pattern = g_utf8_next_char( pattern );
       }
@@ -454,10 +454,10 @@ match_pattern( string_t string, string_t pattern )
       sp--;
       string = stack[ sp ].string;
       pattern = stack[ sp ].pattern;
-      found_mismatch = FALSE;
+      found_mismatch = false;
     }
   }
-  return FALSE;
+  return false;
 }
 
 /*---------------------------------------------------------------------------*/
