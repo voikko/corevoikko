@@ -12,4 +12,5 @@ Kolme pistettä... Ellipsis… Neljä pistettä.... Kuusi pistettä......
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
 ”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.
+“Vieraat lainausmerkit eivät minua hämää!” kirjoittaa ohjelman tekijä.
 »Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.

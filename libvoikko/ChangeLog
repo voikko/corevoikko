@@ -1,3 +1,8 @@
+2009-09-10 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Handle left double quotation mark better in grammar
+	  checker. It is still flagged as an error.
+
 2009-09-10 Lauri Nurmi <lanurmi@iki.fi>
 
 	* Replace TRUE and FALSE with true and false.

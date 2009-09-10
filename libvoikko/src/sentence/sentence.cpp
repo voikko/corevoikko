@@ -100,7 +100,7 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handl
 				end_found = true;
 				possible_end_punctuation = true;
 			}
-			else if (isFinnishQuotationMark(punct)) {
+			else if (isFinnishQuotationMark(punct) || punct == L'\u201C') {
 				in_quotation = !in_quotation;
 				if (!in_quotation && slen + 1 < textlen && text[slen + 1] == L',') {
 					// Comma immediately after ending quote suggests that

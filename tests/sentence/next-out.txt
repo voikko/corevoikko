@@ -28,5 +28,7 @@ E: kirjoittaa ohjelman tekijä.
 E: "Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
 P: ”Lause voi olla myös toisenlaisissa lainausmerkeissä!” 
 E: kirjoittaa ohjelman tekijä.
+P: “Vieraat lainausmerkit eivät minua hämää!” 
+E: kirjoittaa ohjelman tekijä.
 P: »Lause voi olla myös toisenlaisissa lainausmerkeissä!» 
 E: kirjoittaa ohjelman tekijä.

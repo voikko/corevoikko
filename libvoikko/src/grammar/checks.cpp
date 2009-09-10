@@ -62,7 +62,7 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 			break;
 		case TOKEN_PUNCTUATION:
 			if (i == 0) {
-				if (wcschr(L"()'-", t.str[0]) || isFinnishQuotationMark(t.str[0])) {
+				if (wcschr(L"()'-\u201C", t.str[0]) || isFinnishQuotationMark(t.str[0])) {
 					continue;
 				}
 				e = new CacheEntry(0);
@@ -103,6 +103,17 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		if (sentence->tokens[i].type != TOKEN_PUNCTUATION) {
 			continue;
+		}
+		if (sentence->tokens[i].str[0] == L'\u201C') {
+			// There was a foreign quotation mark -> report an error
+			// and stop processing any further.
+			CacheEntry * e = new CacheEntry(1);
+			e->error.error_code = GCERR_FOREIGN_QUOTATION_MARK;
+			e->error.startpos = sentence->tokens[i].pos;
+			e->error.errorlen = 1;
+			e->error.suggestions[0] = voikko_ucs4tocstr(L"\u201D", "UTF-8", 1);
+			gc_cache_append_error(handle, e);
+			return;
 		}
 		if (sentence->tokens[i + 1].type != TOKEN_PUNCTUATION) {
 			continue;
@@ -180,8 +191,13 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 	// likely that it is actually not a sentence. Maybe it would be best to
 	// disable all checks in that case, but character case checks are more
 	// likely to be wrong than others.
+	// Also the presence of a foreign quotation mark makes it hard to tell
+	// what is the correct capitalization.
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
+		if (t.str[0] == L'\u201C') {
+			return;
+		}
 		if (t.type != TOKEN_WHITESPACE) {
 			continue;
 		}

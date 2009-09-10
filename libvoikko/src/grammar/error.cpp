@@ -46,6 +46,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "V\xc3\xa4limerkki puuttuu virkkeen lopusta.";
 			case GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION:
 				return "Virheelliset v\xc3\xa4limerkit lainauksen lopussa.";
+			case GCERR_FOREIGN_QUOTATION_MARK:
+				return "Suomenkieliseen tekstiin sopimaton lainausmerkki.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -71,6 +73,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Terminating punctuation is missing.";
 			case GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION:
 				return "Invalid punctuation at the end of quotation.";
+			case GCERR_FOREIGN_QUOTATION_MARK:
+				return "Foreign quotation mark.";
 		}
 		return "Unknown error";
 	}
