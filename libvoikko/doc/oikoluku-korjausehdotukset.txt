@@ -1,0 +1,82 @@
+2009 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
+
+ Oikoluvun korjausehdotusten järjestäminen
+ =========================================
+
+Seuraavassa on kuvattu algoritmi, jolla oikoluvun korjausehdotukset
+järjestetään. Perusperiaate on, että kullekin korjausehdotukselle
+lasketaan käänteinen painokerroin siten, että sana, jolla on pienin
+painokerroin, tulkitaan todennäköisimmäksi korjaukseksi tunnistamattomalle
+sanalle. Painokertoimet ovat positiivisia kokonaislukuja.
+
+Vaihe 1:
+
+Korjausehdotukselle annetaan sanaluokasta ja taivutusmuodosta riippuva
+paino p1 seuraavasti taulukon mukaan:
+
+NOMINIT
+Sijamuoto     p1 
+nominatiivi   2
+genetiivi     3
+partitiivi    5
+essiivi       20
+translatiivi  20
+inessiivi     8
+elatiivi      12
+illatiivi     8
+adessiivi     12
+ablatiivi     30
+allatiivi     20
+abessiivi     60
+komitatiivi   60
+instruktiivi  20
+
+Yllä olevat painokertoimet perustuvat löyhästi taivutusmuotojen
+yleisyyteen kirjoitetussa tekstissä (VISK § 1227).
+
+MUIDEN SANALUOKKIEN SANAT: p1 = 4
+
+Vaihe 2:
+
+Kerroin p2 lasketaan sen mukaan, miten monta vahvan morfeemirajan
+erottamaa osaa siinä on.
+ p2 = erillisten osien lukumäärä.
+
+Vaihe 3:
+
+Kerroin p3 määräytyy siitä, kuinka suuria muutoksia sanan kirjainkoon
+käyttöön on tehtävä, jotta sana olisi oikein kirjoitettu.
+
+ Jos sana on sellaisenaan oikein, p3 = 1.
+ Jos sanan alkukirjain on vaihdettava isoksi kirjaimeksi, p3 = 2.
+ Jos sanan kirjainkokoon on tehtävä muita muutoksia kuin ensimmäisen
+ kirjaimen muuttaminen isoksi, p3 = 3.
+
+Vaihe 4:
+
+Korjausehdotusten generointijärjestys Voikossa on sellainen, että
+ensin generoidaan ehdotukset, jotka eroavat alkuperäisestä sanasta
+mahdollisimman vähän. Generointijärjestyksen määrää käytettävä
+SuggestionStrategy-olio, joten järjestys riippuu myös siitä, ollaanko
+korjaamassa ihmisen tekemiä näppäilyvirheitä vai optisessa
+tekstintunnistuksessa tapahtuneita virheitä. Generointijärjestys
+vaikuttaa sanan painokertoimeen seuraavan kaavan mukaisesti:
+ n = korjausehdotuksen järjestysluku (ensimmäinen = 0)
+ p4 = n + 5
+
+Lopullinen painokerroin:
+
+Lopullinen painokerroin on edellä laskettujen painokerrointen tulo:
+ p = p1 * p2 * p3 * p4
+
+Painokerrointen arvoalue on siis generoitaessa enintään 15 ehdotusta
+jotka koostuvat enimmillään 10 osasta
+ [2 * 1 * 1 * 5, 60 * 10 * 3 * 19] = [10, 34200]
+
+Lähteet:
+
+VISK = Auli Hakulinen, Maria Vilkuna, Riitta Korhonen, Vesa Koivisto,
+Tarja Riitta Heinonen ja Irja Alho 2004: Iso suomen kielioppi.
+Helsinki: Suomalaisen Kirjallisuuden Seura. Verkkoversio, viitattu 11.9.2009.
+Saatavissa: http://scripta.kotus.fi/visk URN:ISBN:978-952-5446-35-7
+
