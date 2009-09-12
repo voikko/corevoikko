@@ -16,20 +16,20 @@ paino p1 seuraavasti taulukon mukaan:
 
 NOMINIT
 Sijamuoto     p1 
-nominatiivi   2
-genetiivi     3
-partitiivi    5
-essiivi       20
-translatiivi  20
-inessiivi     8
-elatiivi      12
-illatiivi     8
-adessiivi     12
-ablatiivi     30
-allatiivi     20
-abessiivi     60
-komitatiivi   60
-instruktiivi  20
+nimentö       2
+omanto        3
+osanto        5
+olento       20
+tulento      20
+sisäolento    8
+sisäeronto   12
+sisätulento   8
+ulko-olento  12
+ulkoeronto   30
+ulkotulento  20
+vajanto      60
+seuranto     60
+keinonto     20
 
 Yllä olevat painokertoimet perustuvat löyhästi taivutusmuotojen
 yleisyyteen kirjoitetussa tekstissä (VISK § 1227).
@@ -40,7 +40,7 @@ Vaihe 2:
 
 Kerroin p2 lasketaan sen mukaan, miten monta vahvan morfeemirajan
 erottamaa osaa siinä on.
- p2 = erillisten osien lukumäärä.
+ p2 = 8^(min({erillisten osien lukumäärä}, 5) - 1).
 
 Vaihe 3:
 
@@ -75,8 +75,7 @@ kerroin on
  p = (p1_1 * p2_1 * p3_1 + p1_2 * p2_2 * p3_2) * p4
 
 Painokerrointen arvoalue on siis generoitaessa enintään 15 ehdotusta
-jotka koostuvat enimmillään 10 osasta
- [2 * 1 * 1 * 5, 60 * 10 * 3 * 19] = [10, 34200]
+ [2 * 1 * 1 * 5, 60 * 4096 * 3 * 19] = [10, 14 008 320]
 
 Lähteet:
 

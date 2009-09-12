@@ -26,19 +26,93 @@ using namespace libvoikko::morphology;
 
 namespace libvoikko { namespace spellchecker {
 
+static int getPriorityFromNounInflection(const Analysis * analysis) {
+	const wchar_t * sijamuoto = analysis->getValue("SIJAMUOTO");
+	if (!sijamuoto) {
+		// unknown sijamuoto
+		return 4;
+	}
+	else if (wcscmp(sijamuoto, L"nimento") == 0) {
+		return 2;
+	}
+	else if (wcscmp(sijamuoto, L"omanto") == 0) {
+		return 3;
+	}
+	else if (wcscmp(sijamuoto, L"osanto") == 0) {
+		return 5;
+	}
+	else if (wcscmp(sijamuoto, L"sisaolento") == 0) {
+		return 8;
+	}
+	else if (wcscmp(sijamuoto, L"sisaeronto") == 0) {
+		return 12;
+	}
+	else if (wcscmp(sijamuoto, L"sisatulento") == 0) {
+		return 8;
+	}
+	else if (wcscmp(sijamuoto, L"ulkoolento") == 0) {
+		return 12;
+	}
+	else if (wcscmp(sijamuoto, L"ulkoeronto") == 0) {
+		return 30;
+	}
+	else if (wcscmp(sijamuoto, L"ulkotulento") == 0) {
+		return 20;
+	}
+	else if (wcscmp(sijamuoto, L"olento") == 0) {
+		return 20;
+	}
+	else if (wcscmp(sijamuoto, L"tulento") == 0) {
+		return 20;
+	}
+	else if (wcscmp(sijamuoto, L"vajanto") == 0) {
+		return 60;
+	}
+	else if (wcscmp(sijamuoto, L"seuranto") == 0) {
+		return 60;
+	}
+	else if (wcscmp(sijamuoto, L"keinonto") == 0) {
+		return 20;
+	}
+	else {
+		// unknown sijamuoto
+		return 4;
+	}
+}
+
 static int getPriorityFromWordClassAndInflection(const Analysis * analysis) {
-	// TODO
-	return 1;
+	const wchar_t * wordClass = analysis->getValue("CLASS");
+	if (!wordClass) {
+		// unknown word class
+		return 4;
+	}
+	if (wcscmp(wordClass, L"nimisana") == 0 ||
+	    wcscmp(wordClass, L"laatusana") == 0 ||
+	    wcscmp(wordClass, L"nimisana_laatusana") == 0 ||
+	    wcscmp(wordClass, L"asemosana") == 0 ||
+	    wcscmp(wordClass, L"etunimi") == 0 ||
+	    wcscmp(wordClass, L"sukunimi") == 0 ||
+	    wcscmp(wordClass, L"paikannimi") == 0 ||
+	    wcscmp(wordClass, L"nimi") == 0) {
+		return getPriorityFromNounInflection(analysis);
+	}
+	else {
+		// other word classes have no special handling yet
+		return 4;
+	}
 }
 
 static int getPriorityFromStructure(const wchar_t * structure) {
-	int prio = 0;
+	int countParts = 0;
 	for (size_t j = 0; structure[j] != L'\0'; j++) {
 		if (structure[j] == L'=') {
-			++prio;
+			++countParts;
+			if (countParts == 5) {
+				break;
+			}
 		}
 	}
-	return prio;
+	return 1 << (3 * (countParts - 1));
 }
 
 static int getPriorityFromSpellResult(spellresult result) {

@@ -59,8 +59,12 @@ void SuggestionStatus::charge() {
 
 void SuggestionStatus::addSuggestion(const wchar_t * newSuggestion, int priority) {
 	if (suggestionCount < maxSuggestions) {
+		int finalPriority = priority * (suggestionCount + 5);
+		//std::wcerr << L"Suggestion " << newSuggestion;
+		//std::wcerr << L", priority " << priority;
+		//std::wcerr << L", final priority " << finalPriority << std::endl;
 		suggestions[suggestionCount].word = newSuggestion;
-		suggestions[suggestionCount].priority = priority * (suggestionCount + 5);
+		suggestions[suggestionCount].priority = finalPriority;
 		suggestionCount++;
 	}
 }
