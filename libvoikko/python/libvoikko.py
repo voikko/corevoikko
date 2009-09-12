@@ -1,5 +1,24 @@
 # -*- coding: utf-8 -*-
-"""Python interface to libvoikko, library of Finnish language tools."""
+"""Python interface to libvoikko, library of Finnish language tools.
+This module can be used to perform various natural language analysis
+tasks on Finnish text.
+
+An example session demonstrating the use of this module:
+
+ >>> import libvoikko
+ >>> v = libvoikko.Voikko()
+ >>> v.init()
+ >>> v.analyze(u"kissa")
+ [{'SIJAMUOTO': u'nimento', 'CLASS': u'nimisana', 'STRUCTURE': u'=ppppp'}]
+ >>> v.spell(u"kissa")
+ True
+ >>> v.suggest(u"kisssa")
+ [u'kissa', u'kissaa', u'kisassa', u'kisussa']
+ >>> v.hyphenate(u"kissa")
+ u'kis-sa'
+ >>> v.terminate()
+
+"""
 
 # Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
 # This library requires Python version 2.5 or newer.
@@ -57,7 +76,7 @@ class Token:
 	WHITESPACE = 3
 	UNKNOWN = 4
 	
-	TYPE_NAMES = ["NONE", "WORD", "PUNCTUATION", "WHITESPACE", "UNKNOWN"]
+	_TYPE_NAMES = ["NONE", "WORD", "PUNCTUATION", "WHITESPACE", "UNKNOWN"]
 	
 	def __init__(self, tokenText, tokenType):
 		self.tokenText = tokenText
@@ -65,7 +84,7 @@ class Token:
 	
 	def __repr__(self):
 		return (u"<" + self.tokenText + u"," + \
-		       Token.TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
+		       Token._TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
 
 class SuggestionStrategy:
 	"""Strategies for generating suggestions for incorrectly spelled words."""
