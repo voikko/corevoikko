@@ -26,48 +26,56 @@ using namespace libvoikko::morphology;
 
 namespace libvoikko { namespace spellchecker {
 
+static spellresult handleAnalysis(const wchar_t * word, size_t len, int &prio,
+                                  const Analysis * analysis) {
+	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
+	prio = 0;
+	for (size_t j = 0; structure[j] != L'\0'; j++) {
+		if (structure[j] == L'=') {
+			++prio;
+		}
+	}
+	return result;
+}
+    
 spellresult SpellWithPriority::spellWithPriority(const wchar_t * word, size_t len, int * prio) {
 	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
 	list<Analysis *> * analyses = analyzer->analyze(word, len);
-	if (prio != 0) *prio = 0;
+	*prio = 0;
 	
 	if (analyses->empty()) {
 		Analyzer::deleteAnalyses(analyses);
 		return SPELL_FAILED;
 	}
 	
-	spellresult best_result = SPELL_FAILED;
+	spellresult bestResult = SPELL_FAILED;
+	int bestPrio = 0;
 	list<Analysis *>::const_iterator it = analyses->begin();
 	while (it != analyses->end()) {
-		const wchar_t * structure = (*it)->getValue("STRUCTURE");
-		spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
-		if (best_result == SPELL_FAILED || best_result > result) {
-			best_result = result;
-			if (prio != 0) {
-				*prio = 0;
-				for (size_t j = 0; structure[j] != L'\0'; j++) {
-					if (structure[j] == L'=') {
-						(*prio)++;
-					}
-				}
-			}
+		int currentPrio = 0;
+		spellresult currentResult = handleAnalysis(word, len, currentPrio, *it);
+		if (bestResult == SPELL_FAILED || bestResult > currentResult) {
+			bestResult = currentResult;
+			bestPrio = currentPrio;
 		}
-		if (best_result == SPELL_OK) {
-			break;
+		else if (bestResult == currentResult) {
+			if (currentPrio < bestPrio) {
+				bestPrio = currentPrio;
+			}
 		}
 		it++;
 	}
 	Analyzer::deleteAnalyses(analyses);
+	*prio = bestPrio;
 	
-	if (prio != 0) {
-		if (best_result == SPELL_CAP_FIRST) {
-			(*prio) += 1;
-		}
-		else if (best_result == SPELL_CAP_ERROR) {
-			(*prio) += 2;
-		}
+	if (bestResult == SPELL_CAP_FIRST) {
+		(*prio) += 1;
 	}
-	return best_result;
+	else if (bestResult == SPELL_CAP_ERROR) {
+		(*prio) += 2;
+	}
+	return bestResult;
 }
     
 }}
