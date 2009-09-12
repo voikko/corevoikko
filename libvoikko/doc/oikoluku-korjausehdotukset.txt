@@ -69,6 +69,11 @@ Lopullinen painokerroin:
 Lopullinen painokerroin on edellä laskettujen painokerrointen tulo:
  p = p1 * p2 * p3 * p4
 
+Jos korjauksena ehdotetaan sanan jakamista kahteen osaan, lasketaan
+kertoimet p1, p2 ja p3 kummallekin osalle erikseen, ja lopullinen
+kerroin on
+ p = (p1_1 * p2_1 * p3_1 + p1_2 * p2_2 * p3_2) * p4
+
 Painokerrointen arvoalue on siis generoitaessa enintään 15 ehdotusta
 jotka koostuvat enimmillään 10 osasta
  [2 * 1 * 1 * 5, 60 * 10 * 3 * 19] = [10, 34200]

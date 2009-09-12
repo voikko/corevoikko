@@ -17,7 +17,7 @@
  *********************************************************************************/
 
 #include "spellchecker/suggestion/SuggestionGeneratorSplitWord.hpp"
-#include "spellchecker/spell.hpp"
+#include "spellchecker/SpellWithPriority.hpp"
 #include <wchar.h>
 #include <wctype.h>
 
@@ -37,11 +37,11 @@ void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 		if (s->getWord()[splitind-2] == L'-' || s->getWord()[splitind-1] == L'-' ||
 		    s->getWord()[splitind]   == L'-' || s->getWord()[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
-		spellresult part1_res = voikko_spell_with_priority(
+		spellresult part1_res = SpellWithPriority::spellWithPriority(
 		    part1, splitind, &prio_total);
 		s->charge();
 		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
-			spellresult part2_res = voikko_spell_with_priority(
+			spellresult part2_res = SpellWithPriority::spellWithPriority(
 			    s->getWord() + splitind,
 			    s->getWordLength() - splitind, &prio_part);
 			prio_total += prio_part;

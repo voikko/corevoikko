@@ -17,7 +17,7 @@
  *********************************************************************************/
 
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
-#include "spellchecker/spell.hpp"
+#include "spellchecker/SpellWithPriority.hpp"
 #include "utils/utils.hpp"
 #include "morphology/AnalyzerFactory.hpp"
 #include <cstdlib>
@@ -40,7 +40,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(
 	if (s->shouldAbort()) {
 		return;
 	}
-	spellresult sres = voikko_spell_with_priority(word, wlen, &prio);
+	spellresult sres = SpellWithPriority::spellWithPriority(word, wlen, &prio);
 	s->charge();
 	switch (sres) {
 		case SPELL_FAILED:

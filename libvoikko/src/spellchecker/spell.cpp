@@ -22,63 +22,17 @@
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include "morphology/AnalyzerFactory.hpp"
+#include "spellchecker/SpellUtils.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <wchar.h>
 #include <wctype.h>
 
 using namespace libvoikko::morphology;
+using namespace libvoikko::spellchecker;
 using namespace std;
 
 namespace libvoikko {
-
-/** Returns the spelling result of a word when matched against given analysis string
- *  @param word word  (does not need to be null terminated)
- *  @param len length of the word
- *  @param structure word structure from morphological analysis
- *  @return spelling result
- */
-static spellresult voikko_match_word_and_analysis(const wchar_t * word,
-        size_t len, const wchar_t * structure) {
-	char captype; /* 'i' = uppercase letter, 'p' = lowercase letter, 'v' = punctuation */
-	spellresult result = SPELL_OK;
-	size_t j = 0;
-	for (size_t i = 0; i < len; i++) {
-		while (structure[j] == L'=') {
-			j++;
-		}
-		if (structure[j] == L'\0') {
-			break;
-		}
-		
-		if (iswupper(word[i])) {
-			captype = 'i';
-		}
-		else if (iswlower(word[i])) {
-			captype = 'p';
-		}
-		else {
-			captype = 'v';
-		}
-		
-		if (captype == 'p' && (structure[j] == L'i' || structure[j] == L'j')) {
-			if (i == 0) {
-				result = SPELL_CAP_FIRST;
-			}
-			else {
-				result = SPELL_CAP_ERROR;
-			}
-		}
-		if (captype == 'i' && (structure[j] == L'p' || structure[j] == L'q')) {
-			result = SPELL_CAP_ERROR;
-		}
-		if (result == SPELL_CAP_ERROR) {
-			break;
-		}
-		j++;
-	}
-	return result;
-}
 
 spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio) {
 	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
@@ -94,7 +48,7 @@ spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * p
 	list<Analysis *>::const_iterator it = analyses->begin();
 	while (it != analyses->end()) {
 		const wchar_t * structure = (*it)->getValue("STRUCTURE");
-		spellresult result = voikko_match_word_and_analysis(word, len, structure);
+		spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
 		if (best_result == SPELL_FAILED || best_result > result) {
 			best_result = result;
 			if (prio != 0) {
@@ -196,7 +150,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 				j++;
 			}
 			if (i == leading_len) {
-				spellresult spres = voikko_match_word_and_analysis(buffer, len - 1, structure);
+				spellresult spres = SpellUtils::matchWordAndAnalysis(buffer, len - 1, structure);
 				if (structure[j] == L'=' && (result_with_border == SPELL_FAILED ||
 				    result_with_border > spres)) {
 					result_with_border = spres;

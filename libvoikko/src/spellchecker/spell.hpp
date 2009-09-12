@@ -46,15 +46,6 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len);
  */
 spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len);
 
-/** Checks the spelling of given word. This function does not accept optional hyphens.
- * @param word word to check (does not need to be null terminated)
- * @param len length of the word to check
- * @param prio pointer to an integer that will be set to contain the priority of the result
- *             when words are listed as suggestions for a misspelled word
- * @return spelling result
- */
-spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio);
-
 /** Checks the spelling of given word and uses cache if possible
  * @param word word to check. Word does not need to be null terminated and it must
  *             not contain upper case letters

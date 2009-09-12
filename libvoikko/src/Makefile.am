@@ -3,6 +3,8 @@ AUTOMAKE_OPTIONS=subdir-objects
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = \
     spellchecker/spell.cpp spellchecker/suggestions.cpp \
+    spellchecker/SpellWithPriority.cpp \
+    spellchecker/SpellUtils.cpp \
     spellchecker/suggestion/Suggestion.cpp \
     spellchecker/suggestion/SuggestionStatus.cpp \
     spellchecker/suggestion/SuggestionGeneratorCaseChange.cpp \
@@ -79,6 +81,8 @@ noinst_HEADERS = \
     character/charset.hpp \
     hyphenator/hyphenator.hpp voikko_defs.h porting.h \
     spellchecker/spell.hpp \
+    spellchecker/SpellWithPriority.hpp \
+    spellchecker/SpellUtils.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \
     spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp \
