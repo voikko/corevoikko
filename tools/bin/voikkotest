@@ -304,6 +304,9 @@ def suggestion_tests(voikko):
 						print u'Suggestion test failed for "%s" in section [%s]: ' \
 						u'"%s" expected.' % (parts[0], section, expresult)
 						failcount = failcount + 1
+					else:
+						i = suggestions.index(expresult)
+						suggestions = suggestions[i+1:]
 		inputfile.close()
 		if failcount == 0:
 			print u"All %i suggestion tests were successful." % testcount

@@ -1,14 +1,23 @@
+# Rivillä ensimmäinen sana on se, jolle korjausehdotuksia haetaan.
+# Rivin loput sanat ovat joko kiellettyjä korjausehdotuksia (huutomerkki
+# sanan alussa) tai vaadittuja korjausehdotuksia (ei huutomerkkiä sanan
+# alussa).
+# Sanojen järjestys rivillä vaikuttaa siten, että vaaditun korjausehdotuksen
+# jälkeen tulevien sanojen on löydyttävä (tai ne eivät saa löytyä)
+# korjausehdotuksista kyseisen sanan jälkeen.
+
 []
 Annna	Anna
-hkoira	koira	!h-koira
-marko	Marko	!marko
-keski-ranska	keski-Ranska	!keski-ranska
-kerros-talo	kerrostalo	!kerros- talo	!kerros -talo
-kuormaauto	kuorma-auto	kuorma auto
-ras'an	raa'an	!raa’an
-ras’an	raa’an	!raa'an
-kuorma-audo	kuorma-auto	!kuorma‐auto
-kuorma‐audo	kuorma‐auto	!kuorma-auto
+hkoira	!h-koira	koira
+marko	!marko	Marko
+keski-ranska	!keski-ranska	keski-Ranska
+kerros-talo	!kerros- talo	!kerros -talo	kerrostalo
+kuormaauto	kuorma-auto
+kuormaauto	kuorma auto
+ras'an	!raa’an	raa'an
+ras’an	!raa'an	raa’an
+kuorma-audo	!kuorma‐auto	kuorma-auto
+kuorma‐audo	!kuorma-auto	kuorma‐auto
 23.24	23,24
 etelä-afrikka	Etelä-Afrikka
 natsi-saksa	natsi-Saksa
@@ -27,7 +36,7 @@ Sstami	Aatami
 hyppoo	hyppii
 
 [voikko.setIgnoreDot(True)]
-koirra.	koira.	!koira
+koirra.	!koira	koira.
 
 [voikko.setSuggestionStrategy(SuggestionStrategy.OCR)]
 Män_sälä	Mäntsälä
