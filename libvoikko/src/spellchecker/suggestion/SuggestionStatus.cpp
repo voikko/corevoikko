@@ -60,7 +60,7 @@ void SuggestionStatus::charge() {
 void SuggestionStatus::addSuggestion(const wchar_t * newSuggestion, int priority) {
 	if (suggestionCount < maxSuggestions) {
 		suggestions[suggestionCount].word = newSuggestion;
-		suggestions[suggestionCount].priority = priority;
+		suggestions[suggestionCount].priority = priority * (suggestionCount + 5);
 		suggestionCount++;
 	}
 }

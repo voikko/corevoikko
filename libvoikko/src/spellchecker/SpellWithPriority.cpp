@@ -26,16 +26,42 @@ using namespace libvoikko::morphology;
 
 namespace libvoikko { namespace spellchecker {
 
-static spellresult handleAnalysis(const wchar_t * word, size_t len, int &prio,
-                                  const Analysis * analysis) {
-	const wchar_t * structure = analysis->getValue("STRUCTURE");
-	spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
-	prio = 0;
+static int getPriorityFromWordClassAndInflection(const Analysis * analysis) {
+	// TODO
+	return 1;
+}
+
+static int getPriorityFromStructure(const wchar_t * structure) {
+	int prio = 0;
 	for (size_t j = 0; structure[j] != L'\0'; j++) {
 		if (structure[j] == L'=') {
 			++prio;
 		}
 	}
+	return prio;
+}
+
+static int getPriorityFromSpellResult(spellresult result) {
+	switch (result) {
+		case SPELL_OK:
+			return 1;
+		case SPELL_CAP_FIRST:
+			return 2;
+		case SPELL_CAP_ERROR:
+			return 3;
+		default:
+			// should not happen
+			return 1;
+	}
+}
+
+static spellresult handleAnalysis(const wchar_t * word, size_t len, int &prio,
+                                  const Analysis * analysis) {
+	prio = getPriorityFromWordClassAndInflection(analysis);
+	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	prio *= getPriorityFromStructure(structure);
+	spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
+	prio *= getPriorityFromSpellResult(result);
 	return result;
 }
     
@@ -69,12 +95,6 @@ spellresult SpellWithPriority::spellWithPriority(const wchar_t * word, size_t le
 	Analyzer::deleteAnalyses(analyses);
 	*prio = bestPrio;
 	
-	if (bestResult == SPELL_CAP_FIRST) {
-		(*prio) += 1;
-	}
-	else if (bestResult == SPELL_CAP_ERROR) {
-		(*prio) += 2;
-	}
 	return bestResult;
 }
     
