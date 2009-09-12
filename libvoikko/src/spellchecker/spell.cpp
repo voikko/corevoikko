@@ -34,10 +34,9 @@ using namespace std;
 
 namespace libvoikko {
 
-spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * prio) {
+static spellresult bestAnalysis(const wchar_t * word, size_t len) {
 	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
 	list<Analysis *> * analyses = analyzer->analyze(word, len);
-	if (prio != 0) *prio = 0;
 	
 	if (analyses->empty()) {
 		Analyzer::deleteAnalyses(analyses);
@@ -51,14 +50,6 @@ spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * p
 		spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
 		if (best_result == SPELL_FAILED || best_result > result) {
 			best_result = result;
-			if (prio != 0) {
-				*prio = 0;
-				for (size_t j = 0; structure[j] != L'\0'; j++) {
-					if (structure[j] == L'=') {
-						(*prio)++;
-					}
-				}
-			}
 		}
 		if (best_result == SPELL_OK) {
 			break;
@@ -67,14 +58,6 @@ spellresult voikko_spell_with_priority(const wchar_t * word, size_t len, int * p
 	}
 	Analyzer::deleteAnalyses(analyses);
 	
-	if (prio != 0) {
-		if (best_result == SPELL_CAP_FIRST) {
-			(*prio) += 1;
-		}
-		else if (best_result == SPELL_CAP_ERROR) {
-			(*prio) += 2;
-		}
-	}
 	return best_result;
 }
 
@@ -82,7 +65,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	spellresult result_with_border = SPELL_FAILED;
 	spellresult result_without_border = SPELL_FAILED;
 	
-	enum spellresult result = voikko_spell_with_priority(word, len, 0);
+	enum spellresult result = bestAnalysis(word, len);
 	const wchar_t * hyphen_pos;
 	if (result != SPELL_OK && len > 3) {
 		hyphen_pos = wmemchr(word + 1, L'-', len - 2);
@@ -117,7 +100,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
 			    towlower(word[leading_len + 1]) == vctest1 &&
 			    towlower(word[leading_len + 2]) == vctest2) {
-				spellresult spres = voikko_spell_with_priority(buffer, len - 1, 0);
+				spellresult spres = bestAnalysis(buffer, len - 1);
 				if (spres != SPELL_FAILED && (result == SPELL_FAILED || result > spres)) {
 					delete[] buffer;
 					return spres;
