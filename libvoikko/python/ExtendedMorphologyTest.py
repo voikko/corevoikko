@@ -37,26 +37,43 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		analysisList = self.voikko.analyze(u"kissoille")
 		analysis = self._assertSingletonAndGetItem(analysisList)
 		self.assertEqual(u"kissa", analysis["BASEFORM"])
+		self.assertEqual(u"+kissa(w505527)", analysis["WORDIDS"])
+		self.assertEqual(u"+kissa(kissa)", analysis["WORDBASES"])
 	
-	def testBaseFormForCompoundWord(self):
+	def testBaseFormForCompoundWord1(self):
 		analysisList = self.voikko.analyze(u"vatsaneläkeruokaa")
 		analysis = self._assertSingletonAndGetItem(analysisList)
 		self.assertEqual(u"vatsaneläkeruoka", analysis["BASEFORM"])
+		self.assertEqual(u"+vatsa(w517091)+n+eläke(w501226)+ruoka", analysis["WORDIDS"])
+		self.assertEqual(u"+vatsa(vatsa)+n+eläke(eläke)+ruoka(ruoka)", analysis["WORDBASES"])
+	
+	def testBaseFormForCompoundWord1(self):
+		analysisList = self.voikko.analyze(u"hevosrakenteinen")
+		analysis = self._assertSingletonAndGetItem(analysisList)
+		self.assertEqual(u"hevosrakenteinen", analysis["BASEFORM"])
+		self.assertEqual(u"+hevos(w502479)+rakenteinen(w528468)", analysis["WORDIDS"])
+		self.assertEqual(u"+hevos(hevonen)+rakenteinen(rakenteinen)", analysis["WORDBASES"])
 	
 	def testBaseFormForNounDerivedFromVerb(self):
 		analysisList = self.voikko.analyze(u"hyppijässä")
 		analysis = self._assertSingletonAndGetItem(analysisList)
 		self.assertEqual(u"hyppijä", analysis["BASEFORM"])
+		self.assertEqual(u"+hyppi(w503034)+jä", analysis["WORDIDS"])
+		self.assertEqual(u"+hyppi(hyppijä)+jä", analysis["WORDBASES"])
 	
 	def testBaseFormForNumeral(self):
 		analysisList = self.voikko.analyze(u"kahdellakymmenelläseitsemällä")
 		analysis = self._assertSingletonAndGetItem(analysisList)
 		self.assertEqual(u"kaksikymmentäseitsemän", analysis["BASEFORM"])
+		self.assertFalse("WORDIDS" in analysis)
+		self.assertFalse("WORDBASES" in analysis)
 	
 	def testBaseFormForWordHavingNoInflectins(self):
 		analysisList = self.voikko.analyze(u"koska")
 		analysis = self._assertSingletonAndGetItem(analysisList)
 		self.assertEqual(u"koska", analysis["BASEFORM"])
+		self.assertFalse("WORDIDS" in analysis)
+		self.assertEqual(u"+koska(koska)", analysis["WORDBASES"])
 
 
 if __name__ == "__main__":

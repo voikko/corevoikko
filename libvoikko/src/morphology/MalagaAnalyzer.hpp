@@ -51,6 +51,7 @@ class MalagaAnalyzer : public Analyzer {
 		void parseClass(Analysis * &analysis, malaga::value_t &result) const;
 		void parsePerusmuoto(Analysis * &analysis, malaga::value_t &result) const;
 		wchar_t * parseBaseform(wchar_t * &perusmuoto) const;
+		wchar_t * parseAttributeFromPerusmuoto(wchar_t * &perusmuoto, wchar_t id) const;
 		static void initSymbols();
 		
 		static bool symbolsInited;

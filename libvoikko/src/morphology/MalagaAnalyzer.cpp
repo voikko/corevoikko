@@ -172,9 +172,17 @@ void MalagaAnalyzer::parsePerusmuoto(Analysis * &analysis, value_t &result) cons
 	wchar_t * perusmuoto = StringUtils::ucs4FromUtf8(value);
 	free(value);
 	wchar_t * baseForm = parseBaseform(perusmuoto);
+	wchar_t * wordIds = parseAttributeFromPerusmuoto(perusmuoto, L's');
+	wchar_t * wordBases = parseAttributeFromPerusmuoto(perusmuoto, L'p');
 	delete[] perusmuoto;
 	if (baseForm) {
 		analysis->addAttribute("BASEFORM", baseForm);
+	}
+	if (wordIds) {
+		analysis->addAttribute("WORDIDS", wordIds);
+	}
+	if (wordBases) {
+		analysis->addAttribute("WORDBASES", wordBases);
 	}
 }
 
@@ -207,6 +215,48 @@ wchar_t * MalagaAnalyzer::parseBaseform(wchar_t * &perusmuoto) const {
 	}
 	baseForm[posBaseForm] = L'\0';
 	return baseForm;
+}
+
+wchar_t * MalagaAnalyzer::parseAttributeFromPerusmuoto(wchar_t * &perusmuoto, wchar_t id) const {
+	size_t lenPerusmuoto = wcslen(perusmuoto);
+	wchar_t * attribute = new wchar_t[lenPerusmuoto + 1];
+	size_t posAttribute = 0;
+	bool foundAttribute = false;
+	for (size_t i = 0; i < lenPerusmuoto;) {
+		if (perusmuoto[i] == L'+') {
+			attribute[posAttribute++] = perusmuoto[i++]; // '+'
+			while (i < lenPerusmuoto && perusmuoto[i] != L'+' && perusmuoto[i] != L'(') {
+				attribute[posAttribute++] = perusmuoto[i++];
+			}
+			while (perusmuoto[i] == L'(') {
+				if (perusmuoto[++i] == id) {
+					foundAttribute = true;
+					attribute[posAttribute++] = L'(';
+					i += 2; // pass attribute id and '='
+					while (i < lenPerusmuoto && perusmuoto[i] != L')') {
+						attribute[posAttribute++] = perusmuoto[i++];
+					}
+					attribute[posAttribute++] = perusmuoto[i++]; // ')'
+				}
+				else {
+					passAttribute(perusmuoto, i);
+				}
+			}
+		}
+		else {
+			// Something is wrong with perusmuoto, do not return attribute
+			delete[] attribute;
+			return 0;
+		}
+	}
+	if (foundAttribute) {
+		attribute[posAttribute] = L'\0';
+		return attribute;
+	}
+	else {
+		delete[] attribute;
+		return 0;
+	}
 }
 
 } }

@@ -1,7 +1,9 @@
 2009-09-13 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Return base form from morphological analysis if possible.
+	* Return BASEFORM from morphological analysis if possible.
 	  Requires debug version of suomi-malaga.
+	* Return WORDIDS and WORDBASES from morphological analysis
+	  if possible.
 
 2009-09-12 Harri Pitkänen <hatapitk@iki.fi>
 
