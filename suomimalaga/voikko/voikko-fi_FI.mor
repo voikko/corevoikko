@@ -1741,7 +1741,7 @@ subrule rakenne ($tietue, $pienet_kirjaimet):
   return $tuloste;
 end;
 
-subrule tulostus_voikko ($tietue):
+subrule tulostus_rakenne ($tietue):
   define $tuloste := "";
   define $tlen := length($tietue);
   define $tind := 0;
@@ -1827,11 +1827,119 @@ subrule tulostus_sijamuoto($tietue):
   return nil;
 end;
 
+subrule debug_lukusanan_perusmuodon_osa ($tietue):
+  if ($tietue.perusmuoto = "kymmenen") then
+    return "kymmentä";
+  elseif ($tietue.perusmuoto = "tuhat") then
+    return "tuhatta";
+  elseif ($tietue.perusmuoto in <"sata", "miljoona", "miljardi", "biljoona", "triljoona">) then
+    return $tietue.perusmuoto + "a";
+  else
+    if ($tietue.perusmuoto = nil) then
+      return $tietue.alku;
+    else
+      return $tietue.perusmuoto;
+    end;
+  end;
+end;
+
+subrule debug_lukusanan_perusmuoto ($tietue, $i, $k, $s):
+  # Kopioitu Hannu Väisäsen Sukija-versiosta
+  if ($i = 1 and $tietue.$i.perusmuoto in <"sata", "tuhat", "miljoona", "miljardi", "biljoona", "triljoona">) then
+    return $tietue.$i.perusmuoto;
+  end;
+
+  if ($tietue.$i.luokka = lukusanan_jälkiliite) then
+    return $tietue.$i.perusmuoto;
+  end;
+
+  if ($tietue.$i.alaluokka = yksiyhdeksän) then
+    if (($k greater 2) and ($i less $k) and ($tietue.($i+1).luokka = sijapääte) and ($tietue.($i+2).luokka /= lukusana)) then
+      return $tietue.$i.alku;
+    else
+      return $tietue.$i.perusmuoto;
+    end;
+  elseif ($tietue.$i.perusmuoto = "kymmenen") then
+    if (($i = $k) and (($s matches ".+sataa") or ($s = "sata"))) then
+      return "kymmenen";
+    else
+      return "kymmentä";
+    end;
+  elseif ($tietue.$i.perusmuoto in <"kymmenen", "sata", "tuhat", "miljoona", "miljardi", "biljoona", "triljoona">) then
+    if ($tietue.($i+1).luokka in <lukusana, sijapääte>) then
+      return debug_lukusanan_perusmuodon_osa($tietue.$i);
+    else
+      return $tietue.$i.perusmuoto;
+    end;
+  elseif ($tietue.$i.luokka = sijapääte) then
+    if ($i less $k and $tietue.($i+1).luokka in <lukusana, lukusanan_jälkiliite>) then
+      return "";
+    else
+      return $tietue.$i.alku;
+    end;
+  end;
+  if ($tietue.$i.perusmuoto = nil) then
+    return $tietue.$i.alku;
+  else
+    return $tietue.$i.perusmuoto;
+  end;
+end;
+
+subrule tulostus_debug_perusmuoto($tietue):
+  # Kopioitu Hannu Väisäsen Sukija-versiosta
+  define $n := length ($tietue);
+  define $k := $n;
+
+  # Poistetaan sanan lopusta osat, jotka eivät vaikuta perusmuotoon.
+  #
+  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
+                                      omistusliite, kaksoispiste,
+                                      voittoaste, yliaste,
+                                      nimitapa_1_pitkä, nimitapa_5>
+                                      + @tositavan_tekijäpääte_4 + @kertoman_tekijäpääte
+                                      + @kestämän_tekijäpääte + @ehtotapa + @mahtotapa + @käskytapa
+                                      + @nimitapa_1 + @nimitapa_2 + @nimitapa_3);
+    $k :=- 1;
+  end;
+
+  define $s := "";
+  foreach $i in $k - 1:
+    if ($tietue.$i.lukutyyppi /= nil and $tietue.$i.lukutyyppi = perusluku) then
+      $s :=+ debug_lukusanan_perusmuoto ($tietue, $i, $k, $s);
+    else
+      if ($tietue.$i.perusmuoto = nil) then
+        $s :=+ $tietue.$i.alku;
+      else
+        $s :=+ $tietue.$i.perusmuoto;
+      end;
+    end;
+  end;
+  if ($k = 1) then
+    if ($tietue.$k.perusmuoto = nil) then
+      $s :=+ $tietue.$k.alku;
+    else
+      $s :=+ $tietue.$k.perusmuoto;
+    end;
+  elseif ($tietue.$k.lukutyyppi /= nil and $tietue.$k.lukutyyppi = perusluku) then
+    $s :=+ debug_lukusanan_perusmuoto ($tietue, $k, $k, $s);
+  else
+    $s :=+ debug_lukusanan_perusmuodon_osa($tietue.$k);
+  end;
+  return $s;
+end;
+
+
 subrule tulostus_v2($tietue):
-  return [rakenne: tulostus_voikko($tietue),
-          luokka:  tulostus_luokka($tietue),
-          sijamuoto: tulostus_sijamuoto($tietue),
-          tiedot: $tietue];
+  if switch(voikko_debug) then
+    return [rakenne: tulostus_rakenne($tietue),
+            luokka:  tulostus_luokka($tietue),
+            sijamuoto: tulostus_sijamuoto($tietue),
+            perusmuoto: tulostus_debug_perusmuoto($tietue)];
+  else
+    return [rakenne: tulostus_rakenne($tietue),
+            luokka:  tulostus_luokka($tietue),
+            sijamuoto: tulostus_sijamuoto($tietue)];
+  end;
 end;
 
 pruning_rule prune ($list):

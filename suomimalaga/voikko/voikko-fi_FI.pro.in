@@ -46,6 +46,7 @@ malaga: set use-display yes
 malaga: set mor-pruning 30
 mallex: set switch malli voikko
 mallex: set switch voikko_debug VOIKKO_DEBUG
+malaga: set switch voikko_debug VOIKKO_DEBUG
 mallex: set switch voikko_murre VOIKKO_MURRE
 malaga: set mor-incomplete no
 ## End-Internal-Configuration
