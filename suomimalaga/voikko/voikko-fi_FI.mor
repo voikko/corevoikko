@@ -1827,6 +1827,14 @@ subrule tulostus_sijamuoto($tietue):
   return nil;
 end;
 
+subrule debug_sanan_perusmuodon_osa ($tietue):
+    if ($tietue.perusmuoto = nil) then
+      return $tietue.alku;
+    else
+      return $tietue.perusmuoto;
+    end;
+end;
+
 subrule debug_lukusanan_perusmuodon_osa ($tietue):
   if ($tietue.perusmuoto = "kymmenen") then
     return "kymmentä";
@@ -1835,11 +1843,7 @@ subrule debug_lukusanan_perusmuodon_osa ($tietue):
   elseif ($tietue.perusmuoto in <"sata", "miljoona", "miljardi", "biljoona", "triljoona">) then
     return $tietue.perusmuoto + "a";
   else
-    if ($tietue.perusmuoto = nil) then
-      return $tietue.alku;
-    else
-      return $tietue.perusmuoto;
-    end;
+    return debug_sanan_perusmuodon_osa($tietue);
   end;
 end;
 
@@ -1878,11 +1882,7 @@ subrule debug_lukusanan_perusmuoto ($tietue, $i, $k, $s):
       return $tietue.$i.alku;
     end;
   end;
-  if ($tietue.$i.perusmuoto = nil) then
-    return $tietue.$i.alku;
-  else
-    return $tietue.$i.perusmuoto;
-  end;
+  return debug_sanan_perusmuodon_osa($tietue.$i);
 end;
 
 subrule tulostus_debug_perusmuoto($tietue):
@@ -1907,19 +1907,11 @@ subrule tulostus_debug_perusmuoto($tietue):
     if ($tietue.$i.lukutyyppi /= nil and $tietue.$i.lukutyyppi = perusluku) then
       $s :=+ debug_lukusanan_perusmuoto ($tietue, $i, $k, $s);
     else
-      if ($tietue.$i.perusmuoto = nil) then
-        $s :=+ $tietue.$i.alku;
-      else
-        $s :=+ $tietue.$i.perusmuoto;
-      end;
+      $s :=+ debug_sanan_perusmuodon_osa($tietue.$i);
     end;
   end;
   if ($k = 1) then
-    if ($tietue.$k.perusmuoto = nil) then
-      $s :=+ $tietue.$k.alku;
-    else
-      $s :=+ $tietue.$k.perusmuoto;
-    end;
+    $s :=+ debug_sanan_perusmuodon_osa($tietue.$k);
   elseif ($tietue.$k.lukutyyppi /= nil and $tietue.$k.lukutyyppi = perusluku) then
     $s :=+ debug_lukusanan_perusmuoto ($tietue, $k, $k, $s);
   else
