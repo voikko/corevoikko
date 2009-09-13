@@ -24,7 +24,7 @@ import libvoikko
 class ExtendedMorphologyTest(unittest.TestCase):
 	def setUp(self):
 		self.voikko = libvoikko.Voikko()
-		self.voikko.init(variant = "standard+allextensions")
+		self.voikko.init(variant = "standard+debug")
 	
 	def tearDown(self):
 		self.voikko.terminate()

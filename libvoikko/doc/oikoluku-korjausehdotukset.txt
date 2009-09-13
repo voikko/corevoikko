@@ -52,6 +52,13 @@ käyttöön on tehtävä, jotta sana olisi oikein kirjoitettu.
  Jos sanan kirjainkokoon on tehtävä muita muutoksia kuin ensimmäisen
  kirjaimen muuttaminen isoksi, p3 = 3.
 
+Monikäsitteiset sanat:
+
+Jos sanalla on useita analyysejä, valitaan painokertoimet siitä
+analyysistä, jonka painokerroin p3 on pienin. Jos näitäkin on useita,
+valitaan se analyysi, jonka painokertoimien tulo p1 * p2 * p3 on
+pienin.
+
 Vaihe 4:
 
 Korjausehdotusten generointijärjestys Voikossa on sellainen, että
