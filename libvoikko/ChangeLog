@@ -1,3 +1,8 @@
+2009-09-13 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Return base form from morphological analysis if possible.
+	  Requires debug version of suomi-malaga.
+
 2009-09-12 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Improve spelling suggestion by sorting them

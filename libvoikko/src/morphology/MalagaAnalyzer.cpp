@@ -54,6 +54,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 		parseStructure(analysis, res);
 		parseSijamuoto(analysis, res);
 		parseClass(analysis, res);
+		parsePerusmuoto(analysis, res);
 		analysisList->push_back(analysis);
 		res = next_analysis_result();
 	}
@@ -88,6 +89,9 @@ void MalagaAnalyzer::initSymbols() {
 				break;
 			case MS_CLASS:
 				symbolName = "luokka";
+				break;
+			case MS_PERUSMUOTO:
+				symbolName = "perusmuoto";
 				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
@@ -157,6 +161,52 @@ void MalagaAnalyzer::parseClass(Analysis * &analysis, value_t &result) const {
 	if (className) {
 		analysis->addAttribute("CLASS", StringUtils::copy(className));
 	}
+}
+
+void MalagaAnalyzer::parsePerusmuoto(Analysis * &analysis, value_t &result) const {
+	value_t perusmuotoVal = get_attribute(result, symbols[MS_PERUSMUOTO]);
+	if (!perusmuotoVal) {
+		return;
+	}
+	char * value = get_value_string(perusmuotoVal);
+	wchar_t * perusmuoto = StringUtils::ucs4FromUtf8(value);
+	free(value);
+	wchar_t * baseForm = parseBaseform(perusmuoto);
+	delete[] perusmuoto;
+	if (baseForm) {
+		analysis->addAttribute("BASEFORM", baseForm);
+	}
+}
+
+static void passAttribute(wchar_t * &perusmuoto, size_t &index) {
+	while (perusmuoto[index] != L')' && perusmuoto[index] != L'\0') {
+		++index;
+	}
+	++index;
+}
+
+wchar_t * MalagaAnalyzer::parseBaseform(wchar_t * &perusmuoto) const {
+	size_t lenPerusmuoto = wcslen(perusmuoto);
+	wchar_t * baseForm = new wchar_t[lenPerusmuoto + 1];
+	size_t posBaseForm = 0;
+	for (size_t i = 0; i < lenPerusmuoto;) {
+		if (perusmuoto[i] == L'+') {
+			++i;
+			while (i < lenPerusmuoto && perusmuoto[i] != L'+' && perusmuoto[i] != L'(') {
+				baseForm[posBaseForm++] = perusmuoto[i++];
+			}
+			while (perusmuoto[i] == L'(') {
+				passAttribute(perusmuoto, i);
+			}
+		}
+		else {
+			// Something is wrong with perusmuoto, do not return a base form
+			delete[] baseForm;
+			return 0;
+		}
+	}
+	baseForm[posBaseForm] = L'\0';
+	return baseForm;
 }
 
 } }

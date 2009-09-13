@@ -29,6 +29,7 @@ enum MalagaSymbol {
 	MS_RAKENNE,
 	MS_SIJAMUOTO,
 	MS_CLASS,
+	MS_PERUSMUOTO,
 	MS_LAST_SYMBOL
 };
 
@@ -48,6 +49,8 @@ class MalagaAnalyzer : public Analyzer {
 		void parseStructure(Analysis * &analysis, malaga::value_t &result) const;
 		void parseSijamuoto(Analysis * &analysis, malaga::value_t &result) const;
 		void parseClass(Analysis * &analysis, malaga::value_t &result) const;
+		void parsePerusmuoto(Analysis * &analysis, malaga::value_t &result) const;
+		wchar_t * parseBaseform(wchar_t * &perusmuoto) const;
 		static void initSymbols();
 		
 		static bool symbolsInited;
