@@ -133,26 +133,15 @@ def get_wordform_infl_vowel_type(wordform):
 def get_preference(prefname):
 	u'Returns the value of given preference'
 	try:
-		import voikko_dev_prefs
-		if prefname == 'svnroot' and hasattr(voikko_dev_prefs, 'svnroot'):
-			return voikko_dev_prefs.svnroot
-		if prefname == 'voikkotest_dir' and hasattr(voikko_dev_prefs, 'voikkotest_dir'):
-			return voikko_dev_prefs.voikkotest_dir
-		if prefname == 'voikkotest_build_options' and hasattr(voikko_dev_prefs, 'voikkotest_build_options'):
-			return voikko_dev_prefs.voikkotest_build_options
-		if prefname == 'voikko_data_dir' and hasattr(voikko_dev_prefs, 'voikko_data_dir'):
-			return voikko_dev_prefs.voikko_data_dir
-		if prefname == 'encoding' and hasattr(voikko_dev_prefs, 'encoding'):
-			return voikko_dev_prefs.encoding
-		if prefname == 'libvoikko_bin' and hasattr(voikko_dev_prefs, 'libvoikko_bin'):
-			return voikko_dev_prefs.libvoikko_bin
-		if prefname == 'diffviewcmd' and hasattr(voikko_dev_prefs, 'diffviewcmd'):
-			return voikko_dev_prefs.diffviewcmd
+		prefs = __import__("voikko_dev_prefs")
+		if hasattr(prefs, prefname):
+			return eval("prefs." + prefname)
 	except ImportError:
 		pass
 	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'voikkotest_build_options': return ''
+	if prefname == 'voikkotest_sm_destdir': return None
 	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'

@@ -19,6 +19,11 @@
 # Build options used when calling "make voikko"
 #voikkotest_build_options=''
 
+# Directory where Suomi-malaga is installed using
+# "make voikko-install" after it has been built during automated
+# tests. None means that installation is not performed.
+#voikkotest_sm_destdir=None
+
 # Data directory for voikko
 #voikko_data_dir='/home/uname/svn/voikko/trunk/data'
 
