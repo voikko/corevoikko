@@ -93,7 +93,8 @@ allo_rule generate_allos ($tietue):
 
   # Tunnistetaan yhdyssanoina.
   #
-  if ($tietue.perusmuoto in <"Itämeri">) then
+  if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
+                             "Itämeri", "itävaltalainen">) then
     stop;
   end;
 
@@ -102,7 +103,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
-                             "maa", "meri", "mäki", "niemi", "polku", "puisto",
+                             "maa", "meri", "mäki", "niemi", "polku", "puistikko", "puisto",
                              "ranta", "rinne", "saari", "sarvi", "selkä",
                              "tie", "torni", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
@@ -193,7 +194,7 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.luokka = lukusana) then
     if ($tietue.alaluokka in <erikoisluku, toista>) then
-      $tietue.jatko :=+ <yhdyssana>;
+      $tietue.jatko :=+ <yhdyssana, tavuviiva>;
     end;
   end;
 

@@ -74,3 +74,9 @@ diff:
 
 cp1:
 	cp k1 ../../koesanat1.out; cp k2 ../../koesanat2.out
+
+kdiff:
+	gawk -F'"' '{print $2, $3}' ~/koe*1.out >k1a
+	gawk -F'"' '{print $2, $3}' ~/koe*2.out >k2a
+	gawk -F'"' '{print $2, $3}' k1 >k1b
+	gawk -F'"' '{print $2, $3}' k2 >k2b

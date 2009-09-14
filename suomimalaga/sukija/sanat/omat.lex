@@ -769,7 +769,21 @@
 [perusmuoto: "Larioja", alku: "Larioj", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Larivaara", alku: "Larivaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Lotila", alku: "Lotil", luokka: paikannimi, jatko: <apila>, äs: a];
-
+[perusmuoto: "Jenisei", alku: "Jenise", luokka: paikannimi, jatko: <pii>, äs: a];
+[perusmuoto: "Evita", alku: "Evit", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "sei", alku: "se", luokka: nimisana, jatko: <pii>, äs: ä, tiedot: <ei_ys>];
+[perusmuoto: "iTunes", alku: "iTunes", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Diogenes", alku: "Diogene", luokka: etunimi, jatko: <kirves>, äs: aä];
+[perusmuoto: "pakko", alku: "pakosti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "Sinope", alku: "Sinope", luokka: paikannimi, jatko: <nalle>, äs: a];
+[perusmuoto: "Dragsvik", alku: "Dragsvik", luokka: paikannimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Gutenberg", alku: "Gutenberg", luokka: sukunimi, jatko: <kalsium>, äs: aä];
+[perusmuoto: "Abba", alku: "Abb", luokka: nimi, jatko: <kala>, äs: a];
+[perusmuoto: "abolitionismi", alku: "abolitionism", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "abolitionisti", alku: "abolitionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
+[perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
+[perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
+[perusmuoto: "toiseus", alku: "toiseu", luokka: nimisana, jatko: <kalleus>, äs: a];
 
 [perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];

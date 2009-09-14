@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2007-2008	Teemu Likonen <tlikonen@iki.fi>
+# Tekijänoikeus © 2007-2009	Teemu Likonen <tlikonen@iki.fi>
 # 				Hannu Väisänen
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
@@ -54,6 +54,7 @@
 [perusmuoto: "haku", alku: "ha'u", luokka: nimisana, jatko: <vajanto_ittA, keinonto_in> + @sija_monikko_1 + @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "Kangasala", alku: "Kangasa", luokka: paikannimi, jatko: @ulkopaikallissijat, äs: a, rakenne: "=ippppp=ppp"]; # Kangasalla
 [perusmuoto: "kappale", alku: "kappal", luokka: nimisana, jatko: <omanto_ten>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "kultanen", alku: "kultasemme", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kultanen", alku: "kultaseni", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kultanen", alku: "kultasenne", luokka: nimisana, jatko: <loppu, liitesana>, äs: a, tiedot: <ei_sukija>];

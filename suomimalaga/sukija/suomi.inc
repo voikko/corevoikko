@@ -177,7 +177,7 @@ define @lukusana := <lukusana>;
 #define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
 #                                  etuliite, tavuviiva>;
 
-define @yhdyssana := <yhdyssana>;
+define @yhdyssana := <yhdyssana, tavuviiva>;
 
 #define @lukusana1_jatko := <lukusana3, omistusliite, liitesana, loppu> + @yhdyssana;
 #define @lukusana2_jatko := <omistusliite, liitesana, loppu>;

@@ -35,13 +35,11 @@ alkuperäisteksti
 allekirjoittaa
 alleviivata
 ambrosialainen
-amerikanenglanti
-amerikanenglantilainen
-amerikanjuutalainen
-amerikanrauta
-amerikansalaatti
-amerikansuomalainen
-amerikansuomi
+#amerikanenglanti
+#amerikanenglantilainen
+#amerikanrauta
+#amerikansalaatti
+#amerikansuomi
 ammattilainen
 antikolinerginen
 apulainen
@@ -195,6 +193,7 @@ itkettyä
 itsesäätyvä
 itsetutkiskelu
 itäsaksalainen
+Itävalta
 Jaala
 jakauma
 Jalasjärvi
@@ -370,6 +369,7 @@ kuvaamataito
 kyllästyttää
 Kylmäkoski
 kyläläinen
+kylvö
 kymmenvuotinen
 Kytö
 kyyditys
@@ -421,6 +421,8 @@ Lappeenranta
 Lappi
 laskeutuma
 latauma
+latinalainen
+latinalaisamerikkalainen
 latoma
 latomahaka
 latomakone
@@ -522,6 +524,7 @@ Mela
 meltorauta
 Merijärvi
 Merikanto
+Merituuli
 Metso
 metsäläinen
 mielipide
@@ -861,6 +864,7 @@ Unkari
 uppoama
 Urho
 uurteisvalas
+Uusikylä
 uusiseelantilainen
 Uusitalo
 Vaajakoski
@@ -892,6 +896,7 @@ Valtti
 valuma
 Valuri
 vammainen
+vapaaehtoinen
 vapaalippulainen
 varallisuus
 Varis
