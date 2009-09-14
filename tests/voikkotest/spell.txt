@@ -395,6 +395,8 @@ kahdellekymmenelletuhannelle
 !viidennestäkymmenennestäkaksi
 !viidennestäkymmenennestäkolmannelle
 !kahdelletoistatuhansille
+yhteen
+!yhteyn
 !viisikissa
 !viisikaunis
 yksipuoluejärjestelmä

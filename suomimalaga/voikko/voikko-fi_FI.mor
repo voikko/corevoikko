@@ -1072,6 +1072,7 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
 
   ? $edellinen.sijamuoto = nil or $edellinen.sijamuoto = $oikea.sijamuoto;
   ? $edellinen.luku = nil or $edellinen.luku = $oikea.luku;
+  ? $oikea.sija /= sisätulento_Vn or sisätulento_Vn_oikein(last($edellinen.alku), $sana);
 
   define $res := $vasen + <[alku: $sana, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
   if ($edellinen.alaluokka = yksiyhdeksän) then
