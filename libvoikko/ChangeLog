@@ -1,3 +1,7 @@
+2009-09-15 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
+
+	* Check the return value from getcwd.
+
 2009-09-13 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Return BASEFORM from morphological analysis if possible.
