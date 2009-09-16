@@ -2,6 +2,7 @@
 
 	* Improve grammar error descriptions.
 	* Ship autogen.sh in the source package.
+	* Add char * based APIs for morphological analysis.
 
 2009-09-15 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
 

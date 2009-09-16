@@ -479,6 +479,15 @@ struct voikko_mor_analysis ** voikko_analyze_word_ucs4(
                               int handle, const wchar_t * word);
 
 /**
+ * Analyzes the morphology of given word.
+ * @param handle voikko instance
+ * @param word word to be analyzed.
+ * @return A pointer to a null terminated array of analysis results.
+ */
+struct voikko_mor_analysis ** voikko_analyze_word_cstr(
+                              int handle, const char * word);
+
+/**
  * Free the memory allocated for morphology analysis results.
  * @param analysis A list of analysis results obtained with voikko_mor_analysis.
  */
@@ -502,6 +511,25 @@ const char ** voikko_mor_analysis_keys(const struct voikko_mor_analysis * analys
 const wchar_t * voikko_mor_analysis_value_ucs4(
                 const struct voikko_mor_analysis * analysis,
                 const char * key);
+
+/**
+ * Get a value from morphology analysis result.
+ * @param analysis Analysis to be examined.
+ * @param key Key whose value should be returned.
+ * @return Value of the given key or null, if analysis does not contain
+ * any value for the key.
+ * Value must be freed after use using voikko_free_mor_analysis_value_cstr.
+ */
+char * voikko_mor_analysis_value_cstr(
+                const struct voikko_mor_analysis * analysis,
+                const char * key);
+
+
+/**
+ * Frees the memory allocated for morphologival analysis value.
+ * @param analysis_value analysis value.
+ */
+void voikko_free_mor_analysis_value_cstr(char * analysis_value);
 
 END_C_DECLS
 #endif
