@@ -27,17 +27,17 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 		// ä=\xc3\xa4, ö=\xc3\xb6, Ä=\xc3\x84, Ö=\xc3\x96
 		switch (error_code) {
 			case GCERR_INVALID_SPELLING:
-				return "Virheellinen kirjoitusasu.";
+				return "Virheellinen kirjoitusasu";
 			case GCERR_EXTRA_WHITESPACE:
 				return "Poista ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li.";
 			case GCERR_SPACE_BEFORE_PUNCTUATION:
-				return "Ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li v\xc3\xa4limerkin edess\xc3\xa4.";
+				return "Ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen v\xc3\xa4li v\xc3\xa4limerkin edess\xc3\xa4";
 			case GCERR_EXTRA_COMMA:
 				return "Poista ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen pilkku.";
 			case GCERR_INVALID_SENTENCE_STARTER:
-				return "Virheellinen virkkeen aloittava merkki.";
+				return "Virheellinen virkkeen aloittava merkki";
 			case GCERR_WRITE_FIRST_LOWERCASE:
-				return "Sana on kirjoitettava pienell\xc3\xa4 alkukirjaimella.";
+				return "Harkitse sanan kirjoittamista pienell\xc3\xa4 alkukirjaimella.";
 			case GCERR_WRITE_FIRST_UPPERCASE:
 				return "Sana on kirjoitettava isolla alkukirjaimella.";
 			case GCERR_REPEATING_WORD:
@@ -45,16 +45,16 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_TERMINATING_PUNCTUATION_MISSING:
 				return "V\xc3\xa4limerkki puuttuu virkkeen lopusta.";
 			case GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION:
-				return "Virheelliset v\xc3\xa4limerkit lainauksen lopussa.";
+				return "Virheelliset v\xc3\xa4limerkit lainauksen lopussa";
 			case GCERR_FOREIGN_QUOTATION_MARK:
-				return "Suomenkieliseen tekstiin sopimaton lainausmerkki.";
+				return "Suomenkieliseen tekstiin sopimaton lainausmerkki";
 		}
 		return "Tuntematon virhe";
 	}
 	else {
 		switch (error_code) {
 			case GCERR_INVALID_SPELLING:
-				return "Incorrect spelling of word(s).";
+				return "Incorrect spelling of word(s)";
 			case GCERR_EXTRA_WHITESPACE:
 				return "Remove extra space.";
 			case GCERR_SPACE_BEFORE_PUNCTUATION:
@@ -62,9 +62,9 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_EXTRA_COMMA:
 				return "Remove extra comma.";
 			case GCERR_INVALID_SENTENCE_STARTER:
-				return "Invalid character at the start of a sentence.";
+				return "Invalid character at the start of a sentence";
 			case GCERR_WRITE_FIRST_LOWERCASE:
-				return "Change first letter to lower case.";
+				return "Consider changing first letter to lower case.";
 			case GCERR_WRITE_FIRST_UPPERCASE:
 				return "Change first letter to upper case.";
 			case GCERR_REPEATING_WORD:
@@ -72,9 +72,9 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_TERMINATING_PUNCTUATION_MISSING:
 				return "Terminating punctuation is missing.";
 			case GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION:
-				return "Invalid punctuation at the end of quotation.";
+				return "Invalid punctuation at the end of quotation";
 			case GCERR_FOREIGN_QUOTATION_MARK:
-				return "Foreign quotation mark.";
+				return "Foreign quotation mark";
 		}
 		return "Unknown error";
 	}

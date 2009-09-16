@@ -1,3 +1,8 @@
+2009-09-16 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Improve grammar error descriptions.
+	* Ship autogen.sh in the source package.
+
 2009-09-15 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
 
 	* Check the return value from getcwd.
