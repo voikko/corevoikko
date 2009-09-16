@@ -337,10 +337,9 @@ absolute_path( string_t src_path, string_t relative_to )
       add_to_text( path, relative_dir );
       free_mem( &relative_dir );
     } 
-    else 
+    else if (getcwd( current_dir, MAX_PATH_SIZE ) != NULL)
     { 
       /* Put current directory in front. */
-      getcwd( current_dir, MAX_PATH_SIZE );
       add_to_text( path, current_dir );
     }
   }
