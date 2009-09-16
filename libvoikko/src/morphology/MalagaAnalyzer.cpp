@@ -18,6 +18,7 @@
 
 #include "morphology/MalagaAnalyzer.hpp"
 #include "utils/StringUtils.hpp"
+#include "voikko_defs.h"
 #include <wchar.h>
 #include <cstdlib>
 
@@ -38,6 +39,9 @@ list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word) const {
 
 list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
                                            size_t wlen) const {
+	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
+		return new list<Analysis *>();
+	}
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
 	list<Analysis *> * result = analyze(wordUtf8);
 	delete[] wordUtf8;
@@ -45,11 +49,15 @@ list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
 }
 
 list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
+	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
+		return new list<Analysis *>();
+	}
 	initSymbols();
 	analyse_item(word);
 	value_t res = first_analysis_result();
 	list<Analysis *> * analysisList = new list<Analysis *>();
-	while (res) {
+	int currentAnalysisCount = 0;
+	while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
 		Analysis * analysis = new Analysis();
 		parseStructure(analysis, res);
 		parseSijamuoto(analysis, res);
@@ -57,6 +65,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 		parsePerusmuoto(analysis, res);
 		analysisList->push_back(analysis);
 		res = next_analysis_result();
+		++currentAnalysisCount;
 	}
 	return analysisList;
 }

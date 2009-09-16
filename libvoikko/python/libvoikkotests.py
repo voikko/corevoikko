@@ -112,9 +112,9 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual([u"jotenkuten"], error.suggestions)
 		code = error.errorCode
 		errorFi = self.voikko.grammarErrorExplanation(code, "fi")
-		self.assertEqual(u"Virheellinen kirjoitusasu.", errorFi)
+		self.assertEqual(u"Virheellinen kirjoitusasu", errorFi)
 		errorEn = self.voikko.grammarErrorExplanation(code, "en")
-		self.assertEqual(u"Incorrect spelling of word(s).", errorEn)
+		self.assertEqual(u"Incorrect spelling of word(s)", errorEn)
 	
 	def testAnalyze(self):
 		analysisList = self.voikko.analyze(u"kansaneläkelaitos")
@@ -238,8 +238,36 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(u"koira" in self.voikko.suggest(u"koir_"))
 		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.TYPO)
 		self.failUnless(u"koira" in self.voikko.suggest(u"koari"))
-
-
+	
+	def testMaxAnalysisCountIsNotPassed(self):
+		complexWord = u"lumenerolumenerolumenerolumenerolumenero"
+		self.assertEqual(31, len(self.voikko.analyze(complexWord)))
+	
+	def testOverLongWordsThrowExceptionDuringSpellCheck(self):
+		# Limit is 255 characters
+		longWord = u""
+		for i in range(0, 25):
+			longWord = longWord + u"kuraattori"
+		self.assertEqual(250, len(longWord))
+		self.failUnless(self.voikko.spell(longWord))
+		
+		longWord = longWord + u"kuraattori"
+		self.assertEqual(260, len(longWord))
+		def trySpell():
+			self.voikko.spell(longWord)
+		self.assertRaises(libvoikko.VoikkoException, trySpell)
+	
+	def testOverLongWordsAreNotAnalyzed(self):
+		# Limit is 255 characters
+		longWord = u""
+		for i in range(0, 25):
+			longWord = longWord + u"kuraattori"
+		self.assertEqual(250, len(longWord))
+		self.assertEqual(1, len(self.voikko.analyze(longWord)))
+		
+		longWord = longWord + u"kuraattori"
+		self.assertEqual(260, len(longWord))
+		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 
 if __name__ == "__main__":
 	unittest.main()

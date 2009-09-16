@@ -3,6 +3,8 @@
 	* Improve grammar error descriptions.
 	* Ship autogen.sh in the source package.
 	* Add char * based APIs for morphological analysis.
+	* Limit the amount of results and length of word in
+	  in morphological analysis.
 
 2009-09-15 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
 
