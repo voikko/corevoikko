@@ -56,14 +56,6 @@ extern char_t * (*get_surface)( surface_t surface_type );
 /* Return surface SURFACE_TYPE for currently executed rule.
  * The result must be freed after use. */
 
-extern int_t mor_pruning_min; 
-/* Minimum number of states that must have consumed same amount of input
- * needed to call the morphology pruning rule. Value 0 disables pruning. */
-
-extern int_t syn_pruning_min; 
-/* Minimum number of states that must have consumed same amount of input
- * needed to call the syntax pruning rule. Value 0 disables pruning. */
-
 /* Functions. ===============================================================*/
 
 extern void init_analysis( string_t morphology_file );

@@ -1,9 +1,14 @@
+2009-09-17 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Reactivate morphology pruning rule that got accidentally
+	  disabled when we switched to internal Malaga implementation.
+
 2009-09-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Improve grammar error descriptions.
 	* Ship autogen.sh in the source package.
 	* Add char * based APIs for morphological analysis.
-	* Limit the amount of results and length of word in
+	* Limit the amount of results and length of word
 	  in morphological analysis.
 
 2009-09-15 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>

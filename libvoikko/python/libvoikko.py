@@ -51,6 +51,12 @@ from ctypes import string_at
 from ctypes import Structure
 import os
 
+"""Maximum number of characters in a valid word"""
+MAX_WORD_CHARS = 255
+
+"""Maximum number of analyses that can be produced for a word"""
+MAX_ANALYSIS_COUNT = 31
+
 class Dictionary:
 	"""Represents a morphological dictionary."""
 	def __init__(self, variant, description):

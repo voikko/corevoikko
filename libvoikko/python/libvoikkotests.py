@@ -241,18 +241,28 @@ class LibvoikkoTest(unittest.TestCase):
 	
 	def testMaxAnalysisCountIsNotPassed(self):
 		complexWord = u"lumenerolumenerolumenerolumenerolumenero"
-		self.assertEqual(31, len(self.voikko.analyze(complexWord)))
+		self.failUnless(len(self.voikko.analyze(complexWord)) <= libvoikko.MAX_ANALYSIS_COUNT)
+	
+	def testMorPruningWorks(self):
+		# TODO: this test will not fail, it just takes very long time
+		# if pruning does not work.
+		complexWord = u""
+		for i in range(0, 20):
+			complexWord = complexWord + u"lumenero"
+		self.failUnless(len(complexWord) < libvoikko.MAX_WORD_CHARS)
+		self.voikko.analyze(complexWord)
+	
 	
 	def testOverLongWordsThrowExceptionDuringSpellCheck(self):
 		# Limit is 255 characters
 		longWord = u""
 		for i in range(0, 25):
 			longWord = longWord + u"kuraattori"
-		self.assertEqual(250, len(longWord))
+		self.failUnless(len(longWord) < libvoikko.MAX_WORD_CHARS)
 		self.failUnless(self.voikko.spell(longWord))
 		
 		longWord = longWord + u"kuraattori"
-		self.assertEqual(260, len(longWord))
+		self.failUnless(len(longWord) > libvoikko.MAX_WORD_CHARS)
 		def trySpell():
 			self.voikko.spell(longWord)
 		self.assertRaises(libvoikko.VoikkoException, trySpell)
@@ -262,11 +272,11 @@ class LibvoikkoTest(unittest.TestCase):
 		longWord = u""
 		for i in range(0, 25):
 			longWord = longWord + u"kuraattori"
-		self.assertEqual(250, len(longWord))
+		self.failUnless(len(longWord) < libvoikko.MAX_WORD_CHARS)
 		self.assertEqual(1, len(self.voikko.analyze(longWord)))
 		
 		longWord = longWord + u"kuraattori"
-		self.assertEqual(260, len(longWord))
+		self.failUnless(len(longWord) > libvoikko.MAX_WORD_CHARS)
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 
 if __name__ == "__main__":

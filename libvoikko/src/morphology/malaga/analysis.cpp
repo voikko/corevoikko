@@ -67,10 +67,10 @@ bool recognised_by_combi_rules;
 bool recognised_by_robust_rule; 
 string_t last_analysis_input; 
 char_t * (*get_surface)( surface_t surface_type );
-int_t mor_pruning_min;
-int_t syn_pruning_min;
 
 /* Variables. ===============================================================*/
+
+static const int_t mor_pruning_min = 30;
 
 /* Structures used for LAG analysis (morphology). */
 static analysis_t *morphologyAnalysis;
