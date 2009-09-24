@@ -455,7 +455,7 @@
 [perusmuoto: "kylliksi", alku: "kyllikse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "kylliksi", alku: "kylliksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllin", alku: "kyllin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "kyllä", alku: "kyl", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kyllä", alku: "kyl", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <murre>];
 [perusmuoto: "kyllä", alku: "kyllä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kyllälti", alku: "kyllälti", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kyse", alku: "kyseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -661,7 +661,7 @@
 [perusmuoto: "näytillä", alku: "näytillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näännyksissä", alku: "näännyksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näännyksissä", alku: "näännyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
-[perusmuoto: "nääs", alku: "nääs", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "nääs", alku: "nääs", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <murre>];
 [perusmuoto: "ohimennen", alku: "ohimennen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
 [perusmuoto: "ohitse", alku: "ohitse", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ohuelti", alku: "ohuelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

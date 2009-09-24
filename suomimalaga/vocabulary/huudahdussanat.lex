@@ -85,8 +85,9 @@
 [perusmuoto: "mars", alku: "mars", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "mau", alku: "mau", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moi", alku: "moi", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "moikka", alku: "moikka", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "moksis", alku: "moksis", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "molskis", alku: "molskis", luokka: huudahdussana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "molskis", alku: "molskis", luokka: huudahdussana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "morjens", alku: "morjens", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "morjens", alku: "morjensta", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "mää", alku: "mää", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
