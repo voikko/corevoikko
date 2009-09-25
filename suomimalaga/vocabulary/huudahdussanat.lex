@@ -90,6 +90,8 @@
 [perusmuoto: "molskis", alku: "molskis", luokka: huudahdussana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "morjens", alku: "morjens", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "morjens", alku: "morjensta", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "morjes", alku: "morjes", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <murre>];
+[perusmuoto: "moro", alku: "moro", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "mää", alku: "mää", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "nau", alku: "nau", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "oho", alku: "oho", luokka: huudahdussana, jatko: <loppu>, äs: a];

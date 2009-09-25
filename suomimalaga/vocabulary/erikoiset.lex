@@ -61,6 +61,7 @@
 [perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: a];
 [perusmuoto: "pro", alku: "pro", luokka: asemosana, jatko: <loppu>, äs: a]; #NS:n taivutus: suo.
 [perusmuoto: "päikkäin", alku: "päikkäin", luokka: asemosana, jatko: <loppu>, äs: ä];
+[perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat + @sana2, äs: ä];

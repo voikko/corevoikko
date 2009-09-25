@@ -816,6 +816,8 @@
 [perusmuoto: "rivittäin", alku: "rivittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "rohduksissa", alku: "rohduksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "roppakaupalla", alku: "roppakaupalla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "ruikulilla", alku: "ruikulilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
+[perusmuoto: "ruikulilla", alku: "ruikulille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "runsaiten", alku: "runsaiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ruti", alku: "ruti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "rutiini", alku: "rutiinisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -896,6 +898,7 @@
 [perusmuoto: "soopa", alku: "soopa", luokka: seikkasana, jatko: <liitesana, loppu, osanto_A>, äs: a];
 [perusmuoto: "suinkin", alku: "suinkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suinkin", alku: "suinkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "suitsait", alku: "suitsait", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "sujut", alku: "sujut", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sukkasillaan", alku: "sukkasillaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "sukkasillaan", alku: "sukkasilleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -1064,6 +1067,9 @@
 [perusmuoto: "umpimähkään", alku: "umpimähkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "unenpöpperössä", alku: "unenpöpperössä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppppp"];
 [perusmuoto: "unenpöpperössä", alku: "unen-pöpperössä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp-=pppppppppp"];
+[perusmuoto: "uppeluksissa", alku: "uppeluksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
+[perusmuoto: "uppeluksissa", alku: "uppeluksissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
+[perusmuoto: "uppeluksissa", alku: "uppeluksista", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "upoksissa", alku: "upoksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "upoksissa", alku: "upoksii", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "upoksissa", alku: "upoksissa", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
