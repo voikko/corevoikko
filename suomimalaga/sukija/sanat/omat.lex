@@ -708,7 +708,6 @@
 [perusmuoto: "Äkäsjoki", alku: "Äkäsjo", luokka: paikannimi, jatko: <kaikki>, äs: a];
 [perusmuoto: "ärhäkäs", alku: "ärhäk", luokka: laatusana, jatko: <iäkäs>, äs: ä];
 [perusmuoto: "Spinrad", alku: "Spinrad", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "kuskus", alku: "kuskus", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "vienoinen", alku: "vienoi", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "auktori", alku: "auktor", luokka: nimisana, jatko: <paperi>, äs: a];
 [perusmuoto: "keratoosi", alku: "keratoos", luokka: nimisana, jatko: <risti>, äs: a];
@@ -783,7 +782,12 @@
 [perusmuoto: "abolitionisti", alku: "abolitionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
-[perusmuoto: "toiseus", alku: "toiseu", luokka: nimisana, jatko: <kalleus>, äs: a];
+[perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "kalifornian", alku: "kalifornian", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "papuan", alku: "papuan", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
 [perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];

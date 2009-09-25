@@ -82,9 +82,10 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.luokka = etuliite) then
     $tietue.jatko := set ($tietue.jatko);
-    if ($tietue.alku = "amerikan") then
+    if ($tietue.alku in <"aasian", "afrikan", "amerikan", "australian",
+                         "euroopan", "kalifornian">) then
       #
-      # "Amerikan-" tunnistetaan "amerika" + omanto_n + tavuviiva.
+      # "Aasian-" tunnistetaan "aasia" + omanto_n + tavuviiva. Ja samoin muutkin.
       #
       $tietue.jatko :=- <tavuviiva>;
     end;
@@ -182,6 +183,11 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
+  # Kymmen on myös nimisana.
+  #
+  if ($tietue.perusmuoto = "kymmen" and $tietue.luokka = lukusana) then
+    stop;
+  end;
 
   if ($tietue.perusmuoto in <"nasta", "pöllö", "vilja">) then
     if ($tietue.luokka = nimisana) then
@@ -9355,7 +9361,7 @@ subrule kalleus ($tietue, $param01, $param02, $param03, $param04, $param05, $par
                          keinonto_in: <<$param05, <>>>,
                          johdin_inen: <<$param05, <>>>,
                          johdin_ittain: <<$param05, <>>>,
-                         johdin_lAinen: <<$param01, <>>>,
+                         johdin_lAinen: <<$param01, <>>, <$param02, <>>>,
                          johdin_llinen: <<$param03, <>>, <$param06, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param03, <>>>,
@@ -9534,7 +9540,7 @@ subrule vieras ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          yliaste: <<$param04, <>>, <$param06, <ei_voikko>>>,
                          johdin_inen: <<$param04, <>>, <$param06, <ei_voikko>>>,
                          johdin_ittain: <<$param04, <>>, <$param06, <ei_voikko>>>,
-                         johdin_lAinen: <<$param01, <>>>,
+                         johdin_lAinen: <<$param01, <>>, <$param02, <>>>,
                          johdin_llinen: <<$param02, <>>>,
                          johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,

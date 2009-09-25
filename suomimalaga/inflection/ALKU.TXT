@@ -82,9 +82,10 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.luokka = etuliite) then
     $tietue.jatko := set ($tietue.jatko);
-    if ($tietue.alku = "amerikan") then
+    if ($tietue.alku in <"aasian", "afrikan", "amerikan", "australian",
+                         "euroopan", "kalifornian">) then
       #
-      # "Amerikan-" tunnistetaan "amerika" + omanto_n + tavuviiva.
+      # "Aasian-" tunnistetaan "aasia" + omanto_n + tavuviiva. Ja samoin muutkin.
       #
       $tietue.jatko :=- <tavuviiva>;
     end;
