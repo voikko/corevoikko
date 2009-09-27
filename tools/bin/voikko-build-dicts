@@ -113,8 +113,16 @@ d = Voikkodict()
 d.idSuffix = u"-po"
 d.variant = u"po"
 d.nameFi = u"po-tiedostojen oikolukusanasto"
-d.nameEn = u"po file spelling vocanulary"
+d.nameEn = u"po file spelling vocabulary"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/po-oikoluku.lex vocabulary/erikoisalat/linux-distributions.lex"'
+allDicts.append(d)
+
+d = Voikkodict()
+d.idSuffix = u"-morpho"
+d.variant = u"morpho"
+d.nameFi = u"erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
+d.nameEn = u"very extensive vocabulary (with additional information needed in morphological analysis)"
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education --style=dialect,old,international,foreign --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes'
 allDicts.append(d)
 
 WORK_DIR = "build"
@@ -185,8 +193,8 @@ indexFile.write(u"<h2>Sanastot</h2>")
 indexFile.write(u"<table>")
 for dict in allDicts:
 	dirName = WORK_DIR + '/' + DICT_DIR_PREFIX + dict.idSuffix
-	zipFile = dirName + '.zip'
-	runCmd('zip -r -j ' + zipFile + ' ' + dirName + '/*')
+	zipFile = DICT_DIR_PREFIX + dict.idSuffix + '.zip'
+	runCmd('cd ' + dirName + ' && zip -r ../' + zipFile + ' *')
 	indexDict(indexFile, dict)
 indexFile.write(u"</table>")
 
