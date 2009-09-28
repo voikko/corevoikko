@@ -358,6 +358,7 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   ei_lAinen; # Sanalla ei ole -lAinen-johdosta. Ei suomi+lainen.
   ei_mAinen; # Sanalla ei ole -mAinen-johdosta.
   ei_sukija; # Sanaa ei ole sukija-versiossa.
+  ei_tav;    # Ei tavuviivaa jatko-kentässä.
   ei_vertm;  # Laatusana ei taivu vertailumuodoissa.
   ei_voikko; # Sanaa ei ole voikko-versiossa.
   ei_ys;     # Sana ei voi olla yhdyssanan osana.

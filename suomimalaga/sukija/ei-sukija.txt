@@ -618,6 +618,7 @@ peräänajo
 pidentymä
 pidättyä
 pidätys
+Pihtipudas
 piirros
 Pinja
 pinttymä
@@ -769,6 +770,7 @@ Suomi
 Suomussalmi
 Suonenjoki
 supistuma
+supraventrikulaarinen
 surkastuma
 Suutari
 Suvi

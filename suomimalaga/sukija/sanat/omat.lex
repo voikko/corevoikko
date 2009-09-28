@@ -782,12 +782,12 @@
 [perusmuoto: "abolitionisti", alku: "abolitionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
-[perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "kalifornian", alku: "kalifornian", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "papuan", alku: "papuan", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "kalifornian", alku: "kalifornian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "papuan", alku: "papuan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
 
 [perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];
@@ -799,6 +799,10 @@
 [perusmuoto: "amputarvike", alku: "amputarvik", luokka: nimisana, jatko: <tarvike>, äs: a];
 [perusmuoto: "ampuvara", alku: "ampuvar", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <inen>];
 [perusmuoto: "ampuvärkki", alku: "ampuvärk", luokka: nimisana, jatko: <takki>, äs: ä];
+
+[perusmuoto: "korteikko", alku: "korteik", luokka: nimisana, jatko: <laatikko>, äs: a];
+[perusmuoto: "litukka", alku: "lituk", luokka: nimisana, jatko: <solakka>, äs: a];
+[perusmuoto: "regoliitti", alku: "regoliit", luokka: nimisana, jatko: <tatti>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.
