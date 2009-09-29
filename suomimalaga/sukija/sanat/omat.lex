@@ -784,8 +784,9 @@
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
 [perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
 [perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "amerikan", alku: "amerikan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
 [perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
 [perusmuoto: "kalifornian", alku: "kalifornian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
 [perusmuoto: "papuan", alku: "papuan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
 

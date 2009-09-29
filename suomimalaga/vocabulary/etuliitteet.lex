@@ -52,7 +52,6 @@
 [perusmuoto: "alkuperäis", alku: "alkuperäis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>, rakenne: "=pppp=pppppp"];
 [perusmuoto: "alkuun", alku: "alkuun", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>]; # Alkuunpanija jne.
 [perusmuoto: "alle", alku: "alle", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "amerikan", alku: "amerikan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko, ei_tav>];
 [perusmuoto: "amfibio", alku: "amfibio", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];   # On sana: "amfibio lentokone".
 [perusmuoto: "ammonium", alku: "ammonium", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>]; # -karbonaatti, -suola jne.
 [perusmuoto: "ampuma", alku: "ampuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
