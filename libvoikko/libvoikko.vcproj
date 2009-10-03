@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\msys\1.0\glib\lib\glib-2.0\include&quot;;&quot;C:\msys\1.0\glib\include\glib-2.0&quot;;c:\svn\voikko\trunk\libvoikko\src"
+				AdditionalIncludeDirectories="&quot;C:\voikko\lib\glib-2.0\include&quot;;&quot;C:\voikko\include\glib-2.0&quot;;c:\svn\voikko\trunk\libvoikko\src"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBVOIKKO_EXPORTS;DICTIONARY_PATH=\&quot;C:\\voikko\\suomimalaga\&quot;"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -63,8 +63,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="glib-2.0.lib"
+				OutputFile="$(OutDir)\libvoikko-1.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="C:\msys\1.0\glib\lib"
+				AdditionalLibraryDirectories="C:\voikko\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
