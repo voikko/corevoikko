@@ -320,9 +320,6 @@ class Voikko:
 		"""Check the given paragraph for grammar errors and return a
 		list of GrammarError objects representing the errors that were found.
 		"""
-		if os.name == "nt":
-			# FIXME: grammar cheking does not work on Windows
-			return []
 		_checkInited(self)
 		paragraphUnicode = unicode(paragraph)
 		paragraphLen = len(paragraphUnicode)
