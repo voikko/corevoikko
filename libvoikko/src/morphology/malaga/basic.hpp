@@ -17,9 +17,14 @@ enum {BITS_PER_BYTE = 8};
 
 /* Attribute for a function that never returns. */
 #ifdef __GNUC__
-#define NO_RETURN __attribute__((noreturn))
+#define NO_RETURN_SUFFIX __attribute__((noreturn))
 #else
-#define NO_RETURN
+#define NO_RETURN_SUFFIX
+#endif
+#ifdef _MSC_VER
+#define NO_RETURN_PREFIX __declspec(noreturn)
+#else
+#define NO_RETURN_PREFIX
 #endif
 
 /* Basic types. =============================================================*/
@@ -259,11 +264,11 @@ extern text_t *error_text; /* The text of the last error. */
 
 extern jmp_buf *current_error_handler; /* The active innermost error handler */
 
-extern __declspec(noreturn) void malaga_throw( void ) NO_RETURN;
+extern NO_RETURN_PREFIX void malaga_throw( void ) NO_RETURN_SUFFIX;
 /* Call the current error handler. 
  * If there is no current error handler, print error and exit. */
 
-extern __declspec(noreturn) void complain( string_t message, ... ) NO_RETURN;
+extern NO_RETURN_PREFIX void complain( string_t message, ... ) NO_RETURN_SUFFIX;
 /* Save the error MESSAGE in ERROR_TEXT.
  * Additional arguments to "complain" are inserted where 
  * "%s" (string_t ARGUMENT), "%c" (char_t ARGUMENT), "%u" (gunichar ARGUMENT),
