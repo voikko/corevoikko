@@ -55,7 +55,7 @@ void gc_local_punctuation(int handle, const Sentence * sentence) {
 				e->error.startpos = sentence->tokens[i].pos;
 				e->error.errorlen = 2;
 				e->error.suggestions[0] = new char[2];
-				e->error.suggestions[0][0] = t2.str[0];
+				e->error.suggestions[0][0] = ',';
 				e->error.suggestions[0][1] = L'\0';
 				gc_cache_append_error(handle, e);
 			}

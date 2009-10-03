@@ -25,12 +25,13 @@
 #include "morphology/malaga/malaga.hpp"
 #include <cstring>
 #include <sys/stat.h>
-#include <unistd.h>
 #include <cstdlib>
 #include <string>
 
 #ifdef WIN32
 #include <windows.h>
+#else
+#include <unistd.h>
 #endif
 
 using namespace std;

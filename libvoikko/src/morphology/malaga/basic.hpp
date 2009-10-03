@@ -242,7 +242,7 @@ do { \
   jmp_buf error_handler, *older_error_handler = current_error_handler; \
   volatile bool rethrow; \
   current_error_handler = &error_handler; \
-  if (! (rethrow = setjmp( error_handler )))
+  if (!(rethrow = (setjmp( error_handler ) != 0)))
 
 #define IF_ERROR else
 #define FINALLY /* Nothing. */
@@ -259,11 +259,11 @@ extern text_t *error_text; /* The text of the last error. */
 
 extern jmp_buf *current_error_handler; /* The active innermost error handler */
 
-extern void malaga_throw( void ) NO_RETURN;
+extern __declspec(noreturn) void malaga_throw( void ) NO_RETURN;
 /* Call the current error handler. 
  * If there is no current error handler, print error and exit. */
 
-extern void complain( string_t message, ... ) NO_RETURN;
+extern __declspec(noreturn) void complain( string_t message, ... ) NO_RETURN;
 /* Save the error MESSAGE in ERROR_TEXT.
  * Additional arguments to "complain" are inserted where 
  * "%s" (string_t ARGUMENT), "%c" (char_t ARGUMENT), "%u" (gunichar ARGUMENT),

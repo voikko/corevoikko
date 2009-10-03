@@ -355,7 +355,7 @@ absolute_path( string_t src_path, string_t relative_to )
 
 #ifdef WIN32
   text_t *path;
-  string_t src_path_p, dest_path;		
+  string_t src_path_p;		
   string_t relative_dir;
   char_t current_dir[ MAX_PATH_SIZE ];
 
@@ -412,7 +412,7 @@ absolute_path( string_t src_path, string_t relative_to )
   }
   
   add_to_text( path, src_path_p );
-  dest_path = text_to_string( &path );
+  char * dest_path = text_to_string( &path );
   tidy_path( dest_path );
   return dest_path;
 #endif

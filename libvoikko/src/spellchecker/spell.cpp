@@ -206,7 +206,7 @@ spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 	int sparam = voikko_options.cache_size;
 	if (voikko_options.cache && len <= 10) { /* check cache */
 		int hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len] + sparam);
-		int cache_offset = (VOIKKO_CACHE_OFFSETS[len] << sparam) + hashcode * len;
+		int cache_offset = (VOIKKO_CACHE_OFFSETS[len] << sparam) + hashcode * static_cast<int>(len);
 		int meta_offset = (VOIKKO_META_OFFSETS[len] << sparam) + hashcode;
 		if (wcsncmp(voikko_options.cache + cache_offset, buffer, len) == 0) {
 			/* DEBUG: printf("Cache hit: '%ls'\n", buffer);*/
@@ -278,7 +278,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	
 	int dot_index;
 	if (voikko_options.ignore_dot && buffer[nchars - 1] == L'.') {
-		dot_index = nchars - 1;
+		dot_index = static_cast<int>(nchars - 1);
 		buffer[dot_index] = L'\0';
 	}
 	else {

@@ -1,3 +1,7 @@
+2009-10-03 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix warnings and errors found by compiling the code with MSVC.
+
 2009-09-17 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Reactivate morphology pruning rule that got accidentally
