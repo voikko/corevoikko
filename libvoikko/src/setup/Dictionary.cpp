@@ -44,15 +44,15 @@ Dictionary::Dictionary(const Dictionary & dictionary) :
 	isDefaultDict(dictionary.isDefaultDict) {
 }
 
-string Dictionary::getMorPath() const {
+const string & Dictionary::getMorPath() const {
 	return morPath;
 }
 
-string Dictionary::getVariant() const {
+const string & Dictionary::getVariant() const {
 	return variant;
 }
 
-string Dictionary::getDescription() const {
+const string & Dictionary::getDescription() const {
 	return description;
 }
 

@@ -1,6 +1,8 @@
 2009-10-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix warnings and errors found by compiling the code with MSVC.
+	* Fix a bug in Dictionary that lead to returning pointers to freed memory
+	  from voikko_dict_variant and voikko_dict_description.
 
 2009-09-17 Harri Pitkänen <hatapitk@iki.fi>
 

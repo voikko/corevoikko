@@ -38,9 +38,9 @@ class Dictionary {
 	Dictionary(const std::string & morPath, const std::string & variant,
 	           const std::string & description);
 	Dictionary(const Dictionary & dictionary);
-	std::string getMorPath() const;
-	std::string getVariant() const;
-	std::string getDescription() const;
+	const std::string & getMorPath() const;
+	const std::string & getVariant() const;
+	const std::string & getDescription() const;
 	bool isValid() const;
 	bool isDefault() const;
 	void setDefault(bool isDefault);
