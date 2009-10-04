@@ -1,3 +1,7 @@
+2009-10-04 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Do not dereference iterator to map.end(), this does not work with MSVC.
+
 2009-10-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix warnings and errors found by compiling the code with MSVC.

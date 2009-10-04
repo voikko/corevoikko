@@ -157,7 +157,11 @@ void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const
 void MalagaAnalyzer::parseSijamuoto(Analysis * &analysis, value_t &result) const {
 	value_t sijamuotoVal = get_attribute(result, symbols[MS_SIJAMUOTO]);
 	symbol_t sijamuoto = value_to_symbol(sijamuotoVal);
-	const wchar_t * sijamuotoName = (*sijamuotoMap.find(sijamuoto)).second;
+	map<symbol_t, const wchar_t *>::iterator mapIterator = sijamuotoMap.find(sijamuoto);
+	if (mapIterator == sijamuotoMap.end()) {
+		return;
+	}
+	const wchar_t * sijamuotoName = (*mapIterator).second;
 	if (sijamuotoName) {
 		analysis->addAttribute("SIJAMUOTO", StringUtils::copy(sijamuotoName));
 	}
@@ -166,7 +170,11 @@ void MalagaAnalyzer::parseSijamuoto(Analysis * &analysis, value_t &result) const
 void MalagaAnalyzer::parseClass(Analysis * &analysis, value_t &result) const {
 	value_t classVal = get_attribute(result, symbols[MS_CLASS]);
 	symbol_t classSym = value_to_symbol(classVal);
-	const wchar_t * className = (*classMap.find(classSym)).second;
+	map<symbol_t, const wchar_t *>::iterator mapIterator = classMap.find(classSym);
+	if (mapIterator == classMap.end()) {
+		return;
+	}
+	const wchar_t * className = (*mapIterator).second;
 	if (className) {
 		analysis->addAttribute("CLASS", StringUtils::copy(className));
 	}
