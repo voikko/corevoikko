@@ -4,7 +4,8 @@ EXTRA_DIST = data/autocorrect/fi_FI.xml data/autocorrect/autocorrect.dtd \
     python/libvoikko.py python/libvoikkotests.py \
     python/ExtendedMorphologyTest.py \
     doc/oikoluku-korjausehdotukset.txt \
-    autogen.sh
+    autogen.sh \
+    libvoikko.vcproj
 
 ACLOCAL_AMFLAGS = -I m4
 
