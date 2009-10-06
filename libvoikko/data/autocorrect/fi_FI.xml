@@ -77,6 +77,10 @@
   <correct>edellä oleva</correct>
 </replacement>
 <replacement>
+  <incorrect>edellä päin</incorrect>
+  <correct>edellä=päin</correct>
+</replacement>
+<replacement>
   <incorrect>edeltä=käsin</incorrect>
   <correct>edeltä käsin</correct>
 </replacement>
@@ -449,6 +453,10 @@
   <correct>kerta kaikkiaan</correct>
 </replacement>
 <replacement>
+  <incorrect>kesken=kaiken</incorrect>
+  <correct>kesken kaiken</correct>
+</replacement>
+<replacement>
   <incorrect>kiikun=kaakun</incorrect>
   <correct>kiikun kaakun</correct>
 </replacement>
@@ -619,6 +627,10 @@
 <replacement>
   <incorrect>ristiin=rastiin</incorrect>
   <correct>ristiin rastiin</correct>
+</replacement>
+<replacement>
+  <incorrect>sama=kuin</incorrect>
+  <correct>sama kuin</correct>
 </replacement>
 <replacement>
   <incorrect>saman=tien</incorrect>

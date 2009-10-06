@@ -1,3 +1,8 @@
+2009-10-06 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Additions to autocorrect data.
+	* Increase version numbers for 2.2.1.
+
 2009-10-04 Lauri Nurmi <lanurmi@iki.fi>
 
 	* Fix autogen.sh to work with non-GNU find and xargs.
