@@ -78,7 +78,7 @@ static pool_t tree_pool; /* Pool where tree nodes are stored. */
 static state_t *next_result_state; /* Needed for "next_analysis_result". */
 static tree_node_t *next_tree_node; /* Needed for "get_next_analysis_node". */
 
-static string_t state_surface, link_surface, link_surface_end;
+static string_t link_surface, link_surface_end;
 /* Start and end position of surfaces when rule is executed. Read only! */
 
 static struct /* Information needed to generate states and tree nodes. */
@@ -256,19 +256,6 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set,
 }
 
 /* Callback functions needed by "rules.c" ===================================*/
-
-static void 
-add_allo_local( string_t surface, value_t feat )
-/* Add a state, consisting of SURFACE and FEAT, as an end state. */
-{ 
-  int_t length;
-
-  length = strlen( surface );
-  add_state( &state_info.analysis->end_states, 
-	     state_surface + length, feat, -1, FINAL_NODE );
-}
-
-/*---------------------------------------------------------------------------*/
 
 static void 
 add_end_state_local( value_t feat )
@@ -532,7 +519,6 @@ execute_robust_rule( analysis_t *analysis,
   input_end = get_word_end( input );
 
   /* Set debugging information. */
-  state_surface = input;
   link_surface = input;
   link_surface_end = input_end;
 
@@ -782,7 +768,6 @@ analyse( string_t input,
   /* Set callback functions for "execute_rules". */
   add_running_state = add_running_state_local;
   add_end_state = add_end_state_local;
-  add_allo = add_allo_local;
 
   /* Reset the analysis data structures */
   clear_list( &analysis->running_states );
@@ -790,9 +775,6 @@ analyse( string_t input,
   clear_list( &analysis->free_states );
   clear_pool( analysis->state_pool );
   clear_pool( analysis->value_pool );
-
-  /* Set debug information. */
-  state_surface = input;
 
   /* Enter the initial state. */
   initial_state = insert_state( analysis, &analysis->running_states,

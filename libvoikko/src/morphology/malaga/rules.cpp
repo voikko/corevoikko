@@ -46,7 +46,6 @@ typedef struct
 
 void (*add_end_state)( value_t feat );
 void (*add_running_state)( value_t feat, int_t rule_set );
-void (*add_allo)( string_t surf, value_t feat );
 
 rule_sys_t *executed_rule_sys;
 int_t executed_rule_number = -1;
@@ -176,12 +175,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         break;
       case INS_ADD_STATE:
         add_running_state( value_stack[ --top ], info );
-        rule_successful = true;
-        break;
-      case INS_ADD_ALLO:
-        add_allo( value_to_string( value_stack[ top - 2 ] ), 
-		  value_stack[ top - 1] );
-        top -= 2;
         rule_successful = true;
         break;
       case INS_ACCEPT:

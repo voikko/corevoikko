@@ -65,10 +65,6 @@ extern void (*add_running_state)( value_t feat, int_t rule_set );
 /* Add a running state, consisting of feature structure FEAT and RULE_SET.
  * This is a callback function called from "execute_rule". */
 
-extern void (*add_allo)( string_t surf, value_t feat );
-/* Add an allomorph, consisting of SURF and feature structure FEAT, 
- * to the lexicon. This is a callback function called from "execute_rule". */
-
 extern bool rule_successful;
 /* Indicator for execution of result, accept, or allo statement. Read only! */
 
