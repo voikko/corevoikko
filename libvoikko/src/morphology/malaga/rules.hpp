@@ -57,25 +57,25 @@ typedef struct
 
 /* Variables. ===============================================================*/
 
-extern void (*add_end_state)( value_t feat );
+extern void (*add_end_state)( value_t feat ); // FIXME
 /* Add a state, consisting of feature structure FEAT, as an end state.
  * This is a callback function called from "execute_rule". */
 
-extern void (*add_running_state)( value_t feat, int_t rule_set );
+extern void (*add_running_state)( value_t feat, int_t rule_set ); // FIXME
 /* Add a running state, consisting of feature structure FEAT and RULE_SET.
  * This is a callback function called from "execute_rule". */
 
-extern bool rule_successful;
+extern bool rule_successful; // FIXME
 /* Indicator for execution of result, accept, or allo statement. Read only! */
 
 /* These values are used by "execute_rule",
  * but they are global to support debuggers and error messages. Read only! */
-extern int_t pc;
-extern int_t base;
-extern int_t nested_subrules;
-extern int_t executed_rule_number;
-extern rule_sys_t *executed_rule_sys;
-extern int_t path_count;
+extern int_t pc; // FIXME
+extern int_t base; // FIXME
+extern int_t nested_subrules; // FIXME
+extern int_t executed_rule_number; // FIXME
+extern rule_sys_t *executed_rule_sys; // FIXME
+extern int_t path_count; // FIXME
 
 /* Functions. ===============================================================*/
 

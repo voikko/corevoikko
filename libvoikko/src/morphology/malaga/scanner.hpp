@@ -77,15 +77,15 @@ enum {NUMBER_OF_KEYWORDS = (LAST_KEYWORD - FIRST_KEYWORD + 1)};
 
 /* Variables. ===============================================================*/
 
-extern int_t next_token; /* Next token that is to be consumed by parser. */
+extern int_t next_token; /* Next token that is to be consumed by parser. FIXME */
 
-extern string_t token_name;
+extern string_t token_name; // FIXME
 /* If NEXT_TOKEN == TOK_IDENT, the name is in TOKEN_NAME. */
 
-extern char_t *token_string;
+extern char_t *token_string; // FIXME
 /* If NEXT_TOKEN == TOK_STRING, the name is in TOKEN_STRING. */
 
-extern double token_number;
+extern double token_number; // FIXME
 /* If NEXT_TOKEN == TOK_NUMBER, its content is in TOKEN_NUMBER. */
 
 /* Functions. ===============================================================*/

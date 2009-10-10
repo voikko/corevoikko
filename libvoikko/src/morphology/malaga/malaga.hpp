@@ -48,7 +48,7 @@ typedef cell_t symbol_t;
 
 /* Variables. ===============================================================*/
 
-extern string_t malaga_error; 
+extern string_t malaga_error; // FIXME
 /* If one of the functions below has created an error, this variable
  * contains an error message. If a function did its job, it is NULL. */
 

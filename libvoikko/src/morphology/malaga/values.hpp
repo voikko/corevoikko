@@ -35,24 +35,24 @@ typedef enum
 
 /* Variables. ===============================================================*/
 
-extern string_t (*values_get_symbol_name)( symbol_t symbol );
+extern string_t (*values_get_symbol_name)( symbol_t symbol ); // FIXME
 /* Return the name of "symbol".
  * This is a callback function that must be set externally. */
 
-extern value_t (*values_get_atoms)( symbol_t symbol );
+extern value_t (*values_get_atoms)( symbol_t symbol ); // FIXME
 /* Return the list of atoms of SYMBOL.
  * This is a callback function that must be set externally. */
 
-extern value_t *value_stack;
+extern value_t *value_stack; // FIXME
 /* The value stack contains static values and local values. 
  * The location of the VALUE_STACK-vector may change when the stack size
  * must increase. */
 
-extern int_t top; 
+extern int_t top; // FIXME
 /* The index of the first unused item on VALUE_STACK.
  * You may only read or decrease this variable! */
 
-extern attribute_order_t attribute_order;
+extern attribute_order_t attribute_order; // FIXME
 /* The order in which attributes in a record are printed.
  * Used by "value_readable". */
 

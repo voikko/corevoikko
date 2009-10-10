@@ -8,7 +8,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-extern string_t malaga_error; 
+extern string_t malaga_error; // FIXME
 /* In case of an error, some of the functions below may set this variable to 
  * the error message. If they worked correctly, they set it to NULL. */
 

@@ -13,7 +13,7 @@ enum {PATTERN_VAR_MAX = 5}; /* Maximum number of pattern variables. */
 
 /* Variables. ===============================================================*/
 
-extern string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. */
+extern string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. FIXME */
 
 /* Functions. ===============================================================*/
 

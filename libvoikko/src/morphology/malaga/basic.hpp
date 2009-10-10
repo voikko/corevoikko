@@ -250,9 +250,9 @@ do { \
 
 #define RESUME rethrow = false
 
-extern text_t *error_text; /* The text of the last error. */
+extern text_t *error_text; /* The text of the last error. FIXME */
 
-extern jmp_buf *current_error_handler; /* The active innermost error handler */
+extern jmp_buf *current_error_handler; /* The active innermost error handler FIXME */
 
 extern NO_RETURN_PREFIX void malaga_throw( void ) NO_RETURN_SUFFIX;
 /* Call the current error handler. 
