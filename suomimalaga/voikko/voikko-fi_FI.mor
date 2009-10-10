@@ -178,7 +178,8 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
   elseif $oikea.luokka = tavuviiva then
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
-                 etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta;
+                 etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta,
+                 lukusana_numero;
 
   elseif $oikea.luokka in <nimisana, nimi_laatusana> then
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;

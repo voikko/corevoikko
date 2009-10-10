@@ -444,6 +444,7 @@ koiramääkiminen
 12-vuotias
 65-
 90-kissainen
+-45
 12:15
 !12:kissa
 
