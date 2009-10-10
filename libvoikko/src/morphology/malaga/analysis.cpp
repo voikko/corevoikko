@@ -487,49 +487,6 @@ free_analysis_node( analysis_node_t **node )
   }
 }
 
-/*---------------------------------------------------------------------------*/
-
-static string_t 
-get_word_end( string_t input )
-/* Return the end of the word that starts at INPUT. */
-{
-  string_t input_end;
-
-  input_end = input;
-  while (*input_end != EOS && *input_end != ' ') 
-    input_end++;
-  return input_end;
-}
-
-/*---------------------------------------------------------------------------*/
-
-static void 
-execute_robust_rule( analysis_t *analysis,
-                     rule_sys_t *rule_sys,
-                     string_t input )
-/* Execute robust_rule in RULE_SYS for the first word in INPUT and enter
- * results into ANALYSIS. */
-{
-  string_t input_end;
-  rule_t *rule;
-
-  input_end = get_word_end( input );
-
-  /* Setup STATE_INFO. */
-  state_info.analysis = analysis;
-  state_info.count_states = false;
-  state_info.create_tree = false;
-  state_info.item_index = 1;
-  state_info.input = input_end;
-
-  /* Execute rule. */
-  rule = rule_sys->rules + rule_sys->robust_rule;
-  top = 0;
-  push_string_value( input, input_end );
-  if (rule->param_count >= 2) 
-    push_string_value( input, NULL );
-  execute_rule( rule_sys, rule_sys->robust_rule );
-}
 
 /*---------------------------------------------------------------------------*/
 
@@ -836,11 +793,6 @@ analyse( string_t input,
 
   check_end_states( analysis, analyse_all );
 
-  if (analysis->end_states.first == NULL && options[ ROBUST_RULE_OPTION ]) 
-  { 
-    execute_robust_rule( analysis, rule_sys, input );
-    check_end_states( analysis, analyse_all );
-  }
   if (options[ MOR_OUT_FILTER_OPTION ]) 
   { 
     execute_filter_rule( analysis, morphologyRuleSystem,
