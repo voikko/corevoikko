@@ -60,13 +60,6 @@ extern char_t *absolute_path( string_t src_path, string_t relative_to );
  * RELATIVE_TO must be an absolute path name (a directory or a file).
  * The returned path must be freed after use. */
 
-extern bool has_extension( string_t file_name, string_t extension );
-/* Test if FILE_NAME has extension EXTENSION. */
-
-extern char_t *replace_extension( string_t file_name, string_t extension );
-/* Return a new string that contains FILE_NAME with new EXTENSION. 
- * The string must be freed after use. */
-
 extern void set_file_name( string_t *file_name_p, string_t file_name );
 /* Set *FILE_NAME_P to FILE_NAME, converted to absolute path.
  * Print an error if *FILE_NAME_P is already set.

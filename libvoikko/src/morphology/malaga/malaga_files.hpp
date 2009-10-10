@@ -59,17 +59,6 @@ typedef struct /* The format of a Malaga rule file. */
   int_t var_scope_count; /* Number of variable scopes. */
   int_t constant_count; /* Number of named constants. */
   int_t strings_size; /* Size of string table. */
-
-  /* The following blocks have dynamic size: */
-  /* rule_t rules[ rule_count ]; */
-  /* int_t rule_sets[ rule_sets_size ]; */
-  /* instr_t instrs[ instr_count ]; */
-  /* cell_t values[ values_size ]; */
-  /* src_line_t src_lines[ src_line_count ]; */
-  /* var_t vars[ var_count ]; */
-  /* var_scope_t var_scopes[ var_scope_count ]; */
-  /* constant_t constants[ constant_count ]; */
-  /* char_t strings[ strings_size ]; */
 } rule_header_t;
 
 /*---------------------------------------------------------------------------*/

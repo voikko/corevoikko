@@ -39,6 +39,40 @@ static string_t symbol_file; // FIXME
 
 /* Functions. ===============================================================*/
 
+static string_t extension_start( string_t name )
+/* Return a pointer to the start (the dot) of the extension in NAME,
+ * or to the end of the string if there is no extension. */
+{
+  string_t s, t;
+  
+  s = NULL;
+  for (t = name; *t != EOS; t++)
+  {
+    if (*t == '/') 
+      s = NULL;
+#ifdef WIN32
+    else if (*t == '\\') 
+      s = NULL;
+#endif
+    else if (*t == '.') 
+      s = t;
+  }
+  return (s != NULL ? s : t);
+}
+
+/*---------------------------------------------------------------------------*/
+
+static bool 
+has_extension( string_t file_name, string_t extension )
+/* Test if FILE_NAME has extension EXTENSION. */
+{
+  string_t ext; /* The real extension of FILE_NAME (including "."). */
+
+  ext = extension_start( file_name );
+  return (*ext != EOS && strcmp( ext + 1, extension ) == 0);
+}
+
+/*---------------------------------------------------------------------------*/
 
 static void 
 read_project_file( string_t project_file )

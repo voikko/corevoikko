@@ -420,57 +420,6 @@ absolute_path( string_t src_path, string_t relative_to )
 
 /*---------------------------------------------------------------------------*/
 
-static string_t extension_start( string_t name )
-/* Return a pointer to the start (the dot) of the extension in NAME,
- * or to the end of the string if there is no extension. */
-{
-  string_t s, t;
-  
-  s = NULL;
-  for (t = name; *t != EOS; t++)
-  {
-    if (*t == '/') 
-      s = NULL;
-#ifdef WIN32
-    else if (*t == '\\') 
-      s = NULL;
-#endif
-    else if (*t == '.') 
-      s = t;
-  }
-  return (s != NULL ? s : t);
-}
-
-/*---------------------------------------------------------------------------*/
-
-bool 
-has_extension( string_t file_name, string_t extension )
-/* Test if FILE_NAME has extension EXTENSION. */
-{
-  string_t ext; /* The real extension of FILE_NAME (including "."). */
-
-  ext = extension_start( file_name );
-  return (*ext != EOS && strcmp( ext + 1, extension ) == 0);
-}
-
-/*---------------------------------------------------------------------------*/
-
-char_t *
-replace_extension( string_t file_name, string_t extension )
-/* Return a new string that contains FILE_NAME with new EXTENSION. 
- * The string must be freed after use. */
-{
-  string_t base;
-  char_t *s;
-
-  base = new_string( file_name, extension_start( file_name ) );
-  s = concat_strings( base, ".", extension, NULL );
-  free_mem( &base );
-  return s;
-}
-
-/*---------------------------------------------------------------------------*/
-
 void
 set_file_name( string_t *file_name_p, string_t file_name )
 /* Set *FILE_NAME_P to absolute path FILE_NAME, relative to current dir.
