@@ -30,23 +30,12 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Global variables. ========================================================*/
 
-bool auto_tree; /* true if tree is shown automatically. */
-bool auto_result; /* true if result is shown automatically. */
-bool result_as_list; /* true if results will be combined into a list. */
 text_t *grammar_info; /* Information about grammar. */
-
-string_t result_format, unknown_format, error_format; 
-/* Format strings for output. */
 
 /* Variables. ===============================================================*/
 
-static string_t morphology_file, syntax_file, lexicon_file;
-static string_t symbol_file, extended_symbol_file;
-
-static bool info_in_project_file;
-/* Indicates whether we have read grammar info from the current project file.
- * Used to insert empty lines between grammar infos from different project
- * files. */
+static string_t morphology_file, lexicon_file;
+static string_t symbol_file;
 
 /* Functions. ===============================================================*/
 
@@ -61,7 +50,7 @@ read_project_file( string_t project_file )
   string_t *name_p;
   volatile int_t line_count;
 
-  info_in_project_file = false;
+  bool info_in_project_file = false;
   project_stream = open_stream( project_file, "r" );
   line_count = 0;
   while (true) 
@@ -85,11 +74,6 @@ read_project_file( string_t project_file )
 	  extension = "sym";
 	  name_p = &symbol_file; 
 	}
-	else if (strcmp( argument, "esym:" ) == 0) 
-	{
-	  extension = "esym";
-	  name_p = &extended_symbol_file; 
-	}
 	else if (strcmp( argument, "lex:" ) == 0) 
 	{
 	  extension = "lex";
@@ -99,11 +83,6 @@ read_project_file( string_t project_file )
 	{
 	  extension = "mor";
 	  name_p = &morphology_file; 
-	}
-	else if (strcmp( argument, "syn:" ) == 0) 
-	{
-	  extension = "syn";
-	  name_p = &syntax_file; 
 	}
 	else if (strcmp( argument, "include:" ) == 0) 
 	{ 
@@ -168,20 +147,10 @@ init_malaga( string_t project_file )
 
   /* Init modules. */
   init_values();
-  if (extended_symbol_file != NULL) 
-    init_symbols( extended_symbol_file );
-  else 
-    init_symbols( symbol_file );
+  init_symbols( symbol_file );
   init_lexicon( lexicon_file );
   init_scanner();
   init_analysis( morphology_file );
-
-  /* Set options to default values. */
-  error_format = new_string( "%l: %s: error: %e", NULL );
-  result_format = new_string( "%l: %s: %f", NULL );
-  unknown_format = new_string( "%l: %s: unknown", NULL );
-  auto_tree = false;
-  auto_result = true;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -190,18 +159,13 @@ void
 terminate_malaga( void )
 /* Terminate this module. */
 {
-  free_mem( &error_format );
-  free_mem( &result_format );
-  free_mem( &unknown_format );
   terminate_analysis();
-  free_mem( &syntax_file );
   free_mem( &morphology_file );
   terminate_patterns();
   terminate_scanner();
   terminate_lexicon();
   free_mem( &lexicon_file );
   terminate_symbols();
-  free_mem( &extended_symbol_file );
   free_mem( &symbol_file );
   terminate_values();
   free_text( &grammar_info );
