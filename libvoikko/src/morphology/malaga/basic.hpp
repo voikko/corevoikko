@@ -55,16 +55,6 @@ enum {EOS= '\0'}; /* End-Of-String control character. */
 
 #define ARRAY_LENGTH(a) (sizeof(a) / sizeof( (a)[0] ))
 
-/* Read-only variables. =====================================================*/
-
-extern char_t malaga_version[];
-extern string_t program_name; /* This is set by "init_basic". */
-
-/* Program message. =========================================================*/
-
-extern void program_message( void );
-/* Print some information about the program. */
-
 /* Forward-linked lists. ====================================================*/
                                               
 typedef struct list_node /* A node in a list of nodes. */
@@ -276,8 +266,8 @@ extern NO_RETURN_PREFIX void complain( string_t message, ... ) NO_RETURN_SUFFIX;
 
 /* Module initialisation. ===================================================*/
 
-extern void init_basic( string_t prog_name );
-/* Initialise this module. PROG_NAME should be the name of the program. */
+extern void init_basic();
+/* Initialise this module. */
 
 extern void terminate_basic( void );
 /* Terminate this module. */

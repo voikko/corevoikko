@@ -17,8 +17,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Global variables. ========================================================*/
 
-char_t malaga_version[] = "7.12";
-string_t program_name;
 text_t *error_text;
 jmp_buf *current_error_handler;
 
@@ -531,7 +529,7 @@ malaga_throw( void )
     longjmp( *current_error_handler, 1 );
   else 
   { 
-    fprintf( stderr, "%s: %s\n", program_name, error_text->buffer );
+    fprintf( stderr, "libmalaga: %s\n", error_text->buffer );
     exit( 1 );
   }
 }
@@ -544,28 +542,13 @@ complain( string_t message, ... )
   malaga_throw();
 }
 
-/*---------------------------------------------------------------------------*/
-
-void 
-program_message( void )
-/* Print some information about the program. */
-{ 
-  printf( "This is %s, version %s.\n", program_name, malaga_version );
-  printf( "Copyright (C) 1995 Bjoern Beutel.\n" );
-  printf( "This program is part of Malaga, "
-          "a system for Natural Language Analysis.\n" );
-  printf( "You can distribute it under the terms "
-	  "of the GNU General Public License.\n" );
-}
-
 /* Module initialisation. ===================================================*/
 
 void 
-init_basic( string_t prog_name )
-/* Initialise this module. PROG_NAME should be the name of the program. */
+init_basic()
+/* Initialise this module. */
 {
   error_text = new_text();
-  program_name = prog_name;
 }
 
 /*---------------------------------------------------------------------------*/

@@ -42,7 +42,7 @@ init_libmalaga( string_t project_file )
   string_t project_file_absolute;
 
   malaga_error = NULL;
-  init_basic( "libmalaga" );
+  init_basic();
   project_file_absolute = absolute_path( project_file, NULL );
   TRY 
     init_malaga( project_file_absolute );

@@ -48,8 +48,6 @@ typedef cell_t symbol_t;
 
 /* Variables. ===============================================================*/
 
-extern char_t malaga_version[]; /* Read only! */
-
 extern string_t malaga_error; 
 /* If one of the functions below has created an error, this variable
  * contains an error message. If a function did its job, it is NULL. */
