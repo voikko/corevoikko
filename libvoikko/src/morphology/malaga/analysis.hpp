@@ -90,4 +90,10 @@ extern analysis_node_t *get_next_analysis_node( void );
 extern void free_analysis_node( analysis_node_t **node );
 /* Free the memory occupied by NODE. */
 
+extern void add_end_state( value_t feat );
+/* Add a state, consisting of feature structure FEAT, as an end state. */
+
+extern void add_running_state( value_t feat, int_t rule_set );
+/* Add a running state, consisting of feature structure FEAT and RULE_SET. */
+
 }}}

@@ -21,6 +21,7 @@
 #include "morphology/malaga/malaga_files.hpp"
 #include "morphology/malaga/rule_type.hpp"
 #include "morphology/malaga/rules.hpp"
+#include "morphology/malaga/analysis.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -43,9 +44,6 @@ typedef struct
 } path_node_t;
 
 /* Global variables. ========================================================*/
-
-void (*add_end_state)( value_t feat );
-void (*add_running_state)( value_t feat, int_t rule_set );
 
 rule_sys_t *executed_rule_sys;
 int_t executed_rule_number = -1;

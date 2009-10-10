@@ -252,10 +252,10 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set,
     state_count++;
 }
 
-/* Callback functions needed by "rules.c" ===================================*/
+/*---------------------------------------------------------------------------*/
 
-static void 
-add_end_state_local( value_t feat )
+void 
+add_end_state( value_t feat )
 /* Add a state, consisting of FEAT, as an end state. */
 { 
   rule_t *rule = executed_rule_sys->rules + executed_rule_number;
@@ -277,8 +277,8 @@ add_end_state_local( value_t feat )
 
 /*---------------------------------------------------------------------------*/
 
-static void 
-add_running_state_local( value_t feat, int_t rule_set )
+void 
+add_running_state( value_t feat, int_t rule_set )
 /* Add a running state, consisting of FEAT and RULE_SET. */
 { 
   add_state( &state_info.analysis->running_states, 
@@ -692,10 +692,6 @@ analyse( string_t input )
   state_count = 1; /* We will insert the initial state. */
   last_analysis_input = input;
   rule_sys = morphologyRuleSystem;
-
-  /* Set callback functions for "execute_rules". */
-  add_running_state = add_running_state_local;
-  add_end_state = add_end_state_local;
 
   /* Reset the analysis data structures */
   clear_list( &analysis->running_states );
