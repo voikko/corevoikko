@@ -78,9 +78,6 @@ static pool_t tree_pool; /* Pool where tree nodes are stored. */
 static state_t *next_result_state; /* Needed for "next_analysis_result". */
 static tree_node_t *next_tree_node; /* Needed for "get_next_analysis_node". */
 
-static string_t link_surface, link_surface_end;
-/* Start and end position of surfaces when rule is executed. Read only! */
-
 static struct /* Information needed to generate states and tree nodes. */
 { 
   analysis_t *analysis;
@@ -518,10 +515,6 @@ execute_robust_rule( analysis_t *analysis,
 
   input_end = get_word_end( input );
 
-  /* Set debugging information. */
-  link_surface = input;
-  link_surface_end = input_end;
-
   /* Setup STATE_INFO. */
   state_info.analysis = analysis;
   state_info.count_states = false;
@@ -569,8 +562,6 @@ execute_filter_rule( analysis_t *analysis,
     }
     build_list( top );
 
-    link_surface = link_surface_end = input; /* Set debugging information. */
-
     /* Execute filter rule. */
     state_info.analysis = analysis;
     state_info.count_states = false;
@@ -613,7 +604,6 @@ execute_pruning_rule( analysis_t *analysis )
   build_list( result_count );
 
   rule_sys = morphologyRuleSystem;
-  link_surface = link_surface_end = input; /* Set debugging information. */
   execute_rule( rule_sys, rule_sys->pruning_rule ); /* Execute pruning rule. */
 
   /* Interprete the result. */
@@ -662,10 +652,6 @@ execute_rules( analysis_t *analysis,
   state_info.parent = state->tree_node;
   state_info.item_index = state->item_index + 1;
   state_info.input = link_surf_end;
-
-  /* Set debugging information. */
-  link_surface = link_surf;
-  link_surface_end = link_surf_end;
 
   /* Execute rules in rule set. */
   rules_executed = rules_successful = false;
