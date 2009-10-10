@@ -589,9 +589,7 @@ execute_rules( analysis_t *analysis,
                state_t *state, 
                value_t link_feat,
                string_t link_surf,
-               string_t link_surf_end, 
-	       bool count_states,
-               bool create_tree,
+               string_t link_surf_end,
                rule_type_t rule_type )
 /* Execute the successor rules of RULE_TYPE in RULE_SYS for STATE in ANALYSIS.
  * Consume the segment from LINK_SURF to LINK_SURF_END with feature structure
@@ -603,8 +601,8 @@ execute_rules( analysis_t *analysis,
 
   /* Setup STATE_INFO. */
   state_info.analysis = analysis;
-  state_info.count_states = count_states;
-  state_info.create_tree = create_tree;
+  state_info.count_states = true;
+  state_info.create_tree = false;
   state_info.link_feat = link_feat;
   state_info.parent = state->tree_node;
   state_info.item_index = state->item_index + 1;
@@ -647,13 +645,6 @@ execute_rules( analysis_t *analysis,
 	rules_successful |= rule_successful;
       }
     }
-  }
-  
-  /* Enter a tree node if rules where executed but did not fire. */
-  if (rules_executed && ! rules_successful && create_tree) 
-  { 
-    state_info.rule = -1;
-    add_tree_node( NULL, link_surf_end, -1, BREAK_NODE );
   }
 }
 
@@ -736,7 +727,7 @@ analyse( string_t input )
 	if (state->input != current_input) 
 	  break;
         execute_rules( analysis, rule_sys, state, NULL, current_input, 
-                       current_input, true, false, END_RULE );
+                       current_input, END_RULE );
       }
     }
     if (*current_input == EOS) 
@@ -753,7 +744,7 @@ analyse( string_t input )
         if (state->input != current_input) 
           break;
         execute_rules( analysis, rule_sys, state, link_feat, current_input,
-                       link_surf_end, true, false, COMBI_RULE );
+                       link_surf_end, COMBI_RULE );
       }
     }
 
