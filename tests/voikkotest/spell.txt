@@ -442,6 +442,8 @@ koiramääkiminen
 12-vuotias
 65-
 90-kissainen
+12:15
+!12:kissa
 
 [johtimet]
 märänlaiselleko

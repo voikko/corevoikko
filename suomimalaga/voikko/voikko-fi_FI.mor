@@ -638,12 +638,16 @@ combi_rule yhdysmerkki_lainen_johdoksen_jälkeen ($vasen, $oikea, $sana):
 	       inen_päätteinen_laatusana;
 end;
 
-combi_rule yhdysmerkki_numeron_jälkeen ($vasen, $oikea, $sana):
-  ? $oikea.luokka = tavuviiva;
+combi_rule merkki_numeron_jälkeen ($vasen, $oikea, $sana):
+  ? $oikea.luokka in <tavuviiva, kaksoispiste>;
 
   define $res := $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>;
-  result $res, accept;
-  result $res, rules lukusanan_jälkiliite, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+  if $oikea.luokka = tavuviiva then
+    result $res, accept;
+    result $res, rules lukusanan_jälkiliite, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+  else
+    result $res, rules lukusana_numero;
+  end;
 end;
 
 combi_rule yhdysmerkki_etuliitteen_jälkeen ($vasen, $oikea, $sana):
@@ -1051,7 +1055,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
                  nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
    elseif ($oikea.alaluokka = numeromerkki) then
      $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "q"] + $oikea>;
-     result $res, rules lukusana_numero, yhdysmerkki_numeron_jälkeen;
+     result $res, rules lukusana_numero, merkki_numeron_jälkeen;
      result $res, accept;
   end;
   if ($oikea.alaluokka in <sata, tuhat>) then
@@ -1234,7 +1238,7 @@ combi_rule lukusana_numero ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if $oikea.alaluokka = numeromerkki then
-    result $res, rules lukusana_numero, yhdysmerkki_numeron_jälkeen;
+    result $res, rules lukusana_numero, merkki_numeron_jälkeen;
     result $res, accept;
   elseif $oikea.alaluokka = pilkku and $oikea.pilkku /= yes then
     $oikea :=+ [pilkku: yes];
