@@ -20,7 +20,7 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
-static struct /* This is the symbol table. */
+static struct /* This is the symbol table. FIXME */
 { 
   int_t symbol_count; /* Number of symbols in this table. */
 

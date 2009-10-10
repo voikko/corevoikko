@@ -65,8 +65,8 @@ string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. */
 
 /* Variables. ===============================================================*/
 
-static pattern_state_t *stack; /* Stack used for backtracking. */
-static int_t stack_size;
+static pattern_state_t *stack; /* Stack used for backtracking. FIXME */
+static int_t stack_size; // FIXME
 
 /* Forwards. ================================================================*/
 

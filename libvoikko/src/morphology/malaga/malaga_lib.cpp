@@ -34,8 +34,8 @@ text_t *grammar_info; /* Information about grammar. */
 
 /* Variables. ===============================================================*/
 
-static string_t morphology_file, lexicon_file;
-static string_t symbol_file;
+static string_t morphology_file, lexicon_file; // FIXME
+static string_t symbol_file; // FIXME
 
 /* Functions. ===============================================================*/
 

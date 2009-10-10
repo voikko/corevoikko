@@ -17,7 +17,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-static text_t *text;
+static text_t *text; // FIXME
 
 /* Functions. ===============================================================*/
 

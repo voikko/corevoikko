@@ -22,10 +22,10 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-static void *lexicon_data; /* Address of lexicon file mapped into memory. */
-static int_t lexicon_length; /* Length of *LEXICON_DATA. */
+static void *lexicon_data; /* Address of lexicon file mapped into memory. FIXME */
+static int_t lexicon_length; /* Length of *LEXICON_DATA. FIXME */
 
-static struct /* The run time lexicon. */
+static struct /* The run time lexicon. FIXME */
 { 
   int_t *trie; /* A trie with indices to FEAT_LISTS. */
   int_t trie_size;
@@ -40,8 +40,8 @@ static struct /* The run time lexicon. */
   int_t values_size;
 } lexicon;
 
-static int_t feat_list_index, trie_node;
-static string_t prefix_end;
+static int_t feat_list_index, trie_node; // FIXME
+static string_t prefix_end; // FIXME
 
 /* Functions. ===============================================================*/
 

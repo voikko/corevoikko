@@ -69,16 +69,16 @@ string_t last_analysis_input;
 static const int_t mor_pruning_min = 30;
 
 /* Structures used for LAG analysis (morphology). */
-static analysis_t *morphologyAnalysis;
+static analysis_t *morphologyAnalysis; // FIXME
 
 /* The data structure used to save the analysis tree. */
-static tree_node_t *root_tree_node; /* A pointer to the root tree node. */
-static pool_t tree_pool; /* Pool where tree nodes are stored. */
+static tree_node_t *root_tree_node; /* A pointer to the root tree node. FIXME */
+static pool_t tree_pool; /* Pool where tree nodes are stored. FIXME */
 
-static state_t *next_result_state; /* Needed for "next_analysis_result". */
-static tree_node_t *next_tree_node; /* Needed for "get_next_analysis_node". */
+static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME */
+static tree_node_t *next_tree_node; /* Needed for "get_next_analysis_node". FIXME */
 
-static struct /* Information needed to generate states and tree nodes. */
+static struct /* Information needed to generate states and tree nodes. FIXME */
 { 
   analysis_t *analysis;
   bool count_states;
@@ -90,7 +90,7 @@ static struct /* Information needed to generate states and tree nodes. */
   string_t input; /* End of analysed input. */
 } state_info;
 
-static bool options[ANALYSIS_OPTION_COUNT];
+static bool options[ANALYSIS_OPTION_COUNT]; // FIXME
 
 /* Functions for analysis options. ==========================================*/
 

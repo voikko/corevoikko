@@ -18,12 +18,12 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Constants. ===============================================================*/
 
-static char_t malaga[] = "MALAGA"; /* Magic key. */
+static const char_t malaga[] = "MALAGA"; /* Magic key. */
 
 /* Variables. ===============================================================*/
 
-static time_t sym_stamp; /* Stamp for the ".sym" file or 0. */
-static time_t esym_stamp; /* Stamp for the ".esym" file or 0. */
+static time_t sym_stamp; /* Stamp for the ".sym" file or 0. FIXME */
+static time_t esym_stamp; /* Stamp for the ".esym" file or 0. FIXME */
 
 /* Functions. ===============================================================*/
 

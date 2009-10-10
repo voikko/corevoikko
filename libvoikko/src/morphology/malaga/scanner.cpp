@@ -20,7 +20,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* List of all keywords and their token codes.
  * (This list must be maintained in alphabetical order.) */
-static struct { string_t name; int_t code; } keywords[ NUMBER_OF_KEYWORDS ] = 
+static const struct { string_t name; int_t code; } keywords[ NUMBER_OF_KEYWORDS ] = 
 { 
   { "accept", TOK_ACCEPT },
   { "allo_rule", TOK_ALLO_RULE },
@@ -90,14 +90,14 @@ double token_number;
 
 /* Variables. ===============================================================*/
 
-static list_t sources; /* The list of sources, current source first. */
+static list_t sources; /* The list of sources, current source first. FIXME */
 
-static string_t scanner_input;
+static string_t scanner_input; // FIXME
 /* If no file is included, the scanner reads its input from SCANNER_INPUT. */
 
-static int_t next_char; /* The next unicode char to be read. */
+static int_t next_char; /* The next unicode char to be read. FIXME */
 
-static text_t *token_text; /* The text of the next token. */
+static text_t *token_text; /* The text of the next token. FIXME */
 
 /* Functions. ===============================================================*/
 

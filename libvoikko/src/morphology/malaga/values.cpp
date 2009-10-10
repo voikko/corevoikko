@@ -115,17 +115,17 @@ attribute_order_t attribute_order;
 /* Variables. ===============================================================*/
 
 /* Two constant values. */
-static cell_t empty_list[] = {TYPE_CELL( LIST_TYPE, 0 ), 0};
-static cell_t empty_record[] = {TYPE_CELL( RECORD_TYPE, 0 ), 0};
+static cell_t empty_list[] = {TYPE_CELL( LIST_TYPE, 0 ), 0}; // FIXME
+static cell_t empty_record[] = {TYPE_CELL( RECORD_TYPE, 0 ), 0}; // FIXME
 
-static cell_t *value_heap; /* The actual heap. */
-static cell_t *value_heap_end; /* Pointer to first free cell in heap. */
-static int_t value_heap_size; /* Size of the value heap in cells. */
+static cell_t *value_heap; /* The actual heap. FIXME */
+static cell_t *value_heap_end; /* Pointer to first free cell in heap. FIXME */
+static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
 
-static int_t value_stack_size; /* Size of the value stack. */
+static int_t value_stack_size; /* Size of the value stack. FIXME */
 
-static list_t hidden_attributes; /* The list of hidden attributes. */
-static text_t *value_text; /* Buffer for conversion of values to text. */
+static list_t hidden_attributes; /* The list of hidden attributes. FIXME */
+static text_t *value_text; /* Buffer for conversion of values to text. FIXME */
 
 /* Forward declarations. ====================================================*/
 
