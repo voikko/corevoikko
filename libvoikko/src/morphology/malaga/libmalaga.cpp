@@ -123,11 +123,11 @@ parse_malaga_value( string_t string )
   volatile value_t value;
 
   malaga_error = NULL;
-  set_scanner_input( string );
+  string_t scanner_input = set_scanner_input( string );
   TRY
   {
-    parse_a_value();
-    parse_token( EOF );
+    parse_a_value(scanner_input);
+    parse_token(EOF, scanner_input);
     value = new_value( value_stack[ --top ] );
   }
   IF_ERROR

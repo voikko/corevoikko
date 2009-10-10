@@ -92,9 +92,6 @@ double token_number;
 
 static list_t sources; /* The list of sources, current source first. FIXME */
 
-static string_t scanner_input; // FIXME
-/* If no file is included, the scanner reads its input from SCANNER_INPUT. */
-
 static int_t next_char; /* The next unicode char to be read. FIXME */
 
 static text_t *token_text; /* The text of the next token. FIXME */
@@ -102,7 +99,7 @@ static text_t *token_text; /* The text of the next token. FIXME */
 /* Functions. ===============================================================*/
 
 static void 
-read_next_char( void )
+read_next_char( string_t & scanner_input )
 /* Read the next char from input into NEXT_CHAR.
  * If end of input stream is reached, return EOF.
  * If no input stream is selected, read input from INPUT_BUFFER.
@@ -180,8 +177,8 @@ read_next_char( void )
 
 /*---------------------------------------------------------------------------*/
 
-void 
-set_scanner_input( string_t input )
+string_t 
+set_scanner_input( const string_t input )
 /* Make the scanner use INPUT as scanner input 
  * until "set_scanner_input( NULL )" is called.
  * INPUT must remain valid until then. */
@@ -189,7 +186,7 @@ set_scanner_input( string_t input )
   source_t *source;
 
   source = (source_t *) sources.first;
-  scanner_input = input;
+  string_t scanner_input = input;
   if (input != NULL) 
   { 
     if (source != NULL) 
@@ -197,14 +194,15 @@ set_scanner_input( string_t input )
       source->next_char = next_char;
       source->next_token = next_token;
     }
-    read_next_char();
-    read_next_token();
+    read_next_char(scanner_input);
+    read_next_token(scanner_input);
   } 
   else if (source != NULL) 
   { 
     next_char = source->next_char;
     next_token = source->next_token;
   }
+  return scanner_input;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -224,7 +222,6 @@ terminate_scanner( void )
 {
   source_t *source;
 
-  scanner_input = NULL;
   FOREACH_FREE( source, sources, source_t ) 
   {
     close_stream( &source->stream, NULL );
@@ -238,7 +235,7 @@ terminate_scanner( void )
 /*---------------------------------------------------------------------------*/
 
 static void 
-read_name( void )
+read_name(string_t & scanner_input)
 /* Read rule name, variable, or keyword into TOKEN_NAME. */
 {
   token_name = NULL;
@@ -249,7 +246,7 @@ read_name( void )
 	     || next_char == '_' || next_char == '&' || next_char == '|'))
   { 
     add_unichar_to_text( token_text, next_char );
-    read_next_char();
+    read_next_char(scanner_input);
   }
 
   token_name = token_text->buffer;
@@ -287,7 +284,7 @@ keyword_code( string_t name )
 /*---------------------------------------------------------------------------*/
 
 static void 
-read_number( void )
+read_number(string_t & scanner_input)
 /* Read a floating point number. Save its value in TOKEN_NUMBER. */
 {
   token_name = NULL;
@@ -296,44 +293,44 @@ read_number( void )
   while (next_char >= '0' && next_char <= '9') 
   { 
     add_char_to_text( token_text, next_char );
-    read_next_char();
+    read_next_char(scanner_input);
   }
   if (next_char == 'l' || next_char == 'L') 
-    read_next_char();
+    read_next_char(scanner_input);
   else if (next_char == 'r' || next_char == 'R') 
   { 
     insert_char_in_text( token_text, '-', 0 );
-    read_next_char();
+    read_next_char(scanner_input);
   } 
   else 
   { 
     if (next_char == '.') 
     { 
       add_char_to_text( token_text, next_char );
-      read_next_char();
+      read_next_char(scanner_input);
       if (next_char < '0' || next_char >'9') 
 	complain( "Missing digits after \".\"." );
       while (next_char >= '0' && next_char <= '9') 
       { 
 	add_char_to_text( token_text, next_char );
-        read_next_char();
+        read_next_char(scanner_input);
       }
     }
     if (next_char == 'E' || next_char == 'e') 
     { /* Read an exponent. */
       add_char_to_text( token_text, next_char );
-      read_next_char();
+      read_next_char(scanner_input);
       if (next_char == '-' || next_char == '+') 
       { 
 	add_char_to_text( token_text, next_char );
-        read_next_char();
+        read_next_char(scanner_input);
       }
       if (next_char < '0' || next_char > '9') 
 	complain( "Missing exponent." );
       while (next_char >= '0' && next_char <= '9') 
       { 
 	add_char_to_text( token_text, next_char );
-        read_next_char();
+        read_next_char(scanner_input);
       }  
     }
   }
@@ -344,7 +341,7 @@ read_number( void )
 /*---------------------------------------------------------------------------*/
 
 static void 
-read_string( void )
+read_string(string_t & scanner_input)
 /* Read a string. Save its value in TOKEN_STRING. */
 {
   int_t i;
@@ -352,7 +349,7 @@ read_string( void )
 
   token_name = NULL;
   clear_text( token_text );
-  read_next_char(); /* Overread beginning '"'. */
+  read_next_char(scanner_input); /* Overread beginning '"'. */
   while (next_char != '\"') 
   { 
     if (next_char == EOF || next_char == '\n') 
@@ -360,15 +357,15 @@ read_string( void )
     if (next_char != '\\') 
     {
       add_unichar_to_text( token_text, next_char );
-      read_next_char();
+      read_next_char(scanner_input);
     }
     else
     { 
-      read_next_char();
+      read_next_char(scanner_input);
       if (next_char == '\\' || next_char == '\"')
       {
 	add_char_to_text( token_text, next_char );
-	read_next_char();
+	read_next_char(scanner_input);
       }
       else if (next_char >= '0'  && next_char <= '7')
       { 
@@ -379,7 +376,7 @@ read_string( void )
 	    code = 8 * code + (next_char - '0');
 	  else 
 	    complain( "Escape sequence must have 3 octal digits." );
-	  read_next_char();
+	  read_next_char(scanner_input);
 	}
 	if (! g_unichar_validate( code ))
 	  complain( "Escape sequence defines invalid character." );
@@ -389,7 +386,7 @@ read_string( void )
 	complain( "Illegal escape sequence in string." );
     }
   }
-  read_next_char(); /* Read over final '"'. */
+  read_next_char(scanner_input); /* Read over final '"'. */
   free_mem( &token_string ); /* Free old token string. */
   token_string = new_string( token_text->buffer, NULL );
 }
@@ -397,7 +394,7 @@ read_string( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-read_next_token( void )
+read_next_token(string_t & scanner_input)
 /* Read the next token from current source into NEXT_TOKEN.
  * If end of input stream is reached, return EOF. */
 {
@@ -412,48 +409,48 @@ read_next_token( void )
     case ' ': 
     case '\t': 
     case '\n': /* Read over whitespace. */
-      read_next_char();
+      read_next_char(scanner_input);
       break;
     case '\r':
-      read_next_char();
+      read_next_char(scanner_input);
       if (next_char != '\n')
 	complain( "Carriage return without line feed." );
-      read_next_char();
+      read_next_char(scanner_input);
       break;
     case '#': /* Read over a comment. */
       do 
       { 
-	read_next_char(); 
+	read_next_char(scanner_input); 
       } while (next_char != '\n' && next_char != EOF);
       break;
     case '\"': /* Read a string. */
-      read_string();
+      read_string(scanner_input);
       next_token = TOK_STRING;
       return;
     case ':': /* Read a ":", ":=", ":=+", ":=-", ":=*", ":=/". */
-      read_next_char();
+      read_next_char(scanner_input);
       if (next_char == '=') 
       { 
-	read_next_char();
+	read_next_char(scanner_input);
         if (next_char == '+') 
 	{ 
 	  next_token = TOK_ASSIGN_PLUS;
-	  read_next_char();
+	  read_next_char(scanner_input);
         } 
 	else if (next_char == '-') 
 	{ 
 	  next_token = TOK_ASSIGN_MINUS;
-          read_next_char();
+          read_next_char(scanner_input);
         }
 	else if (next_char == '*') 
 	{ 
 	  next_token = TOK_ASSIGN_ASTERISK;
-          read_next_char();
+          read_next_char(scanner_input);
         } 
 	else if (next_char == '/') 
 	{ 
 	  next_token = TOK_ASSIGN_SLASH;
-          read_next_char();
+          read_next_char(scanner_input);
         } 
 	else 
 	  next_token = TOK_ASSIGN;
@@ -462,16 +459,16 @@ read_next_token( void )
 	next_token = ':';
       return;
     case '/': /* Read a "/", a "/=" or a "/~". */
-      read_next_char();
+      read_next_char(scanner_input);
       if (next_char == '=') 
       { 
 	next_token = TOK_NOT_EQUAL;
-        read_next_char();
+        read_next_char(scanner_input);
       } 
       else if (next_char == '~') 
       { 
         next_token = TOK_NOT_CONGRUENT;
-        read_next_char();
+        read_next_char(scanner_input);
       } 
       else 
 	next_token = '/';
@@ -479,31 +476,31 @@ read_next_token( void )
     case '0': case '1': case '2': case '3': case '4':
     case '5': case '6': case '7': case '8': case '9': 
       /* Read a number. */
-      read_number();
+      read_number(scanner_input);
       next_token = TOK_NUMBER;
       return;
     case '$':
-      read_next_char();
-      read_name();
+      read_next_char(scanner_input);
+      read_name(scanner_input);
       next_token = TOK_VARIABLE;
       return;
     case '@':
-      read_next_char();
-      read_name();
+      read_next_char(scanner_input);
+      read_name(scanner_input);
       next_token = TOK_CONSTANT;
       return;
     default: 
     if (g_unichar_isalpha( next_char ) 
         || next_char == '_' || next_char == '&' || next_char == '|') 
       { 
-	read_name();
+	read_name(scanner_input);
         next_token = keyword_code( token_name );
         return;
       } 
       else 
       { 
 	next_token = next_char;
-        read_next_char();
+        read_next_char(scanner_input);
         return;
       }
     }
@@ -578,11 +575,11 @@ test_token( int_t token )
 /*---------------------------------------------------------------------------*/
 
 void 
-parse_token( int_t token )
+parse_token(int_t token, string_t & scanner_input)
 /* Test if TOKEN is the next token and read next token. */
 {
   test_token( token );
-  read_next_token();
+  read_next_token(scanner_input);
 }
 
 }}}

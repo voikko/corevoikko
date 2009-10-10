@@ -96,19 +96,19 @@ extern void init_scanner( void );
 extern void terminate_scanner( void );
 /* Terminate the scanner, even when it's scanning. */
 
-extern void set_scanner_input( string_t input );
+extern string_t set_scanner_input( const string_t input );
 /* Make the scanner use INPUT as scanner input 
  * until "set_scanner_input( NULL )" is called.
  * INPUT must remain valid until then. */
 
-extern void read_next_token( void );
+extern void read_next_token(string_t & scanner_input);
 /* Read the next token from current source into NEXT_TOKEN.
  * If end of input stream is reached, return EOF. */
 
 extern void test_token( int_t token );
 /* Test if TOKEN is the next token. If it's not, report an error. */
 
-extern void parse_token( int_t token );
+extern void parse_token(int_t token, string_t & scanner_input);
 /* Test if TOKEN is the next token and read next token. */
 
 extern string_t token_as_text( int_t token );

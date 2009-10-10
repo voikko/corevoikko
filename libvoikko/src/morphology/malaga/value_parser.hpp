@@ -8,7 +8,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Functions. ===============================================================*/
 
-extern void parse_a_value( void );
+extern void parse_a_value(string_t & scanner_input);
 /* Stack effects: (nothing) -> NEW_VALUE.
  * Parse a value (use scanner input) and leave it on the stack. */
 
