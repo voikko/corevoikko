@@ -41,20 +41,8 @@ extern rule_sys_t *morphologyRuleSystem;
 
 extern int_t state_count; /* Counts number of generated states. Read only! */
 
-extern int_t current_state; /* Index of current state. Read only! */
-
-extern bool recognised_by_combi_rules;
-/* true if last analysis was recognised by combi rules. Read only! */
-
-extern bool recognised_by_robust_rule; 
-/* true if last analysis was recognised by robust rule. Read only! */
-
 extern string_t last_analysis_input; 
 /* Start of top level input string. Read only! */
-
-extern char_t * (*get_surface)( surface_t surface_type );
-/* Return surface SURFACE_TYPE for currently executed rule.
- * The result must be freed after use. */
 
 /* Functions. ===============================================================*/
 

@@ -62,11 +62,7 @@ typedef struct /* The structure for morphological and syntactical analysis. */
 
 rule_sys_t *morphologyRuleSystem;
 int_t state_count;
-int_t current_state;
-bool recognised_by_combi_rules;
-bool recognised_by_robust_rule; 
-string_t last_analysis_input; 
-char_t * (*get_surface)( surface_t surface_type );
+string_t last_analysis_input;
 
 /* Variables. ===============================================================*/
 
@@ -303,33 +299,6 @@ add_running_state_local( value_t feat, int_t rule_set )
 { 
   add_state( &state_info.analysis->running_states, 
 	     state_info.input, feat, rule_set, INTER_NODE );
-}
-
-/*---------------------------------------------------------------------------*/
-
-static char_t *
-get_surface_local( surface_t surface_type )
-/* Return surface SURFACE_TYPE for currently executed rule.
- * The result must be freed after use. */
-{ 
-  switch (surface_type) 
-  {
-  case STATE_SURFACE:
-    string_t state_surf_end;
-    if (link_surface > state_surface && link_surface[-1] == ' ') 
-      state_surf_end = link_surface - 1;
-    else 
-      state_surf_end = link_surface;
-    return new_string_readable( state_surface, state_surf_end );
-  case LINK_SURFACE:
-    if (link_surface_end == link_surface)
-      return NULL;
-    return new_string_readable( link_surface, link_surface_end );
-  case RESULT_SURFACE:
-    return new_string_readable( state_surface, link_surface_end );
-  default: 
-    return NULL;
-  }
 }
 
 /* Analysis functions. ======================================================*/
@@ -711,8 +680,6 @@ execute_rules( analysis_t *analysis,
   /* Set debugging information. */
   link_surface = link_surf;
   link_surface_end = link_surf_end;
-  if (state->tree_node != NULL) 
-    current_state = state->tree_node->state_index;
 
   /* Execute rules in rule set. */
   rules_executed = rules_successful = false;
@@ -752,7 +719,6 @@ execute_rules( analysis_t *analysis,
       }
     }
   }
-  current_state = -1;
   
   /* Enter a tree node if rules where executed but did not fire. */
   if (rules_executed && ! rules_successful && create_tree) 
@@ -810,7 +776,6 @@ analyse( string_t input,
     root_tree_node = NULL;
     state_count = 1; /* We will insert the initial state. */
     last_analysis_input = input;
-    recognised_by_robust_rule = recognised_by_combi_rules = false;
   }
   rule_sys = morphologyRuleSystem;
 
@@ -827,9 +792,7 @@ analyse( string_t input,
   clear_pool( analysis->value_pool );
 
   /* Set debug information. */
-  get_surface = get_surface_local;
   state_surface = input;
-  current_state = -1;
 
   /* Enter the initial state. */
   initial_state = insert_state( analysis, &analysis->running_states,
@@ -904,15 +867,11 @@ analyse( string_t input,
   } /* End of loop that consumes all running states. */
 
   check_end_states( analysis, analyse_all );
-  if (analyse_all && analysis->end_states.first != NULL) 
-    recognised_by_combi_rules = true;
 
   if (analysis->end_states.first == NULL && options[ ROBUST_RULE_OPTION ]) 
   { 
     execute_robust_rule( analysis, rule_sys, input );
     check_end_states( analysis, analyse_all );
-    if (analyse_all && analysis->end_states.first != NULL) 
-      recognised_by_robust_rule = true;
   }
   if (options[ MOR_OUT_FILTER_OPTION ]) 
   { 
