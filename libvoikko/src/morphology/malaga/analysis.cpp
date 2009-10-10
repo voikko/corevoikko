@@ -685,12 +685,9 @@ check_end_states( analysis_t *analysis,  bool analyse_all )
 /*---------------------------------------------------------------------------*/
 
 void 
-analyse( string_t input, 
-         bool create_tree,
-         bool analyse_all )
+analyse( string_t input )
 /* Perform a LAG analysis of INPUT using.
- * An analysis tree will be built if CREATE_TREE == true.
- * The whole input will be analysed if ANALYSE_ALL == true. */
+ * An analysis tree will be built if CREATE_TREE == true. */
 { 
   rule_sys_t *rule_sys;
   state_t *initial_state;
@@ -700,12 +697,9 @@ analyse( string_t input,
   string_t link_surf_end; /* End of the link's surface. */
   analysis_t *analysis = morphologyAnalysis;
 
-  if (analyse_all) 
-  { 
-    root_tree_node = NULL;
-    state_count = 1; /* We will insert the initial state. */
-    last_analysis_input = input;
-  }
+  root_tree_node = NULL;
+  state_count = 1; /* We will insert the initial state. */
+  last_analysis_input = input;
   rule_sys = morphologyRuleSystem;
 
   /* Set callback functions for "execute_rules". */
@@ -723,23 +717,7 @@ analyse( string_t input,
   initial_state = insert_state( analysis, &analysis->running_states,
                                 rule_sys->values + rule_sys->initial_feat,
                                 input, rule_sys->initial_rule_set, 0 );
-  if (create_tree) 
-  { 
-    /* Clear all tree nodes and setup ROOT_TREE_NODE. */
-    clear_pool( tree_pool );
-    root_tree_node = (tree_node_t *) get_pool_space( tree_pool, 1, NULL );
-    root_tree_node->parent = NULL;
-    root_tree_node->first_child = NULL;
-    root_tree_node->sibling = NULL;
-    root_tree_node->type = INTER_NODE;
-    root_tree_node->rule = -1;
-    root_tree_node->state_index = 0;
-    root_tree_node->link_feat = NULL;
-    root_tree_node->result_feat = rule_sys->values + rule_sys->initial_feat;
-    root_tree_node->rule_set = rule_sys->initial_rule_set;
-    root_tree_node->input = input;
-    initial_state->tree_node = root_tree_node;
-  }
+
 
   /* Analyse while there are running states. */
   while (analysis->running_states.first != NULL) 
@@ -758,7 +736,7 @@ analyse( string_t input,
 	if (state->input != current_input) 
 	  break;
         execute_rules( analysis, rule_sys, state, NULL, current_input, 
-                       current_input, analyse_all, create_tree, END_RULE );
+                       current_input, true, false, END_RULE );
       }
     }
     if (*current_input == EOS) 
@@ -775,7 +753,7 @@ analyse( string_t input,
         if (state->input != current_input) 
           break;
         execute_rules( analysis, rule_sys, state, link_feat, current_input,
-                       link_surf_end, analyse_all, create_tree, COMBI_RULE );
+                       link_surf_end, true, false, COMBI_RULE );
       }
     }
 
@@ -791,7 +769,7 @@ analyse( string_t input,
     }
   } /* End of loop that consumes all running states. */
 
-  check_end_states( analysis, analyse_all );
+  check_end_states( analysis, true );
 
   if (options[ MOR_OUT_FILTER_OPTION ]) 
   { 

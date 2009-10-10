@@ -60,12 +60,8 @@ extern void preprocess_input(char_t *input);
 extern bool get_analysis_option( analysis_option_t selected );
 /* Return the current setting of analysis option SELECTED. */
 
-extern void analyse( string_t input, 
-		     bool create_tree,
-		     bool analyse_all );
-/* Perform a LAG analysis of INPUT.
- * An analysis tree will be built if CREATE_TREE == true.
- * The whole input will be analysed if ANALYSE_ALL == true. */
+extern void analyse( string_t input );
+/* Perform a LAG analysis of INPUT. */
 
 extern bool analysis_has_results( void );
 /* Return true iff the last analysis has created results. */
