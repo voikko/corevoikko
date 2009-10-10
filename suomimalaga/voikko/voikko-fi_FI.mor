@@ -1083,9 +1083,6 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    if liitesana in $oikea.jatko then
-      result $res, rules liitesana;
-    end;
     result $res, rules lukusana_toista, lukusana_sisäkerroin,
                  lukusanan_jälkiliite,
                  nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
@@ -1093,12 +1090,12 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    if liitesana in $oikea.jatko then
-      result $res, rules liitesana;
-    end;
     result $res, rules lukusana_sisäkerroin, lukusanan_jälkiliite;
   else
     result $res, rules nimisana, lukusanan_jälkiliite, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
   end;
   if loppu in $oikea.jatko then
     result $res, accept;

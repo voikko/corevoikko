@@ -406,6 +406,8 @@ viideskymmenes
 tuhatlukuinen
 toisiinsa
 kolmeentoistakin
+tuhannenkaan
+!tuhannenkään
 sadaskuudeskymmenesviides
 viidessadaskolmaskymmenestuhannesneljäs
 viidestuhanneskolmaskymmenes
