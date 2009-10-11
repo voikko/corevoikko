@@ -21,6 +21,7 @@
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
+#include "morphology/malaga/symbols.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -106,8 +107,6 @@ typedef struct /* An element in a list of hidden attributes. */
 
 /* Global variables. ========================================================*/
 
-string_t (*values_get_symbol_name)( symbol_t symbol );
-value_t (*values_get_atoms)( symbol_t symbol );
 value_t *value_stack;
 int_t top; 
 attribute_order_t attribute_order;
@@ -2157,8 +2156,8 @@ values_congruent( value_t value1, value_t value2 )
   
   if (IS_SYMBOL( value1 )) 
   {
-    value1 = values_get_atoms( value_to_symbol( value1 ) );
-    value2 = values_get_atoms( value_to_symbol( value2 ) );
+    value1 = get_atoms( value_to_symbol( value1 ) );
+    value2 = get_atoms( value_to_symbol( value2 ) );
   }
   
   /* Look for a common element. */
@@ -2303,7 +2302,7 @@ attribute_to_text( text_t *text,
 {
   string_t attr_name;
 
-  attr_name = values_get_symbol_name( *attr );
+  attr_name = get_symbol_name( *attr );
   if (full_value || find_hidden_attribute( *attr ) == NULL) 
   { 
     add_to_text( text, attr_name );
@@ -2350,7 +2349,7 @@ simple_value_to_string( value_t value )
   switch (TYPE( value )) 
   {
   case SYMBOL_TYPE:
-    string = new_string( values_get_symbol_name( *value ), NULL );
+    string = new_string( get_symbol_name( *value ), NULL );
     break;
   case STRING_TYPE:
     string = new_string_readable( (string_t) (value + 1), NULL );
@@ -2464,7 +2463,7 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
         switch (attribute_order) 
 	{
         case ALPHABETIC_ORDER:
-          name = values_get_symbol_name( *attr );
+          name = get_symbol_name( *attr );
           if ((last_attr == NULL || strcmp( name, last_name ) > 0) &&
               (next_attr == NULL || strcmp( name, next_name ) < 0)) 
 	  { 

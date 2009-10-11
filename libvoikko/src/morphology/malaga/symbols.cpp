@@ -185,9 +185,6 @@ init_symbols( string_t file_name )
          sizeof( symbol_t ), compare_symbols_by_name );
   qsort( symbol_table.symbols_by_atoms, header.symbol_count, 
          sizeof( symbol_t ), compare_symbols_by_atoms );
-  
-  values_get_symbol_name = get_symbol_name;
-  values_get_atoms = get_atoms;
 }
 
 /*---------------------------------------------------------------------------*/
