@@ -350,19 +350,6 @@ extern bool value_in_value( value_t value1, value_t value2 );
 
 /* Functions to convert values to text. =====================================*/
 
-extern symbol_t *get_hidden_attributes( void );
-/* Get a SYMBOL_MAX-terminated vector of the currently hidden attributes. 
- * The vector must be freed after use. */
-
-extern void add_hidden_attribute( symbol_t attribute );
-/* Add ATTRIBUTE to the list of currently hidden attributes. */
-
-extern void remove_hidden_attribute( symbol_t attribute );
-/* Remove ATTRIBUTE from the list of currently hidden attributes. */
-
-extern void clear_hidden_attributes( void );
-/* Clear the list of currently hidden attributes. */
-
 extern char_t *value_to_readable( value_t value, 
                                   bool full_value,
                                   int_t indent );

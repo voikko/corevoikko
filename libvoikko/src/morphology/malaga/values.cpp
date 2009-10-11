@@ -123,7 +123,6 @@ static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
 
 static int_t value_stack_size; /* Size of the value stack. FIXME */
 
-static list_t hidden_attributes; /* The list of hidden attributes. FIXME */
 static text_t *value_text; /* Buffer for conversion of values to text. FIXME */
 
 /* Forward declarations. ====================================================*/
@@ -288,7 +287,6 @@ init_values( void )
   value_stack_size = 100;
   value_stack = (cell_t **) new_vector( sizeof( value_t ), value_stack_size );
   top = 0;
-  clear_list( &hidden_attributes );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -300,7 +298,6 @@ terminate_values( void )
   free_mem( &value_heap );
   free_mem( &value_stack );
   free_text( &value_text );
-  clear_hidden_attributes();
 }
 
 /* Value operations. ========================================================*/
@@ -2208,102 +2205,18 @@ value_in_value( value_t value1, value_t value2 )
 
 /* Functions to print values. ===============================================*/
 
-static attribute_t *
-find_hidden_attribute( symbol_t symbol )
-/* Find a hidden attribute in the attribute list and return it.
- * Return NULL if there is none. */
-{
-  attribute_t *attr;
-
-  FOREACH( attr, hidden_attributes, attribute_t ) 
-  { 
-    if (attr->symbol == symbol) 
-      return attr;
-  }
-  return NULL;
-}
-
-/*---------------------------------------------------------------------------*/
-
-symbol_t *
-get_hidden_attributes( void )
-/* Get a SYMBOL_MAX-terminated vector of the currently hidden attributes. 
- * The vector must be freed after use. */
-{
-  int_t i;
-  attribute_t *attr;
-  symbol_t *vector;
-
-  /* Count the attributes. */
-  i = 0;
-  FOREACH( attr, hidden_attributes, attribute_t ) 
-    i++;
-
-  /* Create the new vector. */
-  vector = (symbol_t *) new_vector( sizeof( symbol_t ), i + 1 );
-  i = 0;
-  FOREACH( attr, hidden_attributes, attribute_t )  
-    vector[ i++ ] = attr->symbol;
-  vector[ i++ ] = SYMBOL_MAX;
-
-  return vector;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-add_hidden_attribute( symbol_t attribute )
-/* Add ATTRIBUTE to the list of currently hidden attributes. */
-{
-  attribute_t *attr;
-
-  attr = find_hidden_attribute( attribute );
-  if (attr == NULL) 
-  { 
-    attr = (attribute_t *) new_node( &hidden_attributes, sizeof( attribute_t ), LIST_END );
-    attr->symbol = attribute;
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-remove_hidden_attribute( symbol_t attribute )
-/* Remove ATTRIBUTE from the list of currently hidden attributes. */
-{
-  attribute_t *attr;
-
-  attr = find_hidden_attribute( attribute );
-  if (attr != NULL) 
-    free_node( &hidden_attributes, (list_node_t *) attr );
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-clear_hidden_attributes( void )
-/* Clear the list of currently hidden attributes. */
-{
-  attribute_t *attr;
-
-  FOREACH_FREE( attr, hidden_attributes, attribute_t ) 
-    /*empty*/;
-}
-
-/*---------------------------------------------------------------------------*/
-
 static void 
 attribute_to_text( text_t *text, 
 		   value_t attr, 
 		   bool full_value, 
 		   int_t indent )
 /* Print the attribute and value of the attribute-value pair ATTR.
- * If ! FULL_VALUE and *ATTR is hidden, don't print its value. */
+ * If ! FULL_VALUE, don't print its value. */
 {
   string_t attr_name;
 
   attr_name = get_symbol_name( *attr );
-  if (full_value || find_hidden_attribute( *attr ) == NULL) 
+  if (full_value) 
   { 
     add_to_text( text, attr_name );
     add_to_text( text, ": " );
