@@ -20,11 +20,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 static const char_t malaga[] = "MALAGA"; /* Magic key. */
 
-/* Variables. ===============================================================*/
-
-static time_t sym_stamp; /* Stamp for the ".sym" file or 0. FIXME */
-static time_t esym_stamp; /* Stamp for the ".esym" file or 0. FIXME */
-
 /* Functions. ===============================================================*/
 
 void 
@@ -46,26 +41,6 @@ check_header( common_header_t *header,
     complain( "\"%s\" is new code version. Use newer Malaga version.", 
 	      file_name);
   }
-  if (file_type == SYMBOL_FILE) 
-  { 
-    sym_stamp = header->sym_stamp;
-    esym_stamp = header->esym_stamp;
-  } 
-  else if (header->sym_stamp != sym_stamp) 
-  { 
-    complain( "\"%s\" uses %s \".sym\" file.", file_name,
-	      header->sym_stamp < sym_stamp ? "older" : "newer" );
-  } 
-  else if (header->esym_stamp != 0) 
-  { 
-    if (esym_stamp == 0) 
-      complain( "\"%s\" needs \".esym\" file.", file_name );
-    else if (header->esym_stamp != esym_stamp) 
-    {
-      complain( "\"%s\" uses %s \".esym\" file.", file_name,
-		header->esym_stamp < esym_stamp ? "older" : "newer" );
-    }
-  } 
 }
 
 }}}
