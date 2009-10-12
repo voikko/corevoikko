@@ -163,8 +163,15 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     result $res, rules sijapääte;
 
   elseif ($oikea.luokka = teonsana) then
+#define $a := transmit ($oikea);
     if (liitesana in $oikea.jatko) then
-      result $res, rules liitesana;
+      if (($oikea.tapaluokka = käskytapa) and
+          ($oikea.tekijä = 2) and
+          ($oikea.luku = yksikkö)) then
+        result $res, rules liitesana_ei_kO;
+      else
+        result $res, rules liitesana;
+      end;
     end;
     if (loppu in  $oikea.jatko) then
       result $res, rules loppu;
@@ -765,7 +772,13 @@ combi_rule teonsana ($vasen, $oikea, $sana, $n):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (liitesana in $oikea.jatko) then
-    result $res, rules liitesana;
+    if (($oikea.tapaluokka = käskytapa) and
+        ($oikea.tekijä = 2) and
+        ($oikea.luku = yksikkö)) then
+      result $res, rules liitesana_ei_kO;
+    else
+      result $res, rules liitesana;
+    end;
   end;
   if (loppu in  $oikea.jatko) then
     result $res, rules loppu;
@@ -795,7 +808,6 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka in @tekijämuodot;
 
   define $i := $n - 1;
-  ? $vasen.$i.luokka in <teonsana> + @teonsanasta_johdettu_teonsana;
   ? $oikea.luokka in $vasen.$i.jatko;
   ? äs_ok ($vasen.$i, $oikea);
 
@@ -837,7 +849,6 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka in @nimitavat;
 
   define $i := $n - 1;
-  ? $vasen.$i.luokka in <teonsana> + @teonsanasta_johdettu_teonsana;
 
 #define $n1 := transmit (<"nimitavat1"> + <$vasen.$i>);
 #define $n2 := transmit (<"nimitavat2"> + <$oikea>);
@@ -882,7 +893,6 @@ combi_rule nimitapa_1_pitkä ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka = nimitapa_1_pitkä;
 
   define $i := $n - 1;
-  ? $vasen.$i.luokka in @nimitapa_1;
   ? nimitapa_1_pitkä in $vasen.$i.jatko;
   ? äs_ok ($vasen.$i, $oikea);
 
@@ -900,7 +910,6 @@ combi_rule laatutavat ($vasen, $oikea, $sana, $n):
 
   define $i := $n - 1;
   ? $oikea.luokka in $vasen.$i.jatko;
-  ? $vasen.$i.luokka in <teonsana> + @teonsanasta_johdettu_teonsana;
   ? äs_ok ($vasen.$i, $oikea);
 
   if $oikea.äs = aä then $oikea.äs := $vasen.$i.äs; end;
@@ -939,7 +948,7 @@ combi_rule kieltosana ($vasen, $oikea, $sana):
 end;
 
 
-combi_rule liitesana ($vasen, $oikea, $sana, $n):
+combi_rule liitesana_orig ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("liitesana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in <liitesana, liitesana2, liitesana_s>;
 
@@ -950,15 +959,60 @@ combi_rule liitesana ($vasen, $oikea, $sana, $n):
 #define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
 #                       <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
 
+define $a := transmit ("§aaa");
+
   if (($vasen.$i.luokka = teonsana) and
       ($vasen.$i.tapaluokka = käskytapa) and
       ($vasen.$i.tekijä = 2) and
       ($vasen.$i.luku = yksikkö) and
       ($sana in <"ko", "kö">)) then
+define $b := transmit ("§bbb");
     stop;
   else
+define $c := transmit ("§ccc");
     result $vasen + <[alku: $sana] + $oikea>, rules loppu;
   end;
+end;
+
+
+combi_rule liitesana ($vasen, $oikea, $sana, $n):
+####define $profile := transmit ("liitesana ($vasen, $oikea, $sana, $n):");
+  ? $oikea.luokka in <liitesana, liitesana2, liitesana_kO, liitesana_s>;
+
+  define $i := $n - 1;
+  #
+  # Testin jälkiosa  on lisätty siksi, että on otettu
+  # käyttöön sääntö liitesana_ei_kO. Toinen mahdollisuus olisi ollut
+  # vaihtaa jokaisessa jatko-kentässä "liitesana" muotoon "liitesana, liitesana_kO",
+  # paitsin silloin, kun sanaa ei voi seurata liitesana_kO.
+  # Lisäämällä tämän pääsi helpommalla. Liitesana "ko", "kö" ei voi olla teonsanan
+  # jatkona samalla tavalla kuin muut liitesanat: "puhuko" on "puhu" + käskytapa_kielto
+  # (älkää puhuko), ei "puhu" + liitesana_kO (mutta "puhuuko" on "puhuu" + liitesana_kO).
+  # Huomaa toisaalta, että "puhukin" on "puhu" + litesana "kin".
+  #
+##? $oikea.luokka in $vasen.$i.jatko;
+  ? ($oikea.luokka in $vasen.$i.jatko) or (liitesana in $vasen.$i.jatko and $oikea.luokka = liitesana_kO);
+  ? äs_ok ($vasen.$i, $oikea);
+
+#define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
+#                       <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
+
+  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
+end;
+
+
+combi_rule liitesana_ei_kO ($vasen, $oikea, $sana, $n):
+####define $profile := transmit ("liitesana ($vasen, $oikea, $sana, $n):");
+  ? $oikea.luokka in <liitesana, liitesana2, liitesana_s>;
+
+  define $i := $n - 1;
+  ? $oikea.luokka in $vasen.$i.jatko;
+  ? äs_ok ($vasen.$i, $oikea);
+
+#define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
+#                       <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
+
+  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
 end;
 
 
@@ -1074,7 +1128,11 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $n):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if ($sana = "mpi" and $oikea.luokka = voittoaste and yhdyssana in $oikea.jatko) then
+#  if ($sana = "mpi" and $oikea.luokka = voittoaste and yhdyssana in $oikea.jatko) then
+  if ($oikea.luokka = voittoaste and yhdyssana in $oikea.jatko) then
+    #
+    # Jos jatkossa on yhdyssana, niin on myös tavuviiva.
+    #
     result $res, rules yhdyssana, tavuviiva;
   end;
   if (liitesana in $oikea.jatko) then
@@ -1601,7 +1659,7 @@ end_rule loppu ($tietue):
 #end;
 
   define $n := $i;
-  if ($tietue.$i.luokka in <liitesana, liitesana_s, omistusliite>) then
+  if ($tietue.$i.luokka in <liitesana, liitesana_kO, liitesana_s, omistusliite>) then
     $n := $i - 1;
   end;
 
@@ -1911,7 +1969,7 @@ subrule perusmuoto ($tietue):
 
   # Poistetaan sanan lopusta osat, jotka eivät vaikuta perusmuotoon.
   #
-  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
+  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana2, liitesana_kO, liitesana_s,
                                       omistusliite, kaksoispiste,
                                       voittoaste, yliaste,
                                       liitesana_kä, nimitapa_1_pitkä, nimitapa_5>

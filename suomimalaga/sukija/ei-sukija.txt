@@ -37,11 +37,6 @@ alkuperäisteksti
 allekirjoittaa
 alleviivata
 ambrosialainen
-#amerikanenglanti
-#amerikanenglantilainen
-#amerikanrauta
-#amerikansalaatti
-#amerikansuomi
 ammattilainen
 antikolinerginen
 apulainen
@@ -64,6 +59,7 @@ autoimmuunisairaus
 avauma
 avautuma
 beetahemolyyttinen
+biodiversiteetti
 brittiläinen
 Bulgaria
 Burma
@@ -638,6 +634,7 @@ poistuma
 Pokka
 poltto
 polymyalgia
+polysorbaatti
 pommitus
 populaarikulttuuri
 Portugali
@@ -710,7 +707,7 @@ ryhmittyä
 ryvettyä
 räpytellä
 Rönkkö
-saarelainen
+Saarelainen
 Saari
 Saarijärvi
 saaristolainen
@@ -860,6 +857,7 @@ törähtää
 uitto
 Ukraina
 uloskäytävä
+uloslasku
 ulosotto
 ulottua
 ulottuma
@@ -870,6 +868,7 @@ uniikkikappale
 Unkari
 uppoama
 Urho
+Utra
 uurteisvalas
 Uusikylä
 uusiseelantilainen
@@ -953,6 +952,7 @@ Vuolle
 vuoristolainen
 vuorolainen
 vyörymä
+vyörytys
 vähittäishinta
 vähittäiskauppa
 vähittäismaksu
@@ -987,6 +987,7 @@ yhtenäiskulttuuri
 yhtymä
 Yleisradio
 ylempiarvoinen
+ylenkatsoa
 Ylinen
 yliopistolainen
 Ylämaa

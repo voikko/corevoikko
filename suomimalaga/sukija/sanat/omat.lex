@@ -218,6 +218,9 @@
 [perusmuoto: "v:ja", alku: "v:", luokka: nimisana, jatko: <kantaja>, äs: a]; # Vastaaja.
 [perusmuoto: "v:mies", alku: "v:mie", luokka: nimisana, jatko: <mies>, äs: ä]; # Vierasmies.
 [perusmuoto: "vja", alku: "vj", luokka: nimisana, jatko: <kantaja>, äs: a]; # Vastaaja.
+[perusmuoto: "Mr.", alku: "Mr.", luokka: lyhenne, jatko: <loppu>, äs: aä];  # Mister.
+[perusmuoto: "Mrs.", alku: "Mrs.", luokka: lyhenne, jatko: <loppu>, äs: aä];
+[perusmuoto: "tri", alku: "t:ri", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Tohtori.
 
 
 [perusmuoto: "Arabwel", alku: "Arabwel", luokka: nimi, jatko: <kalsium>, äs: aä];
@@ -782,13 +785,22 @@
 [perusmuoto: "abolitionisti", alku: "abolitionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "Ageianmeri", alku: "Ageianmer", luokka: nimisana, jatko: <osanto_tA>, äs: a];
-[perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "amerikan", alku: "amerikan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "kalifornian", alku: "kalifornian", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
-[perusmuoto: "papuan", alku: "papuan", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_tav>];
+[perusmuoto: "oh", alku: "oh", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "sentähden", alku: "sentähden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "senvuoksi", alku: "senvuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hydroksi", alku: "hydroksi", luokka: etuliite, jatko: @eln, äs: aä];
+[perusmuoto: "permi", alku: "perm", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "kantikas", alku: "kantik", luokka: laatusana, jatko: <varas>, äs: a];
+[perusmuoto: "saarekas", alku: "saarek", luokka: laatusana, jatko: <varas>, äs: a];
+[perusmuoto: "karabinieeri", alku: "karabinieer", luokka: nimisana, jatko: <risti>, äs: aä];
+
+[perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "amerikan", alku: "amerikan", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "kalifornian", alku: "kalifornian", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "papuan", alku: "papuan", luokka: etuliite, jatko: @elx, äs: aä];
 
 [perusmuoto: "ampukärpänen", alku: "ampukärpä", luokka: nimisana, jatko: <nainen>, äs: ä];
 [perusmuoto: "ampulaite", alku: "ampulait", luokka: nimisana, jatko: <vaate>, äs: a];
@@ -803,7 +815,55 @@
 
 [perusmuoto: "korteikko", alku: "korteik", luokka: nimisana, jatko: <laatikko>, äs: a];
 [perusmuoto: "litukka", alku: "lituk", luokka: nimisana, jatko: <solakka>, äs: a];
-[perusmuoto: "regoliitti", alku: "regoliit", luokka: nimisana, jatko: <tatti>, äs: a];
+[perusmuoto: "Rotuaari", alku: "Rotuaar", luokka: paikannimi, jatko: <risti>, äs: a];
+[perusmuoto: "komissionaari", alku: "komissionaar", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "ennenkaikkea", alku: "ennenkaikkea", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ennenkaikkea", alku: "ennenkaikkia", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ylikaiken", alku: "ylikaiken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kulinaarinen", alku: "kulinaari", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "revisionaarinen", alku: "revisionaari", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "missionaari", alku: "missionaar", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kaikenkaikkiaan", alku: "kaikenkaikkiaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kertakaikkia", alku: "kertakaikkiaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kertakaikkia", alku: "kertakaikkia", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "keskenkaiken", alku: "keskenkaiken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "iänkaiken", alku: "iänkaiken", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kaikkikaikessa", alku: "kaikkikaikessa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "konsuliaari", alku: "konsuliaar", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "yhtäkaikki", alku: "yhtäkaikki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "safavidi", alku: "safavid", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "saiga", alku: "saig", luokka: nimisana, jatko: <kala>, äs: a];
+
+#[perusmuoto: "hakokirves", alku: "hakokirve", luokka: nimisana, jatko: <kirves>, äs: ä];
+[perusmuoto: "hakokivi", alku: "hakokiv", luokka: nimisana, jatko: <lovi>, äs: a];
+[perusmuoto: "hakokoju", alku: "hakokoju", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "hakokuorma", alku: "hakokuorm", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "hakokylä", alku: "hakokyl", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "hakokasa", alku: "hakokas", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "hakoapaja", alku: "hakoapaj", luokka: nimisana, jatko: <apaja>, äs: a];
+[perusmuoto: "hakolinna", alku: "hakolinn", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "hakolintu", alku: "hakolin", luokka: nimisana, jatko: <lintu>, äs: a];
+[perusmuoto: "hakomaja", alku: "hakomaj", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "hakoniska", alku: "hakonisk", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "hakotanhua", alku: "hakotanhu", luokka: nimisana, jatko: <peruna>, äs: a];
+[perusmuoto: "hakotyö", alku: "hakot", luokka: nimisana, jatko: <suo>, äs: ä];
+[perusmuoto: "hakovaari", alku: "hakovaar", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "hakoviita", alku: "hakovii", luokka: nimisana, jatko: <pata>, äs: a];
+[perusmuoto: "haonoksa", alku: "haonoks", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "kuusenhako", alku: "kuusenha", luokka: nimisana, jatko: <verkko>, äs: a];
+[perusmuoto: "vesi-hako", alku: "vesi-ha", luokka: nimisana, jatko: <verkko>, äs: a];
+[perusmuoto: "vasta-hakoinen", alku: "vasta-hakoi", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "hakotie", alku: "hakot", luokka: nimisana, jatko: <tie>, äs: ä];
+[perusmuoto: "hakovuode", alku: "hakovuo", luokka: nimisana, jatko: <sade>, äs: a];
+
+[perusmuoto: "jauhokuli", alku: "jauhokul", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "ryssänkuli", alku: "ryssänkul", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kulijauho", alku: "kulijauho", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "kuliläjä", alku: "kuliläj", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "retikuliini", alku: "retikuliin", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kulikali", alku: "kulikal", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kirveskuli", alku: "kirveskul", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "korpuskuli", alku: "korpuskul", luokka: nimisana, jatko: <risti>, äs: a];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

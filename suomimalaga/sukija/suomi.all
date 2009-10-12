@@ -80,10 +80,24 @@ allo_rule generate_allos ($tietue):
     $tietue :=- rakenne;
   end;
 
-  if ($tietue.luokka = etuliite) then
-    $tietue.jatko := set ($tietue.jatko);
-    if (($tietue.tiedot /= nil) and (ei_tav in $tietue.tiedot)) then
-      $tietue.jatko :=- <tavuviiva>;
+  if ($tietue.luokka = lyhenne) then
+
+    # Lyhenteitä, joissa on piste lopussa ei tarvita, mikäli on samanlainen pisteetön lyhenne.
+    #
+    if ($tietue.alku in <"em.", "kk.", "mm.", "s.", "ym.">) then
+      stop;
+    end;
+
+    # Lyhennettä "MM" ei tarvita, koska "mm" on olemassa.
+    #
+    if (($tietue.alku = "MM") and (capital($tietue.alku) = yes)) then
+      stop;
+    end;
+
+    # Poistetaan pisteet lyhenteitten lopusta.
+    #
+    if ($tietue.alku matches ".*" : $alku, "\\.") then
+      $tietue.alku := $alku;
     end;
   end;
 
@@ -91,13 +105,14 @@ allo_rule generate_allos ($tietue):
   # Tunnistetaan yhdyssanoina.
   #
   if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
-                             "Itämeri", "itävaltalainen">) then
+                             "Itämeri", "itävaltalainen", "suomalais-permiläinen">) then
     stop;
   end;
 
   # Paikannimien jälkiliitteet.
   #
-  if ($tietue.perusmuoto in <"joki", "järvi",
+  if ($tietue.perusmuoto in <"harju",
+                             "joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
                              "maa", "meri", "mäki", "niemi", "polku", "puistikko", "puisto",
@@ -163,7 +178,6 @@ allo_rule generate_allos ($tietue):
       $tietue :=+ [tiedot: <ei_ysa>];
     end;
   end;
-
 
   # Mattila on paikannimi ja sukunimi, ja tiedostojen indeksoinnissa
   # riittää niistä vain toinen.
@@ -14560,7 +14574,7 @@ subrule taivutuskaava ($tietue, $taivutus):
       define $johdin_ellA := "johdin_" + $ellA + "ellA";
       $taivutus :=- johdin_ellA;
       $taivutus :=+ [johdin_CellA($ella): <<"", <>>>]; 
-   end;
+    end;
   end;
 
   # Jos johdin_illA = "-", sanalla ei ole illA-johdinta.
@@ -14604,13 +14618,6 @@ subrule taivutuskaava ($tietue, $taivutus):
 
   $taivutus := $uusi_taivutus;
 
-
-#if ($tietue.luokka = johdin_lAinen) or ($tietue.perusmuoto = "nainen") then
-#  define $aa := transmit ($tietue);
-#  define $bb := transmit ($taivutus);
-#end;
-
-
   if (($tietue.luokka in @nimisana + @teonsanasta_johdettu_nimisana + <laatusana, johdin_lAinen>)
       and ($taivutus.nimentö /= nil)) then
     if ($taivutus.tavuviiva = nil) then
@@ -14624,11 +14631,6 @@ subrule taivutuskaava ($tietue, $taivutus):
      (leikkuu in $tietue.jatko)) then   # Ei leikkuu -> leikkuinen.
     $taivutus :=- johdin_inen;
   end;
-
-##  if (not ($tietue.luokka in <nimisana, nimi_laatusana>
-##                             + @laatusanasta_johdettu_nimisana + @teonsanasta_johdettu_nimisana)) then
-##   $taivutus :=- @nimisanasta_johdettu_laatusana;
-##  end;
 
   # Eräät johtimet eivät esiinny peräkkäin.
   #
@@ -14694,7 +14696,6 @@ subrule taivutuskaava ($tietue, $taivutus):
 
 
   if (not ($tietue.luokka in <laatusana, nimi_laatusana, johdin_nlainen, johdin_inen, voittoaste, yliaste>
-###                             + @johdin_jA    # johdin_jA ja johdin_UUS on yhdistetty: teki+jyys
                              + @teonsanasta_johdettu_laatusana
                              + @nimisanasta_johdettu_laatusana
                              + @nimi_laatusanan_johdin)) then
@@ -14728,14 +14729,8 @@ subrule taivutuskaava ($tietue, $taivutus):
                    kertoman_tekijäpääte_m1, kertoman_tekijäpääte_m2>;
   end;
 
-#if ($tietue.luokka = johdin_lAinen) or ($tietue.perusmuoto = "nainen") then
-#  define $a := transmit ($tietue);
-#  define $b := transmit ($taivutus);
-#end;
-
 
   define $lista := lajittele ($taivutus);
-
 
   define $t := <>;
 

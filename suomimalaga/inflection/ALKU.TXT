@@ -80,10 +80,24 @@ allo_rule generate_allos ($tietue):
     $tietue :=- rakenne;
   end;
 
-  if ($tietue.luokka = etuliite) then
-    $tietue.jatko := set ($tietue.jatko);
-    if (($tietue.tiedot /= nil) and (ei_tav in $tietue.tiedot)) then
-      $tietue.jatko :=- <tavuviiva>;
+  if ($tietue.luokka = lyhenne) then
+
+    # Lyhenteitä, joissa on piste lopussa ei tarvita, mikäli on samanlainen pisteetön lyhenne.
+    #
+    if ($tietue.alku in <"em.", "kk.", "mm.", "s.", "ym.">) then
+      stop;
+    end;
+
+    # Lyhennettä "MM" ei tarvita, koska "mm" on olemassa.
+    #
+    if (($tietue.alku = "MM") and (capital($tietue.alku) = yes)) then
+      stop;
+    end;
+
+    # Poistetaan pisteet lyhenteitten lopusta.
+    #
+    if ($tietue.alku matches ".*" : $alku, "\\.") then
+      $tietue.alku := $alku;
     end;
   end;
 
@@ -91,13 +105,14 @@ allo_rule generate_allos ($tietue):
   # Tunnistetaan yhdyssanoina.
   #
   if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
-                             "Itämeri", "itävaltalainen">) then
+                             "Itämeri", "itävaltalainen", "suomalais-permiläinen">) then
     stop;
   end;
 
   # Paikannimien jälkiliitteet.
   #
-  if ($tietue.perusmuoto in <"joki", "järvi",
+  if ($tietue.perusmuoto in <"harju",
+                             "joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
                              "maa", "meri", "mäki", "niemi", "polku", "puistikko", "puisto",
@@ -163,7 +178,6 @@ allo_rule generate_allos ($tietue):
       $tietue :=+ [tiedot: <ei_ysa>];
     end;
   end;
-
 
   # Mattila on paikannimi ja sukunimi, ja tiedostojen indeksoinnissa
   # riittää niistä vain toinen.

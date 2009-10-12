@@ -50,10 +50,11 @@ include "suomi.inc";
 define @sana1 := <yhdyssana, nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
 define @sana2 := @sana1 + <teonsana>;
 
-define @eln := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana>;
-define @ell := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
-define @elt := <yhdyssana, tavuviiva, etuliite, teonsana>;
+define @eln  := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana>;
+define @ell  := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
+define @elt  := <yhdyssana, tavuviiva, etuliite, teonsana>;
 define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
+define @elx  := <yhdyssana, etuliite, nimisana, laatusana, nimi_laatusana>;
 
 define @sijan_jatko := <tavuviiva, liitesana, loppu>;
 define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
@@ -506,8 +507,8 @@ include "voikonsanat/erikoisalat/linux-distributions.lex";
 [alku: "kään",      luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "kaanhan",   luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "käänhän",   luokka: liitesana, äs: ä, jatko: <loppu>];
-[alku: "ko",        luokka: liitesana, äs: a, jatko: <loppu>];
-[alku: "kö",        luokka: liitesana, äs: ä, jatko: <loppu>];
+[alku: "ko",        luokka: liitesana_kO, äs: a, jatko: <loppu>];
+[alku: "kö",        luokka: liitesana_kO, äs: ä, jatko: <loppu>];
 [alku: "kokaan",    luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "kökään",    luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "pa",        luokka: liitesana, äs: a, jatko: <loppu>];
