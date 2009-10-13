@@ -1126,9 +1126,9 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
 [alku: "man",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: a, jatko: <liitesana, loppu>];
 [alku: "män",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
 
 
 [alku: "ma",    luokka: nimitapa_3_saama, tapaluokka: nimitapa_3, sija: nimentö,
@@ -1167,9 +1167,9 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
 [alku: "man",   luokka: nimitapa_3_saama, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: a, jatko: <liitesana, loppu>];
 [alku: "män",   luokka: nimitapa_3_saama, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
 
 
 [alku: "ttaman", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,

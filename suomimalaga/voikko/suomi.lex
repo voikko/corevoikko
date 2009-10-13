@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #                 2006-2009 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
@@ -889,9 +889,9 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
 [alku: "man",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: a, jatko: <liitesana, loppu>];
 [alku: "män",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
+                luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
 
 
 [alku: "ttaman", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,
