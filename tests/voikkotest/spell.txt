@@ -116,6 +116,8 @@ koirakulmio
 
 [teonsanat]
 osteta # ei osteta, tositavan_kestämä_tAAn_kielto
+kuljettamansa
+!kuljettamannsa
 
 [erisnimet]
 Erkki-eno
