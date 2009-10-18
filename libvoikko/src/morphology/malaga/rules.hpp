@@ -82,10 +82,4 @@ extern rule_sys_t *read_rule_sys( string_t file_name );
 extern void free_rule_sys( rule_sys_t **rule_sys );
 /* Free all memory used by *RULE_SYS. */
 
-/* Debug support functions. =================================================*/
-
-extern string_t rule_set_readable( rule_sys_t *rule_sys, int_t rule_set );
-/* Return RULE_SET in RULE_SYS as a readable string.
- * The string must be freed after use. */
-
 }}}

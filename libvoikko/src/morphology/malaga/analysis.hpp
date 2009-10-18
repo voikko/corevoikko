@@ -22,7 +22,6 @@ typedef struct /* A node of the analysis tree. */
   string_t rule_name; /* Name of the rule that created result or NULL. */
   string_t result_surf; /* Surface of resulting state or NULL. */
   value_t result_feat; /* Feature structure of resulting state or NULL. */
-  string_t rule_set; /* Successor rules of resulting state or NULL. */
 } analysis_node_t;
 
 typedef enum 

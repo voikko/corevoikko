@@ -525,43 +525,4 @@ free_rule_sys( rule_sys_t **rule_sys )
   }
 }
 
-/* Debug support functions. =================================================*/
-
-string_t 
-rule_set_readable( rule_sys_t *rule_sys, int_t rule_set )
-/* Return RULE_SET in RULE_SYS as a readable string.
- * The string must be freed after use. */
-{ 
-  text_t *text;
-  bool name_has_been_printed;
-  int_t *rule;
-      
-  text = new_text();
-  if (rule_set == -1) 
-    add_to_text( text, "(end state)" );
-  else 
-  { 
-    add_to_text( text, "rules " );
-    rule = rule_sys->rule_sets + rule_set;
-    while (true) 
-    { 
-      name_has_been_printed = false;
-      while (*rule >= 0) 
-      { 
-	if (name_has_been_printed) 
-	  add_to_text( text, ", " );
-	else 
-	  name_has_been_printed = true;
-        add_to_text( text, 
-		     rule_sys->strings + rule_sys->rules[ *rule++ ].name );
-      }
-      if (*rule == -1) 
-	break;
-      add_to_text( text, " else " );
-      rule++;
-    }
-  }
-  return text_to_string( &text );
-}
-
 }}}

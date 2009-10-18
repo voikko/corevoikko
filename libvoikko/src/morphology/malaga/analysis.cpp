@@ -453,10 +453,6 @@ get_next_analysis_node( void )
   node->result_surf = new_string( last_analysis_input, next_tree_node->input );
   node->result_feat = next_tree_node->result_feat;
 
-  /* Set rule set. */
-  if (next_tree_node->result_feat != NULL) 
-    node->rule_set = rule_set_readable( rule_sys, next_tree_node->rule_set );
-
   /* Update NEXT_TREE_NODE. */
   if (next_tree_node->first_child != NULL) 
     next_tree_node = next_tree_node->first_child;
@@ -480,7 +476,6 @@ free_analysis_node( analysis_node_t **node )
   { 
     free_mem( &(*node)->link_surf );
     free_mem( &(*node)->result_surf );
-    free_mem( &(*node)->rule_set );
     free_mem( node );
   }
 }
