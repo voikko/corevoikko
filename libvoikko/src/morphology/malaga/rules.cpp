@@ -223,12 +223,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
       case INS_MINUS_OPERATION:
         minus_operation();
         break;
-      case INS_ASTERISK_OPERATION:
-        asterisk_operation();
-        break;
-      case INS_SLASH_OPERATION:
-        slash_operation();
-        break;
       case INS_UNARY_MINUS_OP:
         unary_minus_operation();
         break;
@@ -266,16 +260,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         minus_operation();
         value_stack[ base + info ] = value_stack[ --top ];
         break;
-      case INS_ASTERISK_VAR:
-        insert_value( 1, value_stack[ base + info ] );
-        asterisk_operation();
-        value_stack[ base + info ] = value_stack[ --top ];
-        break;
-      case INS_SLASH_VAR:
-        insert_value( 1, value_stack[ base + info ] );
-        slash_operation();
-        value_stack[ base + info ] = value_stack[ --top ];
-        break;
       case INS_SET_VAR_PATH:
         insert_value( 2, value_stack[ base + info ] );
         modify_value_part( right_value );
@@ -289,16 +273,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
       case INS_MINUS_VAR_PATH:
         insert_value( 2, value_stack[ base + info ] );
         modify_value_part( minus_operation );
-        value_stack[ base + info ] = value_stack[ --top ];
-        break;
-      case INS_ASTERISK_VAR_PATH:
-        insert_value( 2, value_stack[ base + info ] );
-        modify_value_part( asterisk_operation );
-        value_stack[ base + info ] = value_stack[ --top ];
-        break;
-      case INS_SLASH_VAR_PATH:
-        insert_value( 2, value_stack[ base + info ] );
-        modify_value_part( slash_operation );
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_DECOMPOSE_LIST:

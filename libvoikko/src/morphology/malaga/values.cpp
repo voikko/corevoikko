@@ -108,8 +108,7 @@ typedef struct /* An element in a list of hidden attributes. */
 /* Global variables. ========================================================*/
 
 value_t *value_stack;
-int_t top; 
-attribute_order_t attribute_order;
+int_t top;
 
 /* Variables. ===============================================================*/
 
@@ -1626,92 +1625,6 @@ minus_operation( void )
   case NUMBER_TYPE:
     top -= 2;
     push_number_value( value_to_double( value1 ) - value_to_double( value2 ) );
-    break;
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-asterisk_operation( void )
-/* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
- * NEW_VALUE is VALUE1 "*" VALUE2. 
- * The actual operation depends on the type of the values. */
-{
-  value_t value1, value2;
-
-  value1 = value_stack[ top - 2 ];
-  value2 = value_stack[ top - 1 ];
-  switch (TYPE( value1 )) 
-  {
-  case LIST_TYPE:
-    switch (TYPE( value2 ))
-    {
-    case LIST_TYPE:
-      intersect_lists();
-      break;
-    case NUMBER_TYPE:
-      top--;
-      extract_elements( value_to_int( value2 ) );
-      break;
-    }
-    break;
-  case RECORD_TYPE:
-    switch (TYPE( value2 )) 
-    {
-    case SYMBOL_TYPE:
-      top--;
-      select_attribute( value_to_symbol( value2 ) );
-      break;
-    case LIST_TYPE:
-      select_attributes();
-      break;
-    case RECORD_TYPE: /* Join records, but exchange arguments. */
-      top--;
-      insert_value( 1, value_stack[ top ] );
-      join_records();
-      break;
-    }
-    break;
-  case NUMBER_TYPE:
-    top -= 2;
-    push_number_value( value_to_double( value1 ) * value_to_double( value2 ) );
-    break;
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-slash_operation( void )
-/* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
- * NEW_VALUE is VALUE1 "/" VALUE2. 
- * The actual operation depends on the type of the values. */
-{
-  value_t value1, value2;
-  double divisor;
-
-  value1 = value_stack[ top - 2 ];
-  value2 = value_stack[ top - 1 ];
-
-  switch (TYPE( value1 )) 
-  {
-  case LIST_TYPE:
-    switch (TYPE( value2 )) 
-    {
-    case NUMBER_TYPE:
-      top--;
-      remove_elements( value_to_int( value2 ) );
-      break;
-    case LIST_TYPE:
-      get_set_difference();
-      break;
-    }
-    break;
-  case NUMBER_TYPE:
-    divisor = value_to_double( value2 );
-    top -= 2;
-    push_number_value( value_to_double( value1 ) / divisor );
     break;
   }
 }

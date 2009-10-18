@@ -26,13 +26,6 @@ typedef u_short_t cell_t;
 typedef cell_t *value_t; /* Reference to a Malaga values by this type. */
 typedef cell_t symbol_t;
 
-typedef enum 
-{INTERNAL_ORDER, ALPHABETIC_ORDER, DEFINITION_ORDER} attribute_order_t;
-/* INTERNAL_ORDER is the order in which attributes are stored internally.
- * ALPHABETIC_ORDER means the alphabetic order of the attribute names.
- * DEFINITION_ORDER is the order in which the attributes are defined in the 
- * symbol file. */
-
 /* Variables. ===============================================================*/
 
 extern value_t *value_stack; // FIXME
@@ -43,10 +36,6 @@ extern value_t *value_stack; // FIXME
 extern int_t top; // FIXME
 /* The index of the first unused item on VALUE_STACK.
  * You may only read or decrease this variable! */
-
-extern attribute_order_t attribute_order; // FIXME
-/* The order in which attributes in a record are printed.
- * Used by "value_readable". */
 
 /* Module initialisation. ===================================================*/
 
@@ -246,16 +235,6 @@ extern void plus_operation( void );
 extern void minus_operation( void );
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "-" VALUE2. 
- * The actual operation depends on the type of the values. */
-
-extern void asterisk_operation( void );
-/* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
- * NEW_VALUE is VALUE1 "*" VALUE2. 
- * The actual operation depends on the type of the values. */
-
-extern void slash_operation( void );
-/* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
- * NEW_VALUE is VALUE1 "/" VALUE2. 
  * The actual operation depends on the type of the values. */
 
 extern void unary_minus_operation( void );
