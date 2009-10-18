@@ -25,7 +25,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 typedef struct tree_node /* A rule application is stored in "tree_node". */
 { 
-  tree_node_type_t type; /* Type of this tree node. */
   int_t rule; /* Number of the executed rule. */
   value_t link_feat; /* Feature structure of the link. */
   value_t result_feat; /* Result feature structure of the resulting state. */
@@ -392,8 +391,6 @@ execute_pruning_rule( analysis_t *analysis )
     symbol = value_to_symbol( get_element( list, i + 1 ) );
     if (symbol == NO_SYMBOL) 
     { 
-      if (state->tree_node != NULL) 
-	state->tree_node->type = PRUNED_NODE;
       remove_node( &analysis->running_states, (list_node_t *) state );
       add_node( &analysis->free_states, (list_node_t *) state, LIST_END );
     } 
@@ -478,8 +475,6 @@ check_end_states( analysis_t *analysis )
     state = (state_t *) analysis->end_states.first;
     if (state == NULL || *state->input == EOS) 
       break;
-    if (state->tree_node != NULL) 
-      state->tree_node->type = UNFINAL_NODE;
     remove_first_node( &analysis->end_states );
     add_node( &analysis->free_states, (list_node_t *) state, LIST_END );
   }
