@@ -55,14 +55,8 @@ extern void preprocess_input(char_t *input);
 /* Delete heading and trailing spaces in INPUT
  * and compress all whitespace sequences to a single space. */
 
-extern bool get_analysis_option( analysis_option_t selected );
-/* Return the current setting of analysis option SELECTED. */
-
 extern void analyse( string_t input );
 /* Perform a LAG analysis of INPUT. */
-
-extern bool analysis_has_results( void );
-/* Return true iff the last analysis has created results. */
 
 extern value_t first_analysis_result( void );
 /* Return the feature structure of the first analysis result.
@@ -71,9 +65,6 @@ extern value_t first_analysis_result( void );
 extern value_t next_analysis_result( void );
 /* Return the feature structure of the next analysis result.
  * Return NULL if there are no more results. */
-
-extern bool analysis_has_nodes( void );
-/* Return true iff the last analysis has created tree nodes. */
 
 extern void add_end_state( value_t feat );
 /* Add a state, consisting of feature structure FEAT, as an end state. */

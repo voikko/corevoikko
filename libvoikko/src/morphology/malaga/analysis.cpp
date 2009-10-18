@@ -91,15 +91,6 @@ static struct /* Information needed to generate states and tree nodes. FIXME */
 
 static bool options[ANALYSIS_OPTION_COUNT]; // FIXME
 
-/* Functions for analysis options. ==========================================*/
-
-bool 
-get_analysis_option( analysis_option_t selected )
-/* Return the current setting of analysis option SELECTED. */
-{ 
-  return options[ selected ]; 
-}
-
 /* Functions for segmentation and preprocessing. ============================*/
 
 void 
@@ -349,15 +340,6 @@ terminate_analysis( void )
 
 /*---------------------------------------------------------------------------*/
 
-bool
-analysis_has_results( void )
-/* Return true iff the last analysis has created results. */
-{ 
-  return (morphologyAnalysis->end_states.first != NULL); 
-}
-
-/*---------------------------------------------------------------------------*/
-
 value_t
 first_analysis_result( void )
 /* Return the feature structure of the first analysis result.
@@ -381,15 +363,6 @@ next_analysis_result( void )
   result = next_result_state->feat;
   next_result_state = (state_t *) next_result_state->next;
   return result;
-}
-
-/*---------------------------------------------------------------------------*/
-
-bool
-analysis_has_nodes( void )
-/* Return true iff the last analysis has created tree nodes. */
-{ 
-  return (root_tree_node != NULL); 
 }
 
 /*---------------------------------------------------------------------------*/
