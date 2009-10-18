@@ -23,15 +23,6 @@ typedef struct /* A node of the analysis tree. */
   value_t result_feat; /* Feature structure of resulting state or NULL. */
 } analysis_node_t;
 
-typedef enum 
-{ROBUST_RULE_OPTION, 
- MOR_OUT_FILTER_OPTION, SYN_IN_FILTER_OPTION, SYN_OUT_FILTER_OPTION, 
- MOR_INCOMPLETE_OPTION, SYN_INCOMPLETE_OPTION,
- ANALYSIS_OPTION_COUNT} analysis_option_t;
-
-typedef enum {STATE_SURFACE, LINK_SURFACE, RESULT_SURFACE} surface_t;
-/* Kinds of surfaces that can be obtained by "get_rule_info" in "rules.h" */
-
 /* Variables. ===============================================================*/
 
 extern rule_sys_t *morphologyRuleSystem; // FIXME

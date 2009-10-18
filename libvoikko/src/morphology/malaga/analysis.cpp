@@ -76,8 +76,6 @@ static struct /* Information needed to generate states and tree nodes. FIXME */
   string_t input; /* End of analysed input. */
 } state_info;
 
-static bool options[ANALYSIS_OPTION_COUNT]; // FIXME
-
 /* Functions for segmentation and preprocessing. ============================*/
 
 void 
@@ -250,19 +248,11 @@ init_analysis( string_t morphology_file )
 /* Initialise the analysis module.
  * MORPHOLOGY_FILE is the rule files to load. */
 { 
-  int_t i;
-
   /* Read rule files. */
   morphologyRuleSystem = read_rule_sys( morphology_file );
 
   /* Init analysis structure. */
   morphologyAnalysis = new_analysis();
-
-  /* Set analysis options to start values. */
-  for (i = 0; i < ANALYSIS_OPTION_COUNT; i++) 
-    options[i] = false;
-  options[ MOR_OUT_FILTER_OPTION ] = 
-    (morphologyRuleSystem->output_filter != -1);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -555,11 +545,8 @@ analyse( string_t input )
 
   check_end_states(analysis);
 
-  if (options[ MOR_OUT_FILTER_OPTION ]) 
-  { 
-    execute_filter_rule( analysis, morphologyRuleSystem,
-                         morphologyRuleSystem->output_filter );
-  }
+  execute_filter_rule( analysis, morphologyRuleSystem,
+                       morphologyRuleSystem->output_filter );
 }
 
 }}}
