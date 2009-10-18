@@ -71,7 +71,6 @@ static struct /* Information needed to generate states and tree nodes. FIXME */
   analysis_t *analysis;
   int_t rule; /* Rule just executed. */
   value_t link_feat; /* Link's feature structure. */
-  tree_node_t *parent; /* Predecessor tree node. */
   int_t item_index; /* Index of item that is added. */
   string_t input; /* End of analysed input. */
 } state_info;
@@ -128,7 +127,7 @@ word_may_end_here( string_t string, rule_t *rule )
 
 /* Functions for state list processing. =====================================*/
 
-static state_t *
+static void
 insert_state( analysis_t *analysis,
 	      list_t *state_list,
 	      value_t feat,
@@ -136,8 +135,7 @@ insert_state( analysis_t *analysis,
 	      int_t rule_set,
 	      int_t item_index )
 /* Insert a state, composed of FEAT, INPUT, RULE_SET, and ITEM_INDEX in the
- * list STATE_LIST, in front of all states with a higher INPUT index. Return
- * this state. */
+ * list STATE_LIST, in front of all states with a higher INPUT index. */
 { 
   state_t *state, *prev_state, *next_state;
 
@@ -161,7 +159,6 @@ insert_state( analysis_t *analysis,
   }
 
   insert_node( state_list, (list_node_t *) state, (list_node_t *) prev_state );
-  return state;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -171,14 +168,11 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set)
 /* Add state, consisting of INPUT, FEAT and RULE_SET, to LIST.
  * When STATE_INFO.CREATE_TREE == true, also generate a tree node. */
 { 
-  value_t new_feat;
-  state_t *state;
-  
   /* Preserve the feature structure. */
-  new_feat = copy_value_to_pool( state_info.analysis->value_pool, feat, NULL );
+  value_t new_feat = copy_value_to_pool( state_info.analysis->value_pool, feat, NULL );
 
   /* Create a new state. */
-  state = insert_state( state_info.analysis, list, new_feat, input,
+  insert_state( state_info.analysis, list, new_feat, input,
                         rule_set, state_info.item_index );
 }
 
@@ -401,7 +395,6 @@ execute_rules( analysis_t *analysis,
   /* Setup STATE_INFO. */
   state_info.analysis = analysis;
   state_info.link_feat = link_feat;
-  state_info.parent = state->tree_node;
   state_info.item_index = state->item_index + 1;
   state_info.input = link_surf_end;
 
@@ -469,15 +462,13 @@ analyse( string_t input )
 /* Perform a LAG analysis of INPUT using.
  * An analysis tree will be built if CREATE_TREE == true. */
 { 
-  rule_sys_t *rule_sys;
-  state_t *initial_state;
   state_t *state;
   string_t current_input;
   value_t link_feat;
   string_t link_surf_end; /* End of the link's surface. */
   analysis_t *analysis = morphologyAnalysis;
 
-  rule_sys = morphologyRuleSystem;
+  rule_sys_t * rule_sys = morphologyRuleSystem;
 
   /* Reset the analysis data structures */
   clear_list( &analysis->running_states );
@@ -487,7 +478,7 @@ analyse( string_t input )
   clear_pool( analysis->value_pool );
 
   /* Enter the initial state. */
-  initial_state = insert_state( analysis, &analysis->running_states,
+  insert_state( analysis, &analysis->running_states,
                                 rule_sys->values + rule_sys->initial_feat,
                                 input, rule_sys->initial_rule_set, 0 );
 
