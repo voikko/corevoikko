@@ -64,10 +64,6 @@ static const int_t mor_pruning_min = 30;
 /* Structures used for LAG analysis (morphology). */
 static analysis_t *morphologyAnalysis; // FIXME
 
-/* The data structure used to save the analysis tree. */
-static tree_node_t *root_tree_node; /* A pointer to the root tree node. FIXME */
-static pool_t tree_pool; /* Pool where tree nodes are stored. FIXME */
-
 static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME */
 
 static struct /* Information needed to generate states and tree nodes. FIXME */
@@ -261,7 +257,6 @@ init_analysis( string_t morphology_file )
 
   /* Init analysis structure. */
   morphologyAnalysis = new_analysis();
-  tree_pool = new_pool( sizeof( tree_node_t ) );
 
   /* Set analysis options to start values. */
   for (i = 0; i < ANALYSIS_OPTION_COUNT; i++) 
@@ -278,7 +273,6 @@ terminate_analysis( void )
 { 
   free_rule_sys( &morphologyRuleSystem );
   free_analysis( &morphologyAnalysis );
-  free_pool( &tree_pool );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -494,7 +488,6 @@ analyse( string_t input )
   string_t link_surf_end; /* End of the link's surface. */
   analysis_t *analysis = morphologyAnalysis;
 
-  root_tree_node = NULL;
   rule_sys = morphologyRuleSystem;
 
   /* Reset the analysis data structures */
