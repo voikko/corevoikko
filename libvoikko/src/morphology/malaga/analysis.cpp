@@ -146,8 +146,6 @@ static bool
 word_may_end_here( string_t string, rule_t *rule )
 /* Return whether there may be a word boundary between STRING-1 and STRING. */
 { 
-  if (options[ MOR_INCOMPLETE_OPTION ])
-    return true;
   if (rule->type == END_RULE && rule->param_count == 2) 
     return true;
   return (*string == EOS || *string == ' ');
@@ -651,16 +649,10 @@ execute_rules( analysis_t *analysis,
 /*---------------------------------------------------------------------------*/
 
 static void
-check_end_states( analysis_t *analysis,  bool analyse_all )
-/* If ANALYSE_ALL == true,
- * delete all states in ANALYSIS that didn't consume all the input. */
+check_end_states( analysis_t *analysis )
 { 
   state_t *state;
 
-  if (! analyse_all || (options[ MOR_INCOMPLETE_OPTION ]))
-  { 
-    return;
-  }
   while (true) 
   { 
     state = (state_t *) analysis->end_states.first;
@@ -756,7 +748,7 @@ analyse( string_t input )
     }
   } /* End of loop that consumes all running states. */
 
-  check_end_states( analysis, true );
+  check_end_states(analysis);
 
   if (options[ MOR_OUT_FILTER_OPTION ]) 
   { 
