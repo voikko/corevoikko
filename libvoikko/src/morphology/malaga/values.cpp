@@ -2205,53 +2205,6 @@ value_in_value( value_t value1, value_t value2 )
 
 /* Functions to print values. ===============================================*/
 
-static void 
-attribute_to_text( text_t *text, 
-		   value_t attr, 
-		   bool full_value, 
-		   int_t indent )
-/* Print the attribute and value of the attribute-value pair ATTR.
- * If ! FULL_VALUE, don't print its value. */
-{
-  string_t attr_name;
-
-  attr_name = get_symbol_name( *attr );
-  if (full_value) 
-  { 
-    add_to_text( text, attr_name );
-    add_to_text( text, ": " );
-    if (indent >= 0) 
-      indent += g_utf8_strlen( attr_name, -1 ) + 2;
-    value_to_text( text, attr + 1, full_value, indent );
-  } 
-  else 
-  { 
-    add_char_to_text( text, '(') ;
-    add_to_text( text, attr_name );
-    add_char_to_text( text, ')' );
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-static void 
-print_comma( text_t *text, int_t indent )
-/* Print a comma separator.
- * If INDENT >= 0, break the line and indent to column INDENT. */
-{
-  int_t i;
-
-  if (indent >= 0) 
-  { 
-    add_to_text( text, ",\n" );
-    for (i = 0; i < indent; i++) 
-      ADD_CHAR_TO_TEXT( text, ' ' );
-  } 
-  else 
-    add_to_text( text, ", " );
-}
-
-/*---------------------------------------------------------------------------*/
 
 static string_t 
 simple_value_to_string( value_t value )
@@ -2288,12 +2241,6 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
 {
   value_t value_end;
   string_t string;
-  value_t item;
-  bool list_is_simple;
-  int_t column;
-  string_t item_string;
-  value_t attr, last_attr, next_attr;
-  string_t name, last_name = NULL, next_name = NULL;
 
   if (value == NULL) 
     return;
@@ -2306,109 +2253,6 @@ value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
     string = simple_value_to_string( value );
     add_to_text( text, string );
     free_mem( &string );
-    break;
-  case LIST_TYPE:
-    add_char_to_text( text, '<' );
-    if (indent >= 0) 
-      indent++;
-
-    /* Check if all elements are simple. */
-    list_is_simple = true;
-    for (item = value + 2; item < value_end; item = NEXT_VALUE( item )) 
-    { 
-      if (IS_LIST( item ) || IS_RECORD( item )) 
-      { 
-	list_is_simple = false;
-        break;
-      }
-    }
-
-    if (indent >= 0 && list_is_simple) 
-    { 
-      /* Print multiple items on a line, break at column 80. */
-      column = indent;
-      for (item = value + 2; item < value_end; item = NEXT_VALUE( item )) 
-      { 
-	item_string = simple_value_to_string( item );
-        if (item > value + 2) 
-	{ 
-	  if (column + 2 + g_utf8_strlen( item_string, -1 ) >= 80) 
-	  { 
-	    print_comma( text, indent );
-            column = indent;
-          } 
-	  else 
-	  { 
-	    print_comma( text, -1 ); 
-	    column += 2; 
-	  }
-        }
-        add_to_text( text, item_string );
-        column += g_utf8_strlen( item_string, -1 );
-        free_mem( &item_string );
-      }
-    } 
-    else 
-    { 
-      /* Print each item on its own line or all items on one line. */
-      for (item = value + 2; item < value_end; item = NEXT_VALUE( item )) 
-      { 
-	if (item > value + 2) 
-	  print_comma( text, indent );
-        value_to_text( text, item, full_value, indent );
-      }
-    }
-    add_char_to_text( text, '>' );
-    break; 
-  case RECORD_TYPE: 
-    add_char_to_text( text, '[' );
-    if (indent >= 0) 
-      indent++;
-    last_attr = NULL;
-    while (true) 
-    { 
-      /* Find the next attribute to be printed. */
-      next_attr = NULL;
-      for (attr = value + 2; attr < value_end; attr = NEXT_ATTRIB( attr )) 
-      { 
-	/* If ATTR comes after LAST_ATTR and before NEXT_ATTR,
-         * then it's the new candidate to be printed this time. */
-        switch (attribute_order) 
-	{
-        case ALPHABETIC_ORDER:
-          name = get_symbol_name( *attr );
-          if ((last_attr == NULL || strcmp( name, last_name ) > 0) &&
-              (next_attr == NULL || strcmp( name, next_name ) < 0)) 
-	  { 
-	    next_attr = attr; 
-	    next_name = name;
-          }
-          break;
-        case DEFINITION_ORDER:
-          if ((last_attr == NULL || *attr > *last_attr)
-              && (next_attr == NULL || *attr < *next_attr)) 
-	  { 
-	    next_attr = attr; 
-	  }
-          break;
-        case INTERNAL_ORDER:
-          if ((last_attr == NULL || attr > last_attr)
-              && (next_attr == NULL || attr < next_attr)) 
-	  { 
-	    next_attr = attr; 
-	  }
-          break;
-        }
-      }         
-      if (next_attr == NULL) 
-	break;
-      if (last_attr != NULL) 
-	print_comma( text, indent );
-      attribute_to_text( text, next_attr, full_value, indent );
-      last_attr = next_attr; 
-      last_name = next_name; 
-    }
-    add_char_to_text( text, ']' );
     break;
   }
 }
