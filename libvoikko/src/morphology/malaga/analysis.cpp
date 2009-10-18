@@ -25,9 +25,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 typedef struct tree_node /* A rule application is stored in "tree_node". */
 { 
-  struct tree_node *parent; /* Predecessor of this tree node. */
-  struct tree_node *first_child; /* First successor of this tree node. */
-  struct tree_node *sibling; /* Alternative tree node. */
   tree_node_type_t type; /* Type of this tree node. */
   int_t rule; /* Number of the executed rule. */
   value_t link_feat; /* Feature structure of the link. */
@@ -78,7 +75,6 @@ static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME *
 static struct /* Information needed to generate states and tree nodes. FIXME */
 { 
   analysis_t *analysis;
-  bool create_tree;
   int_t rule; /* Rule just executed. */
   value_t link_feat; /* Link's feature structure. */
   tree_node_t *parent; /* Predecessor tree node. */
@@ -178,40 +174,6 @@ insert_state( analysis_t *analysis,
 
 /*---------------------------------------------------------------------------*/
 
-static tree_node_t *
-add_tree_node( value_t result_feat, 
-	       string_t input, 
-	       int_t rule_set,
-	       tree_node_type_t type )
-/* Add a tree node for a rule that created a state (RESULT_FEAT and RULE_SET),
- * where INPUT is yet to be analysed. */
-{ 
-  tree_node_t **tree_node_p;
-  tree_node_t *tree_node;
-  
-  /* Get a new tree node. */
-  tree_node = (tree_node_t *) get_pool_space( tree_pool, 1, NULL ); 
-  tree_node->parent = state_info.parent;
-  tree_node->first_child = NULL;
-  tree_node->sibling = NULL;
-  tree_node->type = type;
-  tree_node->rule = state_info.rule;
-  tree_node->link_feat = state_info.link_feat;
-  tree_node->result_feat = result_feat;
-  tree_node->rule_set = rule_set;
-  tree_node->input = input;
-
-  /* Link the tree node into the tree structure. */
-  tree_node_p = &state_info.parent->first_child;
-  while (*tree_node_p != NULL) 
-    tree_node_p = &(*tree_node_p)->sibling;
-  *tree_node_p = tree_node;
-
-  return tree_node;
-}
-
-/*---------------------------------------------------------------------------*/
-
 static void 
 add_state( list_t *list, string_t input, value_t feat, int_t rule_set, 
 	   tree_node_type_t type )
@@ -227,8 +189,6 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set,
   /* Create a new state. */
   state = insert_state( state_info.analysis, list, new_feat, input,
                         rule_set, state_info.item_index );
-  if (state_info.create_tree) 
-    state->tree_node = add_tree_node( new_feat, input, rule_set, type );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -245,12 +205,6 @@ add_end_state( value_t feat )
   { 
     add_state( &state_info.analysis->end_states,
 	       state_info.input, feat, -1, FINAL_NODE );
-  } 
-  else if (state_info.create_tree) 
-  { 
-    /* Preserve the feature structure. */
-    value_t value = copy_value_to_pool( state_info.analysis->value_pool, feat, NULL );
-    add_tree_node( value, state_info.input, -1, UNFINAL_NODE );
   }
 }
 
@@ -389,7 +343,6 @@ execute_filter_rule( analysis_t *analysis,
 
     /* Execute filter rule. */
     state_info.analysis = analysis;
-    state_info.create_tree = false;
     state_info.item_index = 0;
     state_info.input = input;
     execute_rule( rule_sys, filter_rule );
@@ -468,7 +421,6 @@ execute_rules( analysis_t *analysis,
 
   /* Setup STATE_INFO. */
   state_info.analysis = analysis;
-  state_info.create_tree = false;
   state_info.link_feat = link_feat;
   state_info.parent = state->tree_node;
   state_info.item_index = state->item_index + 1;
