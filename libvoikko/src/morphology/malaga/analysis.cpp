@@ -56,7 +56,6 @@ typedef struct /* The structure for morphological and syntactical analysis. */
 /* Global variables. ========================================================*/
 
 rule_sys_t *morphologyRuleSystem;
-string_t last_analysis_input;
 
 /* Variables. ===============================================================*/
 
@@ -496,7 +495,6 @@ analyse( string_t input )
   analysis_t *analysis = morphologyAnalysis;
 
   root_tree_node = NULL;
-  last_analysis_input = input;
   rule_sys = morphologyRuleSystem;
 
   /* Reset the analysis data structures */

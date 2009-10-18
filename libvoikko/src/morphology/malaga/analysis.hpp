@@ -37,9 +37,6 @@ typedef enum {STATE_SURFACE, LINK_SURFACE, RESULT_SURFACE} surface_t;
 extern rule_sys_t *morphologyRuleSystem; // FIXME
 /*  Read only! */
 
-extern string_t last_analysis_input; // FIXME
-/* Start of top level input string. Read only! */
-
 /* Functions. ===============================================================*/
 
 extern void init_analysis( string_t morphology_file );
