@@ -30,7 +30,6 @@ typedef struct tree_node /* A rule application is stored in "tree_node". */
   struct tree_node *sibling; /* Alternative tree node. */
   tree_node_type_t type; /* Type of this tree node. */
   int_t rule; /* Number of the executed rule. */
-  int_t state_index; /* Index of this node's state or -1 if node is break. */
   value_t link_feat; /* Feature structure of the link. */
   value_t result_feat; /* Result feature structure of the resulting state. */
   int_t rule_set; /* Successor rules of resulting state (-1 for end state). */
@@ -61,7 +60,6 @@ typedef struct /* The structure for morphological and syntactical analysis. */
 /* Global variables. ========================================================*/
 
 rule_sys_t *morphologyRuleSystem;
-int_t state_count;
 string_t last_analysis_input;
 
 /* Variables. ===============================================================*/
@@ -80,7 +78,6 @@ static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME *
 static struct /* Information needed to generate states and tree nodes. FIXME */
 { 
   analysis_t *analysis;
-  bool count_states;
   bool create_tree;
   int_t rule; /* Rule just executed. */
   value_t link_feat; /* Link's feature structure. */
@@ -199,10 +196,6 @@ add_tree_node( value_t result_feat,
   tree_node->sibling = NULL;
   tree_node->type = type;
   tree_node->rule = state_info.rule;
-  if (type == BREAK_NODE)
-    tree_node->state_index = -1;
-  else
-    tree_node->state_index = state_count;
   tree_node->link_feat = state_info.link_feat;
   tree_node->result_feat = result_feat;
   tree_node->rule_set = rule_set;
@@ -236,8 +229,6 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set,
                         rule_set, state_info.item_index );
   if (state_info.create_tree) 
     state->tree_node = add_tree_node( new_feat, input, rule_set, type );
-  if (state_info.count_states)    
-    state_count++;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -398,7 +389,6 @@ execute_filter_rule( analysis_t *analysis,
 
     /* Execute filter rule. */
     state_info.analysis = analysis;
-    state_info.count_states = false;
     state_info.create_tree = false;
     state_info.item_index = 0;
     state_info.input = input;
@@ -478,7 +468,6 @@ execute_rules( analysis_t *analysis,
 
   /* Setup STATE_INFO. */
   state_info.analysis = analysis;
-  state_info.count_states = true;
   state_info.create_tree = false;
   state_info.link_feat = link_feat;
   state_info.parent = state->tree_node;
@@ -560,7 +549,6 @@ analyse( string_t input )
   analysis_t *analysis = morphologyAnalysis;
 
   root_tree_node = NULL;
-  state_count = 1; /* We will insert the initial state. */
   last_analysis_input = input;
   rule_sys = morphologyRuleSystem;
 

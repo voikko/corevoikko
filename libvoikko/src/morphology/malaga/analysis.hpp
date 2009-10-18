@@ -37,8 +37,6 @@ typedef enum {STATE_SURFACE, LINK_SURFACE, RESULT_SURFACE} surface_t;
 extern rule_sys_t *morphologyRuleSystem; // FIXME
 /*  Read only! */
 
-extern int_t state_count; /* Counts number of generated states. Read only! FIXME */
-
 extern string_t last_analysis_input; // FIXME
 /* Start of top level input string. Read only! */
 
