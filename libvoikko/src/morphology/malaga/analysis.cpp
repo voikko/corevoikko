@@ -167,8 +167,7 @@ insert_state( analysis_t *analysis,
 /*---------------------------------------------------------------------------*/
 
 static void 
-add_state( list_t *list, string_t input, value_t feat, int_t rule_set, 
-	   tree_node_type_t type )
+add_state( list_t *list, string_t input, value_t feat, int_t rule_set)
 /* Add state, consisting of INPUT, FEAT and RULE_SET, to LIST.
  * When STATE_INFO.CREATE_TREE == true, also generate a tree node. */
 { 
@@ -196,7 +195,7 @@ add_end_state( value_t feat )
       || word_may_end_here( state_info.input, rule ))
   { 
     add_state( &state_info.analysis->end_states,
-	       state_info.input, feat, -1, FINAL_NODE );
+	       state_info.input, feat, -1);
   }
 }
 
@@ -207,7 +206,7 @@ add_running_state( value_t feat, int_t rule_set )
 /* Add a running state, consisting of FEAT and RULE_SET. */
 { 
   add_state( &state_info.analysis->running_states, 
-	     state_info.input, feat, rule_set, INTER_NODE );
+	     state_info.input, feat, rule_set);
 }
 
 /* Analysis functions. ======================================================*/
