@@ -19,7 +19,6 @@ typedef struct /* A node of the analysis tree. */
   int_t parent_index; /* Index of parent analysis tree node's state or -1. */
   string_t link_surf; /* Link's surface or NULL. */
   value_t link_feat; /* Link's feature structure or NULL. */
-  string_t rule_name; /* Name of the rule that created result or NULL. */
   string_t result_surf; /* Surface of resulting state or NULL. */
   value_t result_feat; /* Feature structure of resulting state or NULL. */
 } analysis_node_t;
@@ -75,19 +74,6 @@ extern value_t next_analysis_result( void );
 
 extern bool analysis_has_nodes( void );
 /* Return true iff the last analysis has created tree nodes. */
-
-extern analysis_node_t *get_first_analysis_node( void );
-/* Return the first analysis tree node of the last analysis.
- * Return NULL if there is no node. 
- * The node must be freed with "free_analysis_node" after use. */
-
-extern analysis_node_t *get_next_analysis_node( void );
-/* Return the next analysis tree node of the last analysis.
- * Return NULL if there is no more node. 
- * The node must be freed with "free_analysis_node" after use. */
-
-extern void free_analysis_node( analysis_node_t **node );
-/* Free the memory occupied by NODE. */
 
 extern void add_end_state( value_t feat );
 /* Add a state, consisting of feature structure FEAT, as an end state. */

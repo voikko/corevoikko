@@ -76,7 +76,6 @@ static tree_node_t *root_tree_node; /* A pointer to the root tree node. FIXME */
 static pool_t tree_pool; /* Pool where tree nodes are stored. FIXME */
 
 static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME */
-static tree_node_t *next_tree_node; /* Needed for "get_next_analysis_node". FIXME */
 
 static struct /* Information needed to generate states and tree nodes. FIXME */
 { 
@@ -392,94 +391,6 @@ analysis_has_nodes( void )
 { 
   return (root_tree_node != NULL); 
 }
-
-/*---------------------------------------------------------------------------*/
-
-analysis_node_t *
-get_first_analysis_node( void )
-/* Return the first analysis tree node of the last analysis.
- * Return NULL if there is no node. 
- * The node must be freed with "free_analysis_node" after use. */
-{
-  next_tree_node = root_tree_node;
-  return get_next_analysis_node();
-}
-
-/*---------------------------------------------------------------------------*/
-
-analysis_node_t *
-get_next_analysis_node( void )
-/* Return the next analysis tree node of the last analysis.
- * Return NULL if there is no more node. 
- * The node must be freed with "free_analysis_node" after use. */
-{ 
-  analysis_node_t *node;
-  string_t link_surf;
-  rule_sys_t *rule_sys = morphologyRuleSystem;
-
-  if (next_tree_node == NULL) 
-    return NULL;
-  node = (analysis_node_t *) new_mem( sizeof( analysis_node_t ) );
-  node->index = next_tree_node->state_index;
-  node->type = next_tree_node->type;
-
-  /* Set parent index. */
-  if (next_tree_node->parent == NULL) 
-    node->parent_index = -1;
-  else 
-    node->parent_index = next_tree_node->parent->state_index;
-
-  /* Set rule name. */
-  if (next_tree_node->rule != -1) 
-  { 
-    node->rule_name 
-      = rule_sys->strings + rule_sys->rules[ next_tree_node->rule ].name;
-  } 
-  else if (next_tree_node->parent == NULL) 
-    node->rule_name = "(initial)";
-  else 
-    node->rule_name = NULL;
-
-  /* Set link surface and feature structure. */
-  if (next_tree_node->parent == NULL) 
-    link_surf = last_analysis_input; 
-  else 
-    link_surf = next_non_space( next_tree_node->parent->input );
-  if (link_surf < next_tree_node->input) 
-    node->link_surf = new_string( link_surf, next_tree_node->input );
-  node->link_feat = next_tree_node->link_feat;
-
-  /* Set result surface and feature structure. */
-  node->result_surf = new_string( last_analysis_input, next_tree_node->input );
-  node->result_feat = next_tree_node->result_feat;
-
-  /* Update NEXT_TREE_NODE. */
-  if (next_tree_node->first_child != NULL) 
-    next_tree_node = next_tree_node->first_child;
-  else
-  {
-    while (next_tree_node != NULL && next_tree_node->sibling == NULL) 
-      next_tree_node = next_tree_node->parent;
-    if (next_tree_node != NULL) 
-      next_tree_node = next_tree_node->sibling;
-  }
-  return node;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-free_analysis_node( analysis_node_t **node )
-/* Free the memory occupied by NODE. */
-{ 
-  if (*node != NULL) 
-  { 
-    free_mem( &(*node)->link_surf );
-    free_mem( &(*node)->result_surf );
-    free_mem( node );
-  }
-}
-
 
 /*---------------------------------------------------------------------------*/
 
