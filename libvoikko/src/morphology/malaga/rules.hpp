@@ -84,35 +84,8 @@ extern void free_rule_sys( rule_sys_t **rule_sys );
 
 /* Debug support functions. =================================================*/
 
-extern void source_of_instr( rule_sys_t *rule_sys, 
-                             int_t instr_index, 
-                             int_t *line, 
-                             string_t *file_name,
-                             string_t *rule_name );
-/* Set *LINE, *FILE_NAME and *RULE_NAME to appropriate values
- * for the statement that has generated the instruction at INSTR_INDEX. */
-
 extern string_t rule_set_readable( rule_sys_t *rule_sys, int_t rule_set );
 /* Return RULE_SET in RULE_SYS as a readable string.
  * The string must be freed after use. */
-
-extern int_t get_frame_count( void );
-/* Get the number of frames in the current path. */
-
-extern void get_frame_info( int_t frame, 
-			    int_t *pc_index, 
-			    int_t *base_index,
-			    int_t *first_var_index,
-			    int_t *last_var_index );
-/* Return *PC_INDEX, *BASE_INDEX, *FIRST_VAR_INDEX and *LAST_VAR_INDEX
- * of the frame no. FRAME. Any result pointer may be NULL. 
- * Frame no. 0 is the current frame, 
- * frame no. "get_frame_count() - 1" is the outermost one. */
-
-extern string_t variable_at_index( rule_sys_t *rule_sys, 
-                                   int_t stack_index, 
-                                   int_t instr_index );
-/* Return the name of the variable that is defined at STACK_INDEX
- * when instruction INSTR_INDEX is executed or NULL if there is none. */
 
 }}}
