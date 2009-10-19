@@ -41,21 +41,6 @@ enum {MAX_PATH_SIZE = 200}; /* Maximum path size in characters. */
 
 /* File operations. =========================================================*/
 
-bool 
-file_exists( string_t file_name )
-/* Return true iff file FILE_NAME exists and can be read. */
-{ 
-  FILE *stream;
-
-  stream = fopen( file_name, "r" );
-  if (stream == NULL) 
-    return false;
-  fclose( stream );
-  return true;
-}
-
-/*---------------------------------------------------------------------------*/
-
 FILE *
 open_stream( string_t file_name, string_t stream_mode )
 /* Open file FILE_NAME and create a stream from/to it in mode STREAM_MODE.
@@ -171,30 +156,6 @@ unmap_file( void **address, int_t length )
 }
 
 /* File name operations. ====================================================*/
-
-string_t 
-name_in_path( string_t path_name )
-/* Return the file name in PATH_NAME, 
- * i.e. the name after the last separator. */
-{ 
-  string_t name;
-
-  for (name = path_name + strlen( path_name ); name > path_name; name--)
-  {
-    if (name[-1] == '/') 
-      break;
-#ifdef WIN32
-    if (name[-1] == '\\'
-        || (name == path_name + 2 && IS_LETTER( name[-2] ) && name[-1] == ':'))
-    {
-      break;
-    }
-#endif
-  }
-  return name;
-}
-
-/*---------------------------------------------------------------------------*/
 
 static string_t 
 get_env( string_t name )
@@ -418,15 +379,5 @@ absolute_path( string_t src_path, string_t relative_to )
 #endif
 }
 
-/*---------------------------------------------------------------------------*/
-
-void
-set_file_name( string_t *file_name_p, string_t file_name )
-/* Set *FILE_NAME_P to absolute path FILE_NAME, relative to current dir.
- * Print an error if *FILE_NAME_P is already set.
- * The created file name must be freed after use. */
-{ 
-  *file_name_p = absolute_path( file_name, NULL );
-}
 
 }}}

@@ -8,9 +8,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* File operations. =========================================================*/
 
-extern bool file_exists( string_t file_name );
-/* Return true iff file FILE_NAME exists. */
-
 extern FILE *open_stream( string_t file_name, string_t stream_mode );
 /* Open file FILE_NAME and create a stream from/to it in mode STREAM_MODE.
  * Works like "fopen", but calls "error" if it doesn't work. */
@@ -49,9 +46,6 @@ extern void unmap_file( void **address, int_t length );
 
 /* File name operations. ====================================================*/
 
-extern string_t name_in_path( string_t path_name );
-/* Return the file name in PATH_NAME, i.e. the name after the last "/". */
-
 extern char_t *absolute_path( string_t src_path, string_t relative_to );
 /* Return the absolute path name which is equivalent to SRC_PATH.
  * If SRC_PATH starts with "~", it's replaced by the home directory of the
@@ -59,10 +53,5 @@ extern char_t *absolute_path( string_t src_path, string_t relative_to );
  * If RELATIVE_TO is not NULL, SRC_NAME is relative to that path name.
  * RELATIVE_TO must be an absolute path name (a directory or a file).
  * The returned path must be freed after use. */
-
-extern void set_file_name( string_t *file_name_p, string_t file_name );
-/* Set *FILE_NAME_P to FILE_NAME, converted to absolute path.
- * Print an error if *FILE_NAME_P is already set.
- * The created file name must be freed after use. */
 
 }}}

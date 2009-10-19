@@ -57,18 +57,16 @@ read_project_file( string_t project_file )
 { 
   FILE *project_stream;
   char_t *project_line;
-  string_t project_line_p, argument, include_file, extension;
-  volatile int_t line_count;
+  string_t project_line_p, argument, include_file;
 
   bool info_in_project_file = false;
   project_stream = open_stream( project_file, "r" );
-  line_count = 0;
   while (true) 
   { 
     project_line = read_line( project_stream );
-    if (project_line == NULL) 
+    if (project_line == NULL) {
       break;
-    line_count++;
+    }
     cut_comment( project_line );
     project_line_p = project_line;
     
@@ -77,20 +75,7 @@ read_project_file( string_t project_file )
       argument = NULL;
       {
 	argument = parse_word( &project_line_p );
-	extension = NULL; 
-	if (strcmp( argument, "sym:" ) == 0) 
-	{
-	  extension = "sym";
-	}
-	else if (strcmp( argument, "lex:" ) == 0) 
-	{
-	  extension = "lex";
-	}
-	else if (strcmp( argument, "mor:" ) == 0) 
-	{
-	  extension = "mor";
-	}
-	else if (strcmp( argument, "include:" ) == 0) 
+	if (strcmp( argument, "include:" ) == 0) 
 	{ 
 	  include_file = parse_absolute_path( &project_line_p, project_file );
 	  read_project_file( include_file );
