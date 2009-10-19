@@ -157,7 +157,7 @@ extern value_t next_analysis_result( void );
 /* Get the next result of the last call of "analyse_item".
  * Return NULL if there is no more result. */
 
-extern void init_libmalaga( string_t project_file );
+extern void init_libmalaga(string_t project_directory);
 /* Initialise this module.
  * This function sets "malaga_error". */
 

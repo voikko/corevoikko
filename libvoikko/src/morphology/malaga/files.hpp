@@ -65,11 +65,4 @@ extern void set_file_name( string_t *file_name_p, string_t file_name );
  * Print an error if *FILE_NAME_P is already set.
  * The created file name must be freed after use. */
 
-extern void set_binary_file_name( string_t *file_name_p, string_t file_name );
-/* Set *FILE_NAME_P to
- * FILE_NAME plus "_l" for little endian, "_b" for big endian, "_c" else,
- * converted to absolute path. 
- * Print an error if *FILE_NAME_P is already set.
- * The created file name must be freed after use. */
-
 }}}

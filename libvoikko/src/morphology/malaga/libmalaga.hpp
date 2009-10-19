@@ -14,10 +14,6 @@ extern string_t malaga_error; // FIXME
 
 /* Functions. ===============================================================*/
 
-extern void init_libmalaga( string_t project_file );
-/* Initialise this module.
- * This function sets "malaga_error". */
-
 extern void terminate_libmalaga( void );
 /* Terminate this module. */
 

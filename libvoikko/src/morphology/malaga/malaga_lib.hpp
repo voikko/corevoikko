@@ -12,7 +12,7 @@ extern text_t *grammar_info; /* Information about grammar. FIXME */
 
 /* Functions. ===============================================================*/
 
-extern void init_malaga( string_t project_file );
+extern void init_malaga(string_t directoryName);
 /* Initialise this module. */
 
 extern void terminate_malaga( void );

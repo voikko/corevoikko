@@ -270,10 +270,8 @@ bool DictionaryLoader::hasDefault(map<string, Dictionary> & variants) {
 
 void DictionaryLoader::loadDictionary(const Dictionary & dictionary)
 		throw(DictionaryException) {
-	string projectFile(dictionary.getMorPath());
-	projectFile.append("/");
-	projectFile.append(VOIKKO_DICTIONARY_FILE);
-	init_libmalaga(projectFile.c_str());
+	string projectDirectory(dictionary.getMorPath());
+	init_libmalaga(projectDirectory.c_str());
 	if (malaga_error) {
 		throw DictionaryException(malaga_error);
 	}

@@ -36,23 +36,21 @@ string_t malaga_error;
 /* Functions. ===============================================================*/
 
 void 
-init_libmalaga( string_t project_file )
+init_libmalaga(string_t project_directory)
 /* Initialise this module. */
 { 
-  string_t project_file_absolute;
-
   malaga_error = NULL;
   init_basic();
-  project_file_absolute = absolute_path( project_file, NULL );
+  string_t project_directory_absolute = absolute_path(project_directory, NULL);
   TRY 
-    init_malaga( project_file_absolute );
+    init_malaga(project_directory_absolute);
   IF_ERROR 
   { 
     malaga_error = error_text->buffer;
     RESUME;
   }
   END_TRY;
-  free_mem( &project_file_absolute );
+  free_mem(&project_directory_absolute);
 }
 
 /*---------------------------------------------------------------------------*/

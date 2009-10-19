@@ -429,38 +429,4 @@ set_file_name( string_t *file_name_p, string_t file_name )
   *file_name_p = absolute_path( file_name, NULL );
 }
 
-/*---------------------------------------------------------------------------*/
-
-void
-set_binary_file_name( string_t *file_name_p, string_t file_name )
-/* Set *FILE_NAME_P to
- * FILE_NAME plus "_l" for little endian, "_b" for big endian, "_c" else,
- * converted to absolute path. 
- * Print an error if *FILE_NAME_P is already set.
- * The created file name must be freed after use. */
-{
-  union { char_t chars[4]; int_t integer; } format;
-  string_t suffix, binary_file_name;
-
-  format.integer = 0x12345678;
-  if (sizeof( int_t ) != 4) 
-    suffix = "_c";
-  else if (format.chars[0] == 0x12 && format.chars[1] == 0x34
-	   && format.chars[2] == 0x56 && format.chars[3] == 0x78)
-  {
-    suffix = "_b";
-  }
-  else if (format.chars[0] == 0x78 && format.chars[1] == 0x56
-	   && format.chars[2] == 0x34 && format.chars[3] == 0x12)
-  {
-     suffix = "_l";
-  }
-  else 
-    suffix = "_c";
-
-  binary_file_name = concat_strings( file_name, suffix, NULL );
-  *file_name_p = absolute_path( binary_file_name, NULL );
-  free_mem( &binary_file_name );
-}
-
 }}}

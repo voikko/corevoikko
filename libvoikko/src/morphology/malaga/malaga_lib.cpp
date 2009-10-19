@@ -34,42 +34,19 @@ text_t *grammar_info; /* Information about grammar. */
 
 /* Variables. ===============================================================*/
 
-static string_t morphology_file, lexicon_file; // FIXME
-static string_t symbol_file; // FIXME
+static const char * const project_file = "voikko-fi_FI.pro";
+static const char * const morphology_file = "voikko-fi_FI.mor";
+static const char * const lexicon_file = "voikko-fi_FI.lex";
+static const char * const symbol_file = "voikko-fi_FI.sym";
 
 /* Functions. ===============================================================*/
 
-static string_t extension_start( string_t name )
-/* Return a pointer to the start (the dot) of the extension in NAME,
- * or to the end of the string if there is no extension. */
-{
-  string_t s, t;
-  
-  s = NULL;
-  for (t = name; *t != EOS; t++)
-  {
-    if (*t == '/') 
-      s = NULL;
+static const char * const pathSeparator() {
 #ifdef WIN32
-    else if (*t == '\\') 
-      s = NULL;
+  return "\\";
+#else
+  return "/";
 #endif
-    else if (*t == '.') 
-      s = t;
-  }
-  return (s != NULL ? s : t);
-}
-
-/*---------------------------------------------------------------------------*/
-
-static bool 
-has_extension( string_t file_name, string_t extension )
-/* Test if FILE_NAME has extension EXTENSION. */
-{
-  string_t ext; /* The real extension of FILE_NAME (including "."). */
-
-  ext = extension_start( file_name );
-  return (*ext != EOS && strcmp( ext + 1, extension ) == 0);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -81,7 +58,6 @@ read_project_file( string_t project_file )
   FILE *project_stream;
   char_t *project_line;
   string_t project_line_p, argument, include_file, extension;
-  string_t *name_p;
   volatile int_t line_count;
 
   bool info_in_project_file = false;
@@ -102,21 +78,17 @@ read_project_file( string_t project_file )
       {
 	argument = parse_word( &project_line_p );
 	extension = NULL; 
-	name_p = NULL;
 	if (strcmp( argument, "sym:" ) == 0) 
 	{
 	  extension = "sym";
-	  name_p = &symbol_file; 
 	}
 	else if (strcmp( argument, "lex:" ) == 0) 
 	{
 	  extension = "lex";
-	  name_p = &lexicon_file; 
 	}
 	else if (strcmp( argument, "mor:" ) == 0) 
 	{
 	  extension = "mor";
-	  name_p = &morphology_file; 
 	}
 	else if (strcmp( argument, "include:" ) == 0) 
 	{ 
@@ -135,18 +107,6 @@ read_project_file( string_t project_file )
 	  info_in_project_file = true;
 	}
 	free_mem( &argument );
-      
-	if (name_p != NULL && *name_p == NULL && *project_line_p != EOS) 
-        { 
-	  argument = parse_absolute_path( &project_line_p, project_file );
-	  if (! has_extension( argument, extension ))
-	  {
-	    complain( "\"%s\" should have extension \"%s\".", 
-		      name_in_path( argument ), extension );
-	  }
-	  set_binary_file_name( name_p, argument );
-	  free_mem( &argument );
-	}
       }
     }
     free_mem( &project_line );
@@ -157,34 +117,55 @@ read_project_file( string_t project_file )
 
 /*---------------------------------------------------------------------------*/
 
+static const char * const
+binarySuffix() {
+  union { char_t chars[4]; int_t integer; } format;
+
+  format.integer = 0x12345678;
+  if (sizeof( int_t ) != 4) {
+    return "_c";
+  }
+  else if (format.chars[0] == 0x12 && format.chars[1] == 0x34
+	   && format.chars[2] == 0x56 && format.chars[3] == 0x78) {
+    return "_b";
+  }
+  else if (format.chars[0] == 0x78 && format.chars[1] == 0x56
+	   && format.chars[2] == 0x34 && format.chars[3] == 0x12) {
+     return "_l";
+  }
+  else {
+    return "_c";
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
 void 
-init_malaga( string_t project_file )
+init_malaga(string_t directoryName)
 /* Initialise this module. */
 { 
 
   init_input();
   grammar_info = new_text();
 
-  /* Read project file. */
-  if (! has_extension( project_file, "pro" )) 
-  {
-    complain( "Project file \"%s\" must have extension \".pro\".", 
-	      project_file );
-  }
-  read_project_file( project_file );
-  if (morphology_file == NULL) 
-    complain( "Missing morphology rules." );
-  if (lexicon_file == NULL) 
-    complain( "Missing lexicon." );
-  if (symbol_file == NULL) 
-    complain( "Missing symbol file." );
+  char * fullProjectFile = concat_strings(directoryName, pathSeparator(), project_file, NULL);
+  read_project_file(fullProjectFile);
 
   /* Init modules. */
+  char * fullSymbolFile = concat_strings(directoryName, pathSeparator(), symbol_file, binarySuffix(), NULL);
+  char * fullLexiconFile = concat_strings(directoryName, pathSeparator(), lexicon_file, binarySuffix(), NULL);
+  char * fullMorphologyFile = concat_strings(directoryName, pathSeparator(), morphology_file, binarySuffix(), NULL);
+  
   init_values();
-  init_symbols( symbol_file );
-  init_lexicon( lexicon_file );
+  init_symbols(fullSymbolFile);
+  init_lexicon(fullLexiconFile);
   init_scanner();
-  init_analysis( morphology_file );
+  init_analysis(fullMorphologyFile);
+  
+  free(fullProjectFile);
+  free(fullSymbolFile);
+  free(fullLexiconFile);
+  free(fullMorphologyFile);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -194,13 +175,10 @@ terminate_malaga( void )
 /* Terminate this module. */
 {
   terminate_analysis();
-  free_mem( &morphology_file );
   terminate_patterns();
   terminate_scanner();
   terminate_lexicon();
-  free_mem( &lexicon_file );
   terminate_symbols();
-  free_mem( &symbol_file );
   terminate_values();
   free_text( &grammar_info );
   terminate_input();
