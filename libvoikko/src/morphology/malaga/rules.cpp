@@ -70,12 +70,6 @@ standard_function( int_t function )
 
   switch (function) 
   {
-  case FUNC_TO_ATOMS:
-    push_value( get_atoms( value_to_symbol( value_stack[ --top ] ) ) );
-    break;
-  case FUNC_TO_MULTI:
-    push_symbol_value( find_multi_symbol( value_stack[ --top ] ) );
-    break;
   case FUNC_TO_SET:
     convert_list_to_set();
     break;

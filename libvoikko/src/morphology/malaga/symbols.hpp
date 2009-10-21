@@ -18,10 +18,6 @@ extern symbol_t find_symbol( string_t name );
 /* Find a symbol by NAME in the symbol table and return its code.
  * If there is no symbol NAME, report an error. */
 
-extern symbol_t find_multi_symbol( value_t atoms );
-/* Find the multi-symbol for ATOMS and return its code. 
- * If there is no multi-symbol for ATOMS, report an error. */
-
 extern int_t symbol_count( void );
 /* Return the number of symbols defined. */
 
