@@ -103,15 +103,6 @@ analyse_item( string_t item )
 
 /*---------------------------------------------------------------------------*/
 
-string_t
-get_info( void )
-/* Get info about the current grammar. */
-{ 
-  return grammar_info->buffer;
-}
-
-/*---------------------------------------------------------------------------*/
-
 value_t
 parse_malaga_value( string_t string )
 /* Convert STRING to a Malaga value and return it.

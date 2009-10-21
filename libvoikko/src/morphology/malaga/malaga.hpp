@@ -141,9 +141,6 @@ extern value_t parse_malaga_value( string_t string );
 
 /* Functions. ===============================================================*/
 
-extern string_t get_info( void );
-/* Get info about the current grammar. */
-
 extern void analyse_item( string_t item );
 /* Analyse ITEM.
  * ITEM must be a valid UTF-8 string.

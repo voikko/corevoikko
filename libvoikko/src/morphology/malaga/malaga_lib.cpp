@@ -28,10 +28,6 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
-/* Global variables. ========================================================*/
-
-text_t *grammar_info; /* Information about grammar. */
-
 /* Variables. ===============================================================*/
 
 static const char * const project_file = "voikko-fi_FI.pro";
@@ -59,7 +55,6 @@ read_project_file( string_t project_file )
   char_t *project_line;
   string_t project_line_p, argument, include_file;
 
-  bool info_in_project_file = false;
   project_stream = open_stream( project_file, "r" );
   while (true) 
   { 
@@ -80,16 +75,6 @@ read_project_file( string_t project_file )
 	  include_file = parse_absolute_path( &project_line_p, project_file );
 	  read_project_file( include_file );
 	  free_mem( &include_file );
-	} 
-	else if (strcmp( argument, "info:" ) == 0) 
-        { 
-	  /* Insert an empty line if we already have info that stems from a
-	   * different project file. */
-	  if (grammar_info->string_size > 0 && ! info_in_project_file)
-	    add_char_to_text( grammar_info, '\n' );
-	  add_to_text( grammar_info, project_line_p );
-	  add_char_to_text( grammar_info, '\n' );
-	  info_in_project_file = true;
 	}
 	free_mem( &argument );
       }
@@ -97,7 +82,6 @@ read_project_file( string_t project_file )
     free_mem( &project_line );
   }
   close_stream( &project_stream, project_file );
-  info_in_project_file = false;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -131,7 +115,6 @@ init_malaga(string_t directoryName)
 { 
 
   init_input();
-  grammar_info = new_text();
 
   char * fullProjectFile = concat_strings(directoryName, pathSeparator(), project_file, NULL);
   read_project_file(fullProjectFile);
@@ -165,7 +148,6 @@ terminate_malaga( void )
   terminate_lexicon();
   terminate_symbols();
   terminate_values();
-  free_text( &grammar_info );
   terminate_input();
 }
 

@@ -6,10 +6,6 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
-/* Variables. ===============================================================*/
-
-extern text_t *grammar_info; /* Information about grammar. FIXME */
-
 /* Functions. ===============================================================*/
 
 extern void init_malaga(string_t directoryName);

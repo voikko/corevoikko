@@ -21,9 +21,6 @@ extern void analyse_item( string_t item );
 /* Analyse ITEM.
  * This function sets "malaga_error". */
 
-extern string_t get_info( void );
-/* Get info about the current grammar. */
-
 extern char_t *get_value_string( value_t string );
 /* Return the value of STRING as a C-style string in external coding. 
  * The string must be freed after use. */
