@@ -205,9 +205,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
       case INS_MINUS_OPERATION:
         minus_operation();
         break;
-      case INS_UNARY_MINUS_OP:
-        unary_minus_operation();
-        break;
       case INS_GET_ATTRIBUTE:
         value_stack[ top - 1 ] = get_attribute( value_stack[ top - 1 ], 
 						(symbol_t) info );
@@ -256,9 +253,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         insert_value( 2, value_stack[ base + info ] );
         modify_value_part( minus_operation );
         value_stack[ base + info ] = value_stack[ --top ];
-        break;
-      case INS_DECOMPOSE_LIST:
-        decompose_list();
         break;
       case INS_GET_1ST_ELEMENT:
         get_first_element();

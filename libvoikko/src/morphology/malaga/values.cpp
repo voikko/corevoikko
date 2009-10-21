@@ -946,29 +946,6 @@ build_list( int_t n )
 
 /*---------------------------------------------------------------------------*/
 
-int_t 
-decompose_list( void )
-/* Stack effects: LIST -> VALUE1 ... VALUE_N.
- * VALUE1 ... VALUE_N are the elements of LIST.
- * Return N. */
-{
-  int_t n;
-  value_t list, list_end, element;
-
-  list = value_stack[ top - 1 ];
-  top--;
-  list_end = NEXT_VALUE( list );
-  n = 0;
-  for (element = list + 2; element < list_end; element = NEXT_VALUE( element ))
-  { 
-    push_value( element );
-    n++;
-  }
-  return n;
-}
-
-/*---------------------------------------------------------------------------*/
-
 void 
 concat_lists( void )
 /* Stack effects: LIST1 LIST2 -> NEW_LIST.
@@ -1559,17 +1536,6 @@ minus_operation( void )
     push_number_value( value_to_double( value1 ) - value_to_double( value2 ) );
     break;
   }
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-unary_minus_operation( void )
-/* Stack effects: VALUE -> NEW_VALUE.
- * NEW_VALUE is "-" VALUE.
- * The actual operation depends on the type of the value. */
-{
-  push_number_value( -value_to_double( value_stack[ --top ] ) );
 }
 
 /* Attribute path functions. ================================================*/

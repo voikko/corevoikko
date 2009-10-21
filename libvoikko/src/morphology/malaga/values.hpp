@@ -149,11 +149,6 @@ extern void build_list( int_t n );
 /* Stack effects: VALUE1 ... VALUE_N -> NEW_LIST.
  * NEW_LIST looks like <VALUE1, ..., VALUE_N>. */
 
-extern int_t decompose_list( void );
-/* Stack effects: LIST -> VALUE1 ... VALUE_N.
- * VALUE1 ... VALUE_N are the elements of LIST.
- * Return N. */
-
 extern void concat_lists( void );
 /* Stack effects: LIST1 LIST2 -> NEW_LIST.
  * NEW_LIST is the concatenation of LIST1 and LIST2. */
@@ -230,11 +225,6 @@ extern void minus_operation( void );
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "-" VALUE2. 
  * The actual operation depends on the type of the values. */
-
-extern void unary_minus_operation( void );
-/* Stack effects: VALUE -> NEW_VALUE.
- * NEW_VALUE is "-" VALUE.
- * The actual operation depends on the type of the value. */
 
 /* Functions for value paths. ===============================================*/
 
