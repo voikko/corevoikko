@@ -1401,65 +1401,6 @@ replace_element( int_t n )
   value_stack[ top - 1 ] = new_list;
 }
 
-/*---------------------------------------------------------------------------*/
-
-void 
-convert_list_to_set( void )
-/* Stack effects: LIST -> NEW_LIST.
- * NEW_LIST contains all elements of LIST, but multiple appearances
- * of one value are reduced to a single appearance.
- * That means, NEW_LIST is LIST converted to a set. */
-{
-  value_t v1, v2, v, new_list, list, list_end;
-  int_t new_list_length;
-
-  list = value_stack[ top - 1 ];
-  list_end = NEXT_VALUE( list );
-
-  /* Compute the length of the new list. */
-  new_list_length = 2;
-  for (v1 = list + 2; v1 < list_end; v1 = NEXT_VALUE( v1 )) 
-  { 
-    /* Check if V1 already occurred in the list. */
-    for (v2 = list + 2; v2 < v1; v2 = NEXT_VALUE( v2 )) 
-    { 
-      if (values_equal( v1, v2 )) 
-	break;
-    }
-    if (v2 == v1) 
-      new_list_length += length_of_value( v1 );
-  }
-  
-  /* No need to create a new list if no elements will be deleted. */
-  if (new_list_length == length_of_value( list )) 
-    new_list = list;
-  else
-  { 
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-
-    list = value_stack[ top - 1 ];
-    list_end = NEXT_VALUE( list );
-
-    v = new_list + 2;
-    for (v1 = list + 2; v1 < list_end; v1 = NEXT_VALUE( v1 )) 
-    { 
-      /* Check if V1 already occurred in the list. */
-      for (v2 = list + 2; v2 < v1; v2 = NEXT_VALUE( v2 )) 
-      { 
-	if (values_equal( v1, v2 )) 
-	  break;
-      }
-      if (v2 == v1) 
-      { 
-	copy_value( v, v1 ); 
-	v = NEXT_VALUE( v ); 
-      }
-    }
-  }
-
-  value_stack[ top - 1 ] = new_list;
-}
-
 /* Number operations. =======================================================*/
 
 double 
@@ -1935,52 +1876,6 @@ get_next_element( int_t index )
 }
 
 /* Functions to compare values. =============================================*/
-
-static symbol_t 
-next_symbol( value_t atoms, int_t lower_limit )
-/* Return the smallest symbol in ATOMS that is greater than LOWER_LIMIT.
- * Return SYMBOL_MAX if no such symbol exists. */
-{
-  symbol_t symbol;
-  value_t v;
-  value_t atoms_end;
-  
-  atoms_end = NEXT_VALUE( atoms );
-  symbol = SYMBOL_MAX;
-  for (v = atoms + 2; v < atoms_end; v++) 
-  { 
-    if (*v > lower_limit && *v < symbol) 
-      symbol = *v;
-  }
-  return symbol;
-}
-
-/*---------------------------------------------------------------------------*/
-
-int_t 
-compare_atom_lists( value_t atoms1, value_t atoms2 )
-/* Compare atom lists ATOMS1 and ATOMS2.
- * Return -1 if ATOMS1 < ATOMS2.
- * Return 0 if ATOMS1 == ATOMS2.
- * Return 1 if ATOMS1 > ATOMS2. */
-{
-  int_t limit1, limit2;
-
-  limit1 = limit2 = -1;
-  while (true) 
-  { 
-    limit1 = next_symbol( atoms1, limit1 );
-    limit2 = next_symbol( atoms2, limit2 );
-    if (limit1 < limit2) 
-      return -1;
-    if (limit1 > limit2) 
-      return 1;
-    if (limit1 == SYMBOL_MAX) 
-      return 0;
-  }
-}
-
-/*---------------------------------------------------------------------------*/
 
 bool 
 values_equal( value_t value1, value_t value2 )

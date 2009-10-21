@@ -202,12 +202,6 @@ extern void replace_element( int_t n );
  * If N is negative, count from the right end.
  * LIST must contain at least N elements. */
 
-extern void convert_list_to_set( void );
-/* Stack effects: LIST -> NEW_LIST.
- * NEW_LIST contains all elements of LIST, but multiple appearances
- * of one value are reduced to a single appearance.
- * That means, NEW_LIST is LIST converted to a set. */
-
 /* Number operations. =======================================================*/
 
 extern double value_to_double( value_t value );
@@ -305,12 +299,6 @@ extern void get_next_element( int_t stack_index );
  * VALUE1, then NEW_VALUE is VALUE2 - 1. */
 
 /* Functions to compare values. =============================================*/
-
-extern int_t compare_atom_lists( value_t atoms1, value_t atoms2 );
-/* Compare atom lists ATOMS1 and ATOMS2.
- * Return -1 if ATOMS1 < ATOMS2.
- * Return 0 if ATOMS1 == ATOMS2.
- * Return 1 if ATOMS1 > ATOMS2. */
 
 extern bool values_equal( value_t value1, value_t value2 );
 /* Return a truth value indicating whether VALUE1 and VALUE2 are equal.

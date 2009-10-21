@@ -70,9 +70,6 @@ standard_function( int_t function )
 
   switch (function) 
   {
-  case FUNC_TO_SET:
-    convert_list_to_set();
-    break;
   case FUNC_GET_LENGTH:
     if (get_value_type( value_stack[ top - 1 ] ) == STRING_SYMBOL)
     {
@@ -84,9 +81,6 @@ standard_function( int_t function )
     break;
   case FUNC_GET_VALUE_TYPE:
     push_symbol_value( get_value_type( value_stack[ --top ] ) );
-    break;
-  case FUNC_FLOOR:
-    push_number_value( floor( value_to_double( value_stack[ --top ] ) ) );
     break;
   case FUNC_SUBSTRING:
     string_t string = value_to_string( value_stack[ top - 3 ] );
