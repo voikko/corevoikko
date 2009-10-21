@@ -11,9 +11,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 extern string_t get_symbol_name( symbol_t symbol );
 /* Return the name of SYMBOL. */
 
-extern value_t get_atoms( symbol_t symbol );
-/* Return the atom list of SYMBOL. */
-
 extern symbol_t find_symbol( string_t name );
 /* Find a symbol by NAME in the symbol table and return its code.
  * If there is no symbol NAME, report an error. */

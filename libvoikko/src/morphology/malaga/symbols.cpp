@@ -46,15 +46,6 @@ get_symbol_name( symbol_t symbol )
 
 /*---------------------------------------------------------------------------*/
 
-value_t 
-get_atoms( symbol_t symbol )
-/* Return the atom list of SYMBOL. */
-{
-  return symbol_table.values + symbol_table.symbols[ symbol ].atoms;
-}
-
-/*---------------------------------------------------------------------------*/
-
 symbol_t 
 find_symbol( string_t name )
 /* Find a symbol NAME in the symbol table and return its code.
@@ -104,18 +95,6 @@ compare_symbols_by_name( const void *symbol1, const void *symbol2 )
 
 /*---------------------------------------------------------------------------*/
 
-static int 
-compare_symbols_by_atoms( const void *symbol1, const void *symbol2 )
-/* Return -1 if atoms( SYMBOL1 ) < atoms( SYMBOL2 )
- *         0 if atoms( SYMBOL1 ) == atoms( SYMBOL2 )
- *         1 if atoms( SYMBOL1 ) > atoms( SYMBOL2 ). */
-{
-  return compare_atom_lists( get_atoms( *(symbol_t *) symbol1 ), 
-                             get_atoms( *(symbol_t *) symbol2 ) );
-}
-
-/*---------------------------------------------------------------------------*/
-
 void 
 init_symbols( string_t file_name )
 /* Initialise this module. Read SYMBOL_TABLE from file FILE_NAME. */
@@ -155,8 +134,6 @@ init_symbols( string_t file_name )
   }
   qsort( symbol_table.symbols_by_name, header.symbol_count, 
          sizeof( symbol_t ), compare_symbols_by_name );
-  qsort( symbol_table.symbols_by_atoms, header.symbol_count, 
-         sizeof( symbol_t ), compare_symbols_by_atoms );
 }
 
 /*---------------------------------------------------------------------------*/

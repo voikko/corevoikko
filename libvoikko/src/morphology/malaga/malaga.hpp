@@ -71,9 +71,6 @@ extern symbol_t value_to_symbol( value_t value );
 extern string_t get_symbol_name( symbol_t symbol );
 /* Return the name of SYMBOL. */
 
-extern value_t get_atoms( symbol_t symbol );
-/* Return the list of atoms of SYMBOL. */
-
 extern char_t *get_value_string( value_t string );
 /* Return the value of STRING as a C-style string in external encoding. 
  * The string must be freed after use. */
@@ -113,11 +110,6 @@ extern bool values_equal( value_t value1, value_t value2 );
 /* Return a truth value indicating whether VALUE1 and VALUE2 are equal.
  * VALUE1 an VALUE2 must be of same type or one of them must be nil.
  * Refer to documentation to see what "equal" in Malaga really means. */
-
-extern bool values_congruent( value_t value1, value_t value2 );
-/* Return a truth value indicating whether VALUE1 and VALUE2 have
- * at least one element in common.
- * VALUE1 and VALUE2 must both be symbols or lists. */
 
 extern bool value_in_value( value_t value1, value_t value2 );
 /* Return bool value saying if VALUE1 is element or attribute of VALUE2.

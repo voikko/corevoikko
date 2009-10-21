@@ -317,11 +317,6 @@ extern bool values_equal( value_t value1, value_t value2 );
  * VALUE1 an VALUE2 must be of same type or one of them must be nil.
  * Refer to documentation to see what "equal" in Malaga really means. */
 
-extern bool values_congruent( value_t value1, value_t value2 );
-/* Return a truth value indicating whether VALUE1 and VALUE2 have
- * at least one element in common.
- * VALUE1 and VALUE2 must both be symbols or lists. */
-
 extern bool value_in_value( value_t value1, value_t value2 );
 /* Return bool value saying if VALUE1 is element or attribute of VALUE2.
  * VALUE2 must be a list or a record.

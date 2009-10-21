@@ -2048,38 +2048,6 @@ values_equal( value_t value1, value_t value2 )
 /*---------------------------------------------------------------------------*/
 
 bool 
-values_congruent( value_t value1, value_t value2 )
-/* Return a truth value indicating whether VALUE1 and VALUE2 have
- * at least one element in common.
- * VALUE1 and VALUE2 must both be symbols or lists. */
-{
-  value_t value1_end, value2_end, v1, v2;
-  
-  if (IS_SYMBOL( value1 )) 
-  {
-    value1 = get_atoms( value_to_symbol( value1 ) );
-    value2 = get_atoms( value_to_symbol( value2 ) );
-  }
-  
-  /* Look for a common element. */
-  value1_end = NEXT_VALUE( value1 );
-  value2_end = NEXT_VALUE( value2 );
-  for (v1 = value1 + 2; v1 < value1_end; v1 = NEXT_VALUE( v1 )) 
-  { 
-    for (v2 = value2 + 2; v2 < value2_end; v2 = NEXT_VALUE( v2 )) 
-    { 
-      if (values_equal( v1, v2 )) 
-	return true;
-    }
-  }
-
-  /* No common symbol found. */
-  return false;
-}
-
-/*---------------------------------------------------------------------------*/
-
-bool 
 value_in_value( value_t value1, value_t value2 )
 /* Return bool value saying if VALUE1 is element or attribute of VALUE2.
  * VALUE2 must be a list or a record.

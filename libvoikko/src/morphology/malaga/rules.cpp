@@ -285,16 +285,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	  new_pc = info;
         top -= 2;
         break;
-      case INS_JUMP_IF_CONGR:
-        if (values_congruent( value_stack[top - 2], value_stack[top - 1] ))
-	  new_pc = info;
-        top -= 2;
-        break;
-      case INS_JUMP_IF_NOT_CONGR:
-        if (! values_congruent( value_stack[top - 2], value_stack[top - 1] ))
-	  new_pc = info;
-        top -= 2;
-        break;
       case INS_JUMP_IF_IN:
         if (value_in_value( value_stack[top - 2], value_stack[top - 1] )) 
 	  new_pc = info;
