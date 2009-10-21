@@ -47,45 +47,6 @@ static const char * const pathSeparator() {
 
 /*---------------------------------------------------------------------------*/
 
-static void 
-read_project_file( string_t project_file )
-/* Read the project file. */
-{ 
-  FILE *project_stream;
-  char_t *project_line;
-  string_t project_line_p, argument, include_file;
-
-  project_stream = open_stream( project_file, "r" );
-  while (true) 
-  { 
-    project_line = read_line( project_stream );
-    if (project_line == NULL) {
-      break;
-    }
-    cut_comment( project_line );
-    project_line_p = project_line;
-    
-    if (*project_line_p != EOS) 
-    {
-      argument = NULL;
-      {
-	argument = parse_word( &project_line_p );
-	if (strcmp( argument, "include:" ) == 0) 
-	{ 
-	  include_file = parse_absolute_path( &project_line_p, project_file );
-	  read_project_file( include_file );
-	  free_mem( &include_file );
-	}
-	free_mem( &argument );
-      }
-    }
-    free_mem( &project_line );
-  }
-  close_stream( &project_stream, project_file );
-}
-
-/*---------------------------------------------------------------------------*/
-
 static const char * const
 binarySuffix() {
   union { char_t chars[4]; int_t integer; } format;
@@ -116,9 +77,6 @@ init_malaga(string_t directoryName)
 
   init_input();
 
-  char * fullProjectFile = concat_strings(directoryName, pathSeparator(), project_file, NULL);
-  read_project_file(fullProjectFile);
-
   /* Init modules. */
   char * fullSymbolFile = concat_strings(directoryName, pathSeparator(), symbol_file, binarySuffix(), NULL);
   char * fullLexiconFile = concat_strings(directoryName, pathSeparator(), lexicon_file, binarySuffix(), NULL);
@@ -130,7 +88,6 @@ init_malaga(string_t directoryName)
   init_scanner();
   init_analysis(fullMorphologyFile);
   
-  free(fullProjectFile);
   free(fullSymbolFile);
   free(fullLexiconFile);
   free(fullMorphologyFile);
