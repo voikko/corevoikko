@@ -327,15 +327,4 @@ extern bool value_in_value( value_t value1, value_t value2 );
  * VALUE2 must be a list or a record.
  * If VALUE2 is a record, then VALUE1 must be a symbol. */
 
-/* Functions to convert values to text. =====================================*/
-
-extern char_t *value_to_readable( value_t value, 
-                                  bool full_value,
-                                  int_t indent );
-/* Return VALUE in a format readable for humans. 
- * If FULL_VALUE == true, show all attributes, even those that are hidden.
- * If INDENT >= 0, format value, i.e. print each element of a list or record
- * on a line of its own. Assume the value is indented by INDENT columns.
- * The result must be freed after use. */
-
 }}}

@@ -67,7 +67,6 @@ standard_function( int_t function )
 /* Stack effect: VALUE -> NEW_VALUE.
  * Perform function FUNCTION on VALUE yielding NEW_VALUE. */
 { 
-  char_t *buffer;
 
   switch (function) 
   {
@@ -91,11 +90,6 @@ standard_function( int_t function )
     break;
   case FUNC_GET_VALUE_TYPE:
     push_symbol_value( get_value_type( value_stack[ --top ] ) );
-    break;
-  case FUNC_GET_VALUE_STRING:
-    buffer = value_to_readable( value_stack[ --top ], true, -1 );
-    push_string_value( buffer, NULL );
-    free_mem( &buffer );
     break;
   case FUNC_FLOOR:
     push_number_value( floor( value_to_double( value_stack[ --top ] ) ) );

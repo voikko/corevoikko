@@ -122,13 +122,6 @@ static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
 
 static int_t value_stack_size; /* Size of the value stack. FIXME */
 
-static text_t *value_text; /* Buffer for conversion of values to text. FIXME */
-
-/* Forward declarations. ====================================================*/
-
-static void value_to_text( text_t *text, value_t value, bool full_value, 
-			   int_t indent );
-
 /* Support functions. =======================================================*/
 
 static void 
@@ -279,7 +272,6 @@ void
 init_values( void )
 /* Initialise this module. */
 {
-  value_text = new_text();
   value_heap_size = 1000;
   value_heap = (cell_t *) new_vector( sizeof( cell_t ), value_heap_size );
   value_heap_end = value_heap;
@@ -296,7 +288,6 @@ terminate_values( void )
 {
   free_mem( &value_heap );
   free_mem( &value_stack );
-  free_text( &value_text );
 }
 
 /* Value operations. ========================================================*/
@@ -2114,75 +2105,6 @@ value_in_value( value_t value1, value_t value2 )
     }
   }
   return false;
-}
-
-/* Functions to print values. ===============================================*/
-
-
-static string_t 
-simple_value_to_string( value_t value )
-/* Return VALUE, which must be a simple value, as a string */
-{
-  char_t *string;
-
-  switch (TYPE( value )) 
-  {
-  case SYMBOL_TYPE:
-    string = new_string( get_symbol_name( *value ), NULL );
-    break;
-  case STRING_TYPE:
-    string = new_string_readable( (string_t) (value + 1), NULL );
-    break;
-  case NUMBER_TYPE:
-    string = double_to_string( value_to_double( value ) );
-    break;
-  default:
-    // Not possible
-    string = 0;
-  }
-  return string;
-}
-
-/*---------------------------------------------------------------------------*/
-
-static void 
-value_to_text( text_t *text, value_t value, bool full_value, int_t indent )
-/* Convert VALUE to a format readable for humans and add it to TEXT.
- * which extends to OUTPUT_END (this is a pointer to the first byte after
- * OUTPUT. The pointer returned points to the EOS of the built string.
- * If FULL_VALUE == true, show all attributes, even those that are hidden. */
-{
-  value_t value_end;
-  string_t string;
-
-  if (value == NULL) 
-    return;
-  value_end = NEXT_VALUE( value );
-  switch (TYPE( value )) 
-  {
-  case SYMBOL_TYPE:
-  case STRING_TYPE:
-  case NUMBER_TYPE:
-    string = simple_value_to_string( value );
-    add_to_text( text, string );
-    free_mem( &string );
-    break;
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-char_t *
-value_to_readable( value_t value, bool full_value, int_t indent )
-/* Return VALUE in a format readable for humans. 
- * If FULL_VALUE == true, show all attributes, even those that are hidden.
- * If INDENT >= 0, format value, i.e. print each element of a list or record
- * on a line of its own. Assume the value is indented by INDENT columns.
- * The result must be freed after use. */
-{
-  clear_text( value_text );
-  value_to_text( value_text, value, full_value, indent );
-  return new_string( value_text->buffer, NULL );
 }
 
 }}}
