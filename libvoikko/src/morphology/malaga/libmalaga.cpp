@@ -21,7 +21,6 @@
 #include "morphology/malaga/analysis.hpp"
 #include "morphology/malaga/input.hpp"
 #include "morphology/malaga/malaga_lib.hpp"
-#include "morphology/malaga/scanner.hpp"
 #include "morphology/malaga/libmalaga.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {

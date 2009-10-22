@@ -22,7 +22,6 @@
 #include "morphology/malaga/analysis.hpp"
 #include "morphology/malaga/symbols.hpp"
 #include "morphology/malaga/lexicon.hpp"
-#include "morphology/malaga/scanner.hpp"
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/malaga_lib.hpp"
 
@@ -85,7 +84,6 @@ init_malaga(string_t directoryName)
   init_values();
   init_symbols(fullSymbolFile);
   init_lexicon(fullLexiconFile);
-  init_scanner();
   init_analysis(fullMorphologyFile);
   
   free(fullSymbolFile);
@@ -101,7 +99,6 @@ terminate_malaga( void )
 {
   terminate_analysis();
   terminate_patterns();
-  terminate_scanner();
   terminate_lexicon();
   terminate_symbols();
   terminate_values();

@@ -37,7 +37,6 @@ libvoikko_la_SOURCES = \
     morphology/malaga/libmalaga.cpp \
     morphology/malaga/malaga_lib.cpp \
     morphology/malaga/pools.cpp \
-    morphology/malaga/scanner.cpp \
     morphology/malaga/tries.cpp \
     morphology/malaga/values.cpp \
     setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
@@ -67,7 +66,6 @@ noinst_HEADERS = \
     morphology/malaga/lexicon.hpp \
     morphology/malaga/malaga.hpp \
     morphology/malaga/pools.hpp \
-    morphology/malaga/scanner.hpp \
     morphology/malaga/files.hpp \
     morphology/malaga/libmalaga.hpp \
     morphology/malaga/malaga_lib.hpp \
