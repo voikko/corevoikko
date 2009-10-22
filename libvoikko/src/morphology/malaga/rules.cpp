@@ -45,12 +45,10 @@ typedef struct
 
 /* Global variables. ========================================================*/
 
-rule_sys_t *executed_rule_sys;
-int_t executed_rule_number = -1;
-int_t pc = -1; /* Current instruction index. */
-int_t base; /* Current frame base. */
-int_t nested_subrules; /* Current nesting level. */
-int_t path_count; /* Current number of alternative paths. */
+static int_t pc = -1; /* Current instruction index. FIXME */
+static int_t base; /* Current frame base. FIXME */
+static int_t nested_subrules; /* Current nesting level. FIXME */
+static int_t path_count; /* Current number of alternative paths. FIXME */
 
 bool rule_successful;
 
@@ -125,10 +123,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
   while (path_list.first != NULL) 
     free_first_node( &path_list );
 
-  /* Copy RULE_SYS and RULE_NUMBER for debugger and error messages. */
-  executed_rule_sys = rule_sys;
-  executed_rule_number = rule_number;
-
   pc = rule_sys->rules[ rule_number ].first_instr;
   { 
     rule_successful = false;
@@ -150,7 +144,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	  terminate = true;
         break;
       case INS_ADD_END_STATE:
-        add_end_state( value_stack[ --top ] );
+        add_end_state(value_stack[ --top ], rule_sys->rules + rule_number);
         rule_successful = true;
         break;
       case INS_ADD_STATE:
@@ -406,8 +400,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
   } 
 
   pc = -1;
-  executed_rule_number = -1;
-  executed_rule_sys = NULL;
 }
 
 /*---------------------------------------------------------------------------*/

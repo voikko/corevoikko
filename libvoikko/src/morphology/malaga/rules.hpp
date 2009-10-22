@@ -60,15 +60,6 @@ typedef struct
 extern bool rule_successful; // FIXME
 /* Indicator for execution of result, accept, or allo statement. Read only! */
 
-/* These values are used by "execute_rule",
- * but they are global to support debuggers and error messages. Read only! */
-extern int_t pc; // FIXME
-extern int_t base; // FIXME
-extern int_t nested_subrules; // FIXME
-extern int_t executed_rule_number; // FIXME
-extern rule_sys_t *executed_rule_sys; // FIXME
-extern int_t path_count; // FIXME
-
 /* Functions. ===============================================================*/
 
 extern void execute_rule( rule_sys_t *rule_sys, int_t rule_number );

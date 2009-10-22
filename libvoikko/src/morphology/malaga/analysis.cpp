@@ -179,11 +179,9 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set)
 /*---------------------------------------------------------------------------*/
 
 void 
-add_end_state( value_t feat )
+add_end_state(value_t feat, rule_t * rule)
 /* Add a state, consisting of FEAT, as an end state. */
 { 
-  rule_t *rule = executed_rule_sys->rules + executed_rule_number;
-
   /* Combi-rules and end-rules must check for word boundary. */
   if ((rule->type != COMBI_RULE && rule->type != END_RULE)
       || word_may_end_here( state_info.input, rule ))
