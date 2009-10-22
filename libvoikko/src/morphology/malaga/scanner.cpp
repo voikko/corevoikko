@@ -509,76 +509,10 @@ read_next_token(string_t & scanner_input)
 
 /*---------------------------------------------------------------------------*/
 
-string_t 
-token_as_text( int_t token )
-/* Return TOKEN as a string readable for humans.
- * The string must be freed after use. */
-{
-  int_t i;
-  char token_buffer[2];
-
-  /* Look if TOKEN is a keyword. */
-  for (i = 0; i < NUMBER_OF_KEYWORDS; i++) 
-  { 
-    if (keywords[i].code == token) 
-      return concat_strings( "\"", keywords[i].name, "\"", NULL );
-  }
-  
-  switch (token) 
-  {
-  case EOF: 
-    return new_string( "end of input", NULL ); 
-  case TOK_STRING: 
-    return new_string( "string", NULL );
-  case TOK_IDENT: 
-    return new_string( "identifier", NULL );
-  case TOK_VARIABLE: 
-    return new_string( "variable", NULL );
-  case TOK_CONSTANT: 
-    return new_string( "constant", NULL );
-  case TOK_NUMBER: 
-    return new_string( "number", NULL );
-  case TOK_ASSIGN: 
-    return new_string_readable( ":=", NULL );
-  case TOK_ASSIGN_PLUS: 
-    return new_string_readable( ":=+", NULL );
-  case TOK_ASSIGN_MINUS: 
-    return new_string_readable( ":=-", NULL );
-  case TOK_ASSIGN_ASTERISK: 
-    return new_string_readable( ":=*", NULL );
-  case TOK_ASSIGN_SLASH: 
-    return new_string_readable( ":=/", NULL );
-  case TOK_NOT_EQUAL: 
-    return new_string_readable( "/=", NULL );
-  case TOK_NOT_CONGRUENT: 
-    return new_string_readable( "/~", NULL );
-  default:
-    token_buffer[0] = token;
-    token_buffer[1] = EOS;
-    return new_string_readable( token_buffer, NULL );
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-test_token( int_t token )
-/* Test if TOKEN is the next token. If it's not, report an error. */
-{
-  if (next_token != token) 
-  { 
-    complain( "Expected %s, not %s.", 
-	      token_as_text( token ), token_as_text( next_token ) );
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
 void 
 parse_token(int_t token, string_t & scanner_input)
 /* Test if TOKEN is the next token and read next token. */
 {
-  test_token( token );
   read_next_token(scanner_input);
 }
 

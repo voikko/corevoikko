@@ -105,14 +105,7 @@ extern void read_next_token(string_t & scanner_input);
 /* Read the next token from current source into NEXT_TOKEN.
  * If end of input stream is reached, return EOF. */
 
-extern void test_token( int_t token );
-/* Test if TOKEN is the next token. If it's not, report an error. */
-
 extern void parse_token(int_t token, string_t & scanner_input);
 /* Test if TOKEN is the next token and read next token. */
-
-extern string_t token_as_text( int_t token );
-/* Return TOKEN as a string readable for humans.
- * Note that the string is only valid until this function is called again. */
 
 }}}

@@ -23,7 +23,6 @@ static void
 parse_symbol(string_t & scanner_input)
 /* Parse a symbol and push it on the VALUE_STACK. */
 {
-  test_token( TOK_IDENT );
   push_symbol_value( find_symbol( token_name ) );
   read_next_token(scanner_input);
 }
@@ -95,12 +94,11 @@ parse_a_value(string_t & scanner_input)
   case '-':
     /* Parse a negative number. */
     read_next_token(scanner_input);
-    test_token( TOK_NUMBER );
     push_number_value( -token_number );
     read_next_token(scanner_input);
     break;
   default:
-    complain( "Value expected, not %s.", token_as_text( next_token ) );
+    complain("Value could not be parsed");
   }
 }
 
