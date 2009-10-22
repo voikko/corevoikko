@@ -117,7 +117,7 @@ preprocess_input( char_t *input )
 /*---------------------------------------------------------------------------*/
 
 static bool 
-word_may_end_here( string_t string, rule_t *rule )
+word_may_end_here( string_t string, const rule_t *rule )
 /* Return whether there may be a word boundary between STRING-1 and STRING. */
 { 
   if (rule->type == END_RULE && rule->param_count == 2) 
@@ -179,7 +179,7 @@ add_state( list_t *list, string_t input, value_t feat, int_t rule_set)
 /*---------------------------------------------------------------------------*/
 
 void 
-add_end_state(value_t feat, rule_t * rule)
+add_end_state(value_t feat, const rule_t * rule)
 /* Add a state, consisting of FEAT, as an end state. */
 { 
   /* Combi-rules and end-rules must check for word boundary. */

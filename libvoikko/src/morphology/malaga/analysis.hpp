@@ -36,7 +36,7 @@ extern value_t next_analysis_result( void );
 /* Return the feature structure of the next analysis result.
  * Return NULL if there are no more results. */
 
-extern void add_end_state(value_t feat, rule_t * rule);
+extern void add_end_state(value_t feat, const rule_t * rule);
 /* Add a state, consisting of feature structure FEAT, as an end state. */
 
 extern void add_running_state( value_t feat, int_t rule_set );

@@ -45,11 +45,6 @@ typedef struct
 
 /* Global variables. ========================================================*/
 
-static int_t pc = -1; /* Current instruction index. FIXME */
-static int_t base; /* Current frame base. FIXME */
-static int_t nested_subrules; /* Current nesting level. FIXME */
-static int_t path_count; /* Current number of alternative paths. FIXME */
-
 bool rule_successful;
 
 /* Variables. ===============================================================*/
@@ -116,14 +111,15 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
           
   /* Initialise the value stack. */
   top = rule_sys->rules[ rule_number ].param_count;
-  base = bottom = 0;
+  int_t base = bottom = 0;
 
   /* Reset nesting and alternative paths. */
-  nested_subrules = path_count = 0;
+  int_t nested_subrules = 0;
+  int_t path_count = 0;
   while (path_list.first != NULL) 
     free_first_node( &path_list );
 
-  pc = rule_sys->rules[ rule_number ].first_instr;
+  int_t pc = rule_sys->rules[ rule_number ].first_instr;
   { 
     rule_successful = false;
     bool terminate = false;
@@ -397,9 +393,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         terminate = false;
       }
     }
-  } 
-
-  pc = -1;
+  }
 }
 
 /*---------------------------------------------------------------------------*/
