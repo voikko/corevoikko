@@ -104,7 +104,7 @@ analyse_item( string_t item )
 /*---------------------------------------------------------------------------*/
 
 value_t
-parse_malaga_value( string_t string )
+parse_malaga_symbol( string_t string )
 /* Convert STRING to a Malaga value and return it.
  * The value must be freed after use.
  * This function sets "malaga_error". */
@@ -112,11 +112,9 @@ parse_malaga_value( string_t string )
   volatile value_t value;
 
   malaga_error = NULL;
-  string_t scanner_input = set_scanner_input( string );
   TRY
   {
-    parse_a_value(scanner_input);
-    parse_token(EOF, scanner_input);
+    push_symbol_value( find_symbol( string ) );
     value = new_value( value_stack[ --top ] );
   }
   IF_ERROR
@@ -126,7 +124,6 @@ parse_malaga_value( string_t string )
     RESUME;
   }
   END_TRY;
-  set_scanner_input( NULL );
   return value;
 }
 

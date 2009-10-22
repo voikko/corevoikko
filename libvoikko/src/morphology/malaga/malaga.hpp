@@ -116,7 +116,7 @@ extern bool value_in_value( value_t value1, value_t value2 );
  * VALUE2 must be a list or a record.
  * If VALUE2 is a record, then VALUE1 must be a symbol. */
 
-extern value_t parse_malaga_value( string_t string );
+extern value_t parse_malaga_symbol( string_t string );
 /* Convert the STRING to a Malaga value and return it.
  * STRING must be a valid UTF-8 string.
  * The value must be freed after use.
