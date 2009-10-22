@@ -32,7 +32,6 @@ libvoikko_la_SOURCES = \
     morphology/malaga/patterns.cpp \
     morphology/malaga/rules.cpp \
     morphology/malaga/symbols.cpp \
-    morphology/malaga/value_parser.cpp \
     morphology/malaga/basic.cpp \
     morphology/malaga/input.cpp \
     morphology/malaga/libmalaga.cpp \
@@ -69,7 +68,6 @@ noinst_HEADERS = \
     morphology/malaga/malaga.hpp \
     morphology/malaga/pools.hpp \
     morphology/malaga/scanner.hpp \
-    morphology/malaga/value_parser.hpp \
     morphology/malaga/files.hpp \
     morphology/malaga/libmalaga.hpp \
     morphology/malaga/malaga_lib.hpp \
