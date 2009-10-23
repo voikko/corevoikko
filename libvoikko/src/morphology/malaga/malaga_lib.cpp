@@ -15,7 +15,6 @@
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
-#include "morphology/malaga/input.hpp"
 #include "morphology/malaga/rule_type.hpp"
 #include "morphology/malaga/rules.hpp"
 #include "morphology/malaga/files.hpp"
@@ -73,9 +72,6 @@ void
 init_malaga(string_t directoryName)
 /* Initialise this module. */
 { 
-
-  init_input();
-
   /* Init modules. */
   char * fullSymbolFile = concat_strings(directoryName, pathSeparator(), symbol_file, binarySuffix(), NULL);
   char * fullLexiconFile = concat_strings(directoryName, pathSeparator(), lexicon_file, binarySuffix(), NULL);
@@ -102,7 +98,6 @@ terminate_malaga( void )
   terminate_lexicon();
   terminate_symbols();
   terminate_values();
-  terminate_input();
 }
 
 }}}

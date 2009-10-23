@@ -19,7 +19,6 @@
 #include "morphology/malaga/rule_type.hpp"
 #include "morphology/malaga/rules.hpp"
 #include "morphology/malaga/analysis.hpp"
-#include "morphology/malaga/input.hpp"
 #include "morphology/malaga/malaga_lib.hpp"
 #include "morphology/malaga/libmalaga.hpp"
 
