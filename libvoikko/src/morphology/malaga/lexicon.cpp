@@ -22,22 +22,18 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-static void *lexicon_data; /* Address of lexicon file mapped into memory. FIXME */
-static int_t lexicon_length; /* Length of *LEXICON_DATA. FIXME */
-
 static struct /* The run time lexicon. FIXME */
 { 
+  void *lexicon_data; /* Address of lexicon file mapped into memory. */
+  int_t lexicon_length; /* Length of *LEXICON_DATA. */
   int_t *trie; /* A trie with indices to FEAT_LISTS. */
-  int_t trie_size;
   int_t trie_root; /* Index of root node in TRIE. */
 
   int_t *feat_lists; /* Lists of feature structures, stored in VALUES.
 		      * (The last index I of each list is negative, 
 		      * real index is abs(I) - 1.) */
-  int_t feat_lists_size;
 
   cell_t *values; /* Feature structures of lexicon entries. */
-  int_t values_size;
 } lexicon;
 
 /* Functions. ===============================================================*/
@@ -86,25 +82,22 @@ init_lexicon( string_t file_name )
   lexicon_header_t *header; /* Lexicon file header. */
 
   /* Map the lexicon file into memory. */
-  map_file( file_name, &lexicon_data, &lexicon_length );
+  map_file( file_name, &lexicon.lexicon_data, &lexicon.lexicon_length );
 
   /* Check lexicon header. */
-  header = (lexicon_header_t *) lexicon_data;
+  header = (lexicon_header_t *) lexicon.lexicon_data;
   check_header( &header->common_header, file_name, LEXICON_FILE,
                 MIN_LEXICON_CODE_VERSION, LEXICON_CODE_VERSION );
   
   /* Init trie. */
-  lexicon.trie_size = header->trie_size;
   lexicon.trie = (int_t *) (header + 1);
   lexicon.trie_root = header->trie_root;
 
   /* Init feature structure lists. */
-  lexicon.feat_lists_size = header->feat_lists_size;
-  lexicon.feat_lists = (int_t *) (lexicon.trie + lexicon.trie_size);
+  lexicon.feat_lists = (int_t *) (lexicon.trie + header->trie_size);
 
   /* Init values. */
-  lexicon.values_size = header->values_size;
-  lexicon.values = (cell_t *) (lexicon.feat_lists + lexicon.feat_lists_size);
+  lexicon.values = (cell_t *) (lexicon.feat_lists + header->feat_lists_size);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -113,7 +106,7 @@ void
 terminate_lexicon( void )
 /* Terminate this module. */
 { 
-  unmap_file( &lexicon_data, lexicon_length ); 
+  unmap_file(&lexicon.lexicon_data, lexicon.lexicon_length); 
 }
 
 }}}

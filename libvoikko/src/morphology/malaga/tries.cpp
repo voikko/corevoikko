@@ -21,9 +21,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 #define ALIGN(addr, n) (((ptr_t) (addr) + (ptr_t) (n - 1)) & ~ (ptr_t) (n - 1))
 /* Align ADDR to next multiple of N. */
 
-#define INTS(n) (((n) + (ptr_t ) 3) >> 2) 
-/* Number of ints needed to store N bytes. */ 
-
 /* Types. ===================================================================*/
 
 typedef struct /* A node in a list of keys. */
