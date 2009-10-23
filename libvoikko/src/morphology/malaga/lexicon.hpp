@@ -6,6 +6,12 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+typedef struct {
+    int_t feat_list_index;
+    int_t trie_node;
+    string_t prefix_end;
+} trie_search_state;
+    
 /* Functions. ===============================================================*/
 
 extern void init_lexicon( string_t file_name );
@@ -14,11 +20,11 @@ extern void init_lexicon( string_t file_name );
 extern void terminate_lexicon( void );
 /* Terminate this module. */
 
-extern void search_for_prefix( string_t string );
+extern void search_for_prefix(string_t string, trie_search_state & state);
 /* Search lexicon for prefixes of STRING in increasing length. 
  * The results are obtained by calling "get_next_prefix". */
 
-extern bool get_next_prefix( string_t *string_p, value_t *feat );
+extern bool get_next_prefix(string_t *string_p, value_t *feat, trie_search_state & state);
 /* Get the next lexicon entry that is a prefix of STRING. 
  * Return false iff no more entries exist.
  * If another entry exists, set *STRING_P to the remainder of STRING

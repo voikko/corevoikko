@@ -506,8 +506,9 @@ analyse( string_t input )
 
     /* Look for prefixes of increasing length
      * that match the string at CURRENT_INPUT. */
-    search_for_prefix( current_input );
-    while (get_next_prefix( &link_surf_end, &link_feat )) 
+    trie_search_state searchState;
+    search_for_prefix(current_input, searchState);
+    while (get_next_prefix(&link_surf_end, &link_feat, searchState)) 
     { 
       /* Combine that link with all morphological states. */
       FOREACH( state, analysis->running_states, state_t ) 

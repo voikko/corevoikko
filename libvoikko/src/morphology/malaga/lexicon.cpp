@@ -40,44 +40,39 @@ static struct /* The run time lexicon. FIXME */
   int_t values_size;
 } lexicon;
 
-static int_t feat_list_index, trie_node; // FIXME
-static string_t prefix_end; // FIXME
-
 /* Functions. ===============================================================*/
 
 void 
-search_for_prefix( string_t string )
+search_for_prefix(string_t string, trie_search_state & state)
 /* Search lexicon for prefixes of STRING in increasing length. 
  * The results are obtained by calling "get_next_prefix". */
 {
-  trie_node = lexicon.trie_root;
-  prefix_end = string;
-  feat_list_index = -1;
+  state.trie_node = lexicon.trie_root;
+  state.prefix_end = string;
+  state.feat_list_index = -1;
 }
 
 /*---------------------------------------------------------------------------*/
 
 bool 
-get_next_prefix( string_t *string_p, value_t *feat )
+get_next_prefix(string_t *string_p, value_t *feat, trie_search_state & state)
 /* Get the next lexicon entry that is a prefix of STRING. 
  * Return false iff no more entries exist.
  * If another entry exists, set *STRING_P to the remainder of STRING
  * and *FEAT to the feature structure assigned to the lexicon entry.
  * STRING must have been set by "search_for_prefix". */
 {
-  int_t feat_index;
-  
-  if (feat_list_index == -1) 
-    lookup_trie( lexicon.trie, &trie_node, &prefix_end, &feat_list_index );
-  if (feat_list_index == -1) 
+  if (state.feat_list_index == -1) 
+    lookup_trie(lexicon.trie, &state.trie_node, &state.prefix_end, &state.feat_list_index);
+  if (state.feat_list_index == -1) 
     return false;
-  feat_index = lexicon.feat_lists[ feat_list_index++ ];
+  int_t feat_index = lexicon.feat_lists[state.feat_list_index++];
   if (feat_index < 0) 
   { 
-    feat_list_index = -1;
+    state.feat_list_index = -1;
     feat_index = - feat_index - 1;
   }
-  *string_p = prefix_end;
+  *string_p = state.prefix_end;
   *feat = lexicon.values + feat_index;
   return true;
 }
