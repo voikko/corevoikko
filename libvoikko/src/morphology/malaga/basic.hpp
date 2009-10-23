@@ -88,10 +88,6 @@ extern void *remove_first_node( list_t *list );
 extern void remove_node( list_t *list, list_node_t *node );
 /* Remove NODE in LIST. */
 
-extern void combine_lists( list_t *list1, list_t *list2 );
-/* Append LIST2 to LIST1.
- * LIST1 will contain the concatenation; LIST2 will be empty. */
-
 extern void *new_node( list_t *list, int_t size, position_t position );
 /* Add a node of size SIZE to LIST.
  * If POSITION = LIST_START, add the element at the start of the list;
@@ -100,9 +96,6 @@ extern void *new_node( list_t *list, int_t size, position_t position );
 
 extern void free_first_node( list_t *list );
 /* Remove first node in LIST and free it. */
-
-extern void free_node( list_t *list, list_node_t *node );
-/* Remove NODE from LIST and free it. */
 
 /* Iterate through a "list_t". */
 #define FOREACH(var, list, type) \
@@ -142,12 +135,6 @@ extern char_t *new_string( string_t string, string_t end );
  * If END != NULL, it marks the end of the string.
  * The result string must be freed after use. */
 
-extern char_t *new_string_readable( string_t from, string_t from_end );
-/* Like "new_string", but copy a "\" in front of quotes
- * and copy any control chars in octal code: "\000". 
- * If FROM_END != NULL, it marks the end of the string. 
- * The result string must be freed after use. */
-
 extern char_t *concat_strings( string_t first_string, ... );
 /* Concatenate a list of strings and return the result string.
  * Must have NULL-terminated list of strings as parameters.
@@ -155,12 +142,6 @@ extern char_t *concat_strings( string_t first_string, ... );
 
 extern string_t next_non_space( string_t string );
 /* Return STRING, but without leading spaces. */
-
-extern char_t *double_to_string( double number );
-/* Convert NUMBER to a string. The string must be freed after use. */
-
-extern char_t *int_to_string( int_t number );
-/* Convert NUMBER to a string. The string must be freed after use. */
 
 /* Text functions. ==========================================================*/
 
@@ -189,14 +170,6 @@ extern void add_char_to_text( text_t *text, char_t character );
 
 void add_unichar_to_text( text_t *text, gunichar c );
 /* Add C to TEXT. */
-
-extern void insert_in_text( text_t *text, string_t string, int_t position );
-/* Insert STRING at POSITION in TEXT (position counts from 0 onward). */
-
-extern void insert_char_in_text( text_t *text, 
-				 char_t character, 
-                                 int_t position );
-/* Insert CHARACTER at POSITION in TEXT. */
 
 extern char_t *text_to_string( text_t **text_p );
 /* Return content of *TEXT_P as a string and delete *TEXT_P.

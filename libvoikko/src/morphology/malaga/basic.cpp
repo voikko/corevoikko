@@ -118,24 +118,6 @@ remove_node( list_t *list, list_node_t *node )
 
 /*---------------------------------------------------------------------------*/
 
-void
-combine_lists( list_t *list1, list_t *list2 )
-/* Append LIST2 to LIST1.
- * LIST1 will contain the concatenation; LIST2 will be empty. */
-{ 
-  if (list1->first == NULL) 
-    list1->first = list2->first;
-  else 
-    list1->last->next = list2->first;
-  if (list2->first != NULL) 
-  {
-    list1->last = list2->last;
-    list2->first = list2->last = NULL;
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
 void *
 new_node( list_t *list, int_t size, position_t position )
 /* Add a node of size SIZE to LIST.
@@ -161,16 +143,6 @@ free_first_node( list_t *list )
   node = (list_node_t *) remove_first_node( list );
   if (node != NULL) 
     free_mem( &node );
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-free_node( list_t *list, list_node_t *node )
-/* Remove NODE from LIST and free it. */
-{ 
-  remove_node( list, node );
-  free_mem( &node );
 }
 
 /* Memory functions. ========================================================*/
@@ -319,51 +291,6 @@ add_unichar_to_text( text_t *text, gunichar c )
 
 /*---------------------------------------------------------------------------*/
 
-void 
-insert_in_text( text_t *text, string_t string, int_t position )
-/* Insert STRING at POSITION in TEXT (position counts bytes from 0 onward). */
-{ 
-  int_t string_len;
-
-  string_len = strlen( string );
-  if (text->buffer_size < text->string_size + string_len + 1) 
-  { 
-    text->buffer_size = renew_vector( &text->buffer, sizeof( char_t ), 
-                                      2 * (text->string_size + string_len) );
-  }
-  if (position < 0) 
-    position = 0;
-  if (position > text->string_size) 
-    position = text->string_size;
-  memmove( text->buffer + position + string_len, text->buffer + position,
-           sizeof( char_t ) * (text->string_size + 1 - position) );
-  memcpy( text->buffer + position, string, sizeof( char_t ) * string_len );
-  text->string_size += string_len;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-insert_char_in_text( text_t *text, char_t character, int_t position )
-/* Insert CHARACTER at POSITION in TEXT. */
-{ 
-  if (text->buffer_size < text->string_size + 2)
-  {
-    text->buffer_size = renew_vector( &text->buffer, sizeof( char_t ),
-				      2 * (text->string_size + 1) );
-  }
-  if (position < 0) 
-    position = 0;
-  if (position > text->string_size) 
-    position = text->string_size;
-  memmove( text->buffer + position + 1, text->buffer + position,
-           sizeof( char_t ) * (text->string_size + 1 - position) );
-  text->buffer[ position ] = character;
-  text->string_size++;
-}
-
-/*---------------------------------------------------------------------------*/
-
 char_t * 
 text_to_string( text_t **text_p )
 /* Return content of *TEXT_P as a string and delete *TEXT_P.
@@ -394,51 +321,6 @@ new_string( string_t string, string_t end )
     *new_str_p++ = *string++;
   *new_str_p = EOS;
   return new_str;
-}
-
-/*---------------------------------------------------------------------------*/
-
-char_t * 
-new_string_readable( string_t from, string_t from_end )
-/* Like "new_string", but enclose the string in double quotes, copy a "\" in 
- * front of quotes and backslashed, and copy control chars in "\uxxxx" format.
- * If FROM_END != NULL, it marks the end of the string. 
- * The result string must be freed after use. */
-{
-  text_t *text;
-  int_t i, code, position;
-
-  text = new_text();
-  if (from_end == NULL) 
-    from_end = from + strlen( from );
-  add_char_to_text( text, '\"' );
-  while (from < from_end)
-  { 
-    if (*from == '\"' || *from == '\\')  /* Prepend a backslash. */
-    { 
-      add_char_to_text( text, '\\' );
-      add_char_to_text( text, *from++ );
-    } 
-    else if ((*from >= 0 && *from < 32) || *from == 127)
-    { 
-      /* Convert control chars to octal "\xxx" format. */
-      add_char_to_text( text, '\\' );
-      position = text->string_size;
-      code = *from++;
-      for (i = 0; i < 3; i++) 
-      { 
-	insert_char_in_text( text, code % 8 + '0', position );
-        code = code / 8;  
-      }
-    } 
-    else
-    {
-      add_unichar_to_text( text, g_utf8_get_char( from ) );
-      from = g_utf8_next_char( from );
-    }
-  }
-  add_char_to_text( text, '\"' );
-  return text_to_string( &text );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -492,30 +374,6 @@ next_non_space( string_t string )
   while (g_unichar_isspace( g_utf8_get_char( string ) ))
     string = g_utf8_next_char( string );
   return string;
-}
-
-/*---------------------------------------------------------------------------*/
-
-char_t *
-double_to_string( double number )
-/* Convert NUMBER to a string. It must be freed after use. */
-{ 
-  char_t buffer[30];
-
-  sprintf( buffer, "%.11G", number );
-  return new_string( buffer, NULL );
-}
-
-/*---------------------------------------------------------------------------*/
-
-char_t * 
-int_to_string( int_t number )
-/* Convert NUMBER to a string. It must be freed after use. */
-{
-  char_t buffer[12];
-  
-  sprintf( buffer, "%d", number );
-  return new_string( buffer, NULL );
 }
 
 /* Error handling. ==========================================================*/
