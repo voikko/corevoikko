@@ -72,9 +72,6 @@ standard_function( int_t function )
     else 
       push_number_value( get_list_length( value_stack[ --top ] ) );
     break;
-  case FUNC_GET_VALUE_TYPE:
-    push_symbol_value( get_value_type( value_stack[ --top ] ) );
-    break;
   case FUNC_SUBSTRING:
     string_t string = value_to_string( value_stack[ top - 3 ] );
     int_t start = value_to_int( value_stack[ top - 2 ] );

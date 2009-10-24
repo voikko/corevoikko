@@ -256,16 +256,6 @@ extern void right_value( void );
 
 /* Functions for list/record iteration. =====================================*/
 
-extern value_t get_first_item( value_t value );
-/* If VALUE is a list, then return its first element (or NULL).
- * If VALUE is a record, then return its first attribute (or NULL). */
-
-extern value_t get_next_item( value_t value, value_t item );
-/* If VALUE is a list, and ELEMENT one of its elements,
- * then NEW_ELEMENT is the successor of ELEMENT (or NULL).
- * If VALUE is a record, and ELEMENT one of its attributes,
- * then NEW_ELEMENT is the next attribute in VALUE (or NULL). */
-
 extern void get_first_element( void );
 /* Stack effects: VALUE -> NEW_VALUE.
  * If VALUE is a list, then NEW_VALUE is its first element (or NULL).

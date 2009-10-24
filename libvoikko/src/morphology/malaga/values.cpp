@@ -1704,46 +1704,6 @@ right_value( void )
 
 /* Functions for list/record iteration. =====================================*/
 
-value_t
-get_first_item( value_t value )
-/* If VALUE is a list, then return its first element (or NULL).
- * If VALUE is a record, then return its first attribute (or NULL). */
-{
-  if (length_of_value( value ) == 2) 
-    return NULL;
-  return value + 2;
-}
-
-/*---------------------------------------------------------------------------*/
-
-value_t
-get_next_item( value_t value, value_t item )
-/* If VALUE is a list, and ELEMENT one of its elements,
- * then NEW_ELEMENT is the successor of ELEMENT (or NULL).
- * If VALUE is a record, and ELEMENT one of its attributes,
- * then NEW_ELEMENT is the next attribute in VALUE (or NULL). */
-{
-  value_t next_item;
-
-  switch (TYPE( value )) 
-  {
-  case LIST_TYPE: 
-    next_item = NEXT_VALUE( item ); 
-    break;
-  case RECORD_TYPE: 
-    next_item = NEXT_ATTRIB( item ); 
-    break;
-  default:
-    malaga_throw();
-  }
-  if (next_item == NEXT_VALUE( value )) 
-    return NULL;
-  else
-    return next_item;
-}
-
-/*---------------------------------------------------------------------------*/
-
 void 
 get_first_element( void )
 /* Stack effects: VALUE -> NEW_VALUE.
