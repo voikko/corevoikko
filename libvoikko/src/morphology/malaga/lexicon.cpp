@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <setjmp.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"

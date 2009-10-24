@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include <setjmp.h>
+#include "setup/DictionaryException.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/malaga_files.hpp"
@@ -30,16 +30,17 @@ check_header( common_header_t *header,
  * between MIN_CODE_VERSION and MAX_CODE_VERSION.
  * FILE_NAME is needed for error messages. */
 { 
-  if (memcmp( header->malaga, malaga, sizeof( char_t ) * MALAGA_LEN ) != NULL) 
-    complain( "\"%s\" is not a Malaga file.", file_name );
-  if (header->file_type != file_type) 
-    complain( "\"%s\" is wrong file type.", file_name );
-  if (header->code_version < min_code_version) 
-    complain( "\"%s\" is old code version. Maybe recompile?", file_name );
-  if (header->code_version > max_code_version)
-  {
-    complain( "\"%s\" is new code version. Use newer Malaga version.", 
-	      file_name);
+  if (memcmp( header->malaga, malaga, sizeof( char_t ) * MALAGA_LEN ) != NULL) {
+    throw setup::DictionaryException("File is not a Malaga file.");
+  }
+  if (header->file_type != file_type) {
+    throw setup::DictionaryException("File is of wrong file type.");
+  }
+  if (header->code_version < min_code_version) {
+    throw setup::DictionaryException("File has too old code version.");
+  }
+  if (header->code_version > max_code_version) {
+    throw setup::DictionaryException("File has too new code version.");
   }
 }
 

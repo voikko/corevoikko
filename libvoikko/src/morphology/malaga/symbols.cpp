@@ -9,8 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <setjmp.h>
 #include <string.h>
+#include "setup/DictionaryException.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
@@ -69,7 +69,7 @@ find_symbol( string_t name )
     else 
       return symbol;
   }
-  complain( "Unknown symbol \"%s\".", name );
+  throw setup::DictionaryException("Unknown symbol");
 }
 
 /*---------------------------------------------------------------------------*/

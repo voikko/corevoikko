@@ -272,9 +272,6 @@ void DictionaryLoader::loadDictionary(const Dictionary & dictionary)
 		throw(DictionaryException) {
 	string projectDirectory(dictionary.getMorPath());
 	init_libmalaga(projectDirectory.c_str());
-	if (malaga_error) {
-		throw DictionaryException(malaga_error);
-	}
 }
 
 } }

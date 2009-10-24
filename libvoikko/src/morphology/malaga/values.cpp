@@ -17,7 +17,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <setjmp.h>
+#include "setup/DictionaryException.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
@@ -331,7 +331,7 @@ length_of_value( value_t value )
   case NUMBER_TYPE: 
     return 1 + CELLS_PER_NUMBER;
   default:
-    malaga_throw();
+    throw setup::DictionaryException("Unexpected value type in length_of_value");
   }
 }
 
@@ -355,7 +355,7 @@ get_value_type( value_t value )
   case RECORD_TYPE: 
     return RECORD_SYMBOL;
   default:
-    malaga_throw();
+    throw setup::DictionaryException("Unexpected value type in get_value_type");
   }
 }
 
@@ -1309,7 +1309,7 @@ modify_value_part_local( void (*modifier)( void ), int_t value_index,
       subvalue = get_element( value, index );
     }
     else {
-      malaga_throw();
+      throw setup::DictionaryException("Unexpected selector type");
     }
     subvalue_index = subvalue - value_stack[ top - 3 ];
 
@@ -1523,7 +1523,7 @@ values_equal( value_t value1, value_t value2 )
   case NUMBER_TYPE:
     return (value_to_double( value1 ) == value_to_double( value2 ));
   default:
-    malaga_throw();
+    throw setup::DictionaryException("Unexpected value type in values_equal");
   }
 }
 

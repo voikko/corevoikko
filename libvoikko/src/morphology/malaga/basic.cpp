@@ -10,15 +10,9 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
-#include <setjmp.h>
 #include "morphology/malaga/basic.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
-
-/* Global variables. ========================================================*/
-
-text_t *error_text;
-jmp_buf *current_error_handler;
 
 /* List functions. ==========================================================*/
 
@@ -149,8 +143,7 @@ free_first_node( list_t *list )
 
 void *
 new_mem( int_t item_size )
-/* Allocate a memory block of ITEM_SIZE bytes, clear it and return it.
- * If memory is out, call the function "complain". */
+/* Allocate a memory block of ITEM_SIZE bytes, clear it and return it. */
 { 
   if (item_size == 0) 
     return NULL;
@@ -162,8 +155,7 @@ new_mem( int_t item_size )
 void *
 new_vector( int_t item_size, int_t item_count )
 /* Allocate a memory block to contain ITEM_COUNT items of size ITEM_SIZE,
- * clear it and return it.
- * If memory is out, call the function "complain". */
+ * clear it and return it. */
 { 
   if (item_size == 0 || item_count == 0) 
     return NULL;
@@ -175,8 +167,7 @@ new_vector( int_t item_size, int_t item_count )
 int_t 
 renew_vector( void *block_p, int_t item_size, int_t item_count )
 /* Realloc *BLOCK_P to contain ITEM_COUNT items of ITEM_SIZE bytes each.
- * Return ITEM_COUNT.
- * If memory is out, call the function "complain". */
+ * Return ITEM_COUNT. */
 { 
   void *block;
 
@@ -363,48 +354,6 @@ concat_strings( string_t first_string, ... )
   va_end( args );
 
   return string;
-}
-
-/* Error handling. ==========================================================*/
-
-void 
-malaga_throw( void )
-/* Call the current error handler. 
- * If there is no current error handler, print error and exit. */
-{ 
-  if (current_error_handler != NULL) 
-    longjmp( *current_error_handler, 1 );
-  else 
-  { 
-    fprintf( stderr, "libmalaga: %s\n", error_text->buffer );
-    exit( 1 );
-  }
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-complain( string_t message, ... )
-{ 
-  malaga_throw();
-}
-
-/* Module initialisation. ===================================================*/
-
-void 
-init_basic()
-/* Initialise this module. */
-{
-  error_text = new_text();
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-terminate_basic( void )
-/* Terminate this module. */
-{ 
-  free_text( &error_text );
 }
 
 }}}

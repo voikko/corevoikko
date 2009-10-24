@@ -4,6 +4,7 @@
 	* Remove global variables.
 	* White space characters are no longer allowed at the start
 	  or end of the word.
+	* Change error handling in malaga implementation to use C++ exceptions.
 
 2009-10-06 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -10,7 +10,6 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
-#include <setjmp.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
@@ -26,28 +25,21 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Variables. ===============================================================*/
 
-string_t malaga_error; 
-/* If one of the functions below has created an error, this variable
- * contains an error message. If a function did its job, it is NULL. */
-
 /* Functions. ===============================================================*/
 
 void 
-init_libmalaga(string_t project_directory)
+init_libmalaga(string_t project_directory) throw(setup::DictionaryException)
 /* Initialise this module. */
 { 
-  malaga_error = NULL;
-  init_basic();
   string_t project_directory_absolute = absolute_path(project_directory, NULL);
-  TRY 
+  try {
     init_malaga(project_directory_absolute);
-  IF_ERROR 
-  { 
-    malaga_error = error_text->buffer;
-    RESUME;
+    free_mem(&project_directory_absolute);
   }
-  END_TRY;
-  free_mem(&project_directory_absolute);
+  catch (setup::DictionaryException e) {
+    free_mem(&project_directory_absolute);
+    throw e;
+  }  
 }
 
 /*---------------------------------------------------------------------------*/
@@ -57,7 +49,6 @@ terminate_libmalaga( void )
 /* Terminate this module. */
 { 
   terminate_malaga();
-  terminate_basic();
 }
 
 /*---------------------------------------------------------------------------*/
@@ -76,26 +67,20 @@ get_value_string( value_t string )
 /*---------------------------------------------------------------------------*/
 
 void
-analyse_item( string_t item )
+analyse_item( string_t item ) throw(setup::DictionaryException)
 /* Analyse ITEM */
 { 
-  char_t *analysis_input;
-
-  analysis_input = NULL;
-  malaga_error = NULL;
-  TRY 
-  { 
+  char_t * analysis_input = NULL;
+  try {
     analysis_input = new_string( item, NULL );
     preprocess_input( analysis_input );
     analyse( analysis_input );
+    free_mem(&analysis_input);
   }
-  IF_ERROR 
-  { 
-    malaga_error = error_text->buffer;
-    RESUME;
+  catch (setup::DictionaryException e) {
+    free_mem(&analysis_input);
+    throw e;
   }
-  END_TRY;
-  free_mem( &analysis_input );
 }
 
 /*---------------------------------------------------------------------------*/
@@ -103,25 +88,10 @@ analyse_item( string_t item )
 value_t
 parse_malaga_symbol( string_t string )
 /* Convert STRING to a Malaga value and return it.
- * The value must be freed after use.
- * This function sets "malaga_error". */
+ * The value must be freed after use. */
 {
-  volatile value_t value;
-
-  malaga_error = NULL;
-  TRY
-  {
-    push_symbol_value( find_symbol( string ) );
-    value = new_value( value_stack[ --top ] );
-  }
-  IF_ERROR
-  {
-    malaga_error = error_text->buffer;
-    value = NULL;
-    RESUME;
-  }
-  END_TRY;
-  return value;
+  push_symbol_value( find_symbol( string ) );
+  return new_value( value_stack[ --top ] );
 }
 
 }}}

@@ -34,12 +34,6 @@ typedef cell_t *value_t;
 
 typedef cell_t symbol_t;
 
-/* Variables. ===============================================================*/
-
-extern string_t malaga_error; // FIXME
-/* If one of the functions below has created an error, this variable
- * contains an error message. If a function did its job, it is NULL. */
-
 /* Value functions. =========================================================*/
 
 /** Return VALUE as a symbol. It is an error if VALUE is no symbol. */

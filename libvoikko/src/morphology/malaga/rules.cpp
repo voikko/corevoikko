@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include <setjmp.h>
+#include "setup/DictionaryException.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
@@ -367,8 +367,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         }
         break;
       default:
-        malaga_throw();
-        break;
+        throw setup::DictionaryException("Unknown instruction type in malaga rule.");
       }
       if (! terminate) 
 	pc = new_pc;

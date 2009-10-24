@@ -4,20 +4,16 @@
 
 /* This module defines a Malaga library to analyse words and sentences. */
 
+#include "setup/DictionaryException.hpp"
+
 namespace libvoikko { namespace morphology { namespace malaga {
-
-/* Variables. ===============================================================*/
-
-extern string_t malaga_error; // FIXME
-/* In case of an error, some of the functions below may set this variable to 
- * the error message. If they worked correctly, they set it to NULL. */
 
 /* Functions. ===============================================================*/
 
 extern void terminate_libmalaga( void );
 /* Terminate this module. */
 
-extern void analyse_item( string_t item );
+extern void analyse_item( string_t item ) throw(setup::DictionaryException);
 /* Analyse ITEM.
  * This function sets "malaga_error". */
 

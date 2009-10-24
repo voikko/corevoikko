@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "morphology/MalagaAnalyzer.hpp"
+#include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
 #include <wchar.h>
@@ -52,20 +53,26 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
-	initSymbols();
-	analyse_item(word);
-	value_t res = first_analysis_result();
 	list<Analysis *> * analysisList = new list<Analysis *>();
-	int currentAnalysisCount = 0;
-	while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
-		Analysis * analysis = new Analysis();
-		parseStructure(analysis, res);
-		parseSijamuoto(analysis, res);
-		parseClass(analysis, res);
-		parsePerusmuoto(analysis, res);
-		analysisList->push_back(analysis);
-		res = next_analysis_result();
-		++currentAnalysisCount;
+	try {
+		initSymbols();
+		analyse_item(word);
+		value_t res = first_analysis_result();
+		int currentAnalysisCount = 0;
+		while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
+			Analysis * analysis = new Analysis();
+			parseStructure(analysis, res);
+			parseSijamuoto(analysis, res);
+			parseClass(analysis, res);
+			parsePerusmuoto(analysis, res);
+			analysisList->push_back(analysis);
+			res = next_analysis_result();
+			++currentAnalysisCount;
+		}
+	}
+	catch (setup::DictionaryException e) {
+		// Something went wrong during analysis, just return the
+		// (probably empty) analysis list.
 	}
 	return analysisList;
 }

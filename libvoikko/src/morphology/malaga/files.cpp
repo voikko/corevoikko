@@ -16,7 +16,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-#include <setjmp.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/files.hpp"
 #ifdef POSIX
