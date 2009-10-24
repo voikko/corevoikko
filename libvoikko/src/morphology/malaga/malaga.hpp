@@ -1,4 +1,6 @@
-/* Copyright (C) 1995 Bjoern Beutel. */
+/* Copyright (C) 1995 Bjoern Beutel
+ *               2009 Harri Pitkänen <hatapitk@iki.fi>
+ */
 
 /* Description. =============================================================*/
 
@@ -11,17 +13,25 @@ namespace libvoikko { namespace morphology { namespace malaga {
 /* Basic types. =============================================================*/
 
 /* Numeric types. */
-typedef unsigned short int u_short_t; /* Unsigned 16 bits. */
+
+/** Unsigned 16 bits. */
+typedef unsigned short int u_short_t;
 
 /* Character types. */
-typedef char char_t; /* A single byte of a char. */
-typedef const char_t *string_t; /* An EOS-terminated C-style string. */
 
-typedef u_short_t cell_t;
-/* A value is stored in one or more cells.
+/** A single byte of a char. */
+typedef char char_t;
+
+/** An EOS-terminated C-style string. */
+typedef const char_t *string_t;
+
+/** A value is stored in one or more cells.
  * Use this type if you want to allocate memory (pools etc.) for values. */ 
+typedef u_short_t cell_t;
 
-typedef cell_t *value_t; /* Reference to a Malaga values by this type. */
+/** Reference to a Malaga values by this type. */
+typedef cell_t *value_t;
+
 typedef cell_t symbol_t;
 
 /* Variables. ===============================================================*/
@@ -32,44 +42,42 @@ extern string_t malaga_error; // FIXME
 
 /* Value functions. =========================================================*/
 
-extern symbol_t value_to_symbol( value_t value );
-/* Return VALUE as a symbol. It is an error if VALUE is no symbol. */
+/** Return VALUE as a symbol. It is an error if VALUE is no symbol. */
+extern symbol_t value_to_symbol(value_t value);
 
-extern char_t *get_value_string( value_t string );
-/* Return the value of STRING as a C-style string in external encoding. 
+/** Return the value of STRING as a C-style string in external encoding. 
  * The string must be freed after use. */
+extern char_t *get_value_string(value_t string);
 
-extern value_t get_attribute( value_t record, symbol_t attribute );
-/* Return the value of ATTRIBUTE in RECORD or NULL if it doesn't exist. */
+/** Return the value of ATTRIBUTE in RECORD or NULL if it doesn't exist. */
+extern value_t get_attribute(value_t record, symbol_t attribute);
 
-extern value_t parse_malaga_symbol( string_t string );
-/* Convert the STRING to a Malaga value and return it.
+/** Convert the STRING to a Malaga value and return it.
  * STRING must be a valid UTF-8 string.
  * The value must be freed after use.
  * This function sets "malaga_error". */
+extern value_t parse_malaga_symbol(string_t string);
 
 /* Functions. ===============================================================*/
 
-extern void analyse_item( string_t item );
-/* Analyse ITEM.
+/** Analyse ITEM.
  * ITEM must be a valid UTF-8 string.
  * This function sets "malaga_error". */
+extern void analyse_item(string_t item);
 
-extern value_t first_analysis_result( void );
-/* Get the first result of the last call of "analyse_item".
+/** Get the first result of the last call of "analyse_item".
  * Return NULL if there is no result. */
+extern value_t first_analysis_result();
 
-extern value_t next_analysis_result( void );
-/* Get the next result of the last call of "analyse_item".
+/** Get the next result of the last call of "analyse_item".
  * Return NULL if there is no more result. */
+extern value_t next_analysis_result();
 
-extern void init_libmalaga(string_t project_directory);
-/* Initialise this module.
+/** Initialise this module.
  * This function sets "malaga_error". */
+extern void init_libmalaga(string_t project_directory);
 
-extern void terminate_libmalaga( void );
-/* Terminate this module. */
-
-/*===========================================================================*/
+/** Terminate this module. */
+extern void terminate_libmalaga();
 
 }}}

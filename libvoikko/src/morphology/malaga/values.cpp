@@ -113,7 +113,6 @@ int_t top;
 /* Variables. ===============================================================*/
 
 /* Two constant values. */
-static cell_t empty_list[] = {TYPE_CELL( LIST_TYPE, 0 ), 0}; // FIXME
 static cell_t empty_record[] = {TYPE_CELL( RECORD_TYPE, 0 ), 0}; // FIXME
 
 static cell_t *value_heap; /* The actual heap. FIXME */
@@ -1242,93 +1241,6 @@ remove_element( int_t n )
     copy_cells( v, list + 2, element - (list + 2) );
     v += element - (list + 2);
     copy_cells( v, NEXT_VALUE( element ), list_end - NEXT_VALUE( element ) );
-  }
-  value_stack[ top - 1 ] = new_list;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-remove_elements( int_t n )
-/* Stack effects: LIST -> NEW_LIST.
- * NEW_LIST is LIST without abs(N) elements.
- * If N is positive, the elements will be cut from the left border,
- * if N is negative, they will be cut from the list's right border.
- * If LIST contains less than abs(N) elements, then NEW_LIST = <>. */
-{
-  value_t new_list, list, list_end, border_value;
-  int_t new_list_length;
-
-  list = value_stack[ top - 1 ];
-
-  /* Find the first/last value in the list that will/won't be copied. */
-  if (n == 0) 
-    return;
-  border_value = get_element( list, n );
-  if (border_value == NULL) 
-    new_list = empty_list;
-  else if (n > 0) 
-  { 
-    /* Copy all elements behind BORDER_VALUE to a new list. */
-    new_list_length = 2 + NEXT_VALUE( list ) - NEXT_VALUE( border_value );
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-    list = value_stack[ top - 1 ];
-    list_end = NEXT_VALUE( list );
-    copy_cells( new_list + 2, list_end - (new_list_length - 2),
-                new_list_length - 2 );
-  } 
-  else 
-  { 
-    /* Copy all elements in front of BORDER_VALUE to a new list. */
-    new_list_length = border_value - list;
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-    list = value_stack[ top - 1 ];
-    copy_cells( new_list + 2, list + 2, new_list_length - 2 );
-  }
-  value_stack[ top - 1 ] = new_list;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-extract_elements( int_t n )
-/* Stack effects: LIST -> NEW_LIST.
- * NEW_LIST is LIST with only abs(N) elements.
- * If N is positive, the elements will be taken from the left border,
- * if N is negative, they will be taken from the list's right border.
- * If LIST contains less than abs(N) elements, then NEW_LIST = LIST. */
-{
-  value_t new_list, list, list_end, border_value;
-  int_t new_list_length;
-
-  list = value_stack[ top - 1 ];
-
-  /* Find the first/last value in the list that will/won't be copied. */
-  if (n == 0) 
-    new_list = empty_list;
-  else
-  {
-    border_value = get_element( list, n );
-    if (border_value == NULL) 
-      return;
-    if (n > 0) 
-    { 
-      /* Copy all elements in front of BORDER_VALUE to a new list. */
-      new_list_length = NEXT_VALUE( border_value ) - list;
-      new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-      list = value_stack[ top - 1 ];
-      copy_cells( new_list + 2, list + 2, new_list_length - 2 );
-    } 
-    else 
-    { 
-      /* Copy all elements behind BORDER_VALUE to a new list. */
-      new_list_length = 2 + NEXT_VALUE( list ) - border_value;
-      new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-      list = value_stack[ top - 1 ];
-      list_end = NEXT_VALUE( list );
-      copy_cells( new_list + 2, list_end - (new_list_length - 2),
-		  new_list_length - 2 );
-    }
   }
   value_stack[ top - 1 ] = new_list;
 }

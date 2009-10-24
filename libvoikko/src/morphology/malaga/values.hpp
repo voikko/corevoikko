@@ -177,20 +177,6 @@ extern void remove_element( int_t n );
  * if N is negative, they will be counted from the right border.
  * If LIST contains less than abs(N) elements, then NEW_LIST = LIST. */
 
-extern void remove_elements( int_t n );
-/* Stack effects: LIST -> NEW_LIST.
- * NEW_LIST is LIST without abs(N) elements.
- * If N is positive, the elements will be cut from the left border,
- * if N is negative, they will be cut from the list's right border.
- * If LIST contains less than abs(N) elements, then NEW_LIST = <>. */
-
-extern void extract_elements( int_t n );
-/* Stack effects: LIST -> NEW_LIST.
- * NEW_LIST is LIST with only abs(N) elements.
- * If N is positive, the elements will be taken from the left border,
- * if N is negative, they will be taken from the list's right border.
- * If LIST contains less than abs(N) elements, then NEW_LIST = LIST. */
-
 extern void replace_element( int_t n );
 /* Stack effects: LIST VALUE -> NEW_LIST.
  * NEW_LIST is LIST, but its N-th element is replaced by VALUE.
