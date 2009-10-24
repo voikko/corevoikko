@@ -1,3 +1,10 @@
+2009-10-24 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Remove unused code.
+	* Remove global variables.
+	* White space characters are no longer allowed at the start
+	  or end of the word.
+
 2009-10-06 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Additions to autocorrect data.

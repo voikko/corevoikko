@@ -140,9 +140,6 @@ extern char_t *concat_strings( string_t first_string, ... );
  * Must have NULL-terminated list of strings as parameters.
  * The result string must be freed after use. */
 
-extern string_t next_non_space( string_t string );
-/* Return STRING, but without leading spaces. */
-
 /* Text functions. ==========================================================*/
 
 /* A data structure that contains a string that may grow indefinitely. */

@@ -365,17 +365,6 @@ concat_strings( string_t first_string, ... )
   return string;
 }
 
-/*---------------------------------------------------------------------------*/
-
-string_t 
-next_non_space( string_t string )
-/* Return STRING, but without leading spaces. */
-{ 
-  while (g_unichar_isspace( g_utf8_get_char( string ) ))
-    string = g_utf8_next_char( string );
-  return string;
-}
-
 /* Error handling. ==========================================================*/
 
 void 

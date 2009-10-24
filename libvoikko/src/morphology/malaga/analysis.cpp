@@ -79,38 +79,22 @@ static struct /* Information needed to generate states and tree nodes. FIXME */
 
 void 
 preprocess_input( char_t *input )
-/* Delete heading and trailing spaces in INPUT
- * and compress all whitespace sequences to a single space.
- * If EXPECT_QUOTES == true, expect quoted input and remove the quotes. */
+/* Change input string to use lower case letters only */
 { 
   string_t input_p;
   char_t *output_p;
   u_int_t code;
   
+  input_p = input;
   output_p = input;
-
-  /* Cut heading spaces. */
-  input_p = next_non_space( input );
 
   while (*input_p != EOS) 
   { 
     code = g_utf8_get_char( input_p );
-    if (g_unichar_isspace( code ))
-    { 
-      /* Overread all whitespace and write a single space. */
-      input_p = next_non_space( input_p );
-      *output_p++ = ' ';
-    } 
-    else 
-    {
-      input_p = g_utf8_next_char( input_p );
-      output_p += g_unichar_to_utf8( g_unichar_tolower(code), output_p );
-    }
+    input_p = g_utf8_next_char( input_p );
+    output_p += g_unichar_to_utf8( g_unichar_tolower(code), output_p );
   }
 
-  /* Last space may be superfluous. */
-  if (output_p > input && output_p[-1] == ' ') 
-    output_p--;
   *output_p = EOS;
 }
 
