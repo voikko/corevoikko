@@ -146,7 +146,7 @@ match_pattern( string_t string, string_t pattern )
       else 
       { 
 	index = pattern + 2;
-	c = g_unichar_tolower( g_utf8_get_char( string ) );
+	c = g_utf8_get_char( string );
 	string = g_utf8_next_char( string );
         pattern += (byte_t) pattern[1] + 2;
         while (index < pattern && c != g_utf8_get_char( index ))
@@ -161,7 +161,7 @@ match_pattern( string_t string, string_t pattern )
       else 
       { 
 	index = pattern + 2;
-	c = g_unichar_tolower( g_utf8_get_char( string ) );
+	c = g_utf8_get_char( string );
 	string = g_utf8_next_char( string );
         pattern += (byte_t) pattern[1] + 2;
         while (index < pattern && c != g_utf8_get_char( index ))
@@ -189,7 +189,7 @@ match_pattern( string_t string, string_t pattern )
 	found_mismatch = true;
       else
       {
-	c = g_unichar_tolower( g_utf8_get_char( string ) );
+	c = g_utf8_get_char(string);
 	string = g_utf8_next_char( string );
 	if (c != g_utf8_get_char( pattern )) 
 	  found_mismatch = true;
