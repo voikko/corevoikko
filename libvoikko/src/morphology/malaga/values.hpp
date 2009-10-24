@@ -110,15 +110,6 @@ extern void join_records( void );
  * their associated values. If an attribute has different values in RECORD1
  * and RECORD2, the value in RECORD2 will be taken. */
 
-extern void select_attribute( symbol_t attribute );
-/* Stack effects: RECORD -> NEW_RECORD.
- * NEW_RECORD contains ATTRIBUTE and its value in RECORD. */
-
-extern void select_attributes( void );
-/* Stack effects: RECORD LIST -> NEW_RECORD.
- * NEW_RECORD contains all attribute-value pairs of RECORD whose attributes
- * are in LIST. */
-
 extern void remove_attribute( symbol_t attribute );
 /* Stack effects: RECORD -> NEW_RECORD.
  * NEW_RECORD contains all attribute-value pairs of RECORD but the one with
@@ -158,17 +149,6 @@ extern void get_list_difference( void );
  * NEW_LIST contains the list difference of LIST1 and LIST2:
  * An element that appears M times in LIST1 and N times in LIST2 
  * appears M - N times in NEW_LIST. */
-
-extern void get_set_difference( void );
-/* Stack effects: LIST1 LIST2 -> NEW_LIST.
- * NEW_LIST contains the set difference of LIST1 and LIST2.
- * Each element of LIST1 is in NEW_LIST if it is not in LIST2. */
-
-extern void intersect_lists( void );
-/* Stack effects: LIST1 LIST2 -> NEW_LIST.
- * NEW_LIST contains the list intersection of LIST1 and LIST2.
- * Each element that appears M times in LIST1 and N times in LIST2
- * appears min(M, N) times in NEW_LIST. */
 
 extern void remove_element( int_t n );
 /* Stack effects: LIST -> NEW_LIST.
@@ -213,10 +193,6 @@ extern void minus_operation( void );
  * The actual operation depends on the type of the values. */
 
 /* Functions for value paths. ===============================================*/
-
-extern value_t get_value_part( value_t value, value_t path );
-/* Return the value part of VALUE that is specified by the path PATH. 
- * If that value part does not exist, return NULL. */
 
 extern void build_path( int_t n );
 /* Stack effects: VALUE1 ... VALUE_N -> NEW_LIST.

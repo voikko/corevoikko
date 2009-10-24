@@ -112,9 +112,6 @@ int_t top;
 
 /* Variables. ===============================================================*/
 
-/* Two constant values. */
-static cell_t empty_record[] = {TYPE_CELL( RECORD_TYPE, 0 ), 0}; // FIXME
-
 static cell_t *value_heap; /* The actual heap. FIXME */
 static cell_t *value_heap_end; /* Pointer to first free cell in heap. FIXME */
 static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
@@ -616,106 +613,6 @@ join_records( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-select_attribute( symbol_t attribute )
-/* Stack effects: RECORD -> NEW_RECORD.
- * NEW_RECORD contains ATTRIBUTE and its value in RECORD. */
-{
-  value_t record, record_end, v, new_record;
-  int_t new_record_length;
-
-  record = value_stack[ top - 1 ];
-  record_end = NEXT_VALUE( record );
-  for (v = record + 2; v < record_end; v = NEXT_ATTRIB(v)) 
-  { 
-    if (*v == attribute) 
-      break;
-  }
-  if (v == record_end) 
-    new_record = empty_record;
-  else 
-  { 
-    new_record_length = 3 + length_of_value( v + 1 );
-    new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
-
-    record = value_stack[ top - 1 ];
-    record_end = NEXT_VALUE( record );
-
-    /* Find ATTRIBUTE in record. */
-    for (v = record + 2; *v != attribute; v = NEXT_ATTRIB(v)) 
-      /* empty */;
-    new_record[2] = attribute;
-    copy_value( new_record + 3, v + 1 );
-  }
-
-  value_stack[ top - 1 ] = new_record;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-select_attributes( void )
-/* Stack effects: RECORD LIST -> NEW_RECORD.
- * NEW_RECORD contains all attribute-value pairs of RECORD whose attributes
- * are in LIST. */
-{
-  value_t record, list, record_end, list_end, v, v1, v2, new_record;
-  int_t new_record_length;
-
-  record = value_stack[ top - 2 ];
-  list = value_stack[ top - 1 ];
-  record_end = NEXT_VALUE( record );
-  list_end = NEXT_VALUE( list );
-
-  /* Calculate size of new value */
-  new_record_length = 2;
-  for (v1 = record + 2; v1 < record_end; v1 = NEXT_ATTRIB( v1 )) 
-  { 
-    for (v2 = list + 2; v2 < list_end; v2++) 
-    { 
-      if (*v1 == *v2) 
-      { 
-	new_record_length += 1 + length_of_value( v1 + 1 );
-        break;
-      }
-    }
-  }
-
-  /* We don't create a new record if no attributes are deleted. */
-  if (new_record_length == length_of_value( record )) 
-    new_record = record;
-  else 
-  { 
-    /* Allocate and copy new value. */
-    new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
-
-    record = value_stack[ top - 2 ];
-    list = value_stack[ top - 1 ];
-    record_end = NEXT_VALUE( record );
-    list_end = NEXT_VALUE( list );
-
-    v = new_record + 2;
-    for (v1 = record + 2; v1 < record_end; v1 = NEXT_ATTRIB( v1 )) 
-    { 
-      for (v2 = list + 2; v2 < list_end; v2++) 
-      { 
-	if (*v1 == *v2) 
-        { 
-	  *v++ = *v1;
-          copy_value( v, v1 + 1 );
-          v = NEXT_VALUE(v);
-          break;
-        }
-      }
-    }
-  }
-
-  top--;
-  value_stack[ top - 1 ] = new_record;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
 remove_attribute( symbol_t attribute )
 /* Stack effects: RECORD -> NEW_RECORD.
  * NEW_RECORD contains all attribute-value pairs of RECORD but the one with
@@ -1062,154 +959,6 @@ get_list_difference( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-get_set_difference( void )
-/* Stack effects: LIST1 LIST2 -> NEW_LIST.
- * NEW_LIST contains the set difference of LIST1 and LIST2.
- * Each element of LIST1 is in NEW_LIST if it is not in LIST2. */
-{
-  value_t list1, list2, list1_end, list2_end, new_list, v, v1, v2;
-  int_t new_list_length;
-
-  list1 = value_stack[ top - 2 ];
-  list2 = value_stack[ top - 1 ];
-  list1_end = NEXT_VALUE( list1 );
-  list2_end = NEXT_VALUE( list2 );
-
-  /* Compute the length of the new list. */
-  new_list_length = 2;
-  for (v1 = list1 + 2; v1 < list1_end; v1 = NEXT_VALUE( v1 )) 
-  { 
-    for (v2 = list2 + 2; v2 < list2_end; v2 = NEXT_VALUE( v2 )) 
-    { 
-      if (values_equal( v1, v2 )) 
-	break;
-    }
-    if (v2 == list2_end) 
-      new_list_length += length_of_value( v1 );
-  }
-  
-  /* No need to create a new list if no elements will be deleted. */
-  if (new_list_length == length_of_value( list1 )) 
-    new_list = list1;
-  else
-  { 
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-
-    list1 = value_stack[ top - 2 ];
-    list2 = value_stack[ top - 1 ];
-    list1_end = NEXT_VALUE( list1 );
-    list2_end = NEXT_VALUE( list2 );
-
-    v = new_list + 2;
-    for (v1 = list1 + 2; v1 < list1_end; v1 = NEXT_VALUE( v1 )) 
-    { 
-      for (v2 = list2 + 2; v2 < list2_end; v2 = NEXT_VALUE( v2 )) 
-      { 
-	if (values_equal( v1, v2 )) 
-	  break;
-      }
-      if (v2 == list2_end) 
-      {
-	copy_value( v, v1 ); 
-	v = NEXT_VALUE(v); 
-      }
-    }
-  }
-  
-  top--;
-  value_stack[ top - 1 ] = new_list;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-intersect_lists( void )
-/* Stack effects: LIST1 LIST2 -> NEW_LIST.
- * NEW_LIST contains the list intersection of LIST1 and LIST2.
- * Each element that appears M times in LIST1 and N times in LIST2
- * appears min(M, N) times in NEW_LIST. */
-{
-  value_t new_list, list1, list2, list1_end, list2_end, v1, v2, v;
-  int_t new_list_length, appearances;
-
-  list1 = value_stack[ top - 2 ];
-  list2 = value_stack[ top - 1 ];
-  list1_end = NEXT_VALUE( list1 );
-  list2_end = NEXT_VALUE( list2 );
-
-  /* Calculate the size of the new list. */
-  new_list_length = 2;
-  for (v1 = list1 + 2; v1 < list1_end; v1 = NEXT_VALUE( v1 )) 
-  { 
-    /* Count appearences in LIST1 up to (including) V1. */
-    appearances = 1;
-    for (v2 = list1 + 2; v2 < v1; v2 = NEXT_VALUE( v2 )) 
-    { 
-      if (values_equal( v1, v2 )) 
-	appearances++;
-    }
-
-    /* Subtract appearences in LIST2. */
-    for (v2 = list2 + 2; v2 < list2_end; v2 = NEXT_VALUE( v2 )) 
-    { 
-      if (values_equal( v1, v2 )) 
-	appearances--;
-    }
-
-    /* Add element size if included. */
-    if (appearances <= 0) 
-      new_list_length += length_of_value( v1 );
-  }
-
-  /* We don't create a new list if no elements will be deleted. */
-  if (new_list_length == length_of_value( list1 )) 
-    new_list = list1;
-  else
-  { 
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
-
-    /* Get arguments again: they may have been moved by garbage collection. */
-    list1 = value_stack[ top - 2 ];
-    list2 = value_stack[ top - 1 ];
-    list1_end = NEXT_VALUE( list1 );
-    list2_end = NEXT_VALUE( list2 );
-
-    /* Copy the elements. */
-    v = new_list + 2;
-    for (v1 = list1 + 2; v1 < list1_end; v1 = NEXT_VALUE( v1 )) 
-    { 
-      /* Count appearences in VALUE1 up to (including) V1. */
-      appearances = 1;
-      for (v2 = list1 + 2; v2 < v1; v2 = NEXT_VALUE( v2 )) 
-      { 
-	if (values_equal( v1, v2 )) 
-	  appearances++;
-      }
-
-      /* Subtract appearences in VALUE2. */
-      for (v2 = list2 + 2; v2 < list2_end; v2 = NEXT_VALUE( v2 )) 
-      { 
-	if (values_equal( v1, v2 )) 
-	  appearances--;
-      }
-
-      /* Copy value if included. */
-      if (appearances <= 0) 
-      { 
-	copy_value( v, v1 );
-        v = NEXT_VALUE(v);
-      }
-    }
-  }
-
-  /* Pop arguments and push result on stack. */
-  top--;
-  value_stack[ top - 1 ] = new_list;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
 remove_element( int_t n )
 /* Stack effects: LIST -> NEW_LIST.
  * NEW_LIST is LIST without element at index N.
@@ -1347,6 +1096,28 @@ push_number_value( double number )
 
 /* Type dependent Malaga operations. ========================================*/
 
+static value_t 
+get_value_part( value_t value, value_t path )
+/* Return the value part of VALUE that is specified by the path PATH. 
+ * If that value part does not exist, return NULL. */
+{
+  value_t part, path_end;
+  
+  path_end = NEXT_VALUE( path );
+  for (part = path + 2; part < path_end; part = NEXT_VALUE( part )) 
+  { 
+    if (IS_SYMBOL( part )) 
+      value = get_attribute( value, *part );
+    else if (IS_NUMBER( part )) 
+      value = get_element( value, value_to_int( part ) );
+    if (value == NULL) 
+      return NULL;
+  }
+  return value;
+}
+
+/*---------------------------------------------------------------------------*/
+
 void 
 dot_operation( void )
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
@@ -1451,28 +1222,6 @@ minus_operation( void )
 }
 
 /* Attribute path functions. ================================================*/
-
-value_t 
-get_value_part( value_t value, value_t path )
-/* Return the value part of VALUE that is specified by the path PATH. 
- * If that value part does not exist, return NULL. */
-{
-  value_t part, path_end;
-  
-  path_end = NEXT_VALUE( path );
-  for (part = path + 2; part < path_end; part = NEXT_VALUE( part )) 
-  { 
-    if (IS_SYMBOL( part )) 
-      value = get_attribute( value, *part );
-    else if (IS_NUMBER( part )) 
-      value = get_element( value, value_to_int( part ) );
-    if (value == NULL) 
-      return NULL;
-  }
-  return value;
-}
-
-/*---------------------------------------------------------------------------*/
 
 void 
 build_path( int_t n )
