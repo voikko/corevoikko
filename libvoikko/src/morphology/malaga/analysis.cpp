@@ -412,9 +412,8 @@ execute_rules( analysis_t *analysis,
 	  if (rule->param_count >= 2) 
 	    push_string_value( link_surf, NULL );
 	}
-	execute_rule( rule_sys, *rule_p );
+	rules_successful |= execute_rule( rule_sys, *rule_p );
 	rules_executed = true;
-	rules_successful |= rule_successful;
       }
     }
   }

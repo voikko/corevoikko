@@ -57,14 +57,12 @@ typedef struct
 
 /* Variables. ===============================================================*/
 
-extern bool rule_successful; // FIXME
-/* Indicator for execution of result, accept, or allo statement. Read only! */
-
 /* Functions. ===============================================================*/
 
-extern void execute_rule( rule_sys_t *rule_sys, int_t rule_number );
+extern bool execute_rule( rule_sys_t *rule_sys, int_t rule_number );
 /* Execute rule RULE_NUMBER in the rule system RULE_SYS.
- * Any parameters must be on the value stack. */
+ * Any parameters must be on the value stack.
+ * Returns true if executed rule was successful */
 
 extern rule_sys_t *read_rule_sys( string_t file_name );
 /* Read rule system from file FILE_NAME.

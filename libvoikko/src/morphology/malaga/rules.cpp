@@ -43,10 +43,6 @@ typedef struct
   int_t bottom;
 } path_node_t;
 
-/* Global variables. ========================================================*/
-
-bool rule_successful;
-
 /* Variables. ===============================================================*/
 
 static int_t bottom; /* Index of first stack element used in this branch. */
@@ -98,7 +94,7 @@ standard_function( int_t function )
 
 /*---------------------------------------------------------------------------*/
 
-void 
+bool 
 execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 /* Execute rule RULE_NUMBER in the rule system RULE_SYS.
  * Any parameters must be on the value stack. */
@@ -118,7 +114,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 
   int_t pc = rule_sys->rules[ rule_number ].first_instr;
   { 
-    rule_successful = false;
+    bool rule_successful = false;
     bool terminate = false;
     while (! terminate) 
     { 
@@ -390,6 +386,7 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         terminate = false;
       }
     }
+    return rule_successful;
   }
 }
 
