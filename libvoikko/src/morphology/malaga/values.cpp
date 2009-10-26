@@ -164,10 +164,9 @@ collect_garbage( void )
 /* Make sure the value heap only contains values that are on the value stack.
  * Compactify the heap, i.e. move all values on the heap to the beginning. */
 {
-  value_t old_value, new_value;
   value_t **value_pointer;
 
-  new_value = value_heap;
+  value_t new_value = value_heap;
 
   /* Copy values if there is at least one value to save. */
   if (top > 0) 
@@ -192,7 +191,7 @@ collect_garbage( void )
     while (i < top && *value_pointer[i] < value_heap_end) 
     { 
       /* Copy the value. */
-      old_value = *value_pointer[i];
+      value_t old_value = *value_pointer[i];
       int_t value_len = length_of_value( old_value );
       memmove( new_value, old_value, value_len * sizeof( cell_t ) );
 
@@ -216,16 +215,13 @@ static value_t
 space_for_value( int_t size )
 /* Get SIZE adjacent free cells on the value heap. */
 {
-  value_t pointer, old_heap, old_heap_end;
-  int_t i;
-
   if ((value_heap_end - value_heap) + size > value_heap_size) 
   { 
     collect_garbage();
     if ((value_heap_end - value_heap) + size > value_heap_size) 
     { 
-      old_heap = value_heap;
-      old_heap_end = value_heap_end;
+      value_t old_heap = value_heap;
+      value_t old_heap_end = value_heap_end;
 
       /* Enlarge the value heap. */
       value_heap_size = renew_vector( &value_heap, sizeof( cell_t ),
@@ -233,14 +229,14 @@ space_for_value( int_t size )
       value_heap_end = value_heap + (old_heap_end - old_heap);
 
       /* Adapt the value stack pointers. */
-      for (i = 0; i < top; i++) 
+      for (int_t i = 0; i < top; i++) 
       { 
 	if (value_stack[i] >= old_heap && value_stack[i] < old_heap_end) 
 	  value_stack[i] = value_heap + (value_stack[i] - old_heap);
       }
     }
   }
-  pointer = value_heap_end;
+  value_t pointer = value_heap_end;
   value_heap_end += size;
   return pointer;
 }
@@ -966,27 +962,26 @@ remove_element( int_t n )
  * if N is negative, they will be counted from the right border.
  * If LIST contains less than abs(N) elements, then NEW_LIST = LIST. */
 {
-  value_t list, list_end, new_list, element, v;
-  int_t new_list_length;
+  value_t new_list;
 
-  list = value_stack[ top - 1 ];
+  value_t list = value_stack[ top - 1 ];
 
   /* Find the first/last value in the list that will/won't be copied. */
-  element = get_element( list, n );
+  value_t element = get_element( list, n );
   if (element == NULL) 
     new_list = list;
   else
   { 
-    new_list_length = length_of_value( list ) - length_of_value( element );
+    int_t new_list_length = length_of_value( list ) - length_of_value( element );
     new_list = space_for_composed_value( LIST_TYPE, new_list_length );
 
     /* Get the values again, since they may have moved. */
     list = value_stack[ top - 1 ];
-    list_end = NEXT_VALUE( list );
+    value_t list_end = NEXT_VALUE( list );
     element = get_element( list, n );
 
     /* Copy the list. */
-    v = new_list + 2;
+    value_t v = new_list + 2;
     copy_cells( v, list + 2, element - (list + 2) );
     v += element - (list + 2);
     copy_cells( v, NEXT_VALUE( element ), list_end - NEXT_VALUE( element ) );
@@ -1285,33 +1280,30 @@ modify_value_part_local( void (*modifier)( void ), int_t value_index,
  * The value returned by MODIFIER will be entered in VALUE in place of
  * OLD_VALUE. */
 {
-  value_t value, subvalue, selector;
-  int_t subvalue_index, index;
-  symbol_t symbol;
-  
-  value = value_stack[ top - 3 ] + value_index;
-  selector = get_element( value_stack[ top - 2 ], path_index );
+  value_t value = value_stack[ top - 3 ] + value_index;
+  value_t selector = get_element( value_stack[ top - 2 ], path_index );
   if (selector == NULL) /* No more selectors. */
   { 
     insert_value( 1, value );
     modifier();
   } 
   else /* Find attribute in VALUE. */
-  { 
+  {
+    value_t subvalue; 
     if (IS_SYMBOL( selector ) ) 
     { 
-      symbol = value_to_symbol( selector );
+      symbol_t symbol = value_to_symbol( selector );
       subvalue = get_attribute( value, symbol );
     } 
     else if (IS_NUMBER( selector )) 
     { 
-      index = value_to_int( selector );
+      int_t index = value_to_int( selector );
       subvalue = get_element( value, index );
     }
     else {
       throw setup::DictionaryException("Unexpected selector type");
     }
-    subvalue_index = subvalue - value_stack[ top - 3 ];
+    int_t subvalue_index = subvalue - value_stack[ top - 3 ];
 
     /* Go down recursively */
     modify_value_part_local( modifier, subvalue_index, path_index + 1 );
@@ -1373,10 +1365,7 @@ get_first_element( void )
  * If VALUE is a number, then NEW_VALUE is NULL (if VALUE == 0),
  * 1 (if VALUE > 0) or -1 (if VALUE < 0). */
 {
-  value_t value;
-  int_t limit;
-
-  value = value_stack[ top - 1 ];
+  value_t value = value_stack[ top - 1 ];
   top--;
   if (*value == NIL_SYMBOL) 
     push_value( NULL );
@@ -1393,7 +1382,7 @@ get_first_element( void )
 	push_value( value + 2 );
       break;
     case NUMBER_TYPE:
-      limit = value_to_int( value );
+      int_t limit = value_to_int( value );
       if (limit > 0) 
 	push_number_value( 1.0 );
       else if (limit < 0) 
@@ -1423,11 +1412,8 @@ get_next_element( int_t index )
  * If VALUE is a negative number, and ELEMENT a number greater than
  * VALUE, then NEW_ELEMENT is ELEMENT - 1. */
 {
-  value_t value, element;
-  int_t number, limit;
-
-  value = value_stack[ index - 1 ];
-  element = value_stack[ index ];
+  value_t value = value_stack[ index - 1 ];
+  value_t element = value_stack[ index ];
   if (element == NULL) 
     return;
   switch (TYPE( value )) 
@@ -1443,8 +1429,8 @@ get_next_element( int_t index )
       element = NULL;
     break;
   case NUMBER_TYPE:
-    limit = value_to_int( value );
-    number = value_to_int( element );
+    int_t limit = value_to_int( value );
+    int_t number = value_to_int( element );
     if (limit > 0 && number < limit) 
     { 
       push_number_value( number + 1 );
@@ -1470,8 +1456,6 @@ values_equal( value_t value1, value_t value2 )
  * VALUE1 an VALUE2 must be of same type or one of them must be nil.
  * Refer to documentation to see what "equal" in Malaga really means. */
 {
-  value_t value1_end, value2_end, v1, v2;
-
   if (TYPE( value1 ) != TYPE( value2 )) 
   {
     return false;
@@ -1483,21 +1467,22 @@ values_equal( value_t value1, value_t value2 )
   case STRING_TYPE:
     return (strcmp( (string_t) (value1 + 1), (string_t) (value2 + 1) ) 
 	    == 0);
-  case LIST_TYPE:
+  case LIST_TYPE: {
     /* Look for each value pair if they are equal. */ 
-    value1_end = NEXT_VALUE( value1 );
-    value2_end = NEXT_VALUE( value2 );
-    for (v1 = value1 + 2, v2 = value2 + 2; 
-         v1 < value1_end && v2 < value2_end; 
-         v1 = NEXT_VALUE( v1 ), v2 = NEXT_VALUE( v2 )) 
-    { 
+    value_t value1_end = NEXT_VALUE( value1 );
+    value_t value2_end = NEXT_VALUE( value2 );
+    value_t v1 = value1 + 2;
+    value_t v2 = value2 + 2;
+    for (; v1 < value1_end && v2 < value2_end; 
+           v1 = NEXT_VALUE( v1 ), v2 = NEXT_VALUE( v2 )) { 
       if (! values_equal( v1, v2 )) 
 	return false;
     }
     return (v1 == value1_end && v2 == value2_end);
-  case RECORD_TYPE:
-    value1_end = NEXT_VALUE( value1 );
-    value2_end = NEXT_VALUE( value2 );
+  }
+  case RECORD_TYPE: {
+    value_t value1_end = NEXT_VALUE( value1 );
+    value_t value2_end = NEXT_VALUE( value2 );
 
     /* Do the records have the same length? */
     if (value1_end - value1 != value2_end - value2) 
@@ -1505,11 +1490,11 @@ values_equal( value_t value1, value_t value2 )
 
     /* Check whether for every attribute in VALUE1, there is one
      * in VALUE2 and that their values are equal. */
-    for (v1 = value1 + 2; v1 < value1_end; v1 = NEXT_ATTRIB( v1 )) 
+    for (value_t v1 = value1 + 2; v1 < value1_end; v1 = NEXT_ATTRIB( v1 )) 
     { 
       /* Look for the same attribute in VALUE2. */
-      for (v2 = value2 + 2; v2 < value2_end; v2 = NEXT_ATTRIB( v2 )) 
-      { 
+      value_t v2 = value2 + 2;
+      for (; v2 < value2_end; v2 = NEXT_ATTRIB( v2 )) { 
 	if (*v1 == *v2) 
 	  break;
       }
@@ -1520,6 +1505,7 @@ values_equal( value_t value1, value_t value2 )
 	return false;
     }
     return true;
+  }
   case NUMBER_TYPE:
     return (value_to_double( value1 ) == value_to_double( value2 ));
   default:
