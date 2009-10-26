@@ -164,7 +164,6 @@ collect_garbage( void )
 /* Make sure the value heap only contains values that are on the value stack.
  * Compactify the heap, i.e. move all values on the heap to the beginning. */
 {
-  int_t i, value_len;
   value_t old_value, new_value;
   value_t **value_pointer;
 
@@ -175,15 +174,16 @@ collect_garbage( void )
   { 
     /* Create a table of pointers to the values. */
     value_pointer = (cell_t ***) new_vector( sizeof( value_t * ), top );
-    for (i = 0; i < top; i++) 
+    for (int_t i = 0; i < top; i++) { 
       value_pointer[i] = value_stack + i;
+    }
 
     /* Sort pointers according to the address of the value they point to. */
     qsort( value_pointer, top, sizeof( value_t * ), compare_value_pointers );
 
     /* Find the first index I whose value is on the heap. */
-    for (i = 0; i < top; i++) 
-    { 
+    int_t i;
+    for (i = 0; i < top; i++) { 
       if (*value_pointer[i] >= value_heap) 
 	break;
     }
@@ -193,7 +193,7 @@ collect_garbage( void )
     { 
       /* Copy the value. */
       old_value = *value_pointer[i];
-      value_len = length_of_value( old_value );
+      int_t value_len = length_of_value( old_value );
       memmove( new_value, old_value, value_len * sizeof( cell_t ) );
 
       /* Adjust the value address and the addresses of all values

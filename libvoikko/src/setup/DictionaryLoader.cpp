@@ -55,12 +55,12 @@ list<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
 	}
 	
 	map<string, Dictionary> dictMap;
-	for (list<string>::iterator i = locations.begin(); i != locations.end(); i++) {
+	for (list<string>::iterator i = locations.begin(); i != locations.end(); ++i) {
 		addVariantsFromPath(*i, dictMap);
 	}
 	
 	list<Dictionary> dicts;
-	for (map< string, Dictionary >::iterator i = dictMap.begin(); i != dictMap.end(); i++) {
+	for (map< string, Dictionary >::iterator i = dictMap.begin(); i != dictMap.end(); ++i) {
 		if (i->second.isDefault()) {
 			dicts.push_front(i->second);
 		}
@@ -99,7 +99,7 @@ Dictionary DictionaryLoader::load(const string & variant, const string & path)
 			return dicts.front();
 		}
 	}
-	for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); i++) {
+	for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); ++i) {
 		if ((*i).getVariant() == finalVariant) {
 			loadDictionary(*i);
 			return *i;
@@ -260,7 +260,7 @@ list<string> DictionaryLoader::getDefaultLocations() {
 }
 
 bool DictionaryLoader::hasDefault(map<string, Dictionary> & variants) {
-	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); i++) {
+	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); ++i) {
 		if (i->second.isDefault()) {
 			return true;
 		}

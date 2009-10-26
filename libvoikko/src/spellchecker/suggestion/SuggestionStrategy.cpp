@@ -27,14 +27,14 @@ SuggestionStrategy::SuggestionStrategy() {
 
 SuggestionStrategy::~SuggestionStrategy() {
 	list<SuggestionGenerator *>::iterator i = generators.begin();
-	for (; i != generators.end(); i++) {
+	for (; i != generators.end(); ++i) {
 		delete *i;
 	}
 }
 
 void SuggestionStrategy::generate(SuggestionStatus * s) const {
 	list<SuggestionGenerator *>::const_iterator i = generators.begin();
-	for (; i != generators.end() && !s->shouldAbort(); i++) {
+	for (; i != generators.end() && !s->shouldAbort(); ++i) {
 		(*i)->generate(s);
 	}
 }

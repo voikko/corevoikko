@@ -26,7 +26,6 @@ typedef struct tree_node /* A rule application is stored in "tree_node". */
 { 
   int_t rule; /* Number of the executed rule. */
   value_t link_feat; /* Feature structure of the link. */
-  value_t result_feat; /* Result feature structure of the resulting state. */
   int_t rule_set; /* Successor rules of resulting state (-1 for end state). */
   string_t input; /* The input that is not yet analysed. */
 } tree_node_t;

@@ -33,7 +33,7 @@ VOIKKOEXPORT voikko_dict ** voikko_list_dicts(const char * path) {
 	
 	voikko_dict ** dicts = new voikko_dict*[dictList.size() + 1];
 	size_t n = 0;
-	for (list<Dictionary>::iterator i = dictList.begin(); i != dictList.end(); i++) {
+	for (list<Dictionary>::iterator i = dictList.begin(); i != dictList.end(); ++i) {
 		dicts[n++] = new Dictionary(*i);
 	}
 	dicts[n] = 0;

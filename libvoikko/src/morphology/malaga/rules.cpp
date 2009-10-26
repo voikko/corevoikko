@@ -107,8 +107,6 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
   int_t base = bottom = 0;
 
   /* Reset nesting and alternative paths. */
-  int_t nested_subrules = 0;
-  int_t path_count = 0;
   while (path_list.first != NULL) 
     free_first_node( &path_list );
 
@@ -116,6 +114,8 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
   { 
     bool rule_successful = false;
     bool terminate = false;
+    int_t nested_subrules = 0;
+    int_t path_count = 0;
     while (! terminate) 
     { 
       instr_t instruction = rule_sys->instrs[ pc ];

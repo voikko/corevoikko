@@ -98,9 +98,7 @@ VOIKKOEXPORT char * voikko_mor_analysis_value_cstr(
 }
 
 VOIKKOEXPORT void voikko_free_mor_analysis_value_cstr(char * analysis_value) {
-	if (analysis_value) {
-		delete[] analysis_value;
-	}
+	delete[] analysis_value;
 }
 
 } }
