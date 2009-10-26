@@ -153,9 +153,6 @@ typedef struct
 extern text_t *new_text( void );
 /* Return a new text structure. */
 
-extern void clear_text( text_t *text );
-/* Initialize TEXT to an empty string. */
-
 extern void free_text( text_t **text_p );
 /* Free the content of *TEXT_P. */
 
@@ -164,9 +161,6 @@ extern void add_to_text( text_t *text, string_t string );
 
 extern void add_char_to_text( text_t *text, char_t character );
 /* Add CHARACTER to TEXT. */
-
-void add_unichar_to_text( text_t *text, gunichar c );
-/* Add C to TEXT. */
 
 extern char_t *text_to_string( text_t **text_p );
 /* Return content of *TEXT_P as a string and delete *TEXT_P.

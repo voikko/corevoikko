@@ -84,29 +84,6 @@ clear_pool( pool_t pool )
 /*---------------------------------------------------------------------------*/
 
 void *
-pool_to_vector( pool_t pool )
-/* Return pool as a C vector (contiguous memory).
- * The vector must be freed after use. */
-{
-  void *vector;
-  u_byte_t *vector_p; /* Position where next chunk is to be copied. */
-  chunk_t *chunk;
-  
-  /* Collect all chunks in a new vector. */
-  vector = new_vector( pool->item_size, pool->item_count );
-  vector_p = (u_byte_t *) vector;
-  FOREACH( chunk, pool->chunk_list, chunk_t ) 
-  { 
-    memcpy( vector_p, CHUNK_DATA( chunk ), 
-	    pool->item_size * chunk->item_count );
-    vector_p += pool->item_size * chunk->item_count;
-  }
-  return vector;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void *
 get_pool_space( pool_t pool, int_t item_count, int_t *index )
 /* Get space for ITEM_COUNT contiguous items in POOL.
  * Return its address as the function's result.
@@ -138,39 +115,6 @@ get_pool_space( pool_t pool, int_t item_count, int_t *index )
   pool->item_count += item_count;
  
   return new_p;
-}
-
-/*---------------------------------------------------------------------------*/
-
-int_t 
-pool_item_count( pool_t pool )
-/* Return the number of the items in POOL. */
-{
-  return pool->item_count;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void *
-pool_item( pool_t pool, int_t index )
-/* Return the address of item with INDEX in pool POOL,
- * or NULL if there is no such item. */
-{
-  chunk_t *chunk;
-
-  if (index < 0 || index >= pool->item_count) 
-    return NULL;
-
-  /* Find the right chunk. */
-  chunk = (chunk_t *) pool->chunk_list.first;
-  while (index >= chunk->item_count) 
-  { 
-    index -= chunk->item_count;
-    chunk = (chunk_t *) chunk->next;
-  }
-
-  /* Return the address of the item. */
-  return CHUNK_DATA( chunk ) + pool->item_size * index;
 }
 
 /*---------------------------------------------------------------------------*/

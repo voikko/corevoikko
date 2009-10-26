@@ -207,16 +207,6 @@ new_text( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-clear_text( text_t *text )
-/* Initialize TEXT to an empty string. */
-{ 
-  text->buffer[0] = EOS;
-  text->string_size = 0;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
 free_text( text_t **text_p )
 /* Free the content of *TEXT_P. */
 { 
@@ -258,26 +248,6 @@ add_char_to_text( text_t *text, char_t character )
   }
   text->buffer[ text->string_size++ ] = character;
   text->buffer[ text->string_size ] = EOS;
-}
-
-/*---------------------------------------------------------------------------*/
-
-void 
-add_unichar_to_text( text_t *text, gunichar c )
-/* Add C to TEXT. */
-{ 
-  char buf[7];
-  int_t n;
-
-  n = g_unichar_to_utf8( c, buf );
-  buf[n] = EOS;
-  if (text->buffer_size < text->string_size + n + 1) 
-  { 
-    text->buffer_size = renew_vector( &text->buffer, sizeof( char_t ), 
-                                      2 * (text->string_size + n) );
-  }
-  strcpy( text->buffer + text->string_size, buf );
-  text->string_size += n;
 }
 
 /*---------------------------------------------------------------------------*/
