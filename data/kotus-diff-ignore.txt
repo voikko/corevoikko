@@ -1379,11 +1379,15 @@ kokkarit # kokkari
 kolloidiliuos # kolloidi
 kolloidinen # kolloidi
 kolmiointi # kolmioida
+koronaariskleroosi # koronaari
+koronaaritauti # koronaari
+koronaarivaltimo # koronaari
 kovitus # kovittaa
 kromitus # kromittaa
 kuikuilu # kuikuilla
 kummarit # kummari
 kuolemankurva # kurva
+kuparivihtrilli # vihtrilli
 kurvainen # kurva
 kusettaja # kusettaa
 kuvantua # kuvantaa
@@ -1441,6 +1445,7 @@ persaukset # persaus
 persukset # persaus
 persuukset # persaus
 pippalot # pippalo
+pisihätä # pisi
 pitkikset # pitkis
 pneumaattisesti # pneumaattinen
 polaroitua # polaroida
@@ -1465,6 +1470,7 @@ pällistelijä # pällistellä
 pällistely # pällistellä
 pälätys # pälättää
 pöpinä # pöpistä
+rautavihtrilli # vihtrilli
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
 renttuilu # renttuilla
