@@ -248,8 +248,11 @@ def suggestions(word):
 
 def getAnalysis(analysis):
 	res = u""
+	if "BASEFORM" in analysis:
+		res = res + u"Perusmuoto: " \
+		      + escape(analysis["BASEFORM"])
 	if "CLASS" in analysis:
-		res = res + u"Sanaluokka: " \
+		res = res + u"<br />Sanaluokka: " \
 		      + fromMapIfPossible(analysis["CLASS"], SANALUOKAT)
 	if "SIJAMUOTO" in analysis and analysis["SIJAMUOTO"] != "none":
 		res = res + u"<br />Sijamuoto: " \
@@ -320,7 +323,7 @@ def runServer(port):
 
 if __name__ == '__main__':
 	_voikko = Voikko()
-	_voikko.init()
+	_voikko.init(variant='standard+debug')
 	_voikko.setIgnoreDot(False)
 	_voikko.setAcceptUnfinishedParagraphsInGc(True)
 	runServer(8080)
