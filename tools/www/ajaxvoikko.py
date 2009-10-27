@@ -168,6 +168,8 @@ SIJAMUODOT = {
 "kerrontosti": u"sti-päätteinen kerronto (adverbi)"
 }
 
+WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
+
 def fromMapIfPossible(key, valueMap):
 	if key in valueMap:
 		return valueMap[key]
@@ -246,6 +248,25 @@ def suggestions(word):
 	res = res + "</ul>"
 	return res
 
+def idPartToAttrMap(idPart):
+	parts = idPart.split(u"(")
+	res = {"word": parts[0]}
+	if len(parts) > 1:
+		for attr in parts[1:]:
+			res[attr[0]] = attr[1:-1]
+	return res
+
+def wordIdsToHtml(wordIds):
+	res = u""
+	for part in wordIds.split(u"+"):
+		attrs = idPartToAttrMap(part)
+		if u"w" in attrs:
+			res = res + u'<a href="' + WORD_INFO_URL + attrs['w'] + u'">' \
+			      + escape(attrs["word"]) + u'</a>'
+		else:
+			res = res + escape(attrs["word"])
+	return res
+
 def getAnalysis(analysis):
 	res = u""
 	if "BASEFORM" in analysis:
@@ -257,6 +278,11 @@ def getAnalysis(analysis):
 	if "SIJAMUOTO" in analysis and analysis["SIJAMUOTO"] != "none":
 		res = res + u"<br />Sijamuoto: " \
 		      + fromMapIfPossible(analysis["SIJAMUOTO"], SIJAMUODOT)
+	if "WORDIDS" in analysis:
+		ids = analysis["WORDIDS"]
+		if u"(w" in ids:
+			res = res + u"<br />Sana Joukahaisessa: " \
+			      + wordIdsToHtml(ids)
 	return res
 
 def analyzeWord(word):
