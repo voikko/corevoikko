@@ -38,6 +38,15 @@ u"""
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script>
 
+function joukahainen(wid) {
+  var options = {
+    title: "Joukahainen"
+  }
+  var frame = "<iframe src='http://joukahainen.puimula.org/word/edit?wid="
+              + wid + "'></iframe>";
+  $(frame).dialog(options).show();
+}
+
 function wordInfoReceived(html) {
   var options = {
     width: 450
@@ -261,11 +270,11 @@ def wordIdsToHtml(wordIds):
 	for part in wordIds.split(u"+"):
 		attrs = idPartToAttrMap(part)
 		if u"w" in attrs:
-			res = res + u'<a href="' + WORD_INFO_URL + attrs['w'] + u'">' \
-			      + escape(attrs["word"]) + u'</a>'
+			res = res + u'+<a href="javascript:joukahainen(' + \
+			      attrs['w'] + u')">' + escape(attrs["word"]) + u'</a>'
 		else:
-			res = res + escape(attrs["word"])
-	return res
+			res = res + u'+' + escape(attrs["word"])
+	return res[2:]
 
 def getAnalysis(analysis):
 	res = u""
@@ -281,7 +290,7 @@ def getAnalysis(analysis):
 	if "WORDIDS" in analysis:
 		ids = analysis["WORDIDS"]
 		if u"(w" in ids:
-			res = res + u"<br />Sana Joukahaisessa: " \
+			res = res + u"<br />Rakenne: " \
 			      + wordIdsToHtml(ids)
 	return res
 
