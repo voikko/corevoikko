@@ -140,6 +140,8 @@
 [perusmuoto: "haiskin", alku: "haiskin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hajalla", alku: "haja", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "hajalla", alku: "hajan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "hakoteillä", alku: "hakoteillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
+[perusmuoto: "hakoteillä", alku: "hakoteille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "halki", alku: "halki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
