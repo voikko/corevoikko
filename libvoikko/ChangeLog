@@ -1,3 +1,8 @@
+2009-10-30 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Tell iconv the correct length of the output buffer so that string
+	  conversion is not aborted too early.
+
 2009-10-24 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Remove unused code.
