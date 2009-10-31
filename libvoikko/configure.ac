@@ -18,7 +18,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, U
 
 dnl General options for autoconf
 AC_PREREQ(2.60)
-AC_INIT([libvoikko],[2.2.1],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[2.3],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AC_CONFIG_MACRO_DIR([m4])
@@ -84,6 +84,17 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
   CXXFLAGS="$tmp_CXXFLAGS"
   AC_MSG_RESULT([no])
 ])
+
+dnl HFST support
+AH_TEMPLATE(HAVE_HFST, [Have HFST])
+AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
+	[enable HFST morphology backend (EXPERIMENTAL!)]),
+	[hfst=${enableval}], [hfst=no])
+if test x$hfst = xyes; then
+	AC_CHECK_LIB([hfst], [main], , [AC_MSG_ERROR([libhfst is required])])
+	AC_CHECK_HEADERS([hfst2/hfst.h], [], [AC_MSG_ERROR([hfst.h required])])
+	AC_DEFINE(HAVE_HFST, 1)
+fi
 
 dnl Windows specific settings
 if test x$build_os == xmingw32; then
