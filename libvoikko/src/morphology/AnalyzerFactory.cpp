@@ -18,12 +18,18 @@
 
 #include "morphology/AnalyzerFactory.hpp"
 #include "morphology/MalagaAnalyzer.hpp"
+#include "morphology/malaga/malaga.hpp"
 
 namespace libvoikko { namespace morphology {
 
 Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
-	return new MalagaAnalyzer();
+	if (dictionary.getMorBackend() == "malaga") {
+		std::string projectDirectory(dictionary.getMorPath());
+		malaga::init_libmalaga(projectDirectory.c_str());
+		return new MalagaAnalyzer();
+	}
+	throw setup::DictionaryException("Failed to create analyzer because of unknown morphology backend");
 }
 
 } }

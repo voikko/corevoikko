@@ -80,11 +80,6 @@ class DictionaryLoader {
 	 * Returns true if the given variant map contains a default dictionary.
 	 */
 	static bool hasDefault(std::map<std::string, Dictionary> & variants);
-	
-	/**
-	 * Loads the malaga project specified by the given dictionary.
-	 */
-	static void loadDictionary(const Dictionary & dictionary) throw(DictionaryException);
 };
 
 } }

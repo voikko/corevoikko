@@ -27,7 +27,6 @@
 # include <pwd.h>
 # include <dirent.h>
 #endif
-#include "morphology/malaga/malaga.hpp"
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
 #define VOIKKO_DICTIONARY_VERSION "2"
@@ -39,7 +38,6 @@
 #endif
 
 using namespace std;
-using namespace libvoikko::morphology::malaga;
 
 namespace libvoikko { namespace setup {
 
@@ -95,13 +93,11 @@ Dictionary DictionaryLoader::load(const string & variant, const string & path)
 		}
 		else {
 			// No dictionary specified anywhere, so take the one with highest priority.
-			loadDictionary(dicts.front());
 			return dicts.front();
 		}
 	}
 	for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); ++i) {
 		if ((*i).getVariant() == finalVariant) {
-			loadDictionary(*i);
 			return *i;
 		}
 	}
@@ -266,12 +262,6 @@ bool DictionaryLoader::hasDefault(map<string, Dictionary> & variants) {
 		}
 	}
 	return false;
-}
-
-void DictionaryLoader::loadDictionary(const Dictionary & dictionary)
-		throw(DictionaryException) {
-	string projectDirectory(dictionary.getMorPath());
-	init_libmalaga(projectDirectory.c_str());
 }
 
 } }
