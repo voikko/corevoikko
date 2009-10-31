@@ -16,30 +16,26 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "morphology/AnalyzerFactory.hpp"
-#include "morphology/MalagaAnalyzer.hpp"
-#include "morphology/malaga/malaga.hpp"
-#include "config.h"
+#ifndef VOIKKO_MORPHOLOGY_HFST_ANALYZER
+#define VOIKKO_MORPHOLOGY_HFST_ANALYZER
 
-#ifdef HAVE_HFST
-#include "morphology/HfstAnalyzer.hpp"
-#endif
+#include "morphology/Analyzer.hpp"
+#include <map>
 
 namespace libvoikko { namespace morphology {
 
-Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
-	                              throw(setup::DictionaryException) {
-	if (dictionary.getMorBackend() == "malaga") {
-		std::string projectDirectory(dictionary.getMorPath());
-		malaga::init_libmalaga(projectDirectory.c_str());
-		return new MalagaAnalyzer();
-	}
-	#ifdef HAVE_HFST
-	if (dictionary.getMorBackend() == "hfst") {
-		return new HfstAnalyzer();
-	}
-	#endif
-	throw setup::DictionaryException("Failed to create analyzer because of unknown morphology backend");
-}
+/**
+ * Morphological analyzer that uses Hfst to analyze words.
+ */
+class HfstAnalyzer : public Analyzer {
+	public:
+		std::list<Analysis *> * analyze(const wchar_t * word) const;
+		std::list<Analysis *> * analyze(const wchar_t * word,
+		                                size_t wlen) const;
+		std::list<Analysis *> * analyze(const char * word) const;
+		void terminate();
+};
 
 } }
+
+#endif

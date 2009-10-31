@@ -91,10 +91,10 @@ AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
 	[enable HFST morphology backend (EXPERIMENTAL!)]),
 	[hfst=${enableval}], [hfst=no])
 if test x$hfst = xyes; then
-	AC_CHECK_LIB([hfst], [main], , [AC_MSG_ERROR([libhfst is required])])
 	AC_CHECK_HEADERS([hfst2/hfst.h], [], [AC_MSG_ERROR([hfst.h required])])
 	AC_DEFINE(HAVE_HFST, 1)
 fi
+AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
 dnl Windows specific settings
 if test x$build_os == xmingw32; then

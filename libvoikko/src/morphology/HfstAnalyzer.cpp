@@ -16,30 +16,40 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "morphology/AnalyzerFactory.hpp"
-#include "morphology/MalagaAnalyzer.hpp"
-#include "morphology/malaga/malaga.hpp"
-#include "config.h"
-
-#ifdef HAVE_HFST
 #include "morphology/HfstAnalyzer.hpp"
-#endif
+#include "setup/DictionaryException.hpp"
+#include "utils/StringUtils.hpp"
+#include "voikko_defs.h"
+
+using namespace std;
+using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
-Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
-	                              throw(setup::DictionaryException) {
-	if (dictionary.getMorBackend() == "malaga") {
-		std::string projectDirectory(dictionary.getMorPath());
-		malaga::init_libmalaga(projectDirectory.c_str());
-		return new MalagaAnalyzer();
+list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word) const {
+	return analyze(word, wcslen(word));
+}
+
+list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
+                                         size_t wlen) const {
+	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
+		return new list<Analysis *>();
 	}
-	#ifdef HAVE_HFST
-	if (dictionary.getMorBackend() == "hfst") {
-		return new HfstAnalyzer();
+	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
+	list<Analysis *> * result = analyze(wordUtf8);
+	delete[] wordUtf8;
+	return result;
+}
+
+list<Analysis *> * HfstAnalyzer::analyze(const char * word) const {
+	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
+		return new list<Analysis *>();
 	}
-	#endif
-	throw setup::DictionaryException("Failed to create analyzer because of unknown morphology backend");
+	list<Analysis *> * analysisList = new list<Analysis *>();
+	return analysisList;
+}
+
+void HfstAnalyzer::terminate() {
 }
 
 } }

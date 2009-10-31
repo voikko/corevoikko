@@ -5,6 +5,7 @@
 	* Read morphology backend name from voikko-fi_FI.pro.
 	  Default is "malaga" so dictionary format version does not
 	  need to be changed to be able to use experimental backends.
+	* Added a dummy analyzer for HFST backend.
 
 2009-10-30 Harri Pitkänen <hatapitk@iki.fi>
 

@@ -54,6 +54,7 @@ noinst_HEADERS = \
     morphology/Analysis.hpp \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \
+    morphology/HfstAnalyzer.hpp \
     morphology/MalagaAnalyzer.hpp \
     morphology/malaga/analysis.hpp \
     morphology/malaga/malaga_files.hpp \
@@ -103,6 +104,14 @@ BUILT_SOURCES = autocorrect/data.hpp
 CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
 	python $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
+
+
+if HAVE_HFST
+    libvoikko_la_SOURCES += morphology/HfstAnalyzer.cpp
+else
+    EXTRA_DIST += morphology/HfstAnalyzer.cpp
+endif
+
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc
