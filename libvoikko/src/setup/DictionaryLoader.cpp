@@ -86,7 +86,7 @@ Dictionary DictionaryLoader::load(const string & variant, const string & path)
 	string finalVariant(variant);
 	if (variant.empty() || variant == "default" || variant == "fi_FI") {
 		// Use dictionary specified by environment variable VOIKKO_DICTIONARY_PATH
-		// FIXME: thread safety
+		// XXX: Not actually thread safe but will most probably work
 		char * dict_from_env = getenv("VOIKKO_DICTIONARY");
 		if (dict_from_env) {
 			finalVariant = string(dict_from_env);
@@ -175,6 +175,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	
 	string variant;
 	string description;
+	string morBackend = "malaga";
 	while (file.good()) {
 		getline(file, line);
 		if (line.find("info: Language-Variant: ") == 0) {
@@ -183,16 +184,19 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		else if (line.find("info: Description: ") == 0) {
 			description = line.substr(19);
 		}
+		else if (line.find("info: Morphology-Backend: ") == 0) {
+			morBackend = line.substr(26);
+		}
 	}
 	file.close();
-	return Dictionary(path, "malaga", variant, description);
+	return Dictionary(path, morBackend, variant, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {
 	list<string> locations;
 	
 	/* Path specified by environment variable VOIKKO_DICTIONARY_PATH */
-	// FIXME: thread safety
+	// XXX: Not actually thread safe but will most probably work
 	char * path_from_env = getenv("VOIKKO_DICTIONARY_PATH");
 	if (path_from_env) {
 		locations.push_back(string(path_from_env));
