@@ -26,7 +26,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 static const wchar_t * BACK_VOWELS =  L"aouAOU";
 static const wchar_t * FRONT_VOWELS = L"\u00e4\u00f6y\u00c4\u00d6Y";
 
-void SuggestionGeneratorSwap::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorSwap::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	size_t max_distance;
 	if (s->getWordLength() <= 8) max_distance = 10;
 	else max_distance = 50 / s->getWordLength();
@@ -51,8 +51,8 @@ void SuggestionGeneratorSwap::generate(SuggestionStatus * s) const {
 			if (k < 3) continue;
 			buffer[i] = s->getWord()[j];
 			buffer[j] = s->getWord()[i];
-			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-			    s->getWordLength());
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			    s, buffer, s->getWordLength());
 			buffer[i] = s->getWord()[i];
 			buffer[j] = s->getWord()[j];
 		}

@@ -20,6 +20,7 @@
 #define VOIKKO_GRAMMAR_CACHE_H
 
 #include "voikko_defs.h"
+#include "setup/setup.hpp"
 
 namespace libvoikko {
 
@@ -34,7 +35,7 @@ const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * tex
  * Performs grammar checking on the entire paragraph and stores the results
  * to cache.
  */
-void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen);
+void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
 
 /**
  * Appends an entry to the grammar checker error cache.

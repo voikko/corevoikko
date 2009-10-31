@@ -20,6 +20,8 @@
 #define VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
 
 #include "morphology/Analyzer.hpp"
+#include "setup/Dictionary.hpp"
+#include "setup/DictionaryException.hpp"
 
 namespace libvoikko { namespace morphology {
 
@@ -28,9 +30,13 @@ namespace libvoikko { namespace morphology {
  */
 class AnalyzerFactory {
 	public:
-		static const Analyzer * getAnalyzer();
-	private:
-		static Analyzer * currentAnalyzer;
+		/**
+		 * Creates and initializes a new Analyzer that matches given dictionary.
+		 * The analyzer must be terminated and deleted after use.
+		 * @throws DictionaryException if the dictionary cannot be initialized.
+		 */
+		static Analyzer * getAnalyzer(const setup::Dictionary & dictionary)
+		                              throw(setup::DictionaryException);
 };
 
 } }

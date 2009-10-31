@@ -44,6 +44,7 @@ class MalagaAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const wchar_t * word,
 		                                size_t wlen) const;
 		std::list<Analysis *> * analyze(const char * word) const;
+		void terminate();
 	
 	private:
 		void parseStructure(Analysis * &analysis, malaga::value_t &result) const;

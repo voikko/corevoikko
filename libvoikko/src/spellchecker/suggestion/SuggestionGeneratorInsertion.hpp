@@ -27,7 +27,7 @@ class SuggestionGeneratorInsertion : public SuggestionGenerator {
 	public:
 		SuggestionGeneratorInsertion(const wchar_t * characters);
 
-		void generate(SuggestionStatus * s) const;
+		void generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const;
 
 	private:
 		const wchar_t * const characters;

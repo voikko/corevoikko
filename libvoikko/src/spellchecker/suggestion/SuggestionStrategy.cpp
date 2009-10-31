@@ -32,10 +32,10 @@ SuggestionStrategy::~SuggestionStrategy() {
 	}
 }
 
-void SuggestionStrategy::generate(SuggestionStatus * s) const {
+void SuggestionStrategy::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	list<SuggestionGenerator *>::const_iterator i = generators.begin();
 	for (; i != generators.end() && !s->shouldAbort(); ++i) {
-		(*i)->generate(s);
+		(*i)->generate(voikkoOptions, s);
 	}
 }
 

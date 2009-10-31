@@ -189,7 +189,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		}
 	}
 	file.close();
-	return Dictionary(path, variant, description);
+	return Dictionary(path, "malaga", variant, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {

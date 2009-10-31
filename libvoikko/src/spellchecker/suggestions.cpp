@@ -113,7 +113,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	SuggestionStatus status(handle, nword, wlen, MAX_SUGGESTIONS * 3, maxCost);
 	
 	SuggestionGeneratorCaseChange caseChanger;
-	caseChanger.generate(&status);
+	caseChanger.generate(&voikko_options, &status);
 	if (status.getSuggestionCount() > 0) {
 		delete[] nword;
 		EXIT_V
@@ -129,7 +129,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 			strategy = new SuggestionStrategyOcr();
 			break;
 	}
-	strategy->generate(&status);
+	strategy->generate(&voikko_options, &status);
 	delete strategy;
 
 	if (status.getSuggestionCount() == 0) {

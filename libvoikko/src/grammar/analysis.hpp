@@ -20,12 +20,13 @@
 #define VOIKKO_GRAMMAR_ANALYSIS_H
 
 #include "voikko_defs.h"
+#include "setup/setup.hpp"
 #include "grammar/Paragraph.hpp"
 
 namespace libvoikko {
 
 /** Analyze paragraph text */
-grammar::Paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen);
+grammar::Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
 
 }
 

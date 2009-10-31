@@ -25,14 +25,16 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGeneratorCaseChange : public SuggestionGenerator {
 	public:
-		void generate(SuggestionStatus * s) const;
+		void generate(voikko_options_t * voikkoOptions,
+		              SuggestionStatus * s) const;
 
 		/** Suggests corrections to character case
 		 * @param status the suggestion status structure
 		 * @param word word to check
 		 * @param wlen length of word
 		 */
-		static void suggestForBuffer(SuggestionStatus * status, const wchar_t * word, size_t wlen);
+		static void suggestForBuffer(voikko_options_t * voikkoOptions,
+		       SuggestionStatus * status, const wchar_t * word, size_t wlen);
 };
 
 }}}

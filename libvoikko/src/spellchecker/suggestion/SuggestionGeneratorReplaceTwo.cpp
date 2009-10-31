@@ -27,7 +27,7 @@ SuggestionGeneratorReplaceTwo::SuggestionGeneratorReplaceTwo(
 	const wchar_t * replacements) :
 	replacements(replacements) { }
 
-void SuggestionGeneratorReplaceTwo::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorReplaceTwo::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	size_t wlen = s->getWordLength();
 	wchar_t * buffer = new wchar_t[wlen + 1];
 	for (size_t i = 0; i < wlen; ++i) {
@@ -46,7 +46,8 @@ void SuggestionGeneratorReplaceTwo::generate(SuggestionStatus * s) const {
 			}
 			buffer[i] = *(j + 1);
 			buffer[i + 1] = *(j + 1);
-			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer, wlen);
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			    s, buffer, wlen);
 			if (s->shouldAbort()) {
 				break;
 			}

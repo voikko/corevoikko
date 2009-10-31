@@ -27,7 +27,7 @@ SuggestionGeneratorInsertion::SuggestionGeneratorInsertion(
 	const wchar_t * characters) :
 	characters(characters) { }
 
-void SuggestionGeneratorInsertion::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength() + 2];
 	for (const wchar_t * ins = characters; *ins != L'\0'; ins++) {
 		buffer[0] = s->getWord()[0];
@@ -44,8 +44,8 @@ void SuggestionGeneratorInsertion::generate(SuggestionStatus * s) const {
 				continue; /* avoid duplicates */
 			}
 			buffer[j] = *ins;
-			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-			    s->getWordLength() + 1);
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			    s, buffer, s->getWordLength() + 1);
 		}
 		if (s->shouldAbort()) {
 			break;
@@ -55,8 +55,8 @@ void SuggestionGeneratorInsertion::generate(SuggestionStatus * s) const {
 		}
 		buffer[s->getWordLength()-1] = s->getWord()[s->getWordLength()-1];
 		buffer[s->getWordLength()] = *ins;
-		SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-		    s->getWordLength() + 1);
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		    s, buffer, s->getWordLength() + 1);
 	}
 	delete[] buffer;
 }

@@ -20,12 +20,14 @@
 #define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_H
 
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGenerator {
 	public:
-		virtual void generate(SuggestionStatus * s) const = 0;
+		virtual void generate(voikko_options_t * voikkoOptions,
+		                      SuggestionStatus * s) const = 0;
 		virtual ~SuggestionGenerator() {};
 };
 

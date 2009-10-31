@@ -31,7 +31,7 @@ class SuggestionGeneratorReplaceTwo : public SuggestionGenerator {
 	public:
 		SuggestionGeneratorReplaceTwo(const wchar_t * replacements);
 
-		void generate(SuggestionStatus * s) const;
+		void generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const;
 
 	private:
 		const wchar_t * const replacements;

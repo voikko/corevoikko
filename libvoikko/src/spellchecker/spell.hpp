@@ -19,6 +19,7 @@
 #ifndef VOIKKO_SPELLCHECKER_SPELL_H
 #define VOIKKO_SPELLCHECKER_SPELL_H
 
+#include "setup/setup.hpp"
 #include <cstddef>
 
 namespace libvoikko {
@@ -36,7 +37,7 @@ enum spellresult {SPELL_FAILED, SPELL_OK, SPELL_CAP_FIRST, SPELL_CAP_ERROR};
  * @param len length of the word to check
  * @return spelling result
  */
-spellresult voikko_do_spell(const wchar_t * word, size_t len);
+spellresult voikko_do_spell(voikko_options_t * voikkoOptions, const wchar_t * word, size_t len);
 
 /** Checks the spelling of given word. Missing hyphens at the start or end of the
  * word are ignored.
@@ -44,7 +45,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len);
  * @param len length of the word to check
  * @return spelling result
  */
-spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len);
+spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptions, const wchar_t * word, size_t len);
 
 /** Checks the spelling of given word and uses cache if possible
  * @param word word to check. Word does not need to be null terminated and it must
@@ -52,7 +53,7 @@ spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len);
  * @param len length of the word to check
  * @return spelling result
  */
-spellresult voikko_cached_spell(const wchar_t * word, size_t len);
+spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * word, size_t len);
 
 }
 

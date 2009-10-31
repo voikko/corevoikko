@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "spellchecker/spell.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace spellchecker {
 
@@ -29,7 +30,8 @@ class SpellWithPriority {
 		*             when words are listed as suggestions for a misspelled word
 		* @return spelling result
 		*/
-		static spellresult spellWithPriority(const wchar_t * word, size_t len, int * prio);
+		static spellresult spellWithPriority(voikko_options_t * voikkoOptions,
+		                   const wchar_t * word, size_t len, int * prio);
 };
 
 }}

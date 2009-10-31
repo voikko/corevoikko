@@ -23,7 +23,7 @@
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorSplitWord::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	int prio_part;
 	int prio_total;
 	wchar_t * part1 = new wchar_t[s->getWordLength() + 1];
@@ -38,11 +38,11 @@ void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 		    s->getWord()[splitind]   == L'-' || s->getWord()[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
 		spellresult part1_res = SpellWithPriority::spellWithPriority(
-		    part1, splitind, &prio_total);
+		    voikkoOptions, part1, splitind, &prio_total);
 		s->charge();
 		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
 			spellresult part2_res = SpellWithPriority::spellWithPriority(
-			    s->getWord() + splitind,
+			    voikkoOptions, s->getWord() + splitind,
 			    s->getWordLength() - splitind, &prio_part);
 			prio_total += prio_part;
 			s->charge();

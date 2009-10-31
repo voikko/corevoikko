@@ -20,6 +20,7 @@
 #define VOIKKO_SETUP_SETUP_H
 
 #include "grammar/cachesetup.hpp"
+#include "morphology/Analyzer.hpp"
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
@@ -58,6 +59,7 @@ typedef struct {
 	int cache_size;
 	enum suggtype suggestion_type;
 	voikko_gc_cache gc_cache;
+	morphology::Analyzer * morAnalyzer;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;

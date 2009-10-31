@@ -17,11 +17,9 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
-#include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
-#include "morphology/AnalyzerFactory.hpp"
 #include "spellchecker/SpellUtils.hpp"
 #include <cstdlib>
 #include <cstring>
@@ -34,9 +32,9 @@ using namespace std;
 
 namespace libvoikko {
 
-static spellresult bestAnalysis(const wchar_t * word, size_t len) {
-	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
-	list<Analysis *> * analyses = analyzer->analyze(word, len);
+static spellresult bestAnalysis(voikko_options_t * voikkoOptions,
+	                        const wchar_t * word, size_t len) {
+	list<Analysis *> * analyses = voikkoOptions->morAnalyzer->analyze(word, len);
 	
 	if (analyses->empty()) {
 		Analyzer::deleteAnalyses(analyses);
@@ -61,11 +59,12 @@ static spellresult bestAnalysis(const wchar_t * word, size_t len) {
 	return best_result;
 }
 
-spellresult voikko_do_spell(const wchar_t * word, size_t len) {
+spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
+	                   const wchar_t * word, size_t len) {
 	spellresult result_with_border = SPELL_FAILED;
 	spellresult result_without_border = SPELL_FAILED;
 	
-	enum spellresult result = bestAnalysis(word, len);
+	enum spellresult result = bestAnalysis(voikkoOptions, word, len);
 	const wchar_t * hyphen_pos;
 	if (result != SPELL_OK && len > 3) {
 		hyphen_pos = wmemchr(word + 1, L'-', len - 2);
@@ -85,7 +84,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		    buffer[leading_len] != L'-') {
 			/* All hyphens are optional */
 			/* FIXME: deep recursion */
-			spellresult spres = voikko_do_spell(buffer, len - 1);
+			spellresult spres = voikko_do_spell(voikkoOptions, buffer, len - 1);
 			if (spres == SPELL_OK) {
 				delete[] buffer;
 				return spres;
@@ -100,7 +99,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
 			    towlower(word[leading_len + 1]) == vctest1 &&
 			    towlower(word[leading_len + 2]) == vctest2) {
-				spellresult spres = bestAnalysis(buffer, len - 1);
+				spellresult spres = bestAnalysis(voikkoOptions, buffer, len - 1);
 				if (spres != SPELL_FAILED && (result == SPELL_FAILED || result > spres)) {
 					delete[] buffer;
 					return spres;
@@ -109,8 +108,7 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 		}
 		
 		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
-		const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
-		list<Analysis *> * analyses = analyzer->analyze(buffer);
+		list<Analysis *> * analyses = voikkoOptions->morAnalyzer->analyze(buffer);
 		
 		if (analyses->empty()) {
 			Analyzer::deleteAnalyses(analyses);
@@ -157,8 +155,9 @@ spellresult voikko_do_spell(const wchar_t * word, size_t len) {
 	return result;
 }
 
-spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len) {
-	spellresult spres = voikko_do_spell(word, len);
+spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptions,
+	                                   const wchar_t * word, size_t len) {
+	spellresult spres = voikko_do_spell(voikkoOptions, word, len);
 	if (spres != SPELL_FAILED) return spres;
 	
 	// Hyphens were already present, so we cannot do anything more
@@ -178,7 +177,7 @@ spellresult voikko_do_spell_ignore_hyphens(const wchar_t * word, size_t len) {
 			newlen++;
 		}
 	}
-	spres = voikko_do_spell(buffer, newlen);
+	spres = voikko_do_spell(voikkoOptions, buffer, newlen);
 	delete[] buffer;
 	return spres;
 }
@@ -202,7 +201,7 @@ const int VOIKKO_HASH_ORDERS[]   =  {0, 3+0,  5+0,  6+0,   7+0,   7+0,    7+0,  
 const int VOIKKO_CACHE_OFFSETS[] =  {0,   0, 1*16, 1*80, 1*272, 1*784, 1*1424, 1*2192, 1*3088, 1*4112, 1*5264};
 const int VOIKKO_META_OFFSETS[]  =  {0,   0, 1*16, 1*48, 1*112, 1*240,  1*368,  1*496,  1*624,  1*752,  1*880};
 
-spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
+spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * buffer, size_t len) {
 	int sparam = voikko_options.cache_size;
 	if (voikko_options.cache && len <= 10) { /* check cache */
 		int hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len] + sparam);
@@ -215,11 +214,11 @@ spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 		}
 		/* not in cache */
 		spellresult result;
-		if (voikko_options.accept_missing_hyphens) {
-			result = voikko_do_spell_ignore_hyphens(buffer, len);
+		if (voikkoOptions->accept_missing_hyphens) {
+			result = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, len);
 		}
 		else {
-			result = voikko_do_spell(buffer, len);
+			result = voikko_do_spell(voikkoOptions, buffer, len);
 		}
 		if (result == SPELL_OK || result == SPELL_CAP_FIRST) {
 			wcsncpy(voikko_options.cache + cache_offset, buffer, len);
@@ -229,15 +228,16 @@ spellresult voikko_cached_spell(const wchar_t * buffer, size_t len) {
 	}
 	/* no cache available */
 	if (voikko_options.accept_missing_hyphens) {
-		return voikko_do_spell_ignore_hyphens(buffer, len);
+		return voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, len);
 	}
 	else {
-		return voikko_do_spell(buffer, len);
+		return voikko_do_spell(voikkoOptions, buffer, len);
 	}
 }
 
 
 VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
+	voikko_options_t * voikkoOptions = &voikko_options;
 	size_t nchars = wcslen(word);
 	int result;
 	spellresult sres;
@@ -291,10 +291,10 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		wcsncpy(buffer, nword, nchars);
 		buffer[0] = towlower(buffer[0]);
 		if (voikko_options.accept_missing_hyphens) {
-			sres = voikko_do_spell_ignore_hyphens(buffer, nchars);
+			sres = voikko_do_spell_ignore_hyphens(&voikko_options, buffer, nchars);
 		}
 		else {
-			sres = voikko_do_spell(buffer, nchars);
+			sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 		}
 		if (sres == SPELL_OK ||
 		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0]))) {
@@ -306,10 +306,10 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
 			if (voikko_options.accept_missing_hyphens) {
-				sres = voikko_do_spell_ignore_hyphens(buffer, nchars);
+				sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, nchars);
 			}
 			else {
-				sres = voikko_do_spell(buffer, nchars);
+				sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 			}
 			if (sres == SPELL_OK ||
 			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0]))) {
@@ -326,18 +326,18 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	/* Check without trailing dot */
 	switch (caps) {
 		case CT_ALL_LOWER:
-			sres = voikko_cached_spell(buffer, nchars);
+			sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 			result = (sres == SPELL_OK) ? VOIKKO_SPELL_OK : VOIKKO_SPELL_FAILED;
 			break;
 		case CT_FIRST_UPPER:
-			sres = voikko_cached_spell(buffer, nchars);
+			sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 			if ((sres == SPELL_OK && voikko_options.accept_first_uppercase) || sres == SPELL_CAP_FIRST)
 				result = VOIKKO_SPELL_OK;
 			else result = VOIKKO_SPELL_FAILED;
 			break;
 		case CT_ALL_UPPER:
 			assert(voikko_options.accept_all_uppercase);
-			sres = voikko_cached_spell(buffer, nchars);
+			sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 			result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			break;
 		default: /* should not happen */
@@ -354,18 +354,18 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		buffer[dot_index] = L'.';
 		switch (caps) {
 			case CT_ALL_LOWER:
-				sres = voikko_cached_spell(buffer, nchars);
+				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 				result = (sres == SPELL_OK) ? VOIKKO_SPELL_OK : VOIKKO_SPELL_FAILED;
 				break;
 			case CT_FIRST_UPPER:
-				sres = voikko_cached_spell(buffer, nchars);
+				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 				if ((sres == SPELL_OK && voikko_options.accept_first_uppercase) || sres == SPELL_CAP_FIRST)
 					result = VOIKKO_SPELL_OK;
 				else result = VOIKKO_SPELL_FAILED;
 				break;
 			case CT_ALL_UPPER:
 				assert(voikko_options.accept_all_uppercase);
-				sres = voikko_cached_spell(buffer, nchars);
+				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 				result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			default: /* should not happen */
 				result = VOIKKO_INTERNAL_ERROR;

@@ -21,10 +21,9 @@
 
 namespace libvoikko { namespace morphology {
 
-Analyzer * AnalyzerFactory::currentAnalyzer = new MalagaAnalyzer();
-
-const Analyzer * AnalyzerFactory::getAnalyzer() {
-	return currentAnalyzer;
+Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
+	                              throw(setup::DictionaryException) {
+	return new MalagaAnalyzer();
 }
 
 } }

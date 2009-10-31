@@ -16,7 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
@@ -52,13 +51,13 @@ const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t *
 	return &no_grammar_error;
 }
 
-void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
-	gc_clear_cache(handle);
+void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
+	gc_clear_cache(0);
 	voikko_options.gc_cache.paragraph = new wchar_t[textlen + 1];
 	if (!voikko_options.gc_cache.paragraph) return;
 	memcpy(voikko_options.gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikko_options.gc_cache.paragraph[textlen] = L'\0';
-	Paragraph * para = gc_analyze_paragraph(handle, text, textlen);
+	Paragraph * para = gc_analyze_paragraph(voikkoOptions, text, textlen);
 	if (!para) return;
 	
 	// If paragraph is a single sentence without any whitespace, do not try to
@@ -85,13 +84,13 @@ void gc_paragraph_to_cache(int handle, const wchar_t * text, size_t textlen) {
 	}
 	
 	for (size_t i = 0; i < para->sentenceCount; i++) {
-		AutoCorrect::autoCorrect(handle, para->sentences[i]);
-		gc_local_punctuation(handle, para->sentences[i]);
-		gc_punctuation_of_quotations(handle, para->sentences[i]);
-		gc_character_case(handle, para->sentences[i], i == 0);
-		gc_repeating_words(handle, para->sentences[i]);
+		AutoCorrect::autoCorrect(1, para->sentences[i]);
+		gc_local_punctuation(1, para->sentences[i]);
+		gc_punctuation_of_quotations(1, para->sentences[i]);
+		gc_character_case(1, para->sentences[i], i == 0);
+		gc_repeating_words(1, para->sentences[i]);
 	}
-	gc_end_punctuation(handle, para);
+	gc_end_punctuation(1, para);
 	delete para;
 }
 

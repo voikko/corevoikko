@@ -19,7 +19,6 @@
 #include "voikko_defs.h"
 #include "morphology/Analysis.hpp"
 #include "morphology/Analyzer.hpp"
-#include "morphology/AnalyzerFactory.hpp"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include <string.h>
@@ -32,7 +31,7 @@ typedef Analysis voikko_mor_analysis;
 
 VOIKKOEXPORT voikko_mor_analysis ** voikko_analyze_word_ucs4(
                                     int /*handle*/, const wchar_t * word) {
-	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
+	Analyzer * analyzer = voikko_options.morAnalyzer;
 	list<Analysis *> * analyses = analyzer->analyze(word);
 	voikko_mor_analysis ** result
 	    = new voikko_mor_analysis*[analyses->size() + 1];

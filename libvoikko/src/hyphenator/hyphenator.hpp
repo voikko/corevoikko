@@ -21,6 +21,7 @@
 
 #include <cstddef>
 #include "morphology/Analysis.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko {
 
@@ -87,7 +88,7 @@ void compound_hyphenation(const wchar_t * word, char * hyphenation, size_t len);
  * @return array of hyphenation buffers that correspond to different ways how
  * word could be split
  */
-char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed);
+char ** split_compounds(voikko_options_t * voikkoOptions, const wchar_t * word, size_t len, int * dot_removed);
 
 /**
  * Removes hyphenation buffers that are considered unnecessary to analyse.

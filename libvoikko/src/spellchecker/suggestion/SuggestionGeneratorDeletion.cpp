@@ -23,13 +23,13 @@
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-void SuggestionGeneratorDeletion::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorDeletion::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength()];
 	for (size_t i = 0; i < s->getWordLength() && !s->shouldAbort(); i++) {
 		if (i == 0 || towlower(s->getWord()[i]) != towlower(s->getWord()[i-1])) {
 			wcsncpy(buffer, s->getWord(), i);
 			wcsncpy(buffer + i, s->getWord() + (i + 1), s->getWordLength() - i);
-			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions, s, buffer,
 			    s->getWordLength() - 1);
 		}
 	}

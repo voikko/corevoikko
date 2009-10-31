@@ -30,7 +30,7 @@ namespace libvoikko {
  * Returns true if given word ending with a dot can be interpreted
  * as a single word, false if the dot does not belong to the word.
  */
-static bool dot_part_of_word(const wchar_t * text, size_t len) {
+static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * text, size_t len) {
 	if (len < 2) return false;
 	
 	// ordinal numbers and dates
@@ -46,7 +46,7 @@ static bool dot_part_of_word(const wchar_t * text, size_t len) {
 	}
 	
 	// abbreviations
-	if (voikko_do_spell(text, len) != SPELL_FAILED) return true;
+	if (voikko_do_spell(voikkoOptions, text, len) != SPELL_FAILED) return true;
 	return false;
 }
 
@@ -91,7 +91,7 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handl
 				end_found = true;
 				if (slen != 0 &&
 				    previous_token_type == TOKEN_WORD &&
-				    dot_part_of_word(text + previous_token_start,
+				    dot_part_of_word(&voikko_options, text + previous_token_start,
 				      slen - previous_token_start + 1)) {
 					end_dotword = true;
 				}

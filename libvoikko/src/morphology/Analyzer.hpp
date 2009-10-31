@@ -37,7 +37,8 @@ class Analyzer {
 		virtual std::list<Analysis *> * analyze(const wchar_t * word,
 		                                        size_t wlen) const = 0;
 		virtual std::list<Analysis *> * analyze(const char * word) const = 0;
-
+		
+		virtual void terminate() = 0;
 		virtual ~Analyzer();
 
 		/**

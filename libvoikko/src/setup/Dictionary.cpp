@@ -24,14 +24,17 @@ namespace libvoikko { namespace setup {
 
 Dictionary::Dictionary() :
 	morPath(),
+	morBackend(),
 	variant(),
 	description(),
 	isDefaultDict(false) {
 }
 
-Dictionary::Dictionary(const string & morPath, const string & variant,
+Dictionary::Dictionary(const string & morPath, const string & morBackend,
+                       const string & variant,
                        const string & description) :
 	morPath(morPath),
+	morBackend(morBackend),
 	variant(variant),
 	description(description),
 	isDefaultDict(false) {
@@ -39,6 +42,7 @@ Dictionary::Dictionary(const string & morPath, const string & variant,
 
 Dictionary::Dictionary(const Dictionary & dictionary) :
 	morPath(dictionary.morPath),
+	morBackend(dictionary.morBackend),
 	variant(dictionary.variant),
 	description(dictionary.description),
 	isDefaultDict(dictionary.isDefaultDict) {
@@ -46,6 +50,10 @@ Dictionary::Dictionary(const Dictionary & dictionary) :
 
 const string & Dictionary::getMorPath() const {
 	return morPath;
+}
+
+const string & Dictionary::getMorBackend() const {
+	return morBackend;
 }
 
 const string & Dictionary::getVariant() const {

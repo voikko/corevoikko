@@ -23,7 +23,7 @@
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-void SuggestionGeneratorInsertSpecial::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorInsertSpecial::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength() + 2];
 	wcsncpy(buffer + 1, s->getWord(), s->getWordLength());
 	buffer[s->getWordLength()+1] = L'\0';
@@ -36,8 +36,8 @@ void SuggestionGeneratorInsertSpecial::generate(SuggestionStatus * s) const {
 			continue;
 		wcsncpy(buffer, s->getWord(), j);
 		buffer[j] = L'-';
-		SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-		    s->getWordLength() + 1);
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		    s, buffer, s->getWordLength() + 1);
 	}
 	/* suggest character duplication */
 	wcsncpy(buffer + 1, s->getWord(), s->getWordLength() + 1);
@@ -50,8 +50,8 @@ void SuggestionGeneratorInsertSpecial::generate(SuggestionStatus * s) const {
 		}
 		/* These should not be duplicated */
 		if (s->getWord()[j] == L'-' || s->getWord()[j] == L'\'') continue;
-		SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-		    s->getWordLength() + 1);
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		    s, buffer, s->getWordLength() + 1);
 	}
 	delete[] buffer;
 }

@@ -22,7 +22,7 @@
 #ifdef HAVE_GETPWUID_R
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
-#include "morphology/malaga/malaga.hpp"
+#include "morphology/AnalyzerFactory.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -175,6 +175,7 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
 	voikko_options.suggestion_type = ST_STD;
+	voikko_options.morAnalyzer = 0;
 	
 	#ifdef HAVE_ICONV
 	/* Initialise converters */
@@ -204,12 +205,14 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	
 	if (langcode) {
 		try {
+			Dictionary dict;
 			if (path) {
-				DictionaryLoader::load(string(langcode), string(path));
+				dict = DictionaryLoader::load(string(langcode), string(path));
 			}
 			else {
-				DictionaryLoader::load(string(langcode));
+				dict = DictionaryLoader::load(string(langcode));
 			}
+			voikko_options.morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 		}
 		catch (DictionaryException e) {
 			#ifdef HAVE_ICONV
@@ -254,7 +257,9 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		#endif
-		libvoikko::morphology::malaga::terminate_libmalaga();
+		voikko_options.morAnalyzer->terminate();
+		delete voikko_options.morAnalyzer;
+		voikko_options.morAnalyzer = 0;
 		/*int c = 0;
 		for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;
 		printf("Cache slots used: %d\n", c);*/

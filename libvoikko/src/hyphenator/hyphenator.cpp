@@ -20,8 +20,6 @@
 #include "hyphenator/hyphenator.hpp"
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
-#include "setup/setup.hpp"
-#include "morphology/AnalyzerFactory.hpp"
 #include <wchar.h>
 #include <stdlib.h>
 #include <wctype.h>
@@ -205,7 +203,8 @@ void interpret_analysis(const Analysis * analysis, char * buffer, size_t len) {
 	}
 }
 
-char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
+char ** split_compounds(voikko_options_t * voikkoOptions, const wchar_t * word,
+	                size_t len, int * dot_removed) {
 	char ** all_results = new char*[LIBVOIKKO_MAX_ANALYSIS_COUNT + 1];
 	if (all_results == 0) return 0;
 	all_results[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
@@ -216,7 +215,7 @@ char ** split_compounds(const wchar_t * word, size_t len, int * dot_removed) {
 	}
 	size_t utf8_len = strlen(word_utf8);
 	
-	const Analyzer * analyzer = AnalyzerFactory::getAnalyzer();
+	Analyzer * analyzer = voikkoOptions->morAnalyzer;
 	list<Analysis *> * analyses = analyzer->analyze(word_utf8);
 	
 	/* We may have to remove the trailing dot before hyphenation */
@@ -379,7 +378,7 @@ VOIKKOEXPORT char * voikko_hyphenate_ucs4(int /*handle*/, const wchar_t * word) 
 	}
 	
 	ENTER_V
-	char ** hyphenations = split_compounds(word, wlen, &dot_removed);
+	char ** hyphenations = split_compounds(&voikko_options, word, wlen, &dot_removed);
 	if (hyphenations == 0) {
 		EXIT_V
 		return 0;

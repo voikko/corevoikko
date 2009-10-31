@@ -77,6 +77,10 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 	return analysisList;
 }
 
+void MalagaAnalyzer::terminate() {
+	terminate_libmalaga();
+}
+
 static symbol_t findSymbol(const char * name) {
 	value_t symbolValue = parse_malaga_symbol(name);
 	symbol_t symbol = value_to_symbol(symbolValue);

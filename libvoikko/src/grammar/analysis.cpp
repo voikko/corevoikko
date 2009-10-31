@@ -19,8 +19,6 @@
 #include "grammar/analysis.hpp"
 #include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
-#include "setup/setup.hpp"
-#include "morphology/AnalyzerFactory.hpp"
 #include <cstdlib>
 #include <cstring>
 
@@ -31,7 +29,7 @@ namespace libvoikko {
 
 /** Analyze given text token. Token type, length and text must have already
  *  been set. */
-void gc_analyze_token(int /*handle*/, Token * token) {
+static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->isValidWord = false;
 	token->firstLetterLcase = false;
 	token->possibleSentenceStart = false;
@@ -40,8 +38,7 @@ void gc_analyze_token(int /*handle*/, Token * token) {
 	wchar_t * wordBuffer =
 	    utils::StringUtils::stripSpecialCharsForMalaga(token->str,
 	                                                   token->tokenlen);
-	const morphology::Analyzer * analyzer =
-	    morphology::AnalyzerFactory::getAnalyzer();
+	morphology::Analyzer * analyzer = voikkoOptions->morAnalyzer;
 	list<morphology::Analysis *> * analyses = analyzer->analyze(wordBuffer);
 	delete[] wordBuffer;
 	
@@ -62,8 +59,8 @@ void gc_analyze_token(int /*handle*/, Token * token) {
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */
-Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
-                                   size_t textlen, size_t sentencepos) {
+static Sentence * gc_analyze_sentence(voikko_options_t * voikkoOptions,
+	          const wchar_t * text, size_t textlen, size_t sentencepos) {
 	Sentence * s = new Sentence;
 	s->pos = sentencepos;
 	size_t tokenlen;
@@ -74,7 +71,7 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 		enum voikko_token_type tt;
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
-		tt = voikko_next_token_ucs4(handle, pos, remaining, &tokenlen);
+		tt = voikko_next_token_ucs4(1, pos, remaining, &tokenlen);
 		voikko_options.ignore_dot = ignore_dot_saved;
 		if (tt == TOKEN_NONE) return s;
 
@@ -86,7 +83,7 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 		tstr[tokenlen] = L'\0';
 		s->tokens[i].str = tstr;
 		s->tokens[i].pos = sentencepos + (pos - text);
-		gc_analyze_token(handle, s->tokens + i);
+		gc_analyze_token(voikkoOptions, s->tokens + i);
 		
 		if (next_word_is_possible_sentence_start && tt == TOKEN_WORD) {
 			s->tokens[i].possibleSentenceStart = true;
@@ -110,7 +107,7 @@ Sentence * gc_analyze_sentence(int handle, const wchar_t * text,
 }
 
 
-Paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textlen) {
+Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
 	Paragraph * p = new Paragraph;
 	const wchar_t * pos = text;
 	size_t remaining = textlen;
@@ -120,14 +117,15 @@ Paragraph * gc_analyze_paragraph(int handle, const wchar_t * text, size_t textle
 		size_t sentencelen = 0;
 		do {
 			size_t sentencelen2;
-			st = voikko_next_sentence_start_ucs4(handle, pos2, remaining,
+			st = voikko_next_sentence_start_ucs4(1, pos2, remaining,
 			                                     &sentencelen2);
 			pos2 += sentencelen2;
 			sentencelen += sentencelen2;
 			remaining -= sentencelen2;
 		} while (st == SENTENCE_POSSIBLE);
 		
-		Sentence * s = gc_analyze_sentence(handle, pos, sentencelen, pos - text);
+		Sentence * s = gc_analyze_sentence(voikkoOptions, pos, sentencelen,
+		                                   pos - text);
 		if (!s) {
 			delete p;
 			return 0;

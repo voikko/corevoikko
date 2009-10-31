@@ -27,7 +27,7 @@ SuggestionGeneratorReplacement::SuggestionGeneratorReplacement(
 	const wchar_t * replacements) :
 	replacements(replacements) { }
 
-void SuggestionGeneratorReplacement::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength() + 1];
 	wcsncpy(buffer, s->getWord(), s->getWordLength());
 	buffer[s->getWordLength()] = L'\0';
@@ -37,8 +37,8 @@ void SuggestionGeneratorReplacement::generate(SuggestionStatus * s) const {
 		for (wchar_t * pos = wcschr(buffer, from); pos != 0;
 		     pos = wcschr(pos+1, from)) {
 			*pos = to;
-			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-			    s->getWordLength());
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;
 			*pos = from;
 		}
@@ -51,8 +51,8 @@ void SuggestionGeneratorReplacement::generate(SuggestionStatus * s) const {
 		for (wchar_t * pos = wcschr(buffer, upper_from); pos != 0;
 		     pos = wcschr(pos + 1, upper_from)) {
 			*pos = towupper(to);
-			SuggestionGeneratorCaseChange::suggestForBuffer(s, buffer,
-			     s->getWordLength());
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;
 			*pos = upper_from;
 		}
