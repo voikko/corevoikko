@@ -20,7 +20,10 @@
 #define VOIKKO_MORPHOLOGY_HFST_ANALYZER
 
 #include "morphology/Analyzer.hpp"
+#include "setup/DictionaryException.hpp"
 #include <map>
+#include <string>
+#include <hfst2/hfst.h>
 
 namespace libvoikko { namespace morphology {
 
@@ -29,11 +32,16 @@ namespace libvoikko { namespace morphology {
  */
 class HfstAnalyzer : public Analyzer {
 	public:
+		HfstAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
 		std::list<Analysis *> * analyze(const wchar_t * word) const;
 		std::list<Analysis *> * analyze(const wchar_t * word,
 		                                size_t wlen) const;
 		std::list<Analysis *> * analyze(const char * word) const;
 		void terminate();
+	private:
+		HWFST::KeyTable * keyTable;
+		HWFST::TransducerHandle morphology;
+		void addAnalysis(HWFST::KeyVector * hfstAnalysis, std::list<Analysis *> * analysisList, size_t charCount) const;
 };
 
 } }

@@ -20,12 +20,26 @@
 #include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
+#include <fstream>
+#include <hfst2/string.h>
 
 using namespace std;
 using namespace libvoikko::utils;
 
 namespace libvoikko { namespace morphology {
 
+HfstAnalyzer::HfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+	keyTable = HWFST::create_key_table();
+	string morFile = directoryName + "/mor.hwfst";
+	ifstream morStream(morFile.c_str());
+	if (morStream.good()) {
+		morphology = HWFST::read_transducer(morStream, keyTable);
+	}
+	else {
+		throw setup::DictionaryException("Failed to open mor.hfst");
+	}
+}
+    
 list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word) const {
 	return analyze(word, wcslen(word));
 }
@@ -42,14 +56,47 @@ list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
 }
 
 list<Analysis *> * HfstAnalyzer::analyze(const char * word) const {
-	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
+	size_t wlen = strlen(word);
+	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
+	HWFST::KeyVector * wordPath = HWFST::stringUtf8ToKeyVector(word, keyTable);
+	HWFST::KeyVectorVector * analysisVector = HWFST::lookup_all(morphology, wordPath);
+	int currentAnalysisCount = 0;
+	for (HWFST::KeyVectorVector::iterator analysisIt = analysisVector->begin();
+	     analysisIt != analysisVector->end() && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT;
+	     ++analysisIt) {
+		HWFST::KeyVector * analysis = *analysisIt;
+		addAnalysis(analysis, analysisList, wlen);
+		delete analysis;
+		++currentAnalysisCount;
+	}
+	delete analysisVector;
+	delete wordPath;
 	return analysisList;
 }
 
+void HfstAnalyzer::addAnalysis(HWFST::KeyVector * hfstAnalysis, list<Analysis *> * analysisList, size_t charCount) const {
+	Analysis * analysis = new Analysis();
+	string * analysisString = HWFST::keyVectorToString(hfstAnalysis, keyTable);
+	// TODO: do something with the analysis
+	delete analysisString;
+	wchar_t * structure = new wchar_t[charCount + 2];
+	structure[0] = L'=';
+	for (size_t i = 1; i < charCount + 1; i++) {
+		structure[i] = L'p';
+	}
+	structure[charCount + 1] = L'\0';
+	analysis->addAttribute("STRUCTURE", structure);
+	analysis->addAttribute("CLASS", utils::StringUtils::copy(L"none"));
+	analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
+	analysisList->push_back(analysis);
+}
+
 void HfstAnalyzer::terminate() {
+	delete keyTable;
+	keyTable = 0;
 }
 
 } }

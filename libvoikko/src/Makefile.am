@@ -108,6 +108,7 @@ autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)
 
 if HAVE_HFST
     libvoikko_la_SOURCES += morphology/HfstAnalyzer.cpp
+    libvoikko_la_LDFLAGS += -lhfst
 else
     EXTRA_DIST += morphology/HfstAnalyzer.cpp
 endif

@@ -25,18 +25,20 @@
 #include "morphology/HfstAnalyzer.hpp"
 #endif
 
+using namespace std;
+
 namespace libvoikko { namespace morphology {
 
 Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
 	if (dictionary.getMorBackend() == "malaga") {
-		std::string projectDirectory(dictionary.getMorPath());
+		string projectDirectory(dictionary.getMorPath());
 		malaga::init_libmalaga(projectDirectory.c_str());
 		return new MalagaAnalyzer();
 	}
 	#ifdef HAVE_HFST
 	if (dictionary.getMorBackend() == "hfst") {
-		return new HfstAnalyzer();
+		return new HfstAnalyzer(dictionary.getMorPath());
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create analyzer because of unknown morphology backend");

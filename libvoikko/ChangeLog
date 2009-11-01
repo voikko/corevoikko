@@ -1,3 +1,8 @@
+2009-11-01 Harri Pitkänen <hatapitk@iki.fi>
+
+	* HFST analyzer backend returns correct number of analyses.
+	  Analysis attributes contain dummy values only.
+
 2009-10-31 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add configure option --enable-hfst.
