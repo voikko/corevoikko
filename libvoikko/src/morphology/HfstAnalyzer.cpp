@@ -36,7 +36,7 @@ HfstAnalyzer::HfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 		morphology = HWFST::read_transducer(morStream, keyTable);
 	}
 	else {
-		throw setup::DictionaryException("Failed to open mor.hfst");
+		throw setup::DictionaryException("Failed to open mor.hwfst");
 	}
 }
     
