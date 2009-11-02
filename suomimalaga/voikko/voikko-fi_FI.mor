@@ -190,7 +190,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if (tavuviiva in $oikea.jatko and ($oikea.tiedot = nil or
         (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
       result <[alku: $sana] + $oikea>, rules nimisana, nimisana_laatusanasta,
-             nimisana_teonsanasta, etuliite, paikannimen_lainen_johdos,
+             nimisana_teonsanasta, nimi_laatusanan_etuliite, paikannimen_lainen_johdos,
              yhdysmerkki_yleisnimen_jälkeen, inen_johdos_nimisanasta,
              inen_päätteinen_laatusana; # Kieli=poliittinen
     end;
@@ -261,6 +261,34 @@ combi_rule nimisanan_etuliite ($vasen, $oikea, $sana, $index):
     result $res, rules yhdysmerkki_etuliitteen_jälkeen;
   end;
   result $res, rules etuliite, nimisana, nimisana_teonsanasta;
+end;
+
+combi_rule nimi_laatusanan_etuliite ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = etuliite;
+
+  ? $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
+  ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
+    result $res, rules
+      inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos;
+  elseif nimisana in $oikea.jatko then
+    result $res, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
+  elseif laatusana in $oikea.jatko then
+    result $res, rules laatusana, paikannimen_lainen_johdos;
+  end;
+
+  if (kieltosana in $oikea.jatko) then
+    result $res, rules kieltosana;
+  else
+    if tavuviiva in $oikea.jatko then
+      result $res, rules yhdysmerkki_etuliitteen_jälkeen;
+    else
+      result $res, accept;
+    end;
+    result $res, rules etuliite, nimisana, nimisana_teonsanasta;
+  end;
 end;
 
 ###### ETULIITESÄÄNNÖT PÄÄTTYVÄT
