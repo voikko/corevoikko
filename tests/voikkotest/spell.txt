@@ -103,6 +103,8 @@ virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
 !kaivertajajuoda
 !kaivertajajoi
 kaivertajajuonti
+tomahawkjänis
+!tomahawkijänis
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen

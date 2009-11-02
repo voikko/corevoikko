@@ -4570,7 +4570,7 @@ subrule kalsium ($tietue, $vahva_aste, $heikko_aste):
                                   $vahva_aste + "i", $heikko_aste + "i",
                                   [osanto_A: $vahva_aste  + "i"],
                                   sisätulento_Vn,
-                                  $vahva_aste + "i", $vahva_aste + "i") +
+                                  $vahva_aste + "i", $vahva_aste) +
                         [johdin_tOn:      $heikko_aste + "e",
                          johdin_llinen:   $heikko_aste + "e",
                          johdin_lAinen:   $vahva_aste + "i",
@@ -4582,8 +4582,7 @@ subrule kalsium ($tietue, $vahva_aste, $heikko_aste):
                                   [omanto_en: $vahva_aste  + "i"],
                                   [osanto_jA: $vahva_aste  + "e"],
                                   [sisätulento_ihin: $vahva_aste  + "e"],
-                                  $heikko_aste + "i"))
-         + yhdyssanan_taivutuskaava ($tietue, $vahva_aste);
+                                  $heikko_aste + "i"));
 end;
 
 
