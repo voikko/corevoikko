@@ -580,6 +580,15 @@ lahtea # Kotus 7
 !lahta # Kotus 7
 jäljettä # Kotus 7
 !jälettä # Kotus 7
+kaidempi # Kotus 9, komparatiivi
+kaidin # Kotus 9, superlatiivi
+kaidoin # Kotus 9, superlatiivi
+!kaiin # Kotus 9, superlatiivi
+liiempi # Kotus 9, komparatiivi
+liioin # Kotus 9, superlatiivi
+!liiin # Kotus 9, superlatiivi
+sankempi # Kotus 9, komparatiivi
+sankin # Kotus 9, superlatiivi
 rei'illä # Kotus 10
 !reiillä # Kotus 10
 pöytämäinen # Kotus 10
