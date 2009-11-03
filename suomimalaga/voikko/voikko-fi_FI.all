@@ -439,7 +439,7 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (jälki in $tietue.jatko) then
-    choose $i in jälki ($tietue, "k", "j");
+    choose $i in lovi ($tietue, "k", "j");
     result $i.alku, $i - alku;
 
 
@@ -4747,28 +4747,6 @@ subrule kumpi ($tietue, $vahva_aste, $heikko_aste, $ääntiö):
 end;
 
 
-subrule jälki ($tietue, $vahva_aste, $heikko_aste):
-  return lovi ($tietue, $vahva_aste, $heikko_aste) +
-         taivutuskaava ($tietue,                 # Murteelliset muodot
-                        [omanto_n:        "e",   # Jälen.
-                         tulento_ksi:     "e",   # Jäleksi.
-                         sisäolento_ssA:  "e",
-                         sisäeronto_stA:  "e",
-                         ulkopaikallissija_llA: "e",
-                         vajanto_ttA:     "e",
-                         johdin_tOn:      "e",
-                         johdin_llinen:   "e",
-# Ei tarvita johdosta johdin_inen ("jäleinen"). HV 13.5.2006.
-# Eikä johdin_lAinen ("jälelainen"). HV 13.7.2006.
-# Eikä johdin_mAinen ("jälemainen"). HV 24.7.2006.
-                         nimentö_t:        "e",
-                         sija_monikko_1:     "",
-                         ulkopaikallissija_illA: "",
-                         vajanto_ittA:     "",
-                         keinonto_in:         ""]);
-end;
-
-
 subrule vapaa ($tietue, $ääntiö):
   return taivutuskaava ($tietue,
                         yksikkö8 ($ääntiö, $ääntiö, $ääntiö, $ääntiö,
@@ -5000,9 +4978,7 @@ subrule lapsi ($tietue):
                          vajanto_ittA:     "ps",
                          seuranto_ine:     "ps",
                          keinonto_in:      "ps",
-                         johdin_ittAin:    "ps"]) +
-         taivutuskaava ($tietue, [olento_nA: "s"]);  # Las+na.
-         # Ei tunnista olentoa las+sa.
+                         johdin_ittAin:    "ps"]);
 end;
 
 

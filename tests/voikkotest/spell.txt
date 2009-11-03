@@ -578,6 +578,8 @@ nailoninen # Kotus 6
 !nailoniinen # Kotus 6
 lahtea # Kotus 7
 !lahta # Kotus 7
+jäljettä # Kotus 7
+!jälettä # Kotus 7
 rei'illä # Kotus 10
 !reiillä # Kotus 10
 pöytämäinen # Kotus 10
@@ -602,6 +604,8 @@ lohien # Kotus 23
 tuohimainen # Kotus 23
 unien # Kotus 24
 unten # Kotus 24
+lapsena # Kotus 25
+!lasna # Kotus 25
 !ikennä # Kotus 32
 hervottomimman # Kotus 34
 hervottomimpaa # Kotus 34
