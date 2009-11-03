@@ -1150,7 +1150,7 @@ allo_rule generate_allos ($tietue):
   elseif (lahti in $tietue.jatko) then 
     choose $i in taivutuskaava ($tietue,
                                 yksikkö8 ("te", "ti", "te", "de",
-                                          [osanto_A: "te", osanto_tA: ""],
+                                          [osanto_A: "te"],
                                           sisätulento_Vn, "de", "di") +
                                 [johdin_tOn:    "de",
                                  johdin_llinen: "de",

@@ -576,6 +576,8 @@ luo'on # Kotus 1
 !nailonnen # Kotus 6
 nailoninen # Kotus 6
 !nailoniinen # Kotus 6
+lahtea # Kotus 7
+!lahta # Kotus 7
 rei'illä # Kotus 10
 !reiillä # Kotus 10
 pöytämäinen # Kotus 10
