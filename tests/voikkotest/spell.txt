@@ -621,6 +621,8 @@ vilkkaana # Kotus 41
 !-rukiiinen # Kotus 41
 -rukiinen # Kotus 41
 !-rukinen # Kotus 41
+vieraat # Kotus 41
+!vierahat # Kotus 41
 röyhkeäpenkereinen # Kotus 49
 röyhkeäpenkerinen # Kotus 49
 säen # Kotus 49

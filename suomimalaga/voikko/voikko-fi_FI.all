@@ -5081,13 +5081,13 @@ subrule vieras ($tietue, $vahva_aste, $heikko_aste, $monikko, $johdin_Us):
                          keinonto_in:       $monikko,
                          johdin_ittAin:     $monikko,
                          yliaste:           $monikko]) +
-         s_hV_loppuinen ($tietue,
-                         $monikko + hA($tietue),
-                         $monikko + "h")+
-	 voikko_lista_vain_lipulla(vanhat_muodot, 
-	                 taivutuskaava ($tietue,
-	                                [olento_nA: $heikko_aste])  # Vieras+na.
-	                 );
+         voikko_lista_vain_lipulla(vanhat_muodot, 
+                        s_hV_loppuinen ($tietue,
+                                        $monikko + hA($tietue),
+                                        $monikko + "h") + # vierahat
+                        taivutuskaava ($tietue,
+                                        [olento_nA: $heikko_aste])  # Vieras+na.
+                       );
 end;
 
 
