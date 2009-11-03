@@ -2732,7 +2732,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (nousta in $tietue.jatko) then
     choose $i in nuolaista ($tietue, "", "")
-                 + sana_U ($tietue, "");  # Nousu.
+                 + sana_U ($tietue + [äs: ääntiösointu($tietue)], "");  # Nousu.
     result $i.alku, $i - alku;
 
   elseif (vavista in $tietue.jatko) then

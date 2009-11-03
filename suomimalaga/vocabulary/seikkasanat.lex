@@ -293,7 +293,7 @@
 [perusmuoto: "juttusilla", alku: "juttusilla", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "juttusilla", alku: "juttusille", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "juttusilla", alku: "juttusilta", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
-[perusmuoto: "juuri", alku: "juur", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "juuri", alku: "juuri", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jäljekkäin", alku: "jälekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "jäljekkäin", alku: "jäljekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "jäljemmäs", alku: "jäljemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

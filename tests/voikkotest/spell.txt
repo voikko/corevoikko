@@ -705,6 +705,12 @@ kihajaa # Kotus 66
 !kihäjää # Kotus 66
 !helajaa # Kotus 66
 heläjää # Kotus 66
+!pesy # Kotus 66
+pesu # Kotus 66
+!pääsu # Kotus 66
+pääsy # Kotus 66
+ihmettely # Kotus 67
+!ihmettelu # Kotus 67
 lobbasi # Kotus 73
 peljätköön # Kotus 73
 !peljäsi # Kotus 73
