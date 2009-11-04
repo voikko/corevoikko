@@ -811,7 +811,7 @@
 [perusmuoto: "retuperällä", alku: "retuperällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "reunempana", alku: "reunem", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "reunimpana", alku: "reunim", luokka: seikkasana, jatko: <sivumpana>, äs: a];
-[perusmuoto: "rikki", alku: "rik", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "rikki", alku: "rikki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "rillumarei", alku: "rillumarei", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a]; # Voinee taivuttaa täydellisesti
 [perusmuoto: "rinnakkain", alku: "rinnakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ristikkäin", alku: "ristikkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
