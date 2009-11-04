@@ -573,6 +573,8 @@ pehkon # Kotus 1
 !pehon # Kotus 1
 luo'on # Kotus 1
 !luoon # Kotus 1
+tappiota # Kotus 3
+!tappioa # Kotus 3
 !nailonnen # Kotus 6
 nailoninen # Kotus 6
 !nailoniinen # Kotus 6
@@ -599,6 +601,12 @@ höppänimmän # Kotus 12
 Berija # Kotus 12
 Berijoiden # Kotus 12
 Berijoitten # Kotus 12
+jäkälää # Kotus 12
+!jäkälätä # Kotus 12
+kurpitsaa # Kotus 13
+!kurpitsata # Kotus 13
+vaahteraa # Kotus 13
+!vaahterata # Kotus 13
 ainoisiin # Kotus 15
 ainoihin # Kotus 15
 nugaata # Kotus 20

@@ -274,7 +274,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (autio in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
-                                yksikkö_autio ($tietue, "") +
+                                yksikkö_autio ($tietue, "", [osanto_tA: ""]) +
                                 monikko7 ("", "", "",
                                           [omanto_iT: "", omanto_in: ""],
                                           [osanto_itA: ""],
@@ -703,7 +703,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (matala in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
-                                yksikkö_autio ($tietue, A($tietue)) +
+                                yksikkö_autio ($tietue, A($tietue), [osanto_A: A($tietue)]) +
                                 monikko7 (A($tietue), "", "",
                                           [omanto_ien: "",
                                            omanto_in:  A($tietue)],
@@ -770,7 +770,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (karahka in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
-                                yksikkö_autio ($tietue, A($tietue)) +
+                                yksikkö_autio ($tietue, A($tietue), [osanto_A: A($tietue)]) +
                                 monikko7 (A($tietue), O($tietue), O($tietue),
                                           [omanto_iT:  O($tietue),
                                            omanto_jen: O($tietue),
@@ -821,7 +821,7 @@ allo_rule generate_allos ($tietue):
   elseif ((peruna in $tietue.jatko) or
           (pasuuna in $tietue.jatko)) then
     choose $i in taivutuskaava ($tietue,
-                                yksikkö_autio ($tietue, A($tietue)) +
+                                yksikkö_autio ($tietue, A($tietue), [osanto_A: A($tietue)]) +
                                 monikko7 (A($tietue), O($tietue), O($tietue),
                                           [omanto_iT:  O($tietue),
                                            omanto_jen: O($tietue),
@@ -6305,10 +6305,10 @@ end;
 
 # Sana, joka taipuu yksikössä kuten autio.
 #
-subrule yksikkö_autio ($tietue, $lisä):
+subrule yksikkö_autio ($tietue, $lisä, $osannot):
   if ($tietue.luokka = nimisana) then
     return yksikkö8 ($lisä, $lisä, $lisä, $lisä,
-                     [osanto_A: $lisä, osanto_tA: $lisä],
+                     $osannot,
                      sisätulento_Vn,
                      $lisä, $lisä) +
            [johdin_tOn:    $lisä,
