@@ -614,7 +614,8 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (pata in $tietue.jatko) then
-    choose $i in kala ($tietue, "t", "d", "de", "d");
+    choose $i in kala ($tietue, "t", "d", "de", "d") +
+                 taivutuskaava($tietue, [yliaste: "d" + O($tietue)]);
     result $i.alku, $i - alku;
 
   elseif (parta in $tietue.jatko) then
@@ -3060,8 +3061,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (kuitata in $tietue.jatko) then
-    choose $i in salata_salailla ($tietue, tA($tietue), A($tietue))
-                 + salaus ($tietue, tA($tietue));
+    choose $i in salata_salailla ($tietue, tA($tietue), A($tietue));
     result $i.alku, $i - alku;
 
   elseif (ladata in $tietue.jatko) then

@@ -586,6 +586,7 @@ kaidempi # Kotus 9, komparatiivi
 kaidin # Kotus 9, superlatiivi
 kaidoin # Kotus 9, superlatiivi
 !kaiin # Kotus 9, superlatiivi
+kaidointa # Kotus 9, superlatiivi
 liiempi # Kotus 9, komparatiivi
 liioin # Kotus 9, superlatiivi
 !liiin # Kotus 9, superlatiivi
@@ -737,6 +738,8 @@ ihmettely # Kotus 67
 lobbasi # Kotus 73
 peljätköön # Kotus 73
 !peljäsi # Kotus 73
+pynttäys # Kotus 73
+!pynttäs # Kotus 73
 kapsaa # Kotus 78
 !kapsan # Kotus 78
 !kapsat # Kotus 78
