@@ -711,6 +711,8 @@ lyhennettiin # Kotus 54
 !lyhendettiin # Kotus 54
 sousi # Kotus 55
 souti # Kotus 55
+häädin # Kotus 55
+!häälin # Kotus 55
 !saaretaan # Kotus 57
 !saarettiin # Kotus 57
 saarretaan # Kotus 57

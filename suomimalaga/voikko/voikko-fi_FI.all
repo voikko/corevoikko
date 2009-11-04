@@ -2325,7 +2325,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (soutaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "d")
-                 + tositavan_kertoma($tietue, "t", "l") # Souti
+                 + tositavan_kertoma($tietue, "t", "d") # Souti
                  + muistella ($tietue, "t", "d");  # Soudella.
     result $i.alku, $i - alku;
 
