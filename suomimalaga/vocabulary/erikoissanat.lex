@@ -222,7 +222,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "mikään", alku: "millään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "miltään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "mikään", alku: "mitänä", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mitänä", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
 
 ######################################################
 

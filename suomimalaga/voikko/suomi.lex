@@ -1139,12 +1139,6 @@ define @jatko_ttOm := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
 [alku: "ttöm", luokka: johdin_tOn, äs: ä, jatko: <johdin_UUs>, perusmuoto: "ttöm"];
 
 
-define @jatko_tOin := <liitesana, loppu, omanto_ten, osanto_tA, olento_nA>;
-
-[alku: "toin", luokka: johdin_tOn, äs: a, jatko: @jatko_tOin, perusmuoto: "toin"];
-[alku: "töin", luokka: johdin_tOn, äs: ä, jatko: @jatko_tOin, perusmuoto: "töin"];
-
-
 [alku: "-", luokka: tavuviiva, äs: aä, jatko: @yhdyssana + <loppu>];  # Linja-auto.
 
 [alku: ":", luokka: kaksoispiste, äs: aä, jatko: <sijapääte>];
