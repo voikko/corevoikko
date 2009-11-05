@@ -481,6 +481,8 @@ katkeruuksittain # myös "kokonaisuuksittain"
 pamahduksittain
 kissaton
 !kissatoin
+uivaa
+!uivata
 
 [sijapäätteet]
 !Erkkiän
@@ -598,6 +600,8 @@ rei'illä # Kotus 10
 !reiillä # Kotus 10
 pöytämäinen # Kotus 10
 !pöydämäinen # Kotus 10
+pitkyys # Kotus 10
+!pityys # Kotus 10
 höppänin # Kotus 12
 !höppänöimmän # Kotus 12
 höppänimmän # Kotus 12
@@ -720,6 +724,8 @@ häädin # Kotus 55
 !saarettiin # Kotus 57
 saarretaan # Kotus 57
 saarrettiin # Kotus 57
+potiko # Kotus 58
+!posiko # Kotus 58
 rangaissee # Kotus 66
 !rankaissen # Kotus 66
 rangaistane # Kotus 66

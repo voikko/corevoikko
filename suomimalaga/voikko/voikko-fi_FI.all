@@ -2575,8 +2575,7 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (potea in $tietue.jatko) then
-    choose $i in tositavan_kertoman_vahva_aste ($tietue, "s")
-                 + käskytapa ($tietue, "de")
+    choose $i in käskytapa ($tietue, "de")
                  + taivutuskaava ($tietue,
                                   tositapa ($tietue, "te", "de", "t", "d",
                                             tositapa_4_tt ("de")) +
@@ -4185,7 +4184,7 @@ subrule pitkä ($tietue):
                                   "te",
                                   "tk" + A($tietue)) +
                         [johdin_tOn:    "tk" + A($tietue),
-                         johdin_UUs:    "t",
+                         johdin_UUs:    "tk",
                          johdin_llinen: "tk" + A($tietue),
                          johdin_inen:   "tk" + A($tietue)] +
                         monikko7 ("tk" + A($tietue), "tk", "tk",

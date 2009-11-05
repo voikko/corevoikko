@@ -930,7 +930,7 @@ define @jatko_s := <osanto_tA, omanto_ien, omanto_ten,
 [alku: "mäisillä", luokka: nimitapa_5, äs: ä, perusmuoto: "mäisillä", jatko: <omistusliite>];
 
 define @jatko_vE1 :=
-       <omanto_n, osanto_A, osanto_tA, olento_nA, tulento_ksi,
+       <omanto_n, osanto_A, olento_nA, tulento_ksi,
         sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
         ulkopaikallissija_llA,
         vajanto_ttA, kerronto_sti, omistusliite, liitesana,
