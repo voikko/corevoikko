@@ -45,9 +45,8 @@ typedef struct
 
 /* Variables. ===============================================================*/
 
-static int_t bottom; /* Index of first stack element used in this branch. */
 
-static list_t path_list; /* List of nodes for alternative paths. */
+static list_t path_list; /* List of nodes for alternative paths. FIXME */
 
 /* Rule execution. ==========================================================*/
 
@@ -99,12 +98,13 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 /* Execute rule RULE_NUMBER in the rule system RULE_SYS.
  * Any parameters must be on the value stack. */
 { 
-  static symbol_t nil = NIL_SYMBOL; /* The "nil" symbol. */
+  static symbol_t nil = NIL_SYMBOL; /* The "nil" symbol. FIXME */
   path_node_t *path;
           
   /* Initialise the value stack. */
   top = rule_sys->rules[ rule_number ].param_count;
-  int_t base = bottom = 0;
+  int_t base = 0;
+  int_t bottom = 0;
 
   /* Reset nesting and alternative paths. */
   while (path_list.first != NULL) 
