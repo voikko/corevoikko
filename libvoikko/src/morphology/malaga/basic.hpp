@@ -15,18 +15,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 enum {BITS_PER_BYTE = 8};
 
-/* Attribute for a function that never returns. */
-#ifdef __GNUC__
-#define NO_RETURN_SUFFIX __attribute__((noreturn))
-#else
-#define NO_RETURN_SUFFIX
-#endif
-#ifdef _MSC_VER
-#define NO_RETURN_PREFIX __declspec(noreturn)
-#else
-#define NO_RETURN_PREFIX
-#endif
-
 /* Basic types. =============================================================*/
 
 /* Numeric types. */
@@ -42,18 +30,7 @@ typedef unsigned long ptr_t; /* Pointer in arithmetic expressions. */
 typedef char char_t; /* A single char. */
 typedef const char_t *string_t; /* A constant EOS-terminated C string. */
 enum {EOS= '\0'}; /* End-Of-String control character. */
-#define ORD(c) ((u_byte_t) (c)) /* The ordinal number of character C. */
 
-/* Macros. ==================================================================*/
-
-#undef MIN
-#define MIN(a,b) ((a) < (b) ? (a) : (b)) /* Minimum of A and B. */
-#undef MAX
-#define MAX(a,b) ((a) > (b) ? (a) : (b)) /* Maximum of A and B. */
-#undef ABS
-#define ABS(a) ((a) >= 0 ? (a) : (-a)) /* Absolute value of A. */
-
-#define ARRAY_LENGTH(a) (sizeof(a) / sizeof( (a)[0] ))
 
 /* Forward-linked lists. ====================================================*/
                                               
@@ -102,12 +79,6 @@ extern void free_first_node( list_t *list );
   for ((var) = (type *) (list).first; \
        (var) != NULL; \
        (var) = (type *) (var)->next)
-
-/* Iterate through a "list_t" and free every node in it. */
-#define FOREACH_FREE(var, list, type) \
-  for ((var) = (type *) (list).first; \
-       (var) != NULL; \
-       (var) = (type *) (var)->next, free_first_node( &(list) ))
 
 /* Memory functions. ========================================================*/
 
@@ -165,17 +136,5 @@ extern void add_char_to_text( text_t *text, char_t character );
 extern char_t *text_to_string( text_t **text_p );
 /* Return content of *TEXT_P as a string and delete *TEXT_P.
  * The string must be freed after use. */
-
-/* Add CHARACTER to TEXT (macro version). */
-#define ADD_CHAR_TO_TEXT( text, character ) \
-do { \
-  if (text->buffer_size < text->string_size + 2) \
-  { \
-    text->buffer_size = renew_vector( &text->buffer, sizeof( char_t ), \
-				      2 * (text->string_size + 1) ); \
-  } \
-  text->buffer[ text->string_size++ ] = character; \
-  text->buffer[ text->string_size ] = EOS; \
-} while (false)
 
 }}}
