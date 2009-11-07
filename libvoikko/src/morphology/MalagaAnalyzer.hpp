@@ -21,6 +21,7 @@
 
 #include "morphology/Analyzer.hpp"
 #include "morphology/malaga/malaga.hpp"
+#include "setup/DictionaryException.hpp"
 #include <map>
 
 namespace libvoikko { namespace morphology {
@@ -40,6 +41,7 @@ enum MalagaSymbol {
  */
 class MalagaAnalyzer : public Analyzer {
 	public:
+		MalagaAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
 		std::list<Analysis *> * analyze(const wchar_t * word) const;
 		std::list<Analysis *> * analyze(const wchar_t * word,
 		                                size_t wlen) const;
@@ -53,12 +55,11 @@ class MalagaAnalyzer : public Analyzer {
 		void parsePerusmuoto(Analysis * &analysis, malaga::value_t &result) const;
 		wchar_t * parseBaseform(wchar_t * &perusmuoto) const;
 		wchar_t * parseAttributeFromPerusmuoto(wchar_t * &perusmuoto, wchar_t id) const;
-		static void initSymbols();
+		void initSymbols();
 		
-		static bool symbolsInited;
-		static malaga::symbol_t symbols[MS_LAST_SYMBOL];
-		static std::map<malaga::symbol_t, const wchar_t *> sijamuotoMap;
-		static std::map<malaga::symbol_t, const wchar_t *> classMap;
+		malaga::symbol_t symbols[MS_LAST_SYMBOL];
+		std::map<malaga::symbol_t, const wchar_t *> sijamuotoMap;
+		std::map<malaga::symbol_t, const wchar_t *> classMap;
 };
 
 } }

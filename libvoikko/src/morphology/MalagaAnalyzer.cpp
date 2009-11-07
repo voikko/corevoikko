@@ -17,7 +17,6 @@
  *********************************************************************************/
 
 #include "morphology/MalagaAnalyzer.hpp"
-#include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
 #include <wchar.h>
@@ -29,10 +28,10 @@ using namespace libvoikko::morphology::malaga;
 
 namespace libvoikko { namespace morphology {
 
-bool MalagaAnalyzer::symbolsInited = false;
-symbol_t MalagaAnalyzer::symbols[] = {0,0,0};
-map<symbol_t, const wchar_t *> MalagaAnalyzer::sijamuotoMap;
-map<symbol_t, const wchar_t *> MalagaAnalyzer::classMap;
+MalagaAnalyzer::MalagaAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+	malaga::init_libmalaga(directoryName.c_str());
+	initSymbols();
+}
 
 list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word) const {
 	return analyze(word, wcslen(word));
@@ -55,7 +54,6 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	try {
-		initSymbols();
 		analyse_item(word);
 		value_t res = first_analysis_result();
 		int currentAnalysisCount = 0;
@@ -95,9 +93,6 @@ static void insertToSymbolMap(map<symbol_t, const wchar_t *> &map,
 }
 
 void MalagaAnalyzer::initSymbols() {
-	if (symbolsInited) {
-		return;
-	}
 	for (size_t sym = MS_RAKENNE; sym < MS_LAST_SYMBOL; sym++) {
 		const char * symbolName = 0;
 		switch (sym) {
@@ -153,8 +148,6 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(classMap, "kieltosana", L"kieltosana");
 	insertToSymbolMap(classMap, "lyhenne", L"lyhenne");
 	insertToSymbolMap(classMap, "lukusana", L"lukusana");
-	
-	symbolsInited = true;
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {
@@ -168,7 +161,7 @@ void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const
 void MalagaAnalyzer::parseSijamuoto(Analysis * &analysis, value_t &result) const {
 	value_t sijamuotoVal = get_attribute(result, symbols[MS_SIJAMUOTO]);
 	symbol_t sijamuoto = value_to_symbol(sijamuotoVal);
-	map<symbol_t, const wchar_t *>::iterator mapIterator = sijamuotoMap.find(sijamuoto);
+	map<symbol_t, const wchar_t *>::const_iterator mapIterator = sijamuotoMap.find(sijamuoto);
 	if (mapIterator == sijamuotoMap.end()) {
 		return;
 	}
@@ -181,7 +174,7 @@ void MalagaAnalyzer::parseSijamuoto(Analysis * &analysis, value_t &result) const
 void MalagaAnalyzer::parseClass(Analysis * &analysis, value_t &result) const {
 	value_t classVal = get_attribute(result, symbols[MS_CLASS]);
 	symbol_t classSym = value_to_symbol(classVal);
-	map<symbol_t, const wchar_t *>::iterator mapIterator = classMap.find(classSym);
+	map<symbol_t, const wchar_t *>::const_iterator mapIterator = classMap.find(classSym);
 	if (mapIterator == classMap.end()) {
 		return;
 	}

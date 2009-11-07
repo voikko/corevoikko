@@ -32,9 +32,7 @@ namespace libvoikko { namespace morphology {
 Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
 	if (dictionary.getMorBackend() == "malaga") {
-		string projectDirectory(dictionary.getMorPath());
-		malaga::init_libmalaga(projectDirectory.c_str());
-		return new MalagaAnalyzer();
+		return new MalagaAnalyzer(dictionary.getMorPath());
 	}
 	#ifdef HAVE_HFST
 	if (dictionary.getMorBackend() == "hfst") {
