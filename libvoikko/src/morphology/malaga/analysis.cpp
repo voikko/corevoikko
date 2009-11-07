@@ -341,7 +341,7 @@ execute_pruning_rule(analysis_t *analysis, MalagaState * malagaState)
   execute_rule(rule_sys, rule_sys->pruning_rule, malagaState); /* Execute pruning rule. */
 
   /* Interprete the result. */
-  list = value_stack[ malagaState->top - 1 ];
+  list = malagaState->value_stack[ malagaState->top - 1 ];
   state = (state_t *) analysis->running_states.first;
   for (i = 0; i < result_count; i++) 
   { 

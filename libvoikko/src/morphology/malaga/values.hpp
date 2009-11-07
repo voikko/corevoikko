@@ -31,13 +31,6 @@ typedef u_short_t cell_t;
 typedef cell_t *value_t; /* Reference to a Malaga values by this type. */
 typedef cell_t symbol_t;
 
-/* Variables. ===============================================================*/
-
-extern value_t *value_stack; // FIXME
-/* The value stack contains static values and local values. 
- * The location of the VALUE_STACK-vector may change when the stack size
- * must increase. */
-
 /* Module initialisation. ===================================================*/
 
 extern void init_values(MalagaState * malagaState);

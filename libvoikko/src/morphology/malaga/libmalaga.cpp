@@ -92,7 +92,7 @@ parse_malaga_symbol(string_t string, MalagaState * malagaState)
  * The value must be freed after use. */
 {
   push_symbol_value(find_symbol(string), malagaState);
-  return new_value( value_stack[--(malagaState->top)] );
+  return new_value(malagaState->value_stack[--(malagaState->top)] );
 }
 
 }}}

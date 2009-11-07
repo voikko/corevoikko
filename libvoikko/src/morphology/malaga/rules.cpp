@@ -60,22 +60,22 @@ standard_function(int_t function, MalagaState * malagaState)
   switch (function) 
   {
   case FUNC_GET_LENGTH:
-    if (get_value_type( value_stack[ malagaState->top - 1 ] ) == STRING_SYMBOL)
+    if (get_value_type( malagaState->value_stack[ malagaState->top - 1 ] ) == STRING_SYMBOL)
     {
       push_number_value(
-	g_utf8_strlen(value_to_string(value_stack[--(malagaState->top)]), -1), malagaState);
+	g_utf8_strlen(value_to_string(malagaState->value_stack[--(malagaState->top)]), -1), malagaState);
     }
     else 
-      push_number_value(get_list_length(value_stack[--(malagaState->top)]), malagaState);
+      push_number_value(get_list_length(malagaState->value_stack[--(malagaState->top)]), malagaState);
     break;
   case FUNC_SUBSTRING:
-    string_t string = value_to_string(value_stack[malagaState->top - 3]);
-    int_t start = value_to_int(value_stack[malagaState->top - 2]);
+    string_t string = value_to_string(malagaState->value_stack[malagaState->top - 3]);
+    int_t start = value_to_int(malagaState->value_stack[malagaState->top - 2]);
     int_t end;
-    if (value_stack[malagaState->top - 1] == NULL) 
+    if (malagaState->value_stack[malagaState->top - 1] == NULL) 
       end = start;
     else 
-      end = value_to_int(value_stack[malagaState->top - 1]);
+      end = value_to_int(malagaState->value_stack[malagaState->top - 1]);
     int_t len = g_utf8_strlen( string, -1 );
     if (start < 0) 
       start += len + 1;
@@ -86,7 +86,7 @@ standard_function(int_t function, MalagaState * malagaState)
     else 
       push_string_value(g_utf8_offset_to_pointer(string, start - 1),
 			g_utf8_offset_to_pointer(string, end), malagaState);
-    value_stack[malagaState->top - 4] = value_stack[malagaState->top - 1];
+    malagaState->value_stack[malagaState->top - 4] = malagaState->value_stack[malagaState->top - 1];
     malagaState->top -= 3;
     break;
   }
@@ -130,15 +130,15 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
       case INS_NOP:
         break;
       case INS_TERMINATE_IF_NULL:
-        if (value_stack[--(malagaState->top)] == NULL) 
+        if (malagaState->value_stack[--(malagaState->top)] == NULL) 
 	  terminate = true;
         break;
       case INS_ADD_END_STATE:
-        add_end_state(value_stack[--(malagaState->top)], rule_sys->rules + rule_number);
+        add_end_state(malagaState->value_stack[--(malagaState->top)], rule_sys->rules + rule_number);
         rule_successful = true;
         break;
       case INS_ADD_STATE:
-        add_running_state(value_stack[--(malagaState->top)], info );
+        add_running_state(malagaState->value_stack[--(malagaState->top)], info );
         rule_successful = true;
         break;
       case INS_ACCEPT:
@@ -152,7 +152,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
 	  push_value(NULL, malagaState);
         break;
       case INS_PUSH_VAR:
-        push_value(value_stack[ base + info ], malagaState);
+        push_value(malagaState->value_stack[ base + info ], malagaState);
         break;
       case INS_PUSH_CONST:
         push_value(rule_sys->values + info, malagaState);
@@ -180,8 +180,8 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         break;
       case INS_DOT_OPERATION:
         dot_operation(malagaState);
-        if (value_stack[malagaState->top - 1] == NULL) 
-	  value_stack[malagaState->top - 1] = &nil;
+        if (malagaState->value_stack[malagaState->top - 1] == NULL) 
+	  malagaState->value_stack[malagaState->top - 1] = &nil;
         break;
       case INS_PLUS_OPERATION:
         plus_operation(malagaState);
@@ -190,10 +190,10 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         minus_operation(malagaState);
         break;
       case INS_GET_ATTRIBUTE:
-        value_stack[malagaState->top - 1] = get_attribute(value_stack[malagaState->top - 1], 
+        malagaState->value_stack[malagaState->top - 1] = get_attribute(malagaState->value_stack[malagaState->top - 1], 
 						(symbol_t) info );
-        if (value_stack[malagaState->top - 1 ] == NULL) 
-	  value_stack[malagaState->top - 1 ] = &nil;
+        if (malagaState->value_stack[malagaState->top - 1 ] == NULL) 
+	  malagaState->value_stack[malagaState->top - 1 ] = &nil;
         break;
       case INS_REMOVE_ATTRIBUTE:
         remove_attribute((symbol_t) info, malagaState);
@@ -202,7 +202,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         standard_function(info, malagaState);
         break;
       case INS_MATCH:
-        if (match_pattern(value_to_string(value_stack[--(malagaState->top)]), 
+        if (match_pattern(value_to_string(malagaState->value_stack[--(malagaState->top)]), 
                            rule_sys->strings + info )) {
           push_symbol_value(YES_SYMBOL, malagaState);
         }
@@ -211,32 +211,32 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         }
         break;
       case INS_SET_VAR:
-        value_stack[ base + info ] = value_stack[--(malagaState->top)];
+        malagaState->value_stack[ base + info ] = malagaState->value_stack[--(malagaState->top)];
         break;
       case INS_PLUS_VAR:
-        insert_value(1, value_stack[ base + info ], malagaState);
+        insert_value(1, malagaState->value_stack[ base + info ], malagaState);
         plus_operation(malagaState);
-        value_stack[ base + info ] = value_stack[--(malagaState->top)];
+        malagaState->value_stack[ base + info ] = malagaState->value_stack[--(malagaState->top)];
         break;
       case INS_MINUS_VAR:
-        insert_value(1, value_stack[ base + info ], malagaState);
+        insert_value(1, malagaState->value_stack[ base + info ], malagaState);
         minus_operation(malagaState);
-        value_stack[ base + info ] = value_stack[--(malagaState->top)];
+        malagaState->value_stack[ base + info ] = malagaState->value_stack[--(malagaState->top)];
         break;
       case INS_SET_VAR_PATH:
-        insert_value(2, value_stack[ base + info ], malagaState);
+        insert_value(2, malagaState->value_stack[ base + info ], malagaState);
         modify_value_part(right_value, malagaState);
-        value_stack[ base + info ] = value_stack[--(malagaState->top)];
+        malagaState->value_stack[ base + info ] = malagaState->value_stack[--(malagaState->top)];
         break;
       case INS_PLUS_VAR_PATH:
-        insert_value(2, value_stack[ base + info ], malagaState);
+        insert_value(2, malagaState->value_stack[ base + info ], malagaState);
         modify_value_part(plus_operation, malagaState);
-        value_stack[ base + info ] = value_stack[--(malagaState->top)];
+        malagaState->value_stack[ base + info ] = malagaState->value_stack[--(malagaState->top)];
         break;
       case INS_MINUS_VAR_PATH:
-        insert_value(2, value_stack[ base + info ], malagaState);
+        insert_value(2, malagaState->value_stack[ base + info ], malagaState);
         modify_value_part(minus_operation, malagaState);
-        value_stack[ base + info ] = value_stack[--(malagaState->top)];
+        malagaState->value_stack[ base + info ] = malagaState->value_stack[--(malagaState->top)];
         break;
       case INS_GET_1ST_ELEMENT:
         get_first_element(malagaState);
@@ -248,75 +248,75 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         new_pc = info;
         break;
       case INS_JUMP_IF_EQUAL:
-	if (values_equal(value_stack[malagaState->top - 2], value_stack[malagaState->top - 1]))
+	if (values_equal(malagaState->value_stack[malagaState->top - 2], malagaState->value_stack[malagaState->top - 1]))
 	  new_pc = info;
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_NOT_EQUAL:
-        if (! values_equal( value_stack[malagaState->top - 2], value_stack[malagaState->top - 1] )) 
+        if (! values_equal(malagaState->value_stack[malagaState->top - 2], malagaState->value_stack[malagaState->top - 1] )) 
 	  new_pc = info;
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_IN:
-        if (value_in_value( value_stack[malagaState->top - 2], value_stack[malagaState->top - 1] )) 
+        if (value_in_value(malagaState->value_stack[malagaState->top - 2], malagaState->value_stack[malagaState->top - 1] )) 
 	  new_pc = info;
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_NOT_IN:
-        if (! value_in_value( value_stack[malagaState->top - 2], value_stack[malagaState->top - 1] )) 
+        if (! value_in_value(malagaState->value_stack[malagaState->top - 2], malagaState->value_stack[malagaState->top - 1] )) 
 	  new_pc = info;
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_LESS:
-        if (value_to_double( value_stack[malagaState->top - 2] ) 
-            < value_to_double( value_stack[malagaState->top - 1] )) 
+        if (value_to_double(malagaState->value_stack[malagaState->top - 2] ) 
+            < value_to_double(malagaState->value_stack[malagaState->top - 1] )) 
 	{ 
 	  new_pc = info; 
 	}
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_NOT_LESS:
-        if (! (value_to_double( value_stack[malagaState->top - 2] )
-               < value_to_double( value_stack[malagaState->top - 1] ))) 
+        if (! (value_to_double(malagaState->value_stack[malagaState->top - 2] )
+               < value_to_double(malagaState->value_stack[malagaState->top - 1] ))) 
 	{ 
 	  new_pc = info; 
 	}
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_GREATER:
-        if (value_to_double( value_stack[malagaState->top - 2] )
-            > value_to_double( value_stack[malagaState->top - 1] )) 
+        if (value_to_double(malagaState->value_stack[malagaState->top - 2] )
+            > value_to_double(malagaState->value_stack[malagaState->top - 1] )) 
 	{ 
 	  new_pc = info; 
 	}
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_NOT_GREATER:
-        if (! (value_to_double( value_stack[malagaState->top - 2] )
-               > value_to_double( value_stack[malagaState->top - 1] ))) 
+        if (! (value_to_double(malagaState->value_stack[malagaState->top - 2] )
+               > value_to_double(malagaState->value_stack[malagaState->top - 1] ))) 
 	{ 
 	  new_pc = info; 
 	}
         malagaState->top -= 2;
         break;
       case INS_JUMP_IF_NULL:
-        if (value_stack[--(malagaState->top)] == NULL) 
+        if (malagaState->value_stack[--(malagaState->top)] == NULL) 
 	  new_pc = info;
         break;
       case INS_JUMP_IF_NOT_NULL:
-        if (value_stack[--(malagaState->top)] != NULL) 
+        if (malagaState->value_stack[--(malagaState->top)] != NULL) 
 	  new_pc = info;
         break;
       case INS_JUMP_IF_YES:
         {
-        symbol_t symbol = value_to_symbol(value_stack[--(malagaState->top)] );
+        symbol_t symbol = value_to_symbol(malagaState->value_stack[--(malagaState->top)] );
         if (symbol == YES_SYMBOL) 
 	  new_pc = info;
 	}
         break;
       case INS_JUMP_IF_NO:
         {
-        symbol_t symbol = value_to_symbol( value_stack[--(malagaState->top)] );
+        symbol_t symbol = value_to_symbol(malagaState->value_stack[--(malagaState->top)] );
         if (symbol == NO_SYMBOL) 
 	  new_pc = info;
 	}
@@ -330,7 +330,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         path->base = base;
         path->bottom = bottom;
         while (bottom < old_top)
-	  push_value(value_stack[ bottom++ ], malagaState);
+	  push_value(malagaState->value_stack[ bottom++ ], malagaState);
         base += (malagaState->top - old_top);
         path_count++;
         new_pc = info;
@@ -345,7 +345,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         path->base = base;
         path->bottom = bottom;
         while (bottom < old_top) 
-	  push_value(value_stack[ bottom++ ], malagaState);
+	  push_value(malagaState->value_stack[ bottom++ ], malagaState);
         base += (malagaState->top - old_top);
         path_count++;
 	}
@@ -359,9 +359,9 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         break;
       case INS_RETURN:
         {
-        int_t old_base = bottom + value_to_int( value_stack[ base - 2 ] );
-        new_pc = value_to_int( value_stack[ base - 1 ] );
-        value_stack[ base - info - 2 ] = value_stack[malagaState->top - 1]; /* Result. */
+        int_t old_base = bottom + value_to_int(malagaState->value_stack[ base - 2 ] );
+        new_pc = value_to_int(malagaState->value_stack[ base - 1 ] );
+        malagaState->value_stack[ base - info - 2 ] = malagaState->value_stack[malagaState->top - 1]; /* Result. */
         malagaState->top = base - (info + 1);
         base = old_base;
         nested_subrules--;
