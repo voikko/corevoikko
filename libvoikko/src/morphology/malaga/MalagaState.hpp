@@ -28,6 +28,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 class MalagaState {
 public:
 	cell_t * value_heap;
+	cell_t * value_heap_end; /* Pointer to first free cell in heap. */
 };
 
 } } }

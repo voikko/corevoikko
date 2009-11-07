@@ -113,7 +113,6 @@ int_t top;
 
 /* Variables. ===============================================================*/
 
-static cell_t *value_heap_end; /* Pointer to first free cell in heap. FIXME */
 static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
 
 static int_t value_stack_size; /* Size of the value stack. FIXME */
@@ -188,7 +187,7 @@ collect_garbage(MalagaState * malagaState)
     }
 
     /* Work on all values on the heap. */
-    while (i < top && *value_pointer[i] < value_heap_end) 
+    while (i < top && *value_pointer[i] < malagaState->value_heap_end) 
     { 
       /* Copy the value. */
       value_t old_value = *value_pointer[i];
@@ -206,7 +205,7 @@ collect_garbage(MalagaState * malagaState)
     }
     free_mem( &value_pointer );
   }
-  value_heap_end = new_value;
+  malagaState->value_heap_end = new_value;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -215,18 +214,18 @@ static value_t
 space_for_value(int_t size, MalagaState * malagaState)
 /* Get SIZE adjacent free cells on the value heap. */
 {
-  if ((value_heap_end - malagaState->value_heap) + size > value_heap_size) 
+  if ((malagaState->value_heap_end - malagaState->value_heap) + size > value_heap_size) 
   { 
     collect_garbage(malagaState);
-    if ((value_heap_end - malagaState->value_heap) + size > value_heap_size) 
+    if ((malagaState->value_heap_end - malagaState->value_heap) + size > value_heap_size) 
     { 
       value_t old_heap = malagaState->value_heap;
-      value_t old_heap_end = value_heap_end;
+      value_t old_heap_end = malagaState->value_heap_end;
 
       /* Enlarge the value heap. */
       value_heap_size = renew_vector( &(malagaState->value_heap), sizeof( cell_t ),
                                       2 * (size + (old_heap_end - old_heap)) );
-      value_heap_end = malagaState->value_heap + (old_heap_end - old_heap);
+      malagaState->value_heap_end = malagaState->value_heap + (old_heap_end - old_heap);
 
       /* Adapt the value stack pointers. */
       for (int_t i = 0; i < top; i++) 
@@ -236,8 +235,8 @@ space_for_value(int_t size, MalagaState * malagaState)
       }
     }
   }
-  value_t pointer = value_heap_end;
-  value_heap_end += size;
+  value_t pointer = malagaState->value_heap_end;
+  malagaState->value_heap_end += size;
   return pointer;
 }
 
@@ -266,7 +265,7 @@ init_values(MalagaState * malagaState)
 {
   value_heap_size = 1000;
   malagaState->value_heap = (cell_t *) new_vector( sizeof( cell_t ), value_heap_size );
-  value_heap_end = malagaState->value_heap;
+  malagaState->value_heap_end = malagaState->value_heap;
   value_stack_size = 100;
   value_stack = (cell_t **) new_vector( sizeof( value_t ), value_stack_size );
   top = 0;
