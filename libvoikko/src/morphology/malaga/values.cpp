@@ -113,8 +113,6 @@ int_t top;
 
 /* Variables. ===============================================================*/
 
-static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
-
 static int_t value_stack_size; /* Size of the value stack. FIXME */
 
 /* Support functions. =======================================================*/
@@ -214,16 +212,16 @@ static value_t
 space_for_value(int_t size, MalagaState * malagaState)
 /* Get SIZE adjacent free cells on the value heap. */
 {
-  if ((malagaState->value_heap_end - malagaState->value_heap) + size > value_heap_size) 
+  if ((malagaState->value_heap_end - malagaState->value_heap) + size > malagaState->value_heap_size) 
   { 
     collect_garbage(malagaState);
-    if ((malagaState->value_heap_end - malagaState->value_heap) + size > value_heap_size) 
+    if ((malagaState->value_heap_end - malagaState->value_heap) + size > malagaState->value_heap_size) 
     { 
       value_t old_heap = malagaState->value_heap;
       value_t old_heap_end = malagaState->value_heap_end;
 
       /* Enlarge the value heap. */
-      value_heap_size = renew_vector( &(malagaState->value_heap), sizeof( cell_t ),
+      malagaState->value_heap_size = renew_vector( &(malagaState->value_heap), sizeof( cell_t ),
                                       2 * (size + (old_heap_end - old_heap)) );
       malagaState->value_heap_end = malagaState->value_heap + (old_heap_end - old_heap);
 
@@ -263,8 +261,8 @@ void
 init_values(MalagaState * malagaState)
 /* Initialise this module. */
 {
-  value_heap_size = 1000;
-  malagaState->value_heap = (cell_t *) new_vector( sizeof( cell_t ), value_heap_size );
+  malagaState->value_heap_size = 1000;
+  malagaState->value_heap = (cell_t *) new_vector( sizeof( cell_t ), malagaState->value_heap_size );
   malagaState->value_heap_end = malagaState->value_heap;
   value_stack_size = 100;
   value_stack = (cell_t **) new_vector( sizeof( value_t ), value_stack_size );

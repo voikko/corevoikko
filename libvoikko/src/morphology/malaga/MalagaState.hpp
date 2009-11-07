@@ -29,6 +29,7 @@ class MalagaState {
 public:
 	cell_t * value_heap;
 	cell_t * value_heap_end; /* Pointer to first free cell in heap. */
+	int_t value_heap_size; /* Size of the value heap in cells. */
 };
 
 } } }
