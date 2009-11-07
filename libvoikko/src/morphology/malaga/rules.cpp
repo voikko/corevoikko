@@ -22,6 +22,7 @@
 #include "morphology/malaga/rule_type.hpp"
 #include "morphology/malaga/rules.hpp"
 #include "morphology/malaga/analysis.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -50,8 +51,8 @@ static list_t path_list; /* List of nodes for alternative paths. FIXME */
 
 /* Rule execution. ==========================================================*/
 
-static void 
-standard_function( int_t function )
+static void
+standard_function(int_t function, MalagaState * malagaState)
 /* Stack effect: VALUE -> NEW_VALUE.
  * Perform function FUNCTION on VALUE yielding NEW_VALUE. */
 { 
@@ -61,11 +62,11 @@ standard_function( int_t function )
   case FUNC_GET_LENGTH:
     if (get_value_type( value_stack[ top - 1 ] ) == STRING_SYMBOL)
     {
-      push_number_value( 
-	g_utf8_strlen( value_to_string( value_stack[ --top ] ), -1 ) );
+      push_number_value(
+	g_utf8_strlen(value_to_string(value_stack[ --top ]), -1), malagaState);
     }
     else 
-      push_number_value( get_list_length( value_stack[ --top ] ) );
+      push_number_value(get_list_length(value_stack[ --top ]), malagaState);
     break;
   case FUNC_SUBSTRING:
     string_t string = value_to_string( value_stack[ top - 3 ] );
@@ -81,10 +82,10 @@ standard_function( int_t function )
     if (end < 0) 
       end += len + 1;
     if (end < start) 
-      push_string_value( "", NULL );
+      push_string_value("", NULL, malagaState);
     else 
-      push_string_value( g_utf8_offset_to_pointer( string, start - 1 ), 
-			 g_utf8_offset_to_pointer( string, end ) );
+      push_string_value(g_utf8_offset_to_pointer(string, start - 1),
+			g_utf8_offset_to_pointer(string, end), malagaState);
     value_stack[ top - 4 ] = value_stack[ top - 1 ];
     top -= 3;
     break;
@@ -94,7 +95,7 @@ standard_function( int_t function )
 /*---------------------------------------------------------------------------*/
 
 bool 
-execute_rule( rule_sys_t *rule_sys, int_t rule_number )
+execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
 /* Execute rule RULE_NUMBER in the rule system RULE_SYS.
  * Any parameters must be on the value stack. */
 { 
@@ -157,10 +158,10 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         push_value( rule_sys->values + info );
         break;
       case INS_PUSH_SYMBOL:
-        push_symbol_value( info );
+        push_symbol_value(info, malagaState);
         break;
       case INS_PUSH_PATTERN_VAR:
-        push_string_value( pattern_var[ info ], NULL );
+        push_string_value(pattern_var[ info ], NULL, malagaState);
         break;
       case INS_POP:
         top -= info;
@@ -169,13 +170,13 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
         top = base + info;
         break;
       case INS_BUILD_LIST:
-        build_list( info );
+        build_list(info, malagaState);
         break;
       case INS_BUILD_RECORD:
-        build_record( info );
+        build_record(info, malagaState);
         break;
       case INS_BUILD_PATH:
-        build_path( info );
+        build_path(info, malagaState);
         break;
       case INS_DOT_OPERATION:
         dot_operation();
@@ -183,10 +184,10 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	  value_stack[ top - 1 ] = &nil;
         break;
       case INS_PLUS_OPERATION:
-        plus_operation();
+        plus_operation(malagaState);
         break;
       case INS_MINUS_OPERATION:
-        minus_operation();
+        minus_operation(malagaState);
         break;
       case INS_GET_ATTRIBUTE:
         value_stack[ top - 1 ] = get_attribute( value_stack[ top - 1 ], 
@@ -195,53 +196,53 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	  value_stack[ top - 1 ] = &nil;
         break;
       case INS_REMOVE_ATTRIBUTE:
-        remove_attribute( (symbol_t) info );
+        remove_attribute((symbol_t) info, malagaState);
         break;
       case INS_STD_FUNCTION:
-        standard_function( info );
+        standard_function(info, malagaState);
         break;
       case INS_MATCH:
         if (match_pattern( value_to_string( value_stack[ --top ] ), 
-                           rule_sys->strings + info )) 
-	{ 
-	  push_symbol_value( YES_SYMBOL ); 
-	} 
-	else 
-	  push_symbol_value( NO_SYMBOL );
+                           rule_sys->strings + info )) {
+          push_symbol_value(YES_SYMBOL, malagaState);
+        }
+        else {
+          push_symbol_value(NO_SYMBOL, malagaState);
+        }
         break;
       case INS_SET_VAR:
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_PLUS_VAR:
         insert_value( 1, value_stack[ base + info ] );
-        plus_operation();
+        plus_operation(malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_MINUS_VAR:
         insert_value( 1, value_stack[ base + info ]);
-        minus_operation();
+        minus_operation(malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_SET_VAR_PATH:
         insert_value( 2, value_stack[ base + info ] );
-        modify_value_part( right_value );
+        modify_value_part(right_value, malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_PLUS_VAR_PATH:
         insert_value( 2, value_stack[ base + info ] );
-        modify_value_part( plus_operation );
+        modify_value_part(plus_operation, malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_MINUS_VAR_PATH:
         insert_value( 2, value_stack[ base + info ] );
-        modify_value_part( minus_operation );
+        modify_value_part(minus_operation, malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_GET_1ST_ELEMENT:
-        get_first_element();
+        get_first_element(malagaState);
         break;
       case INS_ITERATE:
-        get_next_element( base + info );
+        get_next_element(base + info, malagaState);
         break;
       case INS_JUMP:
         new_pc = info;
@@ -350,8 +351,8 @@ execute_rule( rule_sys_t *rule_sys, int_t rule_number )
 	}
         break;
       case INS_JUMP_SUBRULE:
-        push_number_value( base - bottom );
-        push_number_value( new_pc );
+        push_number_value(base - bottom, malagaState);
+        push_number_value(new_pc, malagaState);
         base = top;
         new_pc = rule_sys->rules[ info ].first_instr;
         nested_subrules++;

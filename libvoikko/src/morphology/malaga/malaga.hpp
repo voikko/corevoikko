@@ -10,6 +10,8 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+class MalagaState;
+
 /* Basic types. =============================================================*/
 
 /* Numeric types. */
@@ -50,14 +52,14 @@ extern value_t get_attribute(value_t record, symbol_t attribute);
  * STRING must be a valid UTF-8 string.
  * The value must be freed after use.
  * This function sets "malaga_error". */
-extern value_t parse_malaga_symbol(string_t string);
+extern value_t parse_malaga_symbol(string_t string, MalagaState * malagaState);
 
 /* Functions. ===============================================================*/
 
 /** Analyse ITEM.
  * ITEM must be a valid UTF-8 string.
  * This function sets "malaga_error". */
-extern void analyse_item(string_t item);
+extern void analyse_item(string_t item, MalagaState * malagaState);
 
 /** Get the first result of the last call of "analyse_item".
  * Return NULL if there is no result. */
@@ -69,9 +71,9 @@ extern value_t next_analysis_result();
 
 /** Initialise this module.
  * This function sets "malaga_error". */
-extern void init_libmalaga(string_t project_directory);
+extern void init_libmalaga(string_t project_directory, MalagaState * malagaState);
 
 /** Terminate this module. */
-extern void terminate_libmalaga();
+extern void terminate_libmalaga(MalagaState * malagaState);
 
 }}}

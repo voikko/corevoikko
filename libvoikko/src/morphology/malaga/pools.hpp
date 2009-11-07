@@ -5,6 +5,9 @@
 /* This module defines a new data type, "pool_t", for growing vectors of items 
  * of an arbitrary type. */
 
+#ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_POOLS_HPP
+#define LIBVOIKKO_MORPHOLOGY_MALAGA_POOLS_HPP
+
 namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Types. ===================================================================*/
@@ -28,3 +31,5 @@ extern void *get_pool_space( pool_t pool, int_t item_count, int_t *index );
  * Return its index in *INDEX, if INDEX != NULL. */
 
 }}}
+
+#endif

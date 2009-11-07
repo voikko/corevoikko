@@ -22,6 +22,7 @@
 #include "morphology/malaga/lexicon.hpp"
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/malaga_lib.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -68,7 +69,7 @@ binarySuffix() {
 /*---------------------------------------------------------------------------*/
 
 void 
-init_malaga(string_t directoryName)
+init_malaga(string_t directoryName, MalagaState * malagaState)
 /* Initialise this module. */
 { 
   /* Init modules. */
@@ -76,7 +77,7 @@ init_malaga(string_t directoryName)
   char * fullLexiconFile = concat_strings(directoryName, pathSeparator(), lexicon_file, binarySuffix(), NULL);
   char * fullMorphologyFile = concat_strings(directoryName, pathSeparator(), morphology_file, binarySuffix(), NULL);
   
-  init_values();
+  init_values(malagaState);
   init_symbols(fullSymbolFile);
   init_lexicon(fullLexiconFile);
   init_analysis(fullMorphologyFile);
@@ -89,14 +90,14 @@ init_malaga(string_t directoryName)
 /*---------------------------------------------------------------------------*/
 
 void 
-terminate_malaga( void )
+terminate_malaga(MalagaState * malagaState)
 /* Terminate this module. */
 {
   terminate_analysis();
   terminate_patterns();
   terminate_lexicon();
   terminate_symbols();
-  terminate_values();
+  terminate_values(malagaState);
 }
 
 }}}

@@ -7,7 +7,12 @@
  * There are six different types of values:
  * symbol, string, list, record, number and index. */
 
+#ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_VALUES_HPP
+#define LIBVOIKKO_MORPHOLOGY_MALAGA_VALUES_HPP
+
 namespace libvoikko { namespace morphology { namespace malaga {
+
+class MalagaState;
 
 /* Constants. ===============================================================*/
 
@@ -39,10 +44,10 @@ extern int_t top; // FIXME
 
 /* Module initialisation. ===================================================*/
 
-extern void init_values( void );
+extern void init_values(MalagaState * malagaState);
 /* Initialise this module. */
 
-extern void terminate_values( void );
+extern void terminate_values(MalagaState * malagaState);
 /* Terminate this module. */
 
 /* Value operations. ========================================================*/
@@ -75,7 +80,7 @@ extern symbol_t value_to_symbol( value_t value );
 /* VALUE must be a symbol.
  * Return VALUE as a symbol. */
 
-extern void push_symbol_value( symbol_t symbol );
+extern void push_symbol_value(symbol_t symbol, MalagaState * malagaState);
 /* Stack effects: (nothing) -> NEW_SYMBOL.
  * NEW_SYMBOL is SYMBOL converted to a Malaga value. */
 
@@ -85,12 +90,12 @@ extern string_t value_to_string( value_t value );
 /* VALUE must be a string value.
  * Return the value of VALUE as a C style string. */
 
-extern void push_string_value( string_t string_start, string_t string_end );
+extern void push_string_value(string_t string_start, string_t string_end, MalagaState * malagaState);
 /* Stack effects: (nothing) -> NEW_STRING.
  * NEW_STRING is the string starting at STRING_START as a Malaga value.
  * If STRING_END != NULL, it marks the end of the string. */
 
-extern void concat_string_values( void );
+extern void concat_string_values(MalagaState * malagaState);
 /* Stack effects: STRING1 STRING2 -> NEW_STRING.
  * NEW_STRING is the concatenation of STRING1 and STRING2. */
 
@@ -100,27 +105,27 @@ extern value_t get_attribute( value_t record, symbol_t attribute );
 /* Return the value of ATTRIBUTE in the record RECORD 
  * or NULL if it doesn't exist. */
 
-extern void build_record( int_t n );
+extern void build_record(int_t n, MalagaState * malagaState);
 /* Stack effects: ATTR1 VALUE1 ... ATTR_N VALUE_N -> NEW_RECORD.
  * NEW_RECORD looks like [ATTR1: VALUE1, ..., ATTR_N: VALUE_N]. */
 
-extern void join_records( void );
+extern void join_records(MalagaState * malagaState);
 /* Stack effects: RECORD1 RECORD2 -> NEW_RECORD.
  * NEW_RECORD contains all attributes of RECORD1 and RECORD2, and 
  * their associated values. If an attribute has different values in RECORD1
  * and RECORD2, the value in RECORD2 will be taken. */
 
-extern void remove_attribute( symbol_t attribute );
+extern void remove_attribute(symbol_t attribute, MalagaState * malagaState);
 /* Stack effects: RECORD -> NEW_RECORD.
  * NEW_RECORD contains all attribute-value pairs of RECORD but the one with
  * attribute ATTRIBUTE. */
 
-extern void remove_attributes( void );
+extern void remove_attributes(MalagaState * malagaState);
 /* Stack effects: RECORD LIST -> NEW_RECORD.
  * NEW_RECORD contains all attribute-value pairs of RECORD but the ones
  * whose attributes are in LIST. */
 
-extern void replace_attribute( symbol_t attribute );
+extern void replace_attribute(symbol_t attribute, MalagaState * malagaState);
 /* Stack effects: RECORD VALUE -> NEW_RECORD.
  * NEW_RECORD is equal to RECORD, only the value of ATTRIBUTE is replaced
  * by VALUE. RECORD must contain ATTRIBUTE. */
@@ -136,28 +141,28 @@ extern value_t get_element( value_t list, int_t n );
  * If N is positive, elements will be counted from the left border.
  * If it's negative, elements will be counted from the right border. */
 
-extern void build_list( int_t n );
+extern void build_list(int_t n, MalagaState * malagaState);
 /* Stack effects: VALUE1 ... VALUE_N -> NEW_LIST.
  * NEW_LIST looks like <VALUE1, ..., VALUE_N>. */
 
-extern void concat_lists( void );
+extern void concat_lists(MalagaState * malagaState);
 /* Stack effects: LIST1 LIST2 -> NEW_LIST.
  * NEW_LIST is the concatenation of LIST1 and LIST2. */
 
-extern void get_list_difference( void );
+extern void get_list_difference(MalagaState * malagaState);
 /* Stack effects: LIST1 LIST2 -> NEW_LIST.
  * NEW_LIST contains the list difference of LIST1 and LIST2:
  * An element that appears M times in LIST1 and N times in LIST2 
  * appears M - N times in NEW_LIST. */
 
-extern void remove_element( int_t n );
+extern void remove_element(int_t n, MalagaState * malagaState);
 /* Stack effects: LIST -> NEW_LIST.
  * NEW_LIST is LIST without element at index N.
  * If N is positive, the elements will be counted from the left border;
  * if N is negative, they will be counted from the right border.
  * If LIST contains less than abs(N) elements, then NEW_LIST = LIST. */
 
-extern void replace_element( int_t n );
+extern void replace_element(int_t n, MalagaState * malagaState);
 /* Stack effects: LIST VALUE -> NEW_LIST.
  * NEW_LIST is LIST, but its N-th element is replaced by VALUE.
  * If N is negative, count from the right end.
@@ -171,7 +176,7 @@ extern double value_to_double( value_t value );
 extern int_t value_to_int( value_t value );
 /* Return the value of VALUE which must be an integral number value. */
 
-extern void push_number_value( double number );
+extern void push_number_value(double number, MalagaState * malagaState);
 /* Stack effects: (nothing) -> NEW_NUMBER.
  * NEW_NUMBER is NUMBER as a Malaga value. */
 
@@ -182,26 +187,26 @@ extern void dot_operation( void );
  * NEW_VALUE is VALUE1 "." VALUE2 or NULL, if that value doesn't exist.
  * The actual operation depends on the type of the values. */
 
-extern void plus_operation( void );
+extern void plus_operation(MalagaState * malagaState);
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "+" VALUE2. 
  * The actual operation depends on the type of the values. */
 
-extern void minus_operation( void );
+extern void minus_operation(MalagaState * malagaState);
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "-" VALUE2. 
  * The actual operation depends on the type of the values. */
 
 /* Functions for value paths. ===============================================*/
 
-extern void build_path( int_t n );
+extern void build_path(int_t n, MalagaState * malagaState);
 /* Stack effects: VALUE1 ... VALUE_N -> NEW_LIST.
  * NEW_LIST is a path which contains VALUE1, ..., VALUE_N. 
  * VALUE1, ..., VALUE_N must be numbers, symbols or lists of numbers and 
  * symbols. If a value is a list, the elements of this list are inserted into
  * NEW_LIST instead of the value itself. */
 
-extern void modify_value_part( void (*modifier)( void ) );
+extern void modify_value_part(void (*modifier)(MalagaState *), MalagaState * malagaState);
 /* Stack effects: VALUE PATH MOD_VALUE -> NEW_VALUE.
  * NEW_VALUE is VALUE, but the part that is described by PATH is 
  * modified. PATH must be a list of symbols and numbers <E1, E2, .. , E_N>.
@@ -212,20 +217,20 @@ extern void modify_value_part( void (*modifier)( void ) );
  * The value returned by MODIFIER will be entered in VALUE in place of
  * OLD_VALUE. */
 
-extern void right_value( void );
+extern void right_value(MalagaState * malagaState);
 /* Stack effects: LEFT_VALUE RIGHT_VALUE -> RIGHT_VALUE.
  * A modifier for "modify_value_part". */
 
 /* Functions for list/record iteration. =====================================*/
 
-extern void get_first_element( void );
+extern void get_first_element(MalagaState * malagaState);
 /* Stack effects: VALUE -> NEW_VALUE.
  * If VALUE is a list, then NEW_VALUE is its first element (or NULL).
  * If VALUE is a record, then NEW_VALUE is its first attribute (or NULL).
  * If VALUE is a number, then NEW_VALUE is NULL (if VALUE == 0),
  * 1 (if VALUE > 0) or -1 (if VALUE < 0). */
 
-extern void get_next_element( int_t stack_index );
+extern void get_next_element(int_t stack_index, MalagaState * malagaState);
 /* Stack effects: (nothing) -> (nothing).
  * VALUE1 is VALUE_STACK[ INDEX - 1 ], VALUE2 is VALUE_STACK[ INDEX ].
  * VALUE_STACK[ INDEX ] will be set to NEW_VALUE.
@@ -253,3 +258,5 @@ extern bool value_in_value( value_t value1, value_t value2 );
  * If VALUE2 is a record, then VALUE1 must be a symbol. */
 
 }}}
+
+#endif

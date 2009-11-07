@@ -7,6 +7,8 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+class MalagaState;
+
 /* Variables. ===============================================================*/
 
 extern rule_sys_t *morphologyRuleSystem; // FIXME
@@ -25,7 +27,7 @@ extern void preprocess_input(char_t *input);
 /* Delete heading and trailing spaces in INPUT
  * and compress all whitespace sequences to a single space. */
 
-extern void analyse( string_t input );
+extern void analyse(string_t input, MalagaState * malagaState);
 /* Perform a LAG analysis of INPUT. */
 
 extern value_t first_analysis_result( void );

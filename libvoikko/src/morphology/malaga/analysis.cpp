@@ -17,6 +17,7 @@
 #include "morphology/malaga/rules.hpp"
 #include "morphology/malaga/lexicon.hpp"
 #include "morphology/malaga/analysis.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -270,7 +271,8 @@ next_analysis_result( void )
 static void 
 execute_filter_rule( analysis_t *analysis, 
                      rule_sys_t *rule_sys,
-                     int_t filter_rule )
+                     int_t filter_rule,
+                     MalagaState * malagaState)
 /* Execute FILTER_RULE in RULE_SYS for ANALYSIS. */
 {
   list_t old_end_states;
@@ -294,20 +296,20 @@ execute_filter_rule( analysis_t *analysis,
       add_node( &analysis->free_states, (list_node_t *) state, LIST_END );
       push_value( state->feat );
     }
-    build_list( top );
+    build_list(top, malagaState);
 
     /* Execute filter rule. */
     state_info.analysis = analysis;
     state_info.item_index = 0;
     state_info.input = input;
-    execute_rule( rule_sys, filter_rule );
+    execute_rule(rule_sys, filter_rule, malagaState);
   }
 }
 
 /*---------------------------------------------------------------------------*/
 
 static void 
-execute_pruning_rule( analysis_t *analysis )
+execute_pruning_rule(analysis_t *analysis, MalagaState * malagaState)
 /* Execute pruning_rule in GRAMMAR for the running states in ANALYSIS. */
 { 
   int_t result_count, i;
@@ -333,10 +335,10 @@ execute_pruning_rule( analysis_t *analysis )
   /* Don't execute if number of states is too low. */
   if (result_count < mor_pruning_min)
     return;
-  build_list( result_count );
+  build_list(result_count, malagaState);
 
   rule_sys = morphologyRuleSystem;
-  execute_rule( rule_sys, rule_sys->pruning_rule ); /* Execute pruning rule. */
+  execute_rule(rule_sys, rule_sys->pruning_rule, malagaState); /* Execute pruning rule. */
 
   /* Interprete the result. */
   list = value_stack[ top - 1 ];
@@ -363,7 +365,8 @@ execute_rules( analysis_t *analysis,
                value_t link_feat,
                string_t link_surf,
                string_t link_surf_end,
-               rule_type_t rule_type )
+               rule_type_t rule_type,
+               MalagaState * malagaState)
 /* Execute the successor rules of RULE_TYPE in RULE_SYS for STATE in ANALYSIS.
  * Consume the segment from LINK_SURF to LINK_SURF_END with feature structure
  * LINK_FEAT. */
@@ -401,16 +404,16 @@ execute_rules( analysis_t *analysis,
 	{ 
 	  push_value( link_feat );
 	  if (rule->param_count >= 3) 
-	    push_string_value( link_surf, link_surf_end );
+	    push_string_value(link_surf, link_surf_end, malagaState);
 	  if (rule->param_count >= 4) 
-	    push_number_value( state_info.item_index );
+	    push_number_value(state_info.item_index, malagaState);
 	} 
 	else /* rule->type == END_RULE */
 	{ 
 	  if (rule->param_count >= 2) 
-	    push_string_value( link_surf, NULL );
+	    push_string_value(link_surf, NULL, malagaState);
 	}
-	rules_successful |= execute_rule( rule_sys, *rule_p );
+	rules_successful |= execute_rule(rule_sys, *rule_p, malagaState);
 	rules_executed = true;
       }
     }
@@ -437,7 +440,7 @@ check_end_states( analysis_t *analysis )
 /*---------------------------------------------------------------------------*/
 
 void 
-analyse( string_t input )
+analyse(string_t input, MalagaState * malagaState)
 /* Perform a LAG analysis of INPUT using.
  * An analysis tree will be built if CREATE_TREE == true. */
 { 
@@ -469,17 +472,17 @@ analyse( string_t input )
     current_input = state->input;
     if ((mor_pruning_min > 0) && current_input > input && rule_sys->pruning_rule != -1) 
     {
-      execute_pruning_rule( analysis ); 
+      execute_pruning_rule(analysis, malagaState);
     }
     if (current_input > input) /* Apply end_rules if any input was parsed. */
-    { 
+    {
       /* Apply all end_rules to states at CURRENT_INPUT. */
       FOREACH( state, analysis->running_states, state_t ) 
-      { 
+      {
 	if (state->input != current_input) 
 	  break;
-        execute_rules( analysis, rule_sys, state, NULL, current_input, 
-                       current_input, END_RULE );
+        execute_rules( analysis, rule_sys, state, NULL, current_input,
+                       current_input, END_RULE, malagaState);
       }
     }
     if (*current_input == EOS) 
@@ -496,8 +499,8 @@ analyse( string_t input )
       { 
         if (state->input != current_input) 
           break;
-        execute_rules( analysis, rule_sys, state, link_feat, current_input,
-                       link_surf_end, COMBI_RULE );
+        execute_rules(analysis, rule_sys, state, link_feat, current_input,
+                      link_surf_end, COMBI_RULE, malagaState);
       }
     }
 
@@ -515,8 +518,8 @@ analyse( string_t input )
 
   check_end_states(analysis);
 
-  execute_filter_rule( analysis, morphologyRuleSystem,
-                       morphologyRuleSystem->output_filter );
+  execute_filter_rule(analysis, morphologyRuleSystem,
+                      morphologyRuleSystem->output_filter, malagaState);
 }
 
 }}}

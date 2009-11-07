@@ -29,16 +29,16 @@ using namespace libvoikko::morphology::malaga;
 namespace libvoikko { namespace morphology {
 
 MalagaAnalyzer::MalagaAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
-	malaga::init_libmalaga(directoryName.c_str());
+	malaga::init_libmalaga(directoryName.c_str(), &malagaState);
 	initSymbols();
 }
 
-list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word) const {
+list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word) {
 	return analyze(word, wcslen(word));
 }
 
 list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
-                                           size_t wlen) const {
+                                           size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
@@ -48,13 +48,13 @@ list<Analysis *> * MalagaAnalyzer::analyze(const wchar_t * word,
 	return result;
 }
 
-list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
+list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 	if (strlen(word) > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	try {
-		analyse_item(word);
+		analyse_item(word, &malagaState);
 		value_t res = first_analysis_result();
 		int currentAnalysisCount = 0;
 		while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
@@ -76,17 +76,17 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) const {
 }
 
 void MalagaAnalyzer::terminate() {
-	terminate_libmalaga();
+	terminate_libmalaga(&malagaState);
 }
 
-static symbol_t findSymbol(const char * name) {
-	value_t symbolValue = parse_malaga_symbol(name);
+symbol_t MalagaAnalyzer::findSymbol(const char * name) {
+	value_t symbolValue = parse_malaga_symbol(name, &malagaState);
 	symbol_t symbol = value_to_symbol(symbolValue);
 	free(symbolValue);
 	return symbol;
 }
 
-static void insertToSymbolMap(map<symbol_t, const wchar_t *> &map,
+void MalagaAnalyzer::insertToSymbolMap(map<symbol_t, const wchar_t *> &map,
                               const char * malagaName,
                               const wchar_t * externalName) {
 	map.insert(std::make_pair(findSymbol(malagaName), externalName));

@@ -22,6 +22,7 @@
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
 #include "morphology/malaga/symbols.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -112,7 +113,6 @@ int_t top;
 
 /* Variables. ===============================================================*/
 
-static cell_t *value_heap; /* The actual heap. FIXME */
 static cell_t *value_heap_end; /* Pointer to first free cell in heap. FIXME */
 static int_t value_heap_size; /* Size of the value heap in cells. FIXME */
 
@@ -160,13 +160,13 @@ compare_value_pointers( const void *key1, const void *key2 )
 /*---------------------------------------------------------------------------*/
 
 static void 
-collect_garbage( void )
+collect_garbage(MalagaState * malagaState)
 /* Make sure the value heap only contains values that are on the value stack.
  * Compactify the heap, i.e. move all values on the heap to the beginning. */
 {
   value_t **value_pointer;
 
-  value_t new_value = value_heap;
+  value_t new_value = malagaState->value_heap;
 
   /* Copy values if there is at least one value to save. */
   if (top > 0) 
@@ -183,7 +183,7 @@ collect_garbage( void )
     /* Find the first index I whose value is on the heap. */
     int_t i;
     for (i = 0; i < top; i++) { 
-      if (*value_pointer[i] >= value_heap) 
+      if (*value_pointer[i] >= malagaState->value_heap) 
 	break;
     }
 
@@ -212,27 +212,27 @@ collect_garbage( void )
 /*---------------------------------------------------------------------------*/
 
 static value_t 
-space_for_value( int_t size )
+space_for_value(int_t size, MalagaState * malagaState)
 /* Get SIZE adjacent free cells on the value heap. */
 {
-  if ((value_heap_end - value_heap) + size > value_heap_size) 
+  if ((value_heap_end - malagaState->value_heap) + size > value_heap_size) 
   { 
-    collect_garbage();
-    if ((value_heap_end - value_heap) + size > value_heap_size) 
+    collect_garbage(malagaState);
+    if ((value_heap_end - malagaState->value_heap) + size > value_heap_size) 
     { 
-      value_t old_heap = value_heap;
+      value_t old_heap = malagaState->value_heap;
       value_t old_heap_end = value_heap_end;
 
       /* Enlarge the value heap. */
-      value_heap_size = renew_vector( &value_heap, sizeof( cell_t ),
+      value_heap_size = renew_vector( &(malagaState->value_heap), sizeof( cell_t ),
                                       2 * (size + (old_heap_end - old_heap)) );
-      value_heap_end = value_heap + (old_heap_end - old_heap);
+      value_heap_end = malagaState->value_heap + (old_heap_end - old_heap);
 
       /* Adapt the value stack pointers. */
       for (int_t i = 0; i < top; i++) 
       { 
 	if (value_stack[i] >= old_heap && value_stack[i] < old_heap_end) 
-	  value_stack[i] = value_heap + (value_stack[i] - old_heap);
+	  value_stack[i] = malagaState->value_heap + (value_stack[i] - old_heap);
       }
     }
   }
@@ -244,14 +244,14 @@ space_for_value( int_t size )
 /*---------------------------------------------------------------------------*/
 
 static value_t 
-space_for_composed_value( int_t type, int_t length )
+space_for_composed_value(int_t type, int_t length, MalagaState * malagaState)
 /* Allocate LENGTH cells for a composed value of TYPE, set its type cell
  * and return the value. */
 {
   value_t value;
   int_t content_size;
 
-  value = space_for_value( length );
+  value = space_for_value(length, malagaState);
   content_size = length - 2;
   value[0] = TYPE_CELL( type, content_size >> CELL_BITS );
   value[1] = content_size & ((1L << CELL_BITS) - 1);
@@ -261,12 +261,12 @@ space_for_composed_value( int_t type, int_t length )
 /* Module initialisation. ===================================================*/
 
 void 
-init_values( void )
+init_values(MalagaState * malagaState)
 /* Initialise this module. */
 {
   value_heap_size = 1000;
-  value_heap = (cell_t *) new_vector( sizeof( cell_t ), value_heap_size );
-  value_heap_end = value_heap;
+  malagaState->value_heap = (cell_t *) new_vector( sizeof( cell_t ), value_heap_size );
+  value_heap_end = malagaState->value_heap;
   value_stack_size = 100;
   value_stack = (cell_t **) new_vector( sizeof( value_t ), value_stack_size );
   top = 0;
@@ -275,10 +275,10 @@ init_values( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-terminate_values( void )
+terminate_values(MalagaState * malagaState)
 /* Terminate this module. */
 {
-  free_mem( &value_heap );
+  free_mem(&(malagaState->value_heap));
   free_mem( &value_stack );
 }
 
@@ -395,13 +395,13 @@ value_to_symbol( value_t value )
 /*---------------------------------------------------------------------------*/
 
 void 
-push_symbol_value( symbol_t symbol )
+push_symbol_value(symbol_t symbol, MalagaState * malagaState)
 /* Stack effects: (nothing) -> NEW_SYMBOL.
  * NEW_SYMBOL is SYMBOL converted to a Malaga value. */
 {
   value_t value;
 
-  value = space_for_value(1);
+  value = space_for_value(1, malagaState);
   *value = TYPE_CELL( SYMBOL_TYPE, symbol );
   push_value( value );
 }
@@ -418,7 +418,7 @@ value_to_string( value_t value )
 /*---------------------------------------------------------------------------*/
 
 void 
-push_string_value( string_t string_start, string_t string_end )
+push_string_value(string_t string_start, string_t string_end, MalagaState * malagaState)
 /* Stack effects: (nothing) -> NEW_STRING.
  * NEW_STRING is the string starting at STRING_START as a Malaga value.
  * If STRING_END != NULL, it marks the end of the string. */
@@ -431,7 +431,7 @@ push_string_value( string_t string_start, string_t string_end )
   if (string_end == NULL) 
     string_end = string_start + strlen( string_start );
   length = string_end - string_start;
-  value = space_for_value( 2 + length / sizeof( cell_t ) );
+  value = space_for_value(2 + length / sizeof( cell_t ), malagaState);
   *value = TYPE_CELL( STRING_TYPE, length );
 
   /* Copy the string content. */
@@ -451,7 +451,7 @@ push_string_value( string_t string_start, string_t string_end )
 /*---------------------------------------------------------------------------*/
 
 void 
-concat_string_values( void )
+concat_string_values(MalagaState * malagaState)
 /* Stack effects: STRING1 STRING2 -> NEW_STRING.
  * NEW_STRING is the concatenation of STRING1 and STRING2. */
 {
@@ -462,7 +462,7 @@ concat_string_values( void )
 
   new_length = ((int_t) INFO( value_stack[ top - 2 ] ) 
                 + (int_t) INFO( value_stack[ top - 1 ] ));
-  string_value = space_for_value( 2 + new_length / sizeof( cell_t ) );
+  string_value = space_for_value(2 + new_length / sizeof(cell_t), malagaState);
   *string_value = TYPE_CELL( STRING_TYPE, new_length );
 
   /* Join the strings. We do it by hand so it's easier to align. */
@@ -505,7 +505,7 @@ get_attribute( value_t record, symbol_t attribute )
 /*---------------------------------------------------------------------------*/
 
 void 
-build_record( int_t n )
+build_record(int_t n, MalagaState * malagaState)
 /* Stack effects: ATTR1 VALUE1 ... ATTR_N VALUE_N -> NEW_RECORD.
  * NEW_RECORD looks like [ATTR1: VALUE1, ..., ATTR_N: VALUE_N]. */
 {
@@ -521,7 +521,7 @@ build_record( int_t n )
     new_record_length += 1 + length_of_value( values[ 2 * i + 1 ] );
 
   /* Allocate new record and copy content. */
-  new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
+  new_record = space_for_composed_value(RECORD_TYPE, new_record_length, malagaState);
   v = new_record + 2;
   for (i = 0; i < n; i++) 
   { 
@@ -537,7 +537,7 @@ build_record( int_t n )
 /*---------------------------------------------------------------------------*/
 
 void 
-join_records( void )
+join_records(MalagaState * malagaState)
 /* Stack effects: RECORD1 RECORD2 -> NEW_RECORD.
  * NEW_RECORD contains all attributes of RECORD1 and RECORD2, and 
  * their associated values. If an attribute has different values in RECORD1
@@ -570,7 +570,7 @@ join_records( void )
   }
 
   /* Allocate a new record value. */
-  new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
+  new_record = space_for_composed_value(RECORD_TYPE, new_record_length, malagaState);
 
   /* The values on stack may have moved if garbage collection was called. */
   record1 = value_stack[ top - 2 ];
@@ -609,7 +609,7 @@ join_records( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-remove_attribute( symbol_t attribute )
+remove_attribute(symbol_t attribute, MalagaState * malagaState)
 /* Stack effects: RECORD -> NEW_RECORD.
  * NEW_RECORD contains all attribute-value pairs of RECORD but the one with
  * attribute ATTRIBUTE. */
@@ -635,7 +635,7 @@ remove_attribute( symbol_t attribute )
     /* Compute its length and get space for the new record. */
     new_record_length 
       = length_of_value( record ) - (length_of_value( v1 + 1 ) + 1);
-    new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
+    new_record = space_for_composed_value(RECORD_TYPE, new_record_length, malagaState);
 
     /* Get the original record. */
     record = value_stack[ top - 1 ];
@@ -659,7 +659,7 @@ remove_attribute( symbol_t attribute )
 /*---------------------------------------------------------------------------*/
 
 void 
-remove_attributes( void )
+remove_attributes(MalagaState * malagaState)
 /* Stack effects: RECORD LIST -> NEW_RECORD.
  * NEW_RECORD contains all attribute-value pairs of RECORD but the ones
  * whose attributes are in LIST. */
@@ -690,7 +690,7 @@ remove_attributes( void )
     new_record = record;
   else 
   { 
-    new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
+    new_record = space_for_composed_value(RECORD_TYPE, new_record_length, malagaState);
 
     /* Get the values, since they may have moved by garbage collection. */
     record = value_stack[ top - 2 ];
@@ -722,7 +722,7 @@ remove_attributes( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-replace_attribute( symbol_t attribute )
+replace_attribute(symbol_t attribute, MalagaState * malagaState)
 /* Stack effects: RECORD VALUE -> NEW_RECORD.
  * NEW_RECORD is equal to RECORD, only the value of ATTRIBUTE is replaced
  * by VALUE. RECORD must contain ATTRIBUTE. */
@@ -743,7 +743,7 @@ replace_attribute( symbol_t attribute )
 
   new_record_length = (length_of_value( record ) 
 		       + length_of_value( value ) - length_of_value( v + 1 ));
-  new_record = space_for_composed_value( RECORD_TYPE, new_record_length );
+  new_record = space_for_composed_value(RECORD_TYPE, new_record_length, malagaState);
 
   record = value_stack[ top - 2 ];
   value = value_stack[ top - 1 ];
@@ -813,7 +813,7 @@ get_element( value_t list, int_t n )
 /*---------------------------------------------------------------------------*/
 
 void 
-build_list( int_t n )
+build_list(int_t n, MalagaState * malagaState)
 /* Stack effects: VALUE1 ... VALUE_N -> NEW_LIST.
  * NEW_LIST looks like <VALUE1, ..., VALUE_N>. */
 {
@@ -825,7 +825,7 @@ build_list( int_t n )
   new_list_length = 2;
   for (i = 0; i < n; i++) 
     new_list_length += length_of_value( elements[i] );
-  new_list = space_for_composed_value( LIST_TYPE, new_list_length );
+  new_list = space_for_composed_value(LIST_TYPE, new_list_length, malagaState);
   v = new_list + 2;
   for (i = 0; i < n; i++) 
   { 
@@ -839,7 +839,7 @@ build_list( int_t n )
 /*---------------------------------------------------------------------------*/
 
 void 
-concat_lists( void )
+concat_lists(MalagaState * malagaState)
 /* Stack effects: LIST1 LIST2 -> NEW_LIST.
  * NEW_LIST is the concatenation of LIST1 and LIST2. */
 {
@@ -852,7 +852,7 @@ concat_lists( void )
   list1_length = length_of_value( list1 );
   list2_length = length_of_value( list2 );
   new_list_length = list1_length + list2_length - 2;
-  new_list = space_for_composed_value( LIST_TYPE, new_list_length );
+  new_list = space_for_composed_value(LIST_TYPE, new_list_length, malagaState);
 
   list1 = value_stack[ top - 2 ];
   list2 = value_stack[ top - 1 ];
@@ -868,7 +868,7 @@ concat_lists( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-get_list_difference( void )
+get_list_difference(MalagaState * malagaState)
 /* Stack effects: LIST1 LIST2 -> NEW_LIST.
  * NEW_LIST contains the list difference of LIST1 and LIST2:
  * An element that appears M times in LIST1 and N times in LIST2 
@@ -913,7 +913,7 @@ get_list_difference( void )
     new_list = list1;
   else
   { 
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
+    new_list = space_for_composed_value(LIST_TYPE, new_list_length, malagaState);
 
     list1 = value_stack[ top - 2 ];
     list2 = value_stack[ top - 1 ];
@@ -955,7 +955,7 @@ get_list_difference( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-remove_element( int_t n )
+remove_element(int_t n, MalagaState * malagaState)
 /* Stack effects: LIST -> NEW_LIST.
  * NEW_LIST is LIST without element at index N.
  * If N is positive, the elements will be counted from the left border;
@@ -973,7 +973,7 @@ remove_element( int_t n )
   else
   { 
     int_t new_list_length = length_of_value( list ) - length_of_value( element );
-    new_list = space_for_composed_value( LIST_TYPE, new_list_length );
+    new_list = space_for_composed_value(LIST_TYPE, new_list_length, malagaState);
 
     /* Get the values again, since they may have moved. */
     list = value_stack[ top - 1 ];
@@ -992,7 +992,7 @@ remove_element( int_t n )
 /*---------------------------------------------------------------------------*/
 
 void 
-replace_element( int_t n )
+replace_element(int_t n, MalagaState * malagaState)
 /* Stack effects: LIST VALUE -> NEW_LIST.
  * NEW_LIST is LIST, but its N-th element is replaced by VALUE.
  * If N is negative, count from the right end.
@@ -1009,7 +1009,7 @@ replace_element( int_t n )
   element = get_element( list, n );
   new_list_length = (length_of_value( list ) +
                      length_of_value( value ) - length_of_value( element ));
-  new_list = space_for_composed_value( LIST_TYPE, new_list_length );
+  new_list = space_for_composed_value(LIST_TYPE, new_list_length, malagaState);
 
   /* Get arguments again: they may have been moved by garbage collection. */
   list = value_stack[ top - 2 ];
@@ -1069,7 +1069,7 @@ value_to_int( value_t value )
 /*---------------------------------------------------------------------------*/
 
 void 
-push_number_value( double number )
+push_number_value(double number, MalagaState * malagaState)
 /* Stack effects: (nothing) -> NEW_NUMBER.
  * NEW_NUMBER is NUMBER as a Malaga value. */
 {
@@ -1082,7 +1082,7 @@ push_number_value( double number )
   } v;
 
   v.number = number;
-  value = space_for_value( 1 + CELLS_PER_NUMBER );
+  value = space_for_value(1 + CELLS_PER_NUMBER, malagaState);
   *value = TYPE_CELL( NUMBER_TYPE, 0 );
   for (i = 0; i < CELLS_PER_NUMBER; i++) 
     value[ i + 1 ] = v.cells[i];
@@ -1144,7 +1144,7 @@ dot_operation( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-plus_operation( void )
+plus_operation(MalagaState * malagaState)
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "+" VALUE2. 
  * The actual operation depends on the type of the values. */
@@ -1156,17 +1156,17 @@ plus_operation( void )
   switch (TYPE( value1 )) 
   {
   case STRING_TYPE:
-    concat_string_values();
+    concat_string_values(malagaState);
     break;
   case LIST_TYPE:
-    concat_lists();
+    concat_lists(malagaState);
     break;
   case RECORD_TYPE:
-    join_records();
+    join_records(malagaState);
     break;
   case NUMBER_TYPE:
     top -= 2;
-    push_number_value( value_to_double( value1 ) + value_to_double( value2 ) );
+    push_number_value(value_to_double(value1) + value_to_double(value2), malagaState);
     break;
   }
 }
@@ -1174,7 +1174,7 @@ plus_operation( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-minus_operation( void )
+minus_operation(MalagaState * malagaState)
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "-" VALUE2. 
  * The actual operation depends on the type of the values. */
@@ -1190,10 +1190,10 @@ minus_operation( void )
     {
     case NUMBER_TYPE:
       top--;
-      remove_element( value_to_int( value2 ) ); 
+      remove_element(value_to_int(value2), malagaState);
       break;
     case LIST_TYPE:
-      get_list_difference();
+      get_list_difference(malagaState);
       break;
     }
     break;
@@ -1202,16 +1202,16 @@ minus_operation( void )
     {
     case SYMBOL_TYPE:
       top--;
-      remove_attribute( value_to_symbol( value2 ) );
+      remove_attribute(value_to_symbol(value2), malagaState);
       break;
     case LIST_TYPE:
-      remove_attributes();
+      remove_attributes(malagaState);
       break;
     }
     break;
   case NUMBER_TYPE:
     top -= 2;
-    push_number_value( value_to_double( value1 ) - value_to_double( value2 ) );
+    push_number_value(value_to_double(value1) - value_to_double(value2), malagaState);
     break;
   }
 }
@@ -1219,7 +1219,7 @@ minus_operation( void )
 /* Attribute path functions. ================================================*/
 
 void 
-build_path( int_t n )
+build_path(int_t n, MalagaState * malagaState)
 /* Stack effects: VALUE1 ... VALUE_N -> NEW_LIST.
  * NEW_LIST is a path which contains VALUE1, ..., VALUE_N. 
  * VALUE1, ..., VALUE_N must be numbers, symbols or lists of numbers and 
@@ -1246,7 +1246,7 @@ build_path( int_t n )
       break;
     }
   }
-  new_list = space_for_composed_value( LIST_TYPE, new_list_length );
+  new_list = space_for_composed_value(LIST_TYPE, new_list_length, malagaState);
   v = new_list + 2;
   for (i = 0; i < n; i++) 
   { 
@@ -1268,8 +1268,8 @@ build_path( int_t n )
 /*---------------------------------------------------------------------------*/
 
 static void 
-modify_value_part_local( void (*modifier)( void ), int_t value_index, 
-                         int_t path_index )
+modify_value_part_local(void (*modifier)(MalagaState *), int_t value_index, 
+                        int_t path_index, MalagaState * malagaState)
 /* Stack effects: VALUE PATH MOD_VALUE -> VALUE PATH NEW_VALUE.
  * NEW_VALUE is VALUE, but the part that is described by PATH is 
  * modified. PATH must be a list of symbols and numbers <E1, E2, .. , E_N>.
@@ -1285,7 +1285,7 @@ modify_value_part_local( void (*modifier)( void ), int_t value_index,
   if (selector == NULL) /* No more selectors. */
   { 
     insert_value( 1, value );
-    modifier();
+    modifier(malagaState);
   } 
   else /* Find attribute in VALUE. */
   {
@@ -1306,7 +1306,7 @@ modify_value_part_local( void (*modifier)( void ), int_t value_index,
     int_t subvalue_index = subvalue - value_stack[ top - 3 ];
 
     /* Go down recursively */
-    modify_value_part_local( modifier, subvalue_index, path_index + 1 );
+    modify_value_part_local(modifier, subvalue_index, path_index + 1, malagaState);
     subvalue = value_stack[ top - 3 ] + subvalue_index;
     value = value_stack[ top - 3 ] + value_index;
     selector = get_element( value_stack[ top - 2 ], path_index );
@@ -1315,12 +1315,12 @@ modify_value_part_local( void (*modifier)( void ), int_t value_index,
     else if (IS_SYMBOL( selector )) 
     { 
       insert_value( 1, value );
-      replace_attribute( value_to_symbol( selector ) );
+      replace_attribute(value_to_symbol(selector), malagaState);
     } 
     else 
     { 
       insert_value( 1, value );
-      replace_element( value_to_int( selector ) );
+      replace_element(value_to_int(selector), malagaState);
     }
   }
 }
@@ -1328,7 +1328,7 @@ modify_value_part_local( void (*modifier)( void ), int_t value_index,
 /*---------------------------------------------------------------------------*/
 
 void 
-modify_value_part( void (*modifier)( void ) )
+modify_value_part(void (*modifier)(MalagaState *), MalagaState * malagaState)
 /* Stack effects: VALUE PATH MOD_VALUE -> NEW_VALUE.
  * NEW_VALUE is VALUE, but the part that is described by PATH is 
  * modified. PATH must be a list of symbols and numbers <E1, E2, .. , E_N>.
@@ -1339,7 +1339,7 @@ modify_value_part( void (*modifier)( void ) )
  * The value returned by MODIFIER will be entered in VALUE in place of
  * OLD_VALUE. */
 {
-  modify_value_part_local( modifier, 0, 1 );
+  modify_value_part_local(modifier, 0, 1, malagaState);
   value_stack[ top - 3 ] = value_stack[ top - 1 ];
   top -= 2;
 }
@@ -1347,7 +1347,7 @@ modify_value_part( void (*modifier)( void ) )
 /*---------------------------------------------------------------------------*/
 
 void 
-right_value( void )
+right_value(MalagaState * malagaState)
 /* Stack effects: LEFT_VALUE RIGHT_VALUE -> RIGHT_VALUE.
  * A modifier for "modify_value_part". */
 {
@@ -1358,7 +1358,7 @@ right_value( void )
 /* Functions for list/record iteration. =====================================*/
 
 void 
-get_first_element( void )
+get_first_element(MalagaState * malagaState)
 /* Stack effects: VALUE -> NEW_VALUE.
  * If VALUE is a list, then NEW_VALUE is its first element (or NULL).
  * If VALUE is a record, then NEW_VALUE is its first attribute (or NULL).
@@ -1384,9 +1384,9 @@ get_first_element( void )
     case NUMBER_TYPE:
       int_t limit = value_to_int( value );
       if (limit > 0) 
-	push_number_value( 1.0 );
+	push_number_value(1.0, malagaState);
       else if (limit < 0) 
-	push_number_value( -1.0 );
+	push_number_value(-1.0, malagaState);
       else 
 	push_value( NULL );
       break;
@@ -1397,7 +1397,7 @@ get_first_element( void )
 /*---------------------------------------------------------------------------*/
 
 void 
-get_next_element( int_t index )
+get_next_element(int_t index, MalagaState * malagaState)
 /* Stack effects: (nothing) -> (nothing).
  * VALUE is VALUE_STACK[ INDEX - 1 ], ELEMENT is VALUE_STACK[ INDEX ].
  * VALUE_STACK[ INDEX ] will be set to NEW_ELEMENT.
@@ -1433,12 +1433,12 @@ get_next_element( int_t index )
     int_t number = value_to_int( element );
     if (limit > 0 && number < limit) 
     { 
-      push_number_value( number + 1 );
+      push_number_value(number + 1, malagaState);
       element = value_stack[ --top ];
     } 
     else if (limit < 0 && number > limit) 
     { 
-      push_number_value( number - 1 );
+      push_number_value(number - 1, malagaState);
       element = value_stack[ --top ];
     } 
     else 

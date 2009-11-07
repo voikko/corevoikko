@@ -71,6 +71,7 @@ noinst_HEADERS = \
     morphology/malaga/rules.hpp \
     morphology/malaga/symbols.hpp \
     morphology/malaga/values.hpp \
+    morphology/malaga/MalagaState.hpp \
     setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     character/charset.hpp \

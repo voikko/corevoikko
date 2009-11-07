@@ -20,6 +20,7 @@
 #include "morphology/malaga/analysis.hpp"
 #include "morphology/malaga/malaga_lib.hpp"
 #include "morphology/malaga/libmalaga.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -28,12 +29,12 @@ namespace libvoikko { namespace morphology { namespace malaga {
 /* Functions. ===============================================================*/
 
 void 
-init_libmalaga(string_t project_directory) throw(setup::DictionaryException)
+init_libmalaga(string_t project_directory, MalagaState * malagaState) throw(setup::DictionaryException)
 /* Initialise this module. */
 { 
   string_t project_directory_absolute = absolute_path(project_directory, NULL);
   try {
-    init_malaga(project_directory_absolute);
+    init_malaga(project_directory_absolute, malagaState);
     free_mem(&project_directory_absolute);
   }
   catch (setup::DictionaryException e) {
@@ -45,10 +46,10 @@ init_libmalaga(string_t project_directory) throw(setup::DictionaryException)
 /*---------------------------------------------------------------------------*/
 
 void
-terminate_libmalaga( void )
+terminate_libmalaga(MalagaState * malagaState)
 /* Terminate this module. */
 { 
-  terminate_malaga();
+  terminate_malaga(malagaState);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -67,14 +68,14 @@ get_value_string( value_t string )
 /*---------------------------------------------------------------------------*/
 
 void
-analyse_item( string_t item ) throw(setup::DictionaryException)
+analyse_item(string_t item, MalagaState * malagaState) throw(setup::DictionaryException)
 /* Analyse ITEM */
 { 
   char_t * analysis_input = NULL;
   try {
     analysis_input = new_string( item, NULL );
     preprocess_input( analysis_input );
-    analyse( analysis_input );
+    analyse(analysis_input, malagaState);
     free_mem(&analysis_input);
   }
   catch (setup::DictionaryException e) {
@@ -86,11 +87,11 @@ analyse_item( string_t item ) throw(setup::DictionaryException)
 /*---------------------------------------------------------------------------*/
 
 value_t
-parse_malaga_symbol( string_t string )
+parse_malaga_symbol(string_t string, MalagaState * malagaState)
 /* Convert STRING to a Malaga value and return it.
  * The value must be freed after use. */
 {
-  push_symbol_value( find_symbol( string ) );
+  push_symbol_value(find_symbol(string), malagaState);
   return new_value( value_stack[ --top ] );
 }
 

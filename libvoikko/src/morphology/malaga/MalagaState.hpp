@@ -16,37 +16,20 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_MORPHOLOGY_ANALYZER
-#define VOIKKO_MORPHOLOGY_ANALYZER
+#ifndef VOIKKO_MORPHOLOGY_MALAGA_MALAGA_STATE_HPP
+#define VOIKKO_MORPHOLOGY_MALAGA_MALAGA_STATE_HPP
 
-#include "morphology/Analysis.hpp"
-#include <list>
+#include "morphology/malaga/basic.hpp"
+#include "morphology/malaga/pools.hpp"
+#include "morphology/malaga/values.hpp"
 
-namespace libvoikko { namespace morphology {
+namespace libvoikko { namespace morphology { namespace malaga {
 
-/**
- * General interface for morphological analyzers.
- */
-class Analyzer {
-	public:
-		/**
-		 * Analyzes given word and returns a list of results.
-		 * The results and the list must be deleted after use.
-		 */
-		virtual std::list<Analysis *> * analyze(const wchar_t * word) = 0;
-		virtual std::list<Analysis *> * analyze(const wchar_t * word,
-		                                        size_t wlen) = 0;
-		virtual std::list<Analysis *> * analyze(const char * word) = 0;
-		
-		virtual void terminate() = 0;
-		virtual ~Analyzer();
-
-		/**
-		 * Deletes a list of analyses returned from an analyzer.
-		 */
-		static void deleteAnalyses(std::list<Analysis *> * &analyses);
+class MalagaState {
+public:
+	cell_t * value_heap;
 };
 
-} }
+} } }
 
 #endif

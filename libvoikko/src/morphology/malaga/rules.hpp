@@ -6,6 +6,8 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+class MalagaState;
+
 /* Types. ===================================================================*/
 
 typedef struct 
@@ -59,7 +61,7 @@ typedef struct
 
 /* Functions. ===============================================================*/
 
-extern bool execute_rule( rule_sys_t *rule_sys, int_t rule_number );
+extern bool execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState);
 /* Execute rule RULE_NUMBER in the rule system RULE_SYS.
  * Any parameters must be on the value stack.
  * Returns true if executed rule was successful */

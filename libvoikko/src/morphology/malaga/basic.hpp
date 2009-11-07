@@ -4,6 +4,9 @@
 
 /* This file contains basic types, macros and functions used everywhere. */
 
+#ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
+#define LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
+
 #include <glib.h>
 
 namespace libvoikko { namespace morphology { namespace malaga {
@@ -138,3 +141,5 @@ extern char_t *text_to_string( text_t **text_p );
  * The string must be freed after use. */
 
 }}}
+
+#endif

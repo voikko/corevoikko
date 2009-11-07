@@ -21,6 +21,7 @@
 
 #include "morphology/Analyzer.hpp"
 #include "morphology/malaga/malaga.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 #include "setup/DictionaryException.hpp"
 #include <map>
 
@@ -42,13 +43,16 @@ enum MalagaSymbol {
 class MalagaAnalyzer : public Analyzer {
 	public:
 		MalagaAnalyzer(const std::string & directoryName) throw(setup::DictionaryException);
-		std::list<Analysis *> * analyze(const wchar_t * word) const;
+		std::list<Analysis *> * analyze(const wchar_t * word);
 		std::list<Analysis *> * analyze(const wchar_t * word,
-		                                size_t wlen) const;
-		std::list<Analysis *> * analyze(const char * word) const;
+		                                size_t wlen);
+		std::list<Analysis *> * analyze(const char * word);
 		void terminate();
 	
 	private:
+		malaga::symbol_t findSymbol(const char * name);
+		void insertToSymbolMap(std::map<malaga::symbol_t, const wchar_t *> &map,
+		                       const char * malagaName, const wchar_t * externalName);
 		void parseStructure(Analysis * &analysis, malaga::value_t &result) const;
 		void parseSijamuoto(Analysis * &analysis, malaga::value_t &result) const;
 		void parseClass(Analysis * &analysis, malaga::value_t &result) const;
@@ -57,6 +61,7 @@ class MalagaAnalyzer : public Analyzer {
 		wchar_t * parseAttributeFromPerusmuoto(wchar_t * &perusmuoto, wchar_t id) const;
 		void initSymbols();
 		
+		malaga::MalagaState malagaState;
 		malaga::symbol_t symbols[MS_LAST_SYMBOL];
 		std::map<malaga::symbol_t, const wchar_t *> sijamuotoMap;
 		std::map<malaga::symbol_t, const wchar_t *> classMap;
