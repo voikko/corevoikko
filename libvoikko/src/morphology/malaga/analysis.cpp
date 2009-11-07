@@ -491,8 +491,8 @@ analyse(string_t input, MalagaState * malagaState)
     /* Look for prefixes of increasing length
      * that match the string at CURRENT_INPUT. */
     trie_search_state searchState;
-    search_for_prefix(current_input, searchState);
-    while (get_next_prefix(&link_surf_end, &link_feat, searchState)) 
+    search_for_prefix(current_input, searchState, malagaState);
+    while (get_next_prefix(&link_surf_end, &link_feat, searchState, malagaState)) 
     { 
       /* Combine that link with all morphological states. */
       FOREACH( state, analysis->running_states, state_t ) 

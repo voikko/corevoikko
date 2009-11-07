@@ -33,6 +33,16 @@ public:
 	int_t value_stack_size; /* Size of the value stack. */
 	int_t top; /* The index of the first unused item on VALUE_STACK. */
 	value_t * value_stack; /* The value stack contains static values and local values. */
+
+	struct { /* The run time lexicon. */
+		void * lexicon_data; /* Address of lexicon file mapped into memory. */
+		int_t lexicon_length; /* Length of *LEXICON_DATA. */
+		int_t * trie; /* A trie with indices to FEAT_LISTS. */
+		int_t trie_root; /* Index of root node in TRIE. */
+		int_t * feat_lists; /* Lists of feature structures, stored in VALUES. */
+		cell_t * values; /* Feature structures of lexicon entries. */
+	} lexicon;
+
 };
 
 } } }
