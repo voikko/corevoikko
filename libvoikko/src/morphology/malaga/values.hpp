@@ -38,10 +38,6 @@ extern value_t *value_stack; // FIXME
  * The location of the VALUE_STACK-vector may change when the stack size
  * must increase. */
 
-extern int_t top; // FIXME
-/* The index of the first unused item on VALUE_STACK.
- * You may only read or decrease this variable! */
-
 /* Module initialisation. ===================================================*/
 
 extern void init_values(MalagaState * malagaState);
@@ -182,7 +178,7 @@ extern void push_number_value(double number, MalagaState * malagaState);
 
 /* Type dependent Malaga operations. ========================================*/
 
-extern void dot_operation( void );
+extern void dot_operation(MalagaState * malagaState);
 /* Stack effects: VALUE1 VALUE2 -> NEW_VALUE.
  * NEW_VALUE is VALUE1 "." VALUE2 or NULL, if that value doesn't exist.
  * The actual operation depends on the type of the values. */

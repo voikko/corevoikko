@@ -288,7 +288,7 @@ execute_filter_rule( analysis_t *analysis,
     input = state->input;
 
     /* Create a list with the results of all states and remove states. */
-    top = 0;
+    malagaState->top = 0;
     while (old_end_states.first != NULL 
 	   && ((state_t *) old_end_states.first)->input == input) 
     { 
@@ -296,7 +296,7 @@ execute_filter_rule( analysis_t *analysis,
       add_node( &analysis->free_states, (list_node_t *) state, LIST_END );
       push_value(state->feat, malagaState);
     }
-    build_list(top, malagaState);
+    build_list(malagaState->top, malagaState);
 
     /* Execute filter rule. */
     state_info.analysis = analysis;
@@ -323,7 +323,7 @@ execute_pruning_rule(analysis_t *analysis, MalagaState * malagaState)
   input = state->input;
 
   /* Create a list that contains the results. */
-  top = 0;
+  malagaState->top = 0;
   result_count = 0;
   FOREACH( state, analysis->running_states, state_t ) 
   { 
@@ -341,7 +341,7 @@ execute_pruning_rule(analysis_t *analysis, MalagaState * malagaState)
   execute_rule(rule_sys, rule_sys->pruning_rule, malagaState); /* Execute pruning rule. */
 
   /* Interprete the result. */
-  list = value_stack[ top - 1 ];
+  list = value_stack[ malagaState->top - 1 ];
   state = (state_t *) analysis->running_states.first;
   for (i = 0; i < result_count; i++) 
   { 
@@ -398,7 +398,7 @@ execute_rules( analysis_t *analysis,
 	      || word_may_end_here( link_surf, rule )))
       { 
 	state_info.rule = *rule_p;
-	top = 0;
+	malagaState->top = 0;
 	push_value(state->feat, malagaState);
 	if (rule->type == COMBI_RULE) 
 	{ 

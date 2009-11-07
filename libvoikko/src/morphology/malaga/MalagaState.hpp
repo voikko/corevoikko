@@ -31,6 +31,8 @@ public:
 	cell_t * value_heap_end; /* Pointer to first free cell in heap. */
 	int_t value_heap_size; /* Size of the value heap in cells. */
 	int_t value_stack_size; /* Size of the value stack. */
+	int_t top; /* The index of the first unused item on VALUE_STACK. */
+
 };
 
 } } }
