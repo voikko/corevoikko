@@ -7,6 +7,8 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+class MalagaState;
+
 /* Constants. ===============================================================*/
 
 enum {PATTERN_VAR_MAX = 5}; /* Maximum number of pattern variables. */
@@ -17,11 +19,11 @@ extern string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. FIXME */
 
 /* Functions. ===============================================================*/
 
-extern bool match_pattern( string_t string, string_t pattern );
+extern bool match_pattern(string_t string, string_t pattern, MalagaState * malagaState);
 /* Test whether STRING matches PATTERN and set substring indices in PATTERN_VAR.
  * The substrings remain valid until "compile_pattern" is called again. */
 
-extern void terminate_patterns( void );
+extern void terminate_patterns(MalagaState * malagaState);
 /* Terminate this module. */
 
 }}}

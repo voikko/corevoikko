@@ -202,8 +202,8 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         standard_function(info, malagaState);
         break;
       case INS_MATCH:
-        if (match_pattern(value_to_string(malagaState->value_stack[--(malagaState->top)]), 
-                           rule_sys->strings + info )) {
+        if (match_pattern(value_to_string(malagaState->value_stack[--(malagaState->top)]),
+                           rule_sys->strings + info, malagaState)) {
           push_symbol_value(YES_SYMBOL, malagaState);
         }
         else {

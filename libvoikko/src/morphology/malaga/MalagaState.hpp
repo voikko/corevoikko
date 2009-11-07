@@ -23,10 +23,14 @@
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
 
+
 namespace libvoikko { namespace morphology { namespace malaga {
+
+typedef struct {string_t string, pattern;} pattern_state_t;
 
 class MalagaState {
 public:
+	MalagaState();
 	cell_t * value_heap;
 	cell_t * value_heap_end; /* Pointer to first free cell in heap. */
 	int_t value_heap_size; /* Size of the value heap in cells. */
@@ -42,6 +46,9 @@ public:
 		int_t * feat_lists; /* Lists of feature structures, stored in VALUES. */
 		cell_t * values; /* Feature structures of lexicon entries. */
 	} lexicon;
+
+	pattern_state_t * stack; /* Stack used for backtracking. */
+	int_t stack_size;
 
 };
 

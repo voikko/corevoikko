@@ -94,7 +94,7 @@ terminate_malaga(MalagaState * malagaState)
 /* Terminate this module. */
 {
   terminate_analysis();
-  terminate_patterns();
+  terminate_patterns(malagaState);
   terminate_lexicon(malagaState);
   terminate_symbols();
   terminate_values(malagaState);

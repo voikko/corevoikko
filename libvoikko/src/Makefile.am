@@ -38,6 +38,7 @@ libvoikko_la_SOURCES = \
     morphology/malaga/pools.cpp \
     morphology/malaga/tries.cpp \
     morphology/malaga/values.cpp \
+    morphology/malaga/MalagaState.cpp \
     setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
     hyphenator/hyphenator.cpp character/charset.cpp \

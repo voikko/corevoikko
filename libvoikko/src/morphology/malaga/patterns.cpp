@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/patterns.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -52,30 +53,22 @@ enum
   PAT_COUNT
 };
 
-/* Types. ===================================================================*/
-
-typedef struct {string_t string, pattern;} pattern_state_t;
 
 /* Global variables. ========================================================*/
 
 string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. */
 
-/* Variables. ===============================================================*/
-
-static pattern_state_t *stack; /* Stack used for backtracking. FIXME */
-static int_t stack_size; // FIXME
-
 /* Functions. ===============================================================*/
 
 bool 
-match_pattern( string_t string, string_t pattern )
+match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
 /* Test whether STRING matches PATTERN and set substrings in PATTERN_VAR.
  * The substrings can be freed after usage. */
 {
   struct {string_t start; string_t end;} var[ PATTERN_VAR_MAX ];
   int_t sp, i;
   bool found_mismatch;
-  string_t index;      
+  string_t index;
   gunichar c;
 
   sp = 0;
@@ -109,24 +102,24 @@ match_pattern( string_t string, string_t pattern )
       pattern += (byte_t) pattern[1];
       break;
     case PAT_JUMP_NOW:
-      if (sp == stack_size)
+      if (sp == malagaState->stack_size)
       {
-	stack_size = renew_vector( &stack, sizeof( pattern_state_t ), 
-				   stack_size + 100 );
+	malagaState->stack_size = renew_vector(&(malagaState->stack), sizeof( pattern_state_t ), 
+				   malagaState->stack_size + 100 );
       }
-      stack[ sp ].string = string;
-      stack[ sp ].pattern = pattern + 2;
+      malagaState->stack[ sp ].string = string;
+      malagaState->stack[ sp ].pattern = pattern + 2;
       sp++;
       pattern += (byte_t) pattern[1];
       break;
     case PAT_JUMP_LATER:
-      if (sp == stack_size)
+      if (sp == malagaState->stack_size)
       {
-	stack_size = renew_vector( &stack, sizeof( pattern_state_t ),
-				   stack_size + 100 );
+	malagaState->stack_size = renew_vector( &(malagaState->stack), sizeof( pattern_state_t ),
+				   malagaState->stack_size + 100 );
       }
-      stack[ sp ].string = string;
-      stack[ sp ].pattern = pattern + (byte_t) pattern[1];
+      malagaState->stack[ sp ].string = string;
+      malagaState->stack[ sp ].pattern = pattern + (byte_t) pattern[1];
       sp++;
       pattern += 2;
       break;
@@ -202,8 +195,8 @@ match_pattern( string_t string, string_t pattern )
     if (found_mismatch && sp > 0) 
     { 
       sp--;
-      string = stack[ sp ].string;
-      pattern = stack[ sp ].pattern;
+      string = malagaState->stack[ sp ].string;
+      pattern = malagaState->stack[ sp ].pattern;
       found_mismatch = false;
     }
   }
@@ -213,15 +206,15 @@ match_pattern( string_t string, string_t pattern )
 /*---------------------------------------------------------------------------*/
 
 void 
-terminate_patterns( void )
+terminate_patterns(MalagaState * malagaState)
 /* Terminate this module. */
 {
   int_t i;
 
   for (i = 0; i < PATTERN_VAR_MAX; i++) 
     free_mem( &pattern_var[i] );
-  free_mem( &stack );
-  stack_size = 0;
+  free_mem( &(malagaState->stack) );
+  malagaState->stack_size = 0;
 }
 
 }}}
