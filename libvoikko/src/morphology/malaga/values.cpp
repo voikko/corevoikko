@@ -111,10 +111,6 @@ typedef struct /* An element in a list of hidden attributes. */
 value_t *value_stack;
 int_t top;
 
-/* Variables. ===============================================================*/
-
-static int_t value_stack_size; /* Size of the value stack. FIXME */
-
 /* Support functions. =======================================================*/
 
 static void 
@@ -264,8 +260,8 @@ init_values(MalagaState * malagaState)
   malagaState->value_heap_size = 1000;
   malagaState->value_heap = (cell_t *) new_vector( sizeof( cell_t ), malagaState->value_heap_size );
   malagaState->value_heap_end = malagaState->value_heap;
-  value_stack_size = 100;
-  value_stack = (cell_t **) new_vector( sizeof( value_t ), value_stack_size );
+  malagaState->value_stack_size = 100;
+  value_stack = (cell_t **) new_vector( sizeof( value_t ), malagaState->value_stack_size);
   top = 0;
 }
 
@@ -355,12 +351,11 @@ get_value_type( value_t value )
 /*---------------------------------------------------------------------------*/
 
 void 
-push_value( value_t value )
+push_value(value_t value, MalagaState * malagaState)
 /* Stack effects: (nothing) -> VALUE. */
 {
-  if (top + 1 > value_stack_size) 
-  { 
-    value_stack_size = renew_vector( &value_stack, sizeof( value_t ), 
+  if (top + 1 > malagaState->value_stack_size) {
+    malagaState->value_stack_size = renew_vector( &value_stack, sizeof( value_t ), 
 				     2 * (top + 1) );
   }
   value_stack[ top++ ] = value;
@@ -369,12 +364,12 @@ push_value( value_t value )
 /*---------------------------------------------------------------------------*/
 
 void 
-insert_value( int_t n, value_t value )
+insert_value(int_t n, value_t value, MalagaState * malagaState)
 /* Stack effects: VALUE1...VALUE_N -> VALUE VALUE1...VALUE_N. */
 {
   int_t i;
 
-  push_value( NULL );
+  push_value(NULL, malagaState);
   for (i = 0; i < n; i++) 
     value_stack[ top - i - 1 ] = value_stack[ top - i - 2 ];
   value_stack[ top - n - 1 ] = value;
@@ -400,7 +395,7 @@ push_symbol_value(symbol_t symbol, MalagaState * malagaState)
 
   value = space_for_value(1, malagaState);
   *value = TYPE_CELL( SYMBOL_TYPE, symbol );
-  push_value( value );
+  push_value(value, malagaState);
 }
 
 /* String operations. =======================================================*/
@@ -442,7 +437,7 @@ push_string_value(string_t string_start, string_t string_end, MalagaState * mala
   while (target_p < (string_t) value_end) 
     *target_p++ = EOS;
 
-  push_value( value );
+  push_value(value, malagaState);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -528,7 +523,7 @@ build_record(int_t n, MalagaState * malagaState)
   }
 
   top -= 2 * n;
-  push_value( new_record );
+  push_value(new_record, malagaState);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -830,7 +825,7 @@ build_list(int_t n, MalagaState * malagaState)
     v = NEXT_VALUE( v );
   }
   top -= n;
-  push_value( new_list );
+  push_value(new_list, malagaState);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -1083,7 +1078,7 @@ push_number_value(double number, MalagaState * malagaState)
   *value = TYPE_CELL( NUMBER_TYPE, 0 );
   for (i = 0; i < CELLS_PER_NUMBER; i++) 
     value[ i + 1 ] = v.cells[i];
-  push_value( value );
+  push_value(value, malagaState);
 }
 
 /* Type dependent Malaga operations. ========================================*/
@@ -1259,7 +1254,7 @@ build_path(int_t n, MalagaState * malagaState)
     }
   }
   top -= n;
-  push_value( new_list );
+  push_value(new_list, malagaState);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -1281,7 +1276,7 @@ modify_value_part_local(void (*modifier)(MalagaState *), int_t value_index,
   value_t selector = get_element( value_stack[ top - 2 ], path_index );
   if (selector == NULL) /* No more selectors. */
   { 
-    insert_value( 1, value );
+    insert_value(1, value, malagaState);
     modifier(malagaState);
   } 
   else /* Find attribute in VALUE. */
@@ -1311,12 +1306,12 @@ modify_value_part_local(void (*modifier)(MalagaState *), int_t value_index,
       value_stack[ top - 1 ] = value;
     else if (IS_SYMBOL( selector )) 
     { 
-      insert_value( 1, value );
+      insert_value(1, value, malagaState);
       replace_attribute(value_to_symbol(selector), malagaState);
     } 
     else 
     { 
-      insert_value( 1, value );
+      insert_value(1, value, malagaState);
       replace_element(value_to_int(selector), malagaState);
     }
   }
@@ -1365,7 +1360,7 @@ get_first_element(MalagaState * malagaState)
   value_t value = value_stack[ top - 1 ];
   top--;
   if (*value == NIL_SYMBOL) 
-    push_value( NULL );
+    push_value(NULL, malagaState);
   else 
   { 
     switch (TYPE( value )) 
@@ -1374,9 +1369,9 @@ get_first_element(MalagaState * malagaState)
     case LIST_TYPE:
       /* Return NULL if list or record is empty. */
       if (length_of_value( value ) == 2) 
-	push_value( NULL );
+	push_value(NULL, malagaState);
       else 
-	push_value( value + 2 );
+	push_value(value + 2, malagaState);
       break;
     case NUMBER_TYPE:
       int_t limit = value_to_int( value );
@@ -1385,7 +1380,7 @@ get_first_element(MalagaState * malagaState)
       else if (limit < 0) 
 	push_number_value(-1.0, malagaState);
       else 
-	push_value( NULL );
+	push_value(NULL, malagaState);
       break;
     }
   }

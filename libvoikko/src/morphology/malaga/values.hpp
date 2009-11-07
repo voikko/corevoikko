@@ -68,10 +68,10 @@ extern symbol_t get_value_type( value_t value );
 /* Return the type of VALUE. Depending of the type, the result value may be
  * SYMBOL_SYMBOL, STRING_SYMBOL, NUMBER_SYMBOL, LIST_SYMBOL, RECORD_SYMBOL. */
 
-extern void push_value( value_t value );
+extern void push_value(value_t value, MalagaState * malagaState);
 /* Stack effects: (nothing) -> VALUE. */
 
-extern void insert_value( int_t n, value_t value );
+extern void insert_value(int_t n, value_t value, MalagaState * malagaState);
 /* Stack effects: VALUE1...VALUE_N -> VALUE VALUE1...VALUE_N. */
 
 /* Symbol operations. =======================================================*/

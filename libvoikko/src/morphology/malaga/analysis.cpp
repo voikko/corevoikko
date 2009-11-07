@@ -294,7 +294,7 @@ execute_filter_rule( analysis_t *analysis,
     { 
       state = (state_t *) remove_first_node( &old_end_states );
       add_node( &analysis->free_states, (list_node_t *) state, LIST_END );
-      push_value( state->feat );
+      push_value(state->feat, malagaState);
     }
     build_list(top, malagaState);
 
@@ -330,7 +330,7 @@ execute_pruning_rule(analysis_t *analysis, MalagaState * malagaState)
     if (state->input != input) 
       break;
     result_count++;
-    push_value( state->feat );
+    push_value(state->feat, malagaState);
   }
   /* Don't execute if number of states is too low. */
   if (result_count < mor_pruning_min)
@@ -399,10 +399,10 @@ execute_rules( analysis_t *analysis,
       { 
 	state_info.rule = *rule_p;
 	top = 0;
-	push_value( state->feat );
+	push_value(state->feat, malagaState);
 	if (rule->type == COMBI_RULE) 
 	{ 
-	  push_value( link_feat );
+	  push_value(link_feat, malagaState);
 	  if (rule->param_count >= 3) 
 	    push_string_value(link_surf, link_surf_end, malagaState);
 	  if (rule->param_count >= 4) 

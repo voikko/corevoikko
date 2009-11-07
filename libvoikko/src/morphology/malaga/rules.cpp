@@ -149,13 +149,13 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         break;
       case INS_PUSH_NULL:
         for (int_t i = 0; i < info; i++) 
-	  push_value( NULL );
+	  push_value(NULL, malagaState);
         break;
       case INS_PUSH_VAR:
-        push_value( value_stack[ base + info ] );
+        push_value(value_stack[ base + info ], malagaState);
         break;
       case INS_PUSH_CONST:
-        push_value( rule_sys->values + info );
+        push_value(rule_sys->values + info, malagaState);
         break;
       case INS_PUSH_SYMBOL:
         push_symbol_value(info, malagaState);
@@ -214,27 +214,27 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_PLUS_VAR:
-        insert_value( 1, value_stack[ base + info ] );
+        insert_value(1, value_stack[ base + info ], malagaState);
         plus_operation(malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_MINUS_VAR:
-        insert_value( 1, value_stack[ base + info ]);
+        insert_value(1, value_stack[ base + info ], malagaState);
         minus_operation(malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_SET_VAR_PATH:
-        insert_value( 2, value_stack[ base + info ] );
+        insert_value(2, value_stack[ base + info ], malagaState);
         modify_value_part(right_value, malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_PLUS_VAR_PATH:
-        insert_value( 2, value_stack[ base + info ] );
+        insert_value(2, value_stack[ base + info ], malagaState);
         modify_value_part(plus_operation, malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
       case INS_MINUS_VAR_PATH:
-        insert_value( 2, value_stack[ base + info ] );
+        insert_value(2, value_stack[ base + info ], malagaState);
         modify_value_part(minus_operation, malagaState);
         value_stack[ base + info ] = value_stack[ --top ];
         break;
@@ -330,7 +330,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         path->base = base;
         path->bottom = bottom;
         while (bottom < old_top)
-	  push_value( value_stack[ bottom++ ] );
+	  push_value(value_stack[ bottom++ ], malagaState);
         base += (top - old_top);
         path_count++;
         new_pc = info;
@@ -345,7 +345,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         path->base = base;
         path->bottom = bottom;
         while (bottom < old_top) 
-	  push_value( value_stack[ bottom++ ] );
+	  push_value(value_stack[ bottom++ ], malagaState);
         base += (top - old_top);
         path_count++;
 	}
