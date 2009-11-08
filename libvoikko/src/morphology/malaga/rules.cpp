@@ -161,7 +161,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         push_symbol_value(info, malagaState);
         break;
       case INS_PUSH_PATTERN_VAR:
-        push_string_value(pattern_var[ info ], NULL, malagaState);
+        push_string_value(malagaState->pattern_var[info], NULL, malagaState);
         break;
       case INS_POP:
         malagaState->top -= info;

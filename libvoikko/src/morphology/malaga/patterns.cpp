@@ -53,11 +53,6 @@ enum
   PAT_COUNT
 };
 
-
-/* Global variables. ========================================================*/
-
-string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. */
-
 /* Functions. ===============================================================*/
 
 bool 
@@ -89,8 +84,8 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
 	{ 
 	  if (var[i].start != NULL && var[i].end != NULL) 
 	  { 
-	    free_mem( &pattern_var[i] );
-            pattern_var[i] = new_string( var[i].start, var[i].end );
+	    free_mem( &(malagaState->pattern_var[i]) );
+            malagaState->pattern_var[i] = new_string( var[i].start, var[i].end );
           }
         }
         return true;
@@ -212,7 +207,7 @@ terminate_patterns(MalagaState * malagaState)
   int_t i;
 
   for (i = 0; i < PATTERN_VAR_MAX; i++) 
-    free_mem( &pattern_var[i] );
+    free_mem( &(malagaState->pattern_var[i]) );
   free_mem( &(malagaState->stack) );
   malagaState->stack_size = 0;
 }

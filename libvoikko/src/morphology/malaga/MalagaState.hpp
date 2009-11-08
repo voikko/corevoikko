@@ -26,6 +26,8 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+enum {PATTERN_VAR_MAX = 5}; /* Maximum number of pattern variables. */
+
 typedef struct {string_t string, pattern;} pattern_state_t;
 
 class MalagaState {
@@ -49,6 +51,7 @@ public:
 
 	pattern_state_t * stack; /* Stack used for backtracking. */
 	int_t stack_size;
+	string_t pattern_var[PATTERN_VAR_MAX]; /* Pattern variables. */
 
 };
 

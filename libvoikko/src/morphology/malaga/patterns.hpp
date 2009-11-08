@@ -9,14 +9,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 class MalagaState;
 
-/* Constants. ===============================================================*/
-
-enum {PATTERN_VAR_MAX = 5}; /* Maximum number of pattern variables. */
-
-/* Variables. ===============================================================*/
-
-extern string_t pattern_var[ PATTERN_VAR_MAX ]; /* Pattern variables. FIXME */
-
 /* Functions. ===============================================================*/
 
 extern bool match_pattern(string_t string, string_t pattern, MalagaState * malagaState);
