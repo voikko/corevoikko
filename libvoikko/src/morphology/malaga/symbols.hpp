@@ -6,22 +6,18 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+class MalagaState;
+
 /* Functions. ===============================================================*/
 
-extern string_t get_symbol_name( symbol_t symbol );
-/* Return the name of SYMBOL. */
-
-extern symbol_t find_symbol( string_t name );
+extern symbol_t find_symbol(string_t name, MalagaState * malagaState);
 /* Find a symbol by NAME in the symbol table and return its code.
  * If there is no symbol NAME, report an error. */
 
-extern int_t symbol_count( void );
-/* Return the number of symbols defined. */
-
-extern void init_symbols( string_t file_name );
+extern void init_symbols(string_t file_name, MalagaState * malagaState);
 /* Initialise this module; Read symbol table from file FILE_NAME. */
 
-extern void terminate_symbols( void );
+extern void terminate_symbols(MalagaState * malagaState);
 /* Terminate this module. */
 
 }}}

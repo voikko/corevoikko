@@ -17,6 +17,7 @@
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/malaga_files.hpp"
 #include "morphology/malaga/symbols.hpp"
+#include "morphology/malaga/MalagaState.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -47,7 +48,7 @@ get_symbol_name( symbol_t symbol )
 /*---------------------------------------------------------------------------*/
 
 symbol_t 
-find_symbol( string_t name )
+find_symbol(string_t name, MalagaState * malagaState)
 /* Find a symbol NAME in the symbol table and return its code.
  * If there is no symbol NAME, report an error. */
 {
@@ -96,7 +97,7 @@ compare_symbols_by_name( const void *symbol1, const void *symbol2 )
 /*---------------------------------------------------------------------------*/
 
 void 
-init_symbols( string_t file_name )
+init_symbols(string_t file_name, MalagaState * malagaState)
 /* Initialise this module. Read SYMBOL_TABLE from file FILE_NAME. */
 {
   FILE *stream;
@@ -139,7 +140,7 @@ init_symbols( string_t file_name )
 /*---------------------------------------------------------------------------*/
 
 void 
-terminate_symbols( void )
+terminate_symbols(MalagaState * malagaState)
 /* Terminate this module. */
 {
   free_mem( &symbol_table.symbols );

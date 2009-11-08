@@ -4,6 +4,9 @@
 
 /* This module defines the structure of compiled Malaga files. */
 
+#ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_MALAGA_FILES_HPP
+#define LIBVOIKKO_MORPHOLOGY_MALAGA_MALAGA_FILES_HPP
+
 namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Constants. ===============================================================*/
@@ -132,3 +135,5 @@ extern void check_header( common_header_t *header,
  * FILE_NAME is needed for error messages. */
 
 }}}
+
+#endif

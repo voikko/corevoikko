@@ -22,7 +22,7 @@
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
-
+#include "morphology/malaga/malaga_files.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -52,6 +52,13 @@ public:
 	pattern_state_t * stack; /* Stack used for backtracking. */
 	int_t stack_size;
 	string_t pattern_var[PATTERN_VAR_MAX]; /* Pattern variables. */
+
+	struct { /* This is the symbol table. */
+		int_t symbol_count; /* Number of symbols in this table. */
+		symbol_entry_t * symbols; /* The names and atoms of all symbols. */
+		symbol_t * symbols_by_name; /* All symbols sorted by their names. */
+		char_t * strings; /* Contains the symbol names. */
+	} symbol_table;
 
 };
 

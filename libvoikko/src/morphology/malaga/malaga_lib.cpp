@@ -78,7 +78,7 @@ init_malaga(string_t directoryName, MalagaState * malagaState)
   char * fullMorphologyFile = concat_strings(directoryName, pathSeparator(), morphology_file, binarySuffix(), NULL);
   
   init_values(malagaState);
-  init_symbols(fullSymbolFile);
+  init_symbols(fullSymbolFile, malagaState);
   init_lexicon(fullLexiconFile, malagaState);
   init_analysis(fullMorphologyFile);
   
@@ -96,7 +96,7 @@ terminate_malaga(MalagaState * malagaState)
   terminate_analysis();
   terminate_patterns(malagaState);
   terminate_lexicon(malagaState);
-  terminate_symbols();
+  terminate_symbols(malagaState);
   terminate_values(malagaState);
 }
 

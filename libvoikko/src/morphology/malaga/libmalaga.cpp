@@ -91,7 +91,7 @@ parse_malaga_symbol(string_t string, MalagaState * malagaState)
 /* Convert STRING to a Malaga value and return it.
  * The value must be freed after use. */
 {
-  push_symbol_value(find_symbol(string), malagaState);
+  push_symbol_value(find_symbol(string, malagaState), malagaState);
   return new_value(malagaState->value_stack[--(malagaState->top)] );
 }
 
