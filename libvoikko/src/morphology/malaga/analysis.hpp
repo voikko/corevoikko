@@ -43,11 +43,6 @@ typedef struct /* A state in morphological or syntactical analysis. */
   int_t item_index; /* Number of items read in so far. */
 } state_t;
 
-/* Variables. ===============================================================*/
-
-extern rule_sys_t *morphologyRuleSystem; // FIXME
-/*  Read only! */
-
 /* Functions. ===============================================================*/
 
 extern void init_analysis(string_t morphology_file, MalagaState * malagaState);

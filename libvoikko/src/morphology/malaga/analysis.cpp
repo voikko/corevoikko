@@ -21,10 +21,6 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
-/* Global variables. ========================================================*/
-
-rule_sys_t *morphologyRuleSystem;
-
 /* Variables. ===============================================================*/
 
 static const int_t mor_pruning_min = 30;
@@ -178,7 +174,7 @@ init_analysis(string_t morphology_file, MalagaState * malagaState)
  * MORPHOLOGY_FILE is the rule files to load. */
 { 
   /* Read rule files. */
-  morphologyRuleSystem = read_rule_sys( morphology_file );
+  malagaState->morphologyRuleSystem = read_rule_sys(morphology_file);
 
   /* Init analysis structure. */
   malagaState->morphologyAnalysis = new_analysis();
@@ -190,7 +186,7 @@ void
 terminate_analysis(MalagaState * malagaState)
 /* Terminate the analysis module. */
 { 
-  free_rule_sys( &morphologyRuleSystem );
+  free_rule_sys(&(malagaState->morphologyRuleSystem));
   free_analysis(&(malagaState->morphologyAnalysis));
 }
 
@@ -290,7 +286,7 @@ execute_pruning_rule(analysis_t *analysis, MalagaState * malagaState)
     return;
   build_list(result_count, malagaState);
 
-  rule_sys = morphologyRuleSystem;
+  rule_sys = malagaState->morphologyRuleSystem;
   execute_rule(rule_sys, rule_sys->pruning_rule, malagaState); /* Execute pruning rule. */
 
   /* Interprete the result. */
@@ -403,7 +399,7 @@ analyse(string_t input, MalagaState * malagaState)
   string_t link_surf_end; /* End of the link's surface. */
   analysis_t *analysis = malagaState->morphologyAnalysis;
 
-  rule_sys_t * rule_sys = morphologyRuleSystem;
+  rule_sys_t * rule_sys = malagaState->morphologyRuleSystem;
 
   /* Reset the analysis data structures */
   clear_list( &analysis->running_states );
@@ -471,8 +467,8 @@ analyse(string_t input, MalagaState * malagaState)
 
   check_end_states(analysis);
 
-  execute_filter_rule(analysis, morphologyRuleSystem,
-                      morphologyRuleSystem->output_filter, malagaState);
+  execute_filter_rule(analysis, malagaState->morphologyRuleSystem,
+                      malagaState->morphologyRuleSystem->output_filter, malagaState);
 }
 
 }}}

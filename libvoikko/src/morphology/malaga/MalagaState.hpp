@@ -76,6 +76,7 @@ public:
 		int_t item_index; /* Index of item that is added. */
 		string_t input; /* End of analysed input. */
 	} state_info;
+	rule_sys_t * morphologyRuleSystem;
 
 };
 
