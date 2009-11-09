@@ -134,11 +134,11 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
 	  terminate = true;
         break;
       case INS_ADD_END_STATE:
-        add_end_state(malagaState->value_stack[--(malagaState->top)], rule_sys->rules + rule_number);
+        add_end_state(malagaState->value_stack[--(malagaState->top)], rule_sys->rules + rule_number, malagaState);
         rule_successful = true;
         break;
       case INS_ADD_STATE:
-        add_running_state(malagaState->value_stack[--(malagaState->top)], info );
+        add_running_state(malagaState->value_stack[--(malagaState->top)], info, malagaState);
         rule_successful = true;
         break;
       case INS_ACCEPT:

@@ -29,16 +29,6 @@ rule_sys_t *morphologyRuleSystem;
 
 static const int_t mor_pruning_min = 30;
 
-/* Structures used for LAG analysis (morphology). */
-static struct /* Information needed to generate states and tree nodes. FIXME */
-{ 
-  analysis_t *analysis;
-  int_t rule; /* Rule just executed. */
-  value_t link_feat; /* Link's feature structure. */
-  int_t item_index; /* Index of item that is added. */
-  string_t input; /* End of analysed input. */
-} state_info;
-
 /* Functions for segmentation and preprocessing. ============================*/
 
 void 
@@ -112,41 +102,41 @@ insert_state( analysis_t *analysis,
 /*---------------------------------------------------------------------------*/
 
 static void 
-add_state( list_t *list, string_t input, value_t feat, int_t rule_set)
+add_state( list_t *list, string_t input, value_t feat, int_t rule_set, MalagaState * malagaState)
 /* Add state, consisting of INPUT, FEAT and RULE_SET, to LIST.
  * When STATE_INFO.CREATE_TREE == true, also generate a tree node. */
 { 
   /* Preserve the feature structure. */
-  value_t new_feat = copy_value_to_pool( state_info.analysis->value_pool, feat, NULL );
+  value_t new_feat = copy_value_to_pool(malagaState->state_info.analysis->value_pool, feat, NULL);
 
   /* Create a new state. */
-  insert_state( state_info.analysis, list, new_feat, input,
-                        rule_set, state_info.item_index );
+  insert_state(malagaState->state_info.analysis, list, new_feat, input,
+                        rule_set, malagaState->state_info.item_index);
 }
 
 /*---------------------------------------------------------------------------*/
 
 void 
-add_end_state(value_t feat, const rule_t * rule)
+add_end_state(value_t feat, const rule_t * rule, MalagaState * malagaState)
 /* Add a state, consisting of FEAT, as an end state. */
 { 
   /* Combi-rules and end-rules must check for word boundary. */
   if ((rule->type != COMBI_RULE && rule->type != END_RULE)
-      || word_may_end_here( state_info.input, rule ))
+      || word_may_end_here(malagaState->state_info.input, rule ))
   { 
-    add_state( &state_info.analysis->end_states,
-	       state_info.input, feat, -1);
+    add_state(&(malagaState->state_info.analysis->end_states),
+	       malagaState->state_info.input, feat, -1, malagaState);
   }
 }
 
 /*---------------------------------------------------------------------------*/
 
 void 
-add_running_state( value_t feat, int_t rule_set )
+add_running_state(value_t feat, int_t rule_set, MalagaState * malagaState)
 /* Add a running state, consisting of FEAT and RULE_SET. */
 { 
-  add_state( &state_info.analysis->running_states, 
-	     state_info.input, feat, rule_set);
+  add_state(&(malagaState->state_info.analysis->running_states), 
+	    malagaState->state_info.input, feat, rule_set, malagaState);
 }
 
 /* Analysis functions. ======================================================*/
@@ -262,9 +252,9 @@ execute_filter_rule( analysis_t *analysis,
     build_list(malagaState->top, malagaState);
 
     /* Execute filter rule. */
-    state_info.analysis = analysis;
-    state_info.item_index = 0;
-    state_info.input = input;
+    malagaState->state_info.analysis = analysis;
+    malagaState->state_info.item_index = 0;
+    malagaState->state_info.input = input;
     execute_rule(rule_sys, filter_rule, malagaState);
   }
 }
@@ -339,10 +329,10 @@ execute_rules( analysis_t *analysis,
   rule_t *rule;
 
   /* Setup STATE_INFO. */
-  state_info.analysis = analysis;
-  state_info.link_feat = link_feat;
-  state_info.item_index = state->item_index + 1;
-  state_info.input = link_surf_end;
+  malagaState->state_info.analysis = analysis;
+  malagaState->state_info.link_feat = link_feat;
+  malagaState->state_info.item_index = state->item_index + 1;
+  malagaState->state_info.input = link_surf_end;
 
   /* Execute rules in rule set. */
   rules_executed = rules_successful = false;
@@ -360,7 +350,7 @@ execute_rules( analysis_t *analysis,
 	  && (rule->type == COMBI_RULE 
 	      || word_may_end_here( link_surf, rule )))
       { 
-	state_info.rule = *rule_p;
+	malagaState->state_info.rule = *rule_p;
 	malagaState->top = 0;
 	push_value(state->feat, malagaState);
 	if (rule->type == COMBI_RULE) 
@@ -369,7 +359,7 @@ execute_rules( analysis_t *analysis,
 	  if (rule->param_count >= 3) 
 	    push_string_value(link_surf, link_surf_end, malagaState);
 	  if (rule->param_count >= 4) 
-	    push_number_value(state_info.item_index, malagaState);
+	    push_number_value(malagaState->state_info.item_index, malagaState);
 	} 
 	else /* rule->type == END_RULE */
 	{ 

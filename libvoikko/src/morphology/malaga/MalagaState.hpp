@@ -69,6 +69,14 @@ public:
 
 	analysis_t * morphologyAnalysis;
 	state_t * next_result_state; /* Needed for "next_analysis_result". */
+	struct { /* Information needed to generate states and tree nodes. */
+		analysis_t * analysis;
+		int_t rule; /* Rule just executed. */
+		value_t link_feat; /* Link's feature structure. */
+		int_t item_index; /* Index of item that is added. */
+		string_t input; /* End of analysed input. */
+	} state_info;
+
 };
 
 } } }
