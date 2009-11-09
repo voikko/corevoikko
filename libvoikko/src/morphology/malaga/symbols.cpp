@@ -30,8 +30,7 @@ static struct /* This is the symbol table. FIXME */
 { 
   int_t symbol_count; /* Number of symbols in this table. */
 
-  symbol_entry_t *symbols; /* The names and atoms of all symbols. */
-  symbol_t *symbols_by_name; /* All symbols sorted by their names. */
+  symbol_entry_t * symbols; /* The names and atoms of all symbols. */
 
   symbol_t *values; /* Contains the lists of atomic symbols. */
     
@@ -42,11 +41,10 @@ static struct /* This is the symbol table. FIXME */
 
 /* Functions. ===============================================================*/
 
-string_t 
-get_symbol_name( symbol_t symbol )
+static string_t get_symbol_name(symbol_t symbol)
 /* Return the name of SYMBOL. */
 {
-  return symbol_table.strings + symbol_table.symbols[ symbol ].name;
+  return symbol_table.strings + symbol_table.symbols[symbol].name;
 }
 
 /*---------------------------------------------------------------------------*/
@@ -84,16 +82,6 @@ symbol_count( void )
 
 /*---------------------------------------------------------------------------*/
 
-static int 
-compare_symbols_by_name( const void *symbol1, const void *symbol2 )
-/* Return -1 if name( SYMBOL1 ) < name( SYMBOL2 )
- *         0 if name( SYMBOL1 ) == name( SYMBOL2 )
- *         1 if name( SYMBOL1 ) > name( SYMBOL2 ). */
-{
-  return strcmp( get_symbol_name( *(symbol_t *) symbol1 ), 
-                         get_symbol_name( *(symbol_t *) symbol2 ) );
-}
-
 static int compareSymbolsByName(const void * symbol1, const void * symbol2) {
   return strcmp(((symbol_and_name *) symbol1)->name, ((symbol_and_name *) symbol2)->name);
 }
@@ -104,11 +92,8 @@ void
 init_symbols(string_t file_name, MalagaState * malagaState)
 /* Initialise this module. Read SYMBOL_TABLE from file FILE_NAME. */
 {
-  FILE *stream;
   symbol_header_t header;
-  int_t i;
-  
-  stream = open_stream( file_name, "rb" );
+  FILE * stream = open_stream( file_name, "rb" );
   read_vector( &header, sizeof( header ), 1, stream, file_name );
   check_header( &header.common_header, file_name, 
                 SYMBOL_FILE, MIN_SYMBOL_CODE_VERSION, SYMBOL_CODE_VERSION );
@@ -124,20 +109,13 @@ init_symbols(string_t file_name, MalagaState * malagaState)
 					  stream, file_name );
   close_stream( &stream, file_name );
   
-  /* Build a list of all symbols sorted by their names
-   * and a list of all symbols sorted by their atom lists. */
-  symbol_table.symbols_by_name = (symbol_t *) new_vector( sizeof( symbol_t ),
-					     header.symbol_count );
-  symbol_table.symbolAndName = (symbol_and_name *) new_vector( sizeof( symbol_and_name ),
-					     header.symbol_count );
-  for (i = 0; i < header.symbol_count; i++) 
-  { 
-    symbol_table.symbols_by_name[i] = i;
+  /* Build a list of all symbols sorted by their names. */
+  symbol_table.symbolAndName = (symbol_and_name *) new_vector(sizeof(symbol_and_name),
+                               header.symbol_count);
+  for (int_t i = 0; i < header.symbol_count; i++) { 
     symbol_table.symbolAndName[i].symbol = i;
     symbol_table.symbolAndName[i].name = get_symbol_name(i);
   }
-  qsort( symbol_table.symbols_by_name, header.symbol_count, 
-         sizeof( symbol_t ), compare_symbols_by_name );
   qsort(symbol_table.symbolAndName, header.symbol_count, sizeof(symbol_and_name), compareSymbolsByName);
 }
 
@@ -148,7 +126,6 @@ terminate_symbols(MalagaState * malagaState)
 /* Terminate this module. */
 {
   free_mem( &symbol_table.symbols );
-  free_mem( &symbol_table.symbols_by_name );
   free_mem( &symbol_table.values );
   free_mem( &symbol_table.strings );
   free_mem(&symbol_table.symbolAndName);
