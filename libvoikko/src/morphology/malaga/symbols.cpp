@@ -56,23 +56,19 @@ find_symbol(string_t name, MalagaState * malagaState)
 /* Find a symbol NAME in the symbol table and return its code.
  * If there is no symbol NAME, report an error. */
 {
-  int_t lower, upper, middle, result;
-  symbol_t symbol;
-
   /* We do a binary search in SYMBOLS_BY_NAME. */
-  lower = 0;
-  upper = symbol_table.symbol_count - 1;
-  while (lower <= upper) 
-  { 
-    middle = (lower + upper) / 2;
-    symbol = symbol_table.symbols_by_name[ middle ];
-    result = strcmp( name, get_symbol_name( symbol ) );
-    if (result < 0) 
+  int_t lower = 0;
+  int_t upper = symbol_table.symbol_count - 1;
+  while (lower <= upper) { 
+    int_t middle = (lower + upper) / 2;
+    int_t result = strcmp(name, symbol_table.symbolAndName[middle].name);
+    if (result < 0) {
       upper = middle - 1;
-    else if (result > 0) 
+    } else if (result > 0) {
       lower = middle + 1;
-    else 
-      return symbol;
+    } else {
+      return symbol_table.symbolAndName[middle].symbol;
+    }
   }
   throw setup::DictionaryException("Unknown symbol");
 }
@@ -96,6 +92,10 @@ compare_symbols_by_name( const void *symbol1, const void *symbol2 )
 {
   return strcmp( get_symbol_name( *(symbol_t *) symbol1 ), 
                          get_symbol_name( *(symbol_t *) symbol2 ) );
+}
+
+static int compareSymbolsByName(const void * symbol1, const void * symbol2) {
+  return strcmp(((symbol_and_name *) symbol1)->name, ((symbol_and_name *) symbol2)->name);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -138,6 +138,7 @@ init_symbols(string_t file_name, MalagaState * malagaState)
   }
   qsort( symbol_table.symbols_by_name, header.symbol_count, 
          sizeof( symbol_t ), compare_symbols_by_name );
+  qsort(symbol_table.symbolAndName, header.symbol_count, sizeof(symbol_and_name), compareSymbolsByName);
 }
 
 /*---------------------------------------------------------------------------*/
