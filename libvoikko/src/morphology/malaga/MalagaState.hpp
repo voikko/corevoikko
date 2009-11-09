@@ -23,6 +23,7 @@
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
 #include "morphology/malaga/malaga_files.hpp"
+#include "morphology/malaga/analysis.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -66,6 +67,7 @@ public:
 		symbol_and_name * symbolAndName; /* All symbols sorted by their names. */
 	} symbol_table;
 
+	analysis_t * morphologyAnalysis;
 };
 
 } } }

@@ -42,16 +42,6 @@ typedef struct /* A state in morphological or syntactical analysis. */
   int_t item_index; /* Number of items read in so far. */
 } state_t;
 
-typedef struct /* The structure for morphological and syntactical analysis. */
-{ 
-  pool_t state_pool; /* All states are saved in STATE_POOL. */
-  pool_t value_pool; /* All feature structures are saved in VALUE_POOL. */
-  list_t running_states; /* States that need further analysis
-			  * (in the order of their INPUT indexes). */
-  list_t end_states; /* End states */
-  list_t free_states; /* States that can be reused. */
-} analysis_t;
-
 /* Global variables. ========================================================*/
 
 rule_sys_t *morphologyRuleSystem;
@@ -61,8 +51,6 @@ rule_sys_t *morphologyRuleSystem;
 static const int_t mor_pruning_min = 30;
 
 /* Structures used for LAG analysis (morphology). */
-static analysis_t *morphologyAnalysis; // FIXME
-
 static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME */
 
 static struct /* Information needed to generate states and tree nodes. FIXME */
@@ -218,7 +206,7 @@ free_analysis( analysis_t **analysis )
 /*---------------------------------------------------------------------------*/
 
 void 
-init_analysis( string_t morphology_file )
+init_analysis(string_t morphology_file, MalagaState * malagaState)
 /* Initialise the analysis module.
  * MORPHOLOGY_FILE is the rule files to load. */
 { 
@@ -226,27 +214,27 @@ init_analysis( string_t morphology_file )
   morphologyRuleSystem = read_rule_sys( morphology_file );
 
   /* Init analysis structure. */
-  morphologyAnalysis = new_analysis();
+  malagaState->morphologyAnalysis = new_analysis();
 }
 
 /*---------------------------------------------------------------------------*/
 
 void 
-terminate_analysis( void )
+terminate_analysis(MalagaState * malagaState)
 /* Terminate the analysis module. */
 { 
   free_rule_sys( &morphologyRuleSystem );
-  free_analysis( &morphologyAnalysis );
+  free_analysis(&(malagaState->morphologyAnalysis));
 }
 
 /*---------------------------------------------------------------------------*/
 
 value_t
-first_analysis_result( void )
+first_analysis_result(MalagaState * malagaState)
 /* Return the feature structure of the first analysis result.
  * Return NULL if there are no results. */
 { 
-  next_result_state = (state_t *) morphologyAnalysis->end_states.first;
+  next_result_state = (state_t *) malagaState->morphologyAnalysis->end_states.first;
   return next_analysis_result();
 }
 
@@ -448,7 +436,7 @@ analyse(string_t input, MalagaState * malagaState)
   string_t current_input;
   value_t link_feat;
   string_t link_surf_end; /* End of the link's surface. */
-  analysis_t *analysis = morphologyAnalysis;
+  analysis_t *analysis = malagaState->morphologyAnalysis;
 
   rule_sys_t * rule_sys = morphologyRuleSystem;
 

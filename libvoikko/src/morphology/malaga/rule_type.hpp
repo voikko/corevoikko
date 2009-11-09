@@ -4,6 +4,9 @@
 
 /* This module defines the data types needed for Malaga rules. */
 
+#ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_RULE_TYPE_HPP
+#define LIBVOIKKO_MORPHOLOGY_MALAGA_RULE_TYPE_HPP
+
 namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Constants ================================================================*/
@@ -181,3 +184,5 @@ typedef struct /* A named constant. */
 } constant_t;
 
 }}}
+
+#endif

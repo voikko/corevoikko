@@ -80,7 +80,7 @@ init_malaga(string_t directoryName, MalagaState * malagaState)
   init_values(malagaState);
   init_symbols(fullSymbolFile, malagaState);
   init_lexicon(fullLexiconFile, malagaState);
-  init_analysis(fullMorphologyFile);
+  init_analysis(fullMorphologyFile, malagaState);
   
   free(fullSymbolFile);
   free(fullLexiconFile);
@@ -93,7 +93,7 @@ void
 terminate_malaga(MalagaState * malagaState)
 /* Terminate this module. */
 {
-  terminate_analysis();
+  terminate_analysis(malagaState);
   terminate_patterns(malagaState);
   terminate_lexicon(malagaState);
   terminate_symbols(malagaState);

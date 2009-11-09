@@ -55,7 +55,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	try {
 		analyse_item(word, &malagaState);
-		value_t res = first_analysis_result();
+		value_t res = first_analysis_result(&malagaState);
 		int currentAnalysisCount = 0;
 		while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
 			Analysis * analysis = new Analysis();

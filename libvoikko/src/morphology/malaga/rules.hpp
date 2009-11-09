@@ -4,6 +4,11 @@
 
 /* This module contains the Malaga rule interpreter. */
 
+#ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_RULES_HPP
+#define LIBVOIKKO_MORPHOLOGY_MALAGA_RULES_HPP
+
+#include "morphology/malaga/rule_type.hpp"
+
 namespace libvoikko { namespace morphology { namespace malaga {
 
 class MalagaState;
@@ -74,3 +79,5 @@ extern void free_rule_sys( rule_sys_t **rule_sys );
 /* Free all memory used by *RULE_SYS. */
 
 }}}
+
+#endif

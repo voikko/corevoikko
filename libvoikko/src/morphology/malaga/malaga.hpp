@@ -63,7 +63,7 @@ extern void analyse_item(string_t item, MalagaState * malagaState);
 
 /** Get the first result of the last call of "analyse_item".
  * Return NULL if there is no result. */
-extern value_t first_analysis_result();
+extern value_t first_analysis_result(MalagaState * malagaState);
 
 /** Get the next result of the last call of "analyse_item".
  * Return NULL if there is no more result. */
