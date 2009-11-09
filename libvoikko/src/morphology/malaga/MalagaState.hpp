@@ -30,6 +30,11 @@ enum {PATTERN_VAR_MAX = 5}; /* Maximum number of pattern variables. */
 
 typedef struct {string_t string, pattern;} pattern_state_t;
 
+typedef struct {
+	symbol_t symbol;
+	string_t name;
+} symbol_and_name;
+
 class MalagaState {
 public:
 	MalagaState();
@@ -56,8 +61,9 @@ public:
 	struct { /* This is the symbol table. */
 		int_t symbol_count; /* Number of symbols in this table. */
 		symbol_entry_t * symbols; /* The names and atoms of all symbols. */
-		symbol_t * symbols_by_name; /* All symbols sorted by their names. */
+		symbol_t * values; /* Contains the lists of atomic symbols. */
 		char_t * strings; /* Contains the symbol names. */
+		symbol_and_name * symbolAndName; /* All symbols sorted by their names. */
 	} symbol_table;
 
 };
