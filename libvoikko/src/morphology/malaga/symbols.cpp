@@ -21,19 +21,23 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
+typedef struct {
+	symbol_t symbol;
+	string_t name;
+} symbol_and_name;
+    
 static struct /* This is the symbol table. FIXME */
 { 
   int_t symbol_count; /* Number of symbols in this table. */
 
   symbol_entry_t *symbols; /* The names and atoms of all symbols. */
   symbol_t *symbols_by_name; /* All symbols sorted by their names. */
-  symbol_t *symbols_by_atoms; /* All symbols sorted by their atom lists. */
 
-  int_t values_size;
   symbol_t *values; /* Contains the lists of atomic symbols. */
-
-  int_t strings_size;     
+    
   char_t *strings; /* Contains the symbol names. */
+  
+  symbol_and_name * symbolAndName;
 } symbol_table;
 
 /* Functions. ===============================================================*/
@@ -113,10 +117,8 @@ init_symbols(string_t file_name, MalagaState * malagaState)
   symbol_table.symbols = (symbol_entry_t *) read_new_vector( sizeof( symbol_entry_t ), 
                                           header.symbol_count, 
                                           stream, file_name );
-  symbol_table.values_size = header.values_size;
   symbol_table.values = (symbol_t *) read_new_vector( sizeof( cell_t ), header.values_size, 
                                          stream, file_name );
-  symbol_table.strings_size = header.strings_size;
   symbol_table.strings = (char_t *) read_new_vector( sizeof( char_t ), 
 					  header.strings_size,
 					  stream, file_name );
@@ -126,12 +128,13 @@ init_symbols(string_t file_name, MalagaState * malagaState)
    * and a list of all symbols sorted by their atom lists. */
   symbol_table.symbols_by_name = (symbol_t *) new_vector( sizeof( symbol_t ),
 					     header.symbol_count );
-  symbol_table.symbols_by_atoms = (symbol_t *) new_vector( sizeof( symbol_t ),
-					      header.symbol_count );
+  symbol_table.symbolAndName = (symbol_and_name *) new_vector( sizeof( symbol_and_name ),
+					     header.symbol_count );
   for (i = 0; i < header.symbol_count; i++) 
   { 
     symbol_table.symbols_by_name[i] = i;
-    symbol_table.symbols_by_atoms[i] = i;
+    symbol_table.symbolAndName[i].symbol = i;
+    symbol_table.symbolAndName[i].name = get_symbol_name(i);
   }
   qsort( symbol_table.symbols_by_name, header.symbol_count, 
          sizeof( symbol_t ), compare_symbols_by_name );
@@ -145,9 +148,9 @@ terminate_symbols(MalagaState * malagaState)
 {
   free_mem( &symbol_table.symbols );
   free_mem( &symbol_table.symbols_by_name );
-  free_mem( &symbol_table.symbols_by_atoms );
   free_mem( &symbol_table.values );
   free_mem( &symbol_table.strings );
+  free_mem(&symbol_table.symbolAndName);
 }
 
 }}}
