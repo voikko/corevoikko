@@ -67,7 +67,7 @@ extern value_t first_analysis_result(MalagaState * malagaState);
 
 /** Get the next result of the last call of "analyse_item".
  * Return NULL if there is no more result. */
-extern value_t next_analysis_result();
+extern value_t next_analysis_result(MalagaState * malagaState);
 
 /** Initialise this module.
  * This function sets "malaga_error". */

@@ -21,27 +21,6 @@
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
-/* Types. ===================================================================*/
-
-typedef struct tree_node /* A rule application is stored in "tree_node". */
-{ 
-  int_t rule; /* Number of the executed rule. */
-  value_t link_feat; /* Feature structure of the link. */
-  int_t rule_set; /* Successor rules of resulting state (-1 for end state). */
-  string_t input; /* The input that is not yet analysed. */
-} tree_node_t;
-
-typedef struct /* A state in morphological or syntactical analysis. */
-{ 
-  list_node_t *next;
-  value_t feat; /* Feature structure of input read in so far. */
-  string_t input; /* Pointer to input that is analysed next. */
-  int_t rule_set; /* Set of rules to be applied. */
-  tree_node_t *tree_node; /* Tree node of rule application that created
-                           * this state (NULL if no tree). */
-  int_t item_index; /* Number of items read in so far. */
-} state_t;
-
 /* Global variables. ========================================================*/
 
 rule_sys_t *morphologyRuleSystem;
@@ -51,8 +30,6 @@ rule_sys_t *morphologyRuleSystem;
 static const int_t mor_pruning_min = 30;
 
 /* Structures used for LAG analysis (morphology). */
-static state_t *next_result_state; /* Needed for "next_analysis_result". FIXME */
-
 static struct /* Information needed to generate states and tree nodes. FIXME */
 { 
   analysis_t *analysis;
@@ -234,23 +211,21 @@ first_analysis_result(MalagaState * malagaState)
 /* Return the feature structure of the first analysis result.
  * Return NULL if there are no results. */
 { 
-  next_result_state = (state_t *) malagaState->morphologyAnalysis->end_states.first;
-  return next_analysis_result();
+  malagaState->next_result_state = (state_t *) malagaState->morphologyAnalysis->end_states.first;
+  return next_analysis_result(malagaState);
 }
 
 /*---------------------------------------------------------------------------*/
 
 value_t 
-next_analysis_result( void )
+next_analysis_result(MalagaState * malagaState)
 /* Return the feature structure of the next analysis result.
  * Return NULL if there are no more results. */
 { 
-  value_t result;
-
-  if (next_result_state == NULL) 
+  if (malagaState->next_result_state == NULL) 
     return NULL;
-  result = next_result_state->feat;
-  next_result_state = (state_t *) next_result_state->next;
+  value_t result = malagaState->next_result_state->feat;
+  malagaState->next_result_state = (state_t *) malagaState->next_result_state->next;
   return result;
 }
 

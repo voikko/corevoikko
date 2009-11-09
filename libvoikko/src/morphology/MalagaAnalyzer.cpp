@@ -64,7 +64,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseClass(analysis, res);
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
-			res = next_analysis_result();
+			res = next_analysis_result(&malagaState);
 			++currentAnalysisCount;
 		}
 	}

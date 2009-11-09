@@ -68,6 +68,7 @@ public:
 	} symbol_table;
 
 	analysis_t * morphologyAnalysis;
+	state_t * next_result_state; /* Needed for "next_analysis_result". */
 };
 
 } } }

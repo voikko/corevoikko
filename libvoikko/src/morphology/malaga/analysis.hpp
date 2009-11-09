@@ -24,6 +24,25 @@ typedef struct /* The structure for morphological and syntactical analysis. */
   list_t free_states; /* States that can be reused. */
 } analysis_t;
 
+typedef struct tree_node /* A rule application is stored in "tree_node". */
+{ 
+  int_t rule; /* Number of the executed rule. */
+  value_t link_feat; /* Feature structure of the link. */
+  int_t rule_set; /* Successor rules of resulting state (-1 for end state). */
+  string_t input; /* The input that is not yet analysed. */
+} tree_node_t;
+
+typedef struct /* A state in morphological or syntactical analysis. */
+{ 
+  list_node_t *next;
+  value_t feat; /* Feature structure of input read in so far. */
+  string_t input; /* Pointer to input that is analysed next. */
+  int_t rule_set; /* Set of rules to be applied. */
+  tree_node_t *tree_node; /* Tree node of rule application that created
+                           * this state (NULL if no tree). */
+  int_t item_index; /* Number of items read in so far. */
+} state_t;
+
 /* Variables. ===============================================================*/
 
 extern rule_sys_t *morphologyRuleSystem; // FIXME
@@ -49,7 +68,7 @@ extern value_t first_analysis_result(MalagaState * malagaState);
 /* Return the feature structure of the first analysis result.
  * Return NULL if there are no results. */
 
-extern value_t next_analysis_result( void );
+extern value_t next_analysis_result(MalagaState * malagaState);
 /* Return the feature structure of the next analysis result.
  * Return NULL if there are no more results. */
 
