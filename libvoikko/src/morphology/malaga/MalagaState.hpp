@@ -78,6 +78,7 @@ public:
 	} state_info;
 	rule_sys_t * morphologyRuleSystem;
 
+	list_t path_list; /* List of nodes for alternative paths. */
 };
 
 } } }

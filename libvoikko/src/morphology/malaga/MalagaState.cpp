@@ -22,10 +22,12 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 MalagaState::MalagaState() :
 	stack(0),
-	stack_size(0){
+	stack_size(0) {
 	for (int i = 0; i < PATTERN_VAR_MAX; i++) {
 		pattern_var[i] = 0;
 	}
+	path_list.first = 0;
+	path_list.last = 0;
 }
 
 

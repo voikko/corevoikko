@@ -44,11 +44,6 @@ typedef struct
   int_t bottom;
 } path_node_t;
 
-/* Variables. ===============================================================*/
-
-
-static list_t path_list; /* List of nodes for alternative paths. FIXME */
-
 /* Rule execution. ==========================================================*/
 
 static void
@@ -108,8 +103,8 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
   int_t bottom = 0;
 
   /* Reset nesting and alternative paths. */
-  while (path_list.first != NULL) 
-    free_first_node( &path_list );
+  while (malagaState->path_list.first != NULL) 
+    free_first_node(&(malagaState->path_list));
 
   int_t pc = rule_sys->rules[ rule_number ].first_instr;
   { 
@@ -143,8 +138,8 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
         break;
       case INS_ACCEPT:
         path_count = 0;
-        while (path_list.first != NULL) 
-	  free_first_node( &path_list );
+        while (malagaState->path_list.first != NULL) 
+	  free_first_node(&(malagaState->path_list));
         terminate = true;
         break;
       case INS_PUSH_NULL:
@@ -324,7 +319,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
       case INS_JUMP_NOW:
         {
         int_t old_top = malagaState->top;
-        path = (path_node_t *) new_node( &path_list, sizeof( path_node_t ), LIST_START );
+        path = (path_node_t *) new_node(&(malagaState->path_list), sizeof( path_node_t ), LIST_START );
         path->pc = new_pc;
         path->nested_subrules = nested_subrules;
         path->base = base;
@@ -339,7 +334,7 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
       case INS_JUMP_LATER:
         {
         int_t old_top = malagaState->top;
-        path = (path_node_t *) new_node( &path_list, sizeof( path_node_t ), LIST_START );
+        path = (path_node_t *) new_node(&(malagaState->path_list), sizeof( path_node_t ), LIST_START );
         path->pc = info;
         path->nested_subrules = nested_subrules;
         path->base = base;
@@ -372,17 +367,17 @@ execute_rule(rule_sys_t *rule_sys, int_t rule_number, MalagaState * malagaState)
       }
       if (! terminate) 
 	pc = new_pc;
-      else if (path_list.first != NULL) 
+      else if (malagaState->path_list.first != NULL) 
       { 
 	/* Load a previously saved rule-internal path and continue. */
         path_count--;
-        path = (path_node_t *) path_list.first;
+        path = (path_node_t *) malagaState->path_list.first;
         malagaState->top = bottom;
         base = path->base;
         bottom = path->bottom;
         pc = path->pc;
         nested_subrules = path->nested_subrules;
-        free_first_node( &path_list );
+        free_first_node(&(malagaState->path_list));
         terminate = false;
       }
     }
