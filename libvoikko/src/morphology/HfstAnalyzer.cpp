@@ -40,12 +40,12 @@ HfstAnalyzer::HfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	}
 }
     
-list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word) const {
+list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word) {
 	return analyze(word, wcslen(word));
 }
 
 list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
-                                         size_t wlen) const {
+                                         size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
@@ -55,7 +55,7 @@ list<Analysis *> * HfstAnalyzer::analyze(const wchar_t * word,
 	return result;
 }
 
-list<Analysis *> * HfstAnalyzer::analyze(const char * word) const {
+list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
 	size_t wlen = strlen(word);
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
