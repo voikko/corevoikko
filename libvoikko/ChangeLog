@@ -1,3 +1,8 @@
+2009-11-09 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Most of the global variables have now been eliminated
+	  from Malaga implementation.
+
 2009-11-01 Harri Pitkänen <hatapitk@iki.fi>
 
 	* HFST analyzer backend returns correct number of analyses.

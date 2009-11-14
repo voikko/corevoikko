@@ -155,7 +155,13 @@ spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 	return result;
 }
 
-spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptions,
+/** Checks the spelling of given word. Missing hyphens at the start or end of the
+ * word are ignored.
+ * @param word word to check (does not need to be null terminated)
+ * @param len length of the word to check
+ * @return spelling result
+ */
+static spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptions,
 	                                   const wchar_t * word, size_t len) {
 	spellresult spres = voikko_do_spell(voikkoOptions, word, len);
 	if (spres != SPELL_FAILED) return spres;
@@ -197,11 +203,17 @@ spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptions,
  * total size      sizeof(wchar_t) * 6544
  */
 
-const int VOIKKO_HASH_ORDERS[]   =  {0, 3+0,  5+0,  6+0,   7+0,   7+0,    7+0,    7+0,    7+0,    7+0,    7+0};
-const int VOIKKO_CACHE_OFFSETS[] =  {0,   0, 1*16, 1*80, 1*272, 1*784, 1*1424, 1*2192, 1*3088, 1*4112, 1*5264};
-const int VOIKKO_META_OFFSETS[]  =  {0,   0, 1*16, 1*48, 1*112, 1*240,  1*368,  1*496,  1*624,  1*752,  1*880};
+static const int VOIKKO_HASH_ORDERS[]   =  {0, 3+0,  5+0,  6+0,   7+0,   7+0,    7+0,    7+0,    7+0,    7+0,    7+0};
+static const int VOIKKO_CACHE_OFFSETS[] =  {0,   0, 1*16, 1*80, 1*272, 1*784, 1*1424, 1*2192, 1*3088, 1*4112, 1*5264};
+static const int VOIKKO_META_OFFSETS[]  =  {0,   0, 1*16, 1*48, 1*112, 1*240,  1*368,  1*496,  1*624,  1*752,  1*880};
 
-spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * buffer, size_t len) {
+/** Checks the spelling of given word and uses cache if possible
+ * @param word word to check. Word does not need to be null terminated and it must
+ *             not contain upper case letters
+ * @param len length of the word to check
+ * @return spelling result
+ */
+static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * buffer, size_t len) {
 	int sparam = voikko_options.cache_size;
 	if (voikko_options.cache && len <= 10) { /* check cache */
 		int hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len] + sparam);
@@ -241,8 +253,12 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	size_t nchars = wcslen(word);
 	int result;
 	spellresult sres;
-	if (nchars == 0) return VOIKKO_SPELL_OK;
-	if (nchars > LIBVOIKKO_MAX_WORD_CHARS) return VOIKKO_INTERNAL_ERROR;
+	if (nchars == 0) {
+		return VOIKKO_SPELL_OK;
+	}
+	if (nchars > LIBVOIKKO_MAX_WORD_CHARS) {
+		return VOIKKO_INTERNAL_ERROR;
+	}
 	ENTER_V
 	
 	wchar_t * nword = voikko_normalise(word, nchars);
