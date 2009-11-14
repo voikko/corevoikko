@@ -23,6 +23,7 @@
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
+#include "spellchecker/AnalyzerToSpellerAdapter.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -213,6 +214,8 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 				dict = DictionaryLoader::load(string(langcode));
 			}
 			voikko_options.morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
+			// FIXME: use factory for this
+			voikko_options.speller = new spellchecker::AnalyzerToSpellerAdapter(voikko_options.morAnalyzer);
 		}
 		catch (DictionaryException e) {
 			#ifdef HAVE_ICONV
@@ -257,6 +260,9 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		#endif
+		voikko_options.speller->terminate();
+		delete voikko_options.speller;
+		voikko_options.speller = 0;
 		voikko_options.morAnalyzer->terminate();
 		delete voikko_options.morAnalyzer;
 		voikko_options.morAnalyzer = 0;

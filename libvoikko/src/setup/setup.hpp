@@ -21,6 +21,7 @@
 
 #include "grammar/cachesetup.hpp"
 #include "morphology/Analyzer.hpp"
+#include "spellchecker/Speller.hpp"
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
@@ -60,6 +61,7 @@ typedef struct {
 	enum suggtype suggestion_type;
 	voikko_gc_cache gc_cache;
 	morphology::Analyzer * morAnalyzer;
+	spellchecker::Speller * speller;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;

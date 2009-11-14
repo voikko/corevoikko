@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,22 +16,27 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SPELLCHECKER_SPELL_H
-#define VOIKKO_SPELLCHECKER_SPELL_H
+#ifndef VOIKKO_SPELLCHECKER_ANALYZER_TO_SPELLER_ADAPTER
+#define VOIKKO_SPELLCHECKER_ANALYZER_TO_SPELLER_ADAPTER
 
-#include "setup/setup.hpp"
 #include "spellchecker/Speller.hpp"
-#include <cstddef>
+#include "morphology/Analyzer.hpp"
 
-namespace libvoikko {
+namespace libvoikko { namespace spellchecker {
 
-/** Checks the spelling of given word
- * @param word word to check (does not need to be null terminated)
- * @param len length of the word to check
- * @return spelling result
+/**
+ * Adapter that uses an existing Analyzer for spell checking. The analyzer must
+ * remain operational until this adapter has been terminated.
  */
-spellchecker::spellresult voikko_do_spell(voikko_options_t * voikkoOptions, const wchar_t * word, size_t len);
+class AnalyzerToSpellerAdapter : public Speller {
+	public:
+		AnalyzerToSpellerAdapter(morphology::Analyzer * analyzer);
+		spellresult spell(const wchar_t * word, size_t wlen);
+		void terminate();
+	private:
+		morphology::Analyzer * const analyzer;
+};
 
-}
+} }
 
 #endif

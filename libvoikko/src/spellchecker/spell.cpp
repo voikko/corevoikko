@@ -32,39 +32,12 @@ using namespace std;
 
 namespace libvoikko {
 
-static spellresult bestAnalysis(voikko_options_t * voikkoOptions,
-	                        const wchar_t * word, size_t len) {
-	list<Analysis *> * analyses = voikkoOptions->morAnalyzer->analyze(word, len);
-	
-	if (analyses->empty()) {
-		Analyzer::deleteAnalyses(analyses);
-		return SPELL_FAILED;
-	}
-	
-	spellresult best_result = SPELL_FAILED;
-	list<Analysis *>::const_iterator it = analyses->begin();
-	while (it != analyses->end()) {
-		const wchar_t * structure = (*it)->getValue("STRUCTURE");
-		spellresult result = SpellUtils::matchWordAndAnalysis(word, len, structure);
-		if (best_result == SPELL_FAILED || best_result > result) {
-			best_result = result;
-		}
-		if (best_result == SPELL_OK) {
-			break;
-		}
-		it++;
-	}
-	Analyzer::deleteAnalyses(analyses);
-	
-	return best_result;
-}
-
 spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 	                   const wchar_t * word, size_t len) {
 	spellresult result_with_border = SPELL_FAILED;
 	spellresult result_without_border = SPELL_FAILED;
 	
-	enum spellresult result = bestAnalysis(voikkoOptions, word, len);
+	spellresult result = voikkoOptions->speller->spell(word, len);
 	const wchar_t * hyphen_pos;
 	if (result != SPELL_OK && len > 3) {
 		hyphen_pos = wmemchr(word + 1, L'-', len - 2);
@@ -99,7 +72,7 @@ spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
 			    towlower(word[leading_len + 1]) == vctest1 &&
 			    towlower(word[leading_len + 2]) == vctest2) {
-				spellresult spres = bestAnalysis(voikkoOptions, buffer, len - 1);
+				spellresult spres = voikkoOptions->speller->spell(buffer, len - 1);
 				if (spres != SPELL_FAILED && (result == SPELL_FAILED || result > spres)) {
 					delete[] buffer;
 					return spres;

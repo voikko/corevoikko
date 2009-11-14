@@ -5,6 +5,7 @@ libvoikko_la_SOURCES = \
     spellchecker/spell.cpp spellchecker/suggestions.cpp \
     spellchecker/SpellWithPriority.cpp \
     spellchecker/SpellUtils.cpp \
+    spellchecker/AnalyzerToSpellerAdapter.cpp \
     spellchecker/suggestion/Suggestion.cpp \
     spellchecker/suggestion/SuggestionStatus.cpp \
     spellchecker/suggestion/SuggestionGeneratorCaseChange.cpp \
@@ -80,6 +81,8 @@ noinst_HEADERS = \
     spellchecker/spell.hpp \
     spellchecker/SpellWithPriority.hpp \
     spellchecker/SpellUtils.hpp \
+    spellchecker/Speller.hpp \
+    spellchecker/AnalyzerToSpellerAdapter.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \
     spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp \
