@@ -1,9 +1,11 @@
+2009-11-14 Harri Pitkänen <hatapitk@iki.fi>
+	* Add interface Speller and implement it in
+	  AnalyzerToSpellerAdapter.
+
 2009-11-09 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Most of the global variables have now been eliminated
 	  from Malaga implementation.
-	* Add interface Speller and implement it in
-	  AnalyzerToSpellerAdapter.
 
 2009-11-01 Harri Pitkänen <hatapitk@iki.fi>
 
