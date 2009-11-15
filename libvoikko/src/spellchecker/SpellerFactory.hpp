@@ -16,26 +16,28 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
-#define VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
+#ifndef VOIKKO_SPELLCHECKER_SPELLER_FACTORY
+#define VOIKKO_SPELLCHECKER_SPELLER_FACTORY
 
-#include "morphology/Analyzer.hpp"
+#include "spellchecker/Speller.hpp"
 #include "setup/Dictionary.hpp"
 #include "setup/DictionaryException.hpp"
+#include "setup/setup.hpp"
 
-namespace libvoikko { namespace morphology {
+namespace libvoikko { namespace spellchecker {
 
 /**
- * Factory for obtaining suitable morphological analyzer.
+ * Factory for obtaining suitable speller.
  */
-class AnalyzerFactory {
+class SpellerFactory {
 	public:
 		/**
-		 * Creates and initializes a new Analyzer that matches given dictionary.
-		 * The analyzer must be terminated and deleted after use.
-		 * @throws DictionaryException if the analyzer cannot be initialized.
+		 * Creates and initializes a new Speller that matches given dictionary.
+		 * The speller must be terminated and deleted after use.
+		 * @throws DictionaryException if the speller cannot be initialized.
 		 */
-		static Analyzer * getAnalyzer(const setup::Dictionary & dictionary)
+		static Speller * getSpeller(voikko_options_t * voikkoOptions,
+		                            const setup::Dictionary & dictionary)
 		                              throw(setup::DictionaryException);
 };
 

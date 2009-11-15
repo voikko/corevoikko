@@ -16,29 +16,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
-#define VOIKKO_MORPHOLOGY_ANALYZER_FACTORY
+#include "spellchecker/SpellerFactory.hpp"
+#include "spellchecker/AnalyzerToSpellerAdapter.hpp"
 
-#include "morphology/Analyzer.hpp"
-#include "setup/Dictionary.hpp"
-#include "setup/DictionaryException.hpp"
+using namespace std;
 
-namespace libvoikko { namespace morphology {
+namespace libvoikko { namespace spellchecker {
 
-/**
- * Factory for obtaining suitable morphological analyzer.
- */
-class AnalyzerFactory {
-	public:
-		/**
-		 * Creates and initializes a new Analyzer that matches given dictionary.
-		 * The analyzer must be terminated and deleted after use.
-		 * @throws DictionaryException if the analyzer cannot be initialized.
-		 */
-		static Analyzer * getAnalyzer(const setup::Dictionary & dictionary)
-		                              throw(setup::DictionaryException);
-};
+Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
+	                             const setup::Dictionary & dictionary)
+	                              throw(setup::DictionaryException) {
+	// FIXME: add proper parsing and possibility to combine components freely
+	if (dictionary.getSpellBackend() == "AnalyzerToSpellerAdapter(currentAnalyzer)") {
+		return new AnalyzerToSpellerAdapter(voikkoOptions->morAnalyzer);
+	}
+	throw setup::DictionaryException("Failed to create speller because backend configuration could not be parsed");
+}
 
 } }
-
-#endif

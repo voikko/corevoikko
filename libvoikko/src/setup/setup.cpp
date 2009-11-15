@@ -23,7 +23,7 @@
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
-#include "spellchecker/AnalyzerToSpellerAdapter.hpp"
+#include "spellchecker/SpellerFactory.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -206,6 +206,8 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	
 	if (langcode) {
 		try {
+			voikko_options.morAnalyzer = 0;
+			voikko_options.speller = 0;
 			Dictionary dict;
 			if (path) {
 				dict = DictionaryLoader::load(string(langcode), string(path));
@@ -214,10 +216,19 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 				dict = DictionaryLoader::load(string(langcode));
 			}
 			voikko_options.morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
-			// FIXME: use factory for this
-			voikko_options.speller = new spellchecker::AnalyzerToSpellerAdapter(voikko_options.morAnalyzer);
+			voikko_options.speller = spellchecker::SpellerFactory::getSpeller(&voikko_options, dict);
 		}
 		catch (DictionaryException e) {
+			if (voikko_options.speller) {
+				voikko_options.speller->terminate();
+				delete voikko_options.speller;
+				voikko_options.speller = 0;
+			}
+			if (voikko_options.morAnalyzer) {
+				voikko_options.morAnalyzer->terminate();
+				delete voikko_options.morAnalyzer;
+				voikko_options.morAnalyzer = 0;
+			}
 			#ifdef HAVE_ICONV
 			iconv_close(voikko_options.iconv_ext_ucs4);
 			iconv_close(voikko_options.iconv_ucs4_ext);
