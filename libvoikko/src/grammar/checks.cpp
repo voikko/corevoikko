@@ -246,7 +246,14 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		if (!t.isValidWord) continue;
 		if (!t.firstLetterLcase) continue;
 		if (t.possibleSentenceStart) continue;
-		if (t.tokenlen == 1) continue;
+		if (t.tokenlen == 1) {
+			// Single letters are OK in upper case
+			continue;
+		}
+		if (t.str[1] == L'-') {
+			// A-rapussa etc.
+			continue;
+		}
 		if (!iswupper(t.str[0])) continue;
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
