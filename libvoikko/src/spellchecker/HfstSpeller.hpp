@@ -16,30 +16,29 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "spellchecker/SpellerFactory.hpp"
-#include "spellchecker/AnalyzerToSpellerAdapter.hpp"
+#ifndef VOIKKO_SPELLCHECKER_HFST_SPELLER
+#define VOIKKO_SPELLCHECKER_HFST_SPELLER
 
-#ifdef HAVE_HFST
-#include "spellchecker/HfstSpeller.hpp"
-#endif
-
-using namespace std;
+#include "spellchecker/Speller.hpp"
+#include "setup/DictionaryException.hpp"
+#include <string>
+#include <hfst2/hfst.h>
 
 namespace libvoikko { namespace spellchecker {
 
-Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
-	                             const setup::Dictionary & dictionary)
-	                              throw(setup::DictionaryException) {
-	// FIXME: add proper parsing and possibility to combine components freely
-	if (dictionary.getSpellBackend() == "AnalyzerToSpellerAdapter(currentAnalyzer)") {
-		return new AnalyzerToSpellerAdapter(voikkoOptions->morAnalyzer);
-	}
-	#ifdef HAVE_HFST
-	if (dictionary.getSpellBackend() == "hfst") {
-		return new HfstSpeller(dictionary.getMorPath());
-	}
-	#endif
-	throw setup::DictionaryException("Failed to create speller because backend configuration could not be parsed");
-}
+/**
+ * HFST based speller.
+ */
+class HfstSpeller : public Speller {
+	public:
+		HfstSpeller(const string & directoryName) throw(setup::DictionaryException);
+		spellresult spell(const wchar_t * word, size_t wlen);
+		void terminate();
+	private:
+		HWFST::KeyTable * keyTable;
+		HWFST::TransducerHandle speller;
+};
 
 } }
+
+#endif

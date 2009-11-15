@@ -97,6 +97,8 @@ void HfstAnalyzer::addAnalysis(HWFST::KeyVector * hfstAnalysis, list<Analysis *>
 void HfstAnalyzer::terminate() {
 	delete keyTable;
 	keyTable = 0;
+	delete morphology;
+	morphology = 0;
 }
 
 } }

@@ -4,6 +4,7 @@
 	* Add SpellerFactory.
 	* Add my name and GPL license text to Malaga source files
 	  as they have been significantly changed from originals.
+	* Implement partially working HfstSpeller.
 
 2009-11-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Add interface Speller and implement it in

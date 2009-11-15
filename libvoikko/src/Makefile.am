@@ -84,6 +84,7 @@ noinst_HEADERS = \
     spellchecker/SpellUtils.hpp \
     spellchecker/Speller.hpp \
     spellchecker/AnalyzerToSpellerAdapter.hpp \
+    spellchecker/HfstSpeller.hpp \
     spellchecker/SpellerFactory.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \
@@ -112,12 +113,13 @@ CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
 	python $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
 
+HFST_CPP_FILES=morphology/HfstAnalyzer.cpp spellchecker/HfstSpeller.cpp
 
 if HAVE_HFST
-    libvoikko_la_SOURCES += morphology/HfstAnalyzer.cpp
+    libvoikko_la_SOURCES += $(HFST_CPP_FILES)
     libvoikko_la_LDFLAGS += -lhfst
 else
-    EXTRA_DIST += morphology/HfstAnalyzer.cpp
+    EXTRA_DIST += $(HFST_CPP_FILES)
 endif
 
 
