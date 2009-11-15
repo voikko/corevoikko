@@ -2,6 +2,8 @@
 	* Accept "A-rapussa" in grammar checker.
 	* Read speller configuration from dictionary description.
 	* Add SpellerFactory.
+	* Add my name and GPL license text to Malaga source files
+	  as they have been significantly changed from originals.
 
 2009-11-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Add interface Speller and implement it in
