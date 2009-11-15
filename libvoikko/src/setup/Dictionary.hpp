@@ -30,18 +30,22 @@ class Dictionary {
 	private:
 	std::string morPath;
 	std::string morBackend;
+	std::string spellBackend;
 	std::string variant;
 	std::string description;
 	bool isDefaultDict;
 
 	public:
 	Dictionary();
-	Dictionary(const std::string & morPath, const std::string & morBackend,
+	Dictionary(const std::string & morPath,
+	           const std::string & morBackend,
+	           const std::string & spellBackend,
 	           const std::string & variant,
 	           const std::string & description);
 	Dictionary(const Dictionary & dictionary);
 	const std::string & getMorPath() const;
 	const std::string & getMorBackend() const;
+	const std::string & getSpellBackend() const;
 	const std::string & getVariant() const;
 	const std::string & getDescription() const;
 	bool isValid() const;

@@ -176,6 +176,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	string variant;
 	string description;
 	string morBackend = "malaga";
+	string spellBackend = "AnalyzerToSpellerAdapter(currentAnalyzer)";
 	while (file.good()) {
 		getline(file, line);
 		if (line.find("info: Language-Variant: ") == 0) {
@@ -187,9 +188,12 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		else if (line.find("info: Morphology-Backend: ") == 0) {
 			morBackend = line.substr(26);
 		}
+		else if (line.find("info: Speller-Backend: ") == 0) {
+			spellBackend = line.substr(23);
+		}
 	}
 	file.close();
-	return Dictionary(path, morBackend, variant, description);
+	return Dictionary(path, morBackend, spellBackend, variant, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {
