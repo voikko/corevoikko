@@ -25,7 +25,9 @@
 namespace libvoikko { namespace morphology {
 
 /**
- * Results from morphological analysis.
+ * Results from morphological analysis. See
+ * doc/morphological-analysis.txt for more information about the
+ * attributes that should be included in the analysis.
  */
 class Analysis {
 	public:

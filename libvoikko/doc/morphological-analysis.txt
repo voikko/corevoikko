@@ -1,0 +1,148 @@
+2009 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
+
+ Information provided from attribute maps of Analysis objects
+ ============================================================
+
+This file contains documentation for implementors of morphological
+analyzers (Analyzer) in libvoikko. Analyzer is an object that returns
+a set of Analysis objects given an input string. Analysis objects
+consist of key-value pairs where keys are ordinary C strings and
+values are wchar_t strings. The set of required and optional strings
+in the analysis results may be different for different languages or
+different implementations of the same language.
+
+Analyzers are required to be case insensitive. Information about
+requirements for character case should be provided within the analysis
+results, not by excluding results depending on the character case of
+the input string. This design makes it easier to implement efficient
+analysis operations for applications where character case does not
+matter or matters only in some specific situations.
+
+In order to improve reusability of code and to allow external
+applications to take advantage of this feature it is best to use the
+same set of keys and same structure for values where possible. This
+document describes the guidelines that implementors of Analyzer
+components are recommended (but not required) to follow when they
+implement this feature.
+
+ Attributes common to all languages
+ ==================================
+
+The following attributes should be provided by all implementations of
+Analyzer for all languages:
+
+ STRUCTURE
+ =========
+  This attribute describes morpheme boundaries, character case and
+  hyphenation restrictions for the word. The following characters
+  are used in the values of this attribute:
+
+  = Start of a new morpheme. This must also be present at the start
+    of a word.
+
+  - Hyphen. Word can be split in text processors after this character
+    without inserting an extra hyphen. If the hyphen is at morpheme
+    boundary, the boundary symbol = must be placed after the hyphen.
+
+  p Letter that is written in lower case in the standard form.
+
+  q Letter that is written in lower case in the standard form.
+    Hyphenation is forbidden before this letter.
+
+  i Letter that is written in upper case in the standard form.
+
+  j Letter that is written in upper case in the standard form.
+    Hyphenation is forbidden before this letter.
+
+  Examples:
+   Word: Matti-niminen -> STRUCTURE: =ipppp-=ppppppp
+   Word: DNA-näyte ->     STRUCTURE: =jjj-=ppppp
+   Word: autokauppa ->    STRUCTURE: =pppp=pppppp
+
+The following attributes are not currently used within libvoikko but
+they may be useful for external applications:
+
+ BASEFORM
+ ========
+  Base form of the given word.
+
+  Examples:
+   Word: kissalla -> BASEFORM: kissa
+
+
+ Attributes for Finnish language
+ ===============================
+
+The following attributes are specific to Finnish language. Some are
+currently used within libvoikko for improved language support, others
+are provided only as information for external applications.
+
+ CLASS
+ =====
+  Sanan sanaluokka. Attribuutti on käytössä libvoikon sisällä.
+  Attribuutin mahdolliset arvot ovat seuraavat:
+   - nimisana (yleisnimi)
+   - laatusana
+   - nimisana_laatusana (sama kuin erilliset analyysit nimisanana ja
+     laatusanana)
+   - teonsana
+   - seikkasana
+   - asemosana
+   - suhdesana
+   - huudahdussana
+   - sidesana
+   - etunimi
+   - sukunimi
+   - paikannimi
+   - nimi (muu erisnimi kuin etu-, suku- tai paikannimi)
+   - kieltosana
+   - lyhenne
+   - lukusana
+
+ SIJAMUOTO
+ =========
+  Nominin sijamuoto. Attribuutti on käytössä libvoikon sisällä.
+  Attribuutin mahdolliset arvot ovat seuraavat:
+   - nimento
+   - omanto
+   - osanto
+   - olento
+   - tulento
+   - kohdanto
+   - sisaolento
+   - sisaeronto
+   - sisatulento
+   - ulkoolento
+   - ulkoeronto
+   - ulkotulento
+   - vajanto
+   - seuranto
+   - keinonto
+   - kerrontosti (esim. "nopeasti")
+   - none (muu tai tuntematon sijamuoto, tai sana ei ole nomini)
+
+ WORDBASES
+ =========
+  Sanan osien perusmuodot. Attribuutti ei ole käytössä libvoikon
+  sisällä. Attribuutin arvona on sanan perusmuoto, jossa yhdyssanan
+  osat ja päätteet on erotettu toisistaan +-merkillä. Lisäksi kunkin
+  yhdyssanan osan perusmuoto on osan perässä suluissa.
+
+  Esimerkkejä:
+   Sana: köydenvetoa ->     WORDBASES: +köyde(köysi)+n+veto(veto)
+   Sana: Alkio-opistossa -> WORDBASES: +alkio(Alkio)+-+opisto(opisto)
+                                       +alkio(alkio)+-+opisto(opisto)
+
+ WORDIDS
+ =======
+  Viittaukset sanan osiin Joukahaisessa. Attribuutti ei ole käytössä
+  libvoikon sisällä. Attribuutin arvona on sanan perusmuoto, jossa
+  yhdyssanan osat ja päätteet on erotettu toisistaan +-merkillä.
+  Lisäksi kunkin yhdyssanan osan tietue-id on osan perässä suluissa.
+
+  Esimerkkejä:
+   Sana: köydenvetoa ->     WORDBASES: +köyde(w506953)+n+veto(w517284)
+                                       +köyde(w506953)+n+veto(w523540)
+                                       +köyde(w506953)+n+veto(w525160)
+   Sana: Alkio-opistossa -> WORDBASES: +alkio(w518215)+-+opisto(w510148)
+                                       +alkio(w500068)+-+opisto(w510148)
