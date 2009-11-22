@@ -17,7 +17,8 @@
  *********************************************************************************/
 
 #include "voikko_defs.h"
-#include "hyphenator/hyphenator.hpp"
+#include "morphology/Analysis.hpp"
+#include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include <wchar.h>
@@ -30,7 +31,62 @@ using namespace std;
 
 namespace libvoikko {
 
-bool is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
+/**
+ * Removes hyphenation buffers that are considered unnecessary to analyse.
+ * @param hyphenations list of hyphenation buffers. It is assumed that compound
+ * word borders have already been marked on the buffer.
+ * @param len length of the word
+ * @param intersect_compound_level value of option intersect_compound_level
+ */
+static void remove_extra_hyphenations(char ** hyphenations, size_t len, int intersect_compound_level) {
+	int min_parts = 0;
+	int hyphenation_count = 0;
+	char ** current_buffer = hyphenations;
+	while (*current_buffer != 0) {
+		hyphenation_count++;
+		int current_parts = 1;
+		for (size_t i = 0; i < len; i++) {
+			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') {
+				current_parts++;
+			}
+		}
+		if (min_parts == 0 || min_parts > current_parts) {
+			min_parts = current_parts;
+		}
+		current_buffer++;
+	}
+	if (min_parts > intersect_compound_level) return; /* nothing to do */
+	
+	/* delete items from array where current_parts > min_parts */
+	int j = 0;
+	while (j < hyphenation_count) {
+		current_buffer = hyphenations + j;
+		int current_parts = 1;
+		for (size_t i = 0; i < len; i++) {
+			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') {
+				current_parts++;
+			}
+		}
+		if (current_parts > min_parts) {
+			delete[] hyphenations[j];
+			hyphenations[j] = hyphenations[--hyphenation_count];
+			hyphenations[hyphenation_count] = 0;
+		}
+		else j++;
+	}
+	/* TODO: remove indentically split words */
+}
+
+/**
+ * Checks if the proposed hyphenation point is valid.
+ * @param word word to hyphenate
+ * @param hyphenation_points hyphenation buffer containing the existing hyphenation points
+ * @param new_hyphen_pos position of the proposed new hyphenation point
+ * @param nchars number of characters in the word
+ * @return true if the proposed hyphenation point is valid (will not result in
+ * syllables without any vowels), false if it is invalid.
+ */
+static bool is_good_hyphen_position(const wchar_t * word, const char * hyphenation_points,
                              size_t new_hyphen_pos, size_t nchars) {
 	// Check for out of bounds hyphen
 	if (new_hyphen_pos == 0 || new_hyphen_pos + 1 >= nchars) return false;
@@ -55,7 +111,13 @@ bool is_good_hyphen_position(const wchar_t * word, const char * hyphenation_poin
 	return true;
 }
 
-bool allow_rule_hyphenation(const wchar_t * word, size_t nchars) {
+/**
+ * Checks if given word can be safely hyphenated using standard hyphenation rules
+ * @param word word to check
+ * @param nchars number of characters in the word
+ * @return true if the word should be hyphenated with rule based hyphenator, otherwise false.
+ */
+static bool allow_rule_hyphenation(const wchar_t * word, size_t nchars) {
 	// Word is too short
 	if (nchars <= 1) return false;
 	
@@ -70,13 +132,19 @@ bool allow_rule_hyphenation(const wchar_t * word, size_t nchars) {
 	return true;
 }
 
-const wchar_t * SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"oa", L"oe",
+static const wchar_t * const SPLIT_VOWELS[] = { L"ae", L"ao", L"ea", L"eo", L"ia", L"io", L"oa", L"oe",
                                    L"ua", L"ue", L"ye", L"e\u00e4", L"e\u00f6", L"i\u00e4",
                                    L"i\u00f6", L"y\u00e4", L"\u00e4e", L"\u00f6e" };
-const wchar_t * LONG_CONSONANTS[] = { L"shtsh", L"\u0161t\u0161", L"tsh", L"t\u0161", L"zh" };
-const wchar_t * SPLIT_AFTER[] = { L"ie", L"ai" };
+static const wchar_t * const LONG_CONSONANTS[] = { L"shtsh", L"\u0161t\u0161", L"tsh", L"t\u0161", L"zh" };
+static const wchar_t * const SPLIT_AFTER[] = { L"ie", L"ai" };
 
-void rule_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars) {
+/**
+ * Performs rule-based hyphenation.
+ * @param word word to hyphenate
+ * @param hyphenation_points hyphenation buffer where the results will be stored
+ * @param nchars number of characters in the word
+ */
+static void rule_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nchars) {
 	size_t i;
 	
 	if (!allow_rule_hyphenation(word, nchars)) return;
@@ -175,7 +243,14 @@ void rule_hyphenation(const wchar_t * word, char * hyphenation_points, size_t nc
 	delete[] word_copy;
 }
 
-void interpret_analysis(const Analysis * analysis, char * buffer, size_t len) {
+/**
+ * Sets the known hyphenation points (compound word borders) according to given
+ * morphological analysis.
+ * @param analysis morphological analysis of the word
+ * @param buffer hyphenation buffer to store the results to
+ * @param len length of the buffer
+ */
+static void interpret_analysis(const Analysis * analysis, char * buffer, size_t len) {
 	const wchar_t * structure = analysis->getValue("STRUCTURE");
 	const wchar_t * structurePtr = structure;
 	memset(buffer, ' ', len);
@@ -203,7 +278,16 @@ void interpret_analysis(const Analysis * analysis, char * buffer, size_t len) {
 	}
 }
 
-char ** split_compounds(voikko_options_t * voikkoOptions, const wchar_t * word,
+/**
+ * Creates an array of hyphenation buffers for given word.
+ * @param word word to analyse
+ * @param len length of the word
+ * @param dot_removed pointer to an integer that will be set to 1 if trailing
+ * dot is ignored. Otherwise it will be set to 0.
+ * @return array of hyphenation buffers that correspond to different ways how
+ * word could be split
+ */
+static char ** split_compounds(voikko_options_t * voikkoOptions, const wchar_t * word,
 	                size_t len, int * dot_removed) {
 	char ** all_results = new char*[LIBVOIKKO_MAX_ANALYSIS_COUNT + 1];
 	if (all_results == 0) return 0;
@@ -276,7 +360,12 @@ char ** split_compounds(voikko_options_t * voikkoOptions, const wchar_t * word,
 	return all_results;
 }
 
-char * intersect_hyphenations(char ** hyphenations) {
+/**
+ * Calculates the intersection of hyphenation points.
+ * @param hyphenations array of hyphenation buffers
+ * @return hyphenation buffer that contains the intersection of given hyphenations
+ */
+static char * intersect_hyphenations(char ** hyphenations) {
 	size_t len = strlen(hyphenations[0]);
 	char * intersection = new char[len + 1];
 	if (intersection == 0) return 0;
@@ -299,7 +388,14 @@ char * intersect_hyphenations(char ** hyphenations) {
 	return intersection;
 }
 
-void compound_hyphenation(const wchar_t * word, char * hyphenation, size_t len) {
+/**
+ * Hyphenates a compound word.
+ * @param word word to hyphenate
+ * @param hyphenation buffer to write the results to. It is assumed that
+ * compound word borders have already been marked on the buffer.
+ * @param len length of the word to hyphenate
+ */
+static void compound_hyphenation(const wchar_t * word, char * hyphenation, size_t len) {
 	size_t start = 0;
 	while (start < len && hyphenation[start] == '=') {
 		start++;
@@ -317,45 +413,6 @@ void compound_hyphenation(const wchar_t * word, char * hyphenation, size_t len) 
 	}
 	if (end == len && start < end && end >= start + voikko_options.min_hyphenated_word_length)
 		rule_hyphenation(&word[start], &hyphenation[start], end-start);
-}
-
-void remove_extra_hyphenations(char ** hyphenations, size_t len, int intersect_compound_level) {
-	int min_parts = 0;
-	int hyphenation_count = 0;
-	char ** current_buffer = hyphenations;
-	while (*current_buffer != 0) {
-		hyphenation_count++;
-		int current_parts = 1;
-		for (size_t i = 0; i < len; i++) {
-			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') {
-				current_parts++;
-			}
-		}
-		if (min_parts == 0 || min_parts > current_parts) {
-			min_parts = current_parts;
-		}
-		current_buffer++;
-	}
-	if (min_parts > intersect_compound_level) return; /* nothing to do */
-	
-	/* delete items from array where current_parts > min_parts */
-	int j = 0;
-	while (j < hyphenation_count) {
-		current_buffer = hyphenations + j;
-		int current_parts = 1;
-		for (size_t i = 0; i < len; i++) {
-			if ((*current_buffer)[i] != ' ' && (*current_buffer)[i] != 'X') {
-				current_parts++;
-			}
-		}
-		if (current_parts > min_parts) {
-			delete[] hyphenations[j];
-			hyphenations[j] = hyphenations[--hyphenation_count];
-			hyphenations[hyphenation_count] = 0;
-		}
-		else j++;
-	}
-	/* TODO: remove indentically split words */
 }
 
 VOIKKOEXPORT char * voikko_hyphenate_ucs4(int /*handle*/, const wchar_t * word) {

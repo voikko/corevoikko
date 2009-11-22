@@ -78,7 +78,7 @@ noinst_HEADERS = \
     setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     character/charset.hpp \
-    hyphenator/hyphenator.hpp voikko_defs.h porting.h \
+    voikko_defs.h porting.h \
     spellchecker/spell.hpp \
     spellchecker/SpellWithPriority.hpp \
     spellchecker/SpellUtils.hpp \
