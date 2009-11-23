@@ -55,6 +55,7 @@ libvoikko_la_LDFLAGS = @GLIB_LIBS@ -no-undefined -version-info 11:0:10 @LIBLDFLA
 pkginclude_HEADERS = voikko.h
 noinst_HEADERS = \
     utils/utils.hpp utils/StringUtils.hpp \
+    hyphenator/Hyphenator.hpp \
     morphology/Analysis.hpp \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \
