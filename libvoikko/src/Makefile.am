@@ -43,7 +43,8 @@ libvoikko_la_SOURCES = \
     morphology/malaga/MalagaState.cpp \
     setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
-    hyphenator/hyphenator.cpp character/charset.cpp \
+    hyphenator/interface.cpp \
+    character/charset.cpp \
     tokenizer/tokenizer.cpp sentence/sentence.cpp \
     grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
