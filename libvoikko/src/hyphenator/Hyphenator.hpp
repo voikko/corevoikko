@@ -33,8 +33,9 @@ class Hyphenator {
 		 * @param wlen length of the word in wchar_t units
 		 * @return null-terminated character string containing the hyphenation
 		 * using the following notation:
-		 *    ' ' = no hyphenation at this character
-		 *    '-' = hyphenation point (character at this position
+		 *    ' ' = no hyphenation point before or at this character
+		 *    '-' = hyphenation point before this character
+		 *          (character at this position
 		 *          is preserved in the hyphenated form)
 		 *    '=' = hyphentation point (character at this position
 		 *          is replaced with hyphen.)
@@ -49,7 +50,10 @@ class Hyphenator {
 
 		/**
 		 * Do not insert hyphenation positions that are considered to be ugly
-		 * but correct. Default: false
+		 * but correct. Typically this option is set in text processors that
+		 * use hyphenation for splitting words at the end of line. It is
+		 * not used in applications that need to split words into syllables.
+		 * Default: false
 		 */
 		virtual void setUglyHyphenation(bool uglyHyphenation) = 0;
 
@@ -73,6 +77,13 @@ class Hyphenator {
 		 * also enforced on individual parts of compound words. Default: 2
 		 */
 		virtual void setMinHyphenatedWordLength(int length) = 0;
+
+		/**
+		 * Ignore extra dot at the end of word. This option is set when
+		 * the provider of words to be hyphenated cannot know whether a dot
+		 * at the end of a word is a part of that word. Default: false.
+		 */
+		virtual void setIgnoreDot(bool ignoreDot) = 0;
 };
 
 } }
