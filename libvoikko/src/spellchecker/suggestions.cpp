@@ -28,8 +28,8 @@
 #include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <wchar.h>
-#include <wctype.h>
+#include <cwchar>
+#include <cwctype>
 
 #define MAX_SUGGESTIONS 5
 #define COST_LIMIT 350

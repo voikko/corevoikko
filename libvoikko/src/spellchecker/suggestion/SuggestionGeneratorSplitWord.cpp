@@ -18,8 +18,8 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorSplitWord.hpp"
 #include "spellchecker/SpellWithPriority.hpp"
-#include <wchar.h>
-#include <wctype.h>
+#include <cwchar>
+#include <cwctype>
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 

@@ -23,8 +23,8 @@
 #include "spellchecker/SpellUtils.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <wchar.h>
-#include <wctype.h>
+#include <cwchar>
+#include <cwctype>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::spellchecker;

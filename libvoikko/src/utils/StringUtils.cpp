@@ -20,7 +20,7 @@
 #include "utils/utils.hpp"
 #include <cstring>
 #include <cstdlib>
-#include "wchar.h"
+#include <cwchar>
 
 using namespace std;
 

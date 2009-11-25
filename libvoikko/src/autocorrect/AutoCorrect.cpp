@@ -24,7 +24,7 @@
 #include "utils/utils.hpp"
 #include "TrieNode.hpp"
 #include <cstring>
-#include <wchar.h>
+#include <cwchar>
 
 using namespace libvoikko::grammar;
 

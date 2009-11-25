@@ -25,7 +25,7 @@
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
-#include <wchar.h>
+#include <cwchar>
 
 namespace libvoikko {
 

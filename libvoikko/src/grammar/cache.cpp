@@ -24,7 +24,7 @@
 #include "autocorrect/AutoCorrect.hpp"
 #include <cstring>
 #include <cstdlib>
-#include <wctype.h>
+#include <cwctype>
 
 using namespace libvoikko::grammar;
 using namespace libvoikko::autocorrect;

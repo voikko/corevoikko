@@ -17,7 +17,7 @@
  *********************************************************************************/
 
 #include "spellchecker/SpellUtils.hpp"
-#include <wctype.h>
+#include <cwctype>
 
 namespace libvoikko { namespace spellchecker {
 

@@ -19,7 +19,7 @@
 #include "morphology/MalagaAnalyzer.hpp"
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
-#include <wchar.h>
+#include <cwchar>
 #include <cstdlib>
 
 using namespace std;

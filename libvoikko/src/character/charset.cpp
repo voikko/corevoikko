@@ -20,8 +20,8 @@
 #include "voikko_defs.h"
 #include "character/charset.hpp"
 #include <cstdlib>
-#include <wctype.h>
-#include <wchar.h>
+#include <cwctype>
+#include <cwchar>
 
 namespace libvoikko {
 

@@ -21,7 +21,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cstdio>
-#include <wchar.h>
+#include <cwchar>
 
 using namespace std;
 

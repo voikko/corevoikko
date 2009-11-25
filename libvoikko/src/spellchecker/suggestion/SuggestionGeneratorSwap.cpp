@@ -18,8 +18,8 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorSwap.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
-#include <wchar.h>
-#include <wctype.h>
+#include <cwchar>
+#include <cwctype>
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 

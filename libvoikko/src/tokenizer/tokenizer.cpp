@@ -20,7 +20,7 @@
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "character/charset.hpp"
-#include <wchar.h>
+#include <cwchar>
 #include <cstdlib>
 
 namespace libvoikko {

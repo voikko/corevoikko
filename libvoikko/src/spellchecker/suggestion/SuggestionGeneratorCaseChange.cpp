@@ -20,8 +20,8 @@
 #include "spellchecker/SpellWithPriority.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
-#include <wchar.h>
-#include <wctype.h>
+#include <cwchar>
+#include <cwctype>
 
 using namespace libvoikko::morphology;
 using namespace std;

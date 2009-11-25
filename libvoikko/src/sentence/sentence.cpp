@@ -22,7 +22,7 @@
 #include "spellchecker/spell.hpp"
 #include "character/charset.hpp"
 #include <cstdlib>
-#include <wctype.h>
+#include <cwctype>
 
 namespace libvoikko {
 

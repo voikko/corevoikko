@@ -25,7 +25,7 @@
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <wctype.h>
+#include <cwctype>
 
 using namespace libvoikko::grammar;
 

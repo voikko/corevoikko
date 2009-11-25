@@ -21,7 +21,7 @@
 #include "setup/setup.hpp"
 #include <stdlib.h>
 #include <string.h>
-#include <wctype.h>
+#include <cwctype>
 
 #ifndef HAVE_ICONV
   #ifdef WIN32
