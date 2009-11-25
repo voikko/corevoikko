@@ -2,6 +2,7 @@ config.h
 src/porting.h
 src/voikko.h
 src/voikko_defs.h
+src/Makefile.am
 data/autocorrect/fi_FI.xml
 src/tokenizer/tokenizer.cpp
 src/character/charset.cpp

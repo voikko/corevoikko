@@ -49,11 +49,11 @@ class Hyphenator {
 		virtual void terminate() = 0;
 
 		/**
-		 * Do not insert hyphenation positions that are considered to be ugly
-		 * but correct. Typically this option is set in text processors that
+		 * Insert hyphenation positions that are considered to be ugly
+		 * but correct. Typically this option is not set in text processors that
 		 * use hyphenation for splitting words at the end of line. It is
-		 * not used in applications that need to split words into syllables.
-		 * Default: false
+		 * used in applications that need to split words into syllables.
+		 * Default: true
 		 */
 		virtual void setUglyHyphenation(bool uglyHyphenation) = 0;
 
