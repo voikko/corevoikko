@@ -35,7 +35,7 @@ static const wchar_t * const SPLIT_AFTER[] = { L"ie", L"ai" };
 AnalyzerToFinnishHyphenatorAdapter::AnalyzerToFinnishHyphenatorAdapter(Analyzer * analyzer) :
 analyzer(analyzer),
 uglyHyphenation(true),
-hyphenateUnknown(false),
+hyphenateUnknown(true),
 intersectCompoundLevel(1),
 minHyphenatedWordLength(2),
 ignoreDot(false)
