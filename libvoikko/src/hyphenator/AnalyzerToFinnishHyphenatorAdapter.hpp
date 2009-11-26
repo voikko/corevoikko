@@ -43,7 +43,7 @@ class AnalyzerToFinnishHyphenatorAdapter : public Hyphenator {
 		bool uglyHyphenation;
 		bool hyphenateUnknown;
 		int intersectCompoundLevel;
-		int minHyphenatedWordLength;
+		size_t minHyphenatedWordLength;
 		bool ignoreDot;
 		
 		/**

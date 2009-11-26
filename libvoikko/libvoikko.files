@@ -110,6 +110,8 @@ src/hyphenator/interface.cpp
 src/hyphenator/Hyphenator.hpp
 src/hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp
 src/hyphenator/AnalyzerToFinnishHyphenatorAdapter.cpp
+src/hyphenator/HyphenatorFactory.hpp
+src/hyphenator/HyphenatorFactory.cpp
 src/autocorrect/TrieNode.hpp
 src/autocorrect/data.hpp
 src/autocorrect/AutoCorrect.hpp

@@ -24,6 +24,7 @@
 #endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
 #include "spellchecker/SpellerFactory.hpp"
+#include "hyphenator/HyphenatorFactory.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -58,10 +59,17 @@ static int setGrammarOption(int handle, int value, int * option) {
 }
 
 VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
+	voikko_options_t * options = &voikko_options;
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
-			if (value) voikko_options.ignore_dot = 1;
-			else voikko_options.ignore_dot = 0;
+			if (value) {
+				options->ignore_dot = 1;
+				options->hyphenator->setIgnoreDot(true);
+			}
+			else {
+				options->ignore_dot = 0;
+				options->hyphenator->setIgnoreDot(false);
+			}
 			return 1;
 		case VOIKKO_OPT_IGNORE_NUMBERS:
 			if (value) voikko_options.ignore_numbers = 1;
@@ -80,8 +88,12 @@ VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 			else voikko_options.accept_all_uppercase = 0;
 			return 1;
 		case VOIKKO_OPT_NO_UGLY_HYPHENATION:
-			if (value) voikko_options.no_ugly_hyphenation = 1;
-			else voikko_options.no_ugly_hyphenation = 0;
+			if (value) {
+				options->hyphenator->setUglyHyphenation(false);
+			}
+			else {
+				options->hyphenator->setUglyHyphenation(true);
+			}
 			return 1;
 		case VOIKKO_OPT_OCR_SUGGESTIONS:
 			if (value) voikko_options.suggestion_type = ST_OCR;
@@ -109,20 +121,25 @@ VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 			return setGrammarOption(handle, value,
 			       &(voikko_options.accept_bulleted_lists_in_gc));
 		case VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS:
-			if (value) voikko_options.hyphenate_unknown_words = 1;
-			else voikko_options.hyphenate_unknown_words = 0;
+			if (value) {
+				options->hyphenator->setHyphenateUnknown(true);
+			}
+			else {
+				options->hyphenator->setHyphenateUnknown(false);
+			}
 			return 1;
 	}
 	return 0;
 }
 
 VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
+	voikko_options_t * options = &voikko_options;
 	switch (option) {
 		case VOIKKO_INTERSECT_COMPOUND_LEVEL:
-			voikko_options.intersect_compound_level = value;
+			options->hyphenator->setIntersectCompoundLevel(value);
 			return 1;
 		case VOIKKO_MIN_HYPHENATED_WORD_LENGTH:
-			voikko_options.min_hyphenated_word_length = value;
+			options->hyphenator->setMinHyphenatedWordLength(value);
 			return 1;
 	}
 	return 0;
@@ -164,15 +181,11 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.ignore_nonwords = 1;
 	voikko_options.accept_first_uppercase = 1;
 	voikko_options.accept_all_uppercase = 1;
-	voikko_options.no_ugly_hyphenation = 0;
 	voikko_options.accept_extra_hyphens = 0;
 	voikko_options.accept_missing_hyphens = 0;
 	voikko_options.accept_titles_in_gc = 0;
 	voikko_options.accept_unfinished_paragraphs_in_gc = 0;
 	voikko_options.accept_bulleted_lists_in_gc = 0;
-	voikko_options.hyphenate_unknown_words = 1;
-	voikko_options.intersect_compound_level = 1;
-	voikko_options.min_hyphenated_word_length = 2;
 	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
 	voikko_options.suggestion_type = ST_STD;
@@ -217,8 +230,14 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 			}
 			voikko_options.morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 			voikko_options.speller = spellchecker::SpellerFactory::getSpeller(&voikko_options, dict);
+			voikko_options.hyphenator = hyphenator::HyphenatorFactory::getHyphenator(&voikko_options, dict);
 		}
 		catch (DictionaryException e) {
+			if (voikko_options.hyphenator) {
+				voikko_options.hyphenator->terminate();
+				delete voikko_options.hyphenator;
+				voikko_options.hyphenator = 0;
+			}
 			if (voikko_options.speller) {
 				voikko_options.speller->terminate();
 				delete voikko_options.speller;
@@ -271,6 +290,9 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 		iconv_close(voikko_options.iconv_utf8_ucs4);
 		iconv_close(voikko_options.iconv_ucs4_utf8);
 		#endif
+		voikko_options.hyphenator->terminate();
+		delete voikko_options.hyphenator;
+		voikko_options.hyphenator = 0;
 		voikko_options.speller->terminate();
 		delete voikko_options.speller;
 		voikko_options.speller = 0;

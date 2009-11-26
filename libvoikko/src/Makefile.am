@@ -45,6 +45,7 @@ libvoikko_la_SOURCES = \
     setup/DictionaryException.cpp setup/interface.cpp \
     hyphenator/interface.cpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.cpp \
+    hyphenator/HyphenatorFactory.cpp \
     character/charset.cpp \
     tokenizer/tokenizer.cpp sentence/sentence.cpp \
     grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
@@ -58,6 +59,7 @@ noinst_HEADERS = \
     utils/utils.hpp utils/StringUtils.hpp \
     hyphenator/Hyphenator.hpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp \
+    hyphenator/HyphenatorFactory.hpp \
     morphology/Analysis.hpp \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \

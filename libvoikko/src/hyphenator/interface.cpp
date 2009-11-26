@@ -26,33 +26,13 @@
 namespace libvoikko { namespace hyphenator {
 
 VOIKKOEXPORT char * voikko_hyphenate_ucs4(int /*handle*/, const wchar_t * word) {
-	size_t wlen;
-	
-	if (word == 0) return 0;
-	wlen = wcslen(word);
-	
-	/* Short words may not need to be hyphenated at all */
-	if (wlen < voikko_options.min_hyphenated_word_length) {
-		char * hyphenation = new char[wlen + 1];
-		if (!hyphenation) return 0;
-		memset(hyphenation, ' ', wlen);
-		hyphenation[wlen] = '\0';
-		// Convert to C allocation to maintain compatibility with some
-		// broken applications before libvoikko 1.5.
-		utils::StringUtils::convertCStringToMalloc(hyphenation);
-		return hyphenation;
+	if (word == 0) {
+		return 0;
 	}
+	size_t wlen = wcslen(word);
 	
 	ENTER_V
-	AnalyzerToFinnishHyphenatorAdapter * hyphenator =
-		new AnalyzerToFinnishHyphenatorAdapter(voikko_options.morAnalyzer);
-	hyphenator->setUglyHyphenation(!voikko_options.no_ugly_hyphenation);
-	hyphenator->setIntersectCompoundLevel(voikko_options.intersect_compound_level);
-	hyphenator->setIgnoreDot(voikko_options.ignore_dot);
-	hyphenator->setMinHyphenatedWordLength(voikko_options.min_hyphenated_word_length);
-	hyphenator->setHyphenateUnknown(voikko_options.hyphenate_unknown_words);
-	char * hyphenation = hyphenator->hyphenate(word, wlen);
-	delete hyphenator;
+	char * hyphenation = voikko_options.hyphenator->hyphenate(word, wlen);
 	if (hyphenation == 0) {
 		EXIT_V
 		return 0;

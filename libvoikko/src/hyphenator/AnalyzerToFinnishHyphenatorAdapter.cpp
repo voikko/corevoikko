@@ -42,6 +42,17 @@ ignoreDot(false)
 {}
 
 char * AnalyzerToFinnishHyphenatorAdapter::hyphenate(const wchar_t * word, size_t wlen) {
+	/* Short words may not need to be hyphenated at all */
+	if (wlen < minHyphenatedWordLength) {
+		char * hyphenation = new char[wlen + 1];
+		if (!hyphenation) {
+			return 0;
+		}
+		memset(hyphenation, ' ', wlen);
+		hyphenation[wlen] = '\0';
+		return hyphenation;
+	}
+	
 	bool dotRemoved = false;
 	char ** hyphenations = splitCompounds(word, wlen, &dotRemoved);
 	if (hyphenations == 0) {

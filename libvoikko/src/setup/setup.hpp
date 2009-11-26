@@ -22,6 +22,7 @@
 #include "grammar/cachesetup.hpp"
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
+#include "hyphenator/Hyphenator.hpp"
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
@@ -39,15 +40,11 @@ typedef struct {
 	int ignore_nonwords;
 	int accept_first_uppercase;
 	int accept_all_uppercase;
-	int no_ugly_hyphenation;
 	int accept_extra_hyphens;
 	int accept_missing_hyphens;
-	int intersect_compound_level;
-	size_t min_hyphenated_word_length;
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	int accept_bulleted_lists_in_gc;
-	int hyphenate_unknown_words;
 	const char * encoding;
 	#ifdef HAVE_ICONV
 	iconv_t iconv_ucs4_utf8;
@@ -62,6 +59,7 @@ typedef struct {
 	voikko_gc_cache gc_cache;
 	morphology::Analyzer * morAnalyzer;
 	spellchecker::Speller * speller;
+	hyphenator::Hyphenator * hyphenator;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;
