@@ -326,24 +326,21 @@ def wordInfo(word):
 	return res
 
 class VoikkoHandler(BaseHTTPRequestHandler):
+	def sendHtmlPage(self, handlerFunction):
+		self.send_response(200)
+		self.send_header("Content-Type", "text/html; charset=UTF-8")
+		self.end_headers()
+		self.wfile.write(handlerFunction().encode("UTF-8"))
+	
 	def do_GET(self):
 		if self.path == "/":
-			self.send_response(200)
-			self.send_header("Content-Type", "text/html; charset=UTF-8")
-			self.end_headers()
-			self.wfile.write(_STATIC_PAGE.encode("UTF-8"))
+			self.sendHtmlPage(lambda: _STATIC_PAGE)
 		elif self.path.startswith("/spell?q="):
-			self.send_response(200)
-			self.send_header("Content-Type", "text/html; charset=UTF-8")
-			self.end_headers()
 			query = unicode(unquote_plus(self.path[9:]), "UTF-8")
-			self.wfile.write(spell(query).encode("UTF-8"))
+			self.sendHtmlPage(lambda: spell(query))
 		elif self.path.startswith("/wordinfo?q="):
-			self.send_response(200)
-			self.send_header("Content-Type", "text/html; charset=UTF-8")
-			self.end_headers()
 			query = unicode(unquote_plus(self.path[12:]), "UTF-8")
-			self.wfile.write(wordInfo(query).encode("UTF-8"))
+			self.sendHtmlPage(lambda: wordInfo(query))
 		else:
 			self.send_response(404)
 			self.end_headers()
