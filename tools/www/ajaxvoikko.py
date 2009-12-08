@@ -215,23 +215,25 @@ def wordInfo(word):
 	return res
 
 FILES_TO_SERVE = {
-	"/": "ajaxvoikko-index.html"
+	"/": ("ajaxvoikko-index.html", "text/html"),
+	"/style.css": ("ajaxvoikko-style.css", "text/css"),
+	"/script.js": ("ajaxvoikko-script.js", "text/javascript")
 }
 
 class VoikkoHandler(BaseHTTPRequestHandler):
-	def sendHtmlPage(self, content):
+	def sendHtmlPage(self, content, contentType):
 		self.send_response(200)
-		self.send_header("Content-Type", "text/html; charset=UTF-8")
+		self.send_header("Content-Type", contentType + "; charset=UTF-8")
 		self.end_headers()
 		self.wfile.write(content.encode("UTF-8"))
 	
 	def serveFiles(self):
-		for (path, fileName) in FILES_TO_SERVE.iteritems():
+		for (path, (fileName, contentType)) in FILES_TO_SERVE.iteritems():
 			if self.path == path:
 				file = codecs.open(fileName, "r", "UTF-8")
 				content = file.read()
 				file.close()
-				self.sendHtmlPage(content)
+				self.sendHtmlPage(content, contentType)
 				return True
 		return False
 	
@@ -240,10 +242,10 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 			return
 		elif self.path.startswith("/spell?q="):
 			query = unicode(unquote_plus(self.path[9:]), "UTF-8")
-			self.sendHtmlPage(spell(query))
+			self.sendHtmlPage(spell(query), "text/html")
 		elif self.path.startswith("/wordinfo?q="):
 			query = unicode(unquote_plus(self.path[12:]), "UTF-8")
-			self.sendHtmlPage(wordInfo(query))
+			self.sendHtmlPage(wordInfo(query), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()

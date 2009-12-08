@@ -1,0 +1,22 @@
+#result {
+  line-height: 1.6em;
+}
+span.error {
+  color: red;
+}
+span.gErrorOuter {
+  padding-bottom: 0.3em;
+  background-color: #FFBBBB;
+}
+span.gErrorInner {
+  background-color: white;
+}
+.word {
+  color: black;
+  background-color: white;
+  -moz-border-radius: 0.2em;
+}
+span.word:hover, span.gErrorHandle:hover {
+  background-color: #CCCCEE;
+  cursor: help;
+}
