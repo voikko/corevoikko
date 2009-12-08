@@ -23,118 +23,7 @@ from urllib import unquote_plus
 from cgi import escape
 from libvoikko import Voikko
 from libvoikko import Token
-
-_STATIC_PAGE = \
-u"""
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>WebVoikko 2.0</title>
-<link type="text/css"
- href="http://jqueryui.com/latest/themes/base/ui.all.css"
- rel="stylesheet" />
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script>
-
-function joukahainen(wid) {
-  var options = {
-    title: "Joukahainen"
-  }
-  var frame = "<iframe src='http://joukahainen.puimula.org/word/edit?wid="
-              + wid + "'></iframe>";
-  $(frame).dialog(options).show();
-}
-
-function wordInfoReceived(html) {
-  var options = {
-    width: 450
-  };
-  $(html).dialog(options).show();
-}
-
-function wordClicked(evt) {
-  var word = $(this).text();
-  $.get("/wordinfo", {q: word}, wordInfoReceived, "html");
-}
-
-function gErrorClicked(evt) {
-  var options = {
-    width: 450,
-    title: "Mahdollinen kielioppivirhe"
-  };
-  var outerElement = $(this).parent()
-  var original = $("<span />").text(outerElement.find(".gErrorInner").text());
-  var explanation = outerElement.attr("errortext");
-  var html = "<div>... " + original.html() + " ...<br />"
-             + explanation + "</div>";
-  $(html).dialog(options).show();
-}
-
-function buildGrammarError(outerElement) {
-  var content = outerElement.html();
-  outerElement.html("*<span class='gErrorInner'>" + html + "</span>");
-}
-
-function updateReceived(html) {
-  $("#result").html(html);
-  $("#result .gErrorOuter").wrapInner("<span class='gErrorInner'></span>");
-  $("#result .gErrorOuter").prepend("<span class='gErrorHandle'>*</span>");
-  $("#result .word").click(wordClicked);
-  $("#result .gErrorHandle").click(gErrorClicked);
-}
-
-function inputChanged() {
-  var text = $("#input").val();
-  $.get("/spell", {q: text}, updateReceived, "html");
-}
-
-function keyUpInInput(evt) {
-  if (evt.keyCode >= 16 && evt.keyCode <= 40) {
-    // Modifier keys such as Ctrl
-    // Movement keys such as arrow left etc.
-    return;
-  }
-  inputChanged();
-}
-
-google.load("jquery", "1.3.2");
-google.load("jqueryui", "1.7.2");
-google.setOnLoadCallback(function() { jQuery(function($) {
-  $("#input").keyup(keyUpInInput);
-});});
-</script>
-<style type="text/css">
-#result {
-  line-height: 1.6em;
-}
-span.error {
-  color: red;
-}
-span.gErrorOuter {
-  padding-bottom: 0.3em;
-  background-color: #FFBBBB;
-}
-span.gErrorInner {
-  background-color: white;
-}
-.word {
-  color: black;
-  background-color: white;
-  -moz-border-radius: 0.2em;
-}
-span.word:hover, span.gErrorHandle:hover {
-  background-color: #CCCCEE;
-  cursor: help;
-}
-</style>
-</head>
-<body>
-<textarea id="input" cols="80" rows="5"></textarea>
-<pre id="result"></pre>
-</body>
-</html>
-"""
+import codecs
 
 _voikko = None
 
@@ -325,6 +214,10 @@ def wordInfo(word):
 	res = res + "</div>"
 	return res
 
+FILES_TO_SERVE = {
+	"/": "ajaxvoikko-index.html"
+}
+
 class VoikkoHandler(BaseHTTPRequestHandler):
 	def sendHtmlPage(self, content):
 		self.send_response(200)
@@ -332,9 +225,19 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		self.end_headers()
 		self.wfile.write(content.encode("UTF-8"))
 	
+	def serveFiles(self):
+		for (path, fileName) in FILES_TO_SERVE.iteritems():
+			if self.path == path:
+				file = codecs.open(fileName, "r", "UTF-8")
+				content = file.read()
+				file.close()
+				self.sendHtmlPage(content)
+				return True
+		return False
+	
 	def do_GET(self):
-		if self.path == "/":
-			self.sendHtmlPage(_STATIC_PAGE)
+		if self.serveFiles():
+			return
 		elif self.path.startswith("/spell?q="):
 			query = unicode(unquote_plus(self.path[9:]), "UTF-8")
 			self.sendHtmlPage(spell(query))
