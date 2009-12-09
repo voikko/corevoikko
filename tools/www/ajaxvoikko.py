@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# This server implementation is single threaded.
+
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
 from urllib import unquote_plus
@@ -228,14 +230,14 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		self.wfile.write(content.encode("UTF-8"))
 	
 	def serveFiles(self):
-		for (path, (fileName, contentType)) in FILES_TO_SERVE.iteritems():
-			if self.path == path:
-				file = codecs.open(fileName, "r", "UTF-8")
-				content = file.read()
-				file.close()
-				self.sendHtmlPage(content, contentType)
-				return True
-		return False
+		if self.path not in FILES_TO_SERVE:
+			return False
+		fileName, contentType = FILES_TO_SERVE[self.path]
+		file = codecs.open(fileName, "r", "UTF-8")
+		content = file.read()
+		file.close()
+		self.sendHtmlPage(content, contentType)
+		return True
 	
 	def do_GET(self):
 		if self.serveFiles():

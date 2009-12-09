@@ -66,9 +66,19 @@ function updateReceived(html) {
   $("#result .gErrorHandle").click(gErrorClicked);
 }
 
-function inputChanged() {
+var lastUpdateTimerId = null;
+
+function requestUpdate() {
   var text = $("#input").val();
   $.get("/spell", {q: text}, updateReceived, "html");
+}
+
+function inputChanged() {
+  if (lastUpdateTimerId != null) {
+    window.clearTimeout(lastUpdateTimerId);
+    lastUpdateTimerId = null;
+  }
+  lastUpdateTimerId = window.setTimeout(requestUpdate, 1200);
 }
 
 function keyUpInInput(evt) {
