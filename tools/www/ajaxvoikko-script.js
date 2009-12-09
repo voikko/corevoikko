@@ -95,11 +95,17 @@ function inputChanged() {
 }
 
 function keyUpInInput(evt) {
+  if (evt.keyCode == 32) {
+    // space
+    inputChanged();
+    return;
+  }
   if (evt.keyCode >= 16 && evt.keyCode <= 40) {
     // Modifier keys such as Ctrl
     // Movement keys such as arrow left etc.
     return;
   }
+  // other keys
   inputChanged();
 }
 
