@@ -1,5 +1,17 @@
+#progress {
+  width: 100%;
+  height: 1em;
+  font-size: 0.8em;
+}
+
+div.updating {
+  background-color: #DDAAAA;
+}
+
 #result {
   line-height: 1.6em;
+  border: 1px solid black;
+  min-height: 2em;
 }
 span.error {
   color: red;

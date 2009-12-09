@@ -64,11 +64,23 @@ function updateReceived(html) {
   $("#result .gErrorOuter").prepend("<span class='gErrorHandle'>*</span>");
   $("#result .word").click(wordClicked);
   $("#result .gErrorHandle").click(gErrorClicked);
+  clearProgressMessage();
 }
 
 var lastUpdateTimerId = null;
 
+function setProgressMessage() {
+  $("#progress").addClass("updating");
+  $("#progress").text("Analysoidaan...");
+}
+
+function clearProgressMessage() {
+  $("#progress").text("");
+  $("#progress").removeClass("updating");
+}
+
 function requestUpdate() {
+  lastUpdateTimerId = null;
   var text = $("#input").val();
   $.get("/spell", {q: text}, updateReceived, "html");
 }
@@ -78,6 +90,7 @@ function inputChanged() {
     window.clearTimeout(lastUpdateTimerId);
     lastUpdateTimerId = null;
   }
+  setProgressMessage();
   lastUpdateTimerId = window.setTimeout(requestUpdate, 1200);
 }
 
