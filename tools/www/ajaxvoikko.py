@@ -22,6 +22,7 @@
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
 from urllib import unquote_plus
+from urllib import urlopen
 from cgi import escape
 from libvoikko import Voikko
 from libvoikko import Token
@@ -239,6 +240,13 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		self.sendHtmlPage(content, contentType)
 		return True
 	
+	def serveUrl(self, url):
+		stream = urlopen(url)
+		content = stream.read()
+		stream.close()
+		self.sendHtmlPage(unicode(content, "UTF-8"), "text/html")
+		return True
+	
 	def do_GET(self):
 		if self.serveFiles():
 			return
@@ -248,6 +256,10 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		elif self.path.startswith("/wordinfo?q="):
 			query = unicode(unquote_plus(self.path[12:]), "UTF-8")
 			self.sendHtmlPage(wordInfo(query), "text/html")
+		elif self.path.startswith("/joukahainen?wid="):
+			query = unicode(unquote_plus(self.path[17:]), "UTF-8")
+			wid = int(query)
+			self.serveUrl(WORD_INFO_URL + `wid`)
 		else:
 			self.send_response(404)
 			self.end_headers()

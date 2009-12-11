@@ -23,8 +23,7 @@ function joukahainen(wid) {
   var options = {
     title: "Joukahainen"
   }
-  var frame = "<iframe src='http://joukahainen.puimula.org/word/edit?wid="
-              + wid + "'></iframe>";
+  var frame = "<iframe src='joukahainen?wid=" + wid + "'></iframe>";
   $(frame).dialog(options).show();
 }
 
