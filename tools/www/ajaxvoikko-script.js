@@ -21,10 +21,12 @@
 
 function joukahainen(wid) {
   var options = {
-    title: "Joukahainen"
+    title: "Joukahainen",
+    width: "300",
+    height: "200"
   }
-  var frame = "<iframe src='joukahainen?wid=" + wid + "'></iframe>";
-  $(frame).dialog(options).show();
+  var frame = $("<div></div>").load("joukahainen?wid=" + wid + " .main");
+  frame.dialog(options).show();
 }
 
 function wordInfoReceived(html) {
