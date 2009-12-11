@@ -80,6 +80,147 @@ subrule taivutus ($sanatietue1, $lisä, $jatko, $tietue):
     end;
   end;
 
+  assert (length($a) = 1);
+
+#define $aaa := transmit ($sanatietue1.perusmuoto);
+
+#if ($sanatietue1.perusmuoto = "poliisi") then
+#define $aa := transmit ($sanatietue1);
+#define $ab := transmit ($lisä);
+#define $ac := transmit ($jatko);
+#define $ad := transmit ($tietue);
+#define $ae := transmit ("=========");
+#end;
+
+  if (($sanatietue1.jatko * <kirjoittaa, kilvoitella> /= <>) and (substring ($lisä, 1L) /= "i")) then
+    #
+    # Kirjo(i)ttaa: i:llinen muoto nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + "i" + $lisä];
+
+  elseif (($sanatietue1.jatko * <ammottaa, ilotella> /= <>) and (substring ($lisä, 1L) = "i")) then
+    #
+    # Ammo(i)ttaa: i:tön muoto nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + substring ($lisä, 2, 1R)];
+
+  elseif (($sanatietue1.jatko * <symboli_di, symboli_fi, symboli_gi, symboli_li,
+                                 symboli_mi, symboli_ni, symboli_ri, symboli_vi,
+                                 telefoni_di, telefoni_fi, telefoni_gi, telefoni_li,
+                                 telefoni_mi, telefoni_ni, telefoni_ri, telefoni_vi> /= <>)
+          and (substring ($lisä, 1) = "o")) then
+    #
+    # Symbo(o)li: yksi ääntiö nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + substring ($lisä, 2, 1R)];
+
+  elseif ((nuolaista in $sanatietue1.jatko) and (substring ($lisä, 1L) /= "i")) then
+    #
+    # Nuola(i)sta: i:llinen muoto nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + "i" + $lisä];
+
+  elseif (($sanatietue1.jatko * <balladi, marinadi> /= <>)
+          and ($sanatietue1.alku + $lisä matches ".*" : $alku, "a", "ad[ie]?" : $loppu)) then
+    #
+    # Balla(a)di: yksi ääntiö nykysääntöjen mukainen.
+    #
+    assert (length($a) = 1);
+    $a.(1) :=+ [alku2: $alku + $loppu];
+
+  elseif (($sanatietue1.jatko * <biografi> /= <>)
+          and ($sanatietue1.alku + $lisä matches ".*" : $alku, "a", "af[ie]?" : $loppu)) then
+    #
+    # Biogra(a)fi: yksi ääntiö nykysääntöjen mukainen.
+    #
+    assert (length($a) = 1);
+    $a.(1) :=+ [alku2: $alku + $loppu];
+
+  elseif ($sanatietue1.jatko * <funktio, illuusio, obligaatio, resoluutio, traditio> /= <>) then
+    #
+    # Obliga(a)tio, obligatio(o)ni, obligatsio(o)ni.
+    # Revolu(u)tio, revolutio(o)ni, revolutsio(o)ni.
+    # Illu(u)sio,   illusio(o)ni.
+    # Tradit(s)io,  traditsio(o)ni.
+    # Funkt(s)io,   funktsio(o)ni; akt(s)io, aktsio(o)ni.
+    #
+    assert (length($a) = 1);
+    $a.(1) :=+ [alku2: $sanatietue1.perusmuoto];
+
+  elseif (($sanatietue1.jatko * <osoite> /= <>)
+          and ($sanatietue1.alku + $lisä matches ".*o" : $alku, "(te|ttee?)" : $loppu)) then
+    #
+    # Oso(i)te: i:llinen muoto nykysääntöjen mukainen.
+    #
+    assert (length($a) = 1);
+    $a.(1) :=+ [alku2: $alku + "i" + $loppu];
+
+  elseif (($sanatietue1.jatko * <tiedote> /= <>)
+          and ($sanatietue1.alku + $lisä matches ".*o" : $alku, "i", "(te|ttee?)" : $loppu)) then
+    #
+    # Tiedo(i)te: i:tön muoto nykysääntöjen mukainen.
+    #
+    assert (length($a) = 1);
+    $a.(1) :=+ [alku2: $alku + $loppu];
+
+  elseif ((aivoitus in $sanatietue1.jatko) and (substring ($lisä, 1L) /= "i")) then
+    #
+    # Aivo(i)tus: i:llinen muoto nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + "i" + $lisä];
+
+  elseif ((jaotus in $sanatietue1.jatko) and (substring ($lisä, 1L) = "i")) then
+    #
+    # Jao(i)tus: i:tön muoto nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + substring ($lisä, 2, 1R)];
+
+  elseif ((hevoinen in $sanatietue1.jatko) and (substring ($lisä, 1L) = "i")) then
+    #
+    # Hevo(i)nen: i:tön muoto nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + substring ($lisä, 2, 1R)];
+
+  elseif ((pistooli in $sanatietue1.jatko) and (substring ($lisä, 1L) /= "o")) then
+    #
+    # Pisto(o)li: kaksi o:ta nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + "o" + $lisä];
+
+  elseif ((poliisi in $sanatietue1.jatko) and (substring ($lisä, 1L) /= "i")) then
+    #
+    # Poli(i)si: kaksi i:tä nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + "i" + $lisä];
+
+  elseif ((kamari in $sanatietue1.jatko) and (substring ($lisä, 1L) = "m")) then
+    #
+    # Kam(m)ari: yksi m nykysääntöjen mukainen.
+    #
+    $a.(1) :=+ [alku2: $sanatietue1.alku + substring ($lisä, 2, 1R)];
+
+  elseif ($sanatietue1.perusmuoto2 /= nil) then
+    define $taulukko := <
+       <"politikka",   <<"politika",   "politiika">,
+                        <"politikka",  "politiikka">,
+                        <"politikko",  "politiikko">,
+                        <"politiko",   "poliitiko">>>,
+       <"politikko",   <<"politikko",  "poliitikko">,
+                        <"politiko",   "poliitiko">>>
+    >;
+    foreach $i in $taulukko:
+#define $a1 := transmit (<"a1"> + <$i>);
+      if ($sanatietue1.perusmuoto = $i.1) then
+#define $b1 := transmit (<"b1"> + <$i>);
+        foreach $j in $i.2:
+          if ($sanatietue1.alku + $lisä = $j.1) then
+#define $c1 := transmit (<"c1"> + <$j.1> + <$j.2>);
+            $a.1 :=+ [alku2: $j.2];
+          end;
+        end;
+      end;
+    end;
+  end;
   return $a;
 end;
 

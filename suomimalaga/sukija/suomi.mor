@@ -156,7 +156,9 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if (tavuviiva in $oikea.jatko) then
       result $res, rules tavuviiva;
     end;
-    if (yhdyssana in $oikea.jatko) then
+#    if (yhdyssana in $oikea.jatko) then
+    if (yhdyssana in $oikea.jatko) and
+        (($oikea.tiedot = nil) or not ((ei_ys in $oikea.tiedot) or (ei_ysa in $oikea.tiedot))) then
       result $res, rules yhdyssana;
 #      result $res, rules inen_päätteinen_laatusana;
     end;
@@ -318,11 +320,15 @@ combi_rule etuliite ($vasen, $oikea, $sana, $n):
 
   ? ($oikea.luokka in $vasen.$i.jatko);
 
+  ? (($vasen.$i.tiedot = nil) or not ((ei_ys in $vasen.$i.tiedot) or (ei_ysa in $vasen.$i.tiedot)));
+  ? (($oikea.tiedot    = nil) or not ((ei_ys in $oikea.tiedot)    or (ei_ysj in $oikea.tiedot)));
+
   define $r := $vasen + <[alku: $sana] + $oikea>;
 
-  if (kieltosana in $oikea.jatko) then
-    result $r, rules kieltosana;
-  end;
+# Ehkei-tyyppiset sanat eivät voi olla yhdyssanojen osana.
+#  if (kieltosana in $oikea.jatko) then
+#    result $r, rules kieltosana;
+#  end;
   if (nimisana in $oikea.jatko) then
     result $r, rules nimisana, teonsanasta_johdettu_nimisana,
                      paikannimen_ja_sukunimen_lainen_johdos;
@@ -388,6 +394,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
 #define $n2 := transmit (<"nimisana2"> + <$oikea.luokka>);
 #define $n3 := transmit (<"nimisana3"> + <$sana>);
 #define $n4 := transmit (<"nimisana4"> + <($oikea.luokka in $vasen.$i.jatko)>);
+#define $n5 := transmit (<"nimisana5"> + <$oikea.tiedot>);
 
   ? $oikea.luokka in $vasen.$i.jatko;
   ? yhdyssana_oikein ($vasen, $oikea, $i);
@@ -396,6 +403,9 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
     result $res, rules tavuviiva;
   end;
   if (yhdyssana in $oikea.jatko) then
+#  if (yhdyssana in $oikea.jatko)
+#      and (($oikea.tiedot = nil) or not ((ei_ys in $oikea.tiedot) or (ei_ysj in $oikea.tiedot)))
+#      and yhdyssana_oikein2 ($vasen, $oikea, $i) then
     result $res, rules yhdyssana;
   end;
   if (@nimisanasta_johdettu_laatusana * $oikea.jatko /= <>) then
@@ -465,6 +475,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $n):
     result $res, rules tavuviiva;
   end;
   if (yhdyssana in $oikea.jatko) then
+#    ? ($oikea.tiedot = nil) or not ((ei_ys in $oikea.tiedot) or (ei_ysj in $oikea.tiedot));
     result $res, rules yhdyssana;
 #    result $res, rules inen_päätteinen_laatusana;
   end;
@@ -673,6 +684,7 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $n):
 #define $c1 := transmit ($sana);
 
   if (($oikea.sija = kerronto_sti) and ($edellinen.luokka in @sti_edeltäjä)) then
+##define $aaa := transmit (<"Sijapääte"> + <$vasen>);
     result $res, rules liitesana, loppu;
   else
     if (omistusliite in $oikea.jatko) then
@@ -948,33 +960,6 @@ combi_rule kieltosana ($vasen, $oikea, $sana):
 end;
 
 
-combi_rule liitesana_orig ($vasen, $oikea, $sana, $n):
-####define $profile := transmit ("liitesana ($vasen, $oikea, $sana, $n):");
-  ? $oikea.luokka in <liitesana, liitesana2, liitesana_s>;
-
-  define $i := $n - 1;
-  ? $oikea.luokka in $vasen.$i.jatko;
-  ? äs_ok ($vasen.$i, $oikea);
-
-#define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
-#                       <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
-
-define $a := transmit ("§aaa");
-
-  if (($vasen.$i.luokka = teonsana) and
-      ($vasen.$i.tapaluokka = käskytapa) and
-      ($vasen.$i.tekijä = 2) and
-      ($vasen.$i.luku = yksikkö) and
-      ($sana in <"ko", "kö">)) then
-define $b := transmit ("§bbb");
-    stop;
-  else
-define $c := transmit ("§ccc");
-    result $vasen + <[alku: $sana] + $oikea>, rules loppu;
-  end;
-end;
-
-
 combi_rule liitesana ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("liitesana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in <liitesana, liitesana2, liitesana_kO, liitesana_s>;
@@ -1190,7 +1175,9 @@ end;
 
 
 subrule sana1 ($tietue):
-  if ($tietue.perusmuoto = nil) then
+  if ($tietue.perusmuoto2 /= nil) then
+    return $tietue.perusmuoto2;
+  elseif ($tietue.perusmuoto = nil) then
     return $tietue.alku;
   else
     return $tietue.perusmuoto;
@@ -1251,6 +1238,7 @@ end;
 
 
 subrule yhdyssana_oikein ($vasen, $oikea, $n):
+#define $profile := transmit ("subrule yhdyssana_oikein ($vasen, $oikea, $n):");
 #define $a := transmit (<$oikea.luokka> + <$oikea.perusmuoto> + <$vasen.$n.luokka>);
 #define $b := transmit (<$vasen.$n.perusmuoto> + <$oikea.perusmuoto>);
 
@@ -1259,10 +1247,15 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
 #define $c := transmit (<"c"> + <$oikea.alku> + <$oikea.perusmuoto> + <$oikea.luokka>);
 #define $d := transmit (<"d"> + <$n>);
 
+#define $a := transmit (<"yhdyssana_oikein-a"> + <$vasen>);
+#define $b := transmit (<"yhdyssana_oikein-b"> + <$oikea>);
+#define $c := transmit (<"yhdyssana_oikein-c"> + <$n>);
+
   # Jotkut sanat eivät voi olla yhdyssanojen osina.
   #
   if ((($vasen.$n.tiedot /= nil) and ((ei_ys in $vasen.$n.tiedot) or (ei_ysa in $vasen.$n.tiedot))) or
       (($oikea.tiedot    /= nil) and ((ei_ys in $oikea.tiedot)))) then
+#define $d := transmit (<"yhdyssana_oikein-d">);
     return no;
   end;
 
@@ -1276,6 +1269,9 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
       $s := $vasen.$n.alku;
     end;
     if ((substring($s,1R) matches @ääntiö) and (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+#define $e := transmit (<"yhdyssana_oikein-e"> + <$s> + <$oikea.perusmuoto> + <substring($s,1R)>
+#                       + <substring($oikea.perusmuoto,1)>
+#                       + <(substring($s,1R) /= substring($oikea.perusmuoto,1))>);
       return (substring($s,1R) /= substring($oikea.perusmuoto,1));
     end;
   end;
@@ -1283,10 +1279,26 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
 ##  if (($vasen.$n.luokka = laatusana) and ($oikea.luokka = laatusana)) then
 ##    return no;
 ##  end;
-
+#define $ö := transmit ("Heps!");
   return yes;
 end;
 
+subrule yhdyssana_oikein2 ($vasen, $oikea, $n):
+  if (($vasen.$n.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
+    #
+    # Yhdyssanan eka osa ei voi loppua samaan ääntiöön, millä toka osa alkaa.
+    # Siis esim. ensiilta ei käy, vaan pitäisi olla ensi-ilta.
+    #
+    define $s := $vasen.$n.perusmuoto;
+    if (length($vasen.$n.alku) greater length($vasen.$n.perusmuoto)) then
+      $s := $vasen.$n.alku;
+    end;
+    if ((substring($s,1R) matches @ääntiö) and (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+      return (substring($s,1R) /= substring($oikea.perusmuoto,1));
+    end;
+  end;
+  return yes;
+end;
 
 subrule yhdyssanataulukko ($eka, $toka):
   define $taulukko := <
@@ -1652,7 +1664,7 @@ end_rule loppu ($tietue):
   ? loppu in $tietue.$i.jatko;
 
 #foreach $k in $tietue:
-#  define $n := transmit ($k);
+#  define $n := transmit ($k - jatko);
 #end;
 #foreach $k in $tietue:
 #  define $n := transmit (<"loppu "> + <$k.luokka> + <$k.alku>);
@@ -1681,15 +1693,55 @@ end_rule loppu ($tietue):
   # lipulla ei_sukija.
   #
 
+#foreach $k in $tietue:
+#  define $o := transmit ($k - jatko);
+#end;
+#define $oo := transmit ("===");
+
+#define $aa := transmit (<"Huuhoo."> + <$tietue>);
+#define $p := transmit ($tietue.$j);
+#define $q := transmit ($tietue.$j.tiedot);
+#define $s := transmit (length($tietue));
+#define $t := transmit ($j);
+
+#  define $z := $j;
+#  define $sana := no;
+#  repeat while ($z greater 1);
+###    define $z1 := transmit (<$z> + <$tietue.$z - jatko> + <$sana>);
+#    if ($sana = yes) and ($tietue.$z.tiedot /= nil) and (ei_ysj in $tietue.$z.tiedot) then
+#      stop;
+#    end;
+#    if ($sana = no) then
+#      $sana := ($tietue.$z.luokka in <nimisana, laatusana, nimi_laatusana>);
+#    end;
+#    $z :=- 1;
+#  end;
+##define $pp := transmit ("§§§");
+
+#  if (($tietue.$j.tiedot /= nil) and (ei_ysj in $tietue.$j.tiedot) and ($tietue.($j-1).luokka /= tavuviiva)
+#      and ($j greater 1)) then
+##define $a := transmit ("Huuhaa.");
+#    stop;
+#  end;
+
+#  if (($j greater 2) and ($tietue.($j-1).tiedot /= nil) and (ei_ysj in $tietue.($j-1).tiedot)) then
+#    stop;
+#  end;
+
+if (1 = 1) then
   foreach $u in length($tietue):
     if (($u greater 1) and ($u less_equal $j) and
-        ($tietue.$u.tiedot /= nil) and (ei_ysj in $tietue.$u.tiedot)) then
+        ($tietue.$u.tiedot /= nil) and ((ei_ysj in $tietue.$u.tiedot))) then ## or (ei_ys in $tietue.$u.tiedot))) then
+##        ($tietue.$u.tiedot /= nil) and (ei_ysj in $tietue.$u.tiedot)
+##        and not ($tietue.($u+1).luokka in @nimi_laatusanan_johdin)) then
      if ($tietue.($u-1).luokka /= tavuviiva) then
+#define $a := transmit ("Huuhaa.");
+#define $b := transmit ($tietue.$u - jatko);
         stop;
       end;
     end;
   end;
-
+end;
 
   # inen-johtimella tehty sana voi olla vain yhdyssanan lopussa,
   # paitsi jos se on merkitty omaksi sanakseen.
@@ -1762,22 +1814,13 @@ subrule sana2 ($tietue):
     return "tuhatta";
   elseif ($tietue.perusmuoto in <"sata", "miljoona", "miljardi", "biljoona", "triljoona">) then
     return $tietue.perusmuoto + "a";
+  elseif ($tietue.perusmuoto2 /= nil) then
+    return $tietue.perusmuoto2;
+  elseif ($tietue.perusmuoto = nil) then
+    return $tietue.alku;
   else
-    return sana1 ($tietue);
+    return $tietue.perusmuoto;
   end;
-end;
-
-
-subrule alku2 ($tietue, $alku):
-#define $a := transmit ("alku2 " + $tietue.perusmuoto + " " + $alku);
-  define $n := length ($alku);
-  if ((substring ($tietue.perusmuoto, $n+1) = "i") and (substring ($tietue.alku, $n+1) /= "i")) then
-    return (substring ($tietue.alku,1,$n) + "i" + substring ($tietue.alku, $n+1, length($tietue.alku)));
-  end;
-  if ((substring ($tietue.perusmuoto, $n+1) /= "i") and (substring ($tietue.alku, $n+1) = "i")) then
-    return (substring ($tietue.alku,1,$n) + substring ($tietue.alku, $n+2, length($tietue.alku)));
-  end;
-  return $tietue.alku;
 end;
 
 
@@ -1825,44 +1868,13 @@ end;
 
 
 subrule alku ($tietue):
-#define $a := transmit (<"ALKU "> + <$tietue>);
+#define $a := transmit (<"ALKU"> + <$tietue>);
 
   if ($tietue.perusmuoto = nil) then return $tietue.alku; end;
 
-#define $a := transmit ($tietue);
-
-
-  # Kirjo(i)ttaa, kirjo(i)tella, kirjo(i)ttua, kirjo(i)ttautua.
-  #
-  if ($tietue.perusmuoto matches (".+[oö]" : $alku, "i?(tt(aa|ää)|tell[aä]|tt(ua|yä)|tt(au|äy)t(ua|yä))" : $loppu)) then
-    return alku2 ($tietue, $alku);
-  end;
-
-
-  # Aivo(i)tus: i:llinen muoto nykysääntöjen mukainen.
-  #
-  if ($tietue.perusmuoto matches (".+[^oö][oö]it[uy]s")) then
-    if ($tietue.alku matches (".+[oö]" : $alku, "t[uy](s|ks|kse)" : $loppu)) then
-      return $alku + "i" + $loppu;
-    end;
-  end;
-
-
-  # Jao(i)tus: i:tön muoto nykysääntöjen mukainen.
-  #
-  if ($tietue.perusmuoto matches (".+[^oö][oö]t[uy]s")) then
-    if ($tietue.alku matches (".+[oö]" : $alku, "it[uy](s|ks|kse)" : $loppu)) then
-      return $alku + substring ($loppu, 2, 1R);
-    end;
-  end;
-
-  # Nuola(i)sta.
-  #
-  if ($tietue.perusmuoto matches ("..+[^aeiouyäö][aä]" : $alku, "i?st[aä]" : $loppu)) then
-    if (not ($tietue.perusmuoto in <"rangaista", "rankaista">)) then
-#define $nuolasta := transmit ("nuolasta");
-      return alku2 ($tietue, $alku);
-    end;
+  if ($tietue.alku2 /= nil) then
+##define $aaaa := transmit ($tietue.alku);
+    return $tietue.alku2;
   end;
 
 
@@ -1880,81 +1892,30 @@ subrule alku ($tietue):
     return $tietue.perusmuoto;
   end;
 
-  if ($tietue.luokka in <nimisana, laatusana, nimi_laatusana>) then
-    #
-    # Obliga(a)tio, obligatio(o)ni, obligatsio(o)ni.
-    # Revolu(u)tio, revolutio(o)ni, revolutsio(o)ni.
-    # Illu(u)sio,   illusio(o)ni.
-    # Tradit(s)io,  traditsio(o)ni.
-    # Funkt(s)io,   funktsio(o)ni; akt(s)io, aktsio(o)ni.
-    #
-    if (($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](aa?tio|ats?ioo?(n|ne|ni))")) or
-        ($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](uu?tio|uts?ioo?(n|ne|ni))")) or
-        ($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](uu?sio|usioo?(n|ni|ne))")) or
-        ($tietue.alku matches ("..*[bcdfghjklmnpqrstvwxyz](its?io|itsioo?(n|ni|ne))")) or
-        ($tietue.alku matches (".*(kts?io|ktsioo?(n|ni|ne))"))) then
-      return $tietue.perusmuoto;
-    #    
-    # Symbo(o)li yms.
-    #
-    elseif ($tietue.alku matches ("...*[bcdfghjklmnpqrstvwxyz]" : $alku, "oo[dfglmnrv](i|e)?" : $loppu)) then
-      return $alku + substring ($loppu, 2, 1R);
-    #
-    # Balla(a)di.
-    #
-    elseif ($tietue.alku matches ("...*[bcdfghjklmnpqrstvwxyz]" : $alku,  "aad(i|e)?" : $loppu)) then
-      return $alku + substring ($loppu, 2, 1R);
-    #
-    # Biogra(a)fi.
-    #
-    elseif ($tietue.alku matches (".*.gr" : $alku, "aaf(i|e)?" : $loppu))  then
-      return $alku + substring ($loppu, 2, 1R);
-    #
-    # Oso(i)te.     
-    #
-    elseif ($tietue.perusmuoto matches ("..*[^aeiouyäö][oö]ite")) then
-      if ($tietue.alku matches ("..*o" : $alku, "(te|ttee?)" : $loppu)) then
-        return $alku + "i" + $loppu;
-      end;
-    #
-    # Tiedo(i)te.
-    #
-    elseif ($tietue.perusmuoto matches ("..*[^aeiouyäö][oö]te")) then
-      if ($tietue.alku matches ("..*o" : $alku, "i(te|ttee?)" : $loppu)) then
-        return $alku + substring ($loppu, 2, 1R);
-      end;
-    #
-    # Yksittäisten sanojen eri kirjoitusasuja.
-    #
-    else
-      define $taulukko := <
+  define $taulukko := <
 #       <"",    "",   "",    "">,
-        <"hevonen",     "hevoi",     "hevo">,
-        <"kamari",      "kammar",    "kamar">,
+#        <"kamari",      "kammar",    "kamar">,
         <"kirjoitelma", "kirjotelm", "kirjoitelm">,
         <"kulttuuri",   "kultuur",   "kulttuur">,
         <"liipaisin",   "liipasi",   "liipaisi">,
         <"mahdoton",    "maho",      "mahdo">,
-        <"pistooli",    "pistol",    "pistool">,
-        <"poliisi",     "polis",     "poliis">,
-        <"poliitikko",  "politik",   "poliitik">,
-        <"politiikka",  "politik",   "politiik">,
+#        <"poliitikko",  "politik",   "poliitik">,
+#        <"politiikka",  "politik",   "politiik">,
         <"punainen",    "punan",     "punain">,
         <"punainen",    "punas",     "punais">,
         <"teatteri",    "teaatte",   "teatte">
       >;
-      foreach $k in $taulukko:
-        if ($tietue.perusmuoto = $k.1) then
+  foreach $k in $taulukko:
+    if ($tietue.perusmuoto = $k.1) then
 #define $e := transmit ($k);
-          define $n := length ($k.2);
-          if (length($tietue.alku) greater_equal $n) and (substring ($tietue.alku,1,$n) = $k.2) then
+      define $n := length ($k.2);
+      if (length($tietue.alku) greater_equal $n) and (substring ($tietue.alku,1,$n) = $k.2) then
 #define $ö := transmit ("Huu " + $tietue.alku + " " + $k.3 + " " + substring ($tietue.alku, $n + 1, 1R));
-            return $k.3 + substring ($tietue.alku, $n + 1, 1R);
-          end;
-        end;
+        return $k.3 + substring ($tietue.alku, $n + 1, 1R);
       end;
     end;
   end;
+#define $buu := transmit (<"boo"> + <$tietue.alku>);
   return $tietue.alku;
 end;
 
@@ -1984,6 +1945,7 @@ subrule perusmuoto ($tietue):
 
   define $s := "";
   foreach $i in $k - 1:
+#define $b := transmit (<"b"> + <$tietue.$i>);
     if ($tietue.$i.lukutyyppi /= nil and $tietue.$i.lukutyyppi = perusluku) then
       $s :=+ lukusanan_perusmuoto ($tietue, $i, $k, $s);
     else
@@ -1991,10 +1953,12 @@ subrule perusmuoto ($tietue):
     end;
   end;
   if ($k = 1) then
+#define $c := transmit (<"c"> + <$tietue.$k>);
     $s :=+ sana1 ($tietue.$k);
   elseif ($tietue.$k.lukutyyppi /= nil and $tietue.$k.lukutyyppi = perusluku) then
     $s :=+ lukusanan_perusmuoto ($tietue, $k, $k, $s);
   else
+#define $d := transmit (<"d"> + <$tietue.$k>);
     $s :=+ sana2 ($tietue.$k);
   end;
   return $s;
@@ -2636,11 +2600,11 @@ combi_rule nimi_laatusanan_johdin ($vasen, $oikea, $sana, $n):
   ? $oikea.luokka in $vasen.($n-1).jatko;
   ? äs_ok ($vasen.($n-1), $oikea);
 
-#define $b := transmit ($oikea.luokka);
-#define $a := transmit ($vasen);
-#define $b := transmit ($oikea);
-#define $c := transmit ($sana);
-#define $d := transmit ($n);
+#define $xb := transmit ($oikea.luokka);
+#define $xa := transmit ($vasen);
+#define $yb := transmit ($oikea);
+#define $yc := transmit ($sana);
+#define $yd := transmit ($n);
 
   if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
 
@@ -3111,6 +3075,11 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
     (yhdyssana in $vasen.$i.jatko) or
     ($oikea.luokka in <paikannimi, sukunimi, teonsana>);
 
+#define $a := transmit ($vasen);
+#define $b := transmit ($oikea);
+#define $c := transmit ($vasen.$i);
+#define $ö := transmit (<$sana> + <"§">);
+
 #define $bb := transmit ("bb " + $sana);
 
   ? yhdyssana_oikein ($vasen, $oikea, $i);
@@ -3124,6 +3093,7 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
     if (yhdyssana in $oikea.jatko) then
       result $res, rules yhdyssana;
     end;
+
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
     end;
@@ -3189,6 +3159,8 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
     end;
 
   elseif ($oikea.luokka = etuliite) then
+    ? ($vasen.$i.luokka = tavuviiva) or
+      (($oikea.tiedot = nil) or not ((ei_ys in $oikea.tiedot) or (ei_ysj in $oikea.tiedot)));
     ? (<nimisana, nimi_laatusana, laatusana> * $oikea.jatko /= <>);
     result $res, rules yhdyssana, tavuviiva;
 

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -54,6 +54,7 @@ killinki paperi  ki gi ge ke k
 konvehti paperi  ti di de te t
 salaatti paperi  ti i  e  te t
 sinappi  paperi  pi i  e  pe p
+balladi    balladi di adi de ade d ad
 symboli_di symboli di odi de ode d od
 symboli_fi symboli fi ofi fe ofe f of
 symboli_gi symboli gi ogi ge oge g og
@@ -62,4 +63,6 @@ symboli_mi symboli mi omi me ome m om
 symboli_ni symboli ni oni ne one n on
 symboli_ri symboli ri ori re ore r or
 symboli_vi symboli vi ovi ve ove v ov
-balladi    balladi di adi de ade d ad
+kamari     symboli ari mari are mare ar mar 
+pistooli   symboli oli li   ole le   ol l
+poliisi    symboli isi si   ise se   is s

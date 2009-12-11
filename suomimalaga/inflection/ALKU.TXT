@@ -115,7 +115,8 @@ allo_rule generate_allos ($tietue):
                              "joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
                              "laakso", "lahti",
-                             "maa", "meri", "mäki", "niemi", "polku", "puistikko", "puisto",
+                             "maa", "meri", "mäki", "niemi",
+                             "polku", "puistikko", "puisto",
                              "ranta", "rinne", "saari", "sarvi", "selkä",
                              "tie", "torni", "vaara", "virta", "vuori">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
@@ -179,6 +180,12 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+  if ($tietue.perusmuoto in <"fluoksetiini", "parametri",
+                             "bentsodiatsepiini", "diatsepiini", "karbamatsepiini",
+                             "okskarbatsepiini", "triatsolobentsodiatsepiini">) then
+    $tietue.äs := aä;
+  end;
+
   # Mattila on paikannimi ja sukunimi, ja tiedostojen indeksoinnissa
   # riittää niistä vain toinen.
   #
@@ -192,6 +199,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto = "seitsen" and $tietue.luokka = lukusana) then
     stop;
   end;
+
 
   # Kymmen on myös nimisana.
   #

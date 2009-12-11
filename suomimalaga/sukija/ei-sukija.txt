@@ -7,6 +7,7 @@ Alppi
 Aalto
 Aaltonen
 Aamu
+Aarni
 aarnialue
 Aarnio
 Aatami
@@ -91,6 +92,7 @@ esiinluiskahdus
 esiintuonti
 esiintuominen
 esiintymä
+esi-isä
 esikasvattaa
 esilletuominen
 esilletuonti
@@ -163,6 +165,7 @@ Hukka
 Hurme
 huuto
 huutolainen
+hydronefroosi
 hyvinvointi
 hyvinvoiva
 hypertensio
@@ -275,6 +278,7 @@ keräytymä
 keskittymä
 kestitys
 kesyhanhi
+kesyhevonen
 kesykyyhky
 kesyrotta
 Keto
@@ -492,6 +496,7 @@ lyhyttavara
 lyhytterapia
 lyhytvalintakoodi
 lyhytvalintanumero
+Lyyli
 lyönti
 lämmitys
 länsisaksalainen
@@ -519,6 +524,7 @@ marxilainen
 marxismi-leninismi
 mattaväri
 Matti
+mediaseksikäs
 Mela
 meltorauta
 Merijärvi
@@ -623,6 +629,7 @@ pirulainen
 pito
 pitoisuus
 Pohja
+Pohjoismaa
 pohjoisvaltalainen
 poikima
 poikimahalvaus
@@ -639,6 +646,7 @@ pommitus
 populaarikulttuuri
 Portugali
 Posti
+pre-eklampsia
 primaaripreventio
 Pudasjärvi
 puhkeama
@@ -647,6 +655,7 @@ puhuma-alue
 puksipuu
 pullistuma
 Puola
+puolipäivä
 puoluelainen
 purema
 puristuma
@@ -799,6 +808,8 @@ Tamminen
 Tanska
 tapahtuma
 Tapani
+tarkennus
+tarkentaa
 Tarkka
 Tarmo
 tasavalta
@@ -811,7 +822,9 @@ teollinen
 teollisuus
 Terho
 Terttu
+teräväpiirtotelevisio
 tieteisromaani
+tietoviisas
 tietynlainen
 Tiibet
 tiiliskivi
@@ -830,6 +843,7 @@ trotskilainen
 Trulli
 Tsekki
 Tšekki
+tuhattaituri
 tuhkatiheä
 tuholainen
 Tuisku
@@ -853,6 +867,7 @@ täydellistymä
 täysihoito
 täysihoitola
 täysisukulainen
+täysiverihevonen
 törähtää
 uitto
 Ukraina
@@ -908,6 +923,7 @@ varallisuus
 Varis
 Varkaus
 Varma
+Vartio
 Vasara
 vasemmistolainen
 vastaanotto
@@ -926,6 +942,7 @@ vietellä
 Vietnam
 viipymä
 Viita
+Viitasaari
 viittoma
 vinokaitale
 vinokatto

@@ -345,12 +345,11 @@ laatutapa;
 
 
 perusmuoto;     # Sanan perusmuoto (hevonen, puhua, keltainen, jne).
+perusmuoto2;    # Ohjelman generoima sanan perusmuoto vaihtoehtoisille kirjoitusasuille.
 alku;           # Sanan taipumaton alkuosa (hevo(sta), puhu(essa), keltai(seen)).
-  alku_sukija;  # Sanan taipumaton alkuosa Sukija-versiossa.
-  alku_voikko;  # Sanan taipumaton alkuosa Voikko-versiossa.
+alku2;          # Ohjelman generoima sanan taipumaton alkuosa vaihtehtoisille
+                # kirjoitusasuille, esim. symbo(li), symbo(oli).
 jatko;          # Sääntö, jolla sanan jäsennystä jatketaan.
-  jatko_sukija; # Sääntö, jolla sanan jäsennystä jatketaan Sukija-versiossa.
-  jatko_voikko; # Sääntö, jolla sanan jäsennystä jatketaan Voikko-versiossa.
 
 
 loppu; # Sana loppuu tähän.
@@ -531,6 +530,9 @@ paperi;
   symboli_ri;
   symboli_vi;
   balladi;      # Balla(a)di.
+  kamari;       # Kamari, kammari.
+  pistooli;     # Pistooli, pistoli.
+  poliisi;      # Poliisi, polisi.
 kalsium;
   fan;
   pop;
@@ -954,6 +956,7 @@ selvitä;
   lämmitä;
   kutiaa;
 kohota;    # => kohoilla
+  aallota;
   irrota;  # => irtoilla
   laota;   # => lakoilla  Vilja lakoaa ja lakoilee.
     saota; #              Puuro sakoaa mutta ei sakoile.
