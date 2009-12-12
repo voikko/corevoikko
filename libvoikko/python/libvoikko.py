@@ -316,23 +316,35 @@ class Voikko:
 		self.lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
 	
-	def grammarErrors(self, paragraph):
-		"""Check the given paragraph for grammar errors and return a
-		list of GrammarError objects representing the errors that were found.
-		"""
-		_checkInited(self)
-		paragraphUnicode = unicode(paragraph)
-		paragraphLen = len(paragraphUnicode)
+	def _grammarParagraph(self, paragraph, offset):
+		paragraphLen = len(paragraph)
 		skipErrors = 0
 		errorList = []
 		while True:
 			error = self.lib.voikko_next_grammar_error_ucs4(self.handle,
-			        paragraphUnicode, paragraphLen, 0, skipErrors)
+			        paragraph, paragraphLen, 0, skipErrors)
 			if (error.errorCode == 0):
 				return errorList
-			errorList.append(GrammarError(error))
+			gError = GrammarError(error)
+			gError.startPos = offset + gError.startPos
+			errorList.append(gError)
 			self.lib.voikko_free_suggest_cstr(error.suggestions)
 			skipErrors = skipErrors + 1
+	
+	def grammarErrors(self, text):
+		"""Check the given text for grammar errors and return a
+		list of GrammarError objects representing the errors that were found.
+		Unlike the C based API this method accepts multiple paragraps
+		separated by newline characters.
+		"""
+		_checkInited(self)
+		textUnicode = unicode(text)
+		errorList = []
+		offset = 0
+		for paragraph in textUnicode.split(u"\n"):
+			errorList = errorList + self._grammarParagraph(paragraph, offset)
+			offset = offset + len(paragraph) + 1
+		return errorList
 	
 	def grammarErrorExplanation(self, errorCode, language):
 		"""Return a human readable explanation for grammar error code in

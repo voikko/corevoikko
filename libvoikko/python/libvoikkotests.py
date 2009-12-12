@@ -116,6 +116,17 @@ class LibvoikkoTest(unittest.TestCase):
 		errorEn = self.voikko.grammarErrorExplanation(code, "en")
 		self.assertEqual(u"Incorrect spelling of word(s)", errorEn)
 	
+	def testNoGrammarErrorsInEmptyParagraph(self):
+		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen täi.")
+		self.assertEqual(0, len(errors))
+	
+	def testGrammarErrorOffsetsInMultipleParagraphs(self):
+		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen joten kuten.")
+		self.assertEqual(1, len(errors))
+		error = errors[0]
+		self.assertEqual(16, error.startPos)
+		self.assertEqual(11, error.errorLen)
+	
 	def testAnalyze(self):
 		analysisList = self.voikko.analyze(u"kansaneläkelaitos")
 		self.assertEqual(1, len(analysisList))
