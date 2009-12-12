@@ -106,6 +106,10 @@ function keyUpInInput(evt) {
     // Movement keys such as arrow left etc.
     return;
   }
+  if (evt.keyCode == 67 && evt.ctrlKey) {
+    // Ctrl+C
+    return;
+  }
   // other keys
   inputChanged();
 }

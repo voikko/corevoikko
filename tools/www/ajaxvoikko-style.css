@@ -1,5 +1,11 @@
+#input {
+  width: 100%;
+  max-width: 50em;
+}
+
 #progress {
   width: 100%;
+  max-width: 50em;
   height: 1em;
   font-size: 0.8em;
 }
@@ -12,6 +18,9 @@ div.updating {
   line-height: 1.6em;
   border: 1px solid black;
   min-height: 2em;
+  font-family: monospace;
+  width: 100%;
+  max-width: 50em;
 }
 span.error {
   color: red;
