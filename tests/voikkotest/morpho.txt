@@ -121,3 +121,9 @@ word:kymmenen
 word:10
  analysis
   CLASS=lukusana
+word:kissa
+ analysis
+  NUMBER=singular
+word:kissat
+ analysis
+  NUMBER=plural

@@ -1858,6 +1858,20 @@ subrule tulostus_sijamuoto($tietue):
   return nil;
 end;
 
+subrule tulostus_luku($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luku /= nil then
+      return $allomorfi.luku;
+    end;
+    if $allomorfi.sija = nimentö then
+      return yksikkö;
+    end;
+  end;
+  return nil;
+end;
+
 subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
     define $res := "+";
     if ($vain_alku or $tietue.perusmuoto = nil) then
@@ -1969,11 +1983,13 @@ subrule tulostus_v2($tietue):
   if switch(voikko_debug) then
     return [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
+            luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue),
             perusmuoto: tulostus_debug_perusmuoto($tietue)];
   else
     return [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
+            luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue)];
   end;
 end;

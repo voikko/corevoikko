@@ -1313,6 +1313,7 @@ vaki-
 adsorbointi # adsorboida
 adsorboitua # adsorboida
 akseptointi # akseptoida
+alkydimaali # alkydi
 analgeettisesti # analgeettinen
 analgeettisuus # analgeettinen
 anti-inflammatorinen # inflammatorinen

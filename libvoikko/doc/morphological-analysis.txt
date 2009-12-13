@@ -69,6 +69,14 @@ they may be useful for external applications:
   Examples:
    Word: kissalla -> BASEFORM: kissa
 
+ NUMBER
+ ======
+  Grammatical number of the word. Suggested values for this attribute
+  are "singular", "dual", "trial" and "plural".
+
+  Examples:
+   Word: kissa -> NUMBER: singular
+   Word: kissat -> NUMBER: plural
 
  Attributes for Finnish language
  ===============================

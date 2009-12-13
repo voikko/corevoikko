@@ -62,6 +62,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseStructure(analysis, res);
 			parseSijamuoto(analysis, res);
 			parseClass(analysis, res);
+			parseNumber(analysis, res);
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -108,6 +109,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_PERUSMUOTO:
 				symbolName = "perusmuoto";
 				break;
+			case MS_NUMBER:
+				symbolName = "luku";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -148,6 +152,10 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(classMap, "kieltosana", L"kieltosana");
 	insertToSymbolMap(classMap, "lyhenne", L"lyhenne");
 	insertToSymbolMap(classMap, "lukusana", L"lukusana");
+	
+	numberMap.clear();
+	insertToSymbolMap(numberMap, "yksikk\xc3\xb6", L"singular");
+	insertToSymbolMap(numberMap, "monikko", L"plural");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {
@@ -181,6 +189,22 @@ void MalagaAnalyzer::parseClass(Analysis * &analysis, value_t &result) const {
 	const wchar_t * className = (*mapIterator).second;
 	if (className) {
 		analysis->addAttribute("CLASS", StringUtils::copy(className));
+	}
+}
+
+void MalagaAnalyzer::parseNumber(Analysis * &analysis, value_t &result) const {
+	value_t numberVal = get_attribute(result, symbols[MS_NUMBER]);
+	if (!numberVal) {
+		return;
+	}
+	symbol_t numberSym = value_to_symbol(numberVal);
+	map<symbol_t, const wchar_t *>::const_iterator mapIterator = numberMap.find(numberSym);
+	if (mapIterator == numberMap.end()) {
+		return;
+	}
+	const wchar_t * numberName = (*mapIterator).second;
+	if (numberName) {
+		analysis->addAttribute("NUMBER", StringUtils::copy(numberName));
 	}
 }
 

@@ -32,6 +32,7 @@ enum MalagaSymbol {
 	MS_SIJAMUOTO,
 	MS_CLASS,
 	MS_PERUSMUOTO,
+	MS_NUMBER,
 	MS_LAST_SYMBOL
 };
 
@@ -57,6 +58,7 @@ class MalagaAnalyzer : public Analyzer {
 		void parseSijamuoto(Analysis * &analysis, malaga::value_t &result) const;
 		void parseClass(Analysis * &analysis, malaga::value_t &result) const;
 		void parsePerusmuoto(Analysis * &analysis, malaga::value_t &result) const;
+		void parseNumber(Analysis * &analysis, malaga::value_t &result) const;
 		wchar_t * parseBaseform(wchar_t * &perusmuoto) const;
 		wchar_t * parseAttributeFromPerusmuoto(wchar_t * &perusmuoto, wchar_t id) const;
 		void initSymbols();
@@ -65,6 +67,7 @@ class MalagaAnalyzer : public Analyzer {
 		malaga::symbol_t symbols[MS_LAST_SYMBOL];
 		std::map<malaga::symbol_t, const wchar_t *> sijamuotoMap;
 		std::map<malaga::symbol_t, const wchar_t *> classMap;
+		std::map<malaga::symbol_t, const wchar_t *> numberMap;
 };
 
 } }

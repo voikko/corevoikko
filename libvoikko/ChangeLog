@@ -1,3 +1,7 @@
+2009-12-13 Harri Pitkänen <hatapitk@iki.fi>
+	* Support grammatical number in morphological
+	  analysis.
+
 2009-12-12 Harri Pitkänen <hatapitk@iki.fi>
 	* Support multiple paragraph checking in Python
 	  grammar checking API.
