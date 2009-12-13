@@ -68,6 +68,11 @@ SIJAMUODOT = {
 "kerrontosti": u"sti-päätteinen kerronto (adverbi)"
 }
 
+NUMBERS = {
+"singular": u"yksikkö",
+"plural": u"monikko"
+}
+
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
 
 def fromMapIfPossible(key, valueMap):
@@ -175,6 +180,9 @@ def getAnalysis(analysis):
 	if "CLASS" in analysis:
 		res = res + u"<br />Sanaluokka: " \
 		      + fromMapIfPossible(analysis["CLASS"], SANALUOKAT)
+	if "NUMBER" in analysis:
+		res = res + u"<br />Luku: " \
+		      + fromMapIfPossible(analysis["NUMBER"], NUMBERS)
 	if "SIJAMUOTO" in analysis and analysis["SIJAMUOTO"] != "none":
 		res = res + u"<br />Sijamuoto: " \
 		      + fromMapIfPossible(analysis["SIJAMUOTO"], SIJAMUODOT)
