@@ -20,6 +20,7 @@
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
 #include <cwchar>
+#include <cwctype>
 #include <cstdlib>
 
 using namespace std;
@@ -216,7 +217,8 @@ void MalagaAnalyzer::parsePerusmuoto(Analysis * &analysis, value_t &result) cons
 	char * value = get_value_string(perusmuotoVal);
 	wchar_t * perusmuoto = StringUtils::ucs4FromUtf8(value);
 	free(value);
-	wchar_t * baseForm = parseBaseform(perusmuoto);
+	const wchar_t * structure = analysis->getValue("STRUCTURE");
+	wchar_t * baseForm = parseBaseform(perusmuoto, structure);
 	wchar_t * wordIds = parseAttributeFromPerusmuoto(perusmuoto, L's');
 	wchar_t * wordBases = parseAttributeFromPerusmuoto(perusmuoto, L'p');
 	delete[] perusmuoto;
@@ -238,7 +240,23 @@ static void passAttribute(wchar_t * &perusmuoto, size_t &index) {
 	++index;
 }
 
-wchar_t * MalagaAnalyzer::parseBaseform(wchar_t * &perusmuoto) const {
+static void fixCapitalisation(wchar_t * baseForm, const wchar_t * structure) {
+	size_t basePos = 0;
+	size_t structPos = 0;
+	while (baseForm[basePos] != L'\0' && structure[structPos] != L'\0') {
+		if (structure[structPos] == L'=') {
+			++structPos;
+			continue;
+		}
+		if (structure[structPos] == L'i' || structure[structPos] == L'j') {
+			baseForm[basePos] = towupper(baseForm[basePos]);
+		}
+		++structPos;
+		++basePos;
+	}
+}
+
+wchar_t * MalagaAnalyzer::parseBaseform(wchar_t * &perusmuoto, const wchar_t * structure) const {
 	size_t lenPerusmuoto = wcslen(perusmuoto);
 	wchar_t * baseForm = new wchar_t[lenPerusmuoto + 1];
 	size_t posBaseForm = 0;
@@ -259,6 +277,7 @@ wchar_t * MalagaAnalyzer::parseBaseform(wchar_t * &perusmuoto) const {
 		}
 	}
 	baseForm[posBaseForm] = L'\0';
+	fixCapitalisation(baseForm, structure);
 	return baseForm;
 }
 

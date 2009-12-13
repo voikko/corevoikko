@@ -74,7 +74,16 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		self.assertEqual(u"koska", analysis["BASEFORM"])
 		self.assertFalse("WORDIDS" in analysis)
 		self.assertEqual(u"+koska(koska)", analysis["WORDBASES"])
-
+	
+	def testBaseFormForCompondProperNoun(self):
+		analysisList = self.voikko.analyze(u"Outi-Marjukka")
+		analysis = self._assertSingletonAndGetItem(analysisList)
+		self.assertEqual(u"Outi-Marjukka", analysis["BASEFORM"])
+	
+	def testBaseFormForCapitalizedWord(self):
+		analysisList = self.voikko.analyze(u"KISSA")
+		analysis = self._assertSingletonAndGetItem(analysisList)
+		self.assertEqual(u"kissa", analysis["BASEFORM"])
 
 if __name__ == "__main__":
 	unittest.main()
