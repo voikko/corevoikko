@@ -22,7 +22,7 @@ include "subrule.inc";
 # Palauttaa annetusta tietueesta johdoksissa tarvittavat lähtötiedot
 subrule johdoksen_lähtötiedot($tietue):
   if (switch (malli) = voikko) then
-    if (switch (voikko_debug)) then
+    if (@voikko_debug) then
       return [lähtöluokka: $tietue.luokka, lähtösana: $tietue.perusmuoto];
     else
       return [lähtöluokka: $tietue.luokka];

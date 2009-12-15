@@ -36,6 +36,7 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
 SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
          voikko/olla-ei.lex voikko/suomi.lex voikko/suomi.inc \
+         voikko/all.inc \
          voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro.in common/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          common/hfconv.py common/generate_lex_common.py \
@@ -45,7 +46,7 @@ VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-f
 	voikko/voikko-fi_FI.sym_?
 
 # Shared files needed in Voikko
-VOIKKO_COPY_FROM_COMMON=all.inc mor.inc subrule.inc
+VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex taivutustaydennykset.lex sidesanat.lex \
@@ -63,7 +64,7 @@ SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 all: voikko
 
 voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
-	voikko/main.lex voikko/voikko-fi_FI.pro
+	voikko/main.lex voikko/voikko-fi_FI.pro voikko/config.inc
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
@@ -95,7 +96,6 @@ endif
 
 VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
 	s/VANHAT_MUODOT/$(VANHAT_MUODOT)/; \
-	s/VOIKKO_DEBUG/$(VOIKKO_DEBUG)/; \
 	s/VOIKKO_MURRE/$(VOIKKO_MURRE)/; \
 	s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
 	s/SM_VOIKKO_DESCRIPTION/$(VOIKKO_DESCRIPTION)/; \
@@ -107,8 +107,12 @@ VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
 voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
 	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@
 
+voikko/config.inc:
+	echo "define @voikko_debug := $(VOIKKO_DEBUG);" > $@
+
 clean:
 	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc common/hfconv.pyc
+	rm -f voikko/config.inc
 	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"

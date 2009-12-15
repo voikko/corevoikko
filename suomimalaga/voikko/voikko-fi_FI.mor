@@ -50,6 +50,7 @@ initial <>, rules erisnimi, laatusana,
                   lukusana, sanan_alku, teonsana,
                   laatusana_laatusanasta, paikannimen_lainen_johdos;
 
+include "config.inc";
 include "suomi.inc";
 include "mor.inc";
 
@@ -1980,7 +1981,7 @@ end;
 
 
 subrule tulostus_v2($tietue):
-  if switch(voikko_debug) then
+  if @voikko_debug then
     return [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
             luku: tulostus_luku($tietue),

@@ -387,8 +387,7 @@ malli;
   sukija;
 taivutus;
   vanhat_muodot;
-voikko_debug;
-  sourceid;
+sourceid;
 voikko_murre;
 
 # Nykysuomen sanakirja

@@ -45,6 +45,7 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
+include "config.inc";
 include "suomi.inc";
 include "all.inc";
 
@@ -6901,7 +6902,7 @@ end;
 output_filter output($lista_orig):
   # Tuotantoversiossa ei tarvita kaikkia kenttiä
   define $lista := $lista_orig;
-  if (not switch(voikko_debug)) then
+  if (not @voikko_debug) then
     $lista := <>;
     foreach $l in $lista_orig:
       $lista :=+ <$l - perusmuoto - aikamuoto>;
