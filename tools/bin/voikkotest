@@ -55,8 +55,8 @@ SMV = SVNROOT + "/trunk/suomimalaga"
 # Returns a list of hyphenated words. Wordlist is a list of words to hyphenate and
 # params is a string containing the parameters for HYPHENCMD
 def _hyphenate_wordlist(wordlist, params):
-	hyphenator = subprocess.Popen(HYPHENCMD + " " + params, shell = True, stdin = subprocess.PIPE,
-	                              stdout = subprocess.PIPE, close_fds = True)
+	hyphenator = subprocess.Popen(HYPHENCMD + " " + params, shell = True,
+	    stdin = subprocess.PIPE, stdout = subprocess.PIPE, close_fds = True)
 	for word in wordlist:
 		hyphenator.stdin.write(word.encode('UTF-8') + '\n')
 	(out, err) = hyphenator.communicate()
@@ -335,7 +335,8 @@ def containsMorphoAnalysis(expectedAnalysis, actualAnalyses):
 	return u"Did not produce expected analysis:\n expected=%s\n actual=%s" \
 	       % (expectedAnalysis, actualAnalyses)
 
-def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount, actualAnalyses):
+def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount,
+	                   forbiddenKeys, actualAnalyses):
 	if expectedAnalysesCount != None and \
 	   len(actualAnalyses) != expectedAnalysesCount:
 		return u"Expected %i analyses, got %i." % \
@@ -344,6 +345,10 @@ def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount, actualAnalyses):
 		result = containsMorphoAnalysis(expectedAnalysis, actualAnalyses)
 		if result != None:
 			return result
+	for forbiddenKey in forbiddenKeys:
+		for actualAnalysis in actualAnalyses:
+			if forbiddenKey in actualAnalysis:
+				return u"Analysis contained forbidden key %s." % forbiddenKey
 	return None
 
 # Run morphological analysis tests
@@ -356,6 +361,7 @@ def morpho_tests(voikko):
 		word = None
 		expectedAnalysesCount = None
 		expectedAnalyses = []
+		forbiddenKeys = []
 		currentExpected = {}
 		actualAnalyses = []
 		while True:
@@ -374,7 +380,7 @@ def morpho_tests(voikko):
 				if currentExpected != {}:
 					expectedAnalyses.append(currentExpected)
 				error = diffMorphoAnalyses(expectedAnalyses,
-				        expectedAnalysesCount, actualAnalyses)
+				        expectedAnalysesCount, forbiddenKeys, actualAnalyses)
 				if error != None:
 					print u'Morphological test failed for word "%s":\n%s\n' \
 						% (word, error)
@@ -382,10 +388,13 @@ def morpho_tests(voikko):
 				word = line[5:]
 				actualAnalyses = voikko.analyze(word)
 				expectedAnalyses = []
+				forbiddenKeys = []
 				expectedAnalysesCount = None
 				currentExpected = {}
 			elif line.startswith(u'expected:'):
 				expectedAnalysesCount = int(line[9:])
+			elif line.startswith(u'!'):
+				forbiddenKeys.append(line[1:])
 			elif line.startswith(u'analysis'):
 				expectedAnalyses.append(currentExpected)
 				currentExpected = {}
@@ -396,7 +405,7 @@ def morpho_tests(voikko):
 		if currentExpected != {}:
 					expectedAnalyses.append(currentExpected)
 		error = diffMorphoAnalyses(expectedAnalyses,
-		        expectedAnalysesCount, actualAnalyses)
+		        expectedAnalysesCount, forbiddenKeys, actualAnalyses)
 		if error != None:
 			print u'Morphological test failed for word "%s":\n%s\n' \
 				% (word, error)

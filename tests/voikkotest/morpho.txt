@@ -1,5 +1,6 @@
 # word:word
 # expected:number (not required)
+# !key (key not allowed in any analysis)
 # analysis
 #  key=value
 word:kissa
@@ -90,6 +91,7 @@ word:ohi
  analysis
   CLASS=suhdesana
 word:hei
+ !PERSON
  analysis
   CLASS=huudahdussana
 word:eli
