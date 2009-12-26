@@ -1,3 +1,6 @@
+2009-12-26 Harri Pitkänen <hatapitk@iki.fi>
+	* Support verb person in morphological analysis.
+
 2009-12-13 Harri Pitkänen <hatapitk@iki.fi>
 	* Support grammatical number in morphological
 	  analysis.

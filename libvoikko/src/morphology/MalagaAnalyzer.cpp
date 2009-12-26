@@ -64,6 +64,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseSijamuoto(analysis, res);
 			parseClass(analysis, res);
 			parseNumber(analysis, res);
+			parsePerson(analysis, res);
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -113,6 +114,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_NUMBER:
 				symbolName = "luku";
 				break;
+			case MS_PERSON:
+				symbolName = "tekij\xc3\xa4";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -157,6 +161,11 @@ void MalagaAnalyzer::initSymbols() {
 	numberMap.clear();
 	insertToSymbolMap(numberMap, "yksikk\xc3\xb6", L"singular");
 	insertToSymbolMap(numberMap, "monikko", L"plural");
+
+	personMap.clear();
+	insertToSymbolMap(personMap, "tekij\xc3\xa4_1", L"1");
+	insertToSymbolMap(personMap, "tekij\xc3\xa4_2", L"2");
+	insertToSymbolMap(personMap, "tekij\xc3\xa4_3", L"3");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {
@@ -206,6 +215,22 @@ void MalagaAnalyzer::parseNumber(Analysis * &analysis, value_t &result) const {
 	const wchar_t * numberName = (*mapIterator).second;
 	if (numberName) {
 		analysis->addAttribute("NUMBER", StringUtils::copy(numberName));
+	}
+}
+
+void MalagaAnalyzer::parsePerson(Analysis * &analysis, value_t &result) const {
+	value_t personVal = get_attribute(result, symbols[MS_PERSON]);
+	if (!personVal) {
+		return;
+	}
+	symbol_t personSym = value_to_symbol(personVal);
+	map<symbol_t, const wchar_t *>::const_iterator mapIterator = personMap.find(personSym);
+	if (mapIterator == personMap.end()) {
+		return;
+	}
+	const wchar_t * personName = (*mapIterator).second;
+	if (personName) {
+		analysis->addAttribute("PERSON", StringUtils::copy(personName));
 	}
 }
 

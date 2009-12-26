@@ -129,3 +129,12 @@ word:kissa
 word:kissat
  analysis
   NUMBER=plural
+word:juoksen
+ analysis
+  PERSON=1
+word:juokset
+ analysis
+  PERSON=2
+word:juoksee
+ analysis
+  PERSON=3

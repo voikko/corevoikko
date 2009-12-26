@@ -1873,6 +1873,17 @@ subrule tulostus_luku($tietue):
   return nil;
 end;
 
+subrule tulostus_tekijä($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.tekijä /= nil then
+      return $allomorfi.tekijä;
+    end;
+  end;
+  return nil;
+end;
+
 subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
     define $res := "+";
     if ($vain_alku or $tietue.perusmuoto = nil) then
@@ -1981,18 +1992,23 @@ end;
 
 
 subrule tulostus_v2($tietue):
+  define $res := nil;
   if @voikko_debug then
-    return [rakenne: tulostus_rakenne($tietue),
+    $res := [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
             luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue),
             perusmuoto: tulostus_debug_perusmuoto($tietue)];
   else
-    return [rakenne: tulostus_rakenne($tietue),
+    $res := [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
             luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue)];
   end;
+  if $res.luokka = teonsana then
+    $res :=+ [tekijä: tulostus_tekijä($tietue)];
+  end;
+  return $res;
 end;
 
 pruning_rule prune ($list):

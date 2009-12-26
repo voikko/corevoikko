@@ -78,6 +78,16 @@ they may be useful for external applications:
    Word: kissa -> NUMBER: singular
    Word: kissat -> NUMBER: plural
 
+ PERSON
+ ======
+  For verbs in active voice this attribute represents the person
+  (first, second or third). Suggested values for this attribute are
+  "1", "2" and "3".
+
+  Examples:
+   Word: juoksen -> PERSON: 1
+   Word: juokset -> PERSON: 2
+
  Attributes for Finnish language
  ===============================
 
