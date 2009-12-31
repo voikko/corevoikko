@@ -132,9 +132,19 @@ word:kissat
 word:juoksen
  analysis
   PERSON=1
+  MOOD=indicative
 word:juokset
  analysis
   PERSON=2
 word:juoksee
  analysis
   PERSON=3
+word:juoksisin
+ analysis
+  MOOD=conditional
+word:juokse
+ analysis
+  MOOD=imperative
+word:juossee
+ analysis
+  MOOD=potential

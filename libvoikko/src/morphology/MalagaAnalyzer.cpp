@@ -65,6 +65,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_CLASS], "CLASS");
 			parseBasicAttribute(analysis, res, symbols[MS_NUMBER], "NUMBER");
 			parseBasicAttribute(analysis, res, symbols[MS_PERSON], "PERSON");
+			parseBasicAttribute(analysis, res, symbols[MS_MOOD], "MOOD");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -117,6 +118,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_PERSON:
 				symbolName = "tekij\xc3\xa4";
 				break;
+			case MS_MOOD:
+				symbolName = "tapaluokka";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -162,6 +166,11 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_1", L"1");
 	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_2", L"2");
 	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_3", L"3");
+	
+	insertToSymbolMap(symbolMap, "tositapa", L"indicative");
+	insertToSymbolMap(symbolMap, "k\xc3\xa4skytapa", L"imperative");
+	insertToSymbolMap(symbolMap, "ehtotapa", L"conditional");
+	insertToSymbolMap(symbolMap, "mahtotapa", L"potential");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

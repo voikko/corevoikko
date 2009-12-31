@@ -89,6 +89,15 @@ they may be useful for external applications:
    Word: juoksen -> PERSON: 1
    Word: juokset -> PERSON: 2
 
+ MOOD
+ ====
+  Mood of a verb. Suggested values for this attribute are
+  "indicative", "conditional", "imperative" and "potential".
+
+  Examples:
+   Word: juoksen -> MOOD: indicative
+   Word: juoksisin -> MOOD: conditional
+
  Attributes for Finnish language
  ===============================
 

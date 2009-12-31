@@ -34,6 +34,7 @@ enum MalagaSymbol {
 	MS_PERUSMUOTO,
 	MS_NUMBER,
 	MS_PERSON,
+	MS_MOOD,
 	MS_LAST_SYMBOL
 };
 
