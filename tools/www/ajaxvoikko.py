@@ -73,6 +73,20 @@ NUMBERS = {
 "plural": u"monikko"
 }
 
+PERSONS = {
+"1": u"ensimmäinen",
+"2": u"toinen",
+"3": u"kolmas",
+"4": u"passiivi"
+}
+
+MOODS = {
+"indicative": u"indikatiivi eli tositapa",
+"imperative": u"imperatiivi eli käskytapa",
+"conditional": u"konditionaali eli ehtotapa",
+"potential": u"potentiaali eli mahtotapa"
+}
+
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
 
 def fromMapIfPossible(key, valueMap):
@@ -186,6 +200,12 @@ def getAnalysis(analysis):
 	if "SIJAMUOTO" in analysis and analysis["SIJAMUOTO"] != "none":
 		res = res + u"<br />Sijamuoto: " \
 		      + fromMapIfPossible(analysis["SIJAMUOTO"], SIJAMUODOT)
+	if "PERSON" in analysis:
+		res = res + u"<br />Tekijä: " \
+		      + fromMapIfPossible(analysis["PERSON"], PERSONS)
+	if "MOOD" in analysis:
+		res = res + u"<br />Tapaluokka: " \
+		      + fromMapIfPossible(analysis["MOOD"], MOODS)
 	if "WORDIDS" in analysis:
 		ids = analysis["WORDIDS"]
 		if u"(w" in ids:
