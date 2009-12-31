@@ -69,9 +69,9 @@ word:nopeasti
  analysis
   SIJAMUOTO=kerrontosti
 word:juosta
+ !SIJAMUOTO
  analysis
   CLASS=teonsana
-  SIJAMUOTO=none
 word:nopea
  analysis
   CLASS=laatusana

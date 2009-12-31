@@ -1,3 +1,6 @@
+2009-12-27 Harri Pitkänen <hatapitk@iki.fi>
+	* No longer return "none" as a value for "SIJAMUOTO".
+
 2009-12-26 Harri Pitkänen <hatapitk@iki.fi>
 	* Support verb person in morphological analysis.
 

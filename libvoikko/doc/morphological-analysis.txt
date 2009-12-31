@@ -81,8 +81,9 @@ they may be useful for external applications:
  PERSON
  ======
   For verbs in active voice this attribute represents the person
-  (first, second or third). Suggested values for this attribute are
-  "1", "2" and "3".
+  (first, second or third). The person for passive voice can be
+  considered as the fourth voice if appropriate for the language.
+  Suggested values for this attribute are "1", "2", "3" and "4".
 
   Examples:
    Word: juoksen -> PERSON: 1
@@ -137,7 +138,6 @@ are provided only as information for external applications.
    - seuranto
    - keinonto
    - kerrontosti (esim. "nopeasti")
-   - none (muu tai tuntematon sijamuoto, tai sana ei ole nomini)
 
  WORDBASES
  =========

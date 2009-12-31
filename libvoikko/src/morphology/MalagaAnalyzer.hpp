@@ -56,21 +56,16 @@ class MalagaAnalyzer : public Analyzer {
 		void insertToSymbolMap(std::map<malaga::symbol_t, const wchar_t *> &map,
 		                       const char * malagaName, const wchar_t * externalName);
 		void parseStructure(Analysis * &analysis, malaga::value_t &result) const;
-		void parseSijamuoto(Analysis * &analysis, malaga::value_t &result) const;
-		void parseClass(Analysis * &analysis, malaga::value_t &result) const;
 		void parsePerusmuoto(Analysis * &analysis, malaga::value_t &result) const;
-		void parseNumber(Analysis * &analysis, malaga::value_t &result) const;
-		void parsePerson(Analysis * &analysis, malaga::value_t &result) const;
+		void parseBasicAttribute(Analysis * &analysis, malaga::value_t &result,
+		                         malaga::symbol_t symbol, const char * attrName) const;
 		wchar_t * parseBaseform(wchar_t * &perusmuoto, const wchar_t * structure) const;
 		wchar_t * parseAttributeFromPerusmuoto(wchar_t * &perusmuoto, wchar_t id) const;
 		void initSymbols();
 		
 		malaga::MalagaState malagaState;
 		malaga::symbol_t symbols[MS_LAST_SYMBOL];
-		std::map<malaga::symbol_t, const wchar_t *> sijamuotoMap;
-		std::map<malaga::symbol_t, const wchar_t *> classMap;
-		std::map<malaga::symbol_t, const wchar_t *> numberMap;
-		std::map<malaga::symbol_t, const wchar_t *> personMap;
+		std::map<malaga::symbol_t, const wchar_t *> symbolMap;
 };
 
 } }

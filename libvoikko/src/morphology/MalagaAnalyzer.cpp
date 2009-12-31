@@ -61,10 +61,10 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 		while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
 			Analysis * analysis = new Analysis();
 			parseStructure(analysis, res);
-			parseSijamuoto(analysis, res);
-			parseClass(analysis, res);
-			parseNumber(analysis, res);
-			parsePerson(analysis, res);
+			parseBasicAttribute(analysis, res, symbols[MS_SIJAMUOTO], "SIJAMUOTO");
+			parseBasicAttribute(analysis, res, symbols[MS_CLASS], "CLASS");
+			parseBasicAttribute(analysis, res, symbols[MS_NUMBER], "NUMBER");
+			parseBasicAttribute(analysis, res, symbols[MS_PERSON], "PERSON");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -121,51 +121,47 @@ void MalagaAnalyzer::initSymbols() {
 		symbols[sym] = findSymbol(symbolName);
 	}
 	
-	sijamuotoMap.clear();
-	insertToSymbolMap(sijamuotoMap, "nil", L"none");
-	insertToSymbolMap(sijamuotoMap, "niment\xc3\xb6", L"nimento");
-	insertToSymbolMap(sijamuotoMap, "omanto", L"omanto");
-	insertToSymbolMap(sijamuotoMap, "osanto", L"osanto");
-	insertToSymbolMap(sijamuotoMap, "olento", L"olento");
-	insertToSymbolMap(sijamuotoMap, "tulento", L"tulento");
-	insertToSymbolMap(sijamuotoMap, "kohdanto", L"kohdanto");
-	insertToSymbolMap(sijamuotoMap, "sis\xc3\xa4olento", L"sisaolento");
-	insertToSymbolMap(sijamuotoMap, "sis\xc3\xa4""eronto", L"sisaeronto");
-	insertToSymbolMap(sijamuotoMap, "sis\xc3\xa4tulento", L"sisatulento");
-	insertToSymbolMap(sijamuotoMap, "ulko_olento", L"ulkoolento");
-	insertToSymbolMap(sijamuotoMap, "ulkoeronto", L"ulkoeronto");
-	insertToSymbolMap(sijamuotoMap, "ulkotulento", L"ulkotulento");
-	insertToSymbolMap(sijamuotoMap, "vajanto", L"vajanto");
-	insertToSymbolMap(sijamuotoMap, "seuranto", L"seuranto");
-	insertToSymbolMap(sijamuotoMap, "keinonto", L"keinonto");
-	insertToSymbolMap(sijamuotoMap, "kerronto_sti", L"kerrontosti");
+	symbolMap.clear();
+	insertToSymbolMap(symbolMap, "niment\xc3\xb6", L"nimento");
+	insertToSymbolMap(symbolMap, "omanto", L"omanto");
+	insertToSymbolMap(symbolMap, "osanto", L"osanto");
+	insertToSymbolMap(symbolMap, "olento", L"olento");
+	insertToSymbolMap(symbolMap, "tulento", L"tulento");
+	insertToSymbolMap(symbolMap, "kohdanto", L"kohdanto");
+	insertToSymbolMap(symbolMap, "sis\xc3\xa4olento", L"sisaolento");
+	insertToSymbolMap(symbolMap, "sis\xc3\xa4""eronto", L"sisaeronto");
+	insertToSymbolMap(symbolMap, "sis\xc3\xa4tulento", L"sisatulento");
+	insertToSymbolMap(symbolMap, "ulko_olento", L"ulkoolento");
+	insertToSymbolMap(symbolMap, "ulkoeronto", L"ulkoeronto");
+	insertToSymbolMap(symbolMap, "ulkotulento", L"ulkotulento");
+	insertToSymbolMap(symbolMap, "vajanto", L"vajanto");
+	insertToSymbolMap(symbolMap, "seuranto", L"seuranto");
+	insertToSymbolMap(symbolMap, "keinonto", L"keinonto");
+	insertToSymbolMap(symbolMap, "kerronto_sti", L"kerrontosti");
 	
-	classMap.clear();
-	insertToSymbolMap(classMap, "nimisana", L"nimisana");
-	insertToSymbolMap(classMap, "laatusana", L"laatusana");
-	insertToSymbolMap(classMap, "nimi_laatusana", L"nimisana_laatusana");
-	insertToSymbolMap(classMap, "teonsana", L"teonsana");
-	insertToSymbolMap(classMap, "seikkasana", L"seikkasana");
-	insertToSymbolMap(classMap, "asemosana", L"asemosana");
-	insertToSymbolMap(classMap, "suhdesana", L"suhdesana");
-	insertToSymbolMap(classMap, "huudahdussana", L"huudahdussana");
-	insertToSymbolMap(classMap, "sidesana", L"sidesana");
-	insertToSymbolMap(classMap, "etunimi", L"etunimi");
-	insertToSymbolMap(classMap, "sukunimi", L"sukunimi");
-	insertToSymbolMap(classMap, "paikannimi", L"paikannimi");
-	insertToSymbolMap(classMap, "nimi", L"nimi");
-	insertToSymbolMap(classMap, "kieltosana", L"kieltosana");
-	insertToSymbolMap(classMap, "lyhenne", L"lyhenne");
-	insertToSymbolMap(classMap, "lukusana", L"lukusana");
+	insertToSymbolMap(symbolMap, "nimisana", L"nimisana");
+	insertToSymbolMap(symbolMap, "laatusana", L"laatusana");
+	insertToSymbolMap(symbolMap, "nimi_laatusana", L"nimisana_laatusana");
+	insertToSymbolMap(symbolMap, "teonsana", L"teonsana");
+	insertToSymbolMap(symbolMap, "seikkasana", L"seikkasana");
+	insertToSymbolMap(symbolMap, "asemosana", L"asemosana");
+	insertToSymbolMap(symbolMap, "suhdesana", L"suhdesana");
+	insertToSymbolMap(symbolMap, "huudahdussana", L"huudahdussana");
+	insertToSymbolMap(symbolMap, "sidesana", L"sidesana");
+	insertToSymbolMap(symbolMap, "etunimi", L"etunimi");
+	insertToSymbolMap(symbolMap, "sukunimi", L"sukunimi");
+	insertToSymbolMap(symbolMap, "paikannimi", L"paikannimi");
+	insertToSymbolMap(symbolMap, "nimi", L"nimi");
+	insertToSymbolMap(symbolMap, "kieltosana", L"kieltosana");
+	insertToSymbolMap(symbolMap, "lyhenne", L"lyhenne");
+	insertToSymbolMap(symbolMap, "lukusana", L"lukusana");
 	
-	numberMap.clear();
-	insertToSymbolMap(numberMap, "yksikk\xc3\xb6", L"singular");
-	insertToSymbolMap(numberMap, "monikko", L"plural");
-
-	personMap.clear();
-	insertToSymbolMap(personMap, "tekij\xc3\xa4_1", L"1");
-	insertToSymbolMap(personMap, "tekij\xc3\xa4_2", L"2");
-	insertToSymbolMap(personMap, "tekij\xc3\xa4_3", L"3");
+	insertToSymbolMap(symbolMap, "yksikk\xc3\xb6", L"singular");
+	insertToSymbolMap(symbolMap, "monikko", L"plural");
+	
+	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_1", L"1");
+	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_2", L"2");
+	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_3", L"3");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {
@@ -176,61 +172,20 @@ void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const
 	free(value);
 }
 
-void MalagaAnalyzer::parseSijamuoto(Analysis * &analysis, value_t &result) const {
-	value_t sijamuotoVal = get_attribute(result, symbols[MS_SIJAMUOTO]);
-	symbol_t sijamuoto = value_to_symbol(sijamuotoVal);
-	map<symbol_t, const wchar_t *>::const_iterator mapIterator = sijamuotoMap.find(sijamuoto);
-	if (mapIterator == sijamuotoMap.end()) {
+void MalagaAnalyzer::parseBasicAttribute(Analysis * &analysis, value_t &result,
+                                         symbol_t symbol, const char * attrName) const {
+	value_t value = get_attribute(result, symbol);
+	if (!value) {
 		return;
 	}
-	const wchar_t * sijamuotoName = (*mapIterator).second;
-	if (sijamuotoName) {
-		analysis->addAttribute("SIJAMUOTO", StringUtils::copy(sijamuotoName));
-	}
-}
-
-void MalagaAnalyzer::parseClass(Analysis * &analysis, value_t &result) const {
-	value_t classVal = get_attribute(result, symbols[MS_CLASS]);
-	symbol_t classSym = value_to_symbol(classVal);
-	map<symbol_t, const wchar_t *>::const_iterator mapIterator = classMap.find(classSym);
-	if (mapIterator == classMap.end()) {
+	symbol_t valueSym = value_to_symbol(value);
+	map<symbol_t, const wchar_t *>::const_iterator mapIterator = symbolMap.find(valueSym);
+	if (mapIterator == symbolMap.end()) {
 		return;
 	}
-	const wchar_t * className = (*mapIterator).second;
-	if (className) {
-		analysis->addAttribute("CLASS", StringUtils::copy(className));
-	}
-}
-
-void MalagaAnalyzer::parseNumber(Analysis * &analysis, value_t &result) const {
-	value_t numberVal = get_attribute(result, symbols[MS_NUMBER]);
-	if (!numberVal) {
-		return;
-	}
-	symbol_t numberSym = value_to_symbol(numberVal);
-	map<symbol_t, const wchar_t *>::const_iterator mapIterator = numberMap.find(numberSym);
-	if (mapIterator == numberMap.end()) {
-		return;
-	}
-	const wchar_t * numberName = (*mapIterator).second;
-	if (numberName) {
-		analysis->addAttribute("NUMBER", StringUtils::copy(numberName));
-	}
-}
-
-void MalagaAnalyzer::parsePerson(Analysis * &analysis, value_t &result) const {
-	value_t personVal = get_attribute(result, symbols[MS_PERSON]);
-	if (!personVal) {
-		return;
-	}
-	symbol_t personSym = value_to_symbol(personVal);
-	map<symbol_t, const wchar_t *>::const_iterator mapIterator = personMap.find(personSym);
-	if (mapIterator == personMap.end()) {
-		return;
-	}
-	const wchar_t * personName = (*mapIterator).second;
-	if (personName) {
-		analysis->addAttribute("PERSON", StringUtils::copy(personName));
+	const wchar_t * valueName = (*mapIterator).second;
+	if (valueName) {
+		analysis->addAttribute(attrName, StringUtils::copy(valueName));
 	}
 }
 
