@@ -111,7 +111,11 @@ noinst_HEADERS = \
     grammar/cachesetup.hpp grammar/analysis.hpp \
     grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
     grammar/CacheEntry.hpp \
-    autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp
+    autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp \
+    utf8/core.hpp \
+    utf8/checked.hpp \
+    utf8/unchecked.hpp \
+    utf8/utf8.hpp
 
 EXTRA_DIST = autocorrect/triecompiler.py
 BUILT_SOURCES = autocorrect/data.hpp

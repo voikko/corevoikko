@@ -1,3 +1,7 @@
+2010-01-01 Harri Pitkänen <hatapitk@iki.fi>
+	* Import UTF8-CPP version 2.2.4 from
+	  https://sourceforge.net/projects/utfcpp
+
 2009-12-31 Harri Pitkänen <hatapitk@iki.fi>
 	* Support verb mood in morphological analysis.
 

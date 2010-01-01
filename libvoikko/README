@@ -142,6 +142,8 @@ Authors
 1995 - 2008 Björn Beutel
  * Author of the original LAG implementation (Malaga), sligthly simplified version
    of which has been embedded into libvoikko.
+2006 Nemanja Trifunovic
+ * Author of UTF8 utility module.
 
 Website
 =======
