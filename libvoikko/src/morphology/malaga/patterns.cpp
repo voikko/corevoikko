@@ -30,6 +30,7 @@
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/MalagaState.hpp"
+#include "utf8/utf8.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -81,7 +82,6 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
   int_t sp, i;
   bool found_mismatch;
   string_t index;
-  gunichar c;
 
   sp = 0;
   found_mismatch = false;
@@ -141,7 +141,7 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
       else 
       {
 	pattern++;
-	string = g_utf8_next_char( string );
+	utf8::unchecked::next(string);
       }
       break;
     case PAT_MATCH_CLASS:
@@ -150,8 +150,7 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
       else 
       { 
 	index = pattern + 2;
-	c = g_utf8_get_char( string );
-	string = g_utf8_next_char( string );
+	u_int_t c = utf8::unchecked::next(string);
         pattern += (byte_t) pattern[1] + 2;
         while (index < pattern && c != g_utf8_get_char( index ))
 	  index = g_utf8_next_char( index );
@@ -165,8 +164,7 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
       else 
       { 
 	index = pattern + 2;
-	c = g_utf8_get_char( string );
-	string = g_utf8_next_char( string );
+	u_int_t c = utf8::unchecked::next(string);
         pattern += (byte_t) pattern[1] + 2;
         while (index < pattern && c != g_utf8_get_char( index ))
 	  index = g_utf8_next_char( index );
@@ -189,16 +187,17 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
       var[ *pattern++ - PAT_END_VAR_0 ].end = string;
       break;
     default:
-      if (*string == EOS)
-	found_mismatch = true;
-      else
-      {
-	c = g_utf8_get_char(string);
-	string = g_utf8_next_char( string );
-	if (c != g_utf8_get_char( pattern )) 
-	  found_mismatch = true;
-	else
-	  pattern = g_utf8_next_char( pattern );
+      if (*string == EOS) {
+        found_mismatch = true;
+      }
+      else {
+        u_int_t c = utf8::unchecked::next(string);
+        if (c != utf8::unchecked::peek_next(pattern)) {
+          found_mismatch = true;
+        }
+        else {
+          utf8::unchecked::next(pattern);
+        }
       }
       break;
     }
