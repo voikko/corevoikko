@@ -26,7 +26,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <glib.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/MalagaState.hpp"
@@ -136,40 +135,44 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
       pattern += 2;
       break;
     case PAT_MATCH_ANY:
-      if (*string == EOS) 
-	found_mismatch = true;
-      else 
-      {
-	pattern++;
-	utf8::unchecked::next(string);
+      if (*string == EOS) {
+        found_mismatch = true;
+      }
+      else {
+        pattern++;
+        utf8::unchecked::next(string);
       }
       break;
-    case PAT_MATCH_CLASS:
-      if (*string == EOS) 
-	found_mismatch = true;
-      else 
-      { 
-	index = pattern + 2;
-	u_int_t c = utf8::unchecked::next(string);
+      case PAT_MATCH_CLASS:
+      if (*string == EOS) {
+        found_mismatch = true;
+      }
+      else {
+        index = pattern + 2;
+        u_int_t c = utf8::unchecked::next(string);
         pattern += (byte_t) pattern[1] + 2;
-        while (index < pattern && c != g_utf8_get_char( index ))
-	  index = g_utf8_next_char( index );
-        if (index >= pattern) 
-	  found_mismatch = true;
+        while (index < pattern && c != utf8::unchecked::peek_next(index)) {
+          utf8::unchecked::next(index);
+        }
+        if (index >= pattern) {
+          found_mismatch = true;
+        }
       }
       break;
     case PAT_MATCH_NOT_CLASS:
-      if (*string == EOS) 
-	found_mismatch = true;
-      else 
-      { 
-	index = pattern + 2;
-	u_int_t c = utf8::unchecked::next(string);
+      if (*string == EOS) {
+        found_mismatch = true;
+      }
+      else {
+        index = pattern + 2;
+        u_int_t c = utf8::unchecked::next(string);
         pattern += (byte_t) pattern[1] + 2;
-        while (index < pattern && c != g_utf8_get_char( index ))
-	  index = g_utf8_next_char( index );
-        if (index < pattern) 
-	  found_mismatch = true;
+        while (index < pattern && c != utf8::unchecked::peek_next(index)) {
+          utf8::unchecked::next(index);
+        }
+        if (index < pattern) {
+          found_mismatch = true;
+        }
       }
       break;
     case PAT_START_VAR_0:
