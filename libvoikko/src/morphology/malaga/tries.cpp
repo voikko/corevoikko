@@ -25,10 +25,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <glib.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/tries.hpp"
+#include "utf8/utf8.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -91,7 +91,6 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
 {
   int_t lower, upper, middle;
   compact_node_t r; /* Pointers to the items of the root node; */
-  gunichar c;
 
   while (*node_index != -1) 
   { 
@@ -111,7 +110,7 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
     r.contents = (int_t *) (r.subnodes + *r.subnode_count);
 
     /* Perform binary search for subnode with given key. */
-    c = g_unichar_tolower( g_utf8_get_char( *input ) );
+    u_int_t c = towlower(utf8::unchecked::next(*input));
     *node_index = -1;
     lower = 0;
     upper = *r.subnode_count - 1;
@@ -147,7 +146,6 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
       }
     }
 
-    *input = g_utf8_next_char( *input );
     if (*content != -1) 
       return true;
   }
