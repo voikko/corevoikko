@@ -23,8 +23,6 @@
 #ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
 #define LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
 
-#include <glib.h>
-
 namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Constants. ===============================================================*/

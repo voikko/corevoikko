@@ -26,6 +26,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <glib.h>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/MalagaState.hpp"

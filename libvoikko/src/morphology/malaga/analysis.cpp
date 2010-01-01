@@ -34,6 +34,7 @@
 #include "morphology/malaga/lexicon.hpp"
 #include "morphology/malaga/analysis.hpp"
 #include "morphology/malaga/MalagaState.hpp"
+#include "utf8/utf8.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -43,22 +44,14 @@ static const int_t mor_pruning_min = 30;
 
 /* Functions for segmentation and preprocessing. ============================*/
 
-void 
-preprocess_input( char_t *input )
 /* Change input string to use lower case letters only */
-{ 
-  string_t input_p;
-  char_t *output_p;
-  u_int_t code;
-  
-  input_p = input;
-  output_p = input;
+void preprocess_input(char * input) {
+  char * input_p = input;
+  char * output_p = input;
 
-  while (*input_p != EOS) 
-  { 
-    code = g_utf8_get_char( input_p );
-    input_p = g_utf8_next_char( input_p );
-    output_p += g_unichar_to_utf8( g_unichar_tolower(code), output_p );
+  while (*input_p != EOS) {
+    u_int_t code = utf8::unchecked::next(input_p);
+    output_p = utf8::unchecked::append(towlower(code), output_p);
   }
 
   *output_p = EOS;

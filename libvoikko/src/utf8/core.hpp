@@ -1,4 +1,5 @@
 // Copyright 2006 Nemanja Trifunovic
+//           2010 Harri Pitkänen <hatapitk@iki.fi>
 
 /*
 Permission is hereby granted, free of charge, to any person or organization
@@ -30,8 +31,7 @@ DEALINGS IN THE SOFTWARE.
 
 #include <iterator>
 
-namespace utf8
-{
+namespace libvoikko { namespace utf8 {
     // The typedefs for 8-bit, 16-bit and 32-bit unsigned integers
     // You may need to change them to match your system.
     // These typedefs have the same names as ones from cstdint, or boost/cstdint
@@ -340,6 +340,7 @@ namespace internal
            );
     }
 } // namespace utf8
+} // namespace libvoikko
 
 #endif // header guard
 

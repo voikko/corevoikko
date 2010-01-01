@@ -27,6 +27,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <glib.h>
 #include "setup/DictionaryException.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"

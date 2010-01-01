@@ -1,4 +1,5 @@
 // Copyright 2006 Nemanja Trifunovic
+//           2010 Harri Pitkänen <hatapitk@iki.fi>
 
 /*
 Permission is hereby granted, free of charge, to any person or organization
@@ -28,10 +29,9 @@ DEALINGS IN THE SOFTWARE.
 #ifndef UTF8_FOR_CPP_UNCHECKED_H_2675DCD0_9480_4c0c_B92A_CC14C027B731
 #define UTF8_FOR_CPP_UNCHECKED_H_2675DCD0_9480_4c0c_B92A_CC14C027B731
 
-#include "core.h"
+#include "utf8/core.hpp"
 
-namespace utf8
-{
+namespace libvoikko { namespace utf8 {
     namespace unchecked 
     {
         template <typename octet_iterator>
@@ -221,7 +221,8 @@ namespace utf8
           }; // class iterator
 
     } // namespace utf8::unchecked
-} // namespace utf8 
+} // namespace utf8
+} // namespace libvoikko
 
 
 #endif // header guard
