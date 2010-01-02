@@ -49,14 +49,13 @@ Documentation for using the library can be found from header file voikko.h.
 Build requirements
 ==================
 
-C++ compiler (GCC), Glib developement headers and Python must be available
-in order to build this library.
+C++ compiler (GCC) and Python must be available in order to build this library.
 
 
 Runtime requirements
 ====================
 
-The library needs Glib and a version of Suomi-malaga containing a file named
+The library needs a version of Suomi-malaga containing a file named
 voikko-fi_FI.pro. The file must start with the following line:
 
 info: Voikko-Dictionary-Format: 2
@@ -137,7 +136,7 @@ from rule 1:
 Authors
 =======
 
-2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+2006 - 2010 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
 1995 - 2008 Björn Beutel
  * Author of the original LAG implementation (Malaga), sligthly simplified version

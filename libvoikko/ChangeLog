@@ -1,3 +1,6 @@
+2010-01-02 Harri Pitkänen <hatapitk@iki.fi>
+	* Remove dependency on glib.
+
 2010-01-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Import UTF8-CPP version 2.2.4 from
 	  https://sourceforge.net/projects/utfcpp

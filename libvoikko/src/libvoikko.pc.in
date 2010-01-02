@@ -8,5 +8,4 @@ Description: Library for Finnish language tools
 URL: http://voikko.sourceforge.net
 Version: @VERSION@
 Libs: -L${libdir} -lvoikko
-Libs.private: -lglib-2.0
 Cflags: -I${includedir}
