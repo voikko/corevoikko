@@ -1,5 +1,5 @@
 /* Copyright (C) 1995 Bjoern Beutel.
- *               2009 Harri Pitkänen <hatapitk@iki.fi>
+ *               2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,7 +27,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include <glib.h>
 #include "setup/DictionaryException.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
@@ -40,6 +39,7 @@
 #include "morphology/malaga/rules.hpp"
 #include "morphology/malaga/analysis.hpp"
 #include "morphology/malaga/MalagaState.hpp"
+#include "utf8/utf8.hpp"
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -74,8 +74,9 @@ standard_function(int_t function, MalagaState * malagaState)
   case FUNC_GET_LENGTH:
     if (get_value_type( malagaState->value_stack[ malagaState->top - 1 ] ) == STRING_SYMBOL)
     {
-      push_number_value(
-	g_utf8_strlen(value_to_string(malagaState->value_stack[--(malagaState->top)]), -1), malagaState);
+      const char * stringVal = value_to_string(malagaState->value_stack[--(malagaState->top)]);
+      push_number_value(utf8::unchecked::distance(stringVal, stringVal + strlen(stringVal)),
+                        malagaState);
     }
     else 
       push_number_value(get_list_length(malagaState->value_stack[--(malagaState->top)]), malagaState);
@@ -88,16 +89,21 @@ standard_function(int_t function, MalagaState * malagaState)
       end = start;
     else 
       end = value_to_int(malagaState->value_stack[malagaState->top - 1]);
-    int_t len = g_utf8_strlen( string, -1 );
+    int_t len = utf8::unchecked::distance(string, string + strlen(string));
     if (start < 0) 
       start += len + 1;
     if (end < 0) 
       end += len + 1;
-    if (end < start) 
+    if (end < start) {
       push_string_value("", NULL, malagaState);
-    else 
-      push_string_value(g_utf8_offset_to_pointer(string, start - 1),
-			g_utf8_offset_to_pointer(string, end), malagaState);
+    }
+    else {
+      const char * startPos = string;
+      utf8::unchecked::advance(startPos, start - 1);
+      const char * endPos = string;
+      utf8::unchecked::advance(endPos, end);
+      push_string_value(startPos, endPos, malagaState);
+    }
     malagaState->value_stack[malagaState->top - 4] = malagaState->value_stack[malagaState->top - 1];
     malagaState->top -= 3;
     break;
