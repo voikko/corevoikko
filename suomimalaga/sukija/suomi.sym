@@ -329,10 +329,16 @@ tapaluokka;
 
   johdin_eskellA;    # Laskea => laskeskella.
 
-  johdin_oitellA;    # Kirjo(i)ttaa => kirjo(i)tella; i:llinen muoto oikein.
-  johdin_otellA;     # Ammo(i)ttaa  => ammo(i)tella; i:tön muoto oikein.
+  johdin_OitellA;    # Kirjo(i)ttaa => kirjo(i)tella; i:llinen muoto nykysääntöjen mukainen.
+  johdin_OtellA;     # Ammo(i)ttaa  => ammo(i)tella; i:tön muoto nykysääntöjen mukainen.
+
+  johdin_tAUtUA;     # Kirjo(i)ttaa => kirjo(i)ttautua; i:llinen muoto nykysääntöjen mukainen.
+                     # Ammo(i)ttaa  => ammo(i)ttautua; i:tön muoto nykysääntöjen mukainen.
+                     # Asettaa => asettautua.
 
   johdin_illA;       # Salata => salailla, salaella.
+  johdin_UA;         # Muistaa => muistua. Ei astevaihtelua.
+  johdin_tUA;        # Alittaa => alittua. Astevaihtelu.
 
 aikamuoto;
   kestämä;
@@ -791,6 +797,7 @@ punoa;      # => punottaa
   leipoa;
   liukua;
   mankua;
+  muistua;
   paleltua;
   penkoa;
   saapua;

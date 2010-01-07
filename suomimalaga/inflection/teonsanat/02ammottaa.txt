@@ -181,6 +181,10 @@ johdin_Us_ksen
           ammo+t+us
           ammo+it+us  ei_voikko
 
-johdin_otellA
+johdin_OtellA
           ammo+t+ella
           ammo+it+ella  ei_voikko
+
+johdin_tAUtUA
+          ammo+t+tautua
+          ammo+it+tautua ei_voikko

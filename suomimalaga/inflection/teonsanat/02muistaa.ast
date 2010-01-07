@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -44,24 +44,24 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-muistaa     muistaa     a    e    ""                                %muistua("","","")
-aavistaa    alittaa     a    e    a   ""  ""  ""                    %muistua("","","")
-alittaa     alittaa     ta   e    a   ""  t   t                     %muistua("","t","")
-ammottaa    ammottaa    tta itta te ite ta ita t it tt itt          %ammottua2  %ammottautua2
-asettaa     alittaa     ta   e    a   ""  t   t                     %muistua("","t","")    %asettautua
-astahtaa    alittaa     ta   de   da  d   t   d
+muistaa     muistaa     a    e    ""
+aavistaa    alittaa     a    e    a   ""  ""  "" -               %muistua2("","","")
+alittaa     alittaa     ta   e    a   ""  t   t  -                %muistua2("","t","")
+ammottaa    ammottaa    tta itta te ite ta ita t it tt itt          %ammottua2
+asettaa     alittaa     ta   e    a   ""  t   t  ""             %muistua2("","t","")
+astahtaa    alittaa     ta   de   da  d   t   d  -
 autioittaa  autioittaa  ta   e    a   ""  t
 heittää     heittää     ta   e    a   ""  t   t
-hidastaa    hidastaa    a    e    ""                                %muistua("","","")    %punottaa("ut")
+hidastaa    hidastaa    a    e    ""                                %muistua2("","","")    %punottaa("ut")
 hohtaa      hohtaa      ta   de   da  d   t   "" d                  %punottaa("dat")
-hujahtaa    alittaa     hta  hde  hda hd  ht  hd                    %punottaa("ut")
+hujahtaa    alittaa     hta  hde  hda hd  ht  hd -                 %punottaa("ut")
 inttää      voitaa      tä   e    ä   ""  t   t
 itää        voitaa      tä   de   dä  d   t   d
-kirjoittaa  kirjoittaa  itta tta ite te ita ta it t itt tt          %kirjoittua2  %kirjoittautua2
-kuluttaa    alittaa     ta   e    a   ""  t   t
+kirjoittaa  kirjoittaa  itta tta ite te ita ta it t itt tt          %kirjoittua2
+kuluttaa    alittaa     ta   e    a   ""  t   t -
 kyntää      voitaa      tä   ne   nä  n   t   n
 loistaa     loistaa     a    e    ""
-longertaa   alittaa     ta   re   ra  r   t   r
+longertaa   alittaa     ta   re   ra  r   t   r -
 purkaa      voitaa      ka   e    a   ""  k   ""
 sulaa       voitaa      a    e    a   ""  ""  ""
 voitaa      voitaa      ta   de   da  d   t   d

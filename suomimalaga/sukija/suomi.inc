@@ -241,7 +241,8 @@ define @nimi_laatusanan_johdin := <johdin_lAinen, johdin_mAinen, johdin_llinen>;
 define @teonsanasta_johdettu_teonsana :=
        <johdin_ellA, johdin_dellA, johdin_hdella, johdin_kellA, johdin_lellA,
         johdin_nellA, johdin_nnellA, johdin_rellA, johdin_tellA,
-        johdin_eskellA, johdin_oitellA, johdin_otellA,
-        johdin_illA>;
+        johdin_eskellA, johdin_OitellA, johdin_OtellA,
+        johdin_tAUtUA,
+        johdin_illA, johdin_UA, johdin_tUA>;
 
 define @sija_monikko_1 := <tulento_iksi, sisäolento_issA, sisäeronto_istA>;

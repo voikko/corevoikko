@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -641,20 +641,7 @@ end;
 # Teonsanat.
 
 
-subrule muistella ($tietue, $vahva_aste, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.luokka := teonsana;
-  $tietue.perusmuoto := $tietue.alku + $heikko_aste + "ell" + A($tietue);
-  return katsella ($tietue,
-                   $heikko_aste + "el",
-                   $heikko_aste + "ell",
-                   $vahva_aste + "ele",
-                   $vahva_aste + "el",
-                   $vahva_aste + "eli");
-end;
-
-
-subrule muistua ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
+subrule muistua2 ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $alun_lisä;
@@ -671,28 +658,6 @@ subrule ammottua2 ($tietue):
 end;
 
 
-subrule ammottautua2 ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-#  $tietue.alku :=+ "tt" + AU($tietue);
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "tt" + AU($tietue) + "t" + UA($tietue);
-  return kirjoittautua ($tietue, "tt" + AU($tietue) + "t" + U($tietue), "itt" + AU($tietue) + "t" + U($tietue),
-                                 "tt" + AU($tietue),                    "itt" + AU($tietue),
-                                 "tt" + AU($tietue) + "d" + U($tietue), "itt" + AU($tietue) + "d" + U($tietue),
-                                 "tt" + AU($tietue) + "n",              "itt" + AU($tietue) + "n",
-                                 "tt" + AU($tietue) + "s",              "itt" + AU($tietue) + "s");
-end;
-
-
-subrule asettautua ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "t" + A($tietue) + U($tietue);
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "t" + UA($tietue);
-  return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
-end;
-
-
 subrule kirjoittua2 ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue :=+ [lähtöalku: $tietue.alku];
@@ -701,35 +666,12 @@ subrule kirjoittua2 ($tietue):
 end;
 
 
-subrule kirjoittautua2 ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-#  $tietue.alku :=+ "itt" + AU($tietue);
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "itt" + AU($tietue) + "t" + UA($tietue);
-  return kirjoittautua ($tietue, "itt" + AU($tietue) + "t" + U($tietue), "tt" + AU($tietue) + "t" + U($tietue),
-                                 "itt" + AU($tietue),                    "tt" + AU($tietue),
-                                 "itt" + AU($tietue) + "d" + U($tietue), "tt" + AU($tietue) + "d" + U($tietue),
-                                 "itt" + AU($tietue) + "n",              "tt" + AU($tietue) + "n",
-                                 "itt" + AU($tietue) + "s",              "tt" + AU($tietue) + "s");
-end;
-
-
-subrule kihinä ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "in";
-  $tietue.luokka := nimisana;
-  $tietue.perusmuoto := $tietue.alku + A($tietue);
-  return kulkija ($tietue, A($tietue), O($tietue), "");
-end;
-
-
 subrule kihahtaa ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ A($tietue) + "h";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d")
-         + muistella ($tietue, "t", "d");
+  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d", "-");
 end;
 
 
@@ -738,8 +680,7 @@ subrule kihauttaa ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ AU($tietue) + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
-         + muistella ($tietue, "t", "");
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "-");
 end;
 
 
@@ -786,23 +727,13 @@ subrule ääntiösointu ($tietue):
 end;
 
 
-subrule salailla ($tietue, $vahva_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.luokka := teonsana;
-  $tietue.alku :=+ $vahva_aste;
-  $tietue.perusmuoto := $tietue.alku + "ill" + A($tietue);
-  return arvailla ($tietue, "il", "el", "ill", "ell", "ile", "ele", "ili", "eli");
-end;
-
-
 subrule punottaa ($tietue, $heikko_aste):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $heikko_aste;
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
-         + muistella ($tietue, "t", "")
-         + muistua ($tietue, "", "t", "");
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "-")
+         + muistua2 ($tietue, "", "t", "");
 end;
 
 

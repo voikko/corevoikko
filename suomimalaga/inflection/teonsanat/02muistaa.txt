@@ -149,3 +149,6 @@ johdin_O
 
 johdin_ellA
           muist++ella
+
+johdin_UA
+          muist++ua

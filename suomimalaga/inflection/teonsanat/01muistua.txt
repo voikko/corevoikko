@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2008, 2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -44,5 +44,110 @@
 # conditions of the GNU General Public License cover the whole
 # combination.
 
-murtaa   murtaa   ta re ra s r t   %muistua2("","t","r")  %murto
-musertaa musertaa ta re ra s r t
+
+nimitapa_1_A
+          muistu++a
+
+nimitapa_2
+          muistu++essa
+
+nimitapa_2_tA
+
+nimitapa_2_ttA
+          muistu++ttaessa
+
+nimitapa_3
+          muistu++ma
+
+nimitapa_3_tA
+
+nimitapa_3_ttA
+          muistu++ttaman
+
+nimitapa_4
+          muistu++minen
+
+nimitapa_5
+          muistu++maisillani
+
+laatutapa_1_vA
+          muistu++va
+
+laatutapa_1_tA
+
+laatutapa_1_ttA
+          muistu++ttava
+
+laatutapa_2_nUt
+          muistu++nut
+
+laatutapa_2_tU
+
+laatutapa_2_ttU
+          muistu++ttu
+
+kestämän_tekijäpääte_y1
+          muistu++n
+
+kestämän_tekijäpääte_y2
+          muistu++t
+
+kestämän_tekijäpääte_y3
+          muistu++u
+
+kestämän_tekijäpääte_m1
+          muistu++mme
+
+kestämän_tekijäpääte_m2
+          muistu++tte
+
+kestämän_tekijäpääte_m3
+          muistu++vat
+
+tositavan_kestämä_tAAn
+          muistu++taan
+
+kertoman_tekijäpääte_y1
+          muistu++in
+
+kertoman_tekijäpääte_y2
+          muistu++it
+
+kertoman_tekijäpääte_y3
+          muistu++i
+
+kertoman_tekijäpääte_m1
+          muistu++imme
+
+kertoman_tekijäpääte_m2
+          muistu++itte
+
+kertoman_tekijäpääte_m3
+          muistu++ivat
+
+tositavan_kertoma_ttiin
+          muistu++ttiin
+
+ehtotapa
+          muistu++isin
+
+ehtotapa_ttA
+          muistu++ttaisiin
+
+mahtotapa_ne
+          muistu++nen
+
+mahtotapa_ttA
+          muistu++ttaneen
+
+käskytapa_y2
+          muistu++
+
+käskytapa_kielto
+          muistu++ko
+
+käskytapa_ttA
+          muistu++ttakoon
+
+johdin_jA_kantaja
+          muistu++ja

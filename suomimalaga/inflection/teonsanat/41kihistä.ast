@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -45,5 +45,5 @@
 # combination.
 
 
-kihistä kihistä  is aja ist ise aj isi  %kihinä %kihahtaa %kihauttaa
-kitistä kihistä  is aja ist ise aj isi  %kihinä
+kihistä kihistä  is aja ist ise aj isi i %kihahtaa %kihauttaa
+kitistä kihistä  is aja ist ise aj isi i

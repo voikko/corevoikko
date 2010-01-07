@@ -203,6 +203,7 @@ Jalo
 jalokivi
 jaotus
 Japani
+japaninmispeli
 jatkuvalämmitteinen
 jengiläinen
 Jokelainen
@@ -297,6 +298,7 @@ Kiina
 Kilpeläinen
 Kilpi
 kiltalainen
+kirjoittua
 Kirkkonummi
 Kisko
 kiteymä
@@ -405,6 +407,7 @@ laajenema
 laajentuma
 laakafilmi
 laakalyönti
+laakamato
 laakapaino
 laakapihti
 Laakso
@@ -665,6 +668,7 @@ Pyhäjärvi
 pystytys
 pysyttäytyä
 pysähdys
+päivittäistavara
 Päivä
 päällekirjoitus
 päästö
@@ -703,6 +707,7 @@ romahdusmainen
 roomalaiskatolilainen
 rossipohja
 ruhjoutuma
+ruiskutus
 Ruotsi
 rupeama
 ruskettua
@@ -1000,6 +1005,7 @@ yhteensovitus
 yhteensulautuminen
 yhteentörmäys
 yhteenveto
+yhtenäiskoulu
 yhtenäiskulttuuri
 yhtymä
 Yleisradio
@@ -1007,6 +1013,7 @@ ylempiarvoinen
 ylenkatsoa
 Ylinen
 yliopistolainen
+yltiöpää
 Ylämaa
 ylösnoussut
 ymmärrys

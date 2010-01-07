@@ -3273,6 +3273,15 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (muistua in $tietue.jatko) then
+    choose $i in muistua ($tietue, "");
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (paleltua in $tietue.jatko) then
     choose $i in punoa ($tietue, "t"+U($tietue), "l"+U($tietue));
     if (value_type($i) = record) then
@@ -3328,8 +3337,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (muistaa in $tietue.jatko) then
-    choose $i in muistaa ($tietue, A($tietue), "e", "")
-                 + muistua ($tietue, "", "", "");
+    choose $i in muistaa ($tietue, A($tietue), "e", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3338,8 +3346,8 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (aavistaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, A($tietue), "e", A($tietue), "", "", "")
-                 + muistua ($tietue, "", "", "");
+    choose $i in alittaa ($tietue, A($tietue), "e", A($tietue), "", "", "", "-")
+                 + muistua2 ($tietue, "", "", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3348,8 +3356,8 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (alittaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
-                 + muistua ($tietue, "", "t", "");
+    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "-")
+                 + muistua2 ($tietue, "", "t", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3359,8 +3367,7 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (ammottaa in $tietue.jatko) then
     choose $i in ammottaa ($tietue, "tt"+A($tietue), "itt"+A($tietue), "te", "ite", "t"+A($tietue), "it"+A($tietue), "t", "it", "tt", "itt")
-                 + ammottua2 ($tietue)
-                 + ammottautua2 ($tietue);
+                 + ammottua2 ($tietue);
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3369,9 +3376,8 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (asettaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
-                 + muistua ($tietue, "", "t", "")
-                 + asettautua ($tietue);
+    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "")
+                 + muistua2 ($tietue, "", "t", "");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3380,7 +3386,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (astahtaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d");
+    choose $i in alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d", "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3408,7 +3414,7 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (hidastaa in $tietue.jatko) then
     choose $i in hidastaa ($tietue, A($tietue), "e", "")
-                 + muistua ($tietue, "", "", "")
+                 + muistua2 ($tietue, "", "", "")
                  + punottaa ($tietue, U($tietue)+"t");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
@@ -3428,7 +3434,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (hujahtaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "ht"+A($tietue), "hde", "hd"+A($tietue), "hd", "ht", "hd")
+    choose $i in alittaa ($tietue, "ht"+A($tietue), "hde", "hd"+A($tietue), "hd", "ht", "hd", "-")
                  + punottaa ($tietue, U($tietue)+"t");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
@@ -3457,8 +3463,7 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (kirjoittaa in $tietue.jatko) then
     choose $i in kirjoittaa ($tietue, "itt"+A($tietue), "tt"+A($tietue), "ite", "te", "it"+A($tietue), "t"+A($tietue), "it", "t", "itt", "tt")
-                 + kirjoittua2 ($tietue)
-                 + kirjoittautua2 ($tietue);
+                 + kirjoittua2 ($tietue);
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3467,7 +3472,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kuluttaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t");
+    choose $i in alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3494,7 +3499,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (longertaa in $tietue.jatko) then
-    choose $i in alittaa ($tietue, "t"+A($tietue), "re", "r"+A($tietue), "r", "t", "r");
+    choose $i in alittaa ($tietue, "t"+A($tietue), "re", "r"+A($tietue), "r", "t", "r", "-");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -3640,7 +3645,7 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (murtaa in $tietue.jatko) then
     choose $i in murtaa ($tietue, "t"+A($tietue), "re", "r"+A($tietue), "s", "r", "t")
-                 + muistua ($tietue, "", "t", "r")
+                 + muistua2 ($tietue, "", "t", "r")
                  + murto ($tietue);
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
@@ -4036,7 +4041,7 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (kanavoida in $tietue.jatko) then
     choose $i in voida ($tietue, "i", "id", "")
-                 + muistua ($tietue, "i", "t", "d");
+                 + muistua2 ($tietue, "i", "t", "d");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4271,7 +4276,7 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (haravoida in $tietue.jatko) then
     choose $i in haravoida ($tietue, "i", "id", "it", "itse", "in", "", "its", "itsi")
-                 + muistua ($tietue, "i", "t", "d");
+                 + muistua2 ($tietue, "i", "t", "d");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -4972,8 +4977,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kihistä in $tietue.jatko) then
-    choose $i in kihistä ($tietue, "is", A($tietue)+"j"+A($tietue), "ist", "ise", A($tietue)+"j", "isi")
-                 + kihinä ($tietue)
+    choose $i in kihistä ($tietue, "is", A($tietue)+"j"+A($tietue), "ist", "ise", A($tietue)+"j", "isi", "i")
                  + kihahtaa ($tietue)
                  + kihauttaa ($tietue);
     if (value_type($i) = record) then
@@ -4984,8 +4988,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (kitistä in $tietue.jatko) then
-    choose $i in kihistä ($tietue, "is", A($tietue)+"j"+A($tietue), "ist", "ise", A($tietue)+"j", "isi")
-                 + kihinä ($tietue);
+    choose $i in kihistä ($tietue, "is", A($tietue)+"j"+A($tietue), "ist", "ise", A($tietue)+"j", "isi", "i");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -10715,6 +10718,55 @@ subrule kirjoittua ($tietue, $param01, $param02, $param03, $param04):
                          johdin_ttAvA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_ttAvAinen: <<$param03, <>>, <$param04, <ei_voikko>>>]);
 end;
+subrule muistua ($tietue, $param01):
+  return taivutuskaava ($tietue,
+                        [nimitapa_1_A: <<$param01, <>>>,
+                         nimitapa_2: <<$param01, <>>>,
+                         nimitapa_2_ttA: <<$param01, <>>>,
+                         nimitapa_3: <<$param01, <>>>,
+                         nimitapa_3_ttA: <<$param01, <>>>,
+                         nimitapa_4: <<$param01, <>>>,
+                         nimitapa_5: <<$param01, <>>>,
+                         laatutapa_1_vA: <<$param01, <>>>,
+                         laatutapa_1_ttA: <<$param01, <>>>,
+                         laatutapa_2_nUt: <<$param01, <>>>,
+                         laatutapa_2_ttU: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y1: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y2: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3_vi: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3_Vpi: <<$param01, <>>>,
+                         kestämän_tekijäpääte_y3_Vvi: <<$param01, <>>>,
+                         kestämän_tekijäpääte_m1: <<$param01, <>>>,
+                         kestämän_tekijäpääte_m2: <<$param01, <>>>,
+                         kestämän_tekijäpääte_m3: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn: <<$param01, <>>>,
+                         kertoman_tekijäpääte_y1: <<$param01, <>>>,
+                         kertoman_tekijäpääte_y2: <<$param01, <>>>,
+                         kertoman_tekijäpääte_y3: <<$param01, <>>>,
+                         kertoman_tekijäpääte_m1: <<$param01, <>>>,
+                         kertoman_tekijäpääte_m2: <<$param01, <>>>,
+                         kertoman_tekijäpääte_m3: <<$param01, <>>>,
+                         tositavan_kertoma_ttiin: <<$param01, <>>>,
+                         ehtotapa: <<$param01, <>>>,
+                         ehtotapa_ttA: <<$param01, <>>>,
+                         mahtotapa_ne: <<$param01, <>>>,
+                         mahtotapa_ttA: <<$param01, <>>>,
+                         käskytapa_y2: <<$param01, <>>>,
+                         käskytapa_kielto: <<$param01, <>>>,
+                         käskytapa_ttA: <<$param01, <>>>,
+                         johdin_jA_kantaja: <<$param01, <>>>,
+                         johdin_vA: <<$param01, <>>>,
+                         johdin_vAinen: <<$param01, <>>>,
+                         johdin_ttU: <<$param01, <>>>,
+                         johdin_nUt: <<$param01, <>>>,
+                         johdin_mA: <<$param01, <>>>,
+                         mahtotapa_ne_kielto: <<$param01, <>>>,
+                         tositavan_kestämä_tAAn_kielto: <<$param01, <>>>,
+                         käskytapa: <<$param01, <>>>,
+                         johdin_ttAvA: <<$param01, <>>>,
+                         johdin_ttAvAinen: <<$param01, <>>>]);
+end;
 subrule punoa ($tietue, $param01, $param02):
   return taivutuskaava ($tietue,
                         [nimitapa_1_A: <<$param01, <>>>,
@@ -10765,7 +10817,7 @@ subrule punoa ($tietue, $param01, $param02):
                          johdin_ttAvA: <<$param02, <>>>,
                          johdin_ttAvAinen: <<$param02, <>>>]);
 end;
-subrule alittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $johdin_ellA):
+subrule alittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $johdin_ellA, $johdin_tAUtUA):
   return taivutuskaava ($tietue,
                         [nimitapa_1_A: <<$param01, <>>>,
                          nimitapa_2: <<$param01, <>>>,
@@ -10805,6 +10857,7 @@ subrule alittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $joh
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_Us_ksen: <<$param04, <>>>,
                          johdin_ellA: <<$johdin_ellA, <>>>,
+                         johdin_tAUtUA: <<$johdin_tAUtUA, <>>>,
                          johdin_vA: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
                          johdin_ttU: <<$param02, <>>>,
@@ -10855,7 +10908,8 @@ subrule ammottaa ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_Us_ksen: <<$param07, <>>, <$param08, <ei_voikko>>>,
-                         johdin_otellA: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_OtellA: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_tAUtUA: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
@@ -11108,7 +11162,8 @@ subrule kirjoittaa ($tietue, $param01, $param02, $param03, $param04, $param05, $
                          käskytapa_ttA: <<$param03, <>>, <$param04, <ei_voikko>>>,
                          johdin_jA_kantaja: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_Us_ksen: <<$param07, <>>, <$param08, <ei_voikko>>>,
-                         johdin_oitellA: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_OitellA: <<$param07, <>>, <$param08, <ei_voikko>>>,
+                         johdin_tAUtUA: <<$param07, <>>, <$param08, <ei_voikko>>>,
                          johdin_vA: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_vAinen: <<$param01, <>>, <$param02, <ei_voikko>>>,
                          johdin_ttU: <<$param03, <>>, <$param04, <ei_voikko>>>,
@@ -11211,6 +11266,7 @@ subrule muistaa ($tietue, $param01, $param02, $param03):
                          johdin_jA_kantaja: <<$param01, <>>>,
                          johdin_O: <<$param03, <>>>,
                          johdin_ellA: <<$param03, <>>>,
+                         johdin_UA: <<$param03, <>>>,
                          johdin_vA: <<$param01, <>>>,
                          johdin_vAinen: <<$param01, <>>>,
                          johdin_ttU: <<$param02, <>>>,
@@ -14147,7 +14203,7 @@ subrule palata ($tietue, $param01, $param02, $param03, $param04, $param05, $para
                          johdin_ttAvA: <<$param01, <>>>,
                          johdin_ttAvAinen: <<$param01, <>>>]);
 end;
-subrule kihistä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06):
+subrule kihistä ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
   return taivutuskaava ($tietue,
                         [nimitapa_1_tA: <<$param01, <>>>,
                          nimitapa_1_A: <<$param02, <>>>,
@@ -14186,6 +14242,7 @@ subrule kihistä ($tietue, $param01, $param02, $param03, $param04, $param05, $pa
                          käskytapa_kielto: <<$param01, <>>>,
                          käskytapa_tA: <<$param01, <>>>,
                          johdin_jA_kulkija: <<$param06, <>>>,
+                         johdin_nA: <<$param07, <>>>,
                          johdin_vA: <<$param04, <>>>,
                          johdin_vAinen: <<$param04, <>>>,
                          johdin_mA: <<$param04, <>>>,
@@ -15085,20 +15142,7 @@ end;
 # Teonsanat.
 
 
-subrule muistella ($tietue, $vahva_aste, $heikko_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.luokka := teonsana;
-  $tietue.perusmuoto := $tietue.alku + $heikko_aste + "ell" + A($tietue);
-  return katsella ($tietue,
-                   $heikko_aste + "el",
-                   $heikko_aste + "ell",
-                   $vahva_aste + "ele",
-                   $vahva_aste + "el",
-                   $vahva_aste + "eli");
-end;
-
-
-subrule muistua ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
+subrule muistua2 ($tietue, $alun_lisä, $vahva_aste, $heikko_aste):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $alun_lisä;
@@ -15115,28 +15159,6 @@ subrule ammottua2 ($tietue):
 end;
 
 
-subrule ammottautua2 ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-#  $tietue.alku :=+ "tt" + AU($tietue);
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "tt" + AU($tietue) + "t" + UA($tietue);
-  return kirjoittautua ($tietue, "tt" + AU($tietue) + "t" + U($tietue), "itt" + AU($tietue) + "t" + U($tietue),
-                                 "tt" + AU($tietue),                    "itt" + AU($tietue),
-                                 "tt" + AU($tietue) + "d" + U($tietue), "itt" + AU($tietue) + "d" + U($tietue),
-                                 "tt" + AU($tietue) + "n",              "itt" + AU($tietue) + "n",
-                                 "tt" + AU($tietue) + "s",              "itt" + AU($tietue) + "s");
-end;
-
-
-subrule asettautua ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "t" + A($tietue) + U($tietue);
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "t" + UA($tietue);
-  return antautua ($tietue, "t"+U($tietue), "", "d"+U($tietue), "n", "s");
-end;
-
-
 subrule kirjoittua2 ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue :=+ [lähtöalku: $tietue.alku];
@@ -15145,35 +15167,12 @@ subrule kirjoittua2 ($tietue):
 end;
 
 
-subrule kirjoittautua2 ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-#  $tietue.alku :=+ "itt" + AU($tietue);
-  $tietue :=+ [lähtöalku: $tietue.alku];
-  $tietue.perusmuoto := $tietue.alku + "itt" + AU($tietue) + "t" + UA($tietue);
-  return kirjoittautua ($tietue, "itt" + AU($tietue) + "t" + U($tietue), "tt" + AU($tietue) + "t" + U($tietue),
-                                 "itt" + AU($tietue),                    "tt" + AU($tietue),
-                                 "itt" + AU($tietue) + "d" + U($tietue), "tt" + AU($tietue) + "d" + U($tietue),
-                                 "itt" + AU($tietue) + "n",              "tt" + AU($tietue) + "n",
-                                 "itt" + AU($tietue) + "s",              "tt" + AU($tietue) + "s");
-end;
-
-
-subrule kihinä ($tietue):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.alku :=+ "in";
-  $tietue.luokka := nimisana;
-  $tietue.perusmuoto := $tietue.alku + A($tietue);
-  return kulkija ($tietue, A($tietue), O($tietue), "");
-end;
-
-
 subrule kihahtaa ($tietue):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ A($tietue) + "h";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d")
-         + muistella ($tietue, "t", "d");
+  return alittaa ($tietue, "t"+A($tietue), "de", "d"+A($tietue), "d", "t", "d", "-");
 end;
 
 
@@ -15182,8 +15181,7 @@ subrule kihauttaa ($tietue):
   $tietue.äs := ääntiösointu ($tietue);
   $tietue.alku :=+ AU($tietue) + "t";
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
-         + muistella ($tietue, "t", "");
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "-");
 end;
 
 
@@ -15230,23 +15228,13 @@ subrule ääntiösointu ($tietue):
 end;
 
 
-subrule salailla ($tietue, $vahva_aste):
-  $tietue :=+ [lähtösana: $tietue.perusmuoto];
-  $tietue.luokka := teonsana;
-  $tietue.alku :=+ $vahva_aste;
-  $tietue.perusmuoto := $tietue.alku + "ill" + A($tietue);
-  return arvailla ($tietue, "il", "el", "ill", "ell", "ile", "ele", "ili", "eli");
-end;
-
-
 subrule punottaa ($tietue, $heikko_aste):
   $tietue :=+ [lähtösana: $tietue.perusmuoto];
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $heikko_aste;
   $tietue.perusmuoto := $tietue.alku + "t" + A($tietue) + A($tietue);
-  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t")
-         + muistella ($tietue, "t", "")
-         + muistua ($tietue, "", "t", "");
+  return alittaa ($tietue, "t"+A($tietue), "e", A($tietue), "", "t", "t", "-")
+         + muistua2 ($tietue, "", "t", "");
 end;
 
 

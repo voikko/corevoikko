@@ -1537,13 +1537,27 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
 [perusmuoto: "eskellä", alku: "eskel", luokka: johdin_eskellA, jatko: <katsella>, äs: ä];
 
 # Kirjo(i)ttaa => kirjo(i)tella.
-[perusmuoto: "ella", alku: "", luokka: johdin_oitellA, jatko: <aatella>, äs: a];
-[perusmuoto: "ellä", alku: "", luokka: johdin_oitellA, jatko: <aatella>, äs: ä];
+[perusmuoto: "ella", alku: "", luokka: johdin_OitellA, jatko: <aatella>, äs: a];
+[perusmuoto: "ellä", alku: "", luokka: johdin_OitellA, jatko: <aatella>, äs: ä];
 
 # Ammo(i)ttaa => ammo(i)tella.
-[perusmuoto: "ella", alku: "", luokka: johdin_otellA, jatko: <aatella>, äs: a];
-[perusmuoto: "ellä", alku: "", luokka: johdin_otellA, jatko: <aatella>, äs: ä];
+[perusmuoto: "ella", alku: "", luokka: johdin_OtellA, jatko: <aatella>, äs: a];
+[perusmuoto: "ellä", alku: "", luokka: johdin_OtellA, jatko: <aatella>, äs: ä];
 
 # Salata => salailla, salaella.
 [perusmuoto: "illa", alku: "", luokka: johdin_illA, jatko: <arvailla>, äs: a];
 [perusmuoto: "illä", alku: "", luokka: johdin_illA, jatko: <arvailla>, äs: ä];
+
+# Kirjo(i)ttaa => kirjo(i)ttautua
+# Ammo(i)ttaa => ammo(i)ttautua.
+# Asettaa => asettautua.
+[perusmuoto: "tautua", alku: "tau", luokka: johdin_tAUtUA, jatko: <antautua>, äs: a];
+[perusmuoto: "täytyä", alku: "täy", luokka: johdin_tAUtUA, jatko: <antautua>, äs: ä];
+
+# Muistaa => muistua.
+[perusmuoto: "ua", alku: "u", luokka: johdin_UA, jatko: <punoa>, äs: a];
+[perusmuoto: "yä", alku: "y", luokka: johdin_UA, jatko: <punoa>, äs: ä];
+
+# Alittaa => alittua.
+[perusmuoto: "tua", alku: "", luokka: johdin_tUA, jatko: <asettua>, äs: a];
+[perusmuoto: "tyä", alku: "", luokka: johdin_tUA, jatko: <asettua>, äs: ä];
