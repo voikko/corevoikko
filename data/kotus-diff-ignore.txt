@@ -73,53 +73,29 @@ approksimaatio
 approksimoida
 arabinen
 areaalinen
-arkadi
-arkontti
 armoittaa
-aromi
-arseeni
+aromi # eri taivutus
+arseeni # eri taivutus
 artikulatorinen
 aseistariisuminen
 asiallistua
-asidofilus
-aspiriini
-astenosfääri
 astuin
-asyyli
-aterooma
 atomisti
-atsimuutti
 audio
 aumata
-autarkia
-autisti
 autuaaksijulistus
 auvokas
-avantgarde
 aventuriini
 avenue
-baccalaureus
-bakeliitti
-bakteriologi
 ballista
 barbaria
-basileus
-basiliski
-berkelium
-bijektio
 bilateraali
 binaari
 binääri
-birgittalainen
 biseksuaali
-bjarmi
-blogi
-boheemi
 brandi
 bretoni
 brosyyri
-brunetti
-buffetti
 burgundi
 burleski
 butanoli
@@ -151,7 +127,6 @@ distinktio
 dogmatismi
 dualisti
 dubata
-dysfaatikko
 edempi
 editori
 eetos
@@ -176,7 +151,6 @@ erata
 esikoisuus
 esityttää
 esteetti
-estetismi
 etelämpi
 eurooppalaistaa
 federalisti
@@ -185,19 +159,16 @@ fenyyli
 fiasko
 filippiläinen
 finiitti
-flekteerata
 follikkeli # Taivutus 6 eikä 5, koska "follikkeleiden" näyttää olevan laajasti käytössä
 fonotaksi
 fonotaktinen
 fooni
 fortuna # Googlen mukaan Kotuksen hyväksymät taivutukset "fortunien" jne. eivät ole käytössä
 fosfori
-fragmentoida
 futuristi
 galaktinen
 genealogi
 generatiivinen
-geoidi
 geomatiikka
 gerbiili
 giga
@@ -453,7 +424,6 @@ myeliini
 myografia
 mysjuusto # täysin tuntematon sana
 myönnyttää
-mätiä
 määrittyä
 napsaista
 napse
@@ -465,7 +435,6 @@ neljänlainen
 nesessiivi
 netti
 neutroni
-ninja
 nirppanenäinen
 niukahko
 nokturni
@@ -484,17 +453,15 @@ ohuehko
 ohuke
 okapi
 oksidantti
-oligarkki
 olympialainen
 ontologia
 ontologinen
 oraali
 ordinaali
-ori
+ori # Joukahaisessa kahdessa tietueessa
 origami
 ortogonaalinen
 ortografinen
-oseanologi
 osittua
 osmani
 oudohko
@@ -506,8 +473,7 @@ palataali
 palataalistua
 palautin
 palaveri
-paleontologi
-pallas
+pallas # Joukahaisessa kahdessa tietueessa
 paloittaa
 palvelukseenastuminen
 palvi
@@ -584,7 +550,6 @@ raita
 raskassarjalainen
 rasvari
 rasvauttaa
-reaktanssi
 reduktiivinen
 reema
 referatiivinen
@@ -645,17 +610,12 @@ simulantti
 sinkittää
 sinunlainen # vain 2. persoonan omistusliite
 sir
-sitostanoli
-sitraatti
-sitriini
 sitrus
 sivusta
 sivuta
 skaalata
 skaalautua
 skalaari
-slavofiili
-slavofilia
 slavofilismi
 solarium
 sovhoosi
@@ -664,8 +624,6 @@ spirantti
 srapnelli
 stabilisaattori
 staccato
-stalagmiitti
-stalaktiitti
 stationaarinen
 steroli
 strippaus
@@ -687,13 +645,11 @@ suppletivistinen
 survivalisti
 suukottaa
 suurehko
-swahili
 syli
 symbiootti
 symbolisti
 symptomi
 synkronia
-synoptinen
 syrjäänvetäytyvä
 syvennyttää
 syyhytä
@@ -703,7 +659,6 @@ säikkyä
 takaisinvoitto
 taksonominen
 taktillinen
-takymetri
 tallettua
 talokas
 tamponi
@@ -738,7 +693,6 @@ traagillinen
 traditionalistinen
 transitiivi
 translaatio
-tremulantti
 trimmeri
 trinomi
 tropopaussi
@@ -758,7 +712,6 @@ tympiintyä
 typologi
 tähytä
 täytäntöönpantava
-töhnä
 ujohko
 ulosmittauttaa
 unissakäveleminen
@@ -829,7 +782,6 @@ alaskirjaus
 esiintuominen
 esilletuominen
 paneva
-interaktio
 jälleenhankinta
 jälleenlastaus
 jälleensyntymä
