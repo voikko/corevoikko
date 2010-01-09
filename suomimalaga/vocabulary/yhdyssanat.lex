@@ -2885,6 +2885,7 @@
 [perusmuoto: "loka-marraskuu", alku: "loka-marrasku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=pppp-=pppppp=ppp"];
 [perusmuoto: "marras-joulukuu", alku: "marras-jouluku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=pppppp-=ppppp=ppp"];
 [perusmuoto: "joulu-tammikuu", alku: "joulu-tammiku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=ppppp=ppp"];
+[perusmuoto: "aivo-selkäydinneste", alku: "aivo-selkäydinneste", luokka: nimisana, jatko: <hame>, äs: ä, tiedot: <ei_sukija>, rakenne: "=pppp-=ppppp=pppp=ppppp"];
 [perusmuoto: "jääkaappi-pakastin", alku: "jääkaappi-pakasti", luokka: nimisana, jatko: <uistin>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppppp-=pppppppp"];
 
 # vim: nowrap filetype=conf
