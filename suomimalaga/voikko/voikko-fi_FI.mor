@@ -562,7 +562,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
     result $res, rules omistusliite;
   end;
   if tavuviiva in $oikea.jatko then
-      result $res, rules tavuviiva;
+      result $res, rules tavuviiva, paikannimen_lainen_johdos;
   end;
   if loppu in $oikea.jatko then
     result $res, accept;
@@ -650,7 +650,8 @@ combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
   result $res, accept;
   result $res, rules
          nimisana, erisnimi, laatusana, lyhennesääntö,
-         etuliite, teonsana, inen_johdos_nimisanasta;
+         etuliite, teonsana, inen_johdos_nimisanasta,
+         paikannimen_lainen_johdos;
 end;
 
 combi_rule yhdysmerkki_sanan_lopussa ($vasen, $oikea, $sana):
@@ -665,7 +666,7 @@ combi_rule yhdysmerkki_lainen_johdoksen_jälkeen ($vasen, $oikea, $sana):
   result $res, accept;
   result $res,
          rules erisnimi, paikannimen_lainen_johdos,
-	       inen_päätteinen_laatusana;
+               inen_päätteinen_laatusana, inen_johdos_nimisanasta;
 end;
 
 combi_rule merkki_numeron_jälkeen ($vasen, $oikea, $sana):

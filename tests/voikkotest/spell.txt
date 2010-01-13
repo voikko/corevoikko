@@ -85,6 +85,9 @@ kuutamoöitä
 !kuutamo-öitä
 liike-elämä
 matemaattis-luonnontieteellinen # -is
+kreikkalais-hellenistinen # -is, "kreikkalais" johdettu sanasta "Kreikka"
+venäläis-kreikkalainen # -is, "kreikkalainen" johdettu sanasta "Kreikka"
+kreikkalais-latinalaisnorjalainen # -is, "latinalainen" laatusana, "norjalainen" johdettu sanasta "Norja"
 oopiumsodan
 !kissaismi
 !turunväylän
