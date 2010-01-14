@@ -86,6 +86,7 @@ kuutamoöitä
 liike-elämä
 matemaattis-luonnontieteellinen # -is
 kreikkalais-hellenistinen # -is, "kreikkalais" johdettu sanasta "Kreikka"
+#!kreikkalais-tyylinen Nämä sallitaan toistaiseksi, jotta "kreikkalais-hellenistinen" tunnistuu
 venäläis-kreikkalainen # -is, "kreikkalainen" johdettu sanasta "Kreikka"
 kreikkalais-latinalaisnorjalainen # -is, "latinalainen" laatusana, "norjalainen" johdettu sanasta "Norja"
 oopiumsodan
@@ -160,6 +161,7 @@ eteläafrikkalaisissa
 eteläafrikkalaiskylä
 !eteläafrikkaläinen
 !etelä-afrikkalainen
+!Pohjois-lontoolainen
 afrikkalaisuus
 saksalais-roomalainen
 saksalais-Kari

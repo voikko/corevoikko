@@ -532,9 +532,12 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko and
     ($oikea.tiedot = nil or not (ei_ys in $oikea.tiedot or ei_ysa in $oikea.tiedot)) then
-    result $res, rules yhdysmerkki_laatusanan_jälkeen,
-           nimisana, laatusana, etuliite,
-           inen_johdos_nimisanasta;
+    result $res, rules nimisana, laatusana, etuliite, inen_johdos_nimisanasta;
+    if $oikea.aluetta_tarkentava_etuliite = yes then
+      result $res, rules yhdysmerkki_laatusanan_jälkeen_ei_kansallisuutta;
+    else
+      result $res, rules yhdysmerkki_laatusanan_jälkeen;
+    end;
   end;
   if loppu in $oikea.jatko then
     result $res, accept;
@@ -652,6 +655,16 @@ combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
          nimisana, erisnimi, laatusana, lyhennesääntö,
          etuliite, teonsana, inen_johdos_nimisanasta,
          paikannimen_lainen_johdos;
+end;
+
+combi_rule yhdysmerkki_laatusanan_jälkeen_ei_kansallisuutta($vasen, $oikea, $sana):
+  ? $oikea.luokka = tavuviiva;
+
+  define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
+  result $res, accept;
+  result $res, rules
+         nimisana, erisnimi, laatusana, lyhennesääntö,
+         etuliite, teonsana, inen_johdos_nimisanasta;
 end;
 
 combi_rule yhdysmerkki_sanan_lopussa ($vasen, $oikea, $sana):
