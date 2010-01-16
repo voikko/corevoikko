@@ -4,7 +4,7 @@
 ;; Interface for external spell-checkers and text-filtering programs.
 
 
-;; Copyright (C) 2009 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2009-2010 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; LICENSE
 ;;
