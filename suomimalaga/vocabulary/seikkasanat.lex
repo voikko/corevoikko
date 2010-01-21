@@ -1250,6 +1250,9 @@
 [perusmuoto: "kotiinpäin", alku: "kotiinkaanpäin", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
 [perusmuoto: "kotiinpäin", alku: "kotiinkinpäin", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "kotiinpäin", alku: "kotiinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
+[perusmuoto: "kotonapäin", alku: "kotonakinpäin", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "kotonapäin", alku: "kotonakaanpäin", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "kotonapäin", alku: "kotonapäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppp"];
 [perusmuoto: "mihinpäin", alku: "mihinkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "mihinpäin", alku: "mihinkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "mihinpäin", alku: "mihinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
@@ -1262,6 +1265,18 @@
 [perusmuoto: "missäpäin", alku: "mistäkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "missäpäin", alku: "mistäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "missäpäin", alku: "mistäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "niinpäin", alku: "niinkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "niinpäin", alku: "niinkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "niinpäin", alku: "niinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "nurinpäin", alku: "nurinkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "nurinpäin", alku: "nurinkaanpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "nurinpäin", alku: "nurinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "näinpäin", alku: "näinkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
+[perusmuoto: "näinpäin", alku: "näinkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
+[perusmuoto: "näinpäin", alku: "näinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "oikeinpäin", alku: "oikeinkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
+[perusmuoto: "oikeinpäin", alku: "oikeinkaanpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "oikeinpäin", alku: "oikeinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "perässäpäin", alku: "perässäkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppppp=pppp"];
 [perusmuoto: "perässäpäin", alku: "perässäkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppppp=pppp"];
 [perusmuoto: "perässäpäin", alku: "perässäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
@@ -1342,6 +1357,9 @@
 [perusmuoto: "ylöspäin", alku: "ylöskinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "ylöspäin", alku: "ylöskäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "ylöspäin", alku: "ylöspäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppp"];
+[perusmuoto: "ylöspäin", alku: "ylhäältäkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppppp=pppp"];
+[perusmuoto: "ylöspäin", alku: "ylhäältäkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppppppp=pppp"];
+[perusmuoto: "ylöspäin", alku: "ylhäältäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 
 # Nykyään "sydännä" on seikkasana, eikä sydän-nimisanan taivutusmuoto, siksi nämä pitää laittaa erikseen.
 [perusmuoto: "kesäsydän", alku: "kesäsydännä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppppp"];
