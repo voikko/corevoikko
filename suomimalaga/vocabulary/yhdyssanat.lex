@@ -2887,6 +2887,7 @@
 [perusmuoto: "joulu-tammikuu", alku: "joulu-tammiku", luokka: nimisana, jatko: <puu>, äs: a, tiedot: <inen, ei_sukija>, rakenne: "=ppppp-=ppppp=ppp"];
 [perusmuoto: "aivo-selkäydinneste", alku: "aivo-selkäydinneste", luokka: nimisana, jatko: <hame>, äs: ä, tiedot: <ei_sukija>, rakenne: "=pppp-=ppppp=pppp=ppppp"];
 [perusmuoto: "jääkaappi-pakastin", alku: "jääkaappi-pakasti", luokka: nimisana, jatko: <uistin>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppppp-=pppppppp"];
+[perusmuoto: "laulaja-kitaristi", alku: "laulaja-kitarist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppp-=ppppppppp"];
 
 # vim: nowrap filetype=conf
 # vim600: foldmethod=marker
