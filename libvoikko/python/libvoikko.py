@@ -20,7 +20,7 @@ An example session demonstrating the use of this module:
 
 """
 
-# Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 # This library requires Python version 2.5 or newer.
 
 # This program is free software; you can redistribute it and/or modify
@@ -66,13 +66,18 @@ class Dictionary:
 	def __repr__(self):
 		return u"<" + self.variant + u"," + self.description + u">"
 	
-	def __cmp__(self, other):
+	def __lt__(self, other):
 		if not isinstance(other, Dictionary):
-			return -1
-		variantOrder = cmp(self.variant, other.variant)
-		if variantOrder != 0:
-			return variantOrder
-		return cmp(self.description, other.description)
+			return False
+		if self.variant < other.variant:
+			return True
+		return self.description < other.description
+	
+	def __eq__(self, other):
+		return isinstance(other, Dictionary) and \
+		       self.variant == other.variant and \
+		       self.description == other.description
+	# FIXME: implement __hash__
 
 class Token:
 	"""Represents a token in tokenized natural language text."""
@@ -252,7 +257,7 @@ class Voikko:
 			error = self.lib.voikko_init_with_path(byref(self.handle), variant,
 			                                       cacheSize, path)
 			if error != None:
-				raise VoikkoException("Initialization of Voikko failed: " + error)
+				raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error, "UTF-8"))
 	
 	def terminate(self):
 		"""Uninitialize this Voikko instance. The instance must be initialized again

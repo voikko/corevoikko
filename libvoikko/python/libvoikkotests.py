@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 # Test suite for the Python interface to libvoikko
 
 # This program is free software; you can redistribute it and/or modify
@@ -52,6 +52,8 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertNotEqual(d1, d2)
 		self.assertNotEqual(d1, d3)
 		self.assertEqual(d1, d4)
+		self.failUnless(d1 < d2)
+		self.failUnless(d2 < d3)
 	
 	def testListDicts(self):
 		self.voikko.terminate()
