@@ -378,8 +378,8 @@ class Voikko:
 			j = 0
 			while bool(cKeys[j]):
 				key = cKeys[j]
-				pAnalysis[key] = self.lib.voikko_mor_analysis_value_ucs4(
-				                 cAnalysis, key)
+				value = self.lib.voikko_mor_analysis_value_ucs4(cAnalysis, key)
+				pAnalysis[unicode(key, 'ASCII')] = value
 				j = j + 1
 			pAnalysisList.append(pAnalysis)
 			i = i + 1
@@ -418,7 +418,7 @@ class Voikko:
 		cHyphenationPattern = self.lib.voikko_hyphenate_ucs4(self.handle, word)
 		hyphenationPattern = string_at(cHyphenationPattern)
 		self.lib.voikko_free_hyphenate(cHyphenationPattern)
-		return hyphenationPattern
+		return unicode(hyphenationPattern, 'ASCII')
 	
 	def hyphenate(self, word):
 		"""Return the given word in fully hyphenated form."""
