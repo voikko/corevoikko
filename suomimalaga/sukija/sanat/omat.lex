@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -116,7 +116,6 @@
 [perusmuoto: "normienmukainen", alku: "normienmukai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "nurinkurin", alku: "nurinkurin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "nurinperin", alku: "nurinperin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "nurinpäin", alku: "nurinpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "paratiissi", alku: "paratiiss", luokka: nimisana, jatko: <banaali>, äs: a];
 [perusmuoto: "pentsiini", alku: "pentsiin", luokka: nimisana, jatko: <banaali>, äs: ä];
 [perusmuoto: "pitali", alku: "pital", luokka: nimisana, jatko: <banaali>, äs: a];
@@ -659,7 +658,6 @@
 [perusmuoto: "Pentagon", alku: "Pentagon", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "fenestraatio", alku: "fenestr", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "defenestraatio", alku: "defenestr", luokka: nimisana, jatko: <obligaatio>, äs: a];
-[perusmuoto: "defibrillaatio", alku: "defibrill", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "deflagraatio", alku: "deflagr", luokka: nimisana, jatko: <obligaatio>, äs: a];
 [perusmuoto: "deathrock", alku: "deathrock", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "defibrilloida", alku: "defibrillo", luokka: teonsana, jatko: <voida>, äs: a];
@@ -761,8 +759,6 @@
 [perusmuoto: "Tiitto", alku: "Tiit", luokka: sukunimi, jatko: <liitto>, äs: a];
 [perusmuoto: "Utti", alku: "Ut", luokka: paikannimi, jatko: <tatti>, äs: a];
 [perusmuoto: "äitelähkö", alku: "äitelähkö", luokka: laatusana, jatko: <valo>, äs: ä];
-[perusmuoto: "piilari", alku: "piilar", luokka: nimisana, jatko: <paperi>, äs: a]; # Piilolasi(t).
-[perusmuoto: "kuulari", alku: "kuular", luokka: nimisana, jatko: <paperi>, äs: a]; # Muovikuulia ampuva lelupyssy.
 [perusmuoto: "Larioja", alku: "Larioj", luokka: paikannimi, jatko: <koira>, äs: a];
 [perusmuoto: "Larivaara", alku: "Larivaar", luokka: paikannimi, jatko: <kala>, äs: a];
 [perusmuoto: "Lotila", alku: "Lotil", luokka: paikannimi, jatko: <apila>, äs: a];
@@ -903,6 +899,8 @@
 [perusmuoto: "sisäänpäinkääntynyt", alku: "sisäänpäinkäänty", luokka: laatusana, jatko: <punonut>, äs: ä];
 [perusmuoto: "aallota", alku: "aal", luokka: teonsana, jatko: <aallota>, äs: a];
 [perusmuoto: "Čapek", alku: "Čapek", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "paraolympialainen", alku: "paraolympialai", luokka: nimisana, jatko: <nainen>, äs: a];
+[perusmuoto: "Lippi", alku: "Lip", luokka: nimi, jatko: <keppi>, äs: ä];
 
 # Nämä on lisätty Joukahaiseen.
 # Lisäykset Joukahaiseen loppuivat.

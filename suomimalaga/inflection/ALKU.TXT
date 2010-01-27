@@ -141,7 +141,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"nano"> and $tietue.luokka = nimisana) then
+  if ($tietue.perusmuoto in <"nano", "älä"> and $tietue.luokka = nimisana) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
@@ -224,6 +224,10 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.jatko = <rakentaa> and $tietue.perusmuoto matches ".*ääntää") then
     $tietue.jatko := <kääntää>;
+  end;
+
+  if ($tietue.perusmuoto in <"kartesiolainen", "keynesiläinen">) then
+    $tietue.luokka := nimi_laatusana;
   end;
 
 #  if ($tietue.luokka = lukusana) then

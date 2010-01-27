@@ -125,6 +125,7 @@ Hanko
 hapatus
 hapettuma
 hapetus
+Harju
 harrastua
 Harri
 harventuma
@@ -201,12 +202,14 @@ jakauma
 Jalasjärvi
 Jalo
 jalokivi
+Jami
 jaotus
 Japani
 japaninmispeli
 jatkuvalämmitteinen
 jengiläinen
 Jokelainen
+joukkoitsemurha
 jousitus
 Jukka
 julkishallinto
@@ -504,6 +507,7 @@ lyönti
 lämmitys
 länsisaksalainen
 Länsi-Turunmaa
+Lääkelaitos
 Maa
 maahanmuutto
 maahantuoja
@@ -573,6 +577,7 @@ niukentaa
 Niva
 Norja
 nousema
+Nurmi
 Nurmijärvi
 Nurminen
 näkymä
@@ -588,6 +593,7 @@ oikeistolainen
 oikeus
 Oiva
 oivallinen
+olympialainen
 omaisuus
 omanlainen
 opettajainen
@@ -628,6 +634,7 @@ piirros
 Pinja
 pinttymä
 Pirkkalainen
+Pirttimäki
 pirulainen
 pito
 pitoisuus
@@ -735,6 +742,7 @@ Salo
 Sampo
 sanoitus
 sanoma
+Santahamina
 saostuma
 sattuma
 Satu
@@ -825,6 +833,7 @@ tehtaalainen
 teloitus
 teollinen
 teollisuus
+teratavu
 Terho
 Terttu
 teräväpiirtotelevisio
