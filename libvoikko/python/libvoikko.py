@@ -278,7 +278,7 @@ class Voikko:
 		i = 0
 		while bool(cDicts[i]):
 			cDict = cDicts[i]
-			variant = self.lib.voikko_dict_variant(cDict)
+			variant = unicode(self.lib.voikko_dict_variant(cDict), "ASCII")
 			description = unicode(self.lib.voikko_dict_description(cDict), "UTF-8")
 			dicts.append(Dictionary(variant, description))
 			i = i + 1
