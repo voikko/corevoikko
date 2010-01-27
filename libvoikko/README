@@ -42,6 +42,7 @@ Features
    based API.
  - String tokenizer and sentence splitter.
  - Morphological analyzer.
+ - All functionality is made available through C and Python APIs.
 
 Documentation for using the library can be found from header file voikko.h.
 
@@ -49,7 +50,8 @@ Documentation for using the library can be found from header file voikko.h.
 Build requirements
 ==================
 
-C++ compiler (GCC) and Python must be available in order to build this library.
+C++ compiler (GCC) and Python (version 2.3 or later but not version 3)
+must be available in order to build this library.
 
 
 Runtime requirements
@@ -65,6 +67,9 @@ of the library may work without Suomi-malaga, this mode of operation is
 not tested and not guaranteed to behave consistently across minor releases
 of the library.
 
+Python bindings work with Python version 2.5 or later. To use them with
+Python 3 or later the module file (libvoikko.py) must first be converted
+using the "2to3" utility from Python distribution.
 
 Search order for dictionary files
 =================================

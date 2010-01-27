@@ -1,3 +1,6 @@
+2010-01-27 Harri Pitkänen <hatapitk@iki.fi>
+	* Fix Python bindings to work with Python 3.
+
 2010-01-02 Harri Pitkänen <hatapitk@iki.fi>
 	* Remove dependency on glib.
 
