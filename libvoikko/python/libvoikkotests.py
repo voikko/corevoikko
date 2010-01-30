@@ -55,6 +55,15 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(d1 < d2)
 		self.failUnless(d2 < d3)
 	
+	def testDictionaryHashCodeWorks(self):
+		d1 = libvoikko.Dictionary("a", u"b")
+		d2 = libvoikko.Dictionary("a", u"c")
+		d3 = libvoikko.Dictionary("c", u"b")
+		d4 = libvoikko.Dictionary("a", u"b")
+		self.assertNotEqual(hash(d1), hash(d2))
+		self.assertNotEqual(hash(d1), hash(d3))
+		self.assertEqual(hash(d1), hash(d4))
+	
 	def testListDicts(self):
 		self.voikko.terminate()
 		uninitedDicts = self.voikko.listDicts()

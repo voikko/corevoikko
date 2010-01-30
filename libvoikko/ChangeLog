@@ -1,3 +1,6 @@
+2010-01-30 Harri Pitkänen <hatapitk@iki.fi>
+	* Python interface: Make Dictionary objects hashable.
+
 2010-01-27 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix Python bindings to work with Python 3.
 

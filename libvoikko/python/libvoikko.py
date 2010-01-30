@@ -77,7 +77,9 @@ class Dictionary:
 		return isinstance(other, Dictionary) and \
 		       self.variant == other.variant and \
 		       self.description == other.description
-	# FIXME: implement __hash__
+	
+	def __hash__(self):
+		return hash(self.variant) ^ hash(self.description)
 
 class Token:
 	"""Represents a token in tokenized natural language text."""
