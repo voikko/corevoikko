@@ -1,6 +1,6 @@
 /* @licstart  The following is the entire license notice for the Javascript code in this page.
  *
- * Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
+ * Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
  *
  * The Javascript code in this page is free software: you can
  * redistribute it and/or modify it under the terms of the GNU
@@ -38,7 +38,7 @@ function wordInfoReceived(html) {
 
 function wordClicked(evt) {
   var word = $(this).text();
-  $.get("/wordinfo", {q: word}, wordInfoReceived, "html");
+  $.get("wordinfo", {q: word}, wordInfoReceived, "html");
 }
 
 function gErrorClicked(evt) {
@@ -83,7 +83,7 @@ function clearProgressMessage() {
 function requestUpdate() {
   lastUpdateTimerId = null;
   var text = $("#input").val();
-  $.get("/spell", {q: text}, updateReceived, "html");
+  $.get("spell", {q: text}, updateReceived, "html");
 }
 
 function inputChanged() {
