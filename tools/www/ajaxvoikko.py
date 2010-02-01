@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 # Web server that provides Ajax interface for using Voikko.
 # Requires Python version 2.5 or newer and Python interface to libvoikko.
 
@@ -88,6 +88,10 @@ MOODS = {
 }
 
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
+
+"""Maximum number of bytes allowed in incoming POST requests"""
+MAX_DOCUMENT_BYTES = 50000
+
 
 def fromMapIfPossible(key, valueMap):
 	if key in valueMap:
@@ -278,9 +282,6 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
 		if self.serveFiles():
 			return
-		elif self.path.startswith("/spell?q="):
-			query = unicode(unquote_plus(self.path[9:]), "UTF-8")
-			self.sendHtmlPage(spell(query), "text/html")
 		elif self.path.startswith("/wordinfo?q="):
 			query = unicode(unquote_plus(self.path[12:]), "UTF-8")
 			self.sendHtmlPage(wordInfo(query), "text/html")
@@ -288,6 +289,16 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 			query = unicode(unquote_plus(self.path[17:]), "UTF-8")
 			wid = int(query)
 			self.serveUrl(WORD_INFO_URL + `wid`)
+		else:
+			self.send_response(404)
+			self.end_headers()
+	
+	def do_POST(self):
+		if self.path.startswith("/spell"):
+			contentLength = int(self.headers.getheader('content-length'))
+			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
+			query = unicode(unquote_plus(queryData), "UTF-8")
+			self.sendHtmlPage(spell(query), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()

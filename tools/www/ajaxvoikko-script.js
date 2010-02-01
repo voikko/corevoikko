@@ -48,15 +48,14 @@ function gErrorClicked(evt) {
   };
   var outerElement = $(this).parent()
   var original = $("<span />").text(outerElement.find(".gErrorInner").text());
-  var explanation = outerElement.attr("errortext");
-  var html = "<div>... " + original.html() + " ...<br />"
-             + explanation + "</div>";
-  $(html).dialog(options).show();
-}
-
-function buildGrammarError(outerElement) {
-  var content = outerElement.html();
-  outerElement.html("*<span class='gErrorInner'>" + html + "</span>");
+  var errorText = outerElement.attr("errortext");
+  var divElement = $("<div />");
+  divElement.append($("<span>... </span>"));
+  divElement.append(original);
+  divElement.append($("<span> ...</span>"));
+  divElement.append($("<br />"));
+  divElement.append($("<span />").text(errorText));
+  divElement.dialog(options).show();
 }
 
 function updateReceived(html) {
@@ -82,8 +81,8 @@ function clearProgressMessage() {
 
 function requestUpdate() {
   lastUpdateTimerId = null;
-  var text = $("#input").val();
-  $.get("spell", {q: text}, updateReceived, "html");
+  var textContent = $("#input").val();
+  $.post("spell", textContent, updateReceived, "html");
 }
 
 function inputChanged() {
@@ -114,8 +113,16 @@ function keyUpInInput(evt) {
   inputChanged();
 }
 
-google.load("jquery", "1.3.2");
+function clickInInput(evt) {
+  if (evt.button == 1) {
+    // middle mouse button (paste selection in X)
+    inputChanged();
+  }
+}
+
+google.load("jquery", "1.4.1");
 google.load("jqueryui", "1.7.2");
 google.setOnLoadCallback(function() { jQuery(function($) {
   $("#input").keyup(keyUpInInput);
+  $("#input").click(clickInInput);
 });});
