@@ -125,4 +125,6 @@ google.load("jqueryui", "1.7.2");
 google.setOnLoadCallback(function() { jQuery(function($) {
   $("#input").keyup(keyUpInInput);
   $("#input").click(clickInInput);
+  $("#input").bind("cut", inputChanged);
+  $("#input").bind("paste", inputChanged);
 });});
