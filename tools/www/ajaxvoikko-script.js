@@ -19,13 +19,15 @@
  * @licend  The above is the entire license notice for the Javascript code in this page.
  */
 
+var AJAX_HANDLER_URL="";
+
 function joukahainen(wid) {
   var options = {
     title: "Joukahainen",
-    width: "300",
-    height: "200"
+    width: 600,
+    height: 400
   }
-  var frame = $("<div></div>").load("joukahainen?wid=" + wid + " .main");
+  var frame = $("<div></div>").load(AJAX_HANDLER_URL + "joukahainen?wid=" + wid + " .main");
   frame.dialog(options).show();
 }
 
@@ -38,7 +40,7 @@ function wordInfoReceived(html) {
 
 function wordClicked(evt) {
   var word = $(this).text();
-  $.get("wordinfo", {q: word}, wordInfoReceived, "html");
+  $.get(AJAX_HANDLER_URL + "wordinfo", {q: word}, wordInfoReceived, "html");
 }
 
 function gErrorClicked(evt) {
@@ -82,7 +84,7 @@ function clearProgressMessage() {
 function requestUpdate() {
   lastUpdateTimerId = null;
   var textContent = $("#input").val();
-  $.post("spell", textContent, updateReceived, "html");
+  $.post(AJAX_HANDLER_URL + "spell", textContent, updateReceived, "html");
 }
 
 function inputChanged() {

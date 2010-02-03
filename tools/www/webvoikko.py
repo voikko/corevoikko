@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 # Web interface for Finnish linguistic tools based on Voikko
 
 # This program is free software: you can redistribute it and/or modify
@@ -27,10 +27,9 @@ import xml.sax.saxutils
 
 # Hyphenator and spell checker commands
 HYPHCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkohyphenate ignore_dot=1 '
-SPELLCOMMAND = 'LC_CTYPE="fi_FI.UTF-8" voikkospell -s -t ignore_dot=1'
 POFILTERCOMMAND = 'pofilter'
 
-# Maximum input length for hyphenator and spell checker interfaces (in bytes)
+# Maximum input length for hyphenator interface (in bytes)
 MAX_INPUT_LENGTH = 20000
 
 # Maximum file size for po file checking (in kbytes)
@@ -78,36 +77,6 @@ def _hyphenate_wordlist(wordlist, options):
 	for hword in rawlist:
 		hyphenatedlist.append(_decode_if_valid(hword))
 	return hyphenatedlist #FIXME: last item is an extra empty string
-
-def _spell_wordlist(wordlist):
-	"""Checks the spelling of given list of words. Returns a list of results
-	where None corresponds to correctly spelled word and list of suggestions
-	(possibly empty) is given for incorrectly spelled words."""
-	speller = subprocess.Popen(SPELLCOMMAND, shell = True, stdin = subprocess.PIPE,
-	                           stdout = subprocess.PIPE, close_fds = True)
-	for word in wordlist:
-		if len(word) > 100: speller.stdin.write(u'YLIPITKÄSANA\n'.encode('UTF-8'))
-		else: speller.stdin.write(word.encode('UTF-8') + '\n')
-	(out, err) = speller.communicate()
-	rawlist = out.split('\n')
-	spellresults = []
-	i = 0
-	while i < len(rawlist):
-		if len(rawlist[i]) == 0: break
-		if rawlist[i] == 'C':
-			spellresults.append(None)
-			i = i + 1
-			continue
-		else:
-			suggestions = []
-			i = i + 1
-			entry = _decode_if_valid(rawlist[i])
-			while entry.startswith(u'S'):
-				suggestions.append(entry[3:])
-				i = i + 1
-				entry = _decode_if_valid(rawlist[i])
-			spellresults.append(suggestions)
-	return spellresults
 
 def _split_words(text):
 	"""Splits the given text to words. Returns a list of words and list
@@ -248,10 +217,12 @@ def spell(req, spellstring = None):
  <head>
   <title>Voikko-oikolukija</title>
   <link rel="stylesheet" type="text/css" href="../style.css" />
-  <style type="text/css">
-    span.virhe { color: red; }
-    span.virhe_ehdotukset { color: red; text-decoration: underline; }
-  </style>
+  <link type="text/css"
+   href="http://jqueryui.com/latest/themes/base/ui.all.css"
+   rel="stylesheet" />
+  <link type="text/css" href="../ajaxvoikko-style.css" rel="stylesheet" />
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="../ajaxvoikko-script.js"></script>
  </head>
  <body>
  <div class="topbar">
@@ -260,38 +231,15 @@ def spell(req, spellstring = None):
   <div class="clear"></div>
   </div>
  <div class="main">
+  <p>Kirjoita teksti tähän:</p>
+  <textarea id="input" rows="5"></textarea>
+  <div id="progress"></div>
+  <p>Lue analyysin tulokset alta. Lisää tietoja sanoista tai virheistä saat hiirellä napsauttamalla.</p>
+  <div id="result"></div>
+ </div>
+ </body>
+</html>
  ''')
-	
-	if spellstring != None and len(spellstring) > 0 and len(spellstring) < MAX_INPUT_LENGTH:
-		(words, separators) = _split_words(_decode_form_value(spellstring))
-		spellresults = _spell_wordlist(words)
-		_write(req, u'<p>Alla antamasi teksti oikoluettuna. Virheelliset sanat on ' \
-		          + u'värjätty punaiseksi. Punaisella värillä alleviivatuille sanoille ' \
-			+ u'on saatavilla korjausehdotuksia, jotka tulevat näkyviin kun hiiren ' \
-			+ u'osoittimen siirtää sanan päälle.</p>\n')
-		_write(req, u'<pre style="border: 1px solid black">')
-		_write(req, _escape_html(separators[0]))
-		for i in range(0, len(separators) - 1):
-			if spellresults[i] == None or len(words[i]) == 1:
-				_write(req, _escape_html(words[i]))
-			elif len(spellresults[i]) == 0:
-				_write(req, u'<span class="virhe">' \
-				       + _escape_html(words[i]) + u'</span>')
-			else:
-				_write(req, u'<span class="virhe_ehdotukset" title="')
-				_write(req, _escape_html(reduce(lambda x, y: u"%s; %s" \
-				       % (x, y), spellresults[i])))
-				_write(req, u'">' + _escape_html(words[i]) + u'</span>')
-			_write(req, _escape_html(separators[i + 1]))
-		_write(req, u'</pre>\n')
-	
-	_write(req, u'<form method="post" action="spell">\n')
-	_write(req, u'<p>Kirjoita alla olevaan kenttään teksti, jonka haluat oikolukea, ja\n')
-	_write(req, u'paina "Oikolue".</p>\n')
-	_write(req, u'<p><textarea name="spellstring" rows="30" cols="90"></textarea></p>\n')
-	_write(req, u'<p><input type="submit" value="Oikolue" /></p>\n')
-	_write(req, u'</form>\n')
-	_write(req, u'</div></body></html>\n')
 
 def _poErrorHeader(headerLine):
 	"""Returns formatted version of pofilter output describing the spelling
@@ -432,7 +380,7 @@ def index(req, spellstring = None):
  kannattaa huomioida:</p>
  <ul>
   <li>Oikoluettavien ja tavutettavien sanojen pituus on rajattu sataan merkkiin, ja tekstin
-   yhteispituus %i merkkiin.</li>
+   yhteispituuttakin rajoitetaan.</li>
   <li>Ohjelma käsittelee vain suomenkielistä tekstiä. Älä yritä tavuttaa tai etenkään oikolukea muun
    kielisiä tekstejä, tämä vain kuluttaa turhaan palvelimen prosessoriaikaa.</li>
   <li>Palveluun lähetettäviä tekstejä ei tallenneta mihinkään, joten periaatteessa kukaan ulkopuolinen
@@ -440,11 +388,10 @@ def index(req, spellstring = None):
    tätä turvaa jonkin verran, joten ei ole suositeltavaa lähettää oikoluettavaksi tai tavutettavaksi
    mitään kovin arkaluontoista materiaalia. Kaikilta osin palvelun käyttö tapahtuu käyttäjän omalla
    vastuulla.</li>
+  <li>Oikolukupalvelu ei toimi ilman JavaScriptiä.</li>
   <li>Palvelua ei ole tarkoitettu korvaamaan tavallista oikoluku- tai tavutusohjelmaa.</li>
-  <li>Palvelussa käytettävä versio Voikosta ei yleensä ole ns. "vakaa versio". Sanasto generoidaan
-   automaattisesti kerran vuorokaudessa Joukahaisen sanastotietokannasta, ja muita komponentteja
-   päivitetään myös suhteellisen usein. Koska kyseessä on testiversio, se saattaa sisältää virheitä,
-   joita vakaissa versioissa ei ole.
+  <li>Palvelussa käytettävä versio Voikosta ei yleensä ole ns. "vakaa versio". Koska kyseessä on
+   testiversio, se saattaa sisältää virheitä, joita vakaissa versioissa ei ole.
    Havaituista virheistä voi ilmoittaa sähköpostitse osoitteeseen hatapitk@iki.fi.</li>
  </ul>
  <ul>
@@ -461,4 +408,4 @@ def index(req, spellstring = None):
  </div>
  </body>
  </html>
- ''' % MAX_INPUT_LENGTH)
+ ''')
