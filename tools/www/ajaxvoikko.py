@@ -126,6 +126,17 @@ def markTrailingDots(tokenList):
 		i = i + 1
 	return newList
 
+def grammarErrorDetails(grammarError):
+	errorCode = grammarError.errorCode
+	errorText = _voikko.grammarErrorExplanation(errorCode, "fi")
+	if len(grammarError.suggestions) == 0:
+		return errorText
+	else:
+		if not errorText.endswith(u"."):
+			errorText = errorText + u"."
+		return errorText + u' Ehkäpä ennemminkin "...' + \
+		       u'...", "...'.join(grammarError.suggestions) + u'..."?'
+
 def spell(text):
 	tokens = markTrailingDots(_voikko.tokens(text))
 	gErrors = nonOverlappingGrammarErrorsByStartPosition(text)
@@ -135,8 +146,7 @@ def spell(text):
 	for token in tokens:
 		if position in gErrors:
 			currentGError = gErrors[position]
-			errorCode = currentGError.errorCode
-			errorText = _voikko.grammarErrorExplanation(errorCode, "fi")
+			errorText = grammarErrorDetails(currentGError)
 			res = res + u"<span class='gErrorOuter' " \
 			      + u"errortext='" + escapeAttr(errorText) + u"'>"
 		if token.tokenType == Token.WORD:
