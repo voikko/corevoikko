@@ -24,6 +24,7 @@ from BaseHTTPServer import HTTPServer
 from urllib import unquote_plus
 from urllib import urlopen
 from cgi import escape
+from signal import signal, SIGHUP
 from libvoikko import Voikko
 from libvoikko import Token
 import codecs
@@ -320,10 +321,25 @@ def runServer(port):
 	except KeyboardInterrupt:
 		server.socket.close()
 
-if __name__ == '__main__':
-	_voikko = Voikko()
+def initVoikko():
 	_voikko.init(variant='standard+debug')
 	_voikko.setIgnoreDot(False)
 	_voikko.setAcceptUnfinishedParagraphsInGc(True)
-	runServer(8080)
+
+def uninitVoikko():
 	_voikko.terminate()
+
+def reinitVoikko():
+	uninitVoikko()
+	initVoikko()
+
+def sighupHandler(signum, frame):
+	print u"Received SIGHUP, reloading vocabulary files."
+	reinitVoikko()
+
+if __name__ == '__main__':
+	_voikko = Voikko()
+	initVoikko()
+	signal(SIGHUP, sighupHandler)
+	runServer(8080)
+	uninitVoikko()
