@@ -218,8 +218,19 @@ provides useful defaults for `wcheck-language-data'.")
 ;;;###autoload
 (defcustom wcheck-language ""
   "Default language for `wcheck-mode'.
-The default language used by new buffers. For buffer-local
-languages use the command `\\[wcheck-change-language]'."
+
+Normally the global value defines the language for new buffers.
+If a buffer-local value exists it is used instead. This variable
+becomes automatically buffer-local when `wcheck-mode' is turned
+on in a buffer, so changing the global value does not affect
+buffers which already have `wcheck-mode' turned on.
+
+User is free to set this variable directly (e.g., in programs)
+but in interactive use it is usually better to use the command
+`\\[wcheck-change-language]' instead. The command can change
+language immediately while `wcheck-mode' is turned on, whereas
+changing just the value of this variable takes effect only when
+`wcheck-mode' is turned on next time."
   :type '(string :tag "Default language")
   :group 'wcheck)
 (make-variable-buffer-local 'wcheck-language)
