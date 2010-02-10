@@ -1,3 +1,6 @@
+2010-02-10 Harri Pitkänen <hatapitk@iki.fi>
+	* Add virtual destructors for Speller and Hyphenator.
+
 2010-01-30 Harri Pitkänen <hatapitk@iki.fi>
 	* Python interface: Make Dictionary objects hashable.
 

@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -84,6 +84,8 @@ class Hyphenator {
 		 * at the end of a word is a part of that word. Default: false.
 		 */
 		virtual void setIgnoreDot(bool ignoreDot) = 0;
+		
+		virtual ~Hyphenator();
 };
 
 } }

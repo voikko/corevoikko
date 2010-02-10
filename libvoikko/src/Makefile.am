@@ -3,6 +3,7 @@ AUTOMAKE_OPTIONS=subdir-objects
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = \
     spellchecker/spell.cpp spellchecker/suggestions.cpp \
+    spellchecker/Speller.cpp \
     spellchecker/SpellWithPriority.cpp \
     spellchecker/SpellUtils.cpp \
     spellchecker/AnalyzerToSpellerAdapter.cpp \
@@ -45,6 +46,7 @@ libvoikko_la_SOURCES = \
     setup/DictionaryException.cpp setup/interface.cpp \
     hyphenator/interface.cpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.cpp \
+    hyphenator/Hyphenator.cpp \
     hyphenator/HyphenatorFactory.cpp \
     character/charset.cpp \
     tokenizer/tokenizer.cpp sentence/sentence.cpp \
