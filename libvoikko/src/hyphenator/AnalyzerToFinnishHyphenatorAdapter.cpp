@@ -18,6 +18,7 @@
 
 #include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
 #include "voikko_defs.h"
+#include "character/charset.hpp"
 #include "utils/utils.hpp"
 #include <cwctype>
 
@@ -346,7 +347,7 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 	}
 	
 	for (i = 0; i < nchars; i++) {
-		wordCopy[i] = towlower(word[i]);
+		wordCopy[i] = simpleLower(word[i]);
 	}
 	wordCopy[nchars] = '\0';
 	

@@ -66,12 +66,12 @@ spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 		
 		/* Leading part ends with the same VC pair as the trailing part starts ('pop-opisto') */
 		if (leading_len >= 2 && len - leading_len >= 3) {
-			wint_t vctest1 = towlower(word[leading_len - 2]);
-			wint_t vctest2 = towlower(word[leading_len - 1]);
+			wchar_t vctest1 = simpleLower(word[leading_len - 2]);
+			wchar_t vctest2 = simpleLower(word[leading_len - 1]);
 			if (wcschr(VOIKKO_VOWELS, vctest1) &&
 			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
-			    towlower(word[leading_len + 1]) == vctest1 &&
-			    towlower(word[leading_len + 2]) == vctest2) {
+			    simpleLower(word[leading_len + 1]) == vctest1 &&
+			    simpleLower(word[leading_len + 2]) == vctest2) {
 				spellresult spres = voikkoOptions->speller->spell(buffer, len - 1);
 				if (spres != SPELL_FAILED && (result == SPELL_FAILED || result > spres)) {
 					delete[] buffer;
@@ -261,7 +261,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	wchar_t * buffer = new wchar_t[nchars + 1];
 
 	for (size_t i = 0; i < nchars; i++) {
-		buffer[i] = towlower(nword[i]);
+		buffer[i] = simpleLower(nword[i]);
 	}
 	buffer[nchars] = L'\0';
 	
@@ -278,7 +278,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS ||
 	    (caps == CT_ALL_UPPER && !voikko_options.accept_all_uppercase)) {
 		wcsncpy(buffer, nword, nchars);
-		buffer[0] = towlower(buffer[0]);
+		buffer[0] = simpleLower(buffer[0]);
 		if (voikko_options.accept_missing_hyphens) {
 			sres = voikko_do_spell_ignore_hyphens(&voikko_options, buffer, nchars);
 		}

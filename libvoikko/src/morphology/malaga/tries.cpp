@@ -22,9 +22,10 @@
 
 /* Includes. ================================================================*/
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
+#include "character/charset.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/tries.hpp"
@@ -110,7 +111,8 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
     r.contents = (int_t *) (r.subnodes + *r.subnode_count);
 
     /* Perform binary search for subnode with given key. */
-    u_int_t c = towlower(utf8::unchecked::next(*input));
+    wchar_t inputChar = utf8::unchecked::next(*input);
+    wint_t c = simpleLower(inputChar);
     *node_index = -1;
     lower = 0;
     upper = *r.subnode_count - 1;

@@ -18,6 +18,7 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorSwap.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
+#include "character/charset.hpp"
 #include <cwchar>
 #include <cwctype>
 
@@ -38,15 +39,15 @@ void SuggestionGeneratorSwap::generate(voikko_options_t * voikkoOptions, Suggest
 		for (size_t j = i + 1; j < s->getWordLength() && !s->shouldAbort(); j++) {
 			if (j - i > max_distance) break;
 			/* do not suggest the same word */
-			if (towlower(buffer[i]) == towlower(buffer[j])) continue;
+			if (simpleLower(buffer[i]) == simpleLower(buffer[j])) continue;
 			/* do not suggest swapping front and back vowels that have already
 			   been tested earlier */
 			int k;
 			for (k = 0; k < 3; k++) {
-				if ((towlower(buffer[i]) == (wint_t) BACK_VOWELS[k] &&
-				     towlower(buffer[j]) == (wint_t) FRONT_VOWELS[k]) ||
-				    (towlower(buffer[i]) == (wint_t) FRONT_VOWELS[k] &&
-				     towlower(buffer[j]) == (wint_t) BACK_VOWELS[k])) break;
+				if ((simpleLower(buffer[i]) == BACK_VOWELS[k] &&
+				     simpleLower(buffer[j]) == FRONT_VOWELS[k]) ||
+				    (simpleLower(buffer[i]) == FRONT_VOWELS[k] &&
+				     simpleLower(buffer[j]) == BACK_VOWELS[k])) break;
 			}
 			if (k < 3) continue;
 			buffer[i] = s->getWord()[j];

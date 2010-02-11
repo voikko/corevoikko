@@ -18,6 +18,7 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 #include "spellchecker/SpellWithPriority.hpp"
+#include "character/charset.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cwchar>
@@ -81,7 +82,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(voikko_options_t * voikkoOp
 					newsugg[i] = towupper(newsugg[i]);
 				}
 				else if (structure[j] == L'p' || structure[j] == L'q') {
-					newsugg[i] = towlower(newsugg[i]);
+					newsugg[i] = simpleLower(newsugg[i]);
 				}
 				j++;
 			}

@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "utils/utils.hpp"
 #include "setup/setup.hpp"
+#include "character/charset.hpp"
 #include <stdlib.h>
 #include <string.h>
 #include <cwctype>
@@ -217,7 +218,7 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
 			return; /* Do nothing */
 		case CT_ALL_LOWER:
 			for (size_t i = 0; i < nchars; i++) {
-				word[i] = towlower(word[i]);
+				word[i] = simpleLower(word[i]);
 			}
 			return;
 		case CT_ALL_UPPER:
@@ -228,7 +229,7 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
 		case CT_FIRST_UPPER:
 			word[0] = towupper(word[0]);
 			for (size_t i = 1; i < nchars; i++) {
-				word[i] = towlower(word[i]);
+				word[i] = simpleLower(word[i]);
 			}
 			return;
 	}

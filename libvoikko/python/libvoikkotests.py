@@ -191,6 +191,10 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setAcceptFirstUppercase(True)
 		self.failUnless(self.voikko.spell("Kissa"))
 	
+	def testUppreCaseScandinavianLetters(self):
+		self.failUnless(self.voikko.spell(u"Äiti"))
+		self.failIf(self.voikko.spell(u"Ääiti"))
+
 	def testAcceptAllUppercase(self):
 		self.voikko.setIgnoreUppercase(False)
 		self.voikko.setAcceptAllUppercase(False)

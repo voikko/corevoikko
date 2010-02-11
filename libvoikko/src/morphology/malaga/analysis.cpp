@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "character/charset.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
@@ -51,7 +52,7 @@ void preprocess_input(char * input) {
 
   while (*input_p != EOS) {
     u_int_t code = utf8::unchecked::next(input_p);
-    output_p = utf8::unchecked::append(towlower(code), output_p);
+    output_p = utf8::unchecked::append(simpleLower(code), output_p);
   }
 
   *output_p = EOS;

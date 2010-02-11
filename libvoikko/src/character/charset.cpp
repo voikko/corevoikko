@@ -295,4 +295,23 @@ void voikko_cset_reformat(const wchar_t * orig, size_t orig_len, wchar_t ** modi
 	}
 }
 
+wchar_t simpleLower(wchar_t input) {
+	// Basic Latin
+	if (input >= 0x41 && input <= 0x5A) {
+		// A-Z
+		return input + 0x20;
+	}
+	// Latin-1 Supplement
+	if (input >= 0xC0 && input <= 0xD6) {
+		// À-Ö
+		return input + 0x20;
+	}
+	if (input >= 0xD8 && input <= 0xDD) {
+		// Ø-Ý
+		return input + 0x20;
+	}
+	// TODO: other Unicode character ranges are not yet mapped
+	return input;
+}
+
 }
