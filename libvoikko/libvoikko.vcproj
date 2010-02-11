@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="8,00"
 	Name="libvoikko"
 	ProjectGUID="{0C09E6AA-1799-416B-8DCA-0DF396B29590}"
 	RootNamespace="libvoikko"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -40,7 +39,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\voikko\lib\glib-2.0\include&quot;;&quot;C:\voikko\include\glib-2.0&quot;;c:\svn\voikko\trunk\libvoikko\src"
+				AdditionalIncludeDirectories="&quot;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include&quot;;src"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBVOIKKO_EXPORTS;DICTIONARY_PATH=\&quot;C:\\voikko\\suomimalaga\&quot;"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -62,10 +61,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="glib-2.0.lib"
-				OutputFile="$(OutDir)\libvoikko-1.dll"
+				AdditionalDependencies="advapi32.lib"
+				OutputFile="$(OutDir)\$(ProjectName)-1.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="C:\voikko\lib"
+				AdditionalLibraryDirectories="&quot;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -87,6 +86,9 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -115,13 +117,13 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;C:\msys\1.0\glib\lib\glib-2.0\include&quot;;&quot;C:\msys\1.0\glib\include\glib-2.0&quot;;C:\svn\voikko\trunk\libvoikko\src"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBVOIKKO_EXPORTS"
-				RuntimeLibrary="2"
+				AdditionalIncludeDirectories="&quot;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include&quot;;src"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBVOIKKO_EXPORTS;DICTIONARY_PATH=\&quot;C:\\voikko\\suomimalaga\&quot;"
+				RuntimeLibrary="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="3"
+				DebugInformationFormat="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -134,8 +136,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="advapi32.lib"
+				OutputFile="$(OutDir)\$(ProjectName)-1.dll"
 				LinkIncremental="2"
-				GenerateDebugInformation="true"
+				AdditionalLibraryDirectories="&quot;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Lib&quot;"
+				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -160,6 +165,9 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
+				Name="VCWebDeploymentTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -173,11 +181,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\src\morphology\malaga\analysis.hpp"
+				RelativePath=".\src\morphology\Analysis.hpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\morphology\Analysis.hpp"
+				RelativePath=".\src\morphology\malaga\analysis.hpp"
 				>
 			</File>
 			<File
@@ -190,6 +198,14 @@
 			</File>
 			<File
 				RelativePath=".\src\morphology\AnalyzerFactory.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\hyphenator\AnalyzerToFinnishHyphenatorAdapter.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\spellchecker\AnalyzerToSpellerAdapter.hpp"
 				>
 			</File>
 			<File
@@ -217,15 +233,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\utf8\checked.hpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\grammar\checks.hpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\config.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\config.h"
+				RelativePath=".\src\utf8\core.hpp"
 				>
 			</File>
 			<File
@@ -249,11 +265,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\hyphenator\hyphenator.hpp"
+				RelativePath=".\src\hyphenator\Hyphenator.hpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\morphology\malaga\input.hpp"
+				RelativePath=".\src\hyphenator\HyphenatorFactory.hpp"
 				>
 			</File>
 			<File
@@ -281,6 +297,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\morphology\malaga\MalagaState.hpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\grammar\Paragraph.hpp"
 				>
 			</File>
@@ -293,19 +313,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\porting.h"
-				>
-			</File>
-			<File
 				RelativePath=".\src\morphology\malaga\rule_type.hpp"
 				>
 			</File>
 			<File
 				RelativePath=".\src\morphology\malaga\rules.hpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\morphology\malaga\scanner.hpp"
 				>
 			</File>
 			<File
@@ -318,6 +330,14 @@
 			</File>
 			<File
 				RelativePath=".\src\spellchecker\spell.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\spellchecker\Speller.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\spellchecker\SpellerFactory.hpp"
 				>
 			</File>
 			<File
@@ -409,23 +429,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\utf8\unchecked.hpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\utf8\utf8.hpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\utils\utils.hpp"
 				>
 			</File>
 			<File
-				RelativePath=".\src\morphology\malaga\value_parser.hpp"
-				>
-			</File>
-			<File
 				RelativePath=".\src\morphology\malaga\values.hpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\voikko.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\voikko_defs.h"
 				>
 			</File>
 		</Filter>
@@ -441,22 +457,6 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\src\grammar\analysis.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\analysis-grammar.obj"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\src\morphology\malaga\analysis.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\src\morphology\Analysis.cpp"
 				>
 				<FileConfiguration
@@ -464,9 +464,45 @@
 					>
 					<Tool
 						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\analysis-morphology.obj"
+						ObjectFile="$(IntDir)\$(InputName)2.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)2.xdc"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)2.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)2.xdc"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\src\morphology\malaga\analysis.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\src\grammar\analysis.cpp"
+				>
 			</File>
 			<File
 				RelativePath=".\src\morphology\Analyzer.cpp"
@@ -474,6 +510,14 @@
 			</File>
 			<File
 				RelativePath=".\src\morphology\AnalyzerFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\hyphenator\AnalyzerToFinnishHyphenatorAdapter.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\spellchecker\AnalyzerToSpellerAdapter.cpp"
 				>
 			</File>
 			<File
@@ -529,11 +573,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\hyphenator\hyphenator.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\morphology\malaga\input.cpp"
+				RelativePath=".\src\hyphenator\HyphenatorFactory.cpp"
 				>
 			</File>
 			<File
@@ -544,9 +584,23 @@
 					>
 					<Tool
 						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\interface-setup.obj"
+						ObjectFile="$(IntDir)\$(InputName)2.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)2.xdc"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)2.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)2.xdc"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\src\hyphenator\interface.cpp"
+				>
 			</File>
 			<File
 				RelativePath=".\src\morphology\interface.cpp"
@@ -556,7 +610,17 @@
 					>
 					<Tool
 						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\interface-morphology.obj"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 					/>
 				</FileConfiguration>
 			</File>
@@ -581,6 +645,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\src\morphology\malaga\MalagaState.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\src\grammar\Paragraph.cpp"
 				>
 			</File>
@@ -597,23 +665,29 @@
 				>
 			</File>
 			<File
-				RelativePath=".\src\morphology\malaga\scanner.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\grammar\Sentence.cpp"
+				RelativePath=".\src\sentence\sentence.cpp"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
-						ObjectFile="$(IntDir)\sentence-grammar.obj"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ObjectFile="$(IntDir)\$(InputName)1.obj"
+						XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"
 					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\src\sentence\sentence.cpp"
+				RelativePath=".\src\grammar\Sentence.cpp"
 				>
 			</File>
 			<File
@@ -622,6 +696,10 @@
 			</File>
 			<File
 				RelativePath=".\src\spellchecker\spell.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\spellchecker\SpellerFactory.cpp"
 				>
 			</File>
 			<File
@@ -710,10 +788,6 @@
 			</File>
 			<File
 				RelativePath=".\src\utils\utils.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\morphology\malaga\value_parser.cpp"
 				>
 			</File>
 			<File
