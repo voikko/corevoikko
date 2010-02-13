@@ -63,7 +63,9 @@ program
     for spell-checking LANGUAGE. This setting is mandatory.
 
 args
-     Optional command-line argument string for the program.
+     Optional command-line arguments for the program. The VALUE
+     is a list of strings. Each string is a single argument for
+     the program.
 
 connection
     The VALUE is used to set variable `process-connection-type'
@@ -143,17 +145,17 @@ An example contents of the `wcheck-language-data' variable:
 
     ((\"suomi\"
       (program . \"/usr/bin/enchant\")
-      (args . \"-l -d fi_FI\"))
-      (syntax . my-finnish-syntax-table)
+      (args \"-l\" \"-d\" \"fi_FI\")
+      (syntax . my-finnish-syntax-table))
      (\"British English\"
       (program . \"/usr/bin/ispell\")
-      (args . \"-l -d british\")
+      (args \"-l\" \"-d\" \"british\"))
      (\"Trailing whitespace\"
       (program . \"/bin/cat\")
       (regexp-start . \"\")
       (regexp-body . \"\\\\s-+\")
       (regexp-end . \"$\")
-      (regexp-discard . \"\"))))"
+      (regexp-discard . \"\")))"
 
   :group 'wcheck
   :type
@@ -168,8 +170,18 @@ An example contents of the `wcheck-language-data' variable:
             (const :tag "Program: " :format "%t" program)
             (file :format "%v"))
       (cons :tag "Arguments" :format "%v"
-            (const :tag "Arguments: " :format "%t" args)
-            (string :format "%v"))
+            (const :format "" args)
+            (repeat :tag "Arguments"
+                    :value-to-internal
+                    (lambda (widget value)
+                      (cond ((stringp value)
+                             (split-string-and-unquote value "[ \t\n]+"))
+                            ((listp value)
+                             value)))
+                    :match (lambda (widget value)
+                             (or (listp value)
+                                 (stringp value)))
+                    (string :format "%v")))
       (cons :tag "Connection type" :format "%v"
             (const :tag "Connection type: " :format "%t" connection)
             (choice :format "%[Value Menu%] %v" :value nil
@@ -204,7 +216,7 @@ An example contents of the `wcheck-language-data' variable:
 
 
 (defconst wcheck-language-data-defaults
-  '((args . "")
+  '((args . nil)
     (connection . nil)
     (face . wcheck-default-face)
     (syntax . text-mode-syntax-table)
@@ -679,9 +691,7 @@ operation was unsuccessful."
       ;; It doesn't exist so start a new one.
       (let* ((language (wcheck-get-data :buffer buffer :language))
              (program (wcheck-query-language-data language 'program))
-             (args (split-string-and-unquote
-                    (wcheck-query-language-data language 'args t)
-                    "[ \t\n]+"))
+             (args (wcheck-query-language-data language 'args t))
              (process-connection-type
               (wcheck-query-language-data language 'connection t))
              proc)
@@ -879,16 +889,23 @@ defined in `wcheck-language-data-defaults'."
           ((eq key 'syntax)
            (if (syntax-table-p (and (boundp value)
                                     (eval value)))
-               value default-value))
+               value
+             default-value))
           ((eq key 'face)
            (if (facep value) value default-value))
           ((or (eq key 'program)
-               (eq key 'args)
                (eq key 'regexp-start)
                (eq key 'regexp-body)
                (eq key 'regexp-end)
                (eq key 'regexp-discard))
            (if (stringp value) value default-value))
+          ((eq key 'args)
+           (cond ((listp value)
+                  value)
+                 ((stringp value)
+                  ;; For backwards compatibility
+                  (split-string-and-unquote value "[ \t\n]+"))
+                 (t default-value)))
           ((or (eq key 'connection)
                (eq key 'case-fold))
            value))))
