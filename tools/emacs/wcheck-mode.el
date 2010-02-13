@@ -66,10 +66,10 @@ args
      Optional command-line argument string for the program.
 
 connection
-    The value is used to set variable `process-connection-type'
-    when starting the process for LANGUAGE. See the documentation
-    of variable `process-connection-type' for more information.
-    The default is to use a pipe for communication (nil).
+    The VALUE is used to set variable `process-connection-type'
+    when starting the process for LANGUAGE. If the VALUE is nil
+    use a pipe for communication; if it's `pty' (or t) use a PTY.
+    The default is to use a pipe (nil).
 
 face
     A symbol referring to a face which is used to mark text with
@@ -174,7 +174,10 @@ An example contents of the `wcheck-language-data' variable:
             (const :tag "Connection type: " :format "%t" connection)
             (choice :format "%[Value Menu%] %v" :value nil
                     (const :tag "pipe (nil)" nil)
-                    (const :tag "pty" pty)))
+                    (const :tag "pty" :match (lambda (widget value)
+                                               (or (eq value t)
+                                                   (eq value 'pty)))
+                           pty)))
       (cons :tag "Face" :format "%v"
             (const :tag "Face: " :format "%t" face)
             (symbol :format "%v" :value wcheck-default-face))
