@@ -73,7 +73,7 @@ connection
 
 face
     A symbol referring to a face which is used to mark text with
-    this LANGUAGE. The default value is `wcheck-default-face'.
+    this LANGUAGE. The default is `wcheck-default-face'.
 
 syntax
     VALUE is a symbol referring to an Emacs syntax table. This
@@ -119,7 +119,7 @@ regexp-discard
     the value of this option. If this regular expression matches,
     then the word is discarded and won't be sent to the external
     program. You can use this to define exceptions to the
-    previous regexp rules. The default value is
+    regexp-body match. The default value is
 
         \\`'+\\'
 
