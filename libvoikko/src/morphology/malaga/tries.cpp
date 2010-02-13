@@ -112,7 +112,7 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
 
     /* Perform binary search for subnode with given key. */
     wchar_t inputChar = utf8::unchecked::next(*input);
-    wint_t c = simpleLower(inputChar);
+    wchar_t c = simpleLower(inputChar);
     *node_index = -1;
     lower = 0;
     upper = *r.subnode_count - 1;
