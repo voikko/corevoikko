@@ -1,3 +1,9 @@
+2010-02-13 Harri Pitkänen <hatapitk@iki.fi>
+	* Increase version numbers for 2.3.1.
+
+2010-02-11 Andris Pavenis <andris.pavenis@iki.fi>
+	* Updated MSVC project file.
+
 2010-02-11 Harri Pitkänen <hatapitk@iki.fi>
 	* Replace uses of towlower with locale independent implementation.
 
