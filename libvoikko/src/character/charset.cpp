@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>,
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>,
  *                           Teemu Likonen <tlikonen@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
@@ -309,6 +309,23 @@ wchar_t simpleLower(wchar_t input) {
 	if (input >= 0xD8 && input <= 0xDD) {
 		// Ø-Ý
 		return input + 0x20;
+	}
+	// Latin Extended-A
+	if (input >= 0x0100 && input <= 0x0136 && input % 2 == 0) {
+		// Ā-Ķ
+		return input + 1;
+	}
+	if (input >= 0x0139 && input <= 0x0147 && input % 2 == 1) {
+		// Ĺ-Ň
+		return input + 1;
+	}
+	if (input >= 0x014A && input <= 0x0176 && input % 2 == 0) {
+		// Ŋ-Ŷ
+		return input + 1;
+	}
+	if (input >= 0x0179 && input <= 0x017D && input % 2 == 1) {
+		// Ź-Ž
+		return input + 1;
 	}
 	// TODO: other Unicode character ranges are not yet mapped
 	return input;
