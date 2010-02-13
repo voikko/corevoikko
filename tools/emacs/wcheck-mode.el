@@ -900,7 +900,8 @@ defined in `wcheck-language-data-defaults'."
                (eq key 'regexp-discard))
            (if (stringp value) value default-value))
           ((eq key 'args)
-           (cond ((listp value)
+           (cond ((and (listp value)
+                       (not (memq nil (mapcar #'stringp value))))
                   value)
                  ((stringp value)
                   ;; For backwards compatibility
