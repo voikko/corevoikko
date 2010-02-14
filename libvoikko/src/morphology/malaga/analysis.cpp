@@ -26,7 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/values.hpp"
@@ -36,6 +36,8 @@
 #include "morphology/malaga/analysis.hpp"
 #include "morphology/malaga/MalagaState.hpp"
 #include "utf8/utf8.hpp"
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -52,7 +54,7 @@ void preprocess_input(char * input) {
 
   while (*input_p != EOS) {
     u_int_t code = utf8::unchecked::next(input_p);
-    output_p = utf8::unchecked::append(simpleLower(code), output_p);
+    output_p = utf8::unchecked::append(SimpleChar::lower(code), output_p);
   }
 
   *output_p = EOS;

@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "utils/utils.hpp"
 #include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "spellchecker/spell.hpp"
 #include "spellchecker/SpellUtils.hpp"
 #include <cstdlib>
@@ -28,6 +29,7 @@
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::spellchecker;
+using namespace libvoikko::character;
 using namespace std;
 
 namespace libvoikko {
@@ -66,12 +68,12 @@ spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 		
 		/* Leading part ends with the same VC pair as the trailing part starts ('pop-opisto') */
 		if (leading_len >= 2 && len - leading_len >= 3) {
-			wchar_t vctest1 = simpleLower(word[leading_len - 2]);
-			wchar_t vctest2 = simpleLower(word[leading_len - 1]);
+			wchar_t vctest1 = SimpleChar::lower(word[leading_len - 2]);
+			wchar_t vctest2 = SimpleChar::lower(word[leading_len - 1]);
 			if (wcschr(VOIKKO_VOWELS, vctest1) &&
 			    wcschr(VOIKKO_CONSONANTS, vctest2) &&
-			    simpleLower(word[leading_len + 1]) == vctest1 &&
-			    simpleLower(word[leading_len + 2]) == vctest2) {
+			    SimpleChar::lower(word[leading_len + 1]) == vctest1 &&
+			    SimpleChar::lower(word[leading_len + 2]) == vctest2) {
 				spellresult spres = voikkoOptions->speller->spell(buffer, len - 1);
 				if (spres != SPELL_FAILED && (result == SPELL_FAILED || result > spres)) {
 					delete[] buffer;
@@ -261,7 +263,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	wchar_t * buffer = new wchar_t[nchars + 1];
 
 	for (size_t i = 0; i < nchars; i++) {
-		buffer[i] = simpleLower(nword[i]);
+		buffer[i] = SimpleChar::lower(nword[i]);
 	}
 	buffer[nchars] = L'\0';
 	
@@ -278,7 +280,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS ||
 	    (caps == CT_ALL_UPPER && !voikko_options.accept_all_uppercase)) {
 		wcsncpy(buffer, nword, nchars);
-		buffer[0] = simpleLower(buffer[0]);
+		buffer[0] = SimpleChar::lower(buffer[0]);
 		if (voikko_options.accept_missing_hyphens) {
 			sres = voikko_do_spell_ignore_hyphens(&voikko_options, buffer, nchars);
 		}
@@ -286,7 +288,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 			sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 		}
 		if (sres == SPELL_OK ||
-		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && simpleIsUpper(nword[0]))) {
+		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
 			result = VOIKKO_SPELL_OK;
 		}
 		else {
@@ -301,7 +303,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 				sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 			}
 			if (sres == SPELL_OK ||
-			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && simpleIsUpper(nword[0]))) {
+			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
 				result = VOIKKO_SPELL_OK;
 			}
 		}

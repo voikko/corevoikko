@@ -18,16 +18,18 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorDeletion.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <cwchar>
 #include <cwctype>
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 void SuggestionGeneratorDeletion::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength()];
 	for (size_t i = 0; i < s->getWordLength() && !s->shouldAbort(); i++) {
-		if (i == 0 || simpleLower(s->getWord()[i]) != simpleLower(s->getWord()[i-1])) {
+		if (i == 0 || SimpleChar::lower(s->getWord()[i]) != SimpleChar::lower(s->getWord()[i-1])) {
 			wcsncpy(buffer, s->getWord(), i);
 			wcsncpy(buffer + i, s->getWord() + (i + 1), s->getWordLength() - i);
 			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions, s, buffer,

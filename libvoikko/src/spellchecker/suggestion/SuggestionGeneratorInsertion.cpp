@@ -18,8 +18,10 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorInsertion.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <cwchar>
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
@@ -37,10 +39,10 @@ void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, Su
 			if (j != 0) {
 				buffer[j-1] = s->getWord()[j-1];
 			}
-			if (*ins == simpleLower((s->getWord()[j]))) {
+			if (*ins == SimpleChar::lower((s->getWord()[j]))) {
 				continue; /* avoid duplicates */
 			}
-			if (j > 0 && *ins == simpleLower((s->getWord()[j-1]))) {
+			if (j > 0 && *ins == SimpleChar::lower((s->getWord()[j-1]))) {
 				continue; /* avoid duplicates */
 			}
 			buffer[j] = *ins;

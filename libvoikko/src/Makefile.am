@@ -49,6 +49,7 @@ libvoikko_la_SOURCES = \
     hyphenator/Hyphenator.cpp \
     hyphenator/HyphenatorFactory.cpp \
     character/charset.cpp \
+    character/SimpleChar.cpp \
     tokenizer/tokenizer.cpp sentence/sentence.cpp \
     grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
@@ -86,6 +87,7 @@ noinst_HEADERS = \
     setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     character/charset.hpp \
+    character/SimpleChar.hpp \
     voikko_defs.h porting.h \
     spellchecker/spell.hpp \
     spellchecker/SpellWithPriority.hpp \

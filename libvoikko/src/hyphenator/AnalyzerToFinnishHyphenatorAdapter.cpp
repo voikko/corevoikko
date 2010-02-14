@@ -18,11 +18,12 @@
 
 #include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
 #include "voikko_defs.h"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include <cwctype>
 
 using namespace libvoikko::morphology;
+using namespace libvoikko::character;
 using namespace std;
 
 namespace libvoikko { namespace hyphenator {
@@ -347,7 +348,7 @@ void AnalyzerToFinnishHyphenatorAdapter::ruleHyphenation(const wchar_t * word,
 	}
 	
 	for (i = 0; i < nchars; i++) {
-		wordCopy[i] = simpleLower(word[i]);
+		wordCopy[i] = SimpleChar::lower(word[i]);
 	}
 	wordCopy[nchars] = '\0';
 	

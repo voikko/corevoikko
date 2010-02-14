@@ -19,7 +19,7 @@
 #include "voikko_defs.h"
 #include "utils/utils.hpp"
 #include "setup/setup.hpp"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <stdlib.h>
 #include <string.h>
 #include <cwctype>
@@ -29,6 +29,8 @@
     #include <windows.h>
   #endif
 #endif
+
+using namespace libvoikko::character;
 
 namespace libvoikko {
 
@@ -185,7 +187,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 	bool all_uc = true;
 	bool no_letters = true;
 	if (nchars == 0) return CT_NO_LETTERS;
-	if (simpleIsUpper(word[0])) {
+	if (SimpleChar::isUpper(word[0])) {
 		first_uc = true;
 		no_letters = false;
 	}
@@ -194,7 +196,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 		no_letters = false;
 	}
 	for (size_t i = 1; i < nchars; i++) {
-		if (simpleIsUpper(word[i])) {
+		if (SimpleChar::isUpper(word[i])) {
 			no_letters = false;
 			rest_lc = false;
 		}
@@ -218,7 +220,7 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
 			return; /* Do nothing */
 		case CT_ALL_LOWER:
 			for (size_t i = 0; i < nchars; i++) {
-				word[i] = simpleLower(word[i]);
+				word[i] = SimpleChar::lower(word[i]);
 			}
 			return;
 		case CT_ALL_UPPER:
@@ -229,7 +231,7 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
 		case CT_FIRST_UPPER:
 			word[0] = towupper(word[0]);
 			for (size_t i = 1; i < nchars; i++) {
-				word[i] = simpleLower(word[i]);
+				word[i] = SimpleChar::lower(word[i]);
 			}
 			return;
 	}

@@ -25,11 +25,13 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/pools.hpp"
 #include "morphology/malaga/tries.hpp"
 #include "utf8/utf8.hpp"
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace morphology { namespace malaga {
 
@@ -112,7 +114,7 @@ lookup_trie( int_t *trie, int_t *node_index, string_t *input, int_t *content )
 
     /* Perform binary search for subnode with given key. */
     wchar_t inputChar = utf8::unchecked::next(*input);
-    wchar_t c = simpleLower(inputChar);
+    wchar_t c = SimpleChar::lower(inputChar);
     *node_index = -1;
     lower = 0;
     upper = *r.subnode_count - 1;

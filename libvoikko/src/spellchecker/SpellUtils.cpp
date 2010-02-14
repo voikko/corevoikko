@@ -17,8 +17,10 @@
  *********************************************************************************/
 
 #include "spellchecker/SpellUtils.hpp"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <cwctype>
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker {
 
@@ -35,7 +37,7 @@ spellresult SpellUtils::matchWordAndAnalysis(const wchar_t * word,
 			break;
 		}
 		
-		if (simpleIsUpper(word[i])) {
+		if (SimpleChar::isUpper(word[i])) {
 			captype = 'i';
 		}
 		else if (iswlower(word[i])) {

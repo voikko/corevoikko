@@ -21,6 +21,7 @@
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
 #include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
@@ -28,6 +29,7 @@
 #include <cwctype>
 
 using namespace libvoikko::grammar;
+using namespace libvoikko::character;
 
 namespace libvoikko {
 
@@ -228,7 +230,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			firstWordSeen = true;
 			bool needCheckingOfFirstUppercase = !sentenceStartsWithHyphen &&
 				(!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
-			if (needCheckingOfFirstUppercase && !simpleIsUpper(t.str[0]) && !iswdigit(t.str[0])) {
+			if (needCheckingOfFirstUppercase && !SimpleChar::isUpper(t.str[0]) && !iswdigit(t.str[0])) {
 				CacheEntry * e = new CacheEntry(1);
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 				e->error.startpos = t.pos;
@@ -254,7 +256,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			// A-rapussa etc.
 			continue;
 		}
-		if (!simpleIsUpper(t.str[0])) {
+		if (!SimpleChar::isUpper(t.str[0])) {
 			continue;
 		}
 		CacheEntry * e = new CacheEntry(1);
@@ -262,7 +264,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		e->error.startpos = t.pos;
 		e->error.errorlen = t.tokenlen;
 		wchar_t * suggestion = new wchar_t[t.tokenlen];
-		suggestion[0] = simpleLower(t.str[0]);
+		suggestion[0] = SimpleChar::lower(t.str[0]);
 		wcsncpy(suggestion + 1, t.str + 1, t.tokenlen - 1);
 		e->error.suggestions[0] = voikko_ucs4tocstr(suggestion, "UTF-8", t.tokenlen);
 		delete[] suggestion;

@@ -18,9 +18,11 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorReplaceTwo.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <cwchar>
 #include <cwctype>
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
@@ -32,7 +34,7 @@ void SuggestionGeneratorReplaceTwo::generate(voikko_options_t * voikkoOptions, S
 	size_t wlen = s->getWordLength();
 	wchar_t * buffer = new wchar_t[wlen + 1];
 	for (size_t i = 0; i < wlen; ++i) {
-		buffer[i] = simpleLower(s->getWord()[i]);
+		buffer[i] = SimpleChar::lower(s->getWord()[i]);
 	}
 	buffer[wlen] = L'\0';
 	

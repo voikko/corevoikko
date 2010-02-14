@@ -18,13 +18,14 @@
 
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 #include "spellchecker/SpellWithPriority.hpp"
-#include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cwchar>
 #include <cwctype>
 
 using namespace libvoikko::morphology;
+using namespace libvoikko::character;
 using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
@@ -82,7 +83,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(voikko_options_t * voikkoOp
 					newsugg[i] = towupper(newsugg[i]);
 				}
 				else if (structure[j] == L'p' || structure[j] == L'q') {
-					newsugg[i] = simpleLower(newsugg[i]);
+					newsugg[i] = SimpleChar::lower(newsugg[i]);
 				}
 				j++;
 			}
