@@ -32,6 +32,7 @@ Lause. , jossa pilkun edellä piste.
 , pilkku on aivan alussa.
  [code=5, level=0, descr="", stpos=0, len=1, suggs={}]
  [code=7, level=0, descr="", stpos=2, len=6, suggs={"Pilkku"}]
+Äidissä on ä-kirjain, ja se saa olla virkkeen alussa.
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 "Lause voi olla myös lainausmerkeissä."

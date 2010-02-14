@@ -1,3 +1,6 @@
+2010-02-14 Harri Pitkänen <hatapitk@iki.fi>
+	* Replace uses of iswupper with locale independent implementation.
+
 2010-02-13 Harri Pitkänen <hatapitk@iki.fi>
 	* Increase version numbers for 2.3.1.
 

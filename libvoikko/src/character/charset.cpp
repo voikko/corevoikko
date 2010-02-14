@@ -331,4 +331,8 @@ wchar_t simpleLower(wchar_t input) {
 	return input;
 }
 
+bool simpleIsUpper(wchar_t input) {
+	return input != simpleLower(input);
+}
+
 }

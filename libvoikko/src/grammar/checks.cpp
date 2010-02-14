@@ -228,7 +228,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			firstWordSeen = true;
 			bool needCheckingOfFirstUppercase = !sentenceStartsWithHyphen &&
 				(!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
-			if (needCheckingOfFirstUppercase && !iswupper(t.str[0]) && !iswdigit(t.str[0])) {
+			if (needCheckingOfFirstUppercase && !simpleIsUpper(t.str[0]) && !iswdigit(t.str[0])) {
 				CacheEntry * e = new CacheEntry(1);
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 				e->error.startpos = t.pos;
@@ -254,7 +254,9 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			// A-rapussa etc.
 			continue;
 		}
-		if (!iswupper(t.str[0])) continue;
+		if (!simpleIsUpper(t.str[0])) {
+			continue;
+		}
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
 		e->error.startpos = t.pos;

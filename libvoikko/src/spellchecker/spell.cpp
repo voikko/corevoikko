@@ -286,7 +286,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 			sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 		}
 		if (sres == SPELL_OK ||
-		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0]))) {
+		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && simpleIsUpper(nword[0]))) {
 			result = VOIKKO_SPELL_OK;
 		}
 		else {
@@ -301,7 +301,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 				sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 			}
 			if (sres == SPELL_OK ||
-			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && iswupper(nword[0]))) {
+			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && simpleIsUpper(nword[0]))) {
 				result = VOIKKO_SPELL_OK;
 			}
 		}

@@ -185,7 +185,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 	bool all_uc = true;
 	bool no_letters = true;
 	if (nchars == 0) return CT_NO_LETTERS;
-	if (iswupper(word[0])) {
+	if (simpleIsUpper(word[0])) {
 		first_uc = true;
 		no_letters = false;
 	}
@@ -194,7 +194,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 		no_letters = false;
 	}
 	for (size_t i = 1; i < nchars; i++) {
-		if (iswupper(word[i])) {
+		if (simpleIsUpper(word[i])) {
 			no_letters = false;
 			rest_lc = false;
 		}

@@ -63,6 +63,11 @@ void voikko_cset_reformat(const wchar_t * orig, size_t orig_len, wchar_t ** modi
  */
 wchar_t simpleLower(wchar_t input);
 
+/**
+ * Checks if a character is an upper case letter.
+ */
+bool simpleIsUpper(wchar_t input);
+
 }
 
 #endif
