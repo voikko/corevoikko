@@ -236,7 +236,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 				e->error.startpos = t.pos;
 				e->error.errorlen = t.tokenlen;
 				wchar_t * suggestion = new wchar_t[t.tokenlen];
-				suggestion[0] = towupper(t.str[0]);
+				suggestion[0] = SimpleChar::upper(t.str[0]);
 				wcsncpy(suggestion + 1, t.str + 1, t.tokenlen - 1);
 				e->error.suggestions[0] = voikko_ucs4tocstr(suggestion, "UTF-8", t.tokenlen);
 				delete[] suggestion;

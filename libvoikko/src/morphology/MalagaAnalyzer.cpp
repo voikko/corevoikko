@@ -20,12 +20,13 @@
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
 #include <cwchar>
-#include <cwctype>
+#include "character/SimpleChar.hpp"
 #include <cstdlib>
 
 using namespace std;
 using namespace libvoikko::utils;
 using namespace libvoikko::morphology::malaga;
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace morphology {
 
@@ -238,7 +239,7 @@ static void fixCapitalisation(wchar_t * baseForm, const wchar_t * structure) {
 			continue;
 		}
 		if (structure[structPos] == L'i' || structure[structPos] == L'j') {
-			baseForm[basePos] = towupper(baseForm[basePos]);
+			baseForm[basePos] = SimpleChar::upper(baseForm[basePos]);
 		}
 		++structPos;
 		++basePos;

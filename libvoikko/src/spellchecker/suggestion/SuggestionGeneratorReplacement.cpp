@@ -19,7 +19,9 @@
 #include "spellchecker/suggestion/SuggestionGeneratorReplacement.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 #include <cwchar>
-#include <cwctype>
+#include "character/SimpleChar.hpp"
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
@@ -46,11 +48,11 @@ void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, 
 		
 		/* Only search for upper case letter if it differs from lower case
 		   version */
-		wchar_t upper_from = towupper(from);
+		wchar_t upper_from = SimpleChar::upper(from);
 		if (upper_from == from) continue;
 		for (wchar_t * pos = wcschr(buffer, upper_from); pos != 0;
 		     pos = wcschr(pos + 1, upper_from)) {
-			*pos = towupper(to);
+			*pos = SimpleChar::upper(to);
 			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
 			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;

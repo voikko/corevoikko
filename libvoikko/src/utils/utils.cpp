@@ -225,11 +225,11 @@ void voikko_set_case(enum casetype charcase, wchar_t * word, size_t nchars) {
 			return;
 		case CT_ALL_UPPER:
 			for (size_t i = 0; i < nchars; i++) {
-				word[i] = towupper(word[i]);
+				word[i] = SimpleChar::upper(word[i]);
 			}
 			return;
 		case CT_FIRST_UPPER:
-			word[0] = towupper(word[0]);
+			word[0] = SimpleChar::upper(word[0]);
 			for (size_t i = 1; i < nchars; i++) {
 				word[i] = SimpleChar::lower(word[i]);
 			}

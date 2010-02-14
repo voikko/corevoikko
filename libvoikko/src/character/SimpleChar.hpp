@@ -35,7 +35,14 @@ class SimpleChar {
 		 * forms.
 		 */
 		static wchar_t lower(wchar_t input);
-
+		
+		/**
+		 * Converts a wide character to uppercase equivalent. This function only converts
+		 * "simple" characters that have one-to-one mapping between upper and lower case
+		 * forms.
+		 */
+		static wchar_t upper(wchar_t input);
+		
 		/**
 		 * Checks if a character is an upper case letter.
 		 */

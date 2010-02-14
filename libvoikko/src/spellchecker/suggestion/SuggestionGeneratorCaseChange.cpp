@@ -54,7 +54,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(voikko_options_t * voikkoOp
 			return;
 		case SPELL_CAP_FIRST:
 			newsugg = new wchar_t[wlen + 1];
-			newsugg[0] = towupper(word[0]);
+			newsugg[0] = SimpleChar::upper(word[0]);
 			wcsncpy(newsugg + 1, word + 1, wlen - 1);
 			newsugg[wlen] = L'\0';
 			s->addSuggestion(newsugg, prio);
@@ -80,7 +80,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(voikko_options_t * voikkoOp
 					break;
 				}
 				if (structure[j] == L'i' || structure[j] == L'j') {
-					newsugg[i] = towupper(newsugg[i]);
+					newsugg[i] = SimpleChar::upper(newsugg[i]);
 				}
 				else if (structure[j] == L'p' || structure[j] == L'q') {
 					newsugg[i] = SimpleChar::lower(newsugg[i]);

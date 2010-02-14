@@ -56,6 +56,42 @@ wchar_t SimpleChar::lower(wchar_t input) {
 	return input;
 }
 
+wchar_t SimpleChar::upper(wchar_t input) {
+	// Basic Latin
+	if (input >= 0x61 && input <= 0x7A) {
+		// A-Z
+		return input - 0x20;
+	}
+	// Latin-1 Supplement
+	if (input >= 0xE0 && input <= 0xF6) {
+		// À-Ö
+		return input - 0x20;
+	}
+	if (input >= 0xF8 && input <= 0xFD) {
+		// Ø-Ý
+		return input - 0x20;
+	}
+	// Latin Extended-A
+	if (input >= 0x0101 && input <= 0x0137 && input % 2 == 1) {
+		// Ā-Ķ
+		return input - 1;
+	}
+	if (input >= 0x013A && input <= 0x0148 && input % 2 == 0) {
+		// Ĺ-Ň
+		return input - 1;
+	}
+	if (input >= 0x014B && input <= 0x0177 && input % 2 == 1) {
+		// Ŋ-Ŷ
+		return input - 1;
+	}
+	if (input >= 0x017A && input <= 0x017E && input % 2 == 0) {
+		// Ź-Ž
+		return input - 1;
+	}
+	// TODO: other Unicode character ranges are not yet mapped
+	return input;
+}
+
 bool SimpleChar::isUpper(wchar_t input) {
 	return input != lower(input);
 }

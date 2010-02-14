@@ -19,7 +19,9 @@
 #include "spellchecker/suggestion/SuggestionGeneratorSplitWord.hpp"
 #include "spellchecker/SpellWithPriority.hpp"
 #include <cwchar>
-#include <cwctype>
+#include "character/SimpleChar.hpp"
+
+using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
@@ -50,12 +52,12 @@ void SuggestionGeneratorSplitWord::generate(voikko_options_t * voikkoOptions, Su
 				wchar_t * suggestion = new wchar_t[s->getWordLength() + 2];
 				wcsncpy(suggestion, s->getWord(), splitind);
 				if (part1_res == SPELL_CAP_FIRST)
-					suggestion[0] = towupper(suggestion[0]);
+					suggestion[0] = SimpleChar::upper(suggestion[0]);
 				suggestion[splitind] = L' ';
 				wcsncpy(suggestion + (splitind + 1), s->getWord() + splitind,
 				        s->getWordLength() - splitind + 1);
 				if (part2_res == SPELL_CAP_FIRST)
-					suggestion[splitind+1] = towupper(suggestion[splitind+1]);
+					suggestion[splitind+1] = SimpleChar::upper(suggestion[splitind+1]);
 				s->addSuggestion(suggestion, prio_total);
 			}
 		}
