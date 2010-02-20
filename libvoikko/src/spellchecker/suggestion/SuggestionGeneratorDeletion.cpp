@@ -20,7 +20,6 @@
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 #include "character/SimpleChar.hpp"
 #include <cwchar>
-#include <cwctype>
 
 using namespace libvoikko::character;
 

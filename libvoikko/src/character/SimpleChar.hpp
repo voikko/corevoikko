@@ -52,6 +52,16 @@ class SimpleChar {
 		 * Checks if a character is an lower case letter.
 		 */
 		static bool isLower(wchar_t input);
+		
+		/**
+		 * Checks if a character is a digit.
+		 */
+		static bool isDigit(wchar_t input);
+		
+		/**
+		 * Checks if a character is a whitespace character.
+		 */
+		static bool isWhitespace(wchar_t input);
 };
 
 } }

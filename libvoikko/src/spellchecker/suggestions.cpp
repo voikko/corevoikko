@@ -29,7 +29,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <cwchar>
-#include <cwctype>
 
 #define MAX_SUGGESTIONS 5
 #define COST_LIMIT 350
@@ -86,10 +85,8 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	size_t wlen = wcslen(word);
 	if (wlen <= 1 || wlen > LIBVOIKKO_MAX_WORD_CHARS) return 0;
 	
-	ENTER_V
 	wchar_t * nword = voikko_normalise(word, wlen);
 	if (nword == 0) {
-		EXIT_V
 		return 0;
 	}
 	wlen = wcslen(nword);
@@ -97,7 +94,6 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	if (voikko_options.ignore_dot) {
 		if (wlen == 2) {
 			delete[] nword;
-			EXIT_V
 			return 0;
 		}
 		if (nword[wlen-1] == L'.') {
@@ -116,7 +112,6 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	caseChanger.generate(&voikko_options, &status);
 	if (status.getSuggestionCount() > 0) {
 		delete[] nword;
-		EXIT_V
 		return getSuggestions(status, add_dots);
 	}
 	
@@ -134,7 +129,6 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 
 	if (status.getSuggestionCount() == 0) {
 		delete[] nword;
-		EXIT_V
 		return 0;
 	}
 	
@@ -171,7 +165,6 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	}
 
 	delete[] nword;
-	EXIT_V
 	return suggestions;
 }
 

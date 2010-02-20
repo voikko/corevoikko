@@ -25,7 +25,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <cwchar>
-#include <cwctype>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::spellchecker;
@@ -234,20 +233,17 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	if (nchars > LIBVOIKKO_MAX_WORD_CHARS) {
 		return VOIKKO_INTERNAL_ERROR;
 	}
-	ENTER_V
 	
 	wchar_t * nword = voikko_normalise(word, nchars);
 	if (nword == 0) {
-		EXIT_V
 		return VOIKKO_INTERNAL_ERROR;
 	}
 	nchars = wcslen(nword);
 	
 	if (voikko_options.ignore_numbers) {
 		for (size_t i = 0; i < nchars; i++) {
-			if (iswdigit(nword[i])) {
+			if (SimpleChar::isDigit(nword[i])) {
 				delete[] nword;
-				EXIT_V
 				return VOIKKO_SPELL_OK;
 			}
 		}
@@ -256,7 +252,6 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	if ((voikko_options.ignore_uppercase && caps == CT_ALL_UPPER) ||
 	    (voikko_options.ignore_nonwords && voikko_is_nonword(nword, nchars))) {
 		delete[] nword;
-		EXIT_V
 		return VOIKKO_SPELL_OK;
 	}
 	
@@ -309,7 +304,6 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		}
 		delete[] nword;
 		delete[] buffer;
-		EXIT_V
 		return result;
 	}
 	

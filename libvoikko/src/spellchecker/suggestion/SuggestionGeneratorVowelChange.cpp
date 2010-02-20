@@ -19,7 +19,6 @@
 #include "spellchecker/suggestion/SuggestionGeneratorVowelChange.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 #include <cwchar>
-#include <cwctype>
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 

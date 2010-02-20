@@ -1,5 +1,7 @@
 2010-02-20 Harri Pitkänen <hatapitk@iki.fi>
-	* Replace uses of iswlower with locale independent implementation.
+	* Replace uses of iswlower, iswdigit and iswspace with locale independent implementation.
+	* Remove ENTER_V and EXIT_V macros, these should no longer be needed.
+	* Increase version numbers for version 3.0.
 
 2010-02-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Replace uses of iswupper and towupper with locale independent implementation.

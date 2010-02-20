@@ -26,7 +26,6 @@
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cstring>
-#include <cwctype>
 
 using namespace libvoikko::grammar;
 using namespace libvoikko::character;
@@ -230,7 +229,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 			firstWordSeen = true;
 			bool needCheckingOfFirstUppercase = !sentenceStartsWithHyphen &&
 				(!isFirstInParagraph || !voikko_options.accept_bulleted_lists_in_gc);
-			if (needCheckingOfFirstUppercase && !SimpleChar::isUpper(t.str[0]) && !iswdigit(t.str[0])) {
+			if (needCheckingOfFirstUppercase && !SimpleChar::isUpper(t.str[0]) && !SimpleChar::isDigit(t.str[0])) {
 				CacheEntry * e = new CacheEntry(1);
 				e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 				e->error.startpos = t.pos;

@@ -100,4 +100,23 @@ bool SimpleChar::isLower(wchar_t input) {
 	return input != upper(input);
 }
 
+bool SimpleChar::isDigit(wchar_t input) {
+	return (input >= 0x30 && input <= 0x39);
+}
+
+bool SimpleChar::isWhitespace(wchar_t input) {
+	return (input >= 0x09 && input <= 0x0D) ||
+	       input == 0x20 ||
+	       input == 0x85 ||
+	       input == 0xA0 ||
+	       input == 0x1680 ||
+	       input == 0x180E ||
+	       (input >= 0x2000 && input <= 0x200A) ||
+	       input == 0x2028 ||
+	       input == 0x2029 ||
+	       input == 0x202F ||
+	       input == 0x205F ||
+	       input == 0x3000;
+}
+
 } }

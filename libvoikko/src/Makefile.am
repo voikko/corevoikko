@@ -55,7 +55,7 @@ libvoikko_la_SOURCES = \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     autocorrect/AutoCorrect.cpp
-libvoikko_la_LDFLAGS = -no-undefined -version-info 11:1:10 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = -no-undefined -version-info 12:0:11 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h
 noinst_HEADERS = \

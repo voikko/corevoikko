@@ -22,7 +22,6 @@
 #include "utils/utils.hpp"
 #include <cstdlib>
 #include <cwchar>
-#include <cwctype>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::character;

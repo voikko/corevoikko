@@ -21,8 +21,10 @@
 #include "utils/utils.hpp"
 #include "spellchecker/spell.hpp"
 #include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <cstdlib>
-#include <cwctype>
+
+using namespace libvoikko::character;
 
 namespace libvoikko {
 
@@ -36,7 +38,7 @@ static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * t
 	// ordinal numbers and dates
 	bool onlyNumbersOrDots = true;
 	for (size_t i = 0; i < len - 1; i++) {
-		if (text[i] != L'.' && !iswdigit(text[i])) {
+		if (text[i] != L'.' && !SimpleChar::isDigit(text[i])) {
 			onlyNumbersOrDots = false;
 			break;
 		}

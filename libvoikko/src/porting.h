@@ -28,12 +28,7 @@
 #  define WIN32
 # endif
 # define INTERNAL_CHARSET "UCS-2-INTERNAL"
-# include <locale.h>
-# define ENTER_V char*enter_v_origl=setlocale(LC_CTYPE,0);setlocale(LC_CTYPE,"fin");
-# define EXIT_V setlocale(LC_CTYPE,enter_v_origl);
 #else
-# define ENTER_V
-# define EXIT_V
 # if defined(__FreeBSD__) || defined(__APPLE__)
 #  define INTERNAL_CHARSET "UCS-4-INTERNAL"
 # else

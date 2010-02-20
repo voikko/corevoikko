@@ -19,9 +19,11 @@
 
 #include "voikko_defs.h"
 #include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include <cstdlib>
-#include <cwctype>
 #include <cwchar>
+
+using namespace libvoikko::character;
 
 namespace libvoikko {
 
@@ -37,7 +39,9 @@ char_type get_char_type(wchar_t c) {
 	if (isFinnishQuotationMark(c)) {
 		return CHAR_PUNCTUATION;
 	}
-	if (iswspace(c)) return CHAR_WHITESPACE;
+	if (SimpleChar::isWhitespace(c)) {
+		return CHAR_WHITESPACE;
+	}
 	if (wcschr(L"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
 	           L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
 	           L"\u00C1"  /* LATIN CAPITAL LETTER A WITH ACUTE */

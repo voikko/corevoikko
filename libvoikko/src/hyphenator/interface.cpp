@@ -31,13 +31,10 @@ VOIKKOEXPORT char * voikko_hyphenate_ucs4(int /*handle*/, const wchar_t * word) 
 	}
 	size_t wlen = wcslen(word);
 	
-	ENTER_V
 	char * hyphenation = voikko_options.hyphenator->hyphenate(word, wlen);
 	if (hyphenation == 0) {
-		EXIT_V
 		return 0;
 	}
-	EXIT_V
 	// Convert to C allocation to maintain compatibility with some
 	// broken applications before libvoikko 1.5.
 	utils::StringUtils::convertCStringToMalloc(hyphenation);

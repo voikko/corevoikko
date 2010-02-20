@@ -20,7 +20,6 @@
 #include "voikko_defs.h"
 #include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
-#include <cwctype>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::character;
