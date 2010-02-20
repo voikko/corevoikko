@@ -1,3 +1,6 @@
+2010-02-20 Harri Pitkänen <hatapitk@iki.fi>
+	* Replace uses of iswlower with locale independent implementation.
+
 2010-02-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Replace uses of iswupper and towupper with locale independent implementation.
 

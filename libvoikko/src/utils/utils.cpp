@@ -22,7 +22,6 @@
 #include "character/SimpleChar.hpp"
 #include <stdlib.h>
 #include <string.h>
-#include <cwctype>
 
 #ifndef HAVE_ICONV
   #ifdef WIN32
@@ -191,7 +190,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 		first_uc = true;
 		no_letters = false;
 	}
-	if (iswlower(word[0])) {
+	if (SimpleChar::isLower(word[0])) {
 		all_uc = false;
 		no_letters = false;
 	}
@@ -200,7 +199,7 @@ enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 			no_letters = false;
 			rest_lc = false;
 		}
-		if (iswlower(word[i])) {
+		if (SimpleChar::isLower(word[i])) {
 			all_uc = false;
 			no_letters = false;
 		}

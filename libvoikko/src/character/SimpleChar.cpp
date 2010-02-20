@@ -96,4 +96,8 @@ bool SimpleChar::isUpper(wchar_t input) {
 	return input != lower(input);
 }
 
+bool SimpleChar::isLower(wchar_t input) {
+	return input != upper(input);
+}
+
 } }

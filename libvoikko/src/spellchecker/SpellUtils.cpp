@@ -18,7 +18,6 @@
 
 #include "spellchecker/SpellUtils.hpp"
 #include "character/SimpleChar.hpp"
-#include <cwctype>
 
 using namespace libvoikko::character;
 
@@ -40,7 +39,7 @@ spellresult SpellUtils::matchWordAndAnalysis(const wchar_t * word,
 		if (SimpleChar::isUpper(word[i])) {
 			captype = 'i';
 		}
-		else if (iswlower(word[i])) {
+		else if (SimpleChar::isLower(word[i])) {
 			captype = 'p';
 		}
 		else {

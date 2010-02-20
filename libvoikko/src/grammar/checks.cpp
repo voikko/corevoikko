@@ -176,7 +176,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) continue;
 		for (size_t j = 0; j < t.tokenlen; j++) {
-			if (iswlower(t.str[j])) {
+			if (SimpleChar::isLower(t.str[j])) {
 				onlyUpper = false;
 				break;
 			}

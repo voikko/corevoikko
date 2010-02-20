@@ -47,6 +47,11 @@ class SimpleChar {
 		 * Checks if a character is an upper case letter.
 		 */
 		static bool isUpper(wchar_t input);
+		
+		/**
+		 * Checks if a character is an lower case letter.
+		 */
+		static bool isLower(wchar_t input);
 };
 
 } }
