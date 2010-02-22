@@ -871,6 +871,65 @@ visible in BUFFER within position range from BEG to END."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Face information functions
+
+
+(defun wcheck-collect-faces (beg end)
+  "Return a list of faces between positions BEG and END."
+  (let ((pos beg)
+        face faces)
+    (while (< pos end)
+      (setq face (get-text-property pos 'face)
+            faces (append (if (and face (listp face))
+                              face
+                            (list face))
+                          faces)
+            pos (1+ pos)))
+    (delete-dups faces)))
+
+
+(defun wcheck-major-mode-op-mode (mode)
+  "Return the associated operation mode for major mode MODE.
+See the variable `wcheck-read-or-skip-faces' for more
+information."
+  (cadr (assq mode wcheck-read-or-skip-faces)))
+
+
+(defun wcheck-major-mode-faces (mode)
+  "Return the face list configuration for major mode MODE.
+See the variable `wcheck-read-or-skip-faces' for more
+information."
+  (cddr (assq mode wcheck-read-or-skip-faces)))
+
+
+(defun wcheck-generate-face-predicate (op-mode faces)
+  "Generate a predicate expression for reading words.
+This function creates a predicate expression which, by evaluating
+it, is used to check whether or not the current match should be
+read or skipped. OP-MODE is either symbol `read' or `skip' and
+FACES is a list of faces. This is only for `wcheck-mode's
+internal use."
+  (cond ((eq 'read op-mode)
+         `(wcheck-face-found-p
+           ',faces (wcheck-collect-faces (match-beginning 1)
+                                         (match-end 1))))
+        ((eq 'skip op-mode)
+         `(not (wcheck-face-found-p
+                ',faces (wcheck-collect-faces (match-beginning 1)
+                                              (match-end 1)))))
+        (t)))
+
+
+(defun wcheck-face-found-p (user-faces buffer-faces)
+  "Return t if a symbol in USER-FACES is found from BUFFER-FACES.
+Both arguments are lists."
+  (catch 'found
+    (dolist (face user-faces)
+      (when (member face buffer-faces)
+        (throw 'found t)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Miscellaneous low-level functions
 
 
