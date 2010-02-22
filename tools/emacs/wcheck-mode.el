@@ -467,11 +467,11 @@ information on how to configure Wcheck mode. Interactive command
 (defun wcheck-timer-read-event ()
   "Send windows' content to external program.
 This function is usually called by the wcheck-mode idle timer.
-The function walks through all windows which belong to buffer
+The function walks through all windows which belong to the buffer
 that have requested update. It reads windows' content and sends
-it to an external program. Finally, this function starts another
-idle timer (just once) for marking words or other text elements
-in buffers."
+it to the external program associated with the buffer. Finally,
+this function starts another idle timer for marking words or
+other text elements in buffers."
 
   (dolist (buffer wcheck-timer-read-requested)
     (when (buffer-live-p buffer)
@@ -543,8 +543,8 @@ function marks (with overlays) words or other text elements in
 buffers that have requested it through the variable
 `wcheck-timer-paint-requested'.
 
-If the optional argument REPEAT exists and is integer then also
-call the function repeatedly that many times after the first
+If the optional argument REPEAT exists and is an integer then
+also call the function repeatedly that many times after the first
 call. The delay between consecutive calls is defined in variable
 `wcheck-timer-idle'."
 
