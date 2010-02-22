@@ -698,7 +698,7 @@ operation was unsuccessful."
 
         (when (wcheck-program-executable-p program)
           ;; Start the process.
-          (setq proc (apply 'start-process wcheck-process-name nil
+          (setq proc (apply #'start-process wcheck-process-name nil
                             program args))
           ;; Add the process Lisp object to database.
           (wcheck-set-buffer-data buffer :process proc)
