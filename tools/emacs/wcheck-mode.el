@@ -254,6 +254,58 @@ changing just the value of this variable takes effect only when
 
 
 ;;;###autoload
+(defcustom wcheck-read-or-skip-faces nil
+  "Control which faces to read and which ones to skip.
+
+This variables controls which faces `wcheck-mode' should read or
+skip. Face is a text property Emacs uses to highlight text
+elements in buffers. The value must be a list and its items are
+also lists. Each item is of the form:
+
+  (MAJOR-MODE OPERATION-MODE FACE [FACE ...])
+
+MAJOR-MODE (a symbol) is the major mode which the settings are
+for. OPERATION-MODE is symbol `read' or `skip' defining whether
+the FACEs should be read or skipped. If `read' is used then only
+the listed faces are spell-checked. If `skip' is used then the
+listed faces are skipped and all other faces are spell-checked.
+The rest of the items are FACEs. They are typically symbols but
+some Emacs modes may use strings, property lists or cons cells
+for defining faces. See Info node `(elisp) Special Properties'
+for more information. Use nil as the face to refer to the normal
+text which does not have a face text property.
+
+Example:
+
+  ((emacs-lisp-mode read font-lock-comment-face font-lock-doc-face)
+   (message-mode read nil message-header-subject message-cited-text)
+   (org-mode skip font-lock-comment-face))
+
+It says that in `emacs-lisp-mode' only the text which have been
+highlighted with font-lock-comment-face or font-lock-doc-face is
+read (i.e., spell-checked). In `message-mode' only the normal
+text (nil), subject header and cited text is read. In `org-mode'
+text with font-lock-comment-face is skipped (i.e., not
+spell-checked) and all other text is read.
+
+Note: You can use command `\\[what-cursor-position]' with a
+prefix argument to see what faces are active at the cursor
+position. Then you can use the information to configure this
+variable."
+
+  :group 'wcheck
+  :type
+  '(repeat
+    (list :format "%v"
+          (symbol :tag "Major mode")
+          (choice :tag "Operation mode"
+                  (const :tag "read" read)
+                  (const :tag "skip" skip))
+          (repeat :inline t :tag "Faces (s-expressions)"
+                  (sexp :format "%v")))))
+
+
+;;;###autoload
 (defface wcheck-default-face
   '((t (:underline "red")))
   "Default face for marking strings in a buffer.
@@ -372,7 +424,9 @@ semantical units are called \"languages\".
 
 See the documentation of variable `wcheck-language-data' for
 information on how to configure Wcheck mode. Interactive command
-`wcheck-change-language' is used to switch languages."
+`wcheck-change-language' is used to switch languages. Variable
+`wcheck-read-or-skip-faces' controls which face elements to read
+or skip in a buffer."
 
   :init-value nil
   :lighter " wck"
@@ -788,6 +842,12 @@ elements between BEG and END; all hidden parts are omitted."
                (discard (wcheck-query-language-data language 'regexp-discard t))
                (case-fold-search
                 (wcheck-query-language-data language 'case-fold t))
+               (user-faces (wcheck-major-mode-faces major-mode))
+               (face-p (if (and font-lock-mode user-faces)
+                           (wcheck-generate-face-predicate
+                            (wcheck-major-mode-op-mode major-mode)
+                            user-faces)
+                         t))
                (old-point 0)
                words)
 
@@ -808,9 +868,10 @@ elements between BEG and END; all hidden parts are omitted."
                                    (match-beginning 1) 'invisible buffer
                                    end)))
 
-                      ((or (equal discard "")
-                           (not (string-match
-                                 discard (match-string-no-properties 1))))
+                      ((and (eval face-p)
+                            (or (equal discard "")
+                                (not (string-match
+                                      discard (match-string-no-properties 1)))))
                        ;; Add the match to the word list.
                        (add-to-list 'words (match-string-no-properties 1))))
                 (setq old-point (point)))))
@@ -841,6 +902,12 @@ visible in BUFFER within position range from BEG to END."
                (face (wcheck-query-language-data language 'face t))
                (case-fold-search
                 (wcheck-query-language-data language 'case-fold t))
+               (user-faces (wcheck-major-mode-faces major-mode))
+               (face-p (if (and font-lock-mode user-faces)
+                           (wcheck-generate-face-predicate
+                            (wcheck-major-mode-op-mode major-mode)
+                            user-faces)
+                         t))
                regexp old-point)
 
           (with-syntax-table syntax
@@ -863,7 +930,7 @@ visible in BUFFER within position range from BEG to END."
                          (goto-char (next-single-char-property-change
                                      (match-beginning 1) 'invisible buffer
                                      end)))
-                        (t
+                        ((eval face-p)
                          ;; Make an overlay.
                          (wcheck-make-overlay
                           buffer face (match-beginning 1) (match-end 1))))
