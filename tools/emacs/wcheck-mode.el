@@ -159,60 +159,62 @@ An example contents of the `wcheck-language-data' variable:
 
   :group 'wcheck
   :type
-  '(alist
-    :key-type (string :tag "Language")
-    :value-type
-    (repeat
-     :tag "Settings"
-     (choice
-      :format "%[Value Menu%] %v"
-      (cons :tag "Program" :format "%v"
-            (const :tag "Program: " :format "%t" program)
-            (file :format "%v"))
-      (cons :tag "Arguments" :format "%v"
-            (const :format "" args)
-            (repeat :tag "Arguments"
-                    :value-to-internal
-                    (lambda (widget value)
-                      (cond ((stringp value)
-                             (split-string-and-unquote value "[ \t\n]+"))
-                            ((listp value)
-                             value)))
-                    :match (lambda (widget value)
-                             (or (listp value)
-                                 (stringp value)))
-                    (string :format "%v")))
-      (cons :tag "Connection type" :format "%v"
-            (const :tag "Connection type: " :format "%t" connection)
-            (choice :format "%[Value Menu%] %v" :value nil
-                    (const :tag "pipe (nil)" nil)
-                    (const :tag "pty" :match (lambda (widget value)
-                                               (or (eq value t)
-                                                   (eq value 'pty)))
-                           pty)))
-      (cons :tag "Face" :format "%v"
-            (const :tag "Face: " :format "%t" face)
-            (symbol :format "%v" :value wcheck-default-face))
-      (cons :tag "Syntax table" :format "%v"
-            (const :tag "Syntax table: " :format "%t" syntax)
-            (variable :format "%v" :value text-mode-syntax-table))
-      (cons :tag "Regexp start" :format "%v"
-            (const :tag "Regexp start: " :format "%t" regexp-start)
-            (regexp :format "%v" :value "\\<'*"))
-      (cons :tag "Regexp body" :format "%v"
-            (const :tag "Regexp body: " :format "%t" regexp-body)
-            (regexp :format "%v" :value "\\w+?"))
-      (cons :tag "Regexp end" :format "%v"
-            (const :tag "Regexp end: " :format "%t" regexp-end)
-            (regexp :format "%v" :value "'*\\>"))
-      (cons :tag "Regexp discard" :format "%v"
-            (const :tag "Regexp discard: " :format "%t" regexp-discard)
-            (regexp :format "%v" :value "\\`'+\\'"))
-      (cons :tag "Regexp case" :format "%v"
-            (const :tag "Regexp case: " :format "%t" case-fold)
-            (choice :format "%[Value Menu%] %v" :value nil
-                    (const :tag "sensitive" nil)
-                    (const :tag "insensitive" t)))))))
+  '(repeat
+    (list
+     :format "%v"
+     (string :tag "Language")
+     (repeat
+      :inline t
+      :tag "Settings"
+      (choice
+       :format "%[Value Menu%] %v"
+       (cons :tag "Program" :format "%v"
+             (const :tag "Program: " :format "%t" program)
+             (file :format "%v"))
+       (cons :tag "Arguments" :format "%v"
+             (const :format "" args)
+             (repeat :tag "Arguments"
+                     :value-to-internal
+                     (lambda (widget value)
+                       (cond ((stringp value)
+                              (split-string-and-unquote value "[ \t\n]+"))
+                             ((listp value)
+                              value)))
+                     :match (lambda (widget value)
+                              (or (listp value)
+                                  (stringp value)))
+                     (string :format "%v")))
+       (cons :tag "Connection type" :format "%v"
+             (const :tag "Connection type: " :format "%t" connection)
+             (choice :format "%[Value Menu%] %v" :value nil
+                     (const :tag "pipe (nil)" nil)
+                     (const :tag "pty" :match (lambda (widget value)
+                                                (or (eq value t)
+                                                    (eq value 'pty)))
+                            pty)))
+       (cons :tag "Face" :format "%v"
+             (const :tag "Face: " :format "%t" face)
+             (symbol :format "%v" :value wcheck-default-face))
+       (cons :tag "Syntax table" :format "%v"
+             (const :tag "Syntax table: " :format "%t" syntax)
+             (variable :format "%v" :value text-mode-syntax-table))
+       (cons :tag "Regexp start" :format "%v"
+             (const :tag "Regexp start: " :format "%t" regexp-start)
+             (regexp :format "%v" :value "\\<'*"))
+       (cons :tag "Regexp body" :format "%v"
+             (const :tag "Regexp body: " :format "%t" regexp-body)
+             (regexp :format "%v" :value "\\w+?"))
+       (cons :tag "Regexp end" :format "%v"
+             (const :tag "Regexp end: " :format "%t" regexp-end)
+             (regexp :format "%v" :value "'*\\>"))
+       (cons :tag "Regexp discard" :format "%v"
+             (const :tag "Regexp discard: " :format "%t" regexp-discard)
+             (regexp :format "%v" :value "\\`'+\\'"))
+       (cons :tag "Regexp case" :format "%v"
+             (const :tag "Regexp case: " :format "%t" case-fold)
+             (choice :format "%[Value Menu%] %v" :value nil
+                     (const :tag "sensitive" nil)
+                     (const :tag "insensitive" t))))))))
 
 
 (defconst wcheck-language-data-defaults
