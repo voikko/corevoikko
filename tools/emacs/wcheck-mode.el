@@ -74,12 +74,12 @@ connection
     The default is to use a pipe (nil).
 
 face
-    A symbol referring to a face which is used to mark text with
+    A symbol referring to the face which is used to mark text with
     this LANGUAGE. The default is `wcheck-default-face'.
 
 syntax
     VALUE is a symbol referring to an Emacs syntax table. This
-    will be the effective syntax table is used with regular
+    will be the effective syntax table that is used with regular
     expressions. See the Info node `(elisp)Syntax Tables' for
     more information. The default value is
     `text-mode-syntax-table'.
