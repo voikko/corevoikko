@@ -1087,16 +1087,16 @@ according to A's and all overlapping A B ranges are combined."
   (let ((alist (sort (copy-tree alist)
                      #'(lambda (a b)
                          (< (car a) (car b)))))
-        ready prev)
+        final previous)
     (while alist
-      (while (not (equal prev alist))
-        (setq prev alist
-              alist (append (wcheck-combine-two (car prev) (cadr prev))
-                            (nthcdr 2 prev))))
-      (setq ready (append ready (list (car alist)))
+      (while (not (equal previous alist))
+        (setq previous alist
+              alist (append (wcheck-combine-two (car previous) (cadr previous))
+                            (nthcdr 2 previous))))
+      (setq final (cons (car alist) final)
             alist (cdr alist)
-            prev nil))
-    ready))
+            previous nil))
+    (nreverse final)))
 
 
 (defun wcheck-combine-two (a b)
@@ -1105,7 +1105,7 @@ according to A's and all overlapping A B ranges are combined."
         (b1 (car b))
         (b2 (cdr b)))
     (cond ((and a b)
-           (if (>= a2 b1)
+           (if (>= (1+ a2) b1)
                (list (cons a1 (if (> b2 a2) b2 a2)))
              (list a b)))
           ((not a) (list b))
