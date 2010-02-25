@@ -420,7 +420,7 @@ read_rule_sys( string_t file_name )
   rule_sys_t *rule_sys;
 
   stream = open_stream( file_name, "rb" );
-  read_vector( &header, sizeof( header ), 1, stream, file_name );
+  read_vector(&header, sizeof( header ), 1, stream);
   check_header( &header.common_header, file_name, 
                 RULE_FILE, MIN_RULE_CODE_VERSION, RULE_CODE_VERSION );
 
@@ -434,37 +434,37 @@ read_rule_sys( string_t file_name )
   rule_sys->output_filter = header.output_filter;
   rule_sys->rule_count = header.rule_count;
   rule_sys->rules = (rule_t *) read_new_vector( sizeof( rule_t ), header.rule_count,
-                                     stream, file_name );
+                                     stream);
   rule_sys->rule_sets_size = header.rule_sets_size;
   rule_sys->rule_sets = (int_t *) read_new_vector( sizeof( int_t ), 
 					 header.rule_sets_size,
-                                         stream, file_name );
+                                         stream);
   rule_sys->instr_count = header.instr_count;
   rule_sys->instrs = (instr_t *) read_new_vector( sizeof( instr_t ), header.instr_count, 
-                                      stream, file_name );
+                                      stream);
   rule_sys->values_size = header.values_size;
   rule_sys->values = (cell_t *) read_new_vector( sizeof( cell_t ), header.values_size, 
-                                      stream, file_name );
+                                      stream);
   rule_sys->src_line_count = header.src_line_count;
   rule_sys->src_lines = (src_line_t *) read_new_vector( sizeof( src_line_t ), 
                                          header.src_line_count, 
-                                         stream, file_name );
+                                         stream);
   rule_sys->var_count = header.var_count;
   rule_sys->vars = (var_t *) read_new_vector( sizeof( var_t ), header.var_count,
-                                    stream, file_name );
+                                    stream);
   rule_sys->var_scope_count = header.var_scope_count;
   rule_sys->var_scopes = (var_scope_t *) read_new_vector( sizeof( var_scope_t ), 
                                           header.var_scope_count,
-                                          stream, file_name );
+                                          stream);
   rule_sys->constant_count = header.constant_count;
   rule_sys->constants = (constant_t *) read_new_vector( sizeof( constant_t ), 
 					 header.constant_count, 
-					 stream, file_name );
+					 stream);
   rule_sys->strings_size = header.strings_size;
   rule_sys->strings = (char_t *) read_new_vector( sizeof( char_t ), header.strings_size, 
-                                       stream, file_name );
+                                       stream);
 
-  close_stream( &stream, file_name );
+  close_stream(&stream);
   return rule_sys;
 }
 

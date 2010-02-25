@@ -83,20 +83,20 @@ init_symbols(string_t file_name, MalagaState * malagaState)
 {
   symbol_header_t header;
   FILE * stream = open_stream( file_name, "rb" );
-  read_vector( &header, sizeof( header ), 1, stream, file_name );
+  read_vector( &header, sizeof( header ), 1, stream);
   check_header( &header.common_header, file_name, 
                 SYMBOL_FILE, MIN_SYMBOL_CODE_VERSION, SYMBOL_CODE_VERSION );
   
   malagaState->symbol_table.symbol_count = header.symbol_count;
   malagaState->symbol_table.symbols = (symbol_entry_t *) read_new_vector( sizeof( symbol_entry_t ), 
                                           header.symbol_count, 
-                                          stream, file_name );
+                                          stream);
   malagaState->symbol_table.values = (symbol_t *) read_new_vector( sizeof( cell_t ), header.values_size, 
-                                         stream, file_name );
+                                         stream);
   malagaState->symbol_table.strings = (char_t *) read_new_vector( sizeof( char_t ), 
 					  header.strings_size,
-					  stream, file_name );
-  close_stream( &stream, file_name );
+					  stream);
+  close_stream(&stream);
   
   /* Build a list of all symbols sorted by their names. */
   malagaState->symbol_table.symbolAndName = (symbol_and_name *) new_vector(sizeof(symbol_and_name),

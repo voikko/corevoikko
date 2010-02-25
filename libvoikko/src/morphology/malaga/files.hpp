@@ -28,27 +28,24 @@ extern FILE *open_stream( string_t file_name, string_t stream_mode );
 /* Open file FILE_NAME and create a stream from/to it in mode STREAM_MODE.
  * Works like "fopen", but calls "error" if it doesn't work. */
 
-extern void close_stream( FILE **stream_p, string_t file_name );
-/* Close the stream *STREAM_P which is connected to the file FILE_NAME
+extern void close_stream(FILE **stream_p);
+/* Close the stream *STREAM_P
  * and set *STREAM_P to NULL. Don't do anything if *STREAM_P == NULL.
- * Works like "fclose", but calls "error" if FILE_NAME != NULL and an error
- * occurs during closing. */
+ */
 
 extern void read_vector( void *address, 
                          int_t item_size, 
                          int_t item_count, 
-                         FILE *stream, 
-                         string_t file_name );
+                         FILE *stream);
 /* Read ITEM_COUNT items, of size ITEM_SIZE each, from STREAM,
- * which is connected to file FILE_NAME, and store them at *ADDRESS.
- * Works like "fread", but calls "error" if it doesn't work. */
+ * and store them at *ADDRESS.
+ */
 
 extern void *read_new_vector( int_t item_size, 
                               int_t item_count, 
-                              FILE *stream, 
-                              string_t file_name );
+                              FILE *stream);
 /* Read ITEM_COUNT items, of size ITEM_SIZE each, from STREAM,
- * which is connected to file FILE_NAME, into allocated memory block,
+ * into allocated memory block,
  * and return a pointer to that block. */
 
 extern void map_file( string_t file_name, void **address, int_t *length );

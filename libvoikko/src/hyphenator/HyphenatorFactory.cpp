@@ -24,7 +24,7 @@ using namespace libvoikko::setup;
 namespace libvoikko { namespace hyphenator {
 
 Hyphenator * HyphenatorFactory::getHyphenator(const voikko_options_t * options,
-                                const Dictionary & dictionary)
+                                const Dictionary & /*dictionary*/)
                                 throw(DictionaryException) {
 	// TODO: use configuration
 	return new AnalyzerToFinnishHyphenatorAdapter(options->morAnalyzer);

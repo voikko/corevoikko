@@ -67,11 +67,10 @@ open_stream( string_t file_name, string_t stream_mode )
 /*---------------------------------------------------------------------------*/
 
 void 
-close_stream( FILE **stream_p, string_t file_name )
-/* Close the stream *STREAM_P which is connected to the file FILE_NAME
+close_stream(FILE **stream_p)
+/* Close the stream *STREAM_P
  * and set *STREAM_P to NULL. Don't do anything if *STREAM_P == NULL.
- * Works like "fclose", but calls "error" if FILE_NAME != NULL and an error
- * occurs during closing. */
+ */
 { 
   FILE *stream = *stream_p;
 
@@ -85,10 +84,10 @@ close_stream( FILE **stream_p, string_t file_name )
 
 void 
 read_vector( void *address, int_t item_size, int_t item_count, 
-             FILE *stream, string_t file_name )
+             FILE *stream)
 /* Read ITEM_COUNT items, of size ITEM_SIZE each, from STREAM,
- * which is connected to file FILE_NAME, and store them at *ADDRESS.
- * Works like "fread", but calls "error" if it doesn't work. */
+ * and store them at *ADDRESS.
+ */
 { 
   if (fread( address, (size_t) item_size, (size_t) item_count, stream ) 
       < (size_t) item_count) 
@@ -101,16 +100,16 @@ read_vector( void *address, int_t item_size, int_t item_count,
 
 void *
 read_new_vector( int_t item_size, int_t item_count, 
-                 FILE *stream, string_t file_name )
-/* Read ITEM_COUNT items, of size ITEM_SIZE each, from STREAM,
- * which is connected to file FILE_NAME, into allocated memory block,
+                 FILE *stream)
+/* Read ITEM_COUNT items, of size ITEM_SIZE each, from STREAM
+ * into allocated memory block,
  * and return a pointer to that block.
  * The block must be freed after use. */
 { 
   void *block;
 
   block = new_vector( item_size, item_count );
-  read_vector( block, item_size, item_count, stream, file_name );
+  read_vector(block, item_size, item_count, stream);
   return block;
 }
 
