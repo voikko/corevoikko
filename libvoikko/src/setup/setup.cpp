@@ -24,6 +24,7 @@
 #endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
 #include "spellchecker/SpellerFactory.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "hyphenator/HyphenatorFactory.hpp"
 #include <cstring>
 #include <sys/stat.h>
@@ -96,9 +97,15 @@ VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 			}
 			return 1;
 		case VOIKKO_OPT_OCR_SUGGESTIONS:
-			if (value) voikko_options.suggestion_type = ST_OCR;
-			else voikko_options.suggestion_type = ST_STD;
+			{
+			spellchecker::suggestion::SuggestionType type = (value ? 
+				spellchecker::suggestion::SUGGESTION_TYPE_OCR :
+				spellchecker::suggestion::SUGGESTION_TYPE_STD);
+			delete voikko_options.suggestionGenerator;
+			voikko_options.suggestionGenerator =
+				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(&voikko_options, type);
 			return 1;
+			}
 		case VOIKKO_OPT_IGNORE_NONWORDS:
 			if (value) voikko_options.ignore_nonwords = 1;
 			else voikko_options.ignore_nonwords = 0;
@@ -188,7 +195,6 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.accept_bulleted_lists_in_gc = 0;
 	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
-	voikko_options.suggestion_type = ST_STD;
 	voikko_options.morAnalyzer = 0;
 	
 	#ifdef HAVE_ICONV
@@ -228,8 +234,12 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 			else {
 				dict = DictionaryLoader::load(string(langcode));
 			}
+			voikko_options.dictionary = dict;
 			voikko_options.morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 			voikko_options.speller = spellchecker::SpellerFactory::getSpeller(&voikko_options, dict);
+			voikko_options.suggestionGenerator =
+				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(&voikko_options,
+					spellchecker::suggestion::SUGGESTION_TYPE_STD);
 			voikko_options.hyphenator = hyphenator::HyphenatorFactory::getHyphenator(&voikko_options, dict);
 		}
 		catch (DictionaryException e) {
@@ -237,6 +247,10 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 				voikko_options.hyphenator->terminate();
 				delete voikko_options.hyphenator;
 				voikko_options.hyphenator = 0;
+			}
+			if (voikko_options.suggestionGenerator) {
+				delete voikko_options.suggestionGenerator;
+				voikko_options.suggestionGenerator = 0;
 			}
 			if (voikko_options.speller) {
 				voikko_options.speller->terminate();
@@ -293,6 +307,8 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 		voikko_options.hyphenator->terminate();
 		delete voikko_options.hyphenator;
 		voikko_options.hyphenator = 0;
+		delete voikko_options.suggestionGenerator;
+		voikko_options.suggestionGenerator = 0;
 		voikko_options.speller->terminate();
 		delete voikko_options.speller;
 		voikko_options.speller = 0;

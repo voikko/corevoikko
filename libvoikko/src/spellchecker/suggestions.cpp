@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,9 +23,6 @@
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
-#include "spellchecker/suggestion/SuggestionStrategy.hpp"
-#include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
-#include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <cwchar>
@@ -103,11 +100,16 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	}
 	
 	size_t maxCost = COST_LIMIT;
-	if (voikko_options.suggestion_type == ST_OCR) {
+	/*
+	FIXME: the following no longer works and in fact it does not belong here.
+	But it should still be done somewhere.
+	if (voikko_options.suggestionType == SUGGESTION_TYPE_OCR) {
 		maxCost = maxCost * 3;
 	}
+	*/
 	SuggestionStatus status(handle, nword, wlen, MAX_SUGGESTIONS * 3, maxCost);
 	
+	// FIXME: this should not be here
 	SuggestionGeneratorCaseChange caseChanger;
 	caseChanger.generate(&voikko_options, &status);
 	if (status.getSuggestionCount() > 0) {
@@ -115,18 +117,9 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		return getSuggestions(status, add_dots);
 	}
 	
-	SuggestionStrategy * strategy = 0;
-	switch (voikko_options.suggestion_type) {
-		case ST_STD:
-			strategy = new SuggestionStrategyTyping();
-			break;
-		case ST_OCR:
-			strategy = new SuggestionStrategyOcr();
-			break;
-	}
-	strategy->generate(&voikko_options, &status);
-	delete strategy;
-
+	SuggestionGenerator * generator = voikko_options.suggestionGenerator;
+	generator->generate(&voikko_options, &status);
+	
 	if (status.getSuggestionCount() == 0) {
 		delete[] nword;
 		return 0;

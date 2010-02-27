@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,21 +16,24 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_H
-#define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_H
+#include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
+#include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
+#include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
 
-#include "spellchecker/suggestion/SuggestionStatus.hpp"
-#include "setup/setup.hpp" // FIXME: remove this
+using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-class SuggestionGenerator {
-	public:
-		virtual void generate(libvoikko::voikko_options_t * voikkoOptions, // FIXME: only Analyzer is needed
-		                      SuggestionStatus * s) const = 0;
-		virtual ~SuggestionGenerator() {}
-};
+SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
+	                             voikko_options_t * /*voikkoOptions*/,
+	                             SuggestionType suggestionType)
+	                              throw(setup::DictionaryException) {
+	if (suggestionType == SUGGESTION_TYPE_OCR) {
+		return new SuggestionStrategyOcr();
+	}
+	else {
+		return new SuggestionStrategyTyping();
+	}
+}
 
-}}}
-
-#endif
+} } }

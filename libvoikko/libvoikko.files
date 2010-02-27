@@ -1,3 +1,4 @@
+ChangeLog
 config.h
 src/porting.h
 src/voikko.h
@@ -17,8 +18,11 @@ src/spellchecker/suggestions.hpp
 src/spellchecker/spell.hpp
 src/spellchecker/spell.cpp
 src/spellchecker/suggestion/SuggestionGenerator.hpp
+src/spellchecker/suggestion/SuggestionGeneratorFactory.hpp
+src/spellchecker/suggestion/SuggestionGeneratorFactory.cpp
 src/spellchecker/suggestion/SuggestionStatus.cpp
 src/spellchecker/suggestion/SuggestionStatus.hpp
+src/spellchecker/suggestion/SuggestionType.hpp
 src/spellchecker/suggestion/Suggestion.cpp
 src/spellchecker/suggestion/Suggestion.hpp
 src/spellchecker/suggestion/SuggestionGeneratorSwap.hpp

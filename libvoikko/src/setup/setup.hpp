@@ -19,19 +19,22 @@
 #ifndef VOIKKO_SETUP_SETUP_H
 #define VOIKKO_SETUP_SETUP_H
 
+// FIXME: nasty forward declaration trick to work around cyclic dependencies
+namespace libvoikko { namespace spellchecker { namespace suggestion {
+	struct SuggestionGenerator;
+} } }
+
 #include "grammar/cachesetup.hpp"
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
 #include "hyphenator/Hyphenator.hpp"
+#include "setup/Dictionary.hpp"
 #ifdef HAVE_ICONV
   #include <iconv.h>
 #endif
 #include <cwchar>
 
 namespace libvoikko {
-
-/** Suggestion types */
-enum suggtype {ST_STD, ST_OCR};
 
 typedef struct {
 	int ignore_dot;
@@ -55,11 +58,12 @@ typedef struct {
 	wchar_t * cache;
 	char * cache_meta;
 	int cache_size;
-	enum suggtype suggestion_type;
 	voikko_gc_cache gc_cache;
 	morphology::Analyzer * morAnalyzer;
 	spellchecker::Speller * speller;
+	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
 	hyphenator::Hyphenator * hyphenator;
+	setup::Dictionary dictionary;
 } voikko_options_t;
 
 extern voikko_options_t voikko_options;
