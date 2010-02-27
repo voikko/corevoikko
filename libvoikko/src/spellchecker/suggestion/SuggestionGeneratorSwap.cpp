@@ -53,7 +53,7 @@ void SuggestionGeneratorSwap::generate(voikko_options_t * voikkoOptions, Suggest
 			if (k < 3) continue;
 			buffer[i] = s->getWord()[j];
 			buffer[j] = s->getWord()[i];
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 			    s, buffer, s->getWordLength());
 			buffer[i] = s->getWord()[i];
 			buffer[j] = s->getWord()[j];

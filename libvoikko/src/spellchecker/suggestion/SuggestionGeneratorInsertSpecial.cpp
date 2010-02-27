@@ -35,7 +35,7 @@ void SuggestionGeneratorInsertSpecial::generate(voikko_options_t * voikkoOptions
 			continue;
 		wcsncpy(buffer, s->getWord(), j);
 		buffer[j] = L'-';
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 		    s, buffer, s->getWordLength() + 1);
 	}
 	/* suggest character duplication */
@@ -49,7 +49,7 @@ void SuggestionGeneratorInsertSpecial::generate(voikko_options_t * voikkoOptions
 		}
 		/* These should not be duplicated */
 		if (s->getWord()[j] == L'-' || s->getWord()[j] == L'\'') continue;
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 		    s, buffer, s->getWordLength() + 1);
 	}
 	delete[] buffer;

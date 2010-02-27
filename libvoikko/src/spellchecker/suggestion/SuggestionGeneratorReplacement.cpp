@@ -39,7 +39,7 @@ void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, 
 		for (wchar_t * pos = wcschr(buffer, from); pos != 0;
 		     pos = wcschr(pos+1, from)) {
 			*pos = to;
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;
 			*pos = from;
@@ -53,7 +53,7 @@ void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, 
 		for (wchar_t * pos = wcschr(buffer, upper_from); pos != 0;
 		     pos = wcschr(pos + 1, upper_from)) {
 			*pos = SimpleChar::upper(to);
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;
 			*pos = upper_from;

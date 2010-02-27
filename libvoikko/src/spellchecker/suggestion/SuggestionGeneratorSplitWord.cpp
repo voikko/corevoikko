@@ -40,11 +40,11 @@ void SuggestionGeneratorSplitWord::generate(voikko_options_t * voikkoOptions, Su
 		    s->getWord()[splitind]   == L'-' || s->getWord()[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
 		spellresult part1_res = SpellWithPriority::spellWithPriority(
-		    voikkoOptions, part1, splitind, &prio_total);
+		    voikkoOptions->morAnalyzer, part1, splitind, &prio_total);
 		s->charge();
 		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
 			spellresult part2_res = SpellWithPriority::spellWithPriority(
-			    voikkoOptions, s->getWord() + splitind,
+			    voikkoOptions->morAnalyzer, s->getWord() + splitind,
 			    s->getWordLength() - splitind, &prio_part);
 			prio_total += prio_part;
 			s->charge();

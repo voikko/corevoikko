@@ -46,7 +46,7 @@ void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, Su
 				continue; /* avoid duplicates */
 			}
 			buffer[j] = *ins;
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 			    s, buffer, s->getWordLength() + 1);
 		}
 		if (s->shouldAbort()) {
@@ -57,7 +57,7 @@ void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, Su
 		}
 		buffer[s->getWordLength()-1] = s->getWord()[s->getWordLength()-1];
 		buffer[s->getWordLength()] = *ins;
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 		    s, buffer, s->getWordLength() + 1);
 	}
 	delete[] buffer;

@@ -30,7 +30,7 @@ class SpellWithPriority {
 		*             when words are listed as suggestions for a misspelled word
 		* @return spelling result
 		*/
-		static spellresult spellWithPriority(voikko_options_t * voikkoOptions,
+		static spellresult spellWithPriority(morphology::Analyzer * morAnalyzer,
 		                   const wchar_t * word, size_t len, int * prio);
 };
 

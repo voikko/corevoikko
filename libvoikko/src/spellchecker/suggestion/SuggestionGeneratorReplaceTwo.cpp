@@ -48,7 +48,7 @@ void SuggestionGeneratorReplaceTwo::generate(voikko_options_t * voikkoOptions, S
 			}
 			buffer[i] = *(j + 1);
 			buffer[i + 1] = *(j + 1);
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 			    s, buffer, wlen);
 			if (s->shouldAbort()) {
 				break;

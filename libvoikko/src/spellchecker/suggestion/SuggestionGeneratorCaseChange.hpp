@@ -33,7 +33,7 @@ class SuggestionGeneratorCaseChange : public SuggestionGenerator {
 		 * @param word word to check
 		 * @param wlen length of word
 		 */
-		static void suggestForBuffer(voikko_options_t * voikkoOptions,
+		static void suggestForBuffer(morphology::Analyzer * morAnalyzer,
 		       SuggestionStatus * status, const wchar_t * word, size_t wlen);
 };
 

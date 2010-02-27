@@ -137,10 +137,10 @@ static spellresult handleAnalysis(const wchar_t * word, size_t len, int &prio,
 	prio *= getPriorityFromSpellResult(result);
 	return result;
 }
-    
-spellresult SpellWithPriority::spellWithPriority(voikko_options_t * voikkoOptions,
+
+spellresult SpellWithPriority::spellWithPriority(Analyzer * morAnalyzer,
 	                       const wchar_t * word, size_t len, int * prio) {
-	list<Analysis *> * analyses = voikkoOptions->morAnalyzer->analyze(word, len);
+	list<Analysis *> * analyses = morAnalyzer->analyze(word, len);
 	*prio = 0;
 	
 	if (analyses->empty()) {

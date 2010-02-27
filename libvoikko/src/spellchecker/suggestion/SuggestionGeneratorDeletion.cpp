@@ -31,7 +31,7 @@ void SuggestionGeneratorDeletion::generate(voikko_options_t * voikkoOptions, Sug
 		if (i == 0 || SimpleChar::lower(s->getWord()[i]) != SimpleChar::lower(s->getWord()[i-1])) {
 			wcsncpy(buffer, s->getWord(), i);
 			wcsncpy(buffer + i, s->getWord() + (i + 1), s->getWordLength() - i);
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions, s, buffer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer, s, buffer,
 			    s->getWordLength() - 1);
 		}
 	}

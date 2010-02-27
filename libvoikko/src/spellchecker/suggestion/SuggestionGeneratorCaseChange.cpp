@@ -31,17 +31,17 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 void SuggestionGeneratorCaseChange::generate(voikko_options_t * voikkoOptions,
 	                            SuggestionStatus * s) const {
-	suggestForBuffer(voikkoOptions, s, s->getWord(), s->getWordLength());
+	suggestForBuffer(voikkoOptions->morAnalyzer, s, s->getWord(), s->getWordLength());
 }
 
-void SuggestionGeneratorCaseChange::suggestForBuffer(voikko_options_t * voikkoOptions,
+void SuggestionGeneratorCaseChange::suggestForBuffer(Analyzer * morAnalyzer,
 		SuggestionStatus * s, const wchar_t * word, size_t wlen) {
 	wchar_t * newsugg;
 	int prio;
 	if (s->shouldAbort()) {
 		return;
 	}
-	spellresult sres = SpellWithPriority::spellWithPriority(voikkoOptions, word, wlen, &prio);
+	spellresult sres = SpellWithPriority::spellWithPriority(morAnalyzer, word, wlen, &prio);
 	s->charge();
 	switch (sres) {
 		case SPELL_FAILED:
@@ -59,8 +59,7 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(voikko_options_t * voikkoOp
 			s->addSuggestion(newsugg, prio);
 			return;
 		case SPELL_CAP_ERROR:
-			Analyzer * analyzer = voikkoOptions->morAnalyzer;
-			list<Analysis *> * analyses = analyzer->analyze(word, wlen);
+			list<Analysis *> * analyses = morAnalyzer->analyze(word, wlen);
 			s->charge();
 			if (analyses->empty()) {
 				Analyzer::deleteAnalyses(analyses);

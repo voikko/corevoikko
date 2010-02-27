@@ -64,7 +64,7 @@ void SuggestionGeneratorVowelChange::generate(voikko_options_t * voikkoOptions, 
 			delete[] buffer;
 			return;
 		}
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions,
+		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
 		    s, buffer, s->getWordLength());
 		pat++;
 	}

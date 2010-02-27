@@ -8,6 +8,7 @@ data/autocorrect/fi_FI.xml
 src/tokenizer/tokenizer.cpp
 src/character/charset.cpp
 src/character/charset.hpp
+src/character/SimpleChar.hpp
 src/utils/utils.cpp
 src/utils/utils.hpp
 src/utils/StringUtils.hpp
