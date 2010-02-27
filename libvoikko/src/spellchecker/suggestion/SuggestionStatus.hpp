@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -37,6 +37,8 @@ class SuggestionStatus {
 		/**
 		 * Increases the counter of calls made to morphological
 		 * analysis component (or other CPU-heavy operations).
+		 * Single call should roughly correspond to cost of one
+		 * morphological analysis operation.
 		 */
 		void charge();
 		
@@ -86,7 +88,8 @@ class SuggestionStatus {
 		
 		/**
 		 * Maximum number of times the morphological analysis
-		 * may be performed.
+		 * (or an opertaion with computationally equivalent cost
+		 *  may be performed.
 		 */
 		const size_t maxCost;
 		
