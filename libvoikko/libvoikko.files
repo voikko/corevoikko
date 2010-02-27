@@ -1,5 +1,6 @@
 ChangeLog
 config.h
+configure.ac
 src/porting.h
 src/voikko.h
 src/voikko_defs.h

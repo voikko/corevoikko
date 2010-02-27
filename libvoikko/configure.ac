@@ -95,6 +95,18 @@ if test x$hfst = xyes; then
 fi
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
+dnl Lttoolbox support
+AH_TEMPLATE(HAVE_LTTOOLBOX, [Have Lttoolbox])
+AC_ARG_ENABLE(lttoolbox, AC_HELP_STRING([--enable-lttoolbox],
+	[enable Lttoolbox morphology backend (EXPERIMENTAL!)]),
+	[lttoolbox=${enableval}], [lttoolbox=no])
+if test x$lttoolbox = xyes; then
+	PKG_CHECK_MODULES([LTTOOLBOX], [lttoolbox-3.1 >= 3.1.0])
+	AC_DEFINE(HAVE_LTTOOLBOX, 1)
+fi
+AM_CONDITIONAL([HAVE_LTTOOLBOX], [test x$lttoolbox = xyes])
+
+
 dnl Windows specific settings
 if test x$build_os == xmingw32; then
   LIBLDFLAGSWIN="-Wl,--output-def,libvoikko-1.def"

@@ -1,5 +1,6 @@
 2010-02-27 Harri Pitkänen <hatapitk@iki.fi>
 	* Implement SuggestionGeneratorFactory.
+	* Add Lttoolbox backend.
 
 2010-02-20 Harri Pitkänen <hatapitk@iki.fi>
 	* Replace uses of iswlower, iswdigit and iswspace with locale independent implementation.
