@@ -1172,6 +1172,7 @@
 [perusmuoto: "yksinään", alku: "yksinä", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "yksitellen", alku: "yksitellen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "yksittäin", alku: "yksittäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "ykskaks", alku: "ykskaks", luokka: seikkasana, jatko: <loppu>, äs: a, rakenne: "=ppp=pppp"];
 [perusmuoto: "ykskantaan", alku: "ykskantaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppp=ppppppp"];
 [perusmuoto: "yleensä", alku: "yleensä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ylemmäs", alku: "ylemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
