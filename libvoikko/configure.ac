@@ -103,6 +103,7 @@ AC_ARG_ENABLE(lttoolbox, AC_HELP_STRING([--enable-lttoolbox],
 if test x$lttoolbox = xyes; then
 	PKG_CHECK_MODULES([LTTOOLBOX], [lttoolbox-3.1 >= 3.1.0])
 	AC_DEFINE(HAVE_LTTOOLBOX, 1)
+	CXXFLAGS="$CXXFLAGS $LTTOOLBOX_CFLAGS"
 fi
 AM_CONDITIONAL([HAVE_LTTOOLBOX], [test x$lttoolbox = xyes])
 

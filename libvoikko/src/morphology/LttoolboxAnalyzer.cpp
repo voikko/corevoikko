@@ -20,7 +20,6 @@
 #include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
 #include "voikko_defs.h"
-#include <fstream>
 
 using namespace std;
 using namespace libvoikko::utils;
@@ -28,7 +27,14 @@ using namespace libvoikko::utils;
 namespace libvoikko { namespace morphology {
 
 LttoolboxAnalyzer::LttoolboxAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
-	// TODO
+	string fileName = directoryName + "/mor.bin";
+	FILE * transducerFile = fopen(fileName.c_str(), "r");
+	if (!transducerFile) {
+		throw setup::DictionaryException("Failed to open mor.bin");
+	}
+	processor.load(transducerFile);
+	fclose(transducerFile);
+	processor.initBiltrans();
 }
     
 list<Analysis *> * LttoolboxAnalyzer::analyze(const wchar_t * word) {
@@ -40,9 +46,12 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const wchar_t * word,
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
-	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
-	list<Analysis *> * result = analyze(wordUtf8);
-	delete[] wordUtf8;
+	wstring inputString = L"^";
+	inputString.append(word);
+	inputString.append(L"$");
+	wstring analysisString = processor.biltrans(inputString);
+	list<Analysis *> * result = new list<Analysis *>();
+	addAnalysis(analysisString, result, wlen);
 	return result;
 }
 
@@ -51,14 +60,31 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const char * word) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
-	list<Analysis *> * analysisList = new list<Analysis *>();
-	// TODO
+	wchar_t * wordUcs4 = StringUtils::ucs4FromUtf8(word);
+	list<Analysis *> * analysisList = analyze(wordUcs4);
+	delete[] wordUcs4;
 	return analysisList;
 }
 
+void LttoolboxAnalyzer::addAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) const {
+	if (analysisString.find(L"^@") == 0) {
+		return;
+	}
+	Analysis * analysis = new Analysis();
+	// TODO: do something with the analysis
+	wchar_t * structure = new wchar_t[charCount + 2];
+	structure[0] = L'=';
+	for (size_t i = 1; i < charCount + 1; i++) {
+		structure[i] = L'p';
+	}
+	structure[charCount + 1] = L'\0';
+	analysis->addAttribute("STRUCTURE", structure);
+	analysis->addAttribute("CLASS", utils::StringUtils::copy(L"none"));
+	analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
+	analysisList->push_back(analysis);
+}
 
 void LttoolboxAnalyzer::terminate() {
-	// TODO
 }
 
 } }

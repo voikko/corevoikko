@@ -23,6 +23,7 @@
 #include "setup/DictionaryException.hpp"
 #include <map>
 #include <string>
+#include <lttoolbox/fst_processor.h>
 
 namespace libvoikko { namespace morphology {
 
@@ -36,6 +37,9 @@ class LttoolboxAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
 		std::list<Analysis *> * analyze(const char * word);
 		void terminate();
+	private:
+		void addAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) const;
+		FSTProcessor processor;
 };
 
 } }
