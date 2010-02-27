@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -25,6 +25,10 @@
 #include "morphology/HfstAnalyzer.hpp"
 #endif
 
+#ifdef HAVE_LTTOOLBOX
+#include "morphology/LttoolboxAnalyzer.hpp"
+#endif
+
 using namespace std;
 
 namespace libvoikko { namespace morphology {
@@ -37,6 +41,11 @@ Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	#ifdef HAVE_HFST
 	if (dictionary.getMorBackend() == "hfst") {
 		return new HfstAnalyzer(dictionary.getMorPath());
+	}
+	#endif
+	#ifdef HAVE_LTTOOLBOX
+	if (dictionary.getMorBackend() == "lttoolbox") {
+		return new LttoolboxAnalyzer(dictionary.getMorPath());
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create analyzer because of unknown morphology backend");

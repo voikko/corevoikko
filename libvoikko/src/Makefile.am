@@ -68,6 +68,7 @@ noinst_HEADERS = \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \
     morphology/HfstAnalyzer.hpp \
+    morphology/LttoolboxAnalyzer.hpp \
     morphology/MalagaAnalyzer.hpp \
     morphology/malaga/analysis.hpp \
     morphology/malaga/malaga_files.hpp \
@@ -132,6 +133,8 @@ autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)
 
 HFST_CPP_FILES=morphology/HfstAnalyzer.cpp spellchecker/HfstSpeller.cpp
 
+LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
+
 if HAVE_HFST
     libvoikko_la_SOURCES += $(HFST_CPP_FILES)
     libvoikko_la_LDFLAGS += -lhfst
@@ -139,6 +142,12 @@ else
     EXTRA_DIST += $(HFST_CPP_FILES)
 endif
 
+if HAVE_LTTOOLBOX
+    libvoikko_la_SOURCES += $(LTTOOLBOX_CPP_FILES)
+    libvoikko_la_LDFLAGS += $(LTTOOLBOX_LIBS)
+else
+    EXTRA_DIST += $(LTTOOLBOX_CPP_FILES)
+endif
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libvoikko.pc
