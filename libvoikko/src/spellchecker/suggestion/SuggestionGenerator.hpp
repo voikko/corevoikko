@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,14 +20,12 @@
 #define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_H
 
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
-#include "setup/setup.hpp" // FIXME: remove this
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGenerator {
 	public:
-		virtual void generate(libvoikko::voikko_options_t * voikkoOptions, // FIXME: only Analyzer is needed
-		                      SuggestionStatus * s) const = 0;
+		virtual void generate(SuggestionStatus * s) const = 0;
 		virtual ~SuggestionGenerator() {}
 };
 

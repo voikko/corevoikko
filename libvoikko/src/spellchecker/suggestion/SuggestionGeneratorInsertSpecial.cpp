@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -22,7 +22,10 @@
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-void SuggestionGeneratorInsertSpecial::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+SuggestionGeneratorInsertSpecial::SuggestionGeneratorInsertSpecial(morphology::Analyzer * morAnalyzer) :
+		morAnalyzer(morAnalyzer) {}
+
+void SuggestionGeneratorInsertSpecial::generate(SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength() + 2];
 	wcsncpy(buffer + 1, s->getWord(), s->getWordLength());
 	buffer[s->getWordLength()+1] = L'\0';
@@ -35,7 +38,7 @@ void SuggestionGeneratorInsertSpecial::generate(voikko_options_t * voikkoOptions
 			continue;
 		wcsncpy(buffer, s->getWord(), j);
 		buffer[j] = L'-';
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+		SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 		    s, buffer, s->getWordLength() + 1);
 	}
 	/* suggest character duplication */
@@ -49,7 +52,7 @@ void SuggestionGeneratorInsertSpecial::generate(voikko_options_t * voikkoOptions
 		}
 		/* These should not be duplicated */
 		if (s->getWord()[j] == L'-' || s->getWord()[j] == L'\'') continue;
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+		SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 		    s, buffer, s->getWordLength() + 1);
 	}
 	delete[] buffer;

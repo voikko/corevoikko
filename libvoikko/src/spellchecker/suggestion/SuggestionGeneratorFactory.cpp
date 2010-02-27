@@ -19,20 +19,21 @@
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
 #include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
+#include "setup/setup.hpp"
 
 using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
-	                             voikko_options_t * /*voikkoOptions*/,
+	                             voikko_options_t * voikkoOptions,
 	                             SuggestionType suggestionType)
 	                              throw(setup::DictionaryException) {
 	if (suggestionType == SUGGESTION_TYPE_OCR) {
-		return new SuggestionStrategyOcr();
+		return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer);
 	}
 	else {
-		return new SuggestionStrategyTyping();
+		return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer);
 	}
 }
 

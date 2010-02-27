@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -25,7 +25,10 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 static const wchar_t * BACK_VOWELS =  L"aouAOU";
 static const wchar_t * FRONT_VOWELS = L"\u00e4\u00f6y\u00c4\u00d6Y";
 
-void SuggestionGeneratorVowelChange::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+SuggestionGeneratorVowelChange::SuggestionGeneratorVowelChange(morphology::Analyzer * morAnalyzer) :
+		morAnalyzer(morAnalyzer) {}
+
+void SuggestionGeneratorVowelChange::generate(SuggestionStatus * s) const {
 	int mask = 0;
 	size_t vcount = 0;
 	int pat = 1;
@@ -64,7 +67,7 @@ void SuggestionGeneratorVowelChange::generate(voikko_options_t * voikkoOptions, 
 			delete[] buffer;
 			return;
 		}
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+		SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 		    s, buffer, s->getWordLength());
 		pat++;
 	}

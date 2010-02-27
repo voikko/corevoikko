@@ -20,13 +20,14 @@
 #define VOIKKO_SPELLCHECKER_SUGGESTION_SUGGESTION_GENERATOR_CASE_CHANGE_H
 
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
+#include "morphology/Analyzer.hpp"
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionGeneratorCaseChange : public SuggestionGenerator {
 	public:
-		void generate(voikko_options_t * voikkoOptions,
-		              SuggestionStatus * s) const;
+		SuggestionGeneratorCaseChange(morphology::Analyzer * morAnalyzer);
+		void generate(SuggestionStatus * s) const;
 
 		/** Suggests corrections to character case
 		 * @param status the suggestion status structure
@@ -35,6 +36,9 @@ class SuggestionGeneratorCaseChange : public SuggestionGenerator {
 		 */
 		static void suggestForBuffer(morphology::Analyzer * morAnalyzer,
 		       SuggestionStatus * status, const wchar_t * word, size_t wlen);
+	
+	private:
+		morphology::Analyzer * morAnalyzer;
 };
 
 }}}

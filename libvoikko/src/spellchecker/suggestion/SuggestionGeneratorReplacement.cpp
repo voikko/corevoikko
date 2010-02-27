@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,10 +26,10 @@ using namespace libvoikko::character;
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 SuggestionGeneratorReplacement::SuggestionGeneratorReplacement(
-	const wchar_t * replacements) :
-	replacements(replacements) { }
+	const wchar_t * replacements, morphology::Analyzer * morAnalyzer) :
+	replacements(replacements), morAnalyzer(morAnalyzer) { }
 
-void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+void SuggestionGeneratorReplacement::generate(SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength() + 1];
 	wcsncpy(buffer, s->getWord(), s->getWordLength());
 	buffer[s->getWordLength()] = L'\0';
@@ -39,7 +39,7 @@ void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, 
 		for (wchar_t * pos = wcschr(buffer, from); pos != 0;
 		     pos = wcschr(pos+1, from)) {
 			*pos = to;
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;
 			*pos = from;
@@ -53,7 +53,7 @@ void SuggestionGeneratorReplacement::generate(voikko_options_t * voikkoOptions, 
 		for (wchar_t * pos = wcschr(buffer, upper_from); pos != 0;
 		     pos = wcschr(pos + 1, upper_from)) {
 			*pos = SimpleChar::upper(to);
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 			    s, buffer, s->getWordLength());
 			if (s->shouldAbort()) break;
 			*pos = upper_from;

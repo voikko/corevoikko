@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,10 +26,10 @@ using namespace libvoikko::character;
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 SuggestionGeneratorReplaceTwo::SuggestionGeneratorReplaceTwo(
-	const wchar_t * replacements) :
-	replacements(replacements) { }
+	const wchar_t * replacements, morphology::Analyzer * morAnalyzer) :
+	replacements(replacements), morAnalyzer(morAnalyzer) { }
 
-void SuggestionGeneratorReplaceTwo::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+void SuggestionGeneratorReplaceTwo::generate(SuggestionStatus * s) const {
 	size_t wlen = s->getWordLength();
 	wchar_t * buffer = new wchar_t[wlen + 1];
 	for (size_t i = 0; i < wlen; ++i) {
@@ -48,7 +48,7 @@ void SuggestionGeneratorReplaceTwo::generate(voikko_options_t * voikkoOptions, S
 			}
 			buffer[i] = *(j + 1);
 			buffer[i + 1] = *(j + 1);
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 			    s, buffer, wlen);
 			if (s->shouldAbort()) {
 				break;

@@ -29,9 +29,11 @@ using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-void SuggestionGeneratorCaseChange::generate(voikko_options_t * voikkoOptions,
-	                            SuggestionStatus * s) const {
-	suggestForBuffer(voikkoOptions->morAnalyzer, s, s->getWord(), s->getWordLength());
+SuggestionGeneratorCaseChange::SuggestionGeneratorCaseChange(Analyzer * morAnalyzer)
+		: morAnalyzer(morAnalyzer) {}
+
+void SuggestionGeneratorCaseChange::generate(SuggestionStatus * s) const {
+	suggestForBuffer(morAnalyzer, s, s->getWord(), s->getWordLength());
 }
 
 void SuggestionGeneratorCaseChange::suggestForBuffer(Analyzer * morAnalyzer,

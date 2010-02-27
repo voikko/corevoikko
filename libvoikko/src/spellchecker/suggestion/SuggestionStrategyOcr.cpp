@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,7 +23,7 @@ using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-SuggestionStrategyOcr::SuggestionStrategyOcr() {
+SuggestionStrategyOcr::SuggestionStrategyOcr(morphology::Analyzer * morAnalyzer) {
 	generators.push_back(
 		new SuggestionGeneratorReplacement(
 		L"0o" L"li" L"il" L"uo" L"ou"
@@ -37,8 +37,8 @@ SuggestionStrategyOcr::SuggestionStrategyOcr() {
 		L"_j" L"_k" L"_l" L"_m" L"_n"
 		L"_o" L"_p" L"_q" L"_r" L"_s"
 		L"_t" L"_u" L"_v" L"_w" L"_x"
-		L"_y" L"_z" L"_\u00e4" L"_\u00f6"
-		));
+		L"_y" L"_z" L"_\u00e4" L"_\u00f6",
+		morAnalyzer));
 }
 
 }}}

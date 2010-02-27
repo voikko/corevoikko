@@ -110,15 +110,15 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	SuggestionStatus status(handle, nword, wlen, MAX_SUGGESTIONS * 3, maxCost);
 	
 	// FIXME: this should not be here
-	SuggestionGeneratorCaseChange caseChanger;
-	caseChanger.generate(&voikko_options, &status);
+	SuggestionGeneratorCaseChange caseChanger(voikko_options.morAnalyzer);
+	caseChanger.generate(&status);
 	if (status.getSuggestionCount() > 0) {
 		delete[] nword;
 		return getSuggestions(status, add_dots);
 	}
 	
 	SuggestionGenerator * generator = voikko_options.suggestionGenerator;
-	generator->generate(&voikko_options, &status);
+	generator->generate(&status);
 	
 	if (status.getSuggestionCount() == 0) {
 		delete[] nword;

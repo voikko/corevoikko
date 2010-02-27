@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,10 +26,11 @@ using namespace libvoikko::character;
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 SuggestionGeneratorInsertion::SuggestionGeneratorInsertion(
-	const wchar_t * characters) :
-	characters(characters) { }
+	const wchar_t * characters, morphology::Analyzer * morAnalyzer) :
+	characters(characters),
+	morAnalyzer(morAnalyzer) { }
 
-void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+void SuggestionGeneratorInsertion::generate(SuggestionStatus * s) const {
 	wchar_t * buffer = new wchar_t[s->getWordLength() + 2];
 	for (const wchar_t * ins = characters; *ins != L'\0'; ins++) {
 		buffer[0] = s->getWord()[0];
@@ -46,7 +47,7 @@ void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, Su
 				continue; /* avoid duplicates */
 			}
 			buffer[j] = *ins;
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 			    s, buffer, s->getWordLength() + 1);
 		}
 		if (s->shouldAbort()) {
@@ -57,7 +58,7 @@ void SuggestionGeneratorInsertion::generate(voikko_options_t * voikkoOptions, Su
 		}
 		buffer[s->getWordLength()-1] = s->getWord()[s->getWordLength()-1];
 		buffer[s->getWordLength()] = *ins;
-		SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+		SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 		    s, buffer, s->getWordLength() + 1);
 	}
 	delete[] buffer;

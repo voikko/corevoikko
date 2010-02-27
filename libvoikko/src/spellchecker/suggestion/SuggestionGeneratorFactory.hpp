@@ -21,8 +21,8 @@
 
 #include "spellchecker/suggestion/SuggestionType.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
-#include "setup/Dictionary.hpp"
 #include "setup/DictionaryException.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 

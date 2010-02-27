@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -25,7 +25,10 @@ using namespace libvoikko::character;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-void SuggestionGeneratorSplitWord::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+SuggestionGeneratorSplitWord::SuggestionGeneratorSplitWord(morphology::Analyzer * morAnalyzer) :
+		morAnalyzer(morAnalyzer) {}
+
+void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 	int prio_part;
 	int prio_total;
 	wchar_t * part1 = new wchar_t[s->getWordLength() + 1];
@@ -40,11 +43,11 @@ void SuggestionGeneratorSplitWord::generate(voikko_options_t * voikkoOptions, Su
 		    s->getWord()[splitind]   == L'-' || s->getWord()[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
 		spellresult part1_res = SpellWithPriority::spellWithPriority(
-		    voikkoOptions->morAnalyzer, part1, splitind, &prio_total);
+		    morAnalyzer, part1, splitind, &prio_total);
 		s->charge();
 		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
 			spellresult part2_res = SpellWithPriority::spellWithPriority(
-			    voikkoOptions->morAnalyzer, s->getWord() + splitind,
+			    morAnalyzer, s->getWord() + splitind,
 			    s->getWordLength() - splitind, &prio_part);
 			prio_total += prio_part;
 			s->charge();

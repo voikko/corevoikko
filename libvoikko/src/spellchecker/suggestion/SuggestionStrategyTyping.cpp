@@ -76,38 +76,38 @@ static const wchar_t * const REPLACEMENTS_4 =
 	L"sw" L"sz" L"dw" L"dc" L"dx"
 	L"vc" L"aw" L"az" L"sq";
 
-SuggestionStrategyTyping::SuggestionStrategyTyping() {
+SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAnalyzer) {
 	generators.push_back(
-		new SuggestionGeneratorVowelChange());
+		new SuggestionGeneratorVowelChange(morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplacement(REPLACEMENTS_1));
+		new SuggestionGeneratorReplacement(REPLACEMENTS_1, morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorDeletion());
+		new SuggestionGeneratorDeletion(morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorInsertSpecial());
+		new SuggestionGeneratorInsertSpecial(morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorSplitWord());
+		new SuggestionGeneratorSplitWord(morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_1));
+		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_1, morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplacement(REPLACEMENTS_2));
+		new SuggestionGeneratorReplacement(REPLACEMENTS_2, morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorInsertion(L"aitesn"));
+		new SuggestionGeneratorInsertion(L"aitesn", morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorSwap());
+		new SuggestionGeneratorSwap(morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplacement(REPLACEMENTS_3));
+		new SuggestionGeneratorReplacement(REPLACEMENTS_3, morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorInsertion(
-		L"ulko\u00e4mrvpyhjd\u00f6gfbcw:xzq\u00e5"));
+		L"ulko\u00e4mrvpyhjd\u00f6gfbcw:xzq\u00e5", morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplacement(REPLACEMENTS_4));
+		new SuggestionGeneratorReplacement(REPLACEMENTS_4, morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_2));
+		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_2, morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_3));
+		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_3, morAnalyzer));
 	generators.push_back(
-		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_4));
+		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_4, morAnalyzer));
 }
 
 }}}

@@ -29,7 +29,7 @@ class SuggestionStrategy : public SuggestionGenerator {
 	public:
 		SuggestionStrategy();
 		~SuggestionStrategy();
-		void generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const;
+		void generate(SuggestionStatus * s) const;
 
 	protected:
 		SuggestionStrategy(SuggestionStrategy const & other);

@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -28,7 +28,10 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 static const wchar_t * BACK_VOWELS =  L"aouAOU";
 static const wchar_t * FRONT_VOWELS = L"\u00e4\u00f6y\u00c4\u00d6Y";
 
-void SuggestionGeneratorSwap::generate(voikko_options_t * voikkoOptions, SuggestionStatus * s) const {
+SuggestionGeneratorSwap::SuggestionGeneratorSwap(morphology::Analyzer * morAnalyzer) :
+		morAnalyzer(morAnalyzer) {}
+
+void SuggestionGeneratorSwap::generate(SuggestionStatus * s) const {
 	size_t max_distance;
 	if (s->getWordLength() <= 8) max_distance = 10;
 	else max_distance = 50 / s->getWordLength();
@@ -53,7 +56,7 @@ void SuggestionGeneratorSwap::generate(voikko_options_t * voikkoOptions, Suggest
 			if (k < 3) continue;
 			buffer[i] = s->getWord()[j];
 			buffer[j] = s->getWord()[i];
-			SuggestionGeneratorCaseChange::suggestForBuffer(voikkoOptions->morAnalyzer,
+			SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer,
 			    s, buffer, s->getWordLength());
 			buffer[i] = s->getWord()[i];
 			buffer[j] = s->getWord()[j];
