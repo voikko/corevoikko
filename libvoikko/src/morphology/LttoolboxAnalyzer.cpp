@@ -66,10 +66,7 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const char * word) {
 	return analysisList;
 }
 
-void LttoolboxAnalyzer::addAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) const {
-	if (analysisString.find(L"^@") == 0) {
-		return;
-	}
+static void addSingleAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) {
 	Analysis * analysis = new Analysis();
 	// TODO: do something with the analysis
 	wchar_t * structure = new wchar_t[charCount + 2];
@@ -79,9 +76,23 @@ void LttoolboxAnalyzer::addAnalysis(wstring analysisString, list<Analysis *> * a
 	}
 	structure[charCount + 1] = L'\0';
 	analysis->addAttribute("STRUCTURE", structure);
-	analysis->addAttribute("CLASS", utils::StringUtils::copy(L"none"));
+	analysis->addAttribute("CLASS", utils::StringUtils::copy(L"LAATUSANA"));
 	analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
 	analysisList->push_back(analysis);
+}
+
+void LttoolboxAnalyzer::addAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) const {
+	if (analysisString.find(L"^@") == 0) {
+		return;
+	}
+	size_t analysisStart = 1;
+	for (size_t analysisEnd = analysisString.find(L"/");
+			analysisEnd != wstring::npos;
+			analysisEnd = analysisString.find(L"/", analysisStart)) {
+		addSingleAnalysis(analysisString.substr(analysisStart, analysisEnd - analysisStart), analysisList, charCount);
+		analysisStart = analysisEnd + 1;
+	}
+	addSingleAnalysis(analysisString.substr(analysisStart, analysisString.length() - analysisStart - 1), analysisList, charCount);
 }
 
 void LttoolboxAnalyzer::terminate() {
