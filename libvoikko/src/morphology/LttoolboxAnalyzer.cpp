@@ -68,15 +68,25 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const char * word) {
 
 static void addSingleAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) {
 	Analysis * analysis = new Analysis();
-	// TODO: do something with the analysis
+	bool isNp = false;
+	if (analysisString.find(L"<np>") != wstring::npos) {
+		isNp = true;
+		analysis->addAttribute("CLASS", utils::StringUtils::copy(L"nimi"));
+	} else if (analysisString.find(L"<adj>") != wstring::npos) {
+		analysis->addAttribute("CLASS", utils::StringUtils::copy(L"LAATUSANA"));
+	} else {
+		// TODO other categories from http://wiki.apertium.org/wiki/List_of_symbols
+		analysis->addAttribute("CLASS", utils::StringUtils::copy(L"LAATUSANA"));
+	}
 	wchar_t * structure = new wchar_t[charCount + 2];
 	structure[0] = L'=';
-	for (size_t i = 1; i < charCount + 1; i++) {
+	structure[1] = (isNp ? L'i' : L'p');
+	for (size_t i = 2; i < charCount + 1; i++) {
 		structure[i] = L'p';
 	}
 	structure[charCount + 1] = L'\0';
 	analysis->addAttribute("STRUCTURE", structure);
-	analysis->addAttribute("CLASS", utils::StringUtils::copy(L"LAATUSANA"));
+	
 	analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
 	analysisList->push_back(analysis);
 }

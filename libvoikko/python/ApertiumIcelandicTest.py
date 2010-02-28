@@ -45,6 +45,14 @@ class ApertiumIcelandicTest(unittest.TestCase):
 		# ^Björn/Björn<np><ant><m><sg><nom>/Björn<np><ant><m><sg><acc>/Björn<n><m><sg><nom><ind>/Björn<n><m><sg><acc><ind>$
 		analysisList = self.voikko.analyze(u"Björn")
 		self.failUnless(len(analysisList) > 1)
+	
+	def testProperNounIsProperlyAnalyzed(self):
+		# ^Danmörk/Danmörk<np><top><f><sg><nom><ind>$
+		analysisList = self.voikko.analyze(u"Danmörk")
+		self.assertEqual(1, len(analysisList))
+		analysis = analysisList[0]
+		self.assertEqual(u"nimi", analysis["CLASS"])
+		self.assertEqual(u"=ipppppp", analysis["STRUCTURE"])
 
 
 if __name__ == "__main__":
