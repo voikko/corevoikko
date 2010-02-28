@@ -53,6 +53,10 @@ class ApertiumIcelandicTest(unittest.TestCase):
 		analysis = analysisList[0]
 		self.assertEqual(u"nimi", analysis["CLASS"])
 		self.assertEqual(u"=ipppppp", analysis["STRUCTURE"])
+	
+	def testAnalyzerIsCaseInsensitive(self):
+		analysisList = self.voikko.analyze(u"danmörk")
+		self.assertEqual(1, len(analysisList))
 
 
 if __name__ == "__main__":

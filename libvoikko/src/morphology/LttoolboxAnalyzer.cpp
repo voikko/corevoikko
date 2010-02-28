@@ -19,6 +19,7 @@
 #include "morphology/LttoolboxAnalyzer.hpp"
 #include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
+#include "character/SimpleChar.hpp"
 #include "voikko_defs.h"
 
 using namespace std;
@@ -34,6 +35,7 @@ LttoolboxAnalyzer::LttoolboxAnalyzer(const string & directoryName) throw(setup::
 	}
 	processor.load(transducerFile);
 	fclose(transducerFile);
+	processor.setCaseSensitiveMode(false);
 	processor.initBiltrans();
 }
     
@@ -47,7 +49,13 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const wchar_t * word,
 		return new list<Analysis *>();
 	}
 	wstring inputString = L"^";
-	inputString.append(word);
+	// TODO: don't know how to do case insensitive analysis with Lttoolbox.
+	// Working around by capitalizing the first letter as this allows
+	// at least typical proper nouns to be handled correctly.
+	inputString.append(1, character::SimpleChar::upper(word[0]));
+	for (size_t i = 1; i < wlen; i++) {
+		inputString.append(1, word[i]);
+	}
 	inputString.append(L"$");
 	wstring analysisString = processor.biltrans(inputString);
 	list<Analysis *> * result = new list<Analysis *>();
@@ -93,6 +101,10 @@ static void addSingleAnalysis(wstring analysisString, list<Analysis *> * analysi
 
 void LttoolboxAnalyzer::addAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) const {
 	if (analysisString.find(L"^@") == 0) {
+		return;
+	}
+	// Workaround for weird behaviour when incorrect input word starts with a capital letter
+	if (analysisString.length() < 3 || analysisString[2] == L'<') {
 		return;
 	}
 	size_t analysisStart = 1;
