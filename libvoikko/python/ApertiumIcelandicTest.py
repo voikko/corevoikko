@@ -33,6 +33,10 @@ class ApertiumIcelandicTest(unittest.TestCase):
 		analysisList = self.voikko.analyze(u"skjdfhksdfgh")
 		self.assertEqual(0, len(analysisList))
 	
+	def TODOtestCapitalizedUnknownWordReturnsNoAnalyses(self):
+		analysisList = self.voikko.analyze(u"Reykjanghfghesi")
+		self.assertEqual(0, len(analysisList))
+	
 	def testSingleAdjectiveIsProperlyAnalyzed(self):
 		# ^heilagur/heilagur<adj><pst><m><sg><nom><sta>$
 		analysisList = self.voikko.analyze(u"heilagur")
