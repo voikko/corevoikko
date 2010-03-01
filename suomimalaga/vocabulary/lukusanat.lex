@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006 - 2008 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                 2006 - 2007 Harri Pitkänen (hatapitk@iki.fi)
+#                 2006 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -96,7 +96,11 @@
 [perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <paperi>, äs: a, tiedot: <murre>];
 [perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
 [perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
-
+[perusmuoto: "kvadriljoona", alku: "kvadriljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+[perusmuoto: "kvintiljoona", alku: "kvintiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+[perusmuoto: "sekstiljoona", alku: "sekstiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+[perusmuoto: "septiljoona", alku: "septiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+[perusmuoto: "sentiljoona", alku: "sentiljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
 
 [perusmuoto: "ensimmäinen", alku: "ensimmäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä];
 [perusmuoto: "ensimäinen", alku: "ensimäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä, tiedot: <murre>];
