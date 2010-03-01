@@ -42,71 +42,17 @@ char_type get_char_type(wchar_t c) {
 	if (SimpleChar::isWhitespace(c)) {
 		return CHAR_WHITESPACE;
 	}
-	if (wcschr(L"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
-	           L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
-	           L"\u00C1"  /* LATIN CAPITAL LETTER A WITH ACUTE */
-	           L"\u00C2"  /* LATIN CAPITAL LETTER A WITH CIRCUMFLEX */
-	           L"\u00C3"  /* LATIN CAPITAL LETTER A WITH TILDE */
-	           L"\u00C4"  /* LATIN CAPITAL LETTER A WITH DIAERESIS */
-	           L"\u00C5"  /* LATIN CAPITAL LETTER A WITH RING ABOVE */
-	           L"\u00C7"  /* LATIN CAPITAL LETTER C WITH CEDILLA */
-	           L"\u00C8"  /* LATIN CAPITAL LETTER E WITH GRAVE */
-	           L"\u00C9"  /* LATIN CAPITAL LETTER E WITH ACUTE */
-	           L"\u00CA"  /* LATIN CAPITAL LETTER E WITH CIRCUMFLEX */
-	           L"\u00CB"  /* LATIN CAPITAL LETTER E WITH DIAERESIS */
-	           L"\u00CC"  /* LATIN CAPITAL LETTER I WITH GRAVE */
-	           L"\u00CD"  /* LATIN CAPITAL LETTER I WITH ACUTE */
-	           L"\u00CE"  /* LATIN CAPITAL LETTER I WITH CIRCUMFLEX */
-	           L"\u00CF"  /* LATIN CAPITAL LETTER I WITH DIAERESIS */
-	           L"\u00D1"  /* LATIN CAPITAL LETTER N WITH TILDE */
-	           L"\u00D2"  /* LATIN CAPITAL LETTER O WITH GRAVE */
-	           L"\u00D3"  /* LATIN CAPITAL LETTER O WITH ACUTE */
-	           L"\u00D4"  /* LATIN CAPITAL LETTER O WITH CIRCUMFLEX */
-	           L"\u00D5"  /* LATIN CAPITAL LETTER O WITH TILDE */
-	           L"\u00D6"  /* LATIN CAPITAL LETTER O WITH DIAERESIS */
-	           L"\u00D9"  /* LATIN CAPITAL LETTER U WITH GRAVE */
-	           L"\u00DA"  /* LATIN CAPITAL LETTER U WITH ACUTE */
-	           L"\u00DB"  /* LATIN CAPITAL LETTER U WITH CIRCUMFLEX */
-	           L"\u00DC"  /* LATIN CAPITAL LETTER U WITH DIAERESIS */
-	           L"\u00DD"  /* LATIN CAPITAL LETTER Y WITH ACUTE */
-	           L"\u00E0"  /* LATIN SMALL LETTER A WITH GRAVE */
-	           L"\u00E1"  /* LATIN SMALL LETTER A WITH ACUTE */
-	           L"\u00E2"  /* LATIN SMALL LETTER A WITH CIRCUMFLEX */
-	           L"\u00E3"  /* LATIN SMALL LETTER A WITH TILDE */
-	           L"\u00E4"  /* LATIN SMALL LETTER A WITH DIAERESIS */
-	           L"\u00E5"  /* LATIN SMALL LETTER A WITH RING ABOVE */
-	           L"\u00E7"  /* LATIN SMALL LETTER C WITH CEDILLA */
-	           L"\u00E8"  /* LATIN SMALL LETTER E WITH GRAVE */
-	           L"\u00E9"  /* LATIN SMALL LETTER E WITH ACUTE */
-	           L"\u00EA"  /* LATIN SMALL LETTER E WITH CIRCUMFLEX */
-	           L"\u00EB"  /* LATIN SMALL LETTER E WITH DIAERESIS */
-	           L"\u00EC"  /* LATIN SMALL LETTER I WITH GRAVE */
-	           L"\u00ED"  /* LATIN SMALL LETTER I WITH ACUTE */
-	           L"\u00EE"  /* LATIN SMALL LETTER I WITH CIRCUMFLEX */
-	           L"\u00EF"  /* LATIN SMALL LETTER I WITH DIAERESIS */
-	           L"\u00F1"  /* LATIN SMALL LETTER N WITH TILDE */
-	           L"\u00F2"  /* LATIN SMALL LETTER O WITH GRAVE */
-	           L"\u00F3"  /* LATIN SMALL LETTER O WITH ACUTE */
-	           L"\u00F4"  /* LATIN SMALL LETTER O WITH CIRCUMFLEX */
-	           L"\u00F5"  /* LATIN SMALL LETTER O WITH TILDE */
-	           L"\u00F6"  /* LATIN SMALL LETTER O WITH DIAERESIS */
-	           L"\u00F9"  /* LATIN SMALL LETTER U WITH GRAVE */
-	           L"\u00FA"  /* LATIN SMALL LETTER U WITH ACUTE */
-	           L"\u00FB"  /* LATIN SMALL LETTER U WITH CIRCUMFLEX */
-	           L"\u00FC"  /* LATIN SMALL LETTER U WITH DIAERESIS */
-	           L"\u00FD"  /* LATIN SMALL LETTER Y WITH ACUTE */
-	           L"\u00FF"  /* LATIN SMALL LETTER Y WITH DIAERESIS */
-	           L"\u0160"  /* LATIN CAPITAL LETTER S WITH CARON */
-	           L"\u0161"  /* LATIN SMALL LETTER S WITH CARON */
-	           L"\u017D"  /* LATIN CAPITAL LETTER Z WITH CARON */
-	           L"\u017E"  /* LATIN SMALL LETTER Z WITH CARON */
-	           L"\uFB00"  /* LATIN SMALL LIGATURE FF */
-	           L"\uFB01"  /* LATIN SMALL LIGATURE FI */
-	           L"\uFB02"  /* LATIN SMALL LIGATURE FL */
-	           L"\uFB03"  /* LATIN SMALL LIGATURE FFI */
-	           L"\uFB04"  /* LATIN SMALL LIGATURE FFL */
-	           , c)) return CHAR_LETTER;
-	if (wcschr(L"0123456789", c)) return CHAR_DIGIT;
+	if ((c >= 0x41 && c <= 0x5A) ||
+	    (c >= 0x61 && c <= 0x7A) ||
+	    (c >= 0xC1 && c <= 0xD6) ||
+	    (c >= 0xD9 && c <= 0xF6) ||
+	    (c >= 0x00F9 && c <= 0x017E) ||
+	    (c >= 0xFB00 && c <= 0xFB04)) {
+		return CHAR_LETTER;
+	}
+	if (wcschr(L"0123456789", c)) {
+		return CHAR_DIGIT;
+	}
 	return CHAR_UNKNOWN;
 }
 
