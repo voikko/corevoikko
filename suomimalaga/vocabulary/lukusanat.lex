@@ -91,11 +91,11 @@
 [perusmuoto: "sata", alku: "sa", luokka: lukusana, lukutyyppi: perusluku, alaluokka: sata, jatko: <pata>, äs: a];
 [perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, lukutyyppi: perusluku, alaluokka: tuhat, jatko: <tuhat>, äs: a];
 [perusmuoto: "miljoona", alku: "miljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <apaja>, äs: a];
-[perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, lukutyyppi: perusluku, alaluokka:  miljardi, jatko: <paperi>, äs: a, tiedot: <murre>];
-[perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljardi, jatko: <paperi>, äs: a];
-[perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljardi, jatko: <paperi>, äs: a, tiedot: <murre>];
-[perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: biljoona, jatko: <asema>, äs: a];
-[perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: triljoona, jatko: <asema>, äs: a];
+[perusmuoto: "miljaardi", alku: "miljaard", luokka: lukusana, lukutyyppi: perusluku, alaluokka:  miljoona, jatko: <paperi>, äs: a, tiedot: <murre>];
+[perusmuoto: "miljardi", alku: "miljard", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <paperi>, äs: a];
+[perusmuoto: "miljarti", alku: "miljart", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <paperi>, äs: a, tiedot: <murre>];
+[perusmuoto: "biljoona", alku: "biljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
+[perusmuoto: "triljoona", alku: "triljoon", luokka: lukusana, lukutyyppi: perusluku, alaluokka: miljoona, jatko: <asema>, äs: a];
 
 
 [perusmuoto: "ensimmäinen", alku: "ensimmäi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: yksiyhdeksän, jatko: <nainen>, äs: ä];
@@ -119,7 +119,7 @@
 [perusmuoto: "sadas", alku: "sada", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: sata, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: tuhat, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "miljoonas", alku: "miljoona", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljardi, jatko: <kahdeksas>, äs: a];
+[perusmuoto: "miljardis", alku: "miljardi", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: miljoona, jatko: <kahdeksas>, äs: a];
 
 
 [perusmuoto: "parisen", alku: "parisen", luokka: lukusana, alaluokka: erikoisluku, jatko: <loppu>, äs: a];

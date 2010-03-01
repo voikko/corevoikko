@@ -1085,7 +1085,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
                    lukusanan_jälkiliite,
                    nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
     end;
-  elseif ($oikea.alaluokka in <tuhat, miljoona, miljardi, biljoona, triljoona> and nimentö in $oikea.jatko) then
+  elseif ($oikea.alaluokka in <tuhat, miljoona> and nimentö in $oikea.jatko) then
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
@@ -1151,7 +1151,7 @@ end;
 
 combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = lukusana;
-  ? $oikea.alaluokka in <kymmenen, sata, tuhat, miljoona, miljardi, biljoona>;
+  ? $oikea.alaluokka in <kymmenen, sata, tuhat, miljoona>;
 
   define $edellinen := $vasen.($index - 1);
   ? $edellinen.lukutyyppi = $oikea.lukutyyppi;
@@ -1935,7 +1935,7 @@ subrule debug_lukusanan_perusmuodon_osa ($tietue):
     return "+kymmentä";
   elseif ($tietue.perusmuoto = "tuhat") then
     return "+tuhatta";
-  elseif ($tietue.perusmuoto in <"sata", "miljoona", "miljardi", "biljoona", "triljoona">) then
+  elseif ($tietue.alaluokka in <sata, miljoona>) then
     return "+" + $tietue.perusmuoto + "a";
   else
     return debug_sanan_perusmuodon_osa($tietue, no);
@@ -1944,7 +1944,7 @@ end;
 
 subrule debug_lukusanan_perusmuoto ($tietue, $i, $k, $s):
   # Kopioitu Hannu Väisäsen Sukija-versiosta
-  if ($i = 1 and $tietue.$i.perusmuoto in <"sata", "tuhat", "miljoona", "miljardi", "biljoona", "triljoona">) then
+  if ($i = 1 and $tietue.$i.alaluokka in <sata, tuhat, miljoona>) then
     return "+" + $tietue.$i.perusmuoto;
   end;
 
@@ -1964,7 +1964,7 @@ subrule debug_lukusanan_perusmuoto ($tietue, $i, $k, $s):
     else
       return "+" + "kymmentä";
     end;
-  elseif ($tietue.$i.perusmuoto in <"kymmenen", "sata", "tuhat", "miljoona", "miljardi", "biljoona", "triljoona">) then
+  elseif ($tietue.$i.alaluokka in <sata, tuhat, miljoona>) then
     if ($tietue.($i+1).luokka in <lukusana, sijapääte>) then
       return debug_lukusanan_perusmuodon_osa($tietue.$i);
     else
