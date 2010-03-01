@@ -57,9 +57,16 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const wchar_t * word,
 		inputString.append(1, word[i]);
 	}
 	inputString.append(L"$");
-	wstring analysisString = processor.biltrans(inputString);
+	wstring analysisString = processor.biltransWithoutQueue(inputString);
 	list<Analysis *> * result = new list<Analysis *>();
-	addAnalysis(analysisString, result, wlen);
+	
+	// FIXME: temporary workaround for trailing garbage problem
+	inputString.erase(inputString.length() - 3);
+	inputString.append(L"$");
+	wstring truncatedStringAnalysis = processor.biltransWithoutQueue(inputString);
+	if (analysisString != truncatedStringAnalysis) {
+		addAnalysis(analysisString, result, wlen);
+	}
 	return result;
 }
 
@@ -101,10 +108,6 @@ static void addSingleAnalysis(wstring analysisString, list<Analysis *> * analysi
 
 void LttoolboxAnalyzer::addAnalysis(wstring analysisString, list<Analysis *> * analysisList, size_t charCount) const {
 	if (analysisString.find(L"^@") == 0) {
-		return;
-	}
-	// Workaround for weird behaviour when incorrect input word starts with a capital letter
-	if (analysisString.length() < 3 || analysisString[2] == L'<') {
 		return;
 	}
 	size_t analysisStart = 1;

@@ -33,7 +33,7 @@ class ApertiumIcelandicTest(unittest.TestCase):
 		analysisList = self.voikko.analyze(u"skjdfhksdfgh")
 		self.assertEqual(0, len(analysisList))
 	
-	def TODOtestCapitalizedUnknownWordReturnsNoAnalyses(self):
+	def testCapitalizedUnknownWordReturnsNoAnalyses(self):
 		analysisList = self.voikko.analyze(u"Reykjanghfghesi")
 		self.assertEqual(0, len(analysisList))
 	
