@@ -61,6 +61,12 @@ class ApertiumIcelandicTest(unittest.TestCase):
 	def testAnalyzerIsCaseInsensitive(self):
 		analysisList = self.voikko.analyze(u"danmörk")
 		self.assertEqual(1, len(analysisList))
+	
+	def testIgnoreDotWorks(self):
+		self.failUnless(self.voikko.spell(u"lengstur"))
+		self.failIf(self.voikko.spell(u"lengstur."))
+		self.voikko.setIgnoreDot(True)
+		self.failUnless(self.voikko.spell(u"lengstur."))
 
 
 if __name__ == "__main__":

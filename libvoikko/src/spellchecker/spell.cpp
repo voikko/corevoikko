@@ -263,12 +263,15 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	buffer[nchars] = L'\0';
 	
 	int dot_index;
+	size_t realChars;
 	if (voikko_options.ignore_dot && buffer[nchars - 1] == L'.') {
 		dot_index = static_cast<int>(nchars - 1);
 		buffer[dot_index] = L'\0';
+		realChars = nchars - 1;
 	}
 	else {
 		dot_index = -1;
+		realChars = nchars;
 	}
 	
 	/* Check words that require exact captialisation */
@@ -292,10 +295,10 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
 			if (voikko_options.accept_missing_hyphens) {
-				sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, nchars);
+				sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, realChars);
 			}
 			else {
-				sres = voikko_do_spell(voikkoOptions, buffer, nchars);
+				sres = voikko_do_spell(voikkoOptions, buffer, realChars);
 			}
 			if (sres == SPELL_OK ||
 			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
@@ -311,18 +314,18 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	/* Check without trailing dot */
 	switch (caps) {
 		case CT_ALL_LOWER:
-			sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
+			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			result = (sres == SPELL_OK) ? VOIKKO_SPELL_OK : VOIKKO_SPELL_FAILED;
 			break;
 		case CT_FIRST_UPPER:
-			sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
+			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			if ((sres == SPELL_OK && voikko_options.accept_first_uppercase) || sres == SPELL_CAP_FIRST)
 				result = VOIKKO_SPELL_OK;
 			else result = VOIKKO_SPELL_FAILED;
 			break;
 		case CT_ALL_UPPER:
 			assert(voikko_options.accept_all_uppercase);
-			sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
+			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			break;
 		default: /* should not happen */
