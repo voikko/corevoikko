@@ -622,7 +622,6 @@
 [perusmuoto: "Acer", alku: "Acer", luokka: nimi, jatko: <edam>, äs: a];
 [perusmuoto: "Nivea", alku: "Nive", luokka: nimi, jatko: <apila>, äs: a];
 [perusmuoto: "Krups", alku: "Krups", luokka: nimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "couscous", alku: "couscous", luokka: nimisana, jatko: <kalsium>, äs: a];
 [perusmuoto: "alieni", alku: "alien", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "Cussler", alku: "Cussler", luokka: sukunimi, jatko: <edam>, äs: a];
 [perusmuoto: "Cook", alku: "Cook", luokka: sukunimi, jatko: <kalsium>, äs: a];
@@ -1015,9 +1014,8 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 #[perusmuoto: "show", alku: "show", luokka: nimisana, jatko: <keinonto_in>, äs: a];
 
 [perusmuoto: "paruusia", alku: "paruusi", luokka: nimisana, jatko: <karahka>, äs: a];
-#[perusmuoto: "medestäjä", alku: "medestä", luokka: nimisana, jatko: <myyjä>, äs: ä];
 [perusmuoto: "Fiinu", alku: "Fiinu", luokka: etunimi, jatko: <valo>, äs: a];
-
+[perusmuoto: "Byrne", alku: "Byrne", luokka: sukunimi, jatko: <nalle>, äs: ä];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

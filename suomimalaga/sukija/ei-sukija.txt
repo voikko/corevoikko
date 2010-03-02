@@ -266,6 +266,7 @@ katkeama
 katsojainen
 Kauhajoki
 kauhistuttaa
+Kautsu
 kaventuma
 kehittymä
 keitto
@@ -301,6 +302,7 @@ Kiina
 Kilpeläinen
 Kilpi
 kiltalainen
+kirjaviisas
 kirjoittua
 Kirkkonummi
 Kisko
@@ -705,6 +707,7 @@ retkeläinen
 retrovirus
 Riihimäki
 rikkakasvi
+rikkiviisas
 Riski
 risteytymä
 Ritva
