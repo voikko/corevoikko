@@ -31,8 +31,8 @@ wchar_t SimpleChar::lower(wchar_t input) {
 		// À-Ö
 		return input + 0x20;
 	}
-	if (input >= 0xD8 && input <= 0xDD) {
-		// Ø-Ý
+	if (input >= 0xD8 && input <= 0xDE) {
+		// Ø-Þ
 		return input + 0x20;
 	}
 	// Latin Extended-A
@@ -67,8 +67,8 @@ wchar_t SimpleChar::upper(wchar_t input) {
 		// À-Ö
 		return input - 0x20;
 	}
-	if (input >= 0xF8 && input <= 0xFD) {
-		// Ø-Ý
+	if (input >= 0xF8 && input <= 0xFE) {
+		// Ø-þ
 		return input - 0x20;
 	}
 	// Latin Extended-A
