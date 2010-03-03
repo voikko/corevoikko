@@ -1016,6 +1016,9 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "paruusia", alku: "paruusi", luokka: nimisana, jatko: <karahka>, äs: a];
 [perusmuoto: "Fiinu", alku: "Fiinu", luokka: etunimi, jatko: <valo>, äs: a];
 [perusmuoto: "Byrne", alku: "Byrne", luokka: sukunimi, jatko: <nalle>, äs: ä];
+[perusmuoto: "puolitoista", alku: "puolitoista", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "puolitoista", alku: "puolentoista", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "monisata", alku: "monisata", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

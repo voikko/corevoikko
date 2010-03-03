@@ -1583,17 +1583,21 @@ subrule perusmuoto ($tietue):
 
   define $s := "";
   foreach $i in $k - 1:
-#define $b := transmit (<"b"> + <$tietue.$i>);
+#define $b := transmit (<"B"> + <$tietue.$i>);
     if ($tietue.$i.lukutyyppi /= nil and $tietue.$i.lukutyyppi = perusluku) then
-      $s :=+ lukusanan_perusmuoto ($tietue, $i, $k, $s);
+      if ($i = 1 and $tietue.($i+1).luokka = sijapääte and $tietue.($i+2).luokka /= lukusana) then
+        $s :=+ $tietue.$i.alku;
+      else
+        $s :=+ lukusanan_perusmuoto ($tietue, $i, $k, $s);
+      end;
     else
       $s :=+ alku ($tietue.$i);
     end;
   end;
   if ($k = 1) then
-#define $c := transmit (<"c"> + <$tietue.$k>);
     $s :=+ sana1 ($tietue.$k);
   elseif ($tietue.$k.lukutyyppi /= nil and $tietue.$k.lukutyyppi = perusluku) then
+#define $c := transmit (<"C"> + <$tietue.$k>);
     $s :=+ lukusanan_perusmuoto ($tietue, $k, $k, $s);
   else
 #define $d := transmit (<"d"> + <$tietue.$k>);
@@ -2305,9 +2309,9 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
     if (liitesana in $oikea.jatko) then
       result $erikoisres, rules liitesana;
     end;
-#    if (lukusanan_jälkiliite in $oikea.jatko) then
-#      result $erikoisres, rules lukusanan_jälkiliite;
-#    end;
+    if (lukusanan_jälkiliite in $oikea.jatko) then
+      result $erikoisres, rules lukusanan_jälkiliite;
+    end;
      result $erikoisres, rules yhdyssana, tavuviiva;
     stop;
   end;
@@ -2335,9 +2339,8 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
         result $res, rules loppu;
       end;
       result $res, rules lukusana_toista, lukusana_sisäkerroin,
-                         liitesana;
+                         liitesana; ##, lukusanan_jälkiliite;
 #, yhdyssana;
-##                   liitesana, lukusanan_jälkiliite;
 ##                   nimisana, laatusana;
 ##                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
     end;
@@ -2353,8 +2356,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
         result $res, rules loppu;
       end;
       result $res, rules lukusana_sisäkerroin,
-                         liitesana;
-##                   liitesana, lukusanan_jälkiliite;
+                         liitesana, lukusanan_jälkiliite;
 ##                   nimisana, laatusana;
 ##                   nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
     end;
@@ -2406,15 +2408,9 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
-    #
-    # Estetään seitsemä+n+kertainen-tyyppisten sanojen tunnistuminen kahdesti.
-    #
-    if (not (($oikea.sija = omanto_n) and ($vasen.($index-1).perusmuoto in <"seitsemän", "kahdeksan", "yhdeksän">))) then
-      result $res, rules yhdyssana;
-    end;
-    result $res, rules lukusana_toista, lukusana_sisäkerroin;
+    result $res, rules lukusana_toista, lukusana_sisäkerroin,
 ##                       yhdyssana;
-##                 lukusanan_jälkiliite;
+                 lukusanan_jälkiliite;
 ##                 nimisana, laatusana;
 ##                 nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   elseif ($edellinen.alaluokka in <kymmenen, sata>) then
@@ -2423,7 +2419,8 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
     end;
     result $res, rules lukusana_sisäkerroin, lukusanan_jälkiliite;
   else
-    result $res, rules yhdyssana;
+    result $res, rules lukusanan_jälkiliite;
+##    result $res, rules yhdyssana;
                        ## , nimisana, lukusanan_jälkiliite, laatusana;
                        ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   end;
@@ -2438,6 +2435,9 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
   end;
   if tavuviiva in $oikea.jatko then
     result $res, rules tavuviiva;
+  end;
+  if yhdyssana in $oikea.jatko then
+    result $res, rules yhdyssana;
   end;
 end;
 
@@ -2543,6 +2543,8 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
                      yhdyssana,
                      liitesana;
   end;
+  result $res, rules lukusana_sisäkerroin, tavuviiva;
+##  result $res, rules lukusana_sisäkerroin, tavuviiva, liitesana;
 #  result $res, rules lukusana_sisäkerroin,
 #                     tavuviiva,
 #                     yhdyssana,

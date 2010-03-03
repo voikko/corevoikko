@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -217,8 +217,11 @@ allo_rule generate_allos ($tietue):
 
 
   if ($tietue.luokka = lukusana) then
-    if ($tietue.alaluokka in <erikoisluku, toista>) then
+    if ($tietue.alaluokka in <toista>) then
       $tietue.jatko :=+ <yhdyssana, tavuviiva>;
+    end;
+    if ($tietue.alaluokka in <erikoisluku>) then
+      $tietue.jatko :=+ <tavuviiva>;
     end;
   end;
 
@@ -229,12 +232,6 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"kartesiolainen", "keynesiläinen">) then
     $tietue.luokka := nimi_laatusana;
   end;
-
-#  if ($tietue.luokka = lukusana) then
-#    if ($tietue.perusmuoto = "miljoona") then
-#      $tietue.jatko := <triljoona, biljoona, miljardi, tuhat, sata, kymmenen, yksi, liitesana, loppu>;
-#    end;
-#  end;
 
 #  if ($tietue.luokka = lukusanan_jälkiliite) then
 #    stop;
