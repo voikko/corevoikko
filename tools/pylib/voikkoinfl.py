@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2005-2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2005-2010 Harri Pitkänen (hatapitk@iki.fi)
 # Library for inflecting words for Voikko project.
 # This library requires Python version 2.4 or newer.
 
@@ -132,8 +132,10 @@ def __convert_tv_ev(text):
 # (strong, weak) or None if this is not possible. Conditional aposthrope
 # is represented by $.
 def __apply_gradation(word, grad_type):
-	if grad_type == u'-': return (word, word)
-	if voikkoutils.is_consonant(word[-1]) and not voikkoutils.is_consonant(word[-2]):
+	if grad_type == u'-':
+		return (word, word)
+	
+	if voikkoutils.is_consonant(word[-1]) and not voikkoutils.is_consonant(word[-2]) and len(word) >= 3:
 		if word[-4:-2] == u'ng':
 			return (word[:-4]+u'nk'+word[-2:], word)
 		# uvu/yvy->uku/yky not possible?
@@ -152,7 +154,7 @@ def __apply_gradation(word, grad_type):
 		if word[-3] == u'v':
 			return (word[:-3]+u'p'+word[-2:], word)
 	
-	if grad_type == u'av1':
+	if grad_type == u'av1' and len(word) >= 3:
 		if word[-3:-1] in (u'tt',u'kk',u'pp'):
 			return (word, word[:-2]+word[-1])
 		if word[-3:-1] == u'mp':
@@ -173,7 +175,7 @@ def __apply_gradation(word, grad_type):
 			return (word, word[:-3]+u'uvu')
 		if word[-3:] == u'yky':
 			return (word, word[:-3]+u'yvy')
-	if grad_type == u'av2':
+	if grad_type == u'av2' and len(word) >= 2:
 		if word[-3:-1] == u'ng':
 			return (word[:-3]+u'nk'+word[-1], word)
 		# uvu/yvy->uku/yky not possible?
@@ -191,18 +193,18 @@ def __apply_gradation(word, grad_type):
 			return (word[:-1]+word[-2:], word)
 		if word[-2] == u'v':
 			return (word[:-2]+u'p'+word[-1], word)
-	if grad_type == u'av3': # k -> j
+	if grad_type == u'av3' and len(word) >= 2: # k -> j
 		if word[-2] == u'k':
 			return (word, word[:-2]+u'j'+word[-1])
-	if grad_type == u'av4': # j -> k
+	if grad_type == u'av4' and len(word) >= 3: # j -> k
 		if word[-2] == u'j':
 			return (word[:-2]+u'k'+word[-1], word)
 		if word[-3] == u'j':
 			return (word[:-3]+u'k'+word[-2]+word[-1], word)
-	if grad_type == u'av5': # k -> -
+	if grad_type == u'av5' and len(word) >= 2: # k -> -
 		if word[-2] == u'k':
 			return (word, word[:-2]+u'$'+word[-1])
-	if grad_type == u'av6': # - -> k
+	if grad_type == u'av6' and len(word) >= 1: # - -> k
 		if voikkoutils.is_consonant(word[-1]): # FIXME: hack
 			return (word[:-2]+u'k'+word[-2:], word)
 		else:
