@@ -99,6 +99,7 @@ brosyyri
 burgundi
 burleski
 butanoli
+byte # tavu (tietokoneissa), englantia
 caesar
 cd-rom
 celsius
