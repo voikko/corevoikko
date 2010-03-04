@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "morphology/AnalyzerFactory.hpp"
+#include "morphology/NullAnalyzer.hpp"
 #include "morphology/MalagaAnalyzer.hpp"
 #include "morphology/malaga/malaga.hpp"
 #include "config.h"
@@ -37,6 +38,9 @@ Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
 	if (dictionary.getMorBackend() == "malaga") {
 		return new MalagaAnalyzer(dictionary.getMorPath());
+	}
+	if (dictionary.getMorBackend() == "null") {
+		return new NullAnalyzer();
 	}
 	#ifdef HAVE_HFST
 	if (dictionary.getMorBackend() == "hfst") {

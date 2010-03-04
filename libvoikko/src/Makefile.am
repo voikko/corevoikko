@@ -28,6 +28,7 @@ libvoikko_la_SOURCES = \
     morphology/Analysis.cpp \
     morphology/Analyzer.cpp \
     morphology/AnalyzerFactory.cpp \
+    morphology/NullAnalyzer.cpp \
     morphology/MalagaAnalyzer.cpp \
     morphology/malaga/analysis.cpp \
     morphology/malaga/files.cpp \
@@ -69,6 +70,7 @@ noinst_HEADERS = \
     morphology/AnalyzerFactory.hpp \
     morphology/HfstAnalyzer.hpp \
     morphology/LttoolboxAnalyzer.hpp \
+    morphology/NullAnalyzer.hpp \
     morphology/MalagaAnalyzer.hpp \
     morphology/malaga/analysis.hpp \
     morphology/malaga/malaga_files.hpp \

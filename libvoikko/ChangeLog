@@ -1,3 +1,6 @@
+2010-03-04 Harri Pitkänen <hatapitk@iki.fi>
+	* Implement NullAnalyzer.
+
 2010-03-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Recognize more Unicode characters as letters.
 
