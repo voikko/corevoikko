@@ -32,7 +32,7 @@ class NullComponentTest(unittest.TestCase):
 		analysisList = self.voikko.analyze(u"koira")
 		self.assertEqual(0, len(analysisList))
 	
-	def TODOtestNullSuggestionGeneratorWorks(self):
+	def testNullSuggestionGeneratorWorks(self):
 		suggestionList = self.voikko.suggest(u"koirra")
 		self.assertEqual(0, len(suggestionList))
 

@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorNull.hpp"
 #include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
 #include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
 #include "setup/setup.hpp"
@@ -29,12 +30,18 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	                             voikko_options_t * voikkoOptions,
 	                             SuggestionType suggestionType)
 	                              throw(setup::DictionaryException) {
-	if (suggestionType == SUGGESTION_TYPE_OCR) {
-		return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer);
+	string backend = voikkoOptions->dictionary.getSuggestionBackend();
+	if (backend == "FinnishSuggestionStrategy(currentAnalyzer)") {
+		if (suggestionType == SUGGESTION_TYPE_OCR) {
+			return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer);
+		}
+		else {
+			return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer);
+		}
+	} else if (backend == "null") {
+		return new SuggestionGeneratorNull();
 	}
-	else {
-		return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer);
-	}
+	throw setup::DictionaryException("Failed to create suggestion generator because of unknown suggestion generator backend");
 }
 
 } } }

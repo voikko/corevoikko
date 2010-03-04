@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@ Dictionary::Dictionary() :
 	morPath(),
 	morBackend(),
 	spellBackend(),
+	suggestionBackend(),
 	variant(),
 	description(),
 	isDefaultDict(false) {
@@ -33,11 +34,13 @@ Dictionary::Dictionary() :
 
 Dictionary::Dictionary(const string & morPath, const string & morBackend,
                        const string & spellBackend,
+                       const string & suggestionBackend,
                        const string & variant,
                        const string & description) :
 	morPath(morPath),
 	morBackend(morBackend),
 	spellBackend(spellBackend),
+	suggestionBackend(suggestionBackend),
 	variant(variant),
 	description(description),
 	isDefaultDict(false) {
@@ -47,6 +50,7 @@ Dictionary::Dictionary(const Dictionary & dictionary) :
 	morPath(dictionary.morPath),
 	morBackend(dictionary.morBackend),
 	spellBackend(dictionary.spellBackend),
+	suggestionBackend(dictionary.suggestionBackend),
 	variant(dictionary.variant),
 	description(dictionary.description),
 	isDefaultDict(dictionary.isDefaultDict) {
@@ -62,6 +66,10 @@ const string & Dictionary::getMorBackend() const {
 
 const string & Dictionary::getSpellBackend() const {
 	return spellBackend;
+}
+
+const string & Dictionary::getSuggestionBackend() const {
+	return suggestionBackend;
 }
 
 const string & Dictionary::getVariant() const {

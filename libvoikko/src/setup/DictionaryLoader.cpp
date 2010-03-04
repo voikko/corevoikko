@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -177,6 +177,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	string description;
 	string morBackend = "malaga";
 	string spellBackend = "AnalyzerToSpellerAdapter(currentAnalyzer)";
+	string suggestionBackend = "FinnishSuggestionStrategy(currentAnalyzer)";
 	while (file.good()) {
 		getline(file, line);
 		if (line.find("info: Language-Variant: ") == 0) {
@@ -191,9 +192,12 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		else if (line.find("info: Speller-Backend: ") == 0) {
 			spellBackend = line.substr(23);
 		}
+		else if (line.find("info: Suggestion-Backend: ") == 0) {
+			suggestionBackend = line.substr(26);
+		}
 	}
 	file.close();
-	return Dictionary(path, morBackend, spellBackend, variant, description);
+	return Dictionary(path, morBackend, spellBackend, suggestionBackend, variant, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {

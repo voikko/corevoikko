@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -31,6 +31,7 @@ class Dictionary {
 	std::string morPath;
 	std::string morBackend;
 	std::string spellBackend;
+	std::string suggestionBackend;
 	std::string variant;
 	std::string description;
 	bool isDefaultDict;
@@ -40,12 +41,14 @@ class Dictionary {
 	Dictionary(const std::string & morPath,
 	           const std::string & morBackend,
 	           const std::string & spellBackend,
+	           const std::string & suggestionBackend,
 	           const std::string & variant,
 	           const std::string & description);
 	Dictionary(const Dictionary & dictionary);
 	const std::string & getMorPath() const;
 	const std::string & getMorBackend() const;
 	const std::string & getSpellBackend() const;
+	const std::string & getSuggestionBackend() const;
 	const std::string & getVariant() const;
 	const std::string & getDescription() const;
 	bool isValid() const;
