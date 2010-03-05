@@ -27,7 +27,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionStrategyOcr : public SuggestionStrategy {
 	public:
-		SuggestionStrategyOcr(morphology::Analyzer * morAnalyzer);
+		SuggestionStrategyOcr(morphology::Analyzer * morAnalyzer, size_t maxCost);
 };
 
 }}}

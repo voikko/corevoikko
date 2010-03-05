@@ -18,12 +18,15 @@
 
 #include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorReplacement.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 
 using namespace std;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-SuggestionStrategyOcr::SuggestionStrategyOcr(morphology::Analyzer * morAnalyzer) {
+SuggestionStrategyOcr::SuggestionStrategyOcr(morphology::Analyzer * morAnalyzer, size_t maxCost) : SuggestionStrategy(maxCost) {
+	primaryGenerators.push_back(
+		new SuggestionGeneratorCaseChange(morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorReplacement(
 		L"0o" L"li" L"il" L"uo" L"ou"

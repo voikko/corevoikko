@@ -26,7 +26,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionStrategyTyping : public SuggestionStrategy {
 	public:
-		SuggestionStrategyTyping(morphology::Analyzer * morAnalyzer);
+		SuggestionStrategyTyping(morphology::Analyzer * morAnalyzer, size_t maxCost);
 };
 
 }}}

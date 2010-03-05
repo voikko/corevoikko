@@ -1,3 +1,6 @@
+2010-03-05 Harri Pitkänen <hatapitk@iki.fi>
+	* Complete the refactoring of suggestion generator code.
+
 2010-03-04 Harri Pitkänen <hatapitk@iki.fi>
 	* Allow specifying suggestion generator backend in the configuration file.
 	* Implement NullAnalyzer and SuggestionGeneratorNull.

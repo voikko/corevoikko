@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,15 +27,26 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionStrategy : public SuggestionGenerator {
 	public:
-		SuggestionStrategy();
+		SuggestionStrategy(size_t maxCost);
 		~SuggestionStrategy();
 		void generate(SuggestionStatus * s) const;
 
 	protected:
 		SuggestionStrategy(SuggestionStrategy const & other);
 		SuggestionStrategy & operator = (const SuggestionStrategy & other);
+
+		/** These generators are run first. If any suggestions are found,
+		 *  running normal generators is skipped.
+		 */
+		std::list<SuggestionGenerator *> primaryGenerators;
+
+		/** Normal generators, run if primaryGenerators have not returned
+		 *  any suggestions.
+		 */
 		std::list<SuggestionGenerator *> generators;
 
+	private:
+		const size_t maxCost;
 };
 
 }}}

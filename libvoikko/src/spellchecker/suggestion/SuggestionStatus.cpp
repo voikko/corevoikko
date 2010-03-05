@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,11 +20,11 @@
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-SuggestionStatus::SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions, size_t maxCost) :
+SuggestionStatus::SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions) :
 	handle(handle),
 	word(word),
 	wlen(wlen),
-	maxCost(maxCost),
+	maxCost(0),
 	maxSuggestions(maxSuggestions),
 	suggestionCount(0),
 	currentCost(0) {
@@ -55,6 +55,10 @@ bool SuggestionStatus::shouldAbort() const {
 
 void SuggestionStatus::charge() {
 	currentCost++;
+}
+
+void SuggestionStatus::setMaxCost(size_t maxCost) {
+	this->maxCost = maxCost;
 }
 
 void SuggestionStatus::addSuggestion(const wchar_t * newSuggestion, int priority) {

@@ -22,13 +22,13 @@
 #include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
 #include "spellchecker/spell.hpp"
-#include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
+#include "spellchecker/suggestion/SuggestionStatus.hpp"
+#include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include <cstdlib>
 #include <cstring>
 #include <cwchar>
 
 #define MAX_SUGGESTIONS 5
-#define COST_LIMIT 350
 
 using namespace libvoikko::spellchecker::suggestion;
 
@@ -99,23 +99,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		}
 	}
 	
-	size_t maxCost = COST_LIMIT;
-	/*
-	FIXME: the following no longer works and in fact it does not belong here.
-	But it should still be done somewhere.
-	if (voikko_options.suggestionType == SUGGESTION_TYPE_OCR) {
-		maxCost = maxCost * 3;
-	}
-	*/
-	SuggestionStatus status(handle, nword, wlen, MAX_SUGGESTIONS * 3, maxCost);
-	
-	// FIXME: this should not be here
-	SuggestionGeneratorCaseChange caseChanger(voikko_options.morAnalyzer);
-	caseChanger.generate(&status);
-	if (status.getSuggestionCount() > 0) {
-		delete[] nword;
-		return getSuggestions(status, add_dots);
-	}
+	SuggestionStatus status(handle, nword, wlen, MAX_SUGGESTIONS * 3);
 	
 	SuggestionGenerator * generator = voikko_options.suggestionGenerator;
 	generator->generate(&status);

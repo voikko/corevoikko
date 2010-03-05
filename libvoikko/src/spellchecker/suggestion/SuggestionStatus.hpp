@@ -26,7 +26,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionStatus {
 	public:
-		SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions, size_t maxCost);
+		SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions);
 		~SuggestionStatus();
 		
 		/**
@@ -41,6 +41,9 @@ class SuggestionStatus {
 		 * morphological analysis operation.
 		 */
 		void charge();
+
+		/** Set maximum computational cost. */
+		void setMaxCost(size_t maxCost);
 		
 		/**
 		 * Adds a new suggestion with given priority. The ownership of suggestion
@@ -88,10 +91,10 @@ class SuggestionStatus {
 		
 		/**
 		 * Maximum number of times the morphological analysis
-		 * (or an opertaion with computationally equivalent cost
-		 *  may be performed.
+		 * (or an operation with computationally equivalent cost)
+		 * may be performed.
 		 */
-		const size_t maxCost;
+		size_t maxCost;
 		
 		/** Maximum number of suggestions that can be collected */
 		size_t maxSuggestions;
