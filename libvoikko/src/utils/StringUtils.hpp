@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,11 +29,15 @@ class StringUtils {
 	
 	/**
 	 * Creates an UCS4 string from a null terminated UTF-8 string.
+	 * Returns a null pointer if memory allocation fails or input
+	 * string is not valid UTF-8.
 	 */
 	static wchar_t * ucs4FromUtf8(const char * const original);
 	
 	/**
 	 * Creates an UTF-8 string from a null terminated UCS4 string.
+	 * Returns a null pointer if memory allocation fails or input
+	 * string contains invalid codepoints.
 	 */
 	static char * utf8FromUcs4(const wchar_t * const original);
 	static char * utf8FromUcs4(const wchar_t * const original, size_t wlen);

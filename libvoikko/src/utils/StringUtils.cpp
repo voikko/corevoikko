@@ -17,7 +17,6 @@
  *********************************************************************************/
 
 #include "utils/StringUtils.hpp"
-#include "utils/utils.hpp"
 #include "utf8/utf8.hpp"
 #include <cstring>
 #include <cstdlib>
@@ -28,10 +27,11 @@ using namespace std;
 namespace libvoikko { namespace utils {
 
 wchar_t * StringUtils::ucs4FromUtf8(const char * const original) {
+	wchar_t * ucs4Buffer = 0;
 	try {
 		size_t bytes = strlen(original);
 		size_t chars = utf8::distance(original, original + bytes);
-		wchar_t * ucs4Buffer = new wchar_t[chars + 1];
+		ucs4Buffer = new wchar_t[chars + 1];
 		const char * origPtr = original;
 		for (size_t i = 0; i < chars; i++) {
 			// Using unchecked function because validity was already
@@ -42,6 +42,9 @@ wchar_t * StringUtils::ucs4FromUtf8(const char * const original) {
 		return ucs4Buffer;
 	} catch (...) {
 		// invalid UTF-8 sequence or not enough memory
+		if (ucs4Buffer) {
+			delete[] ucs4Buffer;
+		}
 		return 0;
 	}
 }
@@ -51,7 +54,25 @@ char * StringUtils::utf8FromUcs4(const wchar_t * const original) {
 }
 
 char * StringUtils::utf8FromUcs4(const wchar_t * const original, size_t wlen) {
-	return voikko_ucs4tocstr(original, "UTF-8", wlen);
+	char * utf8Buffer;
+	try {
+		utf8Buffer = new char[wlen * 6 + 1];
+	} catch (...) {
+		// not enough memory
+		return 0;
+	}
+	try {
+		char * utfPtr = utf8Buffer;
+		for (size_t i = 0; i < wlen; i++) {
+			utfPtr = utf8::append(original[i], utfPtr);
+		}
+		*utfPtr = '\0';
+		return utf8Buffer;
+	} catch (...) {
+		// invalid codepoint
+		delete[] utf8Buffer;
+		return 0;
+	}
 }
 
 wchar_t * StringUtils::copy(const wchar_t * const original) {
