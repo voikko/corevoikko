@@ -35,14 +35,12 @@ class AnalyzerToFinnishHyphenatorAdapter : public Hyphenator {
 		void terminate();
 		void setUglyHyphenation(bool uglyHyphenation);
 		void setHyphenateUnknown(bool hyphenateUnknown);
-		void setIntersectCompoundLevel(int level);
 		void setMinHyphenatedWordLength(int length);
 		void setIgnoreDot(bool ignoreDot);
 	private:
 		morphology::Analyzer * const analyzer;
 		bool uglyHyphenation;
 		bool hyphenateUnknown;
-		int intersectCompoundLevel;
 		size_t minHyphenatedWordLength;
 		bool ignoreDot;
 		

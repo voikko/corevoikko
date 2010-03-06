@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -140,14 +140,6 @@
 #define VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC 16
 
 /* Integer options */
-
-/* There are two possible rules that can be applied when hyphenating compound words
- * that can be split in more than one different way. We either take the intersection
- * of (1) all possible hyphenations or (2) all hyphenations where the compound word
- * has the minimal amount of parts (:= m) in it. The rule (1) is applied if and only
- * if m > voikko_intersect_compound_level.
- * Default: 1 */
-#define VOIKKO_INTERSECT_COMPOUND_LEVEL 5
 
 /* The minumum length for words that may be hyphenated. This limit is also enforced on
  * individual parts of compound words.
@@ -530,6 +522,10 @@ char * voikko_mor_analysis_value_cstr(
  * @param analysis_value analysis value.
  */
 void voikko_free_mor_analysis_value_cstr(char * analysis_value);
+
+#ifndef VOIKKO_NO_DEPRECATED_API
+#include "voikko_deprecated.h"
+#endif
 
 END_C_DECLS
 #endif

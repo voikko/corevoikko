@@ -37,7 +37,6 @@ AnalyzerToFinnishHyphenatorAdapter::AnalyzerToFinnishHyphenatorAdapter(Analyzer 
 analyzer(analyzer),
 uglyHyphenation(true),
 hyphenateUnknown(true),
-intersectCompoundLevel(1),
 minHyphenatedWordLength(2),
 ignoreDot(false)
 {}
@@ -88,10 +87,6 @@ void AnalyzerToFinnishHyphenatorAdapter::setUglyHyphenation(bool uglyHyphenation
 
 void AnalyzerToFinnishHyphenatorAdapter::setHyphenateUnknown(bool hyphenateUnknown) {
 	this->hyphenateUnknown = hyphenateUnknown;
-}
-
-void AnalyzerToFinnishHyphenatorAdapter::setIntersectCompoundLevel(int level) {
-	this->intersectCompoundLevel = level;
 }
 
 void AnalyzerToFinnishHyphenatorAdapter::setMinHyphenatedWordLength(int length) {
@@ -301,7 +296,7 @@ void AnalyzerToFinnishHyphenatorAdapter::removeExtraHyphenations(
 		}
 		currentBuffer++;
 	}
-	if (minParts > intersectCompoundLevel) {
+	if (minParts > 1) {
 		return; /* nothing to do */
 	}
 	

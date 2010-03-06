@@ -1,5 +1,5 @@
 /* Voikkohyphenate: Testing tool for libvoikko
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -70,8 +70,6 @@ int main(int argc, char ** argv) {
 	const char * variant = "";
 	wchar_t separator = L'-';
 	int handle;
-	int minhwlen;
-	int iclevel;
 	
 	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) {
@@ -104,13 +102,11 @@ int main(int argc, char ** argv) {
 		else if (strcmp(argv[i], "hyphenate_unknown_words=0") == 0)
 			voikko_set_bool_option(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 0);
 		else if (strncmp(argv[i], "min_hyphenated_word_length=", 27) == 0) {
-			minhwlen = atoi(argv[i] + 27);
-			if (minhwlen < 2) minhwlen = 2;
+			int minhwlen = atoi(argv[i] + 27);
+			if (minhwlen < 2) {
+				minhwlen = 2;
+			}
 			voikko_set_int_option(handle, VOIKKO_MIN_HYPHENATED_WORD_LENGTH, minhwlen);
-		}
-		else if (strncmp(argv[i], "intersect_compound_level=", 25) == 0) {
-			iclevel = atoi(argv[i] + 25);
-			voikko_set_int_option(handle, VOIKKO_INTERSECT_COMPOUND_LEVEL, iclevel);
 		}
 		else if (strncmp(argv[i], "-s", 2) == 0) {
 			if (strlen(argv[i]) != 3 || mbtowc(&separator, argv[i] + 2, 1) < 1) {

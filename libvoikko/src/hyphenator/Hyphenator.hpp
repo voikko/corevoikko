@@ -63,16 +63,6 @@ class Hyphenator {
 		virtual void setHyphenateUnknown(bool hyphenateUnknown) = 0;
 
 		/**
-		 * There are two possible rules that can be applied when hyphenating
-		 * compound words that can be split in more than one different way. We
-		 * either take the intersection of (1) all possible hyphenations or
-		 * (2) all hyphenations where the compound word has the minimal number
-		 * of parts (:= m) in it. The rule (1) is applied if and only if
-		 * m > voikko_intersect_compound_level. Default: 1
-		 */
-		virtual void setIntersectCompoundLevel(int level) = 0;
-
-		/**
 		 * The minumum length for words that may be hyphenated. This limit is
 		 * also enforced on individual parts of compound words. Default: 2
 		 */
