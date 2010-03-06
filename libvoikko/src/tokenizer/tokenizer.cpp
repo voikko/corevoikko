@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2007 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2007 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
 #include <cwchar>
 #include <cstdlib>
@@ -155,7 +156,7 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
                                                            size_t * tokenlen) {
 	if (text == 0) return TOKEN_NONE;
-	wchar_t * text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
+	wchar_t * text_ucs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
 	if (text_ucs4 == 0) return TOKEN_NONE;
 	voikko_token_type result =
 		voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);

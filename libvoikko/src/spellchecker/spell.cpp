@@ -18,6 +18,7 @@
 
 #include "voikko_defs.h"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
 #include "character/SimpleChar.hpp"
 #include "spellchecker/spell.hpp"
@@ -368,7 +369,7 @@ VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word) {
 	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
-	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
+	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
 	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
 	int result = voikko_spell_ucs4(handle, word_ucs4);
 	delete[] word_ucs4;

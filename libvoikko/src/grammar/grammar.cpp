@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,7 +18,6 @@
 
 #include "voikko_defs.h"
 #include "setup/setup.hpp"
-#include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include "grammar/cache.hpp"
 #include <cstdlib>
@@ -75,7 +74,7 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, con
 	}
 	
 	wchar_t * text_ucs4 =
-	    voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
+	    utils::StringUtils::ucs4FromUtf8(text, textlen);
 	if (text_ucs4 == 0) {
 		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
 	}

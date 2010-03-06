@@ -20,8 +20,8 @@
 #include "morphology/Analysis.hpp"
 #include "morphology/Analyzer.hpp"
 #include "setup/setup.hpp"
-#include "utils/utils.hpp"
-#include <string.h>
+#include "utils/StringUtils.hpp"
+#include <cstring>
 
 using namespace std;
 
@@ -75,7 +75,7 @@ VOIKKOEXPORT voikko_mor_analysis ** voikko_analyze_word_cstr(
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) {
 		return 0;
 	}
-	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
+	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
 	if (word_ucs4 == 0) {
 		return 0;
 	}
@@ -89,7 +89,7 @@ VOIKKOEXPORT char * voikko_mor_analysis_value_cstr(
                 const char * key) {
 	const wchar_t * value_ucs4 = voikko_mor_analysis_value_ucs4(analysis, key);
 	if (value_ucs4) {
-		return voikko_ucs4tocstr(value_ucs4, voikko_options.encoding, 0);
+		return utils::StringUtils::utf8FromUcs4(value_ucs4);
 	}
 	else {
 		return 0;

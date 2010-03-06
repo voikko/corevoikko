@@ -29,9 +29,6 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 #include "spellchecker/Speller.hpp"
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
-#ifdef HAVE_ICONV
-  #include <iconv.h>
-#endif
 #include <cwchar>
 
 namespace libvoikko {
@@ -48,13 +45,6 @@ typedef struct {
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	int accept_bulleted_lists_in_gc;
-	const char * encoding;
-	#ifdef HAVE_ICONV
-	iconv_t iconv_ucs4_utf8;
-	iconv_t iconv_utf8_ucs4;
-	iconv_t iconv_ucs4_ext;
-	iconv_t iconv_ext_ucs4;
-	#endif
 	wchar_t * cache;
 	char * cache_meta;
 	int cache_size;

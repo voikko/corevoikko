@@ -167,35 +167,8 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	voikko_options.accept_titles_in_gc = 0;
 	voikko_options.accept_unfinished_paragraphs_in_gc = 0;
 	voikko_options.accept_bulleted_lists_in_gc = 0;
-	voikko_options.encoding = "UTF-8";
 	voikko_options.cache_size = cache_size;
 	voikko_options.morAnalyzer = 0;
-	
-	#ifdef HAVE_ICONV
-	/* Initialise converters */
-	voikko_options.iconv_ucs4_utf8 = iconv_open("UTF-8", INTERNAL_CHARSET);
-	if (voikko_options.iconv_ucs4_utf8 == (iconv_t) -1) {
-		return "iconv_open(\"UTF-8\", \"" INTERNAL_CHARSET "\") failed";
-	}
-	voikko_options.iconv_utf8_ucs4 = iconv_open(INTERNAL_CHARSET, "UTF-8");
-	if (voikko_options.iconv_utf8_ucs4 == (iconv_t) -1) {
-		iconv_close(voikko_options.iconv_ucs4_utf8);
-		return "iconv_open(\"" INTERNAL_CHARSET "\", \"UTF-8\") failed";
-	}
-	voikko_options.iconv_ucs4_ext = iconv_open(voikko_options.encoding, INTERNAL_CHARSET);
-	if (voikko_options.iconv_ucs4_ext == (iconv_t) -1) {
-		iconv_close(voikko_options.iconv_utf8_ucs4);
-		iconv_close(voikko_options.iconv_ucs4_utf8);
-		return "iconv_open(voikko_options.encoding, \"" INTERNAL_CHARSET "\") failed";
-	}
-	voikko_options.iconv_ext_ucs4 = iconv_open(INTERNAL_CHARSET, voikko_options.encoding);
-	if (voikko_options.iconv_ext_ucs4 == (iconv_t) -1) {
-		iconv_close(voikko_options.iconv_ucs4_ext);
-		iconv_close(voikko_options.iconv_utf8_ucs4);
-		iconv_close(voikko_options.iconv_ucs4_utf8);
-		return "iconv_open(\"" INTERNAL_CHARSET "\", voikko_options.encoding) failed";
-	}
-	#endif
 	
 	if (langcode) {
 		try {
@@ -236,12 +209,6 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 				delete voikko_options.morAnalyzer;
 				voikko_options.morAnalyzer = 0;
 			}
-			#ifdef HAVE_ICONV
-			iconv_close(voikko_options.iconv_ext_ucs4);
-			iconv_close(voikko_options.iconv_ucs4_ext);
-			iconv_close(voikko_options.iconv_utf8_ucs4);
-			iconv_close(voikko_options.iconv_ucs4_utf8);
-			#endif
 			voikko_handle_count--;
 			return e.what();
 		}
@@ -272,12 +239,6 @@ VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int c
 VOIKKOEXPORT int voikko_terminate(int handle) {
 	if (handle == 1 && voikko_handle_count > 0) {
 		voikko_handle_count--;
-		#ifdef HAVE_ICONV
-		iconv_close(voikko_options.iconv_ext_ucs4);
-		iconv_close(voikko_options.iconv_ucs4_ext);
-		iconv_close(voikko_options.iconv_utf8_ucs4);
-		iconv_close(voikko_options.iconv_ucs4_utf8);
-		#endif
 		voikko_options.hyphenator->terminate();
 		delete voikko_options.hyphenator;
 		voikko_options.hyphenator = 0;

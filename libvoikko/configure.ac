@@ -123,7 +123,6 @@ AC_CHECK_FUNCS([mbrlen])
 AC_CHECK_FUNCS([memset])
 AC_CHECK_FUNCS([strchr])
 AC_CHECK_FUNCS([getpwuid_r])
-AM_ICONV
 
 dnl Default compiler settings
 CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"

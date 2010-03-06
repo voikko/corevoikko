@@ -19,6 +19,7 @@
 #include "voikko_defs.h"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include "spellchecker/spell.hpp"
 #include "character/charset.hpp"
 #include "character/SimpleChar.hpp"
@@ -122,14 +123,17 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handl
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
                           size_t textlen, size_t * sentencelen) {
-	wchar_t * text_ucs4;
 	enum voikko_sentence_type result;
-	if (text == 0) return SENTENCE_NONE;
-	text_ucs4 = voikko_cstrtoucs4(text, voikko_options.encoding, textlen);
-	if (text_ucs4 == 0) return SENTENCE_NONE;
-	result = voikko_next_sentence_start_ucs4(handle, text_ucs4, wcslen(text_ucs4),
+	if (text == 0) {
+		return SENTENCE_NONE;
+	}
+	wchar_t * textUcs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
+	if (textUcs4 == 0) {
+		return SENTENCE_NONE;
+	}
+	result = voikko_next_sentence_start_ucs4(handle, textUcs4, wcslen(textUcs4),
 	                                         sentencelen);
-	delete[] text_ucs4;
+	delete[] textUcs4;
 	return result;
 }
 

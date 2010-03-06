@@ -33,6 +33,7 @@ class StringUtils {
 	 * string is not valid UTF-8.
 	 */
 	static wchar_t * ucs4FromUtf8(const char * const original);
+	static wchar_t * ucs4FromUtf8(const char * const original, size_t byteCount);
 	
 	/**
 	 * Creates an UTF-8 string from a null terminated UCS4 string.

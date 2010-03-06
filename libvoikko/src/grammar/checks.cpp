@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -24,11 +24,13 @@
 #include "character/SimpleChar.hpp"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
+#include "utils/StringUtils.hpp"
 #include <cstdlib>
 #include <cstring>
 
 using namespace libvoikko::grammar;
 using namespace libvoikko::character;
+using namespace libvoikko::utils;
 
 namespace libvoikko {
 
@@ -112,7 +114,7 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 			e->error.error_code = GCERR_FOREIGN_QUOTATION_MARK;
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = 1;
-			e->error.suggestions[0] = voikko_ucs4tocstr(L"\u201D", "UTF-8", 1);
+			e->error.suggestions[0] = StringUtils::utf8FromUcs4(L"\u201D", 1);
 			gc_cache_append_error(handle, e);
 			return;
 		}
@@ -142,7 +144,7 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 				suggDot[0] = quoteChar;
 				suggDot[1] = L',';
 				suggDot[2] = L'\0';
-				e->error.suggestions[0] = voikko_ucs4tocstr(suggDot, "UTF-8", e->error.errorlen);
+				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggDot, e->error.errorlen);
 				delete[] suggDot;
 			}
 			gc_cache_append_error(handle, e);
@@ -158,7 +160,7 @@ void gc_punctuation_of_quotations(int handle, const Sentence * sentence) {
 				suggOther[0] = (sentence->tokens[i].str[0] == L'!' ? L'!' : L'?');
 				suggOther[1] = quoteChar;
 				suggOther[2] = L'\0';
-				e->error.suggestions[0] = voikko_ucs4tocstr(suggOther, "UTF-8", e->error.errorlen);
+				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggOther, e->error.errorlen);
 				delete[] suggOther;
 			}
 			gc_cache_append_error(handle, e);
@@ -237,7 +239,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 				wchar_t * suggestion = new wchar_t[t.tokenlen];
 				suggestion[0] = SimpleChar::upper(t.str[0]);
 				wcsncpy(suggestion + 1, t.str + 1, t.tokenlen - 1);
-				e->error.suggestions[0] = voikko_ucs4tocstr(suggestion, "UTF-8", t.tokenlen);
+				e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, t.tokenlen);
 				delete[] suggestion;
 				gc_cache_append_error(handle, e);
 			}
@@ -265,7 +267,7 @@ void gc_character_case(int handle, const Sentence * sentence, bool isFirstInPara
 		wchar_t * suggestion = new wchar_t[t.tokenlen];
 		suggestion[0] = SimpleChar::lower(t.str[0]);
 		wcsncpy(suggestion + 1, t.str + 1, t.tokenlen - 1);
-		e->error.suggestions[0] = voikko_ucs4tocstr(suggestion, "UTF-8", t.tokenlen);
+		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, t.tokenlen);
 		delete[] suggestion;
 		gc_cache_append_error(handle, e);
 	}
@@ -292,8 +294,8 @@ void gc_repeating_words(int handle, const Sentence * sentence) {
 		e->error.errorlen = sentence->tokens[i].tokenlen +
 		                    sentence->tokens[i + 1].tokenlen +
 		                    sentence->tokens[i + 2].tokenlen;
-		e->error.suggestions[0] = voikko_ucs4tocstr(sentence->tokens[i].str,
-		                          "UTF-8", sentence->tokens[i].tokenlen);
+		e->error.suggestions[0] = StringUtils::utf8FromUcs4(sentence->tokens[i].str,
+		                          sentence->tokens[i].tokenlen);
 		gc_cache_append_error(handle, e);
 	}
 }

@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -21,12 +21,12 @@
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
 #include "utils/StringUtils.hpp"
-#include "utils/utils.hpp"
 #include "TrieNode.hpp"
 #include <cstring>
 #include <cwchar>
 
 using namespace libvoikko::grammar;
+using namespace libvoikko::utils;
 
 namespace libvoikko { namespace autocorrect {
 
@@ -75,8 +75,8 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 			e->error.error_code = GCERR_INVALID_SPELLING;
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = sentence->tokens[i].tokenlen;
-			e->error.suggestions[0] = voikko_ucs4tocstr(
-			        REPLACEMENTS[NODES[trieNode].replacementIndex], "UTF-8", 0);
+			e->error.suggestions[0] = StringUtils::utf8FromUcs4(
+			        REPLACEMENTS[NODES[trieNode].replacementIndex]);
 			gc_cache_append_error(handle, e);
 		}
 		
@@ -108,8 +108,8 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 			e->error.startpos = sentence->tokens[i].pos;
 			e->error.errorlen = sentence->tokens[i+2].pos + sentence->tokens[i+2].tokenlen
 			                    - e->error.startpos;
-			e->error.suggestions[0] = voikko_ucs4tocstr(
-			        REPLACEMENTS[NODES[trieNode].replacementIndex], "UTF-8", 0);
+			e->error.suggestions[0] = StringUtils::utf8FromUcs4(
+			        REPLACEMENTS[NODES[trieNode].replacementIndex]);
 			gc_cache_append_error(handle, e);
 		}
 	}

@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,6 +19,7 @@
 #include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
 #include "voikko_defs.h"
 #include "character/SimpleChar.hpp"
+#include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
 
 using namespace libvoikko::morphology;
@@ -104,7 +105,7 @@ char ** AnalyzerToFinnishHyphenatorAdapter::splitCompounds(const wchar_t * word,
 		return 0;
 	}
 	allResults[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
-	char * wordUtf8 = voikko_ucs4tocstr(word, "UTF-8", len);
+	char * wordUtf8 = utils::StringUtils::utf8FromUcs4(word, len);
 	if (wordUtf8 == 0) {
 		delete[] allResults;
 		return 0;

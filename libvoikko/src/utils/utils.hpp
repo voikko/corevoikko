@@ -34,24 +34,6 @@ namespace libvoikko {
 
 enum casetype {CT_NO_LETTERS, CT_ALL_LOWER, CT_FIRST_UPPER, CT_COMPLEX, CT_ALL_UPPER};
 
-/** Converts a multibyte string to a wide character string
- * @param word multibyte string to convert
- * @param encoding iconv name of the multibyte encoding
- * @param len length of the multibyte string in bytes.
- * @return a newly allocated null terminated wide character string or null, if
- *         conversion failed.
- */
-wchar_t * voikko_cstrtoucs4(const char * word, const char * encoding, size_t len);
-
-/** Converts a wide character string to a multibyte string
- * @param word wide character string to convert
- * @param encoding iconv name of the multibyte encoding
- * @param len number of characters in the wide character string or 0, if the string is null terminated
- * @return a newly allocated null terminated multibyte string or null, if
- *         conversion failed.
- */
-char * voikko_ucs4tocstr(const wchar_t * word, const char * encoding, size_t len);
-
 /** Simple string hashing algorithm
  * @param word string to hash
  * @param len length of the word

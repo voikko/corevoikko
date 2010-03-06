@@ -27,10 +27,13 @@ using namespace std;
 namespace libvoikko { namespace utils {
 
 wchar_t * StringUtils::ucs4FromUtf8(const char * const original) {
+	return ucs4FromUtf8(original, strlen(original));
+}
+	
+wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCount) {
 	wchar_t * ucs4Buffer = 0;
 	try {
-		size_t bytes = strlen(original);
-		size_t chars = utf8::distance(original, original + bytes);
+		size_t chars = utf8::distance(original, original + byteCount);
 		ucs4Buffer = new wchar_t[chars + 1];
 		const char * origPtr = original;
 		for (size_t i = 0; i < chars; i++) {

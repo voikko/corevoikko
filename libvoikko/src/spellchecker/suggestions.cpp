@@ -148,7 +148,7 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
 	if (word == 0 || word[0] == '\0') return 0;
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
-	wchar_t * word_ucs4 = voikko_cstrtoucs4(word, voikko_options.encoding, len);
+	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
 	if (word_ucs4 == 0) return 0;
 	wchar_t ** suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
 	delete[] word_ucs4;
@@ -164,7 +164,7 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
 	
 	int j = 0;
 	for (int i = 0; i < scount; i++) {
-		char * suggestion = voikko_ucs4tocstr(suggestions_ucs4[i], voikko_options.encoding, 0);
+		char * suggestion = utils::StringUtils::utf8FromUcs4(suggestions_ucs4[i]);
 		if (suggestion == 0) continue; /* suggestion cannot be encoded */
 		suggestions[j++] = suggestion;
 	}
