@@ -19,14 +19,10 @@
 #ifndef VOIKKO_SETUP_SETUP_H
 #define VOIKKO_SETUP_SETUP_H
 
-// FIXME: nasty forward declaration trick to work around cyclic dependencies
-namespace libvoikko { namespace spellchecker { namespace suggestion {
-	struct SuggestionGenerator;
-} } }
-
 #include "grammar/cachesetup.hpp"
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
+#include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
 #include <cwchar>
