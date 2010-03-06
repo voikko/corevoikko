@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,13 +26,6 @@
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
 # ifndef WIN32
 #  define WIN32
-# endif
-# define INTERNAL_CHARSET "UCS-2-INTERNAL"
-#else
-# if defined(__FreeBSD__) || defined(__APPLE__)
-#  define INTERNAL_CHARSET "UCS-4-INTERNAL"
-# else
-#  define INTERNAL_CHARSET "WCHAR_T"
 # endif
 #endif
 
