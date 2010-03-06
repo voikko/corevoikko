@@ -305,9 +305,6 @@ class Voikko:
 		If the given word is correct, the list contains only the word itself.
 		"""
 		_checkInited(self)
-		# FIXME: This should be done directly within libvoikko
-		if self.spell(word):
-			return [unicode(word)]
 		
 		cSuggestions = self.lib.voikko_suggest_ucs4(self.handle, word)
 		pSuggestions = []

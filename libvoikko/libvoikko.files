@@ -58,6 +58,8 @@ src/spellchecker/SpellWithPriority.cpp
 src/spellchecker/SpellUtils.cpp
 src/spellchecker/AnalyzerToSpellerAdapter.hpp
 src/spellchecker/AnalyzerToSpellerAdapter.cpp
+src/spellchecker/FixedResultSpeller.hpp
+src/spellchecker/FixedResultSpeller.cpp
 src/spellchecker/SpellerFactory.hpp
 src/spellchecker/SpellerFactory.cpp
 src/spellchecker/HfstSpeller.hpp

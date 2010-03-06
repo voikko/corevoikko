@@ -21,7 +21,6 @@
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
-#include "spellchecker/spell.hpp"
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include <cstdlib>

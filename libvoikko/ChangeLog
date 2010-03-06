@@ -1,3 +1,9 @@
+2010-03-06 Harri Pitkänen <hatapitk@iki.fi>
+	* Implement FixedResultSpeller.
+	* VOIKKO_OPT_IGNORE_NUMBERS now only affects spell checking.
+	  Previously it affected spelling suggestions too, but this behaviour made
+	  it difficult independently implement spell checkings and spelling suggestions.
+
 2010-03-05 Harri Pitkänen <hatapitk@iki.fi>
 	* Complete the refactoring of suggestion generator code.
 

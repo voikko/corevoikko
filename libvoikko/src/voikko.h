@@ -71,7 +71,7 @@
  * Default: false */
 #define VOIKKO_OPT_IGNORE_DOT 0
 
-/* Ignore words containing numbers
+/* (Spell checking only) Ignore words containing numbers
  * Default: false */
 #define VOIKKO_OPT_IGNORE_NUMBERS 1
 

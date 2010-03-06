@@ -114,6 +114,11 @@ class LibvoikkoTest(unittest.TestCase):
 		suggs = self.voikko.suggest(u"koirra")
 		self.failUnless(u"koira" in suggs)
 	
+	def testSuggestReturnsArgumentIfWordIsCorrect(self):
+		suggs = self.voikko.suggest(u"koira")
+		self.assertEqual(1, len(suggs))
+		self.assertEqual(u"koira", suggs[0])
+	
 	def testGrammarErrorsAndExplanation(self):
 		errors = self.voikko.grammarErrors(u"Minä olen joten kuten kaunis.")
 		self.assertEqual(1, len(errors))

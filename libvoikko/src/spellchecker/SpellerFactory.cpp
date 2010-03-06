@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,6 +18,7 @@
 
 #include "spellchecker/SpellerFactory.hpp"
 #include "spellchecker/AnalyzerToSpellerAdapter.hpp"
+#include "spellchecker/FixedResultSpeller.hpp"
 
 #ifdef HAVE_HFST
 #include "spellchecker/HfstSpeller.hpp"
@@ -33,6 +34,10 @@ Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 	// FIXME: add proper parsing and possibility to combine components freely
 	if (dictionary.getSpellBackend() == "AnalyzerToSpellerAdapter(currentAnalyzer)") {
 		return new AnalyzerToSpellerAdapter(voikkoOptions->morAnalyzer);
+	} else if (dictionary.getSpellBackend() == "AllOk") {
+		return new FixedResultSpeller(SPELL_OK);
+	} else if (dictionary.getSpellBackend() == "AllError") {
+		return new FixedResultSpeller(SPELL_FAILED);
 	}
 	#ifdef HAVE_HFST
 	if (dictionary.getSpellBackend() == "hfst") {

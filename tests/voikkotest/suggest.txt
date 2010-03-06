@@ -53,5 +53,6 @@ horrelioosi	borrelioosi
 baapa	haapa
 h0usut	housut
 
+# setIgnoreNumbers must not affect spelling suggestions, it is only for spell checking.
 [voikko.setSuggestionStrategy(SuggestionStrategy.OCR) voikko.setIgnoreNumbers(True)]
-h0usut	!housut
+h0usut	housut
