@@ -146,12 +146,6 @@
  * Default: 2 */
 #define VOIKKO_MIN_HYPHENATED_WORD_LENGTH 9
 
-/* String options */
-/* The encoding in which multibyte character strings are interpreteted and returned
- * as results.
- * This option is deprecated. Future releases will support UTF-8 encoding only.
- * Default: UTF-8 */
-#define VOIKKO_OPT_ENCODING 2
 
 /**
  * Grammar error description.
@@ -228,15 +222,6 @@ int voikko_set_bool_option(int handle, int option, int value);
  * @return true if option was succesfully set, otherwise false
  */
 int voikko_set_int_option(int handle, int option, int value);
-
-/**
- * Sets a string option.
- * @param handle voikko instance
- * @param option option name
- * @param value option value
- * @return true if option was succesfully set, otherwise false
- */
-int voikko_set_string_option(int handle, int option, const char * value);
 
 /**
  * Checks the spelling of a character string in current multibyte encoding.

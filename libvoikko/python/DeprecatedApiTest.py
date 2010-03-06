@@ -19,8 +19,12 @@
 
 import unittest
 from libvoikko import Voikko
+from ctypes import c_int
+from ctypes import c_char_p
 
 voikko = Voikko()
+voikko.lib.voikko_set_string_option.argtypes = [c_int, c_int, c_char_p]
+voikko.lib.voikko_set_string_option.restype = c_int
 
 class Utf8ApiTest(unittest.TestCase):
 	def setUp(self):
@@ -32,6 +36,11 @@ class Utf8ApiTest(unittest.TestCase):
 	def testIntersectCompoundLevelCanBeSet(self):
 		# This will do nothing but should not fail
 		voikko.lib.voikko_set_int_option(voikko.handle, 5, 56)
+	
+	def testEncodingCanBeSet(self):
+		self.assertEquals(1, voikko.lib.voikko_set_string_option(voikko.handle, 2, "UTF-8"))
+		self.assertEquals(0, voikko.lib.voikko_set_string_option(voikko.handle, 2, "iso-8859-1"))
+		self.assertEquals(0, voikko.lib.voikko_set_string_option(voikko.handle, 1, "UTF-8"))
 
 if __name__ == "__main__":
 	unittest.main()

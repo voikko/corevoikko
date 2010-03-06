@@ -151,31 +151,6 @@ VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
 	return 0;
 }
 
-VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
-	switch (option) {
-		case VOIKKO_OPT_ENCODING:
-			if (!value) return 0;
-			#ifdef HAVE_ICONV
-			iconv_t toext = iconv_open(value, INTERNAL_CHARSET);
-			if (toext == (iconv_t) -1) {
-				return 0;
-			}
-			iconv_t fromext = iconv_open(INTERNAL_CHARSET, value);
-			if (fromext == (iconv_t) -1) {
-				iconv_close(toext);
-				return 0;
-			}
-			iconv_close(voikko_options.iconv_ucs4_ext);
-			voikko_options.iconv_ucs4_ext = toext;
-			iconv_close(voikko_options.iconv_ext_ucs4);
-			voikko_options.iconv_ext_ucs4 = fromext;
-			#endif
-			voikko_options.encoding = value;
-			return 1;
-	}
-	return 0;
-}
-
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
 	/* FIXME: Temporary hack needed for MT unsafe malaga library */

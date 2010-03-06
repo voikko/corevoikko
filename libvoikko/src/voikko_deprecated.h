@@ -39,3 +39,21 @@
  * are known to have ever used this.
  */
 #define VOIKKO_INTERSECT_COMPOUND_LEVEL 5
+
+/**
+ * This is an string option constant. The option no longer has any effect
+ * and similar functionality is not provided by the new API. The values for
+ * this option were never documented and the option was declared deprecated
+ * for a long time before actual implementation was removed.
+ */
+#define VOIKKO_OPT_ENCODING 2
+
+/**
+ * Sets a string option. Only used for deprecated VOIKKO_OPT_ENCODING, therefore
+ * no replacement has been provided yet.
+ * @param handle voikko instance
+ * @param option option name
+ * @param value option value
+ * @return true if option was succesfully set, otherwise false
+ */
+int voikko_set_string_option(int handle, int option, const char * value);

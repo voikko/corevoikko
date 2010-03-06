@@ -3,8 +3,8 @@
 	* VOIKKO_OPT_IGNORE_NUMBERS now only affects spell checking.
 	  Previously it affected spelling suggestions too, but this behaviour made
 	  it difficult independently implement spell checkings and spelling suggestions.
-	* Move VOIKKO_INTERSECT_COMPOUND_LEVEL to deprecated options, ignore the option
-	  in the hyphenator.
+	* Move VOIKKO_OPT_ENCODING, VOIKKO_INTERSECT_COMPOUND_LEVEL and
+	  voikko_set_string_option to voikko_deprecated.h, ignore them in the library.
 
 2010-03-05 Harri Pitkänen <hatapitk@iki.fi>
 	* Complete the refactoring of suggestion generator code.
