@@ -1999,7 +1999,7 @@ subrule tulostus_debug_perusmuoto($tietue):
 
   define $s := "";
   foreach $i in $k - 1:
-    if ($tietue.$i.lukutyyppi /= nil and $tietue.$i.lukutyyppi = perusluku) then
+    if ($tietue.$i.lukutyyppi /= nil) then
       $s :=+ debug_lukusanan_perusmuoto ($tietue, $i, $k, $s);
     else
       $s :=+ debug_sanan_perusmuodon_osa($tietue.$i, yes);

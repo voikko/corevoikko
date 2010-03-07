@@ -68,6 +68,11 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		self.assertFalse("WORDIDS" in analysis)
 		self.assertFalse("WORDBASES" in analysis)
 	
+	def testBaseFormForOrdinal(self):
+		analysisList = self.voikko.analyze(u"kahdennellakymmenennellä")
+		analysis = self._assertSingletonAndGetItem(analysisList)
+		self.assertEqual(u"kahdeskymmenes", analysis["BASEFORM"])
+	
 	def testBaseFormForWordHavingNoInflectins(self):
 		analysisList = self.voikko.analyze(u"koska")
 		analysis = self._assertSingletonAndGetItem(analysisList)
