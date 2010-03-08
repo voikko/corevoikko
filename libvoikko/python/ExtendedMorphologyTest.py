@@ -33,6 +33,11 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		self.assertEqual(1, len(itemList), u"One item expected")
 		return itemList[0]
 	
+	def _assertSingleBaseform(self, expectedBaseform, word):
+		analysisList = self.voikko.analyze(word)
+		analysis = self._assertSingletonAndGetItem(analysisList)
+		self.assertEqual(expectedBaseform, analysis["BASEFORM"])
+	
 	def testBaseForm(self):
 		analysisList = self.voikko.analyze(u"kissoille")
 		analysis = self._assertSingletonAndGetItem(analysisList)
@@ -69,9 +74,9 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		self.assertFalse("WORDBASES" in analysis)
 	
 	def testBaseFormForOrdinal(self):
-		analysisList = self.voikko.analyze(u"kahdennellakymmenennellä")
-		analysis = self._assertSingletonAndGetItem(analysisList)
-		self.assertEqual(u"kahdeskymmenes", analysis["BASEFORM"])
+		self._assertSingleBaseform(u"kahdeskymmenes", u"kahdennellakymmenennellä")
+		self._assertSingleBaseform(u"kolmassadas", u"kolmannellasadannella")
+		self._assertSingleBaseform(u"kolmasmiljoonas", u"kolmannellamiljoonannella")
 	
 	def testBaseFormForWordHavingNoInflectins(self):
 		analysisList = self.voikko.analyze(u"koska")
@@ -81,14 +86,10 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		self.assertEqual(u"+koska(koska)", analysis["WORDBASES"])
 	
 	def testBaseFormForCompondProperNoun(self):
-		analysisList = self.voikko.analyze(u"Outi-Marjukka")
-		analysis = self._assertSingletonAndGetItem(analysisList)
-		self.assertEqual(u"Outi-Marjukka", analysis["BASEFORM"])
+		self._assertSingleBaseform(u"Outi-Marjukka", u"Outi-Marjukka")
 	
 	def testBaseFormForCapitalizedWord(self):
-		analysisList = self.voikko.analyze(u"KISSA")
-		analysis = self._assertSingletonAndGetItem(analysisList)
-		self.assertEqual(u"kissa", analysis["BASEFORM"])
+		self._assertSingleBaseform(u"kissa", u"KISSA")
 
 if __name__ == "__main__":
 	unittest.main()

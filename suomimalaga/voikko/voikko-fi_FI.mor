@@ -1935,7 +1935,7 @@ subrule debug_lukusanan_perusmuodon_osa ($tietue):
     return "+kymmentä";
   elseif ($tietue.perusmuoto = "tuhat") then
     return "+tuhatta";
-  elseif ($tietue.alaluokka in <sata, miljoona>) then
+  elseif ($tietue.alaluokka in <sata, miljoona> and $tietue.lukutyyppi = perusluku) then
     return "+" + $tietue.perusmuoto + "a";
   else
     return debug_sanan_perusmuodon_osa($tietue, no);
