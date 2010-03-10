@@ -221,7 +221,8 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if (loppu in $oikea.jatko) then
       result $res, rules loppu;
     end;
-    if ((johdin_lAinen in $oikea.jatko) and ($oikea.luokka in <paikannimi, sukunimi>)) then
+    if ((johdin_lAinen in $oikea.jatko or johdin_mAinen in $oikea.jatko)
+        and ($oikea.luokka in <paikannimi, sukunimi>)) then
       result $res, rules paikannimen_ja_sukunimen_lainen_johdin;
     end;
     result $res, rules erisnimen_sijapääte;
@@ -323,35 +324,41 @@ combi_rule etuliite ($vasen, $oikea, $sana, $n):
   ? (($vasen.$i.tiedot = nil) or not ((ei_ys in $vasen.$i.tiedot) or (ei_ysa in $vasen.$i.tiedot)));
   ? (($oikea.tiedot    = nil) or not ((ei_ys in $oikea.tiedot)    or (ei_ysj in $oikea.tiedot)));
 
-  define $r := $vasen + <[alku: $sana] + $oikea>;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
 
 # Ehkei-tyyppiset sanat eivät voi olla yhdyssanojen osana.
 #  if (kieltosana in $oikea.jatko) then
 #    result $r, rules kieltosana;
 #  end;
   if (nimisana in $oikea.jatko) then
-    result $r, rules nimisana, teonsanasta_johdettu_nimisana,
-                     paikannimen_ja_sukunimen_lainen_johdos;
+    result $res, rules nimisana, teonsanasta_johdettu_nimisana,
+                       paikannimen_ja_sukunimen_lainen_johdos;
+##    if (not (teonsana in $oikea.jatko)) then
+##      result $res, rules teonsana_teonsanasta_johdettu_nimisana;
+##    end;
   end;
   if (laatusana in $oikea.jatko) then
-    result $r, rules laatusana, teonsanasta_johdettu_laatusana;
+    result $res, rules laatusana, teonsanasta_johdettu_laatusana;
+##    if (not (teonsana in $oikea.jatko)) then
+##      result $res, rules teonsana_teonsanasta_johdettu_laatusana;
+##    end;
   end;
   if (nimi_laatusana in $oikea.jatko) then
-    result $r, rules nimi_laatusana;
+    result $res, rules nimi_laatusana;
     if (not (nimisana in $oikea.jatko)) then
-      result $r, rules nimisana, teonsanasta_johdettu_nimisana;
+      result $res, rules nimisana, teonsanasta_johdettu_nimisana;
     end;
     if (not (laatusana in $oikea.jatko)) then
-      result $r, rules laatusana, teonsanasta_johdettu_laatusana;
+      result $res, rules laatusana, teonsanasta_johdettu_laatusana;
     end;
   end;
   if (teonsana in $oikea.jatko) then
-    result $r, rules teonsana;
+    result $res, rules teonsana;
   end;
 
   # Tavuviiva ja etuliite ovat aina jatkossa eli niitä ei tarvitse testata.
   #
-  result $r, rules tavuviiva, etuliite;
+  result $res, rules tavuviiva, etuliite;
 end;
 
 
@@ -473,28 +480,31 @@ combi_rule laatusana ($vasen, $oikea, $sana, $n):
 end;
 
 
-combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $n):
-  ? $oikea.perusmuoto /= nil;
-  ? $oikea.luokka in <laatusana, nimi_laatusana>;
-  ? $oikea.perusmuoto matches ".*inen";
-
-  define $res := $vasen + <[alku: $sana] + $oikea>;
-
-  if omistusliite in $oikea.jatko then
-    result $res, rules omistusliite;
-  end;
-  if tavuviiva in $oikea.jatko then
-    result $res, rules tavuviiva;
-  end;
-  if loppu in $oikea.jatko then
-    result $res, rules loppu;
-  end;
-  if liitesana in $oikea.jatko then
-    result $res, rules liitesana;
-  end;
-  result $res, rules sijapääte;
-#  result $res, rules laatusanan_sijapäte; laatusanan_johdos;
-end;
+#combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $n):
+#  ? $oikea.perusmuoto /= nil;
+#  ? $oikea.luokka in <laatusana, nimi_laatusana>;
+#  ? $oikea.perusmuoto matches ".*inen";
+#
+#  define $res := $vasen + <[alku: $sana] + $oikea>;
+#
+#  if omistusliite in $oikea.jatko then
+#    result $res, rules omistusliite;
+#  end;
+#  if tavuviiva in $oikea.jatko then
+#    result $res, rules tavuviiva;
+#  end;
+#  if loppu in $oikea.jatko then
+#    result $res, rules loppu;
+#  end;
+#  if liitesana in $oikea.jatko then
+#    result $res, rules liitesana;
+#  end;
+#  if yhdyssana in $oikea.jatko then
+#    result $res, rules yhdyssana;
+#  end;
+#  result $res, rules sijapääte;
+##  result $res, rules laatusanan_sijapäte; laatusanan_johdos;
+#end;
 
 
 combi_rule nimi_laatusana ($vasen, $oikea, $sana, $n):
@@ -1314,22 +1324,22 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
   return yes;
 end;
 
-subrule yhdyssana_oikein2 ($vasen, $oikea, $n):
-  if (($vasen.$n.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
-    #
-    # Yhdyssanan eka osa ei voi loppua samaan ääntiöön, millä toka osa alkaa.
-    # Siis esim. ensiilta ei käy, vaan pitäisi olla ensi-ilta.
-    #
-    define $s := $vasen.$n.perusmuoto;
-    if (length($vasen.$n.alku) greater length($vasen.$n.perusmuoto)) then
-      $s := $vasen.$n.alku;
-    end;
-    if ((substring($s,1R) matches @ääntiö) and (substring($oikea.perusmuoto,1) matches @ääntiö)) then
-      return (substring($s,1R) /= substring($oikea.perusmuoto,1));
-    end;
-  end;
-  return yes;
-end;
+#subrule yhdyssana_oikein2 ($vasen, $oikea, $n):
+#  if (($vasen.$n.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
+#    #
+#    # Yhdyssanan eka osa ei voi loppua samaan ääntiöön, millä toka osa alkaa.
+#    # Siis esim. ensiilta ei käy, vaan pitäisi olla ensi-ilta.
+#    #
+#    define $s := $vasen.$n.perusmuoto;
+#    if (length($vasen.$n.alku) greater length($vasen.$n.perusmuoto)) then
+#      $s := $vasen.$n.alku;
+#    end;
+#    if ((substring($s,1R) matches @ääntiö) and (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+#      return (substring($s,1R) /= substring($oikea.perusmuoto,1));
+#    end;
+#  end;
+#  return yes;
+#end;
 
 
 #####################################################
@@ -1608,7 +1618,7 @@ end;
 
 
 
-###===========================================
+##==========================================
 
 
 combi_rule teonsana_teonsanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):
@@ -1632,7 +1642,7 @@ end;
 combi_rule teonsana_teonsanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("teonsana_teonsanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka = teonsana;
-  ? nimisana in $vasen.($n-1).jatko;
+  ? laatusana in $vasen.($n-1).jatko;
   ? $oikea.jatko * (@teonsanasta_johdettu_teonsana) /= <>;
   ? äs_ok ($vasen.($n-1), $oikea);
 
@@ -1668,25 +1678,30 @@ end;
 combi_rule teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):
 #define $profile := transmit ("teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in @teonsanasta_johdettu_nimisana;
-  ? $oikea.luokka in $vasen.($n-1).jatko;
+
+  define $i := $n - 1;
+  ? $oikea.luokka in $vasen.$i.jatko;
 
   # Vaihdetaan ääntiösointu oikeaksi.
   # Esim. pitää => pito, kiertää => kierros.
   #
   if ($oikea.luokka in <johdin_O, johdin_Os, johdin_tO_leuto, johdin_tO_liitto>) then
-    $vasen.($n-1) :=+ [alkuperäinen_äs: $vasen.($n-1).äs];
-    if ($vasen.($n-1).alku matches ".*" + @yäö + ".*") then
-      $vasen.($n-1).äs := ä;
+    $vasen.$i :=+ [alkuperäinen_äs: $vasen.($n-1).äs];
+    if ($vasen.$i.alku matches ".*" + @yäö + ".*") then
+      $vasen.$i.äs := ä;
     else
-      $vasen.($n-1).äs := a;
+      $vasen.$i.äs := a;
     end;
   end;
 
-  ? äs_ok ($vasen.($n-1), $oikea);
+  ? äs_ok ($vasen.$i, $oikea);
 
-  if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
+  if $oikea.äs = aä then $oikea.äs := $vasen.$i.äs; end;
 
-#define $a := transmit ($vasen);
+  $vasen.$i :=+ [lähtöluokka: $vasen.$i.luokka];
+  $vasen.$i.luokka := nimisana;
+
+#define $a := transmit ($vasen.$i.luokka);
 #define $b := transmit ($oikea);
 #define $c := transmit ($sana);
 #define $d := transmit ($n);
@@ -2058,7 +2073,8 @@ end;
 
 combi_rule paikannimen_ja_sukunimen_lainen_johdin ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("paikannimen_ja_sukunimen_lainen_johdin ($vasen, $oikea, $sana, $n):");
-  ? $oikea.luokka = johdin_lAinen;
+  ? ($oikea.luokka = johdin_lAinen) or
+    (($oikea.luokka = johdin_mAinen) and ($vasen.($n-1).tiedot = nil or not (ei_mAinen in $vasen.($n-1).tiedot)));
   ? äs_ok ($vasen.($n-1), $oikea);
 
   if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
@@ -2175,14 +2191,14 @@ end;
 # Sääntö ei voi olla sanan alussa.
 #
 combi_rule inen_johdos_nimisanasta ($vasen, $oikea, $sana, $n):
-####define $profile := transmit ("inen_johdos_nimisanasta ($vasen, $oikea, $sana, $n):");
+##define $profile := transmit ("inen_johdos_nimisanasta ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
   ? johdin_inen in $oikea.jatko;
   ? $oikea.tiedot = nil or
     (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
 
 #  define $a := transmit ($vasen);
-#  define $b := transmit ($oikea.jatko);
+#  define $b := transmit ($oikea);
 #  define $c := transmit ($sana);
 #  define $d := transmit ($n);
 
@@ -2530,30 +2546,17 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
   if loppu in $oikea.jatko then
     result $res, rules loppu;
   end;
-  #
-  # Estetään seitsemäntoista-vuotiaan tyyppisten sanojen tunnistuminen kahdesti.
-  #
-  if (not (($oikea.perusmuoto = "toista") and
-      ($index greater 1) and
-      ($vasen.($index-1).luokka = sijapääte) and
-      ($vasen.($index-1).sijamuoto = omanto) and
-      ($vasen.($index-2).perusmuoto in <"seitsemän", "kahdeksan", "yhdeksän">))) then
-    result $res, rules lukusana_sisäkerroin,
-                     tavuviiva,
-                     yhdyssana,
-                     liitesana;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
   end;
-  result $res, rules lukusana_sisäkerroin, tavuviiva;
-##  result $res, rules lukusana_sisäkerroin, tavuviiva, liitesana;
-#  result $res, rules lukusana_sisäkerroin,
-#                     tavuviiva,
-#                     yhdyssana,
-#                     liitesana;
-##  result $res, rules yhdyssana, lukusana_sisäkerroin,
-##, lukusanan_jälkiliite;
-##                   inen_johdos_nimisanasta, inen_päätteinen_laatusana;
-##                     nimisana, laatusana;
+  result $res, rules lukusana_sisäkerroin,
+##                     lukusanan_jälkiliite,
+##                     inen_johdos_nimisanasta,
+##                     inen_päätteinen_laatusana,
+                     yhdyssana,
+                     tavuviiva;
 end;
+
 
 combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
 ####define $profile := transmit ("lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):");

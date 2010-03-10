@@ -134,6 +134,7 @@ haurastua
 Hautamäki
 hautaus
 havainnoitsija
+hehkutus
 heijastuma
 heikentymä
 heimolainen
@@ -144,6 +145,7 @@ heloitus
 henkilöitymä
 henkilökohtainen
 herraskartano
+herrasmainen
 herrasmies
 herraspoika
 herrasväki
@@ -176,6 +178,7 @@ Härmä
 hölmöläinen
 höpötys
 höyhensarjalainen
+ihmisläheinen
 Ilma
 Ilmajoki
 ilmentymä
@@ -187,6 +190,7 @@ innoittua
 institutionalisoitua
 Internet
 irtauma
+islamilainen
 Islanti
 Isojoki
 isoäiti
@@ -202,6 +206,7 @@ jakauma
 Jalasjärvi
 Jalo
 jalokivi
+jalopähkinä
 Jami
 jaotus
 Japani
@@ -343,6 +348,7 @@ Kreikka
 kreikkalaiskatolilainen
 Kroatia
 kronologinen
+kryptoanalyysi
 Kuha
 Kuikka
 kuiskutus
@@ -468,6 +474,7 @@ litistymä
 liukuma
 lohkeama
 loisto
+loittorengas
 lojaalisuus
 lomalainen
 Lotta
@@ -800,6 +807,7 @@ syntymä
 syöpymä
 syöttö
 Säde
+säilytys
 säteisliike
 Säteri
 sätkytellä
@@ -954,6 +962,7 @@ Venäjä
 Venäläinen
 Vesa
 veto
+viehätys
 Vieno
 vietellä
 Vietnam

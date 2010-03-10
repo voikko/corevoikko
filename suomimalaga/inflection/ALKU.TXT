@@ -233,6 +233,19 @@ allo_rule generate_allos ($tietue):
     $tietue.luokka := nimi_laatusana;
   end;
 
+  # Estetään eräitten -mainen-loppuisten sanojen tunnistuminen kahdesti.
+  #
+  if (($tietue.luokka in <paikannimi, sukunimi>) and
+      ($tietue.perusmuoto in <"Kanerva", "Keihänen", "Kurikka", "Lanka", "Manner",
+                              "Osta", "Pippuri", "Rautiainen", "Sormunen", "Tiainen">)) then
+    $tietue.jatko :=- <johdin_mAinen>;
+    if ($tietue.tiedot = nil) then
+      $tietue :=+ [tiedot: <ei_mAinen>];
+    else
+      $tietue.tiedot :=+ <ei_mAinen>;
+    end;
+  end;
+
 #  if ($tietue.luokka = lukusanan_jälkiliite) then
 #    stop;
 #  end;

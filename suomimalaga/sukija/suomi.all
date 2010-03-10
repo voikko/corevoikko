@@ -233,6 +233,19 @@ allo_rule generate_allos ($tietue):
     $tietue.luokka := nimi_laatusana;
   end;
 
+  # Estetään eräitten -mainen-loppuisten sanojen tunnistuminen kahdesti.
+  #
+  if (($tietue.luokka in <paikannimi, sukunimi>) and
+      ($tietue.perusmuoto in <"Halli", "Kanerva", "Keihänen", "Kurikka", "Lanka", "Manner",
+                              "Osta", "Pippuri", "Rautiainen", "Sormunen", "Tiainen">)) then
+    $tietue.jatko :=- <johdin_mAinen>;
+    if ($tietue.tiedot = nil) then
+      $tietue :=+ [tiedot: <ei_mAinen>];
+    else
+      $tietue.tiedot :=+ <ei_mAinen>;
+    end;
+  end;
+
 #  if ($tietue.luokka = lukusanan_jälkiliite) then
 #    stop;
 #  end;
@@ -6082,7 +6095,7 @@ subrule kalsium ($tietue, $param01, $param02, $param03):
                          johdin_ittain: <<$param03, <>>>,
                          johdin_lAinen: <<$param02, <>>>,
                          johdin_llinen: <<$param02, <>>>,
-                         johdin_mAinen: <<$param02, <>>>,
+                         johdin_mAinen: <<$param01, <>>>,
                          johdin_tOn: <<$param02, <>>>,
                          johdin_Us: <<$param02, <>>>,
                          tavuviiva: <<$param01, <>>>,

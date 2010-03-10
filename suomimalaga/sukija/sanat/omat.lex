@@ -786,6 +786,7 @@
 
 [perusmuoto: "aasian", alku: "aasian", luokka: etuliite, jatko: @elx, äs: aä];
 [perusmuoto: "afrikan", alku: "afrikan", luokka: etuliite, jatko: @elx, äs: aä];
+[perusmuoto: "alaskan", alku: "alaskan", luokka: etuliite, jatko: @elx, äs: aä];
 [perusmuoto: "amerikan", alku: "amerikan", luokka: etuliite, jatko: @elx, äs: aä];
 [perusmuoto: "australian", alku: "australian", luokka: etuliite, jatko: @elx, äs: aä];
 [perusmuoto: "euroopan", alku: "euroopan", luokka: etuliite, jatko: @elx, äs: aä];
@@ -1019,6 +1020,11 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "puolitoista", alku: "puolitoista", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "puolitoista", alku: "puolentoista", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "monisata", alku: "monisata", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+
+[perusmuoto: "kryo", alku: "kryo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "nitrifikaatio", alku: "nitrifikaatio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "denitrifikaatio", alku: "denitrifikaatio", luokka: nimisana, jatko: <autio>, äs: a];
+### neuro=tiede
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
