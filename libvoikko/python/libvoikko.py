@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Python interface to libvoikko, library of Finnish language tools.
+"""
+THIS IMPLEMENTATION IS DEPRECATED. It is maintained (with tests) only
+to make sure that the deprecated API methods still work correcty.
+
+Python interface to libvoikko, library of Finnish language tools.
 This module can be used to perform various natural language analysis
 tasks on Finnish text.
 

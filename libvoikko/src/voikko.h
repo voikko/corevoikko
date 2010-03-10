@@ -169,16 +169,14 @@ typedef struct {
 #ifndef VOIKKO_DEFS_H
 BEGIN_C_DECLS
 
-/**
- * Same as voikko_init_with_path(handle, langcode, cache_size, NULL)
- */
-const char * voikko_init(int * handle, const char * langcode, int cache_size);
+/** Handle to a specific Voikko instance */
+struct VoikkoHandle;
 
 /**
  * Initialises the library for use in the specified language, adding an extra directory
  * to the standard dictionary search path.
- * @param handle after succesful initialisation handle will contain a handle that
- *        refers to this particular instance of voikko
+ * @param error Will be set to null if initialisation completed without error.
+ *        Otherwise will be set to a pointer to a string describing the error.
  * @param langcode the language code. The following values can be used:
  *        - "", "default" or "fi_FI": Use the default dictionary. The default
  *          dictionary can be assumed to be present in a complete installation of
@@ -192,11 +190,11 @@ const char * voikko_init(int * handle, const char * langcode, int cache_size);
  * @param path path to a directory from which dictionary files should be searched
  *        first before looking into the standard dictionary locations. If NULL, no
  *        additional search path will be used.
- * @return null, if initialisation completed without error, otherwise a pointer
- *         to a string describing the error
+ * @return A handle to the initialized Voikko instance or null, if initialization
+ *         failed.
  */
-const char * voikko_init_with_path(int * handle, const char * langcode,
-                                   int cache_size, const char * path);
+VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
+                          int cache_size, const char * path);
 
 /**
  * Terminates an instance of voikko.

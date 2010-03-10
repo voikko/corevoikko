@@ -45,6 +45,8 @@ using namespace setup;
 
 voikko_options_t voikko_options;
 
+typedef voikko_options_t VoikkoHandle;
+
 int voikko_handle_count;
 
 static int setGrammarOption(int handle, int value, int * option) {
@@ -151,29 +153,27 @@ VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
 	return 0;
 }
 
-VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
+VOIKKOEXPORT VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
                                    int cache_size, const char * path) {
-	/* FIXME: Temporary hack needed for MT unsafe malaga library */
-	if (voikko_handle_count++ > 0) return "Maximum handle count exceeded";
-	
-	voikko_options.ignore_dot = 0;
-	voikko_options.ignore_numbers = 0;
-	voikko_options.ignore_uppercase = 0;
-	voikko_options.ignore_nonwords = 1;
-	voikko_options.accept_first_uppercase = 1;
-	voikko_options.accept_all_uppercase = 1;
-	voikko_options.accept_extra_hyphens = 0;
-	voikko_options.accept_missing_hyphens = 0;
-	voikko_options.accept_titles_in_gc = 0;
-	voikko_options.accept_unfinished_paragraphs_in_gc = 0;
-	voikko_options.accept_bulleted_lists_in_gc = 0;
-	voikko_options.cache_size = cache_size;
-	voikko_options.morAnalyzer = 0;
+	voikko_options_t * options = new voikko_options_t();
+	options->ignore_dot = 0;
+	options->ignore_numbers = 0;
+	options->ignore_uppercase = 0;
+	options->ignore_nonwords = 1;
+	options->accept_first_uppercase = 1;
+	options->accept_all_uppercase = 1;
+	options->accept_extra_hyphens = 0;
+	options->accept_missing_hyphens = 0;
+	options->accept_titles_in_gc = 0;
+	options->accept_unfinished_paragraphs_in_gc = 0;
+	options->accept_bulleted_lists_in_gc = 0;
+	options->cache_size = cache_size;
+	options->morAnalyzer = 0;
 	
 	if (langcode) {
 		try {
-			voikko_options.morAnalyzer = 0;
-			voikko_options.speller = 0;
+			options->morAnalyzer = 0;
+			options->speller = 0;
 			Dictionary dict;
 			if (path) {
 				dict = DictionaryLoader::load(string(langcode), string(path));
@@ -181,59 +181,50 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 			else {
 				dict = DictionaryLoader::load(string(langcode));
 			}
-			voikko_options.dictionary = dict;
-			voikko_options.morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
-			voikko_options.speller = spellchecker::SpellerFactory::getSpeller(&voikko_options, dict);
-			voikko_options.suggestionGenerator =
-				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(&voikko_options,
+			options->dictionary = dict;
+			options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
+			options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);
+			options->suggestionGenerator =
+				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
 					spellchecker::suggestion::SUGGESTION_TYPE_STD);
-			voikko_options.hyphenator = hyphenator::HyphenatorFactory::getHyphenator(&voikko_options, dict);
+			options->hyphenator = hyphenator::HyphenatorFactory::getHyphenator(options, dict);
 		}
 		catch (DictionaryException e) {
-			if (voikko_options.hyphenator) {
-				voikko_options.hyphenator->terminate();
-				delete voikko_options.hyphenator;
-				voikko_options.hyphenator = 0;
+			if (options->hyphenator) {
+				options->hyphenator->terminate();
+				delete options->hyphenator;
+				options->hyphenator = 0;
 			}
-			if (voikko_options.suggestionGenerator) {
-				delete voikko_options.suggestionGenerator;
-				voikko_options.suggestionGenerator = 0;
+			if (options->suggestionGenerator) {
+				delete options->suggestionGenerator;
+				options->suggestionGenerator = 0;
 			}
-			if (voikko_options.speller) {
-				voikko_options.speller->terminate();
-				delete voikko_options.speller;
-				voikko_options.speller = 0;
+			if (options->speller) {
+				options->speller->terminate();
+				delete options->speller;
+				options->speller = 0;
 			}
-			if (voikko_options.morAnalyzer) {
-				voikko_options.morAnalyzer->terminate();
-				delete voikko_options.morAnalyzer;
-				voikko_options.morAnalyzer = 0;
+			if (options->morAnalyzer) {
+				options->morAnalyzer->terminate();
+				delete options->morAnalyzer;
+				options->morAnalyzer = 0;
 			}
-			voikko_handle_count--;
-			return e.what();
+			*error = e.what();
+			delete options;
+			return 0;
 		}
 	}
 	
 	if (cache_size >= 0) {
-		voikko_options.cache = new wchar_t[6544 << cache_size];
-		if (voikko_options.cache) {
-			voikko_options.cache_meta = new char[1008 << cache_size];
-			if (voikko_options.cache_meta)
-				memset(voikko_options.cache_meta, 0, 1008 << cache_size);
-			else {
-				delete[] voikko_options.cache;
-				voikko_options.cache = 0;
-			}
-			memset(voikko_options.cache, 0, 6544 * sizeof(wchar_t) << cache_size);
-		}
+		options->cache = new wchar_t[6544 << cache_size];
+		options->cache_meta = new char[1008 << cache_size];
+		memset(options->cache_meta, 0, 1008 << cache_size);
+		memset(options->cache, 0, 6544 * sizeof(wchar_t) << cache_size);
+	} else {
+		options->cache = 0;
 	}
-	else voikko_options.cache = 0;
-	*handle = voikko_handle_count;
-	return 0;
-}
-
-VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size) {
-	return voikko_init_with_path(handle, langcode, cache_size, 0);
+	*error = 0;
+	return options;
 }
 
 VOIKKOEXPORT int voikko_terminate(int handle) {

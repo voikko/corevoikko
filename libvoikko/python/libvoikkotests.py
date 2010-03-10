@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
-# Test suite for the Python interface to libvoikko
+# Test suite for testing the deprecated API functions through the
+# old libvoikko module.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

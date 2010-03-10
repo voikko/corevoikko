@@ -21,7 +21,39 @@
  */
 
 #include "voikko_defs.h"
+#include "setup/setup.hpp"
 #include <cstring>
+
+typedef libvoikko::voikko_options_t VoikkoHandle;
+
+/* FIXME: fix the voikko_deprecated.h mess so that we can directly include the public headers */
+extern "C" {
+VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
+                          int cache_size, const char * path);
+}
+
+VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
+                                   int cache_size, const char * path) {
+	if (libvoikko::voikko_handle_count++ > 0) {
+		return "Maximum handle count exceeded";
+	}
+	const char * error;
+	VoikkoHandle * theHandle = voikkoInit(&error, langcode, cache_size, path);
+	if (theHandle) {
+		*handle = 1;
+		libvoikko::voikko_options = *theHandle;
+		delete theHandle;
+		return 0;
+	} else {
+		libvoikko::voikko_handle_count--;
+		*handle = 0;
+		return error;
+	}
+}
+
+VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size) {
+	return voikko_init_with_path(handle, langcode, cache_size, 0);
+}
 
 VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
 	// If deprecated VOIKKO_OPT_ENCODING is used and value is "UTF-8" return success.
