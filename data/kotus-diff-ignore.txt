@@ -1336,6 +1336,7 @@ kolmiointi # kolmioida
 koronaariskleroosi # koronaari
 koronaaritauti # koronaari
 koronaarivaltimo # koronaari
+kotimaistua # kotimaistaa
 kovitus # kovittaa
 kromitus # kromittaa
 kuikuilu # kuikuilla
@@ -1439,6 +1440,7 @@ ryiskely # ryiskellä
 räknäys # räknätä
 räppimusiikki # räppi
 sammarit # sammari
+samumtuuli # samum
 santsaus # santsata
 senssit # senssi
 serologinen # serologi
