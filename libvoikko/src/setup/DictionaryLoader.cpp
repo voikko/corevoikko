@@ -79,7 +79,7 @@ Dictionary DictionaryLoader::load(const string & variant) throw(DictionaryExcept
 Dictionary DictionaryLoader::load(const string & variant, const string & path)
 		throw(DictionaryException) {
 	list<Dictionary> dicts = findAllAvailable(path);
-	if (dicts.size() == 0) {
+	if (dicts.empty()) {
 		throw DictionaryException("No valid dictionaries were found");
 	}
 	

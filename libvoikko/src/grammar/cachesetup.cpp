@@ -38,9 +38,7 @@ void voikko_gc_cache::clear() {
 }
 
 void gc_clear_cache(int /*handle*/) {
-	if (voikko_options.gc_cache.paragraph) {
-		delete[] voikko_options.gc_cache.paragraph;
-	}
+	delete[] voikko_options.gc_cache.paragraph;
 	CacheEntry * entry = voikko_options.gc_cache.firstError;
 	while (entry) {
 		CacheEntry * next = entry->nextError;

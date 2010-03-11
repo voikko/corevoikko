@@ -333,7 +333,6 @@ execute_rules( analysis_t *analysis,
  * LINK_FEAT. */
 { 
   int_t *rule_p;
-  bool rules_successful, rules_executed;
   rule_t *rule;
 
   /* Setup STATE_INFO. */
@@ -343,7 +342,7 @@ execute_rules( analysis_t *analysis,
   malagaState->state_info.input = link_surf_end;
 
   /* Execute rules in rule set. */
-  rules_executed = rules_successful = false;
+  bool rules_successful = false;
   for (rule_p = rule_sys->rule_sets + state->rule_set; *rule_p != -1; rule_p++)
   { 
     if (*rule_p == -2) 
@@ -375,7 +374,6 @@ execute_rules( analysis_t *analysis,
 	    push_string_value(link_surf, NULL, malagaState);
 	}
 	rules_successful |= execute_rule(rule_sys, *rule_p, malagaState);
-	rules_executed = true;
       }
     }
   }

@@ -45,9 +45,7 @@ wchar_t * StringUtils::ucs4FromUtf8(const char * const original, size_t byteCoun
 		return ucs4Buffer;
 	} catch (...) {
 		// invalid UTF-8 sequence or not enough memory
-		if (ucs4Buffer) {
-			delete[] ucs4Buffer;
-		}
+		delete[] ucs4Buffer;
 		return 0;
 	}
 }
