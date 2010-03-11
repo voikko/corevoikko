@@ -51,7 +51,7 @@ enum {MIN_CHUNK_SIZE = 400};
 
 typedef struct /* A block of memory that is part of a pool. */
 { 
-  list_node_t *next;
+  list_node_t *next; /* Unused, needed for padding */
   int_t chunk_size; /* The maximum number of items in this chunk. */
   int_t item_count; /* The actual number of items in this chunk. */
   /* For 64-bit pointers, we are 8-byte aligned here.

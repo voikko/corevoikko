@@ -42,21 +42,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Types. ===================================================================*/
 
-typedef struct /* A node in a list of keys. */
-{ 
-  list_node_t *next;
-  u_short_t key; /* Key for this node. */
-  int_t subnode; /* Index of node for KEY in trie. */
-  int_t content; /* Content associated with KEY. */
-} key_node_t;
-
-typedef struct /* A dynamic trie node. */
-{ 
-  string_t prefix; /* The prefix of this node. */
-  int_t prefix_len; /* The length of PREFIX in bytes. */
-  list_t key_list; /* List of keys. */
-} trie_node_t;
-
 /* The trie is a vector of int_t that contains compact trie nodes.
  * A compact trie node is int_t-aligned and looks as follows:
  *   u_byte_t prefix_len;

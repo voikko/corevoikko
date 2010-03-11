@@ -45,16 +45,8 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Types. ===================================================================*/
 
-typedef struct /* Used to hold the value for a "switch". */
-{
-  list_node_t *next;
-  symbol_t key; 
-  value_t value; 
-} switch_node_t;
-
 typedef struct 
 { 
-  list_node_t *next;
   int_t pc;
   int_t nested_subrules;
   int_t base; 

@@ -114,14 +114,6 @@ namespace libvoikko { namespace morphology { namespace malaga {
 /* The number of cells needed to contain a number value.
  * sizeof( double ) *must* be a multiple of sizeof( cell_t ). */
 
-/* Types. ===================================================================*/
-
-typedef struct /* An element in a list of hidden attributes. */
-{
-  list_node_t *next;
-  symbol_t symbol;
-} attribute_t;
-
 /* Support functions. =======================================================*/
 
 static void 
