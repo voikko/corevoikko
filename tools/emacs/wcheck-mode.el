@@ -956,11 +956,10 @@ visible in BUFFER within position range from BEG to END."
         face faces)
     (while (< pos end)
       (setq face (get-text-property pos 'face)
-            faces (append (if (and face (listp face))
-                              face
-                            (list face))
-                          faces)
-            pos (1+ pos)))
+            pos (1+ pos))
+      (if (and face (listp face))
+          (setq faces (append face faces))
+        (push face faces)))
     (delete-dups faces)))
 
 
