@@ -144,7 +144,7 @@ LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
 if HAVE_HFST
     libvoikko_la_SOURCES += $(HFST_CPP_FILES)
-    libvoikko_la_LDFLAGS += -lhfst
+    libvoikko_la_LDFLAGS += $(HFST_LIBS)
 else
     EXTRA_DIST += $(HFST_CPP_FILES)
 endif

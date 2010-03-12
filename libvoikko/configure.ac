@@ -90,8 +90,9 @@ AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
 	[enable HFST morphology backend (EXPERIMENTAL!)]),
 	[hfst=${enableval}], [hfst=no])
 if test x$hfst = xyes; then
-	AC_CHECK_HEADERS([hfst2/hfst.h], [], [AC_MSG_ERROR([hfst.h required])])
+	PKG_CHECK_MODULES([HFST], [hfst >= 2.4])
 	AC_DEFINE(HAVE_HFST, 1)
+	CXXFLAGS="$CXXFLAGS $HFST_CFLAGS"
 fi
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 

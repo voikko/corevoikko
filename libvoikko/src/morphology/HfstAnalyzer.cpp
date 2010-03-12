@@ -34,6 +34,12 @@ HfstAnalyzer::HfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	ifstream morStream(morFile.c_str());
 	if (morStream.good()) {
 		morphology = HWFST::read_transducer(morStream, keyTable);
+		for (HWFST::Key k = 0; k < keyTable->get_unused_key(); ++k) {
+			flagTable.define_diacritic(k, HWFST::get_symbol_name(HWFST::get_key_symbol(k, keyTable)));
+			if (flagTable.is_diacritic(k)) {
+				flags.insert(k);
+			}
+		}
 	}
 	else {
 		throw setup::DictionaryException("Failed to open mor.hwfst");
@@ -62,15 +68,18 @@ list<Analysis *> * HfstAnalyzer::analyze(const char * word) {
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	HWFST::KeyVector * wordPath = HWFST::stringUtf8ToKeyVector(word, keyTable);
-	HWFST::KeyVectorVector * analysisVector = HWFST::lookup_all(morphology, wordPath);
+	HWFST::KeyVectorVector * analysisVector = HWFST::lookup_all(morphology, wordPath, &flags);
 	int currentAnalysisCount = 0;
 	for (HWFST::KeyVectorVector::iterator analysisIt = analysisVector->begin();
 	     analysisIt != analysisVector->end() && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT;
 	     ++analysisIt) {
 		HWFST::KeyVector * analysis = *analysisIt;
-		addAnalysis(analysis, analysisList, wlen);
-		delete analysis;
-		++currentAnalysisCount;
+		KeyVector* filtlkv = flagTable.filter_diacritics(analysis);
+		if (filtlkv) {
+			addAnalysis(filtlkv, analysisList, wlen);
+			++currentAnalysisCount;
+			delete filtlkv;
+		}
 	}
 	delete analysisVector;
 	delete wordPath;

@@ -24,6 +24,7 @@
 #include <map>
 #include <string>
 #include <hfst2/hfst.h>
+#include <hfst2/FlagDiacritics.h>
 
 namespace libvoikko { namespace morphology {
 
@@ -40,6 +41,8 @@ class HfstAnalyzer : public Analyzer {
 	private:
 		HWFST::KeyTable * keyTable;
 		HWFST::TransducerHandle morphology;
+		FlagDiacriticTable flagTable;
+		HWFST::KeySet flags;
 		void addAnalysis(HWFST::KeyVector * hfstAnalysis, std::list<Analysis *> * analysisList, size_t charCount) const;
 };
 
