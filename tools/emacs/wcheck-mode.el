@@ -470,13 +470,9 @@ or skip in a buffer."
         ;; Add this buffer to buffer database.
         (wcheck-update-buffer-data (current-buffer) wcheck-language)
 
-        ;; Start idle timer if it's not already started. The timer runs
-        ;; a function which updates buffers which have requested for
-        ;; that.
-        (unless wcheck-timer
-          (setq wcheck-timer
-                (run-with-idle-timer wcheck-timer-idle t
-                                     #'wcheck-timer-read-event)))
+        ;; Ensure that the idle timer is running. The timer runs a
+        ;; function which updates buffers which have requested for that.
+        (wcheck-timer-start)
 
         ;; Request update for this buffer.
         (wcheck-timer-add-read-request (current-buffer))))
@@ -492,10 +488,8 @@ or skip in a buffer."
     ;; If there are no buffers using wcheck-mode anymore, stop the idle
     ;; timer and remove global hooks.
     (when (null (wcheck-get-all-data :buffer))
-      (wcheck-remove-global-hooks)
-      (when wcheck-timer
-        (cancel-timer wcheck-timer)
-        (setq wcheck-timer nil)))
+      (wcheck-timer-stop)
+      (wcheck-remove-global-hooks))
 
     ;; Remove buffer-local hooks.
     (wcheck-remove-local-hooks (current-buffer))))
@@ -503,6 +497,21 @@ or skip in a buffer."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Timers
+
+
+(defun wcheck-timer-start ()
+  "Start `wcheck-mode' idle timer if it's not running already."
+  (unless wcheck-timer
+    (setq wcheck-timer
+          (run-with-idle-timer wcheck-timer-idle t
+                               #'wcheck-timer-read-event))))
+
+
+(defun wcheck-timer-stop ()
+  "Stop `wcheck-mode' idle timer."
+  (when wcheck-timer
+    (cancel-timer wcheck-timer)
+    (setq wcheck-timer nil)))
 
 
 (defun wcheck-timer-add-read-request (buffer)
