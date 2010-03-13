@@ -50,6 +50,7 @@
 # define END_C_DECLS /* empty */
 #endif
 
+#include "voikko_enums.h"
 
 /* Fixed limits */
 #define LIBVOIKKO_MAX_WORD_CHARS 255
@@ -306,16 +307,6 @@ void voikko_free_suggest_cstr(char ** suggest_result);
 void voikko_free_hyphenate(char * hyphenate_result);
 
 /**
- * Token types for string tokenization
- * TOKEN_NONE:        End of text or error
- * TOKEN_WORD:        Word
- * TOKEN_PUNCTUATION: Punctuation
- * TOKEN_WHITESPACE:  Whitespace
- * TOKEN_UNKNOWN:     Character not used in Finnish
- */
-enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE, TOKEN_UNKNOWN};
-
-/**
  * Find the next token in text stream.
  * @param handle voikko instance
  * @param text Pointer to the start of a text buffer
@@ -336,15 +327,6 @@ enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
  */
 enum voikko_token_type voikko_next_token_cstr(int handle, const char * text,
                        size_t textlen, size_t * tokenlen);
-
-/**
- * Sentence start types
- * SENTENCE_NONE: End of text reached or error.
- * SENTENCE_NO_START: This is not a start of a new sentence.
- * SENTENCE_POSSIBLE: This may be a start of a new sentence.
- * SENTENCE_PROBABLE: This is a probable start of a new sentence.
- */
-enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START, SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
 
 /**
  * Find the next sentence in text stream.

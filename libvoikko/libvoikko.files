@@ -3,6 +3,7 @@ config.h
 configure.ac
 src/porting.h
 src/voikko.h
+src/voikko_enums.h
 src/voikko_defs.h
 src/voikko_deprecated.h
 src/Makefile.am

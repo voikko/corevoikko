@@ -39,14 +39,8 @@
   #endif
 #endif
 
-enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION,
-             TOKEN_WHITESPACE, TOKEN_UNKNOWN};
-
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
                                                            size_t textlen, size_t * tokenlen);
-
-enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START,
-             SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
              const wchar_t * text, size_t textlen, size_t * sentencelen);
