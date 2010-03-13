@@ -23,6 +23,7 @@
 #include "setup/DictionaryException.hpp"
 #include <string>
 #include <hfst2/hfst.h>
+#include <hfst2/FlagDiacritics.h>
 
 namespace libvoikko { namespace spellchecker {
 
@@ -37,6 +38,8 @@ class HfstSpeller : public Speller {
 	private:
 		HWFST::KeyTable * keyTable;
 		HWFST::TransducerHandle speller;
+		FlagDiacriticTable flagTable;
+		HWFST::KeySet flags;
 };
 
 } }

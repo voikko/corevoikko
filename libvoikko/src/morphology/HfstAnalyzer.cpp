@@ -106,7 +106,7 @@ void HfstAnalyzer::addAnalysis(HWFST::KeyVector * hfstAnalysis, list<Analysis *>
 void HfstAnalyzer::terminate() {
 	delete keyTable;
 	keyTable = 0;
-	delete morphology;
+	delete morphology; // FIXME: leaks memory
 	morphology = 0;
 }
 

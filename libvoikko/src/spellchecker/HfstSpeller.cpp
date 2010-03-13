@@ -37,6 +37,12 @@ HfstSpeller::HfstSpeller(const string & directoryName) throw(setup::DictionaryEx
 	else {
 		throw setup::DictionaryException("Failed to open spl.hwfst");
 	}
+	for (HWFST::Key k = 0; k < keyTable->get_unused_key(); ++k) {
+		flagTable.define_diacritic(k, HWFST::get_symbol_name(HWFST::get_key_symbol(k, keyTable)));
+		if (flagTable.is_diacritic(k)) {
+			flags.insert(k);
+		}
+	}
 }
     
 spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
@@ -45,9 +51,22 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 	}
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
 	HWFST::KeyVector * wordPath = HWFST::stringUtf8ToKeyVector(wordUtf8, keyTable);
-	HWFST::KeyVector * lookup = HWFST::lookup_first(speller, wordPath);
-	spellresult result = (lookup != NULL ? SPELL_OK : SPELL_FAILED);
-	delete lookup;
+	
+	HWFST::KeyVectorVector * lookups = HWFST::lookup_all(speller, wordPath, &flags);
+	spellresult result = SPELL_FAILED;
+	if (lookups != NULL) {
+		for (KeyVectorVector::iterator lkv = lookups->begin(); lkv != lookups->end(); ++lkv) {
+			KeyVector* hmmlkv = *lkv;
+			KeyVector* filtlkv = flagTable.filter_diacritics(hmmlkv);
+			if (filtlkv != NULL) {
+				result = SPELL_OK;
+				delete filtlkv;
+				break;
+			}
+			delete filtlkv;
+		}
+		delete lookups;
+	}
 	delete wordPath;
 	delete[] wordUtf8;
 	return result;
@@ -56,7 +75,7 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 void HfstSpeller::terminate() {
 	delete keyTable;
 	keyTable = 0;
-	delete speller;
+	delete speller; // FIXME: leaks memory
 	speller = 0;
 }
 
