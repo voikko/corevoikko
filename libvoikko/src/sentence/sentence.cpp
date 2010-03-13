@@ -16,10 +16,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "voikko_defs.h"
 #include "setup/setup.hpp"
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
+#include "tokenizer/Tokenizer.hpp"
 #include "spellchecker/spell.hpp"
 #include "character/charset.hpp"
 #include "character/SimpleChar.hpp"
@@ -67,7 +67,7 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handl
 	while (token != TOKEN_NONE && textlen > slen) {
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
-		token = voikko_next_token_ucs4(handle, text + slen,
+		token = tokenizer::Tokenizer::nextToken(&voikko_options, text + slen,
 		                               textlen - slen, &tokenlen);
 		voikko_options.ignore_dot = ignore_dot_saved;
 		if (end_found && !in_quotation) {

@@ -1,4 +1,4 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
+/* Libvoikko: Library of Finnish language tools
  * Copyright (C) 2007 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
@@ -16,22 +16,20 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "voikko_defs.h"
-#include "setup/setup.hpp"
+#include "tokenizer/Tokenizer.hpp"
 #include "utils/utils.hpp"
-#include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
-#include <cwchar>
-#include <cstdlib>
 
-namespace libvoikko {
+namespace libvoikko { namespace tokenizer {
 
-size_t word_length(const wchar_t * text, size_t textlen) {
+static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t * options) {
 	size_t wlen = 0;
 	bool processing_number = false;
 	
 	size_t adot;
-	if (voikko_options.ignore_dot) adot = 1;
+	if (options->ignore_dot) {
+		adot = 1;
+	}
 	else adot = 0;
 	
 	while (wlen < textlen) {
@@ -105,8 +103,7 @@ size_t word_length(const wchar_t * text, size_t textlen) {
 	return textlen;
 }
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const wchar_t * text, size_t textlen,
-                                                           size_t * tokenlen) {
+voikko_token_type Tokenizer::nextToken(voikko_options_t * options, const wchar_t * text, size_t textlen, size_t * tokenlen) {
 	if (textlen == 0) {
 		*tokenlen = 0;
 		return TOKEN_NONE;
@@ -114,7 +111,7 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const
 	switch (get_char_type(text[0])) {
 		case CHAR_LETTER:
 		case CHAR_DIGIT:
-			*tokenlen = word_length(text, textlen);
+			*tokenlen = word_length(text, textlen, options);
 			return TOKEN_WORD;
 		case CHAR_WHITESPACE:
 			for (size_t i = 1; i < textlen; i++) {
@@ -131,7 +128,7 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const
 					*tokenlen = 1;
 					return TOKEN_PUNCTUATION;
 				}
-				size_t wlen = word_length(text + 1, textlen - 1);
+				size_t wlen = word_length(text + 1, textlen - 1, options);
 				if (wlen == 0) {
 					*tokenlen = 1;
 					return TOKEN_PUNCTUATION;
@@ -153,15 +150,4 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const
 	return TOKEN_NONE; // unreachable
 }
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
-                                                           size_t * tokenlen) {
-	if (text == 0) return TOKEN_NONE;
-	wchar_t * text_ucs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
-	if (text_ucs4 == 0) return TOKEN_NONE;
-	voikko_token_type result =
-		voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
-	delete[] text_ucs4;
-	return result;
-}
-
-}
+} }

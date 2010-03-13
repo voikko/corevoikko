@@ -54,7 +54,10 @@ libvoikko_la_SOURCES = \
     hyphenator/HyphenatorFactory.cpp \
     character/charset.cpp \
     character/SimpleChar.cpp \
-    tokenizer/tokenizer.cpp sentence/sentence.cpp \
+    tokenizer/interface.cpp \
+    tokenizer/Tokenizer.cpp \
+    tokenizer/Tokenizer.hpp \
+    sentence/sentence.cpp \
     grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \

@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "grammar/analysis.hpp"
+#include "tokenizer/Tokenizer.hpp"
 #include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
@@ -71,7 +72,7 @@ static Sentence * gc_analyze_sentence(voikko_options_t * voikkoOptions,
 		enum voikko_token_type tt;
 		int ignore_dot_saved = voikko_options.ignore_dot;
 		voikko_options.ignore_dot = 0;
-		tt = voikko_next_token_ucs4(1, pos, remaining, &tokenlen);
+		tt = tokenizer::Tokenizer::nextToken(voikkoOptions, pos, remaining, &tokenlen);
 		voikko_options.ignore_dot = ignore_dot_saved;
 		if (tt == TOKEN_NONE) return s;
 

@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2008 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2007 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,30 +16,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-/* Definitions for private use in libvoikko */
+#ifndef VOIKKO_TOKENIZER_TOKENIZER_HPP
+#define VOIKKO_TOKENIZER_TOKENIZER_HPP
 
-#ifndef VOIKKO_DEFS_H
-#define VOIKKO_DEFS_H
-#include "voikko.h"
-#include <config.h>
-#include <cstddef>
-#include <assert.h>
-#include "porting.h"
+#include <cstring>
+#include "voikko_enums.h"
+#include "setup/setup.hpp"
 
-#define VOIKKOLINKAGE extern "C"
+namespace libvoikko { namespace tokenizer {
 
-/* Shared library support */
-#ifdef WIN32
-  #define VOIKKOEXPORT VOIKKOLINKAGE __declspec(dllexport)
-#else
-  #ifdef GCC_VISIBILITY
-    #define VOIKKOEXPORT VOIKKOLINKAGE __attribute__ ((visibility("default")))
-  #else
-    #define VOIKKOEXPORT VOIKKOLINKAGE
-  #endif
-#endif
+class Tokenizer {
+	public:
+		static voikko_token_type nextToken(voikko_options_t * options, const wchar_t * text,
+                                           size_t textlen, size_t * tokenlen);
+};
 
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
-             const wchar_t * text, size_t textlen, size_t * sentencelen);
+} }
 
 #endif
