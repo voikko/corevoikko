@@ -39,7 +39,4 @@
   #endif
 #endif
 
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
-             const wchar_t * text, size_t textlen, size_t * sentencelen);
-
 #endif

@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,17 +16,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_ANALYSIS_H
-#define VOIKKO_GRAMMAR_ANALYSIS_H
+#ifndef VOIKKO_SENTENCE_SENTENCE_HPP
+#define VOIKKO_SENTENCE_SENTENCE_HPP
 
+#include <cstring>
+#include "voikko_enums.h"
 #include "setup/setup.hpp"
-#include "grammar/Paragraph.hpp"
 
-namespace libvoikko {
+namespace libvoikko { namespace sentence {
 
-/** Analyze paragraph text */
-grammar::Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+class Sentence {
+	public:
+		static voikko_sentence_type next(voikko_options_t * options,
+		       const wchar_t * text, size_t textlen, size_t * sentencelen);
+};
 
-}
+} }
 
 #endif

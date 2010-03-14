@@ -1,5 +1,5 @@
-/* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+/* Libvoikko: Library of Finnish language tools
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,18 +16,15 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "setup/setup.hpp"
-#include "utils/utils.hpp"
-#include "utils/StringUtils.hpp"
-#include "tokenizer/Tokenizer.hpp"
-#include "spellchecker/spell.hpp"
-#include "character/charset.hpp"
+#include "sentence/Sentence.hpp"
 #include "character/SimpleChar.hpp"
-#include <cstdlib>
+#include "tokenizer/Tokenizer.hpp"
+#include "character/charset.hpp"
+#include "spellchecker/spell.hpp"
 
 using namespace libvoikko::character;
 
-namespace libvoikko {
+namespace libvoikko { namespace sentence {
 
 /**
  * Returns true if given word ending with a dot can be interpreted
@@ -53,8 +50,8 @@ static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * t
 	return false;
 }
 
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
-                          const wchar_t * text, size_t textlen, size_t * sentencelen) {
+voikko_sentence_type Sentence::next(voikko_options_t * options,
+		const wchar_t * text, size_t textlen, size_t * sentencelen) {
 	voikko_token_type token = TOKEN_WORD;
 	size_t slen = 0;
 	size_t tokenlen;
@@ -121,20 +118,4 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handl
 	return SENTENCE_NONE;
 }
 
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
-                          size_t textlen, size_t * sentencelen) {
-	enum voikko_sentence_type result;
-	if (text == 0) {
-		return SENTENCE_NONE;
-	}
-	wchar_t * textUcs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
-	if (textUcs4 == 0) {
-		return SENTENCE_NONE;
-	}
-	result = voikko_next_sentence_start_ucs4(handle, textUcs4, wcslen(textUcs4),
-	                                         sentencelen);
-	delete[] textUcs4;
-	return result;
-}
-
-}
+} }

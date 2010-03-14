@@ -19,7 +19,9 @@ src/utils/utils.cpp
 src/utils/utils.hpp
 src/utils/StringUtils.hpp
 src/utils/StringUtils.cpp
-src/sentence/sentence.cpp
+src/sentence/interface.cpp
+src/sentence/Sentence.cpp
+src/sentence/Sentence.hpp
 src/spellchecker/suggestions.cpp
 src/spellchecker/suggestions.hpp
 src/spellchecker/spell.hpp

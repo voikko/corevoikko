@@ -18,6 +18,7 @@
 
 #include "grammar/analysis.hpp"
 #include "tokenizer/Tokenizer.hpp"
+#include "sentence/Sentence.hpp"
 #include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
 #include <cstdlib>
@@ -118,7 +119,7 @@ Paragraph * gc_analyze_paragraph(voikko_options_t * voikkoOptions, const wchar_t
 		size_t sentencelen = 0;
 		do {
 			size_t sentencelen2;
-			st = voikko_next_sentence_start_ucs4(1, pos2, remaining,
+			st = sentence::Sentence::next(voikkoOptions, pos2, remaining,
 			                                     &sentencelen2);
 			pos2 += sentencelen2;
 			sentencelen += sentencelen2;

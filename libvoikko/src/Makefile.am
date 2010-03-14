@@ -56,8 +56,8 @@ libvoikko_la_SOURCES = \
     character/SimpleChar.cpp \
     tokenizer/interface.cpp \
     tokenizer/Tokenizer.cpp \
-    tokenizer/Tokenizer.hpp \
-    sentence/sentence.cpp \
+    sentence/interface.cpp \
+    sentence/Sentence.cpp \
     grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
@@ -125,6 +125,8 @@ noinst_HEADERS = \
     spellchecker/suggestion/SuggestionStrategyOcr.hpp \
     spellchecker/suggestion/SuggestionStrategyTyping.hpp \
     spellchecker/suggestion/SuggestionStatus.hpp \
+    sentence/Sentence.hpp \
+    tokenizer/Tokenizer.hpp \
     grammar/cache.hpp grammar/checks.hpp grammar/error.hpp \
     grammar/cachesetup.hpp grammar/analysis.hpp \
     grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
