@@ -17,10 +17,10 @@
  *********************************************************************************/
 
 #include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
-#include "voikko_defs.h"
 #include "character/SimpleChar.hpp"
 #include "utils/StringUtils.hpp"
 #include "utils/utils.hpp"
+#include "voikko_defines.h"
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::character;
