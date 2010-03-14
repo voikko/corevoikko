@@ -18,7 +18,7 @@
 
 #include "morphology/MalagaAnalyzer.hpp"
 #include "utils/StringUtils.hpp"
-#include "voikko_defs.h"
+#include "voikko_defines.h"
 #include <cwchar>
 #include "character/SimpleChar.hpp"
 #include <cstdlib>

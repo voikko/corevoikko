@@ -20,7 +20,7 @@
  * Compatibility implementations for deprecated public API.
  */
 
-#include "voikko_defs.h"
+#include "porting.h"
 #include "setup/setup.hpp"
 #include <cstring>
 

@@ -16,16 +16,17 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "voikko_defs.h"
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
 #include "character/SimpleChar.hpp"
 #include "spellchecker/spell.hpp"
 #include "spellchecker/SpellUtils.hpp"
+#include "porting.h"
 #include <cstdlib>
 #include <cstring>
 #include <cwchar>
+#include <cassert>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::spellchecker;

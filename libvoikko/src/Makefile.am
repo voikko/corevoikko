@@ -98,7 +98,7 @@ noinst_HEADERS = \
     setup/DictionaryException.hpp \
     character/charset.hpp \
     character/SimpleChar.hpp \
-    voikko_defs.h porting.h \
+    porting.h \
     spellchecker/spell.hpp \
     spellchecker/SpellWithPriority.hpp \
     spellchecker/SpellUtils.hpp \

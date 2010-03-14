@@ -18,7 +18,7 @@
 
 #include "setup/Dictionary.hpp"
 #include "setup/DictionaryLoader.hpp"
-#include "voikko_defs.h"
+#include "porting.h"
 
 using namespace std;
 

@@ -19,6 +19,7 @@
 #include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
 #include "sentence/Sentence.hpp"
+#include "porting.h"
 
 namespace libvoikko { namespace sentence {
 

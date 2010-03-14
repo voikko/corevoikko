@@ -17,7 +17,7 @@
  *********************************************************************************/
 
 #include "grammar/error.hpp"
-#include "voikko_defs.h"
+#include "porting.h"
 #include <cstring>
 
 namespace libvoikko {

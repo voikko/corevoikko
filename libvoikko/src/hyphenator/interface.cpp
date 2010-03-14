@@ -20,6 +20,7 @@
 #include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
 #include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
+#include "porting.h"
 #include <cstdlib>
 
 namespace libvoikko { namespace hyphenator {

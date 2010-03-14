@@ -23,7 +23,7 @@
 /* Includes. ================================================================*/
 
 // XXX: what do we actually want here?
-#include "voikko_defs.h"
+#include "porting.h"
 #ifdef HAVE_GETPWUID_R
 #define POSIX
 #endif

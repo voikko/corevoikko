@@ -18,6 +18,7 @@
 
 #include "setup/DictionaryLoader.hpp"
 #include "config.h"
+#include "porting.h"
 #include <string>
 #include <fstream>
 #include <cstdlib>

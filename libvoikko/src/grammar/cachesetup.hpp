@@ -19,7 +19,6 @@
 #ifndef VOIKKO_GRAMMAR_CACHESETUP_H
 #define VOIKKO_GRAMMAR_CACHESETUP_H
 
-#include "voikko_defs.h"
 #include "grammar/CacheEntry.hpp"
 
 namespace libvoikko {

@@ -5,7 +5,6 @@ src/porting.h
 src/voikko.h
 src/voikko_enums.h
 src/voikko_defines.h
-src/voikko_defs.h
 src/voikko_deprecated.h
 src/voikko_structs.h
 src/Makefile.am

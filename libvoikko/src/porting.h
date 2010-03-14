@@ -29,4 +29,17 @@
 # endif
 #endif
 
+#define VOIKKOLINKAGE extern "C"
+
+/* Shared library support */
+#ifdef WIN32
+  #define VOIKKOEXPORT VOIKKOLINKAGE __declspec(dllexport)
+#else
+  #ifdef GCC_VISIBILITY
+    #define VOIKKOEXPORT VOIKKOLINKAGE __attribute__ ((visibility("default")))
+  #else
+    #define VOIKKOEXPORT VOIKKOLINKAGE
+  #endif
+#endif
+
 #endif

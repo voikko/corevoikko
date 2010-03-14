@@ -19,7 +19,8 @@
 #ifndef VOIKKO_GRAMMAR_TOKEN
 #define VOIKKO_GRAMMAR_TOKEN
 
-#include "voikko_defs.h"
+#include <stddef.h>
+#include "voikko_enums.h"
 
 namespace libvoikko { namespace grammar {
 

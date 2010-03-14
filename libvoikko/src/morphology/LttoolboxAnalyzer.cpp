@@ -20,7 +20,7 @@
 #include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
 #include "character/SimpleChar.hpp"
-#include "voikko_defs.h"
+#include "voikko_defines.h"
 
 using namespace std;
 using namespace libvoikko::utils;

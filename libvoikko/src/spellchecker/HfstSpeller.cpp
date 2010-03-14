@@ -18,7 +18,7 @@
 
 #include "spellchecker/HfstSpeller.hpp"
 #include "utils/StringUtils.hpp"
-#include "voikko_defs.h"
+#include "voikko_defines.h"
 #include <fstream>
 #include <hfst2/string.h>
 
