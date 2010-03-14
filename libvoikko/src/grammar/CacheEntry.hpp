@@ -20,6 +20,7 @@
 #define VOIKKO_GRAMMAR_CACHE_ENTRY
 
 #include "grammar/Sentence.hpp"
+#include "voikko_structs.h"
 
 namespace libvoikko { namespace grammar {
 

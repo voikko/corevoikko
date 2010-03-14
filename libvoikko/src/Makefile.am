@@ -65,7 +65,7 @@ libvoikko_la_SOURCES = \
     autocorrect/AutoCorrect.cpp
 libvoikko_la_LDFLAGS = -no-undefined -version-info 12:0:11 @LIBLDFLAGSWIN@
 
-pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h
+pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
 noinst_HEADERS = \
     utils/utils.hpp utils/StringUtils.hpp \
     hyphenator/Hyphenator.hpp \

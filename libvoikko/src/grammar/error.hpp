@@ -19,6 +19,8 @@
 #ifndef VOIKKO_GRAMMAR_ERROR_H
 #define VOIKKO_GRAMMAR_ERROR_H
 
+#include "voikko_structs.h"
+
 #define GCERR_INVALID_SPELLING 1
 #define GCERR_EXTRA_WHITESPACE 2
 #define GCERR_SPACE_BEFORE_PUNCTUATION 3
@@ -30,8 +32,6 @@
 #define GCERR_TERMINATING_PUNCTUATION_MISSING 9
 #define GCERR_INVALID_PUNCTUATION_AT_END_OF_QUOTATION 10
 #define GCERR_FOREIGN_QUOTATION_MARK 11
-
-#include "voikko_defs.h"
 
 namespace libvoikko {
 

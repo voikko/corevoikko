@@ -19,6 +19,16 @@
 #ifndef VOIKKO_VOIKKO_DEFINES_H
 #define VOIKKO_VOIKKO_DEFINES_H
 
+#undef BEGIN_C_DECLS
+#undef END_C_DECLS
+#ifdef __cplusplus
+# define BEGIN_C_DECLS extern "C" {
+# define END_C_DECLS }
+#else
+# define BEGIN_C_DECLS /* empty */
+# define END_C_DECLS /* empty */
+#endif
+
 /* Fixed limits */
 #define LIBVOIKKO_MAX_WORD_CHARS 255
 #define LIBVOIKKO_MAX_ANALYSIS_COUNT 31

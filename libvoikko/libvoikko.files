@@ -7,6 +7,7 @@ src/voikko_enums.h
 src/voikko_defines.h
 src/voikko_defs.h
 src/voikko_deprecated.h
+src/voikko_structs.h
 src/Makefile.am
 data/autocorrect/fi_FI.xml
 src/tokenizer/interface.cpp

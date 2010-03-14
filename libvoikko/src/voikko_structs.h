@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,32 +16,36 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHE_H
-#define VOIKKO_GRAMMAR_CACHE_H
+#ifndef VOIKKO_VOIKKO_STRUCTS_H
+#define VOIKKO_VOIKKO_STRUCTS_H
 
-#include "setup/setup.hpp"
+/* This header file contains public structures of the library. Using structures
+ * this way is deprecated. */
 
-namespace libvoikko {
+#include "voikko_defines.h"
+#include <stddef.h>
 
-/**
- * Returns a pointer to a cached grammar error or null, if there are no cached
- * results for given paragraph.
- */
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
-                             size_t startpos, int skiperrors);
+BEGIN_C_DECLS
 
 /**
- * Performs grammar checking on the entire paragraph and stores the results
- * to cache.
+ * Grammar error description.
  */
-void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen);
+typedef struct {
+	/** Error code. 0 = no error was found */
+	int error_code;
+	/** Unused (indicates the probability of a false positive) */
+	int error_level;
+	/** Unused (detailed error description) */
+	char * error_description;
+	/** Start position of the error in the text */
+	size_t startpos;
+	/** Length of the error in the text */
+	size_t errorlen;
+	/** Possible corrections. These should be freed after
+	 *  use by calling voikko_free_suggest_cstr */
+	char ** suggestions;
+} voikko_grammar_error;
 
-/**
- * Appends an entry to the grammar checker error cache.
- */
-void gc_cache_append_error(int /*handle*/, grammar::CacheEntry * new_entry);
-
-
-}
+END_C_DECLS
 
 #endif

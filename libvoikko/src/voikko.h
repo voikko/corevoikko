@@ -39,40 +39,13 @@
 #define VOIKKO_VOIKKO_H
 #include <stddef.h>
 
-
-#undef BEGIN_C_DECLS
-#undef END_C_DECLS
-#ifdef __cplusplus
-# define BEGIN_C_DECLS extern "C" {
-# define END_C_DECLS }
-#else
-# define BEGIN_C_DECLS /* empty */
-# define END_C_DECLS /* empty */
-#endif
-
-#include "voikko_enums.h"
 #include "voikko_defines.h"
-
-/**
- * Grammar error description.
- */
-typedef struct {
-	/** Error code. 0 = no error was found */
-	int error_code;
-	/** Unused (indicates the probability of a false positive) */
-	int error_level;
-	/** Unused (detailed error description) */
-	char * error_description;
-	/** Start position of the error in the text */
-	size_t startpos;
-	/** Length of the error in the text */
-	size_t errorlen;
-	/** Possible corrections. These should be freed after
-	 *  use by calling voikko_free_suggest_cstr */
-	char ** suggestions;
-} voikko_grammar_error;
+#include "voikko_enums.h"
 
 #ifndef VOIKKO_DEFS_H
+
+#include "voikko_structs.h"
+
 BEGIN_C_DECLS
 
 /** Handle to a specific Voikko instance */
