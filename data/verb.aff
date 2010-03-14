@@ -100,6 +100,7 @@ imperfekti_pass	aa	ettiin	w
 end: rules
 end: class
 
+# FIXME: tässä luokassa ei tueta sanoja, joilla ei ole astevaihtelua
 class: 53
 sm-class: inttää
 rmsfx: a

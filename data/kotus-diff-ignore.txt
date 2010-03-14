@@ -1408,6 +1408,7 @@ polotus # polottaa
 polvarit # polvari
 polyamidi # amidi
 polyamidikuitu # amidi
+polyeteeni # eteeni
 polymeroitua # polymerisoida
 pomoilu # pomoilla
 portsariraha # portsari
@@ -1419,6 +1420,7 @@ profylaktisuus # profylaktinen
 propyylialkoholi # propyyli
 prutkutus # prutkuttaa
 psykologiointi # psykologioida
+psyykkaus # psyykata
 pupellus # pupeltaa
 puzzlepeli # puzzle
 pällistelijä # pällistellä
@@ -1428,6 +1430,7 @@ pöpinä # pöpistä
 rautavihtrilli # vihtrilli
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
+reilaaja # reilata
 renttuilu # renttuilla
 respiittiaika # respiitti
 resistiivisyys # resistiivinen

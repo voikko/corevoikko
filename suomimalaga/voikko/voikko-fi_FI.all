@@ -2236,18 +2236,14 @@ allo_rule generate_allos ($tietue):
     choose $i in muistaa_muistella ($tietue, tA($tietue), A($tietue), "t", "");
     result $i.alku, $i - alku;
 
-  elseif (voitaa in $tietue.jatko) then
+  elseif (itää in $tietue.jatko) then
     choose $i in muistaa_muistella ($tietue, tA($tietue), dA($tietue), "t", "d");
     result $i.alku, $i - alku;
-
+  
   elseif (hujahtaa in $tietue.jatko) then
     choose $i in muistaa_muistella ($tietue, "h" + tA($tietue), "h" + dA($tietue), "ht", "hd")
                  + taivutuskaava ($tietue, [johdin_Us_ksen: "hd"])  # Hujahdus.
                  + punottaa ($tietue, U($tietue));  # Hujauttaa.
-    result $i.alku, $i - alku;
-
-  elseif (itää in $tietue.jatko) then
-    choose $i in muistaa_muistella ($tietue, tA($tietue), dA($tietue), "t", "d");
     result $i.alku, $i - alku;
 
   elseif (kirjoittaa in $tietue.jatko) then
