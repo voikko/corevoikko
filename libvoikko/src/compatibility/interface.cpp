@@ -22,15 +22,8 @@
 
 #include "porting.h"
 #include "setup/setup.hpp"
+#include "voikko.h"
 #include <cstring>
-
-typedef libvoikko::voikko_options_t VoikkoHandle;
-
-/* FIXME: fix the voikko_deprecated.h mess so that we can directly include the public headers */
-extern "C" {
-VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
-                          int cache_size, const char * path);
-}
 
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
@@ -38,7 +31,8 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 		return "Maximum handle count exceeded";
 	}
 	const char * error;
-	VoikkoHandle * theHandle = voikkoInit(&error, langcode, cache_size, path);
+	libvoikko::voikko_options_t * theHandle =
+			reinterpret_cast<libvoikko::voikko_options_t *>(voikkoInit(&error, langcode, cache_size, path));
 	if (theHandle) {
 		*handle = 1;
 		libvoikko::voikko_options = *theHandle;

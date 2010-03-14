@@ -41,9 +41,6 @@
 
 #include "voikko_defines.h"
 #include "voikko_enums.h"
-
-#ifndef VOIKKO_DEFS_H
-
 #include "voikko_structs.h"
 
 BEGIN_C_DECLS
@@ -371,6 +368,5 @@ void voikko_free_mor_analysis_value_cstr(char * analysis_value);
 #endif
 
 END_C_DECLS
-#endif
 
 #endif
