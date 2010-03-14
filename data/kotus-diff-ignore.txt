@@ -930,11 +930,15 @@ aletusten
 alimma
 alletusten
 alumpana
+ammolla # sanastossa ammollaan
+ammolle # sanastossa ammolleen
 deekikselle
 deekiksellä
 edeltäkäsin
 edemmä
 eespäin
+ehdyksiin
+ehdyksissä
 enimmiten
 ensimmältä
 etemmä
@@ -942,12 +946,14 @@ etemmäksi
 etemmäs
 etempänä
 etempää
+eukkonen # ???
 fifty-fifty
 finis
 finito
 framilla
 framille
 hakusassa
+halikkain
 harilla
 harillaan
 harille
@@ -957,13 +963,18 @@ hiivatisti
 huitsin
 hätimmiten
 höttösissään
+höykänen # höykäsen
 iisisti
+ilmoinen
 in
 jetsulleen
 joteskin
 juntturassa
+juovukkeeseen
+juovukkeessa
 jutaa
 jäljemmä
+jäljetysten
 jänskästi
 kait
 kanttuvei
@@ -972,10 +983,16 @@ karttusilla
 kauemma
 kauimma
 kauintaan
+kaulatuksin # vanhahko sana
 kellelleen
 kellellään
 keskeyksiin
 keskeyksissä
+keulemmaksi
+keulemmas
+keulempaa
+keulempana
+keväämmäs
 kieppeissä
 kii
 kiinnemmäksi
@@ -985,13 +1002,26 @@ kiiruusti
 killillään
 kilvaten
 kiverästi
+koetteeksi
+koetteella
+koetteelle
 korjussa
 kulkeilla
 kulkeille
+kyljitysten
+kylkimyyryä
+kypsi # =kypsä, partitiivi kystä
+käymäjalkaa
 köniin
 laidemmas
 likekkäin
+likimailla
+likimaille
+likimailta
 livohkaan
+lomakkain
+lomatusten # sekoittuu sanaan "lomautusten"
+lomikkain
 lunkisti
 läntälleen
 läntällään
