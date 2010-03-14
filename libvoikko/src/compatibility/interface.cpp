@@ -25,21 +25,23 @@
 #include "voikko.h"
 #include <cstring>
 
+namespace libvoikko { namespace compatibility {
+
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
-	if (libvoikko::voikko_handle_count++ > 0) {
+	if (voikko_handle_count++ > 0) {
 		return "Maximum handle count exceeded";
 	}
 	const char * error;
-	libvoikko::voikko_options_t * theHandle =
-			reinterpret_cast<libvoikko::voikko_options_t *>(voikkoInit(&error, langcode, cache_size, path));
+	voikko_options_t * theHandle =
+			reinterpret_cast<voikko_options_t *>(voikkoInit(&error, langcode, cache_size, path));
 	if (theHandle) {
 		*handle = 1;
-		libvoikko::voikko_options = *theHandle;
+		voikko_options = *theHandle;
 		delete theHandle;
 		return 0;
 	} else {
-		libvoikko::voikko_handle_count--;
+		voikko_handle_count--;
 		*handle = 0;
 		return error;
 	}
@@ -47,6 +49,16 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 
 VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int cache_size) {
 	return voikko_init_with_path(handle, langcode, cache_size, 0);
+}
+
+VOIKKOEXPORT int voikko_terminate(int handle) {
+	if (handle == 1 && voikko_handle_count > 0) {
+		voikko_handle_count--;
+		voikkoTerminate(reinterpret_cast<VoikkoHandle *>(&voikko_options));
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
@@ -60,3 +72,5 @@ VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char
 	}
 	return 0;
 }
+
+} }

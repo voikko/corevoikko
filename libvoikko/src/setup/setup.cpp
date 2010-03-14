@@ -26,6 +26,7 @@
 #include "spellchecker/SpellerFactory.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "hyphenator/HyphenatorFactory.hpp"
+#include "grammar/cachesetup.hpp"
 #include <cstring>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -45,11 +46,9 @@ using namespace setup;
 
 voikko_options_t voikko_options;
 
-typedef voikko_options_t VoikkoHandle;
-
 int voikko_handle_count;
 
-static int setGrammarOption(int handle, int value, int * option) {
+static int setGrammarOption(voikko_options_t * handle, int value, int * option) {
 		if (value && !(*option)) {
 			*option = 1;
 			gc_clear_cache(handle);
@@ -121,13 +120,13 @@ VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
 			else voikko_options.accept_missing_hyphens = 0;
 			return 1;
 		case VOIKKO_OPT_ACCEPT_TITLES_IN_GC:
-			return setGrammarOption(handle, value,
+			return setGrammarOption(options, value,
 			       &(voikko_options.accept_titles_in_gc));
 		case VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC:
-			return setGrammarOption(handle, value,
+			return setGrammarOption(options, value,
 			       &(voikko_options.accept_unfinished_paragraphs_in_gc));
 		case VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC:
-			return setGrammarOption(handle, value,
+			return setGrammarOption(options, value,
 			       &(voikko_options.accept_bulleted_lists_in_gc));
 		case VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS:
 			if (value) {
@@ -153,7 +152,7 @@ VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
 	return 0;
 }
 
-VOIKKOEXPORT VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
+VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * langcode,
                                    int cache_size, const char * path) {
 	voikko_options_t * options = new voikko_options_t();
 	options->ignore_dot = 0;
@@ -227,31 +226,26 @@ VOIKKOEXPORT VoikkoHandle * voikkoInit(const char ** error, const char * langcod
 	return options;
 }
 
-VOIKKOEXPORT int voikko_terminate(int handle) {
-	if (handle == 1 && voikko_handle_count > 0) {
-		voikko_handle_count--;
-		voikko_options.hyphenator->terminate();
-		delete voikko_options.hyphenator;
-		voikko_options.hyphenator = 0;
-		delete voikko_options.suggestionGenerator;
-		voikko_options.suggestionGenerator = 0;
-		voikko_options.speller->terminate();
-		delete voikko_options.speller;
-		voikko_options.speller = 0;
-		voikko_options.morAnalyzer->terminate();
-		delete voikko_options.morAnalyzer;
-		voikko_options.morAnalyzer = 0;
-		/*int c = 0;
-		for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;
-		printf("Cache slots used: %d\n", c);*/
-		if (voikko_options.cache) {
-			delete[] voikko_options.cache;
-			delete[] voikko_options.cache_meta;
-		}
-		gc_clear_cache(handle);
-		return 1;
+VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
+	voikko_options.hyphenator->terminate();
+	delete voikko_options.hyphenator;
+	voikko_options.hyphenator = 0;
+	delete voikko_options.suggestionGenerator;
+	voikko_options.suggestionGenerator = 0;
+	voikko_options.speller->terminate();
+	delete voikko_options.speller;
+	voikko_options.speller = 0;
+	voikko_options.morAnalyzer->terminate();
+	delete voikko_options.morAnalyzer;
+	voikko_options.morAnalyzer = 0;
+	/*int c = 0;
+	for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;
+	printf("Cache slots used: %d\n", c);*/
+	if (voikko_options.cache) {
+		delete[] voikko_options.cache;
+		delete[] voikko_options.cache_meta;
 	}
-	else return 0;
+	gc_clear_cache(handle);
 }
 
 }

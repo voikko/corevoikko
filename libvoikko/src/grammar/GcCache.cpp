@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,18 +16,18 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CACHESETUP_H
-#define VOIKKO_GRAMMAR_CACHESETUP_H
+#include "grammar/GcCache.hpp"
 
-#include "setup/setup.hpp"
+namespace libvoikko { namespace grammar {
 
-namespace libvoikko {
-
-/**
- * Clears grammar checker error cache.
- */
-void gc_clear_cache(voikko_options_t * handle);
-
+GcCache::GcCache() :
+	paragraph(0),
+	firstError(0) {
 }
 
-#endif
+void GcCache::clear() {
+	paragraph = 0;
+	firstError = 0;
+}
+
+} }

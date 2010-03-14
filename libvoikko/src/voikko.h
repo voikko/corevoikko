@@ -74,10 +74,8 @@ VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
 
 /**
  * Terminates an instance of voikko.
- * @param handle voikko instance
- * @return true, if termination succeeded, otherwise false
  */
-int voikko_terminate(int handle);
+void voikkoTerminate(VoikkoHandle * handle);
 
 /**
  * Sets a boolean option.

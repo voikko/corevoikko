@@ -51,7 +51,7 @@ const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t *
 }
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
-	gc_clear_cache(0);
+	gc_clear_cache(voikkoOptions);
 	voikko_options.gc_cache.paragraph = new wchar_t[textlen + 1];
 	if (!voikko_options.gc_cache.paragraph) return;
 	memcpy(voikko_options.gc_cache.paragraph, text, textlen * sizeof(wchar_t));

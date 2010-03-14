@@ -27,26 +27,16 @@ using namespace libvoikko::grammar;
 
 namespace libvoikko {
 
-voikko_gc_cache::voikko_gc_cache() :
-	paragraph(0),
-	firstError(0) {
-}
-
-void voikko_gc_cache::clear() {
-	paragraph = 0;
-	firstError = 0;
-}
-
-void gc_clear_cache(int /*handle*/) {
-	delete[] voikko_options.gc_cache.paragraph;
-	CacheEntry * entry = voikko_options.gc_cache.firstError;
+void gc_clear_cache(voikko_options_t * options) {
+	delete[] options->gc_cache.paragraph;
+	CacheEntry * entry = options->gc_cache.firstError;
 	while (entry) {
 		CacheEntry * next = entry->nextError;
 		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
 		delete entry;
 		entry = next;
 	}
-	voikko_options.gc_cache.clear();
+	options->gc_cache.clear();
 }
 
 }

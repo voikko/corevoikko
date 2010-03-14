@@ -314,4 +314,6 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 
 if __name__ == "__main__":
-	unittest.main()
+	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)
+	unittest.TextTestRunner(verbosity=1).run(suite)
+

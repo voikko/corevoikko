@@ -152,6 +152,8 @@ src/grammar/Token.hpp
 src/grammar/Sentence.cpp
 src/grammar/Paragraph.hpp
 src/grammar/Sentence.hpp
+src/grammar/GcCache.cpp
+src/grammar/GcCache.hpp
 src/grammar/CacheEntry.cpp
 src/grammar/CacheEntry.hpp
 src/tools/voikkospell.cpp

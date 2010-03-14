@@ -19,12 +19,12 @@
 #ifndef VOIKKO_SETUP_SETUP_H
 #define VOIKKO_SETUP_SETUP_H
 
-#include "grammar/cachesetup.hpp"
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
+#include "grammar/GcCache.hpp"
 #include <cwchar>
 
 namespace libvoikko {
@@ -44,7 +44,7 @@ typedef struct {
 	wchar_t * cache;
 	char * cache_meta;
 	int cache_size;
-	voikko_gc_cache gc_cache;
+	grammar::GcCache gc_cache;
 	morphology::Analyzer * morAnalyzer;
 	spellchecker::Speller * speller;
 	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;

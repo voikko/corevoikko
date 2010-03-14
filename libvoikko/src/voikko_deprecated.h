@@ -60,6 +60,11 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path);
 
 /**
+ * See voikkoTerminate
+ */
+int voikko_terminate(int handle);
+
+/**
  * Sets a string option. Only used for deprecated VOIKKO_OPT_ENCODING, therefore
  * no replacement has been provided yet.
  * @param handle voikko instance
