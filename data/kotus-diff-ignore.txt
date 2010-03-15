@@ -1029,7 +1029,11 @@ läntässä
 lääpälleen
 maarin
 maate
+menehdyksiin
+menehdyksissä
+menehdyksissään
 monasti
+muorinen
 must
 mut
 myöhemmä
@@ -1037,6 +1041,9 @@ myöhemmäs
 mäskäksi
 mäskänä
 naftisti
+nirpalla
+nirpallaan
+nirpassa
 nureissaan
 nytten
 näes
@@ -1045,6 +1052,7 @@ näämmä
 nääs
 näät
 näätsen
+oikoisenaan
 olakkain
 oudokseltaan
 out
@@ -1417,6 +1425,7 @@ nollamaatto # maatto
 nyansointi # nyansoida
 nynnyily # nynnyillä
 nyyttärit # nyyttäri
+näpäkästi # näpäkkä
 onkogeeninen # onkogeeni
 onkogeenisuus # onkogeeni
 palpointi # palpoida
@@ -1510,6 +1519,8 @@ söpöily # söpöillä
 tangat # tanga
 tangeeraus # tangeerata
 tangeerauspiste # tangeerata
+tasajatkuisesti # tasajatkuinen
+tasajatkuisuus # tasajatkuinen
 tekarit # tekari
 teksturointi # teksturoida
 terkut # terkku
