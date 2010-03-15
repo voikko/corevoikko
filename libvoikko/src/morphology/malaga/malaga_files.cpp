@@ -40,7 +40,7 @@ static const char_t malaga[] = "MALAGA"; /* Magic key. */
 
 void 
 check_header( common_header_t *header, 
-              string_t file_name, int_t file_type, 
+              int_t file_type, 
 	      int_t min_code_version, int_t max_code_version )
 /* Check if HEADER is of FILE_TYPE and 
  * between MIN_CODE_VERSION and MAX_CODE_VERSION.

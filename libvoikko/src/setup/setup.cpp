@@ -60,7 +60,7 @@ static int setGrammarOption(voikko_options_t * handle, int value, int * option) 
 		return 1;
 }
 
-VOIKKOEXPORT int voikko_set_bool_option(int handle, int option, int value) {
+VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
 	voikko_options_t * options = &voikko_options;
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:

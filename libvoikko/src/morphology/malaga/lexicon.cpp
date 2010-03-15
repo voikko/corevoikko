@@ -86,7 +86,7 @@ init_lexicon(string_t file_name, MalagaState * malagaState)
 
   /* Check lexicon header. */
   header = (lexicon_header_t *) malagaState->lexicon.lexicon_data;
-  check_header( &header->common_header, file_name, LEXICON_FILE,
+  check_header( &header->common_header, LEXICON_FILE,
                 MIN_LEXICON_CODE_VERSION, LEXICON_CODE_VERSION );
   
   /* Init trie. */

@@ -142,7 +142,6 @@ typedef struct /* The format of a Malaga lexicon file. */
 /* Functions. ===============================================================*/
 
 extern void check_header( common_header_t *header, 
-                          string_t file_name, 
                           int_t file_type,
 			  int_t min_code_version,
                           int_t max_code_version );

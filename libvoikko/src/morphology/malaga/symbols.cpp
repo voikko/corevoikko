@@ -84,7 +84,7 @@ init_symbols(string_t file_name, MalagaState * malagaState)
   symbol_header_t header;
   FILE * stream = open_stream( file_name, "rb" );
   read_vector( &header, sizeof( header ), 1, stream);
-  check_header( &header.common_header, file_name, 
+  check_header( &header.common_header, 
                 SYMBOL_FILE, MIN_SYMBOL_CODE_VERSION, SYMBOL_CODE_VERSION );
   
   malagaState->symbol_table.symbol_count = header.symbol_count;

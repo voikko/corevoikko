@@ -51,7 +51,7 @@ static const char * const symbol_file = "voikko-fi_FI.sym";
 
 /* Functions. ===============================================================*/
 
-static const char * const pathSeparator() {
+static const char * pathSeparator() {
 #ifdef WIN32
   return "\\";
 #else
@@ -61,7 +61,7 @@ static const char * const pathSeparator() {
 
 /*---------------------------------------------------------------------------*/
 
-static const char * const
+static const char *
 binarySuffix() {
   union { char_t chars[4]; int_t integer; } format;
 

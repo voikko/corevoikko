@@ -25,16 +25,16 @@ namespace libvoikko { namespace morphology {
 NullAnalyzer::NullAnalyzer() {
 }
 
-list<Analysis *> * NullAnalyzer::analyze(const wchar_t * word) {
+list<Analysis *> * NullAnalyzer::analyze(const wchar_t * /*word*/) {
 	return new list<Analysis *>();
 }
 
-list<Analysis *> * NullAnalyzer::analyze(const wchar_t * word,
-                                           size_t wlen) {
+list<Analysis *> * NullAnalyzer::analyze(const wchar_t * /*word*/,
+                                           size_t /*wlen*/) {
 	return new list<Analysis *>();
 }
 
-list<Analysis *> * NullAnalyzer::analyze(const char * word) {
+list<Analysis *> * NullAnalyzer::analyze(const char * /*word*/) {
 	return new list<Analysis *>();
 }
 

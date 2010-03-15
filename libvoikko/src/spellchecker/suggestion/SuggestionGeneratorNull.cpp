@@ -25,7 +25,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 SuggestionGeneratorNull::SuggestionGeneratorNull() {
 }
 
-void SuggestionGeneratorNull::generate(SuggestionStatus * s) const {
+void SuggestionGeneratorNull::generate(SuggestionStatus * /*s*/) const {
 }
 
 }}}

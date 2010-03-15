@@ -62,11 +62,11 @@ voikko_sentence_type Sentence::next(voikko_options_t * options,
 	bool end_dotword = false;
 	bool possible_end_punctuation = false;
 	while (token != TOKEN_NONE && textlen > slen) {
-		int ignore_dot_saved = voikko_options.ignore_dot;
-		voikko_options.ignore_dot = 0;
-		token = tokenizer::Tokenizer::nextToken(&voikko_options, text + slen,
+		int ignore_dot_saved = options->ignore_dot;
+		options->ignore_dot = 0;
+		token = tokenizer::Tokenizer::nextToken(options, text + slen,
 		                               textlen - slen, &tokenlen);
-		voikko_options.ignore_dot = ignore_dot_saved;
+		options->ignore_dot = ignore_dot_saved;
 		if (end_found && !in_quotation) {
 			if (token != TOKEN_WHITESPACE) {
 				*sentencelen = slen;
@@ -91,7 +91,7 @@ voikko_sentence_type Sentence::next(voikko_options_t * options,
 				end_found = true;
 				if (slen != 0 &&
 				    previous_token_type == TOKEN_WORD &&
-				    dot_part_of_word(&voikko_options, text + previous_token_start,
+				    dot_part_of_word(options, text + previous_token_start,
 				      slen - previous_token_start + 1)) {
 					end_dotword = true;
 				}

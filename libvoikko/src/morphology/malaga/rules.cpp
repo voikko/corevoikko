@@ -413,7 +413,7 @@ read_rule_sys( string_t file_name )
 
   stream = open_stream( file_name, "rb" );
   read_vector(&header, sizeof( header ), 1, stream);
-  check_header( &header.common_header, file_name, 
+  check_header( &header.common_header, 
                 RULE_FILE, MIN_RULE_CODE_VERSION, RULE_CODE_VERSION );
 
   rule_sys = (rule_sys_t *) new_mem( sizeof( rule_sys_t ) );

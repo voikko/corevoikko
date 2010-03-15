@@ -25,7 +25,7 @@ namespace libvoikko { namespace spellchecker {
 FixedResultSpeller::FixedResultSpeller(spellresult result) :
 	result(result) { }
 
-spellresult FixedResultSpeller::spell(const wchar_t * word, size_t wlen) {
+spellresult FixedResultSpeller::spell(const wchar_t * /*word*/, size_t /*wlen*/) {
 	return this->result;
 }
 
