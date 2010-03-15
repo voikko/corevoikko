@@ -50,8 +50,9 @@ enum {MIN_CHUNK_SIZE = 400};
 /* Types. ===================================================================*/
 
 typedef struct /* A block of memory that is part of a pool. */
-{ 
-  list_node_t *next; /* Unused, needed for padding */
+{
+  // cppcheck-suppress unusedStructMember 
+  list_node_t *next; /* Needed for padding */
   int_t chunk_size; /* The maximum number of items in this chunk. */
   int_t item_count; /* The actual number of items in this chunk. */
   /* For 64-bit pointers, we are 8-byte aligned here.
