@@ -227,23 +227,23 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 }
 
 VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
-	voikko_options.hyphenator->terminate();
+	handle->hyphenator->terminate();
 	delete voikko_options.hyphenator;
-	voikko_options.hyphenator = 0;
-	delete voikko_options.suggestionGenerator;
-	voikko_options.suggestionGenerator = 0;
-	voikko_options.speller->terminate();
-	delete voikko_options.speller;
-	voikko_options.speller = 0;
-	voikko_options.morAnalyzer->terminate();
-	delete voikko_options.morAnalyzer;
-	voikko_options.morAnalyzer = 0;
+	handle->hyphenator = 0;
+	delete handle->suggestionGenerator;
+	handle->suggestionGenerator = 0;
+	handle->speller->terminate();
+	delete handle->speller;
+	handle->speller = 0;
+	handle->morAnalyzer->terminate();
+	delete handle->morAnalyzer;
+	handle->morAnalyzer = 0;
 	/*int c = 0;
-	for (int i = 0; i < 1*1008; i++) if (voikko_options.cache_meta[i] == '.') c++;
+	for (int i = 0; i < 1*1008; i++) if (handle->cache_meta[i] == '.') c++;
 	printf("Cache slots used: %d\n", c);*/
-	if (voikko_options.cache) {
-		delete[] voikko_options.cache;
-		delete[] voikko_options.cache_meta;
+	if (handle->cache) {
+		delete[] handle->cache;
+		delete[] handle->cache_meta;
 	}
 	gc_clear_cache(handle);
 }
