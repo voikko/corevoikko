@@ -73,6 +73,10 @@ VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char
 	return 0;
 }
 
+VOIKKOEXPORT int voikko_spell_cstr(int /*handle*/, const char * word) {
+	return voikkoSpellCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+}
+
 VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	return voikkoSpellUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
 }

@@ -41,18 +41,6 @@ class LibvoikkoTest(unittest.TestCase):
 		del medicalVoikko
 		self.failIf(self.voikko.spell(u"amifostiini"))
 	
-	def TODOtestInitAndTerminate(self):
-		def trySpell():
-			self.voikko.spell(u"kissa")
-		# Init can be called multiple times
-		voikko2 = Voikko()
-		self.failUnless(self.voikko.spell(u"kissa"))
-		self.voikko.terminate()
-		self.assertRaises(VoikkoException, trySpell)
-		# Initialization can be done again
-		self.voikko.init()
-		self.failUnless(self.voikko.spell(u"kissa"))
-	
 	def testDictionaryComparisonWorks(self):
 		d1 = Dictionary("a", u"b")
 		d2 = Dictionary("a", u"c")

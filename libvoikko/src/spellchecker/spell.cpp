@@ -365,13 +365,19 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 	return result;
 }
 
-VOIKKOEXPORT int voikko_spell_cstr(int /*handle*/, const char * word) {
-	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
+VOIKKOEXPORT int voikkoSpellCstr(voikko_options_t * handle, const char * word) {
+	if (word == 0 || word[0] == '\0') {
+		return VOIKKO_SPELL_OK;
+	}
 	size_t len = strlen(word);
-	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
+	if (len > LIBVOIKKO_MAX_WORD_CHARS) {
+		return 0;
+	}
 	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
-	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
-	int result = voikkoSpellUcs4(&voikko_options, word_ucs4);
+	if (word_ucs4 == 0) {
+		return VOIKKO_CHARSET_CONVERSION_FAILED;
+	}
+	int result = voikkoSpellUcs4(handle, word_ucs4);
 	delete[] word_ucs4;
 	return result;
 }

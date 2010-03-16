@@ -2,7 +2,8 @@
 
 # Copyright 2010 Harri Pitkänen (hatapitk@iki.fi)
 # Test suite for *_cstr functions in libvoikko which are not normally
-# used through Python API.
+# used through Python API. Only non-deprecated functions are tested here.
+# Tests for deprecated functions should be placed in DeprecatedApiTest.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,25 +19,45 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+from ctypes import byref
 from ctypes import c_int
 from ctypes import c_char_p
+from ctypes import c_void_p
+from ctypes import CDLL
+from ctypes import POINTER
 import unittest
-from libvoikko import Voikko
+import os
 
-voikko = Voikko()
-voikko.lib.voikko_spell_cstr.argtypes = [c_int, c_char_p]
-voikko.lib.voikko_spell_cstr.restype = c_int
+lib = None
+handle = None
 
 def spellCstr(word):
-	return voikko.lib.voikko_spell_cstr(voikko.handle, word.encode("UTF-8"))
+	return lib.voikkoSpellCstr(handle, word.encode("UTF-8"))
 
 class Utf8ApiTest(unittest.TestCase):
 	def setUp(self):
-		voikko.init()
-		voikko.setAcceptFirstUppercase(True)
+		global lib
+		global handle
+		if os.name == 'nt':
+			lib = CDLL("libvoikko-1.dll")
+		else:
+			lib = CDLL("libvoikko.so.1")
+		lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
+		lib.voikkoInit.restype = c_void_p
+		
+		lib.voikkoTerminate.argtypes = [c_void_p]
+		lib.voikkoTerminate.restype = None
+		
+		lib.voikkoSpellCstr.argtypes = [c_void_p, c_char_p]
+		lib.voikkoSpellCstr.restype = c_int
+		
+		error = c_char_p()
+		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
+		if error.value != None:
+			raise Exception(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
 	
 	def tearDown(self):
-		voikko.terminate()
+		lib.voikkoTerminate(handle)
 	
 	def testSpellingWorksWithCapitalScandinavianLetters(self):
 		self.failIf(spellCstr(u"Ääiti"))
@@ -47,4 +68,5 @@ class Utf8ApiTest(unittest.TestCase):
 		self.failUnless(spellCstr(u"äiti"))
 
 if __name__ == "__main__":
-	unittest.main()
+	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)
+	unittest.TextTestRunner(verbosity=1).run(suite)

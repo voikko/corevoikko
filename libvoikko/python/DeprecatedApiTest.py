@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2010 Harri Pitkänen (hatapitk@iki.fi)
-# Test suite for deprecated functions in libvoikko.
+# Test suite for deprecated functions in libvoikko. Uses the OLD version
+# of libvoikko Python module since that module (and its test) already
+# cover large part of the deprecated API.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +28,10 @@ voikko = Voikko()
 voikko.lib.voikko_set_string_option.argtypes = [c_int, c_int, c_char_p]
 voikko.lib.voikko_set_string_option.restype = c_int
 
-class Utf8ApiTest(unittest.TestCase):
+voikko.lib.voikko_spell_cstr.argtypes = [c_int, c_char_p]
+voikko.lib.voikko_spell_cstr.restype = c_int
+
+class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
 		voikko.init()
 	
@@ -41,6 +46,10 @@ class Utf8ApiTest(unittest.TestCase):
 		self.assertEquals(1, voikko.lib.voikko_set_string_option(voikko.handle, 2, "UTF-8"))
 		self.assertEquals(0, voikko.lib.voikko_set_string_option(voikko.handle, 2, "iso-8859-1"))
 		self.assertEquals(0, voikko.lib.voikko_set_string_option(voikko.handle, 1, "UTF-8"))
+	
+	def test_spell_cstr_works(self):
+		self.assertEquals(1, voikko.lib.voikko_spell_cstr(voikko.handle, u"kissa".encode("UTF-8")))
+		self.assertEquals(0, voikko.lib.voikko_spell_cstr(voikko.handle, u"koirra".encode("UTF-8")))
 
 if __name__ == "__main__":
 	unittest.main()

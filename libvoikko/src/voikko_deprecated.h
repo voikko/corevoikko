@@ -75,6 +75,11 @@ int voikko_terminate(int handle);
 int voikko_set_string_option(int handle, int option, const char * value);
 
 /**
+ * See voikkoSpellCstr
+ */
+int voikko_spell_cstr(int handle, const char * word);
+
+/**
  * See voikkoSpellUcs4
  */
 int voikko_spell_ucs4(int handle, const wchar_t * word);

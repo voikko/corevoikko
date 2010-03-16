@@ -96,12 +96,12 @@ int voikko_set_bool_option(int handle, int option, int value);
 int voikko_set_int_option(int handle, int option, int value);
 
 /**
- * Checks the spelling of a character string in current multibyte encoding.
+ * Checks the spelling of an UTF-8 character string.
  * @param handle voikko instance
  * @param word word to check
  * @return one of the spellchecker return codes
  */
-int voikko_spell_cstr(int handle, const char * word);
+int voikkoSpellCstr(VoikkoHandle * handle, const char * word);
 
 /**
  * Checks the spelling of a wide character Unicode string
