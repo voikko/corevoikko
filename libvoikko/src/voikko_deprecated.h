@@ -70,6 +70,11 @@ int voikko_terminate(int handle);
 int voikko_set_bool_option(int handle, int option, int value);
 
 /**
+ * See voikkoSetIntegerOption
+ */
+int voikko_set_int_option(int handle, int option, int value);
+
+/**
  * Sets a string option. Only used for deprecated VOIKKO_OPT_ENCODING, therefore
  * no replacement has been provided yet.
  * @param handle voikko instance

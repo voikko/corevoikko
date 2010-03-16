@@ -132,11 +132,8 @@ VOIKKOEXPORT int voikkoSetBooleanOption(voikko_options_t * options, int option, 
 	return 0;
 }
 
-VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
-	voikko_options_t * options = &voikko_options;
+VOIKKOEXPORT int voikkoSetIntegerOption(voikko_options_t * options, int option, int value) {
 	switch (option) {
-		case 5: // deprecated option VOIKKO_INTERSECT_COMPOUND_LEVEL
-			return 1;
 		case VOIKKO_MIN_HYPHENATED_WORD_LENGTH:
 			options->hyphenator->setMinHyphenatedWordLength(value);
 			return 1;

@@ -93,7 +93,7 @@ int voikkoSetBooleanOption(VoikkoHandle * handle, int option, int value);
  * @param value option value
  * @return true if option was succesfully set, otherwise false
  */
-int voikko_set_int_option(int handle, int option, int value);
+int voikkoSetIntegerOption(VoikkoHandle * handle, int option, int value);
 
 /**
  * Checks the spelling of an UTF-8 character string.

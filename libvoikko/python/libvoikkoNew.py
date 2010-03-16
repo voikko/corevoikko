@@ -328,6 +328,13 @@ class Voikko(object):
 		"""
 		self.__setBoolOption(15, value)
 	
+	def setMinHyphenatedWordLength(self, value):
+		"""The minumum length for words that may be hyphenated. This limit is also enforced on
+		individual parts of compound words.
+		Default: 2
+		"""
+		self.__lib.voikkoSetIntegerOption(self.__handle, 9, value)
+	
 	def setSuggestionStrategy(self, value):
 		"""Set the suggestion strategy to be used when generating spelling suggestions.
 		Default: SuggestionStrategy.TYPO

@@ -65,6 +65,14 @@ VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
 	return voikkoSetBooleanOption(reinterpret_cast<VoikkoHandle *>(&voikko_options), option, value);
 }
 
+VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
+	if (option == 5) {
+		// deprecated option VOIKKO_INTERSECT_COMPOUND_LEVEL
+		return 1;
+	}
+	return voikkoSetIntegerOption(reinterpret_cast<VoikkoHandle *>(&voikko_options), option, value);
+}
+
 VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
 	// If deprecated VOIKKO_OPT_ENCODING is used and value is "UTF-8" return success.
 	// Otherwise return failure.
