@@ -76,7 +76,7 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko = Voikko(variant = "medicine")
 		self.failUnless(self.voikko.spell(u"amifostiini"))
 	
-	def TODOtestInitWithNonExistentDictThrowsException(self):
+	def testInitWithNonExistentDictThrowsException(self):
 		def tryInit():
 			self.voikko = Voikko(variant = "nonexistentvariant")
 		self.voikko.terminate()

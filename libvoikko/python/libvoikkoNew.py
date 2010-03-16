@@ -193,8 +193,8 @@ class Voikko:
 		
 		error = c_char_p()
 		self.handle = self.lib.voikkoInit(byref(error), variant, cacheSize, path)
-		if self.handle == 0:
-			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error, "UTF-8"))
+		if error.value != None:
+			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
 	
 	
 	def terminate(self):
