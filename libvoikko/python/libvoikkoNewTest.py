@@ -100,6 +100,12 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.terminate()
 		self.voikko = Voikko(path = "/path/to/nowhere")
 		self.failUnless(self.voikko.spell(u"kissa"))
+	
+	def testSpellAfterTerminateThrowsException(self):
+		def trySpell():
+			self.voikko.spell(u"kissa")
+		self.voikko.terminate()
+		self.assertRaises(VoikkoException, trySpell)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)

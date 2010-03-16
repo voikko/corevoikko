@@ -159,7 +159,7 @@ def _setBoolOption(voikko, option, value):
 	_checkInited(voikko)
 	voikko.lib.voikko_set_bool_option(voikko.handle, option, _boolToInt(value))
 
-class Voikko:
+class Voikko(object):
 	"""Represents an instance of Voikko. The instance has state, such as
 	settings related to spell checking and hyphenation, and methods for performing
 	various natural language analysis operations. One instance should not be
@@ -178,28 +178,32 @@ class Voikko:
 		             spell checking results. 0 is the default size, 1 is twice as large
 		             as 0 etc. -1 disables the spell checking cache entirely."""
 		if os.name == 'nt':
-			self.lib = CDLL("libvoikko-1.dll")
+			self.__lib = CDLL("libvoikko-1.dll")
 		else:
-			self.lib = CDLL("libvoikko.so.1")
+			self.__lib = CDLL("libvoikko.so.1")
 		
-		self.lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
-		self.lib.voikkoInit.restype = c_void_p
+		self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
+		self.__lib.voikkoInit.restype = c_void_p
 		
-		self.lib.voikkoTerminate.argtypes = [c_void_p]
-		self.lib.voikkoTerminate.restype = None
+		self.__lib.voikkoTerminate.argtypes = [c_void_p]
+		self.__lib.voikkoTerminate.restype = None
 		
-		self.lib.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
-		self.lib.voikkoSpellUcs4.restype = c_int
+		self.__lib.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
+		self.__lib.voikkoSpellUcs4.restype = c_int
 		
 		error = c_char_p()
-		self.handle = self.lib.voikkoInit(byref(error), variant, cacheSize, path)
+		self.__handle = self.__lib.voikkoInit(byref(error), variant, cacheSize, path)
 		if error.value != None:
-			self.handle = 0
+			self.__handle = 0
 			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
 	
 	def __del__(self):
 		# Ensure that resources are freed before this object is deleted.
 		self.terminate()
+	
+	def __checkNotTerminated(self):
+		if self.__handle == 0:
+			raise VoikkoException("Attempt to use Voikko instance without backing resources. Perhaps terminate() was called too early?")
 	
 	def terminate(self):
 		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
@@ -208,15 +212,16 @@ class Voikko:
 		may take significant amount of memory and timely object deletion by Python runtime cannot always be
 		relied upon.
 		"""
-		if (self.handle != 0):
-			self.lib.voikkoTerminate(self.handle)
-			self.handle = 0
+		if (self.__handle != 0):
+			self.__lib.voikkoTerminate(self.__handle)
+			self.__handle = 0
 	
 	def spell(self, word):
 		"""Check the spelling of given word. Return true if the word is correct,
 		false if it is incorrect.
 		"""
-		result = self.lib.voikkoSpellUcs4(self.handle, word)
+		self.__checkNotTerminated()
+		result = self.__lib.voikkoSpellUcs4(self.__handle, word)
 		if result == 0:
 			return False
 		elif result == 1:
