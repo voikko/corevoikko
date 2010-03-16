@@ -56,7 +56,7 @@ spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 		wcsncpy(buffer + leading_len, hyphen_pos + 1, len - leading_len - 1);
 		buffer[len - 1] = L'\0';
 		
-		if (voikko_options.accept_extra_hyphens && leading_len > 1 &&
+		if (voikkoOptions->accept_extra_hyphens && leading_len > 1 &&
 		    buffer[leading_len] != L'-') {
 			/* All hyphens are optional */
 			/* FIXME: deep recursion */
@@ -190,14 +190,14 @@ static const int VOIKKO_META_OFFSETS[]  =  {0,   0, 1*16, 1*48, 1*112, 1*240,  1
  * @return spelling result
  */
 static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * buffer, size_t len) {
-	int sparam = voikko_options.cache_size;
-	if (voikko_options.cache && len <= 10) { /* check cache */
+	int sparam = voikkoOptions->cache_size;
+	if (voikkoOptions->cache && len <= 10) { /* check cache */
 		int hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len] + sparam);
 		int cache_offset = (VOIKKO_CACHE_OFFSETS[len] << sparam) + hashcode * static_cast<int>(len);
 		int meta_offset = (VOIKKO_META_OFFSETS[len] << sparam) + hashcode;
-		if (wcsncmp(voikko_options.cache + cache_offset, buffer, len) == 0) {
+		if (wcsncmp(voikkoOptions->cache + cache_offset, buffer, len) == 0) {
 			/* DEBUG: printf("Cache hit: '%ls'\n", buffer);*/
-			if (voikko_options.cache_meta[meta_offset] == 'i') return SPELL_CAP_FIRST;
+			if (voikkoOptions->cache_meta[meta_offset] == 'i') return SPELL_CAP_FIRST;
 			else return SPELL_OK;
 		}
 		/* not in cache */
@@ -209,13 +209,13 @@ static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const w
 			result = voikko_do_spell(voikkoOptions, buffer, len);
 		}
 		if (result == SPELL_OK || result == SPELL_CAP_FIRST) {
-			wcsncpy(voikko_options.cache + cache_offset, buffer, len);
-			voikko_options.cache_meta[meta_offset] = (result == SPELL_OK) ? 'p' : 'i';
+			wcsncpy(voikkoOptions->cache + cache_offset, buffer, len);
+			voikkoOptions->cache_meta[meta_offset] = (result == SPELL_OK) ? 'p' : 'i';
 		}
 		return result;
 	}
 	/* no cache available */
-	if (voikko_options.accept_missing_hyphens) {
+	if (voikkoOptions->accept_missing_hyphens) {
 		return voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, len);
 	}
 	else {

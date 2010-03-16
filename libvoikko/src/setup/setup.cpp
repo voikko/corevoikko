@@ -60,8 +60,7 @@ static int setGrammarOption(voikko_options_t * handle, int value, int * option) 
 		return 1;
 }
 
-VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
-	voikko_options_t * options = &voikko_options;
+VOIKKOEXPORT int voikkoSetBooleanOption(voikko_options_t * options, int option, int value) {
 	switch (option) {
 		case VOIKKO_OPT_IGNORE_DOT:
 			if (value) {
@@ -74,20 +73,16 @@ VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
 			}
 			return 1;
 		case VOIKKO_OPT_IGNORE_NUMBERS:
-			if (value) voikko_options.ignore_numbers = 1;
-			else voikko_options.ignore_numbers = 0;
+			options->ignore_numbers = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_IGNORE_UPPERCASE:
-			if (value) voikko_options.ignore_uppercase = 1;
-			else voikko_options.ignore_uppercase = 0;
+			options->ignore_uppercase = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE:
-			if (value) voikko_options.accept_first_uppercase = 1;
-			else voikko_options.accept_first_uppercase = 0;
+			options->accept_first_uppercase = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_ACCEPT_ALL_UPPERCASE:
-			if (value) voikko_options.accept_all_uppercase = 1;
-			else voikko_options.accept_all_uppercase = 0;
+			options->accept_all_uppercase = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_NO_UGLY_HYPHENATION:
 			if (value) {
@@ -104,30 +99,27 @@ VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);
 			delete voikko_options.suggestionGenerator;
 			voikko_options.suggestionGenerator =
-				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(&voikko_options, type);
+				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options, type);
 			return 1;
 			}
 		case VOIKKO_OPT_IGNORE_NONWORDS:
-			if (value) voikko_options.ignore_nonwords = 1;
-			else voikko_options.ignore_nonwords = 0;
+			options->ignore_nonwords = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS:
-			if (value) voikko_options.accept_extra_hyphens = 1;
-			else voikko_options.accept_extra_hyphens = 0;
+			options->accept_extra_hyphens = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_ACCEPT_MISSING_HYPHENS:
-			if (value) voikko_options.accept_missing_hyphens = 1;
-			else voikko_options.accept_missing_hyphens = 0;
+			options->accept_missing_hyphens = (value ? 1 : 0);
 			return 1;
 		case VOIKKO_OPT_ACCEPT_TITLES_IN_GC:
 			return setGrammarOption(options, value,
-			       &(voikko_options.accept_titles_in_gc));
+			       &(options->accept_titles_in_gc));
 		case VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC:
 			return setGrammarOption(options, value,
-			       &(voikko_options.accept_unfinished_paragraphs_in_gc));
+			       &(options->accept_unfinished_paragraphs_in_gc));
 		case VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC:
 			return setGrammarOption(options, value,
-			       &(voikko_options.accept_bulleted_lists_in_gc));
+			       &(options->accept_bulleted_lists_in_gc));
 		case VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS:
 			if (value) {
 				options->hyphenator->setHyphenateUnknown(true);

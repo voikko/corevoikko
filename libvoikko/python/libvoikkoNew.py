@@ -155,10 +155,6 @@ def _boolToInt(bool):
 	else:
 		return 0
 
-def _setBoolOption(voikko, option, value):
-	_checkInited(voikko)
-	voikko.lib.voikko_set_bool_option(voikko.handle, option, _boolToInt(value))
-
 class Voikko(object):
 	"""Represents an instance of Voikko. The instance has state, such as
 	settings related to spell checking and hyphenation, and methods for performing
@@ -201,6 +197,11 @@ class Voikko(object):
 		# Ensure that resources are freed before this object is deleted.
 		self.terminate()
 	
+	def __setBoolOption(self, option, value):
+		result = self.__lib.voikkoSetBooleanOption(self.__handle, option, _boolToInt(value))
+		if result == 0:
+			raise VoikkoException(u"Could not set boolean option " + str(option) + u" to value " + str(value) + u".")
+	
 	def terminate(self):
 		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
 		after this method has been called. The resources are released automatically when the Python object is
@@ -229,3 +230,111 @@ class Voikko(object):
 			return True
 		else:
 			raise VoikkoException("Internal error returned from libvoikko")
+	
+	def setIgnoreDot(self, value):
+		"""Ignore dot at the end of the word (needed for use in some word processors).
+		If this option is set and input word ends with a dot, spell checking and
+		hyphenation functions try to analyse the word without the dot if no results
+		can be obtained for the original form. Also with this option, string tokenizer
+		will consider trailing dot of a word to be a part of that word.
+		Default: false
+		"""
+		self.__setBoolOption(0, value)
+	
+	def setIgnoreNumbers(self, value):
+		"""Ignore words containing numbers.
+		Default: false
+		"""
+		self.__setBoolOption(1, value)
+	
+	def setIgnoreUppercase(self, value):
+		"""Accept words that are written completely in uppercase letters without checking
+		them at all.
+		Default: false
+		"""
+		self.__setBoolOption(3, value)
+	
+	def setAcceptFirstUppercase(self, value):
+		"""Accept words even when the first letter is in uppercase (start of sentence etc.)
+		Default: true
+		"""
+		self.__setBoolOption(6, value)
+	
+	def setAcceptAllUppercase(self, value):
+		"""Accept words even when all of the letters are in uppercase. Note that this is
+		not the same as setIgnoreUppercase: with this option the word is still
+		checked, only case differences are ignored.
+		Default: true
+		"""
+		self.__setBoolOption(7, value)
+	
+	def setIgnoreNonwords(self, value):
+		"""(Spell checking only): Ignore non-words such as URLs and email addresses.
+		Default: true
+		"""
+		self.__setBoolOption(10, value)
+	
+	def setAcceptExtraHyphens(self, value):
+		"""(Spell checking only): Allow some extra hyphens in words. This option relaxes
+		hyphen checking rules to work around some unresolved issues in the underlying
+		morphology, but it may cause some incorrect words to be accepted. The exact
+		behaviour (if any) of this option is not specified.
+		Default: false
+		"""
+		self.__setBoolOption(11, value)
+	
+	def setAcceptMissingHyphens(self, value):
+		"""(Spell checking only): Accept missing hyphens at the start and end of the word.
+		Some application programs do not consider hyphens to be word characters. This
+		is reasonable assumption for many languages but not for Finnish. If the
+		application cannot be fixed to use proper tokenisation algorithm for Finnish,
+		this option may be used to tell libvoikko to work around this defect.
+		Default: false
+		"""
+		self.__setBoolOption(12, value)
+	
+	def setAcceptTitlesInGc(self, value):
+		"""(Grammar checking only): Accept incomplete sentences that could occur in
+		titles or headings. Set this option to true if your application is not able
+		to differentiate titles from normal text paragraphs, or if you know that
+		you are checking title text.
+		Default: false
+		"""
+		self.__setBoolOption(13, value)
+	
+	def setAcceptUnfinishedParagraphsInGc(self, value):
+		"""(Grammar checking only): Accept incomplete sentences at the end of the
+		paragraph. These may exist when text is still being written.
+		Default: false
+		"""
+		self.__setBoolOption(14, value)
+	
+	def setAcceptBulletedListsInGc(self, value):
+		"""(Grammar checking only): Accept paragraphs if they would be valid within
+		bulleted lists.
+		Default: false
+		"""
+		self.__setBoolOption(16, value)
+	
+	def setNoUglyHyphenation(self, value):
+		"""Do not insert hyphenation positions that are considered to be ugly but correct
+		Default: false
+		"""
+		self.__setBoolOption(4, value)
+	
+	def setHyphenateUnknownWords(self, value):
+		"""(Hyphenation only): Hyphenate unknown words.
+		Default: true
+		"""
+		self.__setBoolOption(15, value)
+	
+	def setSuggestionStrategy(self, value):
+		"""Set the suggestion strategy to be used when generating spelling suggestions.
+		Default: SuggestionStrategy.TYPO
+		"""
+		if value == SuggestionStrategy.OCR:
+			self.__setBoolOption(8, True)
+		elif value == SuggestionStrategy.TYPO:
+			self.__setBoolOption(8, False)
+		else:
+			raise VoikkoException("Invalid suggestion strategy")

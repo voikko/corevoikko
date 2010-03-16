@@ -84,7 +84,7 @@ void voikkoTerminate(VoikkoHandle * handle);
  * @param value option value
  * @return true if option was succesfully set, otherwise false
  */
-int voikko_set_bool_option(int handle, int option, int value);
+int voikkoSetBooleanOption(VoikkoHandle * handle, int option, int value);
 
 /**
  * Sets an integer option.

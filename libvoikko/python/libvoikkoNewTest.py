@@ -94,6 +94,106 @@ class LibvoikkoTest(unittest.TestCase):
 			self.voikko.spell(u"kissa")
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, trySpell)
+	
+	def testSetIgnoreDot(self):
+		self.voikko.setIgnoreDot(False)
+		self.failIf(self.voikko.spell(u"kissa."))
+		self.voikko.setIgnoreDot(True)
+		self.failUnless(self.voikko.spell(u"kissa."))
+	
+	def testSetIgnoreNumbers(self):
+		self.voikko.setIgnoreNumbers(False)
+		self.failIf(self.voikko.spell(u"kissa2"))
+		self.voikko.setIgnoreNumbers(True)
+		self.failUnless(self.voikko.spell(u"kissa2"))
+	
+	def testSetIgnoreUppercase(self):
+		self.voikko.setIgnoreUppercase(False)
+		self.failIf(self.voikko.spell(u"KAAAA"))
+		self.voikko.setIgnoreUppercase(True)
+		self.failUnless(self.voikko.spell(u"KAAAA"))
+	
+	def testAcceptFirstUppercase(self):
+		self.voikko.setAcceptFirstUppercase(False)
+		self.failIf(self.voikko.spell("Kissa"))
+		self.voikko.setAcceptFirstUppercase(True)
+		self.failUnless(self.voikko.spell("Kissa"))
+	
+	def testUpperCaseScandinavianLetters(self):
+		self.failUnless(self.voikko.spell(u"Äiti"))
+		self.failIf(self.voikko.spell(u"Ääiti"))
+		self.failUnless(self.voikko.spell(u"š"))
+		self.failUnless(self.voikko.spell(u"Š"))
+	
+	def testAcceptAllUppercase(self):
+		self.voikko.setIgnoreUppercase(False)
+		self.voikko.setAcceptAllUppercase(False)
+		self.failIf(self.voikko.spell("KISSA"))
+		self.voikko.setAcceptAllUppercase(True)
+		self.failUnless(self.voikko.spell("KISSA"))
+		self.failIf(self.voikko.spell("KAAAA"))
+	
+	def testIgnoreNonwords(self):
+		self.voikko.setIgnoreNonwords(False)
+		self.failIf(self.voikko.spell("hatapitk@iki.fi"))
+		self.voikko.setIgnoreNonwords(True)
+		self.failUnless(self.voikko.spell("hatapitk@iki.fi"))
+		self.failIf(self.voikko.spell("ashdaksd"))
+	
+	def testAcceptExtraHyphens(self):
+		self.voikko.setAcceptExtraHyphens(False)
+		self.failIf(self.voikko.spell("kerros-talo"))
+		self.voikko.setAcceptExtraHyphens(True)
+		self.failUnless(self.voikko.spell("kerros-talo"))
+	
+	def testAcceptMissingHyphens(self):
+		self.voikko.setAcceptMissingHyphens(False)
+		self.failIf(self.voikko.spell("sosiaali"))
+		self.voikko.setAcceptMissingHyphens(True)
+		self.failUnless(self.voikko.spell("sosiaali"))
+	
+	def TODOtestSetAcceptTitlesInGc(self):
+		self.voikko.setAcceptTitlesInGc(False)
+		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on eläin")))
+		self.voikko.setAcceptTitlesInGc(True)
+		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on eläin")))
+	
+	def TODOtestSetAcceptUnfinishedParagraphsInGc(self):
+		self.voikko.setAcceptUnfinishedParagraphsInGc(False)
+		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on ")))
+		self.voikko.setAcceptUnfinishedParagraphsInGc(True)
+		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on ")))
+	
+	def TODOtestSetAcceptBulletedListsInGc(self):
+		self.voikko.setAcceptBulletedListsInGc(False)
+		self.assertNotEqual(0, len(self.voikko.grammarErrors(u"kissa")))
+		self.voikko.setAcceptBulletedListsInGc(True)
+		self.assertEqual(0, len(self.voikko.grammarErrors(u"kissa")))
+	
+	def TODOtestSetNoUglyHyphenation(self):
+		self.voikko.setNoUglyHyphenation(False)
+		self.assertEqual(u"i-va", self.voikko.hyphenate(u"iva"))
+		self.voikko.setNoUglyHyphenation(True)
+		self.assertEqual(u"iva", self.voikko.hyphenate(u"iva"))
+	
+	def TODOtestSetHyphenateUnknownWordsWorks(self):
+		self.voikko.setHyphenateUnknownWords(False)
+		self.assertEqual(u"kirjutepo", self.voikko.hyphenate(u"kirjutepo"))
+		self.voikko.setHyphenateUnknownWords(True)
+		self.assertEqual(u"kir-ju-te-po", self.voikko.hyphenate(u"kirjutepo"))
+	
+	def TODOtestSetMinHyphenatedWordLength(self):
+		self.voikko.setMinHyphenatedWordLength(6)
+		self.assertEqual(u"koira", self.voikko.hyphenate(u"koira"))
+		self.voikko.setMinHyphenatedWordLength(2)
+		self.assertEqual(u"koi-ra", self.voikko.hyphenate(u"koira"))
+	
+	def TODOtestSetSuggestionStrategy(self):
+		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.OCR)
+		self.failIf(u"koira" in self.voikko.suggest(u"koari"))
+		self.failUnless(u"koira" in self.voikko.suggest(u"koir_"))
+		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.TYPO)
+		self.failUnless(u"koira" in self.voikko.suggest(u"koari"))
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)

@@ -61,6 +61,10 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 	}
 }
 
+VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
+	return voikkoSetBooleanOption(reinterpret_cast<VoikkoHandle *>(&voikko_options), option, value);
+}
+
 VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
 	// If deprecated VOIKKO_OPT_ENCODING is used and value is "UTF-8" return success.
 	// Otherwise return failure.
