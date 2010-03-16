@@ -149,11 +149,6 @@ class VoikkoException(Exception):
 	"""Thrown when someting exceptional happens within libvoikko."""
 	pass
 
-def _checkInited(voikko):
-	if voikko.handle.value < 0:
-		raise VoikkoException("Voikko not initialized")
-
-
 def _boolToInt(bool):
 	if bool:
 		return 1
@@ -193,6 +188,9 @@ class Voikko:
 		self.lib.voikkoTerminate.argtypes = [c_void_p]
 		self.lib.voikkoTerminate.restype = None
 		
+		self.lib.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
+		self.lib.voikkoSpellUcs4.restype = c_int
+		
 		error = c_char_p()
 		self.handle = self.lib.voikkoInit(byref(error), variant, cacheSize, path)
 		if self.handle == 0:
@@ -203,5 +201,18 @@ class Voikko:
 		"""Uninitialize this Voikko instance. The instance cannot be used anymore
 		after this method has been called.
 		"""
-		self.lib.voikkoTerminate(self.handle)
-		self.handle = 0
+		if (self.handle != 0):
+			self.lib.voikkoTerminate(self.handle)
+			self.handle = 0
+	
+	def spell(self, word):
+		"""Check the spelling of given word. Return true if the word is correct,
+		false if it is incorrect.
+		"""
+		result = self.lib.voikkoSpellUcs4(self.handle, word)
+		if result == 0:
+			return False
+		elif result == 1:
+			return True
+		else:
+			raise VoikkoException("Internal error returned from libvoikko")

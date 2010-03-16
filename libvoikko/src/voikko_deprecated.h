@@ -73,3 +73,8 @@ int voikko_terminate(int handle);
  * @return true if option was succesfully set, otherwise false
  */
 int voikko_set_string_option(int handle, int option, const char * value);
+
+/**
+ * See voikkoSpellUcs4
+ */
+int voikko_spell_ucs4(int handle, const wchar_t * word);

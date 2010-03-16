@@ -30,14 +30,16 @@ class LibvoikkoTest(unittest.TestCase):
 	def testInitAndTerminate(self):
 		pass # do nothing, just check that setUp and tearDown complete succesfully
 	
+	def testTerminateCanBeCalledMultipleTimes(self):
+		self.voikko.terminate()
+		self.voikko.terminate()
+	
 	def TODOtestInitAndTerminate(self):
 		def trySpell():
 			self.voikko.spell(u"kissa")
 		# Init can be called multiple times
 		voikko2 = Voikko()
 		self.failUnless(self.voikko.spell(u"kissa"))
-		# Terminate can be called multiple times
-		self.voikko.terminate()
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, trySpell)
 		# Initialization can be done again
@@ -66,15 +68,17 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertNotEqual(hash(d1), hash(d3))
 		self.assertEqual(hash(d1), hash(d4))
 	
-	def TODOtestInitWithCorrectDictWorks(self):
-		# TODO: better test
+	def testInitWithCorrectDictWorks(self):
 		self.voikko.terminate()
-		self.voikko.init(variant = "standard")
-		self.failUnless(self.voikko.spell(u"kissa"))
+		self.voikko = Voikko(variant = "standard")
+		self.failIf(self.voikko.spell(u"amifostiini"))
+		self.voikko.terminate()
+		self.voikko = Voikko(variant = "medicine")
+		self.failUnless(self.voikko.spell(u"amifostiini"))
 	
 	def TODOtestInitWithNonExistentDictThrowsException(self):
 		def tryInit():
-			self.voikko.init(variant = "nonexistentvariantforlibvoikkotests")
+			self.voikko = Voikko(variant = "nonexistentvariant")
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, tryInit)
 	

@@ -224,8 +224,7 @@ static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const w
 }
 
 
-VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
-	voikko_options_t * voikkoOptions = &voikko_options;
+VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t * word) {
 	size_t nchars = wcslen(word);
 	int result;
 	spellresult sres;
@@ -242,7 +241,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	}
 	nchars = wcslen(nword);
 	
-	if (voikko_options.ignore_numbers) {
+	if (voikkoOptions->ignore_numbers) {
 		for (size_t i = 0; i < nchars; i++) {
 			if (SimpleChar::isDigit(nword[i])) {
 				delete[] nword;
@@ -251,8 +250,8 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		}
 	}
 	casetype caps = voikko_casetype(nword, nchars);
-	if ((voikko_options.ignore_uppercase && caps == CT_ALL_UPPER) ||
-	    (voikko_options.ignore_nonwords && voikko_is_nonword(nword, nchars))) {
+	if ((voikkoOptions->ignore_uppercase && caps == CT_ALL_UPPER) ||
+	    (voikkoOptions->ignore_nonwords && voikko_is_nonword(nword, nchars))) {
 		delete[] nword;
 		return VOIKKO_SPELL_OK;
 	}
@@ -266,7 +265,7 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	
 	int dot_index;
 	size_t realChars;
-	if (voikko_options.ignore_dot && buffer[nchars - 1] == L'.') {
+	if (voikkoOptions->ignore_dot && buffer[nchars - 1] == L'.') {
 		dot_index = static_cast<int>(nchars - 1);
 		buffer[dot_index] = L'\0';
 		realChars = nchars - 1;
@@ -278,17 +277,17 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	
 	/* Check words that require exact captialisation */
 	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS ||
-	    (caps == CT_ALL_UPPER && !voikko_options.accept_all_uppercase)) {
+	    (caps == CT_ALL_UPPER && !voikkoOptions->accept_all_uppercase)) {
 		wcsncpy(buffer, nword, nchars);
 		buffer[0] = SimpleChar::lower(buffer[0]);
-		if (voikko_options.accept_missing_hyphens) {
-			sres = voikko_do_spell_ignore_hyphens(&voikko_options, buffer, nchars);
+		if (voikkoOptions->accept_missing_hyphens) {
+			sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, nchars);
 		}
 		else {
 			sres = voikko_do_spell(voikkoOptions, buffer, nchars);
 		}
 		if (sres == SPELL_OK ||
-		    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
+		    (sres == SPELL_CAP_FIRST && voikkoOptions->accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
 			result = VOIKKO_SPELL_OK;
 		}
 		else {
@@ -296,14 +295,14 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 		}
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
-			if (voikko_options.accept_missing_hyphens) {
+			if (voikkoOptions->accept_missing_hyphens) {
 				sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, realChars);
 			}
 			else {
 				sres = voikko_do_spell(voikkoOptions, buffer, realChars);
 			}
 			if (sres == SPELL_OK ||
-			    (sres == SPELL_CAP_FIRST && voikko_options.accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
+			    (sres == SPELL_CAP_FIRST && voikkoOptions->accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
 				result = VOIKKO_SPELL_OK;
 			}
 		}
@@ -321,12 +320,12 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 			break;
 		case CT_FIRST_UPPER:
 			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
-			if ((sres == SPELL_OK && voikko_options.accept_first_uppercase) || sres == SPELL_CAP_FIRST)
+			if ((sres == SPELL_OK && voikkoOptions->accept_first_uppercase) || sres == SPELL_CAP_FIRST)
 				result = VOIKKO_SPELL_OK;
 			else result = VOIKKO_SPELL_FAILED;
 			break;
 		case CT_ALL_UPPER:
-			assert(voikko_options.accept_all_uppercase);
+			assert(voikkoOptions->accept_all_uppercase);
 			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			break;
@@ -349,12 +348,12 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 				break;
 			case CT_FIRST_UPPER:
 				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
-				if ((sres == SPELL_OK && voikko_options.accept_first_uppercase) || sres == SPELL_CAP_FIRST)
+				if ((sres == SPELL_OK && voikkoOptions->accept_first_uppercase) || sres == SPELL_CAP_FIRST)
 					result = VOIKKO_SPELL_OK;
 				else result = VOIKKO_SPELL_FAILED;
 				break;
 			case CT_ALL_UPPER:
-				assert(voikko_options.accept_all_uppercase);
+				assert(voikkoOptions->accept_all_uppercase);
 				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 				result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			default: /* should not happen */
@@ -366,13 +365,13 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	return result;
 }
 
-VOIKKOEXPORT int voikko_spell_cstr(int handle, const char * word) {
+VOIKKOEXPORT int voikko_spell_cstr(int /*handle*/, const char * word) {
 	if (word == 0 || word[0] == '\0') return VOIKKO_SPELL_OK;
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
 	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
 	if (word_ucs4 == 0) return VOIKKO_CHARSET_CONVERSION_FAILED;
-	int result = voikko_spell_ucs4(handle, word_ucs4);
+	int result = voikkoSpellUcs4(&voikko_options, word_ucs4);
 	delete[] word_ucs4;
 	return result;
 }

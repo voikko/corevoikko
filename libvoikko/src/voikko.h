@@ -109,7 +109,7 @@ int voikko_spell_cstr(int handle, const char * word);
  * @param word word to check
  * @return one of the spellchecker return codes
  */
-int voikko_spell_ucs4(int handle, const wchar_t * word);
+int voikkoSpellUcs4(VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Finds suggested correct spellings for given word in current multibyte encoding.
