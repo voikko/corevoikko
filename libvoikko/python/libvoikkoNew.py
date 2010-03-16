@@ -201,10 +201,6 @@ class Voikko(object):
 		# Ensure that resources are freed before this object is deleted.
 		self.terminate()
 	
-	def __checkNotTerminated(self):
-		if self.__handle == 0:
-			raise VoikkoException("Attempt to use Voikko instance without backing resources. Perhaps terminate() was called too early?")
-	
 	def terminate(self):
 		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
 		after this method has been called. The resources are released automatically when the Python object is
@@ -215,12 +211,17 @@ class Voikko(object):
 		if (self.__handle != 0):
 			self.__lib.voikkoTerminate(self.__handle)
 			self.__handle = 0
+			# Replace __lib with a dummy object that throws exception when any method is called. This ensures
+			# that nothing bad happens if methods of a Voikko instance are called after termination.
+			class DummyLib:
+				def __getattr__(obj, name):
+					raise VoikkoException("Attempt to use Voikko instance after terminate() was called")
+			self.__lib = DummyLib()
 	
 	def spell(self, word):
 		"""Check the spelling of given word. Return true if the word is correct,
 		false if it is incorrect.
 		"""
-		self.__checkNotTerminated()
 		result = self.__lib.voikkoSpellUcs4(self.__handle, word)
 		if result == 0:
 			return False
