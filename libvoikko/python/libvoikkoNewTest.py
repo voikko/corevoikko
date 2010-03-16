@@ -34,6 +34,13 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.terminate()
 		self.voikko.terminate()
 	
+	def testAnotherObjectCanBeCreatedUsedAndDeletedInParallel(self):
+		medicalVoikko = Voikko(variant = "medicine")
+		self.failUnless(medicalVoikko.spell(u"amifostiini"))
+		self.failIf(self.voikko.spell(u"amifostiini"))
+		del medicalVoikko
+		self.failIf(self.voikko.spell(u"amifostiini"))
+	
 	def TODOtestInitAndTerminate(self):
 		def trySpell():
 			self.voikko.spell(u"kissa")
@@ -82,17 +89,18 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, tryInit)
 	
-	def TODOtestInitWithCacheSizeWorks(self):
+	def testInitWithCacheSizeWorks(self):
 		# TODO: better test
 		self.voikko.terminate()
-		self.voikko.init(cacheSize = 3)
+		self.voikko = Voikko(cacheSize = 3)
 		self.failUnless(self.voikko.spell(u"kissa"))
 	
-	def TODOtestInitWithPathWorks(self):
+	def testInitWithPathWorks(self):
 		# TODO: better test
 		self.voikko.terminate()
-		self.voikko.init(path = "/path/to/nowhere")
+		self.voikko = Voikko(path = "/path/to/nowhere")
 		self.failUnless(self.voikko.spell(u"kissa"))
 
 if __name__ == "__main__":
-	unittest.main()
+	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)
+	unittest.TextTestRunner(verbosity=1).run(suite)

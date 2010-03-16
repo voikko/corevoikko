@@ -194,12 +194,19 @@ class Voikko:
 		error = c_char_p()
 		self.handle = self.lib.voikkoInit(byref(error), variant, cacheSize, path)
 		if error.value != None:
+			self.handle = 0
 			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
 	
+	def __del__(self):
+		# Ensure that resources are freed before this object is deleted.
+		self.terminate()
 	
 	def terminate(self):
-		"""Uninitialize this Voikko instance. The instance cannot be used anymore
-		after this method has been called.
+		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
+		after this method has been called. The resources are released automatically when the Python object is
+		deleted. This method may be used to make sure that the resources are immediately released since they
+		may take significant amount of memory and timely object deletion by Python runtime cannot always be
+		relied upon.
 		"""
 		if (self.handle != 0):
 			self.lib.voikkoTerminate(self.handle)
