@@ -93,3 +93,8 @@ int voikko_spell_cstr(int handle, const char * word);
  * See voikkoSpellUcs4
  */
 int voikko_spell_ucs4(int handle, const wchar_t * word);
+
+/**
+ * See voikkoSuggestUcs4
+ */
+wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);

@@ -95,6 +95,19 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, trySpell)
 	
+	def testSpell(self):
+		self.failUnless(self.voikko.spell(u"määrä"))
+		self.failIf(self.voikko.spell(u"määä"))
+	
+	def testSuggest(self):
+		suggs = self.voikko.suggest(u"koirra")
+		self.failUnless(u"koira" in suggs)
+	
+	def testSuggestReturnsArgumentIfWordIsCorrect(self):
+		suggs = self.voikko.suggest(u"koira")
+		self.assertEqual(1, len(suggs))
+		self.assertEqual(u"koira", suggs[0])
+	
 	def testSetIgnoreDot(self):
 		self.voikko.setIgnoreDot(False)
 		self.failIf(self.voikko.spell(u"kissa."))
@@ -188,11 +201,11 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setMinHyphenatedWordLength(2)
 		self.assertEqual(u"koi-ra", self.voikko.hyphenate(u"koira"))
 	
-	def TODOtestSetSuggestionStrategy(self):
-		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.OCR)
+	def testSetSuggestionStrategy(self):
+		self.voikko.setSuggestionStrategy(SuggestionStrategy.OCR)
 		self.failIf(u"koira" in self.voikko.suggest(u"koari"))
 		self.failUnless(u"koira" in self.voikko.suggest(u"koir_"))
-		self.voikko.setSuggestionStrategy(libvoikko.SuggestionStrategy.TYPO)
+		self.voikko.setSuggestionStrategy(SuggestionStrategy.TYPO)
 		self.failUnless(u"koira" in self.voikko.suggest(u"koari"))
 
 if __name__ == "__main__":

@@ -97,8 +97,8 @@ VOIKKOEXPORT int voikkoSetBooleanOption(voikko_options_t * options, int option, 
 			spellchecker::suggestion::SuggestionType type = (value ? 
 				spellchecker::suggestion::SUGGESTION_TYPE_OCR :
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);
-			delete voikko_options.suggestionGenerator;
-			voikko_options.suggestionGenerator =
+			delete options->suggestionGenerator;
+			options->suggestionGenerator =
 				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options, type);
 			return 1;
 			}

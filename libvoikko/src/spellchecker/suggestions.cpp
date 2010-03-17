@@ -75,7 +75,7 @@ VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result) {
 	}
 }
 
-VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
+VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(voikko_options_t * options, const wchar_t * word) {
 	bool add_dots = false;
 	if (word == 0) return 0;
 	size_t wlen = wcslen(word);
@@ -87,7 +87,7 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	}
 	wlen = wcslen(nword);
 	
-	if (voikko_options.ignore_dot) {
+	if (options->ignore_dot) {
 		if (wlen == 2) {
 			delete[] nword;
 			return 0;
@@ -98,9 +98,9 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 		}
 	}
 	
-	SuggestionStatus status(handle, nword, wlen, MAX_SUGGESTIONS * 3);
+	SuggestionStatus status(nword, wlen, MAX_SUGGESTIONS * 3);
 	
-	SuggestionGenerator * generator = voikko_options.suggestionGenerator;
+	SuggestionGenerator * generator = options->suggestionGenerator;
 	generator->generate(&status);
 	
 	if (status.getSuggestionCount() == 0) {
@@ -144,13 +144,13 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word) {
 	return suggestions;
 }
 
-VOIKKOEXPORT char ** voikko_suggest_cstr(int handle, const char * word) {
+VOIKKOEXPORT char ** voikko_suggest_cstr(int /*handle*/, const char * word) {
 	if (word == 0 || word[0] == '\0') return 0;
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
 	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
 	if (word_ucs4 == 0) return 0;
-	wchar_t ** suggestions_ucs4 = voikko_suggest_ucs4(handle, word_ucs4);
+	wchar_t ** suggestions_ucs4 = voikkoSuggestUcs4(&voikko_options, word_ucs4);
 	delete[] word_ucs4;
 	if (suggestions_ucs4 == 0) return 0;
 	int scount = 0;

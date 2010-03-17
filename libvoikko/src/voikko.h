@@ -127,9 +127,9 @@ char ** voikko_suggest_cstr(int handle, const char * word);
  * @param word word to find suggestions for
  * @return null, if no suggestions could be generated. Otherwise returns a pointer to a
  *         null-terminated array of 0 or more strings containing the suggestions in wide character
- *         Unicode strings. Caller is assumed to free the strings and the array after use.
+ *         Unicode strings. Use voikko_free_suggest_ucs4 to free the array after use.
  */
-wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);
+wchar_t ** voikkoSuggestUcs4(VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Hyphenates the given word in current multibyte encoding.

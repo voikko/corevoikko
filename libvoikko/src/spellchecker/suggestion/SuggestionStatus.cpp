@@ -20,8 +20,7 @@
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-SuggestionStatus::SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions) :
-	handle(handle),
+SuggestionStatus::SuggestionStatus(const wchar_t * word, size_t wlen, size_t maxSuggestions) :
 	word(word),
 	wlen(wlen),
 	maxCost(0),

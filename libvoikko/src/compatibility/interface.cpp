@@ -93,4 +93,8 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	return voikkoSpellUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
 }
 
+VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int /*handle*/, const wchar_t * word) {
+	return voikkoSuggestUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+}
+
 } }

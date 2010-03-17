@@ -187,6 +187,18 @@ class Voikko(object):
 		self.__lib.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
 		self.__lib.voikkoSpellUcs4.restype = c_int
 		
+		self.__lib.voikkoSuggestUcs4.argtypes = [c_void_p, c_wchar_p]
+		self.__lib.voikkoSuggestUcs4.restype = POINTER(c_wchar_p)
+		
+		self.__lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
+		self.__lib.voikko_free_suggest_ucs4.restype = None
+		
+		self.__lib.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
+		self.__lib.voikkoSetBooleanOption.restype = c_int
+		
+		self.__lib.voikkoSetIntegerOption.argtypes = [c_void_p, c_int, c_int]
+		self.__lib.voikkoSetIntegerOption.restype = c_int
+		
 		error = c_char_p()
 		self.__handle = self.__lib.voikkoInit(byref(error), variant, cacheSize, path)
 		if error.value != None:
@@ -230,6 +242,25 @@ class Voikko(object):
 			return True
 		else:
 			raise VoikkoException("Internal error returned from libvoikko")
+	
+	def suggest(self, word):
+		"""Generate a list of suggested spellings for given (misspelled) word.
+		If the given word is correct, the list contains only the word itself.
+		"""
+		
+		cSuggestions = self.__lib.voikkoSuggestUcs4(self.__handle, word)
+		pSuggestions = []
+		
+		if not bool(cSuggestions):
+			return pSuggestions
+		
+		i = 0
+		while bool(cSuggestions[i]):
+			pSuggestions.append(cSuggestions[i])
+			i = i + 1
+		
+		self.__lib.voikko_free_suggest_ucs4(cSuggestions)
+		return pSuggestions
 	
 	def setIgnoreDot(self, value):
 		"""Ignore dot at the end of the word (needed for use in some word processors).

@@ -26,7 +26,7 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 
 class SuggestionStatus {
 	public:
-		SuggestionStatus(int handle, const wchar_t * word, size_t wlen, size_t maxSuggestions);
+		SuggestionStatus(const wchar_t * word, size_t wlen, size_t maxSuggestions);
 		~SuggestionStatus();
 		
 		/**
@@ -79,9 +79,6 @@ class SuggestionStatus {
 	private:
 		SuggestionStatus(SuggestionStatus const & other);
 		SuggestionStatus & operator = (const SuggestionStatus & other);
-		
-		/** handle */
-		const int handle;
 		
 		/** string to find suggestions for */
 		const wchar_t * const word;
