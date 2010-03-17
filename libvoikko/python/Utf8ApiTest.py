@@ -51,6 +51,12 @@ class Utf8ApiTest(unittest.TestCase):
 		lib.voikkoSpellCstr.argtypes = [c_void_p, c_char_p]
 		lib.voikkoSpellCstr.restype = c_int
 		
+		lib.voikkoSuggestCstr.argtypes = [c_void_p, c_char_p]
+		lib.voikkoSuggestCstr.restype = POINTER(c_char_p)
+		
+		lib.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
+		lib.voikkoFreeCstrArray.restype = None
+		
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
 		if error.value != None:
@@ -66,6 +72,21 @@ class Utf8ApiTest(unittest.TestCase):
 	def testSpellingWorksWithSmallScandinavianLetters(self):
 		self.failIf(spellCstr(u"ääiti"))
 		self.failUnless(spellCstr(u"äiti"))
+	
+	def testSuggestCstrWorks(self):
+		cSuggestions = lib.voikkoSuggestCstr(handle, u"koirra")
+		pSuggestions = []
+		
+		if not bool(cSuggestions):
+			return pSuggestions
+		
+		i = 0
+		while bool(cSuggestions[i]):
+			pSuggestions.append(unicode(cSuggestions[i], "UTF-8"))
+			i = i + 1
+		
+		lib.voikkoFreeCstrArray(cSuggestions)
+		self.failUnless(u"koira" in pSuggestions)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)

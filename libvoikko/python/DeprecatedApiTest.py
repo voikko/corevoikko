@@ -23,6 +23,7 @@ import unittest
 from libvoikko import Voikko
 from ctypes import c_int
 from ctypes import c_char_p
+from ctypes import POINTER
 
 voikko = Voikko()
 voikko.lib.voikko_set_string_option.argtypes = [c_int, c_int, c_char_p]
@@ -30,6 +31,9 @@ voikko.lib.voikko_set_string_option.restype = c_int
 
 voikko.lib.voikko_spell_cstr.argtypes = [c_int, c_char_p]
 voikko.lib.voikko_spell_cstr.restype = c_int
+
+voikko.lib.voikko_suggest_cstr.argtypes = [c_int, c_char_p]
+voikko.lib.voikko_suggest_cstr.restype = POINTER(c_char_p)
 
 class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
@@ -50,6 +54,21 @@ class DeprecatedApiTest(unittest.TestCase):
 	def test_spell_cstr_works(self):
 		self.assertEquals(1, voikko.lib.voikko_spell_cstr(voikko.handle, u"kissa".encode("UTF-8")))
 		self.assertEquals(0, voikko.lib.voikko_spell_cstr(voikko.handle, u"koirra".encode("UTF-8")))
+	
+	def test_suggest_cstr_works(self):
+		cSuggestions = voikko.lib.voikko_suggest_cstr(voikko.handle, u"koirra")
+		pSuggestions = []
+		
+		if not bool(cSuggestions):
+			return pSuggestions
+		
+		i = 0
+		while bool(cSuggestions[i]):
+			pSuggestions.append(unicode(cSuggestions[i], "UTF-8"))
+			i = i + 1
+		
+		voikko.lib.voikko_free_suggest_cstr(cSuggestions)
+		self.failUnless(u"koira" in pSuggestions)
 
 if __name__ == "__main__":
 	unittest.main()

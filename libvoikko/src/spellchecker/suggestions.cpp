@@ -23,7 +23,6 @@
 #include "character/charset.hpp"
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
-#include <cstdlib>
 #include <cstring>
 #include <cwchar>
 
@@ -64,14 +63,12 @@ VOIKKOEXPORT void voikko_free_suggest_ucs4(wchar_t ** suggest_result) {
 	}
 }
 
-VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result) {
-	// C deallocation is used here to maintain compatibility with some
-	// broken applications before libvoikko 1.5.
+VOIKKOEXPORT void voikkoFreeCstrArray(char ** suggest_result) {
 	if (suggest_result) {
 		for (char ** p = suggest_result; *p; p++) {
-			free(*p);
+			delete[] *p;
 		}
-		free(suggest_result);
+		delete[] suggest_result;
 	}
 }
 
@@ -144,17 +141,27 @@ VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(voikko_options_t * options, const wcha
 	return suggestions;
 }
 
-VOIKKOEXPORT char ** voikko_suggest_cstr(int /*handle*/, const char * word) {
-	if (word == 0 || word[0] == '\0') return 0;
+VOIKKOEXPORT char ** voikkoSuggestCstr(voikko_options_t * options, const char * word) {
+	if (word == 0 || word[0] == '\0') {
+		return 0;
+	}
 	size_t len = strlen(word);
-	if (len > LIBVOIKKO_MAX_WORD_CHARS) return 0;
+	if (len > LIBVOIKKO_MAX_WORD_CHARS) {
+		return 0;
+	}
 	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
-	if (word_ucs4 == 0) return 0;
-	wchar_t ** suggestions_ucs4 = voikkoSuggestUcs4(&voikko_options, word_ucs4);
+	if (word_ucs4 == 0) {
+		return 0;
+	}
+	wchar_t ** suggestions_ucs4 = voikkoSuggestUcs4(options, word_ucs4);
 	delete[] word_ucs4;
-	if (suggestions_ucs4 == 0) return 0;
+	if (suggestions_ucs4 == 0) {
+		return 0;
+	}
 	int scount = 0;
-	while (suggestions_ucs4[scount] != 0) scount++;
+	while (suggestions_ucs4[scount] != 0) {
+		scount++;
+	}
 	
 	char ** suggestions = new char*[scount + 1];
 	if (suggestions == 0) {
@@ -165,7 +172,9 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int /*handle*/, const char * word) {
 	int j = 0;
 	for (int i = 0; i < scount; i++) {
 		char * suggestion = utils::StringUtils::utf8FromUcs4(suggestions_ucs4[i]);
-		if (suggestion == 0) continue; /* suggestion cannot be encoded */
+		if (suggestion == 0) {
+			continue; /* suggestion cannot be encoded */
+		}
 		suggestions[j++] = suggestion;
 	}
 	voikko_free_suggest_ucs4(suggestions_ucs4);
@@ -177,9 +186,6 @@ VOIKKOEXPORT char ** voikko_suggest_cstr(int /*handle*/, const char * word) {
 		suggestions[j] = 0;
 	}
 	
-	// Convert to C allocation to maintain compatibility with some
-	// broken applications before libvoikko 1.5.
-	utils::StringUtils::convertCStringArrayToMalloc(suggestions);
 	return suggestions;
 }
 

@@ -112,14 +112,14 @@ int voikkoSpellCstr(VoikkoHandle * handle, const char * word);
 int voikkoSpellUcs4(VoikkoHandle * handle, const wchar_t * word);
 
 /**
- * Finds suggested correct spellings for given word in current multibyte encoding.
+ * Finds suggested correct spellings for given UTF-8 encoded word.
  * @param handle voikko instance
  * @param word word to find suggestions for
  * @return null, if no suggestions could be generated. Otherwise returns a pointer to a
- *         null-terminated array of 0 or more strings containing the suggestions in the current
- *         multibyte encoding. Caller is assumed to free the strings and the array after use.
+ *         null-terminated array of 0 or more strings containing the suggestions in
+ *         UTF-8 encoding. Use voikkoFreeCstrArray to free the array and strings after use.
  */
-char ** voikko_suggest_cstr(int handle, const char * word);
+char ** voikkoSuggestCstr(VoikkoHandle * handle, const char * word);
 
 /**
  * Finds suggested correct spellings for given word in wide character Unicode string.
@@ -127,7 +127,7 @@ char ** voikko_suggest_cstr(int handle, const char * word);
  * @param word word to find suggestions for
  * @return null, if no suggestions could be generated. Otherwise returns a pointer to a
  *         null-terminated array of 0 or more strings containing the suggestions in wide character
- *         Unicode strings. Use voikko_free_suggest_ucs4 to free the array after use.
+ *         Unicode strings. Use voikko_free_suggest_ucs4 to free the array and strings after use.
  */
 wchar_t ** voikkoSuggestUcs4(VoikkoHandle * handle, const wchar_t * word);
 
@@ -168,10 +168,10 @@ char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
 void voikko_free_suggest_ucs4(wchar_t ** suggest_result);
 
 /**
- * Frees the memory allocated for spelling suggestions.
- * @param suggest_result spelling suggestions
+ * Frees the memory allocated for a char string array.
+ * @param cstrArray char string array
  */
-void voikko_free_suggest_cstr(char ** suggest_result);
+void voikkoFreeCstrArray(char ** cstrArray);
 
 /**
  * Frees the memory allocated for hyphenation results.

@@ -95,6 +95,16 @@ int voikko_spell_cstr(int handle, const char * word);
 int voikko_spell_ucs4(int handle, const wchar_t * word);
 
 /**
+ * See voikkoSuggestCstr
+ */
+char ** voikko_suggest_cstr(int handle, const char * word);
+
+/**
  * See voikkoSuggestUcs4
  */
 wchar_t ** voikko_suggest_ucs4(int handle, const wchar_t * word);
+
+/**
+ * See voikkoFreeCstrArray
+ */
+void voikko_free_suggest_cstr(char ** suggest_result);

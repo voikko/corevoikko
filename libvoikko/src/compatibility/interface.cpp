@@ -22,8 +22,10 @@
 
 #include "porting.h"
 #include "setup/setup.hpp"
+#include "utils/StringUtils.hpp"
 #include "voikko.h"
 #include <cstring>
+#include <cstdlib>
 
 namespace libvoikko { namespace compatibility {
 
@@ -93,8 +95,25 @@ VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
 	return voikkoSpellUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
 }
 
+VOIKKOEXPORT char ** voikko_suggest_cstr(int /*handle*/, const char * word) {
+	char ** suggestions = voikkoSuggestCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	utils::StringUtils::convertCStringArrayToMalloc(suggestions);
+	return suggestions;
+}
+
 VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int /*handle*/, const wchar_t * word) {
 	return voikkoSuggestUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+}
+
+VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result) {
+	// C deallocation is used here to maintain compatibility with some
+	// broken applications before libvoikko 1.5.
+	if (suggest_result) {
+		for (char ** p = suggest_result; *p; p++) {
+			free(*p);
+		}
+		free(suggest_result);
+	}
 }
 
 } }
