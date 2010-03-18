@@ -1483,6 +1483,7 @@ räknäys # räknätä
 räppimusiikki # räppi
 sammarit # sammari
 samumtuuli # samum
+sanforointi # sanforoida
 santsaus # santsata
 senssit # senssi
 serologinen # serologi
