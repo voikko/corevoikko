@@ -198,6 +198,10 @@ class Voikko(object):
 		self.__lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
 		self.__lib.voikkoFreeCstr.restype = None
 		
+		self.__lib.voikkoNextTokenUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t,
+		                                           POINTER(c_size_t)]
+		self.__lib.voikkoNextTokenUcs4.restype = c_int
+		
 		self.__lib.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
 		self.__lib.voikkoSetBooleanOption.restype = c_int
 		
@@ -266,6 +270,24 @@ class Voikko(object):
 		
 		self.__lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
+	
+	def tokens(self, text):
+		"""Split the given natural language text into a list of Token objects."""
+		uniText = unicode(text)
+		result = []
+		textLen = len(uniText)
+		tokenLen = c_size_t()
+		position = 0
+		while textLen > 0:
+			tokenType = self.__lib.voikkoNextTokenUcs4(self.__handle,
+			            uniText[position:], textLen, byref(tokenLen))
+			if tokenType == Token.NONE:
+				break
+			tokenText = uniText[position:position+tokenLen.value]
+			result.append(Token(tokenText, tokenType))
+			position = position + tokenLen.value
+			textLen = textLen - tokenLen.value
+		return result
 	
 	def getHyphenationPattern(self, word):
 		"""Return a character pattern that describes the hyphenation of given word.

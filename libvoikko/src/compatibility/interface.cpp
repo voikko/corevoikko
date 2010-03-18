@@ -130,4 +130,9 @@ VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result) {
 	free(hyphenate_result);
 }
 
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const wchar_t * text,
+		size_t textlen, size_t * tokenlen) {
+	return voikkoNextTokenUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, tokenlen);
+}
+
 } }

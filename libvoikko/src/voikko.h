@@ -187,7 +187,7 @@ void voikkoFreeCstr(char * cstr);
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
+enum voikko_token_type voikkoNextTokenUcs4(VoikkoHandle * handle, const wchar_t * text,
                        size_t textlen, size_t * tokenlen);
 
 /**

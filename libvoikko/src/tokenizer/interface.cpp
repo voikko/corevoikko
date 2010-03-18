@@ -24,18 +24,18 @@
 
 namespace libvoikko { namespace tokenizer {
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const wchar_t * text, size_t textlen,
-                                                           size_t * tokenlen) {
-	return Tokenizer::nextToken(&voikko_options, text, textlen, tokenlen);
+VOIKKOEXPORT enum voikko_token_type voikkoNextTokenUcs4(voikko_options_t * options,
+		const wchar_t * text, size_t textlen, size_t * tokenlen) {
+	return Tokenizer::nextToken(options, text, textlen, tokenlen);
 }
 
-VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int handle, const char * text, size_t textlen,
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int /*handle*/, const char * text, size_t textlen,
                                                            size_t * tokenlen) {
 	if (text == 0) return TOKEN_NONE;
 	wchar_t * text_ucs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
 	if (text_ucs4 == 0) return TOKEN_NONE;
 	voikko_token_type result =
-		voikko_next_token_ucs4(handle, text_ucs4, wcslen(text_ucs4), tokenlen);
+		voikkoNextTokenUcs4(&voikko_options, text_ucs4, wcslen(text_ucs4), tokenlen);
 	delete[] text_ucs4;
 	return result;
 }

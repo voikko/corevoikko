@@ -108,6 +108,13 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(1, len(suggs))
 		self.assertEqual(u"koira", suggs[0])
 	
+	def testTokens(self):
+		tokenList = self.voikko.tokens(u"kissa ja koira")
+		self.assertEqual(5, len(tokenList))
+		tokenJa = tokenList[2]
+		self.assertEqual(Token.WORD, tokenJa.tokenType)
+		self.assertEqual(u"ja", tokenJa.tokenText)
+	
 	def testHyphenationPattern(self):
 		pattern = self.voikko.getHyphenationPattern(u"kissa")
 		self.assertEqual("   - ", pattern)
