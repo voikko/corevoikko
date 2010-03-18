@@ -116,6 +116,7 @@ haaroittua
 haaroitus
 halkeama
 Halme
+halpalento
 halpamainen
 halpatyö
 halutunlainen
@@ -449,6 +450,7 @@ Lauha
 laulattaa
 lausuma
 Lavia
+LDL-kolesteroli
 Lehtimäki
 Lehtinen
 Lehto
@@ -585,6 +587,7 @@ nimismies
 niukentaa
 Niva
 Norja
+Noronen
 nousema
 Nurmi
 Nurmijärvi
@@ -671,6 +674,7 @@ Pudasjärvi
 puhkeama
 puhuma
 puhuma-alue
+puikulaperuna
 puksipuu
 pullistuma
 Puola
@@ -922,6 +926,7 @@ vainolainen
 vaivaisenluu
 vajaamielinen
 vajoama
+vakaus
 valikoima
 Valkeakoski
 valmisateria

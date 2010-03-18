@@ -239,10 +239,10 @@
 [perusmuoto: "ilki", alku: "ilki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ilkosen", alku: "ilkosen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ilkosilla", alku: "ilkosi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "illemmaksi", alku: "illemmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "illemmalla", alku: "illemmaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "illemmalla", alku: "illemma", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "illempana", alku: "illempana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "ilmoitse", alku: "ilmoitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "illemmalla", alku: "illempana", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ilma", alku: "ilmoitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "iltapäivisin", alku: "iltapäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "infra", alku: "infra", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "irrallaan", alku: "irrallaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -250,8 +250,8 @@
 [perusmuoto: "irti", alku: "irti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irvessä", alku: "irveen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "irvessä", alku: "irvessä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "irvissä", alku: "irviin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "irvissä", alku: "irvissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "irvessä", alku: "irviin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "irvessä", alku: "irvissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "istualla", alku: "istua", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "itsekseen", alku: "itsekseen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "itsessään", alku: "itsessään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -1150,7 +1150,7 @@
 [perusmuoto: "viljalti", alku: "viljalti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vinottain", alku: "vinottain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vinottain", alku: "vinoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "virolaisittain", alku: "virolaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "virolaisittain", alku: "virolaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "vitkaan", alku: "vitkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vittu", alku: "vitusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vuoksi", alku: "vuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

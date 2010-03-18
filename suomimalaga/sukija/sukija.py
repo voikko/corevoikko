@@ -275,91 +275,6 @@ def has_vowel(s):
 	return 0
 
 
-def hyphenate(word):
-	n = len(word)
-	i = 0
-	s = u""
-
-	if (n <= 2):
-		return word
-
-#	print(word + u"\n");
-	
-	# Jos sanassa on joku merkeistä -':.
-	# tavutetaan sanan molemmat puoliskot erikseen.
-	#
-	p = re.compile(u"[-':.]+").search(word)
-	if (p != None):
-		return hyphenate(word[:p.start(0)]) + u"-" + hyphenate(word[p.end(0):])
-
-	# Kerakkeet sanan alussa.
-	#
-	while ((i < n) and (word[i] in C) and (word[i+1] in C)):
-		s = s + word[i]
-		i = i + 1
-
-	if (i == n):
-		return word  # Lyhenne, jossa on vain kerakkeita.
-
-	while (i < n-1):
-###		print (s + u" " + str(i) + u" " + str(n) + u"\n")
-		if ((word[i] in V) and (word[i+1] in V)):
-###			print (u"Foo 1 " + str(i) + u" " + word[i] + word[i+1] + u"\n")
-			if ((i + 2 < n) and (word[i+1:i+3] in V2)):
-				# Re-aa-li.
-				s = s + word[i] + u"-" + word[i+1:i+3]
-				i = i + 3
-			elif (word[i:i+2] in V2):
-				s = s + word[i:i+2]
-				i = i + 2
-			else:
-				s = s + word[i] + u"-" + word[i+1]
-				i = i + 2
-		elif ((word[i] in C) and (word[i+1] in V)):
-			if ((len(s) > 0) and (s[-1] != u"-") and (has_vowel(s))):
-				s = s + u"-"
-			s = s + word[i]
-			i = i + 1
-		elif ((word[i] in C) and (word[i+1] in C)):
-			if (i+2 == n):  # Sanan lopussa on kaksi keraketta.
-				s = s + word[i:i+2]
-				i = i + 2
-			elif (word[i+2] in V):
-				s = s + word[i] + u"-"
-				i = i + 1
-			else:
-				s = s + word[i]
-				i = i + 1
-		elif (word[i] in V):
-			if ((i > 2) and (word[i-2:i] in V2)):
-				s = s + u"-" + word[i]
-			else:
-				s = s + word[i]
-			i = i + 1
-		if (i+1 == n):
-			if ((s[-1] in V) and (word[i] == V)):
-				if (s[-1] + word[i] in V2):
-					s = s + word[i]
-				else:
-					s = u"-" + word[i]
-			else:
-				s = s + word[i]
-			i = i + 1
-	
-	return s
-
-
-# Palautetaan sanassa olevien tavujen määrä.
-#
-def number_of_syllabels(word):
-	n = 1
-	s = hyphenate(word)
-	for c in s:
-		if (c == u"-"):
-			n = n + 1
-	return n;
-
-
 # Korvataan sanasta 'word' aksenttimerkit
 # aksentittomilla kohtien 'start' ja 'end' välistä.
 #
@@ -472,7 +387,7 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 #			print ("Ei tarvita: " + wordform)
 			continue
 		
-		nsyl = number_of_syllabels(wordform)
+#		nsyl = number_of_syllabels(wordform)
 
 		m = rx.match(wordform)
 		d = None
@@ -502,26 +417,6 @@ def handle_word(main_vocabulary,vocabulary_files,word):
 
 		s = u"lähtösana: \"" + wordform + u"\", lähtöalku: \"" + alku + u"\""
 
-		# Useimmat kolmitavuiset (i)nen-loppuiset sanat hyväksytään i:llisinä ja i:ttöminä.
-		# Esim. kelta(i)nen, hevo(i)nen.
-		#
-#		if ((jatko == u"nainen") and (nsyl == 3) and
-#		    (malaga_word_class in [u"nimisana", u"nimi_laatusana", u"laatusana"]) and
-#		    (rx != None) and (d != None) and (d['keltainen'] != None) and
-#		    (not (wordform in [u"armainen", u"lukunen", u"omainen", u"osanen", u"vastuinen"]))):
-##			if (wordform[-4] == u"i"):
-##				alku2 = alku[:-1]    # Keltainen => keltanen.
-##			else:
-##				alku2 = alku + u"i"  # Hevonen => hevoinen.
-##			jatko2 = jatko
-##			wordform2 = alku2 + u"nen"
-#			if (wordform[-4] == u"i"):
-#				alku = wordform[:-4]    # Keltainen => keltanen.
-#				jatko = u"punainen"
-#			else:
-#				jatko = u"hevoinen"
-####			print (u"Keltainen " + wordform + u" " + alku + u" " + jatko)
-		#
 		# Korjataan alku- ja jatko-kenttien arvoja.
 		#
 #		elif (jatko == u"rakentaa"):

@@ -1020,11 +1020,23 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "puolitoista", alku: "puolitoista", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "puolitoista", alku: "puolentoista", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "monisata", alku: "monisata", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "perunasaago", alku: "perunasaago", luokka: nimisana, jatko: <valo>, äs: a];
+[perusmuoto: "requiem", alku: "requiem", luokka: nimisana, jatko: <kalsium>, äs: a];
 
 [perusmuoto: "kryo", alku: "kryo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "nitrifikaatio", alku: "nitrifikaatio", luokka: nimisana, jatko: <autio>, äs: a];
-[perusmuoto: "denitrifikaatio", alku: "denitrifikaatio", luokka: nimisana, jatko: <autio>, äs: a];
-### neuro=tiede
+[perusmuoto: "reseptio", alku: "reseptio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "reseda", alku: "resed", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "resentismi", alku: "resentism", luokka: nimisana, jatko: <risti>, äs: ä];
+[perusmuoto: "resentisti", alku: "resentist", luokka: nimisana, jatko: <risti>, äs: ä, tiedot: <inen>];
+[perusmuoto: "reservaatio", alku: "reservaatio", luokka: nimisana, jatko: <autio>, äs: a];
+[perusmuoto: "kordiitti", alku: "kordiit", luokka: nimisana, jatko: <tatti>, äs: a];
+[perusmuoto: "korjakki", alku: "korjak", luokka: nimisana, jatko: <takki>, äs: a];
+#[perusmuoto: "vakaaja", alku: "vakaaj", luokka: nimisana, jatko: <>, äs: a];
+[perusmuoto: "vaata", alku: "va", luokka: teonsana, jatko: <taata>, äs: a];
+[perusmuoto: "korollaari", alku: "korollaari", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "korporatiivinen", alku: "korporatiivi", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "korridori", alku: "korridori", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "korybantti", alku: "korybant", luokka: nimisana, jatko: <tatti>, äs: a, tiedot: <inen>];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
