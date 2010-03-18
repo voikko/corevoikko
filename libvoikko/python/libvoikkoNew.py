@@ -2,13 +2,12 @@
 """
 Python interface to libvoikko, library of Finnish language tools.
 This module can be used to perform various natural language analysis
-tasks on Finnish text.
+tasks.
 
 An example session demonstrating the use of this module:
 
  >>> import libvoikko
  >>> v = libvoikko.Voikko()
- >>> v.init()
  >>> v.analyze(u"kissa")
  [{'SIJAMUOTO': u'nimento', 'CLASS': u'nimisana', 'STRUCTURE': u'=ppppp'}]
  >>> v.spell(u"kissa")
@@ -193,6 +192,12 @@ class Voikko(object):
 		self.__lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
 		self.__lib.voikko_free_suggest_ucs4.restype = None
 		
+		self.__lib.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
+		self.__lib.voikkoHyphenateUcs4.restype = POINTER(c_char)
+		
+		self.__lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
+		self.__lib.voikkoFreeCstr.restype = None
+		
 		self.__lib.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
 		self.__lib.voikkoSetBooleanOption.restype = c_int
 		
@@ -261,6 +266,33 @@ class Voikko(object):
 		
 		self.__lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
+	
+	def getHyphenationPattern(self, word):
+		"""Return a character pattern that describes the hyphenation of given word.
+		  ' ' = no hyphenation at this character,
+		  '-' = hyphenation point (character at this position
+		        is preserved in the hyphenated form),
+		  '=' = hyphentation point (character at this position
+		        is replaced by the hyphen.)
+		"""
+		cHyphenationPattern = self.__lib.voikkoHyphenateUcs4(self.__handle, word)
+		hyphenationPattern = string_at(cHyphenationPattern)
+		self.__lib.voikkoFreeCstr(cHyphenationPattern)
+		return unicode(hyphenationPattern, 'ASCII')
+	
+	def hyphenate(self, word):
+		"""Return the given word in fully hyphenated form."""
+		pattern = self.getHyphenationPattern(word)
+		hyphenated = u""
+		for i in range(len(pattern)):
+			patternC = pattern[i]
+			if patternC == ' ':
+				hyphenated = hyphenated + word[i]
+			elif patternC == '-':
+				hyphenated = hyphenated + u"-" + word[i]
+			elif patternC == '=':
+				hyphenated = hyphenated + u"-"
+		return hyphenated
 	
 	def setIgnoreDot(self, value):
 		"""Ignore dot at the end of the word (needed for use in some word processors).

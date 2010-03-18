@@ -21,8 +21,10 @@
 
 from ctypes import byref
 from ctypes import c_int
+from ctypes import c_char
 from ctypes import c_char_p
 from ctypes import c_void_p
+from ctypes import string_at
 from ctypes import CDLL
 from ctypes import POINTER
 import unittest
@@ -57,6 +59,12 @@ class Utf8ApiTest(unittest.TestCase):
 		lib.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
 		lib.voikkoFreeCstrArray.restype = None
 		
+		lib.voikkoHyphenateCstr.argtypes = [c_void_p, c_char_p]
+		lib.voikkoHyphenateCstr.restype = POINTER(c_char)
+		
+		lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
+		lib.voikkoFreeCstr.restype = None
+		
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
 		if error.value != None:
@@ -87,6 +95,12 @@ class Utf8ApiTest(unittest.TestCase):
 		
 		lib.voikkoFreeCstrArray(cSuggestions)
 		self.failUnless(u"koira" in pSuggestions)
+	
+	def testHyphenateCstrWorks(self):
+		cHyphenationPattern = lib.voikkoHyphenateCstr(handle, u"koira".encode("UTF-8"))
+		hyphenationPattern = string_at(cHyphenationPattern)
+		lib.voikkoFreeCstr(cHyphenationPattern)
+		self.assertEqual(u"   - ", hyphenationPattern)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)

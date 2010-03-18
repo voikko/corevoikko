@@ -105,15 +105,29 @@ VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int /*handle*/, const wchar_t * word
 	return voikkoSuggestUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
 }
 
+VOIKKOEXPORT char * voikko_hyphenate_cstr(int /*handle*/, const char * word) {
+	char * hyphenation = voikkoHyphenateCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	utils::StringUtils::convertCStringToMalloc(hyphenation);
+	return hyphenation;
+}
+
+VOIKKOEXPORT char * voikko_hyphenate_ucs4(int /*handle*/, const wchar_t * word) {
+	char * hyphenation = voikkoHyphenateUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	utils::StringUtils::convertCStringToMalloc(hyphenation);
+	return hyphenation;
+}
+
 VOIKKOEXPORT void voikko_free_suggest_cstr(char ** suggest_result) {
-	// C deallocation is used here to maintain compatibility with some
-	// broken applications before libvoikko 1.5.
 	if (suggest_result) {
 		for (char ** p = suggest_result; *p; p++) {
 			free(*p);
 		}
 		free(suggest_result);
 	}
+}
+
+VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result) {
+	free(hyphenate_result);
 }
 
 } }

@@ -132,7 +132,7 @@ char ** voikkoSuggestCstr(VoikkoHandle * handle, const char * word);
 wchar_t ** voikkoSuggestUcs4(VoikkoHandle * handle, const wchar_t * word);
 
 /**
- * Hyphenates the given word in current multibyte encoding.
+ * Hyphenates the given word in UTF-8 encoding.
  * @param handle voikko instance
  * @param word word to hyphenate
  * @return null-terminated character string containing the hyphenation using
@@ -144,7 +144,7 @@ wchar_t ** voikkoSuggestUcs4(VoikkoHandle * handle, const wchar_t * word);
  *           is replaced by the hyphen.)
  * Returns 0 on error.
  */
-char * voikko_hyphenate_cstr(int handle, const char * word);
+char * voikkoHyphenateCstr(VoikkoHandle * handle, const char * word);
 
 /**
  * Hyphenates the given word in wide character Unicode string.
@@ -159,7 +159,7 @@ char * voikko_hyphenate_cstr(int handle, const char * word);
  *           is replaced by the hyphen.)
  * Returns 0 on error.
  */
-char * voikko_hyphenate_ucs4(int handle, const wchar_t * word);
+char * voikkoHyphenateUcs4(VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Frees the memory allocated for spelling suggestions.
@@ -174,10 +174,10 @@ void voikko_free_suggest_ucs4(wchar_t ** suggest_result);
 void voikkoFreeCstrArray(char ** cstrArray);
 
 /**
- * Frees the memory allocated for hyphenation results.
- * @param hyphenate_result hyphenation result
+ * Frees the memory allocated for a char string.
+ * @param cstr char string allocated by libvoikko
  */
-void voikko_free_hyphenate(char * hyphenate_result);
+void voikkoFreeCstr(char * cstr);
 
 /**
  * Find the next token in text stream.

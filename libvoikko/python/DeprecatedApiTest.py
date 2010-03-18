@@ -22,7 +22,9 @@
 import unittest
 from libvoikko import Voikko
 from ctypes import c_int
+from ctypes import c_char
 from ctypes import c_char_p
+from ctypes import string_at
 from ctypes import POINTER
 
 voikko = Voikko()
@@ -34,6 +36,9 @@ voikko.lib.voikko_spell_cstr.restype = c_int
 
 voikko.lib.voikko_suggest_cstr.argtypes = [c_int, c_char_p]
 voikko.lib.voikko_suggest_cstr.restype = POINTER(c_char_p)
+
+voikko.lib.voikko_hyphenate_cstr.argtypes = [c_int, c_char_p]
+voikko.lib.voikko_hyphenate_cstr.restype = POINTER(c_char)
 
 class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
@@ -69,6 +74,12 @@ class DeprecatedApiTest(unittest.TestCase):
 		
 		voikko.lib.voikko_free_suggest_cstr(cSuggestions)
 		self.failUnless(u"koira" in pSuggestions)
+	
+	def test_hyphenate_cstr_works(self):
+		cHyphenationPattern = voikko.lib.voikko_hyphenate_cstr(voikko.handle, u"koira".encode("UTF-8"))
+		hyphenationPattern = string_at(cHyphenationPattern)
+		voikko.lib.voikko_free_hyphenate(cHyphenationPattern)
+		self.assertEqual(u"   - ", hyphenationPattern)
 
 if __name__ == "__main__":
 	unittest.main()

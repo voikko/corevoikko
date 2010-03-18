@@ -108,6 +108,22 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(1, len(suggs))
 		self.assertEqual(u"koira", suggs[0])
 	
+	def testHyphenationPattern(self):
+		pattern = self.voikko.getHyphenationPattern(u"kissa")
+		self.assertEqual("   - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"määrä")
+		self.assertEqual("   - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"kuorma-auto")
+		self.assertEqual("    - =  - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"vaa'an")
+		self.assertEqual("   =  ", pattern)
+	
+	def testHyphenate(self):
+		self.assertEqual(u"kis-sa", self.voikko.hyphenate(u"kissa"))
+		self.assertEqual(u"mää-rä", self.voikko.hyphenate(u"määrä"))
+		self.assertEqual(u"kuor-ma-au-to", self.voikko.hyphenate(u"kuorma-auto"))
+		self.assertEqual(u"vaa-an", self.voikko.hyphenate(u"vaa'an"))
+	
 	def testSetIgnoreDot(self):
 		self.voikko.setIgnoreDot(False)
 		self.failIf(self.voikko.spell(u"kissa."))
@@ -183,19 +199,19 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setAcceptBulletedListsInGc(True)
 		self.assertEqual(0, len(self.voikko.grammarErrors(u"kissa")))
 	
-	def TODOtestSetNoUglyHyphenation(self):
+	def testSetNoUglyHyphenation(self):
 		self.voikko.setNoUglyHyphenation(False)
 		self.assertEqual(u"i-va", self.voikko.hyphenate(u"iva"))
 		self.voikko.setNoUglyHyphenation(True)
 		self.assertEqual(u"iva", self.voikko.hyphenate(u"iva"))
 	
-	def TODOtestSetHyphenateUnknownWordsWorks(self):
+	def testSetHyphenateUnknownWordsWorks(self):
 		self.voikko.setHyphenateUnknownWords(False)
 		self.assertEqual(u"kirjutepo", self.voikko.hyphenate(u"kirjutepo"))
 		self.voikko.setHyphenateUnknownWords(True)
 		self.assertEqual(u"kir-ju-te-po", self.voikko.hyphenate(u"kirjutepo"))
 	
-	def TODOtestSetMinHyphenatedWordLength(self):
+	def testSetMinHyphenatedWordLength(self):
 		self.voikko.setMinHyphenatedWordLength(6)
 		self.assertEqual(u"koira", self.voikko.hyphenate(u"koira"))
 		self.voikko.setMinHyphenatedWordLength(2)
