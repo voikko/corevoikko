@@ -1005,6 +1005,8 @@ kiverästi
 koetteeksi
 koetteella
 koetteelle
+kohtsillään
+kohtsiltään
 korjussa
 kulkeilla
 kulkeille
@@ -1517,6 +1519,7 @@ sydäninsuffisienssi # insuffisienssi
 synkopointi # synkopoida
 sämpläys # sämplätä
 söpöily # söpöillä
+taksisuhari # suhari
 tangat # tanga
 tangeeraus # tangeerata
 tangeerauspiste # tangeerata
