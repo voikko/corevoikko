@@ -484,6 +484,9 @@ metsästäjämäinen
 !metsastajamainen
 katkeruuksittain # myös "kokonaisuuksittain"
 pamahduksittain
+bolivialaisittain
+!bolivialaisittäin
+bolivialaisittainkin
 kissaton
 !kissatoin
 uivaa

@@ -756,7 +756,6 @@
 [perusmuoto: "pitkin", alku: "pitkin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pitkälti", alku: "pitkälti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "pizzicato", alku: "pizzicato", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "pohjalaisittain", alku: "pohjalaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pohjempana", alku: "pohjem", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "pohjimpana", alku: "pohjim", luokka: seikkasana, jatko: <sivumpana>, äs: a];
 [perusmuoto: "pohjimmiltaan", alku: "pohjimmiltaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -861,7 +860,6 @@
 [perusmuoto: "sangen", alku: "sangen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "satamäärin", alku: "satamäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "sattumoisin", alku: "sattumoisin", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "savolaisittain", alku: "savolaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "seassa", alku: "sea", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
 [perusmuoto: "seassa", alku: "seka", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "seinempänä", alku: "seinem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
@@ -1150,7 +1148,6 @@
 [perusmuoto: "viljalti", alku: "viljalti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vinottain", alku: "vinottain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vinottain", alku: "vinoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "virolaisittain", alku: "virolaisittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "vitkaan", alku: "vitkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vittu", alku: "vitusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vuoksi", alku: "vuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

@@ -513,6 +513,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;
   if loppu in $oikea.jatko then result $res, accept; end;
+  if johdin_ittAin in $oikea.jatko then result $res, rules johdin_seikkasana_ittain; end;
   result $res, rules laatusanan_sijapääte_omistusliitteellä, johdin_nimisana_laatusanasta;
 end;
 
@@ -1559,6 +1560,15 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $index):
   end;
 end;
 
+combi_rule johdin_seikkasana_ittain($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = johdin_ittAin;
+  define $edellinen := $vasen.($index - 1);
+  ? vokaalisointu_oikein($edellinen, $oikea);
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  result $res, rules liitesana;
+  result $res, accept;
+end;
 
 combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @johdin_teonsanasta + <johdin_inen>;
