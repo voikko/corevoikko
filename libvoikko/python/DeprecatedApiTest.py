@@ -20,10 +20,13 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import unittest
+from libvoikko import Token
 from libvoikko import Voikko
+from ctypes import byref
 from ctypes import c_int
 from ctypes import c_char
 from ctypes import c_char_p
+from ctypes import c_size_t
 from ctypes import string_at
 from ctypes import POINTER
 
@@ -39,6 +42,9 @@ voikko.lib.voikko_suggest_cstr.restype = POINTER(c_char_p)
 
 voikko.lib.voikko_hyphenate_cstr.argtypes = [c_int, c_char_p]
 voikko.lib.voikko_hyphenate_cstr.restype = POINTER(c_char)
+
+voikko.lib.voikko_next_token_cstr.argtypes = [c_int, c_char_p, c_size_t, POINTER(c_size_t)]
+voikko.lib.voikko_next_token_cstr.restype = c_int
 
 class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
@@ -80,6 +86,14 @@ class DeprecatedApiTest(unittest.TestCase):
 		hyphenationPattern = string_at(cHyphenationPattern)
 		voikko.lib.voikko_free_hyphenate(cHyphenationPattern)
 		self.assertEqual(u"   - ", hyphenationPattern)
+	
+	def test_next_token_cstr_works(self):
+		tokenLen = c_size_t()
+		text = u"Kissa ja koira".encode("UTF-8")
+		tokenType = voikko.lib.voikko_next_token_cstr(voikko.handle,
+			            text, len(text), byref(tokenLen))
+		self.assertEqual(5, tokenLen.value)
+		self.assertEqual(Token.WORD, tokenType)
 
 if __name__ == "__main__":
 	unittest.main()
