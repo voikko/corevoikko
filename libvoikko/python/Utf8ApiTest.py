@@ -23,6 +23,7 @@ from ctypes import byref
 from ctypes import c_int
 from ctypes import c_char
 from ctypes import c_char_p
+from ctypes import c_size_t
 from ctypes import c_void_p
 from ctypes import string_at
 from ctypes import CDLL
@@ -65,6 +66,9 @@ class Utf8ApiTest(unittest.TestCase):
 		lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
 		lib.voikkoFreeCstr.restype = None
 		
+		lib.voikkoNextTokenCstr.argtypes = [c_void_p, c_char_p, c_size_t, POINTER(c_size_t)]
+		lib.voikkoNextTokenCstr.restype = c_int
+		
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
 		if error.value != None:
@@ -101,6 +105,14 @@ class Utf8ApiTest(unittest.TestCase):
 		hyphenationPattern = string_at(cHyphenationPattern)
 		lib.voikkoFreeCstr(cHyphenationPattern)
 		self.assertEqual(u"   - ", hyphenationPattern)
+	
+	def testNextTokenCstrWorks(self):
+		tokenLen = c_size_t()
+		text = u"Kissa ja koira".encode("UTF-8")
+		tokenType = lib.voikkoNextTokenCstr(handle,
+			            text, len(text), byref(tokenLen))
+		self.assertEqual(5, tokenLen.value)
+		self.assertEqual(1, tokenType)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)

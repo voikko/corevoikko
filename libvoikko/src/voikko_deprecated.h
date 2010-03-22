@@ -129,3 +129,9 @@ void voikko_free_hyphenate(char * hyphenate_result);
  */
 enum voikko_token_type voikko_next_token_ucs4(int handle, const wchar_t * text,
                        size_t textlen, size_t * tokenlen);
+
+/**
+ * See voikkoNextTokenCstr
+ */
+enum voikko_token_type voikko_next_token_cstr(int handle, const char * text,
+                       size_t textlen, size_t * tokenlen);

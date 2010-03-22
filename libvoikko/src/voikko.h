@@ -198,7 +198,7 @@ enum voikko_token_type voikkoNextTokenUcs4(VoikkoHandle * handle, const wchar_t 
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikko_next_token_cstr(int handle, const char * text,
+enum voikko_token_type voikkoNextTokenCstr(VoikkoHandle * handle, const char * text,
                        size_t textlen, size_t * tokenlen);
 
 /**

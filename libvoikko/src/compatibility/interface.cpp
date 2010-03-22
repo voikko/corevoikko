@@ -135,4 +135,9 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const
 	return voikkoNextTokenUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, tokenlen);
 }
 
+VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int /*handle*/, const char * text,
+		size_t textlen, size_t * tokenlen) {
+	return voikkoNextTokenCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, tokenlen);
+}
+
 } }
