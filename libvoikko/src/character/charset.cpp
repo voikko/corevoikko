@@ -136,8 +136,8 @@ const wchar_t * CONV_1TO1 =
 const size_t N_1TO2 = 5; /* Number of entries in this table */
 const wchar_t * CONV_1TO2 =
 	/* Letterlike Symbols --> Latin-1 Supplement / Basic Latin */
-	L"\u2103" L"°C"  /* U+2103 DEGREE CELSIUS <--> U+00B0 DEGREE SIGN + U+0043 LATIN CAPITAL LETTER C */
-	L"\u2109" L"°F"  /* U+2109 DEGREE FAHRENHEIT <--> U+00B0 DEGREE SIGN + U+0046 LATIN CAPITAL LETTER F */
+	L"\u2103" L"\u00B0C"  /* U+2103 DEGREE CELSIUS <--> U+00B0 DEGREE SIGN + U+0043 LATIN CAPITAL LETTER C */
+	L"\u2109" L"\u00B0F"  /* U+2109 DEGREE FAHRENHEIT <--> U+00B0 DEGREE SIGN + U+0046 LATIN CAPITAL LETTER F */
 	/* Alphabetic Presentation Forms --> Basic Latin */
 	L"\uFB00" L"ff"  /* LATIN SMALL LIGATURE FF <--> 2 X LATIN SMALL LETTER F */
 	L"\uFB01" L"fi"  /* LATIN SMALL LIGATURE FI <--> LATIN SMALL LETTER F + LATIN SMALL LETTER I */
