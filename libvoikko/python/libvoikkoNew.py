@@ -155,6 +155,13 @@ def _boolToInt(bool):
 		return 0
 
 class Voikko(object):
+	def __getLib():
+		if os.name == 'nt':
+			return CDLL("libvoikko-1.dll")
+		else:
+			return CDLL("libvoikko.so.1")
+	__getLib = staticmethod(__getLib)
+	
 	"""Represents an instance of Voikko. The instance has state, such as
 	settings related to spell checking and hyphenation, and methods for performing
 	various natural language analysis operations. One instance should not be
@@ -172,10 +179,7 @@ class Voikko(object):
 		   cacheSize Parameter that controls the size of in memory cache for
 		             spell checking results. 0 is the default size, 1 is twice as large
 		             as 0 etc. -1 disables the spell checking cache entirely."""
-		if os.name == 'nt':
-			self.__lib = CDLL("libvoikko-1.dll")
-		else:
-			self.__lib = CDLL("libvoikko.so.1")
+		self.__lib = Voikko.__getLib()
 		
 		self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
 		self.__lib.voikkoInit.restype = c_void_p
@@ -239,6 +243,34 @@ class Voikko(object):
 				def __getattr__(obj, name):
 					raise VoikkoException("Attempt to use Voikko instance after terminate() was called")
 			self.__lib = DummyLib()
+	
+	def listDicts(path = None):
+		"""Return a list of Dictionary objects representing the available
+		dictionary variants. If path is specified, it will be searched first
+		before looking from the standard locations.
+		"""
+		lib = Voikko.__getLib()
+		lib.voikko_list_dicts.argtypes = [c_char_p]
+		lib.voikko_list_dicts.restype = POINTER(c_void_p)
+		lib.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
+		lib.voikko_free_dicts.restype = None
+		lib.voikko_dict_variant.argtypes = [c_void_p]
+		lib.voikko_dict_variant.restype = c_char_p
+		lib.voikko_dict_description.argtypes = [c_void_p]
+		lib.voikko_dict_description.restype = c_char_p
+		
+		cDicts = lib.voikko_list_dicts(path)
+		dicts = []
+		i = 0
+		while bool(cDicts[i]):
+			cDict = cDicts[i]
+			variant = unicode(lib.voikko_dict_variant(cDict), "ASCII")
+			description = unicode(lib.voikko_dict_description(cDict), "UTF-8")
+			dicts.append(Dictionary(variant, description))
+			i = i + 1
+		lib.voikko_free_dicts(cDicts)
+		return dicts
+	listDicts = staticmethod(listDicts)
 	
 	def spell(self, word):
 		"""Check the spelling of given word. Return true if the word is correct,

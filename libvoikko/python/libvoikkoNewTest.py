@@ -63,6 +63,19 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertNotEqual(hash(d1), hash(d3))
 		self.assertEqual(hash(d1), hash(d4))
 	
+	def testListDicts(self):
+		dicts = Voikko.listDicts()
+		self.failUnless(len(dicts) > 0)
+		standard = dicts[0]
+		self.assertEqual(u"standard", standard.variant,
+		     u"Standard dictionary must be the default in test environment.")
+		self.assertEqual(u"Voikon perussanasto", standard.description)
+	
+	def testListDictsWithPathWorks(self):
+		# TODO: better test
+		dicts = self.voikko.listDicts("/path/to/nowhere")
+		self.failUnless(len(dicts) > 0)
+	
 	def testInitWithCorrectDictWorks(self):
 		self.voikko.terminate()
 		self.voikko = Voikko(variant = "standard")
