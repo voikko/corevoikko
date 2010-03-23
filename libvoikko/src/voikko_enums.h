@@ -33,8 +33,8 @@ enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESP
  * Sentence start types
  * SENTENCE_NONE: End of text reached or error.
  * SENTENCE_NO_START: This is not a start of a new sentence.
- * SENTENCE_POSSIBLE: This may be a start of a new sentence.
  * SENTENCE_PROBABLE: This is a probable start of a new sentence.
+ * SENTENCE_POSSIBLE: This may be a start of a new sentence.
  */
 enum voikko_sentence_type {SENTENCE_NONE, SENTENCE_NO_START, SENTENCE_PROBABLE, SENTENCE_POSSIBLE};
 

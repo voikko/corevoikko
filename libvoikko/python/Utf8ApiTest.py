@@ -69,6 +69,9 @@ class Utf8ApiTest(unittest.TestCase):
 		lib.voikkoNextTokenCstr.argtypes = [c_void_p, c_char_p, c_size_t, POINTER(c_size_t)]
 		lib.voikkoNextTokenCstr.restype = c_int
 		
+		lib.voikkoNextSentenceStartCstr.argtypes = [c_void_p, c_char_p, c_size_t, POINTER(c_size_t)]
+		lib.voikkoNextSentenceStartCstr.restype = c_int
+		
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
 		if error.value != None:
@@ -113,6 +116,14 @@ class Utf8ApiTest(unittest.TestCase):
 			            text, len(text), byref(tokenLen))
 		self.assertEqual(5, tokenLen.value)
 		self.assertEqual(1, tokenType)
+	
+	def testNextSentenceStartCstrWorks(self):
+		sentenceLen = c_size_t()
+		text = u"Kissa ei ole koira. Koira ei ole kissa.".encode("UTF-8")
+		sentenceType = lib.voikkoNextSentenceStartCstr(handle,
+			            text, len(text), byref(sentenceLen))
+		self.assertEqual(20, sentenceLen.value)
+		self.assertEqual(2, sentenceType) # SENTENCE_PROBABLE
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)

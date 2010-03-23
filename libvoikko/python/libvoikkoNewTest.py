@@ -128,6 +128,14 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(Token.WORD, tokenJa.tokenType)
 		self.assertEqual(u"ja", tokenJa.tokenText)
 	
+	def testSentences(self):
+		sentences = self.voikko.sentences(u"Kissa ei ole koira. Koira ei ole kissa.")
+		self.assertEqual(2, len(sentences))
+		self.assertEqual(u"Kissa ei ole koira. ", sentences[0].sentenceText)
+		self.assertEqual(Sentence.PROBABLE, sentences[0].nextStartType)
+		self.assertEqual(u"Koira ei ole kissa.", sentences[1].sentenceText)
+		self.assertEqual(Sentence.NONE, sentences[1].nextStartType)
+	
 	def testHyphenationPattern(self):
 		pattern = self.voikko.getHyphenationPattern(u"kissa")
 		self.assertEqual("   - ", pattern)

@@ -99,6 +99,23 @@ class Token:
 		return (u"<" + self.tokenText + u"," + \
 		       Token._TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
 
+class Sentence:
+	"""Represents a sentence in natural language text."""
+	NONE = 0
+	NO_START = 1
+	PROBABLE = 2
+	POSSIBLE = 3
+	
+	_TYPE_NAMES = ["NONE", "NO_START", "PROBABLE", "POSSIBLE"]
+	
+	def __init__(self, sentenceText, nextStartType):
+		self.sentenceText = sentenceText
+		self.nextStartType = nextStartType
+	
+	def __repr__(self):
+		return (u"<" + self.sentenceText + u"," + \
+		       Sentence._TYPE_NAMES[self.nextStartType] + u">").encode("UTF-8")
+
 class SuggestionStrategy:
 	"""Strategies for generating suggestions for incorrectly spelled words."""
 	TYPO = 0
@@ -205,6 +222,9 @@ class Voikko(object):
 		self.__lib.voikkoNextTokenUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t,
 		                                           POINTER(c_size_t)]
 		self.__lib.voikkoNextTokenUcs4.restype = c_int
+		
+		self.__lib.voikkoNextSentenceStartUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t, POINTER(c_size_t)]
+		self.__lib.voikkoNextSentenceStartUcs4.restype = c_int
 		
 		self.__lib.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
 		self.__lib.voikkoSetBooleanOption.restype = c_int
@@ -319,6 +339,24 @@ class Voikko(object):
 			result.append(Token(tokenText, tokenType))
 			position = position + tokenLen.value
 			textLen = textLen - tokenLen.value
+		return result
+	
+	def sentences(self, text):
+		"""Split the given natural language text into a list of Sentence objects."""
+		uniText = unicode(text)
+		result = []
+		textLen = len(uniText)
+		sentenceLen = c_size_t()
+		position = 0
+		while textLen > 0:
+			sentenceType = self.__lib.voikkoNextSentenceStartUcs4(self.__handle,
+			            uniText[position:], textLen, byref(sentenceLen))
+			sentenceText = uniText[position:position+sentenceLen.value]
+			result.append(Sentence(sentenceText, sentenceType))
+			if sentenceType == Sentence.NONE:
+				break
+			position = position + sentenceLen.value
+			textLen = textLen - sentenceLen.value
 		return result
 	
 	def getHyphenationPattern(self, word):

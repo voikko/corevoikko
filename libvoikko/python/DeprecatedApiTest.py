@@ -110,7 +110,7 @@ class DeprecatedApiTest(unittest.TestCase):
 		self.assertEqual(20, sentenceLen.value)
 		self.assertEqual(2, sentenceType) # SENTENCE_PROBABLE
 	
-	def test_next_sentece_start_ucs4_works(self):
+	def test_next_sentence_start_ucs4_works(self):
 		sentenceLen = c_size_t()
 		text = u"Kissa ei ole koira. Koira ei ole kissa."
 		sentenceType = voikko.lib.voikko_next_sentence_start_ucs4(voikko.handle,

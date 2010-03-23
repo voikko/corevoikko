@@ -140,4 +140,14 @@ VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int /*handle*/, const
 	return voikkoNextTokenCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, tokenlen);
 }
 
+VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int /*handle*/,
+		const wchar_t * text, size_t textlen, size_t * sentencelen) {
+	return voikkoNextSentenceStartUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, sentencelen);
+}
+
+VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int /*handle*/,
+                          const char * text, size_t textlen, size_t * sentencelen) {
+	return voikkoNextSentenceStartCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, sentencelen);
+}
+
 } }

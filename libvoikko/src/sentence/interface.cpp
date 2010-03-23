@@ -23,12 +23,12 @@
 
 namespace libvoikko { namespace sentence {
 
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int /*handle*/,
+VOIKKOEXPORT enum voikko_sentence_type voikkoNextSentenceStartUcs4(voikko_options_t * options,
                           const wchar_t * text, size_t textlen, size_t * sentencelen) {
-	return Sentence::next(&voikko_options, text, textlen, sentencelen);
+	return Sentence::next(options, text, textlen, sentencelen);
 }
 
-VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle, const char * text,
+VOIKKOEXPORT enum voikko_sentence_type voikkoNextSentenceStartCstr(voikko_options_t * options, const char * text,
                           size_t textlen, size_t * sentencelen) {
 	enum voikko_sentence_type result;
 	if (text == 0) {
@@ -38,7 +38,7 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int handl
 	if (textUcs4 == 0) {
 		return SENTENCE_NONE;
 	}
-	result = voikko_next_sentence_start_ucs4(handle, textUcs4, wcslen(textUcs4),
+	result = voikkoNextSentenceStartUcs4(options, textUcs4, wcslen(textUcs4),
 	                                         sentencelen);
 	delete[] textUcs4;
 	return result;

@@ -209,7 +209,7 @@ enum voikko_token_type voikkoNextTokenCstr(VoikkoHandle * handle, const char * t
  * @param sentencelen (out) Offset of the character that starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
-enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
+enum voikko_sentence_type voikkoNextSentenceStartUcs4(VoikkoHandle * handle,
                           const wchar_t * text, size_t textlen, size_t * sentencelen);
 
 /**
@@ -221,7 +221,7 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
  *        starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
-enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle,
+enum voikko_sentence_type voikkoNextSentenceStartCstr(VoikkoHandle * handle,
                           const char * text, size_t textlen, size_t * sentencelen);
 
 /**
