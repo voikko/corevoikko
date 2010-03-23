@@ -27,6 +27,7 @@ from ctypes import c_int
 from ctypes import c_char
 from ctypes import c_char_p
 from ctypes import c_size_t
+from ctypes import c_wchar_p
 from ctypes import string_at
 from ctypes import POINTER
 
@@ -45,6 +46,12 @@ voikko.lib.voikko_hyphenate_cstr.restype = POINTER(c_char)
 
 voikko.lib.voikko_next_token_cstr.argtypes = [c_int, c_char_p, c_size_t, POINTER(c_size_t)]
 voikko.lib.voikko_next_token_cstr.restype = c_int
+
+voikko.lib.voikko_next_sentence_start_ucs4.argtypes = [c_int, c_wchar_p, c_size_t, POINTER(c_size_t)]
+voikko.lib.voikko_next_sentence_start_ucs4.restype = c_int
+
+voikko.lib.voikko_next_sentence_start_cstr.argtypes = [c_int, c_char_p, c_size_t, POINTER(c_size_t)]
+voikko.lib.voikko_next_sentence_start_cstr.restype = c_int
 
 class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
@@ -94,6 +101,22 @@ class DeprecatedApiTest(unittest.TestCase):
 			            text, len(text), byref(tokenLen))
 		self.assertEqual(5, tokenLen.value)
 		self.assertEqual(Token.WORD, tokenType)
+	
+	def test_next_sentece_start_cstr_works(self):
+		sentenceLen = c_size_t()
+		text = u"Kissa ei ole koira. Koira ei ole kissa.".encode("UTF-8")
+		sentenceType = voikko.lib.voikko_next_sentence_start_cstr(voikko.handle,
+			            text, len(text), byref(sentenceLen))
+		self.assertEqual(20, sentenceLen.value)
+		self.assertEqual(2, sentenceType) # SENTENCE_PROBABLE
+	
+	def test_next_sentece_start_ucs4_works(self):
+		sentenceLen = c_size_t()
+		text = u"Kissa ei ole koira. Koira ei ole kissa."
+		sentenceType = voikko.lib.voikko_next_sentence_start_ucs4(voikko.handle,
+			            text, len(text), byref(sentenceLen))
+		self.assertEqual(20, sentenceLen.value)
+		self.assertEqual(2, sentenceType) # SENTENCE_PROBABLE
 
 if __name__ == "__main__":
 	unittest.main()
