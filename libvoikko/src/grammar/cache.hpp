@@ -27,7 +27,7 @@ namespace libvoikko {
  * Returns a pointer to a cached grammar error or null, if there are no cached
  * results for given paragraph.
  */
-const voikko_grammar_error * gc_error_from_cache(int handle, const wchar_t * text,
+const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors);
 
 /**
@@ -39,7 +39,7 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 /**
  * Appends an entry to the grammar checker error cache.
  */
-void gc_cache_append_error(int /*handle*/, grammar::CacheEntry * new_entry);
+void gc_cache_append_error(voikko_options_t * voikkoOptions, grammar::CacheEntry * new_entry);
 
 
 }

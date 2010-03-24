@@ -71,10 +71,10 @@ static Sentence * gc_analyze_sentence(voikko_options_t * voikkoOptions,
 	bool next_word_is_possible_sentence_start = false;
 	for (int i = 0; i < Sentence::MAX_TOKENS_IN_SENTENCE; i++) {
 		enum voikko_token_type tt;
-		int ignore_dot_saved = voikko_options.ignore_dot;
-		voikko_options.ignore_dot = 0;
+		int ignore_dot_saved = voikkoOptions->ignore_dot;
+		voikkoOptions->ignore_dot = 0;
 		tt = tokenizer::Tokenizer::nextToken(voikkoOptions, pos, remaining, &tokenlen);
-		voikko_options.ignore_dot = ignore_dot_saved;
+		voikkoOptions->ignore_dot = ignore_dot_saved;
 		if (tt == TOKEN_NONE) return s;
 
 		s->tokens[i].type = tt;

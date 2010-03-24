@@ -29,60 +29,50 @@ void init_gc_error(voikko_grammar_error * gc_error) {
 	memset(gc_error, 0, sizeof(gc_error));
 }
 
-VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text_ucs4,
+VOIKKOEXPORT voikko_grammar_error * voikkoNextGrammarErrorUcs4(voikko_options_t * options, const wchar_t * text_ucs4,
                      size_t wtextlen, size_t startpos, int skiperrors) {
-	voikko_grammar_error e;
-	init_gc_error(&e);
-	if (text_ucs4 == 0 || wtextlen == 0) return e;
-	
-	const voikko_grammar_error * c_error =
-	    gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
-	if (!c_error) {
-		gc_paragraph_to_cache(&voikko_options, text_ucs4, wtextlen);
-		c_error = gc_error_from_cache(handle, text_ucs4, startpos, skiperrors);
+	if (text_ucs4 == 0 || wtextlen == 0) {
+		return 0;
 	}
 	
-	if (!c_error) return e;
+	const voikko_grammar_error * c_error =
+	    gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
+	if (!c_error) {
+		gc_paragraph_to_cache(options, text_ucs4, wtextlen);
+		c_error = gc_error_from_cache(options, text_ucs4, startpos, skiperrors);
+	}
+	
+	if (!c_error) {
+		return 0;
+	}
 	
 	// Return a deep copy of cached error
-	memcpy(&e, c_error, sizeof(voikko_grammar_error));
-	if (!c_error->suggestions) return e;
+	voikko_grammar_error * e = new voikko_grammar_error();
+	memcpy(e, c_error, sizeof(voikko_grammar_error));
+	if (!c_error->suggestions) {
+		return e;
+	}
 	
+	// FIXME: this should go to the compatibility interface.
 	// Use C allocation for suggestions to maintain compatibility with some
 	// broken applications before libvoikko 1.5.
 	int sugg_count = 0;
 	for (char ** s = c_error->suggestions; *s; s++) {
 		sugg_count++;
 	}
-	e.suggestions = (char **) malloc((sugg_count + 1) * sizeof(char *));
-	if (!e.suggestions) return e;
+	e->suggestions = (char **) malloc((sugg_count + 1) * sizeof(char *));
+	if (!e->suggestions) {
+		return e;
+	}
 	for (int i = 0; i < sugg_count; i++) {
-		e.suggestions[i] = (char *) malloc(
+		e->suggestions[i] = (char *) malloc(
 		    (strlen(c_error->suggestions[i]) + 1) * sizeof(char));
-		if (!e.suggestions[i]) return e;
-		strcpy(e.suggestions[i], c_error->suggestions[i]);
+		if (!e->suggestions[i]) {
+			return e;
+		}
+		strcpy(e->suggestions[i], c_error->suggestions[i]);
 	}
-	e.suggestions[sugg_count] = 0;
-	
-	return e;
-}
-
-VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                     size_t textlen, size_t startpos, int skiperrors) {
-	if (text == 0 || textlen == 0) {
-		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
-	}
-	
-	wchar_t * text_ucs4 =
-	    utils::StringUtils::ucs4FromUtf8(text, textlen);
-	if (text_ucs4 == 0) {
-		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
-	}
-	
-	size_t wtextlen = wcslen(text_ucs4);
-	voikko_grammar_error e = voikko_next_grammar_error_ucs4(handle, text_ucs4,
-	                         wtextlen, startpos, skiperrors);
-	delete[] text_ucs4;
+	e->suggestions[sugg_count] = 0;
 	
 	return e;
 }

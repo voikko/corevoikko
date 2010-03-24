@@ -20,6 +20,7 @@
 #define VOIKKO_AUTOCORRECT_AUTOCORRECT
 
 #include "grammar/Sentence.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace autocorrect {
 
@@ -28,7 +29,7 @@ class AutoCorrect {
 		/**
 		 * Adds GC errors from the static list of incorrect words or word combinations.
 		 */
-		static void autoCorrect(int handle, const libvoikko::grammar::Sentence * sentence);
+		static void autoCorrect(voikko_options_t * options, const libvoikko::grammar::Sentence * sentence);
 	
 	private:
 		/**

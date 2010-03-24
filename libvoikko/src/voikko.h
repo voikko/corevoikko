@@ -225,6 +225,11 @@ enum voikko_sentence_type voikkoNextSentenceStartCstr(VoikkoHandle * handle,
                           const char * text, size_t textlen, size_t * sentencelen);
 
 /**
+ * A type representing a new style grammar error.
+ */
+struct voikkoGrammarError;
+
+/**
  * Find next grammar error.
  * @param handle Voikko instance
  * @param text Pointer to the start of a text buffer. This should usually
@@ -236,7 +241,7 @@ enum voikko_sentence_type voikkoNextSentenceStartCstr(VoikkoHandle * handle,
  * @param skiperrors Skip this number of errors from the start of the text.
  * @return Grammar error description.
  */
-voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text,
+voikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * handle, const wchar_t * text,
                      size_t textlen, size_t startpos, int skiperrors);
 
 /**

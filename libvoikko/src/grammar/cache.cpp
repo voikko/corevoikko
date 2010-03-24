@@ -33,11 +33,15 @@ namespace libvoikko {
 // This will be initialized to zero meaning "no errors"
 static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 
-const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t * text,
+const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors) {
-	if (!voikko_options.gc_cache.paragraph) return 0;	
-	if (wcscmp(voikko_options.gc_cache.paragraph, text) != 0) return 0;
-	CacheEntry * e = voikko_options.gc_cache.firstError;
+	if (!voikkoOptions->gc_cache.paragraph) {
+		return 0;
+	}
+	if (wcscmp(voikkoOptions->gc_cache.paragraph, text) != 0) {
+		return 0;
+	}
+	CacheEntry * e = voikkoOptions->gc_cache.firstError;
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
@@ -52,12 +56,16 @@ const voikko_grammar_error * gc_error_from_cache(int /*handle*/, const wchar_t *
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(voikkoOptions);
-	voikko_options.gc_cache.paragraph = new wchar_t[textlen + 1];
-	if (!voikko_options.gc_cache.paragraph) return;
-	memcpy(voikko_options.gc_cache.paragraph, text, textlen * sizeof(wchar_t));
-	voikko_options.gc_cache.paragraph[textlen] = L'\0';
+	voikkoOptions->gc_cache.paragraph = new wchar_t[textlen + 1];
+	if (!voikkoOptions->gc_cache.paragraph) {
+		return;
+	}
+	memcpy(voikkoOptions->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
+	voikkoOptions->gc_cache.paragraph[textlen] = L'\0';
 	Paragraph * para = gc_analyze_paragraph(voikkoOptions, text, textlen);
-	if (!para) return;
+	if (!para) {
+		return;
+	}
 	
 	// If paragraph is a single sentence without any whitespace, do not try to
 	// do grammar checking on it. This could be an URL or something equally
@@ -83,25 +91,25 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	}
 	
 	for (size_t i = 0; i < para->sentenceCount; i++) {
-		AutoCorrect::autoCorrect(1, para->sentences[i]);
-		gc_local_punctuation(1, para->sentences[i]);
-		gc_punctuation_of_quotations(1, para->sentences[i]);
-		gc_character_case(1, para->sentences[i], i == 0);
-		gc_repeating_words(1, para->sentences[i]);
+		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
+		gc_local_punctuation(voikkoOptions, para->sentences[i]);
+		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
+		gc_character_case(voikkoOptions, para->sentences[i], i == 0);
+		gc_repeating_words(voikkoOptions, para->sentences[i]);
 	}
-	gc_end_punctuation(1, para);
+	gc_end_punctuation(voikkoOptions, para);
 	delete para;
 }
 
-void gc_cache_append_error(int /*handle*/, CacheEntry * new_entry) {
-	CacheEntry * entry = voikko_options.gc_cache.firstError;
+void gc_cache_append_error(voikko_options_t * voikkoOptions, CacheEntry * new_entry) {
+	CacheEntry * entry = voikkoOptions->gc_cache.firstError;
 	if (!entry) {
-		voikko_options.gc_cache.firstError = new_entry;
+		voikkoOptions->gc_cache.firstError = new_entry;
 		return;
 	}
 	if (entry->error.startpos > new_entry->error.startpos) {
-		new_entry->nextError = voikko_options.gc_cache.firstError;
-		voikko_options.gc_cache.firstError = new_entry;
+		new_entry->nextError = voikkoOptions->gc_cache.firstError;
+		voikkoOptions->gc_cache.firstError = new_entry;
 		return;
 	}
 	while (1) {

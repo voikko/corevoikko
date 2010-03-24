@@ -147,3 +147,9 @@ enum voikko_sentence_type voikko_next_sentence_start_ucs4(int handle,
  */
 enum voikko_sentence_type voikko_next_sentence_start_cstr(int handle,
                           const char * text, size_t textlen, size_t * sentencelen);
+
+/**
+ * See voikkoNextGrammarErrorUcs4
+ */
+voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * text,
+                     size_t textlen, size_t startpos, int skiperrors);

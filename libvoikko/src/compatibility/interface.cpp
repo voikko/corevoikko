@@ -150,4 +150,44 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int /*han
 	return voikkoNextSentenceStartCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, sentencelen);
 }
 
+VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/, const wchar_t * text,
+		 size_t textlen, size_t startpos, int skiperrors) {
+	voikko_grammar_error gError;
+	voikko_grammar_error * error = reinterpret_cast<voikko_grammar_error *>(voikkoNextGrammarErrorUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, startpos, skiperrors));
+	if (error) {
+		// TODO: pick the attributes separately, do not assume that voikko_frammar_error == VoikkoGrammarError
+		gError = *error;
+		// TODO: delete using public API
+		delete error;
+	} else {
+		gError.errorlen = 0;
+		gError.error_code = 0;
+		gError.error_description = 0;
+		gError.error_level = 0;
+		gError.startpos = 0;
+		gError.suggestions = 0;
+	}
+	return gError;
+}
+
+VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
+                     size_t textlen, size_t startpos, int skiperrors) {
+	if (text == 0 || textlen == 0) {
+		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
+	}
+	
+	wchar_t * text_ucs4 =
+	    utils::StringUtils::ucs4FromUtf8(text, textlen);
+	if (text_ucs4 == 0) {
+		return voikko_next_grammar_error_ucs4(handle, 0, 0, 0, 0);
+	}
+	
+	size_t wtextlen = wcslen(text_ucs4);
+	voikko_grammar_error e = voikko_next_grammar_error_ucs4(handle, text_ucs4,
+	                         wtextlen, startpos, skiperrors);
+	delete[] text_ucs4;
+	
+	return e;
+}
+
 } }

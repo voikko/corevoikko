@@ -27,27 +27,27 @@ namespace libvoikko {
  * GC errors due to wrong context independent use of punctuation or whitespace
  * within a sentence.
  */
-void gc_local_punctuation(int handle, const grammar::Sentence * sentence);
+void gc_local_punctuation(voikko_options_t * options, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to wrong punctuation in quotations.
  */
-void gc_punctuation_of_quotations(int handle, const grammar::Sentence * sentence);
+void gc_punctuation_of_quotations(voikko_options_t * options, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to incorrect character case
  */
-void gc_character_case(int handle, const grammar::Sentence * sentence, bool isFirstInParagraph);
+void gc_character_case(voikko_options_t * options, const grammar::Sentence * sentence, bool isFirstInParagraph);
 
 /**
  * GC errors due to word repetition
  */
-void gc_repeating_words(int handle, const grammar::Sentence * sentence);
+void gc_repeating_words(voikko_options_t * options, const grammar::Sentence * sentence);
 
 /**
  * GC errors due to missing punctuation at the end of paragraph
  */
-void gc_end_punctuation(int handle, const grammar::Paragraph * paragraph);
+void gc_end_punctuation(voikko_options_t * options, const grammar::Paragraph * paragraph);
 
 }
 

@@ -55,7 +55,7 @@ size_t AutoCorrect::traverse(size_t initial, const wchar_t * str, size_t strlen)
 	return current;
 }
 
-void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * sentence) {
+void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::grammar::Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) {
@@ -77,7 +77,7 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 			e->error.errorlen = sentence->tokens[i].tokenlen;
 			e->error.suggestions[0] = StringUtils::utf8FromUcs4(
 			        REPLACEMENTS[NODES[trieNode].replacementIndex]);
-			gc_cache_append_error(handle, e);
+			gc_cache_append_error(options, e);
 		}
 		
 		// Is there a second word (in the sentence and in trie)?
@@ -110,7 +110,7 @@ void AutoCorrect::autoCorrect(int handle, const libvoikko::grammar::Sentence * s
 			                    - e->error.startpos;
 			e->error.suggestions[0] = StringUtils::utf8FromUcs4(
 			        REPLACEMENTS[NODES[trieNode].replacementIndex]);
-			gc_cache_append_error(handle, e);
+			gc_cache_append_error(options, e);
 		}
 	}
 }
