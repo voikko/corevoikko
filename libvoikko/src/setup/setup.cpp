@@ -217,7 +217,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 
 VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 	handle->hyphenator->terminate();
-	delete voikko_options.hyphenator;
+	delete handle->hyphenator;
 	handle->hyphenator = 0;
 	delete handle->suggestionGenerator;
 	handle->suggestionGenerator = 0;
