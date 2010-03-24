@@ -58,7 +58,8 @@ libvoikko_la_SOURCES = \
     tokenizer/Tokenizer.cpp \
     sentence/interface.cpp \
     sentence/Sentence.cpp \
-    grammar/grammar.cpp grammar/cache.cpp grammar/checks.cpp \
+    grammar/interface.cpp \
+    grammar/cache.cpp grammar/checks.cpp \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \

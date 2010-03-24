@@ -136,7 +136,7 @@ src/autocorrect/TrieNode.hpp
 src/autocorrect/data.hpp
 src/autocorrect/AutoCorrect.hpp
 src/autocorrect/AutoCorrect.cpp
-src/grammar/grammar.cpp
+src/grammar/interface.cpp
 src/grammar/cache.cpp
 src/grammar/cache.hpp
 src/grammar/checks.cpp
