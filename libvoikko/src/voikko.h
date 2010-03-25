@@ -252,6 +252,12 @@ VoikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * handle, const wch
 int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error);
 
 /**
+ * Free the memory reserved for a grammar error, including suggestions for corrections.
+ * @param error The grammar error
+ */
+void voikkoFreeGrammarError(VoikkoGrammarError * error);
+
+/**
  * Find next grammar error.
  * @param handle Voikko instance
  * @param text Pointer to the start of a text buffer. This should usually

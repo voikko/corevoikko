@@ -55,23 +55,13 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 		return e;
 	}
 	
-	// FIXME: this should go to the compatibility interface.
-	// Use C allocation for suggestions to maintain compatibility with some
-	// broken applications before libvoikko 1.5.
 	int sugg_count = 0;
 	for (char ** s = c_error->suggestions; *s; s++) {
 		sugg_count++;
 	}
-	e->suggestions = (char **) malloc((sugg_count + 1) * sizeof(char *));
-	if (!e->suggestions) {
-		return e;
-	}
+	e->suggestions = new char*[sugg_count + 1];
 	for (int i = 0; i < sugg_count; i++) {
-		e->suggestions[i] = (char *) malloc(
-		    (strlen(c_error->suggestions[i]) + 1) * sizeof(char));
-		if (!e->suggestions[i]) {
-			return e;
-		}
+		e->suggestions[i] = new char[strlen(c_error->suggestions[i]) + 1];
 		strcpy(e->suggestions[i], c_error->suggestions[i]);
 	}
 	e->suggestions[sugg_count] = 0;
@@ -81,6 +71,18 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 
 VOIKKOEXPORT int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error) {
 	return error->error_code;
+}
+
+VOIKKOEXPORT void voikkoFreeGrammarError(VoikkoGrammarError * error) {
+	if (error) {
+		if (error->suggestions) {
+			for (char ** suggestion = error->suggestions; *suggestion; ++suggestion) {
+				delete[] *suggestion;
+			}
+			delete[] error->suggestions;
+		}
+		delete error;
+	}
 }
 
 }
