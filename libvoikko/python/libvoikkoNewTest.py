@@ -121,6 +121,30 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(1, len(suggs))
 		self.assertEqual(u"koira", suggs[0])
 	
+	def testGrammarErrorsAndExplanation(self):
+		errors = self.voikko.grammarErrors(u"Minä olen joten kuten kaunis.")
+		self.assertEqual(1, len(errors))
+		error = errors[0]
+		self.assertEqual(10, error.startPos)
+		self.assertEqual(11, error.errorLen)
+		self.assertEqual([u"jotenkuten"], error.suggestions)
+		code = error.errorCode
+		errorFi = self.voikko.grammarErrorExplanation(code, "fi")
+		self.assertEqual(u"Virheellinen kirjoitusasu", errorFi)
+		errorEn = self.voikko.grammarErrorExplanation(code, "en")
+		self.assertEqual(u"Incorrect spelling of word(s)", errorEn)
+	
+	def testNoGrammarErrorsInEmptyParagraph(self):
+		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen täi.")
+		self.assertEqual(0, len(errors))
+	
+	def testGrammarErrorOffsetsInMultipleParagraphs(self):
+		errors = self.voikko.grammarErrors(u"Olen täi.\n\nOlen joten kuten.")
+		self.assertEqual(1, len(errors))
+		error = errors[0]
+		self.assertEqual(16, error.startPos)
+		self.assertEqual(11, error.errorLen)
+	
 	def testTokens(self):
 		tokenList = self.voikko.tokens(u"kissa ja koira")
 		self.assertEqual(5, len(tokenList))
@@ -209,19 +233,19 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.setAcceptMissingHyphens(True)
 		self.failUnless(self.voikko.spell("sosiaali"))
 	
-	def TODOtestSetAcceptTitlesInGc(self):
+	def testSetAcceptTitlesInGc(self):
 		self.voikko.setAcceptTitlesInGc(False)
 		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on eläin")))
 		self.voikko.setAcceptTitlesInGc(True)
 		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on eläin")))
 	
-	def TODOtestSetAcceptUnfinishedParagraphsInGc(self):
+	def testSetAcceptUnfinishedParagraphsInGc(self):
 		self.voikko.setAcceptUnfinishedParagraphsInGc(False)
 		self.assertEqual(1, len(self.voikko.grammarErrors(u"Kissa on ")))
 		self.voikko.setAcceptUnfinishedParagraphsInGc(True)
 		self.assertEqual(0, len(self.voikko.grammarErrors(u"Kissa on ")))
 	
-	def TODOtestSetAcceptBulletedListsInGc(self):
+	def testSetAcceptBulletedListsInGc(self):
 		self.voikko.setAcceptBulletedListsInGc(False)
 		self.assertNotEqual(0, len(self.voikko.grammarErrors(u"kissa")))
 		self.voikko.setAcceptBulletedListsInGc(True)

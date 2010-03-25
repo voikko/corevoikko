@@ -124,27 +124,8 @@ class SuggestionStrategy:
 	"""Suggestion strategy for correcting errors in text produced by
 	optical character recognition software."""
 
-class _CGrammarError(Structure):
-	_fields_ = [("errorCode", c_int),
-	            ("errorLevel", c_int),
-	            ("errorDescription", c_char_p),
-	            ("startPos", c_size_t),
-	            ("errorLen", c_size_t),
-	            ("suggestions", POINTER(c_char_p))]
-
 class GrammarError:
 	"""Grammar error from grammar checker."""
-	def __init__(self, cGrammarError):
-		self.errorCode = cGrammarError.errorCode
-		self.startPos = cGrammarError.startPos
-		self.errorLen = cGrammarError.errorLen
-		self.suggestions = []
-		if bool(cGrammarError.suggestions):
-			i = 0
-			while bool(cGrammarError.suggestions[i]):
-				self.suggestions.append(
-				     unicode(cGrammarError.suggestions[i], "UTF-8"))
-				i = i + 1
 	
 	def __repr__(self):
 		return u"<" + self.toString() + u">"
@@ -212,6 +193,28 @@ class Voikko(object):
 		
 		self.__lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
 		self.__lib.voikko_free_suggest_ucs4.restype = None
+		
+		self.__lib.voikkoNextGrammarErrorUcs4.argtypes = [c_void_p, c_wchar_p,
+		                                   c_size_t, c_size_t, c_int]
+		self.__lib.voikkoNextGrammarErrorUcs4.restype = c_void_p
+		
+		self.__lib.voikkoGetGrammarErrorCode.argtypes = [c_void_p]
+		self.__lib.voikkoGetGrammarErrorCode.restype = c_int
+		
+		self.__lib.voikkoGetGrammarErrorStartPos.argtypes = [c_void_p]
+		self.__lib.voikkoGetGrammarErrorStartPos.restype = c_size_t
+		
+		self.__lib.voikkoGetGrammarErrorLength.argtypes = [c_void_p]
+		self.__lib.voikkoGetGrammarErrorLength.restype = c_size_t
+		
+		self.__lib.voikkoGetGrammarErrorSuggestions.argtypes = [c_void_p]
+		self.__lib.voikkoGetGrammarErrorSuggestions.restype = POINTER(c_char_p)
+		
+		self.__lib.voikkoFreeGrammarError.argtypes = [c_void_p]
+		self.__lib.voikkoFreeGrammarError.restype = None
+		
+		self.__lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
+		self.__lib.voikko_error_message_cstr.restype = c_char_p
 		
 		self.__lib.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
 		self.__lib.voikkoHyphenateUcs4.restype = POINTER(c_char)
@@ -322,6 +325,56 @@ class Voikko(object):
 		
 		self.__lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
+	
+	def __getGrammarError(self, cGrammarError):
+		gError = GrammarError()
+		gError.errorCode = self.__lib.voikkoGetGrammarErrorCode(cGrammarError)
+		gError.startPos = self.__lib.voikkoGetGrammarErrorStartPos(cGrammarError)
+		gError.errorLen = self.__lib.voikkoGetGrammarErrorLength(cGrammarError)
+		gError.suggestions = []
+		cSuggestions = self.__lib.voikkoGetGrammarErrorSuggestions(cGrammarError)
+		if bool(cSuggestions):
+			i = 0
+			while bool(cSuggestions[i]):
+				gError.suggestions.append(unicode(cSuggestions[i], "UTF-8"))
+				i = i + 1
+		return gError
+	
+	def __grammarParagraph(self, paragraph, offset):
+		paragraphLen = len(paragraph)
+		skipErrors = 0
+		errorList = []
+		while True:
+			cError = self.__lib.voikkoNextGrammarErrorUcs4(self.__handle,
+			        paragraph, paragraphLen, 0, skipErrors)
+			if not bool(cError):
+				return errorList
+			gError = self.__getGrammarError(cError)
+			gError.startPos = offset + gError.startPos
+			errorList.append(gError)
+			self.__lib.voikkoFreeGrammarError(cError)
+			skipErrors = skipErrors + 1
+	
+	def grammarErrors(self, text):
+		"""Check the given text for grammar errors and return a
+		list of GrammarError objects representing the errors that were found.
+		Unlike the C based API this method accepts multiple paragraps
+		separated by newline characters.
+		"""
+		textUnicode = unicode(text)
+		errorList = []
+		offset = 0
+		for paragraph in textUnicode.split(u"\n"):
+			errorList = errorList + self.__grammarParagraph(paragraph, offset)
+			offset = offset + len(paragraph) + 1
+		return errorList
+	
+	def grammarErrorExplanation(self, errorCode, language):
+		"""Return a human readable explanation for grammar error code in
+		given language.
+		"""
+		explanation = self.__lib.voikko_error_message_cstr(errorCode, language)
+		return unicode(explanation, "UTF-8")
 	
 	def tokens(self, text):
 		"""Split the given natural language text into a list of Token objects."""
