@@ -259,6 +259,13 @@ int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error);
 size_t voikkoGetGrammarErrorStartPos(const VoikkoGrammarError * error);
 
 /**
+ * Get the length of the error in checked paragraph.
+ * @param error The grammar error
+ * @return The length of the error in the checked paragraph (in characters).
+ */
+size_t voikkoGetGrammarErrorLength(const VoikkoGrammarError * error);
+
+/**
  * Free the memory reserved for a grammar error, including suggestions for corrections.
  * @param error The grammar error
  */
