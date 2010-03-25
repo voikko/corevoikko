@@ -155,8 +155,9 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/,
 	voikko_grammar_error gError;
 	voikko_grammar_error * error = reinterpret_cast<voikko_grammar_error *>(voikkoNextGrammarErrorUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, startpos, skiperrors));
 	if (error) {
-		// TODO: pick the attributes separately, do not assume that voikko_frammar_error == VoikkoGrammarError
+		// TODO: pick the attributes separately, do not assume that voikko_grammar_error == VoikkoGrammarError
 		gError = *error;
+		gError.error_code = voikkoGetGrammarErrorCode(reinterpret_cast<VoikkoGrammarError *>(error));
 		// TODO: delete using public API
 		delete error;
 	} else {
