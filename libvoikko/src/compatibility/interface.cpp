@@ -153,12 +153,15 @@ VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int /*han
 VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/, const wchar_t * text,
 		 size_t textlen, size_t startpos, int skiperrors) {
 	voikko_grammar_error gError;
+	gError.error_level = 0;
+	gError.error_description = 0;
 	VoikkoGrammarError * error = voikkoNextGrammarErrorUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, startpos, skiperrors);
 	if (error) {
 		voikko_grammar_error * xxxError = reinterpret_cast<voikko_grammar_error *>(error);
 		// TODO: pick the attributes separately, do not assume that voikko_grammar_error == VoikkoGrammarError
 		gError = *xxxError;
 		gError.error_code = voikkoGetGrammarErrorCode(error);
+		gError.startpos = voikkoGetGrammarErrorStartPos(error);
 		
 		// Use C allocation for suggestions to maintain compatibility with some
 		// broken applications before libvoikko 1.5.
@@ -178,11 +181,9 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/,
 		}
 		voikkoFreeGrammarError(error);
 	} else {
-		gError.errorlen = 0;
 		gError.error_code = 0;
-		gError.error_description = 0;
-		gError.error_level = 0;
 		gError.startpos = 0;
+		gError.errorlen = 0;
 		gError.suggestions = 0;
 	}
 	return gError;

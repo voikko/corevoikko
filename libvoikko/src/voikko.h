@@ -252,6 +252,13 @@ VoikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * handle, const wch
 int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error);
 
 /**
+ * Get the starting position of the error in checked paragraph.
+ * @param error The grammar error
+ * @return The starting position of the error in the checked paragraph (in characters).
+ */
+size_t voikkoGetGrammarErrorStartPos(const VoikkoGrammarError * error);
+
+/**
  * Free the memory reserved for a grammar error, including suggestions for corrections.
  * @param error The grammar error
  */

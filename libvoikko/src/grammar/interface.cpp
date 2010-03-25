@@ -73,6 +73,10 @@ VOIKKOEXPORT int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error) {
 	return error->error_code;
 }
 
+VOIKKOEXPORT size_t voikkoGetGrammarErrorStartPos(const VoikkoGrammarError * error) {
+	return error->startpos;
+}
+
 VOIKKOEXPORT void voikkoFreeGrammarError(VoikkoGrammarError * error) {
 	if (error) {
 		if (error->suggestions) {
