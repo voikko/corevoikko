@@ -157,22 +157,22 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/,
 	gError.error_description = 0;
 	VoikkoGrammarError * error = voikkoNextGrammarErrorUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, startpos, skiperrors);
 	if (error) {
-		voikko_grammar_error * xxxError = reinterpret_cast<voikko_grammar_error *>(error);
 		gError.error_code = voikkoGetGrammarErrorCode(error);
 		gError.startpos = voikkoGetGrammarErrorStartPos(error);
 		gError.errorlen = voikkoGetGrammarErrorLength(error);
 		
 		// Use C allocation for suggestions to maintain compatibility with some
 		// broken applications before libvoikko 1.5.
-		if (xxxError->suggestions) {
+		const char ** suggestions = voikkoGetGrammarErrorSuggestions(error);
+		if (suggestions) {
 			int suggCount = 0;
-			for (char ** s = xxxError->suggestions; *s; s++) {
+			for (const char ** s = suggestions; *s; s++) {
 				++suggCount;
 			}
 			gError.suggestions = static_cast<char **>(malloc((suggCount + 1) * sizeof(char *)));
 			for (int i = 0; i < suggCount; i++) {
-				gError.suggestions[i] = static_cast<char *>(malloc((strlen(xxxError->suggestions[i]) + 1) * sizeof(char)));
-				strcpy(gError.suggestions[i], xxxError->suggestions[i]);
+				gError.suggestions[i] = static_cast<char *>(malloc((strlen(suggestions[i]) + 1) * sizeof(char)));
+				strcpy(gError.suggestions[i], suggestions[i]);
 			}
 			gError.suggestions[suggCount] = 0;
 		} else {

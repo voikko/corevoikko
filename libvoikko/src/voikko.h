@@ -266,6 +266,16 @@ size_t voikkoGetGrammarErrorStartPos(const VoikkoGrammarError * error);
 size_t voikkoGetGrammarErrorLength(const VoikkoGrammarError * error);
 
 /**
+ * Get the suggestions for correcting a grammar error.
+ * @param error The grammar error
+ * @return A null terminated array of suggestions for correcting this grammar error.
+ *         The suggestions are UTF-8 encoded. Calling voikkoFreeGrammarError
+ *         frees also the suggestions, they should not be modified or deleted
+ *         by other means.
+ */
+const char ** voikkoGetGrammarErrorSuggestions(const VoikkoGrammarError * error);
+
+/**
  * Free the memory reserved for a grammar error, including suggestions for corrections.
  * @param error The grammar error
  */

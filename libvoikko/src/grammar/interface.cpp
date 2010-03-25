@@ -81,6 +81,11 @@ VOIKKOEXPORT size_t voikkoGetGrammarErrorLength(const VoikkoGrammarError * error
 	return error->errorlen;
 }
 
+VOIKKOEXPORT const char ** voikkoGetGrammarErrorSuggestions(const VoikkoGrammarError * error) {
+	// Adding const since the caller should not modify the suggestions directly.
+	return const_cast<const char **>(error->suggestions);
+}
+
 VOIKKOEXPORT void voikkoFreeGrammarError(VoikkoGrammarError * error) {
 	if (error) {
 		if (error->suggestions) {
