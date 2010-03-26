@@ -72,6 +72,15 @@ class Utf8ApiTest(unittest.TestCase):
 		lib.voikkoNextSentenceStartCstr.argtypes = [c_void_p, c_char_p, c_size_t, POINTER(c_size_t)]
 		lib.voikkoNextSentenceStartCstr.restype = c_int
 		
+		lib.voikkoNextGrammarErrorCstr.argtypes = [c_int, c_char_p, c_size_t, c_size_t, c_int]
+		lib.voikkoNextGrammarErrorCstr.restype = c_void_p
+		
+		lib.voikkoGetGrammarErrorCode.argtypes = [c_void_p]
+		lib.voikkoGetGrammarErrorCode.restype = c_int
+		
+		lib.voikkoFreeGrammarError.argtypes = [c_void_p]
+		lib.voikkoFreeGrammarError.restype = None
+		
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
 		if error.value != None:
@@ -124,6 +133,12 @@ class Utf8ApiTest(unittest.TestCase):
 			            text, len(text), byref(sentenceLen))
 		self.assertEqual(20, sentenceLen.value)
 		self.assertEqual(2, sentenceType) # SENTENCE_PROBABLE
+	
+	def testNextGrammarErrorCstrWorks(self):
+		text = u"Osaan joten kuten ajaa autoa.".encode("UTF-8")
+		error = lib.voikkoNextGrammarErrorCstr(handle, text, len(text), 0, 0)
+		self.assertEqual(1, lib.voikkoGetGrammarErrorCode(error))
+		lib.voikkoFreeGrammarError(error)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)

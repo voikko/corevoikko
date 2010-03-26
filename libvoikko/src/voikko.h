@@ -245,6 +245,21 @@ VoikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * handle, const wch
                      size_t textlen, size_t startpos, int skiperrors);
 
 /**
+ * Find next grammar error.
+ * @param handle Voikko instance
+ * @param text Pointer to the start of a text buffer. This should usually
+ *        be at the start of a paragraph or a sentence.
+ * @param textlen Number of bytes in the buffer. The end of the buffer should
+ *        be the end of a paragraph or a sentence.
+ * @param startpos Do not consider errors that start before this character
+ *        offset from the start of the text.
+ * @param skiperrors Skip this number of errors from the start of the text.
+ * @return Grammar error description.
+ */
+VoikkoGrammarError * voikkoNextGrammarErrorCstr(VoikkoHandle * handle, const char * text,
+                     size_t textlen, size_t startpos, int skiperrors);
+
+/**
  * Get the error code associated with given grammar error
  * @param error The grammar error
  * @return The error code
@@ -280,21 +295,6 @@ const char ** voikkoGetGrammarErrorSuggestions(const VoikkoGrammarError * error)
  * @param error The grammar error
  */
 void voikkoFreeGrammarError(VoikkoGrammarError * error);
-
-/**
- * Find next grammar error.
- * @param handle Voikko instance
- * @param text Pointer to the start of a text buffer. This should usually
- *        be at the start of a paragraph or a sentence.
- * @param textlen Number of bytes in the buffer. The end of the buffer should
- *        be the end of a paragraph or a sentence.
- * @param startpos Do not consider errors that start before this character
- *        offset from the start of the text.
- * @param skiperrors Skip this number of errors from the start of the text.
- * @return Grammar error description.
- */
-voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
-                     size_t textlen, size_t startpos, int skiperrors);
 
 /**
  * Localized error message.

@@ -69,6 +69,25 @@ VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * 
 	return e;
 }
 
+VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorCstr(voikko_options_t * options,
+		const char * text, size_t textlen, size_t startpos, int skiperrors) {
+	if (text == 0 || textlen == 0) {
+		return 0;
+	}
+	
+	wchar_t * textUcs4 = utils::StringUtils::ucs4FromUtf8(text, textlen);
+	if (textUcs4 == 0) {
+		return 0;
+	}
+	
+	size_t wtextlen = wcslen(textUcs4);
+	VoikkoGrammarError * e = voikkoNextGrammarErrorUcs4(options, textUcs4,
+	                         wtextlen, startpos, skiperrors);
+	delete[] textUcs4;
+	
+	return e;
+}
+
 VOIKKOEXPORT int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error) {
 	return error->error_code;
 }
