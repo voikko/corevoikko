@@ -25,6 +25,7 @@ from ctypes import c_char
 from ctypes import c_char_p
 from ctypes import c_size_t
 from ctypes import c_void_p
+from ctypes import c_wchar_p
 from ctypes import string_at
 from ctypes import CDLL
 from ctypes import POINTER
@@ -80,6 +81,21 @@ class Utf8ApiTest(unittest.TestCase):
 		
 		lib.voikkoFreeGrammarError.argtypes = [c_void_p]
 		lib.voikkoFreeGrammarError.restype = None
+		
+		lib.voikkoAnalyzeWordCstr.argtypes = [c_void_p, c_char_p]
+		lib.voikkoAnalyzeWordCstr.restype = POINTER(c_void_p)
+		
+		lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
+		lib.voikko_free_mor_analysis.restype = None
+		
+		lib.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
+		lib.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
+		
+		lib.voikko_mor_analysis_value_cstr.argtypes = [c_void_p, c_char_p]
+		lib.voikko_mor_analysis_value_cstr.restype = POINTER(c_char)
+		
+		lib.voikko_free_mor_analysis_value_cstr.argtypes = [POINTER(c_char)]
+		lib.voikko_free_mor_analysis_value_cstr.restype = None
 		
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), "fi_FI", 0, None)
@@ -139,6 +155,19 @@ class Utf8ApiTest(unittest.TestCase):
 		error = lib.voikkoNextGrammarErrorCstr(handle, text, len(text), 0, 0)
 		self.assertEqual(1, lib.voikkoGetGrammarErrorCode(error))
 		lib.voikkoFreeGrammarError(error)
+	
+	def testVoikkoAnalyzeWordCstrWorks(self):
+		analysis = lib.voikkoAnalyzeWordCstr(handle, u"kansaneläkelaitos".encode("UTF-8"))
+		structure = lib.voikko_mor_analysis_value_ucs4(analysis[0], "STRUCTURE")
+		self.assertEqual(u"=pppppp=ppppp=pppppp", structure)
+		lib.voikko_free_mor_analysis(analysis)
+	
+	def test_voikko_mor_analysis_value_cstr_works(self):
+		analysis = lib.voikkoAnalyzeWordCstr(handle, u"kansaneläkelaitos".encode("UTF-8"))
+		structureBuffer = lib.voikko_mor_analysis_value_cstr(analysis[0], "STRUCTURE")
+		self.assertEqual(u"=pppppp=ppppp=pppppp".encode("UTF-8"), string_at(structureBuffer))
+		lib.voikko_free_mor_analysis_value_cstr(structureBuffer)
+		lib.voikko_free_mor_analysis(analysis)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(Utf8ApiTest)
