@@ -222,6 +222,18 @@ class Voikko(object):
 		self.__lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
 		self.__lib.voikkoFreeCstr.restype = None
 		
+		self.__lib.voikkoAnalyzeWordUcs4.argtypes = [c_void_p, c_wchar_p]
+		self.__lib.voikkoAnalyzeWordUcs4.restype = POINTER(c_void_p)
+		
+		self.__lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
+		self.__lib.voikko_free_mor_analysis.restype = None
+		
+		self.__lib.voikko_mor_analysis_keys.argtypes = [c_void_p]
+		self.__lib.voikko_mor_analysis_keys.restype = POINTER(c_char_p)
+		
+		self.__lib.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
+		self.__lib.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
+		
 		self.__lib.voikkoNextTokenUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t,
 		                                           POINTER(c_size_t)]
 		self.__lib.voikkoNextTokenUcs4.restype = c_int
@@ -375,6 +387,34 @@ class Voikko(object):
 		"""
 		explanation = self.__lib.voikko_error_message_cstr(errorCode, language)
 		return unicode(explanation, "UTF-8")
+	
+	def analyze(self, word):
+		"""Analyze the morphology of given word and return the list of
+		analysis results. The results are represented as maps having property
+		names as keys and property values as values.
+		"""
+		cAnalysisList = self.__lib.voikkoAnalyzeWordUcs4(self.__handle, word)
+		pAnalysisList = []
+		
+		if not bool(cAnalysisList):
+			return pAnalysisList
+		
+		i = 0
+		while bool(cAnalysisList[i]):
+			cAnalysis = cAnalysisList[i]
+			cKeys = self.__lib.voikko_mor_analysis_keys(cAnalysis)
+			pAnalysis = {}
+			j = 0
+			while bool(cKeys[j]):
+				key = cKeys[j]
+				value = self.__lib.voikko_mor_analysis_value_ucs4(cAnalysis, key)
+				pAnalysis[unicode(key, 'ASCII')] = value
+				j = j + 1
+			pAnalysisList.append(pAnalysis)
+			i = i + 1
+		
+		self.__lib.voikko_free_mor_analysis(cAnalysisList)
+		return pAnalysisList
 	
 	def tokens(self, text):
 		"""Split the given natural language text into a list of Token objects."""

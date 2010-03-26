@@ -145,6 +145,12 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(16, error.startPos)
 		self.assertEqual(11, error.errorLen)
 	
+	def testAnalyze(self):
+		analysisList = self.voikko.analyze(u"kansaneläkelaitos")
+		self.assertEqual(1, len(analysisList))
+		analysis = analysisList[0]
+		self.assertEqual(u"=pppppp=ppppp=pppppp", analysis["STRUCTURE"])
+	
 	def testTokens(self):
 		tokenList = self.voikko.tokens(u"kissa ja koira")
 		self.assertEqual(5, len(tokenList))
@@ -275,6 +281,45 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(u"koira" in self.voikko.suggest(u"koir_"))
 		self.voikko.setSuggestionStrategy(SuggestionStrategy.TYPO)
 		self.failUnless(u"koira" in self.voikko.suggest(u"koari"))
+	
+	def testMaxAnalysisCountIsNotPassed(self):
+		complexWord = u"lumenerolumenerolumenerolumenerolumenero"
+		self.failUnless(len(self.voikko.analyze(complexWord)) <= MAX_ANALYSIS_COUNT)
+	
+	def testMorPruningWorks(self):
+		# TODO: this test will not fail, it just takes very long time
+		# if pruning does not work.
+		complexWord = u""
+		for i in range(0, 20):
+			complexWord = complexWord + u"lumenero"
+		self.failUnless(len(complexWord) < MAX_WORD_CHARS)
+		self.voikko.analyze(complexWord)
+	
+	def testOverLongWordsThrowExceptionDuringSpellCheck(self):
+		# Limit is 255 characters
+		longWord = u""
+		for i in range(0, 25):
+			longWord = longWord + u"kuraattori"
+		self.failUnless(len(longWord) < MAX_WORD_CHARS)
+		self.failUnless(self.voikko.spell(longWord))
+		
+		longWord = longWord + u"kuraattori"
+		self.failUnless(len(longWord) > MAX_WORD_CHARS)
+		def trySpell():
+			self.voikko.spell(longWord)
+		self.assertRaises(VoikkoException, trySpell)
+	
+	def testOverLongWordsAreNotAnalyzed(self):
+		# Limit is 255 characters
+		longWord = u""
+		for i in range(0, 25):
+			longWord = longWord + u"kuraattori"
+		self.failUnless(len(longWord) < MAX_WORD_CHARS)
+		self.assertEqual(1, len(self.voikko.analyze(longWord)))
+		
+		longWord = longWord + u"kuraattori"
+		self.failUnless(len(longWord) > MAX_WORD_CHARS)
+		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)
