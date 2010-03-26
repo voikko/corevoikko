@@ -30,6 +30,15 @@ from ctypes import c_size_t
 from ctypes import c_wchar_p
 from ctypes import string_at
 from ctypes import POINTER
+from ctypes import Structure
+
+class CGrammarError(Structure):
+	_fields_ = [("errorCode", c_int),
+	            ("errorLevel", c_int),
+	            ("errorDescription", c_char_p),
+	            ("startPos", c_size_t),
+	            ("errorLen", c_size_t),
+	            ("suggestions", POINTER(c_char_p))]
 
 voikko = Voikko()
 voikko.lib.voikko_set_string_option.argtypes = [c_int, c_int, c_char_p]
@@ -52,6 +61,12 @@ voikko.lib.voikko_next_sentence_start_ucs4.restype = c_int
 
 voikko.lib.voikko_next_sentence_start_cstr.argtypes = [c_int, c_char_p, c_size_t, POINTER(c_size_t)]
 voikko.lib.voikko_next_sentence_start_cstr.restype = c_int
+
+voikko.lib.voikko_next_grammar_error_cstr.argtypes = [c_int, c_char_p, c_size_t, c_size_t, c_int]
+voikko.lib.voikko_next_grammar_error_cstr.restype = CGrammarError
+
+voikko.lib.voikko_free_suggest_cstr.argtypes = [POINTER(c_char_p)]
+voikko.lib.voikko_free_suggest_cstr.restype = None
 
 class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
@@ -117,6 +132,15 @@ class DeprecatedApiTest(unittest.TestCase):
 			            text, len(text), byref(sentenceLen))
 		self.assertEqual(20, sentenceLen.value)
 		self.assertEqual(2, sentenceType) # SENTENCE_PROBABLE
+	
+	def test_voikko_next_grammar_error_cstr_works(self):
+		text = u"Osaan joten kuten ajaa autoa.".encode("UTF-8")
+		error = voikko.lib.voikko_next_grammar_error_cstr(voikko.handle, text, len(text), 0, 0)
+		self.assertEqual(1, error.errorCode)
+		self.assertEqual(6, error.startPos)
+		self.assertEqual(11, error.errorLen)
+		self.assertEqual(u"jotenkuten", error.suggestions[0])
+		voikko.lib.voikko_free_suggest_cstr(error.suggestions)
 
 if __name__ == "__main__":
 	unittest.main()
