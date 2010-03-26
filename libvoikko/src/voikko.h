@@ -347,8 +347,8 @@ struct voikko_mor_analysis;
  * @param word word to be analyzed.
  * @return A pointer to a null terminated array of analysis results.
  */
-struct voikko_mor_analysis ** voikko_analyze_word_ucs4(
-                              int handle, const wchar_t * word);
+struct voikko_mor_analysis ** voikkoAnalyzeWordUcs4(
+                              VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Analyzes the morphology of given word.
@@ -356,8 +356,8 @@ struct voikko_mor_analysis ** voikko_analyze_word_ucs4(
  * @param word word to be analyzed.
  * @return A pointer to a null terminated array of analysis results.
  */
-struct voikko_mor_analysis ** voikko_analyze_word_cstr(
-                              int handle, const char * word);
+struct voikko_mor_analysis ** voikkoAnalyzeWordCstr(
+                              VoikkoHandle * handle, const char * word);
 
 /**
  * Free the memory allocated for morphology analysis results.

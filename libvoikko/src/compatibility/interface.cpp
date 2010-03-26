@@ -29,6 +29,9 @@
 
 namespace libvoikko { namespace compatibility {
 
+static voikko_options_t voikko_options;
+static int voikko_handle_count;
+
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
 	if (voikko_handle_count++ > 0) {
@@ -206,6 +209,16 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, con
 	delete[] text_ucs4;
 	
 	return e;
+}
+
+VOIKKOEXPORT voikko_mor_analysis ** voikko_analyze_word_ucs4(
+		int /*handle*/, const wchar_t * word) {
+	return voikkoAnalyzeWordUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+}
+
+VOIKKOEXPORT voikko_mor_analysis ** voikko_analyze_word_cstr(
+		int /*handle*/, const char * word) {
+	return voikkoAnalyzeWordCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
 }
 
 } }

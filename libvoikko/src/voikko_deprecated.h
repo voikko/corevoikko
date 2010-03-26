@@ -159,3 +159,15 @@ voikko_grammar_error voikko_next_grammar_error_ucs4(int handle, const wchar_t * 
  */
 voikko_grammar_error voikko_next_grammar_error_cstr(int handle, const char * text,
                      size_t textlen, size_t startpos, int skiperrors);
+
+/**
+ * See voikkoAnalyzeWordUcs4
+ */
+struct voikko_mor_analysis ** voikko_analyze_word_ucs4(
+                              int handle, const wchar_t * word);
+
+/**
+ * See voikkoAnalyzeWordCstr
+ */
+struct voikko_mor_analysis ** voikko_analyze_word_cstr(
+                              int handle, const char * word);

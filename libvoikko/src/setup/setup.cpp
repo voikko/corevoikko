@@ -44,10 +44,6 @@ namespace libvoikko {
 
 using namespace setup;
 
-voikko_options_t voikko_options;
-
-int voikko_handle_count;
-
 static int setGrammarOption(voikko_options_t * handle, int value, int * option) {
 		if (value && !(*option)) {
 			*option = 1;

@@ -52,10 +52,6 @@ typedef struct {
 	setup::Dictionary dictionary;
 } voikko_options_t;
 
-extern voikko_options_t voikko_options;
-
-extern int voikko_handle_count;
-
 }
 
 #endif
