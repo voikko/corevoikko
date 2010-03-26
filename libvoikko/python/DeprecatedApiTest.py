@@ -28,6 +28,7 @@ from ctypes import c_char
 from ctypes import c_char_p
 from ctypes import c_size_t
 from ctypes import c_wchar_p
+from ctypes import c_void_p
 from ctypes import string_at
 from ctypes import POINTER
 from ctypes import Structure
@@ -67,6 +68,15 @@ voikko.lib.voikko_next_grammar_error_cstr.restype = CGrammarError
 
 voikko.lib.voikko_free_suggest_cstr.argtypes = [POINTER(c_char_p)]
 voikko.lib.voikko_free_suggest_cstr.restype = None
+
+voikko.lib.voikko_analyze_word_cstr.argtypes = [c_int, c_char_p]
+voikko.lib.voikko_analyze_word_cstr.restype = POINTER(c_void_p)
+
+voikko.lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
+voikko.lib.voikko_free_mor_analysis.restype = None
+
+voikko.lib.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
+voikko.lib.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
 
 class DeprecatedApiTest(unittest.TestCase):
 	def setUp(self):
@@ -141,6 +151,12 @@ class DeprecatedApiTest(unittest.TestCase):
 		self.assertEqual(11, error.errorLen)
 		self.assertEqual(u"jotenkuten", error.suggestions[0])
 		voikko.lib.voikko_free_suggest_cstr(error.suggestions)
+	
+	def test_voikko_analyze_word_cstr_works(self):
+		analysis = voikko.lib.voikko_analyze_word_cstr(voikko.handle, u"kansaneläkelaitos".encode("UTF-8"))
+		structure = voikko.lib.voikko_mor_analysis_value_ucs4(analysis[0], "STRUCTURE")
+		self.assertEqual(u"=pppppp=ppppp=pppppp", structure)
+		voikko.lib.voikko_free_mor_analysis(analysis)
 
 if __name__ == "__main__":
 	unittest.main()
