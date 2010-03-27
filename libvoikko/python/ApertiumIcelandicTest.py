@@ -23,8 +23,7 @@ import libvoikko
 
 class ApertiumIcelandicTest(unittest.TestCase):
 	def setUp(self):
-		self.voikko = libvoikko.Voikko()
-		self.voikko.init(variant = "apertium")
+		self.voikko = libvoikko.Voikko(variant = "apertium")
 	
 	def tearDown(self):
 		self.voikko.terminate()
