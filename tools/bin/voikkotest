@@ -466,7 +466,6 @@ if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
 	voikko = Voikko()
-	voikko.init()
 	if not spell_tests(voikko):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
@@ -489,7 +488,6 @@ if "--compare" in [opt[0] for opt in opts]:
 else:
 	update_smv()
 	voikko = Voikko()
-	voikko.init()
 	spell_tests(voikko)
 	suggestion_tests(voikko)
 	morpho_tests(voikko)

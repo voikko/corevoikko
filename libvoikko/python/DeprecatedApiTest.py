@@ -20,8 +20,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import unittest
-from libvoikko import Token
-from libvoikko import Voikko
+from libvoikkoOld import Token
+from libvoikkoOld import Voikko
 from ctypes import byref
 from ctypes import c_int
 from ctypes import c_char

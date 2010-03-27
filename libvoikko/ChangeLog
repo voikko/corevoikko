@@ -1,3 +1,8 @@
+2010-03-27 Harri Pitkänen <hatapitk@iki.fi>
+	* Complete API refactoring. Introduce thread safe API and implement a
+	  a compatibility layer that supports the old API.
+	* Change the Python module to use new API. Remove libvoikko.init().
+
 2010-03-21 Andris Pavenis <andris.pavenis@iki.fi>
 	* Stop using degree sign in source. Fixes serious problems
 	  with MSVC 2005.

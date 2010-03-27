@@ -22,8 +22,7 @@ import libvoikko
 
 class NullComponentTest(unittest.TestCase):
 	def setUp(self):
-		self.voikko = libvoikko.Voikko()
-		self.voikko.init(variant = "null")
+		self.voikko = libvoikko.Voikko(variant = "null")
 	
 	def tearDown(self):
 		self.voikko.terminate()

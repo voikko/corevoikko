@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 """
+THIS IMPLEMENTATION IS DEPRECATED. It is maintained (with tests) only
+to make sure that the deprecated API methods still work correcty.
+
 Python interface to libvoikko, library of Finnish language tools.
 This module can be used to perform various natural language analysis
-tasks.
+tasks on Finnish text.
 
 An example session demonstrating the use of this module:
 
  >>> import libvoikko
  >>> v = libvoikko.Voikko()
+ >>> v.init()
  >>> v.analyze(u"kissa")
  [{'SIJAMUOTO': u'nimento', 'CLASS': u'nimisana', 'STRUCTURE': u'=ppppp'}]
  >>> v.spell(u"kissa")
@@ -99,23 +103,6 @@ class Token:
 		return (u"<" + self.tokenText + u"," + \
 		       Token._TYPE_NAMES[self.tokenType] + u">").encode("UTF-8")
 
-class Sentence:
-	"""Represents a sentence in natural language text."""
-	NONE = 0
-	NO_START = 1
-	PROBABLE = 2
-	POSSIBLE = 3
-	
-	_TYPE_NAMES = ["NONE", "NO_START", "PROBABLE", "POSSIBLE"]
-	
-	def __init__(self, sentenceText, nextStartType):
-		self.sentenceText = sentenceText
-		self.nextStartType = nextStartType
-	
-	def __repr__(self):
-		return (u"<" + self.sentenceText + u"," + \
-		       Sentence._TYPE_NAMES[self.nextStartType] + u">").encode("UTF-8")
-
 class SuggestionStrategy:
 	"""Strategies for generating suggestions for incorrectly spelled words."""
 	TYPO = 0
@@ -124,8 +111,27 @@ class SuggestionStrategy:
 	"""Suggestion strategy for correcting errors in text produced by
 	optical character recognition software."""
 
+class _CGrammarError(Structure):
+	_fields_ = [("errorCode", c_int),
+	            ("errorLevel", c_int),
+	            ("errorDescription", c_char_p),
+	            ("startPos", c_size_t),
+	            ("errorLen", c_size_t),
+	            ("suggestions", POINTER(c_char_p))]
+
 class GrammarError:
 	"""Grammar error from grammar checker."""
+	def __init__(self, cGrammarError):
+		self.errorCode = cGrammarError.errorCode
+		self.startPos = cGrammarError.startPos
+		self.errorLen = cGrammarError.errorLen
+		self.suggestions = []
+		if bool(cGrammarError.suggestions):
+			i = 0
+			while bool(cGrammarError.suggestions[i]):
+				self.suggestions.append(
+				     unicode(cGrammarError.suggestions[i], "UTF-8"))
+				i = i + 1
 	
 	def __repr__(self):
 		return u"<" + self.toString() + u">"
@@ -146,20 +152,22 @@ class VoikkoException(Exception):
 	"""Thrown when someting exceptional happens within libvoikko."""
 	pass
 
+def _checkInited(voikko):
+	if voikko.handle.value < 0:
+		raise VoikkoException("Voikko not initialized")
+
+
 def _boolToInt(bool):
 	if bool:
 		return 1
 	else:
 		return 0
 
-class Voikko(object):
-	def __getLib():
-		if os.name == 'nt':
-			return CDLL("libvoikko-1.dll")
-		else:
-			return CDLL("libvoikko.so.1")
-	__getLib = staticmethod(__getLib)
-	
+def _setBoolOption(voikko, option, value):
+	_checkInited(voikko)
+	voikko.lib.voikko_set_bool_option(voikko.handle, option, _boolToInt(value))
+
+class Voikko:
 	"""Represents an instance of Voikko. The instance has state, such as
 	settings related to spell checking and hyphenation, and methods for performing
 	various natural language analysis operations. One instance should not be
@@ -169,149 +177,126 @@ class Voikko(object):
 	libvoikko is not yet thread safe. This restriction should go away in future
 	releases.
 	"""
-	def __init__(self, path = None, variant = "fi_FI", cacheSize = 0):
-		"""Creates a new Voikko instance with the following optional parameters:
+	def __init__(self):
+		"""Creates a new Voikko instance."""
+		self.handle = c_int(-1)
+		if os.name == 'nt':
+			self.lib = CDLL("libvoikko-1.dll")
+		else:
+			self.lib = CDLL("libvoikko.so.1")
+		
+		self.lib.voikko_init_with_path.argtypes = [POINTER(c_int), c_char_p, c_int, c_char_p]
+		self.lib.voikko_init_with_path.restype = c_char_p
+		
+		self.lib.voikko_terminate.argtypes = [c_int]
+		self.lib.voikko_terminate.restype = c_int
+		
+		self.lib.voikko_list_dicts.argtypes = [c_char_p]
+		self.lib.voikko_list_dicts.restype = POINTER(c_void_p)
+		
+		self.lib.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
+		self.lib.voikko_free_dicts.restype = None
+		
+		self.lib.voikko_dict_variant.argtypes = [c_void_p]
+		self.lib.voikko_dict_variant.restype = c_char_p
+		
+		self.lib.voikko_dict_description.argtypes = [c_void_p]
+		self.lib.voikko_dict_description.restype = c_char_p
+		
+		self.lib.voikko_spell_ucs4.argtypes = [c_int, c_wchar_p]
+		self.lib.voikko_spell_ucs4.restype = c_int
+		
+		self.lib.voikko_suggest_ucs4.argtypes = [c_int, c_wchar_p]
+		self.lib.voikko_suggest_ucs4.restype = POINTER(c_wchar_p)
+		
+		self.lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
+		self.lib.voikko_free_suggest_ucs4.restype = None
+		
+		self.lib.voikko_free_suggest_cstr.argtypes = [POINTER(c_char_p)]
+		self.lib.voikko_free_suggest_cstr.restype = None
+		
+		self.lib.voikko_hyphenate_ucs4.argtypes = [c_int, c_wchar_p]
+		self.lib.voikko_hyphenate_ucs4.restype = POINTER(c_char)
+		
+		self.lib.voikko_free_hyphenate.argtypes = [POINTER(c_char)]
+		self.lib.voikko_free_hyphenate.restype = None
+		
+		self.lib.voikko_analyze_word_ucs4.argtypes = [c_int, c_wchar_p]
+		self.lib.voikko_analyze_word_ucs4.restype = POINTER(c_void_p)
+		
+		self.lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
+		self.lib.voikko_free_mor_analysis.restype = None
+		
+		self.lib.voikko_mor_analysis_keys.argtypes = [c_void_p]
+		self.lib.voikko_mor_analysis_keys.restype = POINTER(c_char_p)
+		
+		self.lib.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
+		self.lib.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
+		
+		self.lib.voikko_next_token_ucs4.argtypes = [c_int, c_wchar_p, c_size_t,
+		                                            POINTER(c_size_t)]
+		self.lib.voikko_next_token_ucs4.restype = c_int
+		
+		self.lib.voikko_set_bool_option.argtypes = [c_int, c_int, c_int]
+		self.lib.voikko_set_bool_option.restype = c_int
+		
+		self.lib.voikko_set_int_option.argtypes = [c_int, c_int, c_int]
+		self.lib.voikko_set_int_option.restype = c_int
+		
+		self.lib.voikko_next_grammar_error_ucs4.argtypes = [c_int, c_wchar_p,
+		                                   c_size_t, c_size_t, c_int]
+		self.lib.voikko_next_grammar_error_ucs4.restype = _CGrammarError
+		
+		self.lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
+		self.lib.voikko_error_message_cstr.restype = c_char_p
+	
+	def init(self, path = None, variant = "fi_FI", cacheSize = 0):
+		"""Initialize the Voikko instance with the following optional parameters:
 		   path      Extra path that will be checked first when looking for linguistic
 		             resources.
 		   variant   Variant of morphological dictionary to use.
 		   cacheSize Parameter that controls the size of in memory cache for
 		             spell checking results. 0 is the default size, 1 is twice as large
-		             as 0 etc. -1 disables the spell checking cache entirely."""
-		self.__lib = Voikko.__getLib()
-		
-		self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
-		self.__lib.voikkoInit.restype = c_void_p
-		
-		self.__lib.voikkoTerminate.argtypes = [c_void_p]
-		self.__lib.voikkoTerminate.restype = None
-		
-		self.__lib.voikkoSpellUcs4.argtypes = [c_void_p, c_wchar_p]
-		self.__lib.voikkoSpellUcs4.restype = c_int
-		
-		self.__lib.voikkoSuggestUcs4.argtypes = [c_void_p, c_wchar_p]
-		self.__lib.voikkoSuggestUcs4.restype = POINTER(c_wchar_p)
-		
-		self.__lib.voikko_free_suggest_ucs4.argtypes = [POINTER(c_wchar_p)]
-		self.__lib.voikko_free_suggest_ucs4.restype = None
-		
-		self.__lib.voikkoNextGrammarErrorUcs4.argtypes = [c_void_p, c_wchar_p,
-		                                   c_size_t, c_size_t, c_int]
-		self.__lib.voikkoNextGrammarErrorUcs4.restype = c_void_p
-		
-		self.__lib.voikkoGetGrammarErrorCode.argtypes = [c_void_p]
-		self.__lib.voikkoGetGrammarErrorCode.restype = c_int
-		
-		self.__lib.voikkoGetGrammarErrorStartPos.argtypes = [c_void_p]
-		self.__lib.voikkoGetGrammarErrorStartPos.restype = c_size_t
-		
-		self.__lib.voikkoGetGrammarErrorLength.argtypes = [c_void_p]
-		self.__lib.voikkoGetGrammarErrorLength.restype = c_size_t
-		
-		self.__lib.voikkoGetGrammarErrorSuggestions.argtypes = [c_void_p]
-		self.__lib.voikkoGetGrammarErrorSuggestions.restype = POINTER(c_char_p)
-		
-		self.__lib.voikkoFreeGrammarError.argtypes = [c_void_p]
-		self.__lib.voikkoFreeGrammarError.restype = None
-		
-		self.__lib.voikko_error_message_cstr.argtypes = [c_int, c_char_p]
-		self.__lib.voikko_error_message_cstr.restype = c_char_p
-		
-		self.__lib.voikkoHyphenateUcs4.argtypes = [c_void_p, c_wchar_p]
-		self.__lib.voikkoHyphenateUcs4.restype = POINTER(c_char)
-		
-		self.__lib.voikkoFreeCstr.argtypes = [POINTER(c_char)]
-		self.__lib.voikkoFreeCstr.restype = None
-		
-		self.__lib.voikkoAnalyzeWordUcs4.argtypes = [c_void_p, c_wchar_p]
-		self.__lib.voikkoAnalyzeWordUcs4.restype = POINTER(c_void_p)
-		
-		self.__lib.voikko_free_mor_analysis.argtypes = [POINTER(c_void_p)]
-		self.__lib.voikko_free_mor_analysis.restype = None
-		
-		self.__lib.voikko_mor_analysis_keys.argtypes = [c_void_p]
-		self.__lib.voikko_mor_analysis_keys.restype = POINTER(c_char_p)
-		
-		self.__lib.voikko_mor_analysis_value_ucs4.argtypes = [c_void_p, c_char_p]
-		self.__lib.voikko_mor_analysis_value_ucs4.restype = c_wchar_p
-		
-		self.__lib.voikkoNextTokenUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t,
-		                                           POINTER(c_size_t)]
-		self.__lib.voikkoNextTokenUcs4.restype = c_int
-		
-		self.__lib.voikkoNextSentenceStartUcs4.argtypes = [c_void_p, c_wchar_p, c_size_t, POINTER(c_size_t)]
-		self.__lib.voikkoNextSentenceStartUcs4.restype = c_int
-		
-		self.__lib.voikkoSetBooleanOption.argtypes = [c_void_p, c_int, c_int]
-		self.__lib.voikkoSetBooleanOption.restype = c_int
-		
-		self.__lib.voikkoSetIntegerOption.argtypes = [c_void_p, c_int, c_int]
-		self.__lib.voikkoSetIntegerOption.restype = c_int
-		
-		error = c_char_p()
-		self.__handle = self.__lib.voikkoInit(byref(error), variant, cacheSize, path)
-		if error.value != None:
-			self.__handle = 0
-			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
-	
-	def __del__(self):
-		# Ensure that resources are freed before this object is deleted.
-		self.terminate()
-	
-	def __setBoolOption(self, option, value):
-		result = self.__lib.voikkoSetBooleanOption(self.__handle, option, _boolToInt(value))
-		if result == 0:
-			raise VoikkoException(u"Could not set boolean option " + str(option) + u" to value " + str(value) + u".")
+		             as 0 etc. -1 disables the spell checking cache entirely.
+		"""
+		if self.handle.value < 0:
+			error = self.lib.voikko_init_with_path(byref(self.handle), variant,
+			                                       cacheSize, path)
+			if error != None:
+				raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error, "UTF-8"))
 	
 	def terminate(self):
-		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
-		after this method has been called. The resources are released automatically when the Python object is
-		deleted. This method may be used to make sure that the resources are immediately released since they
-		may take significant amount of memory and timely object deletion by Python runtime cannot always be
-		relied upon.
+		"""Uninitialize this Voikko instance. The instance must be initialized again
+		before it can be used.
 		"""
-		if (self.__handle != 0):
-			self.__lib.voikkoTerminate(self.__handle)
-			self.__handle = 0
-			# Replace __lib with a dummy object that throws exception when any method is called. This ensures
-			# that nothing bad happens if methods of a Voikko instance are called after termination.
-			class DummyLib:
-				def __getattr__(obj, name):
-					raise VoikkoException("Attempt to use Voikko instance after terminate() was called")
-			self.__lib = DummyLib()
+		if self.handle.value >= 0:
+			self.lib.voikko_terminate(self.handle)
+			self.handle.value = -1
 	
-	def listDicts(path = None):
+	def listDicts(self, path = None):
 		"""Return a list of Dictionary objects representing the available
 		dictionary variants. If path is specified, it will be searched first
-		before looking from the standard locations.
+		before looking from the standard locations. This method can be called
+		even if the Voikko instance has not yet been initialized.
 		"""
-		lib = Voikko.__getLib()
-		lib.voikko_list_dicts.argtypes = [c_char_p]
-		lib.voikko_list_dicts.restype = POINTER(c_void_p)
-		lib.voikko_free_dicts.argtypes = [POINTER(c_void_p)]
-		lib.voikko_free_dicts.restype = None
-		lib.voikko_dict_variant.argtypes = [c_void_p]
-		lib.voikko_dict_variant.restype = c_char_p
-		lib.voikko_dict_description.argtypes = [c_void_p]
-		lib.voikko_dict_description.restype = c_char_p
-		
-		cDicts = lib.voikko_list_dicts(path)
+		cDicts = self.lib.voikko_list_dicts(path)
 		dicts = []
 		i = 0
 		while bool(cDicts[i]):
 			cDict = cDicts[i]
-			variant = unicode(lib.voikko_dict_variant(cDict), "ASCII")
-			description = unicode(lib.voikko_dict_description(cDict), "UTF-8")
+			variant = unicode(self.lib.voikko_dict_variant(cDict), "ASCII")
+			description = unicode(self.lib.voikko_dict_description(cDict), "UTF-8")
 			dicts.append(Dictionary(variant, description))
 			i = i + 1
-		lib.voikko_free_dicts(cDicts)
+		self.lib.voikko_free_dicts(cDicts)
 		return dicts
-	listDicts = staticmethod(listDicts)
 	
 	def spell(self, word):
 		"""Check the spelling of given word. Return true if the word is correct,
 		false if it is incorrect.
 		"""
-		result = self.__lib.voikkoSpellUcs4(self.__handle, word)
+		_checkInited(self)
+		result = self.lib.voikko_spell_ucs4(self.handle, word)
 		if result == 0:
 			return False
 		elif result == 1:
@@ -323,8 +308,9 @@ class Voikko(object):
 		"""Generate a list of suggested spellings for given (misspelled) word.
 		If the given word is correct, the list contains only the word itself.
 		"""
+		_checkInited(self)
 		
-		cSuggestions = self.__lib.voikkoSuggestUcs4(self.__handle, word)
+		cSuggestions = self.lib.voikko_suggest_ucs4(self.handle, word)
 		pSuggestions = []
 		
 		if not bool(cSuggestions):
@@ -335,36 +321,22 @@ class Voikko(object):
 			pSuggestions.append(cSuggestions[i])
 			i = i + 1
 		
-		self.__lib.voikko_free_suggest_ucs4(cSuggestions)
+		self.lib.voikko_free_suggest_ucs4(cSuggestions)
 		return pSuggestions
 	
-	def __getGrammarError(self, cGrammarError):
-		gError = GrammarError()
-		gError.errorCode = self.__lib.voikkoGetGrammarErrorCode(cGrammarError)
-		gError.startPos = self.__lib.voikkoGetGrammarErrorStartPos(cGrammarError)
-		gError.errorLen = self.__lib.voikkoGetGrammarErrorLength(cGrammarError)
-		gError.suggestions = []
-		cSuggestions = self.__lib.voikkoGetGrammarErrorSuggestions(cGrammarError)
-		if bool(cSuggestions):
-			i = 0
-			while bool(cSuggestions[i]):
-				gError.suggestions.append(unicode(cSuggestions[i], "UTF-8"))
-				i = i + 1
-		return gError
-	
-	def __grammarParagraph(self, paragraph, offset):
+	def _grammarParagraph(self, paragraph, offset):
 		paragraphLen = len(paragraph)
 		skipErrors = 0
 		errorList = []
 		while True:
-			cError = self.__lib.voikkoNextGrammarErrorUcs4(self.__handle,
+			error = self.lib.voikko_next_grammar_error_ucs4(self.handle,
 			        paragraph, paragraphLen, 0, skipErrors)
-			if not bool(cError):
+			if (error.errorCode == 0):
 				return errorList
-			gError = self.__getGrammarError(cError)
+			gError = GrammarError(error)
 			gError.startPos = offset + gError.startPos
 			errorList.append(gError)
-			self.__lib.voikkoFreeGrammarError(cError)
+			self.lib.voikko_free_suggest_cstr(error.suggestions)
 			skipErrors = skipErrors + 1
 	
 	def grammarErrors(self, text):
@@ -373,11 +345,12 @@ class Voikko(object):
 		Unlike the C based API this method accepts multiple paragraps
 		separated by newline characters.
 		"""
+		_checkInited(self)
 		textUnicode = unicode(text)
 		errorList = []
 		offset = 0
 		for paragraph in textUnicode.split(u"\n"):
-			errorList = errorList + self.__grammarParagraph(paragraph, offset)
+			errorList = errorList + self._grammarParagraph(paragraph, offset)
 			offset = offset + len(paragraph) + 1
 		return errorList
 	
@@ -385,7 +358,7 @@ class Voikko(object):
 		"""Return a human readable explanation for grammar error code in
 		given language.
 		"""
-		explanation = self.__lib.voikko_error_message_cstr(errorCode, language)
+		explanation = self.lib.voikko_error_message_cstr(errorCode, language)
 		return unicode(explanation, "UTF-8")
 	
 	def analyze(self, word):
@@ -393,7 +366,8 @@ class Voikko(object):
 		analysis results. The results are represented as maps having property
 		names as keys and property values as values.
 		"""
-		cAnalysisList = self.__lib.voikkoAnalyzeWordUcs4(self.__handle, word)
+		_checkInited(self)
+		cAnalysisList = self.lib.voikko_analyze_word_ucs4(self.handle, word)
 		pAnalysisList = []
 		
 		if not bool(cAnalysisList):
@@ -402,29 +376,30 @@ class Voikko(object):
 		i = 0
 		while bool(cAnalysisList[i]):
 			cAnalysis = cAnalysisList[i]
-			cKeys = self.__lib.voikko_mor_analysis_keys(cAnalysis)
+			cKeys = self.lib.voikko_mor_analysis_keys(cAnalysis)
 			pAnalysis = {}
 			j = 0
 			while bool(cKeys[j]):
 				key = cKeys[j]
-				value = self.__lib.voikko_mor_analysis_value_ucs4(cAnalysis, key)
+				value = self.lib.voikko_mor_analysis_value_ucs4(cAnalysis, key)
 				pAnalysis[unicode(key, 'ASCII')] = value
 				j = j + 1
 			pAnalysisList.append(pAnalysis)
 			i = i + 1
 		
-		self.__lib.voikko_free_mor_analysis(cAnalysisList)
+		self.lib.voikko_free_mor_analysis(cAnalysisList)
 		return pAnalysisList
 	
 	def tokens(self, text):
 		"""Split the given natural language text into a list of Token objects."""
+		_checkInited(self)
 		uniText = unicode(text)
 		result = []
 		textLen = len(uniText)
 		tokenLen = c_size_t()
 		position = 0
 		while textLen > 0:
-			tokenType = self.__lib.voikkoNextTokenUcs4(self.__handle,
+			tokenType = self.lib.voikko_next_token_ucs4(self.handle,
 			            uniText[position:], textLen, byref(tokenLen))
 			if tokenType == Token.NONE:
 				break
@@ -432,24 +407,6 @@ class Voikko(object):
 			result.append(Token(tokenText, tokenType))
 			position = position + tokenLen.value
 			textLen = textLen - tokenLen.value
-		return result
-	
-	def sentences(self, text):
-		"""Split the given natural language text into a list of Sentence objects."""
-		uniText = unicode(text)
-		result = []
-		textLen = len(uniText)
-		sentenceLen = c_size_t()
-		position = 0
-		while textLen > 0:
-			sentenceType = self.__lib.voikkoNextSentenceStartUcs4(self.__handle,
-			            uniText[position:], textLen, byref(sentenceLen))
-			sentenceText = uniText[position:position+sentenceLen.value]
-			result.append(Sentence(sentenceText, sentenceType))
-			if sentenceType == Sentence.NONE:
-				break
-			position = position + sentenceLen.value
-			textLen = textLen - sentenceLen.value
 		return result
 	
 	def getHyphenationPattern(self, word):
@@ -460,9 +417,10 @@ class Voikko(object):
 		  '=' = hyphentation point (character at this position
 		        is replaced by the hyphen.)
 		"""
-		cHyphenationPattern = self.__lib.voikkoHyphenateUcs4(self.__handle, word)
+		_checkInited(self)
+		cHyphenationPattern = self.lib.voikko_hyphenate_ucs4(self.handle, word)
 		hyphenationPattern = string_at(cHyphenationPattern)
-		self.__lib.voikkoFreeCstr(cHyphenationPattern)
+		self.lib.voikko_free_hyphenate(cHyphenationPattern)
 		return unicode(hyphenationPattern, 'ASCII')
 	
 	def hyphenate(self, word):
@@ -487,26 +445,26 @@ class Voikko(object):
 		will consider trailing dot of a word to be a part of that word.
 		Default: false
 		"""
-		self.__setBoolOption(0, value)
+		_setBoolOption(self, 0, value)
 	
 	def setIgnoreNumbers(self, value):
 		"""Ignore words containing numbers.
 		Default: false
 		"""
-		self.__setBoolOption(1, value)
+		_setBoolOption(self, 1, value)
 	
 	def setIgnoreUppercase(self, value):
 		"""Accept words that are written completely in uppercase letters without checking
 		them at all.
 		Default: false
 		"""
-		self.__setBoolOption(3, value)
+		_setBoolOption(self, 3, value)
 	
 	def setAcceptFirstUppercase(self, value):
 		"""Accept words even when the first letter is in uppercase (start of sentence etc.)
 		Default: true
 		"""
-		self.__setBoolOption(6, value)
+		_setBoolOption(self, 6, value)
 	
 	def setAcceptAllUppercase(self, value):
 		"""Accept words even when all of the letters are in uppercase. Note that this is
@@ -514,13 +472,13 @@ class Voikko(object):
 		checked, only case differences are ignored.
 		Default: true
 		"""
-		self.__setBoolOption(7, value)
+		_setBoolOption(self, 7, value)
 	
 	def setIgnoreNonwords(self, value):
 		"""(Spell checking only): Ignore non-words such as URLs and email addresses.
 		Default: true
 		"""
-		self.__setBoolOption(10, value)
+		_setBoolOption(self, 10, value)
 	
 	def setAcceptExtraHyphens(self, value):
 		"""(Spell checking only): Allow some extra hyphens in words. This option relaxes
@@ -529,7 +487,7 @@ class Voikko(object):
 		behaviour (if any) of this option is not specified.
 		Default: false
 		"""
-		self.__setBoolOption(11, value)
+		_setBoolOption(self, 11, value)
 	
 	def setAcceptMissingHyphens(self, value):
 		"""(Spell checking only): Accept missing hyphens at the start and end of the word.
@@ -539,7 +497,7 @@ class Voikko(object):
 		this option may be used to tell libvoikko to work around this defect.
 		Default: false
 		"""
-		self.__setBoolOption(12, value)
+		_setBoolOption(self, 12, value)
 	
 	def setAcceptTitlesInGc(self, value):
 		"""(Grammar checking only): Accept incomplete sentences that could occur in
@@ -548,48 +506,49 @@ class Voikko(object):
 		you are checking title text.
 		Default: false
 		"""
-		self.__setBoolOption(13, value)
+		_setBoolOption(self, 13, value)
 	
 	def setAcceptUnfinishedParagraphsInGc(self, value):
 		"""(Grammar checking only): Accept incomplete sentences at the end of the
 		paragraph. These may exist when text is still being written.
 		Default: false
 		"""
-		self.__setBoolOption(14, value)
+		_setBoolOption(self, 14, value)
 	
 	def setAcceptBulletedListsInGc(self, value):
 		"""(Grammar checking only): Accept paragraphs if they would be valid within
 		bulleted lists.
 		Default: false
 		"""
-		self.__setBoolOption(16, value)
+		_setBoolOption(self, 16, value)
 	
 	def setNoUglyHyphenation(self, value):
 		"""Do not insert hyphenation positions that are considered to be ugly but correct
 		Default: false
 		"""
-		self.__setBoolOption(4, value)
+		_setBoolOption(self, 4, value)
 	
 	def setHyphenateUnknownWords(self, value):
 		"""(Hyphenation only): Hyphenate unknown words.
 		Default: true
 		"""
-		self.__setBoolOption(15, value)
+		_setBoolOption(self, 15, value)
 	
 	def setMinHyphenatedWordLength(self, value):
 		"""The minumum length for words that may be hyphenated. This limit is also enforced on
 		individual parts of compound words.
 		Default: 2
 		"""
-		self.__lib.voikkoSetIntegerOption(self.__handle, 9, value)
+		_checkInited(self)
+		self.lib.voikko_set_int_option(self.handle, 9, value)
 	
 	def setSuggestionStrategy(self, value):
 		"""Set the suggestion strategy to be used when generating spelling suggestions.
 		Default: SuggestionStrategy.TYPO
 		"""
 		if value == SuggestionStrategy.OCR:
-			self.__setBoolOption(8, True)
+			_setBoolOption(self, 8, True)
 		elif value == SuggestionStrategy.TYPO:
-			self.__setBoolOption(8, False)
+			_setBoolOption(self, 8, False)
 		else:
 			raise VoikkoException("Invalid suggestion strategy")
