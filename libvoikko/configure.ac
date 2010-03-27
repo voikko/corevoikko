@@ -115,6 +115,8 @@ if test x$build_os == xmingw32; then
 fi
 AC_SUBST(LIBLDFLAGSWIN)
 
+ACX_PTHREAD
+
 dnl Functions
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
