@@ -458,30 +458,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\src\morphology\HfstAnalyzer.cpp"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\src\morphology\HfstAnalyzer.hpp"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
 					RelativePath="..\src\morphology\interface.cpp"
 					>
 					<FileConfiguration
@@ -500,30 +476,6 @@
 							Name="VCCLCompilerTool"
 							ObjectFile="$(IntDir)\$(InputName)4.obj"
 							XMLDocumentationFileName="$(IntDir)\$(InputName)4.xdc"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\src\morphology\LttoolboxAnalyzer.cpp"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\src\morphology\LttoolboxAnalyzer.hpp"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
 						/>
 					</FileConfiguration>
 				</File>
@@ -814,30 +766,6 @@
 				<File
 					RelativePath="..\src\spellchecker\FixedResultSpeller.hpp"
 					>
-				</File>
-				<File
-					RelativePath="..\src\spellchecker\HfstSpeller.cpp"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCLCompilerTool"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
-					RelativePath="..\src\spellchecker\HfstSpeller.hpp"
-					>
-					<FileConfiguration
-						Name="Release|Win32"
-						ExcludedFromBuild="true"
-						>
-						<Tool
-							Name="VCCustomBuildTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="..\src\spellchecker\spell.cpp"
