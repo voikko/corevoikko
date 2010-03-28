@@ -6877,22 +6877,30 @@ end;
 
 # Yhdistää tietueet, jotka poikkeavat toisistaan vain jatko-kentän osalta.
 subrule yhdistä_sama_jatko($lista):
-  if length($lista) = 2 then
-    if $lista.1 - jatko = $lista.2 - jatko then
-      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko>]>;
-    end;
-  elseif length($lista) = 3 then
-    if $lista.1 - jatko = $lista.2 - jatko and $lista.2 - jatko = $lista.3 - jatko then
-      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko> + $lista.<3, jatko>]>;
-    elseif $lista.1 - jatko = $lista.2 - jatko then
-      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<2, jatko>], $lista.3>;
-    elseif $lista.2 - jatko = $lista.3 - jatko then
-      return <$lista.2 + [jatko: $lista.<2, jatko> + $lista.<3, jatko>], $lista.1>;
-    elseif $lista.1 - jatko = $lista.3 - jatko then
-      return <$lista.1 + [jatko: $lista.<1, jatko> + $lista.<3, jatko>], $lista.2>;
-    end;
+  if length($lista) = 1 then
+    # Optimoidaan yleisin tapaus
+    return $lista;
   end;
-  return $lista;
+  define $combined := <>;
+  define $newCombined := <>;
+  define $didCombine := no;
+  foreach $current in $lista:
+    $newCombined := <>;
+    $didCombine := no;
+    foreach $previous in $combined:
+      if $previous - jatko = $current - jatko then
+        $newCombined :=+ <$previous + [jatko: $previous.jatko + $current.jatko]>;
+        $didCombine := yes;
+      else
+        $newCombined :=+ <$previous>;
+      end;
+    end;
+    if not $didCombine then
+      $newCombined :=+ <$current>;
+    end;
+    $combined := $newCombined;
+  end;
+  return $combined;
 end;
 
 output_filter output($lista_orig):
