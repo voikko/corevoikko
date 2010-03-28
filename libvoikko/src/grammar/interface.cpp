@@ -27,10 +27,6 @@ typedef voikko_grammar_error VoikkoGrammarError; // for now
 
 namespace libvoikko {
 
-void init_gc_error(voikko_grammar_error * gc_error) {
-	memset(gc_error, 0, sizeof(gc_error));
-}
-
 VOIKKOEXPORT VoikkoGrammarError * voikkoNextGrammarErrorUcs4(voikko_options_t * options, const wchar_t * text_ucs4,
                      size_t wtextlen, size_t startpos, int skiperrors) {
 	if (text_ucs4 == 0 || wtextlen == 0) {
