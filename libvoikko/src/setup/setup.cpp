@@ -231,6 +231,7 @@ VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 		delete[] handle->cache_meta;
 	}
 	gc_clear_cache(handle);
+	delete handle;
 }
 
 }

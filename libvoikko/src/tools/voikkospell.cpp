@@ -35,9 +35,9 @@ static int one_line_output = false;
 static char word_separator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that has spaces in them. */
 
-void printMorphology(int handle, const wchar_t * word) {
+void printMorphology(VoikkoHandle * handle, const wchar_t * word) {
 	voikko_mor_analysis ** analysisList =
-	    voikko_analyze_word_ucs4(handle, word);
+	    voikkoAnalyzeWordUcs4(handle, word);
 	for (voikko_mor_analysis ** analysis = analysisList;
 	     *analysis; analysis++) {
 		const char ** keys = voikko_mor_analysis_keys(*analysis);
@@ -52,8 +52,8 @@ void printMorphology(int handle, const wchar_t * word) {
 	voikko_free_mor_analysis(analysisList);
 }
 
-void check_word(int handle, const wchar_t * word) {
-	int result = voikko_spell_ucs4(handle, word);
+void check_word(VoikkoHandle * handle, const wchar_t * word) {
+	int result = voikkoSpellUcs4(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		cerr << "E: charset conversion failed" << endl;
 		return;
@@ -74,7 +74,7 @@ void check_word(int handle, const wchar_t * word) {
 	else if (one_line_output) {
 		wcout << word;
 		if (!result) {
-			wchar_t ** suggestions = voikko_suggest_ucs4(handle, word);
+			wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 			if (suggestions) {
 				for (int i = 0; suggestions[i] != 0; i++) {
 					if (space || wcschr(suggestions[i], L' ')) {
@@ -99,7 +99,7 @@ void check_word(int handle, const wchar_t * word) {
 		printMorphology(handle, word);
 	}
 	if (!one_line_output && suggest && !result) {
-		wchar_t ** suggestions = voikko_suggest_ucs4(handle, word);
+		wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 		if (suggestions) {
 			for (int i = 0; suggestions[i] != 0; i++) {
 				wcout << L"S: " << suggestions[i] << endl;
@@ -133,7 +133,6 @@ int list_dicts(const char * path) {
 int main(int argc, char ** argv) {
 	const char * path = 0;
 	const char * variant = "";
-	int handle;
 	int cache_size;
 	
 	cache_size = 0;
@@ -158,9 +157,10 @@ int main(int argc, char ** argv) {
 		return list_dicts(path);
 	}
 	
-	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, cache_size, path);
-	if (voikko_error) {
-		cerr << "E: Initialization of Voikko failed: " << voikko_error << endl;
+	const char * voikkoError;
+	VoikkoHandle * handle = voikkoInit(&voikkoError, variant, cache_size, path);
+	if (!handle) {
+		cerr << "E: Initialization of Voikko failed: " << voikkoError << endl;
 		return 1;
 	}
 	
@@ -170,33 +170,33 @@ int main(int argc, char ** argv) {
 			autotest = true;
 		}
 		else if (args == "ignore_dot=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_DOT, 1);
 		else if (args == "ignore_dot=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_DOT, 0);
 		else if (args == "ignore_numbers=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
 		else if (args == "ignore_numbers=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NUMBERS, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_NUMBERS, 0);
 		else if (args == "ignore_nonwords=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NONWORDS, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_NONWORDS, 1);
 		else if (args == "ignore_nonwords=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_NONWORDS, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_NONWORDS, 0);
 		else if (args == "accept_first_uppercase=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
 		else if (args == "accept_first_uppercase=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 0);
 		else if (args == "accept_extra_hyphens=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 1);
 		else if (args == "accept_extra_hyphens=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 0);
 		else if (args == "accept_missing_hyphens=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_MISSING_HYPHENS, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_MISSING_HYPHENS, 1);
 		else if (args == "accept_missing_hyphens=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_MISSING_HYPHENS, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_MISSING_HYPHENS, 0);
 		else if (args == "ocr_suggestions=1")
-			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 1);
 		else if (args == "ocr_suggestions=0")
-			voikko_set_bool_option(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
 		else if (args.find("-x") == 0) {
 			one_line_output = true;
 			if (args.size() == 3) {
@@ -253,6 +253,6 @@ int main(int argc, char ** argv) {
 	}
 	delete[] line;
 	
-	voikko_terminate(handle);
+	voikkoTerminate(handle);
 	return 0;
 }

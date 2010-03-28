@@ -21,32 +21,27 @@
  */
 
 #include "porting.h"
-#include "setup/setup.hpp"
 #include "utils/StringUtils.hpp"
 #include "voikko.h"
 #include <cstring>
 #include <cstdlib>
+#include <cwchar>
 
 namespace libvoikko { namespace compatibility {
 
-static voikko_options_t voikko_options;
-static int voikko_handle_count;
+static VoikkoHandle * voikko_options = 0;
 
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
-	if (voikko_handle_count++ > 0) {
+	if (voikko_options) {
 		return "Maximum handle count exceeded";
 	}
 	const char * error;
-	voikko_options_t * theHandle =
-			reinterpret_cast<voikko_options_t *>(voikkoInit(&error, langcode, cache_size, path));
-	if (theHandle) {
+	voikko_options = voikkoInit(&error, langcode, cache_size, path);
+	if (voikko_options) {
 		*handle = 1;
-		voikko_options = *theHandle;
-		delete theHandle;
 		return 0;
 	} else {
-		voikko_handle_count--;
 		*handle = 0;
 		return error;
 	}
@@ -57,9 +52,9 @@ VOIKKOEXPORT const char * voikko_init(int * handle, const char * langcode, int c
 }
 
 VOIKKOEXPORT int voikko_terminate(int handle) {
-	if (handle == 1 && voikko_handle_count > 0) {
-		voikko_handle_count--;
-		voikkoTerminate(reinterpret_cast<VoikkoHandle *>(&voikko_options));
+	if (handle == 1 && voikko_options) {
+		voikkoTerminate(voikko_options);
+		voikko_options = 0;
 		return 1;
 	} else {
 		return 0;
@@ -67,7 +62,7 @@ VOIKKOEXPORT int voikko_terminate(int handle) {
 }
 
 VOIKKOEXPORT int voikko_set_bool_option(int /*handle*/, int option, int value) {
-	return voikkoSetBooleanOption(reinterpret_cast<VoikkoHandle *>(&voikko_options), option, value);
+	return voikkoSetBooleanOption(voikko_options, option, value);
 }
 
 VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
@@ -75,7 +70,7 @@ VOIKKOEXPORT int voikko_set_int_option(int /*handle*/, int option, int value) {
 		// deprecated option VOIKKO_INTERSECT_COMPOUND_LEVEL
 		return 1;
 	}
-	return voikkoSetIntegerOption(reinterpret_cast<VoikkoHandle *>(&voikko_options), option, value);
+	return voikkoSetIntegerOption(voikko_options, option, value);
 }
 
 VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char * value) {
@@ -91,31 +86,31 @@ VOIKKOEXPORT int voikko_set_string_option(int /*handle*/, int option, const char
 }
 
 VOIKKOEXPORT int voikko_spell_cstr(int /*handle*/, const char * word) {
-	return voikkoSpellCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	return voikkoSpellCstr(voikko_options, word);
 }
 
 VOIKKOEXPORT int voikko_spell_ucs4(int /*handle*/, const wchar_t * word) {
-	return voikkoSpellUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	return voikkoSpellUcs4(voikko_options, word);
 }
 
 VOIKKOEXPORT char ** voikko_suggest_cstr(int /*handle*/, const char * word) {
-	char ** suggestions = voikkoSuggestCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	char ** suggestions = voikkoSuggestCstr(voikko_options, word);
 	utils::StringUtils::convertCStringArrayToMalloc(suggestions);
 	return suggestions;
 }
 
 VOIKKOEXPORT wchar_t ** voikko_suggest_ucs4(int /*handle*/, const wchar_t * word) {
-	return voikkoSuggestUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	return voikkoSuggestUcs4(voikko_options, word);
 }
 
 VOIKKOEXPORT char * voikko_hyphenate_cstr(int /*handle*/, const char * word) {
-	char * hyphenation = voikkoHyphenateCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	char * hyphenation = voikkoHyphenateCstr(voikko_options, word);
 	utils::StringUtils::convertCStringToMalloc(hyphenation);
 	return hyphenation;
 }
 
 VOIKKOEXPORT char * voikko_hyphenate_ucs4(int /*handle*/, const wchar_t * word) {
-	char * hyphenation = voikkoHyphenateUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	char * hyphenation = voikkoHyphenateUcs4(voikko_options, word);
 	utils::StringUtils::convertCStringToMalloc(hyphenation);
 	return hyphenation;
 }
@@ -135,22 +130,22 @@ VOIKKOEXPORT void voikko_free_hyphenate(char * hyphenate_result) {
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_ucs4(int /*handle*/, const wchar_t * text,
 		size_t textlen, size_t * tokenlen) {
-	return voikkoNextTokenUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, tokenlen);
+	return voikkoNextTokenUcs4(voikko_options, text, textlen, tokenlen);
 }
 
 VOIKKOEXPORT enum voikko_token_type voikko_next_token_cstr(int /*handle*/, const char * text,
 		size_t textlen, size_t * tokenlen) {
-	return voikkoNextTokenCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, tokenlen);
+	return voikkoNextTokenCstr(voikko_options, text, textlen, tokenlen);
 }
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_ucs4(int /*handle*/,
 		const wchar_t * text, size_t textlen, size_t * sentencelen) {
-	return voikkoNextSentenceStartUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, sentencelen);
+	return voikkoNextSentenceStartUcs4(voikko_options, text, textlen, sentencelen);
 }
 
 VOIKKOEXPORT enum voikko_sentence_type voikko_next_sentence_start_cstr(int /*handle*/,
                           const char * text, size_t textlen, size_t * sentencelen) {
-	return voikkoNextSentenceStartCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, sentencelen);
+	return voikkoNextSentenceStartCstr(voikko_options, text, textlen, sentencelen);
 }
 
 VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/, const wchar_t * text,
@@ -158,7 +153,7 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_ucs4(int /*handle*/,
 	voikko_grammar_error gError;
 	gError.error_level = 0;
 	gError.error_description = 0;
-	VoikkoGrammarError * error = voikkoNextGrammarErrorUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), text, textlen, startpos, skiperrors);
+	VoikkoGrammarError * error = voikkoNextGrammarErrorUcs4(voikko_options, text, textlen, startpos, skiperrors);
 	if (error) {
 		gError.error_code = voikkoGetGrammarErrorCode(error);
 		gError.startpos = voikkoGetGrammarErrorStartPos(error);
@@ -213,12 +208,12 @@ VOIKKOEXPORT voikko_grammar_error voikko_next_grammar_error_cstr(int handle, con
 
 VOIKKOEXPORT voikko_mor_analysis ** voikko_analyze_word_ucs4(
 		int /*handle*/, const wchar_t * word) {
-	return voikkoAnalyzeWordUcs4(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	return voikkoAnalyzeWordUcs4(voikko_options, word);
 }
 
 VOIKKOEXPORT voikko_mor_analysis ** voikko_analyze_word_cstr(
 		int /*handle*/, const char * word) {
-	return voikkoAnalyzeWordCstr(reinterpret_cast<VoikkoHandle *>(&voikko_options), word);
+	return voikkoAnalyzeWordCstr(voikko_options, word);
 }
 
 } }

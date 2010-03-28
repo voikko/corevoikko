@@ -18,20 +18,16 @@
 
 /* This library should be used in the following manner:
  * 
- * int handle;
- * const char * voikko_error = voikko_init(&handle, "fi_FI", 0);
+ * const char * voikko_error;
+ * VoikkoHandle * handle = voikkoInit(&voikko_error, "fi_FI", 0, 0);
  * // check for errors
  * // set options
  * // use spell/suggest/hyphenate
- * voikko_terminate(handle);
+ * voikkoTerminate(handle);
  *
- * This library is currently not MT safe (limitation in Malaga). If you need to use
- * it in a threaded program you should use single mutex to protect all calls to this
- * library. It may be necessary to set options and call spell/suggest/hyphenate in the
- * same critical section.
+ * A single handle should not be used simultaneously from multiple threads.
  *
- * Currently Finnish is the only supported language. Acquiring more than one simultaneous
- * handle is not possible in this version.
+ * Currently Finnish is the only supported language.
  *
  */
 

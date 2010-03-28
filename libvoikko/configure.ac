@@ -115,7 +115,7 @@ if test x$build_os == xmingw32; then
 fi
 AC_SUBST(LIBLDFLAGSWIN)
 
-ACX_PTHREAD
+ACX_PTHREAD([AM_CONDITIONAL([HAVE_PTHREAD],[true])], [AM_CONDITIONAL([HAVE_PTHREAD],[false])])
 
 dnl Functions
 AC_FUNC_MALLOC
