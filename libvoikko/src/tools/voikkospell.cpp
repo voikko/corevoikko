@@ -33,9 +33,9 @@ static bool suggest = false;
 static bool morphology = false;
 static int one_line_output = false;
 static char word_separator = ' ';
-static bool space = false;  /* Set to true if you want to output suggestions that has spaces in them. */
+static bool space = false;  /* Set to true if you want to output suggestions that have spaces in them. */
 
-void printMorphology(VoikkoHandle * handle, const wchar_t * word) {
+static void printMorphology(VoikkoHandle * handle, const wchar_t * word) {
 	voikko_mor_analysis ** analysisList =
 	    voikkoAnalyzeWordUcs4(handle, word);
 	for (voikko_mor_analysis ** analysis = analysisList;
@@ -52,7 +52,7 @@ void printMorphology(VoikkoHandle * handle, const wchar_t * word) {
 	voikko_free_mor_analysis(analysisList);
 }
 
-void check_word(VoikkoHandle * handle, const wchar_t * word) {
+static void check_word(VoikkoHandle * handle, const wchar_t * word) {
 	int result = voikkoSpellUcs4(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		cerr << "E: charset conversion failed" << endl;
@@ -113,7 +113,7 @@ void check_word(VoikkoHandle * handle, const wchar_t * word) {
  * Print a list of available dictionaries to stdout.
  * @return status code to be returned when the program exits.
  */
-int list_dicts(const char * path) {
+static int list_dicts(const char * path) {
 	voikko_dict ** dicts = voikko_list_dicts(path);
 	if (!dicts) {
 		cerr << "E: Failed to list available dictionaries." << endl;
@@ -224,9 +224,6 @@ int main(int argc, char ** argv) {
 	}
 	
 	wchar_t * line = new wchar_t[MAX_WORD_LENGTH + 1];
-	if (!line) {
-		cerr << "E: Out of memory" << endl;
-	}
 	
 	// Use stdout in wide character mode and stderr in narrow character mode.
 	setlocale(LC_ALL, "");

@@ -20,7 +20,7 @@
 #include "morphology/NullAnalyzer.hpp"
 #include "morphology/MalagaAnalyzer.hpp"
 #include "morphology/malaga/malaga.hpp"
-#include "config.h"
+#include "porting.h"
 
 #ifdef HAVE_HFST
 #include "morphology/HfstAnalyzer.hpp"

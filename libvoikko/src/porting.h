@@ -21,7 +21,9 @@
 #ifndef VOIKKO_PORTING_H
 #define VOIKKO_PORTING_H
 
-#include <config.h>
+#ifdef HAVE_CONFIG_H
+  #include <config.h>
+#endif
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__)
 # ifndef WIN32

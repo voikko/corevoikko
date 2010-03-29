@@ -1,3 +1,11 @@
+2010-03-29 Harri Pitkänen <hatapitk@iki.fi>
+	* Do not include config.h unless HAVE_CONFIG_H is defined.
+
+2010-03-28 Andris Pavenis <andris.pavenis@iki.fi>
+	* Add MSVC solution file.
+	* Add MSVC projects for voikkospell, voikkohyphenate, voikkogc 
+	* Update libvoikko MSVC project including rearranging sources for easier maintenance.
+
 2010-03-27 Harri Pitkänen <hatapitk@iki.fi>
 	* Complete API refactoring. Introduce thread safe API and implement a
 	  a compatibility layer that supports the old API.
