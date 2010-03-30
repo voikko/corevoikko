@@ -22,6 +22,7 @@
 #include <cstring>
 #include <cwchar>
 #include <iostream>
+#include <sstream>
 #include <string>
 
 using namespace std;
@@ -35,24 +36,24 @@ static int one_line_output = false;
 static char word_separator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that have spaces in them. */
 
-static void printMorphology(VoikkoHandle * handle, const wchar_t * word) {
+static void printMorphology(VoikkoHandle * handle, const wchar_t * word, wstringstream & out) {
 	voikko_mor_analysis ** analysisList =
 	    voikkoAnalyzeWordUcs4(handle, word);
 	for (voikko_mor_analysis ** analysis = analysisList;
 	     *analysis; analysis++) {
 		const char ** keys = voikko_mor_analysis_keys(*analysis);
 		for (const char ** key = keys; *key; key++) {
-			wcout << L"A(" << word << L"):";
-			wcout << (analysis - analysisList) + 1 << L":";
-			wcout << *key << "=";
-			wcout << voikko_mor_analysis_value_ucs4(*analysis, *key);
-			wcout << endl;
+			out << L"A(" << word << L"):";
+			out << (analysis - analysisList) + 1 << L":";
+			out << *key << L"=";
+			out << voikko_mor_analysis_value_ucs4(*analysis, *key);
+			out << endl;
 		}
 	}
 	voikko_free_mor_analysis(analysisList);
 }
 
-static void check_word(VoikkoHandle * handle, const wchar_t * word) {
+static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstream & out) {
 	int result = voikkoSpellUcs4(handle, word);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		cerr << "E: charset conversion failed" << endl;
@@ -64,45 +65,44 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word) {
 	}
 	if (autotest) {
 		if (result) {
-			wcout << L"C" << endl;
+			out << L"C" << endl;
 		}
 		else {
-			wcout << L"W" << endl;
+			out << L"W" << endl;
 		}
-		fflush(0);
 	}
 	else if (one_line_output) {
-		wcout << word;
+		out << word;
 		if (!result) {
 			wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 			if (suggestions) {
 				for (int i = 0; suggestions[i] != 0; i++) {
 					if (space || wcschr(suggestions[i], L' ')) {
-						wcout << word_separator;
-						wcout << suggestions[i];
+						out << word_separator;
+						out << suggestions[i];
 					}
 				}
 				voikko_free_suggest_ucs4(suggestions);
 			}
 		}
-		wcout << endl;
+		out << endl;
 	}
 	else {
 		if (result) {
-			wcout << L"C: " << word << endl;
+			out << L"C: " << word << endl;
 		}
 		else {
-			wcout << L"W: " << word << endl;
+			out << L"W: " << word << endl;
 		}
 	}
 	if (morphology && result) {
-		printMorphology(handle, word);
+		printMorphology(handle, word, out);
 	}
 	if (!one_line_output && suggest && !result) {
 		wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 		if (suggestions) {
 			for (int i = 0; suggestions[i] != 0; i++) {
-				wcout << L"S: " << suggestions[i] << endl;
+				out << L"S: " << suggestions[i] << endl;
 			}
 			voikko_free_suggest_ucs4(suggestions);
 		}
@@ -242,7 +242,10 @@ int main(int argc, char ** argv) {
 			cerr << "E: Too long word" << endl;
 			continue;
 		}
-		check_word(handle, line);
+		wstringstream out;
+		check_word(handle, line, out);
+		wcout << out;
+		fflush(0);
 	}
 	int error = ferror(stdin);
 	if (error) {
