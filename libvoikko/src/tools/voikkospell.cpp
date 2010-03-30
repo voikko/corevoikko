@@ -28,13 +28,15 @@
 using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
+static const int MAX_THREADS = 200;
 
 static bool autotest = false;
 static bool suggest = false;
 static bool morphology = false;
-static int one_line_output = false;
-static char word_separator = ' ';
+static bool oneLineOutput = false;
+static char wordSeparator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that have spaces in them. */
+static int threadCount = 1;
 
 static void printMorphology(VoikkoHandle * handle, const wchar_t * word, wstringstream & out) {
 	voikko_mor_analysis ** analysisList =
@@ -71,14 +73,14 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 			out << L"W" << endl;
 		}
 	}
-	else if (one_line_output) {
+	else if (oneLineOutput) {
 		out << word;
 		if (!result) {
 			wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 			if (suggestions) {
 				for (int i = 0; suggestions[i] != 0; i++) {
 					if (space || wcschr(suggestions[i], L' ')) {
-						out << word_separator;
+						out << wordSeparator;
 						out << suggestions[i];
 					}
 				}
@@ -98,7 +100,7 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 	if (morphology && result) {
 		printMorphology(handle, word, out);
 	}
-	if (!one_line_output && suggest && !result) {
+	if (!oneLineOutput && suggest && !result) {
 		wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 		if (suggestions) {
 			for (int i = 0; suggestions[i] != 0; i++) {
@@ -198,17 +200,33 @@ int main(int argc, char ** argv) {
 		else if (args == "ocr_suggestions=0")
 			voikkoSetBooleanOption(handle, VOIKKO_OPT_OCR_SUGGESTIONS, 0);
 		else if (args.find("-x") == 0) {
-			one_line_output = true;
+			oneLineOutput = true;
 			if (args.size() == 3) {
-				word_separator = argv[i][2];
+				wordSeparator = argv[i][2];
 			}
-			space = (word_separator != ' ');
+			space = (wordSeparator != ' ');
 		}
 		else if (args == "-s") {
 			suggest = true;
 		}
 		else if (args == "-m") {
 			morphology = true;
+		}
+		else if (args == "-j") {
+			#ifdef HAVE_PTHREAD
+				if (i + 1 == argc) {
+					cerr << "-j must be followed by number of threads" << endl;
+					return 1;
+				}
+				threadCount = atoi(argv[++i]);
+				if (threadCount <= 0 || threadCount > MAX_THREADS) {
+					cerr << "Number of threads must be between 1 and " << MAX_THREADS << endl;
+					return 1;
+				}
+			#else
+				cerr << "Support for threaded operation is not available" << endl;
+				return 1;
+			#endif
 		}
 		else if (args.find("-c") == 0) {
 			continue;
@@ -244,7 +262,7 @@ int main(int argc, char ** argv) {
 		}
 		wstringstream out;
 		check_word(handle, line, out);
-		wcout << out;
+		wcout << out.str();
 		fflush(0);
 	}
 	int error = ferror(stdin);
