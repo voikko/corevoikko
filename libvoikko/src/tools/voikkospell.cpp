@@ -1,5 +1,5 @@
 /* Voikkospell: Testing tool for libvoikko
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -30,6 +30,7 @@ using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
 static const int MAX_THREADS = 200;
+static const size_t WORDS_PER_BLOCK = 1;
 
 static bool autotest = false;
 static bool suggest = false;
@@ -38,7 +39,13 @@ static bool oneLineOutput = false;
 static char wordSeparator = ' ';
 static bool space = false;  /* Set to true if you want to output suggestions that have spaces in them. */
 static int threadCount = 1;
-static vector<VoikkoHandle *> spellers;
+
+struct speller_t {
+	VoikkoHandle * handle;
+	vector<wstring> * words;
+};
+
+static speller_t * spellers;
 
 static void printMorphology(VoikkoHandle * handle, const wchar_t * word, wstringstream & out) {
 	voikko_mor_analysis ** analysisList =
@@ -113,16 +120,95 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 	}
 }
 
-static void handleWord(const wchar_t * word) {
+// tämä jonnekin
+#include <pthread.h>
+
+static void * processBlock(void * args) {
+	speller_t * speller = static_cast<speller_t *>(args);
 	wstringstream out;
-	check_word(spellers.at(0), word, out);
+	vector<wstring>::const_iterator it = speller->words->begin();
+	while (it != speller->words->end()) {
+		check_word(speller->handle, it->c_str(), out);
+		++it;
+	}
+	delete speller->words;
+	return new wstring(out.str());
+}
+
+pthread_t * threads;
+int nextThread;
+int nThreadsInUse;
+vector<wstring> * nextBlock;
+
+static void initNextBlock() {
+	nextBlock = new vector<wstring>();
+	nextBlock->reserve(WORDS_PER_BLOCK);
+}
+
+static void initThreads() {
+	threads = new pthread_t[threadCount];
+	nextThread = 0;
+	nThreadsInUse = 0;
+}
+
+static void cleanupThread() {
+	void * result;
+	if (pthread_join(threads[nextThread], &result)) {
+		cerr << "E: pthread_join failed" << endl;
+		exit(1);
+	}
+	--nThreadsInUse;
+	wstring * resultString = static_cast<wstring *>(result);
+	wcout << *resultString;
+	delete resultString;
+}
+
+static void handleWordMultiThread(const wchar_t * word) {
+	nextBlock->push_back(wstring(word));
+	if (nextBlock->size() == WORDS_PER_BLOCK) {
+		if (nThreadsInUse == threadCount) {
+			cleanupThread();
+		}
+		spellers[nextThread].words = nextBlock;
+		if (pthread_create(threads + nextThread, 0, &processBlock, spellers + nextThread)) {
+			cerr << "E: Failed to create thread" << endl;
+			exit(1);
+		}
+		nextThread = (nextThread + 1) % threadCount;
+		++nThreadsInUse;
+		initNextBlock();
+	}
+}
+
+static void finishProcessing() {
+	while (nThreadsInUse > 0) {
+		cleanupThread();
+		nextThread = (nextThread + 1) % threadCount;
+	}
+}
+
+static void handleWordSingleThread(const wchar_t * word) {
+	wstringstream out;
+	check_word(spellers[0].handle, word, out);
 	wcout << out.str();
 	fflush(0);
 }
 
+static void handleWord(const wchar_t * word) {
+	#ifdef HAVE_PTHREAD
+		if (threadCount == 1) {
+			handleWordSingleThread(word);
+		} else {
+			handleWordMultiThread(word);
+		}
+	#else
+		handleWordSingleThread(word);	
+	#endif
+}
+
 static void setBooleanOption(int option, int value) {
 	for (int i = 0; i < threadCount; i++) {
-		voikkoSetBooleanOption(spellers.at(i), option, value);
+		voikkoSetBooleanOption(spellers[i].handle, option, value);
 	}
 }
 
@@ -190,8 +276,7 @@ int main(int argc, char ** argv) {
 		return list_dicts(path);
 	}
 	
-	spellers = vector<VoikkoHandle *>();
-	spellers.reserve(threadCount);
+	spellers = new speller_t[threadCount];
 	for (int i = 0; i < threadCount; i++) {
 		const char * voikkoError;
 		VoikkoHandle * handle = voikkoInit(&voikkoError, variant, cache_size, path);
@@ -199,7 +284,8 @@ int main(int argc, char ** argv) {
 			cerr << "E: Initialization of Voikko failed: " << voikkoError << endl;
 			return 1;
 		}
-		spellers.push_back(handle);
+		spellers[i].handle = handle;
+		spellers[i].words = 0;
 	}
 	
 	for (int i = 1; i < argc; i++) {
@@ -267,6 +353,8 @@ int main(int argc, char ** argv) {
 	setlocale(LC_ALL, "");
 	fwide(stdout, 1);
 	fwide(stderr, -1);
+	initThreads();
+	initNextBlock();
 	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
 		size_t lineLen = wcslen(line);
 		if (lineLen == 0) {
@@ -282,6 +370,7 @@ int main(int argc, char ** argv) {
 		}
 		handleWord(line);
 	}
+	finishProcessing();
 	int error = ferror(stdin);
 	if (error) {
 		cerr << "E: Error while reading from stdin" << endl;
@@ -289,8 +378,10 @@ int main(int argc, char ** argv) {
 	delete[] line;
 	
 	for (int i = 0; i < threadCount; i++) {
-		voikkoTerminate(spellers.at(i));
+		voikkoTerminate(spellers[i].handle);
 	}
-	spellers.clear();
+	delete[] spellers;
+	delete nextBlock;
+	delete[] threads;
 	return 0;
 }
