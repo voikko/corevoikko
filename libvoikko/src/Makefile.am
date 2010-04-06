@@ -73,6 +73,7 @@ noinst_HEADERS = \
     hyphenator/Hyphenator.hpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp \
     hyphenator/HyphenatorFactory.hpp \
+    hyphenator/HfstHyphenator.hpp \
     morphology/Analysis.hpp \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \
@@ -109,6 +110,7 @@ noinst_HEADERS = \
     spellchecker/FixedResultSpeller.hpp \
     spellchecker/HfstSpeller.hpp \
     spellchecker/SpellerFactory.hpp \
+    spellchecker/HfstSuggestion.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \
     spellchecker/suggestion/SuggestionGeneratorFactory.hpp \
@@ -146,7 +148,10 @@ CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
 	python $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
 
-HFST_CPP_FILES=morphology/HfstAnalyzer.cpp spellchecker/HfstSpeller.cpp
+HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
+			   spellchecker/HfstSpeller.cpp \
+			   spellchecker/HfstSuggestion.cpp \
+			   hyphenator/HfstHyphenator.cpp
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 

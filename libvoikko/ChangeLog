@@ -1,3 +1,7 @@
+2010-04-06 Flammie Pirinen <flammie@iki.fi>
+	* Updated HFST integration including suggestion generator
+	  and hyphenator.
+
 2010-04-04 Harri Pitkänen <hatapitk@iki.fi>
 	* Add multi thread mode to voikkospell.
 

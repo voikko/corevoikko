@@ -51,7 +51,6 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 	}
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
 	HWFST::KeyVector * wordPath = HWFST::stringUtf8ToKeyVector(wordUtf8, keyTable);
-	
 	HWFST::KeyVectorVector * lookups = HWFST::lookup_all(speller, wordPath, &flags);
 	spellresult result = SPELL_FAILED;
 	if (lookups != NULL) {
@@ -75,7 +74,7 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 void HfstSpeller::terminate() {
 	delete keyTable;
 	keyTable = 0;
-	delete speller; // FIXME: leaks memory
+	HWFST::delete_transducer(speller);
 	speller = 0;
 }
 
