@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,18 +16,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+#include "porting.h"
 #include "hyphenator/HyphenatorFactory.hpp"
 #include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
+#ifdef HAVE_HFST
+#include "hyphenator/HfstHyphenator.hpp"
+#endif
 
 using namespace libvoikko::setup;
+using namespace std;
 
 namespace libvoikko { namespace hyphenator {
 
 Hyphenator * HyphenatorFactory::getHyphenator(const voikko_options_t * options,
-                                const Dictionary & /*dictionary*/)
+                                const Dictionary & dictionary)
                                 throw(DictionaryException) {
-	// TODO: use configuration
-	return new AnalyzerToFinnishHyphenatorAdapter(options->morAnalyzer);
+	string backend = dictionary.getHyphenatorBackend();
+	if (backend == "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)") {
+		return new AnalyzerToFinnishHyphenatorAdapter(options->morAnalyzer);
+	}
+	#ifdef HAVE_HFST
+	if (backend == "hfst") {
+		return new HfstHyphenator(dictionary.getMorPath());
+	}
+	#endif
+	throw DictionaryException("Could not create hyphenator due to unknown hyphenator backend");
 }
 
 } }

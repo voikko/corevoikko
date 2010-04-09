@@ -32,6 +32,7 @@ class Dictionary {
 	std::string morBackend;
 	std::string spellBackend;
 	std::string suggestionBackend;
+	std::string hyphenatorBackend;
 	std::string variant;
 	std::string description;
 	bool isDefaultDict;
@@ -42,6 +43,7 @@ class Dictionary {
 	           const std::string & morBackend,
 	           const std::string & spellBackend,
 	           const std::string & suggestionBackend,
+	           const std::string & hyphenatorBackend,
 	           const std::string & variant,
 	           const std::string & description);
 	Dictionary(const Dictionary & dictionary);
@@ -49,6 +51,7 @@ class Dictionary {
 	const std::string & getMorBackend() const;
 	const std::string & getSpellBackend() const;
 	const std::string & getSuggestionBackend() const;
+	const std::string & getHyphenatorBackend() const;
 	const std::string & getVariant() const;
 	const std::string & getDescription() const;
 	bool isValid() const;

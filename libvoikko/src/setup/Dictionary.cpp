@@ -27,6 +27,7 @@ Dictionary::Dictionary() :
 	morBackend(),
 	spellBackend(),
 	suggestionBackend(),
+	hyphenatorBackend(),
 	variant(),
 	description(),
 	isDefaultDict(false) {
@@ -35,12 +36,14 @@ Dictionary::Dictionary() :
 Dictionary::Dictionary(const string & morPath, const string & morBackend,
                        const string & spellBackend,
                        const string & suggestionBackend,
+                       const string & hyphenatorBackend,
                        const string & variant,
                        const string & description) :
 	morPath(morPath),
 	morBackend(morBackend),
 	spellBackend(spellBackend),
 	suggestionBackend(suggestionBackend),
+	hyphenatorBackend(hyphenatorBackend),
 	variant(variant),
 	description(description),
 	isDefaultDict(false) {
@@ -51,6 +54,7 @@ Dictionary::Dictionary(const Dictionary & dictionary) :
 	morBackend(dictionary.morBackend),
 	spellBackend(dictionary.spellBackend),
 	suggestionBackend(dictionary.suggestionBackend),
+	hyphenatorBackend(dictionary.hyphenatorBackend),
 	variant(dictionary.variant),
 	description(dictionary.description),
 	isDefaultDict(dictionary.isDefaultDict) {
@@ -70,6 +74,10 @@ const string & Dictionary::getSpellBackend() const {
 
 const string & Dictionary::getSuggestionBackend() const {
 	return suggestionBackend;
+}
+
+const string & Dictionary::getHyphenatorBackend() const {
+	return hyphenatorBackend;
 }
 
 const string & Dictionary::getVariant() const {

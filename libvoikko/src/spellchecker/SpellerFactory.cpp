@@ -16,6 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+#include "porting.h"
 #include "spellchecker/SpellerFactory.hpp"
 #include "spellchecker/AnalyzerToSpellerAdapter.hpp"
 #include "spellchecker/FixedResultSpeller.hpp"

@@ -178,6 +178,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	string morBackend = "malaga";
 	string spellBackend = "AnalyzerToSpellerAdapter(currentAnalyzer)";
 	string suggestionBackend = "FinnishSuggestionStrategy(currentAnalyzer)";
+	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
 	while (file.good()) {
 		getline(file, line);
 		if (line.find("info: Language-Variant: ") == 0) {
@@ -195,9 +196,13 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		else if (line.find("info: Suggestion-Backend: ") == 0) {
 			suggestionBackend = line.substr(26);
 		}
+		else if (line.find("info: Hyphenator-Backend: ") == 0) {
+			hyphenatorBackend = line.substr(26);
+		}
 	}
 	file.close();
-	return Dictionary(path, morBackend, spellBackend, suggestionBackend, variant, description);
+	return Dictionary(path, morBackend, spellBackend, suggestionBackend,
+	                  hyphenatorBackend,variant, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {

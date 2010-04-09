@@ -16,11 +16,16 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+#include "porting.h"
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorNull.hpp"
 #include "spellchecker/suggestion/SuggestionStrategyOcr.hpp"
 #include "spellchecker/suggestion/SuggestionStrategyTyping.hpp"
 #include "setup/setup.hpp"
+
+#ifdef HAVE_HFST
+#include "spellchecker/HfstSuggestion.hpp"
+#endif
 
 using namespace std;
 
@@ -41,6 +46,11 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	} else if (backend == "null") {
 		return new SuggestionGeneratorNull();
 	}
+	#ifdef HAVE_HFST
+	if (backend == "hfst") {
+		return new HfstSuggestion(voikkoOptions->dictionary.getMorPath());
+	}
+	#endif
 	throw setup::DictionaryException("Failed to create suggestion generator because of unknown suggestion generator backend");
 }
 
