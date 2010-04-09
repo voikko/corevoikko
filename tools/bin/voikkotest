@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright 2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2006 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for Voikko.
 # This program requires Python and Python interface to libvoikko.
 
@@ -31,6 +31,7 @@ from libvoikko import SuggestionStrategy
 
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
+THREADS = voikkoutils.get_preference('voikkospell_threads')
 BUILD_OPTIONS = voikkoutils.get_preference('voikkotest_build_options')
 ENCODING = voikkoutils.get_preference('encoding')
 HYPHENCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkohyphenate'
@@ -458,8 +459,8 @@ if "--base" in [opt[0] for opt in opts]:
 		sys.stderr.write(u"Failed to create baseline version.\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('bash -c \'time zcat "%s" | "%s" -p "%s" | grep "^C:" > "%s"\'' % \
-	          (WORDLIST, SPELLCMD, BASE, BASE_CORRECT))
+	os.system('bash -c \'time zcat "%s" | "%s" -j %i -p "%s" | grep "^C:" > "%s"\'' % \
+	          (WORDLIST, SPELLCMD, THREADS, BASE, BASE_CORRECT))
 	sys.exit(0)
 
 if "--current" in [opt[0] for opt in opts]:
@@ -471,8 +472,8 @@ if "--current" in [opt[0] for opt in opts]:
 		sys.exit(1)
 	voikko.terminate()
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('bash -c \'time zcat "%s" | "%s" | grep "^C:" > "%s"\'' % \
-	          (WORDLIST, SPELLCMD, CURRENT_CORRECT))
+	os.system('bash -c \'time zcat "%s" | "%s" -j %i -p "%s" | grep "^C:" > "%s"\'' % \
+	          (WORDLIST, SPELLCMD, THREADS, BASE, CURRENT_CORRECT))
 	diffcmd = 'diff -U0 "%s" "%s" | ' % (BASE_CORRECT, CURRENT_CORRECT)
 	new_accept = int(os.popen('%s grep ^+C: | wc -l' % diffcmd).read())
 	old_accept = int(os.popen('%s grep ^-C: | wc -l' % diffcmd).read())
