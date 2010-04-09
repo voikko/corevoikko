@@ -32,6 +32,7 @@ from libvoikko import SuggestionStrategy
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
 THREADS = voikkoutils.get_preference('voikkospell_threads')
+VARIANT = voikkoutils.get_preference('language_variant')
 BUILD_OPTIONS = voikkoutils.get_preference('voikkotest_build_options')
 ENCODING = voikkoutils.get_preference('encoding')
 HYPHENCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkohyphenate'
@@ -488,7 +489,7 @@ if "--compare" in [opt[0] for opt in opts]:
 
 else:
 	update_smv()
-	voikko = Voikko()
+	voikko = Voikko(variant = VARIANT)
 	spell_tests(voikko)
 	suggestion_tests(voikko)
 	morpho_tests(voikko)
