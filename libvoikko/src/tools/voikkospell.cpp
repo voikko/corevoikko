@@ -30,7 +30,7 @@ using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
 static const int MAX_THREADS = 200;
-static const size_t WORDS_PER_BLOCK = 1;
+static const size_t WORDS_PER_BLOCK = 500;
 
 static bool autotest = false;
 static bool suggest = false;
@@ -163,24 +163,32 @@ static void cleanupThread() {
 	delete resultString;
 }
 
+static void queueNextBlock() {
+	if (nextBlock->empty()) {
+		return;
+	}
+	if (nThreadsInUse == threadCount) {
+		cleanupThread();
+	}
+	spellers[nextThread].words = nextBlock;
+	if (pthread_create(threads + nextThread, 0, &processBlock, spellers + nextThread)) {
+		cerr << "E: Failed to create thread" << endl;
+		exit(1);
+	}
+	nextThread = (nextThread + 1) % threadCount;
+	++nThreadsInUse;
+	initNextBlock();
+}
+
 static void handleWordMultiThread(const wchar_t * word) {
 	nextBlock->push_back(wstring(word));
 	if (nextBlock->size() == WORDS_PER_BLOCK) {
-		if (nThreadsInUse == threadCount) {
-			cleanupThread();
-		}
-		spellers[nextThread].words = nextBlock;
-		if (pthread_create(threads + nextThread, 0, &processBlock, spellers + nextThread)) {
-			cerr << "E: Failed to create thread" << endl;
-			exit(1);
-		}
-		nextThread = (nextThread + 1) % threadCount;
-		++nThreadsInUse;
-		initNextBlock();
+		queueNextBlock();
 	}
 }
 
 static void finishProcessing() {
+	queueNextBlock();
 	while (nThreadsInUse > 0) {
 		cleanupThread();
 		nextThread = (nextThread + 1) % threadCount;
