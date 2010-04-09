@@ -25,6 +25,9 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#ifdef HAVE_PTHREAD
+  #include <pthread.h>
+#endif
 
 using namespace std;
 
@@ -120,8 +123,7 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 	}
 }
 
-// tämä jonnekin
-#include <pthread.h>
+#ifdef HAVE_PTHREAD
 
 static void * processBlock(void * args) {
 	speller_t * speller = static_cast<speller_t *>(args);
@@ -143,12 +145,6 @@ vector<wstring> * nextBlock;
 static void initNextBlock() {
 	nextBlock = new vector<wstring>();
 	nextBlock->reserve(WORDS_PER_BLOCK);
-}
-
-static void initThreads() {
-	threads = new pthread_t[threadCount];
-	nextThread = 0;
-	nThreadsInUse = 0;
 }
 
 static void cleanupThread() {
@@ -187,12 +183,25 @@ static void handleWordMultiThread(const wchar_t * word) {
 	}
 }
 
+#endif
+
 static void finishProcessing() {
-	queueNextBlock();
-	while (nThreadsInUse > 0) {
-		cleanupThread();
-		nextThread = (nextThread + 1) % threadCount;
-	}
+	#ifdef HAVE_PTHREAD
+		queueNextBlock();
+		while (nThreadsInUse > 0) {
+			cleanupThread();
+			nextThread = (nextThread + 1) % threadCount;
+		}
+	#endif
+}
+
+static void initThreads() {
+	#ifdef HAVE_PTHREAD
+		threads = new pthread_t[threadCount];
+		nextThread = 0;
+		nThreadsInUse = 0;
+		initNextBlock();
+	#endif
 }
 
 static void handleWordSingleThread(const wchar_t * word) {
@@ -362,7 +371,6 @@ int main(int argc, char ** argv) {
 	fwide(stdout, 1);
 	fwide(stderr, -1);
 	initThreads();
-	initNextBlock();
 	while (fgetws(line, MAX_WORD_LENGTH, stdin)) {
 		size_t lineLen = wcslen(line);
 		if (lineLen == 0) {
@@ -389,7 +397,9 @@ int main(int argc, char ** argv) {
 		voikkoTerminate(spellers[i].handle);
 	}
 	delete[] spellers;
-	delete nextBlock;
-	delete[] threads;
+	#ifdef HAVE_PTHREAD
+		delete nextBlock;
+		delete[] threads;
+	#endif
 	return 0;
 }
