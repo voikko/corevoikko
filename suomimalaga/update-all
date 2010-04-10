@@ -1,0 +1,8 @@
+#!/bin/bash
+# Update from SVN and Joukahainen without overriding local changes
+make clean
+svn revert vocabulary/joukahainen.xml
+svn update
+make update-vocabulary
+make voikko
+
