@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2010 Harri Pitkänen (hatapitk@iki.fi)
-# Test suite for null linguistic components.
-
+# Test suite for functions that return information about available dictionaries.
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -19,35 +19,16 @@
 
 import unittest
 import libvoikko
-from TestUtils import MorphologyInfo, TestDataDir
 
-VARIANT_NAME = u"NullComponentTest"
-
-class NullComponentTest(unittest.TestCase):
+class DictionaryInfoTest(unittest.TestCase):
 	def setUp(self):
-		info = MorphologyInfo()
-		info.variant = VARIANT_NAME
-		info.morphology = u"null"
-		info.speller = u"AllOk"
-		info.suggestion = u"null"
-		self.dataDir = TestDataDir()
-		self.dataDir.createMorphology(VARIANT_NAME, info)
-		self.voikko = libvoikko.Voikko(path = self.dataDir.getDirectory(), variant = VARIANT_NAME)
+		pass # TODO
 	
 	def tearDown(self):
-		self.voikko.terminate()
-		self.dataDir.tearDown()
+		pass # TODO
 	
-	def testNullAnalyzerWorks(self):
-		analysisList = self.voikko.analyze(u"koira")
-		self.assertEqual(0, len(analysisList))
-	
-	def testNullSuggestionGeneratorWorks(self):
-		suggestionList = self.voikko.suggest(u"koirra")
-		self.assertEqual(0, len(suggestionList))
-
-	def testAllOkSpellerWorks(self):
-		self.failUnless(self.voikko.spell(u"koirra"))
+	def testListLanguagesReturnsFinnish(self):
+		pass # TODO
 
 
 if __name__ == "__main__":

@@ -31,9 +31,12 @@ sys.path.insert(0, PYTHON_MODULE_DIR)
 
 # Import tests
 from NullComponentTest import NullComponentTest
+from DictionaryInfoTest import DictionaryInfoTest
 
 # Run all test suites
-testCaseClasses = [NullComponentTest]
+testCaseClasses = [NullComponentTest, DictionaryInfoTest]
 testCases = [unittest.TestLoader().loadTestsFromTestCase(caseClass) for caseClass in testCaseClasses]
 testSuite = unittest.TestSuite(testCases)
-unittest.TextTestRunner(verbosity=1).run(testSuite)
+result = unittest.TextTestRunner(verbosity=1).run(testSuite)
+if not result.wasSuccessful():
+	sys.exit(1)

@@ -69,9 +69,13 @@ class TestDataDir:
 		os.rmdir(self.tempDir)
 	
 	def createMorphology(self, subdirName, morphology):
-		self.subdirNames.append(subdirName)
-		subdirPath = self.versionedDir + os.sep + subdirName
+		fullSubdirName = "mor-" + subdirName
+		self.subdirNames.append(fullSubdirName)
+		subdirPath = self.versionedDir + os.sep + fullSubdirName
 		os.mkdir(subdirPath)
 		fileHandle = codecs.open(subdirPath + os.sep + INFO_FILE, "w", "UTF-8")
 		morphology.writeFileContent(fileHandle)
 		fileHandle.close()
+	
+	def getDirectory(self):
+		return self.tempDir
