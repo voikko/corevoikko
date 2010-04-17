@@ -16,6 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
+#include <cstring>
 #include "setup/Dictionary.hpp"
 #include "setup/DictionaryLoader.hpp"
 #include "porting.h"
@@ -54,5 +55,25 @@ VOIKKOEXPORT const char * voikko_dict_variant(const voikko_dict * dict) {
 VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
 	return dict->getDescription().c_str();
 }
+
+VOIKKOEXPORT char ** voikkoListSupportedLanguages(const char * path) {
+	list<Dictionary> dictList = path ?
+	                            DictionaryLoader::findAllAvailable(path) :
+	                            DictionaryLoader::findAllAvailable();
+	// for now we assume all dictionaries to be for Finnish
+	bool hasDict = !dictList.empty();
+	if (hasDict) {
+		char ** languages = new char*[2];
+		languages[0] = new char[3];
+		strcpy(languages[0], "fi");
+		languages[1] = 0;
+		return languages;
+	} else {
+		char ** languages = new char*[1];
+		languages[0] = 0;
+		return languages;
+	}
+}
+
 
 } }

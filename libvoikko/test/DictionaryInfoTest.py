@@ -19,17 +19,25 @@
 
 import unittest
 import libvoikko
+from TestUtils import MorphologyInfo, TestDataDir
+
+VARIANT_NAME = u"DictionaryInfoTest"
 
 class DictionaryInfoTest(unittest.TestCase):
 	def setUp(self):
-		pass # TODO
+		info = MorphologyInfo()
+		info.variant = VARIANT_NAME
+		info.morphology = u"null"
+		self.dataDir = TestDataDir()
+		self.dataDir.createMorphology(VARIANT_NAME, info)
 	
 	def tearDown(self):
-		pass # TODO
+		self.dataDir.tearDown()
 	
-	def testListLanguagesReturnsFinnish(self):
-		pass # TODO
-
+	def testListSupportedLanguagesReturnsFinnish(self):
+		languages = libvoikko.Voikko.listSupportedLanguages(self.dataDir.getDirectory())
+		self.assertEqual(1, len(languages))
+		self.assertEqual(u"fi", languages[0])
 
 if __name__ == "__main__":
 	unittest.main()

@@ -333,6 +333,20 @@ const char * voikko_dict_variant(const struct voikko_dict * dict);
 const char * voikko_dict_description(const struct voikko_dict * dict);
 
 /**
+ * Return a list of language codes representing the languages for which
+ * at least one dictionary is available for spell checking.
+ * The codes conform to those specified in BCP 47. Typically the returned
+ * codes consist only of BCP 47 language subtags. They may also include
+ * tags in format Language-Script, Language-Region or Language-Script-Region
+ * if such variants are widely used for a particular language.
+ * @param path path to a directory from which dictionary files should be searched
+ *        first before looking into the standard dictionary locations.
+ * @return A pointer to a null terminated array of language codes. The array
+ *         should be freed using voikkoFreeCstrArray.
+ */
+char ** voikkoListSupportedLanguages(const char * path);
+
+/**
  * A type representing result from morphological analysis.
  */
 struct voikko_mor_analysis;

@@ -1,5 +1,7 @@
 2010-04-17 Harri Pitkänen <hatapitk@iki.fi>
 	* Run basic tests on "make check".
+	* Add function voikkoListSupportedLanguages for listing languages that
+	  are supported in spell checking.
 
 2010-04-06 Flammie Pirinen <flammie@iki.fi>
 	* Updated HFST integration including suggestion generator
