@@ -21,7 +21,7 @@
 import unittest
 import libvoikkoOld
 
-class LibvoikkoTest(unittest.TestCase):
+class LibvoikkoOldTest(unittest.TestCase):
 	def setUp(self):
 		self.voikko = libvoikkoOld.Voikko()
 		self.voikko.init()
@@ -314,6 +314,6 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 
 if __name__ == "__main__":
-	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)
+	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoOldTest)
 	unittest.TextTestRunner(verbosity=1).run(suite)
 

@@ -130,5 +130,5 @@ AC_CHECK_FUNCS([getpwuid_r])
 dnl Default compiler settings
 CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"
 
-AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile msvc/Makefile src/libvoikko.pc])
+AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile msvc/Makefile test/Makefile src/libvoikko.pc])
 AC_OUTPUT

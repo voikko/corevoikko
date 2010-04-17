@@ -1,3 +1,6 @@
+2010-04-17 Harri Pitkänen <hatapitk@iki.fi>
+	* Run basic tests on "make check".
+
 2010-04-06 Flammie Pirinen <flammie@iki.fi>
 	* Updated HFST integration including suggestion generator
 	  and hyphenator.
