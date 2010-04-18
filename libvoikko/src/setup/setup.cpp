@@ -139,6 +139,10 @@ VOIKKOEXPORT int voikkoSetIntegerOption(voikko_options_t * options, int option, 
 
 VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * langcode,
                                    int cache_size, const char * path) {
+	if (!langcode) {
+		*error = "Language must not be null";
+		return 0;
+	}
 	voikko_options_t * options = new voikko_options_t();
 	options->ignore_dot = 0;
 	options->ignore_numbers = 0;
@@ -154,49 +158,47 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->cache_size = cache_size;
 	options->morAnalyzer = 0;
 	
-	if (langcode) {
-		try {
-			options->morAnalyzer = 0;
+	try {
+		options->morAnalyzer = 0;
+		options->speller = 0;
+		Dictionary dict;
+		if (path) {
+			dict = DictionaryLoader::load(string(langcode), string(path));
+		}
+		else {
+			dict = DictionaryLoader::load(string(langcode));
+		}
+		options->dictionary = dict;
+		options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
+		options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);
+		options->suggestionGenerator =
+			spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
+				spellchecker::suggestion::SUGGESTION_TYPE_STD);
+		options->hyphenator = hyphenator::HyphenatorFactory::getHyphenator(options, dict);
+	}
+	catch (DictionaryException e) {
+		if (options->hyphenator) {
+			options->hyphenator->terminate();
+			delete options->hyphenator;
+			options->hyphenator = 0;
+		}
+		if (options->suggestionGenerator) {
+			delete options->suggestionGenerator;
+			options->suggestionGenerator = 0;
+		}
+		if (options->speller) {
+			options->speller->terminate();
+			delete options->speller;
 			options->speller = 0;
-			Dictionary dict;
-			if (path) {
-				dict = DictionaryLoader::load(string(langcode), string(path));
-			}
-			else {
-				dict = DictionaryLoader::load(string(langcode));
-			}
-			options->dictionary = dict;
-			options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
-			options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);
-			options->suggestionGenerator =
-				spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
-					spellchecker::suggestion::SUGGESTION_TYPE_STD);
-			options->hyphenator = hyphenator::HyphenatorFactory::getHyphenator(options, dict);
 		}
-		catch (DictionaryException e) {
-			if (options->hyphenator) {
-				options->hyphenator->terminate();
-				delete options->hyphenator;
-				options->hyphenator = 0;
-			}
-			if (options->suggestionGenerator) {
-				delete options->suggestionGenerator;
-				options->suggestionGenerator = 0;
-			}
-			if (options->speller) {
-				options->speller->terminate();
-				delete options->speller;
-				options->speller = 0;
-			}
-			if (options->morAnalyzer) {
-				options->morAnalyzer->terminate();
-				delete options->morAnalyzer;
-				options->morAnalyzer = 0;
-			}
-			*error = e.what();
-			delete options;
-			return 0;
+		if (options->morAnalyzer) {
+			options->morAnalyzer->terminate();
+			delete options->morAnalyzer;
+			options->morAnalyzer = 0;
 		}
+		*error = e.what();
+		delete options;
+		return 0;
 	}
 	
 	if (cache_size >= 0) {

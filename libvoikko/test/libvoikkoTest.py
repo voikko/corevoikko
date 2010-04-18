@@ -22,7 +22,7 @@ from libvoikko import *
 
 class LibvoikkoTest(unittest.TestCase):
 	def setUp(self):
-		self.voikko = Voikko()
+		self.voikko = Voikko(u"fi")
 	
 	def tearDown(self):
 		self.voikko.terminate()
@@ -35,7 +35,7 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.terminate()
 	
 	def testAnotherObjectCanBeCreatedUsedAndDeletedInParallel(self):
-		medicalVoikko = Voikko(variant = "medicine")
+		medicalVoikko = Voikko(u"fi-x-medicine")
 		self.failUnless(medicalVoikko.spell(u"amifostiini"))
 		self.failIf(self.voikko.spell(u"amifostiini"))
 		del medicalVoikko
@@ -78,28 +78,28 @@ class LibvoikkoTest(unittest.TestCase):
 	
 	def testInitWithCorrectDictWorks(self):
 		self.voikko.terminate()
-		self.voikko = Voikko(variant = "standard")
+		self.voikko = Voikko(u"fi-x-standard")
 		self.failIf(self.voikko.spell(u"amifostiini"))
 		self.voikko.terminate()
-		self.voikko = Voikko(variant = "medicine")
+		self.voikko = Voikko(u"fi-x-medicine")
 		self.failUnless(self.voikko.spell(u"amifostiini"))
 	
 	def testInitWithNonExistentDictThrowsException(self):
 		def tryInit():
-			self.voikko = Voikko(variant = "nonexistentvariant")
+			self.voikko = Voikko(u"fi-x-non-existent-variant")
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, tryInit)
 	
 	def testInitWithCacheSizeWorks(self):
 		# TODO: better test
 		self.voikko.terminate()
-		self.voikko = Voikko(cacheSize = 3)
+		self.voikko = Voikko(u"fi", cacheSize = 3)
 		self.failUnless(self.voikko.spell(u"kissa"))
 	
 	def testInitWithPathWorks(self):
 		# TODO: better test
 		self.voikko.terminate()
-		self.voikko = Voikko(path = "/path/to/nowhere")
+		self.voikko = Voikko(u"fi", path = u"/path/to/nowhere")
 		self.failUnless(self.voikko.spell(u"kissa"))
 	
 	def testSpellAfterTerminateThrowsException(self):

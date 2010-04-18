@@ -41,6 +41,49 @@ using namespace std;
 
 namespace libvoikko { namespace setup {
 
+struct LanguageTag {
+	string language;
+	string privateUse;
+};
+
+static void tagToCanonicalForm(string & languageTag) {
+	for (size_t i = 0; i < languageTag.size(); ++i) {
+		char current = languageTag.at(i);
+		if (current >= 65 && current <= 90) {
+			languageTag[i] = current + 32;
+		}
+	}
+}
+
+static LanguageTag parseFromBCP47(const string & language) {
+	// TODO: this parsing algorithm is incomplete
+	LanguageTag tag;
+	if (language.size() < 2) {
+		return tag;
+	}
+	
+	string canonicalLanguage = language;
+	tagToCanonicalForm(canonicalLanguage);
+	
+	if (canonicalLanguage.compare(0, 2, "fi") == 0) {
+		tag.language = "fi";
+	} else {
+		return tag;
+	}
+	
+	size_t privateUseStart = canonicalLanguage.find("-x-");
+	if (privateUseStart != string::npos) {
+		string privateUse = canonicalLanguage.substr(privateUseStart + 3);
+		for (size_t hyphenPos = privateUse.find("-"); hyphenPos != string::npos;
+		            hyphenPos = privateUse.find("-")) {
+			privateUse.erase(hyphenPos, 1);
+		}
+		tag.privateUse = privateUse;
+	}
+	
+	return tag;
+}
+
 list<Dictionary> DictionaryLoader::findAllAvailable() {
 	return findAllAvailable(string());
 }
@@ -72,19 +115,24 @@ list<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
 	return dicts;
 }
 
-Dictionary DictionaryLoader::load(const string & variant) throw(DictionaryException) {
-	return load(variant, string());
+Dictionary DictionaryLoader::load(const string & language) throw(DictionaryException) {
+	return load(language, string());
 }
 
-Dictionary DictionaryLoader::load(const string & variant, const string & path)
+Dictionary DictionaryLoader::load(const string & language, const string & path)
 		throw(DictionaryException) {
+	LanguageTag tag = parseFromBCP47(language);
+	if (tag.language != "fi") {
+		throw DictionaryException("Requested language is not supported");
+	}
+	
 	list<Dictionary> dicts = findAllAvailable(path);
 	if (dicts.empty()) {
 		throw DictionaryException("No valid dictionaries were found");
 	}
 	
-	string finalVariant(variant);
-	if (variant.empty() || variant == "default" || variant == "fi_FI") {
+	string finalVariant(tag.privateUse);
+	if (finalVariant.empty() || finalVariant == "default" || finalVariant == "fi_FI") {
 		// Use dictionary specified by environment variable VOIKKO_DICTIONARY_PATH
 		// XXX: Not actually thread safe but will most probably work
 		char * dict_from_env = getenv("VOIKKO_DICTIONARY");
@@ -183,6 +231,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		getline(file, line);
 		if (line.find("info: Language-Variant: ") == 0) {
 			variant = line.substr(24);
+			tagToCanonicalForm(variant);
 		}
 		else if (line.find("info: Description: ") == 0) {
 			description = line.substr(19);

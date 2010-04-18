@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -42,16 +42,18 @@ class DictionaryLoader {
 	static std::list<Dictionary> findAllAvailable(const std::string & path);
 	
 	/**
-	 * Load dictionary from default locations.
+	 * Load dictionary from default locations. The dictionary must match given language
+	 * tag.
 	 * @return an initialized dictionary
 	 */
-	static Dictionary load(const std::string & variant) throw(DictionaryException);
+	static Dictionary load(const std::string & language) throw(DictionaryException);
 	
 	/**
-	 * Load dictionary from given path and default locations.
+	 * Load dictionary from given path and default locations. The dictionary must match
+	 * given language tag.
 	 * @return an initialized dictionary
 	 */
-	static Dictionary load(const std::string & variant, const std::string & path)
+	static Dictionary load(const std::string & language, const std::string & path)
 	       throw(DictionaryException);
 
 	private:

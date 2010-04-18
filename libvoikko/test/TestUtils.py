@@ -20,6 +20,11 @@
 import tempfile
 import os
 import codecs
+from ctypes import CDLL
+from ctypes import POINTER
+from ctypes import c_char_p
+from ctypes import c_int
+from ctypes import c_void_p
 
 DICTIONARY_FORMAT_VERSION = "2"
 INFO_FILE = "voikko-fi_FI.pro"
@@ -79,3 +84,19 @@ class TestDataDir:
 	
 	def getDirectory(self):
 		return self.tempDir
+
+def getVoikkoCLibrary():
+	library = None
+	if os.name == 'nt':
+		library = CDLL("libvoikko-1.dll")
+	else:
+		library = CDLL("libvoikko.so.1")
+	library.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
+	library.voikkoInit.restype = c_void_p
+	library.voikkoTerminate.argtypes = [c_void_p]
+	library.voikkoTerminate.restype = None
+	library.voikko_init_with_path.argtypes = [POINTER(c_int), c_char_p, c_int, c_char_p]
+	library.voikko_init_with_path.restype = c_char_p
+	library.voikko_terminate.argtypes = [c_int]
+	library.voikko_terminate.restype = c_int
+	return library

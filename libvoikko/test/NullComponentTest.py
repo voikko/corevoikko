@@ -32,7 +32,7 @@ class NullComponentTest(unittest.TestCase):
 		info.suggestion = u"null"
 		self.dataDir = TestDataDir()
 		self.dataDir.createMorphology(VARIANT_NAME, info)
-		self.voikko = libvoikko.Voikko(path = self.dataDir.getDirectory(), variant = VARIANT_NAME)
+		self.voikko = libvoikko.Voikko("fi-x-" + VARIANT_NAME, path = self.dataDir.getDirectory())
 	
 	def tearDown(self):
 		self.voikko.terminate()

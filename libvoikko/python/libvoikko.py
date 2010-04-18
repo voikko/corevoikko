@@ -169,11 +169,11 @@ class Voikko(object):
 	libvoikko is not yet thread safe. This restriction should go away in future
 	releases.
 	"""
-	def __init__(self, path = None, variant = "fi_FI", cacheSize = 0):
+	def __init__(self, language, path = None, cacheSize = 0):
 		"""Creates a new Voikko instance with the following optional parameters:
+		   language  BCP 47 language tag to be used.
 		   path      Extra path that will be checked first when looking for linguistic
 		             resources.
-		   variant   Variant of morphological dictionary to use.
 		   cacheSize Parameter that controls the size of in memory cache for
 		             spell checking results. 0 is the default size, 1 is twice as large
 		             as 0 etc. -1 disables the spell checking cache entirely."""
@@ -248,7 +248,7 @@ class Voikko(object):
 		self.__lib.voikkoSetIntegerOption.restype = c_int
 		
 		error = c_char_p()
-		self.__handle = self.__lib.voikkoInit(byref(error), variant, cacheSize, path)
+		self.__handle = self.__lib.voikkoInit(byref(error), language, cacheSize, path)
 		if error.value != None:
 			self.__handle = 0
 			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))

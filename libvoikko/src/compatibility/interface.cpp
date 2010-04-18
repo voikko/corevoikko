@@ -31,13 +31,43 @@ namespace libvoikko { namespace compatibility {
 
 static VoikkoHandle * voikko_options = 0;
 
+/**
+ * Converts "something" to "fi-x-somethin-g"
+ */
+static char * convertVariantToBCP47(const char * variant) {
+	size_t variantLen = strlen(variant); // this must be at least 1
+	char * language = new char[2 * variantLen + 5];
+	strcpy(language, "fi-x");
+	size_t pos = 4;
+	for (size_t i = 0; i < variantLen; i++) {
+		if (i % 8 == 0) {
+			language[pos++] = '-';
+		}
+		language[pos++] = variant[i];
+	}
+	language[pos] = '\0';
+	return language;
+}
+
 VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path) {
 	if (voikko_options) {
 		return "Maximum handle count exceeded";
 	}
 	const char * error;
-	voikko_options = voikkoInit(&error, langcode, cache_size, path);
+	if (langcode) {
+		if (strcmp("", langcode) == 0 || strcmp("default", langcode) == 0 ||
+		    strcmp("default", langcode) == 0 || strcmp("fi_FI", langcode) == 0) {
+			voikko_options = voikkoInit(&error, "fi", cache_size, path);
+		} else {
+			char * language = convertVariantToBCP47(langcode);
+			voikko_options = voikkoInit(&error, language, cache_size, path);
+			delete[] language;
+		}
+	} else {
+		return "Null language code is not allowed";
+	}
+	
 	if (voikko_options) {
 		*handle = 1;
 		return 0;

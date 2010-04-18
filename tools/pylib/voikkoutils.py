@@ -141,7 +141,7 @@ def get_preference(prefname):
 	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'voikkospell_threads': return 1
-	if prefname == 'language_variant': return 'standard'
+	if prefname == 'language_variant': return 'fi-x-standard'
 	if prefname == 'voikkotest_build_options': return ''
 	if prefname == 'voikkotest_sm_destdir': return None
 	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
