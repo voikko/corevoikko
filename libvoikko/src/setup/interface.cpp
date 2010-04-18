@@ -48,6 +48,10 @@ VOIKKOEXPORT void voikko_free_dicts(voikko_dict ** dicts) {
 	delete[] dicts;
 }
 
+VOIKKOEXPORT const char * voikko_dict_language(const voikko_dict * dict) {
+	return "fi"; // for now
+}
+
 VOIKKOEXPORT const char * voikko_dict_variant(const voikko_dict * dict) {
 	return dict->getVariant().c_str();
 }

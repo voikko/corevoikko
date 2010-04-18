@@ -321,6 +321,12 @@ struct voikko_dict ** voikko_list_dicts(const char * path);
 void voikko_free_dicts(struct voikko_dict ** dicts);
 
 /**
+ * Get the language tag for a dictionary.
+ * @return The language tag for given dictionary.
+ */
+const char * voikko_dict_language(const struct voikko_dict * dict);
+
+/**
  * Get the variant identifier for a dictionary.
  * @return The variant identifier for given dictionary.
  */

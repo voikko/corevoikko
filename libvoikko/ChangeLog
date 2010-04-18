@@ -1,3 +1,7 @@
+2010-04-18 Harri Pitkänen <hatapitk@iki.fi>
+	* Modify voikkoInit to take a BCP 47 language tag instead of variant name.
+	* Add function voikko_dict_language to query the language of a dictionary.
+
 2010-04-17 Harri Pitkänen <hatapitk@iki.fi>
 	* Run basic tests on "make check".
 	* Add function voikkoListSupportedLanguages for listing languages that

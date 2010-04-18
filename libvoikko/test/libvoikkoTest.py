@@ -19,6 +19,7 @@
 
 import unittest
 from libvoikko import *
+from TestUtils import MorphologyInfo, TestDataDir
 
 class LibvoikkoTest(unittest.TestCase):
 	def setUp(self):
@@ -42,28 +43,33 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failIf(self.voikko.spell(u"amifostiini"))
 	
 	def testDictionaryComparisonWorks(self):
-		d1 = Dictionary("a", u"b")
-		d2 = Dictionary("a", u"c")
-		d3 = Dictionary("c", u"b")
-		d4 = Dictionary("a", u"b")
+		d1 = Dictionary(u"fi", u"a", u"b")
+		d2 = Dictionary(u"fi", u"a", u"c")
+		d3 = Dictionary(u"fi", u"c", u"b")
+		d4 = Dictionary(u"fi", u"a", u"b")
+		d5 = Dictionary(u"sv", u"a", u"b")
 		self.assertNotEqual(u"kissa", d1)
 		self.assertNotEqual(d1, u"kissa")
 		self.assertNotEqual(d1, d2)
 		self.assertNotEqual(d1, d3)
+		self.assertNotEqual(d4, d5)
 		self.assertEqual(d1, d4)
 		self.failUnless(d1 < d2)
 		self.failUnless(d2 < d3)
+		self.failUnless(d4 < d5)
 	
 	def testDictionaryHashCodeWorks(self):
-		d1 = Dictionary("a", u"b")
-		d2 = Dictionary("a", u"c")
-		d3 = Dictionary("c", u"b")
-		d4 = Dictionary("a", u"b")
+		d1 = Dictionary(u"fi", u"a", u"b")
+		d2 = Dictionary(u"fi", u"a", u"c")
+		d3 = Dictionary(u"fi", u"c", u"b")
+		d4 = Dictionary(u"fi", u"a", u"b")
+		d5 = Dictionary(u"sv", u"a", u"b")
 		self.assertNotEqual(hash(d1), hash(d2))
 		self.assertNotEqual(hash(d1), hash(d3))
+		self.assertNotEqual(hash(d4), hash(d5))
 		self.assertEqual(hash(d1), hash(d4))
 	
-	def testListDicts(self):
+	def testListDictsWithoutPath(self):
 		dicts = Voikko.listDicts()
 		self.failUnless(len(dicts) > 0)
 		standard = dicts[0]
@@ -71,10 +77,20 @@ class LibvoikkoTest(unittest.TestCase):
 		     u"Standard dictionary must be the default in test environment.")
 		self.assertEqual(u"Voikon perussanasto", standard.description)
 	
-	def testListDictsWithPathWorks(self):
-		# TODO: better test
-		dicts = self.voikko.listDicts("/path/to/nowhere")
-		self.failUnless(len(dicts) > 0)
+	def testListDictsWithPathAndAttributes(self):
+		info = MorphologyInfo()
+		info.variant = u"test-variant-name"
+		info.description = u"Some test description sakldjasd"
+		info.morphology = u"null"
+		dataDir = TestDataDir()
+		dataDir.createMorphology(info.variant, info)
+		dicts = Voikko.listDicts(dataDir.getDirectory())
+		dataDir.tearDown()
+		dictsWithCorrectVariant = filter(lambda aDict: aDict.variant == info.variant, dicts)
+		self.assertEqual(1, len(dictsWithCorrectVariant))
+		theDict = dictsWithCorrectVariant[0]
+		self.assertEqual(info.description, theDict.description)
+		self.assertEqual(u"fi", theDict.language)
 	
 	def testInitWithCorrectDictWorks(self):
 		self.voikko.terminate()
