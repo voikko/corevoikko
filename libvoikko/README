@@ -6,6 +6,9 @@ written in C++ and it uses a left associative grammar for describing the
 morphology of Finnish language. The morphology is developed using Malaga
 natural language grammar development tool.
 
+Alternative backends that can be used instead of Malaga include HFST and
+Lttoolbox. These backends are currently experimental.
+
 Libvoikko provides spell checking, hyphenation, grammar checking and
 morphologican analysis for Finnish language. No other languages are
 supported at the moment, and there are no serious plans to add such
