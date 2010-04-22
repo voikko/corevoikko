@@ -467,7 +467,7 @@ if "--base" in [opt[0] for opt in opts]:
 if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
-	voikko = Voikko()
+	voikko = Voikko(LANGUAGE)
 	if not spell_tests(voikko):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
