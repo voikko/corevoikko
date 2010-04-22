@@ -164,24 +164,6 @@ static spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptio
 	return spres;
 }
 
-/* A small result cache:
- * word_length order elements wchars offset
- * 1           4     16       16     0
- * 2           5     32       64     16
- * 3           6     64       192    80
- * 4           7     128      512    272
- * 5           7     128      640    784
- * 6           7     128      768    1424
- * 7           7     128      896    2192
- * 8           7     128      1024   3088
- * 9           7     128      1152   4112
- * 10          7     128      1280   5264
- * total size      sizeof(wchar_t) * 6544
- */
-
-static const int VOIKKO_HASH_ORDERS[]   =  {0, 3+0,  5+0,  6+0,   7+0,   7+0,    7+0,    7+0,    7+0,    7+0,    7+0};
-static const int VOIKKO_CACHE_OFFSETS[] =  {0,   0, 1*16, 1*80, 1*272, 1*784, 1*1424, 1*2192, 1*3088, 1*4112, 1*5264};
-static const int VOIKKO_META_OFFSETS[]  =  {0,   0, 1*16, 1*48, 1*112, 1*240,  1*368,  1*496,  1*624,  1*752,  1*880};
 
 /** Checks the spelling of given word and uses cache if possible
  * @param word word to check. Word does not need to be null terminated and it must
@@ -190,15 +172,11 @@ static const int VOIKKO_META_OFFSETS[]  =  {0,   0, 1*16, 1*48, 1*112, 1*240,  1
  * @return spelling result
  */
 static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const wchar_t * buffer, size_t len) {
-	int sparam = voikkoOptions->cache_size;
-	if (voikkoOptions->cache && len <= 10) { /* check cache */
-		int hashcode = voikko_hash(buffer, len, VOIKKO_HASH_ORDERS[len] + sparam);
-		int cache_offset = (VOIKKO_CACHE_OFFSETS[len] << sparam) + hashcode * static_cast<int>(len);
-		int meta_offset = (VOIKKO_META_OFFSETS[len] << sparam) + hashcode;
-		if (wcsncmp(voikkoOptions->cache + cache_offset, buffer, len) == 0) {
-			/* DEBUG: printf("Cache hit: '%ls'\n", buffer);*/
-			if (voikkoOptions->cache_meta[meta_offset] == 'i') return SPELL_CAP_FIRST;
-			else return SPELL_OK;
+	SpellerCache * cache = voikkoOptions->spellerCache;
+	if (cache) {
+		if (cache->isInCache(buffer, len)) {
+			/* is in cache */
+			return cache->getSpellResult(buffer, len);
 		}
 		/* not in cache */
 		spellresult result;
@@ -208,10 +186,7 @@ static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const w
 		else {
 			result = voikko_do_spell(voikkoOptions, buffer, len);
 		}
-		if (result == SPELL_OK || result == SPELL_CAP_FIRST) {
-			wcsncpy(voikkoOptions->cache + cache_offset, buffer, len);
-			voikkoOptions->cache_meta[meta_offset] = (result == SPELL_OK) ? 'p' : 'i';
-		}
+		cache->setSpellResult(buffer, len, result);
 		return result;
 	}
 	/* no cache available */

@@ -9,6 +9,7 @@ libvoikko_la_SOURCES = \
     spellchecker/AnalyzerToSpellerAdapter.cpp \
     spellchecker/FixedResultSpeller.cpp \
     spellchecker/SpellerFactory.cpp \
+    spellchecker/SpellerCache.cpp \
     spellchecker/suggestion/Suggestion.cpp \
     spellchecker/suggestion/SuggestionStatus.cpp \
     spellchecker/suggestion/SuggestionGeneratorFactory.cpp \
@@ -110,6 +111,7 @@ noinst_HEADERS = \
     spellchecker/FixedResultSpeller.hpp \
     spellchecker/HfstSpeller.hpp \
     spellchecker/SpellerFactory.hpp \
+    spellchecker/SpellerCache.hpp \
     spellchecker/HfstSuggestion.hpp \
     spellchecker/suggestion/Suggestion.hpp \
     spellchecker/suggestion/SuggestionGenerator.hpp \

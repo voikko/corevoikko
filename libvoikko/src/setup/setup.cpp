@@ -155,7 +155,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->accept_titles_in_gc = 0;
 	options->accept_unfinished_paragraphs_in_gc = 0;
 	options->accept_bulleted_lists_in_gc = 0;
-	options->cache_size = cache_size;
+	options->spellerCache = 0;
 	options->morAnalyzer = 0;
 	
 	try {
@@ -202,12 +202,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	}
 	
 	if (cache_size >= 0) {
-		options->cache = new wchar_t[6544 << cache_size];
-		options->cache_meta = new char[1008 << cache_size];
-		memset(options->cache_meta, 0, 1008 << cache_size);
-		memset(options->cache, 0, 6544 * sizeof(wchar_t) << cache_size);
-	} else {
-		options->cache = 0;
+		options->spellerCache = new spellchecker::SpellerCache(cache_size);
 	}
 	*error = 0;
 	return options;
@@ -225,12 +220,8 @@ VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 	handle->morAnalyzer->terminate();
 	delete handle->morAnalyzer;
 	handle->morAnalyzer = 0;
-	/*int c = 0;
-	for (int i = 0; i < 1*1008; i++) if (handle->cache_meta[i] == '.') c++;
-	printf("Cache slots used: %d\n", c);*/
-	if (handle->cache) {
-		delete[] handle->cache;
-		delete[] handle->cache_meta;
+	if (handle->spellerCache) {
+		delete handle->spellerCache;
 	}
 	gc_clear_cache(handle);
 	delete handle;

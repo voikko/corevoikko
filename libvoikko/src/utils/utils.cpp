@@ -25,14 +25,6 @@ using namespace libvoikko::character;
 
 namespace libvoikko {
 
-int voikko_hash(const wchar_t * word, size_t len, int order) {
-	int hash = 0;
-	for (size_t counter = 0; counter < len; counter++) {
-		hash = (hash * 37 + word[counter]) % (1 << order);
-	}
-	return hash;
-}
-
 enum casetype voikko_casetype(const wchar_t * word, size_t nchars) {
 	bool first_uc = false;
 	bool rest_lc = true;

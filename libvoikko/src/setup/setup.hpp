@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -21,11 +21,11 @@
 
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
+#include "spellchecker/SpellerCache.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
 #include "grammar/GcCache.hpp"
-#include <cwchar>
 
 namespace libvoikko {
 
@@ -41,12 +41,10 @@ typedef struct {
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	int accept_bulleted_lists_in_gc;
-	wchar_t * cache;
-	char * cache_meta;
-	int cache_size;
 	grammar::GcCache gc_cache;
 	morphology::Analyzer * morAnalyzer;
 	spellchecker::Speller * speller;
+	spellchecker::SpellerCache * spellerCache;
 	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
 	hyphenator::Hyphenator * hyphenator;
 	setup::Dictionary dictionary;

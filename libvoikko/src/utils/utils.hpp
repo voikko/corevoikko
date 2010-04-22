@@ -34,14 +34,6 @@ namespace libvoikko {
 
 enum casetype {CT_NO_LETTERS, CT_ALL_LOWER, CT_FIRST_UPPER, CT_COMPLEX, CT_ALL_UPPER};
 
-/** Simple string hashing algorithm
- * @param word string to hash
- * @param len length of the word
- * @param order order of the resulting hash value
- * @return integer from range [0, 2^order - 1]
- */
-int voikko_hash(const wchar_t * word, size_t len, int order);
-
 /** Returns the type of given string wrt the use of character cases.
  * @param word string to check
  * @param nchars length of the string
