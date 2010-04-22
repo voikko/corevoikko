@@ -252,7 +252,7 @@ static int list_dicts(const char * path) {
 
 int main(int argc, char ** argv) {
 	const char * path = 0;
-	const char * variant = "";
+	const char * variant = "fi";
 	int cache_size;
 	
 	cache_size = 0;
