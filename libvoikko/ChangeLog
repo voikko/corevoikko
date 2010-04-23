@@ -1,3 +1,7 @@
+2010-04-23 Harri Pitkänen <hatapitk@iki.fi>
+	* Move cache size setting from voikkoInit to integer option
+	  VOIKKO_SPELLER_CACHE_SIZE.
+
 2010-04-18 Harri Pitkänen <hatapitk@iki.fi>
 	* Modify voikkoInit to take a BCP 47 language tag instead of variant name.
 	* Add function voikko_dict_language to query the language of a dictionary.

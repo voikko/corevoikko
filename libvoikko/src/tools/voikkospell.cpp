@@ -296,11 +296,12 @@ int main(int argc, char ** argv) {
 	spellers = new speller_t[threadCount];
 	for (int i = 0; i < threadCount; i++) {
 		const char * voikkoError;
-		VoikkoHandle * handle = voikkoInit(&voikkoError, variant, cache_size, path);
+		VoikkoHandle * handle = voikkoInit(&voikkoError, variant, path);
 		if (!handle) {
 			cerr << "E: Initialization of Voikko failed: " << voikkoError << endl;
 			return 1;
 		}
+		voikkoSetIntegerOption(handle, VOIKKO_SPELLER_CACHE_SIZE, cache_size);
 		spellers[i].handle = handle;
 		spellers[i].words = 0;
 	}

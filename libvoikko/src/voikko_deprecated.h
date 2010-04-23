@@ -49,12 +49,30 @@
 #define VOIKKO_OPT_ENCODING 2
 
 /**
- * See voikkoInit
+ * @param langcode the language code. The following values can be used:
+ *        - "", "default" or "fi_FI": Use the default dictionary. The default
+ *          dictionary can be assumed to be present in a complete installation of
+ *          libvoikko.
+ *        - any other string: Use the specified dictionary variant. Usually there
+ *          is at least the "standard" variant, but this is not guaranteed. If the
+ *          specified dictionary does not exist, an error message is returned.
+ *        - NULL: Reserved for future use. Currently leads to undefined behavior.
+ * For info on other parameters see documentation for voikkoInit and
+ * VOIKKO_SPELLER_CACHE_SIZE.
  */
 const char * voikko_init(int * handle, const char * langcode, int cache_size);
 
 /**
- * See voikkoInit
+ * @param langcode the language code. The following values can be used:
+ *        - "", "default" or "fi_FI": Use the default dictionary. The default
+ *          dictionary can be assumed to be present in a complete installation of
+ *          libvoikko.
+ *        - any other string: Use the specified dictionary variant. Usually there
+ *          is at least the "standard" variant, but this is not guaranteed. If the
+ *          specified dictionary does not exist, an error message is returned.
+ *        - NULL: Reserved for future use. Currently leads to undefined behavior.
+ * For info on other parameters see documentation for voikkoInit and
+ * VOIKKO_SPELLER_CACHE_SIZE.
  */
 const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path);

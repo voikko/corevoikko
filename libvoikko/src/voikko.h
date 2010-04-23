@@ -49,16 +49,9 @@ struct VoikkoHandle;
  * to the standard dictionary search path.
  * @param error Will be set to null if initialisation completed without error.
  *        Otherwise will be set to a pointer to a string describing the error.
- * @param langcode the language code. The following values can be used:
- *        - "", "default" or "fi_FI": Use the default dictionary. The default
- *          dictionary can be assumed to be present in a complete installation of
- *          libvoikko.
- *        - any other string: Use the specified dictionary variant. Usually there
- *          is at least the "standard" variant, but this is not guaranteed. If the
- *          specified dictionary does not exist, an error message is returned.
- *        - NULL: Reserved for future use. Currently leads to undefined behavior.
- * @param cache_size size of the spellchecker cache. This can be -1 (no cache) or
- *        >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
+ * @param langcode BCP 47 language tag for the language to be used. Currently this can
+ *        only be Finnish with optional private use subtags to specify the dictionary
+ *        variant.
  * @param path path to a directory from which dictionary files should be searched
  *        first before looking into the standard dictionary locations. If NULL, no
  *        additional search path will be used.
@@ -66,7 +59,7 @@ struct VoikkoHandle;
  *         failed.
  */
 VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
-                          int cache_size, const char * path);
+                          const char * path);
 
 /**
  * Terminates an instance of voikko.

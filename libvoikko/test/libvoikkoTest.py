@@ -106,12 +106,6 @@ class LibvoikkoTest(unittest.TestCase):
 		self.voikko.terminate()
 		self.assertRaises(VoikkoException, tryInit)
 	
-	def testInitWithCacheSizeWorks(self):
-		# TODO: better test
-		self.voikko.terminate()
-		self.voikko = Voikko(u"fi", cacheSize = 3)
-		self.failUnless(self.voikko.spell(u"kissa"))
-	
 	def testInitWithPathWorks(self):
 		# TODO: better test
 		self.voikko.terminate()
@@ -290,6 +284,16 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(u"koira", self.voikko.hyphenate(u"koira"))
 		self.voikko.setMinHyphenatedWordLength(2)
 		self.assertEqual(u"koi-ra", self.voikko.hyphenate(u"koira"))
+	
+	def testIncreaseSpellerCacheSize(self):
+		# TODO: this only tests that nothing breaks, not that cache is actually increased
+		self.voikko.setSpellerCacheSize(3)
+		self.failUnless(self.voikko.spell(u"kissa"))
+	
+	def testDisableSpellerCache(self):
+		# TODO: this only tests that nothing breaks, not that cache is actually disabled
+		self.voikko.setSpellerCacheSize(-1)
+		self.failUnless(self.voikko.spell(u"kissa"))
 	
 	def testSetSuggestionStrategy(self):
 		self.voikko.setSuggestionStrategy(SuggestionStrategy.OCR)

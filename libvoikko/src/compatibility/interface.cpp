@@ -58,10 +58,10 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	if (langcode) {
 		if (strcmp("", langcode) == 0 || strcmp("default", langcode) == 0 ||
 		    strcmp("default", langcode) == 0 || strcmp("fi_FI", langcode) == 0) {
-			voikko_options = voikkoInit(&error, "fi", cache_size, path);
+			voikko_options = voikkoInit(&error, "fi", path);
 		} else {
 			char * language = convertVariantToBCP47(langcode);
-			voikko_options = voikkoInit(&error, language, cache_size, path);
+			voikko_options = voikkoInit(&error, language, path);
 			delete[] language;
 		}
 	} else {
@@ -69,6 +69,7 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	}
 	
 	if (voikko_options) {
+		voikkoSetIntegerOption(voikko_options, VOIKKO_SPELLER_CACHE_SIZE, cache_size);
 		*handle = 1;
 		return 0;
 	} else {

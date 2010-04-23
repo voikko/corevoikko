@@ -173,17 +173,14 @@ class Voikko(object):
 	libvoikko is not yet thread safe. This restriction should go away in future
 	releases.
 	"""
-	def __init__(self, language, path = None, cacheSize = 0):
+	def __init__(self, language, path = None):
 		"""Creates a new Voikko instance with the following optional parameters:
 		   language  BCP 47 language tag to be used.
 		   path      Extra path that will be checked first when looking for linguistic
-		             resources.
-		   cacheSize Parameter that controls the size of in memory cache for
-		             spell checking results. 0 is the default size, 1 is twice as large
-		             as 0 etc. -1 disables the spell checking cache entirely."""
+		             resources."""
 		self.__lib = Voikko.__getLib()
 		
-		self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
+		self.__lib.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_char_p]
 		self.__lib.voikkoInit.restype = c_void_p
 		
 		self.__lib.voikkoTerminate.argtypes = [c_void_p]
@@ -252,7 +249,7 @@ class Voikko(object):
 		self.__lib.voikkoSetIntegerOption.restype = c_int
 		
 		error = c_char_p()
-		self.__handle = self.__lib.voikkoInit(byref(error), language, cacheSize, path)
+		self.__handle = self.__lib.voikkoInit(byref(error), language, path)
 		if error.value != None:
 			self.__handle = 0
 			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
@@ -612,6 +609,11 @@ class Voikko(object):
 		"""
 		self.__lib.voikkoSetIntegerOption(self.__handle, 9, value)
 	
+	def setSpellerCacheSize(self, value):
+		"""Controls the size of in memory cache for spell checking results. 0 is the default size,
+		1 is twice as large as 0 etc. -1 disables the spell checking cache entirely."""
+		self.__lib.voikkoSetIntegerOption(self.__handle, 17, value)
+	             
 	def setSuggestionStrategy(self, value):
 		"""Set the suggestion strategy to be used when generating spelling suggestions.
 		Default: SuggestionStrategy.TYPO

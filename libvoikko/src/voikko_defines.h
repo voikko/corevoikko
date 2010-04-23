@@ -124,4 +124,9 @@
  * Default: 2 */
 #define VOIKKO_MIN_HYPHENATED_WORD_LENGTH 9
 
+/* Size of the spellchecker cache. This can be -1 (no cache) or
+ * >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
+ * Default: 0*/
+#define VOIKKO_SPELLER_CACHE_SIZE 17
+
 #endif

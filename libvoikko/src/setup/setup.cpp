@@ -133,12 +133,28 @@ VOIKKOEXPORT int voikkoSetIntegerOption(voikko_options_t * options, int option, 
 		case VOIKKO_MIN_HYPHENATED_WORD_LENGTH:
 			options->hyphenator->setMinHyphenatedWordLength(value);
 			return 1;
+		case VOIKKO_SPELLER_CACHE_SIZE:
+			if (options->spellerCache) {
+				if (options->spellerCache->getSizeParam() != value) {
+					delete options->spellerCache;
+					if (value >= 0) {
+						options->spellerCache = new spellchecker::SpellerCache(value);
+					} else {
+						options->spellerCache = 0;
+					}
+				}
+			} else {
+				if (value >= 0) {
+					options->spellerCache = new spellchecker::SpellerCache(value);
+				}
+			}
+			return 1;
 	}
 	return 0;
 }
 
 VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * langcode,
-                                   int cache_size, const char * path) {
+                                   const char * path) {
 	if (!langcode) {
 		*error = "Language must not be null";
 		return 0;
@@ -155,7 +171,6 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->accept_titles_in_gc = 0;
 	options->accept_unfinished_paragraphs_in_gc = 0;
 	options->accept_bulleted_lists_in_gc = 0;
-	options->spellerCache = 0;
 	options->morAnalyzer = 0;
 	
 	try {
@@ -201,9 +216,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 		return 0;
 	}
 	
-	if (cache_size >= 0) {
-		options->spellerCache = new spellchecker::SpellerCache(cache_size);
-	}
+	options->spellerCache = new spellchecker::SpellerCache(0);
 	*error = 0;
 	return options;
 }
