@@ -53,7 +53,7 @@ class DictionaryInfoTest(unittest.TestCase):
 		lib = getVoikkoCLibrary()
 		error = c_char_p()
 		handle = lib.voikkoInit(byref(error), variant,
-		         0, self.dataDir.getDirectory())
+		         self.dataDir.getDirectory())
 		if error.value == None:
 			lib.voikkoTerminate(handle)
 			return True

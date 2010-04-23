@@ -91,7 +91,7 @@ def getVoikkoCLibrary():
 		library = CDLL("libvoikko-1.dll")
 	else:
 		library = CDLL("libvoikko.so.1")
-	library.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_int, c_char_p]
+	library.voikkoInit.argtypes = [POINTER(c_char_p), c_char_p, c_char_p]
 	library.voikkoInit.restype = c_void_p
 	library.voikkoTerminate.argtypes = [c_void_p]
 	library.voikkoTerminate.restype = None
