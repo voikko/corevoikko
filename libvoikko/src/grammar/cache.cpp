@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -21,6 +21,7 @@
 #include "grammar/cache.hpp"
 #include "grammar/checks.hpp"
 #include "grammar/analysis.hpp"
+#include "grammar/check/CapitalizationCheck.hpp"
 #include "autocorrect/AutoCorrect.hpp"
 #include <cstring>
 #include <cstdlib>
@@ -90,13 +91,14 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 		}
 	}
 	
+	check::CapitalizationCheck capitalizationCheck;
 	for (size_t i = 0; i < para->sentenceCount; i++) {
 		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
 		gc_local_punctuation(voikkoOptions, para->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
-		gc_character_case(voikkoOptions, para->sentences[i], i == 0);
 		gc_repeating_words(voikkoOptions, para->sentences[i]);
 	}
+	capitalizationCheck.check(voikkoOptions, para);
 	gc_end_punctuation(voikkoOptions, para);
 	delete para;
 }

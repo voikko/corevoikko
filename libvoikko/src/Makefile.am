@@ -64,6 +64,9 @@ libvoikko_la_SOURCES = \
     grammar/cachesetup.cpp grammar/error.cpp grammar/analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
+    grammar/check/CapitalizationCheck.cpp \
+    grammar/check/ParagraphCheck.cpp \
+    grammar/check/SentenceCheck.cpp \
     compatibility/interface.cpp \
     autocorrect/AutoCorrect.cpp
 libvoikko_la_LDFLAGS = -no-undefined -version-info 12:0:11 @LIBLDFLAGSWIN@
@@ -138,6 +141,9 @@ noinst_HEADERS = \
     grammar/Token.hpp grammar/Sentence.hpp grammar/Paragraph.hpp \
     grammar/CacheEntry.hpp \
     grammar/GcCache.hpp \
+    grammar/check/CapitalizationCheck.hpp \
+    grammar/check/ParagraphCheck.hpp \
+    grammar/check/SentenceCheck.hpp \
     autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp \
     utf8/core.hpp \
     utf8/checked.hpp \

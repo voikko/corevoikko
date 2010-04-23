@@ -35,11 +35,6 @@ void gc_local_punctuation(voikko_options_t * options, const grammar::Sentence * 
 void gc_punctuation_of_quotations(voikko_options_t * options, const grammar::Sentence * sentence);
 
 /**
- * GC errors due to incorrect character case
- */
-void gc_character_case(voikko_options_t * options, const grammar::Sentence * sentence, bool isFirstInParagraph);
-
-/**
  * GC errors due to word repetition
  */
 void gc_repeating_words(voikko_options_t * options, const grammar::Sentence * sentence);
