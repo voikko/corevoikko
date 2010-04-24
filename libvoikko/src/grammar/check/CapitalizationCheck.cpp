@@ -22,6 +22,7 @@
 #include "character/SimpleChar.hpp"
 #include "character/charset.hpp"
 #include "utils/StringUtils.hpp"
+#include <list>
 #include <stack>
 
 using namespace libvoikko::character;
@@ -32,8 +33,9 @@ namespace libvoikko { namespace grammar { namespace check {
 
 struct CapitalizationContext {
 	const Paragraph * paragraph;
-	size_t currentSentence;
+	size_t currentSentence; // may be one past the end of array if at the end of paragraph
 	size_t currentToken;
+	const Token * nextWord;
 	voikko_options_t * options;
 	stack<wchar_t> quotes;
 };
@@ -46,29 +48,65 @@ enum CapitalizationState {
 	QUOTED
 };
 
+static const Token * getTokenAndAdvance(CapitalizationContext & context) {
+	if (context.paragraph->sentenceCount == context.currentSentence) {
+		return 0;
+	}
+	const Sentence * sentence = context.paragraph->sentences[context.currentSentence];
+	const Token * token = sentence->tokens + context.currentToken;
+	++context.currentToken;
+	if (sentence->tokenCount == context.currentToken) {
+		context.currentToken = 0;
+		context.currentSentence++;
+	}
+	return token;
+}
+
+static list<const Token *> getTokensUntilNextWord(CapitalizationContext & context) {
+	list<const Token *> tokens;
+	while (true) {
+		const Token * token = getTokenAndAdvance(context);
+		if (!token) {
+			context.nextWord = 0;
+			break;
+		}
+		if (token->type == TOKEN_WORD) {
+			context.nextWord = token;
+			break;
+		}
+		tokens.push_back(token);
+	}
+	return tokens;
+}
+
 static CapitalizationState inInitial(CapitalizationContext & context) {
-	// FIXME: unimplemented
-	return UPPER;
+	//const Token * currentWord = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	return UPPER; // FIXME
 }
 
 static CapitalizationState inUpper(CapitalizationContext & context) {
-	// FIXME: unimplemented
-	return LOWER;
+	//const Token * currentWord = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	return LOWER; // FIXME
 }
 
 static CapitalizationState inLower(CapitalizationContext & context) {
-	// FIXME: unimplemented
-	return LOWER;
+	//const Token * currentWord = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	return DONT_CARE; // FIXME
 }
 
 static CapitalizationState inDontCare(CapitalizationContext & context) {
-	// FIXME: unimplemented
-	return LOWER;
+	//const Token * currentWord = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	return QUOTED; // FIXME
 }
 
 static CapitalizationState inQuoted(CapitalizationContext & context) {
-	// FIXME: unimplemented
-	return QUOTED;
+	//const Token * currentWord = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	return INITIAL; // FIXME
 }
 
 static CapitalizationState (*stateFunctions[])(CapitalizationContext & context) = {&inInitial, &inUpper, &inLower, &inDontCare, &inQuoted};
@@ -78,6 +116,7 @@ void CapitalizationCheck::check(voikko_options_t * options, const Paragraph * pa
 	context.paragraph = paragraph;
 	context.currentSentence = 0;
 	context.currentToken = 0;
+	context.nextWord = 0;
 	context.options = options;
 	
 	CapitalizationState state = INITIAL;
