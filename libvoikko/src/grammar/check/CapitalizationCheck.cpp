@@ -80,19 +80,47 @@ static list<const Token *> getTokensUntilNextWord(CapitalizationContext & contex
 }
 
 static CapitalizationState inInitial(CapitalizationContext & context) {
-	//const Token * currentWord = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
 	return UPPER; // FIXME
 }
 
 static CapitalizationState inUpper(CapitalizationContext & context) {
-	//const Token * currentWord = context.nextWord;
+	const Token * word = context.nextWord;
+	if (!SimpleChar::isUpper(word->str[0]) && !SimpleChar::isDigit(word->str[0])) {
+		CacheEntry * e = new CacheEntry(1);
+		e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
+		e->error.startpos = word->pos;
+		e->error.errorlen = word->tokenlen;
+		wchar_t * suggestion = new wchar_t[word->tokenlen];
+		suggestion[0] = SimpleChar::upper(word->str[0]);
+		wcsncpy(suggestion + 1, word->str + 1, word->tokenlen - 1);
+		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
+		delete[] suggestion;
+		gc_cache_append_error(context.options, e);
+	}
 	list<const Token *> separators = getTokensUntilNextWord(context);
 	return LOWER; // FIXME
 }
 
 static CapitalizationState inLower(CapitalizationContext & context) {
-	//const Token * currentWord = context.nextWord;
+	const Token * word = context.nextWord;
+	if (word->isValidWord &&
+	    word->firstLetterLcase &&
+	    !word->possibleSentenceStart &&
+	    word->tokenlen > 1 && // Single letters are OK in upper case
+	    word->str[1] != L'-' && // A-rapussa etc.
+	    SimpleChar::isUpper(word->str[0])) {
+		CacheEntry * e = new CacheEntry(1);
+		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
+		e->error.startpos = word->pos;
+		e->error.errorlen = word->tokenlen;
+		wchar_t * suggestion = new wchar_t[word->tokenlen];
+		suggestion[0] = SimpleChar::lower(word->str[0]);
+		wcsncpy(suggestion + 1, word->str + 1, word->tokenlen - 1);
+		e->error.suggestions[0] = StringUtils::utf8FromUcs4(suggestion, word->tokenlen);
+		delete[] suggestion;
+		gc_cache_append_error(context.options, e);
+	}
 	list<const Token *> separators = getTokensUntilNextWord(context);
 	return DONT_CARE; // FIXME
 }
