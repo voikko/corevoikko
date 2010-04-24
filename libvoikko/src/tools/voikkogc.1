@@ -1,4 +1,4 @@
-.TH VOIKKOGC 1 "2009-03-28"
+.TH VOIKKOGC 1 "2010-04-24"
 .SH NAME
 voikkogc \- test program for Voikko grammar checker
 .SH SYNOPSIS
@@ -21,6 +21,9 @@ Instead of looking for grammar errors, split input into sentences. The sentences
 by type: "B" means that end of sentence is a probably correct, "P" means that end of sentence
 is a possibly correct (but probably this and the next identified sentence should be joined) and
 "E" means that sentence ends at the end of input.
+.TP
+.B \-n
+Prefix all grammar checker messages with line number of input data.
 .TP
 .BI accept_titles= n
 .TP

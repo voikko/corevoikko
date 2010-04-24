@@ -27,6 +27,9 @@ using namespace std;
 
 static const int MAX_PARAGRAPH_LENGTH = 100000;
 
+bool printLineNumbersInGc = false;
+size_t lineNumber = 0;
+
 void print_tokens(int handle, const wchar_t * line, size_t lineLen) {
 	enum voikko_token_type token_type;
 	size_t tokenchars;
@@ -103,6 +106,9 @@ void check_grammar(int handle, const wchar_t * line, size_t lineLen,
 	while (1) {
 		grammar_error = voikko_next_grammar_error_ucs4(handle, line, lineLen,
 		                0, skiperrors);
+		if (printLineNumbersInGc) {
+			cout << lineNumber << " ";
+		}
 		if (grammar_error.error_code == 0) {
 			cout << "-" << endl;
 			return;
@@ -191,6 +197,9 @@ int main(int argc, char ** argv) {
 		else if (strncmp(argv[i], "explanation_language=", 21) == 0) {
 			explanation_language = "en";
 		}
+		else if (strcmp(argv[i], "-n") == 0) {
+			printLineNumbersInGc = true;
+		}
 		else if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "-d") == 0) {
 			i++;
 			continue;
@@ -208,6 +217,7 @@ int main(int argc, char ** argv) {
 	
 	setlocale(LC_ALL, "");
 	while (fgetws(line, MAX_PARAGRAPH_LENGTH, stdin)) {
+		lineNumber++;
 		size_t lineLen = wcslen(line);
 		if (lineLen == 0) continue;
 		if (line[lineLen - 1] == L'\n') {

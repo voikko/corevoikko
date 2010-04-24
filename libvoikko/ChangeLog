@@ -1,3 +1,8 @@
+2010-04-24 Harri Pitkänen <hatapitk@iki.fi>
+	* Reimplement capitalization checks in grammar checker with state machine.
+	* Handle parenthesis and quotes better in grammar checker.
+	* Add option for printing input line number in voikkogc.
+
 2010-04-23 Harri Pitkänen <hatapitk@iki.fi>
 	* Move cache size setting from voikkoInit to integer option
 	  VOIKKO_SPELLER_CACHE_SIZE.
