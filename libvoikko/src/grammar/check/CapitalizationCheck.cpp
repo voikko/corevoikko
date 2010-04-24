@@ -79,9 +79,47 @@ static list<const Token *> getTokensUntilNextWord(CapitalizationContext & contex
 	return tokens;
 }
 
+static bool containsToken(const list<const Token *> & tokens, const wchar_t * expectedText) {
+	list<const Token *>::const_iterator it = tokens.begin();
+	while (it != tokens.end()) {
+		if (wcscmp(expectedText, (*it)->str) == 0) {
+			return true;
+		}
+		it++;
+	}
+	return false;
+}
+
+static void pushAndPopQuotes(CapitalizationContext & context, const list<const Token *> & tokens) {
+	list<const Token *>::const_iterator it = tokens.begin();
+	while (it != tokens.end()) {
+		if ((*it)->type == TOKEN_PUNCTUATION) {
+			const wchar_t * text = (*it)->str;
+			if (isFinnishQuotationMark(text[0])) {
+				if (context.quotes.empty()) {
+					context.quotes.push(text[0]);
+				} else {
+					wchar_t previous = context.quotes.top();
+					if (previous == text[0]) {
+						context.quotes.pop();
+					} else {
+						context.quotes.push(text[0]);
+					}
+				}
+			}
+		}
+		it++;
+	}
+
+}
+
 static CapitalizationState inInitial(CapitalizationContext & context) {
 	list<const Token *> separators = getTokensUntilNextWord(context);
-	return UPPER; // FIXME
+	pushAndPopQuotes(context, separators);
+	if (!context.quotes.empty()) {
+		return QUOTED;
+	}
+	return UPPER;
 }
 
 static CapitalizationState inUpper(CapitalizationContext & context) {
@@ -99,6 +137,13 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 		gc_cache_append_error(context.options, e);
 	}
 	list<const Token *> separators = getTokensUntilNextWord(context);
+	pushAndPopQuotes(context, separators);
+	if (!context.quotes.empty()) {
+		return QUOTED;
+	}
+	if (containsToken(separators, L"\t")) {
+		return DONT_CARE;
+	}
 	return LOWER; // FIXME
 }
 
@@ -122,19 +167,31 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 		gc_cache_append_error(context.options, e);
 	}
 	list<const Token *> separators = getTokensUntilNextWord(context);
+	pushAndPopQuotes(context, separators);
+	if (!context.quotes.empty()) {
+		return QUOTED;
+	}
 	return DONT_CARE; // FIXME
 }
 
 static CapitalizationState inDontCare(CapitalizationContext & context) {
 	//const Token * currentWord = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
+	pushAndPopQuotes(context, separators);
+	if (!context.quotes.empty()) {
+		return QUOTED;
+	}
 	return QUOTED; // FIXME
 }
 
 static CapitalizationState inQuoted(CapitalizationContext & context) {
 	//const Token * currentWord = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
-	return INITIAL; // FIXME
+	pushAndPopQuotes(context, separators);
+	if (!context.quotes.empty()) {
+		return QUOTED;
+	}
+	return LOWER; // FIXME
 }
 
 static CapitalizationState (*stateFunctions[])(CapitalizationContext & context) = {&inInitial, &inUpper, &inLower, &inDontCare, &inQuoted};
