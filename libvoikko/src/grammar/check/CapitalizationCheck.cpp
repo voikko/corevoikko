@@ -48,11 +48,40 @@ enum CapitalizationState {
 	QUOTED
 };
 
-static const Token * getTokenAndAdvance(CapitalizationContext & context) {
-	if (context.paragraph->sentenceCount == context.currentSentence) {
-		return 0;
+static bool isOnlyUpperCase(const Sentence * sentence) {
+	bool onlyUpper = true;
+	for (size_t i = 0; i < sentence->tokenCount; i++) {
+		Token t = sentence->tokens[i];
+		if (t.type != TOKEN_WORD) continue;
+		for (size_t j = 0; j < t.tokenlen; j++) {
+			if (SimpleChar::isLower(t.str[j])) {
+				onlyUpper = false;
+				break;
+			}
+		}
+		if (!onlyUpper) {
+			break;
+		}
 	}
-	const Sentence * sentence = context.paragraph->sentences[context.currentSentence];
+	return onlyUpper;
+}
+
+static const Token * getTokenAndAdvance(CapitalizationContext & context) {
+	const Sentence * sentence;
+	while (true) {
+		if (context.paragraph->sentenceCount == context.currentSentence) {
+			return 0;
+		}
+		sentence = context.paragraph->sentences[context.currentSentence];
+		// Check if the sentence is written fully in upper case letters.
+		// If it is, no character case errors should be reported.
+		if (isOnlyUpperCase(sentence)) {
+			context.currentSentence++;
+		} else {
+			break;
+		}
+	}
+	
 	const Token * token = sentence->tokens + context.currentToken;
 	++context.currentToken;
 	if (sentence->tokenCount == context.currentToken) {
@@ -131,7 +160,9 @@ static CapitalizationState inInitial(CapitalizationContext & context) {
 
 static CapitalizationState inUpper(CapitalizationContext & context) {
 	const Token * word = context.nextWord;
-	if (!SimpleChar::isUpper(word->str[0]) && !SimpleChar::isDigit(word->str[0])) {
+	if (!SimpleChar::isUpper(word->str[0]) &&
+	    !SimpleChar::isDigit(word->str[0]) &&
+	    !word->possibleSentenceStart) {
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_WRITE_FIRST_UPPERCASE;
 		e->error.startpos = word->pos;
@@ -223,12 +254,9 @@ void CapitalizationCheck::check(voikko_options_t * options, const Paragraph * pa
 	context.options = options;
 	
 	CapitalizationState state = INITIAL;
-	while (false /*paragraph->sentenceCount >= context.currentSentence + 1 &&
-	       paragraph->sentences[context.currentSentence]->tokenCount >= context.currentToken + 1*/) {
+	while (paragraph->sentenceCount >= context.currentSentence + 1 &&
+	       paragraph->sentences[context.currentSentence]->tokenCount >= context.currentToken + 1) {
 		state = stateFunctions[state](context);
-	}
-	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
-		check(options, paragraph->sentences[i], i == 0);
 	}
 }
 
