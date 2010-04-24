@@ -237,7 +237,7 @@ static CapitalizationState inDontCare(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
-	return QUOTED; // FIXME
+	return LOWER;
 }
 
 static CapitalizationState inQuoted(CapitalizationContext & context) {

@@ -83,6 +83,8 @@ ISOLLA KIRJOITETUSSA VIRKKEESSÄ ON 1 NUMERO.
 YKSI VIRKE ON KOKONAAN ISOLLA. Toisessa on Silti virhe.
  [code=6, level=0, descr="", stpos=43, len=5, suggs={"silti"}]
 PÄÄTÖS	Jos virkkeessä on sarkainmerkki, voi teksti sisältää vähän mitä tahansa.
+Sarkaimen	jälkeen Jotain sentään tarkistetaan.
+ [code=6, level=0, descr="", stpos=18, len=6, suggs={"jotain"}]
 http://www.puimula.org
 juokse!
  [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]
