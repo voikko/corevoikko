@@ -231,23 +231,28 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 }
 
 static CapitalizationState inDontCare(CapitalizationContext & context) {
-	//const Token * currentWord = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	pushAndPopQuotes(context, separators);
+	if (!context.quotes.empty()) {
+		return QUOTED;
+	}
+	if (containsToken(separators, L"\t")) {
+		return DONT_CARE;
+	}
+	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
+	    containsToken(separators, L"!")) {
+		return UPPER;
+	}
+	return LOWER;
+}
+
+static CapitalizationState inQuoted(CapitalizationContext & context) {
 	list<const Token *> separators = getTokensUntilNextWord(context);
 	pushAndPopQuotes(context, separators);
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
 	return LOWER;
-}
-
-static CapitalizationState inQuoted(CapitalizationContext & context) {
-	//const Token * currentWord = context.nextWord;
-	list<const Token *> separators = getTokensUntilNextWord(context);
-	pushAndPopQuotes(context, separators);
-	if (!context.quotes.empty()) {
-		return QUOTED;
-	}
-	return LOWER; // FIXME
 }
 
 static CapitalizationState (*stateFunctions[])(CapitalizationContext & context) = {&inInitial, &inUpper, &inLower, &inDontCare, &inQuoted};
