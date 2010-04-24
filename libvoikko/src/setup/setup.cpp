@@ -224,18 +224,12 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 VOIKKOEXPORT void voikkoTerminate(voikko_options_t * handle) {
 	handle->hyphenator->terminate();
 	delete handle->hyphenator;
-	handle->hyphenator = 0;
 	delete handle->suggestionGenerator;
-	handle->suggestionGenerator = 0;
 	handle->speller->terminate();
 	delete handle->speller;
-	handle->speller = 0;
 	handle->morAnalyzer->terminate();
 	delete handle->morAnalyzer;
-	handle->morAnalyzer = 0;
-	if (handle->spellerCache) {
-		delete handle->spellerCache;
-	}
+	delete handle->spellerCache;
 	gc_clear_cache(handle);
 	delete handle;
 }
