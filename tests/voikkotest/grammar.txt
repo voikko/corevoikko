@@ -56,6 +56,8 @@ Hän huusi "Kissa! Oletko siellä?" mennessään kellariin.
  [code=10, level=0, descr="", stpos=37, len=3, suggs={"!""}]
 “Älä käytä vierasta lainausmerkkiä!” huutaa setä.
  [code=11, level=0, descr="", stpos=0, len=1, suggs={"”"}]
+“Vieras Lainausmerkki” voi vaikuttaa isojen kirjainten käytöön arvaamattomasti.
+ [code=11, level=0, descr="", stpos=0, len=1, suggs={"”"}]
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
 Hyllyllä on mm. hilloa.
 Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.

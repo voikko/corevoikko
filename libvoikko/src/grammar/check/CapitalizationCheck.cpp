@@ -48,11 +48,20 @@ enum CapitalizationState {
 	QUOTED
 };
 
-static bool isOnlyUpperCase(const Sentence * sentence) {
+static bool shouldSkipSentence(const Sentence * sentence) {
+	// Check if the sentence is written fully in upper case letters.
+	// If it is, no character case errors should be reported.
 	bool onlyUpper = true;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
-		if (t.type != TOKEN_WORD) continue;
+		if (t.str[0] == L'\u201C') {
+			// The presence of a foreign quotation mark makes it hard to tell
+			// what is the correct capitalization.
+			return true;
+		}
+		if (t.type != TOKEN_WORD) {
+			continue;
+		}
 		for (size_t j = 0; j < t.tokenlen; j++) {
 			if (SimpleChar::isLower(t.str[j])) {
 				onlyUpper = false;
@@ -73,9 +82,7 @@ static const Token * getTokenAndAdvance(CapitalizationContext & context) {
 			return 0;
 		}
 		sentence = context.paragraph->sentences[context.currentSentence];
-		// Check if the sentence is written fully in upper case letters.
-		// If it is, no character case errors should be reported.
-		if (isOnlyUpperCase(sentence)) {
+		if (shouldSkipSentence(sentence)) {
 			context.currentSentence++;
 		} else {
 			break;
@@ -186,7 +193,7 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	    containsToken(separators, L"!")) {
 		return UPPER;
 	}
-	return LOWER; // FIXME
+	return LOWER;
 }
 
 static CapitalizationState inLower(CapitalizationContext & context) {
