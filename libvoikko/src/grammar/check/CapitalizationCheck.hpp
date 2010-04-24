@@ -28,8 +28,6 @@ namespace libvoikko { namespace grammar { namespace check {
 class CapitalizationCheck : public ParagraphCheck {
 	public:
 		void check(voikko_options_t * options, const Paragraph * sentence);
-	private:
-		void check(voikko_options_t * options, const Sentence * sentence, bool isFirstInParagraph);
 };
 
 } } }
