@@ -119,6 +119,13 @@ static CapitalizationState inInitial(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
+	if (context.options->accept_bulleted_lists_in_gc) {
+		return DONT_CARE;
+	}
+	if (containsToken(separators, L"-")) {
+		// may be some sort of bulletted list
+		return DONT_CARE;
+	}
 	return UPPER;
 }
 
@@ -143,6 +150,10 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	}
 	if (containsToken(separators, L"\t")) {
 		return DONT_CARE;
+	}
+	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
+	    containsToken(separators, L"!")) {
+		return UPPER;
 	}
 	return LOWER; // FIXME
 }
@@ -171,7 +182,14 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
-	return DONT_CARE; // FIXME
+	if (containsToken(separators, L"\t")) {
+		return DONT_CARE;
+	}
+	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
+	    containsToken(separators, L"!")) {
+		return UPPER;
+	}
+	return LOWER;
 }
 
 static CapitalizationState inDontCare(CapitalizationContext & context) {
