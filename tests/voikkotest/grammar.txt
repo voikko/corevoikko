@@ -89,6 +89,11 @@ Sarkain	loppuu. Alkaa uusi virke.
 Sarkain	loppuu? Alkaa uusi virke.
 Sarkain	loppuu! Alkaa uusi virke.
 Sarkain	Ja	Toinen sarkain.
+Sulkumerkkien sisällä (Kissa ja Koira) voi lukea mitä vaan.
+Sulkumerkkien (siis näiden) jälkeen Ei saa lukea mitä vaan.
+ [code=6, level=0, descr="", stpos=36, len=2, suggs={"ei"}]
+Sulkumerkkien (siis näiden) Jälkeen ei saa lukea mitä vaan.
+ [code=6, level=0, descr="", stpos=28, len=7, suggs={"jälkeen"}]
 http://www.puimula.org
 juokse!
  [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]

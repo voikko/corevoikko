@@ -142,6 +142,18 @@ static void pushAndPopQuotes(CapitalizationContext & context, const list<const T
 						context.quotes.push(text[0]);
 					}
 				}
+			} else if (text[0] == L'(') {
+				context.quotes.push(text[0]);
+			} else if (text[0] == L')') {
+				if (context.quotes.empty()) {
+					// TODO: error about inconsistent use of closing parenthesis
+				} else {
+					if (context.quotes.top() == L'(') {
+						context.quotes.pop();
+					} else {
+						// TODO: error about inconsistent use of closing parenthesis
+					}
+				}
 			}
 		}
 		it++;
