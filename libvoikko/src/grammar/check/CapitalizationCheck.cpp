@@ -22,13 +22,69 @@
 #include "character/SimpleChar.hpp"
 #include "character/charset.hpp"
 #include "utils/StringUtils.hpp"
+#include <stack>
 
 using namespace libvoikko::character;
 using namespace libvoikko::utils;
+using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
 
+struct CapitalizationContext {
+	const Paragraph * paragraph;
+	size_t currentSentence;
+	size_t currentToken;
+	voikko_options_t * options;
+	stack<wchar_t> quotes;
+};
+
+enum CapitalizationState {
+	INITIAL,
+	UPPER,
+	LOWER,
+	DONT_CARE,
+	QUOTED
+};
+
+static CapitalizationState inInitial(CapitalizationContext & context) {
+	// FIXME: unimplemented
+	return UPPER;
+}
+
+static CapitalizationState inUpper(CapitalizationContext & context) {
+	// FIXME: unimplemented
+	return LOWER;
+}
+
+static CapitalizationState inLower(CapitalizationContext & context) {
+	// FIXME: unimplemented
+	return LOWER;
+}
+
+static CapitalizationState inDontCare(CapitalizationContext & context) {
+	// FIXME: unimplemented
+	return LOWER;
+}
+
+static CapitalizationState inQuoted(CapitalizationContext & context) {
+	// FIXME: unimplemented
+	return QUOTED;
+}
+
+static CapitalizationState (*stateFunctions[])(CapitalizationContext & context) = {&inInitial, &inUpper, &inLower, &inDontCare, &inQuoted};
+
 void CapitalizationCheck::check(voikko_options_t * options, const Paragraph * paragraph) {
+	CapitalizationContext context;
+	context.paragraph = paragraph;
+	context.currentSentence = 0;
+	context.currentToken = 0;
+	context.options = options;
+	
+	CapitalizationState state = INITIAL;
+	while (false /*paragraph->sentenceCount >= context.currentSentence + 1 &&
+	       paragraph->sentences[context.currentSentence]->tokenCount >= context.currentToken + 1*/) {
+		state = stateFunctions[state](context);
+	}
 	for (size_t i = 0; i < paragraph->sentenceCount; i++) {
 		check(options, paragraph->sentences[i], i == 0);
 	}
