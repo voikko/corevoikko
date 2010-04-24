@@ -98,6 +98,10 @@ Jos lainausmerkkien sisällä on ")", ei Tarkistus saa mennä sekaisin (mutta su
  [code=6, level=0, descr="", stpos=39, len=9, suggs={"tarkistus"}]
 Yksinäinen merkki ) lainauksen ulkopuolella aiheuttaa virheen.
  [code=12, level=0, descr="", stpos=18, len=1, suggs={}]
+1) Luettelossa voi sulkumerkkiä käyttää näin.
+a) Luettelossa voi sulkumerkkiä käyttää näin.
+iii) Luettelossa voi sulkumerkkiä käyttää näin.
+A) Luettelossa voi sulkumerkkiä käyttää näin.
 http://www.puimula.org
 juokse!
  [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]
@@ -131,4 +135,7 @@ Kuitenkaan virheitä ei sallita Keskellä kappaletta.
 [code=6, level=0, descr="", stpos=31, len=8, suggs={"keskellä"}]
 Myös isot kirjaimet on muistettava. vaikka olisi lista.
 [code=7, level=0, descr="", stpos=36, len=6, suggs={"Vaikka"}]
-
+1) Luettelossa voi sulkumerkkiä käyttää näin.
+a) Luettelossa voi sulkumerkkiä käyttää näin.
+iii) Luettelossa voi sulkumerkkiä käyttää näin.
+A) Luettelossa voi sulkumerkkiä käyttää näin.

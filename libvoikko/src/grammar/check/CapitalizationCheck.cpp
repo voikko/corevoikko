@@ -181,6 +181,13 @@ static CapitalizationState inInitial(CapitalizationContext & context) {
 
 static CapitalizationState inUpper(CapitalizationContext & context) {
 	const Token * word = context.nextWord;
+	list<const Token *> separators = getTokensUntilNextWord(context);
+	if (word->pos == 0 && !separators.empty() && (*separators.begin())->str[0] == L')') {
+		// A) Some sentence.
+		separators.pop_front();
+		pushAndPopQuotes(context, separators);
+		return DONT_CARE;
+	}
 	if (!SimpleChar::isUpper(word->str[0]) &&
 	    !SimpleChar::isDigit(word->str[0]) &&
 	    !word->possibleSentenceStart) {
@@ -195,7 +202,6 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 		delete[] suggestion;
 		gc_cache_append_error(context.options, e);
 	}
-	list<const Token *> separators = getTokensUntilNextWord(context);
 	pushAndPopQuotes(context, separators);
 	if (!context.quotes.empty()) {
 		return QUOTED;
@@ -245,7 +251,14 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 }
 
 static CapitalizationState inDontCare(CapitalizationContext & context) {
+	const Token * word = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
+	if (word->pos == 0 && !separators.empty() && (*separators.begin())->str[0] == L')') {
+		// A) Some sentence.
+		separators.pop_front();
+		pushAndPopQuotes(context, separators);
+		return DONT_CARE;
+	}
 	pushAndPopQuotes(context, separators);
 	if (!context.quotes.empty()) {
 		return QUOTED;
