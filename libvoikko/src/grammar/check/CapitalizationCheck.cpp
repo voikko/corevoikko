@@ -146,13 +146,15 @@ static void pushAndPopQuotes(CapitalizationContext & context, const list<const T
 				context.quotes.push(text[0]);
 			} else if (text[0] == L')') {
 				if (context.quotes.empty()) {
-					// TODO: error about inconsistent use of closing parenthesis
-				} else {
-					if (context.quotes.top() == L'(') {
-						context.quotes.pop();
-					} else {
-						// TODO: error about inconsistent use of closing parenthesis
-					}
+					// XXX: parenthesis errors are not really related to
+					// capitalization
+					CacheEntry * e = new CacheEntry(0);
+					e->error.error_code = GCERR_MISPLACED_CLOSING_PARENTHESIS;
+					e->error.startpos = (*it)->pos;
+					e->error.errorlen = 1;
+					gc_cache_append_error(context.options, e);
+				} else if (context.quotes.top() == L'(') {
+					context.quotes.pop();
 				}
 			}
 		}

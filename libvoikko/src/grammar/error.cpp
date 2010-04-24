@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -48,6 +48,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Virheelliset v\xc3\xa4limerkit lainauksen lopussa";
 			case GCERR_FOREIGN_QUOTATION_MARK:
 				return "Suomenkieliseen tekstiin sopimaton lainausmerkki";
+			case GCERR_MISPLACED_CLOSING_PARENTHESIS:
+				return "Väärin sijoitettu sulkumerkki";
 		}
 		return "Tuntematon virhe";
 	}
@@ -75,6 +77,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Invalid punctuation at the end of quotation";
 			case GCERR_FOREIGN_QUOTATION_MARK:
 				return "Foreign quotation mark";
+			case GCERR_MISPLACED_CLOSING_PARENTHESIS:
+				return "Misplaced closing parenthesis";
 		}
 		return "Unknown error";
 	}
