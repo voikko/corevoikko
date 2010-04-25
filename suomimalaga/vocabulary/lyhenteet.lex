@@ -328,6 +328,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "vrk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # vuorokausi
 [alku: "VR", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # VR-konserni
 [alku: "vrt.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # vertaa
+[alku: "vs.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # viransijainen, vastaan
 [alku: "vt.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # virkaa toimittava
 [alku: "VTT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Valtion teknillinen tutkimuskeskus; valtiotieteiden tohtori
 [alku: "wc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
