@@ -269,7 +269,7 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 static CapitalizationState inDontCare(CapitalizationContext & context) {
 	const Token * word = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
-	if (word->pos == 0 && !separators.empty() && (*separators.begin())->str[0] == L')') {
+	if (isListItemAndClosingParenthesis(word, separators)) {
 		// A) Some sentence.
 		separators.pop_front();
 		pushAndPopQuotes(context, separators);
