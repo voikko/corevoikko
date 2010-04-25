@@ -98,6 +98,7 @@ Jos lainausmerkkien sisällä on ")", ei Tarkistus saa mennä sekaisin (mutta su
  [code=6, level=0, descr="", stpos=39, len=9, suggs={"tarkistus"}]
 Yksinäinen merkki ) lainauksen ulkopuolella aiheuttaa virheen.
  [code=12, level=0, descr="", stpos=18, len=1, suggs={}]
+Ensimmäinen virke alkaa (loppu suluissa). Toinen virke jatkaa.
 1) Luettelossa voi sulkumerkkiä käyttää näin.
 a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.

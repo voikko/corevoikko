@@ -279,6 +279,9 @@ static CapitalizationState inQuoted(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
+	if (containsToken(separators, L".")) {
+		return UPPER;
+	}
 	return LOWER;
 }
 
