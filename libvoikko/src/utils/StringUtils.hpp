@@ -70,6 +70,22 @@ class StringUtils {
 	 * be sent to malaga have been stripped.
 	 */
 	static wchar_t * stripSpecialCharsForMalaga(wchar_t * & original, size_t origLength);
+	
+	/**
+	 * Checks if given null terminated string is a positive integer.
+	 */
+	static bool isInteger(const wchar_t * word);
+	
+	/**
+	 * Checks if given null terminated string is a roman numeral.
+	 */
+	static bool isRomanNumeral(const wchar_t * word);
+	
+	/**
+	 * Checks if given null terminated string is a possible list item such as
+	 * 1, 2, a, b, A, B, i, ii, iii ...
+	 */
+	static bool isPossibleListItem(const wchar_t * word);
 };
 
 } }

@@ -179,10 +179,20 @@ static CapitalizationState inInitial(CapitalizationContext & context) {
 	return UPPER;
 }
 
+static bool isListItemAndClosingParenthesis(const Token * word, const list<const Token *> & separators) {
+	if (separators.empty() || (*separators.begin())->str[0] != L')') {
+		return false;
+	}
+	if (StringUtils::isPossibleListItem(word->str)) {
+		return true;
+	}
+	return false;
+}
+
 static CapitalizationState inUpper(CapitalizationContext & context) {
 	const Token * word = context.nextWord;
 	list<const Token *> separators = getTokensUntilNextWord(context);
-	if (word->pos == 0 && !separators.empty() && (*separators.begin())->str[0] == L')') {
+	if (isListItemAndClosingParenthesis(word, separators)) {
 		// A) Some sentence.
 		separators.pop_front();
 		pushAndPopQuotes(context, separators);
@@ -236,6 +246,12 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 		gc_cache_append_error(context.options, e);
 	}
 	list<const Token *> separators = getTokensUntilNextWord(context);
+	if (isListItemAndClosingParenthesis(word, separators)) {
+		// A) Some sentence.
+		separators.pop_front();
+		pushAndPopQuotes(context, separators);
+		return DONT_CARE;
+	}
 	pushAndPopQuotes(context, separators);
 	if (!context.quotes.empty()) {
 		return QUOTED;

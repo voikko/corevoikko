@@ -103,6 +103,7 @@ Ensimmäinen virke alkaa (loppu suluissa). Toinen virke jatkaa.
 a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.
 A) Luettelossa voi sulkumerkkiä käyttää näin.
+Sulkumerkkiä voi käyttää 1) luettelossa ja 2) joskus muulloinkin.
 http://www.puimula.org
 juokse!
  [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]

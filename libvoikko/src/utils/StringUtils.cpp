@@ -152,4 +152,37 @@ wchar_t * StringUtils::stripSpecialCharsForMalaga(wchar_t * & original, size_t o
 	return wordBuffer;
 }
 
+bool StringUtils::isInteger(const wchar_t * word) {
+	for (size_t i = 0; word[i] != L'\0'; i++) {
+		if (word[i] < 0x30 || word[i] > 0x39) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool StringUtils::isRomanNumeral(const wchar_t * word) {
+	// TODO: does not handle all possibilities, does not validate
+	for (size_t i = 0; word[i] != L'\0'; i++) {
+		if (!wcschr(L"iIvVxX", word[i])) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+bool StringUtils::isPossibleListItem(const wchar_t * word) {
+	if (wcslen(word) == 1) {
+		return true;
+	}
+	if (isInteger(word)) {
+		return true;
+	}
+	if (isRomanNumeral(word)) {
+		return true;
+	}
+	return false;
+}
+
 } }
