@@ -58,13 +58,13 @@ struct VoikkoHandle;
  * @return A handle to the initialized Voikko instance or null, if initialization
  *         failed.
  */
-VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
-                          const char * path);
+struct VoikkoHandle * voikkoInit(const char ** error, const char * langcode,
+                                 const char * path);
 
 /**
  * Terminates an instance of voikko.
  */
-void voikkoTerminate(VoikkoHandle * handle);
+void voikkoTerminate(struct VoikkoHandle * handle);
 
 /**
  * Sets a boolean option.
@@ -73,7 +73,7 @@ void voikkoTerminate(VoikkoHandle * handle);
  * @param value option value
  * @return true if option was succesfully set, otherwise false
  */
-int voikkoSetBooleanOption(VoikkoHandle * handle, int option, int value);
+int voikkoSetBooleanOption(struct VoikkoHandle * handle, int option, int value);
 
 /**
  * Sets an integer option.
@@ -82,7 +82,7 @@ int voikkoSetBooleanOption(VoikkoHandle * handle, int option, int value);
  * @param value option value
  * @return true if option was succesfully set, otherwise false
  */
-int voikkoSetIntegerOption(VoikkoHandle * handle, int option, int value);
+int voikkoSetIntegerOption(struct VoikkoHandle * handle, int option, int value);
 
 /**
  * Checks the spelling of an UTF-8 character string.
@@ -90,7 +90,7 @@ int voikkoSetIntegerOption(VoikkoHandle * handle, int option, int value);
  * @param word word to check
  * @return one of the spellchecker return codes
  */
-int voikkoSpellCstr(VoikkoHandle * handle, const char * word);
+int voikkoSpellCstr(struct VoikkoHandle * handle, const char * word);
 
 /**
  * Checks the spelling of a wide character Unicode string
@@ -98,7 +98,7 @@ int voikkoSpellCstr(VoikkoHandle * handle, const char * word);
  * @param word word to check
  * @return one of the spellchecker return codes
  */
-int voikkoSpellUcs4(VoikkoHandle * handle, const wchar_t * word);
+int voikkoSpellUcs4(struct VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Finds suggested correct spellings for given UTF-8 encoded word.
@@ -108,7 +108,7 @@ int voikkoSpellUcs4(VoikkoHandle * handle, const wchar_t * word);
  *         null-terminated array of 0 or more strings containing the suggestions in
  *         UTF-8 encoding. Use voikkoFreeCstrArray to free the array and strings after use.
  */
-char ** voikkoSuggestCstr(VoikkoHandle * handle, const char * word);
+char ** voikkoSuggestCstr(struct VoikkoHandle * handle, const char * word);
 
 /**
  * Finds suggested correct spellings for given word in wide character Unicode string.
@@ -118,7 +118,7 @@ char ** voikkoSuggestCstr(VoikkoHandle * handle, const char * word);
  *         null-terminated array of 0 or more strings containing the suggestions in wide character
  *         Unicode strings. Use voikko_free_suggest_ucs4 to free the array and strings after use.
  */
-wchar_t ** voikkoSuggestUcs4(VoikkoHandle * handle, const wchar_t * word);
+wchar_t ** voikkoSuggestUcs4(struct VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Hyphenates the given word in UTF-8 encoding.
@@ -133,7 +133,7 @@ wchar_t ** voikkoSuggestUcs4(VoikkoHandle * handle, const wchar_t * word);
  *           is replaced by the hyphen.)
  * Returns 0 on error.
  */
-char * voikkoHyphenateCstr(VoikkoHandle * handle, const char * word);
+char * voikkoHyphenateCstr(struct VoikkoHandle * handle, const char * word);
 
 /**
  * Hyphenates the given word in wide character Unicode string.
@@ -148,7 +148,7 @@ char * voikkoHyphenateCstr(VoikkoHandle * handle, const char * word);
  *           is replaced by the hyphen.)
  * Returns 0 on error.
  */
-char * voikkoHyphenateUcs4(VoikkoHandle * handle, const wchar_t * word);
+char * voikkoHyphenateUcs4(struct VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Frees the memory allocated for spelling suggestions.
@@ -176,7 +176,7 @@ void voikkoFreeCstr(char * cstr);
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikkoNextTokenUcs4(VoikkoHandle * handle, const wchar_t * text,
+enum voikko_token_type voikkoNextTokenUcs4(struct VoikkoHandle * handle, const wchar_t * text,
                        size_t textlen, size_t * tokenlen);
 
 /**
@@ -187,7 +187,7 @@ enum voikko_token_type voikkoNextTokenUcs4(VoikkoHandle * handle, const wchar_t 
  * @param tokenlen (out) Number of characters in the identified token
  * @return Type of the identified token.
  */
-enum voikko_token_type voikkoNextTokenCstr(VoikkoHandle * handle, const char * text,
+enum voikko_token_type voikkoNextTokenCstr(struct VoikkoHandle * handle, const char * text,
                        size_t textlen, size_t * tokenlen);
 
 /**
@@ -198,7 +198,7 @@ enum voikko_token_type voikkoNextTokenCstr(VoikkoHandle * handle, const char * t
  * @param sentencelen (out) Offset of the character that starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
-enum voikko_sentence_type voikkoNextSentenceStartUcs4(VoikkoHandle * handle,
+enum voikko_sentence_type voikkoNextSentenceStartUcs4(struct VoikkoHandle * handle,
                           const wchar_t * text, size_t textlen, size_t * sentencelen);
 
 /**
@@ -210,7 +210,7 @@ enum voikko_sentence_type voikkoNextSentenceStartUcs4(VoikkoHandle * handle,
  *        starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
-enum voikko_sentence_type voikkoNextSentenceStartCstr(VoikkoHandle * handle,
+enum voikko_sentence_type voikkoNextSentenceStartCstr(struct VoikkoHandle * handle,
                           const char * text, size_t textlen, size_t * sentencelen);
 
 /**
@@ -230,8 +230,8 @@ struct VoikkoGrammarError;
  * @param skiperrors Skip this number of errors from the start of the text.
  * @return Grammar error description.
  */
-VoikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * handle, const wchar_t * text,
-                     size_t textlen, size_t startpos, int skiperrors);
+struct VoikkoGrammarError * voikkoNextGrammarErrorUcs4(struct VoikkoHandle * handle,
+    const wchar_t * text, size_t textlen, size_t startpos, int skiperrors);
 
 /**
  * Find next grammar error.
@@ -245,29 +245,29 @@ VoikkoGrammarError * voikkoNextGrammarErrorUcs4(VoikkoHandle * handle, const wch
  * @param skiperrors Skip this number of errors from the start of the text.
  * @return Grammar error description.
  */
-VoikkoGrammarError * voikkoNextGrammarErrorCstr(VoikkoHandle * handle, const char * text,
-                     size_t textlen, size_t startpos, int skiperrors);
+struct VoikkoGrammarError * voikkoNextGrammarErrorCstr(struct VoikkoHandle * handle,
+    const char * text, size_t textlen, size_t startpos, int skiperrors);
 
 /**
  * Get the error code associated with given grammar error
  * @param error The grammar error
  * @return The error code
  */
-int voikkoGetGrammarErrorCode(const VoikkoGrammarError * error);
+int voikkoGetGrammarErrorCode(const struct VoikkoGrammarError * error);
 
 /**
  * Get the starting position of the error in checked paragraph.
  * @param error The grammar error
  * @return The starting position of the error in the checked paragraph (in characters).
  */
-size_t voikkoGetGrammarErrorStartPos(const VoikkoGrammarError * error);
+size_t voikkoGetGrammarErrorStartPos(const struct VoikkoGrammarError * error);
 
 /**
  * Get the length of the error in checked paragraph.
  * @param error The grammar error
  * @return The length of the error in the checked paragraph (in characters).
  */
-size_t voikkoGetGrammarErrorLength(const VoikkoGrammarError * error);
+size_t voikkoGetGrammarErrorLength(const struct VoikkoGrammarError * error);
 
 /**
  * Get the suggestions for correcting a grammar error.
@@ -277,13 +277,13 @@ size_t voikkoGetGrammarErrorLength(const VoikkoGrammarError * error);
  *         frees also the suggestions, they should not be modified or deleted
  *         by other means.
  */
-const char ** voikkoGetGrammarErrorSuggestions(const VoikkoGrammarError * error);
+const char ** voikkoGetGrammarErrorSuggestions(const struct VoikkoGrammarError * error);
 
 /**
  * Free the memory reserved for a grammar error, including suggestions for corrections.
  * @param error The grammar error
  */
-void voikkoFreeGrammarError(VoikkoGrammarError * error);
+void voikkoFreeGrammarError(struct VoikkoGrammarError * error);
 
 /**
  * Localized error message.
@@ -357,7 +357,7 @@ struct voikko_mor_analysis;
  * @return A pointer to a null terminated array of analysis results.
  */
 struct voikko_mor_analysis ** voikkoAnalyzeWordUcs4(
-                              VoikkoHandle * handle, const wchar_t * word);
+                              struct VoikkoHandle * handle, const wchar_t * word);
 
 /**
  * Analyzes the morphology of given word.
@@ -366,7 +366,7 @@ struct voikko_mor_analysis ** voikkoAnalyzeWordUcs4(
  * @return A pointer to a null terminated array of analysis results.
  */
 struct voikko_mor_analysis ** voikkoAnalyzeWordCstr(
-                              VoikkoHandle * handle, const char * word);
+                              struct VoikkoHandle * handle, const char * word);
 
 /**
  * Free the memory allocated for morphology analysis results.
