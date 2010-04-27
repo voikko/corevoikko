@@ -172,6 +172,9 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->accept_unfinished_paragraphs_in_gc = 0;
 	options->accept_bulleted_lists_in_gc = 0;
 	options->morAnalyzer = 0;
+	options->speller = 0;
+	options->suggestionGenerator = 0;
+	options->hyphenator = 0;
 	
 	try {
 		options->morAnalyzer = 0;

@@ -90,4 +90,5 @@ class DictionaryInfoTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
-	unittest.main()
+	suite = unittest.TestLoader().loadTestsFromTestCase(DictionaryInfoTest)
+	unittest.TextTestRunner(verbosity=1).run(suite)
