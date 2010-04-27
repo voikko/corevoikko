@@ -249,6 +249,15 @@ static int list_dicts(const char * path) {
 	return 0;
 }
 
+static void printHelp() {
+	cout << "Usage: voikkospell [OPTION]..." << endl;
+	cout << "Check spelling of words read from stdin." << endl;
+	cout << endl;
+	cout << "    -s   Print suggestions for misspelled words" << endl;
+	cout << "    -m   Print morphological analysis for recongized words" << endl;
+	cout << endl;
+	cout << "For complete descriptions of available options see 'man voikkospell'" << endl;
+}
 
 int main(int argc, char ** argv) {
 	const char * path = 0;
@@ -267,6 +276,10 @@ int main(int argc, char ** argv) {
 		}
 		else if (args == "-d" && i + 1 < argc) {
 			variant = argv[++i];
+		}
+		else if (args == "-h" || args == "--help") {
+			printHelp();
+			exit(0);
 		}
 		else if (args == "-l") {
 			list_dicts_requested = true;
