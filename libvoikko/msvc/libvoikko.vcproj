@@ -361,6 +361,34 @@
 					RelativePath="..\src\grammar\Token.hpp"
 					>
 				</File>
+				<Filter
+					Name="check"
+					>
+					<File
+						RelativePath="..\src\grammar\check\CapitalizationCheck.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\CapitalizationCheck.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\ParagraphCheck.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\ParagraphCheck.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\SentenceCheck.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\SentenceCheck.hpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="hyphenator"
@@ -818,6 +846,14 @@
 				<Filter
 					Name="sugestion"
 					>
+					<File
+						RelativePath="..\src\spellchecker\SpellerCache.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\spellchecker\SpellerCache.hpp"
+						>
+					</File>
 					<File
 						RelativePath="..\src\spellchecker\suggestion\Suggestion.cpp"
 						>
