@@ -126,6 +126,11 @@ static bool containsToken(const list<const Token *> & tokens, const wchar_t * ex
 	return false;
 }
 
+static bool placeNameInInstitutionName(const Token * word, const list<const Token *> & separators) {
+	return word->isGeographicalNameInGenitive && separators.size() == 1 &&
+	       (*separators.begin())->str[0] == L' ';
+}
+
 static void pushAndPopQuotes(CapitalizationContext & context, const list<const Token *> & tokens) {
 	list<const Token *>::const_iterator it = tokens.begin();
 	while (it != tokens.end()) {
@@ -216,7 +221,7 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
-	if (containsToken(separators, L"\t")) {
+	if (containsToken(separators, L"\t") || placeNameInInstitutionName(word, separators)) {
 		return DONT_CARE;
 	}
 	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
@@ -256,7 +261,7 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
-	if (containsToken(separators, L"\t")) {
+	if (containsToken(separators, L"\t") || placeNameInInstitutionName(word, separators)) {
 		return DONT_CARE;
 	}
 	if (containsToken(separators, L".") || containsToken(separators, L"?") ||

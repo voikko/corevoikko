@@ -120,6 +120,12 @@ Iso kirjain saa olla myös sanan etuliitteenä. Esimerkiksi B-rapussa on sallitt
 - koira.
 - koira ja Kissa.
  [code=6, level=0, descr="", stpos=11, len=5, suggs={"kissa"}]
+Puolueen koko virallinen nimi on Suomen Keskusta.
+Puolueen epävirallinen nimi on Keskusta.
+ [code=6, level=0, descr="", stpos=31, len=8, suggs={"keskusta"}]
+Järvi on Jyväskylän, Keskusta kaupungin puolella.
+ [code=6, level=0, descr="", stpos=21, len=8, suggs={"keskusta"}]
+Suomen Keskusta on suuri puolue.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

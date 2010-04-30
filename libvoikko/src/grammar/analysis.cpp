@@ -33,9 +33,12 @@ namespace libvoikko {
  *  been set. */
 static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->isValidWord = false;
-	token->firstLetterLcase = false;
 	token->possibleSentenceStart = false;
-	if (token->type != TOKEN_WORD) return;
+	token->isGeographicalNameInGenitive = false;
+	if (token->type != TOKEN_WORD) {
+		token->firstLetterLcase = false;
+		return;
+	}
 	
 	wchar_t * wordBuffer =
 	    utils::StringUtils::stripSpecialCharsForMalaga(token->str,
@@ -44,20 +47,25 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	list<morphology::Analysis *> * analyses = analyzer->analyze(wordBuffer);
 	delete[] wordBuffer;
 	
-	// Check if first letter should be lower case letter
 	list<morphology::Analysis *>::const_iterator it = analyses->begin();
+	token->firstLetterLcase = true;
 	while (it != analyses->end()) {
 		token->isValidWord = true;
 		const wchar_t * structure = (*it)->getValue("STRUCTURE");
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
 		    structure[1] != L'q')) {
-			morphology::Analyzer::deleteAnalyses(analyses);
-			return;
+			// Word may start with a capital letter anywhere
+			token->firstLetterLcase = false;
+			const wchar_t * wclass = (*it)->getValue("CLASS");
+			const wchar_t * wcase = (*it)->getValue("SIJAMUOTO");
+			if (wclass && wcscmp(L"paikannimi", wclass) == 0 &&
+			    wcase && wcscmp(L"omanto", wcase) == 0) {
+				token->isGeographicalNameInGenitive = true;
+			}
 		}
 		it++;
 	}
 	morphology::Analyzer::deleteAnalyses(analyses);
-	token->firstLetterLcase = true;
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */

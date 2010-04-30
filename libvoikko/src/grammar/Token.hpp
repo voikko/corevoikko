@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -41,6 +41,9 @@ class Token {
 		/** True if this word may be (but is not necessarily) the first
 		 *  word in a sentence. */
 		bool possibleSentenceStart;
+
+		/** True if this word may be a geographical name in genitive case. */
+		bool isGeographicalNameInGenitive;
 		
 		/** Null terminated string containing the token text */
 		wchar_t * str;

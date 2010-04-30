@@ -1,3 +1,6 @@
+2010-04-30 Harri Pitkänen <hatapitk@iki.fi>
+	* Allow "Suomen Keskusta" and other similar names in capitalization checks.
+
 2010-04-24 Harri Pitkänen <hatapitk@iki.fi>
 	* Reimplement capitalization checks in grammar checker with state machine.
 	* Handle parenthesis and quotes better in grammar checker.
