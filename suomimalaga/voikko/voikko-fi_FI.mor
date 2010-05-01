@@ -379,6 +379,23 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
     result $res, rules liitesana;
   end;
   result $res, rules nimisanan_sijapääte, nimisanan_johdos;
+  
+  if $oikea.erisnimen_pääte = yes then
+    $res := $vasen + <$oikea + [alku: $sana, luokka: nimi]>;
+    if omistusliite in $oikea.jatko then
+      result $res, rules omistusliite;
+    end;
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    if liitesana in $oikea.jatko then
+      result $res, rules liitesana;
+    end;
+    if tavuviiva in $oikea.jatko or loppu in $oikea.jatko then
+      result $res, rules yhdysmerkki_erisnimen_jälkeen;
+    end;
+    result $res, rules erisnimen_sijapääte;
+  end;
 end;
 
 ###### JOHDETTUJEN SANOJEN ALOITUSSÄÄNNÖT ALKAVAT
@@ -1801,6 +1818,7 @@ subrule tulostus_rakenne ($tietue):
   define $tuloste := "";
   define $tlen := length($tietue);
   define $tind := 0;
+  define $arvattu_erisnimi := no;
   foreach $t in $tietue:
     $tind :=+ 1;
     if $t.rakenne /= nil then
@@ -1824,9 +1842,12 @@ subrule tulostus_rakenne ($tietue):
       end;
     elseif $t.luokka in <etunimi, sukunimi, nimi, paikannimi> then
       $tuloste :=+ "=";
-      if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) then
+      if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) or $t.erisnimen_pääte = yes then
         foreach $i in length($t.alku):
           $tuloste :=+ "p";
+        end;
+        if $t.erisnimen_pääte = yes then
+          $arvattu_erisnimi := yes;
         end;
       else
         $tuloste :=+ "i";
@@ -1850,6 +1871,9 @@ subrule tulostus_rakenne ($tietue):
         $tuloste :=+ "p";
       end;
     end;
+  end;
+  if $arvattu_erisnimi = yes then
+    return "=i" + substring($tuloste, 3, length($tuloste));
   end;
   return $tuloste;
 end;

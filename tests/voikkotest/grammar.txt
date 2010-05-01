@@ -126,6 +126,7 @@ Puolueen epävirallinen nimi on Keskusta.
 Järvi on Jyväskylän, Keskusta kaupungin puolella.
  [code=6, level=0, descr="", stpos=21, len=8, suggs={"keskusta"}]
 Suomen Keskusta on suuri puolue.
+Isolla alkukirjaimella kirjoitetaan Säteilyturvakeskus ja Verohallitus.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

@@ -148,3 +148,7 @@ word:juokse
 word:juossee
  analysis
   MOOD=potential
+word:verohallitus
+ analysis
+  CLASS=nimi
+  STRUCTURE==ippp=pppppppp

@@ -3849,6 +3849,12 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
                              "laakso", "suo", "pelto", "puro", "ranta">) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
+  
+  # Yleisnimestä mahdollisesti erisnimen muodostava jälkiliite
+  if $tietue.perusmuoto in <"arkisto", "hallitus", "kassa", "keskus", "koulu",
+                             "laitos", "opisto", "rahasto"> then
+    $tietue :=+ [erisnimen_pääte: yes];
+  end;
 
   # Aluetta tarkentavat etuliitteet
   # FIXME: ei toimi seuraaville: "kaakkois", "lounais", "luoteis", "suur"
