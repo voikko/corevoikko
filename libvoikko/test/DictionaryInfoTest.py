@@ -35,8 +35,8 @@ class DictionaryInfoTest(unittest.TestCase):
 	def tearDown(self):
 		self.dataDir.tearDown()
 	
-	def testListSupportedLanguagesReturnsFinnish(self):
-		languages = libvoikko.Voikko.listSupportedLanguages(self.dataDir.getDirectory())
+	def testListSupportedSpellingLanguagesReturnsFinnish(self):
+		languages = libvoikko.Voikko.listSupportedSpellingLanguages(self.dataDir.getDirectory())
 		self.assertEqual(1, len(languages))
 		self.assertEqual(u"fi", languages[0])
 	

@@ -311,27 +311,27 @@ class Voikko(object):
 		return dicts
 	listDicts = staticmethod(listDicts)
 	
-	def listSupportedLanguages(path = None):
+	def listSupportedSpellingLanguages(path = None):
 		"""Return a list of language codes representing the languages for which
 		at least one dictionary is available for spell checking.
 		If path is specified, it will be searched first before looking from
 		the standard locations.
 		"""
 		lib = Voikko.__getLib()
-		lib.voikkoListSupportedLanguages.argtypes = [c_char_p]
-		lib.voikkoListSupportedLanguages.restype = POINTER(c_char_p)
+		lib.voikkoListSupportedSpellingLanguages.argtypes = [c_char_p]
+		lib.voikkoListSupportedSpellingLanguages.restype = POINTER(c_char_p)
 		lib.voikkoFreeCstrArray.argtypes = [POINTER(c_char_p)]
 		lib.voikkoFreeCstrArray.restype = None
 		
 		languages = []
-		cLanguages = lib.voikkoListSupportedLanguages(path)
+		cLanguages = lib.voikkoListSupportedSpellingLanguages(path)
 		i = 0
 		while bool(cLanguages[i]):
 			languages.append(unicode(cLanguages[i], "UTF-8"))
 			i = i + 1
 		lib.voikkoFreeCstrArray(cLanguages)
 		return languages
-	listSupportedLanguages = staticmethod(listSupportedLanguages)
+	listSupportedSpellingLanguages = staticmethod(listSupportedSpellingLanguages)
 	
 	def spell(self, word):
 		"""Check the spelling of given word. Return true if the word is correct,

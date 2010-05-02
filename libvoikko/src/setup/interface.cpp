@@ -60,7 +60,7 @@ VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
 	return dict->getDescription().c_str();
 }
 
-VOIKKOEXPORT char ** voikkoListSupportedLanguages(const char * path) {
+VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
 	list<Dictionary> dictList = path ?
 	                            DictionaryLoader::findAllAvailable(path) :
 	                            DictionaryLoader::findAllAvailable();

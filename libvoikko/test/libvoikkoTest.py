@@ -156,10 +156,10 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual(11, error.errorLen)
 	
 	def testAnalyze(self):
-		analysisList = self.voikko.analyze(u"kansaneläkelaitos")
+		analysisList = self.voikko.analyze(u"kansaneläkehakemus")
 		self.assertEqual(1, len(analysisList))
 		analysis = analysisList[0]
-		self.assertEqual(u"=pppppp=ppppp=pppppp", analysis["STRUCTURE"])
+		self.assertEqual(u"=pppppp=ppppp=ppppppp", analysis["STRUCTURE"])
 	
 	def testTokens(self):
 		tokenList = self.voikko.tokens(u"kissa ja koira")

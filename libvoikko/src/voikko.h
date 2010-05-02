@@ -343,7 +343,7 @@ const char * voikko_dict_description(const struct voikko_dict * dict);
  * @return A pointer to a null terminated array of language codes. The array
  *         should be freed using voikkoFreeCstrArray.
  */
-char ** voikkoListSupportedLanguages(const char * path);
+char ** voikkoListSupportedSpellingLanguages(const char * path);
 
 /**
  * A type representing result from morphological analysis.
