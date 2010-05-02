@@ -119,4 +119,16 @@ bool SimpleChar::isWhitespace(wchar_t input) {
 	       input == 0x3000;
 }
 
+bool SimpleChar::equalsIgnoreCase(const wchar_t * str1, const wchar_t * str2) {
+	if (wcslen(str1) != wcslen(str2)) {
+		return false;
+	}
+	for (size_t i = 0; str1[i] != L'\0'; i++) {
+		if (lower(str1[i]) != lower(str2[i])) {
+			return false;
+		}
+	}
+	return true;
+}
+
 } }

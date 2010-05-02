@@ -180,7 +180,12 @@ void gc_repeating_words(voikko_options_t * options, const Sentence * sentence) {
 			i += 2;
 			continue;
 		}
-		if (wcscmp(sentence->tokens[i].str, sentence->tokens[i + 2].str)) {
+		if (!SimpleChar::equalsIgnoreCase(sentence->tokens[i].str, sentence->tokens[i + 2].str)) {
+			i++;
+			continue;
+		}
+		if (wcscmp(sentence->tokens[i].str, L"ollut") == 0) {
+			// "ollut" is a valid word to be repeated, maybe there are others too
 			i++;
 			continue;
 		}

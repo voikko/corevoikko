@@ -62,6 +62,12 @@ class SimpleChar {
 		 * Checks if a character is a whitespace character.
 		 */
 		static bool isWhitespace(wchar_t input);
+		
+		/**
+		 * Checks if two null terminated strings are the same, ignoring
+		 * differences in character case.
+		 */
+		static bool equalsIgnoreCase(const wchar_t * str1, const wchar_t * str2);
 };
 
 } }
