@@ -240,6 +240,7 @@ static int list_dicts(const char * path) {
 		return 1;
 	}
 	for (voikko_dict ** i = dicts; *i; i++) {
+		cout << "fi-x-";
 		cout << voikko_dict_variant(*i);
 		cout << ": ";
 		cout << voikko_dict_description(*i);
