@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH VOIKKOSPELL 1 "2010-04-04"
+.TH VOIKKOSPELL 1 "2010-05-03"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -94,7 +94,7 @@ before the standard locations when searching for dictionary files.
 (voikkospell, voikkohyphenate, voikkogc)
 Use dictionary variant
 .I variant
-instead of the default dictionary variant.
+instead of the default dictionary variant. The variant must be represented as a BCP 47 language tag.
 .TP
 .BI ignore_dot= n
 (voikkospell, voikkohyphenate)
@@ -105,5 +105,8 @@ instead of the default dictionary variant.
 Set the value of the specified boolean option.
 .I n
 can be either 0 (false) or 1 (true).
+.TP
+.B \-h, --help
+Print a help message and exit.
 .SH AUTHOR
 voikkospell and this manual page were written by \%Harri \%Pitk\[:a]nen \%(hatapitk@iki.fi).

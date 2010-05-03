@@ -27,8 +27,8 @@ using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
 
-void hyphenate_word(int handle, const wchar_t * word, size_t wlen, wchar_t separator) {
-	char * result = voikko_hyphenate_ucs4(handle, word);
+static void hyphenateWord(VoikkoHandle * handle, const wchar_t * word, size_t wlen, wchar_t separator) {
+	char * result = voikkoHyphenateUcs4(handle, word);
 	if (result == 0) {
 		cerr << "E: hyphenation failed" << endl;
 		return;
@@ -37,7 +37,7 @@ void hyphenate_word(int handle, const wchar_t * word, size_t wlen, wchar_t separ
 	wchar_t * hyphenatedWord = new wchar_t[wlen * 2 + 1];
 	if (hyphenatedWord == 0) {
 		cerr << "E: out of memory" << endl;
-		voikko_free_hyphenate(result);
+		voikkoFreeCstr(result);
 		return;
 	}
 	
@@ -61,52 +61,61 @@ void hyphenate_word(int handle, const wchar_t * word, size_t wlen, wchar_t separ
 	*hyphenatedPtr = L'\0';
 	wcout << hyphenatedWord << endl;
 	delete[] hyphenatedWord;
-	voikko_free_hyphenate(result);
+	voikkoFreeCstr(result);
 }
 
+static void printHelp() {
+	cout << "Usage: voikkohyphenate [OPTION]..." << endl;
+	cout << "Hyphenate words read from stdin." << endl;
+	cout << endl;
+	cout << "For complete descriptions of available options see 'man voikkohyphenate'" << endl;
+}
 
 int main(int argc, char ** argv) {
 	const char * path = 0;
-	const char * variant = "";
+	const char * variant = "fi";
 	wchar_t separator = L'-';
-	int handle;
 	
 	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) {
 			path = argv[++i];
 		}
-		if (strcmp(argv[i], "-d") == 0 && i + 1 < argc) {
+		else if (strcmp(argv[i], "-d") == 0 && i + 1 < argc) {
 			variant = argv[++i];
 		}
+		else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
+			printHelp();
+			exit(0);
+		}
 	}
-	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, 0, path);
-	
-	if (voikko_error) {
-		cerr << "E: Initialization of Voikko failed: " << voikko_error << endl;
+	const char * voikkoError;
+	VoikkoHandle * handle = voikkoInit(&voikkoError, variant, path);
+	if (!handle) {
+		cerr << "E: Initialization of Voikko failed: " << voikkoError << endl;
 		return 1;
 	}
 	
-	voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
+	voikkoSetBooleanOption(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
 	
 	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "no_ugly_hyphenation=1") == 0)
-			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 1);
 		else if (strcmp(argv[i], "no_ugly_hyphenation=0") == 0)
-			voikko_set_bool_option(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_NO_UGLY_HYPHENATION, 0);
 		else if (strcmp(argv[i], "ignore_dot=1") == 0)
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_DOT, 1);
 		else if (strcmp(argv[i], "ignore_dot=0") == 0)
-			voikko_set_bool_option(handle, VOIKKO_OPT_IGNORE_DOT, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_IGNORE_DOT, 0);
 		else if (strcmp(argv[i], "hyphenate_unknown_words=1") == 0)
-			voikko_set_bool_option(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 1);
 		else if (strcmp(argv[i], "hyphenate_unknown_words=0") == 0)
-			voikko_set_bool_option(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_HYPHENATE_UNKNOWN_WORDS, 0);
 		else if (strncmp(argv[i], "min_hyphenated_word_length=", 27) == 0) {
 			int minhwlen = atoi(argv[i] + 27);
 			if (minhwlen < 2) {
 				minhwlen = 2;
 			}
-			voikko_set_int_option(handle, VOIKKO_MIN_HYPHENATED_WORD_LENGTH, minhwlen);
+			voikkoSetIntegerOption(handle, VOIKKO_MIN_HYPHENATED_WORD_LENGTH, minhwlen);
 		}
 		else if (strncmp(argv[i], "-s", 2) == 0) {
 			if (strlen(argv[i]) != 3 || mbtowc(&separator, argv[i] + 2, 1) < 1) {
@@ -143,7 +152,7 @@ int main(int argc, char ** argv) {
 			cerr << "E: Too long word" << endl;
 			continue;
 		}
-		hyphenate_word(handle, line, lineLen, separator);
+		hyphenateWord(handle, line, lineLen, separator);
 	}
 	int error = ferror(stdin);
 	if (error) {
@@ -151,6 +160,6 @@ int main(int argc, char ** argv) {
 	}
 	delete[] line;
 	
-	voikko_terminate(handle);
+	voikkoTerminate(handle);
 	return 0;
 }
