@@ -1,5 +1,5 @@
 /* Voikkogc: Testing tool for libvoikko
- * Copyright (C) 2008 - 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -30,13 +30,20 @@ static const int MAX_PARAGRAPH_LENGTH = 100000;
 bool printLineNumbersInGc = false;
 size_t lineNumber = 0;
 
-void print_tokens(int handle, const wchar_t * line, size_t lineLen) {
+static void printHelp() {
+	cout << "Usage: voikkogc [OPTION]..." << endl;
+	cout << "Check grammar of paragraphs read from stdin." << endl;
+	cout << endl;
+	cout << "For complete descriptions of available options see 'man voikkogc'" << endl;
+}
+
+static void print_tokens(VoikkoHandle * handle, const wchar_t * line, size_t lineLen) {
 	enum voikko_token_type token_type;
 	size_t tokenchars;
 	const wchar_t * linePtr = line;
 	size_t charsLeft = lineLen;
 	while (charsLeft > 0) {
-		token_type = voikko_next_token_ucs4(handle, linePtr, charsLeft, &tokenchars);
+		token_type = voikkoNextTokenUcs4(handle, linePtr, charsLeft, &tokenchars);
 		switch (token_type) {
 			case TOKEN_WORD:
 				wcout << L"W: \"";
@@ -65,13 +72,13 @@ void print_tokens(int handle, const wchar_t * line, size_t lineLen) {
 }
 
 
-void split_sentences(int handle, const wchar_t * line, size_t lineLen) {
+static void split_sentences(VoikkoHandle * handle, const wchar_t * line, size_t lineLen) {
 	enum voikko_sentence_type sentence_type;
 	size_t sentencechars;
 	const wchar_t * linePtr = line;
 	size_t charsLeft = lineLen;
 	while (charsLeft > 0) {
-		sentence_type = voikko_next_sentence_start_ucs4(handle, linePtr, charsLeft,
+		sentence_type = voikkoNextSentenceStartUcs4(handle, linePtr, charsLeft,
 		                &sentencechars);
 		switch (sentence_type) {
 			case SENTENCE_NONE:
@@ -99,25 +106,25 @@ void split_sentences(int handle, const wchar_t * line, size_t lineLen) {
 }
 
 
-void check_grammar(int handle, const wchar_t * line, size_t lineLen,
+static void check_grammar(VoikkoHandle * handle, const wchar_t * line, size_t lineLen,
 		const char * explanation_language) {
-	voikko_grammar_error grammar_error;
 	int skiperrors = 0;
 	while (1) {
-		grammar_error = voikko_next_grammar_error_ucs4(handle, line, lineLen,
+		VoikkoGrammarError * grammarError = voikkoNextGrammarErrorUcs4(handle, line, lineLen,
 		                0, skiperrors);
 		if (printLineNumbersInGc) {
 			cout << lineNumber << " ";
 		}
-		if (grammar_error.error_code == 0) {
+		if (!grammarError) {
 			cout << "-" << endl;
 			return;
 		}
-		cout << "[code=" << grammar_error.error_code << ", level=0, ";
-		cout << "descr=\"\", stpos=" << grammar_error.startpos << ", ";
-		cout << "len=" << grammar_error.errorlen << ", suggs={";
-		if (grammar_error.suggestions) {
-			char ** sugg = grammar_error.suggestions;
+		cout << "[code=" << voikkoGetGrammarErrorCode(grammarError) << ", level=0, ";
+		cout << "descr=\"\", stpos=" << voikkoGetGrammarErrorStartPos(grammarError) << ", ";
+		cout << "len=" << voikkoGetGrammarErrorLength(grammarError) << ", suggs={";
+		const char ** suggs = voikkoGetGrammarErrorSuggestions(grammarError);
+		if (suggs) {
+			const char ** sugg = suggs;
 			while (*sugg) {
 				// FIXME: convert from UTF-8
 				// FIXME: character " is not escaped -> results are not fully parseable
@@ -127,15 +134,15 @@ void check_grammar(int handle, const wchar_t * line, size_t lineLen,
 					cout << ",";
 				}
 			}
-			voikko_free_suggest_cstr(grammar_error.suggestions);
 		}
 		cout << "}]";
 		if (explanation_language) {
 			cout << " (";
 			cout << voikko_error_message_cstr(
-			         grammar_error.error_code, explanation_language);
+			         voikkoGetGrammarErrorCode(grammarError), explanation_language);
 			cout << ")";
 		}
+		voikkoFreeGrammarError(grammarError);
 		cout << endl;
 		skiperrors++;
 	}
@@ -145,9 +152,8 @@ enum operation {TOKENIZE, SPLIT_SENTENCES, CHECK_GRAMMAR};
 
 int main(int argc, char ** argv) {
 	const char * path = 0;
-	const char * variant = "";
-	enum operation op = CHECK_GRAMMAR;
-	int handle;
+	const char * variant = "fi";
+	operation op = CHECK_GRAMMAR;
 	
 	for (int i = 1; i < argc; i++) {
 		if (strcmp(argv[i], "-p") == 0 && i + 1 < argc) {
@@ -156,11 +162,15 @@ int main(int argc, char ** argv) {
 		else if (strcmp(argv[i], "-d") == 0 && i + 1 < argc) {
 			variant = argv[++i];
 		}
+		else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
+			printHelp();
+			exit(0);
+		}
 	}
-	const char * voikko_error = (const char *) voikko_init_with_path(&handle, variant, 0, path);
-
-	if (voikko_error) {
-		cerr << "E: Initialization of Voikko failed: " << voikko_error << endl;
+	const char * voikkoError;
+	VoikkoHandle * handle = voikkoInit(&voikkoError, variant, path);
+	if (!handle) {
+		cerr << "E: Initialization of Voikko failed: " << voikkoError << endl;
 		return 1;
 	}
 	
@@ -174,22 +184,22 @@ int main(int argc, char ** argv) {
 			op = SPLIT_SENTENCES;
 		}
 		else if (strcmp(argv[i], "accept_titles=1") == 0) {
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 1);
 		}
 		else if (strcmp(argv[i], "accept_titles=0") == 0) {
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_TITLES_IN_GC, 0);
 		}
 		else if (strcmp(argv[i], "accept_unfinished_paragraphs=1") == 0) {
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 1);
 		}
 		else if (strcmp(argv[i], "accept_unfinished_paragraphs=0") == 0) {
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_UNFINISHED_PARAGRAPHS_IN_GC, 0);
 		}
 		else if (strcmp(argv[i], "accept_bulleted_lists=1") == 0) {
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC, 1);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC, 1);
 		}
 		else if (strcmp(argv[i], "accept_bulleted_lists=0") == 0) {
-			voikko_set_bool_option(handle, VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC, 0);
+			voikkoSetBooleanOption(handle, VOIKKO_OPT_ACCEPT_BULLETED_LISTS_IN_GC, 0);
 		}
 		else if (strncmp(argv[i], "explanation_language=fi", 23) == 0) {
 			explanation_language = "fi";
@@ -241,6 +251,6 @@ int main(int argc, char ** argv) {
 	}
 	delete[] line;
 	
-	voikko_terminate(handle);
+	voikkoTerminate(handle);
 	return 0;
 }
