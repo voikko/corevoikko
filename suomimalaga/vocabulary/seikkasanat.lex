@@ -1146,6 +1146,7 @@
 [perusmuoto: "viimeistään", alku: "viimeistään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "viimeksi", alku: "viimeksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "viljalti", alku: "viljalti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "vilkkaan", alku: "vilkkaan", luokka: seikkasana, jatko: <loppu>, äs: a]; # kiireen vilkkaa
 [perusmuoto: "vinottain", alku: "vinottain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vinottain", alku: "vinoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vitkaan", alku: "vitkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
