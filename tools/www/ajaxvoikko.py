@@ -322,7 +322,8 @@ def runServer(port):
 		server.socket.close()
 
 def initVoikko():
-	_voikko.init(variant='standard+debug')
+	global _voikko
+	_voikko = Voikko('fi-x-standard+debug')
 	_voikko.setIgnoreDot(False)
 	_voikko.setAcceptUnfinishedParagraphsInGc(True)
 
@@ -338,7 +339,6 @@ def sighupHandler(signum, frame):
 	reinitVoikko()
 
 if __name__ == '__main__':
-	_voikko = Voikko()
 	initVoikko()
 	signal(SIGHUP, sighupHandler)
 	runServer(8080)
