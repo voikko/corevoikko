@@ -11,7 +11,14 @@
 <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-<p>Kirjoita teksti tähän:</p>
+
+<p>Valitse sanasto:
+<select id="voikkoDict">
+<option value="fi-x-standard+debug">Perussanasto</option>
+<option value="fi-x-medicine">Matematiikan, fysiikan, kemian ja lääketieteen sanasto</option>
+</select>
+
+<br />Kirjoita teksti tähän:</p>
 <textarea id="input" rows="5"></textarea>
 <div id="progress"></div>
 <p>Lue analyysin tulokset alta. Lisää tietoja sanoista tai virheistä saat hiirellä napsauttamalla.</p>

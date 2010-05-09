@@ -40,7 +40,8 @@ function wordInfoReceived(html) {
 
 function wordClicked(evt) {
   var word = $(this).text();
-  $.get(AJAX_HANDLER_URL + "wordinfo", {q: word}, wordInfoReceived, "html");
+  var dict = $("#voikkoDict").val();
+  $.get(AJAX_HANDLER_URL + "wordinfo", {q: word, d: dict}, wordInfoReceived, "html");
 }
 
 function gErrorClicked(evt) {

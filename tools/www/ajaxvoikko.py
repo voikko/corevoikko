@@ -23,6 +23,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
 from urllib import unquote_plus
 from urllib import urlopen
+from cgi import parse_qs
 from cgi import escape
 from signal import signal, SIGHUP
 from libvoikko import Voikko
@@ -30,6 +31,8 @@ from libvoikko import Token
 import codecs
 
 _voikko = None
+
+ALLOWED_DICTS = [u"fi-x-standard+debug", u"fi-x-medicine"]
 
 SANALUOKAT = {
 "asemosana": u"pronomini eli asemosana",
@@ -266,6 +269,15 @@ FILES_TO_SERVE = {
 	"/script.js": ("ajaxvoikko-script.js", "text/javascript")
 }
 
+def parseQuery(queryString, attrName):
+	attrs = parse_qs(queryString)
+	if attrName not in attrs:
+		return u""
+	values = attrs[attrName]
+	if len(values) != 1:
+		return u""
+	return values[0]
+
 class VoikkoHandler(BaseHTTPRequestHandler):
 	def sendHtmlPage(self, content, contentType):
 		self.send_response(200)
@@ -294,8 +306,8 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		if self.serveFiles():
 			return
 		elif self.path.startswith("/wordinfo?q="):
-			query = unicode(unquote_plus(self.path[12:]), "UTF-8")
-			self.sendHtmlPage(wordInfo(query), "text/html")
+			query = unicode(unquote_plus(self.path[10:]), "UTF-8")
+			self.sendHtmlPage(wordInfo(parseQuery(query, "q")), "text/html")
 		elif self.path.startswith("/joukahainen?wid="):
 			query = unicode(unquote_plus(self.path[17:]), "UTF-8")
 			wid = int(query)
