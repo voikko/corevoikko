@@ -473,8 +473,8 @@ if "--current" in [opt[0] for opt in opts]:
 		sys.exit(1)
 	voikko.terminate()
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('bash -c \'time zcat "%s" | "%s" -j %i -p "%s" | grep "^C:" > "%s"\'' % \
-	          (WORDLIST, SPELLCMD, THREADS, BASE, CURRENT_CORRECT))
+	os.system('bash -c \'time zcat "%s" | "%s" -j %i | grep "^C:" > "%s"\'' % \
+	          (WORDLIST, SPELLCMD, THREADS, CURRENT_CORRECT))
 	diffcmd = 'diff -U0 "%s" "%s" | ' % (BASE_CORRECT, CURRENT_CORRECT)
 	new_accept = int(os.popen('%s grep ^+C: | wc -l' % diffcmd).read())
 	old_accept = int(os.popen('%s grep ^-C: | wc -l' % diffcmd).read())
