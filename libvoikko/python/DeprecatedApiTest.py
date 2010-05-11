@@ -157,6 +157,57 @@ class DeprecatedApiTest(unittest.TestCase):
 		structure = voikko.lib.voikko_mor_analysis_value_ucs4(analysis[0], "STRUCTURE")
 		self.assertEqual(u"=pppppp=ppppp=pppppp", structure)
 		voikko.lib.voikko_free_mor_analysis(analysis)
+	
+	
+	def assertInitAndReturnHandle(self):
+		handle = c_int(-1)
+		error = voikko.lib.voikko_init_with_path(byref(handle), u"fi_FI", 0, None)
+		self.assertEqual(None, error)
+		return handle.value
+	
+	def assertInitFails(self):
+		handle = c_int(-1)
+		error = voikko.lib.voikko_init_with_path(byref(handle), u"fi_FI", 0, None)
+		self.assertNotEqual(None, error)
+	
+	def assertCanSpellWithHandle(self, handleValue):
+		handle = c_int(handleValue)
+		self.assertEquals(1, voikko.lib.voikko_spell_ucs4(handle, u"kissa"))
+		self.assertEquals(0, voikko.lib.voikko_spell_ucs4(handle, u"koirra"))
+	
+	def terminateHandle(self, handleValue):
+		handle = c_int(handleValue)
+		voikko.lib.voikko_terminate(handle)
+	
+	def testFourInstancesCanExistSimultaneously(self):
+		voikko.terminate()
+		# Open all allowed handles, check that they work
+		handle1 = self.assertInitAndReturnHandle()
+		self.assertCanSpellWithHandle(handle1)
+		handle2 = self.assertInitAndReturnHandle()
+		self.assertCanSpellWithHandle(handle2)
+		handle3 = self.assertInitAndReturnHandle()
+		self.assertCanSpellWithHandle(handle3)
+		handle4 = self.assertInitAndReturnHandle()
+		self.assertCanSpellWithHandle(handle4)
+		
+		# Trying to open fifth handle should fail
+		self.assertInitFails()
+		
+		# Any handle can be freed and new handle can then be opened
+		self.terminateHandle(handle2)
+		handle2 = self.assertInitAndReturnHandle()
+		self.assertCanSpellWithHandle(handle2)
+		self.assertInitFails()
+		
+		# All handles can be freed and init still works
+		self.terminateHandle(handle1)
+		self.terminateHandle(handle2)
+		self.terminateHandle(handle3)
+		self.terminateHandle(handle4)
+		handle1 = self.assertInitAndReturnHandle()
+		self.assertCanSpellWithHandle(handle1)
+		self.terminateHandle(handle1)
 
 if __name__ == "__main__":
 	unittest.main()

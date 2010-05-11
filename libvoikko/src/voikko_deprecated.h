@@ -31,6 +31,14 @@
  *
  * Everything here will be removed permanently when an API incompatible
  * version of libvoikko is released.
+ *
+ * NOTICE ABOUT THREAD SAFETY:
+ * 
+ * It is unsafe to call voikko_init, voikko_init_with_path and
+ * voikko_terminate from multiple threads. If you need to do that, all
+ * calls to these three functions should be protected with a single mutex.
+ * Rather than use this deprecated API please switch to the new API where
+ * this particular thread safety issue does not exist.
  */
 
 /**
@@ -49,6 +57,7 @@
 #define VOIKKO_OPT_ENCODING 2
 
 /**
+ * See the notice about thread safety at the top of this file.
  * @param langcode the language code. The following values can be used:
  *        - "", "default" or "fi_FI": Use the default dictionary. The default
  *          dictionary can be assumed to be present in a complete installation of
@@ -63,6 +72,7 @@
 const char * voikko_init(int * handle, const char * langcode, int cache_size);
 
 /**
+ * See the notice about thread safety at the top of this file.
  * @param langcode the language code. The following values can be used:
  *        - "", "default" or "fi_FI": Use the default dictionary. The default
  *          dictionary can be assumed to be present in a complete installation of
@@ -78,6 +88,7 @@ const char * voikko_init_with_path(int * handle, const char * langcode,
                                    int cache_size, const char * path);
 
 /**
+ * See the notice about thread safety at the top of this file.
  * See voikkoTerminate
  */
 int voikko_terminate(int handle);
