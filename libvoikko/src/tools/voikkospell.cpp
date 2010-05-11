@@ -31,11 +31,14 @@
 
 using namespace std;
 
+
+enum CheckMode {NORMAL, ONLY_C_W, ONLY_INCORRECT};
+
 static const int MAX_WORD_LENGTH = 5000;
 static const int MAX_THREADS = 200;
 static const size_t WORDS_PER_BLOCK = 500;
 
-static bool autotest = false;
+static CheckMode checkMode = NORMAL;
 static bool suggest = false;
 static bool morphology = false;
 static bool oneLineOutput = false;
@@ -77,21 +80,14 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 		cerr << "E: internal error" << endl;
 		return;
 	}
-	if (autotest) {
-		if (result) {
-			out << L"C" << endl;
-		}
-		else {
-			out << L"W" << endl;
-		}
-	}
-	else if (oneLineOutput) {
+	
+	if (oneLineOutput) {
 		out << word;
 		if (!result) {
 			wchar_t ** suggestions = voikkoSuggestUcs4(handle, word);
 			if (suggestions) {
 				for (int i = 0; suggestions[i] != 0; i++) {
-					if (space || wcschr(suggestions[i], L' ')) {
+					if (space || wcschr(suggestions[i], L' ') == 0) {
 						out << wordSeparator;
 						out << suggestions[i];
 					}
@@ -100,15 +96,30 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 			}
 		}
 		out << endl;
-	}
-	else {
-		if (result) {
-			out << L"C: " << word << endl;
+	} else {
+		switch (checkMode) {
+			case NORMAL:
+				if (result) {
+					out << L"C: " << word << endl;
+				} else {
+					out << L"W: " << word << endl;
+				}
+				break;
+			case ONLY_C_W:
+				if (result) {
+					out << L"C" << endl;
+				} else {
+					out << L"W" << endl;
+				}
+				break;
+			case ONLY_INCORRECT:
+				if (!result) {
+					out << word << endl;
+				}
+				break;
 		}
-		else {
-			out << L"W: " << word << endl;
-		}
 	}
+	
 	if (morphology && result) {
 		printMorphology(handle, word, out);
 	}
@@ -323,9 +334,10 @@ int main(int argc, char ** argv) {
 	for (int i = 1; i < argc; i++) {
 		string args(argv[i]);
 		if (args == "-t") {
-			autotest = true;
-		}
-		else if (args == "ignore_dot=1")
+			checkMode = ONLY_C_W;
+		} else if (args == "-tt") {
+			checkMode = ONLY_INCORRECT;
+		} else if (args == "ignore_dot=1")
 			setBooleanOption(VOIKKO_OPT_IGNORE_DOT, 1);
 		else if (args == "ignore_dot=0")
 			setBooleanOption(VOIKKO_OPT_IGNORE_DOT, 0);

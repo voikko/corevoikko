@@ -3,6 +3,8 @@
 	  This method is not thread safe but it is no worse than the old single
 	  handle check. It should fix many real world problems (eg. with Evolution)
 	  while we wait for applications to switch to the new API.
+	* (voikkospell) fix option -x
+	* (voikkospell) add option -tt
 
 2010-05-02 Harri Pitkänen <hatapitk@iki.fi>
 	* Rename listSupportedLanguages -> listSupportedSpellingLanguages.
