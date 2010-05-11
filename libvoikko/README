@@ -10,7 +10,7 @@ Alternative backends that can be used instead of Malaga include HFST and
 Lttoolbox. These backends are currently experimental.
 
 Libvoikko provides spell checking, hyphenation, grammar checking and
-morphologican analysis for Finnish language. No other languages are
+morphological analysis for Finnish language. No other languages are
 supported at the moment, and there are no serious plans to add such
 support. This is because internals of this library may change significantly
 in future releases, and we think that generally useful bits and ideas
@@ -147,7 +147,7 @@ Authors
 2006 - 2010 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
 1995 - 2008 Björn Beutel
- * Author of the original LAG implementation (Malaga), sligthly simplified version
+ * Author of the original LAG implementation (Malaga), slightly simplified version
    of which has been embedded into libvoikko.
 2006 Nemanja Trifunovic
  * Author of UTF8 utility module.

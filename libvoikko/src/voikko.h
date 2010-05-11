@@ -47,7 +47,7 @@ struct VoikkoHandle;
 /**
  * Initialises the library for use in the specified language, adding an extra directory
  * to the standard dictionary search path.
- * @param error Will be set to null if initialisation completed without error.
+ * @param error Will be set to null if initialization completed without error.
  *        Otherwise will be set to a pointer to a string describing the error.
  * @param langcode BCP 47 language tag for the language to be used. Currently this can
  *        only be Finnish with optional private use subtags to specify the dictionary
@@ -71,7 +71,7 @@ void voikkoTerminate(struct VoikkoHandle * handle);
  * @param handle voikko instance
  * @param option option name
  * @param value option value
- * @return true if option was succesfully set, otherwise false
+ * @return true if option was successfully set, otherwise false
  */
 int voikkoSetBooleanOption(struct VoikkoHandle * handle, int option, int value);
 
@@ -80,7 +80,7 @@ int voikkoSetBooleanOption(struct VoikkoHandle * handle, int option, int value);
  * @param handle voikko instance
  * @param option option name
  * @param value option value
- * @return true if option was succesfully set, otherwise false
+ * @return true if option was successfully set, otherwise false
  */
 int voikkoSetIntegerOption(struct VoikkoHandle * handle, int option, int value);
 
@@ -88,7 +88,7 @@ int voikkoSetIntegerOption(struct VoikkoHandle * handle, int option, int value);
  * Checks the spelling of an UTF-8 character string.
  * @param handle voikko instance
  * @param word word to check
- * @return one of the spellchecker return codes
+ * @return one of the spell checker return codes
  */
 int voikkoSpellCstr(struct VoikkoHandle * handle, const char * word);
 
@@ -96,7 +96,7 @@ int voikkoSpellCstr(struct VoikkoHandle * handle, const char * word);
  * Checks the spelling of a wide character Unicode string
  * @param handle voikko instance
  * @param word word to check
- * @return one of the spellchecker return codes
+ * @return one of the spell checker return codes
  */
 int voikkoSpellUcs4(struct VoikkoHandle * handle, const wchar_t * word);
 
@@ -129,7 +129,7 @@ wchar_t ** voikkoSuggestUcs4(struct VoikkoHandle * handle, const wchar_t * word)
  *     ' ' = no hyphenation at this character,
  *     '-' = hyphenation point (character at this position
  *           is preserved in the hyphenated form),
- *     '=' = hyphentation point (character at this position
+ *     '=' = hyphenation point (character at this position
  *           is replaced by the hyphen.)
  * Returns 0 on error.
  */
@@ -144,7 +144,7 @@ char * voikkoHyphenateCstr(struct VoikkoHandle * handle, const char * word);
  *     ' ' = no hyphenation at this character,
  *     '-' = hyphenation point (character at this position
  *           is preserved in the hyphenated form),
- *     '=' = hyphentation point (character at this position
+ *     '=' = hyphenation point (character at this position
  *           is replaced by the hyphen.)
  * Returns 0 on error.
  */
@@ -206,7 +206,7 @@ enum voikko_sentence_type voikkoNextSentenceStartUcs4(struct VoikkoHandle * hand
  * @param handle voikko instance
  * @param text Pointer to the start of a text buffer
  * @param textlen Number of bytes left in the buffer
- * @param sentencelen (out) Offset of the character (in charactes, not bytes) that
+ * @param sentencelen (out) Offset of the character (in characters, not bytes) that
  *        starts the next sentence.
  * @return Type of the next found sentence, if any.
  */
@@ -407,7 +407,7 @@ char * voikko_mor_analysis_value_cstr(
 
 
 /**
- * Frees the memory allocated for morphologival analysis value.
+ * Frees the memory allocated for morphological analysis value.
  * @param analysis_value analysis value.
  */
 void voikko_free_mor_analysis_value_cstr(char * analysis_value);

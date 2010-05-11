@@ -33,7 +33,7 @@
 #define LIBVOIKKO_MAX_WORD_CHARS 255
 #define LIBVOIKKO_MAX_ANALYSIS_COUNT 31
 
-/* Spellchecker return codes */
+/* Spell checker return codes */
 #define VOIKKO_SPELL_FAILED 0
 #define VOIKKO_SPELL_OK 1
 #define VOIKKO_INTERNAL_ERROR 2
@@ -43,7 +43,7 @@
 
 /* Ignore dot at the end of the word (needed for use in some word processors).
  * If this option is set and input word ends with a dot, spell checking and
- * hyphenation functions try to analyse the word without the dot if no results
+ * hyphenation functions try to analyze the word without the dot if no results
  * can be obtained for the original form. Also with this option, string tokenizer
  * will consider trailing dot of a word to be a part of that word.
  * Default: false */
@@ -72,8 +72,8 @@
  * Default: false */
 #define VOIKKO_OPT_NO_UGLY_HYPHENATION 4
 
-/* Use suggestions optimised for optical character recognition software.
- * By default suggestions are optimised for typing errors.
+/* Use suggestions optimized for optical character recognition software.
+ * By default suggestions are optimized for typing errors.
  * Default: false */
 #define VOIKKO_OPT_OCR_SUGGESTIONS 8
 
@@ -84,7 +84,7 @@
 /* (Spell checking only): Allow some extra hyphens in words. This option relaxes
  * hyphen checking rules to work around some unresolved issues in the underlying
  * morphology, but it may cause some incorrect words to be accepted. The exact
- * behaviour (if any) of this option is not specified.
+ * behavior (if any) of this option is not specified.
  * Default: false */
 #define VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS 11
 
@@ -119,12 +119,12 @@
 
 /* Integer options */
 
-/* The minumum length for words that may be hyphenated. This limit is also enforced on
+/* The minimum length for words that may be hyphenated. This limit is also enforced on
  * individual parts of compound words.
  * Default: 2 */
 #define VOIKKO_MIN_HYPHENATED_WORD_LENGTH 9
 
-/* Size of the spellchecker cache. This can be -1 (no cache) or
+/* Size of the spell checker cache. This can be -1 (no cache) or
  * >= 0 ( size in bytes = 2^cache_size * (6544*sizeof(wchar_t) + 1008) ).
  * Default: 0*/
 #define VOIKKO_SPELLER_CACHE_SIZE 17
