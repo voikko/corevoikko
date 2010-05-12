@@ -106,7 +106,6 @@
 [perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "hyvin", alku: "hyvin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell, äs: ä];
 [perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
