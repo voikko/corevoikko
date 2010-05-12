@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 # Program to generate lexicon files for Suomi-malaga Voikko edition
 
 # This program is free software; you can redistribute it and/or modify
@@ -27,6 +27,7 @@ import generate_lex_common
 import voikkoutils
 import xml.dom.minidom
 import codecs
+from string import rfind
 
 flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
 
@@ -101,8 +102,14 @@ def handle_word(word):
 		debug_info = u', sourceid: "%s"' % word.getAttribute("id")
 	
 	# Process all alternative forms
+	singlePartForms = []
+	multiPartForms = []
 	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
+		if len(altform) == len(wordform.replace(u'-', u'')):
+			singlePartForms.append(altform)
+		else:
+			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
@@ -112,16 +119,25 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
 		if alku == None:
-			errorstr = u"#Malaga class not found for (%s, %s)\n" \
+			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
-			print(errorstr)
-			continue
+			sys.stderr.write(errorstr)
+			sys.exit(1)
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
 			   debug_info)
 		generate_lex_common.write_entry(main_vocabulary, {}, word, entry)
+	
+	# Sanity check for alternative forms: if there are both multi part forms and single part forms
+	# then all multi part forms must end with a part contained in the single part set.
+	if singlePartForms:
+		for multiPartForm in multiPartForms:
+			lastPart = multiPartForm[max(rfind(multiPartForm, u"="), rfind(multiPartForm, u"|"), rfind(multiPartForm, u"-")) + 1:]
+			if lastPart not in singlePartForms:
+				sys.stderr.write(u"ERROR: suspicious alternative spelling: %s\n" % multiPartForm)
+				sys.exit(1)
 
 
 voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
