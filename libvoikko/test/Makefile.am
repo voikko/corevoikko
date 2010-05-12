@@ -3,6 +3,10 @@ EXTRA_DIST = TestUtils.py \
     libvoikkoTest.py \
     libvoikkoOldTest.py \
     NullComponentTest.py \
-    DictionaryInfoTest.py
+    DictionaryInfoTest.py \
+    Utf8ApiTest.py \
+    DeprecatedApiTest.py \
+    malaga/ExtendedMorphologyTest.py \
+    lttoolbox/ApertiumIcelandicTest.py
 TESTS_ENVIRONMENT = env LD_LIBRARY_PATH=../src/.libs python
 TESTS = AllAutomaticTests.py
