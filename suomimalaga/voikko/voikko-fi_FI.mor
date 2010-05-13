@@ -380,7 +380,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   end;
   result $res, rules nimisanan_sijapääte, nimisanan_johdos;
   
-  if $oikea.erisnimen_pääte = yes then
+  if $oikea.erisnimen_pääte = yes and $edellinen.luokka /= tavuviiva then
     $res := $vasen + <$oikea + [alku: $sana, luokka: nimi]>;
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
@@ -390,9 +390,6 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
     end;
     if liitesana in $oikea.jatko then
       result $res, rules liitesana;
-    end;
-    if tavuviiva in $oikea.jatko or loppu in $oikea.jatko then
-      result $res, rules yhdysmerkki_erisnimen_jälkeen;
     end;
     result $res, rules erisnimen_sijapääte;
   end;

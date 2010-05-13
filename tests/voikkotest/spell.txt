@@ -109,6 +109,8 @@ virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
 kaivertajajuonti
 tomahawkjänis
 !tomahawkijänis
+!--koulu                       # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
+!Ammattikorkeakoulu-tutkintoon # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
