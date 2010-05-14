@@ -15,8 +15,8 @@
 #
 # Tämän ohjelman mukana pitäisi tulla kopio GPL
 # lisenssistä; jos näin ei ole, kirjoita osoitteeseen Free
-# Software Foundation Inc., 59 Temple Place - Suite 330,
-# Boston, MA 02111-1307, USA.
+# Software Foundation Inc., 51 Franklin Street, Fifth Floor,
+# Boston, MA 02110-1301, USA.
 #
 # Tämän ohjeman linkittäminen staattisesti tai dynaamisesti
 # muihin moduuleihin on ohjelmaan perustuvan teoksen
@@ -35,8 +35,8 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; see the file COPYING.  If not, write to the
-# Free Software Foundation, Inc., 59 Temple Place -  Suite 330, Boston, MA
-# 02111-1307 USA.
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
 #
 # Linking this program statically or dynamically with other modules is
 # making a combined work based on this program.  Thus, the terms and
