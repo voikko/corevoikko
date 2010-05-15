@@ -110,9 +110,16 @@ def _check_grammar(paragraphlist, params, voikko):
 	setDefaults(voikko)
 	return paragrapherrors
 
+def shell(cwd, command):
+	res = subprocess.call(command, cwd = cwd, shell = True)
+	if res != 0:
+		sys.stderr.write(u"Shell command '%s' failed, working directory was '%s'\n" % (command, cwd))
+		return False
+	return True
+	
 # Ensure that the current version is up to date
 def update_smv():
-	if os.system('cd "%s" && make voikko %s' % (SMV, BUILD_OPTIONS)) != 0:
+	if not shell(SMV, "make voikko %s" % BUILD_OPTIONS):
 		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
 		sys.exit(1)
 	if SM_DESTDIR is not None:
@@ -156,8 +163,8 @@ def spell_tests(voikko):
 			testcount = testcount + 1
 			wordOk = voikko.spell(word)
 			if (not wordOk and not negativeTest) or (wordOk and negativeTest):
-				print u'Spelling test failed at line %i, section "%s":\n  %s' \
-				      % (linecount, section, line_orig)
+				print (u'Spelling test failed at line %i, section "%s":\n  %s' \
+				      % (linecount, section, line_orig)).encode(ENCODING)
 				failcount = failcount + 1
 		inputfile.close()
 		if failcount == 0:
