@@ -161,11 +161,15 @@ def spell_tests(voikko):
 			if len(word) == 0:
 				continue
 			testcount = testcount + 1
-			wordOk = voikko.spell(word)
-			if (not wordOk and not negativeTest) or (wordOk and negativeTest):
-				print (u'Spelling test failed at line %i, section "%s":\n  %s' \
-				      % (linecount, section, line_orig)).encode(ENCODING)
-				failcount = failcount + 1
+			try:
+				wordOk = voikko.spell(word)
+				if (not wordOk and not negativeTest) or (wordOk and negativeTest):
+					print (u'Spelling test failed at line %i, section "%s":\n  %s' \
+						% (linecount, section, line_orig)).encode(ENCODING)
+					failcount = failcount + 1
+			except Exception as e:
+				sys.stderr.write((u"Exception while trying to spell word '%s'\n" % word).encode(ENCODING))
+				raise e
 		inputfile.close()
 		if failcount == 0:
 			print u"All %i spelling tests were successful." % testcount
