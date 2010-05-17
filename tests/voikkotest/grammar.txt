@@ -42,6 +42,9 @@ Avaimet löytyivät Reetan Taskun pohjalta.
 "Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
 "Lause voi olla myös lainausmerkeissä?" kirjoittaa ohjelman tekijä.
 Hän huusi "Kissa! Oletko siellä?" mennessään kellariin.
+Setä kysyi "Mitä kello on?" Kukaan ei vastannut.
+Setä kysyi "Mitä kello on?". Kukaan ei vastannut.
+Voinko kirjoittaa pakinan otsikolla "Kissat"? Kukaan ei lukisi sitä.
 ”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.
 »Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.
 "Sisäkkäisiäkin lainausmerkkejä voi käyttää, ja ne ”Toimivat Oikein”", kirjoittaa ohjelman tekijä.

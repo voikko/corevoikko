@@ -131,12 +131,15 @@ static bool placeNameInInstitutionName(const Token * word, const list<const Toke
 	       (*separators.begin())->str[0] == L' ';
 }
 
-static void pushAndPopQuotes(CapitalizationContext & context, const list<const Token *> & tokens) {
+/** Return true if quote characters were found */
+static bool pushAndPopQuotes(CapitalizationContext & context, const list<const Token *> & tokens) {
 	list<const Token *>::const_iterator it = tokens.begin();
+	bool hasQuotes = false;
 	while (it != tokens.end()) {
 		if ((*it)->type == TOKEN_PUNCTUATION) {
 			const wchar_t * text = (*it)->str;
 			if (isFinnishQuotationMark(text[0])) {
+				hasQuotes = true;
 				if (context.quotes.empty()) {
 					context.quotes.push(text[0]);
 				} else {
@@ -165,7 +168,7 @@ static void pushAndPopQuotes(CapitalizationContext & context, const list<const T
 		}
 		it++;
 	}
-
+	return hasQuotes;
 }
 
 static CapitalizationState inInitial(CapitalizationContext & context) {
@@ -296,12 +299,15 @@ static CapitalizationState inDontCare(CapitalizationContext & context) {
 
 static CapitalizationState inQuoted(CapitalizationContext & context) {
 	list<const Token *> separators = getTokensUntilNextWord(context);
-	pushAndPopQuotes(context, separators);
+	bool hadQuotes = pushAndPopQuotes(context, separators);
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
 	if (containsToken(separators, L".")) {
 		return UPPER;
+	}
+	if (hadQuotes) {
+		return DONT_CARE;
 	}
 	return LOWER;
 }
