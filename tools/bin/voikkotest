@@ -167,7 +167,7 @@ def spell_tests(voikko):
 					print (u'Spelling test failed at line %i, section "%s":\n  %s' \
 						% (linecount, section, line_orig)).encode(ENCODING)
 					failcount = failcount + 1
-			except Exception as e:
+			except Exception, e:
 				sys.stderr.write((u"Exception while trying to spell word '%s'\n" % word).encode(ENCODING))
 				raise e
 		inputfile.close()
