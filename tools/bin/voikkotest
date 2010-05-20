@@ -54,29 +54,13 @@ BASE_INFO = WORKSPACE + "/base-info.txt"
 CURRENT_CORRECT = WORKSPACE + "/current-correct.txt"
 SMV = SVNROOT + "/trunk/suomimalaga"
 
-# Returns a list of hyphenated words. Wordlist is a list of words to hyphenate and
-# params is a string containing the parameters for HYPHENCMD
-def _hyphenate_wordlist(wordlist, params):
-	hyphenator = subprocess.Popen(HYPHENCMD + " " + params, shell = True,
-	    stdin = subprocess.PIPE, stdout = subprocess.PIPE, close_fds = True)
-	for word in wordlist:
-		hyphenator.stdin.write(word.encode('UTF-8') + '\n')
-	(out, err) = hyphenator.communicate()
-	rawlist = out.split('\n')
-	hyphenatedlist = []
-	for hword in rawlist:
-		hyphenatedlist.append(unicode(hword, 'UTF-8'))
-	return hyphenatedlist #FIXME: last item is an extra empty string
-
-
-def _check_hyphens(section, expected_results, results):
+def _check_hyphens(section, expectedResult, result):
 	failcount = 0
-	for i in range(0, len(expected_results)):
-		if expected_results[i] != results[i]:
-			print u'Hyphenation test failed in section "%s":' % section
-			print u'  Expected "%s", got "%s"' % (expected_results[i], results[i])
-			failcount = failcount + 1
-	return failcount
+	if expectedResult != result:
+		print u'Hyphenation test failed in section "%s":' % section
+		print u'  Expected "%s", got "%s"' % (expectedResult, result)
+		return 1
+	return 0
 
 def _check_gcerrors(inputpara, expresults, results):
 	failcount = 0
@@ -182,14 +166,12 @@ def spell_tests(voikko):
 		sys.exit(1)
 
 # Run the hyphenator tests
-def hyphen_tests():
+def hyphen_tests(voikko):
 	try:
 		inputfile = codecs.open(hyphentest, "r", ENCODING)
 		testcount = 0
 		failcount = 0
-		section = u"(none)"
-		inputwords = []
-		expresults = []
+		section = u""
 		while True:
 			line_orig = inputfile.readline()
 			if line_orig == u'': break
@@ -197,22 +179,20 @@ def hyphen_tests():
 			commentstart = line.find(u"#")
 			if commentstart != -1: line = line[:commentstart].strip()
 			if line.startswith(u'[') and line.endswith(u']'):
-				if len(inputwords) > 0:
-					results = _hyphenate_wordlist(inputwords, section)
-					failcount = failcount + _check_hyphens(section, expresults, results)
-					inputwords = []
-					expresults = []
 				section = line[1:-1]
 				continue
+			setDefaults(voikko)
+			for option in section.split(u" "):
+				if len(option) > 0:
+					eval(option)
 			parts = line.split()
 			if len(parts) == 0: continue
-			inputwords.append(parts[0].strip())
-			expresults.append(parts[1].strip())
+			inputword = parts[0].strip()
+			expresult = parts[1].strip()
 			testcount = testcount + 1
+			result = voikko.hyphenate(inputword)
+			failcount = failcount + _check_hyphens(section, expresult, result)
 		inputfile.close()
-		if len(inputwords) > 0:
-			results = _hyphenate_wordlist(inputwords, section)
-			failcount = failcount + _check_hyphens(section, expresults, results)
 		if failcount == 0:
 			print u"All %i hyphenation tests were successful." % testcount
 			return True
@@ -286,6 +266,9 @@ def setDefaults(voikko):
 	voikko.setAcceptTitlesInGc(False)
 	voikko.setAcceptUnfinishedParagraphsInGc(False)
 	voikko.setAcceptBulletedListsInGc(False)
+	voikko.setNoUglyHyphenation(False)
+	voikko.setHyphenateUnknownWords(True)
+	voikko.setMinHyphenatedWordLength(2)
 
 # Run suggestion tests
 def suggestion_tests(voikko):
@@ -504,7 +487,7 @@ else:
 	spell_tests(voikko)
 	suggestion_tests(voikko)
 	morpho_tests(voikko)
-	hyphen_tests()
+	hyphen_tests(voikko)
 	grammar_tests(voikko)
 	tokenizer_tests()
 	sentence_tests()

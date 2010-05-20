@@ -1,4 +1,4 @@
-[no_ugly_hyphenation=1 ignore_dot=0]
+[voikko.setNoUglyHyphenation(True) voikko.setIgnoreDot(False)]
 kissa           kis-sa
 kerrostalo      ker-ros-ta-lo
 elävä           elä-vä
@@ -36,7 +36,7 @@ juurihoitoklubi	juu-ri-hoi-to-klu-bi
 kissa/koira     kis-sa/koi-ra
 hatapitk@iki.fi hatapitk@iki.fi
 
-[no_ugly_hyphenation=0 ignore_dot=0]
+[voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(False)]
 elävä           e-lä-vä
 kansaneläke.    kan-sa-ne-lä-ke.
 määyntä         mää-yn-tä
@@ -66,25 +66,27 @@ jok'ikinen       jok-i-ki-nen
 pop-musiikkia   pop-mu-siik-ki-a
 erinomaisuutta  e-rin-o-mai-suut-ta
 
-[no_ugly_hyphenation=0 ignore_dot=1]
+[voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(True)]
 kansaneläke.    kan-san-e-lä-ke.
 kuorma-allas.   kuor-ma-al-las.
 
-[no_ugly_hyphenation=0 ignore_dot=1 min_hyphenated_word_length=6]
+[voikko.setNoUglyHyphenation(False) voikko.setIgnoreDot(True) voikko.setMinHyphenatedWordLength(6)]
 kuorma-allas.   kuor-ma-allas.
 talon.          talon.
 
-[no_ugly_hyphenation=1]
+[voikko.setNoUglyHyphenation(True)]
 # "hienosto" has a compound and non-compound analysis. The non-compound analysis is assumed to be correct.
 hienosto	hie-nos-to
 # If there is a compound analysis with two components and another with three components, do not guess which one is correct.
 pöytähienosto   pöy-tä-hienos-to
 
-[-s!]
-kissa           kis!sa
-kuorma-auto     kuor!ma!-au!to
-jok'ikinen      jok!'i!ki!nen
+# TODO: check if this test is just for testing the test tool
+# (in which case it can be safely removed).
+#[-s!]
+#kissa           kis!sa
+#kuorma-auto     kuor!ma!-au!to
+#jok'ikinen      jok!'i!ki!nen
 
-[hyphenate_unknown_words=0]
+[voikko.setHyphenateUnknownWords(False)]
 koirra          koirra
 koira           koi-ra
