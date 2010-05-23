@@ -236,6 +236,7 @@ vihertävänhohtoinen
 vaikuttava-aittainen
 !vaikuttavaaittainen
 yhtäaikaissuoritus # teonsanan nimisanajohdos perusosana
+kuumentajareunainen # kuumentaa > kuumentaja, reuna > reunainen
 
 [voitto- ja yliasteet]
 kauniimmanvärinen

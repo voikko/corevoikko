@@ -1663,7 +1663,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
 
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, laatusana, nimisana_teonsanasta,
-           etuliite, tavuviiva;
+           etuliite, tavuviiva, inen_johdos_nimisanasta;
   end;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
