@@ -5,9 +5,9 @@
 # Test program for Voikko.
 # This program requires Python and Python interface to libvoikko.
 
-# This program is free software; you can redistribute it and/or modify
+# This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
+# the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
 # This program is distributed in the hope that it will be useful,
@@ -16,8 +16,7 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 import locale
@@ -107,13 +106,13 @@ def update_smv():
 		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
 		sys.exit(1)
 	if SM_DESTDIR is not None:
-		if os.system('cd "%s" && make voikko-install DESTDIR="%s"' % (SMV, SM_DESTDIR)) != 0:
+		if not shell(SMV, 'make voikko-install DESTDIR="%s"' % SM_DESTDIR):
 			sys.stderr.write(u"Failed to install new version of Suomi-malaga.\n")
 			sys.exit(1)
 
 # Run "make clean"
 def clean_smv():
-	if os.system('cd "%s" && make clean' % SMV) != 0:
+	if not shell(SMV, 'make clean'):
 		sys.stderr.write(u'Failed to run "make clean"\n')
 		sys.exit(1)
 
@@ -450,7 +449,7 @@ except getopt.GetoptError:
 	sys.exit(1)
 
 if "--base" in [opt[0] for opt in opts]:
-	if os.system('cd "%s" && make voikko-install DESTDIR="%s"' % (SMV, BASE)) != 0:
+	if not shell(SMV, 'make voikko-install DESTDIR="%s"' % BASE):
 		sys.stderr.write(u"Failed to create baseline version.\n")
 		sys.exit(1)
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
