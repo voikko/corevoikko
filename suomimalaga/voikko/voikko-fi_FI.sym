@@ -212,19 +212,12 @@ luokka; alaluokka; jluokka;
 
   # Tositavan kestämän ja kertoman tekijäpäätteet.
   #
-  kestämän_tekijäpääte_y1; # Yksikön ensimmäinen, toinen ja kolmas tekijä.
-  kestämän_tekijäpääte_y2;
+  kestämän_tekijäpääte_heikko;
   kestämän_tekijäpääte_y3;
-  kestämän_tekijäpääte_m1; # Monikon ensimmäinen, toinen ja kolmas tekijä.
-  kestämän_tekijäpääte_m2;
   kestämän_tekijäpääte_m3;
 
-  kertoman_tekijäpääte_y1;
-  kertoman_tekijäpääte_y2;
-  kertoman_tekijäpääte_y3;
-  kertoman_tekijäpääte_m1;
-  kertoman_tekijäpääte_m2;
-  kertoman_tekijäpääte_m3;
+  kertoman_tekijäpääte_heikko;
+  kertoman_tekijäpääte_vahva;
 
 vertailu;
   voittoaste;

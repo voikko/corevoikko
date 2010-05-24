@@ -51,6 +51,8 @@
 # WSOY, Juva 1983
 # ISBN 951-0-11633-5
 
+define @yhdyssana := @nimisana + <laatusana, teonsana, tavuviiva>;
+
 define @sijan_jatko := <tavuviiva, liitesana, loppu>;
 define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 
@@ -491,9 +493,9 @@ define @jatko_mm := <sija_monikko_1,
 
 # Teonsanojen tositavan kestämän tekijäpäätteet.
 #
-[alku: "n",   luokka: kestämän_tekijäpääte_y1, luku: yksikkö, tekijä: tekijä_1,
+[alku: "n",   luokka: kestämän_tekijäpääte_heikko, luku: yksikkö, tekijä: tekijä_1,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: <liitesana, loppu>];
-[alku: "t",   luokka: kestämän_tekijäpääte_y2, luku: yksikkö, tekijä: tekijä_2,
+[alku: "t",   luokka: kestämän_tekijäpääte_heikko, luku: yksikkö, tekijä: tekijä_2,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: <liitesana, loppu>];
 
 
@@ -517,9 +519,9 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
               tapaluokka: tositapa, aikamuoto: kestämä, äs: ä, jatko: @jatko_y3];
 
 
-[alku: "mme", luokka: kestämän_tekijäpääte_m1, luku: monikko, tekijä: tekijä_1, äs: aä,
+[alku: "mme", luokka: kestämän_tekijäpääte_heikko, luku: monikko, tekijä: tekijä_1, äs: aä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
-[alku: "tte", luokka: kestämän_tekijäpääte_m2, luku: monikko, tekijä: tekijä_2, äs: aä,
+[alku: "tte", luokka: kestämän_tekijäpääte_heikko, luku: monikko, tekijä: tekijä_2, äs: aä,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
 [alku: "vat", luokka: kestämän_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: a,
               tapaluokka: tositapa, aikamuoto: kestämä, jatko: <liitesana, loppu>];
@@ -533,20 +535,20 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 # Yhdistin kertoman tunnuksen ja tekijäpäätteen astevaihtelun vuoksi:
 # asetu+in, asetu+it, asettu+i, asetu+imme, asetu+itte, asettu+ivat.
 #
-[alku: "in",   luokka: kertoman_tekijäpääte_y1, luku: yksikkö, tekijä: tekijä_1, äs: aä,
+[alku: "in",   luokka: kertoman_tekijäpääte_heikko, luku: yksikkö, tekijä: tekijä_1, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "it",   luokka: kertoman_tekijäpääte_y2, luku: yksikkö, tekijä: tekijä_2, äs: aä,
+[alku: "it",   luokka: kertoman_tekijäpääte_heikko, luku: yksikkö, tekijä: tekijä_2, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "i",    luokka: kertoman_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, äs: aä,
+[alku: "i",    luokka: kertoman_tekijäpääte_vahva, luku: yksikkö, tekijä: tekijä_3, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 
-[alku: "imme", luokka: kertoman_tekijäpääte_m1, luku: monikko, tekijä: tekijä_1, äs: aä,
+[alku: "imme", luokka: kertoman_tekijäpääte_heikko, luku: monikko, tekijä: tekijä_1, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "itte", luokka: kertoman_tekijäpääte_m2, luku: monikko, tekijä: tekijä_2, äs: aä,
+[alku: "itte", luokka: kertoman_tekijäpääte_heikko, luku: monikko, tekijä: tekijä_2, äs: aä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "ivat", luokka: kertoman_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: a,
+[alku: "ivat", luokka: kertoman_tekijäpääte_vahva, luku: monikko, tekijä: tekijä_3, äs: a,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
-[alku: "ivät", luokka: kertoman_tekijäpääte_m3, luku: monikko, tekijä: tekijä_3, äs: ä,
+[alku: "ivät", luokka: kertoman_tekijäpääte_vahva, luku: monikko, tekijä: tekijä_3, äs: ä,
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 
 
@@ -1318,8 +1320,8 @@ define @jatko_jA :=
    osanto_tA, olento_nA, tulento_ksi, sisäolento_ssA,
    sisäeronto_stA, sisätulento_Vn, ulkopaikallissija_llA,
    vajanto_ttA, kerronto_sti,
-   voittoaste, nimisana, nimi_laatusana, laatusana, teonsana,
-   etuliite, johdin_tOn, johdin_tAr, johdin_llinen, nimentö_t, omanto_in,
+   voittoaste, nimisana, laatusana, teonsana,
+   johdin_tOn, johdin_tAr, johdin_llinen, nimentö_t, omanto_in,
    johdin_mAinen, liitesana, loppu>;
 
 

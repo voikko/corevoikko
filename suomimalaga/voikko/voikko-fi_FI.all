@@ -3929,19 +3929,12 @@ end;
 subrule tositapa0 ($tietue,
                    $kestämän_vahva_aste, $kestämän_heikko_aste,
                    $kertoman_vahva_aste, $kertoman_heikko_aste):
-  return [kestämän_tekijäpääte_y1: $kestämän_heikko_aste,
-          kestämän_tekijäpääte_y2: $kestämän_heikko_aste,
+  return [kestämän_tekijäpääte_heikko: $kestämän_heikko_aste,
           kestämän_tekijäpääte_y3: $kestämän_vahva_aste,
-          kestämän_tekijäpääte_m1: $kestämän_heikko_aste,
-          kestämän_tekijäpääte_m2: $kestämän_heikko_aste,
           kestämän_tekijäpääte_m3: $kestämän_vahva_aste,
 
-          kertoman_tekijäpääte_y1: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_y2: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_y3: $kertoman_vahva_aste,
-          kertoman_tekijäpääte_m1: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_m2: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_m3: $kertoman_vahva_aste];
+          kertoman_tekijäpääte_heikko: $kertoman_heikko_aste,
+          kertoman_tekijäpääte_vahva: $kertoman_vahva_aste];
 end;
 
 
@@ -3960,18 +3953,11 @@ subrule tositapa_ei_kestämä_y3 ($tietue,
                                 $kestämän_vahva_aste, $kestämän_heikko_aste,
                                 $kertoman_vahva_aste, $kertoman_heikko_aste,
                                 $tekijä_4):
-  return [kestämän_tekijäpääte_y1: $kestämän_heikko_aste,
-          kestämän_tekijäpääte_y2: $kestämän_heikko_aste,
-          kestämän_tekijäpääte_m1: $kestämän_heikko_aste,
-          kestämän_tekijäpääte_m2: $kestämän_heikko_aste,
+  return [kestämän_tekijäpääte_heikko: $kestämän_heikko_aste,
           kestämän_tekijäpääte_m3: $kestämän_vahva_aste,
 
-          kertoman_tekijäpääte_y1: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_y2: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_y3: $kertoman_vahva_aste,
-          kertoman_tekijäpääte_m1: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_m2: $kertoman_heikko_aste,
-          kertoman_tekijäpääte_m3: $kertoman_vahva_aste]
+          kertoman_tekijäpääte_heikko: $kertoman_heikko_aste,
+          kertoman_tekijäpääte_vahva: $kertoman_vahva_aste]
          + $tekijä_4;
 end;
 
@@ -3979,7 +3965,7 @@ end;
 subrule tositavan_kestämä ($tietue, $vahva_aste, $heikko_aste):
   return <taivutus ($tietue, $vahva_aste, @kestämän_tekijäpääte_vahva_aste,
                     [tapaluokka: tositapa, aikamuoto: kestämä]),
-          taivutus ($tietue, $heikko_aste, @kestämän_tekijäpääte_heikko_aste,
+          taivutus ($tietue, $heikko_aste, <kestämän_tekijäpääte_heikko>,
                     [tapaluokka: tositapa, aikamuoto: kestämä])>;
 end;
 
@@ -3998,13 +3984,13 @@ end;
 
 
 subrule tositavan_kertoman_vahva_aste ($tietue, $vahva_aste):
-  return <taivutus ($tietue, $vahva_aste, @kertoman_tekijäpääte_vahva_aste,
+  return <taivutus ($tietue, $vahva_aste, <kertoman_tekijäpääte_vahva>,
                     [tapaluokka: tositapa, aikamuoto: kertoma])>;
 end;
 
 
 subrule tositavan_kertoman_heikko_aste ($tietue, $heikko_aste):
-  return <taivutus ($tietue, $heikko_aste, @kertoman_tekijäpääte_heikko_aste,
+  return <taivutus ($tietue, $heikko_aste, <kertoman_tekijäpääte_heikko>,
                     [tapaluokka: tositapa, aikamuoto: kertoma])>;
 end;
 

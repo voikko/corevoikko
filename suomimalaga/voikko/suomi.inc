@@ -73,15 +73,9 @@ define @nimisana := <nimisana, nimi_laatusana> + @erisnimi;
 
 define @laatusana := <laatusana, nimi_laatusana>;
 
-define @kestämän_tekijäpääte := <kestämän_tekijäpääte_y1,
-                                 kestämän_tekijäpääte_y2,
+define @kestämän_tekijäpääte := <kestämän_tekijäpääte_heikko,
                                  kestämän_tekijäpääte_y3,
-                                 kestämän_tekijäpääte_m1,
-                                 kestämän_tekijäpääte_m2,
                                  kestämän_tekijäpääte_m3>;
-
-define @kestämän_tekijäpääte_heikko_aste := <kestämän_tekijäpääte_y1, kestämän_tekijäpääte_y2,
-                                             kestämän_tekijäpääte_m1, kestämän_tekijäpääte_m2>;
 
 define @kestämän_tekijäpääte_vahva_aste := <kestämän_tekijäpääte_y3, kestämän_tekijäpääte_m3>;
 
@@ -99,22 +93,8 @@ define @tositavan_tekijäpääte_4 := <tositavan_kestämä_dAAn,
                                     tositavan_kertoma_ttiin>;
 
 
-define @kertoman_tekijäpääte := <kertoman_tekijäpääte_y1,
-                                 kertoman_tekijäpääte_y2,
-                                 kertoman_tekijäpääte_y3,
-                                 kertoman_tekijäpääte_m1,
-                                 kertoman_tekijäpääte_m2,
-                                 kertoman_tekijäpääte_m3>;
-
-define @kertoman_tekijäpääte_heikko_aste := <kertoman_tekijäpääte_y1,
-                                             kertoman_tekijäpääte_y2,
-                                             kertoman_tekijäpääte_m1,
-                                             kertoman_tekijäpääte_m2>;
-                                             
-
-define @kertoman_tekijäpääte_vahva_aste := <kertoman_tekijäpääte_y3,
-                                            kertoman_tekijäpääte_m3>;
-
+define @kertoman_tekijäpääte := <kertoman_tekijäpääte_heikko,
+                                 kertoman_tekijäpääte_vahva>;
 
 define @sisäpaikallissijat_Vn  := <sisäolento_ssA,  sisäeronto_stA, sisätulento_Vn>;
 
@@ -123,9 +103,6 @@ define @ulkopaikallissijat_monikko := <ulkopaikallissija_illA>;
 define @sija_monikko_1 := <sija_monikko_1>;
 
 define @heikkoasteiset_paikallissijat := <sisäolento_ssA,  sisäeronto_stA> + @ulkopaikallissijat;
-
-define @yhdyssana := @nimisana + <laatusana, nimi_laatusana, teonsana,
-                                  etuliite, tavuviiva>;
 
 define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;

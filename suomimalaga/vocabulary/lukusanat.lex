@@ -86,7 +86,7 @@
 [perusmuoto: "puolitoista", alku: "puolettatoista", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
 [perusmuoto: "puolitoista", alku: "puolisentoista", luokka: lukusana, alaluokka: erikoisluku, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppppp=pppppp"];
 
-[perusmuoto: "nelitoista", alku: "nelitoista", luokka: lukusana, jatko: @yhdyssana, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
+[perusmuoto: "nelitoista", alku: "nelitoista", luokka: lukusana, jatko: @nimisana + <laatusana, nimi_laatusana, teonsana, etuliite, tavuviiva>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=pppppp"];
 
 [perusmuoto: "sata", alku: "sa", luokka: lukusana, lukutyyppi: perusluku, alaluokka: sata, jatko: <pata>, äs: a];
 [perusmuoto: "tuhat", alku: "tuha", luokka: lukusana, lukutyyppi: perusluku, alaluokka: tuhat, jatko: <tuhat>, äs: a];
