@@ -812,7 +812,7 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 
 # Ensimmäinen nimitapa.
 #
-define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, liitesana2, loppu>;
+define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 
 [alku: "a",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
 [alku: "ä",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];

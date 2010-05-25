@@ -3375,7 +3375,7 @@ allo_rule generate_allos ($tietue):
                   taivutus ($tietue, "l", <nimitapa_2>, []),
                   taivutus ($tietue, "e",
                             <nimitapa_3, nimitapa_4,
-                             liitesana2, johdin_vA, johdin_vAinen>, []),
+                             johdin_vA, johdin_vAinen>, []),
                   taivutus ($tietue, "e", <liitesana, loppu>,
                             [tapaluokka: käskytapa, aikamuoto: kestämä,
                              luku: yksikkö, tekijä: tekijä_2])>;
@@ -4005,8 +4005,8 @@ end;
 
 subrule käskytapa ($tietue, $heikko_aste):
   return <taivutus ($tietue, $heikko_aste,
-##                    <liitesana, liitesana2, loppu>,
-                    <liitesana, liitesana2, liitesana_s, loppu>,
+##                    <liitesana, loppu>,
+                    <liitesana, liitesana_s, loppu>,
                     [tapaluokka: käskytapa, aikamuoto: kestämä,
                     tekijä: tekijä_2, luku: yksikkö])>;
 end;
@@ -4898,8 +4898,7 @@ subrule hame ($tietue, $nimentö_osanto, $yksikkö, $monikko):
                          johdin_llinen:    $yksikkö,
                          johdin_lAinen:    $nimentö_osanto,
                          johdin_mAinen:    $nimentö_osanto,
-                         johdin_inen:      $monikko,
-                         liitesana2:       $nimentö_osanto] + # Hame+kkaan (hame+kaan).
+                         johdin_inen:      $monikko] +
                         monikko7 ($yksikkö, $monikko,  $monikko,
                                   [omanto_iT:         $monikko],
                                   [osanto_itA:        $monikko],

@@ -2018,7 +2018,7 @@ subrule tulostus_debug_perusmuoto($tietue):
 
   # Poistetaan sanan lopusta osat, jotka eivät vaikuta perusmuotoon.
   #
-  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana2, liitesana_s,
+  repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana_s,
                                       omistusliite, kaksoispiste,
                                       voittoaste, yliaste,
                                       nimitapa_1_pitkä, nimitapa_5>
