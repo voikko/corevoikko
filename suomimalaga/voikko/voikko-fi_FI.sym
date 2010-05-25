@@ -286,9 +286,8 @@ tapaluokka;
 
 
   # Teonsanojen laatutavat ovat myös laatusanoja.
-  johdin_vA;        # Tule+va, tule+va+mpi, tule+vuus.
+  johdin_vA;        # Tule+va, tule+va+mpi, tule+vuus, tule+vainen.
   johdin_vE;        # Myy+vä, myy+ve+mpi, myy+vyys
-  johdin_vAinen;    # Tule+vainen.
   johdin_tAvA;      # Tul+tava.
   johdin_ttAvA;     # Luote+ttava.
   johdin_lUt;       # Tul+lut, tul+tu, tul+leisuus.

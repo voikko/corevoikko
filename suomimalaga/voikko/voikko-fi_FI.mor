@@ -79,7 +79,7 @@ define @johtimet_nimisana_teonsanasta :=
        + @johdin_jA;
 
 define @johtimet_laatusana_teonsanasta :=
-       <johdin_tOn, johdin_vA, johdin_vE, johdin_vAinen, johdin_tAvA, johdin_ttAvA,
+       <johdin_tOn, johdin_vA, johdin_vE, johdin_tAvA, johdin_ttAvA,
         johdin_llinen, johdin_stU, johdin_ttU> + @johdin_nUt + @johdin_tU;
 
 define @johtimet_seikkasana_teonsanasta := <johdin_ittAin>; # esim. "pamahduksittain"
@@ -730,7 +730,7 @@ end;
 
 define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
-                         johdin_vA, johdin_vAinen, johdin_vE,
+                         johdin_vA, johdin_vE,
                          johdin_stU>
                         + @johdin_nUt + @johdin_tU
                         + @johtimet_laatusana_nimisanasta

@@ -2869,13 +2869,6 @@ allo_rule generate_allos ($tietue):
                                   [tositavan_kertoma_tiin: "it",
                                    ehtotapa:   "its",
                                    käskytapa:  "it"])
-#                                   nimitapa_3: "itse",
-#                                   nimitapa_4: "itse",
-#                                   nimitapa_5: "itse",
-#                                   johdin_mA:  "itse",
-#                                   johdin_vA:     "itse",
-#                                   johdin_vAinen: "itse",
-#                                   johdin_nUt:      "in"])
                  + käskytapa ($tietue, "itse")
                  + taivutuskaava ($tietue, [käskytapa: "itse"])
                  + tekijännimi ($tietue, "i", kantaja)
@@ -3375,7 +3368,7 @@ allo_rule generate_allos ($tietue):
                   taivutus ($tietue, "l", <nimitapa_2>, []),
                   taivutus ($tietue, "e",
                             <nimitapa_3, nimitapa_4,
-                             johdin_vA, johdin_vAinen>, []),
+                             johdin_vA>, []),
                   taivutus ($tietue, "e", <liitesana, loppu>,
                             [tapaluokka: käskytapa, aikamuoto: kestämä,
                              luku: yksikkö, tekijä: tekijä_2])>;
@@ -6085,7 +6078,6 @@ subrule voida ($tietue, $lisä1, $lisä2):
                            nimitapa_2_tA:   $lisä1] +
                           nimitapa_3_tA_4 ($tietue, $lisä1, $lisä1) +
                           [johdin_vE:      $lisä1,
-                           johdin_vAinen:  $lisä1,
                            johdin_tAvA:    $lisä1] +
                           laatutapa_2_nUt_dU ($tietue, $lisä1, $lisä1) +
                           [johdin_nti: $lisä1])
@@ -6225,14 +6217,12 @@ end;
 
 subrule laatutapa_1_tA ($tietue, $vahva_aste, $heikko_aste):
   return [johdin_vA:      $vahva_aste,
-          johdin_vAinen:  $vahva_aste,
           johdin_tAvA:    $heikko_aste];
 end;
 
 
 subrule laatutapa_1_ttA ($tietue, $vahva_aste, $heikko_aste):
   return [johdin_vA:       $vahva_aste,
-          johdin_vAinen:   $vahva_aste,
           johdin_ttAvA:    $heikko_aste];
 end;
 
