@@ -84,11 +84,6 @@ define @tositavan_tekijäpääte_4 := <tositavan_kestämä_dAAn,
                                     tositavan_kestämä_nAAn,
                                     tositavan_kestämä_rAAn,
                                     tositavan_kestämä_tAAn,
-                                    tositavan_kestämä_dAAn_kielto,
-                                    tositavan_kestämä_lAAn_kielto,
-                                    tositavan_kestämä_nAAn_kielto,
-                                    tositavan_kestämä_rAAn_kielto,
-                                    tositavan_kestämä_tAAn_kielto,
                                     tositavan_kertoma_tiin,
                                     tositavan_kertoma_ttiin>;
 

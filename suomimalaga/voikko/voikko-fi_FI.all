@@ -5650,7 +5650,6 @@ end;
 subrule seistä ($tietue):
   return taivutuskaava ($tietue,
                         [tositavan_kestämä_tAAn: "",
-                         tositavan_kestämä_tAAn_kielto: "",
                          tositavan_kertoma_tiin: "",
                          ehtotapa_tA: "",
                          mahtotapa_se_kielto: "",
@@ -6518,42 +6517,36 @@ end;
 
 subrule tositapa_4_d ($lisä):
   return [tositavan_kestämä_dAAn: $lisä,
-          tositavan_kestämä_dAAn_kielto: $lisä,
           tositavan_kertoma_tiin: $lisä];
 end;
 
 
 subrule tositapa_4_l ($lisä):
   return [tositavan_kestämä_lAAn: $lisä,
-          tositavan_kestämä_lAAn_kielto: $lisä,
           tositavan_kertoma_tiin: $lisä];
 end;
 
 
 subrule tositapa_4_n ($lisä):
   return [tositavan_kestämä_nAAn: $lisä,
-          tositavan_kestämä_nAAn_kielto: $lisä,
           tositavan_kertoma_tiin: $lisä];
 end;
 
 
 subrule tositapa_4_r ($lisä):
   return [tositavan_kestämä_rAAn: $lisä,
-          tositavan_kestämä_rAAn_kielto: $lisä,
           tositavan_kertoma_tiin: $lisä];
 end;
 
 
 subrule tositapa_4_t ($lisä):
   return [tositavan_kestämä_tAAn: $lisä,
-          tositavan_kestämä_tAAn_kielto: $lisä,
           tositavan_kertoma_tiin: $lisä];
 end;
 
 
 subrule tositapa_4_tt ($lisä):
   return [tositavan_kestämä_tAAn: $lisä,
-          tositavan_kestämä_tAAn_kielto: $lisä,
           tositavan_kertoma_ttiin: $lisä];
 end;
 

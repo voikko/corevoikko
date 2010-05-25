@@ -192,13 +192,8 @@ luokka; alaluokka; jluokka;
   tositavan_kestämä_nAAn;  # Men+nään.
   tositavan_kestämä_rAAn;  # Pur+raan.
   tositavan_kestämä_tAAn;  # Juos+taan.
-
-  tositavan_kestämä_dAAn_kielto;  # Ei voi+da.
-  tositavan_kestämä_lAAn_kielto;  # Ei tul+la.
-  tositavan_kestämä_nAAn_kielto;  # Ei men+nä.
-  tositavan_kestämä_rAAn_kielto;  # Ei pur+ra.
-  tositavan_kestämä_tAAn_kielto;  # Ei juos+ta.
-
+  kielto;
+  
   tositavan_kertoma_tiin;  # Tul+tiin.
   tositavan_kertoma_ttiin; # Puhu+ttiin.
 

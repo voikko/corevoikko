@@ -552,10 +552,10 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                tapaluokka: tositapa, aikamuoto: kertoma, jatko: <liitesana, loppu>];
 
 
-[alku: "da", luokka: tositavan_kestämä_dAAn_kielto, tekijä: tekijä_4, äs: a,  # Ei voi+da.
+[alku: "da", luokka: tositavan_kestämä_dAAn, tekijä: tekijä_4, kielto: yes, äs: a,  # Ei voi+da.
              jatko: <liitesana, loppu>,
              tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "dä", luokka: tositavan_kestämä_dAAn_kielto, tekijä: tekijä_4, äs: ä,
+[alku: "dä", luokka: tositavan_kestämä_dAAn, tekijä: tekijä_4, kielto: yes, äs: ä,
              jatko: <liitesana, loppu>,
              tapaluokka: tositapa, aikamuoto: kestämä];
 
@@ -566,10 +566,10 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "la",   luokka: tositavan_kestämä_lAAn_kielto, tekijä: tekijä_4, äs: a,
+[alku: "la",   luokka: tositavan_kestämä_lAAn, tekijä: tekijä_4, kielto: yes, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "lä",   luokka: tositavan_kestämä_lAAn_kielto, tekijä: tekijä_4, äs: ä,
+[alku: "lä",   luokka: tositavan_kestämä_lAAn, tekijä: tekijä_4, kielto: yes, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
@@ -580,10 +580,10 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "na",   luokka: tositavan_kestämä_nAAn_kielto, tekijä: tekijä_4, äs: a,
+[alku: "na",   luokka: tositavan_kestämä_nAAn, tekijä: tekijä_4, kielto: yes, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "nä",   luokka: tositavan_kestämä_nAAn_kielto, tekijä: tekijä_4, äs: ä,
+[alku: "nä",   luokka: tositavan_kestämä_nAAn, tekijä: tekijä_4, kielto: yes, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
@@ -594,10 +594,10 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "ra",   luokka: tositavan_kestämä_rAAn_kielto, tekijä: tekijä_4, äs: a,
+[alku: "ra",   luokka: tositavan_kestämä_rAAn, tekijä: tekijä_4, kielto: yes, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "rä",   luokka: tositavan_kestämä_rAAn_kielto, tekijä: tekijä_4, äs: ä,
+[alku: "rä",   luokka: tositavan_kestämä_rAAn, tekijä: tekijä_4, kielto: yes, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
@@ -608,10 +608,10 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "ta",   luokka: tositavan_kestämä_tAAn_kielto, tekijä: tekijä_4, äs: a,
+[alku: "ta",   luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, kielto: yes, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "tä",   luokka: tositavan_kestämä_tAAn_kielto, tekijä: tekijä_4, äs: ä,
+[alku: "tä",   luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, kielto: yes, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
