@@ -51,7 +51,7 @@
 # WSOY, Juva 1983
 # ISBN 951-0-11633-5
 
-define @yhdyssana := @nimisana + <laatusana, teonsana, tavuviiva>;
+define @yhdyssana := @nimisana + <laatusana, tavuviiva>;
 
 define @sijan_jatko := <tavuviiva, liitesana, loppu>;
 define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
@@ -1320,7 +1320,7 @@ define @jatko_jA :=
    osanto_tA, olento_nA, tulento_ksi, sisäolento_ssA,
    sisäeronto_stA, sisätulento_Vn, ulkopaikallissija_llA,
    vajanto_ttA, kerronto_sti,
-   voittoaste, nimisana, laatusana, teonsana,
+   voittoaste, nimisana, laatusana,
    johdin_tOn, johdin_tAr, johdin_llinen, nimentö_t, omanto_in,
    johdin_mAinen, liitesana, loppu>;
 
