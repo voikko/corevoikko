@@ -262,8 +262,9 @@ tapaluokka;
   nimitapa_3;        # Taipuu kuten asema.
   nimitapa_3_tA;
   nimitapa_3_ttA;
-  nimitapa_4;
-  nimitapa_5;
+  nimitapa_45;
+    nimitapa_4;
+    nimitapa_5;
 
   johdin_tAr;       # Pappi >= papitar.
   johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).

@@ -405,7 +405,7 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if nimitapa_4 in $oikea.jatko then
+  if nimitapa_45 in $oikea.jatko then
     result $res, rules nimitapa_4;
   end;
   result $res, rules teonsanan_johdos; # FIXME: johdetun muodon on oltava nimisana
@@ -1354,7 +1354,7 @@ end;
 ###### NIMITAPASÄÄNNÖT ALKAVAT
 
 combi_rule nimitapa_4 ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka = nimitapa_4;
+  ? $oikea.luokka = nimitapa_45 and $oikea.tapaluokka = nimitapa_4;
 
   if $oikea.äs = aä then
     $oikea.äs := $vasen.($index - 1).äs;
@@ -1378,7 +1378,7 @@ end;
 ###### NIMITAPASÄÄNNÖT PÄÄTTYVÄT
 
 combi_rule nimitavat ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka in @nimitapa_1 + @nimitapa_2 + @nimitapa_3 + <nimitapa_4, nimitapa_5>;
+  ? $oikea.luokka in @nimitapa_1 + @nimitapa_2 + @nimitapa_3 + <nimitapa_45>;
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
@@ -1515,7 +1515,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
         result $result, accept;
         result $result, rules liitesana;
       end;
-    elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_5>)
+    elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_45>)
             and not $edellinen.alku in <"maa", "mää">) then
       result $result, accept;
       result $result, rules liitesana;
@@ -2021,7 +2021,7 @@ subrule tulostus_debug_perusmuoto($tietue):
   repeat while ($tietue.$k.luokka in <sijapääte, liitesana, liitesana_s,
                                       omistusliite, kaksoispiste,
                                       voittoaste, yliaste,
-                                      nimitapa_1_pitkä, nimitapa_5>
+                                      nimitapa_1_pitkä, nimitapa_45>
                                       + @tositavan_tekijäpääte_4 + @kertoman_tekijäpääte
                                       + @kestämän_tekijäpääte + @ehtotapa + @mahtotapa + @käskytapa
                                       + @nimitapa_1 + @nimitapa_2 + @nimitapa_3);

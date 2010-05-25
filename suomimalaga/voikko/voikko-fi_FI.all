@@ -3367,7 +3367,7 @@ allo_rule generate_allos ($tietue):
                             + @kertoman_tekijäpääte, []),
                   taivutus ($tietue, "l", <nimitapa_2>, []),
                   taivutus ($tietue, "e",
-                            <nimitapa_3, nimitapa_4,
+                            <nimitapa_3, nimitapa_45,
                              johdin_vA>, []),
                   taivutus ($tietue, "e", <liitesana, loppu>,
                             [tapaluokka: käskytapa, aikamuoto: kestämä,
@@ -6185,8 +6185,7 @@ end;
 subrule nimitapa_3_ttA_4 ($tietue, $vahva_aste, $heikko_aste):
   return [nimitapa_3:       $vahva_aste,
           nimitapa_3_ttA:   $heikko_aste,
-          nimitapa_4:       $vahva_aste,
-          nimitapa_5:       $vahva_aste,
+          nimitapa_45:       $vahva_aste,
           johdin_mA:        $vahva_aste];
 end;
 
@@ -6194,8 +6193,7 @@ end;
 subrule nimitapa_3_tA_4 ($tietue, $vahva_aste, $heikko_aste):
   return [nimitapa_3:       $vahva_aste,
           nimitapa_3_tA:    $heikko_aste,
-          nimitapa_4:       $vahva_aste,
-          nimitapa_5:       $vahva_aste,
+          nimitapa_45:       $vahva_aste,
           johdin_mA:        $vahva_aste];
 end;
 

@@ -921,15 +921,15 @@ define @jatko_s := <osanto_tA, omanto_ien, omanto_ten,
 
 # Neljäs nimitapa: puno+minen, puno+mise+n, puno+mis+ia.
 #
-[alku: "minen", luokka: nimitapa_4, äs: aä, perusmuoto: "minen", jatko: @jatko_nen];
-[alku: "mise",  luokka: nimitapa_4, äs: aä, perusmuoto: "minen", jatko: @jatko_se];
-[alku: "mis",   luokka: nimitapa_4, äs: aä, perusmuoto: "minen", jatko: @jatko_s];
+[alku: "minen", luokka: nimitapa_45, tapaluokka: nimitapa_4, äs: aä, perusmuoto: "minen", jatko: @jatko_nen];
+[alku: "mise",  luokka: nimitapa_45, tapaluokka: nimitapa_4, äs: aä, perusmuoto: "minen", jatko: @jatko_se];
+[alku: "mis",   luokka: nimitapa_45, tapaluokka: nimitapa_4, äs: aä, perusmuoto: "minen", jatko: @jatko_s];
 
 
 # Viides nimitapa: puhu+maisillaan, teke+mäisillään.
 #
-[alku: "maisilla", luokka: nimitapa_5, äs: a, perusmuoto: "maisilla", jatko: <omistusliite>];
-[alku: "mäisillä", luokka: nimitapa_5, äs: ä, perusmuoto: "mäisillä", jatko: <omistusliite>];
+[alku: "maisilla", luokka: nimitapa_45, tapaluokka: nimitapa_5, äs: a, perusmuoto: "maisilla", jatko: <omistusliite>];
+[alku: "mäisillä", luokka: nimitapa_45, tapaluokka: nimitapa_5, äs: ä, perusmuoto: "mäisillä", jatko: <omistusliite>];
 
 define @jatko_vE1 :=
        <omanto_n, osanto_A, olento_nA, tulento_ksi,
