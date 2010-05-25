@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                 2006-2009 Harri Pitkänen (hatapitk@iki.fi)
+#                 2006-2010 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -51,7 +51,7 @@
 # WSOY, Juva 1983
 # ISBN 951-0-11633-5
 
-define @yhdyssana := @nimisana + <laatusana, tavuviiva>;
+define @yhdyssana := <nimisana, laatusana, tavuviiva>;
 
 define @sijan_jatko := <tavuviiva, liitesana, loppu>;
 define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
