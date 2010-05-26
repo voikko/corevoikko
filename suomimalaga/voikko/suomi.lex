@@ -1245,7 +1245,7 @@ define @jatko_ks := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
 
 define @jatko_vastaus := <liitesana, osanto_tA, omanto_ten, loppu> + @yhdyssana;
 
-define @jatko_vastaukse := @jatko_de + @jatko_te + <johdin_llinen>;
+define @jatko_vastaukse := @jatko_de + @jatko_te;
 
 [alku: "us",   luokka: johdin_Us_ksen, äs: a, jatko: @jatko_vastaus,   perusmuoto: "us"];
 [alku: "ys",   luokka: johdin_Us_ksen, äs: ä, jatko: @jatko_vastaus,   perusmuoto: "ys"];

@@ -1456,8 +1456,7 @@ allo_rule generate_allos ($tietue):
                                           [osanto_tA: "min"],
                                           sisätulento_Vn,
                                           "pimä", "min") +
-                                [johdin_tOn:       "pimä",
-                                 johdin_UUs:       "pim"] +
+                                [johdin_UUs:       "pim"] +
                                 monikko7 ("pimä", "pim", "pim",
                                           [omanto_ien: "pim", omanto_in: "pimä"],
                                           [osanto_iA: "pim"],
@@ -1757,9 +1756,7 @@ allo_rule generate_allos ($tietue):
                                 yksikkö8 ("nte", "s", "nte", "nne",
                                           [osanto_ttA: ""], sisätulento_Vn,
                                           "nne", "s") +
-                                [johdin_tOn:      "nne",
-
-                                 nimentö_t: "nne",
+                                [nimentö_t: "nne",
                                  omanto_ien: "ns",
                                  osanto_iA: "ns",
                                  olento_inA: "ns",
@@ -1777,7 +1774,6 @@ allo_rule generate_allos ($tietue):
                                 yksikkö8 ("nte", "t", "nte", "nne",
                                           [osanto_ttA: ""], sisätulento_Vn,
                                           "nne", "t") +
-                                [johdin_tOn:      "nne"] +
                                 monikko7 ("nne", "ns", "ns",
                                           [omanto_ien: "ns", omanto_ten: "n"],
                                           [osanto_iA: "ns"],
@@ -2046,8 +2042,6 @@ allo_rule generate_allos ($tietue):
                                 yksikkö8 ("e", "en", "e", "e",
                                           [osanto_tA: ""], sisätulento_Vn,
                                           "e", "") +
-                                [johdin_tOn:       "e"] +
-
                                 monikko7 ("e", "", "",
                                           [omanto_ien: "", omanto_ten: ""],
                                           [osanto_iA: ""],
