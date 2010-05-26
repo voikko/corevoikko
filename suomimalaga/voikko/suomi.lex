@@ -1100,7 +1100,7 @@ define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
                      sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
                      ulkopaikallissija_llA,
                      vajanto_ttA,
-                     nimentö_t, omanto_in, johdin_tOn, johdin_llinen>;
+                     nimentö_t, omanto_in, johdin_tOn>;
 
 # Puno+ma, teke+mä.
 #
@@ -1113,8 +1113,8 @@ define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
 
 define @jatko_tOn := <liitesana, loppu, osanto_tA, omanto_ten, olento_nA>;
 
-[alku: "ton", luokka: johdin_tOn, äs: a, jatko: @jatko_tOn, perusmuoto: "ton"];
-[alku: "tön", luokka: johdin_tOn, äs: ä, jatko: @jatko_tOn, perusmuoto: "tön"];
+[alku: "ton", luokka: johdin_tOn, äs: a, kielto: yes, jatko: @jatko_tOn, perusmuoto: "ton"];
+[alku: "tön", luokka: johdin_tOn, äs: ä, kielto: yes, jatko: @jatko_tOn, perusmuoto: "tön"];
 
 
 define @jatko_ttOmA := <omistusliite, omanto_n, osanto_A, olento_nA, tulento_ksi,
@@ -1123,20 +1123,20 @@ define @jatko_ttOmA := <omistusliite, omanto_n, osanto_A, olento_nA, tulento_ksi
                         vajanto_ttA, kerronto_sti, voittoaste,
                         nimentö_t, omanto_in>;
 
-[alku: "ttoma", luokka: johdin_tOn, äs: a, jatko: @jatko_ttOmA, perusmuoto: "ton"];
-[alku: "ttömä", luokka: johdin_tOn, äs: ä, jatko: @jatko_ttOmA, perusmuoto: "tön"];
+[alku: "ttoma", luokka: johdin_tOn, äs: a, kielto: yes, jatko: @jatko_ttOmA, perusmuoto: "ton"];
+[alku: "ttömä", luokka: johdin_tOn, äs: ä, kielto: yes, jatko: @jatko_ttOmA, perusmuoto: "tön"];
 
 define @jatko_ttOm := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
                        sisätulento_iin,
                        ulkopaikallissija_illA,
                        vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
 
-[alku: "ttom", luokka: johdin_tOn, äs: a, jatko: @jatko_ttOm, perusmuoto: "ton"];
-[alku: "ttöm", luokka: johdin_tOn, äs: ä, jatko: @jatko_ttOm, perusmuoto: "tön"];
+[alku: "ttom", luokka: johdin_tOn, äs: a, kielto: yes, jatko: @jatko_ttOm, perusmuoto: "ton"];
+[alku: "ttöm", luokka: johdin_tOn, äs: ä, kielto: yes, jatko: @jatko_ttOm, perusmuoto: "tön"];
 
 
-[alku: "ttom", luokka: johdin_tOn, äs: a, jatko: <johdin_UUs>, perusmuoto: "ttom"];
-[alku: "ttöm", luokka: johdin_tOn, äs: ä, jatko: <johdin_UUs>, perusmuoto: "ttöm"];
+[alku: "ttom", luokka: johdin_tOn, äs: a, kielto: yes, jatko: <johdin_UUs>, perusmuoto: "ttom"];
+[alku: "ttöm", luokka: johdin_tOn, äs: ä, kielto: yes, jatko: <johdin_UUs>, perusmuoto: "ttöm"];
 
 
 [alku: "-", luokka: tavuviiva, äs: aä, jatko: @yhdyssana + <loppu>];  # Linja-auto.
@@ -1151,7 +1151,7 @@ define @jatko_ntA := <omistusliite, liitesana, loppu, osanto_A, olento_nA,
 
 define @jatko_nnA := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
                       ulkopaikallissija_llA,
-                      vajanto_ttA, nimentö_t, johdin_tOn, johdin_llinen>;
+                      vajanto_ttA, nimentö_t, johdin_tOn>;
 
 define @jatko_ntO := <omanto_jen, osanto_jA, olento_inA, sisätulento_ihin, seuranto_ine>;
 
@@ -1180,7 +1180,7 @@ define @jatko_nti := <omistusliite, liitesana, loppu, osanto_A, olento_nA,
 define @jatko_nni := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
                       ulkopaikallissija_llA,
                       vajanto_ttA, voittoaste, johdin_tOn,
-                      johdin_llinen, nimentö_t>;
+                      nimentö_t>;
 
 define @jatko_nte := <osanto_jA, olento_inA, sisätulento_ihin, seuranto_ine>;
 
@@ -1202,7 +1202,7 @@ define @jatko_Ut := <osanto_tA>;
 define @jatko_te := <omistusliite, olento_nA, sisätulento_Vn>;
 define @jatko_de := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
                      ulkopaikallissija_llA, vajanto_ttA,
-                     johdin_llinen, johdin_tOn, nimentö_t>;
+                     johdin_tOn, nimentö_t>;
 define @jatko_ks := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
                      sisätulento_iin,
                      ulkopaikallissija_illA,
@@ -1258,9 +1258,9 @@ define @jatko_vastaukse := @jatko_de + @jatko_te;
 
 
 # Juhla => juhlallinen
-[alku: "llinen", luokka: johdin_llinen, äs: aä, perusmuoto: "llinen", jatko: <liitesana, loppu>];
-[alku: "llise",  luokka: johdin_llinen, äs: aä, perusmuoto: "llinen" ,jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "llis",   luokka: johdin_llinen, äs: aä, perusmuoto: "llinen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
+[alku: "llinen", luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen", jatko: <liitesana, loppu>];
+[alku: "llise",  luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen" ,jatko: @jatko_se + <kerronto_sti, voittoaste>];
+[alku: "llis",   luokka: johdin_tOn, äs: aä, kielto: no, perusmuoto: "llinen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 
 # Juhla => juhlainen.
 [alku: "inen", luokka: johdin_inen, äs: aä, perusmuoto: "inen", jatko: <liitesana, loppu>];
@@ -1319,7 +1319,7 @@ define @jatko_jA :=
    sisäeronto_stA, sisätulento_Vn, ulkopaikallissija_llA,
    vajanto_ttA, kerronto_sti,
    nimisana, laatusana,
-   johdin_tOn, johdin_tAr, johdin_llinen, nimentö_t, omanto_in,
+   johdin_tOn, johdin_tAr, nimentö_t, omanto_in,
    johdin_mAinen, liitesana, loppu>;
 
 

@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                 2006-2008 Harri Pitkänen (hatapitk@iki.fi)
+#                 2006-2010 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -451,7 +451,6 @@ allo_rule generate_allos ($tietue):
                                           "je", "i") +
                                 [johdin_tOn:       "je",
                                  johdin_Us:        "je",
-                                 johdin_llinen:    "je",
                                  johdin_lAinen:    "i",   # Ei veli+lainen.
                                  johdin_mAinen:    "i",
                                  johdin_inen:      "j"] +
@@ -502,7 +501,6 @@ allo_rule generate_allos ($tietue):
                                  kerronto_sti:    "mi",
                                  voittoaste:      "mi",
                                  johdin_tOn:      "mi",
-                                 johdin_llinen:   "mi",
                                  johdin_lAinen:   "pe",
                                  johdin_mAinen:   "pi",
                                  johdin_inen:     "mi",
@@ -540,8 +538,7 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_Vn,
                                           "e", "e") +
                                 [johdin_tOn:      "e",
-                                 johdin_Us:       "e",
-                                 johdin_llinen:   "e"] +
+                                 johdin_Us:       "e"] +
 # Ei tarvita johdosta johdin_inen. HV 13.5.2006. Eikä johdin_lAinen. HV 13.7.2006.
 # Eikä johdin_mAinen. HV 24.7.2006.
                                 monikko7 ("e", "", "",
@@ -855,7 +852,6 @@ allo_rule generate_allos ($tietue):
                                 vajanto_ttA:      A($tietue),
 
                                 johdin_tOn:       A($tietue),
-                                johdin_llinen:    A($tietue),
                                 johdin_inen:      A($tietue),
                                 nimentö_t:        A($tietue),
                                 omanto_iT:        O($tietue),
@@ -888,7 +884,6 @@ allo_rule generate_allos ($tietue):
                                           A($tietue), A($tietue)) +
                                 [johdin_tOn:       A($tietue),
                                  johdin_Us:        "",
-                                 johdin_llinen:    A($tietue),
                                  johdin_inen:      A($tietue)] +
                                 monikko7 (A($tietue), "", "",
                                           [omanto_iT: "",
@@ -923,7 +918,6 @@ allo_rule generate_allos ($tietue):
                                           eA($tietue), eA($tietue)) +
                                 [johdin_tOn:      eA($tietue),
                                  johdin_Us:       "e",
-                                 johdin_llinen:   eA($tietue),
                                  johdin_inen:     eA($tietue)] +
                                 monikko7 (eA($tietue), "e", "e",
                                           [omanto_iT:  "e",
@@ -949,7 +943,6 @@ allo_rule generate_allos ($tietue):
   elseif (harteet in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
                                 [johdin_tOn:     "e",
-                                 johdin_llinen:  "e",
                                  johdin_inen:    ""] +
 # Ei tarvita johdosta lAinen. HV 13.7.2006.
                                 monikko7 ("e", "", "",
@@ -1026,7 +1019,6 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_hVn,
                                           "i", "i") +
                                 [johdin_tOn:       "i",
-                                 johdin_llinen:    "i",
                                  johdin_lAinen:    "i",
                                  johdin_mAinen:    "i",
                                  johdin_inen:      ""] +
@@ -1078,7 +1070,6 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_hVn,
                                           "", "") +
                                 [johdin_tOn:       "",
-                                 johdin_llinen:    "",
                                  johdin_mAinen:    "",
                                  johdin_inen:      ""] +
                                 monikko7 ("", "", "",
@@ -1099,7 +1090,6 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_hVn,
                                           "", "") +
                                 [johdin_tOn:      "",
-                                 johdin_llinen:   "",
                                  johdin_mAinen:   "",
                                  johdin_inen:     ""] +
                                 monikko7 ("", "", "",
@@ -1116,7 +1106,6 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_hVn,
                                           "'", "") +
                                 [johdin_tOn:      "'",
-                                 johdin_llinen:   "'",
                                  johdin_inen:     "'",
 				 liitesana:       "'"] +
                                 monikko7 ("'", "'", "'",
@@ -1160,7 +1149,6 @@ allo_rule generate_allos ($tietue):
                                           [osanto_A: "te"],
                                           sisätulento_Vn, "de", "di") +
                                 [johdin_tOn:    "de",
-                                 johdin_llinen: "de",
                                  johdin_lAinen: "te",
                                  johdin_mAinen: "ti",
                                  johdin_inen:   "t"] +
@@ -1177,7 +1165,6 @@ allo_rule generate_allos ($tietue):
                                           [osanto_tA: "n"],
                                           sisätulento_Vn, "me", "mi") +
                                 [johdin_tOn:    "me",
-                                 johdin_llinen: "me",
                                  johdin_mAinen: "mi",
                                  johdin_inen:   "m"] +
                                 monikko7 ("me", "m", "m",
@@ -1194,7 +1181,6 @@ allo_rule generate_allos ($tietue):
                                           [osanto_A: "me", osanto_tA: "n"],
                                           sisätulento_Vn, "me", "mi") +
                                 [johdin_tOn:    "me",
-                                 johdin_llinen: "me",
 				 johdin_lAinen: "me",
                                  johdin_mAinen: "mi",
                                  johdin_inen:   "m"] +
@@ -1213,7 +1199,6 @@ allo_rule generate_allos ($tietue):
                                           "e", "i") +
                                 [johdin_tOn:      "e",
                                  johdin_Us:       "e",
-                                 johdin_llinen:   "e",
                                  johdin_mAinen:   "i",
                                  johdin_inen:     ""] +
                                 monikko7 ("e", "", "",
@@ -1232,7 +1217,6 @@ allo_rule generate_allos ($tietue):
                                           "e", "i") +
                                 [johdin_tOn:       "e",
                                  johdin_UUs:       "",
-                                 johdin_llinen:    "e",
                                  johdin_mAinen:    "i",
                                  johdin_inen:      ""] +
                                 monikko7 ("e", "", "",
@@ -1323,7 +1307,6 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_Vn,
                                           "kse", "ksi") +
                                 [johdin_tOn:      "kse",
-                                 johdin_llinen:   "kse",
                                  johdin_mAinen:   "ksi",
                                  johdin_inen:     "ks"] +
                                 monikko7 ("kse", "ks", "ks",
@@ -1339,7 +1322,6 @@ allo_rule generate_allos ($tietue):
                                           [osanto_tA: "h"], sisätulento_Vn,
                                           "hde", "ksi") +
                                 [johdin_tOn:      "hde",
-                                 johdin_llinen:   "hde",
                                  johdin_mAinen:   "ksi",
                                  johdin_inen:     "ks"] +
                                 monikko7 ("hde", "ks", "ks",
@@ -1704,7 +1686,6 @@ allo_rule generate_allos ($tietue):
                                 [johdin_tOn:      "he",
                                  johdin_UUs:      "h",    # Miehyys. Miehuus on pantava sanakirjaan.
                                  johdin_Us:       "he",   # Mieheys.
-                                 johdin_llinen:   "he",   # Miehellinen
                                  johdin_mAinen:   "s"] +
 ####################                                 johdin_inen:     "hi"] + # Miehinen on jo sanastossa.
                                 monikko7 ("he", "h", "h",
@@ -1721,7 +1702,6 @@ allo_rule generate_allos ($tietue):
                                           "e","t") +
                                 [johdin_tOn:      "e",
                                  johdin_Us:       "",
-                                 johdin_llinen:   "e",
                                  johdin_mAinen:   "t",
                                  johdin_inen:     "e"] +
                                 monikko7 ("e", "", "",
@@ -1740,7 +1720,6 @@ allo_rule generate_allos ($tietue):
                                           sisätulento_seen,
                                           A($tietue), "t") +
                                 [johdin_tOn:       A($tietue),
-                                 johdin_llinen:    A($tietue),
                                  johdin_mAinen:    "t",
                                  johdin_inen:      ""] +
                                 monikko7 (A($tietue), "", "",
@@ -1789,7 +1768,6 @@ allo_rule generate_allos ($tietue):
                                           "ee", Ut($tietue)) +
                                 [johdin_tOn:       "ee",
                                  johdin_Us:        "e",    # Kuolleus.
-                                 johdin_llinen:    "ee",   # Kuolleellinen.
                                  johdin_inen:      "e"] +  # Kuolleinen.
                                 monikko7 ("ee", "e", "e",
                                           [omanto_iT: "e"],
@@ -1863,7 +1841,6 @@ allo_rule generate_allos ($tietue):
                                    ulkopaikallissija_llA: "pee",
                                    vajanto_ttA: "pee",
                                    johdin_tOn: "pee",
-                                   johdin_llinen: "pee",
                                    johdin_inen: "pe",
 
                                    nimentö_t: "pee",
@@ -1893,7 +1870,6 @@ allo_rule generate_allos ($tietue):
                                           [osanto_ttA: ""], sisätulento_seen,
                                           "i", "") +
                                 [johdin_tOn:       "i",
-                                 johdin_llinen:    "i",
                                  johdin_mAinen:    "",
                                  johdin_inen:      "i"] +
                                 monikko7 ("", "", "",
@@ -2054,8 +2030,7 @@ allo_rule generate_allos ($tietue):
                                 yksikkö8 ("", "", "", "", [osanto_tA: ""],
                                           sisätulento_hVn, "", "") +
                                 [nimentö_t:       "",
-                                 johdin_tOn:      "",
-                                 johdin_llinen:   ""]);
+                                 johdin_tOn:      ""]);
     result $i.alku, $i - alku;
 
 
@@ -3815,7 +3790,6 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   # Näitä johdoksia ei tehdä erisnimistä
   if ($tietue.luokka in <nimi, etunimi, sukunimi, paikannimi>) then
     $taivutus :=- johdin_tOn;
-    $taivutus :=- johdin_llinen;
     $taivutus :=- johdin_UUs;
     $taivutus :=- johdin_ittAin;
     $taivutus :=- voittoaste;
@@ -4119,7 +4093,6 @@ subrule koira ($tietue,
                                   $vahva_aste + A($tietue)) +
                         [johdin_tOn:       $heikko_aste + A($tietue),
                          johdin_UUs:       $vahva_aste,
-                         johdin_llinen:    $heikko_aste + A($tietue),
                          johdin_lAinen:    $vahva_aste + A($tietue),
                          johdin_mAinen:    $vahva_aste + A($tietue),
                          johdin_inen:      $vahva_aste + A($tietue)] +
@@ -4143,7 +4116,6 @@ subrule ruoka ($tietue):
                          ulkopaikallissija_llA:  "ua",
                          vajanto_ttA:      "ua",
                          johdin_tOn:       "ua",
-                         johdin_llinen:    "ua",
 # Ei tarvita johdosta johdin_inen. HV 13.5.2006. Eikä johdin_lAinen. HV 13.7.2006.
 # Eikä johdinta johdin_mAinen. HV 24.7.2006.
                          nimentö_t:        "ua"]);
@@ -4161,7 +4133,6 @@ subrule pitkä ($tietue):
                                   "tk" + A($tietue)) +
                         [johdin_tOn:    "tk" + A($tietue),
                          johdin_UUs:    "tk",
-                         johdin_llinen: "tk" + A($tietue),
                          johdin_inen:   "tk" + A($tietue)] +
                         monikko7 ("tk" + A($tietue), "tk", "tk",
                                   [omanto_ien: "tk",
@@ -4192,7 +4163,6 @@ subrule apila ($tietue, $yksikkö, $monikko):
                                   sisätulento_Vn,
                                   $yksikkö, $yksikkö) +
                         [johdin_tOn:    $yksikkö,    # Apilaton.
-                         johdin_llinen: $yksikkö,    # Apilallinen.
                          johdin_lAinen: $yksikkö,    # Apilalainen.
                          johdin_mAinen: $yksikkö,    # Apilamainen.
                          johdin_inen:   $yksikkö] +  # Apilainen.
@@ -4218,7 +4188,6 @@ subrule laatikko ($tietue,
                                   $yksikön_vahva_aste) +
                         [johdin_tOn:      $yksikön_heikko_aste,
                          johdin_UUs:      eka_kirjain ($yksikön_vahva_aste),
-                         johdin_llinen:   $yksikön_heikko_aste,
                          johdin_lAinen:   $yksikön_vahva_aste,
                          johdin_mAinen:   $yksikön_vahva_aste,
                          johdin_inen:     $yksikön_vahva_aste] +
@@ -4269,7 +4238,6 @@ subrule apaja ($tietue):
                                   sisätulento_Vn,
                                   A($tietue), A($tietue)) +
                         [johdin_tOn:       A($tietue),
-                         johdin_llinen:    A($tietue),
                          johdin_lAinen:    A($tietue),
                          johdin_mAinen:    A($tietue),
                          johdin_inen:      A($tietue)] +
@@ -4332,7 +4300,6 @@ subrule hontelo ($tietue):
                                   O($tietue)) +
                         [johdin_tOn:    O($tietue), 
                          johdin_Us:     U($tietue),
-                         johdin_llinen: O($tietue),
                          johdin_mAinen: O($tietue),
                          johdin_inen:   O($tietue)] +
                         monikko7 (O($tietue), O($tietue), O($tietue),
@@ -4363,7 +4330,6 @@ subrule risti ($tietue, $vahva_aste, $heikko_aste):
                          voittoaste:      $heikko_aste + "i",
                          johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
-                         johdin_llinen:   $heikko_aste + "i",
                          johdin_lAinen:   $vahva_aste  + "i",
                          johdin_mAinen:   $vahva_aste  + "i",
                          johdin_inen:     $vahva_aste]
@@ -4396,7 +4362,6 @@ subrule siisti ($tietue, $vahva_aste, $heikko_aste):
                          voittoaste:      $heikko_aste + "i",
                          johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "e",
-                         johdin_llinen:   $heikko_aste + "i",
                          johdin_inen:     $vahva_aste]
                         + yhdyssana ($vahva_aste + "i")
                         + monikko7 ($heikko_aste + "i",
@@ -4418,7 +4383,6 @@ subrule paperi_banaali ($tietue, $vahva_aste, $heikko_aste):
                                   $heikko_aste + "i", $vahva_aste  + "i") +
                         [johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
-                         johdin_llinen:   $heikko_aste + "i",
                          johdin_lAinen:   $vahva_aste  + "i",
                          johdin_mAinen:   $vahva_aste  + "i",
                          johdin_inen:     $vahva_aste] +
@@ -4443,7 +4407,6 @@ subrule edam ($tietue, $vahva_aste, $heikko_aste):
                                   $heikko_aste + "i", $vahva_aste + "i") +
                         [johdin_tOn:      $heikko_aste + "i",
                          johdin_Us:       $vahva_aste  + "i",
-                         johdin_llinen:   $heikko_aste + "i",
                          johdin_lAinen:   $vahva_aste + "i",
                          johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste] +
@@ -4467,7 +4430,6 @@ subrule sisar ($tietue, $vahva_aste, $heikko_aste):
                                   sisätulento_Vn,
                                   $heikko_aste, $heikko_aste) +
                         [johdin_tOn:      $vahva_aste + "e",
-                         johdin_llinen:   $vahva_aste + "e",
                          johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($vahva_aste + "e", $vahva_aste, $vahva_aste,
@@ -4504,7 +4466,6 @@ subrule hapan_uistin ($tietue, $vahva_aste, $heikko_aste, $ääntiö):
                                   $vahva_aste + $ääntiö, $heikko_aste) +
                         [johdin_tOn:      $vahva_aste + $ääntiö,
                          johdin_UUs:      $vahva_aste,
-                         johdin_llinen:   $vahva_aste + $ääntiö,
                          johdin_mAinen:   $heikko_aste,
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($vahva_aste + $ääntiö,
@@ -4552,7 +4513,6 @@ subrule kalsium ($tietue, $vahva_aste, $heikko_aste):
                                   sisätulento_Vn,
                                   $vahva_aste + "i", $vahva_aste) +
                         [johdin_tOn:      $heikko_aste + "e",
-                         johdin_llinen:   $heikko_aste + "e",
                          johdin_lAinen:   $vahva_aste + "i",
                          johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste] +
@@ -4574,7 +4534,6 @@ subrule poppi ($tietue, $vahva_aste, $heikko_aste):
                                   sisätulento_Vn,
                                   $vahva_aste + "i", $vahva_aste + "i") +
                         [johdin_tOn:      $heikko_aste + "i",
-                         johdin_llinen:   $heikko_aste + "i",
                          johdin_mAinen:   $vahva_aste + "i",
                          johdin_inen:     $vahva_aste + "i"] +
                         monikko7 ($heikko_aste + "i",
@@ -4599,7 +4558,6 @@ subrule nalle ($tietue, $vahva_aste, $heikko_aste):
                                           $vahva_aste, $vahva_aste) +
                         [johdin_tOn:      $heikko_aste,
                          johdin_Us:       $vahva_aste,
-                         johdin_llinen:   $heikko_aste,
                          johdin_lAinen:   $vahva_aste,
                          johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste] +
@@ -4639,7 +4597,6 @@ subrule raaka ($tietue,
                                   $yksikön_vahva_aste + A($tietue)) +
                         [johdin_tOn:       $yksikön_heikko_aste + A($tietue),
                          johdin_UUs:       $yksikön_vahva_aste,
-                         johdin_llinen:    $yksikön_heikko_aste + A($tietue),
                          johdin_lAinen:    $yksikön_vahva_aste + A($tietue),
                          johdin_mAinen:    $yksikön_vahva_aste + A($tietue),
                          johdin_inen:      $yksikön_vahva_aste + A($tietue)] +
@@ -4697,7 +4654,6 @@ subrule piki ($tietue,
                           johdin_inen:      $yksikön_vahva_aste,
                           johdin_ittain:    $monikon_heikko_aste,
                           johdin_lAinen:    $yksikön_vahva_aste  + "e",
-                          johdin_llinen:    $yksikön_heikko_aste + "e",
                           johdin_mAinen:    $yksikön_vahva_aste  + "i",
                           johdin_tOn:       $yksikön_heikko_aste + "e",
                           johdin_Us:        $yksikön_vahva_aste  + "i"]
@@ -4714,7 +4670,6 @@ subrule kumpi ($tietue, $vahva_aste, $heikko_aste, $ääntiö):
                                   sisätulento_Vn,
                                   $heikko_aste + $ääntiö, $vahva_aste  + "i") +
                         [johdin_tOn:      $heikko_aste + $ääntiö,
-                         johdin_llinen:   $heikko_aste + $ääntiö,
 			 johdin_lAinen:   $vahva_aste + "e",
                          johdin_inen:     $vahva_aste] +
                         monikko7 ($heikko_aste + $ääntiö,
@@ -4734,7 +4689,6 @@ subrule vapaa ($tietue, $ääntiö):
                                   $ääntiö, $ääntiö) +
                         [johdin_tOn:       $ääntiö,
                          johdin_Us:        "",
-                         johdin_llinen:    $ääntiö,
                          johdin_lAinen:    $ääntiö,
                          johdin_mAinen:    $ääntiö,
                          johdin_inen:      "",
@@ -4762,7 +4716,6 @@ subrule kamee ($tietue, $ääntiö):
                                    sisätulento_hVn: $ääntiö],
                                   $ääntiö, $ääntiö) +
                         [johdin_tOn:       $ääntiö,
-                         johdin_llinen:    $ääntiö,
                          johdin_lAinen:    $ääntiö,
                          johdin_mAinen:    $ääntiö,
                          johdin_inen:      ""] +
@@ -4782,7 +4735,6 @@ subrule tee ($tietue, $ääntiö):
                                   [sisätulento_hVn: $ääntiö],
                                   $ääntiö, $ääntiö) +
                         [johdin_tOn:       $ääntiö,
-                         johdin_llinen:    $ääntiö,
                          johdin_mAinen:    $ääntiö] +
 # Ei tarvita johdosta johdin_inen. HV 13.5.2006. "Teinen".
                         monikko7 ($ääntiö, "", "",
@@ -4799,7 +4751,6 @@ subrule maa ($tietue, $ääntiö):
                                   [osanto_tA: $ääntiö], sisätulento_hVn,
                                   $ääntiö, $ääntiö) +
                         [johdin_tOn:      $ääntiö,
-                         johdin_llinen:   $ääntiö,
                          johdin_lAinen:   $ääntiö,
                          johdin_mAinen:   $ääntiö,
                          johdin_inen:     "",
@@ -4824,7 +4775,6 @@ subrule tiu ($tietue, $ääntiö):
                                   [osanto_tA: $ääntiö], sisätulento_hVn,
                                   $ääntiö, $ääntiö) +
                         [johdin_tOn:      $ääntiö,
-                         johdin_llinen:   $ääntiö,
                          johdin_mAinen:   $ääntiö]);
 # Ei tarvita johdosta johdin_inen. HV 13.5.2006. "Tiuinen".
 end;
@@ -4837,7 +4787,6 @@ subrule tosi ($tietue):
                                   "de", "si") +
                         [johdin_tOn:      "de",
                          johdin_Us:       "te",
-                         johdin_llinen:   "de",
                          johdin_inen:     "t"] +
                         monikko7 ("de", "s", "s",
                                   [omanto_ien: "s"],
@@ -4854,7 +4803,6 @@ subrule kansi ($tietue, $vahva_aste, $heikko_aste, $inen):
                                   [osanto_ttA: ""], sisätulento_Vn,
                                   $heikko_aste + "e", "si") +
                         [johdin_tOn:      $heikko_aste + "e",
-                         johdin_llinen:   $heikko_aste + "e",
                          johdin_mAinen:   "si",
                          johdin_inen:     $inen,
 
@@ -4882,7 +4830,6 @@ subrule hame ($tietue, $nimentö_osanto, $yksikkö, $monikko):
                                   $yksikkö, $nimentö_osanto) +
                         [johdin_tOn:       $yksikkö,
                          johdin_Us:        $monikko,
-                         johdin_llinen:    $yksikkö,
                          johdin_lAinen:    $nimentö_osanto,
                          johdin_mAinen:    $nimentö_osanto,
                          johdin_inen:      $monikko] +
@@ -4898,7 +4845,6 @@ end;
 subrule alkeet ($tietue):
   return taivutuskaava ($tietue,
                         [johdin_tOn:    "e",
-                         johdin_llinen: "e",
                          johdin_inen:   ""] +
 # Ei tarvita johdinta johdin_lAinen ("alkeetlainen"). HV 13.7.2006.
 # Eikä johdinta johdin_mAinen ("alkeetmainen"). HV 24.7.2006.
@@ -4917,7 +4863,6 @@ subrule suo ($tietue, $yksikkö, $monikko):
                                   [osanto_tA: $yksikkö], sisätulento_hVn,
                                   $yksikkö, $yksikkö) +
                         [johdin_tOn:       $yksikkö,
-                         johdin_llinen:    $yksikkö,
                          johdin_lAinen:    $yksikkö,
                          johdin_mAinen:    $yksikkö,
                          johdin_inen:      $monikko,
@@ -4942,7 +4887,6 @@ subrule lapsi ($tietue):
                                   [osanto_tA: "s"], sisätulento_Vn,
                                   "pse", "psi") +
                         [johdin_tOn:      "pse",
-                         johdin_llinen:   "pse",
                          johdin_mAinen:   "psi",
                          johdin_inen:     "ps",
 
@@ -4967,7 +4911,6 @@ subrule veitsi ($tietue):
                                   [osanto_tA: "s"], sisätulento_Vn,
                                   "tse", "tsi") +
                         [johdin_tOn:      "tse",
-                         johdin_llinen:   "tse",
                          johdin_mAinen:   "tsi",
                          johdin_inen:     "ts",
 
@@ -4992,7 +4935,6 @@ subrule kalleus ($tietue):
                                   [osanto_ttA: ""], sisätulento_Vn,
                                   "de", "s") +
                         [johdin_tOn:      "de",
-                         johdin_llinen:   "de",
                          johdin_mAinen:   "s",
                          johdin_lAinen:   "te",
                          johdin_inen:     "ks",
@@ -5018,7 +4960,6 @@ subrule vieras ($tietue, $vahva_aste, $heikko_aste, $monikko, $johdin_Us):
                                   $vahva_aste, $heikko_aste) +
                         [johdin_tOn:        $vahva_aste,
                          johdin_Us:         $johdin_Us,
-                         johdin_llinen:     $vahva_aste,
                          johdin_mAinen:     $heikko_aste,
                          johdin_inen:       $monikko,
 
@@ -5056,7 +4997,6 @@ subrule kauris ($tietue, $kerake):
                                   $vahva_aste, "is") +
                         [johdin_tOn:        $vahva_aste,
                          johdin_Us:         $monikko,
-                         johdin_llinen:     $vahva_aste,
                          johdin_mAinen:     "is",
                          johdin_inen:       $kerake + "i",
 
@@ -5099,7 +5039,6 @@ subrule vastaus ($tietue):
                                   [osanto_tA: "s"], sisätulento_Vn,
                                   "kse", "s") +
                         [johdin_tOn:      "kse",
-                         johdin_llinen:   "kse",
                          johdin_lAinen:   "s",
                          johdin_mAinen:   "s",
                          johdin_inen:     "ks",
@@ -5128,8 +5067,7 @@ subrule kaunis ($tietue, $kerake, $johdin_Us):
                                   [osanto_tA: "is"], sisätulento_seen,
                                   $vahva_aste, "is") +
                         [johdin_tOn:        $vahva_aste,
-                         johdin_Us:         $johdin_Us,
-                         johdin_llinen:     $vahva_aste] +
+                         johdin_Us:         $johdin_Us] +
 # Ei tarvita johdosta johdin_inen. HV 13.5.2006.
                         monikko7 ($vahva_aste, $monikko, $monikko,
                                   [omanto_iT:  $monikko,
@@ -5212,7 +5150,6 @@ subrule taival ($tietue, $vahva_aste, $heikko_aste):
                                   sisätulento_Vn,
                                   $vahva_aste + "e", $heikko_aste) +
                         [johdin_tOn:      $vahva_aste + "e",
-                         johdin_llinen:   $vahva_aste + "e",
                          johdin_mAinen:   $heikko_aste,
                          johdin_inen:     $vahva_aste + "e",
 
@@ -5245,7 +5182,6 @@ subrule taival ($tietue, $vahva_aste, $heikko_aste):
                         + yhdyssana ($vahva_aste + "e") +
 
                         [johdin_tOn:       $vahva_aste + "ee",
-                         johdin_llinen:    $vahva_aste + "ee",
                          johdin_mAinen:    $vahva_aste + "e",
                          johdin_inen:      $vahva_aste,
 
@@ -5354,7 +5290,6 @@ subrule nainen ($tietue):
                            voittoaste:       "se",
                            johdin_tOn:       "se",
                            johdin_UUs:       "s",
-                           johdin_llinen:    "se",
                            johdin_lAinen:    "s",
                            johdin_mAinen:    "s",
                            nimentö_t:        "se",
@@ -5389,7 +5324,6 @@ subrule nainen ($tietue):
                            voittoaste:       "se",
                            johdin_tOn:       "se",
                            johdin_UUs:       "s",
-                           johdin_llinen:    "se",
                            johdin_lAinen:    "s",
                            johdin_mAinen:    "s",
                            johdin_inen:      "s",
@@ -5424,7 +5358,6 @@ subrule vihanta ($tietue, $vahva_aste, $heikko_aste):
                                   $vahva_aste + A($tietue)) +
                         [johdin_tOn:      $heikko_aste + A($tietue),
                          johdin_UUs:      $heikko_aste,
-                         johdin_llinen:   $heikko_aste + A($tietue),
                          johdin_inen:     $vahva_aste + A($tietue)] +
                         monikko7 ($heikko_aste + A($tietue),
                                   $vahva_aste, $heikko_aste,
@@ -6280,7 +6213,6 @@ subrule yksikkö_autio ($tietue, $lisä, $osannot):
                      sisätulento_Vn,
                      $lisä, $lisä) +
            [johdin_tOn:    $lisä,
-            johdin_llinen: $lisä,
             johdin_mAinen: $lisä,
             johdin_inen:   $lisä];
   else
@@ -6293,7 +6225,6 @@ subrule yksikkö_autio ($tietue, $lisä, $osannot):
                      sisätulento_Vn,
                      $lisä, $lisä) +
            [johdin_tOn:    $lisä,
-            johdin_llinen: $lisä,
             johdin_lAinen: $lisä,
             johdin_inen:   $lisä,
             $johdin: ""];
@@ -6308,7 +6239,6 @@ subrule yksikkö_tuohi ($lisä1, $lisä2):
                     [osanto_tA: ""], sisätulento_Vn,
                    $lisä1, $lisä2) +
          [johdin_tOn:    $lisä1,
-          johdin_llinen: $lisä1,
           johdin_lAinen: $lisä1,
           johdin_mAinen: $lisä2,
           johdin_inen: ""];
@@ -6330,7 +6260,6 @@ subrule yksikkö_meri ($e, $i):
           kerronto_sti:    $e,
           voittoaste:      $e,
           johdin_tOn:      $e,
-          johdin_llinen:   $e,
           johdin_inen:     ""]
          + yhdyssana ($i);
 end;
@@ -6353,7 +6282,6 @@ subrule yksikkö_valo ($vahva_aste, $heikko_aste):
           voittoaste:      $heikko_aste,
           johdin_tOn:      $heikko_aste, 
           johdin_Us:       $vahva_aste,
-          johdin_llinen:   $heikko_aste,
           johdin_lAinen:   $vahva_aste,
           johdin_mAinen:   $vahva_aste,
           johdin_inen:     $vahva_aste]
@@ -6616,7 +6544,6 @@ subrule kiiski ($tietue):
                          seuranto_ine:     "",
                          keinonto_in:      "",
                          johdin_tOn:       "e",
-                         johdin_llinen:    "e",
                          johdin_ittain:    ""]);
 end;
 

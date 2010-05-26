@@ -263,14 +263,13 @@ tapaluokka;
 
   johdin_tAr;       # Pappi >= papitar.
   johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).
-  johdin_llinen;    # Juhla+llinen.
   johdin_lAinen;    # Kaupunki+lainen.
   johdin_mAinen;    # Kaupunki+mainen.
   johdin_mmUUs;     # Valkoise+mmuus.
   johdin_immUUs;    # Valkois+immuus.
   johdin_nlainen;   # Hyvänlainen, pahanlainen.
 
-  johdin_tOn;       # Maa+ton, pää+tön.
+  johdin_tOn;       # Maa+ton, pää+tön, maa+llinen, pää+llinen.
   johdin_Us;        # Kallis => kalle+us (kalleuden).
   johdin_UUs;       # Valkoinen => valkois+uus (valkoisuuden).
 

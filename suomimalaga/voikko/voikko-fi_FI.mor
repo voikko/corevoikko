@@ -80,7 +80,7 @@ define @johtimet_nimisana_teonsanasta :=
 
 define @johtimet_laatusana_teonsanasta :=
        <johdin_tOn, johdin_vA, johdin_vE, johdin_tAvA, johdin_ttAvA,
-        johdin_llinen, johdin_stU, johdin_ttU> + @johdin_nUt + @johdin_tU;
+        johdin_stU, johdin_ttU> + @johdin_nUt + @johdin_tU;
 
 define @johtimet_seikkasana_teonsanasta := <johdin_ittAin>; # esim. "pamahduksittain"
 
@@ -93,8 +93,7 @@ define @johdin_teonsanasta := @johtimet_nimisana_teonsanasta
 
 define @johtimet_nimisana_nimisanasta := <johdin_tAr, johdin_lAinen>;
 
-define @johtimet_laatusana_nimisanasta := <johdin_llinen, johdin_inen, johdin_tOn,
-                                           johdin_mAinen>;
+define @johtimet_laatusana_nimisanasta := <johdin_inen, johdin_tOn, johdin_mAinen>;
 
 define @johtimet_seikkasana_nimisanasta := <johdin_ittAin>;
 
