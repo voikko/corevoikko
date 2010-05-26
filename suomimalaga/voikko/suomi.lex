@@ -934,7 +934,7 @@ define @jatko_vE1 :=
         sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
         ulkopaikallissija_llA,
         vajanto_ttA, kerronto_sti, omistusliite, liitesana,
-        nimentö_t, omanto_in, loppu, johdin_llinen> + @yhdyssana;
+        nimentö_t, omanto_in, loppu> + @yhdyssana;
 
 define @jatko_vE2 := <voittoaste>;
 

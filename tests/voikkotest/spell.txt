@@ -503,6 +503,7 @@ juhlallisessa
 !juhlalliseton
 !kaupunkimaiseton
 !myyjämpi
+!uivallinen
 
 [sijapäätteet]
 !Erkkiän
