@@ -496,6 +496,11 @@ kissaton
 !kissatoin
 uivaa
 !uivata
+juhlallinen
+juhlallisessa
+!juhlallisellinen
+!juhlalliseton
+!kaupunkimaiseton
 
 [sijapäätteet]
 !Erkkiän
