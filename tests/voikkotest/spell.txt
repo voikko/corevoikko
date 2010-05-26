@@ -214,6 +214,7 @@ kauniina
 kauneimpina
 kaunein
 hautajaisiin
+myyjin
 
 [inen-johdokset]
 isoponttoninen
@@ -501,6 +502,7 @@ juhlallisessa
 !juhlallisellinen
 !juhlalliseton
 !kaupunkimaiseton
+!myyjämpi
 
 [sijapäätteet]
 !Erkkiän

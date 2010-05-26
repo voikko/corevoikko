@@ -1318,7 +1318,7 @@ define @jatko_jA :=
    osanto_tA, olento_nA, tulento_ksi, sisäolento_ssA,
    sisäeronto_stA, sisätulento_Vn, ulkopaikallissija_llA,
    vajanto_ttA, kerronto_sti,
-   voittoaste, nimisana, laatusana,
+   nimisana, laatusana,
    johdin_tOn, johdin_tAr, johdin_llinen, nimentö_t, omanto_in,
    johdin_mAinen, liitesana, loppu>;
 
@@ -1346,7 +1346,7 @@ define @jatko_jO_kulkija_kantaja :=
   <omanto_iT, osanto_itA, olento_inA,
    sija_monikko_1, sisätulento_ihin,
    ulkopaikallissija_illA,
-   vajanto_ittA, seuranto_ine, keinonto_in, yliaste, johdin_ittAin>;
+   vajanto_ittA, seuranto_ine, keinonto_in, johdin_ittAin>;
 
 
 
@@ -1362,7 +1362,7 @@ define @jatko_jO_kulkija_kantaja :=
 define @jatko_j_kantaja :=
   <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
    sisätulento_iin, ulkopaikallissija_illA,
-   vajanto_ittA, seuranto_ine, keinonto_in, yliaste>;
+   vajanto_ittA, seuranto_ine, keinonto_in>;
 
 
 [alku: "j", luokka: johdin_jA_kantaja, äs: aä, perusmuoto: "j", jatko: <johdin_ittAin, johdin_UUs>];
