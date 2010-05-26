@@ -915,8 +915,7 @@ define @jatko_s := <osanto_tA, omanto_ien, omanto_ten,
                     osanto_iA, olento_inA, sija_monikko_1, 
                     sisätulento_iin,
                     ulkopaikallissija_illA,
-                    vajanto_ittA, seuranto_ine, keinonto_in,
-                    johdin_ittAin, johdin_UUs, yliaste> + @yhdyssana;
+                    vajanto_ittA, seuranto_ine, keinonto_in> + @yhdyssana;
 
 # Neljäs nimitapa: puno+minen, puno+mise+n, puno+mis+ia.
 #
@@ -1261,12 +1260,12 @@ define @jatko_vastaukse := @jatko_de + @jatko_te + <johdin_llinen>;
 # Juhla => juhlallinen
 [alku: "llinen", luokka: johdin_llinen, äs: aä, perusmuoto: "llinen", jatko: <liitesana, loppu>];
 [alku: "llise",  luokka: johdin_llinen, äs: aä, perusmuoto: "llinen" ,jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "llis",   luokka: johdin_llinen, äs: aä, perusmuoto: "llinen", jatko: @jatko_s];
+[alku: "llis",   luokka: johdin_llinen, äs: aä, perusmuoto: "llinen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 
 # Juhla => juhlainen.
 [alku: "inen", luokka: johdin_inen, äs: aä, perusmuoto: "inen", jatko: <liitesana, loppu>];
 [alku: "ise",  luokka: johdin_inen, äs: aä, perusmuoto: "inen", jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "is",   luokka: johdin_inen, äs: aä, perusmuoto: "inen", jatko: @jatko_s];
+[alku: "is",   luokka: johdin_inen, äs: aä, perusmuoto: "inen", jatko: @jatko_s + <johdin_UUs, yliaste>];
 
 # Juhla => juhlittain.
 [alku: "ittain", luokka: johdin_ittAin, äs: a, perusmuoto: "ittain", jatko: <liitesana, loppu>];
@@ -1275,18 +1274,18 @@ define @jatko_vastaukse := @jatko_de + @jatko_te + <johdin_llinen>;
 # Juhla => juhla+lainen. Parempi esimerikki: kaupunki+lainen.
 [alku: "lainen", luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: <liitesana, loppu>];
 [alku: "laise",  luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "lais",   luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: @jatko_s];
+[alku: "lais",   luokka: johdin_lAinen, äs: a, perusmuoto: "lainen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 [alku: "läinen", luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: <liitesana, loppu>];
 [alku: "läise",  luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "läis",   luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: @jatko_s];
+[alku: "läis",   luokka: johdin_lAinen, äs: ä, perusmuoto: "läinen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 
 # Juhla => juhla+mainen.
 [alku: "mainen", luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: <liitesana, loppu>];
 [alku: "maise",  luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "mais",   luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: @jatko_s];
+[alku: "mais",   luokka: johdin_mAinen, äs: a, perusmuoto: "mainen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 [alku: "mäinen", luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: <liitesana, loppu>];
 [alku: "mäise",  luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_se + <kerronto_sti, voittoaste>];
-[alku: "mäis",   luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_s];
+[alku: "mäis",   luokka: johdin_mAinen, äs: ä, perusmuoto: "mäinen", jatko: @jatko_s + <johdin_ittAin, johdin_UUs, yliaste>];
 
 
 # Hyvän+lainen, paha+nlainen. Kentän äs täytyy olla aä, koska ä:llistä muotoa ei ole.
