@@ -1101,7 +1101,7 @@ define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
                      osanto_A, osanto_tA, olento_nA, tulento_ksi,
                      sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
                      ulkopaikallissija_llA,
-                     vajanto_ttA, ##### voittoaste,
+                     vajanto_ttA,
                      nimentö_t, omanto_in, johdin_tOn, johdin_llinen>;
 
 # Puno+ma, teke+mä.

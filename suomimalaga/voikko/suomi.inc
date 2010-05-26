@@ -54,12 +54,7 @@ define @y := "[yýÿü]";
 define @ä := "[ä]";
 define @ö := "[öøõ]";
 
-define @aä := "[aàáâãä]";
-define @uy := "[uùúûyýÿü]";
-define @oö := "[oòóôåöøõ]";  # Myös ruåtsalainen oo.
-
 define @ääntiö := "[aàáâãeèéêëœæiìíîïoòóôuùúûyýÿüåäöøõ]";
-define @kerake := "[bcdfghjklmnpqrstvwxzšžçðñþß]";
 
 define @uao := "[uùúûaàáâãoòóôå]";
 define @yäö := "[yýÿüäöøõ]";
