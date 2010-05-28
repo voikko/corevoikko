@@ -1,7 +1,7 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
 # Tekijänoikeus © 2006 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
-#                 2006 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+#                 2006 - 2010 Harri Pitkänen (hatapitk@iki.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -1827,8 +1827,9 @@ subrule tulostus_rakenne ($tietue):
                          nimi_laatusana, asemosana, suhdesana, lukusanan_jälkiliite, etuliite> or
                          ($t.luokka = lukusana and not $t.alaluokka in <numeromerkki, pilkku>) then
       $tuloste :=+ "=";
-      if ($t.aluetta_tarkentava_etuliite = yes and $tlen + 1 greater $tind and
-          $tietue.($tind+1).luokka = tavuviiva and $tietue.($tind+2).luokka = paikannimi) then
+      if $t.aluetta_tarkentava_etuliite = yes and
+         (($tlen + 1 greater $tind and $tietue.($tind+1).luokka = tavuviiva and $tietue.($tind+2).luokka = paikannimi) or
+          ($tlen + 2 greater $tind and $tietue.($tind+1).luokka = johdin_inen and $tietue.($tind+2).luokka = tavuviiva and $tietue.($tind+3).luokka = paikannimi)) then
         $tuloste :=+ "i";
       else
         $tuloste :=+ "p";

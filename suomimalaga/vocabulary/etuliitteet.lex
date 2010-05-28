@@ -125,7 +125,7 @@
 [perusmuoto: "jumal", alku: "jumal", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @eltj, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "kaakkois", alku: "kaakkois", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "kaakkois", alku: "kaakkois", luokka: etuliite, aluetta_tarkentava_etuliite: yes, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaatuma", alku: "kaatuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
@@ -166,9 +166,9 @@
 [perusmuoto: "liehu", alku: "liehu", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "liikkuma", alku: "liikkuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "live-", alku: "live-", luokka: etuliite, jatko: @eln, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];
-[perusmuoto: "lounais", alku: "lounais", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "lounais", alku: "lounais", luokka: etuliite, aluetta_tarkentava_etuliite: yes, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "luontais", alku: "luontais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "luoteis", alku: "luoteis", luokka: etuliite, aluetta_tarkentava_etuliite: yes, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "lyömä", alku: "lyömä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "lähi", alku: "lähi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "läsnä", alku: "läsnä", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
@@ -247,7 +247,7 @@
 [perusmuoto: "suhu", alku: "suhu", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "super", alku: "super", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "supra", alku: "supra", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "suur", alku: "suur", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "suur", alku: "suur", luokka: etuliite, aluetta_tarkentava_etuliite: yes, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "synnyin", alku: "synnyin", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "syys", alku: "syys", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "syömä", alku: "syömä", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];

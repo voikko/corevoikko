@@ -3818,9 +3818,8 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   end;
 
   # Aluetta tarkentavat etuliitteet
-  # FIXME: ei toimi seuraaville: "kaakkois", "lounais", "luoteis", "suur"
-  if ($tietue.perusmuoto in <"etelä", "itä", "keski", "koillinen",
-                             "länsi", "manner", "pohjoinen", "sydän">) then
+  if ($tietue.perusmuoto in <"etelä", "itä", "kaakko", "keski", "koillinen",
+                             "lounas", "luode", "länsi", "manner", "pohjoinen", "sydän">) then
     $tietue :=+ [aluetta_tarkentava_etuliite: yes];
   end;
 

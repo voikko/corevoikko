@@ -331,7 +331,7 @@ def containsMorphoAnalysis(expectedAnalysis, actualAnalyses):
 	       % (expectedAnalysis, actualAnalyses)
 
 def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount,
-	                   forbiddenKeys, actualAnalyses):
+	               forbiddenKeys, forbiddenValues, actualAnalyses):
 	if expectedAnalysesCount != None and \
 	   len(actualAnalyses) != expectedAnalysesCount:
 		return u"Expected %i analyses, got %i." % \
@@ -344,6 +344,10 @@ def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount,
 		for actualAnalysis in actualAnalyses:
 			if forbiddenKey in actualAnalysis:
 				return u"Analysis contained forbidden key %s." % forbiddenKey
+	for forbiddenValue in forbiddenValues:
+		for actualAnalysis in actualAnalyses:
+			if forbiddenValue in actualAnalysis.values():
+				return u"Analysis contained forbidden value %s." % forbiddenValue
 	return None
 
 # Run morphological analysis tests
@@ -357,6 +361,7 @@ def morpho_tests(voikko):
 		expectedAnalysesCount = None
 		expectedAnalyses = []
 		forbiddenKeys = []
+		forbiddenValues = []
 		currentExpected = {}
 		actualAnalyses = []
 		while True:
@@ -375,7 +380,7 @@ def morpho_tests(voikko):
 				if currentExpected != {}:
 					expectedAnalyses.append(currentExpected)
 				error = diffMorphoAnalyses(expectedAnalyses,
-				        expectedAnalysesCount, forbiddenKeys, actualAnalyses)
+				        expectedAnalysesCount, forbiddenKeys, forbiddenValues, actualAnalyses)
 				if error != None:
 					print u'Morphological test failed for word "%s":\n%s\n' \
 						% (word, error)
@@ -384,10 +389,13 @@ def morpho_tests(voikko):
 				actualAnalyses = voikko.analyze(word)
 				expectedAnalyses = []
 				forbiddenKeys = []
+				forbiddenValues = []
 				expectedAnalysesCount = None
 				currentExpected = {}
 			elif line.startswith(u'expected:'):
 				expectedAnalysesCount = int(line[9:])
+			elif line.startswith(u'!='):
+				forbiddenValues.append(line[2:])
 			elif line.startswith(u'!'):
 				forbiddenKeys.append(line[1:])
 			elif line.startswith(u'analysis'):
@@ -400,7 +408,7 @@ def morpho_tests(voikko):
 		if currentExpected != {}:
 					expectedAnalyses.append(currentExpected)
 		error = diffMorphoAnalyses(expectedAnalyses,
-		        expectedAnalysesCount, forbiddenKeys, actualAnalyses)
+		        expectedAnalysesCount, forbiddenKeys, forbiddenValues, actualAnalyses)
 		if error != None:
 			print u'Morphological test failed for word "%s":\n%s\n' \
 				% (word, error)

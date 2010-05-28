@@ -1,6 +1,7 @@
 # word:word
 # expected:number (not required)
 # !key (key not allowed in any analysis)
+# !=value (value not allowed in any key of any analysis)
 # analysis
 #  key=value
 word:kissa
@@ -152,3 +153,16 @@ word:verohallitus
  analysis
   CLASS=nimi
   STRUCTURE==ippp=pppppppp
+word:Kaakkois-Panama
+ !==pppppppp-=ippppp
+ analysis
+  CLASS=paikannimi
+  STRUCTURE==ippppppp-=ippppp
+word:Suur-Panama
+ expected:1
+ analysis
+  CLASS=paikannimi
+  STRUCTURE==ippp-=ippppp
+word:idänkauppa
+ analysis
+  STRUCTURE==pppp=pppppp
