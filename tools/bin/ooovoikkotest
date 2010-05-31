@@ -114,8 +114,8 @@ def grammarTests():
 	assert error.nErrorStart == 9
 	assert error.nErrorLength == 11
 	assert error.nErrorType == 2 # TextMarkupType.PROOFREADING
-	assert error.aShortComment == u"Virheellinen kirjoitusasu."
-	assert error.aFullComment == u"Virheellinen kirjoitusasu."
+	assert error.aShortComment == u"Virheellinen kirjoitusasu"
+	assert error.aFullComment == u"Virheellinen kirjoitusasu"
 	suggestions = error.aSuggestions
 	assert len(suggestions) == 1
 	assert suggestions[0] == u"jotenkuten"
@@ -124,11 +124,23 @@ def grammarTests():
 	assert error.nErrorStart == 21
 	assert error.nErrorLength == 5
 	assert error.nErrorType == 2 # TextMarkupType.PROOFREADING
-	assert error.aShortComment == u"Sana on kirjoitettava pienellä alkukirjaimella."
-	assert error.aFullComment == u"Sana on kirjoitettava pienellä alkukirjaimella."
+	assert error.aShortComment == u"Harkitse sanan kirjoittamista pienellä alkukirjaimella."
+	assert error.aFullComment == u"Harkitse sanan kirjoittamista pienellä alkukirjaimella."
 	suggestions = error.aSuggestions
 	assert len(suggestions) == 1
 	assert suggestions[0] == u"märkä"
+	
+	gc.ignoreRule(u"1", LOCALE) # GCERR_INVALID_SPELLING
+	result = gc.doProofreading(aDocumentIdentifier, aText, LOCALE,
+	         nStartOfSentencePos, nSuggestedBehindEndOfSentencePosition,
+	         aProperties)
+	assert len(result.aErrors) == 1
+	
+	gc.resetIgnoreRules()
+	result = gc.doProofreading(aDocumentIdentifier, aText, LOCALE,
+	         nStartOfSentencePos, nSuggestedBehindEndOfSentencePosition,
+	         aProperties)
+	assert len(result.aErrors) == 2
 	
 	print u"All grammar checker tests were successful."
 
