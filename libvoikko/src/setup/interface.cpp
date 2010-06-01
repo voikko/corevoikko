@@ -79,5 +79,12 @@ VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
 	}
 }
 
+VOIKKOEXPORT const char * voikkoGetVersion() {
+	#ifdef PACKAGE_VERSION
+		return PACKAGE_VERSION;
+	#else
+		return "(unknown)";
+	#endif
+}
 
 } }

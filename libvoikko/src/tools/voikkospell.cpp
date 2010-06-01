@@ -25,6 +25,10 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
+#ifdef HAVE_CONFIG_H
+  #include "config.h"
+#endif
 #ifdef HAVE_PTHREAD
   #include <pthread.h>
 #endif
@@ -271,6 +275,13 @@ static void printHelp() {
 	cout << "For complete descriptions of available options see 'man voikkospell'" << endl;
 }
 
+static void printVersion() {
+	#ifdef PACKAGE_VERSION
+		cout << "voikkospell version " << PACKAGE_VERSION << endl;
+	#endif
+	cout << "libvoikko version " << voikkoGetVersion() << endl;
+}
+
 int main(int argc, char ** argv) {
 	const char * path = 0;
 	const char * variant = "fi";
@@ -291,6 +302,10 @@ int main(int argc, char ** argv) {
 		}
 		else if (args == "-h" || args == "--help") {
 			printHelp();
+			exit(0);
+		}
+		else if (args == "--version") {
+			printVersion();
 			exit(0);
 		}
 		else if (args == "-l") {

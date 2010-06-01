@@ -18,6 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import unittest
+import re
 from libvoikko import *
 from TestUtils import MorphologyInfo, TestDataDir
 
@@ -340,6 +341,11 @@ class LibvoikkoTest(unittest.TestCase):
 		longWord = longWord + u"kuraattori"
 		self.failUnless(len(longWord) > MAX_WORD_CHARS)
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
+	
+	def testGetVersion(self):
+		version = Voikko.getVersion()
+		# We can't test for correct version but let's assume it starts with a number
+		self.failUnless(re.compile(u"[0-9].*").match(version) != None)
 
 if __name__ == "__main__":
 	suite = unittest.TestLoader().loadTestsFromTestCase(LibvoikkoTest)

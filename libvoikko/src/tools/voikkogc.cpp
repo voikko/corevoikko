@@ -23,6 +23,10 @@
 #include <cstdio>
 #include <cwchar>
 
+#ifdef HAVE_CONFIG_H
+  #include "config.h"
+#endif
+
 using namespace std;
 
 static const int MAX_PARAGRAPH_LENGTH = 100000;
@@ -35,6 +39,13 @@ static void printHelp() {
 	cout << "Check grammar of paragraphs read from stdin." << endl;
 	cout << endl;
 	cout << "For complete descriptions of available options see 'man voikkogc'" << endl;
+}
+
+static void printVersion() {
+	#ifdef PACKAGE_VERSION
+		cout << "voikkogc version " << PACKAGE_VERSION << endl;
+	#endif
+	cout << "libvoikko version " << voikkoGetVersion() << endl;
 }
 
 static void print_tokens(VoikkoHandle * handle, const wchar_t * line, size_t lineLen) {
@@ -164,6 +175,10 @@ int main(int argc, char ** argv) {
 		}
 		else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
 			printHelp();
+			exit(0);
+		}
+		else if (strcmp(argv[i],  "--version") == 0) {
+			printVersion();
 			exit(0);
 		}
 	}

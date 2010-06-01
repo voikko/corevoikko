@@ -23,6 +23,10 @@
 #include <cstring>
 #include <cwchar>
 
+#ifdef HAVE_CONFIG_H
+  #include "config.h"
+#endif
+
 using namespace std;
 
 static const int MAX_WORD_LENGTH = 5000;
@@ -71,6 +75,13 @@ static void printHelp() {
 	cout << "For complete descriptions of available options see 'man voikkohyphenate'" << endl;
 }
 
+static void printVersion() {
+	#ifdef PACKAGE_VERSION
+		cout << "voikkohyphenate version " << PACKAGE_VERSION << endl;
+	#endif
+	cout << "libvoikko version " << voikkoGetVersion() << endl;
+}
+
 int main(int argc, char ** argv) {
 	const char * path = 0;
 	const char * variant = "fi";
@@ -85,6 +96,10 @@ int main(int argc, char ** argv) {
 		}
 		else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
 			printHelp();
+			exit(0);
+		}
+		else if (strcmp(argv[i],  "--version") == 0) {
+			printVersion();
 			exit(0);
 		}
 	}

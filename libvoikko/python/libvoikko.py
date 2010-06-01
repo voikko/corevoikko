@@ -333,6 +333,15 @@ class Voikko(object):
 		return languages
 	listSupportedSpellingLanguages = staticmethod(listSupportedSpellingLanguages)
 	
+	def getVersion():
+		"""Return the version number of the Voikko library."""
+		lib = Voikko.__getLib()
+		lib.voikkoGetVersion.argtypes = []
+		lib.voikkoGetVersion.restype = c_char_p
+		cVersion = lib.voikkoGetVersion()
+		return unicode(cVersion, "UTF-8")
+	getVersion = staticmethod(getVersion)
+	
 	def spell(self, word):
 		"""Check the spelling of given word. Return true if the word is correct,
 		false if it is incorrect.

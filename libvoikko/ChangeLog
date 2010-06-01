@@ -1,3 +1,8 @@
+2010-06-01 Harri Pitkänen <hatapitk@iki.fi>
+	* Increase version numbers for 3.1.
+	* Add function voikkoGetVersion() to get the library version string.
+	* Add option --version to test tools.
+
 2010-05-11 Harri Pitkänen <hatapitk@iki.fi>
 	* Adjust old API so that up to four simultaneous handles can be opened.
 	  This method is not thread safe but it is no worse than the old single

@@ -346,6 +346,12 @@ const char * voikko_dict_description(const struct voikko_dict * dict);
 char ** voikkoListSupportedSpellingLanguages(const char * path);
 
 /**
+ * Return the version number of libvoikko.
+ * @return The version number
+ */
+const char * voikkoGetVersion();
+
+/**
  * A type representing result from morphological analysis.
  */
 struct voikko_mor_analysis;
