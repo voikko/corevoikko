@@ -200,10 +200,8 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 			delete options->hyphenator;
 			options->hyphenator = 0;
 		}
-		if (options->suggestionGenerator) {
-			delete options->suggestionGenerator;
-			options->suggestionGenerator = 0;
-		}
+		delete options->suggestionGenerator;
+		options->suggestionGenerator = 0;
 		if (options->speller) {
 			options->speller->terminate();
 			delete options->speller;
