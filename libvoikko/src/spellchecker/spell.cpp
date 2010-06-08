@@ -130,16 +130,19 @@ spellresult voikko_do_spell(voikko_options_t * voikkoOptions,
 	return result;
 }
 
-/** Checks the spelling of given word. Missing hyphens at the start or end of the
- * word are ignored.
+/**
+ * Checks the spelling of given word. Missing hyphens at the start or end of the
+ * word are ignored if requested in voikkoOptions.
  * @param word word to check (does not need to be null terminated)
  * @param len length of the word to check
  * @return spelling result
  */
-static spellresult voikko_do_spell_ignore_hyphens(voikko_options_t * voikkoOptions,
+static spellresult hyphenAwareSpell(voikko_options_t * voikkoOptions,
 	                                   const wchar_t * word, size_t len) {
 	spellresult spres = voikko_do_spell(voikkoOptions, word, len);
-	if (spres != SPELL_FAILED) return spres;
+	if (spres != SPELL_FAILED || !voikkoOptions->accept_missing_hyphens) {
+		return spres;
+	}
 	
 	// Hyphens were already present, so we cannot do anything more
 	if (len < 2 || (word[0] == L'-' && word[len - 1] == L'-')) return SPELL_FAILED;
@@ -178,23 +181,12 @@ static spellresult voikko_cached_spell(voikko_options_t * voikkoOptions, const w
 			return cache->getSpellResult(buffer, len);
 		}
 		/* not in cache */
-		spellresult result;
-		if (voikkoOptions->accept_missing_hyphens) {
-			result = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, len);
-		}
-		else {
-			result = voikko_do_spell(voikkoOptions, buffer, len);
-		}
+		spellresult result = hyphenAwareSpell(voikkoOptions, buffer, len);
 		cache->setSpellResult(buffer, len, result);
 		return result;
 	}
 	/* no cache available */
-	if (voikkoOptions->accept_missing_hyphens) {
-		return voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, len);
-	}
-	else {
-		return voikko_do_spell(voikkoOptions, buffer, len);
-	}
+	return hyphenAwareSpell(voikkoOptions, buffer, len);
 }
 
 
@@ -257,12 +249,7 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS) {
 		wcsncpy(buffer, nword, nchars);
 		buffer[0] = SimpleChar::lower(buffer[0]);
-		if (voikkoOptions->accept_missing_hyphens) {
-			sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, nchars);
-		}
-		else {
-			sres = voikko_do_spell(voikkoOptions, buffer, nchars);
-		}
+		sres = hyphenAwareSpell(voikkoOptions, buffer, nchars);
 		if (sres == SPELL_OK ||
 		    (sres == SPELL_CAP_FIRST && voikkoOptions->accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
 			result = VOIKKO_SPELL_OK;
@@ -272,12 +259,7 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 		}
 		if (result == VOIKKO_SPELL_FAILED && dot_index != -1) { /* remove dot */
 			buffer[dot_index] = L'\0';
-			if (voikkoOptions->accept_missing_hyphens) {
-				sres = voikko_do_spell_ignore_hyphens(voikkoOptions, buffer, realChars);
-			}
-			else {
-				sres = voikko_do_spell(voikkoOptions, buffer, realChars);
-			}
+			sres = hyphenAwareSpell(voikkoOptions, buffer, realChars);
 			if (sres == SPELL_OK ||
 			    (sres == SPELL_CAP_FIRST && voikkoOptions->accept_first_uppercase && SimpleChar::isUpper(nword[0]))) {
 				result = VOIKKO_SPELL_OK;
