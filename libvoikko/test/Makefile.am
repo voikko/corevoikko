@@ -6,6 +6,7 @@ EXTRA_DIST = TestUtils.py \
     DictionaryInfoTest.py \
     Utf8ApiTest.py \
     DeprecatedApiTest.py \
+    hfst/NorthSamiTest.py \
     malaga/ExtendedMorphologyTest.py \
     lttoolbox/ApertiumIcelandicTest.py
 TESTS_ENVIRONMENT = env LD_LIBRARY_PATH=../src/.libs python
