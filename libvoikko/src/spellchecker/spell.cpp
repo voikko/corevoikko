@@ -26,7 +26,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <cwchar>
-#include <cassert>
 
 using namespace libvoikko::morphology;
 using namespace libvoikko::spellchecker;
@@ -300,7 +299,6 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 			else result = VOIKKO_SPELL_FAILED;
 			break;
 		case CT_ALL_UPPER:
-			assert(voikkoOptions->accept_all_uppercase);
 			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			break;
@@ -328,7 +326,6 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 				else result = VOIKKO_SPELL_FAILED;
 				break;
 			case CT_ALL_UPPER:
-				assert(voikkoOptions->accept_all_uppercase);
 				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 				result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			default: /* should not happen */
