@@ -33,6 +33,12 @@ class NorthSamiTest(unittest.TestCase):
 	
 	def testValidWordIsRejected(self):
 		self.failUnless(self.voikko.spell(u"gabba"))
+	
+	def testProperNounIsAccepted(self):
+		self.failUnless(self.voikko.spell(u"Matti"))
+	
+	def testProperNounInLowerCaseIsRejected(self):
+		self.failIf(self.voikko.spell(u"matti"))
 
 
 if __name__ == "__main__":

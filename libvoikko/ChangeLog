@@ -1,3 +1,6 @@
+2010-06-08 Harri Pitkänen <hatapitk@iki.fi>
+	* Change HfstSpeller to return SPELL_CAP_FIRST when possible.
+
 2010-06-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Increase version numbers for 3.1.
 	* Add function voikkoGetVersion() to get the library version string.

@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -36,6 +36,9 @@ class HfstSpeller : public Speller {
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:
+		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
+		spellresult doSpell(const wchar_t * word, size_t wlen);
+		
 		HWFST::KeyTable * keyTable;
 		HWFST::TransducerHandle speller;
 		FlagDiacriticTable flagTable;

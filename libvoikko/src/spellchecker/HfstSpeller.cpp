@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,11 +18,13 @@
 
 #include "spellchecker/HfstSpeller.hpp"
 #include "utils/StringUtils.hpp"
+#include "character/SimpleChar.hpp"
 #include "voikko_defines.h"
 #include <fstream>
 #include <hfst2/string.h>
 
 using namespace std;
+using namespace libvoikko::character;
 using namespace libvoikko::utils;
 
 namespace libvoikko { namespace spellchecker {
@@ -44,11 +46,8 @@ HfstSpeller::HfstSpeller(const string & directoryName) throw(setup::DictionaryEx
 		}
 	}
 }
-    
-spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
-	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
-		return SPELL_FAILED;
-	}
+ 
+spellresult HfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
 	HWFST::KeyVector * wordPath = HWFST::stringUtf8ToKeyVector(wordUtf8, keyTable);
 	HWFST::KeyVectorVector * lookups = HWFST::lookup_all(speller, wordPath, &flags);
@@ -68,6 +67,24 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 	}
 	delete wordPath;
 	delete[] wordUtf8;
+	return result;
+}
+ 
+spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
+	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
+		return SPELL_FAILED;
+	}
+	spellresult result = doSpell(word, wlen);
+	if (result == SPELL_FAILED && SimpleChar::isLower(word[0])) {
+		// XXX: This slightly inefficient hack allows us to support SPELL_CAP_FIRST
+		wchar_t * modifiedWord = StringUtils::copy(word);
+		modifiedWord[0] = SimpleChar::upper(word[0]);
+		result = doSpell(modifiedWord, wlen);
+		if (result == SPELL_OK) {
+			result = SPELL_CAP_FIRST;
+		}
+		delete[] modifiedWord;
+	}
 	return result;
 }
 
