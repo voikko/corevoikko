@@ -229,6 +229,10 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 		delete[] nword;
 		return VOIKKO_SPELL_OK;
 	}
+	if (caps == CT_ALL_UPPER && !voikkoOptions->accept_all_uppercase) {
+		// all upper case is nothing special
+		caps = CT_COMPLEX;
+	}
 	
 	wchar_t * buffer = new wchar_t[nchars + 1];
 
@@ -250,8 +254,7 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 	}
 	
 	/* Check words that require exact captialisation */
-	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS ||
-	    (caps == CT_ALL_UPPER && !voikkoOptions->accept_all_uppercase)) {
+	if (caps == CT_COMPLEX || caps == CT_NO_LETTERS) {
 		wcsncpy(buffer, nword, nchars);
 		buffer[0] = SimpleChar::lower(buffer[0]);
 		if (voikkoOptions->accept_missing_hyphens) {
