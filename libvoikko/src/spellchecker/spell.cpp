@@ -272,19 +272,17 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 	
 	
 	/* Check without trailing dot */
+	sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 	switch (caps) {
 		case CT_ALL_LOWER:
-			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			result = (sres == SPELL_OK) ? VOIKKO_SPELL_OK : VOIKKO_SPELL_FAILED;
 			break;
 		case CT_FIRST_UPPER:
-			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			if ((sres == SPELL_OK && voikkoOptions->accept_first_uppercase) || sres == SPELL_CAP_FIRST)
 				result = VOIKKO_SPELL_OK;
 			else result = VOIKKO_SPELL_FAILED;
 			break;
 		case CT_ALL_UPPER:
-			sres = voikko_cached_spell(voikkoOptions, buffer, realChars);
 			result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
 			break;
 		default: /* should not happen */
