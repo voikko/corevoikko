@@ -114,7 +114,7 @@ clean:
 	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc common/hfconv.pyc
 	rm -f voikko/config.inc
 	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
-	rm -f "suomi-malaga-$(SM_VERSION).tar.gz" "voikko-fi-lsrc-$(SM_VERSION).tar.gz"
+	rm -f "suomi-malaga-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
