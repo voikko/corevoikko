@@ -58,6 +58,7 @@ define @elx  := <yhdyssana, etuliite, nimisana, laatusana, nimi_laatusana>;
 
 define @sijan_jatko := <tavuviiva, liitesana, loppu>;
 define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
+define @sisä_ssA_stA := <sisäolento_ssA, sisäeronto_stA>;
 
 include "voikonsanat/atk.lex";
 include "voikonsanat/erikoiset.lex";
