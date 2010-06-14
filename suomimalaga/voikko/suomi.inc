@@ -86,13 +86,13 @@ define @tositavan_tekijäpääte_4 := <tositavan_kestämä_dAAn,
 define @kertoman_tekijäpääte := <kertoman_tekijäpääte_heikko,
                                  kertoman_tekijäpääte_vahva>;
 
-define @sisäpaikallissijat_Vn  := <sisäolento_ssA,  sisäeronto_stA, sisätulento_Vn>;
+define @sisäpaikallissijat_Vn  := <sisäolento_ssA, sisätulento_Vn>;
 
 define @ulkopaikallissijat     := <ulkopaikallissija_llA>;
 define @ulkopaikallissijat_monikko := <ulkopaikallissija_illA>;
 define @sija_monikko_1 := <sija_monikko_1>;
 
-define @heikkoasteiset_paikallissijat := <sisäolento_ssA,  sisäeronto_stA> + @ulkopaikallissijat;
+define @heikkoasteiset_paikallissijat := <sisäolento_ssA> + @ulkopaikallissijat;
 
 define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
 define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;

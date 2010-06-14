@@ -78,8 +78,7 @@
 [perusmuoto: "kiva", alku: "kivempä", luokka: laatusana, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "kiva", alku: "kivempä", luokka: laatusana, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: <tulento_ksi>, äs: ä];
-[perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: <sisäeronto_stA>, äs: ä];
-[perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: <sisäolento_ssA>, äs: ä];
+[perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: @sisä_ssA_stA, äs: ä];
 [perusmuoto: "kiva", alku: "kivempä", luokka: laatusana, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "kiva", alku: "kivemmä", luokka: laatusana, jatko: <vajanto_ttA>, äs: ä];
@@ -103,8 +102,7 @@
 [perusmuoto: "kiva", alku: "kivimpä", luokka: laatusana, jatko: <osanto_A>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimpä", luokka: laatusana, jatko: <olento_nA>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <tulento_ksi>, äs: ä];
-[perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <sisäolento_ssA>, äs: ä];
-[perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <sisäeronto_stA>, äs: ä];
+[perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: @sisä_ssA_stA, äs: ä];
 [perusmuoto: "kiva", alku: "kivimpä", luokka: laatusana, jatko: <sisätulento_Vn>, äs: ä];
 [perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "kiva", alku: "kivimmä", luokka: laatusana, jatko: <vajanto_ttA>, äs: ä];
@@ -127,8 +125,7 @@
 [perusmuoto: "kiva", alku: "kivoimpa", luokka: laatusana, jatko: <osanto_A>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimpa", luokka: laatusana, jatko: <olento_nA>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <tulento_ksi>, äs: a];
-[perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <sisäolento_ssA>, äs: a];
-[perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <sisäeronto_stA>, äs: a];
+[perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: @sisä_ssA_stA, äs: a];
 [perusmuoto: "kiva", alku: "kivoimpa", luokka: laatusana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "kiva", alku: "kivoimma", luokka: laatusana, jatko: <vajanto_ttA>, äs: a];

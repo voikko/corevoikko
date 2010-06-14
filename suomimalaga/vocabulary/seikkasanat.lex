@@ -144,7 +144,7 @@
 [perusmuoto: "hakoteillä", alku: "hakoteillä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "hakoteillä", alku: "hakoteille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "halki", alku: "halki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
+[perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: @sisä_ssA_stA, äs: a];
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "haltioissa", alku: "haltioihi", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "haltioissa", alku: "haltioissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
@@ -860,7 +860,7 @@
 [perusmuoto: "sangen", alku: "sangen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "satamäärin", alku: "satamäärin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "sattumoisin", alku: "sattumoisin", luokka: seikkasana, jatko: <loppu>, äs: a];
-[perusmuoto: "seassa", alku: "sea", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
+[perusmuoto: "seassa", alku: "sea", luokka: seikkasana, jatko: @sisä_ssA_stA, äs: a];
 [perusmuoto: "seassa", alku: "seka", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "seinempänä", alku: "seinem", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "seisaalla", alku: "seisaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
@@ -923,7 +923,7 @@
 [perusmuoto: "sunnuntaisin", alku: "sunnuntaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suotta", alku: "suotta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suppu", alku: "suppu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
-[perusmuoto: "suppu", alku: "supu", luokka: seikkasana, jatko: <sisäolento_ssA, sisäeronto_stA> + @ulkopaikallissijat, äs: a];
+[perusmuoto: "suppu", alku: "supu", luokka: seikkasana, jatko: @sisä_ssA_stA + @ulkopaikallissijat, äs: a];
 [perusmuoto: "surku", alku: "surku", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suurelti", alku: "suurelti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "suutuksissa", alku: "suutuksiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];

@@ -35,7 +35,7 @@
 [perusmuoto: "kera", alku: "kera", luokka: suhdesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kera", alku: "keralla", luokka: suhdesana, jatko: <omistusliite, loppu>, äs: a];
 [perusmuoto: "kera", alku: "keralle", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "keskuudessa", alku: "keskuude", luokka: suhdesana, jatko: <sisäolento_ssA, sisäeronto_stA>, äs: a];
+[perusmuoto: "keskuudessa", alku: "keskuude", luokka: suhdesana, jatko: @sisä_ssA_stA, äs: a];
 [perusmuoto: "keskuudessa", alku: "keskuute", luokka: suhdesana, jatko: <sisätulento_Vn>, äs: a];
 [perusmuoto: "kohden", alku: "kohden", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kohti", alku: "kohti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];

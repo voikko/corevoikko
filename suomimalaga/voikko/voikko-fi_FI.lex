@@ -2,6 +2,7 @@ include "suomi.inc";
 
 define @sana1 := <nimisana, tavuviiva>;
 define @sana2 := @sana1 + <teonsana>;
+define @sisä_ssA_stA := <sisäolento_ssA>;
 
 include "lyhenteet.lex";
 

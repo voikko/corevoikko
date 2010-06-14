@@ -190,9 +190,9 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
                 luku: monikko, äs: ä, jatko: @sijan_jatko_ol];
 
 
-[alku: "sta",   luokka: sijapääte, sija: sisäeronto_stA, sijamuoto: sisäeronto,
+[alku: "sta",   luokka: sijapääte, sija: sisäolento_ssA, sijamuoto: sisäeronto,
                 luku: yksikkö, äs: a, jatko: @sijan_jatko_ol];
-[alku: "stä",   luokka: sijapääte, sija: sisäeronto_stA, sijamuoto: sisäeronto,
+[alku: "stä",   luokka: sijapääte, sija: sisäolento_ssA, sijamuoto: sisäeronto,
                 luku: yksikkö, äs: ä, jatko: @sijan_jatko_ol];
 
 [alku: "ista",  luokka: sijapääte, sija: sija_monikko_1, sijamuoto: sisäeronto,
@@ -393,7 +393,7 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 # Laatusanojen sekä teonsanojen laatutapojen voittoaste.
 #
 define @jatko_mpA := <omistusliite, osanto_A, osanto_tA, olento_nA, sisätulento_Vn>;
-define @jatko_mmA := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
+define @jatko_mmA := <omanto_n, tulento_ksi, sisäolento_ssA,
                       ulkopaikallissija_llA,
                       vajanto_ttA, kerronto_sti>;
 define @jatko_mp := <omanto_ien, osanto_iA, olento_inA, sisätulento_iin, seuranto_ine>;
@@ -861,13 +861,17 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
 [alku: "massa", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
+                sijamuoto: sisäolento,
                 luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
 [alku: "mässä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
+                sijamuoto: sisäolento,
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
-[alku: "masta", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäeronto_stA,
+[alku: "masta", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
+                sijamuoto: sisäeronto,
                 luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
-[alku: "mästä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäeronto_stA,
+[alku: "mästä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
+                sijamuoto: sisäeronto,
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
 
 [alku: "maan",  luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisätulento_Vn,
@@ -908,7 +912,7 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 
 define @jatko_se := <omistusliite, omanto_n,
                      olento_nA, tulento_ksi, 
-                     sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
+                     sisäolento_ssA, sisätulento_Vn,
                      ulkopaikallissija_llA,
                      vajanto_ttA, nimentö_t>;
 define @jatko_s := <osanto_tA, omanto_ien, omanto_ten,
@@ -931,7 +935,7 @@ define @jatko_s := <osanto_tA, omanto_ien, omanto_ten,
 
 define @jatko_vE1 :=
        <omanto_n, osanto_A, olento_nA, tulento_ksi,
-        sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
+        sisäolento_ssA, sisätulento_Vn,
         ulkopaikallissija_llA,
         vajanto_ttA, kerronto_sti, omistusliite, liitesana,
         nimentö_t, omanto_in, loppu> + @yhdyssana;
@@ -1012,7 +1016,7 @@ define @jatko_nUt := <liitesana, osanto_tA, loppu>;
 
 
 define @jatko_ee := <omistusliite, omanto_n, olento_nA, tulento_ksi,
-                     sisäolento_ssA, sisäeronto_stA, sisätulento_seen,
+                     sisäolento_ssA, sisätulento_seen,
                      ulkopaikallissija_llA,
                      vajanto_ttA, kerronto_sti, nimentö_t, voittoaste>;
 
@@ -1057,7 +1061,7 @@ define @jatko_vahva_aste :=
         liitesana, loppu, johdin_Us>;
 
 define @jatko_heikko_aste :=
-       <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
+       <omanto_n, tulento_ksi, sisäolento_ssA,
         ulkopaikallissija_llA, vajanto_ttA,
         kerronto_sti,
         nimentö_t, omanto_iT, osanto_itA,
@@ -1097,7 +1101,7 @@ define @m_jatko := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
 
 define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
                      osanto_A, osanto_tA, olento_nA, tulento_ksi,
-                     sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
+                     sisäolento_ssA, sisätulento_Vn,
                      ulkopaikallissija_llA,
                      vajanto_ttA,
                      nimentö_t, omanto_in, johdin_tOn>;
@@ -1118,7 +1122,7 @@ define @jatko_tOn := <liitesana, loppu, osanto_tA, omanto_ten, olento_nA>;
 
 
 define @jatko_ttOmA := <omistusliite, omanto_n, osanto_A, olento_nA, tulento_ksi,
-                        sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
+                        sisäolento_ssA, sisätulento_Vn,
                         ulkopaikallissija_llA,
                         vajanto_ttA, kerronto_sti, voittoaste,
                         nimentö_t, omanto_in>;
@@ -1149,7 +1153,7 @@ define @jatko_ttOm := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
 define @jatko_ntA := <omistusliite, liitesana, loppu, osanto_A, olento_nA,
                       sisätulento_Vn, omanto_in> + @yhdyssana + <johdin_inen>;
 
-define @jatko_nnA := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
+define @jatko_nnA := <omanto_n, tulento_ksi, sisäolento_ssA,
                       ulkopaikallissija_llA,
                       vajanto_ttA, nimentö_t, johdin_tOn>;
 
@@ -1177,7 +1181,7 @@ define @jatko_nnO := <omanto_iT, osanto_itA, sija_monikko_1,
 define @jatko_nti := <omistusliite, liitesana, loppu, osanto_A, olento_nA,
                       sisätulento_Vn, omanto_en> + @yhdyssana;
 
-define @jatko_nni := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
+define @jatko_nni := <omanto_n, tulento_ksi, sisäolento_ssA,
                       ulkopaikallissija_llA,
                       vajanto_ttA, voittoaste, johdin_tOn,
                       nimentö_t>;
@@ -1200,7 +1204,7 @@ define @jatko_nne := <sija_monikko_1,
 define @jatko_Us := <liitesana, loppu> + @yhdyssana;
 define @jatko_Ut := <osanto_tA>;
 define @jatko_te := <omistusliite, olento_nA, sisätulento_Vn>;
-define @jatko_de := <omanto_n, tulento_ksi, sisäolento_ssA, sisäeronto_stA,
+define @jatko_de := <omanto_n, tulento_ksi, sisäolento_ssA,
                      ulkopaikallissija_llA, vajanto_ttA,
                      johdin_tOn, nimentö_t>;
 define @jatko_ks := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
@@ -1300,7 +1304,7 @@ define @jatko_ttar := <omanto_en, omanto_ien, osanto_iA, olento_inA,
                        vajanto_ittA, seuranto_ine, johdin_UUs>;
 
 define @jatko_ttare := <olento_nA, tulento_ksi,
-                        sisäolento_ssA, sisäeronto_stA, sisätulento_Vn,
+                        sisäolento_ssA, sisätulento_Vn,
                         ulkopaikallissija_llA,
                         vajanto_ttA, nimentö_t>;
 
@@ -1316,7 +1320,7 @@ define @jatko_ttare := <olento_nA, tulento_ksi,
 define @jatko_jA :=
   <tavuviiva, omistusliite, nimentö, omanto_n, osanto_A,
    osanto_tA, olento_nA, tulento_ksi, sisäolento_ssA,
-   sisäeronto_stA, sisätulento_Vn, ulkopaikallissija_llA,
+   sisätulento_Vn, ulkopaikallissija_llA,
    vajanto_ttA, kerronto_sti,
    nimisana, laatusana,
    johdin_tOn, johdin_tAr, nimentö_t, omanto_in,

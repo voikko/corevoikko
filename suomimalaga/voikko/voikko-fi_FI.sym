@@ -99,10 +99,9 @@ sija;
 
   tulento_ksi;
 
-  sisäolento_ssA;
+  sisäolento_ssA;  # myös sisäeronto_stA
   sisäolento_nA;   # Se => siinä.
 
-  sisäeronto_stA;
   sisäeronto_tA;   # Se => siitä.
 
   sisätulento_Vn;

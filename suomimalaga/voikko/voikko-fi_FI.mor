@@ -1505,7 +1505,6 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
                               olento_nA, olento_inA,
                               tulento_ksi,
                               sisäolento_ssA, sija_monikko_1,
-                              sisäeronto_stA,
                               ulkopaikallissija_llA,
                               ulkopaikallissija_illA,
                               vajanto_ttA, vajanto_ittA,
