@@ -126,12 +126,11 @@ sija;
     # sisäeronto_istA;
 
   vajanto_ttA;
-  vajanto_ittA;
+  vajanto_ittA;  # Myös keinonto_in
 
   seuranto_ine;
 
   keinonto_n;    # Yksikön keinonto. Käytetään vain 3. nimitavassa (puno+ma+n).
-  keinonto_in;   # Monikon keinonto.
 
   kerronto_sti;  # Hilpeä+sti, valkoise+sti.
   tulento_s;     # Kaua+s, sivumma+s.

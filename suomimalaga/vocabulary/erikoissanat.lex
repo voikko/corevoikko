@@ -616,7 +616,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <vajanto_ittA>, äs: a];
 [perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <seuranto_ine>, äs: a];
-[perusmuoto: "oboe", alku: "oboe", luokka: nimisana, jatko: <keinonto_in>, äs: a];
 
 # rokokoo (Kotuksen taivutusluokka 18 "maa") {{{1
 [perusmuoto: "rokokoo", alku: "rokokoo", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a];
@@ -640,7 +639,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <vajanto_ittA>, äs: a];
 [perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <seuranto_ine>, äs: a];
-[perusmuoto: "rokokoo", alku: "rokoko", luokka: nimisana, jatko: <keinonto_in>, äs: a];
 
 # Vierasperäisiä sanoja {{{1
 #
@@ -680,7 +678,6 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
-#[perusmuoto: "Brontë", alku: "Brontë", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
 # cowboy [kauboi] {{{2
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=ppp=ppp"];
@@ -705,7 +702,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <vajanto_ittA>, äs: a, rakenne: "=ppp=ppp"];
 [perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <seuranto_ine>, äs: a, rakenne: "=ppp=ppp"];
-[perusmuoto: "cowboy", alku: "cowboy", luokka: nimisana, jatko: <keinonto_in>, äs: a, rakenne: "=ppp=ppp"];
 
 # Dalí {{{2
 [perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
@@ -736,7 +732,6 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
 #[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
-#[perusmuoto: "Dalí", alku: "Dale", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
 # Ilmeisesti normin mukainen taivutus
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <omanto_in>, äs: a];
@@ -752,7 +747,6 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
-#[perusmuoto: "Dalí", alku: "Dalí", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
 # Jersey [dzöösi] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Jersey", alku: "Jersey", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
@@ -800,7 +794,6 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: ä];
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <vajanto_ittA>, äs: ä];
 #[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <seuranto_ine>, äs: ä];
-#[perusmuoto: "Linné", alku: "Linné", luokka: sukunimi, jatko: <keinonto_in>, äs: ä];
 
 # Monroe [manrou] {{{2
 [perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
@@ -830,7 +823,6 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
-#[perusmuoto: "Monroe", alku: "Monroe", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
 # playboy [pleiboi] {{{2
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppp"];
@@ -855,7 +847,6 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <vajanto_ittA>, äs: a, rakenne: "=pppp=ppp"];
 [perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <seuranto_ine>, äs: a, rakenne: "=pppp=ppp"];
-[perusmuoto: "playboy", alku: "playboy", luokka: nimisana, jatko: <keinonto_in>, äs: a, rakenne: "=pppp=ppp"];
 
 # Poe [pou] {{{2
 [perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <liitesana, omistusliite, loppu>, äs: a];
@@ -886,7 +877,6 @@ define @loppu := <liitesana, loppu>;
 #[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <ulkotulento_ille>, äs: a];
 #[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <vajanto_ittA>, äs: a];
 #[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <seuranto_ine>, äs: a];
-#[perusmuoto: "Poe", alku: "Poe", luokka: sukunimi, jatko: <keinonto_in>, äs: a];
 
 # Sidney [sidni] (mon. gen. -in/-jen; mon. part. -jA) {{{2
 [perusmuoto: "Sidney", alku: "Sidney", luokka: paikannimi, jatko: <liitesana, omistusliite, loppu>, äs: ä];
