@@ -775,6 +775,12 @@ kapsaa # Kotus 78
 !kapsat # Kotus 78
 kapsaisi # Kotus 78
 
+isännöikää
+!isännöitkää
+!isännöitsekää
+olko
+!olkö
+
 [ei-sanat]
 http://kissa.fi
 !kissa.fi

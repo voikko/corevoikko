@@ -62,7 +62,7 @@ define @mahtotapa := <mahtotapa_le, mahtotapa_ne, mahtotapa_re, mahtotapa_se,
                       mahtotapa_re_kielto, mahtotapa_se_kielto,
                       mahtotapa_ttA, mahtotapa_tA>;
 
-define @käskytapa := <käskytapa, käskytapa_kielto, käskytapa_ttA,
+define @käskytapa := <käskytapa, käskytapa_ttA,
                       käskytapa_tA>;
 
 define @nimitapa_1 := <nimitapa_1_A,  nimitapa_1_dA, nimitapa_1_lA,

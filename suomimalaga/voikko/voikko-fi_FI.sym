@@ -237,8 +237,6 @@ tapaluokka;
   mahtotapa_ttA;
   mahtotapa_tA;
   käskytapa;
-  käskytapa_y2;      # Puhu.
-  käskytapa_kielto;  # Älkää puhu+ko.
   käskytapa_ttA;
   käskytapa_tA;
   nimitapa_1;
@@ -364,10 +362,7 @@ rakenne;     # Kertoo isojen ja pienten kirjainten käytön sanan vartalossa sek
 
 
 # Lippuja. Merkitys on selitetty tiedostossa doc/liput.txt.
-malli;
-  voikko;
-    vanhahkot_muodot;
-  sukija;
+vanhahkot_muodot;
 taivutus;
   vanhat_muodot;
 sourceid;

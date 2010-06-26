@@ -806,8 +806,8 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 [alku: "täkö",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "ko", luokka: käskytapa_kielto, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kö", luokka: käskytapa_kielto, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+[alku: "ko", luokka: käskytapa, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+[alku: "kö", luokka: käskytapa, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
 
 # Ensimmäinen nimitapa.

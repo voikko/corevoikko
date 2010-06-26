@@ -55,8 +55,7 @@
 [alku: "liene", luokka: teonsana, jatko: <liitesana, liitesana2, loppu>, perusmuoto: "olla",
                 äs: ä, tapaluokka: ehtotapa];
 
-[alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a, tiedot: <ei_sukija>];
-[alku: "o",   luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a, tiedot: <ei_voikko>];
+[alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a];
 
 [alku: "ol",  luokka: teonsana, jatko: <loppu>, perusmuoto: "olla",  # Oli.
               äs: a, tapaluokka: tositapa, aikamuoto: kertoma,
@@ -199,8 +198,6 @@
 [alku: "älkööt",     luokka: kieltosana, jatko: <kieltosanan_liitesana, loppu>,
                      perusmuoto: "ei", äs: ä, tapaluokka: käskytapa,
                      aikamuoto: kestämä, tekijä: 3, luku: monikko];
-
-[alku: "olko", luokka: teonsana, jatko: <loppu>, perusmuoto: "olla", äs: a];  # Älkää olko.
 
 
 # "Ällös itke, oma kulta..." (optatiivi)

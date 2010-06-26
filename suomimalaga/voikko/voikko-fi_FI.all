@@ -112,17 +112,7 @@ end;
 
 
 allo_rule generate_allos ($tietue):
-  define $malli := switch (malli);  # Katso tiedosto suomi-*.pro.
-
-##define $aa := transmit (<"a"> + <$tietue.perusmuoto> + <$tietue.alku> + <$tietue.äs>);
-#define $ö := transmit ("[perusmuoto: §" + $tietue.perusmuoto + "§" +
-#                       ", alku: §"      + $tietue.alku + "§" +
-#                       ", luokka: "     + value_string ($tietue.luokka) +
-#                       ", jatko: "      + value_string ($tietue.jatko) +
-#                       ", äs: "         + value_string ($tietue.äs) +
-#                       "];");
-
-  if (($malli = voikko) and ($tietue.tiedot /= nil) and
+  if (($tietue.tiedot /= nil) and
       ((latex in $tietue.tiedot) or
        (murre in $tietue.tiedot and switch(voikko_murre) = no) or
        (ei_voikko in $tietue.tiedot))) then
@@ -134,11 +124,6 @@ allo_rule generate_allos ($tietue):
     else
       result $tietue.perusmuoto, $tietue - alku + [jatko: $tietue.jatko + <tavuviiva>];
     end;
-
-
-  elseif (($malli = sukija) and ($tietue.tiedot /= nil) and
-          (ei_sukija in $tietue.tiedot)) then
-    stop;
 
   elseif (valo in $tietue.jatko) then
     choose $i in valo ($tietue, "", "");
@@ -917,18 +902,8 @@ allo_rule generate_allos ($tietue):
                                           [sisätulento_isiin: "e",
                                            sisätulento_ihin: "e"], "e"));
 
-    if ($malli = sukija) then
-      $tietue :=+ johdoksen_lähtötiedot($tietue);
-      $tietue.perusmuoto := $tietue.alku + iA($tietue);   # Korkia.
-
-      define $b := apila ($tietue, iA($tietue), iO($tietue));
-
-      choose $i in $a + $b;
-      result $i.alku, $i - alku;
-    else
-      choose $i in $a;
-      result $i.alku, $i - alku;
-    end;
+    choose $i in $a;
+    result $i.alku, $i - alku;
 
 
   elseif (harteet in $tietue.jatko) then
@@ -2200,42 +2175,18 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
   elseif (kirjoittaa in $tietue.jatko) then
-    if ($malli = voikko) then
       choose $i in muistaa ($tietue, "it" + tA($tietue), "i" + tA($tietue), "itt", "it") +
                    taivutuskaava ($tietue, [johdin_Us_ksen: "it"]) +  # Kirjoitus.
                    kirjoittautua ($tietue, "itt") +      # Kirjoittautua.
                    kirjoitella ($tietue, "it");          # Kirjoitella.
       result $i.alku, $i - alku;
-    else
-      choose $i in muistaa ($tietue, "it" + tA($tietue), "i" + tA($tietue), "itt", "it") +
-                   muistaa ($tietue, "t"  + tA($tietue), tA($tietue),       "tt",  "t") +
-                   taivutuskaava ($tietue, [johdin_Us_ksen: "it"]) +  # Kirjoitus.
-                   taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +   # Kirjotus.
-                   kirjoittautua ($tietue, "itt") +          # Kirjoittautua.
-                   kirjoittautua ($tietue, "tt") +           # Kirjottautua.
-                   kirjoitella ($tietue, "it") +  # Kirjoitella.
-                   kirjoitella ($tietue, "t");    # Kirjotella.
-      result $i.alku, $i - alku;
-    end;
 
   elseif (ammottaa in $tietue.jatko) then
-    if ($malli = voikko) then
       choose $i in muistaa ($tietue, "t"  + tA($tietue), tA($tietue), "tt",  "t") +
                    taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +   # Ammotus.
                    kirjoittautua ($tietue, "tt") +   # Ammottautua.
                    kirjoitella ($tietue, "t");       # Ammotella.
       result $i.alku, $i - alku;
-    else
-      choose $i in muistaa ($tietue, "it" + tA($tietue), "i" + tA($tietue), "itt", "it") +
-                   muistaa ($tietue, "t"  + tA($tietue), tA($tietue),       "tt",  "t") +
-                   taivutuskaava ($tietue, [johdin_Us_ksen: "it"]) +  # Kirjoitus.
-                   taivutuskaava ($tietue, [johdin_Us_ksen: "t"]) +   # Kirjotus.
-                   kirjoittautua ($tietue, "itt") +          # Kirjoittautua.
-                   kirjoittautua ($tietue, "tt") +           # Kirjottautua.
-                   kirjoitella ($tietue, "it") +  # Kirjoitella.
-                   kirjoitella ($tietue, "t");    # Kirjotella.
-      result $i.alku, $i - alku;
-    end;
 
   elseif (kyntää in $tietue.jatko) then
     choose $i in muistaa ($tietue, tA($tietue), nA($tietue), "t", "n");
@@ -2665,7 +2616,7 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (nuolaista in $tietue.jatko) then
-    choose $i in nuolaista2 ($tietue, $malli);
+    choose $i in nuolaista2 ($tietue);
     result $i.alku, $i - alku;
 
   elseif (rangaista in $tietue.jatko) then
@@ -2820,10 +2771,7 @@ allo_rule generate_allos ($tietue):
                  + taivutuskaava ($tietue,
                                   tositapa0 ($tietue, "itse", "itse", "its", "its") +
                                   [tositavan_kertoma_tiin: "it",
-                                   ehtotapa:   "its",
-                                   käskytapa:  "it"])
-                 + käskytapa ($tietue, "itse")
-                 + taivutuskaava ($tietue, [käskytapa: "itse"])
+                                   ehtotapa:   "its"])
                  + tekijännimi ($tietue, "i", kantaja)
                  + tekijännimi ($tietue, "itsi", kulkija)
                  + haravoitua ($tietue);
@@ -2983,7 +2931,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (huiskata in $tietue.jatko) then
     choose $i in salata_salailla ($tietue, A($tietue), A($tietue))
-                 + huiskaista ($tietue, A($tietue), $malli);
+                 + huiskaista ($tietue, A($tietue));
     result $i.alku, $i - alku;
 
   elseif (kammata in $tietue.jatko) then
@@ -3507,16 +3455,6 @@ subrule hAA ($tietue):
 end;
 
 
-subrule iA ($tietue):
-  return ("i" + A($tietue));
-end;
-
-
-subrule iO ($tietue):
-  return ("i" + O($tietue));
-end;
-
-
 subrule jA ($tietue):
   return ("j" + A($tietue));
 end;
@@ -3851,7 +3789,7 @@ subrule taivutuskaava2 ($tietue, $taivutus, $ei_uusi):
     $taivutus :=- johdin_inen;
   end;
 
-  if ((switch(malli) = voikko) and ($ei_uusi /= <>)) then
+  if ($ei_uusi /= <>) then
     $taivutus :=- $ei_uusi;
   end;
 
@@ -5230,10 +5168,6 @@ end;
 
 
 subrule nainen ($tietue):
-  # Sukija-versio hyväksyy lois-muodon itsenäisenä sanana, kun taas
-  # voikko-versio ei hyväksyy sen vain yhdyssanan osana (=lois=mies).
-  #
-  if (switch (malli) = voikko) then
     return taivutuskaava ($tietue,
                           [omistusliite:     "se",
                            nimentö:          "nen",
@@ -5265,41 +5199,6 @@ subrule nainen ($tietue):
                            johdin_ittAin:    "s",
                            tavuviiva:        "s"]
                           + yhdyssana ("s"));
-  else
-    return taivutuskaava ($tietue,
-                          [omistusliite:     "se",
-                           nimentö:          "nen",
-                           omanto_n:         "se",
-                           osanto_tA:        "s",
-                           olento_nA:        "se",
-                           tulento_ksi:      "se",
-                           sisäolento_ssA:   "se",
-                           sisätulento_Vn:   "se",
-                           ulkopaikallissija_llA:  "se",
-                           vajanto_ttA:      "se",
-                           kerronto_sti :    "se",
-                           voittoaste:       "se",
-                           johdin_tOn:       "se",
-                           johdin_UUs:       "s",
-                           johdin_lAinen:    "s",
-                           johdin_mAinen:    "s",
-                           johdin_inen:      "s",
-                           nimentö_t:        "se",
-                           omanto_ien:       "s",
-                           omanto_ten:       "s",
-                           osanto_iA:        "s",
-                           olento_inA:       "s",
-                           sija_monikko_1:     "s",
-                           sisätulento_iin:  "s",
-                           ulkopaikallissija_illA: "s",
-                           vajanto_ittA:     "s",
-                           seuranto_ine:     "s",
-                           yliaste:          "s",
-                           johdin_ittAin:    "s",
-                           tavuviiva:        "s",
-                           loppu: "s"]
-                          + yhdyssana ("s"));
-  end;
 end;
 
 
@@ -5514,16 +5413,9 @@ subrule nuolaista ($tietue, $vahva_aste, $heikko_aste):
 end;
 
 
-subrule nuolaista2 ($tietue, $malli):
-  if ($malli = voikko) then
+subrule nuolaista2 ($tietue):
     return nuolaista ($tietue, "is", "is")  # Nuolaista.
            + sana_U ($tietue, "is");        # Nuolaisu.
-  else
-    return nuolaista ($tietue, "is", "is")  # Nuolaista.
-           + nuolaista ($tietue, "s", "s")  # Nuolasta.
-           + sana_U ($tietue, "is")  # Nuolaisu.
-           + sana_U ($tietue, "s");  # Nuolasu.
-  end;
 end;
 
 
@@ -5538,7 +5430,6 @@ subrule seistä ($tietue):
                          mahtotapa_se_kielto: "",
                          mahtotapa_tA: "",
                          käskytapa: "",
-                         käskytapa_kielto: "",
                          käskytapa_tA: "",
                          nimitapa_1_tA: "",
                          nimitapa_2: "t",
@@ -5729,28 +5620,11 @@ subrule rakentaa ($tietue, $vahva_aste, $heikko_aste):
   return huutaa ($tietue, $vahva_aste, $heikko_aste)
          + muistella ($tietue, $vahva_aste, $heikko_aste)
          + rakennus ($tietue, $heikko_aste);
-##         + taivutuskaava ($tietue,
-##                          [nimitapa_1_tA: "",    # Rake+ta (rakentaa).
-##                           käskytapa:     "t"])  # Raket+kaa (rakentakaa).
-##         + <taivutus ($tietue, "", <tositavan_kertoma_ttiin>, [])>;  # Rake+ttiin (rakennettiin).
 end;
 
 
 subrule antautua ($tietue, $vahva_aste, $heikko_aste):
-  if (switch (malli) = voikko) then
     return punoa ($tietue, $vahva_aste, $heikko_aste);
-  else
-    return punoa ($tietue, $vahva_aste, $heikko_aste)
-           + taivutuskaava ($tietue,
-                            tositapa ($tietue, "", "", "s", "s",
-                                      tositapa_4_tt ("")) +
-                            [ehtotapa:      "",    # Antau+isi.
-                             mahtotapa_ne:  "",    # Antau+ne+e.
-                             käskytapa:     "",    # Antau+koon.
-                             nimitapa_1_tA: ""] +  # Antau+ta.
-                            laatutapa_2_nUt_ttU ($tietue, "", "")); # Antau+nut, antau+ttu.
-##           + <taivutus ($tietue, "", @tositapa_4_tt, [])>; # Antau+taan, antau+ttiin.
-  end;
 end;
 
 
@@ -5999,7 +5873,6 @@ subrule tulla ($tietue, $tositapa_4, $mahtotapa, $mahtotapa_kielto,
                            $mahtotapa_kielto: "",
                            mahtotapa_tA:    "",
                            käskytapa:       "",
-                           käskytapa_kielto: "",
                            käskytapa_tA:    "",
                            $nimitapa_1:     "",
                            nimitapa_2:      $nimitapa_2_lisä,
@@ -6052,14 +5925,12 @@ end;
 
 subrule käskytapa_ttA ($tietue, $vahva_aste, $heikko_aste):
   return [käskytapa:        $vahva_aste,
-          käskytapa_kielto: $vahva_aste,
           käskytapa_ttA:    $heikko_aste];
 end;
 
 
 subrule käskytapa_tA ($tietue, $vahva_aste, $heikko_aste):
   return [käskytapa:        $vahva_aste,
-          käskytapa_kielto: $vahva_aste,
           käskytapa_tA:     $heikko_aste];
 end;
 
@@ -6608,12 +6479,12 @@ subrule salailla ($tietue, $vahva_aste):
   return arvailla ($tietue);
 end;
 
-subrule huiskaista ($tietue, $ääntiö, $malli):
+subrule huiskaista ($tietue, $ääntiö):
   $tietue :=+ johdoksen_lähtötiedot($tietue);
   $tietue.luokka := teonsana;
   $tietue.alku :=+ $ääntiö;
   $tietue.perusmuoto := $tietue.alku + "ist" + $ääntiö;
-  return nuolaista2 ($tietue, $malli);
+  return nuolaista2 ($tietue);
 end;
 
 
@@ -6677,7 +6548,7 @@ subrule keväämmällä ($tietue, $vahva_aste, $heikko_aste):
 end;
 
 subrule voikko_lista_vain_lipulla($lippu, $lista):
-  if (switch (malli) = voikko and switch ($lippu) = no) then return <>;
+  if (switch ($lippu) = no) then return <>;
   else return $lista;
   end;
 end;

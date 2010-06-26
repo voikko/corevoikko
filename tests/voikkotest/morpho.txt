@@ -166,3 +166,12 @@ word:Suur-Panama
 word:idänkauppa
  analysis
   STRUCTURE==pppp=pppppp
+word:hienoittasokereitta
+ analysis
+  NUMBER=plural
+  SIJAMUOTO=vajanto
+word:hienoinsokerein
+ analysis
+  NUMBER=plural
+  SIJAMUOTO=keinonto
+
