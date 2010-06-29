@@ -229,11 +229,6 @@ tapaluokka;
   mahtotapa_re; # Pur+re+e.
   mahtotapa_se; # Juos+se+e.
 
-  mahtotapa_le_kielto; # Ei tul+le.
-  mahtotapa_ne_kielto; # Ei puno+ne.
-  mahtotapa_re_kielto; # Ei pur+re.
-  mahtotapa_se_kielto; # Ei juos+se.
-
   mahtotapa_ttA;
   mahtotapa_tA;
   käskytapa;

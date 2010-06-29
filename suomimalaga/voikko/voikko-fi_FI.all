@@ -2650,7 +2650,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (tulla in $tietue.jatko) then
     choose $i in tulla ($tietue, tositapa_4_l(""),
-                        mahtotapa_le,  mahtotapa_le_kielto,
+                        mahtotapa_le,
                         nimitapa_1_lA, "l",
                         laatutapa_2_lUt ($tietue, ""));
     result $i.alku, $i - alku;
@@ -2658,7 +2658,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (nuolla in $tietue.jatko) then
     choose $i in tulla ($tietue, tositapa_4_l(""),
-                        mahtotapa_le, mahtotapa_le_kielto,
+                        mahtotapa_le,
                         nimitapa_1_lA, "l",
                         laatutapa_2_lUt ($tietue, ""))
                  + muistella ($tietue, "esk", "esk");  # Nuoleskella.
@@ -2670,7 +2670,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (purra in $tietue.jatko) then
     choose $i in tulla ($tietue, tositapa_4_r(""),
-                        mahtotapa_re, mahtotapa_re_kielto,
+                        mahtotapa_re,
                         nimitapa_1_rA, "r",
                         laatutapa_2_rUt ($tietue, "", ""))
                  + taivutuskaava ($tietue, [johdin_ntA: "e"]);
@@ -2682,7 +2682,7 @@ allo_rule generate_allos ($tietue):
 
   elseif (mennä in $tietue.jatko) then
     choose $i in tulla ($tietue, tositapa_4_n(""),
-                        mahtotapa_ne, mahtotapa_ne_kielto,
+                        mahtotapa_ne,
                         nimitapa_1_nA, "n",
                         laatutapa_2_nUt ($tietue, "", ""));
     result $i.alku, $i - alku;
@@ -3214,7 +3214,6 @@ allo_rule generate_allos ($tietue):
                                   nimitapa_laatutapa ($tietue, tA($tietue), "de"))
                  + taivutuskaava ($tietue,
                                   [mahtotapa_ne: "n"] +       # Tain+ne+e.
-                                  [mahtotapa_ne_kielto: "n"] +       # Tain+ne.
                                   laatutapa_2_nUt_ttU ($tietue, "n", ""))
                  + <taivutus ($tietue, "t", <tositavan_kertoma_tiin>, [])>  # Tait+tiin.
                  + tekijännimi ($tietue, tA($tietue), kantaja);
@@ -5427,7 +5426,7 @@ subrule seistä ($tietue):
                         [tositavan_kestämä_tAAn: "",
                          tositavan_kertoma_tiin: "",
                          ehtotapa_tA: "",
-                         mahtotapa_se_kielto: "",
+                         mahtotapa_se: "",
                          mahtotapa_tA: "",
                          käskytapa: "",
                          käskytapa_tA: "",
@@ -5862,7 +5861,7 @@ subrule kanavoida ($tietue, $lisä1, $lisä2):
 end;
 
 
-subrule tulla ($tietue, $tositapa_4, $mahtotapa, $mahtotapa_kielto,
+subrule tulla ($tietue, $tositapa_4, $mahtotapa,
                $nimitapa_1, $nimitapa_2_lisä, $laatutapa_2):
   return käskytapa ($tietue, "e")
          + taivutuskaava ($tietue,
@@ -5870,7 +5869,6 @@ subrule tulla ($tietue, $tositapa_4, $mahtotapa, $mahtotapa_kielto,
                           [ehtotapa:        "",
                            ehtotapa_tA:     "",
                            $mahtotapa:      "",
-                           $mahtotapa_kielto: "",
                            mahtotapa_tA:    "",
                            käskytapa:       "",
                            käskytapa_tA:    "",
@@ -5897,28 +5895,24 @@ end;
 subrule mahtotapa_ne_ttA ($tietue, $vahva_aste, $heikko_aste):
 #define $a := transmit ("huuhaa " + $vahva_aste + " " + $heikko_aste);
   return [mahtotapa_ne:        $vahva_aste,
-          mahtotapa_ne_kielto: $vahva_aste,
           mahtotapa_ttA:       $heikko_aste];
 end;
 
 
 subrule mahtotapa_se_tA ($tietue, $vahva_aste, $heikko_aste):
   return [mahtotapa_se:        $vahva_aste,
-          mahtotapa_se_kielto: $vahva_aste,
           mahtotapa_tA:        $heikko_aste];
 end;
 
 
 le mahtotapa_ne_tA ($tietue, $vahva_aste, $heikko_aste):
   return [mahtotapa_ne:        $vahva_aste,
-          mahtotapa_ne_kielto: $vahva_aste,
           mahtotapa_tA:        $heikko_aste];
 end;
 
 
 subrule mahtotapa_le_tA ($tietue, $vahva_aste, $heikko_aste):
   return [mahtotapa_le:        $vahva_aste,
-          mahtotapa_le_kielto: $vahva_aste,
           mahtotapa_tA:        $heikko_aste];
 end;
 

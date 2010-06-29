@@ -686,7 +686,7 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 [alku: "levät",  luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: ä,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
-[alku: "le",     luokka: mahtotapa_le_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "le",     luokka: mahtotapa_le, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                  äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "nen",    luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -704,7 +704,7 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 [alku: "nevät",  luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: ä,    luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
-[alku: "ne",     luokka: mahtotapa_ne_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "ne",     luokka: mahtotapa_ne, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                  äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "ren",    luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -722,7 +722,7 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 [alku: "revät",  luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: ä,  jatko: <liitesana, loppu>];
 
-[alku: "re",     luokka: mahtotapa_re_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "re",     luokka: mahtotapa_re, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                  äs: aä, jatko: <liitesana, loppu>];
 
 [alku: "sen",    luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
@@ -740,7 +740,7 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 [alku: "sevät",  luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä,
                  äs: ä,  luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
-[alku: "se",     luokka: mahtotapa_se_kielto, tapaluokka: mahtotapa, aikamuoto: kestämä,
+[alku: "se",     luokka: mahtotapa_se, tapaluokka: mahtotapa, aikamuoto: kestämä, kielto: yes,
                  äs: aä, jatko: <liitesana, loppu>];
 
 

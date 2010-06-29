@@ -58,8 +58,6 @@ include "mor.inc";
 define @ehtotapa := <ehtotapa, ehtotapa_ttA, ehtotapa_tA>;
 
 define @mahtotapa := <mahtotapa_le, mahtotapa_ne, mahtotapa_re, mahtotapa_se,
-                      mahtotapa_le_kielto, mahtotapa_ne_kielto,
-                      mahtotapa_re_kielto, mahtotapa_se_kielto,
                       mahtotapa_ttA, mahtotapa_tA>;
 
 define @käskytapa := <käskytapa, käskytapa_ttA,

@@ -780,6 +780,8 @@ isännöikää
 !isännöitsekää
 olko
 !olkö
+seissee
+seisse # ei seisse
 
 [ei-sanat]
 http://kissa.fi
