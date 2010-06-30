@@ -39,6 +39,9 @@ class NorthSamiTest(unittest.TestCase):
 	
 	def testProperNounInLowerCaseIsRejected(self):
 		self.failIf(self.voikko.spell(u"matti"))
+	
+	def testSuggestionsAreReturned(self):
+		self.failUnless(u"lameallas" in self.voikko.suggest(u"lameallaa"))
 
 
 if __name__ == "__main__":
