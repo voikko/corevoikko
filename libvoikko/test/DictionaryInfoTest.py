@@ -37,8 +37,7 @@ class DictionaryInfoTest(unittest.TestCase):
 	
 	def testListSupportedSpellingLanguagesReturnsFinnish(self):
 		languages = libvoikko.Voikko.listSupportedSpellingLanguages(self.dataDir.getDirectory())
-		self.assertEqual(1, len(languages))
-		self.assertEqual(u"fi", languages[0])
+		self.assertTrue(u"fi" in languages)
 	
 	def __tryOpenWithOldApi(self, variant):
 		lib = getVoikkoCLibrary()
@@ -87,6 +86,26 @@ class DictionaryInfoTest(unittest.TestCase):
 		self.assertFalse(self.__tryOpenWithNewApi(u"fi-x-askldjaslkdj"))
 		self.assertFalse(self.__tryOpenWithNewApi(u""))
 		self.assertFalse(self.__tryOpenWithNewApi(None))
+	
+	def testOtherLanguagesCanBeUsed(self):
+		info2 = MorphologyInfo()
+		info2.language = u"dk"
+		info2.morphology = u"null"
+		info2.description = "Testdescription lkrj"
+		self.dataDir.createMorphology(u"test1", info2)
+		
+		self.assertTrue(self.__tryOpenWithNewApi(u"dk"))
+		
+		languages = libvoikko.Voikko.listSupportedSpellingLanguages(self.dataDir.getDirectory())
+		self.assertTrue(u"fi" in languages)
+		self.assertTrue(u"dk" in languages)
+		
+		dicts = libvoikko.Voikko.listDicts(self.dataDir.getDirectory())
+		for dictionary in dicts:
+			if dictionary.language == u"dk":
+				self.assertEquals(info2.description, dictionary.description)
+				return
+		self.fail(u"Should have found dk dictionary")
 
 
 if __name__ == "__main__":

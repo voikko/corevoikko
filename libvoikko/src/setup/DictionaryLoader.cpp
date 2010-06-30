@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "setup/DictionaryLoader.hpp"
+#include "setup/LanguageTag.hpp"
 #include "porting.h"
 #include <string>
 #include <fstream>
@@ -41,11 +42,6 @@ using namespace std;
 
 namespace libvoikko { namespace setup {
 
-struct LanguageTag {
-	string language;
-	string privateUse;
-};
-
 static void tagToCanonicalForm(string & languageTag) {
 	for (size_t i = 0; i < languageTag.size(); ++i) {
 		char current = languageTag.at(i);
@@ -65,10 +61,15 @@ static LanguageTag parseFromBCP47(const string & language) {
 	string canonicalLanguage = language;
 	tagToCanonicalForm(canonicalLanguage);
 	
-	if (canonicalLanguage.compare(0, 2, "fi") == 0) {
-		tag.language = "fi";
+	size_t languageEnd = canonicalLanguage.find("-");
+	if (languageEnd == string::npos) {
+		tag.setLanguage(canonicalLanguage);
 	} else {
-		return tag;
+		if (languageEnd < 2) {
+			// Invalid tag "-..." or "f-..."
+			return tag;
+		}
+		tag.setLanguage(canonicalLanguage.substr(0, languageEnd));
 	}
 	
 	size_t privateUseStart = canonicalLanguage.find("-x-");
@@ -78,10 +79,22 @@ static LanguageTag parseFromBCP47(const string & language) {
 		            hyphenPos = privateUse.find("-")) {
 			privateUse.erase(hyphenPos, 1);
 		}
-		tag.privateUse = privateUse;
+		tag.setPrivateUse(privateUse);
 	}
 	
 	return tag;
+}
+
+/**
+ * Returns true if the given variant map contains a default dictionary for given language.
+ */
+static bool hasDefaultForLanguage(map<string, Dictionary> & variants, const string & language) {
+	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); ++i) {
+		if (i->second.getLanguage().getLanguage() == language && i->second.isDefault()) {
+			return true;
+		}
+	}
+	return false;
 }
 
 list<Dictionary> DictionaryLoader::findAllAvailable() {
@@ -105,7 +118,8 @@ list<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
 		if (i->second.isDefault()) {
 			dicts.push_front(i->second);
 		}
-		else if (i->first == "standard" && !hasDefault(dictMap)) {
+		else if (i->first.rfind("-x-standard") == i->first.size() - 11 &&
+		         !hasDefaultForLanguage(dictMap, i->second.getLanguage().getLanguage())) {
 			dicts.push_front(i->second);
 		}
 		else {
@@ -119,33 +133,38 @@ Dictionary DictionaryLoader::load(const string & language) throw(DictionaryExcep
 	return load(language, string());
 }
 
+static bool isMatchingLanguage(const LanguageTag & requested, const LanguageTag & available) {
+	if (requested.getLanguage() != available.getLanguage()) {
+		return false;
+	}
+	if (!requested.getPrivateUse().empty() && requested.getPrivateUse() != available.getPrivateUse()) {
+		return false;
+	}
+	return true;
+}
+
 Dictionary DictionaryLoader::load(const string & language, const string & path)
 		throw(DictionaryException) {
-	LanguageTag tag = parseFromBCP47(language);
-	if (tag.language != "fi") {
-		throw DictionaryException("Requested language is not supported");
-	}
+	LanguageTag requestedTag = parseFromBCP47(language);
 	
 	list<Dictionary> dicts = findAllAvailable(path);
 	if (dicts.empty()) {
 		throw DictionaryException("No valid dictionaries were found");
 	}
 	
-	string finalVariant(tag.privateUse);
-	if (finalVariant.empty() || finalVariant == "default" || finalVariant == "fi_FI") {
+	const string privateUse = requestedTag.getPrivateUse();
+	if (privateUse.empty() || privateUse == "default" || privateUse == "fi_FI") {
 		// Use dictionary specified by environment variable VOIKKO_DICTIONARY_PATH
 		// XXX: Not actually thread safe but will most probably work
 		char * dict_from_env = getenv("VOIKKO_DICTIONARY");
 		if (dict_from_env) {
-			finalVariant = string(dict_from_env);
-		}
-		else {
-			// No dictionary specified anywhere, so take the one with highest priority.
-			return dicts.front();
+			requestedTag.setPrivateUse(string(dict_from_env));
 		}
 	}
+	
 	for (list<Dictionary>::iterator i = dicts.begin(); i != dicts.end(); ++i) {
-		if ((*i).getVariant() == finalVariant) {
+		LanguageTag availableTag = (*i).getLanguage();
+		if (isMatchingLanguage(requestedTag, availableTag)) {
 			return *i;
 		}
 	}
@@ -185,15 +204,15 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 		fullDirName.append("/");
 		fullDirName.append(dirName);
 		Dictionary dict = dictionaryFromPath(fullDirName);
-		if (variantName == "default" && !hasDefault(variants)) {
+		if (variantName == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
 			dict.setDefault(true);
 		}
 		if (dict.isValid()) {
-			if (variants.find(dict.getVariant()) == variants.end()) {
-				variants[dict.getVariant()] = dict;
+			if (variants.find(dict.getLanguage().toBcp47()) == variants.end()) {
+				variants[dict.getLanguage().toBcp47()] = dict;
 			}
 			else if (dict.isDefault()) {
-				variants[dict.getVariant()].setDefault(true);
+				variants[dict.getLanguage().toBcp47()].setDefault(true);
 			}
 		}
 #ifdef WIN32
@@ -221,7 +240,8 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 		return Dictionary();
 	}
 	
-	string variant;
+	LanguageTag language;
+	language.setLanguage("fi");
 	string description;
 	string morBackend = "malaga";
 	string spellBackend = "AnalyzerToSpellerAdapter(currentAnalyzer)";
@@ -229,9 +249,13 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
 	while (file.good()) {
 		getline(file, line);
-		if (line.find("info: Language-Variant: ") == 0) {
-			variant = line.substr(24);
+		if (line.find("info: Language-Code: ") == 0) {
+			language.setLanguage(string(line.substr(21)));
+		}
+		else if (line.find("info: Language-Variant: ") == 0) {
+			string variant = line.substr(24);
 			tagToCanonicalForm(variant);
+			language.setPrivateUse(variant);
 		}
 		else if (line.find("info: Description: ") == 0) {
 			description = line.substr(19);
@@ -251,7 +275,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	}
 	file.close();
 	return Dictionary(path, morBackend, spellBackend, suggestionBackend,
-	                  hyphenatorBackend,variant, description);
+	                  hyphenatorBackend, language, description);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {
@@ -319,15 +343,6 @@ list<string> DictionaryLoader::getDefaultLocations() {
 	locations.push_back(DICTIONARY_PATH);
 	
 	return locations;
-}
-
-bool DictionaryLoader::hasDefault(map<string, Dictionary> & variants) {
-	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); ++i) {
-		if (i->second.isDefault()) {
-			return true;
-		}
-	}
-	return false;
 }
 
 } }

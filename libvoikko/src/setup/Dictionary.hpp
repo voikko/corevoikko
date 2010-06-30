@@ -20,6 +20,7 @@
 #define VOIKKO_SETUP_DICTIONARY
 
 #include <string>
+#include "setup/LanguageTag.hpp"
 
 namespace libvoikko { namespace setup {
 
@@ -33,7 +34,7 @@ class Dictionary {
 	std::string spellBackend;
 	std::string suggestionBackend;
 	std::string hyphenatorBackend;
-	std::string variant;
+	LanguageTag language;
 	std::string description;
 	bool isDefaultDict;
 
@@ -44,7 +45,7 @@ class Dictionary {
 	           const std::string & spellBackend,
 	           const std::string & suggestionBackend,
 	           const std::string & hyphenatorBackend,
-	           const std::string & variant,
+	           const LanguageTag & language,
 	           const std::string & description);
 	Dictionary(const Dictionary & dictionary);
 	const std::string & getMorPath() const;
@@ -52,7 +53,7 @@ class Dictionary {
 	const std::string & getSpellBackend() const;
 	const std::string & getSuggestionBackend() const;
 	const std::string & getHyphenatorBackend() const;
-	const std::string & getVariant() const;
+	const LanguageTag & getLanguage() const;
 	const std::string & getDescription() const;
 	bool isValid() const;
 	bool isDefault() const;

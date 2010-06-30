@@ -77,11 +77,6 @@ class DictionaryLoader {
 	 * decreasing priority order.
 	 */
 	static std::list<std::string> getDefaultLocations();
-	
-	/**
-	 * Returns true if the given variant map contains a default dictionary.
-	 */
-	static bool hasDefault(std::map<std::string, Dictionary> & variants);
 };
 
 } }

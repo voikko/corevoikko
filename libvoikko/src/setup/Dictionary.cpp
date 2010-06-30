@@ -28,7 +28,7 @@ Dictionary::Dictionary() :
 	spellBackend(),
 	suggestionBackend(),
 	hyphenatorBackend(),
-	variant(),
+	language(),
 	description(),
 	isDefaultDict(false) {
 }
@@ -37,14 +37,14 @@ Dictionary::Dictionary(const string & morPath, const string & morBackend,
                        const string & spellBackend,
                        const string & suggestionBackend,
                        const string & hyphenatorBackend,
-                       const string & variant,
+                       const LanguageTag & language,
                        const string & description) :
 	morPath(morPath),
 	morBackend(morBackend),
 	spellBackend(spellBackend),
 	suggestionBackend(suggestionBackend),
 	hyphenatorBackend(hyphenatorBackend),
-	variant(variant),
+	language(language),
 	description(description),
 	isDefaultDict(false) {
 }
@@ -55,7 +55,7 @@ Dictionary::Dictionary(const Dictionary & dictionary) :
 	spellBackend(dictionary.spellBackend),
 	suggestionBackend(dictionary.suggestionBackend),
 	hyphenatorBackend(dictionary.hyphenatorBackend),
-	variant(dictionary.variant),
+	language(dictionary.language),
 	description(dictionary.description),
 	isDefaultDict(dictionary.isDefaultDict) {
 }
@@ -80,8 +80,8 @@ const string & Dictionary::getHyphenatorBackend() const {
 	return hyphenatorBackend;
 }
 
-const string & Dictionary::getVariant() const {
-	return variant;
+const LanguageTag & Dictionary::getLanguage() const {
+	return language;
 }
 
 const string & Dictionary::getDescription() const {
@@ -89,7 +89,7 @@ const string & Dictionary::getDescription() const {
 }
 
 bool Dictionary::isValid() const {
-	return !variant.empty();
+	return !language.getLanguage().empty();
 }
 
 bool Dictionary::isDefault() const {
@@ -101,7 +101,7 @@ void Dictionary::setDefault(bool isDefault) {
 }
 
 bool operator<(const Dictionary & d1, const Dictionary & d2) {
-	return d1.variant < d2.variant;
+	return d1.language < d2.language;
 }
 
 } }

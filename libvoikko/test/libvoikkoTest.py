@@ -76,7 +76,6 @@ class LibvoikkoTest(unittest.TestCase):
 		standard = dicts[0]
 		self.assertEqual(u"standard", standard.variant,
 		     u"Standard dictionary must be the default in test environment.")
-		self.assertEqual(u"Voikon perussanasto", standard.description)
 	
 	def testListDictsWithPathAndAttributes(self):
 		info = MorphologyInfo()

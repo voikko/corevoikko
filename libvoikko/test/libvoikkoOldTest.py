@@ -72,7 +72,6 @@ class LibvoikkoOldTest(unittest.TestCase):
 		standard = uninitedDicts[0]
 		self.assertEqual(u"standard", standard.variant,
 		     u"Standard dictionary must be the default in test environment.")
-		self.assertEqual(u"Voikon perussanasto", standard.description)
 		self.voikko.init()
 		initedDicts = self.voikko.listDicts()
 		self.assertEqual(uninitedDicts, initedDicts)

@@ -1,3 +1,6 @@
+2010-06-30 Harri Pitkänen <hatapitk@iki.fi>
+	* Support using language codes other than Finnish as the real language (Trac #15).
+
 2010-06-08 Harri Pitkänen <hatapitk@iki.fi>
 	* Change HfstSpeller to return SPELL_CAP_FIRST when possible.
 

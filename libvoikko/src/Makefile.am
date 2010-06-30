@@ -49,6 +49,7 @@ libvoikko_la_SOURCES = \
     morphology/malaga/MalagaState.cpp \
     setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
+    setup/LanguageTag.cpp \
     hyphenator/interface.cpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.cpp \
     hyphenator/Hyphenator.cpp \
@@ -103,6 +104,7 @@ noinst_HEADERS = \
     morphology/malaga/MalagaState.hpp \
     setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
+    setup/LanguageTag.hpp \
     character/charset.hpp \
     character/SimpleChar.hpp \
     porting.h \
