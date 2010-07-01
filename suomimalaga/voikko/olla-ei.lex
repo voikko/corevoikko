@@ -52,7 +52,7 @@
                 tapaluokka: ehtotapa];
 [alku: "lie",   luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
                 äs: ä, tapaluokka: ehtotapa];
-[alku: "liene", luokka: teonsana, jatko: <liitesana, liitesana2, loppu>, perusmuoto: "olla",
+[alku: "liene", luokka: teonsana, jatko: <liitesana, loppu>, perusmuoto: "olla",
                 äs: ä, tapaluokka: ehtotapa];
 
 [alku: "ol",  luokka: teonsana, jatko: <olla>, perusmuoto: "olla", äs: a];

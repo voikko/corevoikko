@@ -173,7 +173,6 @@ luokka; alaluokka; jluokka;
   sijapääte;
   omistusliite;
   liitesana;
-  liitesana2;   # Poistetaan Voikossa.
   liitesana_s;  # Tulkaa+s. Poistetaan Voikossa.
   kieltosanan_liitesana;
   liitesana_pi; # Tulee+pi.

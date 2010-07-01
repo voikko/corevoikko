@@ -3659,7 +3659,6 @@ end;
 subrule muokkaa_taivutusta($tietue, $taivutus):
 
   # Näitä ei koskaan käytetä Voikossa
-  $taivutus :=- liitesana2;
   $taivutus :=- liitesana_s;
 
   if ($tietue.luokka /= etuliite) then
