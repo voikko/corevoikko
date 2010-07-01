@@ -40,7 +40,6 @@ GCCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkogc'
 DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
 SM_DESTDIR = voikkoutils.get_preference('voikkotest_sm_destdir')
 
-langcode = "fi_FI"
 spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 suggesttest = SVNROOT + "/trunk/tests/voikkotest/suggest.txt"
