@@ -95,4 +95,4 @@ define @sija_monikko_1 := <sija_monikko_1>;
 define @heikkoasteiset_paikallissijat := <sisäolento_ssA> + @ulkopaikallissijat;
 
 define @johdin_jA := <johdin_jA_myyjä, johdin_jA_kulkija, johdin_jA_kantaja>;
-define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt>;
+define @johdin_nUt := <johdin_lUt, johdin_nUt, johdin_rUt, johdin_sUt_stU>;

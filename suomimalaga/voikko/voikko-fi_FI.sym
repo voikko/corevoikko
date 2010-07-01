@@ -279,13 +279,12 @@ tapaluokka;
   johdin_lUt;       # Tul+lut, tul+tu, tul+leisuus.
   johdin_nUt;
   johdin_rUt;
-  johdin_sUt;
+  johdin_sUt_stU;   # juossut, juostu
   johdin_dU;
   johdin_lU;
   johdin_nU;
   johdin_rU;
   johdin_tU;
-  johdin_stU;       # Juosta => juostu.
 
   johdin_tU_lU_oltu;
 

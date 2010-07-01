@@ -1011,8 +1011,8 @@ define @jatko_nUt := <liitesana, osanto_tA, loppu>;
 [alku: "nyt", luokka: johdin_nUt, äs: ä, jatko: @jatko_nUt];
 [alku: "rut", luokka: johdin_rUt, äs: a, jatko: @jatko_nUt];
 [alku: "ryt", luokka: johdin_rUt, äs: ä, jatko: @jatko_nUt];
-[alku: "sut", luokka: johdin_sUt, äs: a, jatko: @jatko_nUt];
-[alku: "syt", luokka: johdin_sUt, äs: ä, jatko: @jatko_nUt];
+[alku: "sut", luokka: johdin_sUt_stU, äs: a, jatko: @jatko_nUt];
+[alku: "syt", luokka: johdin_sUt_stU, äs: ä, jatko: @jatko_nUt];
 
 
 define @jatko_ee := <omistusliite, omanto_n, olento_nA, tulento_ksi,
@@ -1032,8 +1032,8 @@ define @jatko_e := <omanto_iT,
 [alku: "nee", luokka: johdin_nUt, äs: ä, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "nyt"];
 [alku: "ree", luokka: johdin_rUt, äs: a, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "rut"];
 [alku: "ree", luokka: johdin_rUt, äs: ä, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "ryt"];
-[alku: "see", luokka: johdin_sUt, äs: a, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "sut"];
-[alku: "see", luokka: johdin_sUt, äs: ä, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "syt"];
+[alku: "see", luokka: johdin_sUt_stU, äs: a, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "sut"];
+[alku: "see", luokka: johdin_sUt_stU, äs: ä, luku: yksikkö, jatko: @jatko_ee, perusmuoto: "syt"];
 
 [alku: "le",  luokka: johdin_lUt, äs: a, luku: monikko, jatko: @jatko_e, perusmuoto: "lut"];
 [alku: "le",  luokka: johdin_lUt, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "lyt"];
@@ -1041,8 +1041,8 @@ define @jatko_e := <omanto_iT,
 [alku: "ne",  luokka: johdin_nUt, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "nyt"];
 [alku: "re",  luokka: johdin_rUt, äs: a, luku: monikko, jatko: @jatko_e, perusmuoto: "rut"];
 [alku: "re",  luokka: johdin_rUt, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "ryt"];
-[alku: "se",  luokka: johdin_sUt, äs: a, luku: monikko, jatko: @jatko_e, perusmuoto: "sut"];
-[alku: "se",  luokka: johdin_sUt, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "syt"];
+[alku: "se",  luokka: johdin_sUt_stU, äs: a, luku: monikko, jatko: @jatko_e, perusmuoto: "sut"];
+[alku: "se",  luokka: johdin_sUt_stU, äs: ä, luku: monikko, jatko: @jatko_e, perusmuoto: "syt"];
 
 
 [alku: "leisuu", luokka: johdin_lUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "leisuus"];
@@ -1051,8 +1051,8 @@ define @jatko_e := <omanto_iT,
 [alku: "neisyy", luokka: johdin_nUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "neisyys"];
 [alku: "reisuu", luokka: johdin_rUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "reisuus"];
 [alku: "reisyy", luokka: johdin_rUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "reisyys"];
-[alku: "seisuu", luokka: johdin_sUt, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "seisuus"];
-[alku: "seisyy", luokka: johdin_sUt, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "seisyys"];
+[alku: "seisuu", luokka: johdin_sUt_stU, jluokka: nimisana, äs: a, luku: monikko, jatko: <kalleus>, perusmuoto: "seisuus"];
+[alku: "seisyy", luokka: johdin_sUt_stU, jluokka: nimisana, äs: ä, luku: monikko, jatko: <kalleus>, perusmuoto: "seisyys"];
 
 
 define @jatko_vahva_aste :=
@@ -1089,8 +1089,8 @@ define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 [alku: "tu", luokka: johdin_tU, äs: a, jatko: @jatko_vahva_aste, perusmuoto: "tu"];
 [alku: "ty", luokka: johdin_tU, äs: ä, jatko: @jatko_vahva_aste, perusmuoto: "ty"];
 
-[alku: "tu", luokka: johdin_stU, äs: a, jatko: @jatko, perusmuoto: "tu"];
-[alku: "ty", luokka: johdin_stU, äs: ä, jatko: @jatko, perusmuoto: "ty"];
+[alku: "tu", luokka: johdin_sUt_stU, äs: a, jatko: @jatko, perusmuoto: "tu"];
+[alku: "ty", luokka: johdin_sUt_stU, äs: ä, jatko: @jatko, perusmuoto: "ty"];
 
 
 define @m_jatko := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,

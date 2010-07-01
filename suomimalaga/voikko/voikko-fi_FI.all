@@ -5435,8 +5435,7 @@ subrule seistä ($tietue):
                          nimitapa_2_tA: "",
                          nimitapa_3_tA: "",
                          johdin_tAvA: "",
-                         johdin_sUt: "",
-                         johdin_stU: ""]);
+                         johdin_sUt_stU: ""]);
 end;
 
 
@@ -6007,8 +6006,7 @@ end;
 
 
 subrule laatutapa_2_sUt ($tietue, $lisä):
-  return [johdin_sUt:      $lisä,
-          johdin_stU:      $lisä];
+  return [johdin_sUt_stU:      $lisä];
 end;
 
 
