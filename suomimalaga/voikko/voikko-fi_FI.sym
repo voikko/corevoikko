@@ -295,8 +295,6 @@ tapaluokka;
 aikamuoto;
   kestämä;
   kertoma;
-  päättymä;
-  entispäättymä;
 
 nimitapa;
 laatutapa;
@@ -344,8 +342,6 @@ tiedot;      # Lisätietoja sanoista. Nämä on hyvä pitää aakkosjärjestykse
   latex;     # LaTeX-komento.
   murre;     # Murteissa tai puhekielessä esiintyvä sana.
   siv;       # Sivistyssanan alku- tai loppuosa.
-  Us;        # Nimisana, josta voidaan johtaa ominaisuuden nimi us-johtimella (asiak+as+ => asiak+ku+us).
-  UUs;       # Nimisana, josta voidaan johtaa ominaisuuden nimi uus-johtimella.
   ysj;       # Sana voi olla vain yhdyssanan jälkiosana.
   ys_perusosa; # Sanaa voi normaaleista säännöistä poiketen käyttää yleisnimen tavoin
                # yhdyssanan perusosana.
