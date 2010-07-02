@@ -3674,6 +3674,8 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   if ($tietue.luokka = laatusana) then
     $taivutus :=- johdin_tOn;
     $taivutus :=- johdin_mAinen;
+    $taivutus :=- johdin_ittAin;
+    $taivutus :=- omistusliite;
   end;
 
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.tiedot /= nil
