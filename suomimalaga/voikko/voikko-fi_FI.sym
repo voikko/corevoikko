@@ -255,8 +255,6 @@ tapaluokka;
   johdin_inen;      # Valo+inen (vain yhdyssanojen jälkiosissa).
   johdin_lAinen;    # Kaupunki+lainen.
   johdin_mAinen;    # Kaupunki+mainen.
-  johdin_mmUUs;     # Valkoise+mmuus.
-  johdin_immUUs;    # Valkois+immuus.
   johdin_nlainen;   # Hyvänlainen, pahanlainen.
 
   johdin_tOn;       # Maa+ton, pää+tön, maa+llinen, pää+llinen.

@@ -3680,8 +3680,7 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- omistusliite;
   end;
 
-  if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.tiedot /= nil
-      and ei_vertm in $tietue.tiedot) then
+  if ($tietue.tiedot /= nil and ei_vertm in $tietue.tiedot) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
   end;
@@ -6627,7 +6626,7 @@ output_filter output($lista_orig):
   foreach $i in length($lista):
     # Kaikkia lippuja ei tarvita
     if ($lista.$i.tiedot /= nil) then
-      $lista.$i.tiedot :=- <ei_sukija, murre>;
+      $lista.$i.tiedot :=- <ei_sukija, murre, ei_vertm, ei_yks, ei_inen, ei_lAinen, ei_mAinen>;
       if (not johdin_inen in $lista.$i.jatko) then
         $lista.$i.tiedot :=- <inen>;
       end;
