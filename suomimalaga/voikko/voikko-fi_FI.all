@@ -3669,6 +3669,8 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
     $taivutus :=- kerronto_sti;
+    $taivutus :=- johdin_Us;
+    $taivutus :=- johdin_UUs;
   end;
   
   if ($tietue.luokka = laatusana) then
