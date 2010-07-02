@@ -3670,6 +3670,11 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- yliaste;
     $taivutus :=- kerronto_sti;
   end;
+  
+  if ($tietue.luokka = laatusana) then
+    $taivutus :=- johdin_tOn;
+    $taivutus :=- johdin_mAinen;
+  end;
 
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.tiedot /= nil
       and ei_vertm in $tietue.tiedot) then
@@ -3885,7 +3890,6 @@ end;
 
 subrule käskytapa ($tietue, $heikko_aste):
   return <taivutus ($tietue, $heikko_aste,
-##                    <liitesana, loppu>,
                     <liitesana, liitesana_s, loppu>,
                     [tapaluokka: käskytapa, aikamuoto: kestämä,
                     tekijä: tekijä_2, luku: yksikkö])>;
@@ -6620,6 +6624,9 @@ output_filter output($lista_orig):
     # Kaikkia lippuja ei tarvita
     if ($lista.$i.tiedot /= nil) then
       $lista.$i.tiedot :=- <ei_sukija, murre>;
+      if (not johdin_inen in $lista.$i.jatko) then
+        $lista.$i.tiedot :=- <inen>;
+      end;
       if (length($lista.$i.tiedot) = 0) then
         $lista.$i :=- tiedot;
       end;
