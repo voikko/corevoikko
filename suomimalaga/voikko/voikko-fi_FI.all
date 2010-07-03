@@ -3319,17 +3319,10 @@ end;
 subrule taivutus ($tietue, $lisä, $jatko, $tulos):
   assert (value_type ($jatko) = list);
 
-  if ($tietue.luokka in @nimisana + <laatusana> and $tietue.sija = nil) then
-    return ([alku: $tietue.alku + $lisä]
-            + ($tietue - alku - jatko)
-            + [jatko: $jatko]
-            + $tulos + [sija: nimentö]);
-  else
-    return ([alku: $tietue.alku + $lisä]
-            + ($tietue - alku - jatko)
-            + [jatko: $jatko]
-            + $tulos);
-  end;
+  return ([alku: $tietue.alku + $lisä]
+          + ($tietue - alku - jatko)
+          + [jatko: $jatko]
+          + $tulos);
 end;
 
 

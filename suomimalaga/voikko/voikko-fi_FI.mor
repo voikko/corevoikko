@@ -1893,7 +1893,8 @@ subrule tulostus_sijamuoto($tietue):
     if $allomorfi.sijamuoto /= nil then
       return $allomorfi.sijamuoto;
     end;
-    if $allomorfi.sija = nimentö then
+    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana,
+                             etunimi, sukunimi, paikannimi, nimi> then
       return nimentö;
     end;
   end;
@@ -1907,7 +1908,8 @@ subrule tulostus_luku($tietue):
     if $allomorfi.luku /= nil then
       return $allomorfi.luku;
     end;
-    if $allomorfi.sija = nimentö then
+    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana,
+                             etunimi, sukunimi, paikannimi, nimi> then
       return yksikkö;
     end;
   end;
