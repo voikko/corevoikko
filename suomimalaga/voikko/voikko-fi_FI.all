@@ -6640,6 +6640,12 @@ output_filter output($lista_orig):
         $lista.$i.rakenne := substring($lista.$i.rakenne, 2L, 1R);
       end;
     end;
+    
+    # Nimentöä tarvitaan aikaisemmin prosessissa merkkinä siitä, että sanan voi lopettaa ko. kohdassa.
+    # Tässä vaiheessa sen voi poistaa.
+    if ($lista.$i.luokka in @nimisana + <laatusana>) then
+      $lista.$i.jatko :=- <nimentö>;
+    end;
   end;
 
   # Poistetaan täydelliset kaksoiskappaleet
