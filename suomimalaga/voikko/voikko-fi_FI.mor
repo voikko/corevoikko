@@ -333,8 +333,9 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   define $edellinen := $vasen.($index - 1);
-  ? (((nimisana in $edellinen.jatko))    or
-     ($edellinen.luokka = lukusana)      or
+  ? ((nimisana in $edellinen.jatko)    or
+     (tavuviiva in $edellinen.jatko and $edellinen.luokka in @nimisana + <laatusana>) or
+     ($edellinen.luokka = lukusana)    or
      ($oikea.lähtöluokka = teonsana and
       (teonsana in $edellinen.jatko or teonsanan_johdoksen_etuliite in $edellinen.jatko)));
 

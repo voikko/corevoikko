@@ -1634,16 +1634,6 @@ allo_rule generate_allos ($tietue):
 ####################################################
 
 
-#  elseif (uros in $tietue.jatko) then
-#    choose $i in vastaus ($tietue)
-#                 + s_V_loppuinen ($tietue, "o", "")
-#                 + s_hV_loppuinen ($tietue, "ho", "h");
-#    result $i.alku, $i - alku;
-
-
-####################################################
-
-
   elseif (mies in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
                                 yksikkö8 ("he", "s", "he", "he",
@@ -1653,7 +1643,6 @@ allo_rule generate_allos ($tietue):
                                  johdin_UUs:      "h",    # Miehyys. Miehuus on pantava sanakirjaan.
                                  johdin_Us:       "he",   # Mieheys.
                                  johdin_mAinen:   "s"] +
-####################                                 johdin_inen:     "hi"] + # Miehinen on jo sanastossa.
                                 monikko7 ("he", "h", "h",
                                           [omanto_ten: "s", omanto_ien: "h"],
                                           [osanto_iA: "h"],
@@ -3654,10 +3643,6 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   # Näitä ei koskaan käytetä Voikossa
   $taivutus :=- liitesana_s;
 
-  if ($tietue.luokka /= etuliite) then
-    $taivutus :=- teonsana;
-  end;
-
   if ($tietue.luokka = nimisana) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
@@ -3718,8 +3703,10 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- kerronto_sti;
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
+  end;
+  
+  if ($tietue.luokka in @nimisana + <laatusana>) then
     $taivutus :=- nimisana;
-    $taivutus :=- teonsana;
   end;
   
   return $taivutus;
@@ -6508,8 +6495,7 @@ end;
 
 subrule yhdyssana ($yhdyssana):
   return [nimisana:        $yhdyssana,
-	  tavuviiva:       $yhdyssana,
-          teonsana:        $yhdyssana];
+	  tavuviiva:       $yhdyssana];
 end;
 
 
