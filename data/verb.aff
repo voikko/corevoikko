@@ -529,7 +529,7 @@ end: class
 # Kotus 63 saada
 class: 63
 sm-class: saada
-match-word: CVVdA
+match-word: CV[AUO]dA
 consonant-gradation: -
 group: t
 transform-group: e
