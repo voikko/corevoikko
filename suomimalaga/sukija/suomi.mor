@@ -72,9 +72,6 @@ define @nimitapa_3 := <nimitapa_3, nimitapa_3_saama, nimitapa_3_ttA, nimitapa_3_
 define @voittoaste := <voittoaste>;
 define @yliaste    := <yliaste>;
 
-define @johdin_x:= <johdin_ittAin, johdin_nlainen,
-                    johdin_tOn, johdin_Us, johdin_UUs>
-                    + @johdin_jA;
 
 define @tekijämuodot := @kestämän_tekijäpääte + @tositavan_tekijäpääte_4 + @kertoman_tekijäpääte
                         + @ehtotapa + @mahtotapa + @käskytapa;
@@ -1027,6 +1024,14 @@ combi_rule liitesana ($vasen, $oikea, $sana, $n):
 end;
 
 
+# Merkkijonon viimeinen merkki
+# Tekijä: Björn Beutel.
+#subrule last($string):
+#  ! $string matches ".*", ".": $last;
+#  return $last;
+#end;
+
+
 combi_rule liitesana_ei_kO ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("liitesana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in <liitesana, liitesana2, liitesana_s>;
@@ -1091,7 +1096,7 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
   # sanan vartalon viimeinen kirjain on a tai e tai ä. Tämä algoritmi kelpaa Juhani
   # Ahon teoksille (http://www.lonnrot.net/etext.html).
   #
-  # Siis hyväksytään esim. isäinsä, valainsa, kasvoinsa, pöytäimme, synteimme, mutta ei uskoimme.
+  # Siis hyväksytään esim. isä+i+nsä, vala+i+nsa, kasvo+i+nsa, pöytä+i+mme, synte+i+mme, mutta ei usko+i+mme.
   #
   if ($sana in <"ni", "si", "s", "nsa", "nsä", "ns", "mme", "nne">) then
     if ($vasen.$i.sija = omanto_in) then
@@ -1125,12 +1130,11 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
                                   vajanto_ttA, vajanto_ittA,
                                   seuranto_ine>))
              or ($vasen.$i.luokka in <seikkasana, suhdesana>)
-             or (($vasen.$i.luokka = nimisana)
-                 and ($vasen.$i.sijamuoto /= nil)
-                 and ($vasen.$i.sijamuoto in <olento, ulko_olento, ulkoeronto, ulkotulento,
-                                              sisäolento, sisäeronto, sisätulento>)))) then
+             or (($vasen.$i.luokka = nimisana) and ($vasen.$i.sijamuoto /= nil)))) then # Omallatunnolla+an yms.
       result $result, rules liitesana, loppu;
-    elseif ($vasen.$i.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_3_saama, nimitapa_5>) then
+    elseif (($vasen.$i.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_3_saama, nimitapa_5>)
+            and not ($vasen.$i.alku in <"maa", "mää">)) then  ## Tämä ehto on kopsattu Harri Pitkäsen Voikko-versiosta:
+                                                              ## eroa+maa+an on väärin.
       result $result, rules liitesana, loppu;
     end;
   end;
@@ -1146,7 +1150,6 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $n):
 #define $nimi2a := transmit (<"voitto_yliaste2"> + <$vasen.$i>);
 #define $nimi3a := transmit (<"voitto_yliaste3"> + <$oikea> + <$sana>);
 
-##  ? (voittoaste in $vasen.$i.jatko) or (yliaste in $vasen.$i.jatko);
   ? $oikea.luokka in $vasen.$i.jatko;
   ? äs_ok ($vasen.$i, $oikea);
 
@@ -1154,7 +1157,6 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $n):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-#  if ($sana = "mpi" and $oikea.luokka = voittoaste and yhdyssana in $oikea.jatko) then
   if ($oikea.luokka = voittoaste and yhdyssana in $oikea.jatko) then
     #
     # Jos jatkossa on yhdyssana, niin on myös tavuviiva.
@@ -2227,6 +2229,9 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $n):
   if tavuviiva in $oikea.jatko then
     result $res, rules tavuviiva;
   end;
+#  if (yhdyssana in $oikea.jatko) then
+#    result $res, rules yhdyssana;
+#  end;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
   end;
@@ -2239,9 +2244,9 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $n):
   if (@laatusanasta_johdettu_nimisana * $oikea.jatko /= <>) then
     result $res, rules laatusanasta_johdettu_nimisana;
   end;
-  if (@laatusanasta_johdettu_laatusana * $oikea.jatko /= <>) then
-    result $res, rules laatusanasta_johdettu_laatusana;
-  end;
+#  if (@laatusanasta_johdettu_laatusana * $oikea.jatko /= <>) then
+#    result $res, rules laatusanasta_johdettu_laatusana;
+#  end;
   if ((voittoaste in $oikea.jatko) or (yliaste in $oikea.jatko)) then
     result $res, rules voitto_yliaste;
   end;
@@ -2283,9 +2288,9 @@ combi_rule nimi_laatusanan_johdin ($vasen, $oikea, $sana, $n):
   if (@laatusanasta_johdettu_nimisana * $oikea.jatko /= <>) then
     result $res, rules laatusanasta_johdettu_nimisana;
   end;
-  if (@laatusanasta_johdettu_laatusana * $oikea.jatko /= <>) then
-    result $res, rules laatusanasta_johdettu_laatusana;
-  end;
+#  if (@laatusanasta_johdettu_laatusana * $oikea.jatko /= <>) then
+#    result $res, rules laatusanasta_johdettu_laatusana;
+#  end;
   if (loppu in $oikea.jatko) then
     result $res, rules loppu;
   end;

@@ -1090,7 +1090,14 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "Reykjavík", alku: "Reykjavík", luokka: paikannimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Netticolosseum", alku: "Netticolosseum", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Merkaartor", alku: "Merkaartor", luokka: nimi, jatko: <kalsium>, äs: a];
-
+[perusmuoto: "Rabb", alku: "Rabb", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Tarkiainen", alku: "Tarkiai", luokka: sukunimi, jatko: <nainen>, äs: a];
+[perusmuoto: "lesbous", alku: "lesbou", luokka: nimisana, jatko: <kalleus>, äs: a];
+[perusmuoto: "Jänkälä", alku: "jänkäl", luokka: sukunimi, jatko: <apila>, äs: ä];
+[perusmuoto: "Cotton", alku: "Cotton", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "Telekarelia", alku: "Telekareli", luokka: nimi, jatko: <karahka>, äs: a];
+[perusmuoto: "renovaatio", alku: "renov", luokka: nimisana, jatko: <obligaatio>, äs: a];
+[perusmuoto: "renovoida", alku: "renovo", luokka: teonsana, jatko: <voida>, äs: a];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

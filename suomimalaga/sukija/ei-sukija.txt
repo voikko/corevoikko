@@ -50,6 +50,7 @@ Armenia
 Aro
 arpeutuma
 arvioitsija
+aspartaattiaminotransferaasi
 astuma
 astumajalka
 Astuvansalmi
@@ -58,6 +59,7 @@ aukeama
 Aura
 Aurinko
 Autio
+autoimmuuni
 autoimmuunihepatiitti
 autoimmuunisairaus
 avauma
@@ -101,6 +103,7 @@ esilletuominen
 esilletuonti
 esimerkki
 esitelmöitsijä
+esitystekninen
 Espanja
 Esteri
 estymä
@@ -149,6 +152,7 @@ Helo
 heloitus
 henkilöitymä
 henkilökohtainen
+hermo-lihasliitos
 herraskartano
 herrasmainen
 herrasmies
@@ -190,7 +194,10 @@ ilmentymä
 Ilta
 imeväinen
 imeväisikä
+immuunipuutos
 Indonesia
+infantiilispasmi
+inkeriläinen
 innoittua
 institutionalisoitua
 Internet
@@ -610,6 +617,7 @@ näyttämä
 näyttö
 ohentuma
 ohutkalvo
+ohutneula
 ohutsuoli
 oikeanlainen
 oikeistolainen
@@ -632,6 +640,7 @@ painatus
 painautuma
 painuma
 paisuma
+paisuvaiskudos
 Pajari
 pakolainen
 paleltuma
@@ -642,10 +651,12 @@ partiolainen
 patoutuma
 Paula
 pehmytkudos
+peilikirkas
 peitto
 pensastua
 Perho
 perimä
+permikausi
 Persia
 Peräseinäjoki
 peräänajo
@@ -680,6 +691,7 @@ populaarikulttuuri
 Portugali
 Posti
 pre-eklampsia
+preliminäärikoe
 primaaripreventio
 pseudokysta
 Pudasjärvi
@@ -713,6 +725,7 @@ rajuilma
 Ranska
 Ranta
 Rantasalmi
+rapauma
 rappeutuma
 rappeuma
 rasitus
@@ -801,6 +814,7 @@ sisäpiiriläinen
 sisäänajo
 sisäänmeno
 sisääntulo
+skitsoaffektiivinen
 soistuma
 soitto
 Somero
@@ -840,6 +854,7 @@ Taisto
 taittuma
 Taivalkoski
 takaisinkytkentä
+takaisinpano
 Takamäki
 takautuma
 takomakone

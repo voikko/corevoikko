@@ -50,7 +50,7 @@ SM=suomimalaga
 
 tar:
 	rm -f ${SM}.tar ${SM}.tar.bz2
-	gtar cf ${SM}.tar ${SM}
+	tar cf ${SM}.tar ${SM}
 	bzip2 ${SM}.tar
 
 mcopy:
