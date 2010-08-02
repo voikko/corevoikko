@@ -1042,8 +1042,7 @@ defined in `wcheck-language-data-defaults'."
                (eq key 'regexp-discard))
            (if (stringp value) value default-value))
           ((eq key 'args)
-           (cond ((and (listp value)
-                       (not (memq nil (mapcar #'stringp value))))
+           (cond ((wcheck-list-of-strings-p value)
                   value)
                  ((stringp value)
                   ;; For backwards compatibility
@@ -1068,6 +1067,11 @@ defined in `wcheck-language-data-defaults'."
        (file-regular-p program)
        (file-executable-p program)
        t))
+
+
+(defun wcheck-list-of-strings-p (object)
+  (and (listp object)
+       (not (memq nil (mapcar #'stringp object)))))
 
 
 (defun wcheck-error-program-not-executable (language program)
