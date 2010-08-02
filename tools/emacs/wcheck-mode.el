@@ -60,7 +60,8 @@ and a description of VALUE types:
 
 program
     VALUE is a string that is the executable program responsible
-    for spell-checking LANGUAGE. This setting is mandatory.
+    for spell-checking LANGUAGE. This the only setting that is
+    mandatory.
 
 args
      Optional command-line arguments for the program. The VALUE
@@ -141,15 +142,60 @@ case-fold
     case-sensitive (nil). Note that this only has effect on
     `wcheck-mode's internal regular expression search.
 
-An example contents of the `wcheck-language-data' variable:
+suggestion-program
+suggestion-args
+suggestion-parser
+    `suggestion-program' is name (string) of an external
+    executable program and `suggestion-args' are the command-line
+    arguments (a list of strings) for the program. When user
+    clicks the right mouse button on marked text, or executes
+    command `wcheck-spelling-suggestions', the marked text will
+    be sent to the `suggestion-program' as standard input stream.
+    The program should send suggested substitutes (in one way or
+    another) to standard output stream.
+
+    `suggestion-parser' is an Emacs Lisp function which is
+    responsible for parsing the output of `suggestion-program'.
+    The function is run without arguments and within the context
+    of a temporary buffer. The buffer contains all the output
+    from the external program and the point is located at the
+    beginning of the buffer. `suggestion-parser' function should
+    collect all the substitute suggestions from the buffer and
+    return them as a list of strings or nil if there are no
+    suggestions.
+
+    For the most common cases there are three parser functions
+    already implemented:
+
+        `wcheck-parse-suggestions-ispell' parses substitute
+        suggestions from the output of Ispell or compatible
+        program, such as Enchant or Aspell. Use this function as
+        the `suggestion-parser' if you get suggestions from
+        Ispell-like program with its \"-a\" command-line option.
+
+        `wcheck-parse-suggestions-line' turns each line in the
+        output of `suggestion-program' to individual substitute
+        suggestions.
+
+        `wcheck-parse-suggestions-ws'. Each whitespace-separated
+        token in the program's output is a separate suggestion.
+
+Here's an example contents of the `wcheck-language-data'
+variable:
 
     ((\"suomi\"
       (program . \"/usr/bin/enchant\")
-      (args \"-l\" \"-d\" \"fi_FI\")
-      (syntax . my-finnish-syntax-table))
+      (args . (\"-l\" \"-d\" \"fi\"))
+      (syntax . my-finnish-syntax-table)
+      (suggestion-command . \"/usr/bin/enchant\")
+      (suggestion-args . (\"-a\" \"-d\" \"fi\"))
+      (suggestion-parser . wcheck-parse-suggestions-ispell))
      (\"British English\"
       (program . \"/usr/bin/ispell\")
-      (args \"-l\" \"-d\" \"british\"))
+      (args . (\"-l\" \"-d\" \"british\"))
+      (suggestion-command . \"/usr/bin/ispell\")
+      (suggestion-args . (\"-a\" \"-d\" \"british\"))
+      (suggestion-parser . wcheck-parse-suggestions-ispell))
      (\"Trailing whitespace\"
       (program . \"/bin/cat\")
       (regexp-start . \"\")
@@ -214,7 +260,22 @@ An example contents of the `wcheck-language-data' variable:
              (const :tag "Regexp case: " :format "%t" case-fold)
              (choice :format "%[Value Menu%] %v" :value nil
                      (const :tag "sensitive" nil)
-                     (const :tag "insensitive" t))))))))
+                     (const :tag "insensitive" t)))
+       (cons :tag "Suggestion program" :format "%v"
+             (const :tag "Suggestion program: " :format "%t" suggestion-program)
+             (file :format "%v"))
+       (cons :tag "Suggestion program's arguments" :format "%v"
+             (const :format "" suggestion-args)
+             (repeat :tag "Suggestion program's arguments"
+                     (string :format "%v")))
+       (cons :tag "Suggestion parser function" :format "%v"
+             (const :tag "Suggestion parser: " :format "%t"
+                    suggestion-parser)
+             (choice :format "%[Value Menu%] %v" :value nil
+                     (const :tag "Ispell" wcheck-parse-suggestions-ispell)
+                     (const :tag "Lines" wcheck-parse-suggestions-line)
+                     (const :tag "Whitespace" wcheck-parse-suggestions-ws)
+                     (function :tag "Function" :format "%v" :value ignore))))))))
 
 
 (defconst wcheck-language-data-defaults
@@ -425,8 +486,8 @@ semantical units are called \"languages\".
 See the documentation of variable `wcheck-language-data' for
 information on how to configure Wcheck mode. Interactive command
 `wcheck-change-language' is used to switch languages. Variable
-`wcheck-read-or-skip-faces' controls which face elements to read
-or skip in a buffer."
+`wcheck-read-or-skip-faces' controls which face elements are to
+be read or skipped in buffers."
 
   :init-value nil
   :lighter " wck"
@@ -911,7 +972,6 @@ visible in BUFFER within position range from BEG to END."
                (r-start (wcheck-query-language-data language 'regexp-start t))
                (r-end (wcheck-query-language-data language 'regexp-end t))
                (syntax (eval (wcheck-query-language-data language 'syntax t)))
-               (face (wcheck-query-language-data language 'face t))
                (case-fold-search
                 (wcheck-query-language-data language 'case-fold t))
                (user-faces (wcheck-major-mode-faces major-mode))
@@ -921,7 +981,17 @@ visible in BUFFER within position range from BEG to END."
                             user-faces)
                          t))
                (search-spaces-regexp nil)
+               (ol-face (wcheck-query-language-data language 'face t))
+               (ol-keymap (make-sparse-keymap))
+               (ol-mouse-face nil)
+               (ol-help-echo nil)
                regexp old-point)
+
+          (when (wcheck-query-language-data language 'suggestion-program)
+            (define-key ol-keymap [down-mouse-3] 'wcheck-mouse-click-overlay)
+            (define-key ol-keymap [mouse-3] 'undefined)
+            (setq ol-mouse-face 'highlight
+                  ol-help-echo "mouse-3: show suggestions"))
 
           (with-syntax-table syntax
             (save-match-data
@@ -948,8 +1018,169 @@ visible in BUFFER within position range from BEG to END."
                           ((eval face-p)
                            ;; Make an overlay.
                            (wcheck-make-overlay
-                            buffer face (match-beginning 1) (match-end 1))))
+                            buffer ol-face ol-mouse-face ol-help-echo ol-keymap
+                            (match-beginning 1) (match-end 1))))
                     (setq old-point (point))))))))))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Spelling suggestions
+
+
+(defun wcheck-marked-text-at (pos)
+  "Return information about `wcheck-mode's marked text at POS.
+POS is a buffer position. The return value is a vector of three
+items: (1) the marked text string, (2) marker at the beginning of
+the text and (3) marker at the end of the text."
+  (let ((overlay (catch 'my-overlay
+                   (dolist (ol (overlays-at pos))
+                     (when (overlay-get ol 'wcheck-mode)
+                       (throw 'my-overlay ol))))))
+    (when overlay
+      (let ((start (copy-marker (overlay-start overlay)))
+            (end (copy-marker (overlay-end overlay))))
+        (vector (buffer-substring-no-properties start end)
+                start end)))))
+
+
+(defun wcheck-spelling-suggestions (pos &optional popup-menu)
+  "Get spelling suggestions for marked text at POS.
+If POS is on marked text and substitute suggestion program is
+properly configured show a menu of suggested substitutions. If
+user chooses one the original marked text is replaced with the
+chosen substitute."
+  (interactive "d")
+  (let ((overlay-data (or (wcheck-marked-text-at pos)
+                          (wcheck-marked-text-at (1- pos)))))
+    (if overlay-data
+        (let* ((text (aref overlay-data 0))
+               (start (aref overlay-data 1))
+               (end (aref overlay-data 2))
+               (suggestions (wcheck-get-suggestions wcheck-language text)))
+          (unless (eq suggestions 'error)
+            (let ((chosen (if (and window-system popup-menu)
+                              (wcheck-choose-suggestion-popup suggestions)
+                            (wcheck-choose-suggestion-minibuffer suggestions))))
+              (when (and (stringp chosen)
+                         (markerp start)
+                         (markerp end))
+                (if buffer-read-only
+                    (message "Buffer is read-only")
+                  (delete-region start end)
+                  (goto-char start)
+                  (insert chosen)
+                  (goto-char (+ start (length chosen))))))))
+      (message "There is no marked text here"))))
+
+
+(defun wcheck-get-suggestions (language text)
+  "Get suggestions from external program.
+Run LANGUAGE's external suggestion program (if configured) and
+send TEXT as standard input stream for the program. Parse
+program's output with user-configured parser function (see
+`wcheck-language-data') and return possible substitute
+suggestions as a list of strings (or nil if there aren't any)."
+  (let ((program (wcheck-query-language-data language 'suggestion-program))
+        (args (wcheck-query-language-data language 'suggestion-args))
+        (func (wcheck-query-language-data language 'suggestion-parser)))
+    (cond ((or (not (stringp program))
+               (and (stringp program)
+                    (zerop (length program))))
+           (message "Language \"%s\": suggestion program is not configured"
+                    language)
+           'error)
+          ((not (wcheck-program-executable-p program))
+           (message "Language \"%s\": program \"%s\" is not executable"
+                    language program)
+           'error)
+          ((not func)
+           (message "Parser function for language \"%s\" is not configured"
+                    language)
+           'error)
+          (t
+           (with-temp-buffer
+             (insert text)
+             (apply #'call-process-region (point-min) (point-max)
+                    program t t nil args)
+             (goto-char (point-min))
+             (let ((suggestions (funcall func)))
+               (if (wcheck-list-of-strings-p suggestions)
+                   suggestions
+                 (message (concat "Parser function must return a list "
+                                  "of strings or the empty list (nil)"))
+                 'error)))))))
+
+
+(defun wcheck-choose-suggestion-popup (suggestions)
+  "Create a pop-up menu to choose a substitute suggestion.
+SUGGESTIONS is a list of strings. Return user's choice (string)."
+  (let ((menu (if suggestions
+                  (mapcar #'(lambda (item)
+                              (cons item item))
+                          suggestions)
+                (list "[No suggestions]"))))
+    (x-popup-menu t (list "Choose a substitute" (cons "" menu)))))
+
+
+(defun wcheck-choose-suggestion-minibuffer (suggestions)
+  "Create a text menu to choose a substitute suggestion.
+SUGGESTIONS is a list of strings. Return user's choice (string)."
+  (if suggestions
+      (let* ((window-min-height 2)
+             (split-window-keep-point t)
+             (chars (append (number-sequence 49 57) (list 48)
+                            (number-sequence 97 122)))
+             alist)
+        (with-temp-buffer
+          (setq mode-line-format (list "-- Choose a substitute %-")
+                cursor-type nil
+                truncate-lines t)
+          (let (suggestion item)
+            (while (and suggestions chars)
+              (setq suggestion (car suggestions)
+                    suggestions (cdr suggestions)
+                    item (format "  (%c) %s" (car chars) suggestion)
+                    alist (cons (cons (car chars) suggestion) alist)
+                    chars (cdr chars))
+              (insert item)
+              (when (and suggestions chars
+                         (>= (+ (- (point) (line-beginning-position))
+                                (length (concat "  ( ) " (car suggestions))))
+                             (window-width)))
+                (newline 1))))
+          (setq buffer-read-only t)
+          (let ((window (split-window-vertically
+                         (1- (- (count-lines (point-min) (point-max)))))))
+            (set-window-buffer window (current-buffer))
+            (set-window-dedicated-p window t)
+            (cond ((cdr (assq (read-char-exclusive "Enter character:")
+                              alist)))
+                  (t (message "Invalid character") nil)))))
+    (message "No suggestions")
+    nil))
+
+
+(defun wcheck-parse-suggestions-line ()
+  "Parser for newline-separated suggestions."
+  (delete-dups (split-string (buffer-substring-no-properties (point-min)
+                                                             (point-max))
+                             "\n+" t)))
+
+
+(defun wcheck-parse-suggestions-ws ()
+  "Parser for whitespace-separated suggestions."
+  (delete-dups (split-string (buffer-substring-no-properties (point-min)
+                                                             (point-max))
+                             "[ \f\t\n\r\v]+" t)))
+
+
+(defun wcheck-parse-suggestions-ispell ()
+  "Parser for Ispell-compatible programs' output."
+  (let ((search-spaces-regexp nil))
+    (save-match-data
+      (when (re-search-forward "^& [^:]+: \\(.+\\)$" nil t)
+        (delete-dups (split-string (match-string-no-properties 1)
+                                   ", " t))))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1039,15 +1270,19 @@ defined in `wcheck-language-data-defaults'."
                (eq key 'regexp-start)
                (eq key 'regexp-body)
                (eq key 'regexp-end)
-               (eq key 'regexp-discard))
+               (eq key 'regexp-discard)
+               (eq key 'suggestion-program))
            (if (stringp value) value default-value))
           ((eq key 'args)
-           (cond ((wcheck-list-of-strings-p value)
-                  value)
+           (cond ((wcheck-list-of-strings-p value) value)
                  ((stringp value)
                   ;; For backwards compatibility
                   (split-string-and-unquote value "[ \t\n]+"))
                  (t default-value)))
+          ((eq key 'suggestion-args)
+           (when (wcheck-list-of-strings-p value) value))
+          ((eq key 'suggestion-parser)
+           (when (functionp value) value))
           ((or (eq key 'connection)
                (eq key 'case-fold))
            value))))
@@ -1134,17 +1369,20 @@ according to A's and all overlapping A B ranges are combined."
 ;;; Overlays
 
 
-(defun wcheck-make-overlay (buffer face beg end)
+(defun wcheck-make-overlay (buffer face mouse-face help-echo keymap beg end)
   "Create an overlay to mark text.
-Create an overlay in BUFFER from range BEG to END. Put FACE as
-the overlay's \"face\" property."
+Create an overlay in BUFFER from range BEG to END. FACE,
+MOUSE-FACE, HELP-ECHO and KEYMAP are overlay's properties."
   (let ((overlay (make-overlay beg end buffer)))
     (dolist (prop `((wcheck-mode . t)
                     (face . ,face)
+                    (mouse-face . ,mouse-face)
                     (modification-hooks . (wcheck-remove-changed-overlay))
                     (insert-in-front-hooks . (wcheck-remove-changed-overlay))
                     (insert-behind-hooks . (wcheck-remove-changed-overlay))
-                    (evaporate . t)))
+                    (evaporate . t)
+                    (keymap . ,keymap)
+                    (help-echo . ,help-echo)))
       (overlay-put overlay (car prop) (cdr prop)))))
 
 
@@ -1159,6 +1397,13 @@ range BEG to END. Otherwise remove all overlays."
   "Hook for removing overlay which is being edited."
   (unless after
     (delete-overlay overlay)))
+
+
+(defun wcheck-mouse-click-overlay (event)
+  "Overlay mouse-click event.
+Send the mouse pointer position to spelling suggestion function."
+  (interactive "e")
+  (wcheck-spelling-suggestions (posn-point (event-end event)) t))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
