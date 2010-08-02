@@ -483,11 +483,15 @@ send text to standard output can be used. User is free to
 interpret the semantics. In Wcheck configuration different
 semantical units are called \"languages\".
 
-See the documentation of variable `wcheck-language-data' for
-information on how to configure Wcheck mode. Interactive command
-`wcheck-change-language' is used to switch languages. Variable
-`wcheck-read-or-skip-faces' controls which face elements are to
-be read or skipped in buffers."
+See the documentation of variables `wcheck-language-data',
+`wcheck-language' and `wcheck-read-or-skip-faces' for information
+on how to configure Wcheck mode. You can access the variables
+through customize group `wcheck'.
+
+Interactive command `wcheck-change-language' is used to switch
+languages. Command `wcheck-spelling-suggestions' gives spelling
+suggestions for misspelled text at point (also accessible through
+the right-click mouse menu)."
 
   :init-value nil
   :lighter " wck"
@@ -1048,7 +1052,9 @@ the text and (3) marker at the end of the text."
 If POS is on marked text and substitute suggestion program is
 properly configured show a menu of suggested substitutions. If
 user chooses one the original marked text is replaced with the
-chosen substitute."
+chosen substitute. If POPUP-MENU is non-nil use a graphic
+toolkit's menu for selecting suggestions. Otherwise use a text
+menu."
   (interactive "d")
   (let ((overlay-data (or (wcheck-marked-text-at pos)
                           (wcheck-marked-text-at (1- pos)))))
