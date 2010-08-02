@@ -857,6 +857,7 @@ elements between BEG and END; all hidden parts are omitted."
                             (wcheck-major-mode-op-mode major-mode)
                             user-faces)
                          t))
+               (search-spaces-regexp nil)
                (old-point 0)
                words)
 
@@ -917,6 +918,7 @@ visible in BUFFER within position range from BEG to END."
                             (wcheck-major-mode-op-mode major-mode)
                             user-faces)
                          t))
+               (search-spaces-regexp nil)
                regexp old-point)
 
           (with-syntax-table syntax
