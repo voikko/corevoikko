@@ -1137,30 +1137,50 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
              (chars (append (number-sequence 49 57) (list 48)
                             (number-sequence 97 122)))
              alist)
+
         (with-temp-buffer
           (setq mode-line-format (list "-- Choose a substitute %-")
                 cursor-type nil
                 truncate-lines t)
-          (let (suggestion item)
+
+          (let (suggestion string)
             (while (and suggestions chars)
               (setq suggestion (car suggestions)
                     suggestions (cdr suggestions)
-                    item (format "  (%c) %s" (car chars) suggestion)
+                    string (concat "  "
+                                   (propertize (format "(%c)" (car chars))
+                                               'face 'bold)
+                                   " " suggestion)
                     alist (cons (cons (car chars) suggestion) alist)
                     chars (cdr chars))
-              (insert item)
+              (insert string)
               (when (and suggestions chars
                          (>= (+ (- (point) (line-beginning-position))
                                 (length (concat "  ( ) " (car suggestions))))
                              (window-width)))
                 (newline 1))))
           (setq buffer-read-only t)
+
           (let ((window (split-window-vertically
-                         (1- (- (count-lines (point-min) (point-max)))))))
+                         (1- (- (count-lines (point-min) (point-max))))))
+                (prompt
+                 (apply #'propertize
+                        (let ((last (caar alist)))
+                          (format "Number %s(%s):"
+                                  (if (memq last (number-sequence ?a ?z))
+                                      "or letter "
+                                    "")
+                                  (cond ((= last ?1) "1")
+                                        ((memq last (number-sequence ?2 ?9))
+                                         (format "1-%c" last))
+                                        ((= last ?0) "1-9,0")
+                                        ((= last ?a) "1-9,0,a")
+                                        ((memq last (number-sequence ?b ?z))
+                                         (format "1-9,0,a-%c" last)))))
+                        minibuffer-prompt-properties)))
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
-            (cond ((cdr (assq (read-char-exclusive "Enter character:")
-                              alist)))
+            (cond ((cdr (assq (read-char-exclusive prompt) alist)))
                   (t (message "Invalid character") nil)))))
     (message "No suggestions")
     nil))
