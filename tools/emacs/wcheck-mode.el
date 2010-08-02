@@ -863,28 +863,30 @@ elements between BEG and END; all hidden parts are omitted."
 
           (with-syntax-table syntax
             (goto-char beg)
-            (catch 'infinite
-              (while (re-search-forward regexp end t)
-                (cond ((= (point) old-point)
-                       ;; Make sure we don't end up in an infinite loop
-                       ;; when the regexp always matches with zero width
-                       ;; in the current point position.
-                       (throw 'infinite t))
+            (save-match-data
+              (catch 'infinite
+                (while (re-search-forward regexp end t)
+                  (cond ((= (point) old-point)
+                         ;; Make sure we don't end up in an infinite
+                         ;; loop when the regexp always matches with
+                         ;; zero width in the current point position.
+                         (throw 'infinite t))
 
-                      ((invisible-p (match-beginning 1))
-                       ;; This point is invisible. Let's jump forward to
-                       ;; next change of "invisible" property.
-                       (goto-char (next-single-char-property-change
-                                   (match-beginning 1) 'invisible buffer
-                                   end)))
+                        ((invisible-p (match-beginning 1))
+                         ;; This point is invisible. Let's jump forward
+                         ;; to next change of "invisible" property.
+                         (goto-char (next-single-char-property-change
+                                     (match-beginning 1) 'invisible buffer
+                                     end)))
 
-                      ((and (eval face-p)
-                            (or (equal discard "")
-                                (not (string-match
-                                      discard (match-string-no-properties 1)))))
-                       ;; Add the match to the word list.
-                       (add-to-list 'words (match-string-no-properties 1))))
-                (setq old-point (point)))))
+                        ((and (eval face-p)
+                              (or (equal discard "")
+                                  (not (string-match
+                                        discard
+                                        (match-string-no-properties 1)))))
+                         ;; Add the match to the word list.
+                         (add-to-list 'words (match-string-no-properties 1))))
+                  (setq old-point (point))))))
           words)))))
 
 
@@ -922,30 +924,32 @@ visible in BUFFER within position range from BEG to END."
                regexp old-point)
 
           (with-syntax-table syntax
-            (dolist (word wordlist)
-              (setq regexp (concat r-start "\\("
-                                   (regexp-quote word) "\\)"
-                                   r-end)
-                    old-point 0)
-              (goto-char beg)
+            (save-match-data
+              (dolist (word wordlist)
+                (setq regexp (concat r-start "\\("
+                                     (regexp-quote word) "\\)"
+                                     r-end)
+                      old-point 0)
+                (goto-char beg)
 
-              (catch 'infinite
-                (while (re-search-forward regexp end t)
-                  (cond ((= (point) old-point)
-                         ;; We didn't move forward so break the loop.
-                         ;; Otherwise we would loop endlessly.
-                         (throw 'infinite t))
-                        ((invisible-p (match-beginning 1))
-                         ;; The point is invisible so jump forward to
-                         ;; the next change of "invisible" text property.
-                         (goto-char (next-single-char-property-change
-                                     (match-beginning 1) 'invisible buffer
-                                     end)))
-                        ((eval face-p)
-                         ;; Make an overlay.
-                         (wcheck-make-overlay
-                          buffer face (match-beginning 1) (match-end 1))))
-                  (setq old-point (point)))))))))))
+                (catch 'infinite
+                  (while (re-search-forward regexp end t)
+                    (cond ((= (point) old-point)
+                           ;; We didn't move forward so break the loop.
+                           ;; Otherwise we would loop endlessly.
+                           (throw 'infinite t))
+                          ((invisible-p (match-beginning 1))
+                           ;; The point is invisible so jump forward to
+                           ;; the next change of "invisible" text
+                           ;; property.
+                           (goto-char (next-single-char-property-change
+                                       (match-beginning 1) 'invisible buffer
+                                       end)))
+                          ((eval face-p)
+                           ;; Make an overlay.
+                           (wcheck-make-overlay
+                            buffer face (match-beginning 1) (match-end 1))))
+                    (setq old-point (point))))))))))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
