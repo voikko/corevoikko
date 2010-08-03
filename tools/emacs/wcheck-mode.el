@@ -1195,7 +1195,7 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
                          minibuffer-prompt-properties)))
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
-            (cond ((cdr (assq (read-char-exclusive prompt) alist)))
+            (cond ((cdr (assq (read-key prompt) alist)))
                   (t (message "Invalid character") nil)))))
     (message "No suggestions")
     nil))
