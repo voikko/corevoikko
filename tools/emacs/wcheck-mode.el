@@ -1120,7 +1120,7 @@ suggestions as a list of strings (or nil if there aren't any)."
              (apply #'call-process-region (point-min) (point-max)
                     program t t nil args)
              (goto-char (point-min))
-             (let ((suggestions (funcall func)))
+             (let ((suggestions (save-match-data (funcall func))))
                (if (wcheck-list-of-strings-p suggestions)
                    suggestions
                  (message
@@ -1214,10 +1214,9 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
 (defun wcheck-parse-suggestions-ispell ()
   "Parser for Ispell-compatible programs' output."
   (let ((search-spaces-regexp nil))
-    (save-match-data
-      (when (re-search-forward "^& [^:]+: \\(.+\\)$" nil t)
-        (delete-dups (split-string (match-string-no-properties 1)
-                                   ", " t))))))
+    (when (re-search-forward "^& [^:]+: \\(.+\\)$" nil t)
+      (delete-dups (split-string (match-string-no-properties 1)
+                                 ", " t)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
