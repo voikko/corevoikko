@@ -61,10 +61,10 @@ and a description of VALUE types:
 program
     VALUE is a string that is the name of the external executable
     program responsible for spell-checking LANGUAGE. This the
-    only setting that is mandatory. Interacting with the external
-    program is managed through standard input and output streams.
-    See options `regexp-start', `regexp-body' and `regexp-end'
-    below for details.
+    only setting that is mandatory. Communication with the
+    external program is managed through standard input and output
+    streams. See options `regexp-start', `regexp-body' and
+    `regexp-end' below for details.
 
 args
      Optional command-line arguments for the program. The VALUE
@@ -1196,7 +1196,7 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
             (cond ((cdr (assq (read-key prompt) alist)))
-                  (t (message "Invalid character") nil)))))
+                  (t (message "Not a valid character") nil)))))
     (message "No suggestions")
     nil))
 
