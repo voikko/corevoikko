@@ -59,9 +59,12 @@ denote settings for the language. Here is a list of possible KEYs
 and a description of VALUE types:
 
 program
-    VALUE is a string that is the executable program responsible
-    for spell-checking LANGUAGE. This the only setting that is
-    mandatory.
+    VALUE is a string that is the name of the external executable
+    program responsible for spell-checking LANGUAGE. This the
+    only setting that is mandatory. Interacting with the external
+    program is managed through standard input and output streams.
+    See options `regexp-start', `regexp-body' and `regexp-end'
+    below for details.
 
 args
      Optional command-line arguments for the program. The VALUE
@@ -92,13 +95,21 @@ regexp-end
     body, characters within the body and the end of the body,
     respectively.
 
-    This is how they are used in practice: Wcheck mode looks for
-    text that matches the construct `regexp-start + regexp-body +
-    regexp-end'. The text that matches regexp-body is sent to an
-    external program to analyze. When strings return from the
-    external program they are marked in Emacs buffer using the
-    following construction: `regexp-start + (regexp-quote STRING)
-    + regexp-end'. The middle part is marked with face.
+    This is how they are used in practice: `wcheck-mode' looks
+    for strings that matches the construct `regexp-start +
+    regexp-body + regexp-end'. The string that matches
+    regexp-body is sent (on a line of its own) to the external
+    program to analyze. The external program must output the same
+    string (on a line of its own) if it thinks that the string
+    should be marked in the Emacs buffer. Usually the reason is
+    that the word is misspelled. The program should output
+    nothing if it doesn't think that the string should be marked
+    in Emacs.
+
+    Lines returned from the external program are marked in Emacs
+    buffer using the following construction: `regexp-start
+    + (regexp-quote STRING) + regexp-end'. The middle part is
+    marked with `face' (see above) .
 
     Do not use grouping constructs `\\( ... \\)' in the regular
     expressions because the back reference `\\1' is used for
@@ -115,7 +126,7 @@ regexp-end
     Effectively they match word characters defined in the
     effective syntax table. Single quotes (') at the start and
     end of a word are excluded. This is probably a good thing
-    when using Wcheck mode as a spelling checker.
+    when using `wcheck-mode' as a spelling checker.
 
 regexp-discard
     The string that matched regexp-body is then matched against
@@ -130,7 +141,7 @@ regexp-discard
     quotes. This was chosen as the default because the standard
     syntax table `text-mode-syntax-table' defines single quote as
     a word character. It's probably not useful to mark individual
-    single quotes in a buffer when Wcheck mode is used as a
+    single quotes in a buffer when `wcheck-mode' is used as a
     spelling checker. If you don't want to have any discarding
     rules set this to empty string.
 
@@ -144,7 +155,6 @@ case-fold
 
 suggestion-program
 suggestion-args
-suggestion-parser
     `suggestion-program' is name (string) of an external
     executable program and `suggestion-args' are the command-line
     arguments (a list of strings) for the program. When user
@@ -154,6 +164,7 @@ suggestion-parser
     The program should send suggested substitutes (in one way or
     another) to standard output stream.
 
+suggestion-parser
     `suggestion-parser' is an Emacs Lisp function which is
     responsible for parsing the output of `suggestion-program'.
     The function is run without arguments and within the context
@@ -173,14 +184,14 @@ suggestion-parser
         the `suggestion-parser' if you get suggestions from
         Ispell-like program with its \"-a\" command-line option.
 
-        `wcheck-parse-suggestions-lines' turns each line in the
-        output of `suggestion-program' to individual substitute
-        suggestions.
+        `wcheck-parse-suggestions-lines' function turns each line
+        in the output of `suggestion-program' to individual
+        substitute suggestions.
 
         `wcheck-parse-suggestions-ws'. Each whitespace-separated
         token in the program's output is a separate suggestion.
 
-Here's an example contents of the `wcheck-language-data'
+Here's an example on how to set the `wcheck-language-data'
 variable:
 
     ((\"suomi\"
@@ -1032,7 +1043,7 @@ visible in BUFFER within position range from BEG to END."
 
 
 (defun wcheck-marked-text-at (pos)
-  "Return information about `wcheck-mode's marked text at POS.
+  "Return information about marked text at POS.
 POS is a buffer position. The return value is a vector of three
 items: (1) the marked text string, (2) marker at the beginning of
 the text and (3) marker at the end of the text."
@@ -1049,12 +1060,12 @@ the text and (3) marker at the end of the text."
 
 (defun wcheck-spelling-suggestions (pos &optional popup-menu)
   "Get spelling suggestions for marked text at POS.
-If POS is on marked text and substitute suggestion program is
-properly configured show a menu of suggested substitutions. If
-user chooses one the original marked text is replaced with the
-chosen substitute. If POPUP-MENU is non-nil use a graphic
-toolkit's menu for selecting suggestions. Otherwise use a text
-menu."
+If buffer position POS is on marked text and substitute
+suggestion program is properly configured show a menu of
+suggested substitutions. If user chooses one of them the original
+marked text is replaced with the chosen substitute. If POPUP-MENU
+is non-nil use a graphic toolkit's menu (if available) for
+selecting suggestions. Otherwise use a text menu."
   (interactive "d")
   (let ((overlay-data (or (wcheck-marked-text-at pos)
                           (wcheck-marked-text-at (1- pos)))))
@@ -1112,8 +1123,8 @@ suggestions as a list of strings (or nil if there aren't any)."
              (let ((suggestions (funcall func)))
                (if (wcheck-list-of-strings-p suggestions)
                    suggestions
-                 (message (concat "Parser function must return a list "
-                                  "of strings or the empty list (nil)"))
+                 (message
+                  "Parser function must return a list of strings or nil")
                  'error)))))))
 
 
