@@ -1143,26 +1143,24 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
   "Create a text menu to choose a substitute suggestion.
 SUGGESTIONS is a list of strings. Return user's choice (string)."
   (if suggestions
-      (let* ((window-min-height 2)
-             (split-window-keep-point t)
-             (chars (append (number-sequence 49 57) (list 48)
-                            (number-sequence 97 122)))
-             alist)
+      (let ((chars (append (number-sequence ?1 ?9) (list ?0)
+                           (number-sequence ?a ?z)))
+            alist)
 
         (with-temp-buffer
           (setq mode-line-format (list "-- Choose a substitute %-")
                 cursor-type nil
                 truncate-lines t)
 
-          (let (suggestion string)
+          (let (sug string)
             (while (and suggestions chars)
-              (setq suggestion (car suggestions)
+              (setq sug (car suggestions)
                     suggestions (cdr suggestions)
                     string (concat "  "
                                    (propertize (format "(%c)" (car chars))
                                                'face 'bold)
-                                   " " suggestion)
-                    alist (cons (cons (car chars) suggestion) alist)
+                                   " " sug)
+                    alist (cons (cons (car chars) sug) alist)
                     chars (cdr chars))
               (insert string)
               (when (and suggestions chars
@@ -1172,23 +1170,25 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
                 (newline 1))))
           (setq buffer-read-only t)
 
-          (let ((window (split-window-vertically
-                         (1- (- (count-lines (point-min) (point-max))))))
-                (prompt
-                 (apply #'propertize
-                        (let ((last (caar alist)))
-                          (format "Number %s(%s):"
-                                  (if (memq last (number-sequence ?a ?z))
-                                      "or letter "
-                                    "")
-                                  (cond ((= last ?1) "1")
-                                        ((memq last (number-sequence ?2 ?9))
-                                         (format "1-%c" last))
-                                        ((= last ?0) "1-9,0")
-                                        ((= last ?a) "1-9,0,a")
-                                        ((memq last (number-sequence ?b ?z))
-                                         (format "1-9,0,a-%c" last)))))
-                        minibuffer-prompt-properties)))
+          (let* ((window-min-height 2)
+                 (split-window-keep-point t)
+                 (window (split-window-vertically
+                          (- 0 (count-lines (point-min) (point-max)) 1)))
+                 (prompt
+                  (apply #'propertize
+                         (let ((last (caar alist)))
+                           (format "Number %s(%s):"
+                                   (if (memq last (number-sequence ?a ?z))
+                                       "or letter "
+                                     "")
+                                   (cond ((= last ?1) "1")
+                                         ((memq last (number-sequence ?2 ?9))
+                                          (format "1-%c" last))
+                                         ((= last ?0) "1-9,0")
+                                         ((= last ?a) "1-9,0,a")
+                                         ((memq last (number-sequence ?b ?z))
+                                          (format "1-9,0,a-%c" last)))))
+                         minibuffer-prompt-properties)))
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
             (cond ((cdr (assq (read-char-exclusive prompt) alist)))
