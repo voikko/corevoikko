@@ -1058,6 +1058,7 @@ the text and (3) marker at the end of the text."
                 start end)))))
 
 
+;;;###autoload
 (defun wcheck-spelling-suggestions (pos &optional popup-menu)
   "Get spelling suggestions for marked text at POS.
 If buffer position POS is on marked text and substitute
