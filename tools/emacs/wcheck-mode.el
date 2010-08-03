@@ -173,7 +173,7 @@ suggestion-parser
         the `suggestion-parser' if you get suggestions from
         Ispell-like program with its \"-a\" command-line option.
 
-        `wcheck-parse-suggestions-line' turns each line in the
+        `wcheck-parse-suggestions-lines' turns each line in the
         output of `suggestion-program' to individual substitute
         suggestions.
 
@@ -273,7 +273,7 @@ variable:
                     suggestion-parser)
              (choice :format "%[Value Menu%] %v" :value nil
                      (const :tag "Ispell" wcheck-parse-suggestions-ispell)
-                     (const :tag "Lines" wcheck-parse-suggestions-line)
+                     (const :tag "Lines" wcheck-parse-suggestions-lines)
                      (const :tag "Whitespace" wcheck-parse-suggestions-ws)
                      (function :tag "Function" :format "%v" :value ignore))))))))
 
@@ -1186,7 +1186,7 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
     nil))
 
 
-(defun wcheck-parse-suggestions-line ()
+(defun wcheck-parse-suggestions-lines ()
   "Parser for newline-separated suggestions."
   (delete-dups (split-string (buffer-substring-no-properties (point-min)
                                                              (point-max))
