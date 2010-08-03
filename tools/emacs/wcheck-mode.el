@@ -1170,11 +1170,14 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
                              (window-width)))
                 (newline 1))))
           (setq buffer-read-only t)
+          (goto-char (point-min))
 
           (let* ((window-min-height 2)
                  (split-window-keep-point t)
                  (window (split-window-vertically
-                          (- 0 (count-lines (point-min) (point-max)) 1)))
+                          (- 0 (min (count-lines (point-min) (point-max))
+                                    (- (window-body-height) 2))
+                             1)))
                  (prompt
                   (apply #'propertize
                          (let ((last (caar alist)))
