@@ -1059,36 +1059,45 @@ the text and (3) marker at the end of the text."
 
 
 ;;;###autoload
-(defun wcheck-spelling-suggestions (pos &optional popup-menu)
+(defun wcheck-spelling-suggestions (pos &optional event)
   "Get spelling suggestions for marked text at POS.
-If buffer position POS is on marked text and substitute
-suggestion program is properly configured show a menu of
+If buffer position POS is on marked text (and substitute
+suggestion program is properly configured) show a menu of
 suggested substitutions. If user chooses one of them the original
-marked text is replaced with the chosen substitute. If POPUP-MENU
-is non-nil use a graphic toolkit's menu (if available) for
-selecting suggestions. Otherwise use a text menu."
+marked text is replaced with the chosen substitute. Optional
+EVENT argument is a mouse event. If it's non-nil use a graphic
+toolkit's menu (when available) for selecting suggestions.
+Otherwise use a text menu. Function returns the replacement text
+or nil if nothing was replaced."
   (interactive "d")
   (let ((overlay-data (or (wcheck-marked-text-at pos)
-                          (wcheck-marked-text-at (1- pos)))))
+                          (wcheck-marked-text-at (1- pos))))
+        (return-value nil))
     (if overlay-data
         (let* ((text (aref overlay-data 0))
                (start (aref overlay-data 1))
                (end (aref overlay-data 2))
                (suggestions (wcheck-get-suggestions wcheck-language text)))
           (unless (eq suggestions 'error)
-            (let ((chosen (if (and (display-popup-menus-p) popup-menu)
-                              (wcheck-choose-suggestion-popup suggestions)
-                            (wcheck-choose-suggestion-minibuffer suggestions))))
-              (when (and (stringp chosen)
+            (let ((choice (if (and (display-popup-menus-p) event)
+                              (wcheck-choose-suggestion-popup
+                               suggestions event)
+                            (wcheck-choose-suggestion-minibuffer
+                             suggestions))))
+              (when (and (stringp choice)
                          (markerp start)
                          (markerp end))
-                (if buffer-read-only
-                    (message "Buffer is read-only")
-                  (delete-region start end)
-                  (goto-char start)
-                  (insert chosen)
-                  (goto-char (+ start (length chosen))))))))
-      (message "There is no marked text here"))))
+                (with-current-buffer (marker-buffer start)
+                  (if buffer-read-only
+                      (message "Buffer is read-only")
+                    (delete-region start end)
+                    (goto-char start)
+                    (insert choice)
+                    (setq return-value choice))))))
+          (if (markerp start) (set-marker start nil))
+          (if (markerp end) (set-marker end nil)))
+      (message "There is no marked text here"))
+    return-value))
 
 
 (defun wcheck-get-suggestions (language text)
@@ -1129,7 +1138,7 @@ suggestions as a list of strings (or nil if there aren't any)."
                  'error)))))))
 
 
-(defun wcheck-choose-suggestion-popup (suggestions)
+(defun wcheck-choose-suggestion-popup (suggestions event)
   "Create a pop-up menu to choose a substitute suggestion.
 SUGGESTIONS is a list of strings. Return user's choice (string)."
   (let ((menu (if suggestions
@@ -1137,7 +1146,7 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
                               (cons item item))
                           suggestions)
                 (list "[No suggestions]"))))
-    (x-popup-menu t (list "Choose a substitute" (cons "" menu)))))
+    (x-popup-menu event (list "Choose a substitute" (cons "" menu)))))
 
 
 (defun wcheck-choose-suggestion-minibuffer (suggestions)
@@ -1441,9 +1450,10 @@ range BEG to END. Otherwise remove all overlays."
 
 (defun wcheck-mouse-click-overlay (event)
   "Overlay mouse-click event.
-Send the mouse pointer position to spelling suggestion function."
+Send the mouse pointer position and mouse event to the spelling
+suggestion function."
   (interactive "e")
-  (wcheck-spelling-suggestions (posn-point (event-end event)) t))
+  (wcheck-spelling-suggestions (posn-point (event-end event)) event))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
