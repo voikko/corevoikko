@@ -1076,7 +1076,7 @@ selecting suggestions. Otherwise use a text menu."
                (end (aref overlay-data 2))
                (suggestions (wcheck-get-suggestions wcheck-language text)))
           (unless (eq suggestions 'error)
-            (let ((chosen (if (and window-system popup-menu)
+            (let ((chosen (if (and (display-popup-menus-p) popup-menu)
                               (wcheck-choose-suggestion-popup suggestions)
                             (wcheck-choose-suggestion-minibuffer suggestions))))
               (when (and (stringp chosen)
