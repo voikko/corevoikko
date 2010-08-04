@@ -1140,18 +1140,22 @@ suggestions as a list of strings (or nil if there aren't any)."
 
 (defun wcheck-choose-suggestion-popup (suggestions event)
   "Create a pop-up menu to choose a substitute suggestion.
-SUGGESTIONS is a list of strings. Return user's choice (string)."
-  (let ((menu (if suggestions
-                  (mapcar #'(lambda (item)
-                              (cons item item))
-                          suggestions)
-                (list "[No suggestions]"))))
-    (x-popup-menu event (list "Choose a substitute" (cons "" menu)))))
+SUGGESTIONS is a list of strings. EVENT is the mouse event that
+originated this sequence of function calls. Return user's
+choice (a string) or nil."
+  (let ((menu (list "Choose a substitute"
+                    (cons "" (if suggestions
+                                 (mapcar #'(lambda (item)
+                                             (cons item item))
+                                         suggestions)
+                               (list "[No suggestions]"))))))
+    (x-popup-menu event menu)))
 
 
 (defun wcheck-choose-suggestion-minibuffer (suggestions)
   "Create a text menu to choose a substitute suggestion.
-SUGGESTIONS is a list of strings. Return user's choice (string)."
+SUGGESTIONS is a list of strings. Return user's choice (a string)
+or nil."
   (if suggestions
       (let ((chars (append (number-sequence ?1 ?9) (list ?0)
                            (number-sequence ?a ?z)))
@@ -1204,8 +1208,11 @@ SUGGESTIONS is a list of strings. Return user's choice (string)."
                          minibuffer-prompt-properties)))
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
+            ;; Return the choice or nil.
             (cond ((cdr (assq (read-key prompt) alist)))
-                  (t (message "Not a valid character") nil)))))
+                  (t
+                   (message "Not a valid character")
+                   nil)))))
     (message "No suggestions")
     nil))
 
