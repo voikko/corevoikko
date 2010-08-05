@@ -28,9 +28,11 @@
 ;; following lines to your Emacs initialization file (~/.emacs):
 ;;
 ;;     (autoload 'wcheck-mode "wcheck-mode"
-;;       "Toggle Wcheck mode." t)
+;;       "Toggle wcheck mode." t)
 ;;     (autoload 'wcheck-change-language "wcheck-mode"
-;;       "Switch Wcheck-mode languages." t)
+;;       "Switch wcheck-mode languages." t)
+;;     (autoload 'wcheck-spelling-suggestions "wcheck-mode"
+;;       "Spelling suggestions." t)
 ;;
 ;; See customize group "wcheck" for information on how to configure
 ;; Wcheck mode. (M-x customize-group RET wcheck RET)
