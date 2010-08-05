@@ -1062,15 +1062,26 @@ the text and (3) marker at the end of the text."
 
 ;;;###autoload
 (defun wcheck-spelling-suggestions (pos &optional event)
-  "Get spelling suggestions for marked text at POS.
+  "Offer spelling suggestions for marked text.
+
+This function is usually called through a right mouse button
+event or interactively by a user. In both cases function's
+arguments are filled automatically.
+
 If buffer position POS is on marked text (and substitute
 suggestion program is properly configured) show a menu of
-suggested substitutions. If user chooses one of them the original
-marked text is replaced with the chosen substitute. Optional
-EVENT argument is a mouse event. If it's non-nil use a graphic
-toolkit's menu (when available) for selecting suggestions.
-Otherwise use a text menu. Function returns the replacement text
-or nil if nothing was replaced."
+suggested substitutions. When this function is called
+interactively POS is automatically the current point position.
+Optional EVENT argument is a mouse event which is present if this
+function is called through a right mouse button click on marked
+text. If EVENT is non-nil use a graphic toolkit's menu (when
+available) for selecting suggestions. Otherwise use a text menu.
+
+When user chooses one of the suggestions from the menu the
+original marked text is replaced with the chosen substitute.
+Function returns the replacement text (string) or nil if nothing
+was replaced."
+
   (interactive "d")
   (let ((overlay-data (or (wcheck-marked-text-at pos)
                           (wcheck-marked-text-at (1- pos))))
