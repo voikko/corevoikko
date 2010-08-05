@@ -1175,7 +1175,7 @@ or nil."
             alist)
 
         (with-temp-buffer
-          (setq mode-line-format (list "-- Choose a substitute %-")
+          (setq mode-line-format (list "--- Choose a substitute %-")
                 cursor-type nil
                 truncate-lines t)
 
@@ -1183,20 +1183,22 @@ or nil."
             (while (and suggestions chars)
               (setq sug (car suggestions)
                     suggestions (cdr suggestions)
-                    string (concat "  "
-                                   (propertize (format "(%c)" (car chars))
+                    string (concat (propertize (format "(%c)" (car chars))
                                                'face 'bold)
-                                   " " sug)
+                                   " " sug "  ")
                     alist (cons (cons (car chars) sug) alist)
                     chars (cdr chars))
               (insert string)
               (when (and suggestions chars
-                         (>= (+ (- (point) (line-beginning-position))
-                                (length (concat "  ( ) " (car suggestions))))
-                             (window-width)))
+                         (> (+ (- (point) (line-beginning-position))
+                               (length (concat "( ) " (car suggestions))))
+                            (window-width)))
+                (delete-char -2)
                 (newline 1))))
-          (setq buffer-read-only t)
+
+          (delete-char -2)
           (goto-char (point-min))
+          (setq buffer-read-only t)
 
           (let* ((window-min-height 2)
                  (split-window-keep-point t)
@@ -1217,7 +1219,8 @@ or nil."
                                          ((= last ?0) "1-9,0")
                                          ((= last ?a) "1-9,0,a")
                                          ((memq last (number-sequence ?b ?z))
-                                          (format "1-9,0,a-%c" last)))))
+                                          (format "1-9,0,a-%c" last))
+                                         (t ""))))
                          minibuffer-prompt-properties)))
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
