@@ -28,7 +28,7 @@
 ;; following lines to your Emacs initialization file (~/.emacs):
 ;;
 ;;     (autoload 'wcheck-mode "wcheck-mode"
-;;       "Toggle wcheck mode." t)
+;;       "Toggle wcheck-mode." t)
 ;;     (autoload 'wcheck-change-language "wcheck-mode"
 ;;       "Switch wcheck-mode languages." t)
 ;;     (autoload 'wcheck-spelling-suggestions "wcheck-mode"
@@ -69,9 +69,9 @@ program
     `regexp-end' below for details.
 
 args
-     Optional command-line arguments for the program. The VALUE
-     is a list of strings. Each string is a single argument for
-     the program.
+    Optional command-line arguments for the program. The VALUE is
+    a list of strings. Each string is a single argument for the
+    program.
 
 connection
     The VALUE is used to set variable `process-connection-type'
