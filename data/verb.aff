@@ -244,7 +244,7 @@ end: class
 class: 54
 sm-class: huutaa
 rmsfx: a
-match-word: tAA
+match-word: [Vn]tAA
 consonant-gradation: sw
 group: t
 transform-group: e

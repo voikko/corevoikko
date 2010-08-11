@@ -122,7 +122,7 @@ def handle_word(word):
 			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
-			sys.stderr.write(errorstr)
+			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
