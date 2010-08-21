@@ -244,7 +244,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	language.setLanguage("fi");
 	string description;
 	string morBackend = "malaga";
-	string spellBackend = "AnalyzerToSpellerAdapter(currentAnalyzer)";
+	string spellBackend = "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)";
 	string suggestionBackend = "FinnishSuggestionStrategy(currentAnalyzer)";
 	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
 	while (file.good()) {

@@ -20,7 +20,6 @@
 #include "character/SimpleChar.hpp"
 #include "tokenizer/Tokenizer.hpp"
 #include "character/charset.hpp"
-#include "spellchecker/spell.hpp"
 
 using namespace libvoikko::character;
 
@@ -46,7 +45,9 @@ static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * t
 	}
 	
 	// abbreviations
-	if (voikko_do_spell(voikkoOptions, text, len) != spellchecker::SPELL_FAILED) return true;
+	if (voikkoOptions->speller->spell(text, len) != spellchecker::SPELL_FAILED) {
+		return true;
+	}
 	return false;
 }
 

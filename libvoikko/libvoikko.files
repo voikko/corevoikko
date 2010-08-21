@@ -25,7 +25,6 @@ src/sentence/Sentence.cpp
 src/sentence/Sentence.hpp
 src/spellchecker/suggestions.cpp
 src/spellchecker/suggestions.hpp
-src/spellchecker/spell.hpp
 src/spellchecker/spell.cpp
 src/spellchecker/suggestion/SuggestionGenerator.hpp
 src/spellchecker/suggestion/SuggestionGeneratorFactory.hpp

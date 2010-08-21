@@ -21,6 +21,7 @@
 
 #include "spellchecker/Speller.hpp"
 #include "morphology/Analyzer.hpp"
+#include "setup/setup.hpp"
 
 namespace libvoikko { namespace spellchecker {
 
@@ -31,12 +32,13 @@ namespace libvoikko { namespace spellchecker {
  */
 class FinnishSpellerTweaksWrapper : public Speller {
 	public:
-		FinnishSpellerTweaksWrapper(Speller * speller, morphology::Analyzer * analyzer);
+		FinnishSpellerTweaksWrapper(Speller * speller, morphology::Analyzer * analyzer, voikko_options_t * voikkoOptions);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:
 		Speller * const speller;
 		morphology::Analyzer * const analyzer;
+		const voikko_options_t * const voikkoOptions;
 };
 
 } }

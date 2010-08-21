@@ -109,7 +109,6 @@ noinst_HEADERS = \
     character/charset.hpp \
     character/SimpleChar.hpp \
     porting.h \
-    spellchecker/spell.hpp \
     spellchecker/SpellWithPriority.hpp \
     spellchecker/SpellUtils.hpp \
     spellchecker/Speller.hpp \

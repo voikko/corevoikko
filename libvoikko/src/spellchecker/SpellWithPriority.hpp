@@ -16,7 +16,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#include "spellchecker/spell.hpp"
 #include "setup/setup.hpp"
 
 namespace libvoikko { namespace spellchecker {

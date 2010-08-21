@@ -19,6 +19,7 @@
 #include "porting.h"
 #include "spellchecker/SpellerFactory.hpp"
 #include "spellchecker/AnalyzerToSpellerAdapter.hpp"
+#include "spellchecker/FinnishSpellerTweaksWrapper.hpp"
 #include "spellchecker/FixedResultSpeller.hpp"
 
 #ifdef HAVE_HFST
@@ -32,9 +33,13 @@ namespace libvoikko { namespace spellchecker {
 Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 	                             const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
+	morphology::Analyzer * currentAnalyzer = voikkoOptions->morAnalyzer;
 	// FIXME: add proper parsing and possibility to combine components freely
+	// Take care of proper memory management (who has to delete what).
 	if (dictionary.getSpellBackend() == "AnalyzerToSpellerAdapter(currentAnalyzer)") {
-		return new AnalyzerToSpellerAdapter(voikkoOptions->morAnalyzer);
+		return new AnalyzerToSpellerAdapter(currentAnalyzer);
+	} else if (dictionary.getSpellBackend() == "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)") {
+		return new FinnishSpellerTweaksWrapper(new AnalyzerToSpellerAdapter(currentAnalyzer), currentAnalyzer, voikkoOptions);
 	} else if (dictionary.getSpellBackend() == "AllOk") {
 		return new FixedResultSpeller(SPELL_OK);
 	} else if (dictionary.getSpellBackend() == "AllError") {
