@@ -66,6 +66,8 @@ src/spellchecker/SpellWithPriority.cpp
 src/spellchecker/SpellUtils.cpp
 src/spellchecker/AnalyzerToSpellerAdapter.hpp
 src/spellchecker/AnalyzerToSpellerAdapter.cpp
+src/spellchecker/FinnishSpellerTweaksWrapper.hpp
+src/spellchecker/FinnishSpellerTweaksWrapper.cpp
 src/spellchecker/FixedResultSpeller.hpp
 src/spellchecker/FixedResultSpeller.cpp
 src/spellchecker/SpellerFactory.hpp

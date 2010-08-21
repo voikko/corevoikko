@@ -7,6 +7,7 @@ libvoikko_la_SOURCES = \
     spellchecker/SpellWithPriority.cpp \
     spellchecker/SpellUtils.cpp \
     spellchecker/AnalyzerToSpellerAdapter.cpp \
+    spellchecker/FinnishSpellerTweaksWrapper.cpp \
     spellchecker/FixedResultSpeller.cpp \
     spellchecker/SpellerFactory.cpp \
     spellchecker/SpellerCache.cpp \
@@ -113,6 +114,7 @@ noinst_HEADERS = \
     spellchecker/SpellUtils.hpp \
     spellchecker/Speller.hpp \
     spellchecker/AnalyzerToSpellerAdapter.hpp \
+    spellchecker/FinnishSpellerTweaksWrapper.hpp \
     spellchecker/FixedResultSpeller.hpp \
     spellchecker/HfstSpeller.hpp \
     spellchecker/SpellerFactory.hpp \
