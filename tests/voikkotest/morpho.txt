@@ -174,4 +174,11 @@ word:hienoinsokerein
  analysis
   NUMBER=plural
   SIJAMUOTO=keinonto
-
+word:sana
+ analysis
+  MALAGA_VAPAA_JALKIOSA=true
+word:relatiivipronomini
+ analysis
+  MALAGA_VAPAA_JALKIOSA=true
+word:kissa
+ !MALAGA_VAPAA_JALKIOSA

@@ -35,6 +35,7 @@ enum MalagaSymbol {
 	MS_NUMBER,
 	MS_PERSON,
 	MS_MOOD,
+	MS_VAPAA_JALKIOSA,
 	MS_LAST_SYMBOL
 };
 
