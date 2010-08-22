@@ -2064,6 +2064,9 @@ subrule tulostus_v2($tietue):
     $res :=+ [tekijä: tulostus_tekijä($tietue),
               tapaluokka: tulostus_tapaluokka($tietue)];
   end;
+  if $tietue.<1, vapaa_jälkiosa> = yes then
+    $res :=+ [vapaa_jälkiosa: yes];
+  end;
   return $res;
 end;
 

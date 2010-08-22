@@ -3733,6 +3733,11 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
                              "lounas", "luode", "länsi", "manner", "pohjoinen", "sydän">) then
     $tietue :=+ [aluetta_tarkentava_etuliite: yes];
   end;
+  
+  # Vapaasti yhdistyvät yhdyssanan jälkiosat
+  if ($tietue.perusmuoto in <"käsite", "pronomini", "relatiivipronomini", "sana">) then
+    $tietue :=+ [vapaa_jälkiosa: yes];
+  end;
 
   # Inen-loppuiset laatusanat
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
