@@ -111,6 +111,8 @@ tomahawkjänis
 !tomahawkijänis
 !--koulu                       # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
 !Ammattikorkeakoulu-tutkintoon # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
+kissa-sanan
+ja-sana
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen

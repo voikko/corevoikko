@@ -1,3 +1,6 @@
+2010-08-22 Harri Pitkänen <hatapitk@iki.fi>
+	* Accept words like "ja-sana" (Trac #13).
+
 2010-08-21 Harri Pitkänen <hatapitk@iki.fi>
 	* Separate Finnish/Malaga specific speller tweaks from common speller code.
 

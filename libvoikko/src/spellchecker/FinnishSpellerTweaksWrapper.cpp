@@ -79,6 +79,34 @@ spellresult FinnishSpellerTweaksWrapper::spell(const wchar_t * word, size_t wlen
 			}
 		}
 		
+		// "ja-sana" and such are valid if "ja" is any valid word and "sana" has MALAGA_VAPAA_JALKIOSA=true
+		for (size_t i = wlen - 2; i > 0; --i) {
+			if (word[i] == L'-') {
+				spellresult leadingResult = spell(word, i);
+				if (leadingResult != SPELL_FAILED) {
+					list<Analysis *> * trailingAnalyses = analyzer->analyze(word + i + 1);
+					list<Analysis *>::const_iterator it = trailingAnalyses->begin();
+					bool isTrailingAcceptable = false;
+					while (it != trailingAnalyses->end()) {
+						const wchar_t * trailingAttr = (*it)->getValue("MALAGA_VAPAA_JALKIOSA");
+						if (trailingAttr != 0 && wcscmp(trailingAttr, L"true") == 0) {
+							isTrailingAcceptable = true;
+							break;
+						}
+						it++;
+					}
+					Analyzer::deleteAnalyses(trailingAnalyses);
+					if (isTrailingAcceptable) {
+						delete[] buffer;
+						// TODO: not entirely accurate for character case checks.
+						// We did not check the case of trailing part at all.
+						return leadingResult;
+					}
+				}
+				break;
+			}
+		}
+		
 		/* Ambiguous compound ('syy-silta', 'syys-ilta') */
 		list<Analysis *> * analyses = analyzer->analyze(buffer);
 		
