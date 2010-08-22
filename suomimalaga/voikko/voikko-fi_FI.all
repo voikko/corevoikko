@@ -3735,7 +3735,9 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   end;
   
   # Vapaasti yhdistyvät yhdyssanan jälkiosat
-  if ($tietue.perusmuoto in <"käsite", "pronomini", "relatiivipronomini", "sana">) then
+  if ($tietue.perusmuoto in <"adjektiivi", "interjektio", "käsite", "pronomini",
+                             "relatiivipronomini", "sana",
+                             "substantiivi", "termi", "verbi">) then
     $tietue :=+ [vapaa_jälkiosa: yes];
   end;
 
