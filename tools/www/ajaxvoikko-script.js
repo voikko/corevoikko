@@ -108,8 +108,8 @@ function keyUpInInput(evt) {
     // Movement keys such as arrow left etc.
     return;
   }
-  if (evt.keyCode == 67 && evt.ctrlKey) {
-    // Ctrl+C
+  if ((evt.keyCode == 65 || evt.keyCode == 67) && evt.ctrlKey) {
+    // Ctrl+A, Ctrl+C
     return;
   }
   // other keys
