@@ -192,3 +192,6 @@ word:Pohjois-
 word:sydän-
  analysis
   STRUCTURE==ppppp-
+word:Keski-Suomessa
+ analysis
+  STRUCTURE==ipppp-=ippppppp

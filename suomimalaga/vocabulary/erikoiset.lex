@@ -81,5 +81,6 @@
 # Aluetta tarkentavia etuliitteitä ei hyväksytä normaalisti pienellä alkukirjaimella. Muutamat voivat esiintyä kuitenkin
 # ilman yhdysviivaa yleisnimiyhdyssanoissa, esim. "sydäntauti" ja "mannerlaatta". Tästä syystä nämä täytyy hyväksyä
 # pienellä alkukirjaimella "sydän- ja verisuonitaudit"-tyyppisissä rakenteissa.
+[perusmuoto: "keski-", alku: "keski-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "manner-", alku: "manner-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=pppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "sydän-", alku: "sydän-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];

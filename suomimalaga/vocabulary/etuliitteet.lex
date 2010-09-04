@@ -137,7 +137,7 @@
 [perusmuoto: "kausaali", alku: "kausaali", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "kautta", alku: "kautta", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
 [perusmuoto: "kesken", alku: "kesken", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä];
-[perusmuoto: "keski", alku: "keski", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "keski", alku: "keski", luokka: etuliite, aluetta_tarkentava_etuliite: yes, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "kierteis", alku: "kierteis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kiinni", alku: "kiinni", luokka: etuliite, jatko: @eltj, äs: aä];
 [perusmuoto: "kiinto", alku: "kiinto", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
