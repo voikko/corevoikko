@@ -163,6 +163,10 @@ word:Suur-Panama
  analysis
   CLASS=paikannimi
   STRUCTURE==ippp-=ippppp
+word:Sydän-Suomi
+ analysis
+  CLASS=paikannimi
+  STRUCTURE==ipppp-=ipppp
 word:idänkauppa
  analysis
   STRUCTURE==pppp=pppppp
@@ -182,3 +186,9 @@ word:relatiivipronomini
   MALAGA_VAPAA_JALKIOSA=true
 word:kissa
  !MALAGA_VAPAA_JALKIOSA
+word:Pohjois-
+ analysis
+  STRUCTURE==ipppppp-
+word:sydän-
+ analysis
+  STRUCTURE==ppppp-

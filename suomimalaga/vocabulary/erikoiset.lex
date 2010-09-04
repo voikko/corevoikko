@@ -77,3 +77,9 @@
 [perusmuoto: "von", alku: "von", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];
 [perusmuoto: "öky", alku: "öky", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ökö", alku: "ökö", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä, tiedot: <ei_voikko>];
+
+# Aluetta tarkentavia etuliitteitä ei hyväksytä normaalisti pienellä alkukirjaimella. Muutamat voivat esiintyä kuitenkin
+# ilman yhdysviivaa yleisnimiyhdyssanoissa, esim. "sydäntauti" ja "mannerlaatta". Tästä syystä nämä täytyy hyväksyä
+# pienellä alkukirjaimella "sydän- ja verisuonitaudit"-tyyppisissä rakenteissa.
+[perusmuoto: "manner-", alku: "manner-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=pppppp-", tiedot: <ei_sukija>];
+[perusmuoto: "sydän-", alku: "sydän-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];

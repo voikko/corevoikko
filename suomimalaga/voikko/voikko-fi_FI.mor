@@ -1825,7 +1825,8 @@ subrule tulostus_rakenne ($tietue):
                          ($t.luokka = lukusana and not $t.alaluokka in <numeromerkki, pilkku>) then
       $tuloste :=+ "=";
       if $t.aluetta_tarkentava_etuliite = yes and
-         (($tlen + 1 greater $tind and $tietue.($tind+1).luokka = tavuviiva and $tietue.($tind+2).luokka = paikannimi) or
+         (($tind + 1 = $tlen and $tietue.($tind+1).luokka = tavuviiva) or
+          ($tlen + 1 greater $tind and $tietue.($tind+1).luokka = tavuviiva and $tietue.($tind+2).luokka = paikannimi) or
           ($tlen + 2 greater $tind and $tietue.($tind+1).luokka = johdin_inen and $tietue.($tind+2).luokka = tavuviiva and $tietue.($tind+3).luokka = paikannimi)) then
         $tuloste :=+ "i";
       else
