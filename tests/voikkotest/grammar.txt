@@ -122,6 +122,7 @@ Tavutusvihe toimii jo­ten ku­ten.
  [code=1, level=0, descr="", stpos=19, len=13, suggs={"jotenkuten"}]
 Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
 Iso kirjain saa olla myös sanan etuliitteenä. Esimerkiksi B-rapussa on sallittu.
+Ostin maitoa A:n omistamasta kaupasta.
 - Tavallinenkin kappale voi alkaa näin.
 - koira.
 - koira ja Kissa.
