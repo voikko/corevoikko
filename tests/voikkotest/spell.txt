@@ -794,6 +794,12 @@ hatapitk@iki.fi
 !iki.fi
 !J.K.Paasikivi
 
+[Unicode-muunnoksia]
+mäti # mäti
+kuorma‐auto # kuorma-auto
+℃ # °C
+muﬃni # muffini
+
 [muita virheitä]
 !kolaaa
 !kullakinkin
