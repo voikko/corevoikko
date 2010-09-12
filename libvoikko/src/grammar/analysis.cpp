@@ -80,6 +80,9 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 		it++;
 	}
 	morphology::Analyzer::deleteAnalyses(analyses);
+	if (!token->isValidWord) {
+		token->isPositiveVerb = false;
+	}
 }
 
 /** Analyze sentence text. Sentence type must be set by the caller. */

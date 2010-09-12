@@ -136,6 +136,7 @@ Suomen Keskusta on suuri puolue.
 Isolla alkukirjaimella kirjoitetaan Säteilyturvakeskus ja Verohallitus.
 Juoksen kotiin.
 Älkää juosko.
+Älä virheellinensanaaslkdjalk.
 En juoksen kotiin.
  [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
 Ette ovat siellä.
