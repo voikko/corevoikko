@@ -134,6 +134,12 @@ Järvi on Jyväskylän, Keskusta kaupungin puolella.
  [code=6, level=0, descr="", stpos=21, len=8, suggs={"keskusta"}]
 Suomen Keskusta on suuri puolue.
 Isolla alkukirjaimella kirjoitetaan Säteilyturvakeskus ja Verohallitus.
+Juoksen kotiin.
+Älkää juosko.
+En juoksen kotiin.
+ [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
+Ette ovat siellä.
+ [code=13, level=0, descr="", stpos=0, len=9, suggs={}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

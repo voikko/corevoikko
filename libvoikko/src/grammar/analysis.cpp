@@ -35,6 +35,8 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->isValidWord = false;
 	token->possibleSentenceStart = false;
 	token->isGeographicalNameInGenitive = false;
+	token->isVerbNegative = false;
+	token->isPositiveVerb = true;
 	if (token->type != TOKEN_WORD) {
 		token->firstLetterLcase = false;
 		return;
@@ -52,16 +54,28 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	while (it != analyses->end()) {
 		token->isValidWord = true;
 		const wchar_t * structure = (*it)->getValue("STRUCTURE");
+		const wchar_t * wclass = (*it)->getValue("CLASS");
+		const wchar_t * mood = (*it)->getValue("MOOD");
+		const wchar_t * person = (*it)->getValue("PERSON");
+		const wchar_t * negative = (*it)->getValue("NEGATIVE");
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
 		    structure[1] != L'q')) {
 			// Word may start with a capital letter anywhere
 			token->firstLetterLcase = false;
-			const wchar_t * wclass = (*it)->getValue("CLASS");
 			const wchar_t * wcase = (*it)->getValue("SIJAMUOTO");
 			if (wclass && wcscmp(L"paikannimi", wclass) == 0 &&
 			    wcase && wcscmp(L"omanto", wcase) == 0) {
 				token->isGeographicalNameInGenitive = true;
 			}
+		}
+		if (wclass && wcscmp(L"kieltosana", wclass) == 0) {
+			token->isVerbNegative = true;
+			token->isPositiveVerb = false;
+		} else if (!wclass || wcscmp(L"teonsana", wclass) != 0 ||
+			   !negative || wcscmp(L"false", negative) != 0 ||
+			   (!mood || wcscmp(L"imperative", mood) == 0) || // "en/et/ei/emme/ette/eivät _juokse_"
+			   ((!mood || wcscmp(L"conditional", mood) == 0) && (!person || wcscmp(L"3", person) == 0))) { // "en _lukisi_"
+			token->isPositiveVerb = false;
 		}
 		it++;
 	}

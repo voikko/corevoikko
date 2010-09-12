@@ -41,9 +41,15 @@ class Token {
 		/** True if this word may be (but is not necessarily) the first
 		 *  word in a sentence. */
 		bool possibleSentenceStart;
-
+		
 		/** True if this word may be a geographical name in genitive case. */
 		bool isGeographicalNameInGenitive;
+		
+		/** True if this word is a verb negative ("en", "älä" jne.) */
+		bool isVerbNegative;
+		
+		/** True if this word cannot be anything else than a positive verb */
+		bool isPositiveVerb;
 		
 		/** Null terminated string containing the token text */
 		wchar_t * str;
