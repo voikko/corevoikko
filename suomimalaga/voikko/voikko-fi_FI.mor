@@ -1940,6 +1940,15 @@ subrule tulostus_tapaluokka($tietue):
   return nil;
 end;
 
+subrule tulostus_kielto($tietue):
+  define $tlen := length($tietue);
+  define $allomorfi := $tietue.$tlen;
+  if $allomorfi.kielto = yes then
+    return yes;
+  end;
+  return no;
+end;
+
 subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
     define $res := "+";
     if ($vain_alku or $tietue.perusmuoto = nil) then
@@ -2063,7 +2072,8 @@ subrule tulostus_v2($tietue):
   end;
   if $res.luokka = teonsana then
     $res :=+ [tekijä: tulostus_tekijä($tietue),
-              tapaluokka: tulostus_tapaluokka($tietue)];
+              tapaluokka: tulostus_tapaluokka($tietue),
+              kielto: tulostus_kielto($tietue)];
   end;
   if $tietue.<1, vapaa_jälkiosa> = yes then
     $res :=+ [vapaa_jälkiosa: yes];

@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -68,6 +68,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_PERSON], "PERSON");
 			parseBasicAttribute(analysis, res, symbols[MS_MOOD], "MOOD");
 			parseBasicAttribute(analysis, res, symbols[MS_VAPAA_JALKIOSA], "MALAGA_VAPAA_JALKIOSA");
+			parseBasicAttribute(analysis, res, symbols[MS_NEGATIVE], "NEGATIVE");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -126,6 +127,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_VAPAA_JALKIOSA:
 				symbolName = "vapaa_j\xc3\xa4lkiosa";
 				break;
+			case MS_NEGATIVE:
+				symbolName = "kielto";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -178,6 +182,7 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "mahtotapa", L"potential");
 	
 	insertToSymbolMap(symbolMap, "yes", L"true");
+	insertToSymbolMap(symbolMap, "no", L"false");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

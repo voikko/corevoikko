@@ -125,6 +125,7 @@ word:10
  analysis
   CLASS=lukusana
 word:kissa
+ !NEGATIVE
  analysis
   NUMBER=singular
 word:kissat
@@ -195,3 +196,9 @@ word:sydän-
 word:Keski-Suomessa
  analysis
   STRUCTURE==ipppp-=ippppppp
+word:sallitaan
+ analysis
+  NEGATIVE=false
+word:sallita
+ analysis
+  NEGATIVE=true

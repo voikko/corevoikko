@@ -1,3 +1,6 @@
+2010-09-12 Harri Pitkänen <hatapitk@iki.fi>
+	* Support new attribute NEGATIVE in morphological analysis.
+
 2010-09-04 Harri Pitkänen <hatapitk@iki.fi>
 	* Accept "A:n".
 

@@ -98,6 +98,15 @@ they may be useful for external applications:
    Word: juoksen -> MOOD: indicative
    Word: juoksisin -> MOOD: conditional
 
+ NEGATIVE
+ ========
+  For all verbs this attribute indicates whether the verb is in
+  a connegative form.
+  
+  Examples:
+   Word: sallitaan -> NEGATIVE: false
+   Word: sallita (as in "ei sallita") -> NEGATIVE: true
+
  Attributes for Finnish language
  ===============================
 

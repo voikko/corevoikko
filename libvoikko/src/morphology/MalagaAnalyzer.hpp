@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -36,6 +36,7 @@ enum MalagaSymbol {
 	MS_PERSON,
 	MS_MOOD,
 	MS_VAPAA_JALKIOSA,
+	MS_NEGATIVE,
 	MS_LAST_SYMBOL
 };
 
