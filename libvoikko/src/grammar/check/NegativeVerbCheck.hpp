@@ -16,18 +16,18 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_CAPITALIZATION_CHECK
-#define VOIKKO_GRAMMAR_CHECK_CAPITALIZATION_CHECK
+#ifndef VOIKKO_GRAMMAR_CHECK_NEGATIVE_VERB_CHECK
+#define VOIKKO_GRAMMAR_CHECK_NEGATIVE_VERB_CHECK
 
-#include "grammar/check/ParagraphCheck.hpp"
+#include "grammar/check/SentenceCheck.hpp"
 
 namespace libvoikko { namespace grammar { namespace check {
 /**
- * Check for errors in capitalization.
+ * Check for errors in negative verbs. Example "En juoksen."
  */
-class CapitalizationCheck : public ParagraphCheck {
+class NegativeVerbCheck : public SentenceCheck {
 	public:
-		void check(voikko_options_t * options, const Paragraph * paragraph);
+		void check(voikko_options_t * options, const Sentence * sentence);
 };
 
 } } }

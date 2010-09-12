@@ -16,20 +16,14 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *********************************************************************************/
 
-#ifndef VOIKKO_GRAMMAR_CHECK_CAPITALIZATION_CHECK
-#define VOIKKO_GRAMMAR_CHECK_CAPITALIZATION_CHECK
+#include "grammar/check/NegativeVerbCheck.hpp"
 
-#include "grammar/check/ParagraphCheck.hpp"
+using namespace std;
 
 namespace libvoikko { namespace grammar { namespace check {
-/**
- * Check for errors in capitalization.
- */
-class CapitalizationCheck : public ParagraphCheck {
-	public:
-		void check(voikko_options_t * options, const Paragraph * paragraph);
-};
+
+void NegativeVerbCheck::check(voikko_options_t * options, const Sentence * sentence) {
+	// TODO
+}
 
 } } }
-
-#endif

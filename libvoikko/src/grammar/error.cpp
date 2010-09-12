@@ -49,7 +49,9 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_FOREIGN_QUOTATION_MARK:
 				return "Suomenkieliseen tekstiin sopimaton lainausmerkki";
 			case GCERR_MISPLACED_CLOSING_PARENTHESIS:
-				return "Väärin sijoitettu sulkumerkki";
+				return "V\xc3\xa4\xc3\xa4rin sijoitettu sulkumerkki";
+			case GCERR_NEGATIVE_VERB_MISMATCH:
+				return "Kieltoverbi ja p\xc3\xa4\xc3\xa4verbi eiv\xc3\xa4 sovi yhteen.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -79,6 +81,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Foreign quotation mark";
 			case GCERR_MISPLACED_CLOSING_PARENTHESIS:
 				return "Misplaced closing parenthesis";
+			case GCERR_NEGATIVE_VERB_MISMATCH:
+				return "Mismatched negative and verb";
 		}
 		return "Unknown error";
 	}
