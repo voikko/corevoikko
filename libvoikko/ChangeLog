@@ -1,3 +1,7 @@
+2010-09-13 Harri Pitkänen <hatapitk@iki.fi>
+	* Handle cases where an optional symbol is not found from Malaga symbol
+	  table. This can happen when older v2 morphologies are used.
+
 2010-09-12 Harri Pitkänen <hatapitk@iki.fi>
 	* Support new attribute NEGATIVE in morphological analysis.
 	* Warn about "en juoksen" in grammar checker.

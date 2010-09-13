@@ -87,8 +87,18 @@ void MalagaAnalyzer::terminate() {
 }
 
 symbol_t MalagaAnalyzer::findSymbol(const char * name) {
-	value_t symbolValue = parse_malaga_symbol(name, &malagaState);
-	symbol_t symbol = value_to_symbol(symbolValue);
+	value_t symbolValue;
+	try {
+		symbolValue = parse_malaga_symbol(name, &malagaState);
+	} catch (setup::DictionaryException e) {
+		return 0;
+	}
+	symbol_t symbol;
+	try {
+		symbol = value_to_symbol(symbolValue);
+	} catch (setup::DictionaryException e) {
+		symbol = 0;
+	}
 	free(symbolValue);
 	return symbol;
 }
@@ -195,11 +205,19 @@ void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const
 
 void MalagaAnalyzer::parseBasicAttribute(Analysis * &analysis, value_t &result,
                                          symbol_t symbol, const char * attrName) const {
+	if (!symbol) {
+		return;
+	}
 	value_t value = get_attribute(result, symbol);
 	if (!value) {
 		return;
 	}
-	symbol_t valueSym = value_to_symbol(value);
+	symbol_t valueSym;
+	try {
+		valueSym = value_to_symbol(value);
+	} catch (setup::DictionaryException e) {
+		return;
+	}
 	map<symbol_t, const wchar_t *>::const_iterator mapIterator = symbolMap.find(valueSym);
 	if (mapIterator == symbolMap.end()) {
 		return;
