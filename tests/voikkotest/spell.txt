@@ -649,6 +649,8 @@ show'kin # Kotus 22
 lohien # Kotus 23
 !lohten # Kotus 23
 tuohimainen # Kotus 23
+monien # Kotus 23
+!monten # Kotus 23
 unien # Kotus 24
 unten # Kotus 24
 lapsena # Kotus 25
