@@ -193,9 +193,12 @@ def __apply_gradation(word, grad_type):
 			return (word[:-1]+word[-2:], word)
 		if word[-2] == u'v':
 			return (word[:-2]+u'p'+word[-1], word)
-	if grad_type == u'av3' and len(word) >= 2: # k -> j
+	if grad_type == u'av3' and len(word) >= 3: # k -> j
 		if word[-2] == u'k':
-			return (word, word[:-2]+u'j'+word[-1])
+			if voikkoutils.is_consonant(word[-3]):
+				return (word, word[:-2]+u'j'+word[-1])
+			else:
+				return (word, word[:-3]+u'j'+word[-1])
 	if grad_type == u'av4' and len(word) >= 3: # j -> k
 		if word[-2] == u'j':
 			return (word[:-2]+u'k'+word[-1], word)
