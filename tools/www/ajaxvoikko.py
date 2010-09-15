@@ -285,6 +285,12 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		self.end_headers()
 		self.wfile.write(content.encode("UTF-8"))
 	
+	def sendBinary(self, content, contentType):
+		self.send_response(200)
+		self.send_header("Content-Type", contentType)
+		self.end_headers()
+		self.wfile.write(content)
+	
 	def serveFiles(self):
 		if self.path not in FILES_TO_SERVE:
 			return False
@@ -293,6 +299,15 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		content = file.read()
 		file.close()
 		self.sendHtmlPage(content, contentType)
+		return True
+	
+	def serveBinaries(self):
+		if self.path != "/progress.gif":
+			return False
+		f = open("progress.gif", "rb")
+		content = f.read()
+		f.close()
+		self.sendBinary(content, "image/gif")
 		return True
 	
 	def serveUrl(self, url):
@@ -304,6 +319,8 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 	
 	def do_GET(self):
 		if self.serveFiles():
+			return
+		if self.serveBinaries():
 			return
 		elif self.path.startswith("/wordinfo?q="):
 			query = unicode(unquote_plus(self.path[10:]), "UTF-8")

@@ -73,13 +73,11 @@ function updateReceived(html) {
 var lastUpdateTimerId = null;
 
 function setProgressMessage() {
-  $("#progress").addClass("updating");
-  $("#progress").text("Analysoidaan...");
+  $("#progress").show();
 }
 
 function clearProgressMessage() {
-  $("#progress").text("");
-  $("#progress").removeClass("updating");
+  $("#progress").hide();
 }
 
 function requestUpdate() {
@@ -123,9 +121,14 @@ function clickInInput(evt) {
   }
 }
 
+function clearClicked() {
+ $("#input").val("");
+}
+
 google.load("jquery", "1.4.1");
 google.load("jqueryui", "1.7.2");
 google.setOnLoadCallback(function() { jQuery(function($) {
+  $("#progress").hide();
   $("#input").keyup(keyUpInInput);
   $("#input").click(clickInInput);
   $("#input").bind("cut", inputChanged);
