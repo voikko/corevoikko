@@ -50,6 +50,7 @@ WORDLIST = WORKSPACE + "/wordlist.txt.gz"
 BASE_CORRECT = WORKSPACE + "/base-correct.txt"
 BASE_INFO = WORKSPACE + "/base-info.txt"
 CURRENT_CORRECT = WORKSPACE + "/current-correct.txt"
+COMPATIBILITY_DIR = WORKSPACE + "/compatibility"
 SMV = SVNROOT + "/trunk/suomimalaga"
 
 def _check_hyphens(section, expectedResult, result):
@@ -77,6 +78,40 @@ def _check_gcerrors(inputpara, expresults, results):
 			for r in results[i]: print u' ' + r
 			failcount = failcount + 1
 	return failcount
+
+# Run some tests with old morphologies to make sure that they work with current libvoikko
+def runCompatibilityTests():
+	assertionFileName = COMPATIBILITY_DIR + "/assertions.txt"
+	if not os.path.isfile(assertionFileName):
+		print u"Warning: compatibility assertions file was not found, not performing any compatibility tests"
+		return
+	assertionFile = codecs.open(assertionFileName)
+	index = assertionFile.read()
+	assertionFile.close()
+	compatTestCount = 0
+	for subdir in os.listdir(COMPATIBILITY_DIR):
+		if not subdir.startswith("mor-"):
+			continue
+		dictPath = COMPATIBILITY_DIR + "/" + subdir
+		def dictTestFunct(d):
+			return subdir[4:] in d.variant
+		dicts = filter(dictTestFunct, Voikko.listDicts(dictPath))
+		if len(dicts) != 1:
+			sys.stderr.write(u"Found " + `len(dicts)` + u" matching dicts when looking from " + dictPath + u"\n")
+			sys.exit(1)
+		d = dicts[0]
+		v = Voikko(language = d.language + u"-x-" + d.variant, path = dictPath)
+		for line in index.split(u"\n"):
+			if len(line) > 0 and not eval(line):
+				print u"Compatibility test failed: subdir='" + subdir + "', line='" + line + "'"
+				sys.exit(1)
+		v.terminate()
+		compatTestCount = compatTestCount + 1
+	if compatTestCount == 0:
+		print u"Warning: compatibility assertions were present but no morphologies were found"
+	else:
+		print u"All " + `compatTestCount` + " compatibility tests were successful"
+	
 
 # Returns a list of grammar errors.
 def _check_grammar(paragraphlist, params, voikko):
@@ -495,6 +530,7 @@ else:
 	morpho_tests(voikko)
 	hyphen_tests(voikko)
 	grammar_tests(voikko)
+	runCompatibilityTests()
 	tokenizer_tests()
 	sentence_tests()
 	voikko.terminate()
