@@ -141,6 +141,8 @@ En juoksen kotiin.
  [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
 Ette ovat siellä.
  [code=13, level=0, descr="", stpos=0, len=9, suggs={}]
+Älä juoskoot kotiin.
+ [code=13, level=0, descr="", stpos=0, len=12, suggs={}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

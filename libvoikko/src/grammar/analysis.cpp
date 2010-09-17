@@ -73,7 +73,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 			token->isPositiveVerb = false;
 		} else if (!wclass || wcscmp(L"teonsana", wclass) != 0 ||
 			   !negative || wcscmp(L"false", negative) != 0 ||
-			   (!mood || wcscmp(L"imperative", mood) == 0) || // "en/et/ei/emme/ette/eivät _juokse_"
+			   (!mood || (wcscmp(L"imperative", mood) == 0 && (!person || wcscmp(L"3", person) != 0))) || // "en/et/ei/emme/ette/eivät _juokse_"
 			   ((!mood || wcscmp(L"conditional", mood) == 0) && (!person || wcscmp(L"3", person) == 0))) { // "en _lukisi_"
 			token->isPositiveVerb = false;
 		}
