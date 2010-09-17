@@ -51,7 +51,7 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_MISPLACED_CLOSING_PARENTHESIS:
 				return "V\xc3\xa4\xc3\xa4rin sijoitettu sulkumerkki";
 			case GCERR_NEGATIVE_VERB_MISMATCH:
-				return "Kieltoverbi ja p\xc3\xa4\xc3\xa4verbi eiv\xc3\xa4 sovi yhteen.";
+				return "Kieltoverbi ja p\xc3\xa4\xc3\xa4verbi eiv\xc3\xa4t sovi yhteen.";
 		}
 		return "Tuntematon virhe";
 	}
