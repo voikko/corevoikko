@@ -44,8 +44,8 @@ char_type get_char_type(wchar_t c) {
 	if ((c >= 0x41 && c <= 0x5A) ||
 	    (c >= 0x61 && c <= 0x7A) ||
 	    (c >= 0xC1 && c <= 0xD6) ||
-	    (c >= 0xD9 && c <= 0xF6) ||
-	    (c >= 0x00F9 && c <= 0x017E) ||
+	    (c >= 0xD8 && c <= 0xF6) ||
+	    (c >= 0x00F8 && c <= 0x017E) ||
 	    (c >= 0xFB00 && c <= 0xFB04)) {
 		return CHAR_LETTER;
 	}
