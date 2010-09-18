@@ -41,7 +41,6 @@
 [perusmuoto: "iltayhdeksän", alku: "iltayhdeks", luokka: nimisana, jatko: <kahdeksan>, äs: ä, rakenne: "=pppp=pppppppp", tiedot: <ei_voikko>];
 [perusmuoto: "iltakymmenen", alku: "iltakymmen", luokka: nimisana, jatko: <kymmenen>, äs: ä, rakenne: "=pppp=pppppppp"];
 
-[perusmuoto: "Adrianmeri", alku: "Adrianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=pppppp=pppp"];
 [perusmuoto: "agaave", alku: "agaave", luokka: nimisana, jatko: <omanto_iT>, äs: a];
 [perusmuoto: "Al", alku: "Al", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "alkeet", alku: "alke", luokka: nimisana, jatko: <alkeet>, äs: a, tiedot: <inen>];
@@ -93,7 +92,6 @@
 [perusmuoto: "kalveta", alku: "kal", luokka: teonsana, jatko: <kevetä>, äs: a];
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
-[perusmuoto: "Kaspianmeri", alku: "Kaspianmer", luokka: paikannimi, jatko: <meri>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "kaunis", alku: "kaun", luokka: laatusana, jatko: <kaunis>, äs: a]; # J-luokka vieras, mutta "kaunEus"
 [perusmuoto: "Kemie", alku: "Kemie", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
