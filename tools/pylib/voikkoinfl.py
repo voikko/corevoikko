@@ -416,6 +416,9 @@ def _vtype_special_class_2(base):
 			# "kih|istä" -> "kihajaa"
 			return voikkoutils.VOWEL_BACK
 
+def _vtype_meri_partitive(base):
+	return voikkoutils.VOWEL_BACK
+
 def _removeStructure(word):
 	return word.replace(u"=", u"").replace(u"|", u"")
 
@@ -456,6 +459,8 @@ def inflectWordWithType(word, inflection_type, infclass, gradclass, vowel_type =
 				vowel_harmony_rule = _vtype_special_class_1
 			elif rule.name in DERIVS_VOWEL_HARMONY_SPECIAL_CLASS_2:
 				vowel_harmony_rule = _vtype_special_class_2
+			elif rule.name == u'partitiivi' and infclass == u'meri':
+				vowel_harmony_rule = _vtype_meri_partitive
 			final_base = _removeStructure(word_stripped_base)
 			if vowel_harmony_rule != None:
 				if vowel_harmony_rule(word_stripped_base) == voikkoutils.VOWEL_FRONT:

@@ -1286,7 +1286,7 @@ end: rules
 end: class
 
 
-# Kotus 24, 26 huuli
+# Kotus 24, 26 huuli (1/2)
 class: 24,26
 sm-class: huuli
 match-word: Ci
@@ -1327,6 +1327,48 @@ instruktiivi_mon	0	n	s	ps=f
 end: rules
 end: class
 
+
+# Kotus 24, 26 meri (2/2)
+class: 24,26
+sm-class: meri
+match-word: [vm]eri
+consonant-gradation: -
+group: t
+transform-group: e
+note: partitiivissa takavokaalipääte
+rules:
+nominatiivi	0	0	s	ps=f
+nominatiivi	i	e	s	ps=r
+genetiivi		i	en	s	ps=f
+partitiivi	i	ta	s
+translatiivi	i	eksi	s	ps=f
+translatiivi	i	ekse	s	ps=r
+essiivi		i	ena	s
+inessiivi		i	essa	s
+elatiivi		i	esta	s
+illatiivi		i	een	s
+adessiivi		i	ella	s
+ablatiivi		i	elta	s
+allatiivi		i	elle	s
+abessiivi		i	etta	s	ps=f
+nominatiivi_mon	i	et	s	ps=f
+genetiivi_mon	0	en	s
+genetiivi_mon	i	ten	s
+partitiivi_mon	0	a	s
+translatiivi_mon	0	ksi	s	ps=f
+translatiivi_mon	0	kse	s	ps=r
+essiivi_mon	0	na	s
+inessiivi_mon	0	ssa	s
+elatiivi_mon	0	sta	s
+illatiivi_mon	0	in	s
+adessiivi_mon	0	lla	s
+ablatiivi_mon	0	lta	s
+allatiivi_mon	0	lle	s
+abessiivi_mon	0	tta	s	ps=f
+komitatiivi_mon	0	ne	s	ps=r
+instruktiivi_mon	0	n	s	ps=f
+end: rules
+end: class
 
 # Kotus 25 loimi (1/2)
 class: 25
