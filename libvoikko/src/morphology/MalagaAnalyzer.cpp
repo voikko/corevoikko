@@ -185,6 +185,7 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_1", L"1");
 	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_2", L"2");
 	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_3", L"3");
+	insertToSymbolMap(symbolMap, "tekij\xc3\xa4_4", L"4");
 	
 	insertToSymbolMap(symbolMap, "tositapa", L"indicative");
 	insertToSymbolMap(symbolMap, "k\xc3\xa4skytapa", L"imperative");

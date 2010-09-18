@@ -141,6 +141,9 @@ word:juokset
 word:juoksee
  analysis
   PERSON=3
+word:juostaan
+ analysis
+  PERSON=4
 word:juoksisin
  analysis
   MOOD=conditional
