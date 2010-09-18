@@ -205,3 +205,6 @@ word:sallitaan
 word:sallita
  analysis
   NEGATIVE=true
+word:sallitakaan
+ analysis
+  NEGATIVE=true

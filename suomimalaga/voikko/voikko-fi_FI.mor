@@ -1942,9 +1942,15 @@ end;
 
 subrule tulostus_kielto($tietue):
   define $tlen := length($tietue);
-  define $allomorfi := $tietue.$tlen;
-  if $allomorfi.kielto = yes then
-    return yes;
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka /= liitesana then
+      if $allomorfi.kielto = yes then
+        return yes;
+      else
+        return no;
+      end;
+    end;
   end;
   return no;
 end;
