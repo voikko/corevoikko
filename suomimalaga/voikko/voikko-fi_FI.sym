@@ -315,6 +315,7 @@ aluetta_tarkentava_etuliite; # Etelä-, Manner-, ...
 erisnimen_pääte; # -keskus, -laitos, ...
 inen_loppu; # -inen
 vapaa_jälkiosa; # Vapaasti kaikkiin sanoihin liittyvä yhdyssanan jälkiosa, esim. "sana" ("ja-sana")
+molemmat; # kielto: yes/no/molemmat
 
 äs; # Ääntiösointu.
   a;

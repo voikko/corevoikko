@@ -194,6 +194,7 @@ void MalagaAnalyzer::initSymbols() {
 	
 	insertToSymbolMap(symbolMap, "yes", L"true");
 	insertToSymbolMap(symbolMap, "no", L"false");
+	insertToSymbolMap(symbolMap, "molemmat", L"both");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

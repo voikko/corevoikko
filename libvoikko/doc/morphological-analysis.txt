@@ -101,11 +101,12 @@ they may be useful for external applications:
  NEGATIVE
  ========
   For all verbs this attribute indicates whether the verb is in
-  a connegative form.
+  a connegative form. Suggested values: "false", "true", "both"
   
   Examples:
    Word: sallitaan -> NEGATIVE: false
    Word: sallita (as in "ei sallita") -> NEGATIVE: true
+   Word: maalaa (also "ei maalaa") -> NEGATIVE: both
 
  Attributes for Finnish language
  ===============================

@@ -208,3 +208,18 @@ word:sallita
 word:sallitakaan
  analysis
   NEGATIVE=true
+word:maalaa
+ analysis
+  MOOD=indicative
+  PERSON=3
+  NEGATIVE=both
+word:maalaakin
+ analysis
+  MOOD=indicative
+  PERSON=3
+  NEGATIVE=false
+word:maalaakaan
+ analysis
+  MOOD=indicative
+  PERSON=3
+  NEGATIVE=true

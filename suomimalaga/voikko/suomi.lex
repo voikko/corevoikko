@@ -437,9 +437,9 @@ define @jatko_mm := <sija_monikko_1,
 
 # Karlsson 1983, s. 234,
 #
-[alku: "kin",       luokka: liitesana, äs: aä, jatko: <loppu>];
-[alku: "kaan",      luokka: liitesana, äs: a, jatko: <loppu>];
-[alku: "kään",      luokka: liitesana, äs: ä, jatko: <loppu>];
+[alku: "kin",       luokka: liitesana, kielto: no, äs: aä, jatko: <loppu>];
+[alku: "kaan",      luokka: liitesana, kielto: yes, äs: a, jatko: <loppu>];
+[alku: "kään",      luokka: liitesana, kielto: yes, äs: ä, jatko: <loppu>];
 [alku: "kaanhan",   luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "käänhän",   luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "ko",        luokka: liitesana, äs: a, jatko: <loppu>];
