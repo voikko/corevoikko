@@ -102,6 +102,7 @@ koe-elää
 !makeamäreinen # "märe" ei sallittu yhdyssanan osana
 !makeakäkinen # "käki" ei sallittu yhdyssanan jälkiosana
 !leipämainen # "mainen" ei sallittu yhdyssanan osana
+!kalasointi # "soida" ei sallittu yhdyssanan jälkiosana
 virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
 !uutelleennimeä # adjektiivin genetiivi + substantiivi
 !kaivertajajuoda

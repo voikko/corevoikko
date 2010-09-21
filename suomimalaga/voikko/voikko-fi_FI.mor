@@ -401,6 +401,7 @@ combi_rule nimisana_teonsanasta ($vasen, $oikea, $sana, $index):
   if ($index greater 1) then
     ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   end;
+  ? $oikea.tiedot = nil or not ei_ysj in $oikea.tiedot;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if nimitapa_45 in $oikea.jatko then
