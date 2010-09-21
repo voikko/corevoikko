@@ -64,6 +64,13 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 			}
 			break;
 		case TOKEN_PUNCTUATION:
+			if (t.str[0] == L'[') {
+				// [2] etc. can be skipped
+				if (i + 2 < sentence->tokenCount && sentence->tokens[i + 2].str[0] == L']') {
+					i += 2;
+					continue;
+				}
+			}
 			if (i == 0) {
 				if (wcschr(L"()'-\u201C", t.str[0]) || isFinnishQuotationMark(t.str[0])) {
 					continue;

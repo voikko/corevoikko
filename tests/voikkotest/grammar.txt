@@ -109,6 +109,7 @@ Ensimmäinen virke alkaa (loppu suluissa). Toinen virke jatkaa.
 a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.
 A) Luettelossa voi sulkumerkkiä käyttää näin.
+Virkkeen perässä voi olla lähdeviite.[1]
 Sulkumerkkiä voi käyttää 1) luettelossa ja 2) joskus muulloinkin.
 Sulkumerkkiä voi käyttää	a) luettelossa ja	b) joskus muulloinkin.
 http://www.puimula.org
