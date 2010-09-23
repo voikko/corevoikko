@@ -57,6 +57,7 @@ Astuvansalmi
 Asukas
 aukeama
 Aura
+Aurajoki
 Aurinko
 Autio
 autoimmuuni
@@ -121,6 +122,7 @@ Haapaniemi
 haarautuma
 haaroittua
 haaroitus
+Hakaniemi
 halkeama
 Halme
 halpalento
@@ -142,6 +144,7 @@ haurastua
 Hautamäki
 hautaus
 havainnoitsija
+HDL-kolesteroli
 hehkutus
 heijastuma
 heikentymä
@@ -194,7 +197,9 @@ ilmentymä
 Ilta
 imeväinen
 imeväisikä
+immuunipuolustus
 immuunipuutos
+immuunireaktio
 Indonesia
 infantiilispasmi
 inkeriläinen
@@ -293,6 +298,7 @@ kaventuma
 kehittymä
 keitto
 kepulainen
+Kerberos
 kerholainen
 kerrotunlainen
 kertoma
@@ -335,6 +341,7 @@ kivettymä
 Kiviharju
 Kivijärvi
 Kivinen
+Kiviniemi
 Knuutinpoika
 koaksiaalikaapeli
 kohoama
@@ -572,11 +579,14 @@ mielipide
 mierolainen
 Miina
 mikkelinpäivä
+miljoonabisnes
+miljardibisnes
 Minttu
 Missi
 mittatarkka
 Moisio
 mongolilainen
+MS-tauti
 Muikku
 muistuma
 mulperipuu
@@ -607,6 +617,7 @@ Niva
 Norja
 Noronen
 nousema
+nuoruus
 Nurmi
 Nurmijärvi
 Nurminen
@@ -617,7 +628,8 @@ näyttämä
 näyttö
 ohentuma
 ohutkalvo
-ohutneula
+ohutneulabiopsia
+ohutneulanäyte
 ohutsuoli
 oikeanlainen
 oikeistolainen
@@ -652,6 +664,7 @@ patoutuma
 Paula
 pehmytkudos
 peilikirkas
+peilityyni
 peitto
 pensastua
 Perho
@@ -662,6 +675,7 @@ Peräseinäjoki
 peräänajo
 pidentymä
 pidättyä
+pidättää
 pidätys
 Pihtipudas
 piirros
@@ -692,6 +706,7 @@ Portugali
 Posti
 pre-eklampsia
 preliminäärikoe
+primaarikasvain
 primaaripreventio
 pseudokysta
 Pudasjärvi
@@ -701,6 +716,7 @@ puhuma-alue
 puikulaperuna
 puksipuu
 pullistuma
+punavihoittuma
 Puola
 puolipäivä
 puoluelainen
@@ -721,6 +737,7 @@ pölyttyä
 pölytys
 raakalainen
 Raitio
+rajoittua
 rajuilma
 Ranska
 Ranta
@@ -806,6 +823,7 @@ siirtymä
 siirtyä
 siivous
 Sikiö
+sileälihas
 Sini
 Sirkka
 sirkuslainen
@@ -949,6 +967,7 @@ uurteisvalas
 Uusikylä
 uusiseelantilainen
 Uusitalo
+uzbekistanilainen
 Vaajakoski
 vaatetus
 vahvuus
@@ -985,9 +1004,11 @@ varallisuus
 Varis
 Varkaus
 Varma
+Varsinais-Suomi
 Vartio
 Vasara
 vasemmistolainen
+Vasemmistoliitto
 vastaanotto
 vastaavanlainen
 Vehmas
@@ -1023,6 +1044,9 @@ Virolainen
 Virta
 virtaama
 Visa
+vitaalikapasiteetti
+Vittujärvi
+Vittulampi
 voidella
 Voikko
 voima
@@ -1043,6 +1067,7 @@ vähittäismyynti
 väittämä
 Väistö
 väitellä
+Välimeri
 väritys
 vääntymä
 väärinkäsitys

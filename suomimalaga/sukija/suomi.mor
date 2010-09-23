@@ -123,7 +123,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $res, rules liitesana;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     result $res, rules sijapääte;
 
@@ -148,7 +148,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $res, rules laatusanasta_johdettu_laatusana;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if (tavuviiva in $oikea.jatko) then
       result $res, rules tavuviiva;
@@ -173,7 +173,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       end;
     end;
     if (loppu in  $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if (tavuviiva in  $oikea.jatko) then
       result $res, rules tavuviiva;
@@ -202,7 +202,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $res, rules tavuviiva;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
 #    result $res, rules kaksoispiste, tavuviiva, loppu;
   elseif $oikea.luokka in @erisnimi then
@@ -216,7 +216,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $res, rules tavuviiva;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if ((johdin_lAinen in $oikea.jatko or johdin_mAinen in $oikea.jatko)
         and ($oikea.luokka in <paikannimi, sukunimi>)) then
@@ -228,7 +228,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $res, rules tavuviiva;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     result $res, rules liitesana;
   elseif $oikea.luokka = etuliite then
@@ -263,13 +263,18 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     # Tavuviiva ja etuliite ovat aina jatkossa eli niitä ei tarvitse testata.
     result $res, rules tavuviiva, etuliite;
   elseif $oikea.luokka = kieltosana then
-    result $res, rules liitesana, liitesana_kä, tavuviiva, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana, liitesana_kä, tavuviiva;
   elseif $oikea.luokka = asemosana then
-    result $res,
-           rules asemosanan_sijapääte, liitesana, tavuviiva, voitto_yliaste, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules asemosanan_sijapääte, liitesana, tavuviiva, voitto_yliaste;
   elseif $oikea.luokka in <seikkasana, suhdesana> then
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if (liitesana in $oikea.jatko) then
       result $res, rules liitesana;
@@ -292,7 +297,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
       result $res, rules tavuviiva;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if ((johdin_lAinen in $oikea.jatko) and ($oikea.luokka in <paikannimi, sukunimi>)) then
       result $res, rules paikannimen_ja_sukunimen_lainen_johdin;
@@ -372,7 +377,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
   if ($oikea.luokka = seikkasana and $oikea.tiedot /= nil and
       ys_perusosa in $oikea.tiedot and $vasen /= <>) then
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if (liitesana in $oikea.jatko) then
        result $res, rules liitesana;
@@ -417,7 +422,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
       result $res, rules liitesana;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     result $res, rules sijapääte;
   end;
@@ -463,7 +468,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $n):
     result $res, rules laatusanasta_johdettu_laatusana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (tavuviiva in $oikea.jatko) then
     result $res, rules tavuviiva;
@@ -491,7 +496,7 @@ end;
 #    result $res, rules tavuviiva;
 #  end;
 #  if loppu in $oikea.jatko then
-#    result $res, rules loppu;
+#    result $res, accept;
 #  end;
 #  if liitesana in $oikea.jatko then
 #    result $res, rules liitesana;
@@ -535,7 +540,7 @@ combi_rule nimi_laatusana ($vasen, $oikea, $sana, $n):
     result $res, rules voitto_yliaste;
   end;
   if (loppu in $oikea.jatko) then
-     result $res, rules loppu;
+     result $res, accept;
   end;
   if (@nimi_laatusanan_johdin * $oikea.jatko /= <>) then
     result $res, rules nimi_laatusanan_johdin;
@@ -568,8 +573,12 @@ combi_rule asemosana ($vasen, $oikea, $sana):
 
 #define $nimi := transmit (<"asemosana"> + <$oikea> + <$sana>);
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules asemosanan_sijapääte, liitesana, tavuviiva, voitto_yliaste, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules asemosanan_sijapääte, liitesana, tavuviiva, voitto_yliaste;
 end;
 
 
@@ -582,8 +591,12 @@ combi_rule lyhennesääntö ($vasen, $oikea, $sana, $n):
 #define $nimi2 := transmit (<"lyhennesääntö2"> + <$oikea>);
 #define $nimi3 := transmit (<"lyhennesääntö3"> + <$sana>);
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules kaksoispiste, tavuviiva, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules kaksoispiste, tavuviiva;
 end;
 
 
@@ -593,8 +606,12 @@ combi_rule apusana ($vasen, $oikea, $sana):
 
 #define $nimi := transmit (<"apusana"> + <$oikea> + <$sana>);
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules liitesana, tavuviiva, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules liitesana, tavuviiva;
 end;
 
 
@@ -618,8 +635,12 @@ combi_rule tavuviiva ($vasen, $oikea, $sana, $n):
 #define $nimi2 := transmit (<"tavuviiva2"> + <$oikea>);
 #define $nimi3 := transmit (<"tavuviiva3"> + <$sana>);
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules yhdyssana, asemosana, apusana, lyhennesääntö, erisnimi, lukusana, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules yhdyssana, asemosana, apusana, lyhennesääntö, erisnimi, lukusana;
 end;
 
 
@@ -635,8 +656,12 @@ combi_rule kaksoispisteen_sijapääte ($vasen, $oikea, $sana, $n):
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules omistusliite, liitesana, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules omistusliite, liitesana;
 end;
 
 
@@ -681,8 +706,10 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $n):
 #define $c1 := transmit ($sana);
 
   if (($oikea.sija = kerronto_sti) and ($edellinen.luokka in @sti_edeltäjä)) then
-##define $aaa := transmit (<"Sijapääte"> + <$vasen>);
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
   else
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
@@ -698,7 +725,7 @@ combi_rule sijapääte ($vasen, $oikea, $sana, $n):
       result $res, rules yhdyssana;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
   end;
 end;
@@ -726,8 +753,10 @@ combi_rule ei_ys_sijapääte ($vasen, $oikea, $sana, $n):
 #define $c1 := transmit ($sana);
 
   if (($oikea.sija = kerronto_sti) and ($edellinen.luokka in @sti_edeltäjä)) then
-##define $aaa := transmit (<"Sijapääte"> + <$vasen>);
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
   else
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
@@ -739,7 +768,7 @@ combi_rule ei_ys_sijapääte ($vasen, $oikea, $sana, $n):
       result $res, rules tavuviiva;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
   end;
 end;
@@ -760,12 +789,18 @@ combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $n):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (($oikea.sija = kerronto_sti) and ($edellinen.luokka in @sti_edeltäjä)) then
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
   else
     if sijamuoto_sijasta($oikea.sija) = omanto then
       result $res, rules inen_johdos_nimisanasta; # Muun+tyyppinen yms.
     end;
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
 #    result $res, rules liitesana, tavuviiva, loppu;
   end;
 end;
@@ -786,7 +821,10 @@ combi_rule laatutavan_sijapääte ($vasen, $oikea, $sana, $n):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if (($oikea.sija = kerronto_sti) and ($edellinen.luokka in @sti_edeltäjä)) then
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
   else
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
@@ -795,7 +833,7 @@ combi_rule laatutavan_sijapääte ($vasen, $oikea, $sana, $n):
       result $res, rules liitesana;
     end;
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
 ###    result $res, rules omistusliite, liitesana, loppu;
   end;
@@ -831,7 +869,7 @@ combi_rule teonsana ($vasen, $oikea, $sana, $n):
     end;
   end;
   if (loppu in  $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (tavuviiva in  $oikea.jatko) then
     result $res, rules tavuviiva;
@@ -889,8 +927,12 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $n):
              (viimeinen_kirjain ($vasen.$i.alku) = substring($sana,1,1)));
   end;
 
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules liitesana, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules liitesana;
 end;
 
 
@@ -913,7 +955,10 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $n):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.luokka in @nimitapa_1) then
-    result $res, rules nimitapa_1_pitkä, liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules nimitapa_1_pitkä, liitesana;
   elseif ($oikea.luokka in @nimitapa_2) then
     #
     # Ääntiö + "iss[aä] käy mutta ei kerake + "iss[aä]".
@@ -926,14 +971,23 @@ combi_rule nimitavat ($vasen, $oikea, $sana, $n):
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
     end;    
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
   elseif ($oikea.luokka in @nimitapa_3) then
     if (omistusliite in $oikea.jatko) then
       result $res, rules omistusliite;
     end;    
-    result $res, rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules liitesana;
   elseif ($oikea.luokka = nimitapa_5) then
-    result $res, rules omistusliite, loppu;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+    result $res, rules omistusliite;
   end;
 end;
 
@@ -979,7 +1033,7 @@ combi_rule laatutavat ($vasen, $oikea, $sana, $n):
     result $res, rules liitesana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if ((voittoaste in $oikea.jatko) or (yliaste in $oikea.jatko)) then
     result $res, rules laatutavan_voitto_yliaste;
@@ -992,9 +1046,12 @@ combi_rule kieltosana ($vasen, $oikea, $sana):
 ####define $profile := transmit ("kieltosana ($vasen, $oikea, $sana):");
   ? $oikea.luokka = kieltosana;
 
-#define $nimi := transmit (<"kieltosana"> + <$sana>);
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules liitesana, liitesana_kä, tavuviiva, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules liitesana, liitesana_kä, tavuviiva;
 end;
 
 
@@ -1020,7 +1077,7 @@ combi_rule liitesana ($vasen, $oikea, $sana, $n):
 #define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
 #                       <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
 
-  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
+  result $vasen + <[alku: $sana] + $oikea>, accept;
 end;
 
 
@@ -1043,7 +1100,7 @@ combi_rule liitesana_ei_kO ($vasen, $oikea, $sana, $n):
 #define $a := transmit (<$vasen.$i.luokka> + <$vasen.$i.tapaluokka> + 
 #                       <$vasen.$i.tekijä> + <$vasen.$i.luku> + <$sana> + <$oikea.luokka> + <$i>);
 
-  result $vasen + <[alku: $sana] + $oikea>, rules loppu;
+  result $vasen + <[alku: $sana] + $oikea>, accept;
 end;
 
 
@@ -1057,9 +1114,12 @@ combi_rule liitesana_kä ($vasen, $oikea, $sana, $n):
 
   if $oikea.äs = aä then $oikea.äs := $vasen.$i.äs; end;
 
-#define $nimi := transmit ("liitesana_kä " + $vasen.$i.alku + " " + $sana);
-  result $vasen + <[alku: $sana] + $oikea>,
-         rules liitesana, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules liitesana;
 end;
 
 
@@ -1083,8 +1143,10 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
              (not ($vasen.$i.sija in <vajanto_ttA, vajanto_ittA>)) and
              (substring (value_string ($vasen.$i.sija), 1R) in <"A", "e">))
             or (($vasen.$i.alku /= nil) and substring ($vasen.$i.alku, 1R) in <"e">))) then
-    result $result,
-           rules liitesana, loppu;
+    if (loppu in $oikea.jatko) then
+      result $result, accept;
+    end;
+    result $result, rules liitesana;
   end;
 
 #define $a := transmit ($vasen);
@@ -1102,13 +1164,18 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
     if ($vasen.$i.sija = omanto_in) then
       if (($sana in <"nsa", "nsä">) or
           (($sana in <"mme">) and (substring ($vasen.($i-1).alku, 1R) in <"a", "e", "ä">))) then
-        result $result,
-               rules liitesana, loppu;
+        if (loppu in $oikea.jatko) then
+          result $result, accept;
+        end;
+        result $result, rules liitesana;
       else
         stop;
       end;
     else
-      result $result, rules liitesana, loppu;
+      if (loppu in $oikea.jatko) then
+        result $result, accept;
+      end;
+      result $result, rules liitesana;
     end;
   elseif omistusliite3_oikein ($vasen.$i.alku, $sana) then
 #define $o1 := transmit ($vasen.$i.alku + " " + $sana);
@@ -1131,11 +1198,17 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $n):
                                   seuranto_ine>))
              or ($vasen.$i.luokka in <seikkasana, suhdesana>)
              or (($vasen.$i.luokka = nimisana) and ($vasen.$i.sijamuoto /= nil)))) then # Omallatunnolla+an yms.
-      result $result, rules liitesana, loppu;
+      if (loppu in $oikea.jatko) then
+        result $result, accept;
+      end;
+      result $result, rules liitesana;
     elseif (($vasen.$i.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_3_saama, nimitapa_5>)
             and not ($vasen.$i.alku in <"maa", "mää">)) then  ## Tämä ehto on kopsattu Harri Pitkäsen Voikko-versiosta:
                                                               ## eroa+maa+an on väärin.
-      result $result, rules liitesana, loppu;
+      if (loppu in $oikea.jatko) then
+        result $result, accept;
+      end;
+      result $result, rules liitesana;
     end;
   end;
 end;
@@ -1173,7 +1246,7 @@ combi_rule voitto_yliaste ($vasen, $oikea, $sana, $n):
     result $res, rules laatusanasta_johdettu_nimisana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
 
   result $res, rules sijapääte;
@@ -1199,7 +1272,7 @@ combi_rule laatutavan_voitto_yliaste ($vasen, $oikea, $sana, $n):
     result $res, rules omistusliite;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
 
   result $res, rules sijapääte;
@@ -1302,6 +1375,10 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
     return no;
   end;
 
+  if (($vasen.$n.luokka /= tavuviiva) and ($oikea.tiedot /= nil) and (ei_ysj in $oikea.tiedot)) then
+    return no;
+  end;
+
   if (($vasen.$n.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
     #
     # Yhdyssanan eka osa ei voi loppua samaan ääntiöön, millä toka osa alkaa.
@@ -1326,28 +1403,11 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
   return yes;
 end;
 
-#subrule yhdyssana_oikein2 ($vasen, $oikea, $n):
-#  if (($vasen.$n.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
-#    #
-#    # Yhdyssanan eka osa ei voi loppua samaan ääntiöön, millä toka osa alkaa.
-#    # Siis esim. ensiilta ei käy, vaan pitäisi olla ensi-ilta.
-#    #
-#    define $s := $vasen.$n.perusmuoto;
-#    if (length($vasen.$n.alku) greater length($vasen.$n.perusmuoto)) then
-#      $s := $vasen.$n.alku;
-#    end;
-#    if ((substring($s,1R) matches @ääntiö) and (substring($oikea.perusmuoto,1) matches @ääntiö)) then
-#      return (substring($s,1R) /= substring($oikea.perusmuoto,1));
-#    end;
-#  end;
-#  return yes;
-#end;
-
 
 #####################################################
 
 
-end_rule loppu ($tietue):
+end_rule xloppu ($tietue):
   define $i := length ($tietue);
   ? loppu in $tietue.$i.jatko;
 
@@ -1358,16 +1418,11 @@ end_rule loppu ($tietue):
 #  define $n := transmit (<"loppu "> + <$k.luokka> + <$k.alku>);
 #end;
 
-  define $n := $i;
-  if ($tietue.$i.luokka in <liitesana, liitesana_kO, liitesana_s, omistusliite>) then
-    $n := $i - 1;
-  end;
+#  define $j := $i;
+#  if ($tietue.$i.luokka in <liitesana, liitesana_kO, liitesana_s, sijapääte, omistusliite>) then
+#    $j := $j - 1;
+#  end;
 
-
-  define $j := $n;
-  repeat while ($tietue.$j.luokka in <sijapääte, omistusliite>);
-    $j :=- 1;
-  end;
 
   # Jotkut sanat eivät voi olla yhdyssanan jälkiosana.
   #
@@ -1380,20 +1435,6 @@ end_rule loppu ($tietue):
   # kahdesti (esim. esi-isä), ellei niitä ole merkitty sanastoon
   # lipulla ei_sukija.
   #
-
-#foreach $k in $tietue:
-#  define $o := transmit ($k - jatko);
-#end;
-#define $oo := transmit ("===");
-
-#define $aa := transmit ("Huuhoo.");
-#define $p  := transmit ($tietue.$j - jatko);
-#define $q  := transmit ($tietue.$j.tiedot);
-#define $s  := transmit (length($tietue));
-#define $s1 := transmit ($tietue.($j-1) - jatko);
-#define $t  := transmit ($j);
-
-
 #  if (($tietue.$j.tiedot /= nil) and (ei_ysj in $tietue.$j.tiedot) and ($tietue.($j-1).luokka /= tavuviiva)
 #      and ($j greater 1)) then
 ##define $a := transmit ("Huuhaa.");
@@ -1401,18 +1442,18 @@ end_rule loppu ($tietue):
 #  end;
 
 
-if (1 = 1) then
-  foreach $u in length($tietue):
-    if (($u greater 1) and ($u less_equal $j) and
-        ($tietue.$u.tiedot /= nil) and ((ei_ysj in $tietue.$u.tiedot))) then
-     if ($tietue.($u-1).luokka /= tavuviiva) then
-#define $a := transmit ("Huuhaa.");
-#define $b := transmit ($tietue.$u - jatko);
-        stop;
-      end;
-    end;
-  end;
-end;
+#if (1 = 0) then
+#  foreach $u in length($tietue):
+#    if (($u greater 1) and ($u less_equal $j) and
+#        ($tietue.$u.tiedot /= nil) and ((ei_ysj in $tietue.$u.tiedot))) then
+#     if ($tietue.($u-1).luokka /= tavuviiva) then
+##define $a := transmit ("Huuhaa.");
+##define $b := transmit ($tietue.$u - jatko);
+#        stop;
+#      end;
+#    end;
+#  end;
+#end;
 
 
   # Jotkut sanat voivat olla vain yhdyssanojen jälkiosana.
@@ -1420,26 +1461,6 @@ end;
   #
 #  if ((($tietue.1).tiedot /= nil) and (ysj in ($tietue.1).tiedot)) then
 #    stop;
-#  end;
-
-
-# Näiden kommentointi nopeuttaa ohjelman toimintaa vähän yli 50%.
-#
-#  if ($i greater 1) then
-#    foreach $p in $i-1:
-#      if (yhdyssanataulukko ($tietue.$p.perusmuoto, $tietue.($p+1).perusmuoto)) then
-#        stop;
-#      end;
-#    end;
-#  end;
-#  if ($i greater 2) then
-#    foreach $p in $i-2:
-#      if (yhdyssanataulukko2 ($tietue.$p.perusmuoto,
-#                              sana1($tietue.($p+1)),
-#                              $tietue.($p+2).perusmuoto)) then
-#        stop;
-#      end;
-#    end;
 #  end;
 
   result $tietue, accept;
@@ -1678,7 +1699,7 @@ end;
 
 
 combi_rule teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):
-#define $profile := transmit ("teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):");
+####define $profile := transmit ("teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka in @teonsanasta_johdettu_nimisana;
 
   define $i := $n - 1;
@@ -1723,7 +1744,7 @@ combi_rule teonsanan_johdos_nimisana ($vasen, $oikea, $sana, $n):
     result $res, rules liitesana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (@nimisanasta_johdettu_seikkasana * $oikea.jatko /= <>) then
     result $res, rules nimisanasta_johdettu_seikkasana;
@@ -1787,7 +1808,7 @@ combi_rule teonsanan_johdos_laatusana ($vasen, $oikea, $sana, $n):
     result $res, rules liitesana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (@laatusanasta_johdettu_nimisana * $oikea.jatko /= <>) then
     result $res, rules laatusanasta_johdettu_nimisana;
@@ -1829,7 +1850,7 @@ combi_rule teonsanan_johdos_teonsana ($vasen, $oikea, $sana, $n):
     result $res, rules liitesana_ei_kO;
   end;
   if (loppu in  $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (tavuviiva in  $oikea.jatko) then
     result $res, rules tavuviiva;
@@ -1896,7 +1917,12 @@ combi_rule nimisanasta_johdettu_seikkasana ($vasen, $oikea, $sana, $n):
 
   if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
 
-  result $vasen + <[alku: $sana] + $oikea>, rules liitesana, loppu;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules liitesana;
 end;
 
 
@@ -1929,7 +1955,7 @@ combi_rule nimisanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):
     result $res, rules yhdyssana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (liitesana in $oikea.jatko) then
     result $res, rules liitesana;
@@ -1993,7 +2019,7 @@ combi_rule laatusanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):
     result $res, rules liitesana;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   result $res, rules sijapääte;
 end;
@@ -2018,7 +2044,7 @@ combi_rule laatusanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):
     result $res, rules tavuviiva;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if ((voittoaste in $oikea.jatko) or (yliaste in $oikea.jatko)) then
     result $res, rules voitto_yliaste;
@@ -2049,7 +2075,7 @@ combi_rule erisnimi ($vasen, $oikea, $sana):
     result $res, rules tavuviiva;
   end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   result $res, rules erisnimen_sijapääte;
 end;
@@ -2104,7 +2130,7 @@ combi_rule paikannimen_ja_sukunimen_lainen_johdin ($vasen, $oikea, $sana, $n):
     result $res, rules laatusanasta_johdettu_nimisana;
   end;
   if (loppu in$oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (<voittoaste, yliaste> * $oikea.jatko /= <>) then
     result $res, rules voitto_yliaste;
@@ -2155,7 +2181,10 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $n):
       result $res, rules yhdysmerkki_erisnimen_jälkeen;
     end;
   end;
-  result $res, rules liitesana, loppu;
+  if (loppu in $oikea.jatko) then
+    result $res, accept;
+  end;
+  result $res, rules liitesana;
 end;
 
 
@@ -2176,7 +2205,7 @@ combi_rule johdettu_erisnimi ($vasen, $oikea, $sana):
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
@@ -2236,7 +2265,7 @@ combi_rule johdin_inen ($vasen, $oikea, $sana, $n):
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
@@ -2292,7 +2321,7 @@ combi_rule nimi_laatusanan_johdin ($vasen, $oikea, $sana, $n):
 #    result $res, rules laatusanasta_johdettu_laatusana;
 #  end;
   if (loppu in $oikea.jatko) then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if (omistusliite in $oikea.jatko) then
     result $res, rules omistusliite;
@@ -2325,7 +2354,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
   if ($oikea.alaluokka = erikoisluku) then
     define $erikoisres := $vasen + <[alku: $sana] + $oikea>;
     if (loppu in $oikea.jatko) then
-      result $erikoisres, rules loppu;
+      result $erikoisres, accept;
     end;
     if (liitesana in $oikea.jatko) then
       result $erikoisres, rules liitesana;
@@ -2357,7 +2386,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
   if ($oikea.alaluokka = yksiyhdeksän) then
     if (nimentö in $oikea.jatko) then
       if loppu in $oikea.jatko then
-        result $res, rules loppu;
+        result $res, accept;
       end;
       result $res, rules lukusana_toista, lukusana_sisäkerroin,
                          liitesana; ##, lukusanan_jälkiliite;
@@ -2374,7 +2403,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
         result $res, rules omistusliite;
       end;
       if loppu in $oikea.jatko then
-        result $res, rules loppu;
+        result $res, accept;
       end;
       result $res, rules lukusana_sisäkerroin,
                          liitesana, lukusanan_jälkiliite;
@@ -2386,16 +2415,18 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
       result $res, rules omistusliite;
     end;
     if loppu in $oikea.jatko then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     result $res, rules liitesana, lukusanan_jälkiliite;
 ##                       yhdyssana;
 ##                 nimisana, laatusana;
 ##                 nimisana, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   elseif ($oikea.alaluokka = numeromerkki) then
-     $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "=q"] + $oikea>;
-     result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
-     result $res, rules loppu;
+    $res := $vasen + <[alku: $sana, pilkku: no, rakenne: "=q"] + $oikea>;
+    if (loppu in $oikea.jatko) then
+      result $res, accept;
+    end;
+   result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
   end;
   if ($oikea.alaluokka in <sata, tuhat>) then
     if (nimentö in $oikea.jatko) then
@@ -2446,7 +2477,7 @@ combi_rule lukusana_sijapääte ($vasen, $oikea, $sana, $index):
                        ##, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   end;
   if loppu in $oikea.jatko then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if ($edellinen.alaluokka in <sata, tuhat>) then
     result $res, rules lukusana;
@@ -2487,7 +2518,7 @@ combi_rule lukusana_sisäkerroin ($vasen, $oikea, $sana, $index):
       result $res, rules omistusliite;
     end;
     if loppu in $oikea.jatko then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     result $res, rules liitesana;
   end;
@@ -2511,7 +2542,7 @@ combi_rule lukusana_sisäkerroin_sijapääte ($vasen, $oikea, $sana, $index):
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   result $res, rules lukusana,
                      liitesana, lukusanan_jälkiliite;
@@ -2533,7 +2564,7 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
     result $res, rules omistusliite;
   end;
   if loppu in $oikea.jatko then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   result $res, rules lukusana, lukusanan_jälkiliite,
                      liitesana;
@@ -2549,7 +2580,7 @@ combi_rule lukusana_toista ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana, sijamuoto: $edellinen.sijamuoto,
                             luku: $edellinen.luku, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
   if loppu in $oikea.jatko then
-    result $res, rules loppu;
+    result $res, accept;
   end;
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
@@ -2575,7 +2606,7 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
   # FIXME: yhdysviivan käyttöä ei vielä tueta lukusanan ja sen jälkiliitteen välissä
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if $oikea.luokka = tavuviiva then
-    result $res, rules loppu;
+    result $res, accept;
   else
     define $edellinen := $vasen.($index - 1);
     ? $edellinen.lukutyyppi = nil or $edellinen.lukutyyppi = $oikea.lukutyyppi;
@@ -2586,7 +2617,7 @@ combi_rule lukusanan_jälkiliite ($vasen, $oikea, $sana, $index):
       result $res, rules tavuviiva;
     end;
     if loppu in $oikea.jatko then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     result $res,
            rules ## ei_ys_sijapääte,
@@ -2606,7 +2637,7 @@ combi_rule lukusana_numero ($vasen, $oikea, $sana, $index):
 
   if $oikea.alaluokka = numeromerkki then
     result $res, rules lukusana_numero; ##, yhdysmerkki_numeron_jälkeen;
-    result $res, rules loppu;
+    result $res, accept;
   elseif $oikea.alaluokka = pilkku and $oikea.pilkku /= yes then
     $oikea :=+ [pilkku: yes];
     result $vasen + <[alku: $sana] + $oikea>, rules lukusana_numero;
@@ -2705,7 +2736,7 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
     define $res := $vasen + <[alku: $sana] + $oikea>;
 
     if (loppu in $oikea.jatko) then
-      result $res, rules loppu;
+      result $res, accept;
     end;
     if (liitesana in $oikea.jatko) then
        result $res, rules liitesana;
@@ -2744,7 +2775,11 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
       result $res, rules yhdyssana;
     end;
 
-    if ($vasen.$i.luokka = tavuviiva) or ($oikea.tiedot = nil or not (ei_ysj in $oikea.tiedot)) then
+    if ($vasen.$i.luokka = tavuviiva) or
+######       ($oikea.tiedot = nil or not (ei_ysj in $oikea.tiedot)) then
+       ($oikea.tiedot = nil or (not ((ei_ys in $oikea.tiedot) or (ei_ysj in $oikea.tiedot)))) then
+#define $a := transmit ($oikea);
+#define $b := transmit ($oikea.tiedot);
       if (omistusliite in $oikea.jatko) then
         result $res, rules omistusliite;
       end;
@@ -2752,7 +2787,7 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
         result $res, rules liitesana;
       end;
       if (loppu in $oikea.jatko) then
-        result $res, rules loppu;
+        result $res, accept;
       end;
       result $res, rules sijapääte;
     end;

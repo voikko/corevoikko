@@ -155,6 +155,13 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+  if (($tietue.perusmuoto in <"soida">) and ($tietue.tiedot /= nil) and (ei_ysj in $tietue.tiedot)) then
+    $tietue.tiedot :=- <ei_ysj>;
+    if ($tietue.tiedot = nil) then
+      $tietue :=- tiedot;
+    end;
+  end;
+
   if ($tietue.perusmuoto in
         <"amme", "höyli", "kokkari", "koksi", "lehdes", "riksi", "silla", "säkä", "tavi">) then
     if ($tietue.tiedot /= nil) then
@@ -164,7 +171,8 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-  if ($tietue.perusmuoto in <"erityinen">) then
+  if (($tietue.perusmuoto in <"erityinen", "vittu">) and
+      ($tietue.luokka in <nimisana, laatusana, nimi_laatusana>)) then
     if ($tietue.tiedot /= nil) then
       $tietue.tiedot :=- <ei_ysa>;
     else
@@ -182,7 +190,7 @@ allo_rule generate_allos ($tietue):
 
   if ($tietue.perusmuoto in <"fluoksetiini", "parametri",
                              "bentsodiatsepiini", "diatsepiini", "karbamatsepiini",
-                             "okskarbatsepiini", "triatsolobentsodiatsepiini">) then
+                             "lipofiili", "okskarbatsepiini", "triatsolobentsodiatsepiini">) then
     $tietue.äs := aä;
   end;
 
@@ -236,7 +244,7 @@ allo_rule generate_allos ($tietue):
   # Estetään eräitten -mainen-loppuisten sanojen tunnistuminen kahdesti.
   #
   if (($tietue.luokka in <paikannimi, sukunimi>) and
-      ($tietue.perusmuoto in <"Halli", "Kanerva", "Keihänen", "Kurikka", "Lanka", "Manner",
+      ($tietue.perusmuoto in <"Kanerva", "Keihänen", "Kurikka", "Lanka", "Manner",
                               "Osta", "Pippuri", "Rautiainen", "Sormunen", "Tiainen">)) then
     $tietue.jatko :=- <johdin_mAinen>;
     if ($tietue.tiedot = nil) then

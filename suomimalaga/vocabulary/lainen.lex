@@ -137,7 +137,7 @@
 [perusmuoto: "trinidadtobagolainen", alku: "trinidadtobagolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppp=pppppppppppp"];
 [perusmuoto: "tyanalainen", alku: "tyanalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "uruguaylainen", alku: "uruguaylai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "uzbekistanilainen", alku: "uzbekistanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "uzbekistanilainen", alku: "uzbekistanilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "valentinolainen", alku: "valentinolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "vedalainen", alku: "vedalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "virtolainen", alku: "virtolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a]; # Virrat-nimisen kunnan asukas
