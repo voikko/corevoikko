@@ -45,6 +45,9 @@ class Token {
 		/** True if this word may be a geographical name in genitive case. */
 		bool isGeographicalNameInGenitive;
 		
+		/** True if this is a proper noun that might be a geographical name ("Sämpyläjoki") */
+		bool possibleGeographicalName;
+		
 		/** True if this word is a verb negative ("en", "älä" jne.) */
 		bool isVerbNegative;
 		

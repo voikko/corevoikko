@@ -69,6 +69,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_MOOD], "MOOD");
 			parseBasicAttribute(analysis, res, symbols[MS_VAPAA_JALKIOSA], "MALAGA_VAPAA_JALKIOSA");
 			parseBasicAttribute(analysis, res, symbols[MS_NEGATIVE], "NEGATIVE");
+			parseBasicAttribute(analysis, res, symbols[MS_POSSIBLE_GEOGRAPHICAL_NAME], "POSSIBLE_GEOGRAPHICAL_NAME");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -139,6 +140,9 @@ void MalagaAnalyzer::initSymbols() {
 				break;
 			case MS_NEGATIVE:
 				symbolName = "kielto";
+				break;
+			case MS_POSSIBLE_GEOGRAPHICAL_NAME:
+				symbolName = "paikannimen_j\xc3\xa4lkiliite";
 				break;
 		}
 		symbols[sym] = findSymbol(symbolName);

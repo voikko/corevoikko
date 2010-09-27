@@ -1955,6 +1955,17 @@ subrule tulostus_kielto($tietue):
   return no;
 end;
 
+subrule tulostus_nimisanan_attribuutit($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.paikannimen_jälkiliite = yes then
+      return [paikannimen_jälkiliite: yes];
+    end;
+  end;
+  return [];
+end;
+
 subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
     define $res := "+";
     if ($vain_alku or $tietue.perusmuoto = nil) then
@@ -2080,6 +2091,8 @@ subrule tulostus_v2($tietue):
     $res :=+ [tekijä: tulostus_tekijä($tietue),
               tapaluokka: tulostus_tapaluokka($tietue),
               kielto: tulostus_kielto($tietue)];
+  elseif $res.luokka = nimisana then
+    $res :=+ tulostus_nimisanan_attribuutit($tietue);
   end;
   if $tietue.<1, vapaa_jälkiosa> = yes then
     $res :=+ [vapaa_jälkiosa: yes];

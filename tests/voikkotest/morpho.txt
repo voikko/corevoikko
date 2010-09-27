@@ -223,3 +223,8 @@ word:maalaakaan
   MOOD=indicative
   PERSON=3
   NEGATIVE=true
+word:sämpyläjauho
+ !POSSIBLE_GEOGRAPHICAL_NAME
+word:sämpyläjoki
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true

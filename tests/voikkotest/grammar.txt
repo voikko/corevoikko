@@ -63,6 +63,7 @@ Voinko kirjoittaa pakinan otsikolla "Kissat"? Kukaan ei lukisi sitä.
 “Vieras Lainausmerkki” voi vaikuttaa isojen kirjainten käytöön arvaamattomasti.
  [code=11, level=0, descr="", stpos=0, len=1, suggs={"”"}]
 Täysin käsittämätön erisnimi Kouklerotta ei ole kielioppivirhe.
+Paikka nimeltä Sämpyläjoki voisi olla oikeasti olemassa.
 Hyllyllä on mm. hilloa.
 Hyllyllä on hilloja, säilykkeitä yms. Toisin sanoen kaikkea hyvää.
 Hyllyllä on kahdenlaisia elintarvikkeita: hilloja ja säilykkeitä.

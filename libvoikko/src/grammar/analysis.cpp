@@ -35,6 +35,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->isValidWord = false;
 	token->possibleSentenceStart = false;
 	token->isGeographicalNameInGenitive = false;
+	token->possibleGeographicalName = false;
 	token->isVerbNegative = false;
 	token->isPositiveVerb = true;
 	if (token->type != TOKEN_WORD) {
@@ -58,6 +59,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 		const wchar_t * mood = (*it)->getValue("MOOD");
 		const wchar_t * person = (*it)->getValue("PERSON");
 		const wchar_t * negative = (*it)->getValue("NEGATIVE");
+		const wchar_t * possibleGeographicalName = (*it)->getValue("POSSIBLE_GEOGRAPHICAL_NAME");
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
 		    structure[1] != L'q')) {
 			// Word may start with a capital letter anywhere
@@ -76,6 +78,9 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 			   (!mood || (wcscmp(L"imperative", mood) == 0 && (!person || wcscmp(L"3", person) != 0))) || // "en/et/ei/emme/ette/eivät _juokse_"
 			   ((!mood || wcscmp(L"conditional", mood) == 0) && (!person || wcscmp(L"3", person) == 0))) { // "en _lukisi_"
 			token->isPositiveVerb = false;
+		}
+		if (possibleGeographicalName && wcscmp(L"true", possibleGeographicalName) == 0) {
+			token->possibleGeographicalName = true;
 		}
 		it++;
 	}

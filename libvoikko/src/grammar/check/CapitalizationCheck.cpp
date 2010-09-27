@@ -242,6 +242,7 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	    word->tokenlen > 1 && // Single letters are OK in upper case
 	    word->str[1] != L'-' && // A-rapussa etc.
 	    word->str[1] != L':' && // A:n
+	    !word->possibleGeographicalName &&
 	    SimpleChar::isUpper(word->str[0])) {
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
