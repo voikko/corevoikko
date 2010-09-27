@@ -213,6 +213,11 @@ word:maalaa
   MOOD=indicative
   PERSON=3
   NEGATIVE=both
+word:haravoi
+ analysis
+  MOOD=indicative
+  PERSON=3
+  NEGATIVE=both
 word:maalaakin
  analysis
   MOOD=indicative

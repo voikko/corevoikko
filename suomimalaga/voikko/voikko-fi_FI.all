@@ -3850,7 +3850,7 @@ end;
 
 
 subrule tositavan_kestämä_y3 ($tietue, $vahva_aste):
-  return <taivutus ($tietue, $vahva_aste, <liitesana, liitesana_pi, loppu>,
+  return <taivutus ($tietue + [kielto: molemmat], $vahva_aste, <liitesana, liitesana_pi, loppu>,
                     [tapaluokka: tositapa, aikamuoto: kestämä,
                      luku: yksikkö, tekijä: tekijä_3])>;
 end;
@@ -5744,7 +5744,7 @@ end;
 
 
 subrule salata ($tietue, $vahva_aste, $heikko_aste):
-  return tositavan_kestämä_y3 ($tietue + [kielto: molemmat], $vahva_aste + A($tietue))
+  return tositavan_kestämä_y3 ($tietue, $vahva_aste + A($tietue))
          + taivutuskaava ($tietue,
                           tositapa_ei_kestämä_y3
                             ($tietue,
