@@ -38,6 +38,7 @@ struct CapitalizationContext {
 	const Token * nextWord;
 	voikko_options_t * options;
 	stack<wchar_t> quotes;
+	bool sentenceEnded;
 };
 
 enum CapitalizationState {
@@ -126,6 +127,17 @@ static bool containsToken(const list<const Token *> & tokens, const wchar_t * ex
 	return false;
 }
 
+static bool lastPunctuationEndsSentence(const list<const Token *> & tokens) {
+	list<const Token *>::const_reverse_iterator it = tokens.rbegin();
+	while (it != tokens.rend()) {
+		if ((*it)->type == TOKEN_PUNCTUATION && (*it)->str[0] != L',') {
+			return wcschr(L".?!", (*it)->str[0]);
+		}
+		it++;
+	}
+	return false;
+}
+
 static bool placeNameInInstitutionName(const Token * word, const list<const Token *> & separators) {
 	return word->isGeographicalNameInGenitive && separators.size() == 1 &&
 	       (*separators.begin())->str[0] == L' ';
@@ -150,9 +162,9 @@ static bool pushAndPopQuotes(CapitalizationContext & context, const list<const T
 						context.quotes.push(text[0]);
 					}
 				}
-			} else if (text[0] == L'(') {
+			} else if (text[0] == L'(' || text[0] == L'[') {
 				context.quotes.push(text[0]);
-			} else if (text[0] == L')') {
+			} else if (text[0] == L')' || text[0] == L']') {
 				if (context.quotes.empty()) {
 					// XXX: parenthesis errors are not really related to
 					// capitalization
@@ -161,9 +173,13 @@ static bool pushAndPopQuotes(CapitalizationContext & context, const list<const T
 					e->error.startpos = (*it)->pos;
 					e->error.errorlen = 1;
 					gc_cache_append_error(context.options, e);
-				} else if (context.quotes.top() == L'(') {
+				} else if (context.quotes.top() == L'(' ||
+				           context.quotes.top() == L'[') {
+					// TODO: not checking for matching quote type
 					context.quotes.pop();
 				}
+			} else if (wcschr(L".!?", text[0])) {
+				context.sentenceEnded = true;
 			}
 		}
 		it++;
@@ -227,8 +243,8 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	if (containsToken(separators, L"\t") || placeNameInInstitutionName(word, separators)) {
 		return DONT_CARE;
 	}
-	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
-	    containsToken(separators, L"!")) {
+	if (lastPunctuationEndsSentence(separators)) {
+		context.sentenceEnded = true;
 		return UPPER;
 	}
 	return LOWER;
@@ -269,8 +285,8 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	if (containsToken(separators, L"\t") || placeNameInInstitutionName(word, separators)) {
 		return DONT_CARE;
 	}
-	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
-	    containsToken(separators, L"!")) {
+	if (lastPunctuationEndsSentence(separators)) {
+		context.sentenceEnded = true;
 		return UPPER;
 	}
 	return LOWER;
@@ -292,8 +308,8 @@ static CapitalizationState inDontCare(CapitalizationContext & context) {
 	if (containsToken(separators, L"\t")) {
 		return DONT_CARE;
 	}
-	if (containsToken(separators, L".") || containsToken(separators, L"?") ||
-	    containsToken(separators, L"!")) {
+	if (lastPunctuationEndsSentence(separators)) {
+		context.sentenceEnded = true;
 		return UPPER;
 	}
 	return LOWER;
@@ -305,10 +321,12 @@ static CapitalizationState inQuoted(CapitalizationContext & context) {
 	if (!context.quotes.empty()) {
 		return QUOTED;
 	}
-	if (containsToken(separators, L".")) {
+	if (lastPunctuationEndsSentence(separators)) {
+		context.sentenceEnded = false;
 		return UPPER;
 	}
-	if (hadQuotes) {
+	if (hadQuotes || context.sentenceEnded) {
+		context.sentenceEnded = false;
 		return DONT_CARE;
 	}
 	return LOWER;
@@ -323,6 +341,7 @@ void CapitalizationCheck::check(voikko_options_t * options, const Paragraph * pa
 	context.currentToken = 0;
 	context.nextWord = 0;
 	context.options = options;
+	context.sentenceEnded = false;
 	
 	CapitalizationState state = INITIAL;
 	while (paragraph->sentenceCount >= context.currentSentence + 1 &&
