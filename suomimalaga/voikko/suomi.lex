@@ -446,8 +446,8 @@ define @jatko_mm := <sija_monikko_1,
 [alku: "kö",        luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "kokaan",    luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "kökään",    luokka: liitesana, äs: ä, jatko: <loppu>];
-[alku: "pa",        luokka: liitesana, äs: a, jatko: <loppu>];
-[alku: "pä",        luokka: liitesana, äs: ä, jatko: <loppu>];
+[alku: "pa",        luokka: liitesana, kielto: no, äs: a, jatko: <loppu>];
+[alku: "pä",        luokka: liitesana, kielto: no, äs: ä, jatko: <loppu>];
 [alku: "han",       luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "hän",       luokka: liitesana, äs: ä, jatko: <loppu>];
 [alku: "kohan",     luokka: liitesana, äs: a, jatko: <loppu>];
@@ -765,49 +765,49 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 
 # Teonsanojen käskytavan (punokoon) henkilöpäätteet.
 #
-[alku: "koon",   luokka: käskytapa, luku: yksikkö, tekijä: tekijä_3, äs: a,
+[alku: "koon",   luokka: käskytapa, luku: yksikkö, tekijä: tekijä_3, äs: a, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "köön",   luokka: käskytapa, luku: yksikkö, tekijä: tekijä_3, äs: ä,
+[alku: "köön",   luokka: käskytapa, luku: yksikkö, tekijä: tekijä_3, äs: ä, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kaamme", luokka: käskytapa, luku: monikko, tekijä: tekijä_1, äs: a,
+[alku: "kaamme", luokka: käskytapa, luku: monikko, tekijä: tekijä_1, äs: a, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "käämme", luokka: käskytapa, luku: monikko, tekijä: tekijä_1, äs: ä,
+[alku: "käämme", luokka: käskytapa, luku: monikko, tekijä: tekijä_1, äs: ä, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kaa",    luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: a,
+[alku: "kaa",    luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: a, kielto: no,
                  jatko: <liitesana, liitesana_s, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kaatte", luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: a,
+[alku: "kaatte", luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: a, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kää",    luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: ä,
+[alku: "kää",    luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: ä, kielto: no,
                  jatko: <liitesana, liitesana_s, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "käätte", luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: ä,
+[alku: "käätte", luokka: käskytapa, luku: monikko, tekijä: tekijä_2, äs: ä, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "koot",   luokka: käskytapa, luku: monikko, tekijä: tekijä_3, äs: a,
+[alku: "koot",   luokka: käskytapa, luku: monikko, tekijä: tekijä_3, äs: a, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kööt",   luokka: käskytapa, luku: monikko, tekijä: tekijä_3, äs: ä,
+[alku: "kööt",   luokka: käskytapa, luku: monikko, tekijä: tekijä_3, äs: ä, kielto: no,
                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "ttakoon", luokka: käskytapa_ttA, tekijä: tekijä_4, äs: a,
+[alku: "ttakoon", luokka: käskytapa_ttA, tekijä: tekijä_4, äs: a, kielto: no,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "ttäköön", luokka: käskytapa_ttA, tekijä: tekijä_4, äs: ä,
-                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-
-[alku: "ttako",   luokka: käskytapa_ttA, tekijä: tekijä_4, äs: a,        # Punoa, älköön puno+ttako.
-                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "ttäkö",   luokka: käskytapa_ttA, tekijä: tekijä_4, äs: ä,
+[alku: "ttäköön", luokka: käskytapa_ttA, tekijä: tekijä_4, äs: ä, kielto: no,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "takoon",  luokka: käskytapa_tA, tekijä: tekijä_4, äs: a,
+[alku: "ttako",   luokka: käskytapa_ttA, tekijä: tekijä_4, äs: a, kielto: yes, # Punoa, älköön puno+ttako.
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "täköön",  luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä,
-                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-
-[alku: "tako",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: a,         # Juosta, älköön juos+tako.
-                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "täkö",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä,
+[alku: "ttäkö",   luokka: käskytapa_ttA, tekijä: tekijä_4, äs: ä, kielto: yes,
                   jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
 
-[alku: "ko", luokka: käskytapa, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
-[alku: "kö", luokka: käskytapa, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+[alku: "takoon",  luokka: käskytapa_tA, tekijä: tekijä_4, äs: a, kielto: no,
+                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+[alku: "täköön",  luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä, kielto: no,
+                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+
+[alku: "tako",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: a, kielto: yes, # Juosta, älköön juos+tako.
+                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+[alku: "täkö",    luokka: käskytapa_tA, tekijä: tekijä_4, äs: ä, kielto: yes,
+                  jatko: <liitesana, loppu>, tapaluokka: käskytapa, aikamuoto: kestämä];
+
+[alku: "ko", luokka: käskytapa, äs: a, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä, kielto: yes]; # älköön olko
+[alku: "kö", luokka: käskytapa, äs: ä, jatko: <loppu>, tapaluokka: käskytapa, aikamuoto: kestämä, kielto: yes];
 
 
 # Ensimmäinen nimitapa.

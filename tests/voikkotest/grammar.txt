@@ -144,6 +144,8 @@ Minä en maalaa mitään.
 Älä virheellinensanaaslkdjalk.
 En juoksen kotiin.
  [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
+En juoksepa kotiin.
+ [code=13, level=0, descr="", stpos=0, len=11, suggs={}]
 Ette ovat siellä.
  [code=13, level=0, descr="", stpos=0, len=9, suggs={}]
 Älä juoskoot kotiin.

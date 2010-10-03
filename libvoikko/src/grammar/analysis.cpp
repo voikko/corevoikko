@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -75,7 +75,6 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 			token->isPositiveVerb = false;
 		} else if (!wclass || wcscmp(L"teonsana", wclass) != 0 ||
 			   !negative || wcscmp(L"false", negative) != 0 ||
-			   (!mood || (wcscmp(L"imperative", mood) == 0 && (!person || wcscmp(L"3", person) != 0))) || // "en/et/ei/emme/ette/eivät _juokse_"
 			   ((!mood || wcscmp(L"conditional", mood) == 0) && (!person || wcscmp(L"3", person) == 0))) { // "en _lukisi_"
 			token->isPositiveVerb = false;
 		}

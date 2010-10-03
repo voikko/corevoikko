@@ -1948,6 +1948,9 @@ subrule tulostus_kielto($tietue):
     if $allomorfi.kielto /= nil then
       return $allomorfi.kielto;
     end;
+    if $allomorfi.tapaluokka = käskytapa then
+      return molemmat;
+    end;
     if $allomorfi.luokka /= liitesana then
       return no;
     end;

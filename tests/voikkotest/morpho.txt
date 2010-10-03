@@ -150,6 +150,7 @@ word:juoksisin
 word:juokse
  analysis
   MOOD=imperative
+  NEGATIVE=both
 word:juossee
  analysis
   MOOD=potential
@@ -228,6 +229,14 @@ word:maalaakaan
   MOOD=indicative
   PERSON=3
   NEGATIVE=true
+word:juoksepa
+ analysis
+  MOOD=imperative
+  NEGATIVE=false
+word:juoskoot
+ analysis
+  MOOD=imperative
+  NEGATIVE=false
 word:sämpyläjauho
  !POSSIBLE_GEOGRAPHICAL_NAME
 word:sämpyläjoki
