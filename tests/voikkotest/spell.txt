@@ -142,12 +142,13 @@ Pohjois-Israel
 !Erkkieno
 !enoerkki
 !janetten
-!Teemunsilta
+!Teemunlamppu
 Esankujalta
 !Heikkienkujalta
 !Esaakujalta
 !Esakujalta
 !esankujalta
+!HarrinKarin
 Mikonvuori-lava
 !Mikonvuorilava
 !mikonvuori-lava
