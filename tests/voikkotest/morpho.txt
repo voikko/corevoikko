@@ -233,6 +233,10 @@ word:juoksepa
  analysis
   MOOD=imperative
   NEGATIVE=false
+word:juoksehan
+ analysis
+  MOOD=imperative
+  NEGATIVE=false
 word:juoskoot
  analysis
   MOOD=imperative
