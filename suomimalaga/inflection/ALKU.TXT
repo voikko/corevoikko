@@ -233,6 +233,10 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+  if ($tietue.luokka = etuliite) then
+    $tietue.jatko := set ($tietue.jatko);
+  end;
+
   if ($tietue.jatko = <rakentaa> and $tietue.perusmuoto matches ".*ääntää") then
     $tietue.jatko := <kääntää>;
   end;

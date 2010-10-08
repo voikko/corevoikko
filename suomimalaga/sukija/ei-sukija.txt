@@ -39,6 +39,8 @@ alkuperäisteksti
 allekirjoittaa
 alleviivata
 ambrosialainen
+amerikanjuutalainen
+amerikansuomalainen
 ammattilainen
 antikolinerginen
 antitromboottinen
@@ -218,7 +220,9 @@ itkettyä
 itsesäätyvä
 itsetutkiskelu
 itäsaksalainen
+Itämeri
 Itävalta
+itävaltalainen
 Jaala
 jakauma
 Jalasjärvi
@@ -845,6 +849,7 @@ sulautuma
 sulkeutuma
 Sulo
 suoja
+suomalais-permiläinen
 Suomi
 Suomussalmi
 Suonenjoki

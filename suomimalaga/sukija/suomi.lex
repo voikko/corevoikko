@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -50,11 +50,16 @@ include "suomi.inc";
 define @sana1 := <yhdyssana, nimisana, laatusana, nimi_laatusana, tavuviiva, etuliite>;
 define @sana2 := @sana1 + <teonsana>;
 
-define @eln  := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana>;
-define @ell  := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
-define @elt  := <yhdyssana, tavuviiva, etuliite, teonsana>;
-define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
-define @elx  := <yhdyssana, etuliite, nimisana, laatusana, nimi_laatusana>;
+define @eln  := <tavuviiva, etuliite, nimisana, nimi_laatusana>;
+define @ell  := <tavuviiva, etuliite, laatusana, nimi_laatusana>;
+define @elt  := <tavuviiva, etuliite, teonsana>;
+define @eltj := <tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
+define @elx  := <etuliite, nimisana, laatusana, nimi_laatusana>;
+#define @eln  := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana>;
+#define @ell  := <yhdyssana, tavuviiva, etuliite, laatusana, nimi_laatusana>;
+#define @elt  := <yhdyssana, tavuviiva, etuliite, teonsana>;
+#define @eltj := <yhdyssana, tavuviiva, etuliite, nimisana, nimi_laatusana, laatusana>;
+#define @elx  := <yhdyssana, etuliite, nimisana, laatusana, nimi_laatusana>;
 
 define @sijan_jatko := <tavuviiva, liitesana, loppu>;
 define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;

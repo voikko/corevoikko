@@ -335,15 +335,15 @@ combi_rule etuliite ($vasen, $oikea, $sana, $n):
   if (nimisana in $oikea.jatko) then
     result $res, rules nimisana, teonsanasta_johdettu_nimisana,
                        paikannimen_ja_sukunimen_lainen_johdos;
-##    if (not (teonsana in $oikea.jatko)) then
-##      result $res, rules teonsana_teonsanasta_johdettu_nimisana;
-##    end;
+    if (not (teonsana in $oikea.jatko)) then
+      result $res, rules teonsana_teonsanasta_johdettu_nimisana;
+    end;
   end;
   if (laatusana in $oikea.jatko) then
     result $res, rules laatusana, teonsanasta_johdettu_laatusana;
-##    if (not (teonsana in $oikea.jatko)) then
-##      result $res, rules teonsana_teonsanasta_johdettu_laatusana;
-##    end;
+    if (not (teonsana in $oikea.jatko)) then
+      result $res, rules teonsana_teonsanasta_johdettu_laatusana;
+    end;
   end;
   if (nimi_laatusana in $oikea.jatko) then
     result $res, rules nimi_laatusana;
@@ -1407,66 +1407,6 @@ end;
 #####################################################
 
 
-end_rule xloppu ($tietue):
-  define $i := length ($tietue);
-  ? loppu in $tietue.$i.jatko;
-
-#foreach $k in $tietue:
-#  define $n := transmit ($k - jatko);
-#end;
-#foreach $k in $tietue:
-#  define $n := transmit (<"loppu "> + <$k.luokka> + <$k.alku>);
-#end;
-
-#  define $j := $i;
-#  if ($tietue.$i.luokka in <liitesana, liitesana_kO, liitesana_s, sijapääte, omistusliite>) then
-#    $j := $j - 1;
-#  end;
-
-
-  # Jotkut sanat eivät voi olla yhdyssanan jälkiosana.
-  #
-  # Ei työ+tyytyvä+isyys.
-  #
-  # Sukija-versiossa tällaiset sanat kuitenkin hyväksytään,
-  # jos niiden edellä on yhdysviiva (esim. kirkko-isä hyväksytään,
-  # mutta eri-ikäisyys ei ole eri-ikä+isyys). Sivuvaikutus: jos
-  # sanaan kuuluu yhdysviiva, se tunnistetaan Sukija-versiossa
-  # kahdesti (esim. esi-isä), ellei niitä ole merkitty sanastoon
-  # lipulla ei_sukija.
-  #
-#  if (($tietue.$j.tiedot /= nil) and (ei_ysj in $tietue.$j.tiedot) and ($tietue.($j-1).luokka /= tavuviiva)
-#      and ($j greater 1)) then
-##define $a := transmit ("Huuhaa.");
-#    stop;
-#  end;
-
-
-#if (1 = 0) then
-#  foreach $u in length($tietue):
-#    if (($u greater 1) and ($u less_equal $j) and
-#        ($tietue.$u.tiedot /= nil) and ((ei_ysj in $tietue.$u.tiedot))) then
-#     if ($tietue.($u-1).luokka /= tavuviiva) then
-##define $a := transmit ("Huuhaa.");
-##define $b := transmit ($tietue.$u - jatko);
-#        stop;
-#      end;
-#    end;
-#  end;
-#end;
-
-
-  # Jotkut sanat voivat olla vain yhdyssanojen jälkiosana.
-  # Paitsi jos niissä on kirjoitusvirhe.
-  #
-#  if ((($tietue.1).tiedot /= nil) and (ysj in ($tietue.1).tiedot)) then
-#    stop;
-#  end;
-
-  result $tietue, accept;
-end;
-
-
 output_filter tulosta ($tulos):
   foreach $j in $tulos:
 #define $a := transmit ($j);
@@ -1683,15 +1623,21 @@ end;
 combi_rule teonsanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("teonsanasta_johdettu_nimisana ($vasen, $oikea, $sana, $n):");
   ? $oikea.luokka = teonsana;
+  ? $oikea.jatko * (@teonsanasta_johdettu_nimisana) /= <>;
 
 #define $a := transmit ($vasen.($n-1).jatko);
 #define $b := transmit ($oikea.jatko);
 #define $c := transmit ($sana);
 #define $d := transmit ($n);
+#define $e := transmit ($vasen.($n-1));
 
-  ? $oikea.jatko * (@teonsanasta_johdettu_nimisana) /= <>;
-  ? yhdyssana_oikein ($vasen, $oikea, $n-1);
+#  ? yhdyssana_oikein ($vasen, $oikea, $n-1);
+  if ((substring($vasen.($n-1).perusmuoto,1R) = substring($oikea.perusmuoto,1)) and
+      (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+    stop;
+  end;
   ? $vasen.($n-1).jatko * <nimisana, nimi_laatusana, laatusana, etuliite> /= <>;
+
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules teonsanan_johdos_nimisana;
@@ -1771,9 +1717,12 @@ combi_rule teonsanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):
 #define $c := transmit ($sana);
 #define $d := transmit ($n);
 
-  ? yhdyssana_oikein ($vasen, $oikea, $n-1);
+##  ? yhdyssana_oikein ($vasen, $oikea, $n-1);
+  if ((substring($vasen.($n-1).perusmuoto,1R) = substring($oikea.perusmuoto,1)) and
+      (substring($oikea.perusmuoto,1) matches @ääntiö)) then
+    stop;
+  end;
   ? $vasen.($n-1).jatko * <nimisana, nimi_laatusana, laatusana, etuliite> /= <>;
-  ? yhdyssana in $vasen.($n-1).jatko;
 
   result $vasen + <[alku: $sana] + $oikea>,
          rules teonsanan_johdos_laatusana;
