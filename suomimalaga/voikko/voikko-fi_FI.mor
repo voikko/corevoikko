@@ -704,7 +704,7 @@ combi_rule merkki_numeron_jälkeen ($vasen, $oikea, $sana):
     result $res, accept;
     result $res, rules lukusanan_jälkiliite, inen_johdos_nimisanasta, inen_päätteinen_laatusana;
   else
-    result $res, rules lukusana_numero;
+    result $res, rules lukusana_numero, kaksoispisteen_sijapääte;
   end;
 end;
 

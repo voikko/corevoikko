@@ -468,6 +468,9 @@ koiramääkiminen
 -45
 12:15
 !12:kissa
+300:ssa
+12:ssa
+6:n # Valtatie 6:n
 
 [johtimet]
 märänlaiselleko
