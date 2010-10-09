@@ -92,6 +92,7 @@ YKSI VIRKE ON KOKONAAN ISOLLA. Toisessa on Silti virhe.
 PÄÄTÖS	Jos virkkeessä on sarkainmerkki, voi teksti sisältää vähän mitä tahansa.
 Sarkaimen	jälkeen Jotain sentään tarkistetaan.
  [code=6, level=0, descr="", stpos=18, len=6, suggs={"jotain"}]
+Venäjän keisareita olivat mm. Aleksanteri III ja Iivana VI.
 Sarkain	loppuu. Alkaa uusi virke.
 Sarkain	loppuu? Alkaa uusi virke.
 Sarkain	loppuu! Alkaa uusi virke.

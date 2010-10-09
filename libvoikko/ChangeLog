@@ -1,3 +1,6 @@
+2010-10-09 Harri Pitkänen <hatapitk@iki.fi>
+	* GC: Accept capitalized Roman numerals.
+
 2010-09-27 Harri Pitkänen <hatapitk@iki.fi>
 	* GC: Don't suggest using lower case when the word may be a geographical name.
 
