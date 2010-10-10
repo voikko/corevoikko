@@ -246,3 +246,15 @@ word:sämpyläjauho
 word:sämpyläjoki
  analysis
   POSSIBLE_GEOGRAPHICAL_NAME=true
+word:sämpyläjoella
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:sämpyläjoellakin
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:Välimerta
+ analysis
+  POSSIBLE_GEOGRAPHICAL_NAME=true
+word:sämpyläjokilaiva
+ !POSSIBLE_GEOGRAPHICAL_NAME
+

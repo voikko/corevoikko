@@ -1965,6 +1965,9 @@ subrule tulostus_nimisanan_attribuutit($tietue):
     if $allomorfi.paikannimen_jälkiliite = yes then
       return [paikannimen_jälkiliite: yes];
     end;
+    if $allomorfi.luokka = nimisana then
+      return [];
+    end;
   end;
   return [];
 end;
