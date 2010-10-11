@@ -250,15 +250,6 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	return LOWER;
 }
 
-static bool isRomanNumeral(const wchar_t * word, size_t wlen) {
-	for (size_t i = 0; i < wlen; i++) {
-		if (!wcschr(L"IVXLCDM", word[i])) {
-			return false;
-		}
-	}
-	return true;
-}
-
 static CapitalizationState inLower(CapitalizationContext & context) {
 	const Token * word = context.nextWord;
 	if (word->isValidWord &&
@@ -268,8 +259,7 @@ static CapitalizationState inLower(CapitalizationContext & context) {
 	    word->tokenlen > 1 && // Single letters are OK in upper case
 	    word->str[1] != L'-' && // A-rapussa etc.
 	    word->str[1] != L':' && // A:n
-	    !word->possibleGeographicalName &&
-	    !isRomanNumeral(word->str, word->tokenlen)) {
+	    !word->possibleGeographicalName) {
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_WRITE_FIRST_LOWERCASE;
 		e->error.startpos = word->pos;

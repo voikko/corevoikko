@@ -471,6 +471,9 @@ koiramääkiminen
 300:ssa
 12:ssa
 6:n # Valtatie 6:n
+iii # sivunumeroissa
+!iii:n # taivutukset vain isoille kirjaimille
+III:n # Aleksanteri III:n
 
 [johtimet]
 märänlaiselleko

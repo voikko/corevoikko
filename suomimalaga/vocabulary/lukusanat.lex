@@ -222,15 +222,25 @@
 
 define @r_jatko := <tavuviiva, kaksoispiste, loppu>;
 
-[alku: "ii",    luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "iii",   luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "iiii",  luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "iv",    luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "vi",    luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "vii",   luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "viii",  luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "viiii", luokka: lyhenne, jatko: @r_jatko, äs: a];
-[alku: "ix",    luokka: lyhenne, jatko: @r_jatko, äs: a];
+[alku: "ii",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
+[alku: "iii",   luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqq"];
+[alku: "iiii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqq"];
+[alku: "iv",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
+[alku: "vi",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
+[alku: "vii",   luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqq"];
+[alku: "viii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqq"];
+[alku: "viiii", luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqqq"];
+[alku: "ix",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
+
+[alku: "II",    luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jj"];
+[alku: "III",   luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jjj"];
+[alku: "IIII",  luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jjjj"];
+[alku: "IV",    luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jj"];
+[alku: "VI",    luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jj"];
+[alku: "VII",   luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jjj"];
+[alku: "VIII",  luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jjjj"];
+[alku: "VIIII", luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jjjjj"];
+[alku: "IX",    luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jj"];
 
 [alku: "xi",     luokka: lyhenne, jatko: @r_jatko, äs: a];
 [alku: "xii",    luokka: lyhenne, jatko: @r_jatko, äs: a];
