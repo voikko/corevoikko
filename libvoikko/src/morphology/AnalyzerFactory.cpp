@@ -18,9 +18,11 @@
 
 #include "morphology/AnalyzerFactory.hpp"
 #include "morphology/NullAnalyzer.hpp"
-#include "morphology/MalagaAnalyzer.hpp"
-#include "morphology/malaga/malaga.hpp"
 #include "porting.h"
+
+#ifdef HAVE_MALAGA
+#include "morphology/MalagaAnalyzer.hpp"
+#endif
 
 #ifdef HAVE_HFST
 #include "morphology/HfstAnalyzer.hpp"
@@ -36,12 +38,14 @@ namespace libvoikko { namespace morphology {
 
 Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
-	if (dictionary.getMorBackend() == "malaga") {
-		return new MalagaAnalyzer(dictionary.getMorPath());
-	}
 	if (dictionary.getMorBackend() == "null") {
 		return new NullAnalyzer();
 	}
+	#ifdef HAVE_MALAGA
+	if (dictionary.getMorBackend() == "malaga") {
+		return new MalagaAnalyzer(dictionary.getMorPath());
+	}
+	#endif
 	#ifdef HAVE_HFST
 	if (dictionary.getMorBackend() == "hfst") {
 		return new HfstAnalyzer(dictionary.getMorPath());

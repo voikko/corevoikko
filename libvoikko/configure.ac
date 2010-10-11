@@ -84,6 +84,17 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
   AC_MSG_RESULT([no])
 ])
 
+dnl Malaga support
+malaga="yes"
+AH_TEMPLATE(HAVE_MALAGA, [Have MALAGA])
+AC_ARG_ENABLE(malaga, AC_HELP_STRING([--disable-malaga],
+	[disable Malaga morphology backend (EXPERIMENTAL!)]),
+	[malaga=${enableval}], [malaga=yes])
+if test x$malaga = xyes; then
+	AC_DEFINE(HAVE_MALAGA, 1)
+fi
+AM_CONDITIONAL([HAVE_MALAGA], [test x$malaga = xyes])
+
 dnl HFST support
 AH_TEMPLATE(HAVE_HFST, [Have HFST])
 AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],

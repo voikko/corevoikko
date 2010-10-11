@@ -33,21 +33,6 @@ libvoikko_la_SOURCES = \
     morphology/Analyzer.cpp \
     morphology/AnalyzerFactory.cpp \
     morphology/NullAnalyzer.cpp \
-    morphology/MalagaAnalyzer.cpp \
-    morphology/malaga/analysis.cpp \
-    morphology/malaga/files.cpp \
-    morphology/malaga/lexicon.cpp \
-    morphology/malaga/malaga_files.cpp \
-    morphology/malaga/patterns.cpp \
-    morphology/malaga/rules.cpp \
-    morphology/malaga/symbols.cpp \
-    morphology/malaga/basic.cpp \
-    morphology/malaga/libmalaga.cpp \
-    morphology/malaga/malaga_lib.cpp \
-    morphology/malaga/pools.cpp \
-    morphology/malaga/tries.cpp \
-    morphology/malaga/values.cpp \
-    morphology/malaga/MalagaState.cpp \
     setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
     setup/LanguageTag.cpp \
@@ -161,12 +146,34 @@ CLEANFILES = autocorrect/data.hpp
 autocorrect/data.hpp: Makefile $(srcdir)/../data/autocorrect/fi_FI.xml $(srcdir)/autocorrect/triecompiler.py
 	python $(srcdir)/autocorrect/triecompiler.py $(srcdir)/../data/autocorrect/fi_FI.xml autocorrect/data.hpp
 
+MALAGA_CPP_FILES=morphology/MalagaAnalyzer.cpp \
+    morphology/malaga/analysis.cpp \
+    morphology/malaga/files.cpp \
+    morphology/malaga/lexicon.cpp \
+    morphology/malaga/malaga_files.cpp \
+    morphology/malaga/patterns.cpp \
+    morphology/malaga/rules.cpp \
+    morphology/malaga/symbols.cpp \
+    morphology/malaga/basic.cpp \
+    morphology/malaga/libmalaga.cpp \
+    morphology/malaga/malaga_lib.cpp \
+    morphology/malaga/pools.cpp \
+    morphology/malaga/tries.cpp \
+    morphology/malaga/values.cpp \
+    morphology/malaga/MalagaState.cpp
+
 HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
 			   spellchecker/HfstSpeller.cpp \
 			   spellchecker/HfstSuggestion.cpp \
 			   hyphenator/HfstHyphenator.cpp
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
+
+if HAVE_MALAGA
+    libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)
+else
+    EXTRA_DIST += $(MALAGA_CPP_FILES)
+endif
 
 if HAVE_HFST
     libvoikko_la_SOURCES += $(HFST_CPP_FILES)
