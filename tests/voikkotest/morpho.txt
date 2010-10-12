@@ -189,6 +189,11 @@ word:sana
 word:relatiivipronomini
  analysis
   MALAGA_VAPAA_JALKIOSA=true
+word:hyppely
+ !MALAGA_VAPAA_JALKIOSA
+word:ilmaisu
+ analysis
+  MALAGA_VAPAA_JALKIOSA=true
 word:kissa
  !MALAGA_VAPAA_JALKIOSA
 word:Pohjois-

@@ -222,15 +222,15 @@
 
 define @r_jatko := <tavuviiva, kaksoispiste, loppu>;
 
-[alku: "ii",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
-[alku: "iii",   luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqq"];
-[alku: "iiii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqq"];
-[alku: "iv",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
-[alku: "vi",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
-[alku: "vii",   luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqq"];
-[alku: "viii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqq"];
-[alku: "viiii", luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqqq"];
-[alku: "ix",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq"];
+[alku: "ii",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq", tiedot: <ei_sukija>];
+[alku: "iii",   luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqq", tiedot: <ei_sukija>];
+[alku: "iiii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqq", tiedot: <ei_sukija>];
+[alku: "iv",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq", tiedot: <ei_sukija>];
+[alku: "vi",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq", tiedot: <ei_sukija>];
+[alku: "vii",   luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqq", tiedot: <ei_sukija>];
+[alku: "viii",  luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqq", tiedot: <ei_sukija>];
+[alku: "viiii", luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qqqqq", tiedot: <ei_sukija>];
+[alku: "ix",    luokka: lyhenne, jatko: <loppu>, äs: a, rakenne: "=qq", tiedot: <ei_sukija>];
 
 [alku: "II",    luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jj"];
 [alku: "III",   luokka: lyhenne, jatko: @r_jatko, äs: a, rakenne: "=jjj"];
