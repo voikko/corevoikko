@@ -474,6 +474,8 @@ koiramääkiminen
 iii # sivunumeroissa
 !iii:n # taivutukset vain isoille kirjaimille
 III:n # Aleksanteri III:n
+!IV:na
+IV:nä
 
 [johtimet]
 märänlaiselleko
