@@ -374,20 +374,20 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 
 
 
-[alku: "ni",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "si",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "s",   luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>, tiedot: <murre>];
-[alku: "nsa", luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "an",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "en",  luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "on",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "un",  luokka: omistusliite, äs: a,  jatko: <liitesana, loppu>];
-[alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "än",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "ön",  luokka: omistusliite, äs: ä,  jatko: <liitesana, loppu>];
-[alku: "mme", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
-[alku: "nne", luokka: omistusliite, äs: aä, jatko: <liitesana, loppu>];
+[alku: "ni",  luokka: omistusliite, äs: aä, jatko: <>];
+[alku: "si",  luokka: omistusliite, äs: aä, jatko: <>];
+[alku: "s",   luokka: omistusliite, äs: aä, jatko: <>, tiedot: <murre>];
+[alku: "nsa", luokka: omistusliite, äs: a,  jatko: <>];
+[alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <>];
+[alku: "an",  luokka: omistusliite, äs: a,  jatko: <>];
+[alku: "en",  luokka: omistusliite, äs: aä, jatko: <>];
+[alku: "on",  luokka: omistusliite, äs: a,  jatko: <>];
+[alku: "un",  luokka: omistusliite, äs: a,  jatko: <>];
+[alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <>];
+[alku: "än",  luokka: omistusliite, äs: ä,  jatko: <>];
+[alku: "ön",  luokka: omistusliite, äs: ä,  jatko: <>];
+[alku: "mme", luokka: omistusliite, äs: aä, jatko: <>];
+[alku: "nne", luokka: omistusliite, äs: aä, jatko: <>];
 
 
 # Laatusanojen sekä teonsanojen laatutapojen voittoaste.

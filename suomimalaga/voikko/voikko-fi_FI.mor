@@ -1512,9 +1512,9 @@ combi_rule omistusliite ($vasen, $oikea, $sana, $index):
         result $result, accept;
         result $result, rules liitesana;
       end;
-    elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_3, nimitapa_45>)
+    elseif (($edellinen.luokka in <nimitapa_1_pitkä, nimitapa_2, nimitapa_45>)
             and not $edellinen.alku in <"maa", "mää">) then
-      result $result, accept;
+      result $result, accept; # "puhuakseen"
       result $result, rules liitesana;
     end;
   end;
