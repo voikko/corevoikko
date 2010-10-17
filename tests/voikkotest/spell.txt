@@ -557,6 +557,8 @@ omalletunnolleen
 !omalletunnollean
 !sakseen
 !reggaeen
+hylätessään
+romahtamaisillaan
 
 [liitesanat]
 kissakin
