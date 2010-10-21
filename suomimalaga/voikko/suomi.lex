@@ -855,11 +855,6 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 
 # Kolmas nimitapa.
 #
-[alku: "ma",    luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: nimentö,
-                luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
-[alku: "mä",    luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: nimentö,
-                luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
-
 [alku: "massa", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisäolento_ssA,
                 sijamuoto: sisäolento,
                 luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
@@ -879,11 +874,6 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 [alku: "mään",  luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisätulento_Vn,
                 luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
 
-[alku: "maa",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisätulento_Vn,
-                luku: yksikkö, äs: a, jatko: <omistusliite>];
-[alku: "mää",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: sisätulento_Vn,
-                luku: yksikkö, äs: ä, jatko: <omistusliite>];
-
 [alku: "malla", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: ulkopaikallissija_llA,
                 luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
 [alku: "mällä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: ulkopaikallissija_llA,
@@ -893,12 +883,6 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
                 luku: yksikkö, äs: a, jatko: <omistusliite, liitesana, loppu>];
 [alku: "mättä", luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: vajanto_ttA,
                 luku: yksikkö, äs: ä, jatko: <omistusliite, liitesana, loppu>];
-
-[alku: "man",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: a, jatko: <liitesana, loppu>];
-[alku: "män",   luokka: nimitapa_3, tapaluokka: nimitapa_3, sija: keinonto_n,
-                luku: yksikkö, äs: ä, jatko: <liitesana, loppu>];
-
 
 [alku: "ttaman", luokka: nimitapa_3_ttA, tapaluokka: nimitapa_3, luku: yksikkö, sija: keinonto_n,
                  äs: a, jatko: <liitesana, loppu>];
