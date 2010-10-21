@@ -516,6 +516,7 @@ juhlallisessa
 !kaupunkimaiseton
 !myyjämpi
 !uivallinen
+!juoksemata
 
 [sijapäätteet]
 !Erkkiän

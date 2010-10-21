@@ -1100,7 +1100,7 @@ define @m_jatko := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
 
 
 define @mA_jatko := <omistusliite, liitesana, loppu, omanto_n,
-                     osanto_A, osanto_tA, olento_nA, tulento_ksi,
+                     osanto_A, olento_nA, tulento_ksi,
                      sisäolento_ssA, sisätulento_Vn,
                      ulkopaikallissija_llA,
                      vajanto_ttA,
