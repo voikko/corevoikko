@@ -154,6 +154,15 @@ word:juokse
 word:juossee
  analysis
   MOOD=potential
+word:juoksemassa
+ analysis
+  MOOD=MA-infinitive
+word:juoksemasta
+ analysis
+  MOOD=MA-infinitive
+word:juoksemaan
+ analysis
+  MOOD=MA-infinitive
 word:verohallitus
  analysis
   CLASS=nimi

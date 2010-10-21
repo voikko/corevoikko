@@ -115,6 +115,14 @@ The following attributes are specific to Finnish language. Some are
 currently used within libvoikko for improved language support, others
 are provided only as information for external applications.
 
+ Extensions to MOOD
+ ==================
+  Mainly due to structure of Suomi-malaga MOOD is also used to describe
+  some non-finite verb forms. For that purpose the following additional
+  attribute values are used:
+  
+   - MA-infinitive (as in "juoksemassa", "juoksemasta", "juoksemaan" etc.)
+
  CLASS
  =====
   Sanan sanaluokka. Attribuutti on käytössä libvoikon sisällä.
