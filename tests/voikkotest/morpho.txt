@@ -157,6 +157,12 @@ word:juossee
 word:juoksemassa
  analysis
   MOOD=MA-infinitive
+word:juostakin
+ analysis
+  MOOD=A-infinitive
+word:juostessa
+ analysis
+  MOOD=E-infinitive
 word:juoksemasta
  analysis
   MOOD=MA-infinitive

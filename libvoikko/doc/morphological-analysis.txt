@@ -1,4 +1,4 @@
-2009 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
+2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
 
  Information provided from attribute maps of Analysis objects
  ============================================================
@@ -121,6 +121,8 @@ are provided only as information for external applications.
   some non-finite verb forms. For that purpose the following additional
   attribute values are used:
   
+   - A-infinitive (as in "juosta")
+   - E-infinitive (as in "juostessa")
    - MA-infinitive (as in "juoksemassa", "juoksemasta", "juoksemaan" etc.)
 
  CLASS

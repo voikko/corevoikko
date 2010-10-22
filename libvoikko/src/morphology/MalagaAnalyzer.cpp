@@ -195,6 +195,8 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "k\xc3\xa4skytapa", L"imperative");
 	insertToSymbolMap(symbolMap, "ehtotapa", L"conditional");
 	insertToSymbolMap(symbolMap, "mahtotapa", L"potential");
+	insertToSymbolMap(symbolMap, "nimitapa_1", L"A-infinitive");
+	insertToSymbolMap(symbolMap, "nimitapa_2", L"E-infinitive");
 	insertToSymbolMap(symbolMap, "nimitapa_3", L"MA-infinitive");
 	
 	insertToSymbolMap(symbolMap, "yes", L"true");
