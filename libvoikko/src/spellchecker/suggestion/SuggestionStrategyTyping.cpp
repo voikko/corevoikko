@@ -77,6 +77,9 @@ static const wchar_t * const REPLACEMENTS_4 =
 	L"sw" L"sz" L"dw" L"dc" L"dx"
 	L"vc" L"aw" L"az" L"sq";
 
+static const wchar_t * const REPLACEMENTS_5 =
+	L"ao" L"oa";
+
 SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAnalyzer, size_t maxCost) : SuggestionStrategy(maxCost) {
 	primaryGenerators.push_back(
 		new SuggestionGeneratorCaseChange(morAnalyzer));
@@ -111,6 +114,8 @@ SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAna
 		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_3, morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_4, morAnalyzer));
+	generators.push_back(
+		new SuggestionGeneratorReplacement(REPLACEMENTS_5, morAnalyzer));
 }
 
 }}}

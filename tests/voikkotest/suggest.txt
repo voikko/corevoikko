@@ -43,6 +43,8 @@ papueri	paperi	papuero
 lemo	emo	Lemi
 # Generointijärjestyksen vaikutus
 laata	lasta	laatta
+varoittova	varoittava
+pelassa	pelossa
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
