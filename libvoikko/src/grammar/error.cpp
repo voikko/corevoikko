@@ -52,6 +52,10 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "V\xc3\xa4\xc3\xa4rin sijoitettu sulkumerkki";
 			case GCERR_NEGATIVE_VERB_MISMATCH:
 				return "Kieltoverbi ja p\xc3\xa4\xc3\xa4verbi eiv\xc3\xa4t sovi yhteen.";
+			case GCERR_A_INFINITIVE_REQUIRED:
+				return "J\xc3\xa4lkimm\xc3\xa4isen verbin tulisi olla a/\xc3\xa4-p\xc3\xa4\xc3\xa4tteisess\xc3\xa4 infinitiiviss\xc3\xa4.";
+			case GCERR_MA_INFINITIVE_REQUIRED:
+				return "J\xc3\xa4lkimm\xc3\xa4isen verbin tulisi olla maan/m\xc3\xa4\xc3\xa4n-p\xc3\xa4\xc3\xa4tteisess\xc3\xa4 infinitiiviss\xc3\xa4.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -83,6 +87,10 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Misplaced closing parenthesis";
 			case GCERR_NEGATIVE_VERB_MISMATCH:
 				return "Mismatched negative and verb";
+			case GCERR_A_INFINITIVE_REQUIRED:
+				return "You should use infinitive ending with a/\xc3\xa4 as the second verb.";
+			case GCERR_MA_INFINITIVE_REQUIRED:
+				return "You should use infinitive ending with maan/m\xc3\xa4\xc3\xa4n as the second verb.";
 		}
 		return "Unknown error";
 	}

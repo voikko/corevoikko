@@ -153,6 +153,12 @@ Ette ovat siellä.
  [code=13, level=0, descr="", stpos=0, len=12, suggs={}]
 Älä juoksehan kotiin.
  [code=13, level=0, descr="", stpos=0, len=13, suggs={}]
+Pertti alkaa tehdä läksyjä.
+Pertti alkaa tekemään läksyjä.
+ [code=14, level=0, descr="", stpos=7, len=14, suggs={}]
+Pertti ryhtyy tehdä läksyjä.
+ [code=15, level=0, descr="", stpos=7, len=12, suggs={}]
+Pertti ryhtyy tekemään läksyjä.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

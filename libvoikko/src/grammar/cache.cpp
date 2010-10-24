@@ -23,6 +23,7 @@
 #include "grammar/analysis.hpp"
 #include "grammar/check/CapitalizationCheck.hpp"
 #include "grammar/check/NegativeVerbCheck.hpp"
+#include "grammar/check/CompoundVerbCheck.hpp"
 #include "autocorrect/AutoCorrect.hpp"
 #include <cstring>
 #include <cstdlib>
@@ -94,12 +95,14 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	
 	check::CapitalizationCheck capitalizationCheck;
 	check::NegativeVerbCheck negativeVerbCheck;
+	check::CompoundVerbCheck compoundVerbCheck;
 	for (size_t i = 0; i < para->sentenceCount; i++) {
 		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
 		gc_local_punctuation(voikkoOptions, para->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
 		gc_repeating_words(voikkoOptions, para->sentences[i]);
 		negativeVerbCheck.check(voikkoOptions, para->sentences[i]);
+		compoundVerbCheck.check(voikkoOptions, para->sentences[i]);
 	}
 	capitalizationCheck.check(voikkoOptions, para);
 	gc_end_punctuation(voikkoOptions, para);

@@ -24,6 +24,13 @@
 
 namespace libvoikko { namespace grammar {
 
+/** Possible types for trailing parts of compound verbs */
+enum FollowingVerbType {
+	FOLLOWING_VERB_NONE,
+	FOLLOWING_VERB_A_INFINITIVE,
+	FOLLOWING_VERB_MA_INFINITIVE
+};
+
 /**
  * Grammar checker sentence token.
  */
@@ -53,6 +60,18 @@ class Token {
 		
 		/** True if this word cannot be anything else than a positive verb */
 		bool isPositiveVerb;
+		
+		/**
+		 * What kind of verb must follow this verb in compound verb check. NONE if
+		 * this word is not (or may not be) a verb.
+		 */
+		FollowingVerbType requireFollowingVerb;
+		
+		/**
+		 * What kind of verb this word is if it is used as a trailing part in compound
+		 * verb constructs. NONE if this word is not a verb.
+		 */
+		FollowingVerbType verbFollowerType;
 		
 		/** Null terminated string containing the token text */
 		wchar_t * str;

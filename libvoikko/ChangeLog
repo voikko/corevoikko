@@ -1,3 +1,6 @@
+2010-10-24 Harri Pitkänen <hatapitk@iki.fi>
+	* Add check for incorrect infinitive form in compound verbs.
+
 2010-10-21 Harri Pitkänen <hatapitk@iki.fi>
 	* Add A-infinitive and E-infinitive to MalagaAnalyzer.
 

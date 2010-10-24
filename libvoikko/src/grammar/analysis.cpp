@@ -38,6 +38,8 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->possibleGeographicalName = false;
 	token->isVerbNegative = false;
 	token->isPositiveVerb = true;
+	token->requireFollowingVerb = FOLLOWING_VERB_NONE;
+	token->verbFollowerType = FOLLOWING_VERB_NONE;
 	if (token->type != TOKEN_WORD) {
 		token->firstLetterLcase = false;
 		return;
@@ -52,6 +54,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	
 	list<morphology::Analysis *>::const_iterator it = analyses->begin();
 	token->firstLetterLcase = true;
+	bool verbFollowerTypeSet = false;
 	while (it != analyses->end()) {
 		token->isValidWord = true;
 		const wchar_t * structure = (*it)->getValue("STRUCTURE");
@@ -60,6 +63,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 		const wchar_t * person = (*it)->getValue("PERSON");
 		const wchar_t * negative = (*it)->getValue("NEGATIVE");
 		const wchar_t * possibleGeographicalName = (*it)->getValue("POSSIBLE_GEOGRAPHICAL_NAME");
+		const wchar_t * requireFollowingVerb = (*it)->getValue("REQUIRE_FOLLOWING_VERB");
 		if (wcslen(structure) < 2 || (structure[1] != L'p' &&
 		    structure[1] != L'q')) {
 			// Word may start with a capital letter anywhere
@@ -80,6 +84,40 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 		}
 		if (possibleGeographicalName && wcscmp(L"true", possibleGeographicalName) == 0) {
 			token->possibleGeographicalName = true;
+		}
+		{
+			FollowingVerbType requiredType = FOLLOWING_VERB_NONE;
+			if (requireFollowingVerb) {
+				if (wcscmp(L"A-infinitive", requireFollowingVerb) == 0) {
+					requiredType = FOLLOWING_VERB_A_INFINITIVE;
+				} else if (wcscmp(L"MA-infinitive", requireFollowingVerb) == 0) {
+					requiredType = FOLLOWING_VERB_MA_INFINITIVE;
+				}
+			}
+			if (requiredType == FOLLOWING_VERB_NONE ||
+			    it == analyses->begin()) {
+				token->requireFollowingVerb = requiredType;
+			} else if (token->requireFollowingVerb != requiredType) {
+				token->requireFollowingVerb = FOLLOWING_VERB_NONE;
+			}
+		}
+		{
+			FollowingVerbType followerType = FOLLOWING_VERB_NONE;
+			if (mood) {
+				if (wcscmp(L"A-infinitive", mood) == 0) {
+					followerType = FOLLOWING_VERB_A_INFINITIVE;
+				} else if (wcscmp(L"MA-infinitive", mood) == 0) {
+					followerType = FOLLOWING_VERB_MA_INFINITIVE;
+				}
+			}
+			if (followerType != FOLLOWING_VERB_NONE) {
+				if (!verbFollowerTypeSet) {
+					token->verbFollowerType = followerType;
+					verbFollowerTypeSet = true;
+				} else if (token->verbFollowerType != followerType) {
+					token->verbFollowerType = FOLLOWING_VERB_NONE;
+				}
+			}
 		}
 		it++;
 	}

@@ -52,6 +52,7 @@ libvoikko_la_SOURCES = \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
     grammar/check/CapitalizationCheck.cpp \
+    grammar/check/CompoundVerbCheck.cpp \
     grammar/check/NegativeVerbCheck.cpp \
     grammar/check/ParagraphCheck.cpp \
     grammar/check/SentenceCheck.cpp \
@@ -131,6 +132,7 @@ noinst_HEADERS = \
     grammar/CacheEntry.hpp \
     grammar/GcCache.hpp \
     grammar/check/CapitalizationCheck.hpp \
+    grammar/check/CompoundVerbCheck.hpp \
     grammar/check/NegativeVerbCheck.hpp \
     grammar/check/ParagraphCheck.hpp \
     grammar/check/SentenceCheck.hpp \
