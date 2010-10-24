@@ -88,7 +88,10 @@ MOODS = {
 "indicative": u"indikatiivi eli tositapa",
 "imperative": u"imperatiivi eli käskytapa",
 "conditional": u"konditionaali eli ehtotapa",
-"potential": u"potentiaali eli mahtotapa"
+"potential": u"potentiaali eli mahtotapa",
+"A-infinitive": u"A-infinitiivi",
+"E-infinitive": u"E-infinitiivi",
+"MA-infinitive": u"MA-infinitiivi"
 }
 
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
@@ -222,7 +225,7 @@ def getAnalysis(analysis):
 		res = res + u"<br />Tekijä: " \
 		      + fromMapIfPossible(analysis["PERSON"], PERSONS)
 	if "MOOD" in analysis:
-		res = res + u"<br />Tapaluokka: " \
+		res = res + u"<br />Tapaluokka tai nominaalimuoto: " \
 		      + fromMapIfPossible(analysis["MOOD"], MOODS)
 	if "WORDIDS" in analysis:
 		ids = analysis["WORDIDS"]
