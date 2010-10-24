@@ -277,4 +277,11 @@ word:Välimerta
   POSSIBLE_GEOGRAPHICAL_NAME=true
 word:sämpyläjokilaiva
  !POSSIBLE_GEOGRAPHICAL_NAME
-
+word:ehdin
+ analysis
+  REQUIRE_FOLLOWING_VERB=A-infinitive
+word:ryhdymme
+ analysis
+  REQUIRE_FOLLOWING_VERB=MA-infinitive
+word:juoksemme
+ !REQUIRE_FOLLOWING_VERB

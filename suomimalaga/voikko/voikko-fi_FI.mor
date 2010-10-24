@@ -2077,6 +2077,16 @@ subrule tulostus_debug_perusmuoto($tietue):
   return $s;
 end;
 
+subrule tulostus_teonsanan_attribuutit($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.vaatii_tapaluokan /= nil then
+      return [vaatii_tapaluokan: $allomorfi.vaatii_tapaluokan];
+    end;
+  end;
+  return [];
+end;
 
 subrule tulostus_v2($tietue):
   define $res := nil;
@@ -2095,7 +2105,8 @@ subrule tulostus_v2($tietue):
   if $res.luokka = teonsana then
     $res :=+ [tekijä: tulostus_tekijä($tietue),
               tapaluokka: tulostus_tapaluokka($tietue),
-              kielto: tulostus_kielto($tietue)];
+              kielto: tulostus_kielto($tietue)]
+           + tulostus_teonsanan_attribuutit($tietue);
   elseif $res.luokka = nimisana then
     $res :=+ tulostus_nimisanan_attribuutit($tietue);
   end;

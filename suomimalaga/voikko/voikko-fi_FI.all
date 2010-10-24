@@ -3757,6 +3757,18 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   if ($tietue.luokka in <laatusana, nimi_laatusana> and $tietue.perusmuoto matches ".*inen") then
     $tietue :=+ [inen_loppu: yes];
   end;
+  
+  # Verbiketjuihin liittyvät säännöt, ks. http://kaino.kotus.fi/visk/sisallys.php?p=496
+  if ($tietue.perusmuoto in <"aikoa", "alkaa", "ehtiä", "haluta", "jaksaa", "kannattaa", "mahtaa", "pitää", "rohjeta", "saada", "saattaa",
+                             "tahtoa", "taitaa", "tarvita", "täytyä", "uhata", "voida", "yrittää">) then
+    $tietue :=+ [vaatii_tapaluokan: nimitapa_1];
+  end;
+  if ($tietue.perusmuoto in <"erehtyä", "innostaa", "innostua", "kannustaa", "keskittyä", "kyetä", "kyllästyä", "lakata", "onnistua",
+        "pakottaa", "pystyä", "pyrkiä", "ruveta", "ryhtyä", "sattua", "tupata", "väsyä">) then
+    $tietue :=+ [vaatii_tapaluokan: nimitapa_3];
+  end;
+  # -vAn: ajatella, haaveilla, kuvitella, laskea, luulla, näyttää, odottaa, suunnitella, tavoitella, tietää, tuntea, uneksia, uskoa
+  # -minen: lopettaa
 
   return $tietue;
 end;
