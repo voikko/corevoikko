@@ -1,3 +1,7 @@
+2010-10-26 Harri Pitkänen <hatapitk@iki.fi>
+	* Increase maximum spelling suggestion search cost by 28 % to match
+	  recent optimizations and CPU speed improvements.
+
 2010-10-25 Harri Pitkänen <hatapitk@iki.fi>
 	* Capitalized initials may appear within sentences.
 
