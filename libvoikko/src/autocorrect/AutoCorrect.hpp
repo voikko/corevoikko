@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -30,14 +30,6 @@ class AutoCorrect {
 		 * Adds GC errors from the static list of incorrect words or word combinations.
 		 */
 		static void autoCorrect(voikko_options_t * options, const libvoikko::grammar::Sentence * sentence);
-	
-	private:
-		/**
-		 * Traverse trie from node initial through the characters in string str.
-		 * Returns 0 if there is no such path in the trie, otherwise returns the
-		 * index of the node at the last character of str.
-		 */
-		static size_t traverse(size_t initial, const wchar_t * str, size_t strlen);
 };
 
 } }

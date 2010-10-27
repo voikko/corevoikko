@@ -32,7 +32,12 @@ namespace libvoikko { namespace autocorrect {
 
 #include "autocorrect/data.hpp"
 
-size_t AutoCorrect::traverse(size_t initial, const wchar_t * str, size_t strlen) {
+/**
+ * Traverse trie from node initial through the characters in string str.
+ * Returns 0 if there is no such path in the trie, otherwise returns the
+ * index of the node at the last character of str.
+ */
+static size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
 	size_t current = initial;
 	for (size_t i = 0; i < strlen; i++) {
 		if (str[i] == L'\u00AD') {
@@ -55,6 +60,18 @@ size_t AutoCorrect::traverse(size_t initial, const wchar_t * str, size_t strlen)
 	return current;
 }
 
+static void printErrorIfFinal(const TrieNode * node, const Token * firstErrorToken, const Token * lastErrorToken, voikko_options_t * options) {
+	if (node->replacementIndex) {
+		CacheEntry * e = new CacheEntry(1);
+		e->error.error_code = GCERR_INVALID_SPELLING;
+		e->error.startpos = firstErrorToken->pos;
+		e->error.errorlen = lastErrorToken->pos + lastErrorToken->tokenlen - firstErrorToken->pos;
+		e->error.suggestions[0] = StringUtils::utf8FromUcs4(
+		        REPLACEMENTS[node->replacementIndex]);
+		gc_cache_append_error(options, e);
+	}
+}
+
 void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::grammar::Sentence * sentence) {
 	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
@@ -69,16 +86,7 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 		}
 		
 		// Is the first word alone an error?
-		if (NODES[trieNode].replacementIndex) {
-			CacheEntry * e = new CacheEntry(1);
-			if (!e) return;
-			e->error.error_code = GCERR_INVALID_SPELLING;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = sentence->tokens[i].tokenlen;
-			e->error.suggestions[0] = StringUtils::utf8FromUcs4(
-			        REPLACEMENTS[NODES[trieNode].replacementIndex]);
-			gc_cache_append_error(options, e);
-		}
+		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + i, options);
 		
 		// Is there a second word (in the sentence and in trie)?
 		t = sentence->tokens[i+1];
@@ -101,17 +109,7 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 		}
 		
 		// Is the second word an error?
-		if (NODES[trieNode].replacementIndex) {
-			CacheEntry * e = new CacheEntry(1);
-			if (!e) return;
-			e->error.error_code = GCERR_INVALID_SPELLING;
-			e->error.startpos = sentence->tokens[i].pos;
-			e->error.errorlen = sentence->tokens[i+2].pos + sentence->tokens[i+2].tokenlen
-			                    - e->error.startpos;
-			e->error.suggestions[0] = StringUtils::utf8FromUcs4(
-			        REPLACEMENTS[NODES[trieNode].replacementIndex]);
-			gc_cache_append_error(options, e);
-		}
+		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (i + 2), options);
 	}
 }
 
