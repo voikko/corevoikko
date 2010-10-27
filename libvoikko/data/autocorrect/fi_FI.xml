@@ -2,8 +2,6 @@
 <!-- Limitations in current version of libvoikko:
   - Each replacement must have exactly one incorrect and correct expression.
   - Attribute type="optional" is ignored.
-  - Only repacements where incorrect string contains one or two words will
-    be used.
   - Reasons for replacement are ignored.
 -->
 <autocorrect xml:lang="fi">
@@ -215,6 +213,14 @@
 <replacement>
   <incorrect>iän=kaiken</incorrect>
   <correct>iän kaiken</correct>
+</replacement>
+<replacement>
+  <incorrect>ja sinne vaan</incorrect>
+  <correct>ja sinne vain</correct>
+</replacement>
+<replacement>
+  <incorrect>ja sitten vaan</incorrect>
+  <correct>ja sitten vain</correct>
 </replacement>
 <replacement>
   <incorrect>jompi kumpi</incorrect>
@@ -639,6 +645,14 @@
 <replacement>
   <incorrect>saman=verran</incorrect>
   <correct>saman verran</correct>
+</replacement>
+<replacement>
+  <incorrect>se on vaan</incorrect>
+  <correct>se on vain</correct>
+</replacement>
+<replacement>
+  <incorrect>se vaan on</incorrect>
+  <correct>se vain on</correct>
 </replacement>
 <replacement>
   <incorrect>sen=sijaan</incorrect>

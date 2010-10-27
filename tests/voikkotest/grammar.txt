@@ -18,6 +18,9 @@ Nyt on joten kuten  tehtävä joten kuten hankalampi   virheyhdistelmä.
  [code=2, level=0, descr="", stpos=18, len=2, suggs={" "}]
  [code=1, level=0, descr="", stpos=28, len=11, suggs={"jotenkuten"}]
  [code=2, level=0, descr="", stpos=50, len=3, suggs={" "}]
+Ostaisin auton, mutta se on vaan turhan kallis.
+ [code=1, level=0, descr="", stpos=22, len=10, suggs={"se on vain"}]
+Ostaisin auton, mutta se on turhan kallis.
 Lause , jossa on pilkun edellä turha väli.
  [code=3, level=0, descr="", stpos=5, len=2, suggs={","}]
 Lause,, jossa kaksi peräkkäistä pilkkua.

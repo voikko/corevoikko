@@ -88,28 +88,33 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 		// Is the first word alone an error?
 		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + i, options);
 		
-		// Is there a second word (in the sentence and in trie)?
-		t = sentence->tokens[i+1];
-		if (t.type != TOKEN_WHITESPACE) {
-			continue;
+		size_t j = 1;
+		while (j + 1 < sentence->tokenCount) {
+			// Is there a second word (in the sentence and in trie)?
+			t = sentence->tokens[i+j];
+			if (t.type != TOKEN_WHITESPACE) {
+				break;
+			}
+			t = sentence->tokens[i+j+1];
+			if (t.type != TOKEN_WORD) {
+				break;
+			}
+			trieNode = traverse(trieNode, L" ", 1);
+			if (!trieNode) {
+				break;
+			}
+			
+			// Is the next word in the trie?
+			trieNode = traverse(trieNode, t.str, t.tokenlen);
+			if (!trieNode) {
+				break;
+			}
+			
+			// Is the next word an error?
+			printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (i + j + 1), options);
+			
+			j += 2;
 		}
-		t = sentence->tokens[i+2];
-		if (t.type != TOKEN_WORD) {
-			continue;
-		}
-		trieNode = traverse(trieNode, L" ", 1);
-		if (!trieNode) {
-			continue;
-		}
-		
-		// Is the second word in the trie?
-		trieNode = traverse(trieNode, t.str, t.tokenlen);
-		if (!trieNode) {
-			continue;
-		}
-		
-		// Is the second word an error?
-		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (i + 2), options);
 	}
 }
 
