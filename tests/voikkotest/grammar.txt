@@ -21,6 +21,8 @@ Nyt on joten kuten  tehtävä joten kuten hankalampi   virheyhdistelmä.
 Ostaisin auton, mutta se on vaan turhan kallis.
  [code=1, level=0, descr="", stpos=22, len=10, suggs={"se on vain"}]
 Ostaisin auton, mutta se on turhan kallis.
+Se on vaan niin.
+ [code=1, level=0, descr="", stpos=0, len=10, suggs={"Se on vain"}]
 Lause , jossa on pilkun edellä turha väli.
  [code=3, level=0, descr="", stpos=5, len=2, suggs={","}]
 Lause,, jossa kaksi peräkkäistä pilkkua.

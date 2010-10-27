@@ -1,5 +1,7 @@
 2010-10-27 Harri Pitkänen <hatapitk@iki.fi>
 	* GC: Allow AutoCorrect rules with more than two match words.
+	* Support capitalized first character of sentence when interpreting
+	  AutoCorrect rules.
 
 2010-10-26 Harri Pitkänen <hatapitk@iki.fi>
 	* Increase maximum spelling suggestion search cost by 28 % to match

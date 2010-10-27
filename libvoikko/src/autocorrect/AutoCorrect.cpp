@@ -17,6 +17,7 @@
  *********************************************************************************/
 
 #include "autocorrect/AutoCorrect.hpp"
+#include "character/SimpleChar.hpp"
 #include "grammar/error.hpp"
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
@@ -37,7 +38,7 @@ namespace libvoikko { namespace autocorrect {
  * Returns 0 if there is no such path in the trie, otherwise returns the
  * index of the node at the last character of str.
  */
-static size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
+static size_t traverse(size_t initial, const wchar_t * str, size_t strlen, bool lowerFirst) {
 	size_t current = initial;
 	for (size_t i = 0; i < strlen; i++) {
 		if (str[i] == L'\u00AD') {
@@ -46,7 +47,8 @@ static size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
 		}
 		if (NODES[current].subtreeStart) {
 			current = NODES[current].subtreeStart;
-			while (NODES[current].label != str[i]) {
+			wchar_t inputChar = (lowerFirst && i == 0 ? character::SimpleChar::lower(str[i]) : str[i]);
+			while (NODES[current].label != inputChar) {
 				current++;
 				if (!NODES[current].label) {
 					return 0;
@@ -60,14 +62,22 @@ static size_t traverse(size_t initial, const wchar_t * str, size_t strlen) {
 	return current;
 }
 
-static void printErrorIfFinal(const TrieNode * node, const Token * firstErrorToken, const Token * lastErrorToken, voikko_options_t * options) {
+static void printErrorIfFinal(const TrieNode * node, const Token * firstErrorToken, const Token * lastErrorToken,
+                              bool lowerFirst, voikko_options_t * options) {
 	if (node->replacementIndex) {
 		CacheEntry * e = new CacheEntry(1);
 		e->error.error_code = GCERR_INVALID_SPELLING;
 		e->error.startpos = firstErrorToken->pos;
 		e->error.errorlen = lastErrorToken->pos + lastErrorToken->tokenlen - firstErrorToken->pos;
-		e->error.suggestions[0] = StringUtils::utf8FromUcs4(
-		        REPLACEMENTS[node->replacementIndex]);
+		const wchar_t * replacement = REPLACEMENTS[node->replacementIndex];
+		if (lowerFirst) {
+			wchar_t * replBuffer = StringUtils::copy(replacement);
+			replBuffer[0] = character::SimpleChar::upper(replBuffer[0]);
+			e->error.suggestions[0] = StringUtils::utf8FromUcs4(replBuffer);
+			delete[] replBuffer;
+		} else {
+			e->error.suggestions[0] = StringUtils::utf8FromUcs4(replacement);
+		}
 		gc_cache_append_error(options, e);
 	}
 }
@@ -80,13 +90,20 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 		}
 		
 		// Is the first word in the trie?
-		size_t trieNode = traverse(0, t.str, t.tokenlen);
+		bool lowerFirst = false;
+		size_t trieNode = traverse(0, t.str, t.tokenlen, lowerFirst);
 		if (!trieNode) {
-			continue;
+			if (i == 0 && character::SimpleChar::isUpper(t.str[0])) {
+				lowerFirst = true;
+				trieNode = traverse(0, t.str, t.tokenlen, lowerFirst);
+			}
+			if (!trieNode) {
+				continue;
+			}
 		}
 		
 		// Is the first word alone an error?
-		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + i, options);
+		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + i, lowerFirst, options);
 		
 		size_t j = 1;
 		while (j + 1 < sentence->tokenCount) {
@@ -99,19 +116,20 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 			if (t.type != TOKEN_WORD) {
 				break;
 			}
-			trieNode = traverse(trieNode, L" ", 1);
+			trieNode = traverse(trieNode, L" ", 1, false);
 			if (!trieNode) {
 				break;
 			}
 			
 			// Is the next word in the trie?
-			trieNode = traverse(trieNode, t.str, t.tokenlen);
+			trieNode = traverse(trieNode, t.str, t.tokenlen, false);
 			if (!trieNode) {
 				break;
 			}
 			
 			// Is the next word an error?
-			printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (i + j + 1), options);
+			printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (i + j + 1),
+			                  lowerFirst, options);
 			
 			j += 2;
 		}
