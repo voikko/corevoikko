@@ -1198,6 +1198,7 @@ or nil."
 
           (delete-char -2)
           (goto-char (point-min))
+          (goto-char (line-end-position))
           (setq buffer-read-only t)
 
           (let* ((window-min-height 2)
