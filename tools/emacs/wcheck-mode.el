@@ -1250,9 +1250,10 @@ or nil."
 (defun wcheck-parse-suggestions-ispell ()
   "Parser for Ispell-compatible programs' output."
   (let ((search-spaces-regexp nil))
-    (when (re-search-forward "^& [^:]+: \\(.+\\)$" nil t)
-      (delete-dups (split-string (match-string-no-properties 1)
-                                 ", " t)))))
+    (when (re-search-forward "^& [^ ]+ \\([0-9]+\\) [0-9]+: \\(.+\\)$" nil t)
+      (let ((count (string-to-number (match-string-no-properties 1)))
+            (words (split-string (match-string-no-properties 2) ", " t)))
+        (delete-dups (nbutlast words (- (length words) count)))))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
