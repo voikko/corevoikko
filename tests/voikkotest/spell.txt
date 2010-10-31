@@ -114,6 +114,7 @@ tomahawkjänis
 !Ammattikorkeakoulu-tutkintoon # "koulu" on mahdollisesti laitokseen viittaavan yhdyssanan perusosa
 kissa-sanan
 ja-sana
+!---sana
 
 [vain yhdyssanan jälkiosana]
 yltiökutrinen
