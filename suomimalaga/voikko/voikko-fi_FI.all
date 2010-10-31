@@ -3745,11 +3745,15 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   end;
   
   # Vapaasti yhdistyvät yhdyssanan jälkiosat. Verbit ovat mukana substantiivijohdosten takia.
-  if ($tietue.perusmuoto in <"adjektiivi", "huomautus", "huudahtaa", "ilmaisu",
-                             "interjektio", "käsite",
-                             "lausahtaa", "nimi", "nimitys", "pronomini",
-                             "relatiivipronomini", "sana",
-                             "substantiivi", "tokaisu", "termi", "verbi">) then
+  if ($tietue.perusmuoto in <"adjektiivi", "adverbi", "adverbiaali", "agentti",
+			     "attribuutti", "huomautus", "huudahtaa",
+			     "ilmaisu", "infinitiivi", "interjektio",
+			     "konjunktio", "käsite", "lausahtaa", "nimi",
+			     "nimitys", "objekti", "partikkeli", "partisiippi",
+			     "postpositio", "predikaatti", "predikatiivi",
+			     "prepositio", "pronomini", "relatiivipronomini",
+			     "sana", "subjekti", "substantiivi", "tokaisu",
+			     "termi", "verbi">) then
     $tietue :=+ [vapaa_jälkiosa: yes];
   end;
 
