@@ -41,7 +41,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include&quot;;&quot;C:\Program Files\Microsoft SDKs\Windows\v6.0\Include&quot;;../src"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBVOIKKO_EXPORTS;DICTIONARY_PATH=\&quot;C:\\voikko\\suomimalaga\&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBVOIKKO_EXPORTS;DICTIONARY_PATH=\&quot;C:\\voikko\\suomimalaga\&quot;;HAVE_MALAGA"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
