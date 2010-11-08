@@ -131,7 +131,7 @@ static bool lastPunctuationEndsSentence(const list<const Token *> & tokens) {
 	list<const Token *>::const_reverse_iterator it = tokens.rbegin();
 	while (it != tokens.rend()) {
 		if ((*it)->type == TOKEN_PUNCTUATION && (*it)->str[0] != L',') {
-			return wcschr(L".?!", (*it)->str[0]);
+			return wcschr(L".?!", (*it)->str[0]) != 0;
 		}
 		it++;
 	}
