@@ -1,0 +1,34 @@
+Kissa ja koira.
+ [<Kissa ja koira.,NONE>]
+Ulkona paistaa aurinko. On lämmintä.
+ [<Ulkona paistaa aurinko. ,PROBABLE>, <On lämmintä.,NONE>]
+Kun aurinko paistaa, ei yleensä sada vettä.
+ [<Kun aurinko paistaa, ei yleensä sada vettä.,NONE>]
+Varo vähän! Oletko hullu? Arvasin.
+ [<Varo vähän! ,PROBABLE>, <Oletko hullu? ,PROBABLE>, <Arvasin.,NONE>]
+Juhliin saapuu mm. Martta ja Reijo.
+ [<Juhliin saapuu mm. ,POSSIBLE>, <Martta ja Reijo.,NONE>]
+Pertti K. asuu omakotitalossa.
+ [<Pertti K. ,POSSIBLE>, <asuu omakotitalossa.,NONE>]
+Perjantai 13. päivä on ensi viikolla.
+ [<Perjantai 13. ,POSSIBLE>, <päivä on ensi viikolla.,NONE>]
+Myös 20.3. satoi lunta.
+ [<Myös 20.3. ,POSSIBLE>, <satoi lunta.,NONE>]
+Myös 20.3.1984 satoi lunta.
+ [<Myös 20.3.1984 satoi lunta.,NONE>]
+Hänen Lappeen kihlakunnan mies oli paitsi komea myös muotitietoinen, sillä miehet liikkuivat työasioissa alueella. Viipuri ja Pietari olivat rahtimiehille tuttuja, lännen suunnalla Tallinnaan, Turkuun ja kauemmaksikin ja saivat vaikutteita pukeutumiseensa.
+ [<Hänen Lappeen kihlakunnan mies oli paitsi komea myös muotitietoinen, sillä miehet liikkuivat työasioissa alueella. ,PROBABLE>, <Viipuri ja Pietari olivat rahtimiehille tuttuja, lännen suunnalla Tallinnaan, Turkuun ja kauemmaksikin ja saivat vaikutteita pukeutumiseensa.,NONE>]
+Tähän liittyy kaksi virkettä: Ensimmäinen virke on tässä. Toinen on tässä.
+ [<Tähän liittyy kaksi virkettä: ,POSSIBLE>, <Ensimmäinen virke on tässä. ,PROBABLE>, <Toinen on tässä.,NONE>]
+Kolme pistettä... Ellipsis… Neljä pistettä.... Kuusi pistettä......
+ [<Kolme pistettä... ,POSSIBLE>, <Ellipsis… ,POSSIBLE>, <Neljä pistettä...,POSSIBLE>, <. ,PROBABLE>, <Kuusi pistettä...,POSSIBLE>, <...,NONE>]
+"Lause voi olla myös lainausmerkeissä!" kirjoittaa ohjelman tekijä.
+ [<"Lause voi olla myös lainausmerkeissä!" ,POSSIBLE>, <kirjoittaa ohjelman tekijä.,NONE>]
+"Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.
+ [<"Lause voi olla myös lainausmerkeissä.", kirjoittaa ohjelman tekijä.,NONE>]
+”Lause voi olla myös toisenlaisissa lainausmerkeissä!” kirjoittaa ohjelman tekijä.
+ [<”Lause voi olla myös toisenlaisissa lainausmerkeissä!” ,POSSIBLE>, <kirjoittaa ohjelman tekijä.,NONE>]
+“Vieraat lainausmerkit eivät minua hämää!” kirjoittaa ohjelman tekijä.
+ [<“Vieraat lainausmerkit eivät minua hämää!” ,POSSIBLE>, <kirjoittaa ohjelman tekijä.,NONE>]
+»Lause voi olla myös toisenlaisissa lainausmerkeissä!» kirjoittaa ohjelman tekijä.
+ [<»Lause voi olla myös toisenlaisissa lainausmerkeissä!» ,POSSIBLE>, <kirjoittaa ohjelman tekijä.,NONE>]
