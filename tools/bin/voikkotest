@@ -34,9 +34,7 @@ THREADS = voikkoutils.get_preference('voikkospell_threads')
 LANGUAGE = voikkoutils.get_preference('language_variant')
 BUILD_OPTIONS = voikkoutils.get_preference('voikkotest_build_options')
 ENCODING = voikkoutils.get_preference('encoding')
-HYPHENCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkohyphenate'
 SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
-GCCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkogc'
 DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
 SM_DESTDIR = voikkoutils.get_preference('voikkotest_sm_destdir')
 
@@ -44,6 +42,7 @@ spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 suggesttest = SVNROOT + "/trunk/tests/voikkotest/suggest.txt"
 TOKENTESTFILE = SVNROOT + "/trunk/tests/voikkotest/tokenizer.txt"
+SENTENCETESTFILE = SVNROOT + "/trunk/tests/voikkotest/sentence.txt"
 GRAMMARTESTFILE = SVNROOT + "/trunk/tests/voikkotest/grammar.txt"
 MORPHOTESTFILE = SVNROOT + "/trunk/tests/voikkotest/morpho.txt"
 BASE = WORKSPACE + "/base"
@@ -111,7 +110,7 @@ def runCompatibilityTests():
 	if compatTestCount == 0:
 		print u"Warning: compatibility assertions were present but no morphologies were found"
 	else:
-		print u"All " + `compatTestCount` + " compatibility tests were successful"
+		print u"All " + `compatTestCount` + " compatibility tests were successful."
 	
 
 # Returns a list of grammar errors.
@@ -488,7 +487,7 @@ def tokenizer_tests(voikko):
 			if expectedTokens != actualTokens:
 				print u"Tokenizer test failed:"
 				print u" Expected " + expectedTokens
-				print u" Actual " + actualTokens
+				print u" Actual   " + actualTokens
 				failcount = failcount + 1
 		inputfile.close()
 		if failcount == 0:
@@ -502,13 +501,45 @@ def tokenizer_tests(voikko):
 		sys.exit(1)
 
 # Run sentence tests
-def sentence_tests():
-	testfile = SVNROOT + "/trunk/tests/sentence/next-in.txt"
-	resultfile = WORKSPACE + "/sentence-next.txt"
-	expresults = SVNROOT + "/trunk/tests/sentence/next-out.txt"
-	sys.stderr.write("Testing next_sentence_start functions...\n")
-	os.system('cat "%s" | "%s" --split-sentences > "%s"' % (testfile, GCCMD, resultfile))
-	os.system('diff -U 0 "%s" "%s"' % (expresults, resultfile))
+def sentence_tests(voikko):
+	try:
+		inputfile = codecs.open(SENTENCETESTFILE, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		inputString = None
+		while True:
+			line_orig = inputfile.readline()
+			if line_orig == u'':
+				break
+			line = line_orig.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1:
+				line = line[:commentstart].strip()
+			if line == u'':
+				continue
+			if inputString is None:
+				inputString = line
+				testcount = testcount + 1
+				continue
+			# line should contain sentence splitting results
+			expectedSentences = line
+			actualSentences = unicode(str(voikko.sentences(inputString)), u'UTF-8')
+			inputString = None
+			if expectedSentences != actualSentences:
+				print u"Sentence splitting test failed:"
+				print u" Expected " + expectedSentences
+				print u" Actual   " + actualSentences
+				failcount = failcount + 1
+		inputfile.close()
+		if failcount == 0:
+			print u"All %i sentence splitting tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i sentence splitting tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + SENTENCETESTFILE + "\n")
+		sys.exit(1)
 
 # START OF MAIN PROGRAM
 
@@ -564,6 +595,6 @@ else:
 	hyphen_tests(voikko)
 	grammar_tests(voikko)
 	tokenizer_tests(voikko)
+	sentence_tests(voikko)
 	runCompatibilityTests()
-	sentence_tests()
 	voikko.terminate()
