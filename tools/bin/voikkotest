@@ -43,6 +43,7 @@ SM_DESTDIR = voikkoutils.get_preference('voikkotest_sm_destdir')
 spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
 hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
 suggesttest = SVNROOT + "/trunk/tests/voikkotest/suggest.txt"
+TOKENTESTFILE = SVNROOT + "/trunk/tests/voikkotest/tokenizer.txt"
 GRAMMARTESTFILE = SVNROOT + "/trunk/tests/voikkotest/grammar.txt"
 MORPHOTESTFILE = SVNROOT + "/trunk/tests/voikkotest/morpho.txt"
 BASE = WORKSPACE + "/base"
@@ -460,13 +461,45 @@ def morpho_tests(voikko):
 
 
 # Run tokenizer tests
-def tokenizer_tests():
-	testfile = SVNROOT + "/trunk/tests/tokenizer/input.txt"
-	resultfile = WORKSPACE + "/tokenizer.txt"
-	expresults = SVNROOT + "/trunk/tests/tokenizer/output.txt"
-	sys.stderr.write("Testing next_token functions...\n")
-	os.system('cat "%s" | "%s" --tokenize > "%s"' % (testfile, GCCMD, resultfile))
-	os.system('diff -U 0 "%s" "%s"' % (expresults, resultfile))
+def tokenizer_tests(voikko):
+	try:
+		inputfile = codecs.open(TOKENTESTFILE, "r", ENCODING)
+		testcount = 0
+		failcount = 0
+		inputString = None
+		while True:
+			line_orig = inputfile.readline()
+			if line_orig == u'':
+				break
+			line = line_orig.strip()
+			commentstart = line.find(u"#")
+			if commentstart != -1:
+				line = line[:commentstart].strip()
+			if line == u'':
+				continue
+			if inputString is None:
+				inputString = line
+				testcount = testcount + 1
+				continue
+			# line should contain tokenization results
+			expectedTokens = line
+			actualTokens = unicode(str(voikko.tokens(inputString)), u'UTF-8')
+			inputString = None
+			if expectedTokens != actualTokens:
+				print u"Tokenizer test failed:"
+				print u" Expected " + expectedTokens
+				print u" Actual " + actualTokens
+				failcount = failcount + 1
+		inputfile.close()
+		if failcount == 0:
+			print u"All %i tokenizer tests were successful." % testcount
+			return True
+		else:
+			print u"%i out of %i tokenizer tests failed." % (failcount, testcount)
+			return False
+	except IOError:
+		sys.stderr.write("Could not read from file " + TOKENTESTFILE + "\n")
+		sys.exit(1)
 
 # Run sentence tests
 def sentence_tests():
@@ -530,7 +563,7 @@ else:
 	morpho_tests(voikko)
 	hyphen_tests(voikko)
 	grammar_tests(voikko)
+	tokenizer_tests(voikko)
 	runCompatibilityTests()
-	tokenizer_tests()
 	sentence_tests()
 	voikko.terminate()
