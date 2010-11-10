@@ -2,6 +2,9 @@
 	* Fix strict aliasing bug (Trac #20) and a some const correctness
 	  issues that were uncovered by the fix.
 
+2010-11-08 Harri Pitkänen <hatapitk@iki.fi>
+	* Update MSVC build files.
+
 2010-10-27 Harri Pitkänen <hatapitk@iki.fi>
 	* GC: Allow AutoCorrect rules with more than two match words.
 	* Support capitalized first character of sentence when interpreting
