@@ -48,7 +48,7 @@ void
 init_libmalaga(string_t project_directory, MalagaState * malagaState) throw(setup::DictionaryException)
 /* Initialise this module. */
 { 
-  string_t project_directory_absolute = absolute_path(project_directory, NULL);
+  char * project_directory_absolute = absolute_path(project_directory, NULL);
   try {
     init_malaga(project_directory_absolute, malagaState);
     free_mem(&project_directory_absolute);

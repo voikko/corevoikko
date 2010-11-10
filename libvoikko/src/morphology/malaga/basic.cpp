@@ -193,15 +193,6 @@ renew_vector( void *block_p, int_t item_size, int_t item_count )
   return item_count;
 }
 
-/*---------------------------------------------------------------------------*/
-
-void 
-free_mem( void *pointer )
-/* Free memory *POINTER points to, and set *POINTER to NULL. */
-{ 
-  free( *((void **) pointer) );
-  *((void **) pointer) = NULL;
-}
 
 /* Functions for text (indefinitely growing strings). =======================*/
 

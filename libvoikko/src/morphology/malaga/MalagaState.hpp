@@ -57,7 +57,7 @@ public:
 
 	pattern_state_t * stack; /* Stack used for backtracking. */
 	int_t stack_size;
-	string_t pattern_var[PATTERN_VAR_MAX]; /* Pattern variables. */
+	char * pattern_var[PATTERN_VAR_MAX]; /* Pattern variables. */
 
 	struct { /* This is the symbol table. */
 		int_t symbol_count; /* Number of symbols in this table. */

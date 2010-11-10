@@ -113,8 +113,12 @@ extern int_t renew_vector( void *block_p, int_t item_size, int_t item_count );
  * Return ITEM_COUNT.
  * If memory is out, call the function "error". */
 
-extern void free_mem( void *pointer );
+template <class T> void free_mem(T **pointer)
 /* Free memory *POINTER points to, and set *POINTER to NULL. */
+{ 
+  free(*pointer);
+  *pointer = NULL;
+}
 
 /* String functions. ========================================================*/
 

@@ -272,10 +272,9 @@ absolute_path( string_t src_path, string_t relative_to )
 { 
 #ifdef POSIX
   text_t *path;
-  string_t src_path_p, login;
+  string_t src_path_p;
   char_t *dest_path;
   struct passwd *password;
-  string_t relative_dir;
   char_t current_dir[ MAX_PATH_SIZE ];
 
   path = new_text();
@@ -294,7 +293,7 @@ absolute_path( string_t src_path, string_t relative_to )
     else 
     { 
       /* Put home directory of user LOGIN in front. */
-      login = new_string( login_p, src_path_p );
+      char_t * login = new_string( login_p, src_path_p );
       password = getpwnam( login );
       add_to_text( path, password->pw_dir );
       free_mem( &login );
@@ -308,7 +307,7 @@ absolute_path( string_t src_path, string_t relative_to )
       string_t relative_end = relative_to + strlen( relative_to );
       while (relative_end[-1] != '/') 
 	relative_end--;
-      relative_dir = new_string( relative_to, relative_end );
+      char * relative_dir = new_string( relative_to, relative_end );
       add_to_text( path, relative_dir );
       free_mem( &relative_dir );
     } 
@@ -330,8 +329,7 @@ absolute_path( string_t src_path, string_t relative_to )
 
 #ifdef WIN32
   text_t *path;
-  string_t src_path_p;		
-  string_t relative_dir;
+  string_t src_path_p;
   char_t current_dir[ MAX_PATH_SIZE ];
 
   path = new_text();
@@ -373,7 +371,7 @@ absolute_path( string_t src_path, string_t relative_to )
     string_t relative_end = relative_to + strlen( relative_to );
     while (relative_end[-1] != '\\') 
       relative_end--;
-    relative_dir = new_string( relative_to, relative_end );
+    char * relative_dir = new_string( relative_to, relative_end );
     add_to_text( path, relative_dir );
     add_char_to_text( path, '\\' );
     free_mem( &relative_dir );
