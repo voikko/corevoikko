@@ -81,19 +81,15 @@ standard_function(int_t function, MalagaState * malagaState)
       end = start;
     else 
       end = value_to_int(malagaState->value_stack[malagaState->top - 1]);
-    int_t len = utf8::unchecked::distance(string, string + strlen(string));
-    if (start < 0) 
-      start += len + 1;
-    if (end < 0) 
-      end += len + 1;
+    // Support for negative "start" or "end" has been removed
     if (end < start) {
       push_string_value("", NULL, malagaState);
     }
     else {
       const char * startPos = string;
       utf8::unchecked::advance(startPos, start - 1);
-      const char * endPos = string;
-      utf8::unchecked::advance(endPos, end);
+      const char * endPos = startPos;
+      utf8::unchecked::advance(endPos, end - (start - 1));
       push_string_value(startPos, endPos, malagaState);
     }
     malagaState->value_stack[malagaState->top - 4] = malagaState->value_stack[malagaState->top - 1];
