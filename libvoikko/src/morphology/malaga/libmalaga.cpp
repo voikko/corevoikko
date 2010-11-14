@@ -93,6 +93,10 @@ analyse_item(string_t item, MalagaState * malagaState) throw(setup::DictionaryEx
     preprocess_input( analysis_input );
     analyse(analysis_input, malagaState);
     free_mem(&analysis_input);
+    // Clear value heap. There is nothing but garbage on it and old entries will affect
+    // carbage collector triggering during subsequent analysis operations, making it
+    // harder to reproduce bugs.
+    malagaState->value_heap_end = malagaState->value_heap;
   }
   catch (setup::DictionaryException e) {
     free_mem(&analysis_input);

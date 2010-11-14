@@ -418,21 +418,16 @@ push_string_value(string_t string_start, string_t string_end, MalagaState * mala
  * NEW_STRING is the string starting at STRING_START as a Malaga value.
  * If STRING_END != NULL, it marks the end of the string. */
 {
-  value_t value, value_end;
-  int_t length;
-  string_t source_p;
-  char_t *target_p;
-
   if (string_end == NULL) 
     string_end = string_start + strlen( string_start );
-  length = string_end - string_start;
-  value = space_for_value(2 + length / sizeof( cell_t ), malagaState);
+  int_t length = string_end - string_start;
+  value_t value = space_for_value(2 + length / sizeof( cell_t ), malagaState);
   *value = TYPE_CELL( STRING_TYPE, length );
 
   /* Copy the string content. */
-  source_p = string_start;
-  target_p = (char_t *) (value + 1);
-  value_end = NEXT_VALUE( value );
+  string_t source_p = string_start;
+  char_t * target_p = (char_t *) (value + 1);
+  value_t value_end = NEXT_VALUE( value );
   while (source_p < string_end) 
     *target_p++ = *source_p++;
 
