@@ -166,6 +166,7 @@ Pertti alkaa tekemään läksyjä.
 Pertti ryhtyy tehdä läksyjä.
  [code=15, level=0, descr="", stpos=7, len=12, suggs={}]
 Pertti ryhtyy tekemään läksyjä.
+Lääkäri ehtii auttamaan Hannelea synnytyksessä.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
