@@ -261,6 +261,9 @@ word:juoskoot
  analysis
   MOOD=imperative
   NEGATIVE=false
+word:olla
+ analysis
+  NEGATIVE=true # Siellä ei olla hereillä
 word:sämpyläjauho
  !POSSIBLE_GEOGRAPHICAL_NAME
 word:sämpyläjoki

@@ -818,7 +818,7 @@ define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 [alku: "ä",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
 [alku: "da", luokka: nimitapa_1_dA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
 [alku: "dä", luokka: nimitapa_1_dA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
-[alku: "la", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
+[alku: "la", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: a, kielto: yes, jatko: @nimitapa_1_jatko];
 [alku: "lä", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
 [alku: "na", luokka: nimitapa_1_nA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
 [alku: "nä", luokka: nimitapa_1_nA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
