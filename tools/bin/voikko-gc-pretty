@@ -1,0 +1,71 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright 2010 Harri Pitkänen (hatapitk@iki.fi)
+# Program to create diff-able and human readable grammar checker
+# traces from running text. In other words a prettier version of voikkogc.
+# This program requires Python and Python module of libvoikko from
+# libvoikko 3.0 or later.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+import sys
+import voikkoutils
+from libvoikko import Voikko
+
+LANGUAGE = voikkoutils.get_preference('language_variant')
+ENCODING = voikkoutils.get_preference('encoding')
+
+voikko = Voikko(LANGUAGE)
+
+if '--help' in sys.argv:
+	print "Usage:"
+	print "Checks grammar of text read from stdin and prints errors."
+	print "Normally paragraphs are separated by line feeds. Use option"
+	print "--empty-line if paragraphs are separated by empty lines."
+	sys.exit(0)
+
+emptyLineSeparates = '--empty-line' in sys.argv
+
+def handleParagraph(paragraph):
+	for error in voikko.grammarErrors(paragraph):
+		print paragraph.encode(ENCODING)
+		errorRange = paragraph[error.startPos : error.startPos + error.errorLen]
+		print (u"E: " + voikko.grammarErrorExplanation(error.errorCode, u"fi") + u" (start=" + str(error.startPos) + u")").encode(ENCODING)
+		print (u'E: "' + errorRange + u'"').encode(ENCODING)
+		for suggestion in error.suggestions:
+			print (u'S:  "' + suggestion + u'"').encode(ENCODING)
+		print u"================================================="
+
+if not emptyLineSeparates:
+	for line in sys.stdin:
+		line = line.strip() # Ignore leading/trailing whitespace
+		if len(line) == 0:
+			continue
+		paragraph = unicode(line, ENCODING)
+		handleParagraph(paragraph)
+else:
+	paragraph = u""
+	for line in sys.stdin:
+		line = line.strip()
+		if len(line) == 0:
+			if len(paragraph) > 0:
+				handleParagraph(paragraph)
+				paragraph = u""
+			continue
+		if len(paragraph) > 0:
+			paragraph = paragraph + u" "
+		paragraph = paragraph + unicode(line, ENCODING)
+
