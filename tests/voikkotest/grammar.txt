@@ -149,6 +149,9 @@ Juoksen kotiin.
 Siellä ei yritetäkään juosta.
 Siellä ei olla hereillä.
 Minä en maalaa mitään.
+Komissio haluaa ottaa käyttöön rekisterin, jossa ei mainittaisi edunvalvojien nimiä.
+Mietintö voidaan täällä hyväksyä, eikä kaataa sitä pienten yksityiskohtien vuoksi.
+Täytyy ostaa lisää maitoa, eikä luopua siitä.
 Älä virheellinensanaaslkdjalk.
 En juoksen kotiin.
  [code=13, level=0, descr="", stpos=0, len=10, suggs={}]
@@ -167,6 +170,7 @@ Pertti ryhtyy tehdä läksyjä.
  [code=15, level=0, descr="", stpos=7, len=12, suggs={}]
 Pertti ryhtyy tekemään läksyjä.
 Lääkäri ehtii auttamaan Hannelea synnytyksessä.
+Terrorismia ei pidä koskaan yrittää saada laantumaan, vaan terrorismi on voitettava.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

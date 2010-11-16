@@ -263,7 +263,16 @@ word:juoskoot
   NEGATIVE=false
 word:olla
  analysis
-  NEGATIVE=true # Siellä ei olla hereillä
+  NEGATIVE=both # Siellä ei olla hereillä. Haluan olla hereillä.
+word:luopua
+ analysis
+  NEGATIVE=both # Siellä ei haluttaisi luopua. Haluan luopua.
+word:mainittaisiin
+ analysis
+  NEGATIVE=false # "Hänet mainittaisiin ..."
+word:mainittaisi
+ analysis
+  NEGATIVE=true # "Häntä ei mainittaisi ..."
 word:sämpyläjauho
  !POSSIBLE_GEOGRAPHICAL_NAME
 word:sämpyläjoki

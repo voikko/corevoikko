@@ -652,21 +652,21 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                  äs: ä, luku: monikko, tekijä: tekijä_3, jatko: <liitesana, loppu>];
 
 [alku: "ttaisi",   luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, kielto: yes, jatko: <liitesana, loppu>];
 [alku: "ttäisi",   luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, kielto: yes, jatko: <liitesana, loppu>];
 [alku: "ttaisiin", luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, kielto: no, jatko: <liitesana, loppu>];
 [alku: "ttäisiin", luokka: ehtotapa_ttA, tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "taisi",    luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
-[alku: "täisi",    luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, kielto: no, jatko: <liitesana, loppu>];
+[alku: "taisi",    luokka: ehtotapa_tA, tapaluokka: ehtotapa, aikamuoto: kestämä,
+                   äs: a, tekijä: tekijä_4, kielto: yes, jatko: <liitesana, loppu>];
+[alku: "täisi",    luokka: ehtotapa_tA, tapaluokka: ehtotapa, aikamuoto: kestämä,
+                   äs: ä, tekijä: tekijä_4, kielto: yes, jatko: <liitesana, loppu>];
 [alku: "taisiin",  luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: a, tekijä: tekijä_4, jatko: <liitesana, loppu>];
+                   äs: a, tekijä: tekijä_4, kielto: no, jatko: <liitesana, loppu>];
 [alku: "täisiin",  luokka: ehtotapa_tA,  tapaluokka: ehtotapa, aikamuoto: kestämä,
-                   äs: ä, tekijä: tekijä_4, jatko: <liitesana, loppu>];
+                   äs: ä, tekijä: tekijä_4, kielto: no, jatko: <liitesana, loppu>];
 
 
 # Mahtotapa.
@@ -814,18 +814,18 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 #
 define @nimitapa_1_jatko := <nimitapa_1_pitkä, liitesana, loppu>;
 
-[alku: "a",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
-[alku: "ä",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
-[alku: "da", luokka: nimitapa_1_dA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
-[alku: "dä", luokka: nimitapa_1_dA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
-[alku: "la", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: a, kielto: yes, jatko: @nimitapa_1_jatko];
-[alku: "lä", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
-[alku: "na", luokka: nimitapa_1_nA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
-[alku: "nä", luokka: nimitapa_1_nA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
-[alku: "ra", luokka: nimitapa_1_rA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
-[alku: "rä", luokka: nimitapa_1_rA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
-[alku: "ta", luokka: nimitapa_1_tA, tapaluokka: nimitapa_1, äs: a, jatko: @nimitapa_1_jatko];
-[alku: "tä", luokka: nimitapa_1_tA, tapaluokka: nimitapa_1, äs: ä, jatko: @nimitapa_1_jatko];
+[alku: "a",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: a, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "ä",  luokka: nimitapa_1_A,  tapaluokka: nimitapa_1, äs: ä, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "da", luokka: nimitapa_1_dA, tapaluokka: nimitapa_1, äs: a, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "dä", luokka: nimitapa_1_dA, tapaluokka: nimitapa_1, äs: ä, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "la", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: a, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "lä", luokka: nimitapa_1_lA, tapaluokka: nimitapa_1, äs: ä, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "na", luokka: nimitapa_1_nA, tapaluokka: nimitapa_1, äs: a, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "nä", luokka: nimitapa_1_nA, tapaluokka: nimitapa_1, äs: ä, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "ra", luokka: nimitapa_1_rA, tapaluokka: nimitapa_1, äs: a, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "rä", luokka: nimitapa_1_rA, tapaluokka: nimitapa_1, äs: ä, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "ta", luokka: nimitapa_1_tA, tapaluokka: nimitapa_1, äs: a, kielto: molemmat, jatko: @nimitapa_1_jatko];
+[alku: "tä", luokka: nimitapa_1_tA, tapaluokka: nimitapa_1, äs: ä, kielto: molemmat, jatko: @nimitapa_1_jatko];
 
 
 # Punoa+kse+ni
