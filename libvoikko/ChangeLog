@@ -1,6 +1,6 @@
 2010-11-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Clear Malaga heap at the end of analyse_item. This reduces
-	  the need for garbace collecting and makes bugs in Malaga VM
+	  the need for garbage collecting and makes bugs in Malaga VM
 	  easier to reproduce.
 
 2010-11-10 Harri Pitkänen <hatapitk@iki.fi>
