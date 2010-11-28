@@ -1,7 +1,11 @@
 package org.puimula.libvoikko;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.fail;
+
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -60,7 +64,7 @@ public class VoikkoTest {
     }
     
     @Test
-    public void testDictionaryHashCodeWorks() {
+    public void dictionaryHashCodeWorks() {
         Dictionary d1 = new Dictionary("fi", "a", "b");
         Dictionary d2 = new Dictionary("fi", "a", "c");
         Dictionary d3 = new Dictionary("fi", "c", "b");
@@ -71,7 +75,41 @@ public class VoikkoTest {
         assertTrue(d4.hashCode() != d5.hashCode());
         assertTrue(d1.hashCode() == d4.hashCode());
     }
+    
+    @Test
+    public void listDictsWithoutPath() {
+        List<Dictionary> dicts = Voikko.listDicts();
+        assertTrue(dicts.size() > 0);
+        Dictionary standard = dicts.get(0);
+        assertEquals("Standard dictionary must be the default in test environment.", "standard", standard.getVariant());
+    }
+    
+    //@Test TODO: should work, write test
+    public void listDictsWithPathAndAttributes() {
 
+    }
+
+    @Test
+    public void initWithCorrectDictWorks() {
+        voikko.terminate();
+        voikko = new Voikko("fi-x-standard");
+        assertFalse(voikko.spell("amifostiini"));
+        voikko.terminate();
+        voikko = new Voikko("fi-x-medicine");
+        assertTrue(voikko.spell("amifostiini"));
+    }
+    
+    @Test
+    public void initWithNonExistentDictThrowsException() {
+        voikko.terminate();
+        try {
+            voikko = new Voikko("fi-x-non-existent-variant");
+        } catch (VoikkoException e) {
+            return;
+        }
+        fail("Expected exception not thrown");
+    }
+    
     @Test
     public void spell() {
         assertTrue(voikko.spell("määrä"));

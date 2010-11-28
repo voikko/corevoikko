@@ -1,6 +1,7 @@
 package org.puimula.libvoikko;
 
 import com.sun.jna.Library;
+import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.ptr.PointerByReference;
 
@@ -21,5 +22,14 @@ interface Libvoikko extends Library {
 
     public abstract int voikkoSpellCstr(VoikkoHandle handle, String word);
 
+    public abstract Pointer[] voikko_list_dicts(String path);
+    
+    public abstract void voikko_free_dicts(Pointer[] dicts);
+    
+    public abstract String voikko_dict_language(Pointer dict);
+    
+    public abstract String voikko_dict_variant(Pointer dict);
+    
+    public abstract String voikko_dict_description(Pointer dict);
 
 }
