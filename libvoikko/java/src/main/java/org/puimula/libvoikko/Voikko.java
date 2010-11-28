@@ -1,5 +1,8 @@
 package org.puimula.libvoikko;
 
+import static org.puimula.libvoikko.ByteArray.n2s;
+import static org.puimula.libvoikko.ByteArray.s2n;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +31,7 @@ public class Voikko {
 
     public Voikko(String language, String path) {
         PointerByReference error = new PointerByReference();
-        handle = getLib().voikkoInit(error, language, path);
+        handle = getLib().voikkoInit(error, s2n(language), s2n(path));
         if (error.getPointer() != Pointer.NULL && error.getPointer().getString(0).length() > 0) {
             handle = null;
             throw new VoikkoException(error.getPointer().getString(0));
@@ -52,7 +55,7 @@ public class Voikko {
 
     public synchronized boolean spell(String word) {
         requireValidHandle();
-        int spellResult = getLib().voikkoSpellCstr(handle, word);
+        int spellResult = getLib().voikkoSpellCstr(handle, s2n(word));
         switch (spellResult) {
         case Libvoikko.VOIKKO_SPELL_OK:
             return true;
@@ -75,10 +78,11 @@ public class Voikko {
         
     public static List<Dictionary> listDicts(String path) {
         Libvoikko lib = getLib();
-        Pointer[] cDicts = lib.voikko_list_dicts(path);
+        Pointer[] cDicts = lib.voikko_list_dicts(s2n(path));
         List<Dictionary> dicts = new ArrayList<Dictionary>(cDicts.length);
         for (Pointer cDict : cDicts) {
-            dicts.add(new Dictionary(lib.voikko_dict_language(cDict), lib.voikko_dict_variant(cDict), lib.voikko_dict_description(cDict)));
+            dicts.add(new Dictionary(lib.voikko_dict_language(cDict).toString(),
+                    lib.voikko_dict_variant(cDict).toString(), lib.voikko_dict_description(cDict).toString()));
         }
         lib.voikko_free_dicts(cDicts);
         return dicts;
@@ -86,12 +90,13 @@ public class Voikko {
 
     public List<String> suggest(String word) {
         requireValidHandle();
-        Pointer[] voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, word);
+        Pointer[] voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
         List<String> suggestions = new ArrayList<String>(voikkoSuggestCstr.length);
         for (Pointer cStr : voikkoSuggestCstr) {
-            suggestions.add(cStr.getString(0));
+            suggestions.add(n2s(cStr.getByteArray(0L, (int) cStr.indexOf(0L, (byte) 0))));
         }
         getLib().voikkoFreeCstrArray(voikkoSuggestCstr);
         return suggestions;
     }
+    
 }

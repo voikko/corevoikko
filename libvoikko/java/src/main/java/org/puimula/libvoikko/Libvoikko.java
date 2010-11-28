@@ -15,24 +15,24 @@ interface Libvoikko extends Library {
     static class VoikkoHandle extends PointerType {
 
     };
-
-    public abstract VoikkoHandle voikkoInit(PointerByReference error, String langCode, String path);
+    
+    public abstract VoikkoHandle voikkoInit(PointerByReference error, byte[] langCode, byte[] path);
 
     public abstract void voikkoTerminate(VoikkoHandle handle);
 
-    public abstract int voikkoSpellCstr(VoikkoHandle handle, String word);
+    public abstract int voikkoSpellCstr(VoikkoHandle handle, byte[] word);
 
-    public abstract Pointer[] voikko_list_dicts(String path);
+    public abstract Pointer[] voikko_list_dicts(byte[] path);
     
     public abstract void voikko_free_dicts(Pointer[] dicts);
     
-    public abstract String voikko_dict_language(Pointer dict);
+    public abstract ByteArray voikko_dict_language(Pointer dict);
     
-    public abstract String voikko_dict_variant(Pointer dict);
+    public abstract ByteArray voikko_dict_variant(Pointer dict);
     
-    public abstract String voikko_dict_description(Pointer dict);
+    public abstract ByteArray voikko_dict_description(Pointer dict);
 
-    public abstract Pointer[] voikkoSuggestCstr(VoikkoHandle handle, String word);
+    public abstract Pointer[] voikkoSuggestCstr(VoikkoHandle handle, byte[] word);
     
     public abstract void voikkoFreeCstrArray(Pointer[] array);
 }

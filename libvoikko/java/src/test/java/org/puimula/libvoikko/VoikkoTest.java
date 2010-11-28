@@ -5,6 +5,7 @@ import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.After;
@@ -137,7 +138,7 @@ public class VoikkoTest {
     
     @Test
     public void suggest() {
-        List<String> suggestions = voikko.suggest("koirra");
-        assertTrue(suggestions.contains("koira"));
+        assertTrue(voikko.suggest("koirra").contains("koira"));
+        assertTrue(voikko.suggest("määärä").contains("määrä"));
     }
 }
