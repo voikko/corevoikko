@@ -2,20 +2,20 @@ package org.puimula.libvoikko;
 
 public enum SuggestionStrategy {
 
-  TYPO(0),
-  OCR(1);
-  
-  private final int id;
+    TYPO(0),
+    OCR(1);
 
-  private SuggestionStrategy(int id) {
-    this.id = id;
-  }
+    private final int id;
 
-  /**
-   * @return the id
-   */
-  public int getId() {
-    return id;
-  }
-  
+    private SuggestionStrategy(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
 }
