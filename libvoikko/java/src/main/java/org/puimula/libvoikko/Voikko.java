@@ -51,6 +51,7 @@ public class Voikko {
     }
 
     public synchronized boolean spell(String word) {
+        requireValidHandle();
         int spellResult = getLib().voikkoSpellCstr(handle, word);
         switch (spellResult) {
         case Libvoikko.VOIKKO_SPELL_OK:
@@ -59,6 +60,12 @@ public class Voikko {
             return false;
         default:
             throw new VoikkoException("Internal error returned from libvoikko");
+        }
+    }
+
+    private void requireValidHandle() {
+        if (handle == null) {
+            throw new VoikkoException("Attempt to use Voikko instance after terminate() was called");
         }
     }
 
@@ -75,5 +82,16 @@ public class Voikko {
         }
         lib.voikko_free_dicts(cDicts);
         return dicts;
+    }
+
+    public List<String> suggest(String word) {
+        requireValidHandle();
+        Pointer[] voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, word);
+        List<String> suggestions = new ArrayList<String>(voikkoSuggestCstr.length);
+        for (Pointer cStr : voikkoSuggestCstr) {
+            suggestions.add(cStr.getString(0));
+        }
+        getLib().voikkoFreeCstrArray(voikkoSuggestCstr);
+        return suggestions;
     }
 }

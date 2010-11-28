@@ -111,8 +111,33 @@ public class VoikkoTest {
     }
     
     @Test
+    public void initWithPathWorks() {
+        // TODO: better test
+        voikko.terminate();
+        voikko = new Voikko("fi", "/path/to/nowhere");
+        assertTrue(voikko.spell("kissa"));
+    }
+    
+    @Test
+    public void spellAfterTerminateThrowsException() {
+        voikko.terminate();
+        try {
+            voikko.spell("kissa");
+        } catch (VoikkoException e) {
+            return;
+        }
+        fail("Expected exception not thrown");
+    }
+    
+    @Test
     public void spell() {
         assertTrue(voikko.spell("määrä"));
         assertFalse(voikko.spell("määä"));
+    }
+    
+    @Test
+    public void suggest() {
+        List<String> suggestions = voikko.suggest("koirra");
+        assertTrue(suggestions.contains("koira"));
     }
 }

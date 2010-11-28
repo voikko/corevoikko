@@ -32,4 +32,7 @@ interface Libvoikko extends Library {
     
     public abstract String voikko_dict_description(Pointer dict);
 
+    public abstract Pointer[] voikkoSuggestCstr(VoikkoHandle handle, String word);
+    
+    public abstract void voikkoFreeCstrArray(Pointer[] array);
 }
