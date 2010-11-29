@@ -21,7 +21,7 @@
 #include "character/SimpleChar.hpp"
 #include "voikko_defines.h"
 #include <fstream>
-#include <hfst2/string.h>
+#include <ospell.h>
 
 using namespace std;
 using namespace libvoikko::character;
@@ -29,44 +29,34 @@ using namespace libvoikko::utils;
 
 namespace libvoikko { namespace spellchecker {
 
+
 HfstSpeller::HfstSpeller(const string & directoryName) throw(setup::DictionaryException) {
-	keyTable = HWFST::create_key_table();
-	string spellerFile = directoryName + "/spl.hwfst";
-	ifstream spellerStream(spellerFile.c_str());
-	if (spellerStream.good()) {
-		speller = HWFST::read_transducer(spellerStream, keyTable);
-	}
-	else {
-		throw setup::DictionaryException("Failed to open spl.hwfst");
-	}
-	for (HWFST::Key k = 0; k < keyTable->get_unused_key(); ++k) {
-		flagTable.define_diacritic(k, HWFST::get_symbol_name(HWFST::get_key_symbol(k, keyTable)));
-		if (flagTable.is_diacritic(k)) {
-			flags.insert(k);
+	string spellerFile = directoryName + "/spl.hfstol";
+	string suggerFile = directoryName + "/alphabet.hfstol";
+		FILE * error_source = fopen(suggerFile.c_str(), "r");
+		FILE * lexiconfile = fopen(spellerFile.c_str(), "r");
+		hfst_ol::Transducer * error = 0;
+		hfst_ol::Transducer * lexicon = 0;
+		try {
+				error = new hfst_ol::Transducer(error_source);
+				lexicon = new hfst_ol::Transducer(lexiconfile);
+		} catch (hfst_ol::HeaderParsingException& e) {
+			throw setup::DictionaryException(e.what());
 		}
-	}
+		try {
+			speller_ = new hfst_ol::Speller(error, lexicon);
+		} catch (hfst_ol::AlphabetTranslationException& e) {
+			throw setup::DictionaryException(e.what());
+		}
+
 }
  
 spellresult HfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
-	HWFST::KeyVector * wordPath = HWFST::stringUtf8ToKeyVector(wordUtf8, keyTable);
-	HWFST::KeyVectorVector * lookups = HWFST::lookup_all(speller, wordPath, &flags);
 	spellresult result = SPELL_FAILED;
-	if (lookups != NULL) {
-		for (KeyVectorVector::iterator lkv = lookups->begin(); lkv != lookups->end(); ++lkv) {
-			KeyVector* hmmlkv = *lkv;
-			KeyVector* filtlkv = flagTable.filter_diacritics(hmmlkv);
-			if (filtlkv != NULL) {
-				result = SPELL_OK;
-				delete filtlkv;
-				break;
-			}
-			delete filtlkv;
-		}
-		delete lookups;
+	if (speller_->check(wordUtf8)) {
+		result = SPELL_OK;
 	}
-	delete wordPath;
-	delete[] wordUtf8;
 	return result;
 }
  
@@ -89,10 +79,7 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 }
 
 void HfstSpeller::terminate() {
-	delete keyTable;
-	keyTable = 0;
-	HWFST::delete_transducer(speller);
-	speller = 0;
+	delete speller_;
 }
 
 } }

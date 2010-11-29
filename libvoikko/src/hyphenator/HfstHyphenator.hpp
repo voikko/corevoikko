@@ -24,8 +24,6 @@
 #include "setup/DictionaryException.hpp"
 #include <map>
 #include <string>
-#include <hfst2/hfst.h>
-#include <hfst2/FlagDiacritics.h>
 
 namespace libvoikko { namespace hyphenator {
 
@@ -42,12 +40,6 @@ class HfstHyphenator : public Hyphenator {
 		void setMinHyphenatedWordLength(int wlen);
 		void setIgnoreDot(bool);
 		void terminate();
-	private:
-		HWFST::KeyTable * keyTable;
-		HWFST::TransducerHandle hyphenation;
-		HWFST::TransducerHandle dictionary;
-		FlagDiacriticTable flagTable;
-		HWFST::KeySet flags;
 };
 
 } }

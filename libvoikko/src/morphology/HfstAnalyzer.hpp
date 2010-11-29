@@ -19,12 +19,11 @@
 #ifndef VOIKKO_MORPHOLOGY_HFST_ANALYZER
 #define VOIKKO_MORPHOLOGY_HFST_ANALYZER
 
+#include <ospell.h>
 #include "morphology/Analyzer.hpp"
 #include "setup/DictionaryException.hpp"
 #include <map>
 #include <string>
-#include <hfst2/hfst.h>
-#include <hfst2/FlagDiacritics.h>
 
 namespace libvoikko { namespace morphology {
 
@@ -38,12 +37,6 @@ class HfstAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
 		std::list<Analysis *> * analyze(const char * word);
 		void terminate();
-	private:
-		HWFST::KeyTable * keyTable;
-		HWFST::TransducerHandle morphology;
-		FlagDiacriticTable flagTable;
-		HWFST::KeySet flags;
-		void addAnalysis(HWFST::KeyVector * hfstAnalysis, std::list<Analysis *> * analysisList, size_t charCount) const;
 };
 
 } }

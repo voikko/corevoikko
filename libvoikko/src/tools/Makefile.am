@@ -11,7 +11,10 @@ if HAVE_PTHREAD
     voikkospell_CXXFLAGS += $(PTHREAD_CFLAGS) -DHAVE_PTHREAD
     voikkospell_LDADD += $(PTHREAD_LIBS)
 endif
-
+if HAVE_HFST 
+    voikkospell_CXXFLAGS += -lhfst-ospell
+    voikkospell_LDADD += -lhfst-ospell
+endif
 voikkohyphenate_SOURCES = voikkohyphenate.cpp
 voikkohyphenate_CXXFLAGS = $(TOOLCXXFLAGS)
 voikkohyphenate_LDADD = $(TOOLLDADD)

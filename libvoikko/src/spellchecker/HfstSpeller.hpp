@@ -22,8 +22,7 @@
 #include "spellchecker/Speller.hpp"
 #include "setup/DictionaryException.hpp"
 #include <string>
-#include <hfst2/hfst.h>
-#include <hfst2/FlagDiacritics.h>
+#include <ospell.h>
 
 namespace libvoikko { namespace spellchecker {
 
@@ -32,18 +31,15 @@ namespace libvoikko { namespace spellchecker {
  */
 class HfstSpeller : public Speller {
 	public:
-		HfstSpeller(const string & directoryName) throw(setup::DictionaryException);
+		HfstSpeller(const std::string & directoryName) throw(setup::DictionaryException);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:
 		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
 		spellresult doSpell(const wchar_t * word, size_t wlen);
-		
-		HWFST::KeyTable * keyTable;
-		HWFST::TransducerHandle speller;
-		FlagDiacriticTable flagTable;
-		HWFST::KeySet flags;
+		hfst_ol::Speller* speller_;
 };
+
 
 } }
 

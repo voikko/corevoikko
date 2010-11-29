@@ -19,8 +19,8 @@
 #ifndef VOIKKO_SPELLCHECKER_HFST_SUGGESTION
 #define VOIKKO_SPELLCHECKER_HFST_SUGGESTION
 
-#include <hfst2/FlagDiacritics.h>
-#include <hfst2/hfst.h>
+#include <string>
+#include <ospell.h>
 #include "setup/DictionaryException.hpp"
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
@@ -32,15 +32,11 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class HfstSuggestion : public SuggestionGenerator {
 	public:
-		HfstSuggestion(const string & directoryName) throw(setup::DictionaryException);
+		HfstSuggestion(const std::string & directoryName) throw(setup::DictionaryException);
 		void generate(SuggestionStatus* s) const;
 		void terminate();
 	private:
-		HWFST::KeyTable * keyTable;
-		HWFST::TransducerHandle suggestion;
-		HWFST::TransducerHandle speller;
-		FlagDiacriticTable flagTable;
-		HWFST::KeySet flags;
+        hfst_ol::Speller* speller_;
 };
 
 } } }
