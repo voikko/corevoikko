@@ -141,4 +141,24 @@ public class VoikkoTest {
         assertTrue(voikko.suggest("koirra").contains("koira"));
         assertTrue(voikko.suggest("määärä").contains("määrä"));
     }
+    
+    @Test
+    public void suggestReturnsArgumentIfWordIsCorrect() {
+        List<String> suggestions = voikko.suggest("koira");
+        assertEquals(1, suggestions.size());
+        assertEquals("koira", suggestions.get(0));
+    }
+    
+    @Test
+    public void grammarErrorsAndExplanation() {
+        List<GrammarError> errors = voikko.grammarErrors("Minä olen joten kuten kaunis.");
+        assertEquals(1, errors.size());
+        GrammarError error = errors.get(0);
+        assertEquals(10, error.getStartPos());
+        assertEquals(11, error.getErrorLen());
+        assertEquals(Arrays.asList("jotenkuten"), error.getSuggestions());
+        int code = error.getErrorCode();
+        assertEquals("Virheellinen kirjoitusasu", voikko.grammarErrorExplanation(code, "fi"));
+        assertEquals("Incorrect spelling of word(s)", voikko.grammarErrorExplanation(code, "en"));
+    }
 }

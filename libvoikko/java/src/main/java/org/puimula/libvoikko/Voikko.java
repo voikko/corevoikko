@@ -4,11 +4,14 @@ import static org.puimula.libvoikko.ByteArray.n2s;
 import static org.puimula.libvoikko.ByteArray.s2n;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.puimula.libvoikko.Libvoikko.VoikkoGrammarError;
 import org.puimula.libvoikko.Libvoikko.VoikkoHandle;
 
 import com.sun.jna.Native;
+import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
 
@@ -88,7 +91,7 @@ public class Voikko {
         return dicts;
     }
 
-    public List<String> suggest(String word) {
+    public synchronized List<String> suggest(String word) {
         requireValidHandle();
         Pointer[] voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
         List<String> suggestions = new ArrayList<String>(voikkoSuggestCstr.length);
@@ -97,6 +100,55 @@ public class Voikko {
         }
         getLib().voikkoFreeCstrArray(voikkoSuggestCstr);
         return suggestions;
+    }
+
+    public synchronized List<GrammarError> grammarErrors(String text) {
+        requireValidHandle();
+        List<GrammarError> errorList = new ArrayList<GrammarError>();
+        int offset = 0;
+        for (String paragraph : text.split("\\n")) {
+            appendErrorsFromParagraph(errorList, paragraph, offset);
+            offset += paragraph.length() + 1;
+        }
+        return errorList;
+    }
+
+    private void appendErrorsFromParagraph(List<GrammarError> errorList, String paragraph, int offset) {
+        final int paragraphLen = s2n(paragraph).length - 1;
+        final Libvoikko lib = getLib();
+        int skipErrors = 0;
+        while (true) {
+            VoikkoGrammarError cError = lib.voikkoNextGrammarErrorCstr(handle,
+                    s2n(paragraph), new NativeLong(paragraphLen), new NativeLong(0), skipErrors);
+            if (cError == null) {
+                return;
+            }
+            errorList.add(getGrammarError(cError, offset));
+            lib.voikkoFreeGrammarError(cError);
+            skipErrors++;
+        }
+    }
+
+    private GrammarError getGrammarError(VoikkoGrammarError cError, int offset) {
+        final Libvoikko lib = getLib();
+        int errorCode = lib.voikkoGetGrammarErrorCode(cError);
+        int startPos = lib.voikkoGetGrammarErrorStartPos(cError).intValue();
+        int errorLength = lib.voikkoGetGrammarErrorLength(cError).intValue();
+        Pointer[] cSuggestions = lib.voikkoGetGrammarErrorSuggestions(cError);
+        List<String> suggestions;
+        if (cSuggestions == null) {
+            suggestions = Collections.emptyList();
+        } else {
+            suggestions = new ArrayList<String>(cSuggestions.length);
+            for (Pointer cStr : cSuggestions) {
+                suggestions.add(n2s(cStr.getByteArray(0L, (int) cStr.indexOf(0L, (byte) 0))));
+            }
+        }
+        return new GrammarError(errorCode, offset + startPos, errorLength, suggestions);
+    }
+
+    public String grammarErrorExplanation(int errorCode, String language) {
+        return getLib().voikko_error_message_cstr(errorCode, s2n(language)).toString();
     }
     
 }
