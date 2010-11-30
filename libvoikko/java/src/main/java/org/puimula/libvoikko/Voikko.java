@@ -202,5 +202,25 @@ public class Voikko {
         }
         return result;
     }
+
+    public synchronized List<Sentence> sentences(String text) {
+        requireValidHandle();
+        Libvoikko lib = getLib();
+        List<Sentence> result = new ArrayList<Sentence>();
+        byte[] textBytes = s2n(text);
+        int textLen = textBytes.length - 1;
+        NativeLongByReference sentenceLenByRef = new NativeLongByReference();
+        while (textLen > 0) {
+            int sentenceTypeInt = lib.voikkoNextSentenceStartCstr(handle, textBytes, new NativeLong(textLen), sentenceLenByRef);
+            int sentenceLen = sentenceLenByRef.getValue().intValue();
+            SentenceStartType sentenceType = SentenceStartType.values()[sentenceTypeInt];
+            String tokenText = text.substring(0, sentenceLen);
+            result.add(new Sentence(tokenText, sentenceType));
+            text = text.substring(sentenceLen);
+            textBytes = s2n(text);
+            textLen = textBytes.length - 1;
+        }
+        return result;
+    }
     
 }

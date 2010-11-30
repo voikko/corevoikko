@@ -70,4 +70,7 @@ interface Libvoikko extends Library {
     
     public abstract int voikkoNextTokenCstr(VoikkoHandle handle, byte[] text, NativeLong textLen,
             NativeLongByReference tokenLen);
+    
+    public abstract int voikkoNextSentenceStartCstr(VoikkoHandle handle, byte[] text, NativeLong textLen,
+            NativeLongByReference sentenceLen);
 }

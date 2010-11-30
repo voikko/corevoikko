@@ -194,4 +194,14 @@ public class VoikkoTest {
         assertEquals(TokenType.WORD, tokens.get(8).getType());
         assertEquals("härkä", tokens.get(8).getText());
     }
+    
+    @Test
+    public void sentences() {
+        List<Sentence> sentences = voikko.sentences("Kissa ei ole koira. Koira ei ole kissa.");
+        assertEquals(2, sentences.size());
+        assertEquals("Kissa ei ole koira. ", sentences.get(0).getText());
+        assertEquals(SentenceStartType.PROBABLE, sentences.get(0).getNextStartType());
+        assertEquals("Koira ei ole kissa.", sentences.get(1).getText());
+        assertEquals(SentenceStartType.NONE, sentences.get(1).getNextStartType());
+    }
 }
