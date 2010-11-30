@@ -13,6 +13,7 @@ import org.puimula.libvoikko.Libvoikko.VoikkoHandle;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
+import com.sun.jna.ptr.NativeLongByReference;
 import com.sun.jna.ptr.PointerByReference;
 
 public class Voikko {
@@ -180,6 +181,26 @@ public class Voikko {
         lib.voikko_free_mor_analysis(cAnalysisList);
         
         return analysisList;
+    }
+
+    public synchronized List<Token> tokens(String text) {
+        requireValidHandle();
+        Libvoikko lib = getLib();
+        List<Token> result = new ArrayList<Token>();
+        byte[] textBytes = s2n(text);
+        int textLen = textBytes.length - 1;
+        NativeLongByReference tokenLenByRef = new NativeLongByReference();
+        while (textLen > 0) {
+            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, textBytes, new NativeLong(textLen), tokenLenByRef);
+            int tokenLen = tokenLenByRef.getValue().intValue();
+            TokenType tokenType = TokenType.values()[tokenTypeInt];
+            String tokenText = text.substring(0, tokenLen);
+            result.add(new Token(tokenType, tokenText));
+            text = text.substring(tokenLen);
+            textBytes = s2n(text);
+            textLen = textBytes.length - 1;
+        }
+        return result;
     }
     
 }

@@ -4,6 +4,7 @@ import com.sun.jna.Library;
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
+import com.sun.jna.ptr.NativeLongByReference;
 import com.sun.jna.ptr.PointerByReference;
 
 // XXX: NativeLong is used to represent size_t. This may not work everywhere (64 bit Windows?)
@@ -66,4 +67,7 @@ interface Libvoikko extends Library {
     public abstract ByteArray voikko_mor_analysis_value_cstr(Pointer analysis, byte[] key);
     
     public abstract void voikko_free_mor_analysis_value_cstr(ByteArray analysisValue);
+    
+    public abstract int voikkoNextTokenCstr(VoikkoHandle handle, byte[] text, NativeLong textLen,
+            NativeLongByReference tokenLen);
 }

@@ -182,4 +182,16 @@ public class VoikkoTest {
         assertEquals(1, analysisList.size());
         assertEquals("=pppppp=ppppp=ppppppp", analysisList.get(0).get("STRUCTURE"));
     }
+    
+    @Test
+    public void tokens() {
+        List<Token> tokens = voikko.tokens("kissa ja koira sekä härkä");
+        assertEquals(9, tokens.size());
+        assertEquals(TokenType.WORD, tokens.get(2).getType());
+        assertEquals("ja", tokens.get(2).getText());
+        assertEquals(TokenType.WHITESPACE, tokens.get(7).getType());
+        assertEquals(" ", tokens.get(7).getText());
+        assertEquals(TokenType.WORD, tokens.get(8).getType());
+        assertEquals("härkä", tokens.get(8).getText());
+    }
 }
