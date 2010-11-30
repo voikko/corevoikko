@@ -96,17 +96,21 @@ public class Voikko {
         Pointer[] voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
         List<String> suggestions = new ArrayList<String>(voikkoSuggestCstr.length);
         for (Pointer cStr : voikkoSuggestCstr) {
-            suggestions.add(n2s(cStr.getByteArray(0L, (int) cStr.indexOf(0L, (byte) 0))));
+            suggestions.add(stringFromPointer(cStr));
         }
         getLib().voikkoFreeCstrArray(voikkoSuggestCstr);
         return suggestions;
+    }
+
+    private String stringFromPointer(Pointer cStr) {
+        return n2s(cStr.getByteArray(0L, (int) cStr.indexOf(0L, (byte) 0)));
     }
 
     public synchronized List<GrammarError> grammarErrors(String text) {
         requireValidHandle();
         List<GrammarError> errorList = new ArrayList<GrammarError>();
         int offset = 0;
-        for (String paragraph : text.split("\\n")) {
+        for (String paragraph : text.split("\\r?\\n")) {
             appendErrorsFromParagraph(errorList, paragraph, offset);
             offset += paragraph.length() + 1;
         }
@@ -141,7 +145,7 @@ public class Voikko {
         } else {
             suggestions = new ArrayList<String>(cSuggestions.length);
             for (Pointer cStr : cSuggestions) {
-                suggestions.add(n2s(cStr.getByteArray(0L, (int) cStr.indexOf(0L, (byte) 0))));
+                suggestions.add(stringFromPointer(cStr));
             }
         }
         return new GrammarError(errorCode, offset + startPos, errorLength, suggestions);
@@ -149,6 +153,33 @@ public class Voikko {
 
     public String grammarErrorExplanation(int errorCode, String language) {
         return getLib().voikko_error_message_cstr(errorCode, s2n(language)).toString();
+    }
+
+    public synchronized List<Analysis> analyze(String word) {
+        requireValidHandle();
+        Libvoikko lib = getLib();
+        Pointer[] cAnalysisList = lib.voikkoAnalyzeWordCstr(handle, s2n(word));
+        
+        List<Analysis> analysisList = new ArrayList<Analysis>();
+        
+        if (cAnalysisList == null) {
+            return analysisList;
+        }
+
+        for (Pointer cAnalysis : cAnalysisList) {
+            Pointer[] cKeys = lib.voikko_mor_analysis_keys(cAnalysis);
+            Analysis analysis = new Analysis();
+            for (Pointer cKey : cKeys) {
+                String key = stringFromPointer(cKey);
+                ByteArray value = lib.voikko_mor_analysis_value_cstr(cAnalysis, s2n(key));
+                analysis.put(key, value.toString());
+                lib.voikko_free_mor_analysis_value_cstr(value);
+            }
+            analysisList.add(analysis);
+        }
+        lib.voikko_free_mor_analysis(cAnalysisList);
+        
+        return analysisList;
     }
     
 }

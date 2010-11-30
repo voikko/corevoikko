@@ -161,4 +161,25 @@ public class VoikkoTest {
         assertEquals("Virheellinen kirjoitusasu", voikko.grammarErrorExplanation(code, "fi"));
         assertEquals("Incorrect spelling of word(s)", voikko.grammarErrorExplanation(code, "en"));
     }
+    
+    @Test
+    public void noGrammarErrorsInEmptyParagraph() {
+        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\n\nOlen täi.");
+        assertTrue(errors.isEmpty());
+    }
+    
+    @Test
+    public void grammarErrorOffsetsInMultipleParagraphs() {
+        List<GrammarError> errors = voikko.grammarErrors("Olen täi.\n\nOlen joten kuten.");
+        assertEquals(1, errors.size());
+        assertEquals(16, errors.get(0).getStartPos());
+        assertEquals(11, errors.get(0).getErrorLen());
+    }
+    
+    @Test
+    public void analyze() {
+        List<Analysis> analysisList = voikko.analyze("kansaneläkehakemus");
+        assertEquals(1, analysisList.size());
+        assertEquals("=pppppp=ppppp=ppppppp", analysisList.get(0).get("STRUCTURE"));
+    }
 }
