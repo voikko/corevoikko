@@ -91,4 +91,8 @@ interface Libvoikko extends Library {
     
     public abstract int voikkoNextSentenceStartCstr(VoikkoHandle handle, byte[] text, NativeLong textLen,
             NativeLongByReference sentenceLen);
+
+    public abstract ByteArray voikkoHyphenateCstr(VoikkoHandle handle, byte[] word);
+    
+    public abstract void voikkoFreeCstr(ByteArray cstr);
 }

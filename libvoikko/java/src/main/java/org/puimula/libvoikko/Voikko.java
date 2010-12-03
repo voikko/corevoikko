@@ -240,5 +240,30 @@ public class Voikko {
         }
         return result;
     }
+
+    public synchronized String getHyphenationPattern(String word) {
+        requireValidHandle();
+        ByteArray cPattern = getLib().voikkoHyphenateCstr(handle, s2n(word));
+        String pattern = cPattern.toString();
+        getLib().voikkoFreeCstr(cPattern);
+        return pattern;
+    }
+
+    public String hyphenate(String word) {
+        String pattern = getHyphenationPattern(word);
+        StringBuilder hyphenated = new StringBuilder();
+        for (int i = 0; i < pattern.length(); i++) {
+            char patternC = pattern.charAt(i);
+            if (patternC == ' ') {
+                hyphenated.append(word.charAt(i));
+            } else if (patternC == '-') {
+                hyphenated.append('-');
+                hyphenated.append(word.charAt(i));
+            } else if (patternC == '=') {
+                hyphenated.append('-');
+            }
+        }
+        return hyphenated.toString();
+    }
     
 }

@@ -222,4 +222,20 @@ public class VoikkoTest {
         assertEquals("Koira ei ole kissa.", sentences.get(1).getText());
         assertEquals(SentenceStartType.NONE, sentences.get(1).getNextStartType());
     }
+    
+    @Test
+    public void hyphenationPattern() {
+        assertEquals("   - ", voikko.getHyphenationPattern("kissa"));
+        assertEquals("   - ", voikko.getHyphenationPattern("määrä"));
+        assertEquals("    - =  - ", voikko.getHyphenationPattern("kuorma-auto"));
+        assertEquals("   =  ", voikko.getHyphenationPattern("vaa'an"));
+    }
+    
+    @Test
+    public void hyphenate() {
+        assertEquals("kis-sa", voikko.hyphenate("kissa"));
+        assertEquals("mää-rä", voikko.hyphenate("määrä"));
+        assertEquals("kuor-ma-au-to", voikko.hyphenate("kuorma-auto"));
+        assertEquals("vaa-an", voikko.hyphenate("vaa'an"));
+    }
 }
