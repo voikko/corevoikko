@@ -114,6 +114,9 @@ public class Voikko {
     public synchronized List<String> suggest(String word) {
         requireValidHandle();
         Pointer voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
+        if (voikkoSuggestCstr == null) {
+            return Collections.emptyList();
+        }
         Pointer[] pointerArray = voikkoSuggestCstr.getPointerArray(0);
         List<String> suggestions = new ArrayList<String>(pointerArray.length);
         for (Pointer cStr : pointerArray) {
@@ -331,5 +334,32 @@ public class Voikko {
 
     public void setHyphenateUnknownWords(boolean value) {
         setBoolOption(15, value);
+    }
+
+    private synchronized void setIntegerOption(int option, int value) {
+        requireValidHandle();
+        int result = getLib().voikkoSetIntegerOption(handle, option, value);
+        if (result == 0) {
+            throw new VoikkoException("Could not set integer option " + option + " to value " + value + ".");
+        }
+    }
+    
+    public void setMinHyphenatedWordLength(int length) {
+        setIntegerOption(9, length);
+    }
+
+    public void setSpellerCacheSize(int sizeParam) {
+        setIntegerOption(17, sizeParam);
+    }
+
+    public void setSuggestionStrategy(SuggestionStrategy suggestionStrategy) {
+        switch (suggestionStrategy) {
+        case OCR:
+            setBoolOption(8, true);
+            break;
+        case TYPO:
+            setBoolOption(8, false);
+            break;
+        }
     }
 }

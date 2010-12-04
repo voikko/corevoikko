@@ -162,6 +162,7 @@ public class VoikkoTest {
     public void suggest() {
         assertTrue(voikko.suggest("koirra").contains("koira"));
         assertTrue(voikko.suggest("määärä").contains("määrä"));
+        assertTrue(voikko.suggest("lasjkblvankirknaslvethikertvhgn").isEmpty());
     }
     
     @Test
@@ -368,5 +369,36 @@ public class VoikkoTest {
         assertEquals("kirjutepo", voikko.hyphenate("kirjutepo"));
         voikko.setHyphenateUnknownWords(true);
         assertEquals("kir-ju-te-po", voikko.hyphenate("kirjutepo"));
+    }
+    
+    @Test
+    public void setMinHyphenatedWordLength() {
+        voikko.setMinHyphenatedWordLength(6);
+        assertEquals("koira", voikko.hyphenate("koira"));
+        voikko.setMinHyphenatedWordLength(2);
+        assertEquals("koi-ra", voikko.hyphenate("koira"));
+    }
+    
+    @Test
+    public void increaseSpellerCacheSize() {
+        // TODO: this only tests that nothing breaks, not that cache is actually increased
+        voikko.setSpellerCacheSize(3);
+        assertTrue(voikko.spell("kissa"));
+    }
+    
+    @Test
+    public void disableSpellerCache() {
+        // TODO: this only tests that nothing breaks, not that cache is actually disabled
+        voikko.setSpellerCacheSize(-1);
+        assertTrue(voikko.spell("kissa"));
+    }
+    
+    @Test
+    public void setSuggestionStrategy() {
+        voikko.setSuggestionStrategy(SuggestionStrategy.OCR);
+        assertFalse(voikko.suggest("koari").contains("koira"));
+        assertTrue(voikko.suggest("koir_").contains("koira"));
+        voikko.setSuggestionStrategy(SuggestionStrategy.TYPO);
+        assertTrue(voikko.suggest("koari").contains("koira"));
     }
 }
