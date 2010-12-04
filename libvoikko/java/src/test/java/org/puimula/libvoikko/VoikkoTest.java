@@ -337,4 +337,36 @@ public class VoikkoTest {
         voikko.setAcceptTitlesInGc(true);
         assertEquals(0, voikko.grammarErrors("Kissa on eläin").size());
     }
+    
+    @Test
+    public void setAcceptUnfinishedParagraphsInGc() {
+        voikko.setAcceptUnfinishedParagraphsInGc(false);
+        assertEquals(1, voikko.grammarErrors("Kissa on ").size());
+        voikko.setAcceptUnfinishedParagraphsInGc(true);
+        assertEquals(0, voikko.grammarErrors("Kissa on ").size());
+    }
+    
+    @Test
+    public void setAcceptBulletedListsInGc() {
+        voikko.setAcceptBulletedListsInGc(false);
+        assertFalse(voikko.grammarErrors("kissa").isEmpty());
+        voikko.setAcceptBulletedListsInGc(true);
+        assertTrue(voikko.grammarErrors("kissa").isEmpty());
+    }
+    
+    @Test
+    public void setNoUglyHyphenation() {
+        voikko.setNoUglyHyphenation(false);
+        assertEquals("i-va", voikko.hyphenate("iva"));
+        voikko.setNoUglyHyphenation(true);
+        assertEquals("iva", voikko.hyphenate("iva"));
+    }
+    
+    @Test
+    public void setHyphenateUnknownWordsWorks() {
+        voikko.setHyphenateUnknownWords(false);
+        assertEquals("kirjutepo", voikko.hyphenate("kirjutepo"));
+        voikko.setHyphenateUnknownWords(true);
+        assertEquals("kir-ju-te-po", voikko.hyphenate("kirjutepo"));
+    }
 }

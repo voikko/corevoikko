@@ -316,5 +316,20 @@ public class Voikko {
     public void setAcceptTitlesInGc(boolean value) {
         setBoolOption(13, value);
     }
-    
+
+    public void setAcceptUnfinishedParagraphsInGc(boolean value) {
+        setBoolOption(14, value);
+    }
+
+    public void setAcceptBulletedListsInGc(boolean value) {
+        setBoolOption(16, value);
+    }
+
+    public void setNoUglyHyphenation(boolean value) {
+        setBoolOption(4, value);
+    }
+
+    public void setHyphenateUnknownWords(boolean value) {
+        setBoolOption(15, value);
+    }
 }
