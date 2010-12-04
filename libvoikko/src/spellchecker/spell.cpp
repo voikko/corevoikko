@@ -101,7 +101,7 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 		return VOIKKO_SPELL_OK;
 	}
 	if (nchars > LIBVOIKKO_MAX_WORD_CHARS) {
-		return VOIKKO_INTERNAL_ERROR;
+		return VOIKKO_SPELL_FAILED;
 	}
 	
 	wchar_t * nword = voikko_normalise(word, nchars);
@@ -229,7 +229,7 @@ VOIKKOEXPORT int voikkoSpellCstr(voikko_options_t * handle, const char * word) {
 	}
 	size_t len = strlen(word);
 	if (len > LIBVOIKKO_MAX_WORD_CHARS) {
-		return 0;
+		return VOIKKO_SPELL_FAILED;
 	}
 	wchar_t * word_ucs4 = utils::StringUtils::ucs4FromUtf8(word, len);
 	if (word_ucs4 == 0) {

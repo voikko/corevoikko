@@ -1,3 +1,9 @@
+2010-12-04 Harri Pitkänen <hatapitk@iki.fi>
+	* Consistently return SPELL_FAILED instead of INTERNAL_ERROR
+	  when too long word is spell checked.
+	* Mark fixed limits deprecated. In the future different backends
+	  may have different limits and users of the library should not care.
+
 2010-11-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Clear Malaga heap at the end of analyse_item. This reduces
 	  the need for garbage collecting and makes bugs in Malaga VM

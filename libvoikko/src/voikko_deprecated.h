@@ -57,6 +57,13 @@
 #define VOIKKO_OPT_ENCODING 2
 
 /**
+ * Maximum number of analyses for a word. Not strictly enforced anymore.
+ * Backends should still limit the number of analyses if necessary to
+ * avoid combinatorial explosion.
+ */
+#define LIBVOIKKO_MAX_ANALYSIS_COUNT 31
+
+/**
  * See the notice about thread safety at the top of this file.
  * @param langcode the language code. The following values can be used:
  *        - "", "default" or "fi_FI": Use the default dictionary. The default

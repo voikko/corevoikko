@@ -100,11 +100,9 @@ void AnalyzerToFinnishHyphenatorAdapter::setIgnoreDot(bool ignoreDot) {
 
 char ** AnalyzerToFinnishHyphenatorAdapter::splitCompounds(const wchar_t * word,
 	                size_t len, bool * dotRemoved) {
-	char ** allResults = new char*[LIBVOIKKO_MAX_ANALYSIS_COUNT + 1];
-	if (allResults == 0) {
-		return 0;
-	}
-	allResults[LIBVOIKKO_MAX_ANALYSIS_COUNT] = 0;
+	const unsigned int MAX_ANALYSIS_COUNT = 31; // TODO: remove hard limit
+	char ** allResults = new char*[MAX_ANALYSIS_COUNT + 1];
+	allResults[MAX_ANALYSIS_COUNT] = 0;
 	char * wordUtf8 = utils::StringUtils::utf8FromUcs4(word, len);
 	if (wordUtf8 == 0) {
 		delete[] allResults;
@@ -138,7 +136,7 @@ char ** AnalyzerToFinnishHyphenatorAdapter::splitCompounds(const wchar_t * word,
 			result[len - 1] = ' ';
 		}
 		allResults[analysisCount] = result;
-		if (++analysisCount == LIBVOIKKO_MAX_ANALYSIS_COUNT) {
+		if (++analysisCount == MAX_ANALYSIS_COUNT) {
 			break;
 		}
 	}

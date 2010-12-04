@@ -30,6 +30,8 @@ using namespace libvoikko::character;
 
 namespace libvoikko { namespace morphology {
 
+static const int MAX_ANALYSIS_COUNT = 31;
+
 MalagaAnalyzer::MalagaAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
 	malaga::init_libmalaga(directoryName.c_str(), &malagaState);
 	initSymbols();
@@ -59,7 +61,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 		analyse_item(word, &malagaState);
 		value_t res = first_analysis_result(&malagaState);
 		int currentAnalysisCount = 0;
-		while (res && currentAnalysisCount < LIBVOIKKO_MAX_ANALYSIS_COUNT) {
+		while (res && currentAnalysisCount < MAX_ANALYSIS_COUNT) {
 			Analysis * analysis = new Analysis();
 			parseStructure(analysis, res);
 			parseBasicAttribute(analysis, res, symbols[MS_SIJAMUOTO], "SIJAMUOTO");

@@ -286,8 +286,8 @@ class LibvoikkoOldTest(unittest.TestCase):
 		self.voikko.analyze(complexWord)
 	
 	
-	def testOverLongWordsThrowExceptionDuringSpellCheck(self):
-		# Limit is 255 characters
+	def testOverLongWordsAreRejectedDuringSpellCheck(self):
+		# Limit is 255 characters. This behavior is deprecated and may change.
 		longWord = u""
 		for i in range(0, 25):
 			longWord = longWord + u"kuraattori"
@@ -296,12 +296,10 @@ class LibvoikkoOldTest(unittest.TestCase):
 		
 		longWord = longWord + u"kuraattori"
 		self.failUnless(len(longWord) > libvoikkoOld.MAX_WORD_CHARS)
-		def trySpell():
-			self.voikko.spell(longWord)
-		self.assertRaises(libvoikkoOld.VoikkoException, trySpell)
+		self.failIf(self.voikko.spell(longWord))
 	
 	def testOverLongWordsAreNotAnalyzed(self):
-		# Limit is 255 characters
+		# Limit is 255 characters. This behavior is deprecated and may change.
 		longWord = u""
 		for i in range(0, 25):
 			longWord = longWord + u"kuraattori"

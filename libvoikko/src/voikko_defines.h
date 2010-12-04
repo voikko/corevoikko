@@ -29,9 +29,12 @@
 # define END_C_DECLS /* empty */
 #endif
 
-/* Fixed limits */
+/**
+ * Maximum number of characters in a word. Will be deprecated. These days
+ * backends may have different limits and they will behave sensibly (for
+ * example return SPELL_FAILED) if a too long word is given.
+ */
 #define LIBVOIKKO_MAX_WORD_CHARS 255
-#define LIBVOIKKO_MAX_ANALYSIS_COUNT 31
 
 /* Spell checker return codes */
 #define VOIKKO_SPELL_FAILED 0
