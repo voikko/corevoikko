@@ -100,9 +100,10 @@ public class Voikko {
         
     public static List<Dictionary> listDicts(String path) {
         Libvoikko lib = getLib();
-        Pointer[] cDicts = lib.voikko_list_dicts(s2n(path));
-        List<Dictionary> dicts = new ArrayList<Dictionary>(cDicts.length);
-        for (Pointer cDict : cDicts) {
+        Pointer cDicts = lib.voikko_list_dicts(s2n(path));
+        Pointer[] pointerArray = cDicts.getPointerArray(0);
+        List<Dictionary> dicts = new ArrayList<Dictionary>(pointerArray.length);
+        for (Pointer cDict : pointerArray) {
             dicts.add(new Dictionary(lib.voikko_dict_language(cDict).toString(),
                     lib.voikko_dict_variant(cDict).toString(), lib.voikko_dict_description(cDict).toString()));
         }
@@ -112,9 +113,10 @@ public class Voikko {
 
     public synchronized List<String> suggest(String word) {
         requireValidHandle();
-        Pointer[] voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
-        List<String> suggestions = new ArrayList<String>(voikkoSuggestCstr.length);
-        for (Pointer cStr : voikkoSuggestCstr) {
+        Pointer voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
+        Pointer[] pointerArray = voikkoSuggestCstr.getPointerArray(0);
+        List<String> suggestions = new ArrayList<String>(pointerArray.length);
+        for (Pointer cStr : pointerArray) {
             suggestions.add(stringFromPointer(cStr));
         }
         getLib().voikkoFreeCstrArray(voikkoSuggestCstr);
@@ -157,13 +159,14 @@ public class Voikko {
         int errorCode = lib.voikkoGetGrammarErrorCode(cError);
         int startPos = lib.voikkoGetGrammarErrorStartPos(cError).intValue();
         int errorLength = lib.voikkoGetGrammarErrorLength(cError).intValue();
-        Pointer[] cSuggestions = lib.voikkoGetGrammarErrorSuggestions(cError);
+        Pointer cSuggestions = lib.voikkoGetGrammarErrorSuggestions(cError);
         List<String> suggestions;
         if (cSuggestions == null) {
             suggestions = Collections.emptyList();
         } else {
-            suggestions = new ArrayList<String>(cSuggestions.length);
-            for (Pointer cStr : cSuggestions) {
+            Pointer[] pointerArray = cSuggestions.getPointerArray(0);
+            suggestions = new ArrayList<String>(pointerArray.length);
+            for (Pointer cStr : pointerArray) {
                 suggestions.add(stringFromPointer(cStr));
             }
         }
@@ -177,7 +180,7 @@ public class Voikko {
     public synchronized List<Analysis> analyze(String word) {
         requireValidHandle();
         Libvoikko lib = getLib();
-        Pointer[] cAnalysisList = lib.voikkoAnalyzeWordCstr(handle, s2n(word));
+        Pointer cAnalysisList = lib.voikkoAnalyzeWordCstr(handle, s2n(word));
         
         List<Analysis> analysisList = new ArrayList<Analysis>();
         
@@ -185,10 +188,10 @@ public class Voikko {
             return analysisList;
         }
 
-        for (Pointer cAnalysis : cAnalysisList) {
-            Pointer[] cKeys = lib.voikko_mor_analysis_keys(cAnalysis);
+        for (Pointer cAnalysis : cAnalysisList.getPointerArray(0)) {
+            Pointer cKeys = lib.voikko_mor_analysis_keys(cAnalysis);
             Analysis analysis = new Analysis();
-            for (Pointer cKey : cKeys) {
+            for (Pointer cKey : cKeys.getPointerArray(0)) {
                 String key = stringFromPointer(cKey);
                 ByteArray value = lib.voikko_mor_analysis_value_cstr(cAnalysis, s2n(key));
                 analysis.put(key, value.toString());
@@ -264,6 +267,54 @@ public class Voikko {
             }
         }
         return hyphenated.toString();
+    }
+
+    private static int boolToInt(boolean value) {
+        return value ? 1 : 0;
+    }
+    
+    private synchronized void setBoolOption(int option, boolean value) {
+        requireValidHandle();
+        int result = getLib().voikkoSetBooleanOption(handle, option, boolToInt(value));
+        if (result == 0) {
+            throw new VoikkoException("Could not set boolean option " + option + " to value " + value + ".");
+        }
+    }
+    
+    public void setIgnoreDot(boolean value) {
+        setBoolOption(0, value);
+    }
+
+    public void setIgnoreNumbers(boolean value) {
+        setBoolOption(1, value);
+    }
+
+    public void setIgnoreUppercase(boolean value) {
+        setBoolOption(3, value);
+    }
+
+    public void setAcceptFirstUppercase(boolean value) {
+        setBoolOption(6, value);
+    }
+
+    public void setAcceptAllUppercase(boolean value) {
+        setBoolOption(7, value);
+    }
+
+    public void setIgnoreNonwords(boolean value) {
+        setBoolOption(10, value);
+    }
+
+    public void setAcceptExtraHyphens(boolean value) {
+        setBoolOption(11, value);
+    }
+
+    public void setAcceptMissingHyphens(boolean value) {
+        setBoolOption(12, value);
+    }
+
+    public void setAcceptTitlesInGc(boolean value) {
+        setBoolOption(13, value);
     }
     
 }

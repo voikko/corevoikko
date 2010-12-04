@@ -47,9 +47,9 @@ interface Libvoikko extends Library {
 
     public abstract int voikkoSpellCstr(VoikkoHandle handle, byte[] word);
 
-    public abstract Pointer[] voikko_list_dicts(byte[] path);
+    public abstract Pointer voikko_list_dicts(byte[] path);
     
-    public abstract void voikko_free_dicts(Pointer[] dicts);
+    public abstract void voikko_free_dicts(Pointer dicts);
     
     public abstract ByteArray voikko_dict_language(Pointer dict);
     
@@ -57,9 +57,9 @@ interface Libvoikko extends Library {
     
     public abstract ByteArray voikko_dict_description(Pointer dict);
 
-    public abstract Pointer[] voikkoSuggestCstr(VoikkoHandle handle, byte[] word);
+    public abstract Pointer voikkoSuggestCstr(VoikkoHandle handle, byte[] word);
     
-    public abstract void voikkoFreeCstrArray(Pointer[] array);
+    public abstract void voikkoFreeCstrArray(Pointer array);
     
     public abstract VoikkoGrammarError voikkoNextGrammarErrorCstr(VoikkoHandle handle, byte[] text,
             NativeLong textLen, NativeLong startPos, int skipErrors);
@@ -72,15 +72,15 @@ interface Libvoikko extends Library {
     
     public abstract NativeLong voikkoGetGrammarErrorLength(VoikkoGrammarError error);
     
-    public abstract Pointer[] voikkoGetGrammarErrorSuggestions(VoikkoGrammarError error);
+    public abstract Pointer voikkoGetGrammarErrorSuggestions(VoikkoGrammarError error);
     
     public abstract ByteArray voikko_error_message_cstr(int errorCode, byte[] language);
     
-    public abstract Pointer[] voikkoAnalyzeWordCstr(VoikkoHandle handle, byte[] word);
+    public abstract Pointer voikkoAnalyzeWordCstr(VoikkoHandle handle, byte[] word);
     
-    public abstract void voikko_free_mor_analysis(Pointer[] analysis);
+    public abstract void voikko_free_mor_analysis(Pointer analysis);
     
-    public abstract Pointer[] voikko_mor_analysis_keys(Pointer analysis);
+    public abstract Pointer voikko_mor_analysis_keys(Pointer analysis);
     
     public abstract ByteArray voikko_mor_analysis_value_cstr(Pointer analysis, byte[] key);
     
@@ -95,4 +95,6 @@ interface Libvoikko extends Library {
     public abstract ByteArray voikkoHyphenateCstr(VoikkoHandle handle, byte[] word);
     
     public abstract void voikkoFreeCstr(ByteArray cstr);
+
+    public abstract int voikkoSetBooleanOption(VoikkoHandle handle, int option, int value);
 }

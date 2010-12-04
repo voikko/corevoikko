@@ -42,6 +42,10 @@ public class VoikkoTest {
     @After
     public void tearDown() {
         voikko.terminate();
+        // Do garbage collection after every test method. This will make errors
+        // in native memory management (double frees etc.) more likely to show up.
+        voikko = null;
+        System.gc();
     }
 
     @Test
@@ -161,6 +165,18 @@ public class VoikkoTest {
     }
     
     @Test
+    public void suggestGc() {
+        assertTrue(voikko.suggest("määärä").contains("määrä"));
+        System.gc();
+        assertTrue(voikko.suggest("määärä").contains("määrä"));
+        System.gc();
+        assertTrue(voikko.suggest("määärä").contains("määrä"));
+        System.gc();
+        assertTrue(voikko.suggest("määärä").contains("määrä"));
+        System.gc();
+    }
+    
+    @Test
     public void suggestReturnsArgumentIfWordIsCorrect() {
         List<String> suggestions = voikko.suggest("koira");
         assertEquals(1, suggestions.size());
@@ -237,5 +253,88 @@ public class VoikkoTest {
         assertEquals("mää-rä", voikko.hyphenate("määrä"));
         assertEquals("kuor-ma-au-to", voikko.hyphenate("kuorma-auto"));
         assertEquals("vaa-an", voikko.hyphenate("vaa'an"));
+    }
+    
+    @Test
+    public void setIgnoreDot() {
+        voikko.setIgnoreDot(false);
+        assertFalse(voikko.spell("kissa."));
+        voikko.setIgnoreDot(true);
+        assertTrue(voikko.spell("kissa."));
+    }
+    
+    @Test
+    public void setIgnoreNumbers() {
+        voikko.setIgnoreNumbers(false);
+        assertFalse(voikko.spell("kissa2"));
+        voikko.setIgnoreNumbers(true);
+        assertTrue(voikko.spell("kissa2"));
+    }
+    
+    @Test
+    public void setIgnoreUppercase() {
+        voikko.setIgnoreUppercase(false);
+        assertFalse(voikko.spell("KAAAA"));
+        voikko.setIgnoreUppercase(true);
+        assertTrue(voikko.spell("KAAAA"));
+    }
+    
+    @Test
+    public void setAcceptFirstUppercase() {
+        voikko.setAcceptFirstUppercase(false);
+        assertFalse(voikko.spell("Kissa"));
+        voikko.setAcceptFirstUppercase(true);
+        assertTrue(voikko.spell("Kissa"));
+    }
+    
+    @Test
+    public void upperCaseScandinavianLetters() {
+        assertTrue(voikko.spell("Äiti"));
+        assertFalse(voikko.spell("Ääiti"));
+        assertTrue(voikko.spell("š"));
+        assertTrue(voikko.spell("Š"));
+    }
+    
+    @Test
+    public void acceptAllUppercase() {
+        voikko.setIgnoreUppercase(false);
+        voikko.setAcceptAllUppercase(false);
+        assertFalse(voikko.spell("KISSA"));
+        voikko.setAcceptAllUppercase(true);
+        assertTrue(voikko.spell("KISSA"));
+        assertFalse(voikko.spell("KAAAA"));
+    }
+    
+    @Test
+    public void ignoreNonwords() {
+        voikko.setIgnoreNonwords(false);
+        assertFalse(voikko.spell("hatapitk@iki.fi"));
+        voikko.setIgnoreNonwords(true);
+        assertTrue(voikko.spell("hatapitk@iki.fi"));
+        assertFalse(voikko.spell("ashdaksd"));
+    }
+    
+    @Test
+    public void acceptExtraHyphens() {
+        voikko.setAcceptExtraHyphens(false);
+        assertFalse(voikko.spell("kerros-talo"));
+        voikko.setAcceptExtraHyphens(true);
+        assertTrue(voikko.spell("kerros-talo"));
+    }
+    
+    @Test
+    public void acceptMissingHyphens() {
+        voikko.setAcceptMissingHyphens(false);
+        assertFalse(voikko.spell("sosiaali"));
+        voikko.setAcceptMissingHyphens(true);
+        assertTrue(voikko.spell("sosiaali"));
+    }
+    
+    @Test
+    public void setAcceptTitlesInGc() {
+        voikko.setAcceptTitlesInGc(false);
+        assertEquals(1, voikko.grammarErrors("Kissa on eläin").size());
+        voikko.setAcceptTitlesInGc(true);
+        assertEquals(0, voikko.grammarErrors("Kissa on eläin").size());
     }
 }
