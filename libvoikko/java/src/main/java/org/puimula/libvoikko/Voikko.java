@@ -78,14 +78,7 @@ public class Voikko {
     public synchronized boolean spell(String word) {
         requireValidHandle();
         int spellResult = getLib().voikkoSpellCstr(handle, s2n(word));
-        switch (spellResult) {
-        case Libvoikko.VOIKKO_SPELL_OK:
-            return true;
-        case Libvoikko.VOIKKO_SPELL_FAILED:
-            return false;
-        default:
-            throw new VoikkoException("Internal error returned from libvoikko");
-        }
+        return (spellResult == Libvoikko.VOIKKO_SPELL_OK);
     }
 
     private void requireValidHandle() {

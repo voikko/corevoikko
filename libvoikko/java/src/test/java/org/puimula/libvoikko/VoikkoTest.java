@@ -32,6 +32,8 @@ import org.junit.Test;
 
 public class VoikkoTest {
 
+    private static final int DEPRECATED_MAX_ANALYSIS_COUNT = 31;
+    private static final int DEPRECATED_MAX_WORD_CHARS = 255;
     private Voikko voikko;
 
     @Before
@@ -400,5 +402,53 @@ public class VoikkoTest {
         assertTrue(voikko.suggest("koir_").contains("koira"));
         voikko.setSuggestionStrategy(SuggestionStrategy.TYPO);
         assertTrue(voikko.suggest("koari").contains("koira"));
+    }
+    
+    @Test
+    public void maxAnalysisCountIsNotPassed() {
+        String complexWord = "lumenerolumenerolumenerolumenerolumenero";
+        assertTrue(voikko.analyze(complexWord).size() <= DEPRECATED_MAX_ANALYSIS_COUNT);
+    }
+    
+    @Test
+    public void morPruningWorks() {
+        // TODO: this test will not fail, it just takes very long time
+        // if pruning does not work.
+        StringBuilder complexWord = new StringBuilder();
+        for (int i = 0; i < 20; i++) {
+            complexWord.append("lumenero");
+        }
+        assertTrue(complexWord.length() < DEPRECATED_MAX_WORD_CHARS);
+        voikko.analyze(complexWord.toString());
+    }
+    
+    @Test
+    public void overLongWordIsRejectedDuringSpellCheck() {
+        // This tests backend specific deprecated functionality.
+        StringBuilder complexWord = new StringBuilder();
+        for (int i = 0; i < 25; i++) {
+            complexWord.append("kuraattori");
+        }
+        assertTrue(complexWord.length() < DEPRECATED_MAX_WORD_CHARS);
+        assertTrue(voikko.spell(complexWord.toString()));
+        
+        complexWord.append("kuraattori");
+        assertTrue(complexWord.length() > DEPRECATED_MAX_WORD_CHARS);
+        assertFalse(voikko.spell(complexWord.toString()));
+    }
+    
+    @Test
+    public void OverLongWordsAreNotAnalyzed() {
+        // This tests backend specific deprecated functionality.
+        StringBuilder complexWord = new StringBuilder();
+        for (int i = 0; i < 25; i++) {
+            complexWord.append("kuraattori");
+        }
+        assertTrue(complexWord.length() < DEPRECATED_MAX_WORD_CHARS);
+        assertEquals(1, voikko.analyze(complexWord.toString()).size());
+        
+        complexWord.append("kuraattori");
+        assertTrue(complexWord.length() > DEPRECATED_MAX_WORD_CHARS);
+        assertEquals(0, voikko.analyze(complexWord.toString()).size());
     }
 }
