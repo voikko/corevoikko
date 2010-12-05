@@ -50,7 +50,12 @@ public class Voikko {
 
     private synchronized static Libvoikko getLib() {
         if (library == null) {
-            library = (Libvoikko) Native.loadLibrary("voikko", Libvoikko.class); // TODO: voikko-1 on Windows
+            try {
+                library = (Libvoikko) Native.loadLibrary("voikko", Libvoikko.class);
+            } catch (UnsatisfiedLinkError e) {
+                // On Windows major version of library API is part of the library name
+                library = (Libvoikko) Native.loadLibrary("voikko-1", Libvoikko.class);  
+            }
         }
         return library;
     }
@@ -117,10 +122,19 @@ public class Voikko {
         }
     }
 
+    /**
+     * @return a list of Dictionary objects representing the available
+     * dictionary variants within standard search path.
+     */
     public static List<Dictionary> listDicts() {
         return listDicts(null);
     }
         
+    /**
+     * @param path
+     * @return a list of Dictionary objects representing the available
+     * dictionary variants within given directory and standard search path.
+     */
     public static List<Dictionary> listDicts(String path) {
         Libvoikko lib = getLib();
         Pointer cDicts = lib.voikko_list_dicts(s2n(path));
@@ -134,6 +148,11 @@ public class Voikko {
         return dicts;
     }
 
+    /**
+     * @param word
+     * @return a list of suggested spellings for given (misspelled) word.
+     * If the given word is correct, the list contains only the word itself
+     */
     public synchronized List<String> suggest(String word) {
         requireValidHandle();
         Pointer voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
@@ -153,6 +172,14 @@ public class Voikko {
         return n2s(cStr.getByteArray(0L, (int) cStr.indexOf(0L, (byte) 0)));
     }
 
+    /**
+     * Check the given text for grammar errors and return a
+     * list of GrammarError objects representing the errors that were found.
+     * Unlike the C based API this method accepts multiple paragraphs
+     * separated by newline characters.
+     * @param text
+     * @return
+     */
     public synchronized List<GrammarError> grammarErrors(String text) {
         requireValidHandle();
         List<GrammarError> errorList = new ArrayList<GrammarError>();
@@ -199,10 +226,21 @@ public class Voikko {
         return new GrammarError(errorCode, offset + startPos, errorLength, suggestions);
     }
 
+    /**
+     * @param errorCode grammar error code
+     * @param language language in which the explanation should be returned
+     * @return a human readable explanation for grammar error
+     */
     public String grammarErrorExplanation(int errorCode, String language) {
         return getLib().voikko_error_message_cstr(errorCode, s2n(language)).toString();
     }
 
+    /**
+     * Analyze the morphology of given word and return the list of
+     * analysis results.
+     * @param word
+     * @return
+     */
     public synchronized List<Analysis> analyze(String word) {
         requireValidHandle();
         Libvoikko lib = getLib();
@@ -230,6 +268,11 @@ public class Voikko {
         return analysisList;
     }
 
+    /**
+     * Split the given natural language text into a list of Token objects.
+     * @param text
+     * @return
+     */
     public synchronized List<Token> tokens(String text) {
         requireValidHandle();
         Libvoikko lib = getLib();
@@ -250,6 +293,11 @@ public class Voikko {
         return result;
     }
 
+    /**
+     * Split the given natural language text into a list of Sentence objects.
+     * @param text
+     * @return
+     */
     public synchronized List<Sentence> sentences(String text) {
         requireValidHandle();
         Libvoikko lib = getLib();
@@ -270,6 +318,16 @@ public class Voikko {
         return result;
     }
 
+    /**
+     * Return a character pattern that describes the hyphenation of given word.
+     *   ' ' = no hyphenation at this character,
+     *   '-' = hyphenation point (character at this position
+     *         is preserved in the hyphenated form),
+     *   '=' = hyphentation point (character at this position
+     *         is replaced by the hyphen.)
+     * @param word
+     * @return
+     */
     public synchronized String getHyphenationPattern(String word) {
         requireValidHandle();
         ByteArray cPattern = getLib().voikkoHyphenateCstr(handle, s2n(word));
@@ -278,6 +336,10 @@ public class Voikko {
         return pattern;
     }
 
+    /**
+     * @param word
+     * @return the given word in fully hyphenated form.
+     */
     public String hyphenate(String word) {
         String pattern = getHyphenationPattern(word);
         StringBuilder hyphenated = new StringBuilder();
@@ -307,54 +369,138 @@ public class Voikko {
         }
     }
     
+    /**
+     * Ignore dot at the end of the word (needed for use in some word processors).
+     * If this option is set and input word ends with a dot, spell checking and
+     * hyphenation functions try to analyze the word without the dot if no results
+     * can be obtained for the original form. Also with this option, string tokenizer
+     * will consider trailing dot of a word to be a part of that word.
+     * Default: false
+     * @param value
+     */
     public void setIgnoreDot(boolean value) {
         setBoolOption(0, value);
     }
 
+    /**
+     * Ignore words containing numbers.
+     * Default: false
+     * @param value
+     */
     public void setIgnoreNumbers(boolean value) {
         setBoolOption(1, value);
     }
 
+    /**
+     * Accept words that are written completely in uppercase letters without checking
+     * them at all.
+     * Default: false
+     * @param value
+     */
     public void setIgnoreUppercase(boolean value) {
         setBoolOption(3, value);
     }
 
+    /**
+     * Accept words even when the first letter is in uppercase (start of sentence etc.)
+     * Default: true
+     * @param value
+     */
     public void setAcceptFirstUppercase(boolean value) {
         setBoolOption(6, value);
     }
 
+    /**
+     * Accept words even when all of the letters are in uppercase. Note that this is
+     * not the same as setIgnoreUppercase: with this option the word is still
+     * checked, only case differences are ignored.
+     * Default: true
+     * @param value
+     */
     public void setAcceptAllUppercase(boolean value) {
         setBoolOption(7, value);
     }
 
+    /**
+     * (Spell checking only): Ignore non-words such as URLs and email addresses.
+     * Default: true
+     * @param value
+     */
     public void setIgnoreNonwords(boolean value) {
         setBoolOption(10, value);
     }
 
+    /**
+     * (Spell checking only): Allow some extra hyphens in words. This option relaxes
+     * hyphen checking rules to work around some unresolved issues in the underlying
+     * morphology, but it may cause some incorrect words to be accepted. The exact
+     * behaviour (if any) of this option is not specified.
+     * Default: false
+     * @param value
+     */
     public void setAcceptExtraHyphens(boolean value) {
         setBoolOption(11, value);
     }
 
+    /**
+     * (Spell checking only): Accept missing hyphens at the start and end of the word.
+     * Some application programs do not consider hyphens to be word characters. This
+     * is reasonable assumption for many languages but not for Finnish. If the
+     * application cannot be fixed to use proper tokenization algorithm for Finnish,
+     * this option may be used to tell libvoikko to work around this defect.
+     * Default: false
+     * @param value
+     */
     public void setAcceptMissingHyphens(boolean value) {
         setBoolOption(12, value);
     }
 
+    /**
+     * (Grammar checking only): Accept incomplete sentences that could occur in
+     * titles or headings. Set this option to true if your application is not able
+     * to differentiate titles from normal text paragraphs, or if you know that
+     * you are checking title text.
+     * Default: false
+     * @param value
+     */
     public void setAcceptTitlesInGc(boolean value) {
         setBoolOption(13, value);
     }
 
+    /**
+     * (Grammar checking only): Accept incomplete sentences at the end of the
+     * paragraph. These may exist when text is still being written.
+     * Default: false
+     * @param value
+     */
     public void setAcceptUnfinishedParagraphsInGc(boolean value) {
         setBoolOption(14, value);
     }
 
+    /**
+     * (Grammar checking only): Accept paragraphs if they would be valid within
+     * bulleted lists.
+     * Default: false
+     * @param value
+     */
     public void setAcceptBulletedListsInGc(boolean value) {
         setBoolOption(16, value);
     }
 
+    /**
+     * Do not insert hyphenation positions that are considered to be ugly but correct
+     * Default: false
+     * @param value
+     */
     public void setNoUglyHyphenation(boolean value) {
         setBoolOption(4, value);
     }
 
+    /**
+     * (Hyphenation only): Hyphenate unknown words.
+     * Default: true
+     * @param value
+     */
     public void setHyphenateUnknownWords(boolean value) {
         setBoolOption(15, value);
     }
@@ -367,14 +513,30 @@ public class Voikko {
         }
     }
     
+    /**
+     * The minimum length for words that may be hyphenated. This limit is also enforced on
+     * individual parts of compound words.
+     * Default: 2
+     * @param length
+     */
     public void setMinHyphenatedWordLength(int length) {
         setIntegerOption(9, length);
     }
 
+    /**
+     * Controls the size of in memory cache for spell checking results. 0 is the default size,
+     * 1 is twice as large as 0 etc. -1 disables the spell checking cache entirely.
+     * @param sizeParam
+     */
     public void setSpellerCacheSize(int sizeParam) {
         setIntegerOption(17, sizeParam);
     }
 
+    /**
+     * Set the suggestion strategy to be used when generating spelling suggestions.
+      Default: {@link SuggestionStrategy#TYPO}
+     * @param suggestionStrategy
+     */
     public void setSuggestionStrategy(SuggestionStrategy suggestionStrategy) {
         switch (suggestionStrategy) {
         case OCR:
