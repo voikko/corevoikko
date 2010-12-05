@@ -23,6 +23,9 @@ import java.nio.charset.Charset;
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 
+/**
+ * String mapping helper for internal use only. Public due to JNA requirements.
+ */
 public class ByteArray extends PointerType {
     
     private static final Charset UTF8 = Charset.forName("UTF-8");

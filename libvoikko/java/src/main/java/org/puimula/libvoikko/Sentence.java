@@ -18,6 +18,7 @@
 
 package org.puimula.libvoikko;
 
+/** Represents a sentence in natural language text. */
 public class Sentence {
 
     private final String text;
@@ -28,10 +29,16 @@ public class Sentence {
         this.nextStartType = nextStartType;
     }
 
+    /**
+     * @return text of the sentence
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     * @return type of sentence boundary between this and the next sentence
+     */
     public SentenceStartType getNextStartType() {
         return nextStartType;
     }

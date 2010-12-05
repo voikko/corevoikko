@@ -34,6 +34,16 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.NativeLongByReference;
 import com.sun.jna.ptr.PointerByReference;
 
+/**
+ * Represents an instance of Voikko. The instance has state, such as
+ * settings related to spell checking and hyphenation, and methods for performing
+ * various natural language analysis operations.
+ * 
+ * Methods in this class are synchronized so that, unlike the underlying C library,
+ * these objects can be safely used from multiple threads. Heavily multithreaded
+ * applications should still create separate instances for each thread for better
+ * performance.
+ */
 public class Voikko {
 
     private static Libvoikko library = null;
@@ -47,10 +57,19 @@ public class Voikko {
 
     private VoikkoHandle handle;
 
+    /**
+     * Creates a new Voikko instance using only the default dictionary search path
+     * @param language BCP 47 language tag to be used
+     */
     public Voikko(String language) {
         this(language, null);
     }
 
+    /**
+     * Creates a new Voikko instance
+     * @param language BCP 47 language tag to be used
+     * @param path Extra path that will be checked first when looking for linguistic resources
+     */
     public Voikko(String language, String path) {
         PointerByReference error = new PointerByReference();
         handle = getLib().voikkoInit(error, s2n(language), s2n(path));
@@ -60,6 +79,14 @@ public class Voikko {
         }
     }
 
+    /**
+     * Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
+     * after this method has been called.
+     * 
+     * The resources are released automatically when the object is finalized. This method may be used
+     * to make sure that the resources are immediately released since they may take significant amount
+     * of memory.
+     */
     public synchronized void terminate() {
         if (handle != null) {
             getLib().voikkoTerminate(handle);
@@ -67,14 +94,17 @@ public class Voikko {
         }
     }
 
-    /* (non-Javadoc)
-     * @see java.lang.Object#finalize()
-     */
     @Override
     protected void finalize() throws Throwable {
         terminate();
+        super.finalize();
     }
 
+    /**
+     * Check the spelling of given word.
+     * @param word
+     * @return true if the word is correct, false if it is incorrect.
+     */
     public synchronized boolean spell(String word) {
         requireValidHandle();
         int spellResult = getLib().voikkoSpellCstr(handle, s2n(word));

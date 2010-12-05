@@ -18,9 +18,17 @@
 
 package org.puimula.libvoikko;
 
+/**
+ * Strategies for generating suggestions for incorrectly spelled words.
+ */
 public enum SuggestionStrategy {
 
+    /** Suggestion strategy for correcting human typing errors. */
     TYPO(0),
+    /**
+     * Suggestion strategy for correcting errors in text produced by
+     * optical character recognition software.
+     */
     OCR(1);
 
     private final int id;

@@ -34,21 +34,21 @@ public class Dictionary implements Comparable<Dictionary> {
     }
 
     /**
-     * @return the language
+     * @return the language (everything except the private use part of BCP 47 language tag)
      */
     public String getLanguage() {
         return language;
     }
 
     /**
-     * @return the variant
+     * @return the variant (BCP 47 private use tag)
      */
     public String getVariant() {
         return variant;
     }
 
     /**
-     * @return the description
+     * @return human readable description of the dictionary
      */
     public String getDescription() {
         return description;

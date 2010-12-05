@@ -20,6 +20,13 @@ package org.puimula.libvoikko;
 
 import java.util.HashMap;
 
+/**
+ * A result from morphological analysis. One analysis is provided
+ * for each possible reading of the word. An analysis is a map
+ * of attribute-value pairs. For more information about provided
+ * attributes see doc/morphological-analysis.txt within libvoikko
+ * sources.
+ */
 public class Analysis extends HashMap<String, String> {
 
     /**

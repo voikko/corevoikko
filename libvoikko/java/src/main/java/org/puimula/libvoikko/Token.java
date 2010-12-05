@@ -18,6 +18,9 @@
 
 package org.puimula.libvoikko;
 
+/**
+ * Represents a token in tokenized natural language text.
+ */
 public class Token {
 
     private final TokenType type;
@@ -28,10 +31,16 @@ public class Token {
         this.text = text;
     }
 
+    /**
+     * @return type of the token
+     */
     public TokenType getType() {
         return type;
     }
 
+    /**
+     * @return token as text
+     */
     public String getText() {
         return text;
     }

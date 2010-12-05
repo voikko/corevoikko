@@ -18,11 +18,19 @@
 
 package org.puimula.libvoikko;
 
+/**
+ * Token types
+ */
 public enum TokenType {
+    /** End of text or error */
     NONE(0),
+    /** Word */
     WORD(1),
+    /** Punctuation */
     PUNCTUATION(2),
+    /** Whitespace */
     WHITESPACE(3),
+    /** Character not used in any of the supported natural languages */
     UNKNOWN(4);
 
     private final int id;

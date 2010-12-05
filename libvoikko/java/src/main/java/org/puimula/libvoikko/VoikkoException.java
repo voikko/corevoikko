@@ -18,6 +18,10 @@
 
 package org.puimula.libvoikko;
 
+/**
+ * Exception thrown when a requested operation cannot be performed
+ * for some reason.
+ */
 public class VoikkoException extends RuntimeException {
 
     /**

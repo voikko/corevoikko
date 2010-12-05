@@ -20,6 +20,13 @@ package org.puimula.libvoikko;
 
 import java.util.List;
 
+/**
+ * A grammar error is associated with a segment of text in a paragraph. It contains an error code
+ * which can be used to provide human readable error explanation and optionally replacement suggestions
+ * for the error segment that would fix the error. GUI software could visually display the error
+ * by for example underlining the error segment starting from {@link #getStartPos()} and consisting of
+ * {@link #getErrorLen()} characters. 
+ */
 public class GrammarError {
 
     private final int errorCode;
@@ -32,21 +39,34 @@ public class GrammarError {
         this.startPos = startPos;
         this.errorLen = errorLen;
         this.suggestions = suggestions;
-        
     }
 
+    /**
+     * Error code describing the type of error. Use {@link Voikko#grammarErrorExplanation(int, String)}
+     * to get a human readable explanation for the error.
+     * @return the error code
+     */
     public int getErrorCode() {
         return errorCode;
     }
 
+    /**
+     * @return start of the error segment within the paragraph
+     */
     public int getStartPos() {
         return startPos;
     }
 
+    /**
+     * @return length of the error segment
+     */
     public int getErrorLen() {
         return errorLen;
     }
 
+    /**
+     * @return list of suggested replacements for the marked error
+     */
     public List<String> getSuggestions() {
         return suggestions;
     }
