@@ -178,7 +178,7 @@ public class Voikko {
      * Unlike the C based API this method accepts multiple paragraphs
      * separated by newline characters.
      * @param text
-     * @return
+     * @return list of grammar errors
      */
     public synchronized List<GrammarError> grammarErrors(String text) {
         requireValidHandle();
@@ -239,7 +239,7 @@ public class Voikko {
      * Analyze the morphology of given word and return the list of
      * analysis results.
      * @param word
-     * @return
+     * @return analysis results
      */
     public synchronized List<Analysis> analyze(String word) {
         requireValidHandle();
@@ -271,7 +271,7 @@ public class Voikko {
     /**
      * Split the given natural language text into a list of Token objects.
      * @param text
-     * @return
+     * @return list of tokens
      */
     public synchronized List<Token> tokens(String text) {
         requireValidHandle();
@@ -296,7 +296,7 @@ public class Voikko {
     /**
      * Split the given natural language text into a list of Sentence objects.
      * @param text
-     * @return
+     * @return list of sentences
      */
     public synchronized List<Sentence> sentences(String text) {
         requireValidHandle();
@@ -326,7 +326,7 @@ public class Voikko {
      *   '=' = hyphentation point (character at this position
      *         is replaced by the hyphen.)
      * @param word
-     * @return
+     * @return hyphenation pattern
      */
     public synchronized String getHyphenationPattern(String word) {
         requireValidHandle();

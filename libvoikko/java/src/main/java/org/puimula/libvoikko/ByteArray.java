@@ -33,7 +33,7 @@ public class ByteArray extends PointerType {
     /**
      * Native-to-Java string mapping
      * @param bytes
-     * @return
+     * @return string
      */
     public static String n2s(byte[] bytes) {
         if (bytes == null) {
@@ -44,8 +44,8 @@ public class ByteArray extends PointerType {
     
     /**
      * Java-to-native string mapping
-     * @param bytes
-     * @return
+     * @param string
+     * @return native string
      */
     public static byte[] s2n(String string) {
         if (string == null) {
