@@ -130,6 +130,7 @@ public class VoikkoTest {
         try {
             voikko = new Voikko("fi-x-non-existent-variant");
         } catch (VoikkoException e) {
+            assertEquals("Specified dictionary variant was not found", e.getMessage());
             return;
         }
         fail("Expected exception not thrown");

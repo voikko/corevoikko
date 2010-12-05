@@ -78,9 +78,9 @@ public class Voikko {
     public Voikko(String language, String path) {
         PointerByReference error = new PointerByReference();
         handle = getLib().voikkoInit(error, s2n(language), s2n(path));
-        if (error.getPointer() != Pointer.NULL && error.getPointer().getString(0).length() > 0) {
+        if (handle == null && error.getPointer() != Pointer.NULL) {
             handle = null;
-            throw new VoikkoException(error.getPointer().getString(0));
+            throw new VoikkoException(stringFromPointer(error.getPointer().getPointer(0)));
         }
     }
 
