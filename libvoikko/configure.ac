@@ -113,9 +113,13 @@ AC_ARG_ENABLE(lttoolbox, AC_HELP_STRING([--enable-lttoolbox],
 	[enable Lttoolbox morphology backend (EXPERIMENTAL!)]),
 	[lttoolbox=${enableval}], [lttoolbox=no])
 if test x$lttoolbox = xyes; then
-	PKG_CHECK_MODULES([LTTOOLBOX], [lttoolbox-3.1 >= 3.1.0])
-	AC_DEFINE(HAVE_LTTOOLBOX, 1)
-	CXXFLAGS="$CXXFLAGS $LTTOOLBOX_CFLAGS"
+	AC_PROVIDE_IFELSE([PKG_CHECK_MODULES)], [
+		PKG_CHECK_MODULES([LTTOOLBOX], [lttoolbox-3.1 >= 3.1.0])
+		AC_DEFINE(HAVE_LTTOOLBOX, 1)
+		CXXFLAGS="$CXXFLAGS $LTTOOLBOX_CFLAGS"
+	], [
+		AC_ERROR([You need to have pkg-config installed to be able to enable Lttoolbox])
+	])
 fi
 AM_CONDITIONAL([HAVE_LTTOOLBOX], [test x$lttoolbox = xyes])
 
