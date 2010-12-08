@@ -1,3 +1,6 @@
+2010-12-08 Harri Pitkänen <hatapitk@iki.fi>
+	* Add configure option --disable-testtools
+
 2010-12-04 Harri Pitkänen <hatapitk@iki.fi>
 	* Consistently return SPELL_FAILED instead of INTERNAL_ERROR
 	  when too long word is spell checked.

@@ -84,6 +84,13 @@ AC_COMPILE_IFELSE(AC_LANG_SOURCE(
   AC_MSG_RESULT([no])
 ])
 
+dnl Test tools
+testtools="yes"
+AC_ARG_ENABLE(testtools, AC_HELP_STRING([--disable-testtools],
+	[disable voikkospell, voikkohyphenate and voikkogc]),
+	[testtools=${enableval}], [testtools=yes])
+AM_CONDITIONAL([HAVE_TESTTOOLS], [test x$testtools = xyes])
+	
 dnl Malaga support
 malaga="yes"
 AH_TEMPLATE(HAVE_MALAGA, [Have MALAGA])

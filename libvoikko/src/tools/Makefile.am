@@ -1,4 +1,6 @@
-bin_PROGRAMS = voikkospell voikkohyphenate voikkogc
+if HAVE_TESTTOOLS
+    bin_PROGRAMS = voikkospell voikkohyphenate voikkogc
+endif
 
 TOOLCXXFLAGS = $(AM_CXXFLAGS)
 TOOLLDADD = ../libvoikko.la
