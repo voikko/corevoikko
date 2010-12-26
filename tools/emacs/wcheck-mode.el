@@ -1262,7 +1262,7 @@ or nil."
             (while (and suggestions chars)
               (setq sug (car suggestions)
                     suggestions (cdr suggestions)
-                    string (concat (propertize (format "(%c)" (car chars))
+                    string (concat (propertize (format "%c)" (car chars))
                                                'face 'bold)
                                    " "
                                    (if (> (length sug) 0)
@@ -1274,14 +1274,13 @@ or nil."
               (insert string)
               (when (and suggestions chars
                          (> (+ (- (point) (line-beginning-position))
-                               (length (concat "( ) " (car suggestions))))
+                               (length (concat "x) " (car suggestions))))
                             (window-width)))
                 (delete-char -2)
                 (newline 1))))
 
           (delete-char -2)
           (goto-char (point-min))
-          (goto-char (line-end-position))
           (setq buffer-read-only t)
 
           (let* ((window-min-height 2)
