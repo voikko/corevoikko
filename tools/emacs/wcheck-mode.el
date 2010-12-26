@@ -1235,7 +1235,10 @@ choice (a string) or nil."
   (let ((menu (list "Choose a substitute"
                     (cons "" (if suggestions
                                  (mapcar #'(lambda (item)
-                                             (cons item item))
+                                             (cons (if (> (length item) 0)
+                                                       item
+                                                     "[Empty string]")
+                                                   item))
                                          suggestions)
                                (list "[No suggestions]"))))))
     (x-popup-menu event menu)))
@@ -1261,7 +1264,11 @@ or nil."
                     suggestions (cdr suggestions)
                     string (concat (propertize (format "(%c)" (car chars))
                                                'face 'bold)
-                                   " " sug "  ")
+                                   " "
+                                   (if (> (length sug) 0)
+                                       sug
+                                     "[Empty string]")
+                                   "  ")
                     alist (cons (cons (car chars) sug) alist)
                     chars (cdr chars))
               (insert string)
