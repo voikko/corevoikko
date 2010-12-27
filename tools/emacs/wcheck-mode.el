@@ -366,7 +366,7 @@ read-or-skip-faces
 
 Here's an example value for the `wcheck-language-data' variable:
 
-    ((\"suomi\"
+    ((\"Finnish\"
       (program . \"/usr/bin/enchant\")
       (args  \"-l\" \"-d\" \"fi\")
       (syntax . my-finnish-syntax-table)
