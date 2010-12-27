@@ -1288,8 +1288,8 @@ there aren't any)."
            'error)
 
           ((and (stringp program)
-                (not func))
-           (message "Parser function for language \"%s\" is not configured"
+                (not parser))
+           (message "Language \"%s\": parser function is not configured"
                     language)
            'error)
 
