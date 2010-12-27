@@ -302,7 +302,7 @@ case-fold
 
 suggestion-program
 suggestion-args
-    `suggestion-program' is either the name (string) of an
+    `suggestion-program' is either the name (a string) of an
     external executable program or an Emacs Lisp function (a
     symbol or a lambda). When it's a name of an executable
     program then `suggestion-args' are the command-line
@@ -317,8 +317,8 @@ suggestion-args
     function (see below).
 
     When `suggestion-program' is an Emacs Lisp function the
-    function is called with one argument: the marked
-    text (string) which user wants spelling suggestion for. The
+    function is called with one argument: the marked text (a
+    string) which user wants spelling suggestions for. The
     function must return all substitute suggestions as a list of
     strings or nil if there are no suggestions.
 
@@ -355,35 +355,56 @@ suggestion-parser
 read-or-skip-faces
     This option controls which faces `wcheck-mode' should read or
     skip when scanning buffer's content. The value must be a list
-    and its items are also lists. Each item is of the form:
+    and its items are also lists:
 
-        (MAJOR-MODE OPERATION-MODE FACE [FACE ...])
+        (MAJOR-MODE [OPERATION-MODE [FACE ...]])
 
     MAJOR-MODE (a symbol) is the major mode which the settings
-    are for. OPERATION-MODE is symbol `read' or `skip' defining
-    whether the FACEs should be read or skipped. If it's `read'
-    then only the listed faces are checked. If it's `skip' then
-    the listed faces are skipped and all other faces are checked.
+    are for. Use nil as the MAJOR-MODE to define default
+    settings. Settings that come after the pseudo major-mode nil
+    are ignored.
+
+    OPERATION-MODE is symbol `read' or `skip' defining whether
+    the FACEs should be read or skipped. If it's `read' then only
+    the listed faces are read. If it's `skip' then the listed
+    faces are skipped and all other faces are read. If
+    OPERATION-MODE is nil or it doesn't exist at all then
+    everything will be read.
 
     The rest of the items are FACEs. They are typically symbols
     but some Emacs modes may use strings, property lists or cons
-    cells for defining faces. See Info node `(elisp) Special
-    Properties' for more information. Use nil as the face to
+    cells for defining faces. For more information see Info
+    node `(elisp) Special Properties'. Use nil as the face to
     refer to the normal text which does not have a face text
     property.
 
     Example:
 
-        ((emacs-lisp-mode read font-lock-comment-face font-lock-doc-face)
-         (message-mode read nil message-header-subject message-cited-text)
-         (org-mode skip font-lock-comment-face))
+        (read-or-skip-faces
+         (emacs-lisp-mode read font-lock-comment-face
+                          font-lock-doc-face)
+         (org-mode skip font-lock-comment-face org-link)
+         (text-mode)
+         (nil read nil))
 
     It says that in `emacs-lisp-mode' only the text which have
     been highlighted with font-lock-comment-face or
-    font-lock-doc-face is read (i.e., checked). In `message-mode'
-    only the normal text (nil), subject header and cited text is
-    read. In `org-mode' text with font-lock-comment-face is
-    skipped (i.e., not checked) and all other text is read.
+    font-lock-doc-face is read (i.e., checked). In `org-mode'
+    faces font-lock-comment-face and org-link are skipped (i.e.,
+    not checked) and all other faces are read. In `text-mode'
+    everything is read. Finally, in all other major modes only
+    the normal text (nil) is read.
+
+    The global default is equivalent to
+
+        (read-or-skip-faces
+         (nil))
+
+    which means that in all major modes read everything. It is
+    sometimes useful to have this setting in language-specific
+    options too because the parsing stops right there. Therefore
+    it discards all global settings which user may have
+    configured with variable `wcheck-language-data-defaults'.
 
     Note: You can use command `\\[what-cursor-position]' with a
     prefix argument to see what faces are active at the cursor
@@ -407,13 +428,14 @@ Here's an example value for the `wcheck-language-data' variable:
       (suggestion-parser . wcheck-parse-suggestions-ispell))
      (\"Trailing whitespace\"
       (program . identity)
-      (suggestion-program . (lambda (text) (list \"\")))
+      (suggestion-program . (lambda (string) (list \"\")))
       (face . highlight)
       (regexp-start . \"\")
       (regexp-body . \"[ \\t]+\")
       (regexp-end . \"$\")
       (regexp-discard . \"\")
-      (read-or-skip-faces))
+      (read-or-skip-faces)
+       (nil))
      (\"Highlight FIXMEs\"
       (program . (lambda (words)
                    (when (member \"FIXME\" words)
@@ -421,11 +443,12 @@ Here's an example value for the `wcheck-language-data' variable:
       (face . highlight)
       (read-or-skip-faces
        (emacs-lisp-mode read font-lock-comment-face)
-       (c-mode read font-lock-comment-face))))
+       (c-mode read font-lock-comment-face)
+       (nil))))
 
 You can use variable `wcheck-language-data-defaults' to define
 default values for all these options. The defaults are used when
-language-specific option does not exist."
+language-specific option does not exist or is not valid."
 
   :group 'wcheck
   :type
