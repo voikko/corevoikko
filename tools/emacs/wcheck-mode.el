@@ -1279,29 +1279,33 @@ there aren't any)."
 
   (let ((program (wcheck-query-language-data language 'suggestion-program))
         (args (wcheck-query-language-data language 'suggestion-args))
-        (func (wcheck-query-language-data language 'suggestion-parser)))
+        (parser (wcheck-query-language-data language 'suggestion-parser)))
+
     (cond ((not (wcheck-suggestion-program-configured-p language))
            (message
             "Language \"%s\": suggestion program or function is not configured"
             language)
            'error)
+
           ((and (stringp program)
                 (not func))
            (message "Parser function for language \"%s\" is not configured"
                     language)
            'error)
+
           ((stringp program)
            (with-temp-buffer
              (insert text)
              (apply #'call-process-region (point-min) (point-max)
                     program t t nil args)
              (goto-char (point-min))
-             (let ((suggestions (save-match-data (funcall func))))
+             (let ((suggestions (save-match-data (funcall parser))))
                (if (wcheck-list-of-strings-p suggestions)
                    suggestions
                  (message
                   "Parser function must return a list of strings or nil")
                  'error))))
+
           ((functionp program)
            (let ((suggestions (save-match-data (funcall program text))))
              (if (wcheck-list-of-strings-p suggestions)
