@@ -63,7 +63,7 @@
 
 ;;;###autoload
 (defgroup wcheck nil
-  "Interface for external text-filtering programs."
+  "General interface for text checkers."
   :group 'applications)
 
 
