@@ -247,8 +247,8 @@ regexp-end
     This is how they are used in practice: `wcheck-mode' scans
     buffer's content and looks for strings that match the
     construct `regexp-start + regexp-body + regexp-end'. Strings
-    that match regexp-body are sent to the text checker program
-    or function to analyze.
+    that match regexp-body (but not `regexp-discard', see below)
+    are sent to the text checker program or function to analyze.
 
     Strings returned from the program or function are marked in
     Emacs buffer using the following construction: `regexp-start
@@ -261,7 +261,7 @@ regexp-end
     can use \"shy\" groups `\\(?: ... \\)' which do not record
     the matched substring.
 
-    The default values for the regular expressions are:
+    The default values for the regular expressions are
 
         \\=\\<'*         (regexp-start)
         \\w+?         (regexp-body)
@@ -273,7 +273,7 @@ regexp-end
     when using `wcheck-mode' as a spelling checker.
 
 regexp-discard
-    The string that matched regexp-body is then matched against
+    The string that matched `regexp-body' is then matched against
     the value of this option. If this regular expression matches,
     then the word is discarded and won't be sent to the
     text-checker program or function to analyze. You can use this
@@ -283,14 +283,14 @@ regexp-discard
         \\`'+\\'
 
     which discards the body string if it consists only of single
-    quotes. This was chosen as the default because the standard
+    quotes. This was chosen as the default because the default
     syntax table `text-mode-syntax-table' defines single quote as
     a word character. It's probably not useful to mark individual
     single quotes in a buffer when `wcheck-mode' is used as a
     spelling checker.
 
-    If you don't want to have any discarding rules set this to
-    empty string.
+    If you don't want to have any discarding rules set this
+    option to empty string.
 
 case-fold
     This boolean value is used to set value for variable
@@ -302,11 +302,11 @@ case-fold
 
 suggestion-program
 suggestion-args
-    `suggestion-program' is either the name (a string) of an
-    external executable program or an Emacs Lisp function (a
-    symbol or a lambda). When it's a name of an executable
-    program then `suggestion-args' are the command-line
-    arguments (a list of strings) for the program.
+    `suggestion-program' is either name (a string) of an external
+    executable program or an Emacs Lisp function (a symbol or a
+    lambda). When it's the name of an executable program then
+    `suggestion-args' are the command-line arguments (a list of
+    strings) for the program.
 
     When user clicks the right mouse button on marked text, or
     executes command `wcheck-spelling-suggestions', the marked
@@ -323,7 +323,7 @@ suggestion-args
     strings or nil if there are no suggestions.
 
 suggestion-parser
-    `suggestion-parser' is an Emacs Lisp function which is
+    VALUE of this option is an Emacs Lisp function which is
     responsible for parsing the output of `suggestion-program'.
     This parser function is only used when `suggestion-program'
     is an external executable program (not a function).
@@ -342,7 +342,7 @@ suggestion-parser
         `wcheck-parse-suggestions-ispell' parses substitute
         suggestions from the output of Ispell or compatible
         program, such as Enchant or Aspell. Use this function as
-        the `suggestion-parser' if you get suggestions from
+        the `suggestion-parser' if you get suggestions from an
         Ispell-like program with its \"-a\" command-line option.
 
         `wcheck-parse-suggestions-lines' function turns each line
