@@ -25,8 +25,8 @@
 
 ;; INSTALLATION
 ;;
-;; Put this file to some directory in your "load-path" and add the
-;; following lines to your Emacs initialization file (~/.emacs):
+;; Put this file to some directory in your Emacs's "load-path" and add
+;; the following lines to Emacs's initialization file (~/.emacs):
 ;;
 ;;     (autoload 'wcheck-mode "wcheck-mode"
 ;;       "Toggle wcheck-mode." t)
