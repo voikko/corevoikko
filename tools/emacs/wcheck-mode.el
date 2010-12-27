@@ -411,6 +411,7 @@ language-specific option does not exist."
                   ,wcheck-language-data-customize-interface))))
 
 
+;;;###autoload
 (defconst wcheck-language-data-defaults-hard-coded
   '((connection . nil)
     (face . wcheck-default-face)
