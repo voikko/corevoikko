@@ -70,11 +70,13 @@
 (defconst wcheck-language-data-customize-interface
   '(choice
     :format "%[Option%] %v"
+
     (cons :tag "Program" :format "%v"
           (const :tag "Program" :format "%t: " program)
           (choice :format "%[Type%] %v"
-                  (file :tag "Filename" :format "%t:\n\t\t%v")
-                  (function :tag "Function" :format "%t:\n\t\t%v")))
+                  (file :tag "Filename" :format "\n\t\t%t: %v")
+                  (function :tag "Function" :format "\n\t\t%t: %v")))
+
     (cons :tag "Arguments" :format "%v"
           (const :format "" args)
           (repeat :tag "Arguments"
@@ -88,6 +90,7 @@
                            (or (listp value)
                                (stringp value)))
                   (string :format "%v")))
+
     (cons :tag "Connection type" :format "%v"
           (const :tag "Connection: " :format "%t" connection)
           (choice :format "%[Type%] %v" :value nil
@@ -96,42 +99,52 @@
                                              (or (eq value t)
                                                  (eq value 'pty)))
                          pty)))
+
     (cons :tag "Face" :format "%v"
           (const :tag "Face" :format "%t: " face)
           (symbol :format "%v"))
+
     (cons :tag "Syntax table" :format "%v"
           (const :tag "Syntax table" :format "%t: " syntax)
           (variable :format "%v"))
+
     (cons :tag "Regexp start" :format "%v"
           (const :tag "Regexp start" :format "%t: " regexp-start)
           (regexp :format "%v"))
+
     (cons :tag "Regexp body" :format "%v"
           (const :tag "Regexp body" :format "%t: " regexp-body)
           (regexp :format "%v"))
+
     (cons :tag "Regexp end" :format "%v"
           (const :tag "Regexp end" :format "%t: " regexp-end)
           (regexp :format "%v"))
+
     (cons :tag "Regexp discard" :format "%v"
           (const :tag "Regexp discard" :format "%t: " regexp-discard)
           (regexp :format "%v"))
+
     (cons :tag "Regexp case" :format "%v"
           (const :tag "Regexp" :format "%t: " case-fold)
           (choice :format "%[Case%] %v" :value nil
                   (const :tag "sensitive" nil)
                   (const :tag "insensitive" t)))
+
     (cons :tag "Suggestion program" :format "%v"
           (const :tag "Suggestion program" :format "%t: " suggestion-program)
           (choice :format "%[Type%] %v"
-                  (file :tag "Filename" :format "%t:\n\t\t%v")
-                  (function :tag "Function" :format "%t:\n\t\t%v")))
+                  (file :tag "Filename" :format "\n\t\t%t: %v")
+                  (function :tag "Function" :format "\n\t\t%t: %v")))
+
     (cons :tag "Suggestion program's arguments" :format "%v"
           (const :format "" suggestion-args)
           (repeat :tag "Suggestion program's arguments"
                   (string :format "%v")))
+
     (cons :tag "Suggestion parser function" :format "%v"
           (const :tag "Suggestion parser" :format "%t: "
                  suggestion-parser)
-          (choice :format "%[Type%] %v" :value nil
+          (choice :format "%[Parser%] %v" :value nil
                   (const :tag "Ispell" wcheck-parse-suggestions-ispell)
                   (const :tag "Lines" wcheck-parse-suggestions-lines)
                   (const :tag "Whitespace" wcheck-parse-suggestions-ws)
@@ -407,7 +420,7 @@ language-specific option does not exist."
     (list :format "%v"
           (string :tag "Language")
           (repeat :inline t
-                  :tag "Settings"
+                  :tag "Options"
                   ,wcheck-language-data-customize-interface))))
 
 
