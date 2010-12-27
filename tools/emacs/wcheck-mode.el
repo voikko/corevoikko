@@ -433,7 +433,8 @@ language-specific option does not exist."
     (regexp-body . "\\w+?")
     (regexp-end . "'*\\>")
     (regexp-discard . "\\`'+\\'")
-    (case-fold . nil))
+    (case-fold . nil)
+    (read-or-skip-faces (nil)))
   "Hard-coded default language configuration for `wcheck-mode'.
 This constant is for Wcheck mode's internal use only. This
 provides useful defaults if both `wcheck-language-data' and
@@ -1485,27 +1486,25 @@ the KEY then query the value from `wcheck-language-data-defaults'
 or `wcheck-language-data-defaults-hard-coded'."
 
   (when (wcheck-language-exists-p language)
-    (let* ((lang-key-value
+    (let* ((data
             (and (wcheck-list-of-lists-p wcheck-language-data)
                  (assq key (cdr (assoc language wcheck-language-data)))))
-           (lang-value (cdr lang-key-value))
-           (default-key-value
+           (default
              (and (wcheck-list-of-lists-p wcheck-language-data-defaults)
                   (assq key wcheck-language-data-defaults)))
-           (default-value (cdr default-key-value))
-           (hc-default-key-value
+           (hard-coded
             (assq key wcheck-language-data-defaults-hard-coded))
-           (hc-default-value (cdr hc-default-key-value)))
+           (conf
+            (list (when (wcheck-language-data-valid-p key (cdr data))
+                    data)
+                  (when (wcheck-language-data-valid-p key (cdr default))
+                    default)
+                  (when (wcheck-language-data-valid-p key (cdr hard-coded))
+                    hard-coded))))
 
-      (cond ((and lang-key-value
-                  (wcheck-language-data-valid-p key lang-value))
-             lang-value)
-            ((and default-key-value
-                  (wcheck-language-data-valid-p key default-value))
-             default-value)
-            ((and hc-default-key-value
-                  (wcheck-language-data-valid-p key hc-default-value))
-             hc-default-value)))))
+      (if (eq key 'read-or-skip-faces)
+          (apply #'append (mapcar #'cdr conf))
+        (cdr (assq key conf))))))
 
 
 (defun wcheck-language-exists-p (language)
