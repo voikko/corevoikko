@@ -1061,12 +1061,7 @@ elements between BEG and END; all hidden parts are omitted."
                (discard (wcheck-query-language-data language 'regexp-discard))
                (case-fold-search
                 (wcheck-query-language-data language 'case-fold))
-               (user-faces (wcheck-major-mode-faces language major-mode))
-               (face-p (if (and font-lock-mode user-faces)
-                           (wcheck-generate-face-predicate
-                            (wcheck-major-mode-op-mode language major-mode)
-                            user-faces)
-                         t))
+               (face-p (wcheck-generate-face-predicate language major-mode))
                (search-spaces-regexp nil)
                (old-point 0)
                words)
@@ -1114,12 +1109,7 @@ visible in BUFFER within position range from BEG to END."
                (syntax (eval (wcheck-query-language-data language 'syntax)))
                (case-fold-search
                 (wcheck-query-language-data language 'case-fold))
-               (user-faces (wcheck-major-mode-faces language major-mode))
-               (face-p (if (and font-lock-mode user-faces)
-                           (wcheck-generate-face-predicate
-                            (wcheck-major-mode-op-mode language major-mode)
-                            user-faces)
-                         t))
+               (face-p (wcheck-generate-face-predicate language major-mode))
                (search-spaces-regexp nil)
                (ol-face (wcheck-query-language-data language 'face))
                (ol-keymap (make-sparse-keymap))
@@ -1412,38 +1402,16 @@ or nil."
     (delete-dups faces)))
 
 
-(defun wcheck-major-mode-op-mode (language major-mode)
-  "Return the associated operation mode for MAJOR-MODE.
-See the variable `wcheck-language-data' and its
-read-or-skip-faces option for more information."
-  (cadr (assq major-mode (wcheck-query-language-data
-                          language 'read-or-skip-faces))))
-
-
-(defun wcheck-major-mode-faces (language major-mode)
-  "Return the face list configuration for MAJOR-MODE.
-See the variable `wcheck-language-data' and its
-read-or-skip-faces optionfor more information."
-  (cddr (assq major-mode (wcheck-query-language-data
-                          language 'read-or-skip-faces))))
-
-
-(defun wcheck-generate-face-predicate (op-mode faces)
-  "Generate a predicate expression for reading words.
-This function creates a predicate expression which, by evaluating
-it, is used to check whether or not the current match should be
-read or skipped. OP-MODE is either symbol `read' or `skip' and
-FACES is a list of faces. This is only for `wcheck-mode's
-internal use."
-  (cond ((eq 'read op-mode)
-         `(wcheck-face-found-p
-           ',faces (wcheck-collect-faces (match-beginning 1)
-                                         (match-end 1))))
-        ((eq 'skip op-mode)
-         `(not (wcheck-face-found-p
-                ',faces (wcheck-collect-faces (match-beginning 1)
-                                              (match-end 1)))))
-        (t)))
+(defun wcheck-major-mode-face-settings (language major-mode)
+  "Return read/skip face settings for MAJOR-MODE."
+  (let ((data (wcheck-query-language-data language 'read-or-skip-faces))
+        conf)
+    (catch 'answer
+      (while data
+        (setq conf (pop data))
+        (when (or (eq nil (car conf))
+                  (eq major-mode (car conf)))
+          (throw 'answer conf))))))
 
 
 (defun wcheck-face-found-p (user-faces buffer-faces)
@@ -1453,6 +1421,29 @@ Both arguments are lists."
     (dolist (face user-faces)
       (when (member face buffer-faces)
         (throw 'found t)))))
+
+
+(defun wcheck-generate-face-predicate (language major-mode)
+  "Generates a face predicate expression for scanning buffer.
+Return a predicate expression that is used to decide whether
+`wcheck-mode' should read or paint text at the current point
+position with LANGUAGE and MAJOR-MODE. Evaluating the predicate
+expression will return a boolean."
+  (let* ((face-settings (wcheck-major-mode-face-settings
+                        language major-mode))
+         (mode (nth 1 face-settings))
+         (faces (nthcdr 2 face-settings)))
+    (cond ((not font-lock-mode)
+           t)
+          ((eq mode 'read)
+           `(wcheck-face-found-p
+             ',faces (wcheck-collect-faces
+                      (match-beginning 1) (match-end 1))))
+          ((eq mode 'skip)
+           `(not (wcheck-face-found-p
+                  ',faces (wcheck-collect-faces
+                           (match-beginning 1) (match-end 1)))))
+          (t t))))
 
 
 ;;; Miscellaneous low-level functions
