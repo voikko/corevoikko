@@ -150,17 +150,30 @@
                   (const :tag "Whitespace" wcheck-parse-suggestions-ws)
                   (function :tag "Custom function"
                             :format "%t:\n\t\t%v")))
-    (cons :tag "Read or skip faces" :format "%v"
-          (const :tag "Read or skip faces" :format "%t" read-or-skip-faces)
-          (repeat :tag ""
-                  (list :format "%v"
-                        (symbol :tag "Major mode" :format "%t: %v")
-                        (choice :format "%[Mode%] %v"
-                                (const :tag "read" read)
-                                (const :tag "skip" skip))
-                        (repeat :inline t
-                                :tag "Faces (s-expressions)"
-                                (sexp :format "%v")))))))
+
+    (cons
+     :tag "Read or skip faces" :format "%v"
+     (const :tag "Read or skip faces" :format "%t" read-or-skip-faces)
+     (repeat
+      :tag ""
+      (cons :format "%v"
+            (choice :format "%[Major mode%] %v"
+                    (symbol :tag "Select mode" :format "%t: %v"
+                            :match (lambda (widget value) value)
+                            :value foo-mode)
+                    (const :tag "All major modes"
+                           :match (lambda (widget value) (not value))
+                           nil))
+            (choice :format "%[Operation mode%] %v"
+                    (const :tag "Read everything" nil)
+                    (cons :tag "Read selected faces" :format "%v"
+                          (const :tag "Read selected faces"
+                                 :format "%t" read)
+                          (repeat :tag "" (sexp :format "%v")))
+                    (cons :tag "Skip selected faces" :format "%v"
+                          (const :tag "Skip selected faces"
+                                 :format "%t" skip)
+                          (repeat :tag "" (sexp :format "%v")))))))))
 
 
 ;;;###autoload
