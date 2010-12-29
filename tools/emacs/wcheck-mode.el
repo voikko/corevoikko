@@ -836,7 +836,7 @@ separate line."
           (when (buffer-live-p buffer)
             (with-current-buffer buffer
               (let ((received (save-match-data (funcall program strings))))
-                (when (wcheck-list-of-strings-p received)
+                (when (and received (wcheck-list-of-strings-p received))
                   (wcheck-buffer-data-set buffer :strings received)
                   (wcheck-buffer-data-set buffer :paint-req t))))))
          (t
