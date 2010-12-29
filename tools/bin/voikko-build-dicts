@@ -122,7 +122,7 @@ d.idSuffix = u"-morpho"
 d.variant = u"morpho"
 d.nameFi = u"erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
 d.nameEn = u"very extensive vocabulary (with additional information needed in morphological analysis)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education --style=dialect,old,international,foreign --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes'
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education --style=dialect,old,international,foreign --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
 WORK_DIR = "build"

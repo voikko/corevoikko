@@ -74,7 +74,7 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
 ifeq "$(VOIKKO_DEBUG)" "yes"
-    GENLEX_OPTS+= --debug
+    override GENLEX_OPTS+= --debug
 endif
 
 voikko/joukahainen.lex: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
