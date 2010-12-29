@@ -275,7 +275,7 @@ regexp-end
 regexp-discard
     The string that matched `regexp-body' is then matched against
     the value of this option. If this regular expression matches,
-    then the word is discarded and won't be sent to the
+    then the string is discarded and won't be sent to the
     text-checker program or function to analyze. You can use this
     to define exceptions to the regexp-body match. The default
     value is
@@ -437,8 +437,8 @@ Here's an example value for the `wcheck-language-data' variable:
       (read-or-skip-faces)
        (nil))
      (\"Highlight FIXMEs\"
-      (program . (lambda (words)
-                   (when (member \"FIXME\" words)
+      (program . (lambda (strings)
+                   (when (member \"FIXME\" strings)
                      (list \"FIXME\"))))
       (face . highlight)
       (read-or-skip-faces
@@ -558,8 +558,8 @@ This is used when language does not define a face."
 (defvar wcheck-change-language-history nil
   "Language history for command `wcheck-change-language'.")
 
-(defvar wcheck-received-words nil)
-(make-variable-buffer-local 'wcheck-received-words)
+(defvar wcheck-received-strings nil)
+(make-variable-buffer-local 'wcheck-received-strings)
 
 (defvar wcheck-buffer-window-areas nil)
 (make-variable-buffer-local 'wcheck-buffer-window-areas)
@@ -633,10 +633,9 @@ With optional (prefix) ARG turn on the mode if ARG is positive,
 otherwise turn it off. If ARG is not given toggle the mode.
 
 Wcheck is a minor mode for automatically checking and marking
-words or other text elements in Emacs buffer. Wcheck sends (parts
-of) buffer's content to a user-configured checker program and,
-based on its output, decides if some parts of text should be
-marked.
+strings in Emacs buffer. Wcheck sends (parts of) buffer's content
+to a user-configured checker program and, based on its output,
+decides if some parts of text should be marked.
 
 Wcheck can be used with external spell-checker programs such as
 Ispell, Aspell and Enchant. The mode can be useful with other
@@ -704,7 +703,7 @@ right-click mouse menu)."
     ;; Turn off the mode.
 
     ;; We clear overlays form the buffer, remove the buffer from buffer
-    ;; database and clear the variable holding words received from
+    ;; database and clear the variable holding strings received from
     ;; external process.
     (wcheck-remove-overlays)
     (wcheck-update-buffer-data (current-buffer) nil)
@@ -756,8 +755,8 @@ This function is usually called by the wcheck-mode idle timer.
 The function walks through all windows which belong to the buffer
 that have requested update. It reads windows' content and sends
 it to the external program associated with the buffer. Finally,
-this function starts another idle timer for marking words or
-other text elements in buffers."
+this function starts another idle timer for marking strings in
+buffers."
 
   (dolist (buffer wcheck-timer-read-requested)
     (when (buffer-live-p buffer)
@@ -767,13 +766,13 @@ other text elements in buffers."
         ;; remove this buffer from the request list.
         (wcheck-timer-remove-read-request buffer)
 
-        ;; Reset also the list of received words and visible window
+        ;; Reset also the list of received strings and visible window
         ;; areas.
-        (setq wcheck-received-words nil
+        (setq wcheck-received-strings nil
               wcheck-buffer-window-areas nil)
 
         ;; Walk through all windows which belong to this buffer.
-        (let (area-alist words)
+        (let (area-alist strings)
           (walk-windows #'(lambda (window)
                             (when (eq buffer (window-buffer window))
                               ;; Store the visible buffer area.
@@ -782,16 +781,16 @@ other text elements in buffers."
                                     area-alist)))
                         'nomb t)
 
-          ;; Combine overlapping buffer areas and read words from all
+          ;; Combine overlapping buffer areas and read strings from all
           ;; areas.
           (setq wcheck-buffer-window-areas (wcheck-combine-overlapping-areas
                                             area-alist))
           (dolist (area wcheck-buffer-window-areas)
-            (setq words (append (wcheck-read-words
-                                 buffer (car area) (cdr area))
-                                words)))
-          ;; Send words to external process.
-          (wcheck-send-words buffer words)))))
+            (setq strings (append (wcheck-read-strings
+                                   buffer (car area) (cdr area))
+                                  strings)))
+          ;; Send strings to external process.
+          (wcheck-send-strings buffer strings)))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (run-with-idle-timer (+ wcheck-timer-idle
@@ -819,7 +818,7 @@ other text elements in buffers."
        ,@body)))
 
 
-(defun wcheck-send-words (buffer strings)
+(defun wcheck-send-strings (buffer strings)
   "Send STRINGS for the process that handles BUFFER.
 STRINGS is a list of strings to be sent as input for the external
 process which handles BUFFER. Each string in STRINGS is sent as
@@ -836,9 +835,9 @@ separate line."
          ((functionp program)
           (when (buffer-live-p buffer)
             (with-current-buffer buffer
-              (let ((words (save-match-data (funcall program strings))))
-                (when (wcheck-list-of-strings-p words)
-                  (setq wcheck-received-words words)
+              (let ((received (save-match-data (funcall program strings))))
+                (when (wcheck-list-of-strings-p received)
+                  (setq wcheck-received-strings received)
                   (wcheck-timer-add-paint-request buffer))))))
          (t
           (when (buffer-live-p buffer)
@@ -846,17 +845,18 @@ separate line."
               (wcheck-mode -1)))))))
 
 
-(defun wcheck-receive-words (process string)
+(defun wcheck-receive-strings (process string)
   "`wcheck-mode' process output handler function."
   (let ((buffer (wcheck-get-data :process process :buffer)))
     (when (buffer-live-p buffer)
       (with-current-buffer buffer
 
-        ;; If process is running proceed to collect and paint the words.
+        ;; If process is running proceed to collect and paint the
+        ;; strings.
         (if (eq 'run (process-status process))
-            (progn (setq wcheck-received-words
+            (progn (setq wcheck-received-strings
                          (append (split-string string "\n+" t)
-                                 wcheck-received-words))
+                                 wcheck-received-strings))
                    (wcheck-timer-add-paint-request buffer))
 
           ;; It's not running. Turn off the mode.
@@ -866,12 +866,11 @@ separate line."
 
 
 (defun wcheck-timer-paint-event (&optional repeat)
-  "Mark text in windows.
+  "Mark strings in windows.
 
 This is normally called by the `wcheck-mode' idle timer. This
-function marks (with overlays) words or other text elements in
-buffers that have requested it through the variable
-`wcheck-timer-paint-requested'.
+function marks (with overlays) strings in the buffers that have
+requested it through the variable `wcheck-timer-paint-requested'.
 
 If the optional argument REPEAT exists and is an integer then
 also call the function repeatedly that many times after the first
@@ -888,11 +887,11 @@ call. The delay between consecutive calls is defined in variable
         (wcheck-timer-remove-paint-request buffer)
 
         ;; Walk through the visible text areas and mark text based on
-        ;; the word list returned by an external process.
+        ;; the string list returned by an external process.
         (when wcheck-mode
           (dolist (area wcheck-buffer-window-areas)
-            (wcheck-paint-words buffer (car area) (cdr area)
-                                wcheck-received-words))))))
+            (wcheck-paint-strings buffer (car area) (cdr area)
+                                  wcheck-received-strings))))))
 
   ;; If REPEAT is positive integer call this function again after
   ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
@@ -1030,7 +1029,7 @@ operation was unsuccessful."
            ;; Add the process Lisp object to database.
            (wcheck-set-buffer-data buffer :process proc)
            ;; Set the output handler function.
-           (set-process-filter proc #'wcheck-receive-words)
+           (set-process-filter proc #'wcheck-receive-strings)
            ;; Prevent Emacs from querying user about running processes
            ;; when killing Emacs.
            (set-process-query-on-exit-flag proc nil)
@@ -1074,7 +1073,7 @@ BUFFER from the list."
         ;; update and remove all buffer data.
         (wcheck-timer-remove-read-request buffer)
         (wcheck-delete-buffer-data buffer)
-        (setq wcheck-received-words nil
+        (setq wcheck-received-strings nil
               wcheck-buffer-window-areas nil))
 
       ;; Construct a list of processes that are still used.
@@ -1087,10 +1086,10 @@ BUFFER from the list."
   wcheck-buffer-data)
 
 
-;;; Read and paint words
+;;; Read and paint strings
 
 
-(defun wcheck-read-words (buffer beg end)
+(defun wcheck-read-strings (buffer beg end)
   "Return a list of text elements in BUFFER.
 Scan BUFFER between positions BEG and END and search for text
 elements according to buffer's language settings (see
@@ -1110,7 +1109,7 @@ elements between BEG and END; all hidden parts are omitted."
                (face-p (wcheck-generate-face-predicate language major-mode))
                (search-spaces-regexp nil)
                (old-point 0)
-               words)
+               strings)
 
            (with-syntax-table (eval syntax)
              (goto-char beg)
@@ -1135,16 +1134,17 @@ elements between BEG and END; all hidden parts are omitted."
                                    (not (string-match
                                          regexp-discard
                                          (match-string-no-properties 1)))))
-                          ;; Add the match to the word list.
-                          (add-to-list 'words (match-string-no-properties 1))))
+                          ;; Add the match to the string list.
+                          (add-to-list
+                           'strings (match-string-no-properties 1))))
                    (setq old-point (point))))))
-           words))))))
+           strings))))))
 
 
-(defun wcheck-paint-words (buffer beg end wordlist)
-  "Mark words of WORDLIST in BUFFER.
-Mark all words (or other text elements) of WORDLIST which are
-visible in BUFFER within position range from BEG to END."
+(defun wcheck-paint-strings (buffer beg end strings)
+  "Mark strings in buffer.
+Mark all strings in STRINGS which are visible in BUFFER within
+position range from BEG to END."
 
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
@@ -1170,9 +1170,9 @@ visible in BUFFER within position range from BEG to END."
 
            (with-syntax-table (eval syntax)
              (save-match-data
-               (dolist (word wordlist)
+               (dolist (string strings)
                  (setq regexp (concat regexp-start "\\("
-                                      (regexp-quote word) "\\)"
+                                      (regexp-quote string) "\\)"
                                       regexp-end)
                        old-point 0)
                  (goto-char beg)
