@@ -802,31 +802,48 @@ other text elements in buffers."
                        3))
 
 
+(defmacro wcheck-with-language-data (language bindings &rest body)
+  (let ((lang-var (make-symbol "--wck-language--")))
+    `(let* ((,lang-var ,(cadr language))
+            ,@(when (car language)
+                `((,(car language) ,lang-var)))
+            ,@(mapcar
+               (lambda (var)
+                 (cond ((symbolp var)
+                        (list var `(wcheck-query-language-data
+                                    ,lang-var ',var)))
+                       ((and var (listp var))
+                        (list (car var) `(wcheck-query-language-data
+                                          ,lang-var ',(cadr var))))))
+               bindings))
+       ,@body)))
+
+
 (defun wcheck-send-words (buffer strings)
   "Send STRINGS for the process that handles BUFFER.
 STRINGS is a list of strings to be sent as input for the external
 process which handles BUFFER. Each string in STRINGS is sent as
 separate line."
-  (let ((program (wcheck-query-language-data
-                  (wcheck-get-data :buffer buffer :language)
-                  'program)))
+  (wcheck-with-language-data
+   (language (wcheck-get-data :buffer buffer :language))
+   (program)
 
-    (cond ((or (wcheck-get-data :buffer buffer :process)
-               (stringp program))
-           (process-send-string
-            (wcheck-start-get-process buffer)
-            (concat (mapconcat #'identity strings "\n") "\n")))
-          ((functionp program)
-           (when (buffer-live-p buffer)
-             (with-current-buffer buffer
-               (let ((words (save-match-data (funcall program strings))))
-                 (when (wcheck-list-of-strings-p words)
-                   (setq wcheck-received-words words)
-                   (wcheck-timer-add-paint-request buffer))))))
-          (t
-           (when (buffer-live-p buffer)
-             (with-current-buffer buffer
-               (wcheck-mode -1)))))))
+   (cond ((or (wcheck-get-data :buffer buffer :process)
+              (stringp program))
+          (process-send-string
+           (wcheck-start-get-process buffer)
+           (concat (mapconcat #'identity strings "\n") "\n")))
+         ((functionp program)
+          (when (buffer-live-p buffer)
+            (with-current-buffer buffer
+              (let ((words (save-match-data (funcall program strings))))
+                (when (wcheck-list-of-strings-p words)
+                  (setq wcheck-received-words words)
+                  (wcheck-timer-add-paint-request buffer))))))
+         (t
+          (when (buffer-live-p buffer)
+            (with-current-buffer buffer
+              (wcheck-mode -1)))))))
 
 
 (defun wcheck-receive-words (process string)
@@ -1002,26 +1019,23 @@ operation was unsuccessful."
   ;; If process for this BUFFER exists return it.
   (or (wcheck-get-data :buffer buffer :process)
       ;; It doesn't exist so start a new one.
-      (let* ((language (wcheck-get-data :buffer buffer :language))
-             (program (wcheck-query-language-data language 'program))
-             (args (wcheck-query-language-data language 'args))
-             (process-connection-type
-              (wcheck-query-language-data language 'connection))
-             proc)
+      (wcheck-with-language-data
+       (language (wcheck-get-data :buffer buffer :language))
+       (program args (process-connection-type connection))
 
-        (when (wcheck-program-executable-p program)
-          ;; Start the process.
-          (setq proc (apply #'start-process wcheck-process-name nil
-                            program args))
-          ;; Add the process Lisp object to database.
-          (wcheck-set-buffer-data buffer :process proc)
-          ;; Set the output handler function.
-          (set-process-filter proc #'wcheck-receive-words)
-          ;; Prevent Emacs from querying user about running processes
-          ;; when killing Emacs.
-          (set-process-query-on-exit-flag proc nil)
-          ;; Return the process object.
-          proc))))
+       (when (wcheck-program-executable-p program)
+         ;; Start the process.
+         (let ((proc (apply #'start-process wcheck-process-name nil
+                            program args)))
+           ;; Add the process Lisp object to database.
+           (wcheck-set-buffer-data buffer :process proc)
+           ;; Set the output handler function.
+           (set-process-filter proc #'wcheck-receive-words)
+           ;; Prevent Emacs from querying user about running processes
+           ;; when killing Emacs.
+           (set-process-query-on-exit-flag proc nil)
+           ;; Return the process object.
+           proc)))))
 
 
 (defun wcheck-update-buffer-data (buffer language)
@@ -1086,50 +1100,45 @@ elements between BEG and END; all hidden parts are omitted."
     (with-current-buffer buffer
       (save-excursion
 
-        (let* ((language (wcheck-get-data :buffer buffer :language))
-               (regexp (concat
-                        (wcheck-query-language-data language 'regexp-start)
-                        "\\("
-                        (wcheck-query-language-data language 'regexp-body)
-                        "\\)"
-                        (wcheck-query-language-data language 'regexp-end)))
+        (wcheck-with-language-data
+         (language (wcheck-get-data :buffer buffer :language))
+         (regexp-start regexp-body regexp-end regexp-discard
+                       syntax (case-fold-search case-fold))
 
-               (syntax (eval (wcheck-query-language-data language 'syntax)))
-               (discard (wcheck-query-language-data language 'regexp-discard))
-               (case-fold-search
-                (wcheck-query-language-data language 'case-fold))
+         (let ((regexp
+                (concat regexp-start "\\(" regexp-body "\\)" regexp-end))
                (face-p (wcheck-generate-face-predicate language major-mode))
                (search-spaces-regexp nil)
                (old-point 0)
                words)
 
-          (with-syntax-table syntax
-            (goto-char beg)
-            (save-match-data
-              (catch 'infinite
-                (while (re-search-forward regexp end t)
-                  (cond ((= (point) old-point)
-                         ;; Make sure we don't end up in an infinite
-                         ;; loop when the regexp always matches with
-                         ;; zero width in the current point position.
-                         (throw 'infinite t))
+           (with-syntax-table (eval syntax)
+             (goto-char beg)
+             (save-match-data
+               (catch 'infinite
+                 (while (re-search-forward regexp end t)
+                   (cond ((= (point) old-point)
+                          ;; Make sure we don't end up in an infinite
+                          ;; loop when the regexp always matches with
+                          ;; zero width in the current point position.
+                          (throw 'infinite t))
 
-                        ((invisible-p (match-beginning 1))
-                         ;; This point is invisible. Let's jump forward
-                         ;; to next change of "invisible" property.
-                         (goto-char (next-single-char-property-change
-                                     (match-beginning 1) 'invisible buffer
-                                     end)))
+                         ((invisible-p (match-beginning 1))
+                          ;; This point is invisible. Let's jump forward
+                          ;; to next change of "invisible" property.
+                          (goto-char (next-single-char-property-change
+                                      (match-beginning 1) 'invisible buffer
+                                      end)))
 
-                        ((and (eval face-p)
-                              (or (equal discard "")
-                                  (not (string-match
-                                        discard
-                                        (match-string-no-properties 1)))))
-                         ;; Add the match to the word list.
-                         (add-to-list 'words (match-string-no-properties 1))))
-                  (setq old-point (point))))))
-          words)))))
+                         ((and (eval face-p)
+                               (or (equal regexp-discard "")
+                                   (not (string-match
+                                         regexp-discard
+                                         (match-string-no-properties 1)))))
+                          ;; Add the match to the word list.
+                          (add-to-list 'words (match-string-no-properties 1))))
+                   (setq old-point (point))))))
+           words))))))
 
 
 (defun wcheck-paint-words (buffer beg end wordlist)
@@ -1140,54 +1149,53 @@ visible in BUFFER within position range from BEG to END."
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
       (save-excursion
-        (let* ((language (wcheck-get-data :buffer buffer :language))
-               (r-start (wcheck-query-language-data language 'regexp-start))
-               (r-end (wcheck-query-language-data language 'regexp-end))
-               (syntax (eval (wcheck-query-language-data language 'syntax)))
-               (case-fold-search
-                (wcheck-query-language-data language 'case-fold))
-               (face-p (wcheck-generate-face-predicate language major-mode))
+
+        (wcheck-with-language-data
+         (language (wcheck-get-data :buffer buffer :language))
+         (regexp-start regexp-end syntax (case-fold-search case-fold)
+                       (ol-face face) suggestion-program)
+
+         (let ((face-p (wcheck-generate-face-predicate language major-mode))
                (search-spaces-regexp nil)
-               (ol-face (wcheck-query-language-data language 'face))
                (ol-keymap (make-sparse-keymap))
                (ol-mouse-face nil)
                (ol-help-echo nil)
                regexp old-point)
 
-          (when (wcheck-query-language-data language 'suggestion-program)
-            (define-key ol-keymap [down-mouse-3] 'wcheck-mouse-click-overlay)
-            (define-key ol-keymap [mouse-3] 'undefined)
-            (setq ol-mouse-face 'highlight
-                  ol-help-echo "mouse-3: show suggestions"))
+           (when suggestion-program
+             (define-key ol-keymap [down-mouse-3] 'wcheck-mouse-click-overlay)
+             (define-key ol-keymap [mouse-3] 'undefined)
+             (setq ol-mouse-face 'highlight
+                   ol-help-echo "mouse-3: show suggestions"))
 
-          (with-syntax-table syntax
-            (save-match-data
-              (dolist (word wordlist)
-                (setq regexp (concat r-start "\\("
-                                     (regexp-quote word) "\\)"
-                                     r-end)
-                      old-point 0)
-                (goto-char beg)
+           (with-syntax-table (eval syntax)
+             (save-match-data
+               (dolist (word wordlist)
+                 (setq regexp (concat regexp-start "\\("
+                                      (regexp-quote word) "\\)"
+                                      regexp-end)
+                       old-point 0)
+                 (goto-char beg)
 
-                (catch 'infinite
-                  (while (re-search-forward regexp end t)
-                    (cond ((= (point) old-point)
-                           ;; We didn't move forward so break the loop.
-                           ;; Otherwise we would loop endlessly.
-                           (throw 'infinite t))
-                          ((invisible-p (match-beginning 1))
-                           ;; The point is invisible so jump forward to
-                           ;; the next change of "invisible" text
-                           ;; property.
-                           (goto-char (next-single-char-property-change
-                                       (match-beginning 1) 'invisible buffer
-                                       end)))
-                          ((eval face-p)
-                           ;; Make an overlay.
-                           (wcheck-make-overlay
-                            buffer ol-face ol-mouse-face ol-help-echo ol-keymap
-                            (match-beginning 1) (match-end 1))))
-                    (setq old-point (point))))))))))))
+                 (catch 'infinite
+                   (while (re-search-forward regexp end t)
+                     (cond ((= (point) old-point)
+                            ;; We didn't move forward so break the loop.
+                            ;; Otherwise we would loop endlessly.
+                            (throw 'infinite t))
+                           ((invisible-p (match-beginning 1))
+                            ;; The point is invisible so jump forward to
+                            ;; the next change of "invisible" text
+                            ;; property.
+                            (goto-char (next-single-char-property-change
+                                        (match-beginning 1) 'invisible buffer
+                                        end)))
+                           ((eval face-p)
+                            ;; Make an overlay.
+                            (wcheck-make-overlay
+                             buffer ol-face ol-mouse-face ol-help-echo ol-keymap
+                             (match-beginning 1) (match-end 1))))
+                     (setq old-point (point)))))))))))))
 
 
 ;;; Spelling suggestions
@@ -1277,42 +1285,46 @@ call the function with single argument TEXT. The function must
 return substitute suggestions as a list of strings (or nil if
 there aren't any)."
 
-  (let ((program (wcheck-query-language-data language 'suggestion-program))
-        (args (wcheck-query-language-data language 'suggestion-args))
-        (parser (wcheck-query-language-data language 'suggestion-parser)))
+  (wcheck-with-language-data
+   (nil language)
+   ((program suggestion-program)
+    (args suggestion-args)
+    (parser suggestion-parser))
 
-    (cond ((not (wcheck-suggestion-program-configured-p language))
-           (message
-            "Language \"%s\": suggestion program or function is not configured"
-            language)
-           'error)
+   (cond ((not (wcheck-suggestion-program-configured-p language))
+          (message
+           "Language \"%s\": suggestion program or function is not configured"
+           language)
+          'error)
 
-          ((and (stringp program)
-                (not parser))
-           (message "Language \"%s\": parser function is not configured"
-                    language)
-           'error)
+         ((and (stringp program)
+               (not parser))
+          (message "Language \"%s\": parser function is not configured"
+                   language)
+          'error)
 
-          ((stringp program)
-           (with-temp-buffer
-             (insert text)
-             (apply #'call-process-region (point-min) (point-max)
-                    program t t nil args)
-             (goto-char (point-min))
-             (let ((suggestions (save-match-data (funcall parser))))
-               (if (wcheck-list-of-strings-p suggestions)
-                   suggestions
-                 (message
-                  "Parser function must return a list of strings or nil")
-                 'error))))
+         ((stringp program)
+          (with-temp-buffer
+            (insert text)
+            (apply #'call-process-region (point-min) (point-max)
+                   program t t nil args)
+            (goto-char (point-min))
+            (let ((suggestions (save-match-data (funcall parser))))
+              (if (wcheck-list-of-strings-p suggestions)
+                  suggestions
+                (progn
+                  (message
+                   "Parser function must return a list of strings or nil")
+                  'error)))))
 
-          ((functionp program)
-           (let ((suggestions (save-match-data (funcall program text))))
-             (if (wcheck-list-of-strings-p suggestions)
-                 suggestions
-               (message
-                "Suggestion function must return a list of strings or nil")
-               'error))))))
+         ((functionp program)
+          (let ((suggestions (save-match-data (funcall program text))))
+            (if (wcheck-list-of-strings-p suggestions)
+                suggestions
+              (progn
+                (message
+                 "Suggestion function must return a list of strings or nil")
+                'error)))))))
 
 
 (defun wcheck-choose-suggestion-popup (suggestions event)
@@ -1471,7 +1483,7 @@ Return a predicate expression that is used to decide whether
 position with LANGUAGE and MAJOR-MODE. Evaluating the predicate
 expression will return a boolean."
   (let* ((face-settings (wcheck-major-mode-face-settings
-                        language major-mode))
+                         language major-mode))
          (mode (nth 1 face-settings))
          (faces (nthcdr 2 face-settings)))
     (cond ((not font-lock-mode)
