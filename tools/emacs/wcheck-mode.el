@@ -703,8 +703,7 @@ right-click mouse menu)."
     ;; Turn off the mode.
 
     ;; We clear overlays form the buffer, remove the buffer from buffer
-    ;; database and clear the variable holding strings received from
-    ;; external process.
+    ;; database.
     (wcheck-remove-overlays)
     (wcheck-update-buffer-data (current-buffer) nil)
 
@@ -750,13 +749,14 @@ right-click mouse menu)."
 
 
 (defun wcheck-timer-read-event ()
-  "Send windows' content to external program.
-This function is usually called by the wcheck-mode idle timer.
-The function walks through all windows which belong to the buffer
+  "Send windows' content to checker program or function.
+
+This function is usually called by the `wcheck-mode' idle timer.
+The function walks through all windows which belong to buffers
 that have requested update. It reads windows' content and sends
-it to the external program associated with the buffer. Finally,
-this function starts another idle timer for marking strings in
-buffers."
+it checker program or function associated with the buffer's
+language. Finally, this function starts another idle timer for
+marking strings in buffers."
 
   (dolist (buffer wcheck-timer-read-requested)
     (when (buffer-live-p buffer)
@@ -789,7 +789,7 @@ buffers."
             (setq strings (append (wcheck-read-strings
                                    buffer (car area) (cdr area))
                                   strings)))
-          ;; Send strings to external process.
+          ;; Send strings to checker engine.
           (wcheck-send-strings buffer strings)))))
 
   ;; Start a timer which will mark text in buffers/windows.
