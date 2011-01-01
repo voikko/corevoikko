@@ -1334,6 +1334,12 @@ choice (a string) or nil."
     (x-popup-menu event menu)))
 
 
+(defun wcheck-read-key (prompt)
+  (if (fboundp 'read-key)
+      (read-key prompt)
+    (read-char prompt)))
+
+
 (defun wcheck-choose-suggestion-minibuffer (suggestions)
   "Create a text menu to choose a substitute suggestion.
 SUGGESTIONS is a list of strings. Return user's choice (a string)
@@ -1398,7 +1404,7 @@ or nil."
             (set-window-buffer window (current-buffer))
             (set-window-dedicated-p window t)
             ;; Return the choice or nil.
-            (cond ((cdr (assq (read-key prompt) alist)))
+            (cond ((cdr (assq (wcheck-read-key prompt) alist)))
                   (t
                    (message "Not a valid character")
                    nil)))))
