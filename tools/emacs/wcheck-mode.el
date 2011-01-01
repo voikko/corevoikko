@@ -729,26 +729,20 @@ right-click mouse menu)."
     (setq wcheck-timer nil)))
 
 
+(defmacro wcheck-loop-over-reqs-engine (key var &rest body)
+  `(dolist (,var (delq nil (mapcar (lambda (buffer)
+                                     (when (wcheck-buffer-data-get
+                                            :buffer buffer ,key)
+                                       buffer))
+                                   (wcheck-buffer-data-get-all :buffer))))
+     (when (buffer-live-p ,var)
+       (with-current-buffer ,var
+         ,@body))))
+
 (defmacro wcheck-loop-over-read-reqs (var &rest body)
-  `(dolist (,var (delq nil (mapcar (lambda (buffer)
-                                     (when (wcheck-buffer-data-get
-                                            :buffer buffer :read-req)
-                                       buffer))
-                                   (wcheck-buffer-data-get-all :buffer))))
-     (when (buffer-live-p ,var)
-       (with-current-buffer ,var
-         ,@body))))
-
-
+  `(wcheck-loop-over-reqs-engine :read-req ,var ,@body))
 (defmacro wcheck-loop-over-paint-reqs (var &rest body)
-  `(dolist (,var (delq nil (mapcar (lambda (buffer)
-                                     (when (wcheck-buffer-data-get
-                                            :buffer buffer :paint-req)
-                                       buffer))
-                                   (wcheck-buffer-data-get-all :buffer))))
-     (when (buffer-live-p ,var)
-       (with-current-buffer ,var
-         ,@body))))
+  `(wcheck-loop-over-reqs-engine :paint-req ,var ,@body))
 
 
 (defun wcheck-timer-read-event ()
