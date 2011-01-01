@@ -1,11 +1,11 @@
 ;;; wcheck-mode.el --- General interface for text checkers
 
-;; Copyright (C) 2009-2010 Teemu Likonen <tlikonen@iki.fi>
+;; Copyright (C) 2009-2011 Teemu Likonen <tlikonen@iki.fi>
 
 ;; Author: Teemu Likonen <tlikonen@iki.fi>
 ;; Maintainer: Teemu Likonen <tlikonen@iki.fi>
 ;; Created: 2009-07-04
-;; Version: 2010.12.27
+;; Version: 2011.01.01
 ;; Keywords: text spell check languages ispell
 
 
