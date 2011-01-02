@@ -851,22 +851,27 @@ separate line."
    (language (wcheck-buffer-data-get :buffer buffer :language))
    (program)
 
-   (cond ((or (wcheck-buffer-data-get :buffer buffer :process)
-              (stringp program))
-          (process-send-string
-           (wcheck-start-get-process buffer)
-           (concat (mapconcat #'identity strings "\n") "\n")))
-         ((functionp program)
-          (when (buffer-live-p buffer)
-            (with-current-buffer buffer
-              (let ((received (save-match-data (funcall program strings))))
-                (when (and received (wcheck-list-of-strings-p received))
-                  (wcheck-buffer-data-set buffer :strings received)
-                  (wcheck-buffer-data-set buffer :paint-req t))))))
-         (t
-          (when (buffer-live-p buffer)
-            (with-current-buffer buffer
-              (wcheck-mode -1)))))))
+   (condition-case nil
+       (cond ((or (wcheck-buffer-data-get :buffer buffer :process)
+                  (stringp program))
+              (process-send-string
+               (wcheck-start-get-process buffer)
+               (concat (mapconcat #'identity strings "\n") "\n")))
+             ((functionp program)
+              (when (buffer-live-p buffer)
+                (with-current-buffer buffer
+                  (let ((received (save-match-data (funcall program strings))))
+                    (if (wcheck-list-of-strings-p received)
+                        (when received
+                          (wcheck-buffer-data-set buffer :strings received)
+                          (wcheck-buffer-data-set buffer :paint-req t))
+                      (signal 'wcheck-not-a-list-of-strings-error nil)))))))
+
+     (wcheck-not-a-list-of-strings-error
+      (with-current-buffer buffer
+        (wcheck-mode -1)
+        (message (concat "Checker function did not return a list of "
+                         "strings (or nil)")))))))
 
 
 (defun wcheck-receive-strings (process string)
