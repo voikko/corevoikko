@@ -1267,8 +1267,7 @@ was replaced."
                               (wcheck-marked-text-at (1- pos))))
             (return-value nil))
         (if (not overlay-data)
-            (signal 'wcheck-suggestion-error
-                    "There is no marked text here")
+            (signal 'wcheck-suggestion-error "There is no marked text here")
           (let* ((text (aref overlay-data 0))
                  (start (aref overlay-data 1))
                  (end (aref overlay-data 2))
@@ -1283,7 +1282,7 @@ was replaced."
                        (markerp end))
               (with-current-buffer (marker-buffer start)
                 (if buffer-read-only
-                    (message "Buffer is read-only")
+                    (signal 'wcheck-suggestion-error "Buffer is read-only")
                   (delete-region start end)
                   (goto-char start)
                   (insert choice)
