@@ -787,6 +787,12 @@ right-click mouse menu)."
     (setq wcheck-timer nil)))
 
 
+(defun wcheck-funcall-after-idle (function &rest args)
+  (apply #'run-with-idle-timer
+         (+ wcheck-timer-idle (wcheck-current-idle-time-seconds))
+         nil function args))
+
+
 (defun wcheck-timer-read-event ()
   "Send windows' content to checker program or function.
 
@@ -828,13 +834,9 @@ marking strings in buffers."
      ;; Send strings to checker engine.
      (wcheck-send-strings buffer strings)))
 
-  ;; Start a timer which will mark text in buffers/windows.
-  (run-with-idle-timer (+ wcheck-timer-idle
-                          (wcheck-current-idle-time-seconds))
-                       nil #'wcheck-timer-paint-event
-                       ;; Repeat the timer 3 times after the initial
-                       ;; call:
-                       3))
+  ;; Start a timer which will mark text in buffers/windows. Repeat the
+  ;; timer 3 times after the initial call.
+  (wcheck-funcall-after-idle #'wcheck-timer-paint-event 3))
 
 
 (defun wcheck-send-strings (buffer strings)
@@ -917,10 +919,7 @@ call. The delay between consecutive calls is defined in variable
   ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
   (when (and (integerp repeat)
              (> repeat 0))
-    (run-with-idle-timer (+ wcheck-timer-idle
-                            (wcheck-current-idle-time-seconds))
-                         nil #'wcheck-timer-paint-event
-                         (1- repeat))))
+    (wcheck-funcall-after-idle #'wcheck-timer-paint-event (1- repeat))))
 
 
 ;;; Hooks
