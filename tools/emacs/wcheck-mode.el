@@ -1217,6 +1217,16 @@ the text and (3) marker at the end of the text."
                 start end)))))
 
 
+(wcheck-define-condition
+ wcheck-suggestion-error
+ '(error wcheck-suggestion-error))
+
+(wcheck-define-condition
+ wcheck-suggestion-program-error
+ '(error wcheck-suggestion-error
+         wcheck-suggestion-program-error))
+
+
 ;;;###autoload
 (defun wcheck-spelling-suggestions (pos &optional event)
   "Offer spelling suggestions for marked text.
@@ -1240,34 +1250,38 @@ Function returns the replacement text (string) or nil if nothing
 was replaced."
 
   (interactive "d")
-  (let ((overlay-data (or (wcheck-marked-text-at pos)
-                          (wcheck-marked-text-at (1- pos))))
-        (return-value nil))
-    (if overlay-data
-        (let* ((text (aref overlay-data 0))
-               (start (aref overlay-data 1))
-               (end (aref overlay-data 2))
-               (suggestions (wcheck-get-suggestions wcheck-language text)))
-          (unless (eq suggestions 'error)
-            (let ((choice (if (and (display-popup-menus-p) event)
-                              (wcheck-choose-suggestion-popup
-                               suggestions event)
-                            (wcheck-choose-suggestion-minibuffer
-                             suggestions))))
-              (when (and (stringp choice)
-                         (markerp start)
-                         (markerp end))
-                (with-current-buffer (marker-buffer start)
-                  (if buffer-read-only
-                      (message "Buffer is read-only")
-                    (delete-region start end)
-                    (goto-char start)
-                    (insert choice)
-                    (setq return-value choice))))))
-          (if (markerp start) (set-marker start nil))
-          (if (markerp end) (set-marker end nil)))
-      (message "There is no marked text here"))
-    return-value))
+  (condition-case error-data
+      (let ((overlay-data (or (wcheck-marked-text-at pos)
+                              (wcheck-marked-text-at (1- pos))))
+            (return-value nil))
+        (if (not overlay-data)
+            (signal 'wcheck-suggestion-error
+                    "There is no marked text here")
+          (let* ((text (aref overlay-data 0))
+                 (start (aref overlay-data 1))
+                 (end (aref overlay-data 2))
+                 (suggestions (wcheck-get-suggestions wcheck-language text))
+                 (choice (if (and (display-popup-menus-p) event)
+                             (wcheck-choose-suggestion-popup
+                              suggestions event)
+                           (wcheck-choose-suggestion-minibuffer
+                            suggestions))))
+            (when (and (stringp choice)
+                       (markerp start)
+                       (markerp end))
+              (with-current-buffer (marker-buffer start)
+                (if buffer-read-only
+                    (message "Buffer is read-only")
+                  (delete-region start end)
+                  (goto-char start)
+                  (insert choice)
+                  (setq return-value choice))))
+            (if (markerp start) (set-marker start nil))
+            (if (markerp end) (set-marker end nil))))
+        return-value)
+    (wcheck-suggestion-error
+     (message "%s" (cdr error-data))
+     nil)))
 
 
 (defun wcheck-get-suggestions (language text)
@@ -1292,16 +1306,17 @@ there aren't any)."
     (parser suggestion-parser))
 
    (cond ((not (wcheck-suggestion-program-configured-p language))
-          (message
-           "Language \"%s\": suggestion program or function is not configured"
-           language)
-          'error)
+          (signal 'wcheck-suggestion-program-error
+                  (format (concat "Language \"%s\": suggestion program or "
+                                  "function not configured")
+                          language)))
 
          ((and (stringp program)
                (not parser))
-          (message "Language \"%s\": parser function is not configured"
-                   language)
-          'error)
+          (signal 'wcheck-suggestion-program-error
+                  (format (concat "Language \"%s\": parser function is not "
+                                  "configured")
+                          language)))
 
          ((stringp program)
           (with-temp-buffer
