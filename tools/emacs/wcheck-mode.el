@@ -562,6 +562,42 @@ This is used when language does not define a face."
   "Process name for `wcheck-mode'.")
 
 
+;;; Macros
+
+
+(defmacro wcheck-loop-over-reqs-engine (key var &rest body)
+  `(dolist (,var (delq nil (mapcar (lambda (buffer)
+                                     (when (wcheck-buffer-data-get
+                                            :buffer buffer ,key)
+                                       buffer))
+                                   (wcheck-buffer-data-get-all :buffer))))
+     (when (buffer-live-p ,var)
+       (with-current-buffer ,var
+         ,@body))))
+
+(defmacro wcheck-loop-over-read-reqs (var &rest body)
+  `(wcheck-loop-over-reqs-engine :read-req ,var ,@body))
+(defmacro wcheck-loop-over-paint-reqs (var &rest body)
+  `(wcheck-loop-over-reqs-engine :paint-req ,var ,@body))
+
+
+(defmacro wcheck-with-language-data (language bindings &rest body)
+  (let ((lang-var (make-symbol "--wck-language--")))
+    `(let* ((,lang-var ,(cadr language))
+            ,@(when (car language)
+                `((,(car language) ,lang-var)))
+            ,@(mapcar
+               (lambda (var)
+                 (cond ((symbolp var)
+                        (list var `(wcheck-query-language-data
+                                    ,lang-var ',var)))
+                       ((and var (listp var))
+                        (list (car var) `(wcheck-query-language-data
+                                          ,lang-var ',(cadr var))))))
+               bindings))
+       ,@body)))
+
+
 ;;; Interactive commands
 
 
@@ -729,22 +765,6 @@ right-click mouse menu)."
     (setq wcheck-timer nil)))
 
 
-(defmacro wcheck-loop-over-reqs-engine (key var &rest body)
-  `(dolist (,var (delq nil (mapcar (lambda (buffer)
-                                     (when (wcheck-buffer-data-get
-                                            :buffer buffer ,key)
-                                       buffer))
-                                   (wcheck-buffer-data-get-all :buffer))))
-     (when (buffer-live-p ,var)
-       (with-current-buffer ,var
-         ,@body))))
-
-(defmacro wcheck-loop-over-read-reqs (var &rest body)
-  `(wcheck-loop-over-reqs-engine :read-req ,var ,@body))
-(defmacro wcheck-loop-over-paint-reqs (var &rest body)
-  `(wcheck-loop-over-reqs-engine :paint-req ,var ,@body))
-
-
 (defun wcheck-timer-read-event ()
   "Send windows' content to checker program or function.
 
@@ -793,23 +813,6 @@ marking strings in buffers."
                        ;; Repeat the timer 3 times after the initial
                        ;; call:
                        3))
-
-
-(defmacro wcheck-with-language-data (language bindings &rest body)
-  (let ((lang-var (make-symbol "--wck-language--")))
-    `(let* ((,lang-var ,(cadr language))
-            ,@(when (car language)
-                `((,(car language) ,lang-var)))
-            ,@(mapcar
-               (lambda (var)
-                 (cond ((symbolp var)
-                        (list var `(wcheck-query-language-data
-                                    ,lang-var ',var)))
-                       ((and var (listp var))
-                        (list (car var) `(wcheck-query-language-data
-                                          ,lang-var ',(cadr var))))))
-               bindings))
-       ,@body)))
 
 
 (defun wcheck-send-strings (buffer strings)
