@@ -612,8 +612,11 @@ This is used when language does not define a face."
 (wcheck-define-condition wcheck-error error)
 (wcheck-define-condition wcheck-language-does-not-exist-error wcheck-error)
 (wcheck-define-condition wcheck-program-not-configured-error wcheck-error)
+(wcheck-define-condition wcheck-not-a-list-of-strings-error wcheck-error)
 (wcheck-define-condition wcheck-suggestion-error wcheck-error)
 (wcheck-define-condition wcheck-suggestion-program-error
+                         wcheck-suggestion-error)
+(wcheck-define-condition wcheck-parser-function-not-configured-error
                          wcheck-suggestion-error)
 
 
@@ -1283,9 +1286,22 @@ was replaced."
             (if (markerp start) (set-marker start nil))
             (if (markerp end) (set-marker end nil))))
         return-value)
+
+    (wcheck-suggestion-program-error
+     (message (concat "Language \"%s\": suggestion program or "
+                      "function not configured")
+              (cdr error-data)))
+
+    (wcheck-parser-function-not-configured-error
+     (message "Language \"%s\": parser function is not configured"
+              (cdr error-data)))
+
+    (wcheck-not-a-list-of-strings-error
+     (message (concat "Suggestion program or parser function did not return "
+                      "a list of strings (or nil)")))
+
     (wcheck-suggestion-error
-     (message "%s" (cdr error-data))
-     nil)))
+     (message "%s" (cdr error-data)))))
 
 
 (defun wcheck-get-suggestions (language text)
@@ -1310,17 +1326,12 @@ there aren't any)."
     (parser suggestion-parser))
 
    (cond ((not (wcheck-suggestion-program-configured-p language))
-          (signal 'wcheck-suggestion-program-error
-                  (format (concat "Language \"%s\": suggestion program or "
-                                  "function not configured")
-                          language)))
+          (signal 'wcheck-suggestion-program-error language))
 
          ((and (stringp program)
                (not parser))
-          (signal 'wcheck-suggestion-program-error
-                  (format (concat "Language \"%s\": parser function is not "
-                                  "configured")
-                          language)))
+          (signal 'wcheck-parser-function-not-configured-error language
+                  language))
 
          ((stringp program)
           (with-temp-buffer
@@ -1331,19 +1342,13 @@ there aren't any)."
             (let ((suggestions (save-match-data (funcall parser))))
               (if (wcheck-list-of-strings-p suggestions)
                   suggestions
-                (progn
-                  (message
-                   "Parser function must return a list of strings or nil")
-                  'error)))))
+                (signal 'wcheck-not-a-list-of-strings-error nil)))))
 
          ((functionp program)
           (let ((suggestions (save-match-data (funcall program text))))
             (if (wcheck-list-of-strings-p suggestions)
                 suggestions
-              (progn
-                (message
-                 "Suggestion function must return a list of strings or nil")
-                'error)))))))
+              (signal 'wcheck-not-a-list-of-strings-error nil)))))))
 
 
 (defun wcheck-choose-suggestion-popup (suggestions event)
