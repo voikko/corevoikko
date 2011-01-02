@@ -1335,8 +1335,7 @@ there aren't any)."
 
          ((and (stringp program)
                (not parser))
-          (signal 'wcheck-parser-function-not-configured-error language
-                  language))
+          (signal 'wcheck-parser-function-not-configured-error language))
 
          ((stringp program)
           (with-temp-buffer
