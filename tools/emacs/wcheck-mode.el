@@ -631,34 +631,97 @@ interactively) then change the global default language."
             comp nil t nil 'wcheck-change-language-history default)
            current-prefix-arg)))
 
-  ;; Change the language, locally or globally, and update buffer
-  ;; database, if needed.
-  (when (stringp language)
-    (if global
-        ;; Just change the global value and leave.
-        (setq-default wcheck-language language)
+  (condition-case error-data
+      (when (stringp language)
+        ;; Change the language, locally or globally, and update buffer
+        ;; database, if needed.
+        (if global
+            ;; Just change the global value and leave.
+            (setq-default wcheck-language language)
 
-      ;; Change the buffer-local value.
-      (setq wcheck-language language)
-      ;; If the mode is currently turned on check if language's checker
-      ;; program or function is configured and if all is OK request
-      ;; update for the buffer.
-      (when wcheck-mode
-        (if (wcheck-program-configured-p wcheck-language)
-            ;; It's OK; update the buffer.
-            (progn
-              (wcheck-buffer-lang-proc-data-update
-               (current-buffer) wcheck-language)
-              (wcheck-buffer-data-set (current-buffer) :read-req t)
-              (wcheck-remove-overlays))
+          ;; Change the buffer-local value.
+          (setq wcheck-language language)
+          ;; If the mode is currently turned on check if language's
+          ;; checker program or function is configured and if all is OK
+          ;; request update for the buffer.
+          (when wcheck-mode
+            (if (wcheck-program-configured-p wcheck-language)
+                ;; It's OK; update the buffer.
+                (progn
+                  (wcheck-buffer-lang-proc-data-update
+                   (current-buffer) wcheck-language)
+                  (wcheck-buffer-data-set (current-buffer) :read-req t)
+                  (wcheck-remove-overlays))
 
-          ;; It's not OK; turn off.
-          (wcheck-mode -1)
-          (when (interactive-p)
-            (wcheck-error-program-not-configured wcheck-language)))))
+              (signal 'wcheck-program-not-configured-error wcheck-language))))
 
-    ;; Return the language.
-    language))
+        ;; Return the language.
+        language)
+
+    (wcheck-program-not-configured-error
+     (wcheck-mode -1)
+     (message (concat "Language \"%s\": checker program or function "
+                      "is not configured")
+              (cdr error-data)))))
+
+
+(wcheck-define-condition wcheck-error '(error wcheck-error))
+
+(wcheck-define-condition
+ wcheck-language-does-not-exist-error
+ '(error wcheck-error wcheck-language-does-not-exist-error))
+
+(wcheck-define-condition
+ wcheck-program-not-configured-error
+ '(error wcheck-error wcheck-program-not-configured-error))
+
+
+(defun wcheck-mode-turn-on ()
+  ;; Turn the mode on, but first some checks.
+  (let ((buffer (current-buffer))
+        (language wcheck-language))
+    (condition-case error-data
+        (cond
+         ((minibufferp buffer)
+          (signal 'wcheck-error "Can't use `wcheck-mode' in a minibuffer"))
+
+         ((not (wcheck-language-exists-p language))
+          (signal 'wcheck-language-does-not-exist-error language))
+
+         ((not (wcheck-program-configured-p language))
+          (signal 'wcheck-program-not-configured-error language))
+
+         (t
+          (make-local-variable 'wcheck-language)
+          (wcheck-add-local-hooks buffer)
+          (wcheck-add-global-hooks)
+          (wcheck-buffer-lang-proc-data-update buffer language)
+          (wcheck-timer-start)
+          (wcheck-buffer-data-set buffer :read-req t)))
+
+      (wcheck-program-not-configured-error
+       (wcheck-mode -1)
+       (message (concat "Language \"%s\": checker program of function "
+                        "not configured") (cdr error-data)))
+
+      (wcheck-language-does-not-exist-error
+       (wcheck-mode -1)
+       (message "Language \"%s\" does not exist" (cdr error-data))))))
+
+
+(defun wcheck-mode-turn-off ()
+  (let ((buffer (current-buffer)))
+    ;; We clear overlays form the buffer, remove the buffer from buffer
+    ;; database.
+    (wcheck-remove-overlays)
+    (wcheck-buffer-lang-proc-data-update buffer nil)
+
+    ;; If there are no buffers using wcheck-mode anymore, stop the idle
+    ;; timer and remove global hooks.
+    (when (null (wcheck-buffer-data-get-all :buffer))
+      (wcheck-timer-stop)
+      (wcheck-remove-global-hooks))
+    (wcheck-remove-local-hooks buffer)))
 
 
 ;;;###autoload
@@ -694,64 +757,15 @@ right-click mouse menu)."
   :init-value nil
   :lighter " wck"
   :keymap wcheck-mode-map
-  (if wcheck-mode
-      ;; Turn on Wcheck mode, but first some checks...
 
-      (cond
-       ((minibufferp (current-buffer))
-        ;; This is a minibuffer; stop here.
-        (message "Can't use `wcheck-mode' in a minibuffer")
-        (setq wcheck-mode nil))
+  (condition-case error-data
+      (if wcheck-mode
+          (wcheck-mode-turn-on)
+        (wcheck-mode-turn-off))
 
-       ((not (wcheck-language-exists-p wcheck-language))
-        ;; Not a valid language.
-        (wcheck-mode -1)
-        (message "Language %sdoes not exist; check the configuration"
-                 (if (and (stringp wcheck-language)
-                          (> (length wcheck-language) 0))
-                     (format "\"%s\" " wcheck-language)
-                   "")))
-
-       ((not (wcheck-program-configured-p wcheck-language))
-        (wcheck-mode -1)
-        (wcheck-error-program-not-configured wcheck-language))
-
-       (t
-        ;; We are ready to really turn on the mode.
-
-        ;; Make language buffer-local
-        (make-local-variable 'wcheck-language)
-
-        ;; Add hooks.
-        (wcheck-add-local-hooks (current-buffer))
-        (wcheck-add-global-hooks)
-
-        ;; Add this buffer to the buffer database and update
-        ;; language-process data.
-        (wcheck-buffer-lang-proc-data-update (current-buffer) wcheck-language)
-
-        ;; Ensure that the idle timer is running. The timer runs a
-        ;; function which updates buffers which have requested for that.
-        (wcheck-timer-start)
-
-        ;; Request update for this buffer.
-        (wcheck-buffer-data-set (current-buffer) :read-req t)))
-
-    ;; Turn off the mode.
-
-    ;; We clear overlays form the buffer, remove the buffer from buffer
-    ;; database.
-    (wcheck-remove-overlays)
-    (wcheck-buffer-lang-proc-data-update (current-buffer) nil)
-
-    ;; If there are no buffers using wcheck-mode anymore, stop the idle
-    ;; timer and remove global hooks.
-    (when (null (wcheck-buffer-data-get-all :buffer))
-      (wcheck-timer-stop)
-      (wcheck-remove-global-hooks))
-
-    ;; Remove buffer-local hooks.
-    (wcheck-remove-local-hooks (current-buffer))))
+    (wcheck-error
+     (wcheck-mode -1)
+     (message "%s" (cdr error-data)))))
 
 
 ;;; Timers
@@ -1219,11 +1233,12 @@ the text and (3) marker at the end of the text."
 
 (wcheck-define-condition
  wcheck-suggestion-error
- '(error wcheck-suggestion-error))
+ '(error wcheck-error wcheck-suggestion-error))
 
 (wcheck-define-condition
  wcheck-suggestion-program-error
- '(error wcheck-suggestion-error
+ '(error wcheck-error
+         wcheck-suggestion-error
          wcheck-suggestion-program-error))
 
 
@@ -1617,11 +1632,6 @@ or `wcheck-language-data-defaults-hard-coded'."
 (defun wcheck-list-of-lists-p (object)
   (and (listp object)
        (not (memq nil (mapcar #'listp object)))))
-
-
-(defun wcheck-error-program-not-configured (language)
-  (message "Language \"%s\": checker program or function not configured"
-           language))
 
 
 (defun wcheck-current-idle-time-seconds ()
