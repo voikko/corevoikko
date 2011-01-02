@@ -605,6 +605,34 @@ This is used when language does not define a face."
        ,@body)))
 
 
+;;; Conditions
+
+
+(wcheck-define-condition wcheck-error '(error wcheck-error))
+
+
+(wcheck-define-condition
+ wcheck-language-does-not-exist-error
+ '(error wcheck-error wcheck-language-does-not-exist-error))
+
+
+(wcheck-define-condition
+ wcheck-program-not-configured-error
+ '(error wcheck-error wcheck-program-not-configured-error))
+
+
+(wcheck-define-condition
+ wcheck-suggestion-error
+ '(error wcheck-error wcheck-suggestion-error))
+
+
+(wcheck-define-condition
+ wcheck-suggestion-program-error
+ '(error wcheck-error
+         wcheck-suggestion-error
+         wcheck-suggestion-program-error))
+
+
 ;;; Interactive commands
 
 
@@ -663,17 +691,6 @@ interactively) then change the global default language."
      (message (concat "Language \"%s\": checker program or function "
                       "is not configured")
               (cdr error-data)))))
-
-
-(wcheck-define-condition wcheck-error '(error wcheck-error))
-
-(wcheck-define-condition
- wcheck-language-does-not-exist-error
- '(error wcheck-error wcheck-language-does-not-exist-error))
-
-(wcheck-define-condition
- wcheck-program-not-configured-error
- '(error wcheck-error wcheck-program-not-configured-error))
 
 
 (defun wcheck-mode-turn-on ()
@@ -1229,17 +1246,6 @@ the text and (3) marker at the end of the text."
             (end (copy-marker (overlay-end overlay))))
         (vector (buffer-substring-no-properties start end)
                 start end)))))
-
-
-(wcheck-define-condition
- wcheck-suggestion-error
- '(error wcheck-error wcheck-suggestion-error))
-
-(wcheck-define-condition
- wcheck-suggestion-program-error
- '(error wcheck-error
-         wcheck-suggestion-error
-         wcheck-suggestion-program-error))
 
 
 ;;;###autoload
