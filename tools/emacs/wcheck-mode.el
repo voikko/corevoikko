@@ -565,6 +565,13 @@ This is used when language does not define a face."
 ;;; Macros
 
 
+(defmacro wcheck-define-condition (name superclasses &optional message)
+  `(progn
+     (put ',name 'error-conditions ,superclasses)
+     (put ',name 'error-message ,message)
+     ',name))
+
+
 (defmacro wcheck-loop-over-reqs-engine (key var &rest body)
   `(dolist (,var (delq nil (mapcar (lambda (buffer)
                                      (when (wcheck-buffer-data-get
