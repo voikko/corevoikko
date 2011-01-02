@@ -565,9 +565,10 @@ This is used when language does not define a face."
 ;;; Macros
 
 
-(defmacro wcheck-define-condition (name superclasses &optional message)
+(defmacro wcheck-define-condition (name superclass &optional message)
   `(progn
-     (put ',name 'error-conditions ,superclasses)
+     (put ',name 'error-conditions
+          (append (get ',superclass 'error-conditions) (list ',name)))
      (put ',name 'error-message ,message)
      ',name))
 
@@ -608,29 +609,12 @@ This is used when language does not define a face."
 ;;; Conditions
 
 
-(wcheck-define-condition wcheck-error '(error wcheck-error))
-
-
-(wcheck-define-condition
- wcheck-language-does-not-exist-error
- '(error wcheck-error wcheck-language-does-not-exist-error))
-
-
-(wcheck-define-condition
- wcheck-program-not-configured-error
- '(error wcheck-error wcheck-program-not-configured-error))
-
-
-(wcheck-define-condition
- wcheck-suggestion-error
- '(error wcheck-error wcheck-suggestion-error))
-
-
-(wcheck-define-condition
- wcheck-suggestion-program-error
- '(error wcheck-error
-         wcheck-suggestion-error
-         wcheck-suggestion-program-error))
+(wcheck-define-condition wcheck-error error)
+(wcheck-define-condition wcheck-language-does-not-exist-error wcheck-error)
+(wcheck-define-condition wcheck-program-not-configured-error wcheck-error)
+(wcheck-define-condition wcheck-suggestion-error wcheck-error)
+(wcheck-define-condition wcheck-suggestion-program-error
+                         wcheck-suggestion-error)
 
 
 ;;; Interactive commands
