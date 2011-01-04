@@ -552,6 +552,7 @@ This is used when language does not define a face."
 (defvar wcheck-timer nil)
 (defconst wcheck-timer-idle .4
   "`wcheck-mode' idle timer delay (in seconds).")
+(defvar wcheck-timer-paint-event-count 0)
 
 (defvar wcheck-change-language-history nil
   "Language history for command `wcheck-change-language'.")
@@ -796,6 +797,19 @@ right-click mouse menu)."
          nil function args))
 
 
+(defun wcheck-timer-paint-event-run (&optional count)
+  (if (integerp count)
+      (let ((at-least (max count wcheck-timer-paint-event-count)))
+        (if (> wcheck-timer-paint-event-count 0)
+            (setq wcheck-timer-paint-event-count at-least)
+          (setq wcheck-timer-paint-event-count at-least)
+          (wcheck-funcall-after-idle #'wcheck-timer-paint-event)))
+    (when (> (setq wcheck-timer-paint-event-count
+                   (1- wcheck-timer-paint-event-count))
+             0)
+      (wcheck-funcall-after-idle #'wcheck-timer-paint-event))))
+
+
 (defun wcheck-timer-read-event ()
   "Send windows' content to checker program or function.
 
@@ -839,7 +853,7 @@ marking strings in buffers."
 
   ;; Start a timer which will mark text in buffers/windows. Repeat the
   ;; timer 3 times after the initial call.
-  (wcheck-funcall-after-idle #'wcheck-timer-paint-event 3))
+  (wcheck-timer-paint-event-run 3))
 
 
 (defun wcheck-send-strings (buffer strings)
@@ -896,7 +910,7 @@ separate line."
                    (buffer-name buffer)))))))
 
 
-(defun wcheck-timer-paint-event (&optional repeat)
+(defun wcheck-timer-paint-event ()
   "Mark strings in windows.
 
 This is normally called by the `wcheck-mode' idle timer. This
@@ -912,22 +926,18 @@ call. The delay between consecutive calls is defined in variable
    buffer
 
    (wcheck-remove-overlays)
-   ;; We are about to mark text in this buffer so remove this
-   ;; buffer's request.
+   ;; We are about to mark text in this buffer so remove this buffer's
+   ;; request.
    (wcheck-buffer-data-set buffer :paint-req nil)
-   ;; Walk through the visible text areas and mark text based on
-   ;; the string list returned by an external process.
+   ;; Walk through the visible text areas and mark text based on the
+   ;; string list returned by an external process.
    (when wcheck-mode
      (dolist (area (wcheck-buffer-data-get :buffer buffer :areas))
        (wcheck-paint-strings buffer (car area) (cdr area)
                              (wcheck-buffer-data-get :buffer buffer
                                                      :strings)))))
 
-  ;; If REPEAT is positive integer call this function again after
-  ;; waiting wcheck-timer-idle. Pass REPEAT minus one as the argument.
-  (when (and (integerp repeat)
-             (> repeat 0))
-    (wcheck-funcall-after-idle #'wcheck-timer-paint-event (1- repeat))))
+  (wcheck-timer-paint-event-run))
 
 
 ;;; Hooks
