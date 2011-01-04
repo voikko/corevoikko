@@ -554,7 +554,7 @@ This is used when language does not define a face."
   "Keymap for `wcheck-mode'.")
 
 (defvar wcheck-timer nil)
-(defconst wcheck-timer-idle .3
+(defvar wcheck-timer-idle .3
   "`wcheck-mode' idle timer delay (in seconds).")
 (defvar wcheck-timer-paint-event-count 0)
 (defvar wcheck-timer-paint-event-count-std 3)
