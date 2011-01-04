@@ -557,7 +557,14 @@ This is used when language does not define a face."
 (defvar wcheck-timer-idle .3
   "`wcheck-mode' idle timer delay (in seconds).")
 (defvar wcheck-timer-paint-event-count 0)
-(defvar wcheck-timer-paint-event-count-std 3)
+
+(defvar wcheck-timer-paint-event-count-std 3
+  "Run buffer paint event this many times in a row.
+With too low values all data from external processes may not have
+arrived and window gets only partially painted. A higher value
+increases the probability that windows get fully painted but it
+also makes `wcheck-jump-forward' and `wcheck-jump-backward'
+slower. A suitable compromise may be 3 or 4.")
 
 (defvar wcheck-change-language-history nil
   "Language history for command `wcheck-change-language'.")
