@@ -968,7 +968,8 @@ requested it."
    (let* ((jump-req (wcheck-buffer-data-get :buffer buffer :jump-req))
           (direction (wcheck-jump-req-direction jump-req))
           (start (wcheck-jump-req-start jump-req))
-          (bound (wcheck-jump-req-bound jump-req)))
+          (bound (wcheck-jump-req-bound jump-req))
+          (window (wcheck-jump-req-window jump-req)))
 
      (wcheck-buffer-data-set buffer :jump-req nil)
 
@@ -976,7 +977,10 @@ requested it."
          (cond ((eq direction 'forward)
                 (let ((ol (wcheck-overlay-next start bound)))
                   (cond (ol
-                         (goto-char (overlay-end ol))
+                         (if (and (window-live-p window)
+                                  (eq buffer (window-buffer window)))
+                             (set-window-point window (overlay-end ol))
+                           (goto-char (overlay-end ol)))
                          (when (invisible-p (point))
                            (show-entry))
                          (message "Found from line %s"
@@ -984,13 +988,16 @@ requested it."
                          (wcheck-force-read buffer))
                         ((< bound (point-max))
                          (wcheck-jump-req-forward
-                          buffer (1+ bound) (+ bound wcheck-jump-step)))
+                          buffer window (1+ bound) (+ bound wcheck-jump-step)))
                         (t
                          (signal 'wcheck-overlay-not-found-error nil)))))
                ((eq direction 'backward)
                 (let ((ol (wcheck-overlay-previous start bound)))
                   (cond (ol
-                         (goto-char (overlay-start ol))
+                         (if (and (window-live-p window)
+                                  (eq buffer (window-buffer window)))
+                             (set-window-point window (overlay-start ol))
+                           (goto-char (overlay-start ol)))
                          (when (invisible-p (point))
                            (show-entry))
                          (message "Found from line %s"
@@ -998,7 +1005,7 @@ requested it."
                          (wcheck-force-read buffer))
                         ((> bound (point-min))
                          (wcheck-jump-req-backward
-                          buffer (1- bound) (- bound wcheck-jump-step)))
+                          buffer window (1- bound) (- bound wcheck-jump-step)))
                         (t
                          (signal 'wcheck-overlay-not-found-error nil))))))
 
@@ -1345,7 +1352,7 @@ text."
     (line-end-position)))
 
 
-(defun wcheck-jump-req-forward (buffer start bound)
+(defun wcheck-jump-req-forward (buffer window start bound)
   (with-current-buffer buffer
     (let ((start (min start bound))     ;LET, ei LET*
           (bound (wcheck-line-end-at (min (max start bound) (point-max)))))
@@ -1353,13 +1360,14 @@ text."
                (line-number-at-pos start)
                (line-number-at-pos bound))
       (wcheck-buffer-data-set buffer :jump-req
-                              (wcheck-jump-req-create 'forward start bound))
+                              (wcheck-jump-req-create 'forward start bound
+                                                      window))
       (wcheck-buffer-data-set buffer :areas (list (cons start bound)))
       (wcheck-send-strings buffer (wcheck-read-strings buffer start bound t))
       (wcheck-timer-paint-event-run wcheck-timer-paint-event-count-std))))
 
 
-(defun wcheck-jump-req-backward (buffer start bound)
+(defun wcheck-jump-req-backward (buffer window start bound)
   (with-current-buffer buffer
     (let ((start (max start bound))     ;LET, ei LET*
           (bound (wcheck-line-start-at (max (min start bound) (point-min)))))
@@ -1367,7 +1375,8 @@ text."
                (line-number-at-pos start)
                (line-number-at-pos bound))
       (wcheck-buffer-data-set buffer :jump-req
-                              (wcheck-jump-req-create 'backward start bound))
+                              (wcheck-jump-req-create 'backward start bound
+                                                      window))
       (wcheck-buffer-data-set buffer :areas (list (cons bound start)))
       (wcheck-send-strings buffer (wcheck-read-strings buffer bound start t))
       (wcheck-timer-paint-event-run wcheck-timer-paint-event-count-std))))
@@ -1390,7 +1399,8 @@ text."
 (defun wcheck-jump-forward ()
   "Move point forward to next marked text area."
   (interactive)
-  (let ((buffer (current-buffer)))
+  (let ((buffer (current-buffer))
+        (window (selected-window)))
     (unless wcheck-mode
       (wcheck-mode 1))
     (when wcheck-mode
@@ -1401,14 +1411,15 @@ text."
                           buffer (point) (overlay-end ol))))
             (goto-char (overlay-end ol))
           (wcheck-jump-req-forward
-           buffer (point) (+ (point) wcheck-jump-step)))))))
+           buffer window (point) (+ (point) wcheck-jump-step)))))))
 
 
 ;;;###autoload
 (defun wcheck-jump-backward ()
   "Move point backward to previous marked text area."
   (interactive)
-  (let ((buffer (current-buffer)))
+  (let ((buffer (current-buffer))
+        (window (selected-window)))
     (unless wcheck-mode
       (wcheck-mode 1))
     (when wcheck-mode
@@ -1419,7 +1430,7 @@ text."
                           buffer (point) (overlay-start ol))))
             (goto-char (overlay-start ol))
           (wcheck-jump-req-backward
-           buffer (point) (- (point) wcheck-jump-step)))))))
+           buffer window (point) (- (point) wcheck-jump-step)))))))
 
 
 ;;; Spelling suggestions
@@ -1987,12 +1998,13 @@ If KEY is nil return all buffer's all data."
       (aset item (wcheck-buffer-data-key-index key) value))))
 
 
-(defun wcheck-jump-req-create (direction start bound)
+(defun wcheck-jump-req-create (direction start bound window)
   (when (and (or (eq direction 'forward)
                  (eq direction 'backward))
              (number-or-marker-p start)
-             (number-or-marker-p bound))
-    (vector direction start bound)))
+             (number-or-marker-p bound)
+             (windowp window))
+    (vector direction start bound window)))
 
 
 (defun wcheck-jump-req-direction (jump-req)
@@ -2001,6 +2013,8 @@ If KEY is nil return all buffer's all data."
   (aref jump-req 1))
 (defun wcheck-jump-req-bound (jump-req)
   (aref jump-req 2))
+(defun wcheck-jump-req-window (jump-req)
+  (aref jump-req 3))
 
 
 (provide 'wcheck-mode)
