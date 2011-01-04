@@ -1644,9 +1644,7 @@ or nil."
             (set-window-dedicated-p window t)
             ;; Return the choice or nil.
             (cond ((cdr (assq (wcheck-read-key prompt) alist)))
-                  (t
-                   (message "Not a valid character")
-                   nil)))))
+                  (t (message "Abort") nil)))))
     (message "No suggestions")
     nil))
 
