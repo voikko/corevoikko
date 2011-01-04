@@ -34,6 +34,10 @@
 ;;       "Switch wcheck-mode languages." t)
 ;;     (autoload 'wcheck-spelling-suggestions "wcheck-mode"
 ;;       "Spelling suggestions." t)
+;;     (autoload 'wcheck-jump-forward "wcheck-mode"
+;;       "Move point forward to next marked text area." t)
+;;     (autoload 'wcheck-jump-backward "wcheck-mode"
+;;       "Move point backward to previous marked text area." t)
 ;;
 ;; See customize group "wcheck" for information on how to configure
 ;; Wcheck mode. (M-x customize-group RET wcheck RET)
@@ -550,9 +554,10 @@ This is used when language does not define a face."
   "Keymap for `wcheck-mode'.")
 
 (defvar wcheck-timer nil)
-(defconst wcheck-timer-idle .4
+(defconst wcheck-timer-idle .3
   "`wcheck-mode' idle timer delay (in seconds).")
 (defvar wcheck-timer-paint-event-count 0)
+(defvar wcheck-timer-paint-event-count-std 3)
 
 (defvar wcheck-change-language-history nil
   "Language history for command `wcheck-change-language'.")
@@ -561,6 +566,8 @@ This is used when language does not define a face."
 
 (defconst wcheck-process-name "wcheck"
   "Process name for `wcheck-mode'.")
+
+(defvar wcheck-jump-step 5000)
 
 
 ;;; Macros
@@ -584,10 +591,13 @@ This is used when language does not define a face."
        (with-current-buffer ,var
          ,@body))))
 
+
 (defmacro wcheck-loop-over-read-reqs (var &rest body)
   `(wcheck-loop-over-reqs-engine :read-req ,var ,@body))
 (defmacro wcheck-loop-over-paint-reqs (var &rest body)
   `(wcheck-loop-over-reqs-engine :paint-req ,var ,@body))
+(defmacro wcheck-loop-over-jump-reqs (var &rest body)
+  `(wcheck-loop-over-reqs-engine :jump-req ,var ,@body))
 
 
 (defmacro wcheck-with-language-data (language bindings &rest body)
@@ -619,6 +629,8 @@ This is used when language does not define a face."
                          wcheck-suggestion-error)
 (wcheck-define-condition wcheck-parser-function-not-configured-error
                          wcheck-suggestion-error)
+(wcheck-define-condition wcheck-overlay-not-found-error wcheck-error)
+
 
 
 ;;; Interactive commands
@@ -757,7 +769,9 @@ Wcheck mode. You can access the variables through customize group
 Interactive command `wcheck-change-language' is used to switch
 languages. Command `wcheck-spelling-suggestions' gives spelling
 suggestions for marked text at point (also accessible through the
-right-click mouse menu)."
+right-click mouse menu). Commands `wcheck-jump-forward' and
+`wcheck-jump-backward' move point to next/previous marked text
+area."
 
   :init-value nil
   :lighter " wck"
@@ -804,10 +818,17 @@ right-click mouse menu)."
             (setq wcheck-timer-paint-event-count at-least)
           (setq wcheck-timer-paint-event-count at-least)
           (wcheck-funcall-after-idle #'wcheck-timer-paint-event)))
-    (when (> (setq wcheck-timer-paint-event-count
-                   (1- wcheck-timer-paint-event-count))
-             0)
-      (wcheck-funcall-after-idle #'wcheck-timer-paint-event))))
+    (if (> (setq wcheck-timer-paint-event-count
+                 (1- wcheck-timer-paint-event-count))
+           0)
+        (wcheck-funcall-after-idle #'wcheck-timer-paint-event)
+      (wcheck-timer-jump-event))))
+
+
+(defun wcheck-force-read (buffer)
+  (redisplay t)
+  (wcheck-buffer-data-set buffer :read-req t)
+  (wcheck-timer-read-event))
 
 
 (defun wcheck-timer-read-event ()
@@ -823,37 +844,37 @@ marking strings in buffers."
   (wcheck-loop-over-read-reqs
    buffer
 
-   ;; We are about to fulfill buffer's window-reading request so
-   ;; remove the request. Reset also the list of received strings
-   ;; and visible window areas.
-   (wcheck-buffer-data-set buffer :read-req nil)
-   (wcheck-buffer-data-set buffer :strings nil)
-   (wcheck-buffer-data-set buffer :areas nil)
+   (unless (wcheck-buffer-data-get :buffer buffer :jump-req)
+     ;; We are about to fulfill buffer's window-reading request so
+     ;; remove the request. Reset also the list of received strings and
+     ;; visible window areas.
+     (wcheck-buffer-data-set buffer :read-req nil)
+     (wcheck-buffer-data-set buffer :strings nil)
+     (wcheck-buffer-data-set buffer :areas nil)
 
-   ;; Walk through all windows which belong to this buffer.
-   (let (area-alist strings)
-     (walk-windows #'(lambda (window)
-                       (when (eq buffer (window-buffer window))
-                         ;; Store the visible buffer area.
-                         (push (cons (window-start window)
-                                     (window-end window t))
-                               area-alist)))
-                   'nomb t)
+     ;; Walk through all windows which belong to this buffer.
+     (let (area-alist strings)
+       (walk-windows #'(lambda (window)
+                         (when (eq buffer (window-buffer window))
+                           ;; Store the visible buffer area.
+                           (push (cons (window-start window)
+                                       (window-end window t))
+                                 area-alist)))
+                     'nomb t)
 
-     ;; Combine overlapping buffer areas and read strings from all
-     ;; areas.
-     (let ((combined (wcheck-combine-overlapping-areas area-alist)))
-       (wcheck-buffer-data-set buffer :areas combined)
-       (dolist (area combined)
-         (setq strings (append (wcheck-read-strings
-                                buffer (car area) (cdr area))
-                               strings))))
-     ;; Send strings to checker engine.
-     (wcheck-send-strings buffer strings)))
+       ;; Combine overlapping buffer areas and read strings from all
+       ;; areas.
+       (let ((combined (wcheck-combine-overlapping-areas area-alist)))
+         (wcheck-buffer-data-set buffer :areas combined)
+         (dolist (area combined)
+           (setq strings (append (wcheck-read-strings
+                                  buffer (car area) (cdr area))
+                                 strings))))
+       ;; Send strings to checker engine.
+       (wcheck-send-strings buffer strings))))
 
-  ;; Start a timer which will mark text in buffers/windows. Repeat the
-  ;; timer 3 times after the initial call.
-  (wcheck-timer-paint-event-run 3))
+  ;; Start a timer which will mark text in buffers/windows.
+  (wcheck-timer-paint-event-run wcheck-timer-paint-event-count-std))
 
 
 (defun wcheck-send-strings (buffer strings)
@@ -915,17 +936,13 @@ separate line."
 
 This is normally called by the `wcheck-mode' idle timer. This
 function marks (with overlays) strings in the buffers that have
-requested it.
-
-If the optional argument REPEAT exists and is an integer then
-also call the function repeatedly that many times after the first
-call. The delay between consecutive calls is defined in variable
-`wcheck-timer-idle'."
+requested it."
 
   (wcheck-loop-over-paint-reqs
    buffer
 
-   (wcheck-remove-overlays)
+   (unless (wcheck-buffer-data-get :buffer buffer :jump-req)
+     (wcheck-remove-overlays))
    ;; We are about to mark text in this buffer so remove this buffer's
    ;; request.
    (wcheck-buffer-data-set buffer :paint-req nil)
@@ -935,9 +952,59 @@ call. The delay between consecutive calls is defined in variable
      (dolist (area (wcheck-buffer-data-get :buffer buffer :areas))
        (wcheck-paint-strings buffer (car area) (cdr area)
                              (wcheck-buffer-data-get :buffer buffer
-                                                     :strings)))))
+                                                     :strings)
+                             ;; If jump-req is active then paint
+                             ;; invisible text too.
+                             (wcheck-buffer-data-get :buffer buffer
+                                                     :jump-req)))))
 
   (wcheck-timer-paint-event-run))
+
+
+(defun wcheck-timer-jump-event ()
+  (wcheck-loop-over-jump-reqs
+   buffer
+
+   (let* ((jump-req (wcheck-buffer-data-get :buffer buffer :jump-req))
+          (direction (wcheck-jump-req-direction jump-req))
+          (start (wcheck-jump-req-start jump-req))
+          (bound (wcheck-jump-req-bound jump-req)))
+
+     (wcheck-buffer-data-set buffer :jump-req nil)
+
+     (condition-case nil
+         (cond ((eq direction 'forward)
+                (let ((ol (wcheck-overlay-next start bound)))
+                  (cond (ol
+                         (goto-char (overlay-end ol))
+                         (when (invisible-p (point))
+                           (show-entry))
+                         (message "Found from line %s"
+                                  (line-number-at-pos (point)))
+                         (wcheck-force-read buffer))
+                        ((< bound (point-max))
+                         (wcheck-jump-req-forward
+                          buffer (1+ bound) (+ bound wcheck-jump-step)))
+                        (t
+                         (signal 'wcheck-overlay-not-found-error nil)))))
+               ((eq direction 'backward)
+                (let ((ol (wcheck-overlay-previous start bound)))
+                  (cond (ol
+                         (goto-char (overlay-start ol))
+                         (when (invisible-p (point))
+                           (show-entry))
+                         (message "Found from line %s"
+                                  (line-number-at-pos (point)))
+                         (wcheck-force-read buffer))
+                        ((> bound (point-min))
+                         (wcheck-jump-req-backward
+                          buffer (1- bound) (- bound wcheck-jump-step)))
+                        (t
+                         (signal 'wcheck-overlay-not-found-error nil))))))
+
+       (wcheck-overlay-not-found-error
+        (message "Found nothing")
+        (wcheck-force-read buffer))))))
 
 
 ;;; Hooks
@@ -1121,15 +1188,20 @@ BUFFER from the list."
 ;;; Read and paint strings
 
 
-(defun wcheck-read-strings (buffer beg end)
+(defun wcheck-read-strings (buffer beg end &optional invisible)
   "Return a list of text elements in BUFFER.
 Scan BUFFER between positions BEG and END and search for text
 elements according to buffer's language settings (see
-`wcheck-language-data'). Return a list containing visible text
-elements between BEG and END; all hidden parts are omitted."
+`wcheck-language-data'). If INVISIBLE is non-nil read all buffer
+areas, including invisible ones. Otherwise skip invisible text."
+
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
       (save-excursion
+
+        (when font-lock-mode
+          (save-excursion
+            (font-lock-fontify-region (min beg end) (max beg end))))
 
         (wcheck-with-language-data
          (language (wcheck-buffer-data-get :buffer buffer :language))
@@ -1154,7 +1226,8 @@ elements between BEG and END; all hidden parts are omitted."
                           ;; zero width in the current point position.
                           (throw 'infinite t))
 
-                         ((invisible-p (match-beginning 1))
+                         ((and (not invisible)
+                               (invisible-p (match-beginning 1)))
                           ;; This point is invisible. Let's jump forward
                           ;; to next change of "invisible" property.
                           (goto-char (next-single-char-property-change
@@ -1173,10 +1246,13 @@ elements between BEG and END; all hidden parts are omitted."
            strings))))))
 
 
-(defun wcheck-paint-strings (buffer beg end strings)
+(defun wcheck-paint-strings (buffer beg end strings &optional invisible)
   "Mark strings in buffer.
+
 Mark all strings in STRINGS which are visible in BUFFER within
-position range from BEG to END."
+position range from BEG to END. If INVISIBLE is non-nil paint all
+buffer areas, including invisible ones. Otherwise skip invisible
+text."
 
   (when (buffer-live-p buffer)
     (with-current-buffer buffer
@@ -1215,7 +1291,8 @@ position range from BEG to END."
                             ;; We didn't move forward so break the loop.
                             ;; Otherwise we would loop endlessly.
                             (throw 'infinite t))
-                           ((invisible-p (match-beginning 1))
+                           ((and (not invisible)
+                                 (invisible-p (match-beginning 1)))
                             ;; The point is invisible so jump forward to
                             ;; the next change of "invisible" text
                             ;; property.
@@ -1228,6 +1305,121 @@ position range from BEG to END."
                              buffer ol-face ol-mouse-face ol-help-echo ol-keymap
                              (match-beginning 1) (match-end 1))))
                      (setq old-point (point)))))))))))))
+
+
+;;; Jump forward or backward
+
+
+(defun wcheck-overlay-next (start bound)
+  (catch 'overlay
+    (dolist (ol (overlays-at start))
+      (when (overlay-get ol 'wcheck-mode)
+        (throw 'overlay ol)))
+    (let ((pos start))
+      (while (and (setq pos (next-overlay-change pos))
+                  (< pos (min bound (point-max))))
+        (dolist (ol (overlays-at pos))
+          (when (overlay-get ol 'wcheck-mode)
+            (throw 'overlay ol)))))))
+
+
+(defun wcheck-overlay-previous (start bound)
+  (catch 'overlay
+    (let ((pos start))
+      (while (and (setq pos (previous-overlay-change pos))
+                  (> pos (max bound (point-min))))
+        (dolist (ol (overlays-at pos))
+          (when (overlay-get ol 'wcheck-mode)
+            (throw 'overlay ol)))))))
+
+
+(defun wcheck-line-start-at (pos)
+  (save-excursion
+    (goto-char pos)
+    (line-beginning-position)))
+
+
+(defun wcheck-line-end-at (pos)
+  (save-excursion
+    (goto-char pos)
+    (line-end-position)))
+
+
+(defun wcheck-jump-req-forward (buffer start bound)
+  (with-current-buffer buffer
+    (let ((start (min start bound))     ;LET, ei LET*
+          (bound (wcheck-line-end-at (min (max start bound) (point-max)))))
+      (message "Searching forward in lines %d-%d..."
+               (line-number-at-pos start)
+               (line-number-at-pos bound))
+      (wcheck-buffer-data-set buffer :jump-req
+                              (wcheck-jump-req-create 'forward start bound))
+      (wcheck-buffer-data-set buffer :areas (list (cons start bound)))
+      (wcheck-send-strings buffer (wcheck-read-strings buffer start bound t))
+      (wcheck-timer-paint-event-run wcheck-timer-paint-event-count-std))))
+
+
+(defun wcheck-jump-req-backward (buffer start bound)
+  (with-current-buffer buffer
+    (let ((start (max start bound))     ;LET, ei LET*
+          (bound (wcheck-line-start-at (max (min start bound) (point-min)))))
+      (message "Searching backward in lines %d-%d..."
+               (line-number-at-pos start)
+               (line-number-at-pos bound))
+      (wcheck-buffer-data-set buffer :jump-req
+                              (wcheck-jump-req-create 'backward start bound))
+      (wcheck-buffer-data-set buffer :areas (list (cons bound start)))
+      (wcheck-send-strings buffer (wcheck-read-strings buffer bound start t))
+      (wcheck-timer-paint-event-run wcheck-timer-paint-event-count-std))))
+
+
+(defun wcheck-invisible-text-in-area-p (buffer beg end)
+  (catch 'invisible
+    (let ((pos (min beg end))           ;LET, ei LET*
+          (end (max beg end)))
+      (when (invisible-p pos)
+        (throw 'invisible t))
+      (while (and (setq pos (next-single-char-property-change
+                             pos 'invisible buffer))
+                  (< pos end))
+        (when (invisible-p pos)
+          (throw 'invisible t))))))
+
+
+;;;###autoload
+(defun wcheck-jump-forward ()
+  "Move point forward to next marked text area."
+  (interactive)
+  (let ((buffer (current-buffer)))
+    (unless wcheck-mode
+      (wcheck-mode 1))
+    (when wcheck-mode
+      (wcheck-buffer-data-set buffer :jump-req nil)
+      (let ((ol (wcheck-overlay-next
+                 (point) (window-end (selected-window) t))))
+        (if (and ol (not (wcheck-invisible-text-in-area-p
+                          buffer (point) (overlay-end ol))))
+            (goto-char (overlay-end ol))
+          (wcheck-jump-req-forward
+           buffer (point) (+ (point) wcheck-jump-step)))))))
+
+
+;;;###autoload
+(defun wcheck-jump-backward ()
+  "Move point backward to previous marked text area."
+  (interactive)
+  (let ((buffer (current-buffer)))
+    (unless wcheck-mode
+      (wcheck-mode 1))
+    (when wcheck-mode
+      (wcheck-buffer-data-set buffer :jump-req nil)
+      (let ((ol (wcheck-overlay-previous
+                 (point) (window-start (selected-window)))))
+        (if (and ol (not (wcheck-invisible-text-in-area-p
+                          buffer (point) (overlay-start ol))))
+            (goto-char (overlay-start ol))
+          (wcheck-jump-req-backward
+           buffer (point) (- (point) wcheck-jump-step)))))))
 
 
 ;;; Spelling suggestions
@@ -1734,7 +1926,7 @@ suggestion function."
 
 
 (defconst wcheck-buffer-data-keys
-  '(:buffer :process :language :read-req :paint-req :areas :strings))
+  '(:buffer :process :language :read-req :paint-req :jump-req :areas :strings))
 
 
 (defun wcheck-buffer-data-key-index (key)
@@ -1795,6 +1987,22 @@ If KEY is nil return all buffer's all data."
   (let ((item (wcheck-buffer-data-get :buffer buffer)))
     (when item
       (aset item (wcheck-buffer-data-key-index key) value))))
+
+
+(defun wcheck-jump-req-create (direction start bound)
+  (when (and (or (eq direction 'forward)
+                 (eq direction 'backward))
+             (number-or-marker-p start)
+             (number-or-marker-p bound))
+    (vector direction start bound)))
+
+
+(defun wcheck-jump-req-direction (jump-req)
+  (aref jump-req 0))
+(defun wcheck-jump-req-start (jump-req)
+  (aref jump-req 1))
+(defun wcheck-jump-req-bound (jump-req)
+  (aref jump-req 2))
 
 
 (provide 'wcheck-mode)
