@@ -1585,6 +1585,15 @@ there aren't any)."
               (signal 'wcheck-not-a-list-of-strings-error nil)))))))
 
 
+(defun wcheck-clean-string (string)
+  (if (equal string "")
+      "[Empty string]"
+    (setq string (replace-regexp-in-string "[^[:print:]]+" "" string))
+    (if (not (string-match "[^[:space:]]" string))
+        "[Space or control chars]"
+      (replace-regexp-in-string "\\(?:\\` +\\| +\\'\\)" "" string))))
+
+
 (defun wcheck-choose-suggestion-popup (suggestions event)
   "Create a pop-up menu to choose a substitute suggestion.
 SUGGESTIONS is a list of strings. EVENT is the mouse event that
@@ -1593,9 +1602,7 @@ choice (a string) or nil."
   (let ((menu (list "Choose a substitute"
                     (cons "" (if suggestions
                                  (mapcar #'(lambda (item)
-                                             (cons (if (> (length item) 0)
-                                                       item
-                                                     "[Empty string]")
+                                             (cons (wcheck-clean-string item)
                                                    item))
                                          suggestions)
                                (list "[No suggestions]"))))))
@@ -1628,11 +1635,7 @@ or nil."
                     suggestions (cdr suggestions)
                     string (concat (propertize (format "%c)" (car chars))
                                                'face 'bold)
-                                   " "
-                                   (if (> (length sug) 0)
-                                       sug
-                                     "[Empty string]")
-                                   "  ")
+                                   " " (wcheck-clean-string sug) "  ")
                     alist (cons (cons (car chars) sug) alist)
                     chars (cdr chars))
               (insert string)
