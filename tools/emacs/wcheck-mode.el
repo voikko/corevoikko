@@ -780,9 +780,9 @@ The checker program can also be an Emacs Lisp function.
 
 In Wcheck mode different configuration units are called
 \"languages\". See the documentation of variables
-`wcheck-language-data', `wcheck-language' and
-`wcheck-read-or-skip-faces' for information on how to configure
-Wcheck mode. You can access the variables through customize group
+`wcheck-language-data', `wcheck-language-data-defaults' and
+`wcheck-language' for information on how to configure Wcheck
+mode. You can access the variables through customize group
 `wcheck'.
 
 Interactive command `wcheck-change-language' is used to switch
