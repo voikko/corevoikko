@@ -162,12 +162,24 @@
       :tag ""
       (cons :format "%v"
             (choice :format "%[Major mode%] %v"
-                    (symbol :tag "Select mode" :format "%t: %v"
-                            :match (lambda (widget value) value)
-                            :value foo-mode)
                     (const :tag "All major modes"
                            :match (lambda (widget value) (not value))
-                           nil))
+                           nil)
+                    (repeat
+                     :tag "Select major modes"
+                     :match (lambda (widget value)
+                              (and value (or (symbolp value) (listp value))))
+                     :value-to-internal (lambda (widget value)
+                                          (if (symbolp value)
+                                              (list value)
+                                            value))
+                     :value-to-external (lambda (widget value)
+                                          (if (and (listp value)
+                                                   (symbolp (car value))
+                                                   (null (cdr value)))
+                                              (car value)
+                                            value))
+                     (symbol :format "%v")))
             (choice :format "%[Operation mode%] %v"
                     (const :tag "Read everything" nil)
                     (cons :tag "Read selected faces" :format "%v"
@@ -363,17 +375,17 @@ read-or-skip-faces
 
         (MAJOR-MODE [OPERATION-MODE [FACE ...]])
 
-    MAJOR-MODE (a symbol) is the major mode which the settings
-    are for. Use nil as the MAJOR-MODE to define default
-    settings. Settings that come after the pseudo major-mode nil
-    are ignored.
+    MAJOR-MODE is a symbol or a list of symbols. Symbols refer to
+    the major mode(s) which the settings are for. Use nil as the
+    MAJOR-MODE to define default settings. Settings that come
+    after the pseudo major-mode nil are ignored.
 
     OPERATION-MODE is symbol `read' or `skip' defining whether
     the FACEs should be read or skipped. If it's `read' then only
     the listed faces are read. If it's `skip' then the listed
     faces are skipped and all other faces are read. If
     OPERATION-MODE is nil or it doesn't exist at all then
-    everything will be read.
+    everything is read.
 
     The rest of the items are FACEs. They are typically symbols
     but some Emacs modes may use strings, property lists or cons
@@ -385,19 +397,19 @@ read-or-skip-faces
     Example:
 
         (read-or-skip-faces
-         (emacs-lisp-mode read font-lock-comment-face
-                          font-lock-doc-face)
+         ((emacs-lisp-mode c-mode) read
+          font-lock-comment-face font-lock-doc-face)
          (org-mode skip font-lock-comment-face org-link)
          (text-mode)
          (nil read nil))
 
-    It says that in `emacs-lisp-mode' only the text which have
-    been highlighted with font-lock-comment-face or
-    font-lock-doc-face is read (i.e., checked). In `org-mode'
-    faces font-lock-comment-face and org-link are skipped (i.e.,
-    not checked) and all other faces are read. In `text-mode'
-    everything is read. Finally, in all other major modes only
-    the normal text (nil) is read.
+    It says that in `emacs-lisp-mode' and `c-mode' only the text
+    which have been highlighted with `font-lock-comment-face' or
+    `font-lock-doc-face' is read (i.e., checked). In `org-mode'
+    faces `font-lock-comment-face' and `org-link' are
+    skipped (i.e., not checked) and all other faces are read. In
+    `text-mode' everything is read. Finally, in all other major
+    modes only the normal text (nil) is read.
 
     The global default is equivalent to
 
@@ -407,7 +419,7 @@ read-or-skip-faces
     which means that in all major modes read everything. It is
     sometimes useful to have this setting in language-specific
     options too because the parsing stops right there. Therefore
-    it discards all global settings which user may have
+    it overrides all global settings which user may have
     configured with variable `wcheck-language-data-defaults'.
 
     Note: You can use command `\\[what-cursor-position]' with a
@@ -446,8 +458,7 @@ Here's an example value for the `wcheck-language-data' variable:
                      (list \"FIXME\"))))
       (face . highlight)
       (read-or-skip-faces
-       (emacs-lisp-mode read font-lock-comment-face)
-       (c-mode read font-lock-comment-face)
+       ((emacs-lisp-mode c-mode) read font-lock-comment-face)
        (nil))))
 
 You can use variable `wcheck-language-data-defaults' to define
@@ -502,8 +513,10 @@ Here's an example value for the variable:
      (regexp-discard . \"\\\\`'+\\\\'\")
      (case-fold . nil)
      (read-or-skip-faces
-      (emacs-lisp-mode read font-lock-comment-face font-lock-doc-face)
-      (message-mode read nil message-header-subject message-cited-text)))"
+      ((emacs-lisp-mode c-mode) read
+       font-lock-comment-face font-lock-doc-face)
+      (message-mode read nil
+       message-header-subject message-cited-text)))"
 
   :group 'wcheck
   :type `(repeat ,wcheck-language-data-customize-interface))
@@ -1740,7 +1753,9 @@ or nil."
       (while data
         (setq conf (pop data))
         (when (or (eq nil (car conf))
-                  (eq major-mode (car conf)))
+                  (eq major-mode (car conf))
+                  (and (listp (car conf))
+                       (memq major-mode (car conf))))
           (throw 'answer conf))))))
 
 
