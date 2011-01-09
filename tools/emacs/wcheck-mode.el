@@ -748,6 +748,20 @@ interactively) then change the global default language."
     (wcheck-remove-local-hooks buffer)))
 
 
+(defun wcheck-mode-line-lang ()
+  (condition-case nil
+      (let (lang-code)
+        (catch 'enough
+          (mapc (lambda (c)
+                  (when (char-equal ?w (char-syntax c))
+                    (push c lang-code)
+                    (when (>= (length lang-code) 2)
+                      (throw 'enough t))))
+                (wcheck-buffer-data-get :buffer (current-buffer) :language)))
+        (apply #'string (nreverse lang-code)))
+    (error "")))
+
+
 ;;;###autoload
 (define-minor-mode wcheck-mode
   "General interface for text checkers.
@@ -781,7 +795,7 @@ right-click mouse menu). Commands `wcheck-jump-forward' and
 area."
 
   :init-value nil
-  :lighter " wck"
+  :lighter (" W:" (:eval (wcheck-mode-line-lang)))
   :keymap wcheck-mode-map
 
   (condition-case error-data
@@ -1391,7 +1405,7 @@ text."
 
 (defun wcheck-invisible-text-in-area-p (buffer beg end)
   (catch 'invisible
-    (let ((pos (min beg end))           ;LET, ei LET*
+    (let ((pos (min beg end))
           (end (max beg end)))
       (when (invisible-p pos)
         (throw 'invisible t))
