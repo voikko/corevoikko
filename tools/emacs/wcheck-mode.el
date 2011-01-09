@@ -783,14 +783,14 @@ otherwise turn it off. If ARG is not given toggle the mode.
 
 Wcheck is a minor mode for automatically checking and marking
 strings in Emacs buffer. Wcheck sends (parts of) buffer's content
-to a user-configured checker program and, based on its output,
-decides if some parts of text should be marked.
+to a text-checker back-end and, based on its output, decides if
+some parts of text should be marked.
 
 Wcheck can be used with external spell-checker programs such as
-Ispell, Aspell and Enchant. The mode can be useful with other
-kind of external tools. Any tool that can receive text stream
-from standard input and send text to standard output can be used.
-The checker program can also be an Emacs Lisp function.
+Ispell, Aspell and Enchant, but actually any tool that can
+receive text stream from standard input and send text to standard
+output can be used. The checker back-end can also be an Emacs
+Lisp function.
 
 In Wcheck mode different configuration units are called
 \"languages\". See the documentation of variables
