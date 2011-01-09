@@ -639,7 +639,6 @@ slower. A suitable compromise may be 3 or 4.")
 (wcheck-define-condition wcheck-overlay-not-found-error wcheck-error)
 
 
-
 ;;; Interactive commands
 
 
@@ -695,8 +694,7 @@ interactively) then change the global default language."
 
     (wcheck-program-not-configured-error
      (wcheck-mode -1)
-     (message (concat "Language \"%s\": checker program or function "
-                      "is not configured")
+     (message "Language \"%s\": checker program is not configured"
               (cdr error-data)))))
 
 
@@ -725,8 +723,8 @@ interactively) then change the global default language."
 
       (wcheck-program-not-configured-error
        (wcheck-mode -1)
-       (message (concat "Language \"%s\": checker program of function "
-                        "not configured") (cdr error-data)))
+       (message "Language \"%s\": checker program not configured"
+                (cdr error-data)))
 
       (wcheck-language-does-not-exist-error
        (wcheck-mode -1)
@@ -1526,8 +1524,7 @@ was replaced."
         return-value)
 
     (wcheck-suggestion-program-error
-     (message (concat "Language \"%s\": suggestion program or "
-                      "function not configured")
+     (message "Language \"%s\": suggestion program is not configured"
               (cdr error-data)))
 
     (wcheck-parser-function-not-configured-error
