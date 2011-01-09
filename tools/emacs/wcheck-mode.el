@@ -1025,7 +1025,9 @@ requested it."
                          (wcheck-jump-req buffer window (1- bound)
                                           (- (1- bound) wcheck-jump-step)))
                         (t
-                         (signal 'wcheck-overlay-not-found-error nil))))))
+                         (signal 'wcheck-overlay-not-found-error nil)))))
+               (t
+                (signal 'wcheck-overlay-not-found-error nil)))
 
        (wcheck-overlay-not-found-error
         (message "Found nothing")
@@ -1418,8 +1420,10 @@ text."
         (if (and ol (not (wcheck-invisible-text-in-area-p
                           buffer (point) (overlay-end ol))))
             (goto-char (overlay-end ol))
-          (wcheck-jump-req buffer window (point)
-                           (+ (point) wcheck-jump-step)))))))
+          (if (eobp)
+              (message "End of buffer")
+            (wcheck-jump-req buffer window (point)
+                             (+ (point) wcheck-jump-step))))))))
 
 
 ;;;###autoload
@@ -1437,8 +1441,10 @@ text."
         (if (and ol (not (wcheck-invisible-text-in-area-p
                           buffer (point) (overlay-start ol))))
             (goto-char (overlay-start ol))
-          (wcheck-jump-req buffer window (point)
-                           (- (point) wcheck-jump-step)))))))
+          (if (bobp)
+              (message "Beginning of buffer")
+            (wcheck-jump-req buffer window (point)
+                             (- (point) wcheck-jump-step))))))))
 
 
 ;;; Spelling suggestions
