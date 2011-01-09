@@ -631,6 +631,7 @@ slower. A suitable compromise may be 3 or 4.")
 (wcheck-define-condition wcheck-language-does-not-exist-error wcheck-error)
 (wcheck-define-condition wcheck-program-not-configured-error wcheck-error)
 (wcheck-define-condition wcheck-not-a-list-of-strings-error wcheck-error)
+(wcheck-define-condition wcheck-funcall-error wcheck-error)
 (wcheck-define-condition wcheck-suggestion-error wcheck-error)
 (wcheck-define-condition wcheck-suggestion-program-error
                          wcheck-suggestion-error)
@@ -914,7 +915,10 @@ separate line."
              ((functionp program)
               (when (buffer-live-p buffer)
                 (with-current-buffer buffer
-                  (let ((received (save-match-data (funcall program strings))))
+                  (let ((received
+                         (save-match-data
+                           (condition-case nil (funcall program strings)
+                             (error (signal 'wcheck-funcall-error nil))))))
                     (if (wcheck-list-of-strings-p received)
                         (when received
                           (wcheck-buffer-data-set buffer :strings received)
@@ -925,7 +929,10 @@ separate line."
       (with-current-buffer buffer
         (wcheck-mode -1)
         (message (concat "Checker function did not return a list of "
-                         "strings (or nil)")))))))
+                         "strings (or nil)"))))
+
+     (wcheck-funcall-error
+      (message "Checker function signaled an error")))))
 
 
 (defun wcheck-receive-strings (process string)
@@ -1530,7 +1537,7 @@ was replaced."
      (message (concat "Suggestion program or parser function did not return "
                       "a list of strings (or nil)")))
 
-    (wcheck-suggestion-error
+    (wcheck-error
      (message "%s" (cdr error-data)))))
 
 
@@ -1568,13 +1575,23 @@ there aren't any)."
             (apply #'call-process-region (point-min) (point-max)
                    program t t nil args)
             (goto-char (point-min))
-            (let ((suggestions (save-match-data (funcall parser))))
+            (let ((suggestions
+                   (save-match-data
+                     (condition-case nil (funcall parser)
+                       (error (signal 'wcheck-funcall-error
+                                      (concat "Suggestion parser function "
+                                              "signaled an error")))))))
               (if (wcheck-list-of-strings-p suggestions)
                   suggestions
                 (signal 'wcheck-not-a-list-of-strings-error nil)))))
 
          ((functionp program)
-          (let ((suggestions (save-match-data (funcall program text))))
+          (let ((suggestions
+                 (save-match-data
+                   (condition-case nil (funcall program text)
+                     (error (signal 'wcheck-funcall-error
+                                    (concat "Suggestion function signaled "
+                                            "an error")))))))
             (if (wcheck-list-of-strings-p suggestions)
                 suggestions
               (signal 'wcheck-not-a-list-of-strings-error nil)))))))
