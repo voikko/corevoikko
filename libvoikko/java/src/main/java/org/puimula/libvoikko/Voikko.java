@@ -29,6 +29,7 @@ import org.puimula.libvoikko.Libvoikko.VoikkoGrammarError;
 import org.puimula.libvoikko.Libvoikko.VoikkoHandle;
 
 import com.sun.jna.Native;
+import com.sun.jna.NativeLibrary;
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.NativeLongByReference;
@@ -50,12 +51,14 @@ public class Voikko {
 
     private synchronized static Libvoikko getLib() {
         if (library == null) {
+            NativeLibrary nativeLibrary;
             try {
-                library = (Libvoikko) Native.loadLibrary("voikko", Libvoikko.class);
+                nativeLibrary = NativeLibrary.getInstance("voikko");
             } catch (UnsatisfiedLinkError e) {
                 // On Windows major version of library API is part of the library name
-                library = (Libvoikko) Native.loadLibrary("voikko-1", Libvoikko.class);  
+                nativeLibrary = NativeLibrary.getInstance("voikko-1");  
             }
+            library = (Libvoikko) Native.loadLibrary(nativeLibrary.getFile().getAbsolutePath(), Libvoikko.class);
         }
         return library;
     }
@@ -547,4 +550,14 @@ public class Voikko {
             break;
         }
     }
+
+    /**
+     * Set the explicit path to the folder containing shared library files.
+     * @param libraryPath
+     */
+    public static void addLibraryPath(String libraryPath) {
+        NativeLibrary.addSearchPath("voikko", libraryPath);
+        NativeLibrary.addSearchPath("voikko-1", libraryPath);
+    }
+
 }
