@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright 2011 Harri Pitkänen (hatapitk@iki.fi)
+# Program for analyzing readability of text.
+# This program requires Python and Python module of libvoikko from
+# libvoikko 3.0 or later.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# References:
+# http://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_test
+
+import sys
+from locale import getpreferredencoding
+from libvoikko import Voikko, Sentence, Token
+
+if '--help' in sys.argv:
+	print "Usage:"
+	print sys.argv[0], "[language]"
+	print "Calculate readability statistics for text read from stdin."
+	print " language: BCP 47 language tag of text language, default is fi"
+	sys.exit(0)
+
+language = u"fi"
+if len(sys.argv) > 1:
+	language = sys.argv[1]
+
+voikko = Voikko(language)
+voikko.setNoUglyHyphenation(False)
+voikko.setHyphenateUnknownWords(True)
+
+allText = unicode(sys.stdin.read(), getpreferredencoding())
+
+sentenceCount = 0
+for sentence in voikko.sentences(allText):
+	if sentence.nextStartType in [Sentence.NONE, Sentence.PROBABLE]:
+		sentenceCount = sentenceCount + 1
+
+wordCount = 0
+syllableCount = 0
+characterCount = 0
+punctuationCount = 0
+for token in voikko.tokens(allText):
+	if token.tokenType == Token.WORD:
+		wordCount = wordCount + 1
+		hyphens = len(voikko.getHyphenationPattern(token.tokenText).replace(u" ", u""))
+		syllableCount = syllableCount + hyphens + 1
+		characterCount = characterCount + len(token.tokenText)
+	elif token.tokenType == Token.PUNCTUATION:
+		punctuationCount = punctuationCount + 1
+
+print u"Language used for processing:", language
+print u"Number of sentences:", sentenceCount
+print u"Number of words:", wordCount
+print u"Number of syllables:", syllableCount
+print u"Number of characters (without punctuation):", characterCount
+print u"Number of characters (with punctuation):", characterCount + punctuationCount
+
+fres = 206.823 - 1.015 * wordCount / sentenceCount - 84.6 * syllableCount / wordCount
+fkgd = 0.39 * wordCount / sentenceCount + 11.8 * syllableCount / wordCount - 15.59
+
+print u"Flesch Reading Ease:", fres
+print u"Flesch-Kincaid Grade Level:", fkgd
