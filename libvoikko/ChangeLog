@@ -1,3 +1,6 @@
+2011-01-23 Harri Pitkänen <hatapitk@iki.fi>
+	* Fix internal error due to missing break in switch.
+
 2010-12-08 Harri Pitkänen <hatapitk@iki.fi>
 	* Add configure option --disable-testtools
 

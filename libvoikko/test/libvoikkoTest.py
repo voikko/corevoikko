@@ -339,6 +339,10 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(len(longWord) > MAX_WORD_CHARS)
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 	
+	def testAllCapsAndDot(self):
+		self.voikko.setIgnoreDot(True)
+		self.failIf(self.voikko.spell(u"ABC-DEF."))
+	
 	def testGetVersion(self):
 		version = Voikko.getVersion()
 		# We can't test for correct version but let's assume it starts with a number

@@ -214,6 +214,7 @@ VOIKKOEXPORT int voikkoSpellUcs4(voikko_options_t * voikkoOptions, const wchar_t
 			case CT_ALL_UPPER:
 				sres = voikko_cached_spell(voikkoOptions, buffer, nchars);
 				result = (sres == SPELL_FAILED) ? VOIKKO_SPELL_FAILED : VOIKKO_SPELL_OK;
+				break;
 			default: /* should not happen */
 				result = VOIKKO_INTERNAL_ERROR;
 		}
