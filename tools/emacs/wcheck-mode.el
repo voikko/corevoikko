@@ -1264,31 +1264,25 @@ areas, including invisible ones. Otherwise skip invisible text."
            (with-syntax-table (eval syntax)
              (goto-char beg)
              (save-match-data
-               (catch 'infinite
-                 (while (re-search-forward regexp end t)
-                   (cond ((= (point) old-point)
-                          ;; Make sure we don't end up in an infinite
-                          ;; loop when the regexp always matches with
-                          ;; zero width in the current point position.
-                          (throw 'infinite t))
+               (while (and (re-search-forward regexp end t)
+                           (> (point) old-point))
+                 (cond ((and (not invisible)
+                             (invisible-p (match-beginning 1)))
+                        ;; This point is invisible. Let's jump forward
+                        ;; to next change of "invisible" property.
+                        (goto-char (next-single-char-property-change
+                                    (match-beginning 1) 'invisible buffer
+                                    end)))
 
-                         ((and (not invisible)
-                               (invisible-p (match-beginning 1)))
-                          ;; This point is invisible. Let's jump forward
-                          ;; to next change of "invisible" property.
-                          (goto-char (next-single-char-property-change
-                                      (match-beginning 1) 'invisible buffer
-                                      end)))
-
-                         ((and (eval face-p)
-                               (or (equal regexp-discard "")
-                                   (not (string-match
-                                         regexp-discard
-                                         (match-string-no-properties 1)))))
-                          ;; Add the match to the string list.
-                          (add-to-list
-                           'strings (match-string-no-properties 1))))
-                   (setq old-point (point))))))
+                       ((and (eval face-p)
+                             (or (equal regexp-discard "")
+                                 (not (string-match
+                                       regexp-discard
+                                       (match-string-no-properties 1)))))
+                        ;; Add the match to the string list.
+                        (add-to-list
+                         'strings (match-string-no-properties 1))))
+                 (setq old-point (point)))))
            strings))))))
 
 
@@ -1331,26 +1325,22 @@ text."
                        old-point 0)
                  (goto-char beg)
 
-                 (catch 'infinite
-                   (while (re-search-forward regexp end t)
-                     (cond ((= (point) old-point)
-                            ;; We didn't move forward so break the loop.
-                            ;; Otherwise we would loop endlessly.
-                            (throw 'infinite t))
-                           ((and (not invisible)
-                                 (invisible-p (match-beginning 1)))
-                            ;; The point is invisible so jump forward to
-                            ;; the next change of "invisible" text
-                            ;; property.
-                            (goto-char (next-single-char-property-change
-                                        (match-beginning 1) 'invisible buffer
-                                        end)))
-                           ((eval face-p)
-                            ;; Make an overlay.
-                            (wcheck-make-overlay
-                             buffer ol-face ol-mouse-face ol-help-echo ol-keymap
-                             (match-beginning 1) (match-end 1))))
-                     (setq old-point (point)))))))))))))
+                 (while (and (re-search-forward regexp end t)
+                             (> (point) old-point))
+                   (cond ((and (not invisible)
+                               (invisible-p (match-beginning 1)))
+                          ;; The point is invisible so jump forward to
+                          ;; the next change of "invisible" text
+                          ;; property.
+                          (goto-char (next-single-char-property-change
+                                      (match-beginning 1) 'invisible buffer
+                                      end)))
+                         ((eval face-p)
+                          ;; Make an overlay.
+                          (wcheck-make-overlay
+                           buffer ol-face ol-mouse-face ol-help-echo ol-keymap
+                           (match-beginning 1) (match-end 1))))
+                   (setq old-point (point))))))))))))
 
 
 ;;; Jump forward or backward
