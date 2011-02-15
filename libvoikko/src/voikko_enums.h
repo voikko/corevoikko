@@ -25,7 +25,7 @@
  * TOKEN_WORD:        Word
  * TOKEN_PUNCTUATION: Punctuation
  * TOKEN_WHITESPACE:  Whitespace
- * TOKEN_UNKNOWN:     Character not used in Finnish
+ * TOKEN_UNKNOWN:     Character not used in any of the supported natural languages
  */
 enum voikko_token_type {TOKEN_NONE, TOKEN_WORD, TOKEN_PUNCTUATION, TOKEN_WHITESPACE, TOKEN_UNKNOWN};
 

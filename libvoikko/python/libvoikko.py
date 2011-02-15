@@ -168,10 +168,6 @@ class Voikko(object):
 	settings related to spell checking and hyphenation, and methods for performing
 	various natural language analysis operations. One instance should not be
 	used simultaneously from multiple threads.
-	
-	Currently no more than one instance can be in initialized state. This is because
-	libvoikko is not yet thread safe. This restriction should go away in future
-	releases.
 	"""
 	def __init__(self, language, path = None):
 		"""Creates a new Voikko instance with the following optional parameters:
@@ -405,7 +401,7 @@ class Voikko(object):
 	def grammarErrors(self, text):
 		"""Check the given text for grammar errors and return a
 		list of GrammarError objects representing the errors that were found.
-		Unlike the C based API this method accepts multiple paragraps
+		Unlike the C based API this method accepts multiple paragraphs
 		separated by newline characters.
 		"""
 		textUnicode = unicode(text)
@@ -612,7 +608,7 @@ class Voikko(object):
 		self.__setBoolOption(15, value)
 	
 	def setMinHyphenatedWordLength(self, value):
-		"""The minumum length for words that may be hyphenated. This limit is also enforced on
+		"""The minimum length for words that may be hyphenated. This limit is also enforced on
 		individual parts of compound words.
 		Default: 2
 		"""
