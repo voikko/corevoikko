@@ -1,3 +1,6 @@
+2011-02-15 Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
+	* Fix build with GCC 4.6
+
 2011-01-23 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix internal error due to missing break in switch.
 

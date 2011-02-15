@@ -1216,7 +1216,7 @@ build_path(int_t n, MalagaState * malagaState)
  * symbols. If a value is a list, the elements of this list are inserted into
  * NEW_LIST instead of the value itself. */
 {
-  value_t new_list, v, element_end;
+  value_t new_list, v;
   int_t i, new_list_length;
   value_t *elements;
 
@@ -1227,7 +1227,6 @@ build_path(int_t n, MalagaState * malagaState)
     switch (TYPE( elements[i] )) 
     {
     case LIST_TYPE:
-      element_end = NEXT_VALUE( elements[i] );
       new_list_length += length_of_value( elements[i] ) - 2;
       break;
     case SYMBOL_TYPE:
