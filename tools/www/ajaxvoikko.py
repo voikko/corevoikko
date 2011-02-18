@@ -21,7 +21,7 @@
 
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
-from urllib import unquote_plus
+from urllib import unquote
 from urllib import urlopen
 from cgi import parse_qs
 from cgi import escape
@@ -30,7 +30,8 @@ from libvoikko import Voikko
 from libvoikko import Token
 import codecs
 
-_voikko = None
+_voikko = {}
+_defaultVoikko = None
 
 ALLOWED_DICTS = [u"fi-x-standard+debug", u"fi-x-medicine"]
 
@@ -107,7 +108,7 @@ def fromMapIfPossible(key, valueMap):
 		return key
 
 def nonOverlappingGrammarErrorsByStartPosition(text):
-	errors = _voikko.grammarErrors(text)
+	errors = _defaultVoikko.grammarErrors(text)
 	nonOverlapping = {}
 	lastEnd = 0
 	for error in errors:
@@ -135,7 +136,7 @@ def markTrailingDots(tokenList):
 
 def grammarErrorDetails(grammarError):
 	errorCode = grammarError.errorCode
-	errorText = _voikko.grammarErrorExplanation(errorCode, "fi")
+	errorText = _defaultVoikko.grammarErrorExplanation(errorCode, "fi")
 	if len(grammarError.suggestions) == 0:
 		return errorText
 	else:
@@ -145,7 +146,7 @@ def grammarErrorDetails(grammarError):
 		       u'...", "...'.join(grammarError.suggestions) + u'..."?'
 
 def spell(text):
-	tokens = markTrailingDots(_voikko.tokens(text))
+	tokens = markTrailingDots(_defaultVoikko.tokens(text))
 	gErrors = nonOverlappingGrammarErrorsByStartPosition(text)
 	res = u""
 	position = 0
@@ -157,8 +158,8 @@ def spell(text):
 			res = res + u"<span class='gErrorOuter' " \
 			      + u"errortext='" + escapeAttr(errorText) + u"'>"
 		if token.tokenType == Token.WORD:
-			if _voikko.spell(token.tokenText) or \
-			   (token.dotFollows and _voikko.spell(token.tokenText + u".")):
+			if _defaultVoikko.spell(token.tokenText) or \
+			   (token.dotFollows and _defaultVoikko.spell(token.tokenText + u".")):
 				res = res + u"<span class='word'>" \
 				      + escape(token.tokenText) \
 				      + u"</span>"
@@ -179,7 +180,7 @@ def escapeAttr(word):
 	return escape(word).replace(u"'", u"&#39;").replace(u'"', u"&#34;")
 
 def suggestions(word):
-	suggs = _voikko.suggest(word)
+	suggs = _defaultVoikko.suggest(word)
 	if len(suggs) == 0:
 		return None
 	res = u"<ul>"
@@ -234,8 +235,8 @@ def getAnalysis(analysis):
 			      + wordIdsToHtml(ids)
 	return res
 
-def analyzeWord(word):
-	analysisList = _voikko.analyze(word)
+def analyzeWord(word, v):
+	analysisList = v.analyze(word)
 	if len(analysisList) == 0:
 		return u""
 	if len(analysisList) == 1:
@@ -249,20 +250,23 @@ def analyzeWord(word):
 	res = res + u"</ol>"
 	return res
 
-def wordInfo(word):
-	isRecognized = _voikko.spell(word)
+def wordInfo(word, dictionary):
+	res = u"<div title='Tietoja sanasta %s'>" % escapeAttr(word)
+	if dictionary not in _voikko:
+		return res + u"Sisäinen virhe: sanasto ei ole käytettävissä.</div>"
+	v = _voikko[dictionary]
+	isRecognized = v.spell(word)
 	if not isRecognized:
-		isRecognized = _voikko.spell(word + u".")
+		isRecognized = v.spell(word + u".")
 		if isRecognized:
 			word = word + u"."
-	res = u"<div title='Tietoja sanasta %s'>" % escapeAttr(word)
 	if not isRecognized:
 		res = res + u"Sana on tuntematon."
 		suggs = suggestions(word)
 		if suggs is not None:
 			res = res + u" Tarkoititko kenties" + suggs
 	else:
-		res = res + analyzeWord(word)
+		res = res + analyzeWord(word, v)
 	res = res + "</div>"
 	return res
 
@@ -279,7 +283,7 @@ def parseQuery(queryString, attrName):
 	values = attrs[attrName]
 	if len(values) != 1:
 		return u""
-	return values[0]
+	return unicode(unquote(values[0]), "UTF-8")
 
 class VoikkoHandler(BaseHTTPRequestHandler):
 	def sendHtmlPage(self, content, contentType):
@@ -326,10 +330,10 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		if self.serveBinaries():
 			return
 		elif self.path.startswith("/wordinfo?q="):
-			query = unicode(unquote_plus(self.path[10:]), "UTF-8")
-			self.sendHtmlPage(wordInfo(parseQuery(query, "q")), "text/html")
+			query = self.path[10:]
+			self.sendHtmlPage(wordInfo(parseQuery(query, "q"), parseQuery(query, "d")), "text/html")
 		elif self.path.startswith("/joukahainen?wid="):
-			query = unicode(unquote_plus(self.path[17:]), "UTF-8")
+			query = unicode(unquote(self.path[17:]), "UTF-8")
 			wid = int(query)
 			self.serveUrl(WORD_INFO_URL + `wid`)
 		else:
@@ -340,7 +344,7 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		if self.path.startswith("/spell"):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
-			query = unicode(unquote_plus(queryData), "UTF-8")
+			query = unicode(unquote(queryData), "UTF-8")
 			self.sendHtmlPage(spell(query), "text/html")
 		else:
 			self.send_response(404)
@@ -355,12 +359,21 @@ def runServer(port):
 
 def initVoikko():
 	global _voikko
-	_voikko = Voikko('fi-x-standard+debug')
-	_voikko.setIgnoreDot(False)
-	_voikko.setAcceptUnfinishedParagraphsInGc(True)
+	global _defaultVoikko
+	for allowedDict in ALLOWED_DICTS:
+		v = Voikko(allowedDict)
+		v.setIgnoreDot(False)
+		v.setAcceptUnfinishedParagraphsInGc(True)
+		_voikko[allowedDict] = v
+	_defaultVoikko = _voikko[ALLOWED_DICTS[0]]
 
 def uninitVoikko():
-	_voikko.terminate()
+	global _voikko
+	global _defaultVoikko
+	for v in _voikko.values():
+		v.terminate()
+	_voikko.clear()
+	_defaultVoikko = None
 
 def reinitVoikko():
 	uninitVoikko()
