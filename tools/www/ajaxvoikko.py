@@ -31,7 +31,6 @@ from libvoikko import Token
 import codecs
 
 _voikko = {}
-_defaultVoikko = None
 
 ALLOWED_DICTS = [u"fi-x-standard+debug", u"fi-x-medicine"]
 
@@ -107,8 +106,8 @@ def fromMapIfPossible(key, valueMap):
 	else:
 		return key
 
-def nonOverlappingGrammarErrorsByStartPosition(text):
-	errors = _defaultVoikko.grammarErrors(text)
+def nonOverlappingGrammarErrorsByStartPosition(text, v):
+	errors = v.grammarErrors(text)
 	nonOverlapping = {}
 	lastEnd = 0
 	for error in errors:
@@ -134,9 +133,9 @@ def markTrailingDots(tokenList):
 		i = i + 1
 	return newList
 
-def grammarErrorDetails(grammarError):
+def grammarErrorDetails(grammarError, v):
 	errorCode = grammarError.errorCode
-	errorText = _defaultVoikko.grammarErrorExplanation(errorCode, "fi")
+	errorText = v.grammarErrorExplanation(errorCode, "fi")
 	if len(grammarError.suggestions) == 0:
 		return errorText
 	else:
@@ -145,21 +144,24 @@ def grammarErrorDetails(grammarError):
 		return errorText + u' Ehkäpä ennemminkin "...' + \
 		       u'...", "...'.join(grammarError.suggestions) + u'..."?'
 
-def spell(text):
-	tokens = markTrailingDots(_defaultVoikko.tokens(text))
-	gErrors = nonOverlappingGrammarErrorsByStartPosition(text)
+def spell(text, dictionary):
+	if dictionary not in _voikko:
+		return u""
+	v = _voikko[dictionary]
+	tokens = markTrailingDots(v.tokens(text))
+	gErrors = nonOverlappingGrammarErrorsByStartPosition(text, v)
 	res = u""
 	position = 0
 	currentGError = None
 	for token in tokens:
 		if position in gErrors:
 			currentGError = gErrors[position]
-			errorText = grammarErrorDetails(currentGError)
+			errorText = grammarErrorDetails(currentGError, v)
 			res = res + u"<span class='gErrorOuter' " \
 			      + u"errortext='" + escapeAttr(errorText) + u"'>"
 		if token.tokenType == Token.WORD:
-			if _defaultVoikko.spell(token.tokenText) or \
-			   (token.dotFollows and _defaultVoikko.spell(token.tokenText + u".")):
+			if v.spell(token.tokenText) or \
+			   (token.dotFollows and v.spell(token.tokenText + u".")):
 				res = res + u"<span class='word'>" \
 				      + escape(token.tokenText) \
 				      + u"</span>"
@@ -179,8 +181,8 @@ def spell(text):
 def escapeAttr(word):
 	return escape(word).replace(u"'", u"&#39;").replace(u'"', u"&#34;")
 
-def suggestions(word):
-	suggs = _defaultVoikko.suggest(word)
+def suggestions(word, v):
+	suggs = v.suggest(word)
 	if len(suggs) == 0:
 		return None
 	res = u"<ul>"
@@ -262,7 +264,7 @@ def wordInfo(word, dictionary):
 			word = word + u"."
 	if not isRecognized:
 		res = res + u"Sana on tuntematon."
-		suggs = suggestions(word)
+		suggs = suggestions(word, v)
 		if suggs is not None:
 			res = res + u" Tarkoititko kenties" + suggs
 	else:
@@ -344,8 +346,7 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		if self.path.startswith("/spell"):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
-			query = unicode(unquote(queryData), "UTF-8")
-			self.sendHtmlPage(spell(query), "text/html")
+			self.sendHtmlPage(spell(parseQuery(queryData, "q"), parseQuery(queryData, "d")), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()
@@ -359,21 +360,17 @@ def runServer(port):
 
 def initVoikko():
 	global _voikko
-	global _defaultVoikko
 	for allowedDict in ALLOWED_DICTS:
 		v = Voikko(allowedDict)
 		v.setIgnoreDot(False)
 		v.setAcceptUnfinishedParagraphsInGc(True)
 		_voikko[allowedDict] = v
-	_defaultVoikko = _voikko[ALLOWED_DICTS[0]]
 
 def uninitVoikko():
 	global _voikko
-	global _defaultVoikko
 	for v in _voikko.values():
 		v.terminate()
 	_voikko.clear()
-	_defaultVoikko = None
 
 def reinitVoikko():
 	uninitVoikko()

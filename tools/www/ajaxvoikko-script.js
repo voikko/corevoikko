@@ -83,7 +83,8 @@ function clearProgressMessage() {
 function requestUpdate() {
   lastUpdateTimerId = null;
   var textContent = $("#input").val();
-  $.post(AJAX_HANDLER_URL + "spell", textContent, updateReceived, "html");
+  var dict = $("#voikkoDict").val();
+  $.post(AJAX_HANDLER_URL + "spell", {q: textContent, d: dict}, updateReceived, "html");
 }
 
 function inputChanged() {
