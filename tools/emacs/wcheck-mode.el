@@ -997,7 +997,7 @@ separate line."
         ;; If process is running proceed to collect and paint the
         ;; strings.
         (condition-case error-data
-            (if (eq 'run (process-status process))
+            (if (wcheck-process-running-p process)
                 (with-current-buffer (process-buffer process)
                   (save-excursion
                     (goto-char (point-max))
@@ -1951,6 +1951,10 @@ or `wcheck-language-data-defaults-hard-coded'."
 (defun wcheck-list-of-lists-p (object)
   (and (listp object)
        (not (memq nil (mapcar #'listp object)))))
+
+
+(defun wcheck-process-running-p (process)
+  (eq 'run (process-status process)))
 
 
 (defun wcheck-current-idle-time-seconds ()
