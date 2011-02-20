@@ -5,7 +5,7 @@
 ;; Author: Teemu Likonen <tlikonen@iki.fi>
 ;; Maintainer: Teemu Likonen <tlikonen@iki.fi>
 ;; Created: 2009-07-04
-;; Version: 2011.01.09
+;; Version: 2011.02.20
 ;; Keywords: text spell check languages ispell
 
 
@@ -1782,11 +1782,11 @@ return them as a list of strings."
 
 
 (define-obsolete-function-alias 'wcheck-parse-suggestions-lines
-  'wcheck-parser-lines "2011.01.23")
+  'wcheck-parser-lines "2011.02.20")
 (define-obsolete-function-alias 'wcheck-parse-suggestions-ws
-  'wcheck-parser-whitespace "2011.01.23")
+  'wcheck-parser-whitespace "2011.02.20")
 (define-obsolete-function-alias 'wcheck-parse-suggestions-ispell
-  'wcheck-parser-ispell-suggestions "2011.01.23")
+  'wcheck-parser-ispell-suggestions "2011.02.20")
 
 
 ;;; Face information functions
