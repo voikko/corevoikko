@@ -134,4 +134,5 @@ google.setOnLoadCallback(function() { jQuery(function($) {
   $("#input").click(clickInInput);
   $("#input").bind("cut", inputChanged);
   $("#input").bind("paste", inputChanged);
+  $("#voikkoDict").bind("change", inputChanged);
 });});
