@@ -22,10 +22,22 @@
 
 # References:
 # http://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_test
+# http://media.tkk.fi/GTTS/Suomi/dt&raportit/DI_J_Haataja.pdf
 
 import sys
 from locale import getpreferredencoding
 from libvoikko import Voikko, Sentence, Token
+
+def getSyllablesInWord(word, voikko):
+	hyphens = len(voikko.getHyphenationPattern(word).replace(u" ", u""))
+	return hyphens + 1
+
+def getSyllablesInBaseform(word, voikko):
+	# TODO: this will use only the first analysis
+	for analysis in voikko.analyze(word):
+		if "BASEFORM" in analysis:
+			return getSyllablesInWord(analysis["BASEFORM"], voikko)
+	return 0
 
 if '--help' in sys.argv:
 	print "Usage:"
@@ -53,24 +65,29 @@ wordCount = 0
 syllableCount = 0
 characterCount = 0
 punctuationCount = 0
+atLeast4SyllablesInBaseform = 0
 for token in voikko.tokens(allText):
 	if token.tokenType == Token.WORD:
 		wordCount = wordCount + 1
-		hyphens = len(voikko.getHyphenationPattern(token.tokenText).replace(u" ", u""))
-		syllableCount = syllableCount + hyphens + 1
+		syllableCount = syllableCount + getSyllablesInWord(token.tokenText, voikko)
 		characterCount = characterCount + len(token.tokenText)
+		if getSyllablesInBaseform(token.tokenText, voikko) >= 4:
+			atLeast4SyllablesInBaseform = atLeast4SyllablesInBaseform + 1
 	elif token.tokenType == Token.PUNCTUATION:
 		punctuationCount = punctuationCount + 1
 
 print u"Language used for processing:", language
 print u"Number of sentences:", sentenceCount
 print u"Number of words:", wordCount
+print u"Number of long words (4 or more syllables in baseform):", atLeast4SyllablesInBaseform
 print u"Number of syllables:", syllableCount
 print u"Number of characters (without punctuation):", characterCount
 print u"Number of characters (with punctuation):", characterCount + punctuationCount
 
 fres = 206.823 - 1.015 * wordCount / sentenceCount - 84.6 * syllableCount / wordCount
 fkgd = 0.39 * wordCount / sentenceCount + 11.8 * syllableCount / wordCount - 15.59
+wiio1 = 2.7 + 30.0 * atLeast4SyllablesInBaseform / wordCount
 
 print u"Flesch Reading Ease:", fres
 print u"Flesch-Kincaid Grade Level:", fkgd
+print u"Wiion yksinkertainen luokkataso (1-12):", wiio1
