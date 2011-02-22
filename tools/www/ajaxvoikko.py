@@ -28,6 +28,7 @@ from cgi import escape
 from signal import signal, SIGHUP
 from libvoikko import Voikko
 from libvoikko import Token
+from voikkostatistics import getStatistics
 import codecs
 
 _voikko = {}
@@ -177,6 +178,18 @@ def spell(text, dictionary):
 			currentGError = None
 			res = res + u"</span>"
 	return res.replace(u"\n", u"<br />")
+
+def formatNumber(number):
+	return (u"%.2f" % number).replace(u".", u",")
+
+def stats(text, dictionary):
+	if dictionary not in _voikko:
+		return u""
+	v = _voikko[dictionary]
+	stats = getStatistics(text, v)
+	if stats[u"WORDS"] < 50:
+		return u""
+	return u"<br /><hr />Tekstin luettavuus (Wiion yksinkertaisen luokkatasokaavan mukaan) " + formatNumber(stats[u"WIIO_SIMPLE"]) + u"."
 
 def escapeAttr(word):
 	return escape(word).replace(u"'", u"&#39;").replace(u'"', u"&#34;")
@@ -346,7 +359,7 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		if self.path.startswith("/spell"):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
-			self.sendHtmlPage(spell(parseQuery(queryData, "q"), parseQuery(queryData, "d")), "text/html")
+			self.sendHtmlPage(spell(parseQuery(queryData, "q"), parseQuery(queryData, "d")) + stats(parseQuery(queryData, "q"), parseQuery(queryData, "d")), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()
