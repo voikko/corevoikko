@@ -72,56 +72,56 @@ allDicts = []
 d = Voikkodict()
 d.idSuffix = u""
 d.variant = u"standard"
-d.nameFi = u"perussanasto"
-d.nameEn = u"basic vocabulary"
+d.nameFi = u"suomi (perussanasto)"
+d.nameEn = u"Finnish (basic vocabulary)"
 d.smOptions = u""
 allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-erityis"
 d.variant = u"science"
-d.nameFi = u"matematiikan, fysiikan, kemian, lääketieteen, kasvatustieteen ja tietotekniikan sanastot"
-d.nameEn = u"scientific vocabulary"
+d.nameFi = u"suomi (matematiikan, fysiikan, kemian, lääketieteen, kasvatustieteen ja tietotekniikan sanastot)"
+d.nameEn = u"Finnish (scientific vocabulary)"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,medicine,science,education" EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/science-misc.lex"'
 allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-murre"
 d.variant = u"dialects"
-d.nameFi = u"murteellisten, vanhojen ja harvinaisten sanojen sanasto"
-d.nameEn = u"Finnish dialects"
+d.nameFi = u"suomi (murteellisten, vanhojen ja harvinaisten sanojen sanasto)"
+d.nameEn = u"Finnish (dialects)"
 d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
 allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-kasvatus"
 d.variant = u"education"
-d.nameFi = u"kasvatustieteen sanasto"
-d.nameEn = u"education vocabulary"
+d.nameFi = u"suomi (kasvatustieteen sanasto)"
+d.nameEn = u"Finnish (education vocabulary)"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=education"'
 allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-laaketiede"
 d.variant = u"medicine"
-d.nameFi = u"matematiikan, fysiikan, kemian ja lääketieteen sanastot"
-d.nameEn = u"medical vocabulary"
+d.nameFi = u"suomi (matematiikan, fysiikan, kemian ja lääketieteen sanastot)"
+d.nameEn = u"Finnish (medical vocabulary)"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=medicine,science" EXTRA_LEX=vocabulary/erikoisalat/science-misc.lex'
 allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-po"
 d.variant = u"po"
-d.nameFi = u"po-tiedostojen oikolukusanasto"
-d.nameEn = u"po file spelling vocabulary"
+d.nameFi = u"suomi (po-tiedostojen oikolukusanasto)"
+d.nameEn = u"Finnish (po file spelling vocabulary)"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/po-oikoluku.lex vocabulary/erikoisalat/linux-distributions.lex"'
 allDicts.append(d)
 
 d = Voikkodict()
 d.idSuffix = u"-morpho"
 d.variant = u"morpho"
-d.nameFi = u"erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
-d.nameEn = u"very extensive vocabulary (with additional information needed in morphological analysis)"
+d.nameFi = u"suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
+d.nameEn = u"Finnish, very extensive vocabulary (with additional information needed in morphological analysis)"
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education --style=dialect,old,international,foreign --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
