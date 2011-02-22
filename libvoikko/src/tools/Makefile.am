@@ -14,8 +14,8 @@ if HAVE_PTHREAD
     voikkospell_LDADD += $(PTHREAD_LIBS)
 endif
 if HAVE_HFST 
-    voikkospell_CXXFLAGS += -lhfst-ospell
-    voikkospell_LDADD += -lhfst-ospell
+    voikkospell_CXXFLAGS += $(HFSTOSPELL_CFLAGS)
+    voikkospell_LDADD += $(HFSTOSPELL_LIBS)
 endif
 voikkohyphenate_SOURCES = voikkohyphenate.cpp
 voikkohyphenate_CXXFLAGS = $(TOOLCXXFLAGS)
