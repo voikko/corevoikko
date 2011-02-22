@@ -62,6 +62,7 @@ def getStatistics(text, voikko):
 			sentenceCount = sentenceCount + 1
 	
 	wordCount = 0
+	knownWords = 0
 	syllableCount = 0
 	characterCount = 0
 	punctuationCount = 0
@@ -71,7 +72,10 @@ def getStatistics(text, voikko):
 			wordCount = wordCount + 1
 			syllableCount = syllableCount + getSyllablesInWord(token.tokenText, voikko)
 			characterCount = characterCount + len(token.tokenText)
-			__insertToHistogram(baseformLengthHistogram, getSyllablesInBaseform(token.tokenText, voikko))
+			sylsInBaseform = getSyllablesInBaseform(token.tokenText, voikko)
+			__insertToHistogram(baseformLengthHistogram, sylsInBaseform)
+			if sylsInBaseform > 0:
+				knownWords = knownWords + 1
 		elif token.tokenType == Token.PUNCTUATION:
 			punctuationCount = punctuationCount + 1
 	
@@ -80,14 +84,20 @@ def getStatistics(text, voikko):
 	# measured statistics
 	result[u"SENTENCES"] = sentenceCount
 	result[u"WORDS"] = wordCount
+	result[u"KNOWN_WORDS"] = knownWords
 	result[u"BASEFORM_SYLLABLES_HISTOGRAM"] = baseformLengthHistogram
 	result[u"SYLLABLES"] = syllableCount
 	result[u"LETTERS"] = characterCount
 	result[u"PUNCTUATION"] = punctuationCount
 	
 	# derived statistics
-	result[u"FLESCH_READING_EASE"] = 206.823 - 1.015 * wordCount / sentenceCount - 84.6 * syllableCount / wordCount
-	result[u"FLESCH_KINCAID_GRADE_LEVEL"] = 0.39 * wordCount / sentenceCount + 11.8 * syllableCount / wordCount - 15.59
-	result[u"WIIO_SIMPLE"] = 2.7 + 30.0 * __getUpper(baseformLengthHistogram, 4) / wordCount
+	if knownWords == 0 or sentenceCount == 0:
+		result[u"FLESCH_READING_EASE"] = 0
+		result[u"FLESCH_KINCAID_GRADE_LEVEL"] = 0
+		result[u"WIIO_SIMPLE"] = 0
+	else:
+		result[u"FLESCH_READING_EASE"] = 206.823 - 1.015 * wordCount / sentenceCount - 84.6 * syllableCount / wordCount
+		result[u"FLESCH_KINCAID_GRADE_LEVEL"] = 0.39 * wordCount / sentenceCount + 11.8 * syllableCount / wordCount - 15.59
+		result[u"WIIO_SIMPLE"] = 2.7 + 30.0 * __getUpper(baseformLengthHistogram, 4) / knownWords
 	
 	return result
