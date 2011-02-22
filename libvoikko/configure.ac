@@ -1,5 +1,5 @@
 dnl Libvoikko: Finnish spellchecker and hyphenator library
-dnl Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+dnl Copyright (C) 2006 - 2011 Harri Pitkänen <hatapitk@iki.fi>
 dnl
 dnl This program is free software; you can redistribute it and/or
 dnl modify it under the terms of the GNU General Public License
@@ -18,7 +18,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, U
 
 dnl General options for autoconf
 AC_PREREQ(2.60)
-AC_INIT([libvoikko],[3.1],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[3.1.1],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AC_CONFIG_MACRO_DIR([m4])
@@ -129,6 +129,16 @@ if test x$lttoolbox = xyes; then
 	])
 fi
 AM_CONDITIONAL([HAVE_LTTOOLBOX], [test x$lttoolbox = xyes])
+
+dnl External dictionary loading
+external_dicts="yes"
+AH_TEMPLATE(DISABLE_EXTDICTS, [Disable external dictionaries])
+AC_ARG_ENABLE(external_dicts, AC_HELP_STRING([--disable-external-dicts],
+	[disable loading of external dictionaries (use with experimental or patched builds)]),
+	[external_dicts=${enableval}], [external_dicts=yes])
+if test x$external_dicts = xno; then
+	AC_DEFINE(DISABLE_EXTDICTS, 1)
+fi
 
 
 dnl Windows specific settings

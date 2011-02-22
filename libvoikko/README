@@ -62,6 +62,22 @@ C++ compiler (GCC) and Python (version 2.3 or later but not version 3)
 must be available in order to build this library.
 
 
+Build configuration
+===================
+
+See ./configure --help for a list of available configuration options.
+The default configuration will enable all stable backends and will result
+in a library that supports stable dictionary formats. This is the recommended
+configuration for builds that are made available to end users.
+
+You can enable certain experimental backends or disable stable backends. Such
+configurations will not necessarily work with all dictionaries and the dictionary
+formats may change without notice. Thus these options should generally be used
+in developer builds only. If you need to use them in a released build we
+strongly recommend that you disable external dictionary loading with
+--disable-extdicts and supply compatible dictionaries along with the library.
+
+
 Runtime requirements
 ====================
 
@@ -149,7 +165,7 @@ from rule 1:
 Authors
 =======
 
-2006 - 2010 Harri Pitkänen (hatapitk@iki.fi)
+2006 - 2011 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
 1995 - 2008 Björn Beutel
  * Author of the original LAG implementation (Malaga), slightly simplified version

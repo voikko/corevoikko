@@ -281,6 +281,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 list<string> DictionaryLoader::getDefaultLocations() {
 	list<string> locations;
 	
+	#ifndef DISABLE_EXTDICTS
 	/* Path specified by environment variable VOIKKO_DICTIONARY_PATH */
 	// XXX: Not actually thread safe but will most probably work
 	char * path_from_env = getenv("VOIKKO_DICTIONARY_PATH");
@@ -341,6 +342,7 @@ list<string> DictionaryLoader::getDefaultLocations() {
 	
 	/* Directory specified on compile time */
 	locations.push_back(DICTIONARY_PATH);
+	#endif
 	
 	return locations;
 }
