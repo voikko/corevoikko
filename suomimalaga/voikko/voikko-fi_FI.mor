@@ -1299,6 +1299,36 @@ combi_rule lukusana_numero ($vasen, $oikea, $sana, $index):
   elseif $oikea.alaluokka = pilkku and $oikea.pilkku /= yes then
     $oikea :=+ [pilkku: yes];
     result $vasen + <[alku: $sana] + $oikea>, rules lukusana_numero;
+  elseif $oikea.alaluokka = piste and $oikea.pilkku /= yes then
+    result $res, rules lukusana_pvm_kk;
+  end;
+end;
+
+combi_rule lukusana_pvm_kk($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = lukusana;
+
+  define $edellinen := $vasen.($index - 1);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if $oikea.alaluokka = numeromerkki then
+    result $res, rules lukusana_pvm_kk;
+  elseif $oikea.alaluokka = piste then
+    # sallitaan enemmänkin pisteitä, esim. IP-osoitteet
+    result $res, rules lukusana_numero_tai_piste;
+  end;
+end;
+
+combi_rule lukusana_numero_tai_piste($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka = lukusana;
+
+  define $edellinen := $vasen.($index - 1);
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if $oikea.alaluokka = numeromerkki then
+    result $res, rules lukusana_numero_tai_piste;
+    result $res, accept;
+  elseif $oikea.alaluokka = piste then
+    result $res, rules lukusana_numero_tai_piste;
   end;
 end;
 

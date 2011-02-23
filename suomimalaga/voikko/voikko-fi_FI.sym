@@ -168,6 +168,7 @@ luokka; alaluokka; jluokka;
     erikoisluku;
     numeromerkki;
     pilkku;
+    piste;
     lukusanan_jälkiliite;
   asemosana;
   sijapääte;

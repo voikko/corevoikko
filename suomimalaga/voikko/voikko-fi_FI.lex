@@ -33,3 +33,4 @@ include "yhdyssanat.lex";
 
 include "main.lex";
 
+[alku: ".", luokka: lukusana, alaluokka: piste, jatko: <>]; # päivämäärissä
