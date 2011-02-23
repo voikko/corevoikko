@@ -6,6 +6,7 @@ EXTRA_DIST = TestUtils.py \
     DictionaryInfoTest.py \
     Utf8ApiTest.py \
     DeprecatedApiTest.py \
+    python3Test.sh \
     hfst/NorthSamiTest.py \
     malaga/ExtendedMorphologyTest.py \
     lttoolbox/ApertiumIcelandicTest.py
