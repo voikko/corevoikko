@@ -285,6 +285,24 @@ def wordInfo(word, dictionary):
 	res = res + "</div>"
 	return res
 
+def getPortlet():
+	html = u"<p>Valitse sanasto: <select id='voikkoDict'>"
+	dictMap = {}
+	for d in Voikko.listDicts():
+		tag = d.language + u"-x-" + d.variant
+		if tag in ALLOWED_DICTS:
+			dictMap[ALLOWED_DICTS.index(tag)] = u"<option value='" + tag + u"'>" + escape(d.description) + u"</option>"
+	for i in range(0, len(ALLOWED_DICTS)):
+		if i in dictMap:
+			html = html + dictMap[i]
+	html = html + u"</select><br />Kirjoita teksti tähän:</p>"
+	html = html + u"<textarea id='input' rows='5'></textarea><br />"
+	html = html + u"<button onclick='clearClicked()'>Tyhjennä</button> "
+	html = html + u"<span id='progress' class='updating'>Analysoidaan... <img src='progress.gif' /></span>"
+	html = html + u"<p>Lue analyysin tulokset alta. Lisää tietoja sanoista tai virheistä saat hiirellä napsauttamalla.</p>"
+	html = html + u"<div id='result'></div>"
+	return html
+
 FILES_TO_SERVE = {
 	"/": ("ajaxvoikko-index.html", "text/html"),
 	"/style.css": ("ajaxvoikko-style.css", "text/css"),
@@ -344,6 +362,8 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 			return
 		if self.serveBinaries():
 			return
+		elif self.path.startswith("/portlet"):
+			self.sendHtmlPage(getPortlet(), "text/html")
 		elif self.path.startswith("/wordinfo?q="):
 			query = self.path[10:]
 			self.sendHtmlPage(wordInfo(parseQuery(query, "q"), parseQuery(query, "d")), "text/html")

@@ -1,6 +1,6 @@
 /* @licstart  The following is the entire license notice for the Javascript code in this page.
  *
- * Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
+ * Copyright 2009 - 2011 Harri Pitkänen (hatapitk@iki.fi)
  *
  * The Javascript code in this page is free software: you can
  * redistribute it and/or modify it under the terms of the GNU
@@ -20,6 +20,17 @@
  */
 
 var AJAX_HANDLER_URL="";
+
+function loadPortlet(divId) {
+  $("#" + divId).load(AJAX_HANDLER_URL + "portlet", function() {
+    $("#progress").hide();
+    $("#input").keyup(keyUpInInput);
+    $("#input").click(clickInInput);
+    $("#input").bind("cut", inputChanged);
+    $("#input").bind("paste", inputChanged);
+    $("#voikkoDict").bind("change", inputChanged);
+  });
+}
 
 function joukahainen(wid) {
   var options = {
@@ -128,11 +139,3 @@ function clearClicked() {
 
 google.load("jquery", "1.4.1");
 google.load("jqueryui", "1.7.2");
-google.setOnLoadCallback(function() { jQuery(function($) {
-  $("#progress").hide();
-  $("#input").keyup(keyUpInInput);
-  $("#input").click(clickInInput);
-  $("#input").bind("cut", inputChanged);
-  $("#input").bind("paste", inputChanged);
-  $("#voikkoDict").bind("change", inputChanged);
-});});
