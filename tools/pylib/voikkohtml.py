@@ -33,11 +33,18 @@ class VoikkoHTMLParser(HTMLParser):
 		self.data = u""
 		return result
 	
+	def isContentTag(self, tag):
+		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "p"]
+	
+	def isNonContentTag(self, tag):
+		return tag in ["script", "table", "style", "iframe"]
+	
 	def __init__(self):
 		HTMLParser.__init__(self)
 		self.tags = []
 		self.segments = []
 		self.data = u""
+		self.acceptData = None
 	
 	def handle_data(self, data):
 		self.data = self.data + data
@@ -45,6 +52,14 @@ class VoikkoHTMLParser(HTMLParser):
 	def handle_starttag(self, tag, attrs):
 		if tag in ["br"]:
 			self.data = self.data + u" "
+		elif self.isContentTag(tag):
+			if self.acceptData is not None:
+				raise HTMLParseError("Nesting error", self.getpos())
+			self.acceptData = True
+		elif self.isNonContentTag(tag):
+			if self.acceptData is not None:
+				raise HTMLParseError("Nesting error", self.getpos())
+			self.acceptData = False
 		self.tags.append(tag)
 	
 	def handle_endtag(self, tag):
@@ -59,6 +74,8 @@ class VoikkoHTMLParser(HTMLParser):
 			self.segments.append((SEGMENT_TYPE_LIST_ITEM, self.getData()))
 		elif openTag == "p":
 			self.segments.append((SEGMENT_TYPE_PARAGRAPH, self.getData()))
+		if self.isContentTag(tag) or self.isNonContentTag(tag):
+			self.acceptData = None
 	
 	def processInput(self, html):
 		self.feed(html)

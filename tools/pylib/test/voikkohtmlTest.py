@@ -72,6 +72,35 @@ class VoikkoHtmlTest(TestCase):
 	def testExtraWhitespaceIsRemoved(self):
 		result = parseHtml(u"<html><body><p>\tKissaa  on \rruokittava huolella.  </p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
+	
+	def testLineFeedIsJustSpace(self):
+		result = parseHtml(u"<html><body><p>Kissaa\non\r\nruokittava\rhuolella.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
+	
+	def testScriptsAreStripped(self):
+		result = parseHtml(u"<html><body><p>Kissaa on ruokittava.</p><script>lksjdf</script></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
+	
+	def testScriptsWithinPIsParseError(self):
+		self.assertParseError(u"<html><body><p>Kissaa on <script>aksldj</script>ruokittava.</p></body></html>", 1, 25)
+	
+	def testLiWithinPIsParseError(self):
+		self.assertParseError(u"<html><body><p>Kissaa on <li>aksldj</li>ruokittava.</p></body></html>", 1, 25)
+	
+	def testTablesAreIgnored(self):
+		result = parseHtml(u"<html><body><p>Kissaa on ruokittava.</p><table><tr><td>sdsd</td></tr></table></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
+	
+	def testTableWithinPIsParseError(self):
+		self.assertParseError(u"<html><body><p><table><tr><td>sdsd</td></tr></table>ruokittava.</p></body></html>", 1, 15)
+	
+	def testStrongIsJustText(self):
+		result = parseHtml(u"<html><body><p>Kissaa on <strong>ruokittava</strong>.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
+	
+	def testUnderlineInducesNoSpace(self):
+		result = parseHtml(u"<html><body><h1>Libre<u>Office</u></h1></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_HEADING, u"LibreOffice")], result)
 
 if __name__ == "__main__":
 	suite = TestLoader().loadTestsFromTestCase(VoikkoHtmlTest)
