@@ -20,12 +20,18 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from HTMLParser import HTMLParser, HTMLParseError
+from re import sub
 
 SEGMENT_TYPE_HEADING = 1
 SEGMENT_TYPE_LIST_ITEM = 2
 SEGMENT_TYPE_PARAGRAPH = 3
 
 class VoikkoHTMLParser(HTMLParser):
+	
+	def getData(self):
+		result = sub(u"\\s+", u" ", self.data).strip()
+		self.data = u""
+		return result
 	
 	def __init__(self):
 		HTMLParser.__init__(self)
@@ -37,21 +43,22 @@ class VoikkoHTMLParser(HTMLParser):
 		self.data = self.data + data
 	
 	def handle_starttag(self, tag, attrs):
+		if tag in ["br"]:
+			self.data = self.data + u" "
 		self.tags.append(tag)
 	
 	def handle_endtag(self, tag):
 		openTag = self.tags.pop()
+		while tag != openTag and openTag in ["br", "hr", "img"]:
+			openTag = self.tags.pop()
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
-			self.segments.append((SEGMENT_TYPE_HEADING, self.data))
+			self.segments.append((SEGMENT_TYPE_HEADING, self.getData()))
 		elif openTag == "li":
-			self.segments.append((SEGMENT_TYPE_LIST_ITEM, self.data))
+			self.segments.append((SEGMENT_TYPE_LIST_ITEM, self.getData()))
 		elif openTag == "p":
-			self.segments.append((SEGMENT_TYPE_PARAGRAPH, self.data))
-		else:
-			return
-		self.data = u""
+			self.segments.append((SEGMENT_TYPE_PARAGRAPH, self.getData()))
 	
 	def processInput(self, html):
 		self.feed(html)

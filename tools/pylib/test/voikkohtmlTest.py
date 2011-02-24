@@ -53,8 +53,24 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><p>Kissaa on ruokittava huolella.</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
 	
-	def testIgnoreBr(self):
+	def testIgnoreXhtmlBr(self):
 		result = parseHtml(u"<html><body><p>Kissaa on ruokittava <br/>huolella.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
+	
+	def testIgnoreTraditionalBr(self):
+		result = parseHtml(u"<html><body><p>Kissaa on ruokittava <br>huolella.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
+	
+	def testIgnoreImages(self):
+		result = parseHtml(u"<html><body><p>Kissaa <img src='cat.jpg'>on ruokittava.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
+	
+	def testBrIsWhitespace(self):
+		result = parseHtml(u"<html><body><p>Kissaa on ruokittava<br/>huolella.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
+	
+	def testExtraWhitespaceIsRemoved(self):
+		result = parseHtml(u"<html><body><p>\tKissaa  on \rruokittava huolella.  </p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
 
 if __name__ == "__main__":
