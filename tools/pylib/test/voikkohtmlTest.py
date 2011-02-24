@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from unittest import TestCase, TestLoader, TextTestRunner
-from voikkohtml import parseHtml
+from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
 from HTMLParser import HTMLParseError
 
 class VoikkoHtmlTest(TestCase):
@@ -40,6 +40,22 @@ class VoikkoHtmlTest(TestCase):
 	
 	def testParseTagMismatch(self):
 		self.assertParseError(u"<html><head></html>", 1, 12)
+	
+	def testParseHeader(self):
+		result = parseHtml(u"<html><body><h1>Kissan ruokkiminen</h1></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_HEADING, u"Kissan ruokkiminen")], result)
+	
+	def testParseListItems(self):
+		result = parseHtml(u"<html><body><ul><li>kissa</li><li>koira</li></ul></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
+	
+	def testParseParagraph(self):
+		result = parseHtml(u"<html><body><p>Kissaa on ruokittava huolella.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
+	
+	def testIgnoreBr(self):
+		result = parseHtml(u"<html><body><p>Kissaa on ruokittava <br/>huolella.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava huolella.")], result)
 
 if __name__ == "__main__":
 	suite = TestLoader().loadTestsFromTestCase(VoikkoHtmlTest)

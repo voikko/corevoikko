@@ -31,6 +31,10 @@ class VoikkoHTMLParser(HTMLParser):
 		HTMLParser.__init__(self)
 		self.tags = []
 		self.segments = []
+		self.data = u""
+	
+	def handle_data(self, data):
+		self.data = self.data + data
 	
 	def handle_starttag(self, tag, attrs):
 		self.tags.append(tag)
@@ -39,6 +43,15 @@ class VoikkoHTMLParser(HTMLParser):
 		openTag = self.tags.pop()
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
+		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
+			self.segments.append((SEGMENT_TYPE_HEADING, self.data))
+		elif openTag == "li":
+			self.segments.append((SEGMENT_TYPE_LIST_ITEM, self.data))
+		elif openTag == "p":
+			self.segments.append((SEGMENT_TYPE_PARAGRAPH, self.data))
+		else:
+			return
+		self.data = u""
 	
 	def processInput(self, html):
 		self.feed(html)
