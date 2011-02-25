@@ -101,6 +101,20 @@ class VoikkoHtmlTest(TestCase):
 	def testUnderlineInducesNoSpace(self):
 		result = parseHtml(u"<html><body><h1>Libre<u>Office</u></h1></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_HEADING, u"LibreOffice")], result)
+	
+	def testNonAscii(self):
+		result = parseHtml(u"<html><body><h1>Eläinlääk&auml;rissä käynti €</h1></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_HEADING, u"Eläinlääkärissä käynti €")], result)
+	
+	def testUnknownEntityIsParseError(self):
+		self.assertParseError(u"<html><body><p>&kissa;</p></body></html>", 1, 15)
+	
+	def testCharacterReferences(self):
+		result = parseHtml(u"<html><body><h1>&#33;</h1></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_HEADING, u"!")], result)
+	
+	def testUnknownCharacterReferenceIsParseError(self):
+		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)
 
 if __name__ == "__main__":
 	suite = TestLoader().loadTestsFromTestCase(VoikkoHtmlTest)

@@ -21,6 +21,7 @@
 
 from HTMLParser import HTMLParser, HTMLParseError
 from re import sub
+from htmlentitydefs import name2codepoint
 
 SEGMENT_TYPE_HEADING = 1
 SEGMENT_TYPE_LIST_ITEM = 2
@@ -48,6 +49,19 @@ class VoikkoHTMLParser(HTMLParser):
 	
 	def handle_data(self, data):
 		self.data = self.data + data
+	
+	def handle_entityref(self, name):
+		if name in name2codepoint:
+			self.data = self.data + unichr(name2codepoint[name])
+		else:
+			raise HTMLParseError("Unknown entity reference", self.getpos())
+	
+	def handle_charref(self, name):
+		nameInt = int(name)
+		if 0 < nameInt and nameInt <= 65533:
+			self.data = self.data + unichr(nameInt)
+		else:
+			raise HTMLParseError("Unknown character reference", self.getpos())
 	
 	def handle_starttag(self, tag, attrs):
 		if tag in ["br"]:
