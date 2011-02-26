@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2011 Harri Pitkänen (hatapitk@iki.fi)
 # Web server that provides Ajax interface for using Voikko.
 # Requires Python version 2.5 or newer and Python interface to libvoikko.
 
@@ -285,6 +285,10 @@ def wordInfo(word, dictionary):
 	res = res + "</div>"
 	return res
 
+def checkPage(url, dictionary):
+	res = u"Analyysi sivusta " + escape(url) + u"<br />"
+	return res
+
 def getPortlet():
 	html = u"<p>Valitse sanasto: <select id='voikkoDict'>"
 	dictMap = {}
@@ -295,9 +299,17 @@ def getPortlet():
 	for i in range(0, len(ALLOWED_DICTS)):
 		if i in dictMap:
 			html = html + dictMap[i]
-	html = html + u"</select><br />Kirjoita teksti tähän:</p>"
+	html = html + u"</select></p>"
+	html = html + u"<div id='tabs'>"
+	html = html + u"<ul><li><a href='#tabDirect'>Kirjoita teksti</a></li><li><a href='#tabPage'>Oikolue www-sivu</a></li></ul>"
+	html = html + u"<div id='tabDirect'>"
 	html = html + u"<textarea id='input' rows='5'></textarea><br />"
-	html = html + u"<button onclick='clearClicked()'>Tyhjennä</button> "
+	html = html + u"<button onclick='clearClicked()'>Tyhjennä</button>"
+	html = html + u"</div>"
+	html = html + u"<div id='tabPage'>"
+	html = html + u"Oikoluettavan sivun osoite: <input type='text' id='pageUrl' size='40' /> <button onclick='checkPageClicked()'>Oikolue</button>"
+	html = html + u"</div>"
+	html = html + u"</div>"
 	html = html + u"<span id='progress' class='updating'>Analysoidaan... <img src='progress.gif' /></span>"
 	html = html + u"<p>Lue analyysin tulokset alta. Lisää tietoja sanoista tai virheistä saat hiirellä napsauttamalla.</p>"
 	html = html + u"<div id='result'></div>"
@@ -380,6 +392,10 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
 			self.sendHtmlPage(spell(parseQuery(queryData, "q"), parseQuery(queryData, "d")) + stats(parseQuery(queryData, "q"), parseQuery(queryData, "d")), "text/html")
+		elif self.path.startswith("/checkPage"):
+			contentLength = int(self.headers.getheader('content-length'))
+			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
+			self.sendHtmlPage(checkPage(parseQuery(queryData, "url"), parseQuery(queryData, "d")), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()

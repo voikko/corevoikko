@@ -24,11 +24,18 @@ var AJAX_HANDLER_URL="";
 function loadPortlet(divId) {
   $("#" + divId).load(AJAX_HANDLER_URL + "portlet", function() {
     $("#progress").hide();
+    $("#tabs").tabs();
     $("#input").keyup(keyUpInInput);
     $("#input").click(clickInInput);
     $("#input").bind("cut", inputChanged);
     $("#input").bind("paste", inputChanged);
     $("#voikkoDict").bind("change", inputChanged);
+    $("#pageUrl").keyup(function(event) {
+      if (event.keyCode == 13) {
+        // Enter
+        checkPageClicked();
+      }
+    });
   });
 }
 
@@ -98,11 +105,23 @@ function requestUpdate() {
   $.post(AJAX_HANDLER_URL + "spell", {q: textContent, d: dict}, updateReceived, "html");
 }
 
-function inputChanged() {
+function resetTimeout() {
   if (lastUpdateTimerId != null) {
     window.clearTimeout(lastUpdateTimerId);
     lastUpdateTimerId = null;
   }
+}
+
+function checkPageClicked() {
+  resetTimeout();
+  setProgressMessage();
+  var url = $("#pageUrl").val();
+  var dict = $("#voikkoDict").val();
+  $.post(AJAX_HANDLER_URL + "checkPage", {url: url, d: dict}, updateReceived, "html");
+}
+
+function inputChanged() {
+  resetTimeout();
   setProgressMessage();
   lastUpdateTimerId = window.setTimeout(requestUpdate, 1200);
 }
