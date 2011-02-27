@@ -71,7 +71,9 @@ class VoikkoHTMLParser(HTMLParser):
 		if tag in ["br"]:
 			self.data = self.data + u" "
 		elif self.isContentTag(tag):
-			if self.acceptData is not None:
+			if tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "ul":
+				self.data = u""
+			elif self.acceptData is not None:
 				raise HTMLParseError("Nesting error", self.getpos())
 			self.acceptData = True
 		elif self.isNonContentTag(tag):
@@ -89,7 +91,9 @@ class VoikkoHTMLParser(HTMLParser):
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
 			self.segments.append((SEGMENT_TYPE_HEADING, self.getData()))
 		elif openTag == "li":
-			self.segments.append((SEGMENT_TYPE_LIST_ITEM, self.getData()))
+			data = self.getData()
+			if len(data) > 0:
+				self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))
 		elif openTag == "p":
 			self.segments.append((SEGMENT_TYPE_PARAGRAPH, self.getData()))
 		if self.isContentTag(tag) or self.isNonContentTag(tag):
