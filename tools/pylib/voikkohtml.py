@@ -120,7 +120,8 @@ ERR_FORBIDDEN_SCHEME = u"Vain http-osoitteet ovat sallittuja."
 
 def getHtmlSafely(url):
 	result = HttpResult()
-	if '://' in url and not url.startswith('http:'):
+	if url.startswith('ftp') or \
+	   (':/' in url and not url.startswith('http:')):
 		raise HttpException(ERR_FORBIDDEN_SCHEME)
 	urlParts = urlparse(url, u"http")
 	c = pycurl.Curl()
@@ -128,6 +129,10 @@ def getHtmlSafely(url):
 	c.setopt(pycurl.WRITEFUNCTION, result.body_callback)
 	c.setopt(pycurl.MAXFILESIZE, 40000)
 	c.setopt(pycurl.TIMEOUT, 10)
-	status = c.perform()
+	try:
+		c.perform()
+	except Exception as e:
+		c.close()
+		raise HttpException(e)
 	c.close()
 	return result.contents

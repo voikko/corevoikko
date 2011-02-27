@@ -23,6 +23,7 @@ from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
 from time import sleep
+import pycurl
 
 class VoikkoHtmlTest(TestCase):
 	
@@ -155,6 +156,43 @@ class VoikkoHtmlTest(TestCase):
 	def testForbiddenScheme(self):
 		try:
 			getHtmlSafely("ftp://localhost")
+		except HttpException as e:
+			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
+			return
+		self.fail(u"Expected exception")
+	
+	def testUnknownHost(self):
+		try:
+			getHtmlSafely("http://ksdjaksd.ajhsdjas.ajshd")
+		except HttpException as e:
+			self.failUnless(pycurl.E_COULDNT_RESOLVE_HOST in e.parameter)
+			return
+		self.fail(u"Expected exception")
+	
+	def testLocalFilesAreNotReadWithScheme(self):
+		try:
+			getHtmlSafely("file:/etc/passwd")
+		except HttpException as e:
+			return
+		self.fail(u"Expected exception")
+	
+	def testLocalFilesAreNotRead(self):
+		try:
+			getHtmlSafely("/etc/passwd")
+		except HttpException as e:
+			return
+		self.fail(u"Expected exception")
+	
+	def testFtpIsNotAllowed(self):
+		try:
+			getHtmlSafely("ftp:localhost")
+		except HttpException as e:
+			return
+		self.fail(u"Expected exception")
+	
+	def testFtpIsNotAllowedWithProtocolAutoDetect(self):
+		try:
+			getHtmlSafely("ftp.funet.fi")
 		except HttpException as e:
 			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
 			return
