@@ -624,6 +624,7 @@ slower. A suitable compromise may be 3 or 4.")
 
 
 (defmacro wcheck-define-condition (name superclass &optional message)
+  (declare (indent defun))
   `(progn
      (put ',name 'error-conditions
           (append (get ',superclass 'error-conditions) (list ',name)))
@@ -643,14 +644,18 @@ slower. A suitable compromise may be 3 or 4.")
 
 
 (defmacro wcheck-loop-over-read-reqs (var &rest body)
+  (declare (indent 1))
   `(wcheck-loop-over-reqs-engine :read-req ,var ,@body))
 (defmacro wcheck-loop-over-paint-reqs (var &rest body)
+  (declare (indent 1))
   `(wcheck-loop-over-reqs-engine :paint-req ,var ,@body))
 (defmacro wcheck-loop-over-jump-reqs (var &rest body)
+  (declare (indent 1))
   `(wcheck-loop-over-reqs-engine :jump-req ,var ,@body))
 
 
 (defmacro wcheck-with-language-data (language bindings &rest body)
+  (declare (indent 2))
   (let ((lang-var (make-symbol "--wck-language--")))
     `(let* ((,lang-var ,(cadr language))
             ,@(when (car language)
@@ -677,9 +682,9 @@ slower. A suitable compromise may be 3 or 4.")
 (wcheck-define-condition wcheck-funcall-error wcheck-error)
 (wcheck-define-condition wcheck-suggestion-error wcheck-error)
 (wcheck-define-condition wcheck-suggestion-program-error
-                         wcheck-suggestion-error)
+  wcheck-suggestion-error)
 (wcheck-define-condition wcheck-parser-function-not-configured-error
-                         wcheck-suggestion-error)
+  wcheck-suggestion-error)
 (wcheck-define-condition wcheck-overlay-not-found-error wcheck-error)
 
 
@@ -904,37 +909,35 @@ it checker program or function associated with the buffer's
 language. Finally, this function starts another idle timer for
 marking strings in buffers."
 
-  (wcheck-loop-over-read-reqs
-   buffer
+  (wcheck-loop-over-read-reqs buffer
+    (unless (wcheck-buffer-data-get :buffer buffer :jump-req)
+      ;; We are about to fulfill buffer's window-reading request so
+      ;; remove the request. Reset also the list of received strings and
+      ;; visible window areas.
+      (wcheck-buffer-data-set buffer :read-req nil)
+      (wcheck-buffer-data-set buffer :strings nil)
+      (wcheck-buffer-data-set buffer :areas nil)
 
-   (unless (wcheck-buffer-data-get :buffer buffer :jump-req)
-     ;; We are about to fulfill buffer's window-reading request so
-     ;; remove the request. Reset also the list of received strings and
-     ;; visible window areas.
-     (wcheck-buffer-data-set buffer :read-req nil)
-     (wcheck-buffer-data-set buffer :strings nil)
-     (wcheck-buffer-data-set buffer :areas nil)
+      ;; Walk through all windows which belong to this buffer.
+      (let (area-alist strings)
+        (walk-windows #'(lambda (window)
+                          (when (eq buffer (window-buffer window))
+                            ;; Store the visible buffer area.
+                            (push (cons (window-start window)
+                                        (window-end window t))
+                                  area-alist)))
+                      'nomb t)
 
-     ;; Walk through all windows which belong to this buffer.
-     (let (area-alist strings)
-       (walk-windows #'(lambda (window)
-                         (when (eq buffer (window-buffer window))
-                           ;; Store the visible buffer area.
-                           (push (cons (window-start window)
-                                       (window-end window t))
-                                 area-alist)))
-                     'nomb t)
-
-       ;; Combine overlapping buffer areas and read strings from all
-       ;; areas.
-       (let ((combined (wcheck-combine-overlapping-areas area-alist)))
-         (wcheck-buffer-data-set buffer :areas combined)
-         (dolist (area combined)
-           (setq strings (append (wcheck-read-strings
-                                  buffer (car area) (cdr area))
-                                 strings))))
-       ;; Send strings to checker engine.
-       (wcheck-send-strings buffer strings))))
+        ;; Combine overlapping buffer areas and read strings from all
+        ;; areas.
+        (let ((combined (wcheck-combine-overlapping-areas area-alist)))
+          (wcheck-buffer-data-set buffer :areas combined)
+          (dolist (area combined)
+            (setq strings (append (wcheck-read-strings
+                                   buffer (car area) (cdr area))
+                                  strings))))
+        ;; Send strings to checker engine.
+        (wcheck-send-strings buffer strings))))
 
   ;; Start a timer which will mark text in buffers/windows.
   (wcheck-timer-paint-event-run wcheck-timer-paint-event-count-std))
@@ -946,43 +949,43 @@ STRINGS is a list of strings to be sent as input for the external
 process which handles BUFFER. Each string in STRINGS is sent as
 separate line."
   (wcheck-with-language-data
-   (language (wcheck-buffer-data-get :buffer buffer :language))
-   (program)
+      (language (wcheck-buffer-data-get :buffer buffer :language))
+      (program)
 
-   (condition-case nil
-       (cond ((or (wcheck-buffer-data-get :buffer buffer :process)
-                  (stringp program))
-              (process-send-string
-               (wcheck-start-get-process buffer)
-               (concat (mapconcat #'identity strings "\n") "\n"))
-              (condition-case nil
-                  (with-current-buffer
-                      (process-buffer (wcheck-buffer-data-get
-                                       :buffer buffer :process))
-                    (erase-buffer))
-                (error nil)))
+    (condition-case nil
+        (cond ((or (wcheck-buffer-data-get :buffer buffer :process)
+                   (stringp program))
+               (process-send-string
+                (wcheck-start-get-process buffer)
+                (concat (mapconcat #'identity strings "\n") "\n"))
+               (condition-case nil
+                   (with-current-buffer
+                       (process-buffer (wcheck-buffer-data-get
+                                        :buffer buffer :process))
+                     (erase-buffer))
+                 (error nil)))
 
-             ((functionp program)
-              (when (buffer-live-p buffer)
-                (with-current-buffer buffer
-                  (let ((received
-                         (save-match-data
-                           (condition-case nil (funcall program strings)
-                             (error (signal 'wcheck-funcall-error nil))))))
-                    (if (wcheck-list-of-strings-p received)
-                        (when received
-                          (wcheck-buffer-data-set buffer :strings received)
-                          (wcheck-buffer-data-set buffer :paint-req t))
-                      (signal 'wcheck-not-a-list-of-strings-error nil)))))))
+              ((functionp program)
+               (when (buffer-live-p buffer)
+                 (with-current-buffer buffer
+                   (let ((received
+                          (save-match-data
+                            (condition-case nil (funcall program strings)
+                              (error (signal 'wcheck-funcall-error nil))))))
+                     (if (wcheck-list-of-strings-p received)
+                         (when received
+                           (wcheck-buffer-data-set buffer :strings received)
+                           (wcheck-buffer-data-set buffer :paint-req t))
+                       (signal 'wcheck-not-a-list-of-strings-error nil)))))))
 
-     (wcheck-not-a-list-of-strings-error
-      (with-current-buffer buffer
-        (wcheck-mode -1)
-        (message (concat "Checker function did not return a list of "
-                         "strings (or nil)"))))
+      (wcheck-not-a-list-of-strings-error
+       (with-current-buffer buffer
+         (wcheck-mode -1)
+         (message (concat "Checker function did not return a list of "
+                          "strings (or nil)"))))
 
-     (wcheck-funcall-error
-      (message "Checker function signaled an error")))))
+      (wcheck-funcall-error
+       (message "Checker function signaled an error")))))
 
 
 (defun wcheck-receive-strings (process string)
@@ -1033,81 +1036,77 @@ This is normally called by the `wcheck-mode' idle timer. This
 function marks (with overlays) strings in the buffers that have
 requested it."
 
-  (wcheck-loop-over-paint-reqs
-   buffer
-
-   (unless (wcheck-buffer-data-get :buffer buffer :jump-req)
-     (wcheck-remove-overlays))
-   ;; We are about to mark text in this buffer so remove this buffer's
-   ;; request.
-   (wcheck-buffer-data-set buffer :paint-req nil)
-   ;; Walk through the visible text areas and mark text based on the
-   ;; string list returned by an external process.
-   (when wcheck-mode
-     (dolist (area (wcheck-buffer-data-get :buffer buffer :areas))
-       (wcheck-paint-strings buffer (car area) (cdr area)
-                             (wcheck-buffer-data-get :buffer buffer
-                                                     :strings)
-                             ;; If jump-req is active then paint
-                             ;; invisible text too.
-                             (wcheck-buffer-data-get :buffer buffer
-                                                     :jump-req)))))
+  (wcheck-loop-over-paint-reqs buffer
+    (unless (wcheck-buffer-data-get :buffer buffer :jump-req)
+      (wcheck-remove-overlays))
+    ;; We are about to mark text in this buffer so remove this buffer's
+    ;; request.
+    (wcheck-buffer-data-set buffer :paint-req nil)
+    ;; Walk through the visible text areas and mark text based on the
+    ;; string list returned by an external process.
+    (when wcheck-mode
+      (dolist (area (wcheck-buffer-data-get :buffer buffer :areas))
+        (wcheck-paint-strings buffer (car area) (cdr area)
+                              (wcheck-buffer-data-get :buffer buffer
+                                                      :strings)
+                              ;; If jump-req is active then paint
+                              ;; invisible text too.
+                              (wcheck-buffer-data-get :buffer buffer
+                                                      :jump-req)))))
 
   (wcheck-timer-paint-event-run))
 
 
 (defun wcheck-timer-jump-event ()
-  (wcheck-loop-over-jump-reqs
-   buffer
+  (wcheck-loop-over-jump-reqs buffer
+    (let* ((jump-req (wcheck-buffer-data-get :buffer buffer :jump-req))
+           (start (wcheck-jump-req-start jump-req))
+           (bound (wcheck-jump-req-bound jump-req))
+           (window (wcheck-jump-req-window jump-req)))
 
-   (let* ((jump-req (wcheck-buffer-data-get :buffer buffer :jump-req))
-          (start (wcheck-jump-req-start jump-req))
-          (bound (wcheck-jump-req-bound jump-req))
-          (window (wcheck-jump-req-window jump-req)))
+      (wcheck-buffer-data-set buffer :jump-req nil)
 
-     (wcheck-buffer-data-set buffer :jump-req nil)
+      (condition-case nil
+          (cond ((> bound start)
+                 (let ((ol (wcheck-overlay-next start bound)))
+                   (cond (ol
+                          (if (and (window-live-p window)
+                                   (eq buffer (window-buffer window)))
+                              (set-window-point window (overlay-end ol))
+                            (goto-char (overlay-end ol)))
+                          (when (invisible-p (point))
+                            (show-entry))
+                          (message "Found from line %s"
+                                   (line-number-at-pos (point)))
+                          (wcheck-force-read buffer))
+                         ((< bound (point-max))
+                          (wcheck-jump-req buffer window (1+ bound)
+                                           (+ (1+ bound) wcheck-jump-step)))
+                         (t
+                          (signal 'wcheck-overlay-not-found-error nil)))))
+                ((< bound start)
+                 (let ((ol (wcheck-overlay-previous start bound)))
+                   (cond (ol
+                          (if (and (window-live-p window)
+                                   (eq buffer (window-buffer window)))
+                              (set-window-point window (overlay-start ol))
+                            (goto-char (overlay-start ol)))
+                          (when (invisible-p (point))
+                            (show-entry))
+                          (message "Found from line %s"
+                                   (line-number-at-pos (point)))
+                          (wcheck-force-read buffer))
+                         ((> bound (point-min))
+                          (wcheck-jump-req buffer window (1- bound)
+                                           (- (1- bound) wcheck-jump-step)))
+                         (t
+                          (signal 'wcheck-overlay-not-found-error nil)))))
+                (t
+                 (signal 'wcheck-overlay-not-found-error nil)))
 
-     (condition-case nil
-         (cond ((> bound start)
-                (let ((ol (wcheck-overlay-next start bound)))
-                  (cond (ol
-                         (if (and (window-live-p window)
-                                  (eq buffer (window-buffer window)))
-                             (set-window-point window (overlay-end ol))
-                           (goto-char (overlay-end ol)))
-                         (when (invisible-p (point))
-                           (show-entry))
-                         (message "Found from line %s"
-                                  (line-number-at-pos (point)))
-                         (wcheck-force-read buffer))
-                        ((< bound (point-max))
-                         (wcheck-jump-req buffer window (1+ bound)
-                                          (+ (1+ bound) wcheck-jump-step)))
-                        (t
-                         (signal 'wcheck-overlay-not-found-error nil)))))
-               ((< bound start)
-                (let ((ol (wcheck-overlay-previous start bound)))
-                  (cond (ol
-                         (if (and (window-live-p window)
-                                  (eq buffer (window-buffer window)))
-                             (set-window-point window (overlay-start ol))
-                           (goto-char (overlay-start ol)))
-                         (when (invisible-p (point))
-                           (show-entry))
-                         (message "Found from line %s"
-                                  (line-number-at-pos (point)))
-                         (wcheck-force-read buffer))
-                        ((> bound (point-min))
-                         (wcheck-jump-req buffer window (1- bound)
-                                          (- (1- bound) wcheck-jump-step)))
-                        (t
-                         (signal 'wcheck-overlay-not-found-error nil)))))
-               (t
-                (signal 'wcheck-overlay-not-found-error nil)))
-
-       (wcheck-overlay-not-found-error
-        (message "Found nothing")
-        (wcheck-force-read buffer))))))
+        (wcheck-overlay-not-found-error
+         (message "Found nothing")
+         (wcheck-force-read buffer))))))
 
 
 ;;; Hooks
@@ -1226,24 +1225,24 @@ operation was unsuccessful."
   (or (wcheck-buffer-data-get :buffer buffer :process)
       ;; It doesn't exist so start a new one.
       (wcheck-with-language-data
-       (language (wcheck-buffer-data-get :buffer buffer :language))
-       (program args (process-connection-type connection))
+          (language (wcheck-buffer-data-get :buffer buffer :language))
+          (program args (process-connection-type connection))
 
-       (when (wcheck-program-executable-p program)
-         ;; Start the process.
-         (let ((proc (apply #'start-process "wcheck" nil program args)))
-           ;; Add the process Lisp object to database.
-           (wcheck-buffer-data-set buffer :process proc)
-           ;; Set the output handler function and the associated buffer.
-           (set-process-filter proc #'wcheck-receive-strings)
-           (set-process-buffer proc (generate-new-buffer
-                                     (concat " *wcheck-process <"
-                                             (buffer-name buffer) ">*")))
-           ;; Prevent Emacs from querying user about running processes
-           ;; when killing Emacs.
-           (set-process-query-on-exit-flag proc nil)
-           ;; Return the process object.
-           proc)))))
+        (when (wcheck-program-executable-p program)
+          ;; Start the process.
+          (let ((proc (apply #'start-process "wcheck" nil program args)))
+            ;; Add the process Lisp object to database.
+            (wcheck-buffer-data-set buffer :process proc)
+            ;; Set the output handler function and the associated buffer.
+            (set-process-filter proc #'wcheck-receive-strings)
+            (set-process-buffer proc (generate-new-buffer
+                                      (concat " *wcheck-process <"
+                                              (buffer-name buffer) ">*")))
+            ;; Prevent Emacs from querying user about running processes
+            ;; when killing Emacs.
+            (set-process-query-on-exit-flag proc nil)
+            ;; Return the process object.
+            proc)))))
 
 
 (defun wcheck-buffer-lang-proc-data-update (buffer language)
@@ -1310,40 +1309,40 @@ areas, including invisible ones. Otherwise skip invisible text."
             (font-lock-fontify-region (min beg end) (max beg end))))
 
         (wcheck-with-language-data
-         (language (wcheck-buffer-data-get :buffer buffer :language))
-         (regexp-start regexp-body regexp-end regexp-discard
-                       syntax (case-fold-search case-fold))
+            (language (wcheck-buffer-data-get :buffer buffer :language))
+            (regexp-start regexp-body regexp-end regexp-discard
+                          syntax (case-fold-search case-fold))
 
-         (let ((regexp
-                (concat regexp-start "\\(" regexp-body "\\)" regexp-end))
-               (face-p (wcheck-generate-face-predicate language major-mode))
-               (search-spaces-regexp nil)
-               (old-point 0)
-               strings)
+          (let ((regexp
+                 (concat regexp-start "\\(" regexp-body "\\)" regexp-end))
+                (face-p (wcheck-generate-face-predicate language major-mode))
+                (search-spaces-regexp nil)
+                (old-point 0)
+                strings)
 
-           (with-syntax-table (eval syntax)
-             (goto-char beg)
-             (save-match-data
-               (while (and (re-search-forward regexp end t)
-                           (> (point) old-point))
-                 (cond ((and (not invisible)
-                             (invisible-p (match-beginning 1)))
-                        ;; This point is invisible. Let's jump forward
-                        ;; to next change of "invisible" property.
-                        (goto-char (next-single-char-property-change
-                                    (match-beginning 1) 'invisible buffer
-                                    end)))
+            (with-syntax-table (eval syntax)
+              (goto-char beg)
+              (save-match-data
+                (while (and (re-search-forward regexp end t)
+                            (> (point) old-point))
+                  (cond ((and (not invisible)
+                              (invisible-p (match-beginning 1)))
+                         ;; This point is invisible. Let's jump forward
+                         ;; to next change of "invisible" property.
+                         (goto-char (next-single-char-property-change
+                                     (match-beginning 1) 'invisible buffer
+                                     end)))
 
-                       ((and (eval face-p)
-                             (or (equal regexp-discard "")
-                                 (not (string-match
-                                       regexp-discard
-                                       (match-string-no-properties 1)))))
-                        ;; Add the match to the string list.
-                        (add-to-list
-                         'strings (match-string-no-properties 1))))
-                 (setq old-point (point)))))
-           strings))))))
+                        ((and (eval face-p)
+                              (or (equal regexp-discard "")
+                                  (not (string-match
+                                        regexp-discard
+                                        (match-string-no-properties 1)))))
+                         ;; Add the match to the string list.
+                         (add-to-list
+                          'strings (match-string-no-properties 1))))
+                  (setq old-point (point)))))
+            strings))))))
 
 
 (defun wcheck-paint-strings (buffer beg end strings &optional invisible)
@@ -1359,48 +1358,48 @@ text."
       (save-excursion
 
         (wcheck-with-language-data
-         (language (wcheck-buffer-data-get :buffer buffer :language))
-         (regexp-start regexp-end syntax (case-fold-search case-fold)
-                       (ol-face face) suggestion-program)
+            (language (wcheck-buffer-data-get :buffer buffer :language))
+            (regexp-start regexp-end syntax (case-fold-search case-fold)
+                          (ol-face face) suggestion-program)
 
-         (let ((face-p (wcheck-generate-face-predicate language major-mode))
-               (search-spaces-regexp nil)
-               (ol-keymap (make-sparse-keymap))
-               (ol-mouse-face nil)
-               (ol-help-echo nil)
-               regexp old-point)
+          (let ((face-p (wcheck-generate-face-predicate language major-mode))
+                (search-spaces-regexp nil)
+                (ol-keymap (make-sparse-keymap))
+                (ol-mouse-face nil)
+                (ol-help-echo nil)
+                regexp old-point)
 
-           (when suggestion-program
-             (define-key ol-keymap [down-mouse-3] 'wcheck-mouse-click-overlay)
-             (define-key ol-keymap [mouse-3] 'undefined)
-             (setq ol-mouse-face 'highlight
-                   ol-help-echo "mouse-3: show suggestions"))
+            (when suggestion-program
+              (define-key ol-keymap [down-mouse-3] 'wcheck-mouse-click-overlay)
+              (define-key ol-keymap [mouse-3] 'undefined)
+              (setq ol-mouse-face 'highlight
+                    ol-help-echo "mouse-3: show suggestions"))
 
-           (with-syntax-table (eval syntax)
-             (save-match-data
-               (dolist (string strings)
-                 (setq regexp (concat regexp-start "\\("
-                                      (regexp-quote string) "\\)"
-                                      regexp-end)
-                       old-point 0)
-                 (goto-char beg)
+            (with-syntax-table (eval syntax)
+              (save-match-data
+                (dolist (string strings)
+                  (setq regexp (concat regexp-start "\\("
+                                       (regexp-quote string) "\\)"
+                                       regexp-end)
+                        old-point 0)
+                  (goto-char beg)
 
-                 (while (and (re-search-forward regexp end t)
-                             (> (point) old-point))
-                   (cond ((and (not invisible)
-                               (invisible-p (match-beginning 1)))
-                          ;; The point is invisible so jump forward to
-                          ;; the next change of "invisible" text
-                          ;; property.
-                          (goto-char (next-single-char-property-change
-                                      (match-beginning 1) 'invisible buffer
-                                      end)))
-                         ((eval face-p)
-                          ;; Make an overlay.
-                          (wcheck-make-overlay
-                           buffer ol-face ol-mouse-face ol-help-echo ol-keymap
-                           (match-beginning 1) (match-end 1))))
-                   (setq old-point (point))))))))))))
+                  (while (and (re-search-forward regexp end t)
+                              (> (point) old-point))
+                    (cond ((and (not invisible)
+                                (invisible-p (match-beginning 1)))
+                           ;; The point is invisible so jump forward to
+                           ;; the next change of "invisible" text
+                           ;; property.
+                           (goto-char (next-single-char-property-change
+                                       (match-beginning 1) 'invisible buffer
+                                       end)))
+                          ((eval face-p)
+                           ;; Make an overlay.
+                           (wcheck-make-overlay
+                            buffer ol-face ol-mouse-face ol-help-echo ol-keymap
+                            (match-beginning 1) (match-end 1))))
+                    (setq old-point (point))))))))))))
 
 
 ;;; Jump forward or backward
@@ -1619,44 +1618,44 @@ return substitute suggestions as a list of strings (or nil if
 there aren't any)."
 
   (wcheck-with-language-data
-   (nil language)
-   ((program suggestion-program)
-    (args suggestion-args)
-    (parser suggestion-parser))
+      (nil language)
+      ((program suggestion-program)
+       (args suggestion-args)
+       (parser suggestion-parser))
 
-   (cond ((not (wcheck-suggestion-program-configured-p language))
-          (signal 'wcheck-suggestion-program-error language))
+    (cond ((not (wcheck-suggestion-program-configured-p language))
+           (signal 'wcheck-suggestion-program-error language))
 
-         ((and (stringp program)
-               (not parser))
-          (signal 'wcheck-parser-function-not-configured-error language))
+          ((and (stringp program)
+                (not parser))
+           (signal 'wcheck-parser-function-not-configured-error language))
 
-         ((stringp program)
-          (with-temp-buffer
-            (insert text)
-            (apply #'call-process-region (point-min) (point-max)
-                   program t t nil args)
-            (goto-char (point-min))
-            (let ((suggestions
-                   (save-match-data
-                     (condition-case nil (funcall parser)
-                       (error (signal 'wcheck-funcall-error
-                                      (concat "Suggestion parser function "
-                                              "signaled an error")))))))
-              (if (wcheck-list-of-strings-p suggestions)
-                  suggestions
-                (signal 'wcheck-not-a-list-of-strings-error nil)))))
+          ((stringp program)
+           (with-temp-buffer
+             (insert text)
+             (apply #'call-process-region (point-min) (point-max)
+                    program t t nil args)
+             (goto-char (point-min))
+             (let ((suggestions
+                    (save-match-data
+                      (condition-case nil (funcall parser)
+                        (error (signal 'wcheck-funcall-error
+                                       (concat "Suggestion parser function "
+                                               "signaled an error")))))))
+               (if (wcheck-list-of-strings-p suggestions)
+                   suggestions
+                 (signal 'wcheck-not-a-list-of-strings-error nil)))))
 
-         ((functionp program)
-          (let ((suggestions
-                 (save-match-data
-                   (condition-case nil (funcall program text)
-                     (error (signal 'wcheck-funcall-error
-                                    (concat "Suggestion function signaled "
-                                            "an error")))))))
-            (if (wcheck-list-of-strings-p suggestions)
-                suggestions
-              (signal 'wcheck-not-a-list-of-strings-error nil)))))))
+          ((functionp program)
+           (let ((suggestions
+                  (save-match-data
+                    (condition-case nil (funcall program text)
+                      (error (signal 'wcheck-funcall-error
+                                     (concat "Suggestion function signaled "
+                                             "an error")))))))
+             (if (wcheck-list-of-strings-p suggestions)
+                 suggestions
+               (signal 'wcheck-not-a-list-of-strings-error nil)))))))
 
 
 (defun wcheck-clean-string (string)
