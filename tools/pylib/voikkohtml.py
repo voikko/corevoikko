@@ -22,6 +22,8 @@
 from HTMLParser import HTMLParser, HTMLParseError
 from re import sub
 from htmlentitydefs import name2codepoint
+from urlparse import urlparse
+from httplib import HTTPConnection
 
 SEGMENT_TYPE_HEADING = 1
 SEGMENT_TYPE_LIST_ITEM = 2
@@ -99,3 +101,13 @@ class VoikkoHTMLParser(HTMLParser):
 
 def parseHtml(html):
 	return VoikkoHTMLParser().processInput(html)
+
+def getHtmlSafely(url):
+	urlParts = urlparse(url, u"http")
+	conn = HTTPConnection(urlParts[1])
+	conn.request("GET", urlParts[2])
+	conn.sock.settimeout(4)
+	response = conn.getresponse()
+	data = response.read()
+	conn.close()
+	return data
