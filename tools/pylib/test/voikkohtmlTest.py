@@ -20,7 +20,7 @@ from unittest import TestCase, TestLoader, TextTestRunner
 from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH, getHtmlSafely
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-from thread import start_new_thread
+from threading import Thread
 from time import sleep
 
 class VoikkoHtmlTest(TestCase):
@@ -119,21 +119,37 @@ class VoikkoHtmlTest(TestCase):
 	def testUnknownCharacterReferenceIsParseError(self):
 		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)
 	
-	def testGetHtmlSafely(self):
+	def startServer(self, port, code, contentType, responseData):
 		def runServer():
 			class TestHttpServer(BaseHTTPRequestHandler):
 				def do_GET(self):
-					self.send_response(200)
-					self.send_header("Content-Type", "text/html; charset=UTF-8")
+					self.send_response(code)
+					self.send_header("Content-Type", contentType)
 					self.end_headers()
-					self.wfile.write(u"kissa".encode("UTF-8"))
+					self.wfile.write(responseData)
 				def log_request(self, code, size=0):
 					pass # no logging for tests
-			server = HTTPServer(("", 3400), TestHttpServer)
+			server = HTTPServer(("", port), TestHttpServer)
 			server.handle_request()
-		start_new_thread(runServer, ())
+		t = Thread(target = runServer)
+		t.start()
 		sleep(0.01)
+		return t
+	
+	def assertThreadExitsNormally(self, thread):
+		thread.join(1)
+		if thread.isAlive():
+			self.fail(u"Thread did not exit normally")
+	
+	def xxtestGetHtmlSafely(self):
+		t = self.startServer(3400, 200, "text/html; charset=UTF-8", "kissa")
 		self.assertEquals(u"kissa", getHtmlSafely(u"http://localhost:3400"))
+		assertThreadExitsNormally(t)
+	
+	def testSchemeIsOptional(self):
+		t = self.startServer(3400, 200, "text/html; charset=UTF-8", "kissa")
+		self.assertEquals(u"kissa", getHtmlSafely(u"127.0.0.1:3400"))
+		assertThreadExitsNormally(t)
 
 if __name__ == "__main__":
 	suite = TestLoader().loadTestsFromTestCase(VoikkoHtmlTest)
