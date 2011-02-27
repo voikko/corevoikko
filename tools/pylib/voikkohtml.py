@@ -117,6 +117,7 @@ class HttpException(Exception):
 		return repr(self.parameter)
 
 ERR_FORBIDDEN_SCHEME = u"Vain http-osoitteet ovat sallittuja."
+ERR_INVALID_ENCODING = u"Sivu merkistökoodaus on määritelty väärin tai merkistö on tuntematon"
 USER_AGENT = "WebVoikko language checker - see http://joukahainen.puimula.org/webvoikko/spell"
 
 def getHtmlSafely(url):
@@ -141,4 +142,7 @@ def getHtmlSafely(url):
 	if 'charset=' in contentType:
 		encoding = contentType[contentType.find('charset=') + 8:]
 	c.close()
-	return unicode(result.contents, encoding)
+	try:
+		return unicode(result.contents, encoding)
+	except UnicodeDecodeError:
+		raise HttpException(ERR_INVALID_ENCODING)

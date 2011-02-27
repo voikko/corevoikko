@@ -18,7 +18,7 @@
 
 from unittest import TestCase, TestLoader, TextTestRunner
 from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
-from voikkohtml import getHtmlSafely, HttpException, ERR_FORBIDDEN_SCHEME, USER_AGENT
+from voikkohtml import getHtmlSafely, HttpException, ERR_INVALID_ENCODING, ERR_FORBIDDEN_SCHEME, USER_AGENT
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
@@ -163,6 +163,15 @@ class VoikkoHtmlTest(TestCase):
 		t = self.startServer(3400, 200, "text/html; charset=ISO-8859-1", u"täti".encode('ISO-8859-1'))
 		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
 		self.assertThreadExitsNormally(t)
+	
+	def testEncodingMismatchIsError(self):
+		t = self.startServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
+		try:
+			getHtmlSafely("http://127.0.0.1:3400")
+		except HttpException as e:
+			self.failUnless(ERR_INVALID_ENCODING in e.parameter)
+			return
+		self.fail(u"Expected exception")
 	
 	def testForbiddenScheme(self):
 		try:
