@@ -2,8 +2,10 @@
 
 # Copyright 2011 Harri Pitkänen (hatapitk@iki.fi)
 # Module for analyzing html text.
-# This program requires Python and Python module of libvoikko from
-# libvoikko 3.0 or later.
+# This program requires
+# - Python 2.5 or later (3 and later are not yet supported)
+# - Python module of libvoikko 3.0 or later
+# - PyCurl (used because timeout options in built-in HTTP client libraries are insufficient)
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,7 +25,7 @@ from HTMLParser import HTMLParser, HTMLParseError
 from re import sub
 from htmlentitydefs import name2codepoint
 from urlparse import urlparse
-from httplib import HTTPConnection
+import pycurl
 
 SEGMENT_TYPE_HEADING = 1
 SEGMENT_TYPE_LIST_ITEM = 2
@@ -98,16 +100,34 @@ class VoikkoHTMLParser(HTMLParser):
 		self.close()
 		return self.segments
 
+class HttpResult:
+	def __init__(self):
+		self.contents = ''
+	
+	def body_callback(self, buf):
+		self.contents = self.contents + buf 
 
 def parseHtml(html):
 	return VoikkoHTMLParser().processInput(html)
 
+class HttpException(Exception):
+	def __init__(self, msg):
+		self.parameter = msg
+	def __str__(self):
+		return repr(self.parameter)
+
+ERR_FORBIDDEN_SCHEME = u"Vain http-osoitteet ovat sallittuja."
+
 def getHtmlSafely(url):
+	result = HttpResult()
+	if '://' in url and not url.startswith('http:'):
+		raise HttpException(ERR_FORBIDDEN_SCHEME)
 	urlParts = urlparse(url, u"http")
-	conn = HTTPConnection(urlParts[1])
-	conn.request("GET", urlParts[2])
-	conn.sock.settimeout(4)
-	response = conn.getresponse()
-	data = response.read()
-	conn.close()
-	return data
+	c = pycurl.Curl()
+	c.setopt(pycurl.URL, url)
+	c.setopt(pycurl.WRITEFUNCTION, result.body_callback)
+	c.setopt(pycurl.MAXFILESIZE, 40000)
+	c.setopt(pycurl.TIMEOUT, 10)
+	status = c.perform()
+	c.close()
+	return result.contents

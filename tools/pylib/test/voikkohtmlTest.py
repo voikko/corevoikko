@@ -17,7 +17,8 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from unittest import TestCase, TestLoader, TextTestRunner
-from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH, getHtmlSafely
+from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
+from voikkohtml import getHtmlSafely, HttpException, ERR_FORBIDDEN_SCHEME
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
@@ -141,15 +142,23 @@ class VoikkoHtmlTest(TestCase):
 		if thread.isAlive():
 			self.fail(u"Thread did not exit normally")
 	
-	def xxtestGetHtmlSafely(self):
+	def testGetHtmlSafely(self):
 		t = self.startServer(3400, 200, "text/html; charset=UTF-8", "kissa")
-		self.assertEquals(u"kissa", getHtmlSafely(u"http://localhost:3400"))
-		assertThreadExitsNormally(t)
+		self.assertEquals(u"kissa", getHtmlSafely("http://localhost:3400"))
+		self.assertThreadExitsNormally(t)
 	
 	def testSchemeIsOptional(self):
 		t = self.startServer(3400, 200, "text/html; charset=UTF-8", "kissa")
-		self.assertEquals(u"kissa", getHtmlSafely(u"127.0.0.1:3400"))
-		assertThreadExitsNormally(t)
+		self.assertEquals(u"kissa", getHtmlSafely("127.0.0.1:3400"))
+		self.assertThreadExitsNormally(t)
+	
+	def testForbiddenScheme(self):
+		try:
+			getHtmlSafely("ftp://localhost")
+		except HttpException as e:
+			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
+			return
+		self.fail(u"Expected exception")
 
 if __name__ == "__main__":
 	suite = TestLoader().loadTestsFromTestCase(VoikkoHtmlTest)
