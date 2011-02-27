@@ -29,6 +29,8 @@ from signal import signal, SIGHUP
 from libvoikko import Voikko
 from libvoikko import Token
 from voikkostatistics import getStatistics
+from voikkohtml import getHtmlSafely, parseHtml, HttpException
+from HTMLParser import HTMLParseError
 import codecs
 
 _voikko = {}
@@ -287,6 +289,14 @@ def wordInfo(word, dictionary):
 
 def checkPage(url, dictionary):
 	res = u"Analyysi sivusta " + escape(url) + u"<br />"
+	html = None
+	try:
+		html = getHtmlSafely(url.encode('UTF-8'))
+		segments = parseHtml(html)
+	except HttpException as e:
+		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)
+	except HTMLParseError as e:
+		return u"Sivun %s html-koodin tulkinta epäonnistui: %s" % (escape(url), e)
 	return res
 
 def getPortlet():
