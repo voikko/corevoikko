@@ -117,6 +117,7 @@ class HttpException(Exception):
 		return repr(self.parameter)
 
 ERR_FORBIDDEN_SCHEME = u"Vain http-osoitteet ovat sallittuja."
+USER_AGENT = "WebVoikko language checker - see http://joukahainen.puimula.org/webvoikko/spell"
 
 def getHtmlSafely(url):
 	result = HttpResult()
@@ -129,6 +130,7 @@ def getHtmlSafely(url):
 	c.setopt(pycurl.WRITEFUNCTION, result.body_callback)
 	c.setopt(pycurl.MAXFILESIZE, 40000)
 	c.setopt(pycurl.TIMEOUT, 10)
+	c.setopt(pycurl.USERAGENT, USER_AGENT)
 	try:
 		c.perform()
 	except Exception as e:

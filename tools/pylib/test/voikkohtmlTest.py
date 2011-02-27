@@ -18,7 +18,7 @@
 
 from unittest import TestCase, TestLoader, TextTestRunner
 from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
-from voikkohtml import getHtmlSafely, HttpException, ERR_FORBIDDEN_SCHEME
+from voikkohtml import getHtmlSafely, HttpException, ERR_FORBIDDEN_SCHEME, USER_AGENT
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
@@ -122,9 +122,10 @@ class VoikkoHtmlTest(TestCase):
 		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)
 	
 	def startServer(self, port, code, contentType, responseData):
-		def runServer():
+		def runServer(tester):
 			class TestHttpServer(BaseHTTPRequestHandler):
 				def do_GET(self):
+					tester.assertEquals(USER_AGENT, self.headers["User-Agent"])
 					self.send_response(code)
 					self.send_header("Content-Type", contentType)
 					self.end_headers()
@@ -133,7 +134,7 @@ class VoikkoHtmlTest(TestCase):
 					pass # no logging for tests
 			server = HTTPServer(("", port), TestHttpServer)
 			server.handle_request()
-		t = Thread(target = runServer)
+		t = Thread(target = runServer, args = (self,))
 		t.start()
 		sleep(0.01)
 		return t
