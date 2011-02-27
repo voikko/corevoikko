@@ -654,20 +654,20 @@ slower. A suitable compromise may be 3 or 4.")
   `(wcheck-loop-over-reqs-engine :jump-req ,var ,@body))
 
 
-(defmacro wcheck-with-language-data (language bindings &rest body)
+(defmacro wcheck-with-language-data (var-lang bindings &rest body)
   (declare (indent 2))
-  (let ((lang-var (make-symbol "--wck-language--")))
-    `(let* ((,lang-var ,(cadr language))
-            ,@(when (car language)
-                `((,(car language) ,lang-var)))
+  (let ((language (make-symbol "--wck-language--")))
+    `(let* ((,language ,(cadr var-lang))
+            ,@(when (car var-lang)
+                `((,(car var-lang) ,language)))
             ,@(mapcar
                (lambda (var)
                  (cond ((symbolp var)
                         (list var `(wcheck-query-language-data
-                                    ,lang-var ',var)))
+                                    ,language ',var)))
                        ((and var (listp var))
                         (list (car var) `(wcheck-query-language-data
-                                          ,lang-var ',(cadr var))))))
+                                          ,language ',(cadr var))))))
                bindings))
        ,@body)))
 
