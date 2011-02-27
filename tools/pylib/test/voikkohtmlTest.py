@@ -154,6 +154,16 @@ class VoikkoHtmlTest(TestCase):
 		self.assertEquals(u"kissa", getHtmlSafely("127.0.0.1:3400"))
 		self.assertThreadExitsNormally(t)
 	
+	def testUtf8EncodingFromContentType(self):
+		t = self.startServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('UTF-8'))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertThreadExitsNormally(t)
+	
+	def testLatin1EncodingFromContentType(self):
+		t = self.startServer(3400, 200, "text/html; charset=ISO-8859-1", u"täti".encode('ISO-8859-1'))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+		self.assertThreadExitsNormally(t)
+	
 	def testForbiddenScheme(self):
 		try:
 			getHtmlSafely("ftp://localhost")

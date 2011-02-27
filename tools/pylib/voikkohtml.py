@@ -136,5 +136,9 @@ def getHtmlSafely(url):
 	except Exception as e:
 		c.close()
 		raise HttpException(e)
+	encoding = 'UTF-8' # default
+	contentType = c.getinfo(pycurl.CONTENT_TYPE)
+	if 'charset=' in contentType:
+		encoding = contentType[contentType.find('charset=') + 8:]
 	c.close()
-	return result.contents
+	return unicode(result.contents, encoding)
