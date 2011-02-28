@@ -30,6 +30,7 @@ from libvoikko import Voikko
 from libvoikko import Token
 from voikkostatistics import getStatistics
 from voikkohtml import getHtmlSafely, parseHtml, HttpException
+from voikkohtml import SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
 from HTMLParser import HTMLParseError
 import codecs
 
@@ -151,6 +152,12 @@ def spell(text, dictionary):
 	if dictionary not in _voikko:
 		return u""
 	v = _voikko[dictionary]
+	v.setAcceptUnfinishedParagraphsInGc(True)
+	v.setAcceptTitlesInGc(False)
+	v.setAcceptBulletedListsInGc(False)
+	return doSpell(text, v)
+
+def doSpell(text, v):
 	tokens = markTrailingDots(v.tokens(text))
 	gErrors = nonOverlappingGrammarErrorsByStartPosition(text, v)
 	res = u""
@@ -288,16 +295,30 @@ def wordInfo(word, dictionary):
 	return res
 
 def checkPage(url, dictionary):
-	res = u"Analyysi sivusta " + escape(url) + u"<br />"
-	html = None
+	if dictionary not in _voikko:
+		return u""
+	v = _voikko[dictionary]
 	try:
 		html = getHtmlSafely(url.encode('UTF-8'))
 		segments = parseHtml(html)
+		res = u"Analyysi sivusta " + escape(url) + u"<br />"
+		v.setAcceptUnfinishedParagraphsInGc(True)
+		for segment in segments:
+			if segment[0] == SEGMENT_TYPE_HEADING:
+				v.setAcceptTitlesInGc(True)
+				v.setAcceptBulletedListsInGc(False)
+			elif segment[0] == SEGMENT_TYPE_LIST_ITEM:
+				v.setAcceptTitlesInGc(False)
+				v.setAcceptBulletedListsInGc(True)
+			elif segment[0] == SEGMENT_TYPE_PARAGRAPH:
+				v.setAcceptTitlesInGc(False)
+				v.setAcceptBulletedListsInGc(False)
+			res = res + u"<p>" + doSpell(segment[1], v) + u"</p>"
+		return res
 	except HttpException as e:
 		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)
 	except HTMLParseError as e:
 		return u"Sivun %s html-koodin tulkinta epäonnistui: %s" % (escape(url), e)
-	return res
 
 def getPortlet():
 	html = u"<p>Valitse sanasto: <select id='voikkoDict'>"
