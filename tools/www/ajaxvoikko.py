@@ -21,7 +21,7 @@
 
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
-from urllib import unquote
+from urllib import unquote, urlencode
 from urllib import urlopen
 from cgi import parse_qs
 from cgi import escape
@@ -318,7 +318,13 @@ def checkPage(url, dictionary):
 	except HttpException as e:
 		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)
 	except HTMLParseError as e:
-		return u"Sivun %s html-koodin tulkinta epäonnistui: %s" % (escape(url), e)
+		res = u"Sivun %s html-koodin tulkinta epäonnistui: %s<br />" % (escape(url), e)
+		res = res + u"WebVoikon toiminta edellyttää, että sivun oleellisimmat tekstielementit "
+		res = res + u"(otsikot, tekstikappaleet ja luetelmat) on oikein merkitty. WebVoikko osaa "
+		res = res + u"vain rajoitetusti tulkita virheellistä html-koodia. "
+		res = res + u"<a target='_blank' href='http://validator.w3.org/check?%s'>" % urlencode({"uri": url})
+		res = res + u"Tarkista html-koodi W3C:n validaattorilla.</a>"
+		return res
 
 def getPortlet():
 	html = u"<p>Valitse sanasto: <select id='voikkoDict'>"
@@ -332,12 +338,13 @@ def getPortlet():
 			html = html + dictMap[i]
 	html = html + u"</select></p>"
 	html = html + u"<div id='tabs'>"
-	html = html + u"<ul><li><a href='#tabDirect'>Kirjoita teksti</a></li><li><a href='#tabPage'>Oikolue www-sivu</a></li></ul>"
+	html = html + u"<ul><li><a href='#tabDirect'>Kirjoita teksti</a></li><li><a href='#tabPage'>Oikolue www-sivu <span style='color: red'>(beta)</span></a></li></ul>"
 	html = html + u"<div id='tabDirect'>"
 	html = html + u"<textarea id='input' rows='5'></textarea><br />"
 	html = html + u"<button onclick='clearClicked()'>Tyhjennä</button>"
 	html = html + u"</div>"
 	html = html + u"<div id='tabPage'>"
+	html = html + u"<p>Tämä toiminto on varhaisessa testausvaiheessa. Kaikkea outoa voi odottaa, jos sitä käyttää.</p>"
 	html = html + u"Oikoluettavan sivun osoite: <input type='text' id='pageUrl' size='40' /> <button onclick='checkPageClicked()'>Oikolue</button>"
 	html = html + u"</div>"
 	html = html + u"</div>"
