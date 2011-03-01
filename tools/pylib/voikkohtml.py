@@ -70,12 +70,20 @@ class VoikkoHTMLParser(HTMLParser):
 		else:
 			raise HTMLParseError("Unknown character reference", self.getpos())
 	
+	def allowContentInList(self):
+		for tag in reversed(self.tags):
+			if tag == "li":
+				return True
+			if self.isContentTag(tag) or self.isNonContentTag(tag):
+				return False
+		return False
+	
 	def handle_starttag(self, tag, attrs):
 		if tag in ["br"]:
 			self.data = self.data + u" "
 		elif self.isContentTag(tag):
 			self.data = u""
-			if len(self.tags) >= 1 and self.tags[-1] == "li":
+			if self.allowContentInList():
 				pass
 			elif tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "ul":
 				pass
