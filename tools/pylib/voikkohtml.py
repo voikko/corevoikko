@@ -147,7 +147,7 @@ def getHtmlSafely(url):
 	c.setopt(pycurl.USERAGENT, USER_AGENT)
 	try:
 		c.perform()
-	except Exception as e:
+	except Exception, e:
 		c.close()
 		raise HttpException(e)
 	encoding = 'UTF-8' # default

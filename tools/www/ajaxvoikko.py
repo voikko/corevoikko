@@ -315,9 +315,9 @@ def checkPage(url, dictionary):
 				v.setAcceptBulletedListsInGc(False)
 			res = res + u"<p>" + doSpell(segment[1], v) + u"</p>"
 		return res
-	except HttpException as e:
+	except HttpException, e:
 		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)
-	except HTMLParseError as e:
+	except HTMLParseError, e:
 		res = u"Sivun %s html-koodin tulkinta epäonnistui: %s<br />" % (escape(url), e)
 		res = res + u"WebVoikon toiminta edellyttää, että sivun oleellisimmat tekstielementit "
 		res = res + u"(otsikot, tekstikappaleet ja luetelmat) on oikein merkitty. WebVoikko osaa "
