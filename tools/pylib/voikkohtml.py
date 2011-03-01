@@ -41,8 +41,11 @@ class VoikkoHTMLParser(HTMLParser):
 	def isContentTag(self, tag):
 		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "p"]
 	
+	def isNotAllowedInHeaderOrParagraph(self, tag):
+		return tag in ["table"]
+	
 	def isNonContentTag(self, tag):
-		return tag in ["script", "table", "style", "iframe"]
+		return tag in ["script", "style", "iframe"]
 	
 	def __init__(self):
 		HTMLParser.__init__(self)
@@ -83,6 +86,9 @@ class VoikkoHTMLParser(HTMLParser):
 			if self.acceptData is not None:
 				raise HTMLParseError("Nesting error", self.getpos())
 			self.acceptData = False
+		elif self.isNotAllowedInHeaderOrParagraph(tag):
+			if len(self.tags) == 0 or (self.tags[-1] != "li" and self.acceptData is not None):
+				raise HTMLParseError("Nesting error", self.getpos())
 		self.tags.append(tag)
 	
 	def handle_endtag(self, tag):

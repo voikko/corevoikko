@@ -62,6 +62,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><ul><li><p>kissa</p></li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testParseParagraphInTable(self):
+		result = parseHtml(u"<html><body><table><tr><td><p>kissa</p></td></tr></table></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+	
 	def testClearBeforeParagraph(self):
 		result = parseHtml(u"<html><head><title>kissa</title></head><body><p>kissa</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
