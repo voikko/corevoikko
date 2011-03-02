@@ -121,7 +121,7 @@ Virkkeen perässä voi olla lähdeviite.[1]
 Virkkeen perässä voi olla lähdeviite.[1] Seuraava alkaa normaalisti.
 Sulkumerkkiä voi käyttää 1) luettelossa ja 2) joskus muulloinkin.
 Sulkumerkkiä voi käyttää	a) luettelossa ja	b) joskus muulloinkin.
-http://www.puimula.org
+Osoite on http://www.puimula.org.
 juokse!
  [code=7, level=0, descr="", stpos=0, len=6, suggs={"Juokse"}]
 Tavutusvihje ei estä vir­heen havaitsemista.
@@ -177,6 +177,7 @@ Kissa juoksee Lahnajärven jäällä.
 Hieno toka otsikko
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
+http://www.puimula.org
 
 {voikko.setAcceptUnfinishedParagraphsInGc(True)}
 Piste puuttuu vielä
@@ -194,3 +195,4 @@ Myös isot kirjaimet on muistettava. vaikka olisi lista.
 a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.
 A) Luettelossa voi sulkumerkkiä käyttää näin.
+http://www.puimula.org

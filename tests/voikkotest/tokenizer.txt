@@ -42,3 +42,9 @@ Grænlands Sigurður Þeir það
  [<Grænlands,WORD>, < ,WHITESPACE>, <Sigurður,WORD>, < ,WHITESPACE>, <Þeir,WORD>, < ,WHITESPACE>, <það,WORD>]
 Brøndbyssä
  [<Brøndbyssä,WORD>]
+Kissa ja/tai koira.
+ [<Kissa,WORD>, < ,WHITESPACE>, <ja,WORD>, </,PUNCTUATION>, <tai,WORD>, < ,WHITESPACE>, <koira,WORD>, <.,PUNCTUATION>]
+Kissa & koira.
+ [<Kissa,WORD>, < ,WHITESPACE>, <&,PUNCTUATION>, < ,WHITESPACE>, <koira,WORD>, <.,PUNCTUATION>]
+Osoitteissa http://www.turku.fi ja http://example.org/jotain/muuta?p=tuo&q=m#n tai http://example.com.
+ [<Osoitteissa,WORD>, < ,WHITESPACE>, <http://www.turku.fi,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <http://example.org/jotain/muuta?p=tuo&q=m#n,WORD>, < ,WHITESPACE>, <tai,WORD>, < ,WHITESPACE>, <http://example.com,WORD>, <.,PUNCTUATION>]

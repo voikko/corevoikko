@@ -22,9 +22,40 @@
 
 namespace libvoikko { namespace tokenizer {
 
+static size_t findUrl(const wchar_t * text, size_t textlen) {
+	// 12 is a rough lower bound for a length of a reasonable real world http URL.
+	if (textlen < 12 || wcsncmp(L"http://", text, 7) != 0) {
+		return 0;
+	}
+	for (size_t i = 7; i < textlen; ++i) {
+		switch (get_char_type(text[i])) {
+			case CHAR_WHITESPACE:
+				return i;
+			case CHAR_UNKNOWN:
+				if (text[i] != L'=' && text[i] != L'#') {
+					return i;
+				}
+				continue;
+			case CHAR_DIGIT:
+			case CHAR_LETTER:
+				continue;
+			case CHAR_PUNCTUATION:
+				if (text[i] == L'.' && (i + 1 == textlen || get_char_type(text[i+1]) == CHAR_WHITESPACE)) {
+					return i;
+				}
+		}
+	}
+	return textlen;
+}
+	
 static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t * options) {
 	size_t wlen = 0;
 	bool processing_number = false;
+	
+	const size_t urlLength = findUrl(text, textlen);
+	if (urlLength != 0) {
+		return urlLength;
+	}
 	
 	size_t adot;
 	if (options->ignore_dot) {

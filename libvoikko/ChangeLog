@@ -1,3 +1,6 @@
+2011-03-02 Harri Pitkänen <hatapitk@iki.fi>
+	* Improve handling of punctuation and http URLs in tokenizer.
+
 2011-02-22 Harri Pitkänen <hatapitk@iki.fi>
 	* Add option --disable-extdicts that disables loading all external dictionaries.
 	* Increase version number to 3.1.1.
