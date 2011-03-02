@@ -1927,8 +1927,8 @@ subrule tulostus_sijamuoto($tietue):
     if $allomorfi.sijamuoto /= nil then
       return $allomorfi.sijamuoto;
     end;
-    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana,
-                             etunimi, sukunimi, paikannimi, nimi> then
+    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana,
+                             etunimi, sukunimi, paikannimi, nimi, lukusana> then
       return nimentö;
     end;
   end;
