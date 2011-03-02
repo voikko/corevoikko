@@ -163,9 +163,7 @@ def spell_tests(voikko):
 			line_orig = inputfile.readline()
 			linecount = linecount + 1
 			if line_orig == u'': break
-			line = line_orig.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1: line = line[:commentstart].strip()
+			line = stripWhitespaceAndComments(line_orig)
 			if line.startswith(u'[') and line.endswith(u']'):
 				section = line[1:-1]
 				continue
@@ -208,9 +206,7 @@ def hyphen_tests(voikko):
 		while True:
 			line_orig = inputfile.readline()
 			if line_orig == u'': break
-			line = line_orig.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1: line = line[:commentstart].strip()
+			line = stripWhitespaceAndComments(line_orig)
 			if line.startswith(u'[') and line.endswith(u']'):
 				section = line[1:-1]
 				continue
@@ -240,10 +236,15 @@ def read_nonempty(inputfile):
 	while True:
 		line = inputfile.readline()
 		if line == u"": return u""
-		commentstart = line.find(u"#")
-		if commentstart != -1: line = line[:commentstart]
-		line = line.strip()
+		line = stripWhitespaceAndComments(line)
 		if len(line) > 0: return line
+
+def stripWhitespaceAndComments(line):
+	if line.startswith(u"#"):
+		return u""
+	commentstart = line.find(u" #")
+	if commentstart != -1: line = line[:commentstart]
+	return line.strip()
 
 # Run grammar tests
 def grammar_tests(voikko):
@@ -313,9 +314,7 @@ def suggestion_tests(voikko):
 		while True:
 			line_orig = inputfile.readline()
 			if line_orig == u'': break
-			line = line_orig.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1: line = line[:commentstart].strip()
+			line = stripWhitespaceAndComments(line_orig)
 			if line.startswith(u'[') and line.endswith(u']'):
 				section = line[1:-1]
 				continue
@@ -403,10 +402,7 @@ def morpho_tests(voikko):
 			linecount = linecount + 1
 			if line_orig == u'':
 				break
-			line = line_orig.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1:
-				line = line[:commentstart].strip()
+			line = stripWhitespaceAndComments(line_orig)
 			if line == u'':
 				continue
 			elif line.startswith(u'word:'):
@@ -470,10 +466,7 @@ def tokenizer_tests(voikko):
 			line_orig = inputfile.readline()
 			if line_orig == u'':
 				break
-			line = line_orig.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1:
-				line = line[:commentstart].strip()
+			line = stripWhitespaceAndComments(line_orig)
 			if line == u'':
 				continue
 			if inputString is None:
@@ -511,10 +504,7 @@ def sentence_tests(voikko):
 			line_orig = inputfile.readline()
 			if line_orig == u'':
 				break
-			line = line_orig.strip()
-			commentstart = line.find(u"#")
-			if commentstart != -1:
-				line = line[:commentstart].strip()
+			line = stripWhitespaceAndComments(line_orig)
 			if line == u'':
 				continue
 			if inputString is None:
