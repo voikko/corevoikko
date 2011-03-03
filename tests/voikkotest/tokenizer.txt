@@ -46,8 +46,8 @@ Kissa ja/tai koira.
  [<Kissa,WORD>, < ,WHITESPACE>, <ja,WORD>, </,PUNCTUATION>, <tai,WORD>, < ,WHITESPACE>, <koira,WORD>, <.,PUNCTUATION>]
 Kissa & koira.
  [<Kissa,WORD>, < ,WHITESPACE>, <&,PUNCTUATION>, < ,WHITESPACE>, <koira,WORD>, <.,PUNCTUATION>]
-Osoitteissa http://www.turku.fi ja http://example.org/jotain/muuta?p=tuo&q=m%20m#n tai http://example.com.
- [<Osoitteissa,WORD>, < ,WHITESPACE>, <http://www.turku.fi,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <http://example.org/jotain/muuta?p=tuo&q=m%20m#n,WORD>, < ,WHITESPACE>, <tai,WORD>, < ,WHITESPACE>, <http://example.com,WORD>, <.,PUNCTUATION>]
+Osoitteissa https://www.turku.fi ja http://example.org/jotain/muuta?p=tuo&q=m%20m#n tai http://example.com.
+ [<Osoitteissa,WORD>, < ,WHITESPACE>, <https://www.turku.fi,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <http://example.org/jotain/muuta?p=tuo&q=m%20m#n,WORD>, < ,WHITESPACE>, <tai,WORD>, < ,WHITESPACE>, <http://example.com,WORD>, <.,PUNCTUATION>]
 Sähköpostiosoite on ha_ta-pi.tk@iki.fi.
  [<Sähköpostiosoite,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <ha_ta-pi.tk@iki.fi,WORD>, <.,PUNCTUATION>]
 kissa,koira@joku.com

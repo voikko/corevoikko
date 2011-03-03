@@ -24,7 +24,7 @@ namespace libvoikko { namespace tokenizer {
 
 static size_t findUrlOrEmail(const wchar_t * text, size_t textlen) {
 	// 12 is a rough lower bound for a length of a reasonable real world http URL.
-	if (textlen < 12 || wcsncmp(L"http://", text, 7) != 0) {
+	if (textlen < 12 || (wcsncmp(L"http://", text, 7) != 0 && wcsncmp(L"https://", text, 8) != 0)) {
 		// try finding an email address instead
 		if (textlen < 6) {
 			return 0;
@@ -81,7 +81,7 @@ static size_t findUrlOrEmail(const wchar_t * text, size_t textlen) {
 		}
 		return 0;
 	}
-	for (size_t i = 7; i < textlen; ++i) {
+	for (size_t i = (text[4] == L's' ? 8 : 7); i < textlen; ++i) {
 		switch (get_char_type(text[i])) {
 			case CHAR_WHITESPACE:
 				return i;
