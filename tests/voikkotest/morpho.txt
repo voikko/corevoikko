@@ -135,6 +135,12 @@ word:kymmenet
   CLASS=lukusana
   SIJAMUOTO=nimento
   NUMBER=plural
+word:kaksikymmentä
+ analysis
+  SIJAMUOTO=nimento
+word:kahtakymmentä
+ analysis
+  SIJAMUOTO=osanto
 word:10
  analysis
   CLASS=lukusana

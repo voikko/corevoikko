@@ -1224,7 +1224,7 @@ combi_rule lukusana_sisäkerroin_osanto ($vasen, $oikea, $sana, $index):
   ? vokaalisointu_oikein($edellinen, $oikea);
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
-  define $res := $vasen + <[alku: $sana, lukutyyppi: $edellinen.lukutyyppi] + $oikea>;
+  define $res := $vasen + <$oikea + [alku: $sana, lukutyyppi: $edellinen.lukutyyppi, sijamuoto: nil]>;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
   end;
