@@ -366,7 +366,7 @@ def parseQuery(queryString, attrName):
 	values = attrs[attrName]
 	if len(values) != 1:
 		return u""
-	return unicode(unquote(values[0]), "UTF-8")
+	return unicode(values[0], "UTF-8")
 
 class VoikkoHandler(BaseHTTPRequestHandler):
 	def sendHtmlPage(self, content, contentType):
