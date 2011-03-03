@@ -89,6 +89,12 @@ word:joka
  analysis
   CLASS=asemosana
   SIJAMUOTO=nimento
+  NUMBER=singular
+word:jotka
+ analysis
+  CLASS=asemosana
+  SIJAMUOTO=nimento
+  NUMBER=plural
 word:ohi
  analysis
   CLASS=suhdesana
@@ -123,6 +129,12 @@ word:kymmenen
  analysis
   CLASS=lukusana
   SIJAMUOTO=nimento
+  NUMBER=singular
+word:kymmenet
+ analysis
+  CLASS=lukusana
+  SIJAMUOTO=nimento
+  NUMBER=plural
 word:10
  analysis
   CLASS=lukusana
@@ -299,3 +311,21 @@ word:ryhdymme
   REQUIRE_FOLLOWING_VERB=MA-infinitive
 word:juoksemme
  !REQUIRE_FOLLOWING_VERB
+word:minä
+ analysis
+  NUMBER=singular
+word:sinä
+ analysis
+  NUMBER=singular
+word:hän
+ analysis
+  NUMBER=singular
+word:me
+ analysis
+  NUMBER=plural
+word:te
+ analysis
+  NUMBER=plural
+word:he
+ analysis
+  NUMBER=plural

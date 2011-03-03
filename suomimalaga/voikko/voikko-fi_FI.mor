@@ -1942,8 +1942,8 @@ subrule tulostus_luku($tietue):
     if $allomorfi.luku /= nil then
       return $allomorfi.luku;
     end;
-    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana,
-                             etunimi, sukunimi, paikannimi, nimi> then
+    if $allomorfi.luokka in <nimisana, laatusana, nimi_laatusana, asemosana,
+                             etunimi, sukunimi, paikannimi, nimi, lukusana> then
       return yksikkö;
     end;
   end;

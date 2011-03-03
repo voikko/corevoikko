@@ -21,7 +21,7 @@
 [perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä, rakenne: "=ppp"];  # Osama bin Laden.
 [perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: @sana1 + <loppu>, äs: ä];
 [perusmuoto: "halleluja", alku: "halleluj", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_voikko>]; # Taipuu Nykysuomen sanakirjassa.
-[perusmuoto: "he", alku: "he", luokka: asemosana, jatko: <me>, äs: ä];
+[perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "hunningolla", alku: "hunningo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "huomassa", alku: "huoma", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_sukija>]; # Hällä, hälle, hältä.
@@ -40,7 +40,7 @@
 [perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu> + @sana2, äs: ä];
 [perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
 [perusmuoto: "maksi", alku: "maks", luokka: nimisana, jatko: @sana1 + <risti>, äs: a];
-[perusmuoto: "me", alku: "me", luokka: asemosana, jatko: <me>, äs: ä];
+[perusmuoto: "me", alku: "me", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: @sana1 + <loppu>, äs: a];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];  # Mikä.
@@ -67,7 +67,7 @@
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat + @sana2, äs: ä];
 [perusmuoto: "tanhuvilla", alku: "tanhuv", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: @sana1 + <osanto_tA>, äs: a];
-[perusmuoto: "te", alku: "te", luokka: asemosana, jatko: <me>, äs: ä];
+[perusmuoto: "te", alku: "te", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "tex", alku: "tex", luokka: lyhenne, jatko: <kalsium>, äs: ä];
 [perusmuoto: "toteen", alku: "toteen", luokka: nimisana, jatko: @sana2, äs: aä];
 [perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # "ulko" on myös etuliite.
