@@ -160,6 +160,7 @@ def getHtmlSafely(url):
 	c.setopt(pycurl.FOLLOWLOCATION, False)
 	found = False
 	redirs = 0
+	oldRedirUrl = None
 	while True:
 		try:
 			c.perform()
@@ -167,12 +168,13 @@ def getHtmlSafely(url):
 			c.close()
 			raise HttpException(e)
 		redirUrl = c.getinfo(pycurl.REDIRECT_URL)
-		if redirUrl != None:
+		if redirUrl != None and redirUrl != oldRedirUrl:
 			redirs = redirs + 1
 			if redirs > MAX_REDIRECTS:
 				break
 			__checkValidUrl(redirUrl)
 			c.setopt(pycurl.URL, redirUrl)
+			oldRedirUrl = redirUrl
 		else:
 			found = True
 			break
