@@ -150,9 +150,11 @@ def getHtmlSafely(url):
 	c = pycurl.Curl()
 	c.setopt(pycurl.URL, url)
 	c.setopt(pycurl.WRITEFUNCTION, result.body_callback)
-	c.setopt(pycurl.MAXFILESIZE, 40000)
+	c.setopt(pycurl.MAXFILESIZE, 50000)
 	c.setopt(pycurl.TIMEOUT, 10)
 	c.setopt(pycurl.USERAGENT, USER_AGENT)
+	c.setopt(pycurl.FOLLOWLOCATION, True)
+	c.setopt(pycurl.MAXREDIRS, 3)
 	try:
 		c.perform()
 	except Exception, e:

@@ -141,7 +141,7 @@ class VoikkoHtmlTest(TestCase):
 	def testUnknownCharacterReferenceIsParseError(self):
 		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)
 	
-	def startServer(self, port, getFunct):
+	def startServer(self, port, getFunct, requestCount):
 		def runServer(tester):
 			class TestHttpServer(BaseHTTPRequestHandler):
 				def do_GET(self):
@@ -149,7 +149,8 @@ class VoikkoHtmlTest(TestCase):
 				def log_request(self, code, size=0):
 					pass # no logging for tests
 			server = HTTPServer(("", port), TestHttpServer)
-			server.handle_request()
+			for i in range(requestCount):
+				server.handle_request()
 		t = Thread(target = runServer, args = (self,))
 		t.start()
 		sleep(0.01)
@@ -162,12 +163,59 @@ class VoikkoHtmlTest(TestCase):
 			slf.send_header("Content-Type", contentType)
 			slf.end_headers()
 			slf.wfile.write(responseData)
-		return self.startServer(port, getFunct)
+		return self.startServer(port, getFunct, 1)
+	
+	def startRedirectServer(self, port):
+		def getFunct(slf, tester):
+			tester.assertEquals(USER_AGENT, slf.headers["User-Agent"])
+			if slf.path.startswith("/1"):
+				slf.send_response(301) # Moved permanently
+				slf.send_header("Location", "/2")
+				slf.end_headers()
+			elif slf.path.startswith("/2"):
+				slf.send_response(302) # Found
+				slf.send_header("Location", "/3")
+				slf.end_headers()
+			elif slf.path.startswith("/3"):
+				slf.send_response(200) # OK
+				slf.send_header("Content-Type", "text/html")
+				slf.end_headers()
+				slf.wfile.write("hirvi")
+		return self.startServer(port, getFunct, 3)
+	
+	def startRedirectNServer(self, port, numberOfRedirects, numberOfExpectedGets):
+		def getFunct(slf, tester):
+			tester.assertEquals(USER_AGENT, slf.headers["User-Agent"])
+			step = int(slf.path[1:])
+			if step <= numberOfRedirects:
+				slf.send_response(302) # Found
+				slf.send_header("Location", "/%i" % (step + 1))
+				slf.end_headers()
+			else:
+				slf.send_response(200) # OK
+				slf.send_header("Content-Type", "text/html")
+				slf.end_headers()
+				slf.wfile.write("hirvi")
+		return self.startServer(port, getFunct, numberOfExpectedGets)
 	
 	def assertThreadExitsNormally(self, thread):
 		thread.join(1)
 		if thread.isAlive():
 			self.fail(u"Thread did not exit normally")
+	
+	def testFollowRedirects(self):
+		t = self.startRedirectServer(3400)
+		self.assertEquals(u"hirvi", getHtmlSafely("http://localhost:3400/1"))
+		self.assertThreadExitsNormally(t)
+	
+	def testMaxRedirectsIsReached(self):
+		t = self.startRedirectNServer(3400, 4, 3)
+		try:
+			getHtmlSafely("http://localhost:3400/1")
+		except HttpException as e:
+			self.assertThreadExitsNormally(t)
+			return
+		self.fail(u"Expected exception")
 	
 	def testGetHtmlSafely(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", "kissa")
