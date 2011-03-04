@@ -139,13 +139,17 @@ class HttpException(Exception):
 
 ERR_FORBIDDEN_SCHEME = u"Vain http-osoitteet ovat sallittuja."
 ERR_INVALID_ENCODING = u"Sivu merkistökoodaus on määritelty väärin tai merkistö on tuntematon"
+ERR_TOO_MANY_REDIRECTS = u"Liian monta http-uudelleenohjausta"
 USER_AGENT = "WebVoikko language checker - see http://joukahainen.puimula.org/webvoikko/spell"
+MAX_REDIRECTS = 3
+
+def __checkValidUrl(url):
+	if url.startswith('ftp') or (':/' in url and not url.startswith('http:')):
+		raise HttpException(ERR_FORBIDDEN_SCHEME)
 
 def getHtmlSafely(url):
 	result = HttpResult()
-	if url.startswith('ftp') or \
-	   (':/' in url and not url.startswith('http:')):
-		raise HttpException(ERR_FORBIDDEN_SCHEME)
+	__checkValidUrl(url)
 	urlParts = urlparse(url, u"http")
 	c = pycurl.Curl()
 	c.setopt(pycurl.URL, url)
@@ -153,13 +157,27 @@ def getHtmlSafely(url):
 	c.setopt(pycurl.MAXFILESIZE, 50000)
 	c.setopt(pycurl.TIMEOUT, 10)
 	c.setopt(pycurl.USERAGENT, USER_AGENT)
-	c.setopt(pycurl.FOLLOWLOCATION, True)
-	c.setopt(pycurl.MAXREDIRS, 3)
-	try:
-		c.perform()
-	except Exception, e:
-		c.close()
-		raise HttpException(e)
+	c.setopt(pycurl.FOLLOWLOCATION, False)
+	found = False
+	redirs = 0
+	while True:
+		try:
+			c.perform()
+		except Exception, e:
+			c.close()
+			raise HttpException(e)
+		redirUrl = c.getinfo(pycurl.REDIRECT_URL)
+		if redirUrl != None:
+			redirs = redirs + 1
+			if redirs > MAX_REDIRECTS:
+				break
+			__checkValidUrl(redirUrl)
+			c.setopt(pycurl.URL, redirUrl)
+		else:
+			found = True
+			break
+	if not found:
+		raise HttpException(ERR_TOO_MANY_REDIRECTS)
 	encoding = 'UTF-8' # default
 	contentType = c.getinfo(pycurl.CONTENT_TYPE)
 	if 'charset=' in contentType:

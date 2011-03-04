@@ -18,7 +18,7 @@
 
 from unittest import TestCase, TestLoader, TextTestRunner
 from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
-from voikkohtml import getHtmlSafely, HttpException, ERR_INVALID_ENCODING, ERR_FORBIDDEN_SCHEME, USER_AGENT
+from voikkohtml import getHtmlSafely, HttpException, ERR_INVALID_ENCODING, ERR_FORBIDDEN_SCHEME, ERR_TOO_MANY_REDIRECTS, USER_AGENT
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
@@ -174,7 +174,7 @@ class VoikkoHtmlTest(TestCase):
 				slf.end_headers()
 			elif slf.path.startswith("/2"):
 				slf.send_response(302) # Found
-				slf.send_header("Location", "/3")
+				slf.send_header("Location", "http://localhost:%i/3" % port)
 				slf.end_headers()
 			elif slf.path.startswith("/3"):
 				slf.send_response(200) # OK
@@ -209,10 +209,25 @@ class VoikkoHtmlTest(TestCase):
 		self.assertThreadExitsNormally(t)
 	
 	def testMaxRedirectsIsReached(self):
-		t = self.startRedirectNServer(3400, 4, 3)
+		t = self.startRedirectNServer(3400, 4, 4)
 		try:
 			getHtmlSafely("http://localhost:3400/1")
 		except HttpException as e:
+			self.failUnless(ERR_TOO_MANY_REDIRECTS in e.parameter)
+			self.assertThreadExitsNormally(t)
+			return
+		self.fail(u"Expected exception")
+	
+	def testRedirectToFtpIsNotAllowed(self):
+		def getFunct(slf, tester):
+			slf.send_response(302) # Found
+			slf.send_header("Location", "ftp://localhost/")
+			slf.end_headers()
+		t = self.startServer(3400, getFunct, 1)
+		try:
+			getHtmlSafely("http://localhost:3400/")
+		except HttpException as e:
+			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
 			self.assertThreadExitsNormally(t)
 			return
 		self.fail(u"Expected exception")
