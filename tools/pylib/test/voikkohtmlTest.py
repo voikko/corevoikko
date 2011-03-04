@@ -30,7 +30,7 @@ class VoikkoHtmlTest(TestCase):
 	def assertParseError(self, html, lineno, offset):
 		try:
 			parseHtml(html)
-		except HTMLParseError as e:
+		except HTMLParseError, e:
 			self.assertEquals(lineno, e.lineno)
 			self.assertEquals(offset, e.offset)
 		else:
