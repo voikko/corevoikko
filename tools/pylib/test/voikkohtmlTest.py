@@ -212,7 +212,7 @@ class VoikkoHtmlTest(TestCase):
 		t = self.startRedirectNServer(3400, 4, 4)
 		try:
 			getHtmlSafely("http://localhost:3400/1")
-		except HttpException as e:
+		except HttpException, e:
 			self.failUnless(ERR_TOO_MANY_REDIRECTS in e.parameter)
 			self.assertThreadExitsNormally(t)
 			return
@@ -226,7 +226,7 @@ class VoikkoHtmlTest(TestCase):
 		t = self.startServer(3400, getFunct, 1)
 		try:
 			getHtmlSafely("http://localhost:3400/")
-		except HttpException as e:
+		except HttpException, e:
 			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
 			self.assertThreadExitsNormally(t)
 			return
@@ -256,7 +256,7 @@ class VoikkoHtmlTest(TestCase):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
 		try:
 			getHtmlSafely("http://127.0.0.1:3400")
-		except HttpException as e:
+		except HttpException, e:
 			self.failUnless(ERR_INVALID_ENCODING in e.parameter)
 			return
 		self.fail(u"Expected exception")
@@ -264,7 +264,7 @@ class VoikkoHtmlTest(TestCase):
 	def testForbiddenScheme(self):
 		try:
 			getHtmlSafely("ftp://localhost")
-		except HttpException as e:
+		except HttpException, e:
 			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
 			return
 		self.fail(u"Expected exception")
@@ -272,7 +272,7 @@ class VoikkoHtmlTest(TestCase):
 	def testUnknownHost(self):
 		try:
 			getHtmlSafely("http://ksdjaksd.ajhsdjas.ajshd")
-		except HttpException as e:
+		except HttpException, e:
 			self.failUnless(pycurl.E_COULDNT_RESOLVE_HOST in e.parameter)
 			return
 		self.fail(u"Expected exception")
@@ -280,28 +280,28 @@ class VoikkoHtmlTest(TestCase):
 	def testLocalFilesAreNotReadWithScheme(self):
 		try:
 			getHtmlSafely("file:/etc/passwd")
-		except HttpException as e:
+		except HttpException, e:
 			return
 		self.fail(u"Expected exception")
 	
 	def testLocalFilesAreNotRead(self):
 		try:
 			getHtmlSafely("/etc/passwd")
-		except HttpException as e:
+		except HttpException, e:
 			return
 		self.fail(u"Expected exception")
 	
 	def testFtpIsNotAllowed(self):
 		try:
 			getHtmlSafely("ftp:localhost")
-		except HttpException as e:
+		except HttpException, e:
 			return
 		self.fail(u"Expected exception")
 	
 	def testFtpIsNotAllowedWithProtocolAutoDetect(self):
 		try:
 			getHtmlSafely("ftp.funet.fi")
-		except HttpException as e:
+		except HttpException, e:
 			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
 			return
 		self.fail(u"Expected exception")
