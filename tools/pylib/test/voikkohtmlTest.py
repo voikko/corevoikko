@@ -141,15 +141,11 @@ class VoikkoHtmlTest(TestCase):
 	def testUnknownCharacterReferenceIsParseError(self):
 		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)
 	
-	def startServer(self, port, code, contentType, responseData):
+	def startServer(self, port, getFunct):
 		def runServer(tester):
 			class TestHttpServer(BaseHTTPRequestHandler):
 				def do_GET(self):
-					tester.assertEquals(USER_AGENT, self.headers["User-Agent"])
-					self.send_response(code)
-					self.send_header("Content-Type", contentType)
-					self.end_headers()
-					self.wfile.write(responseData)
+					getFunct(self, tester)
 				def log_request(self, code, size=0):
 					pass # no logging for tests
 			server = HTTPServer(("", port), TestHttpServer)
@@ -159,33 +155,42 @@ class VoikkoHtmlTest(TestCase):
 		sleep(0.01)
 		return t
 	
+	def startNormalServer(self, port, code, contentType, responseData):
+		def getFunct(slf, tester):
+			tester.assertEquals(USER_AGENT, slf.headers["User-Agent"])
+			slf.send_response(code)
+			slf.send_header("Content-Type", contentType)
+			slf.end_headers()
+			slf.wfile.write(responseData)
+		return self.startServer(port, getFunct)
+	
 	def assertThreadExitsNormally(self, thread):
 		thread.join(1)
 		if thread.isAlive():
 			self.fail(u"Thread did not exit normally")
 	
 	def testGetHtmlSafely(self):
-		t = self.startServer(3400, 200, "text/html; charset=UTF-8", "kissa")
+		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", "kissa")
 		self.assertEquals(u"kissa", getHtmlSafely("http://localhost:3400"))
 		self.assertThreadExitsNormally(t)
 	
 	def testSchemeIsOptional(self):
-		t = self.startServer(3400, 200, "text/html; charset=UTF-8", "kissa")
+		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", "kissa")
 		self.assertEquals(u"kissa", getHtmlSafely("127.0.0.1:3400"))
 		self.assertThreadExitsNormally(t)
 	
 	def testUtf8EncodingFromContentType(self):
-		t = self.startServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('UTF-8'))
+		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('UTF-8'))
 		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
 		self.assertThreadExitsNormally(t)
 	
 	def testLatin1EncodingFromContentType(self):
-		t = self.startServer(3400, 200, "text/html; charset=ISO-8859-1", u"täti".encode('ISO-8859-1'))
+		t = self.startNormalServer(3400, 200, "text/html; charset=ISO-8859-1", u"täti".encode('ISO-8859-1'))
 		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
 		self.assertThreadExitsNormally(t)
 	
 	def testEncodingMismatchIsError(self):
-		t = self.startServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
+		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
 		try:
 			getHtmlSafely("http://127.0.0.1:3400")
 		except HttpException as e:
