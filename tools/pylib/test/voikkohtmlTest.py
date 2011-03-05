@@ -271,6 +271,11 @@ class VoikkoHtmlTest(TestCase):
 		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
 		self.assertThreadExitsNormally(t)
 	
+	def testLatin1EncodingFromMetaTag(self):
+		response = u'<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">\n</head><body>täti</body></html>'
+		t = self.startNormalServer(3400, 200, "text/html", response.encode('ISO-8859-1'))
+		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400"))
+	
 	def testEncodingMismatchIsError(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
 		try:

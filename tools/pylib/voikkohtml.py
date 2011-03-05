@@ -22,7 +22,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from HTMLParser import HTMLParser, HTMLParseError
-from re import sub
+from re import sub, search
 from htmlentitydefs import name2codepoint
 from urlparse import urlparse
 import pycurl
@@ -189,11 +189,19 @@ def getHtmlSafely(url):
 			break
 	if not found:
 		raise HttpException(ERR_TOO_MANY_REDIRECTS)
-	encoding = 'UTF-8' # default
+	encoding = None
 	contentType = c.getinfo(pycurl.CONTENT_TYPE)
 	if 'charset=' in contentType:
 		encoding = contentType[contentType.find('charset=') + 8:]
 	c.close()
+	text = result.contents
+	if not encoding:
+		# Check meta tags or similar for hints
+		match = search('charset=.+"|\'', text)
+		if match:
+			encoding = match.group(0)[8:-1]
+	if not encoding:
+		encoding = 'UTF-8' # default
 	try:
 		return unicode(result.contents, encoding)
 	except UnicodeDecodeError:
