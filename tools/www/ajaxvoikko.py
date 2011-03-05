@@ -25,6 +25,7 @@ from urllib import unquote, urlencode
 from urllib import urlopen
 from cgi import parse_qs
 from cgi import escape
+from sys import stderr
 from signal import signal, SIGHUP
 from libvoikko import Voikko
 from libvoikko import Token
@@ -188,6 +189,9 @@ def doSpell(text, v):
 			res = res + u"</span>"
 	return res.replace(u"\n", u"<br />")
 
+def log(message):
+	stderr.write("LOG: " + message + "\n")
+
 def formatNumber(number):
 	return (u"%.2f" % number).replace(u".", u",")
 
@@ -295,6 +299,7 @@ def wordInfo(word, dictionary):
 	return res
 
 def checkPage(url, dictionary):
+	log("checkPage: " + url.encode("UTF-8"))
 	if dictionary not in _voikko:
 		return u""
 	v = _voikko[dictionary]
