@@ -47,6 +47,9 @@ class VoikkoHTMLParser(HTMLParser):
 	def isNonContentTag(self, tag):
 		return tag in ["script", "style", "iframe"]
 	
+	def isIgnorableTag(self, tag):
+		return tag in ["tr", "b", "i", "u", "span", "meta", "link"]
+	
 	def __init__(self):
 		HTMLParser.__init__(self)
 		self.tags = []
@@ -79,6 +82,8 @@ class VoikkoHTMLParser(HTMLParser):
 		return False
 	
 	def handle_starttag(self, tag, attrs):
+		if self.isIgnorableTag(tag):
+			return
 		if tag in ["br"]:
 			self.data = self.data + u" "
 		elif self.isContentTag(tag):
@@ -100,6 +105,8 @@ class VoikkoHTMLParser(HTMLParser):
 		self.tags.append(tag)
 	
 	def handle_endtag(self, tag):
+		if self.isIgnorableTag(tag):
+			return
 		openTag = self.tags.pop()
 		while tag != openTag and openTag in ["br", "hr", "img"]:
 			openTag = self.tags.pop()
