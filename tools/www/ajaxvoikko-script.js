@@ -29,7 +29,7 @@ function loadPortlet(divId) {
     $("#input").click(clickInInput);
     $("#input").bind("cut", inputChanged);
     $("#input").bind("paste", inputChanged);
-    $("#voikkoDict").bind("change", inputChanged);
+    $("#voikkoDict").bind("change", dictionaryChanged);
     $("#pageUrl").keyup(function(event) {
       if (event.keyCode == 13) {
         // Enter
@@ -47,6 +47,12 @@ function joukahainen(wid) {
   }
   var frame = $("<div></div>").load(AJAX_HANDLER_URL + "joukahainen?wid=" + wid + " .main");
   frame.dialog(options).show();
+}
+
+function dictionaryChanged() {
+  if ($("#tabDirect").is(":visible")) {
+    inputChanged();
+  }
 }
 
 function wordInfoReceived(html) {
