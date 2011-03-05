@@ -48,7 +48,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["script", "style", "iframe"]
 	
 	def isIgnorableTag(self, tag):
-		return tag in ["tr", "b", "i", "u", "span", "meta", "link", "input", "button"]
+		return tag in ["hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button"]
 	
 	def __init__(self):
 		HTMLParser.__init__(self)
@@ -107,8 +107,10 @@ class VoikkoHTMLParser(HTMLParser):
 	def handle_endtag(self, tag):
 		if self.isIgnorableTag(tag):
 			return
+		if not self.tags:
+			raise HTMLParseError("End tag without open elements", self.getpos())
 		openTag = self.tags.pop()
-		while tag != openTag and openTag in ["br", "hr", "img"]:
+		while tag != openTag and openTag in ["br"]:
 			openTag = self.tags.pop()
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())

@@ -46,6 +46,9 @@ class VoikkoHtmlTest(TestCase):
 	def testParseTagMismatch(self):
 		self.assertParseError(u"<html><head></html>", 1, 12)
 	
+	def testParseTagMismatch(self):
+		self.assertParseError(u"<html></html></p>", 1, 13)
+	
 	def testParseHeader(self):
 		result = parseHtml(u"<html><body><h1>Kissan ruokkiminen</h1></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_HEADING, u"Kissan ruokkiminen")], result)
