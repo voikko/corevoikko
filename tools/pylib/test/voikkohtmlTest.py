@@ -289,6 +289,15 @@ class VoikkoHtmlTest(TestCase):
 			return
 		self.fail(u"Expected exception")
 	
+	def testInvalidEncodingNameIsError(self):
+		t = self.startNormalServer(3400, 200, "text/html; charset=ksfhsdlfhhfsd", u"täti".encode('ISO-8859-1'))
+		try:
+			getHtmlSafely("http://127.0.0.1:3400")
+		except HttpException, e:
+			self.failUnless(ERR_INVALID_ENCODING in e.parameter)
+			return
+		self.fail(u"Expected exception")
+	
 	def testForbiddenScheme(self):
 		try:
 			getHtmlSafely("ftp://localhost")

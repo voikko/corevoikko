@@ -206,3 +206,5 @@ def getHtmlSafely(url):
 		return unicode(result.contents, encoding)
 	except UnicodeDecodeError:
 		raise HttpException(ERR_INVALID_ENCODING)
+	except LookupError:
+		raise HttpException(ERR_INVALID_ENCODING)
