@@ -48,7 +48,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["script", "style", "iframe"]
 	
 	def isIgnorableTag(self, tag):
-		return tag in ["tr", "b", "i", "u", "span", "meta", "link"]
+		return tag in ["tr", "b", "i", "u", "span", "meta", "link", "input", "button"]
 	
 	def __init__(self):
 		HTMLParser.__init__(self)
