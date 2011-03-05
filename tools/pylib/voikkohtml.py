@@ -39,7 +39,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return result
 	
 	def isContentTag(self, tag):
-		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "p"]
+		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p"]
 	
 	def isNotAllowedInHeaderOrParagraph(self, tag):
 		return tag in ["table"]
@@ -107,7 +107,7 @@ class VoikkoHTMLParser(HTMLParser):
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
 			self.segments.append((SEGMENT_TYPE_HEADING, self.getData()))
-		elif openTag == "li":
+		elif openTag in ["li", "dt", "dd"]:
 			data = self.getData()
 			if len(data) > 0:
 				self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))

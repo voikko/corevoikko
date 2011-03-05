@@ -58,6 +58,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><ul><li>kissa<ul><li>koira</li></ul></li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
 	
+	def testParseDefinitionLists(self):
+		result = parseHtml(u"<html><body><dl><dt>kissa</dt><dd>jalo eläin</dd></dl></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"jalo eläin")], result)
+	
 	def testParseParagraphInListItem(self):
 		result = parseHtml(u"<html><body><ul><li><p>kissa</p></li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
