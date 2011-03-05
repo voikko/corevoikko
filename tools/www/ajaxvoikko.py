@@ -382,9 +382,10 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		self.wfile.write(content)
 	
 	def serveFiles(self):
-		if self.path not in FILES_TO_SERVE:
+		path = self.path.split("?")[0]
+		if path not in FILES_TO_SERVE:
 			return False
-		fileName, contentType = FILES_TO_SERVE[self.path]
+		fileName, contentType = FILES_TO_SERVE[path]
 		file = codecs.open(fileName, "r", "UTF-8")
 		content = file.read()
 		file.close()

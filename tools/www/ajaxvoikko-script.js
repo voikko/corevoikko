@@ -36,7 +36,21 @@ function loadPortlet(divId) {
         checkPageClicked();
       }
     });
+    triggerReferrerCheck();
   });
+}
+
+function triggerReferrerCheck() {
+  if (window.location.search.search("check=referrer") < 0) {
+    return;
+  }
+  ref = document.referrer;
+  if (!ref) {
+    return;
+  }
+  $("#tabs").tabs("select", "#pageUrl");
+  $("#pageUrl").val(ref)
+  checkPageClicked()
 }
 
 function joukahainen(wid) {
