@@ -141,6 +141,10 @@ word:kaksikymmentä
 word:kahtakymmentä
  analysis
   SIJAMUOTO=osanto
+word:kaksikymmentäyksi
+ !=nimisana
+ analysis
+  SIJAMUOTO=nimento
 word:10
  analysis
   CLASS=lukusana

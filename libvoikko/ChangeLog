@@ -1,3 +1,7 @@
+2011-03-06 Harri Pitkänen <hatapitk@iki.fi>
+	* Accept soft hyphen in Finnish spell checking if it is placed in a valid
+	  hyphenation point.
+
 2011-03-02 Harri Pitkänen <hatapitk@iki.fi>
 	* Improve handling of punctuation and http URLs in tokenizer.
 

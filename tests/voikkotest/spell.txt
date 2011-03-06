@@ -820,6 +820,22 @@ kuorma‐auto # kuorma-auto
 ℃ # °C
 muﬃni # muffini
 
+[Tavutusvihje]
+kerros­talo # kerros<SH>talo
+ker­rostalo # ker<SH>rostalo
+ker­ros­ta­lo # ker<SH>ros<SH>ta<SH>lo
+!kerros­­talo # kerros<SH><SH>talo
+!kerrost­alo # kerrost<SH>alo
+!­kerrostalo # <SH>kerrostalo
+!kerrostalo­ # kerrostalo<SH>
+kuorma-au­to # kuorma-au<SH>to
+!kuorma­-auto # kuorma<SH>-auto
+!kuorma-­auto # kuorma-<SH>auto
+au­to­nos­to # au<SH>to<SH>nos<SH>to
+au­ton­os­to # au<SH>ton<SH>os<SH>to
+!vaa­'an # vaa<SH>'an
+!vaa'­an # vaa'<SH>an
+
 [muita virheitä]
 !kolaaa
 !kullakinkin

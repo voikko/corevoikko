@@ -33,6 +33,14 @@ class AnalyzerToFinnishHyphenatorAdapter : public Hyphenator {
 		AnalyzerToFinnishHyphenatorAdapter(morphology::Analyzer * analyzer);
 		char * hyphenate(const wchar_t * word, size_t wlen);
 		void terminate();
+		
+		/**
+		 * Return a hyphenation pattern where all possible hyphenation positions have
+		 * been marked. Differs from ordinary hyphenate which returns only "safe" hyphenation
+		 * points.
+		 */
+		char * allPossibleHyphenPositions(const wchar_t * word, size_t wlen);
+		
 		void setUglyHyphenation(bool uglyHyphenation);
 		void setHyphenateUnknown(bool hyphenateUnknown);
 		void setMinHyphenatedWordLength(int length);

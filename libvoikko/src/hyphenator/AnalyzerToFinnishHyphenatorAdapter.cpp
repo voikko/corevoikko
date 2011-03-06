@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -46,9 +46,6 @@ char * AnalyzerToFinnishHyphenatorAdapter::hyphenate(const wchar_t * word, size_
 	/* Short words may not need to be hyphenated at all */
 	if (wlen < minHyphenatedWordLength) {
 		char * hyphenation = new char[wlen + 1];
-		if (!hyphenation) {
-			return 0;
-		}
 		memset(hyphenation, ' ', wlen);
 		hyphenation[wlen] = '\0';
 		return hyphenation;
@@ -71,6 +68,58 @@ char * AnalyzerToFinnishHyphenatorAdapter::hyphenate(const wchar_t * word, size_
 		return 0;
 	}
 
+	i = 0;
+	while (hyphenations[i] != 0) {
+		delete[] hyphenations[i++];
+	}
+	delete[] hyphenations;
+	return hyphenation;
+}
+
+static char * unionHyphenations(char ** hyphenations) {
+	size_t len = strlen(hyphenations[0]);
+	char * intersection = new char[len + 1];
+
+	strcpy(intersection, hyphenations[0]);
+	for (size_t i = 0; i < len; i++) {
+		if (intersection[i] == 'X') {
+			intersection[i] = ' ';
+		}
+	}
+	char ** currentPtr = &hyphenations[1];
+	while (*currentPtr != 0) {
+		for (size_t i = 0; i < len; i++) {
+			if ((*currentPtr)[i] == '-') {
+				intersection[i] = '-';
+			}
+		}
+		currentPtr++;
+	}
+	return intersection;
+}
+
+char * AnalyzerToFinnishHyphenatorAdapter::allPossibleHyphenPositions(const wchar_t * word, size_t wlen) {
+	/* Short words may not need to be hyphenated at all */
+	if (wlen < minHyphenatedWordLength) {
+		char * hyphenation = new char[wlen + 1];
+		memset(hyphenation, ' ', wlen);
+		hyphenation[wlen] = '\0';
+		return hyphenation;
+	}
+	
+	bool dotRemoved = false;
+	char ** hyphenations = splitCompounds(word, wlen, &dotRemoved);
+	if (hyphenations == 0) {
+		return 0;
+	}
+	
+	int i = 0;
+	while (hyphenations[i] != 0) {
+		compoundHyphenation(word, hyphenations[i++], wlen - (dotRemoved ? 1 : 0));
+	}
+	
+	char * hyphenation = unionHyphenations(hyphenations);
+	
 	i = 0;
 	while (hyphenations[i] != 0) {
 		delete[] hyphenations[i++];
@@ -204,9 +253,6 @@ void AnalyzerToFinnishHyphenatorAdapter::compoundHyphenation(
 char * AnalyzerToFinnishHyphenatorAdapter::intersectHyphenations(char ** hyphenations) const {
 	size_t len = strlen(hyphenations[0]);
 	char * intersection = new char[len + 1];
-	if (intersection == 0) {
-		return 0;
-	}
 
 	strcpy(intersection, hyphenations[0]);
 	for (size_t i = 0; i < len; i++) {

@@ -22,6 +22,7 @@
 #include "spellchecker/Speller.hpp"
 #include "morphology/Analyzer.hpp"
 #include "setup/setup.hpp"
+#include "hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp"
 
 namespace libvoikko { namespace spellchecker {
 
@@ -36,8 +37,10 @@ class FinnishSpellerTweaksWrapper : public Speller {
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:
+		spellresult spellWithoutSoftHyphen(const wchar_t * word, size_t wlen);
 		Speller * const speller;
 		morphology::Analyzer * const analyzer;
+		hyphenator::AnalyzerToFinnishHyphenatorAdapter * const hyphenator;
 		const voikko_options_t * const voikkoOptions;
 };
 
