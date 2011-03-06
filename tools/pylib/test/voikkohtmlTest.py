@@ -57,6 +57,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><ul><li>kissa</li><li>koira</li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
 	
+	def testParseUnclosedListItems(self):
+		result = parseHtml(u"<html><body><ul><li>kissa<li>koira</ul></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
+	
 	def testParseNestedLists(self):
 		result = parseHtml(u"<html><body><ul><li>kissa<ul><li>koira</li></ul></li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"koira")], result)

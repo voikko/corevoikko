@@ -90,6 +90,9 @@ class VoikkoHTMLParser(HTMLParser):
 		if self.isCloseP(tag) and len(self.tags) >= 1 and self.tags[-1] == "p":
 			self.tags.pop()
 			self.appendParagraph()
+		if tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "li":
+			self.tags.pop()
+			self.appendListItem()
 		if tag in ["br"]:
 			self.data = self.data + u" "
 			return
@@ -117,23 +120,31 @@ class VoikkoHTMLParser(HTMLParser):
 			self.segments.append((SEGMENT_TYPE_PARAGRAPH, data))
 		self.acceptData = None
 	
+	def appendListItem(self):
+		data = self.getData()
+		if len(data) > 0:
+			self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))
+		self.acceptData = None
+	
 	def handle_endtag(self, tag):
 		if self.isIgnorableTag(tag) or tag == "br":
 			return
 		if not self.tags:
 			raise HTMLParseError("End tag without open elements", self.getpos())
 		openTag = self.tags.pop()
-		if tag != openTag and openTag == "p":
-			self.appendParagraph()
-			openTag = self.tags.pop()
+		if tag != openTag:
+			if openTag == "p":
+				self.appendParagraph()
+				openTag = self.tags.pop()
+			elif openTag == "li":
+				self.appendListItem()
+				openTag = self.tags.pop()
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
 			self.segments.append((SEGMENT_TYPE_HEADING, self.getData()))
 		elif openTag in ["li", "dt", "dd"]:
-			data = self.getData()
-			if len(data) > 0:
-				self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))
+			self.appendListItem()
 		elif openTag == "p":
 			self.appendParagraph()
 		if self.isContentTag(tag) or self.isNonContentTag(tag):
