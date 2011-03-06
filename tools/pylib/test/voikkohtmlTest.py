@@ -85,6 +85,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><map><area></map><p>kissa</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testIframeIsIgnored(self):
+		result = parseHtml(u"<html><body><p>kissa<iframe></iframe></p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+	
 	def testParseParagraphInListItem(self):
 		result = parseHtml(u"<html><body><ul><li><p>kissa</p></li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
