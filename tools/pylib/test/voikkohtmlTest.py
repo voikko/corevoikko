@@ -69,6 +69,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><table><td><p>kissa</p></td></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testUnclosedP(self):
+		result = parseHtml(u"<html><body><p>kissa<p>koira<div><p>hevonen</div></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa"), (SEGMENT_TYPE_PARAGRAPH, u"koira"), (SEGMENT_TYPE_PARAGRAPH, u"hevonen")], result)
+	
 	def testMetaAndLinkMayBeUnclosed(self):
 		result = parseHtml(u"<html><head><meta><link></head><body><p>kissa</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
@@ -140,7 +144,7 @@ class VoikkoHtmlTest(TestCase):
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
 	
 	def testTableWithinPIsParseError(self):
-		self.assertParseError(u"<html><body><p><table><tr><td>sdsd</td></tr></table>ruokittava.</p></body></html>", 1, 15)
+		self.assertParseError(u"<html><body><p><table><tr><td>sdsd</td></tr></table>ruokittava.</p></body></html>", 1, 63)
 	
 	def testStrongIsJustText(self):
 		result = parseHtml(u"<html><body><p>Kissaa on <strong>ruokittava</strong>.</p></body></html>")

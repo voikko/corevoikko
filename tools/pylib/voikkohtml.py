@@ -50,6 +50,9 @@ class VoikkoHTMLParser(HTMLParser):
 	def isIgnorableTag(self, tag):
 		return tag in ["hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area"]
 	
+	def isCloseP(self, tag):
+		return tag in ["p", "table", "div", "ul", "ol", "dl"]
+	
 	def __init__(self):
 		HTMLParser.__init__(self)
 		self.tags = []
@@ -84,8 +87,12 @@ class VoikkoHTMLParser(HTMLParser):
 	def handle_starttag(self, tag, attrs):
 		if self.isIgnorableTag(tag):
 			return
+		if self.isCloseP(tag) and len(self.tags) >= 1 and self.tags[-1] == "p":
+			self.tags.pop()
+			self.appendParagraph()
 		if tag in ["br"]:
 			self.data = self.data + u" "
+			return
 		elif self.isContentTag(tag):
 			self.data = u""
 			if self.allowContentInList():
@@ -104,13 +111,20 @@ class VoikkoHTMLParser(HTMLParser):
 				raise HTMLParseError("Nesting error", self.getpos())
 		self.tags.append(tag)
 	
+	def appendParagraph(self):
+		data = self.getData()
+		if len(data) > 0:
+			self.segments.append((SEGMENT_TYPE_PARAGRAPH, data))
+		self.acceptData = None
+	
 	def handle_endtag(self, tag):
-		if self.isIgnorableTag(tag):
+		if self.isIgnorableTag(tag) or tag == "br":
 			return
 		if not self.tags:
 			raise HTMLParseError("End tag without open elements", self.getpos())
 		openTag = self.tags.pop()
-		while tag != openTag and openTag in ["br"]:
+		if tag != openTag and openTag == "p":
+			self.appendParagraph()
 			openTag = self.tags.pop()
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
@@ -121,7 +135,7 @@ class VoikkoHTMLParser(HTMLParser):
 			if len(data) > 0:
 				self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))
 		elif openTag == "p":
-			self.segments.append((SEGMENT_TYPE_PARAGRAPH, self.getData()))
+			self.appendParagraph()
 		if self.isContentTag(tag) or self.isNonContentTag(tag):
 			self.acceptData = None
 	
