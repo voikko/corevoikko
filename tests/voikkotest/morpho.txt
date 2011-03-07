@@ -341,3 +341,7 @@ word:he
   NUMBER=plural
 word:kovalevy
  expected:1
+word:kovakalloinen
+ expected:1
+word:harmaapikasuolattu
+ expected:1
