@@ -187,10 +187,13 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     end;
     if (tavuviiva in $oikea.jatko and ($oikea.tiedot = nil or
         (not ei_ysa in $oikea.tiedot and not ei_ys in $oikea.tiedot))) then
-      result <[alku: $sana] + $oikea>, rules nimisana, nimisana_laatusanasta,
+      result <[alku: $sana] + $oikea>, rules nimisana_laatusanasta,
              nimisana_teonsanasta, nimi_laatusanan_etuliite, paikannimen_lainen_johdos,
              yhdysmerkki_yleisnimen_jälkeen, inen_johdos_nimisanasta,
              inen_päätteinen_laatusana; # Kieli=poliittinen
+      if $oikea.luokka = nimisana then
+        result <[alku: $sana] + $oikea>, rules nimisana;
+      end;
     end;
     if (loppu in $oikea.jatko) then
       result <[alku: $sana] + $oikea>, accept;

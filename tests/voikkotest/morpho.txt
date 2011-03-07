@@ -339,3 +339,5 @@ word:te
 word:he
  analysis
   NUMBER=plural
+word:kovalevy
+ expected:1
