@@ -157,6 +157,9 @@ class VoikkoHTMLParser(HTMLParser):
 
 class HttpResult:
 	def __init__(self):
+		self.clear()
+	
+	def clear(self):
 		self.contents = ''
 	
 	def body_callback(self, buf):
@@ -203,6 +206,7 @@ def getHtmlSafely(url):
 			raise HttpException(e)
 		redirUrl = c.getinfo(pycurl.REDIRECT_URL)
 		if redirUrl != None and redirUrl != oldRedirUrl:
+			result.clear()
 			redirs = redirs + 1
 			if redirs > MAX_REDIRECTS:
 				break

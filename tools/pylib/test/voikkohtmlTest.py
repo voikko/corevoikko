@@ -211,6 +211,7 @@ class VoikkoHtmlTest(TestCase):
 				slf.send_response(302) # Found
 				slf.send_header("Location", "http://localhost:%i/3" % port)
 				slf.end_headers()
+				slf.wfile.write("do-not-display-this")
 			elif slf.path.startswith("/3"):
 				slf.send_response(200) # OK
 				slf.send_header("Content-Type", "text/html")
