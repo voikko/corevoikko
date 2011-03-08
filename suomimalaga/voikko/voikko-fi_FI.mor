@@ -1625,8 +1625,11 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
 
   if ($edellinen.luokka = teonsana) then
     $vasen.($index - 1) :=+ [lähtöluokka: teonsana];
-    # FIXME: aika usein tämä on oikeasti laatusana
-    $vasen.($index - 1).luokka := nimisana;
+    if $oikea.luokka in @johtimet_laatusana_teonsanasta then
+      $vasen.($index - 1).luokka := laatusana;
+    else
+      $vasen.($index - 1).luokka := nimisana;
+    end;
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
 

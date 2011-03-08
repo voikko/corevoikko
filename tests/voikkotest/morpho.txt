@@ -345,3 +345,9 @@ word:kovakalloinen
  expected:1
 word:harmaapikasuolattu
  expected:1
+word:leikkivä
+ analysis
+  CLASS=laatusana
+word:leikkinyt
+ analysis
+  CLASS=laatusana
