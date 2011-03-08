@@ -81,6 +81,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><head><meta><link></head><body><p>kissa</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testBaseMayBeUnclosed(self):
+		result = parseHtml(u"<html><head><base></head><body><p>kissa</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+	
 	def testImageMapsAreIgnored(self):
 		result = parseHtml(u"<html><body><map><area></map><p>kissa</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
