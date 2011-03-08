@@ -309,16 +309,20 @@ def checkPage(url, dictionary):
 		res = u"Analyysi sivusta " + escape(url) + u"<br />"
 		v.setAcceptUnfinishedParagraphsInGc(True)
 		for segment in segments:
+			segmentClass = None
 			if segment[0] == SEGMENT_TYPE_HEADING:
 				v.setAcceptTitlesInGc(True)
 				v.setAcceptBulletedListsInGc(False)
+				segmentClass = u"webvoikkoH"
 			elif segment[0] == SEGMENT_TYPE_LIST_ITEM:
 				v.setAcceptTitlesInGc(False)
 				v.setAcceptBulletedListsInGc(True)
+				segmentClass = u"webvoikkoLi"
 			elif segment[0] == SEGMENT_TYPE_PARAGRAPH:
 				v.setAcceptTitlesInGc(False)
 				v.setAcceptBulletedListsInGc(False)
-			res = res + u"<p>" + doSpell(segment[1], v) + u"</p>"
+				segmentClass = u"webvoikkoP"
+			res = res + u"<p class='" + segmentClass + u"'>" + doSpell(segment[1], v) + u"</p>"
 		return res
 	except HttpException, e:
 		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)

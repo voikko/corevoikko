@@ -20,7 +20,6 @@ div.updating {
   line-height: 1.6em;
   border: 1px solid black;
   min-height: 2em;
-  font-family: monospace;
   width: 100%;
   max-width: 50em;
 }
@@ -42,4 +41,23 @@ span.gErrorInner {
 span.word:hover, span.gErrorHandle:hover {
   background-color: #CCCCEE;
   cursor: help;
+}
+
+p.webvoikkoH, p.webvoikkoLi, p.webvoikkoP {
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
+p.webvoikkoH {
+  font-size: 110%;
+  font-weight: bold;
+}
+
+p.webvoikkoLi {
+  display: list-item;
+  list-style-position: inside;
+}
+
+p.webvoikkoP {
+  border-left: 4px solid #559922;
 }
