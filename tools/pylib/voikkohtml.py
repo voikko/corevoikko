@@ -58,10 +58,10 @@ class VoikkoHTMLParser(HTMLParser):
 		self.tags = []
 		self.segments = []
 		self.data = u""
-		self.acceptData = None
 	
 	def handle_data(self, data):
-		self.data = self.data + data
+		if self.acceptData():
+			self.data = self.data + data
 	
 	def handle_entityref(self, name):
 		if name in name2codepoint:
@@ -84,6 +84,14 @@ class VoikkoHTMLParser(HTMLParser):
 				return False
 		return False
 	
+	def acceptData(self):
+		for tag in reversed(self.tags):
+			if self.isContentTag(tag):
+				return True
+			elif self.isNonContentTag(tag):
+				return False
+		return None
+	
 	def handle_starttag(self, tag, attrs):
 		if self.isIgnorableTag(tag):
 			return
@@ -102,15 +110,10 @@ class VoikkoHTMLParser(HTMLParser):
 				pass
 			elif tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "ul":
 				pass
-			elif self.acceptData is not None:
+			elif self.acceptData() is not None:
 				raise HTMLParseError("Nesting error", self.getpos())
-			self.acceptData = True
-		elif self.isNonContentTag(tag):
-			if self.acceptData is not None:
-				raise HTMLParseError("Nesting error", self.getpos())
-			self.acceptData = False
 		elif self.isNotAllowedInHeaderOrParagraph(tag):
-			if len(self.tags) == 0 or (self.tags[-1] != "li" and self.acceptData is not None):
+			if len(self.tags) == 0 or (self.tags[-1] != "li" and self.acceptData() is not None):
 				raise HTMLParseError("Nesting error", self.getpos())
 		self.tags.append(tag)
 	
@@ -118,13 +121,11 @@ class VoikkoHTMLParser(HTMLParser):
 		data = self.getData()
 		if len(data) > 0:
 			self.segments.append((SEGMENT_TYPE_PARAGRAPH, data))
-		self.acceptData = None
 	
 	def appendListItem(self):
 		data = self.getData()
 		if len(data) > 0:
 			self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))
-		self.acceptData = None
 	
 	def handle_endtag(self, tag):
 		if self.isIgnorableTag(tag) or tag == "br":
@@ -147,8 +148,6 @@ class VoikkoHTMLParser(HTMLParser):
 			self.appendListItem()
 		elif openTag == "p":
 			self.appendParagraph()
-		if self.isContentTag(tag) or self.isNonContentTag(tag):
-			self.acceptData = None
 	
 	def processInput(self, html):
 		self.feed(html)

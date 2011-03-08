@@ -149,8 +149,9 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><p>Kissaa on ruokittava.</p><script>lksjdf</script></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
 	
-	def testScriptsWithinPIsParseError(self):
-		self.assertParseError(u"<html><body><p>Kissaa on <script>aksldj</script>ruokittava.</p></body></html>", 1, 25)
+	def testScriptsWithinPIsIgnoredAndContentStripped(self):
+		result = parseHtml(u"<html><body><p>Kissaa on <script>aksldj</script>ruokittava.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
 	
 	def testLiWithinPIsParseError(self):
 		self.assertParseError(u"<html><body><p>Kissaa on <li>aksldj</li>ruokittava.</p></body></html>", 1, 25)
