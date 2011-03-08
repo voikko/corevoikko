@@ -67,7 +67,7 @@ class VoikkoHTMLParser(HTMLParser):
 		if name in name2codepoint:
 			self.data = self.data + unichr(name2codepoint[name])
 		else:
-			raise HTMLParseError("Unknown entity reference", self.getpos())
+			self.data = self.data + "&" + name
 	
 	def handle_charref(self, name):
 		nameInt = int(name)

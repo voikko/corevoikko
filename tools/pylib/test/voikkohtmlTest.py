@@ -175,8 +175,9 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><h1>Eläinlääk&auml;rissä käynti €</h1></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_HEADING, u"Eläinlääkärissä käynti €")], result)
 	
-	def testUnknownEntityIsParseError(self):
-		self.assertParseError(u"<html><body><p>&kissa;</p></body></html>", 1, 15)
+	def testUnknownEntityIsAssumedToBeJustText(self):
+		result = parseHtml(u"<html><body><p>Kissa & koira ja &kissa;</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissa & koira ja &kissa")], result)
 	
 	def testCharacterReferences(self):
 		result = parseHtml(u"<html><body><h1>&#33;</h1></body></html>")
