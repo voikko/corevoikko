@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 #include "spellchecker/suggestion/SuggestionGeneratorInsertSpecial.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorReplacement.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorReplaceTwo.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorSoftHyphens.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorSplitWord.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorSwap.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorVowelChange.hpp"
@@ -83,6 +84,8 @@ static const wchar_t * const REPLACEMENTS_5 =
 SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAnalyzer, size_t maxCost) : SuggestionStrategy(maxCost) {
 	primaryGenerators.push_back(
 		new SuggestionGeneratorCaseChange(morAnalyzer));
+	primaryGenerators.push_back(
+		new SuggestionGeneratorSoftHyphens(morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorVowelChange(morAnalyzer));
 	generators.push_back(
