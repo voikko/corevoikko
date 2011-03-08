@@ -264,7 +264,7 @@ def getAnalysis(analysis):
 	return res
 
 def analyzeWord(word, v):
-	analysisList = v.analyze(word)
+	analysisList = v.analyze(word.replace(u"\u00AD", u""))
 	if len(analysisList) == 0:
 		return u""
 	if len(analysisList) == 1:
