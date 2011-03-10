@@ -78,7 +78,7 @@ class VoikkoHTMLParser(HTMLParser):
 	
 	def allowContentInList(self):
 		for tag in reversed(self.tags):
-			if tag == "li":
+			if tag in ["li", "dd"]:
 				return True
 			if self.isContentTag(tag) or self.isNonContentTag(tag):
 				return False
