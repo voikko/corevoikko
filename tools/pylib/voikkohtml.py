@@ -166,14 +166,22 @@ class HttpResult:
 
 def parseHtml(html):
 	# Something is wrong with the way HTMLParser handles comments. Try to work around worst
-	# problems by replacing '<' and '>' with ' ' within comments.
-	resultHtml = ''
+	# problems by replacing '<' and '>' with ' ' within comments. Same thing for scripts.
+	html1 = ''
 	for part in split(r'(?s)(<!--(?:[^<>]|<|>)*?--\s*>)', html):
 		if part.startswith('<!--'):
-			resultHtml = resultHtml + '<!--' + part[4:-1].replace('<', ' ').replace('>', ' ') + '>'
+			html1 = html1 + '<!--' + part[4:-1].replace('<', ' ').replace('>', ' ') + '>'
 		else:
-			resultHtml = resultHtml + part
-	return VoikkoHTMLParser().processInput(resultHtml)
+			html1 = html1 + part
+	html2 = ''
+	for part in split(r'(?is)(<script(?:[^<>]|<|>)*?</script\s*>)', html1):
+		if part.lower().startswith('<script'):
+			indexOfStartEnd = part.find('>')
+			indexOfEndTag = part.rfind('<')
+			html2 = html2 + part[0:indexOfStartEnd+1] + part[indexOfStartEnd+1:indexOfEndTag].replace('<', ' ').replace('>', ' ') + part[indexOfEndTag:]
+		else:
+			html2 = html2 + part
+	return VoikkoHTMLParser().processInput(html2)
 
 class HttpException(Exception):
 	def __init__(self, msg):

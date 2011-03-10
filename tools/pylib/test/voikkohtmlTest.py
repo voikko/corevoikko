@@ -85,8 +85,19 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><p><!-- eka -- >kissa<!-- toka -- > ja koira</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa ja koira")], result)
 	
+	def testUnescapedTagsWithinScript(self):
+		result = parseHtml(u"<html><body><scrIpt>document.write('<script '); '</scr' + 'ipt>' </sCript ><p>koira</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"koira")], result)
+	
+	def testEmptyScript(self):
+		result = parseHtml(u"<html><body><script></script><p>koira</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"koira")], result)
+	
 	def testCommentsDoNotAffectLineNumberingInErrorMessages(self):
 		self.assertParseError(u"<html><body><p><!-- e\n<\ne -- >\nkissa<!-- to<> -- > <p<", 4, 22)
+	
+	def testScriptsDoNotAffectLineNumberingInErrorMessages(self):
+		self.assertParseError(u"<html><body><p><script>e\n<\ne </script>\nkissa<script> to<></script> <p<", 4, 30)
 	
 	def testUnclosedP(self):
 		result = parseHtml(u"<html><body><p>kissa<p>koira<div><p>hevonen</div></body></html>")
