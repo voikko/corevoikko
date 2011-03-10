@@ -73,6 +73,21 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><table><td><p>kissa</p></td></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testCorrectCommentParsing(self):
+		result = parseHtml(u"<html><head><style><!-- <Group></Group> --></style></head><body><p>kissa</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+	
+	def testMultiLineComments(self):
+		result = parseHtml(u"<html><head><style><!-- \n<Group></Group> --></style></head><body><p>kissa</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+	
+	def testMultipleComments(self):
+		result = parseHtml(u"<html><body><p><!-- eka -- >kissa<!-- toka -- > ja koira</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa ja koira")], result)
+	
+	def testCommentsDoNotAffectLineNumberingInErrorMessages(self):
+		self.assertParseError(u"<html><body><p><!-- e\n<\ne -- >\nkissa<!-- to<> -- > <p<", 4, 22)
+	
 	def testUnclosedP(self):
 		result = parseHtml(u"<html><body><p>kissa<p>koira<div><p>hevonen</div></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa"), (SEGMENT_TYPE_PARAGRAPH, u"koira"), (SEGMENT_TYPE_PARAGRAPH, u"hevonen")], result)
@@ -368,4 +383,5 @@ class VoikkoHtmlTest(TestCase):
 
 if __name__ == "__main__":
 	suite = TestLoader().loadTestsFromTestCase(VoikkoHtmlTest)
+	#suite = TestLoader().loadTestsFromName("voikkohtmlTest.VoikkoHtmlTest.testCorrectCommentParsing")
 	TextTestRunner(verbosity=1).run(suite)

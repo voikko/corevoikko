@@ -22,7 +22,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from HTMLParser import HTMLParser, HTMLParseError
-from re import sub, search
+from re import sub, search, split
 from htmlentitydefs import name2codepoint
 from urlparse import urlparse
 import pycurl
@@ -165,7 +165,15 @@ class HttpResult:
 		self.contents = self.contents + buf 
 
 def parseHtml(html):
-	return VoikkoHTMLParser().processInput(html)
+	# Something is wrong with the way HTMLParser handles comments. Try to work around worst
+	# problems by replacing '<' and '>' with ' ' within comments.
+	resultHtml = ''
+	for part in split(r'(?s)(<!--(?:[^<>]|<|>)*?--\s*>)', html):
+		if part.startswith('<!--'):
+			resultHtml = resultHtml + '<!--' + part[4:-1].replace('<', ' ').replace('>', ' ') + '>'
+		else:
+			resultHtml = resultHtml + part
+	return VoikkoHTMLParser().processInput(resultHtml)
 
 class HttpException(Exception):
 	def __init__(self, msg):
