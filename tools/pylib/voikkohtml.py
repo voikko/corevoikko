@@ -140,6 +140,9 @@ class VoikkoHTMLParser(HTMLParser):
 			elif openTag == "li":
 				self.appendListItem()
 				openTag = self.tags.pop()
+			elif openTag == "td":
+				# TODO: appendUnstructuredText
+				openTag = self.tags.pop()
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:

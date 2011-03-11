@@ -73,6 +73,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><table><td><p>kissa</p></td></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testUnclosedTdIsNotError(self):
+		result = parseHtml(u"<html><body><table><tr><td><p>kissa</p></tr></table></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+	
 	def testCorrectCommentParsing(self):
 		result = parseHtml(u"<html><head><style><!-- <Group></Group> --></style></head><body><p>kissa</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
