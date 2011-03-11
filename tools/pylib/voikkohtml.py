@@ -53,6 +53,9 @@ class VoikkoHTMLParser(HTMLParser):
 	def isCloseP(self, tag):
 		return tag in ["p", "table", "div", "ul", "ol", "dl"]
 	
+	def isTableCell(self, tag):
+		return tag in ["td", "th"]
+	
 	def __init__(self):
 		HTMLParser.__init__(self)
 		self.tags = []
@@ -101,7 +104,7 @@ class VoikkoHTMLParser(HTMLParser):
 		if tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "li":
 			self.tags.pop()
 			self.appendListItem()
-		if tag == "td" and len(self.tags) >= 1 and self.tags[-1] == "td":
+		if self.isTableCell(tag) and len(self.tags) >= 1 and self.tags[-1] == tag:
 			self.tags.pop()
 			# TODO: appendUnstructuredText
 		if tag in ["br"]:
@@ -143,7 +146,7 @@ class VoikkoHTMLParser(HTMLParser):
 			elif openTag == "li":
 				self.appendListItem()
 				openTag = self.tags.pop()
-			elif openTag == "td":
+			elif self.isTableCell(openTag):
 				# TODO: appendUnstructuredText
 				openTag = self.tags.pop()
 		if tag != openTag:
