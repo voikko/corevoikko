@@ -192,6 +192,7 @@ class HttpException(Exception):
 ERR_FORBIDDEN_SCHEME = u"Vain http-osoitteet ovat sallittuja."
 ERR_INVALID_ENCODING = u"Sivu merkistökoodaus on määritelty väärin tai merkistö on tuntematon"
 ERR_TOO_MANY_REDIRECTS = u"Liian monta http-uudelleenohjausta"
+ERR_NOT_FOUND = u"Pyydettyä sivua ei ole olemassa"
 USER_AGENT = "WebVoikko language checker - see http://joukahainen.puimula.org/webvoikko/spell"
 MAX_REDIRECTS = 3
 
@@ -233,11 +234,14 @@ def getHtmlSafely(url):
 			break
 	if not found:
 		raise HttpException(ERR_TOO_MANY_REDIRECTS)
+	httpStatus = c.getinfo(pycurl.HTTP_CODE)
 	encoding = None
 	contentType = c.getinfo(pycurl.CONTENT_TYPE)
+	c.close()
+	if httpStatus == 404:
+		raise HttpException(ERR_NOT_FOUND)
 	if 'charset=' in contentType:
 		encoding = contentType[contentType.find('charset=') + 8:]
-	c.close()
 	text = result.contents
 	if not encoding:
 		# Check meta tags or similar for hints

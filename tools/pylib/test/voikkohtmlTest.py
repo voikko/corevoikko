@@ -18,7 +18,7 @@
 
 from unittest import TestCase, TestLoader, TextTestRunner
 from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
-from voikkohtml import getHtmlSafely, HttpException, ERR_INVALID_ENCODING, ERR_FORBIDDEN_SCHEME, ERR_TOO_MANY_REDIRECTS, USER_AGENT
+from voikkohtml import getHtmlSafely, HttpException, ERR_INVALID_ENCODING, ERR_FORBIDDEN_SCHEME, ERR_TOO_MANY_REDIRECTS, ERR_NOT_FOUND, USER_AGENT
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from threading import Thread
@@ -300,6 +300,20 @@ class VoikkoHtmlTest(TestCase):
 			getHtmlSafely("http://localhost:3400/")
 		except HttpException, e:
 			self.failUnless(ERR_FORBIDDEN_SCHEME in e.parameter)
+			self.assertThreadExitsNormally(t)
+			return
+		self.fail(u"Expected exception")
+	
+	def testNotFound(self):
+		def getFunct(slf, tester):
+			slf.send_response(404)
+			slf.end_headers()
+			slf.wfile.write("kissa")
+		t = self.startServer(3400, getFunct, 1)
+		try:
+			getHtmlSafely("http://localhost:3400/")
+		except HttpException, e:
+			self.failUnless(ERR_NOT_FOUND in e.parameter)
 			self.assertThreadExitsNormally(t)
 			return
 		self.fail(u"Expected exception")
