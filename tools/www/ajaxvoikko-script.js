@@ -30,6 +30,7 @@ function loadPortlet(divId) {
     $("#input").bind("cut", inputChanged);
     $("#input").bind("paste", inputChanged);
     $("#voikkoDict").bind("change", dictionaryChanged);
+    $("#checkPageClicked").click(checkPageClicked);
     $("#pageUrl").keyup(function(event) {
       if (event.keyCode == 13) {
         // Enter
@@ -111,11 +112,15 @@ function updateReceived(html) {
 var lastUpdateTimerId = null;
 
 function setProgressMessage() {
+  $("#pageUrl").attr("disabled", true);
+  $("#checkPageClicked").attr("disabled", true);
   $("#progress").show();
 }
 
 function clearProgressMessage() {
   $("#progress").hide();
+  $("#checkPageClicked").attr("disabled", false);
+  $("#pageUrl").attr("disabled", false);
 }
 
 function requestUpdate() {

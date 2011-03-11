@@ -354,7 +354,7 @@ def getPortlet():
 	html = html + u"</div>"
 	html = html + u"<div id='tabPage'>"
 	html = html + u"<p>Tämä toiminto on varhaisessa testausvaiheessa. Kaikkea outoa voi odottaa, jos sitä käyttää.</p>"
-	html = html + u"Oikoluettavan sivun osoite: <input type='text' id='pageUrl' size='40' /> <button onclick='checkPageClicked()'>Oikolue</button>"
+	html = html + u"Oikoluettavan sivun osoite: <input type='text' id='pageUrl' size='40' /> <button id='checkPageClicked'>Oikolue</button>"
 	html = html + u"</div>"
 	html = html + u"</div>"
 	html = html + u"<span id='progress' class='updating'>Analysoidaan... <img src='progress.gif' /></span>"
