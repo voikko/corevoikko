@@ -101,6 +101,9 @@ class VoikkoHTMLParser(HTMLParser):
 		if tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "li":
 			self.tags.pop()
 			self.appendListItem()
+		if tag == "td" and len(self.tags) >= 1 and self.tags[-1] == "td":
+			self.tags.pop()
+			# TODO: appendUnstructuredText
 		if tag in ["br"]:
 			self.data = self.data + u" "
 			return
