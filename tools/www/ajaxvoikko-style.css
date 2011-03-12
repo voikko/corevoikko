@@ -61,3 +61,7 @@ p.webvoikkoLi {
 p.webvoikkoP {
   border-left: 4px solid #559922;
 }
+
+p.webvoikkoO {
+  border-left: 4px solid #DD0000;
+}

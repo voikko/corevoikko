@@ -30,6 +30,7 @@ import pycurl
 SEGMENT_TYPE_HEADING = 1
 SEGMENT_TYPE_LIST_ITEM = 2
 SEGMENT_TYPE_PARAGRAPH = 3
+SEGMENT_TYPE_OTHER = 4
 
 class VoikkoHTMLParser(HTMLParser):
 	
@@ -48,7 +49,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["script", "style"]
 	
 	def isIgnorableTag(self, tag):
-		return tag in ["hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript"]
+		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript", "strong"]
 	
 	def isCloseP(self, tag):
 		return tag in ["p", "table", "div", "ul", "ol", "dl"]
@@ -63,7 +64,7 @@ class VoikkoHTMLParser(HTMLParser):
 		self.data = u""
 	
 	def handle_data(self, data):
-		if self.acceptData():
+		if self.acceptData() is not False:
 			self.data = self.data + data
 	
 	def handle_entityref(self, name):
@@ -111,7 +112,7 @@ class VoikkoHTMLParser(HTMLParser):
 			self.data = self.data + u" "
 			return
 		elif self.isContentTag(tag):
-			self.data = u""
+			self.appendOther()
 			if self.allowContentInList():
 				pass
 			elif tag == "li" and len(self.tags) >= 1 and self.tags[-1] == "ul":
@@ -132,6 +133,11 @@ class VoikkoHTMLParser(HTMLParser):
 		data = self.getData()
 		if len(data) > 0:
 			self.segments.append((SEGMENT_TYPE_LIST_ITEM, data))
+	
+	def appendOther(self):
+		data = self.getData()
+		if len(data) > 0:
+			self.segments.append((SEGMENT_TYPE_OTHER, data))
 	
 	def handle_endtag(self, tag):
 		if self.isIgnorableTag(tag) or tag == "br":
@@ -157,6 +163,8 @@ class VoikkoHTMLParser(HTMLParser):
 			self.appendListItem()
 		elif openTag == "p":
 			self.appendParagraph()
+		elif not self.isNonContentTag(tag):
+			self.appendOther()
 	
 	def processInput(self, html):
 		self.feed(html)

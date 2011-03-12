@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 from unittest import TestCase, TestLoader, TextTestRunner
-from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
+from voikkohtml import parseHtml, SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH, SEGMENT_TYPE_OTHER
 from voikkohtml import getHtmlSafely, HttpException, ERR_INVALID_ENCODING, ERR_FORBIDDEN_SCHEME, ERR_TOO_MANY_REDIRECTS, ERR_NOT_FOUND, USER_AGENT
 from HTMLParser import HTMLParseError
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
@@ -37,8 +37,12 @@ class VoikkoHtmlTest(TestCase):
 			self.fail("Expected exception")
 	
 	def testParseEmptyDocument(self):
-		result = parseHtml(u"<html><head><title>kissa</title></head><body></body></html>")
+		result = parseHtml(u"<html><head></head><body></body></html>")
 		self.failUnless(len(result) == 0)
+	
+	def testParseTitle(self):
+		result = parseHtml(u"<html><head><title>kissa</title></head><body></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_OTHER, u"kissa")], result)
 	
 	def testParseInvalid(self):
 		self.assertParseError(u"<htm<l>", 1, 4)
@@ -57,13 +61,21 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><ul><li>kissa</li><li>koira</li></ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
 	
+	def testParseListItemsWithinA(self):
+		result = parseHtml(u"<html><body><ul><li><a>kissa</a></li></ul></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa")], result)
+	
+	def testParseListItemsWithinEm(self):
+		result = parseHtml(u"<html><body><ul><li>kis<em>sa</em></li></ul></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa")], result)
+	
 	def testParseUnclosedListItems(self):
 		result = parseHtml(u"<html><body><ul><li>kissa<li>koira</ul></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
 	
 	def testParseNestedLists(self):
 		result = parseHtml(u"<html><body><ul><li>kissa<ul><li>koira</li></ul></li></ul></body></html>")
-		self.assertEquals([(SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
+		self.assertEquals([(SEGMENT_TYPE_OTHER, u"kissa"), (SEGMENT_TYPE_LIST_ITEM, u"koira")], result)
 	
 	def testParseDefinitionLists(self):
 		result = parseHtml(u"<html><body><dl><dt>kissa</dt><dd>jalo eläin</dd></dl></body></html>")
@@ -152,8 +164,8 @@ class VoikkoHtmlTest(TestCase):
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
 	def testClearBeforeParagraph(self):
-		result = parseHtml(u"<html><head><title>kissa</title></head><body><p>kissa</p></body></html>")
-		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
+		result = parseHtml(u"<html><head><title>koira</title></head><body><p>kissa</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_OTHER, u"koira"), (SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
 	def testParseParagraph(self):
 		result = parseHtml(u"<html><body><p>Kissaa on ruokittava huolella.</p></body></html>")
@@ -196,7 +208,7 @@ class VoikkoHtmlTest(TestCase):
 	
 	def testTablesAreIgnored(self):
 		result = parseHtml(u"<html><body><p>Kissaa on ruokittava.</p><table><tr><td>sdsd</td></tr></table></body></html>")
-		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava."), (SEGMENT_TYPE_OTHER, u"sdsd")], result)
 	
 	def testTableWithinPIsParseError(self):
 		self.assertParseError(u"<html><body><p><table><tr><td>sdsd</td></tr></table>ruokittava.</p></body></html>", 1, 63)
@@ -220,6 +232,10 @@ class VoikkoHtmlTest(TestCase):
 	def testCharacterReferences(self):
 		result = parseHtml(u"<html><body><h1>&#33;</h1></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_HEADING, u"!")], result)
+	
+	def testTextWithinBody(self):
+		result = parseHtml(u"<html><body>kissa</body></html>");
+		self.assertEquals([(SEGMENT_TYPE_OTHER, u"kissa")], result)
 	
 	def testUnknownCharacterReferenceIsParseError(self):
 		self.assertParseError(u"<html><body><p>&#65534;</p></body></html>", 1, 15)

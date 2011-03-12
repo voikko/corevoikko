@@ -109,6 +109,11 @@ function updateReceived(html) {
   clearProgressMessage();
 }
 
+function updateError(jqXHR, textStatus, errorThrown) {
+  $("#result").text("Tekstin analysointi ei onnistunut. Yritä myöhemmin uudelleen.");
+  clearProgressMessage();
+}
+
 var lastUpdateTimerId = null;
 
 function setProgressMessage() {
@@ -127,7 +132,14 @@ function requestUpdate() {
   lastUpdateTimerId = null;
   var textContent = $("#input").val();
   var dict = $("#voikkoDict").val();
-  $.post(AJAX_HANDLER_URL + "spell", {q: textContent, d: dict}, updateReceived, "html");
+  $.ajax({
+    type: 'POST',
+    url: AJAX_HANDLER_URL + "spell",
+    data: {q: textContent, d: dict},
+    success: updateReceived,
+    error: updateError,
+    dataType: "html"
+  });
 }
 
 function resetTimeout() {

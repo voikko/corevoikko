@@ -31,13 +31,13 @@ from libvoikko import Voikko
 from libvoikko import Token
 from voikkostatistics import getStatistics
 from voikkohtml import getHtmlSafely, parseHtml, HttpException
-from voikkohtml import SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH
+from voikkohtml import SEGMENT_TYPE_HEADING, SEGMENT_TYPE_LIST_ITEM, SEGMENT_TYPE_PARAGRAPH, SEGMENT_TYPE_OTHER
 from HTMLParser import HTMLParseError
 import codecs
 
 _voikko = {}
 
-ALLOWED_DICTS = [u"fi-x-standard+debug", u"fi-x-medicine"]
+ALLOWED_DICTS = [u"fi-x-standard"]
 
 SANALUOKAT = {
 "asemosana": u"pronomini eli asemosana",
@@ -156,11 +156,13 @@ def spell(text, dictionary):
 	v.setAcceptUnfinishedParagraphsInGc(True)
 	v.setAcceptTitlesInGc(False)
 	v.setAcceptBulletedListsInGc(False)
-	return doSpell(text, v)
+	return doSpell(text, v, True)
 
-def doSpell(text, v):
+def doSpell(text, v, checkGrammar):
 	tokens = markTrailingDots(v.tokens(text))
-	gErrors = nonOverlappingGrammarErrorsByStartPosition(text, v)
+	gErrors = {}
+	if checkGrammar:
+		gErrors = nonOverlappingGrammarErrorsByStartPosition(text, v)
 	res = u""
 	position = 0
 	currentGError = None
@@ -310,6 +312,7 @@ def checkPage(url, dictionary):
 		v.setAcceptUnfinishedParagraphsInGc(True)
 		for segment in segments:
 			segmentClass = None
+			checkGrammar = True
 			if segment[0] == SEGMENT_TYPE_HEADING:
 				v.setAcceptTitlesInGc(True)
 				v.setAcceptBulletedListsInGc(False)
@@ -322,7 +325,10 @@ def checkPage(url, dictionary):
 				v.setAcceptTitlesInGc(False)
 				v.setAcceptBulletedListsInGc(False)
 				segmentClass = u"webvoikkoP"
-			res = res + u"<p class='" + segmentClass + u"'>" + doSpell(segment[1], v) + u"</p>"
+			elif segment[0] == SEGMENT_TYPE_OTHER:
+				checkGrammar = False
+				segmentClass = u"webvoikkoO"
+			res = res + u"<p class='" + segmentClass + u"'>" + doSpell(segment[1], v, checkGrammar) + u"</p>"
 		return res
 	except HttpException, e:
 		return u"Sivua %s ei voitu hakea: %s" % (escape(url), e.parameter)
