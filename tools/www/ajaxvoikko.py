@@ -37,7 +37,7 @@ import codecs
 
 _voikko = {}
 
-ALLOWED_DICTS = [u"fi-x-standard"]
+ALLOWED_DICTS = [u"fi-x-standard+debug", u"fi-x-medicine"]
 
 SANALUOKAT = {
 "asemosana": u"pronomini eli asemosana",
