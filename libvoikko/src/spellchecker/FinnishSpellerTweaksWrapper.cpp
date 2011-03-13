@@ -205,6 +205,7 @@ spellresult FinnishSpellerTweaksWrapper::spell(const wchar_t * word, size_t wlen
 }
 
 void FinnishSpellerTweaksWrapper::terminate() {
+	delete hyphenator;
 	delete speller;
 }
 
