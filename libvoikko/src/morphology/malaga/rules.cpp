@@ -415,10 +415,7 @@ read_rule_sys( string_t file_name )
   rule_sys = (rule_sys_t *) new_mem( sizeof( rule_sys_t ) );
   rule_sys->initial_rule_set = header.initial_rule_set;
   rule_sys->initial_feat = header.initial_feat;
-  rule_sys->robust_rule = header.robust_rule;
-  rule_sys->allo_rule = header.allo_rule;
   rule_sys->pruning_rule = header.pruning_rule;
-  rule_sys->input_filter = header.input_filter;
   rule_sys->output_filter = header.output_filter;
   rule_sys->rule_count = header.rule_count;
   rule_sys->rules = (rule_t *) read_new_vector( sizeof( rule_t ), header.rule_count,
@@ -433,21 +430,13 @@ read_rule_sys( string_t file_name )
   rule_sys->values_size = header.values_size;
   rule_sys->values = (cell_t *) read_new_vector( sizeof( cell_t ), header.values_size, 
                                       stream);
-  rule_sys->src_line_count = header.src_line_count;
-  rule_sys->src_lines = (src_line_t *) read_new_vector( sizeof( src_line_t ), 
-                                         header.src_line_count, 
-                                         stream);
-  rule_sys->var_count = header.var_count;
-  rule_sys->vars = (var_t *) read_new_vector( sizeof( var_t ), header.var_count,
-                                    stream);
-  rule_sys->var_scope_count = header.var_scope_count;
-  rule_sys->var_scopes = (var_scope_t *) read_new_vector( sizeof( var_scope_t ), 
-                                          header.var_scope_count,
-                                          stream);
-  rule_sys->constant_count = header.constant_count;
-  rule_sys->constants = (constant_t *) read_new_vector( sizeof( constant_t ), 
-					 header.constant_count, 
-					 stream);
+
+  // skip stuff that is not needed in production code
+  fseek(stream, header.src_line_count * sizeof(src_line_t) +
+                header.var_count * sizeof(var_t) +
+                header.var_scope_count * sizeof(var_scope_t) +
+                header.constant_count * sizeof(constant_t), SEEK_CUR);
+
   rule_sys->strings_size = header.strings_size;
   rule_sys->strings = (char_t *) read_new_vector( sizeof( char_t ), header.strings_size, 
                                        stream);
@@ -468,10 +457,6 @@ free_rule_sys( rule_sys_t **rule_sys )
     free_mem( &(*rule_sys)->rule_sets );
     free_mem( &(*rule_sys)->instrs );
     free_mem( &(*rule_sys)->values );
-    free_mem( &(*rule_sys)->src_lines );
-    free_mem( &(*rule_sys)->vars );
-    free_mem( &(*rule_sys)->var_scopes );
-    free_mem( &(*rule_sys)->constants );
     free_mem( &(*rule_sys)->strings );
     free_mem( rule_sys );
   }

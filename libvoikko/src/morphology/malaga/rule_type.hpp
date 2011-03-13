@@ -126,9 +126,6 @@ enum /* These are the opcodes of the rule instructions. */
   INS_RETURN /* SP = BP; Pop PC; Pop BP; Pop (I-1); */
 };
 
-/* Types of INS_SYSTEM_ERROR. */
-enum {ASSERTION_ERROR, NO_RETURN_ERROR};
-
 /* Standard functions for INS_STANDARD_FUNCTION. */
 enum {FUNC_TO_ATOMS, FUNC_IS_CAPITAL, FUNC_GET_LENGTH, FUNC_TO_MULTI, 
       FUNC_TO_SET, FUNC_GET_SWITCH, FUNC_GET_VALUE_TYPE, FUNC_GET_VALUE_STRING,

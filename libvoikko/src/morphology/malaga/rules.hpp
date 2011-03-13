@@ -39,10 +39,7 @@ typedef struct
   int_t initial_rule_set; /* Rules index of the initial rule set. */
   int_t initial_feat; /* Values index of initial feature structure. */
 
-  int_t robust_rule; /* Number of robust_rule or -1. */
   int_t pruning_rule; /* Number of pruning_rule or -1. */
-  int_t allo_rule; /* Number of allo_rule or -1. */
-  int_t input_filter; /* Number of input filter rule or -1. */
   int_t output_filter; /* Number of output filter rule or -1. */
 
   rule_t *rules; /* Name and code of every rule. */
@@ -63,19 +60,6 @@ typedef struct
 
   char_t *strings; /* Names of files, variables, rules, patterns. */
   int_t strings_size;
-  
-  src_line_t *src_lines; /* Correspondence between source lines
-                          * and rule instructions. */
-  int_t src_line_count;
-
-  var_t *vars; /* Variable names. */
-  int_t var_count;
-
-  var_scope_t *var_scopes; /* Variable scopes. */
-  int_t var_scope_count;
-
-  constant_t *constants; /* Named constants. */
-  int_t constant_count;
 } rule_sys_t;
 
 /* Variables. ===============================================================*/
