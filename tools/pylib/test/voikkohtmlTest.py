@@ -258,6 +258,7 @@ class VoikkoHtmlTest(TestCase):
 	def startNormalServer(self, port, code, contentType, responseData):
 		def getFunct(slf, tester):
 			tester.assertEquals(USER_AGENT, slf.headers["User-Agent"])
+			tester.assertEquals("127.0.0.1", slf.headers["X-Forwarded-For"])
 			slf.send_response(code)
 			slf.send_header("Content-Type", contentType)
 			slf.end_headers()
@@ -345,6 +346,17 @@ class VoikkoHtmlTest(TestCase):
 			self.assertThreadExitsNormally(t)
 			return
 		self.fail(u"Expected exception")
+	
+	def testPreviousProxiesAreRetained(self):
+		def getFunct(slf, tester):
+			tester.assertEquals("123.123.123.123, 93.35.124.35", slf.headers["X-Forwarded-For"])
+			slf.send_response(200)
+			slf.end_headers()
+			slf.wfile.write("kissa")
+		t = self.startServer(3400, getFunct, 1)
+		html = getHtmlSafely("http://localhost:3400/", "93.35.124.35", ["X-Something: sfsf\n", "X-Forwarded-For: 123.123.123.123\n"])
+		self.assertEquals(u"kissa", html)
+		self.assertThreadExitsNormally(t)
 	
 	def testGetHtmlSafely(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", "kissa")

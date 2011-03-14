@@ -217,7 +217,15 @@ def __checkValidUrl(url):
 	if url.startswith('ftp') or (':/' in url and not url.startswith('http:')):
 		raise HttpException(ERR_FORBIDDEN_SCHEME)
 
-def getHtmlSafely(url):
+def __getForwardedForHeader(clientIp, clientRequestHeaders):
+	previousForwarders = ""
+	for header in clientRequestHeaders:
+		if header.startswith("X-Forwarded-For: "):
+			previousForwarders = header[17:].strip() + ", "
+			break
+	return "X-Forwarded-For: " + previousForwarders + clientIp
+
+def getHtmlSafely(url, clientIp = "127.0.0.1", clientRequestHeaders = []):
 	result = HttpResult()
 	__checkValidUrl(url)
 	urlParts = urlparse(url, u"http")
@@ -227,6 +235,7 @@ def getHtmlSafely(url):
 	c.setopt(pycurl.MAXFILESIZE, 150000)
 	c.setopt(pycurl.TIMEOUT, 10)
 	c.setopt(pycurl.USERAGENT, USER_AGENT)
+	c.setopt(pycurl.HTTPHEADER, [__getForwardedForHeader(clientIp, clientRequestHeaders)])
 	c.setopt(pycurl.FOLLOWLOCATION, False)
 	found = False
 	redirs = 0
@@ -257,7 +266,7 @@ def getHtmlSafely(url):
 	c.close()
 	if httpStatus == 404:
 		raise HttpException(ERR_NOT_FOUND)
-	if 'charset=' in contentType:
+	if contentType and 'charset=' in contentType:
 		encoding = contentType[contentType.find('charset=') + 8:]
 	text = result.contents
 	if not encoding:
