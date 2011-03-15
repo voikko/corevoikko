@@ -300,13 +300,13 @@ def wordInfo(word, dictionary):
 	res = res + "</div>"
 	return res
 
-def checkPage(url, dictionary):
+def checkPage(url, dictionary, clientIp, requestHeaders):
 	log("checkPage: " + url.encode("UTF-8"))
 	if dictionary not in _voikko:
 		return u""
 	v = _voikko[dictionary]
 	try:
-		html = getHtmlSafely(url.encode('UTF-8'))
+		html = getHtmlSafely(url.encode('UTF-8'), clientIp, requestHeaders)
 		segments = parseHtml(html)
 		res = u"Analyysi sivusta " + escape(url) + u"<br />"
 		v.setAcceptUnfinishedParagraphsInGc(True)
@@ -449,7 +449,9 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 		elif self.path.startswith("/checkPage"):
 			contentLength = int(self.headers.getheader('content-length'))
 			queryData = self.rfile.read(min(contentLength, MAX_DOCUMENT_BYTES))
-			self.sendHtmlPage(checkPage(parseQuery(queryData, "url"), parseQuery(queryData, "d")), "text/html")
+			clientIp = self.client_address[0]
+			headers = self.headers.headers
+			self.sendHtmlPage(checkPage(parseQuery(queryData, "url"), parseQuery(queryData, "d"), clientIp, headers), "text/html")
 		else:
 			self.send_response(404)
 			self.end_headers()
