@@ -351,3 +351,18 @@ word:leikkivä
 word:leikkinyt
  analysis
   CLASS=laatusana
+word:piikkinen
+ analysis
+  CLASS=laatusana
+word:piikitön
+ analysis
+  CLASS=laatusana
+word:piikkimäinen
+ analysis
+  CLASS=laatusana
+word:piikeittäin
+ analysis
+  CLASS=seikkasana
+word:piikkisyys
+ analysis
+  CLASS=nimisana

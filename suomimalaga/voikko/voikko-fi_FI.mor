@@ -93,11 +93,9 @@ define @johtimet_nimisana_nimisanasta := <johdin_tAr, johdin_lAinen>;
 
 define @johtimet_laatusana_nimisanasta := <johdin_inen, johdin_tOn, johdin_mAinen>;
 
-define @johtimet_seikkasana_nimisanasta := <johdin_ittAin>;
-
 define @johdin_nimisanasta := @johtimet_nimisana_nimisanasta
                             + @johtimet_laatusana_nimisanasta
-                            + @johtimet_seikkasana_nimisanasta
+                            + <johdin_ittAin>
                             + @johdin_jA; #FIXME: onko tämä oikein?
 
 
@@ -1915,12 +1913,21 @@ subrule tulostus_luokka($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka in @johtimet_laatusana_nimisanasta then
+      return laatusana;
+    end;
     if $allomorfi.luokka in <nimisana, seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
                              huudahdussana, sidesana, etunimi, sukunimi,
                              paikannimi, nimi, kieltosana, lyhenne,
                              lukusana> then
       return $allomorfi.luokka;
+    end;
+    if $allomorfi.luokka in @johtimet_nimisana_laatusanasta then
+      return nimisana;
+    end;
+    if $allomorfi.luokka = johdin_ittAin then
+      return seikkasana;
     end;
   end;
   return nil;
