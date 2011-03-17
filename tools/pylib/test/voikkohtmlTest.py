@@ -207,6 +207,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><p>Kissaa on <script>aksldj</script>ruokittava.</p></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava.")], result)
 	
+	def testH1WithinPClosesP(self):
+		result = parseHtml(u"<html><body><p>Kissa<h1>Koira</h1>jotain muuta</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissa"), (SEGMENT_TYPE_HEADING, u"Koira"), (SEGMENT_TYPE_OTHER, u"jotain muuta")], result)
+	
 	def testLiWithinPIsParseError(self):
 		self.assertParseError(u"<html><body><p>Kissaa on <li>aksldj</li>ruokittava.</p></body></html>", 1, 25)
 	
@@ -214,8 +218,13 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><p>Kissaa on ruokittava.</p><table><tr><td>sdsd</td></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"Kissaa on ruokittava."), (SEGMENT_TYPE_OTHER, u"sdsd")], result)
 	
-	def testTableWithinPIsParseError(self):
-		self.assertParseError(u"<html><body><p><table><tr><td>sdsd</td></tr></table>ruokittava.</p></body></html>", 1, 63)
+	def testTableWithinP(self):
+		result = parseHtml(u"<html><body><p><table><tr><td>sdsd</td></tr></table>ruokittava.</p></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_OTHER, u"sdsd"), (SEGMENT_TYPE_OTHER, u"ruokittava.")], result)
+	
+	def testStrayTdCloseTag(self):
+		result = parseHtml(u"<html><body><p>kissa</p></td></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
 	def testStrongIsJustText(self):
 		result = parseHtml(u"<html><body><p>Kissaa on <strong>ruokittava</strong>.</p></body></html>")

@@ -52,7 +52,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript", "strong"]
 	
 	def isCloseP(self, tag):
-		return tag in ["p", "table", "div", "ul", "ol", "dl"]
+		return tag in ["p", "table", "div", "ul", "ol", "dl", "h1", "h2", "h3", "h4", "h5", "h6"]
 	
 	def isTableCell(self, tag):
 		return tag in ["td", "th"]
@@ -155,6 +155,11 @@ class VoikkoHTMLParser(HTMLParser):
 			elif self.isTableCell(openTag):
 				# TODO: appendUnstructuredText
 				openTag = self.tags.pop()
+		if tag != openTag and tag in ["p", "td"]:
+			# maybe an unclosed p or td was closed after all, but there were forbidden elements within it
+			self.appendOther()
+			self.tags.append(openTag)
+			return
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
