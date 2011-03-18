@@ -190,7 +190,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
              yhdysmerkki_yleisnimen_jälkeen, inen_johdos_nimisanasta,
              inen_päätteinen_laatusana; # Kieli=poliittinen
     end;
-    if (loppu in $oikea.jatko) then
+    if loppu in $oikea.jatko and $oikea.luokka = nimisana then
       result <[alku: $sana] + $oikea>, accept;
     end;
     if omistusliite in $oikea.jatko then

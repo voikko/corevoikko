@@ -366,3 +366,7 @@ word:piikeittäin
 word:piikkisyys
  analysis
   CLASS=nimisana
+word:ruotsalainen
+ expected:1
+ analysis
+  CLASS=nimisana_laatusana
