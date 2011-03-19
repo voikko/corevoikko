@@ -18,7 +18,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, U
 
 dnl General options for autoconf
 AC_PREREQ(2.60)
-AC_INIT([libvoikko],[3.1.1],[hatapitk@iki.fi])
+AC_INIT([libvoikko],[3.2],[hatapitk@iki.fi])
 AC_CONFIG_HEADERS(config.h)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AC_CONFIG_MACRO_DIR([m4])
@@ -162,5 +162,5 @@ AC_CHECK_FUNCS([getpwuid_r])
 dnl Default compiler settings
 CXXFLAGS="$CXXFLAGS -Wall -Werror -pedantic"
 
-AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile msvc/Makefile test/Makefile src/libvoikko.pc])
+AC_CONFIG_FILES([Makefile src/Makefile src/tools/Makefile java/Makefile msvc/Makefile test/Makefile src/libvoikko.pc])
 AC_OUTPUT

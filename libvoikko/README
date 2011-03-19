@@ -50,7 +50,7 @@ Features
    based API.
  - String tokenizer and sentence splitter.
  - Morphological analyzer.
- - All functionality is made available through C and Python APIs.
+ - All functionality is made available through C, Python and Java APIs.
 
 Documentation for using the library can be found from header file voikko.h.
 
@@ -61,6 +61,8 @@ Build requirements
 C++ compiler (GCC) and Python (version 2.3 or later but not version 3)
 must be available in order to build this library.
 
+Java API is designed to be built as a Maven project. No autotools or Ant
+based build system is available yet.
 
 Build configuration
 ===================

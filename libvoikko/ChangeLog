@@ -1,3 +1,7 @@
+2011-03-19 Harri Pitkänen <hatapitk@iki.fi>
+	* Increase version number to 3.2.
+	* Add Java files to source package.
+
 2011-03-06 Harri Pitkänen <hatapitk@iki.fi>
 	* Accept soft hyphen in Finnish spell checking if it is placed in a valid
 	  hyphenation point.
