@@ -190,7 +190,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
              yhdysmerkki_yleisnimen_jälkeen, inen_johdos_nimisanasta,
              inen_päätteinen_laatusana; # Kieli=poliittinen
     end;
-    if loppu in $oikea.jatko and $oikea.luokka = nimisana then
+    if loppu in $oikea.jatko then
       result <[alku: $sana] + $oikea>, accept;
     end;
     if omistusliite in $oikea.jatko then
@@ -542,6 +542,16 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
   end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
+  
+  if $index greater 1 or $oikea.luokka = laatusana then
+    if loppu in $oikea.jatko then
+      result $res, accept;
+    end;
+    if liitesana in $oikea.jatko then
+      result $res, rules liitesana;
+    end;
+  end;
+  
   if tavuviiva in $oikea.jatko and
     ($oikea.tiedot = nil or not (ei_ys in $oikea.tiedot or ei_ysa in $oikea.tiedot)) then
     result $res, rules laatusana;
@@ -553,12 +563,6 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
     else
       result $res, rules yhdysmerkki_laatusanan_jälkeen;
     end;
-  end;
-  if loppu in $oikea.jatko then
-    result $res, accept;
-  end;
-  if liitesana in $oikea.jatko then
-    result $res, rules liitesana;
   end;
   result $res,
          rules laatusanan_sijapääte,

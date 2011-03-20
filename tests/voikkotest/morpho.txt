@@ -370,3 +370,7 @@ word:ruotsalainen
  expected:1
  analysis
   CLASS=nimisana_laatusana
+word:ruotsalainenkin
+ expected:1
+ analysis
+  CLASS=nimisana_laatusana
