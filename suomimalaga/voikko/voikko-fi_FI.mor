@@ -199,7 +199,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if liitesana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules liitesana;
     end;
-    result <[alku: $sana] + $oikea>, rules nimisanan_sijapääte, nimisanan_johdos;
+    result <$oikea + [alku: $sana, luokka: nimisana]>, rules nimisanan_sijapääte, nimisanan_johdos;
 
   end;
 end;
@@ -541,7 +541,7 @@ combi_rule laatusana ($vasen, $oikea, $sana, $index):
     ? $oikea.tiedot = nil or not ysj in $oikea.tiedot;
   end;
 
-  define $res := $vasen + <[alku: $sana] + $oikea>;
+  define $res := $vasen + <$oikea + [alku: $sana, luokka: laatusana]>;
   
   if $index greater 1 or $oikea.luokka = laatusana then
     if loppu in $oikea.jatko then
