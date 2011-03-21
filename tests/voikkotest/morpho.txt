@@ -374,3 +374,5 @@ word:ruotsalainenkin
  expected:1
  analysis
   CLASS=nimisana_laatusana
+word:juoksemiseen
+ expected:1
