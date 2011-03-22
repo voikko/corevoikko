@@ -489,6 +489,10 @@ talomainen # Oikea mainen-johdos
 !siistimainen # Väärä mainen-johdos
 otetut
 nuolaistusti
+järjettömästi
+hyppijöistään
+!kissamaisiaan
+!kissahämärästi
 oltu
 ollut
 oltava

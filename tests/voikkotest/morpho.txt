@@ -382,3 +382,8 @@ word:ruotsalaisessa
   CLASS=laatusana
 word:juoksemiseen
  expected:1
+word:superhämärästi
+ expected:1
+ analysis
+  CLASS=laatusana
+  SIJAMUOTO=kerrontosti

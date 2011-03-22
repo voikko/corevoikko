@@ -822,6 +822,7 @@ end;
 
 combi_rule nimisanan_sijapääte ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = sijapääte;
+  ? $oikea.sija /= kerronto_sti;
 
   define $edellinen := $vasen.($index - 1);
 
@@ -1710,10 +1711,14 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  result $res,
-          rules nimisanan_sijapääte, #FIXME: voi olla laatusana
-                voitto_yliaste,
-                johdin_nimisana_laatusanasta, nimisanan_johdos;
+  if $oikea.luokka in @johtimet_nimisana_nimisanasta then
+    result $res, rules nimisanan_sijapääte, nimisanan_johdos;
+  elseif $oikea.luokka in @johtimet_laatusana_nimisanasta then
+    result $res, rules laatusanan_sijapääte, voitto_yliaste, johdin_nimisana_laatusanasta;
+  else
+    result $res, rules nimisanan_sijapääte, laatusanan_sijapääte, voitto_yliaste,
+                       johdin_nimisana_laatusanasta, nimisanan_johdos;
+  end;
 end;
 
 
