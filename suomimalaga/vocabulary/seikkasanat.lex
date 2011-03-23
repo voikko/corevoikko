@@ -232,6 +232,9 @@
 [perusmuoto: "ihan", alku: "ihan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ihka", alku: "ihka", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ihkasen", alku: "ihkasen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ihmeemmin", alku: "ihmeemmin", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "ihmeempää", alku: "ihmeempää", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "ihmeesti", alku: "ihmeesti", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <murre>];
 [perusmuoto: "iki", alku: "iki", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ikinä", alku: "ikinä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "ikäänkuin", alku: "ikäänkuin", luokka: seikkasana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=ppppp=pppp"];
