@@ -328,8 +328,6 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
 
   ? $oikea.luokka in <nimisana, nimi_laatusana>;
 
-  define $res := $vasen + <[alku: $sana] + $oikea>;
-
   define $edellinen := $vasen.($index - 1);
   ? ((nimisana in $edellinen.jatko)    or
      (tavuviiva in $edellinen.jatko and $edellinen.luokka in @nimisana + <laatusana>) or
@@ -342,6 +340,8 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
     (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
 
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+  
   if $edellinen.luokka in <laatusana, nimi_laatusana> then
     if $edellinen.luokka = laatusana then
       result $res, rules nimisanan_johdos;
@@ -365,6 +365,9 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
                        etuliite, paikannimen_lainen_johdos, yhdysmerkki_yleisnimen_jälkeen,
                        inen_johdos_nimisanasta, inen_päätteinen_laatusana; # Kieli=poliittinen
   end;
+  
+  $res := $vasen + <$oikea + [alku: $sana, luokka: nimisana]>;
+  
   if (loppu in $oikea.jatko) then
     result $res, accept;
   end;

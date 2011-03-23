@@ -387,3 +387,7 @@ word:superhämärästi
  analysis
   CLASS=laatusana
   SIJAMUOTO=kerrontosti
+word:tapakristitty
+ expected:1
+ analysis
+  CLASS=nimisana
