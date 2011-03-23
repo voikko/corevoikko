@@ -3,6 +3,7 @@
 # on liian hidas. (-:
 aasiannorsu
 afrikannorsu
+alamainen
 Alppi
 Aalto
 Aaltonen
@@ -65,6 +66,8 @@ Autio
 autoimmuuni
 autoimmuunihepatiitti
 autoimmuunisairaus
+autoimmuunitauti
+autoimmuunityreoidiitti
 avauma
 avautuma
 beetahemolyyttinen
@@ -124,6 +127,7 @@ Haapaniemi
 haarautuma
 haaroittua
 haaroitus
+Haavikko
 Hakaniemi
 halkeama
 Halme
@@ -219,6 +223,7 @@ itkettynyt
 itkettyä
 itsesäätyvä
 itsetutkiskelu
+itsevarma
 itäsaksalainen
 Itämeri
 Itävalta
@@ -250,7 +255,9 @@ Jylhä
 jähmettymä
 jälkeenjäänyt
 jälkeläinen
+jälkisointi
 järveläinen
+Järvenpää
 Järvi
 Järviluoma
 jättiläinen
@@ -264,6 +271,7 @@ kaato
 kaavoitus
 kahdentuma
 Kainulainen
+kaitanokkalokki
 Kalajoki
 kalkkeuma
 kalkkeutuma
@@ -462,6 +470,8 @@ Laine
 laiskanpulskea
 langoitus
 Lapinjärvi
+lapinkirvinen
+lapinuunilintu
 Lappeenranta
 Lappi
 lasittua
@@ -489,6 +499,7 @@ Leini
 Lemu
 leniniläinen
 lesbolainen
+leveäpyrstökihu
 levytys
 liikutus
 liittolainen
@@ -533,6 +544,7 @@ lyhytaalto
 lyhytelokuva
 lyhytfilmi
 lyhytiskusylinteri
+lyhytnokkahanhi
 lyhytnumero
 lyhytohjelma
 lyhytproosa
@@ -542,6 +554,7 @@ lyhyttavara
 lyhytterapia
 lyhytvalintakoodi
 lyhytvalintanumero
+lyhytvarvaskiuru
 Lyyli
 lyönti
 lämmitys
@@ -584,6 +597,7 @@ mierolainen
 Miina
 mikkelinpäivä
 miljoonabisnes
+miljoonaperintö
 miljardibisnes
 Minttu
 Missi
@@ -643,6 +657,7 @@ oivallinen
 olympialainen
 omaisuus
 omanlainen
+ominaissointi
 opettajainen
 opetus
 opistolainen
@@ -690,6 +705,8 @@ Pirttimäki
 pirulainen
 pito
 pitoisuus
+pk-yritys
+PK-yritys
 Pohja
 Pohjoismaa
 pohjoisvaltalainen
@@ -844,6 +861,8 @@ Sorsa
 sortuma
 sovitus
 strippaus
+subduraalihematooma
+subduraalivuoto
 suitsutus
 sulautuma
 sulkeutuma
@@ -883,6 +902,7 @@ takautuma
 takomakone
 takomataito
 takomatyö
+takuuvarma
 Tallus
 Tamminen
 Tanska
@@ -903,6 +923,8 @@ teollisuus
 teratavu
 Terho
 Terttu
+teräväpiirtokanava
+teräväpiirtolähetys
 teräväpiirtotelevisio
 tieteiselokuva
 tieteisfilmi
@@ -952,7 +974,9 @@ täysihoito
 täysihoitola
 täysisukulainen
 täysiverihevonen
+täyttö
 törähtää
+uhkarohkea
 uitto
 Ukraina
 uloskäytävä
@@ -974,6 +998,7 @@ uusiseelantilainen
 Uusitalo
 uzbekistanilainen
 Vaajakoski
+vaaleakultarinta
 vaatetus
 vahvuus
 vaikutus
@@ -1095,6 +1120,7 @@ yhteensovitus
 yhteensulautuminen
 yhteentörmäys
 yhteenveto
+yhteissointi
 yhtenäiskoulu
 yhtenäiskulttuuri
 yhtymä

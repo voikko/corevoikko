@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -971,6 +971,7 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "vetää", alku: "vejetään", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "viedä", alku: "viiä", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "viedä", alku: "viiään", luokka: teonsana, jatko: <liitesana, loppu>, äs: ä];
 
 [perusmuoto: "vuosi", alku: "vuuve", luokka: nimisana, jatko: @yksikön_heikko_aste_ja_monikon_nimentö, äs: a];
 
@@ -1088,6 +1089,24 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "Cotton", alku: "Cotton", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Telekarelia", alku: "Telekareli", luokka: nimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Sanaskoski", alku: "Sanaskosk", luokka: paikannimi, jatko: <lovi>, äs: a];
+[perusmuoto: "Kalaksikukko", alku: "Kalaksikuk", luokka: nimi, jatko: <verkko>, äs: a];
+[perusmuoto: "lipstikka", alku: "lipstik", luokka: nimisana, jatko: <solakka>, äs: a];
+[alku: "FinnFor2010", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "apache2", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
+[alku: "drupal6", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
+[perusmuoto: "Gerritsen", alku: "Gerritsen", luokka: sukunimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "Keryx", alku: "Keryx", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "JFlex", alku: "JFlex", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "tikistää", alku: "tikist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
+
+[perusmuoto: "testeri", alku: "tester", luokka: nimisana, jatko: <paperi>, äs: ä];
+[perusmuoto: "Jerri", alku: "Jerr", luokka: etunimi, jatko: <risti>, äs: ä];
+[perusmuoto: "akkusatorinen", alku: "akkusatori", luokka: laatusana, jatko: <nainen>, äs: a];
+[alku: "abc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[perusmuoto: "hieraattinen", alku: "hieraatti", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "Riesco", alku: "Riesco", luokka: sukunimi, jatko: <valo>, äs: a];
+[perusmuoto: "aksiaali", alku: "aksiaali", luokka: etuliite, jatko: @sana2, äs: aä];
+
 
 ##[perusmuoto: "soinnillinen", alku: "soinnilli", luokka: laatusana, jatko: <nainen>, äs: a];
 #[perusmuoto: "biologisoida", alku: "biologiso", luokka: teonsana, jatko: <voida>, äs: a];

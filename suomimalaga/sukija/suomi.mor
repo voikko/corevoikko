@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -398,6 +398,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $n):
 
   ? $oikea.luokka in $vasen.$i.jatko;
   ? yhdyssana_oikein ($vasen, $oikea, $i);
+###  ? ($oikea.tiedot = nil) or not (ei_ys in $oikea.tiedot); # Ei toimi!
 
   if (tavuviiva in $oikea.jatko) then
     result $res, rules tavuviiva;
@@ -1358,14 +1359,6 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
 #define $a := transmit (<$oikea.luokka> + <$oikea.perusmuoto> + <$vasen.$n.luokka>);
 #define $b := transmit (<$vasen.$n.perusmuoto> + <$oikea.perusmuoto>);
 
-#define $a := transmit (<"a"> + <($vasen.1).alku> + <($vasen.1).perusmuoto> + <($vasen.1).luokka>);
-#define $b := transmit (<"b"> + <($vasen.$n).alku> + <($vasen.$n).perusmuoto> + <($vasen.$n).luokka>);
-#define $c := transmit (<"c"> + <$oikea.alku> + <$oikea.perusmuoto> + <$oikea.luokka>);
-#define $d := transmit (<"d"> + <$n>);
-
-#define $a := transmit (<"yhdyssana_oikein-a"> + <$vasen>);
-#define $b := transmit (<"yhdyssana_oikein-b"> + <$oikea>);
-#define $c := transmit (<"yhdyssana_oikein-c"> + <$n>);
 
   # Jotkut sanat eivät voi olla yhdyssanojen osina.
   #
@@ -1388,18 +1381,13 @@ subrule yhdyssana_oikein ($vasen, $oikea, $n):
     if (length($vasen.$n.alku) greater length($vasen.$n.perusmuoto)) then
       $s := $vasen.$n.alku;
     end;
-    if ((substring($s,1R) matches @ääntiö) and (substring($oikea.perusmuoto,1) matches @ääntiö)) then
-#define $e := transmit (<"yhdyssana_oikein-e"> + <$s> + <$oikea.perusmuoto> + <substring($s,1R)>
-#                       + <substring($oikea.perusmuoto,1)>
-#                       + <(substring($s,1R) /= substring($oikea.perusmuoto,1))>);
-      return (substring($s,1R) /= substring($oikea.perusmuoto,1));
+    define $s1 := substring($s,1R);
+    define $s2 := substring($oikea.perusmuoto,1);
+    if (($s1 = $s2) and ($s1 matches @ääntiö) and ($s2 matches @ääntiö)) then
+      return no;
+##      return ($s1 /= $s2);
     end;
   end;
-
-##  if (($vasen.$n.luokka = laatusana) and ($oikea.luokka = laatusana)) then
-##    return no;
-##  end;
-#define $ö := transmit ("Heps!");
   return yes;
 end;
 
@@ -2700,17 +2688,28 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
     (yhdyssana in $vasen.$i.jatko) or
     ($oikea.luokka in <paikannimi, sukunimi, teonsana>);
 
-## ? ($oikea.tiedot = nil) or
-##    (not ei_ysj in $oikea.tiedot and not ei_ys in $oikea.tiedot);
 
-#define $a := transmit (($vasen);
-#define $b := transmit ($vasen.$i - jatko);
-#define $c := transmit ($oikea - jatko);
-#define $ö := transmit (<$sana> + <"§">);
-
-#define $bb := transmit ("bb " + $sana);
-
-  ? yhdyssana_oikein ($vasen, $oikea, $i);
+  if ((($vasen.$i.tiedot /= nil) and ((ei_ys in $vasen.$i.tiedot) or (ei_ysa in $vasen.$i.tiedot))) or
+      (($oikea.tiedot    /= nil) and ((ei_ys in $oikea.tiedot)))) then
+#define $d := transmit (<"yhdyssana_oikein-d">);
+    stop;
+  end;
+  if (($vasen.$i.luokka /= tavuviiva) and ($oikea.tiedot /= nil) and (ei_ysj in $oikea.tiedot)) then
+    stop;
+  end;
+  if (($vasen.$i.perusmuoto /= nil) and ($oikea.perusmuoto /= nil)) then
+    define $s := $vasen.$i.perusmuoto;
+#define $iii := transmit($vasen.$i.alku);
+    if (length($vasen.$i.alku) greater length($vasen.$i.perusmuoto)) then
+      $s := $vasen.$i.alku;
+    end;
+    define $s1 := substring($s,1R);
+    define $s2 := substring($oikea.perusmuoto,1);
+    if (($s1 = $s2) and ($s1 matches @ääntiö) and ($s2 matches @ääntiö)) then
+      stop;
+    end;
+  end;
+##  ? yhdyssana_oikein ($vasen, $oikea, $i);
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
