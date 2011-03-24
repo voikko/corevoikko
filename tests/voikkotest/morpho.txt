@@ -391,3 +391,7 @@ word:tapakristitty
  expected:1
  analysis
   CLASS=nimisana
+word:härkäjuoksijana
+ expected:1
+ analysis
+  CLASS=nimisana
