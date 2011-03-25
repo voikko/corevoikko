@@ -73,10 +73,6 @@ $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
 $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
 	cp $^ $@
 
-ifeq "$(VOIKKO_DEBUG)" "yes"
-    override GENLEX_OPTS+= --debug
-endif
-
 voikko/joukahainen.lex: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \

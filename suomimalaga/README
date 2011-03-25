@@ -77,6 +77,10 @@ Variables for tuning the build process
       included in the vocabulary only if all of the style flags are listed
       here. Available style flags are listed in file vocabulary/flags.txt.
       Default: old,international
+    + --sourceid
+      Insert word identifiers from Joukahainen to lexicon and return them
+      during morphological analysis. This option has no effect unless
+      VOIKKO_DEBUG=yes is set. By default source ids are not preserved.
   * EXTRA_LEX="path/to/file1.lex path/to/file2.lex ..."
     Adds extra malaga lexicon files to the vocabulary. By default, no extra
     lexicons are added.

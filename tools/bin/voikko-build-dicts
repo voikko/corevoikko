@@ -125,6 +125,14 @@ d.nameEn = u"Finnish, very extensive vocabulary (with additional information nee
 d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education --style=dialect,old,international,foreign --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
+d = Voikkodict()
+d.idSuffix = u"-morphoid"
+d.variant = u"morphoid"
+d.nameFi = u"suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio ja linkitys Joukahaiseen)"
+d.nameEn = u"Finnish, very extensive vocabulary (with additional information needed in morphological analysis and links to Joukahainen)"
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education --style=dialect,old,international,foreign --min-frequency=10 --sourceid" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
+allDicts.append(d)
+
 WORK_DIR = "build"
 
 INDEX_FILE_NAME = WORK_DIR + "/index.html"

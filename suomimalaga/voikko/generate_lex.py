@@ -98,7 +98,7 @@ def handle_word(word):
 	
 	# Construct debug information
 	debug_info = u""
-	if OPTIONS["debug"]:
+	if OPTIONS["sourceid"]:
 		debug_info = u', sourceid: "%s"' % word.getAttribute("id")
 	
 	# Process all alternative forms
