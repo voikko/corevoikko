@@ -60,6 +60,10 @@ Variables for tuning the build process
 --------------------------------------
 
 - make voikko:
+  * VOIKKO_BUILDDIR=path/to/directory
+    Specifies the directory where build files are written to while building
+    for Voikko.
+    Default: voikko (build within source directory)
   * GENLEX_OPTS="--option1=xxx --option2=yyy ..."
     Sets options string for generate_lex.py.
     Available options for generate_lex.py are

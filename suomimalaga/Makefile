@@ -1,6 +1,7 @@
 
 # Build configuration. See README for more information.
 PYTHON=python
+VOIKKO_BUILDDIR=voikko
 DESTDIR=/usr/lib/voikko
 GENLEX_OPTS=
 EXTRA_LEX=
@@ -34,16 +35,13 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
 
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
-         voikko/voikko-fi_FI.all voikko/voikko-fi_FI.sym voikko/voikko-fi_FI.mor \
-         voikko/olla-ei.lex voikko/suomi.lex voikko/suomi.inc \
-         voikko/all.inc \
-         voikko/voikko-fi_FI.lex voikko/voikko-fi_FI.pro.in common/voikkoutils.py \
+         voikko/voikko-fi_FI.pro.in common/voikkoutils.py \
          vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX))
 
-VOIKKO_BINDIST=voikko/voikko-fi_FI.pro voikko/voikko-fi_FI.lex_? voikko/voikko-fi_FI.mor_? \
-	voikko/voikko-fi_FI.sym_?
+VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
+               $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
 
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
@@ -51,12 +49,15 @@ VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex taivutustaydennykset.lex sidesanat.lex \
 	huudahdussanat.lex
+VOIKKO_COPY_FROM_VOIKKO=voikko-fi_FI.all voikko-fi_FI.sym voikko-fi_FI.mor \
+	olla-ei.lex suomi.lex suomi.inc voikko-fi_FI.lex
 
 SUKIJA_LEX_FROM_XML=joukahainen atk laaketiede matluonnontiede kasvatustiede
 
 # Files to ship in the source package (duplicates are allowed)
 SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
-	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY))
+	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
+	$(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOIKKO))
 
 
 .PHONY: all clean update-vocabulary voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
@@ -67,19 +68,19 @@ voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikk
 	voikko/main.lex voikko/voikko-fi_FI.pro voikko/config.inc
 	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
-$(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)): voikko/%: vocabulary/%
+$(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY)): $(VOIKKO_BUILDDIR)/%: vocabulary/%
 	cp $^ $@
 
-$(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)): voikko/%: common/%
+$(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_COMMON)): $(VOIKKO_BUILDDIR)/%: common/%
 	cp $^ $@
 
-voikko/joukahainen.lex: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
+$(VOIKKO_BUILDDIR)/joukahainen.lex: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
-	$(PYTHON) voikko/generate_lex.py $(GENLEX_OPTS)
+	$(PYTHON) voikko/generate_lex.py $(GENLEX_OPTS) --destdir=$(VOIKKO_BUILDDIR)
 
-voikko/main.lex: voikko/joukahainen.lex $(EXTRA_LEX)
+$(VOIKKO_BUILDDIR)/main.lex: $(VOIKKO_BUILDDIR)/joukahainen.lex $(EXTRA_LEX)
 	cat $^ > $@
 
 
@@ -100,21 +101,21 @@ VOIKKO_PRO_SEDSCRIPT="s/VANHAHKOT_MUODOT/$(VANHAHKOT_MUODOT)/; \
 	s/SM_BUILDCONFIG/$(subst /,\\/,GENLEX_OPTS=$(GENLEX_OPTS) EXTRA_LEX=$(EXTRA_LEX))/; \
 	s/SM_BUILDDATE/$(SM_BUILDDATE)/"
 
-voikko/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
+$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro: voikko/voikko-fi_FI.pro.in
 	sed -e $(VOIKKO_PRO_SEDSCRIPT) < $^ > $@
 
-voikko/config.inc:
+$(VOIKKO_BUILDDIR)/config.inc:
 	echo "define @voikko_debug := $(VOIKKO_DEBUG);" > $@
 
 clean:
-	rm -f voikko/*_l voikko/transmit common/voikkoutils.pyc common/hfconv.pyc
-	rm -f voikko/config.inc
+	rm -f $(VOIKKO_BUILDDIR)/*_l common/voikkoutils.pyc common/hfconv.pyc
+	rm -f $(VOIKKO_BUILDDIR)/config.inc
 	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
-	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY))
-	rm -f $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON))
-	rm -f voikko/joukahainen.lex voikko/main.lex voikko/voikko-fi_FI.pro
+	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY))
+	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_COMMON))
+	rm -f $(VOIKKO_BUILDDIR)/joukahainen.lex $(VOIKKO_BUILDDIR)/main.lex $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f TAGS
@@ -133,9 +134,6 @@ suomi-malaga-$(SM_VERSION).tar.bz2: $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $
 
 $(patsubst %,suomi-malaga-$(SM_VERSION)/%, $(sort $(SRCDIST))): suomi-malaga-$(SM_VERSION)/%: %
 	install -m 644 -D $^ $@
-
-voikko/transmit: common/transmit.cc
-	g++ -g common/transmit.cc -o voikko/transmit
 
 voikko-install: voikko
 	install -m 755 -d $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2010 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2011 Harri Pitkänen (hatapitk@iki.fi)
 # Program to generate lexicon files for Suomi-malaga Voikko edition
 
 # This program is free software; you can redistribute it and/or modify
@@ -16,9 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-# Path to target directory
-VOIKKO_LEX_DIR = u"voikko"
 
 import sys
 sys.path.append("common")
@@ -40,7 +37,7 @@ CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
-main_vocabulary = generate_lex_common.open_lex(VOIKKO_LEX_DIR, "joukahainen.lex")
+main_vocabulary = generate_lex_common.open_lex(OPTIONS["destdir"], "joukahainen.lex")
 
 def frequency(word):
 	fclass = word.getElementsByTagName("fclass")

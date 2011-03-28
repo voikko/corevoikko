@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 - 2008 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2011 Harri Pitkänen (hatapitk@iki.fi)
 #           2007        Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Functions and variables that are common to Sukija and Voikko versions.
@@ -176,7 +176,7 @@ def write_entry(main_vocabulary,vocabulary_files,word, entry):
 # Parse command line options and return them in a dictionary
 def get_options():
 	try:
-		optlist = ["min-frequency=", "extra-usage=", "style=", "sourceid"]
+		optlist = ["min-frequency=", "extra-usage=", "style=", "destdir=", "sourceid"]
 		(opts, args) = getopt.getopt(sys.argv[1:], "", optlist)
 	except getopt.GetoptError:
 		sys.stderr.write("Invalid option list for %s\n" % sys.argv[0])
@@ -184,7 +184,8 @@ def get_options():
 	options = {"frequency": 9,
 	           "extra-usage": [],
 	           "style": ["old", "international"],
-	           "sourceid": False}
+	           "sourceid": False,
+	           "destdir": None}
 	for (name, value) in opts:
 		if name == "--min-frequency":
 			options["frequency"] = int(value)
@@ -192,6 +193,8 @@ def get_options():
 			options["extra-usage"] = value.split(",")
 		elif name == "--style":
 			options["style"] = value.split(",")
+		elif name == "--destdir":
+			options["destdir"] = value
 		elif name == "--sourceid":
 			options["sourceid"] = True
 	return options
