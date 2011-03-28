@@ -1996,6 +1996,17 @@ subrule tulostus_tapaluokka($tietue):
   return nil;
 end;
 
+subrule tulostus_aikamuoto($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka in @kestämän_tekijäpääte then
+      return kestämä;
+    end;
+  end;
+  return nil;
+end;
+
 subrule tulostus_kielto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
@@ -2152,6 +2163,9 @@ subrule tulostus_v2($tietue):
             luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue),
             perusmuoto: tulostus_debug_perusmuoto($tietue)];
+    if $res.luokka = teonsana then
+      $res :=+ [aikamuoto: tulostus_aikamuoto($tietue)];
+    end;
   else
     $res := [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
