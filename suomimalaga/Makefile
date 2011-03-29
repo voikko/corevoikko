@@ -59,19 +59,30 @@ SRCDIST=$(SRC_ONLY) $(patsubst %,common/%,$(VOIKKO_COPY_FROM_COMMON)) \
 	$(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
 	$(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOIKKO))
 
+VOIKKO_ACTUALLY_COPY_FROM_VOIKKO=
+ifneq "$(VOIKKO_BUILDDIR)" "voikko"
+	VOIKKO_ACTUALLY_COPY_FROM_VOIKKO=$(VOIKKO_COPY_FROM_VOIKKO)
+endif
 
-.PHONY: all clean update-vocabulary voikko voikko-install voikko-preprocessed-l-gzip dist-gzip
+.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip
 
 all: voikko
 
-voikko: $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,voikko/%,$(VOIKKO_COPY_FROM_COMMON)) \
-	voikko/main.lex voikko/voikko-fi_FI.pro voikko/config.inc
-	@malmake voikko/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
+voikko: $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY)) $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_COMMON)) \
+	$(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_ACTUALLY_COPY_FROM_VOIKKO)) \
+	$(VOIKKO_BUILDDIR)/main.lex $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/config.inc
+	@malmake $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro 2>&1 | grep -v "Warning: No allomorphs generated."
 
 $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY)): $(VOIKKO_BUILDDIR)/%: vocabulary/%
+	@mkdir -p $(VOIKKO_BUILDDIR)
 	cp $^ $@
 
 $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_COMMON)): $(VOIKKO_BUILDDIR)/%: common/%
+	@mkdir -p $(VOIKKO_BUILDDIR)
+	cp $^ $@
+
+$(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_ACTUALLY_COPY_FROM_VOIKKO)): $(VOIKKO_BUILDDIR)/%: voikko/%
+	@mkdir -p $(VOIKKO_BUILDDIR)
 	cp $^ $@
 
 $(VOIKKO_BUILDDIR)/joukahainen.lex: vocabulary/joukahainen.xml vocabulary/flags.txt voikko/generate_lex.py \
@@ -115,6 +126,7 @@ clean:
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY))
 	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_COMMON))
+	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_ACTUALLY_COPY_FROM_VOIKKO))
 	rm -f $(VOIKKO_BUILDDIR)/joukahainen.lex $(VOIKKO_BUILDDIR)/main.lex $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
