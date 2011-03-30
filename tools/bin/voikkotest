@@ -32,7 +32,6 @@ SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
 THREADS = voikkoutils.get_preference('voikkospell_threads')
 LANGUAGE = voikkoutils.get_preference('language_variant')
-BUILD_OPTIONS = voikkoutils.get_preference('voikkotest_build_options')
 ENCODING = voikkoutils.get_preference('encoding')
 SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
 DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
@@ -136,7 +135,7 @@ def shell(cwd, command):
 	
 # Ensure that the current version is up to date
 def update_smv():
-	if not shell(SMV, "make voikko %s" % BUILD_OPTIONS):
+	if not shell(SMV, "make voikko"):
 		sys.stderr.write(u"Failed to compile new version of Suomi-malaga.\n")
 		sys.exit(1)
 	if SM_DESTDIR is not None:
@@ -151,9 +150,9 @@ def clean_smv():
 		sys.exit(1)
 
 # Run the spelling tests
-def spell_tests(voikko):
+def spell_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(spelltest, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		linecount = 0
@@ -197,9 +196,9 @@ def spell_tests(voikko):
 		sys.exit(1)
 
 # Run the hyphenator tests
-def hyphen_tests(voikko):
+def hyphen_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(hyphentest, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		section = u""
@@ -247,9 +246,9 @@ def stripWhitespaceAndComments(line):
 	return line.strip()
 
 # Run grammar tests
-def grammar_tests(voikko):
+def grammar_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(GRAMMARTESTFILE, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		section = u""
@@ -305,9 +304,9 @@ def setDefaults(voikko):
 	voikko.setMinHyphenatedWordLength(2)
 
 # Run suggestion tests
-def suggestion_tests(voikko):
+def suggestion_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(suggesttest, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		section = u""
@@ -384,9 +383,9 @@ def diffMorphoAnalyses(expectedAnalyses, expectedAnalysesCount,
 	return None
 
 # Run morphological analysis tests
-def morpho_tests(voikko):
+def morpho_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(MORPHOTESTFILE, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		linecount = 0
@@ -456,9 +455,9 @@ def morpho_tests(voikko):
 
 
 # Run tokenizer tests
-def tokenizer_tests(voikko):
+def tokenizer_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(TOKENTESTFILE, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		inputString = None
@@ -494,9 +493,9 @@ def tokenizer_tests(voikko):
 		sys.exit(1)
 
 # Run sentence tests
-def sentence_tests(voikko):
+def sentence_tests(voikko, testFile):
 	try:
-		inputfile = codecs.open(SENTENCETESTFILE, "r", ENCODING)
+		inputfile = codecs.open(testFile, "r", ENCODING)
 		testcount = 0
 		failcount = 0
 		inputString = None
@@ -557,7 +556,7 @@ if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
 	voikko = Voikko(LANGUAGE)
-	if not spell_tests(voikko):
+	if not spell_tests(voikko, spelltest):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
 	voikko.terminate()
@@ -579,12 +578,12 @@ if "--compare" in [opt[0] for opt in opts]:
 else:
 	update_smv()
 	voikko = Voikko(LANGUAGE)
-	spell_tests(voikko)
-	suggestion_tests(voikko)
-	morpho_tests(voikko)
-	hyphen_tests(voikko)
-	grammar_tests(voikko)
-	tokenizer_tests(voikko)
-	sentence_tests(voikko)
+	spell_tests(voikko, spelltest)
+	suggestion_tests(voikko, suggesttest)
+	morpho_tests(voikko, MORPHOTESTFILE)
+	hyphen_tests(voikko, hyphentest)
+	grammar_tests(voikko, GRAMMARTESTFILE)
+	tokenizer_tests(voikko, TOKENTESTFILE)
+	sentence_tests(voikko, SENTENCETESTFILE)
 	runCompatibilityTests()
 	voikko.terminate()
