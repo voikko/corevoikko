@@ -31,7 +31,6 @@ from libvoikko import SuggestionStrategy
 SVNROOT = voikkoutils.get_preference('svnroot')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
 THREADS = voikkoutils.get_preference('voikkospell_threads')
-LANGUAGE = voikkoutils.get_preference('language_variant')
 ENCODING = voikkoutils.get_preference('encoding')
 SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
 DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
@@ -543,7 +542,7 @@ if "--base" in [opt[0] for opt in opts]:
 if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
-	voikko = Voikko(LANGUAGE)
+	voikko = Voikko("fi")
 	if not spell_tests(voikko, SVNROOT + "/trunk/tests/voikkotest/fi-x-malstd/spell.txt"):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
@@ -593,13 +592,17 @@ else:
 		build(configMap)
 		print " Build complete, starting tests"
 		voikko = Voikko(language=configMap["LANGUAGE"], path=INSTALLDIR)
-		spell_tests(voikko, testdir + "/spell.txt")
-		suggestion_tests(voikko, testdir + "/suggest.txt")
-		morpho_tests(voikko, testdir + "/morpho.txt")
-		hyphen_tests(voikko, testdir + "/hyphen.txt")
-		grammar_tests(voikko, testdir + "/grammar.txt")
-		tokenizer_tests(voikko, testdir + "/tokenizer.txt")
-		sentence_tests(voikko, testdir + "/sentence.txt")
+		ok = True
+		ok = spell_tests(voikko, testdir + "/spell.txt") and ok
+		ok = suggestion_tests(voikko, testdir + "/suggest.txt") and ok
+		ok = morpho_tests(voikko, testdir + "/morpho.txt") and ok
+		ok = hyphen_tests(voikko, testdir + "/hyphen.txt") and ok
+		ok = grammar_tests(voikko, testdir + "/grammar.txt") and ok
+		ok = tokenizer_tests(voikko, testdir + "/tokenizer.txt") and ok
+		ok = sentence_tests(voikko, testdir + "/sentence.txt") and ok
 		voikko.terminate()
+		if not ok:
+			print "FAILED!"
+			sys.exit(1)
 	
 	runCompatibilityTests()

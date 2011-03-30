@@ -1,0 +1,3 @@
+word:koiralla
+ analysis
+  BASEFORM=koira
