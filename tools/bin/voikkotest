@@ -38,14 +38,8 @@ DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
 SM_DESTDIR = voikkoutils.get_preference('voikkotest_sm_destdir')
 
 TESTFILES = SVNROOT + "/trunk/tests/voikkotest"
+BUILDDIR = WORKSPACE + "/build"
 INSTALLDIR = WORKSPACE + "/inst"
-spelltest = SVNROOT + "/trunk/tests/voikkotest/spell.txt"
-hyphentest = SVNROOT + "/trunk/tests/voikkotest/hyphen.txt"
-suggesttest = SVNROOT + "/trunk/tests/voikkotest/suggest.txt"
-TOKENTESTFILE = SVNROOT + "/trunk/tests/voikkotest/tokenizer.txt"
-SENTENCETESTFILE = SVNROOT + "/trunk/tests/voikkotest/sentence.txt"
-GRAMMARTESTFILE = SVNROOT + "/trunk/tests/voikkotest/grammar.txt"
-MORPHOTESTFILE = SVNROOT + "/trunk/tests/voikkotest/morpho.txt"
 BASE = WORKSPACE + "/base"
 WORDLIST = WORKSPACE + "/wordlist.txt.gz"
 BASE_CORRECT = WORKSPACE + "/base-correct.txt"
@@ -572,6 +566,7 @@ if "--compare" in [opt[0] for opt in opts]:
 else:
 	globalsMap = {}
 	globalsMap["SVNROOT"] = SVNROOT
+	globalsMap["BUILDDIR"] = BUILDDIR
 	globalsMap["INSTALLDIR"] = INSTALLDIR
 	globalsMap["BASEINSTALLDIR"] = BASE
 	
@@ -597,7 +592,7 @@ else:
 		configFile.close()
 		build(configMap)
 		print " Build complete, starting tests"
-		voikko = Voikko(LANGUAGE) # TODO
+		voikko = Voikko(language=configMap["LANGUAGE"], path=INSTALLDIR)
 		spell_tests(voikko, testdir + "/spell.txt")
 		suggestion_tests(voikko, testdir + "/suggest.txt")
 		morpho_tests(voikko, testdir + "/morpho.txt")
