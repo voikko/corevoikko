@@ -1,5 +1,6 @@
 LANGUAGE="fi-x-malstd"
 SOURCEDIR=SVNROOT + "/trunk/suomimalaga"
 BUILDCMD="make voikko"
-INSTALLCMD='make voikko-install DESTDIR='%s'" % DESTDIR
+INSTALLCMD='make voikko-install DESTDIR="%s"' % INSTALLDIR
+BASEINSTALLCMD='make voikko-install DESTDIR="%s"' % BASEINSTALLDIR
 CLEANCMD="make clean"
