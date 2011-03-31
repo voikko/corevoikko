@@ -995,8 +995,8 @@ define @jatko_nUt := <liitesana, osanto_tA, loppu>;
 [alku: "nyt", luokka: johdin_nUt, äs: ä, jatko: @jatko_nUt];
 [alku: "rut", luokka: johdin_rUt, äs: a, jatko: @jatko_nUt];
 [alku: "ryt", luokka: johdin_rUt, äs: ä, jatko: @jatko_nUt];
-[alku: "sut", luokka: johdin_sUt_stU, äs: a, jatko: @jatko_nUt];
-[alku: "syt", luokka: johdin_sUt_stU, äs: ä, jatko: @jatko_nUt];
+[alku: "sut", luokka: johdin_sUt_stU, tapaluokka: johdin_nUt, äs: a, jatko: @jatko_nUt];
+[alku: "syt", luokka: johdin_sUt_stU, tapaluokka: johdin_nUt, äs: ä, jatko: @jatko_nUt];
 
 
 define @jatko_ee := <omistusliite, omanto_n, olento_nA, tulento_ksi,
@@ -1073,8 +1073,8 @@ define @jatko := @jatko_vahva_aste + @jatko_heikko_aste;
 [alku: "tu", luokka: johdin_tU, äs: a, jatko: @jatko_vahva_aste, perusmuoto: "tu"];
 [alku: "ty", luokka: johdin_tU, äs: ä, jatko: @jatko_vahva_aste, perusmuoto: "ty"];
 
-[alku: "tu", luokka: johdin_sUt_stU, äs: a, jatko: @jatko, perusmuoto: "tu"];
-[alku: "ty", luokka: johdin_sUt_stU, äs: ä, jatko: @jatko, perusmuoto: "ty"];
+[alku: "tu", luokka: johdin_sUt_stU, tapaluokka: johdin_ttU, äs: a, jatko: @jatko, perusmuoto: "tu"];
+[alku: "ty", luokka: johdin_sUt_stU, tapaluokka: johdin_ttU, äs: ä, jatko: @jatko, perusmuoto: "ty"];
 
 
 define @m_jatko := <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,

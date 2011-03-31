@@ -74,6 +74,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_POSSIBLE_GEOGRAPHICAL_NAME], "POSSIBLE_GEOGRAPHICAL_NAME");
 			parseBasicAttribute(analysis, res, symbols[MS_REQUIRE_FOLLOWING_VERB], "REQUIRE_FOLLOWING_VERB");
 			parseBasicAttribute(analysis, res, symbols[MS_TENSE], "TENSE");
+			parseBasicAttribute(analysis, res, symbols[MS_PARTICIPLE], "PARTICIPLE");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -154,6 +155,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_TENSE:
 				symbolName = "aikamuoto";
 				break;
+			case MS_PARTICIPLE:
+				symbolName = "tapaluokka";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -215,6 +219,13 @@ void MalagaAnalyzer::initSymbols() {
 	
 	insertToSymbolMap(symbolMap, "kest\xc3\xa4m\xc3\xa4", L"present_simple");
 	insertToSymbolMap(symbolMap, "kertoma", L"past_imperfective");
+	
+	insertToSymbolMap(symbolMap, "johdin_vA", L"present_active");
+	insertToSymbolMap(symbolMap, "johdin_tAvA", L"present_passive");
+	insertToSymbolMap(symbolMap, "johdin_nUt", L"past_active");
+	insertToSymbolMap(symbolMap, "johdin_ttU", L"past_passive");
+	insertToSymbolMap(symbolMap, "johdin_mA", L"agent");
+	insertToSymbolMap(symbolMap, "johdin_tOn", L"negation");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

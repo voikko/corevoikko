@@ -2013,6 +2013,32 @@ subrule tulostus_aikamuoto($tietue):
   return nil;
 end;
 
+subrule tulostus_partisiipit($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.tapaluokka /= nil then
+      return [tapaluokka: $allomorfi.tapaluokka];
+    end;
+    if $allomorfi.luokka = johdin_vA then
+      return [tapaluokka: johdin_vA];
+    end;
+    if $allomorfi.luokka = johdin_tAvA then
+      return [tapaluokka: johdin_tAvA];
+    end;
+    if $allomorfi.luokka in @johdin_nUt then
+      return [tapaluokka: johdin_nUt];
+    end;
+    if $allomorfi.luokka = johdin_tOn then
+      return [tapaluokka: johdin_tOn];
+    end;
+    if $allomorfi.luokka = johdin_mA then
+      return [tapaluokka: johdin_mA];
+    end;
+  end;
+  return [];
+end;
+
 subrule tulostus_kielto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
@@ -2168,7 +2194,8 @@ subrule tulostus_v2($tietue):
             luokka:  tulostus_luokka($tietue),
             luku: tulostus_luku($tietue),
             sijamuoto: tulostus_sijamuoto($tietue),
-            perusmuoto: tulostus_debug_perusmuoto($tietue)];
+            perusmuoto: tulostus_debug_perusmuoto($tietue)]
+          + tulostus_partisiipit($tietue);
     if $res.luokka = teonsana then
       $res :=+ [aikamuoto: tulostus_aikamuoto($tietue)];
     end;

@@ -10,3 +10,24 @@ word:juoksin
 word:olen
  analysis
   TENSE=present_simple
+word:juokseva
+ analysis
+  PARTICIPLE=present_active
+word:juostava
+ analysis
+  PARTICIPLE=present_passive
+word:juossut
+ analysis
+  PARTICIPLE=past_active
+word:juosseet
+ analysis
+  PARTICIPLE=past_active
+word:juostu
+ analysis
+  PARTICIPLE=past_passive
+word:juoksema
+ analysis
+  PARTICIPLE=agent
+word:juoksematon
+ analysis
+  PARTICIPLE=negation

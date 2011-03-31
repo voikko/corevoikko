@@ -1,5 +1,6 @@
 2011-03-31 Harri Pitkänen <hatapitk@iki.fi>
 	* Support grammatical tense in Malaga analyzer.
+	* Support participles in Malaga analyzer.
 	* Increase version number to 3.3.
 
 2011-03-19 Harri Pitkänen <hatapitk@iki.fi>

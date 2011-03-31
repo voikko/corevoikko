@@ -116,6 +116,20 @@ they may be useful for external applications:
    Word: sallitaan -> NEGATIVE: false
    Word: sallita (as in "ei sallita") -> NEGATIVE: true
    Word: maalaa (also "ei maalaa") -> NEGATIVE: both
+  
+ PARTICIPLE
+ ==========
+  Word is a participle of some sort. Suggested values for this attribute
+  are "present_active", "present_passive", "past_active", "past_passive",
+  "agent" and "negation" (add more as needed).
+  
+  Examples:
+   Word: juokseva    -> PARTICIPLE: present_active
+   Word: juostava    -> PARTICIPLE: present_passive
+   Word: juossut     -> PARTICIPLE: past_active
+   Word: juostu      -> PARTICIPLE: past_passive
+   Word: juoksema    -> PARTICIPLE: agent
+   Word: juoksematon -> PARTICIPLE: negation
 
  Attributes for Finnish language
  ===============================
