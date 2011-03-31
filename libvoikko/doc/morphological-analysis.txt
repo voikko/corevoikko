@@ -1,4 +1,4 @@
-2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
+2009 - 2011 Harri Pitkänen <hatapitk@iki.fi>                    GPLv2+
 
  Information provided from attribute maps of Analysis objects
  ============================================================
@@ -97,6 +97,15 @@ they may be useful for external applications:
   Examples:
    Word: juoksen -> MOOD: indicative
    Word: juoksisin -> MOOD: conditional
+
+ TENSE
+ =====
+  Tense and aspect of a verb. Suggested values for this attribute are
+  "past_imperfective", "present_simple", (add more as needed).
+  
+  Examples:
+   Word: juoksen -> TENSE: present_simple
+   Word: juoksin -> TENSE: past_imperfective
 
  NEGATIVE
  ========

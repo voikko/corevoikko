@@ -1,3 +1,12 @@
 word:koiralla
  analysis
   BASEFORM=koira
+word:juoksen
+ analysis
+  TENSE=present_simple
+word:juoksin
+ analysis
+  TENSE=past_imperfective
+word:olen
+ analysis
+  TENSE=present_simple

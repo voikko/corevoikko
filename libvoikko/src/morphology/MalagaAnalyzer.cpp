@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -73,6 +73,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_NEGATIVE], "NEGATIVE");
 			parseBasicAttribute(analysis, res, symbols[MS_POSSIBLE_GEOGRAPHICAL_NAME], "POSSIBLE_GEOGRAPHICAL_NAME");
 			parseBasicAttribute(analysis, res, symbols[MS_REQUIRE_FOLLOWING_VERB], "REQUIRE_FOLLOWING_VERB");
+			parseBasicAttribute(analysis, res, symbols[MS_TENSE], "TENSE");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -150,6 +151,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_REQUIRE_FOLLOWING_VERB:
 				symbolName = "vaatii_tapaluokan";
 				break;
+			case MS_TENSE:
+				symbolName = "aikamuoto";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -208,6 +212,9 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "yes", L"true");
 	insertToSymbolMap(symbolMap, "no", L"false");
 	insertToSymbolMap(symbolMap, "molemmat", L"both");
+	
+	insertToSymbolMap(symbolMap, "kest\xc3\xa4m\xc3\xa4", L"present_simple");
+	insertToSymbolMap(symbolMap, "kertoma", L"past_imperfective");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

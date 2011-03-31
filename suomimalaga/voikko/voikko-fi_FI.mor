@@ -2000,8 +2000,14 @@ subrule tulostus_aikamuoto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.aikamuoto /= nil then
+      return $allomorfi.aikamuoto;
+    end;
     if $allomorfi.luokka in @kestämän_tekijäpääte then
       return kestämä;
+    end;
+    if $allomorfi.luokka in @kertoman_tekijäpääte then
+      return kertoma;
     end;
   end;
   return nil;
