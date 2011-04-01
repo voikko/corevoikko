@@ -159,6 +159,9 @@ word:juoksen
  analysis
   PERSON=1
   MOOD=indicative
+word:olen
+ analysis
+  PERSON=1
 word:juokset
  analysis
   PERSON=2

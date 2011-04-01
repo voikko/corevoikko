@@ -2023,7 +2023,7 @@ subrule tulostus_partisiipit($tietue):
     if $allomorfi.luokka = johdin_vA then
       return [tapaluokka: johdin_vA];
     end;
-    if $allomorfi.luokka = johdin_tAvA then
+    if $allomorfi.luokka in <johdin_tAvA, johdin_ttAvA> then
       return [tapaluokka: johdin_tAvA];
     end;
     if $allomorfi.luokka in @johdin_nUt then

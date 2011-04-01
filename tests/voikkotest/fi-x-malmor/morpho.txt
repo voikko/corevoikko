@@ -16,6 +16,9 @@ word:juokseva
 word:juostava
  analysis
   PARTICIPLE=present_passive
+word:metsästettävä
+ analysis
+  PARTICIPLE=present_passive
 word:juossut
  analysis
   PARTICIPLE=past_active
