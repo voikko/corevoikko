@@ -2017,23 +2017,23 @@ subrule tulostus_partisiipit($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.tapaluokka /= nil then
-      return [tapaluokka: $allomorfi.tapaluokka];
+    if $allomorfi.laatutapa /= nil then
+      return [laatutapa: $allomorfi.laatutapa];
     end;
     if $allomorfi.luokka = johdin_vA then
-      return [tapaluokka: johdin_vA];
+      return [laatutapa: johdin_vA];
     end;
     if $allomorfi.luokka in <johdin_tAvA, johdin_ttAvA> then
-      return [tapaluokka: johdin_tAvA];
+      return [laatutapa: johdin_tAvA];
     end;
     if $allomorfi.luokka in @johdin_nUt then
-      return [tapaluokka: johdin_nUt];
+      return [laatutapa: johdin_nUt];
     end;
     if $allomorfi.luokka = johdin_tOn then
-      return [tapaluokka: johdin_tOn];
+      return [laatutapa: johdin_tOn];
     end;
     if $allomorfi.luokka = johdin_mA then
-      return [tapaluokka: johdin_mA];
+      return [laatutapa: johdin_mA];
     end;
   end;
   return [];

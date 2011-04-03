@@ -31,6 +31,7 @@ word:juostu
 word:juoksema
  analysis
   PARTICIPLE=agent
+  !MOOD
 word:juoksematon
  analysis
   PARTICIPLE=negation

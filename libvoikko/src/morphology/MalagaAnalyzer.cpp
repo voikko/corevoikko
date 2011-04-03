@@ -156,7 +156,7 @@ void MalagaAnalyzer::initSymbols() {
 				symbolName = "aikamuoto";
 				break;
 			case MS_PARTICIPLE:
-				symbolName = "tapaluokka";
+				symbolName = "laatutapa";
 				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
