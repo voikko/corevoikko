@@ -23,9 +23,8 @@
 
 /* Includes. ================================================================*/
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/patterns.hpp"
 #include "morphology/malaga/MalagaState.hpp"

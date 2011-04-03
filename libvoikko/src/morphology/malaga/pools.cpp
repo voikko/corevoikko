@@ -28,9 +28,9 @@
 
 /* Includes. ================================================================*/
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include "morphology/malaga/basic.hpp"
 #include "morphology/malaga/files.hpp"
 #include "morphology/malaga/pools.hpp"
