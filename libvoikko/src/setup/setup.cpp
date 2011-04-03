@@ -194,7 +194,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);
 		options->hyphenator = hyphenator::HyphenatorFactory::getHyphenator(options, dict);
 	}
-	catch (DictionaryException e) {
+	catch (DictionaryException & e) {
 		if (options->hyphenator) {
 			options->hyphenator->terminate();
 			delete options->hyphenator;
