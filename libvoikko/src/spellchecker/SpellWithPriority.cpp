@@ -163,7 +163,7 @@ spellresult SpellWithPriority::spellWithPriority(Analyzer * morAnalyzer,
 				bestPrio = currentPrio;
 			}
 		}
-		it++;
+		++it;
 	}
 	Analyzer::deleteAnalyses(analyses);
 	*prio = bestPrio;

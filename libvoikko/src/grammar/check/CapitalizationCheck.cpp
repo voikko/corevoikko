@@ -122,7 +122,7 @@ static bool containsToken(const list<const Token *> & tokens, const wchar_t * ex
 		if (wcscmp(expectedText, (*it)->str) == 0) {
 			return true;
 		}
-		it++;
+		++it;
 	}
 	return false;
 }
@@ -133,7 +133,7 @@ static bool lastPunctuationEndsSentence(const list<const Token *> & tokens) {
 		if ((*it)->type == TOKEN_PUNCTUATION && (*it)->str[0] != L',') {
 			return wcschr(L".?!", (*it)->str[0]) != 0;
 		}
-		it++;
+		++it;
 	}
 	return false;
 }
@@ -182,7 +182,7 @@ static bool pushAndPopQuotes(CapitalizationContext & context, const list<const T
 				context.sentenceEnded = true;
 			}
 		}
-		it++;
+		++it;
 	}
 	return hasQuotes;
 }

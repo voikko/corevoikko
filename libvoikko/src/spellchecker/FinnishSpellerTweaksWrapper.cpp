@@ -101,7 +101,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 							isTrailingAcceptable = true;
 							break;
 						}
-						it++;
+						++it;
 					}
 					Analyzer::deleteAnalyses(trailingAnalyses);
 					if (isTrailingAcceptable) {
@@ -149,7 +149,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 					result_without_border = spres;
 				}
 			}
-			it++;
+			++it;
 		}
 		
 		Analyzer::deleteAnalyses(analyses);
@@ -174,6 +174,7 @@ spellresult FinnishSpellerTweaksWrapper::spell(const wchar_t * word, size_t wlen
 				buffer[j++] = word[i];
 			} else {
 				if (j == 0 || i + 1 == wlen || (!shyPositions.empty() && shyPositions.back() == j)) {
+					delete [] buffer;
 					return SPELL_FAILED;
 				}
 				shyPositions.push_back(j);

@@ -119,7 +119,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 				}
 			}
 		}
-		it++;
+		++it;
 	}
 	morphology::Analyzer::deleteAnalyses(analyses);
 	if (!token->isValidWord) {

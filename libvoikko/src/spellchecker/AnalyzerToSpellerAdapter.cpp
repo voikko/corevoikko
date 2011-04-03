@@ -47,7 +47,7 @@ spellresult AnalyzerToSpellerAdapter::spell(const wchar_t * word, size_t wlen) {
 		if (best_result == SPELL_OK) {
 			break;
 		}
-		it++;
+		++it;
 	}
 	Analyzer::deleteAnalyses(analyses);
 	
