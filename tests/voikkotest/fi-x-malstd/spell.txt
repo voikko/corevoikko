@@ -187,6 +187,8 @@ helsinkiläinenkö
 tamperelaisemme
 Coca-Cola
 !Coca-cola
+!juosseisuus
+!purreisuus
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
