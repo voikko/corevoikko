@@ -398,3 +398,5 @@ word:härkäjuoksijana
  expected:1
  analysis
   CLASS=nimisana
+word:kissanvärinen
+ expected:1

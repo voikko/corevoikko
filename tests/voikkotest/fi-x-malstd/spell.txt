@@ -104,6 +104,9 @@ koe-elää
 !leipämainen # "mainen" ei sallittu yhdyssanan osana
 !kalasointi # "soida" ei sallittu yhdyssanan jälkiosana
 virkeänkissainen # adjektiivin genetiivi + substantiivin inen-johdos
+virkeäkissallinen # adjektiivi + substantiivin -llinen-johdos (toistaiseksi sallittu)
+miellyttämishaluinen
+mannertenvälisiä
 !uutelleennimeä # adjektiivin genetiivi + substantiivi
 !kaivertajajuoda
 !kaivertajajoi
