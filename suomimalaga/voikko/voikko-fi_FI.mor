@@ -582,7 +582,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
 
   # nimisana, laatusana ja etuliite jätetty pois, koska todennäköinen käyttö vähäistä
   # (teoriassa voi olla OK)
-  define $res := $vasen + <[alku: $sana] + $oikea>;
+  define $res := $vasen + <$oikea + [alku: $sana, luokka: laatusana]>;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;
   end;

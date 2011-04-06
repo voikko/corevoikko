@@ -383,6 +383,12 @@ word:ruotsalaisessa
   CLASS=nimisana
  analysis
   CLASS=laatusana
+word:agraariruotsalainen
+ expected:2
+ analysis
+  CLASS=nimisana
+ analysis
+  CLASS=laatusana
 word:juoksemiseen
  expected:1
 word:superhämärästi
