@@ -1683,7 +1683,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   if ($oikea.luokka = johdin_inen) then
     if ($edellinen.tiedot /= nil and inen in $edellinen.tiedot) and
         (($index = 2) or
-         (($vasen.($index - 2).luokka /= nimisana) and
+         (not ($vasen.($index - 2).luokka in <nimisana, etuliite>) and
           ($vasen.($index - 2).sijamuoto /= omanto or $vasen.($index - 2).luku /= yksikkö)) or
           ($index greater 3 and $vasen.($index - 3).lukutyyppi /= nil)) then
       if omistusliite in $oikea.jatko then

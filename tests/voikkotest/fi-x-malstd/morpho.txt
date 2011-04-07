@@ -410,3 +410,5 @@ word:ajattelukykyinen
  expected:1
 word:pikajuoksukykyinen
  expected:1
+word:superbiologinen
+ expected:1
