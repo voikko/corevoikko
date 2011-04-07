@@ -99,6 +99,20 @@ MOODS = {
 "MA-infinitive": u"MA-infinitiivi"
 }
 
+TENSES = {
+"present_simple": u"preesens",
+"past_imperfective": u"imperfekti"
+}
+
+PARTICIPLES = {
+"present_active": u"nykyaika, aktiivi (-VA)",
+"present_passive": u"nykyaika, passiivi (-VA)",
+"past_active": u"mennyt aika, aktiivi (-NUT)",
+"past_passive": u"mennyt aika, passiivi (-TU)",
+"agent": u"agenttipartisiippi (-MA)",
+"negation": u"kieltopartisiippi (-TON)"
+}
+
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
 
 """Maximum number of bytes allowed in incoming POST requests"""
@@ -258,6 +272,12 @@ def getAnalysis(analysis):
 	if "MOOD" in analysis:
 		res = res + u"<br />Tapaluokka tai nominaalimuoto: " \
 		      + fromMapIfPossible(analysis["MOOD"], MOODS)
+	if "TENSE" in analysis:
+		res = res + u"<br />Aikamuoto: " \
+		      + fromMapIfPossible(analysis["TENSE"], TENSES)
+	if "PARTICIPLE" in analysis:
+		res = res + u"<br />Partisiippi: " \
+		      + fromMapIfPossible(analysis["PARTICIPLE"], PARTICIPLES)
 	if "WORDIDS" in analysis:
 		ids = analysis["WORDIDS"]
 		if u"(w" in ids:
