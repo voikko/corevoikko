@@ -408,3 +408,5 @@ word:kissanvärinen
  expected:1
 word:ajattelukykyinen
  expected:1
+word:pikajuoksukykyinen
+ expected:1

@@ -429,6 +429,7 @@ yhteen
 !viisikaunis
 yksipuoluejärjestelmä
 yksipuolueyhteiskunta
+yksiajoratainen
 yhdenveroinen
 viideskymmenes
 tuhatlukuinen

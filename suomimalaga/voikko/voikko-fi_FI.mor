@@ -1681,9 +1681,11 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
   if ($oikea.luokka = johdin_inen) then
-    if ($index /= 3) and
-       ($edellinen.tiedot /= nil and inen in $edellinen.tiedot) and
-       ($index = 2 or $vasen.($index - 2).sijamuoto /= omanto or $vasen.($index - 2).luku /= yksikkö) then
+    if ($edellinen.tiedot /= nil and inen in $edellinen.tiedot) and
+        (($index = 2) or
+         (($vasen.($index - 2).luokka /= nimisana) and
+          ($vasen.($index - 2).sijamuoto /= omanto or $vasen.($index - 2).luku /= yksikkö)) or
+          ($index greater 3 and $vasen.($index - 3).lukutyyppi /= nil)) then
       if omistusliite in $oikea.jatko then
         result $res, rules omistusliite;
       end;
