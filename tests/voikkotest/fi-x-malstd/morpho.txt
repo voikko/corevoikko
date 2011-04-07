@@ -412,3 +412,7 @@ word:pikajuoksukykyinen
  expected:1
 word:superbiologinen
  expected:1
+word:ahdashenkinen
+ expected:1
+word:ruotsalaishenkinen
+ expected:1
