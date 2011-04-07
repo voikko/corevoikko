@@ -406,3 +406,5 @@ word:härkäjuoksijana
   CLASS=nimisana
 word:kissanvärinen
  expected:1
+word:ajattelukykyinen
+ expected:1
