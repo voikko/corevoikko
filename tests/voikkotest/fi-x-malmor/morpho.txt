@@ -35,3 +35,21 @@ word:juoksema
 word:juoksematon
  analysis
   PARTICIPLE=negation
+word:kissani
+ analysis
+  POSSESSIVE=1s
+word:kissasi
+ analysis
+  POSSESSIVE=2s
+word:kissamme
+ analysis
+  POSSESSIVE=1p
+word:kissanne
+ analysis
+  POSSESSIVE=2p
+word:kissansa
+ analysis
+  POSSESSIVE=3
+word:taloaan
+ analysis
+  POSSESSIVE=3

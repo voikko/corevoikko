@@ -3297,6 +3297,9 @@ allo_rule generate_allos ($tietue):
 # END Suomi-malaga 0.9.7
 
   elseif ($tietue.alku /= nil) then
+    if not @voikko_debug then
+      $tietue :=- omistusliite;
+    end;
     result $tietue.alku, $tietue - alku;
   else
     result $tietue.perusmuoto, $tietue - alku;

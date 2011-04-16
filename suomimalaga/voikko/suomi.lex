@@ -374,20 +374,20 @@ define @sijan_jatko_ol := @sijan_jatko + <omistusliite>;
 
 
 
-[alku: "ni",  luokka: omistusliite, äs: aä, jatko: <>];
-[alku: "si",  luokka: omistusliite, äs: aä, jatko: <>];
-[alku: "s",   luokka: omistusliite, äs: aä, jatko: <>, tiedot: <murre>];
-[alku: "nsa", luokka: omistusliite, äs: a,  jatko: <>];
-[alku: "nsä", luokka: omistusliite, äs: ä,  jatko: <>];
-[alku: "an",  luokka: omistusliite, äs: a,  jatko: <>];
-[alku: "en",  luokka: omistusliite, äs: aä, jatko: <>];
-[alku: "on",  luokka: omistusliite, äs: a,  jatko: <>];
-[alku: "un",  luokka: omistusliite, äs: a,  jatko: <>];
-[alku: "yn",  luokka: omistusliite, äs: ä,  jatko: <>];
-[alku: "än",  luokka: omistusliite, äs: ä,  jatko: <>];
-[alku: "ön",  luokka: omistusliite, äs: ä,  jatko: <>];
-[alku: "mme", luokka: omistusliite, äs: aä, jatko: <>];
-[alku: "nne", luokka: omistusliite, äs: aä, jatko: <>];
+[alku: "ni",  luokka: omistusliite, omistusliite: omistusliite_1s, äs: aä, jatko: <>];
+[alku: "si",  luokka: omistusliite, omistusliite: omistusliite_2s, äs: aä, jatko: <>];
+[alku: "s",   luokka: omistusliite, omistusliite: omistusliite_2s, äs: aä, jatko: <>, tiedot: <murre>];
+[alku: "nsa", luokka: omistusliite, omistusliite: omistusliite_3, äs: a,  jatko: <>];
+[alku: "nsä", luokka: omistusliite, omistusliite: omistusliite_3, äs: ä,  jatko: <>];
+[alku: "an",  luokka: omistusliite, omistusliite: omistusliite_3, äs: a,  jatko: <>];
+[alku: "en",  luokka: omistusliite, omistusliite: omistusliite_3, äs: aä, jatko: <>];
+[alku: "on",  luokka: omistusliite, omistusliite: omistusliite_3, äs: a,  jatko: <>];
+[alku: "un",  luokka: omistusliite, omistusliite: omistusliite_3, äs: a,  jatko: <>];
+[alku: "yn",  luokka: omistusliite, omistusliite: omistusliite_3, äs: ä,  jatko: <>];
+[alku: "än",  luokka: omistusliite, omistusliite: omistusliite_3, äs: ä,  jatko: <>];
+[alku: "ön",  luokka: omistusliite, omistusliite: omistusliite_3, äs: ä,  jatko: <>];
+[alku: "mme", luokka: omistusliite, omistusliite: omistusliite_1p, äs: aä, jatko: <>];
+[alku: "nne", luokka: omistusliite, omistusliite: omistusliite_2p, äs: aä, jatko: <>];
 
 
 # Laatusanojen sekä teonsanojen laatutapojen voittoaste.

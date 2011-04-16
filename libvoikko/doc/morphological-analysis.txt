@@ -131,6 +131,18 @@ they may be useful for external applications:
    Word: juoksema    -> PARTICIPLE: agent
    Word: juoksematon -> PARTICIPLE: negation
 
+ POSSESSIVE
+ ==========
+  Word contains information about possessor. For now this is used to
+  indicate the use of possessive suffix in Finnish nouns.
+
+  Examples:
+   Word: kissani  -> POSSESSIVE: 1s
+   Word: kissasi  -> POSSESSIVE: 2s
+   Word: kissamme -> POSSESSIVE: 1p
+   Word: kissanne -> POSSESSIVE: 2p
+   Word: kissansa -> POSSESSIVE: 3
+
  Attributes for Finnish language
  ===============================
 

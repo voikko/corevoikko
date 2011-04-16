@@ -75,6 +75,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_REQUIRE_FOLLOWING_VERB], "REQUIRE_FOLLOWING_VERB");
 			parseBasicAttribute(analysis, res, symbols[MS_TENSE], "TENSE");
 			parseBasicAttribute(analysis, res, symbols[MS_PARTICIPLE], "PARTICIPLE");
+			parseBasicAttribute(analysis, res, symbols[MS_POSSESSIVE], "POSSESSIVE");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -158,6 +159,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_PARTICIPLE:
 				symbolName = "laatutapa";
 				break;
+			case MS_POSSESSIVE:
+				symbolName = "omistusliite";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -226,6 +230,12 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "johdin_ttU", L"past_passive");
 	insertToSymbolMap(symbolMap, "johdin_mA", L"agent");
 	insertToSymbolMap(symbolMap, "johdin_tOn", L"negation");
+	
+	insertToSymbolMap(symbolMap, "omistusliite_1s", L"1s");
+	insertToSymbolMap(symbolMap, "omistusliite_2s", L"2s");
+	insertToSymbolMap(symbolMap, "omistusliite_1p", L"1p");
+	insertToSymbolMap(symbolMap, "omistusliite_2p", L"2p");
+	insertToSymbolMap(symbolMap, "omistusliite_3", L"3");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

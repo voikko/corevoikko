@@ -173,6 +173,11 @@ luokka; alaluokka; jluokka;
   asemosana;
   sijapääte;
   omistusliite;
+    omistusliite_1s;
+    omistusliite_2s;
+    omistusliite_1p;
+    omistusliite_2p;
+    omistusliite_3;
   liitesana;
   liitesana_s;  # Tulkaa+s. Poistetaan Voikossa.
   kieltosanan_liitesana;
