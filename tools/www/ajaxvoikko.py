@@ -113,6 +113,14 @@ PARTICIPLES = {
 "negation": u"kieltopartisiippi (-TON)"
 }
 
+POSSESSIVES = {
+"1s": u"yksikön ensimmäinen persoona",
+"2s": u"yksikön toinen persoona",
+"1p": u"monikon ensimmäinen persoona",
+"2p": u"monikon toinen persoona",
+"3": u"kolmas persoona"
+}
+
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
 
 """Maximum number of bytes allowed in incoming POST requests"""
@@ -278,6 +286,9 @@ def getAnalysis(analysis):
 	if "PARTICIPLE" in analysis:
 		res = res + u"<br />Partisiippi: " \
 		      + fromMapIfPossible(analysis["PARTICIPLE"], PARTICIPLES)
+	if "POSSESSIVE" in analysis:
+		res = res + u"<br />Omistusliite: " \
+		      + fromMapIfPossible(analysis["POSSESSIVE"], POSSESSIVES)
 	if "WORDIDS" in analysis:
 		ids = analysis["WORDIDS"]
 		if u"(w" in ids:
