@@ -230,9 +230,7 @@ void
 add_to_text( text_t *text, string_t string )
 /* Add STRING to TEXT. */
 { 
-  int_t string_len;
-
-  string_len = strlen( string );
+  size_t string_len = strlen( string );
   if (text->buffer_size < text->string_size + string_len + 1) 
   { 
     text->buffer_size = renew_vector( &text->buffer, sizeof( char_t ), 

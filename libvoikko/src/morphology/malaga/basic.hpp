@@ -23,6 +23,8 @@
 #ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
 #define LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
 
+#include <cstddef>
+
 namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Constants. ===============================================================*/
@@ -137,8 +139,8 @@ extern char_t *concat_strings( string_t first_string, ... );
 typedef struct
 {
   char_t *buffer;
-  int_t buffer_size;
-  int_t string_size;
+  size_t buffer_size;
+  size_t string_size;
 } text_t;
 
 extern text_t *new_text( void );
