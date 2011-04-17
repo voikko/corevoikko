@@ -37,7 +37,7 @@ namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Macros. ==================================================================*/
 
-#define ALIGN(addr, n) (((ptr_t) (addr) + (ptr_t) (n - 1)) & ~ (ptr_t) (n - 1))
+#define ALIGN(addr, n) (((size_t) (addr) + (size_t) (n - 1)) & ~ (size_t) (n - 1))
 /* Align ADDR to next multiple of N. */
 
 /* Types. ===================================================================*/
