@@ -53,7 +53,7 @@ init_libmalaga(string_t project_directory, MalagaState * malagaState) throw(setu
     init_malaga(project_directory_absolute, malagaState);
     free_mem(&project_directory_absolute);
   }
-  catch (setup::DictionaryException & e) {
+  catch (setup::DictionaryException & /*e*/) {
     free_mem(&project_directory_absolute);
     throw;
   }  
@@ -98,7 +98,7 @@ analyse_item(string_t item, MalagaState * malagaState) throw(setup::DictionaryEx
     // harder to reproduce bugs.
     malagaState->value_heap_end = malagaState->value_heap;
   }
-  catch (setup::DictionaryException & e) {
+  catch (setup::DictionaryException & /*e*/) {
     free_mem(&analysis_input);
     throw;
   }

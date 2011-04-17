@@ -877,7 +877,7 @@
 					>
 				</File>
 				<Filter
-					Name="sugestion"
+					Name="suggestion"
 					>
 					<File
 						RelativePath="..\src\spellchecker\SpellerCache.cpp"
@@ -961,6 +961,14 @@
 					</File>
 					<File
 						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorReplaceTwo.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorSoftHyphens.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorSoftHyphens.hpp"
 						>
 					</File>
 					<File
