@@ -28,9 +28,6 @@
 # Language variant to use in the tests.
 #language_variant='standard'
 
-# Build options used when calling "make voikko"
-#voikkotest_build_options=''
-
 # Directory where Suomi-malaga is installed using
 # "make voikko-install" after it has been built during automated
 # tests. None means that installation is not performed.
