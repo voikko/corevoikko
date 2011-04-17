@@ -104,12 +104,12 @@ extern void *new_mem( int_t item_size );
 /* Allocate a memory block of ITEM_SIZE bytes, clear it and return it.
  * If memory is out, call the function "error". */
 
-extern void *new_vector( int_t item_size, int_t item_count );
+extern void *new_vector( int_t item_size, size_t item_count );
 /* Allocate a memory block to contain ITEM_COUNT items of size ITEM_SIZE,
  * clear it and return it.
  * If memory is out, call the function "error". */
 
-extern int_t renew_vector( void *block_p, int_t item_size, int_t item_count );
+extern int_t renew_vector( void *block_p, int_t item_size, size_t item_count );
 /* Realloc *BLOCK_P to contain ITEM_COUNT items of ITEM_SIZE bytes each.
  * Return ITEM_COUNT.
  * If memory is out, call the function "error". */
