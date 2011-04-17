@@ -56,7 +56,7 @@ public:
 	} lexicon;
 
 	pattern_state_t * stack; /* Stack used for backtracking. */
-	int_t stack_size;
+	size_t stack_size;
 	char * pattern_var[PATTERN_VAR_MAX]; /* Pattern variables. */
 
 	struct { /* This is the symbol table. */
