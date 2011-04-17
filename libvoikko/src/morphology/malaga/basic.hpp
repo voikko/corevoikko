@@ -109,7 +109,7 @@ extern void *new_vector( int_t item_size, size_t item_count );
  * clear it and return it.
  * If memory is out, call the function "error". */
 
-extern int_t renew_vector( void *block_p, int_t item_size, size_t item_count );
+extern size_t renew_vector( void *block_p, int_t item_size, size_t item_count );
 /* Realloc *BLOCK_P to contain ITEM_COUNT items of ITEM_SIZE bytes each.
  * Return ITEM_COUNT.
  * If memory is out, call the function "error". */

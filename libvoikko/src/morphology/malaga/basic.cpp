@@ -180,7 +180,7 @@ new_vector( int_t item_size, size_t item_count )
 
 /*---------------------------------------------------------------------------*/
 
-int_t 
+size_t 
 renew_vector( void *block_p, int_t item_size, size_t item_count )
 /* Realloc *BLOCK_P to contain ITEM_COUNT items of ITEM_SIZE bytes each.
  * Return ITEM_COUNT. */

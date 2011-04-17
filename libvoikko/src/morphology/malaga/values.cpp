@@ -169,7 +169,7 @@ collect_garbage(MalagaState * malagaState)
   { 
     /* Create a table of pointers to the values. */
     value_pointer = (cell_t ***) new_vector( sizeof( value_t * ), malagaState->top );
-    for (int_t i = 0; i < malagaState->top; i++) { 
+    for (size_t i = 0; i < malagaState->top; i++) { 
       value_pointer[i] = malagaState->value_stack + i;
     }
 
@@ -177,7 +177,7 @@ collect_garbage(MalagaState * malagaState)
     qsort( value_pointer, malagaState->top, sizeof( value_t * ), compare_value_pointers );
 
     /* Find the first index I whose value is on the heap. */
-    int_t i;
+    size_t i;
     for (i = 0; i < malagaState->top; i++) { 
       if (*value_pointer[i] >= malagaState->value_heap) 
 	break;
@@ -208,7 +208,7 @@ collect_garbage(MalagaState * malagaState)
 /*---------------------------------------------------------------------------*/
 
 static value_t 
-space_for_value(int_t size, MalagaState * malagaState)
+space_for_value(size_t size, MalagaState * malagaState)
 /* Get SIZE adjacent free cells on the value heap. */
 {
   if ((malagaState->value_heap_end - malagaState->value_heap) + size > malagaState->value_heap_size) 
@@ -225,7 +225,7 @@ space_for_value(int_t size, MalagaState * malagaState)
       malagaState->value_heap_end = malagaState->value_heap + (old_heap_end - old_heap);
 
       /* Adapt the value stack pointers. */
-      for (int_t i = 0; i < malagaState->top; i++) 
+      for (size_t i = 0; i < malagaState->top; i++) 
       { 
 	if (malagaState->value_stack[i] >= old_heap && malagaState->value_stack[i] < old_heap_end) 
 	  malagaState->value_stack[i] = malagaState->value_heap + (malagaState->value_stack[i] - old_heap);
