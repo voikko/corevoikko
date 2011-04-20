@@ -241,7 +241,7 @@ allo_rule generate_allos ($tietue):
     $tietue.jatko := <kääntää>;
   end;
 
-  if ($tietue.perusmuoto in <"kartesiolainen", "keynesiläinen">) then
+  if ($tietue.perusmuoto in <"ihme", "kartesiolainen", "keynesiläinen">) then
     $tietue.luokka := nimi_laatusana;
   end;
 

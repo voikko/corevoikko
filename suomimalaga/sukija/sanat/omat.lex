@@ -1098,6 +1098,8 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "Keryx", alku: "Keryx", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "JFlex", alku: "JFlex", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "tikistää", alku: "tikist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
+[perusmuoto: "Angelika", alku: "Angelik", luokka: etunimi, jatko: <karahka>, äs: a];
+[perusmuoto: "Karon", alku: "Karon", luokka: sukunimi, jatko: <kalsium>, äs: a];
 
 [perusmuoto: "testeri", alku: "tester", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "Jerri", alku: "Jerr", luokka: etunimi, jatko: <risti>, äs: ä];
@@ -1142,6 +1144,38 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 #[perusmuoto: "teknologisoida", alku: "teknologiso", luokka: teonsana, jatko: <voida>, äs: a];
 #[perusmuoto: "orkesterisoida", alku: "orkesteriso", luokka: teonsana, jatko: <voida>, äs: a];
 #[perusmuoto: "", alku: "", luokka: teonsana, jatko: <voida>, äs: a];
+
+[perusmuoto: "parikymmentä", alku: "parikymmentä",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parinkymmene",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parinkymmene",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: ä, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariakymmen",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parinakymmene",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariksikymmene", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parissakymmenessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "paristakymmenestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariinkymmene",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parillakymmenellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariltakymmeneltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "parillekymmenelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "parittakymmene", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+
+[perusmuoto: "parikymmentä", alku: "paritkymmene",   luokka: nimisana, luku: monikko, jatko: <nimentö_t>, äs: ä, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "paritkymmene",   luokka: nimisana, luku: monikko, jatko: <omistusliite>, äs: ä, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ien>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parienkymmen",   luokka: nimisana, luku: monikko, jatko: <omanto_ten>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariakymmen",    luokka: nimisana, luku: monikko, jatko: <osanto_iA>, äs: ä, rakenne: "=ppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parinakymmen",   luokka: nimisana, luku: monikko, jatko: <olento_inA>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariksikymmeniksi", luokka: nimisana, luku: monikko, sijamuoto: tulento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parissakymmenissä", luokka: nimisana, luku: monikko, sijamuoto: sisäolento, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "paristakymmenistä", luokka: nimisana, luku: monikko, sijamuoto: sisäeronto, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariinkymmen",   luokka: nimisana, luku: monikko, jatko: <sisätulento_iin>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parillakymmenillä",  luokka: nimisana, luku: monikko, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "pariltakymmeniltä",  luokka: nimisana, luku: monikko, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parillekymmenille",  luokka: nimisana, luku: monikko, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parittakymmenittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "parinekymmen",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppp=pppppppp"];
+[perusmuoto: "parikymmentä", alku: "parinkymmenin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppp=pppppppppp"];
+
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
