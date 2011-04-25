@@ -55,6 +55,7 @@
 [perusmuoto: "ainoastaan", alku: "ainoastaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainut", alku: "ainut", luokka: seikkasana, jatko: <liitesana, loppu, osanto_tA>, äs: a];
 [perusmuoto: "aivan", alku: "aivan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ajoissa", alku: "ajoissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ajoittain", alku: "ajoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alakkain", alku: "alakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alas", alku: "alas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -345,6 +346,7 @@
 [perusmuoto: "kasvokkain", alku: "kasvokkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kasvotuksin", alku: "kasvotuksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kasvotusten", alku: "kasvotusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "kateissa", alku: "kateissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "katki", alku: "katki", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "katumapäällä", alku: "katumapäällä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "katumapäällä", alku: "katumapäälle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
@@ -722,6 +724,7 @@
 [perusmuoto: "parhaillaan", alku: "parhailla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "parhaimmillaan", alku: "parhaimmilla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "parhaiten", alku: "parhaiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "parissa", alku: "pari", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "parittain", alku: "parittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "paska", alku: "paskasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pelkästään", alku: "pelkästään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

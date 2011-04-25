@@ -115,6 +115,7 @@
 [perusmuoto: "tuut", alku: "tuut", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "täh", alku: "täh", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "tööt", alku: "tööt", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "voi", alku: "voi", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "voilà", alku: "voilà", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "yäk", alku: "yäk", luokka: huudahdussana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ähä", alku: "ähä", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
