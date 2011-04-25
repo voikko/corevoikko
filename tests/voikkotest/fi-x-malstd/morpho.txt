@@ -416,3 +416,7 @@ word:ahdashenkinen
  expected:1
 word:ruotsalaishenkinen
  expected:1
+word:eräs
+ expected:1
+ analysis
+ CLASS=asemosana

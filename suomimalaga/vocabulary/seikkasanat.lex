@@ -162,6 +162,7 @@
 [perusmuoto: "hellävaroin", alku: "hellävaroin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "helpoiten", alku: "helpoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helvetti", alku: "helvetisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hengissä", alku: "hengissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "hereillä", alku: "here", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: ä];
 [perusmuoto: "heti", alku: "heti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -624,6 +625,7 @@
 [perusmuoto: "mynkään", alku: "mynkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myöden", alku: "myöden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # KS: paremmin "myöten".
 [perusmuoto: "myöhemmin", alku: "myöhemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "myöhässä", alku: "myöhässä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myös", alku: "myös", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myöten", alku: "myöten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myötä", alku: "myötä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
