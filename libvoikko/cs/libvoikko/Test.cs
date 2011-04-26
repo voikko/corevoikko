@@ -38,6 +38,15 @@ namespace libvoikko
 		}
 		
 		[Test]
+		public void anotherObjectCanBeCreatedUsedAndDeletedInParallel() {
+			Voikko medicalVoikko = new Voikko("fi-x-medicine");
+			Assert.IsTrue(medicalVoikko.Spell("amifostiini"));
+			Assert.IsFalse(voikko.Spell("amifostiini"));
+			medicalVoikko.Dispose();
+			Assert.IsFalse(voikko.Spell("amifostiini"));
+		}
+		
+		[Test]
 		public void spell()
 		{
 			Assert.IsTrue(voikko.Spell("määrä"));

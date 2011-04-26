@@ -1,1 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  <PropertyGroup>    <ItemType>PackagingProject</ItemType>    <ProductVersion>8.0.50727</ProductVersion>    <SchemaVersion>2.0</SchemaVersion>    <ProjectGuid>{13ED8739-FCFC-44F8-A0F6-308051C6B2AB}</ProjectGuid>    <Packages>      <Packages xmlns="">        <Package name="Linux Binaries">          <Builder targetFile="libvoikko-linux.tar.gz" platform="Linux" configuration="Debug" ctype="BinariesZipPackageBuilder">            <ChildEntries>              <SolutionItemReference path="libvoikko\libvoikko.csproj" />            </ChildEntries>            <RootEntry path="libvoikko.sln" id=":root:" />          </Builder>        </Package>        <Package name="Microsoft Windows Binaries">          <Builder targetFile="libvoikko-windows.tar.gz" platform="Windows" configuration="Debug" ctype="BinariesZipPackageBuilder">            <ChildEntries>              <SolutionItemReference path="libvoikko\libvoikko.csproj" />            </ChildEntries>            <RootEntry path="libvoikko.sln" id=":root:" />          </Builder>        </Package>        <Package name="Tarball">          <Builder TargetDirectory="libvoikko" DefaultConfiguration="Debug" ctype="TarballDeployTarget">            <ChildEntries>              <SolutionItemReference path="libvoikko\libvoikko.csproj" />            </ChildEntries>            <RootEntry path="libvoikko.sln" id=":root:" />          </Builder>        </Package>      </Packages>    </Packages>  </PropertyGroup></Project>
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ItemType>PackagingProject</ItemType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13ED8739-FCFC-44F8-A0F6-308051C6B2AB}</ProjectGuid>
+    <Packages>
+      <Packages>
+        <Package name="Linux Binaries">
+          <Builder targetFile="libvoikko-linux.tar.gz" platform="Linux" configuration="Debug" ctype="BinariesZipPackageBuilder">
+            <ChildEntries>
+              <SolutionItemReference path="libvoikko\libvoikko.csproj" />
+            </ChildEntries>
+            <RootEntry path="libvoikko.sln" id=":root:" />
+          </Builder>
+        </Package>
+        <Package name="Microsoft Windows Binaries">
+          <Builder targetFile="libvoikko-windows.tar.gz" platform="Windows" configuration="Debug" ctype="BinariesZipPackageBuilder">
+            <ChildEntries>
+              <SolutionItemReference path="libvoikko\libvoikko.csproj" />
+            </ChildEntries>
+            <RootEntry path="libvoikko.sln" id=":root:" />
+          </Builder>
+        </Package>
+        <Package name="Tarball">
+          <Builder TargetDirectory="libvoikko" DefaultConfiguration="Debug" ctype="TarballDeployTarget">
+            <ChildEntries>
+              <SolutionItemReference path="libvoikko\libvoikko.csproj" />
+            </ChildEntries>
+            <RootEntry path="libvoikko.sln" id=":root:" />
+          </Builder>
+        </Package>
+      </Packages>
+    </Packages>
+  </PropertyGroup>
+</Project>
