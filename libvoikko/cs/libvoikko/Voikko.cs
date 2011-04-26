@@ -6,15 +6,26 @@ namespace libvoikko
 	public static class Libvoikko
 	{
 		private const string DLL_LIB = "voikko";
+		public const int VOIKKO_SPELL_FAILED = 0;
+		public const int VOIKKO_SPELL_OK = 1;
+		public const int VOIKKO_INTERNAL_ERROR = 2;
+		public const int VOIKKO_CHARSET_CONVERSION_FAILED = 3;
 
 		[DllImport(DLL_LIB)]
 		public static extern IntPtr voikkoInit(ref IntPtr error, byte[] langCode, byte[] path);
+		
+		[DllImport(DLL_LIB)]
+		public static extern void voikkoTerminate(IntPtr handle);
+		
+		[DllImport(DLL_LIB)]
+		public static extern int voikkoSpellCstr(IntPtr handle, byte[] word);
 	}
 
 	public class Voikko : IDisposable
 	{
 
 		IntPtr handle;
+		private readonly Object lockObj = new Object();
 
 		public Voikko(String language, String path)
 		{
@@ -38,9 +49,31 @@ namespace libvoikko
 
 		public void Dispose()
 		{
-			// TODO
+			if (handle != IntPtr.Zero)
+			{
+				Libvoikko.voikkoTerminate(handle);
+				handle = IntPtr.Zero;
+			}
 		}
-	}
+		
+		public bool Spell(string word)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				int spellResult = Libvoikko.voikkoSpellCstr(handle, ByteArray.s2n(word));
+				return (spellResult == Libvoikko.VOIKKO_SPELL_OK);
+			}
+		}
+		
+		private void requireValidHandle()
+		{
+			if (handle == IntPtr.Zero)
+			{
+				throw new VoikkoException("Attempt to use disposed Voikko instance");
+			}
+		}
+}
 	
 	
 }

@@ -29,6 +29,20 @@ namespace libvoikko
 		{
 			// do nothing, just check that setUp and tearDown complete successfully
 		}
+		
+		[Test]
+		public void terminateCanBeCalledMultipleTimes()
+		{
+			voikko.Dispose();
+			voikko.Dispose();
+		}
+		
+		[Test]
+		public void spell()
+		{
+			Assert.IsTrue(voikko.Spell("määrä"));
+			Assert.IsFalse(voikko.Spell("määä"));
+		}
 	}
 }
 
