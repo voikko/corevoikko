@@ -5,17 +5,17 @@ namespace libvoikko
 	{
 
 		private readonly string language;
-		private string Language {
+		public string Language {
 			get { return language; }
 		}
 
 		private readonly string variant;
-		private string Variant {
+		public string Variant {
 			get { return variant; }
 		}
 
 		private readonly string description;
-		private string Description {
+		public string Description {
 			get { return description; }
 		}
 

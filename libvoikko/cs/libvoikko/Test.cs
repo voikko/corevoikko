@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using System.Collections.Generic;
 namespace libvoikko
 {
 	[TestFixture]
@@ -78,6 +79,21 @@ namespace libvoikko
 			Assert.AreNotEqual(d1.GetHashCode(), d3.GetHashCode());
 			Assert.AreNotEqual(d4.GetHashCode(), d5.GetHashCode());
 			Assert.AreEqual(d1.GetHashCode(), d4.GetHashCode());
+		}
+
+		[Test]
+		public void listDictsWithoutPath()
+		{
+			List<Dictionary> dicts = Voikko.listDicts();
+			Assert.IsTrue(dicts.Count > 0);
+			Dictionary standard = dicts[0];
+			Assert.AreEqual("standard", standard.Variant);
+		}
+
+		//[Test] TODO: should work, write test
+		public void listDictsWithPathAndAttributes()
+		{
+			
 		}
 
 		[Test]

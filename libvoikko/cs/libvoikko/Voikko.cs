@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 namespace libvoikko
 {
 
@@ -13,12 +14,27 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern IntPtr voikkoInit(ref IntPtr error, byte[] langCode, byte[] path);
-		
+
 		[DllImport(DLL_LIB)]
 		public static extern void voikkoTerminate(IntPtr handle);
-		
+
 		[DllImport(DLL_LIB)]
 		public static extern int voikkoSpellCstr(IntPtr handle, byte[] word);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikko_list_dicts(byte[] path);
+
+		[DllImport(DLL_LIB)]
+		public static extern void voikko_free_dicts(IntPtr dict);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikko_dict_language(IntPtr dict);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikko_dict_variant(IntPtr dict);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikko_dict_description(IntPtr dict);
 	}
 
 	public class Voikko : IDisposable
@@ -55,7 +71,7 @@ namespace libvoikko
 				handle = IntPtr.Zero;
 			}
 		}
-		
+
 		public bool Spell(string word)
 		{
 			lock (lockObj)
@@ -65,7 +81,7 @@ namespace libvoikko
 				return (spellResult == Libvoikko.VOIKKO_SPELL_OK);
 			}
 		}
-		
+
 		private void requireValidHandle()
 		{
 			if (handle == IntPtr.Zero)
@@ -73,7 +89,28 @@ namespace libvoikko
 				throw new VoikkoException("Attempt to use disposed Voikko instance");
 			}
 		}
-}
+
+		public static List<Dictionary> listDicts()
+		{
+			return listDicts(null);
+		}
+
+		public static List<Dictionary> listDicts(string path)
+		{
+			List<Dictionary> dicts = new List<Dictionary>();
+			IntPtr cDicts = Libvoikko.voikko_list_dicts(ByteArray.s2n(path));
+			unsafe
+			{
+				for (void** cDict = (void**)cDicts; *cDict != (void*)0; cDict++)
+				{
+					dicts.Add(new Dictionary(ByteArray.n2s(Libvoikko.voikko_dict_language(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_variant(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_description(new IntPtr(*cDict)))));
+				}
+			}
+			Libvoikko.voikko_free_dicts(cDicts);
+			return dicts;
+		}
+		
+	}
 	
 	
 }
