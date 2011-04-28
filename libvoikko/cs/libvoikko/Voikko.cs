@@ -35,6 +35,12 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern IntPtr voikko_dict_description(IntPtr dict);
+		
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikkoSuggestCstr(IntPtr handle, byte[] word);
+		
+		[DllImport(DLL_LIB)]
+		public static extern void voikkoFreeCstrArray(IntPtr array);
 	}
 
 	public class Voikko : IDisposable
@@ -108,6 +114,29 @@ namespace libvoikko
 			}
 			Libvoikko.voikko_free_dicts(cDicts);
 			return dicts;
+		}
+
+		public List<string> Suggest(string word)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				IntPtr voikkoSuggestCstr = Libvoikko.voikkoSuggestCstr(handle, ByteArray.s2n(word));
+				if (voikkoSuggestCstr == IntPtr.Zero)
+				{
+					return new List<string>();
+				}
+				List<string> suggestions = new List<string>();
+				unsafe
+				{
+					for (byte** cStr = (byte**) voikkoSuggestCstr; *cStr != (byte*)0; cStr++)
+					{
+						suggestions.Add(ByteArray.n2s(new IntPtr(*cStr)));
+					}
+				}
+				Libvoikko.voikkoFreeCstrArray(voikkoSuggestCstr);
+				return suggestions;
+			}
 		}
 		
 	}

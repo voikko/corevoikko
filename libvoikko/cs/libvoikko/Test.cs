@@ -122,12 +122,42 @@ namespace libvoikko
 			Assert.Fail("Expected exception not thrown");
 		}
 
+		[Test]
+		public void initWithPathWorks()
+		{
+			// TODO: better test
+			voikko.Dispose();
+			voikko = new Voikko("fi", "/path/to/nowhere");
+			Assert.IsTrue(voikko.Spell("kissa"));
+		}
+
+		[Test]
+		public void spellAfterTerminateThrowsException()
+		{
+			voikko.Dispose();
+			try
+			{
+				voikko.Spell("kissa");
+			} catch (VoikkoException)
+			{
+				return;
+			}
+			Assert.Fail("Expected exception not thrown");
+		}
 
 		[Test]
 		public void spell()
 		{
 			Assert.IsTrue(voikko.Spell("määrä"));
 			Assert.IsFalse(voikko.Spell("määä"));
+		}
+
+		[Test]
+		public void suggest()
+		{
+			Assert.IsTrue(voikko.Suggest("koirra").Contains("koira"));
+			Assert.IsTrue(voikko.Suggest("määärä").Contains("määrä"));
+			Assert.AreEqual(0, voikko.Suggest("lasjkblvankirknaslvethikertvhgn").Count);
 		}
 	}
 }
