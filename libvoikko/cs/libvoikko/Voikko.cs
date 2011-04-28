@@ -49,7 +49,7 @@ namespace libvoikko
 			handle = Libvoikko.voikkoInit(ref error, ByteArray.s2n(language), ByteArray.s2n(path));
 			if (handle == IntPtr.Zero && error != IntPtr.Zero)
 			{
-				throw new VoikkoException("TODO error message");
+				throw new VoikkoException(ByteArray.n2s(error));
 			}
 		}
 

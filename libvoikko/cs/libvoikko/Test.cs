@@ -97,6 +97,33 @@ namespace libvoikko
 		}
 
 		[Test]
+		public void initWithCorrectDictWorks()
+		{
+			voikko.Dispose();
+			voikko = new Voikko("fi-x-standard");
+			Assert.IsFalse(voikko.Spell("amifostiini"));
+			voikko.Dispose();
+			voikko = new Voikko("fi-x-medicine");
+			Assert.IsTrue(voikko.Spell("amifostiini"));
+		}
+
+		[Test]
+		public void initWithNonExistentDictThrowsException()
+		{
+			voikko.Dispose();
+			try
+			{
+				voikko = new Voikko("fi-x-non-existent-variant");
+			} catch (VoikkoException e)
+			{
+				Assert.AreEqual("Specified dictionary variant was not found", e.Message);
+				return;
+			}
+			Assert.Fail("Expected exception not thrown");
+		}
+
+
+		[Test]
 		public void spell()
 		{
 			Assert.IsTrue(voikko.Spell("määrä"));
