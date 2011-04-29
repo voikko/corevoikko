@@ -159,6 +159,27 @@ namespace libvoikko
 			Assert.IsTrue(voikko.Suggest("määärä").Contains("määrä"));
 			Assert.AreEqual(0, voikko.Suggest("lasjkblvankirknaslvethikertvhgn").Count);
 		}
+
+		[Test]
+		public void suggestGc()
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				Assert.IsTrue(voikko.Suggest("määärä").Contains("määrä"));
+				GC.Collect();
+				GC.WaitForPendingFinalizers();
+			}
+		}
+
+		[Test]
+		public void suggestReturnsArgumentIfWordIsCorrect()
+		{
+			List<string> suggestions = voikko.Suggest("koira");
+			Assert.AreEqual(1, suggestions.Count);
+			Assert.AreEqual("koira", suggestions[0]);
+		}
+		
+		
 	}
 }
 

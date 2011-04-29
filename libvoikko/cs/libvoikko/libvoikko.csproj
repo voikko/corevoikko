@@ -48,6 +48,7 @@
     <Compile Include="ByteArray.cs" />
     <Compile Include="VoikkoException.cs" />
     <Compile Include="Dictionary.cs" />
+    <Compile Include="GrammarError.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
