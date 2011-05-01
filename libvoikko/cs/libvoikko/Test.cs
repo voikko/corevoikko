@@ -178,8 +178,21 @@ namespace libvoikko
 			Assert.AreEqual(1, suggestions.Count);
 			Assert.AreEqual("koira", suggestions[0]);
 		}
-		
-		
+
+		[Test]
+		public void grammarErrorsAndExplanation()
+		{
+			List<GrammarError> errors = voikko.GrammarErrors("Minä olen joten kuten kaunis.");
+			Assert.AreEqual(1, errors.Count);
+			GrammarError error = errors[0];
+			Assert.AreEqual(10, error.StartPos);
+			Assert.AreEqual(11, error.ErrorLen);
+			Assert.AreEqual(1, error.Suggestions.Count);
+			Assert.AreEqual("jotenkuten", error.Suggestions[0]);
+			int code = error.ErrorCode;
+			Assert.AreEqual("Virheellinen kirjoitusasu", voikko.GrammarErrorExplanation(code, "fi"));
+			Assert.AreEqual("Incorrect spelling of word(s)", voikko.GrammarErrorExplanation(code, "en"));
+		}
 	}
 }
 
