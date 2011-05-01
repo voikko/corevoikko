@@ -49,7 +49,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["script", "style"]
 	
 	def isIgnorableTag(self, tag):
-		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript", "strong"]
+		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript", "strong", "center", "small"]
 	
 	def isCloseP(self, tag):
 		return tag in ["p", "table", "div", "ul", "ol", "dl", "h1", "h2", "h3", "h4", "h5", "h6"]
