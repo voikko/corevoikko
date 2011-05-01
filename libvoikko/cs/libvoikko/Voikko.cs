@@ -60,9 +60,24 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern IntPtr voikkoGetGrammarErrorSuggestions(IntPtr error);
-		
+
 		[DllImport(DLL_LIB)]
 		public static extern IntPtr voikko_error_message_cstr(int errorCode, byte[] language);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikkoAnalyzeWordCstr(IntPtr handle, byte[] word);
+
+		[DllImport(DLL_LIB)]
+		public static extern void voikko_free_mor_analysis(IntPtr analysis);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikko_mor_analysis_keys(IntPtr analysis);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikko_mor_analysis_value_cstr(IntPtr analysis, byte[] key);
+
+		[DllImport(DLL_LIB)]
+		public static extern void voikko_free_mor_analysis_value_cstr(IntPtr analysisValue);
 	}
 
 	public class Voikko : IDisposable
@@ -118,20 +133,20 @@ namespace libvoikko
 			}
 		}
 
-		public static List<Dictionary> listDicts()
+		public static List<VoikkoDictionary> listDicts()
 		{
 			return listDicts(null);
 		}
 
-		public static List<Dictionary> listDicts(string path)
+		public static List<VoikkoDictionary> listDicts(string path)
 		{
-			List<Dictionary> dicts = new List<Dictionary>();
+			List<VoikkoDictionary> dicts = new List<VoikkoDictionary>();
 			IntPtr cDicts = Libvoikko.voikko_list_dicts(ByteArray.s2n(path));
 			unsafe
 			{
 				for (void** cDict = (void**)cDicts; *cDict != (void*)0; cDict++)
 				{
-					dicts.Add(new Dictionary(ByteArray.n2s(Libvoikko.voikko_dict_language(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_variant(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_description(new IntPtr(*cDict)))));
+					dicts.Add(new VoikkoDictionary(ByteArray.n2s(Libvoikko.voikko_dict_language(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_variant(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_description(new IntPtr(*cDict)))));
 				}
 			}
 			Libvoikko.voikko_free_dicts(cDicts);
@@ -217,6 +232,43 @@ namespace libvoikko
 		public string GrammarErrorExplanation(int errorCode, string language)
 		{
 			return ByteArray.n2s(Libvoikko.voikko_error_message_cstr(errorCode, ByteArray.s2n(language)));
+		}
+
+		public List<Analysis> Analyze(String word)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				IntPtr cAnalysisList = Libvoikko.voikkoAnalyzeWordCstr(handle, ByteArray.s2n(word));
+				
+				List<Analysis> analysisList = new List<Analysis>();
+				
+				if (cAnalysisList == IntPtr.Zero)
+				{
+					return analysisList;
+				}
+				
+				unsafe
+				{
+					for (void** cAnalysis = (void**)cAnalysisList; *cAnalysis != (void*)0; cAnalysis++)
+					{
+						IntPtr cKeys = Libvoikko.voikko_mor_analysis_keys(new IntPtr(*cAnalysis));
+						Analysis analysis = new Analysis();
+						for (byte** cKey = (byte**)cKeys; *cKey != (byte*)0; cKey++)
+						{
+							string key = ByteArray.n2s(new IntPtr(*cKey));
+							IntPtr val = Libvoikko.voikko_mor_analysis_value_cstr(new IntPtr(*cAnalysis),
+							                                                      ByteArray.s2n(key));
+							analysis[key] = ByteArray.n2s(val);
+							Libvoikko.voikko_free_mor_analysis_value_cstr(val);
+						}
+						analysisList.Add(analysis);
+					}
+				}
+				Libvoikko.voikko_free_mor_analysis(cAnalysisList);
+				
+				return analysisList;
+			}
 		}
 	}
 	

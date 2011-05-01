@@ -1,7 +1,7 @@
 using System;
 namespace libvoikko
 {
-	public class Dictionary : IComparable<Dictionary>
+	public class VoikkoDictionary : IComparable<VoikkoDictionary>
 	{
 
 		private readonly string language;
@@ -19,14 +19,14 @@ namespace libvoikko
 			get { return description; }
 		}
 
-		public Dictionary(String language, String variant, String description)
+		public VoikkoDictionary(String language, String variant, String description)
 		{
 			this.language = language;
 			this.variant = variant;
 			this.description = description;
 		}
 
-		public int CompareTo(Dictionary other)
+		public int CompareTo(VoikkoDictionary other)
 		{
 			int cmp = language.CompareTo(other.Language);
 			if (cmp != 0) {
@@ -55,9 +55,9 @@ namespace libvoikko
 				return true;
 			if (obj == null)
 				return false;
-			if (!(obj is Dictionary))
+			if (!(obj is VoikkoDictionary))
 				return false;
-			Dictionary other = (Dictionary)obj;
+			VoikkoDictionary other = (VoikkoDictionary)obj;
 			if (description == null) {
 				if (other.description != null)
 					return false;

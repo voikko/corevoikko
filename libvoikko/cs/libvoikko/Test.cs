@@ -51,11 +51,11 @@ namespace libvoikko
 		[Test]
 		public void dictionaryComparisonWorks()
 		{
-			Dictionary d1 = new Dictionary("fi", "a", "b");
-			Dictionary d2 = new Dictionary("fi", "a", "c");
-			Dictionary d3 = new Dictionary("fi", "c", "b");
-			Dictionary d4 = new Dictionary("fi", "a", "b");
-			Dictionary d5 = new Dictionary("sv", "a", "b");
+			VoikkoDictionary d1 = new VoikkoDictionary("fi", "a", "b");
+			VoikkoDictionary d2 = new VoikkoDictionary("fi", "a", "c");
+			VoikkoDictionary d3 = new VoikkoDictionary("fi", "c", "b");
+			VoikkoDictionary d4 = new VoikkoDictionary("fi", "a", "b");
+			VoikkoDictionary d5 = new VoikkoDictionary("sv", "a", "b");
 			Assert.IsFalse(d1.Equals("kissa"));
 			Assert.IsFalse("kissa".Equals(d1));
 			Assert.IsFalse(d1.Equals(d2));
@@ -70,11 +70,11 @@ namespace libvoikko
 		[Test]
 		public void dictionaryHashCodeWorks()
 		{
-			Dictionary d1 = new Dictionary("fi", "a", "b");
-			Dictionary d2 = new Dictionary("fi", "a", "c");
-			Dictionary d3 = new Dictionary("fi", "c", "b");
-			Dictionary d4 = new Dictionary("fi", "a", "b");
-			Dictionary d5 = new Dictionary("sv", "a", "b");
+			VoikkoDictionary d1 = new VoikkoDictionary("fi", "a", "b");
+			VoikkoDictionary d2 = new VoikkoDictionary("fi", "a", "c");
+			VoikkoDictionary d3 = new VoikkoDictionary("fi", "c", "b");
+			VoikkoDictionary d4 = new VoikkoDictionary("fi", "a", "b");
+			VoikkoDictionary d5 = new VoikkoDictionary("sv", "a", "b");
 			Assert.AreNotEqual(d1.GetHashCode(), d2.GetHashCode());
 			Assert.AreNotEqual(d1.GetHashCode(), d3.GetHashCode());
 			Assert.AreNotEqual(d4.GetHashCode(), d5.GetHashCode());
@@ -84,9 +84,9 @@ namespace libvoikko
 		[Test]
 		public void listDictsWithoutPath()
 		{
-			List<Dictionary> dicts = Voikko.listDicts();
+			List<VoikkoDictionary> dicts = Voikko.listDicts();
 			Assert.IsTrue(dicts.Count > 0);
-			Dictionary standard = dicts[0];
+			VoikkoDictionary standard = dicts[0];
 			Assert.AreEqual("standard", standard.Variant);
 		}
 
@@ -192,6 +192,30 @@ namespace libvoikko
 			int code = error.ErrorCode;
 			Assert.AreEqual("Virheellinen kirjoitusasu", voikko.GrammarErrorExplanation(code, "fi"));
 			Assert.AreEqual("Incorrect spelling of word(s)", voikko.GrammarErrorExplanation(code, "en"));
+		}
+
+		[Test]
+		public void noGrammarErrorsInEmptyParagraph()
+		{
+			List<GrammarError> errors = voikko.GrammarErrors("Olen täi.\n\nOlen täi.");
+			Assert.AreEqual(0, errors.Count);
+		}
+
+		[Test]
+		public void grammarErrorOffsetsInMultipleParagraphs()
+		{
+			List<GrammarError> errors = voikko.GrammarErrors("Olen täi.\n\nOlen joten kuten.");
+			Assert.AreEqual(1, errors.Count);
+			Assert.AreEqual(16, errors[0].StartPos);
+			Assert.AreEqual(11, errors[0].ErrorLen);
+		}
+
+		[Test]
+		public void analyze()
+		{
+			List<Analysis> analysisList = voikko.Analyze("kansaneläkehakemus");
+			Assert.AreEqual(1, analysisList.Count);
+			Assert.AreEqual("=pppppp=ppppp=ppppppp", analysisList[0]["STRUCTURE"]);
 		}
 	}
 }
