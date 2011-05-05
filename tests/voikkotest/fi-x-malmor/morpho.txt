@@ -1,6 +1,13 @@
 word:koiralla
  analysis
   BASEFORM=koira
+  !KYSYMYSLIITE
+word:koirallako
+ analysis
+  KYSYMYSLIITE=true
+word:eikö
+ analysis
+  KYSYMYSLIITE=true
 word:juoksen
  analysis
   TENSE=present_simple

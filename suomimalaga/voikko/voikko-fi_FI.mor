@@ -2054,6 +2054,17 @@ subrule tulostus_omistusliitteet($tietue):
   return [];
 end;
 
+subrule tulostus_liitepartikkelit($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.kysymysliite /= nil then
+      return [kysymysliite: yes];
+    end;
+  end;
+  return [];
+end;
+
 subrule tulostus_kielto($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
@@ -2211,7 +2222,8 @@ subrule tulostus_v2($tietue):
             sijamuoto: tulostus_sijamuoto($tietue),
             perusmuoto: tulostus_debug_perusmuoto($tietue)]
           + tulostus_partisiipit($tietue)
-          + tulostus_omistusliitteet($tietue);
+          + tulostus_omistusliitteet($tietue)
+          + tulostus_liitepartikkelit($tietue);
     if $res.luokka = teonsana then
       $res :=+ [aikamuoto: tulostus_aikamuoto($tietue)];
     end;

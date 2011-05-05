@@ -1,3 +1,6 @@
+2011-05-05 Harri Pitkänen <hatapitk@iki.fi>
+	* Support KYSYMYSLIITE in Malaga analyzer.
+
 2011-04-16 Harri Pitkänen <hatapitk@iki.fi>
 	* Support possessive suffixes in Malaga analyzer.
 

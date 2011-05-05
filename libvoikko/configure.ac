@@ -67,12 +67,12 @@ AH_TEMPLATE(GCC_VISIBILITY, [GCC visibility support])
 tmp_CXXFLAGS="$CXXFLAGS"
 CXXFLAGS="$CXXFLAGS -Wall -Werror -fvisibility=hidden"
 AC_MSG_CHECKING([whether $CC supports the visibility attribute])
-AC_COMPILE_IFELSE(AC_LANG_SOURCE(
+AC_COMPILE_IFELSE([AC_LANG_SOURCE(
 [
   void __attribute__ ((visibility("default"))) test_default (void) {}
   void __attribute__ ((visibility("hidden"))) test_hidden (void) {}
  int main (int argc, char **argv) { test_default (); test_hidden (); return 0; }
-]),
+])],
 [
   AC_DEFINE(GCC_VISIBILITY, 1)
   CFLAGS="$CFLAGS -fvisibility=hidden"
