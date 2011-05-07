@@ -77,6 +77,7 @@ list<Analysis *> * MalagaAnalyzer::analyze(const char * word) {
 			parseBasicAttribute(analysis, res, symbols[MS_PARTICIPLE], "PARTICIPLE");
 			parseBasicAttribute(analysis, res, symbols[MS_POSSESSIVE], "POSSESSIVE");
 			parseBasicAttribute(analysis, res, symbols[MS_KYSYMYSLIITE], "KYSYMYSLIITE");
+			parseBasicAttribute(analysis, res, symbols[MS_FOCUS], "FOCUS");
 			parsePerusmuoto(analysis, res);
 			analysisList->push_back(analysis);
 			res = next_analysis_result(&malagaState);
@@ -166,6 +167,9 @@ void MalagaAnalyzer::initSymbols() {
 			case MS_KYSYMYSLIITE:
 				symbolName = "kysymysliite";
 				break;
+			case MS_FOCUS:
+				symbolName = "fokus";
+				break;
 		}
 		symbols[sym] = findSymbol(symbolName);
 	}
@@ -240,6 +244,9 @@ void MalagaAnalyzer::initSymbols() {
 	insertToSymbolMap(symbolMap, "omistusliite_1p", L"1p");
 	insertToSymbolMap(symbolMap, "omistusliite_2p", L"2p");
 	insertToSymbolMap(symbolMap, "omistusliite_3", L"3");
+	
+	insertToSymbolMap(symbolMap, "kin", L"kin");
+	insertToSymbolMap(symbolMap, "kaan", L"kaan");
 }
 
 void MalagaAnalyzer::parseStructure(Analysis * &analysis, value_t &result) const {

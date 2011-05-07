@@ -209,6 +209,14 @@ are provided only as information for external applications.
   arvo on "true". Jos sanaan ei liity kysymysliitettä, attribuuttia
   ei ole.
 
+ FOCUS
+ =====
+  Sanaan liittyy fokuspartikkeli -kin tai -kAAn.
+
+  Esimerkkejä:
+   Sana: kissakin  -> FOCUS: kin
+   Sana: kissakaan -> FOCUS: kaan
+
  WORDBASES
  =========
   Sanan osien perusmuodot. Attribuutti ei ole käytössä libvoikon

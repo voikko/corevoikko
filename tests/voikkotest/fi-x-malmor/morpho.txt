@@ -2,12 +2,19 @@ word:koiralla
  analysis
   BASEFORM=koira
   !KYSYMYSLIITE
+  !FOCUS
 word:koirallako
  analysis
   KYSYMYSLIITE=true
 word:eikö
  analysis
   KYSYMYSLIITE=true
+word:koirallakin
+ analysis
+  FOCUS=kin
+word:koirallakaan
+ analysis
+  FOCUS=kaan
 word:juoksen
  analysis
   TENSE=present_simple

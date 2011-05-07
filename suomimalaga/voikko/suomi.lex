@@ -437,15 +437,15 @@ define @jatko_mm := <sija_monikko_1,
 
 # Karlsson 1983, s. 234,
 #
-[alku: "kin",       luokka: liitesana, kielto: no, äs: aä, jatko: <loppu>];
-[alku: "kaan",      luokka: liitesana, kielto: yes, äs: a, jatko: <loppu>];
-[alku: "kään",      luokka: liitesana, kielto: yes, äs: ä, jatko: <loppu>];
-[alku: "kaanhan",   luokka: liitesana, äs: a, jatko: <loppu>];
-[alku: "käänhän",   luokka: liitesana, äs: ä, jatko: <loppu>];
+[alku: "kin",       luokka: liitesana, fokus: kin, kielto: no, äs: aä, jatko: <loppu>];
+[alku: "kaan",      luokka: liitesana, fokus: kaan, kielto: yes, äs: a, jatko: <loppu>];
+[alku: "kään",      luokka: liitesana, fokus: kaan, kielto: yes, äs: ä, jatko: <loppu>];
+[alku: "kaanhan",   luokka: liitesana, fokus: kaan, äs: a, jatko: <loppu>];
+[alku: "käänhän",   luokka: liitesana, fokus: kaan, äs: ä, jatko: <loppu>];
 [alku: "ko",        luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
 [alku: "kö",        luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
-[alku: "kokaan",    luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
-[alku: "kökään",    luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
+[alku: "kokaan",    luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: a, jatko: <loppu>];
+[alku: "kökään",    luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: ä, jatko: <loppu>];
 [alku: "pa",        luokka: liitesana, kielto: no, äs: a, jatko: <loppu>];
 [alku: "pä",        luokka: liitesana, kielto: no, äs: ä, jatko: <loppu>];
 [alku: "han",       luokka: liitesana, kielto: no, äs: a, jatko: <loppu>];
@@ -458,20 +458,20 @@ define @jatko_mm := <sija_monikko_1,
 [alku: "kös",       luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
 [alku: "pas",       luokka: liitesana, äs: a, jatko: <loppu>];
 [alku: "päs",       luokka: liitesana, äs: ä, jatko: <loppu>];
-[alku: "kinko",     luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
-[alku: "kinkö",     luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
-[alku: "kaanko",    luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
-[alku: "käänkö",    luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
-[alku: "kinhan",    luokka: liitesana, kielto: no, äs: a, jatko: <loppu>];
-[alku: "kinhän",    luokka: liitesana, kielto: no, äs: ä, jatko: <loppu>];
-[alku: "kinkohan",  luokka: liitesana, kysymysliite: yes, kielto: no, äs: a, jatko: <loppu>];
-[alku: "kinköhän",  luokka: liitesana, kysymysliite: yes, kielto: no, äs: ä, jatko: <loppu>];
-[alku: "kinkos",    luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
-[alku: "kinkös",    luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
-[alku: "kaankohan", luokka: liitesana, kysymysliite: yes, kielto: no, äs: a, jatko: <loppu>];
-[alku: "käänköhän", luokka: liitesana, kysymysliite: yes, kielto: no, äs: ä, jatko: <loppu>];
-[alku: "kaankos",   luokka: liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
-[alku: "käänkös",   luokka: liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];
+[alku: "kinko",     luokka: liitesana, fokus: kin, kysymysliite: yes, äs: a, jatko: <loppu>];
+[alku: "kinkö",     luokka: liitesana, fokus: kin, kysymysliite: yes, äs: ä, jatko: <loppu>];
+[alku: "kaanko",    luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: a, jatko: <loppu>];
+[alku: "käänkö",    luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: ä, jatko: <loppu>];
+[alku: "kinhan",    luokka: liitesana, fokus: kin, kielto: no, äs: a, jatko: <loppu>];
+[alku: "kinhän",    luokka: liitesana, fokus: kin, kielto: no, äs: ä, jatko: <loppu>];
+[alku: "kinkohan",  luokka: liitesana, fokus: kin, kysymysliite: yes, kielto: no, äs: a, jatko: <loppu>];
+[alku: "kinköhän",  luokka: liitesana, fokus: kin, kysymysliite: yes, kielto: no, äs: ä, jatko: <loppu>];
+[alku: "kinkos",    luokka: liitesana, fokus: kin, kysymysliite: yes, äs: a, jatko: <loppu>];
+[alku: "kinkös",    luokka: liitesana, fokus: kin, kysymysliite: yes, äs: ä, jatko: <loppu>];
+[alku: "kaankohan", luokka: liitesana, fokus: kaan, kysymysliite: yes, kielto: no, äs: a, jatko: <loppu>];
+[alku: "käänköhän", luokka: liitesana, fokus: kaan, kysymysliite: yes, kielto: no, äs: ä, jatko: <loppu>];
+[alku: "kaankos",   luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: a, jatko: <loppu>];
+[alku: "käänkös",   luokka: liitesana, fokus: kaan, kysymysliite: yes, äs: ä, jatko: <loppu>];
 
 [alku: "ko",        luokka: kieltosanan_liitesana, kysymysliite: yes, äs: a, jatko: <loppu>];
 [alku: "kö",        luokka: kieltosanan_liitesana, kysymysliite: yes, äs: ä, jatko: <loppu>];

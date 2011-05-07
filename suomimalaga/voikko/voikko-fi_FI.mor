@@ -2056,13 +2056,17 @@ end;
 
 subrule tulostus_liitepartikkelit($tietue):
   define $tlen := length($tietue);
+  define $res := [];
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
     if $allomorfi.kysymysliite /= nil then
-      return [kysymysliite: yes];
+      $res :=+ [kysymysliite: yes];
+    end;
+    if $allomorfi.fokus /= nil then
+      $res :=+ [fokus: $allomorfi.fokus];
     end;
   end;
-  return [];
+  return $res;
 end;
 
 subrule tulostus_kielto($tietue):

@@ -180,6 +180,9 @@ luokka; alaluokka; jluokka;
     omistusliite_3;
   liitesana;
     kysymysliite;
+    fokus;
+      kin;
+      kaan;
   liitesana_s;  # Tulkaa+s. Poistetaan Voikossa.
   kieltosanan_liitesana;
   liitesana_pi; # Tulee+pi.
