@@ -108,9 +108,13 @@ AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
 	[enable HFST morphology backend (EXPERIMENTAL!)]),
 	[hfst=${enableval}], [hfst=no])
 if test x$hfst = xyes; then
-	PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell])
-	AC_DEFINE(HAVE_HFST, 1)
-	CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
+	AC_PROVIDE_IFELSE([PKG_CHECK_MODULES)], [
+		PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell])
+		AC_DEFINE(HAVE_HFST, 1)
+		CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
+	], [
+		AC_ERROR([You need to have pkg-config installed to be able to enable HFST])
+	])
 fi
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
