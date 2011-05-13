@@ -97,6 +97,14 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><table><tr><td><td><p>kissa</p></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)
 	
+	def testTableCaptionAndThead(self):
+		result = parseHtml(u"<html><body><div><table><caption>kissa</caption><thead><tr><th>a</th></tr></thead></table></div></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_HEADING, u"kissa"), (SEGMENT_TYPE_OTHER, u"a")], result)
+	
+	def testTableInDivInList(self):
+		result = parseHtml(u"<html><body><ul><li><div><table></table></div></li></ul></body></html>")
+		self.assertEquals([], result)
+	
 	def testUnclosedThIsNotError(self):
 		result = parseHtml(u"<html><body><table><tr><th><th><p>kissa</p></tr></table></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_PARAGRAPH, u"kissa")], result)

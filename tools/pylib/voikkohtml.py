@@ -40,7 +40,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return result
 	
 	def isContentTag(self, tag):
-		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p"]
+		return tag in ["h1", "h2", "h3", "h4", "h5", "h6", "li", "dt", "dd", "p", "caption"]
 	
 	def isNotAllowedInHeaderOrParagraph(self, tag):
 		return tag in ["table"]
@@ -49,7 +49,7 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["script", "style"]
 	
 	def isIgnorableTag(self, tag):
-		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript", "strong", "center", "small"]
+		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", "input", "button", "map", "area", "iframe", "base", "font", "noscript", "strong", "center", "small", "thead", "tbody", "tfoot"]
 	
 	def isCloseP(self, tag):
 		return tag in ["p", "table", "div", "ul", "ol", "dl", "h1", "h2", "h3", "h4", "h5", "h6"]
@@ -119,9 +119,6 @@ class VoikkoHTMLParser(HTMLParser):
 				pass
 			elif self.acceptData() is not None:
 				raise HTMLParseError("Nesting error", self.getpos())
-		elif self.isNotAllowedInHeaderOrParagraph(tag):
-			if len(self.tags) == 0 or (self.tags[-1] != "li" and self.acceptData() is not None):
-				raise HTMLParseError("Nesting error", self.getpos())
 		self.tags.append(tag)
 	
 	def appendParagraph(self):
@@ -162,7 +159,7 @@ class VoikkoHTMLParser(HTMLParser):
 			return
 		if tag != openTag:
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
-		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
+		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6", "caption"]:
 			self.segments.append((SEGMENT_TYPE_HEADING, self.getData()))
 		elif openTag in ["li", "dt", "dd"]:
 			self.appendListItem()
