@@ -84,6 +84,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "ay", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # avoin yhtiö; ammattiyhdistys
 [alku: "bar", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "BBC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # British Broadcasting Corporation
+[alku: "BKT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # bruttokansantuote
 [alku: "cd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
 [alku: "CD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # cd-levy
 [alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_sukija>];
@@ -220,6 +221,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "nimim.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # nimimerkki
 [alku: "nk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin kutsuttu
 [alku: "n.k.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # Niin kutsuttu.
+[alku: "NHL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # National Hockey League
 [alku: "NKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Neuvostoliiton kommunistinen puolue.
 [alku: "n:o.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Numero.
 [alku: "ns.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin sanottu
