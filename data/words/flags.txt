@@ -23,6 +23,7 @@
 17      style/international                      -               Ala: sivistyssana
 35      style/foreign                            -               Ala: vieraskielinen sana
 40      style/incorrect                          -               Tyypillinen kielivirhe
+41      style/foreignloan                        sitlaina        Sitaattilaina
 5       application/not_voikko                   -               Ei kuulu oikolukusanastoon
 6       application/not_sukija                   -               Ei kuulu indeksointisanastoon
 39      frequency/confusing                      -               Sekoittuu helposti yleisempään sanaan
