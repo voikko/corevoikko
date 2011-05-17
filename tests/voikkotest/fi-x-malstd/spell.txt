@@ -303,6 +303,10 @@ Pohjois-Suomi
 Moilanen-Savolainen
 !kaivooivuus
 kaivo-oivuus
+apartheid-elämä # konsonanttiloppuinen sitaattilaina + vokaalialkuinen
+apartheid-kissa # konsonanttiloppuinen sitaattilaina + konsonanttialkuinen
+college-aika # vokaaliloppuinen sitaattilaina + vokaali
+college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri

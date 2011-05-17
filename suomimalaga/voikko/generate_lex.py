@@ -50,6 +50,8 @@ def check_style(word):
 	global OPTIONS
 	for styleE in word.getElementsByTagName("style"):
 		for style in generate_lex_common.tValues(styleE, "flag"):
+			if style == "foreignloan":
+				continue
 			if not style in OPTIONS["style"]: return False
 	return True
 

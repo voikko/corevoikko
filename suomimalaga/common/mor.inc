@@ -35,35 +35,3 @@ subrule vokaali($merkki):
     return no;
   end;
 end;
-
-
-# Palauttaa yes, jos $sana voi liittyä listaan $vasen yhdyssanassa,
-# jossa yhdysviiva käyttö on sallittua ja pakollista täsmälleen silloin,
-# kun alkuosa päättyy samaan vokaaliin jolla loppuosa alkaa.
-# Listan $vasen on sisällettävä vähintään yksi elementti.
-subrule vokaaliehdollinen_yhdysviiva_ok($vasen, $sana):
-  define $i := length($vasen);
-  if ($vasen.$i.luokka = tavuviiva) then
-    if ($i = 1) then
-      return yes;
-    end;
-    if $vasen.$i.vokaaliehto = no then
-      return yes;
-    end;
-    if (vokaali(first($sana)) and first($sana) = last($vasen.($i-1).alku)) then
-      return yes;
-    # is- ("teknillis-tieteellinen", "Kaakkois-Suomi")
-    # FIXME: tämä ei ole tarkalleen ottaen oikein, mutta toistaiseksi riittävän hyvä
-    elseif (($vasen.($i - 1).alku) matches ".*is") then
-      return yes;
-    else
-      return no;
-    end;
-  else
-    if (vokaali(first($sana)) and first($sana) = last($vasen.$i.alku)) then
-      return no;
-    else
-      return yes;
-    end;
-  end;
-end;

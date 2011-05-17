@@ -327,6 +327,7 @@ inen_loppu; # -inen
 vapaa_jälkiosa; # Vapaasti kaikkiin sanoihin liittyvä yhdyssanan jälkiosa, esim. "sana" ("ja-sana")
 molemmat; # kielto: yes/no/molemmat
 vaatii_tapaluokan; # "alkaa juosta", "pyrkii juoksemaan"
+sitlaina; # Sitaattilaina
 
 äs; # Ääntiösointu.
   a;
