@@ -259,6 +259,9 @@ class Voikko(object):
 		if result == 0:
 			raise VoikkoException(u"Could not set boolean option " + str(option) + u" to value " + str(value) + u".")
 	
+	def __isValidInput(self, text):
+		return u"\0" not in text
+	
 	def terminate(self):
 		"""Releases the resources allocated by libvoikko for this instance. The instance cannot be used anymore
 		after this method has been called. The resources are released automatically when the Python object is
@@ -342,6 +345,9 @@ class Voikko(object):
 		"""Check the spelling of given word. Return true if the word is correct,
 		false if it is incorrect.
 		"""
+		if not self.__isValidInput(word):
+			return False
+		
 		result = self.__lib.voikkoSpellUcs4(self.__handle, word)
 		if result == 0:
 			return False
@@ -354,6 +360,8 @@ class Voikko(object):
 		"""Generate a list of suggested spellings for given (misspelled) word.
 		If the given word is correct, the list contains only the word itself.
 		"""
+		if not self.__isValidInput(word):
+			return []
 		
 		cSuggestions = self.__lib.voikkoSuggestUcs4(self.__handle, word)
 		pSuggestions = []
@@ -404,6 +412,9 @@ class Voikko(object):
 		Unlike the C based API this method accepts multiple paragraphs
 		separated by newline characters.
 		"""
+		if not self.__isValidInput(text):
+			return []
+		
 		textUnicode = unicode(text)
 		errorList = []
 		offset = 0
@@ -424,6 +435,9 @@ class Voikko(object):
 		analysis results. The results are represented as maps having property
 		names as keys and property values as values.
 		"""
+		if not self.__isValidInput(word):
+			return []
+		
 		cAnalysisList = self.__lib.voikkoAnalyzeWordUcs4(self.__handle, word)
 		pAnalysisList = []
 		
@@ -491,6 +505,9 @@ class Voikko(object):
 		  '=' = hyphentation point (character at this position
 		        is replaced by the hyphen.)
 		"""
+		if not self.__isValidInput(word):
+			return "".ljust(len(word))
+		
 		cHyphenationPattern = self.__lib.voikkoHyphenateUcs4(self.__handle, word)
 		hyphenationPattern = string_at(cHyphenationPattern)
 		self.__lib.voikkoFreeCstr(cHyphenationPattern)

@@ -339,6 +339,13 @@ class LibvoikkoTest(unittest.TestCase):
 		self.failUnless(len(longWord) > MAX_WORD_CHARS)
 		self.assertEqual(0, len(self.voikko.analyze(longWord)))
 	
+	def testEmbeddedNullsAreNotAccepted(self):
+		self.failIf(self.voikko.spell(u"kissa\0asdasd"))
+		self.assertEqual(0, len(self.voikko.suggest("kisssa\0koira")))
+		self.assertEqual("kissa\0koira", self.voikko.hyphenate("kissa\0koira"))
+		self.assertEquals(0, len(self.voikko.grammarErrors("kissa\0koira")))
+		self.assertEquals(0, len(self.voikko.analyze("kissa\0koira")))
+	
 	def testAllCapsAndDot(self):
 		self.voikko.setIgnoreDot(True)
 		self.failIf(self.voikko.spell(u"ABC-DEF."))
