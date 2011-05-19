@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2011 Harri Pitkänen (hatapitk@iki.fi)
 # Test suite for testing public API of libvoikko and the Python interface.
 
 # This program is free software; you can redistribute it and/or modify
@@ -341,10 +341,58 @@ class LibvoikkoTest(unittest.TestCase):
 	
 	def testEmbeddedNullsAreNotAccepted(self):
 		self.failIf(self.voikko.spell(u"kissa\0asdasd"))
-		self.assertEqual(0, len(self.voikko.suggest("kisssa\0koira")))
-		self.assertEqual("kissa\0koira", self.voikko.hyphenate("kissa\0koira"))
-		self.assertEquals(0, len(self.voikko.grammarErrors("kissa\0koira")))
-		self.assertEquals(0, len(self.voikko.analyze("kissa\0koira")))
+		self.assertEqual(0, len(self.voikko.suggest(u"kisssa\0koira")))
+		self.assertEqual(u"kissa\0koira", self.voikko.hyphenate(u"kissa\0koira"))
+		self.assertEquals(0, len(self.voikko.grammarErrors(u"kissa\0koira")))
+		self.assertEquals(0, len(self.voikko.analyze(u"kissa\0koira")))
+	
+	def testNullCharMeansSingleSentence(self):
+		sentences = self.voikko.sentences(u"kissa\0koira. Koira ja kissa.")
+		self.assertEqual(1, len(sentences))
+		self.assertEqual(Sentence.NONE, sentences[0].nextStartType)
+		self.assertEqual(u"kissa\0koira. Koira ja kissa.", sentences[0].sentenceText)
+	
+	def testNullCharIsUnknownToken(self):
+		tokens = self.voikko.tokens(u"kissa\0koira")
+		self.assertEquals(3, len(tokens))
+		self.assertEquals(Token.WORD, tokens[0].tokenType)
+		self.assertEquals(u"kissa", tokens[0].tokenText)
+		self.assertEquals(Token.UNKNOWN, tokens[1].tokenType)
+		self.assertEquals(u"\0", tokens[1].tokenText)
+		self.assertEquals(Token.WORD, tokens[2].tokenType)
+		self.assertEquals(u"koira", tokens[2].tokenText)
+		
+		tokens = self.voikko.tokens(u"kissa\0\0koira")
+		self.assertEquals(4, len(tokens))
+		self.assertEquals(Token.WORD, tokens[0].tokenType)
+		self.assertEquals(u"kissa", tokens[0].tokenText)
+		self.assertEquals(Token.UNKNOWN, tokens[1].tokenType)
+		self.assertEquals(u"\0", tokens[1].tokenText)
+		self.assertEquals(Token.UNKNOWN, tokens[2].tokenType)
+		self.assertEquals(u"\0", tokens[2].tokenText)
+		self.assertEquals(Token.WORD, tokens[3].tokenType)
+		self.assertEquals(u"koira", tokens[3].tokenText)
+		
+		tokens = self.voikko.tokens(u"kissa\0")
+		self.assertEquals(2, len(tokens))
+		self.assertEquals(Token.WORD, tokens[0].tokenType)
+		self.assertEquals(u"kissa", tokens[0].tokenText)
+		self.assertEquals(Token.UNKNOWN, tokens[1].tokenType)
+		self.assertEquals(u"\0", tokens[1].tokenText)
+		
+		tokens = self.voikko.tokens(u"\0kissa")
+		self.assertEquals(2, len(tokens))
+		self.assertEquals(Token.UNKNOWN, tokens[0].tokenType)
+		self.assertEquals(u"\0", tokens[0].tokenText)
+		self.assertEquals(Token.WORD, tokens[1].tokenType)
+		self.assertEquals(u"kissa", tokens[1].tokenText)
+		
+		tokens = self.voikko.tokens(u"\0")
+		self.assertEquals(1, len(tokens))
+		self.assertEquals(Token.UNKNOWN, tokens[0].tokenType)
+		self.assertEquals(u"\0", tokens[0].tokenText)
+		
+		self.assertEquals(0, len(self.voikko.tokens(u"")))
 	
 	def testAllCapsAndDot(self):
 		self.voikko.setIgnoreDot(True)

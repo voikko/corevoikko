@@ -20,7 +20,7 @@ An example session demonstrating the use of this module:
 
 """
 
-# Copyright 2009 - 2010 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2011 Harri Pitkänen (hatapitk@iki.fi)
 # This library requires Python version 2.5 or newer.
 
 # This program is free software; you can redistribute it and/or modify
@@ -463,6 +463,19 @@ class Voikko(object):
 	
 	def tokens(self, text):
 		"""Split the given natural language text into a list of Token objects."""
+		startIndex = 0
+		tokens = []
+		while True:
+			i = text.find(u"\0", startIndex)
+			if i == -1:
+				break
+			tokens = tokens + self.__splitTokens(text[startIndex:i])
+			tokens.append(Token(u"\0", Token.UNKNOWN))
+			startIndex = i + 1
+		tokens = tokens + self.__splitTokens(text[startIndex:])
+		return tokens
+	
+	def __splitTokens(self, text):
 		uniText = unicode(text)
 		result = []
 		textLen = len(uniText)
@@ -481,6 +494,9 @@ class Voikko(object):
 	
 	def sentences(self, text):
 		"""Split the given natural language text into a list of Sentence objects."""
+		if not self.__isValidInput(text):
+			return [Sentence(text, Sentence.NONE)]
+		
 		uniText = unicode(text)
 		result = []
 		textLen = len(uniText)
