@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2010 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -451,5 +451,71 @@ public class VoikkoTest {
         complexWord.append("kuraattori");
         assertTrue(complexWord.length() > DEPRECATED_MAX_WORD_CHARS);
         assertEquals(0, voikko.analyze(complexWord.toString()).size());
+    }
+    
+    @Test
+    public void embeddedNullsAreNotAccepted() {
+        assertFalse(voikko.spell("kissa\0asdasd"));
+        assertTrue(voikko.suggest("kisssa\0koira").isEmpty());
+        assertEquals("kissa\0koira", voikko.hyphenate("kissa\0koira"));
+        assertEquals(0, voikko.grammarErrors("kissa\0koira").size());
+        assertEquals(0, voikko.analyze("kissa\0koira").size());
+    }
+
+    @Test
+    public void nullCharMeansSingleSentence() {
+        List<Sentence> sentences = voikko.sentences("kissa\0koira");
+        assertEquals(1, sentences.size());
+        assertEquals(SentenceStartType.NONE, sentences.get(0).getNextStartType());
+        assertEquals("kissa\0koira", sentences.get(0).getText());
+    }
+    
+    @Test
+    public void nullCharIsUnknownToken() {
+        {
+            List<Token> tokens = voikko.tokens("kissa\0koira");
+            assertEquals(3, tokens.size());
+            assertEquals(TokenType.WORD, tokens.get(0).getType());
+            assertEquals("kissa", tokens.get(0).getText());
+            assertEquals(TokenType.UNKNOWN, tokens.get(1).getType());
+            assertEquals("\0", tokens.get(1).getText());
+            assertEquals(TokenType.WORD, tokens.get(2).getType());
+            assertEquals("koira", tokens.get(2).getText());
+        }
+        {
+            List<Token> tokens = voikko.tokens("kissa\0\0koira");
+            assertEquals(4, tokens.size());
+            assertEquals(TokenType.WORD, tokens.get(0).getType());
+            assertEquals("kissa", tokens.get(0).getText());
+            assertEquals(TokenType.UNKNOWN, tokens.get(1).getType());
+            assertEquals("\0", tokens.get(1).getText());
+            assertEquals(TokenType.UNKNOWN, tokens.get(2).getType());
+            assertEquals("\0", tokens.get(2).getText());
+            assertEquals(TokenType.WORD, tokens.get(3).getType());
+            assertEquals("koira", tokens.get(3).getText());
+        }
+        {
+            List<Token> tokens = voikko.tokens("kissa\0");
+            assertEquals(2, tokens.size());
+            assertEquals(TokenType.WORD, tokens.get(0).getType());
+            assertEquals("kissa", tokens.get(0).getText());
+            assertEquals(TokenType.UNKNOWN, tokens.get(1).getType());
+            assertEquals("\0", tokens.get(1).getText());
+        }
+        {
+            List<Token> tokens = voikko.tokens("\0kissa");
+            assertEquals(2, tokens.size());
+            assertEquals(TokenType.UNKNOWN, tokens.get(0).getType());
+            assertEquals("\0", tokens.get(0).getText());
+            assertEquals(TokenType.WORD, tokens.get(1).getType());
+            assertEquals("kissa", tokens.get(1).getText());
+        }
+        {
+            List<Token> tokens = voikko.tokens("\0");
+            assertEquals(1, tokens.size());
+            assertEquals(TokenType.UNKNOWN, tokens.get(0).getType());
+            assertEquals("\0", tokens.get(0).getText());
+        }
+        assertEquals(0, voikko.tokens("").size());
     }
 }

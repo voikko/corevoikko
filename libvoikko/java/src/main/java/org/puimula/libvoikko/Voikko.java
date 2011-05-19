@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2010 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -115,8 +115,15 @@ public class Voikko {
      */
     public synchronized boolean spell(String word) {
         requireValidHandle();
+        if (!isValidInput(word)) {
+            return false;
+        }
         int spellResult = getLib().voikkoSpellCstr(handle, s2n(word));
         return (spellResult == Libvoikko.VOIKKO_SPELL_OK);
+    }
+
+    private boolean isValidInput(String word) {
+        return word.indexOf('\0') == -1;
     }
 
     private void requireValidHandle() {
@@ -158,6 +165,9 @@ public class Voikko {
      */
     public synchronized List<String> suggest(String word) {
         requireValidHandle();
+        if (!isValidInput(word)) {
+            return Collections.emptyList();
+        }
         Pointer voikkoSuggestCstr = getLib().voikkoSuggestCstr(handle, s2n(word));
         if (voikkoSuggestCstr == null) {
             return Collections.emptyList();
@@ -186,6 +196,9 @@ public class Voikko {
     public synchronized List<GrammarError> grammarErrors(String text) {
         requireValidHandle();
         List<GrammarError> errorList = new ArrayList<GrammarError>();
+        if (!isValidInput(text)) {
+            return errorList;
+        }
         int offset = 0;
         for (String paragraph : text.split("\\r?\\n")) {
             appendErrorsFromParagraph(errorList, paragraph, offset);
@@ -246,10 +259,13 @@ public class Voikko {
      */
     public synchronized List<Analysis> analyze(String word) {
         requireValidHandle();
+        List<Analysis> analysisList = new ArrayList<Analysis>();
+        if (!isValidInput(word)) {
+            return analysisList;
+        }
+            
         Libvoikko lib = getLib();
         Pointer cAnalysisList = lib.voikkoAnalyzeWordCstr(handle, s2n(word));
-        
-        List<Analysis> analysisList = new ArrayList<Analysis>();
         
         if (cAnalysisList == null) {
             return analysisList;
@@ -278,6 +294,18 @@ public class Voikko {
      */
     public synchronized List<Token> tokens(String text) {
         requireValidHandle();
+        List<Token> allTokens = new ArrayList<Token>();
+        int lastStart = 0;
+        for (int i = text.indexOf('\0'); i != -1; i = text.indexOf('\0', i + 1)) {
+            allTokens.addAll(tokensNonNull(text.substring(lastStart, i)));
+            allTokens.add(new Token(TokenType.UNKNOWN, "\0"));
+            lastStart = i + 1;
+        }
+        allTokens.addAll(tokensNonNull(text.substring(lastStart)));
+        return allTokens;
+    }
+
+    private List<Token> tokensNonNull(String text) {
         Libvoikko lib = getLib();
         List<Token> result = new ArrayList<Token>();
         byte[] textBytes = s2n(text);
@@ -305,6 +333,10 @@ public class Voikko {
         requireValidHandle();
         Libvoikko lib = getLib();
         List<Sentence> result = new ArrayList<Sentence>();
+        if (!isValidInput(text)) {
+            result.add(new Sentence(text, SentenceStartType.NONE));
+            return result;
+        }
         byte[] textBytes = s2n(text);
         int textLen = textBytes.length - 1;
         NativeLongByReference sentenceLenByRef = new NativeLongByReference();
@@ -333,6 +365,10 @@ public class Voikko {
      */
     public synchronized String getHyphenationPattern(String word) {
         requireValidHandle();
+        if (!isValidInput(word)) {
+            // return string of spaces
+            return String.format("%1$#" + word.length() + "s", "");
+        }
         ByteArray cPattern = getLib().voikkoHyphenateCstr(handle, s2n(word));
         String pattern = cPattern.toString();
         getLib().voikkoFreeCstr(cPattern);
