@@ -219,6 +219,20 @@ namespace libvoikko
 		}
 
 		[Test]
+		public void tokens()
+		{
+			List<Token> tokens = voikko.Tokens("kissa ja koira sekä härkä");
+			Assert.AreEqual(9, tokens.Count);
+			Assert.AreEqual(TokenType.WORD, tokens[2].Type);
+			Assert.AreEqual("ja", tokens[2].Text);
+			Assert.AreEqual(TokenType.WHITESPACE, tokens[7].Type);
+			Assert.AreEqual(" ", tokens[7].Text);
+			Assert.AreEqual(TokenType.WORD, tokens[8].Type);
+			Assert.AreEqual("härkä", tokens[8].Text);
+		}
+
+
+		[Test]
 		public void sentences()
 		{
 			List<Sentence> sentences = voikko.Sentences("Kissa ei ole koira. Koira ei ole kissa.");

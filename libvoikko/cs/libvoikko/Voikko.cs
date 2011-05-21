@@ -80,6 +80,9 @@ namespace libvoikko
 		public static extern void voikko_free_mor_analysis_value_cstr(IntPtr analysisValue);
 
 		[DllImport(DLL_LIB)]
+		public static extern int voikkoNextTokenCstr(IntPtr handle, byte[] text, IntPtr textLen, ref IntPtr tokenLen);
+
+		[DllImport(DLL_LIB)]
 		public static extern int voikkoNextSentenceStartCstr(IntPtr handle, byte[] text, IntPtr textLen, ref IntPtr sentenceLen);
 	}
 
@@ -271,6 +274,40 @@ namespace libvoikko
 				
 				return analysisList;
 			}
+		}
+
+		public List<Token> Tokens(string text)
+		{
+			List<Token> allTokens = new List<Token>();
+			int lastStart = 0;
+			for (int i = text.IndexOf('\0'); i != -1; i = text.IndexOf('\0', i + 1))
+			{
+				allTokens.AddRange(tokensNonNull(text.Substring(lastStart, i)));
+				allTokens.Add(new Token(TokenType.UNKNOWN, "\0"));
+				lastStart = i + 1;
+			}
+			allTokens.AddRange(tokensNonNull(text.Substring(lastStart)));
+			return allTokens;
+		}
+
+		private List<Token> tokensNonNull(String text)
+		{
+			List<Token> result = new List<Token>();
+			byte[] textBytes = ByteArray.s2n(text);
+			int textLen = textBytes.Length - 1;
+			IntPtr tokenLenByRef = new IntPtr();
+			while (textLen > 0)
+			{
+				int tokenTypeInt = Libvoikko.voikkoNextTokenCstr(handle, textBytes, new IntPtr(textLen), ref tokenLenByRef);
+				int tokenLen = tokenLenByRef.ToInt32();
+				TokenType tokenType = (TokenType)Enum.ToObject(typeof(TokenType), tokenTypeInt);
+				String tokenText = text.Substring(0, tokenLen);
+				result.Add(new Token(tokenType, tokenText));
+				text = text.Substring(tokenLen);
+				textBytes = ByteArray.s2n(text);
+				textLen = textBytes.Length - 1;
+			}
+			return result;
 		}
 
 		public List<Sentence> Sentences(string text)
