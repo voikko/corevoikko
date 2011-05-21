@@ -259,7 +259,15 @@ namespace libvoikko
 			Assert.AreEqual("kuor-ma-au-to", voikko.Hyphenate("kuorma-auto"));
 			Assert.AreEqual("vaa-an", voikko.Hyphenate("vaa'an"));
 		}
-		
+
+		[Test]
+		public void setIgnoreDot()
+		{
+			voikko.IgnoreDot = false;
+			Assert.IsFalse(voikko.Spell("kissa."));
+			voikko.IgnoreDot = true;
+			Assert.IsTrue(voikko.Spell("kissa."));
+		}
 	}
 }
 

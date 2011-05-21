@@ -91,6 +91,9 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern void voikkoFreeCstr(IntPtr cstr);
+
+		[DllImport(DLL_LIB)]
+		public static extern int voikkoSetBooleanOption(IntPtr handle, int option, int val);
 	}
 
 	public class Voikko : IDisposable
@@ -393,6 +396,28 @@ namespace libvoikko
 		private bool isValidInput(string text)
 		{
 			return text.IndexOf('\0') == -1;
+		}
+
+		private static int boolToInt(bool val)
+		{
+			return val ? 1 : 0;
+		}
+
+		private void setBoolOption(int option, bool val)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				int result = Libvoikko.voikkoSetBooleanOption(handle, option, boolToInt(val));
+				if (result == 0)
+				{
+					throw new VoikkoException("Could not set boolean option " + option + " to value " + val + ".");
+				}
+			}
+		}
+
+		public bool IgnoreDot {
+			set { setBoolOption(0, value); }
 		}
 	}
 	
