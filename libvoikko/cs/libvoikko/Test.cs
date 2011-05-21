@@ -231,7 +231,6 @@ namespace libvoikko
 			Assert.AreEqual("härkä", tokens[8].Text);
 		}
 
-
 		[Test]
 		public void sentences()
 		{
@@ -241,6 +240,15 @@ namespace libvoikko
 			Assert.AreEqual(SentenceStartType.PROBABLE, sentences[0].NextStartType);
 			Assert.AreEqual("Koira ei ole kissa.", sentences[1].Text);
 			Assert.AreEqual(SentenceStartType.NONE, sentences[1].NextStartType);
+		}
+
+		[Test]
+		public void hyphenationPattern()
+		{
+			Assert.AreEqual("   - ", voikko.GetHyphenationPattern("kissa"));
+			Assert.AreEqual("   - ", voikko.GetHyphenationPattern("määrä"));
+			Assert.AreEqual("    - =  - ", voikko.GetHyphenationPattern("kuorma-auto"));
+			Assert.AreEqual("   =  ", voikko.GetHyphenationPattern("vaa'an"));
 		}
 	}
 }

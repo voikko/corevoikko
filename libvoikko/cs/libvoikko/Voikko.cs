@@ -84,6 +84,12 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern int voikkoNextSentenceStartCstr(IntPtr handle, byte[] text, IntPtr textLen, ref IntPtr sentenceLen);
+
+		[DllImport(DLL_LIB)]
+		public static extern IntPtr voikkoHyphenateCstr(IntPtr handle, byte[] word);
+
+		[DllImport(DLL_LIB)]
+		public static extern void voikkoFreeCstr(IntPtr cstr);
 	}
 
 	public class Voikko : IDisposable
@@ -292,22 +298,25 @@ namespace libvoikko
 
 		private List<Token> tokensNonNull(String text)
 		{
-			List<Token> result = new List<Token>();
-			byte[] textBytes = ByteArray.s2n(text);
-			int textLen = textBytes.Length - 1;
-			IntPtr tokenLenByRef = new IntPtr();
-			while (textLen > 0)
+			lock (lockObj)
 			{
-				int tokenTypeInt = Libvoikko.voikkoNextTokenCstr(handle, textBytes, new IntPtr(textLen), ref tokenLenByRef);
-				int tokenLen = tokenLenByRef.ToInt32();
-				TokenType tokenType = (TokenType)Enum.ToObject(typeof(TokenType), tokenTypeInt);
-				String tokenText = text.Substring(0, tokenLen);
-				result.Add(new Token(tokenType, tokenText));
-				text = text.Substring(tokenLen);
-				textBytes = ByteArray.s2n(text);
-				textLen = textBytes.Length - 1;
+				List<Token> result = new List<Token>();
+				byte[] textBytes = ByteArray.s2n(text);
+				int textLen = textBytes.Length - 1;
+				IntPtr tokenLenByRef = new IntPtr();
+				while (textLen > 0)
+				{
+					int tokenTypeInt = Libvoikko.voikkoNextTokenCstr(handle, textBytes, new IntPtr(textLen), ref tokenLenByRef);
+					int tokenLen = tokenLenByRef.ToInt32();
+					TokenType tokenType = (TokenType)Enum.ToObject(typeof(TokenType), tokenTypeInt);
+					String tokenText = text.Substring(0, tokenLen);
+					result.Add(new Token(tokenType, tokenText));
+					text = text.Substring(tokenLen);
+					textBytes = ByteArray.s2n(text);
+					textLen = textBytes.Length - 1;
+				}
+				return result;
 			}
-			return result;
 		}
 
 		public List<Sentence> Sentences(string text)
@@ -330,7 +339,7 @@ namespace libvoikko
 					int sentenceTypeInt = Libvoikko.voikkoNextSentenceStartCstr(handle, textBytes, new IntPtr(textLen), ref sentenceLenByRef);
 					int sentenceLen = sentenceLenByRef.ToInt32();
 					SentenceStartType sentenceType = (SentenceStartType)Enum.ToObject(typeof(SentenceStartType), sentenceTypeInt);
-					String tokenText = text.Substring(0, sentenceLen);
+					string tokenText = text.Substring(0, sentenceLen);
 					result.Add(new Sentence(tokenText, sentenceType));
 					text = text.Substring(sentenceLen);
 					textBytes = ByteArray.s2n(text);
@@ -338,6 +347,23 @@ namespace libvoikko
 				}
 				
 				return result;
+			}
+		}
+
+		public string GetHyphenationPattern(string word)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				if (!isValidInput(word))
+				{
+					// return string of spaces
+					return String.Format("%1$#" + word.Length + "s", "");
+				}
+				IntPtr cPattern = Libvoikko.voikkoHyphenateCstr(handle, ByteArray.s2n(word));
+				string pattern = ByteArray.n2s(cPattern);
+				Libvoikko.voikkoFreeCstr(cPattern);
+				return pattern;
 			}
 		}
 
