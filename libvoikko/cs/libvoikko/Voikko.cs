@@ -78,6 +78,9 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern void voikko_free_mor_analysis_value_cstr(IntPtr analysisValue);
+
+		[DllImport(DLL_LIB)]
+		public static extern int voikkoNextSentenceStartCstr(IntPtr handle, byte[] text, IntPtr textLen, ref IntPtr sentenceLen);
 	}
 
 	public class Voikko : IDisposable
@@ -234,7 +237,7 @@ namespace libvoikko
 			return ByteArray.n2s(Libvoikko.voikko_error_message_cstr(errorCode, ByteArray.s2n(language)));
 		}
 
-		public List<Analysis> Analyze(String word)
+		public List<Analysis> Analyze(string word)
 		{
 			lock (lockObj)
 			{
@@ -257,8 +260,7 @@ namespace libvoikko
 						for (byte** cKey = (byte**)cKeys; *cKey != (byte*)0; cKey++)
 						{
 							string key = ByteArray.n2s(new IntPtr(*cKey));
-							IntPtr val = Libvoikko.voikko_mor_analysis_value_cstr(new IntPtr(*cAnalysis),
-							                                                      ByteArray.s2n(key));
+							IntPtr val = Libvoikko.voikko_mor_analysis_value_cstr(new IntPtr(*cAnalysis), ByteArray.s2n(key));
 							analysis[key] = ByteArray.n2s(val);
 							Libvoikko.voikko_free_mor_analysis_value_cstr(val);
 						}
@@ -269,6 +271,42 @@ namespace libvoikko
 				
 				return analysisList;
 			}
+		}
+
+		public List<Sentence> Sentences(string text)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				List<Sentence> result = new List<Sentence>();
+				if (!isValidInput(text))
+				{
+					result.Add(new Sentence(text, SentenceStartType.NONE));
+					return result;
+				}
+				byte[] textBytes = ByteArray.s2n(text);
+				int textLen = textBytes.Length - 1;
+				
+				IntPtr sentenceLenByRef = new IntPtr();
+				while (textLen > 0)
+				{
+					int sentenceTypeInt = Libvoikko.voikkoNextSentenceStartCstr(handle, textBytes, new IntPtr(textLen), ref sentenceLenByRef);
+					int sentenceLen = sentenceLenByRef.ToInt32();
+					SentenceStartType sentenceType = (SentenceStartType)Enum.ToObject(typeof(SentenceStartType), sentenceTypeInt);
+					String tokenText = text.Substring(0, sentenceLen);
+					result.Add(new Sentence(tokenText, sentenceType));
+					text = text.Substring(sentenceLen);
+					textBytes = ByteArray.s2n(text);
+					textLen = textBytes.Length - 1;
+				}
+				
+				return result;
+			}
+		}
+
+		private bool isValidInput(string text)
+		{
+			return text.IndexOf('\0') == -1;
 		}
 	}
 	

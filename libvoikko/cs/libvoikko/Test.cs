@@ -217,6 +217,17 @@ namespace libvoikko
 			Assert.AreEqual(1, analysisList.Count);
 			Assert.AreEqual("=pppppp=ppppp=ppppppp", analysisList[0]["STRUCTURE"]);
 		}
+
+		[Test]
+		public void sentences()
+		{
+			List<Sentence> sentences = voikko.Sentences("Kissa ei ole koira. Koira ei ole kissa.");
+			Assert.AreEqual(2, sentences.Count);
+			Assert.AreEqual("Kissa ei ole koira. ", sentences[0].Text);
+			Assert.AreEqual(SentenceStartType.PROBABLE, sentences[0].NextStartType);
+			Assert.AreEqual("Koira ei ole kissa.", sentences[1].Text);
+			Assert.AreEqual(SentenceStartType.NONE, sentences[1].NextStartType);
+		}
 	}
 }
 
