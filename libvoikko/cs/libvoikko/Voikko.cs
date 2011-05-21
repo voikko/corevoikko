@@ -2,6 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Text;
 namespace libvoikko
 {
 
@@ -365,6 +366,28 @@ namespace libvoikko
 				Libvoikko.voikkoFreeCstr(cPattern);
 				return pattern;
 			}
+		}
+
+		public string Hyphenate(string word)
+		{
+			string pattern = GetHyphenationPattern(word);
+			StringBuilder hyphenated = new StringBuilder();
+			for (int i = 0; i < pattern.Length; i++)
+			{
+				char patternC = pattern[i];
+				if (patternC == ' ')
+				{
+					hyphenated.Append(word[i]);
+				} else if (patternC == '-')
+				{
+					hyphenated.Append('-');
+					hyphenated.Append(word[i]);
+				} else if (patternC == '=')
+				{
+					hyphenated.Append('-');
+				}
+			}
+			return hyphenated.ToString();
 		}
 
 		private bool isValidInput(string text)

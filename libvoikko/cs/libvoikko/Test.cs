@@ -250,6 +250,16 @@ namespace libvoikko
 			Assert.AreEqual("    - =  - ", voikko.GetHyphenationPattern("kuorma-auto"));
 			Assert.AreEqual("   =  ", voikko.GetHyphenationPattern("vaa'an"));
 		}
+
+		[Test]
+		public void hyphenate()
+		{
+			Assert.AreEqual("kis-sa", voikko.Hyphenate("kissa"));
+			Assert.AreEqual("mää-rä", voikko.Hyphenate("määrä"));
+			Assert.AreEqual("kuor-ma-au-to", voikko.Hyphenate("kuorma-auto"));
+			Assert.AreEqual("vaa-an", voikko.Hyphenate("vaa'an"));
+		}
+		
 	}
 }
 
