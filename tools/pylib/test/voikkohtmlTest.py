@@ -48,10 +48,14 @@ class VoikkoHtmlTest(TestCase):
 		self.assertParseError(u"<htm<l>", 1, 4)
 	
 	def testParseTagMismatch(self):
-		self.assertParseError(u"<html><head></html>", 1, 12)
+		self.assertParseError(u"<html><h1></html>", 1, 10)
 	
-	def testParseTagMismatch(self):
+	def testParseTagMismatch2(self):
 		self.assertParseError(u"<html></html></p>", 1, 13)
+	
+	def testHeadMayRemainUnfinished(self):
+		result = parseHtml(u"<html><head></html>")
+		self.assertEquals([], result)
 	
 	def testParseHeader(self):
 		result = parseHtml(u"<html><body><h1>Kissan ruokkiminen</h1></body></html>")
