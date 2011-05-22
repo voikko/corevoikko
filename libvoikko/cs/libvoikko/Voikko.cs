@@ -94,6 +94,9 @@ namespace libvoikko
 
 		[DllImport(DLL_LIB)]
 		public static extern int voikkoSetBooleanOption(IntPtr handle, int option, int val);
+
+		[DllImport(DLL_LIB)]
+		public static extern int voikkoSetIntegerOption(IntPtr handle, int option, int val);
 	}
 
 	public class Voikko : IDisposable
@@ -419,53 +422,74 @@ namespace libvoikko
 		public bool IgnoreDot {
 			set { setBoolOption(0, value); }
 		}
-		
+
 		public bool IgnoreNumbers {
 			set { setBoolOption(1, value); }
 		}
-		
+
 		public bool IgnoreUppercase {
 			set { setBoolOption(3, value); }
 		}
-		
+
 		public bool AcceptFirstUppercase {
 			set { setBoolOption(6, value); }
 		}
-		
+
 		public bool AcceptAllUppercase {
 			set { setBoolOption(7, value); }
 		}
-		
+
 		public bool IgnoreNonwords {
 			set { setBoolOption(10, value); }
 		}
-		
+
 		public bool AcceptExtraHyphens {
 			set { setBoolOption(11, value); }
 		}
-		
+
 		public bool AcceptMissingHyphens {
 			set { setBoolOption(12, value); }
 		}
-		
+
 		public bool AcceptTitlesInGc {
 			set { setBoolOption(13, value); }
 		}
-		
+
 		public bool AcceptUnfinishedParagraphsInGc {
 			set { setBoolOption(14, value); }
 		}
-		
+
 		public bool AcceptBulletedListsInGc {
 			set { setBoolOption(16, value); }
 		}
-		
+
 		public bool NoUglyHyphenation {
 			set { setBoolOption(4, value); }
 		}
-		
+
 		public bool HyphenateUnknownWords {
 			set { setBoolOption(15, value); }
+		}
+
+		private void setIntegerOption(int option, int val)
+		{
+			lock (lockObj)
+			{
+				requireValidHandle();
+				int result = Libvoikko.voikkoSetIntegerOption(handle, option, val);
+				if (result == 0)
+				{
+					throw new VoikkoException("Could not set integer option " + option + " to value " + val + ".");
+				}
+			}
+		}
+		
+		public int MinHyphenatedWordLength {
+			set { setIntegerOption(9, value); }
+		}
+		
+		public int SpellerCacheSize {
+			set { setIntegerOption(17, value); }
 		}
 	}
 	

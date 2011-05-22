@@ -388,7 +388,31 @@ namespace libvoikko
 			voikko.HyphenateUnknownWords = true;
 			Assert.AreEqual("kir-ju-te-po", voikko.Hyphenate("kirjutepo"));
 		}
-		
+
+		[Test]
+		public void setMinHyphenatedWordLength()
+		{
+			voikko.MinHyphenatedWordLength = 6;
+			Assert.AreEqual("koira", voikko.Hyphenate("koira"));
+			voikko.MinHyphenatedWordLength = 2;
+			Assert.AreEqual("koi-ra", voikko.Hyphenate("koira"));
+		}
+
+		[Test]
+		public void increaseSpellerCacheSize()
+		{
+			// TODO: this only tests that nothing breaks, not that cache is actually increased
+			voikko.SpellerCacheSize = 3;
+			Assert.IsTrue(voikko.Spell("kissa"));
+		}
+
+		[Test]
+		public void disableSpellerCache()
+		{
+			// TODO: this only tests that nothing breaks, not that cache is actually disabled
+			voikko.SpellerCacheSize = -1;
+			Assert.IsTrue(voikko.Spell("kissa"));
+		}
 	}
 }
 
