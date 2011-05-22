@@ -423,6 +423,74 @@ namespace libvoikko
 			voikko.SuggestionStrategy = SuggestionStrategy.TYPO;
 			Assert.IsTrue(voikko.Suggest("koari").Contains("koira"));
 		}
+
+		[Test]
+		public void embeddedNullsAreNotAccepted()
+		{
+			Assert.IsFalse(voikko.Spell("kissa\0asdasd"));
+			Assert.AreEqual(0, voikko.Suggest("kisssa\0koira").Count);
+			Assert.AreEqual("kissa\0koira", voikko.Hyphenate("kissa\0koira"));
+			Assert.AreEqual(0, voikko.GrammarErrors("kissa\0koira").Count);
+			Assert.AreEqual(0, voikko.Analyze("kissa\0koira").Count);
+		}
+
+		[Test]
+		public void nullCharMeansSingleSentence()
+		{
+			List<Sentence> sentences = voikko.Sentences("kissa\0koira");
+			Assert.AreEqual(1, sentences.Count);
+			Assert.AreEqual(SentenceStartType.NONE, sentences[0].NextStartType);
+			Assert.AreEqual("kissa\0koira", sentences[0].Text);
+		}
+
+		[Test]
+		public void nullCharIsUnknownToken()
+		{
+			{
+				List<Token> tokens = voikko.Tokens("kissa\0koira");
+				Assert.AreEqual(3, tokens.Count);
+				Assert.AreEqual(TokenType.WORD, tokens[0].Type);
+				Assert.AreEqual("kissa", tokens[0].Text);
+				Assert.AreEqual(TokenType.UNKNOWN, tokens[1].Type);
+				Assert.AreEqual("\0", tokens[1].Text);
+				Assert.AreEqual(TokenType.WORD, tokens[2].Type);
+				Assert.AreEqual("koira", tokens[2].Text);
+			}
+			{
+				List<Token> tokens = voikko.Tokens("kissa\0\0koira");
+				Assert.AreEqual(4, tokens.Count);
+				Assert.AreEqual(TokenType.WORD, tokens[0].Type);
+				Assert.AreEqual("kissa", tokens[0].Text);
+				Assert.AreEqual(TokenType.UNKNOWN, tokens[1].Type);
+				Assert.AreEqual("\0", tokens[1].Text);
+				Assert.AreEqual(TokenType.UNKNOWN, tokens[2].Type);
+				Assert.AreEqual("\0", tokens[2].Text);
+				Assert.AreEqual(TokenType.WORD, tokens[3].Type);
+				Assert.AreEqual("koira", tokens[3].Text);
+			}
+			{
+				List<Token> tokens = voikko.Tokens("kissa\0");
+				Assert.AreEqual(2, tokens.Count);
+				Assert.AreEqual(TokenType.WORD, tokens[0].Type);
+				Assert.AreEqual("kissa", tokens[0].Text);
+				Assert.AreEqual(TokenType.UNKNOWN, tokens[1].Type);
+				Assert.AreEqual("\0", tokens[1].Text);
+			}
+			{
+				List<Token> tokens = voikko.Tokens("\0kissa");
+				Assert.AreEqual(2, tokens.Count);
+				Assert.AreEqual(TokenType.UNKNOWN, tokens[0].Type);
+				Assert.AreEqual("\0", tokens[0].Text);
+				Assert.AreEqual(TokenType.WORD, tokens[1].Type);
+				Assert.AreEqual("kissa", tokens[1].Text);
+			}
+			{
+				List<Token> tokens = voikko.Tokens("\0");
+				Assert.AreEqual(1, tokens.Count);
+				Assert.AreEqual(TokenType.UNKNOWN, tokens[0].Type);
+				Assert.AreEqual("\0", tokens[0].Text);
+			}
+			Assert.AreEqual(0, voikko.Tokens("").Count);
+		}
 	}
 }
-

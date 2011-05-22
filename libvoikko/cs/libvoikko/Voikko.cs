@@ -139,6 +139,10 @@ namespace libvoikko
 			lock (lockObj)
 			{
 				requireValidHandle();
+				if (!isValidInput(word))
+				{
+					return false;
+				}
 				int spellResult = Libvoikko.voikkoSpellCstr(handle, ByteArray.s2n(word));
 				return (spellResult == Libvoikko.VOIKKO_SPELL_OK);
 			}
@@ -177,12 +181,16 @@ namespace libvoikko
 			lock (lockObj)
 			{
 				requireValidHandle();
+				List<string> suggestions = new List<string>();
+				if (!isValidInput(word))
+				{
+					return suggestions;
+				}
 				IntPtr voikkoSuggestCstr = Libvoikko.voikkoSuggestCstr(handle, ByteArray.s2n(word));
 				if (voikkoSuggestCstr == IntPtr.Zero)
 				{
-					return new List<string>();
+					return suggestions;
 				}
-				List<string> suggestions = new List<string>();
 				unsafe
 				{
 					for (byte** cStr = (byte**)voikkoSuggestCstr; *cStr != (byte*)0; cStr++)
@@ -201,6 +209,10 @@ namespace libvoikko
 			{
 				requireValidHandle();
 				List<GrammarError> errorList = new List<GrammarError>();
+				if (!isValidInput(text))
+				{
+					return errorList;
+				}
 				int offset = 0;
 				foreach (String paragraph in Regex.Split(text, "\\r?\\n"))
 				{
@@ -258,9 +270,13 @@ namespace libvoikko
 			lock (lockObj)
 			{
 				requireValidHandle();
-				IntPtr cAnalysisList = Libvoikko.voikkoAnalyzeWordCstr(handle, ByteArray.s2n(word));
-				
 				List<Analysis> analysisList = new List<Analysis>();
+				if (!isValidInput(word))
+				{
+					return analysisList;
+				}
+				
+				IntPtr cAnalysisList = Libvoikko.voikkoAnalyzeWordCstr(handle, ByteArray.s2n(word));
 				
 				if (cAnalysisList == IntPtr.Zero)
 				{
@@ -295,7 +311,7 @@ namespace libvoikko
 			int lastStart = 0;
 			for (int i = text.IndexOf('\0'); i != -1; i = text.IndexOf('\0', i + 1))
 			{
-				allTokens.AddRange(tokensNonNull(text.Substring(lastStart, i)));
+				allTokens.AddRange(tokensNonNull(text.Substring(lastStart, i - lastStart)));
 				allTokens.Add(new Token(TokenType.UNKNOWN, "\0"));
 				lastStart = i + 1;
 			}
@@ -365,7 +381,7 @@ namespace libvoikko
 				if (!isValidInput(word))
 				{
 					// return string of spaces
-					return String.Format("%1$#" + word.Length + "s", "");
+					return new string(' ', word.Length);
 				}
 				IntPtr cPattern = Libvoikko.voikkoHyphenateCstr(handle, ByteArray.s2n(word));
 				string pattern = ByteArray.n2s(cPattern);
