@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libvoikko", "libvoikko\libv
 EndProject
 Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packages.mdproj", "{13ED8739-FCFC-44F8-A0F6-308051C6B2AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libvoikko.tests", "libvoikko.tests\libvoikko.tests.csproj", "{FFCFF542-7934-4777-99C7-AC452666977C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{23063968-7427-4AD9-B068-C437E8B97449}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23063968-7427-4AD9-B068-C437E8B97449}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23063968-7427-4AD9-B068-C437E8B97449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFCFF542-7934-4777-99C7-AC452666977C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFCFF542-7934-4777-99C7-AC452666977C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFCFF542-7934-4777-99C7-AC452666977C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFCFF542-7934-4777-99C7-AC452666977C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = libvoikko\libvoikko.csproj
