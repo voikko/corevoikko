@@ -447,6 +447,26 @@ namespace libvoikko
 		public bool AcceptMissingHyphens {
 			set { setBoolOption(12, value); }
 		}
+		
+		public bool AcceptTitlesInGc {
+			set { setBoolOption(13, value); }
+		}
+		
+		public bool AcceptUnfinishedParagraphsInGc {
+			set { setBoolOption(14, value); }
+		}
+		
+		public bool AcceptBulletedListsInGc {
+			set { setBoolOption(16, value); }
+		}
+		
+		public bool NoUglyHyphenation {
+			set { setBoolOption(4, value); }
+		}
+		
+		public bool HyphenateUnknownWords {
+			set { setBoolOption(15, value); }
+		}
 	}
 	
 	

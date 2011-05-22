@@ -343,6 +343,52 @@ namespace libvoikko
 			voikko.AcceptMissingHyphens = true;
 			Assert.IsTrue(voikko.Spell("sosiaali"));
 		}
+
+		[Test]
+		public void setAcceptTitlesInGc()
+		{
+			voikko.AcceptTitlesInGc = false;
+			Assert.AreEqual(1, voikko.GrammarErrors("Kissa on eläin").Count);
+			voikko.AcceptTitlesInGc = true;
+			Assert.AreEqual(0, voikko.GrammarErrors("Kissa on eläin").Count);
+		}
+
+		[Test]
+		public void setAcceptUnfinishedParagraphsInGc()
+		{
+			voikko.AcceptUnfinishedParagraphsInGc = false;
+			Assert.AreEqual(1, voikko.GrammarErrors("Kissa on ").Count);
+			voikko.AcceptUnfinishedParagraphsInGc = true;
+			Assert.AreEqual(0, voikko.GrammarErrors("Kissa on ").Count);
+		}
+
+		[Test]
+		public void setAcceptBulletedListsInGc()
+		{
+			voikko.AcceptBulletedListsInGc = false;
+			Assert.Greater(voikko.GrammarErrors("kissa").Count, 0);
+			voikko.AcceptBulletedListsInGc = true;
+			Assert.AreEqual(0, voikko.GrammarErrors("kissa").Count);
+		}
+
+		[Test]
+		public void setNoUglyHyphenation()
+		{
+			voikko.NoUglyHyphenation = false;
+			Assert.AreEqual("i-va", voikko.Hyphenate("iva"));
+			voikko.NoUglyHyphenation = true;
+			Assert.AreEqual("iva", voikko.Hyphenate("iva"));
+		}
+
+		[Test]
+		public void setHyphenateUnknownWordsWorks()
+		{
+			voikko.HyphenateUnknownWords = false;
+			Assert.AreEqual("kirjutepo", voikko.Hyphenate("kirjutepo"));
+			voikko.HyphenateUnknownWords = true;
+			Assert.AreEqual("kir-ju-te-po", voikko.Hyphenate("kirjutepo"));
+		}
+		
 	}
 }
 
