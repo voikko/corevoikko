@@ -483,13 +483,27 @@ namespace libvoikko
 				}
 			}
 		}
-		
+
 		public int MinHyphenatedWordLength {
 			set { setIntegerOption(9, value); }
 		}
-		
+
 		public int SpellerCacheSize {
 			set { setIntegerOption(17, value); }
+		}
+
+		public SuggestionStrategy SuggestionStrategy {
+			set {
+				switch (value)
+				{
+				case SuggestionStrategy.OCR:
+					setBoolOption(8, true);
+					break;
+				case SuggestionStrategy.TYPO:
+					setBoolOption(8, false);
+					break;
+				}
+			}
 		}
 	}
 	

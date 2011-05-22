@@ -54,6 +54,7 @@
     <Compile Include="SentenceStartType.cs" />
     <Compile Include="TokenType.cs" />
     <Compile Include="Token.cs" />
+    <Compile Include="SuggestionStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

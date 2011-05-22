@@ -413,6 +413,16 @@ namespace libvoikko
 			voikko.SpellerCacheSize = -1;
 			Assert.IsTrue(voikko.Spell("kissa"));
 		}
+
+		[Test]
+		public void setSuggestionStrategy()
+		{
+			voikko.SuggestionStrategy = SuggestionStrategy.OCR;
+			Assert.IsFalse(voikko.Suggest("koari").Contains("koira"));
+			Assert.IsTrue(voikko.Suggest("koir_").Contains("koira"));
+			voikko.SuggestionStrategy = SuggestionStrategy.TYPO;
+			Assert.IsTrue(voikko.Suggest("koari").Contains("koira"));
+		}
 	}
 }
 
