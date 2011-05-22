@@ -268,6 +268,81 @@ namespace libvoikko
 			voikko.IgnoreDot = true;
 			Assert.IsTrue(voikko.Spell("kissa."));
 		}
+
+		[Test]
+		public void setIgnoreNumbers()
+		{
+			voikko.IgnoreNumbers = false;
+			Assert.IsFalse(voikko.Spell("kissa2"));
+			voikko.IgnoreNumbers = true;
+			Assert.IsTrue(voikko.Spell("kissa2"));
+		}
+
+		[Test]
+		public void setIgnoreUppercase()
+		{
+			voikko.IgnoreUppercase = false;
+			Assert.IsFalse(voikko.Spell("KAAAA"));
+			voikko.IgnoreUppercase = true;
+			Assert.IsTrue(voikko.Spell("KAAAA"));
+		}
+
+		[Test]
+		public void setAcceptFirstUppercase()
+		{
+			voikko.AcceptFirstUppercase = false;
+			Assert.IsFalse(voikko.Spell("Kissa"));
+			voikko.AcceptFirstUppercase = true;
+			Assert.IsTrue(voikko.Spell("Kissa"));
+		}
+
+		[Test]
+		public void upperCaseScandinavianLetters()
+		{
+			Assert.IsTrue(voikko.Spell("Äiti"));
+			Assert.IsFalse(voikko.Spell("Ääiti"));
+			Assert.IsTrue(voikko.Spell("š"));
+			Assert.IsTrue(voikko.Spell("Š"));
+		}
+
+		[Test]
+		public void acceptAllUppercase()
+		{
+			voikko.IgnoreUppercase = false;
+			voikko.AcceptAllUppercase = false;
+			Assert.IsFalse(voikko.Spell("KISSA"));
+			voikko.AcceptAllUppercase = true;
+			Assert.IsTrue(voikko.Spell("KISSA"));
+			Assert.IsFalse(voikko.Spell("KAAAA"));
+		}
+
+		[Test]
+		public void ignoreNonwords()
+		{
+			voikko.IgnoreNonwords = false;
+			Assert.IsFalse(voikko.Spell("hatapitk@iki.fi"));
+			voikko.IgnoreNonwords = true;
+			Assert.IsTrue(voikko.Spell("hatapitk@iki.fi"));
+			Assert.IsFalse(voikko.Spell("ashdaksd"));
+		}
+
+		[Test]
+		public void acceptExtraHyphens()
+		{
+			voikko.AcceptExtraHyphens = false;
+			Assert.IsFalse(voikko.Spell("kerros-talo"));
+			voikko.AcceptExtraHyphens = true;
+			Assert.IsTrue(voikko.Spell("kerros-talo"));
+		}
+
+		[Test]
+		public void acceptMissingHyphens()
+		{
+			voikko.AcceptMissingHyphens = false;
+			Assert.IsFalse(voikko.Spell("sosiaali"));
+			voikko.AcceptMissingHyphens = true;
+			Assert.IsTrue(voikko.Spell("sosiaali"));
+		}
 	}
 }
 

@@ -419,6 +419,34 @@ namespace libvoikko
 		public bool IgnoreDot {
 			set { setBoolOption(0, value); }
 		}
+		
+		public bool IgnoreNumbers {
+			set { setBoolOption(1, value); }
+		}
+		
+		public bool IgnoreUppercase {
+			set { setBoolOption(3, value); }
+		}
+		
+		public bool AcceptFirstUppercase {
+			set { setBoolOption(6, value); }
+		}
+		
+		public bool AcceptAllUppercase {
+			set { setBoolOption(7, value); }
+		}
+		
+		public bool IgnoreNonwords {
+			set { setBoolOption(10, value); }
+		}
+		
+		public bool AcceptExtraHyphens {
+			set { setBoolOption(11, value); }
+		}
+		
+		public bool AcceptMissingHyphens {
+			set { setBoolOption(12, value); }
+		}
 	}
 	
 	
