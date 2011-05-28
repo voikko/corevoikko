@@ -839,7 +839,12 @@ languages. Command `wcheck-spelling-suggestions' gives spelling
 suggestions for marked text at point (also accessible through the
 right-click mouse menu). Commands `wcheck-jump-forward' and
 `wcheck-jump-backward' move point to next/previous marked text
-area."
+area.
+
+A note for Emacs Lisp programmers: Emacs Lisp Function
+`wcheck-marked-text-at' returns information about marked text at
+a buffer position. Function `wcheck-query-language-data' can be
+used for querying effective configuration data for a language."
 
   :init-value nil
   :lighter (" W:" (:eval (wcheck-mode-line-lang)))
@@ -1520,18 +1525,23 @@ text."
 
 (defun wcheck-marked-text-at (pos)
   "Return information about marked text at POS.
-POS is a buffer position. The return value is a vector of three
-items: (1) the marked text string, (2) marker at the beginning of
-the text and (3) marker at the end of the text."
+
+POS is a buffer position. The return value is a vector of five
+items: (1) the marked text string, (2) buffer position at the
+beginning of the text, (3) position at the end of the text, (4)
+the overlay object which marks the text and (5) the current
+language as a string."
   (let ((overlay (catch 'my-overlay
                    (dolist (ol (overlays-at pos))
                      (when (overlay-get ol 'wcheck-mode)
                        (throw 'my-overlay ol))))))
     (when overlay
-      (let ((start (copy-marker (overlay-start overlay)))
-            (end (copy-marker (overlay-end overlay))))
+      (let ((start (overlay-start overlay))
+            (end (overlay-end overlay)))
         (vector (buffer-substring-no-properties start end)
-                start end)))))
+                start end overlay
+                (wcheck-buffer-data-get
+                 :buffer (current-buffer) :language))))))
 
 
 ;;;###autoload
@@ -1564,8 +1574,8 @@ was replaced."
         (if (not overlay-data)
             (signal 'wcheck-suggestion-error "There is no marked text here")
           (let* ((text (aref overlay-data 0))
-                 (start (aref overlay-data 1))
-                 (end (aref overlay-data 2))
+                 (start (copy-marker (aref overlay-data 1)))
+                 (end (copy-marker (aref overlay-data 2)))
                  (suggestions (wcheck-get-suggestions wcheck-language text))
                  (choice (if (and (display-popup-menus-p) event)
                              (wcheck-choose-suggestion-popup
@@ -1885,9 +1895,10 @@ expression will return a boolean."
 (defun wcheck-query-language-data (language key)
   "Query `wcheck-mode' language data.
 Return LANGUAGE's value for KEY as defined in variable
-`wcheck-language-data'. If it does not define a (valid) value for
-the KEY then query the value from `wcheck-language-data-defaults'
-or `wcheck-language-data-defaults-hard-coded'."
+`wcheck-language-data'. If that variable does not define
+a (valid) value for KEY then query the value from
+`wcheck-language-data-defaults' or
+`wcheck-language-data-defaults-hard-coded'."
 
   (when (wcheck-language-exists-p language)
     (let* ((data
