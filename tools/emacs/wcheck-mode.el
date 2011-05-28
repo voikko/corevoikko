@@ -920,12 +920,12 @@ marking strings in buffers."
 
       ;; Walk through all windows which belong to this buffer.
       (let (area-alist strings)
-        (walk-windows #'(lambda (window)
-                          (when (eq buffer (window-buffer window))
-                            ;; Store the visible buffer area.
-                            (push (cons (window-start window)
-                                        (window-end window t))
-                                  area-alist)))
+        (walk-windows (lambda (window)
+                        (when (eq buffer (window-buffer window))
+                          ;; Store the visible buffer area.
+                          (push (cons (window-start window)
+                                      (window-end window t))
+                                area-alist)))
                       'nomb t)
 
         ;; Combine overlapping buffer areas and read strings from all
@@ -1163,11 +1163,11 @@ scrolled."
   "`wcheck-mode' hook for window size change.
 Request update for the buffer when its window's size has
 changed."
-  (walk-windows #'(lambda (window)
-                    (with-current-buffer (window-buffer window)
-                      (when wcheck-mode
-                        (wcheck-buffer-data-set (current-buffer)
-                                                :read-req t))))
+  (walk-windows (lambda (window)
+                  (with-current-buffer (window-buffer window)
+                    (when wcheck-mode
+                      (wcheck-buffer-data-set (current-buffer)
+                                              :read-req t))))
                 'nomb
                 frame))
 
@@ -1176,11 +1176,11 @@ changed."
   "`wcheck-mode' hook for window configuration change.
 Request update for the buffer when its window's configuration has
 changed."
-  (walk-windows #'(lambda (window)
-                    (with-current-buffer (window-buffer window)
-                      (when wcheck-mode
-                        (wcheck-buffer-data-set (current-buffer)
-                                                :read-req t))))
+  (walk-windows (lambda (window)
+                  (with-current-buffer (window-buffer window)
+                    (when wcheck-mode
+                      (wcheck-buffer-data-set (current-buffer)
+                                              :read-req t))))
                 'nomb
                 'currentframe))
 
@@ -1674,9 +1674,9 @@ originated this sequence of function calls. Return user's
 choice (a string) or nil."
   (let ((menu (list "Choose a substitute"
                     (cons "" (if suggestions
-                                 (mapcar #'(lambda (item)
-                                             (cons (wcheck-clean-string item)
-                                                   item))
+                                 (mapcar (lambda (item)
+                                           (cons (wcheck-clean-string item)
+                                                 item))
                                          suggestions)
                                (list "[No suggestions]"))))))
     (x-popup-menu event menu)))
@@ -1977,8 +1977,8 @@ Each item denote a buffer position range from A to B. This
 function returns a new list which has items in increasing order
 according to A's and all overlapping A B ranges are combined."
   (let ((alist (sort (copy-tree alist)
-                     #'(lambda (a b)
-                         (< (car a) (car b)))))
+                     (lambda (a b)
+                       (< (car a) (car b)))))
         final previous)
     (while alist
       (while (not (equal previous alist))
