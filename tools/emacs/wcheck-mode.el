@@ -1411,26 +1411,30 @@ text."
 
 
 (defun wcheck-overlay-next (start bound)
-  (catch 'overlay
-    (dolist (ol (overlays-at start))
-      (when (overlay-get ol 'wcheck-mode)
-        (throw 'overlay ol)))
-    (let ((pos start))
-      (while (and (setq pos (next-overlay-change pos))
-                  (< pos (min bound (point-max))))
-        (dolist (ol (overlays-at pos))
-          (when (overlay-get ol 'wcheck-mode)
-            (throw 'overlay ol)))))))
+  (unless (>= start (point-max))
+    (catch 'overlay
+      (dolist (ol (overlays-at start))
+        (when (overlay-get ol 'wcheck-mode)
+          (throw 'overlay ol)))
+      (let ((pos start))
+        (while (and (setq pos (next-overlay-change pos))
+                    (< pos (min bound (point-max))))
+          (dolist (ol (overlays-at pos))
+            (when (overlay-get ol 'wcheck-mode)
+              (throw 'overlay ol))))))))
 
 
 (defun wcheck-overlay-previous (start bound)
-  (catch 'overlay
-    (let ((pos start))
-      (while (and (setq pos (previous-overlay-change pos))
-                  (> pos (max bound (point-min))))
-        (dolist (ol (overlays-at pos))
-          (when (overlay-get ol 'wcheck-mode)
-            (throw 'overlay ol)))))))
+  (unless (<= start (point-min))
+    (catch 'overlay
+      (let ((pos start))
+        (while t
+          (setq pos (previous-overlay-change pos))
+          (dolist (ol (overlays-at pos))
+            (when (overlay-get ol 'wcheck-mode)
+              (throw 'overlay ol)))
+          (when (<= pos (max bound (point-min)))
+            (throw 'overlay nil)))))))
 
 
 (defun wcheck-line-start-at (pos)
