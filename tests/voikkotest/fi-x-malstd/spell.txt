@@ -251,6 +251,7 @@ vaikuttava-aittainen
 !vaikuttavaaittainen
 yhtäaikaissuoritus # teonsanan nimisanajohdos perusosana
 kuumentajareunainen # kuumentaa > kuumentaja, reuna > reunainen
+filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
 
 [voitto- ja yliasteet]
 kauniimmanvärinen

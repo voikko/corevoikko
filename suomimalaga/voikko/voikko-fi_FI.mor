@@ -1732,7 +1732,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
         result $res, rules liitesana;
       end;
       result $res,
-             rules laatusanan_sijapääte_omistusliitteellä,
+             rules laatusanan_sijapääte_omistusliitteellä, inen_johdos_nimisanasta,
                    voitto_yliaste, johdin_nimisana_laatusanasta;
     end;
     stop;
