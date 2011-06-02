@@ -1,3 +1,6 @@
+2011-06-02 Harri Pitkänen <hatapitk@iki.fi>
+	* Support COMPARISON in Malaga analyzer.
+
 2011-05-19 Harri Pitkänen <hatapitk@iki.fi>
 	* Handle embedded null input characters in Python and Java interfaces.
 

@@ -143,6 +143,16 @@ they may be useful for external applications:
    Word: kissanne -> POSSESSIVE: 2p
    Word: kissansa -> POSSESSIVE: 3
 
+ COMPARISON
+ ==========
+  Word is comparable (adjective). Suggested values for this attribute are
+  "positive", "comparative" and "superlative".
+  
+  Examples:
+   Word: sininen   -> COMPARISON: positive
+   Word: sinisempi -> COMPARISON: comparative
+   Word: sinisin   -> COMPARISON: superlative
+
  Attributes for Finnish language
  ===============================
 

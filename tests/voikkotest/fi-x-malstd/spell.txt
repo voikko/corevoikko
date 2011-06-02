@@ -309,6 +309,7 @@ apartheid-kissa # konsonanttiloppuinen sitaattilaina + konsonanttialkuinen
 college-aika # vokaaliloppuinen sitaattilaina + vokaali
 college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
 blues-kissainen # sitaattilaina + inen-johdos
+!heitto-iskuista
 
 [johdetut sanat yhdyssanoissa]
 luovuttajarekisteri

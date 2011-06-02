@@ -222,6 +222,7 @@ luokka; alaluokka; jluokka;
   kertoman_tekijäpääte_vahva;
 
 vertailu;
+  perusaste;
   voittoaste;
   yliaste;
 

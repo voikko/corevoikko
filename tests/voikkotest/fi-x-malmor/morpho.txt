@@ -3,6 +3,7 @@ word:koiralla
   BASEFORM=koira
   !KYSYMYSLIITE
   !FOCUS
+  !COMPARISON
 word:koirallako
  analysis
   KYSYMYSLIITE=true
@@ -67,3 +68,12 @@ word:kissansa
 word:taloaan
  analysis
   POSSESSIVE=3
+word:sininen
+ analysis
+  COMPARISON=positive
+word:sinisempi
+ analysis
+  COMPARISON=comparative
+word:sinisin
+ analysis
+  COMPARISON=superlative

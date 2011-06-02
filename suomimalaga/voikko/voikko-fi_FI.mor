@@ -2050,6 +2050,17 @@ subrule tulostus_aikamuoto($tietue):
   return nil;
 end;
 
+subrule tulostus_vertailu($tietue):
+  define $tlen := length($tietue);
+  foreach $i in $tlen:
+    define $allomorfi := $tietue.($tlen + 1 - $i);
+    if $allomorfi.luokka in <voittoaste, yliaste> then
+      return $allomorfi.luokka;
+    end;
+  end;
+  return perusaste;
+end;
+
 subrule tulostus_partisiipit($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
@@ -2263,7 +2274,9 @@ subrule tulostus_v2($tietue):
           + tulostus_liitepartikkelit($tietue);
     if $res.luokka = teonsana then
       $res :=+ [aikamuoto: tulostus_aikamuoto($tietue)];
-    end;
+    elseif $res.luokka in <laatusana, nimi_laatusana> then
+      $res :=+ [vertailu: tulostus_vertailu($tietue)];
+    end;    
   else
     $res := [rakenne: tulostus_rakenne($tietue),
             luokka:  tulostus_luokka($tietue),
