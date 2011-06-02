@@ -303,6 +303,8 @@
 [perusmuoto: "juuri", alku: "juuri", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "jäljekkäin", alku: "jälekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "jäljekkäin", alku: "jäljekkäin", luokka: seikkasana, jatko: <loppu>, äs: ä];
+[perusmuoto: "jäljellä", alku: "jäljelle", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "jäljellä", alku: "jäljellä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "jäljemmäs", alku: "jäljemmäs", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "jälkeen", alku: "jälkee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "jälkeen", alku: "jälkeen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

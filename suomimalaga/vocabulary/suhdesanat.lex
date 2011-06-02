@@ -29,6 +29,7 @@
 [perusmuoto: "asemesta", alku: "asemesta", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "asti", alku: "asti", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "de", alku: "de", luokka: suhdesana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "huolimatta", alku: "huolimatta", luokka: suhdesana, jatko: <loppu>, äs: a];
 [perusmuoto: "ilman", alku: "ilman", luokka: suhdesana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kanssa", alku: "kanssa", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "kautta", alku: "kautta", luokka: suhdesana, jatko: <omistusliite, liitesana, loppu>, äs: a];
