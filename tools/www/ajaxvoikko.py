@@ -121,6 +121,17 @@ POSSESSIVES = {
 "3": u"kolmas persoona"
 }
 
+COMPARISONS = {
+"positive": u"positiivi",
+"comparative": u"komparatiivi",
+"superlative": u"superlatiivi"
+}
+
+FOCUSES = {
+"kin": u"kin",
+"kaan": u"kAAn"
+}
+
 WORD_INFO_URL = u"http://joukahainen.puimula.org/word/edit?wid="
 
 """Maximum number of bytes allowed in incoming POST requests"""
@@ -289,6 +300,14 @@ def getAnalysis(analysis):
 	if "POSSESSIVE" in analysis:
 		res = res + u"<br />Omistusliite: " \
 		      + fromMapIfPossible(analysis["POSSESSIVE"], POSSESSIVES)
+	if "COMPARISON" in analysis:
+		res = res + u"<br />Vertailumuoto: " \
+		      + fromMapIfPossible(analysis["COMPARISON"], COMPARISONS)
+	if "KYSYMYSLIITE" in analysis:
+		res = res + u"<br />Kysymysliite: kO"
+	if "FOCUS" in analysis:
+		res = res + u"<br />Fokuspartikkeli: " \
+		      + fromMapIfPossible(analysis["FOCUS"], FOCUSES)
 	if "WORDIDS" in analysis:
 		ids = analysis["WORDIDS"]
 		if u"(w" in ids:
