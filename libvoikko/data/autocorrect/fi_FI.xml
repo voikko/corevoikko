@@ -810,6 +810,42 @@
   <correct>väärin päin</correct>
 </replacement>
 <replacement>
+  <incorrect>yhdes</incorrect>
+  <correct>ensimmäinen</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdennen</incorrect>
+  <correct>ensimmäisen</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdettä</incorrect>
+  <correct>ensimmäistä</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdennessä</incorrect>
+  <correct>ensimmäisessä</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdennestä</incorrect>
+  <correct>ensimmäisestä</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdenteen</incorrect>
+  <correct>ensimmäiseen</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdennellä</incorrect>
+  <correct>ensimmäisellä</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdenneltä</incorrect>
+  <correct>ensimmäiseltä</correct>
+</replacement>
+<replacement>
+  <incorrect>yhdennelle</incorrect>
+  <correct>ensimmäiselle</correct>
+</replacement>
+<replacement>
   <incorrect>yhtä=aikaa</incorrect>
   <correct>yhtä aikaa</correct>
 </replacement>

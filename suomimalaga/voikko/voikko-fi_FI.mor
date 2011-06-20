@@ -1112,7 +1112,7 @@ combi_rule lukusana ($vasen, $oikea, $sana, $index):
 
   if ($oikea.alaluokka = yksiyhdeksän) then
     if (nimentö in $oikea.jatko) then
-      if loppu in $oikea.jatko and ($index greater 1 or $sana /= "yhdes")then
+      if loppu in $oikea.jatko then
         result $res, accept;
       end;
       if liitesana in $oikea.jatko then

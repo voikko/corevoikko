@@ -418,7 +418,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "ne", alku: "niille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 ######################################################
 

@@ -1,3 +1,6 @@
+2011-06-20 Harri Pitkänen <hatapitk@iki.fi>
+	* Grammar checker: suggest replacing "yhdes" with "ensimmäinen"
+
 2011-06-02 Harri Pitkänen <hatapitk@iki.fi>
 	* Support COMPARISON in Malaga analyzer.
 

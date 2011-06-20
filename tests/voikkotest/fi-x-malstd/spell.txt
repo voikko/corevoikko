@@ -447,7 +447,6 @@ tuhannenkaan
 sadaskuudeskymmenesviides
 viidessadaskolmaskymmenestuhannesneljäs
 viidestuhanneskolmaskymmenes
-!yhdes
 yhdestoista
 kahdeskymmenesyhdes
 miljoonas
