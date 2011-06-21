@@ -39,11 +39,6 @@ static void hyphenateWord(VoikkoHandle * handle, const wchar_t * word, size_t wl
 	}
 	
 	wchar_t * hyphenatedWord = new wchar_t[wlen * 2 + 1];
-	if (hyphenatedWord == 0) {
-		cerr << "E: out of memory" << endl;
-		voikkoFreeCstr(result);
-		return;
-	}
 	
 	const wchar_t * wordPtr = word;
 	wchar_t * hyphenatedPtr = hyphenatedWord;
