@@ -160,6 +160,10 @@ class VoikkoHTMLParser(HTMLParser):
 			self.tags.append(openTag)
 			return
 		if tag != openTag:
+			if tag not in self.tags:
+				# ignore this tag completely and restore previous state
+				self.tags.append(openTag)
+				return
 			raise HTMLParseError("End tag does not match start tag", self.getpos())
 		if openTag in ["h1", "h2", "h3", "h4", "h5", "h6", "caption"]:
 			self.segments.append((SEGMENT_TYPE_HEADING, self.getData()))
