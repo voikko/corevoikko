@@ -156,6 +156,14 @@ def _boolToInt(bool):
 	else:
 		return 0
 
+def _anyStringToUtf8(anyString):
+	if not anyString:
+		return None
+	if type(anyString) == unicode:
+		return anyString.encode("UTF-8")
+	else:
+		return anyString
+
 class Voikko(object):
 	def __getLib():
 		if os.name == 'nt':
@@ -245,7 +253,7 @@ class Voikko(object):
 		self.__lib.voikkoSetIntegerOption.restype = c_int
 		
 		error = c_char_p()
-		self.__handle = self.__lib.voikkoInit(byref(error), language, path)
+		self.__handle = self.__lib.voikkoInit(byref(error), _anyStringToUtf8(language), _anyStringToUtf8(path))
 		if error.value != None:
 			self.__handle = 0
 			raise VoikkoException(u"Initialization of Voikko failed: " + unicode(error.value, "UTF-8"))
@@ -296,7 +304,7 @@ class Voikko(object):
 		lib.voikko_dict_description.argtypes = [c_void_p]
 		lib.voikko_dict_description.restype = c_char_p
 		
-		cDicts = lib.voikko_list_dicts(path)
+		cDicts = lib.voikko_list_dicts(_anyStringToUtf8(path))
 		dicts = []
 		i = 0
 		while bool(cDicts[i]):
@@ -427,7 +435,7 @@ class Voikko(object):
 		"""Return a human readable explanation for grammar error code in
 		given language.
 		"""
-		explanation = self.__lib.voikko_error_message_cstr(errorCode, language)
+		explanation = self.__lib.voikko_error_message_cstr(_anyStringToUtf8(errorCode), _anyStringToUtf8(language))
 		return unicode(explanation, "UTF-8")
 	
 	def analyze(self, word):

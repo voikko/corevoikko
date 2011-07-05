@@ -185,6 +185,12 @@ class LibvoikkoTest(unittest.TestCase):
 		self.assertEqual("    - =  - ", pattern)
 		pattern = self.voikko.getHyphenationPattern(u"vaa'an")
 		self.assertEqual("   =  ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"auton-")
+		self.assertEqual("  -   ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"aztoa-")
+		self.assertEqual("  - - ", pattern)
+		pattern = self.voikko.getHyphenationPattern(u"aztoa-alus")
+		self.assertEqual("  - -= -  ", pattern)
 	
 	def testHyphenate(self):
 		self.assertEqual(u"kis-sa", self.voikko.hyphenate(u"kissa"))

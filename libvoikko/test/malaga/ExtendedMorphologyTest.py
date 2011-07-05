@@ -23,7 +23,7 @@ import libvoikko
 
 class ExtendedMorphologyTest(unittest.TestCase):
 	def setUp(self):
-		self.voikko = libvoikko.Voikko(u"fi-x-standard-+debug")
+		self.voikko = libvoikko.Voikko(u"fi-x-malmor")
 	
 	def tearDown(self):
 		self.voikko.terminate()
