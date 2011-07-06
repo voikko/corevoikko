@@ -407,6 +407,7 @@ def getPortlet():
 	html = html + u"<div id='tabDirect'>"
 	html = html + u"<textarea id='input' rows='5'></textarea><br />"
 	html = html + u"<button onclick='clearClicked()'>Tyhjennä</button>"
+	html = html + u'<button id="save" style="display:none">"Tallenna"</button>'
 	html = html + u"</div>"
 	html = html + u"<div id='tabPage'>"
 	html = html + u"Oikoluettavan sivun osoite: <input type='text' id='pageUrl' size='40' /> <button id='checkPageClicked'>Oikolue</button>"

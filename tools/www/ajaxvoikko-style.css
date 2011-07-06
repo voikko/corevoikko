@@ -3,6 +3,10 @@
   max-width: 50em;
 }
 
+#save {
+  margin-left: 20px;
+}
+
 #progress {
   width: 100%;
   max-width: 50em;

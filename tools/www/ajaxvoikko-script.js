@@ -20,6 +20,31 @@
  */
 
 var AJAX_HANDLER_URL="";
+var LOCAL_STORAGE_KEY = "WebVoikkoSpell";
+
+function initLocalStorage() {
+  if (!window.localStorage) {
+    return;
+  }
+  $("#save").css("display", "inline");
+  var stored = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+  if (stored) {
+    $("#input").val(stored);
+  }
+  $("#save").click(function() {
+    if (true /*!stored*/) {
+      if (!confirm("Tällä tallennustoiminnolla tekstisi tallentuu selaimeesi, ja se latautuu tekstikenttään, kun " +
+	      "seuraavan kerran palaat sivulle. Tekstiä EI TALLENNETA PALVELIMELLE, joten se ei säily, jos " +
+	      "tyhjennät selaimeesi tallennetut tiedot. Jos tietokonettasi käyttää joku toinen, hän voi nähdä tekstisi. "+
+	      "Toisaalta muilta koneilta tai selaimilta ei tekstiisi pääse kukaan käsiksi, et edes sinä itse.\n\n" +
+	      "Suomeksi sanottuna TÄMÄ TALLENNUSTOIMINTO ON EPÄLUOTETTAVA mutta toisinaan kätevä. Haluatko varmasti tallentaa?")) {
+        return false;
+      }
+    }
+    window.localStorage.setItem(LOCAL_STORAGE_KEY, $("#input").val());
+    return false;
+  });
+}
 
 function loadPortlet(divId) {
   $("#" + divId).load(AJAX_HANDLER_URL + "portlet", function() {
@@ -37,6 +62,7 @@ function loadPortlet(divId) {
         checkPageClicked();
       }
     });
+    initLocalStorage();
     triggerReferrerCheck();
   });
 }
