@@ -203,7 +203,7 @@ char ** AnalyzerToFinnishHyphenatorAdapter::splitCompounds(const wchar_t * word,
 		memset(result, hyphenateUnknown ? ' ' : 'X', len);
 		
 		if (allowRuleHyphenation(word, len)) {
-			for (size_t i = 0; i < len - 1; i++) {
+			for (size_t i = 1; i < len - 1; i++) {
 				if (word[i] == L'-') {
 					result[i] = '=';
 				}
@@ -285,7 +285,9 @@ void AnalyzerToFinnishHyphenatorAdapter::interpretAnalysis(const Analysis * anal
 			break;
 		}
 		if (structurePtr[0] == L'-' && structurePtr[1] == L'=') {
-			buffer[i] = '=';
+			if (i != 0) {
+				buffer[i] = '=';
+			}
 			structurePtr += 2;
 			continue;
 		}

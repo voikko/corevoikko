@@ -1,3 +1,6 @@
+2011-07-06 Harri Pitkänen <hatapitk@iki.fi>
+	* Fix hyphenation pattern for words starting with hyphen.
+
 2011-07-05 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix hyphenation pattern for unknown words ending with hyphen.
 	* Fix Python interface to work with Python 3.2.
