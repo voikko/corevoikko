@@ -2,7 +2,7 @@
   (:use :cl :cffi)
   (:export :instance :init :terminate
            :with-instance :spell :suggest :hyphenate :version
-           :set-option :analyze
+           :set-option :analyze :split-word
 
            :voikko-error :init-error :internal-error
            :charset-conversion-error :hyphenation-error
