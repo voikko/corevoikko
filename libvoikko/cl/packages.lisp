@@ -1,3 +1,5 @@
+;;;; A Common Lisp interface for libvoikko
+
 (defpackage :voikko
   (:use :cl :cffi)
   (:export :instance :init :terminate

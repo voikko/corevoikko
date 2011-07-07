@@ -1,3 +1,5 @@
+;;;; A Common Lisp interface for libvoikko
+;;
 ;; Copyright (C) 2011 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; This program is free software; you can redistribute it and/or modify
@@ -30,11 +32,11 @@
           (t (error "Unknown option.")))))
 
 (defgeneric set-option-caller (instance option))
-  
+
 (defmethod set-option-caller :before ((instance instance) option)
   (declare (ignore option))
   (error-if-not-active-instance instance))
-  
+
 (defmethod set-option-caller ((instance instance) (option boolean-option))
   (with-slots (id value) option
     (let ((success (foreign-funcall "voikkoSetBooleanOption"

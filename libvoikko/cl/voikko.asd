@@ -1,3 +1,5 @@
+;;;; A Common Lisp interface for libvoikko
+
 (defsystem :voikko
   :depends-on (:cffi)
   :serial t

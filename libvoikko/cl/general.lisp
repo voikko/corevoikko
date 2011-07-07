@@ -1,3 +1,5 @@
+;;;; A Common Lisp interface for libvoikko
+;;
 ;; Copyright (C) 2011 Teemu Likonen <tlikonen@iki.fi>
 ;;
 ;; This program is free software; you can redistribute it and/or modify
