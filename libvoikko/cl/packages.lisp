@@ -2,10 +2,10 @@
 
 (defpackage :voikko
   (:use :cl :cffi)
-  (:export :instance :init :terminate
+  (:export :instance :initialize :terminate
            :with-instance :spell :suggest :hyphenate :version
            :set-option :analyze :split-word
 
-           :voikko-error :init-error :internal-error
+           :voikko-error :initialize-error :internal-error
            :charset-conversion-error :hyphenation-error
            :not-active-instance-error))

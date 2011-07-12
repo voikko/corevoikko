@@ -26,7 +26,7 @@
   (:report (lambda (condition stream)
              (format stream "~A" (slot-value condition 'error-string)))))
 
-(define-condition init-error (voikko-error) nil)
+(define-condition initialize-error (voikko-error) nil)
 (define-condition internal-error (voikko-error) nil)
 (define-condition charset-conversion-error (voikko-error) nil)
 (define-condition hyphenation-error (voikko-error) nil)
@@ -70,7 +70,7 @@
 (defmethod free-foreign-resource ((object instance))
   (foreign-funcall "voikkoTerminate" :pointer (address object) :void))
 
-(defun init (&key (language "fi_FI"))
+(defun initialize (&key (language "fi_FI"))
   (with-foreign-object (error :pointer)
     (loop (restart-case
               (let ((address (foreign-funcall "voikkoInit"
@@ -82,7 +82,8 @@
                 (if (and (pointerp address)
                          (null-pointer-p (mem-aref error :pointer)))
                     (return (make-instance 'instance :address address))
-                    (error 'init-error :string (mem-aref error :string))))
+                    (error 'initialize-error
+                           :string (mem-aref error :string))))
 
             (change-language (new-language)
               :report "Use a different language"
@@ -98,7 +99,7 @@
 
 (defmacro with-instance ((var &key (language "fi_FI")) &body body)
   (let ((instance (gensym "INSTANCE")))
-    `(let* ((,instance (init :language ,language))
+    `(let* ((,instance (initialize :language ,language))
             (,var ,instance))
        (declare (ignorable ,var))
        (unwind-protect (progn ,@body)
