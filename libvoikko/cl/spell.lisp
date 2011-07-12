@@ -16,7 +16,6 @@
 
 (in-package :voikko)
 
-
 (defun spell (instance string)
   (error-if-not-active-instance instance)
   (let ((value (foreign-funcall "voikkoSpellCstr"
@@ -57,30 +56,26 @@
 
     (if (proper-pointer-p hyphenation)
         (unwind-protect
-             (loop with answer = (foreign-string-to-lisp hyphenation)
+             (loop with pattern = (foreign-string-to-lisp hyphenation)
                    with hyph
                    with start = 0
                    for pos upfrom 0
-                   for h across answer
+                   for h across pattern
 
                    if (char= h #\=) do
                    (when (< start pos)
                      (push (subseq string start pos) hyph))
-                   ;; (push (aref string pos) hyph)
                    (setf start (1+ pos))
 
                    else if (char= h #\-) do
                    (when (< start pos)
-                     (push (subseq string start pos) hyph)
-                     ;; (push :h hyph)
-                     )
+                     (push (subseq string start pos) hyph))
                    (setf start pos)
 
                    finally
                    (when (< start (length string))
                      (push (subseq string start) hyph))
-                   (setf hyph (nreverse hyph))
-                   (return (values hyph answer)))
+                   (return (values (nreverse hyph) pattern)))
 
           (foreign-funcall "voikkoFreeCstr" :pointer hyphenation :void))
 
