@@ -16,7 +16,6 @@
 
 (in-package :voikko)
 
-
 (eval-when (:load-toplevel)
   (load-foreign-library '(:default "libvoikko"))
   (format t "~&Libvoikko loaded.~%"))
@@ -34,7 +33,21 @@
 
 (defclass foreign-object ()
   ((address :initarg :address :accessor address)))
-(defclass instance (foreign-object) nil)
+
+(defclass instance (foreign-object)
+  nil
+  (:documentation
+   "The object denotes a Voikko instance which have been initialized
+with INITIALIZE function.
+
+Objects in this class can be either active or inactive. Active means
+that the instance can be used with Voikko functions such as SPELL,
+SUGGEST and HYPHENATE. Inactive means that the instance have been
+terminated with TERMINATE function and can't be used with Voikko
+functions anymore.
+
+You can use function ACTIVEP to test whether an INSTANCE object is
+active or not."))
 
 (defun proper-pointer-p (object)
   (and (pointerp object)
@@ -44,8 +57,10 @@
   (typep object 'instance))
 
 (defgeneric activep (object)
-  (:method ((object foreign-object))
-    (proper-pointer-p (address object))))
+  (:documentation "Return a boolean whether OBJECT is active."))
+
+(defmethod activep ((object foreign-object))
+  (proper-pointer-p (address object)))
 
 (defun error-if-not-active-instance (object)
   (unless (and (instancep object) (activep object))
@@ -54,9 +69,10 @@
 
 (defmethod print-object ((object foreign-object) stream)
   (print-unreadable-object (object stream :type t :identity t)
-    (format stream "(~A)" (if (activep object) "ACTIVE" "NOT ACTIVE"))))
+    (format stream "(~A)" (if (activep object) "ACTIVE" "INACTIVE"))))
 
 (defun version ()
+  "Return the version number of libvoikko (as a string)."
   (foreign-funcall "voikkoGetVersion" :string))
 
 (defgeneric free-foreign-resource (object))
@@ -71,6 +87,15 @@
   (foreign-funcall "voikkoTerminate" :pointer (address object) :void))
 
 (defun initialize (&key (language "fi_FI"))
+  "Initialize a Voikko instance for LANGUAGE. Return an object of type
+INSTANCE which can then be used with other Voikko functions. The
+instance must be closed with TERMINATE function after use. See also the
+macro WITH-INSTANCE which automatically initializes and terminates a
+Voikko instance.
+
+If instance couldn't be initialized a condition of type INITIALIZE-ERROR
+is signaled."
+
   (with-foreign-object (error :pointer)
     (loop (restart-case
               (let ((address (foreign-funcall "voikkoInit"
@@ -94,10 +119,16 @@
               (setf language new-language))))))
 
 (defun terminate (instance)
+  "Terminate a Voikko instance and free all resources associated with
+it."
   (assert (instancep instance) nil "The object is not a Voikko instance.")
   (free-foreign-resource instance))
 
 (defmacro with-instance ((variable &key (language "fi_FI")) &body body)
+  "Initialize a Voikko instance for LANGUAGE, bind VARIABLE to the
+INSTANCE object and execute BODY forms. Finally, terminate the instance
+and return the values of the last body form."
+
   (let ((instance (gensym "INSTANCE")))
     `(let* ((,instance (initialize :language ,language))
             (,variable ,instance))
