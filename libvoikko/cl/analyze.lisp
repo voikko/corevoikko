@@ -59,6 +59,14 @@
                                 :pointer value-ptr :void)))))
 
 (defun analyze (instance string)
+  "Return word analysis for STRING. The return value is a list of
+different analysis for the word. Each analysis is a list of cons cells.
+The car value of the cons cell is an analysis key (a string) and the cdr
+value is the value for that key (a string).
+
+INSTANCE must be an active Voikko instance, if not, a condition of type
+NOT-ACTIVE-INSTANCE-ERROR is signaled."
+
   (let ((analysis (analyze-word instance string)))
     (when (and (mor-analysis-p analysis)
                (activep analysis))
