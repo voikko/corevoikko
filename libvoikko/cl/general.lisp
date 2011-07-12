@@ -17,8 +17,8 @@
 (in-package :voikko)
 
 (eval-when (:load-toplevel)
-  (load-foreign-library '(:default "libvoikko"))
-  (format t "~&Libvoikko loaded.~%"))
+  (with-simple-restart (skip-libvoikko "Skip loading libvoikko.")
+    (load-foreign-library '(:default "libvoikko"))))
 
 (define-condition voikko-error (error)
   ((error-string :initarg :string))
