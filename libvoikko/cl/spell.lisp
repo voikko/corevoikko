@@ -82,18 +82,21 @@
         (error 'hyphenation-error :string "Hyphenation error."))))
 
 (defun split-word (instance width string)
-  (if (>= width (length string))
-      (cons string "")
-      (loop with hyph = (nth-value 1 (hyphenate instance string))
-            with end1 = 0
-            with start2 = 0
+  (cond ((>= width (length string))
+         (cons string ""))
+        ((<= width 0)
+         (cons "" string))
+        (t
+         (loop with hyph = (nth-value 1 (hyphenate instance string))
+               with end1 = 0
+               with start2 = 0
 
-            for i from 0 below (length string)
-            for h = (aref hyph i)
-            while (<= i width)
+               for i from 0 below (length string)
+               for h = (aref hyph i)
+               while (<= i width)
 
-            if (char= #\- h) do (setf end1 i start2 i)
-            else if (char= #\= h) do (setf end1 i start2 (1+ i))
+               if (char= #\- h) do (setf end1 i start2 i)
+               else if (char= #\= h) do (setf end1 i start2 (1+ i))
 
-            finally (return (cons (subseq string 0 end1)
-                                  (subseq string start2))))))
+               finally (return (cons (subseq string 0 end1)
+                                     (subseq string start2)))))))
