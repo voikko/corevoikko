@@ -2,7 +2,7 @@
 
 (defpackage :voikko
   (:use :cl :cffi)
-  (:export :instance :initialize :terminate
+  (:export :instance :activep :initialize :terminate
            :with-instance :spell :suggest :hyphenate :version
            :set-option :analyze :split-word
 
