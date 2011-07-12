@@ -97,10 +97,10 @@
   (assert (instancep instance) nil "The object is not a Voikko instance.")
   (free-foreign-resource instance))
 
-(defmacro with-instance ((var &key (language "fi_FI")) &body body)
+(defmacro with-instance ((variable &key (language "fi_FI")) &body body)
   (let ((instance (gensym "INSTANCE")))
     `(let* ((,instance (initialize :language ,language))
-            (,var ,instance))
-       (declare (ignorable ,var))
+            (,variable ,instance))
+       (declare (ignorable ,variable))
        (unwind-protect (progn ,@body)
          (terminate ,instance)))))
