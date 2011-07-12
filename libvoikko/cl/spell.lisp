@@ -17,6 +17,10 @@
 (in-package :voikko)
 
 (defun spell (instance word)
+  "Check the spelling of WORD. Return WORD if the spelling of correct,
+otherwise return nil. INSTANCE must be an active Voikko instance, if
+not, a condition of type NOT-ACTIVE-INSTANCE-ERROR is signaled."
+
   (error-if-not-active-instance instance)
   (let ((value (foreign-funcall "voikkoSpellCstr"
                                 :pointer (address instance)
@@ -33,6 +37,15 @@
               :string "Charset conversion error.")))))
 
 (defun suggest (instance word)
+  "Return spelling suggestions for WORD. Assuming that WORD is an
+incorrectly spelled word the return value is a list of spelling
+suggestion strings. The empty list (nil) means that no suggestions are
+available. If WORD is already spelled correctly return a one-item list
+containing just the original word.
+
+INSTANCE must be an active Voikko instance, if not, a condition of type
+NOT-ACTIVE-INSTANCE-ERROR is signaled."
+
   (error-if-not-active-instance instance)
   (let ((suggestions (foreign-funcall "voikkoSuggestCstr"
                                       :pointer (address instance)
@@ -48,6 +61,21 @@
         (foreign-funcall "voikkoFreeCstrArray" :pointer suggestions :void)))))
 
 (defun hyphenate (instance word)
+  "Hyphenate WORD. Two values are returned: (1) the hyphenated word as a
+list of syllables (strings) and (2) the hyphenation pattern string
+returned by C function voikkoHyphenateCstr(). The length of the
+hyphenation pattern is the same as WORD's and the pattern consists of
+the following characters:
+
+    #\\Space = no hyphenation at this character,
+    #\\-     = hyphenation point (character at this position
+              is preserved in the hyphenated form),
+    #\\=     = hyphenation point (character at this position
+              is replaced by the hyphen.)
+
+INSTANCE must be an active Voikko instance, if not, a condition of type
+NOT-ACTIVE-INSTANCE-ERROR is signaled."
+
   (error-if-not-active-instance instance)
   (let ((hyphenation (foreign-funcall "voikkoHyphenateCstr"
                                       :pointer (address instance)
@@ -82,6 +110,13 @@
         (error 'hyphenation-error :string "Hyphenation error."))))
 
 (defun split-word (instance width word)
+  "Split WORD in two and return the parts as a cons cell. The word is
+split at correct hyphenation points only. The WIDTH argument defines the
+maximun number of characters allowed in the first part.
+
+INSTANCE must be an active Voikko instance, if not, a condition of type
+NOT-ACTIVE-INSTANCE-ERROR is signaled."
+
   (cond ((>= width (length word))
          (cons word ""))
         ((<= width 0)
