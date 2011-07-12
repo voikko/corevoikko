@@ -16,27 +16,27 @@
 
 (in-package :voikko)
 
-(defun spell (instance string)
+(defun spell (instance word)
   (error-if-not-active-instance instance)
   (let ((value (foreign-funcall "voikkoSpellCstr"
                                 :pointer (address instance)
-                                :string string
+                                :string word
                                 :int)))
 
     (ecase value
       (#.+voikko-spell-failed+ nil)
-      (#.+voikko-spell-ok+ string)
+      (#.+voikko-spell-ok+ word)
       (#.+voikko-internal-error+
        (error 'internal-error :string "Internal error."))
       (#.+voikko-charset-conversion-failed+
        (error 'charset-conversion-error
               :string "Charset conversion error.")))))
 
-(defun suggest (instance string)
+(defun suggest (instance word)
   (error-if-not-active-instance instance)
   (let ((suggestions (foreign-funcall "voikkoSuggestCstr"
                                       :pointer (address instance)
-                                      :string string
+                                      :string word
                                       :pointer)))
 
     (when (proper-pointer-p suggestions)
@@ -47,11 +47,11 @@
                  collect sug)
         (foreign-funcall "voikkoFreeCstrArray" :pointer suggestions :void)))))
 
-(defun hyphenate (instance string)
+(defun hyphenate (instance word)
   (error-if-not-active-instance instance)
   (let ((hyphenation (foreign-funcall "voikkoHyphenateCstr"
                                       :pointer (address instance)
-                                      :string string
+                                      :string word
                                       :pointer)))
 
     (if (proper-pointer-p hyphenation)
@@ -64,39 +64,39 @@
 
                    if (char= h #\=) do
                    (when (< start pos)
-                     (push (subseq string start pos) hyph))
+                     (push (subseq word start pos) hyph))
                    (setf start (1+ pos))
 
                    else if (char= h #\-) do
                    (when (< start pos)
-                     (push (subseq string start pos) hyph))
+                     (push (subseq word start pos) hyph))
                    (setf start pos)
 
                    finally
-                   (when (< start (length string))
-                     (push (subseq string start) hyph))
+                   (when (< start (length word))
+                     (push (subseq word start) hyph))
                    (return (values (nreverse hyph) pattern)))
 
           (foreign-funcall "voikkoFreeCstr" :pointer hyphenation :void))
 
         (error 'hyphenation-error :string "Hyphenation error."))))
 
-(defun split-word (instance width string)
-  (cond ((>= width (length string))
-         (cons string ""))
+(defun split-word (instance width word)
+  (cond ((>= width (length word))
+         (cons word ""))
         ((<= width 0)
-         (cons "" string))
+         (cons "" word))
         (t
-         (loop with hyph = (nth-value 1 (hyphenate instance string))
+         (loop with hyph = (nth-value 1 (hyphenate instance word))
                with end1 = 0
                with start2 = 0
 
-               for i from 0 below (length string)
+               for i from 0 below (length word)
                for h = (aref hyph i)
                while (<= i width)
 
                if (char= #\- h) do (setf end1 i start2 i)
                else if (char= #\= h) do (setf end1 i start2 (1+ i))
 
-               finally (return (cons (subseq string 0 end1)
-                                     (subseq string start2)))))))
+               finally (return (cons (subseq word 0 end1)
+                                     (subseq word start2)))))))

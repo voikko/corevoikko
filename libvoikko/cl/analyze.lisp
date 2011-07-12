@@ -27,11 +27,11 @@
     (foreign-funcall "voikko_free_mor_analysis" :pointer address :void)
     (setf list nil)))
 
-(defun analyze-word (instance string)
+(defun analyze-word (instance word)
   (error-if-not-active-instance instance)
   (let ((address (foreign-funcall "voikkoAnalyzeWordCstr"
                                   :pointer (address instance)
-                                  :string string
+                                  :string word
                                   :pointer)))
 
     (when (proper-pointer-p address)
@@ -58,8 +58,8 @@
             do (foreign-funcall "voikko_free_mor_analysis_value_cstr"
                                 :pointer value-ptr :void)))))
 
-(defun analyze (instance string)
-  "Return word analysis for STRING. The return value is a list of
+(defun analyze (instance word)
+  "Return word analysis for WORD. The return value is a list of
 different analysis for the word. Each analysis is a list of cons cells.
 The car value of the cons cell is an analysis key (a string) and the cdr
 value is the value for that key (a string).
@@ -67,7 +67,7 @@ value is the value for that key (a string).
 INSTANCE must be an active Voikko instance, if not, a condition of type
 NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
-  (let ((analysis (analyze-word instance string)))
+  (let ((analysis (analyze-word instance word)))
     (when (and (mor-analysis-p analysis)
                (activep analysis))
       (unwind-protect (loop for a in (mor-analysis-list analysis)
