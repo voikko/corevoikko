@@ -8,4 +8,5 @@
 
            :voikko-error :initialize-error :internal-error
            :charset-conversion-error :hyphenation-error
-           :not-active-instance-error))
+           :not-active-instance-error :unknown-option-key-error
+           :invalid-value-type-error))

@@ -16,12 +16,14 @@
 
 (in-package :voikko)
 
-
 (defclass option ()
   ((id :initarg :id)
    (value :initarg :value)))
 (defclass boolean-option (option) nil)
 (defclass integer-option (option) nil)
+
+(define-condition unknown-option-key-error (voikko-error) nil)
+(define-condition invalid-value-type-error (voikko-error) nil)
 
 (defun make-option (key value)
   (let (data)
@@ -29,7 +31,8 @@
            (make-instance 'boolean-option :id (cdr data) :value value))
           ((setf data (assoc key *voikko-integer-options*))
            (make-instance 'integer-option :id (cdr data) :value value))
-          (t (error "Unknown option.")))))
+          (t (error 'unknown-option-key-error
+                    :string (format nil "Unknown option key: ~S" key))))))
 
 (defgeneric set-option-caller (instance option))
 
@@ -47,7 +50,8 @@
 (defmethod set-option-caller ((instance instance) (option integer-option))
   (with-slots (id value) option
     (unless (integerp value)
-      (error "Value must be an integer."))
+      (error 'invalid-value-type-error
+             :string "Invalid value type. The value must be an integer."))
     (let ((success (foreign-funcall "voikkoSetIntegerOption"
                                     :pointer (address instance)
                                     :int id :int value :int)))
@@ -58,7 +62,9 @@
 option and VALUE is the associated value. Possible keys and values as
 well as the default values are described below. INSTANCE must be an
 active Voikko instance, if not, a condition of type
-NOT-ACTIVE-INSTANCE-ERROR is signaled.
+NOT-ACTIVE-INSTANCE-ERROR is signaled. For invalid KEYs and VALUEs
+conditions of type UNKNOWN-OPTION-KEY-ERROR and INVALID-VALUE-TYPE-ERROR
+are signalled, respectively.
 
 :IGNORE-DOT (boolean, nil)
 
