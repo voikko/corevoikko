@@ -33,7 +33,7 @@
 (define-condition not-active-instance-error (voikko-error) nil)
 
 (defclass foreign-object ()
-  ((address :initarg :address :reader address)))
+  ((address :initarg :address :accessor address)))
 (defclass instance (foreign-object) nil)
 
 (defun proper-pointer-p (object)
@@ -64,7 +64,7 @@
 (defmethod free-foreign-resource :around ((object foreign-object))
   (when (activep object)
     (call-next-method)
-    (setf (slot-value object 'address) nil)
+    (setf (address object) nil)
     object))
 
 (defmethod free-foreign-resource ((object instance))
