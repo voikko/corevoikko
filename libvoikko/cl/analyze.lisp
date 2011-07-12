@@ -16,9 +16,11 @@
 
 (in-package :voikko)
 
-
 (defclass mor-analysis (foreign-object)
   ((list :initarg :list :reader mor-analysis-list)))
+
+(defun mor-analysis-p (object)
+  (typep object 'mor-analysis))
 
 (defmethod free-foreign-resource ((object mor-analysis))
   (with-slots (address list) object
@@ -31,6 +33,7 @@
                                   :pointer (address instance)
                                   :string string
                                   :pointer)))
+
     (when (proper-pointer-p address)
       (make-instance 'mor-analysis :address address
                      :list (loop for i upfrom 0
@@ -57,7 +60,8 @@
 
 (defun analyze (instance string)
   (let ((analysis (analyze-word instance string)))
-    (when (activep analysis)
+    (when (and (mor-analysis-p analysis)
+               (activep analysis))
       (unwind-protect (loop for a in (mor-analysis-list analysis)
                             collect (mor-analysis-key-values a))
         (free-foreign-resource analysis)))))
