@@ -94,7 +94,9 @@ macro WITH-INSTANCE which automatically initializes and terminates a
 Voikko instance.
 
 If instance couldn't be initialized a condition of type INITIALIZE-ERROR
-is signaled."
+is signaled. In that case there is an active restart called
+CHANGE-LANGUAGE. It can be invoked with a new language string as its
+argument. The restart retries the initialize process."
 
   (with-foreign-object (error :pointer)
     (loop (restart-case
