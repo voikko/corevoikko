@@ -417,6 +417,14 @@ class VoikkoHtmlTest(TestCase):
 		t = self.startNormalServer(3400, 200, "text/html", response.encode('ISO-8859-1'))
 		self.assertEquals(response, getHtmlSafely("http://127.0.0.1:3400"))
 	
+	def testUtf8ContentIsParsedIfNoEncodingSpecified(self):
+		t = self.startNormalServer(3400, 200, "text/html", u"täti".encode('UTF-8'))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+	
+	def testLatin1ContentIsParsedIfNoEncodingSpecified(self):
+		t = self.startNormalServer(3400, 200, "text/html", u"täti".encode('ISO-8859-1'))
+		self.assertEquals(u"täti", getHtmlSafely("http://127.0.0.1:3400"))
+	
 	def testEncodingMismatchIsError(self):
 		t = self.startNormalServer(3400, 200, "text/html; charset=UTF-8", u"täti".encode('ISO-8859-1'))
 		try:

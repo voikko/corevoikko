@@ -287,7 +287,12 @@ def getHtmlSafely(url, clientIp = "127.0.0.1", clientRequestHeaders = []):
 		if match:
 			encoding = match.group(0)[8:-1]
 	if not encoding:
-		encoding = 'UTF-8' # default
+		# if encoding has not been specified, try first with UTF-8 and
+		# fall back to ISO-8859-1
+		try:
+			return unicode(result.contents, 'UTF-8')
+		except UnicodeDecodeError:
+			encoding = 'ISO-8859-1'
 	try:
 		return unicode(result.contents, encoding)
 	except UnicodeDecodeError:
