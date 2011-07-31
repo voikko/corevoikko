@@ -283,7 +283,7 @@ def getHtmlSafely(url, clientIp = "127.0.0.1", clientRequestHeaders = []):
 	text = result.contents
 	if not encoding:
 		# Check meta tags or similar for hints
-		match = search('charset=.+"|\'', text)
+		match = search('charset=.+("|\')', text)
 		if match:
 			encoding = match.group(0)[8:-1]
 	if not encoding:
