@@ -77,7 +77,10 @@ class VoikkoHTMLParser(HTMLParser):
 			self.data = self.data + "&" + name
 	
 	def handle_charref(self, name):
-		nameInt = int(name)
+		if name.lower().startswith(u"x"):
+			nameInt = int(name[1:], 16)
+		else:
+			nameInt = int(name)
 		if 0 < nameInt and nameInt <= 65533:
 			self.data = self.data + unichr(nameInt)
 		else:

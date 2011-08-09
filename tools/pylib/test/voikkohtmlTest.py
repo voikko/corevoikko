@@ -258,6 +258,10 @@ class VoikkoHtmlTest(TestCase):
 		result = parseHtml(u"<html><body><h1>&#33;</h1></body></html>")
 		self.assertEquals([(SEGMENT_TYPE_HEADING, u"!")], result)
 	
+	def testHexCharacterReferences(self):
+		result = parseHtml(u"<html><body><h1>&#xE4;</h1></body></html>")
+		self.assertEquals([(SEGMENT_TYPE_HEADING, u"ä")], result)
+	
 	def testTextWithinBody(self):
 		result = parseHtml(u"<html><body>kissa</body></html>");
 		self.assertEquals([(SEGMENT_TYPE_OTHER, u"kissa")], result)
