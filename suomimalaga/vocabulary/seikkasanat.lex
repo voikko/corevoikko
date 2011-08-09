@@ -346,6 +346,9 @@
 [perusmuoto: "kapealti", alku: "kapealti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "karku", alku: "karku", luokka: seikkasana, jatko: <osanto_A, sisätulento_Vn>, äs: a]; # Omistusliitteet hyvin harvinaisia.
 [perusmuoto: "karku", alku: "karu", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a]; # Omistusliitteet hyvin harvinaisia.
+[perusmuoto: "karttupiilosilla", alku: "karttupiilosilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppppp"];
+[perusmuoto: "karttupiilosilla", alku: "karttupiilosille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppppp"];
+[perusmuoto: "karttupiilosilla", alku: "karttupiilosilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppppppp"];
 [perusmuoto: "kasvokkain", alku: "kasvokkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kasvotuksin", alku: "kasvotuksin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kasvotusten", alku: "kasvotusten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -469,6 +472,9 @@
 [perusmuoto: "kuten", alku: "kuten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuulemiin", alku: "kuulemiin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "kuulemma", alku: "kuulemma", luokka: seikkasana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuurupiilosilla", alku: "kuurupiilosilla", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "kuurupiilosilla", alku: "kuurupiilosille", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
+[perusmuoto: "kuurupiilosilla", alku: "kuurupiilosilta", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "kyljekkäin", alku: "kyljekkäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "kylliksi", alku: "kyllikse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "kylliksi", alku: "kylliksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
