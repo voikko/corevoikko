@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2007 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2007 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -157,6 +157,9 @@ static size_t word_length(const wchar_t * text, size_t textlen, voikko_options_t
 							case CHAR_UNKNOWN:
 								return wlen + 1;
 							case CHAR_PUNCTUATION:
+								if (text[wlen+1] == L',') {
+									return wlen + 1;
+								}
 								return wlen;
 						}
 						break;

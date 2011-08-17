@@ -52,3 +52,5 @@ Sähköpostiosoite on ha_ta-pi.tk@iki.fi.
  [<Sähköpostiosoite,WORD>, < ,WHITESPACE>, <on,WORD>, < ,WHITESPACE>, <ha_ta-pi.tk@iki.fi,WORD>, <.,PUNCTUATION>]
 kissa,koira@joku.com
  [<kissa,WORD>, <,,PUNCTUATION>, <koira@joku.com,WORD>]
+Sisä-, reuna- ja ulkopiste
+ [<Sisä-,WORD>, <,,PUNCTUATION>, < ,WHITESPACE>, <reuna-,WORD>, < ,WHITESPACE>, <ja,WORD>, < ,WHITESPACE>, <ulkopiste,WORD>]

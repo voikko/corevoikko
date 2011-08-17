@@ -1,3 +1,6 @@
+2011-08-17 Harri Pitkänen <hatapitk@iki.fi>
+	* Fix tokenizer bug.
+
 2011-07-06 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix hyphenation pattern for words starting with hyphen.
 
