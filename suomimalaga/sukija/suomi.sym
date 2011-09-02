@@ -371,6 +371,7 @@ yhdyssana; # Tämä voi olla jatko-kentän arvona.
 
 paikannimen_jälkiliite; # -katu, -vuori, ...
 etunimen_jälkiliite; # Kallenpoika, -tytär, ...
+sitlaina; # Sitaattilaina
 
 äs; # Ääntiösointu.
   a;
