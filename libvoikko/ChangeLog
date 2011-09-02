@@ -1,3 +1,8 @@
+2011-09-02 Harri Pitkänen <hatapitk@iki.fi>
+	* Pkg-config is now required for build configuration
+	* Remove workaround for Lttoolbox bug. Apertium SVN revision 33803 or later
+	  of Lttoolbox is now needed for the backend to work properly.
+
 2011-08-17 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix tokenizer bug.
 

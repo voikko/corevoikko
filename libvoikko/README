@@ -59,7 +59,8 @@ Build requirements
 ==================
 
 C++ compiler (GCC) and Python (version 2.3 or later but not version 3)
-must be available in order to build this library.
+must be available in order to build this library. Pkg-config is needed
+for build configuration.
 
 Java API is designed to be built as a Maven project. No autotools or Ant
 based build system is available yet.

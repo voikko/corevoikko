@@ -108,13 +108,9 @@ AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
 	[enable HFST morphology backend (EXPERIMENTAL!)]),
 	[hfst=${enableval}], [hfst=no])
 if test x$hfst = xyes; then
-	AC_PROVIDE_IFELSE([PKG_CHECK_MODULES)], [
-		PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell])
-		AC_DEFINE(HAVE_HFST, 1)
-		CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
-	], [
-		AC_ERROR([You need to have pkg-config installed to be able to enable HFST])
-	])
+	PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell])
+	AC_DEFINE(HAVE_HFST, 1)
+	CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
 fi
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
@@ -124,13 +120,9 @@ AC_ARG_ENABLE(lttoolbox, AC_HELP_STRING([--enable-lttoolbox],
 	[enable Lttoolbox morphology backend (EXPERIMENTAL!)]),
 	[lttoolbox=${enableval}], [lttoolbox=no])
 if test x$lttoolbox = xyes; then
-	AC_PROVIDE_IFELSE([PKG_CHECK_MODULES)], [
-		PKG_CHECK_MODULES([LTTOOLBOX], [lttoolbox-3.1 >= 3.1.0])
-		AC_DEFINE(HAVE_LTTOOLBOX, 1)
-		CXXFLAGS="$CXXFLAGS $LTTOOLBOX_CFLAGS"
-	], [
-		AC_ERROR([You need to have pkg-config installed to be able to enable Lttoolbox])
-	])
+	PKG_CHECK_MODULES([LTTOOLBOX], [lttoolbox-3.2 >= 3.2.0])
+	AC_DEFINE(HAVE_LTTOOLBOX, 1)
+	CXXFLAGS="$CXXFLAGS $LTTOOLBOX_CFLAGS"
 fi
 AM_CONDITIONAL([HAVE_LTTOOLBOX], [test x$lttoolbox = xyes])
 

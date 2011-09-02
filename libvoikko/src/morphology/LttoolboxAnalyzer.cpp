@@ -48,7 +48,7 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const wchar_t * word,
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
-	wstring inputString = L"^";
+	wstring inputString = L"";
 	// TODO: don't know how to do case insensitive analysis with Lttoolbox.
 	// Working around by capitalizing the first letter as this allows
 	// at least typical proper nouns to be handled correctly.
@@ -56,15 +56,10 @@ list<Analysis *> * LttoolboxAnalyzer::analyze(const wchar_t * word,
 	for (size_t i = 1; i < wlen; i++) {
 		inputString.append(1, word[i]);
 	}
-	inputString.append(L"$");
-	wstring analysisString = processor.biltransWithoutQueue(inputString);
+	wstring analysisString = processor.biltransWithQueue(inputString, false).first;
 	list<Analysis *> * result = new list<Analysis *>();
 	
-	// FIXME: temporary workaround for trailing garbage problem
-	inputString.erase(inputString.length() - 3);
-	inputString.append(L"$");
-	wstring truncatedStringAnalysis = processor.biltransWithoutQueue(inputString);
-	if (analysisString != truncatedStringAnalysis) {
+	if (analysisString[0] != L'@') {
 		addAnalysis(analysisString, result, wlen);
 	}
 	return result;
