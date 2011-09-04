@@ -183,6 +183,8 @@ Uutta-Seelantia
 !uutta-asiaa
 Ison-Britannian
 Isoa-Britanniaa
+!isoa-Britanniaa
+!iso-Britannia
 saksalaismiehityksen
 !-setieuivin
 helsinkiläinenkö

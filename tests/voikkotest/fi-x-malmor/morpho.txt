@@ -82,4 +82,4 @@ word:Pohjois-Suomessa
   BASEFORM=Pohjois-Suomi
 word:Uudessa-Seelannissa
  analysis
-  BASEFORM=uusi-Seelanti # Oikeastaan Uusi-Seelanti, mutta "uusi" ei ole aluetta rajaava alkuosa ja siten perussäännön mukaan kirjoitettaisiin pienellä alkukirjaimella.
+  BASEFORM=Uusi-Seelanti

@@ -83,6 +83,7 @@
 # ilman yhdysviivaa yleisnimiyhdyssanoissa, esim. "sydäntauti" ja "mannerlaatta". Tästä syystä nämä täytyy hyväksyä
 # pienellä alkukirjaimella "sydän- ja verisuonitaudit"-tyyppisissä rakenteissa.
 [perusmuoto: "etelä-", alku: "etelä-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
+[perusmuoto: "iso-", alku: "iso-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppp-", tiedot: <ei_sukija>];
 [perusmuoto: "itä-", alku: "itä-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppp-", tiedot: <ei_sukija>];
 [perusmuoto: "keski-", alku: "keski-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "länsi-", alku: "länsi-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
@@ -90,3 +91,4 @@
 [perusmuoto: "pohjois-", alku: "pohjois-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "suur-", alku: "suur-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
 [perusmuoto: "sydän-", alku: "sydän-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=ppppp-", tiedot: <ei_sukija>];
+[perusmuoto: "uusi-", alku: "uusi-", luokka: nimisana, jatko: <loppu>, äs: aä, rakenne: "=pppp-", tiedot: <ei_sukija>];

@@ -3754,8 +3754,8 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   end;
 
   # Aluetta tarkentavat etuliitteet
-  if ($tietue.perusmuoto in <"etelä", "itä", "kaakko", "keski", "koillinen",
-                             "lounas", "luode", "länsi", "manner", "pohjoinen", "sydän">) then
+  if ($tietue.perusmuoto in <"etelä", "iso", "itä", "kaakko", "keski", "koillinen",
+                             "lounas", "luode", "länsi", "manner", "pohjoinen", "sydän", "uusi">) then
     $tietue :=+ [aluetta_tarkentava_etuliite: yes];
   end;
   
