@@ -3729,21 +3729,21 @@ end;
 subrule muokkaa_tietuetta($tietue, $taivutus):
   # Paikannimien jälkiliitteet
   if ($tietue.perusmuoto in <
-      "alanko", "aro", "aukio", "halli", "harju", "hiekka", "hieta",
+      "alanko", "allikko", "aro", "aukio", "halli", "harju", "hetteikkö", "hiekka", "hieta",
       "joki", "jyrkänne", "järvi", "kaari", "kaira", "kallio",
-      "kangas", "kanjoni", "kapeikko", "kari", "kartano", "katu", "kenttä", "keto", "kirkko",
+      "kangas", "kanjoni", "kapeikko", "kappeli", "kari", "kartano", "katu", "kenttä", "keto", "kirkko",
       "kivi", "koivikko", "korpi",
-      "koski", "kuja", "kukkula", "kulma", "kumpu", "kuru", "kuusikko",
-      "kylä", "köngäs", "laakso", "lahti", "laidun", "lampi", "lehto", "letto",
+      "koski", "koulu", "kuja", "kukkula", "kulma", "kumpu", "kuru", "kuusikko",
+      "kylä", "köngäs", "laakso", "lahti", "laide", "laidun", "lampi", "lehto", "letto",
       "linna", "luola", "luoto", "meri", "metsikkö", "metsä",
-      "mutka", "mäki", "neva", "niemi",
+      "moskeija", "mutka", "mäki", "neva", "niemi",
       "niitty", "nokka", "notkelma", "notko", "nummi",
       "nyppylä", "oja", "pelto", "penger", "piha", "polku",
-      "puisto", "puro", "putous", "pää", "ranta", "rata", "rinne", "rotko", "ryteikkö", "räme",
+      "puisto", "puro", "putous", "pää", "ranta", "rata", "rimpi", "rinne", "rotko", "ruovikko", "ryteikkö", "räme",
       "saari", "salmi", "salo", "selkä", "silta", "sola", "suisto",
       "suo", "suvanto", "särkkä", "talo", "tanhua", "tanner", "tie", "tori",
       "tundra", "tunturi", "törmä", "töyräs", "vaara", "vainio",
-      "virta", "vuono", "vuori", "vuoristo", "ylänkö"> and $tietue.luokka in <nimisana, nimi_laatusana>) then
+      "virta", "vuono", "vuori", "vuoristo", "väylä", "ylänkö"> and $tietue.luokka in <nimisana, nimi_laatusana>) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
   
