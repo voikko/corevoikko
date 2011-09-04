@@ -329,6 +329,12 @@ static void fixCapitalisation(wchar_t * baseForm, const wchar_t * structure) {
 			++structPos;
 			continue;
 		}
+		if (baseForm[basePos] == L'-' && structure[structPos] != L'-') {
+			// If we have a compound word with hyphen and leading part has different
+			// length in baseform (Uusi-Seelanti -> Uudessa-Seelannissa) then
+			// structure and baseForm might get misaligned.
+			return;
+		}
 		if (structure[structPos] == L'i' || structure[structPos] == L'j') {
 			baseForm[basePos] = SimpleChar::upper(baseForm[basePos]);
 		}

@@ -2233,11 +2233,21 @@ subrule tulostus_debug_perusmuoto($tietue):
   end;
 
   define $s := "";
+  define $skip := no;
   foreach $i in $k - 1:
-    if ($tietue.$i.lukutyyppi /= nil) then
-      $s :=+ debug_lukusanan_perusmuoto ($tietue, $i, $k, $s);
+    if $skip then
+      $skip := no;
     else
-      $s :=+ debug_sanan_perusmuodon_osa($tietue.$i, yes);
+      if ($tietue.$i.lukutyyppi /= nil) then
+        $s :=+ debug_lukusanan_perusmuoto ($tietue, $i, $k, $s);
+      elseif (($i+3) less $n and $tietue.$i.luokka = laatusana and $tietue.($i+1).luokka = sijapääte and
+              $tietue.($i+2).luokka = tavuviiva and $tietue.($i+3).luokka = paikannimi) then
+        # Uudessa-Seelannissa -> Uusi-Seelanti
+        $s :=+ debug_sanan_perusmuodon_osa($tietue.$i, no);
+        $skip := yes;
+      else
+        $s :=+ debug_sanan_perusmuodon_osa($tietue.$i, yes);
+      end;
     end;
   end;
   if ($k = 1) then

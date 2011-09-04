@@ -1,3 +1,7 @@
+2011-09-04 Harri Pitkänen <hatapitk@iki.fi>
+	* Do not try to fix capitalization of baseforms when there
+	  is obvious misalignment between baseform and structure pattern.
+
 2011-09-02 Harri Pitkänen <hatapitk@iki.fi>
 	* Pkg-config is now required for build configuration
 	* Remove workaround for Lttoolbox bug. Apertium SVN revision 33803 or later

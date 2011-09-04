@@ -77,3 +77,9 @@ word:sinisempi
 word:sinisin
  analysis
   COMPARISON=superlative
+word:Pohjois-Suomessa
+ analysis
+  BASEFORM=Pohjois-Suomi
+word:Uudessa-Seelannissa
+ analysis
+  BASEFORM=uusi-Seelanti # Oikeastaan Uusi-Seelanti, mutta "uusi" ei ole aluetta rajaava alkuosa ja siten perussäännön mukaan kirjoitettaisiin pienellä alkukirjaimella.
