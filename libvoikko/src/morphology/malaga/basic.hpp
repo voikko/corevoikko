@@ -23,8 +23,6 @@
 #ifndef LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
 #define LIBVOIKKO_MORPHOLOGY_MALAGA_BASIC_HPP
 
-#include <cstddef>
-
 namespace libvoikko { namespace morphology { namespace malaga {
 
 /* Constants. ===============================================================*/
@@ -43,6 +41,7 @@ typedef signed short short_t; /* Signed 16 bits. */
 typedef unsigned short u_short_t; /* Unsigned 16 bits. */
 typedef signed int int_t; /* Signed 32 bits. */
 typedef unsigned int u_int_t; /* Unsigned 32 bits. */
+typedef unsigned long ptr_t; /* Pointer in arithmetic expressions. */
 
 /* Character types. */
 typedef char char_t; /* A single char. */
@@ -104,12 +103,12 @@ extern void *new_mem( int_t item_size );
 /* Allocate a memory block of ITEM_SIZE bytes, clear it and return it.
  * If memory is out, call the function "error". */
 
-extern void *new_vector( int_t item_size, size_t item_count );
+extern void *new_vector( int_t item_size, int_t item_count );
 /* Allocate a memory block to contain ITEM_COUNT items of size ITEM_SIZE,
  * clear it and return it.
  * If memory is out, call the function "error". */
 
-extern size_t renew_vector( void *block_p, int_t item_size, size_t item_count );
+extern int_t renew_vector( void *block_p, int_t item_size, int_t item_count );
 /* Realloc *BLOCK_P to contain ITEM_COUNT items of ITEM_SIZE bytes each.
  * Return ITEM_COUNT.
  * If memory is out, call the function "error". */
@@ -139,8 +138,8 @@ extern char_t *concat_strings( string_t first_string, ... );
 typedef struct
 {
   char_t *buffer;
-  size_t buffer_size;
-  size_t string_size;
+  int_t buffer_size;
+  int_t string_size;
 } text_t;
 
 extern text_t *new_text( void );

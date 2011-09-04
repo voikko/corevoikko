@@ -169,7 +169,7 @@ new_mem( int_t item_size )
 /*---------------------------------------------------------------------------*/
 
 void *
-new_vector( int_t item_size, size_t item_count )
+new_vector( int_t item_size, int_t item_count )
 /* Allocate a memory block to contain ITEM_COUNT items of size ITEM_SIZE,
  * clear it and return it. */
 { 
@@ -180,8 +180,8 @@ new_vector( int_t item_size, size_t item_count )
 
 /*---------------------------------------------------------------------------*/
 
-size_t 
-renew_vector( void *block_p, int_t item_size, size_t item_count )
+int_t 
+renew_vector( void *block_p, int_t item_size, int_t item_count )
 /* Realloc *BLOCK_P to contain ITEM_COUNT items of ITEM_SIZE bytes each.
  * Return ITEM_COUNT. */
 { 
@@ -230,7 +230,9 @@ void
 add_to_text( text_t *text, string_t string )
 /* Add STRING to TEXT. */
 { 
-  size_t string_len = strlen( string );
+  int_t string_len;
+
+  string_len = strlen( string );
   if (text->buffer_size < text->string_size + string_len + 1) 
   { 
     text->buffer_size = renew_vector( &text->buffer, sizeof( char_t ), 

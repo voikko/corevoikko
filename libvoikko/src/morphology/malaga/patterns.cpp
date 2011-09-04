@@ -77,8 +77,7 @@ match_pattern(string_t string, string_t pattern, MalagaState * malagaState)
  * The substrings can be freed after usage. */
 {
   struct {string_t start; string_t end;} var[ PATTERN_VAR_MAX ];
-  size_t sp;
-  int_t i;
+  int_t sp, i;
   bool found_mismatch;
   string_t index;
 

@@ -41,9 +41,9 @@ public:
 	MalagaState();
 	cell_t * value_heap;
 	cell_t * value_heap_end; /* Pointer to first free cell in heap. */
-	size_t value_heap_size; /* Size of the value heap in cells. */
-	size_t value_stack_size; /* Size of the value stack. */
-	size_t top; /* The index of the first unused item on VALUE_STACK. */
+	int_t value_heap_size; /* Size of the value heap in cells. */
+	int_t value_stack_size; /* Size of the value stack. */
+	int_t top; /* The index of the first unused item on VALUE_STACK. */
 	value_t * value_stack; /* The value stack contains static values and local values. */
 
 	struct { /* The run time lexicon. */
@@ -56,7 +56,7 @@ public:
 	} lexicon;
 
 	pattern_state_t * stack; /* Stack used for backtracking. */
-	size_t stack_size;
+	int_t stack_size;
 	char * pattern_var[PATTERN_VAR_MAX]; /* Pattern variables. */
 
 	struct { /* This is the symbol table. */
