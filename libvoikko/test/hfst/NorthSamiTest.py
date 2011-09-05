@@ -23,7 +23,7 @@ import libvoikko
 
 class NorthSamiTest(unittest.TestCase):
 	def setUp(self):
-		self.voikko = libvoikko.Voikko("fi-x-sme")
+		self.voikko = libvoikko.Voikko("se")
 	
 	def tearDown(self):
 		self.voikko.terminate()
