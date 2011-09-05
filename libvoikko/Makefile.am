@@ -1,4 +1,4 @@
-SUBDIRS = src src/tools java msvc test
+SUBDIRS = src src/tools java msvc test cs cl
 
 EXTRA_DIST = data/autocorrect/fi_FI.xml data/autocorrect/autocorrect.dtd \
     python/libvoikko.py \
