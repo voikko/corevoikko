@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -1030,7 +1030,6 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "inklusionisti", alku: "inklusionist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
 [perusmuoto: "paternalismi", alku: "paternalism", luokka: nimisana, jatko: <risti>, äs: a];
 [perusmuoto: "paternalisti", alku: "paternalist", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <inen>];
-[perusmuoto: "Pascal", alku: "Pascal", luokka: sukunimi, jatko: <kalsium>, äs: a];
 
 [perusmuoto: "hyvinansaittu", alku: "hyvinansai", luokka: laatusana, jatko: <puhuttu>, äs: a];
 [perusmuoto: "hyvinarvoisa", alku: "hyvinarvois", luokka: laatusana, jatko: <asema>, äs: a];

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -102,10 +102,11 @@ allo_rule generate_allos ($tietue):
   end;
 
 
-  # Tunnistetaan yhdyssanoina.
+  # Tunnistetaan yhdyssanoina tai johdoksina.
   #
   if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
-                             "Itämeri", "itävaltalainen", "suomalais-permiläinen">) then
+                             "Itämeri", "itävaltalainen", "kazakstanilainen",
+                             "suomalais-permiläinen", "tongalainen">) then
     stop;
   end;
 
@@ -215,7 +216,7 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
-  if ($tietue.perusmuoto in <"nasta", "pöllö", "vilja">) then
+  if ($tietue.perusmuoto in <"nasta", "pöllö", "riiviö", "vilja">) then
     if ($tietue.luokka = nimisana) then
       stop;
     elseif ($tietue.luokka = laatusana) then
@@ -223,6 +224,9 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+  if ($tietue.perusmuoto in <"parka">) then
+    $tietue.luokka := nimisana;
+  end;
 
   if ($tietue.luokka = lukusana) then
     if ($tietue.alaluokka in <toista>) then
@@ -2597,7 +2601,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (paras in $tietue.jatko) then
-    choose $i in vieras ($tietue, A($tietue)+"s", "h"+A($tietue)+A($tietue), A($tietue)+"h"+A($tietue), "h"+A($tietue), A($tietue)+"hit", "h"+A($tietue), "h"+A($tietue));
+    choose $i in paras ($tietue, A($tietue)+"s", "h"+A($tietue)+A($tietue), A($tietue)+"h"+A($tietue), "h"+A($tietue), A($tietue)+"hit", A($tietue)+"h", "e");
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
@@ -9538,6 +9542,54 @@ subrule maineikas ($tietue, $param01, $param02, $param03, $param04, $param05, $p
                          johdin_Us: <<$param09, <>>, <$param10, <>>, <$param11, <>>, <$param12, <>>>,
                          tavuviiva: <<$param01, <>>, <$param02, <>>>,
                          yhdyssana: <<$param01, <>>, <$param02, <>>>]);
+end;
+subrule paras ($tietue, $param01, $param02, $param03, $param04, $param05, $param06, $param07):
+  return taivutuskaava ($tietue,
+                        [nimentö: <<$param01, <>>>,
+                         omistusliite: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         omanto_n: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         osanto_tA: <<$param01, <>>>,
+                         olento_nA: <<$param02, <>>, <$param01, <ei_voikko>>, <$param03, <ei_voikko>>>,
+                         tulento_ksi: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         sisäolento_ssA: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         sisäeronto_stA: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         sisätulento_seen: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         sisätulento_sen: <<$param03, <ei_voikko>>>,
+                         ulko_olento_llA: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         ulkoeronto_ltA: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         ulkotulento_lle: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         vajanto_ttA: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         nimentö_t: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         omanto_iT: <<$param04, <>>>,
+                         omanto_ten: <<$param01, <ei_voikko>>, <$param05, <ei_voikko>>>,
+                         omanto_ien: <<$param06, <ei_voikko>>>,
+                         osanto_iA: <<$param06, <ei_voikko>>>,
+                         osanto_itA: <<$param04, <>>>,
+                         olento_inA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         tulento_iksi: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         sisäolento_issA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         sisäeronto_istA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         sisätulento_isiin: <<$param04, <>>>,
+                         sisätulento_isin: <<$param04, <ei_voikko>>, <$param06, <ei_voikko>>>,
+                         sisätulento_ihin: <<$param04, <>>>,
+                         ulko_olento_illA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         ulkoeronto_iltA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         ulkotulento_ille: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         vajanto_ittA: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         seuranto_ine: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         keinonto_in: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         kerronto_sti: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         voittoaste: <<$param07, <>>, <$param02, <>>, <$param03, <ei_voikko>>>,
+                         yliaste: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         johdin_inen: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         johdin_ittain: <<$param04, <>>, <$param06, <ei_voikko>>>,
+                         johdin_lAinen: <<$param01, <>>, <$param02, <>>>,
+                         johdin_llinen: <<$param02, <>>>,
+                         johdin_mAinen: <<$param01, <>>>,
+                         johdin_tOn: <<$param02, <>>, <$param03, <ei_voikko>>>,
+                         johdin_Us: <<$param04, <>>>,
+                         tavuviiva: <<$param01, <>>>,
+                         yhdyssana: <<$param01, <>>>]);
 end;
 subrule utelias ($tietue, $param01, $param02, $param03, $param04):
   return taivutuskaava ($tietue,

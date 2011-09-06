@@ -81,6 +81,9 @@ edellisvuotinen
 Eesti
 eetillinen
 eksymä
+ekvivalenttiannos
+elinajanodote
+eliniänodote
 Elo
 elohopea
 elokuva
@@ -133,6 +136,7 @@ halkeama
 Halme
 halpalento
 halpamainen
+halpamyymälä
 halpatyö
 halutunlainen
 Hamina
@@ -172,10 +176,12 @@ hienorakenteinen
 hieroutuma
 hiertymä
 hindulainen
+hinta-laatusuhde
 Hirvensalmi
 hoito
 hokema
 Hollanti
+hollitupa
 Honkajoki
 Hovi
 Huhta
@@ -221,6 +227,7 @@ isoäiti
 Italia
 itkettynyt
 itkettyä
+itserakas
 itsesäätyvä
 itsetutkiskelu
 itsevarma
@@ -245,6 +252,7 @@ joukkoitsemurha
 jousitus
 Jukka
 julkishallinto
+julkisrauha
 julkissektori
 julkistalous
 Jumala
@@ -280,10 +288,12 @@ kalkkiutuma
 Kallio
 kallistuma
 Kangas
+Kankkunen
 Kannus
 kansalainen
 kansallismielinen
 kantama
+kanttori-urkuri
 Kanttura
 Kari
 Karjala
@@ -321,6 +331,7 @@ Kerttunen
 kertymä
 keräymä
 keräytymä
+keskinäisinduktanssi
 keskittymä
 kestitys
 kesyhanhi
@@ -419,6 +430,7 @@ Kuvaaja
 kuvaama
 kuvaamataide
 kuvaamataito
+kyberavaruus
 kyllästyttää
 Kylmäkoski
 kyläläinen
@@ -745,6 +757,7 @@ puoluelainen
 purema
 puristuma
 putoama
+puuvillajersey
 Pyhäjoki
 Pyhäjärvi
 pystytys
@@ -764,6 +777,8 @@ rajuilma
 Ranska
 Ranta
 Rantasalmi
+raottua
+raottuma
 rapauma
 rappeutuma
 rappeuma
@@ -784,10 +799,12 @@ retrovirus
 Riihimäki
 rikkakasvi
 rikkiviisas
+rikollinen
 Riski
 risteytymä
 Ritva
 rivittyä
+roiskevesitiivis
 rohtuma
 romahdusmainen
 roomalaiskatolilainen
@@ -804,6 +821,7 @@ ruumiillistuma
 Ruusu
 ryhmittymä
 ryhmittyä
+rytmittyä
 ryvettyä
 räpytellä
 Rönkkö
@@ -918,6 +936,7 @@ tasavaltalainen
 tataarilainen
 teatterilainen
 tehtaalainen
+tekopyhä
 teloitus
 teollinen
 teollisuus
@@ -1049,6 +1068,7 @@ venymä
 venytys
 Venäjä
 Venäläinen
+Vepsä
 veri-aivoeste
 veri-kiveseste
 Vesa
@@ -1092,6 +1112,7 @@ vyörymä
 vyörytys
 vähittäishinta
 vähittäiskauppa
+vähittäiskauppias
 vähittäismaksu
 vähittäismyymälä
 vähittäismyynti
@@ -1124,6 +1145,7 @@ yhteenveto
 yhteissointi
 yhtenäiskoulu
 yhtenäiskulttuuri
+yhtenäisteoria
 yhtymä
 Yleisradio
 ylempiarvoinen

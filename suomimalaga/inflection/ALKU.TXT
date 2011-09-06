@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2010 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -102,10 +102,11 @@ allo_rule generate_allos ($tietue):
   end;
 
 
-  # Tunnistetaan yhdyssanoina.
+  # Tunnistetaan yhdyssanoina tai johdoksina.
   #
   if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
-                             "Itämeri", "itävaltalainen", "suomalais-permiläinen">) then
+                             "Itämeri", "itävaltalainen", "kazakstanilainen",
+                             "suomalais-permiläinen", "tongalainen">) then
     stop;
   end;
 
@@ -215,7 +216,7 @@ allo_rule generate_allos ($tietue):
     stop;
   end;
 
-  if ($tietue.perusmuoto in <"nasta", "pöllö", "vilja">) then
+  if ($tietue.perusmuoto in <"nasta", "pöllö", "riiviö", "vilja">) then
     if ($tietue.luokka = nimisana) then
       stop;
     elseif ($tietue.luokka = laatusana) then
@@ -223,6 +224,9 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
+  if ($tietue.perusmuoto in <"parka">) then
+    $tietue.luokka := nimisana;
+  end;
 
   if ($tietue.luokka = lukusana) then
     if ($tietue.alaluokka in <toista>) then

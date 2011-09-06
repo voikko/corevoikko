@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -1540,29 +1540,34 @@ subrule perusmuoto ($tietue):
     $k :=- 1;
   end;
 
-#define $a := transmit (<$k> + <$tietue>);
+#define $a := transmit (<"A"> + <$tietue.$k.perusmuoto> + <$tietue.$k.alku> + <$k>);
 
   define $s := "";
   foreach $i in $k - 1:
-#define $b := transmit (<"B"> + <$tietue.$i>);
     if ($tietue.$i.lukutyyppi /= nil and $tietue.$i.lukutyyppi = perusluku) then
       if ($i = 1 and $tietue.($i+1).luokka = sijapääte and $tietue.($i+2).luokka /= lukusana) then
         $s :=+ $tietue.$i.alku;
       else
         $s :=+ lukusanan_perusmuoto ($tietue, $i, $k, $s);
       end;
+#    elseif ($tietue.($i+1).luokka = tavuviiva) then
+#      if ($tietue.$i.luokka = sijapääte and $tietue.$i.sija in <omanto_n>) then
+#        $s :=+ alku ($tietue.$i);
+#      end;
     else
       $s :=+ alku ($tietue.$i);
+#define $b := transmit (<"B"> + <$tietue.$i.perusmuoto> + <$tietue.$i.alku>  + <$tietue.$i.luokka> + <$i> + <$s>);
     end;
   end;
   if ($k = 1) then
     $s :=+ sana1 ($tietue.$k);
+#define $b := transmit (<"C"> + <$tietue.$k.perusmuoto> + <$tietue.$k.alku> + <$k> + <$s>);
   elseif ($tietue.$k.lukutyyppi /= nil and $tietue.$k.lukutyyppi = perusluku) then
-#define $c := transmit (<"C"> + <$tietue.$k>);
     $s :=+ lukusanan_perusmuoto ($tietue, $k, $k, $s);
+#define $c := transmit (<"D"> + <$tietue.$k.perusmuoto> + <$tietue.$k.alku> + <$k> + <$s>);
   else
-#define $d := transmit (<"d"> + <$tietue.$k>);
     $s :=+ sana2 ($tietue.$k);
+#define $d := transmit (<"E"> + <$tietue.$k.perusmuoto> + <$tietue.$k.alku> + <$k> + <$s>);
   end;
   return $s;
 end;

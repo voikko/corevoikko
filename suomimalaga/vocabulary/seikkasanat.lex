@@ -55,7 +55,7 @@
 [perusmuoto: "ainoastaan", alku: "ainoastaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainut", alku: "ainut", luokka: seikkasana, jatko: <liitesana, loppu, osanto_tA>, äs: a];
 [perusmuoto: "aivan", alku: "aivan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "ajoissa", alku: "ajoissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "ajoissa", alku: "ajoissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "ajoittain", alku: "ajoittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alakkain", alku: "alakkain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "alas", alku: "alas", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
@@ -162,7 +162,7 @@
 [perusmuoto: "hellävaroin", alku: "hellävaroin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "helpoiten", alku: "helpoiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "helvetti", alku: "helvetisti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "hengissä", alku: "hengissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "hengissä", alku: "hengissä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "hereillä", alku: "here", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: ä];
 [perusmuoto: "heti", alku: "heti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -633,7 +633,7 @@
 [perusmuoto: "mynkään", alku: "mynkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myöden", alku: "myöden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä]; # KS: paremmin "myöten".
 [perusmuoto: "myöhemmin", alku: "myöhemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "myöhässä", alku: "myöhässä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "myöhässä", alku: "myöhässä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "myös", alku: "myös", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myöten", alku: "myöten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "myötä", alku: "myötä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
@@ -734,7 +734,7 @@
 [perusmuoto: "parhaillaan", alku: "parhailla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "parhaimmillaan", alku: "parhaimmilla", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "parhaiten", alku: "parhaiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "parissa", alku: "pari", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a];
+[perusmuoto: "parissa", alku: "pari", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "parittain", alku: "parittain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "paska", alku: "paskasti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "pelkästään", alku: "pelkästään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
