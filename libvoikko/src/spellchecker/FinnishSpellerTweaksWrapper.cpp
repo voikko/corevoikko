@@ -92,7 +92,7 @@ spellresult FinnishSpellerTweaksWrapper::spellWithoutSoftHyphen(const wchar_t * 
 			if (word[i] == L'-') {
 				spellresult leadingResult = spell(word, i);
 				if (leadingResult != SPELL_FAILED) {
-					list<Analysis *> * trailingAnalyses = analyzer->analyze(word + i + 1);
+					list<Analysis *> * trailingAnalyses = analyzer->analyze(word + i + 1, wlen - (i + 1));
 					list<Analysis *>::const_iterator it = trailingAnalyses->begin();
 					bool isTrailingAcceptable = false;
 					while (it != trailingAnalyses->end()) {
