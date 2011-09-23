@@ -540,16 +540,17 @@ if "--base" in [opt[0] for opt in opts]:
 	sys.exit(0)
 
 if "--current" in [opt[0] for opt in opts]:
+	CURRENT_TESTMOR = u"fi-x-malstd"
 	clean_smv()
 	update_smv()
-	voikko = Voikko("fi")
-	if not spell_tests(voikko, SVNROOT + "/trunk/tests/voikkotest/fi-x-malstd/spell.txt"):
+	voikko = Voikko(CURRENT_TESTMOR)
+	if not spell_tests(voikko, SVNROOT + "/trunk/tests/voikkotest/" + CURRENT_TESTMOR + "/spell.txt"):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
 	voikko.terminate()
 	sys.stderr.write("Running voikkospell on full wordlist...\n")
-	os.system('bash -c \'time zcat "%s" | "%s" -j %i | grep "^C:" > "%s"\'' % \
-	          (WORDLIST, SPELLCMD, THREADS, CURRENT_CORRECT))
+	os.system('bash -c \'time zcat "%s" | "%s" -d %s -j %i | grep "^C:" > "%s"\'' % \
+	          (WORDLIST, SPELLCMD, CURRENT_TESTMOR, THREADS, CURRENT_CORRECT))
 	diffcmd = 'diff -U0 "%s" "%s" | ' % (BASE_CORRECT, CURRENT_CORRECT)
 	new_accept = int(os.popen('%s grep ^+C: | wc -l' % diffcmd).read())
 	old_accept = int(os.popen('%s grep ^-C: | wc -l' % diffcmd).read())
