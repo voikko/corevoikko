@@ -46,13 +46,14 @@ class VoikkoHTMLParser(HTMLParser):
 		return tag in ["table"]
 	
 	def isNonContentTag(self, tag):
-		return tag in ["script", "style", "option"]
+		return tag in ["script", "style", "option", "samp", "code"]
 	
 	def isIgnorableTag(self, tag):
 		return tag in ["a", "em", "hr", "img", "tr", "b", "i", "u", "span", "meta", "link", \
 		               "input", "button", "map", "area", "iframe", "base", "font", "noscript", \
 		               "strong", "center", "small", "thead", "tbody", "tfoot", "head", "body", \
-		               "embed", "param", "form", "kbd", "optgroup", "sub", "sup"]
+		               "embed", "param", "form", "kbd", "optgroup", "sub", "sup", "frame", "frameset", \
+		               "ins", "label", "applet", "object"]
 	
 	def isCloseP(self, tag):
 		return tag in ["p", "table", "div", "ul", "ol", "dl", "h1", "h2", "h3", "h4", "h5", "h6"]
