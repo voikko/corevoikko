@@ -36,6 +36,7 @@ from HTMLParser import HTMLParseError
 import codecs
 
 _voikko = {}
+_dictInfo = {}
 
 ALLOWED_DICTS = [u"fi-x-standard+debug", u"fi-x-medicine"]
 
@@ -330,6 +331,16 @@ def analyzeWord(word, v):
 	res = res + u"</ol>"
 	return res
 
+def checkIfExistsInAlternativeDicts(word, v):
+	global _voikko
+	altstring = u""
+	for (dictcode, instance) in _voikko.iteritems():
+		if instance == v or not instance.spell(word):
+			continue
+		altstring = altstring + u"<li>" + escape(_dictInfo[dictcode].description) + \
+		            u" <button type='button' onclick='switchDict(this, \"" + dictcode + u"\")'>Ota sanasto käyttöön</button></li>"
+	return altstring
+
 def wordInfo(word, dictionary):
 	res = u"<div title='Tietoja sanasta %s'>" % escapeAttr(word)
 	if dictionary not in _voikko:
@@ -341,10 +352,13 @@ def wordInfo(word, dictionary):
 		if isRecognized:
 			word = word + u"."
 	if not isRecognized:
-		res = res + u"Sana on tuntematon."
+		res = res + u"Sana ei ole tässä sanastossa."
 		suggs = suggestions(word, v)
 		if suggs is not None:
 			res = res + u" Tarkoititko kenties" + suggs
+		altDicts = checkIfExistsInAlternativeDicts(word, v)
+		if len(altDicts) > 0:
+			res = res + u"<br />Sana on mukana seuraavissa sanastoissa:<ul>" + altDicts + u"</ul>"
 	else:
 		res = res + analyzeWord(word, v)
 	res = res + "</div>"
@@ -393,14 +407,9 @@ def checkPage(url, dictionary, clientIp, requestHeaders):
 
 def getPortlet():
 	html = u"<p>Valitse sanasto: <select id='voikkoDict'>"
-	dictMap = {}
-	for d in Voikko.listDicts():
-		tag = d.language + u"-x-" + d.variant
-		if tag in ALLOWED_DICTS:
-			dictMap[ALLOWED_DICTS.index(tag)] = u"<option value='" + tag + u"'>" + escape(d.description) + u"</option>"
-	for i in range(0, len(ALLOWED_DICTS)):
-		if i in dictMap:
-			html = html + dictMap[i]
+	for tag in ALLOWED_DICTS:
+		d = _dictInfo[tag]
+		html = html + u"<option value='" + tag + u"'>" + escape(d.description) + u"</option>"
 	html = html + u"</select></p>"
 	html = html + u"<div id='tabs'>"
 	html = html + u"<ul><li><a href='#tabDirect'>Kirjoita teksti</a></li><li><a href='#tabPage'>Oikolue www-sivu <span style='color: red'>(beta)</span></a></li></ul>"
@@ -520,6 +529,10 @@ def initVoikko():
 		v.setIgnoreDot(False)
 		v.setAcceptUnfinishedParagraphsInGc(True)
 		_voikko[allowedDict] = v
+	for d in Voikko.listDicts():
+		tag = d.language + u"-x-" + d.variant
+		if tag in ALLOWED_DICTS:
+			_dictInfo[tag] = d
 
 def uninitVoikko():
 	global _voikko

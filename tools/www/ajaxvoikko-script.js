@@ -96,6 +96,11 @@ function dictionaryChanged() {
   }
 }
 
+function switchDict(button, dictName) {
+  $(button).parents(".ui-dialog-content").first().dialog("destroy");
+  $("#voikkoDict").val(dictName).change();
+}
+
 function wordInfoReceived(html) {
   var options = {
     width: 450
