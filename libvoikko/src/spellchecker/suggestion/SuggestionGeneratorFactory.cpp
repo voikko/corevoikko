@@ -41,7 +41,7 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 			return new SuggestionStrategyOcr(voikkoOptions->morAnalyzer, 1000);
 		}
 		else {
-			return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer, 450);
+			return new SuggestionStrategyTyping(voikkoOptions->morAnalyzer, 460);
 		}
 	} else if (backend == "null") {
 		return new SuggestionGeneratorNull();

@@ -34,6 +34,7 @@ kauheen	kauhean
 alurrn	alueen
 Sstami	Aatami
 hyppoo	hyppii
+showssa	show'ssa
 # = Tavutusvihjeet =
 kerrost­alo	kerrostalo # kerrost<SH>alo
 # = Korjausehdotusten järjestys =

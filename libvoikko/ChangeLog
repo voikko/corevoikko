@@ -1,3 +1,9 @@
+2011-09-27 Harri Pitkänen <hatapitk@iki.fi>
+	* Suggest adding ' for "showssa" -> "show'ssa"
+
+2011-09-27 Flammie Pirinen <flammie@iki.fi>
+	* Zhfst version of HFST spellers
+
 2011-09-23 Harri Pitkänen <hatapitk@iki.fi>
 	* Do not apply analysis method for null terminated strings for a string that
 	  does not have a null terminator.

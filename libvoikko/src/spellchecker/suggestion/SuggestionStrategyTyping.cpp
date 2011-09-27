@@ -108,7 +108,7 @@ SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAna
 		new SuggestionGeneratorReplacement(REPLACEMENTS_3, morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorInsertion(
-		L"ulko\u00e4mrvpyhjd\u00f6gfbcw:xzq\u00e5", morAnalyzer));
+		L"ulko\u00e4mrvpyhjd\u00f6gfbcw:xzq\u00e5'", morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorReplacement(REPLACEMENTS_4, morAnalyzer));
 	generators.push_back(
