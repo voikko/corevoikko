@@ -30,9 +30,12 @@
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
 #include "grammar/GcCache.hpp"
-#if HAVE_HFST
-#  include <ZHfstOspeller.h>
-#endif
+
+// TODO proper abstraction
+namespace hfst_ol {
+	class ZHfstOspeller;
+}
+
 namespace libvoikko {
 
 typedef struct {
@@ -54,9 +57,7 @@ typedef struct {
 	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
 	hyphenator::Hyphenator * hyphenator;
 	setup::Dictionary dictionary;
-#if HAVE_HFST
 	hfst_ol::ZHfstOspeller* hfst;
-#endif
 } voikko_options_t;
 
 }
