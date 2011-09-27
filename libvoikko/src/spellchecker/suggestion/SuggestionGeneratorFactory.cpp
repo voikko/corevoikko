@@ -48,7 +48,7 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	}
 	#ifdef HAVE_HFST
 	if (backend == "hfst") {
-		return new HfstSuggestion(voikkoOptions->dictionary.getMorPath());
+		return new HfstSuggestion(voikkoOptions->dictionary.getMorPath(), voikkoOptions);
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create suggestion generator because of unknown suggestion generator backend");

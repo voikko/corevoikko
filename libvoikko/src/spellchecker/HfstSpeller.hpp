@@ -21,8 +21,10 @@
 
 #include "spellchecker/Speller.hpp"
 #include "setup/DictionaryException.hpp"
+#include "setup/setup.hpp"
 #include <string>
 #include <ospell.h>
+#include <ZHfstOspeller.h>
 
 namespace libvoikko { namespace spellchecker {
 
@@ -31,13 +33,13 @@ namespace libvoikko { namespace spellchecker {
  */
 class HfstSpeller : public Speller {
 	public:
-		HfstSpeller(const std::string & directoryName) throw(setup::DictionaryException);
+		HfstSpeller(const std::string & directoryName, voikko_options_t* = 0) throw(setup::DictionaryException);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
 	private:
 		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
 		spellresult doSpell(const wchar_t * word, size_t wlen);
-		hfst_ol::Speller* speller_;
+		hfst_ol::ZHfstOspeller* speller_;
 };
 
 

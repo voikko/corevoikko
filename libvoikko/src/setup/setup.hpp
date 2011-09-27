@@ -19,6 +19,10 @@
 #ifndef VOIKKO_SETUP_SETUP_H
 #define VOIKKO_SETUP_SETUP_H
 
+#if HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
 #include "spellchecker/SpellerCache.hpp"
@@ -26,7 +30,9 @@
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
 #include "grammar/GcCache.hpp"
-
+#if HAVE_HFST
+#  include <ZHfstOspeller.h>
+#endif
 namespace libvoikko {
 
 typedef struct {
@@ -48,6 +54,9 @@ typedef struct {
 	spellchecker::suggestion::SuggestionGenerator * suggestionGenerator;
 	hyphenator::Hyphenator * hyphenator;
 	setup::Dictionary dictionary;
+#if HAVE_HFST
+	hfst_ol::ZHfstOspeller* hfst;
+#endif
 } voikko_options_t;
 
 }

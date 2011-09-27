@@ -18,37 +18,48 @@
 
 #include "spellchecker/HfstSuggestion.hpp"
 #include "utils/StringUtils.hpp"
+#include "setup/setup.hpp"
+
 #include <fstream>
+
+#include <ZHfstOspeller.h>
 
 using namespace std;
 using namespace libvoikko::utils;
 
+using hfst_ol::ZHfstOspeller;
+
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-HfstSuggestion::HfstSuggestion(const string & directoryName) throw(setup::DictionaryException) {
-	string spellerFile = directoryName + "/sug.hfstol";
-	string suggerFile = directoryName + "/err.hfstol";
-		FILE * error_source = fopen(suggerFile.c_str(), "r");
-		FILE * lexiconfile = fopen(spellerFile.c_str(), "r");
-		hfst_ol::Transducer * error = 0;
-		hfst_ol::Transducer * lexicon = 0;
+HfstSuggestion::HfstSuggestion(const string & directoryName, voikko_options_t* opts) throw(setup::DictionaryException) {
+	speller_ = 0;
+	if ((opts != 0) && (opts->hfst != 0)) {
+		speller_ = opts->hfst;
+	}
+	else {
+		string spellerFile = directoryName + "/speller.zhfst";
+		speller_ = new ZHfstOspeller();
 		try {
-				error = new hfst_ol::Transducer(error_source);
-				lexicon = new hfst_ol::Transducer(lexiconfile);
-		} catch (hfst_ol::HeaderParsingException& e) {
-			throw setup::DictionaryException(e.what());
+			speller_->read_zhfst(spellerFile.c_str());
 		}
-		try {
-			speller_ = new hfst_ol::Speller(error, lexicon);
-		} catch (hfst_ol::AlphabetTranslationException& e) {
-			throw setup::DictionaryException(e.what());
+		catch (hfst_ol::ZHfstZipReadingError& zhzre) {
+			speller_->read_legacy(directoryName.c_str());
 		}
+		catch (hfst_ol::ZHfstLegacyReadingError& zhlre) {
+			throw setup::DictionaryException("no usable hfst spellers");
+		}
+		catch (hfst_ol::AlphabetTranslationException& ate) {
+			throw setup::DictionaryException("broken error model detected");
+		}
+	}
+	if (opts != 0)
+		opts->hfst = speller_;
 }
 
 void HfstSuggestion::generate(SuggestionStatus* s) const {
 	size_t wlen = s->getWordLength();
 	char * wordUtf8 = StringUtils::utf8FromUcs4(s->getWord(), wlen);
-	hfst_ol::CorrectionQueue corrections = speller_->correct(wordUtf8);
+	hfst_ol::CorrectionQueue corrections = speller_->suggest(wordUtf8);
 	unsigned int correction_count = 0;
 	while (corrections.size() > 0) {
 		const char* sugUtf8 = corrections.top().first.c_str();
@@ -62,7 +73,12 @@ void HfstSuggestion::generate(SuggestionStatus* s) const {
 }
 
 void HfstSuggestion::terminate() {
-	delete speller_;
+	if (speller_ != 0) {
+		delete speller_;
+		speller_ = 0;
+	}
 }
 
 } } }
+
+// vim: set noexpandtab ts=4:

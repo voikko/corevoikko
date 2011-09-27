@@ -107,11 +107,13 @@ AH_TEMPLATE(HAVE_HFST, [Have HFST])
 AC_ARG_ENABLE(hfst, AC_HELP_STRING([--enable-hfst],
 	[enable HFST morphology backend (EXPERIMENTAL!)]),
 	[hfst=${enableval}], [hfst=no])
-if test x$hfst = xyes; then
-	PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell])
-	AC_DEFINE(HAVE_HFST, 1)
-	CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
-fi
+dnl must be AS_IF for some aclocals to pick PKG_CHECK_MODULES somehow.
+dnl AC_PROVIDE_IFELSE doesn't work on mac?
+AS_IF([test x$hfst = xyes], [
+      PKG_CHECK_MODULES([HFSTOSPELL], [hfstospell >= 0.2])
+	  AC_DEFINE(HAVE_HFST, 1)
+	  CXXFLAGS="$CXXFLAGS $HFSTOSPELL_CFLAGS"
+	])
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
 dnl Lttoolbox support

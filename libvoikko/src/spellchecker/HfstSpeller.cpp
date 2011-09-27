@@ -22,48 +22,53 @@
 #include "voikko_defines.h"
 #include <fstream>
 #include <ospell.h>
+#include <ol-exceptions.h>
 
 using namespace std;
 using namespace libvoikko::character;
 using namespace libvoikko::utils;
 
+using hfst_ol::ZHfstOspeller;
+
 namespace libvoikko { namespace spellchecker {
 
 
-HfstSpeller::HfstSpeller(const string & directoryName) throw(setup::DictionaryException) {
-	string spellerFile = directoryName + "/spl.hfstol";
-	string suggerFile = directoryName + "/alphabet.hfstol";
-		FILE * error_source = fopen(suggerFile.c_str(), "r");
-		FILE * lexiconfile = fopen(spellerFile.c_str(), "r");
-		hfst_ol::Transducer * error = 0;
-		hfst_ol::Transducer * lexicon = 0;
+HfstSpeller::HfstSpeller(const string & directoryName, voikko_options_t* opts)
+throw(setup::DictionaryException) {
+	speller_ = 0;
+	if ((opts != 0) && (opts->hfst != 0)) {
+		speller_ = opts->hfst;
+	}
+	else {
+		string spellerFile = directoryName + "/speller.zhfst";
+		speller_ = new ZHfstOspeller();
 		try {
-				error = new hfst_ol::Transducer(error_source);
-				lexicon = new hfst_ol::Transducer(lexiconfile);
-		} catch (hfst_ol::HeaderParsingException& e) {
-			throw setup::DictionaryException(e.what());
+			speller_->read_zhfst(spellerFile.c_str());
 		}
-		try {
-			speller_ = new hfst_ol::Speller(error, lexicon);
-		} catch (hfst_ol::AlphabetTranslationException& e) {
-			throw setup::DictionaryException(e.what());
+		catch (hfst_ol::ZHfstZipReadingError& zhzre) {
+			speller_->read_legacy(directoryName.c_str());
 		}
-
+		catch (hfst_ol::ZHfstLegacyReadingError& zhlre) {
+			throw setup::DictionaryException("no usable hfst spellers");
+		}
+		catch (hfst_ol::AlphabetTranslationException& ate) {
+			throw setup::DictionaryException("broken error model detected");
+		}
+	}
+	if (opts != 0)
+		opts->hfst = speller_;
 }
- 
+
 spellresult HfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
 	spellresult result = SPELL_FAILED;
-	if (speller_->check(wordUtf8)) {
+	if (speller_->spell(wordUtf8)) {
 		result = SPELL_OK;
 	}
 	return result;
 }
  
 spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
-	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
-		return SPELL_FAILED;
-	}
 	spellresult result = doSpell(word, wlen);
 	if (result == SPELL_FAILED && SimpleChar::isLower(word[0])) {
 		// XXX: This slightly inefficient hack allows us to support SPELL_CAP_FIRST
@@ -79,7 +84,11 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 }
 
 void HfstSpeller::terminate() {
-	delete speller_;
+	if (speller_ != 0){
+		delete speller_;
+		speller_ = 0;
+	}
 }
 
 } }
+// vim: set noexpandtab ts=4:

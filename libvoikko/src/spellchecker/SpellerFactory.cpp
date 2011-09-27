@@ -47,7 +47,7 @@ Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 	}
 	#ifdef HAVE_HFST
 	if (dictionary.getSpellBackend() == "hfst") {
-		return new HfstSpeller(dictionary.getMorPath());
+		return new HfstSpeller(dictionary.getMorPath(), voikkoOptions);
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create speller because backend configuration could not be parsed");

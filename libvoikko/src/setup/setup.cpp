@@ -175,6 +175,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->speller = 0;
 	options->suggestionGenerator = 0;
 	options->hyphenator = 0;
+	options->hfst = 0;
 	
 	try {
 		options->morAnalyzer = 0;

@@ -21,7 +21,10 @@
 
 #include <string>
 #include <ospell.h>
+#include <ZHfstOspeller.h>
+
 #include "setup/DictionaryException.hpp"
+#include "setup/setup.hpp"
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 
@@ -32,13 +35,14 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class HfstSuggestion : public SuggestionGenerator {
 	public:
-		HfstSuggestion(const std::string & directoryName) throw(setup::DictionaryException);
+		HfstSuggestion(const std::string & directoryName, voikko_options_t* opts) throw(setup::DictionaryException);
 		void generate(SuggestionStatus* s) const;
 		void terminate();
 	private:
-        hfst_ol::Speller* speller_;
+		hfst_ol::ZHfstOspeller* speller_;
 };
 
 } } }
 
 #endif
+// vim: set noexpandtab ts=4:
