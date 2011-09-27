@@ -63,11 +63,11 @@ void HfstSuggestion::generate(SuggestionStatus* s) const {
 	unsigned int correction_count = 0;
 	while (corrections.size() > 0) {
 		const char* sugUtf8 = corrections.top().first.c_str();
-		corrections.pop();
 		correction_count++;
 		wchar_t* sugU4 = StringUtils::ucs4FromUtf8(sugUtf8,
 												strlen(sugUtf8));
 		s->addSuggestion(sugU4, correction_count++);
+		corrections.pop();
 	}
 	delete[] wordUtf8;
 }
