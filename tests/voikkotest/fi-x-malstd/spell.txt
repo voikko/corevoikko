@@ -3,7 +3,8 @@
 # !      = virheellinen sana
 # #      = kommentti
 
-[yhdyssanat]
+# = yhdyssanat =
+[]
 yövieras
 kissakoira
 virka-auto
@@ -119,7 +120,8 @@ kissa-sanan
 ja-sana
 !---sana
 
-[vain yhdyssanan jälkiosana]
+# = vain yhdyssanan jälkiosana =
+[]
 yltiökutrinen
 peruskulmio
 -kutrinen
@@ -129,14 +131,16 @@ koirakulmio
 !kulmio
 !kutrinen
 
-[teonsanat]
+# = teonsanat =
+[]
 osteta # ei osteta, tositavan_kestämä_tAAn_kielto
 kuljettamansa
 !kuljettamannsa
 ollako
 oleminen
 
-[erisnimet]
+# = erisnimet =
+[]
 Erkki-eno
 Ruotsin-matka
 Kaakkois-Suomi
@@ -166,7 +170,7 @@ Sveitsi
 sveitsiläinen
 Sveitsiläinen
 !Sveitsimäinen
-!sveitsimäinen (tätä johdosta ei tueta ainakaan toistaiseksi)
+!sveitsimäinen #(tätä johdosta ei tueta ainakaan toistaiseksi)
 Teppo
 !teppo
 eteläafrikkalainen
@@ -207,13 +211,15 @@ Coca-Cola
 #porvoolaistumisilmiö
 #!porvoolaistuminenilmiö
 
-[lyhenteet]
+# = lyhenteet =
+[]
 USA:ssa
 HTML-kieli
 USA:ssakin
 !ivkaihosta
 
-[sijamuodot]
+# = sijamuodot =
+[]
 tulisessa
 !talojeen
 antimia # Vain monikkomuodot
@@ -229,7 +235,8 @@ kaunein
 hautajaisiin
 myyjin
 
-[inen-johdokset]
+# = inen-johdokset =
+[]
 isoponttoninen
 kahdeksanjärvinen
 kielipoliittinen
@@ -255,7 +262,8 @@ yhtäaikaissuoritus # teonsanan nimisanajohdos perusosana
 kuumentajareunainen # kuumentaa > kuumentaja, reuna > reunainen
 filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
 
-[voitto- ja yliasteet]
+# = voitto- ja yliasteet =
+[]
 kauniimmanvärinen
 !kauniimmanväri
 kauneimmanvärinen
@@ -281,7 +289,8 @@ tunnetumpi
 myydyimmissä
 nopeanlaisinta
 
-[yhdysviivat]
+# = yhdysviivat =
+[]
 puna-
 -Suomi
 Kaakkois-
@@ -313,7 +322,8 @@ college-kissa # vokaaliloppuinen sitaattilaina + konsonantti
 blues-kissainen # sitaattilaina + inen-johdos
 !heitto-iskuista
 
-[johdetut sanat yhdyssanoissa]
+# = johdetut sanat yhdyssanoissa =
+[]
 luovuttajarekisteri
 hakasitoja
 hevossitoja
@@ -345,7 +355,8 @@ irlantilaissyntyinen
 !voimmetsäinen
 solidaarisuusjohtoinen
 
-[etuliitteet]
+# = etuliitteet =
+[]
 yleisopetus
 asuinrakentaminen
 koeottaa
@@ -387,7 +398,8 @@ kiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
 koejuoksee
 !kissakoejuoksee
 
-[seikkasanat]
+# = seikkasanat =
+[]
 keskenään
 takanaan
 takanansa
@@ -396,14 +408,16 @@ tykönänsä
 kanssaan
 kissateitse # ys_perusosa-lippu
 
-[nimitavat]
+# = nimitavat =
+[]
 puhuakseen
 puhuakseni
 !lammasvetäessä
 !jakamisjuokse
 jakamisjuokseminen
 
-[lukusanat]
+# = lukusanat =
+[]
 kolme
 neljällä
 kaksitoista
@@ -500,7 +514,8 @@ III:n # Aleksanteri III:n
 !IV:na
 IV:nä
 
-[johtimet]
+# = johtimet =
+[]
 märänlaiselleko
 !suvealainen
 talomainen # Oikea mainen-johdos
@@ -545,13 +560,15 @@ juhlallisessa
 !uivallinen
 !juoksemata
 
-[sijapäätteet]
+# = sijapäätteet =
+[]
 !Erkkiän
 Erkkiin
 !Erkkie-
 !saksella
 
-[kieltosanat]
+# = kieltosanat =
+[]
 eihän
 ei
 !eikään
@@ -567,7 +584,8 @@ jott'ei
 vaikkeikaan
 !vaikkeikään
 
-[omistusliitteet]
+# = omistusliitteet =
+[]
 koirani
 !kauniini
 !kauniistani
@@ -588,10 +606,12 @@ omalletunnolleen
 hylätessään
 romahtamaisillaan
 
-[liitesanat]
+# = liitesanat =
+[]
 kissakin
 
-[vokaalisointu]
+# = vokaalisointu =
+[]
 !jakamisessä
 jakamisessa
 !puintiä
@@ -633,7 +653,8 @@ siisteys
 !synkronoitynyt
 synkronoitunut
 
-[taivutusluokat]
+# = taivutusluokat =
+[]
 vihkon # Kotus 1
 vihon # Kotus 1
 pehkon # Kotus 1
@@ -827,7 +848,8 @@ olko
 seissee
 seisse # ei seisse
 
-[ei-sanat]
+# = ei-sanat =
+[]
 http://kissa.fi
 !kissa.fi
 www.kissa.fi
@@ -836,13 +858,15 @@ hatapitk@iki.fi
 !iki.fi
 !J.K.Paasikivi
 
-[Unicode-muunnoksia]
+# = Unicode-muunnoksia =
+[]
 mäti # mäti
 kuorma‐auto # kuorma-auto
 ℃ # °C
 muﬃni # muffini
 
-[Tavutusvihje]
+# = Tavutusvihje =
+[]
 kerros­talo # kerros<SH>talo
 ker­rostalo # ker<SH>rostalo
 ker­ros­ta­lo # ker<SH>ros<SH>ta<SH>lo
@@ -858,7 +882,8 @@ au­ton­os­to # au<SH>ton<SH>os<SH>to
 !vaa­'an # vaa<SH>'an
 !vaa'­an # vaa'<SH>an
 
-[muita virheitä]
+# = muita virheitä =
+[]
 !kolaaa
 !kullakinkin
 tuntematon
@@ -878,3 +903,9 @@ tv-kanavalistaus
 ja
 !aaaaلوبادوتماكوسلاكوغاليوكرانيوليبسانودريميبوتريماتوسيلفيوكارابومليتوكاتاككيمنوكيكلبيكوسيبوباتوبريسترالكتريونوبتوكباليوغكوبليولاغو
 australialaisineen
+
+# = poikkeavat asetukset =
+
+[voikko.setAcceptMissingHyphens(True)]
+Kaakkois
+Kaakkois-Suomi

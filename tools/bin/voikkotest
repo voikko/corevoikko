@@ -109,9 +109,7 @@ def runCompatibilityTests():
 
 # Returns a list of grammar errors.
 def _check_grammar(paragraphlist, params, voikko):
-	for param in params.split(u" "):
-		if len(param) > 0:
-			eval(param)
+	setOptions(voikko, params)
 	paragrapherrors = []
 	for paragraph in paragraphlist:
 		errorStrings = []
@@ -168,6 +166,8 @@ def spell_tests(voikko, testFile):
 		line = stripWhitespaceAndComments(line_orig)
 		if line.startswith(u'[') and line.endswith(u']'):
 			section = line[1:-1]
+			setDefaults(voikko)
+			setOptions(voikko, section)
 			continue
 		if line.startswith(u'!'):
 			negativeTest = True
@@ -211,9 +211,7 @@ def hyphen_tests(voikko, testFile):
 			section = line[1:-1]
 			continue
 		setDefaults(voikko)
-		for option in section.split(u" "):
-			if len(option) > 0:
-				eval(option)
+		setOptions(voikko, section)
 		parts = line.split()
 		if len(parts) == 0: continue
 		inputword = parts[0].strip()
@@ -299,6 +297,11 @@ def setDefaults(voikko):
 	voikko.setHyphenateUnknownWords(True)
 	voikko.setMinHyphenatedWordLength(2)
 
+def setOptions(voikko, section):
+	for option in section.split(u" "):
+		if len(option) > 0:
+			eval(option)
+
 # Run suggestion tests
 def suggestion_tests(voikko, testFile):
 	if not os.access(testFile, os.R_OK):
@@ -317,9 +320,7 @@ def suggestion_tests(voikko, testFile):
 		parts = line.split(u'\t')
 		if len(parts) < 2: continue
 		testcount = testcount + 1
-		for option in section.split(u" "):
-			if len(option) > 0:
-				eval(option)
+		setOptions(voikko, section)
 		suggestions = voikko.suggest(parts[0])
 		setDefaults(voikko)
 		for expresult in parts[1:]:
