@@ -119,6 +119,8 @@ tomahawkjänis
 kissa-sanan
 ja-sana
 !---sana
+avaruustoimintaa
+!avaruustoimit
 
 # = vain yhdyssanan jälkiosana =
 []
