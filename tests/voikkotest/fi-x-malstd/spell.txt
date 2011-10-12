@@ -121,6 +121,11 @@ ja-sana
 !---sana
 avaruustoimintaa
 !avaruustoimit
+-hitsaaminen
+!-jatkuu
+!Matti-kaunis
+Siiri-kauneusvoide
+NHL-painotteisella
 
 # = vain yhdyssanan jälkiosana =
 []

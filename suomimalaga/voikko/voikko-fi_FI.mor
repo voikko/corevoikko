@@ -207,7 +207,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
   elseif $oikea.luokka = tavuviiva then
     result <[vokaaliehto: no, alku: "-"] + $oikea>,
            rules nimisana, erisnimi, laatusana, lyhennesääntö,
-                 etuliite, teonsana, lukusanan_jälkiliite, inen_johdos_nimisanasta,
+                 etuliite, nimisana_teonsanasta, lukusanan_jälkiliite, inen_johdos_nimisanasta,
                  lukusana_numero;
 
   elseif $oikea.luokka in <nimisana, nimi_laatusana> then
@@ -657,7 +657,7 @@ combi_rule tavuviiva ($vasen, $oikea, $sana):
   result $res, accept;
   result $res,
          rules nimisana, erisnimi, laatusana, lyhennesääntö,
-               etuliite, teonsana;
+               etuliite, nimisana_teonsanasta;
 end;
 
 
@@ -679,8 +679,8 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
   define $res := $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>;
   result $res, accept;
   result $res, rules
-         nimisana, erisnimi, laatusana,
-         etuliite, teonsana;
+         nimisana, erisnimi, nimisana_laatusanasta,
+         etuliite, nimisana_teonsanasta;
 end;
 
 combi_rule yhdysmerkki_teonsanan_jälkeen ($vasen, $oikea, $sana):
@@ -688,7 +688,7 @@ combi_rule yhdysmerkki_teonsanan_jälkeen ($vasen, $oikea, $sana):
 
   define $res := $vasen + <[vokaaliehto: yes, alku: "-"] + $oikea>;
   result $res, accept;
-  result $res, rules nimisana, erisnimi, laatusana, lyhennesääntö, etuliite;
+  result $res, rules nimisana, erisnimi, lyhennesääntö, etuliite;
 end;
 
 combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
@@ -698,7 +698,7 @@ combi_rule yhdysmerkki_lyhenteen_jälkeen ($vasen, $oikea, $sana):
   result $res, accept;
   result $res, rules
          nimisana, erisnimi, laatusana,
-         etuliite, teonsana;
+         etuliite, nimisana_teonsanasta;
 end;
 
 combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
@@ -708,7 +708,7 @@ combi_rule yhdysmerkki_laatusanan_jälkeen ($vasen, $oikea, $sana):
   result $res, accept;
   result $res, rules
          nimisana, erisnimi, laatusana, lyhennesääntö,
-         etuliite, teonsana, inen_johdos_nimisanasta,
+         etuliite, nimisana_teonsanasta, inen_johdos_nimisanasta,
          paikannimen_lainen_johdos;
 end;
 
@@ -719,7 +719,7 @@ combi_rule yhdysmerkki_laatusanan_jälkeen_ei_kansallisuutta($vasen, $oikea, $sa
   result $res, accept;
   result $res, rules
          nimisana, erisnimi, laatusana, lyhennesääntö,
-         etuliite, teonsana, inen_johdos_nimisanasta;
+         etuliite, nimisana_teonsanasta, inen_johdos_nimisanasta;
 end;
 
 combi_rule yhdysmerkki_sanan_lopussa ($vasen, $oikea, $sana):
