@@ -446,6 +446,7 @@ class VoikkoHandler(BaseHTTPRequestHandler):
 	def sendHtmlPage(self, content, contentType):
 		self.send_response(200)
 		self.send_header("Content-Type", contentType + "; charset=UTF-8")
+		self.send_header("Access-Control-Allow-Origin", "*")
 		self.end_headers()
 		self.wfile.write(content.encode("UTF-8"))
 	
