@@ -219,6 +219,7 @@ innoittua
 institutionalisoitua
 Internet
 interstitiaalipneumonia
+intiimihygienia
 irtauma
 islamilainen
 Islanti
@@ -659,6 +660,7 @@ näyttämä
 näyttö
 ohentuma
 ohutkalvo
+ohutkerroskromatografia
 ohutneulabiopsia
 ohutneulanäyte
 ohutsuoli
@@ -849,6 +851,7 @@ Savo
 savo
 Seinäjoki
 sekasortoinen
+sekundaarisosialisaatio
 selittyä
 seminaarilainen
 sentraalinen

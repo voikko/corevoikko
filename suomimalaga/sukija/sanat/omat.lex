@@ -1096,17 +1096,35 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "Gerritsen", alku: "Gerritsen", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Keryx", alku: "Keryx", luokka: nimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "JFlex", alku: "JFlex", luokka: nimi, jatko: <kalsium>, äs: ä];
+[perusmuoto: "gramps", alku: "gramps", luokka: nimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "nimbus", alku: "nimbu", luokka: nimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "cumulonimbus", alku: "cumulonimbu", luokka: nimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "tikistää", alku: "tikist", luokka: teonsana, jatko: <hidastaa>, äs: ä];
 [perusmuoto: "Angelika", alku: "Angelik", luokka: etunimi, jatko: <karahka>, äs: a];
 [perusmuoto: "Karon", alku: "Karon", luokka: sukunimi, jatko: <kalsium>, äs: a];
+[perusmuoto: "puistoinen", alku: "puistoi", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "luokoilma", alku: "luokoilm", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "luokojuhla", alku: "luokojuhl", luokka: nimisana, jatko: <koira>, äs: a];
+[perusmuoto: "luokomaa", alku: "luokoma", luokka: nimisana, jatko: <maa>, äs: a];
+[perusmuoto: "luokopäivä", alku: "luokopäiv", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "luokosää", alku: "luokosä", luokka: nimisana, jatko: <maa>, äs: ä];
+[perusmuoto: "luokoväki", alku: "luokovä", luokka: nimisana, jatko: <kaikki>, äs: ä];
+
 
 [perusmuoto: "testeri", alku: "tester", luokka: nimisana, jatko: <paperi>, äs: ä];
 [perusmuoto: "Jerri", alku: "Jerr", luokka: etunimi, jatko: <risti>, äs: ä];
 [perusmuoto: "akkusatorinen", alku: "akkusatori", luokka: laatusana, jatko: <nainen>, äs: a];
 [alku: "abc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "2g", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "3g", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
+[alku: "4g", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [perusmuoto: "hieraattinen", alku: "hieraatti", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "Riesco", alku: "Riesco", luokka: sukunimi, jatko: <valo>, äs: a];
 [perusmuoto: "aksiaali", alku: "aksiaali", luokka: etuliite, jatko: @sana2, äs: aä];
+[alku: "xsd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
+[alku: "xsdcxx", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
+[perusmuoto: "Scala", alku: "Scal", luokka: nimi, jatko: <kala>, äs: a];
+[perusmuoto: "Bella", alku: "Bell", luokka: etunimi, jatko: <kala>, äs: a];
 
 
 ##[perusmuoto: "soinnillinen", alku: "soinnilli", luokka: laatusana, jatko: <nainen>, äs: a];
