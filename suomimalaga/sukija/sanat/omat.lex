@@ -1125,7 +1125,16 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [alku: "xsdcxx", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 [perusmuoto: "Scala", alku: "Scal", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Bella", alku: "Bell", luokka: etunimi, jatko: <kala>, äs: a];
-
+[perusmuoto: "Carla", alku: "Carl", luokka: etunimi, jatko: <kala>, äs: a];
+[perusmuoto: "ruiskaus", alku: "ruiskau", luokka: nimisana, jatko: <vastaus>, äs: a];
+[perusmuoto: "Dolores", alku: "Dolore", luokka: etunimi, jatko: <vastaus>, äs: a];
+[perusmuoto: "Fiona", alku: "Fion", luokka: etunimi, jatko: <apaja>, äs: a];
+[perusmuoto: "reuhto", alku: "reuh", luokka: teonsana, jatko: <tahtoa>, äs: a];
+[perusmuoto: "jyystää", alku: "jyyst", luokka: teonsana, jatko: <loistaa>, äs: ä];
+[perusmuoto: "Katla", alku: "Katl", luokka: nimi, jatko: <kala>, äs: a];
+[perusmuoto: "Gloria", alku: "Glori", luokka: etunimi, jatko: <apila>, äs: a];
+[perusmuoto: "Katajala", alku: "Katajal", luokka: sukunimi, jatko: <apila>, äs: a];
+[perusmuoto: "pidättäytyä", alku: "pidättäy", luokka: teonsana, jatko: <antautua>, äs: ä];
 
 ##[perusmuoto: "soinnillinen", alku: "soinnilli", luokka: laatusana, jatko: <nainen>, äs: a];
 #[perusmuoto: "biologisoida", alku: "biologiso", luokka: teonsana, jatko: <voida>, äs: a];
