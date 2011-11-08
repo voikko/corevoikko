@@ -10,6 +10,7 @@
 33      usage/medicine                           -               Ala: lääketiede
 36      usage/science                            -               Ala: matematiikka, fysiikka ja kemia
 19      usage/education                          -               Ala: kasvatustiede
+42      usage/orgname                            -               Ala: organisaatiot ja tuotemerkit
 7       compounding/ei_ys                        ei_ys           Ei sallittu yhdyssanan osana
 9       compounding/ei_ysj                       ei_ysj          Ei sallittu yhdyssanan jälkiosana
 8       compounding/ei_ysa                       ei_ysa          Ei sallitti yhdyssanan alkuosana
