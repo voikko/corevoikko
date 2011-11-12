@@ -130,6 +130,8 @@ Tavutusvihje ei estä Vir­heen havaitsemista.
 Tavallinen yhdysmerkki tekee Vir-heen havaitsemisen mahdottomaksi.
 Tavutusvihe toimii jo­ten ku­ten.
  [code=1, level=0, descr="", stpos=19, len=13, suggs={"jotenkuten"}]
+Tavarat ovat hujanhajan.
+ [code=1, level=0, descr="", stpos=13, len=10, suggs={"hujan hajan"}]
 Isot kirjaimet A, B, C, D, E, F ja G saavat esiintyä tekstissä sellaisenaan.
 Iso kirjain saa olla myös sanan etuliitteenä. Esimerkiksi B-rapussa on sallittu.
 Ostin maitoa A:n omistamasta kaupasta.

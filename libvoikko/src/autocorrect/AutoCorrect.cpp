@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -83,7 +83,7 @@ static void printErrorIfFinal(const TrieNode * node, const Token * firstErrorTok
 }
 
 void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::grammar::Sentence * sentence) {
-	for (size_t i = 0; i + 2 < sentence->tokenCount; i++) {
+	for (size_t i = 0; i + 1 < sentence->tokenCount; i++) {
 		Token t = sentence->tokens[i];
 		if (t.type != TOKEN_WORD) {
 			continue;
@@ -105,14 +105,14 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 		// Is the first word alone an error?
 		printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + i, lowerFirst, options);
 		
-		size_t j = 1;
+		size_t j = i + 1;
 		while (j + 1 < sentence->tokenCount) {
 			// Is there a second word (in the sentence and in trie)?
-			t = sentence->tokens[i+j];
+			t = sentence->tokens[j];
 			if (t.type != TOKEN_WHITESPACE) {
 				break;
 			}
-			t = sentence->tokens[i+j+1];
+			t = sentence->tokens[j+1];
 			if (t.type != TOKEN_WORD) {
 				break;
 			}
@@ -128,7 +128,7 @@ void AutoCorrect::autoCorrect(voikko_options_t * options, const libvoikko::gramm
 			}
 			
 			// Is the next word an error?
-			printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (i + j + 1),
+			printErrorIfFinal(NODES + trieNode, sentence->tokens + i, sentence->tokens + (j + 1),
 			                  lowerFirst, options);
 			
 			j += 2;
