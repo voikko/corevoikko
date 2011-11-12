@@ -1168,7 +1168,7 @@
 [perusmuoto: "vitkaan", alku: "vitkaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vittu", alku: "vitusti", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "vuoksi", alku: "vuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "vähintäin", alku: "vähintäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
+[perusmuoto: "vähintäin", alku: "vähintäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "vähintään", alku: "vähintään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vähitellen", alku: "vähitellen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "vähiten", alku: "vähiten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

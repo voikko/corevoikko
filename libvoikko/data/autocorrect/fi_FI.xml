@@ -475,6 +475,10 @@
   <correct>koko lailla</correct>
 </replacement>
 <replacement>
+  <incorrect>kuta kuinkin</incorrect>
+  <correct>kutakuinkin</correct>
+</replacement>
+<replacement>
   <incorrect>käden=käänteessä</incorrect>
   <correct>käden käänteessä</correct>
 </replacement>
@@ -677,6 +681,10 @@
 <replacement>
   <incorrect>sikin=sokin</incorrect>
   <correct>sikin sokin</correct>
+</replacement>
+<replacement>
+  <incorrect>sikäli kun</incorrect>
+  <correct>sikäli kuin</correct>
 </replacement>
 <replacement>
   <incorrect>sillä=lailla</incorrect>
