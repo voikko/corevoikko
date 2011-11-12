@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2008 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2008 - 2011 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -38,10 +38,12 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->possibleGeographicalName = false;
 	token->isVerbNegative = false;
 	token->isPositiveVerb = true;
+	token->isConjunction = true;
 	token->requireFollowingVerb = FOLLOWING_VERB_NONE;
 	token->verbFollowerType = FOLLOWING_VERB_NONE;
 	if (token->type != TOKEN_WORD) {
 		token->firstLetterLcase = false;
+		token->isConjunction = false;
 		return;
 	}
 	
@@ -73,6 +75,9 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 			    wcase && wcscmp(L"omanto", wcase) == 0) {
 				token->isGeographicalNameInGenitive = true;
 			}
+		}
+		if (!wclass || wcscmp(L"sidesana", wclass) != 0) {
+			token->isConjunction = false;
 		}
 		if (wclass && wcscmp(L"kieltosana", wclass) == 0) {
 			token->isVerbNegative = true;
@@ -124,6 +129,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	morphology::Analyzer::deleteAnalyses(analyses);
 	if (!token->isValidWord) {
 		token->isPositiveVerb = false;
+		token->isConjunction = false;
 	}
 }
 

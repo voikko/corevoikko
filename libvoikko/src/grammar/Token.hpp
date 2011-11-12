@@ -61,6 +61,9 @@ class Token {
 		/** True if this word cannot be anything else than a positive verb */
 		bool isPositiveVerb;
 		
+		/** True if this word is a conjunction */
+		bool isConjunction;
+		
 		/**
 		 * What kind of verb must follow this verb in compound verb check. NONE if
 		 * this word is not (or may not be) a verb.

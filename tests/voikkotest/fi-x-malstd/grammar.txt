@@ -173,6 +173,8 @@ Pitkänen pystyy tarvittaessa muokkaamaan käsityksiään maailmankaikkeuden fys
 Lääkäri ehtii auttamaan Hannelea synnytyksessä.
 Terrorismia ei pidä koskaan yrittää saada laantumaan, vaan terrorismi on voitettava.
 Kissa juoksee Lahnajärven jäällä.
+Menen kotiin, kunhan.
+ [code=16, level=0, descr="", stpos=14, len=6, suggs={}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

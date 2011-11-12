@@ -57,6 +57,7 @@ libvoikko_la_SOURCES = \
     grammar/check/NegativeVerbCheck.cpp \
     grammar/check/ParagraphCheck.cpp \
     grammar/check/SentenceCheck.cpp \
+    grammar/check/SidesanaCheck.cpp \
     compatibility/interface.cpp \
     autocorrect/AutoCorrect.cpp
 libvoikko_la_LDFLAGS = -no-undefined -version-info 13:3:12 @LIBLDFLAGSWIN@
@@ -138,6 +139,7 @@ noinst_HEADERS = \
     grammar/check/NegativeVerbCheck.hpp \
     grammar/check/ParagraphCheck.hpp \
     grammar/check/SentenceCheck.hpp \
+    grammar/check/SidesanaCheck.hpp \
     autocorrect/AutoCorrect.hpp autocorrect/TrieNode.hpp \
     utf8/core.hpp \
     utf8/checked.hpp \
