@@ -145,6 +145,13 @@ kuljettamansa
 !kuljettamannsa
 ollako
 oleminen
+paleltaa
+!palellan
+!palellat
+paleltaa
+!palellamme
+!palellatte
+!paleltaisivat
 
 # = erisnimet =
 []
