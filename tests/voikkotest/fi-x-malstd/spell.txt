@@ -153,6 +153,14 @@ paleltaa
 !palellatte
 !paleltaisivat
 !palelletaan
+salamoida
+!tuiskuan
+!salamoit
+salamoi
+!salamoimme
+!salamoitte
+salamoivat
+!salamoidaan
 
 # = erisnimet =
 []
