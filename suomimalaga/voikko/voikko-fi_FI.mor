@@ -1412,7 +1412,7 @@ combi_rule tekijämuodot ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka /= kestämän_tekijäpääte_y3 or
     taivutusvokaali(last($edellinen.alku)) = $sana;
   ? $oikea.tekijä = nil or $edellinen.tiedot = nil or (not yt in $edellinen.tiedot) or
-    (not $oikea.tekijä in <tekijä_1, tekijä_2> and not $oikea.luku = monikko);
+    (not $oikea.tekijä in <tekijä_1, tekijä_2, tekijä_4> and not $oikea.luku = monikko);
 
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
   define $res := $vasen + <[alku: $sana] + $oikea>;

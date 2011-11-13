@@ -152,6 +152,7 @@ paleltaa
 !palellamme
 !palellatte
 !paleltaisivat
+!palelletaan
 
 # = erisnimet =
 []
