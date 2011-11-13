@@ -4,6 +4,7 @@
 32      inflection/ei_vertm                      ei_vertm        Ei taivu vertailumuodoissa
 37      inflection/ei_yks                        ei_yks          Ei yksikkömuotoja
 31      inflection/yt                            yt              Yksitekijäinen teonsana
+43      inflection/ym3                           ym3             Taipuu vain yksikön ja monikon 3. persoonassa
 20      inflection/paikannimi_sisäpaikallissijat -               Paikannimi: taipuu sisäpaikallissijoissa
 21      inflection/paikannimi_ulkopaikallissijat -               Paikannimi: taipuu ulkopaikallissijoissa
 15      usage/it                                 -               Ala: atk
