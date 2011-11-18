@@ -260,7 +260,7 @@ void
 init_values(MalagaState * malagaState)
 /* Initialise this module. */
 {
-  malagaState->value_heap_size = 1000;
+  malagaState->value_heap_size = 4096;
   malagaState->value_heap = (cell_t *) new_vector( sizeof( cell_t ), malagaState->value_heap_size );
   malagaState->value_heap_end = malagaState->value_heap;
   malagaState->value_stack_size = 100;

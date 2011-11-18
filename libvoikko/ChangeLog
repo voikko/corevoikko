@@ -1,3 +1,7 @@
+2011-11-18 Harri Pitkänen <hatapitk@iki.fi>
+	* Increase initial heap size to a value that is more reasonable
+	  for our Finnish morphology.
+
 2011-11-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Pointer to a string within Malaga heap was used after garbage
 	  collector had compacted the heap, causing corrupted strings.
