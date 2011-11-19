@@ -175,6 +175,7 @@ luokka;
   tekijä;
 
   yt; # Yksitekijäinen teonsana.
+  ym3; # Taipuu vain yksikön ja monikon 3. persoonassa
 
   # Tositavan kestämän ja kertoman tekijäpäätteet.
   #
