@@ -88,13 +88,15 @@ standard_function(int_t function, MalagaState * malagaState)
       utf8::unchecked::advance(startPos, start - 1);
       const char * endPos = startPos;
       utf8::unchecked::advance(endPos, end - (start - 1));
-      if ((malagaState->value_heap_end - malagaState->value_heap) + 2 + (endPos - startPos) / sizeof(cell_t) >
+      const size_t substrLen = endPos - startPos;
+      if ((malagaState->value_heap_end - malagaState->value_heap) + 2 + substrLen / sizeof(cell_t) >
           (unsigned int) malagaState->value_heap_size) {
         // No sufficient amount of heap space for the string -> will do garbage collection
         // -> copy the original string from Malaga heap to a safe temporary location
-        char * duplicate = strndup(startPos, (endPos - startPos));
-        push_string_value(duplicate, 0, malagaState);
-        free(duplicate);
+        char * duplicate = new char[substrLen];
+        memcpy(duplicate, startPos, substrLen);
+        push_string_value(duplicate, duplicate + substrLen, malagaState);
+        delete[] duplicate;
       }
       else {
         push_string_value(startPos, endPos, malagaState);
