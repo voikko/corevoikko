@@ -58,6 +58,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "J\xc3\xa4lkimm\xc3\xa4isen verbin tulisi olla maan/m\xc3\xa4\xc3\xa4n-p\xc3\xa4\xc3\xa4tteisess\xc3\xa4 infinitiiviss\xc3\xa4.";
 			case GCERR_MISPLACED_SIDESANA:
 				return "Sidesana (ja, tai, mutta, ...) ei voi olla virkkeen viimeinen sana.";
+			case GCERR_MISSING_MAIN_VERB:
+				return "Tarkista, puuttuuko virkkeestä pääverbi tai -verbejä.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -95,6 +97,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "You should use infinitive ending with maan/m\xc3\xa4\xc3\xa4n as the second verb.";
 			case GCERR_MISPLACED_SIDESANA:
 				return "Sentence should not end with a conjunction.";
+			case GCERR_MISSING_MAIN_VERB:
+				return "Sentence should contain one or more main verbs.";
 		}
 		return "Unknown error";
 	}

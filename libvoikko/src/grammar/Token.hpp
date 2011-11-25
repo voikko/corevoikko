@@ -55,6 +55,9 @@ class Token {
 		/** True if this is a proper noun that might be a geographical name ("Sämpyläjoki") */
 		bool possibleGeographicalName;
 		
+		/** True if this word may be the main verb */
+		bool possibleMainVerb;
+		
 		/** True if this word is a verb negative ("en", "älä" jne.) */
 		bool isVerbNegative;
 		

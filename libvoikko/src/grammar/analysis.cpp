@@ -36,6 +36,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->possibleSentenceStart = false;
 	token->isGeographicalNameInGenitive = false;
 	token->possibleGeographicalName = false;
+	token->possibleMainVerb = false;
 	token->isVerbNegative = false;
 	token->isPositiveVerb = true;
 	token->isConjunction = true;
@@ -79,14 +80,26 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 		if (!wclass || wcscmp(L"sidesana", wclass) != 0) {
 			token->isConjunction = false;
 		}
-		if (wclass && wcscmp(L"kieltosana", wclass) == 0) {
+		
+		if (!wclass) {
+			token->isPositiveVerb = false;
+			token->possibleMainVerb = true;
+		}
+		else if (wcscmp(L"kieltosana", wclass) == 0) {
 			token->isVerbNegative = true;
 			token->isPositiveVerb = false;
-		} else if (!wclass || wcscmp(L"teonsana", wclass) != 0 ||
-			   !negative || wcscmp(L"false", negative) != 0 ||
+		}
+		else if (wcscmp(L"teonsana", wclass) == 0) {
+			if (!negative || wcscmp(L"false", negative) != 0 ||
 			   ((!mood || wcscmp(L"conditional", mood) == 0) && (!person || wcscmp(L"3", person) == 0))) { // "en _lukisi_"
+				token->isPositiveVerb = false;
+			}
+			token->possibleMainVerb = true; // TODO
+		}
+		else {
 			token->isPositiveVerb = false;
 		}
+		
 		if (possibleGeographicalName && wcscmp(L"true", possibleGeographicalName) == 0) {
 			token->possibleGeographicalName = true;
 		}

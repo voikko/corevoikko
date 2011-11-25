@@ -22,6 +22,7 @@
 #include "grammar/checks.hpp"
 #include "grammar/analysis.hpp"
 #include "grammar/check/CapitalizationCheck.hpp"
+#include "grammar/check/MissingVerbCheck.hpp"
 #include "grammar/check/NegativeVerbCheck.hpp"
 #include "grammar/check/CompoundVerbCheck.hpp"
 #include "grammar/check/SidesanaCheck.hpp"
@@ -98,6 +99,7 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	check::NegativeVerbCheck negativeVerbCheck;
 	check::CompoundVerbCheck compoundVerbCheck;
 	check::SidesanaCheck sidesanaCheck;
+	check::MissingVerbCheck missingVerbCheck;
 	for (size_t i = 0; i < para->sentenceCount; i++) {
 		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
 		gc_local_punctuation(voikkoOptions, para->sentences[i]);
@@ -106,6 +108,7 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 		negativeVerbCheck.check(voikkoOptions, para->sentences[i]);
 		compoundVerbCheck.check(voikkoOptions, para->sentences[i]);
 		sidesanaCheck.check(voikkoOptions, para->sentences[i]);
+		missingVerbCheck.check(voikkoOptions, para->sentences[i]);
 	}
 	capitalizationCheck.check(voikkoOptions, para);
 	gc_end_punctuation(voikkoOptions, para);
