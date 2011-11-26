@@ -935,7 +935,7 @@ combi_rule laatusanan_sijapääte ($vasen, $oikea, $sana, $index):
         (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot))) then
       if $oikea.sijamuoto = omanto then
         result $res,
-               rules nimisana, laatusana, nimisana_teonsanasta, tavuviiva;
+               rules laatusana, nimisana_teonsanasta, tavuviiva;
       end;
       if $edellinen.luokka in <laatusana, nimi_laatusana> then
         result $res, rules yhdysmerkki_ennen_paikannimea;

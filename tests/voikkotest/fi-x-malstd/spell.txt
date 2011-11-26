@@ -126,6 +126,7 @@ avaruustoimintaa
 !Matti-kaunis
 Siiri-kauneusvoide
 NHL-painotteisella
+!selvännäkijä # selvänäkijä
 
 # = vain yhdyssanan jälkiosana =
 []
@@ -284,6 +285,7 @@ vaikuttava-aittainen
 yhtäaikaissuoritus # teonsanan nimisanajohdos perusosana
 kuumentajareunainen # kuumentaa > kuumentaja, reuna > reunainen
 filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
+!kaunismuotoisenkissa # inen-johdos + genetiivi + substantiivi
 
 # = voitto- ja yliasteet =
 []
