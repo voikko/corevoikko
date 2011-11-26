@@ -628,7 +628,7 @@ combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $index):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  result $res, rules laatusanan_sijapääte, johdin_nimisana_laatusanasta;
+  result $res, rules laatusanan_sijapääte, johdin_nimisana_laatusanasta, voitto_yliaste;
 end;
 
 

@@ -313,6 +313,8 @@ kauneimmuudessa
 tunnetumpi
 myydyimmissä
 nopeanlaisinta
+moniulotteisempi
+moniulotteisimmassa
 
 # = yhdysviivat =
 []
