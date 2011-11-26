@@ -94,7 +94,10 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 			   ((!mood || wcscmp(L"conditional", mood) == 0) && (!person || wcscmp(L"3", person) == 0))) { // "en _lukisi_"
 				token->isPositiveVerb = false;
 			}
-			token->possibleMainVerb = true; // TODO
+			if ((!mood || (wcscmp(L"A-infinitive", mood) != 0 && wcscmp(L"E-infinitive", mood) != 0)) &&
+			    (!negative || wcscmp(L"true", negative) != 0)) {
+				token->possibleMainVerb = true;
+			}
 		}
 		else {
 			token->isPositiveVerb = false;

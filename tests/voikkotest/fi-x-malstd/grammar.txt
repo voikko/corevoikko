@@ -179,6 +179,13 @@ Menen kotiin, kunhan.
  [code=16, level=0, descr="", stpos=14, len=6, suggs={}]
 Minä juoksema nopeasti.
  [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
+Minä juoksema nopeasti.
+ [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
+Minun juostessa nopeasti.
+ [code=17, level=0, descr="", stpos=0, len=25, suggs={}]
+Siellä ei juosta nopeasti.
+Siellä juosta nopeasti.
+ [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
 Minä juoksen nopeasti. Sinä juoksema nopeasti. Hän juoksee nopeasti.
  [code=17, level=0, descr="", stpos=23, len=23, suggs={}]
 Pertti juo mm. mustaa, tulikuumaa kahvia.
