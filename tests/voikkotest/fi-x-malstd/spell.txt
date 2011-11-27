@@ -930,6 +930,14 @@ tv-kanavalistaus
 ja
 !aaaaلوبادوتماكوسلاكوغاليوكرانيوليبسانودريميبوتريماتوسيلفيوكارابومليتوكاتاككيمنوكيكلبيكوسيبوباتوبريسترالكتريونوبتوكباليوغكوبليولاغو
 australialaisineen
+!mein
+!meine
+!meittä
+!hänettä
+!minutta
+!kenettä
+!keittä
+!kessä
 
 # = poikkeavat asetukset =
 

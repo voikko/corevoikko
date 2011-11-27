@@ -260,11 +260,11 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "ken", alku: "kenellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keneltä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kenelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenettä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenettä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "ken", alku: "kenä",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kessä", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kestä", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kessä", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "ken", alku: "kestä", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ken", alku: "kehen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keltä", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
@@ -282,7 +282,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "ken", alku: "keillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keiltä",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keittä",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "keittä",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 # Kä-loppuisen yksikön muodot ken-sanasta.
 [perusmuoto: "ken", alku: "kenenkä",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
@@ -296,7 +296,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "ken", alku: "kenelläkä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keneltäkä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kenellekä", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenettäkä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "ken", alku: "kenettäkä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "ken", alku: "kellekä",   luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keillekä",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
@@ -338,7 +338,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "kukaan", alku: "kenelläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "keneltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "kenellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenettäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenettäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "kukaan", alku: "kessään",   luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "kestään",   luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
@@ -359,7 +359,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "kukaan", alku: "keilläkään",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "keiltäkään",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "keillekään",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keittäkään",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keittäkään",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 
 ########################################
@@ -416,7 +416,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "ne", alku: "niillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "ne", alku: "niittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ne", alku: "niine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
@@ -456,9 +456,9 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "nämä", alku: "näillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "nämä", alku: "näiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "nämä", alku: "näille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "nämä", alku: "näine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "näin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 # Murteissa.
 [perusmuoto: "nämä", alku: "nää",     luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
@@ -493,9 +493,9 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "nuo", alku: "noilta",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noitta",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noitta",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "nuo", alku: "noine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "nuo", alku: "noin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
 

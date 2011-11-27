@@ -1915,8 +1915,7 @@ allo_rule generate_allos ($tietue):
                                  tulento_ksi:      "u",
                                  sisäolento_ssA:   "u",
                                  sisätulento_Vn:   "u",
-                                 ulkopaikallissija_llA:  "u",
-                                 vajanto_ttA:      "u"])
+                                 ulkopaikallissija_llA:  "u"])
                  + <taivutus ($tietue, "ä", <liitesana, loppu>, [äs: ä])>;
     result $i.alku, $i - alku;
 
@@ -1931,8 +1930,7 @@ allo_rule generate_allos ($tietue):
                                  tulento_ksi:     "e",
                                  sisäolento_ssA:  "e",
                                  sisätulento_Vn:  "e",
-                                 ulkopaikallissija_llA: "e",
-                                 vajanto_ttA:     "e"]);
+                                 ulkopaikallissija_llA: "e"]);
     result $i.alku, $i - alku;
 
 
@@ -1945,9 +1943,7 @@ allo_rule generate_allos ($tietue):
                                  olento_inA: "",
                                  sija_monikko_1: "",
                                  sisätulento_ihin: "",
-                                 ulkopaikallissija_illA: "",
-                                 vajanto_ittA: "",
-                                 seuranto_ine: ""]);
+                                 ulkopaikallissija_illA: ""]);
     result $i.alku, $i - alku;
 
 
@@ -1961,8 +1957,7 @@ allo_rule generate_allos ($tietue):
                                  sisäolento_ssA:   "",
                                  sisätulento_hVn:  "",
                                  sisätulento_nne:  "",
-                                 ulkopaikallissija_llA:  "",
-                                 vajanto_ttA:      ""] +
+                                 ulkopaikallissija_llA:  ""] +
                                 monikko7 ([nimentö_tkA: ""], "", "",
                                           [omanto_iT:   ""],
                                           [osanto_itA:  ""],

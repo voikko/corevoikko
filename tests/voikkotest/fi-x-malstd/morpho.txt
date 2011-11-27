@@ -420,3 +420,7 @@ word:eräs
  expected:1
  analysis
  CLASS=asemosana
+word:jotta
+ expected:1
+ analysis
+ CLASS=sidesana
