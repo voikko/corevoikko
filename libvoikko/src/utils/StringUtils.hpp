@@ -77,6 +77,11 @@ class StringUtils {
 	static bool isInteger(const wchar_t * word);
 	
 	/**
+	 * Checks if given null terminated string may be a chapter number (3, 3.4, 3.65.3, ...).
+	 */
+	static bool isChapterNumber(const wchar_t * word);
+	
+	/**
 	 * Checks if given null terminated string is a roman numeral.
 	 */
 	static bool isRomanNumeral(const wchar_t * word);

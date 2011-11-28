@@ -161,6 +161,25 @@ bool StringUtils::isInteger(const wchar_t * word) {
 	return true;
 }
 
+bool StringUtils::isChapterNumber(const wchar_t * word) {
+	bool dotLast = false;
+	for (size_t i = 0; word[i] != L'\0'; i++) {
+		if (word[i] == L'.') {
+			if (i == 0 || dotLast) {
+				return false;
+			}
+			dotLast = true;
+		}
+		else if (word[i] < 0x30 || word[i] > 0x39) {
+			return false;
+		}
+		else {
+			dotLast = false;
+		}
+	}
+	return !dotLast;
+}
+
 bool StringUtils::isRomanNumeral(const wchar_t * word) {
 	// TODO: does not handle all possibilities, does not validate
 	for (size_t i = 0; word[i] != L'\0'; i++) {
@@ -176,7 +195,7 @@ bool StringUtils::isPossibleListItem(const wchar_t * word) {
 	if (wcslen(word) == 1) {
 		return true;
 	}
-	if (isInteger(word)) {
+	if (isChapterNumber(word)) {
 		return true;
 	}
 	if (isRomanNumeral(word)) {

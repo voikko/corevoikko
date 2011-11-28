@@ -114,6 +114,7 @@ Yksinäinen merkki ) lainauksen ulkopuolella aiheuttaa virheen.
  [code=12, level=0, descr="", stpos=18, len=1, suggs={}]
 Ensimmäinen virke alkaa (loppu suluissa). Toinen virke jatkaa.
 1) Luettelossa voi sulkumerkkiä käyttää näin.
+1.3) Luettelossa voi sulkumerkkiä käyttää näin.
 a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.
 A) Luettelossa voi sulkumerkkiä käyttää näin.
@@ -177,6 +178,8 @@ Terrorismia ei pidä koskaan yrittää saada laantumaan, vaan terrorismi on voit
 Kissa juoksee Lahnajärven jäällä.
 Menen kotiin, kunhan.
  [code=16, level=0, descr="", stpos=14, len=6, suggs={}]
+Talo on kallis mutta. Talossa asuu hiiriä.
+ [code=16, level=0, descr="", stpos=15, len=5, suggs={}]
 Minä juoksema nopeasti.
  [code=17, level=0, descr="", stpos=0, len=23, suggs={}]
 Minä juoksema nopeasti.
@@ -189,12 +192,16 @@ Siellä juosta nopeasti.
 Minä juoksen nopeasti. Sinä juoksema nopeasti. Hän juoksee nopeasti.
  [code=17, level=0, descr="", stpos=23, len=23, suggs={}]
 Pertti juo mm. mustaa, tulikuumaa kahvia.
+3.1 Korkokuva ja kallioperä             # Oikein vain otsikoissa
+[code=6, level=0, descr="", stpos=4, len=9, suggs={"korkokuva"}]
+[code=9, level=0, descr="", stpos=17, len=10, suggs={}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
 Avaimet löytyivät Reetan Taskun pohjalta.
  [code=6, level=0, descr="", stpos=25, len=6, suggs={"taskun"}]
 http://www.puimula.org
+3.1 Korkokuva ja kallioperä
 
 {voikko.setAcceptUnfinishedParagraphsInGc(True)}
 Piste puuttuu vielä

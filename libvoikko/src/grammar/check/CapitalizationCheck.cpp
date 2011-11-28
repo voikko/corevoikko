@@ -243,6 +243,9 @@ static CapitalizationState inUpper(CapitalizationContext & context) {
 	if (containsToken(separators, L"\t") || placeNameInInstitutionName(word, separators)) {
 		return DONT_CARE;
 	}
+	if (context.options->accept_titles_in_gc && StringUtils::isChapterNumber(word->str)) {
+		return DONT_CARE;
+	}
 	if (lastPunctuationEndsSentence(separators)) {
 		context.sentenceEnded = true;
 		return UPPER;

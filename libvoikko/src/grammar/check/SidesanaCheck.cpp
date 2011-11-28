@@ -26,6 +26,9 @@ namespace libvoikko { namespace grammar { namespace check {
 
 void SidesanaCheck::check(voikko_options_t * options, const Sentence * sentence) {
 	size_t tokenCount = sentence->tokenCount;
+	if ((sentence->tokens + (tokenCount - 1))->type == TOKEN_WHITESPACE) {
+		--tokenCount;
+	}
 	if (tokenCount >= 2 &&
 	    ((sentence->tokens + (tokenCount - 2))->isConjunction) &&
 	    (wcscmp((sentence->tokens + (tokenCount - 2))->str, L"vaan") != 0) && // "mitä vaan" ~ "mitä vain"
