@@ -311,6 +311,9 @@ static CapitalizationState inDontCare(CapitalizationContext & context) {
 	if (containsToken(separators, L"\t")) {
 		return DONT_CARE;
 	}
+	if (context.options->accept_titles_in_gc && StringUtils::isChapterNumber(word->str)) {
+		return DONT_CARE;
+	}
 	if (lastPunctuationEndsSentence(separators)) {
 		context.sentenceEnded = true;
 		return UPPER;

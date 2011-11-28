@@ -220,3 +220,6 @@ a) Luettelossa voi sulkumerkkiä käyttää näin.
 iii) Luettelossa voi sulkumerkkiä käyttää näin.
 A) Luettelossa voi sulkumerkkiä käyttää näin.
 http://www.puimula.org
+
+{voikko.setAcceptTitlesInGc(True) voikko.setAcceptBulletedListsInGc(True)}
+3.1 Korkokuva ja kallioperä
