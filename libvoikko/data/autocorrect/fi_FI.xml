@@ -31,6 +31,10 @@
   <correct>ajan tasalla</correct>
 </replacement>
 <replacement>
+  <incorrect>ajan tasainen</incorrect>
+  <correct>ajan=tasainen</correct>
+</replacement>
+<replacement>
   <incorrect>alas päin</incorrect>
   <correct>alas=päin</correct>
 </replacement>
@@ -331,6 +335,14 @@
   <correct>jommin=kummin</correct>
 </replacement>
 <replacement>
+  <incorrect>jonka lainen</incorrect>
+  <correct>jonka=lainen</correct>
+</replacement>
+<replacement>
+  <incorrect>jonkin lainen</incorrect>
+  <correct>jonkin=lainen</correct>
+</replacement>
+<replacement>
   <incorrect>jonkin=verran</incorrect>
   <correct>jonkin verran</correct>
 </replacement>
@@ -463,6 +475,10 @@
   <correct>kesken kaiken</correct>
 </replacement>
 <replacement>
+  <incorrect>kesken=kertainen</incorrect>
+  <correct>keskin=kertainen</correct>
+</replacement>
+<replacement>
   <incorrect>kiikun=kaakun</incorrect>
   <correct>kiikun kaakun</correct>
 </replacement>
@@ -489,6 +505,10 @@
 <replacement>
   <incorrect>lukuun=ottamatta</incorrect>
   <correct>lukuun ottamatta</correct>
+</replacement>
+<replacement>
+  <incorrect>lähes tulkoon</incorrect>
+  <correct>lähes=tulkoon</correct>
 </replacement>
 <replacement>
   <incorrect>läsnä=ollessa</incorrect>
@@ -557,6 +577,10 @@
 <replacement>
   <incorrect>niin=ikään</incorrect>
   <correct>niin ikään</correct>
+</replacement>
+<replacement>
+  <incorrect>niin kauan kun</incorrect>
+  <correct>niin kauan kuin</correct>
 </replacement>
 <replacement>
   <incorrect>niin=kuin</incorrect>
