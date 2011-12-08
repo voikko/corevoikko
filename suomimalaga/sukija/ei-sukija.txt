@@ -196,6 +196,10 @@ hydronefroosi
 hyvinvointi
 hyvinvoiva
 hypertensio
+hyvänsuopuus
+hyväntahdonlähettiläs
+hyväntekijä
+Hyväntoivonniemi
 hyytymä
 häipymä
 Härmä
@@ -261,6 +265,7 @@ jumalaistaru
 jumalaistarusto
 juoma
 Jylhä
+Jylhänperä
 jähmettymä
 jälkeenjäänyt
 jälkeläinen
@@ -340,6 +345,7 @@ kesyhevonen
 kesykyyhky
 kesyrotta
 Keto
+kevyenliikenteenväylä
 kevytjukurtti
 kevytmetalli
 Kielo
@@ -381,6 +387,8 @@ kokoutuma
 Kolari
 Koli
 kolhiutuma
+Kone
+Kontulainen
 Koppelo
 koroitus
 korotus
@@ -510,6 +518,7 @@ Lehto
 Lehtovaara
 leikkaus
 Leini
+leipomo-kahvila
 Lemu
 leniniläinen
 lesbolainen
@@ -605,12 +614,15 @@ Merijärvi
 Merikanto
 Merituuli
 Metso
+Metsäliitto
 metsäläinen
 mielipide
 mierolainen
 Miina
 mikkelinpäivä
+miljardiluokka
 miljoonabisnes
+miljoonaluokka
 miljoonaperintö
 miljardibisnes
 Minttu
@@ -673,6 +685,7 @@ olympialainen
 omaisuus
 omanlainen
 ominaissointi
+onnistua
 opettajainen
 opetus
 opistolainen
@@ -811,6 +824,7 @@ rohtuma
 romahdusmainen
 roomalaiskatolilainen
 rossipohja
+Ruanda
 ruhjoutuma
 ruiskutus
 Ruotsi
@@ -988,6 +1002,10 @@ turhautuma
 Turkki
 turpoama
 Tuuli
+tyynenmerensilli
+tyynenmerenlohi
+tyynenmerenmonarkki
+tyynenmerenrotta
 työläinen
 työläisyys
 työntyä
@@ -1088,6 +1106,7 @@ vinokaitale
 vinokatto
 vinoköysisilta
 vinonauha
+vinoneliö
 vinoristi
 vinoruutu
 vinotuki

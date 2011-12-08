@@ -483,31 +483,38 @@ combi_rule laatusana ($vasen, $oikea, $sana, $n):
 end;
 
 
-#combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $n):
-#  ? $oikea.perusmuoto /= nil;
-#  ? $oikea.luokka in <laatusana, nimi_laatusana>;
-#  ? $oikea.perusmuoto matches ".*inen";
-#
-#  define $res := $vasen + <[alku: $sana] + $oikea>;
-#
-#  if omistusliite in $oikea.jatko then
-#    result $res, rules omistusliite;
-#  end;
-#  if tavuviiva in $oikea.jatko then
-#    result $res, rules tavuviiva;
-#  end;
-#  if loppu in $oikea.jatko then
-#    result $res, accept;
-#  end;
-#  if liitesana in $oikea.jatko then
-#    result $res, rules liitesana;
-#  end;
-#  if yhdyssana in $oikea.jatko then
-#    result $res, rules yhdyssana;
-#  end;
-#  result $res, rules sijapääte;
+combi_rule inen_päätteinen_laatusana ($vasen, $oikea, $sana, $n):
+  ? $oikea.perusmuoto /= nil;
+  ? $oikea.luokka in <laatusana, nimi_laatusana>;
+  ? $oikea.perusmuoto matches ".*inen";
+
+define $i := $n - 1;
+define $profile := transmit ("inen_päätteinen_laatusana ($vasen, $oikea, $sana, $n):");
+define $a1 := transmit ($vasen.$i);
+define $a2 := transmit ($oikea - jatko);
+define $a3 := transmit ($sana);
+define $a4 := transmit ($n);
+
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if tavuviiva in $oikea.jatko then
+    result $res, rules tavuviiva;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+  if yhdyssana in $oikea.jatko then
+    result $res, rules yhdyssana;
+  end;
+  result $res, rules sijapääte;
 ##  result $res, rules laatusanan_sijapäte; laatusanan_johdos;
-#end;
+end;
 
 
 combi_rule nimi_laatusana ($vasen, $oikea, $sana, $n):
@@ -1893,9 +1900,21 @@ combi_rule nimisanasta_johdettu_laatusana ($vasen, $oikea, $sana, $n):
   if (tavuviiva in $oikea.jatko) then
     result $res, rules tavuviiva;
   end;
-  if (yhdyssana in $oikea.jatko) then
+##############################################:::::::::::::::::::::::
+ if (yhdyssana in $oikea.jatko) then
     result $res, rules yhdyssana;
   end;
+
+#  if (yhdyssana in $oikea.jatko) then
+#    if ($oikea.luokka = johdin_inen and $n = 2) then
+#define $a := transmit (<"a"> + <$vasen.$i.perusmuoto>);
+#define $b := transmit (<"b"> + <$oikea - jatko>);
+#      result $res, rules inen_päätteinen_laatusana;
+#    else
+#      result $res, rules yhdyssana;
+#    end;
+#  end;
+###################################
   if (loppu in $oikea.jatko) then
     result $res, accept;
   end;
@@ -2671,7 +2690,7 @@ combi_rule yhdyssana ($vasen, $oikea, $sana, $n):
 
 ##assert ($n-1 = length($vasen));
 
-##define $aa := transmit (<"Huu"> + <$vasen.$i> + <$sana> + <$oikea>);
+#define $aa := transmit (<"Huu"> + <$vasen.$i> + <$sana> + <$oikea>);
 
   if ($oikea.luokka = seikkasana and $oikea.tiedot /= nil and
       ys_perusosa in $oikea.tiedot and $vasen /= <>) then
