@@ -54,7 +54,7 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 			lastNonWhitespace = token;
 		}
 	}
-	if (wordCount < 2 || wcschr(L".!?", lastNonWhitespace->str[0]) == 0) {
+	if (wordCount < 2 || wcschr(L".?", lastNonWhitespace->str[0]) == 0) {
 		return;
 	}
 	CacheEntry * e = new CacheEntry(0);
