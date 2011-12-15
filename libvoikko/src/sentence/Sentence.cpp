@@ -42,7 +42,8 @@ static bool dot_part_of_word(voikko_options_t * voikkoOptions, const wchar_t * t
 	// ordinal numbers and dates
 	bool onlyNumbersOrDots = true;
 	for (size_t i = 0; i < len - 1; i++) {
-		if (text[i] != L'.' && !SimpleChar::isDigit(text[i])) {
+		// '-' may be used in expressions denoting ordinal range: "24.-26. joulukuuta"
+		if (text[i] != L'.' && text[i] != L'-' && !SimpleChar::isDigit(text[i])) {
 			onlyNumbersOrDots = false;
 			break;
 		}

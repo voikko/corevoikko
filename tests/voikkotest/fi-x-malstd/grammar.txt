@@ -193,6 +193,7 @@ Minä juoksen nopeasti. Sinä juoksema nopeasti. Hän juoksee nopeasti.
  [code=17, level=0, descr="", stpos=23, len=23, suggs={}]
 Pertti juo mm. mustaa, tulikuumaa kahvia.
 Hyvää joulua!
+Joulua vietetään 24.-26. joulukuuta.
 3.1 Korkokuva ja kallioperä             # Oikein vain otsikoissa
 [code=6, level=0, descr="", stpos=4, len=9, suggs={"korkokuva"}]
 [code=9, level=0, descr="", stpos=17, len=10, suggs={}]
