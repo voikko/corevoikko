@@ -59,7 +59,7 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_MISPLACED_SIDESANA:
 				return "Sidesana (ja, tai, mutta, ...) ei voi olla virkkeen viimeinen sana.";
 			case GCERR_MISSING_MAIN_VERB:
-				return "Tarkista, puuttuuko virkkeestä pääverbi tai -verbejä.";
+				return "Tarkista, puuttuuko virkkeest\xc3\xa4 p\xc3\xa4\xc3\xa4verbi tai -verbej\xc3\xa4.";
 		}
 		return "Tuntematon virhe";
 	}
