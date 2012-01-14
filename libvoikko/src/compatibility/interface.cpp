@@ -91,7 +91,7 @@ VOIKKOEXPORT const char * voikko_init_with_path(int * handle, const char * langc
 	}
 	const char * error;
 	if (langcode) {
-		if (strcmp("", langcode) == 0 || strcmp("default", langcode) == 0 ||
+		if (strcmp("", langcode) == 0 ||
 		    strcmp("default", langcode) == 0 || strcmp("fi_FI", langcode) == 0) {
 			handles[handleIndex] = voikkoInit(&error, "fi", path);
 		} else {
