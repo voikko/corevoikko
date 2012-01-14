@@ -1,3 +1,7 @@
+2012-01-14 Harri Pitkänen <hatapitk@iki.fi>
+	* Fix build with GCC 4.7
+	* Update version numbers for 3.4.1
+
 2011-12-15 Harri Pitkänen <hatapitk@iki.fi>
 	* Be more careful with ordinal ranges.
 
