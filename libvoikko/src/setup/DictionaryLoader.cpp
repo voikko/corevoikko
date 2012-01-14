@@ -27,6 +27,7 @@
 #else
 # include <pwd.h>
 # include <dirent.h>
+# include <unistd.h>
 #endif
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
