@@ -382,6 +382,14 @@
 						>
 					</File>
 					<File
+						RelativePath="..\src\grammar\check\MissingVerbCheck.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\MissingVerbCheck.hpp"
+						>
+					</File>
+					<File
 						RelativePath="..\src\grammar\check\NegativeVerbCheck.cpp"
 						>
 					</File>
@@ -403,6 +411,14 @@
 					</File>
 					<File
 						RelativePath="..\src\grammar\check\SentenceCheck.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\SidesanaCheck.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\grammar\check\SidesanaCheck.hpp"
 						>
 					</File>
 				</Filter>
