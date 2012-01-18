@@ -1,103 +1,129 @@
+<gchelp>
 <error code="1">
 <description>Virheellinen kirjoitusasu</description>
 <help>
+<![CDATA[
 	Merkitty sana tai sanayhdistelmä vaikuttaa tyypilliseltä kielivirheeltä.
 	Esimerkiksi <em>joten kuten</em> tulee kirjoittaa yhteen: <em>jotenkuten</em>.
+]]>
 </help>
 </error>
 <error code="2">
 <description>Poista ylimääräinen väli.</description>
 <help>
+<![CDATA[
 	Tekstissä on ylimääräisiä välilyöntejä. Sanojen välissä tulee olla yksi välilyönti, eikä
 	kappaleiden alussa tai lopussa tulisi käyttää välejä. Mikäli olet käyttänyt välilyöntejä
 	tekstin sisentämiseksi tai tasaamiseksi, on suositeltavaa vaihtaa välilyönnit sarkainmerkkeihin
 	tai asettaa oikeat sisennykset tekstinkäsittelyohjelman asetuksista. Esimerkiksi LibreOfficessa
 	nämä asetukset löytyvät valikosta Muotoilu &ndash; Kappale.
+]]>
 </help>
 </error>
 <error code="3">
 <description>Ylimääräinen väli välimerkin edessä</description>
 <help>
+<![CDATA[
 	Suomen kielessä pilkut ja pisteet kirjoitetaan tyypillisesti heti edeltävän sanan perään
 	ilman välilyöntiä sanan ja pilkun välissä.
+]]>
 </help>
 </error>
 <error code="4">
 <description>Poista ylimääräinen pilkku.</description>
 <help>
+<![CDATA[
 	Tekstissä on pilkku paikassa, jossa sitä ei saisi käyttää. Tämä virhe voi olla seurausta
 	myös siitä, että pilkkuja on kirjoitettu useampi kuin yksi peräkkäin.
+]]>
 </help>
 </error>
 <error code="5">
 <description>Virheellinen virkkeen aloittava merkki</description>
 <help>
+<![CDATA[
 	Virke on aloitettu välimerkillä tai muulla merkillä, jota ei voi käyttää virkkeen alussa.
 	Tämä virhe voi esiintyä myös tilanteessa, jossa edeltävä virke päättyy virheellisellä
 	tai epätavanomaisella tavalla.
+]]>
 </help>
 </error>
 <error code="6">
 <description>Harkitse sanan kirjoittamista pienellä alkukirjaimella.</description>
 <help>
+<![CDATA[
 	Tekstissä oleva sana ei vaikuta erisnimeltä, eikä se ole virkkeen alussa. Tällöin se
 	tulisi kirjoittaa pienellä alkukirjaimella. Kannattaa kuitenkin huomata, että Voikko
 	ei tunnista erisnimiksi esimerkiksi kaikkia taideteoksia (kirjat, veistokset) tai
 	eräitä harvinaisia etu- ja sukunimiä. Näissä tilanteissa kieliopin tarkistimen
 	antama varoitus on virheellinen ja sanaan on syytä jättää iso alkukirjain.
+]]>
 </help>
 </error>
 <error code="7">
 <description>Sana on kirjoitettava isolla alkukirjaimella.</description>
 <help>
+<![CDATA[
 	Sana vaikuttaa erisnimeltä tai se näyttäisi olevan virkkeen alussa. Tällöin se tulisi
 	kirjoittaa isolla alkukirjaimella. Mikäli edellisessä virkkeessä on koodinomaisia
 	merkintöjä tai muita epätavanomaisia välimerkkejä, voi tämä varoitus joskus olla aiheeton.
+]]>
 </help>
 </error>
 <error code="8">
 <description>Sana on kirjoitettu kahteen kertaan.</description>
 <help>
+<![CDATA[
 	Sama sana on kirjoitettu peräkkäin kahdesti tai useammin. Yleensä tämä on näppäilyvirhe
 	ja ylimääräiset toistot tulee poistaa. Ennen poistamista virke kannattaa kuitenkin tarkistaa,
 	koska joissakin tilanteissa sanan toistamiseen saattaa olla perusteltu syy.
+]]>
 </help>
 </error>
 <error code="9">
 <description>Välimerkki puuttuu virkkeen lopusta.</description>
 <help>
+<![CDATA[
 	Virke tulisi päättää pisteeseen, huutomerkkiin tai kysymysmerkkiin.
+]]>
 </help>
 </error>
 <error code="10">
 <description>Virheelliset välimerkit lainauksen lopussa</description>
 <help>
+<![CDATA[
 	Lainauksen lopussa olevat välimerkit vaikuttavat virheellisiltä. Pääsääntö on se,
 	että jos lainataan kokonaisia virkkeitä, virkkeen lopettava välimerkki tulee
 	lainauksen sisälle. Mikäli taas lainausmerkeissä on vain yksittäisiä sanoja ja
 	lainaus sijaitsee virkkeen lopussa, tulee koko virkkeen lopettava välimerkki lainausmerkin perään.
+]]>
 </help>
 </error>
 <error code="11">
 <description>Suomenkieliseen tekstiin sopimaton lainausmerkki</description>
 <help>
+<![CDATA[
 	Suomen kielessä voi käyttää mm. ”kaarevia kokolainausmerkkejä” tai "suoria kokolainainausmerkkejä".
 	Kaarevien kokolainainausmerkkien tulee olla edellä olevan esimerkin mukaisesti samoin päin.
 	Esimerkiksi englannin kielessä käytettyjä eri suuntiin kaartuvia kokolainainausmerkkejä ei
 	suomenkielisessä tekstissä saisi käyttää.
+]]>
 </help>
 </error>
 <error code="12">
 <description>Väärin sijoitettu sulkumerkki</description>
 <help>
+<![CDATA[
 	Sulkumerkit tulee sijoittaa niin, että jokaisella oikeanpuoleisella sulkumerkillä on vasen vastinpari.
 	Eli jos sulku ”avataan”, se myös ”suljetaan”. Virke ei voi vaihtua sulkumerkkien sisällä, paitsi
 	jos sulkujen sisällä on kokonaisia virkkeitä.
+]]>
 </help>
 </error>
 <error code="13">
 <description>Kieltoverbi ja pääverbi eivät sovi yhteen.</description>
 <help>
+<![CDATA[
 	Kieltoverbiin (en, et, emme jne.) liittyvän pääverbin tulee olla kieltoverbin mukaisessa muodossa.
 	Esimerkiksi ”Minä en juokse.” on oikein, mutta ”Minä en juoksen.” on väärin.
 </help>
@@ -105,28 +131,36 @@
 <error code="14">
 <description>Jälkimmäisen verbin tulisi olla a/ä-päätteisessä infinitiivissä.</description>
 <help>
+<![CDATA[
 	Eräät verbit (esim. alkaa ja tarvita) vaativat seurakseen ns. A-infinitiivissä olevan verbin.
 	Esimerkiksi ”Minä alan <b>juosta</b>." on oikein, mutta ”Minä alan <b>juoksemaan</b>.” on väärin.
+]]>
 </help>
 </error>
 <error code="15">
 <description>Jälkimmäisen verbin tulisi olla maan/mään-päätteisessä infinitiivissä.</description>
 <help>
+<![CDATA[
 	Eräät verbit (esim. erehtyä ja ryhtyä) vaativat seurakseen ns. MA-infinitiivissä olevan verbin.
 	Esimerkiksi ”Minä erehdyin <b>juoksemaan</b>." on oikein, mutta ”Minä erehdyin <b>juoksta</b>.” on väärin.
+]]>
 </help>
 </error>
 <error code="16">
 <description>Sidesana (ja, tai, mutta, ...) ei voi olla virkkeen viimeinen sana.</description>
 <help>
+<![CDATA[
 	Sidesanat yhdistävät sanoja tai lauseita, eivätkä siten voi esiintyä aivan virkkeen lopussa.
+]]>
 </help>
 </error>
 <error code="17">
 <description>Tarkista, puuttuuko virkkeestä pääverbi tai -verbejä.</description>
 <help>
+<![CDATA[
 	Jokaisessa kokonaisessa lauseessa on oltava pääverbi. Siten myös jokaisessa virkkeessä tulisi olla
 	ainakin yksi pääverbi, useasta lauseesta koostuvissa virkkeissä luonnollisesti enemmänkin.
+]]>
 </help>
 </error>
-
+</gchelp>
