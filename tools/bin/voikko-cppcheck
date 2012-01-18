@@ -3,7 +3,7 @@
 
 REPOSITORY=`python -c 'import voikkoutils; print voikkoutils.get_preference("svnroot")'`/trunk
 
-cppcheck --inline-suppr --enable=style,unusedFunctions -q $REPOSITORY/libvoikko/src
+cppcheck --inline-suppr --enable=style,unusedFunction -I $REPOSITORY/libvoikko/src -q $REPOSITORY/libvoikko/src
 cppcheck --inline-suppr --enable=style -q $REPOSITORY/ooovoikko/src
 cppcheck --inline-suppr --enable=style -q $REPOSITORY/mozvoikko/src
 # cppcheck --all -s -q $REPOSITORY/tmispell/src Not actively developed

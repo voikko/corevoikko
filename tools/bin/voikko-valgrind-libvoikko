@@ -24,23 +24,23 @@ voikkohyphenate=$binpath/voikkohyphenate
 voikkogc=$binpath/voikkogc
 
 echo '---- voikkospell - checking without suggestions ----'
-cat $testdatapath/spell.txt | egrep -v '^[[]' | sed -e 's/!//;s/[ #].*//' \
+cat $testdatapath/fi-x-malstd/spell.txt | egrep -v '^[[]' | sed -e 's/!//;s/[ #].*//' \
     | valgrind --leak-check=full --quiet $voikkospell ignore_dot=1 > /dev/null
 
 echo '---- voikkospell - checking with suggestions ----'
-cat $testdatapath/suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+cat $testdatapath/fi-x-malstd/suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
     | valgrind --leak-check=full --quiet $voikkospell -s ignore_dot=1 > /dev/null
 
 echo '---- enchant - checking with suggestions ----'
-cat $testdatapath/suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+cat $testdatapath/fi-x-malstd/suggest.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
     | valgrind --leak-check=full --quiet enchant -a -dfi_FI > /dev/null
 
 echo '---- voikkohyphenate - configuration used with openoffice.org-voikko ----'
-cat $testdatapath/hyphen.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
+cat $testdatapath/fi-x-malstd/hyphen.txt | grep -v '^[[]' | sed -e 's/\s.*//' \
     | valgrind --leak-check=full --quiet \
     $voikkohyphenate no_ugly_hyphenation=1 ignore_dot=1 > /dev/null
 
 echo '---- voikkogc - configuration used with openoffice.org-voikko ----'
-cat $testdatapath/grammar.txt | valgrind --leak-check=full --quiet $voikkogc accept_bulleted_lists=1 \
+cat $testdatapath/fi-x-malstd/grammar.txt | valgrind --leak-check=full --quiet $voikkogc accept_bulleted_lists=1 \
     accept_titles=1 accept_unfinished_paragraphs=1 > /dev/null
 
