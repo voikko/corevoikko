@@ -9,7 +9,7 @@
 </help>
 </error>
 <error code="2">
-<description>Poista ylimääräinen väli.</description>
+<description>Poista ylimääräinen väli</description>
 <help>
 <![CDATA[
 	Tekstissä on ylimääräisiä välilyöntejä. Sanojen välissä tulee olla yksi välilyönti, eikä
@@ -30,7 +30,7 @@
 </help>
 </error>
 <error code="4">
-<description>Poista ylimääräinen pilkku.</description>
+<description>Poista ylimääräinen pilkku</description>
 <help>
 <![CDATA[
 	Tekstissä on pilkku paikassa, jossa sitä ei saisi käyttää. Tämä virhe voi olla seurausta
@@ -49,7 +49,7 @@
 </help>
 </error>
 <error code="6">
-<description>Harkitse sanan kirjoittamista pienellä alkukirjaimella.</description>
+<description>Harkitse sanan kirjoittamista pienellä alkukirjaimella</description>
 <help>
 <![CDATA[
 	Tekstissä oleva sana ei vaikuta erisnimeltä, eikä se ole virkkeen alussa. Tällöin se
@@ -61,7 +61,7 @@
 </help>
 </error>
 <error code="7">
-<description>Sana on kirjoitettava isolla alkukirjaimella.</description>
+<description>Sana on kirjoitettava isolla alkukirjaimella</description>
 <help>
 <![CDATA[
 	Sana vaikuttaa erisnimeltä tai se näyttäisi olevan virkkeen alussa. Tällöin se tulisi
@@ -71,7 +71,7 @@
 </help>
 </error>
 <error code="8">
-<description>Sana on kirjoitettu kahteen kertaan.</description>
+<description>Sana on kirjoitettu kahteen kertaan</description>
 <help>
 <![CDATA[
 	Sama sana on kirjoitettu peräkkäin kahdesti tai useammin. Yleensä tämä on näppäilyvirhe
@@ -121,15 +121,16 @@
 </help>
 </error>
 <error code="13">
-<description>Kieltoverbi ja pääverbi eivät sovi yhteen.</description>
+<description>Kieltoverbi ja pääverbi eivät sovi yhteen</description>
 <help>
 <![CDATA[
 	Kieltoverbiin (en, et, emme jne.) liittyvän pääverbin tulee olla kieltoverbin mukaisessa muodossa.
 	Esimerkiksi ”Minä en juokse.” on oikein, mutta ”Minä en juoksen.” on väärin.
+]]>
 </help>
 </error>
 <error code="14">
-<description>Jälkimmäisen verbin tulisi olla a/ä-päätteisessä infinitiivissä.</description>
+<description>Jälkimmäisen verbin tulisi olla a/ä-päätteisessä infinitiivissä</description>
 <help>
 <![CDATA[
 	Eräät verbit (esim. alkaa ja tarvita) vaativat seurakseen ns. A-infinitiivissä olevan verbin.
@@ -138,7 +139,7 @@
 </help>
 </error>
 <error code="15">
-<description>Jälkimmäisen verbin tulisi olla maan/mään-päätteisessä infinitiivissä.</description>
+<description>Jälkimmäisen verbin tulisi olla maan/mään-päätteisessä infinitiivissä</description>
 <help>
 <![CDATA[
 	Eräät verbit (esim. erehtyä ja ryhtyä) vaativat seurakseen ns. MA-infinitiivissä olevan verbin.
@@ -147,7 +148,7 @@
 </help>
 </error>
 <error code="16">
-<description>Sidesana (ja, tai, mutta, ...) ei voi olla virkkeen viimeinen sana.</description>
+<description>Sidesana (ja, tai, mutta, ...) ei voi olla virkkeen viimeinen sana</description>
 <help>
 <![CDATA[
 	Sidesanat yhdistävät sanoja tai lauseita, eivätkä siten voi esiintyä aivan virkkeen lopussa.
@@ -155,7 +156,7 @@
 </help>
 </error>
 <error code="17">
-<description>Tarkista, puuttuuko virkkeestä pääverbi tai -verbejä.</description>
+<description>Tarkista, puuttuuko virkkeestä pääverbi tai -verbejä</description>
 <help>
 <![CDATA[
 	Jokaisessa kokonaisessa lauseessa on oltava pääverbi. Siten myös jokaisessa virkkeessä tulisi olla
