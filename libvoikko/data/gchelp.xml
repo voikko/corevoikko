@@ -81,7 +81,7 @@
 </help>
 </error>
 <error code="9">
-<description>Välimerkki puuttuu virkkeen lopusta.</description>
+<description>Välimerkki puuttuu virkkeen lopusta</description>
 <help>
 <![CDATA[
 	Virke tulisi päättää pisteeseen, huutomerkkiin tai kysymysmerkkiin.
