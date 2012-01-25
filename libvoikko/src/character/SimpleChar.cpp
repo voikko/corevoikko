@@ -52,6 +52,23 @@ wchar_t SimpleChar::lower(wchar_t input) {
 		// Ź-Ž
 		return input + 1;
 	}
+	// Cyrillic
+	if (input >= 0x0400 && input <= 0x040F) {
+		// Cyrillic Ѐ-Џ
+		return input + 0x50;
+	}
+	if (input >= 0x0410 && input <= 0x042F) {
+		// Cyrillic А-Я
+		return input + 0x20;
+	}
+	if (input >= 0x0460 && input <= 0x0480 && input % 2 == 0) {
+		// Cyrillic Ѡ-Ҁ
+		return input + 1;
+	}
+	if (input >= 0x048A && input <= 0x0522 && input % 2 == 0) {
+		// Cyrillic Ҋ-Ԣ
+		return input + 1;
+	}
 	// TODO: other Unicode character ranges are not yet mapped
 	return input;
 }
@@ -86,6 +103,23 @@ wchar_t SimpleChar::upper(wchar_t input) {
 	}
 	if (input >= 0x017A && input <= 0x017E && input % 2 == 0) {
 		// Ź-Ž
+		return input - 1;
+	}
+	// Cyrillic
+	if (input >= 0x0450 && input <= 0x045F) {
+		// Cyrillic ѐ-џ
+		return input - 0x50;
+	}
+	if (input >= 0x0430 && input <= 0x044F) {
+		// Cyrillic а-я
+		return input - 0x20;
+	}
+	if (input >= 0x0461 && input <= 0x0481 && input % 2 == 1) {
+		// Cyrillic ѡ-ҁ
+		return input - 1;
+	}
+	if (input >= 0x048B && input <= 0x0523 && input % 2 == 1) {
+		// Cyrillic ҋ-ԣ
 		return input - 1;
 	}
 	// TODO: other Unicode character ranges are not yet mapped

@@ -1,3 +1,6 @@
+2012-01-25 Sjur Moshagen <sjurnm@mac.com>
+	* Add support for cyrillic alphabet
+
 2012-01-15 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix build with MSVC
 
