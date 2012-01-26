@@ -172,6 +172,7 @@ Pertti alkaa tekemään läksyjä.
 Pertti ryhtyy tehdä läksyjä.
  [code=15, level=0, descr="", stpos=7, len=12, suggs={}]
 Pertti ryhtyy tekemään läksyjä.
+Tätä ei käsittääkseni voi näin esittää.
 Pitkänen pystyy tarvittaessa muokkaamaan käsityksiään maailmankaikkeuden fysikaalisista ominaisuuksista.
 Lääkäri ehtii auttamaan Hannelea synnytyksessä.
 Terrorismia ei pidä koskaan yrittää saada laantumaan, vaan terrorismi on voitettava.

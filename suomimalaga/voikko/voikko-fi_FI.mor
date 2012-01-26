@@ -2125,7 +2125,7 @@ subrule tulostus_kielto($tietue):
     if $allomorfi.kielto /= nil then
       return $allomorfi.kielto;
     end;
-    if $allomorfi.tapaluokka = käskytapa then
+    if $allomorfi.tapaluokka = käskytapa or $allomorfi.luokka = omistusliite then
       return molemmat;
     end;
     if $allomorfi.luokka /= liitesana then
