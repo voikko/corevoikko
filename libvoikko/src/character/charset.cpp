@@ -1,5 +1,5 @@
 /* Libvoikko: Finnish spellchecker and hyphenator library
- * Copyright (C) 2006 - 2010 Harri Pitkänen <hatapitk@iki.fi>,
+ * Copyright (C) 2006 - 2012 Harri Pitkänen <hatapitk@iki.fi>,
  *                           Teemu Likonen <tlikonen@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
@@ -66,7 +66,7 @@ bool isFinnishQuotationMark(wchar_t c) {
 /* Character conversion tables. After normalisation all character sequences on
  * the left are converted to the ones on the right. */
 
-const size_t N_2TO1 = 57; /* Number of entries in this table */
+const size_t N_2TO1 = 67; /* Number of entries in this table */
 const wchar_t * CONV_2TO1 =
 	/* Basic Latin + Combining Diacritical Marks --> Latin-1 Supplement */
 	L"A\u0300" L"\u00C0"  /* LATIN CAPITAL LETTER A WITH GRAVE */
@@ -126,7 +126,20 @@ const wchar_t * CONV_2TO1 =
 	L"S\u030C" L"\u0160"  /* LATIN CAPITAL LETTER S WITH CARON */
 	L"s\u030C" L"\u0161"  /* LATIN SMALL LETTER S WITH CARON */
 	L"Z\u030C" L"\u017D"  /* LATIN CAPITAL LETTER Z WITH CARON */
-	L"z\u030C" L"\u017E"; /* LATIN SMALL LETTER Z WITH CARON */
+	L"z\u030C" L"\u017E"  /* LATIN SMALL LETTER Z WITH CARON */
+	/* Basic Russian alphabet + Combining Diacritical Marks --> Basic Russian alphabet */
+	L"\u0418\u0306" L"\u0419" /* CYRILLIC CAPITAL LETTER SHORT I */
+	L"\u0438\u0306" L"\u0439" /* CYRILLIC SMALL LETTER SHORT I */
+	/* Basic Russian alphabet + Combining Diacritical Marks --> Cyrillic extensions */
+	L"\u0415\u0300" L"\u0400" /* CYRILLIC CAPITAL LETTER IE WITH GRAVE */
+	L"\u0435\u0300" L"\u0450" /* CYRILLIC SMALL LETTER IE WITH GRAVE */
+	L"\u0415\u0308" L"\u0401" /* CYRILLIC CAPITAL LETTER IO */
+	L"\u0435\u0308" L"\u0451" /* CYRILLIC SMALL LETTER IO */
+	L"\u0413\u0301" L"\u0403" /* CYRILLIC CAPITAL LETTER GJE */
+	L"\u0433\u0301" L"\u0453" /* CYRILLIC SMALL LETTER GJE */
+	/* Basic Russian alphabet + Combining Diacritical Marks --> Extended Cyrillic */
+	L"\u041E\u0308" L"\u04E6" /* CYRILLIC CAPITAL LETTER O WITH DIAERESIS */
+	L"\u043E\u0308" L"\u04E7"; /* CYRILLIC SMALL LETTER O WITH DIAERESIS */
 
 const size_t N_1TO1 = 3; /* Number of entries in this table */
 const wchar_t * CONV_1TO1 =
