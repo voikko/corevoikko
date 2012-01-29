@@ -14,7 +14,7 @@
 ;;
 ;; The license text: <http://www.gnu.org/licenses/gpl-2.0.html>
 
-(in-package :voikko)
+(in-package #:voikko)
 
 (defclass mor-analysis (foreign-object)
   ((list :initarg :list :reader mor-analysis-list)))

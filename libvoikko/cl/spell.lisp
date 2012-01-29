@@ -14,7 +14,7 @@
 ;;
 ;; The license text: <http://www.gnu.org/licenses/gpl-2.0.html>
 
-(in-package :voikko)
+(in-package #:voikko)
 
 (defun spell (instance word)
   "Check the spelling of WORD. Return WORD if the spelling of correct,

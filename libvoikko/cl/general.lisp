@@ -14,7 +14,7 @@
 ;;
 ;; The license text: <http://www.gnu.org/licenses/gpl-2.0.html>
 
-(in-package :voikko)
+(in-package #:voikko)
 
 (eval-when (:load-toplevel)
   (with-simple-restart (skip-libvoikko "Skip loading libvoikko.")

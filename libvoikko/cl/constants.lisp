@@ -14,7 +14,7 @@
 ;;
 ;; The license text: <http://www.gnu.org/licenses/gpl-2.0.html>
 
-(in-package :voikko)
+(in-package #:voikko)
 
 (defconstant +voikko-spell-failed+ 0)
 (defconstant +voikko-spell-ok+ 1)
