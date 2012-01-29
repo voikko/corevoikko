@@ -36,10 +36,10 @@
 
     (when (proper-pointer-p address)
       (make-instance 'mor-analysis :address address
-                     :list (loop for i upfrom 0
-                                 for a = (mem-aref address :pointer i)
-                                 until (null-pointer-p a)
-                                 collect a)))))
+                     :list (loop :for i :upfrom 0
+                                 :for a := (mem-aref address :pointer i)
+                                 :until (null-pointer-p a)
+                                 :collect a)))))
 
 (defun mor-analysis-key-values (mor-analysis)
   (let ((keys-ptr (foreign-funcall "voikko_mor_analysis_keys"
@@ -47,16 +47,16 @@
                                    :pointer)))
 
     (when (proper-pointer-p keys-ptr)
-      (loop for i upfrom 0
-            for key = (mem-aref keys-ptr :string i)
-            while (stringp key)
-            for value-ptr = (foreign-funcall "voikko_mor_analysis_value_cstr"
-                                             :pointer mor-analysis
-                                             :string key :pointer)
+      (loop :for i :upfrom 0
+            :for key := (mem-aref keys-ptr :string i)
+            :while (stringp key)
+            :for value-ptr := (foreign-funcall "voikko_mor_analysis_value_cstr"
+                                               :pointer mor-analysis
+                                               :string key :pointer)
 
-            collect (cons key (foreign-string-to-lisp value-ptr))
-            do (foreign-funcall "voikko_free_mor_analysis_value_cstr"
-                                :pointer value-ptr :void)))))
+            :collect (cons key (foreign-string-to-lisp value-ptr))
+            :do (foreign-funcall "voikko_free_mor_analysis_value_cstr"
+                                 :pointer value-ptr :void)))))
 
 (defun analyze (instance word)
   "Return word analysis for WORD. The return value is a list of
@@ -70,6 +70,6 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
   (let ((analysis (analyze-word instance word)))
     (when (and (mor-analysis-p analysis)
                (activep analysis))
-      (unwind-protect (loop for a in (mor-analysis-list analysis)
-                            collect (mor-analysis-key-values a))
+      (unwind-protect (loop :for a :in (mor-analysis-list analysis)
+                            :collect (mor-analysis-key-values a))
         (free-foreign-resource analysis)))))

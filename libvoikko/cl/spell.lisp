@@ -54,10 +54,10 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
     (when (proper-pointer-p suggestions)
       (unwind-protect
-           (loop for i upfrom 0
-                 for sug = (mem-aref suggestions :string i)
-                 while (stringp sug)
-                 collect sug)
+           (loop :for i :upfrom 0
+                 :for sug := (mem-aref suggestions :string i)
+                 :while (stringp sug)
+                 :collect sug)
         (foreign-funcall "voikkoFreeCstrArray" :pointer suggestions :void)))))
 
 (defun hyphenate (instance word)
@@ -84,23 +84,23 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
 
     (if (proper-pointer-p hyphenation)
         (unwind-protect
-             (loop with pattern = (foreign-string-to-lisp hyphenation)
-                   with hyph
-                   with start = 0
-                   for pos upfrom 0
-                   for h across pattern
+             (loop :with pattern := (foreign-string-to-lisp hyphenation)
+                   :with hyph
+                   :with start := 0
+                   :for pos :upfrom 0
+                   :for h :across pattern
 
-                   if (char= h #\=) do
+                   :if (char= h #\=) :do
                    (when (< start pos)
                      (push (subseq word start pos) hyph))
                    (setf start (1+ pos))
 
-                   else if (char= h #\-) do
+                   :else :if (char= h #\-) :do
                    (when (< start pos)
                      (push (subseq word start pos) hyph))
                    (setf start pos)
 
-                   finally
+                   :finally
                    (when (< start (length word))
                      (push (subseq word start) hyph))
                    (return (values (nreverse hyph) pattern)))
@@ -122,16 +122,16 @@ NOT-ACTIVE-INSTANCE-ERROR is signaled."
         ((<= width 0)
          (cons "" word))
         (t
-         (loop with hyph = (nth-value 1 (hyphenate instance word))
-               with end1 = 0
-               with start2 = 0
+         (loop :with hyph := (nth-value 1 (hyphenate instance word))
+               :with end1 := 0
+               :with start2 := 0
 
-               for i from 0 below (length word)
-               for h = (aref hyph i)
-               while (<= i width)
+               :for i :from 0 :below (length word)
+               :for h := (aref hyph i)
+               :while (<= i width)
 
-               if (char= #\- h) do (setf end1 i start2 i)
-               else if (char= #\= h) do (setf end1 i start2 (1+ i))
+               :if (char= #\- h) :do (setf end1 i start2 i)
+               :else :if (char= #\= h) :do (setf end1 i start2 (1+ i))
 
-               finally (return (cons (subseq word 0 end1)
-                                     (subseq word start2)))))))
+               :finally (return (cons (subseq word 0 end1)
+                                      (subseq word start2)))))))
