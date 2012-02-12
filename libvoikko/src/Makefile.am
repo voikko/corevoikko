@@ -2,6 +2,8 @@ AUTOMAKE_OPTIONS=subdir-objects
 
 lib_LTLIBRARIES = libvoikko.la
 libvoikko_la_SOURCES = \
+    fst/Configuration.cpp \
+    fst/Transducer.cpp \
     spellchecker/spell.cpp spellchecker/suggestions.cpp \
     spellchecker/Speller.cpp \
     spellchecker/SpellWithPriority.cpp \
@@ -66,6 +68,9 @@ libvoikko_la_LDFLAGS = -no-undefined -version-info 13:5:12 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
 noinst_HEADERS = \
+    fst/Configuration.hpp \
+    fst/Transducer.hpp \
+    fst/Transition.hpp \
     utils/utils.hpp utils/StringUtils.hpp \
     hyphenator/Hyphenator.hpp \
     hyphenator/AnalyzerToFinnishHyphenatorAdapter.hpp \

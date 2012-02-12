@@ -1,3 +1,6 @@
+2012-02-12 Harri Pitkänen <hatapitk@iki.fi>
+	* Added initial VFST lookup code.
+
 2012-02-11 Harri Pitkänen <hatapitk@iki.fi>
 	* Try replacing two characters in OCR suggestion mode.
 
