@@ -116,6 +116,16 @@ AS_IF([test x$hfst = xyes], [
 	])
 AM_CONDITIONAL([HAVE_HFST], [test x$hfst = xyes])
 
+dnl VFST support
+AH_TEMPLATE(HAVE_VFST, [Have VFST])
+AC_ARG_ENABLE(vfst, AC_HELP_STRING([--enable-vfst],
+	[enable VFST morphology backend (EXPERIMENTAL!)]),
+	[vfst=${enableval}], [vfst=no])
+if test x$vfst = xyes; then
+	AC_DEFINE(HAVE_VFST, 1)
+fi
+AM_CONDITIONAL([HAVE_VFST], [test x$vfst = xyes])
+
 dnl Lttoolbox support
 AH_TEMPLATE(HAVE_LTTOOLBOX, [Have Lttoolbox])
 AC_ARG_ENABLE(lttoolbox, AC_HELP_STRING([--enable-lttoolbox],

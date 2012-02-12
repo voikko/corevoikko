@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2012 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -24,6 +24,10 @@
 #include "morphology/MalagaAnalyzer.hpp"
 #endif
 
+#ifdef HAVE_VFST
+#include "morphology/VfstAnalyzer.hpp"
+#endif
+
 #ifdef HAVE_HFST
 #include "morphology/HfstAnalyzer.hpp"
 #endif
@@ -44,6 +48,11 @@ Analyzer * AnalyzerFactory::getAnalyzer(const setup::Dictionary & dictionary)
 	#ifdef HAVE_MALAGA
 	if (dictionary.getMorBackend() == "malaga") {
 		return new MalagaAnalyzer(dictionary.getMorPath());
+	}
+	#endif
+	#ifdef HAVE_VFST
+	if (dictionary.getMorBackend() == "vfst") {
+		return new VfstAnalyzer(dictionary.getMorPath());
 	}
 	#endif
 	#ifdef HAVE_HFST

@@ -80,6 +80,7 @@ noinst_HEADERS = \
     morphology/Analyzer.hpp \
     morphology/AnalyzerFactory.hpp \
     morphology/HfstAnalyzer.hpp \
+    morphology/VfstAnalyzer.hpp \
     morphology/LttoolboxAnalyzer.hpp \
     morphology/NullAnalyzer.hpp \
     morphology/MalagaAnalyzer.hpp \
@@ -184,10 +185,18 @@ HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
+VFST_CPP_FILES=morphology/VfstAnalyzer.cpp
+
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)
 else
     EXTRA_DIST += $(MALAGA_CPP_FILES)
+endif
+
+if HAVE_VFST
+    libvoikko_la_SOURCES += $(VFST_CPP_FILES)
+else
+    EXTRA_DIST += $(VFST_CPP_FILES)
 endif
 
 if HAVE_HFST
