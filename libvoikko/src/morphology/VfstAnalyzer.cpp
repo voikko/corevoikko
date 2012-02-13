@@ -23,11 +23,17 @@
 
 using namespace std;
 using namespace libvoikko::utils;
+using namespace libvoikko::fst;
 
 namespace libvoikko { namespace morphology {
 
-VfstAnalyzer::VfstAnalyzer(const string&) throw(setup::DictionaryException) {
+static const int BUFFER_SIZE = 2000;
 
+VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
+	string morFile = directoryName + "/mor.vfst";
+	transducer = new Transducer(morFile.c_str());
+	configuration = new Configuration(BUFFER_SIZE);
+	outputBuffer = new char[BUFFER_SIZE];
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -50,11 +56,33 @@ list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
 		return new list<Analysis *>();
 	}
 	list<Analysis *> * analysisList = new list<Analysis *>();
+	if (transducer->prepare(configuration, word, wlen)) {
+		wchar_t * wordUcs4 = StringUtils::ucs4FromUtf8(word, wlen);
+		size_t ucsLen = wcslen(wordUcs4);
+		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
+			Analysis * analysis = new Analysis();
+			wchar_t * structure = new wchar_t[ucsLen + 2];
+			structure[0] = L'=';
+			for (size_t i = 1; i < ucsLen + 1; i++) {
+				structure[i] = L'p';
+			}
+			structure[ucsLen + 1] = L'\0';
+			analysis->addAttribute("STRUCTURE", structure);
+			analysis->addAttribute("CLASS", utils::StringUtils::copy(L"none"));
+			analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
+			analysis->addAttribute("FSTOUTPUT", StringUtils::ucs4FromUtf8(outputBuffer));
+			analysisList->push_back(analysis);
+		}
+		delete[] wordUcs4;
+	}
 	return analysisList;
 }
 
-
 void VfstAnalyzer::terminate() {
+	delete[] outputBuffer;
+	delete configuration;
+	transducer->terminate();
+	delete transducer;
 }
 
 } }

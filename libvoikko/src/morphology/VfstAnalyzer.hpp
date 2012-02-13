@@ -21,6 +21,8 @@
 
 #include "morphology/Analyzer.hpp"
 #include "setup/DictionaryException.hpp"
+#include "fst/Transducer.hpp"
+#include "fst/Configuration.hpp"
 #include <list>
 #include <string>
 
@@ -36,6 +38,10 @@ class VfstAnalyzer : public Analyzer {
 		std::list<Analysis *> * analyze(const wchar_t * word, size_t wlen);
 		std::list<Analysis *> * analyze(const char * word);
 		void terminate();
+	private:
+		fst::Transducer * transducer;
+		fst::Configuration * configuration;
+		char * outputBuffer;
 };
 
 } }
