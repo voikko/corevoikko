@@ -18,6 +18,7 @@
 
 #include "fst/Transducer.hpp"
 #include "fst/Configuration.hpp"
+#include "utf8/utf8.hpp"
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -67,16 +68,19 @@ namespace libvoikko { namespace fst {
 		configuration->inputDepth = 0;
 		configuration->stateIndexStack[0] = 0;
 		configuration->currentTransitionStack[0] = 0;
-		for (size_t i = 0; i < inputLen; i++) {
-			// TODO toimii vain ascii-merkeillä
-			std::map<std::string,uint16_t>::const_iterator it = stringToSymbol.find(string(input + i, 1));
+		configuration->inputLength = 0;
+		const char * ip = input;
+		while (ip < input + inputLen) {
+			const char * prevIp = ip;
+			utf8::unchecked::next(ip);
+			std::map<std::string,uint16_t>::const_iterator it = stringToSymbol.find(string(prevIp, ip - prevIp));
 			if (it == stringToSymbol.end()) {
 				// Unknown symbol
 				return false;
 			}
-			configuration->inputSymbolStack[i] = it->second;
+			configuration->inputSymbolStack[configuration->inputLength] = it->second;
+			configuration->inputLength++;
 		}
-		configuration->inputLength = inputLen;
 		return true;
 	}
 	

@@ -33,6 +33,7 @@ namespace libvoikko { namespace fst {
 		uint32_t * currentTransitionStack;
 		uint16_t * inputSymbolStack;
 		uint16_t * outputSymbolStack;
+		/** Length of entire input string in characters */
 		int inputLength;
 		Configuration(int bufferSize);
 		~Configuration();
