@@ -84,12 +84,27 @@ namespace libvoikko { namespace fst {
 		return true;
 	}
 	
+	static uint32_t getMaxTc(Transition * stateHead) {
+		uint32_t maxTc = stateHead->transInfo.moreTransitions;
+		if (maxTc == 255) {
+			OverflowCell * oc = reinterpret_cast<OverflowCell *>(stateHead + 1);
+			maxTc = oc->moreTransitions + 1;
+		}
+		return maxTc;
+	}
+	
 	bool Transducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
 		while (true) {
 			Transition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
 			Transition * currentTransition = transitionStart + configuration->currentTransitionStack[configuration->stackDepth];
 			uint32_t startTransitionIndex = currentTransition - stateHead;
-			for (uint32_t tc = startTransitionIndex; tc <= stateHead->transInfo.moreTransitions; tc++) {
+			uint32_t maxTc = getMaxTc(stateHead);
+			for (uint32_t tc = startTransitionIndex; tc <= maxTc; tc++) {
+				if (tc == 1 && maxTc >= 255) {
+					// skip overflow cell
+					tc++;
+					currentTransition++;
+				}
 				// next
 				if (currentTransition->symIn == 0xFFFF) {
 					// final state
@@ -109,6 +124,10 @@ namespace libvoikko { namespace fst {
 					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
 					 currentTransition->symIn == 0) {
 					// down
+					if (configuration->stackDepth + 1 == configuration->bufferSize) {
+						// max stack depth reached
+						return false;
+					}
 					configuration->outputSymbolStack[configuration->stackDepth] = currentTransition->symOut;
 					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart;
 					configuration->stackDepth++;
