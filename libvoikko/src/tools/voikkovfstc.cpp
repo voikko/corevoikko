@@ -24,6 +24,7 @@
 #include <fstream>
 #include <vector>
 #include <map>
+#include <algorithm>
 
 using namespace libvoikko::fst;
 using namespace std;
@@ -55,57 +56,113 @@ static string convertSymbolNames(string input) {
 	return input;
 }
 
+struct compareSymbolsForLookupOrder {
+	bool operator()(Symbol const & a, Symbol const & b) const {
+		if (a.text == b.text) {
+			return false;
+		}
+		if (a.text == "") {
+			return true;
+		}
+		if (b.text == "") {
+			return false;
+		}
+		if (a.text[0] == '@' && b.text[0] != '@') {
+			return true;
+		}
+		if (b.text[0] == '@' && a.text[0] != '@') {
+			return false;
+		}
+		if (a.text[0] == '[' && b.text[0] != '[') {
+			return false;
+		}
+		if (b.text[0] == '[' && a.text[0] != '[') {
+			return true;
+		}
+		if (a.text[0] == '[' || a.text[0] == '@') {
+			return a.text.substr(1) < b.text.substr(1);
+		}
+		else {
+			return a.text < b.text;
+		}
+	}
+};
+
 int main() {
 	assert(sizeof(transinfo_t) == 4);
 	assert(sizeof(Transition) == 8);
 	assert(sizeof(OverflowCell) == 8);
 	
 	vector<Symbol> symVector;
-	map<string, Symbol> symMap;
 	vector<AttState> attStateVector;
 	
 	string line;
 	long transitionCount = 0;
 	long finalStateCount = 0;
-	ensureSymbolInMap(line, symVector, symMap); // epsilon = 0
-	while (getline(std::cin, line)) {
-		istringstream ss(line);
-		uint32_t sourceStateOrd = 0;
-		uint32_t targetStateOrd = 0;
-		string symInStr;
-		string symOutStr;
-		ss >> sourceStateOrd;
-		ss >> targetStateOrd;
-		ss >> symInStr;
-		ss >> symOutStr;
-		if (attStateVector.size() == sourceStateOrd) {
-			attStateVector.push_back(AttState());
-		}
-		if (line.find("\t") == string::npos) {
-			finalStateCount++;
-			Transition t;
-			t.symIn = 0xFFFF;
-			t.symOut = 0;
-			attStateVector[sourceStateOrd].transitions.push_back(t);
-			attStateVector[sourceStateOrd].targetStateOrds.push_back(0);
-		}
-		else {
-			symInStr = convertSymbolNames(symInStr);
-			symOutStr = convertSymbolNames(symOutStr);
-			ensureSymbolInMap(symInStr, symVector, symMap);
-			ensureSymbolInMap(symOutStr, symVector, symMap);
-			Transition t;
-			t.symIn = symMap[symInStr].code;
-			t.symOut = symMap[symOutStr].code;
-			attStateVector[sourceStateOrd].transitions.push_back(t);
-			attStateVector[sourceStateOrd].targetStateOrds.push_back(targetStateOrd);
-			transitionCount++;
+	{
+		map<string, Symbol> symMap;
+		ensureSymbolInMap(line, symVector, symMap); // epsilon = 0
+		while (getline(std::cin, line)) {
+			istringstream ss(line);
+			uint32_t sourceStateOrd = 0;
+			uint32_t targetStateOrd = 0;
+			string symInStr;
+			string symOutStr;
+			ss >> sourceStateOrd;
+			ss >> targetStateOrd;
+			ss >> symInStr;
+			ss >> symOutStr;
+			if (attStateVector.size() == sourceStateOrd) {
+				attStateVector.push_back(AttState());
+			}
+			if (line.find("\t") == string::npos) {
+				finalStateCount++;
+				Transition t;
+				t.symIn = 0xFFFF;
+				t.symOut = 0;
+				attStateVector[sourceStateOrd].transitions.push_back(t);
+				attStateVector[sourceStateOrd].targetStateOrds.push_back(0);
+			}
+			else {
+				symInStr = convertSymbolNames(symInStr);
+				symOutStr = convertSymbolNames(symOutStr);
+				ensureSymbolInMap(symInStr, symVector, symMap);
+				ensureSymbolInMap(symOutStr, symVector, symMap);
+				Transition t;
+				t.symIn = symMap[symInStr].code;
+				t.symOut = symMap[symOutStr].code;
+				attStateVector[sourceStateOrd].transitions.push_back(t);
+				attStateVector[sourceStateOrd].targetStateOrds.push_back(targetStateOrd);
+				transitionCount++;
+			}
 		}
 	}
 	
 	cerr << "Symbols: " << symVector.size() << endl;
 	cerr << "Transitions: " << transitionCount << endl;
 	cerr << "Final states: " << finalStateCount << endl;
+	
+	// reorder symbols for faster lookup
+	{
+		sort(symVector.begin(), symVector.end(), compareSymbolsForLookupOrder());
+		vector< pair<uint16_t, uint16_t> > oldToNewSym;
+		uint16_t i = 0;
+		for (vector<Symbol>::const_iterator it = symVector.begin(); it < symVector.end(); ++it) {
+			oldToNewSym.push_back(pair<uint16_t, uint16_t>(it->code, i++));
+		}
+		sort(oldToNewSym.begin(), oldToNewSym.end());
+		for (vector<AttState>::iterator sIt = attStateVector.begin(); sIt < attStateVector.end(); ++sIt) {
+			for (vector<Transition>::iterator tIt = sIt->transitions.begin(); tIt < sIt->transitions.end(); ++tIt) {
+				if (tIt->symIn != 0xFFFF) {
+					tIt->symIn = oldToNewSym[tIt->symIn].second;
+					tIt->symOut = oldToNewSym[tIt->symOut].second;
+				}
+			}
+		}
+		for (vector<Symbol>::iterator it = symVector.begin(); it < symVector.end(); ++it) {
+			it->code = oldToNewSym[it->code].second;
+		}
+	}
 	
 	// Determine state offsets in binary transition table. Offsets are calculated
 	// in 8 byte cells.
