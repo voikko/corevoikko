@@ -47,8 +47,16 @@ namespace libvoikko { namespace fst {
 		memcpy(&symbolCount, filePtr, sizeof(uint16_t));
 		filePtr += sizeof(uint16_t);
 		
+		firstNormalChar = 0;
+		firstMultiChar = 0;
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
+			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
+				firstNormalChar = i;
+			}
+			if (firstNormalChar != 0 && firstMultiChar == 0 && symbol[0] == '[') {
+				firstMultiChar = i;
+			}
 			filePtr += (symbol.length() + 1);
 			stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
 			symbolToString.push_back(symbol);
@@ -122,7 +130,7 @@ namespace libvoikko { namespace fst {
 				}
 				else if ((configuration->inputDepth < configuration->inputLength &&
 					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
-					 currentTransition->symIn == 0) {
+					 currentTransition->symIn < firstNormalChar) {
 					// down
 					if (configuration->stackDepth + 1 == configuration->bufferSize) {
 						// max stack depth reached
@@ -133,7 +141,7 @@ namespace libvoikko { namespace fst {
 					configuration->stackDepth++;
 					configuration->stateIndexStack[configuration->stackDepth] = currentTransition->transInfo.targetState;
 					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition->transInfo.targetState;
-					if (currentTransition->symIn) {
+					if (currentTransition->symIn >= firstNormalChar) {
 						configuration->inputDepth++;
 					}
 					goto nextInMainLoop;
@@ -146,8 +154,11 @@ namespace libvoikko { namespace fst {
 			}
 			// up
 			configuration->stackDepth--;
-			if ((transitionStart + configuration->currentTransitionStack[configuration->stackDepth])->symIn) {
-				configuration->inputDepth--;
+			{
+				uint16_t previousInputSymbol = (transitionStart + configuration->currentTransitionStack[configuration->stackDepth])->symIn;
+				if (previousInputSymbol >= firstNormalChar) {
+					configuration->inputDepth--;
+				}
 			}
 			configuration->currentTransitionStack[configuration->stackDepth]++;
 			nextInMainLoop:
