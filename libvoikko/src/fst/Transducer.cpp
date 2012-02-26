@@ -25,6 +25,13 @@
 #include <sys/mman.h>
 #include <cstring>
 
+#if 0
+#include <iostream>
+#define DEBUG(x) cerr << x << endl;
+#else
+#define DEBUG(x)
+#endif
+
 using namespace std;
 
 namespace libvoikko { namespace fst {
@@ -132,6 +139,7 @@ namespace libvoikko { namespace fst {
 					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
 					 currentTransition->symIn < firstNormalChar) {
 					// down
+					DEBUG("down " << tc)
 					if (configuration->stackDepth + 1 == configuration->bufferSize) {
 						// max stack depth reached
 						return false;
@@ -154,6 +162,7 @@ namespace libvoikko { namespace fst {
 			}
 			// up
 			configuration->stackDepth--;
+			DEBUG("up")
 			{
 				uint16_t previousInputSymbol = (transitionStart + configuration->currentTransitionStack[configuration->stackDepth])->symIn;
 				if (previousInputSymbol >= firstNormalChar) {
