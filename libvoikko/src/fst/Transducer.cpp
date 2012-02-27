@@ -36,6 +36,12 @@ using namespace std;
 
 namespace libvoikko { namespace fst {
 	
+	static OpFeatureValue getDiacriticOperation(const string & symbol, vector<string> & features, vector<string> & values) {
+		OpFeatureValue operation;
+		// TODO
+		return operation;
+	}
+	
 	Transducer::Transducer(const char * filePath) {
 		int fd = open(filePath, O_RDONLY);
 		if (fd == -1) {
@@ -56,6 +62,11 @@ namespace libvoikko { namespace fst {
 		
 		firstNormalChar = 0;
 		firstMultiChar = 0;
+		vector<string> features;
+		vector<string> values;
+		values.push_back(""); // neutral
+		values.push_back(""); // unspecified or any
+		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
 			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
@@ -67,6 +78,9 @@ namespace libvoikko { namespace fst {
 			filePtr += (symbol.length() + 1);
 			stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
 			symbolToString.push_back(symbol);
+			if (firstNormalChar == 0 && i > 0) {
+				symbolToDiacritic.push_back(getDiacriticOperation(symbol, features, values));
+			}
 		}
 		{
 			size_t partial = (filePtr - static_cast<char *>(map)) % sizeof(Transition);

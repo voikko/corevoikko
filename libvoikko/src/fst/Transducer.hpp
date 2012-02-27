@@ -29,6 +29,20 @@
 
 namespace libvoikko { namespace fst {
 	
+	enum Operation {
+		P,
+		C,
+		U,
+		R,
+		D
+	};
+	
+	struct OpFeatureValue {
+		Operation op;
+		uint16_t feature;
+		uint16_t value;
+	};
+	
 	class Transducer {
 		private:
 			size_t fileLength;
@@ -36,6 +50,8 @@ namespace libvoikko { namespace fst {
 			Transition * transitionStart;
 			std::map<std::string, uint16_t> stringToSymbol;
 			std::vector<std::string> symbolToString;
+			std::vector<OpFeatureValue> symbolToDiacritic;
+			uint16_t flagDiacriticFeatureCount;
 			uint16_t firstNormalChar;
 			uint16_t firstMultiChar;
 		public:
