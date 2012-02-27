@@ -144,7 +144,8 @@ namespace libvoikko { namespace fst {
 						// max stack depth reached
 						return false;
 					}
-					configuration->outputSymbolStack[configuration->stackDepth] = currentTransition->symOut;
+					configuration->outputSymbolStack[configuration->stackDepth] = 
+						(currentTransition->symOut >= firstNormalChar ? currentTransition->symOut : 0);
 					configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart;
 					configuration->stackDepth++;
 					configuration->stateIndexStack[configuration->stackDepth] = currentTransition->transInfo.targetState;
