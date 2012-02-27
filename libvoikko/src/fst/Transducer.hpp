@@ -30,11 +30,11 @@
 namespace libvoikko { namespace fst {
 	
 	enum Operation {
-		P,
-		C,
-		U,
-		R,
-		D
+		Operation_P,
+		Operation_C,
+		Operation_U,
+		Operation_R,
+		Operation_D
 	};
 	
 	struct OpFeatureValue {

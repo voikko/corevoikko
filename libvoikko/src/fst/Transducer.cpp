@@ -36,8 +36,37 @@ using namespace std;
 
 namespace libvoikko { namespace fst {
 	
-	static OpFeatureValue getDiacriticOperation(const string & symbol, vector<string> & features, vector<string> & values) {
+	static OpFeatureValue getDiacriticOperation(const string & symbol, map<string, uint16_t> & features, map<string, uint16_t> & values) {
 		OpFeatureValue operation;
+		switch (symbol[2]) {
+			case 'P':
+				operation.op = Operation_P;
+				break;
+			case 'C':
+				operation.op = Operation_C;
+				break;
+			case 'U':
+				operation.op = Operation_U;
+				break;
+			case 'R':
+				operation.op = Operation_R;
+				break;
+			case 'D':
+				operation.op = Operation_D;
+				break;
+			default:
+				// this would be an error
+				return operation;
+		}
+		string featureAndValue = symbol.substr(3, symbol.length() - 4);
+		size_t valueStart = featureAndValue.find(".");
+		string feature;
+		if (valueStart == string::npos) {
+			feature = featureAndValue;
+		}
+		else {
+			feature = featureAndValue.substr(valueStart);
+		}
 		// TODO
 		return operation;
 	}
@@ -62,10 +91,10 @@ namespace libvoikko { namespace fst {
 		
 		firstNormalChar = 0;
 		firstMultiChar = 0;
-		vector<string> features;
-		vector<string> values;
-		values.push_back(""); // neutral
-		values.push_back(""); // unspecified or any
+		std::map<string, uint16_t> features;
+		std::map<string, uint16_t> values;
+		values[""] = 0; // neutral
+		values["@"] = 1; // unspecified or any
 		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
