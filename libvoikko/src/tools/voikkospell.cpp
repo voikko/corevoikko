@@ -36,7 +36,7 @@
 using namespace std;
 
 
-enum CheckMode {NORMAL, ONLY_C_W, ONLY_INCORRECT};
+enum CheckMode {NORMAL, ONLY_C_W, ONLY_INCORRECT, NONE};
 
 static const int MAX_WORD_LENGTH = 5000;
 static const int MAX_THREADS = 200;
@@ -75,7 +75,7 @@ static void printMorphology(VoikkoHandle * handle, const wchar_t * word, wstring
 }
 
 static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstream & out) {
-	int result = voikkoSpellUcs4(handle, word);
+	int result = (checkMode != NONE ? voikkoSpellUcs4(handle, word) : VOIKKO_SPELL_OK);
 	if (result == VOIKKO_CHARSET_CONVERSION_FAILED) {
 		cerr << "E: charset conversion failed" << endl;
 		return;
@@ -120,6 +120,8 @@ static void check_word(VoikkoHandle * handle, const wchar_t * word, wstringstrea
 				if (!result) {
 					out << word << endl;
 				}
+				break;
+			case NONE:
 				break;
 		}
 	}
@@ -393,6 +395,10 @@ int main(int argc, char ** argv) {
 		}
 		else if (args == "-m") {
 			morphology = true;
+		}
+		else if (args == "-M") {
+			morphology = true;
+			checkMode = NONE;
 		}
 		else if (args.find("-c") == 0) {
 			continue;
