@@ -27,7 +27,7 @@ using namespace std;
 
 namespace libvoikko { namespace fst {
 	
-	Configuration::Configuration(int bufferSize) :
+	Configuration::Configuration(uint16_t flagDiacriticFeatureCount, int bufferSize) :
 		bufferSize(bufferSize),
 		stackDepth(0),
 		inputDepth(0),
@@ -35,6 +35,7 @@ namespace libvoikko { namespace fst {
 		currentTransitionStack(new uint32_t[bufferSize]),
 		inputSymbolStack(new uint16_t[bufferSize]),
 		outputSymbolStack(new uint16_t[bufferSize]),
+		flagValueStack(flagDiacriticFeatureCount ? new uint16_t[flagDiacriticFeatureCount * bufferSize] : 0),
 		inputLength(0)
 		{ }
 	
@@ -43,5 +44,6 @@ namespace libvoikko { namespace fst {
 		delete[] currentTransitionStack;
 		delete[] inputSymbolStack;
 		delete[] outputSymbolStack;
+		delete[] flagValueStack;
 	}
 } }

@@ -32,7 +32,7 @@ static const int BUFFER_SIZE = 2000;
 VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::DictionaryException) {
 	string morFile = directoryName + "/mor.vfst";
 	transducer = new Transducer(morFile.c_str());
-	configuration = new Configuration(BUFFER_SIZE);
+	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new char[BUFFER_SIZE];
 }
 

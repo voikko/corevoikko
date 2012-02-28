@@ -61,6 +61,8 @@ namespace libvoikko { namespace fst {
 			
 			bool next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const;
 			
+			uint16_t getFlagDiacriticFeatureCount() const;
+			
 			void terminate();
 	};
 } }

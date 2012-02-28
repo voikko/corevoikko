@@ -125,9 +125,11 @@ namespace libvoikko { namespace fst {
 		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
+			/* TODO this does not work yet
 			if (symbol == "@_SPACE_@") {
 				symbol = " ";
 			}
+			*/
 			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
 				firstNormalChar = i;
 			}
@@ -141,6 +143,7 @@ namespace libvoikko { namespace fst {
 				symbolToDiacritic.push_back(getDiacriticOperation(symbol, features, values));
 			}
 		}
+		flagDiacriticFeatureCount = features.size();
 		{
 			size_t partial = (filePtr - static_cast<char *>(map)) % sizeof(Transition);
 			if (partial > 0) {
@@ -247,6 +250,10 @@ namespace libvoikko { namespace fst {
 			nextInMainLoop:
 				;
 		}
+	}
+	
+	uint16_t Transducer::getFlagDiacriticFeatureCount() const {
+		return flagDiacriticFeatureCount;
 	}
 	
 	void Transducer::terminate() {
