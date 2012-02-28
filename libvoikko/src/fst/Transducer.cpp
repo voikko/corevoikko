@@ -41,7 +41,7 @@ namespace libvoikko { namespace fst {
 	
 	static OpFeatureValue getDiacriticOperation(const string & symbol, map<string, uint16_t> & features, map<string, uint16_t> & values) {
 		OpFeatureValue operation;
-		switch (symbol[2]) {
+		switch (symbol[1]) {
 			case 'P':
 				operation.op = Operation_P;
 				break;
@@ -69,7 +69,7 @@ namespace libvoikko { namespace fst {
 				feature = featureAndValue;
 			}
 			else {
-				feature = featureAndValue.substr(valueStart);
+				feature = featureAndValue.substr(0, valueStart);
 			}
 			map<string, uint16_t>::const_iterator it = features.find(feature);
 			if (it == features.end()) {
@@ -125,6 +125,9 @@ namespace libvoikko { namespace fst {
 		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
+			if (symbol == "@_SPACE_@") {
+				symbol = " ";
+			}
 			if (firstNormalChar == 0 && i > 0 && symbol[0] != '@') {
 				firstNormalChar = i;
 			}
