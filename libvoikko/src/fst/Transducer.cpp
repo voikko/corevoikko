@@ -36,6 +36,9 @@ using namespace std;
 
 namespace libvoikko { namespace fst {
 	
+	const uint16_t FlagValueNeutral = 0;
+	const uint16_t FlagValueAny = 1;
+	
 	static OpFeatureValue getDiacriticOperation(const string & symbol, map<string, uint16_t> & features, map<string, uint16_t> & values) {
 		OpFeatureValue operation;
 		switch (symbol[2]) {
@@ -60,14 +63,38 @@ namespace libvoikko { namespace fst {
 		}
 		string featureAndValue = symbol.substr(3, symbol.length() - 4);
 		size_t valueStart = featureAndValue.find(".");
-		string feature;
-		if (valueStart == string::npos) {
-			feature = featureAndValue;
+		{
+			string feature;
+			if (valueStart == string::npos) {
+				feature = featureAndValue;
+			}
+			else {
+				feature = featureAndValue.substr(valueStart);
+			}
+			map<string, uint16_t>::const_iterator it = features.find(feature);
+			if (it == features.end()) {
+				operation.feature = features.size();
+				features[feature] = operation.feature;
+			}
+			else {
+				operation.feature = it->second;
+			}
 		}
-		else {
-			feature = featureAndValue.substr(valueStart);
+		
+		{
+			string value("@");
+			if (valueStart != string::npos) {
+				value = featureAndValue.substr(valueStart + 1);
+			}
+			map<string, uint16_t>::const_iterator it = values.find(value);
+			if (it == values.end()) {
+				operation.value = values.size();
+				values[value] = operation.value;
+			}
+			else {
+				operation.value = it->second;
+			}
 		}
-		// TODO
 		return operation;
 	}
 	
@@ -93,8 +120,8 @@ namespace libvoikko { namespace fst {
 		firstMultiChar = 0;
 		std::map<string, uint16_t> features;
 		std::map<string, uint16_t> values;
-		values[""] = 0; // neutral
-		values["@"] = 1; // unspecified or any
+		values[""] = FlagValueNeutral;
+		values["@"] = FlagValueAny;
 		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
