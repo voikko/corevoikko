@@ -37,7 +37,12 @@ namespace libvoikko { namespace fst {
 		outputSymbolStack(new uint16_t[bufferSize]),
 		flagValueStack(flagDiacriticFeatureCount ? new uint16_t[flagDiacriticFeatureCount * bufferSize] : 0),
 		inputLength(0)
-		{ }
+		{
+			if (flagDiacriticFeatureCount) {
+				// initialize flag values for initial state (these are immutable)
+				memset(flagValueStack, 0, flagDiacriticFeatureCount * sizeof(uint16_t));
+			}
+		}
 	
 	Configuration::~Configuration() {
 		delete[] stateIndexStack;

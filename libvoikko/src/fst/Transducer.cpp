@@ -184,6 +184,14 @@ namespace libvoikko { namespace fst {
 		return maxTc;
 	}
 	
+	static bool flagDiacriticCheck(uint16_t flagDiacriticFeatureCount, uint16_t * flagValueStack) {
+		if (!flagDiacriticFeatureCount) {
+			return true;
+		}
+		// TODO
+		return true;
+	}
+	
 	bool Transducer::next(Configuration * configuration, char * outputBuffer, size_t bufferLen) const {
 		while (true) {
 			Transition * stateHead = transitionStart + configuration->stateIndexStack[configuration->stackDepth];
@@ -211,9 +219,10 @@ namespace libvoikko { namespace fst {
 						return true;
 					}
 				}
-				else if ((configuration->inputDepth < configuration->inputLength &&
+				else if (((configuration->inputDepth < configuration->inputLength &&
 					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
-					 currentTransition->symIn < firstNormalChar) {
+					  currentTransition->symIn < firstNormalChar) &&
+					  flagDiacriticCheck(flagDiacriticFeatureCount, configuration->flagValueStack)) {
 					// down
 					DEBUG("down " << tc)
 					if (configuration->stackDepth + 1 == configuration->bufferSize) {
