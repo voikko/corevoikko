@@ -194,31 +194,48 @@ namespace libvoikko { namespace fst {
 		uint16_t * flagValueStack = configuration->flagValueStack;
 		uint16_t * currentFlagArray = flagValueStack + stackDepth * diacriticCell;
 		
+		bool update = false;
+		OpFeatureValue ofv;
 		if (symbol != 0 && symbol < transducer->firstNormalChar) {
 			OpFeatureValue ofv = transducer->symbolToDiacritic[symbol];
+			uint16_t currentValue = flagValueStack[ofv.feature];
 			switch (ofv.op) {
 				case Operation_P:
-					// TODO
+					update = true;
 					break;
 				case Operation_C:
-					// TODO
+					ofv.value = FlagValueNeutral;
+					update = true;
 					break;
 				case Operation_U:
-					// TODO
+					if (currentValue) {
+						if (currentValue != ofv.value) {
+							return false;
+						}
+					}
+					else {
+						update = true;
+					}
 					break;
 				case Operation_R:
-					// TODO
+					if (currentValue != ofv.value) {
+						return false;
+					}
 					break;
 				case Operation_D:
-					// TODO
+					if (currentValue == ofv.value) {
+						return false;
+					}
 					break;
 				default:
 					return false;// this would be an error
 			}
 		}
 		
-		// TODO
 		memcpy(currentFlagArray + diacriticCell, currentFlagArray, diacriticCell);
+		if (update) {
+			currentFlagArray[diacriticCell + ofv.feature] = ofv.value;
+		}
 		return true;
 	}
 	
