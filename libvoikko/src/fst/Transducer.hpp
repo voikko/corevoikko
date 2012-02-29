@@ -50,11 +50,12 @@ namespace libvoikko { namespace fst {
 			Transition * transitionStart;
 			std::map<std::string, uint16_t> stringToSymbol;
 			std::vector<std::string> symbolToString;
+			uint16_t firstMultiChar;
+		public:
 			std::vector<OpFeatureValue> symbolToDiacritic;
 			uint16_t flagDiacriticFeatureCount;
 			uint16_t firstNormalChar;
-			uint16_t firstMultiChar;
-		public:
+			
 			Transducer(const char * filePath);
 			
 			bool prepare(Configuration * configuration, const char * input, size_t inputLen) const;

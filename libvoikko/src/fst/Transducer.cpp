@@ -184,11 +184,41 @@ namespace libvoikko { namespace fst {
 		return maxTc;
 	}
 	
-	static bool flagDiacriticCheck(uint16_t flagDiacriticFeatureCount, uint16_t * flagValueStack) {
+	static bool flagDiacriticCheck(Configuration * configuration, const Transducer * transducer, uint16_t symbol) {
+		uint16_t flagDiacriticFeatureCount = transducer->flagDiacriticFeatureCount;
 		if (!flagDiacriticFeatureCount) {
 			return true;
 		}
+		int stackDepth = configuration->stackDepth;
+		size_t diacriticCell = flagDiacriticFeatureCount * sizeof(uint16_t);
+		uint16_t * flagValueStack = configuration->flagValueStack;
+		uint16_t * currentFlagArray = flagValueStack + stackDepth * diacriticCell;
+		
+		if (symbol != 0 && symbol < transducer->firstNormalChar) {
+			OpFeatureValue ofv = transducer->symbolToDiacritic[symbol];
+			switch (ofv.op) {
+				case Operation_P:
+					// TODO
+					break;
+				case Operation_C:
+					// TODO
+					break;
+				case Operation_U:
+					// TODO
+					break;
+				case Operation_R:
+					// TODO
+					break;
+				case Operation_D:
+					// TODO
+					break;
+				default:
+					return false;// this would be an error
+			}
+		}
+		
 		// TODO
+		memcpy(currentFlagArray + diacriticCell, currentFlagArray, diacriticCell);
 		return true;
 	}
 	
@@ -222,10 +252,10 @@ namespace libvoikko { namespace fst {
 				else if (((configuration->inputDepth < configuration->inputLength &&
 					  configuration->inputSymbolStack[configuration->inputDepth] == currentTransition->symIn) ||
 					  currentTransition->symIn < firstNormalChar) &&
-					  flagDiacriticCheck(flagDiacriticFeatureCount, configuration->flagValueStack)) {
+					  flagDiacriticCheck(configuration, this, currentTransition->symIn)) {
 					// down
 					DEBUG("down " << tc)
-					if (configuration->stackDepth + 1 == configuration->bufferSize) {
+					if (configuration->stackDepth + 2 == configuration->bufferSize) {
 						// max stack depth reached
 						return false;
 					}
