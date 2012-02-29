@@ -197,8 +197,9 @@ namespace libvoikko { namespace fst {
 		bool update = false;
 		OpFeatureValue ofv;
 		if (symbol != 0 && symbol < transducer->firstNormalChar) {
-			OpFeatureValue ofv = transducer->symbolToDiacritic[symbol];
-			uint16_t currentValue = flagValueStack[ofv.feature];
+			ofv = transducer->symbolToDiacritic[symbol];
+			uint16_t currentValue = currentFlagArray[ofv.feature];
+			DEBUG("checking op " << ofv.op << " " << ofv.feature << " " << ofv.value << " current value " << currentValue)
 			switch (ofv.op) {
 				case Operation_P:
 					update = true;
@@ -223,18 +224,20 @@ namespace libvoikko { namespace fst {
 					}
 					break;
 				case Operation_D:
-					if (currentValue == ofv.value) {
+					if ((ofv.value == FlagValueAny && currentValue != FlagValueNeutral) || currentValue == ofv.value) {
 						return false;
 					}
 					break;
 				default:
 					return false;// this would be an error
 			}
+			DEBUG("allowed")
 		}
 		
 		memcpy(currentFlagArray + diacriticCell, currentFlagArray, diacriticCell);
 		if (update) {
-			currentFlagArray[diacriticCell + ofv.feature] = ofv.value;
+			DEBUG("updating feature " << ofv.feature << " to " << ofv.value)
+			(currentFlagArray + diacriticCell)[ofv.feature] = ofv.value;
 		}
 		return true;
 	}
