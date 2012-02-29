@@ -219,7 +219,10 @@ namespace libvoikko { namespace fst {
 					}
 					break;
 				case Operation_R:
-					if (currentValue != ofv.value) {
+					if (ofv.value == FlagValueAny && currentValue == FlagValueNeutral) {
+						return false;
+					}
+					if (ofv.value != FlagValueAny && currentValue != ofv.value) {
 						return false;
 					}
 					break;
