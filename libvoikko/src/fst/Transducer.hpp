@@ -49,7 +49,7 @@ namespace libvoikko { namespace fst {
 			void * map;
 			Transition * transitionStart;
 			std::map<std::string, uint16_t> stringToSymbol;
-			std::vector<std::string> symbolToString;
+			std::vector<const char *> symbolToString;
 			uint16_t firstMultiChar;
 		public:
 			std::vector<OpFeatureValue> symbolToDiacritic;

@@ -136,9 +136,9 @@ namespace libvoikko { namespace fst {
 			if (firstNormalChar != 0 && firstMultiChar == 0 && symbol[0] == '[') {
 				firstMultiChar = i;
 			}
+			symbolToString.push_back(filePtr);
 			filePtr += (symbol.length() + 1);
 			stringToSymbol.insert(pair<string, uint16_t>(symbol, i));
-			symbolToString.push_back(symbol);
 			if (firstNormalChar == 0 && i > 0) {
 				symbolToDiacritic.push_back(getDiacriticOperation(symbol, features, values));
 			}
@@ -263,9 +263,10 @@ namespace libvoikko { namespace fst {
 					if (configuration->inputDepth == configuration->inputLength) {
 						char * outputBufferPos = outputBuffer;
 						for (int i = 0; i < configuration->stackDepth; i++) {
-							string outputSym = symbolToString[configuration->outputSymbolStack[i]];
-							strncpy(outputBufferPos, outputSym.c_str(), outputSym.length());
-							outputBufferPos += outputSym.length();
+							const char * outputSym = symbolToString[configuration->outputSymbolStack[i]];
+							size_t symLen = strlen(outputSym);
+							strncpy(outputBufferPos, outputSym, symLen);
+							outputBufferPos += symLen;
 						}
 						*outputBufferPos = '\0';
 						configuration->currentTransitionStack[configuration->stackDepth] = currentTransition - transitionStart + 1;
