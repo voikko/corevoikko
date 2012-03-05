@@ -1,13 +1,13 @@
 General information
 ===================
 
-This is libvoikko, library of free Finnish language tools. The library is
-written in C++ and it uses a left associative grammar for describing the
-morphology of Finnish language. The morphology is developed using Malaga
-natural language grammar development tool.
+This is libvoikko, library of free natural language processing tools
+The library is written in C++ and it uses a left associative grammar for
+describing the morphology of Finnish language. The morphology is developed
+using Malaga natural language grammar development tool.
 
-Alternative backends that can be used instead of Malaga include HFST and
-Lttoolbox. These backends are currently experimental.
+Alternative backends that can be used instead of Malaga include HFST,
+Lttoolbox and VFST. These backends are currently experimental.
 
 Libvoikko provides spell checking, hyphenation, grammar checking and
 morphological analysis for Finnish language. Support for other languages
@@ -25,13 +25,20 @@ License
 =======
 
 This library is released under the GPL, version 2 or later. Parts of the
-build system are available only under GPL version 3 or later.
+build system are available only under GPL version 3 or later but that
+does not affect binary distribution.
 
-The authors of the library may license selected parts under other free
-licenses (such as LGPL or MPL) or add license exceptions if this will
-directly help the development of other free software products. Please
-contact us if you feel that such exceptions are needed.
+Additionally a subset of the library is available under MPL 1.1 / GPL 2+ /
+LGPL 2.1+ tri-license. The tri-license covers those parts that cannot
+be configured away in the autotools build systems. Licensing status for
+individual backends is as follows:
 
+ Backend        License
+----------------------------------------------------------------
+ Malaga         GPL 2+
+ HFST           GPL 3+ (GPL 2+ backend and Apache v2 dependency)
+ Lttoolbox      GPL 2+ (GPL 2+ backend and GPL 2+ dependency)
+ VFST           MPL 1.1 / GPL 2+ / LGPL 2.1+
 
 Features
 ========
@@ -168,7 +175,7 @@ from rule 1:
 Authors
 =======
 
-2006 - 2011 Harri Pitkänen (hatapitk@iki.fi)
+2006 - 2012 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
 1995 - 2008 Björn Beutel
  * Author of the original LAG implementation (Malaga), slightly simplified version

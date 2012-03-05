@@ -62,8 +62,7 @@ libvoikko_la_SOURCES = \
     grammar/check/ParagraphCheck.cpp \
     grammar/check/SentenceCheck.cpp \
     grammar/check/SidesanaCheck.cpp \
-    compatibility/interface.cpp \
-    autocorrect/AutoCorrect.cpp
+    compatibility/interface.cpp
 libvoikko_la_LDFLAGS = -no-undefined -version-info 13:5:12 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
@@ -176,7 +175,8 @@ MALAGA_CPP_FILES=morphology/MalagaAnalyzer.cpp \
     morphology/malaga/pools.cpp \
     morphology/malaga/tries.cpp \
     morphology/malaga/values.cpp \
-    morphology/malaga/MalagaState.cpp
+    morphology/malaga/MalagaState.cpp \
+    autocorrect/AutoCorrect.cpp
 
 HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
 			   spellchecker/HfstSpeller.cpp \

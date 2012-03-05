@@ -1,3 +1,7 @@
+2012-03-05 Harri Pitkänen <hatapitk@iki.fi>
+	* Core code and VFST backend licensed under MPL 1.1 / GPL 2+ /
+	  LGPL 2.1+ tri-license.
+
 2012-02-27 Harri Pitkänen <hatapitk@iki.fi>
 	* Add new option to voikkospell: -M for morphological analysis without
 	  spell checking.

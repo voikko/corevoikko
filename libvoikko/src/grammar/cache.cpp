@@ -36,9 +36,13 @@
 #include "grammar/check/NegativeVerbCheck.hpp"
 #include "grammar/check/CompoundVerbCheck.hpp"
 #include "grammar/check/SidesanaCheck.hpp"
-#include "autocorrect/AutoCorrect.hpp"
 #include <cstring>
 #include <cstdlib>
+
+#ifdef HAVE_MALAGA
+	#include "autocorrect/AutoCorrect.hpp"
+#endif
+
 
 using namespace libvoikko::grammar;
 using namespace libvoikko::autocorrect;
@@ -111,7 +115,12 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	check::SidesanaCheck sidesanaCheck;
 	check::MissingVerbCheck missingVerbCheck;
 	for (size_t i = 0; i < para->sentenceCount; i++) {
+#ifdef HAVE_MALAGA
+		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
+		// later format revisions. Old implementation is only available to support
+		// v2 dictionary format.
 		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
+#endif
 		gc_local_punctuation(voikkoOptions, para->sentences[i]);
 		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
 		gc_repeating_words(voikkoOptions, para->sentences[i]);
