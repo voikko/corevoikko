@@ -199,6 +199,15 @@ int main() {
 	
 	ofstream transducerFile("transducer.vfst", ios::out | ios::binary);
 	
+	// Write header
+	// Following two 4 byte integers can be used to determine the file type and byte order
+	const uint32_t COOKIE1 = 0x00013A6E;
+	const uint32_t COOKIE2 = 0x000351FA;
+	transducerFile.write((char *)&COOKIE1, sizeof(uint32_t));
+	transducerFile.write((char *)&COOKIE2, sizeof(uint32_t));
+	// 8 bytes of reserved space for future format extensions and variants. Must be zero for now.
+	transducerFile.seekp(8, ios_base::cur);
+	
 	// Write symbols
 	uint16_t symbolCount = symVector.size();
 	transducerFile.write((char *)&symbolCount, sizeof(uint16_t));

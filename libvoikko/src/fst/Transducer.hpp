@@ -58,6 +58,7 @@ namespace libvoikko { namespace fst {
 		private:
 			size_t fileLength;
 			void * map;
+			bool byteSwapped;
 			Transition * transitionStart;
 			std::map<std::string, uint16_t> stringToSymbol;
 			std::vector<const char *> symbolToString;

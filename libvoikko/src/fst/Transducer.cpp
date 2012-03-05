@@ -108,6 +108,25 @@ namespace libvoikko { namespace fst {
 		return operation;
 	}
 	
+	static bool checkNeedForByteSwapping(const char * filePtr) {
+		const uint32_t COOKIE1 = 0x00013A6E;
+		const uint32_t COOKIE2 = 0x000351FA;
+		const uint32_t COOKIE1REV = 0x6E3A0100;
+		const uint32_t COOKIE2REV = 0xFA510300;
+		if (memcmp(filePtr, &COOKIE1, sizeof(uint32_t)) == 0 &&
+		    memcmp(filePtr + sizeof(uint32_t), &COOKIE2, sizeof(uint32_t)) == 0) {
+			// native byte order
+			return false;
+		}
+		if (memcmp(filePtr, &COOKIE1REV, sizeof(uint32_t)) == 0 &&
+		    memcmp(filePtr + sizeof(uint32_t), &COOKIE2REV, sizeof(uint32_t)) == 0) {
+			// reverse byte order
+			return true;
+		}
+		// TODO
+		throw "Unknown byte order or file type";
+	}
+	
 	Transducer::Transducer(const char * filePath) {
 		int fd = open(filePath, O_RDONLY);
 		if (fd == -1) {
@@ -122,6 +141,8 @@ namespace libvoikko { namespace fst {
 		map = mmap(0, fileLength, PROT_READ, MAP_SHARED, fd, 0);
 		
 		char * filePtr = static_cast<char *>(map);
+		byteSwapped = checkNeedForByteSwapping(filePtr);
+		filePtr += 16; // skip header
 		uint16_t symbolCount;
 		memcpy(&symbolCount, filePtr, sizeof(uint16_t));
 		filePtr += sizeof(uint16_t);
