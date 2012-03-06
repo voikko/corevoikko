@@ -61,7 +61,8 @@ static const wchar_t * const REPLACEMENTS_2 =
 	L"1q" L"2q" L"2w" L"3w" L"3e"
 	L"4e" L"4r" L"5r" L"5t" L"6t"
 	L"6y" L"7y" L"7u" L"8u" L"8i"
-	L"9i" L"9o" L"0o" L"0p" L"+p";
+	L"9i" L"9o" L"0o" L"0p" L"+p"
+	L"ie";
 
 static const wchar_t * const REPLACEMENTS_3 =
 	L"es" L"sd" L"nh" L"uj" L"l\u00f6"

@@ -1,3 +1,6 @@
+2012-03-06 Harri Pitkänen <hatapitk@iki.fi>
+	* Suggest replacement i->e
+
 2012-03-05 Harri Pitkänen <hatapitk@iki.fi>
 	* Core code and VFST backend licensed under MPL 1.1 / GPL 2+ /
 	  LGPL 2.1+ tri-license.
