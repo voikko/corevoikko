@@ -2184,6 +2184,10 @@ allo_rule generate_allos ($tietue):
   elseif (kyntää in $tietue.jatko) then
     choose $i in muistaa ($tietue, tA($tietue), nA($tietue), "t", "n");
     result $i.alku, $i - alku;
+  
+  elseif (kulahtaa in $tietue.jatko) then
+    choose $i in muistaa ($tietue, tA($tietue), dA($tietue), "t", "d");
+    result $i.alku, $i - alku;
 
   elseif (loistaa in $tietue.jatko) then
     choose $i in muistaa_muistella ($tietue, A($tietue), A($tietue), "", "")
