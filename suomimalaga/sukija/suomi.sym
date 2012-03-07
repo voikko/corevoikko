@@ -189,6 +189,7 @@ luokka;
   kestämän_tekijäpääte_m1;     # Monikon ensimmäinen, toinen ja kolmas tekijä.
   kestämän_tekijäpääte_m2;
   kestämän_tekijäpääte_m3;
+  kestämän_tekijäpääte_heikko;
 
   kertoman_tekijäpääte_y1;
   kertoman_tekijäpääte_y2;
@@ -243,6 +244,7 @@ tapaluokka;
   nimitapa_3_ttA;
   nimitapa_4;
   nimitapa_5;
+  nimitapa_45;
   laatutapa_1;
   laatutapa_1_vA;   # punoa => punova => punovampi
   laatutapa_1_vE;   # myydä => myyvä  => myyvempi
