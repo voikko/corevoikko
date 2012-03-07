@@ -140,6 +140,7 @@
 [perusmuoto: "kiva", alku: "kivoimm", luokka: laatusana, jatko: <vajanto_ittA>, äs: a];
 [perusmuoto: "kiva", alku: "kivoimp", luokka: laatusana, jatko: <seuranto_ine>, äs: a];
 
+[perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kestämän_tekijäpääte_heikko, kestämän_tekijäpääte_y3, nimitapa_3, nimitapa_45, ehtotapa, johdin_mA>, äs: a];
 
 # Kuulla, nähdä, tietää {{{1
 #

@@ -679,6 +679,13 @@ taloton
 siisteys
 !synkronoitynyt
 synkronoitunut
+kutian
+kutiat
+kutiaa
+kutiaminen
+kutiaisin
+kutiamaan
+kutiamaton
 
 # = taivutusluokat =
 []

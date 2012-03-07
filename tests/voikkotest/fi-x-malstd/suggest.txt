@@ -48,6 +48,7 @@ lemo	emo	Lemi
 laata	lasta	laatta
 varoittova	varoittava
 pelassa	pelossa
+koittakaa	koettakaa
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
