@@ -118,6 +118,7 @@ Esteri
 estymä
 etelävaltalainen
 etruskilainen
+fenyyliketonuria
 Fidži
 freudilainen
 fryygialainen
@@ -175,6 +176,7 @@ herätys
 hienorakenteinen
 hieroutuma
 hiertymä
+Hilkka
 hindulainen
 hinta-laatusuhde
 Hirvensalmi
@@ -347,7 +349,9 @@ kesyrotta
 Keto
 kevyenliikenteenväylä
 kevytjukurtti
+kevytmakkara
 kevytmetalli
+kevyttuote
 Kielo
 kierosilmä
 kieroutuma
@@ -373,6 +377,7 @@ Kiviharju
 Kivijärvi
 Kivinen
 Kiviniemi
+klooripromatsiini
 Knuutinpoika
 koaksiaalikaapeli
 kohoama
@@ -477,8 +482,12 @@ laajentuma
 laakafilmi
 laakalyönti
 laakamato
+laakanauha
+laakaovi
 laakapaino
+laakapallo
 laakapihti
+laakatuli
 Laakso
 Lahja
 lahkolainen
@@ -492,6 +501,7 @@ Laine
 laiskanpulskea
 langoitus
 Lapinjärvi
+lapinharakka
 lapinkirvinen
 lapinuunilintu
 Lappeenranta
@@ -706,6 +716,7 @@ paleltuma
 paljastajainen
 palkkalainen
 Palmu
+pannukarkea
 partiolainen
 patoutuma
 Paula
@@ -953,7 +964,11 @@ tasavaltalainen
 tataarilainen
 teatterilainen
 tehtaalainen
+tekohurskas
+tekohurskaus
 tekopyhä
+tekosiveys
+tekosiveä
 teloitus
 teollinen
 teollisuus
@@ -1098,6 +1113,7 @@ viehätys
 Vieno
 vietellä
 Vietnam
+viha-rakkaussuhde
 viipymä
 Viita
 Viitasaari

@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2012 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -775,7 +775,6 @@
 [perusmuoto: "senvuoksi", alku: "senvuoksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "hydroksi", alku: "hydroksi", luokka: etuliite, jatko: @eln, äs: aä];
 [perusmuoto: "permi", alku: "perm", luokka: nimisana, jatko: <risti>, äs: ä];
-[perusmuoto: "kantikas", alku: "kantik", luokka: laatusana, jatko: <varas>, äs: a];
 [perusmuoto: "saarekas", alku: "saarek", luokka: laatusana, jatko: <varas>, äs: a];
 [perusmuoto: "karabinieeri", alku: "karabinieer", luokka: nimisana, jatko: <risti>, äs: aä];
 
@@ -1129,12 +1128,18 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "ruiskaus", alku: "ruiskau", luokka: nimisana, jatko: <vastaus>, äs: a];
 [perusmuoto: "Dolores", alku: "Dolore", luokka: etunimi, jatko: <vastaus>, äs: a];
 [perusmuoto: "Fiona", alku: "Fion", luokka: etunimi, jatko: <apaja>, äs: a];
-[perusmuoto: "reuhto", alku: "reuh", luokka: teonsana, jatko: <tahtoa>, äs: a];
+[perusmuoto: "reuhtoa", alku: "reuh", luokka: teonsana, jatko: <tahtoa>, äs: a];
 [perusmuoto: "jyystää", alku: "jyyst", luokka: teonsana, jatko: <loistaa>, äs: ä];
 [perusmuoto: "Katla", alku: "Katl", luokka: nimi, jatko: <kala>, äs: a];
 [perusmuoto: "Gloria", alku: "Glori", luokka: etunimi, jatko: <apila>, äs: a];
 [perusmuoto: "Katajala", alku: "Katajal", luokka: sukunimi, jatko: <apila>, äs: a];
 [perusmuoto: "pidättäytyä", alku: "pidättäy", luokka: teonsana, jatko: <antautua>, äs: ä];
+[perusmuoto: "etanafooni", alku: "etanafoon", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "homofooni", alku: "homofoon", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "Cthulhu", alku: "Cthulhu", luokka: nimi, jatko: <valo>, äs: a];
+[perusmuoto: "suonikohjuinen", alku: "suonikohjui", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "bonsai", alku: "bonsa", luokka: nimisana, jatko: <pii>, äs: a];
+[perusmuoto: "Pete", alku: "Pete", luokka: etunimi, jatko: <valo>, äs: ä];
 
 ##[perusmuoto: "soinnillinen", alku: "soinnilli", luokka: laatusana, jatko: <nainen>, äs: a];
 #[perusmuoto: "biologisoida", alku: "biologiso", luokka: teonsana, jatko: <voida>, äs: a];
@@ -1177,10 +1182,10 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "parikymmentä", alku: "pariakymmen",    luokka: nimisana, luku: yksikkö, jatko: <osanto_tA>, äs: ä, rakenne: "=ppppp=pppppppp"];
 [perusmuoto: "parikymmentä", alku: "parinakymmene",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: ä, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "parikymmentä", alku: "pariksikymmene", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: ä, rakenne: "=ppppppp=pppppppp"];
-[perusmuoto: "parikymmentä", alku: "parissakymmenessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "parissakymmenessä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
 [perusmuoto: "parikymmentä", alku: "paristakymmenestä", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
 [perusmuoto: "parikymmentä", alku: "pariinkymmene",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: ä, rakenne: "=pppppp=pppppppp"];
-[perusmuoto: "parikymmentä", alku: "parillakymmenellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol,      äs: ä, rakenne: "=ppppppp=ppppppppppp"];
+[perusmuoto: "parikymmentä", alku: "parillakymmenellä", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
 [perusmuoto: "parikymmentä", alku: "pariltakymmeneltä", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
 [perusmuoto: "parikymmentä", alku: "parillekymmenelle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=ppppppppppp"];
 [perusmuoto: "parikymmentä", alku: "parittakymmene", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: ä, rakenne: "=ppppppp=pppppppp"];
@@ -1201,6 +1206,21 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "parikymmentä", alku: "parittakymmenittä", luokka: nimisana, luku: monikko, sijamuoto: vajanto, jatko: @sijan_jatko_ol, äs: ä, rakenne: "=ppppppp=pppppppppppp"];
 [perusmuoto: "parikymmentä", alku: "parinekymmen",   luokka: nimisana, luku: monikko, jatko: <seuranto_ine>, äs: ä, rakenne: "=pppppp=pppppppp"];
 [perusmuoto: "parikymmentä", alku: "parinkymmenin", luokka: nimisana, luku: monikko, sijamuoto: keinonto, jatko: @sijan_jatko, äs: ä, rakenne: "=ppppp=pppppppppp"];
+
+
+[perusmuoto: "parisataa", alku: "parisataa",   luokka: nimisana, luku: yksikkö, jatko: @sana1 + <liitesana, omistusliite, loppu>, äs: a, rakenne: "=pppp=ppppp"];
+[perusmuoto: "parisataa", alku: "parinsada",   luokka: nimisana, luku: yksikkö, jatko: <omistusliite>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "parisataa", alku: "parinsada",   luokka: nimisana, luku: yksikkö, jatko: <omanto_n>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "parisataa", alku: "pariasata",    luokka: nimisana, luku: yksikkö, jatko: <osanto_A>, äs: a, rakenne: "=ppppp=ppppp"];
+[perusmuoto: "parisataa", alku: "parinasata",  luokka: nimisana, luku: yksikkö, jatko: <olento_nA>, äs: a, rakenne: "=pppppp=ppppp"];
+[perusmuoto: "parisataa", alku: "pariksisada", luokka: nimisana, luku: yksikkö, jatko: <tulento_ksi>, äs: a, rakenne: "=ppppppp=ppppp"];
+[perusmuoto: "parisataa", alku: "parissasadassa", luokka: nimisana, luku: yksikkö, sijamuoto: sisäolento, jatko: @sijan_jatko_ol,  äs: a, rakenne: "=ppppppp=ppppppp"];
+[perusmuoto: "parisataa", alku: "paristasadasta", luokka: nimisana, luku: yksikkö, sijamuoto: sisäeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parisataa", alku: "pariinsata",  luokka: nimisana, luku: yksikkö, jatko: <sisätulento_Vn>, äs: a, rakenne: "=pppppp=pppppp"];
+[perusmuoto: "parisataa", alku: "parillasadalla", luokka: nimisana, luku: yksikkö, sijamuoto: ulko_olento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parisataa", alku: "pariltasadalta", luokka: nimisana, luku: yksikkö, sijamuoto: ulkoeronto, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parisataa", alku: "parillesadalle", luokka: nimisana, luku: yksikkö, sijamuoto: ulkotulento, jatko: @sijan_jatko_ol, äs: a, rakenne: "=ppppppp=pppppppp"];
+[perusmuoto: "parisataa", alku: "parittasada", luokka: nimisana, luku: yksikkö, jatko: <vajanto_ttA>, äs: a, rakenne: "=ppppppp=ppppp"];
 
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
