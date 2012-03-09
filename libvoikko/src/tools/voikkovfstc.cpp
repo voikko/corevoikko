@@ -49,6 +49,40 @@ struct AttState {
 	vector<uint32_t> targetStateOrds;
 };
 
+static uint16_t swap(uint16_t x) {
+	return (x>>8) | (x<<8);
+}
+
+static uint16_t swapIf(bool doSwap, uint16_t x) {
+	return doSwap ? swap(x) : x;
+}
+
+static void write16(ofstream & out, bool doSwap, uint16_t x) {
+	uint16_t y = swapIf(doSwap, x);
+	out.write((char *) &y, sizeof(uint16_t));
+}
+
+static uint32_t swap(uint32_t x) {
+	return  (x>>24) | 
+		((x<<8) & 0x00FF0000) |
+		((x>>8) & 0x0000FF00) |
+		(x<<24);
+}
+
+static uint32_t swapIf(bool doSwap, uint32_t x) {
+	return doSwap ? swap(x) : x;
+}
+
+static void write32(ofstream & out, bool doSwap, uint32_t x) {
+	uint32_t y = swapIf(doSwap, x);
+	out.write((char *) &y, sizeof(uint32_t));
+}
+
+static bool isLittleEndian() {
+	uint16_t i = 1;
+	return *((char *) &i) != 0;
+}
+
 static void ensureSymbolInMap(string & symStr, vector<Symbol> & symVector, map<string, Symbol> & symMap) {
 	if (symMap.find(symStr) == symMap.end()) {
 		Symbol s;
@@ -98,10 +132,42 @@ struct compareSymbolsForLookupOrder {
 	}
 };
 
-int main() {
+int main(int argc, char ** argv) {
 	assert(sizeof(transinfo_t) == 4);
 	assert(sizeof(Transition) == 8);
 	assert(sizeof(OverflowCell) == 8);
+
+	string outputFile;
+	string format = "le";
+	for (int i = 1; i < argc; i++) {
+		string args(argv[i]);
+		if (args == "-o" && i + 1 < argc) {
+			outputFile = string(argv[++i]);
+		}
+		else if (args == "-f" && i + 1 < argc) {
+			format = string(argv[++i]);
+		}
+	}
+
+	if (outputFile.empty()) {
+		cerr << "ERROR: output file needs to be specified" << endl;
+		exit(1);
+	}
+
+	bool byteSwap;
+	if (format == "le") {
+		byteSwap = !isLittleEndian();
+	}
+	else if (format == "be") {
+		byteSwap = isLittleEndian();
+	}
+	else if (format == "native") {
+		byteSwap = false;
+	}
+	else {
+		cerr << "ERROR: output format must be one of 'le', 'be' or 'native'" << endl;
+		exit(1);
+	}
 	
 	vector<Symbol> symVector;
 	vector<AttState> attStateVector;
@@ -210,7 +276,7 @@ int main() {
 	
 	// Write symbols
 	uint16_t symbolCount = symVector.size();
-	transducerFile.write((char *)&symbolCount, sizeof(uint16_t));
+	write16(transducerFile, byteSwap, symbolCount);
 	for (vector<Symbol>::iterator it = symVector.begin(); it < symVector.end(); it++) {
 		string symName = it->text;
 		transducerFile.write(symName.c_str(), symName.length());
