@@ -69,13 +69,31 @@ static uint32_t swap(uint32_t x) {
 		(x<<24);
 }
 
-static uint32_t swapIf(bool doSwap, uint32_t x) {
-	return doSwap ? swap(x) : x;
+static void writeTrans(ofstream & out, bool doSwap, Transition & t) {
+	if (doSwap) {
+		Transition tSwapped;
+		tSwapped.symIn = swap(t.symIn);
+		tSwapped.symOut = swap(t.symOut);
+		uint32_t ts = t.transInfo.targetState;
+		tSwapped.transInfo.targetState = ((ts<<16) & 0x00FF0000) | (ts & 0x0000FF00) | ((ts>>16) & 0x000000FF);
+		tSwapped.transInfo.moreTransitions = t.transInfo.moreTransitions;
+		out.write((char *) &tSwapped, sizeof(Transition));
+	}
+	else {
+		out.write((char *) &t, sizeof(Transition));
+	}
 }
 
-static void write32(ofstream & out, bool doSwap, uint32_t x) {
-	uint32_t y = swapIf(doSwap, x);
-	out.write((char *) &y, sizeof(uint32_t));
+static void writeOverflow(ofstream & out, bool doSwap, OverflowCell & oc) {
+	if (doSwap) {
+		OverflowCell ocSwapped;
+		ocSwapped.moreTransitions = swap(oc.moreTransitions);
+		ocSwapped.padding = 0;
+		out.write((char *) &ocSwapped, sizeof(OverflowCell));
+	}
+	else {
+		out.write((char *) &oc, sizeof(OverflowCell));
+	}
 }
 
 static bool isLittleEndian() {
@@ -263,7 +281,7 @@ int main(int argc, char ** argv) {
 	// TODO check that currentOffset is not too large
 	cerr << "Overflow cells: " << overflowCells << endl;
 	
-	ofstream transducerFile("transducer.vfst", ios::out | ios::binary);
+	ofstream transducerFile(outputFile.c_str(), ios::out | ios::binary);
 	
 	// Write header
 	// Following two 4 byte integers can be used to determine the file type and byte order
@@ -298,19 +316,19 @@ int main(int argc, char ** argv) {
 			Transition & t = it->transitions[0];
 			t.transInfo.targetState = stateOrdinalToOffset[it->targetStateOrds[0]];
 			t.transInfo.moreTransitions = (tCount > 255 ? 255 : tCount - 1);
-			transducerFile.write((char *)&t, sizeof(Transition));
+			writeTrans(transducerFile, byteSwap, t);
 		}
 		if (tCount > 255) {
 			OverflowCell oc;
 			oc.moreTransitions = tCount - 1;
 			oc.padding = 0;
-			transducerFile.write((char *)&oc, sizeof(OverflowCell));
+			writeOverflow(transducerFile, byteSwap, oc);
 		}
 		for (uint32_t ti = 1; ti < tCount; ti++) {
 			Transition & t = it->transitions[ti];
 			t.transInfo.targetState = stateOrdinalToOffset[it->targetStateOrds[ti]];
 			t.transInfo.moreTransitions = 0;
-			transducerFile.write((char *)&t, sizeof(Transition));
+			writeTrans(transducerFile, byteSwap, t);
 		}
 	}
 	
