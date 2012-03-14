@@ -249,6 +249,9 @@
 [perusmuoto: "tois", alku: "tois", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "toivio", alku: "toivio", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "totaali", alku: "totaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
+[perusmuoto: "tummanpuna", alku: "tummanpuna", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "tummanpurppura", alku: "tummanpurppura", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "tummansini", alku: "tummansini", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "tämän-", alku: "tämän-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>, rakenne: "=ppppp-"];
 [perusmuoto: "täsmä", alku: "täsmä", luokka: etuliite, jatko: @eln + @ell, äs: aä]; 
 [perusmuoto: "täys", alku: "täys", luokka: etuliite, jatko: @eln + @ell, äs: aä];
@@ -265,6 +268,9 @@
 [perusmuoto: "uus", alku: "uus", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_ysj>];
 [perusmuoto: "uusio", alku: "uusio", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "vaivais", alku: "vaivais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "vaaleanpuna", alku: "vaaleanpuna", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "vaaleanpurppura", alku: "vaaleanpurppura", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
+[perusmuoto: "vaaleansini", alku: "vaaleansini", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "valko", alku: "valko", luokka: etuliite, jatko: @eln + @ell, äs: aä];
 [perusmuoto: "vammais", alku: "vammais", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "vapaa", alku: "vapaa", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
