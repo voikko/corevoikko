@@ -680,7 +680,7 @@ combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
   result $res, accept;
   result $res, rules
          nimisana, erisnimi, nimisana_laatusanasta,
-         etuliite, nimisana_teonsanasta;
+         etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana;
 end;
 
 combi_rule yhdysmerkki_teonsanan_jälkeen ($vasen, $oikea, $sana):

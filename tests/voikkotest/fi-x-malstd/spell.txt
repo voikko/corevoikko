@@ -222,6 +222,7 @@ Coca-Cola
 !Coca-cola
 !juosseisuus
 !purreisuus
+Venäjä-myönteinen
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä
