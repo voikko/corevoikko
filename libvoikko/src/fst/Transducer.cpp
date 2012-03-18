@@ -131,6 +131,13 @@ namespace libvoikko { namespace fst {
 		return (x>>8) | (x<<8);
 	}
 	
+	static uint32_t swap(uint32_t x) {
+		return  (x>>24) | 
+			((x<<8) & 0x00FF0000) |
+			((x>>8) & 0x0000FF00) |
+			(x<<24);
+	}
+	
 	static void byteSwapTransducer(void *& mapPtr, size_t fileLength) {
 		char * newMap = new char[fileLength];
 		// skip header
@@ -149,7 +156,37 @@ namespace libvoikko { namespace fst {
 			newMapPtr += symLength;
 		}
 		
-		// TODO
+		{
+			size_t padding = sizeof(Transition) - (newMapPtr - newMap) % sizeof(Transition);
+			if (padding < sizeof(Transition)) {
+				// skip padding - transition table starts at next 8 byte boundary
+				oldMapPtr += padding;
+				memset(newMapPtr, 0, padding);
+				newMapPtr += padding;
+			}
+		}
+		
+		bool nextIsOverflow = false;
+		while (newMap + fileLength > newMapPtr) {
+			if (nextIsOverflow) {
+				OverflowCell oc = *reinterpret_cast<OverflowCell *>(oldMapPtr);
+				oc.moreTransitions = swap(oc.moreTransitions);
+				memcpy(newMapPtr, &oc, sizeof(OverflowCell));
+				nextIsOverflow = false;
+			}
+			else {
+				Transition t = *reinterpret_cast<Transition *>(oldMapPtr);
+				t.symIn = swap(t.symIn);
+				t.symOut = swap(t.symOut);
+				uint32_t ts = t.transInfo.targetState;
+				t.transInfo.targetState = ((ts<<16) & 0x00FF0000) | (ts & 0x0000FF00) | ((ts>>16) & 0x000000FF);
+				nextIsOverflow = (t.transInfo.moreTransitions == 0xFF);
+				memcpy(newMapPtr, &t, sizeof(Transition));
+			}
+			oldMapPtr += sizeof(Transition);
+			newMapPtr += sizeof(Transition);
+		}
+		
 		munmap(mapPtr, fileLength);
 		mapPtr = newMap;
 	}
