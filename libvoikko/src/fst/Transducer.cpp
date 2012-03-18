@@ -139,13 +139,14 @@ namespace libvoikko { namespace fst {
 	}
 	
 	static void byteSwapTransducer(void *& mapPtr, size_t fileLength) {
+		DEBUG("Byte-swapping the transducer");
 		char * newMap = new char[fileLength];
 		// skip header
 		char * oldMapPtr = static_cast<char *>(mapPtr) + 16;
 		char * newMapPtr = newMap + 16;
 		
 		uint16_t symbolCount = swap(*reinterpret_cast<uint16_t *>(oldMapPtr));
-		memcpy(newMapPtr, oldMapPtr, sizeof(uint16_t));
+		memcpy(newMapPtr, &symbolCount, sizeof(uint16_t));
 		oldMapPtr += sizeof(uint16_t);
 		newMapPtr += sizeof(uint16_t);
 		
@@ -221,6 +222,7 @@ namespace libvoikko { namespace fst {
 		values[""] = FlagValueNeutral;
 		values["@"] = FlagValueAny;
 		symbolToDiacritic.push_back(OpFeatureValue()); // epsilon
+		DEBUG("Reading " << symbolCount << " symbols to symbol table");
 		for (uint16_t i = 0; i < symbolCount; i++) {
 			string symbol(filePtr);
 			/* TODO this does not work yet
