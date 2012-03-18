@@ -127,6 +127,33 @@ namespace libvoikko { namespace fst {
 		throw "Unknown byte order or file type";
 	}
 	
+	static uint16_t swap(uint16_t x) {
+		return (x>>8) | (x<<8);
+	}
+	
+	static void byteSwapTransducer(void *& mapPtr, size_t fileLength) {
+		char * newMap = new char[fileLength];
+		// skip header
+		char * oldMapPtr = static_cast<char *>(mapPtr) + 16;
+		char * newMapPtr = newMap + 16;
+		
+		uint16_t symbolCount = swap(*reinterpret_cast<uint16_t *>(oldMapPtr));
+		memcpy(newMapPtr, oldMapPtr, sizeof(uint16_t));
+		oldMapPtr += sizeof(uint16_t);
+		newMapPtr += sizeof(uint16_t);
+		
+		for (uint16_t i = 0; i < symbolCount; i++) {
+			size_t symLength = strlen(oldMapPtr) + 1;
+			memcpy(newMapPtr, oldMapPtr, symLength);
+			oldMapPtr += symLength;
+			newMapPtr += symLength;
+		}
+		
+		// TODO
+		munmap(mapPtr, fileLength);
+		mapPtr = newMap;
+	}
+	
 	Transducer::Transducer(const char * filePath) {
 		int fd = open(filePath, O_RDONLY);
 		if (fd == -1) {
@@ -139,9 +166,12 @@ namespace libvoikko { namespace fst {
 		fileLength = st.st_size;
 		
 		map = mmap(0, fileLength, PROT_READ, MAP_SHARED, fd, 0);
-		
+		byteSwapped = checkNeedForByteSwapping(static_cast<char *>(map));
+		if (byteSwapped) {
+			byteSwapTransducer(map, fileLength);
+		}
 		char * filePtr = static_cast<char *>(map);
-		byteSwapped = checkNeedForByteSwapping(filePtr);
+		
 		filePtr += 16; // skip header
 		uint16_t symbolCount;
 		memcpy(&symbolCount, filePtr, sizeof(uint16_t));
@@ -351,6 +381,11 @@ namespace libvoikko { namespace fst {
 	}
 	
 	void Transducer::terminate() {
-		munmap(map, fileLength);
+		if (byteSwapped) {
+			delete[] (char *) map;
+		}
+		else {
+			munmap(map, fileLength);
+		}
 	}
 } }
