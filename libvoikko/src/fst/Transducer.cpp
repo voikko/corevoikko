@@ -26,14 +26,18 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#include "porting.h"
 #include "fst/Transducer.hpp"
 #include "fst/Configuration.hpp"
 #include "utf8/utf8.hpp"
 #include <sys/types.h>
+#include <cstring>
+
+#ifdef HAVE_GETPWUID_R
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/mman.h>
-#include <cstring>
+#endif
 
 #if 0
 #include <iostream>
@@ -106,6 +110,35 @@ namespace libvoikko { namespace fst {
 			}
 		}
 		return operation;
+	}
+	
+	static void * vfstMmap(const char * filePath, size_t & fileLength) {
+		#ifdef HAVE_GETPWUID_R
+			int fd = open(filePath, O_RDONLY);
+			if (fd == -1) {
+				return 0;
+			}
+			
+			struct stat st;
+			fstat(fd, &st);
+			fileLength = st.st_size;
+			
+			void * map = mmap(0, fileLength, PROT_READ, MAP_SHARED, fd, 0);
+			close(fd);
+			return map;
+		#endif
+		#ifdef WIN32
+			// TODO
+		#endif
+	}
+	
+	static void vfstMunmap(void * map, size_t fileLength) {
+		#ifdef HAVE_GETPWUID_R
+			munmap(map, fileLength);
+		#endif
+		#ifdef WIN32
+			// TODO
+		#endif
 	}
 	
 	static bool checkNeedForByteSwapping(const char * filePtr) {
@@ -193,17 +226,11 @@ namespace libvoikko { namespace fst {
 	}
 	
 	Transducer::Transducer(const char * filePath) {
-		int fd = open(filePath, O_RDONLY);
-		if (fd == -1) {
+		map = vfstMmap(filePath, fileLength);
+		if (!map) {
 			// TODO
 			throw "File could not be read";
 		}
-		
-		struct stat st;
-		fstat(fd, &st);
-		fileLength = st.st_size;
-		
-		map = mmap(0, fileLength, PROT_READ, MAP_SHARED, fd, 0);
 		byteSwapped = checkNeedForByteSwapping(static_cast<char *>(map));
 		if (byteSwapped) {
 			byteSwapTransducer(map, fileLength);
@@ -424,7 +451,7 @@ namespace libvoikko { namespace fst {
 			delete[] (char *) map;
 		}
 		else {
-			munmap(map, fileLength);
+			vfstMunmap(map, fileLength);
 		}
 	}
 } }
