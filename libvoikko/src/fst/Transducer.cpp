@@ -39,6 +39,10 @@
 #include <sys/mman.h>
 #endif
 
+#ifdef WIN32
+#include <windows.h>
+#endif
+
 #if 0
 #include <iostream>
 #define DEBUG(x) cerr << x << endl;
@@ -128,7 +132,15 @@ namespace libvoikko { namespace fst {
 			return map;
 		#endif
 		#ifdef WIN32
-			// TODO
+			HANDLE fileHandle = CreateFile(filePath, GENERIC_READ, FILE_SHARE_READ,
+			                    0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+			HANDLE mapHandle = CreateFileMapping(fileHandle, 0, PAGE_READONLY,
+			                   0, 0, 0);
+			void * map = MapViewOfFile(mapHandle, FILE_MAP_READ, 0, 0, 0);
+			fileLength = GetFileSize(fileHandle, 0);
+			CloseHandle(mapHandle);
+			CloseHandle(fileHandle);
+			return map;
 		#endif
 	}
 	
@@ -137,7 +149,8 @@ namespace libvoikko { namespace fst {
 			munmap(map, fileLength);
 		#endif
 		#ifdef WIN32
-			// TODO
+			(void)(fileLength);
+			UnmapViewOfFile(map);
 		#endif
 	}
 	
@@ -221,7 +234,7 @@ namespace libvoikko { namespace fst {
 			newMapPtr += sizeof(Transition);
 		}
 		
-		munmap(mapPtr, fileLength);
+		vfstMunmap(mapPtr, fileLength);
 		mapPtr = newMap;
 	}
 	
