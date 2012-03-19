@@ -41,7 +41,6 @@ typedef signed short short_t; /* Signed 16 bits. */
 typedef unsigned short u_short_t; /* Unsigned 16 bits. */
 typedef signed int int_t; /* Signed 32 bits. */
 typedef unsigned int u_int_t; /* Unsigned 32 bits. */
-typedef unsigned long ptr_t; /* Pointer in arithmetic expressions. */
 
 /* Character types. */
 typedef char char_t; /* A single char. */
