@@ -60,7 +60,8 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(Analyzer * morAnalyzer,
 			return;
 		case SPELL_OK:
 			newsugg = new wchar_t[wlen + 1];
-			wcscpy(newsugg, word);
+			wcsncpy(newsugg, word, wlen);
+			newsugg[wlen] = L'\0';
 			s->addSuggestion(newsugg, prio);
 			return;
 		case SPELL_CAP_FIRST:

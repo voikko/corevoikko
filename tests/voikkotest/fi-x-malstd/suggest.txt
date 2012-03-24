@@ -51,6 +51,7 @@ pelassa	pelossa
 koittakaa	koettakaa
 touhoilut	touhuilut
 arvontisävero	arvonlisävero
+latotatanssit	latotanssit
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
@@ -60,6 +61,7 @@ Män_sälä	Mäntsälä
 horrelioosi	borrelioosi
 baapa	haapa
 h0usut	housut
+se_atavarakaup_ias	sekatavarakauppias
 
 # setIgnoreNumbers must not affect spelling suggestions, it is only for spell checking.
 [voikko.setSuggestionStrategy(SuggestionStrategy.OCR) voikko.setIgnoreNumbers(True)]

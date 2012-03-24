@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2009 - 2011
+ * Portions created by the Initial Developer are Copyright (C) 2009 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -37,6 +37,7 @@
 #include "spellchecker/suggestion/SuggestionGeneratorSplitWord.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorSwap.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorVowelChange.hpp"
+#include "spellchecker/suggestion/SuggestionGeneratorDeleteTwo.hpp"
 
 using namespace std;
 
@@ -128,6 +129,8 @@ SuggestionStrategyTyping::SuggestionStrategyTyping(morphology::Analyzer * morAna
 		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_3, morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorReplaceTwo(REPLACEMENTS_4, morAnalyzer));
+	generators.push_back(
+		new SuggestionGeneratorDeleteTwo(morAnalyzer));
 	generators.push_back(
 		new SuggestionGeneratorReplacement(REPLACEMENTS_5, morAnalyzer));
 }

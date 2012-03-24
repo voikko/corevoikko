@@ -18,6 +18,7 @@ libvoikko_la_SOURCES = \
     spellchecker/suggestion/SuggestionGeneratorFactory.cpp \
     spellchecker/suggestion/SuggestionGeneratorCaseChange.cpp \
     spellchecker/suggestion/SuggestionGeneratorDeletion.cpp \
+    spellchecker/suggestion/SuggestionGeneratorDeleteTwo.cpp \
     spellchecker/suggestion/SuggestionGeneratorInsertion.cpp \
     spellchecker/suggestion/SuggestionGeneratorInsertSpecial.cpp \
     spellchecker/suggestion/SuggestionGeneratorMultiReplacement.cpp \
@@ -120,6 +121,7 @@ noinst_HEADERS = \
     spellchecker/suggestion/SuggestionGeneratorFactory.hpp \
     spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp \
     spellchecker/suggestion/SuggestionGeneratorDeletion.hpp \
+    spellchecker/suggestion/SuggestionGeneratorDeleteTwo.hpp \
     spellchecker/suggestion/SuggestionGeneratorInsertion.hpp \
     spellchecker/suggestion/SuggestionGeneratorInsertSpecial.hpp \
     spellchecker/suggestion/SuggestionGeneratorMultiReplacement.hpp \
