@@ -3,7 +3,7 @@
 (defsystem :voikko
   :description "Interface for Voikko library (libvoikko)"
   :author "Teemu Likonen <tlikonen@iki.fi>"
-  :licence "The GNU General Public License version 2"
+  :licence "MPL 1.1 or GPL 2+ or LGPL 2.1+"
   :depends-on (:cffi)
   :serial t
   :components ((:file "packages")
