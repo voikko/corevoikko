@@ -16,7 +16,7 @@
 
 (in-package #:voikko)
 
-(eval-when (:load-toplevel)
+(eval-when (:load-toplevel :execute)
   (with-simple-restart (skip-libvoikko "Skip loading libvoikko.")
     (load-foreign-library '(:default "libvoikko"))))
 
