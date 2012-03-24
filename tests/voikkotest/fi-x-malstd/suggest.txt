@@ -49,6 +49,8 @@ laata	lasta	laatta
 varoittova	varoittava
 pelassa	pelossa
 koittakaa	koettakaa
+touhoilut	touhuilut
+arvontisävero	arvonlisävero
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
