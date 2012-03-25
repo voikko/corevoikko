@@ -81,7 +81,8 @@ void SuggestionGeneratorCaseChange::suggestForBuffer(Analyzer * morAnalyzer,
 			const wchar_t * structure =
 			    (*analyses->begin())->getValue("STRUCTURE");
 			newsugg = new wchar_t[wlen + 1];
-			wcscpy(newsugg, word);
+			wcsncpy(newsugg, word, wlen);
+			newsugg[wlen] = L'\0';
 			size_t j = 0;
 			for (size_t i = 0; i < wlen; i++) {
 				while (structure[j] == L'=') {

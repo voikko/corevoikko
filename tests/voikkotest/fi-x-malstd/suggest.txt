@@ -52,6 +52,7 @@ koittakaa	koettakaa
 touhoilut	touhuilut
 arvontisävero	arvonlisävero
 latotatanssit	latotanssit
+Alkuperäisesessä	Alkuperäisessä
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
