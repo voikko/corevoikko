@@ -30,6 +30,8 @@
 #include "spellchecker/suggestion/SuggestionGeneratorCaseChange.hpp"
 #include "character/SimpleChar.hpp"
 #include <cwchar>
+#include <set>
+#include <string>
 
 using namespace libvoikko::character;
 
@@ -42,13 +44,18 @@ void SuggestionGeneratorDeleteTwo::generate(SuggestionStatus * s) const {
 	if (s->getWordLength() < 6) {
 		return;
 	}
-	wchar_t * buffer = new wchar_t[s->getWordLength() - 2];
+	const size_t newLength = s->getWordLength() - 2;
+	const wchar_t * word = s->getWord();
+	wchar_t * buffer = new wchar_t[newLength];
+	std::set<std::wstring> attempts;
 	for (size_t i = 0; i < s->getWordLength() - 3 && !s->shouldAbort(); i++) {
-		if (wcsncmp(s->getWord() + i, s->getWord() + (i + 2), 2) == 0) {
-			wcsncpy(buffer, s->getWord(), i);
-			wcsncpy(buffer + i, s->getWord() + (i + 2), s->getWordLength() - (i + 2));
-			SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer, s, buffer,
-			    s->getWordLength() - 2);
+		if (wcsncmp(word + i, word + (i + 2), 2) == 0) {
+			wcsncpy(buffer, word, i);
+			wcsncpy(buffer + i, word + (i + 2), newLength - i);
+			if (attempts.insert(std::wstring(buffer, newLength)).second) {
+				SuggestionGeneratorCaseChange::suggestForBuffer(morAnalyzer, s, buffer,
+				    newLength);
+			}
 		}
 	}
 	delete[] buffer;
