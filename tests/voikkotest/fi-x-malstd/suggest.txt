@@ -55,6 +55,7 @@ latotatanssit	latotanssit
 Alkuperäisesessä	Alkuperäisessä
 masja	marja
 iranalaismies	iranilaismies
+lääkeri	lääkäri
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
