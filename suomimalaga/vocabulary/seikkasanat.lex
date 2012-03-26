@@ -784,6 +784,7 @@
 [perusmuoto: "poikkiteloin", alku: "poikkiteloin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "pois", alku: "pois", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "poissa", alku: "poissa", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
+[perusmuoto: "posteriori", alku: "posteriori", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "posti", alku: "postitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ys_perusosa>];
 [perusmuoto: "puhelin", alku: "puhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "radiopuhelin", alku: "radiopuhelimitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=ppppp=ppppppppppp"];
