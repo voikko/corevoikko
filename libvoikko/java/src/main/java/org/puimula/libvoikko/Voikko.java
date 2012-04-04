@@ -40,9 +40,7 @@ import org.puimula.libvoikko.Libvoikko.VoikkoHandle;
 
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
-import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
-import com.sun.jna.ptr.NativeLongByReference;
 import com.sun.jna.ptr.PointerByReference;
 
 /**
@@ -320,7 +318,7 @@ public class Voikko {
         List<Token> result = new ArrayList<Token>();
         byte[] textBytes = s2n(text);
         int textLen = textBytes.length - 1;
-        NativeLongByReference tokenLenByRef = new NativeLongByReference();
+        SizeTByReference tokenLenByRef = new SizeTByReference();
         while (textLen > 0) {
             int tokenTypeInt = lib.voikkoNextTokenCstr(handle, textBytes, new SizeT(textLen), tokenLenByRef);
             int tokenLen = tokenLenByRef.getValue().intValue();
@@ -349,7 +347,7 @@ public class Voikko {
         }
         byte[] textBytes = s2n(text);
         int textLen = textBytes.length - 1;
-        NativeLongByReference sentenceLenByRef = new NativeLongByReference();
+        SizeTByReference sentenceLenByRef = new SizeTByReference();
         while (textLen > 0) {
             int sentenceTypeInt = lib.voikkoNextSentenceStartCstr(handle, textBytes, new SizeT(textLen), sentenceLenByRef);
             int sentenceLen = sentenceLenByRef.getValue().intValue();
