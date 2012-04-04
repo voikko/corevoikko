@@ -136,7 +136,7 @@ namespace libvoikko
 		public Voikko(String language, String path)
 		{
 			IntPtr error = new IntPtr();
-			handle = Libvoikko.voikkoInit(ref error, ByteArray.s2n(language), ByteArray.s2n(path));
+			handle = Libvoikko.voikkoInit(ref error, ByteArray.s2n(language), ByteArray.s2ansi(path));
 			if (handle == IntPtr.Zero && error != IntPtr.Zero)
 			{
 				throw new VoikkoException(ByteArray.n2s(error));
@@ -192,12 +192,14 @@ namespace libvoikko
 		public static List<VoikkoDictionary> listDicts(string path)
 		{
 			List<VoikkoDictionary> dicts = new List<VoikkoDictionary>();
-			IntPtr cDicts = Libvoikko.voikko_list_dicts(ByteArray.s2n(path));
+			IntPtr cDicts = Libvoikko.voikko_list_dicts(ByteArray.s2ansi(path));
 			unsafe
 			{
 				for (void** cDict = (void**)cDicts; *cDict != (void*)0; cDict++)
 				{
-					dicts.Add(new VoikkoDictionary(ByteArray.n2s(Libvoikko.voikko_dict_language(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_variant(new IntPtr(*cDict))), ByteArray.n2s(Libvoikko.voikko_dict_description(new IntPtr(*cDict)))));
+					dicts.Add(new VoikkoDictionary(ByteArray.n2s(Libvoikko.voikko_dict_language(new IntPtr(*cDict))),
+					                               ByteArray.n2s(Libvoikko.voikko_dict_variant(new IntPtr(*cDict))),
+					                               ByteArray.n2s(Libvoikko.voikko_dict_description(new IntPtr(*cDict)))));
 				}
 			}
 			Libvoikko.voikko_free_dicts(cDicts);

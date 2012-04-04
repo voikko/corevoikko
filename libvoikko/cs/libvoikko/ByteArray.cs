@@ -61,11 +61,21 @@ namespace libvoikko
 		
 		public static byte[] s2n(string str)
 		{
+			return s2encoding(str, Encoding.UTF8);
+		}
+		
+		public static byte[] s2ansi(string str)
+		{
+			return s2encoding(str, Encoding.Default);
+		}
+		
+		private static byte[] s2encoding(string str, Encoding encoding)
+		{
 			if (str == null)
 			{
 				return null;
 			}
-			return Encoding.UTF8.GetBytes(str + '\0');
+			return encoding.GetBytes(str + '\0');
 		}
 	}
 }
