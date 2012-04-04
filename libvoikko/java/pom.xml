@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.puimula</groupId>
   <artifactId>libvoikko</artifactId>
-  <version>3.2</version>
+  <version>3.5</version>
   <name>libvoikko</name>
   <url>http://voikko.sourceforge.net</url>
   <properties>
