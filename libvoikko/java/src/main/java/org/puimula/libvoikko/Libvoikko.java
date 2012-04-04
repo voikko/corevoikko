@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -72,15 +72,15 @@ interface Libvoikko extends Library {
     public abstract void voikkoFreeCstrArray(Pointer array);
     
     public abstract VoikkoGrammarError voikkoNextGrammarErrorCstr(VoikkoHandle handle, byte[] text,
-            NativeLong textLen, NativeLong startPos, int skipErrors);
+            SizeT textLen, SizeT startPos, int skipErrors);
 
     public abstract void voikkoFreeGrammarError(VoikkoGrammarError error);
     
     public abstract int voikkoGetGrammarErrorCode(VoikkoGrammarError error);
     
-    public abstract NativeLong voikkoGetGrammarErrorStartPos(VoikkoGrammarError error);
+    public abstract SizeT voikkoGetGrammarErrorStartPos(VoikkoGrammarError error);
     
-    public abstract NativeLong voikkoGetGrammarErrorLength(VoikkoGrammarError error);
+    public abstract SizeT voikkoGetGrammarErrorLength(VoikkoGrammarError error);
     
     public abstract Pointer voikkoGetGrammarErrorSuggestions(VoikkoGrammarError error);
     
@@ -96,10 +96,10 @@ interface Libvoikko extends Library {
     
     public abstract void voikko_free_mor_analysis_value_cstr(ByteArray analysisValue);
     
-    public abstract int voikkoNextTokenCstr(VoikkoHandle handle, byte[] text, NativeLong textLen,
+    public abstract int voikkoNextTokenCstr(VoikkoHandle handle, byte[] text, SizeT textLen,
             NativeLongByReference tokenLen);
     
-    public abstract int voikkoNextSentenceStartCstr(VoikkoHandle handle, byte[] text, NativeLong textLen,
+    public abstract int voikkoNextSentenceStartCstr(VoikkoHandle handle, byte[] text, SizeT textLen,
             NativeLongByReference sentenceLen);
 
     public abstract ByteArray voikkoHyphenateCstr(VoikkoHandle handle, byte[] word);

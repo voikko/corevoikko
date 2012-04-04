@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010 - 2011
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -223,7 +223,7 @@ public class Voikko {
         int skipErrors = 0;
         while (true) {
             VoikkoGrammarError cError = lib.voikkoNextGrammarErrorCstr(handle,
-                    s2n(paragraph), new NativeLong(paragraphLen), new NativeLong(0), skipErrors);
+                    s2n(paragraph), new SizeT(paragraphLen), new SizeT(0), skipErrors);
             if (cError == null) {
                 return;
             }
@@ -322,7 +322,7 @@ public class Voikko {
         int textLen = textBytes.length - 1;
         NativeLongByReference tokenLenByRef = new NativeLongByReference();
         while (textLen > 0) {
-            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, textBytes, new NativeLong(textLen), tokenLenByRef);
+            int tokenTypeInt = lib.voikkoNextTokenCstr(handle, textBytes, new SizeT(textLen), tokenLenByRef);
             int tokenLen = tokenLenByRef.getValue().intValue();
             TokenType tokenType = TokenType.values()[tokenTypeInt];
             String tokenText = text.substring(0, tokenLen);
@@ -351,7 +351,7 @@ public class Voikko {
         int textLen = textBytes.length - 1;
         NativeLongByReference sentenceLenByRef = new NativeLongByReference();
         while (textLen > 0) {
-            int sentenceTypeInt = lib.voikkoNextSentenceStartCstr(handle, textBytes, new NativeLong(textLen), sentenceLenByRef);
+            int sentenceTypeInt = lib.voikkoNextSentenceStartCstr(handle, textBytes, new SizeT(textLen), sentenceLenByRef);
             int sentenceLen = sentenceLenByRef.getValue().intValue();
             SentenceStartType sentenceType = SentenceStartType.values()[sentenceTypeInt];
             String tokenText = text.substring(0, sentenceLen);
