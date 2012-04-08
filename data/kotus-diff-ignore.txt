@@ -891,6 +891,7 @@ sorry
 sun
 sus
 tattista
+tere
 titityy
 tse
 tuku
@@ -1108,6 +1109,7 @@ rapiat
 rinnatusten
 ryypyksiin
 ryypyksissä
+rääpiäiset # rääppiäiset
 rökkiin
 rökkiinsä
 sassiin
@@ -1315,7 +1317,9 @@ auktorointi # auktoroida
 blandaus # blandata
 blokkaus # blokata
 bulevardisportti # sportti
+bänet # bäne
 deoksiribonukleiinihappo # ribonukleiinihappo
+diploidinen # diploidi
 diureettinen # diureetti
 dokaus # dokata
 dongarit # dongari
@@ -1468,6 +1472,8 @@ pällistelijä # pällistellä
 pällistely # pällistellä
 pälätys # pälättää
 pöpinä # pöpistä
+raikulipoika # raikuli
+raikulityttö # raikuli
 rautavihtrilli # vihtrilli
 reflektorisesti # reflektorinen
 reflektorisuus # reflektorinen
@@ -1481,6 +1487,7 @@ rilluttelu # rillutella
 rintarossi # rossi
 romina # romista
 ryiskely # ryiskellä
+rynttyyt # rynttyy
 räknäys # räknätä
 räppimusiikki # räppi
 sammarit # sammari
@@ -1496,6 +1503,7 @@ silikaattimineraali # silikaatti
 silmäisy # silmäistä
 simmarit # simmari
 sintraus # sintrata
+sisarekset # sisares
 siselöinti # siselöidä
 skimbaus # skimbata
 smirgelöinti # smirgelöidä
@@ -1533,6 +1541,7 @@ tissuttelu # tissuttaa
 titraus # titrata
 torveilu # torveilla
 transponointi # transponoida
+triasetaattikuitu # triasetaatti
 tsekkaus # tsekata
 tuberkuliinikoe # tuberkuliini
 tumpelointi # tumpeloida

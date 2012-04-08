@@ -109,6 +109,7 @@
 [perusmuoto: "stop", alku: "stop", luokka: huudahdussana, jatko: <loppu>, äs: a]; # Saa kuulua oikolukusanastoonkin, koska on yleinen eikä kovin haitallinen
 [perusmuoto: "sus", alku: "sus", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "tattis", alku: "tattis", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "tere", alku: "tere", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "tervetuloa", alku: "tervetuloa", luokka: huudahdussana, jatko: <loppu>, äs: a, rakenne: "=ppppp=ppppp"];
 [perusmuoto: "tse", alku: "tse", luokka: huudahdussana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "tui", alku: "tui", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
