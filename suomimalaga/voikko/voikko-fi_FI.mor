@@ -2163,6 +2163,14 @@ subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
                              paikannimi, nimi, kieltosana, lyhenne,
                              lukusana>) then
       $res :=+ "(p=" + $tietue.perusmuoto + ")";
+    elseif ($tietue.luokka in @johdin_teonsanasta) then
+      $res :=+ "(p=+";
+      if ($tietue.perusmuoto /= nil) then
+        $res :=+ $tietue.perusmuoto;
+      else
+        $res :=+ $tietue.alku;
+      end;
+      $res :=+ ")";
     end;
     if ($tietue.sourceid /= nil) then
       $res :=+ "(s=" + $tietue.sourceid + ")";

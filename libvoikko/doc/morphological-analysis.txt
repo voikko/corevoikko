@@ -239,6 +239,10 @@ are provided only as information for external applications.
    Sana: Alkio-opistossa -> WORDBASES: +alkio(Alkio)+-+opisto(opisto)
                                        +alkio(alkio)+-+opisto(opisto)
 
+  Johdinpäätteiden perusmuodot ovat suluissa siten, että päätteen edessä
+  on +-merkki:
+   Sana: kansalliseepos ->  WORDBASES: +kansa(kansa)+llis(+llinen)+eepos(eepos)
+
  WORDIDS
  =======
   Viittaukset sanan osiin Joukahaisessa. Attribuutti ei ole käytössä

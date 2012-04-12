@@ -83,3 +83,14 @@ word:Pohjois-Suomessa
 word:Uudessa-Seelannissa
  analysis
   BASEFORM=Uusi-Seelanti
+word:nopeustutkassa
+ analysis
+  BASEFORM=nopeustutka
+  WORDBASES=+nope(nopea)+us(+us)+tutka(tutka)
+  WORDIDS=+nope(w509676)+us+tutka(w516202)
+word:kansalliseepos
+ analysis
+  WORDBASES=+kansa(kansa)+llis(+llinen)+eepos(eepos)
+word:ominaisuus
+ analysis
+  WORDBASES=+ominais(ominainen)+uus(+uus)
