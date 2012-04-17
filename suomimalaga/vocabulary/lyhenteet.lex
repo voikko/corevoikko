@@ -242,6 +242,7 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "pj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # puheenjohtaja
 [alku: "varapj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä, rakenne: "=qqqqqq"]; # varapuheenjohtaja
 [alku: "varapj.", luokka: lyhenne, jatko: <loppu>, äs: aä, rakenne: "=qqqqqq"]; # varapuheenjohtaja
+[alku: "pl.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # pois lukien
 [alku: "pnä", luokka: lyhenne, jatko: <loppu>, äs: aä]; # päivänä
 [alku: "po.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # pitää olla; puheena oleva
 [alku: "POP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
