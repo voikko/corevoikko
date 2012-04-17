@@ -2163,7 +2163,7 @@ subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
                              paikannimi, nimi, kieltosana, lyhenne,
                              lukusana>) then
       $res :=+ "(p=" + $tietue.perusmuoto + ")";
-    elseif ($tietue.luokka in @johdin_teonsanasta) then
+    elseif ($tietue.luokka in @johdin_teonsanasta + @johdin_nimisanasta + @johtimet_laatusanasta) then
       $res :=+ "(p=+";
       if ($tietue.perusmuoto /= nil) then
         $res :=+ $tietue.perusmuoto;

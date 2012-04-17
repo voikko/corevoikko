@@ -94,3 +94,9 @@ word:kansalliseepos
 word:ominaisuus
  analysis
   WORDBASES=+ominais(ominainen)+uus(+uus)
+word:juoksijatarkoulu
+ analysis
+  WORDBASES=+juoksi(juoksija)+ja(+ja)+tar(+tar)+koulu(koulu)
+word:kauniinlaisuus
+ analysis
+  WORDBASES=+kaunii(kaunis)+nlais(+nlainen)+uus(+uus)
