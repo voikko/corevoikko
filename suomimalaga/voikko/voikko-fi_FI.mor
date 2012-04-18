@@ -2156,7 +2156,9 @@ subrule debug_sanan_perusmuodon_osa ($tietue, $vain_alku):
     else
       $res :=+ $tietue.perusmuoto;
     end;
-    if ($tietue.perusmuoto /= nil and $tietue.luokka in <nimisana,
+    if ($tietue.lähtösana /= nil) then
+      $res :=+ "(p=" + $tietue.lähtösana + ")";
+    elseif ($tietue.perusmuoto /= nil and $tietue.luokka in <nimisana,
                              seikkasana, laatusana, teonsana,
                              nimi_laatusana, asemosana, suhdesana,
                              huudahdussana, sidesana, etunimi, sukunimi,

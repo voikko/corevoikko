@@ -96,7 +96,10 @@ word:ominaisuus
   WORDBASES=+ominais(ominainen)+uus(+uus)
 word:juoksijatarkoulu
  analysis
-  WORDBASES=+juoksi(juoksija)+ja(+ja)+tar(+tar)+koulu(koulu)
+  WORDBASES=+juoksi(juosta)+ja(+ja)+tar(+tar)+koulu(koulu)
 word:kauniinlaisuus
  analysis
   WORDBASES=+kaunii(kaunis)+nlais(+nlainen)+uus(+uus)
+word:tuuppaajalla
+ analysis
+  WORDBASES=+tuuppaa(tuupata)+ja(+ja)
