@@ -3925,7 +3925,7 @@ end;
 
 subrule käskytapa ($tietue, $heikko_aste):
   return <taivutus ($tietue, $heikko_aste,
-                    <liitesana, liitesana_s, loppu>,
+                    <liitesana, loppu>,
                     [tapaluokka: käskytapa, aikamuoto: kestämä,
                     tekijä: tekijä_2, luku: yksikkö])>;
 end;
