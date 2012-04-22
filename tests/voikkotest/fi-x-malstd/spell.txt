@@ -162,6 +162,7 @@ salamoi
 !salamoitte
 salamoivat
 !salamoidaan
+!salamoija
 
 # = erisnimet =
 []

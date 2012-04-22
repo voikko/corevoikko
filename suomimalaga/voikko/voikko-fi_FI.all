@@ -3949,6 +3949,10 @@ subrule tekijä ($tietue, $lisä, $taivutus):
   $tietue.luokka := nimisana;
   $tietue.perusmuoto := $tietue.alku + "j" + A($tietue);
 
+  if ($tietue.tiedot /= nil and ym3 in $tietue.tiedot) then
+    return <>;
+  end;
+
   if ($taivutus = kulkija) then
     return <taivutus ($tietue, "", <johdin_jA_kulkija>, [])>;
   elseif ($taivutus = myyjä) then
