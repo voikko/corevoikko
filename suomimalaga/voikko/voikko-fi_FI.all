@@ -3924,6 +3924,9 @@ end;
 
 
 subrule käskytapa ($tietue, $heikko_aste):
+  if ($tietue.tiedot /= nil and ym3 in $tietue.tiedot) then
+    return <>;
+  end;
   return <taivutus ($tietue, $heikko_aste,
                     <liitesana, loppu>,
                     [tapaluokka: käskytapa, aikamuoto: kestämä,
