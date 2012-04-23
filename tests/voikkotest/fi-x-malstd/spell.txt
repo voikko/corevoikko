@@ -163,6 +163,7 @@ salamoi
 salamoivat
 !salamoidaan
 !salamoija
+sada
 
 # = erisnimet =
 []

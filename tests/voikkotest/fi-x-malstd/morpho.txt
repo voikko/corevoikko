@@ -424,5 +424,3 @@ word:jotta
  expected:1
  analysis
  CLASS=sidesana
-word:salamoi
- !=imperative
