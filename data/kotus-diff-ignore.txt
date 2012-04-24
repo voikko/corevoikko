@@ -730,6 +730,10 @@ verrokki
 verta
 viidenlainen
 vika
+vinolaudoitus # Kotus 50 (yhdyssana)
+vinopaikoitus # Kotus 50 (yhdyssana)
+vinopysäköinti # Kotus 50 (yhdyssana)
+vinosuuntaus # Kotus 50 (yhdyssana)
 virasto
 viriili
 virtuaalinen
@@ -832,6 +836,7 @@ hep
 herrajesta
 herranjesta
 hi
+hihhei
 hiiop
 hip
 hohhoijaa
@@ -1438,6 +1443,7 @@ palpointi # palpoida
 parabolinen # paraboli
 parafinointi # parafinoida
 patsastelu # patsastella
+peherrys # pehertää
 penkkarit # penkkari
 perinataaliaika # perinataali
 perinataalinen # perinataali
@@ -1464,6 +1470,8 @@ profylaktisesti # profylaktinen
 profylaktisuus # profylaktinen
 propyylialkoholi # propyyli
 prutkutus # prutkuttaa
+pseudoartroosi # artroosi
+pseudokruppi # kruppi
 psykologiointi # psykologioida
 psyykkaus # psyykata
 pupellus # pupeltaa
@@ -1556,7 +1564,10 @@ ufoilu # ufoilla
 ujoilu # ujoilla
 uniapnea # apnea
 valkkaus # valkata
+vaskaus # vaskata
 vasituisesti # vasituinen
+vasoitus # vasoittaa
+vedekkyys # vedekäs
 veikistelijä # veikistellä
 veikistely # veikistellä
 verekkyys # verekäs
