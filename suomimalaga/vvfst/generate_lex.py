@@ -37,7 +37,18 @@ CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
-main_vocabulary = generate_lex_common.open_lex(OPTIONS["destdir"], "joukahainen.lexc")
+
+main_vocabulary = codecs.open(OPTIONS["destdir"] + u"/" + "joukahainen.lexc", 'w', 'UTF-8')
+main_vocabulary.write(u"! This is automatically generated intermediate lexicon file for\n")
+main_vocabulary.write(u"! VVFST morphology. The original source data is\n")
+main_vocabulary.write(u"! distributed under the GNU General Public License, version 2 or\n")
+main_vocabulary.write(u"! later, as published by the Free Software Foundation. You should\n")
+main_vocabulary.write(u"! have received the original data, tools and instructions to\n")
+main_vocabulary.write(u"! generate this file (or instructions to obtain them) wherever\n")
+main_vocabulary.write(u"! you got this file from.\n\n")
+
+main_vocabulary.write(u"LEXICON Nimisana\n")
+
 
 def frequency(word):
 	fclass = word.getElementsByTagName("fclass")
@@ -123,10 +134,13 @@ def handle_word(word):
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
-		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
-		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
-			   generate_lex_common.get_structure(altform, malaga_word_class),
-			   debug_info)
+		if jatko != u"nainen" or malaga_word_class != u"nimisana":
+			continue
+		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
+		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
+		#	   generate_lex_common.get_structure(altform, malaga_word_class),
+		#	   debug_info)
+		entry = u'%s Nom%s ;' % (alku, jatko.title())
 		main_vocabulary.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

@@ -2,6 +2,7 @@
 # Build configuration. See README for more information.
 PYTHON=python
 VOIKKO_BUILDDIR=voikko
+VVFST_BUILDDIR=vvfst
 DESTDIR=/usr/lib/voikko
 GENLEX_OPTS=
 EXTRA_LEX=
@@ -194,6 +195,12 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukah
 
 
 vvfst: vvfst/vvfst.mor.hfst
+
+$(VVFST_BUILDDIR)/joukahainen.lexc: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
+	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
+	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
+		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
+	$(PYTHON) vvfst/generate_lex.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
 vvfst/vvfst.gen.hfst: vvfst/root.lexc vvfst/taivutuskaavat.lexc vvfst/joukahainen.lexc
 	hfst-lexc --format=sfst $^ -o $@
