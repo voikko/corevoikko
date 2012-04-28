@@ -64,7 +64,7 @@ ifneq "$(VOIKKO_BUILDDIR)" "voikko"
 	VOIKKO_ACTUALLY_COPY_FROM_VOIKKO=$(VOIKKO_COPY_FROM_VOIKKO)
 endif
 
-.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip
+.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip vvfst
 
 all: voikko
 
@@ -130,6 +130,7 @@ clean:
 	rm -f $(VOIKKO_BUILDDIR)/joukahainen.lex $(VOIKKO_BUILDDIR)/main.lex $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
+	rm -f vvfst/vvfst.gen.hfst vvfst/vvfst.mor.hfst
 	rm -f TAGS
 
 # Rules for creating the source distribution
@@ -189,6 +190,17 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukah
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) sukija/generate_lex.py
 	-@grep "Malaga class not found" sukija/voikonsanat/joukahainen.lex
+
+
+
+vvfst: vvfst/vvfst.mor.hfst
+
+vvfst/vvfst.gen.hfst: vvfst/root.lexc vvfst/taivutuskaavat.lexc vvfst/joukahainen.lexc
+	hfst-lexc --format=sfst $^ -o $@
+
+vvfst/vvfst.mor.hfst: vvfst/vvfst.gen.hfst
+	hfst-invert -i $< -o $@
+
 
 TAGS: $(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
 		$(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX))
