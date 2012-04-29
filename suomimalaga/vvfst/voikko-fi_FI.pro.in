@@ -1,0 +1,12 @@
+info: Voikko-Dictionary-Format: 2
+
+info: Language-Code: fi_FI
+info: Copyright: 2006-2012 Hannu Väisänen, Harri Pitkänen, Teemu Likonen and others
+info: License: GPL version 2 or later
+info: Language-Variant: SM_VOIKKO_VARIANT
+info: Description: SM_VOIKKO_DESCRIPTION
+info: SM-Version: SM_VERSION
+info: SM-Patchinfo: SM_PATCHINFO
+info: Build-Config: SM_BUILDCONFIG
+info: Build-Date: SM_BUILDDATE
+info: Morphology-Backend: vfst

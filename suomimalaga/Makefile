@@ -44,6 +44,9 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
 
+VVFST_BINDIST=$(VVFST_BUILDDIR)/voikko-fi_FI.pro $(VVFST_BUILDDIR)/mor.vfst
+
+
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
@@ -65,7 +68,7 @@ ifneq "$(VOIKKO_BUILDDIR)" "voikko"
 	VOIKKO_ACTUALLY_COPY_FROM_VOIKKO=$(VOIKKO_COPY_FROM_VOIKKO)
 endif
 
-.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip vvfst
+.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip vvfst vvfst-install
 
 all: voikko
 
@@ -194,7 +197,7 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukah
 
 
 
-vvfst: $(VVFST_BUILDDIR)/mor.vfst
+vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 
 $(VVFST_BUILDDIR)/joukahainen.lexc: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
@@ -210,6 +213,22 @@ $(VVFST_BUILDDIR)/vvfst.mor.hfst: $(VVFST_BUILDDIR)/vvfst.gen.hfst
 
 $(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/vvfst.mor.hfst
 	hfst-fst2txt -D $< | voikkovfstc -o $@
+
+VVFST_PRO_SEDSCRIPT="s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
+	s/SM_VOIKKO_DESCRIPTION/$(VOIKKO_DESCRIPTION)/; \
+	s/SM_VERSION/$(SM_VERSION)/; \
+	s/SM_PATCHINFO/$(SM_PATCHINFO)/; \
+	s/SM_BUILDCONFIG/$(subst /,\\/,GENLEX_OPTS=$(GENLEX_OPTS) EXTRA_LEX=$(EXTRA_LEX))/; \
+	s/SM_BUILDDATE/$(SM_BUILDDATE)/"
+
+$(VVFST_BUILDDIR)/voikko-fi_FI.pro: vvfst/voikko-fi_FI.pro.in
+	sed -e $(VVFST_PRO_SEDSCRIPT) < $^ > $@
+
+
+vvfst-install: vvfst
+	install -m 755 -d $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
+	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
+
 
 TAGS: $(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
 		$(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX))
