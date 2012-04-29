@@ -1,0 +1,6 @@
+LANGUAGE="fi-x-vfstd"
+SOURCEDIR=SVNROOT + "/trunk/suomimalaga"
+BUILDCMD='make vvfst VVFST_BUILDDIR="%s" VOIKKO_VARIANT=vfstd' % (BUILDDIR + "/fi-x-vfstd")
+INSTALLCMD='make vvfst-install VVFST_BUILDDIR="%s" VOIKKO_VARIANT=vfstd DESTDIR="%s"' % (BUILDDIR + "/fi-x-vfstd", INSTALLDIR)
+BASEINSTALLCMD='make vvfst-install VVFST_BUILDDIR="%s" DESTDIR="%s"' % (BUILDDIR + "/fi-x-vfstd", BASEINSTALLDIR)
+CLEANCMD='make clean VVFST_BUILDDIR="%s"' % (BUILDDIR + "/fi-x-vfstd")

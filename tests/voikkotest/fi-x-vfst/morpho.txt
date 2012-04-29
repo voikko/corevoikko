@@ -1,0 +1,11 @@
+word:hyttynen
+ expected:1
+ analysis
+  STRUCTURE==pppppppp
+word:tiaiset
+ expected:1
+ analysis
+  STRUCTURE==ppppppp
+word:koirra
+ expected:0
+
