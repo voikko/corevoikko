@@ -63,7 +63,7 @@ class ExtendedMorphologyTest(unittest.TestCase):
 		analysis = self._assertSingletonAndGetItem(analysisList)
 		self.assertEqual(u"hyppijä", analysis["BASEFORM"])
 		self.assertEqual(u"+hyppi(w503034)+jä", analysis["WORDIDS"])
-		self.assertEqual(u"+hyppi(hyppijä)+jä", analysis["WORDBASES"])
+		self.assertEqual(u"+hyppi(hyppiä)+jä(+jä)", analysis["WORDBASES"])
 	
 	def testBaseFormForNumeral(self):
 		analysisList = self.voikko.analyze(u"kahdellakymmenelläseitsemällä")

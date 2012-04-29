@@ -29,5 +29,5 @@ voikkogc_LDADD = $(TOOLLDADD)
 voikkovfstc_SOURCES = voikkovfstc.cpp
 voikkovfstc_CXXFLAGS = $(TOOLCXXFLAGS)
 
-dist_man_MANS = voikkospell.1 voikkohyphenate.1 voikkogc.1
+dist_man_MANS = voikkospell.1 voikkohyphenate.1 voikkogc.1 voikkovfstc.1
 
