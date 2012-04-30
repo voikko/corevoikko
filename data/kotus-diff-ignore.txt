@@ -1368,6 +1368,7 @@ jenkkifutis # futis
 jippoilu # jippoilla
 jortsut # jortsu
 jytämusa # jytä+musa
+kaksosparikki # parikki
 kalsongit # kalsonki
 kaltevointi # kaltevoida
 kapitalointi # kapitaloida

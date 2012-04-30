@@ -117,8 +117,8 @@
 [perusmuoto: "kymmenes", alku: "kymmene", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: kymmenen, jatko: <kahdeksas>, äs: ä];
 
 # Eka ja toka ovat oikeasti lukusanoja, mutta lukusanasäännöt eivät tunnista niitä lukusanoina.
-[perusmuoto: "eka", alku: "ek", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <ei_ys, ei_voikko>];
-[perusmuoto: "toka", alku: "tok", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_ys, ei_voikko>];
+[perusmuoto: "eka", alku: "ek", luokka: nimisana, jatko: <kala>, äs: a, tiedot: <ei_ys, murre>];
+[perusmuoto: "toka", alku: "tok", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_ys, murre>];
 
 [perusmuoto: "sadas", alku: "sada", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: sata, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "tuhannes", alku: "tuhanne", luokka: lukusana, lukutyyppi: järjestysluku, alaluokka: tuhat, jatko: <kahdeksas>, äs: a];
