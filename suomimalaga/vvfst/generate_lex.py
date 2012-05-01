@@ -76,6 +76,43 @@ def check_usage(word):
 			if usage in OPTIONS["extra-usage"]: return True
 	return False
 
+# Returns VFST word class for given word in Joukahainen
+def get_vfst_word_class(j_wordclasses):
+	if "pnoun_place" in j_wordclasses: return u"[Lep]"
+	if "pnoun_firstname" in j_wordclasses: return u"[Lee]"
+	if "pnoun_lastname" in j_wordclasses: return u"[Les]"
+	if "pnoun_misc" in j_wordclasses: return u"[Lem]"
+	if "verb" in j_wordclasses: return u"[Lt]"
+	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return u"[Lnl]"
+	if "adjective" in j_wordclasses: return u"[Ll]"
+	if "noun" in j_wordclasses: return u"[Ln]"
+	return None
+
+# Returns a string describing the structure of a word, if necessary for the spellchecker
+# or hyphenator
+def get_structure(wordform, vfst_word_class):
+	needstructure = False
+	ispropernoun = vfst_word_class[0:3] == u'[Le'
+	structstr = u', rakenne: "='
+	for i in range(len(wordform)):
+		c = wordform[i]
+		if c == u'-':
+			structstr = structstr + u"-="
+			needstructure = True
+		elif c == u'|': structstr = structstr
+		elif c == u'=':
+			structstr = structstr + u"="
+			needstructure = True
+		elif c == u':':
+			structstr = structstr + u":"
+			needstructure = True
+		elif c.isupper():
+			structstr = structstr + u"i"
+			if not (ispropernoun and i == 0): needstructure = True
+		else: structstr = structstr + u"p"
+	if needstructure: return structstr + u'"'
+	else: return u""
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -97,8 +134,8 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
-	if malaga_word_class == None: return
+	vfst_word_class = get_vfst_word_class(wordclasses)
+	if vfst_word_class == None: return
 	
 	# Get malaga flags
 	malaga_flags = generate_lex_common.get_malaga_flags(word)
@@ -127,20 +164,20 @@ def handle_word(word):
 		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = u'ä'
 		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
-		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
+		rakenne = get_structure(altform, vfst_word_class)
 		if alku == None:
 			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
-		if jatko != u"nainen" or malaga_word_class != u"nimisana":
+		if jatko != u"nainen" or vfst_word_class != u"[Ln]":
 			continue
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
-		entry = u'%s Nom%s ;' % (alku, jatko.title())
+		entry = u'%s[Xp]%s[X]%s:%s Nom%s ;' % (vfst_word_class, wordform, alku, alku, jatko.title())
 		main_vocabulary.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

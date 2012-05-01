@@ -1005,6 +1005,7 @@
 [perusmuoto: "tasan", alku: "tasan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "tie", alku: "teitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, tiedot: <ys_perusosa>];
 [perusmuoto: "tekeillä", alku: "teke", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: ä];
+[perusmuoto: "tekstiviesti", alku: "tekstiviestitse", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppppp=ppppppppp"];
 [perusmuoto: "tenä", alku: "tenä", luokka: seikkasana, jatko: <loppu, nimentö_t, osanto_A, omanto_n, sisäolento_ssA>, äs: ä];
 [perusmuoto: "ties", alku: "ties", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "tieten", alku: "tieten", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];

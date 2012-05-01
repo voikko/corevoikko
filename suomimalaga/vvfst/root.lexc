@@ -1,3 +1,27 @@
+Multichar_Symbols
+
+! Sanaluokat
+[Ln]  ! nimisana
+[Lee] ! erisnimi - etunimi
+[Les] ! erisnimi - sukunimi
+[Lep] ! erisnimi - paikannimi
+[Lem] ! erisnimi - muu erisnimi
+[Ll]  ! laatusana
+[Lnl] ! nimi_laatusana
+[Lt]  ! teonsana
+
+! Merkkijonoparametrit
+[Xp]  ! perusmuoto
+[Xr]  ! rakenne
+[X]   ! parametrin päätemerkki
+
+! Sijamuodot
+[Sn]  ! nominatiivi
+
+! Luvut
+[Ny]  ! yksikkö
+[Nm]  ! monikko
+
 LEXICON Root
 Nimisana	;
 
