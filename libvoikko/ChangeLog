@@ -1,3 +1,6 @@
+2012-05-01 Harri Pitkänen <hatapitk@iki.fi>
+	* Codepoints in Latin Extended-B block are letters.
+
 2012-04-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Update project files for .Net interface to .Net 4.0 since compiler for
 	  3.5 does not seem to be the default on Debian unstable anymore.
