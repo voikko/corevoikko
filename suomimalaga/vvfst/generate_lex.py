@@ -90,10 +90,11 @@ def get_vfst_word_class(j_wordclasses):
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
 # or hyphenator
+# TODO: strip extra characters at the end of pattern (as is done with Malaga)
 def get_structure(wordform, vfst_word_class):
 	needstructure = False
 	ispropernoun = vfst_word_class[0:3] == u'[Le'
-	structstr = u', rakenne: "='
+	structstr = u'[Xr]'
 	for i in range(len(wordform)):
 		c = wordform[i]
 		if c == u'-':
@@ -110,7 +111,7 @@ def get_structure(wordform, vfst_word_class):
 			structstr = structstr + u"i"
 			if not (ispropernoun and i == 0): needstructure = True
 		else: structstr = structstr + u"p"
-	if needstructure: return structstr + u'"'
+	if needstructure: return structstr + u'[X]'
 	else: return u""
 
 def handle_word(word):
@@ -177,7 +178,9 @@ def handle_word(word):
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
-		entry = u'%s[Xp]%s[X]%s:%s Nom%s ;' % (vfst_word_class, wordform, alku, alku, jatko.title())
+		entry = u'%s[Xp]%s[X]%s%s:%s Nom%s ;' \
+		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
+		        alku, alku, jatko.title())
 		main_vocabulary.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms
