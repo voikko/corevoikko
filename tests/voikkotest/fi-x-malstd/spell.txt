@@ -764,6 +764,7 @@ hervottomimpaa # Kotus 34
 hyttynen # Kotus 38
 !leikkimielisisissä # Kotus 38, ei inen-johdosta
 !kissahyttysinen # Kotus 38, ei inen-johdosta
+ystävystä # Kotus 39 ei yksikkömuotoja, mutta kuitenkin "kaksi ystävystä"
 alavutelainen # Kotus 40
 kauriiden # Kotus 41
 !kauriiiden # Kotus 41

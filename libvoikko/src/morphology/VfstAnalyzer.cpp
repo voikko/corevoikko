@@ -60,6 +60,32 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	return result;
 }
 
+static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
+	wchar_t * structure = new wchar_t[wlen * 2 + 1];
+	structure[0] = L'=';
+	size_t outputLen = wcslen(fstOutput);
+	size_t structurePos = 1;
+	size_t charsMissing = wlen;
+	for (size_t i = 0; i + 8 < outputLen; i++) {
+		if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+			i += 4;
+			while (fstOutput[i] != L'[') {
+				structure[structurePos++] = fstOutput[i];
+				if (fstOutput[i] != L'=') {
+					charsMissing--;
+				}
+				i++;
+			}
+		}
+	}
+	while (charsMissing) {
+		structure[structurePos++] = L'p';
+		charsMissing--;
+	}
+	structure[structurePos] = L'\0';
+	return structure;
+}
+
 list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
 	size_t wlen = strlen(word);
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
@@ -71,16 +97,11 @@ list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
 		size_t ucsLen = wcslen(wordUcs4);
 		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			Analysis * analysis = new Analysis();
-			wchar_t * structure = new wchar_t[ucsLen + 2];
-			structure[0] = L'=';
-			for (size_t i = 1; i < ucsLen + 1; i++) {
-				structure[i] = L'p';
-			}
-			structure[ucsLen + 1] = L'\0';
-			analysis->addAttribute("STRUCTURE", structure);
+			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
+			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, ucsLen));
 			analysis->addAttribute("CLASS", utils::StringUtils::copy(L"none"));
 			analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
-			analysis->addAttribute("FSTOUTPUT", StringUtils::ucs4FromUtf8(outputBuffer));
+			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);
 		}
 		delete[] wordUcs4;

@@ -8,4 +8,7 @@ word:tiaiset
   STRUCTURE==ppppppp
 word:koirra
  expected:0
-
+word:lapinkirvinen
+ expected:1
+ analysis
+  STRUCTURE==ppppp=pppppppp
