@@ -3142,6 +3142,11 @@ allo_rule generate_allos ($tietue):
                  + salailla ($tietue, pU($tietue));  # Ryöppyillä.
     result $i.alku, $i - alku;
 
+  elseif (takuta in $tietue.jatko) then
+    choose $i in haluta ($tietue,  kU($tietue), U($tietue))
+                 + salailla ($tietue, kU($tietue));  # Takkuilla.
+    result $i.alku, $i - alku;
+
   elseif (silputa in $tietue.jatko) then
     choose $i in haluta ($tietue,  pU($tietue), U($tietue));
     result $i.alku, $i - alku;
