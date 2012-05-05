@@ -286,6 +286,7 @@ korpraali
 koto
 kovaksikeitetty
 kovarianssi
+krimi # sanastossa vain kriminnahka
 kristitty
 krypton
 kummuta
@@ -1383,6 +1384,7 @@ kokkarit # kokkari
 kolloidiliuos # kolloidi
 kolloidinen # kolloidi
 kolmiointi # kolmioida
+koltanlappi # lappi
 koronaariskleroosi # koronaari
 koronaaritauti # koronaari
 koronaarivaltimo # koronaari
