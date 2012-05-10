@@ -1438,7 +1438,7 @@ combi_rule nimitapa_4 ($vasen, $oikea, $sana, $index):
   end;
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if (tavuviiva in $oikea.jatko) then
-    result $res, rules nimisana, yhdysmerkki_sanan_lopussa;
+    result $res, rules nimisana, nimisana_laatusanasta, yhdysmerkki_sanan_lopussa;
   end;
   if omistusliite in $oikea.jatko then
     result $res, rules omistusliite;

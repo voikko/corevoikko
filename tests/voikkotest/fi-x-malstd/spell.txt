@@ -290,6 +290,7 @@ kuumentajareunainen # kuumentaa > kuumentaja, reuna > reunainen
 filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
 !kaunismuotoisenkissa # inen-johdos + genetiivi + substantiivi
 vaaleanpunakukkainen
+sisäänhyppimisketteryys
 
 # = voitto- ja yliasteet =
 []
