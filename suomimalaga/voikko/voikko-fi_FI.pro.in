@@ -18,6 +18,7 @@ lex: voikko-fi_FI.lex suomi.lex
 lex: main.lex
 mallex: set switch vanhahkot_muodot VANHAHKOT_MUODOT
 mallex: set switch vanhat_muodot VANHAT_MUODOT
+mallex: set switch sukijan_muodot SUKIJAN_MUODOT
 ## End-User-Configuration
 
 ## Begin-Internal-Configuration

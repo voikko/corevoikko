@@ -75,6 +75,8 @@ Variables for tuning the build process
       included in the vocabulary only if at least one of the usage flags is
       listed here. Available usage flags are listed in file
       vocabulary/flags.txt.
+      Listing "sukija" here causes application specific exclusions to be ignored
+      (words marked with not_voikko will also be included).
       By default, no special vocabularies are included.
     + --style=style1,style2,...
       If a word has style flags (such as old, foreign or dialect), it is
@@ -92,6 +94,8 @@ Variables for tuning the build process
     See voikko/doc/liput.txt. Default: yes
   * VANHAT_MUODOT=yes|no
     See voikko/doc/liput.txt. Default: no
+  * SUKIJAN_MUODOT=yes|no
+    Include words that exist just for Sukija. Default: no
   * VOIKKO_DEBUG=yes|no
     Insert debug information into binary allomorph lexicon. Default: no
   * VOIKKO_VARIANT=variant

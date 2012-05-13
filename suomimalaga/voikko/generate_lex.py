@@ -69,7 +69,8 @@ def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
 	# Drop words that are not needed in the Voikko lexicon
-	if generate_lex_common.has_flag(word, "not_voikko"): return
+	if generate_lex_common.has_flag(word, "not_voikko") and "sukija" not in OPTIONS["extra-usage"]:
+		return
 	if not check_style(word): return
 	if not check_usage(word): return
 	if frequency(word) >= OPTIONS["frequency"] + 1: return
