@@ -68,6 +68,9 @@ class Token {
 		/** True if this word may be the main verb */
 		bool possibleMainVerb;
 		
+		/** True if this word is definitely the main verb */
+		bool isMainVerb;
+		
 		/** True if this word is a verb negative ("en", "älä" jne.) */
 		bool isVerbNegative;
 		

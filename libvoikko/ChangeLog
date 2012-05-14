@@ -1,3 +1,6 @@
+2012-05-14 Harri Pitkänen <hatapitk@iki.fi>
+	* Check for extra main verbs.
+
 2012-05-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Codepoints in Latin Extended-B block are letters.
 

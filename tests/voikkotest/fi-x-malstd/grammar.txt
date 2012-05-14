@@ -199,6 +199,9 @@ Joulua vietetään 24.-26. joulukuuta.
 3.1 Korkokuva ja kallioperä             # Oikein vain otsikoissa
 [code=6, level=0, descr="", stpos=4, len=9, suggs={"korkokuva"}]
 [code=9, level=0, descr="", stpos=17, len=10, suggs={}]
+Yleensä juoksen nopeasti kipitän.
+ [code=18, level=0, descr="", stpos=8, len=24, suggs={}]
+Yleensä juoksen nopeasti tai kipitän vikkelästi.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

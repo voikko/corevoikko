@@ -47,6 +47,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->isGeographicalNameInGenitive = false;
 	token->possibleGeographicalName = false;
 	token->possibleMainVerb = false;
+	token->isMainVerb = true;
 	token->isVerbNegative = false;
 	token->isPositiveVerb = true;
 	token->isConjunction = true;
@@ -94,10 +95,12 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 		if (!wclass) {
 			token->isPositiveVerb = false;
 			token->possibleMainVerb = true;
+			token->isMainVerb = false;
 		}
 		else if (wcscmp(L"kieltosana", wclass) == 0) {
 			token->isVerbNegative = true;
 			token->isPositiveVerb = false;
+			token->isMainVerb = false;
 		}
 		else if (wcscmp(L"teonsana", wclass) == 0) {
 			if (!negative || wcscmp(L"false", negative) != 0 ||
@@ -108,9 +111,13 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 			    (!negative || wcscmp(L"true", negative) != 0)) {
 				token->possibleMainVerb = true;
 			}
+			if (!mood || wcscmp(L"indicative", mood) != 0) {
+				token->isMainVerb = false;
+			}
 		}
 		else {
 			token->isPositiveVerb = false;
+			token->isMainVerb = false;
 		}
 		
 		if (possibleGeographicalName && wcscmp(L"true", possibleGeographicalName) == 0) {
@@ -156,6 +163,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	if (!token->isValidWord) {
 		token->isPositiveVerb = false;
 		token->isConjunction = false;
+		token->isMainVerb = false;
 	}
 }
 

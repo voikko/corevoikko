@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008 - 2010
+ * Portions created by the Initial Developer are Copyright (C) 2008 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -48,6 +48,7 @@
 #define GCERR_MA_INFINITIVE_REQUIRED 15
 #define GCERR_MISPLACED_SIDESANA 16
 #define GCERR_MISSING_MAIN_VERB 17
+#define GCERR_EXTRA_MAIN_VERB 18
 
 namespace libvoikko {
 

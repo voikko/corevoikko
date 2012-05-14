@@ -46,6 +46,9 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 	}
 	int wordCount = 0;
 	const Token * lastNonWhitespace = 0;
+	bool foundVerbInSentence = false;
+	bool foundVerbInCurrentClause = false;
+	size_t lastVerbStartToken = 0;
 	for (size_t i = 0; i < sentence->tokenCount; i++) {
 		const Token * token = sentence->tokens + i;
 		if (token->str[0] == L'\t') {
@@ -57,14 +60,39 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 			// verbiä rakenteista "Kukaan ei _vastannut_." Toistaiseksi siis
 			// pelkkä kieltosana riittää täyttämään tämän säännön vaatimukset.
 			if (!token->isValidWord || token->possibleMainVerb || token->isVerbNegative) {
-				return;
+				foundVerbInSentence = true;
 			}
+			if (token->isConjunction) {
+				foundVerbInCurrentClause = false;
+			}
+			else if (token->isMainVerb) {
+				if (foundVerbInCurrentClause) {
+					// Suppress this error if generic repeating word check applies here
+					if (i != lastVerbStartToken + 2 ||
+					    token->tokenlen != sentence->tokens[lastVerbStartToken].tokenlen ||
+					    wcsncmp(token->str, sentence->tokens[lastVerbStartToken].str, token->tokenlen) != 0) {
+						CacheEntry * e = new CacheEntry(0);
+						e->error.error_code = GCERR_EXTRA_MAIN_VERB;
+						e->error.startpos = sentence->pos + sentence->tokens[lastVerbStartToken].pos;
+						e->error.errorlen = token->pos + token->tokenlen - sentence->tokens[lastVerbStartToken].pos;
+						gc_cache_append_error(options, e);
+					}
+					foundVerbInCurrentClause = false;
+				}
+				else {
+					foundVerbInCurrentClause = true;
+					lastVerbStartToken = i;
+				}
+			}
+		}
+		else if (token->type == TOKEN_PUNCTUATION) {
+			foundVerbInCurrentClause = false;
 		}
 		if (token->type != TOKEN_WHITESPACE) {
 			lastNonWhitespace = token;
 		}
 	}
-	if (wordCount < 2 || wcschr(L".?", lastNonWhitespace->str[0]) == 0) {
+	if (foundVerbInSentence || wordCount < 2 || wcschr(L".?", lastNonWhitespace->str[0]) == 0) {
 		return;
 	}
 	CacheEntry * e = new CacheEntry(0);

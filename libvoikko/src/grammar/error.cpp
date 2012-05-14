@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008 - 2010
+ * Portions created by the Initial Developer are Copyright (C) 2008 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -70,6 +70,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Sidesana (ja, tai, mutta, ...) ei voi olla virkkeen viimeinen sana.";
 			case GCERR_MISSING_MAIN_VERB:
 				return "Tarkista, puuttuuko virkkeest\xc3\xa4 p\xc3\xa4\xc3\xa4verbi tai -verbej\xc3\xa4.";
+			case GCERR_EXTRA_MAIN_VERB:
+				return "Tarkista, onko virkkeeseen j\xc3\xa4\xc3\xa4nyt ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen verbi tai puuttuuko siit\xc3\xa4 pilkku.";
 		}
 		return "Tuntematon virhe";
 	}
@@ -109,6 +111,8 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 				return "Sentence should not end with a conjunction.";
 			case GCERR_MISSING_MAIN_VERB:
 				return "Sentence should contain one or more main verbs.";
+			case GCERR_EXTRA_MAIN_VERB:
+				return "Check if sentence contains unnecessary verbs or if a comma is missing.";
 		}
 		return "Unknown error";
 	}
