@@ -176,6 +176,7 @@ Tätä ei käsittääkseni voi näin esittää.
 Pitkänen pystyy tarvittaessa muokkaamaan käsityksiään maailmankaikkeuden fysikaalisista ominaisuuksista.
 Lääkäri ehtii auttamaan Hannelea synnytyksessä.
 Terrorismia ei pidä koskaan yrittää saada laantumaan, vaan terrorismi on voitettava.
+Keiton onnistumiseen vaikuttaa myös kattilan muoto.
 Kissa juoksee Lahnajärven jäällä.
 Menen kotiin, kunhan.
  [code=16, level=0, descr="", stpos=14, len=6, suggs={}]

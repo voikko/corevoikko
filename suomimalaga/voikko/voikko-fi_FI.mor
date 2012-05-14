@@ -2279,7 +2279,7 @@ subrule tulostus_teonsanan_attribuutit($tietue):
   define $tlen := length($tietue);
   foreach $i in $tlen:
     define $allomorfi := $tietue.($tlen + 1 - $i);
-    if $allomorfi.tapaluokka = nimitapa_2 then
+    if $allomorfi.tapaluokka in <nimitapa_2, nimitapa_4> then
       return [];
     end;
     if $allomorfi.vaatii_tapaluokan /= nil then
