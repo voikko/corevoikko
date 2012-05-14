@@ -73,7 +73,7 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 					    wcsncmp(token->str, sentence->tokens[lastVerbStartToken].str, token->tokenlen) != 0) {
 						CacheEntry * e = new CacheEntry(0);
 						e->error.error_code = GCERR_EXTRA_MAIN_VERB;
-						e->error.startpos = sentence->pos + sentence->tokens[lastVerbStartToken].pos;
+						e->error.startpos = sentence->tokens[lastVerbStartToken].pos;
 						e->error.errorlen = token->pos + token->tokenlen - sentence->tokens[lastVerbStartToken].pos;
 						gc_cache_append_error(options, e);
 					}

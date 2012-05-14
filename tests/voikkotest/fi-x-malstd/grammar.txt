@@ -201,6 +201,8 @@ Joulua vietetään 24.-26. joulukuuta.
 [code=9, level=0, descr="", stpos=17, len=10, suggs={}]
 Yleensä juoksen nopeasti kipitän.
  [code=18, level=0, descr="", stpos=8, len=24, suggs={}]
+Kissa on eläin. Yleensä juoksen nopeasti kipitän.
+ [code=18, level=0, descr="", stpos=24, len=24, suggs={}]
 Yleensä juoksen nopeasti tai kipitän vikkelästi.
 
 {voikko.setAcceptTitlesInGc(True)}
