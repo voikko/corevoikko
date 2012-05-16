@@ -30,6 +30,9 @@ Multichar_Symbols
 [Ny]  ! yksikkö
 [Nm]  ! monikko
 
+! Diakriitit
+@P.EI_YKS@ @D.EI_YKS@
+
 LEXICON Root
 Nimisana	;
 

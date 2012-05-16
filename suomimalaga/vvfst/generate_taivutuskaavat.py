@@ -31,13 +31,18 @@ def stripWhitespaceAndComments(line):
 		line = line[0:line.find(u"!")]
 	return line.strip()
 
+def addDiacritics(line):
+	if u"[Ny]" in line:
+		middle = line.find(u":")
+		return u"@D.EI_YKS@" + line[0:middle+1] + u"@D.EI_YKS@" + line[middle+1:]
+	return line
 
 def replacementsFront(line):
-	return line.replace(u"<A>", u"ä").replace(u"<U>", u"y")
+	return addDiacritics(line.replace(u"<A>", u"ä").replace(u"<U>", u"y"))
 
 
 def replacementsBack(line):
-	return line.replace(u"<A>", u"a").replace(u"<U>", u"u")
+	return addDiacritics(line.replace(u"<A>", u"a").replace(u"<U>", u"u"))
 
 
 def appendLines(lexiconName, lines, lexcFile):

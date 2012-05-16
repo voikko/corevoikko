@@ -18,3 +18,5 @@ sylttyyn
 !sylttuun
 pytyssä
 !pytssä
+lopettajaiset
+!lopettajainen

@@ -25,6 +25,7 @@ import voikkoutils
 import xml.dom.minidom
 import codecs
 from string import rfind
+from xml.dom import Node
 
 flag_attributes = voikkoutils.readFlagAttributes(generate_lex_common.VOCABULARY_DATA + u"/flags.txt")
 
@@ -114,6 +115,21 @@ def get_structure(wordform, vfst_word_class):
 	if needstructure: return structstr + u'[X]'
 	else: return u""
 
+def get_diacritics(word):
+	diacritics = []
+	for group in word.childNodes:
+		if group.nodeType != Node.ELEMENT_NODE:
+			continue
+		for flag in group.childNodes:
+			if flag.nodeType != Node.ELEMENT_NODE:
+				continue
+			if flag.tagName != "flag":
+				continue
+			flagName = flag.firstChild.wholeText
+			if flagName == u"ei_yks":
+				diacritics.append(u"@P.EI_YKS@")
+	return diacritics
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -138,8 +154,8 @@ def handle_word(word):
 	vfst_word_class = get_vfst_word_class(wordclasses)
 	if vfst_word_class == None: return
 	
-	# Get malaga flags
-	malaga_flags = generate_lex_common.get_malaga_flags(word)
+	# Get diacritics
+	diacritics = reduce(lambda x, y: x + y, get_diacritics(word), u"")
 	
 	# Get forced vowel type
 	forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
@@ -178,9 +194,9 @@ def handle_word(word):
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
-		entry = u'%s[Xp]%s[X]%s%s:%s Nom%s_%s ;' \
+		entry = u'%s[Xp]%s[X]%s%s%s:%s%s Nom%s_%s ;' \
 		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
-		        alku, alku, jatko.title(), vfst_vtype)
+		        alku, diacritics, alku, diacritics, jatko.title(), vfst_vtype)
 		main_vocabulary.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms
