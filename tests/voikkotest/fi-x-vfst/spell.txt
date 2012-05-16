@@ -16,3 +16,5 @@ syltty
 !sylttu
 sylttyyn
 !sylttuun
+pytyssä
+!pytssä
