@@ -330,6 +330,7 @@ vapaa_jälkiosa; # Vapaasti kaikkiin sanoihin liittyvä yhdyssanan jälkiosa, es
 molemmat; # kielto: yes/no/molemmat
 vaatii_tapaluokan; # "alkaa juosta", "pyrkii juoksemaan"
 sitlaina; # Sitaattilaina
+loukkaava; # Alatyylinen tai loukkaava
 
 äs; # Ääntiösointu.
   a;
