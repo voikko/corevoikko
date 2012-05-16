@@ -162,9 +162,9 @@ def handle_word(word):
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
-		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = u'ä'
-		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
-		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
+		if vtype == voikkoutils.VOWEL_FRONT: vfst_vtype = u'ä'
+		elif vtype == voikkoutils.VOWEL_BACK: vfst_vtype = u'a'
+		elif vtype == voikkoutils.VOWEL_BOTH: vfst_vtype = u'aä'
 		rakenne = get_structure(altform, vfst_word_class)
 		if alku == None:
 			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
@@ -178,9 +178,9 @@ def handle_word(word):
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
-		entry = u'%s[Xp]%s[X]%s%s:%s Nom%s ;' \
+		entry = u'%s[Xp]%s[X]%s%s:%s Nom%s_%s ;' \
 		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
-		        alku, alku, jatko.title())
+		        alku, alku, jatko.title(), vfst_vtype)
 		main_vocabulary.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

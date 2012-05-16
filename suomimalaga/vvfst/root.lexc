@@ -10,13 +10,19 @@ Multichar_Symbols
 [Lnl] ! nimi_laatusana
 [Lt]  ! teonsana
 
+! Vokaalisointu
+[Va]
+[Vä]
+[Vaä]
+
 ! Merkkijonoparametrit
 [Xp]  ! perusmuoto
 [Xr]  ! rakenne
 [X]   ! parametrin päätemerkki
 
 ! Sijamuodot
-[Sn]  ! nominatiivi
+[Sn]   ! nominatiivi
+[Sine] ! inessiivi
 
 ! Luvut
 [Ny]  ! yksikkö

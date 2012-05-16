@@ -1,4 +1,15 @@
-LEXICON NomNainen
+LEXICON NomNainen_a
 [Sn][Ny]nen:nen	#	;
 [Sn][Nm]set:set	#	;
+[Sine][Ny]sessa:sessa	#	;
 
+LEXICON NomNainen_ä
+[Sn][Ny]nen:nen	#	;
+[Sn][Nm]set:set	#	;
+[Sine][Ny]sessä:sessä	#	;
+
+LEXICON NomNainen_aä
+[Sn][Ny]nen:nen	#	;
+[Sn][Nm]set:set	#	;
+[Sine][Ny]sessa:sessa	#	;
+[Sine][Ny]sessä:sessä	#	;
