@@ -952,6 +952,7 @@ australialaisineen
 !kenettä
 !keittä
 !kessä
+vittu # loukkaavat sanat ovat sanastossa mukana
 
 # = poikkeavat asetukset =
 

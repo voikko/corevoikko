@@ -183,7 +183,7 @@ def get_options():
 		sys.exit(1)
 	options = {"frequency": 9,
 	           "extra-usage": [],
-	           "style": ["old", "international"],
+	           "style": ["old", "international", "inappropriate"],
 	           "sourceid": False,
 	           "destdir": None}
 	for (name, value) in opts:
