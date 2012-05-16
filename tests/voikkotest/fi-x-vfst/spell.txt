@@ -8,3 +8,11 @@ hevosessa
 !hevosessä
 hyttysessä
 !hyttysessa
+hattu
+!hatty
+hattuun
+!hattyy
+syltty
+!sylttu
+sylttyyn
+!sylttuun

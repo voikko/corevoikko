@@ -1,4 +1,13 @@
+LEXICON Hattu
+[Sn][Ny]t<U>:t<U>	#	;
+[Sn][Nm]<U>t:<U>t	#	;
+[Sine][Ny]ss<A>:ss<A>	#	;
+[Sela][Ny]st<A>:st<A>	#	;
+[Sill][Ny]t<U><U>n:t<U><U>n	#	;
+
 LEXICON Nainen
 [Sn][Ny]nen:nen	#	;
 [Sn][Nm]set:set	#	;
 [Sine][Ny]sess<A>:sess<A>	#	;
+[Sela][Ny]sest<A>:sest<A>	#	;
+[Sill][Ny]seen:seen	#	;

@@ -32,18 +32,26 @@ def stripWhitespaceAndComments(line):
 	return line.strip()
 
 
+def replacementsFront(line):
+	return line.replace(u"<A>", u"ä").replace(u"<U>", u"y")
+
+
+def replacementsBack(line):
+	return line.replace(u"<A>", u"a").replace(u"<U>", u"u")
+
+
 def appendLines(lexiconName, lines, lexcFile):
 	lexcFile.write(u"LEXICON " + lexiconName + u"_a\n")
 	for line in lines:
-		lexcFile.write(line.replace(u"<A>", u"a") + u"\n")
+		lexcFile.write(replacementsBack(line) + u"\n")
 	lexcFile.write(u"LEXICON " + lexiconName + u"_ä\n")
 	for line in lines:
-		lexcFile.write(line.replace(u"<A>", u"ä") + u"\n")
+		lexcFile.write(replacementsFront(line) + u"\n")
 	lexcFile.write(u"LEXICON " + lexiconName + u"_aä\n")
 	for line in lines:
-		lexcFile.write(line.replace(u"<A>", u"a") + u"\n")
+		lexcFile.write(replacementsBack(line) + u"\n")
 		if u"<A>" in line:
-			lexcFile.write(line.replace(u"<A>", u"ä") + u"\n")
+			lexcFile.write(replacementsFront(line) + u"\n")
 
 
 # Get command line options
