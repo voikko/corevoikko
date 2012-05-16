@@ -137,6 +137,7 @@ clean:
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f $(VVFST_BUILDDIR)/vvfst.gen.hfst $(VVFST_BUILDDIR)/vvfst.mor.hfst $(VVFST_BUILDDIR)/mor.vfst
+	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc
 	rm -f TAGS
 
 # Rules for creating the source distribution
@@ -207,7 +208,10 @@ $(VVFST_BUILDDIR)/joukahainen.lexc: vocabulary/joukahainen.xml vocabulary/flags.
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) vvfst/generate_lex.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
-$(VVFST_BUILDDIR)/vvfst.gen.hfst: vvfst/root.lexc vvfst/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc
+$(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/generate_taivutuskaavat.py
+	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
+
+$(VVFST_BUILDDIR)/vvfst.gen.hfst: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc
 	hfst-lexc --format=sfst $^ -o $@
 
 $(VVFST_BUILDDIR)/vvfst.mor.hfst: $(VVFST_BUILDDIR)/vvfst.gen.hfst
