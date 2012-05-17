@@ -19,4 +19,6 @@ sylttyyn
 pytyssä
 !pytssä
 lopettajaiset
-!lopettajainen
+!lopettajainen # ei yksikkömuotoja
+!luokkalainen # ei sallittu yhdyssanan alkuosana
+

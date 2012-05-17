@@ -31,7 +31,9 @@ Multichar_Symbols
 [Nm]  ! monikko
 
 ! Diakriitit
-@P.EI_YKS@ @D.EI_YKS@
+@P.EI_YKS@ @D.EI_YKS@ ! Yksikkömuotoja ei sallita
+
+@R.YS_ALKANUT@ ! Yhdyssana on alkanut
 
 LEXICON Root
 Nimisana	;

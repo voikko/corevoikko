@@ -128,6 +128,8 @@ def get_diacritics(word):
 			flagName = flag.firstChild.wholeText
 			if flagName == u"ei_yks":
 				diacritics.append(u"@P.EI_YKS@")
+			elif flagName == u"ysj":
+				diacritics.append(u"@R.YS_ALKANUT@")
 	return diacritics
 
 def handle_word(word):
