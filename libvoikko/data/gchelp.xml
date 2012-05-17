@@ -164,4 +164,14 @@
 ]]>
 </help>
 </error>
+<error code="18">
+<description>Virkkeestä saattaa puuttua pilkku, tai siinä voi olla ylimääräinen verbi</description>
+<help>
+<![CDATA[
+	Tässä virkkeessä tai virkkeen osassa näyttäisi olevan liikaa verbejä. Usein virhe johtuu siitä, että
+	tekstiin on vahingossa jäänyt ylimääräinen verbi. Joskus syynä voi myös olla puuttuva lauseita
+	erottava pilkku tai sidesana.
+]]>
+</help>
+</error>
 </gchelp>

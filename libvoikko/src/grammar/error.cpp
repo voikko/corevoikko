@@ -71,7 +71,7 @@ VOIKKOEXPORT const char * voikko_error_message_cstr(int error_code, const char *
 			case GCERR_MISSING_MAIN_VERB:
 				return "Tarkista, puuttuuko virkkeest\xc3\xa4 p\xc3\xa4\xc3\xa4verbi tai -verbej\xc3\xa4.";
 			case GCERR_EXTRA_MAIN_VERB:
-				return "Tarkista, onko virkkeeseen j\xc3\xa4\xc3\xa4nyt ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen verbi tai puuttuuko siit\xc3\xa4 pilkku.";
+				return "Virkkeest\xc3\xa4 saattaa puuttua pilkku, tai siin\xc3\xa4 voi olla ylim\xc3\xa4\xc3\xa4r\xc3\xa4inen verbi.";
 		}
 		return "Tuntematon virhe";
 	}
