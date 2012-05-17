@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright 2008 - 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2008 - 2012 Harri Pitkänen (hatapitk@iki.fi)
 # Script for automating the build of multiple dictionary variants for
 # Voikko. This script should be run in the main directory of
 # Suomi-malaga source package.
@@ -90,7 +90,7 @@ d.idSuffix = u"-murre"
 d.variant = u"dialects"
 d.nameFi = u"suomi (murteellisten, vanhojen ja harvinaisten sanojen sanasto)"
 d.nameEn = u"Finnish (dialects)"
-d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign --min-frequency=10" VANHAT_MUODOT=yes'
+d.smOptions = u'GENLEX_OPTS="--style=dialect,old,international,foreign,inappropriate --min-frequency=10" VANHAT_MUODOT=yes'
 allDicts.append(d)
 
 d = Voikkodict()
@@ -122,7 +122,7 @@ d.idSuffix = u"-morpho"
 d.variant = u"morpho"
 d.nameFi = u"suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio)"
 d.nameEn = u"Finnish, very extensive vocabulary (with additional information needed in morphological analysis)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education,orgname --style=dialect,old,international,foreign --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
 d = Voikkodict()
@@ -130,7 +130,7 @@ d.idSuffix = u"-morphoid"
 d.variant = u"morphoid"
 d.nameFi = u"suomi, erittäin laaja sanasto (mukana myös morfologisessa analyysissä tarvittava lisäinformaatio ja linkitys Joukahaiseen)"
 d.nameEn = u"Finnish, very extensive vocabulary (with additional information needed in morphological analysis and links to Joukahainen)"
-d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education,orgname --style=dialect,old,international,foreign --min-frequency=10 --sourceid" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
+d.smOptions = u'GENLEX_OPTS="--extra-usage=it,science,medicine,education,orgname --style=dialect,old,international,foreign,inappropriate --min-frequency=10 --sourceid" EXTRA_LEX="vocabulary/erikoisalat/science-misc.lex vocabulary/erikoisalat/atk-lyhenteet.lex vocabulary/erikoisalat/linux-distributions.lex" VANHAT_MUODOT=yes VOIKKO_DEBUG=yes'
 allDicts.append(d)
 
 WORK_DIR = "build"

@@ -82,7 +82,7 @@ Variables for tuning the build process
       If a word has style flags (such as old, foreign or dialect), it is
       included in the vocabulary only if all of the style flags are listed
       here. Available style flags are listed in file vocabulary/flags.txt.
-      Default: old,international
+      Default: old,international,inappropriate
     + --sourceid
       Insert word identifiers from Joukahainen to lexicon and return them
       during morphological analysis. This option has no effect unless
