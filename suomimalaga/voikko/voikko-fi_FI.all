@@ -3733,7 +3733,7 @@ end;
 subrule muokkaa_tietuetta($tietue, $taivutus):
   # Paikannimien jälkiliitteet
   if ($tietue.perusmuoto in <
-      "alanko", "allikko", "aro", "aukio", "halli", "harju", "hetteikkö", "hiekka", "hieta",
+      "aho", "alanko", "allikko", "aro", "aukio", "halli", "harju", "hetteikkö", "hiekka", "hieta",
       "joki", "jyrkänne", "järvi", "kaari", "kaira", "kallio",
       "kangas", "kanjoni", "kapeikko", "kappeli", "kari", "kartano", "katu", "kenttä", "keto", "kirkko",
       "kivi", "koivikko", "korpi",
