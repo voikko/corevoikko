@@ -1,14 +1,20 @@
 word:hyttynen
  expected:1
  analysis
+  CLASS=nimisana
   STRUCTURE==pppppppp
-word:tiaiset
+word:ampiaiset
  expected:1
  analysis
-  STRUCTURE==ppppppp
+  STRUCTURE==ppppppppp
 word:koirra
  expected:0
 word:lapinkirvinen
  expected:1
  analysis
   STRUCTURE==ppppp=pppppppp
+word:Pokkinen
+ expected:1
+ analysis
+  CLASS=sukunimi
+  STRUCTURE==ippppppp

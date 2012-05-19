@@ -190,12 +190,13 @@ def handle_word(word):
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
-		if jatko not in [u"nainen", u"hattu"] or vfst_word_class != u"[Ln]":
+		if jatko not in [u"nainen", u"hattu"] or vfst_word_class not in [u"[Ln]", u"[Les]"]:
 			continue
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
+		alku = alku.lower()
 		entry = u'%s[Xp]%s[X]%s%s%s:%s%s Nom%s_%s ;' \
 		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
 		        alku, diacritics, alku, diacritics, jatko.title(), vfst_vtype)

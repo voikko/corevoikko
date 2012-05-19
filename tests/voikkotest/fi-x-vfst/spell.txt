@@ -21,4 +21,5 @@ pytyssä
 lopettajaiset
 !lopettajainen # ei yksikkömuotoja
 !luokkalainen # ei sallittu yhdyssanan alkuosana
-
+Pokkinen
+!pokkinen

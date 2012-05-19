@@ -29,6 +29,7 @@
 #include "morphology/VfstAnalyzer.hpp"
 #include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
+#include "utils/utils.hpp"
 #include "voikko_defines.h"
 
 using namespace std;
@@ -50,13 +51,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
 	return analyze(word, wcslen(word));
 }
 
-list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
-	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
-		return new list<Analysis *>();
-	}
-	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
-	list<Analysis *> * result = analyze(wordUtf8);
-	delete[] wordUtf8;
+list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
+	wchar_t * wordUcs4 = StringUtils::ucs4FromUtf8(word);
+	list<Analysis *> * result = analyze(wordUcs4);
+	delete[] wordUcs4;
 	return result;
 }
 
@@ -66,6 +64,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	size_t outputLen = wcslen(fstOutput);
 	size_t structurePos = 1;
 	size_t charsMissing = wlen;
+	bool defaultTitleCase = false;
 	for (size_t i = 0; i + 8 < outputLen; i++) {
 		if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
 			i += 4;
@@ -77,35 +76,68 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				i++;
 			}
 		}
+		else if (wcsncmp(fstOutput + i, L"[Les]", 5) == 0) {
+			defaultTitleCase = true;
+			i += 4;
+		}
 	}
 	while (charsMissing) {
-		structure[structurePos++] = L'p';
+		if (defaultTitleCase) {
+			structure[structurePos++] = L'i';
+			defaultTitleCase = false;
+		}
+		else {
+			structure[structurePos++] = L'p';
+		}
 		charsMissing--;
 	}
 	structure[structurePos] = L'\0';
 	return structure;
 }
 
-list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
-	size_t wlen = strlen(word);
+static wchar_t * parseClass(const wchar_t * fstOutput, size_t wlen) {
+	if (wlen < 5) {
+		return StringUtils::copy(L"none");
+	}
+	for (size_t i = wlen - 5; i >= 0; i--) {
+		if (wcsncmp(fstOutput + i, L"[L", 2) != 0) {
+			continue;
+		}
+		if (fstOutput[i + 2] == L'n') {
+			return StringUtils::copy(L"nimisana");
+		}
+		if (wcsncmp(fstOutput + i + 2, L"es", 2) == 0) {
+			return StringUtils::copy(L"sukunimi");
+		}
+	}
+	return StringUtils::copy(L"none");
+}
+
+list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
 	}
+	
+	wchar_t * wordLowerUcs4 = new wchar_t[wlen];
+	memcpy(wordLowerUcs4, word, wlen * sizeof(wchar_t));
+	voikko_set_case(CT_ALL_LOWER, wordLowerUcs4, wlen);
+	char * wordLower = StringUtils::utf8FromUcs4(wordLowerUcs4, wlen);
+	delete[] wordLowerUcs4;
+	
 	list<Analysis *> * analysisList = new list<Analysis *>();
-	if (transducer->prepare(configuration, word, wlen)) {
-		wchar_t * wordUcs4 = StringUtils::ucs4FromUtf8(word, wlen);
-		size_t ucsLen = wcslen(wordUcs4);
+	if (transducer->prepare(configuration, wordLower, wlen)) {
 		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			Analysis * analysis = new Analysis();
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
-			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, ucsLen));
-			analysis->addAttribute("CLASS", utils::StringUtils::copy(L"none"));
+			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, wlen));
+			analysis->addAttribute("CLASS", parseClass(fstOutput, wlen));
 			analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);
 		}
-		delete[] wordUcs4;
 	}
+	
+	delete[] wordLower;
 	return analysisList;
 }
 
