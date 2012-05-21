@@ -1357,6 +1357,8 @@ combi_rule lukusana_pvm_kk($vasen, $oikea, $sana, $index):
   elseif $oikea.alaluokka = piste then
     # sallitaan enemmänkin pisteitä, esim. IP-osoitteet
     result $res, rules lukusana_numero_tai_piste;
+    # sallitaan päivämäärä ilman vuotta (12.4.)
+    result $res, accept;
   end;
 end;
 
