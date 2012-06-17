@@ -18,7 +18,7 @@ VOIKKO_DEBUG=no
 -include config.mak
 
 # Suomi-malaga version
-SM_VERSION=1.11
+SM_VERSION=1.12
 SM_BUILDDATE=$(shell date -R -u)
 
 # Optional vocabulary files (needed in the source package)
