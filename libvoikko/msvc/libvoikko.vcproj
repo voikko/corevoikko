@@ -924,6 +924,14 @@
 						>
 					</File>
 					<File
+						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorDeleteTwo.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorDeleteTwo.hpp"
+						>
+					</File>
+					<File
 						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorDeletion.cpp"
 						>
 					</File>
@@ -953,6 +961,14 @@
 					</File>
 					<File
 						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorInsertSpecial.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorMultiReplacement.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\spellchecker\suggestion\SuggestionGeneratorMultiReplacement.hpp"
 						>
 					</File>
 					<File
