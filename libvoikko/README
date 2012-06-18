@@ -40,6 +40,7 @@ individual backends is as follows:
  Lttoolbox      GPL 2+ (GPL 2+ backend and GPL 2+ dependency)
  VFST           MPL 1.1 / GPL 2+ / LGPL 2.1+
 
+
 Features
 ========
 
@@ -57,7 +58,7 @@ Features
    based API.
  - String tokenizer and sentence splitter.
  - Morphological analyzer.
- - All functionality is made available through C, Python and Java APIs.
+ - All functionality is made available through C, Python, Java and .Net APIs.
 
 Documentation for using the library can be found from header file voikko.h.
 
@@ -71,6 +72,7 @@ for build configuration.
 
 Java API is designed to be built as a Maven project. No autotools or Ant
 based build system is available yet.
+
 
 Build configuration
 ===================
@@ -104,6 +106,7 @@ of the library.
 Python bindings work with Python version 2.5 or later. To use them with
 Python 3 or later the module file (libvoikko.py) must first be converted
 using the "2to3" utility from Python distribution.
+
 
 Search order for dictionary files
 =================================
@@ -184,6 +187,7 @@ Authors
  * Author of UTF8 utility module.
 2011-2012 Teemu Likonen <tlikonen@iki.fi>
  * Author of the Common Lisp interface.
+
 
 Website
 =======
