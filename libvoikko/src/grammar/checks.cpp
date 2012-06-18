@@ -82,7 +82,7 @@ void gc_local_punctuation(voikko_options_t * options, const Sentence * sentence)
 				}
 			}
 			if (i == 0) {
-				if (wcschr(L"()'-\u201C", t.str[0]) || isFinnishQuotationMark(t.str[0])) {
+				if (wcschr(L"()'-\u201C\u2013\u2014", t.str[0]) || isFinnishQuotationMark(t.str[0])) {
 					continue;
 				}
 				e = new CacheEntry(0);
