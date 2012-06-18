@@ -80,6 +80,9 @@ class Token {
 		/** True if this word is a conjunction */
 		bool isConjunction;
 		
+		/** True if this word may be a conjunction */
+		bool possibleConjunction;
+		
 		/**
 		 * What kind of verb must follow this verb in compound verb check. NONE if
 		 * this word is not (or may not be) a verb.

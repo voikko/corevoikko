@@ -5,7 +5,8 @@ EXTRA_DIST = data/autocorrect/fi_FI.xml data/autocorrect/autocorrect.dtd \
     python/libvoikkoOld.py \
     doc/morphological-analysis.txt \
     doc/oikoluku-korjausehdotukset.txt \
-    autogen.sh
+    autogen.sh \
+    LICENSE.CORE
 
 ACLOCAL_AMFLAGS = -I m4
 

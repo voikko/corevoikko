@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2011
+ * Portions created by the Initial Developer are Copyright (C) 2011 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -62,7 +62,12 @@ void MissingVerbCheck::check(voikko_options_t * options, const Sentence * senten
 			if (!token->isValidWord || token->possibleMainVerb || token->isVerbNegative) {
 				foundVerbInSentence = true;
 			}
-			if (token->isConjunction) {
+			if (token->possibleConjunction) {
+				foundVerbInCurrentClause = false;
+			}
+			else if (i + 2 < sentence->tokenCount && wcsncmp(token->str, L"siin\u00e4", 5) == 0 &&
+			         wcsncmp((sentence->tokens + (i + 2))->str, L"miss\u00e4", 5) == 0) {
+				// "siinä missä" voi erottaa lauseita ilman pilkkua. TODO: siistimpi toteutus
 				foundVerbInCurrentClause = false;
 			}
 			else if (token->isMainVerb) {

@@ -1,3 +1,7 @@
+2012-06-18 Harri Pitkänen <hatapitk@iki.fi>
+	* Fix false positives from extra verb check.
+	* Update version numbers for 3.5.
+
 2012-05-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Check for extra main verbs.
 

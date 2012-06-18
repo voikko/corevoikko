@@ -204,6 +204,10 @@ Yleensä juoksen nopeasti kipitän.
 Kissa on eläin. Yleensä juoksen nopeasti kipitän.
  [code=18, level=0, descr="", stpos=24, len=24, suggs={}]
 Yleensä juoksen nopeasti tai kipitän vikkelästi.
+Menen kouluun ennen kuin menen kotiin.
+Höpisen saksaa siinä missä enoni puhuu englantia.
+Höpisen saksaa siinä talossa jossa enoni puhuu englantia.
+ [code=18, level=0, descr="", stpos=0, len=46, suggs={}]
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

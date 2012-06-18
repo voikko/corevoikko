@@ -47,6 +47,7 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 	token->isGeographicalNameInGenitive = false;
 	token->possibleGeographicalName = false;
 	token->possibleMainVerb = false;
+	token->possibleConjunction = false;
 	token->isMainVerb = true;
 	token->isVerbNegative = false;
 	token->isPositiveVerb = true;
@@ -88,7 +89,11 @@ static void gc_analyze_token(voikko_options_t * voikkoOptions, Token * token) {
 				token->isGeographicalNameInGenitive = true;
 			}
 		}
-		if (!wclass || wcscmp(L"sidesana", wclass) != 0) {
+		
+		if (wclass && wcscmp(L"sidesana", wclass) == 0) {
+			token->possibleConjunction = true;
+		}
+		else {
 			token->isConjunction = false;
 		}
 		
