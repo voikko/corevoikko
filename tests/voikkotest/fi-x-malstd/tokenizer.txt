@@ -38,6 +38,10 @@ tavutus­vihje
  [<”,PUNCTUATION>]
 “
  [<“,PUNCTUATION>]
+—
+ [<—,PUNCTUATION>]
+–
+ [<–,PUNCTUATION>]
 Grænlands Sigurður Þeir það
  [<Grænlands,WORD>, < ,WHITESPACE>, <Sigurður,WORD>, < ,WHITESPACE>, <Þeir,WORD>, < ,WHITESPACE>, <það,WORD>]
 Brøndbyssä

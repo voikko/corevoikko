@@ -140,7 +140,8 @@ wchar_t SimpleChar::upper(wchar_t input) {
 }
 
 bool SimpleChar::isUpper(wchar_t input) {
-	return input != lower(input);
+	return input != lower(input) ||
+	       input == 0x018F; // LATIN CAPITAL LETTER SCHWA
 }
 
 bool SimpleChar::isLower(wchar_t input) {

@@ -99,6 +99,7 @@ Sarkaimen	jälkeen Jotain sentään tarkistetaan.
  [code=6, level=0, descr="", stpos=18, len=6, suggs={"jotain"}]
 Venäjän keisareita olivat mm. Aleksanteri III ja Iivana VI.
 Pertti K. asuu omakotitalossa.
+Kissa on eläin. Əliyev on nimi.
 Sarkain	loppuu. Alkaa uusi virke.
 Sarkain	loppuu? Alkaa uusi virke.
 Sarkain	loppuu! Alkaa uusi virke.
@@ -208,6 +209,9 @@ Menen kouluun ennen kuin menen kotiin.
 Höpisen saksaa siinä missä enoni puhuu englantia.
 Höpisen saksaa siinä talossa jossa enoni puhuu englantia.
  [code=18, level=0, descr="", stpos=0, len=46, suggs={}]
+Sitä kirjoitetaan kuten puhuja sopivaksi näkee.
+Kissa oli näet kiivennyt aidalle.
+Kissa oli kiivennyt aidalle — sieltä oli hyvä näköala.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko

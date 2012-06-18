@@ -45,6 +45,8 @@ char_type get_char_type(wchar_t c) {
 	           L"\u2019"  /* RIGHT SINGLE QUOTATION MARK */
 	           L"\u2010"  /* HYPHEN */
 	           L"\u2011"  /* NON-BREAKING HYPHEN */
+	           L"\u2013"  /* EN DASH */
+	           L"\u2014"  /* EM DASH */
 	           L"\u201C"  /* LEFT DOUBLE QUOTATION MARK */
 	           L"\u2026"  /* HORIZONTAL ELLIPSIS */
 	           , c)) return CHAR_PUNCTUATION;

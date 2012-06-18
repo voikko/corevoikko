@@ -55,6 +55,7 @@
 [perusmuoto: "kunhan", alku: "kunhan", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunnes", alku: "kunnes", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "kunpa", alku: "kunpa", luokka: sidesana, jatko: <loppu>, äs: a];
+[perusmuoto: "kuten", alku: "kuten", luokka: sidesana, jatko: <loppu>, äs: a, tiedot: <ei_sukija>]; # niin kuin
 [perusmuoto: "mutta", alku: "mutta", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "mutta", alku: "muttia", luokka: sidesana, jatko: <loppu>, äs: a];
 [perusmuoto: "sekä", alku: "sekä", luokka: sidesana, jatko: <loppu>, äs: ä];

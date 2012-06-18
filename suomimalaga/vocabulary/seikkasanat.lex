@@ -680,6 +680,7 @@
 [perusmuoto: "nyttemmin", alku: "nyttemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näemmä", alku: "näemmä", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näes", alku: "näes", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "näet", alku: "näet", luokka: seikkasana, jatko: <loppu>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "nähden", alku: "nähden", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näin", alku: "näin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "näinollen", alku: "näinollen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
