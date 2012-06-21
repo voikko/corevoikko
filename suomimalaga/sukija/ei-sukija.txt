@@ -2,7 +2,9 @@
 # mutta tähän tiedostoon laittaminen on kätevämpää, jos Internet-yhteys
 # on liian hidas. (-:
 aasiannorsu
+aasiori
 afrikannorsu
+Aholainen
 alamainen
 Alppi
 Aalto
@@ -15,6 +17,7 @@ Aatami
 agroekologi
 agroekologia
 Aho
+ahtaanpaikankammo
 ahtautuma
 ahtojää
 aidaskääpä
@@ -254,10 +257,12 @@ Japani
 japaninmispeli
 jatkuvalämmitteinen
 jengiläinen
+johtajaori
 Jokelainen
 joukkoitsemurha
 jousitus
 Jukka
+julkisasiamies
 julkishallinto
 julkisrauha
 julkissektori
@@ -265,6 +270,7 @@ julkistalous
 Jumala
 jumalaistaru
 jumalaistarusto
+juoksijaori
 juoma
 Jylhä
 Jylhänperä
@@ -301,6 +307,7 @@ Kannus
 kansalainen
 kansallismielinen
 kantama
+kantaori
 kanttori-urkuri
 Kanttura
 Kari
@@ -331,6 +338,7 @@ keitto
 kepulainen
 Kerberos
 kerholainen
+kerrostuma
 kerrotunlainen
 kertoma
 Kerttu
@@ -379,6 +387,7 @@ Kivinen
 Kiviniemi
 klooripromatsiini
 Knuutinpoika
+koaksiaalijohto
 koaksiaalikaapeli
 kohoama
 kohtalainen
@@ -393,6 +402,7 @@ Kolari
 Koli
 kolhiutuma
 Kone
+Kontio
 Kontulainen
 Koppelo
 koroitus
@@ -410,6 +420,7 @@ Kreikka
 kreikkalaiskatolilainen
 Kroatia
 kronologinen
+Kruunuhaka
 kryptoanalyysi
 Kuha
 Kuikka
@@ -477,6 +488,7 @@ laajakaista
 laajakangas
 laajakulma
 laajakuva
+Laajasalo
 laajenema
 laajentuma
 laakafilmi
@@ -499,6 +511,8 @@ Laihajärvi
 Laina
 Laine
 laiskanpulskea
+Lakomäki
+Lakovaara
 langoitus
 Lapinjärvi
 lapinharakka
@@ -531,6 +545,7 @@ Leini
 leipomo-kahvila
 Lemu
 leniniläinen
+Leppävaara
 lesbolainen
 leveäpyrstökihu
 levytys
@@ -605,6 +620,7 @@ maallistua
 maattojohdin
 maattojohto
 madeirankeiju
+madeiraviini
 Maila
 majoitus
 malaijilainen
@@ -731,6 +747,7 @@ permikausi
 Persia
 Peräseinäjoki
 peräänajo
+philadelphialainen
 pidentymä
 pidättyä
 pidättää
@@ -816,6 +833,7 @@ ratkeama
 Rauha
 Rautio
 Rautu
+ravuriori
 Reima
 repeytymä
 repeämä
@@ -853,6 +871,7 @@ ryvettyä
 räpytellä
 Rönkkö
 Saarelainen
+Saarenmaa
 Saari
 Saarijärvi
 saaristolainen
@@ -894,6 +913,7 @@ Sikiö
 sileälihas
 Sini
 Sirkka
+Sirkku
 sirkuslainen
 Sisko
 sisäpiiriläinen
@@ -906,6 +926,7 @@ soitto
 Somero
 Sorsa
 sortuma
+sosialidemokraatti
 sovitus
 strippaus
 subduraalihematooma
@@ -950,6 +971,13 @@ takomakone
 takomataito
 takomatyö
 takuuvarma
+Talasjärvi
+Talaslahti
+Talasniemi
+Talasranta
+Talasrinne
+Talassaari
+Talasterä
 Tallus
 Tamminen
 Tanska
@@ -972,6 +1000,7 @@ tekosiveä
 teloitus
 teollinen
 teollisuus
+terajoule
 teratavu
 Terho
 Terttu
@@ -988,6 +1017,7 @@ Tiibet
 tiiliskivi
 tiivistymä
 Tikka
+tilaaja-tuottajamalli
 tilapäinen
 Timpuri
 tiukentaa
@@ -1047,6 +1077,7 @@ uniikkikappale
 Unkari
 uppoama
 Urho
+URL-osoite
 Utra
 uurteisvalas
 Uusikylä
@@ -1065,6 +1096,10 @@ vajaamielinen
 vajoama
 vakaus
 valikoima
+valinnaisaine
+valinnaiskurssi
+valinnaistunti
+valinnaisvaruste
 Valkeakoski
 valmisateria
 valmisbetoni
@@ -1087,6 +1122,7 @@ vammainen
 vapaaehtoinen
 vapaalippulainen
 varallisuus
+Vares
 Varis
 Varkaus
 Varma

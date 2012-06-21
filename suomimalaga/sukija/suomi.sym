@@ -987,6 +987,7 @@ haluta;
   luututa; # => luuttuilla (ei ole NS:ssa)
   silputa; # ei => silppuilla
   ryöpytä; # => ryöppyillä
+  takuta;  # => takkuilla
   vivuta;  # ei => vipuilla
 palata;    # => Palailla, palaus.
   hyljätä;

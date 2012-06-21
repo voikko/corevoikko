@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2012 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -106,6 +106,7 @@ allo_rule generate_allos ($tietue):
   #
   if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
                              "Itämeri", "itävaltalainen", "kazakstanilainen",
+                             "philadelphialainen", 
                              "suomalais-permiläinen", "tongalainen">) then
     stop;
   end;
@@ -115,7 +116,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"harju",
                              "joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
-                             "laakso", "lahti",
+                             "laakso", "lahti", "lampi",
                              "maa", "meri", "mäki", "niemi",
                              "polku", "puistikko", "puisto",
                              "ranta", "rinne", "saari", "sarvi", "selkä",
@@ -4945,6 +4946,15 @@ allo_rule generate_allos ($tietue):
     end;
   elseif (ryöpytä in $tietue.jatko) then
     choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "p"+U($tietue)+A($tietue), "p"+U($tietue)+U($tietue), U($tietue)+"n", "p"+U($tietue)+"s", "p"+U($tietue), "p"+U($tietue));
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
+  elseif (takuta in $tietue.jatko) then
+    choose $i in haluta ($tietue, U($tietue), U($tietue)+"k", "k"+U($tietue)+A($tietue), "k"+U($tietue)+U($tietue), U($tietue)+"n", "k"+U($tietue)+"s", "k"+U($tietue), "k"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
