@@ -78,7 +78,7 @@ namespace libvoikko { namespace fst {
 				break;
 			default:
 				// this would be an error
-				return operation;
+				operation.op = Operation_D;
 		}
 		string featureAndValue = symbol.substr(3, symbol.length() - 4);
 		size_t valueStart = featureAndValue.find(".");
