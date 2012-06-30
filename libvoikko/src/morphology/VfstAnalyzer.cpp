@@ -99,14 +99,14 @@ static wchar_t * parseClass(const wchar_t * fstOutput, size_t wlen) {
 	if (wlen < 5) {
 		return StringUtils::copy(L"none");
 	}
-	for (size_t i = wlen - 5; i >= 0; i--) {
-		if (wcsncmp(fstOutput + i, L"[L", 2) != 0) {
+	for (size_t i = wlen - 4; i >= 1; i--) {
+		if (wcsncmp(fstOutput + i - 1, L"[L", 2) != 0) {
 			continue;
 		}
-		if (fstOutput[i + 2] == L'n') {
+		if (fstOutput[i + 1] == L'n') {
 			return StringUtils::copy(L"nimisana");
 		}
-		if (wcsncmp(fstOutput + i + 2, L"es", 2) == 0) {
+		if (wcsncmp(fstOutput + i + 1, L"es", 2) == 0) {
 			return StringUtils::copy(L"sukunimi");
 		}
 	}
