@@ -1,8 +1,10 @@
 #!/bin/bash
-# Update from SVN and Joukahainen without overriding local changes
+# Update from GIT and Joukahainen without overriding local changes
 make clean
-svn revert vocabulary/joukahainen.xml
-svn update
+git checkout vocabulary/joukahainen.xml
+git stash
+git pull -r
+git stash pop
 make update-vocabulary
 make voikko
 
