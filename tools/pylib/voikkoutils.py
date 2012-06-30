@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2007 - 2012 Harri Pitkänen (hatapitk@iki.fi)
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -138,12 +138,12 @@ def get_preference(prefname):
 			return eval("prefs." + prefname)
 	except ImportError:
 		pass
-	if prefname == 'svnroot': return os.environ['HOME'] + '/svn/voikko'
+	if prefname == 'corevoikko': return os.environ['HOME'] + '/git/corevoikko'
 	if prefname == 'voikkotest_dir': return os.environ['HOME'] + '/tmp/voikkotest'
 	if prefname == 'voikkospell_threads': return 1
 	if prefname == 'language_variant': return 'fi-x-standard'
 	if prefname == 'voikkotest_sm_destdir': return None
-	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/svn/voikko/trunk/data'
+	if prefname == 'voikko_data_dir': return os.environ['HOME'] + '/git/corevoikko/data'
 	if prefname == 'encoding': return locale.getpreferredencoding()
 	if prefname == 'libvoikko_bin': return '/usr/bin'
 	if prefname == 'diffviewcmd': return 'diff -U 0 "%s" "%s" | grep ^.C: 2>/dev/null | less'

@@ -1,5 +1,5 @@
 LANGUAGE="fi-x-malmor"
-SOURCEDIR=SVNROOT + "/trunk/suomimalaga"
+SOURCEDIR=COREVOIKKO + "/suomimalaga"
 BUILDCMD='make voikko VOIKKO_BUILDDIR="%s" VOIKKO_VARIANT=malmor VOIKKO_DEBUG=yes GENLEX_OPTS=--sourceid' % (BUILDDIR + "/fi-x-malmor")
 INSTALLCMD='make voikko-install VOIKKO_BUILDDIR="%s" VOIKKO_VARIANT=malmor DESTDIR="%s"' % (BUILDDIR + "/fi-x-malmor", INSTALLDIR)
 BASEINSTALLCMD='make voikko-install VOIKKO_BUILDDIR="%s" DESTDIR="%s"' % (BUILDDIR + "/fi-x-malmor", BASEINSTALLDIR)

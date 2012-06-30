@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright 2006 - 2011 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2006 - 2012 Harri Pitkänen (hatapitk@iki.fi)
 # Test program for Voikko.
 # This program requires Python and Python interface to libvoikko.
 
@@ -28,7 +28,7 @@ import voikkoutils
 from libvoikko import Voikko
 from libvoikko import SuggestionStrategy
 
-SVNROOT = voikkoutils.get_preference('svnroot')
+COREVOIKKO = voikkoutils.get_preference('corevoikko')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
 THREADS = voikkoutils.get_preference('voikkospell_threads')
 ENCODING = voikkoutils.get_preference('encoding')
@@ -36,7 +36,7 @@ SPELLCMD = voikkoutils.get_preference('libvoikko_bin') + '/voikkospell'
 DIFFVIEWCMD = voikkoutils.get_preference('diffviewcmd')
 SM_DESTDIR = voikkoutils.get_preference('voikkotest_sm_destdir')
 
-TESTFILES = SVNROOT + "/trunk/tests/voikkotest"
+TESTFILES = COREVOIKKO + "/tests/voikkotest"
 BUILDDIR = WORKSPACE + "/build"
 INSTALLDIR = WORKSPACE + "/inst"
 BASE = WORKSPACE + "/base"
@@ -45,7 +45,7 @@ BASE_CORRECT = WORKSPACE + "/base-correct.txt"
 BASE_INFO = WORKSPACE + "/base-info.txt"
 CURRENT_CORRECT = WORKSPACE + "/current-correct.txt"
 COMPATIBILITY_DIR = WORKSPACE + "/compatibility"
-SMV = SVNROOT + "/trunk/suomimalaga"
+SMV = COREVOIKKO + "/suomimalaga"
 
 def _check_hyphens(section, expectedResult, result):
 	failcount = 0
@@ -545,7 +545,7 @@ if "--current" in [opt[0] for opt in opts]:
 	clean_smv()
 	update_smv()
 	voikko = Voikko(CURRENT_TESTMOR)
-	if not spell_tests(voikko, SVNROOT + "/trunk/tests/voikkotest/" + CURRENT_TESTMOR + "/spell.txt"):
+	if not spell_tests(voikko, COREVOIKKO + "/tests/voikkotest/" + CURRENT_TESTMOR + "/spell.txt"):
 		sys.stderr.write("Some of the basic tests failed, fix this before using --current again!\n")
 		sys.exit(1)
 	voikko.terminate()
@@ -566,7 +566,7 @@ if "--compare" in [opt[0] for opt in opts]:
 
 else:
 	globalsMap = {}
-	globalsMap["SVNROOT"] = SVNROOT
+	globalsMap["COREVOIKKO"] = COREVOIKKO
 	globalsMap["BUILDDIR"] = BUILDDIR
 	globalsMap["INSTALLDIR"] = INSTALLDIR
 	globalsMap["BASEINSTALLDIR"] = BASE

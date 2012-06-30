@@ -10,8 +10,8 @@
 # ones below. For example, the home directory of the
 # user is determined programmatically by default.
 
-# The location of Voikko SVN repository checkout
-#svnroot='/home/uname/svn/voikko'
+# The location of Voikko core repository clone
+#corevoikko='/home/uname/git/corevoikko'
 
 # Data directory for voikkotest. This directory must
 # already exist. If you want to test spell checker between
@@ -34,7 +34,7 @@
 #voikkotest_sm_destdir=None
 
 # Directory containing tests and other necessary data files.
-#voikko_data_dir='/home/uname/svn/voikko/trunk/data'
+#voikko_data_dir='/home/uname/git/corevoikko/data'
 
 # The input/output encoding for programs that read
 # or write data.
