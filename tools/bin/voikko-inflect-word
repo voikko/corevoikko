@@ -36,8 +36,8 @@ import sys
 import locale
 import voikkoutils
 
-NOUN_AFFIX_FILE = voikkoutils.get_preference('svnroot') + '/trunk/data/subst.aff'
-VERB_AFFIX_FILE = voikkoutils.get_preference('svnroot') + '/trunk/data/verb.aff'
+NOUN_AFFIX_FILE = voikkoutils.get_preference('corevoikko') + '/data/subst.aff'
+VERB_AFFIX_FILE = voikkoutils.get_preference('corevoikko') + '/data/verb.aff'
 PARAM_ENCODING = voikkoutils.get_preference('encoding')
 
 noun_types = voikkoinfl.readInflectionTypes(NOUN_AFFIX_FILE)
