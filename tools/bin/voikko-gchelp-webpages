@@ -51,7 +51,7 @@ def printCommonFooter(helpFile):
 
 # === Main program ===
 
-xmlData = parse(voikkoutils.get_preference("svnroot") + "/trunk/libvoikko/data/gchelp.xml")
+xmlData = parse(voikkoutils.get_preference("corevoikko") + "/libvoikko/data/gchelp.xml")
 
 indexFile = codecs.open("index.html", "w", "UTF-8")
 printCommonHeader(indexFile, u"Kielioppivirheiden selitykset")
