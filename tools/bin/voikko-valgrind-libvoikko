@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 binpath=`python -c 'import voikkoutils; print voikkoutils.get_preference("libvoikko_bin")'`
-testdatapath=`python -c 'import voikkoutils; print voikkoutils.get_preference("svnroot")'`/trunk/tests/voikkotest
+testdatapath=`python -c 'import voikkoutils; print voikkoutils.get_preference("corevoikko")'`/tests/voikkotest
 voikkospell=$binpath/voikkospell
 voikkohyphenate=$binpath/voikkohyphenate
 voikkogc=$binpath/voikkogc
