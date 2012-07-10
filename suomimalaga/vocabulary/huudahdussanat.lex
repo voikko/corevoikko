@@ -21,7 +21,6 @@
 [perusmuoto: "aah", alku: "aah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ah", alku: "ah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "aha", alku: "aha", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "ahaa", alku: "ahaa", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "ahah", alku: "ahah", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "ai", alku: "ai", luokka: huudahdussana, jatko: <loppu>, äs: a];
 [perusmuoto: "aijai", alku: "aijai", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];

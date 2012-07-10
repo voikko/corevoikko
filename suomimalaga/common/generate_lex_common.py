@@ -69,6 +69,7 @@ def get_malaga_word_class(j_wordclasses):
 	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return u"nimi_laatusana"
 	if "adjective" in j_wordclasses: return u"laatusana"
 	if "noun" in j_wordclasses: return u"nimisana"
+	if "interjection" in j_wordclasses: return u"huudahdussana"
 	return None
 
 # Returns malaga flags for given word in Joukahainen
@@ -110,6 +111,8 @@ def has_flag(word, flag):
 
 # Returns tuple (alku, jatko) for given word in Joukahainen
 def get_malaga_inflection_class(wordform, j_infclass, j_wordclasses, j_classmap):
+	if j_infclass is None:
+		return (wordform, u"loppu")
 	(infclass, gradclass) = (list(j_infclass.split(u'-')) + [None])[:2]
 	
 	if gradclass == None: gradtypes = [None]

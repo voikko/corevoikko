@@ -82,11 +82,12 @@ def handle_word(word):
 		if infclass.getAttribute("type") != "historical":
 			voikko_infclass = generate_lex_common.tValue(infclass)
 			break
-	if voikko_infclass == None: return
 	if voikko_infclass == u"poikkeava": return
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
+	if wordclasses[0] != u"interjection" and voikko_infclass == None:
+		return
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return
 	
@@ -94,7 +95,10 @@ def handle_word(word):
 	malaga_flags = generate_lex_common.get_malaga_flags(word)
 	
 	# Get forced vowel type
-	forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
+	if voikko_infclass == None:
+		forced_inflection_vtype = voikkoutils.VOWEL_DEFAULT
+	else:
+		forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
 	
 	# Construct debug information
 	debug_info = u""
