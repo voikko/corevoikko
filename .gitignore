@@ -1,3 +1,23 @@
 *~
 *.pyc
+suomimalaga/voikko/config.inc
+suomimalaga/voikko/erikoiset.lex
+suomimalaga/voikko/erikoissanat.lex
+suomimalaga/voikko/etuliitteet.lex
+suomimalaga/voikko/huudahdussanat.lex
+suomimalaga/voikko/joukahainen.lex
+suomimalaga/voikko/lainen.lex
+suomimalaga/voikko/lukusanat.lex
+suomimalaga/voikko/lyhenteet.lex
+suomimalaga/voikko/main.lex
+suomimalaga/voikko/mor.inc
+suomimalaga/voikko/poikkeavat.lex
+suomimalaga/voikko/seikkasanat.lex
+suomimalaga/voikko/sidesanat.lex
+suomimalaga/voikko/subrule.inc
+suomimalaga/voikko/suhdesanat.lex
+suomimalaga/voikko/taivutustaydennykset.lex
+suomimalaga/voikko/voikko-fi_FI.*_l
+suomimalaga/voikko/voikko-fi_FI.pro
+suomimalaga/voikko/yhdyssanat.lex
 
