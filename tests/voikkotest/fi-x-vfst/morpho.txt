@@ -23,3 +23,7 @@ word:hei
  analysis
   CLASS=huudahdussana
   !SIJAMUOTO
+word:Nousiainen
+ expected:1
+ analysis
+  CLASS=paikannimi

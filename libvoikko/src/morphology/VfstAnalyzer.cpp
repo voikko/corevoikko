@@ -113,6 +113,9 @@ static wchar_t * parseClass(const wchar_t * fstOutput) {
 		if (wcsncmp(fstOutput + i + 1, L"es", 2) == 0) {
 			return StringUtils::copy(L"sukunimi");
 		}
+		if (wcsncmp(fstOutput + i + 1, L"ep", 2) == 0) {
+			return StringUtils::copy(L"paikannimi");
+		}
 	}
 	return StringUtils::copy(L"none");
 }
