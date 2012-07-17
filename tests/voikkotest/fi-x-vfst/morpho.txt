@@ -18,3 +18,8 @@ word:Pokkinen
  analysis
   CLASS=sukunimi
   STRUCTURE==ippppppp
+word:hei
+ expected:1
+ analysis
+  CLASS=huudahdussana
+  !SIJAMUOTO

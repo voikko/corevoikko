@@ -95,7 +95,8 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	return structure;
 }
 
-static wchar_t * parseClass(const wchar_t * fstOutput, size_t wlen) {
+static wchar_t * parseClass(const wchar_t * fstOutput) {
+	size_t wlen = wcslen(fstOutput);
 	if (wlen < 5) {
 		return StringUtils::copy(L"none");
 	}
@@ -105,6 +106,9 @@ static wchar_t * parseClass(const wchar_t * fstOutput, size_t wlen) {
 		}
 		if (fstOutput[i + 1] == L'n') {
 			return StringUtils::copy(L"nimisana");
+		}
+		if (fstOutput[i + 1] == L'h') {
+			return StringUtils::copy(L"huudahdussana");
 		}
 		if (wcsncmp(fstOutput + i + 1, L"es", 2) == 0) {
 			return StringUtils::copy(L"sukunimi");
@@ -130,8 +134,13 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			Analysis * analysis = new Analysis();
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, wlen));
-			analysis->addAttribute("CLASS", parseClass(fstOutput, wlen));
-			analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
+			analysis->addAttribute("CLASS", parseClass(fstOutput));
+			
+			// TODO temporary hack
+			if (wcscmp(analysis->getValue("CLASS"), L"huudahdussana") != 0) {
+				analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
+			}
+			
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);
 		}

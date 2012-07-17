@@ -48,7 +48,7 @@ main_vocabulary.write(u"! have received the original data, tools and instruction
 main_vocabulary.write(u"! generate this file (or instructions to obtain them) wherever\n")
 main_vocabulary.write(u"! you got this file from.\n\n")
 
-main_vocabulary.write(u"LEXICON Nimisana\n")
+main_vocabulary.write(u"LEXICON Joukahainen\n")
 
 
 def frequency(word):
@@ -87,6 +87,7 @@ def get_vfst_word_class(j_wordclasses):
 	if "adjective" in j_wordclasses and "noun" in j_wordclasses: return u"[Lnl]"
 	if "adjective" in j_wordclasses: return u"[Ll]"
 	if "noun" in j_wordclasses: return u"[Ln]"
+	if "interjection" in j_wordclasses: return u"[Lh]"
 	return None
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
@@ -148,11 +149,12 @@ def handle_word(word):
 		if infclass.getAttribute("type") != "historical":
 			voikko_infclass = generate_lex_common.tValue(infclass)
 			break
-	if voikko_infclass == None: return
 	if voikko_infclass == u"poikkeava": return
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
+	if wordclasses[0] != u"interjection" and voikko_infclass == None:
+		return
 	vfst_word_class = get_vfst_word_class(wordclasses)
 	if vfst_word_class == None: return
 	
@@ -160,7 +162,10 @@ def handle_word(word):
 	diacritics = reduce(lambda x, y: x + y, get_diacritics(word), u"")
 	
 	# Get forced vowel type
-	forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
+	if voikko_infclass == None:
+		forced_inflection_vtype = voikkoutils.VOWEL_DEFAULT
+	else:
+		forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
 	
 	# Construct debug information
 	debug_info = u""
@@ -190,6 +195,10 @@ def handle_word(word):
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
+		if vfst_word_class == u"[Lh]":
+			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), alku, alku)
+			main_vocabulary.write(entry + u"\n")
+			continue
 		if jatko not in [u"nainen", u"hattu"] or vfst_word_class not in [u"[Ln]", u"[Les]"]:
 			continue
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \

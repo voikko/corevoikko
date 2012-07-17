@@ -9,6 +9,7 @@ Multichar_Symbols
 [Ll]  ! laatusana
 [Lnl] ! nimi_laatusana
 [Lt]  ! teonsana
+[Lh]  ! huudahdussana
 
 ! Vokaalisointu
 [Va]
@@ -36,5 +37,5 @@ Multichar_Symbols
 @R.YS_ALKANUT@ ! Yhdyssana on alkanut
 
 LEXICON Root
-Nimisana	;
+Joukahainen	;
 
