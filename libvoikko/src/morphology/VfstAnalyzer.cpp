@@ -110,6 +110,9 @@ static wchar_t * parseClass(const wchar_t * fstOutput) {
 		if (fstOutput[i + 1] == L'h') {
 			return StringUtils::copy(L"huudahdussana");
 		}
+		if (wcsncmp(fstOutput + i + 1, L"ee", 2) == 0) {
+			return StringUtils::copy(L"etunimi");
+		}
 		if (wcsncmp(fstOutput + i + 1, L"es", 2) == 0) {
 			return StringUtils::copy(L"sukunimi");
 		}

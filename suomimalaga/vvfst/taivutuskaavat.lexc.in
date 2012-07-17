@@ -5,6 +5,13 @@ LEXICON Hattu
 [Sela][Ny]<U>st<A>:<U>st<A>	#	;
 [Sill][Ny]t<U><U>n:t<U><U>n	#	;
 
+LEXICON Kalsium
+[Sn][Ny]:	#	;
+[Sn][Nm]it:it	#	;
+[Sine][Ny]iss<A>:iss<A>	#	;
+[Sela][Ny]ist<A>:ist<A>	#	;
+[Sill][Ny]iin:iin	#	;
+
 LEXICON Nainen
 [Sn][Ny]nen:nen	#	;
 [Sn][Nm]set:set	#	;

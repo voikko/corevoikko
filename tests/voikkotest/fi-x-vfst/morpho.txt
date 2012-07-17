@@ -27,3 +27,7 @@ word:Nousiainen
  expected:1
  analysis
   CLASS=paikannimi
+word:Alfred
+ expected:1
+ analysis
+  CLASS=etunimi
