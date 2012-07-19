@@ -3782,7 +3782,7 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
   end;
   
   # Verbiketjuihin liittyvät säännöt, ks. http://kaino.kotus.fi/visk/sisallys.php?p=496
-  if ($tietue.perusmuoto in <"aikoa", "alkaa", "jaksaa", "kannattaa", "mahtaa", "pitää", "rohjeta", "saattaa",
+  if ($tietue.perusmuoto in <"aikoa", "alkaa", "haluta", "jaksaa", "kannattaa", "mahtaa", "pitää", "rohjeta", "saattaa",
                              "tahtoa", "taitaa", "tarvita", "täytyä", "uhata", "voida", "yrittää">) then
     $tietue :=+ [vaatii_tapaluokan: nimitapa_1];
   end;

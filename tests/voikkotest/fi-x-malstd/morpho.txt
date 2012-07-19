@@ -316,7 +316,7 @@ word:Välimerta
   POSSIBLE_GEOGRAPHICAL_NAME=true
 word:sämpyläjokilaiva
  !POSSIBLE_GEOGRAPHICAL_NAME
-word:rohkenen
+word:haluan
  analysis
   REQUIRE_FOLLOWING_VERB=A-infinitive
 word:ryhdymme
