@@ -76,7 +76,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				i++;
 			}
 		}
-		else if (wcsncmp(fstOutput + i, L"[Les]", 5) == 0) {
+		else if (wcsncmp(fstOutput + i, L"[Le", 3) == 0) {
 			defaultTitleCase = true;
 			i += 4;
 		}
@@ -118,6 +118,9 @@ static wchar_t * parseClass(const wchar_t * fstOutput) {
 		}
 		if (wcsncmp(fstOutput + i + 1, L"ep", 2) == 0) {
 			return StringUtils::copy(L"paikannimi");
+		}
+		if (wcsncmp(fstOutput + i + 1, L"em", 2) == 0) {
+			return StringUtils::copy(L"nimi");
 		}
 	}
 	return StringUtils::copy(L"none");

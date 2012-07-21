@@ -31,3 +31,8 @@ word:Alfred
  expected:1
  analysis
   CLASS=etunimi
+word:Kanteletar
+ expected:1
+ analysis
+  CLASS=nimi
+  STRUCTURE==ippppppppp
