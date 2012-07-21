@@ -132,8 +132,23 @@ static void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput,
 			while (j >= 1) {
 				j--;
 				if (fstOutput[j] == L'[') {
-					if (wcsncmp(fstOutput + j + 1, L"Sn", i - j - 1) == 0) {
-						analysis->addAttribute("SIJAMUOTO", StringUtils::copy(L"nimento"));
+					if (fstOutput[j + 1] == L'S') {
+						const char * attr = "SIJAMUOTO";
+						const wchar_t * muoto = 0;
+						size_t sijaLen = i - j - 2;
+						if (sijaLen == 1) {
+							if (fstOutput[j + 2] == L'n') {
+								muoto = L"nimento";
+							}
+						}
+						else if (sijaLen == 3) {
+							if (wcsncmp(fstOutput + j + 2, L"ine", 3) == 0) {
+								muoto = L"sisaolento";
+							}
+						}
+						if (muoto) {
+							analysis->addAttribute(attr, StringUtils::copy(muoto));
+						}
 					}
 					break;
 				}
