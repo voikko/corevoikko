@@ -8,6 +8,14 @@ word:hyttysessä
  expected:1
  analysis
   SIJAMUOTO=sisaolento
+word:hyttysestä
+ expected:1
+ analysis
+  SIJAMUOTO=sisaeronto
+word:hyttyseen
+ expected:1
+ analysis
+  SIJAMUOTO=sisatulento
 word:ampiaiset
  expected:1
  analysis

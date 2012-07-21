@@ -145,6 +145,12 @@ static void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput,
 							if (wcsncmp(fstOutput + j + 2, L"ine", 3) == 0) {
 								muoto = L"sisaolento";
 							}
+							else if (wcsncmp(fstOutput + j + 2, L"ela", 3) == 0) {
+								muoto = L"sisaeronto";
+							}
+							else if (wcsncmp(fstOutput + j + 2, L"ill", 3) == 0) {
+								muoto = L"sisatulento";
+							}
 						}
 						if (muoto) {
 							analysis->addAttribute(attr, StringUtils::copy(muoto));
