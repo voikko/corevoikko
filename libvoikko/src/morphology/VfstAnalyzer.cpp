@@ -95,12 +95,11 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	return structure;
 }
 
-static wchar_t * parseClass(const wchar_t * fstOutput) {
-	size_t wlen = wcslen(fstOutput);
-	if (wlen < 5) {
+static wchar_t * parseClass(const wchar_t * fstOutput, size_t fstLen) {
+	if (fstLen < 5) {
 		return StringUtils::copy(L"none");
 	}
-	for (size_t i = wlen - 4; i >= 1; i--) {
+	for (size_t i = fstLen - 4; i >= 1; i--) {
 		if (wcsncmp(fstOutput + i - 1, L"[L", 2) != 0) {
 			continue;
 		}
@@ -126,6 +125,27 @@ static wchar_t * parseClass(const wchar_t * fstOutput) {
 	return StringUtils::copy(L"none");
 }
 
+static void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
+	for (size_t i = fstLen - 1; i >= 2; i--) {
+		if (fstOutput[i] == L']') {
+			size_t j = i;
+			while (j >= 1) {
+				j--;
+				if (fstOutput[j] == L'[') {
+					if (wcsncmp(fstOutput + j + 1, L"Sn", i - j - 1) == 0) {
+						analysis->addAttribute("SIJAMUOTO", StringUtils::copy(L"nimento"));
+					}
+					break;
+				}
+			}
+			if (j < 3) {
+				return;
+			}
+			i = j;
+		}
+	}
+}
+
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
@@ -142,14 +162,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			Analysis * analysis = new Analysis();
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
+			size_t fstLen = wcslen(fstOutput);
 			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, wlen));
-			analysis->addAttribute("CLASS", parseClass(fstOutput));
-			
-			// TODO temporary hack
-			if (wcscmp(analysis->getValue("CLASS"), L"huudahdussana") != 0) {
-				analysis->addAttribute("SIJAMUOTO", utils::StringUtils::copy(L"none"));
-			}
-			
+			analysis->addAttribute("CLASS", parseClass(fstOutput, fstLen));
+			parseBasicAttributes(analysis, fstOutput, fstLen);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);
 		}

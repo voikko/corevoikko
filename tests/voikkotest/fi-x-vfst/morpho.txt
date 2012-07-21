@@ -3,6 +3,7 @@ word:hyttynen
  analysis
   CLASS=nimisana
   STRUCTURE==pppppppp
+  SIJAMUOTO=nimento
 word:ampiaiset
  expected:1
  analysis
