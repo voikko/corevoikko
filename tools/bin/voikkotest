@@ -575,6 +575,8 @@ else:
 		testdir = TESTFILES + "/" + subdir
 		if not os.access(testdir + "/config.txt", os.R_OK):
 			continue
+		if os.access(testdir + "/skip.this", os.R_OK):
+			continue
 		print "Starting test suite under", testdir
 		configFile = codecs.open(testdir + "/config.txt", "r", ENCODING)
 		configMap = {}
