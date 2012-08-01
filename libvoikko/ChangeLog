@@ -1,3 +1,6 @@
+2012-08-01 Harri Pitkänen <hatapitk@iki.fi>
+	* Support homonyms for verb negatives.
+
 2012-06-18 Harri Pitkänen <hatapitk@iki.fi>
 	* Fix false positives from extra verb check.
 	* Update version numbers for 3.5.

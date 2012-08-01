@@ -211,6 +211,7 @@ Höpisen saksaa siinä missä enoni puhuu englantia.
 Höpisen saksaa siinä talossa jossa enoni puhuu englantia.
  [code=18, level=0, descr="", stpos=0, len=46, suggs={}]
 Sitä kirjoitetaan kuten puhuja sopivaksi näkee.
+Suurimmat kosket valjastettiin teollisuuden käyttöön.
 Kissa oli näet kiivennyt aidalle.
 Kissa oli kiivennyt aidalle — sieltä oli hyvä näköala.
 
