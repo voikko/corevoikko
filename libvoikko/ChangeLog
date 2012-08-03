@@ -1,3 +1,6 @@
+2012-08-03 Harri Pitkänen <hatapitk@iki.fi>
+	* Support building without hardcoded DICTIONARY_PATH (needed for Android).
+
 2012-08-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Support homonyms for verb negatives.
 

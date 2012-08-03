@@ -351,8 +351,11 @@ list<string> DictionaryLoader::getDefaultLocations() {
 	}
 	#endif // WIN32
 	
+	#ifdef DICTIONARY_PATH
 	/* Directory specified on compile time */
 	locations.push_back(DICTIONARY_PATH);
+	#endif
+	
 	#endif
 	
 	return locations;
