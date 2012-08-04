@@ -33,7 +33,7 @@
 #include <sys/types.h>
 #include <cstring>
 
-#ifdef HAVE_GETPWUID_R
+#ifdef HAVE_MMAP
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/mman.h>
@@ -118,7 +118,7 @@ namespace libvoikko { namespace fst {
 	}
 	
 	static void * vfstMmap(const char * filePath, size_t & fileLength) {
-		#ifdef HAVE_GETPWUID_R
+		#ifdef HAVE_MMAP
 			int fd = open(filePath, O_RDONLY);
 			if (fd == -1) {
 				return 0;
@@ -146,7 +146,7 @@ namespace libvoikko { namespace fst {
 	}
 	
 	static void vfstMunmap(void * map, size_t fileLength) {
-		#ifdef HAVE_GETPWUID_R
+		#ifdef HAVE_MMAP
 			munmap(map, fileLength);
 		#endif
 		#ifdef WIN32

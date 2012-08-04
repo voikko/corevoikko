@@ -171,6 +171,7 @@ dnl Functions
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_FUNC_STAT
+AC_CHECK_FUNCS([mmap])
 AC_CHECK_FUNCS([setlocale])
 AC_CHECK_FUNCS([mbrlen])
 AC_CHECK_FUNCS([memset])
