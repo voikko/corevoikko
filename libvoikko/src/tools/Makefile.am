@@ -1,4 +1,7 @@
-bin_PROGRAMS = voikkovfstc
+bin_PROGRAMS =
+if HAVE_BUILDTOOLS
+    bin_PROGRAMS += voikkovfstc
+endif
 if HAVE_TESTTOOLS
     bin_PROGRAMS += voikkospell voikkohyphenate voikkogc
 endif

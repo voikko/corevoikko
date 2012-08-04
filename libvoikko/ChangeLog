@@ -1,8 +1,9 @@
 2012-08-04 Harri Pitkänen <hatapitk@iki.fi>
 	* mmap may be available even if getpwuid_r is not.
+	* Add option --disable-buildtools
 
 2012-08-03 Harri Pitkänen <hatapitk@iki.fi>
-	* Support building without hardcoded DICTIONARY_PATH (needed for Android).
+	* Support building without hardcoded DICTIONARY_PATH.
 
 2012-08-01 Harri Pitkänen <hatapitk@iki.fi>
 	* Support homonyms for verb negatives.
