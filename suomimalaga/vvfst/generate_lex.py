@@ -224,4 +224,5 @@ def handle_word(word):
 voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
                              handle_word, True)
 
+main_vocabulary.write(u"\n\n") # Extra line feeds needed to avoid mixed lines in concatenated lexc file
 main_vocabulary.close()

@@ -42,7 +42,7 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
-         vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in
+         vvfst/suomi.lexc vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
@@ -213,7 +213,7 @@ $(VVFST_BUILDDIR)/joukahainen.lexc: vocabulary/joukahainen.xml vocabulary/flags.
 $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/generate_taivutuskaavat.py
 	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
-$(VVFST_BUILDDIR)/vvfst.gen.hfst: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc
+$(VVFST_BUILDDIR)/vvfst.gen.hfst: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc vvfst/suomi.lexc
 	hfst-lexc --format=sfst $^ -o $@
 
 $(VVFST_BUILDDIR)/vvfst.mor.hfst: $(VVFST_BUILDDIR)/vvfst.gen.hfst
