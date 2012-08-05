@@ -1533,6 +1533,7 @@ sporttimalli # sportti
 sporttimallinen # sportti
 sukkikset # sukkis
 sumplaus # sumplata
+suplementtikulma # suplementti
 suolenkurouma # kurouma
 sydäninsuffisienssi # insuffisienssi
 synkopointi # synkopoida
