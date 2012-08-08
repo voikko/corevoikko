@@ -40,7 +40,7 @@ span.gErrorInner {
 .word {
   color: black;
   background-color: white;
-  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
 }
 span.word:hover, span.gErrorHandle:hover {
   background-color: #CCCCEE;
