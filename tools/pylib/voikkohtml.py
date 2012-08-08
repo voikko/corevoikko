@@ -248,7 +248,7 @@ def getHtmlSafely(url, clientIp = "127.0.0.1", clientRequestHeaders = []):
 	c = pycurl.Curl()
 	c.setopt(pycurl.URL, url)
 	c.setopt(pycurl.WRITEFUNCTION, result.body_callback)
-	c.setopt(pycurl.MAXFILESIZE, 150000)
+	c.setopt(pycurl.MAXFILESIZE, 250000)
 	c.setopt(pycurl.TIMEOUT, 10)
 	c.setopt(pycurl.USERAGENT, USER_AGENT)
 	c.setopt(pycurl.HTTPHEADER, [__getForwardedForHeader(clientIp, clientRequestHeaders)])
