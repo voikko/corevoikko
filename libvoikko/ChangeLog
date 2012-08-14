@@ -1,3 +1,7 @@
+2012-08-14 Harri Pitkänen <hatapitk@iki.fi>
+	* Improve word splitting suggestions near capitalized words or
+	  end of sentence.
+
 2012-08-04 Harri Pitkänen <hatapitk@iki.fi>
 	* mmap may be available even if getpwuid_r is not.
 	* Add option --disable-buildtools

@@ -31,6 +31,7 @@
 
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include "morphology/Analyzer.hpp"
+#include "spellchecker/Speller.hpp"
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
@@ -40,6 +41,8 @@ class SuggestionGeneratorSplitWord : public SuggestionGenerator {
 		void generate(SuggestionStatus * s) const;
 	private:
 		morphology::Analyzer * morAnalyzer;
+		bool spellOk(SuggestionStatus * s, wchar_t * word, size_t len, int & prioTotal) const;
+		bool getResultForPart1(SuggestionStatus * s, wchar_t * part1, size_t len, int & prioTotal) const;
 };
 
 }}}

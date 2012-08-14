@@ -56,6 +56,12 @@ Alkuperäisesessä	Alkuperäisessä
 masja	marja
 iranalaismies	iranilaismies
 lääkeri	lääkäri
+kissa.Koira	kissa. Koira
+Kissa.Koira	Kissa. Koira
+kissa.koira	kissa. koira
+Kissa.koira	Kissa. koira
+kissaJuokse	kissa Juokse
+Kissajuokse	Kissa juokse
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.

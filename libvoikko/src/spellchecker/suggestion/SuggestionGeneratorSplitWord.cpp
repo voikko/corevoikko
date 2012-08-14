@@ -38,6 +38,33 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 SuggestionGeneratorSplitWord::SuggestionGeneratorSplitWord(morphology::Analyzer * morAnalyzer) :
 		morAnalyzer(morAnalyzer) {}
 
+
+/**
+ * This capitalizes the first letter of word if needed
+ */
+bool SuggestionGeneratorSplitWord::spellOk(SuggestionStatus * s, wchar_t * word, size_t len, int & prioTotal) const {
+	bool firstUpper = SimpleChar::isUpper(word[0]);
+	if (firstUpper) {
+		word[0] = SimpleChar::lower(word[0]);
+	}
+	spellresult wordRes = SpellWithPriority::spellWithPriority(morAnalyzer, word, len, &prioTotal);
+	s->charge();
+	if (firstUpper || wordRes == SPELL_CAP_FIRST) {
+		word[0] = SimpleChar::upper(word[0]);
+	}
+	return wordRes == SPELL_OK || wordRes == SPELL_CAP_FIRST;
+}
+
+
+bool SuggestionGeneratorSplitWord::getResultForPart1(SuggestionStatus * s, wchar_t * part1, size_t len, int & prioTotal) const {
+	bool ok = spellOk(s, part1, len, prioTotal);
+	if (ok || part1[len - 1] != L'.') {
+		return ok;
+	}
+	// "kissa.Koira" -> "kissa. Koira"
+	return spellOk(s, part1, len - 1, prioTotal);
+}
+
 void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 	int prio_part;
 	int prio_total;
@@ -52,26 +79,20 @@ void SuggestionGeneratorSplitWord::generate(SuggestionStatus * s) const {
 		if (s->getWord()[splitind-2] == L'-' || s->getWord()[splitind-1] == L'-' ||
 		    s->getWord()[splitind]   == L'-' || s->getWord()[splitind+1] == L'-') continue;
 		part1[splitind] = L'\0';
-		spellresult part1_res = SpellWithPriority::spellWithPriority(
-		    morAnalyzer, part1, splitind, &prio_total);
-		s->charge();
-		if (part1_res == SPELL_OK || part1_res == SPELL_CAP_FIRST) {
-			spellresult part2_res = SpellWithPriority::spellWithPriority(
-			    morAnalyzer, s->getWord() + splitind,
-			    s->getWordLength() - splitind, &prio_part);
+		if (getResultForPart1(s, part1, splitind, prio_total)) {
+			wchar_t * suggestion = new wchar_t[s->getWordLength() + 2];
+			size_t w2start = splitind + 1;
+			size_t w2len = s->getWordLength() - splitind;
+			wcsncpy(suggestion + w2start, s->getWord() + splitind, w2len + 1);
+			bool part2Result = spellOk(s, suggestion + w2start, w2len, prio_part);
 			prio_total += prio_part;
-			s->charge();
-			if (part2_res == SPELL_OK || part2_res == SPELL_CAP_FIRST) {
-				wchar_t * suggestion = new wchar_t[s->getWordLength() + 2];
+			if (part2Result) {
 				wcsncpy(suggestion, s->getWord(), splitind);
-				if (part1_res == SPELL_CAP_FIRST)
-					suggestion[0] = SimpleChar::upper(suggestion[0]);
 				suggestion[splitind] = L' ';
-				wcsncpy(suggestion + (splitind + 1), s->getWord() + splitind,
-				        s->getWordLength() - splitind + 1);
-				if (part2_res == SPELL_CAP_FIRST)
-					suggestion[splitind+1] = SimpleChar::upper(suggestion[splitind+1]);
 				s->addSuggestion(suggestion, prio_total);
+			}
+			else {
+				delete[] suggestion;
 			}
 		}
 		if (s->shouldAbort()) break;
