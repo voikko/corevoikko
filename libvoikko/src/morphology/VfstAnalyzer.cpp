@@ -106,6 +106,9 @@ static wchar_t * parseClass(const wchar_t * fstOutput, size_t fstLen) {
 		if (fstOutput[i + 1] == L'n') {
 			return StringUtils::copy(L"nimisana");
 		}
+		if (fstOutput[i + 1] == L'l') {
+			return StringUtils::copy(L"laatusana");
+		}
 		if (fstOutput[i + 1] == L'h') {
 			return StringUtils::copy(L"huudahdussana");
 		}

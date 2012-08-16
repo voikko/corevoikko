@@ -199,7 +199,7 @@ def handle_word(word):
 			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), alku, alku)
 			main_vocabulary.write(entry + u"\n")
 			continue
-		if jatko not in [u"nainen", u"hattu", u"kalsium", u"tytär"] or vfst_word_class not in [u"[Ln]", u"[Lee]", u"[Les]", u"[Lep]", u"[Lem]"]:
+		if jatko not in [u"nainen", u"hattu", u"kalsium", u"tytär"] or vfst_word_class not in [u"[Ln]", u"[Ll]", u"[Lee]", u"[Les]", u"[Lep]", u"[Lem]"]:
 			continue
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,

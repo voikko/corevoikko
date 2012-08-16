@@ -49,3 +49,9 @@ word:Kanteletar
  analysis
   CLASS=nimi
   STRUCTURE==ippppppppp
+word:keltainen
+ expected:1
+ analysis
+  CLASS=laatusana
+  STRUCTURE==ppppppppp
+

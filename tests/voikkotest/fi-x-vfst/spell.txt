@@ -25,3 +25,5 @@ lopettajaiset
 Pokkinen
 !pokkinen
 hei
+keltainen
+
