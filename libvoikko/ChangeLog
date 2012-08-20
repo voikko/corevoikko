@@ -1,3 +1,6 @@
+2012-08-20 Harri Pitkänen <hatapitk@iki.fi>
+	* Add simple VFST speller implementation.
+
 2012-08-14 Harri Pitkänen <hatapitk@iki.fi>
 	* Improve word splitting suggestions near capitalized words or
 	  end of sentence.

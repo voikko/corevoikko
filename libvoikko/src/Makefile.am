@@ -187,7 +187,7 @@ HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 
-VFST_CPP_FILES=morphology/VfstAnalyzer.cpp
+VFST_CPP_FILES=morphology/VfstAnalyzer.cpp spellchecker/VfstSpeller.cpp
 
 if HAVE_MALAGA
     libvoikko_la_SOURCES += $(MALAGA_CPP_FILES)

@@ -36,6 +36,10 @@
 #include "spellchecker/HfstSpeller.hpp"
 #endif
 
+#ifdef HAVE_VFST
+#include "spellchecker/VfstSpeller.hpp"
+#endif
+
 using namespace std;
 
 namespace libvoikko { namespace spellchecker {
@@ -58,6 +62,11 @@ Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 	#ifdef HAVE_HFST
 	if (dictionary.getSpellBackend() == "hfst") {
 		return new HfstSpeller(dictionary.getMorPath(), voikkoOptions);
+	}
+	#endif
+	#ifdef HAVE_VFST
+	if (dictionary.getSpellBackend() == "vfst") {
+		return new VfstSpeller(dictionary.getMorPath());
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create speller because backend configuration could not be parsed");
