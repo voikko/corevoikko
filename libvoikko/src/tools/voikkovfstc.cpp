@@ -122,6 +122,14 @@ static string convertSymbolNames(string input) {
 	return input;
 }
 
+static void setTarget(Transition & t, vector<uint32_t> & stateOrdinalToOffset, uint32_t targetStateOrdinal) {
+	if (targetStateOrdinal >= stateOrdinalToOffset.size()) {
+		cerr << "ERROR: target state not final or source for another transition: " << targetStateOrdinal << endl;
+		exit(1);
+	}
+	t.transInfo.targetState = stateOrdinalToOffset[targetStateOrdinal];
+}
+
 struct compareSymbolsForLookupOrder {
 	bool operator()(Symbol const & a, Symbol const & b) const {
 		if (a.text == b.text) {
@@ -318,7 +326,7 @@ int main(int argc, char ** argv) {
 		uint32_t tCount = it->transitions.size();
 		{
 			Transition & t = it->transitions[0];
-			t.transInfo.targetState = stateOrdinalToOffset[it->targetStateOrds[0]];
+			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[0]);
 			t.transInfo.moreTransitions = (tCount > 255 ? 255 : tCount - 1);
 			writeTrans(transducerFile, byteSwap, t);
 		}
@@ -330,7 +338,7 @@ int main(int argc, char ** argv) {
 		}
 		for (uint32_t ti = 1; ti < tCount; ti++) {
 			Transition & t = it->transitions[ti];
-			t.transInfo.targetState = stateOrdinalToOffset[it->targetStateOrds[ti]];
+			setTarget(t, stateOrdinalToOffset, it->targetStateOrds[ti]);
 			t.transInfo.moreTransitions = 0;
 			writeTrans(transducerFile, byteSwap, t);
 		}
