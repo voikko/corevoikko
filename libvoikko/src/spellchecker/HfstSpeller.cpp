@@ -46,13 +46,15 @@ throw(setup::DictionaryException) {
 			speller_->read_zhfst(spellerFile.c_str());
 		}
 		catch (hfst_ol::ZHfstZipReadingError& zhzre) {
-			speller_->read_legacy(directoryName.c_str());
-		}
-		catch (hfst_ol::ZHfstLegacyReadingError& zhlre) {
-			throw setup::DictionaryException("no usable hfst spellers");
-		}
-		catch (hfst_ol::AlphabetTranslationException& ate) {
-			throw setup::DictionaryException("broken error model detected");
+			try {
+				speller_->read_legacy(directoryName.c_str());
+			}
+			catch (hfst_ol::ZHfstLegacyReadingError& zhlre) {
+				throw setup::DictionaryException("no usable hfst spellers");
+			}
+			catch (hfst_ol::AlphabetTranslationException& ate) {
+				throw setup::DictionaryException("broken error model detected");
+			}
 		}
 	}
 	if (opts != 0)
