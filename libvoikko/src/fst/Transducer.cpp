@@ -406,6 +406,10 @@ namespace libvoikko { namespace fst {
 						for (int i = 0; i < configuration->stackDepth; i++) {
 							const char * outputSym = symbolToString[configuration->outputSymbolStack[i]];
 							size_t symLen = strlen(outputSym);
+							if ((outputBufferPos - outputBuffer) + symLen + 1 >= bufferLen) {
+								// would overflow the output buffer
+								return false;
+							}
 							strncpy(outputBufferPos, outputSym, symLen);
 							outputBufferPos += symLen;
 						}
