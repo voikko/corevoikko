@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2009 Harri Pitkänen (hatapitk@iki.fi)
+# Copyright 2009 - 2012 Harri Pitkänen (hatapitk@iki.fi)
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@
 #
 # Usage: python triecompiler.py input.xml output.hpp
 
+from __future__ import unicode_literals
 import xml.dom.minidom
 import sys
 
@@ -69,7 +70,7 @@ def indexTrie(trie, nextNodeIndex, nextValueIndex):
 
 def cHexCodeForChar(unicodeChar):
 	ordinal = ord(unicodeChar)
-	if unicodeChar == u"\\":
+	if unicodeChar == "\\":
 		return "\\\\"
 	if 0x20 <= ordinal and ordinal <= 0x7f:
 		# These characters cannot be represented as unicode literals in C++
@@ -83,10 +84,10 @@ def writeTrieNodes(trie, outputFile):
 		outputFile.write(",{")
 		outputFile.write("L'%s'" % cHexCodeForChar(node))
 		outputFile.write(",")
-		outputFile.write(`trie.children[node].valueIndex`)
+		outputFile.write(str(trie.children[node].valueIndex))
 		outputFile.write(",")
 		if len(trie.children[node].children) != 0:
-			outputFile.write(`trie.children[node].children.itervalues().next().nodeIndex`)
+			outputFile.write(str(next(iter(trie.children[node].children.values())).nodeIndex))
 		else:
 			outputFile.write("0")
 		outputFile.write("}")
@@ -95,13 +96,13 @@ def writeTrieNodes(trie, outputFile):
 		writeTrieNodes(trie.children[node], outputFile)
 
 def writeTrieValues(trie, outputFile):
-	for node in trie.children.itervalues():
+	for node in trie.children.values():
 		if node.value != None:
 			outputFile.write(',L"')
 			for char in node.value:
 				outputFile.write(cHexCodeForChar(char))
 			outputFile.write('"')
-	for node in trie.children.itervalues():
+	for node in trie.children.values():
 		writeTrieValues(node, outputFile)
 
 # Open the XML file

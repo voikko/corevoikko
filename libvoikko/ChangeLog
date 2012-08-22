@@ -1,3 +1,7 @@
+2012-08-22 Harri Pitkänen <hatapitk@iki.fi>
+	* Add support for using Python 3 (and drop support for using
+	  Python < 2.6) as build tool.
+
 2012-08-20 Harri Pitkänen <hatapitk@iki.fi>
 	* Add simple VFST speller implementation.
 

@@ -66,7 +66,7 @@ Documentation for using the library can be found from header file voikko.h.
 Build requirements
 ==================
 
-C++ compiler (GCC or clang) and Python (version 2.3 or later but not version 3)
+C++ compiler (GCC or clang) and Python (version 2.6 or later)
 must be available in order to build this library. Pkg-config is needed
 for build configuration.
 
