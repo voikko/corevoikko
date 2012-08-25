@@ -213,14 +213,19 @@ $(VVFST_BUILDDIR)/joukahainen.lexc: vocabulary/joukahainen.xml vocabulary/flags.
 $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/generate_taivutuskaavat.py
 	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
-$(VVFST_BUILDDIR)/vvfst.gen.hfst: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc vvfst/suomi.lexc
-	hfst-lexc --format=sfst $^ -o $@
+$(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc vvfst/suomi.lexc
+	cat $^ > $@
 
-$(VVFST_BUILDDIR)/vvfst.mor.hfst: $(VVFST_BUILDDIR)/vvfst.gen.hfst
-	hfst-invert -i $< -o $@
+$(VVFST_BUILDDIR)/build.fomascript:
+	echo "read lexc $(VVFST_BUILDDIR)/all.lexc" > $@
+	echo "invert net" >> $@
+	echo "write att $(VVFST_BUILDDIR)/all.att" >> $@
 
-$(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/vvfst.mor.hfst
-	hfst-fst2txt -D $< | voikkovfstc -o $@
+$(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/build.fomascript
+	foma -f $(VVFST_BUILDDIR)/build.fomascript
+
+$(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/all.att
+	cat $^ | voikkovfstc -o $@
 
 VVFST_PRO_SEDSCRIPT="s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
 	s/SM_VOIKKO_DESCRIPTION/$(VOIKKO_DESCRIPTION)/; \
