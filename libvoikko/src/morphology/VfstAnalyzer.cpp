@@ -45,6 +45,11 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	transducer = new Transducer(morFile.c_str());
 	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new char[BUFFER_SIZE];
+	
+	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
+	sijamuotoMap.insert(std::make_pair(L"ine", L"sisaolento"));
+	sijamuotoMap.insert(std::make_pair(L"ela", L"sisaeronto"));
+	sijamuotoMap.insert(std::make_pair(L"ill", L"sisatulento"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -128,7 +133,15 @@ static wchar_t * parseClass(const wchar_t * fstOutput, size_t fstLen) {
 	return StringUtils::copy(L"none");
 }
 
-static void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
+static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar_t * keyStart, size_t keyLen) {
+	map<wstring, wstring>::const_iterator mapIterator = theMap.find(wstring(keyStart, keyLen));
+	if (mapIterator == theMap.end()) {
+		return 0;
+	}
+	return StringUtils::copy((*mapIterator).second.c_str());
+}
+
+void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
 			size_t j = i;
@@ -136,27 +149,10 @@ static void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput,
 				j--;
 				if (fstOutput[j] == L'[') {
 					if (fstOutput[j + 1] == L'S') {
-						const char * attr = "SIJAMUOTO";
-						const wchar_t * muoto = 0;
 						size_t sijaLen = i - j - 2;
-						if (sijaLen == 1) {
-							if (fstOutput[j + 2] == L'n') {
-								muoto = L"nimento";
-							}
-						}
-						else if (sijaLen == 3) {
-							if (wcsncmp(fstOutput + j + 2, L"ine", 3) == 0) {
-								muoto = L"sisaolento";
-							}
-							else if (wcsncmp(fstOutput + j + 2, L"ela", 3) == 0) {
-								muoto = L"sisaeronto";
-							}
-							else if (wcsncmp(fstOutput + j + 2, L"ill", 3) == 0) {
-								muoto = L"sisatulento";
-							}
-						}
+						wchar_t * muoto = getAttributeFromMap(sijamuotoMap, fstOutput + j + 2, sijaLen);
 						if (muoto) {
-							analysis->addAttribute(attr, StringUtils::copy(muoto));
+							analysis->addAttribute("SIJAMUOTO", muoto);
 						}
 					}
 					break;
