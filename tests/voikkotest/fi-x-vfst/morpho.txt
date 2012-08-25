@@ -4,6 +4,14 @@ word:hyttynen
   CLASS=nimisana
   STRUCTURE==pppppppp
   SIJAMUOTO=nimento
+word:hyttysen
+ expected:1
+ analysis
+  SIJAMUOTO=omanto
+word:hyttystä
+ expected:1
+ analysis
+  SIJAMUOTO=osanto
 word:hyttysessä
  expected:1
  analysis
@@ -16,6 +24,18 @@ word:hyttyseen
  expected:1
  analysis
   SIJAMUOTO=sisatulento
+word:hyttysellä
+ expected:1
+ analysis
+  SIJAMUOTO=ulkoolento
+word:hyttyseltä
+ expected:1
+ analysis
+  SIJAMUOTO=ulkoeronto
+word:hyttyselle
+ expected:1
+ analysis
+  SIJAMUOTO=ulkotulento
 word:ampiaiset
  expected:1
  analysis

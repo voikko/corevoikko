@@ -23,9 +23,14 @@ Multichar_Symbols
 
 ! Sijamuodot
 [Sn]   ! nominatiivi
+[Sg]   ! genetiivi
+[Sp]   ! partitiivi
 [Sine] ! inessiivi
 [Sela] ! elatiivi
 [Sill] ! illatiivi
+[Sade] ! adessiivi
+[Sabl] ! ablatiivi
+[Sall] ! allatiivi
 
 ! Luvut
 [Ny]  ! yksikkö

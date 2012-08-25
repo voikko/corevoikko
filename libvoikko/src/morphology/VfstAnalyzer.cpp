@@ -47,9 +47,14 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	outputBuffer = new char[BUFFER_SIZE];
 	
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
+	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));
+	sijamuotoMap.insert(std::make_pair(L"p", L"osanto"));
 	sijamuotoMap.insert(std::make_pair(L"ine", L"sisaolento"));
 	sijamuotoMap.insert(std::make_pair(L"ela", L"sisaeronto"));
 	sijamuotoMap.insert(std::make_pair(L"ill", L"sisatulento"));
+	sijamuotoMap.insert(std::make_pair(L"ade", L"ulkoolento"));
+	sijamuotoMap.insert(std::make_pair(L"abl", L"ulkoeronto"));
+	sijamuotoMap.insert(std::make_pair(L"all", L"ulkotulento"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
