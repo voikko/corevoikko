@@ -1339,6 +1339,9 @@
 [perusmuoto: "sinnepäin", alku: "sinnekinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppp=pppp"];
 [perusmuoto: "sinnepäin", alku: "sinnekäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "sinnepäin", alku: "sinnepäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppp=pppp"];
+[perusmuoto: "sisäänpäin", alku: "sisältäkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppppp=pppp"];
+[perusmuoto: "sisäänpäin", alku: "sisältäkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppppp=pppp"];
+[perusmuoto: "sisäänpäin", alku: "sisältäpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppppppp=pppp"];
 [perusmuoto: "sisäänpäin", alku: "sisäänkinpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=ppppppppp=pppp"];
 [perusmuoto: "sisäänpäin", alku: "sisäänkäänpäin", luokka: seikkasana, jatko: <loppu>, äs: ä, rakenne: "=pppppppppp=pppp"];
 [perusmuoto: "sisäänpäin", alku: "sisäänpäin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppp"];
