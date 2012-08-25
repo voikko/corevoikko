@@ -138,7 +138,7 @@ clean:
 	rm -f $(VOIKKO_BUILDDIR)/joukahainen.lex $(VOIKKO_BUILDDIR)/main.lex $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
-	rm -f $(VVFST_BUILDDIR)/vvfst.gen.hfst $(VVFST_BUILDDIR)/vvfst.mor.hfst $(VVFST_BUILDDIR)/mor.vfst
+	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/build.fomascript $(VVFST_BUILDDIR)/mor.vfst
 	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc
 	rm -f TAGS
 
