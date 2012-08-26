@@ -91,6 +91,12 @@ def handle_word(word):
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return
 	
+	baseformTags = word.getElementsByTagName("baseform")
+	if len(baseformTags) > 0:
+		baseform = generate_lex_common.tValue(baseformTags[0])
+	else:
+		baseform = None
+	
 	# Get malaga flags
 	malaga_flags = generate_lex_common.get_malaga_flags(word)
 	
@@ -128,8 +134,10 @@ def handle_word(word):
 			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
+		if baseform is None:
+			baseform = wordform
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
-		          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
+		          % (baseform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
 			   debug_info)
 		generate_lex_common.write_entry(main_vocabulary, {}, word, entry)

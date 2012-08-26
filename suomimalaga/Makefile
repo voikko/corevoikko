@@ -54,8 +54,7 @@ VVFST_BINDIST=$(VVFST_BUILDDIR)/voikko-fi_FI.pro $(VVFST_BUILDDIR)/mor.vfst
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
 VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
-	poikkeavat.lex lainen.lex taivutustaydennykset.lex sidesanat.lex \
-	huudahdussanat.lex
+	poikkeavat.lex lainen.lex taivutustaydennykset.lex sidesanat.lex
 VOIKKO_COPY_FROM_VOIKKO=voikko-fi_FI.all voikko-fi_FI.sym voikko-fi_FI.mor \
 	olla-ei.lex suomi.lex suomi.inc voikko-fi_FI.lex
 
@@ -173,7 +172,6 @@ erikoisalat/linux-distributions.lex \
 erikoiset.lex \
 erikoissanat.lex \
 etuliitteet.lex \
-huudahdussanat.lex \
 lainen.lex \
 lukusanat.lex \
 lyhenteet.lex \
