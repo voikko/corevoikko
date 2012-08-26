@@ -44,20 +44,34 @@ def replacementsFront(line):
 def replacementsBack(line):
 	return addDiacritics(line.replace(u"<A>", u"a").replace(u"<U>", u"u"))
 
+def filterLines(lines, lexiconPrefix):
+	for line in lines:
+		if line.startswith("?Laatusana"):
+			if lexiconPrefix in [u"Laatusana", u"NimiLaatusana"]:
+				yield line[10:]
+		else:
+			yield line
 
-def appendLines(lexiconName, lines, lexcFile):
-	lexcFile.write(u"LEXICON " + lexiconName + u"_a\n")
-	for line in lines:
+def appendLines(lexiconPrefix, lexiconName, lines, lexcFile):
+	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_a\n")
+	for line in filterLines(lines, lexiconPrefix):
 		lexcFile.write(replacementsBack(line) + u"\n")
-	lexcFile.write(u"LEXICON " + lexiconName + u"_ä\n")
-	for line in lines:
+	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_ä\n")
+	for line in filterLines(lines, lexiconPrefix):
 		lexcFile.write(replacementsFront(line) + u"\n")
-	lexcFile.write(u"LEXICON " + lexiconName + u"_aä\n")
-	for line in lines:
+	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_aä\n")
+	for line in filterLines(lines, lexiconPrefix):
 		lexcFile.write(replacementsBack(line) + u"\n")
 		if u"<A>" in line:
 			lexcFile.write(replacementsFront(line) + u"\n")
 
+def appendLexicon(lexiconName, lines, lexcFile):
+	if lexiconName.startswith(u"NOUN "):
+		appendLines(u"Nimisana", lexiconName[5:], lines, lexcFile)
+		appendLines(u"Laatusana", lexiconName[5:], lines, lexcFile)
+		appendLines(u"NimiLaatusana", lexiconName[5:], lines, lexcFile)
+	else:
+		appendLines(u"", lexiconName, lines, lexcFile)
 
 # Get command line options
 OPTIONS = generate_lex_common.get_options()
@@ -77,12 +91,12 @@ while True:
 	line = stripWhitespaceAndComments(line_orig)
 	if line.startswith(u'LEXICON '):
 		if lexicon != u"":
-			appendLines(u"Nom" + lexicon, lexcLines, lexcFile)
+			appendLexicon(lexicon, lexcLines, lexcFile)
 		lexicon = line[8:]
 		lexcLines = []
 		continue
 	lexcLines.append(line)
 
-appendLines(u"Nom" + lexicon, lexcLines, lexcFile)
+appendLexicon(lexicon, lexcLines, lexcFile)
 
 lexcFile.close()

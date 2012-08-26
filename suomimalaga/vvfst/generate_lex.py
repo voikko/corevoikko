@@ -133,6 +133,16 @@ def get_diacritics(word):
 				diacritics.append(u"@R.YS_ALKANUT@")
 	return diacritics
 
+def get_vfst_class_prefix(vfst_class):
+	if vfst_class in [u"[Lep]", u"[Lee]", u"[Les]", u"[Lem]", u"[Ln]"]:
+		return u"Nimisana"
+	elif vfst_class == u"[Ll]":
+		return u"Laatusana"
+	elif vfst_class == u"[Lnl]":
+		return u"NimiLaatusana"
+	else:
+		return u""
+	
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -201,14 +211,15 @@ def handle_word(word):
 			continue
 		if jatko not in [u"nainen", u"hattu", u"kalsium", u"tytär"] or vfst_word_class not in [u"[Ln]", u"[Ll]", u"[Lee]", u"[Les]", u"[Lep]", u"[Lem]"]:
 			continue
+		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
 		#          % (wordform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
 		alku = alku.lower()
-		entry = u'%s[Xp]%s[X]%s%s%s:%s%s Nom%s_%s ;' \
+		entry = u'%s[Xp]%s[X]%s%s%s:%s%s %s%s_%s ;' \
 		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
-		        alku, diacritics, alku, diacritics, jatko.title(), vfst_vtype)
+		        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
 		main_vocabulary.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

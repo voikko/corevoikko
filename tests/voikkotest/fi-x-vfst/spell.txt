@@ -26,4 +26,7 @@ Pokkinen
 !pokkinen
 hei
 keltainen
-
+arktisuus
+!arktisyys
+!hyttysyys
+!aapisuus

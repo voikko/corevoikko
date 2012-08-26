@@ -1,25 +1,25 @@
-LEXICON Hattu
+LEXICON NOUN Hattu
 [Sn][Ny]t<U>:t<U>	Liitesana	;
 [Sn][Nm]<U>t:<U>t	#	;
 [Sine][Ny]<U>ss<A>:<U>ss<A>	#	;
 [Sela][Ny]<U>st<A>:<U>st<A>	#	;
 [Sill][Ny]t<U><U>n:t<U><U>n	#	;
 
-LEXICON Kalsium
+LEXICON NOUN Kalsium
 [Sn][Ny]:	#	;
 [Sn][Nm]it:it	#	;
 [Sine][Ny]iss<A>:iss<A>	#	;
 [Sela][Ny]ist<A>:ist<A>	#	;
 [Sill][Ny]iin:iin	#	;
 
-LEXICON Tytär
+LEXICON NOUN Tytär
 [Sn][Ny]<A>r:<A>r	#	;
 [Sn][Nm]t<A>ret:t<A>ret	#	;
 [Sine][Ny]t<A>ress<A>:t<A>ress<A>	#	;
 [Sela][Ny]t<A>rest<A>:t<A>rest<A>	#	;
 [Sill][Ny]t<A>reen:t<A>reen	#	;
 
-LEXICON Nainen
+LEXICON NOUN Nainen
 [Sn][Ny]nen:nen	#	;
 [Sn][Nm]set:set	#	;
 [Sg][Ny]sen:sen	#	;
@@ -30,3 +30,7 @@ LEXICON Nainen
 [Sade][Ny]sell<A>:sell<A>	#	;
 [Sabl][Ny]selt<A>:selt<A>	#	;
 [Sall][Ny]selle:selle	#	;
+?Laatusana	s:s	Johdin_UUs_<A>	;
+
+LEXICON Johdin_UUs
+[Sn][Ny]<U><U>s:<U><U>s    #    ;
