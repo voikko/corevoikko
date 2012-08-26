@@ -74,4 +74,8 @@ word:keltainen
  analysis
   CLASS=laatusana
   STRUCTURE==ppppppppp
-
+word:arktisuus
+ expected:1
+ analysis
+  CLASS=nimisana
+  STRUCTURE==ppppppppp

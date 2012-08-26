@@ -46,6 +46,14 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	configuration = new Configuration(transducer->getFlagDiacriticFeatureCount(), BUFFER_SIZE);
 	outputBuffer = new char[BUFFER_SIZE];
 	
+	classMap.insert(std::make_pair(L"n", L"nimisana"));
+	classMap.insert(std::make_pair(L"l", L"laatusana"));
+	classMap.insert(std::make_pair(L"h", L"huudahdussana"));
+	classMap.insert(std::make_pair(L"ee", L"etunimi"));
+	classMap.insert(std::make_pair(L"es", L"sukunimi"));
+	classMap.insert(std::make_pair(L"ep", L"paikannimi"));
+	classMap.insert(std::make_pair(L"em", L"nimi"));
+	
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
 	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));
 	sijamuotoMap.insert(std::make_pair(L"p", L"osanto"));
@@ -105,39 +113,6 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	return structure;
 }
 
-static wchar_t * parseClass(const wchar_t * fstOutput, size_t fstLen) {
-	if (fstLen < 5) {
-		return StringUtils::copy(L"none");
-	}
-	for (size_t i = fstLen - 4; i >= 1; i--) {
-		if (wcsncmp(fstOutput + i - 1, L"[L", 2) != 0) {
-			continue;
-		}
-		if (fstOutput[i + 1] == L'n') {
-			return StringUtils::copy(L"nimisana");
-		}
-		if (fstOutput[i + 1] == L'l') {
-			return StringUtils::copy(L"laatusana");
-		}
-		if (fstOutput[i + 1] == L'h') {
-			return StringUtils::copy(L"huudahdussana");
-		}
-		if (wcsncmp(fstOutput + i + 1, L"ee", 2) == 0) {
-			return StringUtils::copy(L"etunimi");
-		}
-		if (wcsncmp(fstOutput + i + 1, L"es", 2) == 0) {
-			return StringUtils::copy(L"sukunimi");
-		}
-		if (wcsncmp(fstOutput + i + 1, L"ep", 2) == 0) {
-			return StringUtils::copy(L"paikannimi");
-		}
-		if (wcsncmp(fstOutput + i + 1, L"em", 2) == 0) {
-			return StringUtils::copy(L"nimi");
-		}
-	}
-	return StringUtils::copy(L"none");
-}
-
 static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar_t * keyStart, size_t keyLen) {
 	map<wstring, wstring>::const_iterator mapIterator = theMap.find(wstring(keyStart, keyLen));
 	if (mapIterator == theMap.end()) {
@@ -153,7 +128,14 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 			while (j >= 1) {
 				j--;
 				if (fstOutput[j] == L'[') {
-					if (fstOutput[j + 1] == L'S') {
+					if (fstOutput[j + 1] == L'L') {
+						size_t sijaLen = i - j - 2;
+						wchar_t * muoto = getAttributeFromMap(classMap, fstOutput + j + 2, sijaLen);
+						if (muoto) {
+							analysis->addAttribute("CLASS", muoto);
+						}
+					}
+					else if (fstOutput[j + 1] == L'S') {
 						size_t sijaLen = i - j - 2;
 						wchar_t * muoto = getAttributeFromMap(sijamuotoMap, fstOutput + j + 2, sijaLen);
 						if (muoto) {
@@ -189,7 +171,6 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			size_t fstLen = wcslen(fstOutput);
 			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, wlen));
-			analysis->addAttribute("CLASS", parseClass(fstOutput, fstLen));
 			parseBasicAttributes(analysis, fstOutput, fstLen);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);

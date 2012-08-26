@@ -52,6 +52,7 @@ class VfstAnalyzer : public Analyzer {
 		fst::Transducer * transducer;
 		fst::Configuration * configuration;
 		char * outputBuffer;
+		std::map<std::wstring, std::wstring> classMap;
 		std::map<std::wstring, std::wstring> sijamuotoMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
