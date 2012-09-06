@@ -223,7 +223,7 @@ $(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/build.fo
 	foma -f $(VVFST_BUILDDIR)/build.fomascript
 
 $(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/all.att
-	cat $^ | voikkovfstc -o $@
+	cat $^ | sort -n | voikkovfstc -o $@
 
 VVFST_PRO_SEDSCRIPT="s/SM_VOIKKO_VARIANT/$(VOIKKO_VARIANT)/; \
 	s/SM_VOIKKO_DESCRIPTION/$(VOIKKO_DESCRIPTION)/; \
