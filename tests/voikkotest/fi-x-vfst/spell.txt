@@ -30,3 +30,4 @@ arktisuus
 !arktisyys
 !hyttysyys
 !aapisuus
+pottusyltty

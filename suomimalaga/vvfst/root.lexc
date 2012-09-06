@@ -36,6 +36,9 @@ Multichar_Symbols
 [Ny]  ! yksikkö
 [Nm]  ! monikko
 
+! Rajamerkit
+[Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
+
 ! Diakriitit
 @P.EI_YKS@ @D.EI_YKS@ ! Yksikkömuotoja ei sallita
 
