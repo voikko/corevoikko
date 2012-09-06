@@ -76,15 +76,37 @@ list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
 	return result;
 }
 
+static void createDefaultStructure(size_t charsMissing, bool & defaultTitleCase,
+                                   wchar_t * structure, size_t & structurePos) {
+	while (charsMissing) {
+		if (defaultTitleCase) {
+			structure[structurePos++] = L'i';
+			defaultTitleCase = false;
+		}
+		else {
+			structure[structurePos++] = L'p';
+		}
+		charsMissing--;
+	}
+}
+
 static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	wchar_t * structure = new wchar_t[wlen * 2 + 1];
 	structure[0] = L'=';
 	size_t outputLen = wcslen(fstOutput);
 	size_t structurePos = 1;
 	size_t charsMissing = wlen;
+	size_t charsSeen = 0;
 	bool defaultTitleCase = false;
 	for (size_t i = 0; i + 8 < outputLen; i++) {
-		if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
+			i += 3;
+			createDefaultStructure(charsSeen, defaultTitleCase, structure, structurePos);
+			charsMissing -= charsSeen;
+			charsSeen = 0;
+			structure[structurePos++] = L'=';
+		}
+		else if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
 			i += 4;
 			while (fstOutput[i] != L'[') {
 				structure[structurePos++] = fstOutput[i];
@@ -98,17 +120,23 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			defaultTitleCase = true;
 			i += 4;
 		}
-	}
-	while (charsMissing) {
-		if (defaultTitleCase) {
-			structure[structurePos++] = L'i';
-			defaultTitleCase = false;
+		else if (wcsncmp(fstOutput + i, L"[Xp", 3) == 0) {
+			i += 4;
+			while (fstOutput[i] != L'[') {
+				i++;
+			}
+			i += 2;
+		}
+		else if (fstOutput[i] == L'[') {
+			while (fstOutput[i] != L']') {
+				i++;
+			}
 		}
 		else {
-			structure[structurePos++] = L'p';
+			charsSeen++;
 		}
-		charsMissing--;
 	}
+	createDefaultStructure(charsMissing, defaultTitleCase, structure, structurePos);
 	structure[structurePos] = L'\0';
 	return structure;
 }

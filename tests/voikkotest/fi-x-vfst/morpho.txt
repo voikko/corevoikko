@@ -79,3 +79,8 @@ word:arktisuus
  analysis
   CLASS=nimisana
   STRUCTURE==ppppppppp
+word:pottusyltty
+ expected:1
+ analysis
+  CLASS=nimisana
+  STRUCTURE==ppppp=pppppp
