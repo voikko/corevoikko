@@ -214,6 +214,7 @@ Sitä kirjoitetaan kuten puhuja sopivaksi näkee.
 Suurimmat kosket valjastettiin teollisuuden käyttöön.
 Kissa oli näet kiivennyt aidalle.
 Kissa oli kiivennyt aidalle — sieltä oli hyvä näköala.
+Kotonani on n. 15 kissaa.
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
