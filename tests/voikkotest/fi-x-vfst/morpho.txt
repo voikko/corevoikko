@@ -84,3 +84,7 @@ word:pottusyltty
  analysis
   CLASS=nimisana
   STRUCTURE==ppppp=pppppp
+word:vieras
+ expected:1
+ analysis
+  CLASS=nimisana_laatusana

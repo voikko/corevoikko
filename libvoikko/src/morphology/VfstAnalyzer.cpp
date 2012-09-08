@@ -48,6 +48,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	
 	classMap.insert(std::make_pair(L"n", L"nimisana"));
 	classMap.insert(std::make_pair(L"l", L"laatusana"));
+	classMap.insert(std::make_pair(L"nl", L"nimisana_laatusana"));
 	classMap.insert(std::make_pair(L"h", L"huudahdussana"));
 	classMap.insert(std::make_pair(L"ee", L"etunimi"));
 	classMap.insert(std::make_pair(L"es", L"sukunimi"));
