@@ -6,7 +6,7 @@
 # = yhdyssanat =
 []
 kissakoira
-
+seinäkissa
 
 hevonen
 !hevvonen

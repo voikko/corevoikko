@@ -194,7 +194,7 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	delete[] wordLowerUcs4;
 	
 	list<Analysis *> * analysisList = new list<Analysis *>();
-	if (transducer->prepare(configuration, wordLower, wlen)) {
+	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
 		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
 			Analysis * analysis = new Analysis();
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
