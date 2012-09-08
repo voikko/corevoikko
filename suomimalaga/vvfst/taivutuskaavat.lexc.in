@@ -12,6 +12,12 @@ LEXICON NOUN Kalsium
 [Sela][Ny]ist<A>:ist<A>	#	;
 [Sill][Ny]iin:iin	#	;
 
+LEXICON NOUN Kala
+[Sn][Ny]<A>:<A>	NomYhdysosa	;
+
+LEXICON NOUN Koira
+[Sn][Ny]<A>:<A>	NomYhdysosa	;
+
 LEXICON NOUN Tytär
 [Sn][Ny]<A>r:<A>r	#	;
 [Sn][Nm]t<A>ret:t<A>ret	#	;
@@ -31,6 +37,9 @@ LEXICON NOUN Nainen
 [Sabl][Ny]selt<A>:selt<A>	#	;
 [Sall][Ny]selle:selle	#	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
+
+LEXICON NOUN Vieras
+[Sn][Ny]s:s	NomYhdysosa	;
 
 LEXICON Johdin_UUs
 [Ln][Sn][Ny]<U><U>s:<U><U>s    #    ;

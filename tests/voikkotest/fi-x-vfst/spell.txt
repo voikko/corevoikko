@@ -1,4 +1,13 @@
+# Voikon testisanalista.
+# [xxxx] = otsikko
+# !      = virheellinen sana
+# #      = kommentti
+
+# = yhdyssanat =
 []
+kissakoira
+
+
 hevonen
 !hevvonen
 Hevonen
@@ -31,3 +40,4 @@ arktisuus
 !hyttysyys
 !aapisuus
 pottusyltty
+vieras
