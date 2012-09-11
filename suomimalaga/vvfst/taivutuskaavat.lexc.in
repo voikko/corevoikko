@@ -1,9 +1,15 @@
+LEXICON NOUN Valo
+[Sn][Ny]:	NomYhdysosa	;
+
 LEXICON NOUN Hattu
 [Sn][Ny]t<U>:t<U>	NomYhdysosa	;
 [Sn][Nm]<U>t:<U>t	#	;
 [Sine][Ny]<U>ss<A>:<U>ss<A>	#	;
 [Sela][Ny]<U>st<A>:<U>st<A>	#	;
 [Sill][Ny]t<U><U>n:t<U><U>n	#	;
+
+LEXICON NOUN Risti
+[Sn][Ny]i:i	NomYhdysosa	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	#	;

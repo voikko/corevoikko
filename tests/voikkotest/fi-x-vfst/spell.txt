@@ -22,6 +22,9 @@ suvialainen
 !koiralle-karva
 !duokissa
 !duonkissa
+abitalo # "abi" ei sallittu yhdyssanan loppuosana
+!taloabikissa # "abi" ei sallittu yhdyssanan loppuosana
+!taloabi # "abi" ei sallittu yhdyssanan loppuosana
 
 hevonen
 !hevvonen
