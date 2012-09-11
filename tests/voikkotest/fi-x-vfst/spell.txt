@@ -11,6 +11,17 @@ seinänkissa
 !seinääkissa
 !seinästäkissa
 !työhönkissa
+suvialainen
+!vaikealammas
+!lammasvaikea
+!lammasuida
+!kerros-talo
+!talo-auto
+!kerros-sora
+!kissan-hiekka
+!koiralle-karva
+!duokissa
+!duonkissa
 
 hevonen
 !hevvonen
