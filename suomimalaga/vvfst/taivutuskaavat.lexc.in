@@ -51,5 +51,8 @@ LEXICON NOUN Nainen
 LEXICON NOUN Vieras
 [Sn][Ny]s:s	NomYhdysosa	;
 
+LEXICON Katsella
+[Tn1]l<A>:l<A>	#	;
+
 LEXICON Johdin_UUs
 [Ln][Sn][Ny]<U><U>s:<U><U>s    #    ;

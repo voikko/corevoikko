@@ -54,6 +54,7 @@ class VfstAnalyzer : public Analyzer {
 		char * outputBuffer;
 		std::map<std::wstring, std::wstring> classMap;
 		std::map<std::wstring, std::wstring> sijamuotoMap;
+		std::map<std::wstring, std::wstring> moodMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
 };

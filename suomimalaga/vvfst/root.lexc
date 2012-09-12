@@ -36,6 +36,9 @@ Multichar_Symbols
 [Ny]  ! yksikkö
 [Nm]  ! monikko
 
+! Tapaluokat
+[Tn1] ! 1. nimitapa
+
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
 

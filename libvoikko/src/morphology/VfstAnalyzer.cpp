@@ -54,6 +54,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	classMap.insert(std::make_pair(L"es", L"sukunimi"));
 	classMap.insert(std::make_pair(L"ep", L"paikannimi"));
 	classMap.insert(std::make_pair(L"em", L"nimi"));
+	classMap.insert(std::make_pair(L"t", L"teonsana"));
 	
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
 	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));
@@ -64,6 +65,8 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	sijamuotoMap.insert(std::make_pair(L"ade", L"ulkoolento"));
 	sijamuotoMap.insert(std::make_pair(L"abl", L"ulkoeronto"));
 	sijamuotoMap.insert(std::make_pair(L"all", L"ulkotulento"));
+	
+	moodMap.insert(std::make_pair(L"n1", L"A-infinitive"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -169,6 +172,13 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						wchar_t * muoto = getAttributeFromMap(sijamuotoMap, fstOutput + j + 2, sijaLen);
 						if (muoto) {
 							analysis->addAttribute("SIJAMUOTO", muoto);
+						}
+					}
+					else if (fstOutput[j + 1] == L'T') {
+						size_t sijaLen = i - j - 2;
+						wchar_t * muoto = getAttributeFromMap(moodMap, fstOutput + j + 2, sijaLen);
+						if (muoto) {
+							analysis->addAttribute("MOOD", muoto);
 						}
 					}
 					break;
