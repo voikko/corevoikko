@@ -101,13 +101,17 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	size_t structurePos = 1;
 	size_t charsMissing = wlen;
 	size_t charsSeen = 0;
+	size_t charsFromDefault = 0;
 	bool defaultTitleCase = false;
 	for (size_t i = 0; i + 8 < outputLen; i++) {
 		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
 			i += 3;
-			createDefaultStructure(charsSeen, defaultTitleCase, structure, structurePos);
-			charsMissing -= charsSeen;
+			if (charsSeen > charsFromDefault) {
+				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos);
+				charsMissing -= (charsSeen - charsFromDefault);
+			}
 			charsSeen = 0;
+			charsFromDefault = 0;
 			structure[structurePos++] = L'=';
 		}
 		else if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
@@ -115,10 +119,12 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			while (fstOutput[i] != L'[') {
 				structure[structurePos++] = fstOutput[i];
 				if (fstOutput[i] != L'=') {
+					charsFromDefault++;
 					charsMissing--;
 				}
 				i++;
 			}
+			i += 2; // X]
 		}
 		else if (wcsncmp(fstOutput + i, L"[Le", 3) == 0) {
 			defaultTitleCase = true;

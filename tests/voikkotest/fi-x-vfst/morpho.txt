@@ -93,3 +93,6 @@ word:katsella
   STRUCTURE==pppppppp
   CLASS=teonsana
   MOOD=A-infinitive
+word:adverbisija
+ analysis
+  STRUCTURE==pp=ppppp=pppp
