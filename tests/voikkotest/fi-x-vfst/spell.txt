@@ -64,3 +64,6 @@ valot
 valossa
 valosta
 valoon
+ruoko
+ruo'on
+ruokoon
