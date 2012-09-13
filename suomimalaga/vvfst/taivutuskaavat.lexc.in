@@ -1,12 +1,23 @@
 LEXICON NOUN Valo
-[Sn][Ny]:	NomYhdysosa	;
+<WC>Valo_s_<A>	;
+<O>:<O>	<WC>Valo_sl_<A>	;
+<WC>Valo_w_<A>	;
 
 LEXICON NOUN Hattu
-[Sn][Ny]t<U>:t<U>	NomYhdysosa	;
-[Sn][Nm]<U>t:<U>t	#	;
-[Sine][Ny]<U>ss<A>:<U>ss<A>	#	;
-[Sela][Ny]<U>st<A>:<U>st<A>	#	;
-[Sill][Ny]t<U><U>n:t<U><U>n	#	;
+t<U>:t<U>	<WC>Valo_s_<A>	;
+t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
+<U>:<U>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Valo_w
+[Sn][Nm]t:t	#	;
+[Sine][Ny]ss<A>:ss<A>	#	;
+[Sela][Ny]st<A>:st<A>	#	;
+
+LEXICON NOUN Valo_s
+[Sn][Ny]:	NomYhdysosa	;
+
+LEXICON NOUN Valo_sl
+[Sill][Ny]n:n	#	;
 
 LEXICON NOUN Risti
 [Sn][Ny]i:i	NomYhdysosa	;

@@ -60,3 +60,7 @@ arktisuus
 pottusyltty
 vieras
 katsella
+valot
+valossa
+valosta
+valoon

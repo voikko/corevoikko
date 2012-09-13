@@ -38,19 +38,19 @@ def addDiacritics(line):
 	return line
 
 def replacementsFront(line):
-	return addDiacritics(line.replace(u"<A>", u"ä").replace(u"<U>", u"y"))
+	return addDiacritics(line.replace(u"<A>", u"ä").replace(u"<O>", u"ö").replace(u"<U>", u"y"))
 
 
 def replacementsBack(line):
-	return addDiacritics(line.replace(u"<A>", u"a").replace(u"<U>", u"u"))
+	return addDiacritics(line.replace(u"<A>", u"a").replace(u"<O>", u"o").replace(u"<U>", u"u"))
 
 def filterLines(lines, lexiconPrefix):
 	for line in lines:
 		if line.startswith("?Laatusana"):
 			if lexiconPrefix in [u"Laatusana", u"NimiLaatusana"]:
-				yield line[10:]
+				yield line[10:].replace(u"<VC>", lexiconPrefix)
 		else:
-			yield line
+			yield line.replace(u"<WC>", lexiconPrefix)
 
 def appendLines(lexiconPrefix, lexiconName, lines, lexcFile):
 	lexcFile.write(u"LEXICON " + lexiconPrefix + lexiconName + u"_a\n")
