@@ -8,6 +8,21 @@ k<O>:k<O>	<WC>Valo_s_<A>	;
 k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 '<O>:'<O>	<WC>Valo_w_<A>	;
 
+LEXICON NOUN Alku
+k<U>:k<U>	<WC>Valo_s_<A>	;
+k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
+<U>:<U>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Luku
+k<U>:k<U>	<WC>Valo_s_<A>	;
+k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
+v<U>:v<U>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Tiuku
+k<U>:k<U>	<WC>Valo_s_<A>	;
+k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
+'<U>:'<U>	<WC>Valo_w_<A>	;
+
 LEXICON NOUN Hattu
 t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
