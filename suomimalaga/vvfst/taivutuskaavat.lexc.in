@@ -23,6 +23,21 @@ k<U>:k<U>	<WC>Valo_s_<A>	;
 k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
 '<U>:'<U>	<WC>Valo_w_<A>	;
 
+LEXICON NOUN Aalto
+t<O>:t<O>	<WC>Valo_s_<A>	;
+t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
+l<O>:l<O>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Anto
+t<O>:t<O>	<WC>Valo_s_<A>	;
+t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
+n<O>:n<O>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Lintu
+t<U>:t<U>	<WC>Valo_s_<A>	;
+t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
+n<U>:n<U>	<WC>Valo_w_<A>	;
+
 LEXICON NOUN Hattu
 t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
