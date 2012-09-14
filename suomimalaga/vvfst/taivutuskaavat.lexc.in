@@ -38,10 +38,25 @@ t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
 n<U>:n<U>	<WC>Valo_w_<A>	;
 
+LEXICON NOUN Hanko
+k<O>:k<O>	<WC>Valo_s_<A>	;
+k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
+g<O>:g<O>	<WC>Valo_w_<A>	;
+
 LEXICON NOUN Hattu
 t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
 <U>:<U>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Liitto
+t<O>:t<O>	<WC>Valo_s_<A>	;
+t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
+<O>:<O>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Hinku
+k<U>:k<U>	<WC>Valo_s_<A>	;
+k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
+g<U>:g<U>	<WC>Valo_w_<A>	;
 
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	#	;
