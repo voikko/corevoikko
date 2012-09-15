@@ -213,7 +213,7 @@ def handle_word(word):
 			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), alku, alku)
 			main_vocabulary.write(entry + u"\n")
 			continue
-		if jatko not in [u"valo", u"alku", u"luku", u"ruoko", u"aalto", u"anto", u"lintu", u"hanko", u"hattu", u"liitto", u"hinku", u"tiuku", u"hoppu", u"kaarto", u"kippo", \
+		if jatko not in [u"valo", u"alku", u"luku", u"ruoko", u"aalto", u"anto", u"lintu", u"hanko", u"hattu", u"liitto", u"hinku", u"tiuku", u"hoppu", u"kaarto", u"kippo", u"sampo", u"kumpu", u"laatu", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", u"lovi", u"kala", u"koira", u"tytär", u"katsella"]:
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
