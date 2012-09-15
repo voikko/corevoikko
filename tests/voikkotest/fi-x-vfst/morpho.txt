@@ -1,3 +1,59 @@
+# word:word
+# expected:number (not required)
+# !key (key not allowed in any analysis)
+# !=value (value not allowed in any key of any analysis)
+# analysis
+#  key=value
+word:kissa
+ expected:1
+ analysis
+  CLASS=nimisana
+  SIJAMUOTO=nimento
+  STRUCTURE==ppppp
+word:koirra
+ expected:0
+word:alusta
+ analysis
+  STRUCTURE==pppppp
+word:kissan
+ analysis
+  SIJAMUOTO=omanto
+word:kissojen
+ analysis
+  SIJAMUOTO=omanto
+word:kissaa
+ analysis
+  SIJAMUOTO=osanto
+word:kissana
+ analysis
+  SIJAMUOTO=olento
+word:kissaksi
+ analysis
+  SIJAMUOTO=tulento
+word:kissassa
+ analysis
+  SIJAMUOTO=sisaolento
+word:kissasta
+ analysis
+  SIJAMUOTO=sisaeronto
+word:kissaan
+ analysis
+  SIJAMUOTO=sisatulento
+word:kissalla
+ analysis
+  SIJAMUOTO=ulkoolento
+word:kissalta
+ analysis
+  SIJAMUOTO=ulkoeronto
+word:kissalle
+ analysis
+  SIJAMUOTO=ulkotulento
+word:kissatta
+ analysis
+  SIJAMUOTO=vajanto
+word:kissoin
+ analysis
+  SIJAMUOTO=keinonto
 word:hyttynen
  expected:1
  analysis

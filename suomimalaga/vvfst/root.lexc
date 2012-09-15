@@ -25,12 +25,17 @@ Multichar_Symbols
 [Sn]   ! nominatiivi
 [Sg]   ! genetiivi
 [Sp]   ! partitiivi
+[Ses]  ! essiivi
+[Str]  ! translatiivi
 [Sine] ! inessiivi
 [Sela] ! elatiivi
 [Sill] ! illatiivi
 [Sade] ! adessiivi
 [Sabl] ! ablatiivi
 [Sall] ! allatiivi
+[Sab]  ! abessiivi
+[Sko]  ! komitatiivi
+[Sin]  ! instruktiivi
 
 ! Luvut
 [Ny]  ! yksikkö

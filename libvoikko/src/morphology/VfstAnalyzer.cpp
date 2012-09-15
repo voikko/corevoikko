@@ -59,12 +59,17 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
 	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));
 	sijamuotoMap.insert(std::make_pair(L"p", L"osanto"));
+	sijamuotoMap.insert(std::make_pair(L"es", L"olento"));
+	sijamuotoMap.insert(std::make_pair(L"tr", L"tulento"));
 	sijamuotoMap.insert(std::make_pair(L"ine", L"sisaolento"));
 	sijamuotoMap.insert(std::make_pair(L"ela", L"sisaeronto"));
 	sijamuotoMap.insert(std::make_pair(L"ill", L"sisatulento"));
 	sijamuotoMap.insert(std::make_pair(L"ade", L"ulkoolento"));
 	sijamuotoMap.insert(std::make_pair(L"abl", L"ulkoeronto"));
 	sijamuotoMap.insert(std::make_pair(L"all", L"ulkotulento"));
+	sijamuotoMap.insert(std::make_pair(L"ab", L"vajanto"));
+	sijamuotoMap.insert(std::make_pair(L"ko", L"seuranto"));
+	sijamuotoMap.insert(std::make_pair(L"in", L"keinonto"));
 	
 	moodMap.insert(std::make_pair(L"n1", L"A-infinitive"));
 }
