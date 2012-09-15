@@ -58,6 +58,21 @@ k<U>:k<U>	<WC>Valo_s_<A>	;
 k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
 g<U>:g<U>	<WC>Valo_w_<A>	;
 
+LEXICON NOUN Hoppu
+p<U>:p<U>	<WC>Valo_s_<A>	;
+p<U><U>:p<U><U>	<WC>Valo_sl_<A>	;
+<U>:<U>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Kaarto
+t<O>:t<O>	<WC>Valo_s_<A>	;
+t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
+r<O>:r<O>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Kippo
+p<O>:p<O>	<WC>Valo_s_<A>	;
+p<O><O>:p<O><O>	<WC>Valo_sl_<A>	;
+<O>:<O>	<WC>Valo_w_<A>	;
+
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	#	;
 [Sg][Ny]n:n	NomYhdysosa	;
