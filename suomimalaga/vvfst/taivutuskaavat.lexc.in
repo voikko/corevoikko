@@ -88,6 +88,21 @@ t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
 d<U>:d<U>	<WC>Valo_w_<A>	;
 
+LEXICON NOUN Apu
+p<U>:p<U>	<WC>Valo_s_<A>	;
+p<U><U>:p<U><U>	<WC>Valo_sl_<A>	;
+v<U>:v<U>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Lepo
+p<O>:p<O>	<WC>Valo_s_<A>	;
+p<O><O>:p<O><O>	<WC>Valo_sl_<A>	;
+v<O>:v<O>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Leuto
+t<O>:t<O>	<WC>Valo_s_<A>	;
+t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
+d<O>:d<O>	<WC>Valo_w_<A>	;
+
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	#	;
 [Sg][Ny]n:n	NomYhdysosa	;
