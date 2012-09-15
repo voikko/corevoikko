@@ -103,6 +103,16 @@ t<O>:t<O>	<WC>Valo_s_<A>	;
 t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
 d<O>:d<O>	<WC>Valo_w_<A>	;
 
+LEXICON NOUN Verkko
+k<O>:k<O>	<WC>Valo_s_<A>	;
+k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
+<O>:<O>	<WC>Valo_w_<A>	;
+
+LEXICON NOUN Vihko
+k<O>:k<O>	<WC>Valo_s_<A>	;
+k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
+<O>:<O>	<WC>Valo_w_<A>	;
+
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	#	;
 [Sg][Ny]n:n	NomYhdysosa	;
