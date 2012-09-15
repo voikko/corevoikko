@@ -61,9 +61,16 @@ pottusyltty
 vieras
 katsella
 valot
+valoa
+valona
 valossa
 valosta
 valoon
+valolla
+valolta
+valolle
+valotta
+taloin
 ruoko
 ruo'on
 ruokoon
