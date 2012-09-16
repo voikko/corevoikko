@@ -1,6 +1,6 @@
 LEXICON NomYhdysosa
 Liitesana	;
-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT@:@D.YS_EI_JATKOA@@P.YS_ALKANUT@	Joukahainen	;
+[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen	;
 
 LEXICON Liitesana
 kin:kin        #       ;
