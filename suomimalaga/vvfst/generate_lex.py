@@ -38,17 +38,19 @@ CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
-
-main_vocabulary = codecs.open(OPTIONS["destdir"] + u"/" + "joukahainen.lexc", 'w', 'UTF-8')
-main_vocabulary.write(u"! This is automatically generated intermediate lexicon file for\n")
-main_vocabulary.write(u"! VVFST morphology. The original source data is\n")
-main_vocabulary.write(u"! distributed under the GNU General Public License, version 2 or\n")
-main_vocabulary.write(u"! later, as published by the Free Software Foundation. You should\n")
-main_vocabulary.write(u"! have received the original data, tools and instructions to\n")
-main_vocabulary.write(u"! generate this file (or instructions to obtain them) wherever\n")
-main_vocabulary.write(u"! you got this file from.\n\n")
-
-main_vocabulary.write(u"LEXICON Joukahainen\n")
+vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h"]
+vocabularyFiles = {}
+for fileSuffix in vocabularyFileSuffixes:
+	vocFile = codecs.open(OPTIONS["destdir"] + u"/joukahainen-" + fileSuffix + u".lexc", 'w', 'UTF-8')
+	vocFile.write(u"! This is automatically generated intermediate lexicon file for\n")
+	vocFile.write(u"! VVFST morphology. The original source data is\n")
+	vocFile.write(u"! distributed under the GNU General Public License, version 2 or\n")
+	vocFile.write(u"! later, as published by the Free Software Foundation. You should\n")
+	vocFile.write(u"! have received the original data, tools and instructions to\n")
+	vocFile.write(u"! generate this file (or instructions to obtain them) wherever\n")
+	vocFile.write(u"! you got this file from.\n\n")
+	vocFile.write(u"LEXICON Joukahainen_" + fileSuffix + u"\n")
+	vocabularyFiles[fileSuffix] = vocFile
 
 
 def frequency(word):
@@ -203,15 +205,16 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BACK: vfst_vtype = u'a'
 		elif vtype == voikkoutils.VOWEL_BOTH: vfst_vtype = u'aä'
 		rakenne = get_structure(altform, vfst_word_class)
+		vocabularyFile = vocabularyFiles[vfst_word_class.replace(u"[L", u"").replace(u"]", u"")]
 		if alku == None:
 			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
 				% (wordform, voikko_infclass)
-			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
+			generate_lex_common.write_entry(vocabularyFile, {}, word, errorstr)
 			sys.stderr.write(errorstr.encode(u"UTF-8"))
 			sys.exit(1)
 		if vfst_word_class == u"[Lh]":
 			entry = u'%s[Xp]%s[X]%s%s:%s # ;' % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), alku, alku)
-			main_vocabulary.write(entry + u"\n")
+			vocabularyFile.write(entry + u"\n")
 			continue
 		if jatko not in [u"valo", u"alku", u"luku", u"ruoko", u"aalto", u"anto", u"lintu", u"hanko", u"hattu", u"liitto", u"hinku", u"tiuku", u"hoppu", u"kaarto", u"kippo", u"sampo", u"kumpu", u"laatu", u"apu", u"lepo", u"leuto", u"verkko", u"vihko", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", u"lovi", u"kala", u"koira", u"tytär", u"katsella"]:
@@ -225,7 +228,7 @@ def handle_word(word):
 		entry = u'%s[Xp]%s[X]%s%s%s:%s%s %s%s_%s ;' \
 		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
 		        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
-		main_vocabulary.write(entry + u"\n")
+		vocabularyFile.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms
 	# then all multi part forms must end with a part contained in the single part set.
@@ -240,5 +243,6 @@ def handle_word(word):
 voikkoutils.process_wordlist(generate_lex_common.VOCABULARY_DATA + u'/joukahainen.xml', \
                              handle_word, True)
 
-main_vocabulary.write(u"\n\n") # Extra line feeds needed to avoid mixed lines in concatenated lexc file
-main_vocabulary.close()
+for fileSuffix in vocabularyFileSuffixes:
+	vocabularyFiles[fileSuffix].write(u"\n\n") # Extra line feeds needed to avoid mixed lines in concatenated lexc file
+	vocabularyFiles[fileSuffix].close()

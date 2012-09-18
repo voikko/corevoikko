@@ -56,3 +56,13 @@ Multichar_Symbols
 LEXICON Root
 Joukahainen	;
 
+LEXICON Joukahainen
+Joukahainen_ee	;
+Joukahainen_em	;
+Joukahainen_ep	;
+Joukahainen_es	;
+Joukahainen_h	;
+Joukahainen_l	;
+Joukahainen_n	;
+Joukahainen_nl	;
+Joukahainen_t	;
