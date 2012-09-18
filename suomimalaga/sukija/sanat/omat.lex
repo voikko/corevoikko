@@ -626,7 +626,6 @@
 [perusmuoto: "Cook", alku: "Cook", luokka: sukunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Strugatski", alku: "Strugatsk", luokka: sukunimi, jatko: <risti>, äs: a];
 [perusmuoto: "Ohlson", alku: "Ohlson", luokka: sukunimi, jatko: <kalsium>, äs: a];
-[perusmuoto: "Anders", alku: "Anders", luokka: etunimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Linpus", alku: "Linpus", luokka: nimi, jatko: <kalsium>, äs: a];
 [perusmuoto: "Hill", alku: "Hill", luokka: sukunimi, jatko: <kalsium>, äs: ä];
 [perusmuoto: "Lingsoft", alku: "Lingsoft", luokka: nimi, jatko: <kalsium>, äs: a];
@@ -1423,6 +1422,37 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "esitumainen", alku: "esitumai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "alkeistumainen", alku: "alkeistumai", luokka: laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "yksitumainen", alku: "yksitumai", luokka: laatusana, jatko: <nainen>, äs: a];
+
+[perusmuoto: "aitoahdelude", alku: "aitoahdelu", luokka: nimisana, jatko: <sade>, äs: a];
+[perusmuoto: "kaakonahdelude", alku: "kaakonahdelu", luokka: nimisana, jatko: <sade>, äs: a];
+[perusmuoto: "hutikuti", alku: "hutikut", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kanuunakuti", alku: "kanuunakut", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "kanuunankuti", alku: "kanuunankut", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "merkkikuti", alku: "merkkikut", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "silkkisari", alku: "silkkisar", luokka: nimisana, jatko: <risti>, äs: a, tiedot: <ei_ys>];
+[perusmuoto: "Sarimaa", alku: "Sarima", luokka: sukunimi, jatko: <maa>, äs: a, rakenne: "=ippp=ppp"];
+[perusmuoto: "Sariomaa", alku: "Sarioma", luokka: sukunimi, jatko: <maa>, äs: a, rakenne: "=ipppp=ppp"];
+[perusmuoto: "Sarisalmi", alku: "Sarisalm", luokka: sukunimi, jatko: <lovi>, äs: a, rakenne: "=ippp=ppppp"];
+[perusmuoto: "aamueine", alku: "aamueine", luokka: nimisana, jatko: <hame>, äs: ä];
+[perusmuoto: "ruokaeine", alku: "ruokaeine", luokka: nimisana, jatko: <hame>, äs: ä];
+[perusmuoto: "einekahvi", alku: "einekahv", luokka: nimisana, jatko: <risti>, äs: a];
+[perusmuoto: "einepöytä", alku: "einepöy", luokka: nimisana, jatko: <juhta>, äs: ä];
+[perusmuoto: "eineruoka", alku: "eineru", luokka: nimisana, jatko: <ruoka>, äs: a];
+[perusmuoto: "eineryyppy", alku: "eineryyp", luokka: nimisana, jatko: <hoppu>, äs: ä];
+[perusmuoto: "Einesalo", alku: "Einesalo", luokka: sukunimi, jatko: <valo>, äs: a, rakenne: "=ippp=pppp"];
+[perusmuoto: "einepala", alku: "einepal", luokka: nimisana, jatko: <kala>, äs: a];
+[perusmuoto: "Sarijoutsi", alku: "Sarijou", luokka: etunimi, jatko: <peitsi>, äs: a, tiedot: <ei_voikko>];
+
+[perusmuoto: "joo", alku: "joopa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];  # Joopa joo.
+[perusmuoto: "jumalauta", alku: "jumal-auta", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jumalauta", alku: "jumal-avita", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "juu", alku: "juupa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Juupa juu.
+[perusmuoto: "kutikuti", alku: "kutikuti", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "paloahde", alku: "paloah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "myllyahde", alku: "myllyah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "sarjanahde", alku: "sarjanah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "Kutinkalla", alku: "Kutinkall", luokka: paikannimi, jatko: <>, äs: a];
+
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

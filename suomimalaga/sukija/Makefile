@@ -8,7 +8,6 @@ voikonsanat/atk.lex \
 voikonsanat/erikoiset.lex \
 voikonsanat/erikoissanat.lex \
 voikonsanat/etuliitteet.lex \
-voikonsanat/huudahdussanat.lex \
 voikonsanat/joukahainen.lex \
 voikonsanat/kasvatustiede.lex \
 voikonsanat/laaketiede.lex \

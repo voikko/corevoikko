@@ -183,6 +183,7 @@ Hilkka
 hindulainen
 hinta-laatusuhde
 Hirvensalmi
+hittolainen
 hoito
 hokema
 Hollanti
@@ -201,6 +202,7 @@ hydronefroosi
 hyvinvointi
 hyvinvoiva
 hypertensio
+hyväksikäyttäjä
 hyvänsuopuus
 hyväntahdonlähettiläs
 hyväntekijä
@@ -233,6 +235,7 @@ irtauma
 islamilainen
 Islanti
 Isojoki
+ISO-standardi
 isoäiti
 Italia
 itkettynyt
@@ -459,6 +462,7 @@ kyberavaruus
 kyllästyttää
 Kylmäkoski
 kyläläinen
+kylänvanhin
 kylvö
 kymmenvuotinen
 Kytö
@@ -646,11 +650,13 @@ mielipide
 mierolainen
 Miina
 mikkelinpäivä
+miljardibisnes
 miljardiluokka
+miljarditappio
 miljoonabisnes
 miljoonaluokka
 miljoonaperintö
-miljardibisnes
+miljoonatappio
 Minttu
 Missi
 mittatarkka
@@ -736,6 +742,7 @@ pannukarkea
 partiolainen
 patoutuma
 Paula
+PDF-tiedosto
 pehmytkudos
 peilikirkas
 peilityyni
@@ -887,6 +894,7 @@ sanoitus
 sanoma
 Santahamina
 saostuma
+Sari
 sattuma
 Satu
 Savikko
@@ -943,6 +951,7 @@ Suonenjoki
 supistuma
 supraventrikulaarinen
 surkastuma
+suuntavakaa
 Suutari
 Suvi
 syntymä

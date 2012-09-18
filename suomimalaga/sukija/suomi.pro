@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2007 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006-2007, 2012 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -58,7 +58,6 @@ lex: voikonsanat/atk.lex
 lex: voikonsanat/erikoiset.lex
 lex: voikonsanat/erikoissanat.lex
 lex: voikonsanat/etuliitteet.lex
-lex: voikonsanat/huudahdussanat.lex
 lex: voikonsanat/joukahainen.lex
 lex: voikonsanat/kasvatustiede.lex
 lex: voikonsanat/laaketiede.lex
