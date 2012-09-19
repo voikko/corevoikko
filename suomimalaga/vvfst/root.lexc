@@ -48,11 +48,21 @@ Multichar_Symbols
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
 
 ! Diakriitit
-@P.EI_YKS@ @D.EI_YKS@ ! Yksikkömuotoja ei sallita
+@P.EI_YKS.ON@ @D.EI_YKS@ ! Yksikkömuotoja ei sallita
 
-@D.YS_ALKANUT@ @R.YS_ALKANUT@ @P.YS_ALKANUT@ ! Yhdyssana on alkanut
-@P.YS_EI_JATKOA@ @D.YS_EI_JATKOA@ ! Yhdyssanaa ei saa jatkaa
+@D.YS_ALKANUT@ @R.YS_ALKANUT@ @P.YS_ALKANUT.ON@ ! Yhdyssana on alkanut
+@P.YS_EI_JATKOA.ON@ @D.YS_EI_JATKOA@ ! Yhdyssanaa ei saa jatkaa
 
 LEXICON Root
 Joukahainen	;
 
+LEXICON Joukahainen
+Joukahainen_ee	;
+Joukahainen_em	;
+Joukahainen_ep	;
+Joukahainen_es	;
+Joukahainen_h	;
+Joukahainen_l	;
+Joukahainen_n	;
+Joukahainen_nl	;
+Joukahainen_t	;

@@ -115,7 +115,7 @@ k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	#	;
-[Sg][Ny]n:n	NomYhdysosa	;
+[Sg][Ny]n:n	YhdysosaTaiLiitesana_<A>	;
 [Sine][Ny]ss<A>:ss<A>	#	;
 [Sela][Ny]st<A>:st<A>	#	;
 [Sade][Ny]ll<A>:ll<A>	#	;
@@ -125,7 +125,7 @@ LEXICON NOUN Valo_w
 [Sin][Ny]in:in	#	;
 
 LEXICON NOUN Valo_s
-[Sn][Ny]:	NomYhdysosa	;
+[Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
 [Sp][Ny]<A>:<A>	#	;
 [Ses][Ny]n<A>:n<A>	#	;
 
@@ -133,7 +133,7 @@ LEXICON NOUN Valo_sl
 [Sill][Ny]n:n	#	;
 
 LEXICON NOUN Risti
-[Sn][Ny]i:i	NomYhdysosa	;
+[Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	#	;
@@ -143,12 +143,12 @@ LEXICON NOUN Kalsium
 [Sill][Ny]iin:iin	#	;
 
 LEXICON NOUN Lovi
-[Sn][Ny]i:i	NomYhdysosa	;
+[Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
 
 LEXICON NOUN Kala
-[Sn][Ny]<A>:<A>	NomYhdysosa	;
-[Sg][Ny]<A>n:<A>n	NomYhdysosa	;
-[Sg][Nm]<O>jen:<O>jen	NomYhdysosa	;
+[Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]<O>jen:<O>jen	YhdysosaTaiLiitesana_<A>	;
 [Sp][Ny]<A><A>:<A><A>	#	;
 [Ses][Ny]<A>n<A>:<A>n<A>	#	;
 [Str][Ny]<A>ksi:<A>ksi	#	;
@@ -162,8 +162,8 @@ LEXICON NOUN Kala
 [Sin][Ny]<O>in:<O>in	#	;
 
 LEXICON NOUN Koira
-[Sn][Ny]<A>:<A>	NomYhdysosa	;
-[Sg][Ny]<A>n:<A>n	NomYhdysosa	;
+[Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	YhdysosaTaiLiitesana_<A>	;
 
 LEXICON NOUN Tytär
 [Sn][Ny]<A>r:<A>r	#	;
@@ -186,7 +186,7 @@ LEXICON NOUN Nainen
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 
 LEXICON NOUN Vieras
-[Sn][Ny]s:s	NomYhdysosa	;
+[Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
 
 LEXICON Katsella
 [Tn1]l<A>:l<A>	#	;

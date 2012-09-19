@@ -49,6 +49,8 @@ VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_
 
 VVFST_BINDIST=$(VVFST_BUILDDIR)/voikko-fi_FI.pro $(VVFST_BUILDDIR)/mor.vfst
 
+VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t
+VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_GENERATED_LEXC_SUFFIXES))
 
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
@@ -139,6 +141,7 @@ clean:
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/build.fomascript $(VVFST_BUILDDIR)/mor.vfst
 	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc
+	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
 
 # Rules for creating the source distribution
@@ -202,17 +205,18 @@ $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukah
 
 vvfst: $(VVFST_BUILDDIR)/mor.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 
-$(VVFST_BUILDDIR)/joukahainen.lexc: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
+$(VVFST_BUILDDIR)/joukahainen.lexc.stamp: vocabulary/joukahainen.xml vocabulary/flags.txt vvfst/generate_lex.py \
 	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) vvfst/generate_lex.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
+	touch $@
 
 $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/generate_taivutuskaavat.py
 	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
-$(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc vvfst/suomi.lexc
-	cat $^ > $@
+$(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp vvfst/suomi.lexc
+	cat vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) vvfst/suomi.lexc > $@
 
 $(VVFST_BUILDDIR)/build.fomascript:
 	echo "read lexc $(VVFST_BUILDDIR)/all.lexc" > $@
