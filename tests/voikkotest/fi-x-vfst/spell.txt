@@ -76,3 +76,4 @@ taloin
 ruoko
 ruo'on
 ruokoon
+!kalaPokkinen

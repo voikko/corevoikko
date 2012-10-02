@@ -11,7 +11,7 @@ Liitesana_aä	;
 YhdyssanaJatkuu	;
 
 LEXICON YhdyssanaJatkuu
-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen	;
+[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;
 
 LEXICON Liitesana_a
 kin:kin        #       ;
