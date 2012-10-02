@@ -77,3 +77,4 @@ ruoko
 ruo'on
 ruokoon
 !kalaPokkinen
+kalassakin

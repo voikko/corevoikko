@@ -114,33 +114,33 @@ k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 <O>:<O>	<WC>Valo_w_<A>	;
 
 LEXICON NOUN Valo_w
-[Sn][Nm]t:t	#	;
+[Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	YhdysosaTaiLiitesana_<A>	;
-[Sine][Ny]ss<A>:ss<A>	#	;
-[Sela][Ny]st<A>:st<A>	#	;
-[Sade][Ny]ll<A>:ll<A>	#	;
-[Sabl][Ny]lt<A>:lt<A>	#	;
-[Sall][Ny]lle:lle	#	;
-[Sab][Ny]tt<A>:tt<A>	#	;
-[Sin][Ny]in:in	#	;
+[Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
+[Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sade][Ny]ll<A>:ll<A>	Liitesana_<A>	;
+[Sabl][Ny]lt<A>:lt<A>	Liitesana_<A>	;
+[Sall][Ny]lle:lle	Liitesana_<A>	;
+[Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
+[Sin][Ny]in:in	Liitesana_<A>	;
 
 LEXICON NOUN Valo_s
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
-[Sp][Ny]<A>:<A>	#	;
-[Ses][Ny]n<A>:n<A>	#	;
+[Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
 
 LEXICON NOUN Valo_sl
-[Sill][Ny]n:n	#	;
+[Sill][Ny]n:n	Liitesana_<A>	;
 
 LEXICON NOUN Risti
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
 
 LEXICON NOUN Kalsium
-[Sn][Ny]:	#	;
-[Sn][Nm]it:it	#	;
-[Sine][Ny]iss<A>:iss<A>	#	;
-[Sela][Ny]ist<A>:ist<A>	#	;
-[Sill][Ny]iin:iin	#	;
+[Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]it:it	Liitesana_<A>	;
+[Sine][Ny]iss<A>:iss<A>	Liitesana_<A>	;
+[Sela][Ny]ist<A>:ist<A>	Liitesana_<A>	;
+[Sill][Ny]iin:iin	Liitesana_<A>	;
 
 LEXICON NOUN Lovi
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
@@ -149,40 +149,40 @@ LEXICON NOUN Kala
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]<O>jen:<O>jen	YhdysosaTaiLiitesana_<A>	;
-[Sp][Ny]<A><A>:<A><A>	#	;
-[Ses][Ny]<A>n<A>:<A>n<A>	#	;
-[Str][Ny]<A>ksi:<A>ksi	#	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	#	;
-[Sela][Ny]<A>st<A>:<A>st<A>	#	;
-[Sill][Ny]<A><A>n:<A><A>n	#	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	#	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	#	;
-[Sall][Ny]<A>lle:<A>lle	#	;
-[Sab][Ny]<A>tt<A>:<A>tt<A>	#	;
-[Sin][Ny]<O>in:<O>in	#	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
+[Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
+[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+[Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+[Sin][Ny]<O>in:<O>in	Liitesana_<A>	;
 
 LEXICON NOUN Koira
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	YhdysosaTaiLiitesana_<A>	;
 
 LEXICON NOUN Tytär
-[Sn][Ny]<A>r:<A>r	#	;
-[Sn][Nm]t<A>ret:t<A>ret	#	;
-[Sine][Ny]t<A>ress<A>:t<A>ress<A>	#	;
-[Sela][Ny]t<A>rest<A>:t<A>rest<A>	#	;
-[Sill][Ny]t<A>reen:t<A>reen	#	;
+[Sn][Ny]<A>r:<A>r	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]t<A>ret:t<A>ret	Liitesana_<A>	;
+[Sine][Ny]t<A>ress<A>:t<A>ress<A>	Liitesana_<A>	;
+[Sela][Ny]t<A>rest<A>:t<A>rest<A>	Liitesana_<A>	;
+[Sill][Ny]t<A>reen:t<A>reen	Liitesana_<A>	;
 
 LEXICON NOUN Nainen
-[Sn][Ny]nen:nen	#	;
-[Sn][Nm]set:set	#	;
-[Sg][Ny]sen:sen	#	;
-[Sp][Ny]st<A>:st<A>	#	;
-[Sine][Ny]sess<A>:sess<A>	#	;
-[Sela][Ny]sest<A>:sest<A>	#	;
-[Sill][Ny]seen:seen	#	;
-[Sade][Ny]sell<A>:sell<A>	#	;
-[Sabl][Ny]selt<A>:selt<A>	#	;
-[Sall][Ny]selle:selle	#	;
+[Sn][Ny]nen:nen	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]set:set	Liitesana_<A>	;
+[Sg][Ny]sen:sen	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sine][Ny]sess<A>:sess<A>	Liitesana_<A>	;
+[Sela][Ny]sest<A>:sest<A>	Liitesana_<A>	;
+[Sill][Ny]seen:seen	Liitesana_<A>	;
+[Sade][Ny]sell<A>:sell<A>	Liitesana_<A>	;
+[Sabl][Ny]selt<A>:selt<A>	Liitesana_<A>	;
+[Sall][Ny]selle:selle	Liitesana_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 
 LEXICON NOUN Vieras
