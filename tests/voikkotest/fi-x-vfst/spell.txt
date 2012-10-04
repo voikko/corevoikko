@@ -89,3 +89,6 @@ kalassakin
 luennon
 luentoon
 luentoa
+valonsa
+!valonsä
+valonsakin

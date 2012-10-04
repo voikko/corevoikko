@@ -1,3 +1,15 @@
+LEXICON NomNimentoYksJatko_a
+YhdysosaTaiLiitesana_a ;
+Omistusliite_a ;
+
+LEXICON NomNimentoYksJatko_ä
+YhdysosaTaiLiitesana_ä ;
+Omistusliite_ä ;
+
+LEXICON NomNimentoYksJatko_aä
+YhdysosaTaiLiitesana_aä ;
+Omistusliite_aä ;
+
 LEXICON YhdysosaTaiLiitesana_a
 Liitesana_a	;
 YhdyssanaJatkuu	;
@@ -12,6 +24,16 @@ YhdyssanaJatkuu	;
 
 LEXICON YhdyssanaJatkuu
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;
+
+LEXICON Omistusliite_a
+nsa:nsa	Liitesana_a	;
+
+LEXICON Omistusliite_ä
+nsä:nsä	Liitesana_ä	;
+
+LEXICON Omistusliite_aä
+nsa:nsa	Liitesana_aä	;
+nsä:nsä	Liitesana_aä	;
 
 LEXICON Liitesana_a
 kin:kin        #       ;
