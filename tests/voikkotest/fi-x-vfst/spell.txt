@@ -46,6 +46,7 @@ sylttyyn
 sylttykin
 sylttykään
 !sylttykaan
+sylttykö
 pytyssä
 !pytssä
 lopettajaiset
