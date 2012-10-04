@@ -117,16 +117,23 @@ LEXICON NOUN Valo_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	YhdysosaTaiLiitesana_<A>	;
 [Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
 [Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
 [Sade][Ny]ll<A>:ll<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]lt<A>:lt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]lle:lle	Liitesana_<A>	;
+[Sall][Nm]ille:ille	Liitesana_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
-[Sin][Ny]in:in	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN Valo_s
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
 [Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Sill][Nm]ihin:ihin	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
 
 LEXICON NOUN Valo_sl
@@ -145,6 +152,7 @@ n<O>:n<O>	<WC>Arvelu_w_<A>	;
 LEXICON NOUN Arvelu_s
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
 [Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Sill][Nm]ihin:ihin	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
 
 LEXICON NOUN Arvelu_sl
@@ -154,12 +162,18 @@ LEXICON NOUN Arvelu_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	YhdysosaTaiLiitesana_<A>	;
 [Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
 [Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
 [Sade][Ny]ll<A>:ll<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]lt<A>:lt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]lle:lle	Liitesana_<A>	;
+[Sall][Nm]ille:ille	Liitesana_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
-[Sin][Ny]in:in	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN Risti
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
