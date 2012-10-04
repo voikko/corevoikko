@@ -217,6 +217,7 @@ def handle_word(word):
 			vocabularyFile.write(entry + u"\n")
 			continue
 		if jatko not in [u"valo", u"alku", u"luku", u"ruoko", u"aalto", u"anto", u"lintu", u"hanko", u"hattu", u"liitto", u"hinku", u"tiuku", u"hoppu", u"kaarto", u"kippo", u"sampo", u"kumpu", u"laatu", u"apu", u"lepo", u"leuto", u"verkko", u"vihko", \
+		                 u"alanko", u"avanto", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", u"lovi", u"kala", u"koira", u"tytär", u"katsella"]:
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)

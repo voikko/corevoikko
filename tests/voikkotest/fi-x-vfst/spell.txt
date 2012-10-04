@@ -79,3 +79,6 @@ ruo'on
 ruokoon
 !kalaPokkinen
 kalassakin
+luennon
+luentoon
+luentoa
