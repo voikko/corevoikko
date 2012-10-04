@@ -72,6 +72,9 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	sijamuotoMap.insert(std::make_pair(L"in", L"keinonto"));
 	
 	moodMap.insert(std::make_pair(L"n1", L"A-infinitive"));
+	
+	numberMap.insert(std::make_pair(L"y", L"singular"));
+	numberMap.insert(std::make_pair(L"m", L"plural"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -176,6 +179,13 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 						wchar_t * muoto = getAttributeFromMap(classMap, fstOutput + j + 2, sijaLen);
 						if (muoto) {
 							analysis->addAttribute("CLASS", muoto);
+						}
+					}
+					else if (fstOutput[j + 1] == L'N') {
+						size_t sijaLen = i - j - 2;
+						wchar_t * muoto = getAttributeFromMap(numberMap, fstOutput + j + 2, sijaLen);
+						if (muoto) {
+							analysis->addAttribute("NUMBER", muoto);
 						}
 					}
 					else if (fstOutput[j + 1] == L'S') {

@@ -18,9 +18,11 @@ word:alusta
 word:kissan
  analysis
   SIJAMUOTO=omanto
+  NUMBER=singular
 word:kissojen
  analysis
   SIJAMUOTO=omanto
+  NUMBER=plural
 word:kissaa
  analysis
   SIJAMUOTO=osanto

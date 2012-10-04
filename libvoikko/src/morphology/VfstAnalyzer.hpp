@@ -55,6 +55,7 @@ class VfstAnalyzer : public Analyzer {
 		std::map<std::wstring, std::wstring> classMap;
 		std::map<std::wstring, std::wstring> sijamuotoMap;
 		std::map<std::wstring, std::wstring> moodMap;
+		std::map<std::wstring, std::wstring> numberMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
 };
