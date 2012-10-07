@@ -179,6 +179,10 @@ LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
 <WC>Paperi_w_<A>	;
 
+LEXICON NOUN Kajakki
+k:k	<WC>Paperi_s_<A>	;
+<WC>Paperi_w_<A>	;
+
 LEXICON NOUN Paperi_s
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;

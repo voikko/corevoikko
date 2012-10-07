@@ -96,3 +96,7 @@ paperi
 paperien
 papereiden
 papereitten
+verrokki
+verrokkien
+verrokeiden
+verrokeitten
