@@ -92,3 +92,7 @@ luentoa
 valonsa
 !valonsä
 valonsakin
+paperi
+paperien
+papereiden
+papereitten
