@@ -103,3 +103,5 @@ verrokeitten
 esitelmä
 emäntä
 emännän
+ristin
+ristillä

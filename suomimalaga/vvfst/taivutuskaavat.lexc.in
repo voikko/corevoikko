@@ -211,7 +211,33 @@ LEXICON NOUN Paperi_w
 [Sin][Nm]ein:ein	Liitesana_<A>	;
 
 LEXICON NOUN Risti
+<WC>Risti_s_<A>	;
+<WC>Risti_w_<A>	;
+
+LEXICON NOUN Risti_s
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]i<A>:i<A>	Liitesana_<A>	;
+[Sill][Ny]iin:iin	Liitesana_<A>	;
+[Sill][Nm]eihin:eihin	Liitesana_<A>	;
+[Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+
+LEXICON NOUN Risti_w
+[Sn][Nm]it:it	Liitesana_<A>	;
+[Sg][Ny]in:in	YhdysosaTaiLiitesana_<A>	;
+[Sine][Ny]iss<A>:iss<A>	Liitesana_<A>	;
+[Sine][Nm]eiss<A>:eiss<A>	Liitesana_<A>	;
+[Sela][Ny]ist<A>:ist<A>	Liitesana_<A>	;
+[Sela][Nm]eist<A>:eist<A>	Liitesana_<A>	;
+[Sade][Ny]ill<A>:ill<A>	Liitesana_<A>	;
+[Sade][Nm]eill<A>:eill<A>	Liitesana_<A>	;
+[Sabl][Ny]ilt<A>:ilt<A>	Liitesana_<A>	;
+[Sabl][Nm]eilt<A>:eilt<A>	Liitesana_<A>	;
+[Sall][Ny]ille:ille	Liitesana_<A>	;
+[Sall][Nm]eille:eille	Liitesana_<A>	;
+[Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
+[Sab][Nm]eitt<A>:eitt<A>	Liitesana_<A>	;
+[Sin][Nm]ein:ein	Liitesana_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
