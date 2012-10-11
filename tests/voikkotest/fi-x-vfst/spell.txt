@@ -100,3 +100,6 @@ verrokki
 verrokkien
 verrokeiden
 verrokeitten
+esitelmä
+emäntä
+emännän
