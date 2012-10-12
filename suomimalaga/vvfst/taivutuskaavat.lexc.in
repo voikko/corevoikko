@@ -339,7 +339,7 @@ LEXICON NOUN Tytär
 [Sill][Ny]t<A>reen:t<A>reen	Liitesana_<A>	;
 
 LEXICON NOUN Nainen
-[Sn][Ny]nen:nen	YhdysosaTaiLiitesana_<A>	;
+[Sn][Ny]nen:nen	Liitesana_<A>	;
 [Sn][Nm]set:set	Liitesana_<A>	;
 [Sg][Ny]sen:sen	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]sten:sten	YhdysosaTaiLiitesana_<A>	;
@@ -363,6 +363,7 @@ LEXICON NOUN Nainen
 [Sab][Ny]sett<A>:sett<A>	Liitesana_<A>	;
 [Sab][Nm]sitt<A>:sitt<A>	Liitesana_<A>	;
 [Sin][Nm]sin:sin	Liitesana_<A>	;
+s:s	YhdyssanaJatkuu	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 
 LEXICON NOUN Vieras

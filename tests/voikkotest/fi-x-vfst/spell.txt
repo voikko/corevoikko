@@ -109,3 +109,5 @@ fyysisinä
 fyysisiä
 fyysikon
 fyysikkoa
+!ihminenkissa
+ihmiskissa
