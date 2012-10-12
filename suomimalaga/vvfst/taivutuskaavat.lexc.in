@@ -297,7 +297,30 @@ LEXICON NOUN Kala
 
 LEXICON NOUN Koira
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]<A>in:<A>in	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Nm]i<A>:i<A>	Liitesana_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
+[Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
+[Sill][Nm]iin:iin	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
+[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+[Sall][Nm]ille:ille	Liitesana_<A>	;
+[Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
+?Laatusana	Johdin_UUs_<A>	;
 
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;

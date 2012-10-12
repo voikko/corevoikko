@@ -111,3 +111,4 @@ fyysikon
 fyysikkoa
 !ihminenkissa
 ihmiskissa
+koiralla
