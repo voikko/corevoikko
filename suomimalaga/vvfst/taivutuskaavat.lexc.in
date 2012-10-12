@@ -312,13 +312,26 @@ LEXICON NOUN Nainen
 [Sn][Ny]nen:nen	YhdysosaTaiLiitesana_<A>	;
 [Sn][Nm]set:set	Liitesana_<A>	;
 [Sg][Ny]sen:sen	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]sten:sten	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]sien:sien	YhdysosaTaiLiitesana_<A>	;
 [Sp][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Ses][Ny]sen<A>:sen<A>	Liitesana_<A>	;
+[Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
 [Sine][Ny]sess<A>:sess<A>	Liitesana_<A>	;
+[Sine][Nm]siss<A>:siss<A>	Liitesana_<A>	;
 [Sela][Ny]sest<A>:sest<A>	Liitesana_<A>	;
+[Sela][Nm]sist<A>:sist<A>	Liitesana_<A>	;
 [Sill][Ny]seen:seen	Liitesana_<A>	;
+[Sill][Nm]siin:siin	Liitesana_<A>	;
 [Sade][Ny]sell<A>:sell<A>	Liitesana_<A>	;
+[Sade][Nm]sill<A>:sill<A>	Liitesana_<A>	;
 [Sabl][Ny]selt<A>:selt<A>	Liitesana_<A>	;
+[Sabl][Nm]silt<A>:silt<A>	Liitesana_<A>	;
 [Sall][Ny]selle:selle	Liitesana_<A>	;
+[Sall][Nm]sille:sille	Liitesana_<A>	;
+[Sab][Ny]sett<A>:sett<A>	Liitesana_<A>	;
+[Sab][Nm]sitt<A>:sitt<A>	Liitesana_<A>	;
+[Sin][Nm]sin:sin	Liitesana_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 
 LEXICON NOUN Vieras

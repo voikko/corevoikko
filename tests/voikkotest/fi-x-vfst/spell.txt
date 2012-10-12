@@ -105,3 +105,4 @@ emäntä
 emännän
 ristin
 ristillä
+fyysisinä
