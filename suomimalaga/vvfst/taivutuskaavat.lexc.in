@@ -175,6 +175,36 @@ LEXICON NOUN Arvelu_w
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 
+LEXICON NOUN Laatikko
+[Sn][Ny]k<O>:k<O>	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]<O>t:<O>t	Liitesana_<A>	;
+[Sg][Ny]<O>n:<O>n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]k<O>jen:k<O>jen	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]<O>iden:<O>iden	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]<O>itten:<O>itten	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]k<O><A>:k<O><A>	Liitesana_<A>	;
+[Sp][Nm]k<O>j<A>:k<O>j<A>	Liitesana_<A>	;
+[Sp][Nm]<O>it<A>:<O>it<A>	Liitesana_<A>	;
+[Ses][Ny]k<O>n<A>:k<O>n<A>	Liitesana_<A>	;
+[Ses][Nm]k<O>in<A>:k<O>in<A>	Liitesana_<A>	;
+[Sine][Ny]<O>ss<A>:<O>ss<A>	Liitesana_<A>	;
+[Sine][Nm]<O>iss<A>:<O>iss<A>	Liitesana_<A>	;
+[Sela][Ny]<O>st<A>:<O>st<A>	Liitesana_<A>	;
+[Sela][Nm]<O>ist<A>:<O>ist<A>	Liitesana_<A>	;
+[Sill][Ny]k<O><O>n:k<O><O>n	Liitesana_<A>	;
+[Sill][Nm]k<O>ihin:k<O>ihin	Liitesana_<A>	;
+[Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
+[Sade][Ny]<O>ll<A>:<O>ll<A>	Liitesana_<A>	;
+[Sade][Nm]<O>ill<A>:<O>ill<A>	Liitesana_<A>	;
+[Sabl][Ny]<O>lt<A>:<O>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]<O>ilt<A>:<O>ilt<A>	Liitesana_<A>	;
+[Sall][Ny]<O>lle:<O>lle	Liitesana_<A>	;
+[Sall][Nm]<O>ille:<O>ille	Liitesana_<A>	;
+[Sab][Ny]<O>tt<A>:<O>tt<A>	Liitesana_<A>	;
+[Sab][Nm]<O>itt<A>:<O>itt<A>	Liitesana_<A>	;
+[Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
+?Laatusana	s:s	Johdin_UUs_<A>	;
+
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
 <WC>Paperi_w_<A>	;
@@ -315,6 +345,7 @@ LEXICON NOUN Nainen
 [Sg][Nm]sten:sten	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]sien:sien	YhdysosaTaiLiitesana_<A>	;
 [Sp][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sp][Nm]si<A>:si<A>	Liitesana_<A>	;
 [Ses][Ny]sen<A>:sen<A>	Liitesana_<A>	;
 [Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
 [Sine][Ny]sess<A>:sess<A>	Liitesana_<A>	;

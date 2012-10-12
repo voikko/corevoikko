@@ -106,3 +106,6 @@ emännän
 ristin
 ristillä
 fyysisinä
+fyysisiä
+fyysikon
+fyysikkoa

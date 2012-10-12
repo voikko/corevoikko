@@ -220,6 +220,7 @@ def handle_word(word):
 		                 u"alanko", u"avanto", \
 		                 u"paperi", u"kajakki", \
 		                 u"asema", u"emäntä", \
+		                 u"laatikko", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", u"lovi", u"kala", u"koira", u"tytär", u"katsella"]:
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
