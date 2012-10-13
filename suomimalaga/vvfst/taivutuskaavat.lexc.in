@@ -315,6 +315,15 @@ LEXICON NOUN Hanki
 k:k	<WC>Lovi_s_<A>	;
 g:g	<WC>Lovi_w_<A>	;
 
+LEXICON NOUN Lampi
+! TODO yksikkö "Lammin"
+p:p	<WC>Lovi_s_<A>	;
+m:m	<WC>Lovi_w_<A>	;
+
+LEXICON NOUN Sampi
+p:p	<WC>Lovi_s_<A>	;
+m:m	<WC>Lovi_w_<A>	;
+
 LEXICON NOUN Lovi_s
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;

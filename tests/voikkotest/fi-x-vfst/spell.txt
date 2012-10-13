@@ -127,3 +127,7 @@ henki
 hengen
 hapella
 happeen
+lammen
+lampien
+sampi
+sampien
