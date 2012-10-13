@@ -221,7 +221,9 @@ def handle_word(word):
 		                 u"paperi", u"kajakki", \
 		                 u"asema", u"emäntä", \
 		                 u"laatikko", \
-		                 u"risti", u"kalsium", u"nainen", u"vieras", u"lovi", u"kala", u"koira", u"tytär", u"katsella"]:
+		                 u"risti", u"kalsium", u"nainen", u"vieras", \
+		                 u"lovi", u"kaikki", \
+		                 u"kala", u"koira", u"tytär", u"katsella"]:
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \

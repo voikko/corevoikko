@@ -300,7 +300,38 @@ LEXICON NOUN Kalsium
 [Sin][Nm]ein:ein	Liitesana_<A>	;
 
 LEXICON NOUN Lovi
+<WC>Lovi_s_<A>	;
+<WC>Lovi_w_<A>	;
+
+LEXICON NOUN Kaikki
+k:k	<WC>Lovi_s_<A>	;
+<WC>Lovi_w_<A>	;
+
+LEXICON NOUN Lovi_s
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]e<A>:e<A>	Liitesana_<A>	;
+[Sp][Nm]i<A>:i<A>	Liitesana_<A>	;
+[Sill][Ny]een:een	Liitesana_<A>	;
+[Sill][Nm]iin:iin	Liitesana_<A>	;
+[Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+
+LEXICON NOUN Lovi_w
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	YhdysosaTaiLiitesana_<A>	;
+[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
+[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
+[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
+[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
+[Sall][Ny]elle:elle	Liitesana_<A>	;
+[Sall][Nm]ille:ille	Liitesana_<A>	;
+[Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN Kala
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
