@@ -1,0 +1,12 @@
+read lexc VVFST_BUILDDIR/all.lexc
+define Lexicon;
+
+define Lengthening o "[[L]]" -> o o ,,
+                   ö "[[L]]" -> ö ö ,,
+                   u "[[L]]" -> u u ,,
+                   y "[[L]]" -> y y ;
+
+regex Lexicon .o. Lengthening;
+compact sigma
+invert net
+write att VVFST_BUILDDIR/all.att

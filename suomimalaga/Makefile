@@ -42,7 +42,8 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
-         vvfst/suomi.lexc vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in
+         vvfst/suomi.lexc vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in \
+         vvfst/main.foma.in
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
@@ -139,7 +140,7 @@ clean:
 	rm -f $(VOIKKO_BUILDDIR)/joukahainen.lex $(VOIKKO_BUILDDIR)/main.lex $(VOIKKO_BUILDDIR)/voikko-fi_FI.pro
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
-	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/build.fomascript $(VVFST_BUILDDIR)/mor.vfst
+	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma $(VVFST_BUILDDIR)/mor.vfst
 	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc
 	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
@@ -218,13 +219,11 @@ $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/genera
 $(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp vvfst/suomi.lexc
 	cat vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) vvfst/suomi.lexc > $@
 
-$(VVFST_BUILDDIR)/build.fomascript:
-	echo "read lexc $(VVFST_BUILDDIR)/all.lexc" > $@
-	echo "invert net" >> $@
-	echo "write att $(VVFST_BUILDDIR)/all.att" >> $@
+$(VVFST_BUILDDIR)/main.foma: vvfst/main.foma.in
+	sed -e "s,VVFST_BUILDDIR,$(VVFST_BUILDDIR)," < $^ > $@
 
-$(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/build.fomascript
-	foma -f $(VVFST_BUILDDIR)/build.fomascript
+$(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma
+	foma -f $(VVFST_BUILDDIR)/main.foma
 
 $(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/all.att
 	cat $^ | sort -n | voikkovfstc -o $@

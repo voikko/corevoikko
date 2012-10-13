@@ -139,6 +139,11 @@ LEXICON NOUN Valo_s
 LEXICON NOUN Valo_sl
 [Sill][Ny]n:n	Liitesana_<A>	;
 
+LEXICON NOUN Arvelu
+<WC>Arvelu_s_<A>	;
+[[L]]:[[L]]	<WC>Arvelu_sl_<A>	;
+<WC>Arvelu_w_<A>	;
+
 LEXICON NOUN Alanko
 k<O>:k<O>	<WC>Arvelu_s_<A>	;
 k<O><O>:k<O><O>	<WC>Arvelu_sl_<A>	;

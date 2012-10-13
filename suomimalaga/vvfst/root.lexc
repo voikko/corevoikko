@@ -47,6 +47,9 @@ Multichar_Symbols
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
 
+! Korvattavat merkit
+[[L]] ! edellisen merkin toisto
+
 ! Diakriitit
 @P.EI_YKS.ON@ @D.EI_YKS@ ! Yksikkömuotoja ei sallita
 

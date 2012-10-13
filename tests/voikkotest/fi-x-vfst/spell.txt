@@ -112,3 +112,7 @@ fyysikkoa
 !ihminenkissa
 ihmiskissa
 koiralla
+hermostossa
+kengurussa
+hermostoon
+kenguruun
