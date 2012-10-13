@@ -324,6 +324,14 @@ LEXICON NOUN Sampi
 p:p	<WC>Lovi_s_<A>	;
 m:m	<WC>Lovi_w_<A>	;
 
+LEXICON NOUN Kylki
+k:k	<WC>Lovi_s_<A>	;
+j:j	<WC>Lovi_w_<A>	;
+
+LEXICON NOUN Lahti
+t:t	<WC>Lovi_s_<A>	;
+d:d	<WC>Lovi_w_<A>	;
+
 LEXICON NOUN Lovi_s
 [Sn][Ny]i:i	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;

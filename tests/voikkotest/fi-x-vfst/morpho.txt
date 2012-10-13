@@ -154,3 +154,6 @@ word:katsella
 word:adverbisija
  analysis
   STRUCTURE==pp=ppppp=pppp
+word:Pötsönlahdella
+ analysis
+  STRUCTURE==ippppp=pppppppp

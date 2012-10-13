@@ -123,6 +123,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			structure[structurePos++] = L'=';
 		}
 		else if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
+			defaultTitleCase = false;
 			i += 4;
 			while (fstOutput[i] != L'[') {
 				structure[structurePos++] = fstOutput[i];
