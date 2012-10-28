@@ -145,3 +145,5 @@ amarylliksen
 akatemia
 akatemioiden
 akatemioitten
+selaimen
+selainta

@@ -572,6 +572,37 @@ LEXICON NOUN Kalleus
 [Sab][Nm]ksitt<A>:ksitt<A>	Liitesana_<A>	;
 [Sin][Nm]ksin:ksin	Liitesana_<A>	;
 
+LEXICON NOUN Uistin
+n:n	<WC>Uistin_n_<A>	;
+m:m	<WC>Uistin_m_<A>	;
+
+LEXICON NOUN Uistin_n
+[Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ten:ten	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+
+LEXICON NOUN Uistin_m
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ien:ien	YhdysosaTaiLiitesana_<A>	;
+[Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
+[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
+[Sill][Ny]een:een	Liitesana_<A>	;
+[Sill][Nm]iin:iin	Liitesana_<A>	;
+[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
+[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
+[Sall][Ny]elle:elle	Liitesana_<A>	;
+[Sall][Nm]ille:ille	Liitesana_<A>	;
+[Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
+
 LEXICON NOUN Vieras
 [Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
 
