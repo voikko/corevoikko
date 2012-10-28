@@ -576,6 +576,14 @@ LEXICON NOUN Uistin
 n:n	<WC>Uistin_n_<A>	;
 m:m	<WC>Uistin_m_<A>	;
 
+LEXICON NOUN Vaimennin
+nin:nin	<WC>Uistin_n_<A>	;
+tim:tim	<WC>Uistin_m_<A>	;
+
+LEXICON NOUN Sivellin
+lin:lin	<WC>Uistin_n_<A>	;
+tim:tim	<WC>Uistin_m_<A>	;
+
 LEXICON NOUN Uistin_n
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]ten:ten	YhdysosaTaiLiitesana_<A>	;

@@ -147,3 +147,7 @@ akatemioiden
 akatemioitten
 selaimen
 selainta
+tallennin
+tallentimilla
+sivellinten
+siveltimessä
