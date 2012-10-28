@@ -222,6 +222,7 @@ def handle_word(word):
 		                 u"asema", u"emäntä", \
 		                 u"laatikko", \
 		                 u"autio", \
+		                 u"kalleus", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
 		                 u"kala", u"koira", u"tytär", u"katsella"]:

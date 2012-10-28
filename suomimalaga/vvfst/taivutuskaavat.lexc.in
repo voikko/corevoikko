@@ -494,6 +494,31 @@ LEXICON NOUN Nainen
 s:s	YhdyssanaJatkuu	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 
+LEXICON NOUN Kalleus
+[Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]det:det	Liitesana_<A>	;
+[Sg][Ny]den:den	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ksien:ksien	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
+[Sp][Nm]ksi<A>:ksi<A>	Liitesana_<A>	;
+[Ses][Ny]ten<A>:ten<A>	Liitesana_<A>	;
+[Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
+[Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
+[Sine][Nm]ksiss<A>:ksiss<A>	Liitesana_<A>	;
+[Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
+[Sela][Nm]ksist<A>:ksist<A>	Liitesana_<A>	;
+[Sill][Ny]teen:teen	Liitesana_<A>	;
+[Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
+[Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
+[Sade][Nm]ksill<A>:ksill<A>	Liitesana_<A>	;
+[Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
+[Sabl][Nm]ksilt<A>:ksilt<A>	Liitesana_<A>	;
+[Sall][Ny]delle:delle	Liitesana_<A>	;
+[Sall][Nm]ksille:ksille	Liitesana_<A>	;
+[Sab][Ny]dett<A>:dett<A>	Liitesana_<A>	;
+[Sab][Nm]ksitt<A>:ksitt<A>	Liitesana_<A>	;
+[Sin][Nm]ksin:ksin	Liitesana_<A>	;
+
 LEXICON NOUN Vieras
 [Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
 
