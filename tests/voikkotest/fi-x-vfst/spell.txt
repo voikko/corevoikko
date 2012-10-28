@@ -142,3 +142,6 @@ oikeuden
 amaryllis
 amaryllistä
 amarylliksen
+akatemia
+akatemioiden
+akatemioitten
