@@ -494,6 +494,31 @@ LEXICON NOUN Nainen
 s:s	YhdyssanaJatkuu	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 
+LEXICON NOUN Vastaus
+[Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]kset:kset	Liitesana_<A>	;
+[Sg][Ny]ksen:ksen	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]ksien:ksien	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sp][Nm]ksi<A>:ksi<A>	Liitesana_<A>	;
+[Ses][Ny]ksen<A>:ksen<A>	Liitesana_<A>	;
+[Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
+[Sine][Ny]ksess<A>:ksess<A>	Liitesana_<A>	;
+[Sine][Nm]ksiss<A>:ksiss<A>	Liitesana_<A>	;
+[Sela][Ny]ksest<A>:ksest<A>	Liitesana_<A>	;
+[Sela][Nm]ksist<A>:ksist<A>	Liitesana_<A>	;
+[Sill][Ny]kseen:kseen	Liitesana_<A>	;
+[Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
+[Sade][Ny]ksell<A>:ksell<A>	Liitesana_<A>	;
+[Sade][Nm]ksill<A>:ksill<A>	Liitesana_<A>	;
+[Sabl][Ny]kselt<A>:kselt<A>	Liitesana_<A>	;
+[Sabl][Nm]ksilt<A>:ksilt<A>	Liitesana_<A>	;
+[Sall][Ny]kselle:kselle	Liitesana_<A>	;
+[Sall][Nm]ksille:ksille	Liitesana_<A>	;
+[Sab][Ny]ksett<A>:ksett<A>	Liitesana_<A>	;
+[Sab][Nm]ksitt<A>:ksitt<A>	Liitesana_<A>	;
+[Sin][Nm]ksin:ksin	Liitesana_<A>	;
+
 LEXICON NOUN Kalleus
 [Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
 [Sn][Nm]det:det	Liitesana_<A>	;
