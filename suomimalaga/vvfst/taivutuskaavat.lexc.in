@@ -592,6 +592,14 @@ LEXICON NOUN Kaadin
 din:din	<WC>Uistin_n_<A>	;
 tim:tim	<WC>Uistin_m_<A>	;
 
+LEXICON NOUN Kaavin
+vin:vin	<WC>Uistin_n_<A>	;
+pim:pim	<WC>Uistin_m_<A>	;
+
+LEXICON NOUN Suodatin
+in:in	<WC>Uistin_n_<A>	;
+tim:tim	<WC>Uistin_m_<A>	;
+
 LEXICON NOUN Uistin_n
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]ten:ten	YhdysosaTaiLiitesana_<A>	;
