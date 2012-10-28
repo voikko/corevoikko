@@ -151,3 +151,7 @@ tallennin
 tallentimilla
 sivellinten
 siveltimessä
+kiharrin
+kihartimen
+paahdin
+paahtimetta
