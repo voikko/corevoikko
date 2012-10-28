@@ -159,3 +159,7 @@ kaavin
 kaapimessa
 kolkutin
 kolkuttimessa
+puin
+pukimessa
+poljin
+polkimessa

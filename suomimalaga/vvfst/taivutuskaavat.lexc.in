@@ -600,6 +600,14 @@ LEXICON NOUN Suodatin
 in:in	<WC>Uistin_n_<A>	;
 tim:tim	<WC>Uistin_m_<A>	;
 
+LEXICON NOUN Puin
+in:in	<WC>Uistin_n_<A>	;
+kim:kim	<WC>Uistin_m_<A>	;
+
+LEXICON NOUN Poljin
+jin:jin	<WC>Uistin_n_<A>	;
+kim:kim	<WC>Uistin_m_<A>	;
+
 LEXICON NOUN Uistin_n
 [Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
 [Sg][Nm]ten:ten	YhdysosaTaiLiitesana_<A>	;
