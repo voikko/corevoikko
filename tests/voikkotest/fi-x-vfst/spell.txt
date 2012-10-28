@@ -135,3 +135,5 @@ kylkeä
 kyljeltä
 Pötsönlahdella
 Pötsönlahtea
+adoptio
+adoptioon

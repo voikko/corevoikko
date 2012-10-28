@@ -245,6 +245,32 @@ LEXICON NOUN Paperi_w
 [Sab][Nm]eitt<A>:eitt<A>	Liitesana_<A>	;
 [Sin][Nm]ein:ein	Liitesana_<A>	;
 
+LEXICON NOUN Autio
+[Sn][Ny]:	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]iden:iden	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]itten:itten	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+[Sp][Nm]it<A>:it<A>	Liitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
+[Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
+[Sill][Ny]<O>n:<O>n	Liitesana_<A>	;
+[Sill][Nm]ihin:ihin	Liitesana_<A>	;
+[Sade][Ny]ll<A>:ll<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
+[Sabl][Ny]lt<A>:lt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
+[Sall][Ny]lle:lle	Liitesana_<A>	;
+[Sall][Nm]ille:ille	Liitesana_<A>	;
+[Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
+
 LEXICON NOUN Risti
 <WC>Risti_s_<A>	;
 <WC>Risti_w_<A>	;
