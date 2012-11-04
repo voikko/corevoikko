@@ -385,6 +385,7 @@ LEXICON NOUN Lovi_w
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 ?Nimisana	e:e	Johdin_llinen_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Kala
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
@@ -403,6 +404,7 @@ LEXICON NOUN Kala
 [Sin][Ny]<O>in:<O>in	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Koira
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
@@ -668,6 +670,41 @@ LEXICON NOUN Uistin_m
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 
+LEXICON NOUN Alaston
+<O>:<O>	<WC>Onneton_w_<A>	;
+<O>:<O>	<WC>Onneton_s_<A>	;
+
+LEXICON NOUN Onneton
+<O>:<O>	<WC>Onneton_w_<A>	;
+t<O>:t<O>	<WC>Onneton_s_<A>	;
+
+LEXICON NOUN Onneton_w
+[Sn][Ny]n:n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]nten:nten	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]nt<A>:nt<A>	Liitesana_<A>	;
+
+LEXICON NOUN Onneton_s
+[Sn][Nm]m<A>t:m<A>t	Liitesana_<A>	;
+[Sg][Ny]m<A>n:m<A>n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]mien:mien	YhdysosaTaiLiitesana_<A>	;
+[Ses][Ny]m<A>n<A>:m<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]min<A>:min<A>	Liitesana_<A>	;
+[Sine][Ny]m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]miss<A>:miss<A>	Liitesana_<A>	;
+[Sela][Ny]m<A>st<A>:m<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]mist<A>:mist<A>	Liitesana_<A>	;
+[Sill][Ny]m<A><A>n:m<A><A>n	Liitesana_<A>	;
+[Sill][Nm]miin:miin	Liitesana_<A>	;
+[Sade][Ny]m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]mill<A>:mill<A>	Liitesana_<A>	;
+[Sabl][Ny]m<A>lt<A>:m<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]milt<A>:milt<A>	Liitesana_<A>	;
+[Sall][Ny]m<A>lle:m<A>lle	Liitesana_<A>	;
+[Sall][Nm]mille:mille	Liitesana_<A>	;
+[Sab][Ny]m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]mitt<A>:mitt<A>	Liitesana_<A>	;
+[Sin][Nm]min:min	Liitesana_<A>	;
+
 LEXICON NOUN Vieras
 [Sn][Ny]s:s	YhdysosaTaiLiitesana_<A>	;
 
@@ -682,3 +719,6 @@ LEXICON Johdin_llinen
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
+
+LEXICON Johdin_tOn
+[Ll]t:t	LaatusanaOnneton_<A>	;

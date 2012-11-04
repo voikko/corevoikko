@@ -224,6 +224,7 @@ def handle_word(word):
 		                 u"autio", \
 		                 u"apila", \
 		                 u"korkea", \
+		                 u"alaston", u"onneton", \
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \
 		                 u"vastaus", u"kalleus", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", \
