@@ -366,6 +366,7 @@ LEXICON NOUN Lovi_s
 [Sill][Ny]een:een	Liitesana_<A>	;
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+?Nimisana	i:i	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Lovi_w
 [Sn][Nm]et:et	Liitesana_<A>	;
@@ -383,6 +384,7 @@ LEXICON NOUN Lovi_w
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
+?Nimisana	e:e	Johdin_llinen_<A>	;
 
 LEXICON NOUN Kala
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
@@ -399,6 +401,8 @@ LEXICON NOUN Kala
 [Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 [Sin][Ny]<O>in:<O>in	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Koira
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
@@ -675,3 +679,6 @@ LEXICON Johdin_UUs
 
 LEXICON Johdin_llinen
 [Ll]lli:lli	LaatusanaNainen_<A>    ;
+
+LEXICON Johdin_mAinen
+[Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
