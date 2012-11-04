@@ -223,6 +223,7 @@ def handle_word(word):
 		                 u"laatikko", \
 		                 u"autio", \
 		                 u"apila", \
+		                 u"korkea", \
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \
 		                 u"vastaus", u"kalleus", \
 		                 u"risti", u"kalsium", u"nainen", u"vieras", \

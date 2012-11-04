@@ -487,6 +487,34 @@ LEXICON NOUN Apila
 [Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 
+LEXICON NOUN Korkea
+[Sn][Ny]e<A>:e<A>	YhdysosaTaiLiitesana_<A>	;
+[Sn][Nm]e<A>t:e<A>t	Liitesana_<A>	;
+[Sg][Ny]e<A>n:e<A>n	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]eiden:eiden	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]eitten:eitten	YhdysosaTaiLiitesana_<A>	;
+[Sg][Nm]e<A>in:e<A>in	YhdysosaTaiLiitesana_<A>	;
+[Sp][Ny]e<A><A>:e<A><A>	Liitesana_<A>	;
+[Sp][Nm]eit<A>:eit<A>	Liitesana_<A>	;
+[Ses][Ny]e<A>n<A>:e<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
+[Sine][Ny]e<A>ss<A>:e<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]eiss<A>:eiss<A>	Liitesana_<A>	;
+[Sela][Ny]e<A>st<A>:e<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]eist<A>:eist<A>	Liitesana_<A>	;
+[Sill][Ny]e<A><A>n:e<A><A>n	Liitesana_<A>	;
+[Sill][Nm]eihin:eihin	Liitesana_<A>	;
+[Sill][Nm]eisiin:eisiin	Liitesana_<A>	;
+[Sade][Ny]e<A>ll<A>:e<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]eill<A>:eill<A>	Liitesana_<A>	;
+[Sabl][Ny]e<A>lt<A>:e<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]eilt<A>:eilt<A>	Liitesana_<A>	;
+[Sall][Ny]e<A>lle:e<A>lle	Liitesana_<A>	;
+[Sall][Nm]eille:eille	Liitesana_<A>	;
+[Sab][Ny]e<A>tt<A>:e<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]eitt<A>:eitt<A>	Liitesana_<A>	;
+[Sin][Nm]ein:ein	Liitesana_<A>	;
+
 LEXICON NOUN Tytär
 [Sn][Ny]<A>r:<A>r	YhdysosaTaiLiitesana_<A>	;
 [Sn][Nm]t<A>ret:t<A>ret	Liitesana_<A>	;
