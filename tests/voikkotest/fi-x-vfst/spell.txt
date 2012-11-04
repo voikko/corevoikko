@@ -60,6 +60,7 @@ arktisuus
 !arktisyys
 !hyttysyys
 !aapisuus
+arktisuuden
 pottusyltty
 vieras
 katsella
@@ -165,3 +166,4 @@ poljin
 polkimessa
 töykeä
 töykeää
+ystävällisessä

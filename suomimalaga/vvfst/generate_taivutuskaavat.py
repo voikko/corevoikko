@@ -49,6 +49,9 @@ def filterLines(lines, lexiconPrefix):
 		if line.startswith("?Laatusana"):
 			if lexiconPrefix in [u"Laatusana", u"NimiLaatusana"]:
 				yield line[10:].replace(u"<VC>", lexiconPrefix)
+		elif line.startswith("?Nimisana"):
+			if lexiconPrefix in [u"Nimisana", u"NimiLaatusana"]:
+				yield line[9:].replace(u"<VC>", lexiconPrefix)
 		else:
 			yield line.replace(u"<WC>", lexiconPrefix)
 

@@ -458,6 +458,7 @@ LEXICON NOUN Asema_w
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
 
 LEXICON NOUN Apila
 [Sn][Ny]<A>:<A>	YhdysosaTaiLiitesana_<A>	;
@@ -670,4 +671,7 @@ LEXICON Katsella
 [Tn1]l<A>:l<A>	#	;
 
 LEXICON Johdin_UUs
-[Ln][Sn][Ny]<U><U>s:<U><U>s    #    ;
+[Ln]<U><U>:<U><U>	NimisanaKalleus_<A>	;
+
+LEXICON Johdin_llinen
+[Ll]lli:lli	LaatusanaNainen_<A>    ;
