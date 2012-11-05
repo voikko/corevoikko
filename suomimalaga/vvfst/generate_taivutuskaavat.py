@@ -72,6 +72,10 @@ def appendLexicon(lexiconName, lines, lexcFile):
 	if lexiconName.startswith(u"NOUN "):
 		appendLines(u"Nimisana", lexiconName[5:], lines, lexcFile)
 		appendLines(u"Laatusana", lexiconName[5:], lines, lexcFile)
+		appendLines(u"Etunimi", lexiconName[5:], lines, lexcFile)
+		appendLines(u"Sukunimi", lexiconName[5:], lines, lexcFile)
+		appendLines(u"Paikannimi", lexiconName[5:], lines, lexcFile)
+		appendLines(u"Nimi", lexiconName[5:], lines, lexcFile)
 		appendLines(u"NimiLaatusana", lexiconName[5:], lines, lexcFile)
 	else:
 		appendLines(u"", lexiconName, lines, lexcFile)

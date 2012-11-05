@@ -140,8 +140,16 @@ def get_diacritics(word):
 	return diacritics
 
 def get_vfst_class_prefix(vfst_class):
-	if vfst_class in [u"[Lep]", u"[Lee]", u"[Les]", u"[Lem]", u"[Ln]"]:
+	if vfst_class == u"[Ln]":
 		return u"Nimisana"
+	elif vfst_class == u"[Lee]":
+		return u"Etunimi"
+	elif vfst_class == u"[Lep]":
+		return u"Paikannimi"
+	elif vfst_class == u"[Les]":
+		return u"Sukunimi"
+	elif vfst_class == u"[Lem]":
+		return u"Nimi"
 	elif vfst_class == u"[Ll]":
 		return u"Laatusana"
 	elif vfst_class == u"[Lnl]":
