@@ -64,6 +64,11 @@ arktisuuden
 pottusyltty
 vieras
 katsella
+katselenkin
+katselenkaan
+!katselenkään
+katseletkin
+katseleekin
 valot
 valoa
 valona

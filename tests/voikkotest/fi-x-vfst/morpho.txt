@@ -172,6 +172,18 @@ word:katselee
   MOOD=indicative
   NUMBER=singular
   PERSON=3
+word:katselemme
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=plural
+  PERSON=1
+word:katselette
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=plural
+  PERSON=2
 word:adverbisija
  analysis
   STRUCTURE==pp=ppppp=pppp
