@@ -276,6 +276,18 @@ LEXICON NOUN Risti
 <WC>Risti_s_<A>	;
 <WC>Risti_w_<A>	;
 
+LEXICON NOUN Takki
+k:k	<WC>Risti_s_<A>	;
+<WC>Risti_w_<A>	;
+
+LEXICON NOUN Tatti
+t:t	<WC>Risti_s_<A>	;
+<WC>Risti_w_<A>	;
+
+LEXICON NOUN Tunti
+t:t	<WC>Risti_s_<A>	;
+n:n	<WC>Risti_w_<A>	;
+
 LEXICON NOUN Risti_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;

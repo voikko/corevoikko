@@ -185,3 +185,9 @@ alaston
 alastomalla
 kalattomuuden
 !Leminpähkinä
+adventti
+adventin
+maniokki
+maniokin
+synti
+synnin

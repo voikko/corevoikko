@@ -235,7 +235,8 @@ def handle_word(word):
 		                 u"alaston", u"onneton", \
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \
 		                 u"vastaus", u"kalleus", \
-		                 u"risti", u"kalsium", u"nainen", u"vieras", \
+		                 u"risti", u"takki", u"tatti", u"tunti", \
+		                 u"kalsium", u"nainen", u"vieras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
 		                 u"kala", u"koira", u"tytär", u"katsella"]:
 			continue
