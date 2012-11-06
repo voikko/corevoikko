@@ -151,6 +151,27 @@ word:katsella
   STRUCTURE==pppppppp
   CLASS=teonsana
   MOOD=A-infinitive
+word:katselen
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=1
+word:katselet
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=2
+word:katselee
+ analysis
+  STRUCTURE==pppppppp
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=3
 word:adverbisija
  analysis
   STRUCTURE==pp=ppppp=pppp

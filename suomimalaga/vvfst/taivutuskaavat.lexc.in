@@ -715,6 +715,8 @@ Liitesana_<A>	;
 
 LEXICON Katsella
 [Tn1]l<A>:l<A>	#	;
+e:e	KestamanTekijapaateHeikko	;
+[Tt][P3][Ny]ee:ee	#	;
 
 LEXICON Johdin_UUs
 [Ln]<U><U>:<U><U>	NimisanaKalleus_<A>	;

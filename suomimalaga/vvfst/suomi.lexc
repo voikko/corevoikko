@@ -98,3 +98,7 @@ käänköhän:käänköhän	# ;
 kaankos:kaankos	# ;
 käänkös:käänkös	# ;
 #      ;
+
+LEXICON KestamanTekijapaateHeikko
+[Tt][P1][Ny]n:n	#	;
+[Tt][P2][Ny]t:t	#	;

@@ -43,6 +43,12 @@ Multichar_Symbols
 
 ! Tapaluokat
 [Tn1] ! 1. nimitapa
+[Tt]  ! tositapa
+
+! Tekijät
+[P1]  ! 1. persoona
+[P2]  ! 2. persoona
+[P3]  ! 3. persoona
 
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
