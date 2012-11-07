@@ -69,6 +69,7 @@ katselenkaan
 !katselenkään
 katseletkin
 katseleekin
+katsellakaan
 valot
 valoa
 valona
@@ -201,3 +202,9 @@ renki
 rengin
 hupi
 huvin
+rengillinen
+renkimäinen
+rengitön
+naisellinen
+naiseton
+naismainen

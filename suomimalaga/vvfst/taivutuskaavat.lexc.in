@@ -315,6 +315,7 @@ LEXICON NOUN Risti_s
 [Sill][Ny]iin:iin	Liitesana_<A>	;
 [Sill][Nm]eihin:eihin	Liitesana_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+?Nimisana	i:i	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Risti_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -332,6 +333,8 @@ LEXICON NOUN Risti_w
 [Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
 [Sab][Nm]eitt<A>:eitt<A>	Liitesana_<A>	;
 [Sin][Nm]ein:ein	Liitesana_<A>	;
+?Nimisana	i:i	Johdin_llinen_<A>	;
+?Nimisana	i:i	Johdin_tOn_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -589,6 +592,9 @@ LEXICON NOUN Nainen
 [Sin][Nm]sin:sin	Liitesana_<A>	;
 s:s	YhdyssanaJatkuu	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
+?Nimisana	se:se	Johdin_llinen_<A>	;
+?Nimisana	s:s	Johdin_mAinen_<A>	;
+?Nimisana	se:se	Johdin_tOn_<A>	;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
@@ -746,7 +752,7 @@ Liitesana_<A>	;
 <WC>YsJatko	;
 
 LEXICON Katsella
-[Tn1]l<A>:l<A>	#	;
+[Tn1]l<A>:l<A>	Liitesana_<A>	;
 e:e	KestamanTekijapaateHeikko_<A>	;
 [Tt][P3][Ny]ee:ee	Liitesana_<A>	;
 
