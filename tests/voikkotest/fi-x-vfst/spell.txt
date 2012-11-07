@@ -191,3 +191,9 @@ maniokki
 maniokin
 synti
 synnin
+keppi
+kepin
+vati
+vadin
+pelti
+pellin
