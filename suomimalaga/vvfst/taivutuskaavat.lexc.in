@@ -300,6 +300,14 @@ LEXICON NOUN Pelti
 t:t	<WC>Risti_s_<A>	;
 l:l	<WC>Risti_w_<A>	;
 
+LEXICON NOUN Renki
+k:k	<WC>Risti_s_<A>	;
+g:g	<WC>Risti_w_<A>	;
+
+LEXICON NOUN Hupi
+p:p	<WC>Risti_s_<A>	;
+v:v	<WC>Risti_w_<A>	;
+
 LEXICON NOUN Risti_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;

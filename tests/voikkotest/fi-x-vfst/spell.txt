@@ -197,3 +197,7 @@ vati
 vadin
 pelti
 pellin
+renki
+rengin
+hupi
+huvin
