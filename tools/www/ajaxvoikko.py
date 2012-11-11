@@ -220,7 +220,7 @@ def doSpell(text, v, checkGrammar):
 			res = res + escape(token.tokenText)
 		position = position + len(token.tokenText)
 		if currentGError != None and \
-		   currentGError.startPos + currentGError.errorLen == position:
+		   currentGError.startPos + currentGError.errorLen <= position:
 			currentGError = None
 			res = res + u"</span>"
 	return res.replace(u"\n", u"<br />")
