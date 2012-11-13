@@ -72,6 +72,11 @@ katseleekin
 katsellakaan
 katseleminen
 katselemista
+katselemassa
+katselemasta
+katselemaan
+katselemalla
+katselemattakin
 valot
 valoa
 valona

@@ -755,6 +755,7 @@ LEXICON Katsella
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
 e:e	KestamanTekijapaateHeikko_<A>	;
 [Tt][P3][Ny]ee:ee	Liitesana_<A>	;
+e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 
 LEXICON KestamanTekijapaateHeikko
@@ -762,6 +763,13 @@ LEXICON KestamanTekijapaateHeikko
 [Tt][P2][Ny]t:t	Liitesana_<A>	;
 [Tt][P1][Nm]mme:mme	Liitesana_<A>	;
 [Tt][P2][Nm]tte:tte	Liitesana_<A>	;
+
+LEXICON Johdin_nimitapa3
+m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
+m<A>st<A>:m<A>st<A>	Liitesana_<A>	;
+m<A><A>n:m<A><A>n	Liitesana_<A>	;
+m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
+m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa4
 mi:mi	NimisanaNainen_<A>	;
