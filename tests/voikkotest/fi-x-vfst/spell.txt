@@ -77,6 +77,8 @@ katselemasta
 katselemaan
 katselemalla
 katselemattakin
+katsellessa
+katsellen
 valot
 valoa
 valona
