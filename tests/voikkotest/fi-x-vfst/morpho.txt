@@ -190,3 +190,9 @@ word:adverbisija
 word:Pötsönlahdella
  analysis
   STRUCTURE==ippppp=pppppppp
+word:katselemassa
+ analysis
+  CLASS=teonsana
+  MOOD=MA-infinitive
+  NUMBER=singular
+  SIJAMUOTO=sisaolento

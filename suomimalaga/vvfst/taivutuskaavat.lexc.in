@@ -765,11 +765,11 @@ LEXICON KestamanTekijapaateHeikko
 [Tt][P2][Nm]tte:tte	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa3
-m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
-m<A>st<A>:m<A>st<A>	Liitesana_<A>	;
-m<A><A>n:m<A><A>n	Liitesana_<A>	;
-m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
-m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
+[Tn3][Ny][Sine]m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
+[Tn3][Ny][Sela]m<A>st<A>:m<A>st<A>	Liitesana_<A>	;
+[Tn3][Ny][Sill]m<A><A>n:m<A><A>n	Liitesana_<A>	;
+[Tn3][Ny][Sade]m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
+[Tn3][Ny][Sab]m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa4
 mi:mi	NimisanaNainen_<A>	;
