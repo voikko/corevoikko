@@ -223,7 +223,7 @@ $(VVFST_BUILDDIR)/main.foma: vvfst/main.foma.in
 	sed -e "s,VVFST_BUILDDIR,$(VVFST_BUILDDIR)," < $^ > $@
 
 $(VVFST_BUILDDIR)/all.att: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma
-	foma -f $(VVFST_BUILDDIR)/main.foma
+	foma -f $(VVFST_BUILDDIR)/main.foma | grep -v "defined but not used" 2>&1
 
 $(VVFST_BUILDDIR)/mor.vfst: $(VVFST_BUILDDIR)/all.att
 	cat $^ | sort -n | voikkovfstc -o $@
