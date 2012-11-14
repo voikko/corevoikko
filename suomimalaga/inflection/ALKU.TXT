@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2012 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -115,7 +115,7 @@ allo_rule generate_allos ($tietue):
   if ($tietue.perusmuoto in <"harju",
                              "joki", "järvi",
                              "kangas", "katu", "korpi", "kuja", "kylä",
-                             "laakso", "lahti",
+                             "laakso", "lahti", "lampi",
                              "maa", "meri", "mäki", "niemi",
                              "polku", "puistikko", "puisto",
                              "ranta", "rinne", "saari", "sarvi", "selkä",
@@ -142,7 +142,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"nano", "älä"> and $tietue.luokka = nimisana) then
+  if ($tietue.perusmuoto in <"id", "nano", "älä"> and $tietue.luokka = nimisana) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
@@ -189,7 +189,7 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-  if ($tietue.perusmuoto in <"fluoksetiini", "parametri",
+  if ($tietue.perusmuoto in <"aktivisti", "fluoksetiini", "parametri",
                              "bentsodiatsepiini", "diatsepiini", "karbamatsepiini",
                              "lipofiili", "okskarbatsepiini", "triatsolobentsodiatsepiini">) then
     $tietue.äs := aä;

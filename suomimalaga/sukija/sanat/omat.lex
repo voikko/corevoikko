@@ -1448,11 +1448,20 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "jumalauta", alku: "jumal-avita", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "juu", alku: "juupa", luokka: huudahdussana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Juupa juu.
 [perusmuoto: "kutikuti", alku: "kutikuti", luokka: huudahdussana, jatko: <loppu>, äs: a];
+[perusmuoto: "aronahde", alku: "aronah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "jokiahde", alku: "jokiah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "koliahde", alku: "koliah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "kolinahde", alku: "kolinah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "kurikanahde", alku: "kurikanah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
 [perusmuoto: "paloahde", alku: "paloah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
 [perusmuoto: "myllyahde", alku: "myllyah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
 [perusmuoto: "sarjanahde", alku: "sarjanah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "vuoriahde", alku: "vuoriah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
+[perusmuoto: "väliahde", alku: "väliah", luokka: nimisana, jatko: <sade>, äs: a, tiedot: <ei_ysj>];
 [perusmuoto: "Kutinkalla", alku: "Kutinkall", luokka: paikannimi, jatko: <>, äs: a];
 
+[perusmuoto: "objektivisti", alku: "objektivist", luokka: nimisana, jatko: <risti>, äs: aä, tiedot: <inen>];
+[perusmuoto: "Talviahteenlahti", alku: "Talviahteenlah", luokka: paikannimi, jatko: <lahti>, äs: a];
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

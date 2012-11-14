@@ -355,6 +355,7 @@ keskittymä
 kestitys
 kesyhanhi
 kesyhevonen
+kesykissa
 kesykyyhky
 kesyrotta
 Keto
@@ -572,6 +573,7 @@ loittorengas
 lojaalisuus
 lomalainen
 Lotta
+Louhi
 luikerrella
 lukema
 Lumijoki

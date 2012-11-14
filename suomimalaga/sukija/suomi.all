@@ -106,7 +106,6 @@ allo_rule generate_allos ($tietue):
   #
   if ($tietue.perusmuoto in <"amerikanjuutalainen", "amerikansuomalainen",
                              "Itämeri", "itävaltalainen", "kazakstanilainen",
-                             "philadelphialainen", 
                              "suomalais-permiläinen", "tongalainen">) then
     stop;
   end;
@@ -143,7 +142,7 @@ allo_rule generate_allos ($tietue):
     $tietue :=+ [tiedot: <ei_inen, ei_ys>];
   end;
 
-  if ($tietue.perusmuoto in <"nano", "älä"> and $tietue.luokka = nimisana) then
+  if ($tietue.perusmuoto in <"id", "nano", "älä"> and $tietue.luokka = nimisana) then
     $tietue :=+ [tiedot: <ei_ys>];
   end;
 
@@ -190,7 +189,7 @@ allo_rule generate_allos ($tietue):
     end;
   end;
 
-  if ($tietue.perusmuoto in <"fluoksetiini", "parametri",
+  if ($tietue.perusmuoto in <"aktivisti", "fluoksetiini", "parametri",
                              "bentsodiatsepiini", "diatsepiini", "karbamatsepiini",
                              "lipofiili", "okskarbatsepiini", "triatsolobentsodiatsepiini">) then
     $tietue.äs := aä;
@@ -4954,7 +4953,7 @@ allo_rule generate_allos ($tietue):
       end;
     end;
   elseif (takuta in $tietue.jatko) then
-    choose $i in haluta ($tietue, U($tietue), U($tietue)+"k", "k"+U($tietue)+A($tietue), "k"+U($tietue)+U($tietue), U($tietue)+"n", "k"+U($tietue)+"s", "k"+U($tietue), "k"+U($tietue));
+    choose $i in haluta ($tietue, U($tietue), U($tietue)+"t", "k"+U($tietue)+A($tietue), "k"+U($tietue)+U($tietue), U($tietue)+"n", "k"+U($tietue)+"s", "k"+U($tietue), "k"+U($tietue));
     if (value_type($i) = record) then
       result $i.alku, $i - alku;
     else
