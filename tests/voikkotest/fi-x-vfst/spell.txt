@@ -79,6 +79,12 @@ katselemalla
 katselemattakin
 katsellessa
 katsellen
+katselin
+katselit
+katseli
+katselimme
+katselitte
+katselivat
 valot
 valoa
 valona
