@@ -752,14 +752,24 @@ Liitesana_<A>	;
 <WC>YsJatko	;
 
 LEXICON Katsella
+<WC>Katsella_w_<A>	;
+<WC>Katsella_s_<A>	;
+
+LEXICON Kohdella
+del:del	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+
+LEXICON Katsella_w
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
+l:l	Johdin_nimitapa2_<A>	;
+
+LEXICON Katsella_s
 e:e	KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
 KertomanTekijapaateVahva_<A>	;
 [Tt][P3][Ny]ee:ee	Liitesana_<A>	;
 [Tt][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
-l:l	Johdin_nimitapa2_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 

@@ -92,6 +92,10 @@ katselisi
 katselisimmeko
 katselisitte
 katselisivat
+riidellä
+riitelen
+riitelemässä
+riidellen
 valot
 valoa
 valona

@@ -238,7 +238,8 @@ def handle_word(word):
 		                 u"risti", u"takki", u"tatti", u"tunti", u"keppi", u"vati", u"pelti", u"renki", u"hupi", \
 		                 u"kalsium", u"nainen", u"vieras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
-		                 u"kala", u"koira", u"tytär", u"katsella"]:
+		                 u"kala", u"koira", u"tytär", \
+		                 u"katsella", u"kohdella"]:
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
