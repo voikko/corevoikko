@@ -104,6 +104,10 @@ jutella
 juttelen
 askarrella
 askartelen
+ommella
+ompelen
+runnella
+runtelen
 valot
 valoa
 valona
