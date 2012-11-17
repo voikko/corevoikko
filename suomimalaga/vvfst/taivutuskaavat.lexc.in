@@ -767,6 +767,14 @@ LEXICON Tapella
 el:el	<WC>Katsella_w_<A>	;
 pel:pel	<WC>Katsella_s_<A>	;
 
+LEXICON Aatella
+el:el	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+
+LEXICON Askarrella
+rel:rel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+
 LEXICON Katsella_w
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
