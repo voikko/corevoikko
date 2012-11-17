@@ -757,6 +757,8 @@ e:e	KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
 KertomanTekijapaateVahva_<A>	;
 [Tt][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+Ehtotapa_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
@@ -776,6 +778,14 @@ LEXICON KertomanTekijapaateHeikko
 LEXICON KertomanTekijapaateVahva
 [Tt][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+
+LEXICON Ehtotapa
+[Te][P1][Ny]isin:isin	Liitesana_<A>	;
+[Te][P2][Ny]isit:isit	Liitesana_<A>	;
+[Te][P3][Ny]isi:isi	Liitesana_<A>	;
+[Te][P1][Nm]isimme:isimme	Liitesana_<A>	;
+[Te][P2][Nm]isitte:isitte	Liitesana_<A>	;
+[Te][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	Liitesana_<A>	;

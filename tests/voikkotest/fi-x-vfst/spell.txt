@@ -85,6 +85,13 @@ katseli
 katselimme
 katselitte
 katselivat
+katselevat
+katselisin
+katselisit
+katselisi
+katselisimmeko
+katselisitte
+katselisivat
 valot
 valoa
 valona

@@ -200,3 +200,7 @@ word:katsellessa
  analysis
   CLASS=teonsana
   MOOD=E-infinitive
+word:katselisin
+ analysis
+  CLASS=teonsana
+  MOOD=conditional
