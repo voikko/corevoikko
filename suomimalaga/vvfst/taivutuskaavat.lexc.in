@@ -783,6 +783,10 @@ LEXICON Pienennellä
 nel:nel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
+LEXICON Takellella
+lel:lel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+
 LEXICON Katsella_w
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
