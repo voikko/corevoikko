@@ -248,3 +248,5 @@ rengitön
 naisellinen
 naiseton
 naismainen
+laastaroida
+laastaroin

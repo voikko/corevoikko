@@ -751,6 +751,18 @@ LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
 <WC>YsJatko	;
 
+LEXICON Kanavoida
+[Tn1]id<A>:id<A>	Liitesana_<A>	;
+id:id	Johdin_nimitapa2_<A>	;
+KestamanTekijapaateHeikko_<A>	;
+KertomanTekijapaateHeikko_<A>	;
+KertomanTekijapaateVahva_<A>	;
+[Tt][P3][Ny]i:i	Liitesana_<A>	;
+[Tt][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+Ehtotapa_<A>	;
+i:i	Johdin_nimitapa3_<A>	;
+i:i	Johdin_nimitapa4_<A>	;
+
 LEXICON Katsella
 <WC>Katsella_w_<A>	;
 <WC>Katsella_s_<A>	;
