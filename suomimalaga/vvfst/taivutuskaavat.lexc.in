@@ -863,3 +863,53 @@ LEXICON Johdin_mAinen
 LEXICON Johdin_tOn
 [Ll]t:t	LaatusanaOnneton_<A>	;
 tt<O>m:tt<O>m	Johdin_UUs_<A>	;
+tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
+tt<O>m:tt<O>m	Yliaste_<A>	;
+
+LEXICON Voittoaste
+[Sn][Ny]mpi:mpi	Liitesana_<A>	;
+[Sn][Nm]mm<A>t:mm<A>t	Liitesana_<A>	;
+[Sg][Ny]mm<A>n:mm<A>n	Liitesana_<A>	;
+[Sg][Nm]mpien:mpien	Liitesana_<A>	;
+[Sp][Ny]mp<A><A>:mp<A><A>	Liitesana_<A>	;
+[Sp][Nm]mpi<A>:mpi<A>	Liitesana_<A>	;
+[Ses][Ny]mp<A>n<A>:mp<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]mpin<A>:mpin<A>	Liitesana_<A>	;
+[Sine][Ny]mm<A>ss<A>:mm<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]mmiss<A>:mmiss<A>	Liitesana_<A>	;
+[Sela][Ny]mm<A>st<A>:mm<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]mmist<A>:mmist<A>	Liitesana_<A>	;
+[Sill][Ny]mp<A><A>n:mp<A><A>n	Liitesana_<A>	;
+[Sill][Nm]mpiin:mpiin	Liitesana_<A>	;
+[Sade][Ny]mm<A>ll<A>:mm<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]mmill<A>:mmill<A>	Liitesana_<A>	;
+[Sabl][Ny]mm<A>lt<A>:mm<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]mmilt<A>:mmilt<A>	Liitesana_<A>	;
+[Sall][Ny]mm<A>lle:mm<A>lle	Liitesana_<A>	;
+[Sall][Nm]mmille:mmille	Liitesana_<A>	;
+[Sab][Ny]mm<A>tt<A>:mm<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]mmitt<A>:mmitt<A>	Liitesana_<A>	;
+
+LEXICON Yliaste
+[Sn][Ny]in:in	Liitesana_<A>	;
+[Sn][Nm]imm<A>t:imm<A>t	Liitesana_<A>	;
+[Sg][Ny]imm<A>n:imm<A>n	Liitesana_<A>	;
+[Sg][Nm]impien:impien	Liitesana_<A>	;
+[Sp][Ny]imp<A><A>:imp<A><A>	Liitesana_<A>	;
+[Sp][Nm]impi<A>:impi<A>	Liitesana_<A>	;
+[Ses][Ny]imp<A>n<A>:imp<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]impin<A>:impin<A>	Liitesana_<A>	;
+[Sine][Ny]imm<A>ss<A>:imm<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]immiss<A>:immiss<A>	Liitesana_<A>	;
+[Sela][Ny]imm<A>st<A>:imm<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]immist<A>:immist<A>	Liitesana_<A>	;
+[Sill][Ny]imp<A><A>n:imp<A><A>n	Liitesana_<A>	;
+[Sill][Nm]impiin:impiin	Liitesana_<A>	;
+[Sade][Ny]imm<A>ll<A>:imm<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]immill<A>:immill<A>	Liitesana_<A>	;
+[Sabl][Ny]imm<A>lt<A>:imm<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]immilt<A>:immilt<A>	Liitesana_<A>	;
+[Sall][Ny]imm<A>lle:imm<A>lle	Liitesana_<A>	;
+[Sall][Nm]immille:immille	Liitesana_<A>	;
+[Sab][Ny]imm<A>tt<A>:imm<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]immitt<A>:immitt<A>	Liitesana_<A>	;

@@ -250,3 +250,5 @@ naiseton
 naismainen
 laastaroida
 laastaroin
+kalattomampi
+kalattomimmassa
