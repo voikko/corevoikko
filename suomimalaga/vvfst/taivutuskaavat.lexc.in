@@ -271,6 +271,8 @@ LEXICON NOUN Autio
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
+?Laatusana	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Risti
 <WC>Risti_s_<A>	;
@@ -591,6 +593,8 @@ LEXICON NOUN Nainen
 [Sab][Nm]sitt<A>:sitt<A>	Liitesana_<A>	;
 [Sin][Nm]sin:sin	Liitesana_<A>	;
 s:s	YhdyssanaJatkuu	;
+?Laatusana	se:se	Voittoaste_<A>	;
+?Laatusana	s:s	Yliaste_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 ?Nimisana	se:se	Johdin_llinen_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;

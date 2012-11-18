@@ -252,3 +252,8 @@ laastaroida
 laastaroin
 kalattomampi
 kalattomimmassa
+autiompi
+autioimmalla
+!naamiompi
+innovatiivisempi
+innovatiivisimman
