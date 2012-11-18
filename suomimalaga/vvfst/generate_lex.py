@@ -94,7 +94,6 @@ def get_vfst_word_class(j_wordclasses):
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
 # or hyphenator
-# TODO: strip extra characters at the end of pattern (as is done with Malaga)
 def get_structure(wordform, vfst_word_class):
 	needstructure = False
 	ispropernoun = vfst_word_class[0:3] == u'[Le'
@@ -115,7 +114,11 @@ def get_structure(wordform, vfst_word_class):
 			structstr = structstr + u"i"
 			if not (ispropernoun and i == 0): needstructure = True
 		else: structstr = structstr + u"p"
-	if needstructure: return structstr + u'[X]'
+	if needstructure:
+		returnedLength = len(structstr)
+		while structstr[returnedLength - 1] == u"p":
+			returnedLength = returnedLength - 1
+		return structstr[0:returnedLength] + u'[X]'
 	else: return u""
 
 def get_diacritics(word):
