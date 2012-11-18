@@ -133,7 +133,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 		else if (wcsncmp(fstOutput + i, L"[Xr]", 4) == 0) {
 			defaultTitleCase = false;
 			i += 4;
-			while (fstOutput[i] != L'[') {
+			while (fstOutput[i] != L'[' && charsMissing) {
 				structure[structurePos++] = fstOutput[i];
 				if (fstOutput[i] != L'=') {
 					charsFromDefault++;

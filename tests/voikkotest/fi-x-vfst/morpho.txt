@@ -204,3 +204,10 @@ word:katselisin
  analysis
   CLASS=teonsana
   MOOD=conditional
+word:pahoinpiteli
+ analysis
+  CLASS=teonsana
+  MOOD=indicative
+  NUMBER=singular
+  PERSON=3
+  STRUCTURE==pppppp=pppppp
