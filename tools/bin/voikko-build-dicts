@@ -139,7 +139,7 @@ INDEX_FILE_NAME = WORK_DIR + "/index.html"
 
 # === Initialization ===
 
-runCmd("svn update")
+runCmd("git pull -r")
 startTime = datetime.now()
 indexFile = codecs.open(INDEX_FILE_NAME, "w", "UTF-8")
 indexHeader(indexFile)
@@ -218,7 +218,7 @@ indexFile.write(u"<p><a href='suomi-malaga-snapshot.tar.gz'>suomi-malaga-snapsho
 # === Finalisation ===
 
 indexFile.write(u"<h2>Lähdekoodin versiotiedot</h2><pre>")
-out = getoutput("svn info")
+out = getoutput("git log --format=short HEAD^1..HEAD")
 indexFile.write(unicode(out, "UTF-8"))
 indexFile.write(u"</pre><p>Viimeisin päivitys Joukahaisesta")
 out = getoutput("grep 'Time of generation:' vocabulary/joukahainen.xml | sed -e 's/T.*on://'")
