@@ -817,6 +817,28 @@ Ehtotapa_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 
+LEXICON Salata
+<A>:<A>	<WC>Salata_w_<A>	;
+<A>:<A>	<WC>Salata_s_<A>	;
+
+LEXICON Kammata
+m<A>:m<A>	<WC>Salata_w_<A>	;
+p<A>:p<A>	<WC>Salata_s_<A>	;
+
+LEXICON Salata_w
+[Tn1]t<A>:t<A>	Liitesana_<A>	;
+t:t	Johdin_nimitapa2_<A>	;
+
+LEXICON Salata_s
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+s:s	KertomanTekijapaateHeikko_<A>	;
+s:s	KertomanTekijapaateVahva_<A>	;
+[Tt][P3][Ny]<A>:<A>	Liitesana_<A>	;
+[Tt][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
+Ehtotapa_<A>	;
+<A>:<A>	Johdin_nimitapa3_<A>	;
+<A>:<A>	Johdin_nimitapa4_<A>	;
+
 LEXICON KestamanTekijapaateHeikko
 [Tt][P1][Ny]n:n	Liitesana_<A>	;
 [Tt][P2][Ny]t:t	Liitesana_<A>	;

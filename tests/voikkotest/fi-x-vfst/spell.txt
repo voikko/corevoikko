@@ -257,3 +257,7 @@ autioimmalla
 !naamiompi
 innovatiivisempi
 innovatiivisimman
+faksata
+faksaan
+kammata
+kampaan
