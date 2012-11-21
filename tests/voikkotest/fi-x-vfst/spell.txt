@@ -273,3 +273,9 @@ lobata
 lobbaatko
 kelvata
 kelpaan
+kuitata
+kuittaan
+ladata
+lataan
+peljätä
+pelkään
