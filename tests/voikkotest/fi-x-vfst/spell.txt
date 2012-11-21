@@ -267,3 +267,9 @@ kerrata
 kertaatko
 suunnata
 suuntaat
+vallata
+valtaatko
+lobata
+lobbaatko
+kelvata
+kelpaan

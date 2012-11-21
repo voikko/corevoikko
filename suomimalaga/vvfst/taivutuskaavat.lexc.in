@@ -841,6 +841,18 @@ LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 
+LEXICON Vallata
+l<A>:l<A>	<WC>Salata_w_<A>	;
+t<A>:t<A>	<WC>Salata_s_<A>	;
+
+LEXICON Lobata
+<A>:<A>	<WC>Salata_w_<A>	;
+b<A>:b<A>	<WC>Salata_s_<A>	;
+
+LEXICON Kelvata
+v<A>:v<A>	<WC>Salata_w_<A>	;
+p<A>:p<A>	<WC>Salata_s_<A>	;
+
 LEXICON Salata_s
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
 s:s	KertomanTekijapaateHeikko_<A>	;
