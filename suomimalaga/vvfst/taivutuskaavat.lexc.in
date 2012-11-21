@@ -825,6 +825,18 @@ LEXICON Kammata
 m<A>:m<A>	<WC>Salata_w_<A>	;
 p<A>:p<A>	<WC>Salata_s_<A>	;
 
+LEXICON Suunnata
+n<A>:n<A>	<WC>Salata_w_<A>	;
+t<A>:t<A>	<WC>Salata_s_<A>	;
+
+LEXICON Hangata
+g<A>:g<A>	<WC>Salata_w_<A>	;
+k<A>:k<A>	<WC>Salata_s_<A>	;
+
+LEXICON Kerrata
+r<A>:r<A>	<WC>Salata_w_<A>	;
+t<A>:t<A>	<WC>Salata_s_<A>	;
+
 LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 t:t	Johdin_nimitapa2_<A>	;

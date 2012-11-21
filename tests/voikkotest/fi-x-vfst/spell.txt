@@ -261,3 +261,9 @@ faksata
 faksaan
 kammata
 kampaan
+hangata
+hankaatko
+kerrata
+kertaatko
+suunnata
+suuntaat
