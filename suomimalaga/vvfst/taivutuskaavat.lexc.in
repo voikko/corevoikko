@@ -865,6 +865,18 @@ LEXICON Peljätä
 j<A>:j<A>	<WC>Salata_w_<A>	;
 k<A>:k<A>	<WC>Salata_s_<A>	;
 
+LEXICON Pakata
+<A>:<A>	<WC>Salata_w_<A>	;
+k<A>:k<A>	<WC>Salata_s_<A>	;
+
+LEXICON Pompata
+<A>:<A>	<WC>Salata_w_<A>	;
+p<A>:p<A>	<WC>Salata_s_<A>	;
+
+LEXICON Taata
+<A>:<A>	<WC>Salata_w_<A>	;
+k<A>:k<A>	<WC>Salata_s_<A>	;
+
 LEXICON Salata_s
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
 s:s	KertomanTekijapaateHeikko_<A>	;

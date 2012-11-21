@@ -279,3 +279,9 @@ ladata
 lataan
 peljätä
 pelkään
+pakata
+pakkaan
+pompata
+pomppaan
+karata
+karkaanko
