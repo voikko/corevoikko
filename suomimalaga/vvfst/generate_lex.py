@@ -241,7 +241,9 @@ def handle_word(word):
 		                 u"risti", u"takki", u"tatti", u"tunti", u"keppi", u"vati", u"pelti", u"renki", u"hupi", \
 		                 u"kalsium", u"nainen", u"vieras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
-		                 u"kala", u"koira", u"tytär", \
+		                 u"kala", \
+		                 u"koira", u"juhta", \
+		                 u"tytär", \
 		                 u"kanavoida", \
 		                 u"salata", u"kammata", u"hangata", u"kerrata", u"suunnata", u"vallata", u"lobata", u"kelvata", u"kuitata", u"ladata", u"peljätä", u"pakata", u"pompata", u"taata", \
 		                 u"katsella", u"kohdella", u"nakella", u"tapella", u"aatella", u"askarrella", u"ommella", u"pienennellä", u"takellella"]:
