@@ -464,6 +464,18 @@ LEXICON NOUN Kompa
 p:p	<WC>Koira_s_<A>	;
 m:m	<WC>Koira_w_<A>	;
 
+LEXICON NOUN Suunta
+t:t	<WC>Koira_s_<A>	;
+n:n	<WC>Koira_w_<A>	;
+
+LEXICON NOUN Tolppa
+p:p	<WC>Koira_s_<A>	;
+<WC>Koira_w_<A>	;
+
+LEXICON NOUN Turta
+t:t	<WC>Koira_s_<A>	;
+r:r	<WC>Koira_w_<A>	;
+
 LEXICON NOUN Koira_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;

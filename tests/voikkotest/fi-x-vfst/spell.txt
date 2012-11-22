@@ -293,3 +293,9 @@ hongilla
 honkana
 kompa
 komman
+suunta
+suunnan
+tolppa
+tolpan
+turta
+turran
