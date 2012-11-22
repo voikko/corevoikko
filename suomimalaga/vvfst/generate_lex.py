@@ -242,7 +242,7 @@ def handle_word(word):
 		                 u"kalsium", u"nainen", u"vieras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
 		                 u"kala", \
-		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", \
+		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \
 		                 u"tytär", \
 		                 u"kanavoida", \
 		                 u"salata", u"kammata", u"hangata", u"kerrata", u"suunnata", u"vallata", u"lobata", u"kelvata", u"kuitata", u"ladata", u"peljätä", u"pakata", u"pompata", u"taata", \

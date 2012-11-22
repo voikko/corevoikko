@@ -299,3 +299,11 @@ tolppa
 tolpan
 turta
 turran
+kulta
+kullan
+hoikka
+hoikan
+huopa
+huovan
+ikä
+iän

@@ -476,6 +476,22 @@ LEXICON NOUN Turta
 t:t	<WC>Koira_s_<A>	;
 r:r	<WC>Koira_w_<A>	;
 
+LEXICON NOUN Kulta
+t:t	<WC>Koira_s_<A>	;
+l:l	<WC>Koira_w_<A>	;
+
+LEXICON NOUN Hoikka
+k:k	<WC>Koira_s_<A>	;
+<WC>Koira_w_<A>	;
+
+LEXICON NOUN Huopa
+p:p	<WC>Koira_s_<A>	;
+v:v	<WC>Koira_w_<A>	;
+
+LEXICON NOUN Ikä
+k:k	<WC>Koira_s_<A>	;
+<WC>Koira_w_<A>	;
+
 LEXICON NOUN Koira_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
