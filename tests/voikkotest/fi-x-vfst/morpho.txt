@@ -211,3 +211,7 @@ word:pahoinpiteli
   NUMBER=singular
   PERSON=3
   STRUCTURE==pppppp=pppppp
+word:hinaajalla
+ analysis
+  CLASS=nimisana
+  SIJAMUOTO=ulkoolento
