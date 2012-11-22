@@ -452,6 +452,18 @@ LEXICON NOUN Juhta
 t:t	<WC>Koira_s_<A>	;
 d:d	<WC>Koira_w_<A>	;
 
+LEXICON NOUN Kenttä
+t:t	<WC>Koira_s_<A>	;
+<WC>Koira_w_<A>	;
+
+LEXICON NOUN Honka
+k:k	<WC>Koira_s_<A>	;
+g:g	<WC>Koira_w_<A>	;
+
+LEXICON NOUN Kompa
+p:p	<WC>Koira_s_<A>	;
+m:m	<WC>Koira_w_<A>	;
+
 LEXICON NOUN Koira_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;

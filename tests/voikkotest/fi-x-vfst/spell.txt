@@ -287,3 +287,9 @@ karata
 karkaanko
 juhta
 juhdan
+kenttää
+kentällä
+hongilla
+honkana
+kompa
+komman
