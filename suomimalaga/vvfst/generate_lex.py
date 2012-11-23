@@ -136,9 +136,9 @@ def get_diacritics(word):
 				diacritics.append(u"@P.EI_YKS.ON@")
 			elif flagName == u"ysj":
 				diacritics.append(u"@R.YS_ALKANUT@")
-			elif flagName == u"ei_ysa":
+			if flagName in [u"ei_ys", u"ei_ysa"]:
 				diacritics.append(u"@P.YS_EI_JATKOA.ON@")
-			elif flagName == u"ei_ysj":
+			if flagName in [u"ei_ys", u"ei_ysj"]:
 				diacritics.append(u"@D.YS_ALKANUT@")
 	return diacritics
 

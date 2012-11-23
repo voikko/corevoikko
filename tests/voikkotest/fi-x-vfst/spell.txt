@@ -310,3 +310,5 @@ iän
 hilloja
 tiukujen
 tarhoissa
+!hevosoka
+!okahevonen
