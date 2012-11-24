@@ -312,3 +312,8 @@ tiukujen
 tarhoissa
 !hevosoka
 !okahevonen
+varain
+hame
+hameen
+enne
+enteen
