@@ -141,7 +141,7 @@ clean:
 	rm -rf sukija/*_l sukija/transmit sukija/sukija.pyc sukija/voikonsanat
 	rm -f sukija/k1 sukija/k2 sukija/foo sukija/bar
 	rm -f $(VVFST_BUILDDIR)/all.att $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/main.foma $(VVFST_BUILDDIR)/mor.vfst
-	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc
+	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
 
