@@ -323,3 +323,9 @@ kierre
 kierteellä
 lummetta
 lumpeetta
+lahje
+lahkeet
+lape
+lappeet
+sade
+sateet
