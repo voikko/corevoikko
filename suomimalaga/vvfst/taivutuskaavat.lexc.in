@@ -819,6 +819,18 @@ LEXICON NOUN Enne
 ne:ne	<WC>Hame_w_<A>	;
 te:te	<WC>Hame_s_<A>	;
 
+LEXICON NOUN Helle
+le:le	<WC>Hame_w_<A>	;
+te:te	<WC>Hame_s_<A>	;
+
+LEXICON NOUN Kierre
+re:re	<WC>Hame_w_<A>	;
+te:te	<WC>Hame_s_<A>	;
+
+LEXICON NOUN Lumme
+me:me	<WC>Hame_w_<A>	;
+pe:pe	<WC>Hame_s_<A>	;
+
 LEXICON NOUN Hame_w
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
