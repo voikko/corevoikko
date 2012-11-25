@@ -329,3 +329,9 @@ lape
 lappeet
 sade
 sateet
+taive
+taipeet
+tarvike
+tarvikkeet
+vaate
+vaatteet

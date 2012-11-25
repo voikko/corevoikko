@@ -843,6 +843,18 @@ LEXICON NOUN Sade
 de:de	<WC>Hame_w_<A>	;
 te:te	<WC>Hame_s_<A>	;
 
+LEXICON NOUN Taive
+ve:ve	<WC>Hame_w_<A>	;
+pe:pe	<WC>Hame_s_<A>	;
+
+LEXICON NOUN Tarvike
+e:e	<WC>Hame_w_<A>	;
+ke:ke	<WC>Hame_s_<A>	;
+
+LEXICON NOUN Vaate
+e:e	<WC>Hame_w_<A>	;
+te:te	<WC>Hame_s_<A>	;
+
 LEXICON NOUN Hame_w
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
