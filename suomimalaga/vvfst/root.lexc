@@ -53,6 +53,10 @@ Multichar_Symbols
 [P2]  ! 2. persoona
 [P3]  ! 3. persoona
 
+! Aikamuodot
+[Ap]  ! kestämä (preesens)
+[Ai]  ! kertoma (imperfekti)
+
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
 

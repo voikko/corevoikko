@@ -184,6 +184,7 @@ word:katselette
   MOOD=indicative
   NUMBER=plural
   PERSON=2
+  TENSE=present_simple
 word:adverbisija
  analysis
   STRUCTURE==pp=ppppp=pppp
@@ -210,6 +211,7 @@ word:pahoinpiteli
   MOOD=indicative
   NUMBER=singular
   PERSON=3
+  TENSE=past_imperfective
   STRUCTURE==pppppp=pppppp
 word:hinaajalla
  analysis
