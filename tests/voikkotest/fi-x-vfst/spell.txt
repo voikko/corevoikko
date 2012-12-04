@@ -335,3 +335,7 @@ tarvike
 tarvikkeet
 vaate
 vaatteet
+vulkanoin
+!vulkanon
+!vulkanot
+!vulkanomme
