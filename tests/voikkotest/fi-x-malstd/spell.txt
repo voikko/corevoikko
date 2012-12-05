@@ -593,6 +593,7 @@ juhlallisessa
 !myyjämpi
 !uivallinen
 !juoksemata
+huonovointisuus
 
 # = sijapäätteet =
 []
