@@ -3943,9 +3943,6 @@ end;
 #
 subrule tekijännimi ($tietue, $lisä, $taivutus):
   return tekijä ($tietue, $lisä, $taivutus);
-#  return tekijä ($tietue, $lisä, $taivutus)                  # Punoa -> punoja.
-#         + ominaisuus ($tietue, $lisä + "j" + UU($tietue),   # Punoa -> punojuus.
-#                       $tietue.alku + $lisä + "j" + A($tietue));
 end;
 
 

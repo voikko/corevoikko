@@ -1343,16 +1343,10 @@ define @jatko_jO_kulkija_kantaja :=
 [alku: "jö", luokka: johdin_jA_kulkija, äs: ä, perusmuoto: "jä", jatko: @jatko_jO_kulkija_kantaja];
 
 
-define @jatko_j_kantaja :=
-  <omanto_ien, osanto_iA, olento_inA, sija_monikko_1,
-   sisätulento_iin, ulkopaikallissija_illA,
-   vajanto_ittA, seuranto_ine>;
-
-
 [alku: "j", luokka: johdin_jA_kantaja, äs: aä, perusmuoto: "j", jatko: <johdin_ittAin, johdin_UUs>];
 
-[alku: "j", luokka: johdin_jA_kantaja, äs: a, perusmuoto: "ja", jatko: @jatko_j_kantaja];
-[alku: "j", luokka: johdin_jA_kantaja, äs: ä, perusmuoto: "jä", jatko: @jatko_j_kantaja];
+[alku: "j", luokka: johdin_jA_kantaja, äs: a, perusmuoto: "ja", jatko: @jatko_j_myyjä];
+[alku: "j", luokka: johdin_jA_kantaja, äs: ä, perusmuoto: "jä", jatko: @jatko_j_myyjä];
 
 [alku: "ja", luokka: johdin_jA_kantaja, äs: a, perusmuoto: "ja", jatko: @jatko_jA_kulkija_kantaja];
 [alku: "jo", luokka: johdin_jA_kantaja, äs: a, perusmuoto: "ja", jatko: @jatko_jO_kulkija_kantaja];
