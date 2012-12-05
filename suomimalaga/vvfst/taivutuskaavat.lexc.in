@@ -950,6 +950,7 @@ KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>Salata_w_<A>	;
@@ -1076,27 +1077,40 @@ tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 
 LEXICON Johdin_ja_kantaja
+[Sg][Nm]jien:jien	NimisanaNormaaliYsJatko_<A>	;
+[Ses][Nm]jin<A>:jin<A>	Liitesana_<A>	;
+[Sine][Nm]jiss<A>:jiss<A>	Liitesana_<A>	;
+[Sela][Nm]jist<A>:jist<A>	Liitesana_<A>	;
+[Sill][Nm]jiin:jiin	Liitesana_<A>	;
+[Sade][Nm]jill<A>:jill<A>	Liitesana_<A>	;
+[Sabl][Nm]jilt<A>:jilt<A>	Liitesana_<A>	;
+[Sall][Nm]jille:jille	Liitesana_<A>	;
+[Sab][Nm]jitt<A>:jitt<A>	Liitesana_<A>	;
+[Sin][Nm]jin:jin	Liitesana_<A>	;
+Johdin_ja_kulkija_<A>	;
+
+LEXICON Johdin_ja_kulkija
 [Sn][Nm]j<A>:j<A>	NimisanaNormaaliYsJatko_<A>	;
 [Sn][Nm]j<A>t:j<A>t	Liitesana_<A>	;
 [Sg][Ny]j<A>n:j<A>n	NimisanaNormaaliYsJatko_<A>	;
-[Sg][Nm]jien:jien	NimisanaNormaaliYsJatko_<A>	;
+[Sg][Nm]j<O>iden:j<O>iden	NimisanaNormaaliYsJatko_<A>	;
+[Sg][Nm]j<O>itten:j<O>itten	NimisanaNormaaliYsJatko_<A>	;
 [Ses][Ny]j<A>n<A>:j<A>n<A>	Liitesana_<A>	;
-[Ses][Nm]jin<A>:jin<A>	Liitesana_<A>	;
 [Sine][Ny]j<A>ss<A>:j<A>ss<A>	Liitesana_<A>	;
-[Sine][Nm]jiss<A>:jiss<A>	Liitesana_<A>	;
+[Sine][Nm]j<O>iss<A>:j<O>iss<A>	Liitesana_<A>	;
 [Sela][Ny]j<A>st<A>:j<A>st<A>	Liitesana_<A>	;
-[Sela][Nm]jist<A>:jist<A>	Liitesana_<A>	;
+[Sela][Nm]j<O>ist<A>:j<O>ist<A>	Liitesana_<A>	;
 [Sill][Ny]j<A><A>n:j<A><A>n	Liitesana_<A>	;
-[Sill][Nm]jiin:jiin	Liitesana_<A>	;
+[Sill][Nm]j<O>ihin:j<O>ihin	Liitesana_<A>	;
 [Sade][Ny]j<A>ll<A>:j<A>ll<A>	Liitesana_<A>	;
-[Sade][Nm]jill<A>:jill<A>	Liitesana_<A>	;
+[Sade][Nm]j<O>ill<A>:j<O>ill<A>	Liitesana_<A>	;
 [Sabl][Ny]j<A>lt<A>:j<A>lt<A>	Liitesana_<A>	;
-[Sabl][Nm]jilt<A>:jilt<A>	Liitesana_<A>	;
+[Sabl][Nm]j<O>ilt<A>:j<O>ilt<A>	Liitesana_<A>	;
 [Sall][Ny]j<A>lle:j<A>lle	Liitesana_<A>	;
-[Sall][Nm]jille:jille	Liitesana_<A>	;
+[Sall][Nm]j<O>ille:j<O>ille	Liitesana_<A>	;
 [Sab][Ny]j<A>tt<A>:j<A>tt<A>	Liitesana_<A>	;
-[Sab][Nm]jitt<A>:jitt<A>	Liitesana_<A>	;
-[Sin][Nm]jin:jin	Liitesana_<A>	;
+[Sab][Nm]j<O>itt<A>:j<O>itt<A>	Liitesana_<A>	;
+[Sin][Nm]j<O>in:j<O>in	Liitesana_<A>	;
 
 LEXICON Voittoaste
 [Sn][Ny]mpi:mpi	Liitesana_<A>	;

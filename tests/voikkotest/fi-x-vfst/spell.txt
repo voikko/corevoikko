@@ -339,3 +339,9 @@ vulkanoin
 !vulkanon
 !vulkanot
 !vulkanomme
+salaaja
+salaajien
+salaajoiden
+katselija
+!katselijien
+katselijoiden
