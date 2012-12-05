@@ -901,6 +901,7 @@ Ehtotapa_<A>	;
 i:i	Johdin_nimitapa3_<A>	;
 i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_ja_myyjä_<A>	;
+i:i	Johdin_nti_<A>	;
 
 LEXICON Katsella
 <WC>Katsella_w_<A>	;
@@ -1122,6 +1123,9 @@ LEXICON Johdin_ja_kantaja_myyjä
 [Sall][Nm]jille:jille	Liitesana_<A>	;
 [Sab][Nm]jitt<A>:jitt<A>	Liitesana_<A>	;
 [Sin][Nm]jin:jin	Liitesana_<A>	;
+
+LEXICON Johdin_nti
+n:n	NimisanaTunti_<A>	;
 
 LEXICON Voittoaste
 [Sn][Ny]mpi:mpi	Liitesana_<A>	;

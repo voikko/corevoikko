@@ -348,3 +348,5 @@ katselijoiden
 kanavoija
 kanavoijien
 !kanavoijoiden
+vulkanointi
+vulkanoinnin
