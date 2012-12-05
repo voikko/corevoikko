@@ -345,3 +345,6 @@ salaajoiden
 katselija
 !katselijien
 katselijoiden
+kanavoija
+kanavoijien
+!kanavoijoiden
