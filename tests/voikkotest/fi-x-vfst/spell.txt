@@ -363,3 +363,5 @@ raataa
 raadan
 laittaa
 laitan
+bassolaulaja
+!bassolaulaa

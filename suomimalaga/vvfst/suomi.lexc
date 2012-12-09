@@ -6,8 +6,17 @@ YhdyssanaJatkuu	;
 
 LEXICON LaatusanaYsJatko
 
+LEXICON NimiYsJatko
+
+LEXICON PaikannimiYsJatko
+
+LEXICON SukunimiYsJatko
+
+LEXICON EtunimiYsJatko
+
 LEXICON YhdyssanaJatkuu
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;
+[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 
 LEXICON Omistusliite_a
 nsa:nsa	Liitesana_a	;
@@ -20,81 +29,84 @@ nsa:nsa	Liitesana_aä	;
 nsä:nsä	Liitesana_aä	;
 
 LEXICON Liitesana_a
-kin:kin        #       ;
-kaan:kaan	# ;
-kaanhan:kaanhan	# ;
-ko:ko	# ;
-kokaan:kokaan	# ;
-pa:pa	# ;
-han:han	# ;
-kohan:kohan	# ;
-pahan:pahan	# ;
-kos:kos	# ;
-pas:pas	# ;
-kinko:kinko	# ;
-kaanko:kaanko	# ;
-kinhan:kinhan	# ;
-kinkohan:kinkohan	# ;
-kinkos:kinkos	# ;
-kaankohan:kaankohan	# ;
-kaankos:kaankos	# ;
-#      ;
+kin:kin	Loppu       ;
+kaan:kaan	Loppu ;
+kaanhan:kaanhan	Loppu ;
+ko:ko	Loppu ;
+kokaan:kokaan	Loppu ;
+pa:pa	Loppu ;
+han:han	Loppu ;
+kohan:kohan	Loppu ;
+pahan:pahan	Loppu ;
+kos:kos	Loppu ;
+pas:pas	Loppu ;
+kinko:kinko	Loppu ;
+kaanko:kaanko	Loppu ;
+kinhan:kinhan	Loppu ;
+kinkohan:kinkohan	Loppu ;
+kinkos:kinkos	Loppu ;
+kaankohan:kaankohan	Loppu ;
+kaankos:kaankos	Loppu ;
+Loppu      ;
 
 LEXICON Liitesana_ä
-kin:kin        #       ;
-kään:kään	# ;
-käänhän:käänhän	# ;
-kö:kö	# ;
-kökään:kökään	# ;
-pä:pä	# ;
-hän:hän	# ;
-köhän:köhän	# ;
-pähän:pähän	# ;
-kös:kös	# ;
-päs:päs	# ;
-kinkö:kinkö	# ;
-käänkö:käänkö	# ;
-kinhän:kinhän	# ;
-kinköhän:kinköhän	# ;
-kinkös:kinkös	# ;
-käänköhän:käänköhän	# ;
-käänkös:käänkös	# ;
-#      ;
+kin:kin        Loppu       ;
+kään:kään	Loppu ;
+käänhän:käänhän	Loppu ;
+kö:kö	Loppu ;
+kökään:kökään	Loppu ;
+pä:pä	Loppu ;
+hän:hän	Loppu ;
+köhän:köhän	Loppu ;
+pähän:pähän	Loppu ;
+kös:kös	Loppu ;
+päs:päs	Loppu ;
+kinkö:kinkö	Loppu ;
+käänkö:käänkö	Loppu ;
+kinhän:kinhän	Loppu ;
+kinköhän:kinköhän	Loppu ;
+kinkös:kinkös	Loppu ;
+käänköhän:käänköhän	Loppu ;
+käänkös:käänkös	Loppu ;
+Loppu      ;
 
 LEXICON Liitesana_aä
-kin:kin        #       ;
-kaan:kaan	# ;
-kään:kään	# ;
-kaanhan:kaanhan	# ;
-käänhän:käänhän	# ;
-ko:ko	# ;
-kö:kö	# ;
-kokaan:kokaan	# ;
-kökään:kökään	# ;
-pa:pa	# ;
-pä:pä	# ;
-han:han	# ;
-hän:hän	# ;
-kohan:kohan	# ;
-köhän:köhän	# ;
-pahan:pahan	# ;
-pähän:pähän	# ;
-kos:kos	# ;
-kös:kös	# ;
-pas:pas	# ;
-päs:päs	# ;
-kinko:kinko	# ;
-kinkö:kinkö	# ;
-kaanko:kaanko	# ;
-käänkö:käänkö	# ;
-kinhan:kinhan	# ;
-kinhän:kinhän	# ;
-kinkohan:kinkohan	# ;
-kinköhän:kinköhän	# ;
-kinkos:kinkos	# ;
-kinkös:kinkös	# ;
-kaankohan:kaankohan	# ;
-käänköhän:käänköhän	# ;
-kaankos:kaankos	# ;
-käänkös:käänkös	# ;
-#      ;
+kin:kin        Loppu       ;
+kaan:kaan	Loppu ;
+kään:kään	Loppu ;
+kaanhan:kaanhan	Loppu ;
+käänhän:käänhän	Loppu ;
+ko:ko	Loppu ;
+kö:kö	Loppu ;
+kokaan:kokaan	Loppu ;
+kökään:kökään	Loppu ;
+pa:pa	Loppu ;
+pä:pä	Loppu ;
+han:han	Loppu ;
+hän:hän	Loppu ;
+kohan:kohan	Loppu ;
+köhän:köhän	Loppu ;
+pahan:pahan	Loppu ;
+pähän:pähän	Loppu ;
+kos:kos	Loppu ;
+kös:kös	Loppu ;
+pas:pas	Loppu ;
+päs:päs	Loppu ;
+kinko:kinko	Loppu ;
+kinkö:kinkö	Loppu ;
+kaanko:kaanko	Loppu ;
+käänkö:käänkö	Loppu ;
+kinhan:kinhan	Loppu ;
+kinhän:kinhän	Loppu ;
+kinkohan:kinkohan	Loppu ;
+kinköhän:kinköhän	Loppu ;
+kinkos:kinkos	Loppu ;
+kinkös:kinkös	Loppu ;
+kaankohan:kaankohan	Loppu ;
+käänköhän:käänköhän	Loppu ;
+kaankos:kaankos	Loppu ;
+käänkös:käänkös	Loppu ;
+Loppu      ;
+
+LEXICON Loppu
+@D.JOHDETTAVA_NIMISANAKSI@:@D.JOHDETTAVA_NIMISANAKSI@	#	;

@@ -69,6 +69,9 @@ Multichar_Symbols
 @D.YS_ALKANUT@ @R.YS_ALKANUT@ @P.YS_ALKANUT.ON@ ! Yhdyssana on alkanut
 @P.YS_EI_JATKOA.ON@ @D.YS_EI_JATKOA@ ! Yhdyssanaa ei saa jatkaa
 
+! Jatko (esim. teonsana) on sallittu vain nimisanaksi johdettuna
+@D.JOHDETTAVA_NIMISANAKSI@ @P.JOHDETTAVA_NIMISANAKSI.ON@ @C.JOHDETTAVA_NIMISANAKSI@
+
 LEXICON Root
 Joukahainen	;
 
