@@ -892,10 +892,33 @@ Liitesana_<A>	;
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
 <WC>Kaivaa_s_<A>	;
+!TODO kaivella
+!TODO kaivanta
 
 LEXICON Lappaa
 <WC>Kaivaa_w_<A>	;
 p:p	<WC>Kaivaa_s_<A>	;
+
+LEXICON Jakaa
+<WC>Kaivaa_w_<A>	;
+k:k	<WC>Kaivaa_s_<A>	;
+
+LEXICON Saattaa
+<WC>Kaivaa_w_<A>	;
+t:t	<WC>Kaivaa_s_<A>	;
+!TODO saatella
+
+LEXICON Antaa
+n:n	<WC>Kaivaa_w_<A>	;
+t:t	<WC>Kaivaa_s_<A>	;
+!TODO annattaa
+!TODO annella
+
+LEXICON Raataa
+d:d	<WC>Kaivaa_w_<A>	;
+t:t	<WC>Kaivaa_s_<A>	;
+!TODO raadella
+!TODO raadanta
 
 LEXICON Kaivaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;

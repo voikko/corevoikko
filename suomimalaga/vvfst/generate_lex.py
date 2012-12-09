@@ -246,7 +246,7 @@ def handle_word(word):
 		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \
 		                 u"tytär", \
 		                 u"kanavoida", \
-		                 u"kaivaa", u"lappaa", \
+		                 u"kaivaa", u"lappaa", u"antaa", u"jakaa", u"raataa", u"saattaa", \
 		                 u"salata", u"kammata", u"hangata", u"kerrata", u"suunnata", u"vallata", u"lobata", u"kelvata", u"kuitata", u"ladata", u"peljätä", u"pakata", u"pompata", u"taata", \
 		                 u"katsella", u"kohdella", u"nakella", u"tapella", u"aatella", u"askarrella", u"ommella", u"pienennellä", u"takellella"]:
 			continue

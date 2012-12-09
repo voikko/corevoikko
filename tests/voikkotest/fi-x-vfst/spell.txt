@@ -355,3 +355,11 @@ kaivan
 lappaa
 lapan
 kaivaja
+antaa
+annan
+jakaa
+jaan
+raataa
+raadan
+laittaa
+laitan
