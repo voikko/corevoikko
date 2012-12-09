@@ -350,3 +350,8 @@ kanavoijien
 !kanavoijoiden
 vulkanointi
 vulkanoinnin
+kaivaa
+kaivan
+lappaa
+lapan
+kaivaja

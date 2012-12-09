@@ -889,6 +889,21 @@ LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
 <WC>YsJatko	;
 
+LEXICON Kaivaa
+<WC>Kaivaa_w_<A>	;
+<WC>Kaivaa_s_<A>	;
+
+LEXICON Lappaa
+<WC>Kaivaa_w_<A>	;
+p:p	<WC>Kaivaa_s_<A>	;
+
+LEXICON Kaivaa_w
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+
+LEXICON Kaivaa_s
+[Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_ja_kantaja_<A>	;
+
 LEXICON Kanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;
 id:id	Johdin_nimitapa2_<A>	;
