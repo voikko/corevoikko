@@ -429,22 +429,33 @@ LEXICON NOUN Lovi_w
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Kala
+<WC>Kala_s_<A>	;
+<WC>Kala_w_<A>	;
+
+LEXICON NOUN Aitta
+t:t	<WC>Kala_s_<A>	;
+<WC>Kala_w_<A>	;
+
+LEXICON NOUN Kala_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
-[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]<O>jen:<O>jen	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	Liitesana_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
+[Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
+[Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+
+LEXICON NOUN Kala_w
+[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
 [Str][Nm]<O>iksi:<O>iksi	Liitesana_<A>	;
 [Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
 [Sine][Nm]<O>iss<A>:<O>iss<A>	Liitesana_<A>	;
 [Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sela][Nm]<O>ist<A>:<O>ist<A>	Liitesana_<A>	;
-[Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
-[Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
 [Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
 [Sade][Nm]<O>ill<A>:<O>ill<A>	Liitesana_<A>	;
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
@@ -455,7 +466,6 @@ LEXICON NOUN Kala
 [Sab][Nm]<O>itt<A>:<O>itt<A>	Liitesana_<A>	;
 [Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
-?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Koira
