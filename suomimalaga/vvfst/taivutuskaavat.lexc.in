@@ -890,6 +890,19 @@ LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
 <WC>YsJatko	;
 
+LEXICON Hidastaa
+<WC>MuistaaMuistella_w_<A>	;
+<WC>MuistaaMuistella_s_<A>	;
+[Ln]<U>:<U>	NimisanaVastaus_<A>	;
+!TODO hidastua
+
+LEXICON MuistaaMuistella_w
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+
+LEXICON MuistaaMuistella_s
+[Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_ja_kantaja_<A>	;
+
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
 <WC>Kaivaa_s_<A>	;

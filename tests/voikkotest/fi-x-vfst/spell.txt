@@ -366,3 +366,7 @@ laitan
 bassolaulaja
 !bassolaulaa
 hieroglyfejä
+edustaa
+edustan
+edustaja
+edustus
