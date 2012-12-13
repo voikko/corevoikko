@@ -374,3 +374,5 @@ jalava
 jalavien
 aittaa
 aitan
+kappoja
+kapalla
