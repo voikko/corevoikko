@@ -376,3 +376,9 @@ aittaa
 aitan
 kappoja
 kapalla
+lohi
+lohien
+!lohten
+tuohi
+tuohien
+tuohten
