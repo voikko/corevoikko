@@ -382,3 +382,5 @@ lohien
 tuohi
 tuohien
 tuohten
+malliksi
+nimenä
