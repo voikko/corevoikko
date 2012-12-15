@@ -139,6 +139,10 @@ luentoa
 valonsa
 !valonsä
 valonsakin
+valoni
+valosi
+valomme
+valonne
 paperi
 paperien
 papereiden

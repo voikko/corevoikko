@@ -23,12 +23,24 @@ LEXICON YhdyssanaJatkuu
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 
 LEXICON Omistusliite_a
+ni:ni	Liitesana_a	;
+si:si	Liitesana_a	;
+mme:mme	Liitesana_a	;
+nne:nne	Liitesana_a	;
 nsa:nsa	Liitesana_a	;
 
 LEXICON Omistusliite_ä
+ni:ni	Liitesana_a	;
+si:si	Liitesana_a	;
+mme:mme	Liitesana_a	;
+nne:nne	Liitesana_a	;
 nsä:nsä	Liitesana_ä	;
 
 LEXICON Omistusliite_aä
+ni:ni	Liitesana_a	;
+si:si	Liitesana_a	;
+mme:mme	Liitesana_a	;
+nne:nne	Liitesana_a	;
 nsa:nsa	Liitesana_aä	;
 nsä:nsä	Liitesana_aä	;
 
