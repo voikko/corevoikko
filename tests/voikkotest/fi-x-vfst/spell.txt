@@ -388,3 +388,13 @@ jauhettu
 jauhetun
 !iin
 i'ille
+Suomi-Ruotsi-Venäjä
+Heli-Maarit
+!Suomi-sveitsi
+!Suomisveitsi
+!SuomiSveitsi
+Suomi-Sveitsi
+Pitkänen-Pokkinen
+Pitkäsen-Pokkisen
+Pitkäs-Pokkinen
+Ford-Lada

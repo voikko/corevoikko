@@ -217,3 +217,7 @@ word:hinaajalla
  analysis
   CLASS=nimisana
   SIJAMUOTO=ulkoolento
+word:Suomi-Sveitsi
+ analysis
+   CLASS=paikannimi
+   STRUCTURE==ipppp-=ipppppp

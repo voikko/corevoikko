@@ -7,12 +7,16 @@ YhdyssanaJatkuu	;
 LEXICON LaatusanaYsJatko
 
 LEXICON NimiYsJatko
+-[Bc]:-	Joukahainen_em	;
 
 LEXICON PaikannimiYsJatko
+-[Bc]:-	Joukahainen_ep	;
 
 LEXICON SukunimiYsJatko
+-[Bc]:-	Joukahainen_es	;
 
 LEXICON EtunimiYsJatko
+-[Bc]:-	Joukahainen_ee	;
 
 LEXICON YhdyssanaJatkuu
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;

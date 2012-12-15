@@ -773,6 +773,8 @@ s:s	YhdyssanaJatkuu	;
 ?Nimisana	se:se	Johdin_llinen_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
+?Sukunimi	s:s	SukunimiYsJatko	;
+?Sukunimi	nen:nen	SukunimiYsJatko	;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
