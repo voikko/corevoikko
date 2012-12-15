@@ -386,3 +386,5 @@ malliksi
 nimenä
 jauhettu
 jauhetun
+!iin
+i'ille
