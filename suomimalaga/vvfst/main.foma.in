@@ -1,7 +1,11 @@
 read lexc VVFST_BUILDDIR/all.lexc
 define Lexicon;
 
-define Lengthening o "[[L]]" -> o o ,,
+define Lengthening a "[[L]]" -> a a ,,
+                   ä "[[L]]" -> ä ä ,,
+                   e "[[L]]" -> e e ,,
+                   i "[[L]]" -> i i ,,
+                   o "[[L]]" -> o o ,,
                    ö "[[L]]" -> ö ö ,,
                    u "[[L]]" -> u u ,,
                    y "[[L]]" -> y y ;
