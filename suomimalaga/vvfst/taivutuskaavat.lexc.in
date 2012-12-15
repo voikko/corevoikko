@@ -116,8 +116,8 @@ k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
-[Str][Ny]ksi:ksi	Liitesana_<A>	;
-[Str][Nm]iksi:iksi	Liitesana_<A>	;
+[Str][Ny]ksi:ksi	LiOlI_<A>	;
+[Str][Nm]iksi:iksi	LiOlI_<A>	;
 [Sine][Ny]ss<A>:ss<A>	LiOlV_<A>	;
 [Sine][Nm]iss<A>:iss<A>	LiOlV_<A>	;
 [Sela][Ny]st<A>:st<A>	LiOlV_<A>	;

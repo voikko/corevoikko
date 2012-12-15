@@ -37,6 +37,21 @@ Liitesana_aä	;
 Omistusliite_aä	;
 [[L]]n:[[L]]n	Liitesana_aä	;
 
+LEXICON LiOlI_a
+Liitesana_a	;
+[[IE]]:[[IE]]	Omistusliite_a	;
+[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_a	;
+
+LEXICON LiOlI_ä
+Liitesana_ä	;
+[[IE]]:[[IE]]	Omistusliite_ä	;
+[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_ä	;
+
+LEXICON LiOlI_aä
+Liitesana_aä	;
+[[IE]]:[[IE]]	Omistusliite_aä	;
+[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_aä	;
+
 LEXICON Omistusliite_a
 ni:ni	Liitesana_a	;
 si:si	Liitesana_a	;

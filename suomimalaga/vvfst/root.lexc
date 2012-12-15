@@ -62,6 +62,7 @@ Multichar_Symbols
 
 ! Korvattavat merkit
 [[L]] ! edellisen merkin toisto
+[[IE]] ! edeltävä i-kirjain muutetaan e-kirjaimeksi
 
 ! Diakriitit
 @P.EI_YKS.ON@ @D.EI_YKS@ ! Yksikkömuotoja ei sallita

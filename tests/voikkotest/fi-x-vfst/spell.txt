@@ -148,6 +148,11 @@ valossaan
 valolleen
 !valollaen
 !valollean
+valoikseen
+valoiksensa
+!valoiksiin
+!valoiksien
+!valoiksinsa
 paperi
 paperien
 papereiden
