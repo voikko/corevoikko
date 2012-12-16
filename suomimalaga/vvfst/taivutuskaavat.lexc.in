@@ -1022,11 +1022,27 @@ LEXICON Hidastaa
 [Ln]<U>:<U>	NimisanaVastaus_<A>	;
 !TODO hidastua
 
+LEXICON Ammottaa
+t:t	<WC>Muistaa_w_<A>	;
+tt:tt	<WC>Muistaa_s_<A>	;
+!TODO ammotus
+!TODO ammottautua
+!TODO ammotella
+
 LEXICON MuistaaMuistella_w
-<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+<WC>Muistaa_w_<A>	;
+!TODO muistella
 
 LEXICON MuistaaMuistella_s
+<WC>Muistaa_s_<A>	;
+!TODO muistella
+
+LEXICON Muistaa_w
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+
+LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
 LEXICON Kaivaa
