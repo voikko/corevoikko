@@ -3,16 +3,19 @@ define Lexicon;
 
 define ItoE i "[[IE]]" -> e ;
 
-define Lengthening a "[[L]]" -> a a ,,
-                   ä "[[L]]" -> ä ä ,,
-                   e "[[L]]" -> e e ,,
-                   i "[[L]]" -> i i ,,
-                   o "[[L]]" -> o o ,,
-                   ö "[[L]]" -> ö ö ,,
-                   u "[[L]]" -> u u ,,
+define Lengthening a "[[L]]" -> a a ,
+                   ä "[[L]]" -> ä ä ,
+                   e "[[L]]" -> e e ,
+                   i "[[L]]" -> i i ,
+                   o "[[L]]" -> o o ,
+                   ö "[[L]]" -> ö ö ,
+                   u "[[L]]" -> u u ,
                    y "[[L]]" -> y y ;
 
+set flag-is-epsilon ON
 regex Lexicon .o. ItoE .o. Lengthening;
-compact sigma
 invert net
+define Lexicon2;
+regex Lexicon2 .o. ItoE .o. Lengthening;
+compact sigma
 write att VVFST_BUILDDIR/all.att
