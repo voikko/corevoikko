@@ -489,6 +489,7 @@ LEXICON NOUN Kala_w
 [Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
 
 LEXICON NOUN Koira
 <WC>Koira_s_<A>	;
@@ -553,6 +554,7 @@ LEXICON NOUN Koira_w_yksikko
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
 [Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
 
 LEXICON NOUN Koira_w_monikko
 [Str][Nm]iksi:iksi	Liitesana_<A>	;
@@ -610,6 +612,7 @@ LEXICON NOUN Asema_w
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
+?Laatusana	<A>:<A>	Voittoaste_<A>	;
 
 LEXICON NOUN Apila
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
@@ -700,6 +703,7 @@ LEXICON NOUN Korkea
 [Sab][Ny]e<A>tt<A>:e<A>tt<A>	Liitesana_<A>	;
 [Sab][Nm]eitt<A>:eitt<A>	Liitesana_<A>	;
 [Sin][Nm]ein:ein	Liitesana_<A>	;
+?Laatusana	e<A>:e<A>	Voittoaste_<A>	;
 
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
