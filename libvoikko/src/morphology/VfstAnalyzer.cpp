@@ -140,7 +140,9 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				structure[structurePos++] = fstOutput[i];
 				if (fstOutput[i] != L'=') {
 					charsFromDefault++;
-					charsMissing--;
+					if (fstOutput[i] != L'-') {
+						charsMissing--;
+					}
 				}
 				i++;
 			}
@@ -166,10 +168,10 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			if (charsSeen > charsFromDefault) {
 				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos);
 				charsMissing -= (charsSeen - charsFromDefault);
+				structure[structurePos++] = L'-';
 			}
 			charsSeen = 0;
 			charsFromDefault = 0;
-			structure[structurePos++] = L'-';
 			charsMissing--;
 		}
 		else {

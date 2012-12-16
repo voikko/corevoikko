@@ -221,3 +221,10 @@ word:Suomi-Sveitsi
  analysis
    CLASS=paikannimi
    STRUCTURE==ipppp-=ipppppp
+word:CD-ROM
+ analysis
+   CLASS=nimisana
+   STRUCTURE==ii-=iii
+ analysis
+   CLASS=nimisana
+   STRUCTURE==pp-=ppp
