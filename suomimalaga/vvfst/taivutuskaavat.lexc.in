@@ -134,7 +134,7 @@ LEXICON NOUN Valo_w
 
 LEXICON NOUN Valo_s
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
-[Sn][Ny]:	Omistusliite_<A>	;
+?NotLaatusana	[Sn][Ny]:	Omistusliite_<A>	;
 [Sg][Nm]jen:jen	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]<A>:<A>	Liitesana_<A>	;
 [Sp][Nm]j<A>:j<A>	LiOlV_<A>	;

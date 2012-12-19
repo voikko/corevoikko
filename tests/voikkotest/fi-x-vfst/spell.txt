@@ -421,3 +421,4 @@ vehreämmälle
 asettaa
 asetan
 asettaminen
+!personne
