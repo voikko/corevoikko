@@ -424,3 +424,4 @@ asettaminen
 !personne
 !persollani
 !persoikseen
+maksuttomat
