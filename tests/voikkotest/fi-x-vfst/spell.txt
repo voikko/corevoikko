@@ -423,3 +423,4 @@ asetan
 asettaminen
 !personne
 !persollani
+!persoikseen

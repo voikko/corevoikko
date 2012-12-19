@@ -116,8 +116,8 @@ k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
-[Str][Ny]ksi:ksi	LiOlI_<A>	;
-[Str][Nm]iksi:iksi	LiOlI_<A>	;
+[Str][Ny]ksi:ksi	<WC>LiOlI_<A>	;
+[Str][Nm]iksi:iksi	<WC>LiOlI_<A>	;
 [Sine][Ny]ss<A>:ss<A>	<WC>LiOlV_<A>	;
 [Sine][Nm]iss<A>:iss<A>	<WC>LiOlV_<A>	;
 [Sela][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
@@ -1019,7 +1019,12 @@ Liitesana_<A>	;
 LEXICON NOUN LiOlV
 Liitesana_<A>	;
 ?NotLaatusana	Omistusliite_<A>	;
-[[L]]n:[[L]]n	Liitesana_<A>	;
+?NotLaatusana	[[L]]n:[[L]]n	Liitesana_<A>	;
+
+LEXICON NOUN LiOlI
+Liitesana_<A>	;
+?NotLaatusana	[[IE]]:[[IE]]	Omistusliite_<A>	;
+?NotLaatusana	[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_<A>	;
 
 LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
