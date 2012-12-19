@@ -192,6 +192,15 @@ static wchar_t * getAttributeFromMap(map<wstring, wstring> & theMap, const wchar
 	return StringUtils::copy((*mapIterator).second.c_str());
 }
 
+static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen, size_t i, size_t j,
+			        const char * attributeName, map<wstring, wstring> & theMap) {
+	size_t sijaLen = i - j - 2;
+	wchar_t * muoto = getAttributeFromMap(theMap, fstOutput + j + 2, sijaLen);
+	if (muoto) {
+		analysis->addAttribute(attributeName, muoto);
+	}
+}
+
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
@@ -200,46 +209,22 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 				j--;
 				if (fstOutput[j] == L'[') {
 					if (fstOutput[j + 1] == L'L') {
-						size_t sijaLen = i - j - 2;
-						wchar_t * muoto = getAttributeFromMap(classMap, fstOutput + j + 2, sijaLen);
-						if (muoto) {
-							analysis->addAttribute("CLASS", muoto);
-						}
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "CLASS", classMap);
 					}
 					else if (fstOutput[j + 1] == L'N') {
-						size_t sijaLen = i - j - 2;
-						wchar_t * muoto = getAttributeFromMap(numberMap, fstOutput + j + 2, sijaLen);
-						if (muoto) {
-							analysis->addAttribute("NUMBER", muoto);
-						}
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NUMBER", numberMap);
 					}
 					else if (fstOutput[j + 1] == L'P') {
-						size_t sijaLen = i - j - 2;
-						wchar_t * muoto = getAttributeFromMap(personMap, fstOutput + j + 2, sijaLen);
-						if (muoto) {
-							analysis->addAttribute("PERSON", muoto);
-						}
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "PERSON", personMap);
 					}
 					else if (fstOutput[j + 1] == L'S') {
-						size_t sijaLen = i - j - 2;
-						wchar_t * muoto = getAttributeFromMap(sijamuotoMap, fstOutput + j + 2, sijaLen);
-						if (muoto) {
-							analysis->addAttribute("SIJAMUOTO", muoto);
-						}
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "SIJAMUOTO", sijamuotoMap);
 					}
 					else if (fstOutput[j + 1] == L'T') {
-						size_t sijaLen = i - j - 2;
-						wchar_t * muoto = getAttributeFromMap(moodMap, fstOutput + j + 2, sijaLen);
-						if (muoto) {
-							analysis->addAttribute("MOOD", muoto);
-						}
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "MOOD", moodMap);
 					}
 					else if (fstOutput[j + 1] == L'A') {
-						size_t sijaLen = i - j - 2;
-						wchar_t * muoto = getAttributeFromMap(tenseMap, fstOutput + j + 2, sijaLen);
-						if (muoto) {
-							analysis->addAttribute("TENSE", muoto);
-						}
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "TENSE", tenseMap);
 					}
 					break;
 				}
