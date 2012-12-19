@@ -83,6 +83,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	personMap.insert(std::make_pair(L"1", L"1"));
 	personMap.insert(std::make_pair(L"2", L"2"));
 	personMap.insert(std::make_pair(L"3", L"3"));
+	personMap.insert(std::make_pair(L"4", L"4"));
 	
 	tenseMap.insert(std::make_pair(L"p", L"present_simple"));
 	tenseMap.insert(std::make_pair(L"i", L"past_imperfective"));

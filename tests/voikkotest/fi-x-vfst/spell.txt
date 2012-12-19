@@ -425,3 +425,5 @@ asettaminen
 !persollani
 !persoikseen
 maksuttomat
+lunastetaan
+muistan

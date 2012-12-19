@@ -185,6 +185,9 @@ word:katselette
   NUMBER=plural
   PERSON=2
   TENSE=present_simple
+word:lunastetaan
+ analysis
+  PERSON=4
 word:adverbisija
  analysis
   STRUCTURE==pp=ppppp=pppp

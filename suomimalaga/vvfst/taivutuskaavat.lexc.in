@@ -1027,11 +1027,22 @@ Liitesana_<A>	;
 ?NotLaatusana	[[IE]]:[[IE]]	Omistusliite_<A>	;
 ?NotLaatusana	[[IE]][[L]]n:[[IE]][[L]]n	Liitesana_<A>	;
 
+LEXICON Aavistaa
+<WC>MuistaaMuistella_w_<A>	;
+<WC>MuistaaMuistella_s_<A>	;
+[Ln]<U>:<U>	NimisanaVastaus_<A>	;
+
 LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
 [Ln]<U>:<U>	NimisanaVastaus_<A>	;
 !TODO hidastua
+
+LEXICON Muistaa
+<WC>MuistaaMuistella_w_<A>	;
+<WC>MuistaaMuistella_s_<A>	;
+!TODO muisto
+!TODO muistua
 
 LEXICON Ammottaa
 t:t	<WC>Muistaa_w_<A>	;
@@ -1050,6 +1061,7 @@ LEXICON MuistaaMuistella_s
 
 LEXICON Muistaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
+e:e	TositavanKestamaTaan_<A>	;
 
 LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -1246,6 +1258,9 @@ LEXICON KertomanTekijapaateHeikko
 LEXICON KertomanTekijapaateVahva
 [Tt][Ai][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][Ai][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+
+LEXICON TositavanKestamaTaan
+[Tt][Ai][P4]t<A><A>n:t<A><A>n	Liitesana_<A>	;
 
 LEXICON Ehtotapa
 [Te][P1][Ny]isin:isin	Liitesana_<A>	;
