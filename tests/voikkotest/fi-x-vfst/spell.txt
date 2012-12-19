@@ -422,3 +422,4 @@ asettaa
 asetan
 asettaminen
 !personne
+!persollani

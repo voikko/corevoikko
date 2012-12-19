@@ -22,21 +22,6 @@ LEXICON YhdyssanaJatkuu
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 
-LEXICON LiOlV_a
-Liitesana_a	;
-Omistusliite_a	;
-[[L]]n:[[L]]n	Liitesana_a	;
-
-LEXICON LiOlV_ä
-Liitesana_ä	;
-Omistusliite_ä	;
-[[L]]n:[[L]]n	Liitesana_ä	;
-
-LEXICON LiOlV_aä
-Liitesana_aä	;
-Omistusliite_aä	;
-[[L]]n:[[L]]n	Liitesana_aä	;
-
 LEXICON LiOlI_a
 Liitesana_a	;
 [[IE]]:[[IE]]	Omistusliite_a	;
