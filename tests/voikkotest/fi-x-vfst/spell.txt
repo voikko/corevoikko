@@ -432,3 +432,5 @@ kirjoittaa
 kirjoitan
 käyttää
 käyttävät
+luonteellemme
+hölmömpää

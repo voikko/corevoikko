@@ -132,6 +132,7 @@ LEXICON NOUN Valo_w
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Laatusana	Voittoaste_<A>	;
 
 LEXICON NOUN Valo_s
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -1004,8 +1005,8 @@ LEXICON NOUN Hame_s
 [Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
 [Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
-[Sall][Ny]elle:elle	Liitesana_<A>	;
-[Sall][Nm]ille:ille	Liitesana_<A>	;
+[Sall][Ny]elle:elle	<WC>LiOlV_<A>	;
+[Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
