@@ -1038,6 +1038,13 @@ LEXICON Hidastaa
 [Ln]<U>:<U>	NimisanaVastaus_<A>	;
 !TODO hidastua
 
+LEXICON Heittää
+<WC>MuistaaMuistella_w_<A>	;
+t:t	<WC>MuistaaMuistella_s_<A>	;
+[Ln]<U>:<U>	NimisanaVastaus_<A>	;
+!TODO heitto
+!TODO heitäntä
+
 LEXICON Muistaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
@@ -1072,6 +1079,7 @@ e:e	TositavanKestamaTaan_<A>	;
 
 LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][Ap][P1][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
