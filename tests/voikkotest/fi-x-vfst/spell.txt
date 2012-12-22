@@ -427,3 +427,6 @@ asettaminen
 maksuttomat
 lunastetaan
 muistan
+kirjoitetaan
+kirjoittaa
+kirjoitan

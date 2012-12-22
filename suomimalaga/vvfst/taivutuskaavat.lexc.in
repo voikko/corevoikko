@@ -1044,6 +1044,13 @@ LEXICON Muistaa
 !TODO muisto
 !TODO muistua
 
+LEXICON Kirjoittaa
+it:it	<WC>Muistaa_w_<A>	;
+itt:itt	<WC>Muistaa_s_<A>	;
+!TODO kirjoitus
+!TODO kirjoittautua
+!TODO kirjoitella
+
 LEXICON Ammottaa
 t:t	<WC>Muistaa_w_<A>	;
 tt:tt	<WC>Muistaa_s_<A>	;
