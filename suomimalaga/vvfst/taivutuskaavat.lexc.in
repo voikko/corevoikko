@@ -163,9 +163,12 @@ n<O>:n<O>	<WC>Arvelu_w_<A>	;
 
 LEXICON NOUN Arvelu_s
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]jen:jen	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Sp][Nm]j<A>:j<A>	Liitesana_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 
 LEXICON NOUN Arvelu_sl
 [Sill][Ny]n:n	Liitesana_<A>	;
@@ -173,6 +176,7 @@ LEXICON NOUN Arvelu_sl
 LEXICON NOUN Arvelu_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	Liitesana_<A>	;
 [Str][Ny]ksi:ksi	Liitesana_<A>	;
 [Str][Nm]iksi:iksi	Liitesana_<A>	;
 [Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
