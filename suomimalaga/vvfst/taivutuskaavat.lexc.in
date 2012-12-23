@@ -1084,6 +1084,33 @@ LEXICON Muistaa_s
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
+LEXICON Juontaa
+n:n	<WC>Huutaa_w_<A>	;
+t:t	<WC>Huutaa_s_<A>	;
+!TODO juonto
+!TODO juonnella
+
+LEXICON Pyörtää
+r:r	<WC>Huutaa_w_<A>	;
+t:t	<WC>Huutaa_s_<A>	;
+!TODO pyörtö
+!TODO pyörrellä
+
+LEXICON Pahentaa
+n:n	<WC>Huutaa_w_<A>	;
+t:t	<WC>Huutaa_s_<A>	;
+!TODO pahennus
+!TODO pahennella
+!TODO pahentua
+
+LEXICON Huutaa_w
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+e:e	Johdin_ttU_<A>	;
+
+LEXICON Huutaa_s
+[Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_ja_kantaja_<A>	;
+
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
 <WC>Kaivaa_s_<A>	;
