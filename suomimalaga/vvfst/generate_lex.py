@@ -242,7 +242,7 @@ def handle_word(word):
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \
 		                 u"vastaus", u"kalleus", \
 		                 u"risti", u"takki", u"tatti", u"tunti", u"keppi", u"vati", u"pelti", u"renki", u"hupi", \
-		                 u"kalsium", u"nainen", u"vieras", \
+		                 u"kalsium", u"nainen", u"vieras", u"asiakas", u"harras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
 		                 u"kala", u"aitta", u"kappa", \
 		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \

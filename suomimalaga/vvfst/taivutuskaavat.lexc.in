@@ -942,6 +942,10 @@ LEXICON NOUN Onneton_s
 [Sab][Nm]mitt<A>:mitt<A>	Liitesana_<A>	;
 [Sin][Nm]min:min	Liitesana_<A>	;
 
+LEXICON NOUN Asiakas
+<A>:<A>	<WC>Vieras_w_<A>	;
+k<A>:k<A>	<WC>Vieras_s_<A>	;
+
 LEXICON NOUN Hame
 <WC>Hame_w_<A>	;
 <WC>Hame_s_<A>	;
@@ -1016,7 +1020,41 @@ LEXICON NOUN Hame_s
 [Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN Vieras
+<WC>Vieras_w_<A>	;
+<WC>Vieras_s_<A>	;
+
+LEXICON NOUN Harras
+r<A>:r<A>	<WC>Vieras_w_<A>	;
+t<A>:t<A>	<WC>Vieras_s_<A>	;
+
+LEXICON NOUN Vieras_w
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]st<A>:st<A>	Liitesana_<A>	;
+
+LEXICON NOUN Vieras_s
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
+[Str][Nm]iksi:iksi	Liitesana_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]iss<A>:iss<A>	Liitesana_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
+[Sill][Ny]<A>seen:<A>seen	Liitesana_<A>	;
+[Sill][Nm]<A>ihn:<A>ihn	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
+[Sall][Ny]<A>lle:<A>lle	<WC>LiOlV_<A>	;
+[Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
+[Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
+[Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;

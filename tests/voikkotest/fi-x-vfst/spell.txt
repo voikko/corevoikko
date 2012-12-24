@@ -444,3 +444,7 @@ tilastojen
 luentoja
 luennoita
 luentoina
+asukas
+asukkaasta
+harras
+hartaan
