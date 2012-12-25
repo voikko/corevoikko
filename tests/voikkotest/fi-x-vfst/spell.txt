@@ -448,3 +448,7 @@ asukas
 asukkaasta
 harras
 hartaan
+paneutua
+paneudun
+punoa
+punon
