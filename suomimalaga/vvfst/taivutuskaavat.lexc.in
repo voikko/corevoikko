@@ -1118,6 +1118,14 @@ LEXICON Kumartua
 r<U>:r<U>	<WC>Punoa_w_<A>	;
 t<U>:t<U>	<WC>Punoa_s_<A>	;
 
+LEXICON Mankua
+g<U>:g<U>	<WC>Punoa_w_<A>	;
+k<U>:k<U>	<WC>Punoa_s_<A>	;
+
+LEXICON Penkoa
+g<O>:g<O>	<WC>Punoa_w_<A>	;
+k<O>:k<O>	<WC>Punoa_s_<A>	;
+
 LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 

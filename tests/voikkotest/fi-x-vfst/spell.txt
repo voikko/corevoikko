@@ -472,3 +472,7 @@ vartoa
 varron
 kumartua
 kumarrun
+mankua
+mangun
+penkoa
+pengon
