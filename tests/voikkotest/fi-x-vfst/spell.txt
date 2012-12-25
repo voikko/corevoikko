@@ -480,3 +480,7 @@ paleltua
 palellun
 tahtovat
 tahdommeko
+leivotteko
+leipovat
+saapua
+saavun

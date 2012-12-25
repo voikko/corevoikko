@@ -1134,6 +1134,14 @@ LEXICON Tahtoa
 d<O>:d<O>	<WC>Punoa_w_<A>	;
 t<O>:t<O>	<WC>Punoa_s_<A>	;
 
+LEXICON Leipoa
+v<O>:v<O>	<WC>Punoa_w_<A>	;
+p<O>:p<O>	<WC>Punoa_s_<A>	;
+
+LEXICON Saapua
+v<U>:v<U>	<WC>Punoa_w_<A>	;
+p<U>:p<U>	<WC>Punoa_s_<A>	;
+
 LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 
