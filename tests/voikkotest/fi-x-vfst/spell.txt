@@ -464,3 +464,7 @@ kiekua
 kieun
 harppoa
 harpon
+kieppua
+kiepun
+jakaantua
+jakaannun
