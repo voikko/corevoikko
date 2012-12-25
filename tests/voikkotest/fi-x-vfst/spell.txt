@@ -484,3 +484,5 @@ leivotteko
 leipovat
 saapua
 saavun
+naukua
+nau'un

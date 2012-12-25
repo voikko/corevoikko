@@ -1142,6 +1142,10 @@ LEXICON Saapua
 v<U>:v<U>	<WC>Punoa_w_<A>	;
 p<U>:p<U>	<WC>Punoa_s_<A>	;
 
+LEXICON Liukua
+'<U>:'<U>	<WC>Punoa_w_<A>	;
+k<U>:k<U>	<WC>Punoa_s_<A>	;
+
 LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 
