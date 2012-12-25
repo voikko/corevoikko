@@ -486,3 +486,7 @@ saapua
 saavun
 naukua
 nau'un
+lääkkeitä
+vakavaa
+vakavana
+tarpeisiin

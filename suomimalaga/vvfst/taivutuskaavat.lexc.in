@@ -595,9 +595,11 @@ n:n	<WC>Asema_w_<A>	;
 LEXICON NOUN Asema_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
-[Sp][Ny]i<A>:i<A>	Liitesana_<A>	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Nm]i<A>:i<A>	Liitesana_<A>	;
 [Sill][Ny]iin:iin	Liitesana_<A>	;
-[Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 
 LEXICON NOUN Asema_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
@@ -999,6 +1001,7 @@ LEXICON NOUN Hame_s
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	Liitesana_<A>	;
 [Str][Ny]eksi:eksi	Liitesana_<A>	;
 [Str][Nm]iksi:iksi	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
@@ -1009,6 +1012,7 @@ LEXICON NOUN Hame_s
 [Sela][Nm]ist<A>:ist<A>	Liitesana_<A>	;
 [Sill][Ny]eseen:eseen	Liitesana_<A>	;
 [Sill][Nm]ihn:ihn	Liitesana_<A>	;
+[Sill][Nm]isiin:isiin	Liitesana_<A>	;
 [Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
 [Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
