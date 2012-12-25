@@ -476,3 +476,7 @@ mankua
 mangun
 penkoa
 pengon
+paleltua
+palellun
+tahtovat
+tahdommeko

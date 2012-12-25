@@ -251,7 +251,7 @@ def handle_word(word):
 		                 u"kanavoida", \
 		                 u"hidastaa", \
 		                 u"ammottaa", \
-		                 u"punoa", u"kaatua", u"tempoa", u"asettua", u"viittoa", u"aikoa", u"kiekua", u"harppoa", u"kieppua", u"jakaantua", u"kertoa", u"kumartua", u"mankua", u"penkoa", \
+		                 u"punoa", u"kaatua", u"tempoa", u"asettua", u"viittoa", u"aikoa", u"kiekua", u"harppoa", u"kieppua", u"jakaantua", u"kertoa", u"kumartua", u"mankua", u"penkoa", u"paleltua", u"tahtoa", \
 		                 u"pahentaa", u"pyörtää", u"juontaa", \
 		                 u"kaivaa", u"lappaa", u"antaa", u"jakaa", u"raataa", u"saattaa", \
 		                 u"salata", u"kammata", u"hangata", u"kerrata", u"suunnata", u"vallata", u"lobata", u"kelvata", u"kuitata", u"ladata", u"peljätä", u"pakata", u"pompata", u"taata", \
