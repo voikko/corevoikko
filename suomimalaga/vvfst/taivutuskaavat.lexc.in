@@ -1094,6 +1094,14 @@ LEXICON Aikoa
 <O>:<O>	<WC>Punoa_w_<A>	;
 k<O>:k<O>	<WC>Punoa_s_<A>	;
 
+LEXICON Kiekua
+<U>:<U>	<WC>Punoa_w_<A>	;
+k<U>:k<U>	<WC>Punoa_s_<A>	;
+
+LEXICON Harppoa
+<O>:<O>	<WC>Punoa_w_<A>	;
+p<O>:p<O>	<WC>Punoa_s_<A>	;
+
 LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 

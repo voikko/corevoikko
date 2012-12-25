@@ -460,3 +460,7 @@ viittoa
 viiton
 aikoa
 aion
+kiekua
+kieun
+harppoa
+harpon
