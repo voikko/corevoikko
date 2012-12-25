@@ -468,3 +468,7 @@ kieppua
 kiepun
 jakaantua
 jakaannun
+vartoa
+varron
+kumartua
+kumarrun
