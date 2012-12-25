@@ -452,3 +452,7 @@ paneutua
 paneudun
 punoa
 punon
+tempovat
+temmon
+asettua
+asetun
