@@ -70,6 +70,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	sijamuotoMap.insert(std::make_pair(L"ab", L"vajanto"));
 	sijamuotoMap.insert(std::make_pair(L"ko", L"seuranto"));
 	sijamuotoMap.insert(std::make_pair(L"in", L"keinonto"));
+	sijamuotoMap.insert(std::make_pair(L"sti", L"kerrontosti"));
 	
 	moodMap.insert(std::make_pair(L"n1", L"A-infinitive"));
 	moodMap.insert(std::make_pair(L"n2", L"E-infinitive"));

@@ -358,6 +358,7 @@ LEXICON NOUN Risti_w
 [Sin][Nm]ein:ein	Liitesana_<A>	;
 ?Nimisana	i:i	Johdin_llinen_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
+?Laatusana	i:i	Kerronto_sti_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -1474,6 +1475,9 @@ tt<O>m:tt<O>m	Yliaste_<A>	;
 
 LEXICON Johdin_ttU
 [Ll]t:t	LaatusanaHattu_<A>	;
+
+LEXICON Kerronto_sti
+[Ssti]sti:sti	Liitesana_<A>	;
 
 LEXICON Johdin_ja_kantaja
 Johdin_ja_kantaja_myyjä_<A>	;

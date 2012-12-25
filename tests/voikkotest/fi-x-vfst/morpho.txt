@@ -231,3 +231,7 @@ word:CD-ROM
  analysis
    CLASS=nimisana
    STRUCTURE==pp-=ppp
+word:anonyymisti
+ analysis
+  CLASS=laatusana
+  SIJAMUOTO=kerrontosti
