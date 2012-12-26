@@ -476,6 +476,7 @@ LEXICON NOUN Kala_s
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Kala_w
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
@@ -683,6 +684,7 @@ LEXICON NOUN Apaja
 [Sab][Nm]<O>itt<A>:<O>itt<A>	Liitesana_<A>	;
 [Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Korkea
 [Sn][Ny]e<A>:e<A>	<WC>NormaaliYsJatko_<A>	;
@@ -1477,6 +1479,12 @@ LEXICON Johdin_llinen
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
+
+LEXICON Johdin_inen_vain_lipulla
+@R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;
+
+LEXICON Johdin_inen
+[Ll]i:i	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_tOn
 [Ll]t:t	LaatusanaOnneton_<A>	;

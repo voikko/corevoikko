@@ -498,3 +498,7 @@ sairastaisi
 naukuisi
 huudan
 huutaisi
+ongelmainen
+!kissainen
+!vainajainen
+risainen

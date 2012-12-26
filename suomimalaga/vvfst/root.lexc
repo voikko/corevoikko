@@ -74,6 +74,9 @@ Multichar_Symbols
 ! Jatko (esim. teonsana) on sallittu vain nimisanaksi johdettuna
 @D.JOHDETTAVA_NIMISANAKSI@ @P.JOHDETTAVA_NIMISANAKSI.ON@ @C.JOHDETTAVA_NIMISANAKSI@
 
+! inen-johdin aina sallittu
+@P.INEN_SALLITTU@ @R.INEN_SALLITTU@ @C.INEN_SALLITTU@
+
 LEXICON Root
 Joukahainen	;
 
