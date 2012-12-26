@@ -337,6 +337,7 @@ LEXICON NOUN Risti_s
 [Sill][Nm]eihin:eihin	Liitesana_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Risti_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -1482,9 +1483,10 @@ LEXICON Johdin_mAinen
 
 LEXICON Johdin_inen_vain_lipulla
 @R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;
+@R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i:i	LaatusanaNainen_<A>	;
+[Ll]i@C.INEN_VAADITTU@:i@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_tOn
 [Ll]t:t	LaatusanaOnneton_<A>	;

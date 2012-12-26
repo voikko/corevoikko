@@ -502,3 +502,7 @@ ongelmainen
 !kissainen
 !vainajainen
 risainen
+neopreeninen
+!neopreeniinen
+!nopeakissa
+nopeakissainen

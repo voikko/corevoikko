@@ -5,6 +5,7 @@ LEXICON NimiLaatusanaYsJatko
 YhdyssanaJatkuu	;
 
 LEXICON LaatusanaYsJatko
+@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON NimiYsJatko
 -[Bc]:-	Joukahainen_em	;
@@ -125,4 +126,4 @@ käänkös:käänkös	Loppu ;
 Loppu      ;
 
 LEXICON Loppu
-@D.JOHDETTAVA_NIMISANAKSI@:@D.JOHDETTAVA_NIMISANAKSI@	#	;
+@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@:@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@	#	;
