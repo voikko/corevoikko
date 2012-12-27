@@ -499,6 +499,8 @@ LEXICON NOUN Kala_w
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
+?Laatusana	<A>:<A>	Kerronto_sti_<A>	;
 
 LEXICON NOUN Koira
 <WC>Koira_s_<A>	;
@@ -624,6 +626,7 @@ LEXICON NOUN Asema_w
 [Sin][Nm]in:in	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 ?Laatusana	<A>:<A>	Kerronto_sti_<A>	;
 
 LEXICON NOUN Apila
@@ -1060,6 +1063,7 @@ LEXICON NOUN Hame_s
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
+?Laatusana	Johdin_Us_<A>	;
 
 LEXICON NOUN Vieras
 <WC>Vieras_w_<A>	;
@@ -1390,6 +1394,7 @@ Ehtotapa_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+[Ln]<U>:<U>	NimisanaArvelu_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>Salata_w_<A>	;
@@ -1502,6 +1507,9 @@ LEXICON Johdin_nimitapa3
 
 LEXICON Johdin_nimitapa4
 mi:mi	NimisanaNainen_<A>	;
+
+LEXICON Johdin_Us
+[Ln]<U>:<U>	NimisanaKalleus_<A>	;
 
 LEXICON Johdin_UUs
 [Ln]<U><U>:<U><U>	NimisanaKalleus_<A>	;
