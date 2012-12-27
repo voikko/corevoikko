@@ -29,6 +29,7 @@
 #include "porting.h"
 #include "fst/Transducer.hpp"
 #include "fst/Configuration.hpp"
+#include "setup/DictionaryException.hpp"
 #include "utf8/utf8.hpp"
 #include <sys/types.h>
 #include <cstring>
@@ -80,7 +81,11 @@ namespace libvoikko { namespace fst {
 				// this would be an error
 				operation.op = Operation_D;
 		}
-		string featureAndValue = symbol.substr(3, symbol.length() - 4);
+		size_t symbolLength = symbol.length();
+		if (symbolLength <= 4) {
+			throw setup::DictionaryException("Malformed flag diacritic");
+		}
+		string featureAndValue = symbol.substr(3, symbolLength - 4);
 		size_t valueStart = featureAndValue.find(".");
 		{
 			string feature;
@@ -170,8 +175,7 @@ namespace libvoikko { namespace fst {
 			// reverse byte order
 			return true;
 		}
-		// TODO
-		throw "Unknown byte order or file type";
+		throw setup::DictionaryException("Unknown byte order or file type");
 	}
 	
 	static uint16_t swap(uint16_t x) {
@@ -242,8 +246,7 @@ namespace libvoikko { namespace fst {
 	Transducer::Transducer(const char * filePath) {
 		map = vfstMmap(filePath, fileLength);
 		if (!map) {
-			// TODO
-			throw "File could not be read";
+			throw setup::DictionaryException("Transducer file could not be read");
 		}
 		byteSwapped = checkNeedForByteSwapping(static_cast<char *>(map));
 		if (byteSwapped) {
