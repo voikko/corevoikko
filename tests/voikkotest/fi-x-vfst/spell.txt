@@ -527,3 +527,4 @@ valitsija
 valitsemassa
 valitseminen
 valitessa
+raadollisessa
