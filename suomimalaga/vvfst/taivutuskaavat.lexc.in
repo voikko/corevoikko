@@ -1338,8 +1338,8 @@ id:id	Johdin_nimitapa2_<A>	;
 i:i	KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
 KertomanTekijapaateVahva_<A>	;
-[Tt][P3][Ny]i:i	Liitesana_<A>	;
-[Tt][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
 i:i	Johdin_nimitapa3_<A>	;
 i:i	Johdin_nimitapa4_<A>	;
@@ -1397,6 +1397,19 @@ e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 [Ln]<U>:<U>	NimisanaArvelu_<A>	;
+
+LEXICON Valita
+[Tn1]t<A>:t<A>	Liitesana_<A>	;
+t:t	Johdin_nimitapa2_<A>	;
+tse:tse	KestamanTekijapaateHeikko_<A>	;
+ts:ts	KertomanTekijapaateHeikko_<A>	;
+ts:ts	KertomanTekijapaateVahva_<A>	;
+[Tt][Ap][P3][Ny]tsee:tsee	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]tsev<A>t:tsev<A>t	Liitesana_<A>	;
+ts:ts	Ehtotapa_<A>	;
+tse:tse	Johdin_nimitapa3_<A>	;
+tse:tse	Johdin_nimitapa4_<A>	;
+tsi:tsi	Johdin_ja_kulkija_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>Salata_w_<A>	;
