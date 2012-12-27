@@ -506,3 +506,6 @@ neopreeninen
 !neopreeniinen
 !nopeakissa
 nopeakissainen
+susi
+suden
+sutten

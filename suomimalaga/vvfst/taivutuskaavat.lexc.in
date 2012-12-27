@@ -750,6 +750,37 @@ LEXICON NOUN Lohi
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]ein:ein	Liitesana_<A>	;
 
+LEXICON NOUN Susi
+<WC>Tosi_<A>	;
+[Sg][Nm]tten:tten	<WC>NormaaliYsJatko_<A>	;
+
+LEXICON NOUN Tosi
+[Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]det:det	Liitesana_<A>	;
+[Sg][Ny]den:den	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]sien:isen	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
+[Sp][Nm]si<A>:si<A>	Liitesana_<A>	;
+[Str][Ny]deksi:deksi	Liitesana_<A>	;
+[Str][Nm]siksi:siksi	Liitesana_<A>	;
+[Ses][Ny]ten<A>:ten<A>	Liitesana_<A>	;
+[Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
+[Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
+[Sine][Nm]siss<A>:siss<A>	Liitesana_<A>	;
+[Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
+[Sela][Nm]sist<A>:sist<A>	Liitesana_<A>	;
+[Sill][Ny]teen:teen	Liitesana_<A>	;
+[Sill][Nm]siin:siin	Liitesana_<A>	;
+[Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
+[Sade][Nm]sill<A>:sill<A>	Liitesana_<A>	;
+[Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
+[Sabl][Nm]silt<A>:silt<A>	Liitesana_<A>	;
+[Sall][Ny]delle:delle	Liitesana_<A>	;
+[Sall][Nm]sille:sille	Liitesana_<A>	;
+[Sab][Ny]dett<A>:dett<A>	Liitesana_<A>	;
+[Sab][Nm]sitt<A>:sitt<A>	Liitesana_<A>	;
+[Sin][Nm]sin:sin	Liitesana_<A>	;
+
 LEXICON NOUN Tytär
 [Sn][Ny]<A>r:<A>r	<WC>NormaaliYsJatko_<A>	;
 [Sn][Nm]t<A>ret:t<A>ret	Liitesana_<A>	;
