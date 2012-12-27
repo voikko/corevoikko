@@ -1194,10 +1194,12 @@ k<U>:k<U>	<WC>Punoa_s_<A>	;
 
 LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
+KertomanTekijapaateHeikko_<A>	;
 
 LEXICON Punoa_s
 [Tn1]<A>:<A>	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
+KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 Johdin_ja_kantaja_<A>	;
 
