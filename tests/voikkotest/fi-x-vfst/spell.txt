@@ -544,3 +544,7 @@ empiä
 emmin
 sontivat
 sonnitte
+oppivat
+opimme
+loikkivat
+loikimme
