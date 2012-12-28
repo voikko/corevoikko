@@ -252,6 +252,7 @@ def handle_word(word):
 		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \
 		                 u"tytär", \
 		                 u"aavistaa", u"muistaa", u"kirjoittaa", u"heittää", \
+		                 u"sallia", u"onkia", \
 		                 u"kanavoida", \
 		                 u"hidastaa", \
 		                 u"ammottaa", \

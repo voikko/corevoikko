@@ -1366,6 +1366,23 @@ LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
+LEXICON Sallia
+<WC>Sallia_w_<A>	;
+<WC>Sallia_s_<A>	;
+
+LEXICON Onkia
+g:g	<WC>Sallia_w_<A>	;
+k:k	<WC>Sallia_s_<A>	;
+
+LEXICON Sallia_w
+i:i	KestamanTekijapaateHeikko_<A>	;
+
+LEXICON Sallia_s
+[Tn1]i<A>:i<A>	Liitesana_<A>	;
+[Tt][Ap][P3][Ny]ii:ii	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+Ehtotapa_<A>	;
+
 LEXICON Kanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;
 id:id	Johdin_nimitapa2_<A>	;
