@@ -552,3 +552,7 @@ sättivät
 sätimme
 laativat
 laadimme
+kaavitte
+kaapivat
+hyljimme
+hylkivät

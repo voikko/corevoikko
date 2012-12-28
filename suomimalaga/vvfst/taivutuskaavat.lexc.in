@@ -1398,6 +1398,14 @@ LEXICON Laatia
 d:d	<WC>Sallia_w_<A>	;
 t:t	<WC>Sallia_s_<A>	;
 
+LEXICON Kaapia
+v:v	<WC>Sallia_w_<A>	;
+p:p	<WC>Sallia_s_<A>	;
+
+LEXICON Hylkiä
+j:j	<WC>Sallia_w_<A>	;
+k:k	<WC>Sallia_s_<A>	;
+
 LEXICON Sallia_w
 i:i	KestamanTekijapaateHeikko_<A>	;
 
