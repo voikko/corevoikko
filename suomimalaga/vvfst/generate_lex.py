@@ -240,6 +240,7 @@ def handle_word(word):
 		                 u"apaja", \
 		                 u"lohi", u"tuohi", \
 		                 u"susi", \
+		                 u"karahka", \
 		                 u"hame", u"enne", u"helle", u"kierre", u"lumme", u"lahje", u"lape", u"sade", u"taive", u"tarvike", u"vaate", \
 		                 u"alaston", u"onneton", \
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \

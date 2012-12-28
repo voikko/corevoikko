@@ -528,3 +528,5 @@ valitsemassa
 valitseminen
 valitessa
 raadollisessa
+karahka
+karahkalla
