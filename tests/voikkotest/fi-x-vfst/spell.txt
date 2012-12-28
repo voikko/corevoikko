@@ -530,3 +530,6 @@ valitessa
 raadollisessa
 karahka
 karahkalla
+muistettava
+luotettavalla
+luotettavuutta

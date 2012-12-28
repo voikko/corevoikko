@@ -629,6 +629,7 @@ LEXICON NOUN Asema_w
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	<A>:<A>	Kerronto_sti_<A>	;
+?Laatusana	Johdin_UUs_<A>	;
 
 LEXICON NOUN Apila
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
@@ -1284,6 +1285,7 @@ LEXICON MuistaaMuistella_s
 LEXICON Muistaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
 e:e	TositavanKestamaTaan_<A>	;
+e:e	Johdin_ttAvA_<A>	;
 
 LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -1566,6 +1568,9 @@ LEXICON Johdin_llinen
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
+
+LEXICON Johdin_ttAvA
+[Ll]tt<A>v:tt<A>v	LaatusanaAsema_<A>	;
 
 LEXICON Johdin_inen_vain_lipulla
 @R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;
