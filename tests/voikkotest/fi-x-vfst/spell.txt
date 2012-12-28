@@ -548,3 +548,7 @@ oppivat
 opimme
 loikkivat
 loikimme
+sättivät
+sätimme
+laativat
+laadimme

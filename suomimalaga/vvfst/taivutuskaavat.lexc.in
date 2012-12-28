@@ -1390,6 +1390,14 @@ LEXICON Loikkia
 <WC>Sallia_w_<A>	;
 k:k	<WC>Sallia_s_<A>	;
 
+LEXICON Sättiä
+<WC>Sallia_w_<A>	;
+t:t	<WC>Sallia_s_<A>	;
+
+LEXICON Laatia
+d:d	<WC>Sallia_w_<A>	;
+t:t	<WC>Sallia_s_<A>	;
+
 LEXICON Sallia_w
 i:i	KestamanTekijapaateHeikko_<A>	;
 
