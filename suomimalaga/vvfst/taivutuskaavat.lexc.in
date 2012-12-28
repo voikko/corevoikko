@@ -1374,6 +1374,14 @@ LEXICON Onkia
 g:g	<WC>Sallia_w_<A>	;
 k:k	<WC>Sallia_s_<A>	;
 
+LEXICON Empiä
+m:m	<WC>Sallia_w_<A>	;
+p:p	<WC>Sallia_s_<A>	;
+
+LEXICON Kontia
+n:n	<WC>Sallia_w_<A>	;
+t:t	<WC>Sallia_s_<A>	;
+
 LEXICON Sallia_w
 i:i	KestamanTekijapaateHeikko_<A>	;
 

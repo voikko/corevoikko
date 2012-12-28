@@ -540,3 +540,7 @@ onkivat
 ongimme
 onkii
 onkisi
+empiä
+emmin
+sontivat
+sonnitte
