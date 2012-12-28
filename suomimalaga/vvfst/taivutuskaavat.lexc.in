@@ -1406,6 +1406,10 @@ LEXICON Hylkiä
 j:j	<WC>Sallia_w_<A>	;
 k:k	<WC>Sallia_s_<A>	;
 
+LEXICON Poikia
+':'	<WC>Sallia_w_<A>	;
+k:k	<WC>Sallia_s_<A>	;
+
 LEXICON Sallia_w
 i:i	KestamanTekijapaateHeikko_<A>	;
 

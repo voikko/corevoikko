@@ -556,3 +556,5 @@ kaavitte
 kaapivat
 hyljimme
 hylkivät
+poikivat
+poi'imme
