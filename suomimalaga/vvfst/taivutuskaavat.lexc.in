@@ -1250,7 +1250,6 @@ LEXICON Hidastaa
 LEXICON Heittää
 <WC>MuistaaMuistella_w_<A>	;
 t:t	<WC>MuistaaMuistella_s_<A>	;
-[Ln]<U>:<U>	NimisanaVastaus_<A>	;
 !TODO heitto
 !TODO heitäntä
 

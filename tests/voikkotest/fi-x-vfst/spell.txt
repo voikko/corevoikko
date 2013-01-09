@@ -558,3 +558,4 @@ hyljimme
 hylkivät
 poikivat
 poi'imme
+!hirtyksessä
