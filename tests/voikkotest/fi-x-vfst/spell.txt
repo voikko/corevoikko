@@ -559,3 +559,7 @@ hylkivät
 poikivat
 poi'imme
 !hirtyksessä
+auto-otos
+!autootos
+!kissa-otos
+kissaotos

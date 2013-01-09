@@ -29,10 +29,12 @@
 #include "morphology/VfstAnalyzer.hpp"
 #include "setup/DictionaryException.hpp"
 #include "utils/StringUtils.hpp"
+#include "character/SimpleChar.hpp"
 #include "utils/utils.hpp"
 #include "voikko_defines.h"
 
 using namespace std;
+using namespace libvoikko::character;
 using namespace libvoikko::utils;
 using namespace libvoikko::fst;
 
@@ -202,6 +204,55 @@ static void parseBasicAttribute(Analysis * analysis, const wchar_t * fstOutput, 
 	}
 }
 
+static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
+	wchar_t lastChar = L'\0';
+	bool boundaryPassed = false;
+	bool hyphenPresent = false;
+	for (size_t i = 0; i < len; i++) {
+		if (fstOutput[i] == L'[') {
+			if (i + 2 >= len) {
+				// something wrong with the pattern
+				return false;
+			}
+			if (fstOutput[i + 1] == L'X') {
+				while (i + 3 < len) {
+					i++;
+					if (wcsncmp(fstOutput + i, L"[X]", 3) == 0) {
+						i += 2;
+						break;
+					}
+				}
+			}
+			else if (wcsncmp(fstOutput + i + 1, L"Bh", 2) == 0) {
+				i += 3;
+				boundaryPassed = true;
+				hyphenPresent = false;
+			}
+			else {
+				while (++i < len && fstOutput[i] != L']') { }
+			}
+		}
+		else if (fstOutput[i] == L'-' && i + 5 < len && wcsncmp(fstOutput + i + 1, L"[Bh]", 4) == 0) {
+			boundaryPassed = true;
+			hyphenPresent = true;
+			i += 4;
+		}
+		else {
+			if (boundaryPassed) {
+				lastChar = SimpleChar::lower(lastChar);
+				wchar_t nextChar = SimpleChar::lower(fstOutput[i]);
+				bool hyphenRequired = ((lastChar == nextChar) && wcschr(VOIKKO_VOWELS, lastChar));
+				if (hyphenRequired != hyphenPresent) {
+					return false;
+				}
+				boundaryPassed = false;
+			}
+			lastChar = fstOutput[i];
+		}
+	}
+	return true;
+}
+
 void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen) {
 	for (size_t i = fstLen - 1; i >= 2; i--) {
 		if (fstOutput[i] == L']') {
@@ -252,9 +303,13 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	list<Analysis *> * analysisList = new list<Analysis *>();
 	if (transducer->prepare(configuration, wordLower, strlen(wordLower))) {
 		while (transducer->next(configuration, outputBuffer, BUFFER_SIZE)) {
-			Analysis * analysis = new Analysis();
 			wchar_t * fstOutput = StringUtils::ucs4FromUtf8(outputBuffer);
 			size_t fstLen = wcslen(fstOutput);
+			if (!isValidAnalysis(fstOutput, fstLen)) {
+				delete[] fstOutput;
+				continue;
+			}
+			Analysis * analysis = new Analysis();
 			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, wlen));
 			parseBasicAttributes(analysis, fstOutput, fstLen);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);

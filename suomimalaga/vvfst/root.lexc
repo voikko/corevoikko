@@ -60,6 +60,7 @@ Multichar_Symbols
 
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
+[Bh]  ! yhdysmerkki vokaaliehdolla
 
 ! Korvattavat merkit
 [[L]] ! edellisen merkin toisto
