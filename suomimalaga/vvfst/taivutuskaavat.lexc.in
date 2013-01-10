@@ -467,6 +467,18 @@ LEXICON NOUN Kappa
 p:p	<WC>Kala_s_<A>	;
 <WC>Kala_w_<A>	;
 
+LEXICON NOUN Napa
+p:p	<WC>Kala_s_<A>	;
+v:v	<WC>Kala_w_<A>	;
+
+LEXICON NOUN Kampa
+p:p	<WC>Kala_s_<A>	;
+m:m	<WC>Kala_w_<A>	;
+
+LEXICON NOUN Hanka
+k:k	<WC>Kala_s_<A>	;
+g:g	<WC>Kala_w_<A>	;
+
 LEXICON NOUN Kala_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]<O>jen:<O>jen	<WC>NormaaliYsJatko_<A>	;

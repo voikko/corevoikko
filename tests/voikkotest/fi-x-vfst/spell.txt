@@ -580,3 +580,9 @@ käyttö
 !käytto
 muisto
 !muistö
+napa
+navan
+kampa
+kamman
+hanka
+hangan
