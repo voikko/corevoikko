@@ -565,3 +565,7 @@ auto-otos
 kissaotos
 telakkaa
 telakalle
+ulappaa
+ulapalta
+savottaa
+savotalle

@@ -696,6 +696,14 @@ LEXICON NOUN Solakka
 k:k	<WC>Solakka_s_<A>	;
 <WC>Solakka_w_<A>	;
 
+LEXICON NOUN Ulappa
+p:p	<WC>Solakka_s_<A>	;
+<WC>Solakka_w_<A>	;
+
+LEXICON NOUN Savotta
+t:t	<WC>Solakka_s_<A>	;
+<WC>Solakka_w_<A>	;
+
 LEXICON NOUN Solakka_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
