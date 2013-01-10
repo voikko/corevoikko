@@ -1367,8 +1367,10 @@ LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
+<A>:<A>	Johdin_mA_<A>	;
 
 LEXICON Huutaa
 d:d	<WC>Huutaa_w_<A>	;
@@ -1703,6 +1705,9 @@ LEXICON Johdin_mAinen
 
 LEXICON Johdin_ttAvA
 [Ll]tt<A>v:tt<A>v	LaatusanaAsema_<A>	;
+
+LEXICON Johdin_mA
+[Ln]m:m	NimisanaAsema_<A>	;
 
 LEXICON Johdin_inen_vain_lipulla
 @R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;
