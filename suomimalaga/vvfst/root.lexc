@@ -81,11 +81,8 @@ Multichar_Symbols
 ! inen-johdin vaaditaan
 @P.INEN_VAADITTU.ON@ @D.INEN_VAADITTU@ @C.INEN_VAADITTU@ @R.INEN_VAADITTU@
 
-! etuvokaalimuodot sallittu
-@P.EV_SALLITTU.ON@ @R.EV_SALLITTU@ @C.EV_SALLITTU@
-
-! takavokaalimuodot sallittu
-@P.TV_SALLITTU.ON@ @R.TV_SALLITTU@ @C.TV_SALLITTU@
+! etu/takavokaalimuodot sallittu
+@P.V_SALLITTU.E@ @P.V_SALLITTU.T@ @R.V_SALLITTU.E@ @R.V_SALLITTU.T@ @C.V_SALLITTU@
 
 LEXICON Root
 Joukahainen	;

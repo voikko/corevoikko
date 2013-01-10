@@ -165,10 +165,10 @@ def get_vfst_class_prefix(vfst_class):
 def vowel_type_for_derived_verb(wordform):
 	for char in reversed(wordform):
 		if char in u"yäö":
-			return u"@P.EV_SALLITTU.ON@"
+			return u"@P.V_SALLITTU.E@"
 		if char in u"uao":
-			return u"@P.TV_SALLITTU.ON@"
-	return u"@P.TV_SALLITTU.ON@"
+			return u"@P.V_SALLITTU.T@"
+	return u"@P.V_SALLITTU.T@"
 
 def handle_word(word):
 	global OPTIONS
