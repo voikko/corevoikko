@@ -1575,6 +1575,7 @@ ts:ts	Ehtotapa_<A>	;
 tse:tse	Johdin_nimitapa3_<A>	;
 tse:tse	Johdin_nimitapa4_<A>	;
 tsi:tsi	Johdin_ja_kulkija_<A>	;
+Johdin_ntA_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>Salata_w_<A>	;
@@ -1708,6 +1709,9 @@ LEXICON Johdin_ttAvA
 
 LEXICON Johdin_mA
 [Ln]m:m	NimisanaAsema_<A>	;
+
+LEXICON Johdin_ntA
+[Ln]n:n	NimisanaKanta_<A>	;
 
 LEXICON Johdin_inen_vain_lipulla
 @R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;
