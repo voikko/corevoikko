@@ -563,3 +563,5 @@ auto-otos
 !autootos
 !kissa-otos
 kissaotos
+telakkaa
+telakalle

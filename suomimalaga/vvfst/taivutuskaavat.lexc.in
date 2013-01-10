@@ -692,6 +692,45 @@ LEXICON NOUN Karahka
 [Sab][Nm]<O>itt<A>:<O>itt<A>	Liitesana_<A>	;
 [Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
 
+LEXICON NOUN Solakka
+k:k	<WC>Solakka_s_<A>	;
+<WC>Solakka_w_<A>	;
+
+LEXICON NOUN Solakka_w
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Nm]<O>it<A>:<O>it<A>	Liitesana_<A>	;
+[Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
+[Str][Nm]<O>iksi:<O>iksi	Liitesana_<A>	;
+[Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
+[Sine][Nm]<O>iss<A>:<O>iss<A>	Liitesana_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sela][Nm]<O>ist<A>:<O>ist<A>	Liitesana_<A>	;
+[Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sade][Nm]<O>ill<A>:<O>ill<A>	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
+[Sabl][Nm]<O>ilt<A>:<O>ilt<A>	Liitesana_<A>	;
+[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+[Sall][Nm]<O>ille:<O>ille	Liitesana_<A>	;
+[Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+[Sab][Nm]<O>itt<A>:<O>itt<A>	Liitesana_<A>	;
+[Sin][Nm]<O>in:<O>in	Liitesana_<A>	;
+
+LEXICON NOUN Solakka_s
+[Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>jen:<O>jen	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Nm]<O>j<A>:<O>j<A>	Liitesana_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
+[Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
+[Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
+
 LEXICON NOUN Apaja
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
