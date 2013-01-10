@@ -1295,28 +1295,30 @@ LEXICON Hidastaa
 !TODO hidastua
 
 LEXICON Heittää
-<WC>MuistaaMuistella_w_<A>	;
-t:t	<WC>MuistaaMuistella_s_<A>	;
-!TODO heitto
+@C.TV_SALLITTU@@C.TV_SALLITTU@:@C.TV_SALLITTU@@C.TV_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
+@C.TV_SALLITTU@@C.TV_SALLITTU@t:@C.TV_SALLITTU@@C.TV_SALLITTU@t	<WC>MuistaaMuistella_s_<A>	;
+@R.EV_SALLITTU@@C.EV_SALLITTU@:@R.EV_SALLITTU@@C.EV_SALLITTU@	NimisanaLiitto_ä	;
+@R.TV_SALLITTU@@C.TV_SALLITTU@:@R.TV_SALLITTU@@C.TV_SALLITTU@	NimisanaLiitto_a	;
 !TODO heitäntä
 
 LEXICON Muistaa
-<WC>MuistaaMuistella_w_<A>	;
-<WC>MuistaaMuistella_s_<A>	;
-!TODO muisto
+@C.TV_SALLITTU@@C.TV_SALLITTU@:@C.TV_SALLITTU@@C.TV_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
+@C.TV_SALLITTU@@C.TV_SALLITTU@:@C.TV_SALLITTU@@C.TV_SALLITTU@	<WC>MuistaaMuistella_s_<A>	;
+@R.EV_SALLITTU@@C.EV_SALLITTU@ö:@R.EV_SALLITTU@@C.EV_SALLITTU@ö	NimisanaValo_ä	;
+@R.TV_SALLITTU@@C.TV_SALLITTU@o:@R.TV_SALLITTU@@C.TV_SALLITTU@o	NimisanaValo_a	;
 !TODO muistua
 
 LEXICON Kirjoittaa
 it:it	<WC>Muistaa_w_<A>	;
 itt:itt	<WC>Muistaa_s_<A>	;
-!TODO kirjoitus
+it:it	Johdin_Us_ksen_<A>	;
 !TODO kirjoittautua
 !TODO kirjoitella
 
 LEXICON Ammottaa
 t:t	<WC>Muistaa_w_<A>	;
 tt:tt	<WC>Muistaa_s_<A>	;
-!TODO ammotus
+t:t	Johdin_Us_ksen_<A>	;
 !TODO ammottautua
 !TODO ammotella
 
@@ -1655,6 +1657,9 @@ LEXICON Johdin_nimitapa3
 
 LEXICON Johdin_nimitapa4
 mi:mi	NimisanaNainen_<A>	;
+
+LEXICON Johdin_Us_ksen
+[Ln]<U>:<U>	NimisanaVastaus_<A>	;
 
 LEXICON Johdin_Us
 [Ln]<U>:<U>	NimisanaKalleus_<A>	;

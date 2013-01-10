@@ -569,3 +569,14 @@ ulappaa
 ulapalta
 savottaa
 savotalle
+kehitysaste
+kehityksen
+kirjoituksen
+!heittö
+heitto
+heitossa
+!heitossä
+käyttö
+!käytto
+muisto
+!muistö

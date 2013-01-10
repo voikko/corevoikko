@@ -161,7 +161,15 @@ def get_vfst_class_prefix(vfst_class):
 		return u"NimiLaatusana"
 	else:
 		return u""
-	
+
+def vowel_type_for_derived_verb(wordform):
+	for char in reversed(wordform):
+		if char in u"yäö":
+			return u"@P.EV_SALLITTU.ON@"
+		if char in u"uao":
+			return u"@P.TV_SALLITTU.ON@"
+	return u"@P.TV_SALLITTU.ON@"
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -271,6 +279,11 @@ def handle_word(word):
 		#	   generate_lex_common.get_structure(altform, malaga_word_class),
 		#	   debug_info)
 		alku = alku.lower()
+		
+		# Vowel type in derived verbs
+		if jatko in [u"heittää", u"muistaa"]:
+			diacritics = diacritics + vowel_type_for_derived_verb(alku)
+		
 		entry = u'%s[Xp]%s[X]%s%s%s:%s%s %s%s_%s ;' \
 		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
 		        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
