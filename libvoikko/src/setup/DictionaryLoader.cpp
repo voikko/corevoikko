@@ -265,7 +265,7 @@ void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, 
 			string variantName = "todo";
 			language.setPrivateUse(variantName);
 			string description = "TODO description";
-			Dictionary dict = Dictionary(path, morBackend, spellBackend, suggestionBackend,
+			Dictionary dict = Dictionary(fullPath, morBackend, spellBackend, suggestionBackend,
 			                        hyphenatorBackend, language, description);
 			// TODO copy-paste from above
 			if (variantName == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {

@@ -35,11 +35,11 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
  */
 class HfstSuggestion : public SuggestionGenerator {
 	public:
-		HfstSuggestion(const std::string & directoryName, voikko_options_t* opts) throw(setup::DictionaryException);
-		void generate(SuggestionStatus* s) const;
+		HfstSuggestion(hfst_ol::ZHfstOspeller * speller) throw(setup::DictionaryException);
+		void generate(SuggestionStatus * s) const;
 		void terminate();
 	private:
-		hfst_ol::ZHfstOspeller* speller_;
+		hfst_ol::ZHfstOspeller * speller_;
 };
 
 } } }

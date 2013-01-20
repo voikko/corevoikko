@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2010
+ * Portions created by the Initial Developer are Copyright (C) 2010 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -35,6 +35,7 @@
 
 #ifdef HAVE_HFST
 #include "spellchecker/HfstSuggestion.hpp"
+#include "spellchecker/HfstSpeller.hpp"
 #endif
 
 using namespace std;
@@ -58,7 +59,8 @@ SuggestionGenerator * SuggestionGeneratorFactory::getSuggestionGenerator(
 	}
 	#ifdef HAVE_HFST
 	if (backend == "hfst") {
-		return new HfstSuggestion(voikkoOptions->dictionary.getMorPath(), voikkoOptions);
+		const HfstSpeller * hfstSpeller = dynamic_cast<HfstSpeller *>(voikkoOptions->speller);
+		return new HfstSuggestion(hfstSpeller->speller);
 	}
 	#endif
 	throw setup::DictionaryException("Failed to create suggestion generator because of unknown suggestion generator backend");

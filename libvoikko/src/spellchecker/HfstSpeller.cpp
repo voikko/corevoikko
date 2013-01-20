@@ -33,47 +33,19 @@ using hfst_ol::ZHfstOspeller;
 namespace libvoikko { namespace spellchecker {
 
 HfstSpeller::HfstSpeller(const string & zhfstFileName) throw(setup::DictionaryException) {
-	speller_ = new ZHfstOspeller();
+	speller = new ZHfstOspeller();
 	try {
-		speller_->read_zhfst(zhfstFileName.c_str());
+		speller->read_zhfst(zhfstFileName.c_str());
 	}
 	catch (hfst_ol::ZHfstZipReadingError& zhzre) {
 		throw setup::DictionaryException("Error reading ZHFST speller");
 	}
 }
 
-HfstSpeller::HfstSpeller(const string & directoryName, voikko_options_t* opts)
-throw(setup::DictionaryException) {
-	speller_ = 0;
-	if ((opts != 0) && (opts->hfst != 0)) {
-		speller_ = opts->hfst;
-	}
-	else {
-		string spellerFile = directoryName + "/speller.zhfst";
-		speller_ = new ZHfstOspeller();
-		try {
-			speller_->read_zhfst(spellerFile.c_str());
-		}
-		catch (hfst_ol::ZHfstZipReadingError& zhzre) {
-			try {
-				speller_->read_legacy(directoryName.c_str());
-			}
-			catch (hfst_ol::ZHfstLegacyReadingError& zhlre) {
-				throw setup::DictionaryException("no usable hfst spellers");
-			}
-			catch (hfst_ol::AlphabetTranslationException& ate) {
-				throw setup::DictionaryException("broken error model detected");
-			}
-		}
-	}
-	if (opts != 0)
-		opts->hfst = speller_;
-}
-
 spellresult HfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
 	char * wordUtf8 = StringUtils::utf8FromUcs4(word, wlen);
 	spellresult result = SPELL_FAILED;
-	if (speller_->spell(wordUtf8)) {
+	if (speller->spell(wordUtf8)) {
 		result = SPELL_OK;
 	}
 	return result;
@@ -95,9 +67,9 @@ spellresult HfstSpeller::spell(const wchar_t * word, size_t wlen) {
 }
 
 void HfstSpeller::terminate() {
-	if (speller_ != 0){
-		delete speller_;
-		speller_ = 0;
+	if (speller != 0) {
+		delete speller;
+		speller = 0;
 	}
 }
 

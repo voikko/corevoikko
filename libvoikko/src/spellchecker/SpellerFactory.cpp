@@ -61,7 +61,7 @@ Speller * SpellerFactory::getSpeller(voikko_options_t * voikkoOptions,
 	}
 	#ifdef HAVE_HFST
 	if (dictionary.getSpellBackend() == "hfst") {
-		return new HfstSpeller(dictionary.getMorPath(), voikkoOptions);
+		return new HfstSpeller(dictionary.getMorPath());
 	}
 	#endif
 	#ifdef HAVE_VFST

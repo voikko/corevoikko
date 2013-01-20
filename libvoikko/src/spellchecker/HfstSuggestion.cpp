@@ -31,30 +31,8 @@ using hfst_ol::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker { namespace suggestion {
 
-HfstSuggestion::HfstSuggestion(const string & directoryName, voikko_options_t* opts) throw(setup::DictionaryException) {
-	speller_ = 0;
-	if ((opts != 0) && (opts->hfst != 0)) {
-		speller_ = opts->hfst;
-	}
-	else {
-		string spellerFile = directoryName + "/speller.zhfst";
-		speller_ = new ZHfstOspeller();
-		try {
-			speller_->read_zhfst(spellerFile.c_str());
-		}
-		catch (hfst_ol::ZHfstZipReadingError& zhzre) {
-			speller_->read_legacy(directoryName.c_str());
-		}
-		catch (hfst_ol::ZHfstLegacyReadingError& zhlre) {
-			throw setup::DictionaryException("no usable hfst spellers");
-		}
-		catch (hfst_ol::AlphabetTranslationException& ate) {
-			throw setup::DictionaryException("broken error model detected");
-		}
-	}
-	if (opts != 0)
-		opts->hfst = speller_;
-}
+HfstSuggestion::HfstSuggestion(hfst_ol::ZHfstOspeller * speller) throw(setup::DictionaryException) :
+	speller_(speller) { }
 
 void HfstSuggestion::generate(SuggestionStatus* s) const {
 	size_t wlen = s->getWordLength();
@@ -73,10 +51,7 @@ void HfstSuggestion::generate(SuggestionStatus* s) const {
 }
 
 void HfstSuggestion::terminate() {
-	if (speller_ != 0) {
-		delete speller_;
-		speller_ = 0;
-	}
+	// do nothing, HfstSpeller manages all resources
 }
 
 } } }

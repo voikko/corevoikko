@@ -35,14 +35,14 @@ class HfstSpeller : public Speller {
 	public:
 		/** Constructor for V3 stable format */
 		HfstSpeller(const std::string & zhfstFileName) throw(setup::DictionaryException);
-		/** Constructor for V2 experimental format */
-		HfstSpeller(const std::string & directoryName, voikko_options_t* = 0) throw(setup::DictionaryException);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();
+		
+		/** Public for use in HfstSuggestion */
+		hfst_ol::ZHfstOspeller * speller;
 	private:
 		/** Return SPELL_FAILED or SPELL_OK depending on whether given word is correct as is. */
 		spellresult doSpell(const wchar_t * word, size_t wlen);
-		hfst_ol::ZHfstOspeller* speller_;
 };
 
 
