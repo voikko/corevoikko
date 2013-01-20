@@ -602,3 +602,7 @@ naisiltaan
 naisiltamme
 naisillaan
 naisillansa
+taloittamme
+taloittaan
+!lohein
+lohin
