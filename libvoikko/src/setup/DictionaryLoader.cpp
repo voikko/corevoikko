@@ -41,8 +41,9 @@
 #endif
 
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
-#define VOIKKO_DICTIONARY_VERSION "2"
-#define VOIKKO_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: " VOIKKO_DICTIONARY_VERSION
+#define MALAGA_DICTIONARY_VERSION "2"
+#define HFST_DICTIONARY_VERSION "3"
+#define MALAGA_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: " MALAGA_DICTIONARY_VERSION
 #ifdef WIN32
 # define VOIKKO_KEY                   "SOFTWARE\\Voikko"
 # define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
@@ -182,28 +183,44 @@ Dictionary DictionaryLoader::load(const string & language, const string & path)
 	throw DictionaryException("Specified dictionary variant was not found");
 }
 
-void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
-	string mainPath(path);
-	mainPath.append("/");
-	mainPath.append(VOIKKO_DICTIONARY_VERSION);
+static list<string> getListOfSubdirectories(const string & mainPath) {
+	list<string> results;
 #ifdef WIN32
 	string searchPattern(mainPath);
 	searchPattern.append("\\*");
 	WIN32_FIND_DATA dirData;
 	HANDLE handle = FindFirstFile(searchPattern.c_str(), &dirData);
 	if (handle == INVALID_HANDLE_VALUE) {
-		return;
+		return results;
 	}
 	do {
 		string dirName(dirData.cFileName);
 #else
 	DIR * dp = opendir(mainPath.c_str());
 	if (!dp) {
-		return;
+		return results;
 	}
 	while (dirent * dirp = readdir(dp)) {
 		string dirName(dirp->d_name);
 #endif
+		results.push_back(dirName);
+#ifdef WIN32
+	} while (FindNextFile(handle, &dirData) != 0);
+	FindClose(handle);
+#else
+	}
+	closedir(dp);
+#endif
+	return results;
+}
+
+void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
+	string mainPath(path);
+	mainPath.append("/");
+	mainPath.append(MALAGA_DICTIONARY_VERSION);
+	list<string> subDirectories = getListOfSubdirectories(mainPath);
+	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
+		string dirName = *i;
 		if (dirName.find("mor-") != 0) {
 			continue;
 		}
@@ -226,13 +243,7 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 				variants[dict.getLanguage().toBcp47()].setDefault(true);
 			}
 		}
-#ifdef WIN32
-	} while (FindNextFile(handle, &dirData) != 0);
-	FindClose(handle);
-#else
 	}
-	closedir(dp);
-#endif
 }
 
 Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
@@ -245,7 +256,7 @@ Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
 	if (file.good()) {
 		getline(file, line);
 	}
-	if (line.compare(VOIKKO_DICTIONARY_VERSION_KEY) != 0) {
+	if (line.compare(MALAGA_DICTIONARY_VERSION_KEY) != 0) {
 		// Not a valid dictionary for this version of libvoikko
 		file.close();
 		return Dictionary();
