@@ -606,3 +606,7 @@ taloittamme
 taloittaan
 !lohein
 lohin
+kaloissaan
+kaloissanne
+kaloistaan
+kaloistanne
