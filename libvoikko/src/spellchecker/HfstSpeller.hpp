@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2013 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -33,6 +33,9 @@ namespace libvoikko { namespace spellchecker {
  */
 class HfstSpeller : public Speller {
 	public:
+		/** Constructor for V3 stable format */
+		HfstSpeller(const std::string & zhfstFileName) throw(setup::DictionaryException);
+		/** Constructor for V2 experimental format */
 		HfstSpeller(const std::string & directoryName, voikko_options_t* = 0) throw(setup::DictionaryException);
 		spellresult spell(const wchar_t * word, size_t wlen);
 		void terminate();

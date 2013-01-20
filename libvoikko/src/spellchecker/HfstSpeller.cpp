@@ -1,5 +1,5 @@
 /* Libvoikko: Library of Finnish language tools
- * Copyright (C) 2009 - 2010 Harri Pitkänen <hatapitk@iki.fi>
+ * Copyright (C) 2009 - 2013 Harri Pitkänen <hatapitk@iki.fi>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -32,6 +32,15 @@ using hfst_ol::ZHfstOspeller;
 
 namespace libvoikko { namespace spellchecker {
 
+HfstSpeller::HfstSpeller(const string & zhfstFileName) throw(setup::DictionaryException) {
+	speller_ = new ZHfstOspeller();
+	try {
+		speller_->read_zhfst(zhfstFileName.c_str());
+	}
+	catch (hfst_ol::ZHfstZipReadingError& zhzre) {
+		throw setup::DictionaryException("Error reading ZHFST speller");
+	}
+}
 
 HfstSpeller::HfstSpeller(const string & directoryName, voikko_options_t* opts)
 throw(setup::DictionaryException) {
