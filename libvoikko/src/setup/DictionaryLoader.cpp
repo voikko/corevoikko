@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008 - 2010
+ * Portions created by the Initial Developer are Copyright (C) 2008 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -183,7 +183,7 @@ Dictionary DictionaryLoader::load(const string & language, const string & path)
 	throw DictionaryException("Specified dictionary variant was not found");
 }
 
-static list<string> getListOfSubdirectories(const string & mainPath) {
+static list<string> getListOfSubentries(const string & mainPath) {
 	list<string> results;
 #ifdef WIN32
 	string searchPattern(mainPath);
@@ -214,11 +214,11 @@ static list<string> getListOfSubdirectories(const string & mainPath) {
 	return results;
 }
 
-void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
+void DictionaryLoader::addVariantsFromPathMalaga(const string & path, map<string, Dictionary> & variants) {
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(MALAGA_DICTIONARY_VERSION);
-	list<string> subDirectories = getListOfSubdirectories(mainPath);
+	list<string> subDirectories = getListOfSubentries(mainPath);
 	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
 		string dirName = *i;
 		if (dirName.find("mor-") != 0) {
@@ -244,6 +244,48 @@ void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dict
 			}
 		}
 	}
+}
+
+void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, Dictionary> & variants) {
+	string mainPath(path);
+	mainPath.append("/");
+	mainPath.append(HFST_DICTIONARY_VERSION);
+	list<string> subDirectories = getListOfSubentries(mainPath);
+	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
+		string dirName = *i;
+		if (dirName.find(".zhfst") + 6 == dirName.length()) {
+			string fullPath = mainPath + "/" + dirName;
+			string morBackend = "null";
+			string spellBackend = "hfst";
+			string suggestionBackend = "hfst";
+			// TODO implement null hyphenator
+			string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
+			LanguageTag language;
+			language.setLanguage("hu");
+			string variantName = "todo";
+			language.setPrivateUse(variantName);
+			string description = "TODO description";
+			Dictionary dict = Dictionary(path, morBackend, spellBackend, suggestionBackend,
+			                        hyphenatorBackend, language, description);
+			// TODO copy-paste from above
+			if (variantName == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
+				dict.setDefault(true);
+			}
+			if (dict.isValid()) {
+				if (variants.find(dict.getLanguage().toBcp47()) == variants.end()) {
+					variants[dict.getLanguage().toBcp47()] = dict;
+				}
+				else if (dict.isDefault()) {
+					variants[dict.getLanguage().toBcp47()].setDefault(true);
+				}
+			}
+		}
+	}
+}
+
+void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
+	addVariantsFromPathHfst(path, variants);
+	addVariantsFromPathMalaga(path, variants);
 }
 
 Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {

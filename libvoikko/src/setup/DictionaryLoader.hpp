@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008 - 2010
+ * Portions created by the Initial Developer are Copyright (C) 2008 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -73,6 +73,12 @@ class DictionaryLoader {
 	 * If a dictionary already exists in the map, it will not be replaced.
 	 */
 	static void addVariantsFromPath(const std::string & path,
+	       std::map<std::string, Dictionary> & variants);
+	
+	static void addVariantsFromPathMalaga(const std::string & path,
+	       std::map<std::string, Dictionary> & variants);
+	
+	static void addVariantsFromPathHfst(const std::string & path,
 	       std::map<std::string, Dictionary> & variants);
 	
 	/**
