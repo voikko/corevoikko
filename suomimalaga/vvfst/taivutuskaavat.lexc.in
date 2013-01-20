@@ -117,11 +117,7 @@ LEXICON NOUN Valo_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]ksi:ksi	<WC>LiOlI_<A>	;
-[Sine][Ny]ss<A>:ss<A>	<WC>LiOlV_<A>	;
-[Sela][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
-[Sade][Ny]ll<A>:ll<A>	<WC>LiOlV_<A>	;
-[Sabl][Ny]lt<A>:lt<A>	<WC>LiOlV_<A>	;
-[Sall][Ny]lle:lle	<WC>LiOlV_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
@@ -172,11 +168,7 @@ LEXICON NOUN Arvelu_w
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	Liitesana_<A>	;
 [Str][Ny]ksi:ksi	Liitesana_<A>	;
-[Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
-[Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
-[Sade][Ny]ll<A>:ll<A>	Liitesana_<A>	;
-[Sabl][Ny]lt<A>:lt<A>	Liitesana_<A>	;
-[Sall][Ny]lle:lle	Liitesana_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
 
@@ -193,14 +185,10 @@ LEXICON NOUN Laatikko
 [Str][Ny]<O>ksi:<O>ksi	Liitesana_<A>	;
 [Ses][Ny]k<O>n<A>:k<O>n<A>	Liitesana_<A>	;
 [Ses][Nm]k<O>in<A>:k<O>in<A>	Liitesana_<A>	;
-[Sine][Ny]<O>ss<A>:<O>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<O>st<A>:<O>st<A>	Liitesana_<A>	;
 [Sill][Ny]k<O><O>n:k<O><O>n	Liitesana_<A>	;
 [Sill][Nm]k<O>ihin:k<O>ihin	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
-[Sade][Ny]<O>ll<A>:<O>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<O>lt<A>:<O>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<O>lle:<O>lle	Liitesana_<A>	;
+<O>:<O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<O>tt<A>:<O>tt<A>	Liitesana_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
@@ -227,11 +215,7 @@ LEXICON NOUN Paperi_w
 [Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]eitten:eitten	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]iksi:iksi	Liitesana_<A>	;
-[Sine][Ny]iss<A>:iss<A>	Liitesana_<A>	;
-[Sela][Ny]ist<A>:ist<A>	Liitesana_<A>	;
-[Sade][Ny]ill<A>:ill<A>	Liitesana_<A>	;
-[Sabl][Ny]ilt<A>:ilt<A>	Liitesana_<A>	;
-[Sall][Ny]ille:ille	Liitesana_<A>	;
+i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
 
@@ -246,13 +230,9 @@ LEXICON NOUN Autio
 [Str][Ny]ksi:ksi	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
-[Sine][Ny]ss<A>:ss<A>	Liitesana_<A>	;
-[Sela][Ny]st<A>:st<A>	Liitesana_<A>	;
 [[L]][Sill][Ny]n:[[L]]n	Liitesana_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
-[Sade][Ny]ll<A>:ll<A>	Liitesana_<A>	;
-[Sabl][Ny]lt<A>:lt<A>	Liitesana_<A>	;
-[Sall][Ny]lle:lle	Liitesana_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
 ?Laatusana	Voittoaste_<A>	;
@@ -309,11 +289,7 @@ LEXICON NOUN Risti_w
 [Sn][Nm]it:it	Liitesana_<A>	;
 [Sg][Ny]in:in	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]iksi:iksi	Liitesana_<A>	;
-[Sine][Ny]iss<A>:iss<A>	Liitesana_<A>	;
-[Sela][Ny]ist<A>:ist<A>	Liitesana_<A>	;
-[Sade][Ny]ill<A>:ill<A>	Liitesana_<A>	;
-[Sabl][Ny]ilt<A>:ilt<A>	Liitesana_<A>	;
-[Sall][Ny]ille:ille	Liitesana_<A>	;
+i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
 ?Nimisana	i:i	Johdin_llinen_<A>	;
@@ -330,13 +306,9 @@ LEXICON NOUN Kalsium
 [Str][Ny]iksi:iksi	Liitesana_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
 [Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
-[Sine][Ny]iss<A>:iss<A>	Liitesana_<A>	;
-[Sela][Ny]ist<A>:ist<A>	Liitesana_<A>	;
 [Sill][Ny]iin:iin	Liitesana_<A>	;
 [Sill][Nm]eihin:eihin	Liitesana_<A>	;
-[Sade][Ny]ill<A>:ill<A>	Liitesana_<A>	;
-[Sabl][Ny]ilt<A>:ilt<A>	Liitesana_<A>	;
-[Sall][Ny]ille:ille	Liitesana_<A>	;
+i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
 
@@ -389,11 +361,7 @@ LEXICON NOUN Lovi_w
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]eksi:eksi	Liitesana_<A>	;
-[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
-[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
-[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
-[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sall][Ny]elle:elle	Liitesana_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 ?Nimisana	e:e	Johdin_llinen_<A>	;
@@ -455,11 +423,7 @@ LEXICON NOUN Kala_s
 LEXICON NOUN Kala_w
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
@@ -525,11 +489,7 @@ LEXICON NOUN Koira_w_yksikko
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 
@@ -569,11 +529,7 @@ LEXICON NOUN Asema_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
@@ -594,13 +550,9 @@ LEXICON NOUN Apila
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
@@ -619,13 +571,9 @@ LEXICON NOUN Karahka
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 
@@ -649,12 +597,8 @@ LEXICON NOUN Solakka_w
 [Sp][Nm]<O>it<A>:<O>it<A>	Liitesana_<A>	;
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
 [Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 
@@ -682,13 +626,9 @@ LEXICON NOUN Apaja
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
 [Sill][Nm]iin:iin	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
@@ -706,14 +646,10 @@ LEXICON NOUN Korkea
 [Str][Ny]e<A>ksi:e<A>ksi	Liitesana_<A>	;
 [Ses][Ny]e<A>n<A>:e<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
-[Sine][Ny]e<A>ss<A>:e<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]e<A>st<A>:e<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]e<A><A>n:e<A><A>n	Liitesana_<A>	;
 [Sill][Nm]eihin:eihin	Liitesana_<A>	;
 [Sill][Nm]eisiin:eisiin	Liitesana_<A>	;
-[Sade][Ny]e<A>ll<A>:e<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]e<A>lt<A>:e<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]e<A>lle:e<A>lle	Liitesana_<A>	;
+e<A>:e<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]e<A>tt<A>:e<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	e<A>:e<A>	Voittoaste_<A>	;
@@ -733,13 +669,9 @@ LEXICON NOUN Lohi
 [Str][Ny]eksi:eksi	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
-[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
-[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
 [Sill][Ny]een:een	Liitesana_<A>	;
 [Sill][Nm]iin:iin	Liitesana_<A>	;
-[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
-[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sall][Ny]elle:elle	Liitesana_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 
@@ -757,13 +689,9 @@ LEXICON NOUN Tosi
 [Str][Ny]deksi:deksi	Liitesana_<A>	;
 [Ses][Ny]ten<A>:ten<A>	Liitesana_<A>	;
 [Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
-[Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
-[Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
 [Sill][Ny]teen:teen	Liitesana_<A>	;
 [Sill][Nm]siin:siin	Liitesana_<A>	;
-[Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
-[Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
-[Sall][Ny]delle:delle	Liitesana_<A>	;
+de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]dett<A>:dett<A>	Liitesana_<A>	;
 
@@ -785,13 +713,9 @@ LEXICON NOUN Nainen
 [Str][Ny]seksi:seksi	Liitesana_<A>	;
 [Ses][Ny]sen<A>:sen<A>	Liitesana_<A>	;
 [Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
-[Sine][Ny]sess<A>:sess<A>	Liitesana_<A>	;
-[Sela][Ny]sest<A>:sest<A>	Liitesana_<A>	;
 [Sill][Ny]seen:seen	Liitesana_<A>	;
 [Sill][Nm]siin:siin	Liitesana_<A>	;
-[Sade][Ny]sell<A>:sell<A>	Liitesana_<A>	;
-[Sabl][Ny]selt<A>:selt<A>	Liitesana_<A>	;
-[Sall][Ny]selle:selle	Liitesana_<A>	;
+se:se	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]sett<A>:sett<A>	Liitesana_<A>	;
 s:s	YhdyssanaJatkuu	;
@@ -815,13 +739,9 @@ LEXICON NOUN Vastaus
 [Str][Ny]kseksi:kseksi	Liitesana_<A>	;
 [Ses][Ny]ksen<A>:ksen<A>	Liitesana_<A>	;
 [Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
-[Sine][Ny]ksess<A>:ksess<A>	Liitesana_<A>	;
-[Sela][Ny]ksest<A>:ksest<A>	Liitesana_<A>	;
 [Sill][Ny]kseen:kseen	Liitesana_<A>	;
 [Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
-[Sade][Ny]ksell<A>:ksell<A>	Liitesana_<A>	;
-[Sabl][Ny]kselt<A>:kselt<A>	Liitesana_<A>	;
-[Sall][Ny]kselle:kselle	Liitesana_<A>	;
+ks:ks	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ksett<A>:ksett<A>	Liitesana_<A>	;
 
@@ -835,13 +755,9 @@ LEXICON NOUN Kalleus
 [Str][Ny]deksi:deksi	Liitesana_<A>	;
 [Ses][Ny]ten<A>:ten<A>	Liitesana_<A>	;
 [Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
-[Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
-[Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
 [Sill][Ny]teen:teen	Liitesana_<A>	;
 [Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
-[Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
-[Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
-[Sall][Ny]delle:delle	Liitesana_<A>	;
+de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]dett<A>:dett<A>	Liitesana_<A>	;
 
@@ -893,13 +809,9 @@ LEXICON NOUN Uistin_m
 [Str][Ny]eksi:eksi	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
-[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
-[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
 [Sill][Ny]een:een	Liitesana_<A>	;
 [Sill][Nm]iin:iin	Liitesana_<A>	;
-[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
-[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sall][Ny]elle:elle	Liitesana_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 
@@ -923,13 +835,9 @@ LEXICON NOUN Onneton_s
 [Str][Ny]m<A>ksi:m<A>ksi	Liitesana_<A>	;
 [Ses][Ny]m<A>n<A>:m<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]min<A>:min<A>	Liitesana_<A>	;
-[Sine][Ny]m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]m<A>st<A>:m<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]m<A><A>n:m<A><A>n	Liitesana_<A>	;
 [Sill][Nm]miin:miin	Liitesana_<A>	;
-[Sade][Ny]m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]m<A>lt<A>:m<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]m<A>lle:m<A>lle	Liitesana_<A>	;
+m<A>:m<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
 
@@ -994,14 +902,10 @@ LEXICON NOUN Hame_s
 [Str][Ny]eksi:eksi	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
-[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
-[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
 [Sill][Ny]eseen:eseen	Liitesana_<A>	;
 [Sill][Nm]ihn:ihn	Liitesana_<A>	;
 [Sill][Nm]isiin:isiin	Liitesana_<A>	;
-[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
-[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sall][Ny]elle:elle	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
@@ -1026,19 +930,22 @@ LEXICON NOUN Vieras_s
 [Str][Ny]<A>ksi:<A>ksi	Liitesana_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]<A>seen:<A>seen	Liitesana_<A>	;
 [Sill][Nm]<A>ihn:<A>ihn	Liitesana_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	<WC>LiOlV_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 
 LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
 <WC>YsJatko	;
+
+LEXICON NOUN YhteisetYksikönPaikallissijat
+[Sine][Ny]ss<A>:ss<A>	<WC>LiOlV_<A>	;
+[Sela][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
+[Sade][Ny]ll<A>:ll<A>	<WC>LiOlV_<A>	;
+[Sabl][Ny]lt<A>:lt<A>	<WC>LiOlV_<A>	;
+[Sall][Ny]lle:lle	<WC>LiOlV_<A>	;
 
 LEXICON NOUN YhteisetMonikonPaikallissijat
 [Str][Nm]iksi:iksi	<WC>LiOlI_<A>	;
