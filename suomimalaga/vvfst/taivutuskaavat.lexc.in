@@ -867,11 +867,9 @@ LEXICON NOUN Tosi
 [Sill][Ny]teen:teen	Liitesana_<A>	;
 [Sill][Nm]siin:siin	Liitesana_<A>	;
 [Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
-[Sade][Nm]sill<A>:sill<A>	Liitesana_<A>	;
 [Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
-[Sabl][Nm]silt<A>:silt<A>	Liitesana_<A>	;
 [Sall][Ny]delle:delle	Liitesana_<A>	;
-[Sall][Nm]sille:sille	Liitesana_<A>	;
+s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]dett<A>:dett<A>	Liitesana_<A>	;
 [Sab][Nm]sitt<A>:sitt<A>	Liitesana_<A>	;
 [Sin][Nm]sin:sin	Liitesana_<A>	;
@@ -902,11 +900,9 @@ LEXICON NOUN Nainen
 [Sill][Ny]seen:seen	Liitesana_<A>	;
 [Sill][Nm]siin:siin	Liitesana_<A>	;
 [Sade][Ny]sell<A>:sell<A>	Liitesana_<A>	;
-[Sade][Nm]sill<A>:sill<A>	Liitesana_<A>	;
 [Sabl][Ny]selt<A>:selt<A>	Liitesana_<A>	;
-[Sabl][Nm]silt<A>:silt<A>	Liitesana_<A>	;
 [Sall][Ny]selle:selle	Liitesana_<A>	;
-[Sall][Nm]sille:sille	Liitesana_<A>	;
+s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]sett<A>:sett<A>	Liitesana_<A>	;
 [Sab][Nm]sitt<A>:sitt<A>	Liitesana_<A>	;
 [Sin][Nm]sin:sin	Liitesana_<A>	;
@@ -939,11 +935,9 @@ LEXICON NOUN Vastaus
 [Sill][Ny]kseen:kseen	Liitesana_<A>	;
 [Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
 [Sade][Ny]ksell<A>:ksell<A>	Liitesana_<A>	;
-[Sade][Nm]ksill<A>:ksill<A>	Liitesana_<A>	;
 [Sabl][Ny]kselt<A>:kselt<A>	Liitesana_<A>	;
-[Sabl][Nm]ksilt<A>:ksilt<A>	Liitesana_<A>	;
 [Sall][Ny]kselle:kselle	Liitesana_<A>	;
-[Sall][Nm]ksille:ksille	Liitesana_<A>	;
+ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ksett<A>:ksett<A>	Liitesana_<A>	;
 [Sab][Nm]ksitt<A>:ksitt<A>	Liitesana_<A>	;
 [Sin][Nm]ksin:ksin	Liitesana_<A>	;
@@ -966,11 +960,9 @@ LEXICON NOUN Kalleus
 [Sill][Ny]teen:teen	Liitesana_<A>	;
 [Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
 [Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
-[Sade][Nm]ksill<A>:ksill<A>	Liitesana_<A>	;
 [Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
-[Sabl][Nm]ksilt<A>:ksilt<A>	Liitesana_<A>	;
 [Sall][Ny]delle:delle	Liitesana_<A>	;
-[Sall][Nm]ksille:ksille	Liitesana_<A>	;
+ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]dett<A>:dett<A>	Liitesana_<A>	;
 [Sab][Nm]ksitt<A>:ksitt<A>	Liitesana_<A>	;
 [Sin][Nm]ksin:ksin	Liitesana_<A>	;
@@ -1031,11 +1023,9 @@ LEXICON NOUN Uistin_m
 [Sill][Ny]een:een	Liitesana_<A>	;
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 [Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
-[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]elle:elle	Liitesana_<A>	;
-[Sall][Nm]ille:ille	Liitesana_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
@@ -1068,11 +1058,9 @@ LEXICON NOUN Onneton_s
 [Sill][Ny]m<A><A>n:m<A><A>n	Liitesana_<A>	;
 [Sill][Nm]miin:miin	Liitesana_<A>	;
 [Sade][Ny]m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
-[Sade][Nm]mill<A>:mill<A>	Liitesana_<A>	;
 [Sabl][Ny]m<A>lt<A>:m<A>lt<A>	Liitesana_<A>	;
-[Sabl][Nm]milt<A>:milt<A>	Liitesana_<A>	;
 [Sall][Ny]m<A>lle:m<A>lle	Liitesana_<A>	;
-[Sall][Nm]mille:mille	Liitesana_<A>	;
+m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
 [Sab][Nm]mitt<A>:mitt<A>	Liitesana_<A>	;
 [Sin][Nm]min:min	Liitesana_<A>	;
@@ -1147,11 +1135,9 @@ LEXICON NOUN Hame_s
 [Sill][Nm]ihn:ihn	Liitesana_<A>	;
 [Sill][Nm]isiin:isiin	Liitesana_<A>	;
 [Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
-[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]elle:elle	<WC>LiOlV_<A>	;
-[Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 [Sab][Nm]itt<A>:itt<A>	Liitesana_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
@@ -1199,9 +1185,9 @@ Liitesana_<A>	;
 <WC>YsJatko	;
 
 LEXICON NOUN YhteisetMonikonPaikallissijat
-[Sade][Nm]ill<A>:ill<A>	Liitesana_<A>	;
-[Sabl][Nm]ilt<A>:ilt<A>	Liitesana_<A>	;
-[Sall][Nm]ille:ille	Liitesana_<A>	;
+[Sade][Nm]ill<A>:ill<A>	<WC>LiOlV_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	<WC>LiOlV_<A>	;
+[Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
 
 LEXICON NOUN LiOlV
 Liitesana_<A>	;

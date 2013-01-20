@@ -596,3 +596,9 @@ valta
 vallalla
 levittämänä
 merkinnäksi
+hameilleen
+hameillesi
+naisiltaan
+naisiltamme
+naisillaan
+naisillansa
