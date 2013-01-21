@@ -637,3 +637,6 @@ edesmennyt
 edesmenneen
 !vastaksssa
 vastaksessa
+vastaus
+vastauksessa
+hyppivämmässä

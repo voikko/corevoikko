@@ -1257,6 +1257,7 @@ LEXICON Sallia_s
 [Tt][Ap][P3][Ny]ii:ii	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
+i:i	Johdin_vA_<A>	;
 
 LEXICON Kanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;
@@ -1404,6 +1405,7 @@ Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
+Johdin_Us_ksen_<A>	;
 
 LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
@@ -1470,6 +1472,9 @@ LEXICON Johdin_ttAvA
 
 LEXICON Johdin_nUt
 [Ll]n:n	LaatusanaKuollut_<A>	;
+
+LEXICON Johdin_vA
+[Ll]v:v	LaatusanaAsema_<A>	;
 
 LEXICON Johdin_mA
 [Ln]m:m	NimisanaAsema_<A>	;
