@@ -741,7 +741,7 @@ LEXICON NOUN Vastaus
 [Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
 [Sill][Ny]kseen:kseen	Liitesana_<A>	;
 [Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
-ks:ks	<WC>YhteisetYksikönPaikallissijat_<A>	;
+kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ksett<A>:ksett<A>	Liitesana_<A>	;
 
@@ -844,6 +844,23 @@ m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 LEXICON NOUN Asiakas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+
+LEXICON NOUN Kuollut
+[Sn][Ny]<U>t:<U>t	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]eet:eet	Liitesana_<A>	;
+[Sg][Ny]een:een	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]eitten:eitten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]<U>tt<A>:<U>tt<A>	Liitesana_<A>	;
+[Sp][Nm]eit<A>:eit<A>	Liitesana_<A>	;
+[Str][Ny]eeksi:eeksi	Liitesana_<A>	;
+[Ses][Ny]een<A>:een<A>	Liitesana_<A>	;
+[Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
+[Sill][Ny]eeseen:eeseen	Liitesana_<A>	;
+[Sill][Nm]eisiin:eisiin	Liitesana_<A>	;
+ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
+e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+[Sab][Ny]eett<A>:eett<A>	Liitesana_<A>	;
 
 LEXICON NOUN Hame
 <WC>Hame_w_<A>	;
@@ -1053,6 +1070,7 @@ LEXICON Punoa_s
 KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 Johdin_ja_kantaja_<A>	;
+Johdin_nUt_<A>	;
 
 LEXICON Aavistaa
 <WC>MuistaaMuistella_w_<A>	;
@@ -1449,6 +1467,9 @@ LEXICON Johdin_mAinen
 
 LEXICON Johdin_ttAvA
 [Ll]tt<A>v:tt<A>v	LaatusanaAsema_<A>	;
+
+LEXICON Johdin_nUt
+[Ll]n:n	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_mA
 [Ln]m:m	NimisanaAsema_<A>	;

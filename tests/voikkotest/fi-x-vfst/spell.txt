@@ -632,3 +632,8 @@ ristiltään
 ristillemme
 ristilleen
 ristillenne
+murskautunut
+edesmennyt
+edesmenneen
+!vastaksssa
+vastaksessa
