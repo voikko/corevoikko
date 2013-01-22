@@ -651,3 +651,5 @@ tutuinta
 tutuimpaa
 korkeudessa
 korkeinta
+paperiksensa
+paperikseen
