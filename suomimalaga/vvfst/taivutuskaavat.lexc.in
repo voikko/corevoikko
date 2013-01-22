@@ -654,6 +654,8 @@ e<A>:e<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]e<A>tt<A>:e<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	e<A>:e<A>	Voittoaste_<A>	;
+?Laatusana	e:e	Yliaste_<A>	;
+?Laatusana	e:e	Johdin_Us_<A>	;
 ?Nimisana	e<A>:e<A>	Johdin_llinen_<A>	;
 
 LEXICON NOUN Suo

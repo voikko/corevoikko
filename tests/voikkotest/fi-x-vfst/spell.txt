@@ -649,3 +649,5 @@ suositummaksi
 suositummiksi
 tutuinta
 tutuimpaa
+korkeudessa
+korkeinta
