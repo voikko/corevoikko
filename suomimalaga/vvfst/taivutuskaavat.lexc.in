@@ -655,6 +655,24 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e<A>:e<A>	Voittoaste_<A>	;
 ?Nimisana	e<A>:e<A>	Johdin_llinen_<A>	;
 
+LEXICON NOUN Suo
+[Sn][Ny]<U><O>:<U><O>	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]<U><O>t:<U><O>t	Liitesana_<A>	;
+[Sg][Ny]<U><O>n:<U><O>n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]<U><O>t<A>:<U><O>t<A>	Liitesana_<A>	;
+[Sp][Nm]<O>it<A>:<O>it<A>	Liitesana_<A>	;
+[Str][Ny]<U><O>ksi:<U><O>ksi	Liitesana_<A>	;
+[Ses][Ny]<U><O>n<A>:<U><O>n<A>	Liitesana_<A>	;
+[Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
+[Sill][Ny]<U><O>h<O>n:<U><O>h<O>n	Liitesana_<A>	;
+[Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
+<U><O>:<U><O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
+[Sab][Ny]<U><O>tt<A>:<U><O>tt<A>	Liitesana_<A>	;
+?Nimisana	<U><O>:<U><O>	Johdin_llinen_<A>	;
+
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
 [Sg][Nm]ten:ten	<WC>NormaaliYsJatko_<A>	;
