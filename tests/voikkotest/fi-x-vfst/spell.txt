@@ -643,3 +643,9 @@ hyppivämmässä
 suo
 suossa
 soissa
+suosituimmaksi
+suosituimmiksi
+suositummaksi
+suositummiksi
+tutuinta
+tutuimpaa

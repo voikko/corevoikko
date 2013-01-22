@@ -123,6 +123,7 @@ LEXICON NOUN Valo_w
 ?Nimisana	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_llinen_<A>	;
 ?Laatusana	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Valo_s
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -1269,6 +1270,7 @@ k:k	<WC>Sallia_s_<A>	;
 
 LEXICON Sallia_w
 i:i	KestamanTekijapaateHeikko_<A>	;
+i:i	Johdin_ttU_<A>	;
 
 LEXICON Sallia_s
 [Tn1]i<A>:i<A>	Liitesana_<A>	;
@@ -1575,6 +1577,8 @@ LEXICON Voittoaste
 [Sg][Nm]mpien:mpien	Liitesana_<A>	;
 [Sp][Ny]mp<A><A>:mp<A><A>	Liitesana_<A>	;
 [Sp][Nm]mpi<A>:mpi<A>	Liitesana_<A>	;
+[Str][Ny]mm<A>ksi:mm<A>ksi	Liitesana_<A>	;
+[Str][Nm]mmiksi:mmiksi	Liitesana_<A>	;
 [Ses][Ny]mp<A>n<A>:mp<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]mpin<A>:mpin<A>	Liitesana_<A>	;
 [Sine][Ny]mm<A>ss<A>:mm<A>ss<A>	Liitesana_<A>	;
@@ -1597,8 +1601,11 @@ LEXICON Yliaste
 [Sn][Nm]imm<A>t:imm<A>t	Liitesana_<A>	;
 [Sg][Ny]imm<A>n:imm<A>n	Liitesana_<A>	;
 [Sg][Nm]impien:impien	Liitesana_<A>	;
+[Sp][Ny]int<A>:int<A>	Liitesana_<A>	;
 [Sp][Ny]imp<A><A>:imp<A><A>	Liitesana_<A>	;
 [Sp][Nm]impi<A>:impi<A>	Liitesana_<A>	;
+[Str][Ny]imm<A>ksi:imm<A>ksi	Liitesana_<A>	;
+[Str][Nm]immiksi:immiksi	Liitesana_<A>	;
 [Ses][Ny]imp<A>n<A>:imp<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]impin<A>:impin<A>	Liitesana_<A>	;
 [Sine][Ny]imm<A>ss<A>:imm<A>ss<A>	Liitesana_<A>	;
