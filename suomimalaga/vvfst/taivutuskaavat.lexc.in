@@ -1064,8 +1064,10 @@ LEXICON Punoa_s
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
+Johdin_nimitapa4_<A>	;
 Johdin_ja_kantaja_<A>	;
 Johdin_nUt_<A>	;
+Johdin_vA_<A>	;
 
 LEXICON Aavistaa
 <WC>MuistaaMuistella_w_<A>	;
@@ -1076,7 +1078,7 @@ LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
 [Ln]<U>:<U>	NimisanaVastaus_<A>	;
-!TODO hidastua
+<U>:<U>	Punoa_<A>	;
 
 LEXICON Heittää
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
@@ -1247,6 +1249,7 @@ k:k	<WC>Sallia_s_<A>	;
 LEXICON Sallia_w
 i:i	KestamanTekijapaateHeikko_<A>	;
 i:i	Johdin_ttU_<A>	;
+i:i	Johdin_ntA_<A>	;
 
 LEXICON Sallia_s
 [Tn1]i<A>:i<A>	Liitesana_<A>	;
@@ -1254,6 +1257,7 @@ LEXICON Sallia_s
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
 i:i	Johdin_vA_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Kanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;

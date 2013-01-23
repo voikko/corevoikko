@@ -653,3 +653,9 @@ korkeudessa
 korkeinta
 paperiksensa
 paperikseen
+laatija
+kelluva
+toiminta
+koneellistua
+punominen
+hidastuminen
