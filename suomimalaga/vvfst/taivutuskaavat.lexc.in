@@ -1074,6 +1074,11 @@ LEXICON Aavistaa
 <WC>MuistaaMuistella_s_<A>	;
 [Ln]<U>:<U>	NimisanaVastaus_<A>	;
 
+LEXICON Alittaa
+<WC>MuistaaMuistella_w_<A>	;
+t:t	<WC>MuistaaMuistella_s_<A>	;
+Johdin_Us_ksen_<A>	;
+
 LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
@@ -1118,12 +1123,14 @@ LEXICON MuistaaMuistella_s
 
 LEXICON Muistaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
+KertomanTekijapaateHeikko_<A>	;
 e:e	TositavanKestamaTaan_<A>	;
 e:e	Johdin_ttAvA_<A>	;
 
 LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
+KertomanTekijapaateVahva_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
