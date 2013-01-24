@@ -144,6 +144,23 @@ def get_diacritics(word):
 				diacritics.append(u"@D.YS_ALKANUT@")
 	return diacritics
 
+def get_info_flags(word):
+	flags = u""
+	for group in word.childNodes:
+		if group.nodeType != Node.ELEMENT_NODE:
+			continue
+		for flag in group.childNodes:
+			if flag.nodeType != Node.ELEMENT_NODE:
+				continue
+			if flag.tagName != "flag":
+				continue
+			flagName = flag.firstChild.wholeText
+			if flagName == u"paikannimi_ulkopaikallissijat":
+				flags = flags + u"[Ipu]"
+			elif flagName == u"paikannimi_sisäpaikallissijat":
+				flags = flags + u"[Ips]"
+	return flags
+
 def get_vfst_class_prefix(vfst_class):
 	if vfst_class == u"[Ln]":
 		return u"Nimisana"
@@ -208,6 +225,8 @@ def handle_word(word):
 	debug_info = u""
 	if OPTIONS["sourceid"]:
 		debug_info = u', sourceid: "%s"' % word.getAttribute("id")
+	
+	infoFlags = get_info_flags(word)
 	
 	# Process all alternative forms
 	singlePartForms = []
@@ -286,8 +305,8 @@ def handle_word(word):
 		if jatko in [u"heittää", u"muistaa"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alku)
 		
-		entry = u'%s[Xp]%s[X]%s%s%s:%s%s %s%s_%s ;' \
-		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class),
+		entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
+		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,
 		        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
 	

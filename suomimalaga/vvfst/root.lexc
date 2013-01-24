@@ -58,6 +58,10 @@ Multichar_Symbols
 [Ap]  ! kestämä (preesens)
 [Ai]  ! kertoma (imperfekti)
 
+! Lisätietoliput
+[Ips] ! paikannimi taipuu sisäpaikallissijoissa
+[Ipu] ! paikannimi taipuu ulkopaikallissijoissa
+
 ! Rajamerkit
 [Bc]  ! arvaamalla tuotetun yhdyssanan osien välinen raja
 [Bh]  ! yhdysmerkki vokaaliehdolla
