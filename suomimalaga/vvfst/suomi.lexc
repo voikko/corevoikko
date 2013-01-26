@@ -25,21 +25,21 @@ LEXICON YhdyssanaJatkuu
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 
 LEXICON Omistusliite_a
-ni:ni	Liitesana_a	;
+[O1y]ni:ni	Liitesana_a	;
 si:si	Liitesana_a	;
 mme:mme	Liitesana_a	;
 nne:nne	Liitesana_a	;
 nsa:nsa	Liitesana_a	;
 
 LEXICON Omistusliite_ä
-ni:ni	Liitesana_a	;
+[O1y]ni:ni	Liitesana_a	;
 si:si	Liitesana_a	;
 mme:mme	Liitesana_a	;
 nne:nne	Liitesana_a	;
 nsä:nsä	Liitesana_ä	;
 
 LEXICON Omistusliite_aä
-ni:ni	Liitesana_a	;
+[O1y]ni:ni	Liitesana_a	;
 si:si	Liitesana_a	;
 mme:mme	Liitesana_a	;
 nne:nne	Liitesana_a	;
@@ -47,7 +47,7 @@ nsa:nsa	Liitesana_aä	;
 nsä:nsä	Liitesana_aä	;
 
 LEXICON Liitesana_a
-kin:kin	Loppu       ;
+[Fkin]kin:kin	Loppu       ;
 kaan:kaan	Loppu ;
 kaanhan:kaanhan	Loppu ;
 ko:ko	Loppu ;
@@ -68,7 +68,7 @@ kaankos:kaankos	Loppu ;
 Loppu      ;
 
 LEXICON Liitesana_ä
-kin:kin        Loppu       ;
+[Fkin]kin:kin        Loppu       ;
 kään:kään	Loppu ;
 käänhän:käänhän	Loppu ;
 kö:kö	Loppu ;
@@ -89,7 +89,7 @@ käänkös:käänkös	Loppu ;
 Loppu      ;
 
 LEXICON Liitesana_aä
-kin:kin        Loppu       ;
+[Fkin]kin:kin        Loppu       ;
 kaan:kaan	Loppu ;
 kään:kään	Loppu ;
 kaanhan:kaanhan	Loppu ;

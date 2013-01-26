@@ -235,3 +235,7 @@ word:anonyymisti
  analysis
   CLASS=laatusana
   SIJAMUOTO=kerrontosti
+word:autonikin
+ analysis
+  FOCUS=kin
+  POSSESSIVE=1s

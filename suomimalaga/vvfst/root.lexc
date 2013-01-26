@@ -42,6 +42,12 @@ Multichar_Symbols
 [Ny]  ! yksikkö
 [Nm]  ! monikko
 
+! Omistusliitteet
+[O1y] ! yksikön 1.
+
+! Liitepartikkelit
+[Fkin] ! -kin
+
 ! Tapaluokat
 [Tn1] ! 1. nimitapa
 [Tn2] ! 2. nimitapa

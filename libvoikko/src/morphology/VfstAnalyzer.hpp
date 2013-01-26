@@ -58,6 +58,8 @@ class VfstAnalyzer : public Analyzer {
 		std::map<std::wstring, std::wstring> numberMap;
 		std::map<std::wstring, std::wstring> personMap;
 		std::map<std::wstring, std::wstring> tenseMap;
+		std::map<std::wstring, std::wstring> focusMap;
+		std::map<std::wstring, std::wstring> possessiveMap;
 		
 		void parseBasicAttributes(Analysis * analysis, const wchar_t * fstOutput, size_t fstLen);
 };

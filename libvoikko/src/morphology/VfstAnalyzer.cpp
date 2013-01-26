@@ -90,6 +90,10 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	
 	tenseMap.insert(std::make_pair(L"p", L"present_simple"));
 	tenseMap.insert(std::make_pair(L"i", L"past_imperfective"));
+	
+	focusMap.insert(std::make_pair(L"kin", L"kin"));
+	
+	possessiveMap.insert(std::make_pair(L"1y", L"1s"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -277,6 +281,12 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'A') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "TENSE", tenseMap);
+					}
+					else if (fstOutput[j + 1] == L'F') {
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "FOCUS", focusMap);
+					}
+					else if (fstOutput[j + 1] == L'O') {
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "POSSESSIVE", possessiveMap);
 					}
 					break;
 				}
