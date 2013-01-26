@@ -96,6 +96,9 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	
 	possessiveMap.insert(std::make_pair(L"1y", L"1s"));
 	possessiveMap.insert(std::make_pair(L"2y", L"2s"));
+	possessiveMap.insert(std::make_pair(L"1m", L"1p"));
+	possessiveMap.insert(std::make_pair(L"2m", L"2p"));
+	possessiveMap.insert(std::make_pair(L"3", L"3"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {

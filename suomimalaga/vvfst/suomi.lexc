@@ -27,24 +27,24 @@ LEXICON YhdyssanaJatkuu
 LEXICON Omistusliite_a
 [O1y]ni:ni	Liitesana_a	;
 [O2y]si:si	Liitesana_a	;
-mme:mme	Liitesana_a	;
-nne:nne	Liitesana_a	;
-nsa:nsa	Liitesana_a	;
+[O1m]mme:mme	Liitesana_a	;
+[O2m]nne:nne	Liitesana_a	;
+[O3]nsa:nsa	Liitesana_a	;
 
 LEXICON Omistusliite_ä
 [O1y]ni:ni	Liitesana_a	;
 [O2y]si:si	Liitesana_a	;
-mme:mme	Liitesana_a	;
-nne:nne	Liitesana_a	;
-nsä:nsä	Liitesana_ä	;
+[O1m]mme:mme	Liitesana_a	;
+[O2m]nne:nne	Liitesana_a	;
+[O3]nsä:nsä	Liitesana_ä	;
 
 LEXICON Omistusliite_aä
 [O1y]ni:ni	Liitesana_a	;
 [O2y]si:si	Liitesana_a	;
-mme:mme	Liitesana_a	;
-nne:nne	Liitesana_a	;
-nsa:nsa	Liitesana_aä	;
-nsä:nsä	Liitesana_aä	;
+[O1m]mme:mme	Liitesana_a	;
+[O2m]nne:nne	Liitesana_a	;
+[O3]nsa:nsa	Liitesana_aä	;
+[O3]nsä:nsä	Liitesana_aä	;
 
 LEXICON Liitesana_a
 [Fkin]kin:kin	Loppu       ;

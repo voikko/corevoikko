@@ -243,3 +243,12 @@ word:talosikaan
  analysis
   FOCUS=kaan
   POSSESSIVE=2s
+word:talomme
+ analysis
+  POSSESSIVE=1p
+word:talonne
+ analysis
+  POSSESSIVE=2p
+word:talonsa
+ analysis
+  POSSESSIVE=3

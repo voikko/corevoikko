@@ -44,9 +44,14 @@ Multichar_Symbols
 
 ! Omistusliitteet
 [O1y] ! yksikön 1.
+[O2y] ! yksikön 2.
+[O1m] ! monikon 1.
+[O2m] ! monikon 2.
+[O3] ! yksikön/monikon 3.
 
 ! Liitepartikkelit
 [Fkin] ! -kin
+[Fkaan] ! -kaan
 
 ! Tapaluokat
 [Tn1] ! 1. nimitapa
