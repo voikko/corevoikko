@@ -1100,11 +1100,10 @@ LEXICON Muistaa
 !TODO muistua
 
 LEXICON Kirjoittaa
-it:it	<WC>Muistaa_w_<A>	;
-itt:itt	<WC>Muistaa_s_<A>	;
+it:it	<WC>MuistaaMuistella_w_<A>	;
+itt:itt	<WC>MuistaaMuistella_s_<A>	;
 it:it	Johdin_Us_ksen_<A>	;
 !TODO kirjoittautua
-!TODO kirjoitella
 
 LEXICON Ammottaa
 t:t	<WC>Muistaa_w_<A>	;
@@ -1115,11 +1114,11 @@ t:t	Johdin_Us_ksen_<A>	;
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
-!TODO muistella
+el:el	<WC>Katsella_w_<A>	;
 
 LEXICON MuistaaMuistella_s
 <WC>Muistaa_s_<A>	;
-!TODO muistella
+el:el	<WC>Katsella_s_<A>	;
 
 LEXICON Muistaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
@@ -1140,26 +1139,30 @@ KertomanTekijapaateVahva_<A>	;
 LEXICON Huutaa
 d:d	<WC>Huutaa_w_<A>	;
 t:t	<WC>Huutaa_s_<A>	;
-!TODO huudella
+del:del	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Juontaa
 n:n	<WC>Huutaa_w_<A>	;
 t:t	<WC>Huutaa_s_<A>	;
+nel:nel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
 !TODO juonto
-!TODO juonnella
 
 LEXICON Pyörtää
 r:r	<WC>Huutaa_w_<A>	;
 t:t	<WC>Huutaa_s_<A>	;
+rel:rel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
 !TODO pyörtö
-!TODO pyörrellä
 
 LEXICON Pahentaa
 n:n	<WC>Huutaa_w_<A>	;
 t:t	<WC>Huutaa_s_<A>	;
-!TODO pahennus
-!TODO pahennella
-!TODO pahentua
+nel:nel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+n:n	Johdin_Us_ksen_<A>	;
+Jakaantua_<A>	;
 
 LEXICON Huutaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
