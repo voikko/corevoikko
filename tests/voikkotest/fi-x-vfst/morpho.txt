@@ -239,3 +239,7 @@ word:autonikin
  analysis
   FOCUS=kin
   POSSESSIVE=1s
+word:talosikaan
+ analysis
+  FOCUS=kaan
+  POSSESSIVE=2s

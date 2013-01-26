@@ -26,21 +26,21 @@ LEXICON YhdyssanaJatkuu
 
 LEXICON Omistusliite_a
 [O1y]ni:ni	Liitesana_a	;
-si:si	Liitesana_a	;
+[O2y]si:si	Liitesana_a	;
 mme:mme	Liitesana_a	;
 nne:nne	Liitesana_a	;
 nsa:nsa	Liitesana_a	;
 
 LEXICON Omistusliite_ä
 [O1y]ni:ni	Liitesana_a	;
-si:si	Liitesana_a	;
+[O2y]si:si	Liitesana_a	;
 mme:mme	Liitesana_a	;
 nne:nne	Liitesana_a	;
 nsä:nsä	Liitesana_ä	;
 
 LEXICON Omistusliite_aä
 [O1y]ni:ni	Liitesana_a	;
-si:si	Liitesana_a	;
+[O2y]si:si	Liitesana_a	;
 mme:mme	Liitesana_a	;
 nne:nne	Liitesana_a	;
 nsa:nsa	Liitesana_aä	;
@@ -48,56 +48,56 @@ nsä:nsä	Liitesana_aä	;
 
 LEXICON Liitesana_a
 [Fkin]kin:kin	Loppu       ;
-kaan:kaan	Loppu ;
-kaanhan:kaanhan	Loppu ;
+[Fkaan]kaan:kaan	Loppu ;
+[Fkaan]kaanhan:kaanhan	Loppu ;
 ko:ko	Loppu ;
-kokaan:kokaan	Loppu ;
+[Fkaan]kokaan:kokaan	Loppu ;
 pa:pa	Loppu ;
 han:han	Loppu ;
 kohan:kohan	Loppu ;
 pahan:pahan	Loppu ;
 kos:kos	Loppu ;
 pas:pas	Loppu ;
-kinko:kinko	Loppu ;
-kaanko:kaanko	Loppu ;
-kinhan:kinhan	Loppu ;
-kinkohan:kinkohan	Loppu ;
-kinkos:kinkos	Loppu ;
-kaankohan:kaankohan	Loppu ;
-kaankos:kaankos	Loppu ;
+[Fkin]kinko:kinko	Loppu ;
+[Fkaan]kaanko:kaanko	Loppu ;
+[Fkin]kinhan:kinhan	Loppu ;
+[Fkin]kinkohan:kinkohan	Loppu ;
+[Fkin]kinkos:kinkos	Loppu ;
+[Fkaan]kaankohan:kaankohan	Loppu ;
+[Fkaan]kaankos:kaankos	Loppu ;
 Loppu      ;
 
 LEXICON Liitesana_ä
 [Fkin]kin:kin        Loppu       ;
-kään:kään	Loppu ;
-käänhän:käänhän	Loppu ;
+[Fkaan]kään:kään	Loppu ;
+[Fkaan]käänhän:käänhän	Loppu ;
 kö:kö	Loppu ;
-kökään:kökään	Loppu ;
+[Fkaan]kökään:kökään	Loppu ;
 pä:pä	Loppu ;
 hän:hän	Loppu ;
 köhän:köhän	Loppu ;
 pähän:pähän	Loppu ;
 kös:kös	Loppu ;
 päs:päs	Loppu ;
-kinkö:kinkö	Loppu ;
-käänkö:käänkö	Loppu ;
-kinhän:kinhän	Loppu ;
-kinköhän:kinköhän	Loppu ;
-kinkös:kinkös	Loppu ;
-käänköhän:käänköhän	Loppu ;
-käänkös:käänkös	Loppu ;
+[Fkin]kinkö:kinkö	Loppu ;
+[Fkaan]käänkö:käänkö	Loppu ;
+[Fkin]kinhän:kinhän	Loppu ;
+[Fkin]kinköhän:kinköhän	Loppu ;
+[Fkin]kinkös:kinkös	Loppu ;
+[Fkaan]käänköhän:käänköhän	Loppu ;
+[Fkaan]käänkös:käänkös	Loppu ;
 Loppu      ;
 
 LEXICON Liitesana_aä
 [Fkin]kin:kin        Loppu       ;
-kaan:kaan	Loppu ;
-kään:kään	Loppu ;
-kaanhan:kaanhan	Loppu ;
-käänhän:käänhän	Loppu ;
+[Fkaan]kaan:kaan	Loppu ;
+[Fkaan]kään:kään	Loppu ;
+[Fkaan]kaanhan:kaanhan	Loppu ;
+[Fkaan]käänhän:käänhän	Loppu ;
 ko:ko	Loppu ;
 kö:kö	Loppu ;
-kokaan:kokaan	Loppu ;
-kökään:kökään	Loppu ;
+[Fkaan]kokaan:kokaan	Loppu ;
+[Fkaan]kökään:kökään	Loppu ;
 pa:pa	Loppu ;
 pä:pä	Loppu ;
 han:han	Loppu ;
@@ -110,20 +110,20 @@ kos:kos	Loppu ;
 kös:kös	Loppu ;
 pas:pas	Loppu ;
 päs:päs	Loppu ;
-kinko:kinko	Loppu ;
-kinkö:kinkö	Loppu ;
-kaanko:kaanko	Loppu ;
-käänkö:käänkö	Loppu ;
-kinhan:kinhan	Loppu ;
-kinhän:kinhän	Loppu ;
-kinkohan:kinkohan	Loppu ;
-kinköhän:kinköhän	Loppu ;
-kinkos:kinkos	Loppu ;
-kinkös:kinkös	Loppu ;
-kaankohan:kaankohan	Loppu ;
-käänköhän:käänköhän	Loppu ;
-kaankos:kaankos	Loppu ;
-käänkös:käänkös	Loppu ;
+[Fkin]kinko:kinko	Loppu ;
+[Fkin]kinkö:kinkö	Loppu ;
+[Fkaan]kaanko:kaanko	Loppu ;
+[Fkaan]käänkö:käänkö	Loppu ;
+[Fkin]kinhan:kinhan	Loppu ;
+[Fkin]kinhän:kinhän	Loppu ;
+[Fkin]kinkohan:kinkohan	Loppu ;
+[Fkin]kinköhän:kinköhän	Loppu ;
+[Fkin]kinkos:kinkos	Loppu ;
+[Fkin]kinkös:kinkös	Loppu ;
+[Fkaan]kaankohan:kaankohan	Loppu ;
+[Fkaan]käänköhän:käänköhän	Loppu ;
+[Fkaan]kaankos:kaankos	Loppu ;
+[Fkaan]käänkös:käänkös	Loppu ;
 Loppu      ;
 
 LEXICON Loppu

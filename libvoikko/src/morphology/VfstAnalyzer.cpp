@@ -92,8 +92,10 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	tenseMap.insert(std::make_pair(L"i", L"past_imperfective"));
 	
 	focusMap.insert(std::make_pair(L"kin", L"kin"));
+	focusMap.insert(std::make_pair(L"kaan", L"kaan"));
 	
 	possessiveMap.insert(std::make_pair(L"1y", L"1s"));
+	possessiveMap.insert(std::make_pair(L"2y", L"2s"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
