@@ -1076,6 +1076,11 @@ LEXICON Alittaa
 t:t	<WC>MuistaaMuistella_s_<A>	;
 Johdin_Us_ksen_<A>	;
 
+LEXICON Astahtaa
+d:d	<WC>MuistaaMuistella_w_<A>	;
+t:t	<WC>MuistaaMuistella_s_<A>	;
+d:d	Johdin_Us_ksen_<A>	;
+
 LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;

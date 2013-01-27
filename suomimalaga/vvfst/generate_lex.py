@@ -281,7 +281,7 @@ def handle_word(word):
 		                 u"kala", u"aitta", u"kappa", u"napa", u"kampa", u"hanka", u"kanta", u"parta", u"raaka", u"valta", \
 		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \
 		                 u"tytär", \
-		                 u"aavistaa", u"muistaa", u"kirjoittaa", u"heittää", u"alittaa", \
+		                 u"aavistaa", u"muistaa", u"kirjoittaa", u"heittää", u"alittaa", u"astahtaa", \
 		                 u"sallia", u"onkia", u"empiä", u"kontia", u"oppia", u"loikkia", u"sättiä", u"laatia", u"kaapia", u"hylkiä", u"poikia", \
 		                 u"kanavoida", \
 		                 u"hidastaa", \
