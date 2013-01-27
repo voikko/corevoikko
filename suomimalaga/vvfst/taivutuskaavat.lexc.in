@@ -1360,56 +1360,56 @@ LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Kammata
-m<A>:m<A>	<WC>Salata_w_<A>	;
-p<A>:p<A>	<WC>Salata_s_<A>	;
+m<A>:m<A>	<WC>SalataSalailla_w_<A>	;
+p<A>:p<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Suunnata
-n<A>:n<A>	<WC>Salata_w_<A>	;
-t<A>:t<A>	<WC>Salata_s_<A>	;
+n<A>:n<A>	<WC>SalataSalailla_w_<A>	;
+t<A>:t<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Hangata
-g<A>:g<A>	<WC>Salata_w_<A>	;
-k<A>:k<A>	<WC>Salata_s_<A>	;
+g<A>:g<A>	<WC>SalataSalailla_w_<A>	;
+k<A>:k<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Kerrata
-r<A>:r<A>	<WC>Salata_w_<A>	;
-t<A>:t<A>	<WC>Salata_s_<A>	;
+r<A>:r<A>	<WC>SalataSalailla_w_<A>	;
+t<A>:t<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Vallata
-l<A>:l<A>	<WC>Salata_w_<A>	;
-t<A>:t<A>	<WC>Salata_s_<A>	;
+l<A>:l<A>	<WC>SalataSalailla_w_<A>	;
+t<A>:t<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Lobata
-<A>:<A>	<WC>Salata_w_<A>	;
-b<A>:b<A>	<WC>Salata_s_<A>	;
+<A>:<A>	<WC>SalataSalailla_w_<A>	;
+b<A>:b<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Kelvata
-v<A>:v<A>	<WC>Salata_w_<A>	;
-p<A>:p<A>	<WC>Salata_s_<A>	;
+v<A>:v<A>	<WC>SalataSalailla_w_<A>	;
+p<A>:p<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Kuitata
-<A>:<A>	<WC>Salata_w_<A>	;
-t<A>:t<A>	<WC>Salata_s_<A>	;
+<A>:<A>	<WC>SalataSalailla_w_<A>	;
+t<A>:t<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Ladata
-d<A>:d<A>	<WC>Salata_w_<A>	;
-t<A>:t<A>	<WC>Salata_s_<A>	;
+d<A>:d<A>	<WC>SalataSalailla_w_<A>	;
+t<A>:t<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Peljätä
-j<A>:j<A>	<WC>Salata_w_<A>	;
-k<A>:k<A>	<WC>Salata_s_<A>	;
+j<A>:j<A>	<WC>SalataSalailla_w_<A>	;
+k<A>:k<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Pakata
-<A>:<A>	<WC>Salata_w_<A>	;
-k<A>:k<A>	<WC>Salata_s_<A>	;
+<A>:<A>	<WC>SalataSalailla_w_<A>	;
+k<A>:k<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Pompata
-<A>:<A>	<WC>Salata_w_<A>	;
-p<A>:p<A>	<WC>Salata_s_<A>	;
+<A>:<A>	<WC>SalataSalailla_w_<A>	;
+p<A>:p<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON Taata
-<A>:<A>	<WC>Salata_w_<A>	;
-k<A>:k<A>	<WC>Salata_s_<A>	;
+<A>:<A>	<WC>SalataSalailla_w_<A>	;
+k<A>:k<A>	<WC>SalataSalailla_s_<A>	;
 
 LEXICON SalataSalailla_s
 Salata_s_<A>	;
