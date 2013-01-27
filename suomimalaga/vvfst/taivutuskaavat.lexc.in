@@ -1145,18 +1145,21 @@ del:del	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Juontaa
-n:n	<WC>Huutaa_w_<A>	;
-t:t	<WC>Huutaa_s_<A>	;
-nel:nel	<WC>Katsella_w_<A>	;
-tel:tel	<WC>Katsella_s_<A>	;
-!TODO juonto
+@C.V_SALLITTU@n:@C.V_SALLITTU@n	<WC>Huutaa_w_<A>	;
+@C.V_SALLITTU@t:@C.V_SALLITTU@t	<WC>Huutaa_s_<A>	;
+@C.V_SALLITTU@nel:@C.V_SALLITTU@nel	<WC>Katsella_w_<A>	;
+@C.V_SALLITTU@tel:@C.V_SALLITTU@tel	<WC>Katsella_s_<A>	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@	NimisanaAnto_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@	NimisanaAnto_a	;
 
 LEXICON Pyörtää
 r:r	<WC>Huutaa_w_<A>	;
 t:t	<WC>Huutaa_s_<A>	;
 rel:rel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
-!TODO pyörtö
+[Ln]t<O>:t<O>	NimisanaValo_s_<A>	;
+[Ln]t<O><O>:t<O><O>	NimisanaValo_sl_<A>	;
+[Ln]r<O>:r<O>	NimisanaValo_w_<A>	;
 
 LEXICON Pahentaa
 n:n	<WC>Huutaa_w_<A>	;

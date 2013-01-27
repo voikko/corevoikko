@@ -714,3 +714,10 @@ kiljahtaa
 kiljahdan
 kiljahti
 kiljahduksen
+!lentö
+lento
+!lennön
+lennon
+pyörrön
+pyörtöä
+pyörtöön
