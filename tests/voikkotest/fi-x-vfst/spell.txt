@@ -683,3 +683,5 @@ paimennus
 paimennuksen
 paimentua
 paimennun
+kokeeton
+kokeelliset

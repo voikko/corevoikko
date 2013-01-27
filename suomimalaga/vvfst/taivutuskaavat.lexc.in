@@ -120,7 +120,6 @@ LEXICON NOUN Valo_w
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]tt<A>:tt<A>	Liitesana_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
-?Nimisana	Johdin_llinen_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -287,7 +286,6 @@ LEXICON NOUN Risti_w
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
-?Nimisana	i:i	Johdin_llinen_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Laatusana	i:i	Kerronto_sti_<A>	;
 
@@ -357,7 +355,6 @@ LEXICON NOUN Lovi_w
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
-?Nimisana	e:e	Johdin_llinen_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Kala
@@ -418,7 +415,6 @@ LEXICON NOUN Kala_w
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
-?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
@@ -522,7 +518,7 @@ LEXICON NOUN Asema_w
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
-?Nimisana	<A>:<A>	Johdin_llinen_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	<A>:<A>	Kerronto_sti_<A>	;
@@ -640,7 +636,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e<A>:e<A>	Voittoaste_<A>	;
 ?Laatusana	e:e	Yliaste_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
-?Nimisana	e<A>:e<A>	Johdin_llinen_<A>	;
+?Nimisana	e<A>:e<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Suo
 [Sn][Ny]<U><O>:<U><O>	<WC>NormaaliYsJatko_<A>	;
@@ -657,7 +653,7 @@ LEXICON NOUN Suo
 <U><O>:<U><O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<U><O>tt<A>:<U><O>tt<A>	Liitesana_<A>	;
-?Nimisana	<U><O>:<U><O>	Johdin_llinen_<A>	;
+?Nimisana	<U><O>:<U><O>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
@@ -724,7 +720,6 @@ s:s	YhdyssanaJatkuu	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 ?Laatusana	se:se	Kerronto_sti_<A>	;
-?Nimisana	se:se	Johdin_llinen_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
 ?Sukunimi	s:s	SukunimiYsJatko	;
@@ -921,6 +916,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Vieras
 <WC>Vieras_w_<A>	;
@@ -1471,9 +1467,6 @@ LEXICON Johdin_Us
 LEXICON Johdin_UUs
 [Ln]<U><U>:<U><U>	NimisanaKalleus_<A>	;
 
-LEXICON Johdin_llinen
-[Ll]lli:lli	LaatusanaNainen_<A>    ;
-
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
 
@@ -1504,6 +1497,7 @@ LEXICON Johdin_tOn
 tt<O>m:tt<O>m	Johdin_UUs_<A>	;
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
+[Ll]lli:lli	LaatusanaNainen_<A>    ;
 
 LEXICON Johdin_ttU
 [Ll]t:t	LaatusanaHattu_<A>	;
