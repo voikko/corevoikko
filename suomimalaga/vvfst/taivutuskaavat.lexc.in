@@ -202,15 +202,18 @@ LEXICON NOUN Paperi_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	Liitesana_<A>	;
+[Sp][Nm]ej<A>:ej<A>	Liitesana_<A>	;
 [Sill][Ny]iin:iin	Liitesana_<A>	;
 [Sill][Nm]eihin:eihin	Liitesana_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+[Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
 
 LEXICON NOUN Paperi_w
 [Sn][Nm]it:it	Liitesana_<A>	;
 [Sg][Ny]in:in	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]eitten:eitten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Nm]eit<A>:eit<A>	Liitesana_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]itt<A>:itt<A>	Liitesana_<A>	;
