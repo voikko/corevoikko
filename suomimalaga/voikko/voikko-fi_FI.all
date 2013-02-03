@@ -3673,6 +3673,12 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- johdin_ittAin;
     $taivutus :=- omistusliite;
   end;
+  
+  if ($tietue.luokka = johdin_vA) then
+    $taivutus :=- johdin_tOn;
+    $taivutus :=- johdin_mAinen;
+    $taivutus :=- johdin_ittAin;
+  end;
 
   if ($tietue.tiedot /= nil and ei_vertm in $tietue.tiedot) then
     $taivutus :=- voittoaste;

@@ -165,6 +165,7 @@ salamoivat
 !salamoidaan
 !salamoija
 sada
+luottavansa
 
 # = erisnimet =
 []
@@ -594,6 +595,8 @@ juhlallisessa
 !uivallinen
 !juoksemata
 huonovointisuus
+!juoksevaton
+!juoksevallinen
 
 # = sijapäätteet =
 []
