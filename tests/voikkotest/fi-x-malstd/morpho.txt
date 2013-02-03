@@ -424,3 +424,9 @@ word:jotta
  expected:1
  analysis
  CLASS=sidesana
+word:montenegrolainen
+ expected:1
+ analysis
+ CLASS=laatusana
+ SIJAMUOTO=nimento
+ STRUCTURE==pppppppppppppppp

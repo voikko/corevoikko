@@ -1984,6 +1984,9 @@ subrule tulostus_luokka($tietue):
     if $allomorfi.luokka = johdin_ittAin then
       return seikkasana;
     end;
+    if $allomorfi.luokka = johdin_lAinen then
+      return laatusana;
+    end;
   end;
   return nil;
 end;
