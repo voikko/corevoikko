@@ -724,3 +724,9 @@ pyörtöön
 papereita
 papereja
 papereina
+kitkeä
+kitken
+hakea
+haen
+koskema
+koskemattoman

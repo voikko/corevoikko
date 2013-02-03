@@ -1220,6 +1220,21 @@ LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
+LEXICON Laskea
+LaskeaLaskeskella_s_<A>	;
+LaskeaLaskeskella_w_<A>	;
+
+LEXICON Hakea
+k:k	LaskeaLaskeskella_s_<A>	;
+LaskeaLaskeskella_w_<A>	;
+
+LEXICON LaskeaLaskeskella_s
+[Tn1]e<A>:e<A>	Liitesana_<A>	;
+e:e	Johdin_mA_<A>	;
+
+LEXICON LaskeaLaskeskella_w
+e:e	KestamanTekijapaateHeikko_<A>	;
+
 LEXICON Sallia
 <WC>Sallia_w_<A>	;
 <WC>Sallia_s_<A>	;
