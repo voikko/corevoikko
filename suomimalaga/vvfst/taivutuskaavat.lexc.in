@@ -1228,6 +1228,22 @@ LEXICON Hakea
 k:k	LaskeaLaskeskella_s_<A>	;
 LaskeaLaskeskella_w_<A>	;
 
+LEXICON Polkea
+k:k	LaskeaLaskeskella_s_<A>	;
+j:j	LaskeaLaskeskella_w_<A>	;
+
+LEXICON Tunkea
+k:k	LaskeaLaskeskella_s_<A>	;
+g:g	LaskeaLaskeskella_w_<A>	;
+
+LEXICON Kutea
+t:t	LaskeaLaskeskella_s_<A>	;
+d:d	LaskeaLaskeskella_w_<A>	;
+
+LEXICON Rypeä
+p:p	LaskeaLaskeskella_s_<A>	;
+v:v	LaskeaLaskeskella_w_<A>	;
+
 LEXICON LaskeaLaskeskella_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
 e:e	Johdin_mA_<A>	;
