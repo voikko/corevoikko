@@ -1185,6 +1185,7 @@ e:e	Johdin_ttU_<A>	;
 LEXICON Huutaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
 LEXICON Kaivaa
@@ -1224,6 +1225,7 @@ e:e	Johdin_ttU_<A>	;
 
 LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
 LEXICON Laskea
@@ -1252,6 +1254,7 @@ v:v	LaskeaLaskeskella_w_<A>	;
 
 LEXICON LaskeaLaskeskella_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
+e:e	Johdin_nimitapa4_<A>	;
 e:e	Johdin_mA_<A>	;
 
 LEXICON LaskeaLaskeskella_w
@@ -1311,6 +1314,7 @@ LEXICON Sallia_s
 [Tt][Ap][P3][Ny]ii:ii	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
+i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 

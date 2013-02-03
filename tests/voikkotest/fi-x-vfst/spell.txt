@@ -741,3 +741,7 @@ kuden
 kylpeä
 kylven
 takkeina
+ryömiminen
+kuteminen
+saattaminen
+juontaminen
