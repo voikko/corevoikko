@@ -385,6 +385,11 @@ LEXICON NOUN Hanka
 k:k	<WC>Kala_s_<A>	;
 g:g	<WC>Kala_w_<A>	;
 
+!TODO i-loppuisille vartaloille erilainen taivutus
+LEXICON NOUN Haka
+k:k	<WC>Kala_s_<A>	;
+<WC>Kala_w_<A>	;
+
 LEXICON NOUN Raaka
 k:k	<WC>Kala_s_<A>	;
 ':'	<WC>Kala_w_<A>	;
