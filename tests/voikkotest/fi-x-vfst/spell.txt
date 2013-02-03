@@ -746,3 +746,10 @@ kuteminen
 saattaminen
 juontaminen
 !valolainen
+sveitsiläinen
+ranskalainen
+italialainen
+kuubalainen
+japanilainen
+afrikkalainen
+tamperelainen

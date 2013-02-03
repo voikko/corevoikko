@@ -208,6 +208,7 @@ LEXICON NOUN Paperi_s
 [Sill][Nm]eihin:eihin	Liitesana_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
 [Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
+?Paikannimi	i:i	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Paperi_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -284,6 +285,7 @@ LEXICON NOUN Risti_s
 [Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Paikannimi	i:i	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Risti_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -419,6 +421,7 @@ LEXICON NOUN Kala_s
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kala_w
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
@@ -504,6 +507,7 @@ LEXICON NOUN Koira_s
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;
@@ -551,6 +555,7 @@ LEXICON NOUN Apila
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Karahka
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
@@ -605,6 +610,7 @@ LEXICON NOUN Solakka_s
 [Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 ! Harhaanjohtava nimi, oikea esimerkkisana "hunaja"
 LEXICON NOUN Apaja
@@ -910,6 +916,7 @@ te:te	<WC>Hame_s_<A>	;
 LEXICON NOUN Hame_w
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Hame_s
 [Sn][Nm]et:et	Liitesana_<A>	;
