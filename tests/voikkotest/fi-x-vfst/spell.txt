@@ -753,3 +753,5 @@ kuubalainen
 japanilainen
 afrikkalainen
 tamperelainen
+merkinnät
+kalat
