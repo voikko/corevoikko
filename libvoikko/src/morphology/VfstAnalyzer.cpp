@@ -304,6 +304,19 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 	}
 }
 
+static void fixStructure(wchar_t * structure, Analysis * analysis) {
+	const wchar_t * className = analysis->getValue("CLASS");
+	if (className) {
+		if (wcscmp(className, L"laatusana") == 0) {
+			for (size_t i = 0; structure[i]; i++) {
+				if (structure[i] == L'i') {
+					structure[i] = L'p';
+				}
+			}
+		}
+	}
+}
+
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 	if (wlen > LIBVOIKKO_MAX_WORD_CHARS) {
 		return new list<Analysis *>();
@@ -325,8 +338,10 @@ list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word, size_t wlen) {
 				continue;
 			}
 			Analysis * analysis = new Analysis();
-			analysis->addAttribute("STRUCTURE", parseStructure(fstOutput, wlen));
+			wchar_t * structure = parseStructure(fstOutput, wlen);
 			parseBasicAttributes(analysis, fstOutput, fstLen);
+			fixStructure(structure, analysis);
+			analysis->addAttribute("STRUCTURE", structure);
 			analysis->addAttribute("FSTOUTPUT", fstOutput);
 			analysisList->push_back(analysis);
 		}

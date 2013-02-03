@@ -252,3 +252,9 @@ word:talonne
 word:talonsa
  analysis
   POSSESSIVE=3
+word:montenegrolainen
+ expected:1
+ analysis
+ CLASS=laatusana
+ SIJAMUOTO=nimento
+ STRUCTURE==pppppppppppppppp

@@ -131,6 +131,7 @@ LEXICON NOUN Valo_s
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Valo_sl
 [Sill][Ny]n:n	Liitesana_<A>	;
@@ -1567,6 +1568,9 @@ tt<O>m:tt<O>m	Johdin_UUs_<A>	;
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli:lli	LaatusanaNainen_<A>    ;
+
+LEXICON Johdin_lAinen
+[Ll]l<A>i:l<A>i	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttU
 [Ll]t:t	LaatusanaHattu_<A>	;
