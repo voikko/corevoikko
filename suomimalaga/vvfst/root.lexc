@@ -101,12 +101,12 @@ Multichar_Symbols
 
 LEXICON Root
 Joukahainen	;
--[Bc]:-	Joukahainen_ee	;
--[Bc]:-	Joukahainen_em	;
--[Bc]:-	Joukahainen_ep	;
--[Bc]:-	Joukahainen_es	;
--[Bc]:-	Joukahainen_n	;
--[Bc]:-	Joukahainen_nl	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ee	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_em	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ep	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_es	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_n	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_nl	;
 
 LEXICON Joukahainen
 Joukahainen_ee	;

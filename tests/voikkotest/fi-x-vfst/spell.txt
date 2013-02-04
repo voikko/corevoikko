@@ -762,3 +762,4 @@ karahkaton
 savotaton
 hunajaton
 !-hyppiä
+!-vuo
