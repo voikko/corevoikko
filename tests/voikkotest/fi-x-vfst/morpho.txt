@@ -258,3 +258,8 @@ word:montenegrolainen
  CLASS=laatusana
  SIJAMUOTO=nimento
  STRUCTURE==pppppppppppppppp
+word:-legenda
+ expected:1
+ analysis
+ CLASS=nimisana
+ STRUCTURE=-=ppppppp

@@ -183,6 +183,9 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 				charsMissing -= (charsSeen - charsFromDefault);
 				structure[structurePos++] = L'-';
 			}
+			if (structurePos == 1) {
+				structure[0] = L'-';
+			}
 			charsSeen = 0;
 			charsFromDefault = 0;
 			charsMissing--;

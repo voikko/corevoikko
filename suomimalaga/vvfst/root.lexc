@@ -101,6 +101,12 @@ Multichar_Symbols
 
 LEXICON Root
 Joukahainen	;
+-[Bc]:-	Joukahainen_ee	;
+-[Bc]:-	Joukahainen_em	;
+-[Bc]:-	Joukahainen_ep	;
+-[Bc]:-	Joukahainen_es	;
+-[Bc]:-	Joukahainen_n	;
+-[Bc]:-	Joukahainen_nl	;
 
 LEXICON Joukahainen
 Joukahainen_ee	;
