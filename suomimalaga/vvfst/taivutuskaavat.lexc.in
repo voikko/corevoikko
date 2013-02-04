@@ -132,6 +132,7 @@ LEXICON NOUN Valo_s
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Valo_sl
 [Sill][Ny]n:n	Liitesana_<A>	;
@@ -556,6 +557,7 @@ LEXICON NOUN Apila
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Karahka
@@ -576,6 +578,7 @@ LEXICON NOUN Karahka
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Solakka
 k:k	<WC>Solakka_s_<A>	;
@@ -600,6 +603,7 @@ LEXICON NOUN Solakka_w
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Solakka_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
@@ -632,6 +636,7 @@ LEXICON NOUN Apaja
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Korkea
 [Sn][Ny]e<A>:e<A>	<WC>NormaaliYsJatko_<A>	;
@@ -1108,15 +1113,15 @@ LEXICON Hidastaa
 LEXICON Heittää
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
 @C.V_SALLITTU@t:@C.V_SALLITTU@t	<WC>MuistaaMuistella_s_<A>	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@:@R.V_SALLITTU.E@@C.V_SALLITTU@	NimisanaLiitto_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@:@R.V_SALLITTU.T@@C.V_SALLITTU@	NimisanaLiitto_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiitto_a	;
 !TODO heitäntä
 
 LEXICON Muistaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_s_<A>	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@ö:@R.V_SALLITTU.E@@C.V_SALLITTU@ö	NimisanaValo_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@o:@R.V_SALLITTU.T@@C.V_SALLITTU@o	NimisanaValo_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ö:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ö	NimisanaValo_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o	NimisanaValo_a	;
 !TODO muistua
 
 LEXICON Kirjoittaa

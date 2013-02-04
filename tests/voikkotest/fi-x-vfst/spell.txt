@@ -755,3 +755,9 @@ afrikkalainen
 tamperelainen
 merkinnät
 kalat
+kiekonheittoon
+kiloinen
+historiallinen
+karahkaton
+savotaton
+hunajaton
