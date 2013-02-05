@@ -144,6 +144,8 @@ clean:
 	rm -f $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
+	rm -f $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma*
+	rm -f $(VVFST_BUILDDIR)/generate_sukija.py.stamp
 
 # Rules for creating the source distribution
 
@@ -249,3 +251,31 @@ TAGS: $(patsubst %,vocabulary/%,$(VOIKKO_COPY_FROM_VOCABULARY)) \
 	etags --lang=none --output=$@ \
 		--regex='/[ \t]*\[.*\<perusmuoto:[ \t]*"\([^"]+\)"/\1/' \
 		-- $^
+
+
+# Generate a big Voikko dictionary to use in Sukija (according to Harri Pitkänen).
+#
+voikko-sukija:
+	make voikko VANHAT_MUODOT=yes SUKIJAN_MUODOT=yes \
+		GENLEX_OPTS='--style=dialect,foreign,incorrect --min-frequency=10 \
+		--extra-usage=sukija,it,medicine,science,education,orgname' \
+		EXTRA_LEX="vocabulary/erikoisalat/atk-lyhenteet.lex \
+		vocabulary/erikoisalat/science-misc.lex" VOIKKO_DEBUG=yes
+
+
+# Rules for creating vvfst morphology for Sukija indexer. See file
+# $(VVFST_BUILDDIR)/generate_sukija.py for details.
+#
+vvfst-sukija: $(VVFST_BUILDDIR)/all-sukija.att
+
+$(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp
+	$(PYTHON) vvfst/generate_sukija.py --destdir=$(VVFST_BUILDDIR)
+
+$(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma
+	foma -f $(VVFST_BUILDDIR)/main-sukija.foma | grep -v "defined but not used" 2>&1
+
+$(VVFST_BUILDDIR)/main-sukija.foma: $(VVFST_BUILDDIR)/main.foma
+	sed -e 's,/all,/all-sukija,'  < $^ > $@
+
+$(VVFST_BUILDDIR)/generate_sukija.py.stamp: $(VVFST_BUILDDIR)/generate_sukija.py
+	touch $@

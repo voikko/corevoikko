@@ -40,6 +40,9 @@ Supported Make targets
   Builds the binary files needed by text indexer Sukija.
 - voikko
   Builds the binary files needed by libvoikko.
+- voikko-sukija
+  Builds the binary files needed by libvoikko with a big
+  dictionary that can be used by Sukija.
 - voikko-install DESTDIR=/usr/lib/voikko
   Installs the binary files needed by libvoikko to the directory
   specified by DESTDIR. DESTDIR is optional and defaults to
@@ -118,8 +121,6 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2, or (at your option)
 any later version. See file COPYING for details.
 
-Copyright (©) 2006 - 2011 Hannu Väisänen (Email: Firstname.Lastname@uef.fi
-but replace ä's with a's) and 2006 - 2012 Harri Pitkänen (hatapitk@iki.fi).
-Contributors listed in file CONTRIBUTORS hold copyrights to the
-vocabulary data.
-
+Copyright (©) 2006 - 2011 Hannu Väisänen (Email: Hannu.Vaisanen@uef.fi)
+and 2006 - 2012 Harri Pitkänen (hatapitk@iki.fi). Contributors listed
+in file CONTRIBUTORS hold copyrights to the vocabulary data.
