@@ -968,6 +968,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sab][Ny]ett<A>:ett<A>	Liitesana_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Vieras
 <WC>Vieras_w_<A>	;
@@ -993,6 +994,8 @@ LEXICON NOUN Vieras_s
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
