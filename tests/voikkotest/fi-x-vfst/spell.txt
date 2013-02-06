@@ -769,3 +769,10 @@ miestä
 kuumeinen
 vieraaton
 nopeavierainen
+kuristettuna
+saavuttuna
+ryvettynä
+kanavoituna
+ommeltuna
+ommellussa
+ommeltuun

@@ -1108,6 +1108,7 @@ k<U>:k<U>	<WC>Punoa_s_<A>	;
 LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
+Johdin_ttU_<A>	;
 
 LEXICON Punoa_s
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -1181,6 +1182,7 @@ LEXICON Muistaa_w
 KertomanTekijapaateHeikko_<A>	;
 e:e	TositavanKestamaTaan_<A>	;
 e:e	Johdin_ttAvA_<A>	;
+e:e	Johdin_ttU_<A>	;
 
 LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -1304,6 +1306,7 @@ e:e	Johdin_mA_<A>	;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestamanTekijapaateHeikko_<A>	;
+e:e	Johdin_ttU_<A>	;
 
 LEXICON Sallia
 <WC>Sallia_w_<A>	;
@@ -1376,6 +1379,7 @@ i:i	Johdin_nimitapa3_<A>	;
 i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_ja_myyjä_<A>	;
 i:i	Johdin_nti_<A>	;
+i:i	Johdin_tU_<A>	;
 
 LEXICON Katsella
 <WC>Katsella_w_<A>	;
@@ -1416,6 +1420,9 @@ tel:tel	<WC>Katsella_s_<A>	;
 LEXICON Katsella_w
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
+[Ll]t<U>:t<U>	LaatusanaValo_s_<A>	;
+[Ll]t<U><U>:t<U><U>	LaatusanaValo_sl_<A>	;
+[Ll]l<U>:l<U>	LaatusanaValo_w_<A>	;
 
 LEXICON Katsella_s
 e:e	KestamanTekijapaateHeikko_<A>	;
@@ -1618,6 +1625,9 @@ LEXICON Johdin_lAinen
 
 LEXICON Johdin_ttU
 [Ll]t:t	LaatusanaHattu_<A>	;
+
+LEXICON Johdin_tU
+[Ll]:	LaatusanaLaatu_<A>	;
 
 LEXICON Kerronto_sti
 [Ssti]sti:sti	Liitesana_<A>	;
