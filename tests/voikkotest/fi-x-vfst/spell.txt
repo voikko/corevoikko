@@ -763,3 +763,6 @@ savotaton
 hunajaton
 !-hyppiä
 !-vuo
+miehinensä
+miehien
+miestä

@@ -235,5 +235,3 @@ outfile.write (u"[Lnl][Xp]nuori[X]nuorra:nuorra # ;\n")         # Nuorena.
 outfile.write (u"[Ln][Xp]pieni[X]piennä:piennä # ;\n")          # Pienenä.
 outfile.write (u"[Ln][Xp]sankari[X]sankarten:sankarten # ;\n")  # Sankarien.
 outfile.write (u"[Ln][Xp]venäjä[X]venättä:venättä # ;\n")       # Venäjää.
-
-outfile.close()
