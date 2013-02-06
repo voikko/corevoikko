@@ -859,6 +859,34 @@ LEXICON NOUN Asiakas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 
+LEXICON NOUN Mies
+s:s   <WC>Mies_s_<A>  ;
+he:he <WC>Mies_he_<A> ;
+h:h   <WC>Mies_h_<A>  ;
+
+LEXICON NOUN Mies_s
+[Sn][Ny]:         <WC>NormaaliYsJatko_<A> ;
+[Sp][Ny]t<A>:t<A> <WC>LiOlV_<A> ;
+[Sg][Nm]ten:ten   <WC>NormaaliYsJatko_<A> ;
+
+LEXICON NOUN Mies_he
+Omistusliite_<A> ;
+[Sn][Ny]n:n          Liitesana_<A> ;
+[Se][Ny]n<A>:n<A>    <WC>LiOlV_<A> ;
+[Sab][Ny]tt<A>:tt<A> <WC>LiOlV_<A> ;
+[Sg][Nm]t:t          Liitesana_<A> ;
+<WC>YhteisetYksikönPaikallissijat_<A> ;
+Johdin_tOn_<A> ;
+
+LEXICON NOUN Mies_h
+[Sill][Ny]een:een     Liitesana_<A> ;
+[Sill][Nm]iin:iin     Liitesana_<A> ;
+[Sg][Nm]ien:ien       <WC>NormaaliYsJatko_<A> ;
+[Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
+[Ses][Nm]in<A>:in<A>  <WC>LiOlV_<A> ;
+[Sko][Nm]ine:ine      Omistusliite_<A> ;
+<WC>YhteisetMonikonPaikallissijat_<A> ;
+
 LEXICON NOUN Kuollut
 [Sn][Ny]<U>t:<U>t	<WC>NormaaliYsJatko_<A>	;
 [Sn][Nm]eet:eet	Liitesana_<A>	;
