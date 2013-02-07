@@ -289,7 +289,6 @@ LEXICON NOUN Risti_w
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
-?Laatusana	i:i	Kerronto_sti_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -424,7 +423,6 @@ LEXICON NOUN Kala_w
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
-?Laatusana	<A>:<A>	Kerronto_sti_<A>	;
 
 LEXICON NOUN Koira
 <WC>Koira_s_<A>	;
@@ -526,7 +524,6 @@ LEXICON NOUN Asema_w
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
-?Laatusana	<A>:<A>	Kerronto_sti_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 
 LEXICON NOUN Apila
@@ -721,7 +718,6 @@ s:s	YhdyssanaJatkuu	;
 ?Laatusana	se:se	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
-?Laatusana	se:se	Kerronto_sti_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	se:se	Johdin_tOn_<A>	;
 ?Sukunimi	s:s	SukunimiYsJatko	;
@@ -981,6 +977,7 @@ LEXICON NOUN YhteisetYksikönPaikallissijat
 [Sabl][Ny]lt<A>:lt<A>	<WC>LiOlV_<A>	;
 [Sall][Ny]lle:lle	<WC>LiOlV_<A>	;
 [Sab][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
+?Laatusana	Kerronto_sti_<A>	;
 
 LEXICON NOUN YhteisetMonikonPaikallissijat
 [Str][Nm]iksi:iksi	<WC>LiOlI_<A>	;

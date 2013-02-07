@@ -777,3 +777,4 @@ ommeltuna
 ommellussa
 ommeltuun
 vieraattaan
+kolkosti
