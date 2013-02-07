@@ -766,3 +766,13 @@ hunajaton
 miehinensä
 miehien
 miestä
+kuumeinen
+vieraaton
+nopeavierainen
+kuristettuna
+saavuttuna
+ryvettynä
+kanavoituna
+ommeltuna
+ommellussa
+ommeltuun

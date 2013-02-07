@@ -20,8 +20,8 @@ LEXICON EtunimiYsJatko
 -[Bc]:-	Joukahainen_ee	;
 
 LEXICON YhdyssanaJatkuu
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;
--[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_n	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
+-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
 [Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 
 LEXICON Omistusliite_a
