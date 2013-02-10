@@ -778,3 +778,11 @@ ommellussa
 ommeltuun
 vieraattaan
 kolkosti
+kirpakampi
+kirpakin
+avoimemmalla
+avoimimmalla
+terveemmällä
+terveimmällä
+kateemmalla
+kateimmalla

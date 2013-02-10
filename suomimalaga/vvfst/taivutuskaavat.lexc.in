@@ -587,6 +587,8 @@ LEXICON NOUN Solakka_w
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Solakka_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatko_<A>	;
@@ -802,6 +804,8 @@ LEXICON NOUN Uistin_m
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Alaston
 <O>:<O>	<WC>Onneton_w_<A>	;
@@ -936,6 +940,8 @@ LEXICON NOUN Hame_s
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
