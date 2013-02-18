@@ -3,7 +3,7 @@ info: Voikko-Dictionary-Format: 2
 ## Begin-Malaga-Configuration
 info: Lex-Version: 3
 info: Language-Code: fi_FI
-info: Copyright: 2006-2012 Hannu Väisänen, Harri Pitkänen, Teemu Likonen and others
+info: Copyright: 2006-2013 Hannu Väisänen, Harri Pitkänen, Teemu Likonen and others
 info: License: GPL version 2 or later
 info: Language-Variant: SM_VOIKKO_VARIANT
 info: Description: SM_VOIKKO_DESCRIPTION
