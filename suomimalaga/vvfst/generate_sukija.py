@@ -55,7 +55,6 @@ for (name, value) in opts:
 
 infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
 outfile = codecs.open (options["destdir"] + u"/all-sukija.lexc", 'w', 'UTF-8')
-#outfile = sys.stdout
 
 C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
 V = u"[aeiouüyäö]"               # Vovels.
@@ -74,7 +73,7 @@ def translate (s, fr, to):
 
 
 def makeRePattern (wordClass, word):
-    u = u"^\[%s\]\[Xp\].*%s\[X\]" % (wordClass, word)
+    u = u"^\\[%s\\]\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
     u = u.replace ('C', C)
     u = u.replace ('V', V)
     return u
@@ -124,6 +123,20 @@ def generate6 (line, re, string1, string2, oldContinuation, newContinuation):
         zreplace (line, translate(string1,u"AO",u"äö"), translate(string2,u"AO",u"äö"), oldContinuation, newContinuation)
 
 
+def generate7 (line, re, string1, string2a, string2b, continue1, continue2):
+    if (re.match(line)):
+        s = line.replace (continue1, continue2)
+        outfile.write (replace (s, string1, string2a))
+        outfile.write (replace (s, string1, string2b))
+
+
+def generate8 (line, re, string1, string2a, string2b, continue1, continue2, re_x):
+    if (re.match(line) and not re_x.match(line)):
+        s = line.replace (continue1, continue2)
+        outfile.write (replace (s, string1, string2a))
+        outfile.write (replace (s, string1, string2b))
+
+
 re_adi = makeRe (u"Ln", u".Cadi")
 re_odi = makeRe (u"Ln", u".Codi")
 re_ofi = makeRe (u"Ln", u".Cofi")
@@ -138,11 +151,14 @@ re_grafinen = makeRe (u"Ll", u"grafinen")
 re_logia    = makeRe (u"Ln", u"logia")
 re_loginen  = makeRe (u"Ll", u"loginen")
 
-re_OittAA = makeRe2 (u"Lt", u".COittAA")
-re_OttAA  = makeRe2 (u"Lt", u".COttAA")
+re_OittAA   = makeRe2 (u"Lt", u".COittAA")
+re_OttAA    = makeRe2 (u"Lt", u".COttAA")
 
 re_oitin = makeRe (u"Ln", u".Coitin")
-
+re_aatio = makeRe (u"Ln", u".Caatio")
+re_uutio = makeRe (u"Ln", u".Cuutio")
+re_uusio = makeRe (u"Ln", u".Cuusio")
+re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
 
 # Words to be excluded.
 #
@@ -152,10 +168,74 @@ re_omi_x = re.compile (u"\\A\[Ln\]\[Xp\](binomi|bromi|dibromi|genomi|kromi|trino
 re_oni_x = re.compile (u"\\A\[Ln\]\[Xp\](ikoni)\[X\]")
 re_ori_x = re.compile (u"\\A\[Ln\]\[Xp\](hevosori|jalostusori|reettori|siitosori)\[X\]")
 
-re_logia_x  = re.compile (u"\\A\[Ln\]\[Xp\](genealogia|trilogia)\[X\]")
-
+re_logia_x = re.compile (u"\\A\[Ln\]\[Xp\](genealogia|trilogia)\[X\]")
+re_uusio_x = re.compile (u"\\A\[Ln\]\[Xp\](diffuusio)\[X\]")
+re_tio_x   = re.compile (u"\\A\[Ln\]\[Xp\](aitio)\[X\]")
 
 Joukahainen_t = re.compile (u"\\AJoukahainen_t.*;")
+
+
+# Old spellings and common spelling errors of words
+# that do not conform to any pattern.
+#
+spelling_word_list = [
+    (u"alkovi",      (u"alkov",      u"alkoov")),
+    (u"emali",       (u"emal",       u"emalj")),
+    (u"hevonen",     (u"hevo",       u"hevoi")),
+    (u"humaaninen",  (u"humaani",    u"humani")),
+    (u"kamari",      (u"kamar",      u"kammar")),
+    (u"kirjoitelma", (u"kirjoitelm", u"kirjotelm")),
+    (u"kraatteri",   (u"kraatter",   u"kraater")),
+    (u"kulttuuri",   (u"kulttuur",   u"kultuur")),
+    (u"liipaisin",   (u"liipaisi",   u"liipasi")),
+    (u"pioni",       (u"pion",       u"pioon")),
+    (u"poliisi",     (u"poliis",     u"polis")),
+    (u"poliitikko",  (u"poliitik",   u"politik")),
+    (u"politiikka",  (u"politiik",   u"politik")),
+    (u"preettori",   (u"preettor",   u"preetor")),
+    (u"reettori",    (u"reettor",    u"reetor")),
+    (u"senaatti",    (u"senaat",     u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a",
+                      u"senaat",     u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a")),
+    (u"serafi",      (u"seraf",      u"seraaf")),
+    (u"teatteri",    (u"teatter",    u"teaatter")),
+    (u"tällainen",   (u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"))
+]
+
+
+def convert_to_dictionary (word_list):
+    l0 = map (lambda x : x[0], word_list)
+    l1 = map (lambda x : x[1], word_list)
+    return dict (zip (l0, l1))
+
+
+sukija_dictionary = convert_to_dictionary (spelling_word_list)
+
+
+# Extract base form from a line.
+#
+base_form_re = re.compile (u"\\[Xp\\]([^[]+)\\[X\\]", re.UNICODE)
+
+def generate_word (line, sukija_dictionary):
+    r = base_form_re.search (line)
+    if r:
+        try:
+            g = sukija_dictionary[r.group(1)]
+            if len (g) == 2:
+                replace_and_write (line, g[0], g[1])
+            elif len(g) == 4:
+                s = line.replace (g[2], g[3])
+                outfile.write (replace (s, g[0], g[1]))
+            elif len(g) == 8:
+                s = line.replace (g[2], g[3])
+                outfile.write (replace (s, g[0], g[1]))
+                s = line.replace (g[6], g[7])
+                outfile.write (replace (s, g[4], g[5]))
+            else:
+                sys.stderr.write (line)
+                sys.stderr.write ("Wrong format in sukija_dictionary.\n")
+                sys.exit (1)
+        except KeyError:  # It is not an error if a word is not in sukija_dictionary.
+            pass
 
 
 # Copy Voikko vocabulary.
@@ -202,24 +282,14 @@ while True:
         generate6 (line, re_OttAA, u"O",  u"Oi",  u"Ammottaa", u"Ammottaa")
 
         generate4 (line, re_oitin, u"oit", u"ot");  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
+
+        generate7 (line, re_aatio, u"aatio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a")
+        generate7 (line, re_uutio, u"uutio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a")
+        generate8 (line, re_uusio, u"uusio", u"usion",  u"usioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_uusio_x)
+        generate8 (line, re_tio,   u"tio",   u"tsion",  u"tsioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_tio_x)
+
+        generate_word (line, sukija_dictionary)
 infile.close()
-
-
-# Generate words that do not conform to any pattern.
-#
-outfile.write (u"[Ln][Xp]alkovi[X]alkoov:alkoov NimisanaRisti_a ;\n")
-outfile.write (u"[Ln][Xp]hevonen[X]hevoi:hevoi NimisanaNainen_a ;\n")
-outfile.write (u"[Ln][Xp]kamari[X]kammar:kammar NimisanaPaperi_a ;\n")
-outfile.write (u"[Ln][Xp]kirjoitelma[X]kirjotelm:kirjotelm NimisanaAsema_a ;\n")
-outfile.write (u"[Ln][Xp]kulttuuri[X]kultuur@P.INEN_SALLITTU.ON@:kultuur@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;\n")
-outfile.write (u"[Ln][Xp]liipaisin[X]liipasi:liipasi NimisanaUistin_a ;\n")
-outfile.write (u"[Ln][Xp]pioni[X]pioon:pioon NimisanaPaperi_a ;\n")
-outfile.write (u"[Ln][Xp]poliisi[X]polis:polis NimisanaPaperi_a ;\n")
-outfile.write (u"[Ln][Xp]poliitikko[X]politik:politik NimisanaLaatikko_a ;\n")
-outfile.write (u"[Ln][Xp]preettori[X]preetor:preetor NimisanaRisti_a ;\n")
-outfile.write (u"[Ln][Xp]reettori[X]reetor:reetor NimisanaRisti_a ;\n")
-outfile.write (u"[Ln][Xp]serafi[X]seraaf:seraaf NimisanaRisti_a ;\n")
-outfile.write (u"[Ln][Xp]teatteri[X]teaatter:teaatter NimisanaPaperi_a ;\n")
 
 
 # Generate old inflected forms.
