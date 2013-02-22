@@ -953,9 +953,18 @@ LEXICON NOUN Harras
 r<A>:r<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
 
+LEXICON NOUN Vilkas
+<A>:<A>	<WC>Vieras_w_<A>	;
+k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<A>:k<A>	Johdin_Us_<A>	;
+
+LEXICON NOUN Avokas
+<WC>Iäkäs_<A>	;
+
 LEXICON NOUN Iäkäs
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<U>:k<U>	Johdin_Us_<A>	;
 
 LEXICON NOUN Vieras_w
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;

@@ -790,3 +790,8 @@ karjankasvatus
 !karjankasvattaa
 iäkäs
 iäkkään
+iäkkyys
+kirkas
+kirkkaus
+avokas
+avokkaan
