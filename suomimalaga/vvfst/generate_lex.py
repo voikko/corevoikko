@@ -276,7 +276,7 @@ def handle_word(word):
 		                 u"alaston", u"onneton", \
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \
 		                 u"vastaus", u"kalleus", \
-		                 u"iäkäs", u"vilkas", u"avokas", u"ahdas", u"allas", u"hammas", u"kinnas", u"varas", u"saapas", \
+		                 u"iäkäs", u"vilkas", u"avokas", u"ahdas", u"allas", u"hammas", u"kinnas", u"varas", u"saapas", u"ratas", u"varvas", u"kangas", \
 		                 u"risti", u"takki", u"tatti", u"tunti", u"keppi", u"vati", u"pelti", u"renki", u"hupi", \
 		                 u"kalsium", u"nainen", u"vieras", u"asiakas", u"harras", \
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \

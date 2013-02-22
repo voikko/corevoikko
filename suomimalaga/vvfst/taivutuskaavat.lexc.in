@@ -974,6 +974,19 @@ LEXICON NOUN Saapas
 p<A>:p<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	p<A>:p<A>	Johdin_Us_<A>	;
 
+LEXICON NOUN Ratas
+<A>:<A>	<WC>Vieras_w_<A>	;
+t<A>:t<A>	<WC>Vieras_s_<A>	;
+?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
+
+LEXICON NOUN Varvas
+v<A>:v<A>	<WC>Vieras_w_<A>	;
+p<A>:p<A>	<WC>Vieras_s_<A>	;
+
+LEXICON NOUN Kangas
+g<A>:g<A>	<WC>Vieras_w_<A>	;
+k<A>:k<A>	<WC>Vieras_s_<A>	;
+
 LEXICON NOUN Ahdas
 d<A>:d<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;

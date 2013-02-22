@@ -809,3 +809,10 @@ varkaan
 valpas
 valppaan
 valppaus
+rietas
+riettaan
+riettaus
+varvas
+varpailla
+kangas
+kankaan
