@@ -795,3 +795,10 @@ kirkas
 kirkkaus
 avokas
 avokkaan
+ahdas
+ahtaassa
+ahtaudessa
+allas
+altaassa
+hammas
+hampaassa
