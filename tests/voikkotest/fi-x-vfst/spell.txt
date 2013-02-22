@@ -786,3 +786,5 @@ terveemmällä
 terveimmällä
 kateemmalla
 kateimmalla
+karjankasvatus
+!karjankasvattaa

@@ -1556,7 +1556,7 @@ LEXICON Johdin_nimitapa4
 mi:mi	NimisanaNainen_<A>	;
 
 LEXICON Johdin_Us_ksen
-[Ln]<U>:<U>	NimisanaVastaus_<A>	;
+[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
 
 LEXICON Johdin_Us
 [Ln]<U>:<U>	NimisanaKalleus_<A>	;
