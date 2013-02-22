@@ -802,3 +802,10 @@ allas
 altaassa
 hammas
 hampaassa
+kinnas
+kintaan
+varas
+varkaan
+valpas
+valppaan
+valppaus
