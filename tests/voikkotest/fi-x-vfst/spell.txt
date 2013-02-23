@@ -816,3 +816,10 @@ varvas
 varpailla
 kangas
 kankaan
+kielellinen
+kielellisesti
+vaikuttava
+nauravassa
+naurama
+laskeva
+sallima

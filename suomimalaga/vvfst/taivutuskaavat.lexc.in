@@ -676,6 +676,7 @@ LEXICON NOUN Lohi
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Susi
 <WC>Tosi_<A>	;
@@ -1221,6 +1222,7 @@ KertomanTekijapaateVahva_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
+<A>:<A>	Johdin_vA_<A>	;
 
 LEXICON Huutaa
 d:d	<WC>Huutaa_w_<A>	;
@@ -1302,6 +1304,8 @@ LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
+<A>:<A>	Johdin_vA_<A>	;
+<A>:<A>	Johdin_mA_<A>	;
 
 LEXICON Laskea
 LaskeaLaskeskella_s_<A>	;
@@ -1331,6 +1335,7 @@ LEXICON LaskeaLaskeskella_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 e:e	Johdin_mA_<A>	;
+e:e	Johdin_vA_<A>	;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestamanTekijapaateHeikko_<A>	;
@@ -1392,6 +1397,7 @@ LEXICON Sallia_s
 Ehtotapa_<A>	;
 i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_vA_<A>	;
+i:i	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Kanavoida
