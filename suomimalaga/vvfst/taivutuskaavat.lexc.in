@@ -1197,7 +1197,7 @@ d:d	Johdin_Us_ksen_<A>	;
 LEXICON Hidastaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
-[Ln]<U>:<U>	NimisanaVastaus_<A>	;
+Johdin_Us_ksen_<A>	;
 <U>:<U>	Punoa_<A>	;
 
 LEXICON Heittää
@@ -1654,10 +1654,10 @@ LEXICON Johdin_Us_ksen
 [Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
 
 LEXICON Johdin_Us
-[Ln]<U>:<U>	NimisanaKalleus_<A>	;
+[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKalleus_<A>	;
 
 LEXICON Johdin_UUs
-[Ln]<U><U>:<U><U>	NimisanaKalleus_<A>	;
+[Ln]<U><U>@C.JOHDETTAVA_NIMISANAKSI@:<U><U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKalleus_<A>	;
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
