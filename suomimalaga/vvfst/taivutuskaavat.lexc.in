@@ -643,6 +643,33 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
 ?Nimisana	e<A>:e<A>	Johdin_tOn_<A>	;
 
+LEXICON NOUN Maa
+<WC>Maa_s_<A>	;
+<A>:<A>	<WC>Maa_l_<A>	;
+[Sill][Ny]<A>h<A>n:<A>h<A>n	Liitesana_<A>	;
+
+LEXICON NOUN Puu
+<WC>Maa_s_<A>	;
+<U>:<U>	<WC>Maa_l_<A>	;
+[Sill][Ny]<U>h<U>n:<U>h<U>n	Liitesana_<A>	;
+
+LEXICON NOUN Maa_s
+[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sill][Nm]ihin:ihin	Liitesana_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+
+LEXICON NOUN Maa_l
+[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
+
 LEXICON NOUN Suo
 [Sn][Ny]<U><O>:<U><O>	<WC>NormaaliYsJatko_<A>	;
 [Sn][Nm]<U><O>t:<U><O>t	Liitesana_<A>	;

@@ -834,3 +834,7 @@ kantajia
 kantajaa
 juoksu-
 kehuma
+maa
+mailla
+puu
+puilla
