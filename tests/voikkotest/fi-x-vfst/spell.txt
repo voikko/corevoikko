@@ -832,3 +832,5 @@ juhlijoita
 juhlijaa
 kantajia
 kantajaa
+juoksu-
+kehuma
