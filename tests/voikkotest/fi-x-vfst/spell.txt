@@ -828,3 +828,7 @@ huudetaan
 huudettiin
 temmotaan
 temmottiin
+juhlijoita
+juhlijaa
+kantajia
+kantajaa
