@@ -839,3 +839,6 @@ mailla
 puu
 puilla
 aakkosjärjestys
+aaltoilevia
+katselevalla
+salaavalla

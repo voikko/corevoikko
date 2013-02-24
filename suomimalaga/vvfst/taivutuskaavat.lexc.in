@@ -1497,6 +1497,7 @@ KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
+e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 [Ln]<U>:<U>	NimisanaArvelu_<A>	;
 
@@ -1508,6 +1509,7 @@ KertomanTekijapaateVahva_<A>	;
 [Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
+e:e	Johdin_vA_<A>	;
 
 LEXICON Valita
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
@@ -1595,6 +1597,7 @@ s:s	KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
+<A>:<A>	Johdin_vA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 Johdin_Us_ksen_<A>	;
 
