@@ -1138,6 +1138,7 @@ LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
 Johdin_ttU_<A>	;
+Tositapa4Tt_<A>	;
 
 LEXICON Punoa_s
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -1209,7 +1210,7 @@ el:el	<WC>Katsella_s_<A>	;
 LEXICON Muistaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
-e:e	TositavanKestamaTaan_<A>	;
+e:e	Tositapa4Tt_<A>	;
 e:e	Johdin_ttAvA_<A>	;
 e:e	Johdin_ttU_<A>	;
 
@@ -1258,6 +1259,7 @@ Jakaantua_<A>	;
 LEXICON Huutaa_w
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
 e:e	Johdin_ttU_<A>	;
+e:e	Tositapa4Tt_<A>	;
 
 LEXICON Huutaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -1588,8 +1590,15 @@ LEXICON KertomanTekijapaateVahva
 [Tt][Ai][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][Ai][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 
+LEXICON Tositapa4Tt
+TositavanKestamaTaan_<A>	;
+TositavanKertomaTtiin_<A>	;
+
 LEXICON TositavanKestamaTaan
-[Tt][Ai][P4]t<A><A>n:t<A><A>n	Liitesana_<A>	;
+[Tt][Ap][P4]t<A><A>n:t<A><A>n	Liitesana_<A>	;
+
+LEXICON TositavanKertomaTtiin
+[Tt][Ai][P4]ttiin:ttiin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
 [Te][P1][Ny]isin:isin	Liitesana_<A>	;

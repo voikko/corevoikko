@@ -263,3 +263,9 @@ word:-legenda
  analysis
  CLASS=nimisana
  STRUCTURE=-=ppppppp
+word:jäähdytetään
+ analysis
+ TENSE=present_simple
+word:jäähdytettiin
+ analysis
+ TENSE=past_imperfective

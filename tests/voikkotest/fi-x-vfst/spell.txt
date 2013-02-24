@@ -823,3 +823,8 @@ nauravassa
 naurama
 laskeva
 sallima
+jäähdytettiin
+huudetaan
+huudettiin
+temmotaan
+temmottiin
