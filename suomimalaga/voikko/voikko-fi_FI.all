@@ -4580,7 +4580,8 @@ end;
 
 
 subrule lovi ($tietue, $vahva_aste, $heikko_aste):
-  return kumpi ($tietue, $vahva_aste, $heikko_aste, "e");
+  return kumpi ($tietue, $vahva_aste, $heikko_aste, "e") +
+         taivutuskaava($tietue, [johdin_mAinen: $vahva_aste + "i"]);
 end;
 
 subrule piki ($tietue,

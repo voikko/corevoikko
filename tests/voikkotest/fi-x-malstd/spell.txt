@@ -555,6 +555,7 @@ märänlaiselleko
 !suvealainen
 talomainen # Oikea mainen-johdos
 !siistimainen # Väärä mainen-johdos
+torvimainen
 otetut
 nuolaistusti
 järjettömästi
