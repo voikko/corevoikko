@@ -1222,6 +1222,7 @@ LEXICON Punoa_s
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
+Johdin_nimitapa2_<A>	;
 Johdin_nimitapa4_<A>	;
 Johdin_ja_kantaja_<A>	;
 Johdin_nUt_<A>	;
@@ -1296,6 +1297,7 @@ LEXICON Muistaa_s
 [Tt][Ap][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 KertomanTekijapaateVahva_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
@@ -1341,6 +1343,7 @@ e:e	Tositapa4Tt_<A>	;
 LEXICON Huutaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 
@@ -1559,6 +1562,7 @@ KertomanTekijapaateVahva_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Valita
 [Tn1]t<A>:t<A>	Liitesana_<A>	;

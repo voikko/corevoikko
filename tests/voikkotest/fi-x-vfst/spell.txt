@@ -849,3 +849,7 @@ meri
 merellä
 pataa
 padalla
+palloilija
+korostuessa
+muistaessa
+huutaessa
