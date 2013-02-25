@@ -272,6 +272,7 @@ def handle_word(word):
 		                 u"kuollut", \
 		                 u"suo", \
 		                 u"maa", u"puu", \
+		                 u"vapaa", u"tienoo", u"leikkuu", \
 				 u"mies", \
 		                 u"hame", u"enne", u"helle", u"kierre", u"lumme", u"lahje", u"lape", u"sade", u"taive", u"tarvike", u"vaate", \
 		                 u"alaston", u"onneton", \

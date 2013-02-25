@@ -842,3 +842,6 @@ aakkosjärjestys
 aaltoilevia
 katselevalla
 salaavalla
+kotiinpaluuta
+harmaa
+palttoossa

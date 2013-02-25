@@ -643,6 +643,35 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
 ?Nimisana	e<A>:e<A>	Johdin_tOn_<A>	;
 
+LEXICON NOUN Vapaa
+<WC>Vapaa_s_<A>	;
+<A>:<A>	<WC>Vapaa_l_<A>	;
+
+LEXICON NOUN Tienoo
+<WC>Vapaa_s_<A>	;
+<O>:<O>	<WC>Vapaa_l_<A>	;
+
+LEXICON NOUN Leikkuu
+<WC>Vapaa_s_<A>	;
+<U>:<U>	<WC>Vapaa_l_<A>	;
+
+LEXICON NOUN Vapaa_s
+[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sill][Nm]ihin:ihin	Liitesana_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+
+LEXICON NOUN Vapaa_l
+[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
+
 LEXICON NOUN Maa
 <WC>Maa_s_<A>	;
 <A>:<A>	<WC>Maa_l_<A>	;
