@@ -325,6 +325,14 @@ LEXICON NOUN Lampi
 p:p	<WC>Lovi_s_<A>	;
 m:m	<WC>Lovi_w_<A>	;
 
+LEXICON NOUN Siipi
+p:p	<WC>Lovi_s_<A>	;
+v:v	<WC>Lovi_w_<A>	;
+
+LEXICON NOUN Lehti
+t:t	<WC>Lovi_s_<A>	;
+d:d	<WC>Lovi_w_<A>	;
+
 LEXICON NOUN Sampi
 p:p	<WC>Lovi_s_<A>	;
 m:m	<WC>Lovi_w_<A>	;

@@ -281,7 +281,7 @@ def handle_word(word):
 		                 u"iäkäs", u"vilkas", u"avokas", u"ahdas", u"allas", u"hammas", u"kinnas", u"varas", u"saapas", u"ratas", u"varvas", u"kangas", \
 		                 u"risti", u"takki", u"tatti", u"tunti", u"keppi", u"vati", u"pelti", u"renki", u"hupi", \
 		                 u"kalsium", u"nainen", u"vieras", u"asiakas", u"harras", \
-		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", \
+		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", u"siipi", u"lehti", \
 		                 u"kala", u"aitta", u"kappa", u"napa", u"kampa", u"hanka", u"kanta", u"parta", u"raaka", u"valta", u"haka", u"pata", \
 		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \
 		                 u"tytär", \

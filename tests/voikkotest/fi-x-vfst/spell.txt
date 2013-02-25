@@ -853,3 +853,7 @@ palloilija
 korostuessa
 muistaessa
 huutaessa
+siipi
+siiven
+lehti
+lehden
