@@ -847,3 +847,5 @@ harmaa
 palttoossa
 meri
 merellä
+pataa
+padalla
