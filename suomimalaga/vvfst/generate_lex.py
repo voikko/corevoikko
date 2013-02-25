@@ -265,7 +265,7 @@ def handle_word(word):
 		                 u"apila", \
 		                 u"korkea", \
 		                 u"apaja", \
-		                 u"lohi", u"tuohi", \
+		                 u"lohi", u"tuohi", u"meri", \
 		                 u"susi", \
 		                 u"karahka", \
 		                 u"solakka", u"ulappa", u"savotta", \

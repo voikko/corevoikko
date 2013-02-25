@@ -715,6 +715,22 @@ LEXICON NOUN Suo
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<U><O>:<U><O>	Johdin_tOn_<A>	;
 
+LEXICON NOUN Meri
+[Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ten:ten	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+[Sp][Nm]i<A>:i<A>	Liitesana_<A>	;
+[Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sill][Ny]een:een	Liitesana_<A>	;
+[Sill][Nm]iin:iin	Liitesana_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	e	Johdin_tOn_<A>	;
+
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
 [Sg][Nm]ten:ten	<WC>NormaaliYsJatko_<A>	;
