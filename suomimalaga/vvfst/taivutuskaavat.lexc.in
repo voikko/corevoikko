@@ -493,6 +493,7 @@ LEXICON NOUN Koira_w_yksikko
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 
 LEXICON NOUN Koira_w_monikko
@@ -524,7 +525,8 @@ LEXICON NOUN Asema_s
 [Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	Liitesana_<A>	;
-[Sill][Ny]iin:iin	Liitesana_<A>	;
+[Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
+[Sill][Nm]iin:iin	Liitesana_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 
