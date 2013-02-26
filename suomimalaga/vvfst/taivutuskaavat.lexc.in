@@ -743,7 +743,7 @@ LEXICON NOUN Meri
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
-?Nimisana	e	Johdin_tOn_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
@@ -762,11 +762,57 @@ LEXICON NOUN Lohi
 [Sill][Nm]iin:iin	Liitesana_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
-?Nimisana	e	Johdin_tOn_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
+
+LEXICON NOUN Lumi
+[Sn][Ny]mi:mi	<WC>NormaaliYsJatko_<A>	;
+[Sn][Nm]met:met	Liitesana_<A>	;
+[Sg][Ny]men:men	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]mien:mien	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]nt<A>:nt<A>	Liitesana_<A>	;
+[Sp][Nm]mi<A>:mi<A>	Liitesana_<A>	;
+[Ses][Ny]men<A>:men<A>	Liitesana_<A>	;
+[Ses][Nm]min<A>:min<A>	Liitesana_<A>	;
+[Sill][Ny]meen:meen	Liitesana_<A>	;
+[Sill][Nm]miin:miin	Liitesana_<A>	;
+me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
+m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	me:me	Johdin_tOn_<A>	;
 
 LEXICON NOUN Susi
 <WC>Tosi_<A>	;
 [Sg][Nm]tten:tten	<WC>NormaaliYsJatko_<A>	;
+
+LEXICON NOUN Hirsi
+<WC>Kansi_t_<A>	;
+r:r	<WC>Kansi_l_<A>	;
+?Nimisana	s:s	Johdin_inen_vain_lipulla_<A>	;
+
+LEXICON NOUN Kansi
+<WC>Kansi_t_<A>	;
+n:n	<WC>Kansi_l_<A>	;
+?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
+
+LEXICON NOUN Jälsi
+<WC>Kansi_t_<A>	;
+l:l	<WC>Kansi_l_<A>	;
+?Nimisana	s:s	Johdin_inen_vain_lipulla_<A>	;
+
+LEXICON NOUN Kansi_t
+[Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]sien:isen	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
+[Sp][Nm]si<A>:si<A>	Liitesana_<A>	;
+[Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
+[Sill][Ny]teen:teen	Liitesana_<A>	;
+[Sill][Nm]siin:siin	Liitesana_<A>	;
+s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
+
+LEXICON NOUN Kansi_l
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+[Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN Tosi
 [Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
