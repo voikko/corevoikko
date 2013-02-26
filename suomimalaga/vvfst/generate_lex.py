@@ -159,6 +159,8 @@ def get_info_flags(word):
 				flags = flags + u"[Ipu]"
 			elif flagName == u"paikannimi_sisäpaikallissijat":
 				flags = flags + u"[Ips]"
+			elif flagName == u"foreignloan":
+				flags = flags + u"[Isf]"
 	return flags
 
 def get_vfst_class_prefix(vfst_class):

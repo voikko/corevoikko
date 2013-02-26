@@ -220,11 +220,15 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 	wchar_t lastChar = L'\0';
 	bool boundaryPassed = false;
 	bool hyphenPresent = false;
+	bool hyphenUnconditionallyAllowed = false;
 	for (size_t i = 0; i < len; i++) {
 		if (fstOutput[i] == L'[') {
 			if (i + 2 >= len) {
 				// something wrong with the pattern
 				return false;
+			}
+			if (i + 3 < len && wcsncmp(fstOutput + i + 1, L"Isf", 3) == 0) {
+				hyphenUnconditionallyAllowed = true;
 			}
 			if (fstOutput[i + 1] == L'X') {
 				while (i + 3 < len) {
@@ -251,13 +255,16 @@ static bool isValidAnalysis(const wchar_t * fstOutput, size_t len) {
 		}
 		else {
 			if (boundaryPassed) {
-				lastChar = SimpleChar::lower(lastChar);
-				wchar_t nextChar = SimpleChar::lower(fstOutput[i]);
-				bool hyphenRequired = ((lastChar == nextChar) && wcschr(VOIKKO_VOWELS, lastChar));
-				if (hyphenRequired != hyphenPresent) {
-					return false;
+				if (!hyphenUnconditionallyAllowed) {
+					lastChar = SimpleChar::lower(lastChar);
+					wchar_t nextChar = SimpleChar::lower(fstOutput[i]);
+					bool hyphenRequired = ((lastChar == nextChar) && wcschr(VOIKKO_VOWELS, lastChar));
+					if (hyphenRequired != hyphenPresent) {
+						return false;
+					}
 				}
 				boundaryPassed = false;
+				hyphenUnconditionallyAllowed = false;
 			}
 			lastChar = fstOutput[i];
 		}
