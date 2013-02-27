@@ -884,3 +884,9 @@ demonisoituu
 virsien
 henkilöllisyys
 henkisyys
+hiihtää
+!hiihtö
+hiihto
+hiihdon
+hiihdän
+!hiihoto

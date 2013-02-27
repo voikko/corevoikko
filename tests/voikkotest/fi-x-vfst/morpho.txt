@@ -261,11 +261,15 @@ word:montenegrolainen
 word:-legenda
  expected:1
  analysis
- CLASS=nimisana
- STRUCTURE=-=ppppppp
+  CLASS=nimisana
+  STRUCTURE=-=ppppppp
 word:jäähdytetään
  analysis
- TENSE=present_simple
+  TENSE=present_simple
 word:jäähdytettiin
  analysis
- TENSE=past_imperfective
+  TENSE=past_imperfective
+word:muisto
+ expected:1
+ analysis
+  CLASS=nimisana
