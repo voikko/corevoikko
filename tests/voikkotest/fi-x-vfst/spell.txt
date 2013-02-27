@@ -881,3 +881,6 @@ imuun
 inertiasuunnistus
 infektoituneen
 demonisoituu
+virsien
+henkilöllisyys
+henkisyys
