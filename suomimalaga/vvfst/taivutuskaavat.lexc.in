@@ -1,6 +1,6 @@
 LEXICON NOUN Valo
 <WC>Valo_s_<A>	;
-<O>:<O>	<WC>Valo_sl_<A>	;
+[[L]]:[[L]]	<WC>Valo_sl_<A>	;
 <WC>Valo_w_<A>	;
 
 LEXICON NOUN Ruoko
@@ -1270,6 +1270,7 @@ LEXICON Punoa_w
 KestamanTekijapaateHeikko_<A>	;
 KertomanTekijapaateHeikko_<A>	;
 Johdin_ttU_<A>	;
+Johdin_ntA_<A>	;
 Tositapa4Tt_<A>	;
 
 LEXICON Punoa_s
@@ -1288,7 +1289,7 @@ Johdin_mA_<A>	;
 LEXICON Aavistaa
 <WC>MuistaaMuistella_w_<A>	;
 <WC>MuistaaMuistella_s_<A>	;
-[Ln]<U>:<U>	NimisanaVastaus_<A>	;
+Johdin_Us_ksen_<A>	;
 
 LEXICON Alittaa
 <WC>MuistaaMuistella_w_<A>	;
@@ -1552,6 +1553,7 @@ i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_ja_myyjä_<A>	;
 i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_<A>	;
+i:i	Kaatua_<A>	;
 
 LEXICON Katsella
 <WC>Katsella_w_<A>	;
@@ -1811,6 +1813,7 @@ LEXICON Johdin_ttU
 
 LEXICON Johdin_tU
 [Ll]:	LaatusanaLaatu_<A>	;
+[Ll]t<U>:t<U>	Johdin_nUt_<A>	;
 
 LEXICON Kerronto_sti
 [Ssti]sti:sti	Liitesana_<A>	;

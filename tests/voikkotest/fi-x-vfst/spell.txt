@@ -875,3 +875,9 @@ jälttä
 nopeakantinen
 nopeahirsinen
 nopeajälsinen
+torjunta
+imuun
+!imuon
+inertiasuunnistus
+infektoituneen
+demonisoituu
