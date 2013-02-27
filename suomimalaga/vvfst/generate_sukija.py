@@ -60,18 +60,6 @@ C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
 V = u"[aeiouüyäö]"               # Vovels.
 
 
-# Translate characters. For example,
-# translate (u"AObcd", u"AO", u"äö") returns u"äöbcd"
-#
-def translate (s, fr, to):
-    p = list (s)
-    for i in range(len(s)):
-        for j in range(len(fr)):
-            if (s[i] == fr[j]):
-                p[i] = to[j]
-    return ''.join (p)
-
-
 def makeRePattern (wordClass, word):
     u = u"^\\[%s\\]\\[Xp\\].*%s\\[X\\]" % (wordClass, word)
     u = u.replace ('C', C)
@@ -81,13 +69,6 @@ def makeRePattern (wordClass, word):
 
 def makeRe (wordClass, word):
     return re.compile (makeRePattern (wordClass, word), re.UNICODE)
-
-
-def makeRe2 (wordClass, word):
-    u = makeRePattern (wordClass, word)
-    v = translate (u, u"AO", u"ao")
-    w = translate (u, u"AO", u"äö")
-    return [re.compile (v, re.UNICODE), re.compile (w, re.UNICODE)]
 
 
 def replace (s, old, new):
@@ -100,41 +81,6 @@ def replace (s, old, new):
 def replace_and_write (line, string1, string2):
     s = replace (line, string1, string2)
     outfile.write (s)
-
-
-def generate4 (line, re, string1, string2):
-    if (re.match(line)):
-        replace_and_write (line, string1, string2)
-
-
-def generate5 (line, re, string1, string2, re_x):
-    if (re.match(line) and not re_x.match(line)):
-        replace_and_write (line, string1, string2)
-
-
-def zreplace (line, u1, u2, v1, v2):
-    replace_and_write (line.replace (v1, v2), u1, u2)
-
-
-def generate6 (line, re, string1, string2, oldContinuation, newContinuation):
-    if (re[0].match(line) and (line.find (oldContinuation) >= 0)):
-        zreplace (line, translate(string1,u"AO",u"ao"), translate(string2,u"AO",u"ao"), oldContinuation, newContinuation)
-    elif (re[1].match(line) and (line.find (oldContinuation) >= 0)):
-        zreplace (line, translate(string1,u"AO",u"äö"), translate(string2,u"AO",u"äö"), oldContinuation, newContinuation)
-
-
-def generate7 (line, re, string1, string2a, string2b, continue1, continue2):
-    if (re.match(line)):
-        s = line.replace (continue1, continue2)
-        outfile.write (replace (s, string1, string2a))
-        outfile.write (replace (s, string1, string2b))
-
-
-def generate8 (line, re, string1, string2a, string2b, continue1, continue2, re_x):
-    if (re.match(line) and not re_x.match(line)):
-        s = line.replace (continue1, continue2)
-        outfile.write (replace (s, string1, string2a))
-        outfile.write (replace (s, string1, string2b))
 
 
 re_adi = makeRe (u"Ln", u".Cadi")
@@ -151,8 +97,11 @@ re_grafinen = makeRe (u"Ll", u"grafinen")
 re_logia    = makeRe (u"Ln", u"logia")
 re_loginen  = makeRe (u"Ll", u"loginen")
 
-re_OittAA   = makeRe2 (u"Lt", u".COittAA")
-re_OttAA    = makeRe2 (u"Lt", u".COttAA")
+re_oittaa1 = makeRe (u"Lt", u".Coittaa")
+re_oittaa2 = makeRe (u"Lt", u".Cöittää")
+
+re_ottaa1 = makeRe (u"Lt", u".Cottaa")
+re_ottaa2 = makeRe (u"Lt", u".Cöttää")
 
 re_oitin = makeRe (u"Ln", u".Coitin")
 re_aatio = makeRe (u"Ln", u".Caatio")
@@ -175,6 +124,48 @@ re_tio_x   = re.compile (u"\\A\[Ln\]\[Xp\](aitio)\[X\]")
 Joukahainen_t = re.compile (u"\\AJoukahainen_t.*;")
 
 
+spelling_pattern_list = [
+  (re_adi, u"ad", u"aad", re_adi_x),  # Serenadi  => senenaadi.
+  (re_odi, u"od", u"ood"),            # Aplodi    => aploodi.
+  (re_ofi, u"of", u"oof"),            # Filosofi  => filosoofi.
+  (re_ogi, u"og", u"oog", re_ogi_x),  # Arkeologi => arkeoloogi.
+  (re_oli, u"ol", u"ool"),            # Symboli   => symbooli.
+  (re_omi, u"om", u"oom", re_omi_x),  # Atomi     => atoomi.
+  (re_oni, u"on", u"oon", re_oni_x),  # Telefoni  => telefooni.
+  (re_ori, u"or", u"oor", re_ori_x),  # Pehtori   => pehtoori.
+  (re_grafia,   u"grafi",  u"graafi"),
+  (re_grafinen, u"grafi",  u"graafi"),
+  (re_logia,    u"logi",   u"loogi", re_logia_x),
+  (re_loginen,  u"logi",   u"loogi"),
+  (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
+  (re_aatio, u"aatio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
+  (re_uutio, u"uutio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
+  (re_uusio, u"uusio", u"usion",  u"usioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_uusio_x),
+  (re_tio,   u"tio",   u"tsion",  u"tsioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_tio_x),
+  (re_oittaa1, u"o",   u"ot",  u"Kirjoittaa", u"Alittaa"),
+  (re_oittaa2, u"ö",   u"öt",  u"Kirjoittaa", u"Alittaa"),
+  (re_oittaa1, u"oit", u"ot",  u"Alittaa",    u"Alittaa"),
+  (re_oittaa2, u"öit", u"öt",  u"Alittaa",    u"Alittaa"),
+  (re_ottaa1,  u"ot",  u"oit", u"Alittaa",    u"Alittaa"),
+  (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
+  (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
+  (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa")
+]
+
+
+def generate_from_pattern (line, pattern_list):
+    for x in pattern_list:
+        if x[0].match(line):
+            if (len(x) == 3) or (len(x) == 4 and not x[3].match(line)):
+                replace_and_write (line, x[1], x[2])
+            elif (len(x) == 5) and (line.find (x[3]) >= 0):
+                replace_and_write (line.replace(x[3], x[4]), x[1], x[2])
+            elif (len(x) == 6) or (len(x) == 7 and not x[6].match(line)):
+                s = line.replace (x[4], x[5])
+                outfile.write (replace (s, x[1], x[2]))
+                outfile.write (replace (s, x[1], x[3]))
+
+
 # Old spellings and common spelling errors of words
 # that do not conform to any pattern.
 #
@@ -188,6 +179,7 @@ spelling_word_list = [
     (u"kraatteri",   (u"kraatter",   u"kraater")),
     (u"kulttuuri",   (u"kulttuur",   u"kultuur")),
     (u"liipaisin",   (u"liipaisi",   u"liipasi")),
+    (u"modeemi",     (u"modeem",     u"modem")),
     (u"pioni",       (u"pion",       u"pioon")),
     (u"poliisi",     (u"poliis",     u"polis")),
     (u"poliitikko",  (u"poliitik",   u"politik")),
@@ -261,32 +253,8 @@ while True:
         line = infile.readline()
         if line == u"":
             break;
-        generate5 (line, re_adi, u"ad", u"aad", re_adi_x)  # Serenadi  => senenaadi.
-        generate4 (line, re_odi, u"od", u"ood")            # Aplodi    => aploodi.
-        generate4 (line, re_ofi, u"of", u"oof")            # Filosofi  => filosoofi.
-        generate5 (line, re_ogi, u"og", u"oog", re_ogi_x)  # Arkeologi => arkeoloogi.
-        generate4 (line, re_oli, u"ol", u"ool")            # Symboli   => symbooli.
-        generate5 (line, re_omi, u"om", u"oom", re_omi_x)  # Atomi     => atoomi.
-        generate5 (line, re_oni, u"on", u"oon", re_oni_x)  # Telefoni  => telefooni.
-        generate5 (line, re_ori, u"or", u"oor", re_ori_x)  # Pehtori   => pehtoori.
 
-        generate4 (line, re_grafia,   u"grafi",  u"graafi")
-        generate4 (line, re_grafinen, u"grafi",  u"graafi")
-        generate5 (line, re_logia,    u"logi",   u"loogi", re_logia_x)
-        generate4 (line, re_loginen,  u"logi",   u"loogi")
-
-        generate6 (line, re_OittAA, u"O",   u"Ot", u"Kirjoittaa", u"Alittaa")
-        generate6 (line, re_OittAA, u"Oit", u"Ot", u"Alittaa",    u"Alittaa")
-
-        generate6 (line, re_OttAA, u"Ot", u"Oit", u"Alittaa",  u"Alittaa")
-        generate6 (line, re_OttAA, u"O",  u"Oi",  u"Ammottaa", u"Ammottaa")
-
-        generate4 (line, re_oitin, u"oit", u"ot");  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
-
-        generate7 (line, re_aatio, u"aatio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a")
-        generate7 (line, re_uutio, u"uutio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a")
-        generate8 (line, re_uusio, u"uusio", u"usion",  u"usioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_uusio_x)
-        generate8 (line, re_tio,   u"tio",   u"tsion",  u"tsioon",  u"NimisanaAutio_a", u"NimisanaPaperi_a", re_tio_x)
+        generate_from_pattern (line, spelling_pattern_list)
 
         generate_word (line, sukija_dictionary)
 infile.close()
