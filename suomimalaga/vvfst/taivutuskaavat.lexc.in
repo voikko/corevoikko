@@ -859,7 +859,7 @@ LEXICON NOUN Nainen
 [Sill][Nm]siin:siin	Liitesana_<A>	;
 se:se	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
-s:s	YhdyssanaJatkuu	;
+s:s	<WC>YsJatko	;
 ?Laatusana	se:se	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
