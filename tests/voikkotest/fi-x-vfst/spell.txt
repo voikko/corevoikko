@@ -903,3 +903,13 @@ emäntäni
 mereni
 tuoheni
 lumeni
+suteni
+hirteni
+tyttäreni
+naiseni
+vastaukseni
+taikuuteni
+kaatimeni
+ylösnousseeni
+tarvikkeeni
+hampaani

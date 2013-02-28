@@ -806,6 +806,7 @@ l:l	<WC>Kansi_l_<A>	;
 
 LEXICON NOUN Kansi_t
 [Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sg][Nm]sien:sien	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	Liitesana_<A>	;
 [Sp][Nm]si<A>:si<A>	Liitesana_<A>	;
@@ -822,6 +823,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN Tosi
 [Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sn][Nm]det:det	Liitesana_<A>	;
 [Sg][Ny]den:den	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]sien:isen	<WC>NormaaliYsJatko_<A>	;
@@ -836,6 +838,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Tytär
 [Sn][Ny]<A>r:<A>r	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]t<A>re:t<A>re	Omistusliite_<A>	;
 [Sn][Nm]t<A>ret:t<A>ret	Liitesana_<A>	;
 [Sine][Ny]t<A>ress<A>:t<A>ress<A>	Liitesana_<A>	;
 [Sela][Ny]t<A>rest<A>:t<A>rest<A>	Liitesana_<A>	;
@@ -843,6 +846,7 @@ LEXICON NOUN Tytär
 
 LEXICON NOUN Nainen
 [Sn][Ny]nen:nen	Liitesana_<A>	;
+?NotLaatusana	[Sn][Ny]se:se	Omistusliite_<A>	;
 [Sn][Nm]set:set	Liitesana_<A>	;
 [Sg][Ny]sen:sen	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]sten:sten	<WC>NormaaliYsJatko_<A>	;
@@ -866,6 +870,7 @@ s:s	YhdyssanaJatkuu	;
 
 LEXICON NOUN Vastaus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]kse:kse	Omistusliite_<A>	;
 [Sn][Nm]kset:kset	Liitesana_<A>	;
 [Sg][Ny]ksen:ksen	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ksien:ksien	<WC>NormaaliYsJatko_<A>	;
@@ -880,6 +885,7 @@ ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Kalleus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sn][Nm]det:det	Liitesana_<A>	;
 [Sg][Ny]den:den	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ksien:ksien	<WC>NormaaliYsJatko_<A>	;
@@ -934,6 +940,7 @@ LEXICON NOUN Uistin_n
 [Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
 
 LEXICON NOUN Uistin_m
+?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
@@ -1003,6 +1010,7 @@ LEXICON NOUN Mies_h
 
 LEXICON NOUN Kuollut
 [Sn][Ny]<U>t:<U>t	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]ee:ee	Omistusliite_<A>	;
 [Sn][Nm]eet:eet	Liitesana_<A>	;
 [Sg][Ny]een:een	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
@@ -1066,6 +1074,7 @@ LEXICON NOUN Hame_w
 ?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Hame_s
+?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
@@ -1149,6 +1158,7 @@ LEXICON NOUN Vieras_w
 [Sp][Ny]st<A>:st<A>	Liitesana_<A>	;
 
 LEXICON NOUN Vieras_s
+?NotLaatusana	[Sn][Ny]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
