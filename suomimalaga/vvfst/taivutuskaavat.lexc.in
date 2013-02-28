@@ -188,6 +188,7 @@ LEXICON NOUN Laatikko
 <O>:<O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
+?Nimisana	k<O>:k<O>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
@@ -207,6 +208,7 @@ LEXICON NOUN Paperi_s
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
 [Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Paperi_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -1648,6 +1650,7 @@ KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+[Ln]<U>:<U>	NimisanaArvelu_<A>	;
 
 LEXICON Valita
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
@@ -1816,7 +1819,7 @@ LEXICON Johdin_mA
 [Ln]m:m	NimisanaAsema_<A>	;
 
 LEXICON Johdin_ntA
-[Ln]n:n	NimisanaKanta_<A>	;
+[Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKanta_<A>	;
 
 LEXICON Johdin_inen_vain_lipulla
 @R.INEN_SALLITTU@:@R.INEN_SALLITTU@	Johdin_inen_<A>	;

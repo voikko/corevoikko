@@ -918,3 +918,7 @@ ruokoaan
 herätyskristillisyys
 !aliskuuta
 freudilaiskissainen
+hirviammunta
+kilpailu
+kivikkoinen
+paperinen
