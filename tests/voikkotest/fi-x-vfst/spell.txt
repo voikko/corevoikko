@@ -922,3 +922,5 @@ hirviammunta
 kilpailu
 kivikkoinen
 paperinen
+kainuulainen
+koodattu

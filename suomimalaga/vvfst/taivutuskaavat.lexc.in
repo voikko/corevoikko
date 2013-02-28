@@ -690,6 +690,7 @@ LEXICON NOUN Vapaa_l
 [Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Maa
 <WC>Maa_s_<A>	;
@@ -1745,6 +1746,7 @@ Johdin_Us_ksen_<A>	;
 LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
+Johdin_ttU_<A>	;
 
 LEXICON KestamanTekijapaateHeikko
 [Tt][Ap][P1][Ny]n:n	Liitesana_<A>	;
