@@ -913,3 +913,5 @@ kaatimeni
 ylösnousseeni
 tarvikkeeni
 hampaani
+ruokoani
+ruokoaan
