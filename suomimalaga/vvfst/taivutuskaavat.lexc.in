@@ -1585,6 +1585,38 @@ i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_<A>	;
 i:i	Kaatua_<A>	;
 
+LEXICON Saada
+<A>:<A>	Voida_l_<A>	;
+Voida_s_<A>	;
+
+LEXICON Myydä
+<U>:<U>	Voida_l_<A>	;
+Voida_s_<A>	;
+
+LEXICON Juoda
+<U><O>:<U><O>	Voida_l_<A>	;
+<O>:<O>	Voida_s_<A>	;
+
+LEXICON Viedä
+ie:ie	Voida_l_<A>	;
+e:e	Voida_s_<A>	;
+
+LEXICON Voida_l
+[Tn1]d<A>:d<A>	Liitesana_<A>	;
+KestamanTekijapaateHeikko_<A>	;
+[Tt][Ap][P3][Ny]:	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
+Johdin_nimitapa3_<A>	;
+Johdin_nimitapa4_<A>	;
+Johdin_ja_myyjä_<A>	;
+Johdin_nti_<A>	;
+Johdin_tU_<A>	;
+
+LEXICON Voida_s
+KertomanTekijapaateHeikko_<A>	;
+KertomanTekijapaateVahva_<A>	;
+Ehtotapa_<A>	;
+
 LEXICON Katsella
 <WC>Katsella_w_<A>	;
 <WC>Katsella_s_<A>	;
