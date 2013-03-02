@@ -1921,6 +1921,7 @@ tt<O>m:tt<O>m	Johdin_UUs_<A>	;
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli:lli	LaatusanaNainen_<A>    ;
+llis:llis	NimisanaYsJatko	;
 
 LEXICON Johdin_lAinen
 [Ll]l<A>i:l<A>i	LaatusanaNainen_<A>	;

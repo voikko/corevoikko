@@ -980,3 +980,4 @@ kommentoikaamme
 kommentoikaa
 kommentoikaatte
 kommentoikoot
+kirkollisvero
