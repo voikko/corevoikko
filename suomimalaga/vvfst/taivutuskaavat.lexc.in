@@ -839,13 +839,35 @@ LEXICON NOUN Tosi
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
+LEXICON NOUN Sisar
+<WC>Sisar_w_<A>	;
+<WC>Sisar_s_<A>	;
+
 LEXICON NOUN Tytär
-[Sn][Ny]<A>r:<A>r	<WC>NormaaliYsJatko_<A>	;
-?NotLaatusana	[Sn][Ny]t<A>re:t<A>re	Omistusliite_<A>	;
-[Sn][Nm]t<A>ret:t<A>ret	Liitesana_<A>	;
-[Sine][Ny]t<A>ress<A>:t<A>ress<A>	Liitesana_<A>	;
-[Sela][Ny]t<A>rest<A>:t<A>rest<A>	Liitesana_<A>	;
-[Sill][Ny]t<A>reen:t<A>reen	Liitesana_<A>	;
+<A>r:<A>r	<WC>Sisar_w_<A>	;
+t<A>r:t<A>r	<WC>Sisar_s_<A>	;
+
+LEXICON NOUN Ien
+en:en	<WC>Sisar_w_<A>	;
+ken:ken	<WC>Sisar_s_<A>	;
+
+LEXICON NOUN Sisar_w
+[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ten:ten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+
+LEXICON NOUN Sisar_s
+?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+[Sill][Ny]een:een	Liitesana_<A>	;
+[Sill][Nm]iin:iin	Liitesana_<A>	;
 
 LEXICON NOUN Nainen
 [Sn][Ny]nen:nen	Liitesana_<A>	;

@@ -287,7 +287,7 @@ def handle_word(word):
 		                 u"lovi", u"kaikki", u"hanki", u"happi", u"lampi", u"sampi", u"kylki", u"lahti", u"siipi", u"lehti", \
 		                 u"kala", u"aitta", u"kappa", u"napa", u"kampa", u"hanka", u"kanta", u"parta", u"raaka", u"valta", u"haka", u"pata", \
 		                 u"koira", u"juhta", u"kenttä", u"honka", u"kompa", u"suunta", u"tolppa", u"turta", u"kulta", u"hoikka", u"huopa", u"ikä", \
-		                 u"tytär", \
+		                 u"tytär", u"sisar", u"ien", \
 		                 u"aavistaa", u"muistaa", u"kirjoittaa", u"heittää", u"alittaa", u"astahtaa", \
 		                 u"sallia", u"onkia", u"empiä", u"kontia", u"oppia", u"loikkia", u"sättiä", u"laatia", u"kaapia", u"hylkiä", u"poikia", \
 		                 u"kanavoida", \
