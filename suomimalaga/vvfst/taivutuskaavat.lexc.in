@@ -1712,7 +1712,7 @@ e:e	Johdin_nimitapa3_<A>	;
 e:e	Johdin_nimitapa4_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-[Ln]<U>:<U>	NimisanaArvelu_<A>	;
+Johdin_U_arvelu_<A>	;
 
 LEXICON Arvailla
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
@@ -1724,7 +1724,7 @@ KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-[Ln]<U>:<U>	NimisanaArvelu_<A>	;
+Johdin_U_arvelu_<A>	;
 
 LEXICON Valita
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
@@ -1878,6 +1878,9 @@ LEXICON Johdin_Us
 LEXICON Johdin_UUs
 [Ln]<U><U>@C.JOHDETTAVA_NIMISANAKSI@:<U><U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKalleus_<A>	;
 
+LEXICON Johdin_U_arvelu
+[Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaArvelu_<A>	;
+
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
 
@@ -1962,6 +1965,8 @@ LEXICON Johdin_ja_kulkija_myyjä
 LEXICON Johdin_ja_kantaja_myyjä
 [Sg][Nm]jien@C.JOHDETTAVA_NIMISANAKSI@:jien@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]ji<A>@C.JOHDETTAVA_NIMISANAKSI@:ji<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Str][Ny]j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@:j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
+[Str][Nm]jiksi@C.JOHDETTAVA_NIMISANAKSI@:jiksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
 [Ses][Nm]jin<A>@C.JOHDETTAVA_NIMISANAKSI@:jin<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sine][Nm]jiss<A>@C.JOHDETTAVA_NIMISANAKSI@:jiss<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sela][Nm]jist<A>@C.JOHDETTAVA_NIMISANAKSI@:jist<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;

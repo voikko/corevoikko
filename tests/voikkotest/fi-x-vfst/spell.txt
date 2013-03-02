@@ -971,3 +971,6 @@ tytärten
 tyttärien
 ien
 ikenen
+kilpavarustelun
+antajaksi
+antajiksi
