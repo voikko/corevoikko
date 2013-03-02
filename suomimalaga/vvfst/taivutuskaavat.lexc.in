@@ -124,7 +124,7 @@ LEXICON NOUN Valo_w
 
 LEXICON NOUN Valo_s
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]jen:jen	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]jen:jen	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A>:<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
@@ -152,7 +152,7 @@ n<O>:n<O>	<WC>Arvelu_w_<A>	;
 
 LEXICON NOUN Arvelu_s
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]jen:jen	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]jen:jen	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A>:<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
@@ -174,9 +174,9 @@ LEXICON NOUN Laatikko
 [Sn][Ny]k<O>:k<O>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]<O>t:<O>t	Liitesana_<A>	;
 [Sg][Ny]<O>n:<O>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]k<O>jen:k<O>jen	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]k<O>jen:k<O>jen	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]k<O><A>:k<O><A>	<WC>LiOlV_<A>	;
 [Sp][Nm]k<O>j<A>:k<O>j<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
@@ -200,7 +200,7 @@ k:k	<WC>Paperi_s_<A>	;
 
 LEXICON NOUN Paperi_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Sill][Ny]iin:iin	Liitesana_<A>	;
@@ -213,8 +213,8 @@ LEXICON NOUN Paperi_s
 LEXICON NOUN Paperi_w
 [Sn][Nm]it:it	Liitesana_<A>	;
 [Sg][Ny]in:in	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eitten:eitten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]eiden:eiden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -223,8 +223,8 @@ LEXICON NOUN Autio
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
@@ -274,7 +274,7 @@ v:v	<WC>Risti_w_<A>	;
 
 LEXICON NOUN Risti_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Sill][Ny]iin:iin	Liitesana_<A>	;
@@ -297,7 +297,7 @@ LEXICON NOUN Kalsium
 ?NotLaatusana	[Sn][Ny]i:i	Omistusliite_<A>	;
 [Sn][Nm]it:it	Liitesana_<A>	;
 [Sg][Ny]in:in	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
@@ -351,7 +351,7 @@ d:d	<WC>Lovi_w_<A>	;
 LEXICON NOUN Lovi_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]e<A>:e<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
@@ -420,8 +420,8 @@ l:l	<WC>Kala_w_<A>	;
 
 LEXICON NOUN Kala_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]<O>jen:<O>jen	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>jen:<O>jen	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
@@ -506,8 +506,8 @@ LEXICON NOUN Koira_w_monikko
 
 LEXICON NOUN Koira_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
@@ -527,7 +527,7 @@ n:n	<WC>Asema_w_<A>	;
 
 LEXICON NOUN Asema_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	Liitesana_<A>	;
@@ -549,9 +549,9 @@ LEXICON NOUN Apila
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
@@ -568,10 +568,10 @@ LEXICON NOUN Karahka
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>jen:<O>jen	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>jen:<O>jen	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
@@ -598,8 +598,8 @@ t:t	<WC>Solakka_s_<A>	;
 LEXICON NOUN Solakka_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Nm]<O>in<A>:<O>in<A>	Liitesana_<A>	;
 [Sill][Nm]<O>ihin:<O>ihin	Liitesana_<A>	;
@@ -611,8 +611,8 @@ LEXICON NOUN Solakka_w
 
 LEXICON NOUN Solakka_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sg][Nm]<O>jen:<O>jen	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<A>in:<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>jen:<O>jen	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
@@ -626,9 +626,9 @@ LEXICON NOUN Apaja
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
@@ -645,9 +645,9 @@ LEXICON NOUN Korkea
 [Sn][Ny]e<A>:e<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]e<A>t:e<A>t	Liitesana_<A>	;
 [Sg][Ny]e<A>n:e<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eitten:eitten	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]e<A>in:e<A>in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]eiden:eiden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]e<A>in:e<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]e<A><A>:e<A><A>	Liitesana_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]e<A>n<A>:e<A>n<A>	Liitesana_<A>	;
@@ -675,8 +675,8 @@ LEXICON NOUN Leikkuu
 <U>:<U>	<WC>Vapaa_l_<A>	;
 
 LEXICON NOUN Vapaa_s
-[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
@@ -703,8 +703,8 @@ LEXICON NOUN Puu
 [Sill][Ny]<U>h<U>n:<U>h<U>n	Liitesana_<A>	;
 
 LEXICON NOUN Maa_s
-[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
@@ -723,8 +723,8 @@ LEXICON NOUN Suo
 [Sn][Ny]<U><O>:<U><O>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]<U><O>t:<U><O>t	Liitesana_<A>	;
 [Sg][Ny]<U><O>n:<U><O>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<U><O>t<A>:<U><O>t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<U><O>n<A>:<U><O>n<A>	Liitesana_<A>	;
@@ -740,8 +740,8 @@ LEXICON NOUN Meri
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ten:ten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]ten:ten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
@@ -754,14 +754,14 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
-[Sg][Nm]ten:ten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ten:ten	<WC>MonikonGenetiiviEnJatko_<A>	;
 
 LEXICON NOUN Lohi
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
@@ -777,7 +777,7 @@ LEXICON NOUN Lumi
 ?NotLaatusana	[Sn][Ny]me:me	Omistusliite_<A>	;
 [Sn][Nm]met:met	Liitesana_<A>	;
 [Sg][Ny]men:men	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]mien:mien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]mien:mien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]nt<A>:nt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]mi<A>:mi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]men<A>:men<A>	Liitesana_<A>	;
@@ -790,7 +790,7 @@ m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Susi
 <WC>Tosi_<A>	;
-[Sg][Nm]tten:tten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]tten:tten	<WC>MonikonGenetiiviEnJatko_<A>	;
 
 LEXICON NOUN Hirsi
 <WC>Kansi_t_<A>	;
@@ -810,7 +810,7 @@ l:l	<WC>Kansi_l_<A>	;
 LEXICON NOUN Kansi_t
 [Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
-[Sg][Nm]sien:sien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]sien:sien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Nm]sin<A>:sin<A>	Liitesana_<A>	;
@@ -829,7 +829,7 @@ LEXICON NOUN Tosi
 ?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sn][Nm]det:det	Liitesana_<A>	;
 [Sg][Ny]den:den	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]sien:isen	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]sien:isen	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ten<A>:ten<A>	Liitesana_<A>	;
@@ -852,8 +852,8 @@ LEXICON NOUN Nainen
 ?NotLaatusana	[Sn][Ny]se:se	Omistusliite_<A>	;
 [Sn][Nm]set:set	Liitesana_<A>	;
 [Sg][Ny]sen:sen	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]sten:sten	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]sien:sien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]sten:sten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]sien:sien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]sen<A>:sen<A>	Liitesana_<A>	;
@@ -876,7 +876,8 @@ LEXICON NOUN Vastaus
 ?NotLaatusana	[Sn][Ny]kse:kse	Omistusliite_<A>	;
 [Sn][Nm]kset:kset	Liitesana_<A>	;
 [Sg][Ny]ksen:ksen	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ksien:ksien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ksien:ksien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]sten:sten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ksi<A>:ksi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ksen<A>:ksen<A>	Liitesana_<A>	;
@@ -891,7 +892,7 @@ LEXICON NOUN Kalleus
 ?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sn][Nm]det:det	Liitesana_<A>	;
 [Sg][Ny]den:den	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ksien:ksien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ksien:ksien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ksi<A>:ksi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ten<A>:ten<A>	Liitesana_<A>	;
@@ -939,14 +940,14 @@ kim:kim	<WC>Uistin_m_<A>	;
 
 LEXICON NOUN Uistin_n
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ten:ten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ten:ten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 
 LEXICON NOUN Uistin_m
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]ien:ien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Ny]een:een	Liitesana_<A>	;
@@ -966,13 +967,13 @@ t<O>:t<O>	<WC>Onneton_s_<A>	;
 
 LEXICON NOUN Onneton_w
 [Sn][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]nten:nten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]nten:nten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]nt<A>:nt<A>	<WC>LiOlV_<A>	;
 
 LEXICON NOUN Onneton_s
 [Sn][Nm]m<A>t:m<A>t	Liitesana_<A>	;
 [Sg][Ny]m<A>n:m<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]mien:mien	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]mien:mien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Ses][Ny]m<A>n<A>:m<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]min<A>:min<A>	Liitesana_<A>	;
 [Sill][Ny]m<A><A>n:m<A><A>n	Liitesana_<A>	;
@@ -992,20 +993,20 @@ h:h   <WC>Mies_h_<A>  ;
 LEXICON NOUN Mies_s
 [Sn][Ny]:         <WC>NormaaliYsJatko_<A> ;
 [Sp][Ny]t<A>:t<A> <WC>LiOlV_<A> ;
-[Sg][Nm]ten:ten   <WC>NormaaliYsJatko_<A> ;
+[Sg][Nm]ten:ten   <WC>MonikonGenetiiviEnJatko_<A> ;
 
 LEXICON NOUN Mies_he
 Omistusliite_<A> ;
-[Sn][Ny]n:n          Liitesana_<A> ;
+[Sn][Nm]t:t          Liitesana_<A> ;
+[Sg][Ny]n:n          Liitesana_<A> ;
 [Se][Ny]n<A>:n<A>    <WC>LiOlV_<A> ;
-[Sg][Nm]t:t          Liitesana_<A> ;
 <WC>YhteisetYksikönPaikallissijat_<A> ;
 ?Nimisana Johdin_tOn_<A> ;
 
 LEXICON NOUN Mies_h
 [Sill][Ny]een:een     Liitesana_<A> ;
 [Sill][Nm]iin:iin     Liitesana_<A> ;
-[Sg][Nm]ien:ien       <WC>NormaaliYsJatko_<A> ;
+[Sg][Nm]ien:ien       <WC>MonikonGenetiiviEnJatko_<A> ;
 [Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
 [Ses][Nm]in<A>:in<A>  <WC>LiOlV_<A> ;
 [Sko][Nm]ine:ine      Omistusliite_<A> ;
@@ -1016,8 +1017,8 @@ LEXICON NOUN Kuollut
 ?NotLaatusana	[Sn][Ny]ee:ee	Omistusliite_<A>	;
 [Sn][Nm]eet:eet	Liitesana_<A>	;
 [Sg][Ny]een:een	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eiden:eiden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eitten:eitten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]eiden:eiden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<U>tt<A>:<U>tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]een<A>:een<A>	Liitesana_<A>	;
@@ -1080,8 +1081,8 @@ LEXICON NOUN Hame_s
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
@@ -1164,8 +1165,8 @@ LEXICON NOUN Vieras_s
 ?NotLaatusana	[Sn][Ny]<A>:<A>	Omistusliite_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]iden:iden	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]itten:itten	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Ny]<A>seen:<A>seen	Liitesana_<A>	;
@@ -1174,6 +1175,10 @@ LEXICON NOUN Vieras_s
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+
+LEXICON NOUN MonikonGenetiiviEnJatko
+<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[O3]sa:sa	Liitesana_<A>	;
 
 LEXICON NOUN NormaaliYsJatkoOl
 <WC>NormaaliYsJatko_<A>	;
@@ -1887,8 +1892,8 @@ Johdin_ja_kantaja_myyjä_<A>	;
 Johdin_ja_kulkija_<A>	;
 
 LEXICON Johdin_ja_kulkija
-[Sg][Nm]j<O>iden@C.JOHDETTAVA_NIMISANAKSI@:j<O>iden@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatko_<A>	;
-[Sg][Nm]j<O>itten@C.JOHDETTAVA_NIMISANAKSI@:j<O>itten@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatko_<A>	;
+[Sg][Nm]j<O>iden@C.JOHDETTAVA_NIMISANAKSI@:j<O>iden@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]j<O>itten@C.JOHDETTAVA_NIMISANAKSI@:j<O>itten@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sine][Nm]j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sela][Nm]j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
@@ -1919,7 +1924,7 @@ LEXICON Johdin_ja_kulkija_myyjä
 [Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 
 LEXICON Johdin_ja_kantaja_myyjä
-[Sg][Nm]jien@C.JOHDETTAVA_NIMISANAKSI@:jien@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNormaaliYsJatko_<A>	;
+[Sg][Nm]jien@C.JOHDETTAVA_NIMISANAKSI@:jien@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]ji<A>@C.JOHDETTAVA_NIMISANAKSI@:ji<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Ses][Nm]jin<A>@C.JOHDETTAVA_NIMISANAKSI@:jin<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sine][Nm]jiss<A>@C.JOHDETTAVA_NIMISANAKSI@:jiss<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;

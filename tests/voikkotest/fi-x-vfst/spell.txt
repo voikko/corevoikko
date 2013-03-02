@@ -945,3 +945,7 @@ myyminen
 myymässä
 myi
 myy
+ilmatorjunta-aseistuksena
+ilmatorjuntaohjusten
+voimiensa
+laatikoidensa
