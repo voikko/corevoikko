@@ -273,3 +273,9 @@ word:muisto
  expected:1
  analysis
   CLASS=nimisana
+word:epäröin
+ expected:2
+ analysis
+  TENSE=present_simple
+ analysis
+  TENSE=past_imperfective

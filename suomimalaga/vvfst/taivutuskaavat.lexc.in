@@ -1590,6 +1590,10 @@ i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_<A>	;
 i:i	Kaatua_<A>	;
 
+LEXICON Voida
+i:i	Voida_l_<A>	;
+Voida_s_<A>	;
+
 LEXICON Saada
 <A>:<A>	Voida_l_<A>	;
 Voida_s_<A>	;
