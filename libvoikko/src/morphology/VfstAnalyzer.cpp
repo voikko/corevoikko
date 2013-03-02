@@ -79,6 +79,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	moodMap.insert(std::make_pair(L"n3", L"MA-infinitive"));
 	moodMap.insert(std::make_pair(L"t", L"indicative"));
 	moodMap.insert(std::make_pair(L"e", L"conditional"));
+	moodMap.insert(std::make_pair(L"k", L"imperative"));
 	
 	numberMap.insert(std::make_pair(L"y", L"singular"));
 	numberMap.insert(std::make_pair(L"m", L"plural"));

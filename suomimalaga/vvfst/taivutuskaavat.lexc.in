@@ -1615,11 +1615,13 @@ KertomanTekijapaateVahva_<A>	;
 [Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
+i:i	Käskytapa_<A>	;
 i:i	Johdin_nimitapa3_<A>	;
 i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_ja_myyjä_<A>	;
 i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_<A>	;
+i:i	Johdin_vA_<A>	;
 i:i	Kaatua_<A>	;
 
 LEXICON Voida
@@ -1848,12 +1850,19 @@ LEXICON TositavanKertomaTtiin
 [Tt][Ai][P4]ttiin:ttiin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
-[Te][P1][Ny]isin:isin	Liitesana_<A>	;
-[Te][P2][Ny]isit:isit	Liitesana_<A>	;
-[Te][P3][Ny]isi:isi	Liitesana_<A>	;
-[Te][P1][Nm]isimme:isimme	Liitesana_<A>	;
-[Te][P2][Nm]isitte:isitte	Liitesana_<A>	;
-[Te][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
+[Te][Ap][P1][Ny]isin:isin	Liitesana_<A>	;
+[Te][Ap][P2][Ny]isit:isit	Liitesana_<A>	;
+[Te][Ap][P3][Ny]isi:isi	Liitesana_<A>	;
+[Te][Ap][P1][Nm]isimme:isimme	Liitesana_<A>	;
+[Te][Ap][P2][Nm]isitte:isitte	Liitesana_<A>	;
+[Te][Ap][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
+
+LEXICON Käskytapa
+[Tk][Ap][P1][Nm]k<A><A>mme:k<A><A>mme	Liitesana_<A>	;
+[Tk][Ap][P2][Nm]k<A><A>:k<A><A>	Liitesana_<A>	;
+[Tk][Ap][P2][Nm]k<A><A>tte:k<A><A>tte	Liitesana_<A>	;
+[Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	Liitesana_<A>	;
+[Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	Liitesana_<A>	;

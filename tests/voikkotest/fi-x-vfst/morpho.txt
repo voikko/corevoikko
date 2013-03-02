@@ -279,3 +279,11 @@ word:epäröin
   TENSE=present_simple
  analysis
   TENSE=past_imperfective
+word:kommentoikaa
+ expected:1
+ analysis
+  CLASS=teonsana
+  MOOD=imperative
+  NUMBER=plural
+  PERSON=2
+  TENSE=present_simple

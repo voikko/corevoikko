@@ -974,3 +974,9 @@ ikenen
 kilpavarustelun
 antajaksi
 antajiksi
+kommentoiva
+kommentoikoon
+kommentoikaamme
+kommentoikaa
+kommentoikaatte
+kommentoikoot
