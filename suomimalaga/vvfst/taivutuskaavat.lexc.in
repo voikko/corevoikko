@@ -1402,6 +1402,16 @@ t:t	<WC>Huutaa_s_<A>	;
 del:del	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
+LEXICON Murtaa
+r:r	<WC>Huutaa_w_<A>	;
+t:t	<WC>Huutaa_s_<A>	;
+rel:rel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+[Ln]t<O>:t<O>	NimisanaValo_s_<A>	;
+[Ln]t<O><O>:t<O><O>	NimisanaValo_sl_<A>	;
+[Ln]r<O>:r<O>	NimisanaValo_w_<A>	;
+r<O>:r<O>	NimisanaVastaus_<A>	;
+
 LEXICON Juontaa
 @C.V_SALLITTU@n:@C.V_SALLITTU@n	<WC>Huutaa_w_<A>	;
 @C.V_SALLITTU@t:@C.V_SALLITTU@t	<WC>Huutaa_s_<A>	;
