@@ -9,15 +9,19 @@ LEXICON LaatusanaYsJatko
 
 LEXICON NimiYsJatko
 -[Bc]:-	Joukahainen_em	;
+-[Bc]:-	Joukahainen_nimisanat	;
 
 LEXICON PaikannimiYsJatko
 -[Bc]:-	Joukahainen_ep	;
+-[Bc]:-	Joukahainen_nimisanat	;
 
 LEXICON SukunimiYsJatko
 -[Bc]:-	Joukahainen_es	;
+-[Bc]:-	Joukahainen_nimisanat	;
 
 LEXICON EtunimiYsJatko
 -[Bc]:-	Joukahainen_ee	;
+-[Bc]:-	Joukahainen_nimisanat	;
 
 LEXICON YhdyssanaJatkuu
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;

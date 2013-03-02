@@ -58,6 +58,9 @@ def filterLines(lines, lexiconPrefix):
 		elif line.startswith("?Paikannimi"):
 			if lexiconPrefix == u"Paikannimi":
 				yield line[11:].replace(u"<VC>", lexiconPrefix)
+		elif line.startswith("?Sukunimi"):
+			if lexiconPrefix == u"Sukunimi":
+				yield line[9:].replace(u"<VC>", lexiconPrefix)
 		else:
 			yield line.replace(u"<WC>", lexiconPrefix)
 

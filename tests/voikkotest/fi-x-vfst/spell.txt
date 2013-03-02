@@ -949,3 +949,8 @@ ilmatorjunta-aseistuksena
 ilmatorjuntaohjusten
 voimiensa
 laatikoidensa
+Jordan-talli
+Pitkäs-talli
+Erkki-talli
+Finnair-talli
+!nykyinen-valtionpäämies
