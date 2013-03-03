@@ -1660,6 +1660,23 @@ KertomanTekijapaateHeikko_<A>	;
 KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 
+LEXICON Mennä
+<WC>Tulla_s_<A>	;
+n:n	<WC>Tulla_l_<A>	;
+
+LEXICON Tulla
+<WC>Tulla_s_<A>	;
+l:l	<WC>Tulla_l_<A>	;
+
+LEXICON Tulla_s
+[Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+e:e	KestamanTekijapaateHeikko_<A>	;
+KertomanTekijapaateHeikko_<A>	;
+
+LEXICON Tulla_l
+[Tn1]<A>:<A>	Liitesana_<A>	;
+
 LEXICON Katsella
 <WC>Katsella_w_<A>	;
 <WC>Katsella_s_<A>	;

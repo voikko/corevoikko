@@ -981,3 +981,9 @@ kommentoikaa
 kommentoikaatte
 kommentoikoot
 kirkollisvero
+tulla
+tulee
+mennä
+menen
+menin
+menevät
