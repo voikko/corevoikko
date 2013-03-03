@@ -218,6 +218,7 @@ LEXICON NOUN Paperi_w
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	i:i	Johdin_tOn_<A>	;
 
 LEXICON NOUN Autio
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -574,6 +575,9 @@ LEXICON NOUN Asema_w
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+
+LEXICON NOUN Kulkija
+j:j	<WC>Apila_<A>	;
 
 LEXICON NOUN Apila
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;

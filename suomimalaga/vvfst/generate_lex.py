@@ -264,7 +264,7 @@ def handle_word(word):
 		                 u"asema", u"emäntä", \
 		                 u"laatikko", \
 		                 u"autio", \
-		                 u"apila", \
+		                 u"apila", u"kulkija", \
 		                 u"korkea", \
 		                 u"apaja", \
 		                 u"nalle", u"atte", u"nukke", \
