@@ -293,7 +293,7 @@ def handle_word(word):
 		                 u"kanavoida", \
 		                 u"hidastaa", \
 		                 u"ammottaa", \
-		                 u"huutaa", \
+		                 u"huutaa", u"soutaa", u"vuotaa", \
 		                 u"valita", \
 		                 u"hohtaa", \
 		                 u"saada", u"myydä", u"juoda", u"viedä", u"voida", \

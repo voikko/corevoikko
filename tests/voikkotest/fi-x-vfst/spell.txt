@@ -1011,3 +1011,10 @@ arvailtiin
 ihoonsa
 hurskautta
 hävittäjälentokone
+soutaa
+soudan
+joutaa
+joudan
+soudella
+soutelen
+souti
