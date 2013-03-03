@@ -267,6 +267,7 @@ def handle_word(word):
 		                 u"apila", \
 		                 u"korkea", \
 		                 u"apaja", \
+		                 u"nalle", u"atte", u"nukke", \
 		                 u"lohi", u"tuohi", u"meri", u"lumi", \
 		                 u"hirsi", u"kansi", u"jälsi", \
 		                 u"susi", \

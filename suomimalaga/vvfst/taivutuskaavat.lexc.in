@@ -359,7 +359,6 @@ LEXICON NOUN Lovi_s
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
-[Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
@@ -369,6 +368,36 @@ LEXICON NOUN Lovi_w
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+
+LEXICON NOUN Nalle
+<WC>Nalle_s_<A>	;
+<WC>Nalle_w_<A>	;
+
+LEXICON NOUN Atte
+te:te	<WC>Nalle_s_<A>	;
+e:e	<WC>Nalle_w_<A>	;
+
+LEXICON NOUN Nukke
+ke:ke	<WC>Nalle_s_<A>	;
+e:e	<WC>Nalle_w_<A>	;
+
+LEXICON NOUN Nalle_w
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
+
+LEXICON NOUN Nalle_s
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sg][Nm]jen:jen	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]<A>:<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]n<A>:n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sill][Ny]e:e	<WC>LiOlN_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Kala
 <WC>Kala_s_<A>	;
