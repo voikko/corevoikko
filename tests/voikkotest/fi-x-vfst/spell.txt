@@ -1005,3 +1005,6 @@ rankaisin
 nuolaisu
 rankaisussa
 kalinassa
+kuvattiin
+valittiin
+arvailtiin
