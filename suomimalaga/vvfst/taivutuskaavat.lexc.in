@@ -1661,6 +1661,35 @@ KertomanTekijapaateHeikko_<A>	;
 KertomanTekijapaateVahva_<A>	;
 Ehtotapa_<A>	;
 
+LEXICON Nuolaista
+is:is	Nuolaista_w_<A>	;
+is:is	Nuolaista_s_<A>	;
+is:is	Johdin_U_arvelu_<A>	;
+
+LEXICON Rangaista
+g<A>is:g<A>is	Nuolaista_w_<A>	;
+k<A>is:k<A>is	Nuolaista_s_<A>	;
+k<A>is:k<A>is	Johdin_U_arvelu_<A>	;
+
+LEXICON Kalista
+is:is	Nuolaista_w_<A>	;
+is:is	Nuolaista_s_<A>	;
+[Ln]in:in	NimisanaApila_<A>	;
+
+LEXICON Vavista
+vis:vis	Nuolaista_w_<A>	;
+pis:pis	Nuolaista_s_<A>	;
+
+LEXICON Nuolaista_w
+[Tn1]t<A>:t<A>	Liitesana_<A>	;
+
+LEXICON Nuolaista_s
+e:e	KestamanTekijapaateHeikko_<A>	;
+[Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+KertomanTekijapaateHeikko_<A>	;
+KertomanTekijapaateVahva_<A>	;
+
 LEXICON Mennä
 <WC>Tulla_s_<A>	;
 n:n	<WC>Tulla_l_<A>	;
