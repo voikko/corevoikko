@@ -275,7 +275,7 @@ def handle_word(word):
 		                 u"solakka", u"ulappa", u"savotta", \
 		                 u"kuollut", \
 		                 u"suo", \
-		                 u"maa", u"puu", u"pii", \
+		                 u"maa", u"puu", u"pii", u"tee", \
 		                 u"vapaa", u"tienoo", u"leikkuu", \
 				 u"mies", \
 		                 u"hame", u"enne", u"helle", u"kierre", u"lumme", u"lahje", u"lape", u"sade", u"taive", u"tarvike", u"vaate", \

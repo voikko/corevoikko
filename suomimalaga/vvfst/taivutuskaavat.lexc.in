@@ -736,6 +736,11 @@ LEXICON NOUN Puu
 <U>:<U>	<WC>Maa_l_<A>	;
 [Sill][Ny]<U>h<U>:<U>h<U>	<WC>LiOlN_<A>	;
 
+LEXICON NOUN Tee
+<WC>Maa_s_<A>	;
+e:e	<WC>Maa_l_<A>	;
+[Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+
 LEXICON NOUN Pii
 <WC>Maa_s_<A>	;
 i:i	<WC>Maa_l_<A>	;
