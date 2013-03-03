@@ -736,6 +736,11 @@ LEXICON NOUN Puu
 <U>:<U>	<WC>Maa_l_<A>	;
 [Sill][Ny]<U>h<U>:<U>h<U>	<WC>LiOlN_<A>	;
 
+LEXICON NOUN Pii
+<WC>Maa_s_<A>	;
+i:i	<WC>Maa_l_<A>	;
+[Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
+
 LEXICON NOUN Maa_s
 [Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
