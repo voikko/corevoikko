@@ -233,6 +233,7 @@ LEXICON NOUN Autio
 [Sill][Nm]ihin:ihin	Liitesana_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -1988,6 +1989,7 @@ LEXICON Johdin_ja_kulkija_myyjä
 [Sabl][Ny]j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
 
 LEXICON Johdin_ja_kantaja_myyjä
 [Sg][Nm]jien@C.JOHDETTAVA_NIMISANAKSI@:jien@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;

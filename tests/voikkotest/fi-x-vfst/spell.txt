@@ -987,3 +987,7 @@ mennä
 menen
 menin
 menevät
+kallioinen
+kalterijääkärit
+kalterijääkäri
+myyjätär

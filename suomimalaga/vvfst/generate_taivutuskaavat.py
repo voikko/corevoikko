@@ -32,9 +32,9 @@ def stripWhitespaceAndComments(line):
 	return line.strip()
 
 def addDiacritics(line):
-	if u"[Ny]" in line:
+	if u"[Nm]" in line:
 		middle = line.find(u":")
-		return u"@D.EI_YKS@" + line[0:middle+1] + u"@D.EI_YKS@" + line[middle+1:]
+		return u"@C.EI_YKS@" + line[0:middle+1] + u"@C.EI_YKS@" + line[middle+1:]
 	return line
 
 def replacementsFront(line):

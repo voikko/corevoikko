@@ -1,8 +1,8 @@
 LEXICON NimisanaYsJatko
-YhdyssanaJatkuu	;
+@C.EI_YKS@:@C.EI_YKS@	YhdyssanaJatkuu	;
 
 LEXICON NimiLaatusanaYsJatko
-YhdyssanaJatkuu	;
+@C.EI_YKS@:@C.EI_YKS@	YhdyssanaJatkuu	;
 
 LEXICON LaatusanaYsJatko
 @P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
@@ -134,4 +134,4 @@ päs:päs	Loppu ;
 Loppu      ;
 
 LEXICON Loppu
-@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@:@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@	#	;
+@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@:@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@	#	;
