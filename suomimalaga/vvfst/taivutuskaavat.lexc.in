@@ -1198,6 +1198,7 @@ LEXICON NOUN Vieras_s
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Laatusana	Johdin_Us_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 <WC>NormaaliYsJatko_<A>	;
@@ -1444,8 +1445,8 @@ LEXICON Juontaa
 @C.V_SALLITTU@t:@C.V_SALLITTU@t	<WC>Huutaa_s_<A>	;
 @C.V_SALLITTU@nel:@C.V_SALLITTU@nel	<WC>Katsella_w_<A>	;
 @C.V_SALLITTU@tel:@C.V_SALLITTU@tel	<WC>Katsella_s_<A>	;
-@R.V_SALLITTU.E@@C.V_SALLITTU@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@	NimisanaAnto_ä	;
-@R.V_SALLITTU.T@@C.V_SALLITTU@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@	NimisanaAnto_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAnto_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAnto_a	;
 
 LEXICON Pyörtää
 r:r	<WC>Huutaa_w_<A>	;

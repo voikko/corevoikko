@@ -1009,3 +1009,5 @@ kuvattiin
 valittiin
 arvailtiin
 ihoonsa
+hurskautta
+hävittäjälentokone
