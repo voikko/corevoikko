@@ -1479,14 +1479,17 @@ del:del	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Murtaa
+@C.V_SALLITTU@:@C.V_SALLITTU@	MurtaaCVS_<A>	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKaarto_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKaarto_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]rö:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@rö	NimisanaVastaus_ä	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]ro:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ro	NimisanaVastaus_a	;
+
+LEXICON MurtaaCVS
 r:r	<WC>Huutaa_w_<A>	;
 t:t	<WC>Huutaa_s_<A>	;
 rel:rel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
-[Ln]t<O>:t<O>	NimisanaValo_s_<A>	;
-[Ln]t<O><O>:t<O><O>	NimisanaValo_sl_<A>	;
-[Ln]r<O>:r<O>	NimisanaValo_w_<A>	;
-r<O>:r<O>	NimisanaVastaus_<A>	;
 
 LEXICON Juontaa
 @C.V_SALLITTU@n:@C.V_SALLITTU@n	<WC>Huutaa_w_<A>	;

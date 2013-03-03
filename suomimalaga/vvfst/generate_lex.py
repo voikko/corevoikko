@@ -315,7 +315,7 @@ def handle_word(word):
 		alku = alku.lower()
 		
 		# Vowel type in derived verbs
-		if jatko in [u"heittää", u"muistaa", u"juontaa", u"hohtaa"]:
+		if jatko in [u"heittää", u"muistaa", u"juontaa", u"hohtaa", u"murtaa"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alku)
 		
 		entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
