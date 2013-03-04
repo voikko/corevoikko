@@ -305,6 +305,7 @@ def handle_word(word):
 		                 u"salata", u"kammata", u"hangata", u"kerrata", u"suunnata", u"vallata", u"lobata", u"kelvata", u"kuitata", u"ladata", u"peljätä", u"pakata", u"pompata", u"taata", \
 		                 u"arvailla", u"tulla", u"mennä", \
 		                 u"nuolaista", u"rangaista", u"kalista", u"vavista", \
+		                 u"katketa", u"todeta", u"langeta", u"lohjeta", u"poiketa", u"kammeta", u"ruveta", u"lotota", \
 		                 u"katsella", u"kohdella", u"nakella", u"tapella", u"aatella", u"askarrella", u"ommella", u"pienennellä", u"takellella"]:
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)

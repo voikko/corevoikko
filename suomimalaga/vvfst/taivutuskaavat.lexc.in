@@ -1923,7 +1923,6 @@ s:s	KertomanTekijapaateHeikko_<A>	;
 s:s	KertomanTekijapaateVahva_<A>	;
 [Tt][P3][Ny]<A>:<A>	Liitesana_<A>	;
 [Tt][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
-TositavanKertomaTtiin_<A>	;
 Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
@@ -1933,8 +1932,56 @@ Johdin_Us_ksen_<A>	;
 
 LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttU_<A>	;
+
+LEXICON Katketa
+<WC>Katketa_w_<A>	;
+<WC>Katketa_s_<A>	;
+
+LEXICON Todeta
+de:de	<WC>Katketa_w_<A>	;
+te:te	<WC>Katketa_s_<A>	;
+
+LEXICON Langeta
+ge:ge	<WC>Katketa_w_<A>	;
+ke:ke	<WC>Katketa_s_<A>	;
+
+LEXICON Lohjeta
+je:je	<WC>Katketa_w_<A>	;
+ke:ke	<WC>Katketa_s_<A>	;
+
+LEXICON Poiketa
+e:e	<WC>Katketa_w_<A>	;
+ke:ke	<WC>Katketa_s_<A>	;
+
+LEXICON Kammeta
+me:me	<WC>Katketa_w_<A>	;
+pe:pe	<WC>Katketa_s_<A>	;
+
+LEXICON Ruveta
+ve:ve	<WC>Katketa_w_<A>	;
+pe:pe	<WC>Katketa_s_<A>	;
+
+LEXICON Lotota
+<O>:<O>	<WC>Katketa_w_<A>	;
+t<O>:t<O>	<WC>Katketa_s_<A>	;
+
+LEXICON Katketa_w
+[Tn1]t<A>:t<A>	Liitesana_<A>	;
+TositavanKertomaTtiin_<A>	;
+Johdin_ttU_<A>	;
+
+LEXICON Katketa_s
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+s:s	KertomanTekijapaateHeikko_<A>	;
+s:s	KertomanTekijapaateVahva_<A>	;
+[Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Tt][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
+<A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Johdin_vA_<A>	;
+[Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 
 LEXICON KestamanTekijapaateHeikko
 [Tt][Ap][P1][Ny]n:n	Liitesana_<A>	;
