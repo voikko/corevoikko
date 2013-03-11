@@ -1,0 +1,30 @@
+LEXICON Olla
+[Tn1]lla:lla        Liitesana_a ;     # Olla.
+[Tn1p]llakse:llakse Omistusliite_a ;  # Ollakseni, ollaksesi, jne.
+[Tn2]ll:ll          Johdin_nimitapa2_a ;
+[Tn3]le:le          Johdin_nimitapa3_a ;
+le:le               Johdin_nimitapa4_a ;
+le:le               Johdin_nimitapa5_a ;
+l:l                 Johdin_lUt_a ;
+le:le               Johdin_mA_a ;
+le:le               Johdin_vA_a ;
+[Tt][Ap][P1][Ny]len:len     Liitesana_a ;  # Minä olen.
+[Tt][Ap][P2][Ny]let:let     Liitesana_a ;  # Sinä olet.
+[Tt][Ap][P3][Ny]n:n         Liitesana_a ;  # Hän on. 
+[Tt][Ap][P1][Nm]lemme:lemme Liitesana_a ;  # Me olemme.
+[Tt][Ap][P2][Nm]lette:lette Liitesana_a ;  # Te olette.
+[Tt][Ap][P3][Nm]vat:vat     Liitesana_a ;  # He ovat.
+[Tt][Ai][P1][Ny]lin:lin     Liitesana_a ;  # Minä olin.
+[Tt][Ai][P2][Ny]lit:lit     Liitesana_a ;  # Sinä olit.
+[Tt][Ai][P3][Ny]li:li       Liitesana_a ;  # Hän oli. 
+[Tt][Ai][P1][Nm]limme:limme Liitesana_a ;  # Me olimme.
+[Tt][Ai][P2][Nm]litte:litte Liitesana_a ;  # Te olitte.
+[Tt][Ai][P3][Nm]livat:livat Liitesana_a ;  # He olivat.
+l:l                     Ehtotapa_a ;   # Minä olisin, sinä olisit, jne.
+[Tk][Ap][P1][Ny]le:le   Liitesana_a ;  # Ole.
+l:l                     Käskytapa_a ;
+lko:lko                 Loppu ;        # Kielteinen käsky: (älkää) olko.
+[Tt][Ap][P4]llaan:llaan Liitesana_a ;  # Ollaan.
+[Tt][Ai][P4]ltiin:ltiin Liitesana_a ;  # Oltiin.
+
+! TODO lienee, ei, älä

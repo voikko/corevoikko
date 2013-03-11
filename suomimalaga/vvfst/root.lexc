@@ -55,8 +55,10 @@ Multichar_Symbols
 
 ! Tapaluokat
 [Tn1] ! 1. nimitapa
+[Tn1p]! 1. nimitapa, pitkä muoto
 [Tn2] ! 2. nimitapa
 [Tn3] ! 3. nimitapa
+[Tn5] ! 5. nimitapa
 [Tt]  ! tositapa
 [Te]  ! ehtotapa
 [Tk]  ! käskytapa
@@ -111,6 +113,7 @@ Joukahainen	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_nl	;
 
 LEXICON Joukahainen
+Poikkeavat_sanat ;
 Joukahainen_ee	;
 Joukahainen_em	;
 Joukahainen_ep	;

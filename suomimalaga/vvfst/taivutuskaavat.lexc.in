@@ -2041,6 +2041,9 @@ LEXICON Johdin_nimitapa3
 LEXICON Johdin_nimitapa4
 mi:mi	NimisanaNainen_<A>	;
 
+LEXICON Johdin_nimitapa5
+[Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
+
 LEXICON Johdin_Us_ksen
 [Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;
 
@@ -2061,6 +2064,9 @@ LEXICON Johdin_ttAvA
 
 LEXICON Johdin_nUt
 [Ll]n:n	LaatusanaKuollut_<A>	;
+
+LEXICON Johdin_lUt
+[Ll]l:l	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_vA
 [Ll]v:v	LaatusanaAsema_<A>	;
