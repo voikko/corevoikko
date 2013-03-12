@@ -415,6 +415,7 @@ LEXICON NOUN Nalle_s
 [Sill][Ny]e:e	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kala
 <WC>Kala_s_<A>	;
@@ -847,6 +848,7 @@ LEXICON NOUN Lohi
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Lumi
 [Sn][Ny]mi:mi	<WC>NormaaliYsJatko_<A>	;
@@ -1739,6 +1741,7 @@ i:i	Johdin_ja_myyjä_<A>	;
 i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_<A>	;
 i:i	Johdin_vA_<A>	;
+i:i	Johdin_nUt_<A>	;
 i:i	Kaatua_<A>	;
 
 LEXICON Voida

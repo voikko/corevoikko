@@ -14,6 +14,7 @@ LEXICON NimiYsJatko
 LEXICON PaikannimiYsJatko
 -[Bc]:-	Joukahainen_ep	;
 -[Bc]:-	Joukahainen_nimisanat	;
+@P.INEN_VAADITTU.ON@[Bc]:@P.INEN_VAADITTU.ON@	Joukahainen_nimisanat	;
 
 LEXICON SukunimiYsJatko
 -[Bc]:-	Joukahainen_es	;
