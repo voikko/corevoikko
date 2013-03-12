@@ -1995,16 +1995,16 @@ s:s	KertomanTekijapaateVahva_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 
 LEXICON KestamanTekijapaateHeikko
-[Tt][Ap][P1][Ny]n:n	Liitesana_<A>	;
-[Tt][Ap][P2][Ny]t:t	Liitesana_<A>	;
-[Tt][Ap][P1][Nm]mme:mme	Liitesana_<A>	;
-[Tt][Ap][P2][Nm]tte:tte	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@n	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ap][P2][Ny]t:@D.VAIN_YM3@t	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ap][P1][Nm]mme:@D.VAIN_YM3@mme	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ap][P2][Nm]tte:@D.VAIN_YM3@tte	Liitesana_<A>	;
 
 LEXICON KertomanTekijapaateHeikko
-[Tt][Ai][P1][Ny]in:in	Liitesana_<A>	;
-[Tt][Ai][P2][Ny]it:it	Liitesana_<A>	;
-[Tt][Ai][P1][Nm]imme:imme	Liitesana_<A>	;
-[Tt][Ai][P2][Nm]itte:itte	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ai][P1][Ny]in:@D.VAIN_YM3@in	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ai][P2][Ny]it:@D.VAIN_YM3@it	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ai][P1][Nm]imme:@D.VAIN_YM3@imme	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ai][P2][Nm]itte:@D.VAIN_YM3@itte	Liitesana_<A>	;
 
 LEXICON KertomanTekijapaateVahva
 [Tt][Ai][P3][Ny]i:i	Liitesana_<A>	;
