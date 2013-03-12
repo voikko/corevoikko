@@ -1046,6 +1046,7 @@ LEXICON NOUN Uistin_m
 [Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
 [Ses][Ny]en<A>:en<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
@@ -1072,6 +1073,7 @@ LEXICON NOUN Onneton_s
 [Sn][Nm]m<A>t:m<A>t	Liitesana_<A>	;
 [Sg][Ny]m<A>n:m<A>n	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]mien:mien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]mi<A>:mi<A>     <WC>LiOlV_<A> ;
 [Ses][Ny]m<A>n<A>:m<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]min<A>:min<A>	Liitesana_<A>	;
 [Sill][Ny]m<A><A>:m<A><A>	<WC>LiOlN_<A>	;
@@ -1125,6 +1127,8 @@ LEXICON NOUN Kuollut
 [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana ee:ee	Voittoaste_<A>	;
+?Laatusana e:e	Yliaste_<A>	;
 
 LEXICON NOUN Hame
 <WC>Hame_w_<A>	;
@@ -1794,6 +1798,8 @@ pis:pis	Nuolaista_s_<A>	;
 
 LEXICON Nuolaista_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+TositavanKertomaTiin_<A>	;
+Johdin_tU_<A>	;
 
 LEXICON Nuolaista_s
 e:e	KestamanTekijapaateHeikko_<A>	;
