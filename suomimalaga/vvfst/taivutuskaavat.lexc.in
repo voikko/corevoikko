@@ -1935,6 +1935,36 @@ LEXICON Vivuta
 v<U>:v<U>	Haluta_w_<A>	;
 p<U>:p<U>	Haluta_s_<A>	;
 
+LEXICON Juoruta
+Haluta_w_<A>	;
+Haluta_s_<A>	;
+il:il	Arvailla_<A>	;
+
+LEXICON Kummuta
+m<U>:m<U>	Haluta_w_<A>	;
+p<U>:p<U>	Haluta_s_<A>	;
+p<U>il:p<U>il	Arvailla_<A>	;
+
+LEXICON Luututa
+<U>:<U>	Haluta_w_<A>	;
+t<U>:t<U>	Haluta_s_<A>	;
+t<U>il:t<U>il	Arvailla_<A>	;
+
+LEXICON Ryöpytä
+<U>:<U>	Haluta_w_<A>	;
+p<U>:p<U>	Haluta_s_<A>	;
+p<U>il:p<U>il	Arvailla_<A>	;
+
+LEXICON Takuta
+<U>:<U>	Haluta_w_<A>	;
+k<U>:k<U>	Haluta_s_<A>	;
+k<U>il:k<U>il	Arvailla_<A>	;
+
+LEXICON Kavuta
+v<U>:v<U>	Haluta_w_<A>	;
+p<U>:p<U>	Haluta_s_<A>	;
+p<U>il:p<U>il	Arvailla_<A>	;
+
 LEXICON Keritä
 i:i	Haluta_w_<A>	;
 ki:ki	Haluta_s_<A>	;
@@ -1944,6 +1974,7 @@ LEXICON Haluta_w
 
 LEXICON Haluta_s
 <A>:<A>	KestamanTekijapaateHeikko_<A>	;
+[Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
