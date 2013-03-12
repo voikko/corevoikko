@@ -2015,26 +2015,26 @@ TositavanKestamaTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 
 LEXICON TositavanKestamaTaan
-[Tt][Ap][P4]t<A><A>n:t<A><A>n	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ap][P4]t<A><A>n:@D.VAIN_YM3@t<A><A>n	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTtiin
-[Tt][Ai][P4]ttiin:ttiin	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@ttiin	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTiin
-[Tt][Ai][P4]tiin:tiin	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ai][P4]tiin:@D.VAIN_YM3@tiin	Liitesana_<A>	;
 
 LEXICON Ehtotapa
-[Te][Ap][P1][Ny]isin:isin	Liitesana_<A>	;
-[Te][Ap][P2][Ny]isit:isit	Liitesana_<A>	;
+@D.VAIN_YM3@[Te][Ap][P1][Ny]isin:@D.VAIN_YM3@isin	Liitesana_<A>	;
+@D.VAIN_YM3@[Te][Ap][P2][Ny]isit:@D.VAIN_YM3@isit	Liitesana_<A>	;
 [Te][Ap][P3][Ny]isi:isi	Liitesana_<A>	;
-[Te][Ap][P1][Nm]isimme:isimme	Liitesana_<A>	;
-[Te][Ap][P2][Nm]isitte:isitte	Liitesana_<A>	;
-[Te][Ap][P3][Nm]isiv<A>t:isiv<A>t	Liitesana_<A>	;
+@D.VAIN_YM3@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@isimme	Liitesana_<A>	;
+@D.VAIN_YM3@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@isitte	Liitesana_<A>	;
+@D.VAIN_YM3@[Te][Ap][P3][Nm]isiv<A>t:@D.VAIN_YM3@isiv<A>t	Liitesana_<A>	;
 
 LEXICON Käskytapa
-[Tk][Ap][P1][Nm]k<A><A>mme:k<A><A>mme	Liitesana_<A>	;
-[Tk][Ap][P2][Nm]k<A><A>:k<A><A>	Liitesana_<A>	;
-[Tk][Ap][P2][Nm]k<A><A>tte:k<A><A>tte	Liitesana_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@k<A><A>mme	Liitesana_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>:@D.VAIN_YM3@k<A><A>	Liitesana_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@k<A><A>tte	Liitesana_<A>	;
 [Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	Liitesana_<A>	;
 [Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	Liitesana_<A>	;
 

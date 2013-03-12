@@ -1066,3 +1066,5 @@ kynti
 koittaa
 !koitan
 !koitin
+!koitettiin
+!koittaisin
