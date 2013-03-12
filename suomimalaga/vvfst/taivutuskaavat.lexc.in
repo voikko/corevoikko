@@ -1470,6 +1470,12 @@ t:t	<WC>MuistaaMuistella_s_<A>	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLeuto_a	;
 !TODO hohdattaa
 
+LEXICON Hujahtaa
+hd:hd	<WC>MuistaaMuistella_w_<A>	;
+ht:ht	<WC>MuistaaMuistella_s_<A>	;
+hd:hd	Johdin_Us_ksen_<A>	;
+!TODO hujauttaa
+
 LEXICON Kirjoittaa
 it:it	<WC>MuistaaMuistella_w_<A>	;
 itt:itt	<WC>MuistaaMuistella_s_<A>	;

@@ -1080,3 +1080,6 @@ kihistä
 kihisen
 kitisen
 kihinää
+hujahtaa
+hujahdan
+hujahdus
