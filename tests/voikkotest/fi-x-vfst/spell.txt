@@ -1076,3 +1076,7 @@ edamia
 olen
 olit
 olemme
+kihistä
+kihisen
+kitisen
+kihinää

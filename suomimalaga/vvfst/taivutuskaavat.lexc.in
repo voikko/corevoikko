@@ -2026,6 +2026,17 @@ s:s	KertomanTekijapaateVahva_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 
+LEXICON Kihistä
+Kitistä_<A>	;
+!TODO kihahtaa
+!TODO kihauttaa
+!TODO kihautella
+
+LEXICON Kitistä
+[Tn1]ist<A>:ist<A>	Liitesana_<A>	;
+ise:ise	KestamanTekijapaateHeikko_<A>	;
+[Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
+
 LEXICON KestamanTekijapaateHeikko
 @D.VAIN_YM3@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@n	Liitesana_<A>	;
 @D.VAIN_YM3@[Tt][Ap][P2][Ny]t:@D.VAIN_YM3@t	Liitesana_<A>	;
