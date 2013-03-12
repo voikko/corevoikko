@@ -1907,6 +1907,44 @@ LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
 <A>:<A>	Salata_w_<A>	;
 
+LEXICON Selvitä
+i:i	Haluta_w_<A>	;
+i:i	Haluta_s_<A>	;
+
+LEXICON Bingota
+Haluta_w_<A>	;
+Haluta_s_<A>	;
+
+LEXICON Haluta
+Haluta_w_<A>	;
+Haluta_s_<A>	;
+
+LEXICON Hellitä
+li:li	Haluta_w_<A>	;
+ti:ti	Haluta_s_<A>	;
+
+LEXICON Lämmitä
+mi:mi	Haluta_w_<A>	;
+pi:pi	Haluta_s_<A>	;
+
+LEXICON Silputa
+<U>:<U>	Haluta_w_<A>	;
+p<U>:p<U>	Haluta_s_<A>	;
+
+LEXICON Vivuta
+v<U>:v<U>	Haluta_w_<A>	;
+p<U>:p<U>	Haluta_s_<A>	;
+
+LEXICON Keritä
+i:i	Haluta_w_<A>	;
+ki:ki	Haluta_s_<A>	;
+
+LEXICON Haluta_w
+[Tn1]t<A>:t<A>	Liitesana_<A>	;
+
+LEXICON Haluta_s
+<A>:<A>	KestamanTekijapaateHeikko_<A>	;
+
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
 <A>:<A>	<WC>SalataSalailla_s_<A>	;
