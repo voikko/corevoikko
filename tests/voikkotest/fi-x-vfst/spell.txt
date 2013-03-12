@@ -1068,3 +1068,5 @@ koittaa
 !koitin
 !koitettiin
 !koittaisin
+rosé
+roséta
