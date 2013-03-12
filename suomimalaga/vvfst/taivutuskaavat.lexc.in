@@ -1771,6 +1771,7 @@ Johdin_nimitapa4_<A>	;
 Johdin_ja_myyjä_<A>	;
 Johdin_nti_<A>	;
 Johdin_tU_<A>	;
+Johdin_nUt_<A>	;
 
 LEXICON Voida_s
 KertomanTekijapaateHeikko_<A>	;
@@ -1800,6 +1801,7 @@ LEXICON Nuolaista_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTiin_<A>	;
 Johdin_tU_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Nuolaista_s
 e:e	KestamanTekijapaateHeikko_<A>	;

@@ -1124,3 +1124,5 @@ halkaistiin
 halkaistua
 kehittyneempi
 kehittyneimmässä
+julkaisija
+saanut
