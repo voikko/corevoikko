@@ -287,3 +287,11 @@ word:kommentoikaa
   NUMBER=plural
   PERSON=2
   TENSE=present_simple
+word:olemme
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=indicative
+    NUMBER=plural
+    PERSON=1
+    TENSE=present_simple
