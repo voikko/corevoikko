@@ -1420,6 +1420,17 @@ LEXICON Muistaa
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]o:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o	NimisanaValo_a	;
 !TODO muistua
 
+LEXICON Sulaa
+<WC>Muistaa_w_<A>	;
+<WC>Muistaa_s_<A>	;
+
+LEXICON Kyntää
+t:t	<WC>Muistaa_s_<A>	;
+
+LEXICON Autioittaa
+<WC>Muistaa_w_<A>	;
+t:t	<WC>Muistaa_s_<A>	;
+
 LEXICON Hohtaa
 d:d	<WC>MuistaaMuistella_w_<A>	;
 t:t	<WC>MuistaaMuistella_s_<A>	;

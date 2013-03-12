@@ -295,6 +295,7 @@ def handle_word(word):
 		                 u"hidastaa", \
 		                 u"ammottaa", \
 		                 u"huutaa", u"soutaa", u"vuotaa", \
+		                 u"autioittaa", u"sulaa", u"kyntää", \
 		                 u"valita", \
 		                 u"hohtaa", \
 		                 u"saada", u"myydä", u"juoda", u"viedä", u"voida", \

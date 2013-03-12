@@ -1059,3 +1059,8 @@ lobattiin
 !lobbattiin
 lohkeava
 lotottu
+autioittaa
+autioitan
+sulavat
+sulatte
+kynti
