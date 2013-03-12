@@ -1070,3 +1070,6 @@ koittaa
 !koittaisin
 rosé
 roséta
+edam
+edamin
+edamia

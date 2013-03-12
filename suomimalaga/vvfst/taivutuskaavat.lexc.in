@@ -294,6 +294,22 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 
+LEXICON NOUN Edam
+[Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]i:i	Omistusliite_<A>	;
+[Sn][Nm]it:it	Liitesana_<A>	;
+[Sg][Ny]in:in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]in<A>:in<A>	Liitesana_<A>	;
+[Ses][Nm]ein<A>:ein<A>	Liitesana_<A>	;
+[Sill][Ny]ii:ii	<WC>LiOlN_<A>	;
+[Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
+i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
+e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]i:i	Omistusliite_<A>	;
