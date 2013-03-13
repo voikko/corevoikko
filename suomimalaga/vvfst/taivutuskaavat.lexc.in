@@ -2013,6 +2013,14 @@ LEXICON Mädätä
 d<A>:d<A>	Aleta_w_<A>	;
 t<A>:t<A>	Aleta_s_<A>	;
 
+LEXICON Tarjeta
+je:je	Aleta_w_<A>	;
+ke:ke	Aleta_s_<A>	;
+
+LEXICON Ulota
+<O>:<O>	Aleta_w_<A>	;
+k<O>:k<O>	Aleta_s_<A>	;
+
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 

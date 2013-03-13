@@ -1212,3 +1212,7 @@ kaveta
 kapenee
 mädätä
 mätänee
+tarjeta
+tarkenee
+ulota
+ulkonee
