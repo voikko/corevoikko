@@ -1691,9 +1691,9 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
         + @johdin_jA) or $oikea.jluokka = nimisana then
       result $res, rules nimisana, nimisana_teonsanasta,
                          nimisana_laatusanasta, inen_johdos_nimisanasta,
-                         etuliite, yhdysmerkki_yleisnimen_jälkeen;
+                         nimisanan_etuliite, yhdysmerkki_yleisnimen_jälkeen;
     else
-      result $res, rules inen_johdos_nimisanasta, etuliite, yhdysmerkki_laatusanan_jälkeen,
+      result $res, rules inen_johdos_nimisanasta, yhdysmerkki_laatusanan_jälkeen,
                          inen_päätteinen_laatusana;
     end;
   end;
