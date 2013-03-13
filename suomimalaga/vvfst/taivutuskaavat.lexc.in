@@ -1726,23 +1726,8 @@ i:i	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Kanavoida
-[Tn1]id<A>:id<A>	Liitesana_<A>	;
-id:id	Johdin_nimitapa2_<A>	;
-i:i	KestämänTekijäpääteHeikko_<A>	;
-KertomanTekijäpääteHeikko_<A>	;
-KertomanTekijäpääteVahva_<A>	;
-[Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
-[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
-Ehtotapa_<A>	;
-i:i	Käskytapa_<A>	;
-i:i	Johdin_nimitapa3_<A>	;
-i:i	Johdin_nimitapa4_<A>	;
+HaravoidaKanavoida_<A>	;
 i:i	Johdin_ja_myyjä_<A>	;
-i:i	Johdin_nti_<A>	;
-i:i	Johdin_tU_<A>	;
-i:i	Johdin_vA_<A>	;
-i:i	Johdin_nUt_<A>	;
-i:i	Kaatua_<A>	;
 
 LEXICON Voida
 i:i	Voida_l_<A>	;
@@ -1898,6 +1883,29 @@ Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
+
+LEXICON Haravoida
+HaravoidaKanavoida_<A>	;
+i:i	Johdin_ja_kantaja_<A>	;
+itsi:itsi	Johdin_ja_kulkija_<A>	;
+
+LEXICON HaravoidaKanavoida
+[Tn1]id<A>:id<A>	Liitesana_<A>	;
+id:id	Johdin_nimitapa2_<A>	;
+i:i	KestämänTekijäpääteHeikko_<A>	;
+KertomanTekijäpääteHeikko_<A>	;
+KertomanTekijäpääteVahva_<A>	;
+[Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
+[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+Ehtotapa_<A>	;
+i:i	Käskytapa_<A>	;
+i:i	Johdin_nimitapa3_<A>	;
+i:i	Johdin_nimitapa4_<A>	;
+i:i	Johdin_nti_<A>	;
+i:i	Johdin_tU_<A>	;
+i:i	Johdin_vA_<A>	;
+i:i	Johdin_nUt_<A>	;
+i:i	Kaatua_<A>	;
 
 LEXICON Valita
 [Tn1]t<A>:t<A>	Liitesana_<A>	;

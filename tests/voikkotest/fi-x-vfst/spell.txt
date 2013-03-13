@@ -1129,3 +1129,7 @@ saanut
 boikotoinut
 chileläistä
 italiankielinen
+haravoida
+haravoin
+haravoija
+haravoitsija
