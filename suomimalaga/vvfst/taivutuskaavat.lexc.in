@@ -1527,6 +1527,11 @@ KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 
+LEXICON Loistaa
+<WC>MuistaaMuistella_w_<A>	;
+<WC>MuistaaMuistella_s_<A>	;
+<O>@C.JOHDETTAVA_NIMISANAKSI@[Ln]:<O>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_<A>	;
+
 LEXICON Puoltaa
 l:l	Huutaa_w_<A>	;
 t:t	Huutaa_s_<A>	;

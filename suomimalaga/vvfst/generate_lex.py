@@ -295,7 +295,7 @@ def handle_word(word):
 		                 u"aavistaa", u"muistaa", u"kirjoittaa", u"heittää", u"alittaa", u"astahtaa", \
 		                 u"sallia", u"onkia", u"empiä", u"kontia", u"oppia", u"loikkia", u"sättiä", u"laatia", u"kaapia", u"hylkiä", u"poikia", \
 		                 u"kanavoida", u"haravoida", \
-		                 u"hidastaa", \
+		                 u"hidastaa", u"loistaa", \
 		                 u"ammottaa", \
 		                 u"huutaa", u"soutaa", u"vuotaa", \
 		                 u"autioittaa", u"sulaa", u"kyntää", \

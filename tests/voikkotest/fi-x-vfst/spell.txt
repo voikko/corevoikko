@@ -1160,3 +1160,6 @@ emme
 eiväthän
 lie
 lienen
+loistaa
+loistan
+ryöstö
