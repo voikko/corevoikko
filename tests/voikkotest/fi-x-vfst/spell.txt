@@ -1186,3 +1186,5 @@ laota
 lakoan
 kadota
 katoan
+saota
+sakoan

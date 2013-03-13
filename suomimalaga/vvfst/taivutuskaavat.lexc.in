@@ -2137,6 +2137,10 @@ LEXICON Lohjeta
 je:je	<WC>Katketa_w_<A>	;
 ke:ke	<WC>Katketa_s_<A>	;
 
+LEXICON Saota
+<O>:<O>	Kohota_w_<A>	;
+k<O>:k<O>	Kohota_s_<A>	;
+
 LEXICON Poiketa
 e:e	<WC>Katketa_w_<A>	;
 ke:ke	<WC>Katketa_s_<A>	;
