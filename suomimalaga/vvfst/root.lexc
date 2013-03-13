@@ -49,6 +49,10 @@ Multichar_Symbols
 [O2m] ! monikon 2.
 [O3] ! yksikön/monikon 3.
 
+! Vertailumuodot
+[Cc] ! voittoaste
+[Cs] ! yliaste
+
 ! Liitepartikkelit
 [Fkin] ! -kin
 [Fkaan] ! -kaan

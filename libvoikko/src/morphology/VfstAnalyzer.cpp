@@ -74,6 +74,9 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	sijamuotoMap.insert(std::make_pair(L"in", L"keinonto"));
 	sijamuotoMap.insert(std::make_pair(L"sti", L"kerrontosti"));
 	
+	comparisonMap.insert(std::make_pair(L"c", L"comparative"));
+	comparisonMap.insert(std::make_pair(L"s", L"superlative"));
+	
 	moodMap.insert(std::make_pair(L"n1", L"A-infinitive"));
 	moodMap.insert(std::make_pair(L"n2", L"E-infinitive"));
 	moodMap.insert(std::make_pair(L"n3", L"MA-infinitive"));
@@ -303,6 +306,9 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'O') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "POSSESSIVE", possessiveMap);
+					}
+					else if (fstOutput[j + 1] == L'C') {
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "COMPARISON", comparisonMap);
 					}
 					break;
 				}

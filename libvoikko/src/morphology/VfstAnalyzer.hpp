@@ -56,6 +56,7 @@ class VfstAnalyzer : public Analyzer {
 		std::map<std::wstring, std::wstring> sijamuotoMap;
 		std::map<std::wstring, std::wstring> moodMap;
 		std::map<std::wstring, std::wstring> numberMap;
+		std::map<std::wstring, std::wstring> comparisonMap;
 		std::map<std::wstring, std::wstring> personMap;
 		std::map<std::wstring, std::wstring> tenseMap;
 		std::map<std::wstring, std::wstring> focusMap;

@@ -295,3 +295,17 @@ word:olemme
     NUMBER=plural
     PERSON=1
     TENSE=present_simple
+word:kielteisemmin
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=comparative
+  NUMBER=plural
+  SIJAMUOTO=keinonto
+word:kielteisimmin
+ expected:1
+ analysis
+  CLASS=laatusana
+  COMPARISON=superlative
+  NUMBER=plural
+  SIJAMUOTO=keinonto
