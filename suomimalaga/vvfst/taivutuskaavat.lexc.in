@@ -129,8 +129,10 @@ LEXICON NOUN Valo_s
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Valo_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;
@@ -2224,7 +2226,7 @@ LEXICON Johdin_nimitapa3
 [Tn3][Ny][Sab]m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa4
-mi:mi	NimisanaNainen_<A>	;
+mi@C.JOHDETTAVA_NIMISANAKSI@:mi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNainen_<A>	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;

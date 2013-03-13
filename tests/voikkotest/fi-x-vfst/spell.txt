@@ -1153,3 +1153,6 @@ jäykennys
 jäykennellä
 tuonnempi
 tuonnempana
+etuina
+koulukiusaamisesta
+kuitumainen
