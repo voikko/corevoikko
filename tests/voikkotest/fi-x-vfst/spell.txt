@@ -1182,3 +1182,7 @@ upota
 uppoan
 turvota
 turpoan
+laota
+lakoan
+kadota
+katoan
