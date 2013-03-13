@@ -1200,3 +1200,9 @@ loitota
 loittonen
 hapata
 happanen
+suipeta
+suippenen
+vaieta
+vaikenen
+edetä
+etenen

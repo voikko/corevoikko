@@ -1989,6 +1989,18 @@ LEXICON Hapata
 <A>:<A>	Aleta_w_<A>	;
 p<A>:p<A>	Aleta_s_<A>	;
 
+LEXICON Suipeta
+e:e	Aleta_w_<A>	;
+pe:pe	Aleta_s_<A>	;
+
+LEXICON Vaieta
+e:e	Aleta_w_<A>	;
+ke:ke	Aleta_s_<A>	;
+
+LEXICON Edetä
+de:de	Aleta_w_<A>	;
+te:te	Aleta_s_<A>	;
+
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 
