@@ -1139,3 +1139,15 @@ juurtaa
 juurran
 saksantaa
 saksannan
+sukeltaa
+sukellan
+sukellus
+sukellella
+musertaa
+muserran
+muserrus
+muserrella
+jäykentää
+jäykennän
+jäykennys
+jäykennellä

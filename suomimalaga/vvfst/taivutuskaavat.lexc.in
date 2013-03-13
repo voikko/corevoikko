@@ -1545,6 +1545,24 @@ t:t	<WC>Huutaa_s_<A>	;
 del:del	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
+LEXICON Sukeltaa
+Puoltaa_<A>	;
+lel:lel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+l:l	Johdin_Us_ksen_<A>	;
+
+LEXICON Musertaa
+Juurtaa_<A>	;
+rel:rel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+r:r	Johdin_Us_ksen_<A>	;
+
+LEXICON Jäykentää
+Saksantaa_<A>	;
+nel:nel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+n:n	Johdin_Us_ksen_<A>	;
+
 LEXICON Murtaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	MurtaaCVS_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKaarto_ä	;

@@ -300,6 +300,7 @@ def handle_word(word):
 		                 u"huutaa", u"soutaa", u"vuotaa", \
 		                 u"autioittaa", u"sulaa", u"kyntää", \
 		                 u"puoltaa", u"juurtaa", u"saksantaa", \
+		                 u"sukeltaa", u"musertaa", u"jäykentää", \
 		                 u"valita", u"saneerata", \
 		                 u"hohtaa", u"hujahtaa", \
 		                 u"saada", u"myydä", u"juoda", u"viedä", u"voida", \
