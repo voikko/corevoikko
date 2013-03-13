@@ -1973,10 +1973,24 @@ LEXICON Saneerata
 LEXICON Aleta
 Aleta_w_<A>	;
 Aleta_s_<A>	;
+n:n	Saksantaa_<A>	;
+n:n	Jakaantua_<A>	;
+n:n	Pienennellä_<A>	;
+
+LEXICON Lämmetä
+me:me	Aleta_w_<A>	;
+pe:pe	Aleta_s_<A>	;
+
+LEXICON Loitota
+<O>:<O>	Aleta_w_<A>	;
+t<O>:t<O>	Aleta_s_<A>	;
+
+LEXICON Hapata
+<A>:<A>	Aleta_w_<A>	;
+p<A>:p<A>	Aleta_s_<A>	;
 
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
-n:n	Saksantaa_<A>	;
 
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
