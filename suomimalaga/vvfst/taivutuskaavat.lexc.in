@@ -2168,6 +2168,23 @@ s:s	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 
+LEXICON Kohota
+KohotaKohoilla_w_<A>	;
+KohotaKohoilla_s_<A>	;
+
+LEXICON KohotaKohoilla_w
+Kohota_w_<A>	;
+
+LEXICON KohotaKohoilla_s
+Kohota_s_<A>	;
+il:il	Arvailla_<A>	;
+
+LEXICON Kohota_w
+Katketa_w_<A>	;
+
+LEXICON Kohota_s
+Katketa_s_<A>	;
+
 LEXICON Kihistä
 Kitistä_<A>	;
 !TODO kihahtaa

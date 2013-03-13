@@ -1168,3 +1168,6 @@ laajapohjainen
 laajaemäntäinen
 metsittynevät
 !enkin
+kohota
+kohoan
+kohoilen
