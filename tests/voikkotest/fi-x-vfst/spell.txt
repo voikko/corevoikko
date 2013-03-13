@@ -1133,3 +1133,9 @@ haravoida
 haravoin
 haravoija
 haravoitsija
+puoltaa
+puollan
+juurtaa
+juurran
+saksantaa
+saksannan

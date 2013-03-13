@@ -1522,6 +1522,18 @@ KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 
+LEXICON Puoltaa
+l:l	Huutaa_w_<A>	;
+t:t	Huutaa_s_<A>	;
+
+LEXICON Juurtaa
+r:r	Huutaa_w_<A>	;
+t:t	Huutaa_s_<A>	;
+
+LEXICON Saksantaa
+n:n	Huutaa_w_<A>	;
+t:t	Huutaa_s_<A>	;
+
 ! parempi esimerkkisana "joutaa"
 LEXICON Vuotaa
 d:d	Huutaa_w_<A>	;
