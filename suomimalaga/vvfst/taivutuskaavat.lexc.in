@@ -2001,11 +2001,24 @@ LEXICON Edetä
 de:de	Aleta_w_<A>	;
 te:te	Aleta_s_<A>	;
 
+LEXICON Leudota
+d<O>:d<O>	Aleta_w_<A>	;
+t<O>:t<O>	Aleta_s_<A>	;
+
+LEXICON Kaveta
+ve:ve	Aleta_w_<A>	;
+pe:pe	Aleta_s_<A>	;
+
+LEXICON Mädätä
+d<A>:d<A>	Aleta_w_<A>	;
+t<A>:t<A>	Aleta_s_<A>	;
+
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
+[Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;

@@ -1206,3 +1206,9 @@ vaieta
 vaikenen
 edetä
 etenen
+leudota
+leutonee
+kaveta
+kapenee
+mädätä
+mätänee

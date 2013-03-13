@@ -303,7 +303,7 @@ def handle_word(word):
 		                 u"sukeltaa", u"musertaa", u"jäykentää", \
 		                 u"valita", u"saneerata", \
 		                 u"hohtaa", u"hujahtaa", \
-		                 u"aleta", u"lämmetä", u"loitota", u"hapata", u"suipeta", u"vaieta", u"edetä", \
+		                 u"aleta", u"lämmetä", u"loitota", u"hapata", u"suipeta", u"vaieta", u"edetä", u"leudota", u"kaveta", u"mädätä", \
 		                 u"kohota", u"irrota", u"kimmota", u"lingota", u"netota", u"upota", u"turvota", u"laota", u"kadota", u"saota", \
 		                 u"saada", u"myydä", u"juoda", u"viedä", u"voida", \
 		                 u"laskea", u"hakea", u"polkea", u"tunkea", u"kutea", u"rypeä", \
