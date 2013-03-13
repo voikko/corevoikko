@@ -1423,6 +1423,7 @@ LEXICON Punoa_s
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
+n:n	Mahtotapa_<A>	;
 Johdin_nimitapa2_<A>	;
 Johdin_nimitapa4_<A>	;
 Johdin_ja_kantaja_<A>	;
@@ -2216,12 +2217,12 @@ LEXICON Ehtotapa
 @D.VAIN_YM3@[Te][Ap][P3][Nm]isiv<A>t:@D.VAIN_YM3@isiv<A>t	Liitesana_<A>	;
 
 LEXICON Mahtotapa
-@D.VAIN_YM3@[Te][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P2][Ny]et:@D.VAIN_YM3@et	Liitesana_<A>	;
-[Te][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P1][Nm]emme:@D.VAIN_YM3@emme	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P2][Nm]ette:@D.VAIN_YM3@ette	Liitesana_<A>	;
-@D.VAIN_YM3@[Te][Ap][P3][Nm]ev<A>t:@D.VAIN_YM3@ev<A>t	Liitesana_<A>	;
+@D.VAIN_YM3@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
+@D.VAIN_YM3@[Tm][Ap][P2][Ny]et:@D.VAIN_YM3@et	Liitesana_<A>	;
+[Tm][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+@D.VAIN_YM3@[Tm][Ap][P1][Nm]emme:@D.VAIN_YM3@emme	Liitesana_<A>	;
+@D.VAIN_YM3@[Tm][Ap][P2][Nm]ette:@D.VAIN_YM3@ette	Liitesana_<A>	;
+[Tm][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 
 LEXICON Käskytapa
 @D.VAIN_YM3@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@k<A><A>mme	Liitesana_<A>	;
