@@ -564,6 +564,7 @@ LEXICON NOUN Koira_s
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
@@ -584,6 +585,7 @@ LEXICON NOUN Asema_s
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Asema_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
@@ -1897,6 +1899,7 @@ l:l	Johdin_nimitapa2_<A>	;
 [Ll]t<U>:t<U>	LaatusanaValo_s_<A>	;
 [Ll]t<U><U>:t<U><U>	LaatusanaValo_sl_<A>	;
 [Ll]l<U>:l<U>	LaatusanaValo_w_<A>	;
+TositavanKertomaTiin_<A>	;
 
 LEXICON Katsella_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
