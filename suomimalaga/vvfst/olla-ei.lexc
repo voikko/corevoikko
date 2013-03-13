@@ -27,4 +27,18 @@ lko:lko                 Loppu ;        # Kielteinen käsky: (älkää) olko.
 [Tt][Ap][P4]llaan:llaan Liitesana_a ;  # Ollaan.
 [Tt][Ai][P4]ltiin:ltiin Liitesana_a ;  # Oltiin.
 
-! TODO lienee, ei, älä
+
+LEXICON Lienee
+n:n Mahtotapa_ä ;
+Loppu ;
+
+
+LEXICON Ei
+[Tt][Ap][P1][Ny]n:n        Liitesana_ä ;
+[Tt][Ap][P2][Ny]t:t        Liitesana_ä ;
+[Tt][Ap][P3][Ny]i:i        Liitesana_ä ;
+[Tt][Ap][P1][Nm]mme:mme    Liitesana_ä ;
+[Tt][Ap][P2][Nm]tte:tte    Liitesana_ä ;
+[Tt][Ap][P3][Nm]ivät:ivät  Liitesana_ä ;
+
+! TODO älä

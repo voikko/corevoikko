@@ -309,3 +309,19 @@ word:kielteisimmin
   COMPARISON=superlative
   NUMBER=plural
   SIJAMUOTO=keinonto
+word:ei
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=indicative
+    NUMBER=singular
+    PERSON=3
+    TENSE=present_simple
+word:lienen
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=potential
+    NUMBER=singular
+    PERSON=1
+    TENSE=present_simple

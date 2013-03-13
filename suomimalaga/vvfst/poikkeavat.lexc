@@ -1,5 +1,8 @@
-LEXICON Poikkeavat_sanat
+LEXICON Poikkeavat_sanat    ! In alphabetical order.
+[Lt][Xp]ei[X]e:e Ei ;
+[Lt][Xp]lienee[X]lie:lie Lienee ;
 [Lt][Xp]olla[X]o:o Olla ;
 [Lt][Xp]tuta[X]tuta:tuta     Loppu ;
 [Lt][Xp]tuta[X]tutaan:tutaan Loppu ;
-! TODO lienee, ei, älä
+
+! TODO älä

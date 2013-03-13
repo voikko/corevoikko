@@ -1156,3 +1156,7 @@ tuonnempana
 etuina
 koulukiusaamisesta
 kuitumainen
+emme
+eiväthän
+lie
+lienen
