@@ -713,6 +713,9 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
 ?Nimisana	e<A>:e<A>	Johdin_tOn_<A>	;
 
+LEXICON NOUN Suurempi
+?Laatusana	Voittoaste_<A>	;
+
 LEXICON NOUN Vapaa
 <WC>Vapaa_s_<A>	;
 <A>:<A>	<WC>Vapaa_l_<A>	;

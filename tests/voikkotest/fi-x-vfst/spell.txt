@@ -1151,3 +1151,5 @@ jäykentää
 jäykennän
 jäykennys
 jäykennellä
+tuonnempi
+tuonnempana
