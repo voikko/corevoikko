@@ -1216,3 +1216,6 @@ tarjeta
 tarkenee
 ulota
 ulkonee
+kieltämässä
+laajennettava
+huutava

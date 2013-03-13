@@ -1617,6 +1617,7 @@ Jakaantua_<A>	;
 LEXICON Huutaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 e:e	Johdin_ttU_<A>	;
+e:e	Johdin_ttAvA_<A>	;
 e:e	Tositapa4Tt_<A>	;
 
 LEXICON Huutaa_s
@@ -1625,6 +1626,8 @@ LEXICON Huutaa_s
 <A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
+<A>:<A>	Johdin_mA_<A>	;
+<A>:<A>	Johdin_vA_<A>	;
 
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
