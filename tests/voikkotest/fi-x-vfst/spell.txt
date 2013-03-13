@@ -1171,3 +1171,8 @@ metsittynevät
 kohota
 kohoan
 kohoilen
+irrota
+irtoan
+kimpoan
+lingota
+linkoan
