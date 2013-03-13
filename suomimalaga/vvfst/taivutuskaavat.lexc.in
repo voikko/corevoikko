@@ -1970,6 +1970,17 @@ LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
 <A>:<A>	Salata_w_<A>	;
 
+LEXICON Aleta
+Aleta_w_<A>	;
+Aleta_s_<A>	;
+
+LEXICON Aleta_w
+[Tn1]t<A>:t<A>	Liitesana_<A>	;
+n:n	Saksantaa_<A>	;
+
+LEXICON Aleta_s
+ne:ne	KestämänTekijäpääteHeikko_<A>	;
+
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
 i:i	Haluta_s_<A>	;
