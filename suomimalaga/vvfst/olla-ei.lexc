@@ -34,11 +34,11 @@ Loppu ;
 
 
 LEXICON Ei
-[Tt][Ap][P1][Ny]n:n        Liitesana_ä ;
-[Tt][Ap][P2][Ny]t:t        Liitesana_ä ;
-[Tt][Ap][P3][Ny]i:i        Liitesana_ä ;
-[Tt][Ap][P1][Nm]mme:mme    Liitesana_ä ;
-[Tt][Ap][P2][Nm]tte:tte    Liitesana_ä ;
-[Tt][Ap][P3][Nm]ivät:ivät  Liitesana_ä ;
+[Tt][Ap][P1][Ny]n:n        LiitesanaKoPaHan_ä ;
+[Tt][Ap][P2][Ny]t:t        LiitesanaKoPaHan_ä ;
+[Tt][Ap][P3][Ny]i:i        LiitesanaKoPaHan_ä ;
+[Tt][Ap][P1][Nm]mme:mme    LiitesanaKoPaHan_ä ;
+[Tt][Ap][P2][Nm]tte:tte    LiitesanaKoPaHan_ä ;
+[Tt][Ap][P3][Nm]ivät:ivät  LiitesanaKoPaHan_ä ;
 
 ! TODO älä

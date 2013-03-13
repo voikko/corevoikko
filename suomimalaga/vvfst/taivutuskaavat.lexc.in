@@ -2418,3 +2418,27 @@ LEXICON Yliaste
 [Sab][Ny][Cs]imm<A>tt<A>:imm<A>tt<A>	Liitesana_<A>	;
 [Sab][Nm][Cs]immitt<A>:immitt<A>	Liitesana_<A>	;
 [Sin][Nm][Cs]immin:immin	Liitesana_<A>	;
+
+LEXICON Liitesana
+LiitesanaKoPaHan_<A>	;
+[Fkin]kin:kin	Loppu       ;
+[Fkaan]k<A><A>n:k<A><A>n	Loppu ;
+[Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
+[Fkaan]k<O>k<A><A>n:k<O>k<A><A>n	Loppu ;
+[Fkin]kink<O>:kink<O>	Loppu ;
+[Fkaan]k<A><A>nk<O>:k<A><A>nk<O>	Loppu ;
+[Fkin]kinh<A>n:kinh<A>n	Loppu ;
+[Fkin]kink<O>h<A>n:kink<O>h<A>n	Loppu ;
+[Fkin]kink<O>s:kink<O>s	Loppu ;
+[Fkaan]k<A><A>nk<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
+[Fkaan]k<A><A>nk<O>s:k<A><A>nk<O>s	Loppu ;
+
+LEXICON LiitesanaKoPaHan
+k<O>:k<O>	Loppu ;
+p<A>:p<A>	Loppu ;
+h<A>n:h<A>n	Loppu ;
+k<O>h<A>n:k<O>h<A>n	Loppu ;
+p<A>h<A>n:p<A>h<A>n	Loppu ;
+k<O>s:k<O>s	Loppu ;
+p<A>s:p<A>s	Loppu ;
+Loppu      ;
