@@ -2184,6 +2184,18 @@ LEXICON Lingota
 g<O>:g<O>	KohotaKohoilla_w_<A>	;
 k<O>:k<O>	KohotaKohoilla_s_<A>	;
 
+LEXICON Netota
+<O>:<O>	KohotaKohoilla_w_<A>	;
+t<O>:t<O>	KohotaKohoilla_s_<A>	;
+
+LEXICON Upota
+<O>:<O>	KohotaKohoilla_w_<A>	;
+p<O>:p<O>	KohotaKohoilla_s_<A>	;
+
+LEXICON Turvota
+v<O>:v<O>	KohotaKohoilla_w_<A>	;
+p<O>:p<O>	KohotaKohoilla_s_<A>	;
+
 LEXICON KohotaKohoilla_w
 Kohota_w_<A>	;
 

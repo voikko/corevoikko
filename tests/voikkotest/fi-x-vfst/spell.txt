@@ -1176,3 +1176,9 @@ irtoan
 kimpoan
 lingota
 linkoan
+netota
+nettoan
+upota
+uppoan
+turvota
+turpoan
