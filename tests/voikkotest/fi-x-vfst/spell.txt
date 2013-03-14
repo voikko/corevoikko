@@ -1232,3 +1232,4 @@ jahtaama
 kysyttäisi
 kysyttäisiin
 haravoitaisi
+klassikkopiirretyt
