@@ -586,6 +586,7 @@ LEXICON NOUN Matala
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+<O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
@@ -720,7 +721,7 @@ LEXICON NOUN Apaja
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
-! Parempi esimerkkisana "jäkälä"
+! Parempi esimerkkisana "pakana"
 LEXICON NOUN Peruna
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
@@ -735,7 +736,7 @@ LEXICON NOUN Peruna
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
-<WC>YhteisetMonikonPaikallissijat_<A>	;
+<O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
