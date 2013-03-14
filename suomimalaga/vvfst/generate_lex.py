@@ -265,7 +265,7 @@ def handle_word(word):
 		                 u"paperi", u"kajakki", \
 		                 u"asema", u"emäntä", \
 		                 u"laatikko", \
-		                 u"autio", \
+		                 u"autio", u"peruna", \
 		                 u"apila", u"kulkija", \
 		                 u"korkea", \
 		                 u"apaja", \
@@ -318,6 +318,7 @@ def handle_word(word):
 		                 u"selvitä", u"bingota", u"haluta", u"hellitä", u"lämmitä", u"silputa", u"vivuta", u"keritä", \
 		                 u"juoruta", u"kummuta", u"luututa", u"ryöpytä", u"takuta", u"kavuta", \
 		                 u"katsella", u"kohdella", u"nakella", u"tapella", u"aatella", u"askarrella", u"ommella", u"pienennellä", u"takellella"]:
+			print u"Puuttuu luokka " + jatko
 			continue
 		vfst_class_prefix = get_vfst_class_prefix(vfst_word_class)
 		#entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \

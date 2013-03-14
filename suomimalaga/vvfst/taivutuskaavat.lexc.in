@@ -685,6 +685,27 @@ LEXICON NOUN Apaja
 [Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+[Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
+[Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
+[Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
+[Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	Johdin_UUs_<A>	;
+?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+
+! Parempi esimerkkisana "jäkälä"
+LEXICON NOUN Peruna
+[Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	Liitesana_<A>	;
 [Ses][Nm]in<A>:in<A>	Liitesana_<A>	;
