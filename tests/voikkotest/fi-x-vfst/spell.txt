@@ -1222,3 +1222,6 @@ huutava
 jäkälä
 jäkälän
 katajata
+hattara
+hattarassa
+hattaroita
