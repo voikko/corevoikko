@@ -1228,3 +1228,7 @@ hattaroissa
 hattaroita
 pakanoissa
 !pakanissa
+jahtaama
+kysyttäisi
+kysyttäisiin
+haravoitaisi

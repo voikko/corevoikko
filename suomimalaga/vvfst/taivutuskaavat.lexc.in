@@ -1458,6 +1458,7 @@ k<U>:k<U>	<WC>Punoa_s_<A>	;
 LEXICON Punoa_w
 KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
+EhtotapaTta_<A>	;
 Johdin_ttU_<A>	;
 Johdin_ntA_<A>	;
 Tositapa4Tt_<A>	;
@@ -1990,6 +1991,7 @@ KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
+i:i	EhtotapaTa_<A>	;
 i:i	Käskytapa_<A>	;
 i:i	Johdin_nimitapa3_<A>	;
 i:i	Johdin_nimitapa4_<A>	;
@@ -2218,6 +2220,7 @@ Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
 <A>:<A>	Johdin_nimitapa4_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
+<A>:<A>	Johdin_mA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
 Johdin_Us_ksen_<A>	;
 
@@ -2374,6 +2377,13 @@ LEXICON Ehtotapa
 @D.VAIN_YM3@[Te][Ap][P1][Nm]isimme:@D.VAIN_YM3@isimme	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P2][Nm]isitte:@D.VAIN_YM3@isitte	Liitesana_<A>	;
 @D.VAIN_YM3@[Te][Ap][P3][Nm]isiv<A>t:@D.VAIN_YM3@isiv<A>t	Liitesana_<A>	;
+
+LEXICON EhtotapaTta
+t:t	EhtotapaTa_<A>	;
+
+LEXICON EhtotapaTa
+@D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isi:@D.VAIN_YM3@t<A>isi	Liitesana_<A>	;
+@D.VAIN_YM3@[Te][Ap][P4][Ny]t<A>isiin:@D.VAIN_YM3@t<A>isiin	Liitesana_<A>	;
 
 LEXICON Mahtotapa
 @D.VAIN_YM3@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
