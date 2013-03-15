@@ -266,7 +266,7 @@ voikko-sukija:
 # Rules for creating vvfst morphology for Sukija indexer. See file
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
 #
-vvfst-sukija: $(VVFST_BUILDDIR)/all-sukija.att
+vvfst-sukija: $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all.att
 
 $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp
 	$(PYTHON) vvfst/generate_sukija.py --destdir=$(VVFST_BUILDDIR)

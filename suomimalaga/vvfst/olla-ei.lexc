@@ -40,5 +40,11 @@ LEXICON Ei
 [Tt][Ap][P1][Nm]mme:mme    LiitesanaKoPaHan_ä ;
 [Tt][Ap][P2][Nm]tte:tte    LiitesanaKoPaHan_ä ;
 [Tt][Ap][P3][Nm]ivät:ivät  LiitesanaKoPaHan_ä ;
+[Tt][Ap][P1][Ny]n:n        LiitesanaKA_ä ; # Enkä. Malagalla tehty Voikko tunnistaa myös nämä.
+[Tt][Ap][P2][Ny]t:t        LiitesanaKA_ä ; # Etkä.
+[Tt][Ap][P3][Ny]i:i        LiitesanaKA_ä ; # Eikä.
+[Tt][Ap][P1][Nm]mme:mme    LiitesanaKA_ä ; # Emmekä.
+[Tt][Ap][P2][Nm]tte:tte    LiitesanaKA_ä ; # Ettekä.
+[Tt][Ap][P3][Nm]ivät:ivät  LiitesanaKA_ä ; # Eivätkä.
 
 ! TODO älä
