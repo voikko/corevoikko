@@ -77,6 +77,11 @@ class SuggestionStatus {
 		size_t getSuggestionCount() const;
 		
 		/**
+		 * Returns the maximum number of suggestions that can be generated.
+		 */
+		size_t getMaxSuggestionCount() const;
+		
+		/**
 		 * Returns the word for which the suggestions are being created.
 		 */
 		const wchar_t * getWord() const;

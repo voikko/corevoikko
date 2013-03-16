@@ -103,6 +103,10 @@ size_t SuggestionStatus::getSuggestionCount() const {
 	return suggestionCount;
 }
 
+size_t SuggestionStatus::getMaxSuggestionCount() const {
+	return maxSuggestions;
+}
+
 const wchar_t * SuggestionStatus::getWord() const {
 	return word;
 }
