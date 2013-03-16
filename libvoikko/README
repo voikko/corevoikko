@@ -2,16 +2,17 @@ General information
 ===================
 
 This is libvoikko, library of free natural language processing tools
-The library is written in C++ and it uses a left associative grammar for
-describing the morphology of Finnish language. The morphology is developed
-using Malaga natural language grammar development tool.
+The library is written in C++. The library supports multiple backends:
 
-Alternative backends that can be used instead of Malaga include HFST,
-Lttoolbox and VFST. These backends are currently experimental.
+- Malaga: Left associative grammar for describing the morphology of
+Finnish language.
+- HFST: Supports ZHFST speller archives for various languages.
+- Experimental backends: Lttoolbox and VFST.
 
 Libvoikko provides spell checking, hyphenation, grammar checking and
-morphological analysis for Finnish language. Support for other languages
-is in experimental state. Libvoikko aims to provide support for
+morphological analysis for Finnish language. Only spell checking is
+supported for other languages through HFST backend.
+Libvoikko aims to provide support for
 languages that are not well served by Hunspell or other existing free
 linguistic tools. This can be done because we do not care about
 compatibility with legacy dictionary formats and we support only actively
@@ -93,16 +94,18 @@ strongly recommend that you disable external dictionary loading with
 Runtime requirements
 ====================
 
-The library needs a version of Suomi-malaga containing a file named
-voikko-fi_FI.pro. The file must start with the following line:
+For dictionary format 2 (Malaga and experimental backends):
 
-info: Voikko-Dictionary-Format: 2
+ The library needs a version of Suomi-malaga containing a file named
+ voikko-fi_FI.pro. The file must start with the following line:
 
-This should be considered a strict requirement for now. While some parts
-of the library may work without Suomi-malaga, this mode of operation is
-not tested and not guaranteed to behave consistently across minor releases
-of the library.
+ info: Voikko-Dictionary-Format: 2
 
+For dictionary format 3 (HFST backend):
+
+ Any valid ZHFST speller with file suffix .zhfst can be used. The name
+ of the file is not significant.
+ 
 Python bindings work with Python version 2.5 or later. To use them with
 Python 3 or later the module file (libvoikko.py) must first be converted
 using the "2to3" utility from Python distribution.
@@ -178,7 +181,7 @@ from rule 1:
 Authors
 =======
 
-2006 - 2012 Harri Pitkänen (hatapitk@iki.fi)
+2006 - 2013 Harri Pitkänen (hatapitk@iki.fi)
  * Maintainer, core library developer.
 1995 - 2008 Björn Beutel
  * Author of the original LAG implementation (Malaga), slightly simplified version
