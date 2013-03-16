@@ -40,6 +40,12 @@
 # include <unistd.h>
 #endif
 
+#ifdef HAVE_HFST
+#include <ZHfstOspeller.h>
+#include <ospell.h>
+#include <ol-exceptions.h>
+#endif
+
 #define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
 #define MALAGA_DICTIONARY_VERSION "2"
 #define HFST_DICTIONARY_VERSION "3"
@@ -260,15 +266,26 @@ void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, 
 			string suggestionBackend = "hfst";
 			// TODO implement null hyphenator
 			string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
+			
+			hfst_ol::ZHfstOspeller * speller = new hfst_ol::ZHfstOspeller();
+			try {
+				speller->read_zhfst(fullPath.c_str());
+			}
+			catch (hfst_ol::ZHfstZipReadingError& zhzre) {
+				delete speller;
+				continue; // broken dictionary
+			}
+			const hfst_ol::ZHfstOspellerXmlMetadata spellerMetadata = speller->get_metadata();
+			
 			LanguageTag language;
-			language.setLanguage("hu");
-			string variantName = "todo";
-			language.setPrivateUse(variantName);
-			string description = "TODO description";
+			language.setBcp47(spellerMetadata.info_.locale_);
+			map<string, string> languageVersions = spellerMetadata.info_.title_;
+			string description = languageVersions[spellerMetadata.info_.locale_];
+			delete speller;
 			Dictionary dict = Dictionary(fullPath, morBackend, spellBackend, suggestionBackend,
 			                        hyphenatorBackend, language, description);
 			// TODO copy-paste from above
-			if (variantName == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
+			if (language.getPrivateUse() == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
 				dict.setDefault(true);
 			}
 			if (dict.isValid()) {

@@ -64,6 +64,17 @@ void LanguageTag::setPrivateUse(const string & privateUse) {
 	this->privateUse = privateUse;
 }
 
+void LanguageTag::setBcp47(const string & bcp) {
+	size_t splitPos = bcp.find("-x-");
+	if (splitPos != string::npos) {
+		setLanguage(bcp.substr(0, splitPos));
+		setPrivateUse(bcp.substr(splitPos + 2));
+	}
+	else {
+		setLanguage(bcp);
+	}
+}
+
 string LanguageTag::toBcp47() const {
 	string tag = this->language;
 	if (!this->privateUse.empty()) {

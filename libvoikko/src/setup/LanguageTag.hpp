@@ -50,6 +50,7 @@ class LanguageTag {
 		const std::string & getPrivateUse() const;
 		void setPrivateUse(const std::string & privateUse);
 		
+		void setBcp47(const std::string & bcp);
 		std::string toBcp47() const;
 	private:
 		std::string language;

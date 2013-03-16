@@ -268,8 +268,11 @@ static int list_dicts(const char * path) {
 	}
 	for (voikko_dict ** i = dicts; *i; i++) {
 		cout << voikko_dict_language(*i);
-		cout << "-x-";
-		cout << voikko_dict_variant(*i);
+		const char * variant = voikko_dict_variant(*i);
+		if (variant[0]) {
+			cout << "-x-";
+			cout << variant;
+		}
 		cout << ": ";
 		cout << voikko_dict_description(*i);
 		cout << endl;
