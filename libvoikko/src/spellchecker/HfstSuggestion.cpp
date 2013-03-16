@@ -34,16 +34,15 @@ namespace libvoikko { namespace spellchecker { namespace suggestion {
 HfstSuggestion::HfstSuggestion(hfst_ol::ZHfstOspeller * speller) throw(setup::DictionaryException) :
 	speller_(speller) { }
 
-void HfstSuggestion::generate(SuggestionStatus* s) const {
+void HfstSuggestion::generate(SuggestionStatus * s) const {
 	size_t wlen = s->getWordLength();
 	char * wordUtf8 = StringUtils::utf8FromUcs4(s->getWord(), wlen);
 	hfst_ol::CorrectionQueue corrections = speller_->suggest(wordUtf8);
 	unsigned int correction_count = 0;
-	while (corrections.size() > 0) {
-		const char* sugUtf8 = corrections.top().first.c_str();
+	while (corrections.size() > 0 && !s->shouldAbort()) {
+		const char * sugUtf8 = corrections.top().first.c_str();
 		correction_count++;
-		wchar_t* sugU4 = StringUtils::ucs4FromUtf8(sugUtf8,
-												strlen(sugUtf8));
+		wchar_t * sugU4 = StringUtils::ucs4FromUtf8(sugUtf8, strlen(sugUtf8));
 		s->addSuggestion(sugU4, correction_count++);
 		corrections.pop();
 	}

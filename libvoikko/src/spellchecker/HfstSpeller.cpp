@@ -48,6 +48,7 @@ spellresult HfstSpeller::doSpell(const wchar_t * word, size_t wlen) {
 	if (speller->spell(wordUtf8)) {
 		result = SPELL_OK;
 	}
+	delete[] wordUtf8;
 	return result;
 }
  
