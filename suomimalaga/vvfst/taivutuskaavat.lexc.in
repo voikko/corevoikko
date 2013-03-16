@@ -2602,6 +2602,10 @@ LiitesanaKoPaHan_<A>	;
 [Fkaan]k<A><A>nk<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
 [Fkaan]k<A><A>nk<O>s:k<A><A>nk<O>s	Loppu ;
 
+LEXICON KieltosananLiitesana
+LiitesanaKoPaHan_<A>	;
+k<A>:k<A>	Loppu	;
+
 LEXICON LiitesanaKoPaHan
 k<O>:k<O>	Loppu ;
 p<A>:p<A>	Loppu ;
@@ -2611,6 +2615,3 @@ p<A>h<A>n:p<A>h<A>n	Loppu ;
 k<O>s:k<O>s	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
-
-LEXICON LiitesanaKA
-k<A>:k<A> Loppu ;
