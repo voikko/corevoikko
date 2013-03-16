@@ -253,6 +253,7 @@ void DictionaryLoader::addVariantsFromPathMalaga(const string & path, map<string
 }
 
 void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, Dictionary> & variants) {
+#ifdef HAVE_HFST
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(HFST_DICTIONARY_VERSION);
@@ -298,6 +299,10 @@ void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, 
 			}
 		}
 	}
+#else
+	(void)path;
+	(void)variants;
+#endif
 }
 
 void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
