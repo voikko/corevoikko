@@ -1,3 +1,8 @@
+2013-03-17 Harri Pitkänen <hatapitk@iki.fi>
+	* Private use subtag is now always returned, default is
+	  "standard". This will make it easier to deal with language
+	  variants in applications.
+
 2013-03-16 Harri Pitkänen <hatapitk@iki.fi>
 	* Support for ZHFST spellers is no longer experimental.
 

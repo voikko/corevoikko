@@ -56,8 +56,15 @@ void LanguageTag::setLanguage(const string & language) {
 	}
 }
 
+static const string STANDARD = "standard";
+
 const string & LanguageTag::getPrivateUse() const {
-	return privateUse;
+	if (!privateUse.empty()) {
+		return privateUse;
+	}
+	else {
+		return STANDARD;
+	}
 }
 
 void LanguageTag::setPrivateUse(const string & privateUse) {
