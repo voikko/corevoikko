@@ -41,4 +41,11 @@ LEXICON Ei
 [Tt][Ap][P2][Nm]tte:tte    KieltosananLiitesana_ä ;
 [Tt][Ap][P3][Nm]ivät:ivät  KieltosananLiitesana_ä ;
 
-! TODO älä
+
+Lexicon Älkää
+[Tk][Ap][P2][Ny]ä:ä           KieltosananLiitesana_ä ;
+[Tk][Ap][P3][Ny]köön:köön     KieltosananLiitesana_ä ;
+[Tk][Ap][P1][Nm]käämme:käämme KieltosananLiitesana_ä ;
+[Tk][Ap][P2][Nm]kää:kää       KieltosananLiitesana_ä ;
+[Tk][Ap][P2][Nm]käätte:käätte KieltosananLiitesana_ä ;
+[Tk][Ap][P3][Nm]kööt:kööt     KieltosananLiitesana_ä ;

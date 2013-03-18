@@ -325,3 +325,11 @@ word:lienen
     NUMBER=singular
     PERSON=1
     TENSE=present_simple
+word:älkööt
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=imperative
+    NUMBER=plurar
+    PERSON=3
+    TENSE=present_simple
