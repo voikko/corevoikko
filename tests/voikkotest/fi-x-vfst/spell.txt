@@ -1236,3 +1236,10 @@ klassikkopiirretyt
 motiivinaan
 eikä
 älkääpä
+kirves
+kirveen
+kirveitä
+ies
+ikeen
+ikeitä
+kankaita

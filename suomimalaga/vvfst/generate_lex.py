@@ -278,6 +278,7 @@ def handle_word(word):
 		                 u"kuollut", \
 		                 u"suo", u"suurempi", \
 		                 u"rosé", u"edam", \
+		                 u"kirves", u"ies", \
 		                 u"maa", u"puu", u"pii", u"tee", \
 		                 u"vapaa", u"tienoo", u"leikkuu", \
 				 u"mies", \

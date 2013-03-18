@@ -1257,6 +1257,14 @@ LEXICON NOUN Vieras
 <WC>Vieras_w_<A>	;
 <WC>Vieras_s_<A>	;
 
+LEXICON NOUN Kirves
+<WC>Vieras_w_<A>	;
+<WC>Vieras_s_<A>	;
+
+LEXICON NOUN Ies
+e:e	<WC>Vieras_w_<A>	;
+ke:ke	<WC>Vieras_s_<A>	;
+
 LEXICON NOUN Harras
 r<A>:r<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
@@ -1318,16 +1326,17 @@ LEXICON NOUN Vieras_w
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 
 LEXICON NOUN Vieras_s
-?NotLaatusana	[Sn][Ny]<A>:<A>	Omistusliite_<A>	;
-[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
-[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[[L]][Sn][Ny]:[[L]]	Omistusliite_<A>	;
+[[L]][Sn][Nm]t:[[L]]t	Liitesana_<A>	;
+[[L]][Sg][Ny]n:[[L]]n	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+[[L]][Ses][Ny]n<A>:[[L]]n<A>	<WC>LiOlV_<A>	;
 [Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Sill][Ny]<A>see:<A>see	<WC>LiOlN_<A>	;
-[Sill][Nm]<A>ih:<A>ih	<WC>LiOlN_<A>	;
-<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+[[L]][Sill][Ny]see:[[L]]see	<WC>LiOlN_<A>	;
+[[L]][Sill][Nm]ih:[[L]]ih	<WC>LiOlN_<A>	;
+[[L]]:[[L]]	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
