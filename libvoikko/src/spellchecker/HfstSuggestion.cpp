@@ -42,7 +42,8 @@ void HfstSuggestion::generate(SuggestionStatus * s) const {
 	while (corrections.size() > 0 && !s->shouldAbort()) {
 		const char * sugUtf8 = corrections.top().first.c_str();
 		wchar_t * sugU4 = StringUtils::ucs4FromUtf8(sugUtf8, strlen(sugUtf8));
-		s->addSuggestion(sugU4, s->getSuggestionCount() + 1);
+		int weight = (int) (1000.0 * corrections.top().second);
+		s->addSuggestion(sugU4, weight + s->getSuggestionCount() + 1);
 		s->charge();
 		corrections.pop();
 	}
