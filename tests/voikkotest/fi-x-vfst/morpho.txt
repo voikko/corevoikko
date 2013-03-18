@@ -330,6 +330,6 @@ word:älkööt
   analysis
     CLASS=teonsana
     MOOD=imperative
-    NUMBER=plurar
+    NUMBER=plural
     PERSON=3
     TENSE=present_simple
