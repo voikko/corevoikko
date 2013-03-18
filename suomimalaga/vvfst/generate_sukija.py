@@ -31,8 +31,8 @@
 # [Ln][Xp]symbooli[X]symbol@P.INEN_SALLITTU.ON@:symbol@P.INEN_SALLITTU.ON@ NimisanaPaperi_a ;
 # [Ln][Xp]symbooli[X]symbool@P.INEN_SALLITTU.ON@:symbool@P.INEN_SALLITTU.ON@ NimisanaPaperi_a 
 #
-# Note that this automatic generation will generate some old
-# spellings that do not exist in real life.
+# This automatic generation will generate some old
+# spellings and spelling errors that do not exist in real life.
 
 
 import codecs
@@ -122,6 +122,8 @@ re_uusio_x = re.compile (u"\\A\[Ln\]\[Xp\](diffuusio)\[X\]")
 re_tio_x   = re.compile (u"\\A\[Ln\]\[Xp\](aitio)\[X\]")
 
 Joukahainen_t = re.compile (u"\\AJoukahainen_t.*;")
+
+re_A = re.compile (u"[aou]")
 
 
 spelling_pattern_list = [
@@ -219,6 +221,77 @@ def convert_to_dictionary (word_list):
 sukija_dictionary = convert_to_dictionary (spelling_word_list)
 
 
+# Sanoja, joilla on vain muutama vanha taivutusmuoto. Generoidaan ne erikseen,
+# mutta vain sanoille, jotka ovat Joukahaisessa. Sanat ovat Nykysuomen
+# sanakirjan taivutuskaavojen numeroiden mukaisessa järjestyksessä.
+#
+# Tuomo Tuomi: Suomen kielen käänteissanakirja, 2. painos.
+# Suomalaisen Kirjallisuuden Seura 1980.
+
+
+# Herttua-tyyppisillä sanoilla on monikkomuodot, joissa ei ole o:ta (herttuilla, jne).
+#
+# 20 herttua (10, 10). Tuomi, s. 114, 116, 121, 124, 125.
+#
+def write_herttua (p):
+    w = (p[0], p[0][0:len(p[0])-1], p[0][0:len(p[0])-1])
+    outfile.write (u"[Ln][Xp]%s[X]%s:%s NimisanaYhteisetMonikonPaikallissijat_a ;\n" % w)
+    outfile.write (u"[Ln][Xp]%s[X]%siden@C.EI_YKS@[Sg][Nm]:%siden@C.EI_YKS@ NimisanaMonikonGenetiiviEnJatko_a ;\n" % w)
+    outfile.write (u"[Ln][Xp]%s[X]%sitten@C.EI_YKS@[Sg][Nm]:%sitten@C.EI_YKS@ NimisanaMonikonGenetiiviEnJatko_a ;\n" % w)
+    outfile.write (u"[Ln][Xp]%s[X]%sita@C.EI_YKS@[Sp][Nm]:%sita@C.EI_YKS@ NimisanaLiOlV_a ;\n" % w)
+    outfile.write (u"[Ln][Xp]%s[X]%sina@C.EI_YKS@[Ses][Nm]:%sina@C.EI_YKS@ NimisanaLiOlV_a ;\n" % w)
+    outfile.write (u"[Ln][Xp]%s[X]%sihi@C.EI_YKS@[Sill][Nm]:%sihi@C.EI_YKS@ NimisanaLiOlN_a ;\n" % w)
+
+
+# Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
+#
+# 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
+#
+def write_ahven (p):
+    prefix = p[1][0:p[1].find (u"[X]")+3]
+    essive = u"na" if re_A.search(p[0]) else u"nä"
+    outfile.write (u"%s%s[Ses][Ny]%s:%s%s Loppu ;\n" % (prefix, p[0], essive, p[0], essive))
+
+
+function_list = [
+  (u"aurtua",  write_herttua),
+  (u"herttua", write_herttua),
+  (u"hierua",  write_herttua),
+  (u"juolua",  write_herttua),
+  (u"lastua",  write_herttua),
+  (u"liettua", write_herttua),
+  (u"luusua",  write_herttua),
+  (u"porstua", write_herttua),
+  (u"saarua",  write_herttua),
+  (u"tanhua",  write_herttua),
+
+  (u"aamen",   write_ahven),
+  (u"ahven",   write_ahven),
+  (u"haiven",  write_ahven),
+  (u"huomen",  write_ahven),
+  (u"häiven",  write_ahven),
+  (u"höyhen",  write_ahven),
+  (u"ien",     write_ahven),
+  (u"iljen",   write_ahven),
+  (u"joutsen", write_ahven),
+  (u"jäsen",   write_ahven),
+  (u"kymmen",  write_ahven),
+  (u"kämmen",  write_ahven),
+  (u"liemen",  write_ahven),
+  (u"paimen",  write_ahven),
+  (u"siemen",  write_ahven),
+  (u"ruumen",  write_ahven),
+  (u"terhen",  write_ahven),
+  (u"taimen",  write_ahven),
+  (u"tuumen",  write_ahven),
+  (u"tyven",   write_ahven),
+  (u"tyyven",  write_ahven),
+  (u"uumen",   write_ahven),
+  (u"vuomen",  write_ahven),
+]
+function_dictionary = convert_to_dictionary (function_list)
+
+
 # Extract base form from a line.
 #
 base_form_re = re.compile (u"\\[Xp\\]([^[]+)\\[X\\]", re.UNICODE)
@@ -247,7 +320,11 @@ def generate_word (line, sukija_dictionary):
                 sys.stderr.write ("Wrong format in sukija_dictionary.\n")
                 sys.exit (1)
         except KeyError:  # It is not an error if a word is not in sukija_dictionary.
-            pass
+            try:
+                f = function_dictionary[r.group(1)]
+                f ((r.group(1), line))
+            except KeyError:  # It is not an error if a word is not in function_dictionary.
+                pass
 
 
 # Copy Voikko vocabulary.
@@ -303,43 +380,3 @@ outfile.write (u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä # ;\n") # Nuore
 outfile.write (u"[Ln][Xp]pieni[X]piennä:piennä # ;\n")          # Pienenä.
 outfile.write (u"[Ln][Xp]sankari[X]sankarten:sankarten # ;\n")  # Sankarien.
 outfile.write (u"[Ln][Xp]venäjä[X]venättä:venättä # ;\n")       # Venäjää.
-
-outfile.write (u"[Ln][Xp]herttua[X]herttu:herttu NimisanaYhteisetMonikonPaikallissijat_a ;\n")
-outfile.write (u"[Ln][Xp]liettua[X]liettu:liettu NimisanaYhteisetMonikonPaikallissijat_a ;\n")
-outfile.write (u"[Ln][Xp]porstua[X]porstu:porstu NimisanaYhteisetMonikonPaikallissijat_a ;\n")
-
-
-# Tuomo Tuomi: Suomen kielen käänteissanakirja, 2. painos.
-# Suomalaisen Kirjallisuuden Seura 1980.
-
-# Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
-#
-# 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
-#
-ahven_list = [
-  (u"aamen",   u"Ln",  u"na"),
-  (u"ahven",   u"Ln",  u"na"),
-  (u"haiven",  u"Ln",  u"na"),
-  (u"huomen",  u"Ln",  u"na"),
-  (u"häiven",  u"Ln",  u"nä"),
-  (u"höyhen",  u"Ln",  u"nä"),
-  (u"ien",     u"Ln",  u"nä"),
-  (u"iljen",   u"Ln",  u"nä"),
-  (u"joutsen", u"Ln",  u"na"),
-  (u"jäsen",   u"Ln",  u"nä"),
-  (u"kymmen",  u"Ln",  u"nä"),
-  (u"kämmen",  u"Ln",  u"nä"),
-  (u"liemen",  u"Ln",  u"nä"),
-  (u"paimen",  u"Ln",  u"na"),
-  (u"siemen",  u"Ln",  u"nä"),
-  (u"ruumen",  u"Ln",  u"na"),
-  (u"terhen",  u"Ln",  u"nä"),
-  (u"taimen",  u"Ln",  u"na"),
-  (u"tuumen",  u"Ln",  u"na"),
-  (u"tyven",   u"Lnl", u"nä"),
-  (u"tyyven",  u"Ll",  u"nä"),
-  (u"uumen",   u"Ln",  u"na"),
-  (u"vuomen",  u"Ln",  u"na")
-]
-
-# map (lambda x : outfile.write (u"[%s][Xp]%s[X]%s[Ses][Ny]%s:%s%s # ;\n" % (x[1], x[0], x[0], x[2], x[0], x[2])), ahven_list)
