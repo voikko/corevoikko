@@ -1342,6 +1342,31 @@ LEXICON NOUN Vieras_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 
+LEXICON NOUN Ruis
+i:i	<WC>Vieras_w_<A>	;
+ki:ki	<WC>Kauris_s_<A>	;
+
+LEXICON NOUN Kauris
+i:i	<WC>Vieras_w_<A>	;
+i:i	<WC>Kauris_s_<A>	;
+
+LEXICON NOUN Kauris_s
+?NotLaatusana	i[Sn][Ny]:i	Omistusliite_<A>	;
+[Sn][Nm]it:it	Liitesana_<A>	;
+[Sg][Ny]in:in	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]isee:isee	<WC>LiOlN_<A>	;
+[Sill][Nm]ih:ih	<WC>LiOlN_<A>	;
+i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Laatusana	Johdin_Us_<A>	;
+
 LEXICON NOUN MonikonGenetiiviEnJatko
 <WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[O3]sa:sa	Liitesana_<A>	;
