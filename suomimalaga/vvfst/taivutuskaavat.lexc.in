@@ -795,6 +795,44 @@ LEXICON NOUN Vapaa_l
 ?Nimisana	Johdin_tOn_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 
+LEXICON NOUN Kamee
+<WC>Kamee_s_<A>	;
+e:e	<WC>Kamee_l_<A>	;
+[Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Trikoo
+<WC>Kamee_s_<A>	;
+<O>:<O>	<WC>Kamee_l_<A>	;
+[Sill][Ny]<O>h<O>:<O>h<O>	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Nugaa
+<WC>Kamee_s_<A>	;
+<A>:<A>	<WC>Kamee_l_<A>	;
+[Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Revyy
+<WC>Kamee_s_<A>	;
+<U>:<U>	<WC>Kamee_l_<A>	;
+[Sill][Ny]<U>h<U>:<U>h<U>	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Kamee_s
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+
+LEXICON NOUN Kamee_l
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]see:see	<WC>LiOlN_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
+
 LEXICON NOUN Maa
 <WC>Maa_s_<A>	;
 <A>:<A>	<WC>Maa_l_<A>	;
