@@ -109,6 +109,9 @@ re_uutio = makeRe (u"Ln", u".Cuutio")
 re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
 
+re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_");
+
+
 # Words to be excluded.
 #
 re_adi_x = re.compile (u"\\A\[Ln\]\[Xp\](dekadi|faradi|pikofaradi|stadi)\[X\]")
@@ -151,14 +154,17 @@ spelling_pattern_list = [
   (re_ottaa1,  u"ot",  u"oit", u"Alittaa",    u"Alittaa"),
   (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
-  (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa")
+  (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
+  (re_nuolaista, u"Nuolaista_")
 ]
 
 
 def generate_from_pattern (line, pattern_list):
     for x in pattern_list:
         if x[0].match(line):
-            if (len(x) == 3) or (len(x) == 4 and not x[3].match(line)):
+            if (len(x) == 2):
+                outfile.write (line.replace (x[1], u"Sukija" + x[1]))
+            elif (len(x) == 3) or (len(x) == 4 and not x[3].match(line)):
                 replace_and_write (line, x[1], x[2])
             elif (len(x) == 5) and (line.find (x[3]) >= 0):
                 replace_and_write (line.replace(x[3], x[4]), x[1], x[2])
@@ -349,7 +355,24 @@ while True:
 infile.close()
 
 
+outfile.write (u"\n\n\n")
+outfile.write (u"LEXICON SukijaNuolaista_a\n")
+outfile.write (u"s:s   Nuolaista_w_a ;\n")
+outfile.write (u"s:s   Nuolaista_s_a ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_a     ;\n")
+outfile.write (u"LEXICON SukijaNuolaista_ä\n")
+outfile.write (u"s:s   Nuolaista_w_ä ;\n")
+outfile.write (u"s:s   Nuolaista_s_ä ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_ä     ;\n")
+outfile.write (u"LEXICON SukijaNuolaista_aä\n")
+outfile.write (u"s:s   Nuolaista_w_a ;\n")
+outfile.write (u"s:s   Nuolaista_w_ä ;\n")
+outfile.write (u"s:s   Nuolaista_s_a ;\n")
+outfile.write (u"s:s   Nuolaista_s_ä ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_a     ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_ä     ;\n")
 outfile.write (u"LEXICON Sukija\n")
+
 infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
 
 
