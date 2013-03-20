@@ -1247,3 +1247,5 @@ ruis
 rukiiden
 kauris
 kauriiden
+rankaisija
+!rangaisija
