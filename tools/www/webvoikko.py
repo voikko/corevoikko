@@ -133,6 +133,7 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2", hstyle = "hy
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
 <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
  <title>Voikko-tavuttaja</title>
  <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
@@ -198,7 +199,7 @@ def hyphenate(req, hyphstring = None, htype = "normal", hmin = "2", hstyle = "hy
 	 </ul>
 	</p>
 	<p>Kirjoita alla olevaan kenttään teksti, jonka haluat tavuttaa, ja paina "Tavuta".</p>
-	<p><textarea name="hyphstring" rows="30" cols="90">''')
+	<p><textarea name="hyphstring" rows="15" style="width:100%">''')
 	if hyphstring != None:
 		_write(req, _escape_html(_decode_form_value(hyphstring)))
 	_write(req, u'''</textarea></p>
@@ -365,6 +366,7 @@ def index(req, spellstring = None):
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Webvoikko</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
  </head>
