@@ -537,14 +537,14 @@ v:v	<WC>Koira_w_<A>	;
 
 LEXICON NOUN Ikä
 k:k	<WC>Koira_s_<A>	;
-<WC>Koira_w_yksikko_<A>	;
+<WC>Koira_w_yksikkö_<A>	;
 ':'	<WC>Koira_w_monikko_<A>	;
 
 LEXICON NOUN Koira_w
-<WC>Koira_w_yksikko_<A>	;
+<WC>Koira_w_yksikkö_<A>	;
 <WC>Koira_w_monikko_<A>	;
 
-LEXICON NOUN Koira_w_yksikko
+LEXICON NOUN Koira_w_yksikkö
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
 [Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
