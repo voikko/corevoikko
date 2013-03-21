@@ -51,6 +51,7 @@ function loadPortlet(divId) {
     $("#progress").hide();
     $("#tabs").tabs();
     $("#input").keyup(keyUpInInput);
+    $("#input").bind("input", keyUpInInput); // for touch screen devices
     $("#input").click(clickInInput);
     $("#input").bind("cut", inputChanged);
     $("#input").bind("paste", inputChanged);

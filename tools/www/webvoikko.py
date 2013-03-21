@@ -215,6 +215,7 @@ def spell(req, spellstring = None):
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Voikko-oikolukija</title>
   <link rel="stylesheet" type="text/css" href="../style.css" />
   <link type="text/css"
