@@ -43,7 +43,7 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
          vvfst/suomi.lexc vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in \
-         vvfst/main.foma.in vvfst/olla-ei.lexc vvfst/poikkeavat.lexc
+         vvfst/main.foma.in vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/generate_sukija.py
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?

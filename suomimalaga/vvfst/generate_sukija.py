@@ -110,6 +110,7 @@ re_uusio = makeRe (u"Ln", u".Cuusio")
 re_tio   = makeRe (u"Ln", u"[ik]tio") # Traditio, funktio.
 
 re_nuolaista = re.compile (u"\\[Lt\\].* Nuolaista_");
+re_rangaista = re.compile (u"\\[Lt\\].* Rangaista_");
 
 
 # Words to be excluded.
@@ -155,7 +156,8 @@ spelling_pattern_list = [
   (re_ottaa2,  u"öt",  u"öit", u"Alittaa",    u"Alittaa"),
   (re_ottaa1,  u"o",   u"oi",  u"Ammottaa",   u"Ammottaa"),
   (re_ottaa2,  u"ö",   u"öi",  u"Ammottaa",   u"Ammottaa"),
-  (re_nuolaista, u"Nuolaista_")
+  (re_nuolaista, u"Nuolaista_"),
+  (re_rangaista, u"Rangaista_"),
 ]
 
 
@@ -371,6 +373,10 @@ outfile.write (u"s:s   Nuolaista_s_a ;\n")
 outfile.write (u"s:s   Nuolaista_s_ä ;\n")
 outfile.write (u"s:s   Johdin_U_arvelu_a     ;\n")
 outfile.write (u"s:s   Johdin_U_arvelu_ä     ;\n")
+outfile.write (u"LEXICON SukijaRangaista_a\n")
+outfile.write (u"gas:gas	Nuolaista_w_a	;\n")
+outfile.write (u"kas:kas	Nuolaista_s_a	;\n")
+outfile.write (u"kas:kas	Johdin_U_arvelu_a	;\n")
 outfile.write (u"LEXICON Sukija\n")
 
 infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
