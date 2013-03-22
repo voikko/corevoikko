@@ -37,6 +37,12 @@ span.gErrorOuter {
 span.gErrorInner {
   background-color: white;
 }
+span.gErrorHandle {
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
 .word {
   color: black;
   background-color: white;

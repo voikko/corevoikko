@@ -68,6 +68,13 @@ function loadPortlet(divId) {
     });
     initLocalStorage();
     triggerReferrerCheck();
+    
+    // for touchscreen devices we add explicit check button
+    if ('ontouchstart' in document.documentElement) {
+      var doCheck = $("<button style='margin-left: 4em;'>Tarkista teksti</button>");
+      doCheck.click(inputChanged);
+      $("#save").after(doCheck);
+    }
   });
 }
 
@@ -157,7 +164,7 @@ function gErrorClicked(evt) {
 function updateReceived(html) {
   $("#result").html(html);
   $("#result .gErrorOuter").wrapInner("<span class='gErrorInner'></span>");
-  $("#result .gErrorOuter").prepend("<span class='gErrorHandle'>*</span>");
+  $("#result .gErrorOuter").prepend("<span class='gErrorHandle'>&#x2717;</span>");
   $("#result .word").click(wordClicked);
   $("#result .gErrorHandle").click(gErrorClicked);
   clearProgressMessage();
