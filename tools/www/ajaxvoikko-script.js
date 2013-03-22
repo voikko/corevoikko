@@ -63,6 +63,9 @@ function loadPortlet(divId) {
         checkPageClicked();
       }
     });
+    $('#tabs').bind('tabsshow', function(event, ui) {
+      $("#result").text("");
+    });
     initLocalStorage();
     triggerReferrerCheck();
   });
@@ -102,17 +105,36 @@ function switchDict(button, dictName) {
   $("#voikkoDict").val(dictName).change();
 }
 
-function wordInfoReceived(html) {
+function wordInfoReceived(html, originalWord, textarea, startPos) {
   var options = {
     width: 450
   };
-  $(html).dialog(options).show();
+  var wordInfo = $(html);
+  var wordDialog = wordInfo.dialog(options);
+  wordInfo.find(".suggestion").click(function() {
+    var currentText = textarea.val();
+    if (currentText.substr(startPos, originalWord.length) == originalWord) {
+      var newText = currentText.substr(0, startPos) + $(this).text() + currentText.substr(startPos + originalWord.length);
+      textarea.val(newText);
+      wordDialog.dialog("destroy");
+      inputChanged();
+    }
+  });
+  wordDialog.show();
 }
 
 function wordClicked(evt) {
-  var word = $(this).text();
+  var wordSpan = $(this);
+  var word = wordSpan.text();
   var dict = $("#voikkoDict").val();
-  $.get(AJAX_HANDLER_URL + "wordinfo", {q: word, d: dict}, wordInfoReceived, "html");
+  $.ajax({
+    url: AJAX_HANDLER_URL + "wordinfo",
+    data: {q: word, d: dict},
+    success: function(html) {
+      wordInfoReceived(html, word, $("#input"), parseInt(wordSpan.attr("data-start-pos"), 10));
+    },
+    dataType: "html"
+  });
 }
 
 function gErrorClicked(evt) {

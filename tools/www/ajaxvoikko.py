@@ -213,7 +213,7 @@ def doSpell(text, v, checkGrammar):
 				      + escape(token.tokenText) \
 				      + u"</span>"
 			else:
-				res = res + u"<span class='word error'>" \
+				res = res + u"<span data-start-pos='" + str(position) + u"' class='word error'>" \
 				      + escape(token.tokenText) \
 				      + u"</span>"
 		else:
@@ -249,7 +249,7 @@ def suggestions(word, v):
 		return None
 	res = u"<ul>"
 	for sugg in suggs:
-		res = res + u"<li>" + escape(sugg) + u"</li>"
+		res = res + u"<li><button class='suggestion'>" + escape(sugg) + u"</button></li>"
 	res = res + "</ul>"
 	return res
 
