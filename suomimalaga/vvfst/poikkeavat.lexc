@@ -1,7 +1,6 @@
 LEXICON Poikkeavat_sanat    ! In alphabetical order.
-[Lt][Xp]ei[X]e:e Ei ;
+[Lt][Xp]ei[X]e:e         Ei ;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
-[Lt][Xp]olla[X]o:o Olla ;
-[Lt][Xp]tuta[X]tuta:tuta     Loppu ;
-[Lt][Xp]tuta[X]tutaan:tutaan Loppu ;
-[Lt][Xp]älkää[X]äl:äl Älkää ;
+[Lt][Xp]olla[X]o:o       Olla ;
+[Lt][Xp]tuta[X]tu:tu     Tuta ;
+[Lt][Xp]älkää[X]äl:äl    Älkää ;

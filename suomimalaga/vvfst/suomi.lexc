@@ -56,3 +56,7 @@ LEXICON Omistusliite_aä
 
 LEXICON Loppu
 @D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@:@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@	#	;
+
+LEXICON Tuta
+ta:ta Loppu ;
+[Tt][Ap][P4]taan:taan Liitesana_a ;
