@@ -361,22 +361,34 @@ outfile.write (u"\n\n\n")
 outfile.write (u"LEXICON SukijaNuolaista_a\n")
 outfile.write (u"s:s   Nuolaista_w_a ;\n")
 outfile.write (u"s:s   Nuolaista_s_a ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_a     ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_a ;\n")
+
 outfile.write (u"LEXICON SukijaNuolaista_ä\n")
 outfile.write (u"s:s   Nuolaista_w_ä ;\n")
 outfile.write (u"s:s   Nuolaista_s_ä ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_ä     ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_ä ;\n")
+
 outfile.write (u"LEXICON SukijaNuolaista_aä\n")
 outfile.write (u"s:s   Nuolaista_w_a ;\n")
 outfile.write (u"s:s   Nuolaista_w_ä ;\n")
 outfile.write (u"s:s   Nuolaista_s_a ;\n")
 outfile.write (u"s:s   Nuolaista_s_ä ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_a     ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_ä     ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_a ;\n")
+outfile.write (u"s:s   Johdin_U_arvelu_ä ;\n")
+
 outfile.write (u"LEXICON SukijaRangaista_a\n")
-outfile.write (u"gas:gas	Nuolaista_w_a	;\n")
-outfile.write (u"kas:kas	Nuolaista_s_a	;\n")
-outfile.write (u"kas:kas	Johdin_U_arvelu_a	;\n")
+outfile.write (u"gas:gas Nuolaista_w_a ;\n")
+outfile.write (u"kas:kas Nuolaista_s_a ;\n")
+outfile.write (u"kas:kas Johdin_U_arvelu_a ;\n")
+
+outfile.write (u"LEXICON SukijaOmistusliite_a_in\n")
+outfile.write (u"Omistusliite_a ;\n")
+outfile.write (u"[O1y]in:in Liitesana_a ;\n")
+
+outfile.write (u"LEXICON SukijaTuta\n")
+outfile.write (u"[Tn1p]takse:takse SukijaOmistusliite_a_in ;\n")
+outfile.write (u"[Tn2]ten:ten Liitesana_a ;\n")
+
 outfile.write (u"LEXICON Sukija\n")
 
 infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
@@ -409,3 +421,4 @@ outfile.write (u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä # ;\n") # Nuore
 outfile.write (u"[Ln][Xp]pieni[X]piennä:piennä # ;\n")          # Pienenä.
 outfile.write (u"[Ln][Xp]sankari[X]sankarten:sankarten # ;\n")  # Sankarien.
 outfile.write (u"[Ln][Xp]venäjä[X]venättä:venättä # ;\n")       # Venäjää.
+outfile.write (u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;\n")
