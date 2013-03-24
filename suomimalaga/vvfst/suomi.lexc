@@ -3,6 +3,7 @@ LEXICON NimisanaYsJatko
 
 LEXICON NimiLaatusanaYsJatko
 @C.EI_YKS@:@C.EI_YKS@	YhdyssanaJatkuu	;
+@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON LaatusanaYsJatko
 @P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;

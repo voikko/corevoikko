@@ -869,6 +869,7 @@ LEXICON NOUN Maa_l
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Suo
 [Sn][Ny]<U><O>:<U><O>	<WC>NormaaliYsJatkoOl_<A>	;
@@ -2039,6 +2040,7 @@ e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+e:e	Johdin_mA_<A>	;
 
 LEXICON Mennä
 <WC>Tulla_s_<A>	;
@@ -2292,6 +2294,7 @@ ki:ki	Haluta_s_<A>	;
 
 LEXICON Haluta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+n:n	Johdin_nUt_<A>	;
 
 LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
