@@ -270,7 +270,7 @@ def handle_word(word):
 		                 u"korkea", \
 		                 u"apaja", u"matala", \
 		                 u"nalle", u"atte", u"nukke", \
-		                 u"lohi", u"tuohi", u"meri", u"lumi", \
+		                 u"lohi", u"tuohi", u"meri", u"lumi", u"niemi", \
 		                 u"hirsi", u"kansi", u"jälsi", \
 		                 u"susi", \
 		                 u"karahka", \
