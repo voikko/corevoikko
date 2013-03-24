@@ -277,7 +277,7 @@ def handle_word(word):
 		                 u"solakka", u"ulappa", u"savotta", \
 		                 u"kuollut", \
 		                 u"suo", u"suurempi", \
-		                 u"rosé", u"edam", \
+		                 u"rosé", u"edam", u"parfait", \
 		                 u"kirves", u"ies", u"ruis", u"kauris", \
 		                 u"maa", u"puu", u"pii", u"tee", \
 		                 u"vapaa", u"tienoo", u"leikkuu", \

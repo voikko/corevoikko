@@ -919,6 +919,22 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
+LEXICON NOUN Parfait
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]'t:'t	Liitesana_<A>	;
+[Sg][Ny]'n:'n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]'iden:'iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]'itten:'itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]'t<A>:'t<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]'it<A>:'it<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]'n<A>:'n<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]'in<A>:'in<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]'he:'he	<WC>LiOlN_<A>	;
+[Sill][Nm]'ihi:'ihi	<WC>LiOlN_<A>	;
+':'	<WC>YhteisetYksikönPaikallissijat_<A>	;
+':'	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	':'	Johdin_tOn_<A>	;
+
 LEXICON NOUN Tuohi
 <WC>Lohi_<A>	;
 [Sg][Nm]ten:ten	<WC>MonikonGenetiiviEnJatko_<A>	;
