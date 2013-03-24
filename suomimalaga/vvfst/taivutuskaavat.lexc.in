@@ -886,6 +886,64 @@ LEXICON NOUN Suo
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<U><O>:<U><O>	Johdin_tOn_<A>	;
 
+LEXICON NOUN Askel
+<WC>Taival_w_<A>	;
+<WC>Taival_s_<A>	;
+
+LEXICON NOUN Kannel
+nel:nel	<WC>Taival_w_<A>	;
+tel:tel	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Kinner
+ner:ner	<WC>Taival_w_<A>	;
+ter:ter	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Piennar
+n<A>r:n<A>r	<WC>Taival_w_<A>	;
+t<A>r:t<A>r	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Ommel
+mel:mel	<WC>Taival_w_<A>	;
+pel:pel	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Penger
+ger:ger	<WC>Taival_w_<A>	;
+ker:ker	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Udar
+d<A>r:d<A>r	<WC>Taival_w_<A>	;
+t<A>r:t<A>r	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Taival
+v<A>l:v<A>l	<WC>Taival_w_<A>	;
+p<A>l:p<A>l	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Säen
+en:en	<WC>Taival_w_<A>	;
+ken:ken	<WC>Taival_s_<A>	;
+
+LEXICON NOUN Taival_w
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+
+LEXICON NOUN Taival_s
+[Sn][Ny]e:e	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]eet:eet:	Liitesana_<A>	;
+[Sg][Ny]een:een	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]eiden:eiden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]een<A>:een<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
+[Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
+ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
+e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	ee:ee	Johdin_tOn_<A>	;
+?Laatusana	ee:ee	Voittoaste_<A>	;
+?Laatusana	e:e	Yliaste_<A>	;
+
 LEXICON NOUN Rosé
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]t:t	Liitesana_<A>	;

@@ -276,6 +276,7 @@ def handle_word(word):
 		                 u"karahka", \
 		                 u"solakka", u"ulappa", u"savotta", \
 		                 u"kuollut", \
+		                 u"askel", u"kannel", u"kinner", u"piennar", u"ommel", u"penger", u"udar", u"taival", u"säen", 
 		                 u"suo", u"suurempi", \
 		                 u"rosé", u"edam", u"parfait", \
 		                 u"kirves", u"ies", u"ruis", u"kauris", \
