@@ -2163,6 +2163,7 @@ Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
+Johdin_tAvA_<A>	;
 
 LEXICON Haravoida
 HaravoidaKanavoida_<A>	;
@@ -2177,6 +2178,7 @@ KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+i:i	TositavanKestämäDaan_<A>	;
 Ehtotapa_<A>	;
 i:i	EhtotapaTa_<A>	;
 i:i	Käskytapa_<A>	;
@@ -2549,8 +2551,14 @@ LEXICON Tositapa4Tt
 TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 
+LEXICON TositavanKestämäDaan
+d:d	TositavanKestämäXaan_<A>	;
+
 LEXICON TositavanKestämäTaan
-@D.VAIN_YM3@[Tt][Ap][P4]t<A><A>n:@D.VAIN_YM3@t<A><A>n	Liitesana_<A>	;
+t:t	TositavanKestämäXaan_<A>	;
+
+LEXICON TositavanKestämäXaan
+@D.VAIN_YM3@[Tt][Ap][P4]<A><A>n:@D.VAIN_YM3@<A><A>n	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTtiin
 @D.VAIN_YM3@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@ttiin	Liitesana_<A>	;
@@ -2621,7 +2629,10 @@ LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttAvA
-[Ll]tt<A>v:tt<A>v	LaatusanaAsema_<A>	;
+t:t	Johdin_tAvA_<A>	;
+
+LEXICON Johdin_tAvA
+[Ll]t<A>v:t<A>v	LaatusanaAsema_<A>	;
 
 LEXICON Johdin_nUt
 [Ll]n:n	LaatusanaKuollut_<A>	;

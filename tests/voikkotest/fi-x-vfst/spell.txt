@@ -1299,3 +1299,5 @@ olut
 oluen
 oluisiin
 oluihin
+ihailtavaa
+ihannoidaan
