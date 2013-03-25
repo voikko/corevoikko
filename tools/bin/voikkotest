@@ -27,6 +27,7 @@ import getopt
 import voikkoutils
 from libvoikko import Voikko
 from libvoikko import SuggestionStrategy
+from libvoikko import VoikkoException
 
 COREVOIKKO = voikkoutils.get_preference('corevoikko')
 WORKSPACE = voikkoutils.get_preference('voikkotest_dir')
@@ -595,7 +596,12 @@ else:
 		configFile.close()
 		build(configMap)
 		print " Build complete, starting tests"
-		voikko = Voikko(language=configMap["LANGUAGE"], path=INSTALLDIR)
+		languageTag = configMap["LANGUAGE"]
+		try:
+			voikko = Voikko(language=languageTag, path=INSTALLDIR)
+		except VoikkoException as e:
+			print (u"ERROR initializing libvoikko for language '%s' in '%s':" % (languageTag, INSTALLDIR)), e.args
+			sys.exit(1)
 		ok = True
 		ok = spell_tests(voikko, testdir + "/spell.txt") and ok
 		ok = suggestion_tests(voikko, testdir + "/suggest.txt") and ok
