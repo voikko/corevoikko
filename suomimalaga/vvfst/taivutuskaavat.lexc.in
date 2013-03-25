@@ -1272,6 +1272,25 @@ LEXICON NOUN Asiakas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 
+LEXICON NOUN Airut
+[Sn][Ny]t:t	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
+
 LEXICON NOUN Mies
 s:s   <WC>Mies_s_<A>  ;
 he:he <WC>Mies_he_<A> ;
