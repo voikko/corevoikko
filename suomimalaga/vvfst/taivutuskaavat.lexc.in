@@ -196,6 +196,22 @@ LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
 <WC>Paperi_w_<A>	;
 
+LEXICON NOUN Killinki
+k:k	<WC>Paperi_s_<A>	;
+g:g	<WC>Paperi_w_<A>	;
+
+LEXICON NOUN Hollanti
+t:t	<WC>Paperi_s_<A>	;
+n:n	<WC>Paperi_w_<A>	;
+
+LEXICON NOUN Salaatti
+t:t	<WC>Paperi_s_<A>	;
+<WC>Paperi_w_<A>	;
+
+LEXICON NOUN Sinappi
+p:p	<WC>Paperi_s_<A>	;
+<WC>Paperi_w_<A>	;
+
 LEXICON NOUN Kajakki
 k:k	<WC>Paperi_s_<A>	;
 <WC>Paperi_w_<A>	;
