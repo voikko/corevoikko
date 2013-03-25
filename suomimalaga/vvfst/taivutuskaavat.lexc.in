@@ -2158,6 +2158,7 @@ KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
+TositavanKestämäLaan_<A>	;
 TositavanKertomaTiin_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
@@ -2204,6 +2205,7 @@ tse:tse	Johdin_nimitapa3_<A>	;
 tse:tse	Johdin_nimitapa4_<A>	;
 tsi:tsi	Johdin_ja_kulkija_<A>	;
 Johdin_ntA_<A>	;
+Johdin_ttAvA_<A>	;
 
 LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
@@ -2262,6 +2264,7 @@ k<O>:k<O>	Aleta_s_<A>	;
 
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+Johdin_ttAvA_<A>	;
 
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
@@ -2550,6 +2553,9 @@ LEXICON KertomanTekijäpääteVahva
 LEXICON Tositapa4Tt
 TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
+
+LEXICON TositavanKestämäLaan
+l:l	TositavanKestämäXaan_<A>	;
 
 LEXICON TositavanKestämäDaan
 d:d	TositavanKestämäXaan_<A>	;
