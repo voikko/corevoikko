@@ -317,7 +317,7 @@ def handle_word(word):
 		                 u"kaivaa", u"lappaa", u"antaa", u"jakaa", u"raataa", u"saattaa", \
 		                 u"salata", u"kammata", u"hangata", u"kerrata", u"suunnata", u"vallata", u"lobata", u"kelvata", u"kuitata", u"ladata", u"peljätä", u"pakata", u"pompata", u"taata", \
 		                 u"arvailla", u"tulla", u"mennä", \
-		                 u"nuolaista", u"rangaista", u"kalista", u"vavista", \
+		                 u"nuolaista", u"rangaista", u"kalista", u"vavista", u"nousta", \
 		                 u"katketa", u"todeta", u"langeta", u"lohjeta", u"poiketa", u"kammeta", u"ruveta", u"lotota", \
 		                 u"kihistä", u"kitistä", \
 		                 u"selvitä", u"bingota", u"haluta", u"hellitä", u"lämmitä", u"silputa", u"vivuta", u"keritä", \
@@ -333,7 +333,7 @@ def handle_word(word):
 		alku = alku.lower()
 		
 		# Vowel type in derived verbs
-		if jatko in [u"heittää", u"muistaa", u"juontaa", u"hohtaa", u"murtaa"]:
+		if jatko in [u"heittää", u"muistaa", u"juontaa", u"hohtaa", u"murtaa", u"nousta"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alku)
 		
 		entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \

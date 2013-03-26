@@ -1315,3 +1315,6 @@ arveluiden
 !kömpelöys
 aika
 ajalla
+pestä
+pesussa
+!pesyssä

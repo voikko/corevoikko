@@ -2084,6 +2084,12 @@ LEXICON Vavista
 vis:vis	Nuolaista_w_<A>	;
 pis:pis	Nuolaista_s_<A>	;
 
+LEXICON Nousta
+@C.V_SALLITTU@:@C.V_SALLITTU@	Nuolaista_w_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	Nuolaista_s_<A>	;
+@R.V_SALLITTU.T@@C.V_SALLITTU@:@R.V_SALLITTU.T@@C.V_SALLITTU@	Johdin_U_arvelu_a	;
+@R.V_SALLITTU.E@@C.V_SALLITTU@:@R.V_SALLITTU.E@@C.V_SALLITTU@	Johdin_U_arvelu_ä	;
+
 LEXICON Nuolaista_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTiin_<A>	;
