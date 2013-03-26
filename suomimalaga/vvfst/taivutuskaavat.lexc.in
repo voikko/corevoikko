@@ -1784,9 +1784,10 @@ KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 
 LEXICON Loistaa
-<WC>MuistaaMuistella_w_<A>	;
-<WC>MuistaaMuistella_s_<A>	;
-<O>@C.JOHDETTAVA_NIMISANAKSI@[Ln]:<O>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_s_<A>	;
+o@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:o@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_a	;
+ö@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:ö@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaValo_ä	;
 
 LEXICON Puoltaa
 l:l	Huutaa_w_<A>	;
