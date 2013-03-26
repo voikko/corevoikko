@@ -1318,3 +1318,6 @@ ajalla
 pestä
 pesussa
 !pesyssä
+kapsaa
+kapsanta
+kapsaisi

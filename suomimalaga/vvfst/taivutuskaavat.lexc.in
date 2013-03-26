@@ -1931,6 +1931,11 @@ t:t	Huutaa_s_<A>	;
 tel:tel	Katsella_s_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
 
+LEXICON Kapsaa
+[Tt][Ap][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Ehtotapa_<A>	;
+<A>:<A>	Johdin_ntA_<A>	;
+
 LEXICON Laskea
 LaskeaLaskeskella_s_<A>	;
 LaskeaLaskeskella_w_<A>	;
