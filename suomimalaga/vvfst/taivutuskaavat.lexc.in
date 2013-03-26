@@ -489,6 +489,10 @@ LEXICON NOUN Raaka
 k:k	<WC>Kala_s_<A>	;
 ':'	<WC>Kala_w_<A>	;
 
+LEXICON NOUN Aika
+ik:ik	<WC>Kala_s_<A>	;
+j:j	<WC>Kala_w_<A>	;
+
 LEXICON NOUN Kanta
 t:t	<WC>Kala_s_<A>	;
 n:n	<WC>Kala_w_<A>	;

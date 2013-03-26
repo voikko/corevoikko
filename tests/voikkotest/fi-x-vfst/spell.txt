@@ -1313,3 +1313,5 @@ kömpelöiden
 kömpelyys
 arveluiden
 !kömpelöys
+aika
+ajalla
