@@ -1829,6 +1829,14 @@ nel:nel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 n:n	Johdin_Us_ksen_<A>	;
 
+LEXICON Paleltaa
+Puoltaa_<A>	;
+l:l	Johdin_Us_ksen_<A>	;
+
+LEXICON Nuotintaa
+Saksantaa_<A>	;
+n:n	Johdin_Us_ksen_<A>	;
+
 LEXICON Murtaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	MurtaaCVS_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaKaarto_ä	;

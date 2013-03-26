@@ -1321,3 +1321,9 @@ pesussa
 kapsaa
 kapsanta
 kapsaisi
+uskaltaa
+uskallan
+sähellys
+nuotintaa
+nuotinnan
+nuotinnus
