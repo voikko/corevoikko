@@ -152,6 +152,22 @@ t<O>:t<O>	<WC>Arvelu_s_<A>	;
 t<O><O>:t<O><O>	<WC>Arvelu_sl_<A>	;
 n<O>:n<O>	<WC>Arvelu_w_<A>	;
 
+LEXICON NOUN Raamattu
+t<U>:t<U>	<WC>Arvelu_s_<A>	;
+t<U><U>:t<U><U>	<WC>Arvelu_sl_<A>	;
+<U>:<U>	<WC>Arvelu_w_<A>	;
+
+LEXICON NOUN Pihatto
+t<O>:t<O>	<WC>Arvelu_s_<A>	;
+t<O><O>:t<O><O>	<WC>Arvelu_sl_<A>	;
+<O>:<O>	<WC>Arvelu_w_<A>	;
+
+LEXICON NOUN Hontelo
+<O>:<O>	<WC>Arvelu_s_<A>	;
+<O><O>:<O><O>	<WC>Arvelu_sl_<A>	;
+<O>:<O>	<WC>Arvelu_w_<A>	;
+Johdin_UUs_<A>	;
+
 LEXICON NOUN Arvelu_s
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]jen:jen	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -167,6 +183,7 @@ LEXICON NOUN Arvelu_sl
 LEXICON NOUN Arvelu_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
