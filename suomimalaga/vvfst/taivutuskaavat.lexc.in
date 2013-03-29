@@ -133,6 +133,7 @@ LEXICON NOUN Valo_s
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Laatusana	Johdin_Us_<A>	;
 
 LEXICON NOUN Valo_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;
@@ -1152,6 +1153,7 @@ LEXICON NOUN Tosi
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	de:de	Johdin_tOn_<A>	;
 
 LEXICON NOUN Sisar
 <WC>Sisar_w_<A>	;
@@ -1526,6 +1528,7 @@ k<A>:k<A>	<WC>Vieras_s_<A>	;
 
 LEXICON NOUN Vieras_w
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]sten:sten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 
 LEXICON NOUN Vieras_s

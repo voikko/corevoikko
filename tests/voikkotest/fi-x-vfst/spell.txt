@@ -1339,3 +1339,6 @@ kiisketön
 kasvanut
 keksittäisi
 kirja-arviointi
+kuurous
+kädellinen
+lammasten
