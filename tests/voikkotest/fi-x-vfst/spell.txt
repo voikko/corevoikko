@@ -1329,3 +1329,5 @@ nuotinnan
 nuotinnus
 !pistö
 pisto
+poika
+pojan
