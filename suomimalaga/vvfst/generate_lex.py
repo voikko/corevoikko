@@ -265,7 +265,7 @@ def handle_word(word):
 		                 u"paperi", u"kajakki", \
 		                 u"asema", u"emäntä", \
 		                 u"laatikko", u"raamattu", u"pihatto", u"hontelo", \
-		                 u"autio", u"peruna", \
+		                 u"autio", u"peruna", u"kiiski", \
 		                 u"apila", u"kulkija", \
 		                 u"korkea", \
 		                 u"apaja", u"matala", \

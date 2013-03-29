@@ -273,6 +273,15 @@ LEXICON NOUN Autio
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
+LEXICON NOUN Kiiski
+<WC>Risti_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]e<A>:e<A>	Liitesana_<A>	;
+[Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]ee:e	<WC>LiOlN_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
+
 LEXICON NOUN Risti
 <WC>Risti_s_<A>	;
 <WC>Risti_w_<A>	;

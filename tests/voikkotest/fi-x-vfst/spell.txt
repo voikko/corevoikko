@@ -1333,3 +1333,6 @@ poika
 pojan
 pieni
 pienen
+kaihin
+kaihen
+kiisketön
