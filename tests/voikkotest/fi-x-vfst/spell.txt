@@ -1331,3 +1331,5 @@ nuotinnus
 pisto
 poika
 pojan
+pieni
+pienen

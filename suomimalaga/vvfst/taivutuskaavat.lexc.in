@@ -1060,6 +1060,23 @@ LEXICON NOUN Niemi
 <WC>Lumi_<A>	;
 [Sp][Ny]me<A>:me<A>	<WC>LiOlV_<A>	;
 
+LEXICON NOUN Pieni
+[Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]ten:ten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
+[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
+[Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
+
 LEXICON NOUN Lumi
 [Sn][Ny]mi:mi	<WC>NormaaliYsJatko_<A>	;
 ?NotLaatusana	[Sn][Ny]me:me	Omistusliite_<A>	;
