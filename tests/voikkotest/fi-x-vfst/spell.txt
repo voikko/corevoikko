@@ -1342,3 +1342,7 @@ kirja-arviointi
 kuurous
 kädellinen
 lammasten
+luettelomaisia
+lukija
+luokitella
+luokittelu

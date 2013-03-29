@@ -177,6 +177,7 @@ LEXICON NOUN Arvelu_s
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 [Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Arvelu_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;
@@ -1783,11 +1784,10 @@ it:it	Johdin_Us_ksen_<A>	;
 !TODO kirjoittautua
 
 LEXICON Ammottaa
-t:t	<WC>Muistaa_w_<A>	;
-tt:tt	<WC>Muistaa_s_<A>	;
+t:t	<WC>MuistaaMuistella_w_<A>	;
+tt:tt	<WC>MuistaaMuistella_s_<A>	;
 t:t	Johdin_Us_ksen_<A>	;
 !TODO ammottautua
-!TODO ammotella
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
@@ -2008,6 +2008,7 @@ LEXICON LaskeaLaskeskella_s
 e:e	Johdin_nimitapa4_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
