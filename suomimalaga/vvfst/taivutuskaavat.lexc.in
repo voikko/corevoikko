@@ -129,7 +129,7 @@ LEXICON NOUN Valo_s
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
@@ -176,7 +176,7 @@ LEXICON NOUN Arvelu_s
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Arvelu_sl
@@ -202,7 +202,7 @@ LEXICON NOUN Laatikko
 [Sp][Nm]k<O>j<A>:k<O>j<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]k<O>n<A>:k<O>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]k<O>in<A>:k<O>in<A>	<WC>LiOlV_<A>	;
+k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]k<O><O>:k<O><O>	<WC>LiOlN_<A>	;
 [Sill][Nm]k<O>ihi:k<O>ihi	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
@@ -243,7 +243,7 @@ LEXICON NOUN Paperi_s
 [Sill][Ny]ii:ii	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 [Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
@@ -266,7 +266,7 @@ LEXICON NOUN Autio
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [[L]][Sill][Ny]:[[L]]	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -328,7 +328,7 @@ LEXICON NOUN Risti_s
 [Sill][Ny]ii:ii	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 [Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
@@ -350,7 +350,7 @@ LEXICON NOUN Edam
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ii:ii	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -365,7 +365,7 @@ LEXICON NOUN Kalsium
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ii:ii	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -419,7 +419,7 @@ LEXICON NOUN Lovi_s
 [Sp][Ny]e<A>:e<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
@@ -457,7 +457,7 @@ LEXICON NOUN Nalle_s
 [Sp][Ny]<A>:<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]j<A>:j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]e:e	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
@@ -523,7 +523,7 @@ LEXICON NOUN Kala_s
 [Sp][Ny]<A><A>:<A><A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
@@ -613,7 +613,7 @@ LEXICON NOUN Koira_s
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
@@ -633,7 +633,7 @@ LEXICON NOUN Matala
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -660,7 +660,7 @@ LEXICON NOUN Asema_s
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Asema_w
@@ -686,7 +686,7 @@ LEXICON NOUN Apila
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -707,7 +707,7 @@ LEXICON NOUN Karahka
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -732,7 +732,7 @@ LEXICON NOUN Solakka_w
 [Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -747,7 +747,7 @@ LEXICON NOUN Solakka_s
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]<O>j<A>:<O>j<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
@@ -764,7 +764,7 @@ LEXICON NOUN Apaja
 [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -784,7 +784,7 @@ LEXICON NOUN Peruna
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -803,7 +803,7 @@ LEXICON NOUN Korkea
 [Sp][Ny]e<A><A>:e<A><A>	Liitesana_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]e<A>n<A>:e<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]e<A><A>:e<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
@@ -833,7 +833,7 @@ LEXICON NOUN Vapaa_s
 [Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 
@@ -871,7 +871,7 @@ LEXICON NOUN Kamee_s
 [Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 
@@ -909,7 +909,7 @@ LEXICON NOUN Maa_s
 [Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 
@@ -932,7 +932,7 @@ LEXICON NOUN Suo
 [Sp][Ny]<U><O>t<A>:<U><O>t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<U><O>n<A>:<U><O>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]<O>in<A>:<O>in<A>	<WC>LiOlV_<A>	;
+<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]<U><O>h<O>:<U><O>h<O>	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 <U><O>:<U><O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -987,8 +987,8 @@ LEXICON NOUN Taival_s
 [Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]een<A>:een<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1006,7 +1006,7 @@ LEXICON NOUN Rosé
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]he:he	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1023,7 +1023,7 @@ LEXICON NOUN Meri
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1039,7 +1039,7 @@ LEXICON NOUN Parfait
 [Sp][Ny]'t<A>:'t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]'it<A>:'it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]'n<A>:'n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]'in<A>:'in<A>	<WC>LiOlV_<A>	;
+':'	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]'he:'he	<WC>LiOlN_<A>	;
 [Sill][Nm]'ihi:'ihi	<WC>LiOlN_<A>	;
 ':'	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1059,7 +1059,7 @@ LEXICON NOUN Lohi
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1081,7 +1081,7 @@ LEXICON NOUN Pieni
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1097,7 +1097,7 @@ LEXICON NOUN Lumi
 [Sp][Ny]nt<A>:nt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]mi<A>:mi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]men<A>:men<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]min<A>:min<A>	<WC>LiOlV_<A>	;
+m:m	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]mee:mee	<WC>LiOlN_<A>	;
 [Sill][Nm]mii:mii	<WC>LiOlN_<A>	;
 me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1129,7 +1129,7 @@ LEXICON NOUN Kansi_t
 [Sg][Nm]sien:sien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]sin<A>:sin<A>	<WC>LiOlV_<A>	;
+s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tee:tee	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -1149,7 +1149,7 @@ LEXICON NOUN Tosi
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]sin<A>:sin<A>	<WC>LiOlV_<A>	;
+s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tee:tee	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1180,7 +1180,7 @@ LEXICON NOUN Sisar_s
 [Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
@@ -1196,7 +1196,7 @@ LEXICON NOUN Nainen
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]sen<A>:sen<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]sin<A>:sin<A>	<WC>LiOlV_<A>	;
+s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]see:see	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 se:se	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1220,7 +1220,7 @@ LEXICON NOUN Vastaus
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ksi<A>:ksi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ksen<A>:ksen<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ksin<A>:ksin<A>	<WC>LiOlV_<A>	;
+ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ksee:ksee	<WC>LiOlN_<A>	;
 [Sill][Nm]ksii:ksii	<WC>LiOlN_<A>	;
 kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1235,7 +1235,7 @@ LEXICON NOUN Kalleus
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ksi<A>:ksi<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ksin<A>:ksin<A>	<WC>LiOlV_<A>	;
+ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tee:tee	<WC>LiOlN_<A>	;
 [Sill][Nm]ksii:ksii	<WC>LiOlN_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1289,7 +1289,7 @@ LEXICON NOUN Uistin_m
 [Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1316,7 +1316,7 @@ LEXICON NOUN Onneton_s
 [Sg][Nm]mien:mien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]mi<A>:mi<A>     <WC>LiOlV_<A> ;
 [Ses][Ny]m<A>n<A>:m<A>n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]min<A>:min<A>	<WC>LiOlV_<A>	;
+m:m	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]m<A><A>:m<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]mii:mii	<WC>LiOlN_<A>	;
 m<A>:m<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1336,7 +1336,7 @@ LEXICON NOUN Airut
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
@@ -1368,8 +1368,7 @@ LEXICON NOUN Mies_h
 [Sill][Nm]ii:ii     <WC>LiOlN_<A> ;
 [Sg][Nm]ien:ien       <WC>MonikonGenetiiviEnJatko_<A> ;
 [Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
-[Ses][Nm]in<A>:in<A>  <WC>LiOlV_<A> ;
-[Sko][Nm]ine:ine      Omistusliite_<A> ;
+<WC>YhteisetMonikonSijat2_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A> ;
 
 LEXICON NOUN Kuollut
@@ -1382,7 +1381,7 @@ LEXICON NOUN Kuollut
 [Sp][Ny]<U>tt<A>:<U>tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]een<A>:een<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]ein<A>:ein<A>	<WC>LiOlV_<A>	;
+e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 [Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1447,7 +1446,7 @@ LEXICON NOUN Hame_s
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]esee:esee	<WC>LiOlN_<A>	;
 [Sill][Nm]ih:ih	<WC>LiOlN_<A>	;
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
@@ -1540,7 +1539,7 @@ LEXICON NOUN Vieras_s
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [[L]][Ses][Ny]n<A>:[[L]]n<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [[L]][Sill][Ny]see:[[L]]see	<WC>LiOlN_<A>	;
 [[L]][Sill][Nm]ih:[[L]]ih	<WC>LiOlN_<A>	;
 [[L]]:[[L]]	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1565,7 +1564,7 @@ LEXICON NOUN Kauris_s
 [Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
-[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]isee:isee	<WC>LiOlN_<A>	;
 [Sill][Nm]ih:ih	<WC>LiOlN_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
@@ -1605,6 +1604,10 @@ LEXICON NOUN YhteisetMonikonPaikallissijat
 [Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
 [Sab][Nm]itt<A>:itt<A>	<WC>LiOlV_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
+
+LEXICON NOUN YhteisetMonikonSijat2
+[Ses][Nm]in<A>:in<A>	<WC>LiOlV_<A>	;
+[Sko][Nm]ine:ine	<WC>LiOlV_<A>	;
 
 LEXICON NOUN LiOlN
 n:n	Liitesana_<A>	;
