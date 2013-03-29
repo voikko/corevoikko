@@ -1962,6 +1962,7 @@ LEXICON Kaivaa_s
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
+<A>:<A>	Johdin_nUt_<A>	;
 
 LEXICON Soutaa
 d:d	Huutaa_w_<A>	;
@@ -2055,6 +2056,7 @@ k:k	<WC>Sallia_s_<A>	;
 
 LEXICON Sallia_w
 i:i	KestämänTekijäpääteHeikko_<A>	;
+i:i	EhtotapaTta_<A>	;
 i:i	Johdin_ttU_<A>	;
 i:i	Johdin_ntA_<A>	;
 
@@ -2807,7 +2809,7 @@ LEXICON Johdin_ja_kantaja_myyjä
 [Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 
 LEXICON Johdin_nti
-n:n	NimisanaTunti_<A>	;
+[Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
 
 LEXICON Voittoaste
 [Sn][Ny][Cc]mpi:mpi	Liitesana_<A>	;
