@@ -110,6 +110,9 @@ Multichar_Symbols
 ! etu/takavokaalimuodot sallittu
 @P.V_SALLITTU.E@ @P.V_SALLITTU.T@ @R.V_SALLITTU.E@ @R.V_SALLITTU.T@ @C.V_SALLITTU@
 
+! vertailumuodot eivät ole sallittuja
+@P.EI_VERTM.ON@ @D.EI_VERTM@
+
 LEXICON Root
 Joukahainen	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ee	;
@@ -127,9 +130,10 @@ Joukahainen_ep	;
 Joukahainen_es	;
 Joukahainen_h	;
 Joukahainen_l	;
-Joukahainen_nimisanat	;
+Joukahainen_n	;
+Joukahainen_nl	;
 Joukahainen_t	;
 
 LEXICON Joukahainen_nimisanat
 Joukahainen_n	;
-Joukahainen_nl	;
+@P.EI_VERTM.ON@:@P.EI_VERTM.ON@	Joukahainen_nl	;

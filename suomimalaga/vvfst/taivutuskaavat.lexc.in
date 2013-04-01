@@ -256,6 +256,8 @@ LEXICON NOUN Paperi_w
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
+?Laatusana	i:i	Voittoaste_<A>	;
+?Laatusana	e:e	Yliaste_<A>	;
 
 LEXICON NOUN Autio
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -988,6 +990,7 @@ LEXICON NOUN Taival_s
 [Sg][Nm]eiden:eiden	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]een<A>:een<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
@@ -1549,6 +1552,8 @@ LEXICON NOUN Vieras_s
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Ruis
 i:i	<WC>Vieras_w_<A>	;
@@ -2172,6 +2177,7 @@ LEXICON Tulla_s
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
+e:e	Johdin_vA_<A>	;
 
 LEXICON Tulla_l
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -2822,59 +2828,59 @@ LEXICON Johdin_nti
 [Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;
 
 LEXICON Voittoaste
-[Sn][Ny][Cc]mpi:mpi	Liitesana_<A>	;
-[Sn][Nm][Cc]mm<A>t:mm<A>t	Liitesana_<A>	;
-[Sg][Ny][Cc]mm<A>n:mm<A>n	Liitesana_<A>	;
-[Sg][Nm][Cc]mpien:mpien	Liitesana_<A>	;
-[Sp][Ny][Cc]mp<A><A>:mp<A><A>	Liitesana_<A>	;
-[Sp][Nm][Cc]mpi<A>:mpi<A>	Liitesana_<A>	;
-[Str][Ny][Cc]mm<A>ksi:mm<A>ksi	Liitesana_<A>	;
-[Str][Nm][Cc]mmiksi:mmiksi	Liitesana_<A>	;
-[Ses][Ny][Cc]mp<A>n<A>:mp<A>n<A>	Liitesana_<A>	;
-[Ses][Nm][Cc]mpin<A>:mpin<A>	Liitesana_<A>	;
-[Sine][Ny][Cc]mm<A>ss<A>:mm<A>ss<A>	Liitesana_<A>	;
-[Sine][Nm][Cc]mmiss<A>:mmiss<A>	Liitesana_<A>	;
-[Sela][Ny][Cc]mm<A>st<A>:mm<A>st<A>	Liitesana_<A>	;
-[Sela][Nm][Cc]mmist<A>:mmist<A>	Liitesana_<A>	;
-[Sill][Ny][Cc]mp<A><A>n:mp<A><A>n	Liitesana_<A>	;
-[Sill][Nm][Cc]mpiin:mpiin	Liitesana_<A>	;
-[Sade][Ny][Cc]mm<A>ll<A>:mm<A>ll<A>	Liitesana_<A>	;
-[Sade][Nm][Cc]mmill<A>:mmill<A>	Liitesana_<A>	;
-[Sabl][Ny][Cc]mm<A>lt<A>:mm<A>lt<A>	Liitesana_<A>	;
-[Sabl][Nm][Cc]mmilt<A>:mmilt<A>	Liitesana_<A>	;
-[Sall][Ny][Cc]mm<A>lle:mm<A>lle	Liitesana_<A>	;
-[Sall][Nm][Cc]mmille:mmille	Liitesana_<A>	;
-[Sab][Ny][Cc]mm<A>tt<A>:mm<A>tt<A>	Liitesana_<A>	;
-[Sab][Nm][Cc]mmitt<A>:mmitt<A>	Liitesana_<A>	;
-[Sin][Nm][Cc]mmin:mmin	Liitesana_<A>	;
+[Sn][Ny][Cc]mpi@D.EI_VERTM@:mpi@D.EI_VERTM@	Liitesana_<A>	;
+[Sn][Nm][Cc]mm<A>t@D.EI_VERTM@:mm<A>t@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Ny][Cc]mm<A>n@D.EI_VERTM@:mm<A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Nm][Cc]mpien@D.EI_VERTM@:mpien@D.EI_VERTM@	Liitesana_<A>	;
+[Sp][Ny][Cc]mp<A><A>@D.EI_VERTM@:mp<A><A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sp][Nm][Cc]mpi<A>@D.EI_VERTM@:mpi<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Str][Ny][Cc]mm<A>ksi@D.EI_VERTM@:mm<A>ksi@D.EI_VERTM@	Liitesana_<A>	;
+[Str][Nm][Cc]mmiksi@D.EI_VERTM@:mmiksi@D.EI_VERTM@	Liitesana_<A>	;
+[Ses][Ny][Cc]mp<A>n<A>@D.EI_VERTM@:mp<A>n<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Ses][Nm][Cc]mpin<A>@D.EI_VERTM@:mpin<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sine][Ny][Cc]mm<A>ss<A>@D.EI_VERTM@:mm<A>ss<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sine][Nm][Cc]mmiss<A>@D.EI_VERTM@:mmiss<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sela][Ny][Cc]mm<A>st<A>@D.EI_VERTM@:mm<A>st<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sela][Nm][Cc]mmist<A>@D.EI_VERTM@:mmist<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sill][Ny][Cc]mp<A><A>n@D.EI_VERTM@:mp<A><A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sill][Nm][Cc]mpiin@D.EI_VERTM@:mpiin@D.EI_VERTM@	Liitesana_<A>	;
+[Sade][Ny][Cc]mm<A>ll<A>@D.EI_VERTM@:mm<A>ll<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sade][Nm][Cc]mmill<A>@D.EI_VERTM@:mmill<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sabl][Ny][Cc]mm<A>lt<A>@D.EI_VERTM@:mm<A>lt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sabl][Nm][Cc]mmilt<A>@D.EI_VERTM@:mmilt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sall][Ny][Cc]mm<A>lle@D.EI_VERTM@:mm<A>lle@D.EI_VERTM@	Liitesana_<A>	;
+[Sall][Nm][Cc]mmille@D.EI_VERTM@:mmille@D.EI_VERTM@	Liitesana_<A>	;
+[Sab][Ny][Cc]mm<A>tt<A>@D.EI_VERTM@:mm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sab][Nm][Cc]mmitt<A>@D.EI_VERTM@:mmitt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sin][Nm][Cc]mmin@D.EI_VERTM@:mmin@D.EI_VERTM@	Liitesana_<A>	;
 
 LEXICON Yliaste
-[Sn][Ny][Cs]in:in	Liitesana_<A>	;
-[Sn][Nm][Cs]imm<A>t:imm<A>t	Liitesana_<A>	;
-[Sg][Ny][Cs]imm<A>n:imm<A>n	Liitesana_<A>	;
-[Sg][Nm][Cs]impien:impien	Liitesana_<A>	;
-[Sp][Ny][Cs]int<A>:int<A>	Liitesana_<A>	;
-[Sp][Ny][Cs]imp<A><A>:imp<A><A>	Liitesana_<A>	;
-[Sp][Nm][Cs]impi<A>:impi<A>	Liitesana_<A>	;
-[Str][Ny][Cs]imm<A>ksi:imm<A>ksi	Liitesana_<A>	;
-[Str][Nm][Cs]immiksi:immiksi	Liitesana_<A>	;
-[Ses][Ny][Cs]imp<A>n<A>:imp<A>n<A>	Liitesana_<A>	;
-[Ses][Nm][Cs]impin<A>:impin<A>	Liitesana_<A>	;
-[Sine][Ny][Cs]imm<A>ss<A>:imm<A>ss<A>	Liitesana_<A>	;
-[Sine][Nm][Cs]immiss<A>:immiss<A>	Liitesana_<A>	;
-[Sela][Ny][Cs]imm<A>st<A>:imm<A>st<A>	Liitesana_<A>	;
-[Sela][Nm][Cs]immist<A>:immist<A>	Liitesana_<A>	;
-[Sill][Ny][Cs]imp<A><A>n:imp<A><A>n	Liitesana_<A>	;
-[Sill][Nm][Cs]impiin:impiin	Liitesana_<A>	;
-[Sade][Ny][Cs]imm<A>ll<A>:imm<A>ll<A>	Liitesana_<A>	;
-[Sade][Nm][Cs]immill<A>:immill<A>	Liitesana_<A>	;
-[Sabl][Ny][Cs]imm<A>lt<A>:imm<A>lt<A>	Liitesana_<A>	;
-[Sabl][Nm][Cs]immilt<A>:immilt<A>	Liitesana_<A>	;
-[Sall][Ny][Cs]imm<A>lle:imm<A>lle	Liitesana_<A>	;
-[Sall][Nm][Cs]immille:immille	Liitesana_<A>	;
-[Sab][Ny][Cs]imm<A>tt<A>:imm<A>tt<A>	Liitesana_<A>	;
-[Sab][Nm][Cs]immitt<A>:immitt<A>	Liitesana_<A>	;
-[Sin][Nm][Cs]immin:immin	Liitesana_<A>	;
+[Sn][Ny][Cs]in@D.EI_VERTM@:in@D.EI_VERTM@	Liitesana_<A>	;
+[Sn][Nm][Cs]imm<A>t@D.EI_VERTM@:imm<A>t@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Ny][Cs]imm<A>n@D.EI_VERTM@:imm<A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sg][Nm][Cs]impien@D.EI_VERTM@:impien@D.EI_VERTM@	Liitesana_<A>	;
+[Sp][Ny][Cs]int<A>@D.EI_VERTM@:int<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sp][Ny][Cs]imp<A><A>@D.EI_VERTM@:imp<A><A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sp][Nm][Cs]impi<A>@D.EI_VERTM@:impi<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Str][Ny][Cs]imm<A>ksi@D.EI_VERTM@:imm<A>ksi@D.EI_VERTM@	Liitesana_<A>	;
+[Str][Nm][Cs]immiksi@D.EI_VERTM@:immiksi@D.EI_VERTM@	Liitesana_<A>	;
+[Ses][Ny][Cs]imp<A>n<A>@D.EI_VERTM@:imp<A>n<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Ses][Nm][Cs]impin<A>@D.EI_VERTM@:impin<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sine][Ny][Cs]imm<A>ss<A>@D.EI_VERTM@:imm<A>ss<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sine][Nm][Cs]immiss<A>@D.EI_VERTM@:immiss<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sela][Ny][Cs]imm<A>st<A>@D.EI_VERTM@:imm<A>st<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sela][Nm][Cs]immist<A>@D.EI_VERTM@:immist<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sill][Ny][Cs]imp<A><A>n@D.EI_VERTM@:imp<A><A>n@D.EI_VERTM@	Liitesana_<A>	;
+[Sill][Nm][Cs]impiin@D.EI_VERTM@:impiin@D.EI_VERTM@	Liitesana_<A>	;
+[Sade][Ny][Cs]imm<A>ll<A>@D.EI_VERTM@:imm<A>ll<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sade][Nm][Cs]immill<A>@D.EI_VERTM@:immill<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sabl][Ny][Cs]imm<A>lt<A>@D.EI_VERTM@:imm<A>lt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sabl][Nm][Cs]immilt<A>@D.EI_VERTM@:immilt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sall][Ny][Cs]imm<A>lle@D.EI_VERTM@:imm<A>lle@D.EI_VERTM@	Liitesana_<A>	;
+[Sall][Nm][Cs]immille@D.EI_VERTM@:immille@D.EI_VERTM@	Liitesana_<A>	;
+[Sab][Ny][Cs]imm<A>tt<A>@D.EI_VERTM@:imm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sab][Nm][Cs]immitt<A>@D.EI_VERTM@:immitt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sin][Nm][Cs]immin@D.EI_VERTM@:immin@D.EI_VERTM@	Liitesana_<A>	;
 
 LEXICON Liitesana
 LiitesanaKoPaHan_<A>	;
