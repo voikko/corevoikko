@@ -873,6 +873,7 @@ LEXICON NOUN Kamee_s
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Kamee_l
@@ -884,6 +885,7 @@ LEXICON NOUN Kamee_l
 [Sill][Ny]see:see	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Maa
 <WC>Maa_s_<A>	;
@@ -2613,6 +2615,7 @@ LEXICON Kitistä
 [Tn1]ist<A>:ist<A>	Liitesana_<A>	;
 ise:ise	KestämänTekijäpääteHeikko_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
+ise:ise	Johdin_vA_<A>	;
 
 LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@n	Liitesana_<A>	;

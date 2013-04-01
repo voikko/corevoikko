@@ -1347,3 +1347,6 @@ lukija
 luokitella
 luokittelu
 tietoineen
+esseemäinen
+esseisiin
+humisevaa
