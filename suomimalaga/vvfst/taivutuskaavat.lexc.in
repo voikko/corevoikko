@@ -1338,6 +1338,10 @@ m:m	<WC>YhteisetMonikonSijat2_<A>	;
 m<A>:m<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
+LEXICON NOUN Pahin
+[Ses][Ny]inn<A>:inn<A>	Liitesana_<A>	;
+?Laatusana	Yliaste_<A>	;
+
 LEXICON NOUN Asiakas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
