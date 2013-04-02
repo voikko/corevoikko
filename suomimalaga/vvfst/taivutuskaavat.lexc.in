@@ -804,25 +804,28 @@ LEXICON NOUN Peruna
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Korkea
-[Sn][Ny]e<A>:e<A>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sn][Nm]e<A>t:e<A>t	Liitesana_<A>	;
-[Sg][Ny]e<A>n:e<A>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]eiden:eiden	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]eitten:eitten	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]e<A>in:e<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]e<A><A>:e<A><A>	Liitesana_<A>	;
-[Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
-[Ses][Ny]e<A>n<A>:e<A>n<A>	<WC>LiOlV_<A>	;
-e:e	<WC>YhteisetMonikonSijat2_<A>	;
-[Sill][Ny]e<A><A>:e<A><A>	<WC>LiOlN_<A>	;
-[Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
-[Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;
-e<A>:e<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
-e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
-?Laatusana	e<A>:e<A>	Voittoaste_<A>	;
-?Laatusana	e:e	Yliaste_<A>	;
-?Laatusana	e:e	Johdin_Us_<A>	;
-?Nimisana	e<A>:e<A>	Johdin_tOn_<A>	;
+e:e	<WC>Ainoa_<A>	;
+
+LEXICON NOUN Ainoa
+[Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
+?Laatusana	Johdin_Us_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Suurempi
 ?Laatusana	Voittoaste_<A>	;

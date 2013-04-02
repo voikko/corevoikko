@@ -1360,3 +1360,5 @@ kaheleimmassa
 nahka
 nahan
 nahkan
+ainoa
+ainoassa
