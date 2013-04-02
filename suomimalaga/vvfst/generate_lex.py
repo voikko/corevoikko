@@ -308,7 +308,7 @@ def handle_word(word):
 		                 u"puoltaa", u"juurtaa", u"saksantaa", \
 		                 u"sukeltaa", u"musertaa", u"jäykentää", \
 		                 u"valita", u"saneerata", \
-		                 u"hohtaa", u"hujahtaa", \
+		                 u"hohtaa", u"hujahtaa", u"inttää", u"itää", \
 		                 u"aleta", u"lämmetä", u"loitota", u"hapata", u"suipeta", u"vaieta", u"edetä", u"leudota", u"kaveta", u"mädätä", u"tarjeta", u"ulota", \
 		                 u"kohota", u"irrota", u"kimmota", u"lingota", u"netota", u"upota", u"turvota", u"laota", u"kadota", u"saota", \
 		                 u"saada", u"myydä", u"juoda", u"viedä", u"voida", \

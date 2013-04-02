@@ -1369,3 +1369,7 @@ altis
 alttiina
 !iäkkäys
 alttius
+kärttää
+kärtän
+itävät
+idellä
