@@ -541,6 +541,14 @@ LEXICON NOUN Kala_w
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
+LEXICON NOUN Nahka
+k:k	<WC>Kala_s_<A>	;
+<WC>Kala_w_<A>	;
+[Sn][Nm]k<A>t:k<A>t	Liitesana_<A>	;
+[Sg][Ny]k<A>n:k<A>n	<WC>NormaaliYsJatko_<A>	;
+k<A>:k<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+k<O>:k<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
+
 LEXICON NOUN Koira
 <WC>Koira_s_<A>	;
 <WC>Koira_w_<A>	;

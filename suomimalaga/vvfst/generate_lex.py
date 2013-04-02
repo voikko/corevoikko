@@ -272,7 +272,7 @@ def handle_word(word):
 		                 u"nalle", u"atte", u"nukke", \
 		                 u"lohi", u"tuohi", u"meri", u"lumi", u"niemi", u"pieni", \
 		                 u"hirsi", u"kansi", u"jälsi", \
-		                 u"susi", \
+		                 u"susi", u"nahka", \
 		                 u"karahka", \
 		                 u"solakka", u"ulappa", u"savotta", \
 		                 u"kuollut", \
