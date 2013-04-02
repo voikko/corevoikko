@@ -1365,3 +1365,7 @@ ainoassa
 sisintä
 sisinnä
 sisinnäkin
+altis
+alttiina
+!iäkkäys
+alttius

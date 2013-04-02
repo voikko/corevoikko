@@ -280,7 +280,7 @@ def handle_word(word):
 		                 u"askel", u"kannel", u"kinner", u"piennar", u"ommel", u"penger", u"udar", u"taival", u"säen", 
 		                 u"suo", u"suurempi", \
 		                 u"rosé", u"edam", u"parfait", \
-		                 u"kirves", u"ies", u"ruis", u"kauris", \
+		                 u"kirves", u"ies", u"ruis", u"kauris", u"altis", \
 		                 u"maa", u"puu", u"pii", u"tee", \
 		                 u"vapaa", u"tienoo", u"leikkuu", \
 				 u"mies", \
