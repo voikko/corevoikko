@@ -2097,6 +2097,24 @@ LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 e:e	Johdin_ttU_<A>	;
 
+LEXICON Lähteä
+hd:hd	Tuntea_w_<A>	;
+ht:ht	Tuntea_s_<A>	;
+
+LEXICON Tuntea
+n:n	Tuntea_w_<A>	;
+t:t	Tuntea_s_<A>	;
+
+LEXICON Tuntea_w
+e:e	KestämänTekijäpääteHeikko_<A>	;
+e:e	Johdin_ttU_<A>	;
+
+LEXICON Tuntea_s
+[Tn1]e<A>:e<A>	Liitesana_<A>	;
+e:e	Johdin_mA_<A>	;
+e:e	Johdin_vA_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
+
 LEXICON Sallia
 <WC>Sallia_w_<A>	;
 <WC>Sallia_s_<A>	;

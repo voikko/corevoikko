@@ -302,7 +302,7 @@ def handle_word(word):
 		                 u"sallia", u"onkia", u"empiä", u"kontia", u"oppia", u"loikkia", u"sättiä", u"laatia", u"kaapia", u"hylkiä", u"poikia", \
 		                 u"kanavoida", u"haravoida", \
 		                 u"hidastaa", u"loistaa", \
-		                 u"ammottaa", u"jättää", u"alentaa", \
+		                 u"ammottaa", u"jättää", u"alentaa", u"lähteä", u"tuntea", \
 		                 u"huutaa", u"soutaa", u"vuotaa", \
 		                 u"autioittaa", u"sulaa", u"kyntää", \
 		                 u"puoltaa", u"juurtaa", u"saksantaa", \
