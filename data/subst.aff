@@ -678,7 +678,7 @@ end: rules
 end: class
 
 
-# Kotus 12 lattia (1/3)
+# Kotus 12 lattia (1/2)
 class: 12
 sm-class: kulkija
 match-word: A
@@ -719,7 +719,7 @@ instruktiivi_mon	a	oin	s	ps=f
 end: rules
 end: class
 
-# Kotus 12 lattia (2/3)
+# Kotus 12 lattia (2/2)
 class: 12
 sm-class: peruna
 match-word: CA
@@ -760,62 +760,6 @@ allatiivi_mon	a	oille	s
 abessiivi_mon	a	oitta	s	ps=f
 komitatiivi_mon	a	oine	s	ps=r
 instruktiivi_mon	a	oin	s	ps=f
-end: rules
-end: class
-
-# Kotus 12 lattia (3/3)
-class: 12
-sm-class: herttua
-match-word: tuA
-consonant-gradation: -
-group: t
-transform-group: e
-rules:
-nominatiivi	0	0	s
-genetiivi		0	n	s
-partitiivi	0	a	s
-translatiivi	0	ksi	s	ps=f
-translatiivi	0	kse	s	ps=r
-essiivi		0	na	s
-inessiivi		0	ssa	s
-elatiivi		0	sta	s
-illatiivi		0	an	s
-adessiivi		0	lla	s
-ablatiivi		0	lta	s
-allatiivi		0	lle	s
-abessiivi		0	tta	s	ps=f
-nominatiivi_mon	0	t	s	ps=f
-genetiivi_mon	a	oiden	s
-genetiivi_mon	a	iden	s
-genetiivi_mon	a	oitten	s
-genetiivi_mon	a	itten	s
-genetiivi_mon	0	in	s	ps=f,prio=2
-partitiivi_mon	a	oita	s
-partitiivi_mon	a	ita	s
-translatiivi_mon	a	oiksi	s	ps=f
-translatiivi_mon	a	iksi	s	ps=f
-translatiivi_mon	a	oikse	s	ps=r
-translatiivi_mon	a	ikse	s	ps=r
-essiivi_mon	a	oina	s
-essiivi_mon	a	ina	s
-inessiivi_mon	a	oissa	s
-inessiivi_mon	a	issa	s
-elatiivi_mon	a	oista	s
-elatiivi_mon	a	ista	s
-illatiivi_mon	a	oihin	s
-illatiivi_mon	a	ihin	s
-adessiivi_mon	a	oilla	s
-adessiivi_mon	a	illa	s
-ablatiivi_mon	a	oilta	s
-ablatiivi_mon	a	ilta	s
-allatiivi_mon	a	oille	s
-allatiivi_mon	a	ille	s
-abessiivi_mon	a	oitta	s	ps=f
-abessiivi_mon	a	itta	s	ps=f
-komitatiivi_mon	a	oine	s	ps=r
-komitatiivi_mon	a	ine	s	ps=r
-instruktiivi_mon	a	oin	s	ps=f
-instruktiivi_mon	a	in	s	ps=f
 end: rules
 end: class
 

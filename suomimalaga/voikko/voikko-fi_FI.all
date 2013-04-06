@@ -878,21 +878,6 @@ allo_rule generate_allos ($tietue):
                                           [sisätulento_isiin: "", sisätulento_ihin: ""], ""));
     result $i.alku, $i - alku;
 
-
-  elseif (herttua in $tietue.jatko) then
-    choose $i in apila ($tietue, A($tietue), O($tietue)) +
-                 taivutuskaava ($tietue,
-                                [omanto_iT:        "",
-                                 osanto_itA:       "",
-                                 olento_inA:       "",
-                                 sija_monikko_1:     "",
-                                 sisätulento_ihin: "",
-                                 ulkopaikallissija_illA: "",
-                                 vajanto_ittA:     "",
-                                 seuranto_ine:         ""]);
-    result $i.alku, $i - alku;
-
-
   elseif (korkea in $tietue.jatko) then
     define $a := taivutuskaava ($tietue,
                                 yksikkö8 (eA($tietue), eA($tietue),

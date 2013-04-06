@@ -740,6 +740,7 @@ Berijoiden # Kotus 12
 Berijoitten # Kotus 12
 jäkälää # Kotus 12
 !jäkälätä # Kotus 12
+!porstuitten # Kotus 12
 kurpitsaa # Kotus 13
 !kurpitsata # Kotus 13
 vaahteraa # Kotus 13
