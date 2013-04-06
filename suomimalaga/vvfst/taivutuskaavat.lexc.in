@@ -1654,6 +1654,11 @@ LEXICON Punoa
 <WC>Punoa_w_<A>	;
 <WC>Punoa_s_<A>	;
 
+LEXICON Ampua
+m<U>:m<U>	<WC>Punoa_w_<A>	;
+p<U>:p<U>	<WC>Punoa_s_<A>	;
+m<U>t:m<U>t	<WC>Alittaa_<A>	;
+
 LEXICON Tempoa
 m<O>:m<O>	<WC>Punoa_w_<A>	;
 p<O>:p<O>	<WC>Punoa_s_<A>	;

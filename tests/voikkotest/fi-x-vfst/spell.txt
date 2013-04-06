@@ -1373,3 +1373,5 @@ kärttää
 kärtän
 itävät
 idellä
+ampuvat
+ammuttaa

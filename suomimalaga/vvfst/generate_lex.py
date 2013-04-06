@@ -320,7 +320,7 @@ def handle_word(word):
 		                 u"arvailla", u"tulla", u"mennä", \
 		                 u"nuolaista", u"rangaista", u"kalista", u"vavista", u"nousta", \
 		                 u"katketa", u"todeta", u"langeta", u"lohjeta", u"poiketa", u"kammeta", u"ruveta", u"lotota", \
-		                 u"kihistä", u"kitistä", \
+		                 u"kihistä", u"kitistä", u"ampua", \
 		                 u"kapsaa", u"paleltaa", u"nuotintaa", \
 		                 u"selvitä", u"bingota", u"haluta", u"hellitä", u"lämmitä", u"silputa", u"vivuta", u"keritä", \
 		                 u"juoruta", u"kummuta", u"luututa", u"ryöpytä", u"takuta", u"kavuta", \
