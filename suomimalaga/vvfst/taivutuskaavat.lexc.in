@@ -2010,6 +2010,7 @@ LEXICON Huutaa_s
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
+<A>:<A>	Johdin_nUt_<A>	;
 
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
@@ -2178,6 +2179,7 @@ i:i	Johdin_nimitapa4_<A>	;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+i:i	Johdin_nUt_<A>	;
 
 LEXICON Kanavoida
 HaravoidaKanavoida_<A>	;
@@ -2602,6 +2604,7 @@ Johdin_Us_ksen_<A>	;
 
 LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttU_<A>	;
