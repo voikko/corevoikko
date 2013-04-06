@@ -1385,3 +1385,7 @@ ko'oilla
 pop
 poppi
 punk
+liettää
+lietän
+lietto
+!liettö
