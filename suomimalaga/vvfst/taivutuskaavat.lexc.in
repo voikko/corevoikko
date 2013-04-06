@@ -1827,6 +1827,10 @@ LEXICON Sulaa
 <WC>Muistaa_w_<A>	;
 <WC>Muistaa_s_<A>	;
 
+LEXICON Purkaa
+<WC>Muistaa_w_<A>	;
+k:k	<WC>Muistaa_s_<A>	;
+
 LEXICON Kyntää
 t:t	<WC>Muistaa_s_<A>	;
 

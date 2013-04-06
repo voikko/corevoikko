@@ -1399,3 +1399,5 @@ tuntema
 tunteva
 tuntija
 tunnettu
+purkaa
+puran
