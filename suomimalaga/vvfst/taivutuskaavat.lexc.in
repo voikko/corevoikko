@@ -398,6 +398,14 @@ LEXICON NOUN Siipi
 p:p	<WC>Lovi_s_<A>	;
 v:v	<WC>Lovi_w_<A>	;
 
+LEXICON NOUN Piki
+k:k	<WC>Lovi_s_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+':'	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
+
 LEXICON NOUN Lehti
 t:t	<WC>Lovi_s_<A>	;
 d:d	<WC>Lovi_w_<A>	;
