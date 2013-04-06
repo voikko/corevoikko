@@ -1922,6 +1922,12 @@ t:t	<WC>Huutaa_s_<A>	;
 del:del	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
+LEXICON Alentaa
+n:n	<WC>Huutaa_w_<A>	;
+t:t	<WC>Huutaa_s_<A>	;
+nel:nel	<WC>Katsella_w_<A>	;
+tel:tel	<WC>Katsella_s_<A>	;
+
 LEXICON Sukeltaa
 Puoltaa_<A>	;
 lel:lel	<WC>Katsella_w_<A>	;

@@ -1389,3 +1389,5 @@ liettää
 lietän
 lietto
 !liettö
+likentää
+likennän
