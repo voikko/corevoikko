@@ -273,7 +273,7 @@ def handle_word(word):
 		                 u"lohi", u"tuohi", u"meri", u"lumi", u"niemi", u"pieni", \
 		                 u"hirsi", u"kansi", u"jälsi", \
 		                 u"susi", u"nahka", \
-		                 u"karahka", u"piki", \
+		                 u"karahka", u"piki", u"koko", \
 		                 u"solakka", u"ulappa", u"savotta", \
 		                 u"kuollut", \
 		                 u"killinki", u"hollanti", u"salaatti", u"sinappi", \

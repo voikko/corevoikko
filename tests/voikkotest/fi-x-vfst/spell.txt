@@ -1379,3 +1379,6 @@ piki
 pien
 pi'illä
 pikien
+koko
+koon
+ko'oilla
