@@ -82,7 +82,6 @@
 [perusmuoto: "jumala", alku: "jumal", luokka: nimisana, jatko: <jumala>, äs: a, tiedot: <inen>];
 [perusmuoto: "juosta", alku: "juo", luokka: teonsana, jatko: <juosta>, äs: a];
 [perusmuoto: "jälki", alku: "jäl", luokka: nimisana, jatko: <jälki>, äs: ä];
-[perusmuoto: "jälleenrakentaa", alku: "jälleenraken", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_sukija>, rakenne: "=ppppppp=pppppppp"];
 [perusmuoto: "jöötä", alku: "jöötä", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "Ka", alku: "Ka", luokka: nimi, jatko: <loppu, omanto_n, sisätulento_hVn>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "kaartaa", alku: "kaar", luokka: teonsana, jatko: <saartaa>, äs: a];
@@ -111,7 +110,6 @@
 [perusmuoto: "käydä", alku: "kä", luokka: teonsana, jatko: <käydä>, äs: ä];
 [perusmuoto: "edeskäydä", alku: "edeskä", luokka: teonsana, jatko: <käydä>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
 [perusmuoto: "läpikäydä", alku: "läpikä", luokka: teonsana, jatko: <käydä>, äs: ä, rakenne: "=pppp=ppppp"];
-[perusmuoto: "kääntää", alku: "kään", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "laidun", alku: "lai", luokka: nimisana, jatko: <laidun>, äs: a];
 [perusmuoto: "lapsi", alku: "la", luokka: nimisana, jatko: <lapsi>, äs: a];
@@ -128,7 +126,6 @@
 [perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "nähdä", alku: "nä", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
-[perusmuoto: "ojentaa", alku: "ojen", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "ojentaa", alku: "oje", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
 [perusmuoto: "ori", alku: "ori", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_sukija, ei_ysj>];
@@ -145,7 +142,6 @@
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "purra", alku: "pur", luokka: teonsana, jatko: <purra>, äs: a];
 [perusmuoto: "pyyhe", alku: "pyyh", luokka: nimisana, jatko: <tarvike>, äs: ä];
-[perusmuoto: "rakentaa", alku: "raken", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "rakentaa", alku: "rake", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a]; # lt-loppuiset parfait-luokan sanat eivät sovi Joukahaiseen
 [perusmuoto: "ruoka", alku: "ru", luokka: nimisana, jatko: <ruoka>, äs: a];
@@ -197,7 +193,6 @@
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "vuoka", alku: "vu", luokka: nimisana, jatko: <ruoka>, äs: a, tiedot: <ei_voikko>]; # Voikko-versio vain Joukahaisen kautta.
 [perusmuoto: "vuosituhat", alku: "vuosituha", luokka: nimisana, jatko: <tuhat>, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "vääntää", alku: "vään", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "vääntää", alku: "vää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];
 [perusmuoto: "ylkä", alku: "yl", luokka: nimisana, jatko: <ylkä>, äs: ä];

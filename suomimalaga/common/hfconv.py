@@ -445,7 +445,8 @@ modern_classmap = [(u'valo', u'sw', [(None,u'(.*)',u'valo'),
 			(u'd',u'(.*)dOtA',u'kadota'),
 			(u'>k',u'(.*)OtA',u'laota')]),
 	(u'kihistä', u'-', [(None,u'(.*C)istA',u'kihistä')]),
-	(u'kitistä', u'-', [(None,u'(.*C)istA',u'kitistä')])
+	(u'kitistä', u'-', [(None,u'(.*C)istA',u'kitistä')]),
+	(u'rakentaa', u'-', [(None,u'(.*n)tAA',u'rakentaa')])
 	]
 
 def compileClassmapREs(inputClassmap):
