@@ -284,7 +284,7 @@ def handle_word(word):
 		                 u"maa", u"puu", u"pii", u"tee", \
 		                 u"vapaa", u"tienoo", u"leikkuu", \
 				 u"mies", \
-		                 u"airut", \
+		                 u"airut", u"pop", u"punk", \
 		                 u"hame", u"enne", u"helle", u"kierre", u"lumme", u"lahje", u"lape", u"sade", u"taive", u"tarvike", u"vaate", \
 		                 u"alaston", u"onneton", \
 		                 u"uistin", u"vaimennin", u"sivellin", u"kiharrin", u"kaadin", u"kaavin", u"suodatin", u"puin", u"poljin", \

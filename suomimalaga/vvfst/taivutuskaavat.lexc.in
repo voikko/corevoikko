@@ -311,6 +311,16 @@ LEXICON NOUN Tunti
 t:t	<WC>Risti_s_<A>	;
 n:n	<WC>Risti_w_<A>	;
 
+LEXICON NOUN Pop
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+p:p	<WC>Risti_s_<A>	;
+<WC>Risti_w_<A>	;
+
+LEXICON NOUN Punk
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+k:k	<WC>Risti_s_<A>	;
+<WC>Risti_w_<A>	;
+
 LEXICON NOUN Keppi
 p:p	<WC>Risti_s_<A>	;
 <WC>Risti_w_<A>	;
