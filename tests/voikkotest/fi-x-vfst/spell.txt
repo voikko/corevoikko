@@ -1416,3 +1416,4 @@ katkeaminen
 arvaileminen
 haluamaisillaan
 haluamaisillansa
+!suomalain
