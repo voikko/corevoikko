@@ -1774,7 +1774,7 @@ KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
 n:n	Mahtotapa_<A>	;
 Johdin_nimitapa2_<A>	;
-Johdin_nimitapa4_<A>	;
+Johdin_nimitapa45_<A>	;
 Johdin_ja_kantaja_<A>	;
 Johdin_nUt_<A>	;
 Johdin_vA_<A>	;
@@ -1892,7 +1892,7 @@ KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
-<A>:<A>	Johdin_nimitapa4_<A>	;
+<A>:<A>	Johdin_nimitapa45_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
@@ -2006,7 +2006,7 @@ LEXICON Huutaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa2_<A>	;
-<A>:<A>	Johdin_nimitapa4_<A>	;
+<A>:<A>	Johdin_nimitapa45_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
@@ -2049,7 +2049,7 @@ e:e	Johdin_ttU_<A>	;
 
 LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
-<A>:<A>	Johdin_nimitapa4_<A>	;
+<A>:<A>	Johdin_nimitapa45_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
@@ -2093,7 +2093,7 @@ v:v	LaskeaLaskeskella_w_<A>	;
 
 LEXICON LaskeaLaskeskella_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
-e:e	Johdin_nimitapa4_<A>	;
+e:e	Johdin_nimitapa45_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
@@ -2175,7 +2175,7 @@ LEXICON Sallia_s
 [Tt][Ap][P3][Ny]ii:ii	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
-i:i	Johdin_nimitapa4_<A>	;
+i:i	Johdin_nimitapa45_<A>	;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
@@ -2211,7 +2211,7 @@ KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]:	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
 Johdin_nimitapa3_<A>	;
-Johdin_nimitapa4_<A>	;
+Johdin_nimitapa45_<A>	;
 Johdin_ja_myyjä_<A>	;
 Johdin_nti_<A>	;
 Johdin_tU_<A>	;
@@ -2331,7 +2331,7 @@ KertomanTekijäpääteVahva_<A>	;
 [Tt][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_nimitapa3_<A>	;
-e:e	Johdin_nimitapa4_<A>	;
+e:e	Johdin_nimitapa45_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 Johdin_U_arvelu_<A>	;
@@ -2339,6 +2339,7 @@ Johdin_U_arvelu_<A>	;
 LEXICON Arvailla
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
+e:e	Johdin_nimitapa45_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
@@ -2369,7 +2370,7 @@ Ehtotapa_<A>	;
 i:i	EhtotapaTa_<A>	;
 i:i	Käskytapa_<A>	;
 i:i	Johdin_nimitapa3_<A>	;
-i:i	Johdin_nimitapa4_<A>	;
+i:i	Johdin_nimitapa45_<A>	;
 i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_<A>	;
 i:i	Johdin_vA_<A>	;
@@ -2387,7 +2388,7 @@ ts:ts	KertomanTekijäpääteVahva_<A>	;
 TositavanKertomaTtiin_<A>	;
 ts:ts	Ehtotapa_<A>	;
 tse:tse	Johdin_nimitapa3_<A>	;
-tse:tse	Johdin_nimitapa4_<A>	;
+tse:tse	Johdin_nimitapa45_<A>	;
 tsi:tsi	Johdin_ja_kulkija_<A>	;
 Johdin_ntA_<A>	;
 Johdin_ttAvA_<A>	;
@@ -2450,10 +2451,12 @@ k<O>:k<O>	Aleta_s_<A>	;
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Johdin_ttAvA_<A>	;
+n:n	Johdin_nUt_<A>	;
 
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
+ne:ne	Johdin_nimitapa45_<A>	;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
@@ -2524,6 +2527,7 @@ n:n	Johdin_nUt_<A>	;
 LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+<A>:<A>	Johdin_nimitapa45_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
@@ -2596,7 +2600,7 @@ s:s	KertomanTekijäpääteVahva_<A>	;
 [Tt][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa3_<A>	;
-<A>:<A>	Johdin_nimitapa4_<A>	;
+<A>:<A>	Johdin_nimitapa45_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 [Ln]<A>:<A>	Johdin_ja_kantaja_<A>	;
@@ -2654,6 +2658,7 @@ LEXICON Katketa_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteHeikko_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
+<A>:<A>	Johdin_nimitapa45_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Tt][P3][Nm]<A>v<A>t:<A>v<A>t	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
@@ -2805,11 +2810,16 @@ LEXICON Johdin_nimitapa3
 [Tn3][Ny][Sade]m<A>ll<A>:m<A>ll<A>	Liitesana_<A>	;
 [Tn3][Ny][Sab]m<A>tt<A>:m<A>tt<A>	Liitesana_<A>	;
 
+LEXICON Johdin_nimitapa45
+Johdin_nimitapa4_<A>	;
+Johdin_nimitapa5_<A>	;
+
 LEXICON Johdin_nimitapa4
 mi@C.JOHDETTAVA_NIMISANAKSI@:mi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaNainen_<A>	;
 
 LEXICON Johdin_nimitapa5
 [Tn5]m<A>isill<A>:m<A>isill<A> Omistusliite_<A>	;
+[Tn5]m<A>isill<A>n:m<A>isill<A><A>n	Liitesana_<A>	;
 
 LEXICON Johdin_Us_ksen
 [Ln]<U>@C.JOHDETTAVA_NIMISANAKSI@:<U>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaVastaus_<A>	;

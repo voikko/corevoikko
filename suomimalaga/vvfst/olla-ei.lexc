@@ -3,8 +3,7 @@ LEXICON Olla
 [Tn1p]llakse:llakse Omistusliite_a ;  # Ollakseni, ollaksesi, jne.
 [Tn2]ll:ll          Johdin_nimitapa2_a ;
 [Tn3]le:le          Johdin_nimitapa3_a ;
-le:le               Johdin_nimitapa4_a ;
-le:le               Johdin_nimitapa5_a ;
+le:le               Johdin_nimitapa45_a ;
 l:l                 Johdin_lUt_a ;
 le:le               Johdin_mA_a ;
 le:le               Johdin_vA_a ;
