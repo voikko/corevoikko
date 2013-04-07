@@ -219,6 +219,7 @@ k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	<O>:<O>	Johdin_tOn_<A>	;
 
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
@@ -1339,6 +1340,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Alaston
 <O>:<O>	<WC>Onneton_w_<A>	;
@@ -1391,6 +1393,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Mies
 s:s   <WC>Mies_s_<A>  ;
@@ -2315,6 +2318,7 @@ l:l	Johdin_nimitapa2_<A>	;
 [Ll]t<U><U>:t<U><U>	LaatusanaValo_sl_<A>	;
 [Ll]l<U>:l<U>	LaatusanaValo_w_<A>	;
 TositavanKertomaTiin_<A>	;
+TositavanKestämäLaan_<A>	;
 
 LEXICON Katsella_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -2376,6 +2380,7 @@ ts:ts	KertomanTekijäpääteHeikko_<A>	;
 ts:ts	KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]tsee:tsee	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]tsev<A>t:tsev<A>t	Liitesana_<A>	;
+TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 ts:ts	Ehtotapa_<A>	;
 tse:tse	Johdin_mA_<A>	;

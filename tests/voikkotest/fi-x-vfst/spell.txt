@@ -1423,3 +1423,8 @@ valitseva
 tarkeneva
 kapuava
 kitisemä
+kirjaimellisia
+airueton
+laatikoton
+kirjoitellaan
+valitaan
