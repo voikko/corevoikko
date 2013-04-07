@@ -2252,6 +2252,7 @@ KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 e:e	Johdin_mA_<A>	;
+e:e	Johdin_vA_<A>	;
 
 LEXICON Mennä
 <WC>Tulla_s_<A>	;
@@ -2378,6 +2379,7 @@ ts:ts	KertomanTekijäpääteVahva_<A>	;
 TositavanKertomaTtiin_<A>	;
 ts:ts	Ehtotapa_<A>	;
 tse:tse	Johdin_mA_<A>	;
+tse:tse	Johdin_vA_<A>	;
 tsi:tsi	Johdin_ja_kulkija_<A>	;
 Johdin_ntA_<A>	;
 Johdin_ttAvA_<A>	;
@@ -2446,6 +2448,7 @@ LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
 ne:ne	Johdin_mA_<A>	;
+ne:ne	Johdin_vA_<A>	;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
@@ -2517,6 +2520,7 @@ LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
+<A>:<A>	Johdin_vA_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
@@ -2712,6 +2716,7 @@ LEXICON Kitistä
 ise:ise	KestämänTekijäpääteHeikko_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ise:ise	Johdin_vA_<A>	;
+ise:ise	Johdin_mA_<A>	;
 
 LEXICON Rakentaa
 Saksantaa_<A>	;

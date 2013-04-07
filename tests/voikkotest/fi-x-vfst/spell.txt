@@ -1418,3 +1418,8 @@ haluamaisillaan
 haluamaisillansa
 !suomalain
 arvailema
+haiseva
+valitseva
+tarkeneva
+kapuava
+kitisemä
