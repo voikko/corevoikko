@@ -16,6 +16,10 @@
 9       compounding/ei_ysj                       ei_ysj          Ei sallittu yhdyssanan jälkiosana
 8       compounding/ei_ysa                       ei_ysa          Ei sallitti yhdyssanan alkuosana
 29      compounding/ysj                          ysj             Vain yhdyssanan jälkiosana
+47      compounding/eln                          -               Nimisanan etuliite
+48      compounding/ell                          -               Laatusanan etuliite
+49      compounding/elt                          -               Teonsanan etuliite
+50      compounding/eltj                         -               Teonsanan nimi- tai laatusanajohdoksen etuliite
 27      derivation/ei_lainen                     ei_lAinen       Ei lAinen-johdosta
 30      derivation/ei_mainen                     ei_mAinen       Ei mAinen-johdosta
 3       derivation/inen                          inen            Inen-johdin aina sallittu
