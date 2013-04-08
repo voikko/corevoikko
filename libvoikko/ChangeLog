@@ -1,3 +1,6 @@
+2013-04-08 Harri Pitkänen <hatapitk@iki.fi>
+	* Add replacement suggestion ä->e.
+
 2013-03-17 Harri Pitkänen <hatapitk@iki.fi>
 	* Private use subtag is now always returned, default is
 	  "standard". This will make it easier to deal with language

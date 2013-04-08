@@ -62,6 +62,7 @@ kissa.koira	kissa. koira
 Kissa.koira	Kissa. koira
 kissaJuokse	kissa Juokse
 Kissajuokse	Kissa juokse
+jälkäinen	jälkeinen
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
