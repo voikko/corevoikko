@@ -65,6 +65,16 @@ def check_usage(word):
 			if usage in OPTIONS["extra-usage"]: return True
 	return False
 
+def get_prefix_jatko(word):
+	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
+	prefixJatko = u""
+	for flag in flags:
+		if flag in [u"eln", u"ell", u"elt", u"eltj"]:
+			if (len(prefixJatko) > 0):
+				prefixJatko = prefixJatko + u" + "
+			prefixJatko = prefixJatko + u"@" + flag
+	return prefixJatko
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -86,7 +96,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] != u"interjection" and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix"] and voikko_infclass == None:
 		return
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return
@@ -121,9 +131,15 @@ def handle_word(word):
 		else:
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
-		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
-			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
-		else: vtype = forced_inflection_vtype
+		if malaga_word_class == u"etuliite":
+			vtype = voikkoutils.VOWEL_BOTH
+			malaga_jatko = get_prefix_jatko(word)
+		else:
+			if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
+				vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
+			else:
+				vtype = forced_inflection_vtype
+			malaga_jatko = u"<" + jatko + u">"
 		if vtype == voikkoutils.VOWEL_FRONT: malaga_vtype = u'ä'
 		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
@@ -136,8 +152,8 @@ def handle_word(word):
 			sys.exit(1)
 		if baseform is None:
 			baseform = wordform
-		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: <%s>, äs: %s%s%s%s];' \
-		          % (baseform, alku, malaga_word_class, jatko, malaga_vtype, malaga_flags,
+		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
+		          % (baseform, alku, malaga_word_class, malaga_jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
 			   debug_info)
 		generate_lex_common.write_entry(main_vocabulary, {}, word, entry)

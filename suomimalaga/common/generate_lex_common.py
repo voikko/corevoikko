@@ -70,7 +70,22 @@ def get_malaga_word_class(j_wordclasses):
 	if "adjective" in j_wordclasses: return u"laatusana"
 	if "noun" in j_wordclasses: return u"nimisana"
 	if "interjection" in j_wordclasses: return u"huudahdussana"
+	if "prefix" in j_wordclasses: return u"etuliite"
 	return None
+
+# Returns flag names from given group for word in Joukahainen
+def get_flags_from_group(word, groupName):
+	flags = []
+	for group in word.childNodes:
+		if group.nodeType != Node.ELEMENT_NODE or group.tagName != groupName:
+			continue
+		for flag in group.childNodes:
+			if flag.nodeType != Node.ELEMENT_NODE:
+				continue
+			if flag.tagName != "flag":
+				continue
+			flags.append(flag.firstChild.wholeText)
+	return flags
 
 # Returns malaga flags for given word in Joukahainen
 def get_malaga_flags(word):
