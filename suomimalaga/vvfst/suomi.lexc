@@ -68,6 +68,10 @@ LEXICON EtuliitteenJatko_elleln
 [Bh][Bc]:	Joukahainen_nl	;
 [Bh][Bc]:	Joukahainen_l	;
 
+LEXICON EtuliitteenJatko_ellelnelt
+EtuliitteenJatko_elt	;
+EtuliitteenJatko_elleln	;
+
 LEXICON Loppu
 @D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@:@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@	#	;
 
