@@ -55,6 +55,19 @@ LEXICON Omistusliite_aä
 [O3]nsa:nsa	Liitesana_aä	;
 [O3]nsä:nsä	Liitesana_aä	;
 
+LEXICON EtuliitteenJatko_eln
+[Bh][Bc]:	Joukahainen_nimisanat	;
+
+LEXICON EtuliitteenJatko_elt
+[Bh][Bc]:	Joukahainen_t	;
+
+LEXICON EtuliitteenJatko_eltj
+
+LEXICON EtuliitteenJatko_elleln
+[Bh][Bc]:	Joukahainen_n	;
+[Bh][Bc]:	Joukahainen_nl	;
+[Bh][Bc]:	Joukahainen_l	;
+
 LEXICON Loppu
 @D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@:@D.JOHDETTAVA_NIMISANAKSI@@D.INEN_VAADITTU@@D.EI_YKS@	#	;
 

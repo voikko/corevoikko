@@ -38,7 +38,7 @@ CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
-vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h"]
+vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h", u"p"]
 vocabularyFiles = {}
 for fileSuffix in vocabularyFileSuffixes:
 	vocFile = codecs.open(OPTIONS["destdir"] + u"/joukahainen-" + fileSuffix + u".lexc", 'w', 'UTF-8')
@@ -90,6 +90,7 @@ def get_vfst_word_class(j_wordclasses):
 	if "adjective" in j_wordclasses: return u"[Ll]"
 	if "noun" in j_wordclasses: return u"[Ln]"
 	if "interjection" in j_wordclasses: return u"[Lh]"
+	if "prefix" in j_wordclasses: return u"[Lp]"
 	return None
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
@@ -191,6 +192,14 @@ def vowel_type_for_derived_verb(wordform):
 			return u"@P.V_SALLITTU.T@"
 	return u"@P.V_SALLITTU.T@"
 
+def get_prefix_jatko(word):
+	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
+	prefixJatko = u""
+	for flag in sorted(flags):
+		if flag in [u"eln", u"ell", u"elt", u"eltj"]:
+			prefixJatko = prefixJatko + flag
+	return prefixJatko
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -211,7 +220,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] != u"interjection" and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix"] and voikko_infclass == None:
 		return
 	vfst_word_class = get_vfst_word_class(wordclasses)
 	if vfst_word_class == None: return
@@ -271,9 +280,13 @@ def handle_word(word):
 		if jatko in [u"heittää", u"muistaa", u"juontaa", u"hohtaa", u"murtaa", u"nousta", u"loistaa", u"jättää"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alku)
 		
-		entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
-		        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,
-		        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
+		if vfst_word_class == u"[Lp]":
+			entry = u'[Lp]%s:%s EtuliitteenJatko_%s;' \
+			        % (wordform, wordform, get_prefix_jatko(word))
+		else:
+			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
+			        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,
+			        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

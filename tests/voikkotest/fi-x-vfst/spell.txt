@@ -1440,3 +1440,6 @@ tarjeten
 haluten
 ruveten
 kitisten
+aeronopea
+aerokissa
+!aerojuosta
