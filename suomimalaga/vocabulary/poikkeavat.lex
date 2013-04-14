@@ -162,7 +162,7 @@
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
 [perusmuoto: "surra", alku: "sur", luokka: teonsana, jatko: <purra>, äs: a];
-[perusmuoto: "sydän", alku: "sydä", luokka: nimisana, jatko: <uistin>, äs: ä, tiedot: <ei_sukija>]; # Sukijassa on oma taivutuskaava.
+[perusmuoto: "sydän", alku: "sydä", luokka: nimisana, jatko: <uistin>, äs: ä, tiedot: <ei_sukija>, aluetta_tarkentava_etuliite: yes]; # Sukijassa on oma taivutuskaava.
 [perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];

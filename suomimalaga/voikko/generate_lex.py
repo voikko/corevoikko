@@ -75,6 +75,12 @@ def get_prefix_jatko(word):
 			prefixJatko = prefixJatko + u"@" + flag
 	return prefixJatko
 
+def get_additional_attributes(word):
+	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
+	if u"el_altark" in flags:
+		return u", aluetta_tarkentava_etuliite: yes"
+	return u""
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -116,10 +122,10 @@ def handle_word(word):
 	else:
 		forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
 	
-	# Construct debug information
-	debug_info = u""
+	# Construct debug information and additional attributes
+	additional_attributes = get_additional_attributes(word)
 	if OPTIONS["sourceid"]:
-		debug_info = u', sourceid: "%s"' % word.getAttribute("id")
+		additional_attributes = additional_attributes + u', sourceid: "%s"' % word.getAttribute("id")
 	
 	# Process all alternative forms
 	singlePartForms = []
@@ -155,7 +161,7 @@ def handle_word(word):
 		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
 		          % (baseform, alku, malaga_word_class, malaga_jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
-			   debug_info)
+			   additional_attributes)
 		generate_lex_common.write_entry(main_vocabulary, {}, word, entry)
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

@@ -41,38 +41,6 @@
 # kannatta laittaa tiedot-kenttään symboli ei_sukija, koska Sukija-versiossa
 # yhdysviiva kelpaa  minkä tahansa etuliitteen jälkeen.
 
-[perusmuoto: "feodaali", alku: "feodaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "ferro", alku: "ferro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "finanssi", alku: "finanssi", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "finn", alku: "finn", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "geo", alku: "geo", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Aiheuttaa joidenkin väärien sanojen tunnistumisen, mm. *geograafia.
-[perusmuoto: "haja-", alku: "haja-", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, rakenne: "=pppp-", tiedot: <ei_voikko>];
-[perusmuoto: "haja", alku: "haja", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "haukkuma", alku: "haukkuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "hautoma", alku: "hautoma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "herras", alku: "herras", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "hieroma", alku: "hieroma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "hioma", alku: "hioma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "huippu", alku: "huippu", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "hydro", alku: "hydro", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "hyper", alku: "hyper", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "iki", alku: "iki", luokka: etuliite, jatko: @eln + @ell, äs: ä];
-[perusmuoto: "imaginaari", alku: "imaginaari", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "immateriaali", alku: "immateriaali", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "indo", alku: "indo", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "infra", alku: "infra", luokka: etuliite, jatko: @eln + @ell, äs: aä]; # Lähes turha.
-[perusmuoto: "inva", alku: "inva", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_ysj, ei_sukija>];
-[perusmuoto: "irti", alku: "irti", luokka: etuliite, jatko: @eln + @ell + @elt, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "irto", alku: "irto", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "irvi", alku: "irvi", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "islami", alku: "islami", luokka: etuliite, jatko: @eln, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "istuma", alku: "istuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "itseis", alku: "itseis", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
-[perusmuoto: "jouto", alku: "jouto", luokka: etuliite, jatko: @eln, äs: aä];
-[perusmuoto: "julki", alku: "julki", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "jumal", alku: "jumal", luokka: etuliite, jatko: @eln + @ell, äs: aä];
-[perusmuoto: "jälleen", alku: "jälleen", luokka: etuliite, jatko: @eln + @ell + @elt, äs: aä, tiedot: <ei_voikko>];
-[perusmuoto: "kaakkois", alku: "kaakkois", luokka: etuliite, aluetta_tarkentava_etuliite: yes, jatko: @eln, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaatuma", alku: "kaatuma", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaiken", alku: "kaiken", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
 [perusmuoto: "kaksin", alku: "kaksin", luokka: etuliite, jatko: @eln + @ell, äs: aä, tiedot: <ei_sukija>];
