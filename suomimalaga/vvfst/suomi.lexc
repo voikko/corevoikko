@@ -58,6 +58,10 @@ LEXICON Omistusliite_aä
 LEXICON EtuliitteenJatko_eln
 [Bh][Bc]:	Joukahainen_nimisanat	;
 
+LEXICON EtuliitteenJatko_ell
+[Bh][Bc]:	Joukahainen_nl	;
+[Bh][Bc]:	Joukahainen_l	;
+
 LEXICON EtuliitteenJatko_elt
 [Bh][Bc]:	Joukahainen_t	;
 
