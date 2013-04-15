@@ -14,7 +14,6 @@ define @ell := <laatusana>;
 define @elt := <teonsana>;
 # Etuliite (teonsanojen nimi- ja laatusanajohdokset)
 define @eltj := <teonsanan_johdoksen_etuliite>;
-include "etuliitteet.lex";
 
 include "seikkasanat.lex";
 include "suhdesanat.lex";

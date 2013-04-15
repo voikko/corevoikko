@@ -55,7 +55,7 @@ VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_G
 
 # Shared files needed in Voikko
 VOIKKO_COPY_FROM_COMMON=mor.inc subrule.inc
-VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex etuliitteet.lex seikkasanat.lex \
+VOIKKO_COPY_FROM_VOCABULARY=erikoissanat.lex seikkasanat.lex \
 	suhdesanat.lex lukusanat.lex lyhenteet.lex yhdyssanat.lex erikoiset.lex \
 	poikkeavat.lex lainen.lex taivutustaydennykset.lex sidesanat.lex
 VOIKKO_COPY_FROM_VOIKKO=voikko-fi_FI.all voikko-fi_FI.sym voikko-fi_FI.mor \
