@@ -30,7 +30,7 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
            sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh sukija/ei-sukija.txt \
            sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
-           sukija/sukija.py sukija/suomi.all \
+           sukija/sanat/etuliitteet.lex sukija/sukija.py sukija/suomi.all \
            sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro \
            sukija/suomi.sym sukija/suomi.tex
 
@@ -131,7 +131,7 @@ $(VOIKKO_BUILDDIR)/config.inc:
 clean:
 	rm -f $(VOIKKO_BUILDDIR)/*_l common/voikkoutils.pyc common/hfconv.pyc
 	rm -f $(VOIKKO_BUILDDIR)/config.inc
-	rm -f common/generate_lex_common.pyc sukija/sukija.pyc
+	rm -f common/generate_lex_common.pyc
 	rm -f "suomi-malaga-$(SM_VERSION).tar.gz"
 	rm -rf "suomi-malaga-$(SM_VERSION)" "voikko-fi-$(SM_VERSION)"
 	rm -f $(patsubst %,$(VOIKKO_BUILDDIR)/%,$(VOIKKO_COPY_FROM_VOCABULARY))
@@ -177,7 +177,6 @@ erikoisalat/atk-lyhenteet.lex \
 erikoisalat/linux-distributions.lex \
 erikoiset.lex \
 erikoissanat.lex \
-etuliitteet.lex \
 lainen.lex \
 lukusanat.lex \
 lyhenteet.lex \
@@ -197,8 +196,7 @@ $(patsubst %,sukija/voikonsanat/%,$(SUKIJA_COPY_FROM_VOCABULARY)): sukija/voikon
 	cp $^ $@
 
 $(patsubst %,sukija/voikonsanat/%.lex,$(SUKIJA_LEX_FROM_XML)): vocabulary/joukahainen.xml vocabulary/flags.txt \
-	sukija/generate_lex.py common/voikkoutils.py common/hfconv.py common/generate_lex_common.py sukija/sukija.py \
-	sukija/ei-sukija.txt
+	common/voikkoutils.py common/hfconv.py common/generate_lex_common.py $(SUKIJA_SRC)
 	@grep -B1 "ERROR: base form missing" vocabulary/joukahainen.xml | \
 		sed -ne "s|^.*\"w\([^\"]*\)\".*|Base form missing: http://joukahainen.puimula.org/word/edit?wid=\1|p"
 	$(PYTHON) sukija/generate_lex.py

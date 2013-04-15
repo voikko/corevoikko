@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2012 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2013 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -260,6 +260,12 @@ allo_rule generate_allos ($tietue):
     else
       $tietue.tiedot :=+ <ei_mAinen>;
     end;
+  end;
+
+
+  if  ($tietue.perusmuoto in <"kääntää", "ojentaa", "rakentaa", "vääntää">) and
+      ($tietue.tiedot = nil) then
+    stop;
   end;
 
 #  if ($tietue.luokka = lukusanan_jälkiliite) then

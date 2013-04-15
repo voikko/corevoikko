@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright 2007-2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi
+# Copyright 2007-2009, 2013 Hannu Väisänen (Etunimi.Sukunimi@uef.fi
 # Program to generate lexicon files for Suomi-malaga Sukija edition.
 
 # This program is free software; you can redistribute it and/or modify
@@ -69,6 +69,7 @@ historical = [
         (u'haastaa', u'sw', [(None,u'(.*Ct)AA',u'haastaa')]),
 	(u'hame', u'ws', [(u't',u'(..*CO)ite',u'osoite'),
 			  (u't',u'(..*CO)te',u'tiedote')]),
+	(u'herttua', u'-', [(None,u'(.*tU)A',u'herttua')]),
 	(u'hohtaa',  u'sw', [(u'tt',u'(.*t)tAA',u'heittää')]),
 	(u'huutaa', u'sw', [(u'nt',u'(.*Vn)tAA',u'alentaa'),
 			(u't',u'(.*V)tAA',u'huutaa')]),
@@ -136,6 +137,7 @@ historical = [
 			     (None,u'(..*a)di',u'balladi')]),
         (u'pasuuna', u'sw', [(None,u'(.*)A',u'pasuuna')]),
 	(u'punoa',   u'sw', [(u't',u'(...*AU)tUA',u'antautua')]),
+	(u'rakentaa', u'-', [(None,u'(.*n)tAA',u'rakentaa')]),
         (u'risti',   u'sw', [(None,u'(..*[^aeouyäö]o)di',u'telefoni_di'),
 			     (None,u'(..*[^aeouyäö]o)fi',u'telefoni_fi'),
 			     (None,u'(..*[^aeouyäö]o)gi',u'telefoni_gi'),

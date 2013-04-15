@@ -182,6 +182,8 @@ def generate_from_pattern (line, pattern_list):
 spelling_word_list = [
     (u"alkovi",      (u"alkov",      u"alkoov")),
     (u"arsenikki",   (u"arsenik",    u"arseniik")),
+    (u"barbaari",    (u"barbaar",    u"barbar")),
+    (u"beduiini",    (u"beduiin",    u"beduin")),
     (u"emali",       (u"emal",       u"emalj")),
     (u"evankelinen", (u"evankeli",   u"evankeeli")),
     (u"hevonen",     (u"hevo",       u"hevoi")),
@@ -204,6 +206,7 @@ spelling_word_list = [
     (u"poliittinen", (u"poliitti",   u"politti")),
     (u"politiikka",  (u"politiik",   u"politik")),
     (u"preettori",   (u"preettor",   u"preetor")),
+    (u"pyramidi",    (u"pyramid",    u"pyramiid")),
     (u"reettori",    (u"reettor",    u"reetor")),
     (u"sampanja",    (u"sampanj",    u"samppanj")),
     (u"sapeli",      (u"sapel",      u"sapeel")),

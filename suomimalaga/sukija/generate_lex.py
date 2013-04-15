@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2007 Harri Pitkänen (hatapitk@iki.fi)
+#           2013 Hannu Väisänen (Hannu.Vaisanen@uef.fi)
+#
 # Program to generate lexicon files for Suomi-malaga
 
 # This program is free software; you can redistribute it and/or modify

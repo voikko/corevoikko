@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2012 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2013 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -1463,6 +1463,23 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "objektivisti", alku: "objektivist", luokka: nimisana, jatko: <risti>, äs: aä, tiedot: <inen>];
 [perusmuoto: "Talviahteenlahti", alku: "Talviahteenlah", luokka: paikannimi, jatko: <lahti>, äs: a];
 
+#[perusmuoto: "toskanalainen", alku: "toskanalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "Toskana", alku: "Toskan", luokka: paikannimi, jatko: <kala>, äs: a];
+[perusmuoto: "aurauspalle", alku: "aurauspal", luokka: nimisana, jatko: <helle>, äs: a];
+[perusmuoto: "pallenätkelmä", alku: "pallenätkelm", luokka: nimisana, jatko: <koira>, äs: ä];
+[perusmuoto: "palleriutta", alku: "palleriut", luokka: nimisana, jatko: <aitta>, äs: a, tiedot: <inen>];
+[perusmuoto: "pallepyörre", alku: "pallepyör", luokka: nimisana, jatko: <kierre>, äs: ä, tiedot: <inen>];
+[perusmuoto: "pallehopeaseppä", alku: "pallehopeasep", luokka: nimisana, jatko: <tolppa>, äs: ä];
+[perusmuoto: "pallesorvarinpensas", alku: "pallesorvarinpensa", luokka: nimisana, jatko: <vieras>, äs: a, tiedot: <inen>];
+[perusmuoto: "pallesäde", alku: "pallesä", luokka: nimisana, jatko: <sade>, äs: ä, tiedot: <inen>];
+[perusmuoto: "pallevesitähti", alku: "pallevesitäh", luokka: nimisana, jatko: <lehti>, äs: ä, tiedot: <inen>];
+[perusmuoto: "savipalle", alku: "savipal", luokka: nimisana, jatko: <helle>, äs: a];
+[perusmuoto: "siipipalteinen", alku: "siipipaltei", luokka: laatusana, jatko: <nainen>, äs: a];
+[perusmuoto: "kivipalle", alku: "kivipal", luokka: nimisana, jatko: <helle>, äs: a];
+[perusmuoto: "hameenpalle", alku: "hameenpal", luokka: nimisana, jatko: <helle>, äs: a];
+[perusmuoto: "lumipalle", alku: "lumipal", luokka: nimisana, jatko: <helle>, äs: a];
+[perusmuoto: "lakkarinpalle", alku: "lakkarinpal", luokka: nimisana, jatko: <helle>, äs: a];
+
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
 #c[perusmuoto: "", alku: "", luokka: laatusana, jatko: <>, äs: a];
@@ -1486,3 +1503,5 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 #u[perusmuoto: "", alku: "", luokka: nimi, jatko: <>, äs: ä];
 #v[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 #x[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
+#å[perusmuoto: "", alku: "", luokka: nimi_laatusana, jatko: <>, äs: a];
+#ä[perusmuoto: "", alku: "", luokka: nimi_laatusana, jatko: <>, äs: ä];
