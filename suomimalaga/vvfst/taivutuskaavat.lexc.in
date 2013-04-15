@@ -955,6 +955,7 @@ LEXICON NOUN Maa_s
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Maa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1486,6 +1487,7 @@ te:te	<WC>Hame_s_<A>	;
 LEXICON NOUN Hame_w
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Hame_s
@@ -1586,6 +1588,7 @@ LEXICON NOUN Vieras_w
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
 [Sg][Nm]sten:sten	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
+?Nimisana	s:s	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Vieras_s
 ?NotLaatusana	[[L]][Sn][Ny]:[[L]]	Omistusliite_<A>	;
@@ -1632,7 +1635,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 <WC>NormaaliYsJatko_<A>	;
-?NotLaatusana	[O3]sa:sa	Liitesana_<A>	;
+?NotLaatusana	[O3]s<A>:s<A>	Liitesana_<A>	;
 
 LEXICON NOUN NormaaliYsJatkoOl
 <WC>NormaaliYsJatko_<A>	;
@@ -2880,7 +2883,7 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@C.INEN_VAADITTU@:i@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
+[Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_tOn
 [Ll]t:t	LaatusanaOnneton_<A>	;
