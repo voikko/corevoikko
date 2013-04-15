@@ -1443,3 +1443,10 @@ kitisten
 aeronopea
 aerokissa
 !aerojuosta
+!sisäänampua
+sisäänampuminen
+hallinnut
+sisäänhallinnut
+sisäänkuollut
+sisäänkuoleva
+mennyt

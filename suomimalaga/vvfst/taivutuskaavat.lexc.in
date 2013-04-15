@@ -2266,10 +2266,12 @@ e:e	Johdin_vA_<A>	;
 LEXICON Mennä
 <WC>Tulla_s_<A>	;
 n:n	<WC>Tulla_l_<A>	;
+Johdin_nUt_<A>	;
 
 LEXICON Tulla
 <WC>Tulla_s_<A>	;
 l:l	<WC>Tulla_l_<A>	;
+Johdin_lUt_<A>	;
 
 LEXICON Tulla_s
 [Tt][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
@@ -2394,6 +2396,7 @@ ts:ts	Ehtotapa_<A>	;
 tse:tse	Johdin_mA_<A>	;
 tse:tse	Johdin_vA_<A>	;
 tsi:tsi	Johdin_ja_kulkija_<A>	;
+n:n	Johdin_nUt_<A>	;
 Johdin_ntA_<A>	;
 Johdin_ttAvA_<A>	;
 
@@ -2852,13 +2855,13 @@ LEXICON Johdin_tAvA
 [Ll]t<A>v:t<A>v	LaatusanaAsema_<A>	;
 
 LEXICON Johdin_nUt
-[Ll]n:n	LaatusanaKuollut_<A>	;
+[Ll]n@C.JOHDETTAVA_LAATUSANAKSI@:n@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_lUt
-[Ll]l:l	LaatusanaKuollut_<A>	;
+[Ll]l@C.JOHDETTAVA_LAATUSANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_vA
-[Ll]v:v	LaatusanaAsema_<A>	;
+[Ll]v@C.JOHDETTAVA_LAATUSANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaAsema_<A>	;
 
 LEXICON Johdin_mA
 [Ln]m@P.YS_EI_JATKOA.ON@:m@P.YS_EI_JATKOA.ON@	NimisanaAsema_<A>	;

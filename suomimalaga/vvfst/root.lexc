@@ -102,6 +102,9 @@ Multichar_Symbols
 ! Jatko (esim. teonsana) on sallittu vain nimisanaksi johdettuna
 @D.JOHDETTAVA_NIMISANAKSI@ @P.JOHDETTAVA_NIMISANAKSI.ON@ @C.JOHDETTAVA_NIMISANAKSI@
 
+! Jatko (esim. teonsana) on sallittu vain laatusanaksi johdettuna
+@D.JOHDETTAVA_LAATUSANAKSI@ @P.JOHDETTAVA_LAATUSANAKSI.ON@ @C.JOHDETTAVA_LAATUSANAKSI@
+
 ! inen-johdin aina sallittu
 @P.INEN_SALLITTU.ON@ @R.INEN_SALLITTU@ @C.INEN_SALLITTU@
 
