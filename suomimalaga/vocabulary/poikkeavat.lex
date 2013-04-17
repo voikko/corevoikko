@@ -121,7 +121,6 @@
 [perusmuoto: "memoriam", alku: "memoriam", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "moni", alku: "mon", luokka: nimisana, jatko: <pieni>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "moni", alku: "mon", luokka: nimisana, jatko: <lohi>, äs: a, tiedot: <ei_sukija>];
-[perusmuoto: "morsian", alku: "morsia", luokka: nimisana, jatko: <uistin>, äs: a];
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "nähdä", alku: "nä", luokka: teonsana, jatko: <nähdä>, äs: ä];
@@ -162,7 +161,6 @@
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
 [perusmuoto: "surra", alku: "sur", luokka: teonsana, jatko: <purra>, äs: a];
-[perusmuoto: "sydän", alku: "sydä", luokka: nimisana, jatko: <uistin>, äs: ä, tiedot: <ei_sukija>, aluetta_tarkentava_etuliite: yes]; # Sukijassa on oma taivutuskaava.
 [perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];
@@ -179,7 +177,6 @@
 [perusmuoto: "täysi", alku: "täy", luokka: laatusana, jatko: <tosi>, äs: ä];
 [perusmuoto: "uksi", alku: "u", luokka: nimisana, jatko: <uksi>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "utujälki", alku: "utujäl", luokka: nimisana, jatko: <jälki>, äs: ä, rakenne: "=ppp=ppppp", tiedot: <ei_voikko>];
-[perusmuoto: "utumorsian", alku: "utumorsia", luokka: nimisana, jatko: <uistin>, äs: a, rakenne: "=ppp=ppppppp", tiedot: <ei_voikko>];
 [perusmuoto: "vaka", alku: "vaka", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "vasen", alku: "vase", luokka: nimi_laatusana, jatko: <vasen>, äs: a];
 [perusmuoto: "Vatté", alku: "Vatté", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>]; # Epäilen, että nalle-taivutus ei ole oikein.

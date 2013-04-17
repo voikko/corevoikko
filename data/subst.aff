@@ -1611,7 +1611,7 @@ end: class
 # Kotus 33 kytkin
 class: 33
 sm-class: uistin
-match-word: in
+match-word: (?:i|A)n
 consonant-gradation: ws
 group: t
 transform-group: e
