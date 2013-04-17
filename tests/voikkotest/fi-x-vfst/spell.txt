@@ -1459,3 +1459,17 @@ avokasmainen
 !hienoallinen
 maakoirainen
 kohdeltavan
+katkaise
+katkaiskoot
+arvailkoon
+pienennelköön
+pienentele
+kaadu
+kaatukaamme
+astahda
+astahtakaamme
+juurra
+juurtakaamme
+raada
+raatakaamme
+!raadako

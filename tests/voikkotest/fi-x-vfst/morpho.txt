@@ -333,3 +333,9 @@ word:älkööt
     NUMBER=plural
     PERSON=3
     TENSE=present_simple
+word:haravoi
+  analysis
+    CLASS=teonsana
+    MOOD=imperative
+    NUMBER=singular
+    PERSON=2
