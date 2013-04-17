@@ -2830,14 +2830,14 @@ Käskytapa_<A>	;
 e:e	Käskytapa_y2_<A>	;
 
 LEXICON Käskytapa
-@D.VAIN_YM3@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@k<A><A>mme	Liitesana_<A>	;
-@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>:@D.VAIN_YM3@k<A><A>	Liitesana_<A>	;
-@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@k<A><A>tte	Liitesana_<A>	;
-[Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	Liitesana_<A>	;
-[Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	Liitesana_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P1][Nm]k<A><A>mme:@D.VAIN_YM3@k<A><A>mme	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>:@D.VAIN_YM3@k<A><A>	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@k<A><A>tte	LiitesanaPaHan_<A>	;
+[Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
+[Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	LiitesanaPaHan_<A>	;
 
 LEXICON Käskytapa_y2
-@D.VAIN_YM3@[Tk][Ap][P2][Ny]:@D.VAIN_YM3@	LiitesanaPaHan_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P2][Ny]:@D.VAIN_YM3@	LiitesanaKaanPaHan_<A>	;
 
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	Liitesana_<A>	;
@@ -3063,6 +3063,11 @@ LiitesanaPaHan_<A>	;
 k<O>:k<O>	Loppu ;
 k<O>h<A>n:k<O>h<A>n	Loppu ;
 k<O>s:k<O>s	Loppu ;
+
+LEXICON LiitesanaKaanPaHan
+LiitesanaPaHan_<A>	;
+[Fkaan]k<A><A>n:k<A><A>n	Loppu ;
+[Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
 
 LEXICON LiitesanaPaHan
 p<A>:p<A>	Loppu ;
