@@ -648,6 +648,8 @@ romahtamaisillaan
 # = liitesanat =
 []
 kissakin
+!raatakaakaan
+tiedäkään
 
 # = vokaalisointu =
 []

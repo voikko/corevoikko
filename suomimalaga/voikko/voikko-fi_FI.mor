@@ -1522,11 +1522,11 @@ combi_rule liitesana ($vasen, $oikea, $sana, $index):
   define $edellinen := $vasen.($index - 1);
   ? vokaalisointu_oikein($edellinen, $oikea);
 
-  if (($edellinen.luokka = teonsana) and
-      ($edellinen.tapaluokka = käskytapa) and
-      ($edellinen.tekijä = tekijä_2) and
-      ($edellinen.luku = yksikkö)) then
+  if ($edellinen.tapaluokka = käskytapa) then
     ? not ($sana in <"ko", "kö">);
+    if (($edellinen.tekijä /= tekijä_2) or ($edellinen.luku /= yksikkö)) then
+      ? not ($sana in <"kaan", "kään">);
+    end;
   end;
 
   result $vasen + <[alku: $sana] + $oikea>, accept;
