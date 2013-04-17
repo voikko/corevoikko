@@ -1151,6 +1151,7 @@ m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Susi
 <WC>Tosi_<A>	;
+[Sg][Nm]sien:sien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]tten:tten	<WC>MonikonGenetiiviEnJatko_<A>	;
 
 LEXICON NOUN Hirsi
@@ -2680,6 +2681,7 @@ LEXICON Katketa_w
 TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttU_<A>	;
+n:n	Johdin_nUt_<A>	;
 
 LEXICON Katketa_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;

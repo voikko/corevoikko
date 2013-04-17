@@ -1475,3 +1475,5 @@ raatakaamme
 !raadako
 !raatakaakaan
 raadakaan
+vuosiensa
+eronnut
