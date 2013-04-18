@@ -2886,9 +2886,17 @@ LEXICON Johdin_mAinen
 LEXICON Johdin_ttAx
 Johdin_ttAvA_<A>	;
 Johdin_ttU_<A>	;
+Johdin_nimitapa2_ttA_<A>	;
+Johdin_nimitapa3_ttA_<A>	;
 
 LEXICON Johdin_ttAvA
 t:t	Johdin_tAvA_<A>	;
+
+LEXICON Johdin_nimitapa2_ttA
+[Tn2]tt<A>ess<A>:tt<A>ess<A>	Liitesana_<A>	;
+
+LEXICON Johdin_nimitapa3_ttA
+[Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
 [Ll]t<A>v:t<A>v	LaatusanaAsema_<A>	;

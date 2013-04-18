@@ -1489,3 +1489,5 @@ upottaneet
 vapaus
 suklainen
 julkaistavalta
+piirrettäessä
+piirrettämän
