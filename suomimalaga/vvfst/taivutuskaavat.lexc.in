@@ -1271,6 +1271,7 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ksii:ksii	<WC>LiOlN_<A>	;
 kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	kse:kse	Johdin_tOn_<A>	;
 
 LEXICON NOUN Kalleus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
@@ -1286,6 +1287,7 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ksii:ksii	<WC>LiOlN_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	de:de	Johdin_tOn_<A>	;
 
 LEXICON NOUN Uistin
 n:n	<WC>Uistin_n_<A>	;
@@ -2940,12 +2942,12 @@ LEXICON Johdin_ja_kulkija
 [Sg][Nm]j<O>iden@C.JOHDETTAVA_NIMISANAKSI@:j<O>iden@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]j<O>itten@C.JOHDETTAVA_NIMISANAKSI@:j<O>itten@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sine][Nm]j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sela][Nm]j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sine][Nm]j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sela][Nm]j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sill][Nm]j<O>ihin@C.JOHDETTAVA_NIMISANAKSI@:j<O>ihin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sade][Nm]j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sabl][Nm]j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sall][Nm]j<O>ille@C.JOHDETTAVA_NIMISANAKSI@:j<O>ille@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sade][Nm]j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ill<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sabl][Nm]j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sall][Nm]j<O>ille@C.JOHDETTAVA_NIMISANAKSI@:j<O>ille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sab][Nm]j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>itt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sin][Nm]j<O>in@C.JOHDETTAVA_NIMISANAKSI@:j<O>in@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 Johdin_ja_kulkija_myyjä_<A>	;
@@ -2961,12 +2963,12 @@ LEXICON Johdin_ja_kulkija_myyjä
 [Sp][Ny]j<A><A>@C.JOHDETTAVA_NIMISANAKSI@:j<A><A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Str][Ny]j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@:j<A>ksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
 [Ses][Ny]j<A>n<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>n<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sine][Ny]j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sela][Ny]j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sine][Ny]j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>ss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sela][Ny]j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>st<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sill][Ny]j<A><A>n@C.JOHDETTAVA_NIMISANAKSI@:j<A><A>n@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sade][Ny]j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sabl][Ny]j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sade][Ny]j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>ll<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sabl][Ny]j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>lt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
 
@@ -2975,12 +2977,12 @@ LEXICON Johdin_ja_kantaja_myyjä
 [Sp][Nm]ji<A>@C.JOHDETTAVA_NIMISANAKSI@:ji<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Str][Nm]jiksi@C.JOHDETTAVA_NIMISANAKSI@:jiksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
 [Ses][Nm]jin<A>@C.JOHDETTAVA_NIMISANAKSI@:jin<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
-[Sine][Nm]jiss<A>@C.JOHDETTAVA_NIMISANAKSI@:jiss<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sela][Nm]jist<A>@C.JOHDETTAVA_NIMISANAKSI@:jist<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sine][Nm]jiss<A>@C.JOHDETTAVA_NIMISANAKSI@:jiss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sela][Nm]jist<A>@C.JOHDETTAVA_NIMISANAKSI@:jist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sill][Nm]jiin@C.JOHDETTAVA_NIMISANAKSI@:jiin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sade][Nm]jill<A>@C.JOHDETTAVA_NIMISANAKSI@:jill<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sabl][Nm]jilt<A>@C.JOHDETTAVA_NIMISANAKSI@:jilt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
-[Sall][Nm]jille@C.JOHDETTAVA_NIMISANAKSI@:jille@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sade][Nm]jill<A>@C.JOHDETTAVA_NIMISANAKSI@:jill<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sabl][Nm]jilt<A>@C.JOHDETTAVA_NIMISANAKSI@:jilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Sall][Nm]jille@C.JOHDETTAVA_NIMISANAKSI@:jille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sab][Nm]jitt<A>@C.JOHDETTAVA_NIMISANAKSI@:jitt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 

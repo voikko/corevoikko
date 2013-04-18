@@ -1479,3 +1479,6 @@ vuosiensa
 eronnut
 superyhdistetty
 supervoimaisia
+teollisuudellinen
+vastauksellinen
+opiskelijoilleen
