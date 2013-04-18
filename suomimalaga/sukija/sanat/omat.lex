@@ -1480,6 +1480,8 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 [perusmuoto: "lumipalle", alku: "lumipal", luokka: nimisana, jatko: <helle>, äs: a];
 [perusmuoto: "lakkarinpalle", alku: "lakkarinpal", luokka: nimisana, jatko: <helle>, äs: a];
 
+[perusmuoto: "utumorsian", alku: "utumorsia", luokka: nimisana, jatko: <uistin>, äs: a, rakenne: "=ppp=ppppppp", tiedot: <ei_voikko>];
+
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];
 #c[perusmuoto: "", alku: "", luokka: laatusana, jatko: <>, äs: a];
