@@ -1482,3 +1482,7 @@ supervoimaisia
 teollisuudellinen
 vastauksellinen
 opiskelijoilleen
+kerrottava
+salattava
+tappiollinen
+upottaneet

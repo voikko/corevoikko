@@ -284,6 +284,7 @@ LEXICON NOUN Autio
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -1773,6 +1774,7 @@ KertomanTekijäpääteHeikko_<A>	;
 EhtotapaTta_<A>	;
 Johdin_ttU_<A>	;
 Johdin_ntA_<A>	;
+Johdin_ttAvA_<A>	;
 Tositapa4Tt_<A>	;
 Käskytapa_y2_<A>	;
 
@@ -1906,6 +1908,7 @@ KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
+<A>:<A>	Johdin_nUt_<A>	;
 
 LEXICON Loistaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_w_<A>	;
@@ -2641,6 +2644,7 @@ TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttU_<A>	;
+Johdin_ttAvA_<A>	;
 
 LEXICON Katketa
 <WC>Katketa_w_<A>	;
