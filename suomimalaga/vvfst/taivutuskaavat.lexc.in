@@ -878,6 +878,8 @@ LEXICON NOUN Vapaa_s
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Laatusana	Johdin_Us_<A>	;
 
 LEXICON NOUN Vapaa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1772,9 +1774,8 @@ LEXICON Punoa_w
 KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 EhtotapaTta_<A>	;
-Johdin_ttU_<A>	;
 Johdin_ntA_<A>	;
-Johdin_ttAvA_<A>	;
+Johdin_ttAx_<A>	;
 Tositapa4Tt_<A>	;
 Käskytapa_y2_<A>	;
 
@@ -1895,8 +1896,7 @@ LEXICON Muistaa_w
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
-e:e	Johdin_ttAvA_<A>	;
-e:e	Johdin_ttU_<A>	;
+e:e	Johdin_ttAx_<A>	;
 
 LEXICON Muistaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -2011,8 +2011,7 @@ Jakaantua_<A>	;
 
 LEXICON Huutaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
-e:e	Johdin_ttU_<A>	;
-e:e	Johdin_ttAvA_<A>	;
+e:e	Johdin_ttAx_<A>	;
 e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 
@@ -2060,7 +2059,7 @@ t:t	<WC>Kaivaa_s_<A>	;
 LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
-e:e	Johdin_ttU_<A>	;
+e:e	Johdin_ttAx_<A>	;
 
 LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -2116,7 +2115,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
-e:e	Johdin_ttU_<A>	;
+e:e	Johdin_ttAx_<A>	;
 
 LEXICON Lähteä
 hd:hd	Tuntea_w_<A>	;
@@ -2128,7 +2127,7 @@ t:t	Tuntea_s_<A>	;
 
 LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
-e:e	Johdin_ttU_<A>	;
+e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
@@ -2184,7 +2183,7 @@ k:k	<WC>Sallia_s_<A>	;
 LEXICON Sallia_w
 i:i	KestämänTekijäpääteHeikko_<A>	;
 i:i	EhtotapaTta_<A>	;
-i:i	Johdin_ttU_<A>	;
+i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 
 LEXICON Sallia_s
@@ -2271,6 +2270,7 @@ t:t	Johdin_nimitapa2_<A>	;
 Käskytapa_e_<A>	;
 Johdin_tU_<A>	;
 Johdin_sUt_<A>	;
+Johdin_tAvA_<A>	;
 
 LEXICON Nuolaista_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -2421,7 +2421,7 @@ tse:tse	Johdin_vA_<A>	;
 tsi:tsi	Johdin_ja_kulkija_<A>	;
 n:n	Johdin_nUt_<A>	;
 Johdin_ntA_<A>	;
-Johdin_ttAvA_<A>	;
+Johdin_ttAx_<A>	;
 
 LEXICON Saneerata
 <A>:<A>	Salata_s_<A>	;
@@ -2480,7 +2480,7 @@ k<O>:k<O>	Aleta_s_<A>	;
 
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
-Johdin_ttAvA_<A>	;
+Johdin_ttAx_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
 
@@ -2643,8 +2643,7 @@ LEXICON Salata_w
 TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
-Johdin_ttU_<A>	;
-Johdin_ttAvA_<A>	;
+Johdin_ttAx_<A>	;
 
 LEXICON Katketa
 <WC>Katketa_w_<A>	;
@@ -2686,7 +2685,7 @@ LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
-Johdin_ttU_<A>	;
+Johdin_ttAx_<A>	;
 n:n	Johdin_nUt_<A>	;
 
 LEXICON Katketa_s
@@ -2883,6 +2882,10 @@ LEXICON Johdin_U_arvelu
 
 LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
+
+LEXICON Johdin_ttAx
+Johdin_ttAvA_<A>	;
+Johdin_ttU_<A>	;
 
 LEXICON Johdin_ttAvA
 t:t	Johdin_tAvA_<A>	;

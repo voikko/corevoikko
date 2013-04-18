@@ -1486,3 +1486,6 @@ kerrottava
 salattava
 tappiollinen
 upottaneet
+vapaus
+suklainen
+julkaistavalta
