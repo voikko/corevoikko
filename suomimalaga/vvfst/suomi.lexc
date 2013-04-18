@@ -56,11 +56,12 @@ LEXICON Omistusliite_aä
 [O3]nsä:nsä	Liitesana_aä	;
 
 LEXICON EtuliitteenJatko_eln
-[Bh][Bc]:	Joukahainen_nimisanat	;
+[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nimisanat	;
 
 LEXICON EtuliitteenJatko_ell
 [Bh][Bc]:	Joukahainen_nl	;
 [Bh][Bc]:	Joukahainen_l	;
+[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
 
 LEXICON EtuliitteenJatko_elt
 [Bh][Bc]:	Joukahainen_t	;
@@ -70,9 +71,10 @@ LEXICON EtuliitteenJatko_eltj
 [Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
 
 LEXICON EtuliitteenJatko_elleln
-[Bh][Bc]:	Joukahainen_n	;
-[Bh][Bc]:	Joukahainen_nl	;
+[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_n	;
+[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nl	;
 [Bh][Bc]:	Joukahainen_l	;
+[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
 
 LEXICON EtuliitteenJatko_ellelnelt
 EtuliitteenJatko_elt	;
