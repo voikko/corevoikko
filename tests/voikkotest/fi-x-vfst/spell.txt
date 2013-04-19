@@ -1494,3 +1494,5 @@ piirrettämän
 näyttelijöiksi
 -näyttelyyn
 odotettaisiin
+hypänneet
+kuulijoihin

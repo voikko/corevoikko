@@ -2296,6 +2296,7 @@ LEXICON Tulla_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Johdin_vA_<A>	;
+i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON Tulla_l
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -2642,6 +2643,7 @@ TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttAx_<A>	;
+n:n	Johdin_nUt_<A>;
 
 LEXICON Katketa
 <WC>Katketa_w_<A>	;
