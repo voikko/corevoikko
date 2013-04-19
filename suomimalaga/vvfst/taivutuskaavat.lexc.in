@@ -1773,7 +1773,6 @@ k<U>:k<U>	<WC>Punoa_s_<A>	;
 LEXICON Punoa_w
 KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
-EhtotapaTta_<A>	;
 Johdin_ntA_<A>	;
 Johdin_ttAx_<A>	;
 Tositapa4Tt_<A>	;
@@ -2182,7 +2181,6 @@ k:k	<WC>Sallia_s_<A>	;
 
 LEXICON Sallia_w
 i:i	KestämänTekijäpääteHeikko_<A>	;
-i:i	EhtotapaTta_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 
@@ -2884,6 +2882,7 @@ LEXICON Johdin_mAinen
 [Ll]m<A>i:m<A>i	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttAx
+EhtotapaTta_<A>	;
 Johdin_ttAvA_<A>	;
 Johdin_ttU_<A>	;
 Johdin_nimitapa2_ttA_<A>	;
@@ -2957,6 +2956,7 @@ LEXICON Johdin_ja_kulkija
 [Sg][Nm]j<O>iden@C.JOHDETTAVA_NIMISANAKSI@:j<O>iden@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]j<O>itten@C.JOHDETTAVA_NIMISANAKSI@:j<O>itten@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>it<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
+[Str][Nm]j<O>iksi@C.JOHDETTAVA_NIMISANAKSI@:j<O>iksi@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlI_<A>	;
 [Sine][Nm]j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>iss<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sela][Nm]j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@:j<O>ist<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sill][Nm]j<O>ihin@C.JOHDETTAVA_NIMISANAKSI@:j<O>ihin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
