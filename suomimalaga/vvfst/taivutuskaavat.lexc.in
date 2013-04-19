@@ -378,6 +378,7 @@ e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Paikannimi	i:i	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -2394,6 +2395,7 @@ KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]i:i	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 i:i	TositavanKestämäDaan_<A>	;
+i:i	TositavanKertomaTiin_<A>	;
 Ehtotapa_<A>	;
 i:i	EhtotapaTa_<A>	;
 i:i	Käskytapa_0_<A>	;
@@ -2847,7 +2849,7 @@ LEXICON Käskytapa_y2
 @D.VAIN_YM3@[Tk][Ap][P2][Ny]:@D.VAIN_YM3@	LiitesanaKaanPaHan_<A>	;
 
 LEXICON Johdin_nimitapa2
-[Tn2]ess<A>:ess<A>	Liitesana_<A>	;
+[Tn2]ess<A>:ess<A>	NimisanaLiOlV_<A>	;
 [Tn2]en:en	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa3
@@ -2988,6 +2990,7 @@ LEXICON Johdin_ja_kulkija_myyjä
 [Sall][Ny]j<A>lle@C.JOHDETTAVA_NIMISANAKSI@:j<A>lle@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
+j:j	Johdin_UUs_<A>	;
 
 LEXICON Johdin_ja_kantaja_myyjä
 [Sg][Nm]jien@C.JOHDETTAVA_NIMISANAKSI@:jien@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
