@@ -5,10 +5,10 @@
   :author "Teemu Likonen <tlikonen@iki.fi>"
   :licence "MPL 1.1 or GPL 2+ or LGPL 2.1+"
   :depends-on (:cffi)
-  :serial t
-  :components ((:file "packages")
-               (:file "constants")
-               (:file "general")
-               (:file "options")
-               (:file "spell")
-               (:file "analyze")))
+  :components
+  ((:file "packages")
+   (:file "constants" :depends-on ("packages"))
+   (:file "general" :depends-on ("packages"))
+   (:file "options" :depends-on ("packages" "general"))
+   (:file "spell" :depends-on ("packages" "general"))
+   (:file "analyze" :depends-on ("packages" "general"))))
