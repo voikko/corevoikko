@@ -1227,7 +1227,8 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (lapsi in $tietue.jatko) then
-    choose $i in lapsi ($tietue);
+    choose $i in lapsi ($tietue)
+                 + taivutuskaava ($tietue, [osanto_tA: "s"]);  # Lasta.
     result $i.alku, $i - alku;
 
 
@@ -4826,7 +4827,7 @@ end;
 subrule lapsi ($tietue):
   return taivutuskaava ($tietue,
                         yksikkö8 ("pse", "psi", "pse", "pse",
-                                  [osanto_tA: "s"], sisätulento_Vn,
+                                  [], sisätulento_Vn,
                                   "pse", "psi") +
                         [johdin_tOn:      "pse",
                          johdin_mAinen:   "psi",

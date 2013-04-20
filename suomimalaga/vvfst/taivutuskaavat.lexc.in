@@ -971,21 +971,31 @@ LEXICON NOUN Maa_l
 ?Nimisana	Johdin_tOn_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 
+LEXICON NOUN Tie
+e:e	<WC>Suo_s_<A>	;
+ie:ie	<WC>Suo_l_<A>	;
+
 LEXICON NOUN Suo
-[Sn][Ny]<U><O>:<U><O>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sn][Nm]<U><O>t:<U><O>t	Liitesana_<A>	;
-[Sg][Ny]<U><O>n:<U><O>n	<WC>NormaaliYsJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]<U><O>t<A>:<U><O>t<A>	<WC>LiOlV_<A>	;
-[Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
-[Ses][Ny]<U><O>n<A>:<U><O>n<A>	<WC>LiOlV_<A>	;
-<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
-[Sill][Ny]<U><O>h<O>:<U><O>h<O>	<WC>LiOlN_<A>	;
-[Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
-<U><O>:<U><O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
-<O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
-?Nimisana	<U><O>:<U><O>	Johdin_tOn_<A>	;
+<O>:<O>	<WC>Suo_s_<A>	;
+<U><O>:<U><O>	<WC>Suo_l_<A>	;
+
+LEXICON NOUN Suo_s
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+
+LEXICON NOUN Suo_l
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+[Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
+[Sill][Ny]h<O>:h<O>	<WC>LiOlN_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
 
 LEXICON NOUN Askel
 <WC>Taival_w_<A>	;
@@ -1639,6 +1649,30 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+
+LEXICON NOUN Hapsi
+<WC>Lapsi_yhteiset_<A>	;
+[Sp][Ny]pse<A>:pse<A>	<WC>LiOlV_<A>	;
+
+LEXICON NOUN Lapsi
+<WC>Lapsi_yhteiset_<A>	;
+[Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
+
+LEXICON NOUN Lapsi_yhteiset
+[Sn][Ny]psi:psi	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]pse:pse	Omistusliite_<A>	;
+[Sn][Nm]pset:pset	Liitesana_<A>	;
+[Sg][Ny]psen:psen	<WC>NormaaliYsJatko_<A>	;
+[Sg][Nm]psien:psien	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]sten:sten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]psi<A>:psi<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]psen<A>:psen<A>	<WC>LiOlV_<A>	;
+ps:ps	<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]psee:psee	<WC>LiOlN_<A>	;
+[Sill][Nm]psii:psii	<WC>LiOlN_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+ps:ps	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	pse:pse	Johdin_tOn_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 <WC>NormaaliYsJatko_<A>	;
