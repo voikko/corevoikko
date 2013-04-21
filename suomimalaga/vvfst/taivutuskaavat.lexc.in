@@ -1724,8 +1724,11 @@ n:n	Liitesana_<A>	;
 
 LEXICON NOUN LiOlV
 Liitesana_<A>	;
-?NotLaatusana	Omistusliite_<A>	;
-?NotLaatusana	[[L]]n:[[L]]n	Liitesana_<A>	;
+?NotLaatusana	OlV_<A>	;
+
+LEXICON OlV
+Omistusliite_<A>	;
+[[L]]n:[[L]]n	Liitesana_<A>	;
 
 LEXICON NOUN LiOlI
 Liitesana_<A>	;
@@ -2160,6 +2163,7 @@ LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Johdin_ttAx_<A>	;
+e:e	Johdin_ntA_<A>	;
 
 LEXICON Lähteä
 hd:hd	Tuntea_w_<A>	;
@@ -2961,6 +2965,7 @@ LEXICON Johdin_lUt
 
 LEXICON Johdin_vA
 [Ll]v@C.JOHDETTAVA_LAATUSANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaAsema_<A>	;
+v<A>:v<A>	Johdin_inen_<A>	;
 
 LEXICON Johdin_mA
 [Ln]m@P.YS_EI_JATKOA.ON@:m@P.YS_EI_JATKOA.ON@	NimisanaAsema_<A>	;
@@ -2990,6 +2995,7 @@ LEXICON Johdin_lAinen
 
 LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
+[Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
 
 LEXICON Johdin_tU
 [Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaLaatu_<A>	;
