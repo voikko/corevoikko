@@ -293,7 +293,7 @@ LEXICON NOUN Kiiski
 [Sg][Ny]en:en	<WC>NormaaliYsJatko_<A>	;
 [Sp][Ny]e<A>:e<A>	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Sill][Ny]ee:e	<WC>LiOlN_<A>	;
+[Sill][Ny]e:e	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
@@ -355,6 +355,7 @@ e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
+?Laatusana	i:i	Johdin_Us_<A>	;
 
 LEXICON NOUN Risti_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -2149,6 +2150,7 @@ v:v	LaskeaLaskeskella_w_<A>	;
 
 LEXICON LaskeaLaskeskella_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
+KertomanTekijäpääteVahva_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
@@ -2156,6 +2158,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
+KertomanTekijäpääteHeikko_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Lähteä
@@ -2951,6 +2954,7 @@ LEXICON Johdin_sUt
 
 LEXICON Johdin_nUt
 [Ll]n@C.JOHDETTAVA_LAATUSANAKSI@:n@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+[Ll]nee:nee	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
 [Ll]l@C.JOHDETTAVA_LAATUSANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;

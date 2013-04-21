@@ -1511,3 +1511,6 @@ etenisivät
 heikkonäköinen
 !käteväihminen
 !parisoma
+kukistaneensa
+kokikin
+kompaktius

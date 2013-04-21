@@ -339,3 +339,5 @@ word:haravoi
     MOOD=imperative
     NUMBER=singular
     PERSON=2
+word:kukistaneen
+  expected:1
