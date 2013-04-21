@@ -1247,6 +1247,14 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Nainen
+<WC>NainenYhteiset_<A>	;
+s:s	<WC>YsJatko	;
+
+LEXICON NOUN InenLoppuinen
+<WC>NainenYhteiset_<A>	;
+?Laatusana	InenLoppuisenYsJatko	;
+
+LEXICON NOUN NainenYhteiset
 [Sn][Ny]nen:nen	Liitesana_<A>	;
 ?NotLaatusana	[Sn][Ny]se:se	Omistusliite_<A>	;
 [Sn][Nm]set:set	Liitesana_<A>	;
@@ -1261,7 +1269,6 @@ s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 se:se	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
-s:s	<WC>YsJatko	;
 ?Laatusana	se:se	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
@@ -2524,6 +2531,7 @@ ne:ne	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
 ne:ne	Johdin_mA_<A>	;
 ne:ne	Johdin_vA_<A>	;
+n:n	Ehtotapa_<A>	;
 
 LEXICON Selvitä
 i:i	Haluta_w_<A>	;
@@ -2963,7 +2971,7 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
+[Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaInenLoppuinen_<A>	;
 
 LEXICON Johdin_tOn
 [Ll]t:t	LaatusanaOnneton_<A>	;

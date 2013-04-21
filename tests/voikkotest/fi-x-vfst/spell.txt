@@ -1507,3 +1507,7 @@ lapsen
 hapsi
 hapsea
 !hasta
+etenisivät
+heikkonäköinen
+!käteväihminen
+!parisoma

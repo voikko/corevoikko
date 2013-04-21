@@ -6,6 +6,10 @@ LEXICON NimiLaatusanaYsJatko
 @P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
 
 LEXICON LaatusanaYsJatko
+InenLoppuisenYsJatko	;
+[Bh][Bc]:	Joukahainen_nl	;
+
+LEXICON InenLoppuisenYsJatko
 @P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
 
 LEXICON NimiYsJatko
