@@ -102,7 +102,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] not in [u"interjection", u"prefix"] and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation"] and voikko_infclass == None:
 		return
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return
@@ -137,6 +137,8 @@ def handle_word(word):
 		else:
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
+		if malaga_word_class == u"lyhenne":
+			jatko = u"tavuviiva, kaksoispiste, loppu"
 		if malaga_word_class == u"etuliite":
 			vtype = voikkoutils.VOWEL_BOTH
 			malaga_jatko = get_prefix_jatko(word)
@@ -158,8 +160,12 @@ def handle_word(word):
 			sys.exit(1)
 		if baseform is None:
 			baseform = wordform
-		entry = u'[perusmuoto: "%s", alku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
-		          % (baseform, alku, malaga_word_class, malaga_jatko, malaga_vtype, malaga_flags,
+		if malaga_word_class == u"lyhenne":
+			perusmuotoEntry = u""
+		else:
+			perusmuotoEntry = u'perusmuoto: "%s", ' % baseform
+		entry = u'[%salku: "%s", luokka: %s, jatko: %s, äs: %s%s%s%s];' \
+		          % (perusmuotoEntry, alku, malaga_word_class, malaga_jatko, malaga_vtype, malaga_flags,
 			   generate_lex_common.get_structure(altform, malaga_word_class),
 			   additional_attributes)
 		generate_lex_common.write_entry(main_vocabulary, {}, word, entry)

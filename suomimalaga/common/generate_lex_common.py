@@ -71,6 +71,7 @@ def get_malaga_word_class(j_wordclasses):
 	if "noun" in j_wordclasses: return u"nimisana"
 	if "interjection" in j_wordclasses: return u"huudahdussana"
 	if "prefix" in j_wordclasses: return u"etuliite"
+	if "abbreviation" in j_wordclasses: return u"lyhenne"
 	return None
 
 # Returns flag names from given group for word in Joukahainen

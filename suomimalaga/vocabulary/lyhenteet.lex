@@ -66,7 +66,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "9:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 
 [alku: "A4", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"];
-[alku: "ab", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # aktiebolag, osakeyhtiö
 [alku: "ADD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Attention Deficit Disorder
 [alku: "ADHD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Attention Deficit (and) Hyperactivity Disorder
 [alku: "adj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # adjektiivi
