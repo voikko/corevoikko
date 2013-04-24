@@ -4,6 +4,7 @@ sanat/latex.lex \
 sanat/jokinen.lex \
 sanat/olla-ei.lex \
 sanat/etuliitteet.lex \
+sanat/lyhenteet.lex \
 sanat/omat.lex \
 voikonsanat/atk.lex \
 voikonsanat/erikoiset.lex \
@@ -13,7 +14,6 @@ voikonsanat/kasvatustiede.lex \
 voikonsanat/laaketiede.lex \
 voikonsanat/lainen.lex \
 voikonsanat/lukusanat.lex \
-voikonsanat/lyhenteet.lex \
 voikonsanat/matluonnontiede.lex \
 voikonsanat/poikkeavat.lex \
 voikonsanat/seikkasanat.lex \

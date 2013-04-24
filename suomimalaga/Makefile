@@ -30,7 +30,7 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
            sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh sukija/ei-sukija.txt \
            sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
-           sukija/sanat/etuliitteet.lex sukija/sukija.py sukija/suomi.all \
+           sukija/sanat/etuliitteet.lex sukija/sanat/lyhenteet.lex sukija/sukija.py sukija/suomi.all \
            sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro \
            sukija/suomi.sym sukija/suomi.tex
 
@@ -179,7 +179,6 @@ erikoiset.lex \
 erikoissanat.lex \
 lainen.lex \
 lukusanat.lex \
-lyhenteet.lex \
 poikkeavat.lex \
 seikkasanat.lex \
 sidesanat.lex \
