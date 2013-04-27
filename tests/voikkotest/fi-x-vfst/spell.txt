@@ -1519,4 +1519,7 @@ asiakastyytyväisyyttä
 autettuaan
 ab
 ab:ssakin
+ab:ssäkin
+ay:ssäkin
+!ay:ssakin
 ab-kissa

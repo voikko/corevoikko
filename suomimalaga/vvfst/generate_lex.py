@@ -232,10 +232,14 @@ def handle_word(word):
 	diacritics = reduce(lambda x, y: x + y, get_diacritics(word), u"")
 	
 	# Get forced vowel type
-	if voikko_infclass == None:
+	if voikko_infclass == None and vfst_word_class != u"[La]":
 		forced_inflection_vtype = voikkoutils.VOWEL_DEFAULT
 	else:
-		forced_inflection_vtype = generate_lex_common.vowel_type(word.getElementsByTagName("inflection")[0])
+		inflectionElement = word.getElementsByTagName("inflection")
+		if len(inflectionElement) > 0:
+			forced_inflection_vtype = generate_lex_common.vowel_type(inflectionElement[0])
+		else:
+			forced_inflection_vtype = voikkoutils.VOWEL_DEFAULT
 	
 	# Construct debug information
 	debug_info = u""

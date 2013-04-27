@@ -67,22 +67,13 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 
 [alku: "A4", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"];
 [alku: "ADD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Attention Deficit Disorder
-[alku: "ADHD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Attention Deficit (and) Hyperactivity Disorder
 [alku: "adj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # adjektiivi
-[alku: "ADSL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "AIDS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj", tiedot: <ei_sukija>]; # Acquired Immune Deficiency Syndrome
 [alku: "alk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # alkuaan, alkaen
-[alku: "ALV", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # arvonlisävero
 [alku: "ao.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # asianomainen
 [alku: "a.p.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "apulaisj.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "apul.joht.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; 
 [alku: "arv.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # arvoisa
-[alku: "ASO", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj", tiedot: <ei_voikko>];
-[alku: "atk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # automaattinen tietojen käsittely
-[alku: "ATK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # automaattinen tietojen käsittely
-[alku: "ay", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # avoin yhtiö; ammattiyhdistys
-[alku: "bar", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "BBC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # British Broadcasting Corporation
 [alku: "BKT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # bruttokansantuote
 [alku: "cd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
