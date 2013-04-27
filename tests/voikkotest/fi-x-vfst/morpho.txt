@@ -341,3 +341,10 @@ word:haravoi
     PERSON=2
 word:kukistaneen
   expected:1
+word:ab
+  expected:1
+    CLASS=lyhenne
+    STRUCTURE==qq
+word:ab-kissa
+  expected:1
+    STRUCTURE==qq-=ppppp

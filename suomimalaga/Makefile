@@ -50,7 +50,7 @@ VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_
 
 VVFST_BINDIST=$(VVFST_BUILDDIR)/voikko-fi_FI.pro $(VVFST_BUILDDIR)/mor.vfst
 
-VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p
+VVFST_GENERATED_LEXC_SUFFIXES=ee em ep es h l n nl t p a
 VVFST_GENERATED_LEXC=$(patsubst %,$(VVFST_BUILDDIR)/joukahainen-%.lexc,$(VVFST_GENERATED_LEXC_SUFFIXES))
 
 # Shared files needed in Voikko

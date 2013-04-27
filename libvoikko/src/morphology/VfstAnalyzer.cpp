@@ -57,6 +57,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	classMap.insert(std::make_pair(L"ep", L"paikannimi"));
 	classMap.insert(std::make_pair(L"em", L"nimi"));
 	classMap.insert(std::make_pair(L"t", L"teonsana"));
+	classMap.insert(std::make_pair(L"a", L"lyhenne"));
 	
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
 	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));
@@ -118,14 +119,14 @@ list<Analysis *> * VfstAnalyzer::analyze(const char * word) {
 }
 
 static void createDefaultStructure(size_t charsMissing, bool & defaultTitleCase,
-                                   wchar_t * structure, size_t & structurePos) {
+                                   wchar_t * structure, size_t & structurePos, bool isAbbr) {
 	while (charsMissing) {
 		if (defaultTitleCase) {
-			structure[structurePos++] = L'i';
+			structure[structurePos++] = isAbbr ? L'j' : L'i';
 			defaultTitleCase = false;
 		}
 		else {
-			structure[structurePos++] = L'p';
+			structure[structurePos++] = isAbbr ? L'q' : L'p';
 		}
 		charsMissing--;
 	}
@@ -140,11 +141,12 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 	size_t charsSeen = 0;
 	size_t charsFromDefault = 0;
 	bool defaultTitleCase = false;
+	bool isAbbr = false;
 	for (size_t i = 0; i + 8 < outputLen; i++) {
 		if (wcsncmp(fstOutput + i, L"[Bc]", 4) == 0) {
 			i += 3;
 			if (charsSeen > charsFromDefault) {
-				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos);
+				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
 				charsMissing -= (charsSeen - charsFromDefault);
 			}
 			charsSeen = 0;
@@ -168,7 +170,16 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 		}
 		else if (wcsncmp(fstOutput + i, L"[Le", 3) == 0) {
 			defaultTitleCase = true;
+			isAbbr = false;
 			i += 4;
+		}
+		else if (wcsncmp(fstOutput + i, L"[La", 3) == 0) {
+			isAbbr = true;
+			i += 3;
+		}
+		else if (wcsncmp(fstOutput + i, L"[L", 2) == 0) {
+			isAbbr = false;
+			i += 3;
 		}
 		else if (wcsncmp(fstOutput + i, L"[Xp", 3) == 0) {
 			i += 4;
@@ -184,7 +195,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 		}
 		else if (fstOutput[i] == L'-') {
 			if (charsSeen > charsFromDefault) {
-				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos);
+				createDefaultStructure(charsSeen - charsFromDefault, defaultTitleCase, structure, structurePos, isAbbr);
 				charsMissing -= (charsSeen - charsFromDefault);
 				structure[structurePos++] = L'-';
 			}
@@ -199,7 +210,7 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			charsSeen++;
 		}
 	}
-	createDefaultStructure(charsMissing, defaultTitleCase, structure, structurePos);
+	createDefaultStructure(charsMissing, defaultTitleCase, structure, structurePos, isAbbr);
 	structure[structurePos] = L'\0';
 	return structure;
 }

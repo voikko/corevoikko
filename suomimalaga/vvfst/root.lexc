@@ -11,6 +11,7 @@ Multichar_Symbols
 [Lt]  ! teonsana
 [Lh]  ! huudahdussana
 [Lp]  ! etuliite
+[La]  ! lyhenne
 
 ! Vokaalisointu
 [Va]
@@ -141,6 +142,7 @@ Joukahainen_n	;
 Joukahainen_nl	;
 Joukahainen_t	;
 Joukahainen_p	;
+Joukahainen_a	;
 
 LEXICON Joukahainen_nimisanat
 Joukahainen_n	;

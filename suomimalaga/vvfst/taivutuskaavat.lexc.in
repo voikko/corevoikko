@@ -3151,3 +3151,8 @@ h<A>n:h<A>n	Loppu ;
 p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
+
+LEXICON Lyhenne
+Loppu	;
+[Sine][Ny]%:ss<A>:%:ss<A>	Liitesana_<A>	;
+-[Bc]:-	Joukahainen_nimisanat	;
