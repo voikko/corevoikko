@@ -66,7 +66,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "9:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 
 [alku: "A4", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"];
-[alku: "ADD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Attention Deficit Disorder
 [alku: "adj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # adjektiivi
 [alku: "alk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # alkuaan, alkaen
 [alku: "ao.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # asianomainen
@@ -74,79 +73,25 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "apulaisj.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "apul.joht.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; 
 [alku: "arv.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # arvoisa
-[alku: "BBC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # British Broadcasting Corporation
-[alku: "BKT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # bruttokansantuote
-[alku: "cd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # cd-levy; kandela
-[alku: "CD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # cd-levy
-[alku: "cd-rom", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_sukija>];
-[alku: "CD-ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj-=jjj", tiedot: <ei_sukija>];
-[alku: "CIA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Central Intelligence Agency
-[alku: "cm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # senttimetri(ä)
-[alku: "CNN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Cable News Network
-[alku: "COSS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj", tiedot: <ei_voikko>];
 [alku: "c.s.i.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
-[alku: "csi", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "dem.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # demokraattinen
-[alku: "dlf", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "dl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # desilitra(a)
-[alku: "DNA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # deoksiribonukleiinihappo
-[alku: "dvd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # digital versatile disk
-[alku: "DVD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj", tiedot: <ei_sukija>]; # digital versatile disk
-[alku: "dvi", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "eaa.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ennen ajanlaskun alkua
-[alku: "EAN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # European Article Number, EAN-koodi
 [alku: "ed.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # edellinen; edellä; edustaja
-[alku: "EEC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
-[alku: "EEST", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # Eastern European Summer Time
-[alku: "EET", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Eastern European Time
-[alku: "EKG", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
-[alku: "EK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # eduskunta
 [alku: "eKr.", luokka: lyhenne, jatko: <loppu>, äs: aä, rakenne: "=qjqq"]; # ennen Kristuksen syntymää
 [alku: "elok.", luokka: lyhenne, jatko: <loppu>, äs: a]; # elokuu
 [alku: "em.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # edellä mainittu
-[alku: "EM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # euroopanmestaruus, Euroopan-mestaruus...
 [alku: "emt.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # edellä mainittu teos
 [alku: "ent.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # entinen
 [alku: "esim", luokka: lyhenne, jatko: <kaksoispiste>, äs: ä, tiedot: <ei_voikko>];
 [alku: "esim.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # esimerkki
-[alku: "esp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "EU", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # Euroopan unioni
-[alku: "EUR", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # euro(a)
 [alku: "ev.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # eversti
-[alku: "FAQ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"]; # Frequently Asked Questions
-[alku: "FBI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Federal Bureau of Investigation
-[alku: "fft", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "fia", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "FI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # Suomen maatunnus
-[alku: "fi", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # suomen kielitunnus
-[alku: "FL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # filosofian lisensiaatti
-[alku: "FM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # filosofian maisteri
-[alku: "FT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # filosofian tohtori
-[alku: "GMT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Greenwich Mean Time
-[alku: "GPS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "gsl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "GSM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # Global System for Mobile Communication
-[alku: "ha", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # hehtaari
 [alku: "harv.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "heinäk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "helmik.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "HIV", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # human immunodeficiency virus
 [alku: "hra", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "HS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj", tiedot: <ei_voikko>]; # Helsingin Sanomat
-[alku: "hth", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "HTML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "http", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
-[alku: "HTTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "huhtik.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "huom.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "Hz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jq"]; # hertsi(ä)
-[alku: "iag", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "IKL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Isänmaallinen kansanliike
 [alku: "ilm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # ilmestynyt; ilmoitus
-[alku: "IMF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # International Monetary Fund
-[alku: "ISBN", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"]; # International Standard Book Number
-[alku: "it", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # information technology; ilmatorjunta
-[alku: "IT", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # information technology; ilmatorjunta
 [alku: "jaa.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # jälkeen ajanlaskun alun
 [alku: "j.e.p.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Ja niin edespäin.
 [alku: "Jk.", luokka: lyhenne, jatko: <loppu>, äs: aä, rakenne: "=jqq"]; # jälkikirjoitus

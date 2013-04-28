@@ -100,8 +100,14 @@ def get_structure(wordform, vfst_word_class):
 	needstructure = False
 	ispropernoun = vfst_word_class[0:3] == u'[Le'
 	structstr = u'[Xr]'
-	for i in range(len(wordform)):
-		c = wordform[i]
+	if vfst_word_class == u'[La]':
+		i = u"j"
+		p = u"q"
+	else:
+		i = u"i"
+		p = u"p"
+	for idx in range(len(wordform)):
+		c = wordform[idx]
 		if c == u'-':
 			structstr = structstr + u"-="
 			needstructure = True
@@ -113,12 +119,12 @@ def get_structure(wordform, vfst_word_class):
 			structstr = structstr + u":"
 			needstructure = True
 		elif c.isupper():
-			structstr = structstr + u"i"
-			if not (ispropernoun and i == 0): needstructure = True
-		else: structstr = structstr + u"p"
+			structstr = structstr + i
+			if not (ispropernoun and idx == 0): needstructure = True
+		else: structstr = structstr + p
 	if needstructure:
 		returnedLength = len(structstr)
-		while structstr[returnedLength - 1] == u"p":
+		while structstr[returnedLength - 1] == p:
 			returnedLength = returnedLength - 1
 		return structstr[0:returnedLength] + u'[X]'
 	else: return u""

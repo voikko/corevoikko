@@ -160,9 +160,15 @@ def get_structure(wordform, malaga_word_class):
 	needstructure = False
 	if malaga_word_class in [u'nimi', u'etunimi', u'sukunimi', 'paikannimi']: ispropernoun = True
 	else: ispropernoun = False
+	if malaga_word_class == u'lyhenne':
+		i = u"j"
+		p = u"q"
+	else:
+		i = u"i"
+		p = u"p"
 	structstr = u', rakenne: "='
-	for i in range(len(wordform)):
-		c = wordform[i]
+	for idx in range(len(wordform)):
+		c = wordform[idx]
 		if c == u'-':
 			structstr = structstr + u"-="
 			needstructure = True
@@ -174,9 +180,9 @@ def get_structure(wordform, malaga_word_class):
 			structstr = structstr + u":"
 			needstructure = True
 		elif c.isupper():
-			structstr = structstr + u"i"
-			if not (ispropernoun and i == 0): needstructure = True
-		else: structstr = structstr + u"p"
+			structstr = structstr + i
+			if not (ispropernoun and idx == 0): needstructure = True
+		else: structstr = structstr + p
 	if needstructure: return structstr + u'"'
 	else: return u""
 

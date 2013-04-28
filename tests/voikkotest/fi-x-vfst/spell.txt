@@ -1524,3 +1524,4 @@ ay:ssäkin
 !ay:ssakin
 ab-kissa
 autio-
+!isbn-alkuperäinen
