@@ -100,66 +100,38 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "j.n.e.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "jnep", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Ja niin edespäin.
 [alku: "jouluk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "kd", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>]; # Kansandemokraatti.
 [alku: "kesäk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "kg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # kilogramma(a)
 [alku: "kh.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # koehenkilö; kylpyhuone; kertausharjoitus
-[alku: "KH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj", tiedot: <ei_voikko>];
 [alku: "khra", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kirkkoherra
-[alku: "kHz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=qjq"]; # kilohertsi
 [alku: "kirj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # kirjoittanut; kirjataan
-[alku: "kJ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=qj"]; # kilojoule
 [alku: "kk.", luokka: lyhenne, jatko: <loppu>, äs: a]; # kirkonkylä; keittokomero
-[alku: "kk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # kuukausi
 [alku: "k:llo", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "klo", luokka: lyhenne, jatko: <tavuviiva, loppu>, äs: aä]; # kello (sisälyhenne, ei taivuteta kaksoispisteen avulla)
-[alku: "km", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # kilometri
 [alku: "ko.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # kyseessä oleva
 [alku: "kok.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # Kokoomus; kokelas
 [alku: "kom.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Kommunisti(t).
-[alku: "kpl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # kappale(tta)
-[alku: "kr", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # kruunu(a)
-[alku: "krs", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # kerros
 [alku: "ks.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # katso
 [alku: "kts", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
-[alku: "ldl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "LED", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "lis.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # lisensiaatti
 [alku: "lkm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # lukumäärä
-[alku: "LKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Liberaalinen kansanpuolue.
 [alku: "lokak.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "LP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # LP-levy
 [alku: "lut.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # luterilainen
-[alku: "LVI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # lämmitys-, vesijohto- ja ilmanvaihtotekniikka 
 [alku: "maalisk.", luokka: lyhenne, jatko: <loppu>, äs: aä];
 [alku: "maanvilj.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "maanv.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "maist.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # maisteri
 [alku: "marrask.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "MHz", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjq"]; # megahertsi(ä)
-[alku: "MikroPC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "milj.", luokka: lyhenne, jatko: <loppu>, äs: aä];
-[alku: "mg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # milligramma
-[alku: "mk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, tiedot: <ei_voikko>]; # markka(a), ei Voikossa koska ei juurikaan esiinny uusissa teksteissä
-[alku: "ml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # millilitra(a)
-[alku: "mma", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "mm.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # muun muassa
-[alku: "MM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # maailmanmestaruus
-[alku: "mm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # millimetri(ä)
 [alku: "mp3", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
 [alku: "MP3", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"];
 [alku: "mrd.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # miljardia
 [alku: "mrk", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Markkaa.
-[alku: "MTK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"];
 [alku: "MTV3", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjjj", tiedot: <ei_voikko>];
-[alku: "MTV", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
-[alku: "mv", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>]; # Maanviljelijä.
 [alku: "n.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # noin
 [alku: "nimim.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # nimimerkki
 [alku: "nk.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin kutsuttu
 [alku: "n.k.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];  # Niin kutsuttu.
-[alku: "NHL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"]; # National Hockey League
-[alku: "NKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Neuvostoliiton kommunistinen puolue.
 [alku: "n:o.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Numero.
 [alku: "ns.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # niin sanottu
 [alku: "n.s.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # Niin sanottu.
@@ -168,12 +140,6 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "op.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # opettaja
 [alku: "o.s.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # omaa sukua
 [alku: "os.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # osoite; osasto
-[alku: "OTK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Osuustukkukauppa.
-[alku: "oyj", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # julkinen osakeyhtiö
-[alku: "oy", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # osakeyhtiö
-[alku: "pc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # parsek(ia); pesonal computer
-[alku: "PC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # personal computer
-[alku: "pH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qj"];
 [alku: "pj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä]; # puheenjohtaja
 [alku: "pj.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # puheenjohtaja
 [alku: "varapj", luokka: lyhenne, jatko: <kaksoispiste, tavuviiva>, äs: aä, rakenne: "=qqqqqq"]; # varapuheenjohtaja
@@ -181,35 +147,18 @@ define @lyhenteen_jatko := <tavuviiva, kaksoispiste, loppu>;
 [alku: "pl.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # pois lukien
 [alku: "pnä", luokka: lyhenne, jatko: <loppu>, äs: aä]; # päivänä
 [alku: "po.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # pitää olla; puheena oleva
-[alku: "POP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>];
 [alku: "porv.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
-[alku: "PR", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # public relations
 [alku: "prof.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # professori
-[alku: "ps", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # pussi(a)
-[alku: "PS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"]; # jälkikirjoitus; Perussuomalaiset (puolue)
 [alku: "puh.joht.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # puheenjohtaja
 [alku: "puh.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # puhelin
 [alku: "pvä", luokka: lyhenne, jatko: <loppu>, äs: aä]; # päivä
-[alku: "qt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "rad", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # radiaani(a)
-[alku: "rkl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a]; # ruokalusikallinen, -sta
-[alku: "RKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Ruotsalainen Kansanpuolue
 [alku: "r.l.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
 [alku: "rn:o", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>]; # (Maatilan) rekisterinumero.
 [alku: "rva", luokka: lyhenne, jatko: <loppu>, äs: aä]; # rouva
 [alku: "r.y.", luokka: lyhenne, jatko: <loppu>, äs: aä, tiedot: <ei_voikko>];
-[alku: "ry", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # rekisteröity yhdistys
 [alku: "s.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # sivu
-[alku: "SAJ", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_voikko>]; # Suomen Ammattijärjestöjen Keskusjärjestö.
-[alku: "SAK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Ammattiliittojen Keskusjärjestö
-[alku: "SA", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj"]; # Suomen Akatemia; Suomen armeija
 [alku: "sd.", luokka: lyhenne, jatko: <loppu>, äs: aä]; # sosiaalidemokraatti
-[alku: "SDP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Sosialidemokraattinen Puolue
-[alku: "sf", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "SI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # kansainvälinen mittayksikköjärjestelmä 
-[alku: "SKDL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # Suomen Kansan Demokraattinen Liitto
 [alku: "s.k.d.l", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
-[alku: "SKL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Kristillinen Liitto; Suomen kuntaliitto
 [alku: "SK", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>]; # Suomen Kuvalehti
 [alku: "SKOP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <ei_voikko>];
 [alku: "SKP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"]; # Suomen Kommunistinen Puolue
