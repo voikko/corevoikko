@@ -1525,3 +1525,7 @@ ay:ssäkin
 ab-kissa
 autio-
 !isbn-alkuperäinen
+Ab:ltä
+Ab:stä
+ADD:n
+yhdysvaltalainen

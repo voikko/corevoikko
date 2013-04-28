@@ -2991,7 +2991,7 @@ tt<O>m:tt<O>m	Yliaste_<A>	;
 llis:llis	NimisanaYsJatko	;
 
 LEXICON Johdin_lAinen
-[Ll]l<A>i:l<A>i	LaatusanaNainen_<A>	;
+[Ll]l<A>i@C.EI_YKS@:l<A>i@C.EI_YKS@	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
@@ -3154,5 +3154,16 @@ Loppu      ;
 
 LEXICON Lyhenne
 Loppu	;
+[Sg][Ny]%:n:%:n	Liitesana_<A>	;
+[Sg][Nm]%:iden:%:iden	Liitesana_<A>	;
 [Sine][Ny]%:ss<A>:%:ss<A>	Liitesana_<A>	;
+[Sine][Nm]%:iss<A>:%:iss<A>	Liitesana_<A>	;
+[Sela][Ny]%:st<A>:%:st<A>	Liitesana_<A>	;
+[Sela][Nm]%:ist<A>:%:st<A>	Liitesana_<A>	;
+[Sill][Ny]%:seen:%:seen	Liitesana_<A>	;
+[Sill][Nm]%:ihin:%:ihin	Liitesana_<A>	;
+[Sade][Ny]%:ll<A>:%:ll<A>	Liitesana_<A>	;
+[Sade][Nm]%:ill<A>:%:ill<A>	Liitesana_<A>	;
+[Sabl][Ny]%:lt<A>:%:lt<A>	Liitesana_<A>	;
+[Sabl][Nm]%:ilt<A>:%:ilt<A>	Liitesana_<A>	;
 -[Bc]:-	Joukahainen_nimisanat	;
