@@ -173,6 +173,10 @@ static wchar_t * parseStructure(const wchar_t * fstOutput, size_t wlen) {
 			isAbbr = false;
 			i += 4;
 		}
+		else if (wcsncmp(fstOutput + i, L"[Lnl", 4) == 0) {
+			isAbbr = false;
+			i += 4;
+		}
 		else if (wcsncmp(fstOutput + i, L"[La", 3) == 0) {
 			isAbbr = true;
 			i += 3;

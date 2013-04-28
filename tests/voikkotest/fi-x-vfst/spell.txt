@@ -1523,3 +1523,4 @@ ab:ssäkin
 ay:ssäkin
 !ay:ssakin
 ab-kissa
+autio-
