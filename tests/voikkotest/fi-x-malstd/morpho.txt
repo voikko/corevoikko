@@ -256,6 +256,9 @@ word:sallita
 word:sallitakaan
  analysis
   NEGATIVE=true
+word:sallitaankaan
+ analysis
+  NEGATIVE=false
 word:maalaa
  analysis
   MOOD=indicative
@@ -275,7 +278,7 @@ word:maalaakaan
  analysis
   MOOD=indicative
   PERSON=3
-  NEGATIVE=true
+  NEGATIVE=both # "Mitä hän (ei) maalaakaan?
 word:juoksepa
  analysis
   MOOD=imperative

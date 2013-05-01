@@ -1529,6 +1529,10 @@ combi_rule liitesana ($vasen, $oikea, $sana, $index):
     end;
   end;
 
+  if ($edellinen.kielto /= nil and $oikea.kielto /= no) then
+    $oikea.kielto := $edellinen.kielto;
+  end;
+
   result $vasen + <[alku: $sana] + $oikea>, accept;
 end;
 

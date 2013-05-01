@@ -501,7 +501,7 @@ define @jatko_mm := <sija_monikko_1,
 
 define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
 
-[alku: "a",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
+[alku: "a",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3, kielto: no,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: a, jatko: @jatko_y3];
 [alku: "e",   luokka: kestämän_tekijäpääte_y3, luku: yksikkö, tekijä: tekijä_3,
               tapaluokka: tositapa, aikamuoto: kestämä, äs: aä, jatko: @jatko_y3];
@@ -615,10 +615,10 @@ define @jatko_y3 := <liitesana, liitesana_pi, loppu>;
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 
-[alku: "taan", luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, äs: a,
+[alku: "taan", luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, kielto: no, äs: a,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
-[alku: "tään", luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, äs: ä,
+[alku: "tään", luokka: tositavan_kestämä_tAAn, tekijä: tekijä_4, kielto: no, äs: ä,
                jatko: <liitesana, loppu>,
                tapaluokka: tositapa, aikamuoto: kestämä];
 

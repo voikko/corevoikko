@@ -215,6 +215,7 @@ Suurimmat kosket valjastettiin teollisuuden käyttöön.
 Kissa oli näet kiivennyt aidalle.
 Kissa oli kiivennyt aidalle — sieltä oli hyvä näköala.
 Kotonani on n. 15 kissaa.
+Millaisia bändejä festareilla mahtaakaan esiintyä?
 
 {voikko.setAcceptTitlesInGc(True)}
 Hieno toka otsikko
