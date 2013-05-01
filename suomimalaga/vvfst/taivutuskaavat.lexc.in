@@ -1964,30 +1964,30 @@ o@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:o@R.V_SALLITTU.T@@
 
 LEXICON Puoltaa
 l:l	Huutaa_w_<A>	;
-t:t	Huutaa_s_<A>	;
+Huutaa_s_<A>	;
 
 LEXICON Juurtaa
 r:r	Huutaa_w_<A>	;
-t:t	Huutaa_s_<A>	;
+Huutaa_s_<A>	;
 
 LEXICON Saksantaa
 n:n	Huutaa_w_<A>	;
-t:t	Huutaa_s_<A>	;
+Huutaa_s_<A>	;
 
 ! parempi esimerkkisana "joutaa"
 LEXICON Vuotaa
 d:d	Huutaa_w_<A>	;
-t:t	Huutaa_s_<A>	;
+Huutaa_s_<A>	;
 
 LEXICON Huutaa
 d:d	<WC>Huutaa_w_<A>	;
-t:t	<WC>Huutaa_s_<A>	;
+<WC>Huutaa_s_<A>	;
 del:del	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Alentaa
 n:n	<WC>Huutaa_w_<A>	;
-t:t	<WC>Huutaa_s_<A>	;
+<WC>Huutaa_s_<A>	;
 nel:nel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
@@ -2026,13 +2026,13 @@ LEXICON Murtaa
 
 LEXICON MurtaaCVS
 r:r	<WC>Huutaa_w_<A>	;
-t:t	<WC>Huutaa_s_<A>	;
+<WC>Huutaa_s_<A>	;
 rel:rel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Juontaa
 @C.V_SALLITTU@n:@C.V_SALLITTU@n	<WC>Huutaa_w_<A>	;
-@C.V_SALLITTU@t:@C.V_SALLITTU@t	<WC>Huutaa_s_<A>	;
+@C.V_SALLITTU@:@C.V_SALLITTU@	<WC>Huutaa_s_<A>	;
 @C.V_SALLITTU@nel:@C.V_SALLITTU@nel	<WC>Katsella_w_<A>	;
 @C.V_SALLITTU@tel:@C.V_SALLITTU@tel	<WC>Katsella_s_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAnto_ä	;
@@ -2040,7 +2040,7 @@ LEXICON Juontaa
 
 LEXICON Pyörtää
 r:r	<WC>Huutaa_w_<A>	;
-t:t	<WC>Huutaa_s_<A>	;
+<WC>Huutaa_s_<A>	;
 rel:rel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 [Ln]t<O>:t<O>	NimisanaValo_s_<A>	;
@@ -2049,7 +2049,7 @@ tel:tel	<WC>Katsella_s_<A>	;
 
 LEXICON Pahentaa
 n:n	<WC>Huutaa_w_<A>	;
-t:t	<WC>Huutaa_s_<A>	;
+<WC>Huutaa_s_<A>	;
 nel:nel	<WC>Katsella_w_<A>	;
 tel:tel	<WC>Katsella_s_<A>	;
 n:n	Johdin_Us_ksen_<A>	;
@@ -2062,14 +2062,16 @@ e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
 
 LEXICON Huutaa_s
-[Tn1]<A><A>:<A><A>	Liitesana_<A>	;
-<A>:<A>	Ehtotapa_<A>	;
-<A>:<A>	Käskytapa_<A>	;
-<A>:<A>	Johdin_nimitapa2_<A>	;
-<A>:<A>	Johdin_ja_kantaja_<A>	;
-<A>:<A>	Johdin_mA_<A>	;
-<A>:<A>	Johdin_vA_<A>	;
-<A>:<A>	Johdin_nUt_<A>	;
+[Tn1]t<A><A>:t<A><A>	Liitesana_<A>	;
+s:s	KertomanTekijäpääteHeikko_<A>	;
+[Tt][Ap][P3][Nm]siv<A>t:siv<A>t	Liitesana_<A>	;
+t<A>:t<A>	Ehtotapa_<A>	;
+t<A>:t<A>	Käskytapa_<A>	;
+t<A>:t<A>	Johdin_nimitapa2_<A>	;
+t<A>:t<A>	Johdin_ja_kantaja_<A>	;
+t<A>:t<A>	Johdin_mA_<A>	;
+t<A>:t<A>	Johdin_vA_<A>	;
+t<A>:t<A>	Johdin_nUt_<A>	;
 
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
@@ -2119,7 +2121,7 @@ LEXICON Kaivaa_s
 LEXICON Soutaa
 d:d	Huutaa_w_<A>	;
 del:del	Katsella_w_<A>	;
-t:t	Huutaa_s_<A>	;
+Huutaa_s_<A>	;
 tel:tel	Katsella_s_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
 
@@ -2238,6 +2240,7 @@ LEXICON Sallia_s
 [Tn1]i<A>:i<A>	Liitesana_<A>	;
 [Tt][Ap][P3][Ny]ii:ii	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
+KertomanTekijäpääteVahva_<A>	;
 Ehtotapa_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_vA_<A>	;
@@ -2280,6 +2283,7 @@ Johdin_ja_myyjä_<A>	;
 Johdin_nti_<A>	;
 Johdin_tU_<A>	;
 Johdin_nUt_<A>	;
+Johdin_vA_<A>	;
 
 LEXICON Voida_s
 KertomanTekijäpääteHeikko_<A>	;
@@ -2347,6 +2351,7 @@ e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+Johdin_tU_<A>	;
 
 LEXICON Tulla_l
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -3155,6 +3160,7 @@ Loppu      ;
 
 LEXICON Lyhenne
 Loppu	;
+-[Bc]:-	Loppu	;
 [Sg][Ny]%:n:%:n	Liitesana_<A>	;
 [Sg][Ny]%:in:%:in	Liitesana_<A>	;
 [Sg][Nm]%:iden:%:iden	Liitesana_<A>	;
