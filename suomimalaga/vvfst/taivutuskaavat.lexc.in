@@ -754,6 +754,7 @@ LEXICON NOUN Karahka
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Solakka
 k:k	<WC>Solakka_s_<A>	;
@@ -3155,7 +3156,10 @@ Loppu      ;
 LEXICON Lyhenne
 Loppu	;
 [Sg][Ny]%:n:%:n	Liitesana_<A>	;
+[Sg][Ny]%:in:%:in	Liitesana_<A>	;
 [Sg][Nm]%:iden:%:iden	Liitesana_<A>	;
+[Sp][Ny]%:<A><A>:%:<A><A>	Liitesana_<A>	;
+[Sp][Nm]%:i<A>:%:i<A>	Liitesana_<A>	;
 [Sine][Ny]%:ss<A>:%:ss<A>	Liitesana_<A>	;
 [Sine][Nm]%:iss<A>:%:iss<A>	Liitesana_<A>	;
 [Sela][Ny]%:st<A>:%:st<A>	Liitesana_<A>	;
@@ -3166,4 +3170,7 @@ Loppu	;
 [Sade][Nm]%:ill<A>:%:ill<A>	Liitesana_<A>	;
 [Sabl][Ny]%:lt<A>:%:lt<A>	Liitesana_<A>	;
 [Sabl][Nm]%:ilt<A>:%:ilt<A>	Liitesana_<A>	;
+[Sall][Ny]%:lle:%:lle	Liitesana_<A>	;
+[Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
+-[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;

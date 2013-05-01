@@ -1530,3 +1530,8 @@ Ab:stä
 ADD:n
 yhdysvaltalainen
 !x-boa
+AIDS:in
+DNA:lle
+FM:ää
+GPS-paikannus
+guyanalainen
