@@ -1529,3 +1529,4 @@ Ab:ltä
 Ab:stä
 ADD:n
 yhdysvaltalainen
+!x-boa
