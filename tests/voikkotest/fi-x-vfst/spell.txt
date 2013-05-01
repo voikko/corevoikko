@@ -1530,8 +1530,11 @@ Ab:stä
 ADD:n
 yhdysvaltalainen
 !x-boa
+!boa-x
 AIDS:in
 DNA:lle
 FM:ää
 GPS-paikannus
 guyanalainen
+aamu-TV:ssä
+!nopea-A

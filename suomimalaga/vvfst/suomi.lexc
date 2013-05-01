@@ -1,9 +1,11 @@
 LEXICON NimisanaYsJatko
 @C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@:@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@	YhdyssanaJatkuu	;
+-[Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Joukahainen_a	;
 
 LEXICON NimiLaatusanaYsJatko
 @C.EI_YKS@@C.INEN_KIELLETTY@:@C.EI_YKS@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
 @P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
+-[Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Joukahainen_a	;
 
 LEXICON LaatusanaYsJatko
 InenLoppuisenYsJatko	;
