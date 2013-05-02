@@ -1546,3 +1546,9 @@ nujersivat
 nujersimme
 pyörsimme
 !saavalainen
+hyppijäin
+lensi
+liioitelleen
+nokkamainen
+opiskelevansa
+!eläväarkisto
