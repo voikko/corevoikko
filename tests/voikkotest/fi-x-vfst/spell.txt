@@ -1553,3 +1553,4 @@ nokkamainen
 opiskelevansa
 !eläväarkisto
 kansanedustajansa
+lähituntuma
