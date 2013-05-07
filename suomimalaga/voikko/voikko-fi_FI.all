@@ -3650,7 +3650,9 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
     $taivutus :=- yliaste;
     $taivutus :=- kerronto_sti;
     $taivutus :=- johdin_Us;
-    $taivutus :=- johdin_UUs;
+    if (not $tietue.perusmuoto matches ".*l[aä]inen") then
+      $taivutus :=- johdin_UUs;
+    end;
   end;
   
   if ($tietue.luokka = laatusana) then

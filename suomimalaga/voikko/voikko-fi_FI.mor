@@ -447,6 +447,7 @@ end;
 # Laatusanasta johdettu nimisana, esim. vapaus <- vapaa.
 combi_rule nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka in @laatusana;
+  ? $oikea.tiedot = nil or (not ei_ys in $oikea.tiedot and not ei_ysj in $oikea.tiedot);
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   result $vasen + <[alku: $sana] + $oikea>,
          rules johdin_nimisana_laatusanasta;
@@ -1715,7 +1716,7 @@ end;
 
 
 combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
-  ? $oikea.luokka in @johdin_nimisanasta;
+  ? $oikea.luokka in @johdin_nimisanasta + <johdin_UUs>;
 
   define $edellinen := $vasen.($index - 1);
   ? $oikea.luokka in $edellinen.jatko;
@@ -1762,7 +1763,7 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   if liitesana in $oikea.jatko then
     result $res, rules liitesana;
   end;
-  if $oikea.luokka in @johtimet_nimisana_nimisanasta then
+  if $oikea.luokka in @johtimet_nimisana_nimisanasta + <johdin_UUs> then
     result $res, rules nimisanan_sijapääte, nimisanan_johdos;
   elseif $oikea.luokka in @johtimet_laatusana_nimisanasta then
     result $res, rules laatusanan_sijapääte, voitto_yliaste, johdin_nimisana_laatusanasta;

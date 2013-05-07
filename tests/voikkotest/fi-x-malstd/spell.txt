@@ -294,6 +294,7 @@ filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
 !kaunismuotoisenkissa # inen-johdos + genetiivi + substantiivi
 vaaleanpunakukkainen
 sisäänhyppimisketteryys
+ammattilaisuuteen
 
 # = voitto- ja yliasteet =
 []
@@ -389,6 +390,7 @@ ranskalais-suomalainen
 irlantilaissyntyinen
 !voimmetsäinen
 solidaarisuusjohtoinen
+!talotällaisuudessaan
 
 # = etuliitteet =
 []
