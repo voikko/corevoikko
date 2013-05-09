@@ -58,6 +58,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	classMap.insert(std::make_pair(L"em", L"nimi"));
 	classMap.insert(std::make_pair(L"t", L"teonsana"));
 	classMap.insert(std::make_pair(L"a", L"lyhenne"));
+	classMap.insert(std::make_pair(L"s", L"seikkasana"));
 	
 	sijamuotoMap.insert(std::make_pair(L"n", L"nimento"));
 	sijamuotoMap.insert(std::make_pair(L"g", L"omanto"));

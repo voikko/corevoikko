@@ -348,3 +348,6 @@ word:ab
 word:ab-kissa
   expected:1
     STRUCTURE==qq-=ppppp
+word:esiintyjittäin
+  expected:1
+    CLASS=seikkasana

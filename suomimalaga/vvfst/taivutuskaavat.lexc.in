@@ -561,6 +561,7 @@ LEXICON NOUN Kala_s
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Laatusana	Johdin_UUs_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kala_w
@@ -1714,6 +1715,7 @@ LEXICON NOUN YhteisetMonikonPaikallissijat
 [Sabl][Nm]ilt<A>:ilt<A>	<WC>LiOlV_<A>	;
 [Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
 [Sab][Nm]itt<A>:itt<A>	<WC>LiOlV_<A>	;
+Johdin_ittAin_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN YhteisetMonikonSijat2
@@ -1922,13 +1924,13 @@ LEXICON Kirjoittaa
 it:it	<WC>MuistaaMuistella_w_<A>	;
 itt:itt	<WC>MuistaaMuistella_s_<A>	;
 it:it	Johdin_Us_ksen_<A>	;
-!TODO kirjoittautua
+itt<A>u:itt<A>u	Kaatua_<A>	;
 
 LEXICON Ammottaa
 t:t	<WC>MuistaaMuistella_w_<A>	;
 tt:tt	<WC>MuistaaMuistella_s_<A>	;
 t:t	Johdin_Us_ksen_<A>	;
-!TODO ammottautua
+tt<A>u:tt<A>u	Kaatua_<A>	;
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
@@ -2547,6 +2549,7 @@ n:n	Johdin_nUt_<A>	;
 LEXICON Aleta_s
 ne:ne	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]nee:nee	Liitesana_<A>	;
+n:n	KertomanTekijäpääteVahva_<A>	;
 ne:ne	Johdin_mA_<A>	;
 ne:ne	Johdin_vA_<A>	;
 n:n	Ehtotapa_<A>	;
@@ -3020,6 +3023,9 @@ tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli:lli	LaatusanaNainen_<A>    ;
 llis:llis	NimisanaYsJatko	;
 
+LEXICON Johdin_ittAin
+[Ls]itt<A>in:itt<A>in	Loppu	;
+
 LEXICON Johdin_lAinen
 [Ll]l<A>i@C.EI_YKS@:l<A>i@C.EI_YKS@	LaatusanaNainen_<A>	;
 
@@ -3087,6 +3093,7 @@ LEXICON Johdin_ja_kantaja_myyjä
 [Sabl][Nm]jilt<A>@C.JOHDETTAVA_NIMISANAKSI@:jilt<A>@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sall][Nm]jille@C.JOHDETTAVA_NIMISANAKSI@:jille@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 [Sab][Nm]jitt<A>@C.JOHDETTAVA_NIMISANAKSI@:jitt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+j@C.JOHDETTAVA_NIMISANAKSI@:j@C.JOHDETTAVA_NIMISANAKSI@	Johdin_ittAin_<A>	;
 [Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 
 LEXICON Johdin_nti
