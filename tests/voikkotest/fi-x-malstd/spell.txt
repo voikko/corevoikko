@@ -227,6 +227,7 @@ Coca-Cola
 !juosseisuus
 !purreisuus
 Venäjä-myönteinen
+!Penttinä-talli
 
 # Nämä testit bugin 1706814 korjaamiseksi
 #sveitsiläistyä

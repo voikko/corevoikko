@@ -674,14 +674,18 @@ combi_rule yhdysmerkki_yleisnimen_jälkeen ($vasen, $oikea, $sana):
 	       nimisana_teonsanasta, inen_johdos_nimisanasta;
 end;
 
-combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana):
+combi_rule yhdysmerkki_erisnimen_jälkeen ($vasen, $oikea, $sana, $index):
   ? $oikea.luokka = tavuviiva;
 
+  define $edellinen := $vasen.($index - 1);
   define $res := $vasen + <[vokaaliehto: no, alku: "-"] + $oikea>;
   result $res, accept;
-  result $res, rules
-         nimisana, erisnimi, nimisana_laatusanasta,
-         etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana;
+  result $res, rules erisnimi;
+  if ($edellinen.luokka /= sijapääte or $edellinen.sijamuoto in <nimentö, omanto>) then
+    result $res, rules
+           nimisana, nimisana_laatusanasta,
+           etuliite, nimisana_teonsanasta, inen_päätteinen_laatusana;
+  end;
 end;
 
 combi_rule yhdysmerkki_teonsanan_jälkeen ($vasen, $oikea, $sana):
