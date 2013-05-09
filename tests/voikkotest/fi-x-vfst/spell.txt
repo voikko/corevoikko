@@ -1554,3 +1554,7 @@ opiskelevansa
 !eläväarkisto
 kansanedustajansa
 lähituntuma
+lähtenytkään
+lähtivätkin
+maailmanympärilennon
+!maailmanympärilentää

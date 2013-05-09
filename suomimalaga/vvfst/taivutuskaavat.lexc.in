@@ -2186,6 +2186,8 @@ LEXICON Tuntea_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
+e:e	Johdin_nUt_<A>	;
+[Tt][Ap][P3][Nm]iv<A>t:iv<A>t	Liitesana_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 
