@@ -285,6 +285,7 @@ LEXICON NOUN Autio
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
 
@@ -2080,7 +2081,7 @@ t<A>:t<A>	Johdin_nUt_<A>	;
 LEXICON Kaivaa
 <WC>Kaivaa_w_<A>	;
 <WC>Kaivaa_s_<A>	;
-!TODO kaivella
+el:el	Katsella_<A>	;
 !TODO kaivanta
 
 LEXICON Lappaa
@@ -2094,18 +2095,18 @@ k:k	<WC>Kaivaa_s_<A>	;
 LEXICON Saattaa
 <WC>Kaivaa_w_<A>	;
 t:t	<WC>Kaivaa_s_<A>	;
-!TODO saatella
+Aatella_<A>	;
 
 LEXICON Antaa
 n:n	<WC>Kaivaa_w_<A>	;
 t:t	<WC>Kaivaa_s_<A>	;
+Pienennellä_<A>	;
 !TODO annattaa
-!TODO annella
 
 LEXICON Raataa
 d:d	<WC>Kaivaa_w_<A>	;
 t:t	<WC>Kaivaa_s_<A>	;
-!TODO raadella
+Kohdella_<A>	;
 !TODO raadanta
 
 LEXICON Kaivaa_w
