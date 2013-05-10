@@ -2357,6 +2357,7 @@ LEXICON Tulla_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Johdin_vA_<A>	;
+e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 Johdin_tU_<A>	;
 
@@ -2832,6 +2833,12 @@ LEXICON Rakentaa
 Saksantaa_<A>	;
 Pienennellä_<A>	;
 n:n	Johdin_Us_ksen_<A>	;
+
+LEXICON Nähdä
+[Tn1]hd<A>:hd<A>	Liitesana_<A>	;
+e:e	KestämänTekijäpääteHeikko_<A>	;
+ke:ke	Johdin_mA_<A>	;
+ki:ki	Johdin_ja_kulkija_<A>	;
 
 LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@n	Liitesana_<A>	;

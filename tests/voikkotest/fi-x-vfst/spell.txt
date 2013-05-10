@@ -1569,3 +1569,8 @@ saatella
 annella
 raadella
 !taitelija
+paneminen
+nähdä
+näkeminen
+näen
+näkijä

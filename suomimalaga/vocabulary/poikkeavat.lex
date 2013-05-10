@@ -120,7 +120,6 @@
 [perusmuoto: "moni", alku: "mon", luokka: nimisana, jatko: <lohi>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <maa>, äs: a];
 [perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
-[perusmuoto: "nähdä", alku: "nä", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "ojentaa", alku: "oje", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
@@ -162,7 +161,6 @@
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];
 [perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: <osanto_tA, liitesana, loppu>, äs: a];
-[perusmuoto: "tehdä", alku: "te", luokka: teonsana, jatko: <nähdä>, äs: ä];
 [perusmuoto: "tenkkapoo", alku: "tenkkapoo", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "tietää", alku: "tie", luokka: teonsana, jatko: <taitaa>, äs: ä];
 [perusmuoto: "tiu", alku: "tiu", luokka: nimisana, jatko: <tiu>, äs: a, tiedot: <ei_ys>];
