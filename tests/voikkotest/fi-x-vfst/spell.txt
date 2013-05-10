@@ -1579,3 +1579,4 @@ keventämällä
 kevetä
 kevenen
 kepenen
+muonitusaliupseeriksi
