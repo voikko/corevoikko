@@ -2529,6 +2529,11 @@ t<O>:t<O>	Aleta_s_<A>	;
 LEXICON Kaveta
 ve:ve	Aleta_w_<A>	;
 pe:pe	Aleta_s_<A>	;
+ven:ven	Alentaa_<A>	;
+
+LEXICON Kevetä
+Kaveta_<A>	;
+ve:ve	Aleta_s_<A>	;
 
 LEXICON Mädätä
 d<A>:d<A>	Aleta_w_<A>	;
@@ -2980,6 +2985,7 @@ LEXICON Johdin_sUt
 
 LEXICON Johdin_nUt
 [Ll]n@C.JOHDETTAVA_LAATUSANAKSI@:n@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+neis:neis	Johdin_UUs_<A>	;
 [Ll]nee:nee	Omistusliite_<A>	;
 
 LEXICON Johdin_lUt
