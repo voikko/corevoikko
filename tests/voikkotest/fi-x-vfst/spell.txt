@@ -1659,3 +1659,10 @@ pylväisiin
 !iäkkääihn
 pyöräyttämällä
 pyöräyttää
+lohkaistulla
+!lohkaisdulla
+kanavoitu
+kanavoidulla
+!katseltulla
+katsellulla
+spekuloitu

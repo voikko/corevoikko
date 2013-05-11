@@ -2391,7 +2391,7 @@ d:d	Johdin_nimitapa2_<A>	;
 Johdin_mA_<A>	;
 Johdin_ja_myyjä_<A>	;
 Johdin_nti_<A>	;
-Johdin_tU_<A>	;
+Johdin_tU_dA_<A>	;
 Johdin_nUt_<A>	;
 Johdin_vA_<A>	;
 
@@ -2430,7 +2430,7 @@ LEXICON Nuolaista_w
 TositavanKertomaTiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Käskytapa_e_<A>	;
-Johdin_tU_<A>	;
+Johdin_tU_tA_<A>	;
 Johdin_sUt_<A>	;
 Johdin_tAvA_<A>	;
 
@@ -2467,7 +2467,7 @@ KertomanTekijäpääteHeikko_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
-Johdin_tU_<A>	;
+Johdin_tU_lA_<A>	;
 
 LEXICON Tulla_l
 [Tn1]<A>:<A>	Liitesana_<A>	;
@@ -2521,7 +2521,7 @@ TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
 Johdin_tAvA_<A>	;
 Johdin_lUt_<A>	;
-Johdin_tU_<A>	;
+Johdin_tU_lA_<A>	;
 
 LEXICON Katsella_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -2575,7 +2575,7 @@ i:i	EhtotapaTa_<A>	;
 i:i	Käskytapa_0_<A>	;
 i:i	Johdin_mA_<A>	;
 i:i	Johdin_nti_<A>	;
-i:i	Johdin_tU_<A>	;
+i:i	Johdin_tU_dA_<A>   ;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_nUt_<A>	;
 i:i	Kaatua_<A>	;
@@ -3185,9 +3185,23 @@ LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
 [Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
 
-LEXICON Johdin_tU
-[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaLaatu_<A>	;
+! myydä -> myyty
+LEXICON Johdin_tU_dA
+[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaLaatu_<A>   ;
+
+! katsella -> katseltu
+LEXICON Johdin_tU_lA
+[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@ NimiLaatusanaKatseltu_<A>   ;
+
+! nuolaista -> nuolaistu
+LEXICON Johdin_tU_tA
+[Ll]t<U>@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t<U>@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaValo_<A>	;
 [Ll]t<U>:t<U>	Johdin_nUt_<A>	;
+
+LEXICON NOUN Katseltu
+t<U>:t<U>       <WC>Valo_s_<A>  ;
+t<U><U>:t<U><U> <WC>Valo_sl_<A> ;
+l<U>:l<U>       <WC>Valo_w_<A>  ;
 
 LEXICON Kerronto_sti
 [Ssti]sti:sti	Liitesana_<A>	;
