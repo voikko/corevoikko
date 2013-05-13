@@ -77,9 +77,12 @@ def get_prefix_jatko(word):
 
 def get_additional_attributes(word):
 	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
+	result = u""
 	if u"el_altark" in flags:
-		return u", aluetta_tarkentava_etuliite: yes"
-	return u""
+		result = result + u", aluetta_tarkentava_etuliite: yes"
+	if u"geo_suffix" in flags:
+		result = result + u", paikannimen_jälkiliite: yes"
+	return result
 
 def handle_word(word):
 	global OPTIONS
