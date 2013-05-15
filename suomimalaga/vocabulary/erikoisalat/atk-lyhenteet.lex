@@ -49,32 +49,6 @@
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)
 
-[alku: "alt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a];
-[alku: "ASCII", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjjj"];
-[alku: "ctrl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "CUPS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjjj"];
-[alku: "CVS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "eps", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä]; # Encapsulated PostScript
-[alku: "ftp", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
-[alku: "FTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä]; # file transfer protocol
-[alku: "fvwm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "gcc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "glibc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "GPL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "Gt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jq"];
-[alku: "icewm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "IDE", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "IMAP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "IP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # Internet Protocol
-[alku: "IRC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "jpg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
-[alku: "KDE", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "kt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=qq"];
-[alku: "LGPL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "libstdc", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "MS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jj"];
-[alku: "MS-DOS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jj-=jjj"];
-[alku: "Mt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jq"];
 [alku: "NNTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "NTFS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
 [alku: "NTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];

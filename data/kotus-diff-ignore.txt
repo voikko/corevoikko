@@ -1329,10 +1329,12 @@ diploidinen # diploidi
 diureettinen # diureetti
 dokaus # dokata
 dongarit # dongari
+drapeeraus # drapeerata
 elvistely # elvistellä
 endokrinologisesti # endokrinologinen
 fertiiliys # fertiili
 fillarointi # fillaroida
+filtraus # filtrata
 finanssit # finanssi
 fluoritus # fluorittaa
 fluorointi # fluoroida

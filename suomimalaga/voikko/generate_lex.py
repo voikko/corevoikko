@@ -144,6 +144,12 @@ def handle_word(word):
 		else:
 			multiPartForms.append(altform)
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
+		if alku == None:
+			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
+				% (wordform, voikko_infclass)
+			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
+			sys.stderr.write(errorstr.encode(u"UTF-8"))
+			sys.exit(1)
 		if malaga_word_class == u"lyhenne":
 			jatko = u"tavuviiva, kaksoispiste, loppu"
 		if malaga_word_class == u"etuliite":
@@ -159,12 +165,6 @@ def handle_word(word):
 		elif vtype == voikkoutils.VOWEL_BACK: malaga_vtype = u'a'
 		elif vtype == voikkoutils.VOWEL_BOTH: malaga_vtype = u'aä'
 		rakenne = generate_lex_common.get_structure(altform, malaga_word_class)
-		if alku == None:
-			errorstr = u"ERROR: Malaga class not found for (%s, %s)\n" \
-				% (wordform, voikko_infclass)
-			generate_lex_common.write_entry(main_vocabulary, {}, word, errorstr)
-			sys.stderr.write(errorstr.encode(u"UTF-8"))
-			sys.exit(1)
 		if baseform is None:
 			baseform = wordform
 		if malaga_word_class == u"lyhenne":
