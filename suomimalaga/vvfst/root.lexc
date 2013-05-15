@@ -122,6 +122,9 @@ Multichar_Symbols
 ! vertailumuodot eivät ole sallittuja
 @P.EI_VERTM.ON@ @D.EI_VERTM@
 
+! paikannimen jälkiliite vaaditaan
+@P.PAIKANNIMEN_JL.ON@ @C.PAIKANNIMEN_JL@ @D.PAIKANNIMEN_JL@
+
 LEXICON Root
 Joukahainen	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ee	;

@@ -1580,3 +1580,5 @@ kevetä
 kevenen
 kepenen
 muonitusaliupseeriksi
+Kalanninluoto
+!Kalanninluotokissa
