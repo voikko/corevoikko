@@ -39,7 +39,7 @@ import codecs
 import getopt
 import re
 import sys
-
+from types import *
 
 try:
     optlist = ["destdir="]
@@ -57,7 +57,7 @@ infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
 outfile = codecs.open (options["destdir"] + u"/all-sukija.lexc", 'w', 'UTF-8')
 
 C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
-V = u"[aeiouüyäö]"               # Vovels.
+V = u"[aeiouüyåäö]"              # Vovels.
 
 
 def makeRePattern (wordClass, word):
@@ -202,16 +202,20 @@ spelling_word_list = [
     (u"paneeli",     (u"paneel",     u"panel")),
     (u"pioni",       (u"pion",       u"pioon")),
     (u"poliisi",     (u"poliis",     u"polis")),
-    (u"poliitikko",  (u"poliitik",   u"politik")),
-    (u"poliittinen", (u"poliitti",   u"politti")),
-    (u"politiikka",  (u"politiik",   u"politik")),
+    (u"poliitikko",  (u"poliitik",   u"politik",
+                      u"poliitik",   u"poliitiik")),
+    (u"poliittinen", (u"poliitti",   u"politti",
+                      u"poliitti",   u"poliittii")),
+    (u"politiikka",  (u"politiik",   u"politik",
+                      u"politiik",   u"poliitiik")),
     (u"preettori",   (u"preettor",   u"preetor")),
     (u"pyramidi",    (u"pyramid",    u"pyramiid")),
     (u"reettori",    (u"reettor",    u"reetor")),
     (u"sampanja",    (u"sampanj",    u"samppanj")),
     (u"sapeli",      (u"sapel",      u"sapeel")),
-    (u"senaatti",    (u"senaat",     u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a",
-                      u"senaat",     u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a")),
+    (u"senaatti",    ((u"senaat",    u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a"),
+                      (u"senaat",    u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a"))),
+    (u"senaattori",  (u"senaattor",  u"senaator")),
     (u"serafi",      (u"seraf",      u"seraaf")),
     (u"shampanja",   (u"shampanj",   u"shamppanj")),
     (u"soopeli",     (u"soopel",     u"sopel")),
@@ -219,7 +223,8 @@ spelling_word_list = [
                       u"teatter",    u"teaatter",
                       u"teatter",    u"teater")),
     (u"temperamentti", (u"temperament", u"tempperament")),
-    (u"tällainen",     (u"tällai",      u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"))
+    (u"Toscana",       (u"toscan",      u"toskan")),
+    (u"tällainen",     ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), ()))
 ]
 
 
@@ -312,20 +317,15 @@ def generate_word (line, sukija_dictionary):
     if r:
         try:
             g = sukija_dictionary[r.group(1)]
-            if len (g) == 2:
-                replace_and_write (line, g[0], g[1])
-            elif len(g) == 4:
-                s = line.replace (g[2], g[3])
-                outfile.write (replace (s, g[0], g[1]))
-            elif len(g) == 6:
-                replace_and_write (line, g[0], g[1])
-                replace_and_write (line, g[2], g[3])
-                replace_and_write (line, g[4], g[5])
-            elif len(g) == 8:
-                s = line.replace (g[2], g[3])
-                outfile.write (replace (s, g[0], g[1]))
-                s = line.replace (g[6], g[7])
-                outfile.write (replace (s, g[4], g[5]))
+##            print (str(g[0]).encode('utf8'))
+            if type(g[0]) == UnicodeType:
+                for i in range (0, len(g), 2):
+                    replace_and_write (line, g[i], g[i+1])
+            elif type(g[0]) == TupleType:
+                for i in range (0, len(g)):
+                    if len(g[i]) > 0:
+                        s = line.replace (g[i][2], g[i][3])
+                        outfile.write (replace (s, g[i][0], g[i][1]))
             else:
                 sys.stderr.write (line)
                 sys.stderr.write ("Wrong format in sukija_dictionary.\n")

@@ -92,6 +92,7 @@ elohopea
 elokuva
 eläkeläinen
 elämä
+elämänsanalainen
 Englanti
 ennätys
 Eno
@@ -127,6 +128,7 @@ freudilainen
 fryygialainen
 gammaglobuliini
 Georgia
+globaalikasvatus
 Guinea
 Haapajärvi
 Haapakoski
@@ -841,6 +843,7 @@ raskasvety
 raskaus
 ratkeama
 Rauha
+rauhansanalainen
 Rautio
 Rautu
 ravuriori
