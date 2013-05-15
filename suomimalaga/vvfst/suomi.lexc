@@ -66,8 +66,8 @@ LEXICON EtuliitteenJatko_eln
 [Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nimisanat	;
 
 LEXICON EtuliitteenJatko_ell
-[Bh][Bc]:	Joukahainen_nl	;
-[Bh][Bc]:	Joukahainen_l	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_nl	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_l	;
 [Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
 
 LEXICON EtuliitteenJatko_elt
@@ -80,7 +80,7 @@ LEXICON EtuliitteenJatko_eltj
 LEXICON EtuliitteenJatko_elleln
 [Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@	Joukahainen_n	;
 [Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nl	;
-[Bh][Bc]:	Joukahainen_l	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_l	;
 [Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 [Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
 

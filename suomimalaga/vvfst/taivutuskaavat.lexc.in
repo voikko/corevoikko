@@ -1298,6 +1298,7 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	kse:kse	Johdin_tOn_<A>	;
+?Paikannimi	s:s	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kalleus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;

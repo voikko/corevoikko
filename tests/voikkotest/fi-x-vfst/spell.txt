@@ -1582,3 +1582,5 @@ kepenen
 muonitusaliupseeriksi
 Kalanninluoto
 !Kalanninluotokissa
+atlantislainen
+geosentrinen
