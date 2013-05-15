@@ -1584,3 +1584,5 @@ Kalanninluoto
 !Kalanninluotokissa
 atlantislainen
 geosentrinen
+kuivimman
+kasvateta

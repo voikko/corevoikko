@@ -645,6 +645,7 @@ LEXICON NOUN Koira_w_yksikkö
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Koira_w_monikko
 <WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -2881,6 +2882,7 @@ t:t	TositavanKestämäXaan_<A>	;
 
 LEXICON TositavanKestämäXaan
 @D.VAIN_YM3@[Tt][Ap][P4]<A><A>n:@D.VAIN_YM3@<A><A>n	Liitesana_<A>	;
+@D.VAIN_YM3@[Tt][Ap][P4]<A>:@D.VAIN_YM3@<A>	Liitesana_<A>	;
 
 LEXICON TositavanKertomaTtiin
 @D.VAIN_YM3@[Tt][Ai][P4]ttiin:@D.VAIN_YM3@ttiin	Liitesana_<A>	;
