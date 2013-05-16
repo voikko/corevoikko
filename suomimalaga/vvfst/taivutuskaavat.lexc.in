@@ -1960,6 +1960,7 @@ LEXICON Muistaa_s
 KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Käskytapa_<A>	;
+<A>:<A>	Johdin_nimitapa1A_<A>	;
 <A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
@@ -2078,6 +2079,7 @@ s:s	KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Nm]siv<A>t:siv<A>t	Liitesana_<A>	;
 t<A>:t<A>	Ehtotapa_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
+t<A>:t<A>	Johdin_nimitapa1A_<A>	;
 t<A>:t<A>	Johdin_nimitapa2_<A>	;
 t<A>:t<A>	Johdin_ja_kantaja_<A>	;
 t<A>:t<A>	Johdin_mA_<A>	;
@@ -2170,6 +2172,7 @@ LEXICON LaskeaLaskeskella_s
 KertomanTekijäpääteVahva_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
+e:e	Johdin_nimitapa1A_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 
@@ -2930,6 +2933,13 @@ LEXICON Käskytapa
 
 LEXICON Käskytapa_y2
 @D.VAIN_YM3@[Tk][Ap][P2][Ny]:@D.VAIN_YM3@	LiitesanaKaanPaHan_<A>	;
+
+LEXICON Johdin_nimitapa1A
+[Tn1]<A>:<A>	Nimitapa1Jatko_<A>	;
+
+LEXICON Nimitapa1Jatko
+Liitesana_<A>	;
+kse:kse	OlV_<A>	;
 
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	NimisanaLiOlV_<A>	;

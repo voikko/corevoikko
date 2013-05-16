@@ -1586,3 +1586,6 @@ atlantislainen
 geosentrinen
 kuivimman
 kasvateta
+kääntääkseen
+hävittääkseen
+iskeäkseen
