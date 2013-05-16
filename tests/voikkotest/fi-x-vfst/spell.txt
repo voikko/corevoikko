@@ -1592,3 +1592,8 @@ iskeäkseen
 hankkiakseen
 houkutellakseen
 hallitakseen
+pysyäkseen
+palatakseen
+vaihtaakseen
+tarjotakseen
+lyödäkseen
