@@ -49,38 +49,8 @@
 
 # Lyhenteitä. (Lyhennesanat [esimerkiksi "Nato"] käsitellään Joukahaisessa)
 
-[alku: "NNTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "NTFS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "NTP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "OpenBSD", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, tiedot: <atk>];
-[alku: "opengl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
-[alku: "PCI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
-[alku: "PDF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
-[alku: "RAID", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
-[alku: "RAM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
-[alku: "RFC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "ROM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjj"];
-[alku: "RPM", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj"];
-[alku: "SCSI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
-[alku: "SFST", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # Stuttgart Finite State Transducer Tools
-[alku: "SGML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"];
-[alku: "SPSS", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj"]; # SPSS-ohjelma
-[alku: "SQL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "SSH", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjj", tiedot: <ei_sukija>];
-[alku: "ssh", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "tcl", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "URI", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, tiedot: <atk>, rakenne: "=jjj"];
-[alku: "URL", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>, rakenne: "=jjj"];
-[alku: "UTF", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "vis5d", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "VRML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, rakenne: "=jjjj", tiedot: <ei_sukija>];
-[alku: "vrml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "wlan", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä, tiedot: <atk>];
-[alku: "wxgtk", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "wxx11", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
-[alku: "XML", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj", tiedot: <ei_sukija>];
-[alku: "xml", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
-[alku: "xmms", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];
 
 
 #[alku: "", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];

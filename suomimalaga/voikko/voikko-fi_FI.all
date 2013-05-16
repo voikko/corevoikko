@@ -3736,12 +3736,10 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
       "kylä", "köngäs", "laidun", "letto",
       "maa", "metsä",
       "nokka", "notko",
-      "nyppylä", "oja", "pelto", "penger", "piha", "polku",
-      "puisto", "puro", "putous", "pää", "ranta", "rata", "rimpi", "rinne", "rotko", "ruovikko", "ryteikkö", "räme",
-      "saari", "salmi", "salo", "selkä", "silta", "sola", "suisto",
-      "suo", "suvanto", "särkkä", "talo", "tanhua", "tanner", "tie", "tori",
-      "tundra", "tunturi", "törmä", "töyräs", "vaara", "vainio",
-      "virta", "vuono", "vuori", "vuoristo", "väylä", "ylänkö"> and $tietue.luokka in <nimisana, nimi_laatusana>) then
+      "pää", "ryteikkö",
+      "silta",
+      "talo", "tie",
+      "väylä"> and $tietue.luokka in <nimisana, nimi_laatusana>) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
   
