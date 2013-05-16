@@ -81,15 +81,13 @@ include "voikonsanat/suhdesanat.lex";
 include "voikonsanat/taivutustaydennykset.lex";
 include "voikonsanat/yhdyssanat.lex";
 include "voikonsanat/vieraskieliset.lex";
-include "sanat/etuliitteet.lex";
 include "sanat/lyhenteet.lex";
+include "sanat/atk-lyhenteet.lex";
+include "sanat/etuliitteet.lex";
 #include "sanat/11-19.lex";
-####include "sanat/jokinen.lex";
 include "sanat/latex.lex";
-##include "sanat/luvut.lex";
 include "sanat/olla-ei.lex";
 include "sanat/omat.lex";
-include "voikonsanat/erikoisalat/atk-lyhenteet.lex";
 include "voikonsanat/erikoisalat/linux-distributions.lex";
 
 

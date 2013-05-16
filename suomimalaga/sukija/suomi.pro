@@ -52,20 +52,18 @@ all: suomi.all suomi.inc suomi.pro
 lex: suomi.lex suomi.inc suomi.pro
 lex: sanat/11-19.lex
 lex: sanat/etuliitteet.lex
+lex: sanat/atk-lyhenteet.lex
 lex: sanat/lyhenteet.lex
-##lex: sanat/luvut.lex
 lex: sanat/olla-ei.lex
 lex: sanat/omat.lex
 lex: voikonsanat/atk.lex
 lex: voikonsanat/erikoiset.lex
 lex: voikonsanat/erikoissanat.lex
-##lex: voikonsanat/etuliitteet.lex
 lex: voikonsanat/joukahainen.lex
 lex: voikonsanat/kasvatustiede.lex
 lex: voikonsanat/laaketiede.lex
 lex: voikonsanat/lainen.lex
 lex: voikonsanat/lukusanat.lex
-##lex: voikonsanat/lyhenteet.lex
 lex: voikonsanat/matluonnontiede.lex
 lex: voikonsanat/poikkeavat.lex
 lex: voikonsanat/seikkasanat.lex
@@ -74,7 +72,6 @@ lex: voikonsanat/taivutustaydennykset.lex
 lex: voikonsanat/suhdesanat.lex
 lex: voikonsanat/vieraskieliset.lex
 lex: voikonsanat/yhdyssanat.lex
-lex: voikonsanat/erikoisalat/atk-lyhenteet.lex
 lex: voikonsanat/erikoisalat/linux-distributions.lex
 
 mor: suomi.mor suomi.inc

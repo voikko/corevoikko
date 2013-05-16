@@ -1061,6 +1061,7 @@ tupalainen
 turhautuma
 Turkki
 turpoama
+turvamerkitä
 Tuuli
 tyynenmerensilli
 tyynenmerenlohi
@@ -1213,6 +1214,7 @@ väritys
 vääntymä
 väärinkäsitys
 vääristymä
+ydinaseistaa
 yhdistymä
 yhteenajo
 yhteenkuuluva

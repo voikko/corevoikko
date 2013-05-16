@@ -30,9 +30,9 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/malaga3.png sukija/README sukija/sanat/11-19.lex \
            sukija/sanat/jokinen.lex sukija/sanat/jokinen.sh sukija/ei-sukija.txt \
            sukija/sanat/latex.lex sukija/sanat/olla-ei.lex sukija/sanat/omat.lex \
-           sukija/sanat/etuliitteet.lex sukija/sanat/lyhenteet.lex sukija/sukija.py sukija/suomi.all \
-           sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro \
-           sukija/suomi.sym sukija/suomi.tex
+           sukija/sanat/etuliitteet.lex sukija/sanat/lyhenteet.lex sukija/sanat/atk-lyhenteet.lex \
+           sukija/sukija.py sukija/suomi.all sukija/suomi.sym sukija/suomi.tex \
+           sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro
 
 
 # Files to ship only in the full source package
@@ -173,7 +173,6 @@ update-vocabulary:
 
 
 SUKIJA_COPY_FROM_VOCABULARY=\
-erikoisalat/atk-lyhenteet.lex \
 erikoisalat/linux-distributions.lex \
 erikoiset.lex \
 erikoissanat.lex \

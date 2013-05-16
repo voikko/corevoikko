@@ -1,4 +1,5 @@
 LEXICON = \
+atk-lyhenteet.lex \
 sanat/11-19.lex \
 sanat/latex.lex \
 sanat/jokinen.lex \
@@ -21,7 +22,6 @@ voikonsanat/sidesanat.lex \
 voikonsanat/suhdesanat.lex \
 voikonsanat/taivutustaydennykset.lex \
 voikonsanat/yhdyssanat.lex \
-voikonsanat/erikoisalat/atk-lyhenteet.lex \
 voikonsanat/erikoisalat/linux-distributions.lex
 
 all: suomi.pro $(LEXICON)
