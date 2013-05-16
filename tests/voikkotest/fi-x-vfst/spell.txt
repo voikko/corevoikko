@@ -1589,3 +1589,6 @@ kasvateta
 kääntääkseen
 hävittääkseen
 iskeäkseen
+hankkiakseen
+houkutellakseen
+hallitakseen
