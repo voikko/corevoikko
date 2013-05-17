@@ -79,7 +79,6 @@
 [perusmuoto: "joutsi", alku: "jou", luokka: nimisana, jatko: <peitsi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jumala", alku: "jumal", luokka: nimisana, jatko: <jumala>, äs: a, tiedot: <inen>];
 [perusmuoto: "juosta", alku: "juo", luokka: teonsana, jatko: <juosta>, äs: a];
-[perusmuoto: "jälki", alku: "jäl", luokka: nimisana, jatko: <jälki>, äs: ä];
 [perusmuoto: "jöötä", alku: "jöötä", luokka: nimisana, jatko: <loppu>, äs: ä];
 [perusmuoto: "Ka", alku: "Ka", luokka: nimi, jatko: <loppu, omanto_n, sisätulento_hVn>, äs: a, tiedot: <ei_ys, ei_voikko>];
 [perusmuoto: "kaartaa", alku: "kaar", luokka: teonsana, jatko: <saartaa>, äs: a];
@@ -126,14 +125,12 @@
 [perusmuoto: "paras", alku: "par", luokka: nimi_laatusana, jatko: <paras>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
-[perusmuoto: "pierrä", alku: "pier", luokka: teonsana, jatko: <purra>, äs: ä];
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pitkä", alku: "pi", luokka: nimi_laatusana, jatko: <pitkä>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "purra", alku: "pur", luokka: teonsana, jatko: <purra>, äs: a];
 [perusmuoto: "pyyhe", alku: "pyyh", luokka: nimisana, jatko: <tarvike>, äs: ä];
 [perusmuoto: "rakentaa", alku: "rake", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a]; # lt-loppuiset parfait-luokan sanat eivät sovi Joukahaiseen
@@ -154,7 +151,6 @@
 [perusmuoto: "sortaa", alku: "sor", luokka: teonsana, jatko: <sortaa>, äs: a];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
-[perusmuoto: "surra", alku: "sur", luokka: teonsana, jatko: <purra>, äs: a];
 [perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ysj>];
 [perusmuoto: "syöstä", alku: "syö", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "taitaa", alku: "tai", luokka: teonsana, jatko: <taitaa>, äs: a];

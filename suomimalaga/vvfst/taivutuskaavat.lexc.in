@@ -2359,6 +2359,11 @@ LEXICON Mennä
 n:n	<WC>Tulla_l_<A>	;
 Johdin_nUt_<A>	;
 
+LEXICON Purra
+<WC>Tulla_s_<A>	;
+r:r	<WC>Tulla_l_<A>	;
+Johdin_rUt_<A>	;
+
 LEXICON Tulla
 <WC>Tulla_s_<A>	;
 l:l	<WC>Tulla_l_<A>	;
@@ -3024,6 +3029,9 @@ neis:neis	Johdin_UUs_<A>	;
 
 LEXICON Johdin_lUt
 [Ll]l@C.JOHDETTAVA_LAATUSANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+
+LEXICON Johdin_rUt
+[Ll]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_vA
 [Ll]v@C.JOHDETTAVA_LAATUSANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@	Johdin_vA_muodot_<A>	;
