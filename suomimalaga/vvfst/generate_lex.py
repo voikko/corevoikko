@@ -129,7 +129,7 @@ def get_structure(wordform, vfst_word_class):
 		return structstr[0:returnedLength] + u'[X]'
 	else: return u""
 
-def get_diacritics(word):
+def get_diacritics(word, altforms, vfst_word_class):
 	diacritics = []
 	for group in word.childNodes:
 		if group.nodeType != Node.ELEMENT_NODE:
@@ -156,6 +156,8 @@ def get_diacritics(word):
 				diacritics.append(u"@P.YS_EI_JATKOA.ON@")
 			if flagName in [u"ei_ys", u"ei_ysj"]:
 				diacritics.append(u"@D.YS_ALKANUT@")
+	if vfst_word_class == u"[Ll]" and altforms[0].endswith(u"inen"):
+		diacritics.append(u"@C.INEN_VAADITTU@")
 	return diacritics
 
 def get_info_flags(word):
@@ -237,7 +239,8 @@ def handle_word(word):
 	if vfst_word_class == None: return
 	
 	# Get diacritics
-	diacritics = reduce(lambda x, y: x + y, get_diacritics(word), u"")
+	altforms = generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form")
+	diacritics = reduce(lambda x, y: x + y, get_diacritics(word, altforms, vfst_word_class), u"")
 	
 	# Get forced vowel type
 	if voikko_infclass == None and vfst_word_class != u"[La]":
@@ -259,7 +262,7 @@ def handle_word(word):
 	# Process all alternative forms
 	singlePartForms = []
 	multiPartForms = []
-	for altform in generate_lex_common.tValues(word.getElementsByTagName("forms")[0], "form"):
+	for altform in altforms:
 		wordform = altform.replace(u'|', u'').replace(u'=', u'')
 		if len(altform) == len(wordform.replace(u'-', u'')):
 			singlePartForms.append(altform)
