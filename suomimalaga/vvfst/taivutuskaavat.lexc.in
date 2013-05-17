@@ -3029,6 +3029,7 @@ neis:neis	Johdin_UUs_<A>	;
 
 LEXICON Johdin_lUt
 [Ll]l@C.JOHDETTAVA_LAATUSANAKSI@:l@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+[Ll]lee:lee	Omistusliite_<A>	;
 
 LEXICON Johdin_rUt
 [Ll]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
@@ -3053,6 +3054,7 @@ NimisanaYhteisetMonikonSijat2_<A>	;
 NimisanaYhteisetMonikonPaikallissijat_<A>	;
 <A>:<A>	Johdin_tOn_<A>	;
 <A>:<A>	Voittoaste_<A>	;
+<A>:<A>	Kerronto_sti_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
 
