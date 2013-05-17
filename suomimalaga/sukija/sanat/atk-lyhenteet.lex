@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006, 2009 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
+# Tekijänoikeus © 2006, 2009, 2013 Hannu Väisänen (Etunimi.Sukunimi@joensuu.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -64,7 +64,7 @@
 [alku: "Gt", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jq"];
 [alku: "icewm", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: aä];
 [alku: "IDE", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
-[alku: "IMAP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjjj"];
+[alku: "IMAP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: a, rakenne: "=jjjj"];
 [alku: "IP", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jj"]; # Internet Protocol
 [alku: "IRC", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä, rakenne: "=jjj"];
 [alku: "jpg", luokka: lyhenne, jatko: @lyhenteen_jatko, äs: ä];

@@ -220,6 +220,7 @@ Ilma
 Ilmajoki
 ilmentymä
 Ilta
+IMAP
 imeväinen
 imeväisikä
 immuunipuolustus

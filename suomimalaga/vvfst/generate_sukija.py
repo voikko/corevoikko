@@ -181,6 +181,7 @@ def generate_from_pattern (line, pattern_list):
 #
 spelling_word_list = [
     (u"alkovi",      (u"alkov",      u"alkoov")),
+    (u"ameba",       (u"ameb",       u"ameeb")),
     (u"arsenikki",   (u"arsenik",    u"arseniik")),
     (u"barbaari",    (u"barbaar",    u"barbar")),
     (u"beduiini",    (u"beduiin",    u"beduin")),
@@ -413,15 +414,15 @@ infile.close()
 # Generate old inflected forms.
 #
 outfile.write (u"[Ln][Xp]ien[X]ikene:ikene # ;\n")              # Ien.
-outfile.write (u"[Ln][Xp]kappale[X]kappalten:kappalten # ;\n")  # Kappaleiden.
+outfile.write (u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;\n")   # Kappaleiden.
 outfile.write (u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;\n")
-outfile.write (u"[Ln][Xp]mies[X]miesnä:miesnä # ;\n")           # Miehenä.
-outfile.write (u"[Ln][Xp]mies[X]miessä:miessä # ;\n")           # Miehenä.
-outfile.write (u"[Ln][Xp]neiti[X]neiden:neiden # ;\n")          # Neidin.
-outfile.write (u"[Lnl][Xp]nuori[X]nuorna:nuorna # ;\n")         # Nuorena.
-outfile.write (u"[Lnl][Xp]nuori[X]nuorra:nuorra # ;\n")         # Nuorena.
-outfile.write (u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä # ;\n") # Nuorenamiehenä.
-outfile.write (u"[Ln][Xp]pieni[X]piennä:piennä # ;\n")          # Pienenä.
-outfile.write (u"[Ln][Xp]sankari[X]sankarten:sankarten # ;\n")  # Sankarien.
-outfile.write (u"[Ln][Xp]venäjä[X]venättä:venättä # ;\n")       # Venäjää.
+outfile.write (u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä # ;\n")           # Miehenä.
+outfile.write (u"[Ln][Xp]mies[X]mies[Ses][Ny]sä:miessä # ;\n")           # Miehenä.
+outfile.write (u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden # ;\n")           # Neidin.
+outfile.write (u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna # ;\n")         # Nuorena.
+outfile.write (u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra # ;\n")         # Nuorena.
+outfile.write (u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä # ;\n")   # Nuorenamiehenä.
+outfile.write (u"[Ln][Xp]pieni[X]pien[Ses][Ny]nä:piennä # ;\n")          # Pienenä.
+outfile.write (u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;\n")  # Sankarien.
+outfile.write (u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä # ;\n")        # Venäjää; perusmuoto on oikeasti "venät".
 outfile.write (u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;\n")
