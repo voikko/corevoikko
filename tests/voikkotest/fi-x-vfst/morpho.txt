@@ -351,3 +351,10 @@ word:ab-kissa
 word:esiintyjittäin
   expected:1
     CLASS=seikkasana
+word:espanjalaisittain
+  expected:1
+    STRUCTURE==ppppppppppppppppp
+word:Helsinki-alueellinen
+  expected:1
+  analysis
+    STRUCTURE==ippppppp-=ppppppppppp

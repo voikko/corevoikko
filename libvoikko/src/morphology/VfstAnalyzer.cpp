@@ -341,7 +341,8 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 static void fixStructure(wchar_t * structure, Analysis * analysis) {
 	const wchar_t * className = analysis->getValue("CLASS");
 	if (className) {
-		if (wcscmp(className, L"laatusana") == 0) {
+		if (!wcschr(structure, L'-') &&
+		    (wcscmp(className, L"laatusana") == 0 || wcscmp(className, L"seikkasana") == 0)) {
 			for (size_t i = 0; structure[i]; i++) {
 				if (structure[i] == L'i') {
 					structure[i] = L'p';

@@ -897,6 +897,7 @@ LEXICON NOUN Vapaa_s
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Vapaa_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -907,6 +908,7 @@ LEXICON NOUN Vapaa_l
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Laatusana	Voittoaste_<A>	;
 
 LEXICON NOUN Kamee
 <WC>Kamee_s_<A>	;
@@ -3099,6 +3101,7 @@ LEXICON Johdin_ittAin
 
 LEXICON Johdin_lAinen
 [Ll]l<A>i@C.EI_YKS@:l<A>i@C.EI_YKS@	LaatusanaNainen_<A>	;
+[Ll]l<A>is:l<A>is:	Johdin_ittAin_<A>	;
 
 LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
