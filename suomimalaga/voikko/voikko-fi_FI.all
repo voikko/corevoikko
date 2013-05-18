@@ -3727,18 +3727,14 @@ end;
 subrule muokkaa_tietuetta($tietue, $taivutus):
   # Paikannimien jälkiliitteet
   if ($tietue.perusmuoto in <
-      "halli",
-      "kallio",
-      "kangas",
-      "kartano",
       "kivi",
       "koulu", "kulma",
-      "kylä", "köngäs", "laidun", "letto",
+      "laidun", "letto",
       "maa", "metsä",
       "nokka", "notko",
       "pää", "ryteikkö",
       "silta",
-      "talo", "tie",
+      "tie",
       "väylä"> and $tietue.luokka in <nimisana, nimi_laatusana>) then
     $tietue :=+ [paikannimen_jälkiliite: yes];
   end;
