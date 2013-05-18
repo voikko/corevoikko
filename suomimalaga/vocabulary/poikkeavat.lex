@@ -47,14 +47,11 @@
 [perusmuoto: "apetit", alku: "apetit", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "auer", alku: "au", luokka: nimisana, jatko: <auer>, äs: a];
 [perusmuoto: "autuas", alku: "autu", luokka: nimi_laatusana, jatko: <autuas>, äs: a];
-[perusmuoto: "Bernie", alku: "Bernie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "business", alku: "business", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "censeo", alku: "censeo", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "ceterum", alku: "ceterum", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "Châlons-sur-Marne", alku: "Châlons-sur-Marne", luokka: paikannimi, jatko: <parfait>, äs: a, rakenne: "=ipppppp-=ppp-=ipppp"]; # Taivutus todennäköisesti väärin
-[perusmuoto: "Curie", alku: "Curie", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "delendam", alku: "delendam", luokka: nimisana, jatko: <loppu>, äs: a];
-[perusmuoto: "Eddie", alku: "Eddie", luokka: etunimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "ehta", alku: "ehta", luokka: laatusana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "El", alku: "El", luokka: nimi, jatko: <loppu>, äs: a]; # El Salvador
 [perusmuoto: "enkeli", alku: "enkel", luokka: nimisana, jatko: <omanto_ten>, äs: ä];
@@ -75,7 +72,6 @@
 [perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
-[perusmuoto: "Jodie", alku: "Jodie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "joutsi", alku: "jou", luokka: nimisana, jatko: <peitsi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jumala", alku: "jumal", luokka: nimisana, jatko: <jumala>, äs: a, tiedot: <inen>];
 [perusmuoto: "juosta", alku: "juo", luokka: teonsana, jatko: <juosta>, äs: a];
@@ -88,7 +84,6 @@
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
 [perusmuoto: "kaunis", alku: "kaun", luokka: laatusana, jatko: <kaunis>, äs: a]; # J-luokka vieras, mutta "kaunEus"
-[perusmuoto: "Kemie", alku: "Kemie", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
 [perusmuoto: "kimmokerroin", alku: "kimmoker", luokka: nimisana, jatko: <kerroin>, äs: a, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
@@ -111,12 +106,8 @@
 [perusmuoto: "leikkaantua", alku: "leikkaan", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "levätä", alku: "le", luokka: teonsana, jatko: <levätä>, äs: ä];
 [perusmuoto: "lämmin", alku: "läm", luokka: nimi_laatusana, jatko: <lämmin>, äs: ä];
-[perusmuoto: "Martinique", alku: "Martinique", luokka: paikannimi, jatko: <nalle>, äs: a];
 [perusmuoto: "memoriam", alku: "memoriam", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
-[perusmuoto: "moni", alku: "mon", luokka: nimisana, jatko: <pieni>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "moni", alku: "mon", luokka: nimisana, jatko: <lohi>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <maa>, äs: a];
-[perusmuoto: "Natalie", alku: "Natalie", luokka: etunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "Ogilvy", alku: "Ogilvy", luokka: sukunimi, jatko: <nalle>, äs: aä];
 [perusmuoto: "ojentaa", alku: "oje", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "opotta", alku: "opot", luokka: nimisana, jatko: <opotta>, äs: a, tiedot: <murre>];
@@ -141,7 +132,6 @@
 [perusmuoto: "Sakar", alku: "Sakar", luokka: etunimi, jatko: <loppu>, äs: a];
 [perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
-[perusmuoto: "Selkie", alku: "Selkie", luokka: paikannimi, jatko: <nalle>, äs: ä];
 [perusmuoto: "Sergej", alku: "Serge", luokka: etunimi, jatko: <pii>, äs: ä]; # Perusmuoto "Sergej" ei tunnistu
 [perusmuoto: "siisti", alku: "siist", luokka: laatusana, jatko: <siisti>, äs: ä];
 [perusmuoto: "Sillitoe", alku: "Sillitoe", luokka: sukunimi, jatko: <nalle>, äs: a];
@@ -169,7 +159,6 @@
 [perusmuoto: "veitsi", alku: "vei", luokka: nimisana, jatko: <veitsi>, äs: ä];
 [perusmuoto: "veli", alku: "vel", luokka: nimisana, jatko: <veli>, äs: ä];
 [perusmuoto: "täysiveli", alku: "täysivel", luokka: nimisana, jatko: <veli>, äs: ä, rakenne: "=ppppp=pppp"];
-[perusmuoto: "video", alku: "video", luokka: nimisana, jatko: <video>, äs: a];
 [perusmuoto: "viis", alku: "viis", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "villi", alku: "vill", luokka: nimi_laatusana, jatko: <siisti>, äs: ä];

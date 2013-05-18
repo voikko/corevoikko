@@ -722,23 +722,33 @@ LEXICON NOUN Kulkija
 j:j	<WC>Apila_<A>	;
 
 LEXICON NOUN Apila
-[Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
-[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
-[Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
-[Sg][Nm]<O>iden:<O>iden	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]<O>itten:<O>itten	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sg][Nm]<A>in:<A>in	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
-[Sp][Nm]<O>it<A>:<O>it<A>	<WC>LiOlV_<A>	;
-[Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
-<O>:<O>	<WC>YhteisetMonikonSijat2_<A>	;
-[Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
-[Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
-<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
-<O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
+<A>:<A>	<WC>Apila_y_<A>	;
+<O>:<O>	<WC>Apila_m_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
-?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
-?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
+
+LEXICON NOUN Video
+<WC>Apila_y_<A>	;
+<WC>Apila_m_<A>	;
+
+LEXICON NOUN Apila_y
+[Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]t:t	Liitesana_<A>	;
+[Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
+[Sg][Nm]in:in	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]<A>:<A>	Liitesana_<A>	;
+[Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
+[Sill][Ny][[L]]:[[L]]	<WC>LiOlN_<A>	;
+<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
+
+LEXICON NOUN Apila_m
+[Sg][Nm]iden:iden	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itten:itten	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Karahka
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;

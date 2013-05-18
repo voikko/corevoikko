@@ -385,7 +385,7 @@ end: class
 # Kotus 8 polle
 class: 8
 sm-class: nalle
-match-word: Ce
+match-word: (?:C|U|i)e
 consonant-gradation: sw
 group: t
 transform-group: e
@@ -1192,7 +1192,7 @@ end: class
 # Kotus 23 tuohi
 class: 23
 sm-class: tuohi
-match-word: [lh]i
+match-word: [lhn]i
 consonant-gradation: -
 group: t
 transform-group: e
