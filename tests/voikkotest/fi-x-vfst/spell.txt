@@ -1609,3 +1609,8 @@ sienimäisiä
 espanjalaisittain
 harmainta
 harmaampaa
+sammakkomainen
+simpukkamainen
+kerrosmainen
+kupolimainen
+mannermainen

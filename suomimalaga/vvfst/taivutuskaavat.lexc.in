@@ -220,6 +220,7 @@ k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<O>:<O>	Johdin_tOn_<A>	;
+?Nimisana	k<O>:k<O>	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
@@ -256,6 +257,7 @@ LEXICON NOUN Paperi_s
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	i:i	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Paperi_w
 [Sn][Nm]it:it	Liitesana_<A>	;
@@ -381,6 +383,7 @@ e:e	<WC>YhteisetMonikonSijat2_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -807,6 +810,7 @@ LEXICON NOUN Solakka_s
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
+?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 
 ! Harhaanjohtava nimi, oikea esimerkkisana "hunaja"
 LEXICON NOUN Apaja
@@ -1054,6 +1058,7 @@ ken:ken	<WC>Taival_s_<A>	;
 LEXICON NOUN Taival_w
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Taival_s
 [Sn][Ny]e:e	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1312,6 +1317,7 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	kse:kse	Johdin_tOn_<A>	;
+?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Paikannimi	s:s	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kalleus
