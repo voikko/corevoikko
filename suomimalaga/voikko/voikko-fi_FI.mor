@@ -1787,7 +1787,8 @@ combi_rule johdin_nimisana_laatusanasta ($vasen, $oikea, $sana, $index):
   if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
-  if tavuviiva in $oikea.jatko then
+  if tavuviiva in $oikea.jatko and ($edellinen.tiedot = nil or
+        (not ei_ysa in $edellinen.tiedot and not ei_ys in $edellinen.tiedot)) then
     result $res, rules nimisana, laatusana, nimisana_teonsanasta,
            etuliite, tavuviiva, inen_johdos_nimisanasta;
   end;
