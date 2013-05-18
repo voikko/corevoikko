@@ -743,6 +743,8 @@ LEXICON NOUN Apila_y
 [Sill][Ny][[L]]:[[L]]	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Apila_m
@@ -1223,6 +1225,7 @@ LEXICON NOUN Kansi_l
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 
 LEXICON NOUN Tosi
 [Sn][Ny]si:si	<WC>NormaaliYsJatko_<A>	;
@@ -1455,6 +1458,7 @@ LEXICON NOUN Mies_s
 [Sn][Ny]:         <WC>NormaaliYsJatko_<A> ;
 [Sp][Ny]t<A>:t<A> <WC>LiOlV_<A> ;
 [Sg][Nm]ten:ten   <WC>MonikonGenetiiviEnJatko_<A> ;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Mies_he
 Omistusliite_<A> ;
@@ -1679,7 +1683,7 @@ LEXICON NOUN Kauris_s
 [Sill][Nm]ih:ih	<WC>LiOlN_<A>	;
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
-?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 

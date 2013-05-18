@@ -1614,3 +1614,10 @@ simpukkamainen
 kerrosmainen
 kupolimainen
 mannermainen
+ympyrämäinen
+miesmäinen
+sakarainen
+ruumiillinen
+kauriiton
+!kauriaton
+kannellinen
