@@ -556,7 +556,7 @@ combi_rule paikannimen_lainen_johdin ($vasen, $oikea, $sana, $index):
   define $res := $vasen + <[alku: $sana] + $oikea>;
   if tavuviiva in $oikea.jatko then
     result $res, rules nimisana, inen_johdos_nimisanasta, yhdysmerkki_lainen_johdoksen_jälkeen,
-                 nimisana_teonsanasta;
+                 nimisana_teonsanasta, paikannimen_lainen_johdos;
   end;
   if omistusliite in $oikea.jatko then result $res, rules omistusliite; end;
   if liitesana in $oikea.jatko then result $res, rules liitesana; end;

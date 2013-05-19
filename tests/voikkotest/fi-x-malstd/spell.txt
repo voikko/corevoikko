@@ -296,6 +296,7 @@ filosofissävytteinen # inen-johdos + inen-johdos ilman yhdysmerkkiä
 vaaleanpunakukkainen
 sisäänhyppimisketteryys
 ammattilaisuuteen
+italialaisamerikkalainen
 
 # = voitto- ja yliasteet =
 []

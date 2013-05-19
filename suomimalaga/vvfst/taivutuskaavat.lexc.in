@@ -2143,7 +2143,7 @@ LEXICON Antaa
 n:n	<WC>Kaivaa_w_<A>	;
 t:t	<WC>Kaivaa_s_<A>	;
 Pienennellä_<A>	;
-!TODO annattaa
+n<A>t:n<A>t	Alittaa_<A>	;
 
 LEXICON Raataa
 d:d	<WC>Kaivaa_w_<A>	;
@@ -3118,7 +3118,7 @@ LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Loppu	;
 
 LEXICON Johdin_lAinen
-[Ll]l<A>i@C.EI_YKS@:l<A>i@C.EI_YKS@	LaatusanaNainen_<A>	;
+[Ll]l<A>i@C.EI_YKS@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
 [Ll]l<A>is:l<A>is:	Johdin_ittAin_<A>	;
 
 LEXICON Johdin_ttU
