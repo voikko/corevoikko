@@ -1621,3 +1621,5 @@ ruumiillinen
 kauriiton
 !kauriaton
 kannellinen
+siistissä
+siisteys

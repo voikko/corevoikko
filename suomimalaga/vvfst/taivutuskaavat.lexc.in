@@ -300,6 +300,11 @@ LEXICON NOUN Kiiski
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
+LEXICON NOUN Siisti
+<WC>Risti_Siisti_s_<A>	;
+<WC>Risti_w_<A>	;
+?Laatusana	e:e	Johdin_Us_<A>	;
+
 LEXICON NOUN Risti
 <WC>Risti_s_<A>	;
 <WC>Risti_w_<A>	;
@@ -347,6 +352,12 @@ p:p	<WC>Risti_s_<A>	;
 v:v	<WC>Risti_w_<A>	;
 
 LEXICON NOUN Risti_s
+<WC>Risti_Siisti_s_<A>	;
+?Nimisana	i:i	Johdin_mAinen_<A>	;
+?Paikannimi	i:i	Johdin_lAinen_<A>	;
+?Laatusana	i:i	Johdin_Us_<A>	;
+
+LEXICON NOUN Risti_Siisti_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]ien:ien	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
@@ -355,10 +366,7 @@ LEXICON NOUN Risti_s
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
 [Ses][Ny]in<A>:in<A>	<WC>LiOlV_<A>	;
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
-?Nimisana	i:i	Johdin_mAinen_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
-?Paikannimi	i:i	Johdin_lAinen_<A>	;
-?Laatusana	i:i	Johdin_Us_<A>	;
 
 LEXICON NOUN Risti_w
 [Sn][Nm]it:it	Liitesana_<A>	;
