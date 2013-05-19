@@ -1916,7 +1916,7 @@ LEXICON Muistaa
 @C.V_SALLITTU@:@C.V_SALLITTU@	<WC>MuistaaMuistella_s_<A>	;
 @R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]ö:@R.V_SALLITTU.E@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@ö	NimisanaValo_ä	;
 @R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@[Ln]o:@R.V_SALLITTU.T@@C.V_SALLITTU@@C.JOHDETTAVA_NIMISANAKSI@o	NimisanaValo_a	;
-!TODO muistua
+@C.V_SALLITTU@<U>:@C.V_SALLITTU@<U>	Punoa_<A>	;
 
 LEXICON Inttää
 <WC>MuistaaMuistella_w_<A>	;
@@ -2208,6 +2208,7 @@ KertomanTekijäpääteVahva_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_nimitapa1A_<A>	;
+e:e	Johdin_nUt_<A>	;
 i:i	Johdin_nimitapa2_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 
@@ -2493,6 +2494,7 @@ Käskytapa_e_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
 e:e	Johdin_vA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
+Johdin_lUt_<A>	;
 Johdin_U_arvelu_<A>	;
 Johdin_tAvA_<A>	;
 
@@ -3090,6 +3092,7 @@ NimisanaYhteisetMonikonPaikallissijat_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
 Yliaste_<A>	;
 Johdin_UUs_<A>	;
+<A>i:<A>i	LaatusanaNainen_<A>	;
 
 LEXICON Johdin_mA
 [Ln]m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@:m@P.YS_EI_JATKOA.ON@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaAsema_<A>	;
