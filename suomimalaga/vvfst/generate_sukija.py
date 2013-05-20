@@ -34,6 +34,10 @@
 # This automatic generation will generate some old
 # spellings and spelling errors that do not exist in real life.
 
+# Testing:
+# foma -e "read att all-sukija.att" -e "save stack sukija.fst"
+# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >new.out; date
+# diff new.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 
 import codecs
 import getopt
@@ -161,6 +165,32 @@ spelling_pattern_list = [
 ]
 
 
+# Sanoja, joilla on vain muutama vanha taivutusmuoto. Generoidaan ne erikseen,
+# mutta vain sanoille, jotka ovat Joukahaisessa. Sanat ovat Nykysuomen
+# sanakirjan taivutuskaavojen numeroiden mukaisessa järjestyksessä.
+#
+# Tuomo Tuomi: Suomen kielen käänteissanakirja, 2. painos.
+# Suomalaisen Kirjallisuuden Seura 1980.
+
+
+# Herttua-tyyppisillä sanoilla on monikkomuodot, joissa ei ole o:ta (herttuilla, jne).
+#
+# 20 herttua (10, 10). Tuomi, s. 114, 116, 121, 124, 125.
+#
+def write_herttua (p):
+    outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaHerttua ;\n" % (p[0], p[0][0:len(p[0])-1], p[0][0:len(p[0])-1]))
+
+
+# Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
+#
+# 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
+#
+def write_ahven (p):
+    prefix = p[1][0:p[1].find (u"[X]")+3]
+    A = u"a" if re_A.search(p[0]) else u"ä"
+    outfile.write (u"%s%s[Ses][Ny]n%s:%sn%s NimisanaLiOlV_%s ;\n" % (prefix, p[0], A, p[0], A, A))
+
+
 def generate_from_pattern (line, pattern_list):
     for x in pattern_list:
         if x[0].match(line):
@@ -179,53 +209,110 @@ def generate_from_pattern (line, pattern_list):
 # Old spellings and common spelling errors of words
 # that do not conform to any pattern.
 #
-spelling_word_list = [
-    (u"alkovi",      (u"alkov",      u"alkoov")),
-    (u"ameba",       (u"ameb",       u"ameeb")),
-    (u"arsenikki",   (u"arsenik",    u"arseniik")),
-    (u"barbaari",    (u"barbaar",    u"barbar")),
-    (u"beduiini",    (u"beduiin",    u"beduin")),
-    (u"emali",       (u"emal",       u"emalj")),
-    (u"evankelinen", (u"evankeli",   u"evankeeli")),
-    (u"hevonen",     (u"hevo",       u"hevoi")),
-    (u"humaaninen",  (u"humaani",    u"humani")),
-    (u"huumori",     (u"huumor",     u"humor")),
-    (u"kamari",      (u"kamar",      u"kammar")),
-    (u"kameli",      (u"kamel",      u"kameel")),
-    (u"kampanja",    (u"kampanj",    u"kamppanj")),
-    (u"kaneli",      (u"kanel",      u"kaneel")),
-    (u"kirjoitelma", (u"kirjoitelm", u"kirjotelm")),
-    (u"kraatteri",   (u"kraatter",   u"kraater")),
-    (u"kulttuuri",   (u"kulttuur",   u"kultuur")),
-    (u"liipaisin",   (u"liipaisi",   u"liipasi")),
-    (u"matrikkeli",  (u"matrikkel",  u"matrikel")),
-    (u"modeemi",     (u"modeem",     u"modem")),
-    (u"paneeli",     (u"paneel",     u"panel")),
-    (u"pioni",       (u"pion",       u"pioon")),
-    (u"poliisi",     (u"poliis",     u"polis")),
-    (u"poliitikko",  (u"poliitik",   u"politik",
-                      u"poliitik",   u"poliitiik")),
-    (u"poliittinen", (u"poliitti",   u"politti",
-                      u"poliitti",   u"poliittii")),
-    (u"politiikka",  (u"politiik",   u"politik",
-                      u"politiik",   u"poliitiik")),
-    (u"preettori",   (u"preettor",   u"preetor")),
-    (u"pyramidi",    (u"pyramid",    u"pyramiid")),
-    (u"reettori",    (u"reettor",    u"reetor")),
-    (u"sampanja",    (u"sampanj",    u"samppanj")),
-    (u"sapeli",      (u"sapel",      u"sapeel")),
-    (u"senaatti",    ((u"senaat",    u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a"),
-                      (u"senaat",    u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a"))),
-    (u"senaattori",  (u"senaattor",  u"senaator")),
-    (u"serafi",      (u"seraf",      u"seraaf")),
-    (u"shampanja",   (u"shampanj",   u"shamppanj")),
-    (u"soopeli",     (u"soopel",     u"sopel")),
-    (u"teatteri",    (u"teatter",    u"teaater",
-                      u"teatter",    u"teaatter",
-                      u"teatter",    u"teater")),
-    (u"temperamentti", (u"temperament", u"tempperament")),
-    (u"Toscana",       (u"toscan",      u"toskan")),
-    (u"tällainen",     ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), ()))
+#    (u"", (u"", u"")),
+#
+word_list = [
+    (u"alkovi",         (u"alkov",       u"alkoov")),
+    (u"ameba",          (u"ameb",        u"ameeb")),
+    (u"arsenikki",      (u"arsenik",     u"arseniik")),
+    (u"assistentti",    (u"assistent",   u"asistent")),
+    (u"barbaari",       (u"barbaar",     u"barbar")),
+    (u"beduiini",       (u"beduiin",     u"beduin")),
+    (u"emali",          (u"emal",        u"emalj")),
+    (u"evankelinen",    (u"evankeli",    u"evankeeli")),
+    (u"hevonen",        (u"hevo",        u"hevoi")),
+    (u"humaaninen",     (u"humaani",     u"humani")),
+    (u"huumori",        (u"huumor",      u"humor")),
+    (u"invalidi",       (u"invalid",     u"invaliid")),
+    (u"juridinen",      (u"juridi",      u"juriidi")),
+    (u"kamari",         (u"kamar",       u"kammar")),
+    (u"kameli",         (u"kamel",       u"kameel")),
+    (u"kampanja",       (u"kampanj",     u"kamppanj")),
+    (u"kaneli",         (u"kanel",       u"kaneel")),
+    (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
+    (u"konossementti",  (u"konossement", u"konnossement")),
+    (u"kraatteri",      (u"kraatter",    u"kraater")),
+    (u"kulttuuri",      (u"kulttuur",    u"kultuur")),
+    (u"leegio",         (u"leegio",      u"legio")),
+    (u"legioona",       (u"legioon",     u"legion")),
+    (u"legioonalainen", (u"legioonalai", u"legionalai")),
+    (u"liipaisin",      (u"liipaisi",    u"liipasi")),
+    (u"majoneesi",      (u"majonees",    u"majonnees")),
+    (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
+    (u"modeemi",        (u"modeem",      u"modem")),
+    (u"paneeli",        (u"paneel",      u"panel")),
+    (u"pioni",          (u"pion",        u"pioon")),
+    (u"poliisi",        (u"poliis",      u"polis")),
+    (u"poliitikko",     (u"poliitik",    u"politik", u"poliitiik")),
+    (u"poliittinen",    (u"poliitti",    u"politti", u"poliittii")),
+    (u"politiikka",     (u"politiik",    u"politik", u"poliitiik")),
+    (u"preettori",      (u"preettor",    u"preetor")),
+    (u"pyramidi",       (u"pyramid",     u"pyramiid")),
+    (u"reettori",       (u"reettor",     u"reetor")),
+    (u"sampanja",       (u"sampanj",     u"samppanj")),
+    (u"sapeli",         (u"sapel",       u"sapeel")),
+    (u"senaatti",       ((u"senaat",     u"senaat", u"NimisanaTatti_a", u"NimisanaRisti_a"),
+                         (u"senaat",     u"senat",  u"NimisanaTatti_a", u"NimisanaRisti_a"))),
+    (u"senaattori",     (u"senaattor",   u"senaator")),
+    (u"serafi",         (u"seraf",       u"seraaf")),
+    (u"shampanja",      (u"shampanj",    u"shamppanj")),
+    (u"soolo",          (u"soolo",       u"solo")),
+    (u"soopeli",        (u"soopel",      u"sopel")),
+    (u"synagoga",       (u"synagog",     u"synagoog")),
+    (u"teatteri",       (u"teatter",     u"teaater", u"teaatter", u"teater")),
+    (u"temperamentti",  (u"temperament", u"tempperament")),
+    (u"tooga",          (u"toog",        u"tog")),
+    (u"Toscana",        (u"toscan",      u"toskan")),
+    (u"tällainen",      ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), ())),
+
+    (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;",
+                  write_ahven]),
+    (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
+    (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
+    (u"mies",    [u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä NimisanaLiOlV_ä ;",
+                  u"[Ln][Xp]mies[X]mies[Ses][Ny]sä:miessä NimisanaLiOlV_ä ;"]),
+    (u"nuori",   [u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;",
+                  u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;",
+                  u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä NimisanaLiOlV_ä ;"]),
+    (u"pieni",   [u"[Ll][Xp]pieni[X]pien[Ses][Ny]nä:piennä NimisanaLiOlV_ä ;"]),
+    (u"sankari", [u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;"]),
+    (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),
+    (u"venäjä",  [u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;"]),
+
+    (u"aurtua",  write_herttua),
+    (u"herttua", write_herttua),
+    (u"hierua",  write_herttua),
+    (u"juolua",  write_herttua),
+    (u"lastua",  write_herttua),
+    (u"liettua", write_herttua),
+    (u"luusua",  write_herttua),
+    (u"porstua", write_herttua),
+    (u"saarua",  write_herttua),
+    (u"tanhua",  write_herttua),
+
+    (u"aamen",   write_ahven),
+    (u"ahven",   write_ahven),
+    (u"haiven",  write_ahven),
+    (u"huomen",  write_ahven),
+    (u"häiven",  write_ahven),
+    (u"höyhen",  write_ahven),
+##  (u"ien",     write_ahven),  # See above.
+    (u"iljen",   write_ahven),
+    (u"joutsen", write_ahven),
+    (u"jäsen",   write_ahven),
+    (u"kymmen",  write_ahven),
+    (u"kämmen",  write_ahven),
+    (u"liemen",  write_ahven),
+    (u"paimen",  write_ahven),
+    (u"siemen",  write_ahven),
+    (u"ruumen",  write_ahven),
+    (u"terhen",  write_ahven),
+    (u"taimen",  write_ahven),
+    (u"tuumen",  write_ahven),
+    (u"tyven",   write_ahven),
+    (u"tyyven",  write_ahven),
+    (u"uumen",   write_ahven),
+    (u"vuomen",  write_ahven),
 ]
 
 
@@ -234,79 +321,36 @@ def convert_to_dictionary (word_list):
     l1 = map (lambda x : x[1], word_list)
     return dict (zip (l0, l1))
 
-
-sukija_dictionary = convert_to_dictionary (spelling_word_list)
-
-
-# Sanoja, joilla on vain muutama vanha taivutusmuoto. Generoidaan ne erikseen,
-# mutta vain sanoille, jotka ovat Joukahaisessa. Sanat ovat Nykysuomen
-# sanakirjan taivutuskaavojen numeroiden mukaisessa järjestyksessä.
-#
-# Tuomo Tuomi: Suomen kielen käänteissanakirja, 2. painos.
-# Suomalaisen Kirjallisuuden Seura 1980.
+sukija_dictionary = convert_to_dictionary (word_list)
 
 
-# Herttua-tyyppisillä sanoilla on monikkomuodot, joissa ei ole o:ta (herttuilla, jne).
-#
-# 20 herttua (10, 10). Tuomi, s. 114, 116, 121, 124, 125.
-#
-def write_herttua (p):
-    w = (p[0], p[0][0:len(p[0])-1], p[0][0:len(p[0])-1])
-    outfile.write (u"[Ln][Xp]%s[X]%s:%s NimisanaYhteisetMonikonPaikallissijat_a ;\n" % w)
-    outfile.write (u"[Ln][Xp]%s[X]%siden@C.EI_YKS@[Sg][Nm]:%siden@C.EI_YKS@ NimisanaMonikonGenetiiviEnJatko_a ;\n" % w)
-    outfile.write (u"[Ln][Xp]%s[X]%sitten@C.EI_YKS@[Sg][Nm]:%sitten@C.EI_YKS@ NimisanaMonikonGenetiiviEnJatko_a ;\n" % w)
-    outfile.write (u"[Ln][Xp]%s[X]%sita@C.EI_YKS@[Sp][Nm]:%sita@C.EI_YKS@ NimisanaLiOlV_a ;\n" % w)
-    outfile.write (u"[Ln][Xp]%s[X]%sina@C.EI_YKS@[Ses][Nm]:%sina@C.EI_YKS@ NimisanaLiOlV_a ;\n" % w)
-    outfile.write (u"[Ln][Xp]%s[X]%sihi@C.EI_YKS@[Sill][Nm]:%sihi@C.EI_YKS@ NimisanaLiOlN_a ;\n" % w)
+def error (line):
+    sys.stderr.write (line)
+    sys.stderr.write ("Wrong format in sukija_dictionary.\n")
+    sys.exit (1)
 
 
-# Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
-#
-# 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
-#
-def write_ahven (p):
-    prefix = p[1][0:p[1].find (u"[X]")+3]
-    essive = u"na" if re_A.search(p[0]) else u"nä"
-    outfile.write (u"%s%s[Ses][Ny]%s:%s%s Loppu ;\n" % (prefix, p[0], essive, p[0], essive))
+def write_list (line, key, data):
+    for x in data:
+        if type(x) == UnicodeType:
+            outfile.write (x + u"\n")
+        elif type(x) == FunctionType:
+            x ((key, line))
+        else:
+            error (line)
 
 
-function_list = [
-  (u"aurtua",  write_herttua),
-  (u"herttua", write_herttua),
-  (u"hierua",  write_herttua),
-  (u"juolua",  write_herttua),
-  (u"lastua",  write_herttua),
-  (u"liettua", write_herttua),
-  (u"luusua",  write_herttua),
-  (u"porstua", write_herttua),
-  (u"saarua",  write_herttua),
-  (u"tanhua",  write_herttua),
-
-  (u"aamen",   write_ahven),
-  (u"ahven",   write_ahven),
-  (u"haiven",  write_ahven),
-  (u"huomen",  write_ahven),
-  (u"häiven",  write_ahven),
-  (u"höyhen",  write_ahven),
-  (u"ien",     write_ahven),
-  (u"iljen",   write_ahven),
-  (u"joutsen", write_ahven),
-  (u"jäsen",   write_ahven),
-  (u"kymmen",  write_ahven),
-  (u"kämmen",  write_ahven),
-  (u"liemen",  write_ahven),
-  (u"paimen",  write_ahven),
-  (u"siemen",  write_ahven),
-  (u"ruumen",  write_ahven),
-  (u"terhen",  write_ahven),
-  (u"taimen",  write_ahven),
-  (u"tuumen",  write_ahven),
-  (u"tyven",   write_ahven),
-  (u"tyyven",  write_ahven),
-  (u"uumen",   write_ahven),
-  (u"vuomen",  write_ahven),
-]
-function_dictionary = convert_to_dictionary (function_list)
+def write_tuple (line, g):
+     if type(g[0]) == UnicodeType:
+         for i in range (1, len(g)):
+             replace_and_write (line, g[0], g[i])
+     elif type(g[0]) == TupleType:
+         for i in range (0, len(g)):
+             if len(g[i]) > 0:
+                 s = line.replace (g[i][2], g[i][3])
+                 outfile.write (replace (s, g[i][0], g[i][1]))
+     else:
+         error (line)
 
 
 # Extract base form from a line.
@@ -318,111 +362,73 @@ def generate_word (line, sukija_dictionary):
     if r:
         try:
             g = sukija_dictionary[r.group(1)]
-##            print (str(g[0]).encode('utf8'))
-            if type(g[0]) == UnicodeType:
-                for i in range (0, len(g), 2):
-                    replace_and_write (line, g[i], g[i+1])
-            elif type(g[0]) == TupleType:
-                for i in range (0, len(g)):
-                    if len(g[i]) > 0:
-                        s = line.replace (g[i][2], g[i][3])
-                        outfile.write (replace (s, g[i][0], g[i][1]))
-            else:
-                sys.stderr.write (line)
-                sys.stderr.write ("Wrong format in sukija_dictionary.\n")
-                sys.exit (1)
+	    if type(g) == ListType:
+                write_list (line, r.group(1), g)
+	    elif type(g) == TupleType:
+                write_tuple (line, g)
+	    elif type(g) == FunctionType:
+                g ((r.group(1), line))
+	    else:
+		error (line)
         except KeyError:  # It is not an error if a word is not in sukija_dictionary.
-            try:
-                f = function_dictionary[r.group(1)]
-                f ((r.group(1), line))
-            except KeyError:  # It is not an error if a word is not in function_dictionary.
                 pass
 
 
-# Copy Voikko vocabulary.
+# Copy Voikko vocabulary and insert forms that Sukija needs.
 #
-while True:
-    line = infile.readline()
-    if line == u"":
-        break;
-    if (Joukahainen_t.match(line)):
-        outfile.write (line + u"Sukija;\n") # Add "Sukija" to LEXICON Joukahainen.
-    else:
-        outfile.write (line)
-infile.close()
-
-
-infile = codecs.open (options["destdir"] + u"/olla-ei.lexc", "r", "UTF-8")
 while True:
     line = infile.readline()
     if line == u"":
         break;
     outfile.write (line)
+    if line == u"LEXICON Joukahainen\n":
+        outfile.write (u"Sukija ;\n")
+    generate_from_pattern (line, spelling_pattern_list)
+    generate_word (line, sukija_dictionary)
 infile.close()
 
 
 outfile.write (u"\n\n\n")
-outfile.write (u"LEXICON SukijaNuolaista_a\n")
-outfile.write (u"s:s   Nuolaista_w_a ;\n")
-outfile.write (u"s:s   Nuolaista_s_a ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_a ;\n")
 
-outfile.write (u"LEXICON SukijaNuolaista_ä\n")
-outfile.write (u"s:s   Nuolaista_w_ä ;\n")
-outfile.write (u"s:s   Nuolaista_s_ä ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_ä ;\n")
+OUTPUT = [
+u"LEXICON SukijaNuolaista_a",
+u"s:s   Nuolaista_w_a ;",
+u"s:s   Nuolaista_s_a ;",
+u"s:s   Johdin_U_arvelu_a ;",
+u"LEXICON SukijaNuolaista_ä",
+u"s:s   Nuolaista_w_ä ;",
+u"s:s   Nuolaista_s_ä ;",
+u"s:s   Johdin_U_arvelu_ä ;",
+u"LEXICON SukijaNuolaista_aä",
+u"s:s   Nuolaista_w_a ;",
+u"s:s   Nuolaista_w_ä ;",
+u"s:s   Nuolaista_s_a ;",
+u"s:s   Nuolaista_s_ä ;",
+u"s:s   Johdin_U_arvelu_a ;",
+u"s:s   Johdin_U_arvelu_ä ;",
+u"LEXICON SukijaRangaista_a",
+u"gas:gas Nuolaista_w_a ;",
+u"kas:kas Nuolaista_s_a ;",
+u"kas:kas Johdin_U_arvelu_a ;",
+u"LEXICON SukijaHerttua",
+u"@C.EI_YKS@[Sg][Nm]iden:@C.EI_YKS@iden NimisanaMonikonGenetiiviEnJatko_a ;",
+u"@C.EI_YKS@[Sg][Nm]itten:@C.EI_YKS@itten NimisanaMonikonGenetiiviEnJatko_a ;",
+u"@C.EI_YKS@[Sp][Nm]ita:@C.EI_YKS@ita NimisanaLiOlV_a ;",
+u"NimisanaYhteisetMonikonSijat2_a ;",
+u"@C.EI_YKS@[Sill][Nm]ihi:@C.EI_YKS@ihi NimisanaLiOlN_a ;",
+u"NimisanaYhteisetMonikonPaikallissijat_a ;",
+u"LEXICON SukijaOmistusliite_a_in",
+u"Omistusliite_a ;",
+u"[O1y]in:in Liitesana_a ;",
+u"LEXICON SukijaTuta",
+u"[Tn1p]takse:takse SukijaOmistusliite_a_in ;",
+u"[Tn2]ten:ten Liitesana_a ;",
+u"LEXICON Sukija",
+u"[Ln][Xp]aatelisneiti[X][Xr]ppppppp=[X]aatelisnei[Sg][Ny]den:aatelisneiden Loppu ;",
+u"[Ln][Xp]herrasneiti[X][Xr]pppppp=[X]herrasnei[Sg][Ny]den:herrasneiden Loppu ;",
+u"[Ln][Xp]hovineiti[X][Xr]pppp=[X]hovinei[Sg][Ny]den:hovineiden Loppu ;",
+u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;",
+]
 
-outfile.write (u"LEXICON SukijaNuolaista_aä\n")
-outfile.write (u"s:s   Nuolaista_w_a ;\n")
-outfile.write (u"s:s   Nuolaista_w_ä ;\n")
-outfile.write (u"s:s   Nuolaista_s_a ;\n")
-outfile.write (u"s:s   Nuolaista_s_ä ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_a ;\n")
-outfile.write (u"s:s   Johdin_U_arvelu_ä ;\n")
-
-outfile.write (u"LEXICON SukijaRangaista_a\n")
-outfile.write (u"gas:gas Nuolaista_w_a ;\n")
-outfile.write (u"kas:kas Nuolaista_s_a ;\n")
-outfile.write (u"kas:kas Johdin_U_arvelu_a ;\n")
-
-outfile.write (u"LEXICON SukijaOmistusliite_a_in\n")
-outfile.write (u"Omistusliite_a ;\n")
-outfile.write (u"[O1y]in:in Liitesana_a ;\n")
-
-outfile.write (u"LEXICON SukijaTuta\n")
-outfile.write (u"[Tn1p]takse:takse SukijaOmistusliite_a_in ;\n")
-outfile.write (u"[Tn2]ten:ten Liitesana_a ;\n")
-
-outfile.write (u"LEXICON Sukija\n")
-
-infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
-
-
-# Generate LEXICON Sukija, or, old spellings and common spelling errors for indexing.
-#
-while True:
-        line = infile.readline()
-        if line == u"":
-            break;
-
-        generate_from_pattern (line, spelling_pattern_list)
-
-        generate_word (line, sukija_dictionary)
-infile.close()
-
-
-# Generate old inflected forms.
-#
-outfile.write (u"[Ln][Xp]ien[X]ikene:ikene # ;\n")              # Ien.
-outfile.write (u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;\n")   # Kappaleiden.
-outfile.write (u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;\n")
-outfile.write (u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä # ;\n")           # Miehenä.
-outfile.write (u"[Ln][Xp]mies[X]mies[Ses][Ny]sä:miessä # ;\n")           # Miehenä.
-outfile.write (u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden # ;\n")           # Neidin.
-outfile.write (u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna # ;\n")         # Nuorena.
-outfile.write (u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra # ;\n")         # Nuorena.
-outfile.write (u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä # ;\n")   # Nuorenamiehenä.
-outfile.write (u"[Ln][Xp]pieni[X]pien[Ses][Ny]nä:piennä # ;\n")          # Pienenä.
-outfile.write (u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;\n")  # Sankarien.
-outfile.write (u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä # ;\n")        # Venäjää; perusmuoto on oikeasti "venät".
-outfile.write (u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;\n")
+for x in OUTPUT:
+    outfile.write (x + u"\n")
