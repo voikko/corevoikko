@@ -358,3 +358,7 @@ word:Helsinki-alueellinen
   expected:1
   analysis
     STRUCTURE==ippppppp-=ppppppppppp
+word:roomalaiskissa
+  expected:1
+  analysis
+    STRUCTURE==ppppppppp=ppppp

@@ -1250,6 +1250,7 @@ s:s	<WC>YhteisetMonikonSijat2_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
+?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Sisar
 <WC>Sisar_w_<A>	;
@@ -3057,7 +3058,7 @@ LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
-[Ll]t<A>v:t<A>v	LaatusanaAsema_<A>	;
+[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaAsema_<A>	;
 
 LEXICON Johdin_sUt
 [Ll]s@C.JOHDETTAVA_LAATUSANAKSI@:s@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
@@ -3075,7 +3076,7 @@ LEXICON Johdin_rUt
 [Ll]r@C.JOHDETTAVA_LAATUSANAKSI@:r@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
 
 LEXICON Johdin_vA
-[Ll]v@C.JOHDETTAVA_LAATUSANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@	Johdin_vA_muodot_<A>	;
+[Ll]v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:v@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	Johdin_vA_muodot_<A>	;
 
 LEXICON Johdin_vA_muodot
 [Sn][Ny]<A>:<A>	Omistusliite_<A>	;
@@ -3126,8 +3127,8 @@ LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Loppu	;
 
 LEXICON Johdin_lAinen
-[Ll]l<A>i@C.EI_YKS@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
-[Ll]l<A>is:l<A>is:	Johdin_ittAin_<A>	;
+[Ll][Dg]l<A>i@C.EI_YKS@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
+[Ll][Dg]l<A>is:l<A>is	NimisanaYsJatko	;
 
 LEXICON Johdin_ttU
 [Ll]t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:t@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;

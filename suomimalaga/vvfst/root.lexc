@@ -80,6 +80,9 @@ Multichar_Symbols
 [Ap]  ! kestämä (preesens)
 [Ai]  ! kertoma (imperfekti)
 
+! Johdoksiin liittyvät liput
+[Dg]  ! erisnimestä johdetaan yleisnimi
+
 ! Lisätietoliput
 [Ips] ! paikannimi taipuu sisäpaikallissijoissa
 [Ipu] ! paikannimi taipuu ulkopaikallissijoissa
