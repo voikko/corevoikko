@@ -1641,6 +1641,11 @@ LEXICON NOUN Iäkäs
 k<A>:k<A>	<WC>Vieras_s_<A>	;
 ?Laatusana	k<U>:k<U>	Johdin_Us_<A>	;
 
+LEXICON NOUN Kaunis
+i:i	<WC>Vieras_w_<A>	;
+i:i	<WC>Vieras_s_<A>	;
+?Laatusana	e:e	Johdin_Us_<A>	;
+
 LEXICON NOUN Altis
 i:i	<WC>Vieras_w_<A>	;
 ti:ti	<WC>Vieras_s_<A>	;

@@ -80,10 +80,8 @@
 [perusmuoto: "kaartaa", alku: "kaar", luokka: teonsana, jatko: <saartaa>, äs: a];
 [perusmuoto: "kaikaa", alku: "kaikaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a, tiedot: <yt>];
 [perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
-[perusmuoto: "kallis", alku: "kall", luokka: laatusana, jatko: <kaunis>, äs: a]; # J-luokka vieras, mutta "kallEus"
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
-[perusmuoto: "kaunis", alku: "kaun", luokka: laatusana, jatko: <kaunis>, äs: a]; # J-luokka vieras, mutta "kaunEus"
 [perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
 [perusmuoto: "kimmokerroin", alku: "kimmoker", luokka: nimisana, jatko: <kerroin>, äs: a, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
