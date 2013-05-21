@@ -35,7 +35,7 @@
 # spellings and spelling errors that do not exist in real life.
 
 # Testing:
-# foma -e "read att all-sukija.att" -e "save stack sukija.fst"
+# foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >new.out; date
 # diff new.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 
@@ -165,6 +165,11 @@ spelling_pattern_list = [
 ]
 
 
+def write_word (p):
+    prefix = p[1][0:p[1].find (u"[X]")+3]
+    outfile.write (u"%s%s:%s Sukija%s ;\n" % (prefix, p[0][0:len(p[0])-1], p[0][0:len(p[0])-1], p[2]))
+
+
 # Sanoja, joilla on vain muutama vanha taivutusmuoto. Generoidaan ne erikseen,
 # mutta vain sanoille, jotka ovat Joukahaisessa. Sanat ovat Nykysuomen
 # sanakirjan taivutuskaavojen numeroiden mukaisessa järjestyksessä.
@@ -177,18 +182,21 @@ spelling_pattern_list = [
 #
 # 20 herttua (10, 10). Tuomi, s. 114, 116, 121, 124, 125.
 #
-def write_herttua (p):
-    outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaHerttua ;\n" % (p[0], p[0][0:len(p[0])-1], p[0][0:len(p[0])-1]))
+
+
+# 33 lohi (2, 2). Tuomi, s. 151.
+# lohten, uuhten
+#
 
 
 # Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
 #
 # 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
 #
-def write_ahven (p):
-    prefix = p[1][0:p[1].find (u"[X]")+3]
-    A = u"a" if re_A.search(p[0]) else u"ä"
-    outfile.write (u"%s%s[Ses][Ny]n%s:%sn%s NimisanaLiOlV_%s ;\n" % (prefix, p[0], A, p[0], A, A))
+def write_ahven (line, word):
+    prefix = line[0:line.find (u"[X]")+3]
+    A = u"a" if re_A.search(word) else u"ä"
+    outfile.write (u"%s%s[Ses][Ny]n%s:%sn%s NimisanaLiOlV_%s ;\n" % (prefix, word, A, word, A, A))
 
 
 def generate_from_pattern (line, pattern_list):
@@ -222,9 +230,11 @@ word_list = [
     (u"evankelinen",    (u"evankeli",    u"evankeeli")),
     (u"hevonen",        (u"hevo",        u"hevoi")),
     (u"humaaninen",     (u"humaani",     u"humani")),
+    (u"husaari",        (u"husaar",      u"husar")),
     (u"huumori",        (u"huumor",      u"humor")),
     (u"invalidi",       (u"invalid",     u"invaliid")),
     (u"juridinen",      (u"juridi",      u"juriidi")),
+    (u"kaleeri",        (u"kaleer",      u"kaler")),
     (u"kamari",         (u"kamar",       u"kammar")),
     (u"kameli",         (u"kamel",       u"kameel")),
     (u"kampanja",       (u"kampanj",     u"kamppanj")),
@@ -264,9 +274,9 @@ word_list = [
     (u"tooga",          (u"toog",        u"tog")),
     (u"Toscana",        (u"toscan",      u"toskan")),
     (u"tällainen",      ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), ())),
+    (u"upseeri",        (u"upseer",      u"upser")),
 
-    (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;",
-                  write_ahven]),
+    (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;"]),
     (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
     (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
     (u"mies",    [u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä NimisanaLiOlV_ä ;",
@@ -278,43 +288,51 @@ word_list = [
     (u"sankari", [u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;"]),
     (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),
     (u"venäjä",  [u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;"]),
-
-    (u"aurtua",  write_herttua),
-    (u"herttua", write_herttua),
-    (u"hierua",  write_herttua),
-    (u"juolua",  write_herttua),
-    (u"lastua",  write_herttua),
-    (u"liettua", write_herttua),
-    (u"luusua",  write_herttua),
-    (u"porstua", write_herttua),
-    (u"saarua",  write_herttua),
-    (u"tanhua",  write_herttua),
-
-    (u"aamen",   write_ahven),
-    (u"ahven",   write_ahven),
-    (u"haiven",  write_ahven),
-    (u"huomen",  write_ahven),
-    (u"häiven",  write_ahven),
-    (u"höyhen",  write_ahven),
-##  (u"ien",     write_ahven),  # See above.
-    (u"iljen",   write_ahven),
-    (u"joutsen", write_ahven),
-    (u"jäsen",   write_ahven),
-    (u"kymmen",  write_ahven),
-    (u"kämmen",  write_ahven),
-    (u"liemen",  write_ahven),
-    (u"paimen",  write_ahven),
-    (u"siemen",  write_ahven),
-    (u"ruumen",  write_ahven),
-    (u"terhen",  write_ahven),
-    (u"taimen",  write_ahven),
-    (u"tuumen",  write_ahven),
-    (u"tyven",   write_ahven),
-    (u"tyyven",  write_ahven),
-    (u"uumen",   write_ahven),
-    (u"vuomen",  write_ahven),
 ]
 
+
+function_list = [
+    (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaHerttua ;\n" %
+                                        (word, word[0:len(word)-1], word[0:len(word)-1])),
+     (u"aurtua",
+      u"herttua",
+      u"hierua",
+      u"juolua",
+      u"lastua",
+      u"liettua",
+      u"luusua",
+      u"porstua",
+      u"saarua",
+      u"tanhua")),
+    (write_ahven,
+     (u"aamen",
+      u"ahven",
+      u"haiven",
+      u"huomen",
+      u"häiven",
+      u"höyhen",
+      u"ien",
+      u"iljen",
+      u"joutsen",
+      u"jäsen",
+      u"kymmen",
+      u"kämmen",
+      u"liemen",
+      u"paimen",
+      u"siemen",
+      u"ruumen",
+      u"terhen",
+      u"taimen",
+      u"tuumen",
+      u"tyven",
+      u"tyyven",
+      u"uumen",
+      u"vuomen")),
+    (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaLohi ;\n" %
+                                        (word, word[0:len(word)-1], word[0:len(word)-1])),
+     (u"lohi",
+      u"uuhi"))
+]
 
 def convert_to_dictionary (word_list):
     l0 = map (lambda x : x[0], word_list)
@@ -334,13 +352,11 @@ def write_list (line, key, data):
     for x in data:
         if type(x) == UnicodeType:
             outfile.write (x + u"\n")
-        elif type(x) == FunctionType:
-            x ((key, line))
         else:
             error (line)
 
 
-def write_tuple (line, g):
+def write_tuple (line, key, g):
      if type(g[0]) == UnicodeType:
          for i in range (1, len(g)):
              replace_and_write (line, g[0], g[i])
@@ -365,13 +381,20 @@ def generate_word (line, sukija_dictionary):
 	    if type(g) == ListType:
                 write_list (line, r.group(1), g)
 	    elif type(g) == TupleType:
-                write_tuple (line, g)
-	    elif type(g) == FunctionType:
-                g ((r.group(1), line))
+                write_tuple (line, r.group(1), g)
 	    else:
 		error (line)
         except KeyError:  # It is not an error if a word is not in sukija_dictionary.
-                pass
+            pass
+
+
+def generate_from_function (line, function_list):
+    r = base_form_re.search (line)
+    if r:
+        for x in function_list:
+            if r.group(1) in x[1]:
+                x[0] (line, r.group(1))
+
 
 
 # Copy Voikko vocabulary and insert forms that Sukija needs.
@@ -385,6 +408,7 @@ while True:
         outfile.write (u"Sukija ;\n")
     generate_from_pattern (line, spelling_pattern_list)
     generate_word (line, sukija_dictionary)
+    generate_from_function (line, function_list)
 infile.close()
 
 
@@ -417,6 +441,8 @@ u"@C.EI_YKS@[Sp][Nm]ita:@C.EI_YKS@ita NimisanaLiOlV_a ;",
 u"NimisanaYhteisetMonikonSijat2_a ;",
 u"@C.EI_YKS@[Sill][Nm]ihi:@C.EI_YKS@ihi NimisanaLiOlN_a ;",
 u"NimisanaYhteisetMonikonPaikallissijat_a ;",
+u"LEXICON SukijaLohi",
+u"@C.EI_YKS@[Sg][Nm]ten:@C.EI_YKS@ten NimisanaMonikonGenetiiviEnJatko_a ;",
 u"LEXICON SukijaOmistusliite_a_in",
 u"Omistusliite_a ;",
 u"[O1y]in:in Liitesana_a ;",
