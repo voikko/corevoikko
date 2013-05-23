@@ -2509,6 +2509,7 @@ TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
 Johdin_tAvA_<A>	;
 Johdin_lUt_<A>	;
+Johdin_tU_<A>	;
 
 LEXICON Katsella_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -3173,7 +3174,7 @@ LEXICON Johdin_ttU
 [Ll]tt<U><A>:tt<U><A>	OlV_<A>	;
 
 LEXICON Johdin_tU
-[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaLaatu_<A>	;
+[Ll]@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLaatu_<A>	;
 [Ll]t<U>:t<U>	Johdin_nUt_<A>	;
 
 LEXICON Kerronto_sti
@@ -3334,6 +3335,7 @@ Loppu	;
 -[Bc]:-	Loppu	;
 [Sn][Nm]%:t:%:t	Liitesana_<A>	;
 [Sg][Ny]%:n:%:n	Liitesana_<A>	;
+[Sg][Ny]%:<A>n:%:<A>n	Liitesana_<A>	;
 [Sg][Ny]%:in:%:in	Liitesana_<A>	;
 [Sg][Nm]%:iden:%:iden	Liitesana_<A>	;
 [Sp][Ny]%:<A><A>:%:<A><A>	Liitesana_<A>	;
@@ -3349,7 +3351,10 @@ Loppu	;
 [Sela][Nm]%:ist<A>:%:st<A>	Liitesana_<A>	;
 [Sill][Ny]%:seen:%:seen	Liitesana_<A>	;
 [Sill][Ny]%:iin:%:iin	Liitesana_<A>	;
+[Sill][Ny]%:<O><O>n:%:<O><O>n	Liitesana_<A>	;
 [Sill][Ny]%:hen:%:hen	Liitesana_<A>	;
+[Sill][Ny]%:h<A>n:%:h<A>n	Liitesana_<A>	;
+[Sill][Ny]%:h<U>n:%:h<U>n	Liitesana_<A>	;
 [Sill][Nm]%:ihin:%:ihin	Liitesana_<A>	;
 [Sade][Ny]%:ll<A>:%:ll<A>	Liitesana_<A>	;
 [Sade][Nm]%:ill<A>:%:ill<A>	Liitesana_<A>	;
