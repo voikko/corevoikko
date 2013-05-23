@@ -178,17 +178,6 @@ def write_word (p):
 # Suomalaisen Kirjallisuuden Seura 1980.
 
 
-# Herttua-tyyppisillä sanoilla on monikkomuodot, joissa ei ole o:ta (herttuilla, jne).
-#
-# 20 herttua (10, 10). Tuomi, s. 114, 116, 121, 124, 125.
-#
-
-
-# 33 lohi (2, 2). Tuomi, s. 151.
-# lohten, uuhten
-#
-
-
 # Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
 #
 # 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
@@ -226,6 +215,7 @@ word_list = [
     (u"assistentti",    (u"assistent",   u"asistent")),
     (u"barbaari",       (u"barbaar",     u"barbar")),
     (u"beduiini",       (u"beduiin",     u"beduin")),
+    (u"biljoona",       (u"biljoon",     u"biljon")),
     (u"emali",          (u"emal",        u"emalj")),
     (u"evankelinen",    (u"evankeli",    u"evankeeli")),
     (u"hevonen",        (u"hevo",        u"hevoi")),
@@ -249,13 +239,19 @@ word_list = [
     (u"liipaisin",      (u"liipaisi",    u"liipasi")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
+    (u"miljoona",       (u"miljoon",     u"miljon")),
     (u"modeemi",        (u"modeem",      u"modem")),
     (u"paneeli",        (u"paneel",      u"panel")),
+    (u"pataljoona",     (u"pataljoon",   u"pataljon")),
+    (u"patriisi",       (u"patriis",     u"patris")),
+    (u"persoona",       (u"persoon",     u"person")),
     (u"pioni",          (u"pion",        u"pioon")),
+    (u"plutoona",       (u"plutoon",     u"pluton")),
     (u"poliisi",        (u"poliis",      u"polis")),
     (u"poliitikko",     (u"poliitik",    u"politik", u"poliitiik")),
     (u"poliittinen",    (u"poliitti",    u"politti", u"poliittii")),
     (u"politiikka",     (u"politiik",    u"politik", u"poliitiik")),
+    (u"posliini",       (u"posliin",     u"poslin"   u"porsliin", u"porslin")),
     (u"preettori",      (u"preettor",    u"preetor")),
     (u"pyramidi",       (u"pyramid",     u"pyramiid")),
     (u"reettori",       (u"reettor",     u"reetor")),
@@ -273,7 +269,7 @@ word_list = [
     (u"temperamentti",  (u"temperament", u"tempperament")),
     (u"tooga",          (u"toog",        u"tog")),
     (u"Toscana",        (u"toscan",      u"toskan")),
-    (u"tällainen",      ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), ())),
+    (u"tällainen",      ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), )),
     (u"upseeri",        (u"upseer",      u"upser")),
 
     (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;"]),
@@ -281,19 +277,35 @@ word_list = [
     (u"maailma", [u"[Ln][Xp]maailma[X]maailmoitse:maailmoitse # ;"]),
     (u"mies",    [u"[Ln][Xp]mies[X]mies[Ses][Ny]nä:miesnä NimisanaLiOlV_ä ;",
                   u"[Ln][Xp]mies[X]mies[Ses][Ny]sä:miessä NimisanaLiOlV_ä ;"]),
-    (u"nuori",   [u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;",
-                  u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;",
-                  u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä NimisanaLiOlV_ä ;"]),
     (u"pieni",   [u"[Ll][Xp]pieni[X]pien[Ses][Ny]nä:piennä NimisanaLiOlV_ä ;"]),
     (u"sankari", [u"[Ln][Xp]sankari[X]sankar[Sg][Nm]ten:sankarten # ;"]),
     (u"tuta",    [u"[Lt][Xp]tuta[X]tu:tu SukijaTuta ;"]),
     (u"venäjä",  [u"[Ln][Xp]venäjä[X]venä[Sp][Ny]ttä:venättä NimisanaLiOlV_ä ;"]),
+
+    # 39 nuori (3, 3). Tuomi, s. 182, 184.
+    #
+    (u"juuri",   [u"[Ln][Xp]juuri[X]juur[Ses][Ny]na:juurna NimisanaLiOlV_a ;",
+                  u"[Ln][Xp]juuri[X]juur[Ses][Ny]ra:juurra NimisanaLiOlV_a ;"]),
+    (u"nuori",   [u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]na:nuorna NimisanaLiOlV_a ;",
+                  u"[Lnl][Xp]nuori[X]nuor[Ses][Ny]ra:nuorra NimisanaLiOlV_a ;"]),
+    (u"suuri",   [u"[Lnl][Xp]suuri[X]suur[Ses][Ny]na:suurna NimisanaLiOlV_a ;",
+                  u"[Lnl][Xp]suuri[X]suur[Ses][Ny]ra:suurra NimisanaLiOlV_a ;"]),
+
+    # 46 hapsi (1, 1). Tuomi, s. 190. -- Vvfst tunnistaa muodot "hasten" ja "hapsien".
+    # hasna, hassa, hasten, hapsien   -- Nämä ovat niin harvinaisia, että tarvitseeko näitä indeksoinnissa?
+    #
+#    (u"hapsi", [u"[Ln][Xp]hapsi[X]has[Ses][Ny]na:hasna NimisanaLiOlV_a ;",
+#                u"[Ln][Xp]hapsi[X]has[Ses][Ny]sa:hassa NimisanaLiOlV_a ;"]),
 ]
 
 
 function_list = [
+    # Herttua-tyyppisillä sanoilla on monikkomuodot, joissa ei ole o:ta (herttuilla, jne).
+    #
+    # 20 herttua (10, 10). Tuomi, s. 114, 116, 121, 124, 125.
+    #
     (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaHerttua ;\n" %
-                                        (word, word[0:len(word)-1], word[0:len(word)-1])),
+                                       (word, word[0:len(word)-1], word[0:len(word)-1])),
      (u"aurtua",
       u"herttua",
       u"hierua",
@@ -304,6 +316,11 @@ function_list = [
       u"porstua",
       u"saarua",
       u"tanhua")),
+
+    # Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
+    #
+    # 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
+    #
     (write_ahven,
      (u"aamen",
       u"ahven",
@@ -328,8 +345,12 @@ function_list = [
       u"tyyven",
       u"uumen",
       u"vuomen")),
+
+    # 33 lohi (2, 2). Tuomi, s. 151.
+    # lohten, uuhten
+    #
     (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaLohi ;\n" %
-                                        (word, word[0:len(word)-1], word[0:len(word)-1])),
+                                       (word, word[0:len(word)-1], word[0:len(word)-1])),
      (u"lohi",
       u"uuhi"))
 ]
@@ -362,9 +383,8 @@ def write_tuple (line, key, g):
              replace_and_write (line, g[0], g[i])
      elif type(g[0]) == TupleType:
          for i in range (0, len(g)):
-             if len(g[i]) > 0:
-                 s = line.replace (g[i][2], g[i][3])
-                 outfile.write (replace (s, g[i][0], g[i][1]))
+             s = line.replace (g[i][2], g[i][3])
+             outfile.write (replace (s, g[i][0], g[i][1]))
      else:
          error (line)
 
@@ -443,6 +463,7 @@ u"@C.EI_YKS@[Sill][Nm]ihi:@C.EI_YKS@ihi NimisanaLiOlN_a ;",
 u"NimisanaYhteisetMonikonPaikallissijat_a ;",
 u"LEXICON SukijaLohi",
 u"@C.EI_YKS@[Sg][Nm]ten:@C.EI_YKS@ten NimisanaMonikonGenetiiviEnJatko_a ;",
+u"@C.EI_YKS@[Sg][Nm]te:@C.EI_YKS@te Omistusliite_a ;",
 u"LEXICON SukijaOmistusliite_a_in",
 u"Omistusliite_a ;",
 u"[O1y]in:in Liitesana_a ;",
@@ -454,6 +475,7 @@ u"[Ln][Xp]aatelisneiti[X][Xr]ppppppp=[X]aatelisnei[Sg][Ny]den:aatelisneiden Lopp
 u"[Ln][Xp]herrasneiti[X][Xr]pppppp=[X]herrasnei[Sg][Ny]den:herrasneiden Loppu ;",
 u"[Ln][Xp]hovineiti[X][Xr]pppp=[X]hovinei[Sg][Ny]den:hovineiden Loppu ;",
 u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;",
+u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä NimisanaLiOlV_ä ;",
 ]
 
 for x in OUTPUT:
