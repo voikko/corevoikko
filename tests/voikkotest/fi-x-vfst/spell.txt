@@ -1640,3 +1640,7 @@ naisteni
 naistesi
 naistemme
 naistenne
+veli
+veljen
+pitkä
+pitkillä

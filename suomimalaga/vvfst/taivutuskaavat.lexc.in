@@ -477,6 +477,23 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
+LEXICON NOUN Veli
+[Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]je:je	Omistusliite_<A>	;
+[Sn][Nm]jet:jet	Liitesana_<A>	;
+[Sg][Ny]jen:jen	<WC>YksikönGenetiivinJatko_<A>	;
+je:je	<WC>YhteisetYksikönPaikallissijat_<A>	;
+j:j	<WC>YhteisetMonikonPaikallissijat_<A>	;
+[Sg][Nm]ji:ji	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]je<A>:je<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]ji<A>:ji<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]jen<A>:jen<A>	<WC>LiOlV_<A>	;
+j:j	<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]jee:jee	<WC>LiOlN_<A>	;
+[Sill][Nm]jii:jii	<WC>LiOlN_<A>	;
+?Nimisana	i:i	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+
 LEXICON NOUN Nalle
 <WC>Nalle_s_<A>	;
 <WC>Nalle_w_<A>	;
@@ -675,6 +692,24 @@ LEXICON NOUN Koira_s
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
+
+LEXICON NOUN Pitkä
+[Sn][Ny]tk<A>:tk<A>	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]tk<A>t:tk<A>t	Liitesana_<A>	;
+[Sg][Ny]tk<A>n:tk<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+tk<A>:tk<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+[Sg][Nm]tki:tki	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]tk<A>:tk<A>	<WC>MonikonGenetiiviInJatko_<A>	;
+[Sp][Ny]tk<A><A>:tk<A><A>	Liitesana_<A>	;
+[Sp][Nm]tki<A>:tki<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]tk<A>n<A>:tk<A>n<A>	<WC>LiOlV_<A>	;
+tk:tk	<WC>YhteisetMonikonPaikallissijat_<A>	;
+tk:tk	<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]tk<A><A>:tk<A><A>	<WC>LiOlN_<A>	;
+[Sill][Nm]tkii:tkii	<WC>LiOlN_<A>	;
+?Laatusana	tk:tk	Johdin_UUs_<A>	;
+?Laatusana	te:te	Voittoaste_<A>	;
+?Laatusana	s:s	Yliaste_<A>	;
 
 ! Oikea esimerkkisana "hattara"
 LEXICON NOUN Matala
