@@ -4454,7 +4454,7 @@ subrule kalsium ($tietue, $vahva_aste, $heikko_aste):
                                   [osanto_A: $vahva_aste  + "i"],
                                   sisätulento_Vn,
                                   $vahva_aste + "i", $vahva_aste) +
-                        [johdin_tOn:      $heikko_aste + "e",
+                        [johdin_tOn:      $heikko_aste + "i",
                          johdin_lAinen:   $vahva_aste + "i",
                          johdin_mAinen:   $vahva_aste,
                          johdin_inen:     $vahva_aste] +
