@@ -1714,7 +1714,8 @@ LEXICON NOUN Vieras_s
 [[L]][Ses][Ny]n<A>:[[L]]n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [[L]][Sill][Ny]see:[[L]]see	<WC>LiOlN_<A>	;
-[[L]][Sill][Nm]ih:[[L]]ih	<WC>LiOlN_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 [[L]]:[[L]]	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
@@ -2014,7 +2015,7 @@ LEXICON Hujahtaa
 hd:hd	<WC>MuistaaMuistella_w_<A>	;
 ht:ht	<WC>MuistaaMuistella_s_<A>	;
 hd:hd	Johdin_Us_ksen_<A>	;
-!TODO hujauttaa
+<U>t:<U>t	Alittaa_<A>	;
 
 LEXICON Kirjoittaa
 it:it	<WC>MuistaaMuistella_w_<A>	;
