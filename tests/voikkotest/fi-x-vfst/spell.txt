@@ -1646,3 +1646,6 @@ pitkä
 pitkillä
 katseltuaan
 myydyimpiä
+ruoka
+ruoan
+ruuan

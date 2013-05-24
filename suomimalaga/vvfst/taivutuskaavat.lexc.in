@@ -711,6 +711,13 @@ tk:tk	<WC>YhteisetMonikonSijat2_<A>	;
 ?Laatusana	te:te	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 
+LEXICON NOUN Ruoka
+<O>:<O>	<WC>Hoikka_<A>	;
+[Sn][Nm]<U><A>t:<U><A>t	Liitesana_<A>	;
+[Sg][Ny]<U><A>n:<U><A>n	<WC>YksikönGenetiivinJatko_<A>	;
+<U><A>:<U><A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Nimisana	<U><A>:<U><A>	Johdin_tOn_<A>	;
+
 ! Oikea esimerkkisana "hattara"
 LEXICON NOUN Matala
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;

@@ -3730,7 +3730,6 @@ subrule muokkaa_tietuetta($tietue, $taivutus):
       "kivi",
       "koulu", "kulma",
       "laidun", "letto",
-      "maa", "metsä",
       "nokka", "notko",
       "pää", "ryteikkö",
       "silta",
