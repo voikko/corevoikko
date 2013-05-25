@@ -291,6 +291,7 @@ LEXICON NOUN Autio
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Laatusana	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kiiski
 <WC>Risti_<A>	;
@@ -757,6 +758,7 @@ n:n	<WC>Asema_w_<A>	;
 LEXICON NOUN Asema_s
 [Sn][Ny]<A>:<A>	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
@@ -2431,6 +2433,7 @@ LEXICON Nuolaista_w
 TositavanKertomaTiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Käskytapa_e_<A>	;
+EhtotapaTa_<A>	;
 Johdin_tU_tA_<A>	;
 Johdin_sUt_<A>	;
 Johdin_tAvA_<A>	;
@@ -2441,6 +2444,7 @@ e:e	KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
+Ehtotapa_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
@@ -2454,6 +2458,7 @@ LEXICON Purra
 <WC>Tulla_s_<A>	;
 r:r	<WC>Tulla_l_<A>	;
 Johdin_rUt_<A>	;
+e:e	Johdin_ntA_<A>	;
 
 LEXICON Tulla
 <WC>Tulla_s_<A>	;
@@ -2949,6 +2954,7 @@ ise:ise	KestämänTekijäpääteHeikko_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
 ise:ise	Johdin_vA_<A>	;
 ise:ise	Johdin_mA_<A>	;
+isi:isi	Johdin_ja_kulkija_<A>	;
 
 LEXICON Rakentaa
 Saksantaa_<A>	;
@@ -2960,6 +2966,7 @@ LEXICON Nähdä
 e:e	KestämänTekijäpääteHeikko_<A>	;
 ke:ke	Johdin_mA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
+k:k	Ehtotapa_<A>	;
 
 LEXICON KestämänTekijäpääteHeikko
 @D.VAIN_YM3@[Tt][Ap][P1][Ny]n:@D.VAIN_YM3@n	Liitesana_<A>	;
