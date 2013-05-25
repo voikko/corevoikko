@@ -1666,3 +1666,8 @@ kanavoidulla
 !katseltulla
 katsellulla
 spekuloitu
+verhoiltu
+X:ään
+H:hon
+täräytti
+vuoristoiseen

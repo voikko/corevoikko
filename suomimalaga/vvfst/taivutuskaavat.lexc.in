@@ -187,6 +187,7 @@ LEXICON NOUN Arvelu_s
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Arvelu_sl
 [Sill][Ny]:	<WC>LiOlN_<A>	;
@@ -2554,6 +2555,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 Johdin_lUt_<A>	;
 Johdin_U_arvelu_<A>	;
 Johdin_tAvA_<A>	;
+Johdin_tU_lA_<A>	;
 
 LEXICON Haravoida
 HaravoidaKanavoida_<A>	;
@@ -2936,9 +2938,9 @@ Katketa_s_<A>	;
 
 LEXICON Kihistä
 Kitistä_<A>	;
+<A><U>t:<A><U>t	MuistaaMuistella_w_<A>	;
+<A><U>tt:<A><U>tt	MuistaaMuistella_s_<A>  ;
 !TODO kihahtaa
-!TODO kihauttaa
-!TODO kihautella
 
 LEXICON Kitistä
 [Tn1]ist<A>:ist<A>	Liitesana_<A>	;
@@ -3377,9 +3379,11 @@ Loppu	;
 [Sela][Nm]%:ist<A>:%:st<A>	Liitesana_<A>	;
 [Sill][Ny]%:seen:%:seen	Liitesana_<A>	;
 [Sill][Ny]%:iin:%:iin	Liitesana_<A>	;
-[Sill][Ny]%:<O><O>n:%:<O><O>n	Liitesana_<A>	;
+[Sill][Ny]%:<A><A>n:%:<A><A>n	Liitesana_<A>	;
+[Sill][Ny]%:<O><O>n:%:<O><O>n	Liitesana_<A>   ;
 [Sill][Ny]%:hen:%:hen	Liitesana_<A>	;
 [Sill][Ny]%:h<A>n:%:h<A>n	Liitesana_<A>	;
+[Sill][Ny]%:h<O>n:%:h<O>n	Liitesana_<A>   ;
 [Sill][Ny]%:h<U>n:%:h<U>n	Liitesana_<A>	;
 [Sill][Nm]%:ihin:%:ihin	Liitesana_<A>	;
 [Sade][Ny]%:ll<A>:%:ll<A>	Liitesana_<A>	;
