@@ -2025,13 +2025,13 @@ LEXICON Kirjoittaa
 it:it	<WC>MuistaaMuistella_w_<A>	;
 itt:itt	<WC>MuistaaMuistella_s_<A>	;
 it:it	Johdin_Us_ksen_<A>	;
-itt<A>u:itt<A>u	Kaatua_<A>	;
+itt<A><U>:itt<A><U>	Kaatua_<A>	;
 
 LEXICON Ammottaa
 t:t	<WC>MuistaaMuistella_w_<A>	;
 tt:tt	<WC>MuistaaMuistella_s_<A>	;
 t:t	Johdin_Us_ksen_<A>	;
-tt<A>u:tt<A>u	Kaatua_<A>	;
+tt<A><U>:tt<A><U>	Kaatua_<A>	;
 
 LEXICON MuistaaMuistella_w
 <WC>Muistaa_w_<A>	;
@@ -2391,6 +2391,7 @@ LEXICON Voida_l
 KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]:	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
+EhtotapaTa_<A>	;
 Johdin_nimitapa1dA_<A>	;
 d:d	Johdin_nimitapa2_<A>	;
 Johdin_mA_<A>	;
@@ -2618,6 +2619,7 @@ Aleta_s_<A>	;
 n:n	Saksantaa_<A>	;
 n:n	Jakaantua_<A>	;
 n:n	Pienennellä_<A>	;
+nn:nn	Johdin_Us_ksen_<A>	;
 
 LEXICON Lämmetä
 me:me	Aleta_w_<A>	;
@@ -2651,6 +2653,7 @@ LEXICON Kaveta
 ve:ve	Aleta_w_<A>	;
 pe:pe	Aleta_s_<A>	;
 ven:ven	Alentaa_<A>	;
+venn:venn	Johdin_Us_ksen_<A>	;
 
 LEXICON Kevetä
 Kaveta_<A>	;
