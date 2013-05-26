@@ -2961,6 +2961,10 @@ Saksantaa_<A>	;
 Pienennellä_<A>	;
 n:n	Johdin_Us_ksen_<A>	;
 
+LEXICON Taitaa
+Huutaa_s_<A>	;
+d:d	Huutaa_w_<A>	;
+
 LEXICON Nähdä
 [Tn1]hd<A>:hd<A>	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
