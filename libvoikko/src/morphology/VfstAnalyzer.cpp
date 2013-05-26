@@ -339,6 +339,7 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 }
 
 static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen) {
+	bool isDe = false;
 	for (size_t j = 0; j + 3 < fstLen; j++) {
 		if (wcsncmp(fstOutput + j, L"[Dg]", 4) == 0) {
 			for (size_t i = 0; structure[i]; i++) {
@@ -347,7 +348,24 @@ static void fixStructure(wchar_t * structure, wchar_t * fstOutput, size_t fstLen
 				}
 			}
 		}
+		else if (wcsncmp(fstOutput + j, L"[De]", 4) == 0) {
+			isDe = true;
+		}
 		else if (fstOutput[j] == L'-') {
+			if (isDe) {
+				j++;
+				while (j + 4 < fstLen) {
+					if (wcsncmp(fstOutput + j, L"[Lep]", 5) == 0) {
+						for (size_t i = 0; structure[i]; i++) {
+							if (structure[i] == L'i' || structure[i] == L'p') {
+								structure[i] = L'i';
+								return;
+							}
+						}
+					}
+					j++;
+				}
+			}
 			return;
 		}
 	}

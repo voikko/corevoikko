@@ -1688,3 +1688,7 @@ alennustila
 kavennus
 arvioitaisiin
 levittäytymässä
+!etelä-Lappia
+Etelä-Lappia
+kissa-Lappia
+!Etelä-Pohjalaiseen

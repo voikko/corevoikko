@@ -3196,7 +3196,7 @@ LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Loppu	;
 
 LEXICON Johdin_lAinen
-[Ll][Dg]l<A>i@C.EI_YKS@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
+[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
 [Ll][Dg]l<A>is:l<A>is	NimisanaYsJatko	;
 
 LEXICON Johdin_ttU

@@ -82,6 +82,7 @@ Multichar_Symbols
 
 ! Johdoksiin liittyvät liput
 [Dg]  ! erisnimestä johdetaan yleisnimi
+[De]  ! erisnimen etuliitteenä kirjoitettava isolla alkukirjaimella
 
 ! Lisätietoliput
 [Ips] ! paikannimi taipuu sisäpaikallissijoissa
