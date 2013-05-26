@@ -24,12 +24,11 @@ LEXICON PaikannimiYsJatko
 @P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
 
 LEXICON SukunimiYsJatko
--[Bc]:-	Joukahainen_ee	;
--[Bc]:-	Joukahainen_es	;
+-[Bc]:-	Erisnimet	;
 -[Bc]:-	Joukahainen_nimisanat	;
 
 LEXICON EtunimiYsJatko
--[Bc]:-	Joukahainen_ee	;
+-[Bc]:-	Erisnimet	;
 -[Bc]:-	Joukahainen_nimisanat	;
 
 LEXICON YhdyssanaJatkuu
