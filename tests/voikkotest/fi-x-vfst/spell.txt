@@ -1681,3 +1681,6 @@ kuopiolaisia
 tietää
 tietäjä
 tiedän
+emäksisen
+hakisin
+hakisi

@@ -1378,6 +1378,7 @@ kse:kse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	kse:kse	Johdin_tOn_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
+?Nimisana	ks:ks	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	s:s	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Kalleus
@@ -2264,6 +2265,7 @@ v:v	LaskeaLaskeskella_w_<A>	;
 LEXICON LaskeaLaskeskella_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
 KertomanTekijäpääteVahva_<A>	;
+Ehtotapa_<A>	;
 e:e	Johdin_mA_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_nimitapa1A_<A>	;
