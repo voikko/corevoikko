@@ -95,9 +95,6 @@
 [perusmuoto: "korte", alku: "kort", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "käydä", alku: "kä", luokka: teonsana, jatko: <käydä>, äs: ä];
-[perusmuoto: "edeskäydä", alku: "edeskä", luokka: teonsana, jatko: <käydä>, äs: ä, tiedot: <ei_voikko>, rakenne: "=pppp=ppppp"];
-[perusmuoto: "läpikäydä", alku: "läpikä", luokka: teonsana, jatko: <käydä>, äs: ä, rakenne: "=pppp=ppppp"];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "laidun", alku: "lai", luokka: nimisana, jatko: <laidun>, äs: a];
 [perusmuoto: "laupias", alku: "laup", luokka: laatusana, jatko: <laupias>, äs: a];

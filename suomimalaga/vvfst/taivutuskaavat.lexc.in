@@ -2370,6 +2370,10 @@ LEXICON Voida
 i:i	Voida_l_<A>	;
 Voida_s_<A>	;
 
+LEXICON Käydä
+<U>:<U>	Voida_l_<A>	;
+v:v	Voida_s_<A>	;
+
 LEXICON Saada
 <A>:<A>	Voida_l_<A>	;
 Voida_s_<A>	;

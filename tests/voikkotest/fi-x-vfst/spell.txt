@@ -1695,3 +1695,5 @@ kissa-Lappia
 urheilijoina
 uskonoppineet
 Sanna-Mari
+käydä
+kävin
