@@ -362,6 +362,7 @@ LEXICON NOUN Risti_s
 LEXICON NOUN Risti_Siisti_s
 [Sn][Ny]i:i	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]e:e	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Sill][Ny]ii:ii	<WC>LiOlN_<A>	;
@@ -2215,11 +2216,13 @@ Kohdella_<A>	;
 LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
+e:e	TositavanKertomaTtiin_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Käskytapa_<A>	;
+<A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_nimitapa1A_<A>	;
 <A>:<A>	Johdin_nimitapa2_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
@@ -2762,6 +2765,7 @@ LEXICON Haluta_s
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
+<A>:<A>	Johdin_ja_kantaja_<A>	;
 
 LEXICON Salata
 <A>:<A>	<WC>SalataSalailla_w_<A>	;
@@ -3132,7 +3136,7 @@ LEXICON Johdin_nimitapa3_ttA
 [Tn3]tt<A>m<A>n:tt<A>m<A>n	Liitesana_<A>	;
 
 LEXICON Johdin_tAvA
-[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaAsema_<A>	;
+[Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaAsema_<A>	;
 
 LEXICON Johdin_sUt
 [Ll]s@C.JOHDETTAVA_LAATUSANAKSI@:s@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
