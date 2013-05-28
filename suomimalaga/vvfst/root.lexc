@@ -120,6 +120,9 @@ Multichar_Symbols
 ! inen-johdin vaaditaan
 @P.INEN_VAADITTU.ON@ @D.INEN_VAADITTU@ @C.INEN_VAADITTU@ @R.INEN_VAADITTU@
 
+! lAinen-loppuinen sana (toistaiseksi vain nimisana)
+@P.LAINEN.ON@ @R.LAINEN@
+
 ! etu/takavokaalimuodot sallittu
 @P.V_SALLITTU.E@ @P.V_SALLITTU.T@ @R.V_SALLITTU.E@ @R.V_SALLITTU.T@ @C.V_SALLITTU@
 
