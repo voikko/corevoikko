@@ -1786,6 +1786,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
+?Sukija?NotLaatusana i[O3]ns_<A>:ins<A>		Liitesana_<A>	;
 
 LEXICON NOUN MonikonGenetiiviEnJatko
 en:en	<WC>NormaaliYsJatko_<A>	;

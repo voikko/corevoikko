@@ -110,6 +110,11 @@ while True:
 	linecount = linecount + 1
 	if line_orig == u'':
 		break
+	if line_orig.startswith(u'?Sukija'):
+		if OPTIONS["sukija"]:
+			line_orig = line_orig[7:]
+		else:
+			continue
 	line = stripWhitespaceAndComments(line_orig)
 	if line.startswith(u'LEXICON '):
 		if lexicon != u"":
