@@ -50,19 +50,19 @@ LEXICON Omistusliite_a
 [O3]nsa:nsa	Liitesana_a	;
 
 LEXICON Omistusliite_ä
-[O1y]ni:ni	Liitesana_a	;
-[O2y]si:si	Liitesana_a	;
-[O1m]mme:mme	Liitesana_a	;
-[O2m]nne:nne	Liitesana_a	;
+[O1y]ni:ni	Liitesana_ä	;
+[O2y]si:si	Liitesana_ä	;
+[O1m]mme:mme	Liitesana_ä	;
+[O2m]nne:nne	Liitesana_ä	;
 [O3]nsä:nsä	Liitesana_ä	;
 
 LEXICON Omistusliite_aä
-[O1y]ni:ni	Liitesana_a	;
-[O2y]si:si	Liitesana_a	;
-[O1m]mme:mme	Liitesana_a	;
-[O2m]nne:nne	Liitesana_a	;
-[O3]nsa:nsa	Liitesana_aä	;
-[O3]nsä:nsä	Liitesana_aä	;
+[O1y]ni:ni	Liitesana_aä	;
+[O2y]si:si	Liitesana_aä	;
+[O1m]mme:mme	Liitesana_aä	;
+[O2m]nne:nne	Liitesana_aä	;
+[O3]nsa:nsa	Liitesana_a	;
+[O3]nsä:nsä	Liitesana_ä	;
 
 LEXICON EtuliitteenJatko_eln
 [Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.JOHDETTAVA_NIMISANAKSI.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
