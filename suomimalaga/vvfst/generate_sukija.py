@@ -209,6 +209,8 @@ def generate_from_pattern (line, pattern_list):
 #    (u"", (u"", u"")),
 #
 word_list = [
+    (u"aikainen",       (u"aikai",       u"aikahi")),
+    (u"ainainen",       (u"ainai",       u"ainahi")),
     (u"alkovi",         (u"alkov",       u"alkoov")),
     (u"ameba",          (u"ameb",        u"ameeb")),
     (u"arsenikki",      (u"arsenik",     u"arseniik")),
@@ -217,6 +219,7 @@ word_list = [
     (u"beduiini",       (u"beduiin",     u"beduin")),
     (u"biljoona",       (u"biljoon",     u"biljon")),
     (u"emali",          (u"emal",        u"emalj")),
+    (u"eteinen",        (u"etei",        u"etehi")),
     (u"evankelinen",    (u"evankeli",    u"evankeeli")),
     (u"hevonen",        (u"hevo",        u"hevoi")),
     (u"humaaninen",     (u"humaani",     u"humani")),
