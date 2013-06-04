@@ -1603,6 +1603,7 @@ LEXICON NOUN Hame_w
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
 
 LEXICON NOUN Hame_s
 ?NotLaatusana	[Sn][Ny]e:e	Omistusliite_<A>	;
@@ -1614,7 +1615,7 @@ LEXICON NOUN Hame_s
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]esee:esee	<WC>LiOlN_<A>	;
-[Sill][Nm]ih:ih	<WC>LiOlN_<A>	;
+[Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 [Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -1623,6 +1624,25 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Sukija ?NotLaatusana	[Sn][Ny]he:he	Omistusliite_<A>	;
+?Sukija [Sn][Nm]het:het	Liitesana_<A>	;
+?Sukija [Sg][Ny]hen:hen	<WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]hit<A>:hit<A>	<WC>LiOlV_<A>	;
+?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]hen<A>:hen<A>	<WC>LiOlV_<A>	;
+?Sukija h:h	<WC>YhteisetMonikonSijat2_<A>	;
+?Sukija [Sill][Ny]ese:ese	<WC>LiOlN_<A>	;
+?Sukija [Sill][Ny]hese:hese	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]hisii:hisii	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
+?Sukija he:he	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Sukija h:h	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija ?Laatusana	he:he	Voittoaste_<A>	;
+?Sukija ?Laatusana	h:h	Yliaste_<A>	;
+?Sukija ?Nimisana	he:he	Johdin_tOn_<A>	;
+?Sukija ?Nimisana	h:h	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Vieras
 <WC>Vieras_w_<A>	;

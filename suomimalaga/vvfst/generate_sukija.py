@@ -44,21 +44,13 @@ import getopt
 import re
 import sys
 from types import *
+sys.path.append("common")
+import generate_lex_common
 
-try:
-    optlist = ["destdir="]
-    (opts, args) = getopt.getopt(sys.argv[1:], "", optlist)
-except getopt.GetoptError:
-    sys.stderr.write("Invalid option list for %s\n" % sys.argv[0])
-    sys.exit(1)
-options = {"destdir": None}
-for (name, value) in opts:
-    if (name == "--destdir"):
-        options["destdir"] = value
+OPTIONS = generate_lex_common.get_options()
 
-
-infile = codecs.open (options["destdir"] + u"/all.lexc", "r", "UTF-8")
-outfile = codecs.open (options["destdir"] + u"/all-sukija.lexc", 'w', 'UTF-8')
+infile = codecs.open (OPTIONS["destdir"] + u"/all.lexc", "r", "UTF-8")
+outfile = codecs.open (OPTIONS["destdir"] + u"/all-sukija.lexc", 'w', 'UTF-8')
 
 C = u"[qwrtpsšdfghjklzžxcvbnm]"  # Consonants.
 V = u"[aeiouüyåäö]"              # Vovels.
@@ -209,8 +201,10 @@ def generate_from_pattern (line, pattern_list):
 #    (u"", (u"", u"")),
 #
 word_list = [
+    (u"aarteisto",      (u"aarteisto",   u"aartehisto")),
     (u"aikainen",       (u"aikai",       u"aikahi")),
     (u"ainainen",       (u"ainai",       u"ainahi")),
+    (u"aineisto",       (u"aineisto",    u"ainehisto")),
     (u"alkovi",         (u"alkov",       u"alkoov")),
     (u"ameba",          (u"ameb",        u"ameeb")),
     (u"arsenikki",      (u"arsenik",     u"arseniik")),
@@ -233,6 +227,7 @@ word_list = [
     (u"kampanja",       (u"kampanj",     u"kamppanj")),
     (u"kaneli",         (u"kanel",       u"kaneel")),
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
+    (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
     (u"kraatteri",      (u"kraatter",    u"kraater")),
     (u"kulttuuri",      (u"kulttuur",    u"kultuur")),
@@ -242,6 +237,7 @@ word_list = [
     (u"liipaisin",      (u"liipaisi",    u"liipasi")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
+    (u"mieluinen",      (u"mielui",      u"mieluhi")),
     (u"miljoona",       (u"miljoon",     u"miljon")),
     (u"modeemi",        (u"modeem",      u"modem")),
     (u"paneeli",        (u"paneel",      u"panel")),
@@ -299,6 +295,17 @@ word_list = [
     #
 #    (u"hapsi", [u"[Ln][Xp]hapsi[X]has[Ses][Ny]na:hasna NimisanaLiOlV_a ;",
 #                u"[Ln][Xp]hapsi[X]has[Ses][Ny]sa:hassa NimisanaLiOlV_a ;"]),
+
+    # 78 hame
+    #
+    (u"hame",  [u"[Ln][Xp]hame[X]hame[Sp][Ny]hta:hamehta NimisanaLiOlV_a ;"]),
+
+    # 79 terve (4, 4). Tuomi s. 142, 143, 146.
+    #
+    (u"tuore", [u"[Ll][Xp]tuore[X]tuore[Ses][Ny]nna:tuorenna NimisanaLiOlV_a ;"]),
+    (u"vetre", [u"[Ll][Xp]vetre[X]vetre[Ses][Ny]nnä:vetrennä NimisanaLiOlV_ä ;"]),
+    (u"päre",  [u"[Ln][Xp]päre[X]päre[Ses][Ny]nnä:pärennä NimisanaLiOlV_ä ;"]),
+    (u"terve", [u"[Lnl][Xp]terve[X]terve[Ses][Ny]nnä:tervennä NimisanaLiOlV_ä ;"]),
 ]
 
 
