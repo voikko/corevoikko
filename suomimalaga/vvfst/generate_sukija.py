@@ -34,10 +34,16 @@
 # This automatic generation will generate some old
 # spellings and spelling errors that do not exist in real life.
 
+# Compiling (in directory suomimalaga):
+# GENLEX_OPTS=--sukija make -e vvfst-sukija
+
 # Testing:
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >new.out; date
 # diff new.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
+
+# Tiedostossa taivutuskaavat.lexc.in vanhat taivutukset on lisätty näihin taivutuksiin:
+# Hame, Koira, Lovi, Nainen, Onneton, Paperi, Risti, Sisar, Uistin, Veli.
 
 import codecs
 import getopt
@@ -243,6 +249,7 @@ word_list = [
     (u"paneeli",        (u"paneel",      u"panel")),
     (u"pataljoona",     (u"pataljoon",   u"pataljon")),
     (u"patriisi",       (u"patriis",     u"patris")),
+    (u"patruuna",       (u"patruun",     u"patrun")),
     (u"persoona",       (u"persoon",     u"person")),
     (u"pioni",          (u"pion",        u"pioon")),
     (u"plutoona",       (u"plutoon",     u"pluton")),
@@ -261,6 +268,7 @@ word_list = [
     (u"senaattori",     (u"senaattor",   u"senaator")),
     (u"serafi",         (u"seraf",       u"seraaf")),
     (u"shampanja",      (u"shampanj",    u"shamppanj")),
+    (u"sitruuna",       (u"sitruun",     u"sitrun", u"sitroon", u"sitron")),
     (u"soolo",          (u"soolo",       u"solo")),
     (u"soopeli",        (u"soopel",      u"sopel")),
     (u"synagoga",       (u"synagog",     u"synagoog")),
