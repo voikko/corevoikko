@@ -163,9 +163,65 @@ spelling_pattern_list = [
 ]
 
 
+
+lexicon_kaunis = [
+    u"LEXICON <WC>SukijaKaunis_<A>",
+    u"[Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sg][Nm]ehitt:ehitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sg][Nm]ehi:ehi   <WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;",
+    u"[Sp][Nm]ehi<A>:ehi<A>	<WC>LiOlV_<A>	;",
+    u"[Sill][Nm]eisii:eisii	<WC>LiOlN_<A>	;",
+    u"[Sill][Nm]ehisi:ehisi	<WC>LiOlN_<A>	;",
+    u"ehi:ehi   Kerronto_sti_<A> ;",
+    u"e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;",
+    u"e:e	<WC>YhteisetMonikonSijat2_<A>	      ;",
+    u"eh:eh	<WC>YhteisetMonikonPaikallissijat_<A>	;",
+    u"eh:eh	<WC>YhteisetMonikonSijat2_<A>	      ;",
+    u"?Laatusana	ehi:ehi	Voittoaste_<A>	;",
+    u"?Laatusana	eh:eh   Yliaste_<A>	;",
+]
+
+lexicon_altis = [
+    u"LEXICON <WC>SukijaAltis_<A>",
+    u"[Sg][Nm]teid:teid	<WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sg][Nm]teitt:teitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sg][Nm]tehitt:tehitt	<WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sg][Nm]tehi:tehi   <WC>MonikonGenetiiviEnJatko_<A>	;",
+    u"[Sp][Nm]teit<A>:teit<A>	<WC>LiOlV_<A>	;",
+    u"[Sp][Nm]tehi<A>:tehi<A>	<WC>LiOlV_<A>	;",
+    u"[Sill][Nm]teisii:teisii	<WC>LiOlN_<A>	;",
+    u"[Sill][Nm]tehisi:tehisi	<WC>LiOlN_<A>	;",
+    u"tehi:tehi   Kerronto_sti_<A> ;",
+    u"te:te	<WC>YhteisetMonikonPaikallissijat_<A>	;",
+    u"te:te	<WC>YhteisetMonikonSijat2_<A>	      ;",
+    u"teh:teh	<WC>YhteisetMonikonPaikallissijat_<A>	;",
+    u"teh:teh	<WC>YhteisetMonikonSijat2_<A>	      ;",
+    u"?Laatusana	tehi:tehi	Voittoaste_<A>	;",
+    u"?Laatusana	eh:eh   Yliaste_<A>	;",
+#    u"t:t <WC>SukijaKaunis_<A>",
+]
+
+
+def generate (lexicon, word_class, a):
+    p = []
+    for i in lexicon:
+        p.append (i.replace(u"<WC>", word_class).replace(u"<A>", a))
+    return p
+
+
 def write_word (p):
     prefix = p[1][0:p[1].find (u"[X]")+3]
     outfile.write (u"%s%s:%s Sukija%s ;\n" % (prefix, p[0][0:len(p[0])-1], p[0][0:len(p[0])-1], p[2]))
+
+
+
+def word_class (line):
+    L = dict ([(u"[Ll]",  u"Laatusana"),
+               (u"[Ln]",  u"Nimisana"),
+               (u"[Lnl]", u"NimiLaatusana")])
+    return L[line[0:line.find("]")+1]]
 
 
 # Sanoja, joilla on vain muutama vanha taivutusmuoto. Generoidaan ne erikseen,
@@ -176,14 +232,22 @@ def write_word (p):
 # Suomalaisen Kirjallisuuden Seura 1980.
 
 
-# Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
-#
-# 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
-#
 def write_ahven (line, word):
     prefix = line[0:line.find (u"[X]")+3]
     A = u"a" if re_A.search(word) else u"ä"
     outfile.write (u"%s%s[Ses][Ny]n%s:%sn%s NimisanaLiOlV_%s ;\n" % (prefix, word, A, word, A, A))
+
+
+def write_kaunis (line, word):
+    prefix = line[0:line.find (u" ")]
+    A = u"a" if re_A.search(word) else u"ä"
+    outfile.write (u"%s %sSukijaKaunis_%s ;\n" % (prefix, word_class(line), A))
+
+
+def write_altis (line, word):
+    prefix = line[0:line.find (u" ")]
+    A = u"a" if re_A.search(word) else u"ä"
+    outfile.write (u"%s %sSukijaAltis_%s ;\n" % (prefix, word_class(line), A))
 
 
 def generate_from_pattern (line, pattern_list):
@@ -335,6 +399,14 @@ function_list = [
       u"saarua",
       u"tanhua")),
 
+    # 33 lohi (2, 2). Tuomi, s. 151.
+    # lohten, uuhten
+    #
+    (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaLohi ;\n" %
+                                       (word, word[0:len(word)-1], word[0:len(word)-1])),
+     (u"lohi",
+      u"uuhi")),
+
     # Ahven taipuu kuten sisar, paitsi että yksikön olento on myös ahvenna.
     #
     # 55 ahven (22, 23). Tuomi, s. 246, 247, 301, 302.
@@ -364,13 +436,17 @@ function_list = [
       u"uumen",
       u"vuomen")),
 
-    # 33 lohi (2, 2). Tuomi, s. 151.
-    # lohten, uuhten
+    # 69 kaunis (7, 6). Tuomi, s. 358.
     #
-    (lambda line, word: outfile.write (u"[Ln][Xp]%s[X]%s:%s SukijaLohi ;\n" %
-                                       (word, word[0:len(word)-1], word[0:len(word)-1])),
-     (u"lohi",
-      u"uuhi"))
+    (write_kaunis,
+     (u"kallis",
+      u"aulis",
+      u"valmis",
+      u"kaunis",
+#      u"altis",
+      u"tiivis")),
+
+     (write_altis, (u"altis", )),
 ]
 
 def convert_to_dictionary (word_list):
@@ -473,21 +549,16 @@ u"gas:gas Nuolaista_w_a ;",
 u"kas:kas Nuolaista_s_a ;",
 u"kas:kas Johdin_U_arvelu_a ;",
 u"LEXICON SukijaHerttua",
-u"@C.EI_YKS@[Sg][Nm]iden:@C.EI_YKS@iden NimisanaMonikonGenetiiviEnJatko_a ;",
-u"@C.EI_YKS@[Sg][Nm]itten:@C.EI_YKS@itten NimisanaMonikonGenetiiviEnJatko_a ;",
-u"@C.EI_YKS@[Sp][Nm]ita:@C.EI_YKS@ita NimisanaLiOlV_a ;",
-u"NimisanaYhteisetMonikonSijat2_a ;",
-u"@C.EI_YKS@[Sill][Nm]ihi:@C.EI_YKS@ihi NimisanaLiOlN_a ;",
-u"NimisanaYhteisetMonikonPaikallissijat_a ;",
+u"NimisanaApila_m_a ;",
 u"LEXICON SukijaLohi",
-u"@C.EI_YKS@[Sg][Nm]ten:@C.EI_YKS@ten NimisanaMonikonGenetiiviEnJatko_a ;",
-u"@C.EI_YKS@[Sg][Nm]te:@C.EI_YKS@te Omistusliite_a ;",
+u"[Sg][Nm]t:t NimisanaMonikonGenetiiviEnJatko_a ;",
 u"LEXICON SukijaOmistusliite_a_in",
 u"Omistusliite_a ;",
 u"[O1y]in:in Liitesana_a ;",
 u"LEXICON SukijaTuta",
 u"[Tn1p]takse:takse SukijaOmistusliite_a_in ;",
 u"[Tn2]ten:ten Liitesana_a ;",
+
 u"LEXICON Sukija",
 u"[Ln][Xp]aatelisneiti[X][Xr]ppppppp=[X]aatelisnei[Sg][Ny]den:aatelisneiden Loppu ;",
 u"[Ln][Xp]herrasneiti[X][Xr]pppppp=[X]herrasnei[Sg][Ny]den:herrasneiden Loppu ;",
@@ -495,6 +566,11 @@ u"[Ln][Xp]hovineiti[X][Xr]pppp=[X]hovinei[Sg][Ny]den:hovineiden Loppu ;",
 u"[Ln][Xp]neiti[X]nei[Sg][Ny]den:neiden Loppu ;",
 u"[Ln][Xp]nuorimies[X]nuornamiesnä:nuornamiesnä NimisanaLiOlV_ä ;",
 ]
+
+OUTPUT.extend (generate (lexicon_kaunis, u"Laatusana", u"a"))
+OUTPUT.extend (generate (lexicon_kaunis, u"Laatusana", u"ä"))
+OUTPUT.extend (generate (lexicon_kaunis, u"NimiLaatusana", u"a"))
+OUTPUT.extend (generate (lexicon_altis,  u"NimiLaatusana", u"a"))
 
 for x in OUTPUT:
     outfile.write (x + u"\n")
