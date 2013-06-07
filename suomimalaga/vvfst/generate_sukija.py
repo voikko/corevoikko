@@ -94,6 +94,15 @@ re_omi = makeRe (u"Ln", u".Comi")
 re_oni = makeRe (u"Ln", u".Coni")
 re_ori = makeRe (u"Ln", u".Cori")
 
+re_adinen = makeRe (u"Ln", u".Cadinen")
+re_odinen = makeRe (u"Ln", u".Codinen")
+re_ofinen = makeRe (u"Ln", u".Cofinen")
+re_oginen = makeRe (u"Ln", u".Coginen")
+re_olinen = makeRe (u"Ln", u".Colinen")
+re_ominen = makeRe (u"Ln", u".Cominen")
+re_oninen = makeRe (u"Ln", u".Coninen")
+re_orinen = makeRe (u"Ll", u".Corinen")
+
 re_grafia   = makeRe (u"Ln", u"grafia")
 re_grafinen = makeRe (u"Ll", u"grafinen")
 re_logia    = makeRe (u"Ln", u"logia")
@@ -141,10 +150,21 @@ spelling_pattern_list = [
   (re_omi, u"om", u"oom", re_omi_x),  # Atomi     => atoomi.
   (re_oni, u"on", u"oon", re_oni_x),  # Telefoni  => telefooni.
   (re_ori, u"or", u"oor", re_ori_x),  # Pehtori   => pehtoori.
+
+  (re_adinen,   u"adi",    u"aadi"),
+  (re_odinen,   u"odi",    u"oodi"),
+  (re_ofinen,   u"ofi",    u"oofi"),
+  (re_oginen,   u"ogi",    u"oogi"),
+  (re_olinen,   u"oli",    u"ooli"),
+  (re_ominen,   u"omi",    u"oomi"),
+  (re_oninen,   u"oni",    u"ooni"),
+  (re_orinen,   u"ori",    u"oori"),
+
   (re_grafia,   u"grafi",  u"graafi"),
   (re_grafinen, u"grafi",  u"graafi"),
   (re_logia,    u"logi",   u"loogi", re_logia_x),
   (re_loginen,  u"logi",   u"loogi"),
+
   (re_oitin, u"oit", u"ot"),  # Kirjoitin => kirjotin (esim. kirjo(i)ttimen).
   (re_aatio, u"aatio", u"atsion", u"atsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
   (re_uutio, u"uutio", u"utsion", u"utsioon", u"NimisanaAutio_a", u"NimisanaPaperi_a"),
@@ -271,20 +291,20 @@ def generate_from_pattern (line, pattern_list):
 #    (u"", (u"", u"")),
 #
 word_list = [
-    (u"aarteisto",      (u"aarteisto",   u"aartehisto")),
-    (u"aikainen",       (u"aikai",       u"aikahi")),
-    (u"ainainen",       (u"ainai",       u"ainahi")),
-    (u"aineisto",       (u"aineisto",    u"ainehisto")),
-    (u"alkovi",         (u"alkov",       u"alkoov")),
-    (u"ameba",          (u"ameb",        u"ameeb")),
-    (u"arsenikki",      (u"arsenik",     u"arseniik")),
-    (u"assistentti",    (u"assistent",   u"asistent")),
-    (u"barbaari",       (u"barbaar",     u"barbar")),
-    (u"beduiini",       (u"beduiin",     u"beduin")),
-    (u"biljoona",       (u"biljoon",     u"biljon")),
-    (u"emali",          (u"emal",        u"emalj")),
-    (u"eteinen",        (u"etei",        u"etehi")),
-    (u"evankelinen",    (u"evankeli",    u"evankeeli")),
+    (u"aarteisto",        (u"aarteisto",     u"aartehisto")),
+    (u"aikainen",         (u"aikai",         u"aikahi")),
+    (u"ainainen",         (u"ainai",         u"ainahi")),
+    (u"aineisto",         (u"aineisto",      u"ainehisto")),
+    (u"alkovi",           (u"alkov",         u"alkoov")),
+    (u"ameba",            (u"ameb",          u"ameeb")),
+    (u"arsenikki",        (u"arsenik",       u"arseniik")),
+    (u"assistentti",      (u"assistent",     u"asistent")),
+    (u"barbaari",         (u"barbaar",       u"barbar")),
+    (u"beduiini",         (u"beduiin",       u"beduin")),
+    (u"biljoona",         (u"biljoon",       u"biljon")),
+    (u"emali",            (u"emal",          u"emalj")),
+    (u"eteinen",          (u"etei",          u"etehi")),
+    (u"evankelinen",      (u"evankeli",      u"evankeeli")),
     (u"hevonen",        (u"hevo",        u"hevoi")),
     (u"humaaninen",     (u"humaani",     u"humani")),
     (u"husaari",        (u"husaar",      u"husar")),
@@ -305,12 +325,14 @@ word_list = [
     (u"legioona",       (u"legioon",     u"legion")),
     (u"legioonalainen", (u"legioonalai", u"legionalai")),
     (u"liipaisin",      (u"liipaisi",    u"liipasi")),
+    (u"lordi",          (u"lord",        u"loord")),
     (u"majoneesi",      (u"majonees",    u"majonnees")),
     (u"matrikkeli",     (u"matrikkel",   u"matrikel")),
     (u"mieluinen",      (u"mielui",      u"mieluhi")),
     (u"miljoona",       (u"miljoon",     u"miljon")),
     (u"modeemi",        (u"modeem",      u"modem")),
     (u"paneeli",        (u"paneel",      u"panel")),
+    (u"paronitar",      (u"paronit",     u"paroonit")),
     (u"pataljoona",     (u"pataljoon",   u"pataljon")),
     (u"patriisi",       (u"patriis",     u"patris")),
     (u"patruuna",       (u"patruun",     u"patrun")),
