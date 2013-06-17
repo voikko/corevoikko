@@ -316,6 +316,7 @@ word_list = [
     (u"kameli",         (u"kamel",       u"kameel")),
     (u"kampanja",       (u"kampanj",     u"kamppanj")),
     (u"kaneli",         (u"kanel",       u"kaneel")),
+    (u"kaoottinen",     (u"kaootti",     u"kaaootti", u"kaaotti", u"kaotti")),
     (u"kirjoitelma",    (u"kirjoitelm",  u"kirjotelm")),
     (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
