@@ -300,7 +300,7 @@ LEXICON NOUN Kiiski
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]e<A>:e<A>	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
-[Sill][Ny]e:e	<WC>LiOlN_<A>	;
+[Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 
@@ -1172,7 +1172,7 @@ LEXICON NOUN Meri
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]ta:ta	<WC>LiOlV_<A>	;
+[Sp][Ny]ta:ta	<WC>LiOlV_a	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
