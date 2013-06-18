@@ -1181,6 +1181,7 @@ LEXICON NOUN Meri
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Parfait
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1219,6 +1220,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
+?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Niemi
 <WC>Lumi_<A>	;
@@ -1240,6 +1242,7 @@ LEXICON NOUN Pieni
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Lumi
 [Sn][Ny]mi:mi	<WC>NormaaliYsJatko_<A>	;
@@ -1256,6 +1259,7 @@ m:m	<WC>YhteisetMonikonSijat2_<A>	;
 me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	me:me	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]mehe:mehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Susi
 <WC>Tosi_<A>	;
@@ -1287,6 +1291,7 @@ s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tee:tee	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kansi_l
 [Sn][Nm]et:et	Liitesana_<A>	;
@@ -1311,6 +1316,7 @@ de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
+?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Sisar
 <WC>Sisar_w_<A>	;
@@ -1414,6 +1420,8 @@ ks:ks	<WC>YhteisetMonikonSijat2_<A>	;
 de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
+?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Uistin
 n:n	<WC>Uistin_n_<A>	;

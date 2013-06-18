@@ -39,11 +39,13 @@
 
 # Testing:
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
-# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >new.out; date
-# diff new.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
+# date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >test.out; date
+# diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 
 # Tiedostossa taivutuskaavat.lexc.in vanhat taivutukset on lisätty näihin taivutuksiin:
-# Hame, Koira, Lovi, Nainen, Onneton, Paperi, Risti, Sisar, Uistin, Veli.
+# Hame, Kalleus, Kansi, Koira, Lohi, Lovi, Lumi, Meri, Nainen, Onneton, Paperi,
+# Pieni, Risti, Sisar, Tosi, Uistin, Veli.
+# 17.6.2013: Kalleus, Kansi, Lohi, Lumi, Meri, Pieni, Tosi.
 
 import codecs
 import getopt
@@ -321,7 +323,7 @@ word_list = [
     (u"koneisto",       (u"koneisto",    u"konehisto")),
     (u"konossementti",  (u"konossement", u"konnossement")),
     (u"kraatteri",      (u"kraatter",    u"kraater")),
-    (u"kulttuuri",      (u"kulttuur",    u"kultuur")),
+    (u"kulttuuri",      (u"kulttuur",    u"kultuur", "kulttur")),
     (u"leegio",         (u"leegio",      u"legio")),
     (u"legioona",       (u"legioon",     u"legion")),
     (u"legioonalainen", (u"legioonalai", u"legionalai")),

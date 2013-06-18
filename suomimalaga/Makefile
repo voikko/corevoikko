@@ -145,7 +145,7 @@ clean:
 	rm -f $(VVFST_GENERATED_LEXC) $(VVFST_BUILDDIR)/joukahainen.lexc.stamp
 	rm -f TAGS
 	rm -f $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma*
-	rm -f $(VVFST_BUILDDIR)/generate_sukija.py.stamp
+	rm -f $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/sukija.fst $(VVFST_BUILDDIR)/test.out
 
 # Rules for creating the source distribution
 
