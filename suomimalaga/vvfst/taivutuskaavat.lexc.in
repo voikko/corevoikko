@@ -727,6 +727,8 @@ tk:tk	<WC>YhteisetMonikonSijat2_<A>	;
 ?Laatusana	tk:tk	Johdin_UUs_<A>	;
 ?Laatusana	te:te	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
+?Sukija [Sill][Ny]tk<A>h<A>:tk<A>h<A>	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]tkihi:tkihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Ruoka
 <O>:<O>	<WC>Hoikka_<A>	;
@@ -922,6 +924,7 @@ LEXICON NOUN Peruna
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Korkea
 e:e	<WC>Ainoa_<A>	;
@@ -946,6 +949,7 @@ LEXICON NOUN Ainoa
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Suurempi
 ?Laatusana	Voittoaste_<A>	;
@@ -1243,6 +1247,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Lumi
 [Sn][Ny]mi:mi	<WC>NormaaliYsJatko_<A>	;
@@ -1260,6 +1265,7 @@ me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	me:me	Johdin_tOn_<A>	;
 ?Sukija [Sill][Ny]mehe:mehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]mihi:mihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Susi
 <WC>Tosi_<A>	;
@@ -1292,6 +1298,7 @@ s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kansi_l
 [Sn][Nm]et:et	Liitesana_<A>	;
@@ -1317,6 +1324,7 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Sisar
 <WC>Sisar_w_<A>	;
@@ -1404,6 +1412,8 @@ ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
 ?Nimisana	ks:ks	Johdin_inen_vain_lipulla_<A>	;
 ?Paikannimi	s:s	Johdin_lAinen_<A>	;
+?Sukija [Sill][Ny]ksehe:ksehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ksihi:ksihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kalleus
 [Sn][Ny]s:s	<WC>NormaaliYsJatko_<A>	;
@@ -1422,6 +1432,7 @@ ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ksihi:ksihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Uistin
 n:n	<WC>Uistin_n_<A>	;
@@ -1587,6 +1598,8 @@ ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana ee:ee	Voittoaste_<A>	;
 ?Laatusana e:e	Yliaste_<A>	;
+?Sukija [Sill][Ny]eesehe:eesehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]eisihi:eisihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Hame
 <WC>Hame_w_<A>	;
@@ -1782,6 +1795,7 @@ LEXICON NOUN Vieras_s
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Laatusana	Yliaste_<A>	;
+?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Ruis
 i:i	<WC>Vieras_w_<A>	;
@@ -1807,6 +1821,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Sukija [Sill][Ny]isehe:isehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Hapsi
 <WC>Lapsi_yhteiset_<A>	;
@@ -1831,6 +1846,8 @@ ps:ps	<WC>YhteisetMonikonSijat2_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ps:ps	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	pse:pse	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]psehe:psehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]psihi:psihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
