@@ -1533,6 +1533,7 @@ LEXICON NOUN Pahin
 LEXICON NOUN Asiakas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 
 LEXICON NOUN Airut
 [Sn][Ny]t:t	<WC>NormaaliYsJatko_<A>	;
@@ -1694,63 +1695,77 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 LEXICON NOUN Vieras
 <WC>Vieras_w_<A>	;
 <WC>Vieras_s_<A>	;
+?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 
 LEXICON NOUN Kirves
 <WC>Vieras_w_<A>	;
 <WC>Vieras_s_<A>	;
+?Laatusana	Yliaste_<A>	;
 
 LEXICON NOUN Ies
 e:e	<WC>Vieras_w_<A>	;
 ke:ke	<WC>Vieras_s_<A>	;
+?Laatusana	ke:ke	Yliaste_<A>	;
 
 LEXICON NOUN Harras
 r<A>:r<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
+?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 ?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
 
 LEXICON NOUN Allas
 l<A>:l<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
+?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 
 LEXICON NOUN Hammas
 m<A>:m<A>	<WC>Vieras_w_<A>	;
 p<A>:p<A>	<WC>Vieras_s_<A>	;
+?Laatusana	p<A>:p<A>	Yliaste_<A>	;
 
 LEXICON NOUN Kinnas
 n<A>:n<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
+?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 
 LEXICON NOUN Varas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 
 LEXICON NOUN Saapas
 <A>:<A>	<WC>Vieras_w_<A>	;
 p<A>:p<A>	<WC>Vieras_s_<A>	;
+?Laatusana	p<A>:p<A>	Yliaste_<A>	;
 ?Laatusana	p<A>:p<A>	Johdin_Us_<A>	;
 
 LEXICON NOUN Ratas
 <A>:<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
+?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 ?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
 
 LEXICON NOUN Varvas
 v<A>:v<A>	<WC>Vieras_w_<A>	;
 p<A>:p<A>	<WC>Vieras_s_<A>	;
+?Laatusana	p<A>:p<A>	Yliaste_<A>	;
 
 LEXICON NOUN Kangas
 g<A>:g<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 
 LEXICON NOUN Ahdas
 d<A>:d<A>	<WC>Vieras_w_<A>	;
 t<A>:t<A>	<WC>Vieras_s_<A>	;
+?Laatusana	t<A>:t<A>	Yliaste_<A>	;
 ?Laatusana	t<A>:t<A>	Johdin_Us_<A>	;
 
 LEXICON NOUN Vilkas
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 ?Laatusana	k<A>:k<A>	Johdin_Us_<A>	;
 
 LEXICON NOUN Avokas
@@ -1759,16 +1774,19 @@ LEXICON NOUN Avokas
 LEXICON NOUN Iäkäs
 <A>:<A>	<WC>Vieras_w_<A>	;
 k<A>:k<A>	<WC>Vieras_s_<A>	;
+?Laatusana	k<A>:k<A>	Yliaste_<A>	;
 ?Laatusana	k<U>:k<U>	Johdin_Us_<A>	;
 
 LEXICON NOUN Kaunis
 i:i	<WC>Vieras_w_<A>	;
 i:i	<WC>Vieras_s_<A>	;
+?Laatusana	e:e	Yliaste_<A>	;
 ?Laatusana	e:e	Johdin_Us_<A>	;
 
 LEXICON NOUN Altis
 i:i	<WC>Vieras_w_<A>	;
 ti:ti	<WC>Vieras_s_<A>	;
+?Laatusana	te:te	Yliaste_<A>	;
 ?Laatusana	ti:ti	Johdin_Us_<A>	;
 
 LEXICON NOUN Vieras_w
@@ -1794,7 +1812,6 @@ LEXICON NOUN Vieras_s
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
-?Laatusana	Yliaste_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Ruis
@@ -1804,6 +1821,7 @@ ki:ki	<WC>Kauris_s_<A>	;
 LEXICON NOUN Kauris
 i:i	<WC>Vieras_w_<A>	;
 i:i	<WC>Kauris_s_<A>	;
+?Laatusana	e:e	Yliaste_<A>	;
 
 LEXICON NOUN Kauris_s
 ?NotLaatusana	i[Sn][Ny]:i	Omistusliite_<A>	;
@@ -1821,6 +1839,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
+?Laatusana	i:i	Voittoaste_<A>	;
 ?Sukija [Sill][Ny]isehe:isehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Hapsi

@@ -1710,3 +1710,8 @@ analyysianneko
 !mertä
 !mertansä
 kiiskeen
+kaunein
+alttein
+tyyriimpi
+tyyrein
+tiivein
