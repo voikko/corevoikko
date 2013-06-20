@@ -1810,7 +1810,7 @@ LEXICON NOUN Vieras_s
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
-?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	[[L]]:[[L]]	Voittoaste_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Ruis
