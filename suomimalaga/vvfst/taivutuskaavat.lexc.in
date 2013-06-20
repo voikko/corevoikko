@@ -1522,6 +1522,7 @@ m:m	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]mii:mii	<WC>LiOlN_<A>	;
 m<A>:m<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
+m:m	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny]m<A>h<A>:m<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]mihi:mihi	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]m<A>:m<A>	<WC>MonikonGenetiiviInJatko_<A>	;
@@ -3284,8 +3285,7 @@ LEXICON Johdin_inen
 [Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaInenLoppuinen_<A>	;
 
 LEXICON Johdin_tOn
-[Ll]t:t	LaatusanaOnneton_<A>	;
-tt<O>m:tt<O>m	Johdin_UUs_<A>	;
+[Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; # yhdyssanojen esto todennäköisestu tarpeeton
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli:lli	LaatusanaNainen_<A>    ;

@@ -362,3 +362,5 @@ word:roomalaiskissa
   expected:1
   analysis
     STRUCTURE==ppppppppp=ppppp
+word:kissattomuus
+  expected:1

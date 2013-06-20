@@ -1717,3 +1717,5 @@ tyyrein
 tiivein
 !kauniampi
 kauniimpi
+syyntakeettomuus
+syyttömyysolettama
