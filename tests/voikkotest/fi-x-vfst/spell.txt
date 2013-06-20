@@ -1719,3 +1719,10 @@ tiivein
 kauniimpi
 syyntakeettomuus
 syyttömyysolettama
+revi
+repikää
+lähtekää
+polkekaa
+viekää
+menkää
+valitkaa
