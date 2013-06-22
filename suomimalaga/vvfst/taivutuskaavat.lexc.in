@@ -1361,6 +1361,8 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 LEXICON NOUN Nainen
 <WC>NainenYhteiset_<A>	;
 s:s	<WC>YsJatko	;
+?Nimisana	s:s	Johdin_mAinen_<A>	;
+?Nimisana	se:se	Johdin_tOn_<A>	;
 
 LEXICON NOUN InenLoppuinen
 <WC>NainenYhteiset_<A>	;
@@ -1385,8 +1387,6 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Laatusana	s:s	Johdin_UUs_<A>	;
 ?NimisanaOnly	@R.LAINEN@s:@R.LAINEN@s	Johdin_UUs_<A>	;
-?Nimisana	s:s	Johdin_mAinen_<A>	;
-?Nimisana	se:se	Johdin_tOn_<A>	;
 ?Sukunimi	s:s	SukunimiYsJatko	;
 ?Sukunimi	nen:nen	SukunimiYsJatko	;
 ?Sukija [Ses][Ny]sn<A>:sn<A>	<WC>LiOlV_<A>	;
@@ -3289,10 +3289,10 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaInenLoppuinen_<A>	;
+[Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainenYhteiset_<A>	;
 
 LEXICON Johdin_tOn
-[Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; # yhdyssanojen esto todennäköisestu tarpeeton
+[Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; # yhdyssanojen esto todennäköisesti tarpeeton
 tt<O>m<A>:tt<O>m<A>	Voittoaste_<A>	;
 tt<O>m:tt<O>m	Yliaste_<A>	;
 [Ll]lli:lli	LaatusanaNainen_<A>    ;
