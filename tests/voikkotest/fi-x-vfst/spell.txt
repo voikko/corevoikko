@@ -1734,3 +1734,6 @@ ruokittiin
 tunnettiin
 ryvettiin
 paahdanta
+nähdäänkö
+tarjonta
+nähtyihin

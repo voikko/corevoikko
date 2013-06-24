@@ -3000,6 +3000,7 @@ t<O>:t<O>	<WC>Katketa_s_<A>	;
 LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTtiin_<A>	;
+Johdin_ntA_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttAx_<A>	;
@@ -3092,6 +3093,8 @@ d:d	Huutaa_w_<A>	;
 LEXICON Nähdä
 [Tn1]hd<A>:hd<A>	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
+h:h	TositavanKestämäDaan_<A>	;
+h:h	Johdin_tU_dA_<A>	;
 ke:ke	Johdin_mA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
 k:k	Ehtotapa_<A>	;
