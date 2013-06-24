@@ -222,6 +222,7 @@ k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<O>:<O>	Johdin_tOn_<A>	;
 ?Nimisana	k<O>:k<O>	Johdin_mAinen_<A>	;
+?Sukija [Sill][Ny]k<O>h<O>:k<O>h<O>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
@@ -303,6 +304,7 @@ LEXICON NOUN Kiiski
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Siisti
 <WC>Risti_Siisti_s_<A>	;
@@ -398,6 +400,7 @@ i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
+?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kalsium
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -416,6 +419,7 @@ e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Paikannimi	i:i	Johdin_lAinen_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
+?Sukija [Sill][Ny]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Lovi
 <WC>Lovi_s_<A>	;
@@ -539,6 +543,7 @@ LEXICON NOUN Nalle_s
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
+?Sukija [Sill][Ny]he:he	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kala
 <WC>Kala_s_<A>	;
@@ -607,6 +612,7 @@ LEXICON NOUN Kala_s
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Kala_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
@@ -760,6 +766,7 @@ LEXICON NOUN Matala
 ?Laatusana	<A>:<A>	Voittoaste_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;
@@ -1679,6 +1686,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sg][Nm]hi:hi		<WC>MonikonGenetiiviEnJatko_<A>	;
 ?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija [Sp][Nm]hit<A>:hit<A>	<WC>LiOlV_<A>	;
 ?Sukija [Ses][Ny]hen<A>:hen<A>	<WC>LiOlV_<A>	;
 ?Sukija h:h	<WC>YhteisetMonikonSijat2_<A>	;
 ?Sukija [Sill][Ny]ese:ese	<WC>LiOlN_<A>	;
