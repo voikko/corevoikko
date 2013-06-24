@@ -2317,6 +2317,7 @@ LEXICON Kaivaa_w
 <A>:<A>	Käskytapa_y2_<A>	;
 e:e	TositavanKertomaTtiin_<A>	;
 e:e	Johdin_ttAx_<A>	;
+<A>:<A>	Johdin_ntA_<A>	;
 
 LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
@@ -2380,6 +2381,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
+e:e	TositavanKertomaTtiin_<A>	;
 e:e	Johdin_ttAx_<A>	;
 e:e	Johdin_ntA_<A>	;
 
@@ -2393,6 +2395,7 @@ t:t	Tuntea_s_<A>	;
 
 LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
+e:e	TositavanKertomaTtiin_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
@@ -2451,6 +2454,7 @@ k:k	<WC>Sallia_s_<A>	;
 
 LEXICON Sallia_w
 i:i	KestämänTekijäpääteHeikko_<A>	;
+i:i	TositavanKertomaTtiin_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;

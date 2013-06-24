@@ -1730,3 +1730,7 @@ välisensä
 !kissakoiraisamainen
 !tiilismäinen
 !tiilisetön
+ruokittiin
+tunnettiin
+ryvettiin
+paahdanta
