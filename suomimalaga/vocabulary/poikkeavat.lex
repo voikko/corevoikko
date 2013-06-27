@@ -145,7 +145,6 @@
 [perusmuoto: "vaka", alku: "vaka", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "vasen", alku: "vase", luokka: nimi_laatusana, jatko: <vasen>, äs: a];
 [perusmuoto: "Vatté", alku: "Vatté", luokka: sukunimi, jatko: <nalle>, äs: a, tiedot: <ei_voikko>]; # Epäilen, että nalle-taivutus ei ole oikein.
-[perusmuoto: "veitsi", alku: "vei", luokka: nimisana, jatko: <veitsi>, äs: ä];
 [perusmuoto: "viis", alku: "viis", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "viive", alku: "vii", luokka: nimisana, jatko: <viive>, äs: ä];
 [perusmuoto: "voitaa", alku: "voi", luokka: teonsana, jatko: <voitaa>, äs: a, tiedot: <ei_voikko>];

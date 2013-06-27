@@ -919,6 +919,7 @@ LEXICON NOUN Peruna
 [Sg][Nm]<O>id:<O>id	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<O>itt:<O>itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 [Sp][Nm]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
@@ -1874,6 +1875,23 @@ ps:ps	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	pse:pse	Johdin_tOn_<A>	;
 ?Sukija [Sill][Ny]psehe:psehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]psihi:psihi	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Veitsi
+[Sn][Ny]tsi:tsi	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]tse:tse	Omistusliite_<A>	;
+[Sn][Nm]tset:tset	Liitesana_<A>	;
+[Sg][Ny]tsen:tsen	<WC>YksikönGenetiivinJatko_<A>	;
+[Sg][Nm]tsi:tsi	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]st:st	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]tsi<A>:tsi<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]tsen<A>:tsen<A>	<WC>LiOlV_<A>	;
+ts:ts	<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]tsee:tsee	<WC>LiOlN_<A>	;
+[Sill][Nm]tsii:tsii	<WC>LiOlN_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	tse:tse	Johdin_tOn_<A>	;
 
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;

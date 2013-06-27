@@ -407,7 +407,7 @@ i'ille
 Suomi-Ruotsi-Venäjä
 Heli-Maarit
 !Suomi-sveitsi
-!Suomisveitsi
+!Suomikanada
 !SuomiSveitsi
 Suomi-Sveitsi
 Pitkänen-Pokkinen
@@ -1742,3 +1742,6 @@ tuotavat
 tärähtää
 tärähtivät
 tärähdys
+pakanain
+veitsi
+veitsen
