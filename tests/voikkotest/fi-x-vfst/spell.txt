@@ -1737,3 +1737,8 @@ paahdanta
 nähdäänkö
 tarjonta
 nähtyihin
+tuhotaan
+tuotavat
+tärähtää
+tärähtivät
+tärähdys

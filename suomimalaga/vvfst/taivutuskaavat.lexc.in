@@ -2515,6 +2515,7 @@ Johdin_nti_<A>	;
 Johdin_tU_dA_<A>	;
 Johdin_nUt_<A>	;
 Johdin_vA_<A>	;
+Johdin_tAvA_<A>	;
 
 LEXICON Voida_s
 KertomanTekijäpääteHeikko_<A>	;
@@ -2999,6 +3000,7 @@ t<O>:t<O>	<WC>Katketa_s_<A>	;
 LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTtiin_<A>	;
+TositavanKestämäTaan_<A>	;
 Johdin_ntA_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
@@ -3069,7 +3071,7 @@ LEXICON Kihistä
 Kitistä_<A>	;
 <A><U>t:<A><U>t	MuistaaMuistella_w_<A>	;
 <A><U>tt:<A><U>tt	MuistaaMuistella_s_<A>  ;
-!TODO kihahtaa
+<A>h:<A>h	Astahtaa_<A>	;
 
 LEXICON Kitistä
 [Tn1]ist<A>:ist<A>	Liitesana_<A>	;
