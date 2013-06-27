@@ -991,6 +991,7 @@ LEXICON NOUN Vapaa_l
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
+[Sill][Ny]see:see	<WC>LiOlN_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 ?Laatusana	Voittoaste_<A>	;
@@ -2332,6 +2333,7 @@ Kohdella_<A>	;
 LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
+e:e	TositavanKestämäTaan_<A>	;
 e:e	TositavanKertomaTtiin_<A>	;
 e:e	Johdin_ttAx_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
@@ -2887,10 +2889,12 @@ LEXICON Haluta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
+Johdin_ttAx_<A>	;
 
 LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+s:s	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;

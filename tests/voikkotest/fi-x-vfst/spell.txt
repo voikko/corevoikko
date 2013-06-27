@@ -1745,3 +1745,7 @@ tärähdys
 pakanain
 veitsi
 veitsen
+haastetaan
+hallitusvastuuseen
+halusivatkin
+halutuimmista
