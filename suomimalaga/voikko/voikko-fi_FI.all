@@ -4074,9 +4074,6 @@ subrule pitkä ($tietue):
                                   sisätulento_Vn,
                                   "te",
                                   "tk" + A($tietue)) +
-                        [johdin_tOn:    "tk" + A($tietue),
-                         johdin_UUs:    "tk",
-                         johdin_inen:   "tk" + A($tietue)] +
                         monikko7 ("tk" + A($tietue), "tk", "tk",
                                   [omanto_ien: "tk",
                                    omanto_in:  "tk" + A($tietue)],

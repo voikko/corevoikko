@@ -730,7 +730,6 @@ tk:tk	<WC>YhteisetMonikonPaikallissijat_<A>	;
 tk:tk	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tk<A><A>:tk<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]tkii:tkii	<WC>LiOlN_<A>	;
-?Laatusana	tk:tk	Johdin_UUs_<A>	;
 ?Laatusana	te:te	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Sukija [Sill][Ny]tk<A>h<A>:tk<A>h<A>	<WC>LiOlN_<A>	;

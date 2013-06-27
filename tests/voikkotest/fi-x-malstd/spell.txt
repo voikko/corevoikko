@@ -740,8 +740,10 @@ rei'illä # Kotus 10
 !reiillä # Kotus 10
 pöytämäinen # Kotus 10
 !pöydämäinen # Kotus 10
-pitkyys # Kotus 10
+!pitkyys # Kotus 10
 !pityys # Kotus 10
+!nopeapitkäinen # Kotus 10
+!pitkätön # Kotus 10
 höppänin # Kotus 12
 !höppänöimmän # Kotus 12
 höppänimmän # Kotus 12
