@@ -438,7 +438,6 @@ risti;
   siisti; # => Siisteys (ei *siistiys).
   takki;
   tatti;
-  kiltti; # => Kiltteys (ei *kilttiys).
   tunti;
   vati;
 paperi;
@@ -564,7 +563,6 @@ kansi;
 lapsi;
 hapsi;
 veitsi;
-peitsi;
 suksi;
 uksi;
 kaksi;

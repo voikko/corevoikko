@@ -70,7 +70,6 @@
 [perusmuoto: "ibid", alku: "ibid", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "inkognito", alku: "inkognito", luokka: nimi_laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "isämeidän", alku: "isämeidän", luokka: nimisana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=ppp=pppppp"];
-[perusmuoto: "joutsi", alku: "jou", luokka: nimisana, jatko: <peitsi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "jumala", alku: "jumal", luokka: nimisana, jatko: <jumala>, äs: a, tiedot: <inen>];
 [perusmuoto: "juosta", alku: "juo", luokka: teonsana, jatko: <juosta>, äs: a];
 [perusmuoto: "jöötä", alku: "jöötä", luokka: nimisana, jatko: <loppu>, äs: ä];
@@ -86,8 +85,6 @@
 [perusmuoto: "kevät", alku: "kevä", luokka: nimisana, jatko: <kevät>, äs: ä, tiedot: <inen>];
 [perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
 [perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
-[perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <kiltti>, äs: ä, tiedot: <ei_sukija>];
-[perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <tatti>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kivetä", alku: "kive", luokka: teonsana, jatko: <kivetä>, äs: ä];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
@@ -105,7 +102,6 @@
 [perusmuoto: "ori", alku: "or", luokka: nimisana, jatko: <ori>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "paras", alku: "par", luokka: nimi_laatusana, jatko: <paras>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];

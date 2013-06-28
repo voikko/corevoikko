@@ -337,12 +337,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
 
-  elseif (kiltti in $tietue.jatko) then
-    choose $i in risti ($tietue, "t", "");
-    result $i.alku, $i - alku;
-
-
-   elseif (kiiski in $tietue.jatko) then
+  elseif (kiiski in $tietue.jatko) then
      choose $i in kiiski ($tietue);
      result $i.alku, $i - alku;
 
@@ -1243,12 +1238,6 @@ allo_rule generate_allos ($tietue):
 
   elseif (veitsi in $tietue.jatko) then
     choose $i in veitsi ($tietue);
-    result $i.alku, $i - alku;
-
-
-  elseif (peitsi in $tietue.jatko) then
-    choose $i in veitsi ($tietue)
-                 + taivutuskaava ($tietue, [osanto_A: "tse"]);  # Peitseä
     result $i.alku, $i - alku;
 
 
