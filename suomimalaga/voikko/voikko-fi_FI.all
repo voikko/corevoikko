@@ -3144,29 +3144,6 @@ allo_rule generate_allos ($tietue):
 ######################################
 
 
-  elseif (palata in $tietue.jatko) then
-    choose $i in palata ($tietue, "", "");
-    result $i.alku, $i - alku;
-
-
-  elseif (levätä in $tietue.jatko) then
-    choose $i in palata ($tietue, "p", "v");
-    result $i.alku, $i - alku;
-
-
-  elseif (hyljätä in $tietue.jatko) then
-  choose $i in palata ($tietue, "k", "j");
-    result $i.alku, $i - alku;
-
-
-  elseif (hylätä in $tietue.jatko) then
-    choose $i in palata ($tietue, "k", "");
-    result $i.alku, $i - alku;
-
-
-######################################
-
-
   elseif (kihistä in $tietue.jatko) then
     choose $i in kihistä ($tietue)
                  + kihinä ($tietue)
@@ -5579,15 +5556,6 @@ subrule haluta ($tietue, $vahva_aste, $heikko_aste):
                         laatutapa_2_nUt_ttU ($tietue, $heikko_aste + "n", $heikko_aste))
          + käskytapa ($tietue, $vahva_aste + A($tietue))
          + tekijännimi ($tietue, $vahva_aste + A($tietue), kantaja);
-end;
-
-
-subrule palata ($tietue, $vahva_aste, $heikko_aste):
-  return salata_salailla ($tietue, $vahva_aste + A($tietue), $heikko_aste + A($tietue))
-         + tositavan_kestämä ($tietue,
-                              $vahva_aste + AjA($tietue),    # Palaja+n.
-                              $vahva_aste + AjA($tietue))
-         + ehtotapa2 ($tietue, $vahva_aste + AjA($tietue));  # Palaja+isi.
 end;
 
 

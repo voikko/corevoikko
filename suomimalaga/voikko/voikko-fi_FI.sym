@@ -882,11 +882,6 @@ haluta;
   ryöpytä; # => ryöppyillä
   takuta;  # => takkuilla
   vivuta;  # ei => vipuilla
-palata;    # => Palailla, palaus.
-  hyljätä;
-  hylätä;  # => Hylkäillä, hylkäys.
-  levätä;  # => Lepäillä, lepäys.
-  varata;  # => Varailla, varaus.
 kihistä;   # => Kihinä, kihahtaa, kihauttaa, kihautella.
   kitistä; # => Kitinä.
 rakentaa;  # => Rakennus.

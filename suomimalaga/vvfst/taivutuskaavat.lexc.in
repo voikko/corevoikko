@@ -196,6 +196,7 @@ LEXICON NOUN Arvelu_w
 [Sn][Nm]t:t	Liitesana_<A>	;
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -2978,6 +2979,7 @@ LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKestämäTaan_<A>	;
 TositavanKertomaTtiin_<A>	;
+t:t	Käskytapa_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttAx_<A>	;
