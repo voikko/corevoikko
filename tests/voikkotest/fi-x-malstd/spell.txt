@@ -166,6 +166,7 @@ salamoivat
 !salamoija
 sada
 luottavansa
+!leikkaanun
 
 # = erisnimet =
 []

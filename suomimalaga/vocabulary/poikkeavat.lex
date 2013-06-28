@@ -90,13 +90,11 @@
 [perusmuoto: "kiltti", alku: "kilt", luokka: nimi_laatusana, jatko: <tatti>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kivetä", alku: "kive", luokka: teonsana, jatko: <kivetä>, äs: ä];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
-[perusmuoto: "korte", alku: "kort", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "laidun", alku: "lai", luokka: nimisana, jatko: <laidun>, äs: a];
 [perusmuoto: "laupias", alku: "laup", luokka: laatusana, jatko: <laupias>, äs: a];
-[perusmuoto: "leikkaantua", alku: "leikkaan", luokka: teonsana, jatko: <asettua>, äs: a];
 [perusmuoto: "lämmin", alku: "läm", luokka: nimi_laatusana, jatko: <lämmin>, äs: ä];
 [perusmuoto: "memoriam", alku: "memoriam", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "Muolaa", alku: "Muola", luokka: paikannimi, jatko: <maa>, äs: a];
@@ -110,10 +108,8 @@
 [perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
 [perusmuoto: "piestä", alku: "pie", luokka: teonsana, jatko: <juosta>, äs: ä];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä, tiedot: <ei_sukija>];
-[perusmuoto: "polte", alku: "polt", luokka: nimisana, jatko: <vaate>, äs: a];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
 [perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
-[perusmuoto: "pyyhe", alku: "pyyh", luokka: nimisana, jatko: <tarvike>, äs: ä];
 [perusmuoto: "rakentaa", alku: "rake", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Renault", alku: "Renault", luokka: nimi, jatko: <parfait>, äs: a]; # lt-loppuiset parfait-luokan sanat eivät sovi Joukahaiseen
 [perusmuoto: "saartaa", alku: "saar", luokka: teonsana, jatko: <saartaa>, äs: a];
