@@ -267,6 +267,7 @@ kauneimpina
 kaunein
 hautajaisiin
 myyjin
+!maksissa
 
 # = inen-johdokset =
 []

@@ -69,7 +69,7 @@ LEXICON Omistusliite_aä
 [O3]nsä:nsä	Liitesana_ä	;
 
 LEXICON EtuliitteenJatko_eln
-[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.JOHDETTAVA_NIMISANAKSI.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 [Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nimisanat	;
 
 LEXICON EtuliitteenJatko_ell

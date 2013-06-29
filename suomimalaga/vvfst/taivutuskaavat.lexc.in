@@ -383,6 +383,8 @@ LEXICON NOUN Risti_w
 i:i	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	i:i	Johdin_tOn_<A>	;
+?Laatusana	i:i	Voittoaste_<A>	;
+?Laatusana	e:e	Yliaste_<A>	;
 
 LEXICON NOUN Edam
 [Sn][Ny]:	<WC>NormaaliYsJatko_<A>	;
@@ -1208,6 +1210,7 @@ LEXICON NOUN Parfait
 [Ses][Ny]'n<A>:'n<A>	<WC>LiOlV_<A>	;
 ':'	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]'he:'he	<WC>LiOlN_<A>	;
+[Sill][Ny]'h<U>:'h<U>	<WC>LiOlN_<A>	;
 [Sill][Nm]'ihi:'ihi	<WC>LiOlN_<A>	;
 ':'	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ':'	<WC>YhteisetMonikonPaikallissijat_<A>	;
@@ -2742,6 +2745,7 @@ i:i	Johdin_nti_<A>	;
 i:i	Johdin_tU_dA_<A>   ;
 i:i	Johdin_vA_<A>	;
 i:i	Johdin_nUt_<A>	;
+i:i	Johdin_tAvA_<A>	;
 i:i	Kaatua_<A>	;
 
 LEXICON Valita
