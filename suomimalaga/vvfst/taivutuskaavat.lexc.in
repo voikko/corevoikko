@@ -1177,6 +1177,7 @@ LEXICON NOUN Rosé
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Meri
 [Sn][Ny]i:i	<WC>NormaaliYsJatko_<A>	;

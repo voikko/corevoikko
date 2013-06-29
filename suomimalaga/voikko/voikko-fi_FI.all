@@ -1046,6 +1046,7 @@ allo_rule generate_allos ($tietue):
                                           "", "") +
                                 [johdin_tOn:      "",
                                  johdin_mAinen:   "",
+                                 johdin_lAinen:   "",
                                  johdin_inen:     ""] +
                                 monikko7 ("", "", "",
                                           [omanto_iT: ""],
