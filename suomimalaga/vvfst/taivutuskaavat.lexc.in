@@ -2173,6 +2173,7 @@ LEXICON Muistaa_w
 KertomanTekijäpääteHeikko_<A>	;
 e:e	Tositapa4Tt_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
+e:e	Käskytapa_ttA_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Muistaa_s
@@ -3218,6 +3219,10 @@ LEXICON Käskytapa
 
 LEXICON Käskytapa_y2
 @D.VAIN_YM3@[Tk][Ap][P2][Ny]:@D.VAIN_YM3@	LiitesanaKaanPaHan_<A>	;
+
+LEXICON Käskytapa_ttA
+tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
+tt<A>k<O>:tt<A>k<O>	Loppu	;
 
 LEXICON Johdin_nimitapa1dA
 d:d	Johdin_nimitapa1A_<A>	;

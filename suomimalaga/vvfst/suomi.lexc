@@ -17,19 +17,23 @@ LEXICON InenLoppuisenYsJatko
 LEXICON NimiYsJatko
 -[Bc]:-	Joukahainen_em	;
 -[Bc]:-	Joukahainen_nimisanat	;
+-[Bc]:-	Loppu	;
 
 LEXICON PaikannimiYsJatko
 -[Bc]:-	Joukahainen_ep	;
 -[Bc]:-	Joukahainen_nimisanat	;
+-[Bc]:-	Loppu	;
 @P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
 
 LEXICON SukunimiYsJatko
 -[Bc]:-	Erisnimet	;
 -[Bc]:-	Joukahainen_nimisanat	;
+-[Bc]:-	Loppu	;
 
 LEXICON EtunimiYsJatko
 -[Bc]:-	Erisnimet	;
 -[Bc]:-	Joukahainen_nimisanat	;
+-[Bc]:-	Loppu	;
 
 LEXICON YhdyssanaJatkuu
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
