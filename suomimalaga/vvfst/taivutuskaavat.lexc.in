@@ -1709,6 +1709,12 @@ LEXICON NOUN Vieras
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 
+LEXICON NOUN Antelias
+<WC>Vieras_w_<A>	;
+<WC>Vieras_s_<A>	;
+?Laatusana	Yliaste_<A>	;
+?Laatusana	is:is	Johdin_UUs_<A>	;
+
 LEXICON NOUN Kirves
 <WC>Vieras_w_<A>	;
 <WC>Vieras_s_<A>	;

@@ -594,6 +594,7 @@ nainen;
 vastaus;
 kalleus;
 vieras;     # => vieraus
+  antelias; # => anteliaisuus
   ahdas;
   allas;
   autuas;   # => autuus

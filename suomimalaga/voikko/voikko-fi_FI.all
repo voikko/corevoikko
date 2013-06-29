@@ -1460,12 +1460,12 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (vieras in $tietue.jatko) then
-    define $johdin_Us := "";
-    if (($tietue.perusmuoto matches ".*[lmr]i[aä]s") or
-        ($tietue.perusmuoto matches ".*il[aä]s")) then
-      $johdin_Us := "is" + U($tietue);
-    end;
-    choose $i in vieras ($tietue, A($tietue), "s", "", $johdin_Us);
+    choose $i in vieras ($tietue, A($tietue), "s", "", "");
+    result $i.alku, $i - alku;
+
+
+  elseif (antelias in $tietue.jatko) then
+    choose $i in vieras ($tietue, A($tietue), "s", "", "is" + U($tietue));
     result $i.alku, $i - alku;
 
 
