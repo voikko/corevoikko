@@ -1368,6 +1368,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
@@ -3045,6 +3046,8 @@ LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTtiin_<A>	;
 TositavanKestämäTaan_<A>	;
+t:t	Käskytapa_<A>	;
+nn:nn	Mahtotapa_<A>	;
 Johdin_ntA_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
@@ -3139,6 +3142,8 @@ LEXICON Nähdä
 [Tn1]hd<A>:hd<A>	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
+h:h	Käskytapa_<A>	;
+hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_tU_dA_<A>	;
 ke:ke	Johdin_mA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
