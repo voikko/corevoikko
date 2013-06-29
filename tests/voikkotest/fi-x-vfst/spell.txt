@@ -1785,3 +1785,5 @@ Kalevala-muistomerkki
 Pentti-muistomerkki
 Virtas-muistomerkki
 Keuruu-muistomerkki
+ampuma-aserikoksesta
+!ampuma-kissa
