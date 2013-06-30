@@ -1794,3 +1794,12 @@ vaietaan
 harmaisiin
 kohdeltaisiin
 pantaisiin
+juosta
+juoksen
+juostaan
+juoskaamme
+juossee
+juostu
+juoksema
+juoksija
+juoksisi

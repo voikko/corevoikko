@@ -1326,7 +1326,7 @@ LEXICON NOUN Tosi
 ?NotLaatusana	[Sn][Ny]te:te	Omistusliite_<A>	;
 [Sn][Nm]det:det	Liitesana_<A>	;
 [Sg][Ny]den:den	<WC>YksikönGenetiivinJatko_<A>	;
-[Sg][Nm]si:is	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]si:si	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]tt<A>:tt<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]si<A>:si<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]ten<A>:ten<A>	<WC>LiOlV_<A>	;
@@ -3139,6 +3139,17 @@ n:n	Johdin_Us_ksen_<A>	;
 LEXICON Taitaa
 Huutaa_s_<A>	;
 d:d	Huutaa_w_<A>	;
+
+LEXICON Juosta
+[Tn1]st<A>:st<A>	Liitesana_<A>	;
+kse:kse	KestämänTekijäpääteHeikko_<A>	;
+s:s	TositavanKestämäTaan_<A>	;
+s:s	Käskytapa_<A>	;
+ss:ss	Mahtotapa_<A>	;
+s:s	Johdin_tU_tA_<A>	;
+kse:kse	Johdin_mA_<A>	;
+ksi:ksi	Johdin_ja_kulkija_<A>	;
+ks:ks	Ehtotapa_<A>	;
 
 LEXICON Nähdä
 [Tn1]hd<A>:hd<A>	Liitesana_<A>	;
