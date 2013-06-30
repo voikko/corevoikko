@@ -300,6 +300,7 @@ vaaleanpunakukkainen
 sisäänhyppimisketteryys
 ammattilaisuuteen
 italialaisamerikkalainen
+eritasoiset # laatusanan etuliite + inen-johdos
 
 # = voitto- ja yliasteet =
 []

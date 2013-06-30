@@ -161,7 +161,7 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     elseif nimisana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
     elseif laatusana in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos;
+      result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos, inen_johdos_nimisanasta;
     end;
     if tavuviiva in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules yhdysmerkki_etuliitteen_jälkeen;
