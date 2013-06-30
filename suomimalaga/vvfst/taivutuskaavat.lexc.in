@@ -2348,8 +2348,7 @@ Kohdella_<A>	;
 LEXICON Kaivaa_w
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 <A>:<A>	Käskytapa_y2_<A>	;
-e:e	TositavanKestämäTaan_<A>	;
-e:e	TositavanKertomaTtiin_<A>	;
+e:e	Tositapa4Tt_<A>	;
 e:e	Johdin_ttAx_<A>	;
 <A>:<A>	Johdin_ntA_<A>	;
 
@@ -2417,7 +2416,7 @@ i:i	Johdin_ja_kulkija_<A>	;
 LEXICON LaskeaLaskeskella_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
-e:e	TositavanKertomaTtiin_<A>	;
+e:e	Tositapa4Tt_<A>	;
 e:e	Johdin_ttAx_<A>	;
 e:e	Johdin_ntA_<A>	;
 
@@ -2431,7 +2430,7 @@ t:t	Tuntea_s_<A>	;
 
 LEXICON Tuntea_w
 e:e	KestämänTekijäpääteHeikko_<A>	;
-e:e	TositavanKertomaTtiin_<A>	;
+e:e	Tositapa4Tt_<A>	;
 e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
@@ -2491,7 +2490,7 @@ k:k	<WC>Sallia_s_<A>	;
 
 LEXICON Sallia_w
 i:i	KestämänTekijäpääteHeikko_<A>	;
-i:i	TositavanKertomaTtiin_<A>	;
+i:i	Tositapa4Tt_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;
@@ -2591,6 +2590,7 @@ LEXICON Nuolaista_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTiin_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
+Tositapa4Tt_<A>	;
 Käskytapa_e_<A>	;
 EhtotapaTa_<A>	;
 s:s	Mahtotapa_<A>	;
@@ -2758,8 +2758,7 @@ ts:ts	KertomanTekijäpääteHeikko_<A>	;
 ts:ts	KertomanTekijäpääteVahva_<A>	;
 [Tt][Ap][P3][Ny]tsee:tsee	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]tsev<A>t:tsev<A>t	Liitesana_<A>	;
-TositavanKestämäTaan_<A>	;
-TositavanKertomaTtiin_<A>	;
+Tositapa4Tt_<A>	;
 ts:ts	Ehtotapa_<A>	;
 t:t	Käskytapa_<A>	;
 tse:tse	Johdin_mA_<A>	;
@@ -2833,6 +2832,7 @@ k<O>:k<O>	Aleta_s_<A>	;
 
 LEXICON Aleta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+Tositapa4Tt_<A>	;
 Johdin_ttAx_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
@@ -2909,6 +2909,7 @@ ki:ki	Haluta_s_<A>	;
 
 LEXICON Haluta_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
+Tositapa4Tt_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 n:n	Johdin_nUt_<A>	;
 Johdin_ttAx_<A>	;
@@ -2998,8 +2999,7 @@ Johdin_Us_ksen_<A>	;
 
 LEXICON Salata_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
-TositavanKestämäTaan_<A>	;
-TositavanKertomaTtiin_<A>	;
+Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
@@ -3044,8 +3044,7 @@ t<O>:t<O>	<WC>Katketa_s_<A>	;
 
 LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
-TositavanKertomaTtiin_<A>	;
-TositavanKestämäTaan_<A>	;
+Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
 nn:nn	Mahtotapa_<A>	;
 Johdin_ntA_<A>	;

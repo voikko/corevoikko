@@ -1787,3 +1787,7 @@ Virtas-muistomerkki
 Keuruu-muistomerkki
 ampuma-aserikoksesta
 !ampuma-kissa
+tempaistaan
+moititaan
+juorutaan
+vaietaan
