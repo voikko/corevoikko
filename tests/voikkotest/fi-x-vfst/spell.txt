@@ -1791,3 +1791,6 @@ tempaistaan
 moititaan
 juorutaan
 vaietaan
+harmaisiin
+kohdeltaisiin
+pantaisiin

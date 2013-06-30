@@ -982,6 +982,7 @@ LEXICON NOUN Vapaa_s
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+[Sill][Nm]isii:isii	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
@@ -2631,6 +2632,7 @@ LEXICON Tulla_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 Käskytapa_<A>	;
+EhtotapaTa_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
@@ -2686,6 +2688,7 @@ l:l	Johdin_nimitapa2_<A>	;
 TositavanKertomaTiin_<A>	;
 TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
+EhtotapaTa_<A>	;
 Johdin_tAvA_<A>	;
 Johdin_lUt_<A>	;
 Johdin_tU_lA_<A>	;
