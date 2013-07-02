@@ -1803,3 +1803,5 @@ juostu
 juoksema
 juoksija
 juoksisi
+kevät
+keväässä
