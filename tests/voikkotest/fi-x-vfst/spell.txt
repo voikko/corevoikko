@@ -1805,3 +1805,8 @@ juoksija
 juoksisi
 kevät
 keväässä
+ratkaisseensa
+opintonsa
+maasto-ominaisuudet
+!maastoomimaisuudet
+-bittistä

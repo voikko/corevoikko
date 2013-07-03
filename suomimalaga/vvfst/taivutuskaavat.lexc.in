@@ -1941,7 +1941,7 @@ en:en	<WC>NormaaliYsJatko_<A>	;
 
 LEXICON NOUN NormaaliYsJatkoOl
 <WC>NormaaliYsJatko_<A>	;
-?NotLaatusana	Omistusliite_<A>	;
+?NotLaatusana	@C.EI_YKS@:@C.EI_YKS@	Omistusliite_<A>	;
 
 LEXICON NOUN NormaaliYsJatko
 Liitesana_<A>	;
@@ -3337,7 +3337,7 @@ LEXICON Johdin_tAvA
 [Ll]t<A>v@C.JOHDETTAVA_NIMISANAKSI@:t<A>v@C.JOHDETTAVA_NIMISANAKSI@	NimiLaatusanaAsema_<A>	;
 
 LEXICON Johdin_sUt
-[Ll]s@C.JOHDETTAVA_LAATUSANAKSI@:s@C.JOHDETTAVA_LAATUSANAKSI@	LaatusanaKuollut_<A>	;
+[Ll]s@C.JOHDETTAVA_LAATUSANAKSI@:s@C.JOHDETTAVA_LAATUSANAKSI@	NimiLaatusanaKuollut_<A>	;
 
 LEXICON Johdin_nUt
 [Ll]n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_LAATUSANAKSI@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaKuollut_<A>	;
