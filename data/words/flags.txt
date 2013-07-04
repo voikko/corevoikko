@@ -7,6 +7,7 @@
 43      inflection/ym3                           ym3             Taipuu vain yksikön ja monikon 3. persoonassa
 20      inflection/paikannimi_sisäpaikallissijat -               Paikannimi: taipuu sisäpaikallissijoissa
 21      inflection/paikannimi_ulkopaikallissijat -               Paikannimi: taipuu ulkopaikallissijoissa
+55      inflection/liitesana                     -               Jatko: liitesana
 15      usage/it                                 -               Ala: atk
 33      usage/medicine                           -               Ala: lääketiede
 36      usage/science                            -               Ala: matematiikka, fysiikka ja kemia
