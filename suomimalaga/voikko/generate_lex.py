@@ -75,6 +75,14 @@ def get_prefix_jatko(word):
 			prefixJatko = prefixJatko + u"@" + flag
 	return prefixJatko
 
+def get_adverb_jatko(word):
+	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
+	prefixJatko = u"loppu"
+	for flag in flags:
+		if flag in [u"liitesana"]:
+			prefixJatko = prefixJatko + u", " + flag
+	return prefixJatko
+
 def get_additional_attributes(word):
 	flags = generate_lex_common.get_flags_from_group(word, u"compounding")
 	result = u""
@@ -105,7 +113,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation"] and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"adverb"] and voikko_infclass == None:
 		return
 	malaga_word_class = generate_lex_common.get_malaga_word_class(wordclasses)
 	if malaga_word_class == None: return
@@ -152,6 +160,8 @@ def handle_word(word):
 			sys.exit(1)
 		if malaga_word_class == u"lyhenne":
 			jatko = u"tavuviiva, kaksoispiste, loppu"
+		elif malaga_word_class == u"seikkasana":
+			jatko = get_adverb_jatko(word)
 		if malaga_word_class == u"etuliite":
 			vtype = voikkoutils.VOWEL_BOTH
 			malaga_jatko = get_prefix_jatko(word)

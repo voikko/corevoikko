@@ -40,7 +40,6 @@
 # perusosana samoissa tilanteissa, joissa yleisnimen käyttö yhdyssanan
 # perusosana on sallittu.
 
-[perusmuoto: "aamupäivisin", alku: "aamupäivisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppppp"];
 [perusmuoto: "aamusella", alku: "aamusella", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aamutuimaan", alku: "aamutuimaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp"];
 [perusmuoto: "aamuvarhain", alku: "aamuvarhain", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, rakenne: "=pppp=ppppppp"];
@@ -48,7 +47,6 @@
 [perusmuoto: "aika-ajoin", alku: "aika-ajoin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "aikaisemmin", alku: "aikaisemmin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "aikaisin", alku: "aikaisin", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "aimo", alku: "aimo", luokka: seikkasana, jatko: <loppu>, äs: a];
 [perusmuoto: "aina", alku: "aina", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainiaaksi", alku: "ainiaaksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "ainiaan", alku: "ainiaan", luokka: seikkasana, jatko: <liitesana, loppu>, äs: a];
