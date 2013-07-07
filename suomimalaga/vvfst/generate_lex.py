@@ -38,7 +38,7 @@ CLASSMAP = hfconv.compileClassmapREs(hfconv.modern_classmap)
 # No special vocabularies are built for Voikko
 generate_lex_common.SPECIAL_VOCABULARY = []
 
-vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h", u"p", u"a"]
+vocabularyFileSuffixes = [u"ep", u"ee", u"es", u"em", u"t", u"nl", u"l", u"n", u"h", u"p", u"a", u"s"]
 vocabularyFiles = {}
 for fileSuffix in vocabularyFileSuffixes:
 	vocFile = codecs.open(OPTIONS["destdir"] + u"/joukahainen-" + fileSuffix + u".lexc", 'w', 'UTF-8')
@@ -92,6 +92,7 @@ def get_vfst_word_class(j_wordclasses):
 	if "interjection" in j_wordclasses: return u"[Lh]"
 	if "prefix" in j_wordclasses: return u"[Lp]"
 	if "abbreviation" in j_wordclasses: return u"[La]"
+	if "adverb" in j_wordclasses: return u"[Ls]"
 	return None
 
 # Returns a string describing the structure of a word, if necessary for the spellchecker
@@ -217,6 +218,14 @@ def get_prefix_jatko(word):
 			prefixJatko = prefixJatko + flag
 	return prefixJatko
 
+def get_adverb_jatko(word):
+	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
+	adverbJatko = u"Loppu"
+	for flag in sorted(flags):
+		if flag in [u"liitesana"]:
+			adverbJatko = adverbJatko + flag.title()
+	return adverbJatko
+
 def handle_word(word):
 	global OPTIONS
 	global CLASSMAP
@@ -238,7 +247,7 @@ def handle_word(word):
 	
 	# Get the word classes
 	wordclasses = generate_lex_common.tValues(word.getElementsByTagName("classes")[0], "wclass")
-	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation"] and voikko_infclass == None:
+	if wordclasses[0] not in [u"interjection", u"prefix", u"abbreviation", u"adverb"] and voikko_infclass == None:
 		return
 	vfst_word_class = get_vfst_word_class(wordclasses)
 	if vfst_word_class == None: return
@@ -276,6 +285,10 @@ def handle_word(word):
 		(alku, jatko) = generate_lex_common.get_malaga_inflection_class(wordform, voikko_infclass, wordclasses, CLASSMAP)
 		if vfst_word_class == u"[La]":
 			jatko = u"Lyhenne"
+		elif vfst_word_class == u"[Ls]":
+			jatko = get_adverb_jatko(word)
+		else:
+			jatko = jatko.title()
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:
 			vtype = voikkoutils.get_wordform_infl_vowel_type(altform)
 		else: vtype = forced_inflection_vtype
@@ -302,7 +315,7 @@ def handle_word(word):
 		alku = alku.lower()
 		
 		# Vowel type in derived verbs
-		if jatko in [u"heittää", u"muistaa", u"juontaa", u"hohtaa", u"murtaa", u"nousta", u"loistaa", u"jättää"]:
+		if jatko in [u"Heittää", u"Muistaa", u"Juontaa", u"Hohtaa", u"Murtaa", u"Nousta", u"Loistaa", u"Jättää"]:
 			diacritics = diacritics + vowel_type_for_derived_verb(alku)
 		
 		if vfst_word_class == u"[Lp]":
@@ -311,7 +324,7 @@ def handle_word(word):
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,
-			        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko.title(), vfst_vtype)
+			        alku, diacritics, alku, diacritics, vfst_class_prefix, jatko, vfst_vtype)
 		vocabularyFile.write(entry + u"\n")
 	
 	# Sanity check for alternative forms: if there are both multi part forms and single part forms

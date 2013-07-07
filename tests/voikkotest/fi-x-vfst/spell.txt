@@ -1810,3 +1810,7 @@ opintonsa
 maasto-ominaisuudet
 !maastoomimaisuudet
 -bittistä
+aamupäivisin
+aamupäivisinkin
+aimo
+!aimokin

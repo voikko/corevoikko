@@ -3581,6 +3581,12 @@ p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
 
+LEXICON LoppuLiitesana
+Liitesana_<A>	;
+
+LEXICON Loppu
+Loppu	;
+
 LEXICON Lyhenne
 Loppu	;
 -[Bc]:-	Loppu	;
