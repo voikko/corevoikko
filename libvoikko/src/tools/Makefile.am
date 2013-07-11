@@ -1,9 +1,12 @@
+dist_man_MANS =
 bin_PROGRAMS =
 if HAVE_BUILDTOOLS
     bin_PROGRAMS += voikkovfstc
+    dist_man_MANS += voikkovfstc.1
 endif
 if HAVE_TESTTOOLS
     bin_PROGRAMS += voikkospell voikkohyphenate voikkogc
+    dist_man_MANS += voikkospell.1 voikkohyphenate.1 voikkogc.1
 endif
 
 TOOLCXXFLAGS = $(AM_CXXFLAGS)
@@ -31,6 +34,3 @@ voikkogc_LDADD = $(TOOLLDADD)
 
 voikkovfstc_SOURCES = voikkovfstc.cpp
 voikkovfstc_CXXFLAGS = $(TOOLCXXFLAGS)
-
-dist_man_MANS = voikkospell.1 voikkohyphenate.1 voikkogc.1 voikkovfstc.1
-

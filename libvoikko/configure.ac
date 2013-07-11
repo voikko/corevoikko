@@ -95,10 +95,10 @@ AC_COMPILE_IFELSE([AC_LANG_SOURCE(
 ])
 
 dnl Build tools
-buildtools="yes"
-AC_ARG_ENABLE(buildtools, AC_HELP_STRING([--disable-buildtools],
-        [disable voikkovfstc]),
-        [buildtools=${enableval}], [buildtools=yes])
+buildtools="no"
+AC_ARG_ENABLE(buildtools, AC_HELP_STRING([--enable-buildtools],
+        [enable voikkovfstc (EXPERIMENTAL!)]),
+        [buildtools=${enableval}], [buildtools=no])
 AM_CONDITIONAL([HAVE_BUILDTOOLS], [test x$buildtools = xyes])
 
 dnl Test tools
