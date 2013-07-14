@@ -775,7 +775,7 @@ end;
 
 define @sti_edeltäjä := <laatusana, nimi_laatusana, voittoaste, yliaste,
                          johdin_tAvA, johdin_ttAvA, johdin_ttU,
-                         johdin_vA, johdin_vE>
+                         johdin_vA, johdin_vE, johdin_lAinen>
                         + @johdin_nUt + @johdin_tU
                         + @johtimet_laatusana_nimisanasta
                         + @johtimet_laatusana_laatusanasta;
