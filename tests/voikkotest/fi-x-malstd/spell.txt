@@ -612,6 +612,7 @@ juhlallisessa
 huonovointisuus
 !juoksevaton
 !juoksevallinen
+susimainen
 
 # = sijapäätteet =
 []
