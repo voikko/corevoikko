@@ -19,7 +19,7 @@
 
 [perusmuoto: "af", alku: "af", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=pp"];
 [perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä, rakenne: "=ppp"];  # Osama bin Laden.
-[perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: <loppu>, äs: ä];
+[perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "eräs", alku: "erä", luokka: asemosana, jatko: <vieras>, äs: ä];
 [perusmuoto: "halleluja", alku: "halleluj", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_voikko>]; # Taipuu Nykysuomen sanakirjassa.
 [perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];

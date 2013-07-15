@@ -157,9 +157,9 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
   elseif $oikea.luokka = etuliite then
     if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules
-        inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos;
+        inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos, nimisana_teonsanasta;
     elseif nimisana in $oikea.jatko then
-      result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
+      result <[alku: $sana] + $oikea>, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos, nimisana_teonsanasta;
     elseif laatusana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules laatusana, paikannimen_lainen_johdos, inen_johdos_nimisanasta;
     end;
@@ -171,7 +171,10 @@ combi_rule sanan_alku ($vasen, $oikea, $sana):
     if teonsana in $oikea.jatko then
       result <[alku: $sana] + $oikea>, rules teonsana;
     end;
-    result <[alku: $sana] + $oikea>, rules etuliite, nimisana, nimisana_teonsanasta;
+    if teonsanan_johdoksen_etuliite in $oikea.jatko then
+      result <[alku: $sana] + $oikea>, rules nimisana_teonsanasta;
+    end;
+    result <[alku: $sana] + $oikea>, rules etuliite, nimisana;
 
   elseif $oikea.luokka = kieltosana then
     if kieltosanan_liitesana in $oikea.jatko then
@@ -246,15 +249,18 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
 
   if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
     result $res, rules
-      inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos;
+      inen_johdos_nimisanasta, laatusana, paikannimen_lainen_johdos, nimisana_teonsanasta;
   elseif nimisana in $oikea.jatko then
-    result $res, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos;
+    result $res, rules inen_johdos_nimisanasta, paikannimen_lainen_johdos, nimisana_teonsanasta;
   elseif laatusana in $oikea.jatko then
     result $res, rules laatusana, paikannimen_lainen_johdos;
   end;
 
   if (teonsana in $oikea.jatko) then
     result $res, rules teonsana;
+  end;
+  if teonsanan_johdoksen_etuliite in $oikea.jatko then
+      result $res, rules nimisana_teonsanasta;
   end;
 
   if (kieltosana in $oikea.jatko) then
@@ -265,7 +271,7 @@ combi_rule etuliite ($vasen, $oikea, $sana, $index):
     else
       result $res, accept;
     end;
-    result $res, rules etuliite, nimisana, nimisana_teonsanasta;
+    result $res, rules etuliite, nimisana;
   end;
 end;
 
@@ -278,11 +284,8 @@ combi_rule nimisanan_etuliite ($vasen, $oikea, $sana, $index):
   ? vokaaliehdollinen_yhdysviiva_ok($vasen, $sana);
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-  if nimisana in $oikea.jatko and laatusana in $oikea.jatko then
-    result $res, rules
-      inen_johdos_nimisanasta;
-  elseif nimisana in $oikea.jatko then
-    result $res, rules inen_johdos_nimisanasta;
+  if nimisana in $oikea.jatko then
+    result $res, rules inen_johdos_nimisanasta, nimisana_laatusanasta;
   end;
 
   ? not kieltosana in $oikea.jatko;

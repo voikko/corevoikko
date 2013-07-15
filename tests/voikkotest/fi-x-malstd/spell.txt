@@ -443,6 +443,9 @@ kiintoisä # isä ei sallittu yhdyssanan loppuosana, etuliite "kiinto"
 koejuoksee
 !kissakoejuoksee
 !asiafanliittyvässä
+!perieri
+!viimesilauksen
+vaalirahoitusepäselvyydet
 
 # = seikkasanat =
 []
