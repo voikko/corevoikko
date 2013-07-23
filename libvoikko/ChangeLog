@@ -1,3 +1,6 @@
+2013-07-23 Harri Pitkänen <hatapitk@iki.fi>
+	* Add option accept_all_uppercase to voikkospell.
+
 2013-07-11 Harri Pitkänen <hatapitk@iki.fi>
 	* Disable voikkovfstc by default since VFST is still experimental.
 

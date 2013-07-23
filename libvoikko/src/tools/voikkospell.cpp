@@ -381,6 +381,10 @@ int main(int argc, char ** argv) {
 			setBooleanOption(VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 1);
 		else if (args == "accept_first_uppercase=0")
 			setBooleanOption(VOIKKO_OPT_ACCEPT_FIRST_UPPERCASE, 0);
+		else if (args == "accept_all_uppercase=1")
+			setBooleanOption(VOIKKO_OPT_ACCEPT_ALL_UPPERCASE, 1);
+		else if (args == "accept_all_uppercase=0")
+			setBooleanOption(VOIKKO_OPT_ACCEPT_ALL_UPPERCASE, 0);
 		else if (args == "accept_extra_hyphens=1")
 			setBooleanOption(VOIKKO_OPT_ACCEPT_EXTRA_HYPHENS, 1);
 		else if (args == "accept_extra_hyphens=0")
