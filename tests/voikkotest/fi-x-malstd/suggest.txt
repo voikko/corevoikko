@@ -63,9 +63,14 @@ Kissa.koira	Kissa. koira
 kissaJuokse	kissa Juokse
 Kissajuokse	Kissa juokse
 jälkäinen	jälkeinen
+TEsti	Testi
+tEsti	testi
 
 [voikko.setIgnoreDot(True)]
 koirra.	!koira	koira.
+
+[voikko.setAcceptAllUppercase(False)]
+TESTI	!TESTI	testi
 
 [voikko.setSuggestionStrategy(SuggestionStrategy.OCR)]
 Män_sälä	Mäntsälä

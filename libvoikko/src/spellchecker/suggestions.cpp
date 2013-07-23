@@ -31,6 +31,7 @@
 #include "utils/utils.hpp"
 #include "utils/StringUtils.hpp"
 #include "character/charset.hpp"
+#include "character/SimpleChar.hpp"
 #include "spellchecker/suggestion/SuggestionStatus.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include <cstring>
@@ -122,7 +123,8 @@ VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(voikko_options_t * options, const wcha
 	/* Change the character case to match the original word */
 	enum casetype origcase = voikko_casetype(nword, wlen);
 	size_t suglen;
-	if (origcase == CT_FIRST_UPPER) {
+	if (origcase == CT_FIRST_UPPER ||
+	    (origcase == CT_COMPLEX && character::SimpleChar::isUpper(nword[0]))) {
 		size_t i = 0;
 		while (suggestions[i] != 0) {
 			suglen = wcslen(suggestions[i]);
@@ -131,7 +133,7 @@ VOIKKOEXPORT wchar_t ** voikkoSuggestUcs4(voikko_options_t * options, const wcha
 			i++;
 		}
 	}
-	if (origcase == CT_ALL_UPPER) {
+	if (origcase == CT_ALL_UPPER && options->accept_all_uppercase) {
 		size_t i = 0;
 		while (suggestions[i] != 0) {
 			suglen = wcslen(suggestions[i]);
