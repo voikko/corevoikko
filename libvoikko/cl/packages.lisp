@@ -6,6 +6,7 @@
            #:with-instance #:spell #:suggest #:hyphenate #:version
            #:set-option #:analyze #:split-word
 
+           #:error-string
            #:voikko-error #:initialize-error #:internal-error
            #:charset-conversion-error #:hyphenation-error
            #:not-active-instance-error #:unknown-option-key-error

@@ -31,9 +31,9 @@
     (load-foreign-library '(:default "libvoikko"))))
 
 (define-condition voikko-error (error)
-  ((error-string :initarg :string))
+  ((error-string :initarg :string :reader error-string))
   (:report (lambda (condition stream)
-             (format stream "~A" (slot-value condition 'error-string)))))
+             (format stream "~A" (error-string condition)))))
 
 (define-condition initialize-error (voikko-error) nil)
 (define-condition internal-error (voikko-error) nil)
