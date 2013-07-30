@@ -33,7 +33,7 @@ def printCommonHeader(helpFile, pageTitle):
 	helpFile.write(u"<!DOCTYPE html>")
 	helpFile.write(u"<html lang='fi'><head><title>Voikko &mdash; %s</title>" % pageTitle)
 	helpFile.write(u"<meta http-equiv='content-type' content='text/html; charset=utf-8' />")
-	helpFile.write(u"<link rel='stylesheet' type='text/css' href='../../styles.css' /></head><body>")
+	helpFile.write(u"<link rel='stylesheet' type='text/css' href='../../stylesheets/styles.css' /></head><body>")
 
 def printHelpContent(helpFile, errorCode, errorTitle, errorContent):
 	helpFile.write(u"<h1>%s</h1>" % errorTitle)
@@ -42,10 +42,7 @@ def printHelpContent(helpFile, errorCode, errorTitle, errorContent):
 	helpFile.write(u"</p>")
 
 def printCommonFooter(helpFile):
-	helpFile.write(u"<hr /><p class='sf-logo'><small>Hosted by</small><br />")
-	helpFile.write(u"<a href='http://sourceforge.net'><img src='http://sflogo.sourceforge.net/sflogo.php?group_id=156731&amp;type=4' ")
-	helpFile.write(u"width='125' height='37' alt='SourceForge.net Logo' /></a>")
-	helpFile.write(u"</p><div style='clear:both;'></div>")
+	helpFile.write(u"<div style='clear:both;'></div>")
 	helpFile.write(u"</body></html>")
 
 
