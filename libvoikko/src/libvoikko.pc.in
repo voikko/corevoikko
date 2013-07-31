@@ -5,7 +5,7 @@ includedir=@includedir@
 
 Name: libvoikko
 Description: Library for Finnish language tools
-URL: http://voikko.sourceforge.net
+URL: http://voikko.puimula.org
 Version: @VERSION@
 Libs: -L${libdir} -lvoikko
 Cflags: -I${includedir}

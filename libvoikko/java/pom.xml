@@ -6,13 +6,13 @@
   <artifactId>libvoikko</artifactId>
   <version>3.5</version>
   <name>libvoikko</name>
-  <url>http://voikko.sourceforge.net</url>
+  <url>http://voikko.puimula.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <organization>
   	<name>Voikko developers</name>
-  	<url>http://voikko.sourceforge.net</url>
+  	<url>http://voikko.puimula.org</url>
   </organization>
   <dependencies>
     <dependency>

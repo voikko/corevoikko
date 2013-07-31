@@ -375,7 +375,7 @@ def index(req, spellstring = None):
   <div class="clear"></div>
   </div>
  <div class="main">
- <p>Tämä on <a href="http://voikko.sourceforge.net">Voikko-projektin</a> tarjoama oikoluku- ja
+ <p>Tämä on <a href="http://voikko.puimula.org">Voikko-projektin</a> tarjoama oikoluku- ja
  tavutuspalvelu, jonka on ensisijainen tarkoitus on toimia helppokäyttöisenä testiympäristönä
  Voikon kehittäjiä varten. Palvelua saa kuitenkin käyttää muutenkin, esimerkiksi Voikon
  testaamiseen ennen ohjelmiston käyttöönottoa tai tekstien oikolukuun silloin kun omalla koneella
@@ -405,7 +405,7 @@ def index(req, spellstring = None):
  <p>Webvoikko (kuten Voikko muutenkin) on kokonaisuudessaan vapaata ohjelmistoa. Se on saatavilla
   maksutta GPL-lisenssillä, joten jos haluat, voit asentaa ohjelmiston myös omalle palvelimellesi
   ja muokata sitä tarpeittesi mukaan.
-  <a href="http://voikko.sourceforge.net">Voikko-projektin</a> kotisivuilta löydät lisää tietoa
+  <a href="http://voikko.puimula.org">Voikko-projektin</a> kotisivuilta löydät lisää tietoa
   asiasta sekä yhteystietomme.
  </p>
  </div>
