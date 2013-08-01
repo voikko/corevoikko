@@ -2543,6 +2543,15 @@ allo_rule generate_allos ($tietue):
         result $j.alku, $j - alku;
       end;
     end;
+  elseif (antelias in $tietue.jatko) then
+    choose $i in utelias ($tietue, "s", A($tietue), "", "is"+U($tietue));
+    if (value_type($i) = record) then
+      result $i.alku, $i - alku;
+    else
+      foreach $j in $i:
+        result $j.alku, $j - alku;
+      end;
+    end;
   elseif (autuas in $tietue.jatko) then
     choose $i in vieras ($tietue, A($tietue)+"s", A($tietue)+A($tietue), A($tietue)+"h"+A($tietue), A($tietue), A($tietue)+"hit", A($tietue)+"h", "");
     if (value_type($i) = record) then

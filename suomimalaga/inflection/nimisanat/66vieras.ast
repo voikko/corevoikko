@@ -1,6 +1,6 @@
 # Suomi-malaga, suomen kielen muoto-opin kuvaus.
 #
-# Tekijänoikeus © 2006-2008, 2011 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
+# Tekijänoikeus © 2006-2008, 2011, 2013 Hannu Väisänen (Etunimi.Sukunimi@uef.fi)
 #
 # Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää
 # edelleen ja muuttaa GNU yleisen lisenssin (GPL lisenssin)
@@ -47,6 +47,7 @@
 vieras   vieras  s   a   ha   ""  hit   h   ""
 ahdas    vieras  das taa taha ta  tahit tah ta
 allas    vieras  las taa taha ta  tahit tah ta
+antelias utelias s   a   ""   isu
 autuas   vieras  as  aa  aha  a   ahit  ah  ""
 harras   vieras  ras taa taha ta  tahit tah ta
 hammas   vieras  mas paa paha pa  pahit pah pa

@@ -1482,6 +1482,23 @@ define @heikko_aste := @yksikön_heikko_aste + @monikon_heikko_aste;
 
 [perusmuoto: "utumorsian", alku: "utumorsia", luokka: nimisana, jatko: <uistin>, äs: a, rakenne: "=ppp=ppppppp", tiedot: <ei_voikko>];
 [perusmuoto: "jälki", alku: "jäl", luokka: nimisana, jatko: <jälki>, äs: ä];
+[perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sana2, äs: ä];
+[perusmuoto: "joutsi", alku: "jou", luokka: nimisana, jatko: <peitsi>, äs: a];
+[perusmuoto: "peitsi", alku: "pei", luokka: nimisana, jatko: <peitsi>, äs: ä];
+[perusmuoto: "hyljätä", alku: "hyl", luokka: teonsana, jatko: <hyljätä>, äs: ä];
+[perusmuoto: "ilmi", alku: "ilmi", luokka: nimi_laatusana, jatko: @sana2, äs: ä];
+[perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: @sana2, äs: ä];
+[perusmuoto: "levätä", alku: "le", luokka: teonsana, jatko: <levätä>, äs: ä];
+[perusmuoto: "maksi", alku: "maks", luokka: nimisana, jatko: @sana1 + <risti>, äs: a];
+[perusmuoto: "hylätä", alku: "hyl", luokka: teonsana, jatko: <hylätä>, äs: ä];
+[perusmuoto: "viime", alku: "viime", luokka: laatusana, jatko: @sana2, äs: ä];
+[perusmuoto: "plus", alku: "plus", luokka: nimisana, jatko: @sana1, äs: a];
+[perusmuoto: "toteen", alku: "toteen", luokka: nimisana, jatko: @sana2, äs: aä];
+[perusmuoto: "tarvis", alku: "tarvis", luokka: nimisana, jatko: @sana1, äs: a];
+[perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: @sana1, äs: a];
+[perusmuoto: "Punkeri", alku: "Punker", luokka: sukunimi, jatko: <paperi>, äs: a];
+[perusmuoto: "faneri", alku: "faner", luokka: nimisana, jatko: <paperi>, äs: a, tiedot: <inen>];
+
 
 #a[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: a];
 #b[perusmuoto: "", alku: "", luokka: nimisana, jatko: <>, äs: ä];

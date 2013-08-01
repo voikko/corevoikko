@@ -7,6 +7,7 @@ sanat/olla-ei.lex \
 sanat/etuliitteet.lex \
 sanat/lyhenteet.lex \
 sanat/omat.lex \
+sanat/seikkasanat.lex \
 voikonsanat/atk.lex \
 voikonsanat/erikoiset.lex \
 voikonsanat/erikoissanat.lex \
@@ -17,7 +18,6 @@ voikonsanat/lainen.lex \
 voikonsanat/lukusanat.lex \
 voikonsanat/matluonnontiede.lex \
 voikonsanat/poikkeavat.lex \
-voikonsanat/seikkasanat.lex \
 voikonsanat/sidesanat.lex \
 voikonsanat/suhdesanat.lex \
 voikonsanat/taivutustaydennykset.lex \
