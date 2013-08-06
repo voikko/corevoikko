@@ -364,3 +364,7 @@ word:roomalaiskissa
     STRUCTURE==ppppppppp=ppppp
 word:kissattomuus
   expected:1
+word:ei-kenenkään-maa
+  expected:1
+  analysis
+    STRUCTURE==pp-=ppppppppp-=ppp
