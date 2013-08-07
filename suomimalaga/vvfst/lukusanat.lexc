@@ -1,6 +1,11 @@
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi	;
+[Lu][Xp]kaksi[X]ka:ka	LukusanaYksi	;
 
 LEXICON LukusanaYksi
-[Sn][Ny]ksi:ksi	Loppu;
+[Sn][Ny]ksi:ksi	LukusanaSnNy;
 [Sg][Ny]hden:hden	Loppu;
+
+LEXICON LukusanaSnNy
+Loppu	;
+@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;

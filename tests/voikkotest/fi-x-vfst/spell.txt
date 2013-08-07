@@ -1816,3 +1816,5 @@ aimo
 !aimokin
 yksi
 yhden
+yksikätinen
+!yksikäsi
