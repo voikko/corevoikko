@@ -368,3 +368,10 @@ word:ei-kenenkään-maa
   expected:1
   analysis
     STRUCTURE==pp-=ppppppppp-=ppp
+word:yksi
+  expected:1
+  analysis
+    CLASS=lukusana
+    NUMBER=singular
+    SIJAMUOTO=nimento
+    STRUCTURE==pppp

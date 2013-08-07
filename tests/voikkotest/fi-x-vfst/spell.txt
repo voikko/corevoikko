@@ -1814,3 +1814,5 @@ aamupäivisin
 aamupäivisinkin
 aimo
 !aimokin
+yksi
+yhden

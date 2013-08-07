@@ -34,6 +34,7 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/sukija.py sukija/suomi.all sukija/suomi.sym sukija/suomi.tex \
            sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro
 
+VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukusanat.lexc
 
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
@@ -42,8 +43,8 @@ SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \
          common/hfconv.py common/generate_lex_common.py \
          $(SUKIJA_SRC) $(patsubst %,vocabulary/erikoisalat/%.lex,$(OPTIONAL_LEX)) \
          vvfst/generate_lex.py vvfst/generate_taivutuskaavat.py vvfst/root.lexc \
-         vvfst/suomi.lexc vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in \
-         vvfst/main.foma.in vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/generate_sukija.py
+         vvfst/taivutuskaavat.lexc.in vvfst/voikko-fi_FI.pro.in \
+         vvfst/main.foma.in $(VVFST_LEXC) vvfst/generate_sukija.py
 
 VOIKKO_BINDIST=$(VOIKKO_BUILDDIR)/voikko-fi_FI.pro $(VOIKKO_BUILDDIR)/voikko-fi_FI.lex_? \
                $(VOIKKO_BUILDDIR)/voikko-fi_FI.mor_? $(VOIKKO_BUILDDIR)/voikko-fi_FI.sym_?
@@ -214,8 +215,8 @@ $(VVFST_BUILDDIR)/joukahainen.lexc.stamp: vocabulary/joukahainen.xml vocabulary/
 $(VVFST_BUILDDIR)/taivutuskaavat.lexc: vvfst/taivutuskaavat.lexc.in vvfst/generate_taivutuskaavat.py
 	$(PYTHON) vvfst/generate_taivutuskaavat.py $(GENLEX_OPTS) --destdir=$(VVFST_BUILDDIR)
 
-$(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc
-	cat vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc > $@
+$(VVFST_BUILDDIR)/all.lexc: vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_BUILDDIR)/joukahainen.lexc.stamp $(VVFST_LEXC)
+	cat vvfst/root.lexc $(VVFST_BUILDDIR)/taivutuskaavat.lexc $(VVFST_GENERATED_LEXC) $(VVFST_LEXC) > $@
 
 $(VVFST_BUILDDIR)/main.foma: vvfst/main.foma.in
 	sed -e "s,VVFST_BUILDDIR,$(VVFST_BUILDDIR)," < $^ > $@
