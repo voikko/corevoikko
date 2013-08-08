@@ -3719,12 +3719,6 @@ LEXICON LukusanaSillNy29
 @U.LS.SILLNY@:@U.LS.SILLNY@	Liitesana_<A>	;
 @U.LS.SILLNY@:@U.LS.SILLNY@	LukusanaKymmentäSillNy_<A>	;
 
-LEXICON LukusanaSadeNy29
-@U.LS.SADENY@:@U.LS.SADENY@	LukusanaLiitesana_<A>	;
-@U.LS.SADENY@kymmenellä:@U.LS.SADENY@kymmenellä	LukusanaSadeNy29_ä	;
-@U.LS.SADENY@sadalla:@U.LS.SADENY@sadalla	LukusanaSadeNy29_a	;
-@U.LS.SADENY@tuhannella:@U.LS.SADENY@tuhannella	LukusanaSadeNy29_a	;
-
 LEXICON LukusanaKymmentäSnNy
 kymmentä:kymmentä	LukusanaLiitesana_ä	;
 sataa:sataa	LukusanaLiitesana_a	;

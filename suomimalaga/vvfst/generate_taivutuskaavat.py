@@ -123,7 +123,25 @@ while True:
 		lexcLines = []
 		continue
 	lexcLines.append(line)
-
+infile.close()
+	
 appendLexicon(lexicon, lexcLines, lexcFile)
+
+# Generate lexicons for numerals
+
+MULTI = {
+	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella"]
+}
+
+for sija in MULTI.keys():
+	diacritic = u"@U.LS." + sija.upper() + u"@"
+	lexiconName = u"Lukusana" + sija + u"29"
+	numeralLines = []
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
+	numeralLines.append(diacritic + MULTI[sija][0] + u":" + diacritic + MULTI[sija][0] + u"\t" + lexiconName + u"_ä\t;")
+	numeralLines.append(diacritic + MULTI[sija][1] + u":" + diacritic + MULTI[sija][1] + u"\t" + lexiconName + u"_a\t;")
+	numeralLines.append(diacritic + MULTI[sija][2] + u":" + diacritic + MULTI[sija][2] + u"\t" + lexiconName + u"_a\t;")
+	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
+
 
 lexcFile.close()
