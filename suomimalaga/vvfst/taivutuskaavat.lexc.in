@@ -3627,6 +3627,7 @@ Loppu	;
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>;
 [Sg][Ny]hden:hden	Liitesana_<A>;
+[Sp][Ny]ht<A>:ht<A>	Liitesana_<A>;
 [Sine][Ny]hdess<A>:hdess<A>	Liitesana_<A>	;
 [Sela][Ny]hdest<A>:hdest<A>	Liitesana_<A>	;
 [Sill][Ny]hteen:hteen	Liitesana_<A>	;
@@ -3635,8 +3636,9 @@ LEXICON LukusanaYksi
 [Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
 
 LEXICON LukusanaKaksi
-[Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>;
-[Sg][Ny]hden:hden	LukusanaSgNy29_<A>;
+[Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>	;
+[Sg][Ny]hden:hden	LukusanaSgNy29_<A>	;
+[Sp][Ny]ht<A>:ht<A>	LukusanaSpNy29_<A>	;
 [Sine][Ny]hdess<A>:hdess<A>	Liitesana_<A>	;
 [Sela][Ny]hdest<A>:hdest<A>	Liitesana_<A>	;
 [Sill][Ny]hteen:hteen	LukusanaSillNy29_<A>	;
@@ -3645,8 +3647,9 @@ LEXICON LukusanaKaksi
 [Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
 
 LEXICON LukusanaKolme
-[Sn][Ny]e:e	LukusanaSnNy_<A>;
+[Sn][Ny]e:e	LukusanaSnNy29_<A>;
 [Sg][Ny]en:en	LukusanaSgNy29_<A>;
+[Sp][Ny]e<A>:e<A>	LukusanaSpNy29_<A>	;
 [Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
 [Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
 [Sill][Ny]een:een	LukusanaSillNy29_<A>	;
@@ -3655,8 +3658,9 @@ LEXICON LukusanaKolme
 [Sall][Ny]elle:elle	Liitesana_<A>	;
 
 LEXICON LukusanaNeljä
-[Sn][Ny]<A>:<A>	LukusanaSnNy_<A>;
+[Sn][Ny]<A>:<A>	LukusanaSnNy29_<A>;
 [Sg][Ny]<A>n:<A>n	LukusanaSgNy29_<A>;
+[Sp][Ny]<A><A>:<A><A>	LukusanaSpNy29_<A>	;
 [Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
 [Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
@@ -3667,6 +3671,7 @@ LEXICON LukusanaNeljä
 LEXICON LukusanaViisi
 [Sn][Ny]si:si	LukusanaSnNy29_<A>;
 [Sg][Ny]den:den	LukusanaSgNy29_<A>;
+[Sp][Ny]tt<A>:tt<A>	LukusanaSpNy29_<A>	;
 [Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
 [Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
 [Sill][Ny]teen:teen	LukusanaSillNy29_<A>	;
@@ -3686,6 +3691,10 @@ LukusanaSnNy_<A>	;
 LEXICON LukusanaSgNy29
 @U.LS.SGNY@:@U.LS.SGNY@	Liitesana_<A>	;
 @U.LS.SGNY@:@U.LS.SGNY@	LukusanaKymmentäSgNy	;
+
+LEXICON LukusanaSpNy29
+@U.LS.SPNY@:@U.LS.SPNY@	Liitesana_<A>	;
+@U.LS.SPNY@:@U.LS.SPNY@	LukusanaKymmentäSpNy	;
 
 LEXICON LukusanaSillNy29
 @U.LS.SILLNY@:@U.LS.SILLNY@	Liitesana_<A>	;

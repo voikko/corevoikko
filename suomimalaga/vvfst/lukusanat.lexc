@@ -20,6 +20,11 @@ kymmenen:kymmenen	LukusanaLiitesana_ä	;
 sadan:sadan	LukusanaLiitesana_a	;
 tuhannen:tuhannen	LukusanaLiitesana_a	;
 
+LEXICON LukusanaKymmentäSpNy
+kymmentä:kymmentä	LukusanaLiitesana_ä	;
+sataa:sataa	LukusanaLiitesana_a	;
+tuhatta:tuhatta	LukusanaLiitesana_a	;
+
 LEXICON LukusanaKymmentäSillNy
 kymmeneen:kymmeneen	LukusanaLiitesana_ä	;
 sataan:sataan	LukusanaLiitesana_a	;

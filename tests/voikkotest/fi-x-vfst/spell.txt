@@ -1836,3 +1836,5 @@ kahdenkymmenenkolmen
 kolmeensataan
 viisi
 viiden
+neljätuhatta
+kahtatuhattakolmeasataaneljääkymmentäyhtä
