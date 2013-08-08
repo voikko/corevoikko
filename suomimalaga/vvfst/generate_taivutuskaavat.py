@@ -130,6 +130,11 @@ appendLexicon(lexicon, lexcLines, lexcFile)
 # Generate lexicons for numerals
 
 MULTI = {
+	u"SgNy": [u"kymmenen", u"sadan", u"tuhannen"],
+	u"SpNy": [u"kymmentä", u"sataa", u"tuhatta"],
+	u"SineNy": [u"kymmenessä", u"sadassa", u"tuhannessa"],
+	u"SelaNy": [u"kymmenestä", u"sadasta", u"tuhannesta"],
+	u"SillNy": [u"kymmeneen", u"sataan", u"tuhanteen"],
 	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella"]
 }
 
