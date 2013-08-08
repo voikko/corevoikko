@@ -3664,6 +3664,16 @@ LEXICON LukusanaNeljä
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
 [Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
 
+LEXICON LukusanaViisi
+[Sn][Ny]si:si	LukusanaSnNy29_<A>;
+[Sg][Ny]den:den	LukusanaSgNy29_<A>;
+[Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
+[Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
+[Sill][Ny]teen:teen	LukusanaSillNy29_<A>	;
+[Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
+[Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
+[Sall][Ny]delle:delle	Liitesana_<A>	;
+
 LEXICON LukusanaSnNy
 @U.LS.SNNY@	LukusanaToista	;
 @U.LS.SNNY@	Liitesana_<A>	;

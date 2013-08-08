@@ -1834,3 +1834,5 @@ kahdenkymmenenkolmen
 !kahdenkymmentäkolme
 !kahdenkymmenenkolme
 kolmeensataan
+viisi
+viiden

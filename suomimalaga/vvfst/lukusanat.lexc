@@ -2,7 +2,9 @@ LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
 [Lu][Xp]kaksi[X]ka:ka	LukusanaKaksi_a	;
 [Lu][Xp]kolme[X]kolm:kolm	LukusanaKolme_a	;
-[Lu][Xp]nelj[X]nelj:nelj	LukusanaNeljä_ä	;
+[Lu][Xp]neljä[X]nelj:nelj	LukusanaNeljä_ä	;
+[Lu][Xp]viisi[X]vii:vii	LukusanaViisi_ä	;
+[Lu][Xp]kuusi[X]kuu:kuu	LukusanaViisi_a	;
 
 LEXICON LukusanaToista
 toista:toista	Liitesana_a	;
