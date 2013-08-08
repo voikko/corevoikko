@@ -134,7 +134,7 @@ Multichar_Symbols
 @P.PAIKANNIMEN_JL.ON@ @C.PAIKANNIMEN_JL@ @D.PAIKANNIMEN_JL@
 
 ! Lukusanojen taivutuksen rajoitus
-@U.LS.SNNY@ @U.LS.SGNY@
+@U.LS.SNNY@ @U.LS.SGNY@ @U.LS.SILLNY@
 
 LEXICON Root
 Joukahainen	;

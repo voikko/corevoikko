@@ -17,3 +17,8 @@ LEXICON LukusanaKymmentäSgNy
 kymmenen:kymmenen	LukusanaLiitesana_ä	;
 sadan:sadan	LukusanaLiitesana_a	;
 tuhannen:tuhannen	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSillNy
+kymmeneen:kymmeneen	LukusanaLiitesana_ä	;
+sataan:sataan	LukusanaLiitesana_a	;
+tuhanteen:tuhanteen	LukusanaLiitesana_a	;

@@ -1833,3 +1833,4 @@ kaksituhatta
 kahdenkymmenenkolmen
 !kahdenkymmentäkolme
 !kahdenkymmenenkolme
+kolmeensataan
