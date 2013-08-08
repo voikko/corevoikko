@@ -3642,7 +3642,7 @@ LEXICON LukusanaKaksi
 [Sine][Ny]hdess<A>:hdess<A>	LukusanaSineNy29_<A>	;
 [Sela][Ny]hdest<A>:hdest<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]hteen:hteen	LukusanaSillNy29_<A>	;
-[Sade][Ny]hdell<A>:hdell<A>	Liitesana_<A>	;
+[Sade][Ny]hdell<A>:hdell<A>	LukusanaSadeNy29_<A>	;
 [Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
 [Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
 
@@ -3653,7 +3653,7 @@ LEXICON LukusanaKolme
 [Sine][Ny]ess<A>:ess<A>	LukusanaSineNy29_<A>	;
 [Sela][Ny]est<A>:est<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]een:een	LukusanaSillNy29_<A>	;
-[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
+[Sade][Ny]ell<A>:ell<A>	LukusanaSadeNy29_<A>	;
 [Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
 [Sall][Ny]elle:elle	Liitesana_<A>	;
 
@@ -3664,7 +3664,7 @@ LEXICON LukusanaNeljä
 [Sine][Ny]<A>ss<A>:<A>ss<A>	LukusanaSineNy29_<A>	;
 [Sela][Ny]<A>st<A>:<A>st<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	LukusanaSadeNy29_<A>	;
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
 [Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
 
@@ -3675,7 +3675,7 @@ LEXICON LukusanaViisi
 [Sine][Ny]dess<A>:dess<A>	LukusanaSineNy29_<A>	;
 [Sela][Ny]dest<A>:dest<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]teen:teen	LukusanaSillNy29_<A>	;
-[Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
+[Sade][Ny]dell<A>:dell<A>	LukusanaSadeNy29_<A>	;
 [Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
 [Sall][Ny]delle:delle	Liitesana_<A>	;
 
@@ -3686,7 +3686,7 @@ LEXICON LukusanaSeitsemän
 [Sine][Ny]<A>ss<A>:<A>ss<A>	LukusanaSineNy29_<A>	;
 [Sela][Ny]<A>st<A>:<A>st<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
-[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	LukusanaSadeNy29_<A>	;
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
 [Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
 
@@ -3697,27 +3697,63 @@ LEXICON LukusanaSnNy
 
 LEXICON LukusanaSnNy29
 LukusanaSnNy_<A>	;
-@U.LS.SNNY@	LukusanaKymmentäSnNy	;
+@U.LS.SNNY@	LukusanaKymmentäSnNy_<A>	;
 
 LEXICON LukusanaSgNy29
 @U.LS.SGNY@:@U.LS.SGNY@	Liitesana_<A>	;
-@U.LS.SGNY@:@U.LS.SGNY@	LukusanaKymmentäSgNy	;
+@U.LS.SGNY@:@U.LS.SGNY@	LukusanaKymmentäSgNy_<A>	;
 
 LEXICON LukusanaSpNy29
 @U.LS.SPNY@:@U.LS.SPNY@	Liitesana_<A>	;
-@U.LS.SPNY@:@U.LS.SPNY@	LukusanaKymmentäSpNy	;
+@U.LS.SPNY@:@U.LS.SPNY@	LukusanaKymmentäSpNy_<A>	;
 
 LEXICON LukusanaSineNy29
 @U.LS.SINENY@:@U.LS.SINENY@	Liitesana_<A>	;
-@U.LS.SINENY@:@U.LS.SINENY@	LukusanaKymmentäSineNy	;
+@U.LS.SINENY@:@U.LS.SINENY@	LukusanaKymmentäSineNy_<A>	;
 
 LEXICON LukusanaSelaNy29
 @U.LS.SELANY@:@U.LS.SELANY@	Liitesana_<A>	;
-@U.LS.SELANY@:@U.LS.SELANY@	LukusanaKymmentäSelaNy	;
+@U.LS.SELANY@:@U.LS.SELANY@	LukusanaKymmentäSelaNy_<A>	;
 
 LEXICON LukusanaSillNy29
 @U.LS.SILLNY@:@U.LS.SILLNY@	Liitesana_<A>	;
-@U.LS.SILLNY@:@U.LS.SILLNY@	LukusanaKymmentäSillNy	;
+@U.LS.SILLNY@:@U.LS.SILLNY@	LukusanaKymmentäSillNy_<A>	;
+
+LEXICON LukusanaSadeNy29
+@U.LS.SADENY@:@U.LS.SADENY@	LukusanaLiitesana_<A>	;
+@U.LS.SADENY@kymmenellä:@U.LS.SADENY@kymmenellä	LukusanaSadeNy29_ä	;
+@U.LS.SADENY@sadalla:@U.LS.SADENY@sadalla	LukusanaSadeNy29_a	;
+@U.LS.SADENY@tuhannella:@U.LS.SADENY@tuhannella	LukusanaSadeNy29_a	;
+
+LEXICON LukusanaKymmentäSnNy
+kymmentä:kymmentä	LukusanaLiitesana_ä	;
+sataa:sataa	LukusanaLiitesana_a	;
+tuhatta:tuhatta	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSgNy
+kymmenen:kymmenen	LukusanaLiitesana_ä	;
+sadan:sadan	LukusanaLiitesana_a	;
+tuhannen:tuhannen	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSpNy
+kymmentä:kymmentä	LukusanaLiitesana_ä	;
+sataa:sataa	LukusanaLiitesana_a	;
+tuhatta:tuhatta	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSineNy
+kymmenessä:kymmenessä	LukusanaLiitesana_ä	;
+sadassa:sadassa	LukusanaLiitesana_a	;
+tuhannessa:tuhannessa	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSelaNy
+kymmenestä:kymmenestä	LukusanaLiitesana_ä	;
+sadasta:sadasta	LukusanaLiitesana_a	;
+tuhannesta:tuhannesta	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSillNy
+kymmeneen:kymmeneen	LukusanaLiitesana_ä	;
+sataan:sataan	LukusanaLiitesana_a	;
+tuhanteen:tuhanteen	LukusanaLiitesana_a	;
 
 LEXICON LukusanaLiitesana
 Liitesana_<A>	;

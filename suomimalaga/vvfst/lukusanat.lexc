@@ -12,33 +12,3 @@ LEXICON Lukusana
 LEXICON LukusanaToista
 toista:toista	Liitesana_a	;
 toista@P.INEN_VAADITTU.ON@:toista@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
-
-LEXICON LukusanaKymmentäSnNy
-kymmentä:kymmentä	LukusanaLiitesana_ä	;
-sataa:sataa	LukusanaLiitesana_a	;
-tuhatta:tuhatta	LukusanaLiitesana_a	;
-
-LEXICON LukusanaKymmentäSgNy
-kymmenen:kymmenen	LukusanaLiitesana_ä	;
-sadan:sadan	LukusanaLiitesana_a	;
-tuhannen:tuhannen	LukusanaLiitesana_a	;
-
-LEXICON LukusanaKymmentäSpNy
-kymmentä:kymmentä	LukusanaLiitesana_ä	;
-sataa:sataa	LukusanaLiitesana_a	;
-tuhatta:tuhatta	LukusanaLiitesana_a	;
-
-LEXICON LukusanaKymmentäSineNy
-kymmenessä:kymmenessä	LukusanaLiitesana_ä	;
-sadassa:sadassa	LukusanaLiitesana_a	;
-tuhannessa:tuhannessa	LukusanaLiitesana_a	;
-
-LEXICON LukusanaKymmentäSelaNy
-kymmenestä:kymmenestä	LukusanaLiitesana_ä	;
-sadasta:sadasta	LukusanaLiitesana_a	;
-tuhannesta:tuhannesta	LukusanaLiitesana_a	;
-
-LEXICON LukusanaKymmentäSillNy
-kymmeneen:kymmeneen	LukusanaLiitesana_ä	;
-sataan:sataan	LukusanaLiitesana_a	;
-tuhanteen:tuhanteen	LukusanaLiitesana_a	;
