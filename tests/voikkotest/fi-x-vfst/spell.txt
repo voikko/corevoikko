@@ -1818,3 +1818,9 @@ yksi
 yhden
 yksikätinen
 !yksikäsi
+kolme
+kolmen
+yhdestä
+kahdesta
+kahdenkin
+neljän

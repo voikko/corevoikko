@@ -3623,3 +3623,34 @@ Loppu	;
 [Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
 -[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+
+LEXICON LukusanaYksi
+[Sn][Ny]ksi:ksi	LukusanaSnNy_<A>;
+[Sg][Ny]hden:hden	Liitesana_<A>;
+[Sine][Ny]hdess<A>:hdess<A>	Liitesana_<A>	;
+[Sela][Ny]hdest<A>:hdest<A>	Liitesana_<A>	;
+[Sade][Ny]hdell<A>:hdell<A>	Liitesana_<A>	;
+[Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
+[Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
+
+LEXICON LukusanaKolme
+[Sn][Ny]e:e	LukusanaSnNy_<A>;
+[Sg][Ny]en:en	Liitesana_<A>;
+[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
+[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
+[Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
+[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
+[Sall][Ny]elle:elle	Liitesana_<A>	;
+
+LEXICON LukusanaNeljä
+[Sn][Ny]<A>:<A>	LukusanaSnNy_<A>;
+[Sg][Ny]<A>n:<A>n	Liitesana_<A>;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
+[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+
+LEXICON LukusanaSnNy
+Liitesana_<A>	;
+@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
