@@ -133,6 +133,9 @@ Multichar_Symbols
 ! paikannimen jälkiliite vaaditaan
 @P.PAIKANNIMEN_JL.ON@ @C.PAIKANNIMEN_JL@ @D.PAIKANNIMEN_JL@
 
+! Lukusanojen taivutuksen rajoitus
+@U.LS.SNNY@ @U.LS.SGNY@
+
 LEXICON Root
 Joukahainen	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ee	;

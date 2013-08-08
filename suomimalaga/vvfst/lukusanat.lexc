@@ -9,6 +9,11 @@ toista:toista	Liitesana_a	;
 toista@P.INEN_VAADITTU.ON@:toista@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON LukusanaKymmentäSnNy
-kymmentä:kymmentä	Liitesana_ä	;
-sataa:sataa	Liitesana_a	;
-tuhatta:tuhatta	Liitesana_a	;
+kymmentä:kymmentä	LukusanaLiitesana_ä	;
+sataa:sataa	LukusanaLiitesana_a	;
+tuhatta:tuhatta	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSgNy
+kymmenen:kymmenen	LukusanaLiitesana_ä	;
+sadan:sadan	LukusanaLiitesana_a	;
+tuhannen:tuhannen	LukusanaLiitesana_a	;

@@ -1830,3 +1830,6 @@ kaksikymmentä
 kaksisataa
 kaksituhatta
 !yksikymmentä
+kahdenkymmenenkolmen
+!kahdenkymmentäkolme
+!kahdenkymmenenkolme
