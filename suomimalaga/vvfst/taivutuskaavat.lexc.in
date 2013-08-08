@@ -3639,8 +3639,8 @@ LEXICON LukusanaKaksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>	;
 [Sg][Ny]hden:hden	LukusanaSgNy29_<A>	;
 [Sp][Ny]ht<A>:ht<A>	LukusanaSpNy29_<A>	;
-[Sine][Ny]hdess<A>:hdess<A>	Liitesana_<A>	;
-[Sela][Ny]hdest<A>:hdest<A>	Liitesana_<A>	;
+[Sine][Ny]hdess<A>:hdess<A>	LukusanaSineNy29_<A>	;
+[Sela][Ny]hdest<A>:hdest<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]hteen:hteen	LukusanaSillNy29_<A>	;
 [Sade][Ny]hdell<A>:hdell<A>	Liitesana_<A>	;
 [Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
@@ -3650,8 +3650,8 @@ LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy29_<A>;
 [Sg][Ny]en:en	LukusanaSgNy29_<A>;
 [Sp][Ny]e<A>:e<A>	LukusanaSpNy29_<A>	;
-[Sine][Ny]ess<A>:ess<A>	Liitesana_<A>	;
-[Sela][Ny]est<A>:est<A>	Liitesana_<A>	;
+[Sine][Ny]ess<A>:ess<A>	LukusanaSineNy29_<A>	;
+[Sela][Ny]est<A>:est<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]een:een	LukusanaSillNy29_<A>	;
 [Sade][Ny]ell<A>:ell<A>	Liitesana_<A>	;
 [Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
@@ -3661,8 +3661,8 @@ LEXICON LukusanaNeljä
 [Sn][Ny]<A>:<A>	LukusanaSnNy29_<A>;
 [Sg][Ny]<A>n:<A>n	LukusanaSgNy29_<A>;
 [Sp][Ny]<A><A>:<A><A>	LukusanaSpNy29_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	LukusanaSineNy29_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
 [Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
@@ -3672,8 +3672,8 @@ LEXICON LukusanaViisi
 [Sn][Ny]si:si	LukusanaSnNy29_<A>;
 [Sg][Ny]den:den	LukusanaSgNy29_<A>;
 [Sp][Ny]tt<A>:tt<A>	LukusanaSpNy29_<A>	;
-[Sine][Ny]dess<A>:dess<A>	Liitesana_<A>	;
-[Sela][Ny]dest<A>:dest<A>	Liitesana_<A>	;
+[Sine][Ny]dess<A>:dess<A>	LukusanaSineNy29_<A>	;
+[Sela][Ny]dest<A>:dest<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]teen:teen	LukusanaSillNy29_<A>	;
 [Sade][Ny]dell<A>:dell<A>	Liitesana_<A>	;
 [Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
@@ -3683,8 +3683,8 @@ LEXICON LukusanaSeitsemän
 [Sn][Ny]<A>n:<A>n	LukusanaSnNy29_<A>;
 [Sg][Ny]<A>n:<A>n	LukusanaSgNy29_<A>;
 [Sp][Ny]<A><A>:<A><A>	LukusanaSpNy29_<A>	;
-[Sine][Ny]<A>ss<A>:<A>ss<A>	Liitesana_<A>	;
-[Sela][Ny]<A>st<A>:<A>st<A>	Liitesana_<A>	;
+[Sine][Ny]<A>ss<A>:<A>ss<A>	LukusanaSineNy29_<A>	;
+[Sela][Ny]<A>st<A>:<A>st<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
 [Sade][Ny]<A>ll<A>:<A>ll<A>	Liitesana_<A>	;
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
@@ -3706,6 +3706,14 @@ LEXICON LukusanaSgNy29
 LEXICON LukusanaSpNy29
 @U.LS.SPNY@:@U.LS.SPNY@	Liitesana_<A>	;
 @U.LS.SPNY@:@U.LS.SPNY@	LukusanaKymmentäSpNy	;
+
+LEXICON LukusanaSineNy29
+@U.LS.SINENY@:@U.LS.SINENY@	Liitesana_<A>	;
+@U.LS.SINENY@:@U.LS.SINENY@	LukusanaKymmentäSineNy	;
+
+LEXICON LukusanaSelaNy29
+@U.LS.SELANY@:@U.LS.SELANY@	Liitesana_<A>	;
+@U.LS.SELANY@:@U.LS.SELANY@	LukusanaKymmentäSelaNy	;
 
 LEXICON LukusanaSillNy29
 @U.LS.SILLNY@:@U.LS.SILLNY@	Liitesana_<A>	;
