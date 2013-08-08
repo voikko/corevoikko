@@ -1838,3 +1838,6 @@ viisi
 viiden
 neljätuhatta
 kahtatuhattakolmeasataaneljääkymmentäyhtä
+seitsemän
+kahdeksan
+yhdeksää

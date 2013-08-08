@@ -5,6 +5,9 @@ LEXICON Lukusana
 [Lu][Xp]neljä[X]nelj:nelj	LukusanaNeljä_ä	;
 [Lu][Xp]viisi[X]vii:vii	LukusanaViisi_ä	;
 [Lu][Xp]kuusi[X]kuu:kuu	LukusanaViisi_a	;
+[Lu][Xp]seitsemän[X]seitsem:seitsem	LukusanaSeitsemän_ä	;
+[Lu][Xp]kahdeksan[X]kahdeks:kahdeks	LukusanaSeitsemän_a	;
+[Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
 
 LEXICON LukusanaToista
 toista:toista	Liitesana_a	;
