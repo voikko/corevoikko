@@ -1824,3 +1824,9 @@ yhdestä
 kahdesta
 kahdenkin
 neljän
+yksitoistataloinen
+yksitoista
+kaksikymmentä
+kaksisataa
+kaksituhatta
+!yksikymmentä

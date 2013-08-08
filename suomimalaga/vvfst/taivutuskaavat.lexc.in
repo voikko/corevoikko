@@ -3633,6 +3633,15 @@ LEXICON LukusanaYksi
 [Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
 [Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
 
+LEXICON LukusanaKaksi
+[Sn][Ny]ksi:ksi	LukusanaSnNy29_<A>;
+[Sg][Ny]hden:hden	Liitesana_<A>;
+[Sine][Ny]hdess<A>:hdess<A>	Liitesana_<A>	;
+[Sela][Ny]hdest<A>:hdest<A>	Liitesana_<A>	;
+[Sade][Ny]hdell<A>:hdell<A>	Liitesana_<A>	;
+[Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
+[Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
+
 LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy_<A>;
 [Sg][Ny]en:en	Liitesana_<A>;
@@ -3652,5 +3661,10 @@ LEXICON LukusanaNeljä
 [Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
 
 LEXICON LukusanaSnNy
+LukusanaToista	;
 Liitesana_<A>	;
 @P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
+
+LEXICON LukusanaSnNy29
+LukusanaSnNy_<A>	;
+LukusanaKymmentäSnNy	;
