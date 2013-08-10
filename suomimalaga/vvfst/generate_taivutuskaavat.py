@@ -132,6 +132,8 @@ appendLexicon(lexicon, lexcLines, lexcFile)
 MULTI = {
 	u"SgNy": [u"kymmenen", u"sadan", u"tuhannen"],
 	u"SpNy": [u"kymmentä", u"sataa", u"tuhatta"],
+	u"StrNy": [u"kymmeneksi", u"sadaksi", u"tuhanneksi"],
+	u"SesNy": [u"kymmenenä", u"satana", u"tuhantena"],
 	u"SineNy": [u"kymmenessä", u"sadassa", u"tuhannessa"],
 	u"SelaNy": [u"kymmenestä", u"sadasta", u"tuhannesta"],
 	u"SillNy": [u"kymmeneen", u"sataan", u"tuhanteen"],

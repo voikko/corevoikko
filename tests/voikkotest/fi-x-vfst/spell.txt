@@ -1846,3 +1846,5 @@ kuudestasadastaviidestä
 yhdeksälläsadallatuhannella
 seitsemältäkymmeneltä
 kahdeksalletuhannelle
+viideksikymmeneksi
+kuutenasatana
