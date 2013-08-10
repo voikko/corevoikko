@@ -135,7 +135,8 @@ Multichar_Symbols
 
 ! Lukusanojen taivutuksen rajoitus
 @U.LS.SNNY@ @U.LS.SGNY@ @U.LS.SPNY@ @U.LS.STRNY@ @U.LS.SESNY@ @U.LS.SINENY@ @U.LS.SELANY@ @U.LS.SILLNY@
-@U.LS.SADENY@ @U.LS.SABLNY@ @U.LS.SALLNY@
+@U.LS.SADENY@ @U.LS.SABLNY@ @U.LS.SALLNY@ @U.LS.SABNY@
+@U.LS.SINNM@
 
 LEXICON Root
 Joukahainen	;

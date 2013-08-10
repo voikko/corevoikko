@@ -1848,3 +1848,5 @@ seitsemältäkymmeneltä
 kahdeksalletuhannelle
 viideksikymmeneksi
 kuutenasatana
+viidettäsadatta
+kuusintuhansin
