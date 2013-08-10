@@ -1850,3 +1850,5 @@ viideksikymmeneksi
 kuutenasatana
 viidettäsadatta
 kuusintuhansin
+seitsemääntoista
+mentävää

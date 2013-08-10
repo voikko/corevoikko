@@ -149,6 +149,7 @@ for sija in MULTI.keys():
 	lexiconName = u"Lukusana" + sija + u"29"
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
 	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][0] + u":" + diacritic + MULTI[sija][0] + u"\t" + lexiconName + u"_ä\t;")
 	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][1] + u":" + diacritic + MULTI[sija][1] + u"\t" + lexiconName + u"_a\t;")
 	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][2] + u":" + diacritic + MULTI[sija][2] + u"\t" + lexiconName + u"_a\t;")
