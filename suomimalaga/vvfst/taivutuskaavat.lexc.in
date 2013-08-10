@@ -3643,8 +3643,8 @@ LEXICON LukusanaKaksi
 [Sela][Ny]hdest<A>:hdest<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]hteen:hteen	LukusanaSillNy29_<A>	;
 [Sade][Ny]hdell<A>:hdell<A>	LukusanaSadeNy29_<A>	;
-[Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
-[Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
+[Sabl][Ny]hdelt<A>:hdelt<A>	LukusanaSablNy29_<A>	;
+[Sall][Ny]hdelle:hdelle	LukusanaSallNy29_<A>	;
 
 LEXICON LukusanaKolme
 [Sn][Ny]e:e	LukusanaSnNy29_<A>;
@@ -3654,8 +3654,8 @@ LEXICON LukusanaKolme
 [Sela][Ny]est<A>:est<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]een:een	LukusanaSillNy29_<A>	;
 [Sade][Ny]ell<A>:ell<A>	LukusanaSadeNy29_<A>	;
-[Sabl][Ny]elt<A>:elt<A>	Liitesana_<A>	;
-[Sall][Ny]elle:elle	Liitesana_<A>	;
+[Sabl][Ny]elt<A>:elt<A>	LukusanaSablNy29_<A>	;
+[Sall][Ny]elle:elle	LukusanaSallNy29_<A>	;
 
 LEXICON LukusanaNeljä
 [Sn][Ny]<A>:<A>	LukusanaSnNy29_<A>;
@@ -3665,8 +3665,8 @@ LEXICON LukusanaNeljä
 [Sela][Ny]<A>st<A>:<A>st<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
 [Sade][Ny]<A>ll<A>:<A>ll<A>	LukusanaSadeNy29_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	LukusanaSablNy29_<A>	;
+[Sall][Ny]<A>lle:<A>lle	LukusanaSallNy29_<A>	;
 
 LEXICON LukusanaViisi
 [Sn][Ny]si:si	LukusanaSnNy29_<A>;
@@ -3676,8 +3676,8 @@ LEXICON LukusanaViisi
 [Sela][Ny]dest<A>:dest<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]teen:teen	LukusanaSillNy29_<A>	;
 [Sade][Ny]dell<A>:dell<A>	LukusanaSadeNy29_<A>	;
-[Sabl][Ny]delt<A>:delt<A>	Liitesana_<A>	;
-[Sall][Ny]delle:delle	Liitesana_<A>	;
+[Sabl][Ny]delt<A>:delt<A>	LukusanaSablNy29_<A>	;
+[Sall][Ny]delle:delle	LukusanaSallNy29_<A>	;
 
 LEXICON LukusanaSeitsemän
 [Sn][Ny]<A>n:<A>n	LukusanaSnNy29_<A>;
@@ -3687,8 +3687,8 @@ LEXICON LukusanaSeitsemän
 [Sela][Ny]<A>st<A>:<A>st<A>	LukusanaSelaNy29_<A>	;
 [Sill][Ny]<A><A>n:<A><A>n	LukusanaSillNy29_<A>	;
 [Sade][Ny]<A>ll<A>:<A>ll<A>	LukusanaSadeNy29_<A>	;
-[Sabl][Ny]<A>lt<A>:<A>lt<A>	Liitesana_<A>	;
-[Sall][Ny]<A>lle:<A>lle	Liitesana_<A>	;
+[Sabl][Ny]<A>lt<A>:<A>lt<A>	LukusanaSablNy29_<A>	;
+[Sall][Ny]<A>lle:<A>lle	LukusanaSallNy29_<A>	;
 
 LEXICON LukusanaSnNy
 @U.LS.SNNY@	LukusanaToista	;
@@ -3700,10 +3700,10 @@ LukusanaSnNy_<A>	;
 @U.LS.SNNY@	LukusanaKymmentäSnNy_<A>	;
 
 LEXICON LukusanaKymmentäSnNy
-kymmentä:kymmentä	LukusanaLiitesana_ä	;
-sataa:sataa	LukusanaLiitesana_a	;
-tuhatta:tuhatta	LukusanaLiitesana_a	;
+[Bc]kymmentä:kymmentä	LukusanaLiitesana_ä	;
+[Bc]sataa:sataa	LukusanaLiitesana_a	;
+[Bc]tuhatta:tuhatta	LukusanaLiitesana_a	;
 
 LEXICON LukusanaLiitesana
 Liitesana_<A>	;
-Lukusana	;
+[Bc]:	Lukusana	;

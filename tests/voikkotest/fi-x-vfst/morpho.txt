@@ -375,3 +375,11 @@ word:yksi
     NUMBER=singular
     SIJAMUOTO=nimento
     STRUCTURE==pppp
+word:kaksituhattakolmetoista
+  expected:1
+  analysis
+    STRUCTURE==ppppp=ppppppp=ppppp=pppppp
+word:kahdeksaakymmentä
+  expected:1
+  analysis
+    STRUCTURE==ppppppppp=pppppppp

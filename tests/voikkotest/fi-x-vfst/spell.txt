@@ -1844,3 +1844,5 @@ yhdeksää
 seitsemässätuhannessakuudessa
 kuudestasadastaviidestä
 yhdeksälläsadallatuhannella
+seitsemältäkymmeneltä
+kahdeksalletuhannelle

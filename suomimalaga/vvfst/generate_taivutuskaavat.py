@@ -135,7 +135,9 @@ MULTI = {
 	u"SineNy": [u"kymmenessä", u"sadassa", u"tuhannessa"],
 	u"SelaNy": [u"kymmenestä", u"sadasta", u"tuhannesta"],
 	u"SillNy": [u"kymmeneen", u"sataan", u"tuhanteen"],
-	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella"]
+	u"SadeNy": [u"kymmenellä", u"sadalla", u"tuhannella"],
+	u"SablNy": [u"kymmeneltä", u"sadalta", u"tuhannelta"],
+	u"SallNy": [u"kymmenelle", u"sadalle", u"tuhannelle"]
 }
 
 for sija in MULTI.keys():
@@ -143,9 +145,9 @@ for sija in MULTI.keys():
 	lexiconName = u"Lukusana" + sija + u"29"
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
-	numeralLines.append(diacritic + MULTI[sija][0] + u":" + diacritic + MULTI[sija][0] + u"\t" + lexiconName + u"_ä\t;")
-	numeralLines.append(diacritic + MULTI[sija][1] + u":" + diacritic + MULTI[sija][1] + u"\t" + lexiconName + u"_a\t;")
-	numeralLines.append(diacritic + MULTI[sija][2] + u":" + diacritic + MULTI[sija][2] + u"\t" + lexiconName + u"_a\t;")
+	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][0] + u":" + diacritic + MULTI[sija][0] + u"\t" + lexiconName + u"_ä\t;")
+	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][1] + u":" + diacritic + MULTI[sija][1] + u"\t" + lexiconName + u"_a\t;")
+	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][2] + u":" + diacritic + MULTI[sija][2] + u"\t" + lexiconName + u"_a\t;")
 	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
 
 

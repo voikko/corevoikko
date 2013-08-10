@@ -10,5 +10,5 @@ LEXICON Lukusana
 [Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
 
 LEXICON LukusanaToista
-toista:toista	Liitesana_a	;
-toista@P.INEN_VAADITTU.ON@:toista@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
+[Bc]toista:toista	Liitesana_a	;
+[Bc]toista@P.INEN_VAADITTU.ON@:toista@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
