@@ -3692,6 +3692,18 @@ LEXICON LukusanaKolme
 [Sabl][Ny]elt<A>:elt<A>	LukusanaSablNy29_<A>	;
 [Sall][Ny]elle:elle	LukusanaSallNy29_<A>	;
 [Sab][Ny]ett<A>:ett<A>	LukusanaSabNy29_<A>	;
+[Sn][Nm]et:et	LukusanaSnNm29_<A>	;
+[Sg][Nm]ien:ien	LukusanaSgNm29_<A>	;
+[Sp][Nm]i<A>:i<A>	LukusanaSpNm29_<A>	;
+[Str][Nm]iksi:iksi	LukusanaStrNm29_<A>	;
+[Ses][Nm]in<A>:in<A>	LukusanaSesNm29_<A>	;
+[Sine][Nm]iss<A>:iss<A>	LukusanaSineNm29_<A>	;
+[Sela][Nm]ist<A>:ist<A>	LukusanaSelaNm29_<A>	;
+[Sill][Nm]iin:iin	LukusanaSillNm29_<A>	;
+[Sade][Nm]ill<A>:ill<A>	LukusanaSadeNm29_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	LukusanaSablNm29_<A>	;
+[Sall][Nm]ille:ille	LukusanaSallNm29_<A>	;
+[Sab][Nm]itt<A>:itt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 
 LEXICON LukusanaNeljä
@@ -3707,6 +3719,18 @@ LEXICON LukusanaNeljä
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	LukusanaSablNy29_<A>	;
 [Sall][Ny]<A>lle:<A>lle	LukusanaSallNy29_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	LukusanaSabNy29_<A>	;
+[Sn][Nm]<A>t:<A>t	LukusanaSnNm29_<A>	;
+[Sg][Nm]ien:ien	LukusanaSgNm29_<A>	;
+[Sp][Nm]i<A>:i<A>	LukusanaSpNm29_<A>	;
+[Str][Nm]iksi:iksi	LukusanaStrNm29_<A>	;
+[Ses][Nm]in<A>:in<A>	LukusanaSesNm29_<A>	;
+[Sine][Nm]iss<A>:iss<A>	LukusanaSineNm29_<A>	;
+[Sela][Nm]ist<A>:ist<A>	LukusanaSelaNm29_<A>	;
+[Sill][Nm]iin:iin	LukusanaSillNm29_<A>	;
+[Sade][Nm]ill<A>:ill<A>	LukusanaSadeNm29_<A>	;
+[Sabl][Nm]ilt<A>:ilt<A>	LukusanaSablNm29_<A>	;
+[Sall][Nm]ille:ille	LukusanaSallNm29_<A>	;
+[Sab][Nm]itt<A>:itt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 
 LEXICON LukusanaViisi
