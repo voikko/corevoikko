@@ -3746,6 +3746,19 @@ LEXICON LukusanaViisi
 [Sabl][Ny]delt<A>:delt<A>	LukusanaSablNy29_<A>	;
 [Sall][Ny]delle:delle	LukusanaSallNy29_<A>	;
 [Sab][Ny]dett<A>:dett<A>	LukusanaSabNy29_<A>	;
+[Sn][Nm]det:det	LukusanaSnNm29_<A>	;
+[Sg][Nm]sien:sien	LukusanaSgNm29_<A>	;
+[Sg][Nm]tten:tten	LukusanaSgNm29_<A>	;
+[Sp][Nm]si<A>:si<A>	LukusanaSpNm29_<A>	;
+[Str][Nm]siksi:siksi	LukusanaStrNm29_<A>	;
+[Ses][Nm]sien<A>:sien<A>	LukusanaSesNm29_<A>	;
+[Sine][Nm]siss<A>:siss<A>	LukusanaSineNm29_<A>	;
+[Sela][Nm]sist<A>:sist<A>	LukusanaSelaNm29_<A>	;
+[Sill][Nm]siin:siin	LukusanaSillNm29_<A>	;
+[Sade][Nm]sill<A>:sill<A>	LukusanaSadeNm29_<A>	;
+[Sabl][Nm]silt<A>:silt<A>	LukusanaSablNm29_<A>	;
+[Sall][Nm]sille:sille	LukusanaSallNm29_<A>	;
+[Sab][Nm]sitt<A>:sitt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]sin:sin	LukusanaSinNm29_<A>	;
 
 LEXICON LukusanaSeitsemän
@@ -3761,6 +3774,18 @@ LEXICON LukusanaSeitsemän
 [Sabl][Ny]<A>lt<A>:<A>lt<A>	LukusanaSablNy29_<A>	;
 [Sall][Ny]<A>lle:<A>lle	LukusanaSallNy29_<A>	;
 [Sab][Ny]<A>tt<A>:<A>tt<A>	LukusanaSabNy29_<A>	;
+[Sn][Nm]<A>n:<A>n	LukusanaSnNm29_<A>	;
+[Sg][Nm]<A>n:<A>n	LukusanaSgNm29_<A>	;
+[Sp][Nm]<A><A>:<A><A>	LukusanaSpNm29_<A>	;
+[Str][Nm]<A>ksi:<A>ksi	LukusanaStrNm29_<A>	;
+[Ses][Nm]<A>n<A>:<A>n<A>	LukusanaSesNm29_<A>	;
+[Sine][Nm]<A>ss<A>:<A>ss<A>	LukusanaSineNm29_<A>	;
+[Sela][Nm]<A>st<A>:<A>st<A>	LukusanaSelaNm29_<A>	;
+[Sill][Nm]<A><A>n:<A><A>n	LukusanaSillNm29_<A>	;
+[Sade][Nm]<A>ll<A>:<A>ll<A>	LukusanaSadeNm29_<A>	;
+[Sabl][Nm]<A>lt<A>:<A>lt<A>	LukusanaSablNm29_<A>	;
+[Sall][Nm]<A>lle:<A>lle	LukusanaSallNm29_<A>	;
+[Sab][Nm]<A>tt<A>:<A>tt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]in:in	LukusanaSinNm29_<A>	;
 
 LEXICON LukusanaSnNy
