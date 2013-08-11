@@ -141,6 +141,17 @@ MULTI = {
 	u"SablNy": [u"kymmeneltä", u"sadalta", u"tuhannelta"],
 	u"SallNy": [u"kymmenelle", u"sadalle", u"tuhannelle"],
 	u"SabNy": [u"kymmenettä", u"sadatta", u"tuhannetta"],
+	u"SgNm": [u"kymmenien", u"satojen", u"tuhansien"],
+	u"SpNm": [u"kymmeniä", u"satoja", u"tuhansia"],
+	u"StrNm": [u"kymmeniksi", u"sadoiksi", u"tuhansiksi"],
+	u"SesNm": [u"kymmeninä", u"satoina", u"tuhansina"],
+	u"SineNm": [u"kymmenissä", u"sadoissa", u"tuhansissa"],
+	u"SelaNm": [u"kymmenistä", u"sadoista", u"tuhansista"],
+	u"SillNm": [u"kymmeniin", u"satoihin", u"tuhansiin"],
+	u"SadeNm": [u"kymmenillä", u"sadoilla", u"tuhansilla"],
+	u"SablNm": [u"kymmeniltä", u"sadoilta", u"tuhansilta"],
+	u"SallNm": [u"kymmenille", u"sadoille", u"tuhansille"],
+	u"SabNm": [u"kymmenittä", u"sadoitta", u"tuhansitta"],
 	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin"]
 }
 

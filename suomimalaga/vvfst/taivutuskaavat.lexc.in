@@ -3638,6 +3638,18 @@ LEXICON LukusanaYksi
 [Sabl][Ny]hdelt<A>:hdelt<A>	Liitesana_<A>	;
 [Sall][Ny]hdelle:hdelle	Liitesana_<A>	;
 [Sab][Ny]hdett<A>:hdett<A>	Liitesana_<A>	;
+[Sn][Nm]hdet:hdet	LukusanaSnNy_<A>	;
+[Sg][Nm]ksien:ksien	Liitesana_<A>	;
+[Sp][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
+[Str][Nm]ksiksi:ksiksi	Liitesana_<A>	;
+[Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
+[Sine][Nm]ksiss<A>:ksiss<A>	Liitesana_<A>	;
+[Sela][Nm]ksist<A>:ksist<A>	Liitesana_<A>	;
+[Sill][Nm]ksiin:ksiin	Liitesana_<A>	;
+[Sade][Nm]ksill<A>:ksill<A>	Liitesana_<A>	;
+[Sabl][Nm]ksilt<A>:ksilt<A>	Liitesana_<A>	;
+[Sall][Nm]ksille:ksille	Liitesana_<A>	;
+[Sab][Nm]ksitt<A>:ksitt<A>	Liitesana_<A>	;
 [Sin][Nm]ksin:ksin	Liitesana_<A>	;
 
 LEXICON LukusanaKaksi
@@ -3653,6 +3665,18 @@ LEXICON LukusanaKaksi
 [Sabl][Ny]hdelt<A>:hdelt<A>	LukusanaSablNy29_<A>	;
 [Sall][Ny]hdelle:hdelle	LukusanaSallNy29_<A>	;
 [Sab][Ny]hdett<A>:hdett<A>	LukusanaSabNy29_<A>	;
+[Sn][Nm]hdet:hdet	LukusanaSnNm29_<A>	;
+[Sg][Nm]ksien:ksien	LukusanaSgNm29_<A>	;
+[Sp][Nm]ksin<A>:ksin<A>	LukusanaSpNm29_<A>	;
+[Str][Nm]ksiksi:ksiksi	LukusanaStrNm29_<A>	;
+[Ses][Nm]ksin<A>:ksin<A>	LukusanaSesNm29_<A>	;
+[Sine][Nm]ksiss<A>:ksiss<A>	LukusanaSineNm29_<A>	;
+[Sela][Nm]ksist<A>:ksist<A>	LukusanaSelaNm29_<A>	;
+[Sill][Nm]ksiin:ksiin	LukusanaSillNm29_<A>	;
+[Sade][Nm]ksill<A>:ksill<A>	LukusanaSadeNm29_<A>	;
+[Sabl][Nm]ksilt<A>:ksilt<A>	LukusanaSablNm29_<A>	;
+[Sall][Nm]ksille:ksille	LukusanaSallNm29_<A>	;
+[Sab][Nm]ksitt<A>:ksitt<A>	LukusanaSabNm29_<A>	;
 [Sin][Nm]ksin:ksin	LukusanaSinNm29_<A>	;
 
 LEXICON LukusanaKolme
@@ -3720,14 +3744,28 @@ LEXICON LukusanaSnNy
 @U.LS.SNNY@	Liitesana_<A>	;
 @U.LS.SNNY@@P.INEN_VAADITTU.ON@:@U.LS.SNNY@@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
+LEXICON LukusanaSnNm
+@U.LS.SNNM@	LukusanaToista	;
+@U.LS.SNNM@	Liitesana_<A>	;
+@U.LS.SNNM@@P.INEN_VAADITTU.ON@:@U.LS.SNNM@@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
+
 LEXICON LukusanaSnNy29
 LukusanaSnNy_<A>	;
 @U.LS.SNNY@	LukusanaKymmentäSnNy_<A>	;
+
+LEXICON LukusanaSnNm29
+LukusanaSnNm_<A>	;
+@U.LS.SNNM@	LukusanaKymmentäSnNm_<A>	;
 
 LEXICON LukusanaKymmentäSnNy
 [Bc]kymmentä:kymmentä	LukusanaLiitesana_ä	;
 [Bc]sataa:sataa	LukusanaLiitesana_a	;
 [Bc]tuhatta:tuhatta	LukusanaLiitesana_a	;
+
+LEXICON LukusanaKymmentäSnNm
+[Bc]kymmenet:kymmenet	LukusanaLiitesana_ä	;
+[Bc]sadat:sadat	LukusanaLiitesana_a	;
+[Bc]tuhannet:tuhannet	LukusanaLiitesana_a	;
 
 LEXICON LukusanaLiitesana
 Liitesana_<A>	;
