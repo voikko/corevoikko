@@ -2570,6 +2570,7 @@ LEXICON Voida_l
 KestämänTekijäpääteHeikko_<A>	;
 [Tt][Ap][P3][Ny]:	Liitesana_<A>	;
 [Tt][Ap][P3][Nm]v<A>t:v<A>t	Liitesana_<A>	;
+TositavanKertomaTiin_<A>	;
 EhtotapaTa_<A>	;
 Käskytapa_<A>	;
 n:n	Mahtotapa_<A>	;
@@ -3186,6 +3187,8 @@ h:h	TositavanKestämäDaan_<A>	;
 h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_tU_dA_<A>	;
+h:h	Johdin_tAvA_<A>	;
+h:h	Johdin_nUt_<A>	;
 ke:ke	Johdin_mA_<A>	;
 ke:ke	Johdin_vA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
