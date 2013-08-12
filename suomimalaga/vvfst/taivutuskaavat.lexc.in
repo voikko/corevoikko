@@ -3791,11 +3791,13 @@ LEXICON LukusanaSeitsemän
 LEXICON LukusanaSnNy
 @U.LS.SNNY@	LukusanaToista	;
 @U.LS.SNNY@	Liitesana_<A>	;
+@U.LS.SNNY@	LukusananJälkiliite	;
 @U.LS.SNNY@@P.INEN_VAADITTU.ON@:@U.LS.SNNY@@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON LukusanaSnNm
 @U.LS.SNNM@	LukusanaToista	;
 @U.LS.SNNM@	Liitesana_<A>	;
+@U.LS.SNNM@	LukusananJälkiliite	;
 @U.LS.SNNM@@P.INEN_VAADITTU.ON@:@U.LS.SNNM@@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON LukusanaSnNy29
@@ -3818,4 +3820,5 @@ LEXICON LukusanaKymmentäSnNm
 
 LEXICON LukusanaLiitesana
 Liitesana_<A>	;
+LukusananJälkiliite	;
 [Bc]:	Lukusana	;

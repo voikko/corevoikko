@@ -12,3 +12,15 @@ LEXICON Lukusana
 LEXICON LukusanaToista
 [Bc]toista:toista	Liitesana_a	;
 [Bc]toista@P.INEN_VAADITTU.ON@:toista@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
+
+LEXICON LukusananJälkiliite
+[Bc][Ll][Xp]karkeinen[X]karkei:karkei	LukusananJälkiliiteNainen_a	;
+[Bc][Ll][Xp]kiloinen[X]kiloi:kiloi	LukusananJälkiliiteNainen_a	;
+[Bc][Ll][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;
+[Bc][Ll][Xp]luku[X]lu:lu	LukusananJälkiliiteLuku_a	; ! "kahdeksankymmentäluku"
+[Bc][Ll][Xp]tekijäinen[X]tekijäi:tekijäi	LukusananJälkiliiteNainen_ä	;
+[Bc][Ll][Xp]vuotias[X]vuotia:vuotia	LukusananJälkiliiteVieras_a	;
+
+LEXICON LukusananJälkiliiteJl
+[Bc][Ll][Xp]luokkalainen[X]luokkalai:luokkalai	LukusananJälkiliiteNainen_a	;
+[Bc][Ll][Xp]osa[X]os:os	LukusananJälkiliiteKoira_a	;

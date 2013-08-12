@@ -85,13 +85,22 @@ def appendLines(lexiconPrefix, lexiconName, lines, lexcFile):
 
 def appendLexicon(lexiconName, lines, lexcFile):
 	if lexiconName.startswith(u"NOUN "):
-		appendLines(u"Nimisana", lexiconName[5:], lines, lexcFile)
-		appendLines(u"Laatusana", lexiconName[5:], lines, lexcFile)
-		appendLines(u"Etunimi", lexiconName[5:], lines, lexcFile)
-		appendLines(u"Sukunimi", lexiconName[5:], lines, lexcFile)
-		appendLines(u"Paikannimi", lexiconName[5:], lines, lexcFile)
-		appendLines(u"Nimi", lexiconName[5:], lines, lexcFile)
-		appendLines(u"NimiLaatusana", lexiconName[5:], lines, lexcFile)
+		realName = lexiconName[5:]
+		appendLines(u"Nimisana", realName, lines, lexcFile)
+		appendLines(u"Laatusana", realName, lines, lexcFile)
+		appendLines(u"Etunimi", realName, lines, lexcFile)
+		appendLines(u"Sukunimi", realName, lines, lexcFile)
+		appendLines(u"Paikannimi", realName, lines, lexcFile)
+		appendLines(u"Nimi", realName, lines, lexcFile)
+		appendLines(u"NimiLaatusana", realName, lines, lexcFile)
+		if realName in [u"Vieras", u"Vieras_s", u"Vieras_w", u"YhteisetMonikonPaikallissijat", \
+		                u"YhteisetYksikönPaikallissijat", u"LiOlN", u"YhteisetMonikonSijat2", \
+		                u"LiOlI", u"YksikönGenetiivinJatko", u"LiOlV", u"MonikonGenetiiviEnJatko", \
+		                u"NormaaliYsJatko", u"Nainen", u"NainenYhteiset", u"Autio", \
+		                u"NormaaliYsJatkoOl", u"Luku", u"Valo_w", u"Valo_s", u"Valo_sl", \
+		                u"Koira", u"Koira_w", u"Koira_s", u"MonikonGenetiiviInJatko", \
+		                u"Koira_w_monikko", u"Koira_w_yksikkö"]:
+			appendLines(u"LukusananJälkiliite", realName, lines, lexcFile)
 	else:
 		appendLines(u"", lexiconName, lines, lexcFile)
 
