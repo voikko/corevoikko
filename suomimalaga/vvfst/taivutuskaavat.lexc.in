@@ -1282,6 +1282,7 @@ m:m	<WC>YhteisetMonikonSijat2_<A>	;
 me:me	<WC>YhteisetYksikönPaikallissijat_<A>	;
 m:m	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	me:me	Johdin_tOn_<A>	;
+?Nimisana	m:m	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]mehe:mehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]mihi:mihi	<WC>LiOlN_<A>	;
 
@@ -1933,6 +1934,7 @@ ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
+?Nimisana	[Bc]:	Joukahainen_l	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
