@@ -1370,6 +1370,7 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 [Sill][Ny]ee:ee	<WC>LiOlN_<A>	;
 [Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
@@ -3391,6 +3392,7 @@ LEXICON Johdin_inen_vain_lipulla
 
 LEXICON Johdin_inen
 [Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainenYhteiset_<A>	;
+[Ll]is@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:is@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaYsJatko	;
 
 LEXICON Johdin_tOn
 [Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; # yhdyssanojen esto todennäköisesti tarpeeton
@@ -3792,13 +3794,11 @@ LEXICON LukusanaSnNy
 @U.LS.SNNY@	LukusanaToista	;
 @U.LS.SNNY@	Liitesana_<A>	;
 @U.LS.SNNY@	LukusananJälkiliite	;
-@U.LS.SNNY@@P.INEN_VAADITTU.ON@:@U.LS.SNNY@@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON LukusanaSnNm
 @U.LS.SNNM@	LukusanaToista	;
 @U.LS.SNNM@	Liitesana_<A>	;
 @U.LS.SNNM@	LukusananJälkiliite	;
-@U.LS.SNNM@@P.INEN_VAADITTU.ON@:@U.LS.SNNM@@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 
 LEXICON LukusanaSnNy29
 LukusanaSnNy_<A>	;

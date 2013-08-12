@@ -1856,3 +1856,7 @@ kaksientuhansien
 kahdetsadat
 viisivuotias
 viisivuotiaassa
+kolmetoistavuotiaana
+kolmijäsenisen
+nelivuotiskauden
+nopeatassuiskissa

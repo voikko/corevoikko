@@ -9,11 +9,18 @@ LEXICON Lukusana
 [Lu][Xp]kahdeksan[X]kahdeks:kahdeks	LukusanaSeitsemän_a	;
 [Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
 
+LEXICON Erikoisluku
+[Lu][Xp]kolmi[X]kolmi:kolmi	LukusananJälkiliite	;
+[Lu][Xp]neli[X]neli:neli	LukusananJälkiliite	;
+[Lu][Xp]seitsen[X]seitsen:seitsen	LukusananJälkiliite	;
+[Lu][Xp]kymmen[X]kymmen:kymmen	LukusananJälkiliite	;
+
 LEXICON LukusanaToista
 [Bc]toista:toista	Liitesana_a	;
-[Bc]toista@P.INEN_VAADITTU.ON@:toista@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
+[Bc]toista:toista	LukusananJälkiliite	;
 
 LEXICON LukusananJälkiliite
+[Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	YhdyssanaJatkuu	;
 [Bc][Ll][Xp]karkeinen[X]karkei:karkei	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kiloinen[X]kiloi:kiloi	LukusananJälkiliiteNainen_a	;
 [Bc][Ll][Xp]kulmio[X]kulmio:kulmio	LukusananJälkiliiteAutio_a	;
