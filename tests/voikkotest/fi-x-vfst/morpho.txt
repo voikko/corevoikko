@@ -383,3 +383,5 @@ word:kahdeksaakymmentä
   expected:1
   analysis
     STRUCTURE==ppppppppp=pppppppp
+word:myyty
+  expected:1
