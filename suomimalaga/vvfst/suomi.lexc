@@ -5,7 +5,6 @@ LEXICON NimisanaYsJatko
 LEXICON NimiLaatusanaYsJatko
 @C.EI_YKS@@C.INEN_KIELLETTY@:@C.EI_YKS@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
 @P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
--[Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Joukahainen_a	;
 
 LEXICON LukusananJälkiliiteYsJatko
 NimiLaatusanaYsJatko	;
@@ -118,6 +117,7 @@ LEXICON EtuliitteenJatko_elleln2
 [Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_l	;
 [Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 [Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
+[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_p	;
 
 LEXICON EtuliitteenJatko_ellelnelt
 EtuliitteenJatko_ellelnelt2	;

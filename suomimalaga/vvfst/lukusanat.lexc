@@ -14,6 +14,14 @@ LEXICON Erikoisluku
 [Lu][Xp]neli[X]neli:neli	LukusananJälkiliite	;
 [Lu][Xp]seitsen[X]seitsen:seitsen	LukusananJälkiliite	;
 [Lu][Xp]kymmen[X]kymmen:kymmen	LukusananJälkiliite	;
+[Lu][Xp]kaksikymmen[X]kaksikymmen:kaksikymmen	LukusananJälkiliite	;
+[Lu][Xp]kolmikymmen[X]kolmikymmen:kolmikymmen	LukusananJälkiliite	;
+[Lu][Xp]nelikymmen[X]nelikymmen:nelikymmen	LukusananJälkiliite	;
+[Lu][Xp]viisikymmen[X]viisikymmen:viisikymmen	LukusananJälkiliite	;
+[Lu][Xp]kuusikymmen[X]kuusikymmen:kuusikymmen	LukusananJälkiliite	;
+[Lu][Xp]seitsenkymmen[X]seitsenkymmen:seitsenkymmen	LukusananJälkiliite	;
+[Lu][Xp]kahdeksankymmen[X]kahdeksankymmen:kahdeksankymmen	LukusananJälkiliite	;
+[Lu][Xp]yhdeksänkymmen[X]yhdeksänkymmen:yhdeksänkymmen	LukusananJälkiliite	;
 
 LEXICON LukusanaToista
 [Bc]toista:toista	Liitesana_a	;
