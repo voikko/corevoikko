@@ -1906,6 +1906,7 @@ ps:ps	<WC>YhteisetMonikonSijat2_<A>	;
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ps:ps	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	pse:pse	Johdin_tOn_<A>	;
+?Nimisana	ps:ps	Johdin_inen_vain_lipulla_<A>	;
 ?Sukija [Sill][Ny]psehe:psehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]psihi:psihi	<WC>LiOlN_<A>	;
 
@@ -3179,6 +3180,7 @@ h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_tU_dA_<A>	;
 ke:ke	Johdin_mA_<A>	;
+ke:ke	Johdin_vA_<A>	;
 ki:ki	Johdin_ja_kulkija_<A>	;
 k:k	Ehtotapa_<A>	;
 

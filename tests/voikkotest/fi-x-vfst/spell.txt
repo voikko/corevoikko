@@ -1865,3 +1865,6 @@ yleisesikuntaan
 !avattu-v
 !laskettuaika
 !myytykissa
+tekevällä
+yhdeksänlapsiseen
+erilaatuisia
