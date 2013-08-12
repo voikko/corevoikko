@@ -1149,6 +1149,7 @@ LEXICON NOUN Taival_w
 LEXICON NOUN Taival_s
 [Sn][Ny]e:e	<WC>NormaaliYsJatkoOl_<A>	;
 [Sn][Nm]eet:eet	Liitesana_<A>	;
+[Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Ny]een:een	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]eitt:eitt	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -1159,6 +1160,7 @@ LEXICON NOUN Taival_s
 e:e	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]eesee:eesee	<WC>LiOlN_<A>	;
 [Sill][Nm]eihi:eihi	<WC>LiOlN_<A>	;
+e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ee:ee	<WC>YhteisetYksikönPaikallissijat_<A>	;
 e:e	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	ee:ee	Johdin_tOn_<A>	;
@@ -1238,6 +1240,8 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	i:i	Johdin_mAinen_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Niemi
@@ -2942,6 +2946,7 @@ LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
+<A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
 <A>:<A>	Johdin_ja_kantaja_<A>	;
