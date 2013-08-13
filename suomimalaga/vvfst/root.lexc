@@ -150,6 +150,7 @@ Joukahainen	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Joukahainen_nimisanat	;
 Lukusana	;
 Erikoisluku	;
+Numeromerkki	;
 
 LEXICON Joukahainen
 Poikkeavat_sanat ;

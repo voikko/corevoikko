@@ -23,6 +23,46 @@ LEXICON Erikoisluku
 [Lu][Xp]kahdeksankymmen[X]kahdeksankymmen:kahdeksankymmen	LukusananJälkiliite	;
 [Lu][Xp]yhdeksänkymmen[X]yhdeksänkymmen:yhdeksänkymmen	LukusananJälkiliite	;
 
+NumeromerkinAlku
+[Lu]:	Numeromerkki	;
+
+LEXICON Numeromerkki
+1:1	NumeromerkinJatko	;
+2:2	NumeromerkinJatko	;
+3:3	NumeromerkinJatko	;
+4:4	NumeromerkinJatko	;
+5:5	NumeromerkinJatko	;
+6:6	NumeromerkinJatko	;
+7:7	NumeromerkinJatko	;
+8:8	NumeromerkinJatko	;
+9:9	NumeromerkinJatko	;
+
+LEXICON NumeromerkkiPilkunJälkeen
+%0:%0	NumeromerkinJatkoPilkunJälkeen	;
+1:1	NumeromerkinJatkoPilkunJälkeen	;
+2:2	NumeromerkinJatkoPilkunJälkeen	;
+3:3	NumeromerkinJatkoPilkunJälkeen	;
+4:4	NumeromerkinJatkoPilkunJälkeen	;
+5:5	NumeromerkinJatkoPilkunJälkeen	;
+6:6	NumeromerkinJatkoPilkunJälkeen	;
+7:7	NumeromerkinJatkoPilkunJälkeen	;
+8:8	NumeromerkinJatkoPilkunJälkeen	;
+9:9	NumeromerkinJatkoPilkunJälkeen	;
+
+LEXICON NumeromerkinJatko
+Numeromerkki	;
+%0:%0	NumeromerkinJatko	;
+,:,	NumeromerkkiPilkunJälkeen	;
+-:-	LukusananJälkiliite	;
+Lyhenne_aä	;
+Loppu	;
+
+LEXICON NumeromerkinJatkoPilkunJälkeen
+NumeromerkkiPilkunJälkeen	;
+-:-	LukusananJälkiliite	;
+Lyhenne_aä	;
+Loppu	;
+
 LEXICON LukusanaToista
 [Bc]toista:toista	Liitesana_a	;
 [Bc]toista:toista	LukusananJälkiliite	;
