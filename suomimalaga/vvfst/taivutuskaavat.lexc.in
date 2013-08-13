@@ -3186,6 +3186,7 @@ s:s	TositavanKestämäTaan_<A>	;
 s:s	Käskytapa_<A>	;
 ss:ss	Mahtotapa_<A>	;
 s:s	Johdin_tU_tA_<A>	;
+st:st	Johdin_nimitapa2_<A>	;
 kse:kse	Johdin_mA_<A>	;
 ksi:ksi	Johdin_ja_kulkija_<A>	;
 ks:ks	Ehtotapa_<A>	;
