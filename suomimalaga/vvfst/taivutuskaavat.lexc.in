@@ -2768,6 +2768,7 @@ itsi:itsi	Johdin_ja_kulkija_<A>	;
 
 LEXICON HaravoidaKanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;
+i:i	Johdin_nimitapa1dA_<A>	;
 id:id	Johdin_nimitapa2_<A>	;
 i:i	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;

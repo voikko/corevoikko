@@ -613,6 +613,7 @@ huonovointisuus
 !juoksevaton
 !juoksevallinen
 susimainen
+!kuolleessaan
 
 # = sijapäätteet =
 []

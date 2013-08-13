@@ -1694,6 +1694,8 @@ combi_rule teonsanan_johdos ($vasen, $oikea, $sana, $index):
   if ($oikea.luokka in <johdin_UUs, johdin_Us, johdin_ntA, johdin_nti, johdin_Us_ksen,
                         johdin_mA> + @johdin_jA) or $oikea.jluokka = nimisana then
     result $res, rules nimisanan_sijapääte;
+  elseif $oikea.luokka = johdin_lUt then
+    result $res, rules laatusanan_sijapääte;
   else
     result $res, rules laatusanan_sijapääte_omistusliitteellä;
   end;
