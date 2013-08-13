@@ -1148,6 +1148,7 @@ LEXICON NOUN Taival_w
 
 LEXICON NOUN Taival_s
 [Sn][Ny]e:e	<WC>NormaaliYsJatkoOl_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
 [Sn][Nm]eet:eet	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Ny]een:een	<WC>YksikönGenetiivinJatko_<A>	;
@@ -2619,7 +2620,7 @@ LEXICON Nousta
 LEXICON Nuolaista_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 TositavanKertomaTiin_<A>	;
-t:t	Johdin_nimitapa2_<A>	;
+t:t	Johdin_nimitapa2_AessA_<A>	;
 Tositapa4Tt_<A>	;
 t<A>:t<A>	Käskytapa_<A>	;
 Käskytapa_e_<A>	;
@@ -3301,6 +3302,10 @@ kse:kse	OlV_<A>	;
 
 LEXICON Johdin_nimitapa2
 [Tn2]ess<A>:ess<A>	NimisanaLiOlV_<A>	;
+[Tn2]en:en	Liitesana_<A>	;
+
+LEXICON Johdin_nimitapa2_AessA
+[Tn2]<A>ess<A>:<A>ess<A>	NimisanaLiOlV_<A>	;
 [Tn2]en:en	Liitesana_<A>	;
 
 LEXICON Johdin_nimitapa3
