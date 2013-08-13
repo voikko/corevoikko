@@ -14,6 +14,7 @@ Multichar_Symbols
 [La]  ! lyhenne
 [Ls]  ! seikkasana
 [Lu]  ! lukusana
+[Lr]  ! asemosana
 
 ! Vokaalisointu
 [Va]
@@ -149,6 +150,7 @@ Joukahainen	;
 -[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 -[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Joukahainen_nimisanat	;
 LukusananAlku	;
+Asemosana	;
 
 LEXICON Joukahainen
 Poikkeavat_sanat ;

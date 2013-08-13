@@ -385,3 +385,10 @@ word:kahdeksaakymmentä
     STRUCTURE==ppppppppp=pppppppp
 word:myyty
   expected:1
+word:eräs
+  expected:1
+  analysis
+    CLASS=asemosana
+    NUMBER=singular
+    SIJAMUOTO=nimento
+    STRUCTURE==pppp

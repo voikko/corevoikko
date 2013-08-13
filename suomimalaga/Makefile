@@ -34,7 +34,8 @@ SUKIJA_SRC=sukija/generate_lex.py sukija/generoi.sh sukija/LUE.MINUT \
            sukija/sukija.py sukija/suomi.all sukija/suomi.sym sukija/suomi.tex \
            sukija/suomi.inc sukija/suomi.lex sukija/suomi.mor sukija/suomi.pro
 
-VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukusanat.lexc
+VVFST_LEXC=vvfst/suomi.lexc vvfst/olla-ei.lexc vvfst/poikkeavat.lexc vvfst/lukusanat.lexc \
+           vvfst/asemosanat.lexc
 
 # Files to ship only in the full source package
 SRC_ONLY=ChangeLog CONTRIBUTORS README.fi Makefile README COPYING \

@@ -1,0 +1,10 @@
+LEXICON Asemosana
+[Lr][Xp]eräs[X]erä:erä	AsemosanaVieras_ä	;
+[Lr][Xp]he[X]he:he	AsemosanaMe	;
+[Lr][Xp]me[X]me:me	AsemosanaMe	;
+[Lr][Xp]te[X]te:te	AsemosanaMe	;
+
+LEXICON AsemosanaMe
+[Sn][Nm]:	Liitesana_ä	;
+[Sg][Nm]idän:idän	Liitesana_ä	;
+[Sp][Nm]itä:itä	Liitesana_ä	;

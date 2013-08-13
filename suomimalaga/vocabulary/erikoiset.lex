@@ -20,9 +20,9 @@
 [perusmuoto: "af", alku: "af", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=pp"];
 [perusmuoto: "bin", alku: "bin", luokka: nimi, jatko: <loppu>, äs: ä, rakenne: "=ppp"];  # Osama bin Laden.
 [perusmuoto: "eri", alku: "eri", luokka: laatusana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
-[perusmuoto: "eräs", alku: "erä", luokka: asemosana, jatko: <vieras>, äs: ä];
+ [perusmuoto: "eräs", alku: "erä", luokka: asemosana, jatko: <vieras>, äs: ä];
 [perusmuoto: "halleluja", alku: "halleluj", luokka: nimisana, jatko: <koira>, äs: a, tiedot: <ei_voikko>]; # Taipuu Nykysuomen sanakirjassa.
-[perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
+ [perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "hunningolla", alku: "hunningo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "huomassa", alku: "huoma", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
 [perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_sukija>]; # Hällä, hälle, hältä.
@@ -40,13 +40,13 @@
 [perusmuoto: "kumpi", alku: "ku", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
-[perusmuoto: "me", alku: "me", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
+ [perusmuoto: "me", alku: "me", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "meikä", alku: "meikä", luokka: nimisana, jatko: <liitesana, loppu> + @sana1, äs: ä];
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];  # Mikä.
 [perusmuoto: "mi", alku: "min", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # Minkä.
 [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
-[perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä];
+[perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mones", alku: "mone", luokka: asemosana, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "moni", alku: "montaa", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "muu", alku: "mu", luokka: asemosana, jatko: <puu>, äs: a];
@@ -66,7 +66,7 @@
 [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä];
 [perusmuoto: "tanhuvilla", alku: "tanhuv", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
-[perusmuoto: "te", alku: "te", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
+ [perusmuoto: "te", alku: "te", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "tex", alku: "tex", luokka: lyhenne, jatko: <kalsium>, äs: ä];
 [perusmuoto: "ulko", alku: "ulko", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # "ulko" on myös etuliite.
 [perusmuoto: "van", alku: "van", luokka: nimi, jatko: <loppu>, äs: a, rakenne: "=ppp"];

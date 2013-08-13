@@ -41,6 +41,8 @@ LEXICON EtunimiYsJatko
 -[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 -[Bc]:-	Loppu	;
 
+LEXICON AsemosanaYsJatko
+
 LEXICON YhdyssanaJatkuu
 [Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
 -[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
