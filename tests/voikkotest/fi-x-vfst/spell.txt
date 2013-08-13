@@ -1896,3 +1896,5 @@ T-Ford
 suositelluimmuutta
 suppene
 supetkoon
+sadoistatuhansista
+seitsemiensatojen

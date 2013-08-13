@@ -167,12 +167,16 @@ MULTI = {
 for sija in MULTI.keys():
 	diacritic = u"@U.LS." + sija.upper() + u"@"
 	lexiconName = u"Lukusana" + sija + u"29"
+	
+	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI[sija][0] + u":" + diacritic + MULTI[sija][0] + u"\t" + lexiconName + u"_ä\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI[sija][1] + u":" + diacritic + MULTI[sija][1] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI[sija][2] + u":" + diacritic + MULTI[sija][2] + u"\t" + lexiconName + u"_a\t;\n")
+	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaLiitesana_<A>\t;")
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
-	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][0] + u":" + diacritic + MULTI[sija][0] + u"\t" + lexiconName + u"_ä\t;")
-	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][1] + u":" + diacritic + MULTI[sija][1] + u"\t" + lexiconName + u"_a\t;")
-	numeralLines.append(u"[Bc]" + diacritic + MULTI[sija][2] + u":" + diacritic + MULTI[sija][2] + u"\t" + lexiconName + u"_a\t;")
+	numeralLines.append(lexiconName + u"Kertoimet\t;")
 	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
 
 

@@ -1,3 +1,31 @@
+LEXICON LukusananAlku
+Lukusana	;
+Erikoisluku	;
+NumeromerkinAlku	;
+LukusanaSgNy29Kertoimet	;
+LukusanaSpNy29Kertoimet	;
+LukusanaStrNy29Kertoimet	;
+LukusanaSesNy29Kertoimet	;
+LukusanaSineNy29Kertoimet	;
+LukusanaSelaNy29Kertoimet	;
+LukusanaSillNy29Kertoimet	;
+LukusanaSadeNy29Kertoimet	;
+LukusanaSablNy29Kertoimet	;
+LukusanaSallNy29Kertoimet	;
+LukusanaSabNy29Kertoimet	;
+LukusanaSgNm29Kertoimet	;
+LukusanaSpNm29Kertoimet	;
+LukusanaStrNm29Kertoimet	;
+LukusanaSesNm29Kertoimet	;
+LukusanaSineNm29Kertoimet	;
+LukusanaSelaNm29Kertoimet	;
+LukusanaSillNm29Kertoimet	;
+LukusanaSadeNm29Kertoimet	;
+LukusanaSablNm29Kertoimet	;
+LukusanaSallNm29Kertoimet	;
+LukusanaSabNm29Kertoimet	;
+LukusanaSinNm29Kertoimet	;
+
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
 [Lu][Xp]kaksi[X]ka:ka	LukusanaKaksi_a	;
@@ -23,7 +51,7 @@ LEXICON Erikoisluku
 [Lu][Xp]kahdeksankymmen[X]kahdeksankymmen:kahdeksankymmen	LukusananJälkiliite	;
 [Lu][Xp]yhdeksänkymmen[X]yhdeksänkymmen:yhdeksänkymmen	LukusananJälkiliite	;
 
-NumeromerkinAlku
+LEXICON NumeromerkinAlku
 [Lu]:	Numeromerkki	;
 
 LEXICON Numeromerkki
