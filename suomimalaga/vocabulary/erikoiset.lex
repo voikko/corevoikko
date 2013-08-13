@@ -25,14 +25,14 @@
  [perusmuoto: "he", alku: "he", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];
 [perusmuoto: "hunningolla", alku: "hunningo", luokka: nimisana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "huomassa", alku: "huoma", luokka: nimisana, jatko: @sisäpaikallissijat_Vn, äs: a];
-[perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_sukija>]; # Hällä, hälle, hältä.
-[perusmuoto: "hän", alku: "hän", luokka: asemosana, jatko: <hän>, äs: ä, tiedot: <ei_sukija>];
-[perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: <hän>, äs: ä, tiedot: <ei_voikko>]; # Myös hällä, hälle, hältä.
+ [perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: @ulkopaikallissijat, äs: ä, tiedot: <ei_sukija>]; # Hällä, hälle, hältä.
+ [perusmuoto: "hän", alku: "hän", luokka: asemosana, jatko: <hän>, äs: ä, tiedot: <ei_sukija>];
+ [perusmuoto: "hän", alku: "hä", luokka: asemosana, jatko: <hän>, äs: ä, tiedot: <ei_voikko>]; # Myös hällä, hälle, hältä.
 [perusmuoto: "ilki", alku: "ilki", luokka: nimisana, jatko: @sana1, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ilmi", alku: "ilmi", luokka: nimi_laatusana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
+ [perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "jompi", alku: "jo", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "kuka", alku: "ku", luokka: asemosana, jatko: <joka>, äs: a];
+ [perusmuoto: "kuka", alku: "ku", luokka: asemosana, jatko: <joka>, äs: a];
 [perusmuoto: "kuka", alku: "kukas", luokka: asemosana, jatko: <loppu>, äs: a];
 [perusmuoto: "kumpainen", alku: "kumpai", luokka: asemosana, jatko: <nainen>, äs: a];
 [perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a, tiedot: <ei_voikko>];
