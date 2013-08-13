@@ -1892,3 +1892,7 @@ rangaistakoon
 !35,7,2
 !76.4
 7:ssä
+T-Ford
+suositelluimmuutta
+suppene
+supetkoon
