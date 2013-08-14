@@ -5,6 +5,7 @@ LEXICON Asemosana
 [Lr][Xp]joka[X]jo:jo	AsemosanaJoka	;
 [Lr][Xp]jokin[X]jo:jo	AsemosanaJokin	;
 [Lr][Xp]joku[X]jo:jo	AsemosanaJoku	;
+[Lr][Xp]jompikumpi[X]jom:jom	AsemosanaJompikumpi	;
 [Lr][Xp]kuka[X]ku:ku	AsemosanaJoka	;
 [Lr][Xp]kuka[X]kukas:kukas	Loppu	;
 [Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
@@ -135,6 +136,35 @@ LEXICON AsemosanaKumpi
 [Sade][Nm]milla:milla	Liitesana_a	;
 [Sabl][Nm]milta:milta	Liitesana_a	;
 [Sall][Nm]mille:mille	Liitesana_a	;
+
+LEXICON AsemosanaJompikumpi
+[Sn][Ny]pikumpi:pikumpi	Liitesana_a	;
+[Sg][Ny]mankumman:mankumman	Liitesana_a	;
+[Sp][Ny]paakumpaa:paakumpaa	Liitesana_a	;
+[Str][Ny]maksikummaksi:maksikummaksi	Liitesana_a	;
+[Ses][Ny]panakumpana:panakumpana	Liitesana_a	;
+[Sine][Ny]massakummassa:massakummassa	Liitesana_a	;
+[Sela][Ny]mastakummasta:mastakummasta	Liitesana_a	;
+[Sill][Ny]paankumpaan:paankumpaan	Liitesana_a	;
+[Sade][Ny]mallakummalla:mallakummalla	Liitesana_a	;
+[Sabl][Ny]maltakummalta:maltakummalta	Liitesana_a	;
+[Sall][Ny]mallekummalle:mallekummalle	Liitesana_a	;
+[Sab][Ny]mattakummatta:mattakummatta	Liitesana_a	;
+[Sn][Nm]matkummat:matkummat	Liitesana_a	;
+[Sg][Nm]pienkumpien:pienkumpien	Liitesana_a	;
+[Sg][Nm]painkumpain:painkumpain	Liitesana_a	;
+[Sp][Nm]piakumpia:piakumpia	Liitesana_a	;
+[Str][Nm]miksikummiksi:miksikummiksi	Liitesana_a	;
+[Ses][Nm]pinakumpina:pinakumpina	Liitesana_a	;
+[Sine][Nm]missakummissa:missakummissa	Liitesana_a	;
+[Sela][Nm]mistakummista:mistakummista	Liitesana_a	;
+[Sill][Nm]piinkumpiin:piinkumpiin	Liitesana_a	;
+[Sade][Nm]millakummilla:millakummilla	Liitesana_a	;
+[Sabl][Nm]miltakummilta:miltakummilta	Liitesana_a	;
+[Sall][Nm]millekummille:millekummille	Liitesana_a	;
+[Sab][Nm]mittakummitta:mittakummitta	Liitesana_a	;
+[Sko][Nm]pinekumpine:pinekumpine	Liitesana_a	;
+[Sin][Nm]minkummin:minkummin	Liitesana_a	;
 
 LEXICON AsemosanaMinä
 [Sn][Ny]ä:ä	Liitesana_ä	;

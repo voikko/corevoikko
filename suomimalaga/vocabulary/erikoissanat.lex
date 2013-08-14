@@ -120,34 +120,34 @@ define @loppu := <liitesana, loppu>;
 
 ######################################################
 
-[perusmuoto: "jompikumpi", alku: "jompikumpi", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
-[perusmuoto: "jompikumpi", alku: "jommankumman", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompaakumpaa", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompanakumpana", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommaksikummaksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommassakummassa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommastakummasta", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompaankumpaan", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommallakummalla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommaltakummalta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommallekummalle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommattakummatta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompikumpi", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppp=ppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommankumman", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompaakumpaa", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompanakumpana", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommaksikummaksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommassakummassa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommastakummasta", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompaankumpaan", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommallakummalla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommaltakummalta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommallekummalle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommattakummatta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
 
-[perusmuoto: "jompikumpi", alku: "jommatkummat", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompienkumpien", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompainkumpain", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompiakumpia", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "jompikumpi", alku: "jompinakumpina", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommiksikummiksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommissakummissa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommistakummista", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompiinkumpiin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommillakummilla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommiltakummilta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommillekummille", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jommittakummitta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
-[perusmuoto: "jompikumpi", alku: "jompinekumpine", luokka: asemosana, sijamuoto: seuranto, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppppp=ppppppp"];
-[perusmuoto: "jompikumpi", alku: "jomminkummin", luokka: asemosana, sijamuoto: keinonto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommatkummat", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompienkumpien", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompainkumpain", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompiakumpia", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompinakumpina", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommiksikummiksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommissakummissa", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommistakummista", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompiinkumpiin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommillakummilla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommiltakummilta", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommillekummille", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jommittakummitta", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: a, rakenne: "=pppppppp=pppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jompinekumpine", luokka: asemosana, sijamuoto: seuranto, luku: monikko, jatko: <omistusliite, loppu>, äs: a, rakenne: "=ppppppp=ppppppp"];
+ [perusmuoto: "jompikumpi", alku: "jomminkummin", luokka: asemosana, sijamuoto: keinonto, luku: monikko, jatko: @loppu, äs: a, rakenne: "=pppppp=pppppp"];
 
 ######################################################
 

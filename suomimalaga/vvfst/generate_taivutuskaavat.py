@@ -162,7 +162,8 @@ MULTI = {
 	u"SablNm": [u"kymmeniltä", u"sadoilta", u"tuhansilta"],
 	u"SallNm": [u"kymmenille", u"sadoille", u"tuhansille"],
 	u"SabNm": [u"kymmenittä", u"sadoitta", u"tuhansitta"],
-	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin"]
+	u"SinNm": [u"kymmenin", u"sadoin", u"tuhansin"],
+	u"SkoNm": [u"kymmenine", u"satoine", u"tuhansine"]
 }
 
 for sija in MULTI.keys():
