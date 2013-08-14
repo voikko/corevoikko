@@ -1932,3 +1932,4 @@ sinulle
 jossain
 joksikuksi
 yksine
+!nille

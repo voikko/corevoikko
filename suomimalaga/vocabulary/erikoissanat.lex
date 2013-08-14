@@ -465,36 +465,36 @@ define @loppu := <liitesana, loppu>;
 
 ######################################################
 
-[perusmuoto: "tuo", alku: "tuo",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuon",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuota",  luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuona",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuoksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuossa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuosta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuohon", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuolla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuolta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "tuo", alku: "tuolle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuo",    luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuon",   luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuota",  luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuona",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuoksi", luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuossa", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuosta", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuohon", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuolla", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuolta", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuolle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
 
-[perusmuoto: "tuo", alku: "tuonne", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "tuo", alku: "tuonne", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
 
 ######################################################
 
-[perusmuoto: "nuo", alku: "nuo",     luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noita",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noina",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noissa",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noista",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noilta",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "nuo",     luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noita",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noina",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noissa",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noista",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noilta",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noilla",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "nuo", alku: "noitta",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "nuo", alku: "noine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "nuo", alku: "noine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "nuo", alku: "noin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
 ######################################################

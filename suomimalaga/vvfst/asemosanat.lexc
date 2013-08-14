@@ -13,10 +13,12 @@ LEXICON Asemosana
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
 [Lr][Xp]minä[X]min:min	AsemosanaMinä	;
 [Lr][Xp]ne[X]n:n	AsemosanaNe	;
+[Lr][Xp]nuo[X]n:n	AsemosanaNuo	;
 [Lr][Xp]nämä[X]nä:nä	AsemosanaNämä	;
 [Lr][Xp]se[X]s:s	AsemosanaSe	;
 [Lr][Xp]sinä[X]sin:sin	AsemosanaMinä	;
 [Lr][Xp]te[X]te:te	AsemosanaMe	;
+[Lr][Xp]tuo[X]tuo:tuo	AsemosanaTuo	;
 [Lr][Xp]tämä[X]tä:tä	AsemosanaTämä	;
 
 LEXICON AsemosanaMe
@@ -209,7 +211,7 @@ LEXICON AsemosanaNe
 [Sade][Nm]iillä:iillä	Liitesana_ä	;
 [Sabl][Nm]iiltä:iiltä	Liitesana_ä	;
 [Sall][Nm]iille:iille	Liitesana_ä	;
-[Sko][Nm]iine:iine	Liitesana_a	;
+[Sko][Nm]iine:iine	Liitesana_ä	;
 
 LEXICON AsemosanaTämä
 [Sn][Ny]mä:mä	Liitesana_ä	;
@@ -237,4 +239,33 @@ LEXICON AsemosanaNämä
 [Sade][Nm]illä:illä	Liitesana_ä	;
 [Sabl][Nm]iltä:iltä	Liitesana_ä	;
 [Sall][Nm]ille:ille	Liitesana_ä	;
-[Sko][Nm]ine:ine	Liitesana_a	;
+[Sko][Nm]ine:ine	Liitesana_ä	;
+
+LEXICON AsemosanaTuo
+[Sn][Ny]:	Liitesana_a	;
+[Sg][Ny]n:n	Liitesana_a	;
+[Sp][Ny]ta:ta	Liitesana_a	;
+[Str][Ny]ksi:ksi	Liitesana_a	;
+[Ses][Ny]na:na	Liitesana_a	;
+[Sine][Ny]ssa:ssa	Liitesana_a	;
+[Sela][Ny]sta:sta	Liitesana_a	;
+[Sill][Ny]hon:hon	Liitesana_a	;
+[Sill][Ny]nne:nne	Liitesana_a	;
+[Sade][Ny]lla:lla	Liitesana_a	;
+[Sabl][Ny]lta:lta	Liitesana_a	;
+[Sall][Ny]lle:lle	Liitesana_a	;
+
+LEXICON AsemosanaNuo
+[Sn][Nm]uo:uo	Liitesana_a	;
+[Sg][Nm]oiden:oiden	Liitesana_a	;
+[Sg][Nm]oitten:oitten	Liitesana_a	;
+[Sp][Nm]oita:oita	Liitesana_a	;
+[Str][Nm]oiksi:oiksi	Liitesana_a	;
+[Ses][Nm]oina:oina	Liitesana_a	;
+[Sine][Nm]oissa:oissa	Liitesana_a	;
+[Sela][Nm]oista:oista	Liitesana_a	;
+[Sill][Nm]oihin:oihin	Liitesana_a	;
+[Sade][Nm]oilla:oilla	Liitesana_a	;
+[Sabl][Nm]oilta:oilta	Liitesana_a	;
+[Sall][Nm]oille:oille	Liitesana_a	;
+[Sko][Nm]oine:oine	Liitesana_a	;
