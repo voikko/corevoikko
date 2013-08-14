@@ -1021,7 +1021,7 @@ combi_rule asemosanan_sijapääte ($vasen, $oikea, $sana, $index):
     if loppu in $oikea.jatko then
       result $res, accept;
     end;
-    if liitesana in $oikea.jatko then
+    if liitesana in $oikea.jatko and $oikea.sija /= omanto_nkA and $oikea.sija /= nimentö_tkA then
       result $res, rules liitesana;
     end;
     if $oikea.sijamuoto = omanto then
@@ -1540,7 +1540,7 @@ combi_rule liitesana ($vasen, $oikea, $sana, $index):
   if ($edellinen.kielto /= nil and $oikea.kielto /= no) then
     $oikea.kielto := $edellinen.kielto;
   end;
-
+    
   result $vasen + <[alku: $sana] + $oikea>, accept;
 end;
 

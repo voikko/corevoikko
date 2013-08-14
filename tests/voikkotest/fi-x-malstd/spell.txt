@@ -666,6 +666,10 @@ romahtamaisillaan
 kissakin
 !raatakaakaan
 tiedäkään
+!jokakin
+!jotkakin
+!jonkakin
+kukahan
 
 # = vokaalisointu =
 []

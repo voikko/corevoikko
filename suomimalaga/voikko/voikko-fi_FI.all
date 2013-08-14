@@ -3611,6 +3611,11 @@ subrule muokkaa_taivutusta($tietue, $taivutus):
   # Näitä ei koskaan käytetä Voikossa
   $taivutus :=- liitesana_s;
 
+  if nimentö in $taivutus and (not (liitesana in $taivutus)) and
+     ($tietue.luokka /= asemosana or $tietue.perusmuoto /= "joka") then
+    $taivutus :=+ [liitesana: $taivutus.nimentö];
+  end;
+
   if ($tietue.luokka = nimisana) then
     $taivutus :=- voittoaste;
     $taivutus :=- yliaste;
@@ -3959,9 +3964,6 @@ subrule lajittele ($tietue):
   foreach $i in $r:
     if (nimentö in $i.2) then
       $i.2 :=+ <loppu>;
-      if (not (liitesana in $tietue)) then
-        $i.2 :=+ <liitesana>;
-      end;
     end;
     $t :=+ <<$i.1, $i.2>>;
   end;

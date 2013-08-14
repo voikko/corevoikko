@@ -46,30 +46,30 @@ define @loppu := <liitesana, loppu>;
 
 [perusmuoto: "jokin", alku: "jokin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "jokin", alku: "jonkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jotakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jonakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jossakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jostakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "johonkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jollakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joltakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jollekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "jottakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "jotakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "jonakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "jossakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "jostakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "johonkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "jollakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joltakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "jollekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "jottakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 
 [perusmuoto: "jokin", alku: "jotkin", luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joittenkin", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joidenkin", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joitakin", luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joinakin", luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joiksikin", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joissakin", luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joistakin", luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joihinkin", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joillakin", luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joiltakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joillekin", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: <loppu>, äs: a];
-[perusmuoto: "jokin", alku: "joittakin", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: <loppu>, äs: a];
+[perusmuoto: "jokin", alku: "joittenkin", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joidenkin", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joitakin", luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joinakin", luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joiksikin", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joissakin", luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joistakin", luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joihinkin", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joillakin", luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joiltakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joillekin", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "jokin", alku: "joittakin", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 
 
 [perusmuoto: "jokin", alku: "jotain", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: a];
@@ -86,7 +86,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "jokin", alku: "joistain", luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "jokin", alku: "joillain", luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: a];
 [perusmuoto: "jokin", alku: "joiltain", luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "jokin", alku: "joittain", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: a];
+[perusmuoto: "jokin", alku: "joittain", luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
 
@@ -163,7 +163,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "mikin", alku: "milläkin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: ä];
 [perusmuoto: "mikin", alku: "miltäkin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: ä];
 [perusmuoto: "mikin", alku: "millekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mittäkin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mittäkin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 
 ######################################################
 
@@ -178,7 +178,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "kukin", alku: "kullakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "kukin", alku: "kultakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "kukin", alku: "kullekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kuttakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kuttakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
 
@@ -213,7 +213,7 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "mikään", alku: "milläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "miltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "millekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mittäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mittäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "mikään", alku: "mitään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "minään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
