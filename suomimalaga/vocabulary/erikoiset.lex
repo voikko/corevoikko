@@ -33,10 +33,10 @@
  [perusmuoto: "joka", alku: "jo", luokka: asemosana, jatko: <joka>, äs: a, tiedot: <ei_ys>];
 [perusmuoto: "jompi", alku: "jo", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
  [perusmuoto: "kuka", alku: "ku", luokka: asemosana, jatko: <joka>, äs: a];
-[perusmuoto: "kuka", alku: "kukas", luokka: asemosana, jatko: <loppu>, äs: a];
-[perusmuoto: "kumpainen", alku: "kumpai", luokka: asemosana, jatko: <nainen>, äs: a];
+ [perusmuoto: "kuka", alku: "kukas", luokka: asemosana, jatko: <loppu>, äs: a];
+ [perusmuoto: "kumpainen", alku: "kumpai", luokka: asemosana, jatko: <nainen>, äs: a];
 [perusmuoto: "kumpanen", alku: "kumpa", luokka: asemosana, jatko: <nainen>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "kumpi", alku: "kum", luokka: asemosana, jatko: <kumpi>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "kumpi", alku: "ku", luokka: asemosana, jatko: <suurempi>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "liki", alku: "liki", luokka: laatusana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "lyx", alku: "lyx", luokka: lyhenne, jatko: <kalsium>, äs: ä];
@@ -45,7 +45,7 @@
 [perusmuoto: "melko", alku: "melko", luokka: laatusana, jatko: <loppu>, äs: a];
 [perusmuoto: "mi", alku: "mi", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>];  # Mikä.
 [perusmuoto: "mi", alku: "min", luokka: asemosana, jatko: <loppu>, äs: a, tiedot: <ei_voikko, ei_ys>]; # Minkä.
-[perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mones", alku: "mone", luokka: asemosana, jatko: <kahdeksas>, äs: a];
 [perusmuoto: "moni", alku: "montaa", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
@@ -63,7 +63,7 @@
 [perusmuoto: "päikkäin", alku: "päikkäin", luokka: asemosana, jatko: <loppu>, äs: ä];
 [perusmuoto: "satikuti", alku: "satikutia", luokka: nimisana, jatko: <liitesana, loppu>, äs: a, tiedot: <murre>];
 [perusmuoto: "silti", alku: "silti", luokka: asemosana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
+ [perusmuoto: "sinä", alku: "sin", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "sisä", alku: "sisä", luokka: nimisana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä];
 [perusmuoto: "tanhuvilla", alku: "tanhuv", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
  [perusmuoto: "te", alku: "te", luokka: asemosana, luku: monikko, jatko: <me>, äs: ä];

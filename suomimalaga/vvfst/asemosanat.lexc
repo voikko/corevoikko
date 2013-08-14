@@ -4,7 +4,12 @@ LEXICON Asemosana
 [Lr][Xp]hän[X]hä:hä	AsemosanaHän	;
 [Lr][Xp]joka[X]jo:jo	AsemosanaJoka	;
 [Lr][Xp]kuka[X]ku:ku	AsemosanaJoka	;
+[Lr][Xp]kuka[X]kukas:kukas	Loppu	;
+[Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
+[Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
+[Lr][Xp]minä[X]min:min	AsemosanaMinä	;
+[Lr][Xp]sinä[X]sin:sin	AsemosanaMinä	;
 [Lr][Xp]te[X]te:te	AsemosanaMe	;
 
 LEXICON AsemosanaMe
@@ -59,3 +64,40 @@ LEXICON AsemosanaJoka
 [Sade][Nm]illa:illa	Liitesana_a	;
 [Sabl][Nm]ilta:ilta	Liitesana_a	;
 [Sall][Nm]ille:ille	Liitesana_a	;
+
+LEXICON AsemosanaKumpi
+[Sn][Ny]pi:pi	Liitesana_a	;
+[Sg][Ny]man:man	Liitesana_a	;
+[Sp][Ny]paa:paa	Liitesana_a	;
+[Str][Ny]maksi:maksi	Liitesana_a	;
+[Ses][Ny]pana:pana	Liitesana_a	;
+[Sine][Ny]massa:massa	Liitesana_a	;
+[Sela][Ny]masta:masta	Liitesana_a	;
+[Sill][Ny]paan:paan	Liitesana_a	;
+[Sade][Ny]malla:malla	Liitesana_a	;
+[Sabl][Ny]malta:malta	Liitesana_a	;
+[Sall][Ny]malle:malle	Liitesana_a	;
+[Sn][Nm]mat:mat	Liitesana_a	;
+[Sg][Nm]pien:pien	Liitesana_a	;
+[Sp][Nm]pia:pia	Liitesana_a	;
+[Str][Nm]miksi:miksi	Liitesana_a	;
+[Ses][Nm]pina:pina	Liitesana_a	;
+[Sine][Nm]missa:missa	Liitesana_a	;
+[Sela][Nm]mista:mista	Liitesana_a	;
+[Sill][Nm]piin:piin	Liitesana_a	;
+[Sade][Nm]milla:milla	Liitesana_a	;
+[Sabl][Nm]milta:milta	Liitesana_a	;
+[Sall][Nm]mille:mille	Liitesana_a	;
+
+LEXICON AsemosanaMinä
+[Sn][Ny]ä:ä	Liitesana_ä	;
+[Sg][Ny]un:un	Liitesana_a	;
+[Sp][Ny]ua:ua	Liitesana_a	;
+[Str][Ny]uksi:uksi	Liitesana_a	;
+[Ses][Ny]una:una	Liitesana_a	;
+[Sine][Ny]ussa:ussa	Liitesana_a	;
+[Sela][Ny]usta:usta	Liitesana_a	;
+[Sill][Ny]uun:uun	Liitesana_a	;
+[Sade][Ny]ulla:ulla	Liitesana_a	;
+[Sabl][Ny]ulta:ulta	Liitesana_a	;
+[Sall][Ny]ulle:ulle	Liitesana_a	;
