@@ -365,28 +365,28 @@ define @loppu := <liitesana, loppu>;
 ########################################
 
 
-[perusmuoto: "mikä", alku: "mikä",    luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minkä",   luokka: asemosana, sijamuoto: omanto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitä",    luokka: asemosana, sijamuoto: osanto, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitäs",   luokka: asemosana, sijamuoto: osanto, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minä",    luokka: asemosana, sijamuoto: olento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "miksi",   luokka: asemosana, sijamuoto: tulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "miksikä", luokka: asemosana, sijamuoto: tulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "missä",   luokka: asemosana, sijamuoto: sisäolento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, jatko: @loppu, äs: ä];
-[perusmuoto: "mikä", alku: "mistä",   luokka: asemosana, sijamuoto: sisäeronto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, jatko: @loppu, äs: ä];
-[perusmuoto: "mikä", alku: "mihin",   luokka: asemosana, sijamuoto: sisätulento, jatko: @loppu, äs: ä];
-[perusmuoto: "mikä", alku: "mihinkä", luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minne",   luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "minnekä", luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "millä",   luokka: asemosana, sijamuoto: ulko_olento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "miltä",   luokka: asemosana, sijamuoto: ulkoeronto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mille",   luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "millekä", luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mikä",    luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "minkä",   luokka: asemosana, sijamuoto: omanto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mitä",    luokka: asemosana, sijamuoto: osanto, jatko: <liitesana, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mitäs",   luokka: asemosana, sijamuoto: osanto, jatko: <loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "minä",    luokka: asemosana, sijamuoto: olento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "miksi",   luokka: asemosana, sijamuoto: tulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "miksikä", luokka: asemosana, sijamuoto: tulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "missä",   luokka: asemosana, sijamuoto: sisäolento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikä", alku: "mistä",   luokka: asemosana, sijamuoto: sisäeronto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikä", alku: "mihin",   luokka: asemosana, sijamuoto: sisätulento, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikä", alku: "mihinkä", luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "minne",   luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "minnekä", luokka: asemosana, sijamuoto: sisätulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "millä",   luokka: asemosana, sijamuoto: ulko_olento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "miltä",   luokka: asemosana, sijamuoto: ulkoeronto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mille",   luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "millekä", luokka: asemosana, sijamuoto: ulkotulento, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
 #[perusmuoto: "mikä", alku: "mittä",   luokka: asemosana, sijamuoto: vajanto, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
-[perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, sijamuoto: nimentö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikä", alku: "mitkä",   luokka: asemosana, sijamuoto: nimentö, jatko: <liitesana, liitesana_s, loppu>, äs: ä];
+ [perusmuoto: "mikä", alku: "mitkään", luokka: asemosana, sijamuoto: nimentö, jatko: @loppu, äs: ä];
 
 ######################################################
 

@@ -11,6 +11,7 @@ LEXICON Asemosana
 [Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
 [Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
+[Lr][Xp]mikä[X]mi:mi	AsemosanaMikä	;
 [Lr][Xp]minä[X]min:min	AsemosanaMinä	;
 [Lr][Xp]ne[X]n:n	AsemosanaNe	;
 [Lr][Xp]nuo[X]n:n	AsemosanaNuo	;
@@ -269,3 +270,26 @@ LEXICON AsemosanaNuo
 [Sabl][Nm]oilta:oilta	Liitesana_a	;
 [Sall][Nm]oille:oille	Liitesana_a	;
 [Sko][Nm]oine:oine	Liitesana_a	;
+
+LEXICON AsemosanaMikä
+[Sn][Ny]kä:kä	Liitesana_ä	;
+[Sg][Ny]nkä:nkä	Liitesana_ä	;
+[Sp][Ny]tä:tä	Liitesana_ä	;
+[Sp][Ny]täs:täs	Loppu	;
+[Str][Ny]ksi:ksi	Liitesana_ä	;
+[Str][Ny]ksikä:ksikä	Liitesana_ä	;
+[Ses][Ny]nä:nä	Liitesana_ä	;
+[Sine][Ny]ssä:ssä	Liitesana_ä	;
+[Sine][Ny]ssään:ssään	Liitesana_ä	;
+[Sela][Ny]stä:stä	Liitesana_ä	;
+[Sela][Ny]stään:stään	Liitesana_ä	;
+[Sill][Ny]hin:hin	Liitesana_ä	;
+[Sill][Ny]hinkä:hinkä	Liitesana_ä	;
+[Sill][Ny]nne:nne	Liitesana_ä	;
+[Sill][Ny]nnekä:nnekä	Liitesana_ä	;
+[Sade][Ny]llä:llä	Liitesana_ä	;
+[Sabl][Ny]ltä:ltä	Liitesana_ä	;
+[Sall][Ny]lle:lle	Liitesana_ä	;
+[Sall][Ny]llekä:llekä	Liitesana_ä	;
+[Sn][Nm]tkä:tkä	Liitesana_ä	;
+[Sn][Nm]tkään:tkään	Liitesana_ä	;
