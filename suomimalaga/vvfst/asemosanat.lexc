@@ -12,8 +12,12 @@ LEXICON Asemosana
 [Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
 [Lr][Xp]minä[X]min:min	AsemosanaMinä	;
+[Lr][Xp]ne[X]n:n	AsemosanaNe	;
+[Lr][Xp]nämä[X]nä:nä	AsemosanaNämä	;
+[Lr][Xp]se[X]s:s	AsemosanaSe	;
 [Lr][Xp]sinä[X]sin:sin	AsemosanaMinä	;
 [Lr][Xp]te[X]te:te	AsemosanaMe	;
+[Lr][Xp]tämä[X]tä:tä	AsemosanaTämä	;
 
 LEXICON AsemosanaMe
 [Sn][Nm]:	Liitesana_ä	;
@@ -178,3 +182,59 @@ LEXICON AsemosanaMinä
 [Sade][Ny]ulla:ulla	Liitesana_a	;
 [Sabl][Ny]ulta:ulta	Liitesana_a	;
 [Sall][Ny]ulle:ulle	Liitesana_a	;
+
+LEXICON AsemosanaSe
+[Sn][Ny]e:e	Liitesana_ä	;
+[Sg][Ny]en:en	Liitesana_ä	;
+[Sp][Ny]itä:itä	Liitesana_ä	;
+[Str][Ny]iksi:iksi	Liitesana_ä	;
+[Ses][Ny]inä:inä	Liitesana_ä	;
+[Sine][Ny]iinä:iinä	Liitesana_ä	;
+[Sela][Ny]iitä:iitä	Liitesana_ä	;
+[Sill][Ny]iihin:iihin	Liitesana_ä	;
+[Sade][Ny]illä:illä	Liitesana_ä	;
+[Sabl][Ny]iltä:iltä	Liitesana_ä	;
+[Sall][Ny]ille:ille	Liitesana_ä	;
+
+LEXICON AsemosanaNe
+[Sn][Nm]e:e	Liitesana_ä	;
+[Sg][Nm]iiden:iiden	Liitesana_ä	;
+[Sg][Nm]iitten:iitten	Liitesana_ä	;
+[Sp][Nm]iitä:iitä	Liitesana_ä	;
+[Str][Nm]iiksi:iiksi	Liitesana_ä	;
+[Ses][Nm]iinä:iinä	Liitesana_ä	;
+[Sine][Nm]iissä:iissä	Liitesana_ä	;
+[Sela][Nm]iistä:iistä	Liitesana_ä	;
+[Sill][Nm]iihin:iihin	Liitesana_ä	;
+[Sade][Nm]iillä:iillä	Liitesana_ä	;
+[Sabl][Nm]iiltä:iiltä	Liitesana_ä	;
+[Sall][Nm]iille:iille	Liitesana_ä	;
+[Sko][Nm]iine:iine	Liitesana_a	;
+
+LEXICON AsemosanaTämä
+[Sn][Ny]mä:mä	Liitesana_ä	;
+[Sg][Ny]män:män	Liitesana_ä	;
+[Sp][Ny]tä:tä	Liitesana_ä	;
+[Str][Ny]ksi:ksi	Liitesana_ä	;
+[Ses][Ny]nä:nä	Liitesana_ä	;
+[Sine][Ny]ssä:ssä	Liitesana_ä	;
+[Sela][Ny]stä:stä	Liitesana_ä	;
+[Sill][Ny]hän:hän	Liitesana_ä	;
+[Sade][Ny]llä:llä	Liitesana_ä	;
+[Sabl][Ny]ltä:ltä	Liitesana_ä	;
+[Sall][Ny]lle:lle	Liitesana_ä	;
+
+LEXICON AsemosanaNämä
+[Sn][Nm]mä:mä	Liitesana_ä	;
+[Sg][Nm]iden:iden	Liitesana_ä	;
+[Sg][Nm]itten:itten	Liitesana_ä	;
+[Sp][Nm]itä:itä	Liitesana_ä	;
+[Str][Nm]iksi:iksi	Liitesana_ä	;
+[Ses][Nm]inä:inä	Liitesana_ä	;
+[Sine][Nm]issä:issä	Liitesana_ä	;
+[Sela][Nm]istä:istä	Liitesana_ä	;
+[Sill][Nm]ihin:ihin	Liitesana_ä	;
+[Sade][Nm]illä:illä	Liitesana_ä	;
+[Sabl][Nm]iltä:iltä	Liitesana_ä	;
+[Sall][Nm]ille:ille	Liitesana_ä	;
+[Sko][Nm]ine:ine	Liitesana_a	;

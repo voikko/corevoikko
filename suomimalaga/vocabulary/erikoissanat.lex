@@ -390,49 +390,49 @@ define @loppu := <liitesana, loppu>;
 
 ######################################################
 
-[perusmuoto: "se", alku: "se",     luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sen",    luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sitä",   luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sinä",   luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siksi",  luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siinä",  luokka: asemosana, sijamuoto: sisäolento,   luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siitä",  luokka: asemosana, sijamuoto: sisäeronto,   luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siihen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "siltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "se", alku: "sille",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "se",     luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "sen",    luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "sitä",   luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "sinä",   luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "siksi",  luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "siinä",  luokka: asemosana, sijamuoto: sisäolento,   luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "siitä",  luokka: asemosana, sijamuoto: sisäeronto,   luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "siihen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "sillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "siltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "se", alku: "sille",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
 ######################################################
 
-[perusmuoto: "ne", alku: "ne",      luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niitä",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niinä",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niissä",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niistä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ne", alku: "niille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "ne",      luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niitä",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niinä",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niissä",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niistä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ne", alku: "niine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ne", alku: "niine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ne", alku: "niin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 ######################################################
 
-[perusmuoto: "tämä", alku: "tämä",   luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tämän",  luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tätä",   luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tänä",   luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "täksi",  luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tässä",  luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tästä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tähän",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tällä",  luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tältä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "tämä", alku: "tälle",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tämä",   luokka: asemosana, sijamuoto: nimentö,         luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tämän",  luokka: asemosana, sijamuoto: omanto,        luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tätä",   luokka: asemosana, sijamuoto: osanto,       luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tänä",   luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "täksi",  luokka: asemosana, sijamuoto: tulento,     luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tässä",  luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tästä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tähän",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tällä",  luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tältä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "tämä", alku: "tälle",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
 # Murteissa.
 [perusmuoto: "tämä", alku: "tää",    luokka: asemosana, sijamuoto: nimentö,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
@@ -443,21 +443,21 @@ define @loppu := <liitesana, loppu>;
 ######################################################
 
 
-[perusmuoto: "nämä", alku: "nämä",    luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "nämät",   luokka: asemosana, sijamuoto: kohdanto,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näitä",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näinä",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näissä",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näistä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "nämä", alku: "näille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "nämä",    luokka: asemosana, sijamuoto: nimentö,          luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näiden",  luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näitten", luokka: asemosana, sijamuoto: omanto,        luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "nämä", alku: "nämät",   luokka: asemosana, sijamuoto: kohdanto,       luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+ [perusmuoto: "nämä", alku: "näitä",   luokka: asemosana, sijamuoto: osanto,       luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näinä",   luokka: asemosana, sijamuoto: olento,       luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näiksi",  luokka: asemosana, sijamuoto: tulento,     luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näissä",  luokka: asemosana, sijamuoto: sisäolento,  luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näistä",  luokka: asemosana, sijamuoto: sisäeronto,  luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näiltä",  luokka: asemosana, sijamuoto: ulkoeronto,  luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "nämä", alku: "näittä",  luokka: asemosana, sijamuoto: vajanto,     luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "nämä", alku: "näine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "nämä", alku: "näine",   luokka: asemosana, sijamuoto: seuranto,     luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "nämä", alku: "näin",    luokka: asemosana, sijamuoto: keinonto,      luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 # Murteissa.
