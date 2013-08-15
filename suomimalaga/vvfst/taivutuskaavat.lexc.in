@@ -3580,16 +3580,11 @@ LEXICON Yliaste
 [Cs]imm@D.EI_VERTM@:imm@D.EI_VERTM@	Johdin_UUs_<A>	;
 
 LEXICON Liitesana
-LiitesanaKoPaHan_<A>	;
-[Fkin]kin:kin	Loppu       ;
+LiitesanaKinKoPaHan_<A>	;
 [Fkaan]k<A><A>n:k<A><A>n	Loppu ;
 [Fkaan]k<A><A>nh<A>n:k<A><A>nh<A>n	Loppu ;
 [Fkaan]k<O>k<A><A>n:k<O>k<A><A>n	Loppu ;
-[Fkin]kink<O>:kink<O>	Loppu ;
 [Fkaan]k<A><A>nk<O>:k<A><A>nk<O>	Loppu ;
-[Fkin]kinh<A>n:kinh<A>n	Loppu ;
-[Fkin]kink<O>h<A>n:kink<O>h<A>n	Loppu ;
-[Fkin]kink<O>s:kink<O>s	Loppu ;
 [Fkaan]k<A><A>nk<O>h<A>n:k<A><A>nk<O>h<A>n	Loppu ;
 [Fkaan]k<A><A>nk<O>s:k<A><A>nk<O>s	Loppu ;
 
@@ -3602,6 +3597,14 @@ LiitesanaPaHan_<A>	;
 k<O>:k<O>	Loppu ;
 k<O>h<A>n:k<O>h<A>n	Loppu ;
 k<O>s:k<O>s	Loppu ;
+
+LEXICON LiitesanaKinKoPaHan
+LiitesanaKoPaHan_<A>	;
+[Fkin]kin:kin	Loppu       ;
+[Fkin]kink<O>:kink<O>	Loppu ;
+[Fkin]kinh<A>n:kinh<A>n	Loppu ;
+[Fkin]kink<O>h<A>n:kink<O>h<A>n	Loppu ;
+[Fkin]kink<O>s:kink<O>s	Loppu ;
 
 LEXICON LiitesanaKaanPaHan
 LiitesanaPaHan_<A>	;

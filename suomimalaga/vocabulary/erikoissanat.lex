@@ -285,25 +285,25 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "ken", alku: "keittä",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 # Kä-loppuisen yksikön muodot ken-sanasta.
-[perusmuoto: "ken", alku: "kenenkä",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenenkäs",  luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenetkä",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenenäkä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneksikä", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenessäkä", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenestäkä", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneenkä",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenelläkä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneltäkä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenellekä", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenenkä",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenenkäs",  luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenetkä",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenenäkä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keneksikä", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenessäkä", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenestäkä", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keneenkä",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenelläkä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keneltäkä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenellekä", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kenettäkä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
-[perusmuoto: "ken", alku: "kellekä",   luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keillekä",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kehenkä",   luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kehenkäs",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keidenkä",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keittenkä", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kellekä",   luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keillekä",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kehenkä",   luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kehenkäs",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keidenkä",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keittenkä", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
 
 # Kenelle-taivutusmuodon murteellisia muotoja.
 [perusmuoto: "ken", alku: "kellen",     luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
