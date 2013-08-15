@@ -152,8 +152,8 @@ define @loppu := <liitesana, loppu>;
 ######################################################
 
 # Tämä sana on vain yksikössä.
-[perusmuoto: "mikin", alku: "mikin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "minkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: ä];
+ [perusmuoto: "mikin", alku: "mikin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: ä];
+ [perusmuoto: "mikin", alku: "minkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: ä];
 [perusmuoto: "mikin", alku: "mitäkin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikin", alku: "minäkin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikin", alku: "miksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
@@ -167,8 +167,8 @@ define @loppu := <liitesana, loppu>;
 
 ######################################################
 
-[perusmuoto: "kukin", alku: "kukin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kunkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: a];
+ [perusmuoto: "kukin", alku: "kukin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
+ [perusmuoto: "kukin", alku: "kunkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "kukin", alku: "kutakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kukin", alku: "kunakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kukin", alku: "kuksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
@@ -202,8 +202,8 @@ define @loppu := <liitesana, loppu>;
 ######################################################
 
 #  Tämä sana on vain yksikössä.
-[perusmuoto: "mikään", alku: "mikään", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "minkään", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikään", alku: "mikään", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikään", alku: "minkään", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "mitäkään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikään", alku: "minäkään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikään", alku: "miksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
@@ -215,12 +215,12 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "mikään", alku: "millekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikään", alku: "mittäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
-[perusmuoto: "mikään", alku: "mitään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "minään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikään", alku: "mitään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikään", alku: "minään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikään", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "mikään", alku: "millään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "miltään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikään", alku: "millään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "mikään", alku: "miltään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 
 [perusmuoto: "mikään", alku: "mitänä", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <murre>];
 

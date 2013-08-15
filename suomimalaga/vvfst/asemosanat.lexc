@@ -53,9 +53,9 @@ LEXICON AsemosanaHän
 
 LEXICON AsemosanaJoka
 [Sn][Ny]ka:ka	Loppu	;
-[Sn][Ny]kin:kin	Loppu	;
+[Sn][Ny][Fkin]kin:kin	Loppu	;
 [Sg][Ny]nka:nka	Loppu	;
-[Sg][Ny]nkin:nkin	Loppu	;
+[Sg][Ny][Fkin]nkin:nkin	Loppu	;
 [Sp][Ny]ta:ta	Liitesana_a	;
 [Str][Ny]ksi:ksi	Liitesana_a	;
 [Ses][Ny]na:na	Liitesana_a	;
@@ -66,7 +66,7 @@ LEXICON AsemosanaJoka
 [Sabl][Ny]lta:lta	Liitesana_a	;
 [Sall][Ny]lle:lle	Liitesana_a	;
 [Sn][Nm]tka:tka	Loppu	;
-[Sn][Nm]tkin:tkin	Loppu	;
+[Sn][Nm][Fkin]tkin:tkin	Loppu	;
 [Sg][Nm]iden:iden	Liitesana_a	;
 [Sp][Nm]ita:ita	Liitesana_a	;
 [Str][Nm]iksi:iksi	Liitesana_a	;
@@ -272,13 +272,20 @@ LEXICON AsemosanaNuo
 [Sko][Nm]oine:oine	Liitesana_a	;
 
 LEXICON AsemosanaMikä
-[Sn][Ny]kä:kä	Liitesana_ä	;
-[Sg][Ny]nkä:nkä	Liitesana_ä	;
-[Sp][Ny]tä:tä	Liitesana_ä	;
+[Sn][Ny]kä:kä	LiitesanaKoPaHan_ä	;
+[Sn][Ny][Fkin]kin:kin	Loppu	;
+[Sn][Ny][Fkaan]kään:kään	LiitesanaKoPaHan_ä	;
+[Sg][Ny]nkä:nkä	LiitesanaKoPaHan_ä	;
+[Sg][Ny][Fkin]nkin:nkin	Loppu	;
+[Sg][Ny][Fkaan]nkään:nkään	LiitesanaKoPaHan_ä	;
+[Sp][Ny]tä:tä	LiitesanaKoPaHan_ä	;
+[Sp][Ny][Fkin]täkin:täkin	Loppu	;
+[Sp][Ny][Fkaan]tään:tään	LiitesanaKoPaHan_ä	;
 [Sp][Ny]täs:täs	Loppu	;
 [Str][Ny]ksi:ksi	Liitesana_ä	;
 [Str][Ny]ksikä:ksikä	Liitesana_ä	;
 [Ses][Ny]nä:nä	Liitesana_ä	;
+[Ses][Ny][Fkaan]nään:nään	LiitesanaKoPaHan_ä	;
 [Sine][Ny]ssä:ssä	Liitesana_ä	;
 [Sine][Ny]ssään:ssään	Liitesana_ä	;
 [Sela][Ny]stä:stä	Liitesana_ä	;
@@ -287,8 +294,12 @@ LEXICON AsemosanaMikä
 [Sill][Ny]hinkä:hinkä	Liitesana_ä	;
 [Sill][Ny]nne:nne	Liitesana_ä	;
 [Sill][Ny]nnekä:nnekä	Liitesana_ä	;
-[Sade][Ny]llä:llä	Liitesana_ä	;
-[Sabl][Ny]ltä:ltä	Liitesana_ä	;
+[Sade][Ny]llä:llä	LiitesanaKoPaHan_ä	;
+[Sade][Ny][Fkin]lläkin:lläkin	LiitesanaKoPaHan_ä	;
+[Sade][Ny][Fkaan]llään:llään	LiitesanaKoPaHan_ä	;
+[Sabl][Ny]ltä:ltä	LiitesanaKoPaHan_ä	;
+[Sabl][Ny][Fkin]ltäkin:ltäkin	LiitesanaKoPaHan_ä	;
+[Sabl][Ny][Fkaan]ltään:ltään	LiitesanaKoPaHan_ä	;
 [Sall][Ny]lle:lle	Liitesana_ä	;
 [Sall][Ny]llekä:llekä	Liitesana_ä	;
 [Sn][Nm]tkä:tkä	Liitesana_ä	;

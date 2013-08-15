@@ -1933,3 +1933,8 @@ jossain
 joksikuksi
 yksine
 !nille
+!mikäkään
+mikään
+!mitäkään
+mitään
+mitäkin
