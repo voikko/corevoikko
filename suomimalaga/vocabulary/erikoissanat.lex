@@ -227,39 +227,39 @@ define @loppu := <liitesana, loppu>;
 ######################################################
 
 # Ka-loppuiset joka-sanan muodot paitsi omanto jonka.
-[perusmuoto: "joka", alku: "joksika", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "johonka", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "jonneka", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "jolleka", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "joksika", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "johonka", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "jonneka", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "jolleka", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
  
-[perusmuoto: "joka", alku: "joiksika", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joihinka", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joilleka", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joidenka", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "joka", alku: "joittenka", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "joiksika", luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "joihinka", luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "joilleka", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "joidenka", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "joka", alku: "joittenka", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: a];
 
 ######################################################
 
 # Ka-loppuiset kuka-sanan muodot.
-[perusmuoto: "kuka", alku: "kulleka",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "kuka", alku: "kuilleka", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
-[perusmuoto: "kuka", alku: "kuhunka",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "kuka", alku: "kulleka",  luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: a];
+ [perusmuoto: "kuka", alku: "kuilleka", luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: a];
+ [perusmuoto: "kuka", alku: "kuhunka",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
 
 
 ######################################################
 
-[perusmuoto: "ken", alku: "ken",     luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenen",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "ken",     luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenen",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kenet",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "ketä",    luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenenä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenessä", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenestä", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneen",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keneltä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "ketä",    luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenenä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keneksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenessä", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenestä", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keneen",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keneltä", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kenettä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "ken", alku: "kenä",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];

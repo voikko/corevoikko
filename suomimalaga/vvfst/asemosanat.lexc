@@ -6,7 +6,8 @@ LEXICON Asemosana
 [Lr][Xp]jokin[X]jo:jo	AsemosanaJokin	;
 [Lr][Xp]joku[X]jo:jo	AsemosanaJoku	;
 [Lr][Xp]jompikumpi[X]jom:jom	AsemosanaJompikumpi	;
-[Lr][Xp]kuka[X]ku:ku	AsemosanaJoka	;
+[Lr][Xp]ken[X]ke:ke	AsemosanaKen	;
+[Lr][Xp]kuka[X]ku:ku	AsemosanaKuka	;
 [Lr][Xp]kuka[X]kukas:kukas	Loppu	;
 [Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
 [Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;
@@ -51,7 +52,39 @@ LEXICON AsemosanaHän
 [Sabl][Ny]ltä:ltä	Liitesana_ä	;
 [Sall][Ny]lle:lle	Liitesana_ä	;
 
+LEXICON AsemosanaKen
+[Sn][Ny]n:n	Liitesana_ä	;
+[Sg][Ny]nen:nen	Liitesana_ä	;
+[Sp][Ny]tä:tä	Liitesana_ä	;
+[Str][Ny]neksi:neksi	Liitesana_ä	;
+[Ses][Ny]nenä:nenä	Liitesana_ä	;
+[Sine][Ny]nessä:nessä	Liitesana_ä	;
+[Sela][Ny]nestä:nestä	Liitesana_ä	;
+[Sill][Ny]neen:neen	Liitesana_ä	;
+[Sade][Ny]nellä:nellä	Liitesana_ä	;
+[Sabl][Ny]neltä:neltä	Liitesana_ä	;
+[Sall][Ny]nelle:nelle	Liitesana_ä	;
+[Sade][Ny]llä:llä	Liitesana_ä	;
+[Sabl][Ny]ltä:ltä	Liitesana_ä	;
+[Sall][Ny]lle:lle	Liitesana_ä	;
+
+LEXICON AsemosanaKuka
+AsemosanaJokaKuka	;
+[Sill][Ny]hun:hun	Liitesana_a	;
+[Sill][Ny]hunka:hunka	Loppu	;
+
 LEXICON AsemosanaJoka
+AsemosanaJokaKuka	;
+[Str][Ny]ksika:ksika	Loppu	;
+[Sill][Ny]hon:hon	Liitesana_a	;
+[Sill][Ny]honka:honka	Loppu	;
+[Sill][Ny]nneka:nneka	Loppu	;
+[Str][Nm]iksika:iksika	Loppu	;
+[Sill][Nm]ihinka:ihinka	Loppu	;
+[Sg][Nm]idenka:idenka	Loppu	;
+[Sg][Nm]ittenka:ittenka	Loppu	;
+
+LEXICON AsemosanaJokaKuka
 [Sn][Ny]ka:ka	Loppu	;
 [Sn][Ny][Fkin]kin:kin	Loppu	;
 [Sg][Ny]nka:nka	Loppu	;
@@ -61,13 +94,15 @@ LEXICON AsemosanaJoka
 [Ses][Ny]na:na	Liitesana_a	;
 [Sine][Ny]ssa:ssa	Liitesana_a	;
 [Sela][Ny]sta:sta	Liitesana_a	;
-[Sill][Ny]hon:hon	Liitesana_a	;
+[Sill][Ny]nne:nne	Liitesana_a	;
 [Sade][Ny]lla:lla	Liitesana_a	;
 [Sabl][Ny]lta:lta	Liitesana_a	;
 [Sall][Ny]lle:lle	Liitesana_a	;
+[Sall][Ny]lleka:lleka	Loppu	;
 [Sn][Nm]tka:tka	Loppu	;
 [Sn][Nm][Fkin]tkin:tkin	Loppu	;
 [Sg][Nm]iden:iden	Liitesana_a	;
+[Sg][Nm]itten:itten	Liitesana_a	;
 [Sp][Nm]ita:ita	Liitesana_a	;
 [Str][Nm]iksi:iksi	Liitesana_a	;
 [Ses][Nm]ina:ina	Liitesana_a	;
@@ -77,6 +112,7 @@ LEXICON AsemosanaJoka
 [Sade][Nm]illa:illa	Liitesana_a	;
 [Sabl][Nm]ilta:ilta	Liitesana_a	;
 [Sall][Nm]ille:ille	Liitesana_a	;
+[Sall][Nm]illeka:illeka	Loppu	;
 
 LEXICON AsemosanaJoku
 [Sn][Ny]ku:ku	Liitesana_a	;

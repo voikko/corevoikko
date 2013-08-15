@@ -1938,3 +1938,5 @@ mikään
 !mitäkään
 mitään
 mitäkin
+kuhun
+!kuhon
