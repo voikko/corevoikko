@@ -1945,3 +1945,6 @@ muussa
 esiroomalainen
 haltijatar
 kastoivat
+merkinnee
+haravoinen
+menikään
