@@ -802,6 +802,7 @@ LEXICON NOUN Asema_w
 
 LEXICON NOUN Kulkija
 j:j	<WC>Apila_<A>	;
+j<A>t:j<A>t	NimisanaTytär_<A>	;
 
 LEXICON NOUN Apila
 <A>:<A>	<WC>Apila_y_<A>	;
@@ -2384,6 +2385,7 @@ e:e	Johdin_ttAx_<A>	;
 
 LEXICON Kaivaa_s
 [Tn1]<A><A>:<A><A>	Liitesana_<A>	;
+<O>:<O>	KertomanTekijäpääteVahva_<A>	;
 <A>:<A>	Käskytapa_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>n:<A>n	Mahtotapa_<A>	;

@@ -1942,3 +1942,6 @@ kuhun
 !kuhon
 muu
 muussa
+esiroomalainen
+haltijatar
+kastoivat
