@@ -154,30 +154,30 @@ define @loppu := <liitesana, loppu>;
 # Tämä sana on vain yksikössä.
 [perusmuoto: "mikin", alku: "mikin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: ä];
 [perusmuoto: "mikin", alku: "minkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mitäkin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "minäkin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "miksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "missäkin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mistäkin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "mihinkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "milläkin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "miltäkin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: ä];
-[perusmuoto: "mikin", alku: "millekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: ä];
+[perusmuoto: "mikin", alku: "mitäkin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "minäkin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "miksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "missäkin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "mistäkin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "mihinkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "milläkin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "miltäkin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikin", alku: "millekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikin", alku: "mittäkin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 
 ######################################################
 
 [perusmuoto: "kukin", alku: "kukin", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: <loppu>, äs: a];
 [perusmuoto: "kukin", alku: "kunkin", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kutakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kunakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kuksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kussakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kustakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kuhunkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kullakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kultakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a];
-[perusmuoto: "kukin", alku: "kullekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a];
+[perusmuoto: "kukin", alku: "kutakin", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kunakin", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kuksikin", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kussakin", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kustakin", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kuhunkin", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kullakin", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kultakin", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
+[perusmuoto: "kukin", alku: "kullekin", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kukin", alku: "kuttakin", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 
 ######################################################
@@ -204,21 +204,21 @@ define @loppu := <liitesana, loppu>;
 #  Tämä sana on vain yksikössä.
 [perusmuoto: "mikään", alku: "mikään", luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "minkään", luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mitäkään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "minäkään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "miksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "missäkään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mistäkään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mihinkään", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "milläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "miltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "millekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "mitäkään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "minäkään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "miksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "missäkään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "mistäkään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "mihinkään", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "milläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "miltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "millekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikään", alku: "mittäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "mikään", alku: "mitään", luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "minään", luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "mikään", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "mikään", alku: "missään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "mikään", alku: "mistään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mikään", alku: "millään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "mikään", alku: "miltään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
 
@@ -321,44 +321,44 @@ define @loppu := <liitesana, loppu>;
 [perusmuoto: "kukaan", alku: "kukaan",    luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: a];
 [perusmuoto: "kukaan", alku: "kussaan",   luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: a];
 [perusmuoto: "kukaan", alku: "kustaan",   luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: a];
-[perusmuoto: "kukaan", alku: "kuhunkaan", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a];
+[perusmuoto: "kukaan", alku: "kuhunkaan", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: a, tiedot: <ei_voikko>];
 
 # Kenkään-sanan muotoja.
 #
 #[perusmuoto: "kenkään", alku: "kenkään",     luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "kukaan", alku: "kenenkään",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenetkään",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenenkään",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "kenetkään",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kukaan", alku: "ketään",      luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenenäkään",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keneksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenessäkään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenestäkään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keneenkään",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenelläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keneltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kenellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kenenäkään",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keneksikään", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "kenessäkään", luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "kenestäkään", luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keneenkään",  luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "kenelläkään", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keneltäkään", luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "kenellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kukaan", alku: "kenettäkään", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "kukaan", alku: "kessään",   luokka: asemosana, sijamuoto: sisäolento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "kestään",   luokka: asemosana, sijamuoto: sisäeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kehenkään", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kehenkään", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kukaan", alku: "kellään",   luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "kukaan", alku: "keltään",   luokka: asemosana, sijamuoto: ulkoeronto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "kellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "kellekään", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 [perusmuoto: "kukaan", alku: "ketkään",     luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keidenkään",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keittenkään", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keidenkään",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keittenkään", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kukaan", alku: "keitään",     luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keinäkään",   luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keiksikään",  luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keissäkään",  luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keistäkään",  luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keihinkään",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keilläkään",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keiltäkään",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "kukaan", alku: "keillekään",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+[perusmuoto: "kukaan", alku: "keinäkään",   luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keiksikään",  luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keissäkään",  luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keistäkään",  luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keihinkään",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keilläkään",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keiltäkään",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
+[perusmuoto: "kukaan", alku: "keillekään",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kukaan", alku: "keittäkään",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 
