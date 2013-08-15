@@ -9,6 +9,7 @@ LEXICON Asemosana
 [Lr][Xp]ken[X]ke:ke	AsemosanaKen	;
 [Lr][Xp]kuka[X]ku:ku	AsemosanaKuka	;
 [Lr][Xp]kuka[X]kukas:kukas	Loppu	;
+[Lr][Xp]kukaan[X]k:k	AsemosanaKukaan	;
 [Lr][Xp]kumpainen[X]kumpai:kumpai	AsemosanaNainen_a	;
 [Lr][Xp]kumpi[X]kum:kum	AsemosanaKumpi	;
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
@@ -89,6 +90,18 @@ LEXICON AsemosanaKen
 [Sade][Nm]illä:illä	AsemosanaKä	;
 [Sabl][Nm]iltä:iltä	Liitesana_ä	;
 [Sall][Nm]ille:ille	Liitesana_ä	;
+
+LEXICON AsemosanaKukaan
+[Sn][Ny]ukaan:ukaan	LiitesanaKinKoPaHan_ä	;
+[Sp][Ny]etään:etään	Liitesana_ä	;
+[Sine][Ny]ussaan:ussaan	Liitesana_a	;
+[Sela][Ny]ustaan:ustaan	Liitesana_a	;
+[Sine][Ny]essään:essään	Liitesana_ä	;
+[Sela][Ny]estään:estään	Liitesana_ä	;
+[Sade][Ny]ellään:ellään	Liitesana_ä	;
+[Sabl][Ny]eltään:eltään	Liitesana_ä	;
+[Sn][Nm]etkään:etkään	LiitesanaKinKoPaHan_ä	;
+[Sp][Nm]eitään:eitään	Liitesana_ä	;
 
 LEXICON AsemosanaKä
 Liitesana_ä	;
