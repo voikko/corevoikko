@@ -250,7 +250,7 @@ define @loppu := <liitesana, loppu>;
 
  [perusmuoto: "ken", alku: "ken",     luokka: asemosana, sijamuoto: nimentö, luku: yksikkö, jatko: @loppu, äs: ä];
  [perusmuoto: "ken", alku: "kenen",   luokka: asemosana, sijamuoto: omanto, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kenet",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenet",   luokka: asemosana, sijamuoto: kohdanto, luku: yksikkö, jatko: @loppu, äs: ä];
  [perusmuoto: "ken", alku: "ketä",    luokka: asemosana, sijamuoto: osanto, luku: yksikkö, jatko: @loppu, äs: ä];
  [perusmuoto: "ken", alku: "kenenä",  luokka: asemosana, sijamuoto: olento, luku: yksikkö, jatko: @loppu, äs: ä];
  [perusmuoto: "ken", alku: "keneksi", luokka: asemosana, sijamuoto: tulento, luku: yksikkö, jatko: @loppu, äs: ä];
@@ -262,26 +262,26 @@ define @loppu := <liitesana, loppu>;
  [perusmuoto: "ken", alku: "kenelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kenettä", luokka: asemosana, sijamuoto: vajanto, luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
-[perusmuoto: "ken", alku: "kenä",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kenä",  luokka: asemosana, sijamuoto: olento,       luku: yksikkö, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "kessä", luokka: asemosana, sijamuoto: sisäolento,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "ken", alku: "kestä", luokka: asemosana, sijamuoto: sisäeronto,  luku: yksikkö, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "ken", alku: "kehen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keltä", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "kelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kehen", luokka: asemosana, sijamuoto: sisätulento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kellä", luokka: asemosana, sijamuoto: ulko_olento, luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keltä", luokka: asemosana, sijamuoto: ulkoeronto,  luku: yksikkö, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "kelle", luokka: asemosana, sijamuoto: ulkotulento, luku: yksikkö, jatko: @loppu, äs: ä];
 
-[perusmuoto: "ken", alku: "ketkä",   luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keiden",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keitten", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keitä",   luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keinä",   luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keiksi",  luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keissä",  luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keistä",  luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keiltä",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
-[perusmuoto: "ken", alku: "keille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "ketkä",   luokka: asemosana, sijamuoto: nimentö, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keiden",  luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keitten", luokka: asemosana, sijamuoto: omanto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keitä",   luokka: asemosana, sijamuoto: osanto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keinä",   luokka: asemosana, sijamuoto: olento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keiksi",  luokka: asemosana, sijamuoto: tulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keissä",  luokka: asemosana, sijamuoto: sisäolento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keistä",  luokka: asemosana, sijamuoto: sisäeronto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keihin",  luokka: asemosana, sijamuoto: sisätulento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keillä",  luokka: asemosana, sijamuoto: ulko_olento, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keiltä",  luokka: asemosana, sijamuoto: ulkoeronto, luku: monikko, jatko: @loppu, äs: ä];
+ [perusmuoto: "ken", alku: "keille",  luokka: asemosana, sijamuoto: ulkotulento, luku: monikko, jatko: @loppu, äs: ä];
 [perusmuoto: "ken", alku: "keittä",  luokka: asemosana, sijamuoto: vajanto, luku: monikko, jatko: @loppu, äs: ä, tiedot: <ei_voikko>];
 
 # Kä-loppuisen yksikön muodot ken-sanasta.

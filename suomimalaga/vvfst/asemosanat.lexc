@@ -27,6 +27,7 @@ LEXICON AsemosanaMe
 [Sn][Nm]:	Liitesana_ä	;
 [Sg][Nm]idän:idän	Liitesana_ä	;
 [Sp][Nm]itä:itä	Liitesana_ä	;
+[Sak][Nm]idät:idät	Liitesana_ä	;
 [Str][Nm]iksi:iksi	Liitesana_ä	;
 [Ses][Nm]inä:inä	Liitesana_ä	;
 [Sine][Nm]issä:issä	Liitesana_ä	;
@@ -40,6 +41,7 @@ LEXICON AsemosanaHän
 [Sn][Ny]n:n	Liitesana_ä	;
 [Sg][Ny]nen:nen	Liitesana_ä	;
 [Sp][Ny]ntä:ntä	Liitesana_ä	;
+[Sak][Ny]net:net	Liitesana_ä	;
 [Str][Ny]neksi:neksi	Liitesana_ä	;
 [Ses][Ny]nenä:nenä	Liitesana_ä	;
 [Sine][Ny]nessä:nessä	Liitesana_ä	;
@@ -56,17 +58,36 @@ LEXICON AsemosanaKen
 [Sn][Ny]n:n	Liitesana_ä	;
 [Sg][Ny]nen:nen	Liitesana_ä	;
 [Sp][Ny]tä:tä	Liitesana_ä	;
+[Sak][Ny]net:net	Liitesana_ä	;
 [Str][Ny]neksi:neksi	Liitesana_ä	;
 [Ses][Ny]nenä:nenä	Liitesana_ä	;
+[Ses][Ny]nä:nä	Liitesana_ä	;
 [Sine][Ny]nessä:nessä	Liitesana_ä	;
 [Sela][Ny]nestä:nestä	Liitesana_ä	;
 [Sill][Ny]neen:neen	Liitesana_ä	;
+[Sill][Ny]hen:hen	Liitesana_ä	;
 [Sade][Ny]nellä:nellä	Liitesana_ä	;
+[Sade][Ny]llä:llä	Liitesana_ä	;
 [Sabl][Ny]neltä:neltä	Liitesana_ä	;
+[Sabl][Ny]ltä:ltä	Liitesana_ä	;
 [Sall][Ny]nelle:nelle	Liitesana_ä	;
+[Sall][Ny]lle:lle	Liitesana_ä	;
 [Sade][Ny]llä:llä	Liitesana_ä	;
 [Sabl][Ny]ltä:ltä	Liitesana_ä	;
 [Sall][Ny]lle:lle	Liitesana_ä	;
+[Sn][Nm]tkä:tkä	Liitesana_ä	;
+[Sg][Nm]iden:iden	Liitesana_ä	;
+[Sg][Nm]itten:itten	Liitesana_ä	;
+[Sp][Nm]itä:itä	Liitesana_ä	;
+[Str][Nm]iksi:iksi	Liitesana_ä	;
+[Ses][Nm]inä:inä	Liitesana_ä	;
+[Sine][Nm]issä:issä	Liitesana_ä	;
+[Sela][Nm]istä:istä	Liitesana_ä	;
+[Sill][Nm]ihin:ihin	Liitesana_ä	;
+[Sade][Nm]illä:illä	Liitesana_ä	;
+[Sabl][Nm]iltä:iltä	Liitesana_ä	;
+[Sall][Nm]ille:ille	Liitesana_ä	;
+
 
 LEXICON AsemosanaKuka
 AsemosanaJokaKuka	;
@@ -213,6 +234,7 @@ LEXICON AsemosanaMinä
 [Sn][Ny]ä:ä	Liitesana_ä	;
 [Sg][Ny]un:un	Liitesana_a	;
 [Sp][Ny]ua:ua	Liitesana_a	;
+[Sak][Ny]ut:ut	Liitesana_a	;
 [Str][Ny]uksi:uksi	Liitesana_a	;
 [Ses][Ny]una:una	Liitesana_a	;
 [Sine][Ny]ussa:ussa	Liitesana_a	;

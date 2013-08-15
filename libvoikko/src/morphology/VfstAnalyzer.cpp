@@ -77,6 +77,7 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	sijamuotoMap.insert(std::make_pair(L"ko", L"seuranto"));
 	sijamuotoMap.insert(std::make_pair(L"in", L"keinonto"));
 	sijamuotoMap.insert(std::make_pair(L"sti", L"kerrontosti"));
+	sijamuotoMap.insert(std::make_pair(L"ak", L"kohdanto"));
 	
 	comparisonMap.insert(std::make_pair(L"c", L"comparative"));
 	comparisonMap.insert(std::make_pair(L"s", L"superlative"));

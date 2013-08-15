@@ -392,3 +392,8 @@ word:eräs
     NUMBER=singular
     SIJAMUOTO=nimento
     STRUCTURE==pppp
+word:minut
+  expected:1
+  analysis
+    CLASS=asemosana
+    SIJAMUOTO=kohdanto
