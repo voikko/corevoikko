@@ -1940,3 +1940,5 @@ mitään
 mitäkin
 kuhun
 !kuhon
+muu
+muussa

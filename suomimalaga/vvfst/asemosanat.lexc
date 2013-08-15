@@ -15,6 +15,9 @@ LEXICON Asemosana
 [Lr][Xp]me[X]me:me	AsemosanaMe	;
 [Lr][Xp]mikä[X]mi:mi	AsemosanaMikä	;
 [Lr][Xp]minä[X]min:min	AsemosanaMinä	;
+[Lr][Xp]moni[X][Sp][Ny]montaa:montaa	Liitesana_a	;
+[Lr][Xp]muu[X]mu:mu	AsemosanaPuu_a	;
+[Lr][Xp]muuan[X]muu:muu	AsemosanaMuuan	;
 [Lr][Xp]ne[X]n:n	AsemosanaNe	;
 [Lr][Xp]nuo[X]n:n	AsemosanaNuo	;
 [Lr][Xp]nämä[X]nä:nä	AsemosanaNämä	;
@@ -380,3 +383,8 @@ LEXICON AsemosanaMikä
 [Sall][Ny]llekä:llekä	Liitesana_ä	;
 [Sn][Nm]tkä:tkä	Liitesana_ä	;
 [Sn][Nm]tkään:tkään	Liitesana_ä	;
+
+LEXICON AsemosanaMuuan
+[Sn][Ny]an:an	Liitesana_a	;
+[Sn][Ny]anna:anna	Liitesana_a	;
+[Sn][Np]atta:atta	Liitesana_a	;

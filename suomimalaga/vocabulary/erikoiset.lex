@@ -48,11 +48,11 @@
  [perusmuoto: "minä", alku: "min", luokka: asemosana, jatko: <minä>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "mitä", alku: "mitäh", luokka: asemosana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "mones", alku: "mone", luokka: asemosana, jatko: <kahdeksas>, äs: a];
-[perusmuoto: "moni", alku: "montaa", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "muu", alku: "mu", luokka: asemosana, jatko: <puu>, äs: a];
-[perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "muuan", alku: "muuatta", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
-[perusmuoto: "muuan", alku: "muuanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "moni", alku: "montaa", luokka: asemosana, sijamuoto: osanto, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "muu", alku: "mu", luokka: asemosana, jatko: <puu>, äs: a];
+ [perusmuoto: "muuan", alku: "muuan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "muuan", alku: "muuatta", luokka: asemosana, sijamuoto: osanto, jatko: <liitesana, loppu>, äs: a];
+ [perusmuoto: "muuan", alku: "muuanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a];
 [perusmuoto: "muuan", alku: "muudan", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muuan", alku: "muudatta", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "muuan", alku: "muudanna", luokka: asemosana, jatko: <liitesana, loppu>, äs: a, tiedot: <ei_voikko>];
