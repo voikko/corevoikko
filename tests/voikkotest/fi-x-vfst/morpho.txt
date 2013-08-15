@@ -397,3 +397,8 @@ word:minut
   analysis
     CLASS=asemosana
     SIJAMUOTO=kohdanto
+word:Aadolfinkatu
+  expected:1
+  analysis
+    CLASS=nimisana
+    STRUCTURE==ippppppp=pppp
