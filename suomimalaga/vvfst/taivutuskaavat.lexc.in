@@ -734,6 +734,7 @@ tk:tk	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tk<A><A>:tk<A><A>	<WC>LiOlN_<A>	;
 [Sill][Nm]tkii:tkii	<WC>LiOlN_<A>	;
 ?Laatusana	te:te	Voittoaste_<A>	;
+?Laatusana	de:de	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
 ?Sukija [Sill][Ny]tk<A>h<A>:tk<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]tkihi:tkihi	<WC>LiOlN_<A>	;
@@ -3169,6 +3170,7 @@ Kitistä_<A>	;
 LEXICON Kitistä
 [Tn1]ist<A>:ist<A>	Liitesana_<A>	;
 ise:ise	KestämänTekijäpääteHeikko_<A>	;
+is:is	KertomanTekijäpääteVahva_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
 ise:ise	Johdin_vA_<A>	;
