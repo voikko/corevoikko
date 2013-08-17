@@ -43,15 +43,11 @@
 [perusmuoto: "ainut", alku: "ainut", luokka: seikkasana, jatko: <liitesana, loppu, osanto_tA>, äs: a];
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "edessä", alku: "etee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "edessä", alku: "eteen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "edessä", alku: "ede", luokka: seikkasana, jatko: @heikkoasteiset_paikallissijat, äs: ä];
 [perusmuoto: "eksyksissä", alku: "eksyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "ennallaan", alku: "ennalla", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ennallaan", alku: "ennalle", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "ensi", alku: "ensiksi", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
-[perusmuoto: "ensi", alku: "ensi", luokka: seikkasana, jatko: <loppu>, äs: ä];
 [perusmuoto: "ensin", alku: "ensin", luokka: seikkasana, jatko: <olento_nA, liitesana, loppu>, äs: ä];
-[perusmuoto: "ensin", alku: "ensinkään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisellään", alku: "entiselleen", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisellään", alku: "entisellään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
 [perusmuoto: "entisestään", alku: "entisestään", luokka: seikkasana, jatko: <liitesana, loppu>, äs: ä];
