@@ -9,9 +9,9 @@
     <version>7</version>
   </parent>
 
-  <groupId>org.puimula</groupId>
+  <groupId>org.puimula.voikko</groupId>
   <artifactId>libvoikko</artifactId>
-  <version>3.5</version>
+  <version>3.6.1</version>
   <packaging>jar</packaging>
   <name>libvoikko</name>
   <description>Java API for libvoikko, library of free natural language processing tools</description>
