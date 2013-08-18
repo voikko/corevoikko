@@ -375,7 +375,11 @@ public class Voikko {
         requireValidHandle();
         if (!isValidInput(word)) {
             // return string of spaces
-            return String.format("%1$#" + word.length() + "s", "");
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < word.length(); i++) {
+                sb.append(" ");
+            }
+            return sb.toString();
         }
         ByteArray cPattern = getLib().voikkoHyphenateCstr(handle, s2n(word));
         String pattern = cPattern.toString();
