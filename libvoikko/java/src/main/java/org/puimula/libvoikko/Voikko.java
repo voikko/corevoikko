@@ -57,16 +57,30 @@ public class Voikko {
 
     private static Libvoikko library = null;
 
+    private static NativeLibrary tryLoadLibrary(String libName) {
+        try {
+            return NativeLibrary.getInstance(libName);
+        } catch (UnsatisfiedLinkError e) {
+            return null;
+        }
+    }
+
+    private static final String[] LIBRARY_NAMES = {
+        "libvoikko.so.1", // Use SONAME on Linux
+        "voikko-1", // On Windows major version of library API is part of the library name
+        "voikko" // Finally try to use platform dependent unversioned library
+    };
+
     private synchronized static Libvoikko getLib() {
         if (library == null) {
-            NativeLibrary nativeLibrary;
-            try {
-                nativeLibrary = NativeLibrary.getInstance("voikko");
-            } catch (UnsatisfiedLinkError e) {
-                // On Windows major version of library API is part of the library name
-                nativeLibrary = NativeLibrary.getInstance("voikko-1");  
+            for (String libName : LIBRARY_NAMES) {
+                NativeLibrary nativeLibrary = tryLoadLibrary(libName);
+                if (nativeLibrary != null) {
+                    library = (Libvoikko) Native.loadLibrary(nativeLibrary.getFile().getAbsolutePath(), Libvoikko.class);
+                    return library;
+                }
             }
-            library = (Libvoikko) Native.loadLibrary(nativeLibrary.getFile().getAbsolutePath(), Libvoikko.class);
+            throw new UnsatisfiedLinkError("Could not load the native component of libvoikko. Please see http://voikko.puimula.org/java.html for more information.");
         }
         return library;
     }
