@@ -1,5 +1,8 @@
 *~
 *.pyc
+libvoikko/java/target
+libvoikko/test-driver
+suomimalaga/build
 suomimalaga/voikko/config.inc
 suomimalaga/voikko/erikoiset.lex
 suomimalaga/voikko/erikoissanat.lex
