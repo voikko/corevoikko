@@ -1,12 +1,17 @@
 dist_man_MANS =
 bin_PROGRAMS =
+EXTRA_DIST =
 if HAVE_BUILDTOOLS
     bin_PROGRAMS += voikkovfstc
     dist_man_MANS += voikkovfstc.1
+else
+    EXTRA_DIST += voikkovfstc.1
 endif
 if HAVE_TESTTOOLS
     bin_PROGRAMS += voikkospell voikkohyphenate voikkogc
     dist_man_MANS += voikkospell.1 voikkohyphenate.1 voikkogc.1
+else
+    EXTRA_DIST += voikkospell.1 voikkohyphenate.1 voikkogc.1
 endif
 
 TOOLCXXFLAGS = $(AM_CXXFLAGS)
