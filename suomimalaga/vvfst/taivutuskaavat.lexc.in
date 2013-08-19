@@ -1079,6 +1079,7 @@ LEXICON NOUN Maa_l
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 ?Paikannimi	Johdin_lAinen_<A>	;
 
 LEXICON NOUN Tie
@@ -1977,7 +1978,7 @@ LEXICON NOUN YhteisetMonikonPaikallissijat
 [Sabl][Nm]ilt<A>:ilt<A>	<WC>LiOlV_<A>	;
 [Sall][Nm]ille:ille	<WC>LiOlV_<A>	;
 [Sab][Nm]itt<A>:itt<A>	<WC>LiOlV_<A>	;
-Johdin_ittAin_<A>	;
+?Nimisana	Johdin_ittAin_<A>	;
 [Sin][Nm]in:in	Liitesana_<A>	;
 
 LEXICON NOUN YhteisetMonikonSijat2
@@ -3439,8 +3440,7 @@ LEXICON Johdin_ittAin
 [Ls]itt<A>in:itt<A>in	Loppu	;
 
 LEXICON Johdin_lAinen
-[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	LaatusanaNainen_<A>	;
-[Ll][Dg]l<A>is:l<A>is	NimisanaYsJatko	;
+[Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
 [Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_ep	;
 
 LEXICON Johdin_ttU
