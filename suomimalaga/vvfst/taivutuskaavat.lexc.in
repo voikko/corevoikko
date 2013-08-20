@@ -200,7 +200,7 @@ LEXICON NOUN Arvelu_w
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
-Johdin_tOn_<A>	;
+?Nimisana	Johdin_tOn_<A>	;
 
 LEXICON NOUN Laatikko
 [Sn][Ny]k<O>:k<O>	<WC>NormaaliYsJatkoOl_<A>	;
