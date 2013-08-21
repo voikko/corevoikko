@@ -33,3 +33,6 @@ Makefile.in
 /src/tools/voikkospell
 /src/tools/voikkovfstc
 /stamp-h1
+/test/*.log
+/test/*.trs
+/java/*.asc

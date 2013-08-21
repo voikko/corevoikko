@@ -64,7 +64,7 @@ libvoikko_la_SOURCES = \
     grammar/check/SentenceCheck.cpp \
     grammar/check/SidesanaCheck.cpp \
     compatibility/interface.cpp
-libvoikko_la_LDFLAGS = -no-undefined -version-info 13:7:12 @LIBLDFLAGSWIN@
+libvoikko_la_LDFLAGS = -no-undefined -version-info 14:7:13 @LIBLDFLAGSWIN@
 
 pkginclude_HEADERS = voikko.h voikko_enums.h voikko_defines.h voikko_deprecated.h voikko_structs.h
 noinst_HEADERS = \

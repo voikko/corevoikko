@@ -1,3 +1,8 @@
+2013-08-21 Harri Pitkänen <hatapitk@iki.fi>
+	* Improve Java API for distribution through Maven Central Repository.
+	* Fix test suite to work with latest Automake releases.
+	* Increase version numbers for 3.6.1.
+
 2013-07-23 Harri Pitkänen <hatapitk@iki.fi>
 	* Add option accept_all_uppercase to voikkospell.
 	* Improve capitalization of suggestions.
