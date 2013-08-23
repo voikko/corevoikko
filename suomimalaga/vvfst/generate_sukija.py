@@ -337,6 +337,7 @@ word_list = [
     (u"mieluinen",      (u"mielui",      u"mieluhi")),
     (u"miljoona",       (u"miljoon",     u"miljon")),
     (u"modeemi",        (u"modeem",      u"modem")),
+    (u"mosaiikki",      (u"mosaiik",     u"mosaik")),
     (u"paneeli",        (u"paneel",      u"panel")),
     (u"paronitar",      (u"paronit",     u"paroonit")),
     (u"pataljoona",     (u"pataljoon",   u"pataljon")),
