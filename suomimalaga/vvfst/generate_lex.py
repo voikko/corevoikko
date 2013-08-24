@@ -319,8 +319,8 @@ def handle_word(word):
 			diacritics = diacritics + vowel_type_for_derived_verb(alku)
 		
 		if vfst_word_class == u"[Lp]":
-			entry = u'[Lp]%s:%s EtuliitteenJatko_%s;' \
-			        % (wordform, wordform, get_prefix_jatko(word))
+			entry = u'[Lp]%s%s:%s EtuliitteenJatko_%s;' \
+			        % (wordform, infoFlags, wordform, get_prefix_jatko(word))
 		else:
 			entry = u'%s[Xp]%s[X]%s%s%s%s:%s%s %s%s_%s ;' \
 			        % (vfst_word_class, wordform, get_structure(altform, vfst_word_class), infoFlags,

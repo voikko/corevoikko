@@ -402,3 +402,13 @@ word:Aadolfinkatu
   analysis
     CLASS=nimisana
     STRUCTURE==ippppppp=pppp
+word:Suur-Sveitsi
+  expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ippp-=ipppppp
+word:asuin-Sveitsi
+  expected:1
+  analysis
+    CLASS=paikannimi
+    STRUCTURE==ppppp-=ipppppp
