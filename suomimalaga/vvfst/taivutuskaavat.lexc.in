@@ -2405,6 +2405,16 @@ Huutaa_s_<A>	;
 tel:tel	Katsella_s_<A>	;
 t:t	KertomanTekijäpääteVahva_<A>	;
 
+LEXICON Saartaa
+[Tn1]t<A><A>:t<A><A>	Liitesana_<A>	;
+r<A>:r<A>	KestämänTekijäpääteHeikko_<A>	;
+re:re	Johdin_ttAx_<A>	;
+t<A>:t<A>	Ehtotapa_<A>	;
+t<A>:t<A>	Johdin_ja_kulkija_<A>	;
+t<A>:t<A>	Johdin_vA_<A>	;
+t<A>:t<A>	Johdin_mA_<A>	;
+t<A>:t<A>	Johdin_nUt_<A>	;
+
 LEXICON Kapsaa
 [Tt][Ap][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
