@@ -80,12 +80,10 @@
 [perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
 [perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
-[perusmuoto: "kivetä", alku: "kive", luokka: teonsana, jatko: <kivetä>, äs: ä];
 [perusmuoto: "kontinuum", alku: "kontinuum", luokka: nimisana, jatko: <fan>, äs: a, tiedot: <ei_voikko>]; # Pitää olla "kontinuumi"
 [perusmuoto: "kumajaa", alku: "kumajaa", luokka: teonsana, jatko: <liitesana, loppu>, äs: a]; #NS: yksitekijäinen.
 [perusmuoto: "kutiaa", alku: "kutia", luokka: teonsana, jatko: <kutiaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "kääntää", alku: "kää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
-[perusmuoto: "laidun", alku: "lai", luokka: nimisana, jatko: <laidun>, äs: a];
 [perusmuoto: "laupias", alku: "laup", luokka: laatusana, jatko: <laupias>, äs: a];
 [perusmuoto: "lämmin", alku: "läm", luokka: nimi_laatusana, jatko: <lämmin>, äs: ä];
 [perusmuoto: "memoriam", alku: "memoriam", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_ys>];
@@ -98,18 +96,15 @@
 [perusmuoto: "parata", alku: "paratkoon", luokka: teonsana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "pitkä", alku: "pide", luokka: laatusana, jatko: <suurempi>, äs: ä, tiedot: <ei_sukija>];
 [perusmuoto: "potea", alku: "po", luokka: teonsana, jatko: <potea>, äs: a];
-[perusmuoto: "Punkalaidun", alku: "Punkalai", luokka: paikannimi, jatko: <laidun>, äs: a, rakenne: "=ppppp=pppppp"];
 [perusmuoto: "rakentaa", alku: "rake", luokka: teonsana, jatko: <rakentaa>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "Saint", alku: "Saint", luokka: nimi, jatko: <loppu>, äs: a];
 [perusmuoto: "Sakar", alku: "Sakar", luokka: etunimi, jatko: <loppu>, äs: a];
 [perusmuoto: "San", alku: "San", luokka: nimi, jatko: <loppu>, äs: a]; # San Marino
 [perusmuoto: "seistä", alku: "seis", luokka: teonsana, jatko: <seistä>, äs: ä];
-[perusmuoto: "Sergej", alku: "Serge", luokka: etunimi, jatko: <pii>, äs: ä]; # Perusmuoto "Sergej" ei tunnistu
 [perusmuoto: "Sillitoe", alku: "Sillitoe", luokka: sukunimi, jatko: <nalle>, äs: a];
 [perusmuoto: "sir", alku: "sir", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ys>];
 [perusmuoto: "Sokrates", alku: "Sokratee", luokka: etunimi, jatko: <sisätulento_hVn>, äs: a];
 [perusmuoto: "sori", alku: "sori", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>];
-[perusmuoto: "sortaa", alku: "sor", luokka: teonsana, jatko: <sortaa>, äs: a];
 [perusmuoto: "Sri", alku: "Sri", luokka: paikannimi, jatko: <loppu>, äs: a]; # Sri Lanka.
 [perusmuoto: "suksi", alku: "su", luokka: nimisana, jatko: <suksi>, äs: a];
 [perusmuoto: "syys", alku: "syys", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_ysj, ei_voikko>];

@@ -1962,3 +1962,5 @@ saartava
 saartanut
 saartaja
 saartaisi
+laidun
+laitumen

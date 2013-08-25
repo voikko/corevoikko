@@ -519,7 +519,6 @@ kantaja; # => kantajuus
   apaja;
   kahdeksan;
 peruna;
-  pasuuna;
     opotta;
 ainoa;
 korkea;  # Myös korkia ja korkee.
@@ -736,7 +735,6 @@ puoltaa;
   nuotintaa;
 murtaa;     # => Murrella, murros, murto. Kaksitavuiset.
   musertaa; # => Muserrella, muserrus.
-sortaa;     # => Sorrella, sorros, sorto.
 pahentaa;   # => Pahennella, pahennus.
   juontaa;  # => Juonnella, juonto.
   pyörtää;
@@ -836,7 +834,6 @@ salata;    # => salailla
   kammata;
   kelvata;
   kerrata;
-  kivetä;
   kuitata;
   peljätä;
   ladata;

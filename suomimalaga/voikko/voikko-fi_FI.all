@@ -800,8 +800,7 @@ allo_rule generate_allos ($tietue):
     result $i.alku, $i - alku;
 
 
-  elseif ((peruna in $tietue.jatko) or
-          (pasuuna in $tietue.jatko)) then
+  elseif (peruna in $tietue.jatko) then
     choose $i in taivutuskaava ($tietue,
                                 yksikkö_autio ($tietue, A($tietue), [osanto_A: A($tietue)]) +
                                 monikko7 (A($tietue), O($tietue), O($tietue),
@@ -2251,8 +2250,7 @@ allo_rule generate_allos ($tietue):
 ######################################
 
 
-  elseif ((murtaa in $tietue.jatko) or
-          (sortaa in $tietue.jatko)) then
+  elseif (murtaa in $tietue.jatko) then
     choose $i in huutaa ($tietue, "t", "r")
                  + muistella ($tietue, "t", "r")
                  + murros ($tietue)
@@ -2916,10 +2914,6 @@ allo_rule generate_allos ($tietue):
 
   elseif (kerrata in $tietue.jatko) then
     choose $i in salata_salailla ($tietue, tA($tietue), rA($tietue));
-    result $i.alku, $i - alku;
-
-  elseif (kivetä in $tietue.jatko) then
-    choose $i in salata_salailla ($tietue, "", "");
     result $i.alku, $i - alku;
 
   elseif (kuitata in $tietue.jatko) then
