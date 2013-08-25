@@ -1,3 +1,3 @@
 #!/bin/sh
-env LD_LIBRARY_PATH=../src/.libs python AllAutomaticTests.py
+env LD_LIBRARY_PATH=../src/.libs python $srcdir/AllAutomaticTests.py
 
