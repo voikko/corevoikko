@@ -1924,7 +1924,12 @@ subrule tulostus_rakenne ($tietue):
   foreach $t in $tietue:
     $tind :=+ 1;
     if $t.rakenne /= nil then
-      if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) then
+      if ($t.luokka = paikannimi and
+          (
+            ($tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) or
+            ($tlen greater $tind + 2 and $tietue.($tind+3).luokka = johdin_lAinen)
+          )
+         ) then
         $tuloste :=+ rakenne($t, yes);
       else
         $tuloste :=+ rakenne($t, no);

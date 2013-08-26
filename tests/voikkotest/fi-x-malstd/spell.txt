@@ -615,6 +615,7 @@ huonovointisuus
 susimainen
 !kuolleessaan
 ranskanturkkilainen
+jugoslavianmakedonialainen
 
 # = sijapäätteet =
 []

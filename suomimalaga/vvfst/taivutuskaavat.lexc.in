@@ -392,6 +392,7 @@ LEXICON NOUN Edam
 [Sn][Nm]it:it	Liitesana_<A>	;
 [Sg][Ny]in:in	<WC>YksikönGenetiivinJatko_<A>	;
 [Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sg][Nm]eid:eid	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]i<A>:i<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]ej<A>:ej<A>	<WC>LiOlV_<A>	;
 [Sp][Nm]eit<A>:eit<A>	<WC>LiOlV_<A>	;
@@ -1347,6 +1348,7 @@ de:de	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
+?Nimisana	si:si	Johdin_mAinen_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
 
@@ -1960,6 +1962,7 @@ LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
 ?Nimisana	[Bc]:	Joukahainen_l	;
 ?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
+?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]@P.INEN_VAADITTU.ON@:	Joukahainen_ep	;
 ?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
 ?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
 
@@ -2701,6 +2704,7 @@ KertomanTekijäpääteVahva_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 Käskytapa_<A>	;
 EhtotapaTa_<A>	;
+Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
 e:e	Johdin_mA_<A>	;
 i:i	Johdin_ja_kulkija_<A>	;
@@ -2709,6 +2713,7 @@ Johdin_tU_lA_<A>	;
 
 LEXICON Tulla_l
 [Tn1]<A>:<A>	Liitesana_<A>	;
+Johdin_nimitapa1A_<A>	;
 Johdin_nimitapa2_<A>	;
 
 LEXICON Katsella
@@ -3435,7 +3440,6 @@ NimisanaYhteisetMonikonSijat2_<A>	;
 [Sg][Ny]<A>n:<A>n	LaatusanaNormaaliYsJatko_<A>	;
 <A>:<A>	NimisanaYhteisetYksikönPaikallissijat_<A>	;
 NimisanaYhteisetMonikonPaikallissijat_<A>	;
-<A>:<A>	Johdin_tOn_<A>	;
 <A>:<A>	Voittoaste_<A>	;
 <A>:<A>	Kerronto_sti_<A>	;
 Yliaste_<A>	;
@@ -3466,7 +3470,7 @@ tt<O>m:tt<O>m	Yliaste_<A>	;
 llis:llis	NimisanaYsJatko	;
 
 LEXICON Johdin_ittAin
-[Ls]itt<A>in:itt<A>in	Loppu	;
+[Ls]itt<A>in:itt<A>in	Liitesana_<A>	;
 
 LEXICON Johdin_lAinen
 [Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
@@ -3497,7 +3501,7 @@ t<U><U>:t<U><U> <WC>Valo_sl_<A> ;
 l<U>:l<U>       <WC>Valo_w_<A>  ;
 
 LEXICON Kerronto_sti
-[Ssti]sti:sti	Liitesana_<A>	;
+[Ssti]@D.EI_VERTM@sti:@D.EI_VERTM@sti	Liitesana_<A>	;
 
 LEXICON Johdin_ja_kantaja
 Johdin_ja_kantaja_myyjä_<A>	;
@@ -3540,6 +3544,7 @@ LEXICON Johdin_ja_kulkija_myyjä
 [Sab][Ny]j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@:j<A>tt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 [Ln]j<A>t@C.JOHDETTAVA_NIMISANAKSI@:j<A>t@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTytär_<A>	;
 j:j	Johdin_UUs_<A>	;
+j<A>:j<A>	Johdin_mAinen_<A>	;
 
 LEXICON Johdin_ja_kantaja_myyjä
 [Sg][Nm]ji@C.JOHDETTAVA_NIMISANAKSI@:ji@C.JOHDETTAVA_NIMISANAKSI@	NimisanaMonikonGenetiiviEnJatko_<A>	;
