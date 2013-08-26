@@ -35,15 +35,16 @@
 # spellings and spelling errors that do not exist in real life.
 
 # Compiling (in directory suomimalaga):
-# GENLEX_OPTS=--sukija make -e vvfst-sukija
+# make vvfst-sukija
 
 # Testing:
 # foma -e "read att all-sukija.att" -e "save stack sukija.fst" -e "quit"
 # date; cat ~/Lataukset/koesanat?.txt | flookup -i sukija.fst | gawk 'length($0) > 0' |sort >test.out; date
 # diff test.out ~/Lataukset/vvfst-sukija-testi.out | grep '<.*[+][?]' | less
 
-# Style-lipun arvot:
-# grep -A1 '<style>' vocabulary/joukahainen.xml |grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
+# Style- ja usage-lippujen arvot suoraan Joukahaisesta:
+# grep -A1 '<style>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
+# grep -A1 '<usage>' ../vocabulary/joukahainen.xml|grep flag|sort -u|gawk '{printf "%s,", substr($1,7,length($1)-13)}'
 
 # Tiedostossa taivutuskaavat.lexc.in vanhat taivutukset on lisätty näihin taivutuksiin:
 # Hame, Kalleus, Kansi, Koira, Lohi, Lovi, Lumi, Meri, Nainen, Onneton, Paperi,

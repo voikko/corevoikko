@@ -1849,6 +1849,7 @@ LEXICON NOUN Vieras_w
 [Sg][Nm]st:st	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]st<A>:st<A>	<WC>LiOlV_<A>	;
 ?Nimisana	s:s	Johdin_mAinen_<A>	;
+?Sukija [Ses][Ny]sn<A>:sn<A> <WC>LiOlV_<A>	;
 
 LEXICON NOUN Vieras_s
 ?NotLaatusana	[[L]][Sn][Ny]:[[L]]	Omistusliite_<A>	;
@@ -1867,7 +1868,21 @@ LEXICON NOUN Vieras_s
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	[[L]]:[[L]]	Voittoaste_<A>	;
+?Sukija ?NotLaatusana [Sn][Ny]h<A>:h<A> Omistusliite_<A>	;
+?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
+?Sukija [Sg][Ny]h<A>n:h<A>n <WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]hi<A>:hi<A> <WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
+?Sukija h:h <WC>YhteisetMonikonSijat2_<A> ;
+?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
 ?Sukija [[L]][Sill][Ny]sehe:[[L]]sehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
+?Sukija h<A>:h<A> <WC>YhteisetYksikönPaikallissijat_<A>	;
+?Sukija h:h <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Sukija ?Nimisana	h<A>:h<A>	Johdin_tOn_<A>	;
+?Sukija ?Nimisana	h:h Johdin_inen_vain_lipulla_<A> ;
+?Sukija ?Laatusana h<A>:h<A> Voittoaste_<A>	;
 
 LEXICON NOUN Ruis
 i:i	<WC>Vieras_w_<A>	;
