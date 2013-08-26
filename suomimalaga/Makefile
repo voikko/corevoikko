@@ -75,7 +75,7 @@ ifneq "$(VOIKKO_BUILDDIR)" "voikko"
 	VOIKKO_ACTUALLY_COPY_FROM_VOIKKO=$(VOIKKO_COPY_FROM_VOIKKO)
 endif
 
-.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip vvfst vvfst-install
+.PHONY: all clean update-vocabulary voikko voikko-install dist-gzip vvfst vvfst-install vvfst-sukija vvfst-sukija-install
 
 all: voikko
 
@@ -148,6 +148,7 @@ clean:
 	rm -f TAGS
 	rm -f $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUILDDIR)/main-sukija.foma*
 	rm -f $(VVFST_BUILDDIR)/generate_sukija.py.stamp $(VVFST_BUILDDIR)/sukija.fst $(VVFST_BUILDDIR)/test.out
+	rm -f $(VVFST_BUILDDIR)/mor-sukija.vfst
 
 # Rules for creating the source distribution
 
@@ -264,7 +265,8 @@ voikko-sukija:
 # Rules for creating vvfst morphology for Sukija indexer. See file
 # $(VVFST_BUILDDIR)/generate_sukija.py for details.
 #
-vvfst-sukija: $(VVFST_BUILDDIR)/all-sukija.att $(VVFST_BUILDDIR)/all.att
+vvfst-sukija: GENLEX_OPTS=--style=dialect,foreign,foreignloan,inappropriate,incorrect,international,old --min-frequency=10 --extra-usage=it,medicine,science,education,orgname --sukija
+vvfst-sukija: $(VVFST_BUILDDIR)/mor-sukija.vfst $(VVFST_BUILDDIR)/voikko-fi_FI.pro
 
 $(VVFST_BUILDDIR)/all-sukija.lexc: $(VVFST_BUILDDIR)/all.lexc $(VVFST_BUILDDIR)/generate_sukija.py.stamp
 	$(PYTHON) vvfst/generate_sukija.py --destdir=$(VVFST_BUILDDIR)
@@ -275,5 +277,13 @@ $(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUIL
 $(VVFST_BUILDDIR)/main-sukija.foma: $(VVFST_BUILDDIR)/main.foma
 	sed -e 's,/all,/all-sukija,'  < $^ > $@
 
+$(VVFST_BUILDDIR)/mor-sukija.vfst: $(VVFST_BUILDDIR)/all-sukija.att
+	cat $^ | sort -n | voikkovfstc -o $@
+	cp $@ $(VVFST_BUILDDIR)/mor.vfst
+
 $(VVFST_BUILDDIR)/generate_sukija.py.stamp: $(VVFST_BUILDDIR)/generate_sukija.py
 	touch $@
+
+vvfst-sukija-install: vvfst-sukija
+	install -m 755 -d $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
+	install -m 644 $(VVFST_BINDIST) $(DESTDIR)/2/mor-$(VOIKKO_VARIANT)
