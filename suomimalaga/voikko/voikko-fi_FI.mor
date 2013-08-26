@@ -805,6 +805,9 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $index):
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
     end;
+    if $edellinen.luokka = paikannimi then
+      result $res, rules paikannimen_lainen_johdos;
+    end;
     result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_paikannimi;
   else
     if omistusliite in $oikea.jatko then
@@ -1943,7 +1946,12 @@ subrule tulostus_rakenne ($tietue):
       end;
     elseif $t.luokka in <etunimi, sukunimi, nimi, paikannimi> then
       $tuloste :=+ "=";
-      if ($t.luokka = paikannimi and $tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) or $t.erisnimen_pääte = yes then
+      if ($t.luokka = paikannimi and
+          (
+            ($tlen greater $tind and $tietue.($tind+1).luokka = johdin_lAinen) or
+            ($tlen greater $tind + 2 and $tietue.($tind+3).luokka = johdin_lAinen)
+          )
+         ) or $t.erisnimen_pääte = yes then
         foreach $i in length($t.alku):
           $tuloste :=+ "p";
         end;

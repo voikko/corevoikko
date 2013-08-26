@@ -55,17 +55,13 @@
 
 [perusmuoto: "austroaasialainen", alku: "austroaasialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppppp"];
 [perusmuoto: "austronesialainen", alku: "austronesialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppppp"];
-[perusmuoto: "baltiansaksalainen", alku: "baltiansaksalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=ppppppppppp"];
 [perusmuoto: "balttilainen", alku: "balttilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "baskilainen", alku: "baskilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "flaamilainen", alku: "flaamilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "kanadanranskalainen", alku: "kanadanranskalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppppp"];
-[perusmuoto: "kinshasankongolainen", alku: "kinshasankongolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppppp=ppppppppppp"];
 [perusmuoto: "maurilainen", alku: "maurilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "mesoamerikkalainen", alku: "mesoamerikkalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
 [perusmuoto: "mongolilainen", alku: "mongolilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "naurulainen", alku: "naurulai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "normandianranskalainen", alku: "normandianranskalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppppp=pppppppppppp"];
 [perusmuoto: "norsunluurannikkolainen", alku: "norsunluurannikkolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppp=pppppppppppppp"];
 [perusmuoto: "nuorturkkilainen", alku: "nuorturkkilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppp"];
 [perusmuoto: "papuauusiguinealainen", alku: "papuauusiguinealai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppp=pppppppppppp"];

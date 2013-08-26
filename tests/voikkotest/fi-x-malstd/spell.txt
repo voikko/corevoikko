@@ -614,6 +614,7 @@ huonovointisuus
 !juoksevallinen
 susimainen
 !kuolleessaan
+ranskanturkkilainen
 
 # = sijapäätteet =
 []
