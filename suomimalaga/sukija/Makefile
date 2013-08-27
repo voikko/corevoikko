@@ -1,5 +1,5 @@
 LEXICON = \
-atk-lyhenteet.lex \
+sanat/atk-lyhenteet.lex \
 sanat/11-19.lex \
 sanat/latex.lex \
 sanat/jokinen.lex \

@@ -2059,6 +2059,17 @@ combi_rule paikannimen_ja_sukunimen_lainen_johdos ($vasen, $oikea, $sana, $n):
 end;
 
 
+combi_rule paikannimen_lainen_johdos_paikannimen_omannon_jälkeen ($vasen, $oikea, $sana, $n):
+####define $profile := transmit ("paikannimen_lainen_johdin ($vasen, $oikea, $sana, $n):");
+
+  ? ($oikea.luokka = paikannimi and johdin_lAinen in $oikea.jatko);
+  if $oikea.äs = aä then $oikea.äs := $vasen.($n-1).äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  result $res, rules paikannimen_ja_sukunimen_lainen_johdin;
+end;
+
+
 combi_rule paikannimen_ja_sukunimen_lainen_johdin ($vasen, $oikea, $sana, $n):
 ####define $profile := transmit ("paikannimen_ja_sukunimen_lainen_johdin ($vasen, $oikea, $sana, $n):");
   ? ($oikea.luokka = johdin_lAinen) or
@@ -2125,12 +2136,12 @@ combi_rule erisnimen_sijapääte ($vasen, $oikea, $sana, $n):
 
   define $res := $vasen + <[alku: $sana] + $oikea>;
 
-#  if ($oikea.sija = kerronto_sti) then
-#    ? $edellinen.luokka in @sti_edeltäjä;
-#  else
   if ($oikea.sija = omanto_n) then
     if omistusliite in $oikea.jatko then
       result $res, rules omistusliite;
+    end;
+    if ($vasen.($n-1).luokka = paikannimi) then
+      result $res, rules paikannimen_lainen_johdos_paikannimen_omannon_jälkeen;
     end;
     result $res, rules yhdysmerkki_erisnimen_jälkeen, johdettu_erisnimi;
   else

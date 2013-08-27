@@ -240,7 +240,6 @@ Islanti
 Isojoki
 ISO-standardi
 isoäiti
-Italia
 itkettynyt
 itkettyä
 itserakas
@@ -830,7 +829,6 @@ raakalainen
 Raitio
 rajoittua
 rajuilma
-Ranska
 Ranta
 Rantasalmi
 raottua
@@ -891,7 +889,6 @@ Saarijärvi
 saaristolainen
 sairastuttaa
 sairaus
-Saksa
 Saku
 salakähmäinen
 Salmelainen
