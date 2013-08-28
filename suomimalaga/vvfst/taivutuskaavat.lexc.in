@@ -1409,7 +1409,7 @@ LEXICON NOUN NainenYhteiset
 s:s	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]see:see	<WC>LiOlN_<A>	;
 [Sill][Nm]sii:sii	<WC>LiOlN_<A>	;
-se:se	<WC>YhteisetYksikönPaikallissijat_<A>	;
+se@C.VAIN_NIMISANA@:se@C.VAIN_NIMISANA@	<WC>YhteisetYksikönPaikallissijat_<A>	;
 s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Laatusana	se:se	Voittoaste_<A>	;
 ?Laatusana	s:s	Yliaste_<A>	;
@@ -3459,8 +3459,8 @@ LEXICON Johdin_inen_vain_lipulla
 @R.INEN_VAADITTU@:@R.INEN_VAADITTU@	Johdin_inen_<A>	;
 
 LEXICON Johdin_inen
-[Ll]i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainenYhteiset_<A>	;
-[Ll]is@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:is@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaYsJatko	;
+[Ll]i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:i@C.VAIN_NIMISANA@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainenYhteiset_<A>	;
+[Ll]is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:is@C.VAIN_NIMISANA@@R.YS_ALKANUT@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaYsJatko	;
 
 LEXICON Johdin_tOn
 [Ll]t@C.YS_EI_JATKOA@:t@C.YS_EI_JATKOA@	LaatusanaOnneton_<A>	; # yhdyssanojen esto todennäköisesti tarpeeton
@@ -3501,7 +3501,7 @@ t<U><U>:t<U><U> <WC>Valo_sl_<A> ;
 l<U>:l<U>       <WC>Valo_w_<A>  ;
 
 LEXICON Kerronto_sti
-[Ssti]@D.EI_VERTM@sti:@D.EI_VERTM@sti	Liitesana_<A>	;
+@D.VAIN_NIMISANA@[Ssti]sti:@D.VAIN_NIMISANA@sti	Liitesana_<A>	;
 
 LEXICON Johdin_ja_kantaja
 Johdin_ja_kantaja_myyjä_<A>	;

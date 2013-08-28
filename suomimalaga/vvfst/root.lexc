@@ -114,6 +114,9 @@ Multichar_Symbols
 ! Jatko (esim. teonsana) on sallittu vain laatusanaksi johdettuna
 @D.JOHDETTAVA_LAATUSANAKSI@ @P.JOHDETTAVA_LAATUSANAKSI.ON@ @C.JOHDETTAVA_LAATUSANAKSI@
 
+! Sana (nimi_laatusana) on tulkittava vain nimisanamerkityksessään
+@P.VAIN_NIMISANA.ON@ @D.VAIN_NIMISANA@ @C.VAIN_NIMISANA@
+
 ! inen-johdin aina sallittu
 @P.INEN_SALLITTU.ON@ @R.INEN_SALLITTU@ @C.INEN_SALLITTU@
 
@@ -170,7 +173,7 @@ Joukahainen_s	;
 
 LEXICON Joukahainen_nimisanat
 Joukahainen_n	;
-@P.EI_VERTM.ON@:@P.EI_VERTM.ON@	Joukahainen_nl	;
+@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@:@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@	Joukahainen_nl	;
 @P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_p	;
 
 LEXICON Erisnimet
