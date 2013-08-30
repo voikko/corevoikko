@@ -53,13 +53,6 @@
 # vaikka myöhemmin sitä on tarkoitus käyttää vain sanojen ja etuliitteiden
 # rajalla.
 
-[perusmuoto: "austroaasialainen", alku: "austroaasialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppppp"];
-[perusmuoto: "austronesialainen", alku: "austronesialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppppppppppp"];
-[perusmuoto: "balttilainen", alku: "balttilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "baskilainen", alku: "baskilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "flaamilainen", alku: "flaamilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "maurilainen", alku: "maurilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "mesoamerikkalainen", alku: "mesoamerikkalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppp=pppppppppppppp"];
 [perusmuoto: "mongolilainen", alku: "mongolilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "naurulainen", alku: "naurulai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "norsunluurannikkolainen", alku: "norsunluurannikkolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppp=ppp=pppppppppppppp"];
@@ -67,14 +60,8 @@
 [perusmuoto: "papuauusiguinealainen", alku: "papuauusiguinealai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppp=pppp=pppppppppppp"];
 [perusmuoto: "samoalainen", alku: "samoalai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "setiläinen", alku: "setiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä];
-[perusmuoto: "shiialainen", alku: "shiialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "šiialainen", alku: "šiialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "suomalais-permiläinen", alku: "suomalais-permiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, rakenne: "=ppppppppp-=ppppppppppp"];
-[perusmuoto: "thessalialainen", alku: "thessalialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
-[perusmuoto: "tiibettiläinen", alku: "tiibettiläi", luokka: nimi_laatusana, jatko: <nainen>, äs: ä, tiedot: <ei_voikko>]; # po. "tiibetiläinen"
-[perusmuoto: "traakialainen", alku: "traakialai", luokka: nimi_laatusana, jatko: <nainen>, äs: a];
 [perusmuoto: "trinidadtobagolainen", alku: "trinidadtobagolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=pppppppp=pppppppppppp"];
-[perusmuoto: "virtolainen", alku: "virtolai", luokka: nimi_laatusana, jatko: <nainen>, äs: a]; # Virrat-nimisen kunnan asukas
 [perusmuoto: "wittgensteinilainen", alku: "wittgensteinilai", luokka: nimi_laatusana, jatko: <nainen>, äs: a, rakenne: "=ppppppp=pppppppppppp"];
 
 # Special abbreviations. There are some more of these, but they should preferably be
