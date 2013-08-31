@@ -1469,11 +1469,7 @@ allo_rule generate_allos ($tietue):
 
 
   elseif (autuas in $tietue.jatko) then
-    define $johdin_Us := U($tietue);
-    if ($tietue.perusmuoto matches ".*[uy][aä]s") then
-      $johdin_Us := "";
-    end;
-    choose $i in vieras ($tietue, AA($tietue), As($tietue), A($tietue), $johdin_Us);
+    choose $i in vieras ($tietue, AA($tietue), As($tietue), A($tietue), "");
     result $i.alku, $i - alku;
 
 

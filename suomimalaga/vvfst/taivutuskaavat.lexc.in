@@ -639,6 +639,10 @@ LEXICON NOUN Koira
 <WC>Koira_s_<A>	;
 <WC>Koira_w_<A>	;
 
+LEXICON NOUN Jumala
+<WC>Koira_<A>	;
+[Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
+
 LEXICON NOUN Juhta
 t:t	<WC>Koira_s_<A>	;
 d:d	<WC>Koira_w_<A>	;
@@ -1782,6 +1786,17 @@ LEXICON NOUN Antelias
 <WC>Vieras_s_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	is:is	Johdin_UUs_<A>	;
+
+LEXICON NOUN Autuas
+<A>:<A>	<WC>Vieras_w_<A>	;
+<A>:<A>	<WC>Vieras_s_<A>	;
+?Laatusana	<A>:<A>	Yliaste_<A>	;
+?Laatusana	Johdin_Us_<A>	;
+
+LEXICON NOUN Laupias
+i<A>:i<A>	<WC>Vieras_w_<A>	;
+i<A>:i<A>	<WC>Vieras_s_<A>	;
+?Laatusana	i<A>:i<A>	Yliaste_<A>	;
 
 LEXICON NOUN Kirves
 <WC>Vieras_w_<A>	;

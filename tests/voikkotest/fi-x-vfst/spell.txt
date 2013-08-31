@@ -2034,3 +2034,9 @@ valtatiehen
 !tiehön
 veitsellä
 lapseksi
+jumala
+jumalien
+jumalten
+autuas
+autuus
+laupias
