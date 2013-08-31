@@ -1462,6 +1462,11 @@ ks:ks	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ksihi:ksihi	<WC>LiOlN_<A>	;
 
+LEXICON NOUN Hapan
+<A>n:<A>n	<WC>Uistin_n_<A>	;
+p<A>m:p<A>m	<WC>Uistin_m_<A>	;
+p<A>m:p<A>m	<WC>Uistin_mA_<A>	;
+
 LEXICON NOUN Uistin
 n:n	<WC>Uistin_n_<A>	;
 m:m	<WC>Uistin_m_<A>	;
@@ -1477,6 +1482,10 @@ tim:tim	<WC>Uistin_m_<A>	;
 LEXICON NOUN Kiharrin
 rin:rin	<WC>Uistin_n_<A>	;
 tim:tim	<WC>Uistin_m_<A>	;
+
+LEXICON NOUN Kerroin
+r<O>in:r<O>in	<WC>Uistin_n_<A>	;
+t<O>im:t<O>im	<WC>Uistin_m_<A>	;
 
 LEXICON NOUN Kaadin
 din:din	<WC>Uistin_n_<A>	;
@@ -1523,6 +1532,24 @@ e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Laatusana	Yliaste_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
+
+LEXICON NOUN Uistin_mA
+?NotLaatusana	[Sn][Ny]<A>:<A>	Omistusliite_<A>	;
+[Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
+[Sg][Ny]<A>n:<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+[Sg][Nm]i:i	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Nm]i<A>:i<A>     <WC>LiOlV_<A> ;
+[Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
+<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]<A><A>:<A><A>	<WC>LiOlN_<A>	;
+[Sill][Nm]ii:ii	<WC>LiOlN_<A>	;
+<A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	<A>:<A>	Voittoaste_<A>	;
+?Laatusana	Yliaste_<A>	;
+?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Alaston

@@ -58,7 +58,6 @@
 [perusmuoto: "facto", alku: "facto", luokka: nimisana, jatko: <loppu>, äs: a];
 [perusmuoto: "gimp", alku: "gimp", luokka: nimi, jatko: <pop>, äs: ä, tiedot: <atk>];
 [perusmuoto: "haaksi", alku: "haa", luokka: nimisana, jatko: <kaksi>, äs: a];
-[perusmuoto: "hapan", alku: "hap", luokka: nimi_laatusana, jatko: <hapan>, äs: a];
 [perusmuoto: "harteet", alku: "harte", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_sukija>];
 [perusmuoto: "harteet", alku: "hart", luokka: nimisana, jatko: <harteet>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hepene", alku: "hepen", luokka: nimisana, jatko: <askel>, äs: ä]; # Joukahaisessa perusmuodoksi tarvittaisiin "hepen" (vrt. "askel")
@@ -75,8 +74,6 @@
 [perusmuoto: "kaipaella", alku: "kaipael", luokka: teonsana, jatko: <arvailla>, äs: a, tiedot: <murre>];
 [perusmuoto: "kangeta", alku: "kan", luokka: teonsana, jatko: <kangeta>, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "karthaginem", alku: "karthaginem", luokka: nimisana, jatko: <loppu>, äs: a, tiedot: <ei_voikko>]; # Vieraskielinen sana
-[perusmuoto: "kerroin", alku: "ker", luokka: nimisana, jatko: <kerroin>, äs: a];
-[perusmuoto: "kimmokerroin", alku: "kimmoker", luokka: nimisana, jatko: <kerroin>, äs: a, rakenne: "=ppppp=ppppppp"];
 [perusmuoto: "keski", alku: "keski", luokka: nimisana, jatko: <loppu>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "kiiru", alku: "kiiru", luokka: nimisana, jatko: <kiiru>, äs: a];
 [perusmuoto: "kilpasilla", alku: "kilpas", luokka: nimisana, jatko: @ulkopaikallissijat_monikko, äs: a];
