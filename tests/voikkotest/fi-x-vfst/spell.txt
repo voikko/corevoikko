@@ -2025,3 +2025,8 @@ happaman
 happamen
 kerrointa
 kertoimen
+juoksevalla
+juoksikin
+juosseelle
+kohisee
+tehdessäsi

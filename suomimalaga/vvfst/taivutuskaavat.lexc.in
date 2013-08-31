@@ -3232,6 +3232,8 @@ Kitistä_<A>	;
 LEXICON Kitistä
 [Tn1]ist<A>:ist<A>	Liitesana_<A>	;
 ise:ise	KestämänTekijäpääteHeikko_<A>	;
+[Tt][P3][Ny]isee:isee	Liitesana_<A>	;
+[Tt][P3][Nm]isev<A>t:isev<A>t	Liitesana_<A>	;
 is:is	KertomanTekijäpääteVahva_<A>	;
 [Ln]in@C.JOHDETTAVA_NIMISANAKSI@:in@C.JOHDETTAVA_NIMISANAKSI@	NimisanaApila_<A>	;
 ist:ist	Johdin_nimitapa2_<A>	;
@@ -3252,11 +3254,14 @@ LEXICON Juosta
 [Tn1]st<A>:st<A>	Liitesana_<A>	;
 kse:kse	KestämänTekijäpääteHeikko_<A>	;
 s:s	TositavanKestämäTaan_<A>	;
+ks:ks	KertomanTekijäpääteVahva_<A>	;
 s:s	Käskytapa_<A>	;
 ss:ss	Mahtotapa_<A>	;
 s:s	Johdin_tU_tA_<A>	;
+s:s	Johdin_sUt_<A>	;
 st:st	Johdin_nimitapa2_<A>	;
 kse:kse	Johdin_mA_<A>	;
+kse:kse	Johdin_vA_<A>	;
 ksi:ksi	Johdin_ja_kulkija_<A>	;
 ks:ks	Ehtotapa_<A>	;
 
@@ -3266,6 +3271,7 @@ e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
 h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
+hd:hd	Johdin_nimitapa2_<A>	;
 h:h	Johdin_tU_dA_<A>	;
 h:h	Johdin_tAvA_<A>	;
 h:h	Johdin_nUt_<A>	;
