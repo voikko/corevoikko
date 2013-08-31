@@ -1086,10 +1086,12 @@ LEXICON NOUN Maa_l
 LEXICON NOUN Tie
 e:e	<WC>Suo_s_<A>	;
 ie:ie	<WC>Suo_l_<A>	;
+[Sill][Ny]iehe:iehe	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Suo
 <O>:<O>	<WC>Suo_s_<A>	;
 <U><O>:<U><O>	<WC>Suo_l_<A>	;
+[Sill][Ny]<U><O>h<O>:<U><O>h<O>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Suo_s
 [Sg][Nm]id:id	<WC>MonikonGenetiiviEnJatko_<A>	;
@@ -1105,7 +1107,6 @@ LEXICON NOUN Suo_l
 [Sg][Ny]n:n	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
-[Sill][Ny]h<O>:h<O>	<WC>LiOlN_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
 
@@ -1961,7 +1962,7 @@ LEXICON NOUN Lapsi_yhteiset
 ps:ps	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]psee:psee	<WC>LiOlN_<A>	;
 [Sill][Nm]psii:psii	<WC>LiOlN_<A>	;
-e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+pse:pse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ps:ps	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	pse:pse	Johdin_tOn_<A>	;
 ?Nimisana	ps:ps	Johdin_inen_vain_lipulla_<A>	;
@@ -1981,7 +1982,7 @@ LEXICON NOUN Veitsi
 ts:ts	<WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Ny]tsee:tsee	<WC>LiOlN_<A>	;
 [Sill][Nm]tsii:tsii	<WC>LiOlN_<A>	;
-e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
+tse:tse	<WC>YhteisetYksikönPaikallissijat_<A>	;
 ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	tse:tse	Johdin_tOn_<A>	;
 

@@ -2030,3 +2030,7 @@ juoksikin
 juosseelle
 kohisee
 tehdessäsi
+valtatiehen
+!tiehön
+veitsellä
+lapseksi
