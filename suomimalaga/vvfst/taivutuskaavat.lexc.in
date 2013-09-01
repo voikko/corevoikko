@@ -954,6 +954,7 @@ LEXICON NOUN Ainoa
 [Sg][Nm]itt:itt	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sg][Nm]<A>:<A>	<WC>MonikonGenetiiviInJatko_<A>	;
 [Sp][Ny]<A><A>:<A><A>	Liitesana_<A>	;
+[Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 [Sp][Nm]it<A>:it<A>	<WC>LiOlV_<A>	;
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
@@ -3302,6 +3303,7 @@ n:n	Johdin_Us_ksen_<A>	;
 LEXICON Taitaa
 Huutaa_s_<A>	;
 d:d	Huutaa_w_<A>	;
+n:n	Johdin_nUt_<A>	;
 
 LEXICON Juosta
 [Tn1]st<A>:st<A>	Liitesana_<A>	;
@@ -3692,16 +3694,16 @@ LEXICON Yliaste
 [Str][Nm][Cs]immiksi@D.EI_VERTM@:immiksi@D.EI_VERTM@	Liitesana_<A>	;
 [Ses][Ny][Cs]imp<A>n<A>@D.EI_VERTM@:imp<A>n<A>@D.EI_VERTM@	Liitesana_<A>	;
 [Ses][Nm][Cs]impin<A>@D.EI_VERTM@:impin<A>@D.EI_VERTM@	Liitesana_<A>	;
-[Sine][Ny][Cs]imm<A>ss<A>@D.EI_VERTM@:imm<A>ss<A>@D.EI_VERTM@	Liitesana_<A>	;
-[Sine][Nm][Cs]immiss<A>@D.EI_VERTM@:immiss<A>@D.EI_VERTM@	Liitesana_<A>	;
-[Sela][Ny][Cs]imm<A>st<A>@D.EI_VERTM@:imm<A>st<A>@D.EI_VERTM@	Liitesana_<A>	;
-[Sela][Nm][Cs]immist<A>@D.EI_VERTM@:immist<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sine][Ny][Cs]imm<A>ss<A>@D.EI_VERTM@:imm<A>ss<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+[Sine][Nm][Cs]immiss<A>@D.EI_VERTM@:immiss<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+[Sela][Ny][Cs]imm<A>st<A>@D.EI_VERTM@:imm<A>st<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+[Sela][Nm][Cs]immist<A>@D.EI_VERTM@:immist<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sill][Ny][Cs]imp<A><A>n@D.EI_VERTM@:imp<A><A>n@D.EI_VERTM@	Liitesana_<A>	;
 [Sill][Nm][Cs]impiin@D.EI_VERTM@:impiin@D.EI_VERTM@	Liitesana_<A>	;
-[Sade][Ny][Cs]imm<A>ll<A>@D.EI_VERTM@:imm<A>ll<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sade][Ny][Cs]imm<A>ll<A>@D.EI_VERTM@:imm<A>ll<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sade][Nm][Cs]immill<A>@D.EI_VERTM@:immill<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
-[Sabl][Ny][Cs]imm<A>lt<A>@D.EI_VERTM@:imm<A>lt<A>@D.EI_VERTM@	Liitesana_<A>	;
-[Sabl][Nm][Cs]immilt<A>@D.EI_VERTM@:immilt<A>@D.EI_VERTM@	Liitesana_<A>	;
+[Sabl][Ny][Cs]imm<A>lt<A>@D.EI_VERTM@:imm<A>lt<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
+[Sabl][Nm][Cs]immilt<A>@D.EI_VERTM@:immilt<A>@D.EI_VERTM@	NimisanaLiOlV_<A>	;
 [Sall][Ny][Cs]imm<A>lle@D.EI_VERTM@:imm<A>lle@D.EI_VERTM@	Liitesana_<A>	;
 [Sall][Nm][Cs]immille@D.EI_VERTM@:immille@D.EI_VERTM@	Liitesana_<A>	;
 [Sab][Ny][Cs]imm<A>tt<A>@D.EI_VERTM@:imm<A>tt<A>@D.EI_VERTM@	Liitesana_<A>	;
