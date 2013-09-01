@@ -1354,6 +1354,8 @@ s:s	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	de:de	Johdin_tOn_<A>	;
 ?Nimisana	t:t	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	si:si	Johdin_mAinen_<A>	;
+?Laatusana	de:de	Voittoaste_<A>	;
+?Laatusana	s:s	Yliaste_<A>	;
 ?Sukija [Sill][Ny]tehe:tehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]sihi:sihi	<WC>LiOlN_<A>	;
 
@@ -1590,6 +1592,39 @@ m:m	Johdin_UUs_<A>	;
 ?Sukija [Sill][Ny]m<A>h<A>:m<A>h<A>	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]mihi:mihi	<WC>LiOlN_<A>	;
 ?Sukija [Sg][Nm]m<A>:m<A>	<WC>MonikonGenetiiviInJatko_<A>	;
+
+LEXICON NOUN Lämmin
+[Sn][Ny]min:min	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]pim<A>:pim<A>	Omistusliite_<A>	;
+[Sn][Nm]pim<A>t:pim<A>t	Liitesana_<A>	;
+[Sg][Ny]pim<A>n:pim<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+[Sg][Nm]pimi:pimi	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]pim<A><A>:pim<A><A>	<WC>LiOlV_<A>	;
+[Sp][Nm]pimi<A>:pimi<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]pim<A>n<A>:pim<A>n<A>	<WC>LiOlV_<A>	;
+pim:pim	<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]pim<A><A>:pim<A><A>	<WC>LiOlN_<A>	;
+[Sill][Nm]pimii:pimii	<WC>LiOlN_<A>	;
+pim<A>:pim<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+pim:pim	<WC>YhteisetMonikonPaikallissijat_<A>	;
+?Laatusana	pim<A>:pim<A>	Voittoaste_<A>	;
+?Laatusana	pim:pim	Yliaste_<A>	;
+
+LEXICON NOUN Vasen
+[Sn][Ny]n:n	<WC>NormaaliYsJatko_<A>	;
+?NotLaatusana	[Sn][Ny]mp<A>:mp<A>	Omistusliite_<A>	;
+[Sn][Nm]mm<A>t:mm<A>t	Liitesana_<A>	;
+[Sg][Ny]mm<A>n:mm<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+[Sg][Nm]mpi:mpi	<WC>MonikonGenetiiviEnJatko_<A>	;
+[Sp][Ny]mp<A><A>:mp<A><A>	<WC>LiOlV_<A>	;
+[Sp][Ny]nt<A>:nt<A>	<WC>LiOlV_<A>	;
+[Sp][Nm]mpi<A>:mpi<A>	<WC>LiOlV_<A>	;
+[Ses][Ny]mp<A>n<A>:mp<A>n<A>	<WC>LiOlV_<A>	;
+mm:mm	<WC>YhteisetMonikonSijat2_<A>	;
+[Sill][Ny]mp<A><A>:mp<A><A>	<WC>LiOlN_<A>	;
+[Sill][Nm]mpii:mpii	<WC>LiOlN_<A>	;
+mm<A>:mm<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+mm:mm	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Pahin
 [Ses][Ny]inn<A>:inn<A>	Liitesana_<A>	;
@@ -2745,7 +2780,7 @@ LEXICON Tulla_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
-Käskytapa_<A>	;
+Käskytapa_e_<A>	;
 EhtotapaTa_<A>	;
 Ehtotapa_<A>	;
 e:e	Johdin_vA_<A>	;
@@ -3272,6 +3307,7 @@ kse:kse	KestämänTekijäpääteHeikko_<A>	;
 s:s	TositavanKestämäTaan_<A>	;
 ks:ks	KertomanTekijäpääteVahva_<A>	;
 s:s	Käskytapa_<A>	;
+kse:kse	Käskytapa_y2_<A>	;
 ss:ss	Mahtotapa_<A>	;
 s:s	Johdin_tU_tA_<A>	;
 s:s	Johdin_sUt_<A>	;
@@ -3374,7 +3410,8 @@ LEXICON Käskytapa
 [Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	LiitesanaPaHan_<A>	;
 
 LEXICON Käskytapa_y2
-@D.VAIN_YM3@[Tk][Ap][P2][Ny]:@D.VAIN_YM3@	LiitesanaKaanPaHan_<A>	;
+@D.VAIN_YM3@[Tk][Ap][P2][Ny][Eb]:@D.VAIN_YM3@	LiitesanaPaHan_<A>	;
+[Tk][Ap][P2][Ny][Fkaan][Et]k<A><A>n:k<A><A>n	Loppu	;
 
 LEXICON Käskytapa_ttA
 tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;

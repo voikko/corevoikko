@@ -2040,3 +2040,11 @@ jumalten
 autuas
 autuus
 laupias
+lämmin
+lämpimän
+vasen
+vasemmalla
+vasenta
+uudemmassa
+uusimmassa
+tulekaan

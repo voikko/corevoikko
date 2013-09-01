@@ -412,3 +412,24 @@ word:asuin-Sveitsi
   analysis
     CLASS=paikannimi
     STRUCTURE==ppppp-=ipppppp
+word:juokse
+  expected:1
+  analysis
+    CLASS=teonsana
+    MOOD=imperative
+    NEGATIVE=both
+    NUMBER=singular
+    PERSON=2
+    STRUCTURE==pppppp
+    TENSE=present_simple
+word:juoksekaan
+  expected:1
+  analysis
+    CLASS=teonsana
+    FOCUS=kaan
+    MOOD=imperative
+    NEGATIVE=true
+    NUMBER=singular
+    PERSON=2
+    STRUCTURE==pppppppppp
+    TENSE=present_simple

@@ -109,6 +109,10 @@ VfstAnalyzer::VfstAnalyzer(const string & directoryName) throw(setup::Dictionary
 	possessiveMap.insert(std::make_pair(L"1m", L"1p"));
 	possessiveMap.insert(std::make_pair(L"2m", L"2p"));
 	possessiveMap.insert(std::make_pair(L"3", L"3"));
+	
+	negativeMap.insert(std::make_pair(L"t", L"true"));
+	negativeMap.insert(std::make_pair(L"f", L"false"));
+	negativeMap.insert(std::make_pair(L"b", L"both"));
 }
 
 list<Analysis *> * VfstAnalyzer::analyze(const wchar_t * word) {
@@ -330,6 +334,9 @@ void VfstAnalyzer::parseBasicAttributes(Analysis * analysis, const wchar_t * fst
 					}
 					else if (fstOutput[j + 1] == L'C') {
 						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "COMPARISON", comparisonMap);
+					}
+					else if (fstOutput[j + 1] == L'E') {
+						parseBasicAttribute(analysis, fstOutput, fstLen, i, j, "NEGATIVE", negativeMap);
 					}
 					break;
 				}

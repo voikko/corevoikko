@@ -83,6 +83,11 @@ Multichar_Symbols
 [Ap]  ! kestämä (preesens)
 [Ai]  ! kertoma (imperfekti)
 
+! Kieltomuodot (NEGATIVE-attribuutti)
+[Et]  ! true
+[Ef]  ! false
+[Eb]  ! both
+
 ! Johdoksiin liittyvät liput
 [Dg]  ! erisnimestä johdetaan yleisnimi
 [De]  ! erisnimen etuliitteenä kirjoitettava isolla alkukirjaimella
