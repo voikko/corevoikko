@@ -2048,3 +2048,5 @@ vasenta
 uudemmassa
 uusimmassa
 tulekaan
+pienemmillä
+kaakatelle

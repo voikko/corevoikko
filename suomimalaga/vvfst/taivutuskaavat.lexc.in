@@ -1275,6 +1275,7 @@ LEXICON NOUN Pieni
 e:e	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	e:e	Johdin_tOn_<A>	;
+?Laatusana	e:e	Voittoaste_<A>	;
 ?Sukija [Sill][Ny]ehe:ehe	<WC>LiOlN_<A>	;
 ?Sukija [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 
@@ -2841,6 +2842,7 @@ TositavanKertomaTiin_<A>	;
 TositavanKestämäLaan_<A>	;
 Käskytapa_<A>	;
 EhtotapaTa_<A>	;
+l:l	Mahtotapa_<A>	;
 Johdin_tAvA_<A>	;
 Johdin_lUt_<A>	;
 Johdin_tU_lA_<A>	;
@@ -3390,6 +3392,7 @@ LEXICON Mahtotapa
 @D.VAIN_YM3@[Tm][Ap][P1][Ny]en:@D.VAIN_YM3@en	Liitesana_<A>	;
 @D.VAIN_YM3@[Tm][Ap][P2][Ny]et:@D.VAIN_YM3@et	Liitesana_<A>	;
 [Tm][Ap][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tm][Ap][Et]e:e	Liitesana_<A>	;
 @D.VAIN_YM3@[Tm][Ap][P1][Nm]emme:@D.VAIN_YM3@emme	Liitesana_<A>	;
 @D.VAIN_YM3@[Tm][Ap][P2][Nm]ette:@D.VAIN_YM3@ette	Liitesana_<A>	;
 [Tm][Ap][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
