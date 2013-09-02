@@ -128,6 +128,7 @@ avaruustoimintaa
 Siiri-kauneusvoide
 NHL-painotteisella
 !selvännäkijä # selvänäkijä
+!kaunisjuoksija
 
 # = vain yhdyssanan jälkiosana =
 []

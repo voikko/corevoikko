@@ -380,7 +380,7 @@ combi_rule nimisana ($vasen, $oikea, $sana, $index):
   
   if $edellinen.luokka in <laatusana, nimi_laatusana> then
     if $edellinen.luokka = laatusana then
-      result $res, rules nimisanan_johdos;
+      result $res, rules johdin_laatusana_nimisanasta;
       stop;
     end;
   elseif $edellinen.lukutyyppi /= nil then
@@ -1782,6 +1782,58 @@ combi_rule nimisanan_johdos ($vasen, $oikea, $sana, $index):
   elseif $oikea.luokka in @johdin_jA then
     result $res, rules nimisanan_sijapääte, johdin_nimisana_laatusanasta, nimisanan_johdos;
   end;
+end;
+
+
+combi_rule johdin_laatusana_nimisanasta ($vasen, $oikea, $sana, $index):
+  ? $oikea.luokka in @johtimet_laatusana_nimisanasta;
+
+  define $edellinen := $vasen.($index - 1);
+  ? $oikea.luokka in $edellinen.jatko;
+
+  ? vokaalisointu_oikein($edellinen, $oikea);
+  if $oikea.äs = aä then $oikea.äs := $edellinen.äs; end;
+  define $res := $vasen + <[alku: $sana] + $oikea>;
+
+  if ($oikea.luokka = johdin_inen) then
+    if ($edellinen.tiedot /= nil and inen in $edellinen.tiedot) and
+        (($index = 2) or
+         (not ($vasen.($index - 2).luokka in <nimisana, laatusana, nimi_laatusana, etuliite>) and
+          ($vasen.($index - 2).sijamuoto /= omanto or $vasen.($index - 2).luku /= yksikkö)) or
+          ($index greater 3 and $vasen.($index - 3).lukutyyppi /= nil)) then
+      if omistusliite in $oikea.jatko then
+        result $res, rules omistusliite;
+      end;
+      if tavuviiva in $oikea.jatko then
+        result $res, rules yhdysmerkki_yleisnimen_jälkeen;
+      end;
+      if loppu in $oikea.jatko then
+        result $res, accept;
+      end;
+      if liitesana in $oikea.jatko then
+        result $res, rules liitesana;
+      end;
+      result $res,
+             rules laatusanan_sijapääte_omistusliitteellä, inen_johdos_nimisanasta,
+                   voitto_yliaste, johdin_nimisana_laatusanasta;
+    end;
+    stop;
+  end;
+
+  if tavuviiva in $oikea.jatko then
+    result $res, rules nimisana, laatusana, nimisana_teonsanasta,
+           etuliite, tavuviiva, inen_johdos_nimisanasta;
+  end;
+  if omistusliite in $oikea.jatko then
+    result $res, rules omistusliite;
+  end;
+  if loppu in $oikea.jatko then
+    result $res, accept;
+  end;
+  if liitesana in $oikea.jatko then
+    result $res, rules liitesana;
+  end;
+  result $res, rules laatusanan_sijapääte, voitto_yliaste, johdin_nimisana_laatusanasta;
 end;
 
 
