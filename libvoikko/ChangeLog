@@ -1,3 +1,6 @@
+2013-09-03 Harri Pitkänen <hatapitk@iki.fi>
+	* Internally standard and unspecified variant are not the same.
+
 2013-08-21 Harri Pitkänen <hatapitk@iki.fi>
 	* Improve Java API for distribution through Maven Central Repository.
 	* Fix test suite to work with latest Automake releases.

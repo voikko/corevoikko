@@ -64,7 +64,11 @@ VOIKKOEXPORT const char * voikko_dict_language(const voikko_dict * dict) {
 }
 
 VOIKKOEXPORT const char * voikko_dict_variant(const voikko_dict * dict) {
-	return dict->getLanguage().getPrivateUse().c_str();
+	const char * variant = dict->getLanguage().getPrivateUse().c_str();
+	if (variant && variant[0] != '\0') {
+		return variant;
+	}
+	return "standard";
 }
 
 VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
