@@ -2053,3 +2053,7 @@ kaakatelle
 sisimmässään
 tiennytkään
 vihreätä
+tehtiin
+lähtee
+tiettyyn
+juoksee

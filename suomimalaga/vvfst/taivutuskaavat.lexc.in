@@ -2583,6 +2583,8 @@ e:e	Johdin_ttAx_<A>	;
 
 LEXICON Tuntea_s
 [Tn1]e<A>:e<A>	Liitesana_<A>	;
+[Tt][P3][Ny]ee:ee	Liitesana_<A>	;
+[Tt][P3][Nm]ev<A>t:ev<A>t	Liitesana_<A>	;
 e:e	Käskytapa_<A>	;
 en:en	Mahtotapa_<A>	;
 e:e	Johdin_mA_<A>	;
@@ -3304,10 +3306,13 @@ LEXICON Taitaa
 Huutaa_s_<A>	;
 d:d	Huutaa_w_<A>	;
 n:n	Johdin_nUt_<A>	;
+Johdin_ttU_<A>	;
 
 LEXICON Juosta
 [Tn1]st<A>:st<A>	Liitesana_<A>	;
 kse:kse	KestämänTekijäpääteHeikko_<A>	;
+[Tt][P3][Ny]ksee:ksee      Liitesana_<A>   ;
+[Tt][P3][Nm]ksev<A>t:ksev<A>t      Liitesana_<A>   ;
 s:s	TositavanKestämäTaan_<A>	;
 ks:ks	KertomanTekijäpääteVahva_<A>	;
 s:s	Käskytapa_<A>	;
@@ -3325,6 +3330,7 @@ LEXICON Nähdä
 [Tn1]hd<A>:hd<A>	Liitesana_<A>	;
 e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
+h:h	TositavanKertomaTiin_<A>	;
 h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
 hd:hd	Johdin_nimitapa2_<A>	;
