@@ -2797,6 +2797,7 @@ Johdin_tU_lA_<A>	;
 
 LEXICON Tulla_l
 [Tn1]<A>:<A>	Liitesana_<A>	;
+Mahtotapa_<A>	;
 Johdin_nimitapa1A_<A>	;
 Johdin_nimitapa2_<A>	;
 
@@ -3171,6 +3172,7 @@ LEXICON Salata_w
 Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
 Käskytapa_ttA_<A>	;
+nn:nn	Mahtotapa_<A>	;
 Johdin_nimitapa1tA_<A>	;
 t:t	Johdin_nimitapa2_<A>	;
 Johdin_ttAx_<A>	;
@@ -3661,6 +3663,7 @@ LEXICON Johdin_ja_kantaja_myyjä
 [Sab][Nm]jitt<A>@C.JOHDETTAVA_NIMISANAKSI@:jitt<A>@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
 j@C.JOHDETTAVA_NIMISANAKSI@:j@C.JOHDETTAVA_NIMISANAKSI@	Johdin_ittAin_<A>	;
 [Sin][Nm]jin@C.JOHDETTAVA_NIMISANAKSI@:jin@C.JOHDETTAVA_NIMISANAKSI@	Liitesana_<A>	;
+[Sko][Nm]jine@C.JOHDETTAVA_NIMISANAKSI@:jine@C.JOHDETTAVA_NIMISANAKSI@	NimisanaLiOlV_<A>	;
 
 LEXICON Johdin_nti
 [Ln]n@C.JOHDETTAVA_NIMISANAKSI@:n@C.JOHDETTAVA_NIMISANAKSI@	NimisanaTunti_<A>	;

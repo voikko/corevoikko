@@ -2062,3 +2062,7 @@ sanottakoon
 annettakoon
 mainittakoon
 lisättäköön
+seuraajineen
+viitannee
+mennee
+Salmela-Järvinen

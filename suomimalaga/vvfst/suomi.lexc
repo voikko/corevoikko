@@ -23,6 +23,7 @@ LEXICON NimiYsJatko
 
 LEXICON PaikannimiYsJatko
 -[Bc]:-	Joukahainen_ep	;
+-[Bc]:-	Joukahainen_es	;
 -[Bc]:-	Joukahainen_nimisanat	;
 -[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
 -[Bc]:-	Loppu	;
