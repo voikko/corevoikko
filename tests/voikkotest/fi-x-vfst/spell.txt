@@ -1967,6 +1967,7 @@ Konttori-Gustafsson
 eräs
 eräässä
 he
+siihenhän
 meidän
 heitäkö
 hän
@@ -2057,3 +2058,7 @@ tehtiin
 lähtee
 tiettyyn
 juoksee
+sanottakoon
+annettakoon
+mainittakoon
+lisättäköön
