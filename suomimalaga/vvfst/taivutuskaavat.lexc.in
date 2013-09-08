@@ -1105,6 +1105,7 @@ LEXICON NOUN Suo_s
 <WC>YhteisetMonikonSijat2_<A>	;
 [Sill][Nm]ihi:ihi	<WC>LiOlN_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
+?Nimisana	Johdin_inen_vain_lipulla_<A>	;
 
 LEXICON NOUN Suo_l
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
@@ -1114,6 +1115,7 @@ LEXICON NOUN Suo_l
 [Ses][Ny]n<A>:n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetYksikönPaikallissijat_<A>	;
 ?Nimisana	Johdin_tOn_<A>	;
+?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Askel
 <WC>Taival_w_<A>	;
@@ -2926,6 +2928,7 @@ ts:ts	KertomanTekijäpääteVahva_<A>	;
 Tositapa4Tt_<A>	;
 ts:ts	Ehtotapa_<A>	;
 t:t	Käskytapa_<A>	;
+tse:tse	Käskytapa_y2_<A>	;
 Käskytapa_ttA_<A>	;
 nn:nn	Mahtotapa_<A>	;
 tse:tse	Johdin_mA_<A>	;
@@ -3326,6 +3329,7 @@ kse:kse	Käskytapa_y2_<A>	;
 ss:ss	Mahtotapa_<A>	;
 s:s	Johdin_tU_tA_<A>	;
 s:s	Johdin_sUt_<A>	;
+s:s	Johdin_nimitapa1tA_<A>	;
 st:st	Johdin_nimitapa2_<A>	;
 kse:kse	Johdin_mA_<A>	;
 kse:kse	Johdin_vA_<A>	;
@@ -3339,6 +3343,7 @@ h:h	TositavanKestämäDaan_<A>	;
 h:h	TositavanKertomaTiin_<A>	;
 h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
+h:h	Johdin_nimitapa1dA_<A>	;
 hd:hd	Johdin_nimitapa2_<A>	;
 h:h	Johdin_tU_dA_<A>	;
 h:h	Johdin_tAvA_<A>	;
