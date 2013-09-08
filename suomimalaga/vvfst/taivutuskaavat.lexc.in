@@ -228,6 +228,7 @@ k<O>:k<O>	<WC>YhteisetMonikonSijat2_<A>	;
 LEXICON NOUN Paperi
 <WC>Paperi_s_<A>	;
 <WC>Paperi_w_<A>	;
+?Laatusana	i:i	Johdin_Us_<A>	;
 
 LEXICON NOUN Killinki
 k:k	<WC>Paperi_s_<A>	;
