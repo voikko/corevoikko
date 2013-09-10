@@ -1,6 +1,25 @@
-LEXICON Poikkeavat_t    ! In alphabetical order.
+LEXICON Poikkeavat_n
+[Ln][Xp]yö[X]@P.INEN_KIELLETTY.ON@:@P.INEN_KIELLETTY.ON@	Yö	;
+
+LEXICON Poikkeavat_t
 [Lt][Xp]ei[X]e:e         Ei ;
 [Lt][Xp]lienee[X]lie:lie Lienee ;
 [Lt][Xp]olla[X]o:o       Olla ;
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
 [Lt][Xp]älkää[X]äl:äl    Älkää ;
+
+LEXICON Yö
+[Sn][Ny]yö:yö	NimisanaNormaaliYsJatko_ä	;
+[Sn][Nm]yöt:yöt	Liitesana_ä	;
+[Sg][Ny]yön:yön	NimisanaYksikönGenetiivinJatko_ä	;
+[Sg][Nm]öid:öid	NimisanaMonikonGenetiiviEnJatko_ä	;
+[Sg][Nm]öitt:öitt	NimisanaMonikonGenetiiviEnJatko_ä	;
+[Sp][Ny]yötä:yötä	NimisanaLiOlV_ä	;
+[Sp][Nm]öitä:öitä	NimisanaLiOlV_ä	;
+[Ses][Ny]yönä:yönä	NimisanaLiOlV_ä	;
+ö:ö	NimisanaYhteisetMonikonSijat2_ä	;
+[Sill][Ny]yöhö:yöhö	NimisanaLiOlN_ä	;
+[Sill][Nm]öihi:öihi	NimisanaLiOlN_ä	;
+yö:yö	NimisanaYhteisetYksikönPaikallissijat_ä	;
+ö:ö	NimisanaYhteisetMonikonPaikallissijat_ä	;
+yö:yö	Johdin_mAinen_ä	;

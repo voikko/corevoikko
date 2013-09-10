@@ -116,6 +116,6 @@
 [perusmuoto: "vääntää", alku: "vää", luokka: teonsana, jatko: <rakentaa>, äs: ä, tiedot: <ei_voikko>];
 [perusmuoto: "Xinhua", alku: "Xinhu", luokka: nimi, jatko: <peruna>, äs: a];
 [perusmuoto: "ylkä", alku: "yl", luokka: nimisana, jatko: <ylkä>, äs: ä];
-[perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö_yksikkö>, äs: ä, tiedot: <ei_inen, ei_sukija>];
-[perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö>, äs: ä, tiedot: <ei_inen, ei_voikko>];
-[perusmuoto: "yö", alku: "ö", luokka: nimisana, jatko: <yö_monikko>, äs: ä, tiedot: <ei_inen>];
+ [perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö_yksikkö>, äs: ä, tiedot: <ei_inen, ei_sukija>];
+ [perusmuoto: "yö", alku: "yö", luokka: nimisana, jatko: <yö>, äs: ä, tiedot: <ei_inen, ei_voikko>];
+ [perusmuoto: "yö", alku: "ö", luokka: nimisana, jatko: <yö_monikko>, äs: ä, tiedot: <ei_inen>];
