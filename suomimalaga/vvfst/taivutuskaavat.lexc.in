@@ -2043,11 +2043,11 @@ ts:ts	<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN YksikönGenetiivinJatko
 <WC>NormaaliYsJatko_<A>	;
-?Nimisana	[Bc]:	Joukahainen_l	;
-?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
-?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]@P.INEN_VAADITTU.ON@:	Joukahainen_ep	;
-?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
-?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Joukahainen_nimisanat	;
+?Nimisana	[Bc]:	Sanasto_l	;
+?Paikannimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
+?Paikannimi	@P.INEN_VAADITTU.ON@[Bc]@P.INEN_VAADITTU.ON@:	Sanasto_ep	;
+?Sukunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
+?Etunimi	@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@[Bc]:@P.PAIKANNIMEN_JL.ON@@P.YS_EI_JATKOA.ON@	Sanasto_nimisanat	;
 
 LEXICON NOUN MonikonGenetiiviInJatko
 in:in	<WC>NormaaliYsJatko_<A>	;
@@ -3583,7 +3583,7 @@ LEXICON Johdin_ittAin
 
 LEXICON Johdin_lAinen
 [Ll][Dg]l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@:l<A>i@C.EI_YKS@@D.INEN_KIELLETTY@@C.INEN_VAADITTU@	NimiLaatusanaNainen_<A>	;
-[Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_ep	;
+[Ll][Dg]l<A>is-[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:l<A>is-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_ep	;
 
 LEXICON Johdin_ttU
 [Ll]t@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@:t@P.JOHDETTAVA_LAATUSANAKSI.ON@@C.JOHDETTAVA_NIMISANAKSI@	LaatusanaHattu_<A>	;
@@ -3809,9 +3809,9 @@ Loppu	;
 [Sabl][Nm]%:ilt<A>:%:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]%:lle:%:lle	Liitesana_<A>	;
 [Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 -[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
--[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+-[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;

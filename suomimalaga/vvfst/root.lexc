@@ -150,40 +150,76 @@ Multichar_Symbols
 @U.LS.SADENM@ @U.LS.SABLNM@ @U.LS.SALLNM@ @U.LS.SABNM@ @U.LS.SINNM@ @U.LS.SKONM@
 
 LEXICON Root
-Joukahainen	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ee	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_em	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_ep	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_es	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_a	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
--[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
--[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Joukahainen_nimisanat	;
+Sanasto	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_ee	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_em	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_ep	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_es	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_a	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+-[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+-[Bc]@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_nimisanat	;
 LukusananAlku	;
 Asemosana	;
 
-LEXICON Joukahainen
-Poikkeavat_sanat ;
+LEXICON Sanasto
+Sanasto_ee	;
+Sanasto_em	;
+Sanasto_ep	;
+Sanasto_es	;
+Sanasto_h	;
+Sanasto_l	;
+Sanasto_n	;
+Sanasto_nl	;
+Sanasto_t	;
+Sanasto_p	;
+Sanasto_a	;
+Sanasto_s	;
+
+LEXICON Sanasto_ee
 Joukahainen_ee	;
+
+LEXICON Sanasto_em
 Joukahainen_em	;
+
+LEXICON Sanasto_ep
 Joukahainen_ep	;
+
+LEXICON Sanasto_es
 Joukahainen_es	;
+
+LEXICON Sanasto_h
 Joukahainen_h	;
+
+LEXICON Sanasto_l
 Joukahainen_l	;
+
+LEXICON Sanasto_n
 Joukahainen_n	;
+
+LEXICON Sanasto_nl
 Joukahainen_nl	;
+
+LEXICON Sanasto_t
 Joukahainen_t	;
+Poikkeavat_t	;
+
+LEXICON Sanasto_p
 Joukahainen_p	;
+
+LEXICON Sanasto_a
 Joukahainen_a	;
+
+LEXICON Sanasto_s
 Joukahainen_s	;
 
-LEXICON Joukahainen_nimisanat
-Joukahainen_n	;
-@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@:@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@	Joukahainen_nl	;
-@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_p	;
+LEXICON Sanasto_nimisanat
+Sanasto_n	;
+@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@:@P.EI_VERTM.ON@@P.VAIN_NIMISANA.ON@	Sanasto_nl	;
+@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
 
 LEXICON Erisnimet
-Joukahainen_ee	;
-Joukahainen_em	;
-Joukahainen_ep	;
-Joukahainen_es	;
+Sanasto_ee	;
+Sanasto_em	;
+Sanasto_ep	;
+Sanasto_es	;

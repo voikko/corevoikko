@@ -1,6 +1,6 @@
 LEXICON NimisanaYsJatko
 @C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@:@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@	YhdyssanaJatkuu	;
--[Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Joukahainen_a	;
+-[Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Sanasto_a	;
 
 LEXICON NimiLaatusanaYsJatko
 @C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@:@C.EI_YKS@@C.INEN_KIELLETTY@@P.INEN_SALLITTU.ON@	YhdyssanaJatkuu	;
@@ -10,49 +10,49 @@ NimiLaatusanaYsJatko	;
 
 LEXICON LaatusanaYsJatko
 InenLoppuisenYsJatko	;
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_nl	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
 
 LEXICON InenLoppuisenYsJatko
 @P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@:@P.INEN_VAADITTU.ON@@C.INEN_KIELLETTY@	YhdyssanaJatkuu	;
 
 LEXICON NimiYsJatko
--[Bc]:-	Joukahainen_em	;
--[Bc]:-	Joukahainen_nimisanat	;
--[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+-[Bc]:-	Sanasto_em	;
+-[Bc]:-	Sanasto_nimisanat	;
+-[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
 
 LEXICON PaikannimiYsJatko
--[Bc]:-	Joukahainen_ep	;
--[Bc]:-	Joukahainen_es	;
--[Bc]:-	Joukahainen_nimisanat	;
--[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+-[Bc]:-	Sanasto_ep	;
+-[Bc]:-	Sanasto_es	;
+-[Bc]:-	Sanasto_nimisanat	;
+-[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
-@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
+@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@[Bc]:@P.INEN_VAADITTU.ON@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 
 LEXICON SukunimiYsJatko
 -[Bc]:-	Erisnimet	;
--[Bc]:-	Joukahainen_nimisanat	;
--[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+-[Bc]:-	Sanasto_nimisanat	;
+-[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
 
 LEXICON EtunimiYsJatko
 -[Bc]:-	Erisnimet	;
--[Bc]:-	Joukahainen_nimisanat	;
--[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
+-[Bc]:-	Sanasto_nimisanat	;
+-[Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 -[Bc]:-	Loppu	;
 
 LEXICON AsemosanaYsJatko
 
 LEXICON YhdyssanaJatkuu
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
--[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Joukahainen_nimisanat	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
 -[Bh][Bc]@D.YS_EI_JATKOA@:-@D.YS_EI_JATKOA@	Loppu	;
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
--[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_l	;
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Joukahainen_l	;
--[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Joukahainen_l	;
-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Joukahainen_ep	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_l	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_l	;
+-[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_l	;
+[Bh][Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@:@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 -[Bc]@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@:-@D.YS_EI_JATKOA@@P.YS_ALKANUT.ON@@P.INEN_KIELLETTY.ON@	Erisnimet	;
 
 LEXICON Omistusliite_a
@@ -80,12 +80,12 @@ LEXICON Omistusliite_aä
 LEXICON EtuliitteenJatko_eln
 EtuliitteenJatko_eln2	;
 -:-	EtuliitteenJatko_eln2	;
--[Bc]:-	Joukahainen_ep	;
+-[Bc]:-	Sanasto_ep	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_eln2
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
-[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nimisanat	;
+[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nimisanat	;
 
 LEXICON EtuliitteenJatko_ell
 EtuliitteenJatko_ell2	;
@@ -93,10 +93,10 @@ EtuliitteenJatko_ell2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_ell2
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_nl	;
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_l	;
-[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
-[Bh][Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Joukahainen_n	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_nl	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
+[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
+[Bh][Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_n	;
 
 LEXICON EtuliitteenJatko_elt
 EtuliitteenJatko_elt2	;
@@ -104,7 +104,7 @@ EtuliitteenJatko_elt2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_elt2
-[Bh][Bc]:	Joukahainen_t	;
+[Bh][Bc]:	Sanasto_t	;
 
 LEXICON EtuliitteenJatko_eltj
 EtuliitteenJatko_eltj2	;
@@ -112,23 +112,23 @@ EtuliitteenJatko_eltj2	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_eltj2
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_t	;
-[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
+[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
 
 LEXICON EtuliitteenJatko_elleln
 EtuliitteenJatko_elleln2	;
 -:-	EtuliitteenJatko_elleln2	;
--[Bc]:-	Joukahainen_ep	;
+-[Bc]:-	Sanasto_ep	;
 -:-	Loppu	;
 
 LEXICON EtuliitteenJatko_elleln2
-[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@	Joukahainen_n	;
-[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Joukahainen_nl	;
-[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Joukahainen_l	;
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@	Joukahainen_t	;
-[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Joukahainen_t	;
-[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Joukahainen_p	;
-[Bh][Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Joukahainen_ep	;
+[Bh][Bc]@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@:@C.JOHDETTAVA_NIMISANAKSI@@P.INEN_SALLITTU.ON@	Sanasto_n	;
+[Bh][Bc]@P.INEN_SALLITTU.ON@:@P.INEN_SALLITTU.ON@	Sanasto_nl	;
+[Bh][Bc]@P.YS_ALKANUT.ON@:@P.YS_ALKANUT.ON@	Sanasto_l	;
+[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@@P.INEN_SALLITTU.ON@	Sanasto_t	;
+[Bh][Bc]@P.JOHDETTAVA_LAATUSANAKSI.ON@:@P.JOHDETTAVA_LAATUSANAKSI.ON@	Sanasto_t	;
+[Bh][Bc]@P.JOHDETTAVA_NIMISANAKSI.ON@:@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_p	;
+[Bh][Bc]@P.INEN_VAADITTU.ON@:@P.INEN_VAADITTU.ON@	Sanasto_ep	;
 
 LEXICON EtuliitteenJatko_ellelnelt
 EtuliitteenJatko_ellelnelt2	;
