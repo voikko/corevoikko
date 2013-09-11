@@ -142,8 +142,6 @@ re_logia_x = re.compile (u"\\A\[Ln\]\[Xp\](genealogia|trilogia)\[X\]")
 re_uusio_x = re.compile (u"\\A\[Ln\]\[Xp\](diffuusio)\[X\]")
 re_tio_x   = re.compile (u"\\A\[Ln\]\[Xp\](aitio)\[X\]")
 
-Joukahainen_t = re.compile (u"\\AJoukahainen_t.*;")
-
 re_A = re.compile (u"[aou]")
 
 
@@ -554,7 +552,7 @@ while True:
     if line == u"":
         break;
     outfile.write (line)
-    if line == u"LEXICON Joukahainen\n":
+    if line == u"LEXICON Sanasto\n":
         outfile.write (u"Sukija ;\n")
     generate_from_pattern (line, spelling_pattern_list)
     generate_word (line, sukija_dictionary)
