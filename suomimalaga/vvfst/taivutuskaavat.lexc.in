@@ -1156,6 +1156,7 @@ ken:ken	<WC>Taival_s_<A>	;
 
 LEXICON NOUN Taival_w
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
+[Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
 [Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 
@@ -2844,6 +2845,7 @@ LEXICON Katsella_w
 [Tn1]l<A>:l<A>	Liitesana_<A>	;
 Johdin_nimitapa1lA_<A>	;
 l:l	Johdin_nimitapa2_<A>	;
+Johdin_nimitapa2_tAessA_<A>	;
 [Ll]t<U>:t<U>	LaatusanaValo_s_<A>	;
 [Ll]t<U><U>:t<U><U>	LaatusanaValo_sl_<A>	;
 [Ll]l<U>:l<U>	LaatusanaValo_w_<A>	;
@@ -3464,6 +3466,9 @@ LEXICON Johdin_nimitapa2_AessA
 [Tn2]<A>ess<A>:<A>ess<A>	NimisanaLiOlV_<A>	;
 Johdin_nimitapa2_<A>	;
 
+LEXICON Johdin_nimitapa2_tAessA
+[Tn2]t<A>ess<A>:t<A>ess<A>	NimisanaLiOlV_<A>	;
+
 LEXICON Johdin_nimitapa3
 [Tn3][Ny][Sine]m<A>ss<A>:m<A>ss<A>	Liitesana_<A>	;
 [Tn3][Ny][Sela]m<A>st<A>:m<A>st<A>	Liitesana_<A>	;
@@ -3828,7 +3833,7 @@ LEXICON LukusanaYksi
 [Sab][Ny]hdett<A>:hdett<A>	Liitesana_<A>	;
 [Sn][Nm]hdet:hdet	LukusanaSnNy_<A>	;
 [Sg][Nm]ksien:ksien	Liitesana_<A>	;
-[Sp][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
+[Sp][Nm]ksi<A>:ksi<A>	Liitesana_<A>	;
 [Str][Nm]ksiksi:ksiksi	Liitesana_<A>	;
 [Ses][Nm]ksin<A>:ksin<A>	Liitesana_<A>	;
 [Sine][Nm]ksiss<A>:ksiss<A>	Liitesana_<A>	;
@@ -3856,7 +3861,7 @@ LEXICON LukusanaKaksi
 [Sab][Ny]hdett<A>:hdett<A>	LukusanaSabNy29_<A>	;
 [Sn][Nm]hdet:hdet	LukusanaSnNm29_<A>	;
 [Sg][Nm]ksien:ksien	LukusanaSgNm29_<A>	;
-[Sp][Nm]ksin<A>:ksin<A>	LukusanaSpNm29_<A>	;
+[Sp][Nm]ksi<A>:ksi<A>	LukusanaSpNm29_<A>	;
 [Str][Nm]ksiksi:ksiksi	LukusanaStrNm29_<A>	;
 [Ses][Nm]ksin<A>:ksin<A>	LukusanaSesNm29_<A>	;
 [Sine][Nm]ksiss<A>:ksiss<A>	LukusanaSineNm29_<A>	;
