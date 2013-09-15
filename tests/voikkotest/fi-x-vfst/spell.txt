@@ -2081,3 +2081,5 @@ neuvoteltaessa
 neuvotellessa
 ensimmäinen
 ensimmäisessä
+yhdellätoista
+yhdeksitoista

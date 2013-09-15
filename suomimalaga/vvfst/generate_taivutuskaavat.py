@@ -180,6 +180,12 @@ for sija in MULTI.keys():
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
 	numeralLines.append(lexiconName + u"Kertoimet\t;")
 	appendLines(u"Lukusana", sija + u"29", numeralLines, lexcFile)
+	
+	numeralLines = []
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
+	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
 
 lexcFile.close()
