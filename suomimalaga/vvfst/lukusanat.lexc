@@ -43,6 +43,7 @@ LEXICON Lukusana
 
 LEXICON Järjestysluku
 [Lu][Xp]ensimmäinen[X]ensimmäi:ensimmäi	JärjestyslukuNainen_ä	;
+[Lu][Xp]toinen[X]toi:toi	JärjestyslukuNainen_a	;
 
 LEXICON Erikoisluku
 [Lu][Xp]kolmi[X]kolmi:kolmi	LukusananJälkiliite	;

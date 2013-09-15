@@ -2083,3 +2083,4 @@ ensimmäinen
 ensimmäisessä
 yhdellätoista
 yhdeksitoista
+toisesta
