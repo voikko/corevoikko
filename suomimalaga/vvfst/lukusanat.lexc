@@ -1,5 +1,6 @@
 LEXICON LukusananAlku
 Lukusana	;
+Järjestysluku	;
 Erikoisluku	;
 NumeromerkinAlku	;
 LukusanaSgNy29Kertoimet	;
@@ -39,6 +40,9 @@ LEXICON Lukusana
 [Lu][Xp]seitsemän[X]seitsem:seitsem	LukusanaSeitsemän_ä	;
 [Lu][Xp]kahdeksan[X]kahdeks:kahdeks	LukusanaSeitsemän_a	;
 [Lu][Xp]yhdeksän[X]yhdeks:yhdeks	LukusanaSeitsemän_ä	;
+
+LEXICON Järjestysluku
+[Lu][Xp]ensimmäinen[X]ensimmäi:ensimmäi	JärjestyslukuNainen_ä	;
 
 LEXICON Erikoisluku
 [Lu][Xp]kolmi[X]kolmi:kolmi	LukusananJälkiliite	;

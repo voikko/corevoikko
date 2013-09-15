@@ -2079,3 +2079,5 @@ hiirensammalten
 kaksia
 neuvoteltaessa
 neuvotellessa
+ensimmäinen
+ensimmäisessä
