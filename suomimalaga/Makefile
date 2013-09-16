@@ -275,7 +275,15 @@ $(VVFST_BUILDDIR)/all-sukija.att: $(VVFST_BUILDDIR)/all-sukija.lexc $(VVFST_BUIL
 	foma -f $(VVFST_BUILDDIR)/main-sukija.foma | grep -v "defined but not used" 2>&1
 
 $(VVFST_BUILDDIR)/main-sukija.foma: $(VVFST_BUILDDIR)/main.foma
-	sed -e 's,/all,/all-sukija,'  < $^ > $@
+	sed -e 's,/all,/all-sukija,' -e 's/Lengthening;/Lengthening .o. OldH;/g' \
+            -e '\%set flag%idefine OldH a "[[H]]" -> a h a ,\
+            e "[[H]]" -> e h e ,\
+            i "[[H]]" -> i h i ,\
+            o "[[H]]" -> o h o ,\
+            u "[[H]]" -> u h u ,\
+            y "[[H]]" -> y h y ,\
+            ä "[[H]]" -> ä h ä ,\
+            ö "[[H]]" -> ö h ö ;\n' < $^ > $@
 
 $(VVFST_BUILDDIR)/mor-sukija.vfst: $(VVFST_BUILDDIR)/all-sukija.att
 	cat $^ | sort -n | voikkovfstc -o $@

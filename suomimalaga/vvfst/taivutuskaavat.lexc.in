@@ -2,125 +2,149 @@ LEXICON NOUN Valo
 <WC>Valo_s_<A>	;
 [[L]]:[[L]]	<WC>Valo_sl_<A>	;
 <WC>Valo_w_<A>	;
+?Sukija [[H]]:[[H]]	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Koko
 k<O>:k<O>	<WC>Valo_s_<A>	;
-k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
+k<O><O>:k<O><O>        <WC>Valo_sl_<A> ;
 [Sn][Nm]<O>t:<O>t	Liitesana_<A>	;
 [Sg][Ny]<O>n:<O>n	<WC>YksikönGenetiivinJatko_<A>	;
 <O>:<O>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 '<O>:'<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<O>:<O>	Johdin_tOn_<A>	;
+?Sukija k<O>h<O>:k<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Ruoko
 k<O>:k<O>	<WC>Valo_s_<A>	;
 k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 '<O>:'<O>	<WC>Valo_w_<A>	;
+?Sukija k<O>h<O>:k<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Alku
 k<U>:k<U>	<WC>Valo_s_<A>	;
 k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
 <U>:<U>	<WC>Valo_w_<A>	;
+?Sukija k<U>h<U>:k<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Luku
 k<U>:k<U>	<WC>Valo_s_<A>	;
 k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
 v<U>:v<U>	<WC>Valo_w_<A>	;
+?Sukija k<U>h<U>:k<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Tiuku
 k<U>:k<U>	<WC>Valo_s_<A>	;
 k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
 '<U>:'<U>	<WC>Valo_w_<A>	;
+?Sukija k<U>h<U>:k<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Aalto
 t<O>:t<O>	<WC>Valo_s_<A>	;
 t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
 l<O>:l<O>	<WC>Valo_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Anto
 t<O>:t<O>	<WC>Valo_s_<A>	;
 t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
 n<O>:n<O>	<WC>Valo_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Lintu
 t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
 n<U>:n<U>	<WC>Valo_w_<A>	;
+?Sukija t<U>h<U>:t<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Hanko
 k<O>:k<O>	<WC>Valo_s_<A>	;
 k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 g<O>:g<O>	<WC>Valo_w_<A>	;
+?Sukija k<O>h<O>:k<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Hattu
 t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
 <U>:<U>	<WC>Valo_w_<A>	;
+?Sukija t<U>h<U>:t<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Liitto
 t<O>:t<O>	<WC>Valo_s_<A>	;
 t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
 <O>:<O>	<WC>Valo_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Hinku
 k<U>:k<U>	<WC>Valo_s_<A>	;
 k<U><U>:k<U><U>	<WC>Valo_sl_<A>	;
 g<U>:g<U>	<WC>Valo_w_<A>	;
+?Sukija k<U>h<U>:k<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Hoppu
 p<U>:p<U>	<WC>Valo_s_<A>	;
 p<U><U>:p<U><U>	<WC>Valo_sl_<A>	;
 <U>:<U>	<WC>Valo_w_<A>	;
+?Sukija p<U>h<U>:p<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Kaarto
 t<O>:t<O>	<WC>Valo_s_<A>	;
 t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
 r<O>:r<O>	<WC>Valo_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Kippo
 p<O>:p<O>	<WC>Valo_s_<A>	;
 p<O><O>:p<O><O>	<WC>Valo_sl_<A>	;
 <O>:<O>	<WC>Valo_w_<A>	;
+?Sukija p<O>h<O>:p<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Sampo
 p<O>:p<O>	<WC>Valo_s_<A>	;
 p<O><O>:p<O><O>	<WC>Valo_sl_<A>	;
 m<O>:m<O>	<WC>Valo_w_<A>	;
+?Sukija p<O>h<O>:p<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Kumpu
 p<U>:p<U>	<WC>Valo_s_<A>	;
 p<U><U>:p<U><U>	<WC>Valo_sl_<A>	;
 m<U>:m<U>	<WC>Valo_w_<A>	;
+?Sukija p<U>h<U>:p<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Laatu
 t<U>:t<U>	<WC>Valo_s_<A>	;
 t<U><U>:t<U><U>	<WC>Valo_sl_<A>	;
 d<U>:d<U>	<WC>Valo_w_<A>	;
+?Sukija t<U>h<U>:t<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Apu
 p<U>:p<U>	<WC>Valo_s_<A>	;
 p<U><U>:p<U><U>	<WC>Valo_sl_<A>	;
 v<U>:v<U>	<WC>Valo_w_<A>	;
+?Sukija p<U>h<U>:p<U>h<U>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Lepo
 p<O>:p<O>	<WC>Valo_s_<A>	;
 p<O><O>:p<O><O>	<WC>Valo_sl_<A>	;
 v<O>:v<O>	<WC>Valo_w_<A>	;
+?Sukija p<O>h<O>:p<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Leuto
 t<O>:t<O>	<WC>Valo_s_<A>	;
 t<O><O>:t<O><O>	<WC>Valo_sl_<A>	;
 d<O>:d<O>	<WC>Valo_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Verkko
 k<O>:k<O>	<WC>Valo_s_<A>	;
 k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 <O>:<O>	<WC>Valo_w_<A>	;
+?Sukija k<O>h<O>:k<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Vihko
 k<O>:k<O>	<WC>Valo_s_<A>	;
 k<O><O>:k<O><O>	<WC>Valo_sl_<A>	;
 <O>:<O>	<WC>Valo_w_<A>	;
+?Sukija k<O>h<O>:k<O>h<O>	<WC>Valo_sl_<A>	;
 
 LEXICON NOUN Valo_w
 [Sn][Nm]t:t	Liitesana_<A>	;
@@ -151,32 +175,38 @@ LEXICON NOUN Arvelu
 <WC>Arvelu_s_<A>	;
 [[L]]:[[L]]	<WC>Arvelu_sl_<A>	;
 <WC>Arvelu_w_<A>	;
+?Sukija [[H]]:[[H]]	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Alanko
 k<O>:k<O>	<WC>Arvelu_s_<A>	;
 k<O><O>:k<O><O>	<WC>Arvelu_sl_<A>	;
 g<O>:g<O>	<WC>Arvelu_w_<A>	;
+?Sukija k<O>h<O>:k<O>h<O>	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Avanto
 t<O>:t<O>	<WC>Arvelu_s_<A>	;
 t<O><O>:t<O><O>	<WC>Arvelu_sl_<A>	;
 n<O>:n<O>	<WC>Arvelu_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Raamattu
 t<U>:t<U>	<WC>Arvelu_s_<A>	;
 t<U><U>:t<U><U>	<WC>Arvelu_sl_<A>	;
 <U>:<U>	<WC>Arvelu_w_<A>	;
+?Sukija t<U>h<U>:t<U>h<U>	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Pihatto
 t<O>:t<O>	<WC>Arvelu_s_<A>	;
 t<O><O>:t<O><O>	<WC>Arvelu_sl_<A>	;
 <O>:<O>	<WC>Arvelu_w_<A>	;
+?Sukija t<O>h<O>:t<O>h<O>	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Hontelo
 <O>:<O>	<WC>Arvelu_s_<A>	;
 <O><O>:<O><O>	<WC>Arvelu_sl_<A>	;
 <O>:<O>	<WC>Arvelu_w_<A>	;
 Johdin_UUs_<A>	;
+?Sukija <O>h<O>:<O>h<O>	<WC>Arvelu_sl_<A>	;
 
 LEXICON NOUN Arvelu_s
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
