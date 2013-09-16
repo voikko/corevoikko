@@ -44,6 +44,13 @@ LEXICON Lukusana
 LEXICON Järjestysluku
 [Lu][Xp]ensimmäinen[X]ensimmäi:ensimmäi	JärjestyslukuNainen_ä	;
 [Lu][Xp]toinen[X]toi:toi	JärjestyslukuNainen_a	;
+[Lu][Xp]kolmas[X]kolma:kolma	JärjestyslukuKahdeksas_a	;
+[Lu][Xp]neljäs[X]neljä:neljä	JärjestyslukuKahdeksas_ä	;
+[Lu][Xp]viides[X]viide:viide	JärjestyslukuKahdeksas_ä	;
+[Lu][Xp]kuudes[X]kuude:kuude	JärjestyslukuKahdeksas_a	;
+[Lu][Xp]seitsemäs[X]seitsemä:seitsemä	JärjestyslukuKahdeksas_ä	;
+[Lu][Xp]kahdeksas[X]kahdeksa:kahdeksa	JärjestyslukuKahdeksas_a	;
+[Lu][Xp]yhdeksäs[X]yhdeksä:yhdeksä	JärjestyslukuKahdeksas_ä	;
 
 LEXICON Erikoisluku
 [Lu][Xp]kolmi[X]kolmi:kolmi	LukusananJälkiliite	;

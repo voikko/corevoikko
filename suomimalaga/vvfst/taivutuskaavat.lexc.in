@@ -4075,3 +4075,28 @@ LEXICON JärjestyslukuNainen
 [Sab][Ny]sett<A>:sett<A> Liitesana_<A> ;
 [Sab][Nm]sitt<A>:sitt<A> Liitesana_<A> ;
 [Sin][Nm]sin:sin Liitesana_<A> ;
+
+LEXICON JärjestyslukuKahdeksas
+[Sn][Ny]s:s Liitesana_<A> ;
+[Sn][Nm]nnet:nnet Liitesana_<A> ;
+[Sg][Ny]nnen:nnen Liitesana_<A> ;
+[Sg][Nm]nsien:nsien Liitesana_<A> ;
+[Sp][Ny]tt<A>:tt<A> Liitesana_<A> ;
+[Sp][Nm]nsi<A>:nsi<A> Liitesana_<A> ;
+[Ses][Ny]nten<A>:nten<A> Liitesana_<A> ;
+[Ses][Nm]nsin<A>:nsin<A> Liitesana_<A> ;
+[Sine][Ny]nness<A>:nness<A> Liitesana_<A> ;
+[Sine][Nm]nsiss<A>:nsiss<A> Liitesana_<A> ;
+[Sela][Ny]nnest<A>:nnest<A> Liitesana_<A> ;
+[Sela][Nm]nsist<A>:nsist<A> Liitesana_<A> ;
+[Sill][Ny]nteen:nteen Liitesana_<A> ;
+[Sill][Nm]nsiin:nsiin Liitesana_<A> ;
+[Sade][Ny]nnell<A>:nnell<A> Liitesana_<A> ;
+[Sade][Nm]nsill<A>:nsill<A> Liitesana_<A> ;
+[Sabl][Ny]nnelt<A>:nnelt<A> Liitesana_<A> ;
+[Sabl][Nm]nsilt<A>:nsilt<A> Liitesana_<A> ;
+[Sall][Ny]nnelle:nnelle Liitesana_<A> ;
+[Sall][Nm]nsille:nsille Liitesana_<A> ;
+[Sab][Ny]nnett<A>:nnett<A> Liitesana_<A> ;
+[Sab][Nm]nsitt<A>:nsitt<A> Liitesana_<A> ;
+[Sin][Nm]nsin:nsin Liitesana_<A> ;
