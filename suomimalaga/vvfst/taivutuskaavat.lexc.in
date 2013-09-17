@@ -806,6 +806,7 @@ LEXICON NOUN Matala
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Laatusana	Johdin_UUs_<A>	;
 ?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema
 <WC>Asema_s_<A>	;
@@ -826,6 +827,8 @@ LEXICON NOUN Asema_s
 [Ses][Ny]<A>n<A>:<A>n<A>	<WC>LiOlV_<A>	;
 <WC>YhteisetMonikonSijat2_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Asema_w
 [Sn][Nm]<A>t:<A>t	Liitesana_<A>	;
@@ -891,6 +894,8 @@ LEXICON NOUN Karahka
 <O>:<O>	<WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Solakka
 k:k	<WC>Solakka_s_<A>	;
@@ -930,6 +935,8 @@ LEXICON NOUN Solakka_s
 [Sill][Nm]<O>ihi:<O>ihi	<WC>LiOlN_<A>	;
 ?Paikannimi	<A>:<A>	Johdin_lAinen_<A>	;
 ?Nimisana	<A>:<A>	Johdin_mAinen_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 ! Harhaanjohtava nimi, oikea esimerkkisana "hunaja"
 LEXICON NOUN Apaja
@@ -951,6 +958,8 @@ LEXICON NOUN Apaja
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
+?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 ! Parempi esimerkkisana "pakana"
 LEXICON NOUN Peruna
@@ -972,6 +981,7 @@ LEXICON NOUN Peruna
 ?Laatusana	Johdin_UUs_<A>	;
 ?Nimisana	<A>:<A>	Johdin_inen_vain_lipulla_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Korkea
@@ -998,6 +1008,7 @@ LEXICON NOUN Ainoa
 ?Laatusana	Yliaste_<A>	;
 ?Laatusana	Johdin_Us_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija [Sp][Ny]<A>t<A>:<A>t<A>	Liitesana_<A>	;
 ?Sukija [Sill][Ny]<A>h<A>:<A>h<A>	<WC>LiOlN_<A>	;
 
 LEXICON NOUN Suurempi
@@ -2453,6 +2464,7 @@ tel:tel	<WC>Katsella_s_<A>	;
 [Ln]t<O>:t<O>	NimisanaValo_s_<A>	;
 [Ln]t<O><O>:t<O><O>	NimisanaValo_sl_<A>	;
 [Ln]r<O>:r<O>	NimisanaValo_w_<A>	;
+?Sukija [Ln]t<O>h<O>:t<O>h<O>	NimisanaValo_sl_<A>	;
 
 LEXICON Pahentaa
 n:n	<WC>Huutaa_w_<A>	;
@@ -2887,6 +2899,7 @@ l:l	Mahtotapa_<A>	;
 Johdin_tAvA_<A>	;
 Johdin_lUt_<A>	;
 Johdin_tU_lA_<A>	;
+?Sukija [Ll]t<U>h<U>:t<U>h<U>	LaatusanaValo_sl_<A>	;
 
 LEXICON Katsella_s
 e:e	KestämänTekijäpääteHeikko_<A>	;
@@ -3463,6 +3476,8 @@ LEXICON Käskytapa
 @D.VAIN_YM3@[Tk][Ap][P2][Nm]k<A><A>tte:@D.VAIN_YM3@k<A><A>tte	LiitesanaPaHan_<A>	;
 [Tk][Ap][P3][Ny]k<O><O>n:k<O><O>n	LiitesanaPaHan_<A>	;
 [Tk][Ap][P3][Nm]k<O><O>t:k<O><O>t	LiitesanaPaHan_<A>	;
+?Sukija [Tk][Ap][P3][Ny]k<O>h<O>n:k<O>h<O>n	LiitesanaPaHan_<A>	;
+?Sukija [Tk][Ap][P3][Nm]k<O>h<O>t:k<O>h<O>t	LiitesanaPaHan_<A>	;
 
 LEXICON Käskytapa_y2
 @D.VAIN_YM3@[Tk][Ap][P2][Ny][Eb]:@D.VAIN_YM3@	LiitesanaPaHan_<A>	;
@@ -3471,6 +3486,7 @@ LEXICON Käskytapa_y2
 LEXICON Käskytapa_ttA
 tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
 tt<A>k<O>:tt<A>k<O>	Loppu	;
+?Sukija tt<A>k<O>h<O>n:tt<A>k<O>h<O>n	Loppu	;
 
 LEXICON Johdin_nimitapa1dA
 d:d	Johdin_nimitapa1A_<A>	;
@@ -3643,6 +3659,7 @@ LEXICON NOUN Katseltu
 t<U>:t<U>       <WC>Valo_s_<A>  ;
 t<U><U>:t<U><U> <WC>Valo_sl_<A> ;
 l<U>:l<U>       <WC>Valo_w_<A>  ;
+?Sukija t<U>h<U>:t<U>h<U> <WC>Valo_sl_<A> ;
 
 LEXICON Kerronto_sti
 @D.VAIN_NIMISANA@[Ssti]sti:@D.VAIN_NIMISANA@sti	Liitesana_<A>	;
