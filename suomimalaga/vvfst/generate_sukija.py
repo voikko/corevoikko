@@ -82,6 +82,7 @@ def makeRe (wordClass, word):
 def replace (s, old, new):
     u = s.replace (old + u":", new + u":")
     u = u.replace (old + u" ", new + u" ")
+    u = u.replace (old + u"\t", new + u"\t")
     u = u.replace (old + u"@", new + u"@")
     return u
 
@@ -296,6 +297,7 @@ def generate_from_pattern (line, pattern_list):
 #
 word_list = [
     (u"aarteisto",        (u"aarteisto",     u"aartehisto")),
+    (u"aggressiivinen",   (u"aggressiivi",   u"akressiivi")),
     (u"aikainen",         (u"aikai",         u"aikahi")),
     (u"ainainen",         (u"ainai",         u"ainahi")),
     (u"aineisto",         (u"aineisto",      u"ainehisto")),
@@ -309,12 +311,20 @@ word_list = [
     (u"emali",            (u"emal",          u"emalj")),
     (u"eteinen",          (u"etei",          u"etehi")),
     (u"evankelinen",      (u"evankeli",      u"evankeeli")),
-    (u"hevonen",        (u"hevo",        u"hevoi")),
-    (u"humaaninen",     (u"humaani",     u"humani")),
-    (u"husaari",        (u"husaar",      u"husar")),
-    (u"huumori",        (u"huumor",      u"humor")),
-    (u"invalidi",       (u"invalid",     u"invaliid")),
-    (u"juridinen",      (u"juridi",      u"juriidi")),
+    (u"hevonen",          (u"hevo",          u"hevoi")),
+    (u"humaaninen",       (u"humaani",       u"humani")),
+    (u"husaari",          (u"husaar",        u"husar")),
+    (u"huumori",          (u"huumor",        u"humor")),
+    (u"invalidi",         (u"invalid",       u"invaliid")),
+    (u"juridinen",        (u"juridi",        u"juriidi")),
+    (u"kahdeksainen",        (u"kahdeksai",         u"kaheksai")),
+    (u"kahdeksan",           (u"kahdeks",           u"kaheks")),
+    (u"kahdeksankymppinen",  (u"kahdeksankymppi",   u"kaheksankymppi")),
+    (u"kahdeksankertaistaa", (u"kahdeksankertaist", u"kaheksankertaist")),
+    (u"kahdeksankymmen",     (u"kahdeksankymmen",   u"kaheksankymmen")),
+    (u"kahdeksanlainen",     (u"kahdeksanlai",      u"kaheksanlai")),
+    (u"kahdeksannes",        (u"kahdeksanne",       u"kaheksanne")),
+    (u"kahdeksas",           (u"kahdeksa",          u"kaheksa")),
     (u"kaleeri",        (u"kaleer",      u"kaler")),
     (u"kamari",         (u"kamar",       u"kammar")),
     (u"kameli",         (u"kamel",       u"kameel")),
@@ -376,6 +386,14 @@ word_list = [
     (u"tällainen",      ((u"tällai",     u"tälläi", u"NimiLaatusanaNainen_a", u"NimiLaatusanaNainen_ä"), )),
     (u"upseeri",        (u"upseer",      u"upser", u"upsier")),
     (u"upseeristo",     (u"upseeristo",  u"upsieristo")),
+    (u"yhdeksäinen",        (u"yhdeksäi",         u"yheksäi")),
+    (u"yhdeksän",           (u"yhdeks",           u"yheks")),
+    (u"yhdeksänkymppinen",  (u"yhdeksänkymppi",   u"yheksänkymppi")),
+    (u"yhdeksänkertaistaa", (u"yhdeksänkertaist", u"yheksänkertaist")),
+    (u"yhdeksänkymmen",     (u"yhdeksänkymmen",   u"yheksänkymmen")),
+    (u"yhdeksänlainen",     (u"yhdeksänlai",      u"yheksänlai")),
+    (u"yhdeksännes",        (u"yhdeksänne",       u"yheksänne")),
+    (u"yhdeksäs",           (u"yhdeksä",          u"yheksä")),
 
     (u"ien",     [u"[Ln][Xp]ien[X]iken[Sn][Ny]e:ikene Loppu ;"]),
     (u"kappale", [u"[Ln][Xp]kappale[X]kappal[Sg][Nm]ten:kappalten # ;"]),
