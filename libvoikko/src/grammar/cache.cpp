@@ -29,23 +29,27 @@
 #include "utils/utils.hpp"
 #include "grammar/cachesetup.hpp"
 #include "grammar/cache.hpp"
-#include "grammar/checks.hpp"
-#include "grammar/analysis.hpp"
-#include "grammar/check/CapitalizationCheck.hpp"
-#include "grammar/check/MissingVerbCheck.hpp"
-#include "grammar/check/NegativeVerbCheck.hpp"
-#include "grammar/check/CompoundVerbCheck.hpp"
-#include "grammar/check/SidesanaCheck.hpp"
+#include "grammar/FinnishAnalysis.hpp"
+#include "grammar/FinnishRuleEngine.hpp"
+#include "grammar/HfstAnalysis.hpp"
+#include "grammar/CgRuleEngine.hpp"
 #include <cstring>
 #include <cstdlib>
 
-#ifdef HAVE_MALAGA
-	#include "autocorrect/AutoCorrect.hpp"
-#endif
+//#include "grammar/FinnishRuleEngine/CapitalizationCheck.hpp"
+//#include "grammar/FinnishRuleEngine/checks.hpp"
+//#include "grammar/FinnishRuleEngine/MissingVerbCheck.hpp"
+//#include "grammar/FinnishRuleEngine/NegativeVerbCheck.hpp"
+//#include "grammar/FinnishRuleEngine/CompoundVerbCheck.hpp"
+//#include "grammar/FinnishRuleEngine/SidesanaCheck.hpp"
+//#ifdef HAVE_MALAGA
+//	#include "autocorrect/AutoCorrect.hpp"
+//#endif
 
 
 using namespace libvoikko::grammar;
-using namespace libvoikko::autocorrect;
+
+//using namespace libvoikko::autocorrect;
 
 namespace libvoikko {
 
@@ -81,7 +85,9 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 	}
 	memcpy(voikkoOptions->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
 	voikkoOptions->gc_cache.paragraph[textlen] = L'\0';
-	Paragraph * para = gc_analyze_paragraph(voikkoOptions, text, textlen);
+	//FinnishAnalysis analyser;
+	HfstAnalysis analyser;
+	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
 	if (!para) {
 		return;
 	}
@@ -109,28 +115,36 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 		}
 	}
 	
-	check::CapitalizationCheck capitalizationCheck;
-	check::NegativeVerbCheck negativeVerbCheck;
-	check::CompoundVerbCheck compoundVerbCheck;
-	check::SidesanaCheck sidesanaCheck;
-	check::MissingVerbCheck missingVerbCheck;
-	for (size_t i = 0; i < para->sentenceCount; i++) {
+	//check::CapitalizationCheck capitalizationCheck;
+	//check::NegativeVerbCheck negativeVerbCheck;
+	//check::CompoundVerbCheck compoundVerbCheck;
+	//check::SidesanaCheck sidesanaCheck;
+	//check::MissingVerbCheck missingVerbCheck;
+	FinnishRuleEngine checks;
+	CgRuleEngine cgchecks;
+	cgchecks.load(std::string("/home/fran/.voikko/4/se-x-standard/sme-gramchk.bin"));
+/*	for (size_t i = 0; i < para->sentenceCount; i++) {
 #ifdef HAVE_MALAGA
 		// TODO: Autocorrect data should be moved to a separate data file (VFST) in
 		// later format revisions. Old implementation is only available to support
 		// v2 dictionary format.
 		AutoCorrect::autoCorrect(voikkoOptions, para->sentences[i]);
 #endif
-		gc_local_punctuation(voikkoOptions, para->sentences[i]);
-		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
-		gc_repeating_words(voikkoOptions, para->sentences[i]);
-		negativeVerbCheck.check(voikkoOptions, para->sentences[i]);
-		compoundVerbCheck.check(voikkoOptions, para->sentences[i]);
-		sidesanaCheck.check(voikkoOptions, para->sentences[i]);
-		missingVerbCheck.check(voikkoOptions, para->sentences[i]);
+//		gc_local_punctuation(voikkoOptions, para->sentences[i]);
+//		gc_punctuation_of_quotations(voikkoOptions, para->sentences[i]);
+//		gc_repeating_words(voikkoOptions, para->sentences[i]);
+//		negativeVerbCheck.check(voikkoOptions, para->sentences[i]);
+//		compoundVerbCheck.check(voikkoOptions, para->sentences[i]);
+//		sidesanaCheck.check(voikkoOptions, para->sentences[i]);
+//		missingVerbCheck.check(voikkoOptions, para->sentences[i]);
+		checks.check(voikkoOptions, para->sentences[i]);
 	}
-	capitalizationCheck.check(voikkoOptions, para);
-	gc_end_punctuation(voikkoOptions, para);
+	//capitalizationCheck.check(voikkoOptions, para);
+	//gc_end_punctuation(voikkoOptions, para);
+*/
+	checks.check(voikkoOptions, para);
+	cgchecks.check(voikkoOptions, para);
+
 	delete para;
 }
 

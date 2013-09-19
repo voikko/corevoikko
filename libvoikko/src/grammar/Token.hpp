@@ -30,7 +30,13 @@
 #define VOIKKO_GRAMMAR_TOKEN
 
 #include <stddef.h>
+#include <cstdlib>
+#include <cstring>
+#include <list>
+#include "morphology/Analysis.hpp"
 #include "voikko_enums.h"
+
+using namespace std;
 
 namespace libvoikko { namespace grammar {
 
@@ -103,6 +109,9 @@ class Token {
 		
 		/** Position of this token within paragraph */
 		size_t pos;
+
+		/** List of analyses */
+		list<morphology::Analysis *> * analyses;
 };
 
 } }
