@@ -4067,6 +4067,10 @@ Liitesana_<A>	;
 LukusananJälkiliite	;
 [Bc]:	Lukusana	;
 
+LEXICON JärjestyslukuLiitesana
+Liitesana_<A>	;
+[Bc]:	Järjestysluku	;
+
 LEXICON JärjestyslukuNainen
 [Sn][Ny]nen:nen Liitesana_<A> ;
 [Sn][Nm]set:set Liitesana_<A> ;
@@ -4102,7 +4106,7 @@ LEXICON JärjestyslukuKahdeksas
 [Sp][Nm]nsi<A>:nsi<A> Liitesana_<A> ;
 [Ses][Ny]nten<A>:nten<A> Liitesana_<A> ;
 [Ses][Nm]nsin<A>:nsin<A> Liitesana_<A> ;
-[Sine][Ny]nness<A>:nness<A> Liitesana_<A> ;
+[Sine][Ny]nness<A>:nness<A> JärjestyslukuSineNy39_<A> ;
 [Sine][Nm]nsiss<A>:nsiss<A> Liitesana_<A> ;
 [Sela][Ny]nnest<A>:nnest<A> Liitesana_<A> ;
 [Sela][Nm]nsist<A>:nsist<A> Liitesana_<A> ;

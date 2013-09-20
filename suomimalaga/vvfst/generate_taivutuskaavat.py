@@ -187,5 +187,30 @@ for sija in MULTI.keys():
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
 	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
+MULTI_ORDINALS = {
+	u"SineNy": [u"kymmenennessä", u"sadannessa", u"tuhannennessa"]
+}
+
+for sija in MULTI_ORDINALS.keys():
+	diacritic = u"@U.LS." + sija.upper() + u"@"
+	lexiconName = u"Järjestysluku" + sija + u"39"
+	
+	lexcFile.write(u"LEXICON " + lexiconName + u"Kertoimet\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][0] + u":" + diacritic + MULTI_ORDINALS[sija][0] + u"\t" + lexiconName + u"_ä\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][1] + u":" + diacritic + MULTI_ORDINALS[sija][1] + u"\t" + lexiconName + u"_a\t;\n")
+	lexcFile.write(u"[Bc]" + diacritic + MULTI_ORDINALS[sija][2] + u":" + diacritic + MULTI_ORDINALS[sija][2] + u"\t" + lexiconName + u"_a\t;\n")
+	
+	numeralLines = []
+	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
+	#numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	numeralLines.append(lexiconName + u"Kertoimet\t;")
+	appendLines(u"Järjestysluku", sija + u"39", numeralLines, lexcFile)
+	
+	numeralLines = []
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
+	#numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	#numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
+	appendLines(u"Järjestysluku", sija + u"1", numeralLines, lexcFile)
+
 
 lexcFile.close()
