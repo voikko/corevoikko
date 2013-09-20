@@ -2943,6 +2943,7 @@ LEXICON HaravoidaKanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;
 i:i	Johdin_nimitapa1dA_<A>	;
 id:id	Johdin_nimitapa2_<A>	;
+i:i	Johdin_nimitapa2_tAessA_<A>	;
 i:i	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
@@ -3136,6 +3137,7 @@ LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
+s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
@@ -3828,8 +3830,14 @@ LEXICON Loppu
 Loppu	;
 
 LEXICON Lyhenne
+LyhenteenTaivutuspääte_<A>	;
 Loppu	;
 -[Bc]:-	Loppu	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
+-[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+
+LEXICON LyhenteenTaivutuspääte
 [Sn][Nm]%:t:%:t	Liitesana_<A>	;
 [Sg][Ny]%:n:%:n	Liitesana_<A>	;
 [Sg][Ny]%:<A>n:%:<A>n	Liitesana_<A>	;
@@ -3861,9 +3869,6 @@ Loppu	;
 [Sabl][Nm]%:ilt<A>:%:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]%:lle:%:lle	Liitesana_<A>	;
 [Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
--[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
