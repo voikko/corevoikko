@@ -188,7 +188,17 @@ for sija in MULTI.keys():
 	appendLines(u"Lukusana", sija + u"1", numeralLines, lexcFile)
 
 MULTI_ORDINALS = {
-	u"SineNy": [u"kymmenennessä", u"sadannessa", u"tuhannennessa"]
+	u"SgNy": [u"kymmenennen", u"sadannen", u"tuhannennen"],
+	u"SpNy": [u"kymmenettä", u"sadannetta", u"tuhannetta"],
+	u"StrNy": [u"kymmenenneksi", u"sadanneksi", u"tuhannenneksi"],
+	u"SesNy": [u"kymmenentenä", u"sadantena", u"tuhannentena"],
+	u"SineNy": [u"kymmenennessä", u"sadannessa", u"tuhannennessa"],
+	u"SelaNy": [u"kymmenennestä", u"sadannesta", u"tuhannennesta"],
+	u"SillNy": [u"kymmenenteen", u"sadanteen", u"tuhannenteen"],
+	u"SadeNy": [u"kymmenennellä", u"sadannella", u"tuhannennella"],
+	u"SablNy": [u"kymmenenneltä", u"sadannelta", u"tuhannennelta"],
+	u"SallNy": [u"kymmenennelle", u"sadannelle", u"tuhannennelle"],
+	u"SabNy": [u"kymmenennettä", u"sadannetta", u"tuhannennetta"]
 }
 
 for sija in MULTI_ORDINALS.keys():
