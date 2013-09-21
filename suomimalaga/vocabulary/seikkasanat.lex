@@ -44,55 +44,31 @@
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "edessä", alku: "ede", luokka: seikkasana, jatko: @heikkoasteiset_paikallissijat, äs: ä];
 [perusmuoto: "eksyksissä", alku: "eksyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
-[perusmuoto: "ennallaan", alku: "ennalla", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "ennallaan", alku: "ennalle", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "ensin", alku: "ensin", luokka: seikkasana, jatko: <olento_nA, liitesana, loppu>, äs: ä];
-[perusmuoto: "entuudelta", alku: "entuudelta", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
-[perusmuoto: "entuudelta", alku: "entuudesta", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
 [perusmuoto: "etäällä", alku: "etää", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "etäämpänä", alku: "etääm", luokka: seikkasana, jatko: <sivumpana>, äs: ä];
 [perusmuoto: "hajalla", alku: "haja", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "hallussa", alku: "hallu", luokka: seikkasana, jatko: @sisä_ssA_stA, äs: a];
 [perusmuoto: "hallussa", alku: "haltu", luokka: seikkasana, jatko: <sisätulento_Vn>, äs: a];
-[perusmuoto: "haltioissa", alku: "haltioihi", luokka: seikkasana, jatko: <omistusliite>, äs: a];
-[perusmuoto: "haltioissa", alku: "haltioissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "henkihieverissä", alku: "henkihieveri", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä, rakenne: "=ppppp=pppppppppp"];
 [perusmuoto: "hereillä", alku: "here", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: ä];
-[perusmuoto: "hiljakseen", alku: "hiljakse", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "housusilla", alku: "housusilla", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ys_perusosa>]; # Myös uimahoususillaan
 [perusmuoto: "housusilla", alku: "housusille", luokka: seikkasana, jatko: <omistusliite>, äs: a, tiedot: <ys_perusosa>]; # Myös uimahoususilleen
 [perusmuoto: "housusilla", alku: "housus", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: a, tiedot: <ei_voikko>];
 [perusmuoto: "hujakassa", alku: "hujaka", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a];
 [perusmuoto: "huosta", alku: "huosta", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + <loppu>, äs: a];
-[perusmuoto: "hyvillään", alku: "hyville", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "hyvillään", alku: "hyvillä", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "hyvineen", alku: "hyvine", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "hyväksi", alku: "hyväkse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
-[perusmuoto: "hyvänään", alku: "hyvänä", luokka: seikkasana, jatko: <omistusliite>, äs: ä]; # "Pidä hyvänäsi."
 [perusmuoto: "hörö", alku: "hörö", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä]; # Vain -Vn-omistusliite käy
 [perusmuoto: "ilkosilla", alku: "ilkosi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "illemmalla", alku: "illemma", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "istualla", alku: "istua", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "itsetykönä", alku: "itsetykönä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppp=pppppp"];
 [perusmuoto: "jalkeilla", alku: "jalke", luokka: seikkasana, jatko: @ulkopaikallissijat_monikko, äs: a];
-[perusmuoto: "joutessa", alku: "joutessa", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
 [perusmuoto: "juovuksissa", alku: "juovuksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: a];
-[perusmuoto: "juovuspäissä", alku: "juovuspäissä", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
-[perusmuoto: "juttusilla", alku: "juttusilla", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
-[perusmuoto: "juttusilla", alku: "juttusille", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
-[perusmuoto: "juttusilla", alku: "juttusilta", luokka: seikkasana, jatko: <liitesana, omistusliite, loppu>, äs: a];
-[perusmuoto: "jälkeen", alku: "jälkee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "karku", alku: "karku", luokka: seikkasana, jatko: <osanto_A, sisätulento_Vn>, äs: a]; # Omistusliitteet hyvin harvinaisia.
 [perusmuoto: "karku", alku: "karu", luokka: seikkasana, jatko: <sisäolento_ssA>, äs: a]; # Omistusliitteet hyvin harvinaisia.
-[perusmuoto: "kauttaalta", alku: "kauttaalta", luokka: seikkasana, jatko: <omistusliite>, äs: a];
 [perusmuoto: "kelteisillä", alku: "kelteisi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
 [perusmuoto: "keskellä", alku: "keske", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: ä];
-[perusmuoto: "keskenään", alku: "keskenä", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "keskessä", alku: "keske", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "keväämmällä", alku: "kevääm", luokka: seikkasana, jatko: <keväämmällä>, äs: ä];
-[perusmuoto: "kiihdyksissä", alku: "kiihdyksiin", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
-[perusmuoto: "kiihdyksissä", alku: "kiihdyksissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
-[perusmuoto: "kiukuspäissä", alku: "kiukuspäissä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä, rakenne: "=pppppp=pppppp"];
 [perusmuoto: "koetteilla", alku: "koettei", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "kohme", alku: "kohmee", luokka: seikkasana, jatko: <sisäolento_ssA, sisätulento_seen>, äs: a];
 [perusmuoto: "kolmissa", alku: "kolmissa", luokka: seikkasana, jatko: <omistusliite>, äs: a];
