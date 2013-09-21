@@ -218,12 +218,22 @@ def get_prefix_jatko(word):
 			prefixJatko = prefixJatko + flag
 	return prefixJatko
 
-def get_adverb_jatko(word):
+def get_adverb_jatko(word, altform):
 	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
-	adverbJatko = u"Loppu"
+	loppu = True
+	adverbJatko = u""
 	for flag in sorted(flags):
-		if flag in [u"liitesana"]:
+		if flag == u"liitesana":
 			adverbJatko = adverbJatko + flag.title()
+		elif flag == u"omistusliite":
+			if altform[-1] in u"aäe" and altform[-1] != altform[-2]:
+				adverbJatko = adverbJatko + u"OlV"
+			else:
+				adverbJatko = adverbJatko + u"Omistusliite"
+		elif flag == u"required":
+			loppu = False;
+	if loppu:
+		adverbJatko = "Loppu" + adverbJatko
 	return adverbJatko
 
 def handle_word(word):
@@ -286,7 +296,7 @@ def handle_word(word):
 		if vfst_word_class == u"[La]":
 			jatko = u"Lyhenne"
 		elif vfst_word_class == u"[Ls]":
-			jatko = get_adverb_jatko(word)
+			jatko = get_adverb_jatko(word, altform)
 		else:
 			jatko = jatko.title()
 		if forced_inflection_vtype == voikkoutils.VOWEL_DEFAULT:

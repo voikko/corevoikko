@@ -2091,3 +2091,7 @@ kuudenneltasadannelta
 halusit
 evakuoitaessa
 !-50-tilanne
+hämillään
+eteensä
+!etee
+!eteeen

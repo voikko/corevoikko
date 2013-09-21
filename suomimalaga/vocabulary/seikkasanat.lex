@@ -42,7 +42,6 @@
 
 [perusmuoto: "ainut", alku: "ainut", luokka: seikkasana, jatko: <liitesana, loppu, osanto_tA>, äs: a];
 [perusmuoto: "alhaalla", alku: "alhaa", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
-[perusmuoto: "edessä", alku: "etee", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "edessä", alku: "ede", luokka: seikkasana, jatko: @heikkoasteiset_paikallissijat, äs: ä];
 [perusmuoto: "eksyksissä", alku: "eksyksi", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn, äs: ä];
 [perusmuoto: "ennallaan", alku: "ennalla", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: a];
@@ -70,8 +69,6 @@
 [perusmuoto: "hyvineen", alku: "hyvine", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyväksi", alku: "hyväkse", luokka: seikkasana, jatko: <omistusliite>, äs: ä];
 [perusmuoto: "hyvänään", alku: "hyvänä", luokka: seikkasana, jatko: <omistusliite>, äs: ä]; # "Pidä hyvänäsi."
-[perusmuoto: "hämillä", alku: "hämille", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
-[perusmuoto: "hämillä", alku: "hämillä", luokka: seikkasana, jatko: <omistusliite, liitesana, loppu>, äs: ä];
 [perusmuoto: "hörö", alku: "hörö", luokka: seikkasana, jatko: @sisäpaikallissijat_Vn + @ulkopaikallissijat, äs: ä]; # Vain -Vn-omistusliite käy
 [perusmuoto: "ilkosilla", alku: "ilkosi", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];
 [perusmuoto: "illemmalla", alku: "illemma", luokka: seikkasana, jatko: @ulkopaikallissijat, äs: a];

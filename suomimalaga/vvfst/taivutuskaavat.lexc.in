@@ -3823,6 +3823,14 @@ p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
 
+LEXICON LoppuLiitesanaOmistusliite
+LoppuLiitesana_<A>	;
+Omistusliite_<A>	;
+
+LEXICON LoppuLiitesanaOlV
+LoppuLiitesana_<A>	;
+OlV_<A>	;
+
 LEXICON LoppuLiitesana
 Liitesana_<A>	;
 
