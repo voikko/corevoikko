@@ -2692,6 +2692,7 @@ i:i	Tositapa4Tt_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;
+i:i	Käskytapa_ttA_<A>	;
 
 LEXICON Sallia_s
 [Tn1]i<A>:i<A>	Liitesana_<A>	;
@@ -2745,6 +2746,7 @@ TositavanKestämäDaan_<A>	;
 TositavanKertomaTiin_<A>	;
 EhtotapaTa_<A>	;
 Käskytapa_<A>	;
+Käskytapa_tA_<A>	;
 n:n	Mahtotapa_<A>	;
 Johdin_nimitapa1dA_<A>	;
 d:d	Johdin_nimitapa2_<A>	;
@@ -3269,6 +3271,7 @@ LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
+Käskytapa_ttA_<A>	;
 nn:nn	Mahtotapa_<A>	;
 Johdin_ntA_<A>	;
 Johdin_nimitapa1tA_<A>	;
@@ -3489,6 +3492,11 @@ LEXICON Käskytapa_ttA
 tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
 tt<A>k<O>:tt<A>k<O>	Loppu	;
 ?Sukija tt<A>k<O>h<O>n:tt<A>k<O>h<O>n	Loppu	;
+
+LEXICON Käskytapa_tA
+t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
+t<A>k<O>:t<A>k<O>	Loppu	;
+?Sukija t<A>k<O>h<O>n:t<A>k<O>h<O>n	Loppu	;
 
 LEXICON Johdin_nimitapa1dA
 d:d	Johdin_nimitapa1A_<A>	;
@@ -4125,6 +4133,8 @@ LEXICON JärjestyslukuKahdeksas
 [Sg][Nm]nsien:nsien Liitesana_<A> ;
 [Sp][Ny]tt<A>:tt<A> JärjestyslukuSpNy39_<A> ;
 [Sp][Nm]nsi<A>:nsi<A> Liitesana_<A> ;
+[Str][Ny]nneksi:nneksi	JärjestyslukuStrNy39_<A>	;
+[Str][Nm]nsiksi:nsiksi	Liitesana_<A>	;
 [Ses][Ny]nten<A>:nten<A> JärjestyslukuSesNy39_<A> ;
 [Ses][Nm]nsin<A>:nsin<A> Liitesana_<A> ;
 [Sine][Ny]nness<A>:nness<A> JärjestyslukuSineNy39_<A> ;

@@ -2095,3 +2095,7 @@ hämillään
 eteensä
 !etee
 !eteeen
+suotakoon
+sallittakoon
+todettakoon
+seitsemänneksi
