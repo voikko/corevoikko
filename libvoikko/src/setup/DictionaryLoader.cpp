@@ -40,16 +40,14 @@
 # include <unistd.h>
 #endif
 
+#include "setup/V2DictionaryLoader.hpp"
 #ifdef HAVE_HFST
 #include <ZHfstOspeller.h>
 #include <ospell.h>
 #include <ol-exceptions.h>
 #endif
 
-#define VOIKKO_DICTIONARY_FILE "voikko-fi_FI.pro"
-#define MALAGA_DICTIONARY_VERSION "2"
 #define HFST_DICTIONARY_VERSION "3"
-#define MALAGA_DICTIONARY_VERSION_KEY "info: Voikko-Dictionary-Format: " MALAGA_DICTIONARY_VERSION
 #ifdef WIN32
 # define VOIKKO_KEY                   "SOFTWARE\\Voikko"
 # define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
@@ -60,7 +58,7 @@ using namespace std;
 
 namespace libvoikko { namespace setup {
 
-static void tagToCanonicalForm(string & languageTag) {
+void DictionaryLoader::tagToCanonicalForm(string & languageTag) {
 	for (size_t i = 0; i < languageTag.size(); ++i) {
 		char current = languageTag.at(i);
 		if (current >= 65 && current <= 90) {
@@ -69,7 +67,7 @@ static void tagToCanonicalForm(string & languageTag) {
 	}
 }
 
-static LanguageTag parseFromBCP47(const string & language) {
+LanguageTag DictionaryLoader::parseFromBCP47(const string & language) {
 	// TODO: this parsing algorithm is incomplete
 	LanguageTag tag;
 	if (language.size() < 2) {
@@ -106,7 +104,7 @@ static LanguageTag parseFromBCP47(const string & language) {
 /**
  * Returns true if the given variant map contains a default dictionary for given language.
  */
-static bool hasDefaultForLanguage(map<string, Dictionary> & variants, const string & language) {
+bool DictionaryLoader::hasDefaultForLanguage(map<string, Dictionary> & variants, const string & language) {
 	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); ++i) {
 		if (i->second.getLanguage().getLanguage() == language && i->second.isDefault()) {
 			return true;
@@ -189,7 +187,7 @@ Dictionary DictionaryLoader::load(const string & language, const string & path)
 	throw DictionaryException("Specified dictionary variant was not found");
 }
 
-static list<string> getListOfSubentries(const string & mainPath) {
+list<string> DictionaryLoader::getListOfSubentries(const string & mainPath) {
 	list<string> results;
 #ifdef WIN32
 	string searchPattern(mainPath);
@@ -218,38 +216,6 @@ static list<string> getListOfSubentries(const string & mainPath) {
 	closedir(dp);
 #endif
 	return results;
-}
-
-void DictionaryLoader::addVariantsFromPathMalaga(const string & path, map<string, Dictionary> & variants) {
-	string mainPath(path);
-	mainPath.append("/");
-	mainPath.append(MALAGA_DICTIONARY_VERSION);
-	list<string> subDirectories = getListOfSubentries(mainPath);
-	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
-		string dirName = *i;
-		if (dirName.find("mor-") != 0) {
-			continue;
-		}
-		string variantName = dirName.substr(4);
-		if (variantName.empty()) {
-			continue;
-		}
-		string fullDirName(mainPath);
-		fullDirName.append("/");
-		fullDirName.append(dirName);
-		Dictionary dict = dictionaryFromPath(fullDirName);
-		if (variantName == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
-			dict.setDefault(true);
-		}
-		if (dict.isValid()) {
-			if (variants.find(dict.getLanguage().toBcp47()) == variants.end()) {
-				variants[dict.getLanguage().toBcp47()] = dict;
-			}
-			else if (dict.isDefault()) {
-				variants[dict.getLanguage().toBcp47()].setDefault(true);
-			}
-		}
-	}
 }
 
 void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, Dictionary> & variants) {
@@ -307,61 +273,7 @@ void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, 
 
 void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
 	addVariantsFromPathHfst(path, variants);
-	addVariantsFromPathMalaga(path, variants);
-}
-
-Dictionary DictionaryLoader::dictionaryFromPath(const string & path) {
-	string fileName(path);
-	fileName.append("/");
-	fileName.append(VOIKKO_DICTIONARY_FILE);
-	
-	string line;
-	ifstream file(fileName.c_str(), ifstream::in);
-	if (file.good()) {
-		getline(file, line);
-	}
-	if (line.compare(MALAGA_DICTIONARY_VERSION_KEY) != 0) {
-		// Not a valid dictionary for this version of libvoikko
-		file.close();
-		return Dictionary();
-	}
-	
-	LanguageTag language;
-	language.setLanguage("fi");
-	string description;
-	string morBackend = "malaga";
-	string spellBackend = "FinnishSpellerTweaksWrapper(AnalyzerToSpellerAdapter(currentAnalyzer),currentAnalyzer)";
-	string suggestionBackend = "FinnishSuggestionStrategy(currentAnalyzer)";
-	string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
-	while (file.good()) {
-		getline(file, line);
-		if (line.find("info: Language-Code: ") == 0) {
-			language.setLanguage(string(line.substr(21)));
-		}
-		else if (line.find("info: Language-Variant: ") == 0) {
-			string variant = line.substr(24);
-			tagToCanonicalForm(variant);
-			language.setPrivateUse(variant);
-		}
-		else if (line.find("info: Description: ") == 0) {
-			description = line.substr(19);
-		}
-		else if (line.find("info: Morphology-Backend: ") == 0) {
-			morBackend = line.substr(26);
-		}
-		else if (line.find("info: Speller-Backend: ") == 0) {
-			spellBackend = line.substr(23);
-		}
-		else if (line.find("info: Suggestion-Backend: ") == 0) {
-			suggestionBackend = line.substr(26);
-		}
-		else if (line.find("info: Hyphenator-Backend: ") == 0) {
-			hyphenatorBackend = line.substr(26);
-		}
-	}
-	file.close();
-	return Dictionary(path, morBackend, spellBackend, suggestionBackend,
-	                  hyphenatorBackend, language, description);
+	V2DictionaryLoader::addVariantsFromPath(path, variants);
 }
 
 list<string> DictionaryLoader::getDefaultLocations() {

@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2008 - 2013
+ * Portions created by the Initial Developer are Copyright (C) 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,47 +26,18 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_SETUP_DICTIONARYLOADER
-#define VOIKKO_SETUP_DICTIONARYLOADER
+#ifndef VOIKKO_SETUP_V2DICTIONARYLOADER
+#define VOIKKO_SETUP_V2DICTIONARYLOADER
 
-#include "setup/Dictionary.hpp"
-#include "setup/DictionaryException.hpp"
+#include "setup/DictionaryLoader.hpp"
 #include <map>
 #include <list>
 
 namespace libvoikko { namespace setup {
 
-class DictionaryLoader {
+class V2DictionaryLoader : public DictionaryLoader {
 
 	public:
-	/**
-	 * Find available dictionaries from default locations.
-	 * @return a set of uninitialized dictionaries
-	 */
-	static std::list<Dictionary> findAllAvailable();
-	
-	/**
-	 * Find available dictionaries from given path and default locations.
-	 * @return a set of uninitialized dictionaries
-	 */
-	static std::list<Dictionary> findAllAvailable(const std::string & path);
-	
-	/**
-	 * Load dictionary from default locations. The dictionary must match given language
-	 * tag.
-	 * @return an initialized dictionary
-	 */
-	static Dictionary load(const std::string & language) throw(DictionaryException);
-	
-	/**
-	 * Load dictionary from given path and default locations. The dictionary must match
-	 * given language tag.
-	 * @return an initialized dictionary
-	 */
-	static Dictionary load(const std::string & language, const std::string & path)
-	       throw(DictionaryException);
-
-	protected:
 	/**
 	 * Add dictionary variants from a directory path to a map
 	 * "variant name" -> "dictionary".
@@ -75,26 +46,13 @@ class DictionaryLoader {
 	static void addVariantsFromPath(const std::string & path,
 	       std::map<std::string, Dictionary> & variants);
 	
-	static void addVariantsFromPathHfst(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
-	
-	
+	private:
 	/**
-	 * Get a list of default dictionary locations. The entries are listed in
-	 * decreasing priority order.
+	 * Create a dictionary object from a path to a morphology location. If the
+	 * location does not contain a valid dictionary, the method retuns an invalid
+	 * dictionary.
 	 */
-	static std::list<std::string> getDefaultLocations();
-	
-	/**
-	 * Returns true if the given variant map contains a default dictionary for given language.
-	 */
-	static bool hasDefaultForLanguage(std::map<std::string, Dictionary> & variants, const std::string & language);
-	
-	static void tagToCanonicalForm(std::string & languageTag);
-	
-	static LanguageTag parseFromBCP47(const std::string & language);
-	
-	static std::list<std::string> getListOfSubentries(const std::string & mainPath);
+	static Dictionary dictionaryFromPath(const std::string & path);
 };
 
 } }

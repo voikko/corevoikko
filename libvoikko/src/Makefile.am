@@ -38,7 +38,9 @@ libvoikko_la_SOURCES = \
     morphology/Analyzer.cpp \
     morphology/AnalyzerFactory.cpp \
     morphology/NullAnalyzer.cpp \
-    setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
+    setup/setup.cpp setup/Dictionary.cpp \
+    setup/DictionaryLoader.cpp \
+    setup/V2DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
     setup/LanguageTag.cpp \
     hyphenator/interface.cpp \
@@ -100,7 +102,9 @@ noinst_HEADERS = \
     morphology/malaga/symbols.hpp \
     morphology/malaga/values.hpp \
     morphology/malaga/MalagaState.hpp \
-    setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
+    setup/setup.hpp setup/Dictionary.hpp \
+    setup/DictionaryLoader.hpp \
+    setup/V2DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     setup/LanguageTag.hpp \
     character/charset.hpp \
