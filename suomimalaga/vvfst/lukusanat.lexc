@@ -29,6 +29,7 @@ LukusanaSinNm29Kertoimet	;
 LukusanaSkoNm29Kertoimet	;
 [Lu][Xp]sata[X]sata:sata	LukusanaLiitesana_a	;
 [Lu][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
+[Lu][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;

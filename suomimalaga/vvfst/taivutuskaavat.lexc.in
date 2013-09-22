@@ -330,6 +330,7 @@ LEXICON NOUN Autio
 
 LEXICON NOUN Kiiski
 <WC>Risti_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]e<A>:e<A>	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
@@ -1198,7 +1199,7 @@ ken:ken	<WC>Taival_s_<A>	;
 LEXICON NOUN Taival_w
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+[Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Taival_s
@@ -3392,6 +3393,8 @@ LEXICON Nähdä
 e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
 h:h	TositavanKertomaTiin_<A>	;
+KertomanTekijäpääteHeikko_<A>	;
+k:k	KertomanTekijäpääteVahva_<A>	;
 h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_nimitapa1dA_<A>	;
