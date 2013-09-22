@@ -4109,7 +4109,7 @@ LEXICON JärjestyslukuNainen
 [Sg][Ny]sen:sen Liitesana_<A> ;
 [Sg][Nm]sten:sten Liitesana_<A> ;
 [Sg][Nm]sien:sien Liitesana_<A> ;
-[Sp][Ny]st<A>:st<A> Liitesana_<A> ;
+@U.LS.SPNY@[Sp][Ny]st<A>:@U.LS.SPNY@st<A> Liitesana_<A> ;
 [Sp][Nm]si<A>:si<A> Liitesana_<A> ;
 [Ses][Ny]sen<A>:sen<A> Liitesana_<A> ;
 [Ses][Nm]sin<A>:sin<A> Liitesana_<A> ;
@@ -4130,7 +4130,7 @@ LEXICON JärjestyslukuNainen
 [Sin][Nm]sin:sin Liitesana_<A> ;
 
 LEXICON JärjestyslukuKahdeksas
-[Sn][Ny]s:s Liitesana_<A> ;
+[Sn][Ny]s:s JärjestyslukuSnNy29_<A> ;
 [Sn][Nm]nnet:nnet Liitesana_<A> ;
 [Sg][Ny]nnen:nnen JärjestyslukuSgNy39_<A> ;
 [Sg][Nm]nsien:nsien Liitesana_<A> ;
@@ -4155,3 +4155,17 @@ LEXICON JärjestyslukuKahdeksas
 [Sab][Ny]nnett<A>:nnett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]nsitt<A>:nsitt<A> Liitesana_<A> ;
 [Sin][Nm]nsin:nsin Liitesana_<A> ;
+
+LEXICON JärjestyslukuSnNy
+@U.LS.SNNY@	JärjestyslukuToista	;
+@U.LS.SNNY@	Liitesana_<A>	;
+@U.LS.SNNY@	LukusananJälkiliite	;
+
+LEXICON JärjestyslukuSnNy29
+JärjestyslukuSnNy_<A>	;
+@U.LS.SNNY@	JärjestyslukuKymmentäSnNy_<A>	;
+
+LEXICON JärjestyslukuKymmentäSnNy
+[Bc]kymmenes:kymmenes	JärjestyslukuLiitesana_ä	;
+[Bc]sadas:sadas	JärjestyslukuLiitesana_a	;
+[Bc]tuhannes:tuhannes	JärjestyslukuLiitesana_a	;

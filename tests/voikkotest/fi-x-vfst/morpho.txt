@@ -433,3 +433,10 @@ word:juoksekaan
     PERSON=2
     STRUCTURE==pppppppppp
     TENSE=present_simple
+word:neljännentoista
+  expected:1
+  analysis
+    CLASS=lukusana
+    NUMBER=singular
+    SIJAMUOTO=omanto
+    STRUCTURE==ppppppppp=pppppp

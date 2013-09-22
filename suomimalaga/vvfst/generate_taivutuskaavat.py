@@ -213,14 +213,14 @@ for sija in MULTI_ORDINALS.keys():
 	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuLiitesana_<A>\t;")
-	#numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
+	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
 	numeralLines.append(lexiconName + u"Kertoimet\t;")
 	appendLines(u"Järjestysluku", sija + u"39", numeralLines, lexcFile)
 	
 	numeralLines = []
 	numeralLines.append(diacritic + u":" + diacritic + u"\tLiitesana_<A>\t;")
-	#numeralLines.append(diacritic + u":" + diacritic + u"\tLukusanaToista\t;")
-	#numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
+	numeralLines.append(diacritic + u":" + diacritic + u"\tJärjestyslukuToista\t;")
+	numeralLines.append(diacritic + u":" + diacritic + u"\tLukusananJälkiliite\t;")
 	appendLines(u"Järjestysluku", sija + u"1", numeralLines, lexcFile)
 
 
