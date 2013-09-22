@@ -32,8 +32,12 @@
 #include <string>
 #include <fstream>
 #include <cstdlib>
+
 #ifdef WIN32
 # include <windows.h>
+# define VOIKKO_KEY                   "SOFTWARE\\Voikko"
+# define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
+# define BUFFER_LENGTH 200
 #else
 # include <pwd.h>
 # include <dirent.h>
@@ -41,18 +45,7 @@
 #endif
 
 #include "setup/V2DictionaryLoader.hpp"
-#ifdef HAVE_HFST
-#include <ZHfstOspeller.h>
-#include <ospell.h>
-#include <ol-exceptions.h>
-#endif
-
-#define HFST_DICTIONARY_VERSION "3"
-#ifdef WIN32
-# define VOIKKO_KEY                   "SOFTWARE\\Voikko"
-# define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
-# define BUFFER_LENGTH 200
-#endif
+#include "setup/V3DictionaryLoader.hpp"
 
 using namespace std;
 
@@ -126,7 +119,7 @@ list<Dictionary> DictionaryLoader::findAllAvailable(const std::string & path) {
 	
 	map<string, Dictionary> dictMap;
 	for (list<string>::iterator i = locations.begin(); i != locations.end(); ++i) {
-		addVariantsFromPath(*i, dictMap);
+		addAllVersionVariantsFromPath(*i, dictMap);
 	}
 	
 	list<Dictionary> dicts;
@@ -218,61 +211,10 @@ list<string> DictionaryLoader::getListOfSubentries(const string & mainPath) {
 	return results;
 }
 
-void DictionaryLoader::addVariantsFromPathHfst(const string & path, map<string, Dictionary> & variants) {
-#ifdef HAVE_HFST
-	string mainPath(path);
-	mainPath.append("/");
-	mainPath.append(HFST_DICTIONARY_VERSION);
-	list<string> subDirectories = getListOfSubentries(mainPath);
-	for (list<string>::iterator i = subDirectories.begin(); i != subDirectories.end(); ++i) {
-		string dirName = *i;
-		if (dirName.find(".zhfst") + 6 == dirName.length()) {
-			string fullPath = mainPath + "/" + dirName;
-			string morBackend = "null";
-			string spellBackend = "hfst";
-			string suggestionBackend = "hfst";
-			// TODO implement null hyphenator
-			string hyphenatorBackend = "AnalyzerToFinnishHyphenatorAdapter(currentAnalyzer)";
-			
-			hfst_ol::ZHfstOspeller * speller = new hfst_ol::ZHfstOspeller();
-			try {
-				speller->read_zhfst(fullPath.c_str());
-			}
-			catch (hfst_ol::ZHfstZipReadingError& zhzre) {
-				delete speller;
-				continue; // broken dictionary
-			}
-			const hfst_ol::ZHfstOspellerXmlMetadata spellerMetadata = speller->get_metadata();
-			
-			LanguageTag language;
-			language.setBcp47(spellerMetadata.info_.locale_);
-			map<string, string> languageVersions = spellerMetadata.info_.title_;
-			string description = languageVersions[spellerMetadata.info_.locale_];
-			delete speller;
-			Dictionary dict = Dictionary(fullPath, morBackend, spellBackend, suggestionBackend,
-			                        hyphenatorBackend, language, description);
-			// TODO copy-paste from above
-			if (language.getPrivateUse() == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
-				dict.setDefault(true);
-			}
-			if (dict.isValid()) {
-				if (variants.find(dict.getLanguage().toBcp47()) == variants.end()) {
-					variants[dict.getLanguage().toBcp47()] = dict;
-				}
-				else if (dict.isDefault()) {
-					variants[dict.getLanguage().toBcp47()].setDefault(true);
-				}
-			}
-		}
-	}
-#else
-	(void)path;
-	(void)variants;
-#endif
-}
-
-void DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
-	addVariantsFromPathHfst(path, variants);
+void DictionaryLoader::addAllVersionVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
+	#ifdef HAVE_HFST
+		V3DictionaryLoader::addVariantsFromPath(path, variants);
+	#endif
 	V2DictionaryLoader::addVariantsFromPath(path, variants);
 }
 

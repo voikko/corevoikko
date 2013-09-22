@@ -105,6 +105,7 @@ noinst_HEADERS = \
     setup/setup.hpp setup/Dictionary.hpp \
     setup/DictionaryLoader.hpp \
     setup/V2DictionaryLoader.hpp \
+    setup/V3DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     setup/LanguageTag.hpp \
     character/charset.hpp \
@@ -185,9 +186,10 @@ MALAGA_CPP_FILES=morphology/MalagaAnalyzer.cpp \
     autocorrect/AutoCorrect.cpp
 
 HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
-			   spellchecker/HfstSpeller.cpp \
-			   spellchecker/HfstSuggestion.cpp \
-			   hyphenator/HfstHyphenator.cpp
+    spellchecker/HfstSpeller.cpp \
+    spellchecker/HfstSuggestion.cpp \
+    hyphenator/HfstHyphenator.cpp \
+    setup/V3DictionaryLoader.cpp
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 

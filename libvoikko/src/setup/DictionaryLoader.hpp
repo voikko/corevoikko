@@ -68,18 +68,6 @@ class DictionaryLoader {
 
 	protected:
 	/**
-	 * Add dictionary variants from a directory path to a map
-	 * "variant name" -> "dictionary".
-	 * If a dictionary already exists in the map, it will not be replaced.
-	 */
-	static void addVariantsFromPath(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
-	
-	static void addVariantsFromPathHfst(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
-	
-	
-	/**
 	 * Get a list of default dictionary locations. The entries are listed in
 	 * decreasing priority order.
 	 */
@@ -95,6 +83,9 @@ class DictionaryLoader {
 	static LanguageTag parseFromBCP47(const std::string & language);
 	
 	static std::list<std::string> getListOfSubentries(const std::string & mainPath);
+	
+	private:
+	static void addAllVersionVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
 };
 
 } }
