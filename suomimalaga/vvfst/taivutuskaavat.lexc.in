@@ -3831,6 +3831,14 @@ LEXICON LoppuLiitesanaOlV
 LoppuLiitesana_<A>	;
 OlV_<A>	;
 
+LEXICON LoppuOlV
+Loppu	;
+OlV_<A>	;
+
+LEXICON LoppuOmistusliite
+Loppu	;
+Omistusliite_<A>	;
+
 LEXICON LoppuLiitesana
 Liitesana_<A>	;
 
