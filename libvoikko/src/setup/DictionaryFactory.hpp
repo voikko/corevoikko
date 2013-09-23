@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2013
+ * Portions created by the Initial Developer are Copyright (C) 2008 - 2013
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,27 +26,60 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_SETUP_V2DICTIONARYLOADER
-#define VOIKKO_SETUP_V2DICTIONARYLOADER
+#ifndef VOIKKO_SETUP_DICTIONARYFACTORY
+#define VOIKKO_SETUP_DICTIONARYFACTORY
 
-#include "setup/DictionaryLoader.hpp"
+#include "setup/Dictionary.hpp"
+#include "setup/DictionaryException.hpp"
 #include <map>
 #include <list>
 
 namespace libvoikko { namespace setup {
 
-class V2DictionaryLoader : public DictionaryLoader {
+/**
+ * A static facade for driving the dictionary loading process. The format specific loaders
+ * must be implemented by subclassing DictionaryLoader.
+ */
+class DictionaryFactory {
 
 	public:
-	void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
-	
-	private:
 	/**
-	 * Create a dictionary object from a path to a morphology location. If the
-	 * location does not contain a valid dictionary, the method retuns an invalid
-	 * dictionary.
+	 * Find available dictionaries from default locations.
+	 * @return a set of uninitialized dictionaries
 	 */
-	Dictionary dictionaryFromPath(const std::string & path);
+	static std::list<Dictionary> findAllAvailable();
+	
+	/**
+	 * Find available dictionaries from given path and default locations.
+	 * @return a set of uninitialized dictionaries
+	 */
+	static std::list<Dictionary> findAllAvailable(const std::string & path);
+	
+	/**
+	 * Load dictionary from default locations. The dictionary must match given language
+	 * tag.
+	 * @return an initialized dictionary
+	 */
+	static Dictionary load(const std::string & language) throw(DictionaryException);
+	
+	/**
+	 * Load dictionary from given path and default locations. The dictionary must match
+	 * given language tag.
+	 * @return an initialized dictionary
+	 */
+	static Dictionary load(const std::string & language, const std::string & path)
+	       throw(DictionaryException);
+
+	private:
+	static void addAllVersionVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
+	
+	/**
+	 * Get a list of default dictionary locations. The entries are listed in
+	 * decreasing priority order.
+	 */
+	static std::list<std::string> getDefaultLocations();
+	
+	static LanguageTag parseFromBCP47(const std::string & language);
 };
 
 } }

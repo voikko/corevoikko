@@ -29,7 +29,7 @@
 #include <cstring>
 #include <set>
 #include "setup/Dictionary.hpp"
-#include "setup/DictionaryLoader.hpp"
+#include "setup/DictionaryFactory.hpp"
 #include "porting.h"
 
 using namespace std;
@@ -40,8 +40,8 @@ typedef Dictionary voikko_dict;
 
 VOIKKOEXPORT voikko_dict ** voikko_list_dicts(const char * path) {
 	list<Dictionary> dictList = path ?
-	                            DictionaryLoader::findAllAvailable(path) :
-	                            DictionaryLoader::findAllAvailable();
+	                            DictionaryFactory::findAllAvailable(path) :
+	                            DictionaryFactory::findAllAvailable();
 	
 	voikko_dict ** dicts = new voikko_dict*[dictList.size() + 1];
 	size_t n = 0;
@@ -77,8 +77,8 @@ VOIKKOEXPORT const char * voikko_dict_description(const voikko_dict * dict) {
 
 VOIKKOEXPORT char ** voikkoListSupportedSpellingLanguages(const char * path) {
 	list<Dictionary> dictList = path ?
-	                            DictionaryLoader::findAllAvailable(path) :
-	                            DictionaryLoader::findAllAvailable();
+	                            DictionaryFactory::findAllAvailable(path) :
+	                            DictionaryFactory::findAllAvailable();
 	set<string> allLanguages;
 	for (list<Dictionary>::iterator i = dictList.begin(); i != dictList.end(); ++i) {
 		allLanguages.insert((*i).getLanguage().getLanguage());

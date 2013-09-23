@@ -39,39 +39,15 @@ namespace libvoikko { namespace setup {
 class DictionaryLoader {
 
 	public:
-	/**
-	 * Find available dictionaries from default locations.
-	 * @return a set of uninitialized dictionaries
-	 */
-	static std::list<Dictionary> findAllAvailable();
 	
 	/**
-	 * Find available dictionaries from given path and default locations.
-	 * @return a set of uninitialized dictionaries
+	 * Add dictionary variants from a directory path to a map
+	 * "variant name" -> "dictionary".
+	 * If a dictionary already exists in the map, it will not be replaced.
 	 */
-	static std::list<Dictionary> findAllAvailable(const std::string & path);
+	virtual void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants) = 0;
 	
-	/**
-	 * Load dictionary from default locations. The dictionary must match given language
-	 * tag.
-	 * @return an initialized dictionary
-	 */
-	static Dictionary load(const std::string & language) throw(DictionaryException);
-	
-	/**
-	 * Load dictionary from given path and default locations. The dictionary must match
-	 * given language tag.
-	 * @return an initialized dictionary
-	 */
-	static Dictionary load(const std::string & language, const std::string & path)
-	       throw(DictionaryException);
-
-	protected:
-	/**
-	 * Get a list of default dictionary locations. The entries are listed in
-	 * decreasing priority order.
-	 */
-	static std::list<std::string> getDefaultLocations();
+	virtual ~DictionaryLoader();
 	
 	/**
 	 * Returns true if the given variant map contains a default dictionary for given language.
@@ -80,12 +56,10 @@ class DictionaryLoader {
 	
 	static void tagToCanonicalForm(std::string & languageTag);
 	
-	static LanguageTag parseFromBCP47(const std::string & language);
+	protected:
 	
-	static std::list<std::string> getListOfSubentries(const std::string & mainPath);
-	
-	private:
-	static void addAllVersionVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
+	std::list<std::string> getListOfSubentries(const std::string & mainPath);
+
 };
 
 } }

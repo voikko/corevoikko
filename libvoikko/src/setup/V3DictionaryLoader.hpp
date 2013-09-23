@@ -38,13 +38,7 @@ namespace libvoikko { namespace setup {
 class V3DictionaryLoader : public DictionaryLoader {
 
 	public:
-	/**
-	 * Add dictionary variants from a directory path to a map
-	 * "variant name" -> "dictionary".
-	 * If a dictionary already exists in the map, it will not be replaced.
-	 */
-	static void addVariantsFromPath(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
+	void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
 
 };
 
