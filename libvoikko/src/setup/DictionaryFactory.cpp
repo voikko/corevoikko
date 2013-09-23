@@ -54,6 +54,9 @@ static bool isMatchingLanguage(const LanguageTag & requested, const LanguageTag 
 	if (requested.getLanguage() != available.getLanguage()) {
 		return false;
 	}
+	if (requested.getPrivateUse() == "standard" && available.getPrivateUse().empty()) {
+		return true;
+	}
 	if (!requested.getPrivateUse().empty() && requested.getPrivateUse() != available.getPrivateUse()) {
 		return false;
 	}
