@@ -40,7 +40,6 @@
 # define BUFFER_LENGTH 200
 #else
 # include <pwd.h>
-# include <dirent.h>
 # include <unistd.h>
 #endif
 
@@ -83,7 +82,7 @@ list<Dictionary> DictionaryFactory::findAllAvailable(const std::string & path) {
 			dicts.push_front(i->second);
 		}
 		else if (i->first.rfind("-x-standard") == i->first.size() - 11 &&
-		         !DictionaryLoader::hasDefaultForLanguage(dictMap, i->second.getLanguage().getLanguage())) {
+		         !DictionaryLoader::hasDefaultForLanguage(&dictMap, i->second.getLanguage().getLanguage())) {
 			dicts.push_front(i->second);
 		}
 		else {

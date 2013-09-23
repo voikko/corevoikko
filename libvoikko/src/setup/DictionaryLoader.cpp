@@ -35,11 +35,7 @@
 
 #ifdef WIN32
 # include <windows.h>
-# define VOIKKO_KEY                   "SOFTWARE\\Voikko"
-# define VOIKKO_VALUE_DICTIONARY_PATH "DictionaryPath"
-# define BUFFER_LENGTH 200
 #else
-# include <pwd.h>
 # include <dirent.h>
 # include <unistd.h>
 #endif
@@ -63,8 +59,8 @@ void DictionaryLoader::tagToCanonicalForm(string & languageTag) {
 /**
  * Returns true if the given variant map contains a default dictionary for given language.
  */
-bool DictionaryLoader::hasDefaultForLanguage(map<string, Dictionary> & variants, const string & language) {
-	for (map<string, Dictionary>::iterator i = variants.begin(); i != variants.end(); ++i) {
+bool DictionaryLoader::hasDefaultForLanguage(map<string, Dictionary> * variants, const string & language) {
+	for (map<string, Dictionary>::iterator i = variants->begin(); i != variants->end(); ++i) {
 		if (i->second.getLanguage().getLanguage() == language && i->second.isDefault()) {
 			return true;
 		}
@@ -101,6 +97,26 @@ list<string> DictionaryLoader::getListOfSubentries(const string & mainPath) {
 	closedir(dp);
 #endif
 	return results;
+}
+
+void DictionaryLoader::addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants) {
+	this->variants = &variants;
+	findDictionaries(path);
+}
+
+void DictionaryLoader::addDictionary(Dictionary dictionary) {
+	if (dictionary.getLanguage().getPrivateUse() == "default" &&
+	    !hasDefaultForLanguage(variants, dictionary.getLanguage().getLanguage())) {
+		dictionary.setDefault(true);
+	}
+	if (dictionary.isValid()) {
+		if (variants->find(dictionary.getLanguage().toBcp47()) == variants->end()) {
+			variants->operator[](dictionary.getLanguage().toBcp47()) = dictionary;
+		}
+		else if (dictionary.isDefault()) {
+			variants->operator[](dictionary.getLanguage().toBcp47()).setDefault(true);
+		}
+	}
 }
 
 } }

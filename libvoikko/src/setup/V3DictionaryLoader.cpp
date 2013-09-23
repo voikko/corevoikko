@@ -43,7 +43,7 @@ using namespace std;
 
 namespace libvoikko { namespace setup {
 
-void V3DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
+void V3DictionaryLoader::findDictionaries(const string & path) {
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(HFST_DICTIONARY_VERSION);
@@ -75,18 +75,7 @@ void V3DictionaryLoader::addVariantsFromPath(const string & path, map<string, Di
 			delete speller;
 			Dictionary dict = Dictionary(fullPath, morBackend, spellBackend, suggestionBackend,
 			                        hyphenatorBackend, language, description);
-			// TODO copy-paste from above
-			if (language.getPrivateUse() == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
-				dict.setDefault(true);
-			}
-			if (dict.isValid()) {
-				if (variants.find(dict.getLanguage().toBcp47()) == variants.end()) {
-					variants[dict.getLanguage().toBcp47()] = dict;
-				}
-				else if (dict.isDefault()) {
-					variants[dict.getLanguage().toBcp47()].setDefault(true);
-				}
-			}
+			addDictionary(dict);
 		}
 	}
 }

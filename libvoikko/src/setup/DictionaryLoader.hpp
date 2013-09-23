@@ -45,21 +45,34 @@ class DictionaryLoader {
 	 * "variant name" -> "dictionary".
 	 * If a dictionary already exists in the map, it will not be replaced.
 	 */
-	virtual void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants) = 0;
+	void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
+	
+	/**
+	 * This method must be overridden in a subclass. It searches for available dictionaries in the
+	 * given directory and calls addDictionary on each one it finds.
+	 */
+	virtual void findDictionaries(const std::string & path) = 0;
 	
 	virtual ~DictionaryLoader();
 	
 	/**
 	 * Returns true if the given variant map contains a default dictionary for given language.
 	 */
-	static bool hasDefaultForLanguage(std::map<std::string, Dictionary> & variants, const std::string & language);
+	static bool hasDefaultForLanguage(std::map<std::string, Dictionary> * variants, const std::string & language);
 	
 	static void tagToCanonicalForm(std::string & languageTag);
 	
 	protected:
 	
 	std::list<std::string> getListOfSubentries(const std::string & mainPath);
-
+	
+	/**
+	 * Adds a newly located dictionary.
+	 */
+	void addDictionary(Dictionary dictionary);
+	
+	private:
+	std::map<std::string, Dictionary> * variants;
 };
 
 } }

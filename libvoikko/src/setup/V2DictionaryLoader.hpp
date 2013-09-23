@@ -30,15 +30,13 @@
 #define VOIKKO_SETUP_V2DICTIONARYLOADER
 
 #include "setup/DictionaryLoader.hpp"
-#include <map>
-#include <list>
 
 namespace libvoikko { namespace setup {
 
 class V2DictionaryLoader : public DictionaryLoader {
 
 	public:
-	void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
+	void findDictionaries(const std::string & path);
 	
 	private:
 	/**

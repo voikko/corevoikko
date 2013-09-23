@@ -41,7 +41,7 @@ using namespace std;
 
 namespace libvoikko { namespace setup {
 
-void V2DictionaryLoader::addVariantsFromPath(const string & path, map<string, Dictionary> & variants) {
+void V2DictionaryLoader::findDictionaries(const string & path) {
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(MALAGA_DICTIONARY_VERSION);
@@ -59,17 +59,7 @@ void V2DictionaryLoader::addVariantsFromPath(const string & path, map<string, Di
 		fullDirName.append("/");
 		fullDirName.append(dirName);
 		Dictionary dict = dictionaryFromPath(fullDirName);
-		if (variantName == "default" && !hasDefaultForLanguage(variants, dict.getLanguage().getLanguage())) {
-			dict.setDefault(true);
-		}
-		if (dict.isValid()) {
-			if (variants.find(dict.getLanguage().toBcp47()) == variants.end()) {
-				variants[dict.getLanguage().toBcp47()] = dict;
-			}
-			else if (dict.isDefault()) {
-				variants[dict.getLanguage().toBcp47()].setDefault(true);
-			}
-		}
+		addDictionary(dict);
 	}
 }
 
