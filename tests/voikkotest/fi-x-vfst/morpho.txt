@@ -440,3 +440,8 @@ word:neljännentoista
     NUMBER=singular
     SIJAMUOTO=omanto
     STRUCTURE==ppppppppp=pppppp
+word:parhaassa
+  expected:1
+  analysis
+    CLASS=laatusana
+    COMPARISON=superlative
