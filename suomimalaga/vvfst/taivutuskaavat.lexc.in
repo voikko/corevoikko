@@ -330,6 +330,7 @@ LEXICON NOUN Autio
 
 LEXICON NOUN Kiiski
 <WC>Risti_<A>	;
+[Sn][Nm]et:et	Liitesana_<A>	;
 [Sg][Ny]en:en	<WC>YksikönGenetiivinJatko_<A>	;
 [Sp][Ny]e<A>:e<A>	Liitesana_<A>	;
 [Ses][Ny]en<A>:en<A>	<WC>LiOlV_<A>	;
@@ -1198,7 +1199,7 @@ ken:ken	<WC>Taival_s_<A>	;
 LEXICON NOUN Taival_w
 [Sn][Ny]:	<WC>NormaaliYsJatkoOl_<A>	;
 [Sg][Nm]t:t	<WC>MonikonGenetiiviEnJatko_<A>	;
-[Sp][Ny]t<A>:t<A>	Liitesana_<A>	;
+[Sp][Ny]t<A>:t<A>	<WC>LiOlV_<A>	;
 ?Nimisana	Johdin_mAinen_<A>	;
 
 LEXICON NOUN Taival_s
@@ -1719,6 +1720,19 @@ LEXICON NOUN Kevät
 <A>:<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
 <WC>YhteisetMonikonPaikallissijat_<A>	;
 ?Nimisana	<A>:<A>	Johdin_tOn_<A>	;
+?Sukija ?NotLaatusana	[Sn][Ny]h<A>:h<A>	Omistusliite_<A>	;
+?Sukija [Sn][Nm]h<A>t:h<A>t	Liitesana_<A>	;
+?Sukija [Sg][Ny]h<A>n:h<A>n	<WC>YksikönGenetiivinJatko_<A>	;
+?Sukija [Sg][Nm]tt:tt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]hitt:hitt	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sg][Nm]hi:hi	<WC>MonikonGenetiiviEnJatko_<A>	;
+?Sukija [Sp][Nm]hi<A>:hi<A>	<WC>LiOlV_<A>	;
+?Sukija [Ses][Ny]h<A>n<A>:h<A>n<A>	<WC>LiOlV_<A>	;
+?Sukija h:h <WC>YhteisetMonikonSijat2_<A>	;
+?Sukija [Sill][Ny]h<A>se:h<A>se	<WC>LiOlN_<A>	;
+?Sukija [Sill][Nm]hisi:hisi	<WC>LiOlN_<A>	;
+?Sukija h<A>:h<A>	<WC>YhteisetYksikönPaikallissijat_<A>	;
+?Sukija h:h		<WC>YhteisetMonikonPaikallissijat_<A>	;
 
 LEXICON NOUN Mies
 s:s   <WC>Mies_s_<A>  ;
@@ -2692,6 +2706,7 @@ i:i	Tositapa4Tt_<A>	;
 i:i	Johdin_ttAx_<A>	;
 i:i	Johdin_ntA_<A>	;
 i:i	Käskytapa_y2_<A>	;
+i:i	Käskytapa_ttA_<A>	;
 
 LEXICON Sallia_s
 [Tn1]i<A>:i<A>	Liitesana_<A>	;
@@ -2745,6 +2760,7 @@ TositavanKestämäDaan_<A>	;
 TositavanKertomaTiin_<A>	;
 EhtotapaTa_<A>	;
 Käskytapa_<A>	;
+Käskytapa_tA_<A>	;
 n:n	Mahtotapa_<A>	;
 Johdin_nimitapa1dA_<A>	;
 d:d	Johdin_nimitapa2_<A>	;
@@ -2943,6 +2959,7 @@ LEXICON HaravoidaKanavoida
 [Tn1]id<A>:id<A>	Liitesana_<A>	;
 i:i	Johdin_nimitapa1dA_<A>	;
 id:id	Johdin_nimitapa2_<A>	;
+i:i	Johdin_nimitapa2_tAessA_<A>	;
 i:i	KestämänTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteHeikko_<A>	;
 KertomanTekijäpääteVahva_<A>	;
@@ -3136,6 +3153,7 @@ LEXICON Haluta_s
 <A>:<A>	KestämänTekijäpääteHeikko_<A>	;
 [Tt][P3][Ny]<A><A>:<A><A>	Liitesana_<A>	;
 s:s	KertomanTekijäpääteVahva_<A>	;
+s:s	KertomanTekijäpääteHeikko_<A>	;
 <A>:<A>	Ehtotapa_<A>	;
 <A>:<A>	Johdin_mA_<A>	;
 <A>:<A>	Johdin_vA_<A>	;
@@ -3267,6 +3285,7 @@ LEXICON Katketa_w
 [Tn1]t<A>:t<A>	Liitesana_<A>	;
 Tositapa4Tt_<A>	;
 t:t	Käskytapa_<A>	;
+Käskytapa_ttA_<A>	;
 nn:nn	Mahtotapa_<A>	;
 Johdin_ntA_<A>	;
 Johdin_nimitapa1tA_<A>	;
@@ -3387,6 +3406,8 @@ LEXICON Nähdä
 e:e	KestämänTekijäpääteHeikko_<A>	;
 h:h	TositavanKestämäDaan_<A>	;
 h:h	TositavanKertomaTiin_<A>	;
+KertomanTekijäpääteHeikko_<A>	;
+k:k	KertomanTekijäpääteVahva_<A>	;
 h:h	Käskytapa_<A>	;
 hn:hn	Mahtotapa_<A>	;
 h:h	Johdin_nimitapa1dA_<A>	;
@@ -3487,6 +3508,11 @@ LEXICON Käskytapa_ttA
 tt<A>k<O><O>n:tt<A>k<O><O>n	Loppu	;
 tt<A>k<O>:tt<A>k<O>	Loppu	;
 ?Sukija tt<A>k<O>h<O>n:tt<A>k<O>h<O>n	Loppu	;
+
+LEXICON Käskytapa_tA
+t<A>k<O><O>n:t<A>k<O><O>n	Loppu	;
+t<A>k<O>:t<A>k<O>	Loppu	;
+?Sukija t<A>k<O>h<O>n:t<A>k<O>h<O>n	Loppu	;
 
 LEXICON Johdin_nimitapa1dA
 d:d	Johdin_nimitapa1A_<A>	;
@@ -3821,6 +3847,22 @@ p<A>h<A>n:p<A>h<A>n	Loppu ;
 p<A>s:p<A>s	Loppu ;
 Loppu      ;
 
+LEXICON LoppuLiitesanaOmistusliite
+LoppuLiitesana_<A>	;
+Omistusliite_<A>	;
+
+LEXICON LoppuLiitesanaOlV
+LoppuLiitesana_<A>	;
+OlV_<A>	;
+
+LEXICON LoppuOlV
+Loppu	;
+OlV_<A>	;
+
+LEXICON LoppuOmistusliite
+Loppu	;
+Omistusliite_<A>	;
+
 LEXICON LoppuLiitesana
 Liitesana_<A>	;
 
@@ -3828,8 +3870,14 @@ LEXICON Loppu
 Loppu	;
 
 LEXICON Lyhenne
+LyhenteenTaivutuspääte_<A>	;
 Loppu	;
 -[Bc]:-	Loppu	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
+-[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
+-[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
+
+LEXICON LyhenteenTaivutuspääte
 [Sn][Nm]%:t:%:t	Liitesana_<A>	;
 [Sg][Ny]%:n:%:n	Liitesana_<A>	;
 [Sg][Ny]%:<A>n:%:<A>n	Liitesana_<A>	;
@@ -3861,9 +3909,6 @@ Loppu	;
 [Sabl][Nm]%:ilt<A>:%:ilt<A>	Liitesana_<A>	;
 [Sall][Ny]%:lle:%:lle	Liitesana_<A>	;
 [Sall][Nm]%:ille:%:ille	Liitesana_<A>	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Sanasto_nimisanat	;
--[Bc]@P.YS_ALKANUT.ON@:-@P.YS_ALKANUT.ON@	Erisnimet	;
--[Bc]@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@:-@P.YS_ALKANUT.ON@@P.JOHDETTAVA_NIMISANAKSI.ON@	Sanasto_t	;
 
 LEXICON LukusanaYksi
 [Sn][Ny]ksi:ksi	LukusanaSnNy_<A>	;
@@ -4067,13 +4112,17 @@ Liitesana_<A>	;
 LukusananJälkiliite	;
 [Bc]:	Lukusana	;
 
+LEXICON JärjestyslukuLiitesana
+Liitesana_<A>	;
+[Bc]:	Järjestysluku	;
+
 LEXICON JärjestyslukuNainen
 [Sn][Ny]nen:nen Liitesana_<A> ;
 [Sn][Nm]set:set Liitesana_<A> ;
 [Sg][Ny]sen:sen Liitesana_<A> ;
 [Sg][Nm]sten:sten Liitesana_<A> ;
 [Sg][Nm]sien:sien Liitesana_<A> ;
-[Sp][Ny]st<A>:st<A> Liitesana_<A> ;
+@U.LS.SPNY@[Sp][Ny]st<A>:@U.LS.SPNY@st<A> Liitesana_<A> ;
 [Sp][Nm]si<A>:si<A> Liitesana_<A> ;
 [Ses][Ny]sen<A>:sen<A> Liitesana_<A> ;
 [Ses][Nm]sin<A>:sin<A> Liitesana_<A> ;
@@ -4094,26 +4143,42 @@ LEXICON JärjestyslukuNainen
 [Sin][Nm]sin:sin Liitesana_<A> ;
 
 LEXICON JärjestyslukuKahdeksas
-[Sn][Ny]s:s Liitesana_<A> ;
+[Sn][Ny]s:s JärjestyslukuSnNy29_<A> ;
 [Sn][Nm]nnet:nnet Liitesana_<A> ;
-[Sg][Ny]nnen:nnen Liitesana_<A> ;
+[Sg][Ny]nnen:nnen JärjestyslukuSgNy39_<A> ;
 [Sg][Nm]nsien:nsien Liitesana_<A> ;
-[Sp][Ny]tt<A>:tt<A> Liitesana_<A> ;
+[Sp][Ny]tt<A>:tt<A> JärjestyslukuSpNy39_<A> ;
 [Sp][Nm]nsi<A>:nsi<A> Liitesana_<A> ;
-[Ses][Ny]nten<A>:nten<A> Liitesana_<A> ;
+[Str][Ny]nneksi:nneksi	JärjestyslukuStrNy39_<A>	;
+[Str][Nm]nsiksi:nsiksi	Liitesana_<A>	;
+[Ses][Ny]nten<A>:nten<A> JärjestyslukuSesNy39_<A> ;
 [Ses][Nm]nsin<A>:nsin<A> Liitesana_<A> ;
-[Sine][Ny]nness<A>:nness<A> Liitesana_<A> ;
+[Sine][Ny]nness<A>:nness<A> JärjestyslukuSineNy39_<A> ;
 [Sine][Nm]nsiss<A>:nsiss<A> Liitesana_<A> ;
-[Sela][Ny]nnest<A>:nnest<A> Liitesana_<A> ;
+[Sela][Ny]nnest<A>:nnest<A> JärjestyslukuSelaNy39_<A> ;
 [Sela][Nm]nsist<A>:nsist<A> Liitesana_<A> ;
-[Sill][Ny]nteen:nteen Liitesana_<A> ;
+[Sill][Ny]nteen:nteen JärjestyslukuSillNy39_<A> ;
 [Sill][Nm]nsiin:nsiin Liitesana_<A> ;
-[Sade][Ny]nnell<A>:nnell<A> Liitesana_<A> ;
+[Sade][Ny]nnell<A>:nnell<A> JärjestyslukuSadeNy39_<A> ;
 [Sade][Nm]nsill<A>:nsill<A> Liitesana_<A> ;
-[Sabl][Ny]nnelt<A>:nnelt<A> Liitesana_<A> ;
+[Sabl][Ny]nnelt<A>:nnelt<A> JärjestyslukuSablNy39_<A> ;
 [Sabl][Nm]nsilt<A>:nsilt<A> Liitesana_<A> ;
-[Sall][Ny]nnelle:nnelle Liitesana_<A> ;
+[Sall][Ny]nnelle:nnelle JärjestyslukuSallNy39_<A> ;
 [Sall][Nm]nsille:nsille Liitesana_<A> ;
-[Sab][Ny]nnett<A>:nnett<A> Liitesana_<A> ;
+[Sab][Ny]nnett<A>:nnett<A> JärjestyslukuSabNy39_<A> ;
 [Sab][Nm]nsitt<A>:nsitt<A> Liitesana_<A> ;
 [Sin][Nm]nsin:nsin Liitesana_<A> ;
+
+LEXICON JärjestyslukuSnNy
+@U.LS.SNNY@	JärjestyslukuToista	;
+@U.LS.SNNY@	Liitesana_<A>	;
+@U.LS.SNNY@	LukusananJälkiliite	;
+
+LEXICON JärjestyslukuSnNy29
+JärjestyslukuSnNy_<A>	;
+@U.LS.SNNY@	JärjestyslukuKymmentäSnNy_<A>	;
+
+LEXICON JärjestyslukuKymmentäSnNy
+[Bc]kymmenes:kymmenes	JärjestyslukuLiitesana_ä	;
+[Bc]sadas:sadas	JärjestyslukuLiitesana_a	;
+[Bc]tuhannes:tuhannes	JärjestyslukuLiitesana_a	;

@@ -77,10 +77,17 @@ def get_prefix_jatko(word):
 
 def get_adverb_jatko(word):
 	flags = generate_lex_common.get_flags_from_group(word, u"inflection")
-	prefixJatko = u"loppu"
+	prefixJatko = u""
+	loppu = True
 	for flag in flags:
-		if flag in [u"liitesana"]:
+		if flag in [u"liitesana", u"omistusliite"]:
 			prefixJatko = prefixJatko + u", " + flag
+		elif flag == u"required":
+			loppu = False;
+	if loppu:
+		prefixJatko = prefixJatko + u", loppu"
+	if prefixJatko.startswith(u", "):
+		prefixJatko = prefixJatko[2:]
 	return prefixJatko
 
 def get_additional_attributes(word):

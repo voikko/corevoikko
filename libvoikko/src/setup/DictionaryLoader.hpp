@@ -39,60 +39,40 @@ namespace libvoikko { namespace setup {
 class DictionaryLoader {
 
 	public:
-	/**
-	 * Find available dictionaries from default locations.
-	 * @return a set of uninitialized dictionaries
-	 */
-	static std::list<Dictionary> findAllAvailable();
 	
-	/**
-	 * Find available dictionaries from given path and default locations.
-	 * @return a set of uninitialized dictionaries
-	 */
-	static std::list<Dictionary> findAllAvailable(const std::string & path);
-	
-	/**
-	 * Load dictionary from default locations. The dictionary must match given language
-	 * tag.
-	 * @return an initialized dictionary
-	 */
-	static Dictionary load(const std::string & language) throw(DictionaryException);
-	
-	/**
-	 * Load dictionary from given path and default locations. The dictionary must match
-	 * given language tag.
-	 * @return an initialized dictionary
-	 */
-	static Dictionary load(const std::string & language, const std::string & path)
-	       throw(DictionaryException);
-
-	private:
 	/**
 	 * Add dictionary variants from a directory path to a map
 	 * "variant name" -> "dictionary".
 	 * If a dictionary already exists in the map, it will not be replaced.
 	 */
-	static void addVariantsFromPath(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
-	
-	static void addVariantsFromPathMalaga(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
-	
-	static void addVariantsFromPathHfst(const std::string & path,
-	       std::map<std::string, Dictionary> & variants);
+	void addVariantsFromPath(const std::string & path, std::map<std::string, Dictionary> & variants);
 	
 	/**
-	 * Create a dictionary object from a path to a morphology location. If the
-	 * location does not contain a valid dictionary, the method retuns an invalid
-	 * dictionary.
+	 * This method must be overridden in a subclass. It searches for available dictionaries in the
+	 * given directory and calls addDictionary on each one it finds.
 	 */
-	static Dictionary dictionaryFromPath(const std::string & path);
+	virtual void findDictionaries(const std::string & path) = 0;
+	
+	virtual ~DictionaryLoader();
 	
 	/**
-	 * Get a list of default dictionary locations. The entries are listed in
-	 * decreasing priority order.
+	 * Returns true if the given variant map contains a default dictionary for given language.
 	 */
-	static std::list<std::string> getDefaultLocations();
+	static bool hasDefaultForLanguage(std::map<std::string, Dictionary> * variants, const std::string & language);
+	
+	static void tagToCanonicalForm(std::string & languageTag);
+	
+	protected:
+	
+	std::list<std::string> getListOfSubentries(const std::string & mainPath);
+	
+	/**
+	 * Adds a newly located dictionary.
+	 */
+	void addDictionary(Dictionary dictionary);
+	
+	private:
+	std::map<std::string, Dictionary> * variants;
 };
 
 } }

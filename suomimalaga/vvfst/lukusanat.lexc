@@ -3,6 +3,12 @@ Lukusana	;
 Järjestysluku	;
 Erikoisluku	;
 NumeromerkinAlku	;
+[Lu][Xp]sata[X]sata:sata	LukusanaLiitesana_a	;
+[Lu][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
+[Lu][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
+[Lu]:	LukusananAlkuKerroin	;
+
+LEXICON LukusananAlkuKerroin
 LukusanaSgNy29Kertoimet	;
 LukusanaSpNy29Kertoimet	;
 LukusanaStrNy29Kertoimet	;
@@ -27,8 +33,12 @@ LukusanaSallNm29Kertoimet	;
 LukusanaSabNm29Kertoimet	;
 LukusanaSinNm29Kertoimet	;
 LukusanaSkoNm29Kertoimet	;
-[Lu][Xp]sata[X]sata:sata	LukusanaLiitesana_a	;
-[Lu][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]sata[X]sata:sata	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]sata[X]sadat:sadat	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]tuhat[X]tuhat:tuhat	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]tuhat[X]tuhannet:tuhannet	LukusanaLiitesana_a	;
+[Sn][Ny][Xp]miljoona[X]miljoona:miljoona	LukusanaLiitesana_a	;
+[Sn][Nm][Xp]miljoona[X]miljoonat:miljoonat	LukusanaLiitesana_a	;
 
 LEXICON Lukusana
 [Lu][Xp]yksi[X]y:y	LukusanaYksi_ä	;
@@ -97,7 +107,7 @@ Numeromerkki	;
 %0:%0	NumeromerkinJatko	;
 ,:,	NumeromerkkiPilkunJälkeen	;
 -:-	LukusananJälkiliite	;
-Lyhenne_aä	;
+LyhenteenTaivutuspääte_aä	;
 Loppu	;
 
 LEXICON NumeromerkinJatkoPilkunJälkeen
@@ -107,6 +117,10 @@ Lyhenne_aä	;
 Loppu	;
 
 LEXICON LukusanaToista
+[Bc]toista:toista	Liitesana_a	;
+[Bc]toista:toista	LukusananJälkiliite	;
+
+LEXICON JärjestyslukuToista
 [Bc]toista:toista	Liitesana_a	;
 [Bc]toista:toista	LukusananJälkiliite	;
 

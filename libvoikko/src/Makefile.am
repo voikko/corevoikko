@@ -38,7 +38,10 @@ libvoikko_la_SOURCES = \
     morphology/Analyzer.cpp \
     morphology/AnalyzerFactory.cpp \
     morphology/NullAnalyzer.cpp \
-    setup/setup.cpp setup/Dictionary.cpp setup/DictionaryLoader.cpp \
+    setup/setup.cpp setup/Dictionary.cpp \
+    setup/DictionaryFactory.cpp \
+    setup/DictionaryLoader.cpp \
+    setup/V2DictionaryLoader.cpp \
     setup/DictionaryException.cpp setup/interface.cpp \
     setup/LanguageTag.cpp \
     hyphenator/interface.cpp \
@@ -104,7 +107,11 @@ noinst_HEADERS = \
     morphology/malaga/symbols.hpp \
     morphology/malaga/values.hpp \
     morphology/malaga/MalagaState.hpp \
-    setup/setup.hpp setup/Dictionary.hpp setup/DictionaryLoader.hpp \
+    setup/setup.hpp setup/Dictionary.hpp \
+    setup/DictionaryFactory.hpp \
+    setup/DictionaryLoader.hpp \
+    setup/V2DictionaryLoader.hpp \
+    setup/V3DictionaryLoader.hpp \
     setup/DictionaryException.hpp \
     setup/LanguageTag.hpp \
     character/charset.hpp \
@@ -190,9 +197,10 @@ MALAGA_CPP_FILES=morphology/MalagaAnalyzer.cpp \
     autocorrect/AutoCorrect.cpp
 
 HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
-			   spellchecker/HfstSpeller.cpp \
-			   spellchecker/HfstSuggestion.cpp \
-			   hyphenator/HfstHyphenator.cpp
+    spellchecker/HfstSpeller.cpp \
+    spellchecker/HfstSuggestion.cpp \
+    hyphenator/HfstHyphenator.cpp \
+    setup/V3DictionaryLoader.cpp
 
 VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp 
 

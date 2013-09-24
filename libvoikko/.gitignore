@@ -4,6 +4,7 @@
 .dirstamp
 Makefile
 Makefile.in
+compile
 .libs
 /aclocal.m4
 /autom4te.cache

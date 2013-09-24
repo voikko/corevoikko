@@ -28,7 +28,7 @@
 
 #include "porting.h"
 #include "setup/setup.hpp"
-#include "setup/DictionaryLoader.hpp"
+#include "setup/DictionaryFactory.hpp"
 #ifdef HAVE_GETPWUID_R
 #include <pwd.h>
 #endif // HAVE_GETPWUID_R
@@ -192,10 +192,10 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 		options->speller = 0;
 		Dictionary dict;
 		if (path) {
-			dict = DictionaryLoader::load(string(langcode), string(path));
+			dict = DictionaryFactory::load(string(langcode), string(path));
 		}
 		else {
-			dict = DictionaryLoader::load(string(langcode));
+			dict = DictionaryFactory::load(string(langcode));
 		}
 		options->dictionary = dict;
 		options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
