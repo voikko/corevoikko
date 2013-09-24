@@ -2106,3 +2106,6 @@ tekivätkin
 teimme
 sadat
 neljästoista
+paras
+parhaassa
+parhaimmassa

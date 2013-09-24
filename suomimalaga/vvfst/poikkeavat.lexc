@@ -8,6 +8,9 @@ LEXICON Poikkeavat_t
 [Lt][Xp]tuta[X]tu:tu     Tuta ;
 [Lt][Xp]älkää[X]äl:äl    Älkää ;
 
+LEXICON Poikkeavat_l
+@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@[Ll][Xp]hyvä[X]par:@P.YS_EI_JATKOA.ON@@D.YS_ALKANUT@par	Paras	;
+
 LEXICON Yö
 [Sn][Ny]yö:yö	NimisanaNormaaliYsJatko_ä	;
 [Sn][Nm]yöt:yöt	Liitesana_ä	;
@@ -23,3 +26,19 @@ LEXICON Yö
 yö:yö	NimisanaYhteisetYksikönPaikallissijat_ä	;
 ö:ö	NimisanaYhteisetMonikonPaikallissijat_ä	;
 yö:yö	Johdin_mAinen_ä	;
+
+LEXICON Paras
+ha:ha	Yliaste_a	;
+[Sn][Ny][Cs]as:as	Liitesana_a	;
+[Sn][Nm][Cs]haat:haat	Liitesana_a	;
+[Sg][Ny][Cs]haan:haan	NimisanaYksikönGenetiivinJatko_a	;
+[Sg][Nm][Cs]haid:haid	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sg][Nm][Cs]haitt:haitt	NimisanaMonikonGenetiiviEnJatko_a	;
+[Sp][Nm][Cs]haita:haita	NimisanaLiOlV_a	;
+[Ses][Ny][Cs]haana:haana	NimisanaLiOlV_a	;
+ha[Cs]:ha	NimisanaYhteisetMonikonSijat2_a	;
+[Sill][Ny][Cs]haasee:haasee	NimisanaLiOlN_a	;
+[Sill][Nm][Cs]haihi:haihi	NimisanaLiOlN_a	;
+[Sill][Nm][Cs]haisii:haisii	NimisanaLiOlN_a	;
+haa[Cs]:haa	NimisanaYhteisetYksikönPaikallissijat_a	;
+ha[Cs]:ha	NimisanaYhteisetMonikonPaikallissijat_a	;
