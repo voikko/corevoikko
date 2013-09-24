@@ -36,10 +36,10 @@
 #include "morphology/Analyzer.hpp"
 #include "spellchecker/Speller.hpp"
 #include "spellchecker/SpellerCache.hpp"
+#include "grammar/GrammarChecker.hpp"
 #include "spellchecker/suggestion/SuggestionGenerator.hpp"
 #include "hyphenator/Hyphenator.hpp"
 #include "setup/Dictionary.hpp"
-#include "grammar/GcCache.hpp"
 
 // TODO proper abstraction
 namespace hfst_ol {
@@ -60,7 +60,8 @@ typedef struct {
 	int accept_titles_in_gc;
 	int accept_unfinished_paragraphs_in_gc;
 	int accept_bulleted_lists_in_gc;
-	grammar::GcCache gc_cache;
+	//grammar::GcCache gc_cache;
+	grammar::GrammarChecker * grammarChecker;
 	morphology::Analyzer * morAnalyzer;
 	spellchecker::Speller * speller;
 	spellchecker::SpellerCache * spellerCache;

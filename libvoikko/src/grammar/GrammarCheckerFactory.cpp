@@ -10,7 +10,7 @@
  * 
  * The Original Code is Libvoikko: Library of natural language processing tools.
  * The Initial Developer of the Original Code is Harri Pitkänen <hatapitk@iki.fi>.
- * Portions created by the Initial Developer are Copyright (C) 2009
+ * Portions created by the Initial Developer are Copyright (C) 2009 - 2012
  * the Initial Developer. All Rights Reserved.
  * 
  * Alternatively, the contents of this file may be used under the terms of
@@ -26,23 +26,34 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/RuleEngine.hpp"
+#include "grammar/GrammarCheckerFactory.hpp"
+#include "grammar/NullGrammarChecker.hpp"
+#include "grammar/FinnishGrammarChecker.hpp"
+#include "porting.h"
+
+#ifdef HAVE_VISLCG3
+#include "grammar/CgGrammarChecker.hpp"
+#endif
+
+using namespace std;
 
 namespace libvoikko { namespace grammar {
 
-RuleEngine::RuleEngine()  {
+GrammarChecker * GrammarCheckerFactory::getGrammarChecker(const setup::Dictionary & dictionary)
+	                              throw(setup::DictionaryException) {
+	if (dictionary.getGrammarBackend() == "null") {
+		return new NullGrammarChecker();
+	}
+	if (dictionary.getGrammarBackend() == "finnish") {
+		return new FinnishGrammarChecker(dictionary.getGrammarPath());
+	}
+	#ifdef HAVE_VISLCG3
+	if (dictionary.getGrammarBackend() == "vislcg3") {
+		return new CgGrammarChecker(dictionary.getGrammarPath());
+	}
+	#endif
 
-	
+	throw setup::DictionaryException("Failed to create checker because of unknown grammar backend");
 }
-
-RuleEngine::~RuleEngine() {
-
-}
-
-//void RuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
-//
-//	return;
-//}
-
 
 } }

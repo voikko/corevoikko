@@ -28,6 +28,7 @@
 
 #include "utils/utils.hpp"
 #include "grammar/cachesetup.hpp"
+#include "grammar/GrammarChecker.hpp"
 #include "grammar/cache.hpp"
 #include "grammar/FinnishAnalysis.hpp"
 #include "grammar/FinnishRuleEngine.hpp"
@@ -58,13 +59,13 @@ static const voikko_grammar_error no_grammar_error = voikko_grammar_error();
 
 const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOptions, const wchar_t * text,
                              size_t startpos, int skiperrors) {
-	if (!voikkoOptions->gc_cache.paragraph) {
+	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
 		return 0;
 	}
-	if (wcscmp(voikkoOptions->gc_cache.paragraph, text) != 0) {
+	if (wcscmp(voikkoOptions->grammarChecker->gc_cache.paragraph, text) != 0) {
 		return 0;
 	}
-	CacheEntry * e = voikkoOptions->gc_cache.firstError;
+	CacheEntry * e = voikkoOptions->grammarChecker->gc_cache.firstError;
 	int preverrors = 0;
 	while (e) {
 		if (preverrors >= skiperrors &&
@@ -79,12 +80,12 @@ const voikko_grammar_error * gc_error_from_cache(voikko_options_t * voikkoOption
 
 void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * text, size_t textlen) {
 	gc_clear_cache(voikkoOptions);
-	voikkoOptions->gc_cache.paragraph = new wchar_t[textlen + 1];
-	if (!voikkoOptions->gc_cache.paragraph) {
+	voikkoOptions->grammarChecker->gc_cache.paragraph = new wchar_t[textlen + 1];
+	if (!voikkoOptions->grammarChecker->gc_cache.paragraph) {
 		return;
 	}
-	memcpy(voikkoOptions->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
-	voikkoOptions->gc_cache.paragraph[textlen] = L'\0';
+	memcpy(voikkoOptions->grammarChecker->gc_cache.paragraph, text, textlen * sizeof(wchar_t));
+	voikkoOptions->grammarChecker->gc_cache.paragraph[textlen] = L'\0';
 	//FinnishAnalysis analyser;
 	HfstAnalysis analyser;
 	Paragraph * para = analyser.analyse_paragraph(voikkoOptions, text, textlen);
@@ -149,14 +150,14 @@ void gc_paragraph_to_cache(voikko_options_t * voikkoOptions, const wchar_t * tex
 }
 
 void gc_cache_append_error(voikko_options_t * voikkoOptions, CacheEntry * new_entry) {
-	CacheEntry * entry = voikkoOptions->gc_cache.firstError;
+	CacheEntry * entry = voikkoOptions->grammarChecker->gc_cache.firstError;
 	if (!entry) {
-		voikkoOptions->gc_cache.firstError = new_entry;
+		voikkoOptions->grammarChecker->gc_cache.firstError = new_entry;
 		return;
 	}
 	if (entry->error.startpos > new_entry->error.startpos) {
-		new_entry->nextError = voikkoOptions->gc_cache.firstError;
-		voikkoOptions->gc_cache.firstError = new_entry;
+		new_entry->nextError = voikkoOptions->grammarChecker->gc_cache.firstError;
+		voikkoOptions->grammarChecker->gc_cache.firstError = new_entry;
 		return;
 	}
 	while (1) {

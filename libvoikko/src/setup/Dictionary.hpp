@@ -40,7 +40,9 @@ class Dictionary {
 
 	private:
 	std::string morPath;
+	std::string grammarPath;
 	std::string morBackend;
+	std::string grammarBackend;
 	std::string spellBackend;
 	std::string suggestionBackend;
 	std::string hyphenatorBackend;
@@ -57,9 +59,22 @@ class Dictionary {
 	           const std::string & hyphenatorBackend,
 	           const LanguageTag & language,
 	           const std::string & description);
+
+	Dictionary(const std::string & morPath,
+	           const std::string & grammarPath,
+	           const std::string & morBackend,
+	           const std::string & grammarBackend,
+	           const std::string & spellBackend,
+	           const std::string & suggestionBackend,
+	           const std::string & hyphenatorBackend,
+	           const LanguageTag & language,
+	           const std::string & description);
+
 	Dictionary(const Dictionary & dictionary);
 	const std::string & getMorPath() const;
+	const std::string & getGrammarPath() const;
 	const std::string & getMorBackend() const;
+	const std::string & getGrammarBackend() const;
 	const std::string & getSpellBackend() const;
 	const std::string & getSuggestionBackend() const;
 	const std::string & getHyphenatorBackend() const;

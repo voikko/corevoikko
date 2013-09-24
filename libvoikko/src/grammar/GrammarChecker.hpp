@@ -26,23 +26,34 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
+#ifndef VOIKKO_GRAMMAR_GRAMMARCHECKER
+#define VOIKKO_GRAMMAR_GRAMMARCHECKER
+
+#include "setup/setup.hpp"
+#include "voikko_structs.h"
+
 #include "grammar/RuleEngine.hpp"
+#include "grammar/GcCache.hpp"
 
 namespace libvoikko { namespace grammar {
 
-RuleEngine::RuleEngine()  {
+class GrammarChecker {
+	public:
+		GrammarChecker();
+		
+		~GrammarChecker();
+		
+		void init();
 
+		RuleEngine * ruleEngine;
+		GcCache gc_cache;
 	
-}
+	private:
 
-RuleEngine::~RuleEngine() {
-
-}
-
-//void RuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
-//
-//	return;
-//}
-
+		GrammarChecker(GrammarChecker const & other);
+		GrammarChecker & operator = (const GrammarChecker & other);
+};
 
 } }
+
+#endif

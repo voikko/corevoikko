@@ -26,23 +26,29 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/RuleEngine.hpp"
+#ifndef VOIKKO_GRAMMAR_GRAMMARCHECKER_FACTORY
+#define VOIKKO_GRAMMAR_GRAMMARCHECKER_FACTORY
+
+#include "grammar/GrammarChecker.hpp"
+#include "setup/Dictionary.hpp"
+#include "setup/DictionaryException.hpp"
 
 namespace libvoikko { namespace grammar {
 
-RuleEngine::RuleEngine()  {
-
-	
-}
-
-RuleEngine::~RuleEngine() {
-
-}
-
-//void RuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
-//
-//	return;
-//}
-
+/**
+ * Factory for obtaining suitable grammar checker
+ */
+class GrammarCheckerFactory {
+	public:
+		/**
+		 * Creates and initialises a new GrammarChecker that matches given dictionary.
+		 * The object must be terminated and deleted after use.
+		 * @throws DictionaryException if the checker cannot be initialised.
+		 */
+		static GrammarChecker * getGrammarChecker(const setup::Dictionary & dictionary)
+		                              throw(setup::DictionaryException);
+};
 
 } }
+
+#endif

@@ -34,6 +34,7 @@
 #endif // HAVE_GETPWUID_R
 #include "morphology/AnalyzerFactory.hpp"
 #include "spellchecker/SpellerFactory.hpp"
+#include "grammar/GrammarCheckerFactory.hpp"
 #include "spellchecker/suggestion/SuggestionGeneratorFactory.hpp"
 #include "hyphenator/HyphenatorFactory.hpp"
 #include "grammar/cachesetup.hpp"
@@ -182,6 +183,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 	options->accept_unfinished_paragraphs_in_gc = 0;
 	options->accept_bulleted_lists_in_gc = 0;
 	options->morAnalyzer = 0;
+	options->grammarChecker = 0;
 	options->speller = 0;
 	options->suggestionGenerator = 0;
 	options->hyphenator = 0;
@@ -200,6 +202,7 @@ VOIKKOEXPORT voikko_options_t * voikkoInit(const char ** error, const char * lan
 		options->dictionary = dict;
 		options->morAnalyzer = morphology::AnalyzerFactory::getAnalyzer(dict);
 		options->speller = spellchecker::SpellerFactory::getSpeller(options, dict);
+		options->grammarChecker = grammar::GrammarCheckerFactory::getGrammarChecker(dict);
 		options->suggestionGenerator =
 			spellchecker::suggestion::SuggestionGeneratorFactory::getSuggestionGenerator(options,
 				spellchecker::suggestion::SUGGESTION_TYPE_STD);

@@ -58,6 +58,24 @@ Dictionary::Dictionary(const string & morPath, const string & morBackend,
 	description(description),
 	isDefaultDict(false) {
 }
+Dictionary::Dictionary(const string & morPath, const string & grammarPath, const string & morBackend,
+                       const string & grammarBackend,
+                       const string & spellBackend,
+                       const string & suggestionBackend,
+                       const string & hyphenatorBackend,
+                       const LanguageTag & language,
+                       const string & description) :
+	morPath(morPath),
+	grammarPath(grammarPath),
+	morBackend(morBackend),
+	grammarBackend(grammarBackend),
+	spellBackend(spellBackend),
+	suggestionBackend(suggestionBackend),
+	hyphenatorBackend(hyphenatorBackend),
+	language(language),
+	description(description),
+	isDefaultDict(false) {
+}
 
 Dictionary::Dictionary(const Dictionary & dictionary) :
 	morPath(dictionary.morPath),
@@ -82,6 +100,9 @@ const string & Dictionary::getSpellBackend() const {
 	return spellBackend;
 }
 
+const string & Dictionary::getGrammarBackend() const {
+	return grammarBackend;
+}
 const string & Dictionary::getSuggestionBackend() const {
 	return suggestionBackend;
 }

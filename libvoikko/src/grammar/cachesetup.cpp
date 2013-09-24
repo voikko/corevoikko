@@ -38,15 +38,15 @@ using namespace libvoikko::grammar;
 namespace libvoikko {
 
 void gc_clear_cache(voikko_options_t * options) {
-	delete[] options->gc_cache.paragraph;
-	CacheEntry * entry = options->gc_cache.firstError;
+	delete[] options->grammarChecker->gc_cache.paragraph;
+	CacheEntry * entry = options->grammarChecker->gc_cache.firstError;
 	while (entry) {
 		CacheEntry * next = entry->nextError;
 		utils::StringUtils::deleteCStringArray(entry->error.suggestions);
 		delete entry;
 		entry = next;
 	}
-	options->gc_cache.clear();
+	options->grammarChecker->gc_cache.clear();
 }
 
 }

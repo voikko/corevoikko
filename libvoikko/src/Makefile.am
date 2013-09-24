@@ -59,6 +59,10 @@ libvoikko_la_SOURCES = \
     grammar/cachesetup.cpp grammar/error.cpp grammar/Analysis.cpp \
     grammar/Sentence.cpp grammar/Paragraph.cpp grammar/CacheEntry.cpp \
     grammar/GcCache.cpp \
+    grammar/NullGrammarChecker.cpp \
+    grammar/FinnishGrammarChecker.cpp \
+    grammar/GrammarChecker.cpp \
+    grammar/GrammarCheckerFactory.cpp \
     grammar/FinnishAnalysis.cpp \
     grammar/HfstAnalysis.cpp \
     grammar/FinnishRuleEngine.cpp \
@@ -156,6 +160,10 @@ noinst_HEADERS = \
     grammar/CacheEntry.hpp \
     grammar/GcCache.hpp \
     grammar/RuleEngine.hpp \
+    grammar/NullGrammarChecker.hpp \
+    grammar/FinnishGrammarChecker.hpp \
+    grammar/GrammarChecker.hpp \
+    grammar/GrammarCheckerFactory.hpp \
     grammar/FinnishRuleEngine.hpp \
     grammar/FinnishAnalysis.hpp \
     grammar/HfstAnalysis.hpp \
@@ -203,7 +211,8 @@ HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
     setup/V3DictionaryLoader.cpp
 
 VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
-    setup/V4DictionaryLoader.cpp
+    setup/V4DictionaryLoader.cpp \
+    grammar/CgGrammarChecker.cpp
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 

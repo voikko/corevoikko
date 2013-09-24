@@ -26,23 +26,24 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "grammar/RuleEngine.hpp"
+#include "setup/setup.hpp"
+#include "grammar/FinnishGrammarChecker.hpp"
 
 namespace libvoikko { namespace grammar {
 
-RuleEngine::RuleEngine()  {
+FinnishGrammarChecker::FinnishGrammarChecker()  {
 
 	
 }
 
-RuleEngine::~RuleEngine() {
+FinnishGrammarChecker::~FinnishGrammarChecker() {
 
 }
 
-//void RuleEngine::check(voikko_options_t * voikkoOptions, const Paragraph * paragraph) { 
-//
-//	return;
-//}
+void FinnishGrammarChecker::init() { 
+
+	return;
+}
 
 
 } }

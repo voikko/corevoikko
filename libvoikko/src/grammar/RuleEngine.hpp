@@ -41,7 +41,7 @@ class RuleEngine {
 		
 		void init();
 
-		void check(voikko_options_t * voikkoOptions, const Paragraph * paragraph);
+//		void check(voikko_options_t * voikkoOptions, const Paragraph * paragraph);
 	
 	private:
 		RuleEngine(RuleEngine const & other);
