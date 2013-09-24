@@ -26,7 +26,7 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#include "setup/V3DictionaryLoader.hpp"
+#include "setup/V4DictionaryLoader.hpp"
 #include "setup/LanguageTag.hpp"
 #include "porting.h"
 #include <string>
@@ -37,13 +37,13 @@
 #include <ospell.h>
 #include <ol-exceptions.h>
 
-#define HFST_DICTIONARY_VERSION "3"
+#define HFST_DICTIONARY_VERSION "4"
 
 using namespace std;
 
 namespace libvoikko { namespace setup {
 
-void V3DictionaryLoader::findDictionaries(const string & path) {
+void V4DictionaryLoader::findDictionaries(const string & path) {
 	string mainPath(path);
 	mainPath.append("/");
 	mainPath.append(HFST_DICTIONARY_VERSION);

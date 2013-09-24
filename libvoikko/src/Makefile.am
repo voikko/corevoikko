@@ -202,7 +202,8 @@ HFST_CPP_FILES=morphology/HfstAnalyzer.cpp \
     hyphenator/HfstHyphenator.cpp \
     setup/V3DictionaryLoader.cpp
 
-VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp 
+VISLCG3_CPP_FILES=grammar/CgRuleEngine.cpp \
+    setup/V4DictionaryLoader.cpp
 
 LTTOOLBOX_CPP_FILES=morphology/LttoolboxAnalyzer.cpp
 

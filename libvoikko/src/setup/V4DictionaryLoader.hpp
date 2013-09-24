@@ -26,14 +26,14 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *********************************************************************************/
 
-#ifndef VOIKKO_SETUP_V3DICTIONARYLOADER
-#define VOIKKO_SETUP_V3DICTIONARYLOADER
+#ifndef VOIKKO_SETUP_V4DICTIONARYLOADER
+#define VOIKKO_SETUP_V4DICTIONARYLOADER
 
 #include "setup/DictionaryLoader.hpp"
 
 namespace libvoikko { namespace setup {
 
-class V3DictionaryLoader : public DictionaryLoader {
+class V4DictionaryLoader : public DictionaryLoader {
 
 	public:
 	void findDictionaries(const std::string & path);
