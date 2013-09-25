@@ -31,6 +31,9 @@
 #include "grammar/FinnishGrammarChecker.hpp"
 #include "porting.h"
 
+#include <iostream>
+
+
 #ifdef HAVE_VISLCG3
 #include "grammar/CgGrammarChecker.hpp"
 #endif
@@ -41,6 +44,12 @@ namespace libvoikko { namespace grammar {
 
 GrammarChecker * GrammarCheckerFactory::getGrammarChecker(const setup::Dictionary & dictionary)
 	                              throw(setup::DictionaryException) {
+
+	cerr << "morPath: " << dictionary.getMorPath() << endl; 
+	cerr << "grammarPath: " << dictionary.getGrammarPath() << endl; 
+	cerr << "morBackend: " << dictionary.getMorBackend() << endl; 
+	cerr << "grammarBackend: " << dictionary.getGrammarBackend() << endl; 
+
 	if (dictionary.getGrammarBackend() == "null") {
 		return new NullGrammarChecker();
 	}
@@ -53,7 +62,8 @@ GrammarChecker * GrammarCheckerFactory::getGrammarChecker(const setup::Dictionar
 	}
 	#endif
 
-	throw setup::DictionaryException("Failed to create checker because of unknown grammar backend");
+	string err = "Failed to create checker because of unknown grammar backend: " + dictionary.getGrammarBackend();
+	throw setup::DictionaryException(err.c_str());
 }
 
 } }

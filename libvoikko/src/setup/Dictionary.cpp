@@ -34,7 +34,9 @@ namespace libvoikko { namespace setup {
 
 Dictionary::Dictionary() :
 	morPath(),
+	grammarPath(),
 	morBackend(),
+	grammarBackend(),
 	spellBackend(),
 	suggestionBackend(),
 	hyphenatorBackend(),
@@ -98,6 +100,10 @@ const string & Dictionary::getMorBackend() const {
 
 const string & Dictionary::getSpellBackend() const {
 	return spellBackend;
+}
+
+const string & Dictionary::getGrammarPath() const {
+	return grammarPath;
 }
 
 const string & Dictionary::getGrammarBackend() const {

@@ -36,6 +36,12 @@ CgGrammarChecker::CgGrammarChecker()  {
 	
 }
 
+CgGrammarChecker::CgGrammarChecker(const string & s)  {
+
+	
+}
+
+
 CgGrammarChecker::~CgGrammarChecker() {
 
 }

@@ -40,8 +40,11 @@ namespace libvoikko { namespace grammar {
 class CgGrammarChecker : public GrammarChecker {
 	public:
 		CgGrammarChecker();
+		CgGrammarChecker(const string & s);
 		
 		~CgGrammarChecker();
+
+		void init(); 
 		
 	private:
 

@@ -29,9 +29,6 @@
 #ifndef VOIKKO_GRAMMAR_GRAMMARCHECKER
 #define VOIKKO_GRAMMAR_GRAMMARCHECKER
 
-#include "setup/setup.hpp"
-#include "voikko_structs.h"
-
 #include "grammar/RuleEngine.hpp"
 #include "grammar/GcCache.hpp"
 

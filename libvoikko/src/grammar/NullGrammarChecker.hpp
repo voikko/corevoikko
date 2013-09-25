@@ -42,6 +42,7 @@ class NullGrammarChecker : public GrammarChecker {
 		
 		~NullGrammarChecker();
 		
+		void init();
 	private:
 
 		NullGrammarChecker(NullGrammarChecker const & other);

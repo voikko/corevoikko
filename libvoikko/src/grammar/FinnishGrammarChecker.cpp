@@ -36,6 +36,12 @@ FinnishGrammarChecker::FinnishGrammarChecker()  {
 	
 }
 
+FinnishGrammarChecker::FinnishGrammarChecker(const string & s)  {
+
+	
+}
+
+
 FinnishGrammarChecker::~FinnishGrammarChecker() {
 
 }
