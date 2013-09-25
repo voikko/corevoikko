@@ -66,7 +66,7 @@ void V4DictionaryLoader::findDictionaries(const string & path) {
 			cerr << "   findDictionaries: " << fileName << endl;
 			if (fileName.find("gramchk.bin") != std::string::npos) {
 				grammarPath = mainPath + "/" + dirName + "/" + fileName;
-				grammarBackend = "vislcg";
+				grammarBackend = "vislcg3";
 			}
 			if (fileName.find(".zhfst") != std::string::npos) {
 				string morBackend = "hfst";

@@ -43,6 +43,8 @@
 # include <unistd.h>
 #endif
 
+#include <iostream>
+
 #include "setup/V2DictionaryLoader.hpp"
 #include "setup/V3DictionaryLoader.hpp"
 #include "setup/V4DictionaryLoader.hpp"
@@ -79,9 +81,12 @@ list<Dictionary> DictionaryFactory::findAllAvailable(const std::string & path) {
 	for (list<string>::iterator i = locations.begin(); i != locations.end(); ++i) {
 		addAllVersionVariantsFromPath(*i, dictMap);
 	}
+
+	cerr << "DictionaryFactory::findAllAvailable" << endl;
 	
 	list<Dictionary> dicts;
 	for (map< string, Dictionary >::iterator i = dictMap.begin(); i != dictMap.end(); ++i) {
+		cerr << "    " << i->second.getMorBackend() << " " << i->second.getGrammarBackend() << " " << i->second.getMorPath() << endl;
 		if (i->second.isDefault()) {
 			dicts.push_front(i->second);
 		}

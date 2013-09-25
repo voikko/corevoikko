@@ -28,6 +28,8 @@
 
 #include "setup/Dictionary.hpp"
 
+#include <iostream>
+
 using namespace std;
 
 namespace libvoikko { namespace setup {
@@ -59,6 +61,7 @@ Dictionary::Dictionary(const string & morPath, const string & morBackend,
 	language(language),
 	description(description),
 	isDefaultDict(false) {
+	cerr << "Dict(7) " << morPath << endl;
 }
 Dictionary::Dictionary(const string & morPath, const string & grammarPath, const string & morBackend,
                        const string & grammarBackend,
@@ -77,11 +80,15 @@ Dictionary::Dictionary(const string & morPath, const string & grammarPath, const
 	language(language),
 	description(description),
 	isDefaultDict(false) {
+
+	cerr << "Dict(9) " << morPath <<  " " << grammarBackend << endl;
 }
 
 Dictionary::Dictionary(const Dictionary & dictionary) :
 	morPath(dictionary.morPath),
+	grammarPath(dictionary.grammarPath),
 	morBackend(dictionary.morBackend),
+	grammarBackend(dictionary.grammarBackend),
 	spellBackend(dictionary.spellBackend),
 	suggestionBackend(dictionary.suggestionBackend),
 	hyphenatorBackend(dictionary.hyphenatorBackend),
